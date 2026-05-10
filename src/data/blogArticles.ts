@@ -19,6 +19,9 @@ export interface BlogArticle {
   faqs?: { question: string; answer: string }[];
   keywords: string[];
   howToSteps?: HowToStep[]; // For instructional articles - enables HowTo schema
+  howToTotalTime?: string; // ISO 8601 duration like "PT60M"
+  howToSupplies?: string[]; // List of supplies / materials
+  howToTools?: string[]; // List of tools needed
 }
 
 // Parses "YYYY-MM-DD" as local midnight (America/Toronto for our content),
@@ -1295,6 +1298,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
         text: 'Schedule your first oil change at 20 hours. This is critical as the oil captures metal particles from the break-in process that need to be removed before they cause wear.',
       },
     ],
+    howToTotalTime: 'PT10H',
+    howToTools: ['Mercury 4-stroke engine oil (10W-30)', 'Oil filter', 'Tachometer or SmartCraft gauge'],
     faqs: [
       {
         question: 'What happens if I don\'t break in my motor properly?',
@@ -4852,6 +4857,20 @@ Yes. We service all Mercury motors regardless of where they were winterized. Som
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 `,
+    howToSteps: [
+      { name: 'Visual inspection', text: 'Walk around the boat checking hull for damage, mouse intrusion, cover damage, and loose hardware. Inspect motor cowl for cracks or chewed wiring. Check transom for soft spots and mounting bolts. Look at trailer bearings, tires, lights, and ball coupler.' },
+      { name: 'Battery and electrical', text: 'Reinstall the battery if removed for winter. Load test it; below 10.5V under load means replace. Clean and tighten battery terminals. Test bilge pump, lights, gauges, and electronics with the key on but engine off.' },
+      { name: 'Fuel system', text: 'Check the fuel tank for water or contamination. Replace the fuel filter if at service interval. Inspect fuel lines for cracks or brittleness. Add fresh fuel; gas over 6 months old should be drained or used up.' },
+      { name: 'Cooling system', text: 'Check cooling system for visible damage or blockage. Inspect the water-pump impeller if at the 200-hour or 3-year service interval. Replace anti-corrosion anodes if 30% or more depleted.' },
+      { name: 'Lubrication', text: 'Top off engine oil to the full mark on the dipstick. Check gearcase lube level and top off if needed. Lubricate steering and shift cables. Grease swivel pivots and zerk fittings on the motor and rigging.' },
+      { name: 'Spark plugs and ignition', text: 'Inspect spark plugs and replace if at the 200-hour or 2-year service interval. Check spark plug wires for damage or cracks. Test the ignition system by starting the motor on muffs.' },
+      { name: 'Propeller and lower unit', text: 'Inspect the prop for nicks, bends, or damage and repair or replace as needed. Check the lower unit for visible damage or fluid leaks. Verify shift smoothness through forward, neutral, and reverse.' },
+      { name: 'Test run on muffs (or in water)', text: 'Connect muffs to the lower unit cooling intake or launch the boat. Start the motor; it should fire within 3 to 5 cranks. Confirm telltale stream within 10 seconds. Run for 5 to 10 minutes and check for unusual sounds, smoke, or vibration. Test trim/tilt, shift, and throttle response.' },
+      { name: 'Trailer and accessories', text: 'Inspect trailer bearings and repack if older than 2 years. Check trailer tires for cracks, age, and pressure; tires older than 6 years should be replaced regardless of tread. Test lights including brakes and signals. Verify safety chains and breakaway brake systems.' },
+      { name: 'Documentation', text: 'Update the service log with date, hours, and work performed. Verify Pleasure Craft Licence (PCL) is current. Confirm insurance is renewed for the season. Verify Pleasure Craft Operator Card (PCOC) is in the boat or with you.' },
+    ],
+    howToTotalTime: 'PT90M',
+    howToTools: ['Marine grease', 'Battery load tester', 'Spark plug socket', 'Gear lube pump', 'Fresh fuel filter', 'Earmuffs (flush attachment)'],
     faqs: [
       {
         question: 'How long should I flush the motor before first start?',
@@ -5391,6 +5410,17 @@ Command Thrust is a Mercury gearcase option (115 HP and up) with larger gearcase
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 `,
+    howToSteps: [
+      { name: 'Find your motor\'s rated WOT RPM', text: 'Mercury publishes a wide-open throttle (WOT) RPM range for every motor (e.g., 90 EXLPT is 5,000 to 5,800 RPM). The right prop lets you reach mid-band at typical loading. This number is the target.' },
+      { name: 'Identify your hull and use case', text: 'Hull weight, design (pontoon vs runabout vs bass), typical loading, and use case (top speed vs trolling vs water sports) all change the right prop. Heavy boats and pontoons want different props than light boats.' },
+      { name: 'Choose aluminum vs stainless', text: 'For motors up to 115 HP and recreational use, aluminum (~$450 CAD) is the right answer. For 150 HP and up, or for tournament/performance use, stainless ($800 to $2,000 CAD) gives more thrust, better top end, and better damage resistance.' },
+      { name: 'Select pitch', text: 'Pitch is the theoretical distance the prop moves forward in one revolution. Lower pitch gives faster acceleration and lower top speed; higher pitch gives slower acceleration and higher top speed. Pick the pitch that lets the motor reach mid-band of its rated WOT RPM with your typical loading.' },
+      { name: 'Decide on blade count', text: '3-blade is standard for most recreational use, top speed, and fuel economy. 4-blade gives better hole shot and cruising stability and is common on pontoons, water-sports applications, and heavy boats.' },
+      { name: 'Account for Command Thrust gearcase', text: 'If your motor has Mercury Command Thrust (115 HP and up, common on pontoons), prop selection is different. Command Thrust props are typically larger diameter, lower pitch, often 4-blade, optimized for hole shot and load handling rather than top speed.' },
+      { name: 'Sea-trial and verify WOT RPM', text: 'Test prop performance on the water with typical loading. If WOT RPM is below rated band, you need a lower pitch (or you are over-loaded). If WOT is over rated RPM, you need a higher pitch. Re-prop and re-test until WOT lands in the rated band.' },
+    ],
+    howToTotalTime: 'PT45M',
+    howToTools: ['Tachometer or SmartCraft gauge', 'Mercury prop chart', 'Prop wrench'],
     faqs: [
       {
         question: 'How do I know if I have the wrong prop?',
@@ -6849,6 +6879,18 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
     `,
+    howToSteps: [
+      { name: 'Schedule final service two weeks out', text: 'Two weeks before opener, schedule any remaining service at HBW. Confirm the boat is ready for water with commissioning done. Verify your fishing licence is valid, your Pleasure Craft Operator Card (PCOC) is current, and your Pleasure Craft Licence (PCL) is on the boat.' },
+      { name: 'Test the main motor on the water', text: 'One week before opener, test the motor on the water if possible. Confirm cooling, charging, throttle response, and shift smoothness. Catching a problem here gives time to fix it before opener morning.' },
+      { name: 'Test the kicker', text: 'Start the kicker, run it, and shift cleanly. Troll-test it at typical 1.5 mph walleye trolling speed. Stale fuel and gummed carburetors are the top kicker failures after winter storage.' },
+      { name: 'Verify electronics and live well', text: 'Power up GPS, sonar, VHF, stereo, and lights and confirm functionality. Test live well operation including pump, drain, and valves. Update software/firmware where applicable.' },
+      { name: 'Inspect fishing gear and stock essentials', text: 'Check rods, reels, lines, lures, and terminal tackle. Stock licences, current-standard PFDs, throwable cushion, anchor and rope, paddle, first aid kit, fire extinguisher, and emergency radio.' },
+      { name: 'Top off fresh fuel', text: 'Top off the tank with fresh gas. Avoid running the tank to empty. If you skipped fall stabilizer, run a dose now to treat residual old gas as you transition to fresh fuel.' },
+      { name: 'Verify weather and pre-rig', text: 'Three days before opener, verify the weather forecast for opener morning. Pre-tie leaders and rig rods. Charge electronics, phones, and batteries. Confirm partners and meet point.' },
+      { name: 'Opener morning launch checks', text: 'Arrive at the launch early; public ramps are busy on opener morning. Confirm safety equipment is on board, plug installed, lights working. Launch and run the motor briefly to confirm operation before going far from the dock. Verify legal walleye opener start time (usually sunrise; confirm current OMNR regulations).' },
+    ],
+    howToTotalTime: 'PT60M',
+    howToTools: ['Battery charger', 'Fresh fuel', 'Fuel stabilizer', 'PFDs (Transport Canada-approved)', 'Throwable cushion', 'Fire extinguisher'],
     faqs: [
       {
         question: 'When is the Ontario walleye opener?',
@@ -12343,6 +12385,19 @@ DIY makes sense if you have done it before, the motor is under 60 HP, and you ha
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)`,
+    howToSteps: [
+      { name: 'Stabilize the fuel', text: 'Add fuel stabilizer to the gas tank at the rate the bottle says (usually 1 oz per 2.5 gallons / 10L). Run the motor for at least 10 minutes to circulate stabilized fuel through the lines, carbs, or fuel injectors. The stabilizer prevents fuel breakdown and gum formation over winter.' },
+      { name: 'Run for 10 minutes with stabilized fuel', text: 'Either complete this during your last run of the season, or run the motor on muffs for 10 minutes with a small amount of stabilized fuel. This puts treated fuel into every part of the system before fogging.' },
+      { name: 'Fog the engine', text: 'While the motor is still running warm, disconnect the fuel line (or shut off the fuel valve). Spray fogging oil into each cylinder through the spark plug holes, or into the air intake while the motor draws it in. The motor will sputter and stall as it consumes the fogging oil. The film coats cylinder walls, valves, and bearings against rust.' },
+      { name: 'Drain the gearcase', text: 'Position the motor vertical with the vent screw at the top and drain screw at the bottom. Remove the drain screw first, then the vent screw. Catch all the lube and inspect it; clean lube is honey-amber. Milky or grey lube means water in the gearcase from a failed seal: stop and bring the motor in.' },
+      { name: 'Refill with fresh gear lube', text: 'Use only Mercury High-Performance Gear Lube. Pump fresh lube into the bottom drain hole until lube comes out the top vent hole. Quickly install and tighten the vent screw, then the drain screw, both with new gaskets. Skipping this step destroys the gears in 30 minutes of operation in spring.' },
+      { name: 'Clear the cooling system', text: 'Run the motor on muffs (or in water) for one or two minutes to confirm cooling water flow. Disconnect the water source while the motor is still running for 10 to 15 seconds. Tilt the motor up to drain residual water from cooling passages. Confirm no water is dripping from anywhere it should not be.' },
+      { name: 'Apply corrosion protection and final touches', text: 'Replace spark plugs if over a year old or showing wear; use anti-seize on the threads. Lubricate steering, throttle, and shift cable pivot points with marine grease. Check anodes and replace if more than 30% depleted.' },
+      { name: 'Disconnect battery and store the motor', text: 'Disconnect and remove the battery. Store it on a wood block in an insulated indoor space (basement, garage) and trickle charge once a month. Cover the motor or store the boat covered (shrink-wrap, tarp, or indoor) with the motor vertical to prevent water pooling.' },
+    ],
+    howToTotalTime: 'PT2H',
+    howToTools: ['Marine fogging oil', 'Fuel stabilizer', 'Gear lube', 'Corrosion guard', 'Wrench set'],
+    howToSupplies: ['Mercury Quickstor or equivalent fuel stabilizer', 'Mercury Storage Seal or Premium Fogging Oil', 'Mercury High-Performance Gear Lube', 'New gear lube drain plug gaskets', 'Anti-seize compound', 'Marine grease', 'Bucket and rags'],
     faqs: [
       {
         question: 'Can I winterize my Mercury FourStroke outboard myself?',
@@ -13400,6 +13455,17 @@ Sometimes. If diagnostic shows major internal damage (compression failure, gearc
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 `,
+    howToSteps: [
+      { name: 'Check the battery', text: 'Voltage at rest should be 12.4V or higher; voltage under crank load should stay above 10.5V. Clean and tighten terminals. Marine batteries last 4 to 6 years; a 7-year-old battery is at end of life regardless of how it tests. A weak battery causes false positives on every other test, so replace it before continuing.' },
+      { name: 'Check the fuel system', text: 'Gas over 6 months old is suspect. Check for water at the bottom of the tank. Replace the fuel filter if at service interval. Inspect fuel lines for cracks or brittleness. The primer bulb should pump up firm; if it stays soft, there is an air leak.' },
+      { name: 'Check the kill switch lanyard', text: 'Confirm the lanyard kill switch is in place. A pulled or missing lanyard prevents the motor from starting. Also confirm the shifter is fully in neutral, since the neutral safety switch blocks cranking otherwise.' },
+      { name: 'Check ignition and spark', text: 'Pull plugs and inspect: black/wet means flooded or fuel issue, tan/dry means okay, glazed/white means lean or overheated. Replace plugs at service interval. With plug grounded against the engine block and cranking, you should see strong blue spark. Weak orange or no spark indicates an ignition issue.' },
+      { name: 'Check the starting circuit', text: 'If basics are good but the motor will not crank, listen for a click when you turn the key. No click means a solenoid issue. Grinding or labored cranking indicates a worn starter. Check for corroded or loose connections at the starter, solenoid, and ignition switch.' },
+      { name: 'Test for compression issues', text: 'If everything else is good but the motor still will not run, compression may be the issue. Low or inconsistent compression across cylinders points to worn rings, damaged cylinder, or head gasket failure. Compression testing requires a gauge and removing spark plugs.' },
+      { name: 'Stop and call for diagnostic', text: 'Cranking longer than 10 seconds at a time overheats the starter and water pump. If the motor will not start after 3 attempts at the basics, stop. Book a Mercury-certified diagnostic at HBW rather than risk further damage with a wrong DIY repair.' },
+    ],
+    howToTotalTime: 'PT30M',
+    howToTools: ['Multimeter', 'Spark plug socket', 'Spare spark plugs', 'Battery load tester', 'Compression gauge (optional)'],
     faqs: [
       {
         question: 'Why won\'t my Mercury outboard start after sitting all winter?',
@@ -14932,6 +14998,15 @@ If you want to confirm your transom height before ordering, [give us a call at (
 
 _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and shaft length is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
 `,
+    howToSteps: [
+      { name: 'Find the lowest point of the hull at the transom', text: 'Locate the point where water meets hull when running on plane, at the centre of the transom where the motor will mount. This is the bottom reference for the measurement.' },
+      { name: 'Run the tape vertically to the top of the transom', text: 'Hold a tape measure straight up from that bottom point to the top of the transom (where the motor will mount). Keep the tape vertical, not angled. That measurement is your transom height.' },
+      { name: 'Match transom height to shaft length zone', text: '15 to 16 inches needs a Short shaft (S, 15"). 19 to 21 inches needs a Long shaft (L, 20"). 24 to 26 inches needs an Extra Long shaft (XL, 25"). 29 to 31 inches needs an Ultra Long shaft (XXL, 30"). If you are between sizes, the lower number is usually the right call.' },
+      { name: 'Account for hull design and setback', text: 'Deep-V hulls with sharp transom angles sometimes need 25 inch even with 20-inch transom heights. Pontoon hulls often work with 20 inch on what looks like a tall transom. Setback brackets (extending the motor 5 to 10 inches behind the transom) change effective shaft length requirements.' },
+      { name: 'Verify by checking the cavitation plate', text: 'Once installed, the cavitation plate (the flat plate above the prop) should sit roughly even with the bottom of the hull at the prop location. Too high means the prop ventilates; too low means the lower unit drags. We confirm at sea-trial of every repower.' },
+    ],
+    howToTotalTime: 'PT5M',
+    howToTools: ['Tape measure', 'Side-profile photo of the transom (optional)'],
     faqs: [
       {
         question: 'What outboard shaft length do I need?',
@@ -15626,6 +15701,16 @@ Service work at HBW is booked online. We diagnose the issue, give you a written 
 
 If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 `,
+    howToSteps: [
+      { name: 'Throttle back to idle', text: 'Going from WOT straight to engine-off can do its own damage to a hot powerhead. Drop to idle first. Buy yourself 30 seconds to think before deciding the next step.' },
+      { name: 'Look at the tell-tale stream', text: 'A strong, steady stream means cooling water is flowing; the issue may be a sensor, thermostat, or internal blockage, so continue at idle toward shore. A weak, sputtering stream means the impeller is failing or partially blocked; idle in only. No stream means shut down.' },
+      { name: 'Kill the engine if alarm persists or stream is weak/gone', text: 'Tilt the motor up out of the water. Inspect the intake screens on the lower unit for weeds, plastic, or bottom debris stuck in the grates. On Rice Lake and the Kawarthas in summer, the answer is almost always weeds.' },
+      { name: 'Clear the intake by hand', text: 'Pull weeds, bags, fishing line, or sand off the intake grates by hand. A boat hook or a screwdriver helps for stubborn debris. Two minutes of clearing usually restores flow.' },
+      { name: 'Wait 10 to 15 minutes before restarting', text: 'Let the powerhead cool. Check the tell-tale stream when you fire it back up. If it comes back full and the alarm does not return at idle, you are probably fine to head home at low RPM.' },
+      { name: 'If alarm comes back, do not fight it', text: 'Call for a tow, drift to shore, or paddle if you have to. Running an overheated motor "just to get home" is how a $40 impeller becomes a $4,500 lower unit and powerhead repair.' },
+    ],
+    howToTotalTime: 'PT15M',
+    howToTools: ['Boat hook or screwdriver (intake clearing)', 'Garden hose and earmuffs (dock diagnostic)', 'Spare impeller kit (optional onboard)'],
     faqs: [
   {
     "question": "How long can I run an overheating outboard before damage?",
