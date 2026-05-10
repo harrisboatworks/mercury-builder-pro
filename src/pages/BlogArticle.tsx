@@ -426,10 +426,6 @@ export default function BlogArticle() {
             <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Platinum Dealer · Rice Lake, Ontario" />
           </div>
 
-          {/* Dealer credentials strip */}
-          <DealerConfidenceStrip />
-
-
           {/* FAQ Section */}
           {article.faqs && article.faqs.length > 0 && (
             <section aria-labelledby="faq-heading" className="mt-14 pt-10 border-t border-repower-navy-900/10">
