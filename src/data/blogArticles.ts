@@ -2214,14 +2214,14 @@ A 60 HP FourStroke and a 60 HP Command Thrust look almost identical on the spec 
 The same applies up the range. A 115 ELPT Command Thrust on a heavy tri-toon pulls cleaner than a standard 115 on the same boat. We default to Command Thrust on most pontoon repowers for that reason. Customers sometimes push back on the small price difference until they see the boat run with the right gearcase. Then they get it.
 
 ## Best Mercury for pontoons by use case
-:::image-placeholder
-slug: pontoon-hp-by-length-and-use
-type: infographic
-aspect: 16:9
-description: Matrix showing recommended Mercury HP and gearcase by pontoon length and use case
-prompt: Photorealistic editorial infographic. 2x3 matrix grid: rows = pontoon length (18-20 ft, 20-22 ft, 22-24 ft tritoon). Columns = Cruising, Family + Light Sports, Active Water Sports. Each cell shows recommended Mercury HP class and gearcase. Mercury black accent. Clean white background, no people. 1600x900. [STYLE ANCHOR]
-image: /lovable-uploads/pontoon-hp-by-length-and-use.png
-:::
+### Quick pontoon HP guide
+
+| Pontoon use case | Practical Mercury range | HBW note |
+|---|---:|---|
+| 18-20 ft cruising/fishing | 60-90 HP | Keep it simple unless you carry a full crew often. |
+| 20-22 ft family cottage use | 90-115 HP Command Thrust | This is the common sweet spot for Rice Lake pontoons. |
+| 22-24 ft tubing or heavy loads | 115-150 HP Command Thrust | Buy enough motor once. Underpowering a pontoon gets old fast. |
+| Large tritoon/performance setup | 150+ HP | Confirm the hull rating, steering, transom, and intended use before quoting. |
 
 ### 18 to 20 ft pontoon, cruising and fishing only
 
