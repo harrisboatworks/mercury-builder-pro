@@ -14074,9 +14074,9 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Most dealers hide prices to force a phone call, it lets them negotiate trade-in down and add fees later. HBW posts real installed prices because customers deserve a number before driving 90 minutes. Configurator with live pricing at mercuryrepower.ca.
+> **Quick answer:** In our experience, many dealers hide prices to force a phone call, which lets them control the negotiation and add fees later. HBW posts real installed prices because customers deserve a number before driving 90 minutes. Configurator with live pricing at mercuryrepower.ca.
 
-If you've shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer's site, you're not imagining it. Most marine dealers deliberately don't publish prices online. The reasons they give are excuses; the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.
+If you've shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer's site, you're not imagining it. From what we hear from customers, plenty of marine dealers we know about don't publish prices online. The reasons they give are usually excuses; in our view, the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.
 
 ## Quick recommendation
 
