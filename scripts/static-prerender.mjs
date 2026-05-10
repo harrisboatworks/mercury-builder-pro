@@ -3249,6 +3249,7 @@ const staticSitemapEntries = [
   { loc: '/finance-calculator', priority: 0.7, changefreq: 'monthly' },
   { loc: '/contact', priority: 0.6, changefreq: 'monthly' },
   { loc: '/about', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/tools', priority: 0.8, changefreq: 'monthly' },
   { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
   { loc: '/mercury-repower-faq', priority: 0.8, changefreq: 'monthly' },
   { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },
