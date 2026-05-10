@@ -15223,6 +15223,13 @@ If you're already at the point where the math on used doesn't work, we can tell 
 
 ---
 
+## Considering a Used Outboard? Get a Pre-Purchase Inspection.
+
+Before you commit to a used Mercury, Yamaha, or Honda, an HBW pre-purchase inspection catches the issues that don't show up on a test run. We check compression, cooling system function, fault codes, lower unit health, and visible corrosion. Booked online; typically completed within 3-5 business days of drop-off.
+
+**Book inspection:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
+
 ## Frequently Asked Questions
 
 **How many hours is too many on a used Mercury outboard?**
