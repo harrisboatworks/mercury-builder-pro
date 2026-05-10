@@ -4366,7 +4366,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   // Week 12: March 23, 2026
   {
     slug: 'center-console-mercury-motor-guide',
-    title: 'Best Mercury Outboards for Center Console Boats: 2026 Guide',
+    title: 'Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)',
     description: 'Find the ideal Mercury motors for your center console. From single 115HP to quad 450HP setups, we cover every option for offshore and inshore boats.',
     image: '/lovable-uploads/Best_Mercury_Outboards_Center_Console_Hero.png',
     author: 'Harris Boat Works',
