@@ -16142,6 +16142,10 @@ This is how to find it, what it tells you, and what we can look up for you with 
 
 ## The Golden Rule
 
+![Diagram decoding the Mercury outboard serial number 1F60413GZ: country of origin (1 USA), family and HP (F60 FourStroke 60 HP), configuration code (413 remote electric power-trim), shaft variant (G), year code (Z 2023).](/lovable-uploads/diagram-mercury-serial-number-decoder.png)
+
+*Mercury serial numbers decode like vehicle VINs: country of origin, family + HP, configuration, shaft, and year code. Use yours for parts ordering, warranty, and recall lookups.*
+
 Two identical-looking Mercury 90 HP FourStrokes can use **completely different parts** depending on which serial number range they fall into. Mercury revises components mid-year, mid-production-run, even mid-month. The serial is the only thing that says exactly which version you have.
 
 If you're ordering parts, planning service, checking warranty, or looking up bulletins, start with the serial.
