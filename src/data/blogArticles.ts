@@ -12575,6 +12575,8 @@ We have been a Mercury dealer since 1965. The depth of expertise, parts inventor
 
 > **Quick answer:** For Rice Lake, Ontario under $30,000, look at 17-19 ft aluminum fishing hulls (Lund, Princecraft, Crestliner) with a Mercury 60-90 FourStroke installed. Pontoons in that budget are typically used. We can quote either as a complete installed package at mercuryrepower.ca.
 
+> **Planning-level CAD ranges as of May 2026.** Boat prices, dealer inventory, and motor packages move with model year, supply, and the local used market. Numbers below reflect what was available at HBW and across Ontario in spring 2026; verify current pricing at the dealer before committing.
+
 Under $30,000 CAD on Rice Lake, Ontario (in the Kawarthas), your three best paths in 2026 are a new small aluminum fishing boat with a Mercury under 60 HP, a used family pontoon (often with a recent repower or due for one), or a clean used hull paired with a Mercury repower. We rig and service all three at HBW. The smart money usually skips brand-new entry-level boats and goes into a quality used hull plus a current Mercury motor instead.
 
 ## Quick recommendation
@@ -12757,6 +12759,8 @@ A 16-18 ft aluminum console or tiller boat (Lund, Crestliner, Princecraft, Lowe 
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Toronto to Rice Lake, Ontario is roughly 90 minutes via the 401 and Highway 28. Tire pressure, working trailer lights, and a tested coupler are non-negotiable. Plan your launch. Bewdley, Hastings, and Gores Landing all work. Pickup is in person at HBW; we don't ship boats. Quote at mercuryrepower.ca.
+
+> Towing rules in Ontario are set by the Ministry of Transportation Ontario (MTO) and change occasionally. The numbers below reflect MTO regulations as of May 2026. Verify current weight, width, and licensing rules at ontario.ca/page/towing-trailer before any long-distance haul.
 
 Rice Lake, Ontario (in the Kawarthas) sits about 90 minutes northeast of Toronto, close enough for a long weekend, far enough that a lot of boaters have never made the drive with a trailer hitched on. If you're doing it for the first time, or the first time in a while, the trip is straightforward. But there are enough small things that can go wrong between the 401 and the Gores Landing boat ramp that a little prep goes a long way.
 
