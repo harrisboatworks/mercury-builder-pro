@@ -197,6 +197,9 @@ We're not the biggest dealer in Ontario. But we're on the water, we know Rice La
 
 ---
 
+## Try the calculator
+
+Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
 ## The Bottom Line
 
 Outboards have won the market because they deserve to. The technology is excellent, the service access is better, the Ontario freshwater use case fits them well, and the long-term ownership economics are stronger for most boaters.

@@ -218,6 +218,9 @@ We see these from customers who came from other shops:
 - [Pleasure Craft Licence Update During Repower](/blog/pleasure-craft-licence-update-repower-ontario), Transport Canada paperwork
 - [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full picture
 
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## Ready to schedule your repower?
 
 Build a quote on the [motor selection page](/quote/motor-selection). Live CAD pricing. Full configuration including rigging and install. No phone call required to see the number.

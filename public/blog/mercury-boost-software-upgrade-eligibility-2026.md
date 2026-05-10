@@ -112,6 +112,9 @@ No. Boost is a factory-backed, manufacturer-approved software calibration. It do
 
 **See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
 
+## Try the calculator
+
+Want a real number? Run [the Boost Eligibility Checker](/tools#boost-eligibility) — no signup, no email gate, takes 30 seconds.
 ## Related guides
 
 - [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market), why Mercury leads the market

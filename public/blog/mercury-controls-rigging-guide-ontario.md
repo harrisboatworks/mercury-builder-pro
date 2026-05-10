@@ -429,6 +429,9 @@ Harris Boat Works has been on Rice Lake since 1947, a Mercury dealer since 1965,
 
 ---
 
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## Related Guides
 
 - [Ontario Mercury Outboard Price Guide (2026)](https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide)

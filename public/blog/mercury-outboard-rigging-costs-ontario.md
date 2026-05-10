@@ -172,6 +172,9 @@ For specific quotes, [build it on the motor selection page](/quote/motor-selecti
 - [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), steering type decision
 - [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower), the full process
 
+## Try the calculator
+
+Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
 ## Ready for an honest rigging quote?
 
 Build a quote on the [motor selection page](/quote/motor-selection). Rigging is included in the all-in number. Live CAD pricing. No phone call required to see the price.

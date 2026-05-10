@@ -178,6 +178,9 @@ A few patterns we see on Rice Lake ProKicker installs at HBW. The 9.9 ELHPT is t
 
 ---
 
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **Do I need a kicker motor for Rice Lake fishing?**
