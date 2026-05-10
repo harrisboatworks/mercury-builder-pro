@@ -19,6 +19,9 @@ export interface BlogArticle {
   faqs?: { question: string; answer: string }[];
   keywords: string[];
   howToSteps?: HowToStep[]; // For instructional articles - enables HowTo schema
+  howToTotalTime?: string; // ISO 8601 duration like "PT60M"
+  howToSupplies?: string[]; // List of supplies / materials
+  howToTools?: string[]; // List of tools needed
 }
 
 // Parses "YYYY-MM-DD" as local midnight (America/Toronto for our content),
