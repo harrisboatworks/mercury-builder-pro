@@ -52,8 +52,6 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import MotorDocumentsSection from './MotorDocumentsSection';
 import MotorVideosSection from './MotorVideosSection';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { RelatedPostsGrid } from "../blog/RelatedPostsGrid";
-import { getMotorRelatedBlogSlugs } from "@/lib/motor-related-blog-posts";
 import { ScrollArea } from "../ui/scroll-area";
 import { FinanceCalculatorDrawer } from './FinanceCalculatorDrawer';
 import { StockStatusIndicator } from './StockStatusIndicator';
@@ -111,15 +109,6 @@ export default function MotorDetailsPremiumModal({
   const motorSpecs = motor ? findMotorSpecs(hpValue, title) : undefined;
   const decoded = decodeModelName(motor?.model || title, hpValue);
 
-  // Related blog post slugs for the Resources tab "Related Guides" grid
-  const relatedSlugs = useMemo(() => {
-    try {
-      return motor ? getMotorRelatedBlogSlugs(motor) : [];
-    } catch (err) {
-      console.error('[Related Guides] failed to compute slugs:', err);
-      return [];
-    }
-  }, [motor]);
 
   // Generate fallback description if missing or suspicious
   const displayDescription = useMemo(() => {
@@ -854,18 +843,6 @@ export default function MotorDetailsPremiumModal({
                         </div>
                       )}
 
-                      {/* Related Guides Section */}
-                      {relatedSlugs.length > 0 && (
-                        <div className="border-t border-gray-100 pt-6">
-                          <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-1">
-                            Related Guides
-                          </h3>
-                          <p className="text-sm text-[#050E1C]/70 mb-4">
-                            Hand-picked HBW articles for boaters considering this motor class.
-                          </p>
-                          <RelatedPostsGrid slugs={relatedSlugs} hideHeader />
-                        </div>
-                      )}
 
                     </div>
                   </TabsContent>
