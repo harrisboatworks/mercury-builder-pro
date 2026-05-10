@@ -7496,8 +7496,6 @@ We rig family runabouts every spring. Specifically:
 - **Annual service** at our Gores Landing shop. Mercury Platinum dealer, factory-trained techs, ethanol-free 89 marine gas at the dock
 
 If you're not sure between two HPs, call. Picking right is more important than picking fast.
-
-{/* TODO: Add customer story for best-mercury-for-family-runabouts */}
     `,
     faqs: [
       {
