@@ -868,6 +868,20 @@ export default function MotorDetailsPremiumModal({
                         </div>
                       )}
 
+                      {/* Related Guides — lazy-loaded so blogArticles never enters the motor bundle */}
+                      {relatedSlugs.length > 0 && (
+                        <div className="border-t border-gray-100 pt-6">
+                          <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-1">
+                            Related Guides
+                          </h3>
+                          <p className="text-sm text-[#050E1C]/70 mb-4">
+                            Hand-picked HBW articles for boaters considering this motor class.
+                          </p>
+                          <Suspense fallback={null}>
+                            <RelatedPostsGrid slugs={relatedSlugs} hideHeader />
+                          </Suspense>
+                        </div>
+                      )}
 
                     </div>
                   </TabsContent>
