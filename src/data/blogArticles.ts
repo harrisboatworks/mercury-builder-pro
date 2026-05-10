@@ -6879,6 +6879,18 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
     `,
+    howToSteps: [
+      { name: 'Schedule final service two weeks out', text: 'Two weeks before opener, schedule any remaining service at HBW. Confirm the boat is ready for water with commissioning done. Verify your fishing licence is valid, your Pleasure Craft Operator Card (PCOC) is current, and your Pleasure Craft Licence (PCL) is on the boat.' },
+      { name: 'Test the main motor on the water', text: 'One week before opener, test the motor on the water if possible. Confirm cooling, charging, throttle response, and shift smoothness. Catching a problem here gives time to fix it before opener morning.' },
+      { name: 'Test the kicker', text: 'Start the kicker, run it, and shift cleanly. Troll-test it at typical 1.5 mph walleye trolling speed. Stale fuel and gummed carburetors are the top kicker failures after winter storage.' },
+      { name: 'Verify electronics and live well', text: 'Power up GPS, sonar, VHF, stereo, and lights and confirm functionality. Test live well operation including pump, drain, and valves. Update software/firmware where applicable.' },
+      { name: 'Inspect fishing gear and stock essentials', text: 'Check rods, reels, lines, lures, and terminal tackle. Stock licences, current-standard PFDs, throwable cushion, anchor and rope, paddle, first aid kit, fire extinguisher, and emergency radio.' },
+      { name: 'Top off fresh fuel', text: 'Top off the tank with fresh gas. Avoid running the tank to empty. If you skipped fall stabilizer, run a dose now to treat residual old gas as you transition to fresh fuel.' },
+      { name: 'Verify weather and pre-rig', text: 'Three days before opener, verify the weather forecast for opener morning. Pre-tie leaders and rig rods. Charge electronics, phones, and batteries. Confirm partners and meet point.' },
+      { name: 'Opener morning launch checks', text: 'Arrive at the launch early; public ramps are busy on opener morning. Confirm safety equipment is on board, plug installed, lights working. Launch and run the motor briefly to confirm operation before going far from the dock. Verify legal walleye opener start time (usually sunrise; confirm current OMNR regulations).' },
+    ],
+    howToTotalTime: 'PT60M',
+    howToTools: ['Battery charger', 'Fresh fuel', 'Fuel stabilizer', 'PFDs (Transport Canada-approved)', 'Throwable cushion', 'Fire extinguisher'],
     faqs: [
       {
         question: 'When is the Ontario walleye opener?',
