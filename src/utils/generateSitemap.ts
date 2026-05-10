@@ -1,6 +1,50 @@
 import { blogArticles, isArticlePublished, isArticleSitemapEligible } from '../data/blogArticles';
+import { frenchBlogArticles } from '../data/frenchBlogArticles';
+import { koreanBlogArticles } from '../data/koreanBlogArticles';
+import { mandarinBlogArticles } from '../data/mandarinBlogArticles';
+import { spanishBlogArticles } from '../data/spanishBlogArticles';
 import { caseStudies } from '../data/caseStudies';
 import { locations } from '../data/locations';
+
+// Multilingual blog index pages and standalone hardcoded translated posts.
+// Translated posts are emitted at /blog/{lang}/{slug} with a lower priority than
+// English (English is the canonical surface; translated posts are alternates).
+const MULTILINGUAL_PRIORITY = 0.6;
+
+const HARDCODED_TRANSLATED_PAGES: Array<{ loc: string }> = [
+  { loc: '/blog/fr/concessionnaire-mercury-platinum-ontario' },
+  { loc: '/blog/zh/mercury-repower-guide-gta' },
+];
+
+function buildMultilingualBlogEntries(today: string): SitemapEntry[] {
+  const sets: Array<{ lang: string; articles: typeof blogArticles }> = [
+    { lang: 'fr', articles: frenchBlogArticles },
+    { lang: 'ko', articles: koreanBlogArticles },
+    { lang: 'zh', articles: mandarinBlogArticles },
+    { lang: 'es', articles: spanishBlogArticles },
+  ];
+  const entries: SitemapEntry[] = sets.flatMap(({ lang, articles }) =>
+    articles.map((a) => ({
+      loc: `/blog/${lang}/${a.slug}`,
+      lastmod:
+        a.publishDate ||
+        a.dateModified ||
+        a.datePublished ||
+        today,
+      changefreq: 'monthly' as const,
+      priority: MULTILINGUAL_PRIORITY,
+    })),
+  );
+  for (const page of HARDCODED_TRANSLATED_PAGES) {
+    entries.push({
+      loc: page.loc,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: MULTILINGUAL_PRIORITY,
+    });
+  }
+  return entries;
+}
 
 const BASE_URL = 'https://www.mercuryrepower.ca';
 
