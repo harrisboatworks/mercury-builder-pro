@@ -8,6 +8,7 @@ import { SiteFooter } from '@/components/ui/site-footer';
 import { getSpanishArticleBySlug } from '@/data/spanishBlogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
+import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import {
   Accordion,
   AccordionContent,
