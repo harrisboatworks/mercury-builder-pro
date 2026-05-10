@@ -1,4 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
+
+// Lazy-loaded — keeps the 22k-line blogArticles import OUT of the motor bundle
+const RelatedPostsGrid = lazy(() =>
+  import('@/components/blog/RelatedPostsGrid').then(m => ({ default: m.RelatedPostsGrid }))
+);
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Helmet } from '@/lib/helmet';
@@ -109,6 +114,31 @@ export default function MotorPage() {
   const [motorImageUrl, setMotorImageUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [relatedSlugs, setRelatedSlugs] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!motor) { setRelatedSlugs([]); return; }
+    let cancelled = false;
+    import('@/lib/motor-related-blog-posts')
+      .then(({ getMotorRelatedBlogSlugs }) => {
+        if (cancelled) return;
+        try {
+          setRelatedSlugs(getMotorRelatedBlogSlugs({
+            hp: motor.horsepower ?? 0,
+            model: motor.model ?? undefined,
+            model_display: motor.model_display ?? undefined,
+            model_number: motor.model_number ?? undefined,
+          }));
+        } catch (err) {
+          console.error('[Related Guides] compute failed:', err);
+          setRelatedSlugs([]);
+        }
+      })
+      .catch((err) => {
+        console.error('[Related Guides] dynamic import failed:', err);
+      });
+    return () => { cancelled = true; };
+  }, [motor]);
 
   useEffect(() => {
     if (!slug) {
@@ -368,6 +398,18 @@ export default function MotorPage() {
           </section>
 
           <RelatedMotorsAndCTA motor={motor} display={display} />
+
+          {/* Related Mercury repower guides — lazy-loaded so blogArticles never enters the motor bundle */}
+          {relatedSlugs.length > 0 && (
+            <section className="mt-10 border-t border-gray-100 pt-8">
+              <h2 className="font-display text-xl font-bold text-repower-navy-900 md:text-2xl mb-4">
+                Related Mercury repower guides
+              </h2>
+              <Suspense fallback={null}>
+                <RelatedPostsGrid slugs={relatedSlugs} hideHeader />
+              </Suspense>
+            </section>
+          )}
 
         </div>
 

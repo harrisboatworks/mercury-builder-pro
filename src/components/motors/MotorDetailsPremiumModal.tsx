@@ -1,4 +1,9 @@
-import React, { useEffect, useState, useRef, useMemo } from "react";
+import React, { useEffect, useState, useRef, useMemo, lazy, Suspense } from "react";
+
+// Lazy-loaded — keeps the 22k-line blogArticles import OUT of the motor bundle
+const RelatedPostsGrid = lazy(() =>
+  import('../blog/RelatedPostsGrid').then(m => ({ default: m.RelatedPostsGrid }))
+);
 import { getDisplayPrices } from '@/lib/pricing';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useNavigate } from "react-router-dom";
@@ -262,6 +267,26 @@ export default function MotorDetailsPremiumModal({
   const [promoReminderOpen, setPromoReminderOpen] = useState(false);
   const [inlineChatOpen, setInlineChatOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
+  const [relatedSlugs, setRelatedSlugs] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!motor) { setRelatedSlugs([]); return; }
+    let cancelled = false;
+    import('@/lib/motor-related-blog-posts')
+      .then(({ getMotorRelatedBlogSlugs }) => {
+        if (cancelled) return;
+        try {
+          setRelatedSlugs(getMotorRelatedBlogSlugs(motor as any));
+        } catch (err) {
+          console.error('[Related Guides] compute failed:', err);
+          setRelatedSlugs([]);
+        }
+      })
+      .catch((err) => {
+        console.error('[Related Guides] dynamic import failed:', err);
+      });
+    return () => { cancelled = true; };
+  }, [motor]);
   // openChat comes from props (openChatProp) since this component is portaled outside the context tree
 
   const handleCalculatePayment = () => {
@@ -843,6 +868,20 @@ export default function MotorDetailsPremiumModal({
                         </div>
                       )}
 
+                      {/* Related Guides — lazy-loaded so blogArticles never enters the motor bundle */}
+                      {relatedSlugs.length > 0 && (
+                        <div className="border-t border-gray-100 pt-6">
+                          <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-1">
+                            Related Guides
+                          </h3>
+                          <p className="text-sm text-[#050E1C]/70 mb-4">
+                            Hand-picked HBW articles for boaters considering this motor class.
+                          </p>
+                          <Suspense fallback={null}>
+                            <RelatedPostsGrid slugs={relatedSlugs} hideHeader />
+                          </Suspense>
+                        </div>
+                      )}
 
                     </div>
                   </TabsContent>
