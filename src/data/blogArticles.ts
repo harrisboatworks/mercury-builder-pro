@@ -5178,7 +5178,9 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 For boats under 14 ft and small fishing applications, tiller. For console boats over 16 ft and family use, remote. The crossover zone (14 to 16 ft, 25 to 40 HP) depends on use case.
 
 **What's the biggest tiller Mercury available?**
-Mercury makes tiller variants up to about 60 HP. Above 60 HP, remote-control is the standard configuration. Tiller above 60 HP is physically demanding and rare.
+Mercury tiller options run from small portable motors through select higher-horsepower FourStroke and SeaPro models with the Mercury Advanced Tiller system. The practical split is not "tiller stops at 60 HP." The practical split is whether the boat, use case, and driver actually make sense for a tiller.
+
+For most family boats, pontoons, runabouts, and multi-passenger fishing boats, remote steering is still the better setup. For serious tiller anglers, work boats, and certain guide-style rigs, Advanced Tiller can make sense well above the portable-motor range.
 
 **Can I add a console to my tiller boat?**
 Yes, but it's a major project. Adding a console means new console structure, new dash, new rigging cables, new helm controls. Often more cost-effective to buy a console-equipped boat instead.
