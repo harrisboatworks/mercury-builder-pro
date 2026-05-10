@@ -23425,6 +23425,7 @@ If you're newer to boat ownership and unsure what winterization actually involve
 `,
   },
   {
+  {
     slug: "rice-lake-boat-launch-guide",
     title: "Where to Launch a Boat on Rice Lake: A Practical Guide for Anglers, Cottagers, and Day Visitors",
     description: "A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp, and who it's for.",
@@ -23435,157 +23436,139 @@ If you're newer to boat ownership and unsure what winterization actually involve
     publishDate: "2026-05-10",
     category: "Local Guides",
     readTime: "8 min read",
-    keywords: ["rice lake boat launch", "gores landing boat ramp", "boat launch peterborough", "boat launch cobourg", "kawartha boat launch", "24 hour boat ramp ontario"],
+    keywords: ["rice lake boat launch","gores landing boat ramp","boat launch peterborough","boat launch cobourg","kawartha boat launch","24 hour boat ramp ontario"],
     faqs: [
-      { question: "Is the HBW ramp open 24 hours?", answer: "Yes. The ramp and parking lot are open 24 hours, with after-hours self-pay at the drop box. Shop hours for staff assistance, parts, and washrooms are Monday to Saturday, May through October." },
-      { question: "How much is the launch fee?", answer: "Posted on the sign at the ramp and updated annually. Cash or e-transfer for after-hours; card during shop hours." },
-      { question: "Do I need to book a launch slot?", answer: "No. First come, first served. Even on busy weekends the lot has held up." },
-      { question: "Can I launch a boat over 30 feet?", answer: "The ramp itself can handle up to 30 feet comfortably. Beyond that, contact us first; we will tell you honestly if it is workable." },
-      { question: "Is there a dock at the ramp?", answer: "Yes, a courtesy dock for tying off while you park the trailer. Be quick; others are waiting." },
-      { question: "Can I launch a kayak or canoe at the HBW ramp?", answer: "Yes, no fee for unpowered craft. Use the side of the ramp or the shallow shoreline rather than the main lane." },
-      { question: "Is there a fish-cleaning station at the ramp?", answer: "Not at the ramp itself. Most anglers clean at home or at their cottage. The shop does not offer cleaning." },
+      { question: "Is the HBW ramp really open 24 hours?", answer: "Yes. 24/7, 365 days a year. The honour box handles after-hours payment." },
+      { question: "How deep is the water at the end of the ramp?", answer: "Deep enough to launch most boats safely even in low-water years. We don't get the prop-strike calls common at shallow public ramps." },
+      { question: "Can I pay for the launch by e-transfer?", answer: "Yes. Cash, debit, credit, e-transfer, or Bitcoin during business hours. After hours, use the honour-box or e-transfer." },
+      { question: "Is the HBW ramp in good shape?", answer: "Two lanes of concrete, lit, with security cameras. Maintained. It has to be, we use it ourselves daily." },
+      { question: "Can I get a discount on a season pass?", answer: "$200 flat. If you launch 10+ times per year it's already cheaper than daily. We don't run launch promos. The pricing is what it is." },
+      { question: "Can I launch late at night?", answer: "Yes. Headlights and a flashlight help. The ramp is lit but the parking area gets dark." },
+      { question: "Can I stay overnight on the boat?", answer: "The lake is fine. The ramp area is for launching. If you want to overnight on the water, dockage is by waitlist." },
     ],
-    content: `# Where to Launch a Boat on Rice Lake: A Practical Guide for Anglers, Cottagers, and Day Visitors
+    content: `*Last reviewed: 2026-05-10*
 
-*Last reviewed: 2026-05-10*
+> **Quick answer:** The Harris Boat Works launch ramp at 5369 Harris Boat Works Rd in Gores Landing is two concrete lanes, open 24 hours, with parking, washrooms, and full marina services on-site. $20 daily, $200 season pass. 30 minutes from Peterborough, 20 from Cobourg or Port Hope. This page is the practical guide. What to do before you back down the ramp, what to expect when you get there, and who it's for.
 
-> **Quick answer:** The Harris Boat Works ramp in Gores Landing is a 24-hour public-access launch on the north shore of Rice Lake, with paved approach, deepwater entry, daytime staff on-site, and after-hours self-pay. Suitable for boats up to 30 feet. Free parking for cars and trailers. Backup options at Bewdley, Hastings, and Peterborough are covered below.
+## Who this guide is for
 
-## Who this is for
+- **Anglers** heading out for Rice Lake walleye, bass, or panfish
+- **Cottagers and day visitors** from the GTA, Cobourg, Port Hope, or Peterborough
+- **Trailer boaters** from elsewhere on the Trent-Severn looking for an easy access point
+- **First-time launchers** who want the steps before the audience
 
-Use this guide if you are:
+If you've never backed a trailer down a ramp on a Saturday in May, this is the page that helps you not be the story everyone tells later.
 
-- An angler hauling a boat from the GTA, Durham, or Northumberland for a Rice Lake fishing day
-- A cottager who keeps a trailerable boat at home and launches when you visit
-- A first-time visitor unsure which ramp to point your truck at
-- A boater coming off the Trent-Severn looking for a north-shore exit point
+## Before you back down the ramp: checklist
 
-If you keep your boat in the water for the season at a private dock or marina slip, you do not need this guide. This is for trailer-launch days.
+Run this in the parking area, not at the water's edge. The line behind you will appreciate the silence.
 
-## Pre-launch checklist
+- **Drain plug in.** Most ramp horror stories start here.
+- **Straps off.** Bow strap stays on until the boat is in the water.
+- **Battery on, key works.** Quick test in the lot beats trouble at the dock.
+- **Fuel level.** Top up at the on-site pumps before you launch if you're low.
+- **PFDs aboard.** One per person, accessible, the right size.
+- **Safety kit.** Paddle or oar, bailer, sound device, throw rope, waterproof flashlight.
+- **Boating licence (PCOC)** on whoever's driving. Not just in the glove box at home.
+- **Fishing licence** on every angler over 18 (or 65+ resident). Ontario rules apply on Rice Lake. HBW does not sell them.
 
-Run this list in your driveway, not at the top of the ramp. Nobody behind you wants to watch you discover you forgot the drain plug.
+Do this once on the way to the ramp and you'll do it automatically every time after.
 
-- **Drain plug.** In the boat, hand-tight. Tape a spare to the dash if you are forgetful.
-- **Battery.** Switched on, terminals clean. Trolling motor battery too if you have one.
-- **Fuel.** Topped up. The closest gas after Gores Landing is back in Bewdley or Cobourg.
-- **Straps and tie-downs.** Loosen the transom straps before backing in. Leave the bow strap on until the boat is floating.
-- **Bilge plug-in and pump test.** Confirm the bilge pump runs before you leave the ramp.
-- **Engine.** Lower unit clear, prop intact, fuel line connected, primer bulb firm.
-- **Safety kit.** PFDs (one per person, properly sized), bailer, flashlight, sound device, throw line. Transport Canada checks happen on Rice Lake.
-- **Licence and registration.** Pleasure Craft Operator Card and boat licence number visible on the bow.
-- **Fishing licence.** If you are fishing, have it on your phone or printed.
-- **Phone, sunscreen, water.** The lake is bigger than it looks from shore.
+## What's on-site at the HBW ramp
 
-If anything on this list is a problem, fix it at home. The ramp is not the place to troubleshoot.
+You don't have to drive 20 minutes back into town if you forgot something:
 
-## What is on-site at the HBW ramp
+- Marine gas station with **ethanol-free 89-octane**. Outboards run cleaner on it.
+- Three washrooms with showers, plus a 24/7 port-a-potti for after-hours
+- Mercury and MerCruiser service on-site if something goes wrong (in season)
+- Snacks, ice, and accessories
+- Boat rentals if you forgot the boat. Yes, that happens.
+- Courtesy docks for loading and unloading
 
-The Harris Boat Works ramp in Gores Landing is open 24 hours and includes:
+The two-lane concrete ramp means you can launch and retrieve simultaneously, which matters on a busy weekend. Single-lane public ramps have you waiting for the trailer ahead of you to clear before you can back in. We don't.
 
-- Paved approach with a clear deepwater entry, suitable for most trailerable boats
-- Wide turnaround for backing in without surprises
-- Free trailer parking on a graded lot, no permit needed
-- Daytime washroom access during shop hours (Monday to Saturday, May through October)
-- After-hours self-pay drop box for the launch fee, posted rates on the sign
-- Daytime staff who can help if a strap snags or a battery is dead, no charge for a quick assist
+## Parking: daily and overnight
 
-The shop sells fuel-stabilizer, spare props, tie-downs, PFDs, and the kind of small items boaters realize they forgot. If you are launching for an early bite, get there before sunrise; the drop box and lot are accessible all night.
+Parking is included with your launch fee:
 
-## Parking
+- **Daily ($20).** Launch, park your trailer and tow vehicle, come back, leave. Pay in the office during business hours, or use the after-hours honour-box. Cash, debit, credit, e-transfer, Bitcoin all work.
+- **Season pass ($200).** Unlimited launches all season. If you launch 10+ times a year you're already saving. Anyone running Rice Lake regularly should have one. Pays for itself by the second long weekend.
+- **Overnight ($20/night).** Leave the trailer or rig overnight if you're staying on the lake.
+- **Long-term parking** available for trailers and tow vehicles for boaters keeping their boat in the water all season elsewhere.
 
-The lot is large enough to handle a busy summer Saturday on Rice Lake. We have not had to turn anyone away in years. Cars and trailers park in the same lot; pull in past the boat staging area so the ramp stays clear.
+## A note on the ramp itself
 
-If the lot looks full at 7 a.m. on a tournament weekend, there is overflow parking on the grass strip beyond the main lot. Staff will direct you when shop is open.
+The concrete ramp is the lane you drive on. Beside it is a metal lip. **Do not step on the metal portion in shoes.** It gets slippery, especially when wet, and people land on their backsides every season. Stay on the concrete.
 
-## Ramp note: depth and conditions
+## Who else launches at HBW
 
-Rice Lake water levels vary across the season. The HBW ramp stays usable across normal level swings because the deepwater entry is dredged and maintained. In a low-water year (rare), expect the bottom of the ramp to be a touch shallower; trim your motor up before launching and lower it once you are clear of the trailer.
+Most days the ramp sees a mix of:
 
-In ice-out (early to mid April most years) and freeze-up (late November), confirm conditions before driving out. Call the shop or check our seasonal status page.
+- Aluminum fishing boats heading out for walleye, bass, or perch
+- Pontoons running cottage families to a beach for the afternoon
+- Wakeboard and ski boats from cottages on the south shore
+- Personal watercraft (jet skis)
+- Kayaks and canoes (the courtesy dock is friendlier than wading from a public access)
+- Small sailboats
 
-## Who else launches here
+The ramp is open to all of the above. We don't gatekeep.
 
-The HBW ramp is busy and friendly. On a typical summer day you will share it with:
+## When the ramp gets busy
 
-- Walleye and bass anglers running 14 to 19 foot aluminum boats
-- Cottagers in pontoons launching for the day before the season opens or after they pull the boat in fall
-- Bass tournament boats on tournament weekends (you will know; check the shop calendar)
-- Trent-Severn through-cruisers stopping for fuel, parts, or coffee
-- Day visitors from Toronto, Durham, Peterborough, and Cobourg
+A few realistic notes from running this ramp for decades:
 
-The lot has an unspoken etiquette: stage your boat (straps off, plug in, gear loaded) in the parking lot, not at the ramp. Back down only when you are ready to drop. Pull out of the water and clear the ramp before you tie down. Most regulars do this naturally; if you are new, copy the person ahead of you.
+- **First warm Saturday in May** is the busiest day of the year. Plan for it. Or come Sunday.
+- **Walleye opener weekend** (mid-May, dates change) the parking lot fills early. If you want to be on the water at sunrise, arrive at sunrise and not at 7 a.m.
+- **Long weekend mornings** are busy 8-11 a.m. and slow after lunch. Inverse on the way home: quietest before 4 p.m., busiest 5-7 p.m.
+- **Off-season (Oct-Apr)** the ramp is open and quiet. Cold water rules apply. File a float plan, dress for water temperature, not air temperature.
 
-## Busy times to know about
+## Why people choose HBW over public ramps
 
-Peak launch demand happens in three windows:
+This isn't a knock on public ramps. They exist for a reason. But here's the trade-off:
 
-- **Walleye opener weekend** (mid-May): the busiest weekend of the year. Arrive at first light or after 10 a.m. to skip the rush.
-- **Bass tournament Saturdays** (June through August): if a tournament is running, the lot fills before sunrise. Check the shop calendar before driving out.
-- **Late-October haul-out window**: the last two weeks before freeze-up. Lots of boats coming out, less competition for the ramp itself but more for shop time. Book winter storage early if that is your plan; see our [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
-
-Everything outside those windows is calm. A weekday morning in July, you will likely have the ramp to yourself.
-
-## Public ramp comparison: Rice Lake and nearby
-
-If the HBW ramp is not convenient for your route, here is the honest comparison.
-
-| Ramp | Location | Notes |
+| What you'd compare | Public ramp | HBW ramp |
 |---|---|---|
-| **Harris Boat Works (Gores Landing)** | North shore, Rice Lake | 24-hour, paved, deepwater, free parking, staff on-site daytime |
-| **Bewdley public ramp** | South shore, Rice Lake | Free, paved, smaller lot, fills early on weekends |
-| **Hastings lock** | East end, Rice Lake / Trent | Lock-side launch, useful if you are running east toward Trent-Severn |
-| **Lakefield (Otonabee)** | North of Peterborough | Not Rice Lake itself; the entry to the upper Kawarthas |
-| **Peterborough Lift Lock** | Peterborough | Trent-Severn entry, busy on lock-up weekends |
-| **Cobourg Marina** | Lake Ontario, not Rice Lake | Different watershed; included only because GTA boaters sometimes confuse the two |
+| Wait time on busy weekends | 30-60 min common | Two lanes, minimal wait |
+| Parking | First-come, often full | Reserved space included |
+| Lanes | Usually one | Two concrete |
+| Hours | Restricted at some | 24/7, year-round |
+| Marina services on-site | None | Gas, service, rentals, accessories |
+| Washrooms | Variable | Yes, with showers |
 
-For most Rice Lake fishing and cottage trips, HBW or Bewdley are the practical choices. HBW is the safer bet for after-hours, deeper water, and a working lot.
+If you're trying to get on the water before sunrise on a derby day, that wait-time difference is the whole game.
 
-## What HBW checks if something goes wrong on the water
+## What HBW checks if something goes wrong
 
-Launching is the easy part. If the day goes sideways (battery fails, prop dings a rock, fuel issue, kicker will not start), the shop is right there. During business hours we can:
+If you launch and something's not right (motor won't start, alarm coming on, prop sounds wrong) bring it to the dock and find a staff member. We're a working Mercury service shop. We'll look at it. Sometimes it's a five-minute fix. Sometimes we say "this needs the bench, leave it with us." Better than driving home with the boat on the trailer and a problem you didn't diagnose.
 
-- Swap a dead battery
-- Replace a damaged prop on the spot if it is a common Mercury size
-- Diagnose a fuel-system or starting problem in the parking lot before you pack it in
-- Pull the boat out, look it over, and give you an honest answer on whether it is a 20-minute fix or a tow-home
+## Questions we hear at the counter
 
-We do not charge to look. If it is a fast fix, parts and time only. If it is a real problem, we will tell you and we will not pad the bill.
+**Is the ramp really open 24 hours?**
+Yes. 24/7, 365 days a year. The honour box handles after-hours payment.
 
-## FAQ
+**How deep is the water at the end of the ramp?**
+Deep enough to launch most boats safely even in low-water years. We don't get the prop-strike calls common at shallow public ramps.
 
-**Is the HBW ramp open 24 hours?**
-Yes. The ramp and parking lot are open 24 hours, with after-hours self-pay at the drop box. Shop hours for staff assistance, parts, and washrooms are Monday to Saturday, May through October.
+**Can I pay by e-transfer?**
+Yes. Cash, debit, credit, e-transfer, or Bitcoin during business hours. After hours, use the honour-box or e-transfer.
 
-**How much is the launch fee?**
-Posted on the sign at the ramp and updated annually. Cash or e-transfer for after-hours; card during shop hours.
+**Is the ramp in good shape?**
+Two lanes of concrete, lit, with security cameras. Maintained. It has to be, we use it ourselves daily.
 
-**Do I need to book a launch slot?**
-No. First come, first served. Even on busy weekends the lot has held up.
+**Can I get a discount on a season pass?**
+$200 flat. If you launch 10+ times per year it's already cheaper than daily. We don't run launch promos. The pricing is what it is.
 
-**Can I launch a boat over 30 feet?**
-The ramp itself can handle up to 30 feet comfortably. Beyond that, contact us first; we will tell you honestly if it is workable.
+**Can I launch late at night?**
+Yes. Headlights and a flashlight help. The ramp is lit but the parking area gets dark.
 
-**Is there a dock at the ramp?**
-Yes, a courtesy dock for tying off while you park the trailer. Be quick; others are waiting.
-
-**Can I launch a kayak or canoe here?**
-Yes, no fee for unpowered craft. Use the side of the ramp or the shallow shoreline rather than the main lane.
-
-**Is there a fish-cleaning station?**
-Not at the ramp itself. Most anglers clean at home or at their cottage. The shop does not offer cleaning.
+**What about overnight on the boat?**
+The lake is fine. The ramp area is for launching. If you want to overnight on the water, dockage is by waitlist.
 
 ## Where to go next
 
-If you are launching for a fishing day, the [best Mercury setups for Rice Lake fishing](/blog/best-mercury-outboard-rice-lake-fishing-guide) and the [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide) are worth a read.
+If you're heading up from the GTA and have questions: (905) 342-2153.
 
-If you are launching for a Trent-Severn run, the [Trent-Severn 2026 trip planning guide](/blog/trent-severn-waterway-boating-guide-2026) covers locks, fuel, and overnights.
-
-If your boat needs work or a new motor before the season, the configurator at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) gets you a real installed price in a few minutes.
-
-**Phone:** (905) 342-2153
-**Text:** (647) 952-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON, K0K 2E0
+If you don't have a boat but want to fish Rice Lake or take the family out, [boat rentals](https://www.harrisboatworks.ca/rentals) are next door.
 `,
   },
   {
