@@ -239,23 +239,46 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts';
   content: string;
   props?: ImagePlaceholderProps;
+  pricingRows?: MotorPricingRow[];
+  relatedSlugs?: string[];
 }
 
+const ANY_DIRECTIVE_RE =
+  /:::(image-placeholder|motor-pricing|related-posts)\s*\n([\s\S]*?)\n:::/g;
+
 function splitDirectives(md: string): RenderChunk[] {
-  const re = /:::image-placeholder\s*\n([\s\S]*?)\n:::/g;
   const chunks: RenderChunk[] = [];
   let last = 0;
   let m: RegExpExecArray | null;
-  while ((m = re.exec(md)) !== null) {
+  ANY_DIRECTIVE_RE.lastIndex = 0;
+  while ((m = ANY_DIRECTIVE_RE.exec(md)) !== null) {
     if (m.index > last) {
       chunks.push({ kind: 'md', content: md.slice(last, m.index) });
     }
-    const props = parseDirective(m[1]);
-    if (props) {
-      chunks.push({ kind: 'placeholder', content: '', props });
+    const name = m[1];
+    const body = m[2];
+    if (name === 'image-placeholder') {
+      const props = parseDirective(body);
+      if (props) chunks.push({ kind: 'placeholder', content: '', props });
+    } else if (name === 'motor-pricing') {
+      try {
+        const rows = JSON.parse(body) as MotorPricingRow[];
+        if (Array.isArray(rows) && rows.length) {
+          chunks.push({ kind: 'motor-pricing', content: '', pricingRows: rows });
+        }
+      } catch {
+        /* ignore malformed */
+      }
+    } else if (name === 'related-posts') {
+      const slugs = body
+        .split('\n')
+        .map((s) => s.trim())
+        .filter(Boolean);
+      if (slugs.length)
+        chunks.push({ kind: 'related-posts', content: '', relatedSlugs: slugs });
     }
     last = m.index + m[0].length;
   }
@@ -272,6 +295,22 @@ function renderMarkdownWithDirectives(
   return chunks.map((chunk, i) => {
     if (chunk.kind === 'placeholder' && chunk.props) {
       return <ImagePlaceholder key={`${keyPrefix}-ph-${i}`} {...chunk.props} />;
+    }
+    if (chunk.kind === 'motor-pricing' && chunk.pricingRows) {
+      return (
+        <MotorPricingCards
+          key={`${keyPrefix}-mp-${i}`}
+          rows={chunk.pricingRows}
+        />
+      );
+    }
+    if (chunk.kind === 'related-posts' && chunk.relatedSlugs) {
+      return (
+        <RelatedPostsGrid
+          key={`${keyPrefix}-rp-${i}`}
+          slugs={chunk.relatedSlugs}
+        />
+      );
     }
     if (!chunk.content.trim()) return null;
     return (
