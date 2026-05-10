@@ -18,6 +18,7 @@ import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
+import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { ShaftLengthPicker } from '@/components/tools/ShaftLengthPicker';
 import { TradeInValueEstimator } from '@/components/tools/TradeInValueEstimator';
 import { RepowerCostEstimator } from '@/components/tools/RepowerCostEstimator';
@@ -346,6 +347,9 @@ export default function BlogArticle() {
             )}
           </div>
 
+          {/* Dealer credentials strip */}
+          <DealerConfidenceStrip />
+
           {/* Top contextual CTA */}
           <BlogCTA category={article.category} slug={article.slug} variant="inline" />
 
@@ -424,7 +428,6 @@ export default function BlogArticle() {
           <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
             <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Platinum Dealer · Rice Lake, Ontario" />
           </div>
-
 
           {/* FAQ Section */}
           {article.faqs && article.faqs.length > 0 && (
