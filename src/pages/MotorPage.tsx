@@ -1,4 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
+
+// Lazy-loaded — keeps the 22k-line blogArticles import OUT of the motor bundle
+const RelatedPostsGrid = lazy(() =>
+  import('@/components/blog/RelatedPostsGrid').then(m => ({ default: m.RelatedPostsGrid }))
+);
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Helmet } from '@/lib/helmet';
