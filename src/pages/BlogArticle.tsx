@@ -20,6 +20,7 @@ import { BlogCTA } from '@/components/blog/BlogCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { ShaftLengthPicker } from '@/components/tools/ShaftLengthPicker';
 import { TradeInValueEstimator } from '@/components/tools/TradeInValueEstimator';
+import { RepowerCostEstimator } from '@/components/tools/RepowerCostEstimator';
 import { 
   Accordion, 
   AccordionContent, 
@@ -406,6 +407,11 @@ export default function BlogArticle() {
           {/* Interactive tool: Trade-In Value Estimator (slug-conditional) */}
           {article.slug === 'outboard-trade-in-value-ontario-hbw' && (
             <TradeInValueEstimator />
+          )}
+
+          {/* Interactive tool: Repower Cost Estimator (slug-conditional) */}
+          {article.slug === 'mercury-repower-cost-ontario-2026-cad' && (
+            <RepowerCostEstimator />
           )}
 
           {/* Author Byline (bottom) */}
