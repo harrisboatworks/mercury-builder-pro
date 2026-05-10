@@ -655,7 +655,7 @@ Five things move the right Mercury family for your boat:
 | FourStroke | 2.5 - 300 HP | Cruising, family use, fishing, pontoons | Fuel economy, smooth running, reliability | In stock and on-order |
 | Pro XS | 115 - 300 HP | Tournament fishing, bass boats, performance pontoons | Fast acceleration, top speed, hole shot | In stock and on-order |
 | SeaPro | 25 - 300 HP | Commercial use, charter, guides, fleet | Durability under heavy load | On-order |
-| Verado | 250 - 600+ HP | Offshore center consoles, twin/triple installs, yachts | Naturally-aspirated V8/V10/V12 smooth power, quiet operation | Special-order only |
+| Verado | 175 - 600 HP | Offshore center consoles, twin/triple installs, yachts | Naturally-aspirated V8/V10/V12 smooth power, quiet operation | Special-order only |
 | Avator | Electric | Eco-conscious low-HP applications | Zero emissions, quiet | On-order, evolving lineup |
 
 For your specific motor and HBW pricing in CAD, see the [motor selection page](/quote/motor-selection).
