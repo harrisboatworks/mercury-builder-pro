@@ -52,8 +52,6 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import MotorDocumentsSection from './MotorDocumentsSection';
 import MotorVideosSection from './MotorVideosSection';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { RelatedPostsGrid } from "../blog/RelatedPostsGrid";
-import { getMotorRelatedBlogSlugs } from "@/lib/motor-related-blog-posts";
 import { ScrollArea } from "../ui/scroll-area";
 import { FinanceCalculatorDrawer } from './FinanceCalculatorDrawer';
 import { StockStatusIndicator } from './StockStatusIndicator';
