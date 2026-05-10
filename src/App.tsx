@@ -123,6 +123,7 @@ const TradeInValuePage = lazyWithRetry(
   () => import("./pages/TradeInValuePage"),
   "TradeInValuePage"
 );
+const ToolsIndex = lazy(() => import("./pages/ToolsIndex"));
 const FrenchLanding = lazy(() => import("./pages/FrenchLanding"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
@@ -512,6 +513,9 @@ function AnimatedRoutes() {
         
         {/* Trade-In Value Estimator */}
         <Route path="/trade-in-value" element={<TradeInValuePage />} />
+
+        {/* Tools Hub */}
+        <Route path="/tools" element={<ToolsIndex />} />
         
         {/* About Page */}
         <Route path="/about" element={<About />} />

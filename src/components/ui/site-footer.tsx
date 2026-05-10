@@ -26,6 +26,14 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
     { label: 'Contact', href: '/contact' },
   ];
 
+  const toolsLinks = [
+    { label: 'Free Mercury repower tools', href: '/tools' },
+    { label: 'Trade-in value estimator', href: '/tools#trade-in-value' },
+    { label: 'Repower cost estimator', href: '/tools#repower-cost' },
+    { label: 'Boost eligibility checker', href: '/tools#boost-eligibility' },
+    { label: 'Shaft length picker', href: '/tools#shaft-length' },
+  ];
+
   const socialLinks = [
     { icon: Facebook, href: 'https://facebook.com/harrisboatworks', label: 'Facebook' },
     { icon: Instagram, href: 'https://instagram.com/harrisboatworks', label: 'Instagram' },
