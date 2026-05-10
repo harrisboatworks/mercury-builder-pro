@@ -14616,6 +14616,9 @@ image: /lovable-uploads/shaft-length-vs-transom-diagram.png
 
 You need a tape measure and 5 minutes:
 
+![Diagram showing how to measure outboard shaft length: 15-inch short shaft, 20-inch long shaft, 25-inch extra long shaft on a boat transom in side profile.](/lovable-uploads/diagram-shaft-length-measurement.png)
+*Standard outboard shaft lengths measured from the top of the transom (motor mount) down to the bottom of the hull at the waterline. Mismatched length causes prop ventilation or excess drag.*
+
 1. **Find the lowest point of the hull at the transom** (the point where water meets hull when running on plane)
 2. **Measure straight up** from that point to the top of the transom (where the motor will mount)
 3. **That measurement is your transom height**
