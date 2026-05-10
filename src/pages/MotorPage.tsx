@@ -399,6 +399,18 @@ export default function MotorPage() {
 
           <RelatedMotorsAndCTA motor={motor} display={display} />
 
+          {/* Related Mercury repower guides — lazy-loaded so blogArticles never enters the motor bundle */}
+          {relatedSlugs.length > 0 && (
+            <section className="mt-10 border-t border-gray-100 pt-8">
+              <h2 className="font-display text-xl font-bold text-repower-navy-900 md:text-2xl mb-4">
+                Related Mercury repower guides
+              </h2>
+              <Suspense fallback={null}>
+                <RelatedPostsGrid slugs={relatedSlugs} hideHeader />
+              </Suspense>
+            </section>
+          )}
+
         </div>
 
         {/* NOTE: No page-local sticky bottom CTA, the global UnifiedMobileBar
