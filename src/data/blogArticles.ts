@@ -9316,7 +9316,7 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
   {
     slug: 'why-mercury-dominates-outboard-market',
     title: "Why Mercury Dominates the Outboard Market in 2026",
-    description: "Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP naturally-aspirated Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for the 60 years we've been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
+    description: "Mercury Marine is one of the strongest outboard brands in North America, with one of the strongest dealer networks in Canada and a wide model range from 2.5 HP portables to the flagship V12 Verado class. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for the 60 years we've been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
