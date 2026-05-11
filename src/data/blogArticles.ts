@@ -17876,16 +17876,11 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
     category: 'Troubleshooting',
     readTime: '12 min read',
     keywords: ["Mercury SmartCraft alarm codes", "mercury smartcraft alarm codes", "mercury smartcraft alarm codes list", "mercury smartcraft alarm codes meanings", "mercury alarm code list", "smartcraft fault codes mercury", "mercury outboard error codes", "Mercury Guardian alarm", "Mercury fault codes list", "SmartCraft warning beeps", "Mercury overheat alarm", "Mercury low oil pressure alarm", "Mercury rev limiter"],
-    content: `# Mercury SmartCraft Alarm Codes: What Every Beep, Light, and Fault Code Means (2026 Encyclopedia)
+    content: `## Quick answer
 
-*Last reviewed: 2026-05-07*
+Mercury SmartCraft alarm codes are diagnostic signals from your Mercury outboard's onboard computer, displayed on SmartCraft gauges (VesselView, System View, etc.) or via the SmartCraft Connect app. Each code maps to a specific engine condition — some are warnings (you can keep running, get it checked soon), some are critical (stop and call). This page lists every Mercury SmartCraft alarm code currently in use, what each one means, severity tier, and what HBW recommends doing next.
 
-> **Quick answer:** SmartCraft alarms range from minor (low fuel, service due) to critical (overheat, low oil pressure). The first response to any alarm: idle down and assess. Don't ignore an alarm to finish the day, most critical alarms protect against catastrophic damage. Diagnostic booking at mercuryrepower.ca.
-
-If your Mercury just started beeping and you're trying to figure out what to do, read the **Audible Warning Patterns** section first, then come back. Don't keep running the motor while the alarm is active. Some alarms mean "annoying"; some mean "you have 30 seconds before something catastrophic happens." We'll tell you which is which.
-
-We've been a Mercury Platinum dealer in Ontario since 1965. We diagnose SmartCraft codes every week in our shop. This is the most complete, plain-English Mercury alarm code guide we've ever published, built from Mercury's official Guardian system documentation, factory training materials, and the codes we actually see come through the shop.
-
+If you have a code displaying right now: scroll to the code list below, or call HBW at (905) 342-2153 for live help.
 ---
 
 ## The Two Alarm Systems on Your Mercury
