@@ -302,7 +302,7 @@ function loadTranslatedBlogArticles(modulePath, exportName) {
     }));
     process.stdout.write(JSON.stringify(items));
   `;
-  const tmpFile = join(ROOT, 'scripts', `.blog-dump-${exportName}.mts`);
+  const tmpFile = join(ROOT, 'scripts', `.blog-dump-${exportName}.ts`);
   writeFileSync(tmpFile, dumpScript);
   // FAIL-LOUD: do NOT swallow errors. A silent return [] previously caused
   // the entire zh-CN sitemap to silently empty out without anyone noticing.
