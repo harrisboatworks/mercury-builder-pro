@@ -1948,7 +1948,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'Can I bring a non-Mercury motor to HBW for service?',
-        answer: 'Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer and require part-sourcing. [Contact us](/contact) for quotes.'
+        answer: 'For engine repairs, we only service Mercury and Mercruiser. For other engine brands we recommend a brand-specific dealer. We will happily repower a non-Mercury boat with a new Mercury, but that is a sales project, not non-Mercury service. [Contact us](/contact) to discuss.'
       },
       {
         question: 'Does HBW offer financing?',
