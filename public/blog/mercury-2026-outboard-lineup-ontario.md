@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,7 +31,7 @@ content_type: blog_article
 
 # Mercury 2026 Outboard Lineup for Ontario Boaters
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Mercury's 2026 lineup for Ontario covers 2.5 to 300 HP across FourStroke, Pro XS, and SeaPro families, plus Avator electric. Verado is special order only. Stocked allocation focuses on the high-volume cottage and fishing horsepowers, 9.9, 25, 60, 90, 115, 150. Live inventory at mercuryrepower.ca.
 
@@ -245,7 +245,7 @@ Start with your hull's capacity plate maximum HP, then consider how you use your
 
 ### What is the difference between Mercury FourStroke and Mercury Pro XS outboards?
 
-Mercury FourStroke outboards are designed for efficiency, smooth cruise, and versatility, ideal for fishing, family use, and general recreation. Mercury Pro XS models are tuned for performance: faster hole shot, higher top-end RPM, and stronger acceleration, using a 2-stroke direct-injection design. For bass anglers or anyone prioritizing quick planing and hard running, Pro XS is the choice. For most Ontario cottage and fishing use, FourStroke is the better all-around fit.
+Mercury FourStroke outboards are designed for efficiency, smooth cruise, and versatility, which makes them the right fit for most Ontario fishing, cottage, and family use. Mercury Pro XS models are performance-tuned four-stroke outboards. They are built for faster hole shot, stronger acceleration, higher-rpm performance, and more responsive handling on performance fishing hulls. For bass anglers or anyone prioritizing quick planing and hard running, Pro XS is worth considering. For most Ontario cottage and fishing use, FourStroke is still the better all-around value.
 
 ### What Mercury motors does Harris Boat Works stock for 2026?
 

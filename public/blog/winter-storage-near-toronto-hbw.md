@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,9 +31,9 @@ content_type: blog_article
 
 # Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
-> **Quick answer:** GTA boaters store at HBW for the same reason they service here, capacity, security, and no GTA-premium pricing. Indoor and shrinkwrap options. Book by September or you'll wait. Storage and winterization pricing at mercuryrepower.ca.
+> **Quick answer:** GTA boaters store at HBW for the same reason they service here: capacity, straight pricing, and a proper Mercury winterization before the boat sits. HBW storage is outdoor shrinkwrap storage, not on-site indoor storage. Book by September or you may be waiting.
 
 Every September, GTA boaters face the same decision: where do I store the boat for winter? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
 
@@ -71,7 +71,7 @@ GTA boaters often discover that "boat storage" at a local marina is just *parkin
 - **Steering/throttle cable lubrication**
 - **Cooling system inspection** (impeller condition check)
 - **Documentation** (everything recorded for next service)
-- **Storage** (outdoor with cover OR indoor, depending on tier)
+- **Outdoor storage** with shrinkwrap or proper cover, depending on the boat and package
 
 At HBW, all of this is part of the bundle. **At many GTA storage marinas, only "storage" is included**, winterization is $300-$600 extra, often by a different tech, sometimes inadequately done.
 
@@ -157,7 +157,7 @@ Walking through the actual timeline for a GTA boater wintering with us:
 
 **Early November**. Boat shrinkwrapped with proper frame, 2-4 vents installed, strapping for snow load.
 
-**November-March**. Boat sits in our outdoor storage area or any indoor option you've selected. Battery is on a trickle charger inside. Periodic visual inspections by our staff (we walk the storage area weekly).
+**November-March.** The boat sits in our outdoor storage area, properly winterized and protected for Ontario weather. Batteries are removed or maintained according to the storage package, and our staff keeps eyes on the yard through the winter.
 
 **Optional during winter (December-February):** Any service work approved (repower, repairs, upgrades) gets done.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,13 +29,15 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
+
+*Last verified: May 10, 2026. Trade policy and market data move quickly. Confirm current figures with the linked sources before quoting them externally.*
 
 > **Quick answer:** The 2026 Ontario boat market is steadier than the post-2020 surge, inventory is back, pricing is rational, and trade-in values are normalizing. Used motors are abundant; new Mercury allocation is healthy. Good year to repower or upgrade without bidding-war pressure. Build a quote at mercuryrepower.ca.
 
 ## Where the North American Market Stands
 
-The National Marine Manufacturers Association (NMMA) estimates that total new powerboat retail unit sales in the U.S. dropped about 8–10% in 2025, landing in the range of 215,000–225,000 units. That includes everything from personal watercraft to aluminum fishing boats to offshore cruisers.
+The National Marine Manufacturers Association (NMMA) estimates that total new powerboat retail unit sales in the U.S. dropped about 8.8% in 2025, landing in the range of 215,000–225,000 units (National Marine Manufacturers Association, 2025 retail data). That includes everything from personal watercraft to aluminum fishing boats to offshore cruisers.
 
 That decline followed a roughly 9–12% drop in 2024, when unit sales fell back to around 230,000–240,000 after the COVID-era surge. The pandemic boom of 2020–2021 was never sustainable; what we're seeing now is a return toward pre-COVID baseline levels rather than a collapse.
 
@@ -82,13 +84,13 @@ Canada's 2022 federal budget introduced a luxury tax on certain items, including
 
 The marine industry argued the tax was counterproductive, driving sales out of Canada and hurting Canadian builders and dealers without generating meaningful revenue. After heavy advocacy from NMMA Canada and industry groups, the federal government moved to wind down the luxury tax on subject vessels.
 
-For subject vessels (boats over $250,000), the CRA has confirmed luxury tax is no longer payable as of November 5, 2025. Vehicle and aircraft luxury tax may continue to apply in other contexts. For buyers looking at high-end pontoons, larger Legend packages, or other boats near the threshold, this removes a psychological barrier on the marine side.
+For subject vessels (boats over $250,000), the CRA has confirmed luxury tax is no longer payable as of November 5, 2025 (Canada Revenue Agency, Luxury Tax Notice LTN5; effective Nov 5, 2025). Vehicle and aircraft luxury tax may continue to apply in other contexts. For buyers looking at high-end pontoons, larger Legend packages, or other boats near the threshold, this removes a psychological barrier on the marine side.
 
 ## Interest Rates Are Finally Easing
 
 One of the biggest headwinds in 2023–2025 was the cost of borrowing; higher benchmark rates translated into higher [monthly payments](/blog/mercury-outboard-financing-ontario-2026) on boat loans, pushing some buyers out of the market.
 
-By early 2026, the rate environment is shifting. Major marine finance commentators note that rate cuts are beginning to filter through, and dealers expect that lower monthly payments will help "payment buyers" re-engage in the market.
+By early 2026, the Bank of Canada's policy rate sits near 2.25% after a series of cuts through 2025 (Bank of Canada policy rate decisions, 2025-2026), and rate cuts are beginning to filter through to marine lenders. Dealers expect that lower monthly payments will help "payment buyers" re-engage in the market.
 
 On a typical $60,000 boat package, even a 1% decrease in interest can shave $30–40 per month off payments over a five-year term, thousands over the life of the loan.
 

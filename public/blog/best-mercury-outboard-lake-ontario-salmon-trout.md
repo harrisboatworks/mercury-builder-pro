@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** For Lake Ontario salmon and trout trolling, look at a 150-250 HP Mercury FourStroke main with a 9.9 ProKicker for the slow speeds downriggers and divers want. Lake Ontario is open, cold, and unforgiving, pick the bigger end of your hull's range. Quote installed at mercuryrepower.ca.
 
@@ -59,6 +59,16 @@ Lake Ontario-specific factors:
 - **Mooring and slip storage.** Many Lake Ontario boats are slip-stored at marinas in Cobourg, Whitby, Newcastle, Port Credit, and other ports.
 
 **A note on cold water.** Lake Ontario water stays cold well into June and gets cold again by late September. [Transport Canada's cold-water survival guidance](https://tc.canada.ca/en/marine-transportation/publications/tp-13822-survival-cold-waters-2003) warns that immersion in water below 15°C is dangerous, even for strong swimmers. Carry a PFD, file a float plan, and dress for the water temperature, not the air temperature.
+
+### Why Lake Ontario rigs almost always run two motors
+
+The big lake doesn't reward single-motor setups for serious salmon and trout fishing. Two reasons.
+
+First, trolling speed. Most salmon and trout trolling runs at 1.5 to 3 knots. A 200 HP main motor at idle is still pushing the boat too fast for the strike zone. A 9.9 or 15 HP kicker drops you into the speed window where the lures actually work. Trying to do this with a main motor alone burns through the fuel-system tolerance and creates carbon issues over time.
+
+Second, redundancy. Lake Ontario isn't Rice Lake. If a main motor quits 12 km off Port Hope in October, you don't get to call a tow. The kicker gets you home. We've sold customers a kicker as a "want" and watched them treat it as a "needed it twice this season already."
+
+The typical setup we rig: a Pro XS or Verado main (200-300 HP depending on hull), with a 9.9 ProKicker on a remote-operated bracket so the captain can run it from the helm without leaving the seat. The Command Thrust gearcase on the kicker matters here, it holds the boat at trolling speed in a chop better than a standard gearcase. Anyone running Lake Ontario seriously eventually arrives at this answer.
 
 ## Best Mercury for Lake Ontario by use case
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tariffs-trade-canadian-boating-2026.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Tariffs, Trade, and Canadian Boating: What Harris Boat Works Customers S
 description: "U.S. - Canada tariffs, retaliatory measures, and the 2026 CUSMA review are creating uncertainty in the boating world. Here's a plain-language breakdown of what it all..."
 category: "Market Insight"
 date_published: 2026-02-06
-date_modified: 2026-02-06
+date_modified: 2026-05-10
 keywords: ["tariffs boating canada","CUSMA boating","mercury outboard tariff","canada us trade boats","boat prices tariffs 2026"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,15 +23,17 @@ content_type: blog_article
 
 **Category:** Market Insight  
 **Published:** 2026-02-06  
-**Last updated:** 2026-02-06  
+**Last updated:** 2026-05-10  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tariffs-trade-canadian-boating-2026
 
 ## Article
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Cross-border trade noise affects boat and motor pricing on a moving timeline. Mercury outboards sold in Canada are priced in CAD and Mercury manages tariff exposure at the manufacturer level. We don't surprise customers with mid-quote price hikes, frozen pricing on every quote at mercuryrepower.ca.
+
+> *Last verified: May 10, 2026. Trade policy moves fast. Confirm current figures with the linked sources before quoting them externally.*
 
 If you've glanced at the news over the past year, you've probably seen stories about new tariffs, trade skirmishes, and the upcoming review of the Canada–United States–Mexico Agreement (CUSMA/USMCA). For most people, it's background noise, right up until it sounds like it might affect the cost of a boat or an outboard.
 
@@ -44,7 +46,7 @@ The current climate is the result of a sequence of policy moves since early 2025
 - **Early 2025**: The Trump administration announced new tariffs on a variety of imports, including a 25% duty on certain Canadian products that did not qualify under CUSMA's rules of origin.
 - **Spring 2025**: Canada responded with retaliatory counter-tariffs on selected U.S. goods, echoing earlier disputes over steel and aluminum from the late 2010s.
 - **Summer 2025**: Some U.S. tariffs on non-CUSMA-compliant Canadian goods were raised to as high as 35%, increasing pressure on Canadian exporters.
-- **September 2025**: Canada announced it would remove most of its retaliatory tariffs on U.S. imports, while maintaining measures on steel, aluminum, and certain autos.
+- **September 2025**: Canada announced it would remove most of its retaliatory tariffs on U.S. imports, while maintaining measures on steel, aluminum, and certain autos. (Department of Finance Canada; effective Sept 1, 2025)
 - **Late 2025**: The U.S. Trade Representative (USTR) began consultations and hearings in advance of the 2026 CUSMA joint review. NMMA testified on recreational boating priorities, emphasizing the need to preserve duty-free treatment for marine products.
 
 Throughout this period, one crucial protection has remained in place: goods that qualify under CUSMA, including most recreational boats and marine engines that meet content and origin rules, continue to cross the border duty-free.
@@ -124,7 +126,7 @@ For Harris Boat Works customers, that often means:
 
 ## The Big Fork in the Road: CUSMA Review in 2026
 
-Under CUSMA, the three member countries are required to conduct a formal joint review six years after the agreement's entry into force. That review, scheduled for July 2026, will determine whether the agreement is extended, amended, or allowed to move toward expiry in 2036.
+Under CUSMA, the three member countries are required to conduct a formal joint review six years after the agreement's entry into force. That review, scheduled for July 2026, will determine whether the agreement is extended, amended, or allowed to move toward expiry in 2036. (USTR, USMCA review process, joint review July 1, 2026)
 
 ### Key Points for Boating
 

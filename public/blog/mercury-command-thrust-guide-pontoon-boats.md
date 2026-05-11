@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,11 +29,13 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Command Thrust uses a larger gearcase and prop than the standard FourStroke at the same horsepower. On a loaded pontoon or a heavy aluminum hull, that means faster planing, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See pricing at mercuryrepower.ca.
 
-Mercury Command Thrust is the gearcase option that turns a "good" pontoon Mercury into a "great" one. It is not a separate motor family. It is a gearcase upgrade available on Mercury FourStroke 115 HP and up. The bigger gearcase, larger prop, and torque-tuned gear ratio give pontoons meaningful hole shot and load-handling improvement. The cost premium over standard is worth it on pontoons. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Mercury Command Thrust is the gearcase option that turns a "good" pontoon Mercury into a "great" one. It is not a separate motor family. It is a gearcase option available on select Mercury models, including common pontoon-friendly sizes below and above 115 HP.
+
+The bigger gearcase, larger prop, and torque-tuned ratio give pontoons meaningful hole shot and load-handling improvement. The cost premium over standard is usually worth it on pontoons, especially when the boat is loaded with people, fuel, coolers, and cottage gear. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -43,7 +45,7 @@ The Command Thrust math works on pontoons because pontoons are heavy, blunt-fron
 
 ## What Command Thrust actually is
 
-Command Thrust is a Mercury gearcase variant available on most Mercury FourStrokes 115 HP and up (also 150 Pro XS V6 and Verado where applicable). The differences from the standard gearcase:
+Command Thrust is a Mercury gearcase variant available on select Mercury FourStroke, ProKicker, Pro XS, and related high-thrust applications. For HBW customers, the common decision points are usually 60 CT, 90 CT, 115 CT, and larger pontoon or heavy-hull setups. The differences from the standard gearcase:
 
 - **Larger gearcase nose.** More volume displaced under load, less cavitation in heavy boats.
 - **Larger prop diameter.** The bigger gearcase fits a bigger prop, which moves more water per revolution.
@@ -186,7 +188,7 @@ Typically $500 to $1,500 CAD over the standard gearcase at the same HP, dependin
 No. Command Thrust gearcases require Command Thrust props. The larger diameter, different geometry, and different hub design are not compatible with standard props.
 
 **Is Command Thrust available on all Mercury motors?**
-On FourStroke 115 HP and up. Some Mercury Pro XS and Verado motors also have Command Thrust variants. Below 115 HP, the standard gearcase is the only option.
+No. Command Thrust is not available on every Mercury motor, but it is available on select high-thrust models below and above 115 HP. For pontoon customers, the important options are usually 60 CT, 90 CT, 115 CT, and larger CT-style setups. The right answer depends on the exact motor family, shaft length, gearcase, and hull.
 
 **Does Command Thrust hurt top speed?**
 Slightly, yes. The torque-tuned ratio trades some top end for hole shot and pulling power. Top speed differences are typically 2 to 5 mph compared to standard gearcase. On pontoons, this is the right trade. On bass boats, it usually is not.
@@ -198,7 +200,7 @@ On heavy boats running at lower planing speeds (typical pontoon use), yes. The l
 For aluminum console fishing boats under 18 ft, standard gearcase is fine. For 18+ ft deep-V aluminum or heavy fishing rigs with full gear, Command Thrust gives meaningful improvement. We assess per boat.
 
 **Can I retrofit Command Thrust to my existing Mercury motor?**
-Yes. The gearcase can be swapped on most Mercury FourStrokes 115 HP and up. The cost includes the new gearcase, new prop, and labor. Sometimes worth doing as a separate project; usually most cost-effective during a planned repower.
+Sometimes. A Command Thrust conversion depends on the exact motor, gearcase, shaft length, controls, prop, and whether the swap makes financial sense. In most cases, it is cleaner and more cost-effective to choose the right gearcase during a planned repower. The cost includes the new gearcase, new prop, and labor. Sometimes worth doing as a separate project; usually most cost-effective during a planned repower.
 
 **Will Command Thrust work with my existing rigging?**
 Yes in most cases. The motor mounting, throttle, shift, and steering systems are the same. The gearcase is below the powerhead and does not affect rigging compatibility.
@@ -236,7 +238,7 @@ No. Command Thrust gearcases require Command Thrust props. The larger diameter, 
 
 ### Is Command Thrust available on all Mercury motors?
 
-On FourStroke 115 HP and up. Some Mercury Pro XS and Verado motors also have Command Thrust variants. Below 115 HP, the standard gearcase is the only option.
+No. Command Thrust is not available on every Mercury motor, but it is available on select high-thrust models below and above 115 HP. For pontoon customers, the important options are usually 60 CT, 90 CT, 115 CT, and larger CT-style setups. The right answer depends on the exact motor family, shaft length, gearcase, and hull.
 
 ### Does Command Thrust hurt top speed?
 
@@ -252,7 +254,7 @@ For aluminum console fishing boats under 18 ft, standard gearcase is fine. For 1
 
 ### Can I retrofit Command Thrust to my existing Mercury motor?
 
-Yes. The gearcase can be swapped on most Mercury FourStrokes 115 HP and up. The cost includes the new gearcase, new prop, and labor. Sometimes worth doing as a separate project; usually most cost-effective during a planned repower.
+Sometimes. A Command Thrust conversion depends on the exact motor, gearcase, shaft length, controls, prop, and whether the swap makes financial sense. In most cases, it is cleaner and more cost-effective to choose the right gearcase during a planned repower. The cost includes the new gearcase, new prop, and labor. Sometimes worth doing as a separate project; usually most cost-effective during a planned repower.
 
 ### Will Command Thrust work with my existing rigging?
 
