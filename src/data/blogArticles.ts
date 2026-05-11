@@ -1898,7 +1898,7 @@ Gores Landing, Ontario, on the south shore of Rice Lake. Roughly 90 minutes east
 Mercury outboard motors (the core business). Legend Boats. Used boats. Service and storage. Repower projects. We do not sell saltwater motors, PWCs, jet boats, or non-Mercury outboards as a primary line.
 
 **Can I bring a non-Mercury motor to HBW for service?**
-Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer and require part-sourcing. [Contact us](/contact) for quotes.
+For engine repairs, we only service Mercury and Mercruiser. For other brands we recommend a brand-specific dealer. We will repower a non-Mercury boat with a new Mercury — that is a sales project, not non-Mercury service. [Contact us](/contact) to discuss.
 
 **Does HBW offer financing?**
 Yes. Mercury Repower Financing is available for qualified buyers. Current rates are shown on our [financing page](/financing) and confirmed in your quote. We process applications in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
