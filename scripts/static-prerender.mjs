@@ -3406,13 +3406,51 @@ const staticSitemapEntries = [
   { loc: '/terms', priority: 0.3, changefreq: 'yearly' },
 ];
 
-// Sitemap includes ALL blog articles (scheduled + live) so Google can discover
-// future-dated posts. Page-level visibility gate (parseLocalDate in BlogArticle.tsx)
-// handles 200/404 at request time. Use publishDate as lastmod for scheduled posts.
-const allBlogArticlesForSitemap = loadAllBlogArticlesForSitemap();
-console.log(`[static-prerender] loaded ${allBlogArticlesForSitemap.length} total blog articles for sitemap (vs ${blogArticles.length} prerendered)`);
+// Sitemap includes blog articles that are PUBLICLY VISIBLE today: must have a
+// past-or-today publishDate/datePublished and not be flagged hidden/visible:false.
+// Future-dated drafts and hidden orphans are excluded from sitemap.xml so AI
+// crawlers (ChatGPT, Perplexity, Bing) only ingest content the public can see
+// on /blog/. Page-level visibility gate still handles 200/404 at request time.
+function isPubliclyVisible(article) {
+  if (!article || !article.slug) return false;
+  if (article.hidden === true) return false;
+  if (article.visible === false) return false;
+  const dateStr = article.publishDate || article.datePublished;
+  if (!dateStr) return false;
+  const todayYmd = new Date().toISOString().slice(0, 10);
+  if (String(dateStr).slice(0, 10) > todayYmd) return false;
+  return true;
+}
 
-const blogSitemapEntries = allBlogArticlesForSitemap.map(a => ({
+const allBlogArticlesForSitemap = loadAllBlogArticlesForSitemap();
+const visibleEnglishArticles = allBlogArticlesForSitemap.filter(isPubliclyVisible);
+const visibleFrenchArticles = frenchBlogArticles.filter(isPubliclyVisible);
+const visibleKoreanArticles = koreanBlogArticles.filter(isPubliclyVisible);
+const visibleMandarinArticles = mandarinBlogArticles.filter(isPubliclyVisible);
+const visibleSpanishArticles = spanishBlogArticles.filter(isPubliclyVisible);
+
+function countFilterReasons(list) {
+  let future = 0, hidden = 0;
+  const todayYmd = new Date().toISOString().slice(0, 10);
+  for (const a of list) {
+    if (!a) continue;
+    if (a.hidden === true || a.visible === false) { hidden++; continue; }
+    const d = a.publishDate || a.datePublished;
+    if (!d || String(d).slice(0, 10) > todayYmd) { future++; }
+  }
+  return { future, hidden };
+}
+const enReasons = countFilterReasons(allBlogArticlesForSitemap.filter(a => !isPubliclyVisible(a)));
+const frReasons = countFilterReasons(frenchBlogArticles.filter(a => !isPubliclyVisible(a)));
+const koReasons = countFilterReasons(koreanBlogArticles.filter(a => !isPubliclyVisible(a)));
+const zhReasons = countFilterReasons(mandarinBlogArticles.filter(a => !isPubliclyVisible(a)));
+const esReasons = countFilterReasons(spanishBlogArticles.filter(a => !isPubliclyVisible(a)));
+const totalFuture = enReasons.future + frReasons.future + koReasons.future + zhReasons.future + esReasons.future;
+const totalHidden = enReasons.hidden + frReasons.hidden + koReasons.hidden + zhReasons.hidden + esReasons.hidden;
+console.log(`[static-prerender] loaded ${allBlogArticlesForSitemap.length} total blog articles for sitemap (vs ${blogArticles.length} prerendered)`);
+console.log(`[static-prerender] sitemap eligibility: en ${visibleEnglishArticles.length}/${allBlogArticlesForSitemap.length}, fr ${visibleFrenchArticles.length}/${frenchBlogArticles.length}, ko ${visibleKoreanArticles.length}/${koreanBlogArticles.length}, zh ${visibleMandarinArticles.length}/${mandarinBlogArticles.length}, es ${visibleSpanishArticles.length}/${spanishBlogArticles.length} (filtered out: ${totalFuture} future-dated, ${totalHidden} hidden)`);
+
+const blogSitemapEntries = visibleEnglishArticles.map(a => ({
   loc: `/blog/${a.slug}`,
   priority: 0.7,
   changefreq: 'monthly',
