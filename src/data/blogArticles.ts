@@ -25135,6 +25135,130 @@ Call **(905) 342-2153** or text **(647) 952-2153**.
       { question: 'Did I damage the powerhead by overheating?', answer: 'Depends on duration and how you responded. If you got the alarm, throttled to idle, and shut down within a few minutes — usually fine. If you kept running through the alarm, you may have damaged head gasket, rings, or valves. We can pressure-test to confirm.' },
     ],
   },
+
+  // East GTA suburb landing pages — 2026-05-11
+  {
+    slug: 'mercury-dealer-pickering-ontario-hbw',
+    title: 'Mercury Dealer for Pickering: 50 Minutes from Rice Lake',
+    description: 'Mercury Platinum dealer for Pickering customers — Harris Boat Works on Rice Lake is about 50 minutes northeast via the 401 and 115. Mercury repower, sales, service, and storage for east-GTA boat owners.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '4 min',
+    keywords: ['mercury dealer pickering', 'mercury repower pickering', 'mercury outboard pickering ontario', 'boat motor dealer pickering'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake, about 50 minutes northeast of Pickering via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, service, and winter storage for Pickering, Ajax-edge, and east-Toronto customers.
+
+## Why Pickering customers come to Rice Lake
+
+Pickering is closer to Rice Lake than most of the GTA — it's actually a reasonable Saturday drive. Customers cite three reasons for coming up:
+
+**Closer than you think.** 50 minutes door-to-door from most of Pickering. That's a Tim Hortons coffee away. Closer than driving to Yorkdale on a busy Saturday.
+
+**Mercury Platinum tier.** Top dealer tier in Mercury's program. Depth of parts, warranty support, and technical knowledge.
+
+**Online quote in 3 minutes.** Our quote builder at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote) shows real Canadian dollar pricing without the call-for-quote game.
+
+**Family marina, since 1947.** Three generations. Reputation depends on the next customer telling their neighbour.
+
+## What HBW handles
+
+- Mercury outboard sales (2.5 HP to 600 HP)
+- Repower service (motor, rigging, controls, prop)
+- Mercury parts and warranty work (Platinum tier)
+- Outdoor winter storage with shrinkwrap (no indoor)
+- Online quote builder with real CAD pricing
+
+Mercury only — Yamaha, Honda, Suzuki are outside our scope.
+
+## Getting here from Pickering
+
+Highway 401 east to Highway 115 north, then County Road 28 to Gores Landing. About 50 minutes outside rush hour. The drive is mostly highway until the last 15 minutes which becomes cottage country.
+
+**Phone:** (905) 342-2153 | **Text:** (647) 952-2153
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## What to do first
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+2. Read the [Repower vs Buy New decision guide](https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario)
+3. Call or text with specific questions
+4. Drive up when you're ready to order
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing since 1947. Mercury Marine Platinum Dealer serving the GTA.*`,
+    faqs: [
+      { question: 'How far is HBW from Pickering?', answer: 'About 50 minutes via Highway 401 east and Highway 115 north. Roughly 75 km. Closer than most of the GTA — almost a non-decision drive for repower service.' },
+      { question: 'Why drive 50 minutes for a Mercury dealer?', answer: 'Closer than you might think (similar to a typical Toronto commute), Mercury Platinum tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture.' },
+      { question: 'Can I quote and order remotely?', answer: 'Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, coordinate install/delivery from there.' },
+    ],
+  },
+  {
+    slug: 'mercury-dealer-whitby-ontario-hbw',
+    title: 'Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake',
+    description: 'Mercury Platinum dealer for Whitby customers — Harris Boat Works on Rice Lake is about 45 minutes north via the 401 and 115. Mercury repower, sales, parts, and winter storage for Durham Region boat owners.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '4 min',
+    keywords: ['mercury dealer whitby', 'mercury repower whitby', 'mercury outboard whitby ontario', 'boat motor service durham region'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake, about 45 minutes north of Whitby via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, service, parts, and winter storage for Whitby and Durham Region customers. The drive is short enough to make HBW a realistic primary dealer for ongoing service, not just one-off purchases.
+
+## Why Whitby customers come to Rice Lake
+
+Whitby is one of the closer GTA cities to Rice Lake. The drive is short enough to make us a real primary dealer, not just for big purchases.
+
+**45 minutes.** That's lunch on the highway. Most Whitby customers we work with come up multiple times a year — spring commissioning, mid-season service, fall winterization. The drive is just part of boat ownership.
+
+**Mercury Platinum tier.** Depth on parts, warranty, harder technical jobs.
+
+**Online quote in 3 minutes** at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote). Real CAD pricing, no phone-call gatekeeping.
+
+**Family marina since 1947.** Three generations. We're the dealer that calls back when you leave a message.
+
+## What HBW handles
+
+- Mercury outboard sales (2.5 HP to 600 HP)
+- Repower service (full install, rigging, controls, prop, sea trial)
+- Mercury Platinum parts and warranty work
+- Outdoor winter storage with shrinkwrap (no indoor)
+- Online quote builder
+
+Mercury only — we don't service Yamaha, Honda, or Suzuki.
+
+## Getting here from Whitby
+
+Highway 401 east to Highway 115 north, then County Road 28 to Gores Landing. About 45 minutes outside rush hour. Easy weekend morning drive — most Whitby customers stop in Port Hope or Cobourg for coffee on the way up.
+
+**Phone:** (905) 342-2153 | **Text:** (647) 952-2153
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## What to do first
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+2. Read the [Mercury motor families comparison](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) if you're choosing a tier
+3. Call or text with specific questions
+4. Drive up when you're ready to order
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing since 1947. Mercury Marine Platinum Dealer serving the GTA.*`,
+    faqs: [
+      { question: 'How far is HBW from Whitby?', answer: 'About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.' },
+      { question: 'Can HBW be my primary Mercury dealer if I live in Whitby?', answer: 'Yes. Many Whitby customers use us as primary dealer — spring commissioning, mid-season service, fall winterization. The 45-minute drive is short enough to make it practical.' },
+      { question: 'Do you serve Brooklin and north Whitby?', answer: 'Yes. Brooklin and north Whitby are within the same drive time. We have customers across all of Durham Region.' },
+    ],
+  },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
