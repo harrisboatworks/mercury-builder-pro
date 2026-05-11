@@ -18120,6 +18120,26 @@ Save this URL or screenshot the audible warning table above. It's the single mos
 `,
     faqs: [
       {
+        question: "What does a Mercury SmartCraft alarm code mean?",
+        answer: "A Mercury SmartCraft alarm code is a diagnostic signal from the outboard's ECU, indicating a specific engine condition. Codes map to sensor faults, system warnings, or critical protection events. This page lists every active code, its meaning, and severity."
+      },
+      {
+        question: "How do I read Mercury SmartCraft alarm codes?",
+        answer: "SmartCraft codes display on Mercury VesselView gauges (502, 703, 903), compatible chartplotters via NMEA 2000, or the SmartCraft Connect / Mercury Marine App. The audible Guardian alarm tells you something is wrong now; the displayed code tells you what."
+      },
+      {
+        question: "Is it safe to keep running my Mercury with an alarm code displayed?",
+        answer: "It depends on the code. Green-tier codes (maintenance reminder) mean keep running, book service. Yellow-tier codes (low voltage, water in fuel) mean throttle back and head to dock. Red-tier codes (overheat, low oil pressure) mean stop immediately. Don't ignore critical alarms to finish the day."
+      },
+      {
+        question: "Does Mercury SmartCraft connect to my phone?",
+        answer: "Yes. VesselView Mobile and the Mercury Marine App connect via SmartCraft Connect module or Bluetooth on compatible motors. The app shows fault categories, engine data, and maintenance tracking. Dealer diagnostic tools see more detail than the consumer app."
+      },
+      {
+        question: "Where can I find a list of all Mercury SmartCraft alarm codes?",
+        answer: "This page. HBW maintains a code-by-code reference based on Mercury factory training, G3 diagnostic software, and the codes we actually see in our Ontario shop. For a definitive read on your specific motor, a dealer diagnostic scan is the gold standard."
+      },
+      {
         question: "My Mercury Marine App shows a fault code but the alarm isn't going off, should I be worried?",
         answer: "A historical (cleared) fault means the motor detected an issue at some point but it's resolved now. Worth mentioning at next service. An active fault with no audible alarm is unusual, possibly a non-critical code (maintenance reminder, communications fault). Bring it in for diagnostics if you're not sure."
       },
