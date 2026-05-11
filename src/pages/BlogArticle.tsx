@@ -326,9 +326,6 @@ export default function BlogArticle() {
             </div>
           </header>
 
-          {/* Author byline card (above body content) */}
-          <AuthorByline name={article.author} variant="card" className="mb-8" />
-
           {/* Featured Image */}
           <div className="aspect-[16/9] overflow-hidden rounded-lg bg-repower-paper border border-repower-navy-900/10 mb-10">
             {heroImgError ? (
