@@ -11141,7 +11141,7 @@ Most major aluminum boat brands (Lund, Crestliner, Princecraft, Lowe) come Mercu
 
 ### 3. Complete lineup coverage
 
-Mercury covers every recreational HP class from 2.5 portable up through 600+ HP Verado. Pro XS for performance. SeaPro for commercial. Avator for electric.
+Mercury covers every recreational HP class from 2.5 portable up through Mercury's flagship V12 600 HP Verado class. Pro XS for performance. SeaPro for commercial. Avator for electric.
 
 Yamaha has gaps in the lineup at certain HP classes and use cases, particularly in commercial-duty and small-portable applications.
 
