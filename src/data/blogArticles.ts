@@ -24619,8 +24619,6 @@ Do the homework from Mississauga before you leave:
     ],
   },
 
-  },
-
   {
     slug: 'mercury-dealer-vaughan-ontario-hbw',
     title: 'Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake',
