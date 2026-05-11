@@ -41,7 +41,7 @@ export default function RepowerHub() {
           { key: 'cost', label: 'All-in Cost (CAD before HST)' },
         ],
         rows: [
-          { hp: '9.9 to 25 HP', use: 'Small tin boats, kickers', cost: 'Motor only, $2,000 to $5,500' },
+          { hp: '9.9 to 25 HP', use: 'Small tin boats, kickers', cost: '$3,500 to $8,500' },
           { hp: '40 to 60 HP', use: '14 to 16 ft aluminum console', cost: '$11,000 to $15,000' },
           { hp: '75 to 115 HP', use: '16 to 18 ft aluminum console (most common)', cost: '$17,000 to $22,000' },
           { hp: '150 HP', use: '18 to 20 ft, pontoons, water sports', cost: '$23,000 to $30,000' },
