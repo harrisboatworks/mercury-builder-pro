@@ -730,7 +730,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                     </Text>
                   </View>
                   <Text style={[styles.pricingValue, styles.discountValue]}>
-                    -${(Number(quoteData.tradeInValue) || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    -${safeMoney(quoteData.tradeInValue)}
                   </Text>
                 </View>
               )}
