@@ -17875,7 +17875,7 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
     publishDate: '2026-05-25',
     category: 'Troubleshooting',
     readTime: '12 min read',
-    keywords: ["Mercury SmartCraft alarm codes", "mercury smartcraft alarm codes", "mercury smartcraft alarm codes list", "mercury smartcraft alarm codes meanings", "mercury alarm code list", "smartcraft fault codes mercury", "mercury outboard error codes", "Mercury Guardian alarm", "Mercury fault codes list", "SmartCraft warning beeps", "Mercury overheat alarm", "Mercury low oil pressure alarm", "Mercury rev limiter"],
+    keywords: ['mercury smartcraft alarm codes', 'mercury smartcraft alarm codes list', 'mercury smartcraft alarm codes meanings', 'mercury alarm code list', 'smartcraft fault codes mercury', 'mercury outboard error codes', 'mercury smartcraft diagnostic', 'mercury outboard warning lights'],
     content: `## Quick answer
 
 Mercury SmartCraft alarm codes are diagnostic signals from your Mercury outboard's onboard computer, displayed on SmartCraft gauges (VesselView, System View, etc.) or via the SmartCraft Connect app. Each code maps to a specific engine condition — some are warnings (you can keep running, get it checked soon), some are critical (stop and call). This page lists every Mercury SmartCraft alarm code currently in use, what each one means, severity tier, and what HBW recommends doing next.
