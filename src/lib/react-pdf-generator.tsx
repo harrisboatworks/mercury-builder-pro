@@ -182,8 +182,10 @@ export async function generatePDFBlob(data: ReactPdfQuoteData): Promise<Blob> {
 
     return pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
   } catch (error) {
-    console.error('Failed to generate PDF blob:', error);
-    throw error;
+    const errMsg = error instanceof Error ? error.message : String(error);
+    const errStack = error instanceof Error ? error.stack : undefined;
+    console.error('Failed to generate PDF blob:', errMsg, errStack);
+    throw new Error(`PDF generation failed: ${errMsg}`);
   }
 }
 
