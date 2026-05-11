@@ -11171,7 +11171,7 @@ If you have a Yamaha-rigged boat that you like and your local Yamaha dealer trea
 | Factory rigging on Canadian boats | Most common | Less common |
 | Parts availability speed | Faster | Slower |
 | Service expertise availability | Wider | Narrower |
-| Lineup HP coverage | Full (2.5 to 600+) | Strong but with some gaps |
+| Lineup HP coverage | Full (2.5 HP to V12 600 HP) | Strong but with some gaps |
 | Resale value in Ontario | Holds well | Holds, slightly less |
 | Best fit | Ontario freshwater | Coastal saltwater, specific applications |
 
