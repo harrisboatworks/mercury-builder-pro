@@ -1836,7 +1836,7 @@ Sometimes nominally on motor price, but the long-term math usually favors HBW. M
 
 ### "Do you handle non-Mercury motors?"
 
-Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer and require part-sourcing. [Contact us](/contact) for non-Mercury service quotes.
+For engine repairs, we only service Mercury and Mercruiser. For other brands, we recommend a brand-specific dealer. Note that we will repower virtually any boat with a new Mercury, regardless of what is hanging on the transom today. [Contact us](/contact) to talk through a Mercury repower.
 
 ### "What if I bought my boat elsewhere?"
 
