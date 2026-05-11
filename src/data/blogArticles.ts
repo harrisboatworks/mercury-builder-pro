@@ -25259,6 +25259,191 @@ Highway 401 east to Highway 115 north, then County Road 28 to Gores Landing. Abo
       { question: 'Do you serve Brooklin and north Whitby?', answer: 'Yes. Brooklin and north Whitby are within the same drive time. We have customers across all of Durham Region.' },
     ],
   },
+
+  // East GTA suburb landing pages — Ajax / Oshawa / Bowmanville
+  {
+    slug: 'mercury-dealer-ajax-ontario-hbw',
+    title: 'Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake',
+    description: 'Mercury Platinum dealer for Ajax customers — Harris Boat Works on Rice Lake is about 45 minutes via the 401 and 115. Mercury repower, sales, parts, and winter storage for Durham Region boat owners.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '4 min',
+    keywords: ['mercury dealer ajax', 'mercury repower ajax', 'mercury outboard ajax ontario', 'boat motor service durham region ajax'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake, about 45 minutes northeast of Ajax via Highway 401 east and Highway 115 north. We handle Mercury outboard sales, repowers, service, and winter storage for Ajax, Pickering-edge, and Durham Region customers.
+
+## Why Ajax customers come to Rice Lake
+
+Ajax is one of the closer GTA cities to Rice Lake. 45 minutes is realistic for ongoing service, not just one-off purchases.
+
+**Short drive.** That's a Tim Hortons + a podcast each way. Closer than driving to many parts of Toronto for any service.
+
+**Mercury Platinum tier.** Top dealer level in Mercury's program. Matters for parts, warranty, technical depth.
+
+**Online quote in 3 minutes** at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote). Real CAD pricing, no call-for-quote.
+
+**Family marina since 1947.** Three generations. Reputation matters more than the next sale.
+
+## What HBW handles
+
+- Mercury outboard sales (2.5 HP to 600 HP)
+- Repower service (full install, rigging, controls, prop)
+- Mercury Platinum parts and warranty
+- Outdoor winter storage with shrinkwrap (no indoor)
+- Online quote builder
+
+Mercury only — we don't service Yamaha, Honda, or Suzuki.
+
+## Getting here from Ajax
+
+Highway 401 east to Highway 115 north, then County Road 28 to Gores Landing. About 45 minutes outside rush hour. Most Ajax customers stop in Cobourg or Port Hope for coffee.
+
+**Phone:** (905) 342-2153 | **Text:** (647) 952-2153
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## What to do first
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+2. Read the [Repower vs Buy New decision guide](https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario)
+3. Call or text with questions
+4. Drive up when ready
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing since 1947. Mercury Marine Platinum Dealer serving the GTA.*`,
+    faqs: [
+      { question: 'How far is HBW from Ajax?', answer: 'About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.' },
+      { question: 'Why drive to Rice Lake from Ajax?', answer: 'Mercury Platinum tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture, family marina since 1947.' },
+      { question: 'Can I use HBW as my primary Mercury dealer?', answer: 'Yes. Many Durham Region customers do — spring commissioning, mid-season service, fall winterization. 45 minutes is short enough to make it practical.' },
+    ],
+  },
+  {
+    slug: 'mercury-dealer-oshawa-ontario-hbw',
+    title: 'Mercury Dealer for Oshawa: 40 Minutes to Rice Lake',
+    description: 'Mercury Platinum dealer for Oshawa customers — Harris Boat Works on Rice Lake is about 40 minutes via the 401 and 115. Mercury repower, sales, parts, and winter storage for Durham Region boat owners.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '4 min',
+    keywords: ['mercury dealer oshawa', 'mercury repower oshawa', 'mercury outboard oshawa ontario', 'boat motor service durham region oshawa'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake, about 40 minutes northeast of Oshawa via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, service, parts, and winter storage for Oshawa and east-Durham Region customers.
+
+## Why Oshawa customers come to Rice Lake
+
+Oshawa is one of the closest GTA cities to Rice Lake. 40 minutes is barely a commute by Ontario standards.
+
+**40 minutes.** Lunch-on-the-highway close. We're effectively a Durham Region dealer who happens to be in cottage country.
+
+**Mercury Platinum tier.** Top dealer level. Parts depth, warranty support, deeper technical knowledge on repowers.
+
+**Online quote in 3 minutes** at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote). Real CAD pricing, no call-for-quote gatekeeping.
+
+**Family marina since 1947.** Three generations. Sustainable business, not a quota-driven sales floor.
+
+## What HBW handles
+
+- Mercury outboard sales (2.5 HP to 600 HP)
+- Repower service (full install, rigging, controls, prop, sea trial)
+- Mercury Platinum parts and warranty work
+- Outdoor winter storage with shrinkwrap (no indoor)
+- Online quote builder
+
+Mercury only — we don't service Yamaha, Honda, or Suzuki.
+
+## Getting here from Oshawa
+
+Highway 401 east to Highway 115 north, then County Road 28 to Gores Landing. About 40 minutes outside rush hour. The drive becomes rural about 20 minutes in — cottage country starts faster than you'd think.
+
+**Phone:** (905) 342-2153 | **Text:** (647) 952-2153
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## What to do first
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+2. Read the [Mercury motor families guide](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+3. Call or text with specific questions
+4. Drive up when you're ready
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing since 1947. Mercury Marine Platinum Dealer serving the GTA.*`,
+    faqs: [
+      { question: 'How far is HBW from Oshawa?', answer: 'About 40 minutes via Highway 401 east and Highway 115 north. Roughly 65 km. One of the closest GTA cities to Rice Lake.' },
+      { question: 'Can HBW be my primary Mercury dealer in Oshawa?', answer: 'Yes. 40 minutes is short enough to make us a real primary dealer — many Oshawa customers use us for spring commissioning, mid-season service, fall winterization, and storage.' },
+      { question: 'Do you serve north Oshawa and Courtice?', answer: 'Yes. Courtice and north Oshawa are within the same drive time. We have customers across all of Durham Region.' },
+    ],
+  },
+  {
+    slug: 'mercury-dealer-bowmanville-ontario-hbw',
+    title: 'Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake',
+    description: 'Mercury Platinum dealer for Bowmanville customers — Harris Boat Works on Rice Lake is about 35 minutes via the 401 and 115. Mercury repower, sales, parts, and winter storage practically next door.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '4 min',
+    keywords: ['mercury dealer bowmanville', 'mercury repower bowmanville', 'mercury outboard bowmanville ontario', 'boat motor service clarington'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake, about 35 minutes northeast of Bowmanville via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, service, parts, and winter storage for Bowmanville, Clarington, and east-Durham Region customers.
+
+## Why Bowmanville customers come to Rice Lake
+
+Bowmanville is essentially next door. 35 minutes is closer than a lot of customers' commutes to work.
+
+**35 minutes.** This is the closest major GTA-edge city to us. You're effectively living in our service area.
+
+**Mercury Platinum tier.** Top dealer level. Matters for warranty, parts depth, technical knowledge on harder jobs.
+
+**Online quote in 3 minutes** at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote). Real CAD pricing online, no phone-call gatekeeping.
+
+**Family marina since 1947.** Three generations on Rice Lake. Reputation drives our business, not sales quotas.
+
+## What HBW handles
+
+- Mercury outboard sales (2.5 HP to 600 HP)
+- Repower service (full install, rigging, controls, prop)
+- Mercury Platinum parts and warranty work
+- Outdoor winter storage with shrinkwrap (no indoor)
+- Online quote builder with real CAD pricing
+
+Mercury only — we don't service Yamaha, Honda, or Suzuki.
+
+## Getting here from Bowmanville
+
+Highway 401 east to Highway 115 north, then County Road 28 to Gores Landing. About 35 minutes outside rush hour. Rural roads start almost immediately after you leave the 401.
+
+**Phone:** (905) 342-2153 | **Text:** (647) 952-2153
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## What to do first
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+2. Read the [Repower vs Buy New decision guide](https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario)
+3. Call or text with questions
+4. Drive up when ready
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing since 1947. Mercury Marine Platinum Dealer serving the GTA.*`,
+    faqs: [
+      { question: 'How far is HBW from Bowmanville?', answer: 'About 35 minutes via Highway 401 east and Highway 115 north. Roughly 55 km. The closest major GTA-edge city to Rice Lake.' },
+      { question: 'Can HBW handle all my Mercury service in Bowmanville?', answer: 'Yes. The 35-minute drive makes us a realistic primary dealer for everything — spring commissioning, mid-season service, fall winterization, parts, warranty work.' },
+      { question: 'Does HBW serve Clarington and Newcastle?', answer: 'Yes. Clarington and Newcastle are within the same drive time. We have customers across the whole east-Durham area.' },
+    ],
+  },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
