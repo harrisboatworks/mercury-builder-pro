@@ -344,7 +344,7 @@ export default function FrenchBlogArticlePage() {
           </div>
         )}
 
-        <LanguageSwitcher currentLang="fr" />
+        <LanguageSwitcher currentLang="fr" currentSlug={article.slug} />
 
         {/* Meta */}
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
