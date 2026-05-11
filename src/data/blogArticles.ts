@@ -9325,13 +9325,13 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['mercury marine market share', 'best outboard brand', 'mercury vs yamaha', 'mercury verado v12', 'mercury innovation', 'mercury prokicker'],
-    content: `# Why Mercury Dominates the Outboard Market in 2026
+    content: `# Why Mercury Is One of the Strongest Outboard Brands in North America in 2026
 
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Mercury leads in many Ontario segments because the dealer network is denser, parts supply is faster, and resale demand is strong. Yamaha and Honda build excellent motors; the practical service experience in cottage country tends to favour Mercury. We've sold them since 1947. Build an installed quote at mercuryrepower.ca.
 
-Mercury Marine is the largest outboard manufacturer in the world, with one of the deepest dealer networks in Canada and a model range that runs from 2.5 HP portables to 600+ HP naturally-aspirated Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury is the brand HBW recommends most often. We sell only Mercury at HBW because we have run that math for the 60 years we have been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Mercury Marine is one of the strongest outboard brands in North America, with one of the deepest dealer networks in Canada and a model range that runs from 2.5 HP portables up through Mercury's flagship V12 600 HP class. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury is the brand HBW recommends most often. We sell only Mercury at HBW because we have run that math for the 60 years we have been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
