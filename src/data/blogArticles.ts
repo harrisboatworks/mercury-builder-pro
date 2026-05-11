@@ -17866,8 +17866,8 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
   },
   {
     slug: 'mercury-smartcraft-alarm-codes-encyclopedia',
-    title: "Mercury SmartCraft Alarm Codes: What Every Beep, Light, and Fault Code Means (2026 Encyclopedia)",
-    description: "A Mercury Platinum dealer's complete guide to Mercury SmartCraft and Guardian alarm codes, what each beep means, what's serious, what's not, and what to do right now.",
+    title: "Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)",
+    description: "Complete list of Mercury SmartCraft alarm codes and what each one means, from an Ontario Mercury Platinum dealer. Code-by-code reference for diagnostics, severity, and what to do next — no forum guesswork.",
     image: '/lovable-uploads/hero-mercury-smartcraft-alarm-codes.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
@@ -17875,7 +17875,7 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
     publishDate: '2026-05-25',
     category: 'Troubleshooting',
     readTime: '12 min read',
-    keywords: ["Mercury SmartCraft alarm codes", "Mercury Guardian alarm", "Mercury fault codes list", "SmartCraft warning beeps", "Mercury overheat alarm", "Mercury low oil pressure alarm", "Mercury rev limiter"],
+    keywords: ["Mercury SmartCraft alarm codes", "mercury smartcraft alarm codes", "mercury smartcraft alarm codes list", "mercury smartcraft alarm codes meanings", "mercury alarm code list", "smartcraft fault codes mercury", "mercury outboard error codes", "Mercury Guardian alarm", "Mercury fault codes list", "SmartCraft warning beeps", "Mercury overheat alarm", "Mercury low oil pressure alarm", "Mercury rev limiter"],
     content: `# Mercury SmartCraft Alarm Codes: What Every Beep, Light, and Fault Code Means (2026 Encyclopedia)
 
 *Last reviewed: 2026-05-07*
