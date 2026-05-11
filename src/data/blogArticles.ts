@@ -9506,8 +9506,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
         answer: 'After decades of selling and servicing outboards, Mercury consistently delivers reliability, innovation, and strong parts/support infrastructure in Ontario. Their full HP range covers every Rice Lake need, and our techs know the engines inside and out, meaning better service and fewer headaches for our customers.'
       },
       {
-        question: 'Why does Mercury have such a large outboard market share?',
-        answer: 'Mercury\'s dominant market share results from compounding advantages: consistent R&D investment producing category-leading products like the Verado V12 and SmartCraft ecosystem; BRP\'s discontinuation of Evinrude in 2020, which consolidated buyers into Mercury; an unmatched distribution network with more authorized dealers and stocked parts; and a self-reinforcing cycle where boat builders choose Mercury because buyers ask for it. At major international shows like Venice and Sydney, Mercury has powered 50–80% of the outboard-equipped boats on display, according to Brunswick.'
+        question: 'Why does Mercury have such a strong outboard market position?',
+        answer: 'Mercury\'s leading position results from compounding advantages: consistent R&D investment producing category-leading products like the Verado V12 and SmartCraft ecosystem; BRP\'s discontinuation of Evinrude in 2020, which consolidated buyers into Mercury; one of the strongest distribution networks with broad authorized dealer coverage and stocked parts; and a self-reinforcing cycle where boat builders choose Mercury because buyers ask for it. Mercury is a regular leading presence at major international boat shows.'
       },
       {
         question: 'What makes the Mercury Verado V12 600 HP special?',
