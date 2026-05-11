@@ -24867,7 +24867,252 @@ QEW east to 401 east, then 115 east into Gores Landing. About 110 minutes outsid
     ],
   },
 
-];
+  },
+
+  {
+    slug: 'mercury-dealer-vaughan-ontario-hbw',
+    title: 'Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake',
+    description: 'Looking for a Mercury Platinum dealer near Vaughan? Harris Boat Works on Rice Lake — about 80 minutes north — handles Mercury repowers, sales, parts, and winter storage for Vaughan / Woodbridge / Maple area customers.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '4 min',
+    keywords: ['mercury dealer vaughan', 'mercury repower vaughan', 'mercury outboard vaughan ontario', 'boat motor dealer vaughan woodbridge maple'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake, about 80 minutes northeast of Vaughan via Highway 400 / 404 and Highway 115. We handle Mercury outboard sales, repowers, service, and winter storage for Vaughan, Woodbridge, and Maple-area customers.
+
+## Why Vaughan customers drive to Rice Lake
+
+The GTA has Mercury dealers closer to Vaughan. Customers come to us anyway for three reasons:
+
+**Online pricing.** Our quote builder at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote) shows real CAD pricing in 3 minutes — no call-for-quote game.
+
+**Mercury Platinum tier.** Top dealer tier in Mercury's program. Matters most for parts depth, warranty support, and the harder repower jobs.
+
+**Family marina since 1947.** Three generations on Rice Lake. No sales-quota pressure.
+
+## What HBW handles
+
+- Mercury outboard sales (2.5 HP to 600 HP)
+- Repower service (motor, rigging, controls, prop)
+- Mercury parts and warranty service
+- Winter storage (outdoor with shrinkwrap; we don't run indoor)
+- Online quote builder with instant CAD pricing
+
+Mercury only — we don't service Yamaha, Honda, or Suzuki.
+
+## Getting here from Vaughan
+
+Highway 400 south to 401 east (or 404 north to 407 east), then 115 east into Gores Landing. About 80 minutes in normal traffic. The last 30 minutes is rural.
+
+**Phone:** (905) 342-2153 | **Text:** (647) 952-2153
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## What to do first
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+2. Read the [Mercury motor families comparison](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+3. Call or text with specific questions
+4. Drive up when you're ready to order
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing on Rice Lake since 1947. Mercury Marine Platinum Dealer serving the GTA.*
+`,
+    faqs: [
+      { question: 'How far is HBW from Vaughan?', answer: 'About 80 minutes via Highway 400 / 404 and Highway 115. Roughly 120 km depending on your part of Vaughan.' },
+      { question: 'Does HBW serve Woodbridge and Maple too?', answer: 'Yes. Woodbridge and Maple are within the same drive time. We have customers across all three communities.' },
+      { question: 'Can I get a Mercury quote without driving up?', answer: 'Yes. Build a quote at mercuryrepower.ca/quote in three minutes. Real CAD pricing, no phone required.' },
+    ],
+  },
+  {
+    slug: 'mercury-dealer-brampton-ontario-hbw',
+    title: 'Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake',
+    description: 'Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake — about 95 minutes northeast — handles Mercury repowers, sales, parts, and winter storage for Brampton, Caledon, and Mississauga-edge customers.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '4 min',
+    keywords: ['mercury dealer brampton', 'mercury repower brampton', 'mercury outboard brampton ontario', 'boat motor dealer brampton caledon'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake, about 95 minutes northeast of Brampton via Highway 410 / 401 and Highway 115. We handle Mercury outboard sales, repowers, service, and winter storage for Brampton, Caledon, and the Mississauga-edge customer base.
+
+## Why Brampton customers come to Rice Lake
+
+The GTA has Mercury dealers closer to Brampton. Customers cite three reasons for the drive:
+
+**Online quote in 3 minutes.** Real Canadian dollar pricing at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote). No "call us for a price" gatekeeping.
+
+**Mercury Platinum status.** Top tier in Mercury's program — matters most for parts, warranty, and complex repower jobs.
+
+**Family marina since 1947.** Three generations on Rice Lake. Reputation drives the next customer, not a quota.
+
+## What HBW handles
+
+- Mercury outboard sales (2.5 HP to 600 HP)
+- Repower service (full install, rigging, controls, prop)
+- Mercury Platinum-tier parts and warranty service
+- Outdoor winter storage with shrinkwrap (no indoor)
+- Online quote builder with instant CAD pricing
+
+Mercury only. We don't service Yamaha, Honda, or Suzuki.
+
+## Getting here from Brampton
+
+Highway 410 south to 401 east, then 115 east into Gores Landing. About 95 minutes outside rush hour. Most Brampton customers come up on weekends or early-morning weekdays to avoid the 401.
+
+**Phone:** (905) 342-2153 | **Text:** (647) 952-2153
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## What to do first
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+2. Read the [Repower vs Buy New decision guide](https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario)
+3. Text or call us with specific questions
+4. Drive up when you're ready to order
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing on Rice Lake since 1947. Mercury Marine Platinum Dealer serving the GTA.*
+`,
+    faqs: [
+      { question: 'How far is HBW from Brampton?', answer: 'About 95 minutes via Highway 410 / 401 and Highway 115. Roughly 140 km depending on your part of Brampton.' },
+      { question: 'Does HBW serve Caledon?', answer: 'Yes. Caledon is within the same drive time as Brampton. We have customers across the area.' },
+      { question: 'Why drive 95 minutes for a Mercury dealer?', answer: 'Brampton customers cite transparent online CAD pricing, Mercury Platinum-tier technical depth, and a no-pressure family-marina conversation.' },
+    ],
+  },
+  {
+    slug: 'mercury-dealer-oakville-ontario-hbw',
+    title: 'Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake',
+    description: 'Mercury Platinum dealer serving Oakville. Harris Boat Works on Rice Lake — about 110 minutes northeast — handles Mercury repowers, sales, parts, and winter storage for Oakville, Burlington-edge, and west-GTA customers.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '4 min',
+    keywords: ['mercury dealer oakville', 'mercury repower oakville', 'mercury outboard oakville ontario', 'boat motor service oakville'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake, about 110 minutes northeast of Oakville via the QEW / 401 and Highway 115. We handle Mercury outboard sales, repowers, service, and winter storage for Oakville and west-GTA customers willing to make the drive for Platinum-tier service and transparent CAD pricing.
+
+## Why Oakville customers consider the drive
+
+Oakville has Mercury dealers closer to home. Why customers come to us:
+
+**Real online pricing.** Our quote builder at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote) gives Canadian dollar pricing in 3 minutes. No call-and-wait game.
+
+**Mercury Platinum credentials.** Top dealer tier in Mercury's program. Depth matters most on harder repowers and warranty support after the sale.
+
+**Family marina since 1947.** Three generations on Rice Lake. Reputation matters more than the next sale.
+
+## What HBW handles
+
+- Mercury outboard sales (2.5 HP to 600 HP)
+- Repower service (install, rigging, controls, prop, sea trial)
+- Mercury Platinum parts and warranty work
+- Outdoor winter storage with shrinkwrap (no indoor)
+- Online quote builder with real CAD pricing
+
+Mercury only — Yamaha, Honda, and Suzuki are outside our service scope.
+
+## Getting here from Oakville
+
+QEW east to 401 east through Toronto, then 115 east into Gores Landing. About 110 minutes outside rush hour, longer in weekday traffic. Most Oakville customers plan the trip for early Saturday morning.
+
+**Phone:** (905) 342-2153 | **Text:** (647) 952-2153
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## What to do first
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+2. Read the [Mercury motor families comparison](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+3. Check our [Mercury 75/90/115 HP buyer guides](https://www.mercuryrepower.ca/blog) if you're in that range
+4. Call or text with specific questions
+5. Drive up when you're decided
+
+The drive is real — 110 minutes each way. We respect that. Come up when you're ready.
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing on Rice Lake since 1947. Mercury Marine Platinum Dealer serving the GTA.*
+`,
+    faqs: [
+      { question: 'How far is HBW from Oakville?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Oakville.' },
+      { question: 'Is the drive worth it for a Mercury dealer?', answer: 'Oakville customers cite three reasons: transparent online CAD pricing, Mercury Platinum-tier technical depth, and the no-pressure family-marina conversation. Whether the drive is worth it depends on your priorities.' },
+      { question: 'Can I do most of the buying process remotely?', answer: 'Yes. Quote online, confirm by phone or text, and coordinate delivery / install / sea-trial from there. Most Oakville customers do 90% remotely.' },
+    ],
+  },
+  {
+    slug: 'mercury-dealer-burlington-ontario-hbw',
+    title: 'Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake',
+    description: 'Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake — about 110 minutes northeast — handles Mercury repowers, sales, parts, and winter storage for Burlington, Hamilton-edge, and west-GTA customers.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '4 min',
+    keywords: ['mercury dealer burlington', 'mercury repower burlington', 'mercury outboard burlington ontario', 'boat motor service burlington hamilton'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake, about 110 minutes northeast of Burlington via the QEW / 401 and Highway 115. We handle Mercury outboard sales, repowers, service, and winter storage for Burlington and Hamilton-edge customers. Burlington has DeWildt and other local Mercury dealers closer to home — we're the option for customers who specifically want Platinum-tier service and transparent CAD pricing.
+
+## Why Burlington customers come to Rice Lake
+
+DeWildt Marine is in Hamilton / Hagersville and serves the Burlington area. Why some Burlington customers drive past them to come to us:
+
+**Online pricing transparency.** Real Canadian dollar pricing at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote) in 3 minutes. Some dealers prefer to gate pricing behind a phone call.
+
+**Mercury Platinum tier.** Top dealer tier in Mercury's program. Not all Mercury dealers are Platinum — the distinction matters for parts depth and warranty support.
+
+**Family marina, 1947.** Three generations. The reputation conversation is different from a high-volume dealership.
+
+## What HBW handles
+
+- Mercury outboard sales (2.5 HP to 600 HP)
+- Repower service (full install, rigging, controls, prop)
+- Mercury Platinum parts and warranty work
+- Outdoor winter storage with shrinkwrap (we don't run indoor)
+- Online quote builder
+
+Mercury only. Yamaha / Honda / Suzuki — not our scope.
+
+## Getting here from Burlington
+
+QEW east to 401 east, then 115 east into Gores Landing. About 110 minutes outside rush hour. Most Burlington customers plan it as an early-morning weekend trip.
+
+**Phone:** (905) 342-2153 | **Text:** (647) 952-2153
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## What to do first
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+2. Read the [Repower vs Buy New decision guide](https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario) if you're not sure which path is right
+3. Call or text with specific questions
+4. Drive up when you're decided
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing on Rice Lake since 1947. Mercury Marine Platinum Dealer serving the GTA.*
+`,
+    faqs: [
+      { question: 'How far is HBW from Burlington?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Burlington.' },
+      { question: 'Is there a closer Mercury dealer to Burlington?', answer: "Yes — DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Platinum-tier service and transparent online CAD pricing." },
+      { question: 'Can I quote and order remotely?', answer: 'Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, and coordinate delivery and install logistics from there.' },
+    ],
+  },
+
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
