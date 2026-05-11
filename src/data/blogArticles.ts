@@ -1854,7 +1854,7 @@ We are honest about our limits:
 - **Sailboat-specific outfitting.** We service Mercury auxiliary motors on sailboats but we are not a sailboat dealer.
 - **Personal watercraft (PWC).** Mercury makes outboards, not PWC. We do not sell or service PWCs.
 - **Jet boats or jet drives.** Outboard-specific shop.
-- **Most non-Mercury repowers.** We can do them but Mercury is our depth.
+- **Non-Mercury engine service.** For engine repairs, we only service Mercury and Mercruiser. We will happily repower a non-Mercury boat with a new Mercury, but we do not service other engine brands.
 
 We refer to other shops or specialists when the work falls outside our core. Honest answers help customers find the right shop for their specific need.
 
