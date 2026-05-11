@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-150-200hp-v6-performance.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Mercury 150 vs 175 vs 200 vs 225 vs 250 vs 300. V6 Performance, Compared (2026)"
 description: "An HBW dealer's honest comparison of Mercury V6 outboards from 150 to 300 HP, what each delivers, who needs which, and where the inflection points actually are."
 category: "Buying Guide"
-date_published: 2026-11-30
-date_modified: 2026-05-07
+date_published: 2026-05-13
+date_modified: 2026-05-13
 keywords: ["mercury 150 200 v6","mercury 3.4 v6","mercury v6 vs inline","mercury 175 pro xs","mercury v6 comparison","Mercury 150 175 200 225 V6 comparison","Mercury V6 Pro XS performance","Mercury 200 vs 225 vs 250","Mercury 175 EXLPT","Mercury 250 Pro XS"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,14 +22,14 @@ content_type: blog_article
 > An HBW dealer's honest comparison of Mercury V6 outboards from 150 to 300 HP, what each delivers, who needs which, and where the inflection points actually are.
 
 **Category:** Buying Guide  
-**Published:** 2026-11-30  
-**Last updated:** 2026-05-07  
+**Published:** 2026-05-13  
+**Last updated:** 2026-05-13  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-200hp-v6-performance
 
 ## Article
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Mercury's V6 lineup, 150, 175, 200, 225, 250, 300, shares a common architecture with progressively more displacement and tune. The 200-225 is the sweet spot for most Ontario center consoles and runabouts. The 300 makes sense only with the right hull and prop. Compare installed pricing at mercuryrepower.ca.
 

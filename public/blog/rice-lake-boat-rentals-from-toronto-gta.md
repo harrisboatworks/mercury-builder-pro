@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,7 +31,7 @@ content_type: blog_article
 
 # Rice Lake, Ontario Boat Rentals from Toronto and the GTA: A Day Trip Guide
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** A Toronto-to-Rice Lake rental day trip works: 90 minutes up the 401 and 28, launch at Bewdley or Gores Landing, fish or cruise, drive home. Rentals book out fast in summer. When you're ready to own, build a real installed Mercury quote at mercuryrepower.ca.
 
@@ -92,9 +92,9 @@ Each rental includes:
 - **Restroom + ice / snacks** at the marina before you leave
 
 What you bring:
-- **Valid Pleasure Craft Operator Card (PCOC)**, required to operate any motorized boat in Ontario. If you don't have one, the rental marina can issue a temporary "rental boat safety checklist" certification, but most rentals require PCOC. Easier to get the actual card (3-hour online course, $50, lifetime good).
+- **Valid Pleasure Craft Operator Card (PCOC)**, required to operate a motorized boat in Canada unless a rental-specific safety checklist applies. If you do not have one, ask before booking so there are no surprises at the dock. A full PCOC is valid for life once earned; course/test pricing varies by approved provider.
 - **Sunscreen, hats, water, snacks**
-- **Fishing gear and licence if fishing**. Ontario fishing licence for adults (one-time online $30 for ~$30 for a season)
+- **Fishing gear and licence if fishing.** Ontario fishing licence fees depend on residency, licence type, and duration. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST. Check ontario.ca before your trip because licence rules and fees can change.
 - **Cooler and refreshments** for the day
 
 What's NOT included:
@@ -214,7 +214,7 @@ Yes, a Pleasure Craft Operator Card (PCOC) is required to operate any motorized 
 Pricing varies by boat type and season. As of 2026: small fishing boat half-day from $200, mid-size pontoon half-day from $350, large pontoon half-day from $450. Full-day roughly 1.7-2× half-day. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for current pricing.
 
 **Can we fish from rental boats?**
-Yes. The 16-ft ProSport boats are designed for fishing (fishfinder included). Pontoons can fish but they're set up more for cruising/comfort. **You need an Ontario fishing licence** (one-time online $30 for a season).
+Yes. The 16-ft ProSport boats are designed for fishing and include a fishfinder. Pontoons can fish too, but they are set up more for cruising and comfort. You need a valid Ontario fishing licence if you are fishing. Fees depend on licence type and residency, so check ontario.ca before you come. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST.
 
 **What if it rains the day of our rental?**
 Light rain, boats still go out, you're fine. Severe weather (lightning, sustained high winds, severe weather warning), we'll cancel and refund or rebook. Drizzle is not a refund condition; sustained downpour might be.
@@ -258,7 +258,7 @@ Pricing varies by boat type and season. As of 2026: small fishing boat half-day 
 
 ### Can we fish from rental boats?
 
-Yes. The 16-ft ProSport boats are designed for fishing (fishfinder included). Pontoons can fish but they're set up more for cruising/comfort. **You need an Ontario fishing licence** (one-time online $30 for a season).
+Yes. The 16-ft ProSport boats are designed for fishing and include a fishfinder. Pontoons can fish too, but they are set up more for cruising and comfort. You need a valid Ontario fishing licence if you are fishing. Fees depend on licence type and residency, so check ontario.ca before you come. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST.
 
 ### What if it rains the day of our rental?
 

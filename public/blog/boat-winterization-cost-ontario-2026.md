@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,7 +31,7 @@ content_type: blog_article
 
 # How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Boat winterization in Ontario typically runs $250-$600 depending on motor size, fuel system, and shrinkwrap. Skipping it risks a cracked block, a $4,000-plus repair. Book before October or you'll wait. Pricing and scheduling at mercuryrepower.ca.
 
@@ -120,6 +120,14 @@ Bring it to us when:
 The most common DIY mistake we see in spring: customer drained the gearcase and forgot to refill it. The motor runs in spring without lower-unit lube, the gears destroy themselves in 30 minutes of operation, and the customer is buying a new lower unit ($1,500 to $4,500 CAD depending on motor). Cheap mistake. Expensive lesson.
 
 The second most common: missing the cooling system drain. Water freezes in the powerhead. Block cracks. Motor scrap. We see this every spring on at least a few customers who tried DIY and missed the step.
+
+### The most expensive winter call we get
+
+Same call every May. "My boat won't start."
+
+Eight times out of ten, it's one of three things: water in the lower unit oil, ethanol-fouled fuel, or a battery that quietly died in February. All three are $30 problems in October. They become $300+ problems by May, sometimes much more if the lower unit corroded or the powerhead got bumped by an internal freeze.
+
+That's the math behind paying a marina to winterize rather than "I'll get to it next weekend." It's not that DIY winterization is wrong. It's that "I'll get to it" winterization usually doesn't get to it. Pick a date in October, do the work, or hand it to us. Don't let November be the moment you decide.
 
 ## Storage options ranked by cost
 

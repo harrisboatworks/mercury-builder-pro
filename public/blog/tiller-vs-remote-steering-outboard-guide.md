@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,9 +31,9 @@ content_type: blog_article
 
 # Tiller vs Remote Steering Outboard: Which to Choose (2026)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
-> **Quick answer:** Tiller is right for small fishing boats under 20 HP, jon boats, and tight backwater work. Remote steering is right for almost everything else, especially anything with a windshield, console, or guests. Mercury offers tiller through 25 HP and select 60s. Configure either at mercuryrepower.ca.
+> **Quick answer:** Tiller is right for small fishing boats under 20 HP, jon boats, and tight backwater work. Remote steering is right for almost everything else, especially anything with a windshield, console, or guests. Mercury tiller options run from small portables through select higher-HP FourStroke and SeaPro models with the Advanced Tiller system, so the practical split is less about a HP cap and more about whether the boat and use case fit a tiller. Configure either at mercuryrepower.ca.
 
 Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want direct hands-on control. Remote-control steering (steering wheel from helm) is best for console boats, family use, and any application where the operator is not at the back of the boat. The dividing line is usually around 15 to 20 HP and 14 to 16 ft hull length. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -48,7 +48,7 @@ We sell both at HBW. The decision comes from honest analysis of how you use the 
 Five things move whether tiller or remote-control fits your boat:
 
 - **Hull length.** Under 14 ft: tiller almost always. 14 to 16 ft: depends on use. 16 ft and up: remote almost always.
-- **HP class.** 2.5 to 20 HP: tiller almost always. 25 to 40 HP: either. 50+ HP: remote almost always (some 60 HP tillers exist for specific applications).
+- **HP class.** 2.5 to 20 HP: tiller almost always. 25 to 40 HP: either. 50+ HP: remote is the default for most family and recreational boats, but Mercury Advanced Tiller is available on select higher-HP FourStroke and SeaPro models for serious tiller anglers, work boats, and certain guide-style rigs.
 - **Console vs no console.** Console boats almost always want remote (the console exists for the helm).
 - **Use case.** Solo fishing favors tiller; family use favors remote.
 - **Personal preference.** Some experienced operators prefer the direct feel of tiller even on bigger boats. Personal call.
@@ -205,7 +205,9 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 For boats under 14 ft and small fishing applications, tiller. For console boats over 16 ft and family use, remote. The crossover zone (14 to 16 ft, 25 to 40 HP) depends on use case.
 
 **What's the biggest tiller Mercury available?**
-Mercury makes tiller variants up to about 60 HP. Above 60 HP, remote-control is the standard configuration. Tiller above 60 HP is physically demanding and rare.
+Mercury tiller options run from small portable motors through select higher-horsepower FourStroke and SeaPro models with the Mercury Advanced Tiller system. The practical split is not "tiller stops at 60 HP." The practical split is whether the boat, use case, and driver actually make sense for a tiller.
+
+For most family boats, pontoons, runabouts, and multi-passenger fishing boats, remote steering is still the better setup. For serious tiller anglers, work boats, and certain guide-style rigs, Advanced Tiller can make sense well above the portable-motor range.
 
 **Can I add a console to my tiller boat?**
 Yes, but it's a major project. Adding a console means new console structure, new dash, new rigging cables, new helm controls. Often more cost-effective to buy a console-equipped boat instead.
@@ -256,7 +258,7 @@ It's different, not harder. Most people adapt quickly. Steering is reversed from
 
 ### What's the biggest motor available in tiller?
 
-Mercury offers tiller handles on FourStroke outboards from 2.5HP up to 115HP via the Mercury Advanced Tiller system. The Advanced Tiller (available on 40–115HP models) features an ergonomic adjustable handle with integrated throttle and shift.
+Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used.
 
 ### Can I have both tiller and remote?
 
@@ -272,7 +274,7 @@ Tiller is not harder to learn, it's different. The main adjustment is that tille
 
 ### What's the biggest Mercury motor available in tiller configuration?
 
-Mercury offers tiller versions of motors up to 75HP. Above 75HP, tiller control becomes impractical due to physical torque forces, and Mercury doesn't offer factory tiller versions beyond that range. For most Ontario cottage and fishing applications on 14–18ft aluminum boats, tiller availability covers virtually every realistic power need. The Mercury 60HP EFI Command Thrust in tiller is a popular choice for 16–18ft aluminum boats on Rice Lake.
+Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. The Mercury 60HP EFI Command Thrust in tiller is a popular choice for 16-18ft aluminum boats on Rice Lake.
 
 ### Can I have both tiller and remote steering on the same outboard motor?
 

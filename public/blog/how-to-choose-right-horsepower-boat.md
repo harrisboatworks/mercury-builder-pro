@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,11 +31,15 @@ content_type: blog_article
 
 # How to Choose the Right Horsepower for Your Boat (2026 Guide)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Match the horsepower to your hull's capacity plate first, then pick within that range based on load and use. Bigger isn't better, over-powering creates capacity-plate compliance, insurance, liability, and warranty risk. Most Ontario family runabouts in the 17-20 ft range land between 90 and 150 HP. Build a real installed quote at mercuryrepower.ca.
 
-The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. The shortcut: aim for 70 to 90% of your maximum rating for typical recreational use. Going lower leaves you underpowered, going to 100% maxes out fuel economy. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).
+The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. A common dealer rule of thumb is that most boats run best loaded with around 70 to 80% of their maximum rated horsepower, leaving headroom for varying loads, prop pitch, and conditions. That's a starting point for the conversation, not a rule. Hull design, intended use, and load patterns matter more than the percentage on paper. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).
+
+## About the capacity plate
+
+The capacity plate is a federal compliance label. Transport Canada sets the standards under the Small Vessel Regulations; the boat manufacturer or importer is responsible for applying the maximum horsepower rating to the plate in accordance with those standards. Either way, the number on the plate is the legal ceiling for that hull, exceeding it creates compliance, insurance, liability, and warranty problems.
 
 ## Quick recommendation
 
@@ -170,7 +174,7 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 ## FAQ
 
 **How do I choose the right horsepower for my boat?**
-Look at three things: hull weight and length, intended use (fishing vs cruising vs tubing), and the maximum HP on the capacity plate. Aim for 70 to 90% of the rated maximum for typical recreational use. Going below that often leaves you underpowered. We will help match a motor to your specific boat at [HBW](/quote/motor-selection).
+Look at three things: hull weight and length, intended use (fishing vs cruising vs tubing), and the maximum HP on the capacity plate. A common dealer rule of thumb is around 70 to 80% of the rated maximum for typical recreational use, but that's a starting point, not a rule. Hull design, load patterns, and prop selection matter more than the percentage on paper. We will help match a motor to your specific boat at [HBW](/quote/motor-selection).
 
 **What HP do I need for a 16-foot aluminum fishing boat?**
 For solo or two-person trolling, 25 to 40 HP. For three or more passengers who want to plane and run reasonably, 40 to 60 HP. Most 16 ft aluminum fishing boats land in the 40 to 60 HP range for typical Kawartha use.
@@ -220,7 +224,7 @@ Underpowering your boat leads to poor performance, difficulty handling rough con
 
 ### Can I exceed my boat's maximum HP rating?
 
-No. The maximum HP rating is set by Transport Canada for safety reasons. Exceeding it can void insurance, create handling problems, and put you and passengers at risk.
+No. The capacity plate is a federal compliance label: Transport Canada sets the standards under the Small Vessel Regulations, and the boat manufacturer or importer applies the maximum horsepower rating in accordance with those standards. Either way, the number on the plate is the legal ceiling. Exceeding it can void insurance, create handling problems, and put you and passengers at risk.
 
 ### Does higher horsepower always mean faster speed?
 
@@ -236,7 +240,7 @@ Too little horsepower causes your boat to struggle reaching planing speed, espec
 
 ### Can I exceed my boat's maximum HP rating in Canada?
 
-No. You cannot legally or safely exceed the maximum horsepower rating on your boat's capacity plate. In Canada, this rating is set under Transport Canada regulations, and exceeding it is illegal. The hull is engineered for that load limit, running a larger motor can stress the transom, affect stability, and create dangerous handling at speed. If your boat feels underpowered at its rated maximum, the solution is a different boat, not exceeding the limit.
+No. You cannot legally or safely exceed the maximum horsepower rating on your boat's capacity plate. In Canada, the capacity plate is a federal compliance label: Transport Canada sets the standards under the Small Vessel Regulations, and the boat manufacturer or importer applies the maximum horsepower rating to the plate in accordance with those standards. Exceeding the plate rating is illegal. The hull is engineered for that load limit, running a larger motor can stress the transom, affect stability, and create dangerous handling at speed. If your boat feels underpowered at its rated maximum, the solution is a different boat, not exceeding the limit.
 
 ### What is the right HP for a fishing boat on Rice Lake or Kawartha Lakes?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,7 +31,7 @@ content_type: blog_article
 
 # Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)
 
-*Last reviewed: 2026-05-09*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** For a 15-16 ft aluminum boat with two adults and a kicker, pick the Mercury 40 ELPT FourStroke. Step up to the 60 ELPT for 17-18 ft aluminum, three or four people aboard, or a small pontoon. Choose 60 Command Thrust for 18-20 ft pontoons, where the bigger gear ratio gets you on plane loaded. Build a current quote at mercuryrepower.ca.
 
@@ -56,6 +56,16 @@ A 60 HP motor on the same hull turns the same trip into a 28-32 mph cruise with 
 The difference shows up most when the boat is loaded and you're trying to get on plane. That's the moment a 40 starts feeling small.
 
 ---
+
+### Where the 40-vs-60 question actually lives
+
+The honest answer to "should I get a 40 or a 60?" usually comes down to one question: how heavy is the boat going to be on a typical day on the water?
+
+A 15 ft tin boat running two anglers and basic gear is happy with a 40. The same hull running four people, a cooler, two batteries, and the trolling motor up front is asking for the 60. The horsepower difference is small on the spec sheet. The difference in how the boat actually feels on Rice Lake at 4 p.m. with a headwind and full load is significant.
+
+The 60 also gives you headroom for adding gear later. People rarely lighten their boats over time. They add. A 60 today is the same boat with three more people in five years. A 40 today might feel right at the dock and tight in August.
+
+Capacity plate is still the ceiling. On smaller hulls (14 ft and under) you're typically capped at 25 to 30 HP regardless of preference. The 40-vs-60 conversation only opens up once your hull is rated for it.
 
 ## Specs Side-By-Side
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -38,6 +38,14 @@ content_type: blog_article
 Bass boats live or die on hole-shot, top-end, and the ability to run shallow when the bite moves. Ontario bass anglers fish a lot of skinny water in May, then chase smallies into deeper offshore structure by July. The motor pick has to handle both, and it has to handle the trolling-motor-and-kicker setup that defines tournament fishing on Rice Lake, Lake Scugog, and the Kawarthas.
 
 We rig a lot of bass boats at HBW. The shop sees more Pro XS 150-200 HP motors come through in spring than any other category. This guide is the conversation we have at the dock when a customer is choosing between a Pro XS and a FourStroke, or sizing up between 150 and 200 HP.
+
+### A pattern we see at the shop
+
+A common conversation goes like this. Customer comes in with a 20+ year old 150 HP two-stroke on a 17 ft glass bass boat. They want more speed.
+
+Once we look at the hull rating, the prop, and the rigging, the better answer is usually a 150 Pro XS with the right prop pitch. Not because the old motor was wrong. Because the rigging was tired and the prop hadn't matched the motor in 10 years. The boat ends up faster on less horsepower because the setup is finally right.
+
+Horsepower gets the headlines. The prop, the gearcase, and the rigging do most of the work.
 
 ---
 

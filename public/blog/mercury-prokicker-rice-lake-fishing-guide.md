@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** The Mercury 9.9 ProKicker is the right kicker for Rice Lake, Ontario walleye and musky trolling, high gear ratio for slow speeds, electric start, power tilt, and remote-ready. It's a different motor than the standard 9.9 portable. We rig and tiller-link these regularly for Kawartha boats. Build a kicker package at mercuryrepower.ca.
 
@@ -55,6 +55,14 @@ The Mercury 9.9 ProKicker is a kicker motor specifically designed for fishing ap
 - **Integrated charging system.** Some variants include alternator output for trolling motor batteries and electronics.
 
 Standard 9.9 motors are general-purpose kicker or main-on-small-boat units. ProKickers are purpose-built fishing tools.
+
+### How the 9.9 conversation usually goes
+
+Two ways. Either someone wants a kicker for trolling on a fishing rig, and a regular 9.9 FourStroke is the right answer. Or they want to power a 14 to 15 ft tin boat as the main motor, and they need a Command Thrust gearcase, which most aren't aware exists.
+
+The Command Thrust changes the calculation. It lets a 9.9 push a heavier hull at hull speed where a regular 9.9 would just rev. Same horsepower, different gearcase, different boat capability.
+
+Before recommending a 9.9 for a small aluminum, we ask what the boat is rated for, what's already mounted on the transom, and what the customer actually does on the water. Trolling with a main motor is one answer. Pushing a loaded fishing boat is another.
 
 ## Why a kicker matters for Rice Lake fishing
 

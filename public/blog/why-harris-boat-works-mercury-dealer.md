@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** HBW has been on Rice Lake in the Kawarthas (Ontario) since 1947 and a Mercury dealer since 1965, three generations, current Mercury Marine Platinum Dealer. We post installed pricing online via the configurator, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
 
@@ -99,7 +99,7 @@ HBW is more than a sales counter. We are a full-service marina:
 - **Mercury sales and service** (the core business)
 - **Legend Boats sales** (we are also a Legend dealer)
 - **Boat hauling** for Rice Lake and Kawartha customers
-- **Indoor and outdoor storage** through winter
+- **Outdoor winter storage and shrinkwrap** with proper winterization
 - **Winterization and spring commissioning** services
 - **Used boat sales and trade-ins**
 - **Pleasure Craft Licence (PCL) administration** for repower customers
@@ -230,7 +230,7 @@ Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-
 Yes. Mercury Repower Financing at 7.99% APR for qualified buyers. We process applications in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
 
 **Does HBW offer storage?**
-Yes. Indoor and outdoor storage available through winter. Pricing varies by boat size and storage tier. [Contact us](/contact) for specifics.
+Yes. HBW offers outdoor winter storage with shrinkwrap and proper winterization. We do not offer on-site indoor storage. If indoor storage is the right fit for your boat, we can talk through options and point you in the right direction.
 
 **Does HBW pick up boats?**
 For Rice Lake and local Kawartha customers, yes. Hauling and full marina services are available. [Contact us](/contact) for hauling quotes.
@@ -283,7 +283,7 @@ Yes. Mercury Repower Financing at 7.99% APR for qualified buyers. We process app
 
 ### Does HBW offer storage?
 
-Yes. Indoor and outdoor storage available through winter. Pricing varies by boat size and storage tier. [Contact us](/contact) for specifics.
+Yes. HBW offers outdoor winter storage with shrinkwrap and proper winterization. We do not offer on-site indoor storage. If indoor storage is the right fit for your boat, we can talk through options and point you in the right direction.
 
 ### Does HBW pick up boats?
 

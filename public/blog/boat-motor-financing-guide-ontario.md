@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-financing-guide-ontario.md
-last_updated: 2026-05-10
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** HBW offers Mercury Repower Financing through DealerPlan: 7.99 percent APR (as of May 2026) on motor packages $10,000 and up, 8.99 percent under $10,000. Financing isn't available below $5,000. A $299 DealerPlan fee applies. Apply with your installed quote from mercuryrepower.ca.
 
@@ -133,7 +133,7 @@ Yes. Financing works the same whether you're repowering an existing boat or rigg
 
 ### Are there seasonal promotions for financing?
 
-Promotional offers vary by season. Harris Boat Works currently includes a 7-year factory-backed warranty (3 years standard + 4 bonus years of Gold coverage) with every new Mercury purchase. Ask about current financing and warranty offers.
+Promotional offers vary by season, and Mercury warranty extensions are not always active. The standard Mercury warranty is 3 years. When Mercury runs a bonus warranty promotion, qualifying motors may receive additional factory-backed coverage, but the offer dates, eligible models, and paperwork rules matter. If warranty length is part of your buying decision, ask us to confirm the current Mercury promotion before you sign. We will tell you what is active, what is expired, and what actually applies to the motor you are quoting.
 
 ### What happens if I want to sell my boat before the loan is paid?
 
