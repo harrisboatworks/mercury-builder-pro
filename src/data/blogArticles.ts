@@ -9365,12 +9365,12 @@ Buying a Mercury-rigged factory boat is the most cost-effective way into a new a
 
 ### 3. Complete lineup coverage
 
-Mercury covers every recreational HP class from the 2.5 portable tiller up through 600+ HP Verado:
+Mercury covers every recreational HP class from the 2.5 portable tiller up through the flagship V12 Verado:
 
 - FourStroke (2.5 to 300 HP) for cruising, fishing, family use
 - Pro XS (115 to 300 HP) for performance fishing and tournament use
 - SeaPro (25 to 300 HP) for commercial duty
-- Verado (250 to 600+ HP) for offshore and high-performance applications (special-order at HBW)
+- Verado, Mercury's premium high-horsepower line, including the flagship V12 600 HP class for offshore and high-performance applications (special-order at HBW)
 - Avator (electric) for emerging eco-conscious applications
 
 If your boat needs an outboard, Mercury makes one that fits. Yamaha and Honda have gaps in the lineup at certain HP classes or use cases.
