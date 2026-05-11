@@ -699,9 +699,10 @@ export default function QuoteSummaryPage() {
       
     } catch (error) {
       console.error('PDF generation error:', error);
+      const detail = error instanceof Error ? error.message : String(error);
       toast({
-        title: "Error", 
-        description: "Failed to generate PDF. Please try again.",
+        title: "PDF generation failed",
+        description: `Please try again. If this keeps happening, share this with support: ${detail}`,
         variant: "destructive"
       });
     } finally {
