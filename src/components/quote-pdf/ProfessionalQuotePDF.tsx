@@ -974,7 +974,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 ✓ DEPOSIT PAYMENT CONFIRMED
               </Text>
               <Text style={{ fontSize: 14, fontWeight: 'bold', color: colors.discount }}>
-                ${quoteData.depositInfo.amount.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
+                ${safeMoney(quoteData.depositInfo.amount)} CAD
               </Text>
             </View>
             <View style={{ flexDirection: 'row', gap: 20 }}>
