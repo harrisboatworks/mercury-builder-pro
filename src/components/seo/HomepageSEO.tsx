@@ -83,7 +83,7 @@ export function HomepageSEO() {
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mercury outboard repower" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mercury & MerCruiser marine repair" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Winterization and spring launch" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Indoor and outdoor boat storage" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outdoor boat storage with professional shrinkwrap" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Legend boat sales" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Boat rentals" } }
         ],
