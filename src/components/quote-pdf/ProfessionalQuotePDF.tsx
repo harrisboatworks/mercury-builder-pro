@@ -15,6 +15,13 @@ const View = _View as unknown as ComponentType<any>;
 const Image = _Image as unknown as ComponentType<any>;
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
+// Safe money formatter — never throws on null/undefined/NaN
+const safeMoney = (val: unknown, fallback = '0.00'): string => {
+  const n = typeof val === 'number' ? val : Number(val);
+  if (!Number.isFinite(n)) return fallback;
+  return n.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+};
+
 function formatTradeInDescription(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
   if (!tradeInInfo) return "";
   const { brand, year, horsepower, model } = tradeInInfo;
