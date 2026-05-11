@@ -304,14 +304,37 @@ function loadTranslatedBlogArticles(modulePath, exportName) {
   `;
   const tmpFile = join(ROOT, 'scripts', `.blog-dump-${exportName}.mts`);
   writeFileSync(tmpFile, dumpScript);
+  // FAIL-LOUD: do NOT swallow errors. A silent return [] previously caused
+  // the entire zh-CN sitemap to silently empty out without anyone noticing.
+  // We'd rather a red Vercel deploy than a silent multilingual SEO blackout.
   try {
     const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
-    return JSON.parse(out);
-  } catch (err) {
-    console.warn(`[static-prerender] failed to load ${exportName}: ${err.message}`);
-    return [];
+    const parsed = JSON.parse(out);
+    if (!Array.isArray(parsed)) {
+      throw new Error(`[static-prerender] ${exportName} loader did not return an array`);
+    }
+    return parsed;
   } finally {
     try { rmSync(tmpFile); } catch {}
+  }
+}
+
+// Sanity-check: if the source file on disk has any `slug:` entries but the
+// loader returned 0, abort the build instead of silently emitting an empty
+// translated sitemap section.
+function assertLoaderNonEmpty(loaded, sourceRelativePath, exportName, langLabel) {
+  const sourcePath = join(ROOT, sourceRelativePath.replace(/^\.\.\//, ''));
+  let sourceHasEntries = false;
+  try {
+    const src = readFileSync(sourcePath, 'utf8');
+    sourceHasEntries = /\bslug\s*:/.test(src);
+  } catch {
+    sourceHasEntries = false;
+  }
+  if (sourceHasEntries && loaded.length === 0) {
+    throw new Error(
+      `${langLabel} blog articles loader returned empty array but source file is non-empty — aborting prerender (${exportName} @ ${sourceRelativePath})`
+    );
   }
 }
 
@@ -319,7 +342,16 @@ const frenchBlogArticles = loadTranslatedBlogArticles('../src/data/frenchBlogArt
 const koreanBlogArticles = loadTranslatedBlogArticles('../src/data/koreanBlogArticles.ts', 'koreanBlogArticles');
 const mandarinBlogArticles = loadTranslatedBlogArticles('../src/data/mandarinBlogArticles.ts', 'mandarinBlogArticles');
 const spanishBlogArticles = loadTranslatedBlogArticles('../src/data/spanishBlogArticles.ts', 'spanishBlogArticles');
-console.log(`[static-prerender] loaded translated blog articles — fr:${frenchBlogArticles.length} ko:${koreanBlogArticles.length} zh:${mandarinBlogArticles.length} es:${spanishBlogArticles.length}`);
+
+assertLoaderNonEmpty(frenchBlogArticles, '../src/data/frenchBlogArticles.ts', 'frenchBlogArticles', 'French');
+assertLoaderNonEmpty(koreanBlogArticles, '../src/data/koreanBlogArticles.ts', 'koreanBlogArticles', 'Korean');
+assertLoaderNonEmpty(mandarinBlogArticles, '../src/data/mandarinBlogArticles.ts', 'mandarinBlogArticles', 'Mandarin');
+assertLoaderNonEmpty(spanishBlogArticles, '../src/data/spanishBlogArticles.ts', 'spanishBlogArticles', 'Spanish');
+
+console.log(`[static-prerender] loaded ${frenchBlogArticles.length} fr-CA articles`);
+console.log(`[static-prerender] loaded ${koreanBlogArticles.length} ko-KR articles`);
+console.log(`[static-prerender] loaded ${mandarinBlogArticles.length} zh-CN articles`);
+console.log(`[static-prerender] loaded ${spanishBlogArticles.length} es-ES articles`);
 
 
 const caseStudies = loadCaseStudies();
