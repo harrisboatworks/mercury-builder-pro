@@ -24411,8 +24411,6 @@ We accept trade-ins on both the whole boat and the old motor alone. See our [Tra
     ],
   },
 
-  },
-
   {
     slug: 'mercury-dealer-markham-ontario-hbw',
     title: 'Mercury Dealer for Markham: Why GTA Customers Drive to Rice Lake for Their Repower',
