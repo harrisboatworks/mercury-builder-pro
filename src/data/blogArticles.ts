@@ -24862,6 +24862,279 @@ QEW east to 401 east, then 115 east into Gores Landing. About 110 minutes outsid
       { question: 'Can I quote and order remotely?', answer: 'Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, and coordinate delivery and install logistics from there.' },
     ],
   },
+
+  // Troubleshooting cluster — 2026-05-11
+  {
+    slug: 'mercury-outboard-wont-start-troubleshooting-ontario',
+    title: 'Mercury Outboard Won\'t Start? The Diagnostic Flow a Mercury Platinum Dealer Actually Uses (Ontario)',
+    description: 'Mercury outboard won\'t start? A Mercury Platinum dealer\'s actual diagnostic flow — battery to fuel to spark to ECM — what to check yourself before calling, and when to stop and call us instead.',
+    image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Troubleshooting',
+    readTime: '8 min',
+    keywords: ['mercury outboard wont start', 'mercury 4-stroke wont start troubleshooting', 'mercury outboard cranks but wont start', 'mercury fourstroke wont turn over', 'mercury motor wont start ontario'],
+    content: `## Quick answer
+
+Mercury outboards that won't start come in two flavours: **won't turn over at all** (electrical) or **turns over but won't fire** (fuel / spark / compression). The diagnostic order matters. Skip steps and you'll buy parts you don't need.
+
+This is the order an HBW Mercury Platinum technician actually works through. About 80% of "won't start" calls turn out to be one of the first 4 items. If you've checked all 8 and it's still dead, stop and call us — you're into shop-tool territory.
+
+## Step 1: Safety lanyard / kill switch
+
+The single most common cause of "won't start" calls. The red lanyard clip has to be physically attached for the engine to crank. If someone pulled it for safety storage and forgot, the motor is electrically off.
+
+**Check:** Lanyard clipped to the switch on the dash or tiller. Lanyard tether attached. Switch in "ON" position.
+
+**Why it gets missed:** It looks like the motor is broken. It's not. It's just doing exactly what it was designed to do.
+
+## Step 2: Battery
+
+After the lanyard, this is the #2 cause. Modern Mercury 4-strokes are very voltage-sensitive — the ECM needs solid voltage to even attempt a start.
+
+**Check:**
+- Voltage at rest: 12.4V+ (12.6V = full charge, under 12.2V = needs charge)
+- Voltage while cranking: should stay above 9.5V
+- Terminal corrosion (green/white powder = bad connection, scrape clean)
+- Cable tightness (loose = intermittent crank)
+
+**Mercury-specific:** A battery that "tested OK" last fall can be dead in spring. Cold + idle storage kills batteries. If you didn't put it on a tender over winter, expect to replace it.
+
+### HBW dealer note
+
+We sell a lot of new batteries every spring to customers who swore the old one was fine. Lead-acid batteries lose capacity with age and cold. Anything over 3-4 years old is on borrowed time.
+
+## Step 3: Fuel — old, water, or low octane
+
+Ethanol gas (E10) goes stale in 30-60 days. Stale gas in a small line will gum up an injector or carb. Water in fuel will stop a motor cold.
+
+**Check:**
+- Smell the fuel — sour / lacquer-like smell = bad
+- Color — clear and bright = good; cloudy or amber = water or oxidation
+- Drain the water-separating fuel filter (Mercury motors have one — usually right at the engine) and inspect for water at the bottom
+- Did you use 87 octane all season? Newer Mercury V8s want 91. Check your owner's manual.
+
+**Fix:** Drain old fuel. Replace filter. Refill with fresh 87 (or 91 if specified). Add Mercury Quickstor fuel stabilizer.
+
+## Step 4: Spark plugs
+
+If it cranks but won't fire, plugs are next.
+
+**Check:**
+- Pull a plug, look at the electrode
+- Black / sooty = fuel issue (running rich)
+- White / chalky = overheating
+- Wet with fuel = flooded (let it sit 10 min, try again)
+- Gap incorrect or electrode worn = replace
+
+**Mercury-specific:** Most Mercury 4-strokes want NGK plugs gapped to spec. Don't substitute non-NGK plugs without checking the service manual.
+
+## Step 5: Fuel pump / fuel filter
+
+After plugs, if there's still no fire:
+
+- **Mechanical fuel pump (smaller motors):** can fail with age or contamination
+- **Electric fuel pump (larger 4-strokes):** can fail electrically (no priming sound = no pump)
+- **Primary fuel filter:** if it's clogged, fuel can't reach the rail
+
+**Check:** Squeeze the primer bulb. It should firm up. If it stays soft, you have an air leak in the line or a failed pump.
+
+## Step 6: ECM faults (SmartCraft alarm codes)
+
+Modern Mercury motors (basically anything 2010+) have an ECM that tracks everything. If something's wrong, it'll throw a code.
+
+**Check:** If you have SmartCraft gauges or the SmartCraft Connect app, pull the code list. See our [Mercury SmartCraft Alarm Codes guide](https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia) for what each one means.
+
+If the code says "low oil pressure," "no oil flow," "overheat," or anything starting with "0x" — **stop. Don't keep cranking.** You can damage internal components trying to force a start through a protective shutdown.
+
+## Step 7: Compression
+
+If steps 1-6 don't fix it, you're past easy DIY. Compression test requires a Mercury-spec gauge and adapter. Numbers below ~120 PSI on any cylinder = mechanical problem (head gasket, rings, valve).
+
+**This is where most customers call us.** Compression diagnosis is shop work. Don't break the boat trying to chase it yourself.
+
+## Step 8: Stop and call HBW
+
+If you've gone through 1-6 and it still won't start, you're into one of:
+- Internal mechanical failure
+- ECM / wiring fault
+- Sensor failure (cam position, crank position, IAT, MAP)
+- Fuel injector failure
+
+All of these need shop diagnostics with the Mercury G3 / VesselView Tool. We have those. You probably don't.
+
+Call **(905) 342-2153** or text **(647) 952-2153** and tell us what you've already checked. Saves both of us 20 minutes when we walk to the boat.
+
+### HBW dealer note
+
+The customers who get the fastest help are the ones who can say "I checked lanyard, battery's at 12.5V, fuel is fresh from last week, plugs were new in fall, primer bulb firms up, and SmartCraft is showing code XYZ." That kind of customer gets bumped to the front of the queue because we know it's a real problem, not an obvious DIY miss.
+
+## When NOT to keep cranking
+
+Some scenarios where you should **stop immediately** to avoid making things worse:
+
+- ECM is throwing a low-oil-pressure or overheat code → starting it again can wreck the powerhead
+- Smoke from the powerhead area → fire risk
+- Strong fuel smell at the cowling → fuel leak, ignition risk
+- Visible water in the cylinders (after pulling a plug) → could hydrolock and bend a rod
+
+Stop. Call us. We'll tell you whether it's safe to attempt another start, or whether the boat needs to come to the shop.
+
+## FAQ
+
+For more service-specific questions, see our [Mercury SmartCraft Alarm Codes encyclopedia](https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia) and the [Mercury Outboard Winterization Cost guide](https://www.mercuryrepower.ca/blog/mercury-outboard-winterization-service-cost-ontario) (since most "won't start in spring" issues trace back to skipped winterization).
+
+**CTA:** Stuck after Step 6? Call HBW at (905) 342-2153 or text (647) 952-2153. We service Mercury and Mercruiser only — call before you tow it anywhere else.
+`,
+    faqs: [
+      { question: 'Why won\'t my Mercury 4-stroke start?', answer: 'Most common causes in order: (1) safety lanyard not clipped, (2) weak or dead battery, (3) stale fuel or water in fuel, (4) bad spark plugs, (5) fuel pump or filter, (6) ECM alarm code. Check in that order — 80% of cases resolve in the first 4 steps.' },
+      { question: 'My Mercury cranks but won\'t fire — what now?', answer: 'Cranking means electrical is fine. The issue is fuel, spark, or compression. Start with fuel (smell it, check filter for water), then plugs (pull one and look), then primer bulb (should firm up). If those check out, you need shop diagnostics.' },
+      { question: 'Is it safe to keep cranking?', answer: 'No, if you have a SmartCraft alarm code, smoke, fuel smell, or water visible in cylinders. Otherwise, repeated short cranking is fine but rest the starter 30 seconds between attempts and check the battery voltage.' },
+      { question: 'When should I stop DIY and call a dealer?', answer: 'After step 6 in our diagnostic flow (ECM codes). Compression testing and ECM scanning need shop tools you almost certainly don\'t have. Mercury G3 diagnostic kit is dealer-only.' },
+      { question: 'Can stale fuel really stop a motor?', answer: 'Yes. Ethanol gas goes stale in 30-60 days. It oxidizes, separates, attracts water. A clogged fuel filter or gummed-up injector from old fuel is one of the most common spring no-start calls.' },
+    ],
+  },
+  {
+    slug: 'mercury-outboard-overheating-at-idle-fix-ontario',
+    title: 'Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer',
+    description: 'Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum dealer — water pump impeller, intake debris, thermostat, sensors — and when to stop and call.',
+    image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Troubleshooting',
+    readTime: '7 min',
+    keywords: ['mercury outboard overheating', 'mercury overheating at idle', 'mercury water pump impeller', 'mercury tell-tale not pissing', 'mercury cooling system fix ontario'],
+    content: `## Quick answer
+
+Mercury overheating at idle but fine at cruise is almost always a **cooling water flow problem**. Cruising RPM pushes enough water through a partially-blocked system to keep temps in range. Idle doesn't.
+
+The diagnostic order for 95% of these calls:
+
+1. **Tell-tale (the pee stream)** — is it strong, weak, or absent?
+2. **Water pump impeller** — when was it last replaced?
+3. **Cooling system intake** — debris on the lower unit screens
+4. **Thermostat** — stuck partially open or fully closed
+5. **Sensor / wiring fault** — false overheat reading
+6. **Internal blockage** — sand, scale, or gasket failure (shop work)
+
+If you got an overheat alarm and shut down properly, you probably didn't damage anything. If you kept running through it, that's a different conversation.
+
+## Step 1: Check the tell-tale
+
+The tell-tale (the small water stream from the side of the cowling) tells you what the water pump is doing.
+
+| Tell-tale state | Likely cause |
+|---|---|
+| Strong stream | Water pump fine, problem is downstream (thermostat, sensor) |
+| Weak stream | Partially-blocked impeller or intake |
+| Absent | Impeller failed, intake fully blocked, or pickup tube cracked |
+| Strong at cruise, weak at idle | Classic worn impeller (it gets by at high RPM but lacks vacuum at low RPM) |
+
+**Critical:** Don't run the engine with no tell-tale flow. You'll cook the powerhead in minutes.
+
+## Step 2: Water pump impeller
+
+Mercury's water pump impeller is a rubber wear item. It lives in the lower unit and gets ripped up by sand, debris, or just age.
+
+**Replacement interval:** Every 2-3 years, or every 200 hours, whichever comes first. Most customers don't think about it until it fails.
+
+**Symptoms of a worn impeller:**
+- Weak tell-tale at idle, normal at cruise
+- Overheat alarm only when idling, trolling, or in no-wake zones
+- Suction loss at low RPM
+- Tell-tale that "sputters" instead of streaming
+
+**Cost reality:** A water pump impeller kit at HBW is moderate parts cost + 1-2 hours labour to install (the lower unit has to come off). Way cheaper than a melted powerhead. Just do it on schedule.
+
+### HBW dealer note
+
+If your tell-tale was already weak last fall and you kept fishing, the impeller is past done. Don't ignore it again this spring. We replace impellers every week in May and June for customers who postponed it.
+
+## Step 3: Cooling intake screens
+
+The lower unit has small water intake screens on each side. Weeds, sand, plastic bags, or zebra mussels can block them partially.
+
+**Check:** Lower unit out of water, inspect the intake screens. Use a soft brush or wooden pick to clear debris. Don't use metal — you can damage the intake passages.
+
+Common in Rice Lake / Kawarthas where weed beds are everywhere. Less common in clearer deep water.
+
+## Step 4: Thermostat
+
+The thermostat regulates how much cool lake water enters the engine. If it's stuck closed → overheats at all RPMs. If it's stuck partially open → overheats at idle, fine at cruise (because volume overcomes the restriction).
+
+**Check:** Thermostat is in the powerhead. Replacement is moderate DIY for handy owners, easy for the shop.
+
+**Mercury-specific:** Don't try to "delete" the thermostat. Engines need to reach operating temp to combust efficiently. A deleted thermostat = lifelong rich-running engine = fouled plugs + higher emissions + worse fuel economy.
+
+## Step 5: Sensor / wiring fault
+
+Modern Mercury 4-strokes have a coolant temp sensor that feeds the ECM. If the sensor goes bad or its wiring corrodes, the ECM can think it's overheating when it isn't.
+
+**Check:** Pull the SmartCraft codes. A "high coolant temp" code with a perfectly fine tell-tale and a hand-test that says the powerhead isn't hot → likely a sensor or wiring issue, not a real overheat.
+
+For more on what each code means, see our [Mercury SmartCraft Alarm Codes guide](https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia).
+
+## Step 6: Internal blockage / gasket failure
+
+If steps 1-5 don't fix it, you're into shop work:
+- Sand or scale buildup in the water passages
+- Head gasket failure (water passage to cylinder = white smoke + bad day)
+- Cracked block (rare on outboards, common on sterndrives with skipped winterization)
+
+These need Mercury shop tools to diagnose properly. Don't keep running it.
+
+## When to STOP immediately
+
+The overheat alarm exists for a reason. If you hear it:
+
+1. **Pull throttle to idle**, do NOT shut down (running cool water through the engine = recovery; sudden shutdown can heat-soak the head)
+2. **Trim the motor up** to reduce drag and let it cool
+3. **Drift to a dock or shore**
+4. **Once temp drops** (you'll see it on SmartCraft), kill the engine
+5. **Check the tell-tale** when restarting on muffs or at the dock
+
+Restarting an overheated motor at high RPM is what causes powerhead failures. Most Mercury overheat events are recoverable IF you idle down immediately. The customers who blow powerheads are the ones who throttled up hoping it would clear.
+
+### HBW dealer note
+
+We've replaced a lot of powerheads from customers who ignored the first overheat alarm. The motor will give you a warning. Listen to it. The alarm isn't a suggestion.
+
+## Cost reality
+
+| Fix | Typical scope |
+|---|---|
+| Impeller replacement | Routine service, 1-2 hours labour |
+| Thermostat replacement | Quick service, low parts cost |
+| Sensor / wiring | Diagnostic + part, depends on which sensor |
+| Powerhead replacement (from ignored overheats) | Major job, often half a repower in cost |
+
+The pattern: a small preventative fix saves you a major repair. Most overheats are an impeller you should have replaced last year.
+
+## When to bring it to HBW
+
+- Tell-tale absent or barely there → don't run it, bring it in
+- SmartCraft showing high coolant temp code → bring it in
+- Already overheated and shut down → safe to start once cooled, but get the cause diagnosed before next outing
+- Replacing impeller yourself for the first time → optional, we can do it for the cost of an afternoon
+
+Call **(905) 342-2153** or text **(647) 952-2153**.
+
+## FAQ
+
+**CTA:** Tell-tale weak or absent? Don't risk the powerhead. Call HBW at (905) 342-2153 — impeller replacement is a 1-2 hour job that saves a $5,000-$15,000 powerhead replacement.
+`,
+    faqs: [
+      { question: 'Why is my Mercury overheating only at idle?', answer: 'Almost always a partially-blocked or worn water pump impeller. At cruise RPM, enough water gets through to keep temps OK; at idle, there isn\'t enough flow. Standard fix is impeller replacement (1-2 hour service job).' },
+      { question: 'How often should I replace the impeller?', answer: 'Every 2-3 years or every 200 hours, whichever comes first. Mercury recommends inspection annually. If you boat in weedy water (like Rice Lake), lean toward 2 years.' },
+      { question: 'My tell-tale is weak, can I still run it?', answer: 'Briefly at idle to limp back to dock, yes. Anything more risks the powerhead. The tell-tale stream is your real-time water-flow indicator — if it\'s weak, the engine is undercooled.' },
+      { question: 'Can I just delete the thermostat to fix overheating?', answer: 'No. Engines need to reach operating temp to combust properly. A deleted thermostat means lifelong rich-running, fouled plugs, worse fuel economy, more emissions. Fix the actual problem.' },
+      { question: 'Did I damage the powerhead by overheating?', answer: 'Depends on duration and how you responded. If you got the alarm, throttled to idle, and shut down within a few minutes — usually fine. If you kept running through the alarm, you may have damaged head gasket, rings, or valves. We can pressure-test to confirm.' },
+    ],
+  },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
