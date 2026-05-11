@@ -7,6 +7,7 @@ import mercury115vs150Hero from '@/assets/blog/mercury-115-vs-150-zh-hero.png';
 import repowerVsNewHero from '@/assets/blog/repower-vs-new-boat-zh-hero.png';
 import regulationsHero from '@/assets/blog/ontario-boating-regulations-zh-hero.png';
 import chineseFamily23Cruise from '@/assets/blog/chinese-family-23cruise-rice-lake.jpg';
+import chineseFamilyMultiGen from '@/assets/blog/chinese-family-legend-multigen.jpg';
 
 export const mandarinBlogArticles: BlogArticle[] = [
   {
