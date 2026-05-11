@@ -1769,7 +1769,7 @@ When customers come to HBW for a Mercury repower, they get:
 - **Prop selection during sea-trial** to confirm performance
 - **PCL update** as part of the project
 - **Service log entry** for warranty support and resale value
-- **Mercury Repower Financing** at 7.99% APR (as of May 2026) (qualified buyers)
+- **Mercury Repower Financing** for qualified buyers (current rates on our [financing page](/financing))
 - **Trade-in evaluation** for old motors
 
 We do not push repowers that are not warranted. Sometimes customers come in with a motor that has years of life left. We tell them that and they go fish.
@@ -1880,7 +1880,7 @@ Mercury outboard motors (the core business). Legend Boats. Used boats. Service a
 Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer and require part-sourcing. [Contact us](/contact) for quotes.
 
 **Does HBW offer financing?**
-Yes. Mercury Repower Financing at 7.99% APR for qualified buyers. We process applications in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
+Yes. Mercury Repower Financing is available for qualified buyers. Current rates are shown on our [financing page](/financing) and confirmed in your quote. We process applications in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
 
 **Does HBW offer storage?**
 Yes. HBW offers outdoor winter storage with shrinkwrap and proper winterization. We do not offer on-site indoor storage. If indoor storage is the right fit for your boat, we can talk through options and point you in the right direction.
@@ -1931,7 +1931,7 @@ Mercury Platinum Dealer 路 Rice Lake, Ontario
       },
       {
         question: 'Does HBW offer financing?',
-        answer: 'Yes. Mercury Repower Financing at 7.99% APR for qualified buyers. We process applications in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).'
+        answer: 'Yes. Mercury Repower Financing is available for qualified buyers. Current rates are shown on our [financing page](/financing) and confirmed in your quote. We process applications in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).'
       },
       {
         question: 'Does HBW offer storage?',
@@ -3331,7 +3331,7 @@ We assess trailers as part of cottage repower projects. A new trailer is $3,000 
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
 - [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific recommendations
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific recommendations
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), 7.99% APR (as of May 2026) Mercury Repower Financing
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), current Mercury Repower Financing rates
 
 ## Ready to talk through a cottage repower?
 
@@ -3366,7 +3366,7 @@ Depends on hull length and use. 14 to 16 ft tin boats: 25 to 40 HP. 16 to 18 ft 
 Most of the time, yes. Evinrude stopped making outboards in 2020 and parts/service support is shrinking. Brand conversion adds $1,500 to $3,000 CAD in rigging but pays back over the life of the new motor. See our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide).
 
 **Can I get financing for a cottage repower?**
-Yes. Mercury Repower Financing offers 7.99% APR for qualified buyers. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026) for details. We process the application in-shop.
+Yes. Mercury Repower Financing is available for qualified buyers. Current rates are shown on our [financing page](/financing) and confirmed in your quote. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026) for details. We process the application in-shop.
 
 **When is the best time to repower a cottage boat?**
 Off-season (October through April). Mercury inventory is best, our shop is quietest, and you get easier appointment slots. Spring rush starts in March and runs through May.
@@ -3690,7 +3690,7 @@ Six things move whether a repower is the right call for your specific boat:
 - **Hull condition.** A solid aluminum hull or fiberglass with a good transom can last 30+ more years. A soft transom, rotten floor, or major structural damage means walk away from the repower path.
 - **Boat fit.** Does the boat actually fit your family and your use? If you have outgrown it (more passengers, different water, different use), buy new. If it still fits, repower.
 - **Motor age and condition.** A 2-stroke from 1995 with hard starting, excessive smoke, and frequent repairs is the textbook repower candidate. A 5-year-old FourStroke that ran fine last summer is not (yet).
-- **Budget vs. payment tolerance.** Repowering at 7.99% APR (as of May 2026) over 60 to 84 months is usually cheaper monthly than financing a new boat. See the [financing guide](/blog/mercury-outboard-financing-ontario-2026) for math.
+- **Budget vs. payment tolerance.** Repowering over 60 to 84 months is usually cheaper monthly than financing a new boat (current Mercury Repower Financing rates are on our [financing page](/financing)). See the [financing guide](/blog/mercury-outboard-financing-ontario-2026) for math.
 - **How long you plan to keep the boat.** A 5-year hold favors a lower-investment repower. A 15-year hold justifies a bigger Mercury investment because the new motor will outlast the rest of the boat.
 - **Brand of existing motor.** Mercury-to-Mercury repowers usually keep most existing controls (rigging stays at the low end). Brand conversions (Evinrude, Yamaha, Honda to Mercury) require new everything in the control system.
 
@@ -3767,7 +3767,7 @@ Repowering is the right call when:
 - The hull is solid (aluminum or fiberglass with good transom)
 - The boat still fits your family and use
 - The motor is the only thing wrong with it
-- You do not want to start a new payment book at 8.9% on a new boat
+- You do not want to start a new payment book at typical new-boat loan rates
 - You like the boat you have and the layout works
 
 A meaningful share of Kawartha boats come in for repower assessment and the math holds up. Roughly 70% of the boat-experience for 30% of the cost is the rough rule. The actual numbers vary by boat and motor selection. [Live pricing here.](/quote/motor-selection)
@@ -3851,7 +3851,7 @@ Mercury-to-Mercury repowers usually keep most existing controls if they are post
 Trade-in credit, even on dead motors. Aluminum and parts have value. Our [trade-in valuation tool](/trade-in-value) gives you an instant credit estimate. Trade-in works the same as a down payment for financing or reduces the cash you owe.
 
 **Do you finance repowers?**
-Yes. Mercury Repower Financing is available on most jobs. Standard non-promo rate is 7.99% APR. Terms run 24 to 84 months. Promotional rates lower than 7.99% are sometimes active. See the [financing page](/financing) for details and [promotions page](/promotions) for current offers.
+Yes. Mercury Repower Financing is available on most jobs. Terms run 24 to 84 months. Current standard rates and any active promotional offers are shown on our [financing page](/financing). See the [financing page](/financing) for details and [promotions page](/promotions) for current offers.
 
 **Can you repower boats with non-Mercury motors?**
 Yes. We do Evinrude-to-Mercury, Yamaha-to-Mercury, Honda-to-Mercury repowers every year. Rigging cost is higher than Mercury-to-Mercury because the entire control system needs to swap, but the process is the same. See the [Evinrude-to-Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide) for brand conversion specifics.
@@ -9521,7 +9521,7 @@ Mercury's 2026 model year (effective July 1, 2026) brings refinements rather tha
 - **Refined Avator electric lineup** with expanded HP coverage
 - **Updated Pro XS variants** with software refinements
 - **Continuing Verado V12 expansion** in higher HP classes
-- **Refined warranty programs** including Mercury Repower Financing at 7.99% APR (as of May 2026)
+- **Refined warranty programs** including Mercury Repower Financing (current rates on our [financing page](/financing))
 
 For specific 2026 motor pricing, [build a quote](/quote/motor-selection).
 
@@ -9573,7 +9573,7 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 ## FAQ
 
 **What's new in the Mercury 2026 outboard lineup?**
-Mercury 2026 is largely a refinement year rather than a redesign year. Refined Avator electric lineup, software updates on Pro XS variants, continued V12 Verado expansion, and refined Mercury Repower Financing at 7.99% APR.
+Mercury 2026 is largely a refinement year rather than a redesign year. Refined Avator electric lineup, software updates on Pro XS variants, continued V12 Verado expansion, and refined Mercury Repower Financing (current rates on our [financing page](/financing)).
 
 **When does the Mercury 2026 model year start?**
 July 1, 2026. Mercury model years change every July 1. Pre-July 2026 motors are technically 2025 model year.
@@ -9600,7 +9600,7 @@ No. Mercury phased out consumer 2-stroke production years ago. All 2026 Mercury 
 Yes by special order. Verado is built for offshore applications. Ontario freshwater rarely justifies Verado. For specific use cases, [contact HBW](/contact).
 
 **What financing is available on Mercury 2026 motors?**
-Mercury Repower Financing at 7.99% APR for qualified buyers. Sometimes promotional rates are offered seasonally. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026) for current details.
+Mercury Repower Financing is available for qualified buyers, with seasonal promotional rates from time to time. Current rates are on our [financing page](/financing). See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026) for current details.
 
 **Will my older controls and rigging work with a Mercury 2026 motor?**
 Mercury-to-Mercury repowers usually keep existing post-2010 controls and rigging if in good condition. Brand conversions need new everything. We assess during the hull walk-around.
@@ -10374,7 +10374,7 @@ The cost of keeping the PCL current is zero (the update is free). The cost of ge
 - [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
 - [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion and PCL update
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), 7.99% APR (as of May 2026) Mercury Repower Financing
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), current Mercury Repower Financing rates
 - [Complete Guide to Boat Repowering in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full repower process
 
 ## Ready to repower (and let HBW handle the PCL update)?
@@ -10553,7 +10553,7 @@ When Evinrude owners come into HBW asking about a Mercury repower, we want to kn
 - **Hull make, model, year, and condition.** The hull is the long-term asset. A repower investment goes into the hull's value.
 - **How long you plan to keep the boat.** This is the biggest single variable.
 - **Existing rigging condition.** Sometimes the existing throttle controls and gauges are at end of life anyway, which makes the conversion cost less of a premium because we would have to replace them on a Mercury-to-Mercury repower too.
-- **Budget and financing tolerance.** Most Mercury repowers qualify for 7.99% APR (as of May 2026) financing through Mercury. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026) for details.
+- **Budget and financing tolerance.** Most Mercury repowers qualify for Mercury Repower Financing (current rates on our [financing page](/financing)). See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026) for details.
 
 We will not push the switch on customers whose existing Evinrude has years of life left and a clear plan to use the boat short-term. We will recommend the switch when the math actually favors it.
 
@@ -10583,7 +10583,7 @@ The Pleasure Craft Licence (PCL) needs to be updated when the motor changes. We 
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
 - [Pleasure Craft Licence Update During Repower](/blog/pleasure-craft-licence-update-repower-ontario), Transport Canada paperwork
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), choosing the right Mercury family
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), 7.99% APR Mercury Repower Financing details
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), current Mercury Repower Financing details
 
 ## Ready to talk through the switch?
 
@@ -10824,7 +10824,7 @@ Repowering makes sense when:
 - Your hull is solid (aluminum lasts decades, fiberglass with a good transom can go just as long)
 - The boat fits your family and use
 - The motor is the only thing wrong with it
-- You do not want to start a new payment book at 7.99% APR (as of May 2026) (the standard non-promo rate)
+- You do not want to start a new payment book at current Mercury Repower Financing rates (see our [financing page](/financing))
 
 Buying new makes sense when:
 
@@ -11407,7 +11407,7 @@ Mercury Platinum Dealer 路 Rice Lake, Ontario
   {
     slug: 'mercury-outboard-financing-ontario-2026',
     title: 'Mercury Outboard Financing in Ontario: Your Complete 2026 Guide',
-    description: 'Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR. Mercury runs seasonal promotional rate offers throughout the year. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).',
+    description: 'Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. Current standard rates and any active seasonal promotions are shown on our financing page and confirmed in your build-quote. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).',
     image: '/lovable-uploads/hero-mercury-financing-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
@@ -11419,15 +11419,15 @@ Mercury Platinum Dealer 路 Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Mercury Repower Financing through DealerPlan: 7.99 percent APR (as of May 2026) on packages $10,000 and up, 8.99 percent under $10,000. Minimum financed amount is $5,000. A $299 DealerPlan fee is added post-tax. Apply with your installed quote at mercuryrepower.ca.
+> **Quick answer:** Mercury Repower Financing through DealerPlan. Current rates depend on the financed amount and are shown on our [financing page](/financing) and confirmed in your build-quote. Minimum financed amount is $5,000. A $299 DealerPlan fee is added post-tax. Apply with your installed quote at mercuryrepower.ca.
 
-Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR (as of May 2026). Mercury runs seasonal promotional rate offers throughout the year. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).
+Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. Current Mercury financing rates change with the season and depend on credit, term length, and the engine class. We publish the current rate on our [financing page](/financing) and confirm the rate in your build-quote at [mercuryrepower.ca](/). As of May 2026, qualified buyers can typically expect rates that compete with private bank loans for marine, but only the financing page has the up-to-date number. You can finance the motor, the rigging, install labour, prop, and HST in one package.
 
 > **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
 
 ## Quick recommendation
 
-If a repower is the right call for your boat, financing is almost always the right call for the repower itself. Most of our customers do not pay cash. They put a reasonable down payment on the boat, finance the rest at 7.99% over 60 to 84 months, and apply trade-in credit on their old motor. Their monthly number is usually less than what they were already spending on fuel and repairs for the old 2-stroke.
+If a repower is the right call for your boat, financing is almost always the right call for the repower itself. Most of our customers do not pay cash. They put a reasonable down payment on the boat, finance the rest over 60 to 84 months at the current Mercury Repower Financing rate, and apply trade-in credit on their old motor. Their monthly number is usually less than what they were already spending on fuel and repairs for the old 2-stroke.
 
 We have set up financing on enough Rice Lake, Ontario repowers to know that the customers who get burned are the ones who do not run the math before they sign anything. Five minutes on the [financing calculator](/financing) tells you what monthly payment fits your reality. Five minutes after that is a real quote with the actual financed total. Live numbers, no phone calls.
 
@@ -11439,7 +11439,7 @@ Your monthly payment moves up or down based on five things:
 - **Down payment.** A larger down payment shrinks the financed total and the monthly payment. We do not require a specific down payment percentage. Some customers put 0% down. Some put 30%. The math gets better the more you put down.
 - **Trade-in credit on your old motor.** A working old motor is worth real trade-in credit. Even a dead motor has aluminum and parts value. Our [trade-in valuation tool](/trade-in-value) gives you an instant credit estimate. Trade-in works the same as a down payment. It reduces the financed amount.
 - **Term length.** 24 months has the highest monthly payment but the lowest total interest. 84 months has the lowest monthly payment but the most total interest. Most repower customers land at 60 or 72 months as the sweet spot.
-- **Promotional vs. standard rate.** The 7.99% APR is the standard non-promo rate. Mercury runs seasonal promotional rate offers (sometimes well below 7.99%) tied to specific motors, specific seasons, or specific terms. Current promotion details are on the [promotions page](/promotions).
+- **Promotional vs. standard rate.** Mercury runs seasonal promotional rate offers (sometimes well below the standard rate) tied to specific motors, specific seasons, or specific terms. Current standard and promotional rates are on our [financing page](/financing) and the [promotions page](/promotions).
 
 ## What you can finance in a Mercury repower
 
@@ -11460,9 +11460,9 @@ Build a real quote on the [motor selection page](/quote/motor-selection) and the
 
 ## Standard rate vs promotional rate
 
-The 7.99% APR is HBW's standard non-promotional financing rate as of 2026. It is the rate available year-round on most repower projects without any specific promotion tied to it. It is not the cheapest rate Mercury offers. It is the baseline.
+HBW's standard non-promotional Mercury Repower Financing rate is the rate available year-round on most repower projects without any specific promotion tied to it. It is not the cheapest rate Mercury offers. It is the baseline. The current standard rate is on our [financing page](/financing) and confirmed in your build-quote.
 
-Mercury promotional rate offers happen multiple times a year. They are usually tied to specific motors (current model year), specific seasons (spring rush, fall pre-buy), or specific financing terms (60 month minimum, 72 month minimum, etc.). When a promo rate is active, it can be significantly below 7.99%, sometimes as low as the low single digits depending on the offer.
+Mercury promotional rate offers happen multiple times a year. They are usually tied to specific motors (current model year), specific seasons (spring rush, fall pre-buy), or specific financing terms (60 month minimum, 72 month minimum, etc.). When a promo rate is active, it can be significantly below the standard rate, sometimes as low as the low single digits depending on the offer.
 
 Promo terms rotate. We do not run an evergreen low rate. Current promotion details, including any active financing rate offers, are on the [promotions page](/promotions). If you are within a few weeks of the start of boating season, it is worth checking whether a promo is active before you sign at the standard rate.
 
@@ -11490,11 +11490,11 @@ Three patterns we see most often. Your situation is somewhere in here.
 
 ## When to repower with cash vs financing
 
-Quick honest aside on this. If you have the cash to do the repower outright AND your other money is not earning more than 7.99%, paying cash makes mathematical sense. You skip the interest and you own the motor outright.
+Quick honest aside on this. If you have the cash to do the repower outright AND your other money is not earning more than the current financing rate, paying cash makes mathematical sense. You skip the interest and you own the motor outright.
 
-If your money is in something earning 8% or more, or your emergency fund would get depleted by paying cash, financing the repower at 7.99% (or a promo rate) makes sense. You keep your liquidity, and the math is roughly a wash. We will not push you either way. The decision is yours and your accountant's.
+If your other money is earning more than the current financing rate, or your emergency fund would get depleted by paying cash, financing the repower (or using a promo rate) makes sense. You keep your liquidity, and the math is roughly a wash. We will not push you either way. The decision is yours and your accountant's.
 
-What does not make sense: financing a repower at 7.99% AND keeping a big chunk of cash in a low-interest savings account earning 1.5%. That is the worst of both worlds. Run the numbers honestly.
+What does not make sense: financing a repower AND keeping a big chunk of cash in a low-interest savings account earning a fraction of the financing rate. That is the worst of both worlds. Run the numbers honestly.
 
 ## Related guides
 
@@ -11516,7 +11516,7 @@ If you would rather talk it through, [give us a call at (905) 342-2153](tel:9053
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The 7.99% standard APR is current as of May 2026 and may change with market rates. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Live financing payment options are on the [financing page](/financing). Both pages are the source of truth and update as Mercury pricing, HBW promotions, and market rates change. Mercury model years change every July 1, and we refresh ranges in articles annually. Current promotional financing rate offers are on the [promotions page](/promotions)._
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. Financing rates change with market conditions; the current rate is on our [financing page](/financing) and confirmed in your build-quote. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Both pages are the source of truth and update as Mercury pricing, HBW promotions, and market rates change. Mercury model years change every July 1, and we refresh ranges in articles annually. Current promotional financing rate offers are on the [promotions page](/promotions)._
 
 ---
 
@@ -11527,10 +11527,10 @@ Want a real number? Run [the Trade-In Value Estimator](/tools#trade-in-value) 鈥
 ## FAQ
 
 **Can I finance a Mercury repower in Ontario?**
-Yes. Mercury Repower Financing through HBW covers the full project: motor, rigging, controls, prop, install labour, and HST. Standard non-promo rate is 7.99% APR. Terms run 24 to 84 months. Build a real quote and see live payment options on the [financing page](/financing).
+Yes. Mercury Repower Financing through HBW covers the full project: motor, rigging, controls, prop, install labour, and HST. Terms run 24 to 84 months. Current rates are on our [financing page](/financing) and confirmed in your build-quote.
 
 **What is the Mercury financing rate in 2026?**
-The standard non-promotional rate is 7.99% APR. Mercury runs seasonal promotional rate offers throughout the year that can be significantly below the standard rate. Current promotion details are on the [promotions page](/promotions).
+Current standard and promotional financing rates are shown on our [financing page](/financing) and the [promotions page](/promotions), and confirmed in your build-quote. Mercury runs seasonal promotional rate offers throughout the year that can be significantly below the standard rate.
 
 **What can I finance in a Mercury repower?**
 The full project. Motor, rigging (controls, cables, gauges), new prop, install labour, sea-trial, hydraulic steering conversion (if required), battery and harness refresh, and HST. Everything except your old motor (which becomes trade-in credit instead).
@@ -11554,7 +11554,7 @@ Most approvals come back in 24 to 48 hours after you submit the application. Fas
 Yes. There is no prepayment penalty on Mercury Repower Financing. If you sell the boat, get a bonus, or just decide to pay it off in full, you can do that without extra fees.
 
 **Should I pay cash or finance my repower?**
-If you have the cash and your other money is not earning more than 7.99%, paying cash usually wins mathematically. If your savings is earning more than the financing rate, or paying cash would deplete your emergency fund, financing is the right call. We will not push you either way.
+If you have the cash and your other money is not earning more than the current financing rate, paying cash usually wins mathematically. If your savings is earning more than the financing rate, or paying cash would deplete your emergency fund, financing is the right call. We will not push you either way.
 
 **What is HST in Ontario and is it included in the financing?**
 HST in Ontario is 13%. Yes, HST gets added to the project total and gets included in the financed amount. You do not have to pay tax up front separately.
@@ -11563,8 +11563,8 @@ HST in Ontario is 13%. Yes, HST gets added to the project total and gets include
 Build a quote on the [motor selection page](/quote/motor-selection). Three minutes. Then click through to the [financing page](/financing) to see your live payment options. When you are ready, the application is online and approval comes back in 24 to 48 hours.
 `,
     faqs: [
-      { question: 'Can I finance a Mercury repower in Ontario?', answer: 'Yes. Mercury Repower Financing through HBW covers the full project: motor, rigging, controls, prop, install labour, and HST. Standard non-promo rate is 7.99% APR. Terms run 24 to 84 months. Build a real quote and see live payment options on the [financing page](/financing).' },
-      { question: 'What is the Mercury financing rate in 2026?', answer: 'The standard non-promotional rate is 7.99% APR. Mercury runs seasonal promotional rate offers throughout the year that can be significantly below the standard rate. Current promotion details are on the [promotions page](/promotions).' },
+      { question: 'Can I finance a Mercury repower in Ontario?', answer: 'Yes. Mercury Repower Financing through HBW covers the full project: motor, rigging, controls, prop, install labour, and HST. Terms run 24 to 84 months. Current rates are on our [financing page](/financing) and confirmed in your build-quote.' },
+      { question: 'What is the Mercury financing rate in 2026?', answer: 'Current standard and promotional financing rates are shown on our [financing page](/financing) and the [promotions page](/promotions), and confirmed in your build-quote. Mercury runs seasonal promotional rate offers throughout the year that can be significantly below the standard rate.' },
       { question: 'What can I finance in a Mercury repower?', answer: 'The full project. Motor, rigging (controls, cables, gauges), new prop, install labour, sea-trial, hydraulic steering conversion (if required), battery and harness refresh, and HST. Everything except your old motor (which becomes trade-in credit instead).' },
       { question: 'What term lengths are available?', answer: '24, 36, 48, 60, 72, and 84 months are common options. Most repower customers land at 60 or 72 months as the sweet spot between manageable monthly payment and reasonable total interest. The [financing calculator](/financing) shows the math on each term.' },
       { question: 'Do I need a down payment?', answer: 'We do not require a specific down payment percentage. Some customers put 0% down. Some put 30%. The math gets better with more down. Trade-in credit on your old motor counts as down payment for approval and total-financed purposes.' },
@@ -11572,7 +11572,7 @@ Build a quote on the [motor selection page](/quote/motor-selection). Three minut
       { question: 'What credit score do I need?', answer: 'Mercury Repower Financing approves a wide range of credit profiles. Excellent credit unlocks the best terms and rates. Fair credit usually still gets approved, sometimes at a higher rate. We do not pull your credit until you have built a serious quote and asked us to start the application.' },
       { question: 'How long does financing approval take?', answer: 'Most approvals come back in 24 to 48 hours after you submit the application. Faster than most car loans.' },
       { question: 'Can I pay off my Mercury financing early?', answer: 'Yes. There is no prepayment penalty on Mercury Repower Financing. If you sell the boat, get a bonus, or just decide to pay it off in full, you can do that without extra fees.' },
-      { question: 'Should I pay cash or finance my repower?', answer: 'If you have the cash and your other money is not earning more than 7.99%, paying cash usually wins mathematically. If your savings is earning more than the financing rate, or paying cash would deplete your emergency fund, financing is the right call. We will not push you either way.' },
+      { question: 'Should I pay cash or finance my repower?', answer: 'If you have the cash and your other money is not earning more than the current financing rate, paying cash usually wins mathematically. If your savings is earning more than the financing rate, or paying cash would deplete your emergency fund, financing is the right call. We will not push you either way.' },
       { question: 'What is HST in Ontario and is it included in the financing?', answer: 'HST in Ontario is 13%. Yes, HST gets added to the project total and gets included in the financed amount. You do not have to pay tax up front separately.' },
       { question: 'How do I get started with Mercury financing?', answer: 'Build a quote on the [motor selection page](/quote/motor-selection). Three minutes. Then click through to the [financing page](/financing) to see your live payment options. When you are ready, the application is online and approval comes back in 24 to 48 hours.' },
       { question: 'By Jay Harris', answer: '3rd-Generation Owner, Harris Boat Works Mercury Platinum Dealer 路 Rice Lake, Ontario [About Jay and Harris Boat Works 鈫抅(/about)' }
@@ -12648,11 +12648,11 @@ A few mistakes we see often that turn the "cheapest motor" into the most expensi
 
 A few moves that genuinely save money without compromising the boat:
 
-- **Buy in winter.** November through March is our quietest shop time. We have first pick of motors before the spring rush. Lead times are shortest. Sometimes Mercury runs winter or pre-spring promotional rates that drop the financing rate well below the standard 7.99% APR (as of May 2026). Current promotion details are on the [promotions page](/promotions).
+- **Buy in winter.** November through March is our quietest shop time. We have first pick of motors before the spring rush. Lead times are shortest. Sometimes Mercury runs winter or pre-spring promotional rates that drop the financing rate well below the standard rate. Current rates and promotion details are on our [financing page](/financing) and the [promotions page](/promotions).
 - **Trade in your old motor.** Even a dead motor has aluminum and parts value. Our [trade-in valuation tool](/trade-in-value) gives you an instant credit estimate. Trade-in credit reduces the financed amount or the cash you owe at the end.
 - **Mercury to Mercury repower.** Most existing controls and cables can stay. Rigging stays at the low end ($500 to $1,000 CAD for a Mercury-to-Mercury swap, versus $2,000 to $3,000 for a brand conversion). [Live pricing here.](/quote/motor-selection)
 - **Aluminum prop on smaller motors.** On motors up to 115 HP, a standard aluminum prop is $450 CAD and works fine for the typical boater. Stainless steel props are required on 150 HP and up but are not cost-effective on smaller motors unless you have a specific performance reason.
-- **Finance instead of stretching cash.** If your money is earning more than 7.99% in other investments, it is mathematically cheaper to finance the motor at 7.99% (or a promo rate) and keep your money working. See the [financing page](/financing) for the full math.
+- **Finance instead of stretching cash.** If your money is earning more than the current Mercury Repower Financing rate in other investments, it is mathematically cheaper to finance the motor and keep your money working. See the [financing page](/financing) for the full math.
 
 ## What HBW checks before recommending the "cheapest" motor for your boat
 
@@ -12725,7 +12725,7 @@ For sheltered-water solo fishing on small aluminum, yes. A 9.9 to 15 HP tiller i
 Only if it actually fits your boat and your use. Buying too small is the most common expensive mistake we see. A 9.9 on a 16-foot aluminum that should have a 25 will leave you stranded against wind and trading up at full price in two seasons. The cheapest motor that genuinely fits your hull and use case is what you want, not the cheapest motor on the lot.
 
 **Can I finance a small Mercury outboard?**
-Yes. Mercury Repower Financing covers motors of any size, including small portable tillers. Terms run 24 to 84 months at 7.99% APR standard (or lower if a promotional rate is active). Full details on the [financing page](/financing).
+Yes. Mercury Repower Financing covers motors of any size, including small portable tillers. Terms run 24 to 84 months at current Mercury Repower Financing rates (lower if a promotional rate is active). Full details on the [financing page](/financing).
 
 **Are Mercury portable motors reliable?**
 Yes. Mercury has dominated the small-portable outboard category in Canada for decades. Parts availability is excellent. Service network is wide. We have customers running 9.9s and 15s that are 25 years old and still going. The current generation of FourStrokes is even more reliable than the 2-stroke generation it replaced.
@@ -12751,7 +12751,7 @@ A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15
       { question: 'What is the cheapest Mercury with electric start?', answer: 'Mercury offers electric start on motors as small as the 9.9 EH (Electric, Hand-tiller) and 9.9 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).' },
       { question: 'Is a small Mercury good enough for fishing?', answer: 'For sheltered-water solo fishing on small aluminum, yes. A 9.9 to 15 HP tiller is a classic fishing setup on Rice Lake and Kawartha lakes. For bigger water (Lake Ontario, Lake Simcoe afternoon wind), or for fishing with two adults plus gear, you usually need at least 25 HP to plane reliably.' },
       { question: 'Should I buy the cheapest motor I can afford?', answer: 'Only if it actually fits your boat and your use. Buying too small is the most common expensive mistake we see. A 9.9 on a 16-foot aluminum that should have a 25 will leave you stranded against wind and trading up at full price in two seasons. The cheapest motor that genuinely fits your hull and use case is what you want, not the cheapest motor on the lot.' },
-      { question: 'Can I finance a small Mercury outboard?', answer: 'Yes. Mercury Repower Financing covers motors of any size, including small portable tillers. Terms run 24 to 84 months at 7.99% APR standard (or lower if a promotional rate is active). Full details on the [financing page](/financing).' },
+      { question: 'Can I finance a small Mercury outboard?', answer: 'Yes. Mercury Repower Financing covers motors of any size, including small portable tillers. Terms run 24 to 84 months at current Mercury Repower Financing rates (lower if a promotional rate is active). Full details on the [financing page](/financing).' },
       { question: 'Are Mercury portable motors reliable?', answer: 'Yes. Mercury has dominated the small-portable outboard category in Canada for decades. Parts availability is excellent. Service network is wide. We have customers running 9.9s and 15s that are 25 years old and still going. The current generation of FourStrokes is even more reliable than the 2-stroke generation it replaced.' },
       { question: 'Is it cheaper to buy a used Mercury?', answer: 'Sometimes. A 5-year-old 9.9 in good condition at half the price of new is a real savings. A 20-year-old 9.9 with unknown service history at a quarter of the price is usually a problem waiting to happen. We sell inspected used motors and will inspect a private-sale motor for you for a fair fee before you commit.' },
       { question: 'How long does a small Mercury outboard last?', answer: 'Properly maintained, a modern Mercury small motor (post-2000s) lasts 1,500 to 2,000 hours of running time before major service. For a recreational boater using a 9.9 for 30 to 60 hours a season, that translates to 25 to 60 years of useful life. Practical limit is usually parts availability over time, not the motor itself wearing out.' },
@@ -13106,7 +13106,7 @@ For experienced or handy boaters, yes. The project-boat-plus-repower path consis
 A clean install is 1 to 2 days of shop time at HBW. From the day you confirm the order to the day you pick up the boat is usually 2 to 4 weeks, depending on motor availability. Repowering in winter (November to March) is the fastest. We have first pick of motors before the spring rush.
 
 **Is Mercury financing available on a $30,000 boat-and-motor package?**
-Mercury Repower Financing covers the motor, rigging, install labour, prop, and HST. The boat itself is usually financed separately (or paid cash). Standard Mercury Repower Financing rate is 7.99% APR (as of May 2026), with promotional rates available periodically (current details on the [promotions page](/promotions)). Payment math and calculator on the [financing page](/financing).
+Mercury Repower Financing covers the motor, rigging, install labour, prop, and HST. The boat itself is usually financed separately (or paid cash). Current Mercury Repower Financing rate is shown on our [financing page](/financing), with promotional rates available periodically (current details on the [promotions page](/promotions)). Payment math and calculator on the [financing page](/financing).
 
 **What boats do you recommend for Rice Lake walleye fishing under $30,000?**
 A 16-18 ft aluminum console or tiller boat (Lund, Crestliner, Princecraft, Lowe class) with a 40 to 60 HP main motor and a 9.9 ProKicker for trolling speed control is the classic Rice Lake walleye setup. New, that's around the $25-30k mark with a Mercury package. Used with a planned repower, the same setup lands well under $30,000 with better trim. See our [Mercury ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide) for the kicker setup details.
@@ -13122,7 +13122,7 @@ A 16-18 ft aluminum console or tiller boat (Lund, Crestliner, Princecraft, Lowe 
       { question: 'What\'s the best motor size for an 18-foot pontoon on Rice Lake?', answer: 'For cruising and fishing, 90 HP. For tubing and active family use, 115 HP Command Thrust gives you better hole shot and load-carrying. The [Mercury 75 vs 90 vs 115 comparison guide](/blog/mercury-75-vs-90-vs-115-comparison) walks through this in detail.' },
       { question: 'Should I buy a project boat and repower it?', answer: 'For experienced or handy boaters, yes. The project-boat-plus-repower path consistently delivers the best dollar-per-capability under $30,000 on Rice Lake. For first-time boaters or anyone who does not want to manage hull condition assessment and project timeline, buy further along the spectrum.' },
       { question: 'How long does a Mercury repower take?', answer: 'A clean install is 1 to 2 days of shop time at HBW. From the day you confirm the order to the day you pick up the boat is usually 2 to 4 weeks, depending on motor availability. Repowering in winter (November to March) is the fastest. We have first pick of motors before the spring rush.' },
-      { question: 'Is Mercury financing available on a $30,000 boat-and-motor package?', answer: 'Mercury Repower Financing covers the motor, rigging, install labour, prop, and HST. The boat itself is usually financed separately (or paid cash). Standard Mercury Repower Financing rate is 7.99% APR, with promotional rates available periodically (current details on the [promotions page](/promotions)). Payment math and calculator on the [financing page](/financing).' },
+      { question: 'Is Mercury financing available on a $30,000 boat-and-motor package?', answer: 'Mercury Repower Financing covers the motor, rigging, install labour, prop, and HST. The boat itself is usually financed separately (or paid cash). Current Mercury Repower Financing rates are shown on our [financing page](/financing), with promotional rates available periodically (current details on the [promotions page](/promotions)). Payment math and calculator on the [financing page](/financing).' },
       { question: 'What boats do you recommend for Rice Lake walleye fishing under $30,000?', answer: 'A 16-18 ft aluminum console or tiller boat (Lund, Crestliner, Princecraft, Lowe class) with a 40 to 60 HP main motor and a 9.9 ProKicker for trolling speed control is the classic Rice Lake walleye setup. New, that\'s around the $25-30k mark with a Mercury package. Used with a planned repower, the same setup lands well under $30,000 with better trim. See our [Mercury ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide) for the kicker setup details.' },
       { question: 'By Jay Harris', answer: '3rd-Generation Owner, Harris Boat Works Mercury Platinum Dealer 路 Rice Lake, Ontario [About Jay and Harris Boat Works 鈫抅(/about)' }
     ]
@@ -14374,7 +14374,7 @@ Beyond just publishing prices:
 - **Live pricing updates.** Mercury MY pricing changes effective July 1 are reflected within days. Promotional rate buy-downs are reflected when active.
 - **CAD pricing native.** No "USD plus exchange" surprises.
 - **Full configuration in the quote.** Motor + shaft length + controls + prop + rigging + install labor all included.
-- **Mercury Repower Financing at 7.99% APR (as of May 2026)** built into the quote flow. See our [financing guide](/blog/mercury-outboard-financing-ontario-2026).
+- **Mercury Repower Financing** built into the quote flow (current rates on our [financing page](/financing)). See our [financing guide](/blog/mercury-outboard-financing-ontario-2026).
 - **Quote save and share.** Built quotes can be saved, downloaded as PDF, or sent via email/text.
 - **No phone-call gatekeeping.** Build a quote at midnight if you want.
 
@@ -14391,7 +14391,7 @@ We see these from customers who shopped before coming to HBW:
 ## Related guides
 
 - [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the actual prices
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), 7.99% APR financing
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), current Mercury Repower Financing rates
 - [Mercury Rigging Costs Explained](/blog/mercury-outboard-rigging-costs-ontario), what's in the rigging line
 - [Cheapest Mercury Outboard Canada 2026](/blog/cheapest-mercury-outboard-canada-2026), the lowest entry points
 - [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for HBW
@@ -14777,7 +14777,7 @@ If the customer wants to talk through the configuration, we do a 15 to 30 minute
 
 A deposit (typically 25% of the all-in cost) holds the slot and locks in the motor allocation. Customer signs the work order. Booking confirms the drop-off date and target completion date.
 
-If financing through Mercury Repower Financing at 7.99% APR (as of May 2026), we handle the application in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
+If financing through Mercury Repower Financing, we handle the application in-shop. Current rates are on our [financing page](/financing). See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
 
 ### Step 4: Boat drop-off
 
