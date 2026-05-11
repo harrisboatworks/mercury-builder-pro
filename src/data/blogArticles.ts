@@ -9983,268 +9983,146 @@ Mercury Avator is a special-order item with availability and pricing that update
     readTime: '10 min read',
     keywords: ['rice lake fishing 2026', 'ontario fishing season', 'rice lake walleye', 'rice lake muskie', 'boating season preview', 'kawartha fishing', 'ontario boating trends', 'rice lake bass fishing'],
     content: `
-*Last reviewed: 2026-05-07*
+# 2026 Rice Lake Fishing Season: What to Expect and How to Get Ready
 
-> **Quick answer:** Rice Lake, Ontario's 2026 outlook is strong: walleye and crappie populations are healthy, water levels are normal, and weed structure is back after the cleaner winter. Walleye opener is the second Saturday of May. Get the boat serviced before April or expect a wait. Book at mercuryrepower.ca.
+## Quick answer
+Rice Lake, Ontario is one of the stronger freshwater fisheries in the Kawarthas. Walleye opener falls on the second Saturday of May (FMZ 17). Bass season opens the third Saturday of June. Muskie opens the first Saturday of June. Regulations in Zone 17 include a walleye slot limit (keep only fish measuring 35 to 50 cm), a catch limit of one per day, and a sauger-plus-walleye combined daily possession limit of four. Get your boat ready before April or expect a wait at any marina in the region.
 
-> **Always confirm regulations directly.** Fishing rules in Ontario can change between seasons and by waterbody exception. Before retaining any fish, verify current FMZ 17 rules at [ontario.ca/page/recreational-fishing-regulations](https://www.ontario.ca/page/recreational-fishing-regulations). The numbers in this post reflect the spring 2026 season opener.
+A word on fishing conditions: we are a marina, not a fish biologist. We will not make claims about population health, water quality, or expected catch rates. What we will give you is the regulatory picture, practical setup advice, and the local knowledge that comes from three generations on Rice Lake.
 
-Rice Lake, Ontario (in the Kawarthas)'s 2026 fishing season looks strong across the typical species: walleye, smallmouth bass, muskie, and panfish. Water levels through the Trent-Severn are managed; ice-out timing and water temperatures will set the early-season pattern. The classic species mix and structure on Rice Lake have been consistent for decades. We are looking forward to another good season.
+## Fishing zones and why they matter
 
-## Quick recommendation
+Rice Lake falls within Ontario's Fisheries Management Zone 17 (FMZ 17), which covers much of the Kawartha Lakes region. FMZ boundaries and rules differ from one zone to the next. Rules that apply at Balsam Lake are not necessarily the rules at Rice Lake.
 
-Rice Lake is one of the most productive freshwater fisheries in southern Ontario. The 2026 season looks like a continuation of recent strong years. Walleye are the headline species, but smallmouth bass, muskie, and panfish all produce good fishing through the season.
+Current FMZ 17 regulations are at [ontario.ca](http://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17). Make that your first stop before the season, not this article. Regulations are updated annually.
 
-If you fish Rice Lake regularly, the 2026 patterns are likely to look like 2025 with normal weather variability. If you're new to the lake or haven't fished it in a few years, the basics still apply: shallow weedy bays for spring, structure and weed edges for summer, deeper water for fall, and ice fishing in winter for those equipped for it.
+## Season dates for Rice Lake (FMZ 17)
 
-## What changes the season picture
+The following reflects current Ontario FMZ 17 fishing regulations. Always verify directly before fishing.
 
-Five things move how the Rice Lake season plays out:
+| Species | Season opens | Season closes | Size/slot limit | Catch limit (daily) |
+|---|---|---|---|---|
+| Walleye and sauger (combined) | Second Saturday in May | November 15 | Must be 35 to 50 cm (slot) | 1 per day; 4 possession |
+| Largemouth and smallmouth bass (combined) | Third Saturday in June | December 15 | None stated zone-wide | 2 per day; 6 possession |
+| Muskellunge | First Saturday in June | December 15 | Must be greater than 112 cm | 0 per day (catch and release only) |
+| Northern pike | Open all year | Open all year | None stated zone-wide | 2 per day; 6 possession |
+| Crappie | Open all year | Open all year | None stated | 10 per day; 30 possession |
+| Yellow perch | Open all year | Open all year | None stated | 25 per day; 50 possession |
+| Sunfish | Open all year | Open all year | Only 30 per possession may exceed 18 cm | 15 per day; 300 possession |
+| Lake sturgeon | Closed all year | Closed all year | Not applicable | Not applicable |
 
-- **Spring weather and ice-out timing.** Late ice-out delays the opener pattern. Early ice-out advances it.
-- **Water temperatures through May and June.** Walleye spawning timing and post-spawn dispersal depend on temps.
-- **Water levels through the Trent-Severn system.** Parks Canada manages levels; high or low water affects shoreline fishing.
-- **Wind and weather patterns through summer.** Heavy summer wind affects pontoon and small-boat use.
-- **Bait fish populations.** Forage fish abundance affects gamefish location and size.
+Important notes on walleye:
+- Rice Lake walleye falls under the slot limit: you can only keep fish between 35 and 50 cm. Fish outside that range must be released.
+- There are waterbody-specific exceptions within FMZ 17, including rules for Lake Scugog, the Trent River, and Crowe Lake.
+- Muskie on Rice Lake is catch and release only under current rules.
 
-## The Rice Lake fishery by species
+## Walleye: the headline species
 
-### Walleye
+Walleye is what brings most anglers to Rice Lake. The lake has historically been productive for walleye across a long season.
 
-The headline species. Rice Lake has historically been one of the strongest walleye fisheries in southern Ontario.
+What we know confidently:
+- Walleye opener is the second Saturday in May for FMZ 17.
+- The slot limit (35 to 50 cm to keep) protects the larger fish population.
+- Catch limit is one walleye per day.
+- The season runs through November 15.
 
-- **Opener (May):** Walleye in shallow bays where spawning has just finished. Crawler harnesses on slow-troll, jigs in 8 to 15 ft.
-- **Early summer (June to July):** Fish move to weed edges and structure. Trolling crank baits, casting jerk baits.
-- **Mid-summer (July to August):** Deeper structure, weed lines, edges of basins. Trolling with kicker motor at 1.5 to 2 mph is the classic technique.
-- **Fall (September to October):** Pre-winter feeding, larger fish. Trolling, jigging, casting.
+What changes the early-season pattern: spring weather and ice-out timing. A late winter pushes ice-out later and compresses the early warming period before the opener. An early winter means warmer water at opener and faster post-spawn dispersal. Both are normal in Ontario, the pattern varies year to year.
 
-Bewdley, Sugar Island, and the central basin are reliable walleye zones.
+We will not tell you the fishing is going to be great. We will tell you the regulations are in place, the season is open when it opens, and the fish are in the lake.
 
-### Smallmouth bass
+Classic Rice Lake walleye approaches:
+- Spring (opener): Shallow bays, post-spawn fish. Crawler harnesses on slow troll, jigs in 8 to 15 feet.
+- Early summer: Weed edges and structure. Trolling crankbaits, casting jerkbaits.
+- Mid-summer: Deeper weed lines and basin edges. Trolling with a kicker motor at 1.5 to 2 mph is the standard approach.
+- Fall: Pre-winter feeding, larger fish. Trolling and jigging.
 
-Strong fishery through the open-water season.
+Bewdley, Sugar Island area, and the central basin are the zones most regulars focus on.
 
-- **Spring (post-opener):** Spawning in shallow rocky areas and weed edges.
-- **Summer:** Rocky structure, drop-offs, weed edges. Tube jigs, drop-shots, soft plastic jerk baits.
-- **Fall:** Deeper rocky structure as fish prepare for winter.
+## Bass season on Rice Lake
 
-Tournament bass anglers fish Rice Lake throughout the season.
+Largemouth and smallmouth bass season opens the third Saturday in June in FMZ 17. The combined daily limit is two fish; possession limit is six.
 
-### Muskie
+Rice Lake has solid smallmouth bass fishing on rocky structure and weed edges through the open-water season. Tournament bass anglers fish the lake regularly through summer.
 
-Smaller muskie population than some Kawartha lakes but present.
+No size limit is stated zone-wide for bass in FMZ 17, but always confirm at the source.
 
-- **Summer to fall:** Bigger lures, weed edges, structure transitions.
-- **Fall:** Pre-winter feeding produces some big fish.
+## Muskie
 
-Muskie fishing is a more specialized pursuit. Most Rice Lake muskie anglers also fish other species.
+Muskie season opens the first Saturday in June and runs through December 15. As of the current FMZ 17 regulations, muskie must be greater than 112 cm to possess, and the daily catch limit is zero (all muskie are catch and release).
 
-### Panfish (perch, bluegill, crappie)
+Rice Lake has muskie, though it is not the primary destination for most muskie anglers in the Kawarthas. The season runs long enough to produce fall fish for those targeting them seriously.
 
-Reliable fishery for kids, casual anglers, and ice fishers.
+## Panfish, perch, and pike
 
-- **Summer:** Bays, weed pockets, structure for crappie and bluegill.
-- **Winter (ice fishing):** Yellow perch and crappie are the headline ice species.
+These are the bread-and-butter species for casual anglers, kids, and ice fishers:
+- Crappie, yellow perch, and sunfish: All open year-round on Rice Lake under FMZ 17 rules.
+- Northern pike: Open all year, two per day, six possession.
 
-### Carp
+These species also make Rice Lake accessible to people who are not chasing walleye or bass. A warm summer bay with decent weed structure is all you need.
 
-Often underappreciated but present in good size on Rice Lake. Some specialty carp anglers target them.
+## The Trent-Severn Waterway: free lockage this summer
 
-## What changes the answer for fishing setup
+If you fish Rice Lake and explore the broader Trent-Severn system, there is a practical piece of news for 2026.
 
-Five things move which Mercury setup fits Rice Lake fishing:
+Parks Canada is offering free lockage on the Trent-Severn Waterway from June 19 to September 7, 2026, under the Canada Strong Pass. During that window, boaters are issued a free lockage sticker at their first lockstation. No advance registration, no online purchase required, show up and get your sticker.
 
-- **Primary species.** Walleye trolling rewards a kicker; bass run-and-gun rewards a stronger main motor.
-- **Solo or family.** Family fishing balances different priorities than solo serious fishing.
-- **Tournament involvement.** Tournament anglers want faster acceleration and bigger HP.
-- **Hull type.** Aluminum console, deep-V, pontoon all fish Rice Lake but have different sweet spots.
-- **Where you launch.** Bewdley, Hastings, Roseneath each have different launch characteristics.
+A few things the free lockage does not cover: mooring fees, shore power, and services from third parties. Those still apply at normal rates.
 
-For most Rice Lake fishing, the standard setup is:
+Note also: Locks 42 to 45 (Couchiching to Port Severn) are currently closed to navigation. If your travel plans include that stretch, check current status with Parks Canada before you go.
 
+## Getting your boat ready before the opener
+
+The walleye opener is the one morning most Rice Lake anglers do not want to spend troubleshooting a motor. Every year, we see customers who skipped spring prep and end up missing the morning.
+
+Before opener, your boat needs:
+- Engine flushed, oil changed, water pump inspected
+- Battery fully charged and tested
+- Lower unit inspected, gear lube changed
+- All lights working (you are launching before sunrise)
+- Trailer wheel bearings checked
+- Registration, PCL, and PCOC current and on board
+
+Book spring service before April if you want an easy timeline. The rush hits every marina in this region by early May.
+
+Book service at [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
+
+## Standard Rice Lake fishing setup
+
+For most Rice Lake fishing, walleye-focused, aluminum console boat, the setup that works:
 - 16 to 18 ft aluminum console boat
 - Mercury 60 to 115 HP FourStroke main motor
 - Mercury 9.9 ProKicker for walleye trolling
-- Modern fish finder with GPS
+- Fish finder with GPS chartplotter and side imaging
 
-For specific pricing, [build a quote](/quote/motor-selection).
+The kicker is not optional if you are serious about walleye trolling. Speed control at 1.5 to 2 mph with a 60 to 115 HP main motor is not practical without it. The savings you think you are making by skipping the kicker disappear the first windy June morning when you are fighting your main motor's idle to hold 1.8 mph.
 
-## What HBW checks for Rice Lake fishing customers
+For specific pricing on Mercury motors, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-When fishing customers come to HBW for repower, new boat, or service, we want to know:
+## What you need legally to fish Rice Lake
 
-- **Boat type, length, and condition**
-- **Primary species (walleye, bass, muskie, mixed)**
-- **Solo or family use**
-- **Trolling-heavy or run-and-gun preference**
-- **Tournament involvement**
-- **Existing electronics (Garmin, Lowrance, Humminbird, Raymarine)**
-- **Where you launch (Bewdley, Hastings, Roseneath, private dock)**
-- **Where you store (cottage, home, marina)**
-- **Long-term ownership plan**
+- Ontario Outdoors Card and Fishing Licence Tag, required for residents aged 18 to 64. Non-residents need the equivalent.
+- Pleasure Craft Operator Card (PCOC), required for all motorized vessel operators.
+- Pleasure Craft Licence (PCL), required for any boat with a motor totalling at least 10 hp. PCLs are now valid for 5 years; renewals carry a $24 fee.
 
-Three generations of HBW have rigged boats for Rice Lake fishing. The local knowledge matters when matching motor to lake.
-
-## Common Rice Lake fishing setup mistakes
-
-We see these every season:
-
-1. **No kicker.** Walleye trolling without a 9.9 ProKicker is a compromise. The savings are not worth the trolling control loss.
-2. **Underbuying HP.** A 25 HP on a 16 ft fishing boat used for serious walleye fishing leaves you fighting wind. Right-size for actual use.
-3. **Wrong electronics for Rice Lake structure.** Modern fish finders with GPS chartplotter and side imaging matter for working specific structure.
-4. **Skipping the opener prep.** The opener morning is the highest-stakes morning. Customers who skip prep lose fishing time.
-5. **Storage that hurts the boat.** Outdoor uncovered storage shortens hull and motor life. Indoor or covered storage matters.
-
-## Rice Lake regulatory environment
-
-A few practical notes for Rice Lake fishing:
-
-- **Provincial fishing licence** required for all anglers 18 to 64 (Outdoors Card and tag).
-- **Pleasure Craft Operator Card (PCOC)** required for all motorized vessel operators.
-- **Pleasure Craft Licence (PCL)** required for any boat with motor over 9.9 HP.
-- **Slot limits and possession limits** apply to walleye, bass, and muskie. Check current OMNR regulations.
-- **Special seasons** apply to certain species. Walleye opener is the second Saturday of May for Zone 17. Bass opener is later.
-- **Catch and release** requirements vary by species and time of year.
-
-We recommend the OMNR Fishing Regulations Summary as the authoritative source. Available online and at most marinas including HBW.
-
-## What's special about Rice Lake fishing
-
-Three things distinguish Rice Lake from other Kawartha lakes:
-
-1. **Walleye productivity.** Rice Lake has historically produced more walleye than many comparable lakes. The mix of structure, weed beds, and water clarity favors walleye.
-2. **Trent-Severn access.** The east end connects to the Trent-Severn lock system, opening up the larger Kawartha chain. Some anglers travel between lakes.
-3. **Local knowledge concentration.** Generations of anglers have fished Rice Lake. Local guides, marinas, and fishing reports are detailed.
-
-## Related guides
-
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), full setup guide
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker setup
-- [Walleye Opener Boat Prep Checklist](/blog/walleye-opener-boat-prep), pre-opener prep
-- [Best Pontoon Boats for Rice Lake Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoon-specific guide
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum setup
-
-## Ready for the 2026 Rice Lake season?
-
-Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through your specific Rice Lake fishing setup, [give us a call at (905) 342-2153](tel:9053422153). We rig fishing boats for Rice Lake every week and can give you the honest answer for your hull and fishing style.
-
----
-
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
-
----
-
-## FAQ
-
-**When does walleye season open on Rice Lake?**
-Typically the second Saturday of May for Zone 17 (Kawartha lakes including Rice Lake). Confirm current year date from OMNR.
-
-**What is the most popular species on Rice Lake?**
-Walleye. Rice Lake has historically been one of the stronger walleye fisheries in southern Ontario. Smallmouth bass and panfish are also strong.
-
-**Where do most anglers launch on Rice Lake?**
-Bewdley, Hastings, and Roseneath are the main public ramps. Bewdley is closest to Sugar Island and the deeper basin. Hastings has the easiest Trent-Severn access. Roseneath is on the south shore.
-
-**What's the best time of year to fish Rice Lake?**
-Walleye is best from opener (mid-May) through October, with peaks in June and September. Bass season opens later (mid-June for Zone 17) and runs through fall.
-
-**Do I need a fishing licence to fish Rice Lake?**
-Yes. Residents 18 to 64 need an Outdoors Card and tag. Non-residents need an Outdoors Card and tag. Children under 18 can fish without a licence under certain conditions. Confirm current OMNR regulations.
-
-**What's the size of Rice Lake?**
-About 130 km² (50 sq mi). Roughly 30 km long east-west, 5 km wide at the widest point. Average depth is 4 to 5 m, max around 12 m.
-
-**Can I keep walleye on Rice Lake?**
-Yes within OMNR limits. Slot limits and possession limits apply. Check current regulations. Most Rice Lake walleye are in the slot, with some bigger fish protected.
-
-**What's the best lure for Rice Lake walleye?**
-Crawler harnesses are the classic spring and summer trolling lure. Crank baits work well in summer. Jigs work year-round in 8 to 15 ft of water. Local bait shops have current intel.
-
-**Do I need a kicker motor for Rice Lake fishing?**
-For serious walleye fishing, yes. The 9.9 ProKicker is the standard. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide).
-
-**What's the best boat for Rice Lake?**
-For most fishing use, 16 to 18 ft aluminum console with 60 to 115 HP main + 9.9 ProKicker. For pontoon cottage use, 18 to 22 ft pontoon with 90 to 150 HP CT. Specifics depend on use case.
-
-**Are there fishing charters on Rice Lake?**
-Yes, several local guides operate on Rice Lake. Online directories and word of mouth are the typical way to find them. HBW does not run charters but can recommend operators.
-
-**How are 2026 fishing conditions expected?**
-Recent years have been strong on Rice Lake. Continued normal weather and water levels should produce a good 2026 season. Specific patterns will become clear after ice-out and through May.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
-
-    
-
----
+Children under 18 may fish under certain conditions without a licence. Confirm current rules at ontario.ca.
 
 ## Sources
 
-- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
-- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
-- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+- Ontario Ministry of Natural Resources, Fisheries Management Zone 17 regulations (walleye, sauger, bass, muskie, pike, crappie, perch, sunfish seasons and limits). [ontario.ca](http://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+- Parks Canada, Trent-Severn Waterway Canada Strong Pass free lockage, June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Transport Canada, Pleasure Craft Licence (5-year validity, 10 hp threshold). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
 
 *Last reviewed: 2026-05-11.*
 `,
     faqs: [
-      {
-        question: 'When does walleye season open on Rice Lake?',
-        answer: 'Typically the second Saturday of May for Zone 17 (Kawartha lakes including Rice Lake). Confirm current year date from OMNR.'
-      },
-      {
-        question: 'What is the most popular species on Rice Lake?',
-        answer: 'Walleye. Rice Lake has historically been one of the stronger walleye fisheries in southern Ontario. Smallmouth bass and panfish are also strong.'
-      },
-      {
-        question: 'Where do most anglers launch on Rice Lake?',
-        answer: 'Bewdley, Hastings, and Roseneath are the main public ramps. Bewdley is closest to Sugar Island and the deeper basin. Hastings has the easiest Trent-Severn access. Roseneath is on the south shore.'
-      },
-      {
-        question: 'What\'s the best time of year to fish Rice Lake?',
-        answer: 'Walleye is best from opener (mid-May) through October, with peaks in June and September. Bass season opens later (mid-June for Zone 17) and runs through fall.'
-      },
-      {
-        question: 'Do I need a fishing licence to fish Rice Lake?',
-        answer: 'Yes. Residents 18 to 64 need an Outdoors Card and tag. Non-residents need an Outdoors Card and tag. Children under 18 can fish without a licence under certain conditions. Confirm current OMNR regulations.'
-      },
-      {
-        question: 'What\'s the size of Rice Lake?',
-        answer: 'About 130 km² (50 sq mi). Roughly 30 km long east-west, 5 km wide at the widest point. Average depth is 4 to 5 m, max around 12 m.'
-      },
-      {
-        question: 'Can I keep walleye on Rice Lake?',
-        answer: 'Yes within OMNR limits. Slot limits and possession limits apply. Check current regulations. Most Rice Lake walleye are in the slot, with some bigger fish protected.'
-      },
-      {
-        question: 'What\'s the best lure for Rice Lake walleye?',
-        answer: 'Crawler harnesses are the classic spring and summer trolling lure. Crank baits work well in summer. Jigs work year-round in 8 to 15 ft of water. Local bait shops have current intel.'
-      },
-      {
-        question: 'Do I need a kicker motor for Rice Lake fishing?',
-        answer: 'For serious walleye fishing, yes. The 9.9 ProKicker is the standard. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide).'
-      },
-      {
-        question: 'What\'s the best boat for Rice Lake?',
-        answer: 'For most fishing use, 16 to 18 ft aluminum console with 60 to 115 HP main + 9.9 ProKicker. For pontoon cottage use, 18 to 22 ft pontoon with 90 to 150 HP CT. Specifics depend on use case.'
-      },
-      {
-        question: 'Are there fishing charters on Rice Lake?',
-        answer: 'Yes, several local guides operate on Rice Lake. Online directories and word of mouth are the typical way to find them. HBW does not run charters but can recommend operators.'
-      },
-      {
-        question: 'How are 2026 fishing conditions expected?',
-        answer: 'Recent years have been strong on Rice Lake. Continued normal weather and water levels should produce a good 2026 season. Specific patterns will become clear after ice-out and through May.'
-      },
+      { question: 'When does walleye season open on Rice Lake?', answer: 'The second Saturday in May for FMZ 17. Confirm the exact calendar date for 2026 at ontario.ca.' },
+      { question: 'What is the walleye slot limit on Rice Lake?', answer: 'Under current FMZ 17 regulations, walleye must be between 35 and 50 cm to keep. Fish outside that range must be released. Daily catch limit is one walleye.' },
+      { question: 'When does bass season open?', answer: 'Third Saturday in June for largemouth and smallmouth bass (combined) in FMZ 17. Daily limit: two fish.' },
+      { question: 'Is muskie catch and release on Rice Lake?', answer: 'Under current FMZ 17 rules, muskie must exceed 112 cm to possess, and the daily catch limit is zero, so all muskie are catch and release.' },
+      { question: 'Do I need a kicker motor for Rice Lake walleye fishing?', answer: 'For serious walleye trolling, yes. The Mercury 9.9 ProKicker is the standard setup. It gives you precise speed control at 1.5 to 2 mph that you cannot get from a large main motor at idle.' },
+      { question: 'Where do most anglers launch on Rice Lake?', answer: 'Bewdley, Hastings, and Roseneath are the main public ramps.' },
+      { question: 'Is there free lockage on the Trent-Severn in 2026?', answer: 'Yes, free lockage runs June 19 to September 7, 2026 under Parks Canada Canada Strong Pass. Mooring fees still apply.' },
+      { question: 'How early should I book spring service?', answer: 'Before April, ideally. The pre-season rush hits every marina in the region by early May.' },
     ]
   },
 
@@ -10418,217 +10296,113 @@ Want a real number? Run [the Boost Eligibility Checker](/tools#boost-eligibility
     readTime: '9 min read',
     keywords: ['pleasure craft licence update', 'PCL repower Ontario', 'Transport Canada boat licence', 'update boat registration after repower', 'PCL rules 2026'],
     content: `
-*Last reviewed: 2026-05-07*
+# Pleasure Craft Licence Update During a Repower: What Ontario Boaters Need to Know in 2026
 
-> **Quick answer:** Effective December 31, 2025, Transport Canada ended lifetime Pleasure Craft Licences — new and renewed PCLs are now 5-year licences at $24 CAD. Repowering changes your registered horsepower, so you must update your PCL with Transport Canada. The update is free and online; keep the new motor's serial number handy. We'll provide it on your invoice. Repower service and quotes at mercuryrepower.ca.
+## Quick answer
+When you change motors on a licensed pleasure craft in Canada, you must update your Pleasure Craft Licence (PCL) with Transport Canada within 30 days. Updates are free. New licences, renewals, and transfers now carry a $24 fee as of December 31, 2025. Your PCL is now valid for five years, not for life. At HBW, we provide the motor specs you need on your repower invoice so you can complete the update yourself.
 
-> **What changed in 2026 (the canonical facts):**
-> - Effective **December 31, 2025**, Transport Canada ended lifetime Pleasure Craft Licences.
-> - New and renewed PCLs are now **5-year licences** at **$24 CAD**.
-> - Existing lifetime PCLs are gradually being replaced with 5-year licences.
-> - Apply, renew, transfer, and update vessel info online through Transport Canada's PCL portal.
+## What changed in 2026 that you actually need to know
 
-When you change motors on a Pleasure Craft Licensed (PCL) boat in Canada, you must update the licence with Transport Canada. The PCL stays with the boat (HIN) but motor specifications are recorded on it. Updates are free, take 10 to 15 minutes online, and are required when the new motor changes the registered HP rating. We handle this paperwork for HBW customers as part of every repower.
+As of December 31, 2025, Transport Canada made several significant changes to the Pleasure Craft Licence program. If you have not looked at your PCL lately, you may be operating under outdated assumptions.
 
-![Pleasure Craft Licence rules before and after December 31, 2025: lifetime PCL with no fee or expiry on the old system replaced with 5-year renewals at $24 CAD, a 30-day update window for changes (motor swap, sale, etc.), and a $250 fine for non-compliance under the new Transport Canada rules.](/lovable-uploads/diagram-pcl-2026-changes.png)
-*Transport Canada's December 31, 2025 PCL rule change at a glance. Lifetime licences are gone. Apply or renew at tc.canada.ca.*
+Key 2026 changes:
+- PCLs are now valid for 5 years only. Previous licences issued without an expiry date now have one assigned. Check the table below.
+- A $24 fee now applies to new, renewed, transferred, and duplicate PCLs. Updates to existing licence information remain free.
+- You must update your PCL within 30 days of any change to your name, address, phone number, email, or pleasure craft details (including motor specs after a repower).
+- Starting December 31, 2027, wind-powered pleasure craft over 6 metres will also need a PCL.
+- The $250 fine for operating without a valid licence is unchanged.
 
-## Quick recommendation
+If your old PCL has no expiry date, here is when it expires:
 
-Most boaters do not realize their PCL needs updating during a repower. The licence is tied to the hull, but motor specs are on the licence too. When you change motors, the licence is technically out of date. Transport Canada requires the update.
+| Licence issued | Expiry date |
+|---|---|
+| December 31, 1974 or earlier | March 31, 2026 |
+| January 1, 1975 to December 31, 1985 | December 31, 2026 |
+| January 1, 1986 to December 31, 1995 | December 31, 2027 |
+| January 1, 1996 to December 31, 1999 | December 31, 2028 |
+| January 1, 2000 to December 31, 2005 | December 31, 2029 |
+| January 1, 2006 to April 28, 2010 | December 31, 2030 |
 
-Good news: it is free, fast, and we do it for HBW repower customers as part of the project. The form is online at the Transport Canada Pleasure Craft Electronic Licensing System. You need the boat HIN, the existing PCL number, and the new motor specs. We have all of those during the repower.
+If your licence issued before 1975, it may already be expired. Worth checking before the OPP marine patrol does it for you.
 
-If you bought a Mercury repower at HBW, the PCL update is handled. If you DIY'd a repower or bought used and never updated the licence, you should update it now. Doing it before the next OPP marine patrol stop or insurance claim is the easy way.
+## What is a Pleasure Craft Licence?
 
-## What is a Pleasure Craft Licence (PCL)?
+The PCL is Transport Canada's identification number for your boat, the federal equivalent of a licence plate. It appears on both sides of the bow.
 
-A PCL is the federal identification number assigned to a boat in Canada. It is required for any vessel with a motor over 9.9 HP that is used for non-commercial purposes.
+A few important distinctions:
+- The PCL is tied to the hull (identified by the Hull Identification Number, or HIN). It stays with the boat, not the owner.
+- The Pleasure Craft Operator Card (PCOC) is your personal operator licence. These are two separate documents.
+- The PCL is not proof of ownership. It is an identification document.
+- Any pleasure craft with a motor totalling at least 10 hp (7.5 kW) operated principally in Canadian waters requires a PCL.
 
-The PCL number is the format you see on the bow of a boat (e.g., "ON 12345 AB"). It is tied to the hull's HIN (Hull Identification Number) and stays with the boat across ownership changes.
+## Why a repower triggers a PCL update
 
-The PCL is not the same thing as a Pleasure Craft Operator Card (PCOC), which is the boater's licence (the card you carry to prove you can operate). The PCL is the boat's registration. Both are required for most Ontario boating.
+The PCL records more than just your name and address. It includes your vessel's motor specifications. When you change motors, those recorded specs are out of date, and you are required to update within 30 days.
 
-## When the PCL needs updating
+Most Mercury repowers at HBW require an update because:
+- Horsepower class changes. Going from 90 to 115 HP, or 60 to 90 HP, means different specs on record.
+- Brand change. Evinrude to Mercury, Yamaha to Mercury, Honda to Mercury, all require an update.
+- Same HP, different model. Going from a carbureted two-stroke to a Mercury FourStroke of the same HP often requires an update because the motor model changes.
+- Number of motors changes. Adding or removing a motor (single to twin, main plus kicker) requires an update.
 
-You must update the PCL when:
+Same-brand, same-HP, same-model swaps are the rare case where an update might not be strictly required. But given that updates are free and take about 15 minutes online, the answer is always to update.
 
-- **Motor HP changes.** A different HP motor changes the registered specs. Required update.
-- **Number of motors changes.** Going from single to dual outboards or vice versa. Required update.
-- **Motor brand or model changes.** Mercury to Mercury same HP often does not require update. Brand changes (Evinrude to Mercury) do.
-- **Owner address changes.** Address on the PCL must be current. Update on move.
-- **Boat is sold.** New owner gets a new PCL. Old PCL is cancelled.
-- **PCL is lost or stolen.** Replacement PCL request.
+## How to update your PCL
 
-Transport Canada wants the registry current. The data is used by OPP marine patrols, search and rescue, and insurance claims.
+The process is online at [Transport Canada's Pleasure Craft Licensing portal](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl). Updates are free, no fee, no credit card required.
 
-## What changes the PCL update for a repower
+What you will need:
+- Your existing PCL number (the ON XXXXX AB format on your bow)
+- Your boat's HIN (Hull Identification Number, a 12-character alphanumeric code, usually on the starboard side of the transom)
+- New motor make, model, year, HP, and serial number
+- Your current name and address
+- Email address for confirmation
 
-Most Mercury repowers at HBW require a PCL update because:
+Your PCL number stays the same. It is tied to the hull, not the motor. You are updating the specs on record, not getting a new number.
 
-- **HP class change.** Going from 90 to 115 HP, or 115 to 150, requires update.
-- **Brand change.** Evinrude to Mercury, Yamaha to Mercury, Honda to Mercury all require update.
-- **Different motor model same HP.** Going from a 2-stroke 90 HP to a FourStroke 90 HP often requires update because the motor model changes.
+After the repower at HBW: your invoice includes the motor make, model, year, HP, and serial number. That is everything you need. Most customers complete the online update themselves in a single sitting. If you have questions, call us at 905-342-2153.
 
-Mercury-to-Mercury repowers at the same HP and same motor model (e.g., 2010 Mercury 90 EXLPT to 2026 Mercury 90 EXLPT) sometimes can use the existing PCL, but the safe answer is always to update. Updates are free and take 15 minutes.
+## What HBW does on every repower
 
-## How to update the PCL
+PCL paperwork is not the exciting part of a repower. But it matters, so we make it easy:
 
-The Transport Canada Pleasure Craft Electronic Licensing System (PCELS) handles updates online. You need:
+1. We document the new motor on your invoice: make, model, year, HP, serial number.
+2. We walk you through the update at delivery if you want, or provide the data and let you complete it on your own time.
+3. We answer questions afterward. If Transport Canada comes back with a question, call us.
 
-- **Existing PCL number** (the ON XXXXX AB format)
-- **HIN (Hull Identification Number)** for the boat
-- **New motor make, model, year, HP, and serial number**
-- **Owner name and current address**
-- **Email address for confirmation**
+The update itself is yours to submit. Transport Canada requires the boat owner to authorize it. But we do not hand you a new motor and wish you luck on the paperwork.
 
-The system processes updates digitally. New PCL number stays the same in most cases (the licence is tied to the hull, not the motor). New PCL certificate is emailed within minutes to days depending on Transport Canada workload.
+## What happens if you skip it
 
-For HBW repower customers, we provide the new motor specs (the HBW invoice shows the make, model, year, HP, and serial number). Some customers do the online update themselves; others ask HBW to assist. Either path works.
+In a routine OPP marine patrol stop, an out-of-date PCL is usually a warning. But the $250 fine for an invalid licence is on the table, and an out-of-date motor record adds exposure.
 
-## What HBW does for repower customers
+Where it really bites is in a more serious situation:
+- Insurance claims. If your registered motor specs do not match your actual motor, your insurer may push back on coverage.
+- Search and rescue. SAR agencies use PCL data for vessel identification.
 
-When you do a Mercury repower at HBW, the PCL update is part of the project:
+The update is free and takes 15 minutes. There is no reason not to do it.
 
-1. **We document the new motor.** Make, model, year, HP, and serial number on the HBW invoice.
-2. **We provide the update template.** Either we walk you through the online update at delivery, or we provide written instructions and the data you need.
-3. **We answer questions later.** If Transport Canada asks for clarification or you have questions about the form, we are here. [Call (905) 342-2153](tel:9053422153) or [contact us](/contact).
+## Common PCL mistakes we see every season
 
-Most HBW repower customers do the online update themselves with our template. It takes 10 to 15 minutes. The system is straightforward.
-
-## Common PCL update mistakes
-
-We see these every season:
-
-1. **Skipping the update entirely.** Customer assumes the PCL is just for old motor. It needs to track the current motor. Update is required.
-2. **Putting the new PCL number on the wrong boat.** PCL stays with the hull. New owner of an old boat gets the existing PCL number, not a new one.
-3. **Mixing up PCL and PCOC.** PCL is the boat's licence. PCOC is the operator's card. Two different things.
-4. **Wrong HIN format.** HIN is a 12-character alphanumeric on the hull's transom or starboard side. It is not the boat's serial number on the engine.
-5. **Old address on the PCL.** Transport Canada wants current address. Update on move.
-
-## What happens if the PCL is wrong
-
-In a routine OPP marine patrol stop, an out-of-date PCL is usually a warning rather than a fine. If the licence is significantly wrong (different HP, different motor, wrong owner), the OPP can issue a fine and require correction.
-
-In a more serious incident (collision, search and rescue activation, insurance claim), an out-of-date PCL can complicate things. Insurance companies may push back on coverage if the registered motor specs do not match the actual motor on the boat. Search and rescue databases use PCL data for vessel identification.
-
-The cost of keeping the PCL current is zero (the update is free). The cost of getting caught with an out-of-date PCL is variable. The math always favors updating.
-
-## Related guides
-
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
-- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion and PCL update
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), current Mercury Repower Financing rates
-- [Complete Guide to Boat Repowering in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full repower process
-
-## Ready to repower (and let HBW handle the PCL update)?
-
-Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD, full configuration including rigging. PCL update is part of every HBW repower project.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through your specific repower and PCL questions, [give us a call at (905) 342-2153](tel:9053422153). We do this paperwork as part of the project so you do not have to figure it out alone.
-
----
-
-_Pricing and process details in this article are HBW's working 2026 estimates, verified May 2026. Transport Canada PCL rules and the Pleasure Craft Electronic Licensing System are the authoritative source. Mercury model years change every July 1, and we refresh process notes annually._
-
----
-
-## FAQ
-
-**Do I need to update my Pleasure Craft Licence when I change motors?**
-Yes, in most cases. When motor HP, brand, or model changes, the PCL must be updated. Transport Canada requires the registry to reflect current motor specs. Updates are free and take 10 to 15 minutes online.
-
-**Is the PCL the same thing as my boater's licence?**
-No. The Pleasure Craft Licence (PCL) is the boat's registration tied to the hull. The Pleasure Craft Operator Card (PCOC) is the operator's licence proving the boater can operate a motorized vessel. Both are required for most Ontario boating.
-
-**How do I update my PCL?**
-Online at the Transport Canada Pleasure Craft Electronic Licensing System (PCELS). You need the existing PCL number, HIN, new motor specs, and owner contact info. Process takes 10 to 15 minutes. Updates are free.
-
-**How much does a PCL update cost?**
-Free. Transport Canada does not charge for PCL updates or for new licences. The licence itself is free. Annual fees do not exist for PCL.
-
-**How long does a PCL update take?**
-The online application takes 10 to 15 minutes. Transport Canada processing is usually minutes to days depending on workload. Confirmation is emailed.
-
-**Do I need a new PCL number when I change motors?**
-No, in most cases. The PCL is tied to the hull (HIN), not the motor. The same PCL number stays on the boat with updated motor specs.
-
-**What happens if I don't update my PCL?**
-In routine OPP marine patrol stops, usually a warning. In serious incidents (collision, insurance claim, search and rescue), an out-of-date PCL can complicate things. The cost of updating is zero. Just do it.
-
-**Where do I find my HIN?**
-The Hull Identification Number is a 12-character alphanumeric code on the hull's transom or starboard side. On older boats, it may be in less obvious places. Check the boat's original documentation or call HBW for help.
-
-**What if my old PCL was issued by Service Ontario before Transport Canada took over?**
-Older PCLs (pre-2002) are still valid but should be migrated to the federal system. Transport Canada handles the migration as part of any update. Older PCLs are also being phased out over time.
-
-**Does HBW handle the PCL update for me?**
-For HBW repower customers, we provide the new motor specs and walk you through the online update at delivery. Some customers ask HBW to assist with the form; others do it themselves. We are here for questions. [Call (905) 342-2153](tel:9053422153).
-
-**What if I sell the boat shortly after a repower?**
-The new owner takes over the existing PCL with the updated motor specs. Transport Canada handles the ownership transfer through the PCELS system. The new owner gets a new PCL number; the old PCL is cancelled.
-
-**Can I operate a boat while waiting for the new PCL?**
-The existing PCL number stays valid during the update process. You are not unlicensed during the update window. Operating is fine; just do the update soon after the repower.
-
-**What HP threshold requires a PCL?**
-Any pleasure boat with a motor over 9.9 HP requires a PCL in Canada. Below 9.9 HP, no PCL is required (though the operator still needs PCOC for any motorized vessel).
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
-
----
+- Skipping the update entirely. The most common one.
+- Confusing PCL and PCOC. Your PCL is the boat's licence. Your PCOC is your personal operator card. You need both.
+- Wrong HIN format. The HIN is a 12-character alphanumeric code on the hull, not the engine serial number.
+- Outdated address. The PCL must reflect your current address.
+- Not checking the expiry date. A lot of boats are operating on licences that are already expired or will be soon.
 
 ## Sources
 
-- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+- Transport Canada, Pleasure Craft Licence (5-year validity, $24 fee, 30-day update window, 10 hp threshold). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
 
 *Last reviewed: 2026-05-11.*
 `,
     faqs: [
-      {
-        question: 'Do I need to update my PCL if the new engine is the same horsepower?',
-        answer: 'Yes. Your PCL records the engine details, not just the HP number. Even if the horsepower is identical, the specific engine has changed. Update the record to reflect the current installation.'
-      },
-      {
-        question: 'Is the $24 fee charged when I update engine information after a repower?',
-        answer: 'No. The $24 fee applies to new applications, renewals, transfers, and replacements. Updating vessel information (including engine details) on a current licence is free.'
-      },
-      {
-        question: 'Can my dealer handle the PCL update as part of the repower?',
-        answer: 'Your dealer handles the engine installation and warranty registration. The PCL update is your responsibility as the vessel owner. Your dealer will give you the engine information you need.'
-      },
-      {
-        question: 'Does the PCL update affect my boat insurance?',
-        answer: 'It can. Your insurance policy is based on your vessel specs, including engine type and horsepower. Notify your insurer of the repower separately, the PCL update and insurance notification are different processes.'
-      },
-      {
-        question: 'What happens if I miss the 30-day PCL update deadline?',
-        answer: 'Missing the 30-day window makes you liable for a $250 fine under Transport Canada\'s Small Vessel Regulations. Beyond the fine, operating a vessel with incorrect licence information could complicate insurance claims or create issues during an on-water inspection. If you\'ve missed the window, update the PCL immediately. Updating is still free, and doing it late is better than not doing it at all.'
-      },
-      {
-        question: 'How do I update my PCL if I bought a used boat with a repowered engine?',
-        answer: 'When you transfer the PCL to your name, you have the opportunity to correct the engine information at the same time. You\'ll need the current engine\'s details (serial number, HP, type), if the seller doesn\'t have them, a marine dealer or Mercury service shop can look them up from the serial number. The transfer costs $24; updating engine information at the same time is free.'
-      },
-      {
-        question: 'Does going from single to twin outboards require a PCL update?',
-        answer: 'Yes. Adding a second engine is a change to your vessel information that must be reflected on your PCL within 30 days. The number of engines, combined horsepower, and engine type all need to be accurate on your licence. Make sure the PCL, insurance policy, and any applicable registration documents all reflect the updated setup before taking the boat out.'
-      },
-      {
-        question: 'Is the PCL update the same as Transport Canada boat registration?',
-        answer: 'No. A Pleasure Craft Licence (PCL) is required for boats with motors of 10 HP or more on Canadian waters, it\'s a free-to-update identifier tied to the hull. Vessel Registration under the Canada Shipping Act is a separate, more formal process for commercial vessels, boats used as loan security, or boats operating internationally. Most recreational cottage boats in Ontario are licenced, not registered.'
-      },
-      {
-        question: 'If my lifetime PCL has expired under the new 2026 rules, can I still update engine information for free?',
-        answer: 'Updating vessel information on an expired PCL is not possible, you need a valid, current PCL first. If your lifetime PCL has lapsed under the phased-out transition schedule, renew it first for $24, then update the engine details (which is free). Both steps can be done in the same session on Transport Canada\'s online portal.'
-      }
+      { question: 'Do I need to update my PCL when I change motors?', answer: 'Yes, in most cases. When motor HP, brand, or model changes, you must update the PCL within 30 days. Updates are free.' },
+      { question: 'Is the PCL update free?', answer: 'Yes. Updates to existing licence information (including motor specs after a repower) are free. New licences, renewals, and transfers carry a $24 fee as of December 31, 2025.' },
+      { question: 'Is the PCL the same as my boater licence?', answer: 'No. The PCL is the boat identification document, tied to the hull. The PCOC (Pleasure Craft Operator Card) is your personal operator licence. You need both.' },
+      { question: 'How long is a PCL valid?', answer: 'As of December 31, 2025, new and renewed PCLs are valid for 5 years. Older licences without an expiry date have been assigned one based on issue year.' },
+      { question: 'What HP threshold requires a PCL?', answer: 'Any pleasure craft with a motor totalling at least 10 hp (7.5 kW) operated principally in Canadian waters requires a PCL.' },
+      { question: 'Does HBW handle the PCL update for me?', answer: 'We provide all the motor data you need and walk you through the process. The actual submission must come from the boat owner, but we do not leave you to figure it out alone. Call 905-342-2153 with questions.' },
     ]
   },
   {
