@@ -25444,6 +25444,211 @@ Highway 401 east to Highway 115 north, then County Road 28 to Gores Landing. Abo
       { question: 'Does HBW serve Clarington and Newcastle?', answer: 'Yes. Clarington and Newcastle are within the same drive time. We have customers across the whole east-Durham area.' },
     ],
   },
+  {
+    slug: 'mercury-outboard-beeping-codes-guide',
+    title: 'Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check',
+    description: 'Mercury outboard beeping? Learn what common beep patterns can mean, why continuous alarms matter, and what information to send when booking Mercury service.',
+    image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service & Troubleshooting',
+    readTime: '6 min',
+    keywords: ['mercury outboard beeping codes', 'mercury warning horn beeps', 'mercury continuous beep', 'mercury four beeps every two minutes', 'mercury alarm ontario'],
+    content: `# Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check
+
+## Quick answer
+Mercury outboard beeping codes depend on the engine, year, rigging, and SmartCraft setup. A single beep at key-on is often a normal test, while repeated short beeps or a continuous beep can point to low oil, water in fuel, overheating, overspeed, sensor faults, or Engine Guardian protection. Record the beep pattern and display message before booking service.
+
+Mercury's own documentation describes one beep at startup as a normal system test on applicable systems, and explains that continuous or intermittent alarms can indicate conditions the operator should address.
+
+## Why the exact beep pattern matters
+
+"It beeped" is like saying "the truck made a noise." It is true, but it leaves a few details on the table.
+
+When you contact a service shop, the exact pattern matters:
+- One beep?
+- Continuous beep?
+- Four beeps every couple minutes?
+- Beeping only at idle?
+- Beeping only under load?
+- Beeping with power loss?
+- Beeping with a SmartCraft message?
+
+Those details help separate fuel, cooling, oil, sensor, voltage, and Guardian-related problems.
+
+## Common patterns
+
+| Pattern | Possible meaning | What to do |
+|---|---|---|
+| One beep at key-on | Normal system test on many systems | Usually normal if it stops |
+| Four beeps every 2 minutes | May indicate low oil reserve or water in fuel on applicable systems | Check display/manual and inspect safely |
+| Continuous beep | May indicate overheat, overspeed, Guardian, or sensor issue | Reduce throttle and investigate |
+| Beeps plus power reduction | Guardian mode may be protecting the engine | Do not force it; book diagnosis |
+| Random/intermittent beeps | Could be voltage, sensor, wiring, or system issue | Record conditions and get checked |
+
+## HBW dealer note
+If the alarm only happens after 20 minutes, at 3,500 RPM, with four people aboard, tell us that. If it only happens after hitting weeds, tell us that too. Boats like to hide clues in the timing.
+
+## What to check safely
+
+### Look at your display
+If you have SmartCraft, VesselView, or another Mercury display, take a photo of the message. Do this before cycling the key if safe.
+
+### Check cooling water
+If the alarm might be temperature-related, check for tell-tale flow and obvious intake blockage. Do not run the motor dry.
+
+### Check oil/fuel warnings
+Depending on the engine, alarm patterns can relate to oil or water-in-fuel conditions. Use your correct manual and do not assume every Mercury uses the same pattern.
+
+### Check battery voltage
+Low voltage can create weird behaviour. If your battery is weak, old, or terminals are corroded, note that in the service request.
+
+## What not to do
+- Do not unplug the horn.
+- Do not keep running hard through a continuous alarm.
+- Do not clear the message without recording it.
+- Do not assume a forum answer for one engine applies to yours.
+- Do not tell your spouse "it always does that" unless you are very sure it always should.
+
+## When to book Mercury service
+Book service if:
+- The alarm repeats.
+- The alarm is continuous.
+- Power is reduced.
+- Temperature rises.
+- The warning mentions water in fuel, overheat, oil, or sensor faults.
+- The boat has been sitting and now alarms.
+- The alarm happens with poor running or starting issues.
+
+For engine repairs, we only service Mercury and Mercruiser. Submit the request at [hbw.wiki/service](https://hbw.wiki/service).
+
+## Bottom line
+Beeping codes are useful clues, but they are not a complete diagnosis by themselves. Record the pattern, note the conditions, take a display photo, and get the issue checked before it turns into a ruined weekend.
+
+Need help with a Mercury alarm or warning horn? Submit a service request at [hbw.wiki/service](https://hbw.wiki/service).
+
+## Related guides
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+- [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
+- [Mercury Outboard Won't Start Troubleshooting (Ontario)](/blog/mercury-outboard-wont-start-troubleshooting-ontario)
+- [Mercury Outboard Overheating at Idle](/blog/mercury-outboard-overheating-at-idle-fix-ontario)`,
+    faqs: [
+      { question: 'What does a continuous beep mean on a Mercury outboard?', answer: 'A continuous beep can indicate a serious warning such as overheating, overspeed, Guardian activation, or a sensor-related issue. Reduce throttle and diagnose safely.' },
+      { question: 'What do four beeps mean on a Mercury outboard?', answer: 'On some Mercury systems, four beeps every two minutes can relate to conditions such as low oil reserve or water in fuel. Always confirm with the correct manual/display for your engine.' },
+      { question: 'Can I keep boating if the beeping stops?', answer: 'If it was a single key-on test, that may be normal. If it was a repeated or continuous alarm, do not ignore it just because it stopped.' },
+    ],
+  },
+  {
+    slug: 'mercury-outboard-wont-start-after-sitting',
+    title: 'Mercury Outboard Won\'t Start After Sitting? Here\'s the Ontario Boater\'s Checklist',
+    description: 'Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent, kill switch, neutral, and alarms before booking Mercury service.',
+    image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service & Troubleshooting',
+    readTime: '6 min',
+    keywords: ['mercury outboard wont start after sitting', 'mercury outboard stale fuel', 'mercury outboard spring no start', 'outboard wont start after winter storage'],
+    content: `# Mercury Outboard Won't Start After Sitting? Here's the Ontario Boater's Checklist
+
+## Quick answer
+If your Mercury outboard will not start after sitting, check the battery, terminals, kill switch, neutral position, fuel age, tank vent, primer bulb, fuel line, and warning alarms. Sitting is hard on batteries and fuel systems. If the basics do not fix it quickly, book service before repeated cranking creates more problems.
+
+## Sitting changes everything
+A Mercury that ran fine last fall and will not start in spring is a classic Ontario boating problem. It does not mean the motor "randomly died." It means something changed while the boat sat.
+
+Usually the suspects are:
+- Battery charge
+- Battery condition
+- Corroded connections
+- Stale or contaminated fuel
+- Fuel line/primer bulb issues
+- Closed tank vent
+- Safety lanyard or neutral switch
+- Fuel system varnish or blockage
+
+Boats are very good at turning six months of sitting into one very educational Saturday morning.
+
+## Start with the battery
+Cold storage and time are hard on batteries. Even a battery that shows some voltage may drop under load when cranking.
+
+Check:
+- Battery switch is ON
+- Terminals are clean and tight
+- Battery is fully charged
+- Cables are not loose or corroded
+- The engine cranks strongly, not slowly
+
+If it cranks slowly or clicks, deal with the battery side first.
+
+## Then check fuel
+Old fuel can cause hard starts, rough running, or no-start issues. If the boat sat with questionable fuel, water contamination, or poor storage prep, fuel becomes a prime suspect.
+
+Check:
+- Is there fresh fuel?
+- Is the tank vent open?
+- Does the primer bulb firm up?
+- Are fuel lines cracked, kinked, or loose?
+- Is there any sign of water or contamination?
+
+Do not keep cranking a motor that is not getting fuel properly.
+
+## Check the simple safety items
+Before assuming a fuel pump failed, confirm:
+- Kill switch lanyard is attached.
+- Shifter is fully in neutral.
+- Throttle is not advanced incorrectly.
+- Battery switch is on.
+- Any alarm or display message is recorded.
+
+These are easy to miss when you are excited to get on the water. They are even easier to miss when someone is standing behind you asking, "Is it supposed to do that?"
+
+## HBW dealer note
+Spring no-starts are usually not mysterious. They are usually storage, battery, fuel, or basic safety-switch problems. The mystery comes from skipping the boring checks and starting at the expensive end.
+
+## When it needs service
+Book service if:
+- The primer bulb never firms up.
+- Fuel smells stale or contaminated.
+- The engine cranks normally but will not fire.
+- The engine starts then stalls repeatedly.
+- The alarm sounds.
+- The battery and connections check out but symptoms remain.
+- You are not sure what fuel is in the tank.
+
+For engine repairs, we only service Mercury and Mercruiser.
+
+## How to prevent this next season
+The best fix is prevention:
+- Use proper fuel treatment before storage.
+- Keep batteries maintained.
+- Store the boat properly.
+- Do winterization on time.
+- Do spring commissioning before the first "real" boating day.
+
+Spring commissioning is not glamorous. Neither is brushing your teeth. Both prevent unpleasant surprises.
+
+## Bottom line
+If your Mercury will not start after sitting, check battery and fuel before assuming the worst. If the obvious checks do not solve it, stop cranking and book service.
+
+Ontario boating season is short. Do not spend the first good weekend teaching the starter motor a lesson.
+
+Need help with a Mercury that will not start after storage? Submit a service request at [hbw.wiki/service](https://hbw.wiki/service).
+
+## Related guides
+- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+- [Mercury Outboard Won't Start Troubleshooting (Ontario)](/blog/mercury-outboard-wont-start-troubleshooting-ontario)
+- [Mercury Outboard Overheating at Idle](/blog/mercury-outboard-overheating-at-idle-fix-ontario)`,
+    faqs: [
+      { question: 'Why will my Mercury outboard not start after winter?', answer: 'Common causes include weak battery, loose/corroded terminals, stale fuel, closed tank vent, primer bulb issues, kill switch, neutral safety switch, or fuel system problems.' },
+      { question: 'Can old gas stop an outboard from starting?', answer: 'Yes. Stale or contaminated fuel can cause hard starting, no-start, rough running, or stalling after storage.' },
+      { question: 'Should I keep cranking it?', answer: 'No. Repeated cranking can drain the battery and make diagnosis harder. Check basics, then stop and book service if it does not start.' },
+    ],
+  },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
