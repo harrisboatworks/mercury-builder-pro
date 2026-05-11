@@ -3284,7 +3284,7 @@ When cottage owners come to HBW for a repower assessment, we want to know:
 - **Boat make, model, year, and length**
 - **Current motor age, brand, HP, and condition**
 - **Hull condition** (we walk around it, tap-test floor and transom)
-- **Where the boat is stored** (indoor heated, indoor unheated, outdoor)
+
 - **How the boat is used** (fishing, family cruising, tubing, mixed)
 - **How often the boat is used per season**
 - **Long-term plan** (kids inheriting it, planning to sell, just for personal use)
