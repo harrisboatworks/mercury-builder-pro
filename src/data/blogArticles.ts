@@ -11578,7 +11578,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   },
   {
     slug: 'mercury-outboard-financing-ontario-2026',
-    title: 'Mercury Outboard Financing in Ontario: Your Complete 2026 Guide',
+    title: 'Mercury Outboard Financing in Ontario (2026 Guide)',
     description: 'Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. Current standard rates and any active seasonal promotions are shown on our financing page and confirmed in your build-quote. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).',
     image: '/lovable-uploads/hero-mercury-financing-ontario.png',
     author: 'Harris Boat Works',
