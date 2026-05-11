@@ -9468,7 +9468,7 @@ The Mercury 9.9 ProKicker is the most-installed Mercury kicker motor in Canada. 
 Yes. The Avator line covers the electric category from small portables (7.5e, 20e, 35e) up to larger units (75e, 110e). The lineup is still maturing. We are on-order for Avator at HBW for customers with specific use cases.
 
 **What is Mercury Verado and why is it special-order at HBW?**
-Verado is Mercury's premium V8/V10/V12 line (naturally aspirated on current models), 250 to 600+ HP, built for offshore center consoles, twin/triple installations, and yachts. We do not stock Verado at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. If you do, [contact us](/contact) for a special-order quote.
+Verado is Mercury's premium high-horsepower line (V8/V10/V12, naturally aspirated on current models), including the flagship V12 600 HP class, built for offshore center consoles, twin/triple installations, and yachts. We do not stock Verado at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. If you do, [contact us](/contact) for a special-order quote.
 
 **Should I switch from Yamaha or Honda to Mercury?**
 If you are doing a full repower anyway and the rigging investment is unavoidable, switching to Mercury during the repower makes sense for Ontario boaters. The dealer network and parts supply argument favors Mercury once the rigging cost is committed either way. If your existing motor is running fine and you are not repowering, no reason to switch.
