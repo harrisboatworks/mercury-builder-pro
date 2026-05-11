@@ -1823,6 +1823,148 @@ Pontoon 数量有限，旺季旺日很快被订满。
       { question: '万一船出问题怎么办？', answer: '立刻打电话 905-342-2153。我们派人过去帮忙。所有租船区域都在手机信号覆盖范围内。' },
     ],
   },
+  {
+    slug: 'rice-lake-fish-species-seasons-zh',
+    title: 'Rice Lake 钓什么鱼？鱼种与季节中文完整指南',
+    description: 'Rice Lake（安省南部）的主要钓鱼鱼种、最佳季节、用饵建议、FMZ 17 规则一次讲清。多伦多华人钓友 Rice Lake 一日游必读。',
+    image: riceLakeHero,
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: '租船与钓鱼',
+    readTime: '7 分钟',
+    keywords: ['Rice Lake 钓鱼 中文', 'Rice Lake 鱼种', 'FMZ 17 中文', '安省南部 钓鱼 中文', 'Rice Lake 季节 鱼'],
+    content: `
+## 快速答案
+
+Rice Lake 是安省南部最受欢迎的休闲钓鱼湖之一，离多伦多 90 分钟车程。主要鱼种：
+
+| 鱼种 | 中文称呼 | 最佳季节 |
+|---|---|---|
+| Largemouth Bass | 大嘴鲈鱼 | 5 月底 - 10 月 |
+| Smallmouth Bass | 小嘴鲈鱼 | 5 月底 - 10 月 |
+| Walleye | 玻璃眼（黄鲈） | 5 月中 - 10 月 |
+| Northern Pike | 北方梭鱼 | 5 月 - 10 月 |
+| Crappie | 黑白条 | 5 月 - 7 月 |
+| Bluegill / Sunfish | 蓝鳃 / 太阳鱼 | 5 月 - 9 月 |
+| Yellow Perch | 黄鲈 | 全季 |
+| Carp | 鲤鱼 | 5 月 - 10 月 |
+
+Rice Lake 属于 FMZ 17（Fisheries Management Zone 17）。具体季节、尺寸、数量限制每年可能微调，请查 [Ontario FMZ 17 官方页面](http://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)。
+
+## 详细鱼种介绍
+
+### Largemouth Bass（大嘴鲈鱼）
+
+Rice Lake 最常见的鱼种之一。喜欢温水、有水草掩护的浅水区。
+
+- **季节**：5 月底官方开钓后到 10 月。最旺：6-7 月
+- **用饵**：软虫（plastic worms）、spinnerbait、popper（浮饵）
+- **钓点**：水草边缘、码头附近、倒木边
+- **典型尺寸**：1-3 lb 常见，4-5 lb 算大鱼
+
+### Smallmouth Bass（小嘴鲈鱼）
+
+Rice Lake 数量比 Largemouth 少，但同样常见。喜欢清水、岩石底。
+
+- **季节**：5 月底到 10 月。最旺：6 月 + 9 月
+- **用饵**：tube jig、drop shot、live minnow
+- **钓点**：岩石区、深水边缘、点
+- **典型尺寸**：1-2.5 lb 常见
+
+### Walleye（玻璃眼 / 黄鲈）
+
+很多华人钓友最想钓的鱼。Rice Lake 有不少 Walleye，但需要技巧。
+
+- **季节**：5 月中开钓后到 10 月。最旺：5-6 月 + 9-10 月，**早晨与黄昏**
+- **用饵**：jig + live minnow、worm harness、crankbait
+- **钓点**：深水边缘、河口、风冲岸
+- **典型尺寸**：14-20 inch（FMZ 17 有尺寸限制，必须遵守）
+
+### Northern Pike（北方梭鱼）
+
+俗称「水狼」。攻击性强，咬钩刺激。
+
+- **季节**：5 月开钓到 10 月。最旺：5 月 + 9 月
+- **用饵**：spoon、large spinner、live sucker
+- **钓点**：水草边缘、河口、阴凉处
+- **典型尺寸**：3-6 lb 常见，10 lb 以上算好鱼
+
+### Crappie（黑白条）+ Bluegill / Sunfish（蓝鳃 / 太阳鱼）
+
+俗称 panfish。小但好吃，是华人家庭最爱带回家的鱼。
+
+- **季节**：5-7 月（产卵期最容易钓）
+- **用饵**：小型 jig、面包虫、小蚯蚓
+- **钓点**：浅水水草区、码头底下、芦苇边
+- **典型尺寸**：手掌大小
+
+### Yellow Perch（黄鲈）
+
+全年可钓（冰钓也很受欢迎）。
+
+- **季节**：全季
+- **用饵**：小 jig、蚯蚓、minnow
+- **钓点**：码头边、浅水区、各处都有
+- **典型尺寸**：6-10 inch
+
+## FMZ 17 主要规则
+
+| 项目 | 规则 |
+|---|---|
+| 钓鱼证 | 必须有效 Ontario Fishing Licence + Outdoors Card |
+| 季节 | 各鱼种不同（Bass 5 月底开，Walleye 5 月中开，Perch 全年） |
+| 尺寸限制 | 各鱼种不同，必须查官方页面 |
+| 每日限额 | 各鱼种不同（Bass 一般 4 条 sport licence，2 条 conservation） |
+| Bait Management Zone | FMZ 17 属于 Southern BMZ，活诱饵不可跨区运送 |
+
+### HBW dealer note
+
+很多华人新手不知道每个鱼种有不同的尺寸限制（要够大才能拿）。钓上来不够尺寸的必须**轻柔放生**。被查到留小鱼罚款很重。
+
+## 最佳钓鱼季节
+
+| 月份 | 适合什么 |
+|---|---|
+| 5 月 | Walleye 开钓，Pike 旺季，Panfish 产卵 |
+| 6 月 | Bass 开钓（月底），所有鱼种活跃 |
+| 7 月 | 旺季，所有鱼种好钓但水温高需早晚出 |
+| 8 月 | 早晚最好，中午水温太高 |
+| 9 月 | 黄金月，Walleye 与 Bass 都活跃 |
+| 10 月 | 最后季节，鱼大但需选好天气 |
+
+## 钓什么鱼最适合多伦多华人家庭
+
+新手家庭建议从 **Panfish + Yellow Perch** 开始：
+
+- 数量多、容易钓上来
+- 小孩能轻松操作
+- 好吃（华人家庭多数喜欢清蒸或红烧）
+- 没有季节限制（Perch 全年开放）
+- 装备简单（小钩、蚯蚓）
+
+进阶可以追 **Largemouth Bass**（比较容易、放钩率高）或 **Walleye**（味道好，挑战大）。
+
+## 你的下一步
+
+1. 决定想钓什么鱼（决定时段与装备）
+2. 上 [Ontario.ca](https://www.ontario.ca/page/get-fishing-licence) 申请钓鱼证
+3. 上 [Harris Boat Works 租船页面](https://www.harrisboatworks.ca/rentalsfaqmandarin) 预订船
+4. 当天来 Rice Lake，享受钓鱼
+
+如果你想看 Rice Lake 一日游的完整时间表与车程，参考我们的 [多伦多到 Rice Lake 一日钓鱼游完整指南](https://www.mercuryrepower.ca/blog/zh/toronto-rice-lake-one-day-fishing-trip-zh)。
+
+**CTA：** 准备好第一次在 Rice Lake 钓鱼？打电话 905-342-2153 预订船或现场租钓具。
+`,
+    faqs: [
+      { question: 'Rice Lake 主要钓什么鱼？', answer: '大嘴鲈鱼、小嘴鲈鱼、Walleye、北方梭鱼、Crappie、Bluegill、Yellow Perch、Carp 都是常见鱼种。华人家庭最常带回家的是 Panfish 和 Perch（小但好吃）。' },
+      { question: '什么时候是最佳钓鱼季节？', answer: '5 月 - 10 月都是钓鱼季。最旺：5-6 月 + 9-10 月，因为水温适中鱼最活跃。7-8 月旺但水温高，早晚出最好。' },
+      { question: '需要钓鱼证吗？', answer: '必须。安省所有钓鱼者需要 Ontario Fishing Licence + Outdoors Card。可在 ontario.ca 在线申请，5 分钟搞定，一日证约 $12 加元，一年约 $27 加元。' },
+      { question: 'Rice Lake 属于哪个 FMZ？', answer: 'Rice Lake 属于 FMZ 17（Fisheries Management Zone 17）。具体季节、尺寸、限额请查安省官方页面，规则可能每年微调。' },
+      { question: '新手家庭最适合钓什么？', answer: 'Panfish（Bluegill、Crappie、Yellow Perch）。数量多、好钓、小孩能操作、好吃、装备简单。先从这些开始建立信心，再追大鱼。' },
+    ],
+  },
 ];
 
 export function getMandarinArticleBySlug(slug: string): BlogArticle | undefined {
