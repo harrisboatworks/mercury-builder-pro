@@ -3493,12 +3493,12 @@ const locationSitemapEntries = [
 ];
 
 const multilingualBlogSitemapEntries = [
-  ...frenchBlogArticleRoutes,
-  ...koreanBlogArticleRoutes,
-  ...mandarinBlogArticleRoutes,
-  ...spanishBlogArticleRoutes,
+  ...visibleFrenchArticles.map(a => ({ loc: `/blog/fr/${a.slug}` })),
+  ...visibleKoreanArticles.map(a => ({ loc: `/blog/ko/${a.slug}` })),
+  ...visibleMandarinArticles.map(a => ({ loc: `/blog/zh/${a.slug}` })),
+  ...visibleSpanishArticles.map(a => ({ loc: `/blog/es/${a.slug}` })),
 ].map(r => ({
-  loc: r.path,
+  loc: r.loc,
   lastmod: today,
   priority: 0.6,
   changefreq: 'monthly',
