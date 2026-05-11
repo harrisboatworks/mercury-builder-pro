@@ -9307,222 +9307,94 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['mercury marine market share', 'best outboard brand', 'mercury vs yamaha', 'mercury verado v12', 'mercury innovation', 'mercury prokicker'],
-    content: `# Why Mercury Is One of the Strongest Outboard Brands in North America in 2026
+    content: `
+# Why Mercury Outboards Make Practical Sense for Ontario Boaters, And Where We Are Biased
 
-*Last reviewed: 2026-05-07*
+## Quick answer
+Mercury wins in Ontario for practical reasons: dealer network density, parts availability, and resale demand. Yamaha and Honda make reliable motors. But when something breaks in July on Rice Lake, which brand gets you back on the water faster? In this region, that is usually Mercury. Full disclosure: we sell Mercury exclusively and have since 1965. Build a live CAD quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-> **Quick answer:** Mercury leads in many Ontario segments because the dealer network is denser, parts supply is faster, and resale demand is strong. Yamaha and Honda build excellent motors; the practical service experience in cottage country tends to favour Mercury. We've sold them since 1947. Build an installed quote at mercuryrepower.ca.
+## Let us get the bias disclosure out of the way
 
-Mercury Marine is one of the strongest outboard brands in North America, with one of the deepest dealer networks in Canada and a model range that runs from 2.5 HP portables up through Mercury's flagship V12 600 HP class. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury is the brand HBW recommends most often. We sell only Mercury at HBW because we have run that math for the 60 years we have been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Harris Boat Works has sold Mercury exclusively since 1965. That is a long-running Mercury-only relationship, and it matters. We are not a neutral source.
 
-## Quick recommendation
+But here is the thing about bias: ours came after the market reality, not before it. We did not pick Mercury and then build an argument for it. Mercury was already the dominant outboard brand in Ontario, with the deepest service network and the strongest factory relationships with Canadian boat builders. We aligned our business to where our customers were.
 
-If you are buying an outboard in Ontario in 2026, the practical answer for most boats is Mercury. Not because the metal is significantly better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the manufacturer-OEM relationships with Canadian boat builders are deeper.
+So take what follows as the honest perspective of a dealer who knows Mercury inside out, believes it is the right choice for most Ontario freshwater boaters, and will tell you the specific situations where that answer changes.
 
-Reliability and service availability are the same conversation in Canada. A theoretically more reliable motor that takes 6 weeks to get parts for is less reliable in practice than a slightly less perfect motor that gets fixed in 4 days. Mercury is the most-supported outboard at HBW for that reason.
+## What "dominant" actually means
 
-We are biased. We sell Mercury exclusively at HBW. We have been a Mercury dealer since 1965. The bias is downstream of the market reality, not upstream of it. Mercury has led many Canadian outboard segments for decades, and the customers we serve are the customers buying Mercury.
+Mercury Marine is one of the leading outboard manufacturers in the world by volume. In Canada, that translates to more dealerships, more certified technicians, and deeper parts supply chains than any other outboard brand.
 
-## Why Mercury leads in many Canadian segments (the practical reasons)
+When your motor needs a water pump impeller on a Thursday in August, "established North American presence" means the part is on a shelf at a local dealer, not arriving in six weeks from a regional warehouse. It means the technician who opens your cowling has probably seen that exact issue before, because they have worked on hundreds of that same motor. It means when you sell the boat in five years, the buyer's local dealer already knows the platform.
+
+## The four reasons Mercury makes sense for Ontario boaters
 
 ### 1. Dealer network density
+Ontario has one of the strongest dealer networks for outboards. That creates real-world advantages:
 
-Mercury has one of the strongest dealer networks across Ontario and Canada. That means:
+**Parts on hand.** Common service parts (impellers, filters, anodes, control cables) are stocked at Mercury dealers because volume makes stocking practical.
 
-- **Parts availability.** A common service part is on a Mercury dealer's shelf, not 6 weeks away from a regional warehouse.
-- **Service expertise.** Most marine technicians in Ontario are Mercury-certified or Mercury-experienced. Yamaha and Honda techs are rarer in this region.
-- **Support when traveling.** A Mercury motor gets serviced at any Mercury dealer across Canada and the US. The dealer network is meaningful when your motor fails on a road trip.
-- **Resale support.** A 7-year-old Mercury in Ontario sells faster than a 7-year-old Yamaha or Honda because the local market for Mercury parts and service is bigger.
+**Technician depth.** Most marine technicians working in Ontario cottager country are Mercury-certified or Mercury-experienced. Finding a qualified Honda or Yamaha tech in Gores Landing or Bobcaygeon is harder than finding a Mercury tech.
 
-### 2. Factory OEM relationships with Canadian boat builders
+**Coverage when you travel.** A motor problem 400 kilometres from home is a different problem depending on your brand. Mercury dealers span Ontario, Quebec, and the US.
 
-Most major aluminum boat brands (Lund, Crestliner, Princecraft, Lowe, and similar) come Mercury-rigged from the factory. The reasons go back decades:
+**Resale support.** When you go to sell, buyers in this region are comfortable with Mercury because service is accessible to them too. A 10-year-old Mercury in Ontario sells to a larger pool of buyers.
 
-- Parts supply chains are built around Mercury for the Canadian market
-- Boat manufacturers can offer Mercury packages at attractive prices because of volume
-- Customers ask for Mercury, so factories rig with Mercury
-- Service support is easier when boat brand and motor brand both have strong dealer networks
+### 2. Factory relationships with Canadian boat builders
+Most aluminum fishing boats sold in Canada (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. The factories rig with Mercury because Mercury parts support is most consistent for their Canadian dealer networks. Customers ask for Mercury because it is what they know.
 
-Buying a Mercury-rigged factory boat is the most cost-effective way into a new aluminum boat in Canada. Switching brands during a repower adds $2,000 to $3,000 CAD in rigging costs because the entire control system has to swap.
+The practical result: if you buy a new aluminum boat in Canada, the odds are high it is already Mercury. If you are repowering an existing boat that came factory-rigged for Mercury, keeping it Mercury avoids a $2,000 to $3,000 CAD brand-conversion cost. Switching brands during a repower means replacing the full control system: throttle, shift cables, harness, gauges.
 
-### 3. Complete lineup coverage
+### 3. Full lineup coverage for every Ontario use case
+Mercury's FourStroke lineup covers 2.5 HP through 300 HP. The Pro XS line handles performance fishing applications. The SeaPro line covers commercial-duty applications. Verado covers Mercury's premium high-horsepower applications (special-order at HBW). No gaps in the Ontario-relevant HP range.
 
-Mercury covers every recreational HP class from the 2.5 portable tiller up through the flagship V12 Verado:
+### 4. Parts and service continuity over the motor's life
+An outboard on an Ontario cottage boat runs 50 to 150 hours a season. A well-maintained motor lasts 15 to 25 years. That is a 15 to 25 year relationship with your dealer network. Mercury's depth in Ontario means we can service every motor we sell for the full life of that motor.
 
-- FourStroke (2.5 to 300 HP) for cruising, fishing, family use
-- Pro XS (115 to 300 HP) for performance fishing and tournament use
-- SeaPro (25 to 300 HP) for commercial duty
-- Verado, Mercury's premium high-horsepower line, including the flagship V12 600 HP class for offshore and high-performance applications (special-order at HBW)
-- Avator (electric) for emerging eco-conscious applications
+## Where Mercury is not automatically the right answer
 
-If your boat needs an outboard, Mercury makes one that fits. Yamaha and Honda have gaps in the lineup at certain HP classes or use cases.
+**Coastal saltwater.** Yamaha has strong saltwater dealer coverage and a well-earned reputation in offshore applications. The saltwater advantage does not apply to Ontario freshwater, but if you are buying for Florida use, run the dealer comparison there.
 
-### 4. Innovation track record
+**Existing non-Mercury rigging.** If your boat came factory-rigged for Yamaha or Honda, and the motor is running fine, stay with it. Brand switching costs money. A running motor that gets properly serviced is better than switching brands for its own sake.
 
-Mercury has been the early leader on several modern outboard innovations:
+**Small-portable segment.** Honda has a strong reputation in sub-15 HP four-stroke portables. Nothing wrong with a Honda 5 or Honda 9.9 as a kicker on a fishing boat if you are in a region with Honda dealer access. In our area, we recommend the Mercury 9.9 ProKicker because we can back it up, not because Honda does not work.
 
-- Modern four-stroke transition (early 2000s, with Yamaha as the other early mover)
-- Pro XS performance line as the standard tournament motor
-- Verado V8/V10/V12 naturally-aspirated technology
-- SmartCraft engine management and connectivity
-- Joystick Piloting for Outboards (twin/triple installations)
-- Avator electric outboards
-- Boost software upgrades (early example of software-defined motor performance)
+## What we ask before recommending Mercury (or anything else)
 
-Innovation alone is not the reason Mercury wins, but it is part of why the brand stays relevant year after year. They are not coasting on dealer network and brand recognition.
+- What hull are you running?
+- Where do you launch and service?
+- What does your service history look like?
+- What is your budget for the full install?
+- Are you planning to sell the boat in the next five to ten years?
 
-## What changes the answer for specific buyers
+We are not going to tell you Mercury is mechanically superior to Yamaha or Honda in the abstract. We are going to tell you that for Ontario freshwater (Rice Lake, the Kawarthas, Lake Simcoe, Lake Ontario), the dealer network, parts supply, and resale reality favors Mercury.
 
-Mercury is not always the right answer. Specific situations where another brand might fit:
+## Why HBW has stayed Mercury-only since 1965
 
-- **Coastal saltwater (US Gulf Coast, Pacific Northwest, parts of Florida).** Yamaha has a stronger saltwater service network in some coastal regions and is a legitimate choice there.
-- **Specific hull factory rigging.** A boat that came from the factory rigged with Yamaha or Honda may be most cost-effective to keep that way during a repower (avoiding the $2,000 to $3,000 brand-conversion rigging cost).
-- **Honda small-engine niche.** Honda has a strong reputation in the small-portable class (sub-15 HP). For some buyers in some markets, Honda small portables are competitive with Mercury 9.9 and 15 HP class.
+**Expertise depth.** Three generations of HBW technicians have trained on Mercury engines.
 
-For the typical Ontario freshwater customer (Rice Lake, Kawarthas, Lake Simcoe, Lake Ontario), Mercury wins on the practical metrics that actually matter.
+**Parts inventory investment.** Our parts shelf is Mercury. The tooling is Mercury.
 
-## What HBW checks before recommending Mercury (or any motor)
+**Customer fit.** The boats coming in for service and repower on Rice Lake are mostly Mercury.
 
-When customers ask "should I get Mercury?" we want to know:
+Our market is Mercury customers who want Mercury depth.
 
-- What boat are you running? Hull type and what came factory-rigged matters.
-- Where do you live? Dealer network matters more than spec sheets.
-- What is your service plan? A motor you will service religiously will outlast any brand you neglect.
-- What is your budget tolerance? Brand switching during a repower costs more.
-- Resale plan? Mercury holds resale strongest in Ontario.
+## Sources
 
-We will not pretend Mercury is mechanically superior to Yamaha or Honda when it comes to the metal itself. We will tell you that for Ontario freshwater, the dealer network and service reality favors Mercury, and that is a meaningful part of "reliability" that brand-comparison articles often skip.
+- [Mercury Marine Canada, FourStroke lineup](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke)
+- [Mercury Marine Canada, Pro XS](https://www.mercurymarine.com/ca/en/engines/outboard/pro-xs)
+- [Mercury Marine Canada, SeaPro](https://www.mercurymarine.com/ca/en/engines/outboard/seapro)
+- [Mercury Marine Canada, Verado](https://www.mercurymarine.com/ca/en/engines/outboard/verado)
 
-## Why HBW chose Mercury (and stays with Mercury)
-
-We have been a Mercury dealer since 1965. That is 60 years of exclusive partnership. The reasons we have not switched:
-
-- The depth of Mercury expertise compounds. Three generations of HBW technicians have learned Mercury inside and out. Switching brands means starting that curve over.
-- Mercury parts inventory and tooling investment is significant. A new brand would mean new parts shelf, new tooling, new training. Not impossible, but expensive and slow.
-- Our customer base is Mercury. The boats coming in for service and repower are mostly Mercury-rigged. Adding a second brand splits our focus without adding revenue.
-- The Mercury Platinum dealer relationship gives HBW factory-direct access to support, training, and inventory that a multi-brand dealer does not have.
-
-There are dealerships that handle multiple brands. They serve a different market. Our market is Mercury customers, and the depth of focus pays off in service quality.
-
-## Related guides
-
-- [Why Harris Boat Works is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for HBW specifically
-- [Mercury vs Yamaha vs Honda Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), brand-by-brand reliability comparison
-- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario), focused Mercury vs Yamaha comparison
-- [Mercury 2026 Outboard Lineup Ontario](/blog/mercury-2026-outboard-lineup-ontario), the full current Mercury lineup
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which Mercury family fits your use
-
-## Ready to switch to (or stay with) Mercury?
-
-If you are buying your next Mercury or switching brands during a repower, build a quote on the [motor selection page](/quote/motor-selection). Live CAD pricing on every Mercury family. Full configuration including rigging.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you have questions about whether Mercury is right for your specific boat or use case, [give us a call at (905) 342-2153](tel:9053422153). We will tell you the honest answer, including the answer where staying with your current brand makes sense.
-
----
-
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
-
----
-
-## FAQ
-
-**Is Mercury actually the best outboard brand?**
-"Best" depends on context. Mechanically, Mercury, Yamaha, and Honda all make reliable outboards. In practical terms (dealer network, parts availability, service speed) for Ontario and Canadian freshwater, Mercury wins. In coastal saltwater regions, Yamaha is more competitive. The right brand for you depends on where you live and where you launch.
-
-**Why does HBW only sell Mercury?**
-We have been a Mercury dealer since 1965. Three generations of expertise, parts inventory, tooling, and a Mercury Platinum dealer relationship that gives factory-direct support. Multi-brand dealers serve a different market. We focus on Mercury depth instead of brand breadth, and that focus pays off in service quality.
-
-**What is Mercury's market share?**
-Mercury Marine is one of the leading outboard manufacturers in the world by volume and dealer count. Specific market share percentages vary by region. In Canada, Mercury has one of the strongest dealer networks and the strongest factory-OEM relationships with major boat builders. In coastal US markets, Yamaha is more competitive.
-
-**Why do most Canadian boats come Mercury-rigged?**
-Decades of supply chain integration between Mercury and Canadian boat builders (Lund, Crestliner, Princecraft, Lowe). Customers ask for Mercury, factories rig with Mercury, dealer service network is built around Mercury. Buying a Mercury-rigged factory boat is the most cost-effective way into a new Canadian aluminum boat.
-
-**Is Mercury more expensive than Yamaha or Honda?**
-Comparable HP at comparable trim. Pricing varies by model and current promotions. The total cost of ownership math (including service, parts, and resale) tends to favor Mercury in Ontario because the dealer network drives down practical costs. For specific Mercury pricing in CAD, see the [motor selection page](/quote/motor-selection).
-
-**What is Mercury's most popular model?**
-The Mercury 9.9 ProKicker is the most-installed Mercury kicker motor in Canada. The 90 EXLPT FourStroke is the most common main motor on 16 to 18 ft aluminum console boats. The 115 EXLPT FourStroke is close behind. These are the workhorses of the Canadian recreational fleet.
-
-**Does Mercury make electric outboards?**
-Yes. The Avator line covers the electric category from small portables (7.5e, 20e, 35e) up to larger units (75e, 110e). The lineup is still maturing. We are on-order for Avator at HBW for customers with specific use cases.
-
-**What is Mercury Verado and why is it special-order at HBW?**
-Verado is Mercury's premium high-horsepower line (V8/V10/V12, naturally aspirated on current models), including the flagship V12 600 HP class, built for offshore center consoles, twin/triple installations, and yachts. We do not stock Verado at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. If you do, [contact us](/contact) for a special-order quote.
-
-**Should I switch from Yamaha or Honda to Mercury?**
-If you are doing a full repower anyway and the rigging investment is unavoidable, switching to Mercury during the repower makes sense for Ontario boaters. The dealer network and parts supply argument favors Mercury once the rigging cost is committed either way. If your existing motor is running fine and you are not repowering, no reason to switch.
-
-**How long has Mercury been making outboards?**
-Mercury Marine was founded in 1939 by Carl Kiekhaefer in Cedarburg, Wisconsin. The brand has evolved from small post-war outboards through the modern FourStroke, Pro XS, Verado, and Avator lineup. As of 2026, Mercury is part of Brunswick Corporation and remains one of the leading outboard manufacturers globally.
-
-**Is Mercury reliable for cottage use on Rice Lake, Ontario (in the Kawarthas)?**
-Yes, demonstrably. Mercury has been the dominant outboard brand on Rice Lake and Kawartha lakes for decades. Most cottage boats come from the factory or from previous owners with Mercury motors. The local service network is built around Mercury. For typical cottage use (50 to 150 hours a season), a properly maintained Mercury lasts 10 to 30 years.
-
-**What is the difference between Mercury and other outboard brands?**
-Mechanically, modern Mercury, Yamaha, and Honda are all reliable four-stroke outboards. The differences come down to dealer network density, parts availability, factory-OEM relationships with boat builders, and resale demand in your specific region. For Ontario, Mercury wins on all four. For other regions, the answer might differ.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)`,
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
-      {
-        question: 'Why does Mercury have such a strong market position?',
-        answer: 'Mercury Marine is one of the leading outboard manufacturers globally and a regular fixture at major international boat shows. Their position widened after BRP discontinued Evinrude in 2020. Continuous innovation (the V12 600 HP Verado, SmartCraft, Avator electric), a full horsepower range, and strong dealer support keep them ahead of competitors.'
-      },
-      {
-        question: 'What makes the Verado V12 600 HP special?',
-        answer: 'The V12 Verado is a naturally aspirated 7.6L V12 with a two-speed automatic transmission, steerable gearcase, and extremely low noise and vibration. No competitor matches its combination of 600 HP, integrated features, and refinement. It changed what people thought an outboard could be.'
-      },
-      {
-        question: 'How does SmartCraft benefit boat owners?',
-        answer: 'SmartCraft ties engines, helm displays, and mobile devices into one integrated network. VesselView shows engine data on helm screens, SmartCraft Connect pushes that data to Garmin and Raymarine chartplotters, and the Mercury app provides remote monitoring. Features like Active Trim and Troll Control add automated convenience.'
-      },
-      {
-        question: 'Why does Harris Boat Works only sell Mercury?',
-        answer: 'After decades of selling and servicing outboards, Mercury consistently delivers reliability, innovation, and strong parts/support infrastructure in Ontario. Their full HP range covers every Rice Lake need, and our techs know the engines inside and out, meaning better service and fewer headaches for our customers.'
-      },
-      {
-        question: 'Why does Mercury have such a strong outboard market position?',
-        answer: 'Mercury\'s leading position results from compounding advantages: consistent R&D investment producing category-leading products like the Verado V12 and SmartCraft ecosystem; BRP\'s discontinuation of Evinrude in 2020, which consolidated buyers into Mercury; one of the strongest distribution networks with broad authorized dealer coverage and stocked parts; and a self-reinforcing cycle where boat builders choose Mercury because buyers ask for it. Mercury is a regular leading presence at major international boat shows.'
-      },
-      {
-        question: 'What makes the Mercury Verado V12 600 HP special?',
-        answer: 'The Verado V12 600 HP achieves its power through a naturally aspirated 7.6-litre V12 powerhead, no turbocharger or supercharger. It features a two-speed automatic transmission (a first for a production outboard) that optimizes hole-shot performance and cruising efficiency, plus a steerable gearcase with fixed powerhead that reduces transom footprint. The result is a quieter, smoother, more refined high-horsepower outboard than anything previously available in the category.'
-      },
-      {
-        question: 'How does Mercury SmartCraft benefit boat owners on Rice Lake?',
-        answer: 'SmartCraft gives Rice Lake boat owners real-time engine data. RPM, fuel burn, speed, trim, temperatures, and alerts, on their helm display or smartphone. SmartCraft Connect integrates Mercury engine data into Garmin, Raymarine, Lowrance, and Simrad multi-function displays, so anglers can see sonar, charts, and engine vitals on one screen. Active Trim automatically optimizes trim as conditions change. For anglers running long days on Rice Lake, knowing your fuel burn rate and engine health in real time means better decisions and fewer surprises.'
-      },
-      {
-        question: 'Why does Harris Boat Works only sell Mercury outboards?',
-        answer: 'Harris Boat Works focuses on Mercury because it\'s the best product for the majority of boats and uses on Rice Lake and the Kawarthas, and because being a Mercury dealer since 1965 means technicians have deep specialized knowledge. Being specialized means faster diagnostics, more reliable parts sourcing, and work we can stand behind. Selling multiple brands would dilute that depth of expertise and give customers a less well-supported product.'
-      },
-      {
-        question: 'How does Mercury compare to Yamaha for Rice Lake use?',
-        answer: 'Both Mercury and Yamaha make excellent outboards. For Rice Lake use specifically, the practical differences come down to support infrastructure. Harris Boat Works has been a Mercury dealer since 1965, technicians know Mercury in depth, parts are stocked, and warranty work happens locally. Mercury cowlings dominate the docks at Gores Landing, Bewdley, and Hastings, which means local knowledge and service experience are concentrated in Mercury. If you\'re already in a Yamaha running well, there\'s no reason to switch. If buying new for a Rice Lake boat, Mercury is the recommendation.'
-      },
-      {
-        question: 'Is the Mercury Avator electric outboard practical for a Rice Lake cottage?',
-        answer: 'The Mercury Avator electric line is practical for specific Rice Lake cottage uses, small aluminum tenders, dock-to-dock short trips, or eco-sensitive areas where quiet, emission-free operation is valued. The 7.5e and 20e suit small craft; the 75e/110e extend range. The limitation is battery capacity for full Rice Lake days of trolling and crossing bays. For cottagers wanting an electric option for short trips or dinghy use, Avator is worth discussing, call Harris Boat Works at 905-342-2153.'
-      },
-      {
-        question: 'Why did Evinrude get discontinued and what does it mean for existing owners?',
-        answer: 'BRP discontinued Evinrude in May 2020, citing COVID-19 economic disruption and the cost of developing next-generation outboard technology across multiple product lines simultaneously. For existing Evinrude owners, finding service and parts is increasingly difficult as the dealer and parts network contracts. Many are repowering with Mercury. For Mercury, Evinrude\'s exit was significant, buyers and dealers who previously chose Evinrude largely moved to Mercury, contributing to Mercury\'s growth.'
-      },
-      {
-        question: 'What size Mercury ProKicker should I get for trolling Rice Lake?',
-        answer: 'For most Rice Lake trolling applications on mid-size aluminum and fibreglass boats (17–20ft), the Mercury 9.9 ProKicker is the right choice. Its high-thrust gearing provides excellent speed control at very low RPMs for walleye and muskie trolling at 1.5–3 mph. For larger or heavier boats (21ft+), the Mercury 15 ProKicker provides more thrust to hold position and speed in Rice Lake\'s wind and current conditions. See the ProKicker guide at mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.'
-      },
-      {
-        question: 'What is the difference between Mercury FourStroke and Mercury Pro XS?',
-        answer: 'Mercury FourStroke outboards are the standard recreational line, optimized for fuel efficiency, quiet operation, and versatility across family boating, fishing, and cruising. Mercury Pro XS (115–300HP) is engineered for higher performance: sportier throttle response, higher maximum RPM range, and more aggressive power delivery for anglers who want to run hard and get on plane fast. For most Rice Lake recreational boats, the FourStroke line is the right choice. Pro XS is for buyers who specifically want the performance edge and accept a fuel efficiency trade-off.'
-      }
+      { question: 'Is Mercury actually better than Yamaha or Honda?', answer: 'Mechanically, all three brands make reliable modern four-stroke outboards. The practical difference for Ontario boaters is dealer network, parts availability, and resale. On those metrics, Mercury wins in this region.' },
+      { question: 'Why does HBW sell only Mercury?', answer: 'We have been a Mercury dealer since 1965. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Platinum dealer relationship today.' },
+      { question: 'Why do most Canadian boats come Mercury-rigged?', answer: 'Decades of supply chain integration between Mercury and Canadian boat builders. Customers ask for Mercury, factories rig with Mercury, the dealer service network is built around Mercury.' },
+      { question: 'Is Mercury more expensive than Yamaha or Honda?', answer: 'At comparable HP and trim, pricing is similar. Total cost of ownership tends to favor Mercury in Ontario because dealer network density reduces practical service costs.' },
+      { question: 'Should I switch from Yamaha or Honda to Mercury?', answer: 'If you are doing a full repower and the rigging investment is already committed, switching to Mercury at repower time makes sense. If your motor runs fine, do not switch for brand loyalty reasons.' },
+      { question: 'Is Mercury reliable for cottage use on Rice Lake?', answer: 'Yes. Most cottage boats in this region came from the factory with Mercury motors. At 50 to 150 hours of seasonal use, a properly maintained Mercury lasts 15 to 25 years.' },
     ]
   },
 
