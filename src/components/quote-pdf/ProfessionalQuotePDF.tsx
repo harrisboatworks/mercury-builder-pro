@@ -1010,7 +1010,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <View style={styles.infoRow}>
                   <Text style={[styles.infoLabel, { width: 90 }]}>Balance Due:</Text>
                   <Text style={[styles.infoValue, { fontWeight: 'bold' }]}>
-                    ${((quoteData.pricing?.totalCashPrice || parseFloat(quoteData.total.replace(/,/g, ''))) - quoteData.depositInfo.amount).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
+                    ${safeMoney((quoteData.pricing?.totalCashPrice ?? Number(String(quoteData.total ?? '0').replace(/,/g, ''))) - (Number(quoteData.depositInfo.amount) || 0))} CAD
                   </Text>
                 </View>
               </View>
