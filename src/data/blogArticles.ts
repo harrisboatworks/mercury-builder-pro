@@ -9531,7 +9531,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'Why did Evinrude get discontinued and what does it mean for existing owners?',
-        answer: 'BRP discontinued Evinrude in May 2020, citing COVID-19 economic disruption and the cost of developing next-generation outboard technology across multiple product lines simultaneously. For existing Evinrude owners, finding service and parts is increasingly difficult as the dealer and parts network contracts. Many are repowering with Mercury. For Mercury, Evinrude\'s exit was significant, buyers and dealers who previously chose Evinrude largely moved to Mercury, contributing to Mercury\'s market share gains.'
+        answer: 'BRP discontinued Evinrude in May 2020, citing COVID-19 economic disruption and the cost of developing next-generation outboard technology across multiple product lines simultaneously. For existing Evinrude owners, finding service and parts is increasingly difficult as the dealer and parts network contracts. Many are repowering with Mercury. For Mercury, Evinrude\'s exit was significant, buyers and dealers who previously chose Evinrude largely moved to Mercury, contributing to Mercury\'s growth.'
       },
       {
         question: 'What size Mercury ProKicker should I get for trolling Rice Lake?',
