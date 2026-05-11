@@ -24411,6 +24411,217 @@ We accept trade-ins on both the whole boat and the old motor alone. See our [Tra
     ],
   },
 
+  },
+
+  {
+    slug: 'mercury-dealer-markham-ontario-hbw',
+    title: 'Mercury Dealer for Markham: Why GTA Customers Drive to Rice Lake for Their Repower',
+    description: 'Looking for a Mercury Platinum dealer near Markham? Harris Boat Works on Rice Lake — 70 minutes north — handles repowers, sales, service, and Mercury parts for the Markham/Unionville/Stouffville area without the GTA dealer pressure.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '5 min',
+    keywords: ['mercury dealer markham', 'mercury repower markham', 'mercury outboard markham ontario', 'boat motor dealer markham', 'harris boat works markham customers'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, about 70 minutes north of Markham via Highway 404 and County Road 28. We handle Mercury outboard sales, repowers, service, parts, and winter storage for a significant number of Markham, Unionville, and Stouffville customers every year. The drive is the trade — for transparent CAD pricing, real Mercury technical knowledge, and no GTA dealer pressure, customers tell us it's worth the hour each way.
+
+## Why Markham customers come to Rice Lake
+
+The GTA has Mercury dealers closer to Markham. We know that. Here's what Markham customers tell us when they make the drive:
+
+**Transparent pricing.** Our quote builder at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote) shows real Canadian dollar prices in three minutes. You don't have to call, leave a number, and wait for someone to "work up a price." For customers who don't want to play the call-for-quote game, this matters.
+
+**Mercury Platinum credentials.** Platinum is the top tier in Mercury's dealer program. There aren't many in Ontario. The badge means depth of technical knowledge, parts access, and warranty support — the things that matter most after the sale.
+
+**No hard-sell culture.** We're a family marina since 1947. Three generations. Our reputation lives or dies on the next customer telling their neighbour. That changes how the sales conversation goes.
+
+**Mercury repower expertise.** Most of our business is repower — replacing an old motor on a hull you want to keep. We're good at that specific job. If the question is "should I repower or buy new," our [Repower vs Buy New guide](https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario) walks through the decision honestly.
+
+## What HBW handles for Markham customers
+
+- **Mercury outboard sales** — 2.5 HP to 600 HP, FourStroke / Pro XS / Verado
+- **Repower service** — installation, rigging, controls, prop selection
+- **Mercury service and parts** — Platinum-tier parts depth, warranty work
+- **Winter storage** — outdoor with shrinkwrap (we don't offer indoor)
+- **Quote builder** — instant CAD pricing online
+
+We don't service Yamaha or Honda. Mercury only. If you have a non-Mercury motor, we're not the right shop.
+
+## Getting to HBW from Markham
+
+Highway 404 north to Highway 115 east, then County Road 28 north to Gores Landing. About 70 minutes in normal traffic. The drive is rural for the last 30 minutes — cottage country starts before Rice Lake. Most Markham customers say the drive itself is part of why they come.
+
+**Address:** Harris Boat Works, Gores Landing, Ontario (on Rice Lake)
+**Phone:** [(905) 342-2153](tel:9053422153)
+**Text:** [(647) 952-2153](sms:6479522153)
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## What to do before the drive
+
+If you're considering a repower or a new Mercury, you can do 90% of the work before leaving Markham:
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote) — three minutes, real CAD pricing
+2. Read the [Mercury motor family comparison](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) to pick your tier
+3. Call or text us with questions — we'll answer honestly
+4. Drive up when you're ready to lock the order in
+
+中文支持: We have [Mandarin guides](https://www.mercuryrepower.ca/blog/zh/) and many Chinese-Canadian customers from Markham. If you'd prefer to read in Chinese first, start there.
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing on Rice Lake since 1947. Mercury Marine Platinum Dealer serving the GTA.*
+`,
+    faqs: [
+      { question: 'Is there a Mercury dealer in Markham?', answer: "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Markham — about 70 minutes north. Platinum is the top tier in Mercury's dealer program." },
+      { question: 'How far is Harris Boat Works from Markham?', answer: 'Approximately 70 minutes via Highway 404 north and County Road 28. Distance is about 110 km depending on your part of Markham.' },
+      { question: 'Why drive to Rice Lake instead of a closer GTA dealer?', answer: 'Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Platinum-tier technical depth, and a no-hard-sell family-marina culture (three generations since 1947).' },
+      { question: 'Does HBW serve Unionville and Stouffville too?', answer: 'Yes. We serve a broad Markham-area customer base including Unionville, Stouffville, and the surrounding York Region communities.' },
+    ],
+  },
+  {
+    slug: 'mercury-dealer-richmond-hill-ontario-hbw',
+    title: 'Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake',
+    description: 'Looking for a Mercury dealer near Richmond Hill? Harris Boat Works on Rice Lake — about 75 minutes north — handles Mercury repowers, sales, parts, and winter storage for Richmond Hill / Aurora / Newmarket area customers.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '5 min',
+    keywords: ['mercury dealer richmond hill', 'mercury repower richmond hill', 'mercury outboard richmond hill ontario', 'boat motor dealer aurora newmarket', 'harris boat works richmond hill customers'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake, about 75 minutes north of Richmond Hill via Highway 404 and County Road 28. We handle Mercury outboard sales, repowers, service, and winter storage for Richmond Hill, Aurora, and Newmarket-area boat owners. Transparent CAD pricing, Platinum-tier technical depth, and no GTA dealer pressure.
+
+## Why Richmond Hill customers drive to Rice Lake
+
+Richmond Hill has Mercury dealers closer to the 404 / 7 corridor. Why customers come to us anyway:
+
+**Online quote in 3 minutes.** Our quote builder at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote) gives real Canadian dollar pricing without a phone call. If you don't want to be chased by a sales rep before you've decided what motor you want, this is the difference.
+
+**Mercury Platinum status.** Top tier in Mercury's dealer program. Depth on parts, warranty, technical training. Matters more after the sale than during it.
+
+**Family business, three generations.** Since 1947 on Rice Lake. Our reputation depends on what the next customer says about us. Different conversation than a sales-quota-driven dealership.
+
+**Repower specialists.** Replacing an old motor on a hull you want to keep is most of our business. We're good at the specific job. See our [Repower vs Buy New decision guide](https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario) for the math.
+
+## What HBW handles for Richmond Hill customers
+
+- **Mercury outboard sales** — full 2.5 HP to 600 HP range
+- **Repower** — motor replacement, rigging, controls, prop
+- **Mercury service** — Platinum-tier parts and warranty
+- **Winter storage** — outdoor with shrinkwrap (no indoor)
+- **Quote builder** — instant CAD pricing online
+
+We service Mercury only. If your motor is Yamaha, Honda, or Suzuki, we're not the right shop.
+
+## Getting here from Richmond Hill
+
+Highway 404 north to Highway 115 east, exit to County Road 28 north into Gores Landing. About 75 minutes in normal traffic. The last 30 minutes is rural — cottage country starts before you reach Rice Lake.
+
+**Address:** Harris Boat Works, Gores Landing, Ontario
+**Phone:** [(905) 342-2153](tel:9053422153)
+**Text:** [(647) 952-2153](sms:6479522153)
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## How to use the drive efficiently
+
+Do the research before you leave Richmond Hill:
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+2. Read our [Mercury motor families comparison](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+3. If you're between HP classes, see our [Mercury 40 vs 60 HP guide](https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario) or [75/90/115 HP reviews](https://www.mercuryrepower.ca/blog)
+4. Call or text with specific questions
+5. Drive up when you're ready to confirm and order
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing on Rice Lake since 1947. Mercury Marine Platinum Dealer serving the GTA.*
+`,
+    faqs: [
+      { question: 'Is there a Mercury Platinum dealer near Richmond Hill?', answer: 'Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Richmond Hill — about 75 minutes north via Highway 404 and County Road 28.' },
+      { question: 'How far is Harris Boat Works from Richmond Hill?', answer: 'Approximately 75 minutes / 115 km depending on which part of Richmond Hill you start from.' },
+      { question: 'Does HBW also serve Aurora and Newmarket?', answer: 'Yes. Aurora and Newmarket are slightly closer than Richmond Hill — typically 60 to 70 minute drives. We have a regular customer base across all three communities.' },
+      { question: 'Can I get a Mercury quote without driving up first?', answer: 'Yes. Build a quote at mercuryrepower.ca/quote in about three minutes. Real CAD pricing, no phone call required.' },
+    ],
+  },
+  {
+    slug: 'mercury-dealer-mississauga-ontario-hbw',
+    title: "Mercury Dealer for Mississauga: Where to Go When Closer Dealers Don't Cut It",
+    description: 'Looking for a Mercury Platinum dealer for Mississauga? Harris Boat Works on Rice Lake — about 90 minutes northeast — handles Mercury repowers, sales, service, and Mercury parts for Mississauga / Oakville-edge customers tired of GTA dealer pressure.',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service Area',
+    readTime: '5 min',
+    keywords: ['mercury dealer mississauga', 'mercury repower mississauga', 'mercury outboard mississauga ontario', 'boat motor dealer mississauga', 'harris boat works mississauga customers'],
+    content: `## Quick answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake, about 90 minutes northeast of Mississauga via the 401 east and Highway 115. We handle Mercury outboard sales, repowers, service, and winter storage for Mississauga and west-GTA customers. The 90-minute drive is the trade for transparent CAD pricing, Platinum-tier technical depth, and a family-marina culture instead of the high-volume GTA dealer experience.
+
+## Why Mississauga customers consider the drive
+
+Mississauga has Mercury dealers closer to home. Here's what Mississauga customers tell us when they make the trip:
+
+**Pricing transparency.** Our online quote builder at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote) gives real Canadian dollar pricing in three minutes. No "call us for a quote." The dealers who require a phone conversation to share a price are usually testing your willingness to negotiate before they show you their number. We just show the number.
+
+**Mercury Platinum credentials.** Platinum is Mercury's top dealer tier. There are only a handful in Ontario. Matters most for warranty support, parts depth, and technical knowledge on the harder repowers.
+
+**No-pressure repower conversation.** Our [Repower vs Buy New decision guide](https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario) explicitly says when NOT to repower. We'd rather tell a customer the wrong answer than book a job we'll regret.
+
+**Family business, since 1947.** Three generations on Rice Lake. Reputation depends on the next customer's referral, not on a quota.
+
+## What HBW handles for Mississauga customers
+
+- **Mercury outboard sales** — 2.5 HP to 600 HP, FourStroke / Pro XS / Verado / SeaPro
+- **Repower** — full installation, rigging, controls, prop selection, sea trial
+- **Mercury service** — Platinum-tier parts, warranty work, diagnostic support
+- **Winter storage** — outdoor with shrinkwrap (we don't run indoor)
+- **Quote builder** — instant CAD pricing online before you commit
+
+Mercury only. Yamaha, Honda, Suzuki — we don't service those.
+
+## Getting here from Mississauga
+
+Highway 401 east through Toronto to Highway 115 east, then County Road 28 north to Gores Landing. About 90 minutes outside rush hour, longer in traffic. Most Mississauga customers either come up early Saturday morning or book on a weekday.
+
+**Address:** Harris Boat Works, Gores Landing, Ontario (Rice Lake)
+**Phone:** [(905) 342-2153](tel:9053422153)
+**Text:** [(647) 952-2153](sms:6479522153)
+**Online:** [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+
+## How to use the drive
+
+Do the homework from Mississauga before you leave:
+
+1. Build a quote at [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote)
+2. Read the [Mercury motor families guide](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) to settle on FourStroke vs Pro XS vs Verado
+3. Check the [Mercury outboard pricing hub](https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide) for your HP class
+4. Call or text with the specific questions
+5. Drive up when you're ready to confirm
+
+90 minutes is real time. We respect that. Come up when you're decided, not before.
+
+---
+
+*Harris Boat Works. Family-owned in Gores Landing on Rice Lake since 1947. Mercury Marine Platinum Dealer serving the GTA.*
+`,
+    faqs: [
+      { question: 'Is there a Mercury dealer near Mississauga?', answer: 'Mississauga has several Mercury dealers in the broader GTA. Harris Boat Works on Rice Lake is the closest Platinum-tier dealer for west-GTA customers willing to make the 90-minute drive northeast.' },
+      { question: 'How long is the drive from Mississauga to Harris Boat Works?', answer: 'About 90 minutes outside rush hour, longer in traffic. The route is Highway 401 east to Highway 115 east, then County Road 28 north into Gores Landing.' },
+      { question: 'Why drive that far for a Mercury dealer?', answer: 'Mississauga customers cite three reasons: transparent online CAD pricing (no call-for-quote), Mercury Platinum-tier technical depth, and a family-marina no-pressure conversation instead of the high-volume GTA dealer experience.' },
+      { question: 'Can I get a quote and place a Mercury order without visiting?', answer: 'Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, and we can coordinate delivery / install / sea-trial logistics from there.' },
+    ],
+  },
+
+];
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
