@@ -795,7 +795,18 @@ Command Thrust is a Mercury gearcase option (not a separate family) available on
 **By Jay Harris**
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)`,
+[About Jay and Harris Boat Works →](/about)
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
       {
         question: 'What\'s the main advantage of Pro XS over FourStroke?',
@@ -1585,7 +1596,17 @@ The kicker is part of the boat's overall motor configuration on the Pleasure Cra
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
-    `,
+    
+
+---
+
+## Sources
+
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+
+*Last reviewed: 2026-05-11.*
+`,
     howToSteps: [
       {
         name: 'Mount the Engine',
@@ -2370,7 +2391,17 @@ At cruise speed, a 90 HP CT pontoon runs 4 to 5 mph per US gallon, or roughly 1.
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
-    `,
+    
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
       {
         question: 'What is the best Mercury outboard for an 18-foot pontoon?',
@@ -3609,7 +3640,18 @@ Winter (November through March). Mercury inventory is best, our shop is quietest
 **By Jay Harris**
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)`,
+[About Jay and Harris Boat Works →](/about)
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
       {
         question: 'What HP do I really need for Rice Lake?',
@@ -3873,7 +3915,19 @@ Build a quote on the [motor selection page](/quote/motor-selection) and bring th
 **By Jay Harris**
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)`,
+[About Jay and Harris Boat Works →](/about)
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
       {
         question: 'How much does a typical repower cost?',
@@ -4155,7 +4209,16 @@ Or call the shop. The bass boat conversation is usually 10 minutes if you can te
 - [Mercury Controls and Rigging Guide](/blog/mercury-controls-rigging-guide-ontario)
 - [Mercury Repower Cost in Ontario (2026 CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)`,
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+
+---
+
+## Sources
+
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
       {
         question: 'Is Pro XS really faster than FourStroke?',
@@ -4918,6 +4981,15 @@ Yes. We service all Mercury motors regardless of where they were winterized. Som
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
+
+---
+
+## Sources
+
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+
+*Last reviewed: 2026-05-11.*
 `,
     howToSteps: [
       { name: 'Visual inspection', text: 'Walk around the boat checking hull for damage, mouse intrusion, cover damage, and loose hardware. Inspect motor cowl for cracks or chewed wiring. Check transom for soft spots and mounting bolts. Look at trailer bearings, tires, lights, and ball coupler.' },
@@ -5473,6 +5545,16 @@ Command Thrust is a Mercury gearcase option (115 HP and up) with larger gearcase
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+
+*Last reviewed: 2026-05-11.*
 `,
     howToSteps: [
       { name: 'Find your motor\'s rated WOT RPM', text: 'Mercury publishes a wide-open throttle (WOT) RPM range for every motor (e.g., 90 EXLPT is 5,000 to 5,800 RPM). The right prop lets you reach mid-band at typical loading. This number is the target.' },
@@ -5660,7 +5742,18 @@ We support guides and rental operators throughout the Kawarthas:
 - **Multi-engine fleet maintenance plans**, predictable annual budget instead of breakdown surprises
 
 If you run a commercial boat operation in the Kawarthas, Trent-Severn, or anywhere within tow distance, we'd rather have a phone conversation about your specific use case than try to fit you into a recreational quoting flow. Call **905-342-2153** and ask for the commercial quote.
-    `,
+    
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
       {
         question: 'Is SeaPro more expensive than FourStroke?',
@@ -6059,7 +6152,18 @@ We rig both setups all the time. Specifically:
 - **Service for both**, annual on the kicker (oil, impeller, plugs) and battery health checks on the electric
 
 Book at [hbw.wiki/service](https://hbw.wiki/service) or quote a new ProKicker at [mercuryrepower.ca](https://mercuryrepower.ca).
-    `,
+    
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
       {
         question: 'How many pounds of thrust do I need for my boat?',
@@ -6955,7 +7059,17 @@ Bewdley, Hastings, and Roseneath are the main public ramps on Rice Lake. Each ha
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
-    `,
+    
+
+---
+
+## Sources
+
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+
+*Last reviewed: 2026-05-11.*
+`,
     howToSteps: [
       { name: 'Schedule final service two weeks out', text: 'Two weeks before opener, schedule any remaining service at HBW. Confirm the boat is ready for water with commissioning done. Verify your fishing licence is valid, your Pleasure Craft Operator Card (PCOC) is current, and your Pleasure Craft Licence (PCL) is on the boat.' },
       { name: 'Test the main motor on the water', text: 'One week before opener, test the motor on the water if possible. Confirm cooling, charging, throttle response, and shift smoothness. Catching a problem here gives time to fix it before opener morning.' },
@@ -8730,7 +8844,16 @@ Stop by the marina in Gores Landing, give us a call at (905) 342-2153, or [brows
 - [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
 - [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 
-    `,
+    
+
+---
+
+## Sources
+
+- Government of Canada — Federal Budget 2026 (status of luxury tax measures). Cite the official Department of Finance document if making a hard claim.
+
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
       {
         question: 'Is the boating market going to stabilize in 2026?',
@@ -9143,7 +9266,17 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
 - [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario). Mercury vs Yamaha for Ontario
 - [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), reliability comparison: Mercury vs Yamaha vs Honda
 
-    `,
+    
+
+---
+
+## Sources
+
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
       {
         question: 'How much does it cost to rent a boat vs. owning one?',
@@ -10050,7 +10183,19 @@ Recent years have been strong on Rice Lake. Continued normal weather and water l
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
-    `,
+    
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
       {
         question: 'When does walleye season open on Rice Lake?',
@@ -10438,6 +10583,14 @@ Any pleasure boat with a motor over 9.9 HP requires a PCL in Canada. Below 9.9 H
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
+
+---
+
+## Sources
+
+- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+
+*Last reviewed: 2026-05-11.*
 `,
     faqs: [
       {
@@ -10647,6 +10800,16 @@ Wait time for Mercury motors and rigging slots is longest in May through August.
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+
+*Last reviewed: 2026-05-11.*
 `,
     faqs: [
       {
@@ -11368,6 +11531,15 @@ Mercury-to-Mercury repowers from 115 to 150 usually keep existing post-2010 cont
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+
+*Last reviewed: 2026-05-11.*
 `,
     faqs: [
       {
@@ -11759,7 +11931,16 @@ Opening day (typically Saturday closest to May 15) is the traditional opener. Fa
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
-    `,
+    
+
+---
+
+## Sources
+
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
       {
         question: 'What is the best Mercury outboard for Lake Simcoe walleye fishing?',
@@ -13299,6 +13480,13 @@ Read more about [the best Mercury outboards for Rice Lake fishing](https://mercu
 - [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout). Lake Ontario salmon and trout setups
 - [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
 
+---
+
+## Sources
+
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+
+*Last reviewed: 2026-05-11.*
 `,
     faqs: [
       {
@@ -13594,6 +13782,14 @@ Sometimes. If diagnostic shows major internal damage (compression failure, gearc
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
+
+---
+
+## Sources
+
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+
+*Last reviewed: 2026-05-11.*
 `,
     howToSteps: [
       { name: 'Check the battery', text: 'Voltage at rest should be 12.4V or higher; voltage under crank load should stay above 10.5V. Clean and tighten terminals. Marine batteries last 4 to 6 years; a 7-year-old battery is at end of life regardless of how it tests. A weak battery causes false positives on every other test, so replace it before continuing.' },
@@ -14015,6 +14211,14 @@ Putting a new motor on a hull with a hidden structural problem (soft transom, cr
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
+
+---
+
+## Sources
+
+- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+
+*Last reviewed: 2026-05-11.*
 `,
     faqs: [
       {
@@ -22679,7 +22883,19 @@ Or call the shop. The 40-60 HP class is a 10-minute conversation if you can tell
 - [Mercury Command Thrust Guide for Pontoon Boats](/blog/mercury-command-thrust-guide-pontoon-boats)
 - [Mercury Controls and Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario)
 - [Mercury Repower Cost in Ontario (2026 CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Pontoon HP Sizing Decision Tree](/blog/pontoon-hp-sizing-decision-tree-ontario)`,
+- [Pontoon HP Sizing Decision Tree](/blog/pontoon-hp-sizing-decision-tree-ontario)
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+- Transport Canada — Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+
+*Last reviewed: 2026-05-11.*
+`,
   },
   {
     slug: 'outboard-trade-in-value-ontario-hbw',
@@ -23149,7 +23365,18 @@ Two paths.
 - [Mercury Boost Upgrade Analysis (150 HP Pontoon)](/blog/mercury-boost-upgrade-150hp-pontoon-analysis)
 - [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Mercury Controls and Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario)
-- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)`,
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+
+---
+
+## Sources
+
+- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+
+*Last reviewed: 2026-05-11.*
+`,
   },
   {
     slug: "outdoor-boat-storage-shrinkwrap-rice-lake",
