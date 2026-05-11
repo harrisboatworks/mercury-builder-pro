@@ -9307,222 +9307,94 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['mercury marine market share', 'best outboard brand', 'mercury vs yamaha', 'mercury verado v12', 'mercury innovation', 'mercury prokicker'],
-    content: `# Why Mercury Is One of the Strongest Outboard Brands in North America in 2026
+    content: `
+# Why Mercury Outboards Make Practical Sense for Ontario Boaters, And Where We Are Biased
 
-*Last reviewed: 2026-05-07*
+## Quick answer
+Mercury wins in Ontario for practical reasons: dealer network density, parts availability, and resale demand. Yamaha and Honda make reliable motors. But when something breaks in July on Rice Lake, which brand gets you back on the water faster? In this region, that is usually Mercury. Full disclosure: we sell Mercury exclusively and have since 1965. Build a live CAD quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-> **Quick answer:** Mercury leads in many Ontario segments because the dealer network is denser, parts supply is faster, and resale demand is strong. Yamaha and Honda build excellent motors; the practical service experience in cottage country tends to favour Mercury. We've sold them since 1947. Build an installed quote at mercuryrepower.ca.
+## Let us get the bias disclosure out of the way
 
-Mercury Marine is one of the strongest outboard brands in North America, with one of the deepest dealer networks in Canada and a model range that runs from 2.5 HP portables up through Mercury's flagship V12 600 HP class. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury is the brand HBW recommends most often. We sell only Mercury at HBW because we have run that math for the 60 years we have been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Harris Boat Works has sold Mercury exclusively since 1965. That is a long-running Mercury-only relationship, and it matters. We are not a neutral source.
 
-## Quick recommendation
+But here is the thing about bias: ours came after the market reality, not before it. We did not pick Mercury and then build an argument for it. Mercury was already the dominant outboard brand in Ontario, with the deepest service network and the strongest factory relationships with Canadian boat builders. We aligned our business to where our customers were.
 
-If you are buying an outboard in Ontario in 2026, the practical answer for most boats is Mercury. Not because the metal is significantly better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the manufacturer-OEM relationships with Canadian boat builders are deeper.
+So take what follows as the honest perspective of a dealer who knows Mercury inside out, believes it is the right choice for most Ontario freshwater boaters, and will tell you the specific situations where that answer changes.
 
-Reliability and service availability are the same conversation in Canada. A theoretically more reliable motor that takes 6 weeks to get parts for is less reliable in practice than a slightly less perfect motor that gets fixed in 4 days. Mercury is the most-supported outboard at HBW for that reason.
+## What "dominant" actually means
 
-We are biased. We sell Mercury exclusively at HBW. We have been a Mercury dealer since 1965. The bias is downstream of the market reality, not upstream of it. Mercury has led many Canadian outboard segments for decades, and the customers we serve are the customers buying Mercury.
+Mercury Marine is one of the leading outboard manufacturers in the world by volume. In Canada, that translates to more dealerships, more certified technicians, and deeper parts supply chains than any other outboard brand.
 
-## Why Mercury leads in many Canadian segments (the practical reasons)
+When your motor needs a water pump impeller on a Thursday in August, "established North American presence" means the part is on a shelf at a local dealer, not arriving in six weeks from a regional warehouse. It means the technician who opens your cowling has probably seen that exact issue before, because they have worked on hundreds of that same motor. It means when you sell the boat in five years, the buyer's local dealer already knows the platform.
+
+## The four reasons Mercury makes sense for Ontario boaters
 
 ### 1. Dealer network density
+Ontario has one of the strongest dealer networks for outboards. That creates real-world advantages:
 
-Mercury has one of the strongest dealer networks across Ontario and Canada. That means:
+**Parts on hand.** Common service parts (impellers, filters, anodes, control cables) are stocked at Mercury dealers because volume makes stocking practical.
 
-- **Parts availability.** A common service part is on a Mercury dealer's shelf, not 6 weeks away from a regional warehouse.
-- **Service expertise.** Most marine technicians in Ontario are Mercury-certified or Mercury-experienced. Yamaha and Honda techs are rarer in this region.
-- **Support when traveling.** A Mercury motor gets serviced at any Mercury dealer across Canada and the US. The dealer network is meaningful when your motor fails on a road trip.
-- **Resale support.** A 7-year-old Mercury in Ontario sells faster than a 7-year-old Yamaha or Honda because the local market for Mercury parts and service is bigger.
+**Technician depth.** Most marine technicians working in Ontario cottager country are Mercury-certified or Mercury-experienced. Finding a qualified Honda or Yamaha tech in Gores Landing or Bobcaygeon is harder than finding a Mercury tech.
 
-### 2. Factory OEM relationships with Canadian boat builders
+**Coverage when you travel.** A motor problem 400 kilometres from home is a different problem depending on your brand. Mercury dealers span Ontario, Quebec, and the US.
 
-Most major aluminum boat brands (Lund, Crestliner, Princecraft, Lowe, and similar) come Mercury-rigged from the factory. The reasons go back decades:
+**Resale support.** When you go to sell, buyers in this region are comfortable with Mercury because service is accessible to them too. A 10-year-old Mercury in Ontario sells to a larger pool of buyers.
 
-- Parts supply chains are built around Mercury for the Canadian market
-- Boat manufacturers can offer Mercury packages at attractive prices because of volume
-- Customers ask for Mercury, so factories rig with Mercury
-- Service support is easier when boat brand and motor brand both have strong dealer networks
+### 2. Factory relationships with Canadian boat builders
+Most aluminum fishing boats sold in Canada (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. The factories rig with Mercury because Mercury parts support is most consistent for their Canadian dealer networks. Customers ask for Mercury because it is what they know.
 
-Buying a Mercury-rigged factory boat is the most cost-effective way into a new aluminum boat in Canada. Switching brands during a repower adds $2,000 to $3,000 CAD in rigging costs because the entire control system has to swap.
+The practical result: if you buy a new aluminum boat in Canada, the odds are high it is already Mercury. If you are repowering an existing boat that came factory-rigged for Mercury, keeping it Mercury avoids a $2,000 to $3,000 CAD brand-conversion cost. Switching brands during a repower means replacing the full control system: throttle, shift cables, harness, gauges.
 
-### 3. Complete lineup coverage
+### 3. Full lineup coverage for every Ontario use case
+Mercury's FourStroke lineup covers 2.5 HP through 300 HP. The Pro XS line handles performance fishing applications. The SeaPro line covers commercial-duty applications. Verado covers Mercury's premium high-horsepower applications (special-order at HBW). No gaps in the Ontario-relevant HP range.
 
-Mercury covers every recreational HP class from the 2.5 portable tiller up through the flagship V12 Verado:
+### 4. Parts and service continuity over the motor's life
+An outboard on an Ontario cottage boat runs 50 to 150 hours a season. A well-maintained motor lasts 15 to 25 years. That is a 15 to 25 year relationship with your dealer network. Mercury's depth in Ontario means we can service every motor we sell for the full life of that motor.
 
-- FourStroke (2.5 to 300 HP) for cruising, fishing, family use
-- Pro XS (115 to 300 HP) for performance fishing and tournament use
-- SeaPro (25 to 300 HP) for commercial duty
-- Verado, Mercury's premium high-horsepower line, including the flagship V12 600 HP class for offshore and high-performance applications (special-order at HBW)
-- Avator (electric) for emerging eco-conscious applications
+## Where Mercury is not automatically the right answer
 
-If your boat needs an outboard, Mercury makes one that fits. Yamaha and Honda have gaps in the lineup at certain HP classes or use cases.
+**Coastal saltwater.** Yamaha has strong saltwater dealer coverage and a well-earned reputation in offshore applications. The saltwater advantage does not apply to Ontario freshwater, but if you are buying for Florida use, run the dealer comparison there.
 
-### 4. Innovation track record
+**Existing non-Mercury rigging.** If your boat came factory-rigged for Yamaha or Honda, and the motor is running fine, stay with it. Brand switching costs money. A running motor that gets properly serviced is better than switching brands for its own sake.
 
-Mercury has been the early leader on several modern outboard innovations:
+**Small-portable segment.** Honda has a strong reputation in sub-15 HP four-stroke portables. Nothing wrong with a Honda 5 or Honda 9.9 as a kicker on a fishing boat if you are in a region with Honda dealer access. In our area, we recommend the Mercury 9.9 ProKicker because we can back it up, not because Honda does not work.
 
-- Modern four-stroke transition (early 2000s, with Yamaha as the other early mover)
-- Pro XS performance line as the standard tournament motor
-- Verado V8/V10/V12 naturally-aspirated technology
-- SmartCraft engine management and connectivity
-- Joystick Piloting for Outboards (twin/triple installations)
-- Avator electric outboards
-- Boost software upgrades (early example of software-defined motor performance)
+## What we ask before recommending Mercury (or anything else)
 
-Innovation alone is not the reason Mercury wins, but it is part of why the brand stays relevant year after year. They are not coasting on dealer network and brand recognition.
+- What hull are you running?
+- Where do you launch and service?
+- What does your service history look like?
+- What is your budget for the full install?
+- Are you planning to sell the boat in the next five to ten years?
 
-## What changes the answer for specific buyers
+We are not going to tell you Mercury is mechanically superior to Yamaha or Honda in the abstract. We are going to tell you that for Ontario freshwater (Rice Lake, the Kawarthas, Lake Simcoe, Lake Ontario), the dealer network, parts supply, and resale reality favors Mercury.
 
-Mercury is not always the right answer. Specific situations where another brand might fit:
+## Why HBW has stayed Mercury-only since 1965
 
-- **Coastal saltwater (US Gulf Coast, Pacific Northwest, parts of Florida).** Yamaha has a stronger saltwater service network in some coastal regions and is a legitimate choice there.
-- **Specific hull factory rigging.** A boat that came from the factory rigged with Yamaha or Honda may be most cost-effective to keep that way during a repower (avoiding the $2,000 to $3,000 brand-conversion rigging cost).
-- **Honda small-engine niche.** Honda has a strong reputation in the small-portable class (sub-15 HP). For some buyers in some markets, Honda small portables are competitive with Mercury 9.9 and 15 HP class.
+**Expertise depth.** Three generations of HBW technicians have trained on Mercury engines.
 
-For the typical Ontario freshwater customer (Rice Lake, Kawarthas, Lake Simcoe, Lake Ontario), Mercury wins on the practical metrics that actually matter.
+**Parts inventory investment.** Our parts shelf is Mercury. The tooling is Mercury.
 
-## What HBW checks before recommending Mercury (or any motor)
+**Customer fit.** The boats coming in for service and repower on Rice Lake are mostly Mercury.
 
-When customers ask "should I get Mercury?" we want to know:
+Our market is Mercury customers who want Mercury depth.
 
-- What boat are you running? Hull type and what came factory-rigged matters.
-- Where do you live? Dealer network matters more than spec sheets.
-- What is your service plan? A motor you will service religiously will outlast any brand you neglect.
-- What is your budget tolerance? Brand switching during a repower costs more.
-- Resale plan? Mercury holds resale strongest in Ontario.
+## Sources
 
-We will not pretend Mercury is mechanically superior to Yamaha or Honda when it comes to the metal itself. We will tell you that for Ontario freshwater, the dealer network and service reality favors Mercury, and that is a meaningful part of "reliability" that brand-comparison articles often skip.
+- [Mercury Marine Canada, FourStroke lineup](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke)
+- [Mercury Marine Canada, Pro XS](https://www.mercurymarine.com/ca/en/engines/outboard/pro-xs)
+- [Mercury Marine Canada, SeaPro](https://www.mercurymarine.com/ca/en/engines/outboard/seapro)
+- [Mercury Marine Canada, Verado](https://www.mercurymarine.com/ca/en/engines/outboard/verado)
 
-## Why HBW chose Mercury (and stays with Mercury)
-
-We have been a Mercury dealer since 1965. That is 60 years of exclusive partnership. The reasons we have not switched:
-
-- The depth of Mercury expertise compounds. Three generations of HBW technicians have learned Mercury inside and out. Switching brands means starting that curve over.
-- Mercury parts inventory and tooling investment is significant. A new brand would mean new parts shelf, new tooling, new training. Not impossible, but expensive and slow.
-- Our customer base is Mercury. The boats coming in for service and repower are mostly Mercury-rigged. Adding a second brand splits our focus without adding revenue.
-- The Mercury Platinum dealer relationship gives HBW factory-direct access to support, training, and inventory that a multi-brand dealer does not have.
-
-There are dealerships that handle multiple brands. They serve a different market. Our market is Mercury customers, and the depth of focus pays off in service quality.
-
-## Related guides
-
-- [Why Harris Boat Works is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for HBW specifically
-- [Mercury vs Yamaha vs Honda Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), brand-by-brand reliability comparison
-- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario), focused Mercury vs Yamaha comparison
-- [Mercury 2026 Outboard Lineup Ontario](/blog/mercury-2026-outboard-lineup-ontario), the full current Mercury lineup
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which Mercury family fits your use
-
-## Ready to switch to (or stay with) Mercury?
-
-If you are buying your next Mercury or switching brands during a repower, build a quote on the [motor selection page](/quote/motor-selection). Live CAD pricing on every Mercury family. Full configuration including rigging.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you have questions about whether Mercury is right for your specific boat or use case, [give us a call at (905) 342-2153](tel:9053422153). We will tell you the honest answer, including the answer where staying with your current brand makes sense.
-
----
-
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
-
----
-
-## FAQ
-
-**Is Mercury actually the best outboard brand?**
-"Best" depends on context. Mechanically, Mercury, Yamaha, and Honda all make reliable outboards. In practical terms (dealer network, parts availability, service speed) for Ontario and Canadian freshwater, Mercury wins. In coastal saltwater regions, Yamaha is more competitive. The right brand for you depends on where you live and where you launch.
-
-**Why does HBW only sell Mercury?**
-We have been a Mercury dealer since 1965. Three generations of expertise, parts inventory, tooling, and a Mercury Platinum dealer relationship that gives factory-direct support. Multi-brand dealers serve a different market. We focus on Mercury depth instead of brand breadth, and that focus pays off in service quality.
-
-**What is Mercury's market share?**
-Mercury Marine is one of the leading outboard manufacturers in the world by volume and dealer count. Specific market share percentages vary by region. In Canada, Mercury has one of the strongest dealer networks and the strongest factory-OEM relationships with major boat builders. In coastal US markets, Yamaha is more competitive.
-
-**Why do most Canadian boats come Mercury-rigged?**
-Decades of supply chain integration between Mercury and Canadian boat builders (Lund, Crestliner, Princecraft, Lowe). Customers ask for Mercury, factories rig with Mercury, dealer service network is built around Mercury. Buying a Mercury-rigged factory boat is the most cost-effective way into a new Canadian aluminum boat.
-
-**Is Mercury more expensive than Yamaha or Honda?**
-Comparable HP at comparable trim. Pricing varies by model and current promotions. The total cost of ownership math (including service, parts, and resale) tends to favor Mercury in Ontario because the dealer network drives down practical costs. For specific Mercury pricing in CAD, see the [motor selection page](/quote/motor-selection).
-
-**What is Mercury's most popular model?**
-The Mercury 9.9 ProKicker is the most-installed Mercury kicker motor in Canada. The 90 EXLPT FourStroke is the most common main motor on 16 to 18 ft aluminum console boats. The 115 EXLPT FourStroke is close behind. These are the workhorses of the Canadian recreational fleet.
-
-**Does Mercury make electric outboards?**
-Yes. The Avator line covers the electric category from small portables (7.5e, 20e, 35e) up to larger units (75e, 110e). The lineup is still maturing. We are on-order for Avator at HBW for customers with specific use cases.
-
-**What is Mercury Verado and why is it special-order at HBW?**
-Verado is Mercury's premium high-horsepower line (V8/V10/V12, naturally aspirated on current models), including the flagship V12 600 HP class, built for offshore center consoles, twin/triple installations, and yachts. We do not stock Verado at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. If you do, [contact us](/contact) for a special-order quote.
-
-**Should I switch from Yamaha or Honda to Mercury?**
-If you are doing a full repower anyway and the rigging investment is unavoidable, switching to Mercury during the repower makes sense for Ontario boaters. The dealer network and parts supply argument favors Mercury once the rigging cost is committed either way. If your existing motor is running fine and you are not repowering, no reason to switch.
-
-**How long has Mercury been making outboards?**
-Mercury Marine was founded in 1939 by Carl Kiekhaefer in Cedarburg, Wisconsin. The brand has evolved from small post-war outboards through the modern FourStroke, Pro XS, Verado, and Avator lineup. As of 2026, Mercury is part of Brunswick Corporation and remains one of the leading outboard manufacturers globally.
-
-**Is Mercury reliable for cottage use on Rice Lake, Ontario (in the Kawarthas)?**
-Yes, demonstrably. Mercury has been the dominant outboard brand on Rice Lake and Kawartha lakes for decades. Most cottage boats come from the factory or from previous owners with Mercury motors. The local service network is built around Mercury. For typical cottage use (50 to 150 hours a season), a properly maintained Mercury lasts 10 to 30 years.
-
-**What is the difference between Mercury and other outboard brands?**
-Mechanically, modern Mercury, Yamaha, and Honda are all reliable four-stroke outboards. The differences come down to dealer network density, parts availability, factory-OEM relationships with boat builders, and resale demand in your specific region. For Ontario, Mercury wins on all four. For other regions, the answer might differ.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)`,
+*Last reviewed: 2026-05-11.*
+`,
     faqs: [
-      {
-        question: 'Why does Mercury have such a strong market position?',
-        answer: 'Mercury Marine is one of the leading outboard manufacturers globally and a regular fixture at major international boat shows. Their position widened after BRP discontinued Evinrude in 2020. Continuous innovation (the V12 600 HP Verado, SmartCraft, Avator electric), a full horsepower range, and strong dealer support keep them ahead of competitors.'
-      },
-      {
-        question: 'What makes the Verado V12 600 HP special?',
-        answer: 'The V12 Verado is a naturally aspirated 7.6L V12 with a two-speed automatic transmission, steerable gearcase, and extremely low noise and vibration. No competitor matches its combination of 600 HP, integrated features, and refinement. It changed what people thought an outboard could be.'
-      },
-      {
-        question: 'How does SmartCraft benefit boat owners?',
-        answer: 'SmartCraft ties engines, helm displays, and mobile devices into one integrated network. VesselView shows engine data on helm screens, SmartCraft Connect pushes that data to Garmin and Raymarine chartplotters, and the Mercury app provides remote monitoring. Features like Active Trim and Troll Control add automated convenience.'
-      },
-      {
-        question: 'Why does Harris Boat Works only sell Mercury?',
-        answer: 'After decades of selling and servicing outboards, Mercury consistently delivers reliability, innovation, and strong parts/support infrastructure in Ontario. Their full HP range covers every Rice Lake need, and our techs know the engines inside and out, meaning better service and fewer headaches for our customers.'
-      },
-      {
-        question: 'Why does Mercury have such a strong outboard market position?',
-        answer: 'Mercury\'s leading position results from compounding advantages: consistent R&D investment producing category-leading products like the Verado V12 and SmartCraft ecosystem; BRP\'s discontinuation of Evinrude in 2020, which consolidated buyers into Mercury; one of the strongest distribution networks with broad authorized dealer coverage and stocked parts; and a self-reinforcing cycle where boat builders choose Mercury because buyers ask for it. Mercury is a regular leading presence at major international boat shows.'
-      },
-      {
-        question: 'What makes the Mercury Verado V12 600 HP special?',
-        answer: 'The Verado V12 600 HP achieves its power through a naturally aspirated 7.6-litre V12 powerhead, no turbocharger or supercharger. It features a two-speed automatic transmission (a first for a production outboard) that optimizes hole-shot performance and cruising efficiency, plus a steerable gearcase with fixed powerhead that reduces transom footprint. The result is a quieter, smoother, more refined high-horsepower outboard than anything previously available in the category.'
-      },
-      {
-        question: 'How does Mercury SmartCraft benefit boat owners on Rice Lake?',
-        answer: 'SmartCraft gives Rice Lake boat owners real-time engine data. RPM, fuel burn, speed, trim, temperatures, and alerts, on their helm display or smartphone. SmartCraft Connect integrates Mercury engine data into Garmin, Raymarine, Lowrance, and Simrad multi-function displays, so anglers can see sonar, charts, and engine vitals on one screen. Active Trim automatically optimizes trim as conditions change. For anglers running long days on Rice Lake, knowing your fuel burn rate and engine health in real time means better decisions and fewer surprises.'
-      },
-      {
-        question: 'Why does Harris Boat Works only sell Mercury outboards?',
-        answer: 'Harris Boat Works focuses on Mercury because it\'s the best product for the majority of boats and uses on Rice Lake and the Kawarthas, and because being a Mercury dealer since 1965 means technicians have deep specialized knowledge. Being specialized means faster diagnostics, more reliable parts sourcing, and work we can stand behind. Selling multiple brands would dilute that depth of expertise and give customers a less well-supported product.'
-      },
-      {
-        question: 'How does Mercury compare to Yamaha for Rice Lake use?',
-        answer: 'Both Mercury and Yamaha make excellent outboards. For Rice Lake use specifically, the practical differences come down to support infrastructure. Harris Boat Works has been a Mercury dealer since 1965, technicians know Mercury in depth, parts are stocked, and warranty work happens locally. Mercury cowlings dominate the docks at Gores Landing, Bewdley, and Hastings, which means local knowledge and service experience are concentrated in Mercury. If you\'re already in a Yamaha running well, there\'s no reason to switch. If buying new for a Rice Lake boat, Mercury is the recommendation.'
-      },
-      {
-        question: 'Is the Mercury Avator electric outboard practical for a Rice Lake cottage?',
-        answer: 'The Mercury Avator electric line is practical for specific Rice Lake cottage uses, small aluminum tenders, dock-to-dock short trips, or eco-sensitive areas where quiet, emission-free operation is valued. The 7.5e and 20e suit small craft; the 75e/110e extend range. The limitation is battery capacity for full Rice Lake days of trolling and crossing bays. For cottagers wanting an electric option for short trips or dinghy use, Avator is worth discussing, call Harris Boat Works at 905-342-2153.'
-      },
-      {
-        question: 'Why did Evinrude get discontinued and what does it mean for existing owners?',
-        answer: 'BRP discontinued Evinrude in May 2020, citing COVID-19 economic disruption and the cost of developing next-generation outboard technology across multiple product lines simultaneously. For existing Evinrude owners, finding service and parts is increasingly difficult as the dealer and parts network contracts. Many are repowering with Mercury. For Mercury, Evinrude\'s exit was significant, buyers and dealers who previously chose Evinrude largely moved to Mercury, contributing to Mercury\'s growth.'
-      },
-      {
-        question: 'What size Mercury ProKicker should I get for trolling Rice Lake?',
-        answer: 'For most Rice Lake trolling applications on mid-size aluminum and fibreglass boats (17–20ft), the Mercury 9.9 ProKicker is the right choice. Its high-thrust gearing provides excellent speed control at very low RPMs for walleye and muskie trolling at 1.5–3 mph. For larger or heavier boats (21ft+), the Mercury 15 ProKicker provides more thrust to hold position and speed in Rice Lake\'s wind and current conditions. See the ProKicker guide at mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.'
-      },
-      {
-        question: 'What is the difference between Mercury FourStroke and Mercury Pro XS?',
-        answer: 'Mercury FourStroke outboards are the standard recreational line, optimized for fuel efficiency, quiet operation, and versatility across family boating, fishing, and cruising. Mercury Pro XS (115–300HP) is engineered for higher performance: sportier throttle response, higher maximum RPM range, and more aggressive power delivery for anglers who want to run hard and get on plane fast. For most Rice Lake recreational boats, the FourStroke line is the right choice. Pro XS is for buyers who specifically want the performance edge and accept a fuel efficiency trade-off.'
-      }
+      { question: 'Is Mercury actually better than Yamaha or Honda?', answer: 'Mechanically, all three brands make reliable modern four-stroke outboards. The practical difference for Ontario boaters is dealer network, parts availability, and resale. On those metrics, Mercury wins in this region.' },
+      { question: 'Why does HBW sell only Mercury?', answer: 'We have been a Mercury dealer since 1965. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Platinum dealer relationship today.' },
+      { question: 'Why do most Canadian boats come Mercury-rigged?', answer: 'Decades of supply chain integration between Mercury and Canadian boat builders. Customers ask for Mercury, factories rig with Mercury, the dealer service network is built around Mercury.' },
+      { question: 'Is Mercury more expensive than Yamaha or Honda?', answer: 'At comparable HP and trim, pricing is similar. Total cost of ownership tends to favor Mercury in Ontario because dealer network density reduces practical service costs.' },
+      { question: 'Should I switch from Yamaha or Honda to Mercury?', answer: 'If you are doing a full repower and the rigging investment is already committed, switching to Mercury at repower time makes sense. If your motor runs fine, do not switch for brand loyalty reasons.' },
+      { question: 'Is Mercury reliable for cottage use on Rice Lake?', answer: 'Yes. Most cottage boats in this region came from the factory with Mercury motors. At 50 to 150 hours of seasonal use, a properly maintained Mercury lasts 15 to 25 years.' },
     ]
   },
 
@@ -9542,235 +9414,108 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury 2026 lineup', 'mercury outboard models', 'mercury fourstroke 2026', 'mercury verado v10', 'avator electric outboard', 'mercury outboard ontario', 'rice lake outboard motor', 'mercury dealer ontario'],
-    content: `# Mercury 2026 Outboard Lineup for Ontario Boaters
+    content: `
+# Mercury's 2026 Outboard Lineup: What Ontario Boaters Actually Need to Know
 
-*Last reviewed: 2026-05-10*
+## Quick answer
+Mercury's 2026 lineup covers four main families: FourStroke (2.5 to 300 HP) for everyday Ontario use, Pro XS for performance fishing, SeaPro for commercial duty, and Verado for high-end offshore applications. For most Rice Lake and Kawarthas boats, the answer lands somewhere in the FourStroke 40 to 150 HP range. Build a live CAD quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-> **Quick answer:** Mercury's 2026 lineup for Ontario covers 2.5 to 300 HP across FourStroke, Pro XS, and SeaPro families, plus Avator electric. Verado is special order only. Stocked allocation focuses on the high-volume cottage and fishing horsepowers, 9.9, 25, 60, 90, 115, 150. Live inventory at mercuryrepower.ca.
+## Why we are writing this
+We are a Mercury dealer. We have been since 1965. Take this as a dealer's honest breakdown of the Mercury lineup, not a spec-sheet dump, but the practical answer to "which Mercury is right for my boat?"
 
-The Mercury 2026 lineup covers every recreational HP class. FourStroke (2.5 to 300 HP) for cruising, fishing, and family use. Pro XS (115 to 300 HP) for performance fishing. SeaPro (25 to 300 HP) for commercial duty. Verado V10/V12 ranges from 250 hp through 425 hp (V10) and up to 600 hp (V12); Mercury added the 425 hp V10 in May 2025 and enhanced the 350 hp V10 in the same release. Verado is special-order at HBW. Avator electric line for emerging applications. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+We sell every family in the lineup below (Verado is special-order only). The goal of this guide is to help you match the right motor to the actual use case.
 
-## Quick recommendation
+## The Mercury family breakdown
 
-For most Ontario freshwater customers, the Mercury 2026 FourStroke 60 to 150 HP range covers the vast majority of use cases. The Pro XS variants in the same HP classes earn their price premium on tournament hulls. SeaPro is the right call for commercial use. Verado is special-order; most Ontario freshwater boaters don't need it.
+### FourStroke, the everyday Ontario motor
 
-Mercury's 2026 lineup builds on years of refinement. The motors are quieter, more fuel-efficient, and better integrated with electronics than ever. Whether you're repowering an aluminum console or a pontoon, there's a Mercury 2026 model that fits.
+**HP range:** 2.5 to 300 HP
 
-## What changes the answer
+**Who it is for:** Recreational boaters. Fishing boats, family pontoons, runabouts, cottage boats. Pretty much anything that is not built specifically for racing or commercial work.
 
-Five things move which 2026 Mercury fits your boat:
+The FourStroke line is Mercury's volume seller in Ontario because it covers the full range of recreational use. A 2.5 HP tiller for a car-topper. A 9.9 for a kicker. A 25 for a light aluminum boat. A 40, 60, or 75 for mid-range fishing rigs. A 90, 115, or 150 for larger aluminum or fibreglass boats. A 200 or 250 for centre consoles and heavier rigs. Up to 300 HP for big-water applications.
 
-- **Boat type and length.** Aluminum console, fiberglass runabout, pontoon, bass boat all have different sweet spots.
-- **Use case.** Fishing, family cruising, water sports, tournament, commercial all reward different motor families.
-- **Capacity plate maximum HP.** The plate sets the legal ceiling.
-- **Budget and financing.** Higher HP costs more; some HP classes have promotional pricing.
-- **Long-term ownership plan.** Newer technology investments pay off over longer holds.
+**The FourStroke Command Thrust** gearcase deserves a specific mention for Ontario boaters. It is available on the 115 HP and up FourStroke and is designed for the higher torque loads that pontoons and heavier hulls put on the gearcase. If you are repowering a pontoon, ask specifically about Command Thrust configuration.
 
-## Mercury 2026 FourStroke (2.5 to 300 HP)
+**What FourStroke does well:** Fuel efficiency at cruise, smooth idle, quiet operation, easy cold-start, long service intervals.
 
-The FourStroke is Mercury's mainstream recreational line. Quiet, fuel-efficient, reliable. Covers most Ontario use cases.
+**What FourStroke is not:** Fast out of the hole. If your priority is tournament-level hole shot or maximum top speed, FourStroke is not tuned for that.
 
-### Portable FourStroke (2.5 to 20 HP)
+**Best fit for:**
+- Most Rice Lake fishing boats in the 14 to 20 ft range
+- Kawarthas cottage boats and family runabouts
+- Pontoon repowers (especially with Command Thrust gearcase)
+- Anyone who wants a reliable, efficient, low-drama motor
 
-For small boats, dinghies, kickers, sailboat auxiliaries. Tiller motors, drop-in installs, no rigging required. The Mercury 9.9 MH is the most popular small-boat motor in Canada.
+### Pro XS, performance fishing and speed applications
 
-See our [Portable Mercury Outboard Guide](/blog/portable-outboard-mercury-guide-2-20hp).
+**Who it is for:** Bass anglers, walleye tournament competitors, anyone who wants to get to the other end of the lake as fast as possible.
 
-### Mid-range FourStroke (25 to 60 HP)
+The Pro XS is tuned for performance. Faster hole shot, higher top-end RPM, stronger acceleration than the equivalent FourStroke HP. Mercury uses exclusive components and tuning in the Pro XS to prioritize speed and response over cruise efficiency.
 
-For 14 to 16 ft aluminum console boats, smaller fishing applications, and kicker-supplemented setups. The 60 EFI is a popular sweet-spot motor.
+In the Ontario tournament fishing world, Pro XS is the standard.
 
-For specific pricing, [build a quote](/quote/motor-selection). All-in repowers in this class typically land $11,000 to $15,000 CAD at HBW.
+**Best fit for:**
+- Bass and walleye tournament anglers on Ontario waters
+- Performance-focused fishing boats where speed matters
+- Anyone upgrading from a FourStroke specifically for better hole shot
 
-### Workhorse FourStroke (75 to 150 HP)
+### SeaPro, commercial duty
 
-The most common Kawartha repower range. Covers 16 to 20 ft aluminum and fiberglass boats, pontoons (with Command Thrust), and family fishing applications. The 90 EXLPT and 115 EXLPT are the workhorses of the Canadian recreational fleet.
+**Who it is for:** Commercial operators. Fishing guides, water taxis, bait boats, municipal watercraft, rental fleets.
 
-See our [75/90/115 comparison](/blog/mercury-75-vs-90-vs-115-comparison) and [115/150 comparison](/blog/mercury-115-vs-150-hp-outboard-ontario).
+The SeaPro is calibrated for sustained heavy-duty use: maximum torque at lower RPM, heavy-duty gearcases, and components built for long hours under load.
 
-### High-output FourStroke (175 to 300 HP)
+**Best fit for:**
+- Fishing guides and outfitters on Ontario waterways
+- Water taxi and ferry operations
+- Rental fleets with high annual hours
 
-For larger fiberglass boats, tritoons, center consoles. The 200 to 300 HP V8 FourStrokes (introduced 2018, refined since) are smooth, fuel-efficient, and pair well with most large recreational boats.
+### Verado, premium high-horsepower offshore
 
-For specific pricing, [build a quote](/quote/motor-selection). All-in repowers in this class typically land $35,000 to $40,000 CAD at HBW.
+**Who it is for:** Large offshore centre consoles. Twin/triple installations on bigger boats. Buyers who want maximum refinement, noise isolation, and power for open water or Great Lakes conditions.
 
-## Mercury 2026 Pro XS (115 to 300 HP)
+Almost no Ontario freshwater boater on a typical inland lake needs a Verado. The Verado is engineered for offshore applications.
 
-The Pro XS is Mercury's performance fishing line. Faster acceleration, slightly higher top speed, and tournament-tuned response over the equivalent FourStroke. Same powerplant family but tuned differently.
+If you are running a large centre console or performance boat on Lake Ontario or Georgian Bay, Verado is relevant. If you are on Rice Lake in a 20-foot fishing boat, a FourStroke 150 or 200 is the better call.
 
-The 115 Pro XS, 150 Pro XS V6, and 200 to 250 Pro XS V8 are the most common HBW customers. Tournament bass anglers and customers who want maximum responsiveness pick Pro XS.
+We offer Verado as a special order. We do not stock it.
 
-The Pro XS price premium over FourStroke at the same HP is typically $1,000 to $1,500 CAD. Earns the difference on performance hulls; harder to justify on family aluminum or pontoons.
+### Avator, electric (emerging)
+Mercury's Avator electric line covers smaller portable and mid-range electric applications. For most Ontario fishing and family boating, a gas FourStroke is still the practical choice. Battery range and charge infrastructure are not there yet for full-replacement use. That will change.
 
-See our [Mercury Motor Families guide](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado).
+## Matching the motor to the Ontario use case
 
-## Mercury 2026 SeaPro (25 to 300 HP)
+| Use case | Motor family | HP guidance |
+|---|---|---|
+| Light aluminum fishing boat, 14 to 16 ft | FourStroke | 25 to 60 HP |
+| Mid-range fishing/family boat, 16 to 18 ft | FourStroke | 60 to 115 HP |
+| Larger fishing or family boat, 18 to 20 ft | FourStroke | 115 to 150 HP |
+| Pontoon, 22 to 24 ft | FourStroke Command Thrust | 115 to 150 HP |
+| Tournament bass boat | Pro XS | 200 to 250 HP |
+| Centre console, Ontario big water | FourStroke or Verado | 200 to 300+ HP |
+| Commercial guide or rental | SeaPro | Match to hull rating |
+| Car-topper kicker | FourStroke | 9.9 to 15 HP |
+| Dedicated trolling kicker | FourStroke ProKicker | 9.9 HP |
 
-The SeaPro is Mercury's commercial-duty line. Built for heavy-use cycles: charter fishing, commercial fishing, government and rescue applications, and rental fleets. Heavier-duty internal components and more aggressive maintenance schedules.
+This table is a starting point, not a prescription. The right HP for your specific hull depends on your boat's capacity plate, total load, and intended use.
 
-For typical Ontario recreational use, SeaPro is overkill. For commercial operators or extremely heavy-use private owners, SeaPro earns its premium. We sell some SeaPros at HBW; most are commercial sales.
+## Sources
 
-## Mercury 2026 Verado (250 to 600 HP)
+- [Mercury Marine Canada, FourStroke](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke)
+- [Mercury Marine Canada, Pro XS](https://www.mercurymarine.com/ca/en/engines/outboard/pro-xs)
+- [Mercury Marine Canada, SeaPro](https://www.mercurymarine.com/ca/en/engines/outboard/seapro)
+- [Mercury Marine Canada, Verado](https://www.mercurymarine.com/ca/en/engines/outboard/verado)
 
-The Verado is Mercury's premium V8/V10/V12 offshore line (naturally aspirated on current models). The V10 lineup now includes 350, 400, and 425 hp models; Mercury added the 425 hp V10 in May 2025 and enhanced the 350 hp V10 in the same release. Built for big offshore center consoles, twin and triple installations, and luxury cruisers. Smooth, powerful, refined.
-
-Verado is special-order at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. Twin V12 600 HP setups are stunning motors. They are not for Rice Lake, Ontario.
-
-If you do have a Verado-appropriate boat (offshore center console, big yacht), [contact us](/contact) for a special-order quote.
-
-## Mercury 2026 Avator (electric)
-
-Mercury's electric outboard line continues to expand in 2026. Models cover small portable applications (7.5e, 20e, 35e) up to larger units (75e, 110e). The lineup is still maturing relative to gas Mercurys but is a viable choice for specific use cases:
-
-- **Quiet operation** in noise-restricted areas
-- **Zero emissions** for environmentally-conscious operators
-- **Low-maintenance** (no oil, no spark plugs, no fuel stabilizer)
-
-Range and charging time are still meaningful constraints relative to gas. For typical Ontario use cases, gas Mercury is still the dominant choice. We are on-order for Avator at HBW for customers with specific use cases. [Contact us](/contact) for current Avator availability.
-
-## What's new for 2026
-
-Mercury's 2026 model year (effective July 1, 2026) brings refinements rather than radical changes:
-
-- **Continued integration** with Mercury SmartCraft electronics and Joystick Piloting
-- **Refined Avator electric lineup** with expanded HP coverage
-- **Updated Pro XS variants** with software refinements
-- **Continuing Verado V12 expansion** in higher HP classes
-- **Refined warranty programs** including Mercury Repower Financing (current rates on our [financing page](/financing))
-
-For specific 2026 motor pricing, [build a quote](/quote/motor-selection).
-
-## What HBW recommends for typical Ontario customers
-
-For most Ontario freshwater customers, the right Mercury 2026 falls into one of these buckets:
-
-- **16 to 18 ft aluminum console fishing boat:** 90 to 115 EXLPT FourStroke + 9.9 ProKicker
-- **18 to 20 ft pontoon (cruising and fishing):** 90 to 115 HP CT FourStroke
-- **20 to 22 ft pontoon (water sports):** 150 HP CT FourStroke
-- **17 to 19 ft fiberglass runabout:** 115 to 150 HP FourStroke
-- **18 to 21 ft bass boat (tournament):** 200 to 250 HP Pro XS V8
-- **Smaller tin boats and dinghies:** 9.9 to 25 HP portable
-
-For other configurations, [build a quote](/quote/motor-selection) or [contact us](/contact) to discuss your specific needs.
-
-## Common 2026 lineup mistakes
-
-We see these every season:
-
-1. **Buying Pro XS when FourStroke would work.** Pro XS earns its price on tournament hulls. On family fishing and recreational use, FourStroke is the better value.
-2. **Skipping Command Thrust on pontoons.** Command Thrust is the gearcase that matters on pontoons. Don't save money by skipping it.
-3. **Buying Verado for freshwater use.** Almost no Ontario freshwater boater needs Verado. The premium is wasted.
-4. **Underbuying HP for current use.** Mercury 2026 motors are efficient. Right-sizing for actual use case beats undersizing for budget.
-5. **Ignoring the Avator question.** Some specific use cases (very small boats, eco-conscious operators) might be better served by Avator. Worth asking the question.
-
-## Related guides
-
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), motor family selection
-- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), workhorse class comparison
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the step-up math
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific guidance
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific guidance
-
-## Ready to pick your 2026 Mercury?
-
-Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury 2026 pricing in CAD across every HP class.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through 2026 Mercury options for your specific boat, [give us a call at (905) 342-2153](tel:9053422153). We rig 2026 Mercurys every week and can match the right motor to your application.
-
----
-
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
-
----
-
-## FAQ
-
-**What's new in the Mercury 2026 outboard lineup?**
-Mercury 2026 is largely a refinement year rather than a redesign year. Refined Avator electric lineup, software updates on Pro XS variants, continued V12 Verado expansion, and refined Mercury Repower Financing (current rates on our [financing page](/financing)).
-
-**When does the Mercury 2026 model year start?**
-July 1, 2026. Mercury model years change every July 1. Pre-July 2026 motors are technically 2025 model year.
-
-**What's the most popular Mercury 2026 motor?**
-The 90 EXLPT FourStroke and 115 EXLPT FourStroke are the most-installed motors at HBW. They fit the most common Ontario boat (16 to 18 ft aluminum console) and the most common use case (family fishing).
-
-**Is Mercury Avator worth it in 2026?**
-For specific use cases (small boats, environmentally-sensitive areas, low-noise applications), yes. For typical Ontario freshwater use, gas Mercury is still the dominant choice due to range and charging considerations.
-
-**Should I wait for 2026 model year or buy 2025?**
-Late-2025 Mercury inventory is often discounted. The 2026 model year refinements are minor. For most customers, late-2025 motors are good value if you find the right one.
-
-**What's the difference between FourStroke and Pro XS for 2026?**
-FourStroke is the mainstream recreational line. Pro XS is performance-tuned (faster acceleration, slightly higher top speed). Same powerplant family, different tuning. Pro XS premium is typically $1,000 to $1,500 CAD over FourStroke at same HP.
-
-**Does Mercury still make 2-stroke outboards in 2026?**
-No. Mercury phased out consumer 2-stroke production years ago. All 2026 Mercury models are FourStroke or electric.
-
-**What HP class is most popular for Mercury 2026 repowers?**
-75 to 150 HP. This range covers the most common Ontario boats (16 to 20 ft aluminum, fiberglass, and pontoon). The 90 EXLPT and 115 EXLPT specifically are the workhorse models.
-
-**Is the Mercury Verado V12 600 available in Ontario?**
-Yes by special order. Verado is built for offshore applications. Ontario freshwater rarely justifies Verado. For specific use cases, [contact HBW](/contact).
-
-**What financing is available on Mercury 2026 motors?**
-Mercury Repower Financing is available for qualified buyers, with seasonal promotional rates from time to time. Current rates are on our [financing page](/financing). See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026) for current details.
-
-**Will my older controls and rigging work with a Mercury 2026 motor?**
-Mercury-to-Mercury repowers usually keep existing post-2010 controls and rigging if in good condition. Brand conversions need new everything. We assess during the hull walk-around.
-
-**Where can I see Mercury 2026 motors in person?**
-At HBW. We have current Mercury 2026 inventory and can walk you through the lineup. [Visit us](/contact) or [call (905) 342-2153](tel:9053422153).
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+*Last reviewed: 2026-05-11.*
 `,
     faqs: [
-      {
-        question: 'What is the best Mercury motor for a Rice Lake fishing boat?',
-        answer: 'For most 14–18 ft fishing boats on Rice Lake, a Mercury FourStroke in the 25–115 HP range is ideal. The exact horsepower depends on your boat size, weight, and whether you prioritize trolling, cruising, or performance. Adding a ProKicker for dedicated trolling is a popular setup. Use our quote builder to explore options for your specific boat.'
-      },
-      {
-        question: 'Is the Mercury V10 Verado relevant for Ontario inland boating?',
-        answer: 'The V10 Verado (350–425 HP) is designed for larger offshore and performance boats. Most Rice Lake boaters won\'t need that much power. However, the technologies developed for the V10, quieter operation, stronger alternators, smarter fuel calibration, trickle down into the smaller FourStroke engines that are popular on Ontario inland waters.'
-      },
-      {
-        question: 'Is the Mercury Avator suitable for Rice Lake?',
-        answer: 'The Avator electric outboard is well-suited for small car-toppers, cottage runabouts, and short-range trips on Rice Lake. It\'s near-silent, zero-emission, and very low maintenance. It\'s not yet a replacement for a full-size gas outboard on larger fishing boats, but it\'s a compelling option for specific use cases, especially quiet bays and eco-sensitive areas.'
-      },
-      {
-        question: 'How do I choose from Mercury\'s 2026 lineup?',
-        answer: 'Start with how you use your boat: what size, what activities (fishing, cruising, family outings), and how far you typically travel. Match that to the FourStroke range (2.5–150 HP) for most inland use, or consider Avator electric for small-boat and short-range applications. Our team at Harris Boat Works can help you narrow down the right fit based on your specific boat and habits.'
-      },
-      {
-        question: 'Is the Mercury Avator electric outboard suitable for Rice Lake?',
-        answer: 'The Mercury Avator is suitable for specific Rice Lake use cases, small car-topper boats (12–14 ft), cottage runabouts making short dock-to-bay trips, and electric-restricted or quiet lakes in the region. For full-day fishing on Rice Lake, running to multiple spots, trolling hours of structure, motoring back against wind, a gas FourStroke remains the practical choice. Avator\'s runtime improves significantly with multiple battery packs and the technology is advancing quickly.'
-      },
-      {
-        question: 'How do I choose from Mercury\'s 2026 lineup for my Ontario boat?',
-        answer: 'Start with your hull\'s capacity plate maximum HP, then consider how you use your boat: solo fishing, family days, watersports, trolling, or a mix. For most Ontario fishing and family boats, the answer lands in the 60–115 HP FourStroke range. For performance, Pro XS (115–300 HP) is worth considering. For premium quiet operation on a larger boat, Verado starts at 250 HP. Harris Boat Works, Mercury dealer since 1965 in Gores Landing, can narrow this down based on your hull and use. Use the quote builder at mercuryrepower.ca or call 905-342-2153.'
-      },
-      {
-        question: 'What is the difference between Mercury FourStroke and Mercury Pro XS outboards?',
-        answer: 'Mercury FourStroke outboards are designed for efficiency, smooth cruise, and versatility, which makes them the right fit for most Ontario fishing, cottage, and family use. Mercury Pro XS models are performance-tuned four-stroke outboards. They are built for faster hole shot, stronger acceleration, higher-rpm performance, and more responsive handling on performance fishing hulls. For bass anglers or anyone prioritizing quick planing and hard running, Pro XS is worth considering. For most Ontario cottage and fishing use, FourStroke is still the better all-around value.'
-      },
-      {
-        question: 'What Mercury motors does Harris Boat Works stock for 2026?',
-        answer: 'Harris Boat Works in Gores Landing, Ontario is a Mercury Platinum dealer. Default in-stock and orderable inventory covers the FourStroke range from 2.5–300 HP, Pro XS performance motors, and Mercury Avator electric outboards. Verado is special order only, not part of default inventory and quoted on request. Use the quote builder at mercuryrepower.ca/quote/motor-selection to see current availability and CAD pricing, or call 905-342-2153 for Verado or special configurations.'
-      },
-      {
-        question: 'How much does a Mercury FourStroke outboard cost in Ontario in 2026?',
-        answer: 'For accurate 2026 Mercury FourStroke pricing in Ontario, use the Harris Boat Works quote builder at mercuryrepower.ca/quote/motor-selection, it shows real prices with no call-for-quote runaround. Pricing includes the motor and standard controls. Installation, rigging, and additional controls are quoted separately. Harris Boat Works is a Mercury Platinum dealer and provides written quotes. Call 905-342-2153 for pricing on specific configurations.'
-      },
-      {
-        question: 'What is the best Mercury outboard for trolling walleye on Rice Lake?',
-        answer: 'For walleye trolling on Rice Lake, the most effective setup is a main motor in the 75–15 HP FourStroke range paired with a dedicated Mercury ProKicker 9.9 HP as a trolling motor. Running a full-size outboard at true trolling speeds (1–3 mph) is inefficient and hard on the engine. The ProKicker is purpose-built for this use, runs cleanly at low RPM, and keeps your main motor in good shape for running between spots. For a single-motor setup, a Mercury 9.9 or 25 HP FourStroke tiller works on light 12–14 ft aluminum boats for calm-water walleye work. Harris Boat Works is a Mercury dealer since 1965 in Gores Landing on Rice Lake.'
-      }
+      { question: 'What is the best Mercury motor for a fishing boat on Rice Lake?', answer: 'For most 14 to 18 ft fishing boats on Rice Lake, a Mercury FourStroke in the 40 to 115 HP range is the right fit. Adding a 9.9 HP ProKicker for dedicated trolling is a popular setup.' },
+      { question: 'What is the difference between Mercury FourStroke and Mercury Pro XS?', answer: 'FourStroke is tuned for efficiency, smooth cruise, and versatility. Pro XS is tuned for performance: faster hole shot, higher top-end RPM, stronger acceleration. For most Ontario cottage and casual fishing use, FourStroke is the better all-around fit.' },
+      { question: 'Is the Mercury Verado relevant for Ontario inland boating?', answer: 'For most Ontario inland lakes (Rice Lake, Kawarthas, Lake Simcoe), no. Verado is engineered for offshore applications. For typical inland fishing and family boats, a FourStroke up to 300 HP handles the job.' },
+      { question: 'What Mercury motors does Harris Boat Works stock for 2026?', answer: 'We stock and order the full FourStroke range, Pro XS performance motors, SeaPro commercial motors, and Mercury Avator electric outboards. Verado is special-order only.' },
+      { question: 'What is the best Mercury outboard for trolling walleye on Rice Lake?', answer: 'The most effective setup is a main motor in the 60 to 115 HP FourStroke range paired with a dedicated Mercury ProKicker 9.9 HP. The ProKicker is purpose-built for low-RPM trolling.' },
+      { question: 'How do I choose the right Mercury for my Ontario boat?', answer: 'Start with your hull capacity plate maximum HP. Then consider your primary use: solo fishing, family days, watersports, trolling, or a mix. For most Ontario fishing and family boats, the answer lands in the 60 to 115 HP FourStroke range.' },
     ]
   },
 
