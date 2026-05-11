@@ -9345,7 +9345,7 @@ We are biased. We sell Mercury exclusively at HBW. We have been a Mercury dealer
 
 ### 1. Dealer network density
 
-Mercury has more dealers across Ontario and Canada than any other outboard brand. That means:
+Mercury has one of the strongest dealer networks across Ontario and Canada. That means:
 
 - **Parts availability.** A common service part is on a Mercury dealer's shelf, not 6 weeks away from a regional warehouse.
 - **Service expertise.** Most marine technicians in Ontario are Mercury-certified or Mercury-experienced. Yamaha and Honda techs are rarer in this region.
