@@ -3288,7 +3288,7 @@ When cottage owners come to HBW for a repower assessment, we want to know:
 - **How the boat is used** (fishing, family cruising, tubing, mixed)
 - **How often the boat is used per season**
 - **Long-term plan** (kids inheriting it, planning to sell, just for personal use)
-- **Existing electronics, seats, helm, and trailer condition**
+
 - **Budget tolerance and financing**
 
 Cottage boats often need cosmetic work alongside the repower: new seats, new electronics, trailer service. We package this when it makes sense.
