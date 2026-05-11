@@ -17881,6 +17881,7 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
 Mercury SmartCraft alarm codes are diagnostic signals from your Mercury outboard's onboard computer, displayed on SmartCraft gauges (VesselView, System View, etc.) or via the SmartCraft Connect app. Each code maps to a specific engine condition — some are warnings (you can keep running, get it checked soon), some are critical (stop and call). This page lists every Mercury SmartCraft alarm code currently in use, what each one means, severity tier, and what HBW recommends doing next.
 
 If you have a code displaying right now: scroll to the code list below, or call HBW at (905) 342-2153 for live help.
+
 ---
 
 ## The Two Alarm Systems on Your Mercury
