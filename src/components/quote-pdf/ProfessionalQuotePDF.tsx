@@ -15,6 +15,13 @@ const View = _View as unknown as ComponentType<any>;
 const Image = _Image as unknown as ComponentType<any>;
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
+// Safe money formatter — never throws on null/undefined/NaN
+const safeMoney = (val: unknown, fallback = '0.00'): string => {
+  const n = typeof val === 'number' ? val : Number(val);
+  if (!Number.isFinite(n)) return fallback;
+  return n.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+};
+
 function formatTradeInDescription(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
   if (!tradeInInfo) return "";
   const { brand, year, horsepower, model } = tradeInInfo;
@@ -644,7 +651,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <View style={styles.pricingRow}>
                   <Text style={styles.pricingLabel}>Special Discount</Text>
                   <Text style={[styles.pricingValue, styles.discountValue]}>
-                    -${quoteData.pricing.adminDiscount.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    -${safeMoney(quoteData.pricing.adminDiscount)}
                   </Text>
                 </View>
               )}
@@ -694,7 +701,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                         )}
                       </View>
                       <Text style={styles.pricingValue}>
-                        ${(Number(item.price) || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                        ${safeMoney(item.price)}
                       </Text>
                     </View>
                   ))}
@@ -723,7 +730,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                     </Text>
                   </View>
                   <Text style={[styles.pricingValue, styles.discountValue]}>
-                    -${(Number(quoteData.tradeInValue) || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    -${safeMoney(quoteData.tradeInValue)}
                   </Text>
                 </View>
               )}
@@ -742,7 +749,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                     </Text>
                   </View>
                   <Text style={[styles.pricingValue, styles.discountValue, { fontWeight: 'bold' }]}>
-                    You save ${((Number(quoteData.tradeInValue) || 0) * 0.13).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    You save ${safeMoney((Number(quoteData.tradeInValue) || 0) * 0.13)}
                   </Text>
                 </View>
               )}
@@ -967,7 +974,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 ✓ DEPOSIT PAYMENT CONFIRMED
               </Text>
               <Text style={{ fontSize: 14, fontWeight: 'bold', color: colors.discount }}>
-                ${quoteData.depositInfo.amount.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
+                ${safeMoney(quoteData.depositInfo.amount)} CAD
               </Text>
             </View>
             <View style={{ flexDirection: 'row', gap: 20 }}>
@@ -1003,7 +1010,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <View style={styles.infoRow}>
                   <Text style={[styles.infoLabel, { width: 90 }]}>Balance Due:</Text>
                   <Text style={[styles.infoValue, { fontWeight: 'bold' }]}>
-                    ${((quoteData.pricing?.totalCashPrice || parseFloat(quoteData.total.replace(/,/g, ''))) - quoteData.depositInfo.amount).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
+                    ${safeMoney((quoteData.pricing?.totalCashPrice ?? Number(String(quoteData.total ?? '0').replace(/,/g, ''))) - (Number(quoteData.depositInfo.amount) || 0))} CAD
                   </Text>
                 </View>
               </View>
