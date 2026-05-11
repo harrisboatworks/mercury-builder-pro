@@ -10748,7 +10748,7 @@ This is the 2026 CAD picture before HST. Your specific number comes from the liv
 
 | Project tier | HP range | All-in range (CAD before HST) | Common boats |
 |---|---|---|---|
-| Tiller, motor-only | 9.9 - 25 HP | $2,000 - $5,500 | Tenders, dinghies, kickers, small aluminum tillers |
+| Tiller, motor-only | 9.9 - 25 HP | $3,000 - $5,500 | Tenders, dinghies, kickers, small aluminum tillers |
 | Small remote | 40 - 60 HP | $11,000 - $15,000 | 14-16 ft aluminum, small consoles |
 | Mid | 75 - 115 HP | $17,000 - $22,000 | 16-19 ft aluminum, small pontoons, fishing boats |
 | 150 HP | 150 HP | $23,000 - $30,000 | 18-22 ft pontoons, runabouts, mid-size fishing |
