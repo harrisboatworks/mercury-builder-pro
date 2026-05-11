@@ -9490,8 +9490,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)`,
     faqs: [
       {
-        question: 'Why does Mercury have such a large market share?',
-        answer: 'Mercury Marine is the world\'s largest outboard manufacturer, with 50–80% share of outboards at major international boat shows. Their position widened after BRP discontinued Evinrude in 2020. Continuous innovation (V12 600HP, SmartCraft, Avator electric), a full horsepower range, and strong dealer support keep them ahead of competitors.'
+        question: 'Why does Mercury have such a strong market position?',
+        answer: 'Mercury Marine is one of the leading outboard manufacturers globally and a regular fixture at major international boat shows. Their position widened after BRP discontinued Evinrude in 2020. Continuous innovation (the V12 600 HP Verado, SmartCraft, Avator electric), a full horsepower range, and strong dealer support keep them ahead of competitors.'
       },
       {
         question: 'What makes the Verado V12 600 HP special?',
