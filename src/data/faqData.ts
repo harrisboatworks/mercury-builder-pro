@@ -131,7 +131,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'Do you offer winterization and storage?',
-        answer: 'Yes, Harris Boat Works offers full winterization service to protect your motor and boat through Ontario winters. This includes fogging the engine, stabilizing fuel, changing gear lube, greasing fittings, and preparing the cooling system for freezing temperatures. Proper winterization prevents costly damage from water freezing inside the engine block and lower unit. We also offer indoor storage at our Gores Landing facility. Book your winterization service at <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a> or call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
+        answer: 'Yes, Harris Boat Works offers full winterization service to protect your motor and boat through Ontario winters. This includes fogging the engine, stabilizing fuel, changing gear lube, greasing fittings, and preparing the cooling system for freezing temperatures. Proper winterization prevents costly damage from water freezing inside the engine block and lower unit. We also offer outdoor seasonal storage with professional shrinkwrap at our Gores Landing facility — we do not offer indoor storage. Book your winterization service at <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a> or call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
       },
       {
         question: 'Do you ship Mercury outboards?',
@@ -155,7 +155,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'Where are Mercury outboards made?',
-        answer: 'Mercury Marine is headquartered in Fond du Lac, Wisconsin, and Mercury outboard engines are manufactured in the United States. Mercury has been building outboard motors since 1939 and is one of the largest marine engine manufacturers in the world. Harris Boat Works has been a Mercury dealer for over 60 years and holds Platinum Dealer status, the highest tier in Mercury\'s dealer program.'
+        answer: 'Mercury Marine is headquartered in Fond du Lac, Wisconsin, where many of its flagship engines (Verado, Pro XS V8, V10, and V12) are built. Mercury also manufactures globally with consistent factory-spec quality control: smaller outboards have been built in Japan for decades through a long-standing Tohatsu partnership, and Mercury also manufactures in China. The "Made in Wisconsin" story is real for many models, and Japanese or Chinese origins on smaller motors are equally real and not a quality concern. Mercury has been building outboard motors since 1939 and is one of the largest marine engine manufacturers in the world. Harris Boat Works has been a Mercury dealer for over 60 years and holds Platinum Dealer status, the highest tier in Mercury\'s dealer program.'
       }
     ]
   }
