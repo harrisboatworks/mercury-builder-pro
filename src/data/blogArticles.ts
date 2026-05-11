@@ -17866,8 +17866,8 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
   },
   {
     slug: 'mercury-smartcraft-alarm-codes-encyclopedia',
-    title: "Mercury SmartCraft Alarm Codes: What Every Beep, Light, and Fault Code Means (2026 Encyclopedia)",
-    description: "A Mercury Platinum dealer's complete guide to Mercury SmartCraft and Guardian alarm codes, what each beep means, what's serious, what's not, and what to do right now.",
+    title: "Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)",
+    description: "Complete list of Mercury SmartCraft alarm codes and what each one means, from an Ontario Mercury Platinum dealer. Code-by-code reference for diagnostics, severity, and what to do next — no forum guesswork.",
     image: '/lovable-uploads/hero-mercury-smartcraft-alarm-codes.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
@@ -17875,16 +17875,12 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
     publishDate: '2026-05-25',
     category: 'Troubleshooting',
     readTime: '12 min read',
-    keywords: ["Mercury SmartCraft alarm codes", "Mercury Guardian alarm", "Mercury fault codes list", "SmartCraft warning beeps", "Mercury overheat alarm", "Mercury low oil pressure alarm", "Mercury rev limiter"],
-    content: `# Mercury SmartCraft Alarm Codes: What Every Beep, Light, and Fault Code Means (2026 Encyclopedia)
+    keywords: ["Mercury SmartCraft alarm codes", "mercury smartcraft alarm codes", "mercury smartcraft alarm codes list", "mercury smartcraft alarm codes meanings", "mercury alarm code list", "smartcraft fault codes mercury", "mercury outboard error codes", "Mercury Guardian alarm", "Mercury fault codes list", "SmartCraft warning beeps", "Mercury overheat alarm", "Mercury low oil pressure alarm", "Mercury rev limiter"],
+    content: `## Quick answer
 
-*Last reviewed: 2026-05-07*
+Mercury SmartCraft alarm codes are diagnostic signals from your Mercury outboard's onboard computer, displayed on SmartCraft gauges (VesselView, System View, etc.) or via the SmartCraft Connect app. Each code maps to a specific engine condition — some are warnings (you can keep running, get it checked soon), some are critical (stop and call). This page lists every Mercury SmartCraft alarm code currently in use, what each one means, severity tier, and what HBW recommends doing next.
 
-> **Quick answer:** SmartCraft alarms range from minor (low fuel, service due) to critical (overheat, low oil pressure). The first response to any alarm: idle down and assess. Don't ignore an alarm to finish the day, most critical alarms protect against catastrophic damage. Diagnostic booking at mercuryrepower.ca.
-
-If your Mercury just started beeping and you're trying to figure out what to do, read the **Audible Warning Patterns** section first, then come back. Don't keep running the motor while the alarm is active. Some alarms mean "annoying"; some mean "you have 30 seconds before something catastrophic happens." We'll tell you which is which.
-
-We've been a Mercury Platinum dealer in Ontario since 1965. We diagnose SmartCraft codes every week in our shop. This is the most complete, plain-English Mercury alarm code guide we've ever published, built from Mercury's official Guardian system documentation, factory training materials, and the codes we actually see come through the shop.
+If you have a code displaying right now: scroll to the code list below, or call HBW at (905) 342-2153 for live help.
 
 ---
 
@@ -18124,6 +18120,26 @@ Save this URL or screenshot the audible warning table above. It's the single mos
 **Disclaimer:** This guide covers the general behavior of Mercury SmartCraft and Guardian systems on modern (2004+) electric-start Mercury outboards. Specific behavior varies by motor model, year, and software revision. Always defer to your specific motor's owner's manual for definitive guidance. When in doubt about an active alarm, stop the motor and contact a Mercury Platinum dealer.
 `,
     faqs: [
+      {
+        question: "What does a Mercury SmartCraft alarm code mean?",
+        answer: "A Mercury SmartCraft alarm code is a diagnostic signal from the outboard's ECU, indicating a specific engine condition. Codes map to sensor faults, system warnings, or critical protection events. This page lists every active code, its meaning, and severity."
+      },
+      {
+        question: "How do I read Mercury SmartCraft alarm codes?",
+        answer: "SmartCraft codes display on Mercury VesselView gauges (502, 703, 903), compatible chartplotters via NMEA 2000, or the SmartCraft Connect / Mercury Marine App. The audible Guardian alarm tells you something is wrong now; the displayed code tells you what."
+      },
+      {
+        question: "Is it safe to keep running my Mercury with an alarm code displayed?",
+        answer: "It depends on the code. Green-tier codes (maintenance reminder) mean keep running, book service. Yellow-tier codes (low voltage, water in fuel) mean throttle back and head to dock. Red-tier codes (overheat, low oil pressure) mean stop immediately. Don't ignore critical alarms to finish the day."
+      },
+      {
+        question: "Does Mercury SmartCraft connect to my phone?",
+        answer: "Yes. VesselView Mobile and the Mercury Marine App connect via SmartCraft Connect module or Bluetooth on compatible motors. The app shows fault categories, engine data, and maintenance tracking. Dealer diagnostic tools see more detail than the consumer app."
+      },
+      {
+        question: "Where can I find a list of all Mercury SmartCraft alarm codes?",
+        answer: "This page. HBW maintains a code-by-code reference based on Mercury factory training, G3 diagnostic software, and the codes we actually see in our Ontario shop. For a definitive read on your specific motor, a dealer diagnostic scan is the gold standard."
+      },
       {
         question: "My Mercury Marine App shows a fault code but the alarm isn't going off, should I be worried?",
         answer: "A historical (cleared) fault means the motor detected an issue at some point but it's resolved now. Worth mentioning at next service. An active fault with no audible alarm is unusual, possibly a non-critical code (maintenance reminder, communications fault). Bring it in for diagnostics if you're not sure."
