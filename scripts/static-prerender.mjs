@@ -302,13 +302,13 @@ function loadTranslatedBlogArticles(modulePath, exportName) {
     }));
     process.stdout.write(JSON.stringify(items));
   `;
-  const tmpFile = join(ROOT, 'scripts', `.blog-dump-${exportName}.mts`);
+  const tmpFile = join(ROOT, 'scripts', `.blog-dump-${exportName}.ts`);
   writeFileSync(tmpFile, dumpScript);
   // FAIL-LOUD: do NOT swallow errors. A silent return [] previously caused
   // the entire zh-CN sitemap to silently empty out without anyone noticing.
   // We'd rather a red Vercel deploy than a silent multilingual SEO blackout.
   try {
-    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    const out = execSync(`npx vite-node ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
     const parsed = JSON.parse(out);
     if (!Array.isArray(parsed)) {
       throw new Error(`[static-prerender] ${exportName} loader did not return an array`);
