@@ -16038,7 +16038,7 @@ If you're spending a day or a weekend, the south shore (where most of the cottag
 
 - **Gores Landing**. Harris Boat Works, Gores Landing Marina, the local park, a couple of cottage rental operations, the historic United Church.
 - **Bewdley**. Lakeview Restaurant (right on the water), the Conservation Area, the public beach, a small grocery.
-- **Harwood**. Sandy Shore Cottages, the public launch, a Tim Hortons just up the highway.
+- **Harwood**. Sandy Shore Cottages and the public launch.
 - **Roseneath (north shore)**, small grocery, LCBO. Useful if you're cottaging on that side and need supplies.
 - **Cobourg (20 minutes south)**, full town. Restaurants, hotels, hospital, marine supply if you need a part we don't stock.
 - **Peterborough (30 minutes north)**, large city. All services, including the gateway to the Lift Lock and the upper Trent-Severn.
