@@ -6158,22 +6158,23 @@ Every boat has a maximum HP rating. This is your ceiling - never exceed it. But 
 - Boat weight: 800 lbs
 - Passengers/gear: 600 lbs
 - Total: 1,400 lbs
-- Recommended: 70-115HP
-- Typical choice: 75-90HP
+- Recommended: 40-90HP (some 16 ft hulls cap at 60-75 HP — always check the capacity plate)
+- Typical choice: 60HP
+- Why: 60 HP balances hole shot, fuel economy, and capacity plate headroom for most 16 ft aluminum fishing boats. 40 HP is fine for lighter use; 75-90 HP only if your hull plate allows it and you carry heavier loads.
 
 **22ft Pontoon**:
 - Boat weight: 2,000 lbs
 - Passengers: 1,500 lbs
 - Total: 3,500 lbs
-- Recommended: 115-175HP
-- Typical choice: 115-150HP
+- Recommended: 90-150HP (Command Thrust recommended at 115 HP and up)
+- Typical choice: 115HP
 
 **20ft Bass Boat**:
 - Boat weight: 1,800 lbs
 - Passengers/gear: 500 lbs
 - Total: 2,300 lbs
-- Recommended: 150-225HP
-- Typical choice: 200-250HP
+- Recommended: 150-225HP (never exceed the capacity plate)
+- Typical choice: 200HP
 
 ### When in Doubt
 
