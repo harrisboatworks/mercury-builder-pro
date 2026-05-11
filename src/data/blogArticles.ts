@@ -15974,7 +15974,7 @@ There are four boat launches on Rice Lake. Three are public; one is ours.
 | Harwood | East end, south shore | 1 | Free | Busy, same weekend issues as Bewdley |
 | **Harris Boat Works** | Gores Landing, south shore | **2 (concrete)** | **$20/day, $200/season** | 24/7, parking, fuel, washrooms, courtesy docks |
 
-We're the only paid launch on the lake, and we'll be honest about why people use it: the public ramps are single-lane and free, which means waits on a Saturday in July are rough. Two lanes mean we can launch and retrieve simultaneously. The ramp is a deeper, longer concrete pour, usable at low water, when the public ramps start running short. And the parking lot has 50+ trailer spaces with sightlines to the lot.
+We operate a paid launch on Rice Lake's south shore at Gores Landing, and we'll be honest about why people use it: the public ramps are single-lane and free, which means waits on a Saturday in July are rough. Two lanes mean we can launch and retrieve simultaneously. The ramp is a deeper, longer concrete pour, usable at low water, when the public ramps start running short. And the parking lot has 50+ trailer spaces with sightlines to the lot.
 
 You also get on-site **ethanol-free 89-octane marine gas**, washrooms with showers, ice, snacks, and courtesy docks, none of which you get at Bewdley or Harwood. Whether that's worth $20 a day depends how much you value your Saturday morning.
 
