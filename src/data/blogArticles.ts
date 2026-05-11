@@ -24276,8 +24276,142 @@ We've been selling and servicing Mercury outboards on Rice Lake since 1947. We d
     ],
   },
 
-];
+  {
+    slug: 'should-i-repower-or-buy-new-boat-ontario',
+    title: 'Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)',
+    description: "Repower vs buy new boat: a Mercury Platinum dealer's honest decision guide. Real costs, hull-condition checklist, when each option actually makes sense, and the question most marinas won't ask.",
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Repower Decision',
+    readTime: '9 min',
+    keywords: ['should i repower or buy new boat', 'repower vs buy new boat cost', 'repowering old boat vs buying new boat', 'boat repower cost comparison ontario', 'mercury repower vs new boat', 'is repowering worth it', 'when to repower vs replace'],
+    content: `## Quick answer
 
+If your hull is structurally sound, your boat fits how you use it, and you'd be happy keeping it for another 5 to 10 years — repower wins on cost almost every time. A new Mercury and proper rigging on a good hull lands around $11,000 to $22,000 for the 40 to 115 HP range most Ontario boats live in. An equivalent newer used boat with a similar motor sits at $30,000 to $60,000. The math isn't close.
+
+If your hull is soft, the layout no longer fits your family, or you're already half-decided you want something different — don't put a new motor on a boat you're about to sell. Trade it in or sell it as-is and buy what you actually want.
+
+This page is the decision framework. We'll walk through the math, the hull-condition checklist, the "when new wins" exceptions, and the question most marinas won't ask you.
+
+## The cost math (real Ontario numbers)
+
+We've shipped a few canonical pricing posts already — the [Ontario Mercury Outboard Price Guide](https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide) and the [Repower Cost Stack by HP Class](https://www.mercuryrepower.ca/blog/repower-cost-stack-by-hp-class) — but here's the short version specifically against a new-boat comparison:
+
+| Setup | Typical all-in cost (CAD before HST) |
+|---|---|
+| **40-60 HP repower** (motor, rigging, install, basic accessories) | $11,000 to $15,000 |
+| **75-115 HP repower** | $17,000 to $22,000 |
+| **150 HP repower** | $23,000 to $30,000 |
+| **Equivalent new boat package** (hull, motor, trailer) | $40,000 to $70,000+ |
+| **Equivalent 3-5 year-old used boat** | $25,000 to $50,000 |
+
+The repower number includes the motor, rigging, controls, prop, install, and the small accessories most jobs need (battery, fuel hoses, primer bulb, gauges if upgrading). It does not include winterization or storage — those run separately.
+
+**The repower vs new gap is usually $20,000 to $40,000.** That's not a marketing comparison. That's "I could repower and still have $25k in the bank vs financing a new boat" money.
+
+## When repowering wins
+
+Five criteria. If you check all five, repower is almost certainly the right call:
+
+1. **Hull is sound.** No soft spots in the transom or floor. No major gel coat cracks or stress fractures. No water-in-foam issues. (Hull walk-around and tap test below.)
+2. **The boat still fits how you use it.** Length, layout, capacity, storage all still work for your family or fishing setup. If your family grew and the boat shrank, that's a different problem.
+3. **You'd keep it 5+ years.** Repower's value compounds over time. If you're repowering and selling next season, the math gets uglier.
+4. **You already know the boat.** You've owned it 3+ years. You know its quirks, the way it handles, where the wires are. That familiarity is worth more than most owners realize.
+5. **The current motor is the actual problem.** Hard starting, dropping cylinders, no parts available, getting more expensive every season — and the rest of the boat is fine.
+
+If all five are yes, repower. The cost difference is real, and the "newer motor on a hull you love" outcome is hard to beat.
+
+## When buying new (or used) actually makes sense
+
+Four scenarios where we'll tell you straight up: don't repower.
+
+**1. The hull is going.** Soft transom, soft floor, stringers showing rot, hull blisters that have eaten into the laminate, a deck that flexes when you walk on it. Putting a $12,000 new Mercury on a $3,000 hull is not the play. The motor will outlive the hull by years and you'll be stuck.
+
+**2. The boat doesn't fit your life anymore.** Family went from two to four. You want to fish bigger water. You're done with tiller motors and want a console. You moved from a cottage with a slip to a property with a launch ramp and your boat is too big to trailer. These are real reasons to switch boats, not motors.
+
+**3. You're already thinking about selling.** If "I'd sell this boat tomorrow if the right one came along" is true, repowering is putting $15,000 of polish on a sale. A new motor adds some resale value, but never the full repower cost — typically you recoup 50-70% of the motor investment, not 100%.
+
+**4. You want a feature the old boat physically can't have.** Joystick docking on a single-engine 18-footer. Outboard pod with integrated trim tabs on a hull not designed for it. A bow-thruster on a tiller-steer aluminum boat. Some things don't transplant.
+
+## The hull walk-around (what HBW checks before recommending a repower)
+
+This is the canonical HBW scoping list. We don't pad it with stuff we don't actually check.
+
+1. **Boat make, model, year, and length**
+2. **Current motor age, brand, HP, and condition**
+3. **Hull condition** — we walk around it, tap-test the floor and transom
+4. **How the boat is used** — fishing, family cruising, tubing, mixed
+5. **How often the boat is used per season**
+6. **Long-term plan** — kids inheriting it, planning to sell, just for personal use
+7. **Budget tolerance and financing**
+
+If any of those raise a flag (transom flex, kids growing out of the boat, "honestly I might sell it in two years"), that's the conversation. We'd rather have it before the repower than after.
+
+## Trade-in is the third option
+
+A lot of repower-vs-new conversations skip the obvious middle path: **trade in your current boat (or just its old motor) and buy a different boat with a current Mercury already on it.**
+
+- Trading the **whole boat** can make sense if the hull is decent and someone else wants exactly what you've got. We'll value it, we'll help find the next one.
+- Trading just the **old motor** can make sense if you're pivoting from outboard to sterndrive (rare) or scaling up substantially in HP. Old motors have real value when there's still life in them.
+
+Our [Trade-In Value Guide](https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw) walks through how we appraise both options.
+
+## The question most marinas won't ask
+
+"What would actually make you happier with this boat?"
+
+If the answer is "a new motor" — repower. If the answer is "more space" or "a different layout" or "I'd really love to fish lake trout on Simcoe and this boat can't handle that water" — repower is the wrong fix. We'd rather lose a $15,000 motor sale than have you back next year regretting the upgrade because the underlying boat is still the wrong boat.
+
+Most marinas won't ask because the wrong answer costs them a sale. We'd rather have the right customer twice than the wrong customer once.
+
+## How to figure out which one you are
+
+Three steps:
+
+1. **Walk around the boat with this list.** Hull condition, transom, floor, layout, current motor symptoms, kids' ages, plans for the next 5 years. Write down honest answers.
+2. **Price both paths.** A repower quote takes 3 minutes on [mercuryrepower.ca/quote](https://www.mercuryrepower.ca/quote). A new-boat ballpark takes a phone call to any dealer.
+3. **Talk to someone who'll tell you no.** Call us at **(905) 342-2153** or text **(647) 952-2153**. If repower isn't right, we'll say so. If it is, we'll quote it.
+
+If you're in the GTA, Rice Lake, or the Kawarthas, we're a 60-90 minute drive from most of you. Worth the conversation either way.
+
+## FAQ
+
+**Is repowering cheaper than buying a new boat?**
+Almost always, yes. Typical repower for a 40-115 HP boat lands $11,000 to $22,000 all-in. An equivalent new boat package is $40,000 to $70,000+. Even a 3-5 year-old used boat sits at $25,000 to $50,000. The cost gap is usually $20K-$40K in repower's favour, assuming the hull is sound.
+
+**Will a repower increase my boat's resale value?**
+Yes, but not by the full cost of the repower. Typical recovery is 50-70% of the new motor cost when you eventually sell. If you keep the boat 5+ years, the value math still works strongly in repower's favour because of the deferred new-boat purchase.
+
+**What if my hull is questionable?**
+Walk-around inspection first. If the transom is soft or the floor flexes, repower is the wrong choice — you'd be putting a new motor on a hull that's going to need replacement work. We tell customers no when we see it.
+
+**How long does a repower take?**
+Most repowers run 1 to 3 days of shop time once the motor's in. Scheduling depends on the season — book early for spring commissioning, late summer for fall installs.
+
+**Can I repower a 20-year-old boat?**
+Often yes. Age alone isn't the disqualifier — hull condition is. We've repowered well-maintained 1990s aluminum boats that have 20 more years in them, and we've declined to repower 8-year-old boats with rot.
+
+**Does Mercury offer Canadian financing on repowers?**
+The current Mercury USA financing programs (Sheffield, Medallion) are US-only. HBW has Canadian financing partners — call us for current options. Don't assume the Mercury US site applies in Canada.
+
+**What's the trade-in option?**
+We accept trade-ins on both the whole boat and the old motor alone. See our [Trade-In Value Guide](https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw) for how we appraise either.
+`,
+    faqs: [
+      { question: 'Is repowering cheaper than buying a new boat?', answer: "Almost always, yes. Typical repower for a 40-115 HP boat lands $11,000 to $22,000 all-in. An equivalent new boat package is $40,000 to $70,000+. Even a 3-5 year-old used boat sits at $25,000 to $50,000. The cost gap is usually $20K-$40K in repower's favour, assuming the hull is sound." },
+      { question: "Will a repower increase my boat's resale value?", answer: "Yes, but not by the full cost of the repower. Typical recovery is 50-70% of the new motor cost when you eventually sell. If you keep the boat 5+ years, the value math still works strongly in repower's favour because of the deferred new-boat purchase." },
+      { question: 'What if my hull is questionable?', answer: "Walk-around inspection first. If the transom is soft or the floor flexes, repower is the wrong choice — you would be putting a new motor on a hull that is going to need replacement work. We tell customers no when we see it." },
+      { question: 'How long does a repower take?', answer: "Most repowers run 1 to 3 days of shop time once the motor is in. Scheduling depends on the season — book early for spring commissioning, late summer for fall installs." },
+      { question: 'Can I repower a 20-year-old boat?', answer: "Often yes. Age alone is not the disqualifier — hull condition is. HBW has repowered well-maintained 1990s aluminum boats that have 20 more years in them, and declined to repower 8-year-old boats with rot." },
+      { question: 'Does Mercury offer Canadian financing on repowers?', answer: "The current Mercury USA financing programs (Sheffield, Medallion) are US-only. HBW has Canadian financing partners — call for current options. Do not assume the Mercury US site applies in Canada." },
+      { question: 'What is the trade-in option?', answer: 'HBW accepts trade-ins on both the whole boat and the old motor alone. The Trade-In Value Guide explains how each is appraised.' },
+    ],
+  },
+
+];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
   // The /blog index uses getPublishedArticles() to hide unpublished entries
