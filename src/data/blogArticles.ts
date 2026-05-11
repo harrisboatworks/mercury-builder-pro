@@ -9453,7 +9453,7 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 We have been a Mercury dealer since 1965. Three generations of expertise, parts inventory, tooling, and a Mercury Platinum dealer relationship that gives factory-direct support. Multi-brand dealers serve a different market. We focus on Mercury depth instead of brand breadth, and that focus pays off in service quality.
 
 **What is Mercury's market share?**
-Mercury Marine is the largest outboard manufacturer in the world by volume and dealer count. Specific market share percentages vary by region. In Canada, Mercury has the deepest dealer network and the strongest factory-OEM relationships with major boat builders. In coastal US markets, Yamaha is more competitive.
+Mercury Marine is one of the leading outboard manufacturers in the world by volume and dealer count. Specific market share percentages vary by region. In Canada, Mercury has one of the strongest dealer networks and the strongest factory-OEM relationships with major boat builders. In coastal US markets, Yamaha is more competitive.
 
 **Why do most Canadian boats come Mercury-rigged?**
 Decades of supply chain integration between Mercury and Canadian boat builders (Lund, Crestliner, Princecraft, Lowe). Customers ask for Mercury, factories rig with Mercury, dealer service network is built around Mercury. Buying a Mercury-rigged factory boat is the most cost-effective way into a new Canadian aluminum boat.
