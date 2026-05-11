@@ -322,7 +322,7 @@ export default function PunjabiBlogArticlePage() {
           </div>
         )}
 
-        <LanguageSwitcher currentLang="pa" />
+        <LanguageSwitcher currentLang="pa" currentSlug={article.slug} />
 
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
           <span className="flex items-center gap-1">

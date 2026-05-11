@@ -324,7 +324,7 @@ export default function SpanishBlogArticlePage() {
           </div>
         )}
 
-        <LanguageSwitcher currentLang="es" />
+        <LanguageSwitcher currentLang="es" currentSlug={article.slug} />
 
         {/* Meta */}
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">

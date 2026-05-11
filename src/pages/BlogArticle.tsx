@@ -349,7 +349,7 @@ export default function BlogArticle() {
           </div>
 
           {/* Language switcher */}
-          <LanguageSwitcher currentLang="en" />
+          <LanguageSwitcher currentLang="en" currentSlug={article.slug} />
 
           {/* Dealer credentials strip */}
           <DealerConfidenceStrip />

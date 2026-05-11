@@ -325,7 +325,7 @@ export default function MandarinBlogArticlePage() {
           </div>
         )}
 
-        <LanguageSwitcher currentLang="zh" />
+        <LanguageSwitcher currentLang="zh" currentSlug={article.slug} />
 
         {/* Meta */}
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
