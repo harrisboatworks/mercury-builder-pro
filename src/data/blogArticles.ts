@@ -8107,6 +8107,7 @@ Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca
       { question: 'Why are new boat sales down if people are still boating?', answer: 'New unit sales dropped as the post-COVID surge corrected, but overall boating expenditure remained strong. People are maintaining, upgrading, and repowering the boats they already own.' },
       { question: 'Is Mercury allocation healthy for 2026?', answer: 'From our position as a Mercury Platinum dealer, new motor allocation is healthy.' },
     ]
+  },
 
   {
     slug: 'boat-rentals-shared-access-booming-2026',
