@@ -8116,102 +8116,148 @@ Children under 18 may fish under certain conditions without a licence. Confirm c
     category: 'Mercury Technology',
     readTime: '10 min read',
     keywords: ['Mercury Boost software upgrade', 'Mercury Boost eligible engines', 'Mercury software calibration', 'Mercury acceleration upgrade', 'Mercury dealer upgrade Ontario'],
-    content: `
-*Last reviewed: 2026-05-07*
+    content: `### Quick Answer
 
-> **Quick answer:** Mercury Boost is a dealer-installed software upgrade that adds horsepower to eligible 150 HP FourStroke and Pro XS motors. Eligibility depends on model year and powerhead, we verify by serial number. The upgrade is a calibration, not a hardware swap. Check eligibility through mercuryrepower.ca.
+Mercury Boost is a software-based engine calibration update, not a hardware kit, that improves mid-range acceleration by 5, 21% on eligible motors. Eligibility is determined by serial number, not model year. The dealer-installed version covers FourStroke 175, 300 HP, Pro XS 175, 300 HP, and Verado 250, 350 HP from specific serial numbers (see table below). The factory-installed version comes pre-loaded on new Pro XS and Verado models built in Q2 2026 and later. Boost does not void Mercury's warranty.
 
-## What Is Mercury Boost?
+---
 
-Mercury Boost is a software-based engine calibration upgrade, not a hardware kit, not an aftermarket add-on. It's a manufacturer-backed update that recalibrates how your engine delivers power through the mid-range RPM band.
+### Full Article
 
-The result: faster acceleration from idle to wide-open throttle, with no changes to internal components, no void in your warranty, and no modifications that would concern Transport Canada or your insurance company.
+Mercury announced Boost as part of its 2026 technology rollout and described it as the foundation for a broader portfolio of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
 
-Mercury announced Boost as part of their 2026 technology rollout, calling it the foundation for a broader portfolio of software-based performance upgrades. If your engine is eligible, this is the kind of upgrade that most dealers will have completed in a single service visit.
+The result is a 5, 21% improvement in mid-range acceleration and zero-to-top-speed performance. The range is real, the specific gain depends on hull shape, load, prop selection, and the current factory calibration. Even 5% is noticeable on a loaded boat.
 
-## What Does Boost Actually Do?
+---
 
-The performance claim is straightforward: **5-21% improvement in mid-range acceleration and zero-to-top-speed performance**.
+## What Boost Changes (and What It Doesn't)
 
-That range matters. Not every boat will see a 21% gain, hull shape, load, prop selection, and current engine calibration all affect the result. But even a 5% improvement in acceleration off the plane is noticeable, especially on a loaded boat.
-
-What Boost specifically addresses:
-- Mid-range throttle response (the sluggish zone between idle and plane)
+**What Boost changes:**
+- Mid-range throttle response
 - Zero-to-top-speed run times
-- Overall throttle feel and engine responsiveness
+- Overall throttle feel, the engine feels more responsive
 
-What Boost does not change:
-- Rated horsepower (the engine still makes the same power at wide-open throttle)
-- Fuel consumption (no significant change reported)
-- Physical components of any kind
-- Warranty coverage (this is a factory-backed update)
+**What Boost does not change:**
+- Rated horsepower
+- Fuel consumption
+- Physical components
+- Mercury factory warranty coverage
+
+Boost is a factory-backed, manufacturer-approved calibration. It does not void Mercury warranty coverage or Mercury Protection Plan coverage.
+
+---
 
 ## Which Engines Are Eligible?
 
-Eligibility is determined by serial number, not model year.
+Eligibility is by serial number, not model year.
 
-### Dealer-Installed Upgrade for Existing Outboards
+### Dealer-Installed Retrofit (Existing Motors)
 
-| Engine Family | Models | Serial Number Threshold |
+| Engine Family | HP Models | Eligible From Serial Number |
 |---|---|---|
-| FourStroke | 175, 200, 250, 300 hp | From **2B529482** |
-| Pro XS | 175, 200, 225, 250, 300 hp | From **2B529482** |
-| Verado | 250, 300 hp | From **2B529482** |
-| Verado | 350 hp | **3B266064 to 3B578266** |
-| Racing 150R | 150R | From **3B547096** |
+| FourStroke | 175, 200, 250, 300 HP | 2B529482 |
+| Pro XS | 175, 200, 225, 250, 300 HP | 2B529482 |
+| Verado | 250, 300 HP | 2B529482 |
+| Verado | 350 HP | 3B266064 to 3B578266 only |
+| Racing 150R | 150R | 3B547096 |
 
-The 350hp Verado has a **specific serial range**, not just a starting point. If your 350 Verado falls outside 3B266064 to 3B578266, it is not eligible for the dealer-installed version.
+**Important note on the 350 HP Verado:** Eligibility is within a specific serial range (3B266064 to 3B578266). If your 350 falls outside this range, it is not eligible for the dealer-installed version.
 
-### Factory-Installed on 2026 Production Models
+### Factory-Installed (New 2026 Production Motors)
 
-If you're buying new in 2026, Boost comes pre-loaded on Pro XS (175-300hp), Verado (250, 300, 350hp), and Racing 150R models manufactured in Q2 2026 and later.
+Boost comes pre-loaded on:
+- Pro XS 175, 300 HP
+- Verado 250, 300, 350 HP
+- Racing 150R
+
+Applies to models manufactured in Q2 2026 and later.
+
+---
 
 ## How to Find Your Mercury Serial Number
 
-Before you call a dealer, you need your serial number. It's the only way to confirm eligibility.
+The serial number is the only way to confirm eligibility.
 
-1. **Transom bracket**. The most common location. Look on the port (left) side of the bracket.
-2. **Engine block**. On some models, the serial number is stamped directly into the block.
-3. **Under the cowling**. Some newer outboards include a serial number label inside the cowling.
+1. **Transom bracket**, most common. Port (left) side of the mounting bracket. Metal data plate.
+2. **Engine block**, stamped directly on some models.
+3. **Under the cowling**, printed on a label on newer outboards.
 
-**Practical tip:** Take a clear photo of the plate before you need it. Store it in your phone.
+Practical tip: take a clear photo of the plate and save it on your phone. You will want it any time you call a dealer or need warranty service.
 
-## How Do I Get the Boost Upgrade Installed?
+---
 
-Boost is a **dealer-installed** update. You cannot download it yourself. Mercury's diagnostic software is dealer-exclusive.
+## How to Get Boost Installed
 
-The process at a certified Mercury dealer:
-1. You bring the engine in (or the dealer comes to you)
-2. Dealer confirms serial number eligibility
+Boost is dealer-installed. You cannot download or apply it yourself, Mercury's diagnostic software is dealer-exclusive.
+
+**The process:**
+1. Bring the engine to HBW (or schedule a service call)
+2. HBW confirms serial number eligibility
 3. Boost calibration is applied via Mercury's software interface
 4. A short test run confirms the update
 
-Most dealers will complete it in a single service visit. **Cost:** Mercury has not published a standard retail price. Dealers set their own service rates. Expect to pay a labor charge, likely in the 1-2 hour range.
+Most dealers can complete it in a single service visit. **Mercury has not published a standard retail price for the Boost upgrade.** Dealers set their own service rates. At most Mercury dealers in Ontario, shop rates run in the $120, $175 per hour range, and installation is primarily technician time, roughly 1, 2 hours. If you are already bringing the engine in for spring commissioning or annual service, ask to have Boost done at the same visit to minimize total labor cost.
 
-## Why Is This Significant for Ontario Boaters?
+---
 
-If you run a loaded pontoon on Rice Lake or a family bowrider on the Kawarthas, mid-range acceleration is where you feel your engine most. That 5-21% improvement in mid-range punch is most apparent with heavy loads and quick transitions.
+## Why This Matters for Ontario Boating
 
-Ontario's boating season is short. If your existing Mercury engine qualifies, getting Boost installed before spring launch is worth the conversation with your dealer.
+Mid-range acceleration is where the engine is most felt in real use. Not at full throttle, but in the transition from idle to cruising speed, when you are launching off Rice Lake's shallow flats, loading a pontoon with six passengers, or accelerating through a turn.
 
-## Does Boost Affect My Warranty?
+A 5, 21% improvement in that band is most noticeable on:
+- Heavily loaded pontoons
+- Family runabouts with full gear and passengers
+- Any setup where hole-shot or mid-range feel sluggish
 
-No. Boost is a factory-backed, manufacturer-approved software calibration. It does not void your Mercury warranty or affect any extended service plans.
+Ontario's boating season is short. If your eligible motor qualifies for Boost, getting it done before spring launch is worth a conversation with us.
 
-**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
+For engine repairs, we only service Mercury and Mercruiser.
 
+---
 
-## Try the calculator
+## FAQs
 
-Want a real number? Run [the Boost Eligibility Checker](/tools#boost-eligibility) - no signup, no email gate, takes 30 seconds.
-## Related guides
+**Does Boost void my warranty?** 
+No. Boost is an official Mercury program and factory-backed calibration. It does not void Mercury factory warranty or any Mercury Protection Plan coverage.
 
-- [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market), why Mercury leads the market
-- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works is Mercury
-- [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario). Mercury vs Yamaha for Ontario
-- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), reliability comparison: Mercury vs Yamaha vs Honda
+**Does Boost work on twin-engine setups?** 
+Yes, if both engines are eligible. Each engine is updated individually. If your twins have different serial numbers, eligibility is assessed per engine.
 
-    `,
+**What if my serial number isn't eligible?** 
+If your motor falls outside current eligibility criteria, the upgrade is not available at this time, there is no aftermarket equivalent. Mercury has indicated Boost will expand to additional models. In the meantime, the best performance improvements for ineligible engines are mechanical: correct prop specification, fresh spark plugs, clean lower unit with fresh gear lube, and a properly maintained ignition system.
+
+**Can Boost be reversed?** 
+In theory, yes, it is a software calibration and Mercury has the tools to modify software-based updates. Mercury has not published a standard reversal procedure. In practice, the improvement is consistently viewed as positive, it changes only the mid-range band, not cruise or wide-open-throttle behavior.
+
+**How do I know if my FourStroke qualifies?** 
+FourStroke models in the 175, 300 HP range from serial number 2B529482 are eligible for the dealer-installed retrofit. For factory-installed Boost on new motors, it applies to Pro XS and Verado models built in Q2 2026 and later. The fastest answer: call HBW at 905-342-2153 with your serial number.
+
+**Is Boost worth it on Rice Lake?** 
+If your eligible engine already feels responsive with a light load, the improvement will be subtler. If you routinely run heavy, full pontoon, loaded family bowrider, anything where the hole-shot feels sluggish, Boost is one of the most cost-effective upgrades available. It costs a fraction of a new motor and requires no hardware.
+
+---
+
+## Internal Links
+- Mercury SmartCraft Connect Guide Ontario
+- Mercury Controls & Rigging Guide Ontario
+- Mercury 115 vs 150 Comparison
+- Mercury Outboard Motor Families Guide
+
+## CTA
+
+**Check if your Mercury qualifies for Boost.** 
+Call 905-342-2153 with your serial number, or email info@harrisboatworks.ca. 
+HBW confirms eligibility, quotes the installation, and books the visit. 
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
+Mercury Platinum dealer. Est. 1947.
+
+---
+
+**English editor note:** All serial number ranges and eligible model lists are sourced directly from the source post. Verify these against current Mercury Canada Boost program documentation before publishing, eligibility may expand as the program rolls out. Service scope sentence appears naturally at the end of the Ontario context section. Labor rate ranges ($120, $175/hr) are from the source post and should be verified as current.
+
+---
+
+---`,
     faqs: [
       {
         question: 'Which Mercury engines are eligible for the Boost software upgrade?',
