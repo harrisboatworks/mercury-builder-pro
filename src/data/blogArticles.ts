@@ -2721,263 +2721,115 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['rice lake pontoon', 'best pontoon rice lake', 'legend pontoon ontario', 'cottage pontoon boat', 'kawartha pontoon'],
-    content: `
-*Last reviewed: 2026-05-07*
+    content: `# Best Pontoon Boats for Rice Lake Cottage Use: A Practical Guide
 
-> **Quick answer:** For Rice Lake, Ontario cottage use, look at 20-22 ft pontoons from Legend, Princecraft, or Sylvan with a Mercury 90-115 Command Thrust. Triple-tube only matters above 150 HP; most family use is fine on twin tubes. Stay inside the capacity plate. We package these regularly, quote at mercuryrepower.ca.
+## Quick answer
+For most Rice Lake cottage families, the right pontoon is 20 to 22 ft, two-tube, with a Mercury Command Thrust FourStroke in the 90 to 150 HP range. Tritoons are worth the premium only if active water sports are a regular part of your use. We sell Legend Boats pontoons and handle Mercury repowers on existing pontoons. Get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us at 905-342-2153.
 
-For Rice Lake, Ontario (in the Kawarthas) cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust. The lake is sheltered enough that you don't need a tritoon for most uses, but the 22 ft length gives the deck space and capacity that cottage use rewards. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+## Why pontoons dominate Rice Lake cottages
 
-## Quick recommendation
+Pontoons are the most common cottage boat on Rice Lake, and it is not hard to see why. They are comfortable for passengers of all ages, versatile across cruising, fishing, and swimming, easy to board from a dock or swim platform, and well-matched to Rice Lake's character, generally sheltered, with enough room to cruise but not so rough that you need a performance hull.
 
-Pontoons are the dominant cottage boat on Rice Lake. They are versatile (cruising, fishing, swimming, sunsets), comfortable (passenger capacity, deck space, shade options), and fit the lake (sheltered enough that you don't need a tritoon for most uses).
+The question is not usually "should I get a pontoon?" Most cottage families have already decided that. The question is which pontoon, what motor, and whether you are buying new or repowering what you have.
 
-For most Rice Lake cottage owners, the right pontoon is:
+## What changes the answer for your cottage
 
-- **Length:** 20 to 22 ft (the sweet spot for capacity vs. handling)
-- **Configuration:** Two-tube standard for cruising and fishing; tritoon if you do active water sports
-- **Brand:** Legend (we sell these), Princecraft, Manitou, Avalon, or comparable Canadian/US-built pontoon
-- **Mercury motor:** 90 to 150 HP Command Thrust FourStroke depending on use
+**Family size and typical passenger count.** A two-adult household has entirely different needs than a multi-generational family of eight. A 16 ft pontoon comfortably seats four; a 22 ft pontoon comfortably seats ten.
 
-For specific pontoon and Mercury pricing, [build a quote](/quote/motor-selection) or [contact HBW](/contact).
+**What you do on the water.** Cruising, fishing, and swimming are different from tubing and waterskiing.
 
-## What changes the answer for Rice Lake pontoons
+**Storage setup at the cottage.** Boat lift, slip, shore storage, or trailer all affect which pontoon makes practical sense.
 
-Five things move which pontoon fits your cottage:
+**Where your cottage sits on the lake.** Exposure to wind and fetch varies considerably around Rice Lake. Bewdley and the southern shore are different from Sugar Island or the Hastings end.
 
-- **Family size and typical passenger count.** A two-adult household has different needs than a multi-generational family of eight.
-- **Use mix.** Pure cruising vs. fishing vs. tubing/swimming with kids changes hull and motor selection.
-- **Storage location and method.** In-water slip storage vs. shore storage vs. lift storage vs. trailer all have different implications.
-- **Cottage location on the lake.** Bewdley, Hastings, Sugar Island, and southern shore have different exposure and launch characteristics.
-- **Long-term ownership plan.** A 5-year keeper justifies a different pontoon than a 20-year hand-me-down.
+**Long-term ownership.** A five-year boat is a different investment than a twenty-year family heirloom.
 
-## Best pontoon for Rice Lake cottage use cases
+## Matching the pontoon to your use
 
-### Two-adult household, cruising and fishing focus
+### Two adults, cruising and fishing
+**What works:** 18 to 20 ft two-tube pontoon with a Mercury Command Thrust FourStroke in the 90 HP range.
 
-**Best fit:** 18 to 20 ft two-tube pontoon with Mercury 90 HP Command Thrust FourStroke.
+At cruising speeds, two adults, light fishing gear, and a cooler, this setup is comfortable and fuel-efficient. Deck space is enough for fishing chairs and lounging.
 
-The 18 to 20 ft length handles two to four people comfortably. Cruising speeds are 25 to 30 mph. Fuel-efficient at typical cottage cruising speeds. Sufficient deck space for fishing, drinks, and casual lounging.
+### Multi-generational family, cruising and water sports
+**What works:** 22 ft two-tube or tritoon with a Mercury Command Thrust FourStroke in the 115 to 150 HP range.
 
-For specific pricing, [build a quote](/quote/motor-selection). All-in pontoon-plus-motor packages in this class typically land $50,000 to $65,000 CAD.
-
-### Multi-generational family use, cruising and water sports
-
-**Best fit:** 22 ft two-tube or tritoon pontoon with Mercury 115 to 150 HP Command Thrust FourStroke.
-
-The 22 ft length handles 6 to 10 people comfortably. The 115 to 150 HP CT motor handles tubing and lighter water sports. Tritoons (three-tube) handle water sports better than two-tube; the price premium is real.
-
-All-in packages: $65,000 to $85,000 CAD.
+The 22 ft length handles six to ten people comfortably. The 115 to 150 HP Command Thrust motor handles tubing and lighter water sports without labouring. If water sports are occasional rather than constant, two-tube is fine and costs less than a tritoon.
 
 ### Active water sports family
+**What works:** 22 ft tritoon with a Mercury Command Thrust FourStroke in the 150 to 200 HP range.
 
-**Best fit:** 22 ft tritoon with Mercury 150 to 200 HP Command Thrust.
+If tubing, skiing, and wakeboarding are a regular part of summer at the cottage, a tritoon is the right call. The third tube changes the hydrodynamics, better hole shot loaded, higher top speed, and better handling in sport use.
 
-Tritoons are the right choice for active water sports. The third tube changes the hydrodynamics, lets the boat reach higher speeds, and handles loaded water sports better.
+### Rental fleet or charter operation
+**What works:** 20 to 24 ft pontoons configured for high-use cycles. Sometimes Mercury SeaPro variants for commercial-duty ratings.
 
-All-in packages: $75,000 to $95,000 CAD.
+## Why Mercury Command Thrust is not optional on a pontoon
 
-### Cottage rental fleet or charter operations
+Command Thrust is the single biggest performance lever for pontoon Mercurys, and skipping it is the most common pontoon repower mistake we see.
 
-**Best fit:** 20 to 24 ft pontoons configured for high-use cycles. Sometimes Mercury SeaPro variants for commercial-duty.
+Pontoon hulls are heavy and blunt-fronted. They need pulling power to get up and move with any load aboard. Command Thrust delivers that pulling power through a larger-diameter prop and a lower-gear gearcase.
 
-Rental and charter operators have different priorities than private cottage owners. Durability, ease of operation, and capacity matter more than refinement.
+The performance difference between a standard gearcase Mercury and a Command Thrust Mercury on a loaded pontoon is significant, particularly at hole shot and at cruise with a full load. Customers who saved money by skipping Command Thrust routinely wish they had not.
 
-## Why Mercury Command Thrust matters on pontoons
+This is not a sales pitch; it is just what we have seen on Rice Lake for years. Pay for Command Thrust once. You will not regret it.
 
-The Command Thrust gearcase is the single biggest performance lever for pontoon Mercurys. Pontoon hulls are heavy and blunt-fronted. They want pulling power more than top speed. Command Thrust delivers exactly this.
+## Pontoon brands worth knowing
 
-Customers who skip Command Thrust to save money on pontoon repowers often regret it. The performance difference between a standard-gearcase 90 HP and a Command Thrust 90 HP on a typical pontoon is 25 to 50% better hole shot when loaded.
+**Legend Boats.** We are a Legend dealer. Legend is a Canadian company, factory Mercury-rigged, and designed for Canadian lakes and weather. The supply chain integration matters for parts and service.
 
-See our [Mercury Command Thrust Guide](/blog/mercury-command-thrust-guide-pontoon-boats) for the full picture.
+**Princecraft.** Also a Canadian brand. Mercury-rigged from the factory as a standard option. Common on Ontario cottage lakes.
 
-## Pontoon brand considerations for Rice Lake
+**Manitou.** US-built, premium pontoon brand. Well-regarded for build quality and finish.
 
-We sell Legend Boats pontoons at HBW. We are a Legend dealer alongside being a Mercury Platinum dealer.
+**Avalon.** US-built, premium category. Strong construction and layout options.
 
-Legend pontoons are designed by a Canadian company headquartered in Whitefish, Ontario, well-suited to Canadian water and weather, and Mercury-rigged from the factory. The supply chain integration matters for service and parts.
+**Bennington.** US-built, premium pontoon brand. Popular and well-supported.
 
-Other reputable pontoon brands:
-
-- **Princecraft** (also a Canadian brand, Mercury-rigged factory option)
-- **Manitou** (US-built, premium pontoon brand)
-- **Avalon** (US-built, premium pontoon brand)
-- **Bennington** (US-built, premium pontoon brand)
-
-For Rice Lake cottage use, brand differences matter less than configuration (length, layout, motor). All major pontoon brands make capable boats. The right pontoon for you depends on use case more than brand.
-
-## What HBW checks before recommending a Rice Lake pontoon
-
-When customers come to HBW for a pontoon purchase or upgrade, we want to know:
-
-- **Cottage location and how you access the lake**
-- **Family size and typical passenger count**
-- **Use mix (cruising, fishing, swimming, water sports)**
-- **Storage method (lift, slip, shore, trailer)**
-- **Existing pontoon if upgrading**
-- **Trade-in considerations**
-- **Long-term ownership plan**
-- **Budget tolerance and financing**
-
-We sell new Legend Boats pontoons and we also handle Mercury repowers on existing pontoons. The new vs. repower question has its own decision tree.
+For Rice Lake cottage use, brand matters less than configuration. The right length, layout, tube setup, and motor will serve you better than the wrong spec from the most prestigious brand.
 
 ## Common pontoon mistakes for Rice Lake cottage use
 
-We see these every season:
+**Underbuying length.** A 16 ft pontoon feels fine at the dealership and uncomfortable with six adults aboard. Right-size for actual use.
 
-1. **Underbuying pontoon length.** A 16 ft pontoon for a family of six is uncomfortable. Cottage families grow over time. Right-size for actual loading.
-2. **Skipping Command Thrust.** The single biggest pontoon repower mistake. Pay once.
-3. **Buying tritoon when two-tube would work.** For cruising and fishing only, two-tube is plenty and cheaper. Tritoon premium is for water sports.
-4. **Wrong storage choice.** Outdoor uncovered shore storage exposes the pontoon to weather. Lift storage extends life meaningfully.
-5. **Underestimating trailer needs.** A 22 ft pontoon trailer is a serious vehicle requirement. Plan for tow vehicle compatibility.
+**Skipping Command Thrust.** Already mentioned. Pay for it.
 
-## Storage options for Rice Lake pontoons
+**Buying a tritoon for a use case that does not need one.** Cruising, fishing, and casual family use on Rice Lake does not require the third tube.
 
-For Rice Lake cottage owners, three storage paths:
+**Underestimating storage.** Outdoor uncovered shore storage is hard on a pontoon over time. Furniture fades, logs oxidize, Bimini tops degrade. Lift storage meaningfully extends the life of the hull and motor.
 
-### Boat lift at the cottage
+**Underestimating trailer requirements.** A 22 ft pontoon trailer is a real tow requirement. Know your tow vehicle rating before you commit.
 
-- **Best for hull and motor longevity** (out of water, less corrosion, less hull damage)
-- **Highest cost** (lift purchase $5,000 to $15,000 plus install)
-- **Most convenient** (always ready to use)
+## Storage options for Rice Lake pontoon owners
 
-### In-water slip at marina or cottage dock
+**Boat lift at the cottage.** Best for the hull and motor, out of the water, protected from corrosion and dock damage.
 
-- **Convenient** but exposes hull to in-water environment
-- **Hull bottom needs cleaning** periodically
-- **Lower up-front cost** than lift
-- **Hull life shortened** vs. lift storage
+**In-water slip at a marina or cottage dock.** Convenient and lower up-front cost, but the hull sits in water continuously.
 
-### Shore storage on trailer
+**Shore storage on a trailer.** Most flexible, you can travel to other lakes. Highest exposure to weather if uncovered.
 
-- **Most flexible** (can travel to other lakes)
-- **Most exposure to weather** if outdoor uncovered
-- **Tarp or canopy storage extends life**
-- **Lowest annual cost** but highest hassle factor
+We recommend lift storage where the cottage allows it.
 
-We recommend lift storage where the cottage configuration allows. The hull life and motor protection benefits are meaningful.
+For HBW winter storage, we offer outdoor storage with shrinkwrap (no indoor heated storage). Call 905-342-2153 for current rates.
 
-## Related guides
+## Ready for your Rice Lake pontoon?
 
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), motor selection
-- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats), Command Thrust gearcase
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), HP step-up math
-- [Best Boats for Rice Lake Under $30,000](/blog/best-boats-rice-lake-under-30000), used boat options
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), repower pricing
-- [Pontoon HP Sizing Decision Tree (Ontario)](/blog/pontoon-hp-sizing-decision-tree-ontario), HP sizing for pontoon hulls
-- [Common Pontoon Boat Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), what to watch out for
-- [Mercury Boost 150 HP Upgrade for Pontoons](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), software-based HP bump analysis
+For the motor side of a new or existing pontoon, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-## Ready for a Rice Lake pontoon?
+For new Legend Boats pontoon packages, call us at 905-342-2153 or visit HBW at 5369 Harris Boat Works Rd, Gores Landing.
 
-Build a quote on the [motor selection page](/quote/motor-selection) for Mercury motor sizing. For new Legend Boats pontoons, [contact HBW](/contact) directly.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through pontoon selection for your specific cottage use, [give us a call at (905) 342-2153](tel:9053422153). We sell pontoons every week to Rice Lake cottage owners and can give you the honest answer for your situation.
-
----
-
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). For new pontoon pricing, [contact HBW](/contact). Mercury and pontoon model years change July 1 each year, and we refresh ranges in articles annually._
-
----
-
-## FAQ
-
-**What size pontoon is best for Rice Lake cottage use?**
-For most cottage owners, 20 to 22 ft is the sweet spot. Smaller (16 to 18 ft) for two-adult households focused on simple cruising. Larger (24+ ft) for big families or active water sports.
-
-**Two-tube or tritoon for Rice Lake?**
-Two-tube is plenty for cruising, fishing, and lighter family use. Tritoon (three-tube) is the right choice for active water sports, higher speeds, and rougher water performance. Two-tube is more common on Rice Lake.
-
-**What HP does my pontoon need?**
-For 18 to 20 ft cruising/fishing: 90 HP Command Thrust. For 20 to 22 ft family use with light water sports: 115 to 150 HP CT. For 22+ ft tritoons with active water sports: 150 to 200 HP CT.
-
-**Should I buy a Legend pontoon at HBW?**
-Yes if Legend fits your needs. We're a Legend dealer alongside being a Mercury Platinum dealer. Legend is a Canadian company (headquartered in Whitefish, Ontario), factory Mercury-rigged, and well-suited to Canadian use. For specific configurations, [contact HBW](/contact).
-
-**Can I tube and ski with a Rice Lake pontoon?**
-Yes with the right setup. 115 HP Command Thrust handles tubing. 150 HP CT handles skiing and tubing comfortably. Tritoons handle water sports better than two-tube hulls.
-
-**Should I get a boat lift for my pontoon?**
-If your cottage configuration allows, yes. Lift storage extends hull and motor life meaningfully. Up-front cost is real but pays back in longer asset life and lower maintenance.
-
-**What's the cost of a typical Rice Lake pontoon package?**
-For 20 to 22 ft two-tube with 115 HP CT FourStroke, $50,000 to $75,000 CAD all-in for new pontoon and motor package. Pricing varies by brand, length, layout, and motor. [Live Mercury pricing here.](/quote/motor-selection)
-
-**Where do most Rice Lake cottage pontoons launch?**
-Most are kept at the cottage on lift, slip, or shore storage. Trailer-launched pontoons typically use Bewdley, Hastings, or Roseneath public ramps.
-
-**Can I fish from a pontoon on Rice Lake?**
-Yes very effectively. Pontoons offer comfortable platforms for casting, trolling, and structure fishing. Many pontoons have fishing chairs, rod holders, and fish-friendly layouts.
-
-**How long does a pontoon last with proper maintenance?**
-Properly maintained aluminum pontoons regularly last 25 to 40+ years. Furniture and electronics may need updating in the 10 to 15 year range, but the basic pontoon hull is durable.
-
-**Should I get a Mercury or Yamaha for my pontoon?**
-For Ontario freshwater pontoon use, Mercury wins on dealer network density and Command Thrust integration. Yamaha is a fine motor mechanically but the local service picture favors Mercury. See our [Mercury vs Yamaha guide](/blog/mercury-vs-yamaha-outboards-ontario).
-
-**Does HBW handle pontoon service and storage?**
-Yes. Service, repower, hauling, indoor and outdoor storage all available at HBW. [Contact us](/contact) for specifics.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
-
-    `,
-    faqs: [
-      {
-        question: 'What size pontoon is best for Rice Lake cottage use?',
-        answer: 'For most cottage owners, 20 to 22 ft is the sweet spot. Smaller (16 to 18 ft) for two-adult households focused on simple cruising. Larger (24+ ft) for big families or active water sports.'
-      },
-      {
-        question: 'Two-tube or tritoon for Rice Lake?',
-        answer: 'Two-tube is plenty for cruising, fishing, and lighter family use. Tritoon (three-tube) is the right choice for active water sports, higher speeds, and rougher water performance. Two-tube is more common on Rice Lake.'
-      },
-      {
-        question: 'What HP does my pontoon need?',
-        answer: 'For 18 to 20 ft cruising/fishing: 90 HP Command Thrust. For 20 to 22 ft family use with light water sports: 115 to 150 HP CT. For 22+ ft tritoons with active water sports: 150 to 200 HP CT.'
-      },
-      {
-        question: 'Should I buy a Legend pontoon at HBW?',
-        answer: 'Yes if Legend fits your needs. We\'re a Legend dealer alongside being a Mercury Platinum dealer. Legend is a Canadian company (headquartered in Whitefish, Ontario), factory Mercury-rigged, and well-suited to Canadian use. For specific configurations, [contact HBW](/contact).'
-      },
-      {
-        question: 'Can I tube and ski with a Rice Lake pontoon?',
-        answer: 'Yes with the right setup. 115 HP Command Thrust handles tubing. 150 HP CT handles skiing and tubing comfortably. Tritoons handle water sports better than two-tube hulls.'
-      },
-      {
-        question: 'Should I get a boat lift for my pontoon?',
-        answer: 'If your cottage configuration allows, yes. Lift storage extends hull and motor life meaningfully. Up-front cost is real but pays back in longer asset life and lower maintenance.'
-      },
-      {
-        question: 'What\'s the cost of a typical Rice Lake pontoon package?',
-        answer: 'For 20 to 22 ft two-tube with 115 HP CT FourStroke, $50,000 to $75,000 CAD all-in for new pontoon and motor package. Pricing varies by brand, length, layout, and motor. [Live Mercury pricing here.](/quote/motor-selection)'
-      },
-      {
-        question: 'Where do most Rice Lake cottage pontoons launch?',
-        answer: 'Most are kept at the cottage on lift, slip, or shore storage. Trailer-launched pontoons typically use Bewdley, Hastings, or Roseneath public ramps.'
-      },
-      {
-        question: 'Can I fish from a pontoon on Rice Lake?',
-        answer: 'Yes very effectively. Pontoons offer comfortable platforms for casting, trolling, and structure fishing. Many pontoons have fishing chairs, rod holders, and fish-friendly layouts.'
-      },
-      {
-        question: 'How long does a pontoon last with proper maintenance?',
-        answer: 'Properly maintained aluminum pontoons regularly last 25 to 40+ years. Furniture and electronics may need updating in the 10 to 15 year range, but the basic pontoon hull is durable.'
-      },
-      {
-        question: 'Should I get a Mercury or Yamaha for my pontoon?',
-        answer: 'For Ontario freshwater pontoon use, Mercury wins on dealer network density and Command Thrust integration. Yamaha is a fine motor mechanically but the local service picture favors Mercury. See our [Mercury vs Yamaha guide](/blog/mercury-vs-yamaha-outboards-ontario).'
-      },
-      {
-        question: 'Does HBW handle pontoon service and storage?',
-        answer: 'Yes. Service, repower, hauling, indoor and outdoor storage all available at HBW. [Contact us](/contact) for specifics.'
-      },
-    ]
+*Last reviewed: 2026-05-11.*`,
+        faqs: [
+      { question: 'What size pontoon is best for Rice Lake cottage use?', answer: 'For most cottage families, 20 to 22 ft is the sweet spot. Smaller (18 ft) for a quieter two-adult household. Larger (24 ft-plus) for very large groups or active water sports focus.' },
+      { question: 'Two-tube or tritoon for Rice Lake?', answer: 'Two-tube is the right answer for cruising, fishing, and casual family use. Tritoon earns its cost if active water sports (tubing, skiing, wakeboarding) are a regular part of your summer.' },
+      { question: 'What HP does a Rice Lake pontoon need?', answer: 'For an 18 to 20 ft two-tube with casual use: Mercury 90 HP Command Thrust. For a 20 to 22 ft family pontoon with light water sports: 115 to 150 HP CT. For a tritoon with active water sports: 150 to 200 HP CT.' },
+      { question: 'Should I buy a Legend Boats pontoon at HBW?', answer: 'We are a Legend dealer, so yes, we sell them and stand behind them. Legend is a Canadian brand, factory Mercury-rigged, and well-suited to Ontario cottage lakes.' },
+      { question: 'Can I fish from a pontoon on Rice Lake?', answer: 'Very effectively. Pontoons offer stable, comfortable platforms for casting, trolling, and structure fishing.' },
+      { question: 'Should I get a boat lift for my pontoon?', answer: 'If your cottage configuration allows it, yes. Lift storage is the best thing you can do for hull and motor longevity.' },
+      { question: 'Can I tube and ski with a Rice Lake pontoon?', answer: 'Tubing: yes, with 115 HP CT or more. Skiing: more reliably with 150 HP CT and up, especially a tritoon. A two-tube at 90 HP is a cruising and fishing boat, not a water sports platform.' },
+      { question: 'How long does a pontoon last with proper maintenance?', answer: 'Properly maintained aluminum pontoons regularly last 25 to 40 years and more. Furniture and electronics may need updating in the 10 to 15 year range, but the basic hull structure is durable.' },
+      { question: 'Does HBW handle pontoon service and storage?', answer: 'Yes. Service, repower, hauling, and outdoor winter storage with shrinkwrap are all available at HBW. We do not offer indoor heated storage. Call 905-342-2153 for specifics.' },
+    ],
   },
 
   // Week 4: January 26, 2026
