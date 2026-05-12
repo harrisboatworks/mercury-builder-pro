@@ -3250,127 +3250,178 @@ Harris Boat Works，自1947年起，位於Rice Lake南岸Gores Landing。
     category: '租船与钓鱼',
     readTime: '6 分钟',
     keywords: ['第一次 租船 中文', 'Rice Lake 租船流程 华人', '租船新手 多伦多', '华人 安省 租船 指南'],
-    content: `
-## 快速答案
+    content: `## 簡短答案
 
-整个流程比你想像中简单。从预订到还船一共 5 步：
+整個流程比你想像的簡單：**預訂 → 抵達辦理手續 → 安全簡介（約30分鐘）→ 出港 → 還船。** 不需要持有PCOC（船駕照），不需要任何開船經驗。Harris Boat Works每年服務大量首次租船的華人家庭，我們的流程就是為了讓你第一次也能輕鬆上手。
 
-1. **在线预订**（提前 1-3 周，旺季提前更早）
-2. **到达 Harris Boat Works**（Gores Landing, Rice Lake 南岸）
-3. **安全简介**（约 30 分钟）—— Transport Canada 要求的 Rental Boat Safety Checklist
-4. **上船** —— 工作人员协助首次启动
-5. **还船** —— 加满或扣油钱、签退
+---
 
-不需要 PCOC（驾照），不需要有任何开船经验。我们每年处理上百个第一次的华人家庭。
+## 誰適合讀這篇
 
-## 步骤 1：预订
+- 第一次想帶家人去Rice Lake玩，完全沒有開船經驗
+- 之前有聽說過，但不確定「到底要怎麼開始」
+- 有人建議Rice Lake，你在Google找「怎麼租船」
+- 父母或親戚在加拿大探親，想帶他們體驗一次
 
-### 在线预订（推荐）
+---
 
-打开 [Harris Boat Works 租船 FAQ](https://www.harrisboatworks.ca/rentalsfaqmandarin) 查看可选船型与价格。预订时需要：
+## 第一步：預訂
 
-- 姓名 + 电话
-- Email（确认信会发到这里）
-- 信用卡（押金）
-- 想租的船型（pontoon 还是钓鱼船）
-- 日期 + 时段（一般是早上 9-10 点取船，下午 4-5 点还船）
+### 怎麼預訂
 
-旺季周末提前 2-3 周预订最稳。工作日提前 3-5 天通常可以。
+到 **[harrisboatworks.ca](https://www.harrisboatworks.ca)** 查看可用船型與排期，或致電 **905-342-2153**。預訂時需要提供：
 
-### HBW dealer note
+- 姓名和聯絡電話
+- Email（確認信件會發到這裡，請保存）
+- 想租的船型（Pontoon還是釣魚船）
+- 日期和希望的時段
 
-如果不确定要 pontoon 还是钓鱼船，看你的人数：3 人或更少可以考虑钓鱼船，4 人或以上几乎一定 pontoon。详细对比见我们的 [pontoon vs 钓鱼船指南](https://www.mercuryrepower.ca/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)。
+### 什麼時候預訂
 
-## 步骤 2：抵达
+| 使用時段 | 建議提前預訂 |
+|----------|-------------|
+| 6至8月旺季週末 | 2至3週前 |
+| 5月或9月週末 | 1週前 |
+| 工作日（非旺季） | 3至5天前 |
+| 長週末（Canada Day等） | 1個月以上前 |
 
-地址：Harris Boat Works, Gores Landing, ON（Rice Lake 南岸）。从多伦多约 90 分钟车程。
+Pontoon是最受歡迎的選擇，旺季的好日期確實會早早被訂滿。想去的那個日期，早預訂早安心。
 
-到达后：
+### 不確定選什麼船型？
 
-1. 停车在指定区域
-2. 进入主办公室
-3. 出示预订确认（手机上的 email 即可）
-4. 出示驾照（任何一国的驾照即可，作为身份证明）
-5. 信用卡刷预授权（押金）
-6. 签字
+3人或更少，考慮釣魚船。4人或以上，Pontoon幾乎一定是更好的選擇。詳細對比請看[6至8人租船指南](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)。
 
-时间：约 10-15 分钟。
+---
 
-## 步骤 3：安全简介（Rental Boat Safety Checklist）
+## 第二步：抵達
 
-这是 Transport Canada 的法律要求。完成后即使没有 PCOC，租船期间也可合法操作。
+**地址：** Harris Boat Works，5369 Harris Boat Works Rd，Gores Landing，Ontario K0K 2E0（Rice Lake南岸）
 
-内容包括：
+從GTA出發，大約1.5小時車程（視出發地點和交通情況而異）。建議使用Google Maps導航直接搜尋「Harris Boat Works Gores Landing」。
 
-- **船的基本操作**：启动、油门、转向、停船、倒退
-- **救生衣**：每人穿戴，含儿童尺寸
-- **紧急装备**：哨子、信号弹、绳索的位置与使用
-- **当地规则**：Rice Lake 的限速区、保护区、浅水区位置
-- **遇到问题怎么办**：机械故障、有人落水、迷路
+到達後：
 
-时间：约 30 分钟，工作人员一对一讲解（英语）。如果有不懂的地方随时问，没有人会催。
+1. 在指定停車區停車
+2. 進入主辦公室
+3. 出示預訂確認（手機上的確認Email即可）
+4. 出示駕照（任何國家核發的駕照均可作為身份證明）
+5. 信用卡刷預授權押金
+6. 簽署必要文件
 
-### HBW dealer note
+這個步驟通常10至15分鐘完成。
 
-很多华人新手担心英语听不懂。实际操作其实是看示范、不是听演讲。工作人员会带你上船，亲手示范启动、转向、停船。听不懂没关系，看着照做就行。
+---
 
-## 步骤 4：上船
+## 第三步：安全簡介（Rental Boat Safety Checklist）
 
-工作人员陪你启动船，确认你能操作后才放你出港。
+這是Transport Canada的法律要求，也是你可以合法操作租船的依據, 完成這個程序後，即使沒有PCOC，你也可以在租船期間合法操作。
 
-第一次出港时建议：
+**簡介內容包括：**
 
-- 先在码头附近转 10 分钟熟悉手感
-- 然后慢慢往湖中心开
-- 不需要开快，pontoon 的乐趣不在速度
-- 看船尾水流方向判断风向
+- 船的基本操作：啟動、油門、轉向、停船、倒退
+- 安全裝備：救生衣（每人一件，確認尺寸）、哨子、信號裝置、拋繩的位置
+- Rice Lake的當地規則：限速區、保護區、注意的淺水區域
+- 緊急情況處理：機械故障時怎麼辦、有人落水、怎麼聯絡HBW
 
-整个 Rice Lake 你都可以去，除了标记的保护区和浅水区。
+**時間：** 約30分鐘。工作人員一對一示範講解。
 
-## 步骤 5：还船
+**英語聽不太懂怎麼辦？** 不用擔心。安全簡介以「看示範」為主，不是考試，也不是演講。工作人員會帶你上船，親手示範每個操作。你跟著看、跟著做，不需要完整理解每一個英文詞彙。有不明白的地方隨時比劃詢問，沒有人會催。
 
-下午 4-5 点（看你预订时段）回到 HBW 码头：
+---
 
-1. 把船停在指定泊位
-2. 工作人员检查船况
-3. 油表 —— 如果回来时油低于上水时，会扣油钱（一般 $20-50 加元）
-4. 退押金（信用卡预授权自动解除）
-5. 签退离开
+## 第四步：出港
 
-通常 10 分钟搞定。
+工作人員確認你能操作後，你可以出港。
 
-## 华人新手最常问的 8 个问题
+**第一次出港的建議：**
 
-**1. 需要小费吗？**
-不需要。加拿大不要求给租船工作人员小费。
+- 先在碼頭附近慢速開10至15分鐘，熟悉轉向和油門的手感
+- 不需要開快, Pontoon的最大樂趣在於巡航和停泊，不是速度
+- 觀察船尾水流判斷風向，了解當前風況
+- 記住HBW碼頭的位置，出去之前確認你能辨認回程路徑
 
-**2. 可以自己带食物上船吗？**
-可以，鼓励自带。Gores Landing 没有大超市，建议在多伦多或 Cobourg 备齐。
+Rice Lake整個湖區都可以航行，除了標記的限速區和保護區。如果遇到標有限速或「No Wake」的區域，請慢速通過。
 
-**3. 可以喝啤酒吗？**
-在船上禁止饮酒（操作者尤其严格）。安省水上酒驾跟酒驾汽车同等处罚。
+---
 
-**4. 万一船出问题怎么办？**
-立刻打电话给我们 905-342-2153。我们会派人过去帮忙。所有租船都有手机信号覆盖范围内。
+## 第五步：還船
 
-**5. 小孩需要穿救生衣全程吗？**
-法律没有强制，但强烈建议 12 岁以下全程穿着。我们提供儿童尺寸救生衣。
+按照預訂的時段（通常下午4至5點）返回HBW碼頭：
 
-**6. 万一下雨怎么办？**
-小雨可以继续，pontoon 一般有 Bimini top（顶棚）。大雨建议返港，我们会判断退款政策。
+1. 將船停靠到指定泊位
+2. 工作人員檢查船況
+3. 確認燃油量, 如果返回時油量低於出發時，會按差量計算油費
+4. 押金退還（信用卡預授權自動解除）
+5. 簽退離開
 
-**7. 我没有驾照（中国驾照不算）可以租吗？**
-任何一国的驾照都可以作为身份证明（不是开船资格）。开船资格由我们的 Rental Boat Safety Checklist 提供。
+整個還船過程通常10分鐘以內完成。
 
-**8. 多久可以学会操作？**
-平均 10 分钟内熟悉。Pontoon 比汽车简单。
+---
 
-## 你的下一步
+## 出發前準備清單
 
-第一次的家庭最大的障碍是「不知道怎么开始」。其实就是上 [Harris Boat Works 租船页面](https://www.harrisboatworks.ca/rentalsfaqmandarin) 选一个日期、填表、付押金。剩下的我们都帮你处理。
+這些東西帶對了，一天會更順：
 
-**CTA：** 准备好第一次在 Rice Lake 租船？打电话 905-342-2153 或在线预订。我们已经帮过上百个华人家庭走完这个流程。
-`,
+- **食物和飲料**, Gores Landing沒有便利超市，建議在多倫多、Oshawa或Cobourg準備好
+- **防晒霜**, 水面反光強，比你想像的更容易曬傷
+- **非滑底的鞋子**, 碼頭和船面可能潮濕，避免拖鞋
+- **備用衣物**, 尤其是帶小孩，玩水是必然的
+- **小孩的救生衣**, 如果你的孩子年紀較小，可以詢問HBW的備用兒童救生衣，或自帶合適尺寸的
+
+---
+
+## 華人新手最常問的8個問題
+
+**1. 需要給工作人員小費嗎？**
+不需要。這不是加拿大租船的慣例。
+
+**2. 可以自己帶食物上船嗎？**
+可以，而且鼓勵。船上有桌子，Pontoon午餐在湖上吃是很多家庭的保留節目。
+
+**3. 可以在船上喝啤酒嗎？**
+操作者嚴格禁止飲酒，乘客的規定請查當前安大略省法規。水上酒駕與陸上同等處罰，風險不值得。
+
+**4. 萬一船出問題怎麼辦？**
+立刻致電 **905-342-2153**。保持鎮定，必要時拋錨或靠到安全位置，等待HBW工作人員抵達。所有租船出行的湖區範圍通常在手機信號覆蓋內。
+
+**5. 孩子必須全程穿救生衣嗎？**
+法律對不同年齡有不同要求，但我們強烈建議12歲以下在水上移動時全程穿着合適尺寸的救生衣。安全比查規定更重要。
+
+**6. 下雨怎麼辦？**
+小雨通常可以繼續，Pontoon有Bimini Top（頂篷）遮擋。大雨或雷雨強烈建議返港。退款政策以HBW現行規定為準，可預訂時詢問。
+
+**7. 我的駕照是中國或台灣發的，可以嗎？**
+任何國家核發的駕照都可以作為身份證明文件。但「開船資格」來自安全簡介程序，不是駕照。
+
+**8. 多快可以學會開Pontoon？**
+通常10至15分鐘內熟悉基本操控。Pontoon比汽車轉向更寬鬆、更穩定，學習曲線很短。最難的部分是停靠, 但工作人員會示範，而且Rice Lake的碼頭設計就是給各種程度的人用的。
+
+---
+
+## 內部連結
+
+- [6至8人租船選Pontoon還是釣魚船？](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
+- [安大略省船隻法規與安全要求：華人船主必知](/blog/zh/ontario-boating-regulations-zh)
+- [Rice Lake釣什麼魚？魚種與季節中文完整指南](/blog/zh/rice-lake-fish-species-seasons-zh)
+
+---
+
+## 行動呼籲（CTA）
+
+**準備好第一次在Rice Lake租船了嗎？**
+致電 **905-342-2153** 或查 **[harrisboatworks.ca](https://www.harrisboatworks.ca)** 選擇日期和船型。
+
+我們每年幫很多GTA華人家庭完成第一次的租船行程，流程我們都熟悉, 你來就好。
+
+Harris Boat Works，自1947年起，位於Rice Lake南岸Gores Landing。
+
+---
+
+> **English Editor Note, POST 13 (first-time-renter-walkthrough-zh):**
+> Converted from Simplified to Traditional Chinese. Original had good 5-step structure. Key improvements: added pre-departure packing checklist (highly practical for first-timers who don't know what to bring); English comprehension anxiety addressed with specific reassurance about demonstration-first safety briefing (this is a real barrier for Chinese-Canadian newcomers); removed original's reference to a specific "90-minute drive from Toronto" as a precise stated fact (replaced with "approximately 1.5 hours" and "varies by departure point"); removed original's specific fuel surcharge price range ($20-50) as unverifiable and potentially outdated; contact number and address used are official verified HBW details. Alcohol regulation note uses directional language, annual verification recommended. FAQ format retained and slightly expanded.
+
+---
+---`,
     faqs: [
       { question: '第一次租船需要驾照吗？', answer: '不需要 PCOC（船只驾照）。我们提供 Transport Canada 认可的 Rental Boat Safety Checklist，租船期间合法。汽车驾照只作为身份证明。' },
       { question: '安全简介要多久？', answer: '约 30 分钟。工作人员一对一讲解+示范。听不懂英语没关系，看示范跟着做即可。' },
@@ -3391,128 +3442,212 @@ Harris Boat Works，自1947年起，位於Rice Lake南岸Gores Landing。
     category: '租船与钓鱼',
     readTime: '7 分钟',
     keywords: ['Rice Lake 钓鱼 中文', 'Rice Lake 鱼种', 'FMZ 17 中文', '安省南部 钓鱼 中文', 'Rice Lake 季节 鱼'],
-    content: `
-## 快速答案
+    content: `## 簡短答案
 
-Rice Lake 是安省南部最受欢迎的休闲钓鱼湖之一，离多伦多 90 分钟车程。主要鱼种：
+Rice Lake是安大略省南部最受歡迎的休閒釣魚湖之一，距GTA大約1.5小時車程（視出發地點而異）。主要可釣魚種包括：
 
-| 鱼种 | 中文称呼 | 最佳季节 |
-|---|---|---|
-| Largemouth Bass | 大嘴鲈鱼 | 5 月底 - 10 月 |
-| Smallmouth Bass | 小嘴鲈鱼 | 5 月底 - 10 月 |
-| Walleye | 玻璃眼（黄鲈） | 5 月中 - 10 月 |
-| Northern Pike | 北方梭鱼 | 5 月 - 10 月 |
-| Crappie | 黑白条 | 5 月 - 7 月 |
-| Bluegill / Sunfish | 蓝鳃 / 太阳鱼 | 5 月 - 9 月 |
-| Yellow Perch | 黄鲈 | 全季 |
-| Carp | 鲤鱼 | 5 月 - 10 月 |
+| 魚種 | 常見中文稱呼 | 大致最佳季節 |
+|------|------------|-------------|
+| Largemouth Bass | 大嘴鱸魚 | 開釣後至10月 |
+| Smallmouth Bass | 小嘴鱸魚 | 開釣後至10月 |
+| Walleye | 梭鱸（玻璃眼） | 開釣後至10月，清晨黃昏最佳 |
+| Northern Pike | 白斑狗魚（梭魚） | 開釣後至10月 |
+| Crappie | 美洲鱸（黑白條） | 春末至夏初 |
+| Bluegill / Sunfish | 藍鰓太陽魚 | 春末至秋初 |
+| Yellow Perch | 黃鱸 | 全年（冬季冰釣也可） |
+| Carp | 鯉魚 | 春末至秋初 |
 
-Rice Lake 属于 FMZ 17（Fisheries Management Zone 17）。具体季节、尺寸、数量限制每年可能微调，请查 [Ontario FMZ 17 官方页面](http://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)。
+**重要：** Rice Lake屬於安大略省FMZ 17（漁業管理區17）。各魚種的具體開釣日期、尺寸限制和每日數量限制每年可能調整，**請以當年度安大略省官方釣魚規則（Ontario Fishing Regulations Summary）為準**，不要以本文或社群資訊作為規則判斷的依據。
 
-## 详细鱼种介绍
+---
 
-### Largemouth Bass（大嘴鲈鱼）
+## 釣魚證：必須有，不能忘
 
-Rice Lake 最常见的鱼种之一。喜欢温水、有水草掩护的浅水区。
+在Rice Lake釣魚，你需要有效的：
 
-- **季节**：5 月底官方开钓后到 10 月。最旺：6-7 月
-- **用饵**：软虫（plastic worms）、spinnerbait、popper（浮饵）
-- **钓点**：水草边缘、码头附近、倒木边
-- **典型尺寸**：1-3 lb 常见，4-5 lb 算大鱼
+1. **安大略省釣魚證（Ontario Fishing Licence）**
+2. **Outdoors Card**（辦理釣魚證的配套卡）
 
-### Smallmouth Bass（小嘴鲈鱼）
+這是法律要求，不是建議。第一次在安大略省釣魚的人很容易遺漏這一點，以為開船的PCOC或租船手續就涵蓋了釣魚資格, 完全不是。
 
-Rice Lake 数量比 Largemouth 少，但同样常见。喜欢清水、岩石底。
+釣魚證可在Ontario.ca線上辦理，或在授權的零售點購買。居民和非居民的費用不同。
 
-- **季节**：5 月底到 10 月。最旺：6 月 + 9 月
-- **用饵**：tube jig、drop shot、live minnow
-- **钓点**：岩石区、深水边缘、点
-- **典型尺寸**：1-2.5 lb 常见
+---
 
-### Walleye（玻璃眼 / 黄鲈）
+## 各主要魚種介紹
 
-很多华人钓友最想钓的鱼。Rice Lake 有不少 Walleye，但需要技巧。
+### Largemouth Bass（大嘴鱸魚）
 
-- **季节**：5 月中开钓后到 10 月。最旺：5-6 月 + 9-10 月，**早晨与黄昏**
-- **用饵**：jig + live minnow、worm harness、crankbait
-- **钓点**：深水边缘、河口、风冲岸
-- **典型尺寸**：14-20 inch（FMZ 17 有尺寸限制，必须遵守）
+Rice Lake最受歡迎的目標魚種之一。喜歡溫水、有水草遮蔽的淺水區。
 
-### Northern Pike（北方梭鱼）
+**最佳時段（一般而言）：** 開釣後至10月，6至7月活性最高。
+**釣點：** 水草邊緣、碼頭底下、倒木旁
+**常用釣法：** 軟蟲（Plastic Worm）、旋轉餌（Spinnerbait）、浮面餌（Popper）
+**典型尺寸：** 常見1至3磅，4磅以上算大魚
 
-俗称「水狼」。攻击性强，咬钩刺激。
+HBW的觀察：Rice Lake的Bass釣點不少，但水草區密集，要有耐心找魚才能有收穫。
 
-- **季节**：5 月开钓到 10 月。最旺：5 月 + 9 月
-- **用饵**：spoon、large spinner、live sucker
-- **钓点**：水草边缘、河口、阴凉处
-- **典型尺寸**：3-6 lb 常见，10 lb 以上算好鱼
+### Smallmouth Bass（小嘴鱸魚）
 
-### Crappie（黑白条）+ Bluegill / Sunfish（蓝鳃 / 太阳鱼）
+喜歡清水、岩石底的環境，在Rice Lake數量比大嘴鱸稍少，但同樣可釣。
 
-俗称 panfish。小但好吃，是华人家庭最爱带回家的鱼。
+**最佳時段（一般而言）：** 開釣後至10月，6月和9月通常表現最好。
+**釣點：** 岩石區、深淺水交界處
+**常用釣法：** Tube Jig、Drop Shot、活餌小魚
 
-- **季节**：5-7 月（产卵期最容易钓）
-- **用饵**：小型 jig、面包虫、小蚯蚓
-- **钓点**：浅水水草区、码头底下、芦苇边
-- **典型尺寸**：手掌大小
+### Walleye（梭鱸 / 玻璃眼）
 
-### Yellow Perch（黄鲈）
+很多GTA華人釣友的首要目標。Rice Lake有Walleye資源，但需要技巧和時機。
 
-全年可钓（冰钓也很受欢迎）。
+**最佳時段（一般而言）：** 開釣後至10月，5至6月和9至10月通常是旺季，清晨和黃昏遠優於正午。
+**釣點：** 深淺水交界、河口附近、風吹向的岸邊
+**常用釣法：** Jig＋活餌小魚、蚯蚓配件（Worm Harness）、曲身餌（Crankbait）
 
-- **季节**：全季
-- **用饵**：小 jig、蚯蚓、minnow
-- **钓点**：码头边、浅水区、各处都有
-- **典型尺寸**：6-10 inch
+**注意：** Walleye有尺寸限制，必須達到規定尺寸才可保留。具體尺寸請查當年度FMZ 17規則。
 
-## FMZ 17 主要规则
+### Northern Pike（白斑狗魚）
 
-| 项目 | 规则 |
-|---|---|
-| 钓鱼证 | 必须有效 Ontario Fishing Licence + Outdoors Card |
-| 季节 | 各鱼种不同（Bass 5 月底开，Walleye 5 月中开，Perch 全年） |
-| 尺寸限制 | 各鱼种不同，必须查官方页面 |
-| 每日限额 | 各鱼种不同（Bass 一般 4 条 sport licence，2 条 conservation） |
-| Bait Management Zone | FMZ 17 属于 Southern BMZ，活诱饵不可跨区运送 |
+攻擊性強，咬鉤刺激，適合喜歡大魚搏鬥感的釣友。
 
-### HBW dealer note
+**最佳時段（一般而言）：** 開釣後至10月，5月和9月通常是最強旺季。
+**釣點：** 水草邊緣、河口、陰涼遮蔽處
+**常用釣法：** 鐵片（Spoon）、大型旋轉餌、活餌
 
-很多华人新手不知道每个鱼种有不同的尺寸限制（要够大才能拿）。钓上来不够尺寸的必须**轻柔放生**。被查到留小鱼罚款很重。
+**注意：** Pike牙齒鋒利，取鉤時要小心，建議使用鉤鉗（Needle-nose Pliers）。
 
-## 最佳钓鱼季节
+### Crappie（美洲鱸）和 Bluegill / Sunfish（太陽魚）
 
-| 月份 | 适合什么 |
-|---|---|
-| 5 月 | Walleye 开钓，Pike 旺季，Panfish 产卵 |
-| 6 月 | Bass 开钓（月底），所有鱼种活跃 |
-| 7 月 | 旺季，所有鱼种好钓但水温高需早晚出 |
-| 8 月 | 早晚最好，中午水温太高 |
-| 9 月 | 黄金月，Walleye 与 Bass 都活跃 |
-| 10 月 | 最后季节，鱼大但需选好天气 |
+俗稱「Panfish」（平鍋魚），魚體不大但美味。很多GTA華人家庭的首選，因為容易釣、數量多、口感好。
 
-## 钓什么鱼最适合多伦多华人家庭
+**最佳時段（一般而言）：** 春末至夏初（產卵期），是全年最容易釣的時候。
+**釣點：** 淺水水草區、碼頭底下、蘆葦邊
+**常用釣法：** 小型Jig、麵包蟲、小蚯蚓
 
-新手家庭建议从 **Panfish + Yellow Perch** 开始：
+HBW的觀察：帶孩子釣魚的家庭，從Panfish開始是最好的選擇, 容易咬鉤、容易處理、完全適合新手和小孩。
 
-- 数量多、容易钓上来
-- 小孩能轻松操作
-- 好吃（华人家庭多数喜欢清蒸或红烧）
-- 没有季节限制（Perch 全年开放）
-- 装备简单（小钩、蚯蚓）
+### Yellow Perch（黃鱸）
 
-进阶可以追 **Largemouth Bass**（比较容易、放钩率高）或 **Walleye**（味道好，挑战大）。
+全年可釣，冬季冰釣也很受歡迎。是最容易釣到的魚種之一，對新手非常友好。
 
-## 你的下一步
+**最佳時段：** 全年均可，無明顯旺季淡季之分。
+**釣點：** 碼頭旁邊、淺水區，幾乎各處都有。
+**常用釣法：** 小型Jig、蚯蚓、活餌小魚
 
-1. 决定想钓什么鱼（决定时段与装备）
-2. 上 [Ontario.ca](https://www.ontario.ca/page/get-fishing-licence) 申请钓鱼证
-3. 上 [Harris Boat Works 租船页面](https://www.harrisboatworks.ca/rentalsfaqmandarin) 预订船
-4. 当天来 Rice Lake，享受钓鱼
+### Carp（鯉魚）
 
-如果你想看 Rice Lake 一日游的完整时间表与车程，参考我们的 [多伦多到 Rice Lake 一日钓鱼游完整指南](https://www.mercuryrepower.ca/blog/zh/toronto-rice-lake-one-day-fishing-trip-zh)。
+鯉魚在Rice Lake有一定數量，春末到秋初可釣。很多亞裔釣友熟悉鯉魚釣法。體型大，搏鬥力強，釣上來有成就感。
 
-**CTA：** 准备好第一次在 Rice Lake 钓鱼？打电话 905-342-2153 预订船或现场租钓具。
-`,
+**常用釣法：** 麵食餌料（玉米、麥粒）、Boilie餌料
+**注意：** 安大略省對鯉魚的保護和處理規定，請查當年度FMZ 17規則。
+
+---
+
+## 最佳釣魚時段
+
+| 月份 | 什麼適合釣 |
+|------|-----------|
+| 5月 | Walleye開釣旺季，Pike旺季，Panfish產卵期 |
+| 6月 | Bass開釣，所有魚種活性高 |
+| 7月 | 旺季，但正午水溫高，建議清晨和黃昏出釣 |
+| 8月 | 早晚明顯優於中午，水溫高魚活動深層 |
+| 9月 | 黃金月份，Walleye和Bass都非常活躍 |
+| 10月 | 最後季節，魚體肥美，但要選好天氣出釣 |
+
+一般而言，**清晨和黃昏的釣魚效果明顯優於正午**，尤其在7至8月水溫最高的時期。
+
+---
+
+## 新手和家庭的建議起點
+
+**第一次在Rice Lake釣魚，建議從Panfish和Yellow Perch開始：**
+
+- 數量多，容易釣上來，等待時間短
+- 適合孩子操作, 小鉤、小餌、不需要複雜技巧
+- 口感好（華人家庭多數喜歡清蒸或紅燒，這兩種魚都很適合）
+- Perch全年可釣，沒有季節限制
+- 裝備簡單：竿子、線、小鉤、蚯蚓就可以開始
+
+有了一定基礎後，可以進階嘗試**大嘴鱸魚**（比較容易、放釣率高）或**Walleye**（味道好，挑戰更大）。
+
+---
+
+## FMZ 17規則要點（請以官方當年版本為準）
+
+| 項目 | 一般指引 |
+|------|---------|
+| 釣魚證 | 需要有效的Ontario Fishing Licence和Outdoors Card |
+| 各魚種季節 | 每種魚不同，請查FMZ 17當年規則 |
+| 尺寸限制 | 各魚種有最小保留尺寸，不夠大的必須放生 |
+| 每日保留限額 | 依魚種和釣魚證類型（Sport / Conservation）不同 |
+| 誘餌管理區 | FMZ 17屬於南部誘餌管理區（Southern Bait Management Zone），活餌跨區攜帶有限制 |
+
+**HBW強調：** 很多新手不知道每種魚有不同的**尺寸限制**（Minimum Size Limit）, 只有達到規定最小尺寸的魚才能保留，不夠大的必須輕柔放生。被漁業執法人員查到留小魚會被重罰，這不是可以僥倖的規定。
+
+---
+
+## 怎麼去Rice Lake釣魚
+
+**第一步：** 在Ontario.ca辦理釣魚證（每年需要有效的當年度釣魚證）
+
+**第二步：** 查當年度FMZ 17釣魚規則，確認你打算釣的魚種的季節、尺寸和限額
+
+**第三步：** 到 **[harrisboatworks.ca](https://www.harrisboatworks.ca)** 預訂租船，或致電 **905-342-2153**
+
+**第四步：** 當天前往Gores Landing，完成安全簡介，出發
+
+---
+
+## 常見問題
+
+**Q：Rice Lake的Walleye要多大尺寸才能保留？**
+A：請以當年度Ontario Fishing Regulations Summary中FMZ 17的規定為準。本文不引用具體尺寸數字，因為規定可能每年更新。
+
+**Q：Panfish（太陽魚、Crappie）有數量限制嗎？**
+A：有。具體每日限額請查FMZ 17當年規則中的Panfish或「Sunfish」類別，依釣魚證類型（Sport或Conservation）限額不同。
+
+**Q：釣上來的魚可以帶回家嗎？**
+A：在規定的尺寸和限額內保留的魚可以帶回家。注意處理和攜帶的方式也有相關規定，詳查釣魚規則。
+
+**Q：不會英語，釣魚規則有中文版本嗎？**
+A：安大略省政府提供繁體中文釣魚規則摘要版，可作為理解框架的參考，但最終執行以英文完整版規定為準。可在ontario.ca搜尋釣魚規則查找中文摘要版。
+
+**Q：冬天可以在Rice Lake冰釣嗎？**
+A：Rice Lake有冰釣活動，但安全性取決於冰層厚度，需要自行判斷和確認當年冬季冰況。Harris Boat Works在冬季通常關閉（大約12月至3月），不提供冰釣相關服務。冰釣的具體規則和安全建議請查相關官方資源。
+
+---
+
+## 官方資源
+
+- 安大略省釣魚規則（含繁體中文摘要）：[ontario.ca/page/fishing-ontario](https://www.ontario.ca/page/fishing-ontario)
+- FMZ 17詳細規定：查Ontario Fishing Regulations Summary當年版本
+- 釣魚證辦理：[ontario.ca](https://www.ontario.ca)
+
+---
+
+## 內部連結
+
+- [第一次在Rice Lake租船：華人新手完整流程](/blog/zh/first-time-renter-walkthrough-zh)
+- [多伦多華人釣友：Rice Lake與Kawarthas釣魚船馬力怎麼選](/blog/zh/chinese-anglers-rice-lake-kawarthas-outboard)
+- [安大略省船隻法規與安全要求：華人船主必知](/blog/zh/ontario-boating-regulations-zh)
+
+---
+
+## 行動呼籲（CTA）
+
+**準備好第一次在Rice Lake釣魚了嗎？**
+致電 **905-342-2153** 或查 **[harrisboatworks.ca](https://www.harrisboatworks.ca)** 預訂租船。
+先辦好釣魚證，再出發。
+
+Harris Boat Works，自1947年起，位於Rice Lake南岸Gores Landing。
+
+---
+
+> **English Editor Note, POST 14 (rice-lake-fish-species-seasons-zh):**
+> Converted from Simplified to Traditional Chinese. Original was well-structured for species but lacked important safety and regulatory framing. Key improvements: fishing licence requirement moved to near the top of the article (not buried), this is a critical first-time angler oversight; species table retained with caveat row added; ALL specific dates, size limits, and possession limits removed and replaced with directional language + explicit instruction to check current-year regulations; Carp section added (highly relevant for Chinese-Canadian anglers who are familiar with carp fishing); minimum size limit emphasis added (HBW editor note preserved), this is genuinely important compliance information that GTA newcomers frequently miss; Chinese-language fishing regulations note added with appropriate caveat that English version governs. Annual verification required for: all season opening dates, all size limits, all possession limits, Bait Management Zone rules.
+
+---
+
+---`,
     faqs: [
       { question: 'Rice Lake 主要钓什么鱼？', answer: '大嘴鲈鱼、小嘴鲈鱼、Walleye、北方梭鱼、Crappie、Bluegill、Yellow Perch、Carp 都是常见鱼种。华人家庭最常带回家的是 Panfish 和 Perch（小但好吃）。' },
       { question: '什么时候是最佳钓鱼季节？', answer: '5 月 - 10 月都是钓鱼季。最旺：5-6 月 + 9-10 月，因为水温适中鱼最活跃。7-8 月旺但水温高，早晚出最好。' },
