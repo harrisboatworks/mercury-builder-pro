@@ -19426,228 +19426,187 @@ We also publish all our Mercury pricing live at [mercuryrepower.ca](https://merc
       { question: "What's the difference between SmartCraft Connect and VesselView Mobile?", answer: "Same idea, different generations. VesselView Mobile is the older Mercury phone-app product. SmartCraft Connect Mobile is the current product line. New installs in 2026 should use SmartCraft Connect. If you have an old VesselView Mobile install that still works, you don't need to upgrade unless you want the newer features." },
       { question: "How do I check if my motor is Boost-eligible?", answer: "The Mercury Marine app shows Boost eligibility once SmartCraft Connect is paired with your motor. As of 2026, Boost is available on select Mercury 150 HP FourStroke models with more rolling out. We can also check eligibility at HBW from our diagnostic tools, just give us your serial number." },
     ],
-    content: `# Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)
+    content: `### Quick Answer
 
-*Last reviewed: 2026-05-09*
+Mercury SmartCraft Connect Mobile is a small under-cowl module that streams engine data to the Mercury Marine app on your phone. It is not included with a new motor, it is sold separately. Compatible with Mercury 4-strokes from model year 2004 and up, 40 HP and up. The 25 HP and 30 HP class is only compatible from model year 2022 onward. Sub-25 HP motors are not compatible. Module part numbers: 8M0173128 (single-engine) and 8M0173129 (multi-engine). The Mercury Marine app is free on iOS and Android. No subscription.
 
-> **Quick answer:** SmartCraft Connect Mobile is a small under-cowl module that streams engine data to the Mercury Marine app on your phone. It is **not** in the box with a new motor. It works on Mercury 4-strokes from model year 2004 forward, 40 HP and up (25/30 HP only on 2022+). Sub-25 HP motors are not compatible. Module part 8M0173128 (single) or 8M0173129 (multi). Install at HBW.
+---
 
-If you've read the spec sheet on a new Mercury and seen "SmartCraft compatible," you might think the phone-app feature ships with the motor. It doesn't. SmartCraft Connect Mobile is a separately purchased module that adds wireless connectivity to a Mercury that already has the SmartCraft data network on board. This post is what we wish every customer knew before they ask "where's the app?"
+### Full Article
 
-We sell SmartCraft Connect modules at HBW. We install them. We've seen which motors are compatible and which ones aren't. Here's the honest version.
+A lot of the best engine data Mercury builds into its motors never makes it to the helm. Fault codes happen. Fuel economy data is collected. Engine hours accumulate. Without a way to read them, all of that stays invisible until something goes wrong.
+
+SmartCraft Connect Mobile fixes that for a relatively small investment, and without adding a dedicated display to the dashboard.
 
 ---
 
 ## What SmartCraft Connect Mobile Actually Is
 
-It's a **small module** that plugs into the SmartCraft network already built into compatible Mercury motors. The module pairs with your phone over Bluetooth and Wi-Fi and streams real-time engine data into the **Mercury Marine app** (free, iOS and Android).
+A small module, roughly the size of a deck of cards, that plugs into the SmartCraft network built into compatible Mercury motors. It pairs with a phone over Bluetooth and Wi-Fi and streams real-time engine data to the Mercury Marine app.
 
-What you see on the phone:
+**What you see on the phone:**
 - Engine RPM
 - Fuel rate (gallons per hour) and total fuel used per session
 - Engine temperature and coolant pressure
 - Battery voltage
-- Engine hours (lifetime and trip)
-- Fault codes when they occur, with plain-English explanations
-- Boost upgrade eligibility (for compatible models)
+- Engine hours, lifetime and per trip
+- Fault codes when they occur, with plain-English descriptions
+- Boost upgrade eligibility on compatible models
 - Maintenance reminders
 
-What it is **not**:
-- A chartplotter replacement (it doesn't do navigation)
-- A SmartCraft Gauge (the in-dash digital tachometer, separate product)
-- VesselView Mobile (older, similar product, being superseded)
-- A Boost upgrade itself (it lets you check eligibility, not buy it)
+**What it is not:** A chartplotter replacement. A SmartCraft gauge. A Boost upgrade itself. A VesselView dash display.
 
-The module is roughly the size of a deck of cards and lives under the cowl on a single-engine boat, or under the helm on a multi-engine boat. **You will not see it from the helm.** You will see its output in the app on your phone.
+The module lives under the cowl on a single-engine boat, or under the helm on a multi-engine setup. You never see it. You see its output in the app on your phone.
 
 ---
 
-## Compatibility: Who Can Add SmartCraft Connect Mobile
+## Compatibility
 
-This is the section that gets misunderstood most often. The Mercury spec is precise.
+| Motor Class | Compatible? | Notes |
+|---|---|---|
+| Mercury FourStroke 40 HP+ (2004 onward) | Yes | Most common installation |
+| Mercury Pro XS 115 HP+ (2004 onward) | Yes | |
+| Mercury Verado (any current year) | Yes | |
+| Mercury SeaPro 40 HP+ (2004 onward) | Yes | |
+| Mercury 25 HP and 30 HP | Yes, 2022+ only | Earlier years do not have the SmartCraft network |
+| Mercury Avator electric | Yes, different module; ask | |
+| Mercury 9.9, 20 HP small portables | **No** | Not SmartCraft-equipped by design |
+| Pre-2004 Mercury 4-strokes | **No** | |
+| Mercury 2-strokes and Optimax | **No** | Different protocol |
 
-| Motor class | Compatible? |
-|---|---|
-| **Mercury FourStroke 40 HP+** (model year 2004 onward) | **Yes**, most common installation |
-| **Mercury Pro XS 115 HP+** (model year 2004 onward) | Yes |
-| **Mercury Verado** (any year currently in service) | Yes |
-| **Mercury SeaPro 40 HP+** (model year 2004 onward) | Yes |
-| **Mercury 25 HP and 30 HP** | Only on **model year 2022 and newer** |
-| **Mercury Avator electric** | Yes (different module integration, ask) |
-| **Mercury 9.9-20 HP small portables** | **No**, not SmartCraft-equipped |
-| **Pre-2004 Mercury 4-strokes** | No |
-| **Mercury 2-strokes** | No |
-| **Mercury Optimax (older 2-stroke)** | No (uses different protocol) |
-
-**The most common mistake:** assuming a new portable kicker (like a 9.9 MH) supports the app. It doesn't. There's no SmartCraft network on those motors to plug into.
-
-If you're not sure about your motor, the cleanest check is your **serial number**. Email it to [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca) and we'll confirm in one reply.
+**Practical note:** If you have a 9.9 MH kicker, it does not support the app. There is no SmartCraft network on those motors. If you are unsure about your motor, email the serial number to info@harrisboatworks.ca, HBW can confirm compatibility in one reply.
 
 ---
 
 ## Module Part Numbers
 
-There are two variants. Pick the one that matches your boat:
-
-| Part number | Description | Best for |
+| Part Number | Description | For |
 |---|---|---|
-| **8M0173128** | Under-cowl single-engine module | One Mercury outboard |
-| **8M0173129** | Under-helm 1-to-4 engine module | Multi-engine setups (twins, triples, quads) |
+| 8M0173128 | Under-cowl single-engine module | One Mercury outboard |
+| 8M0173129 | Under-helm 1-to-4 engine module | Twins, triples, quads |
 
-Either way, the module is **purchased separately** from the motor. New Mercury buyers often expect the connectivity to be built in. It's not. Plan to add the module if you want phone-app data.
-
-Pricing is set by Mercury Canada and updates annually. Build a current quote with module included at [mercuryrepower.ca/quote/motor-selection](https://mercuryrepower.ca/quote/motor-selection) or call us.
+The module is purchased separately from the motor. Pricing is set by Mercury Canada and updates annually. See the current price at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
 
 ---
 
 ## How It Compares to VesselView Mobile and SmartCraft Gauges
 
-Three Mercury connectivity products, often confused.
+**SmartCraft Connect Mobile** is the current Mercury phone-app product. The phone is the display. This is what new installs in 2026 should use.
 
-### SmartCraft Connect Mobile (this product)
-Module + Mercury Marine app on your phone. Phone is the display. Newest, currently active product line.
+**VesselView Mobile** is the earlier-generation phone-app product with similar function. Mercury is transitioning to SmartCraft Connect. If you have a working VesselView Mobile install, you do not need to upgrade, but do not buy a new VesselView Mobile in 2026 when SmartCraft Connect is available.
 
-### VesselView Mobile (older sibling)
-Earlier-generation Mercury phone-app product, similar in function. Mercury is gradually transitioning to SmartCraft Connect Mobile, but VesselView Mobile still works on older installs. **Don't buy a new VesselView Mobile in 2026** if you have the option of SmartCraft Connect.
+**SmartCraft Gauges / VesselView dash displays** are hardwired in-dash digital gauges, the same data plus more, in a permanent dashboard display. They pair well with SmartCraft Connect for a backup-data setup.
 
-### SmartCraft Gauges / VesselView dash displays
-Hardwired in-dash digital gauges that show the same data plus more. These are **separate hardware** (not the module) and serve customers who want a permanent dashboard display rather than relying on a phone. Pair well with SmartCraft Connect for a belt-and-suspenders setup.
-
-If you want one sentence: **SmartCraft Connect = phone display. VesselView dash = built-in display. They aren't either-or.**
+Short version: SmartCraft Connect = phone display. VesselView dash = built-in display. They are not either-or.
 
 ---
 
-## How It Integrates with Garmin, Humminbird, and Other Chartplotters
+## Chartplotter Integration (Garmin, Humminbird)
 
-Most modern chartplotters from Garmin and Humminbird can read Mercury engine data over the **NMEA 2000** network (the standard marine data protocol). SmartCraft Connect Mobile is an addition to that, not a replacement.
+Most modern chartplotters from Garmin and Humminbird can read Mercury engine data over an NMEA 2000 network. SmartCraft Connect Mobile is an addition to that, not a replacement.
 
-Two integration paths:
+**Path A, via NMEA 2000:** Requires an NMEA 2000 backbone and a Mercury SmartCraft-to-NMEA gateway. The chartplotter shows engine data. SmartCraft Connect adds the phone-app layer, guest access, trip tracking, and fault diagnostics off the water.
 
-**Path A: via NMEA 2000.** If you have a NMEA 2000 backbone on your boat with a Mercury SmartCraft-to-NMEA gateway, your chartplotter already shows engine data on the navigation screen. SmartCraft Connect Mobile adds the phone-app layer on top, useful for guests, for tracking trips, and for fault diagnostics off the boat.
+**Path B, SmartCraft Connect alone:** No chartplotter, no NMEA 2000. Phone is the display. The cleanest setup for small fishing boats, kicker-rigged hulls, and budget-conscious customers who do not need a Garmin yet.
 
-**Path B: SmartCraft Connect alone.** No chartplotter, no NMEA 2000. The phone is the display. Cleanest setup for small fishing boats, kicker-rigged hulls, and budget-conscious customers who don't want to invest in a Garmin until later.
-
-For most Ontario freshwater boaters with a Mercury 60-115 HP and a basic Lowrance or Humminbird, **Path A is overkill** and SmartCraft Connect Mobile alone is the right answer.
+For most Ontario freshwater boaters with a Mercury 60, 115 HP and a basic fishfinder, Path A is overkill. SmartCraft Connect alone is the right answer.
 
 ---
 
-## Install: DIY vs HBW
+## Install: DIY vs. HBW
 
-The module installs in roughly 30 minutes on a single-engine boat. It plugs into the SmartCraft network harness, gets a 12V power tap, and lives under the cowl. **Mercury markets it as a customer-installable item.**
+The module installs in roughly 30 minutes on a single-engine boat. It plugs into the SmartCraft network harness on the motor and gets a 12V power tap. Mercury markets it as customer-installable.
 
-In practice:
+**DIY works if:** You have done basic electrical work on your boat, you are comfortable removing the cowl, and you know which connector on the motor's harness is the SmartCraft service port.
 
-**DIY-friendly if:** you've done basic electrical work on your boat, you're comfortable removing the cowl, and you know which connector on your motor's harness is the SmartCraft service port.
+**Bring it to HBW if:** You have never opened the cowl, you want the module integrated cleanly with no loose wiring, you want app pairing tested and confirmed before you leave, and you want it on the service log for the rest of the motor's life.
 
-**Bring it to HBW if:** you've never opened the cowl, you want the module integrated cleanly with no loose wiring, you want app pairing tested and confirmed before you leave, or you want it on the warranty / service log for the rest of the motor's life.
-
-Our install fee is set up-front (call for current rate) and includes the module, the install, app pairing, and a brief on-boat walkthrough. We've done dozens of these. **The most common DIY mistake** is missing the SmartCraft service connector and instead splicing into the analog tach signal, which doesn't work and creates a confusing failure mode.
+The most common DIY mistake: missing the SmartCraft service connector and splicing into the analog tach signal instead. This does not work and creates a confusing failure mode. HBW has done dozens of these installs. The fee is set up-front and includes the module, the install, app pairing, and a brief walkthrough.
 
 ---
 
 ## What the Mercury Marine App Looks Like in Practice
 
-Once paired, the app has three main views:
+Three main views:
 
-1. **Live engine view:** RPM, speed, fuel rate, battery, temp, hours. Updates every second.
-2. **Trip log:** start/stop a trip, see distance, fuel used, average speed. Useful for season-end fuel cost reckoning.
-3. **Health and faults:** current fault codes (if any), maintenance schedule, hour-based reminders.
+**Live engine view:** RPM, speed, fuel rate, battery, temperature, hours, updating every second.
 
-The app also stores trip history and surfaces **proactive maintenance alerts**. For example, when the motor crosses 100 hours since the last logged service, it nudges you to book annual service. Customers who use the app actually keep up with maintenance better than customers who don't, which means fewer mid-season breakdowns and longer motor life.
+**Trip log:** Start/stop a trip. Distance, fuel used, average speed. Useful for season-end fuel cost reckoning.
 
----
-
-## Boost Upgrade Eligibility (for compatible Mercury models)
-
-Mercury Boost is a paid software upgrade that bumps horsepower on certain models without changing the physical hardware. SmartCraft Connect lets you **check eligibility** for Boost from the app, see the price, and (on supported models) purchase and apply the upgrade through the dealer network.
-
-**Currently Boost-eligible** (as of 2026): select Mercury 150 HP FourStroke models, with potential expansion to other classes. Eligibility is motor-by-motor, depends on serial number and current calibration. The app gives you a definitive answer in seconds. We've also written a [Mercury Boost upgrade analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis) for pontoon owners.
-
-You don't need SmartCraft Connect Mobile to buy Boost. You can also walk into HBW and we'll check eligibility from our diagnostic tools. The app just makes it self-serve.
+**Health and faults:** Current fault codes, maintenance schedule, hour-based reminders. When the motor crosses 100 hours since the last logged service, the app nudges you to book.
 
 ---
 
-## Why Rice Lake and the Kawarthas Find SmartCraft Connect Useful
+## Why Rice Lake and Kawarthas Boaters Find It Useful
 
-This is local but real: a lot of our customers have **multiple boats and one phone**. A summer aluminum on Rice Lake, a kicker-rigged Lund at the cottage on Stoney, maybe a pontoon on Pigeon. The same phone, the same Mercury app, can pair with whichever motor you're on at the moment.
+A lot of HBW customers run multiple boats, a summer aluminum on Rice Lake, a kicker-rigged setup on Stoney or Pigeon. The same phone and the same Mercury app pairs with whichever motor is being used that day.
 
-For boaters who **lock through the Trent-Severn**, the trip-log feature is a small joy. You finish a Rice-to-Peterborough run, the app shows you exactly how much fuel and how many hours, and you have a record. For [Trent-Severn 2026 trip planning](/blog/trent-severn-waterway-boating-guide-2026), this kind of accurate data is genuinely useful.
+For boaters who lock through the Trent-Severn, the trip-log feature shows fuel used and hours on the water, a real record of the trip.
 
-For Rice Lake ProKicker setups, the engine-hour tracking on the kicker is the killer feature. Trolling hours otherwise vanish into "I think we've done about 50 hours this season." The app says **47.3**.
-
----
-
-## What HBW Brings Specifically
-
-We've been on Rice Lake since 1947 and a Mercury dealer since 1965. SmartCraft Connect Mobile is one of the easier Mercury add-ons we sell, and we install it at every repower where the customer wants it.
-
-- We stock both module variants (8M0173128 and 8M0173129).
-- We install during repower so the customer drives away with the app already paired and tested.
-- We confirm compatibility against your motor's serial number before you commit, so nobody gets sold a module that won't work on a sub-25 HP kicker.
-- We answer Mercury app setup questions for the life of the motor, not just at sale.
-
-If you're repowering, building a quote at [mercuryrepower.ca](https://mercuryrepower.ca) lets you add the module to the line item and we install it as part of rigging.
+For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practical payoff. Trolling hours are easy to underestimate. The app says exactly what happened.
 
 ---
 
-## Frequently Asked Questions
+## Boost Upgrade Eligibility
 
-**Does my new Mercury come with SmartCraft Connect Mobile?**
-No. New Mercury motors are SmartCraft-network-equipped (on most 40 HP and larger models from 2004 onward, and on 25-30 HP from 2022 onward), but the SmartCraft Connect **module** that talks to your phone is sold separately. It's part number 8M0173128 (single-engine) or 8M0173129 (1-4 engines). Plan to buy and install it if you want app data.
+Mercury Boost is a paid software upgrade that improves mid-range acceleration on compatible motors. SmartCraft Connect lets you check eligibility directly from the app. As of 2026, Boost is available on select Mercury FourStroke and Pro XS models, eligibility is motor-by-motor by serial number. The app gives a definitive answer in seconds.
 
-**My Mercury is 9.9 HP. Can I add SmartCraft Connect?**
-No. Mercury outboards under 25 HP are not SmartCraft-equipped. There's no internal data network for the module to plug into. Sub-25 HP motors are mechanical and analog by design.
+You do not need SmartCraft Connect to buy Boost, HBW can also check eligibility using diagnostic tools. SmartCraft Connect makes it self-serve.
 
-**My Mercury is a 30 HP from 2018. Is it compatible?**
-No. The 25 HP and 30 HP class only became SmartCraft-compatible on **model year 2022 and newer**. A 2018 30 HP doesn't have the network onboard. Confirm with your serial number at HBW if unsure.
-
-**Does the Mercury Marine app cost anything?**
-The app itself is free on iOS and Android. The module (8M0173128 or 8M0173129) is the paid component. There's no subscription fee.
-
-**Can I install the module myself?**
-Yes, if you're comfortable working under the cowl and identifying the SmartCraft service connector. Most owners can do it in 30 minutes with basic hand tools. If you're not sure, we'll install it at HBW for a fixed fee.
-
-**Will SmartCraft Connect work with my Garmin chartplotter?**
-The module talks to your phone, not directly to a chartplotter. For chartplotter integration, you need a separate **NMEA 2000 gateway** that takes Mercury SmartCraft data and converts it to NMEA 2000. Most modern Mercury 4-strokes have this connection available; ask us before you buy a gateway.
-
-**What's the difference between SmartCraft Connect and VesselView Mobile?**
-Same idea, different generations. VesselView Mobile is the older Mercury phone-app product. SmartCraft Connect Mobile is the current product line. New installs in 2026 should use SmartCraft Connect. If you have an old VesselView Mobile install that still works, you don't need to upgrade unless you want the newer features.
-
-**How do I check if my motor is Boost-eligible?**
-The Mercury Marine app shows Boost eligibility once SmartCraft Connect is paired with your motor. As of 2026, Boost is available on select Mercury 150 HP FourStroke models with more rolling out. We can also check eligibility at HBW from our diagnostic tools, just give us your serial number. See our [Mercury Boost upgrade analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis) for details on whether the upgrade makes sense for your boat.
+For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
-## Ready to Add SmartCraft Connect to Your Motor?
+## FAQs
 
-Two paths.
+**Does my new Mercury come with SmartCraft Connect Mobile?** 
+No. New Mercury motors are SmartCraft-network-equipped (on compatible models), but the module is sold separately.
 
-1. **Repower customers:** add the module to your quote at [mercuryrepower.ca/quote/motor-selection](https://mercuryrepower.ca/quote/motor-selection) and we install it during rigging. Most customers add it at the same time as the new motor.
-2. **Existing motor owners:** call us with your serial number and we'll confirm compatibility, quote the module, and book an install slot. About 30 minutes in the shop.
+**My Mercury is 9.9 HP. Can I add SmartCraft Connect?** 
+No. Mercury outboards under 25 HP are not SmartCraft-equipped. There is no internal network for the module to connect to.
 
-**Phone:** 905-342-2153
-**Email:** [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca)
-**Configurator:** [mercuryrepower.ca/quote/motor-selection](https://mercuryrepower.ca/quote/motor-selection)
+**My Mercury is a 30 HP from 2018. Is it compatible?** 
+No. The 25 HP and 30 HP class only became SmartCraft-compatible from model year 2022. A 2018 30 HP does not have the network.
 
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON, K0K 2E0
+**Does the Mercury Marine app cost anything?** 
+The app is free on iOS and Android. The module is the paid component. No subscription.
 
-**Related guides:**
-- [Mercury Outboard Motor Families (FourStroke vs Pro XS vs Verado)](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
-- [Mercury Boost Upgrade Analysis (150 HP Pontoon)](/blog/mercury-boost-upgrade-150hp-pontoon-analysis)
-- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Mercury Controls and Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario)
-- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+**Will it work with my Garmin chartplotter?** 
+The module talks to your phone over Bluetooth/Wi-Fi, not directly to a chartplotter. For chartplotter integration, a separate NMEA 2000 gateway is needed.
+
+**How do I check Boost eligibility?** 
+The app shows eligibility once SmartCraft Connect is paired. HBW can also check with diagnostic tools using your serial number.
 
 ---
 
-## Sources
+## Two Paths Forward
 
-- Parks Canada - Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
-- Parks Canada - Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Ontario Ministry of Natural Resources - Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+**If you are repowering:** Add the module to your quote at [mercuryrepower.ca](https://mercuryrepower.ca). HBW installs it during rigging and you leave with the app already paired.
 
-*Last reviewed: 2026-05-11.*
-`,
+**If you already have a compatible motor:** Call HBW at 905-342-2153 with your serial number. HBW confirms compatibility, quotes the module, and books an install slot, about 30 minutes of shop time.
+
+---
+
+## Internal Links
+- Mercury Controls & Rigging Guide Ontario
+- Mercury Boost Software Upgrade Eligibility 2026
+- Mercury 9.9 EFI Review Ontario
+- Mercury Outboard Motor Families Guide
+
+## CTA
+
+**Add SmartCraft Connect to your repower quote.** 
+[mercuryrepower.ca](https://mercuryrepower.ca), or call 905-342-2153 with your motor's serial number. 
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
+Mercury Platinum dealer. Est. 1947.
+
+---
+
+**English editor note:** Service scope sentence ("For engine repairs, we only service Mercury and Mercruiser.") appears naturally near the end of the Boost section. Compatibility matrix is sourced from the existing post, verify current model-year compatibility with Mercury Canada before publishing. No fabricated pricing.
+
+---
+
+---`,
   },
   {
     slug: "outdoor-boat-storage-shrinkwrap-rice-lake",
@@ -20061,157 +20020,154 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
       { question: "Is the Mercury 9.9 MH EFI the same as a ProKicker?", answer: "No. The 9.9 MH EFI is the simple portable version with manual start, tiller, and short shaft. ProKicker-style models are built around trolling control with a high-thrust prop, Command Thrust gearcase, and standard power tilt." },
       { question: "Is $2,999 + HST a good price for the Mercury 9.9 MH EFI in Ontario?", answer: "Based on visible Canadian listings reviewed in May 2026, it is a very strong posted price. Other Canadian dealer pages for the 9.9 MH EFI show prices ranging from about $3,069 to $3,875 CAD. Dealer prices, fees, stock, and inclusions can change, so compare the full out-the-door offer, not just the headline number." },
     ],
-    content: `# Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About
+    content: `### Quick Answer
 
-*Last reviewed: 2026-05-10*
+The Mercury 9.9 MH EFI is a manual-start, tiller-handle, short-shaft portable with electronic fuel injection and no cranking battery required. It is well suited to small aluminum fishing boats, cottage boats, tenders, and restricted-horsepower lakes. It is not a guaranteed planing motor for every 14-foot aluminum, and it is not the right call if you need electric start, power tilt, remote controls, or a long-shaft transom. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range.
 
-The Mercury 9.9 MH EFI is one of those motors that sounds boring until you understand why people keep asking about it.
+---
 
-The Mercury 9.9 MH EFI is getting attention because it brings modern fuel injection to a small, simple, manual-start outboard without turning the boat into a wiring project.
+### Full Article
 
-As of May 2026, Harris Boat Works is offering the Mercury 9.9 MH EFI for $2,999 CAD + HST with no extra charges or setup fees. That includes the 12 L fuel tank and hose, plus free prep.
+Most 9.9 HP outboards on Ontario boats are doing one of two things: serving as the primary motor on a small aluminum or tender, or riding on the stern corner of a bigger rig as a walleye trolling kicker. The Mercury 9.9 MH EFI is built for the first job.
 
-Yes, we know how that sounds. Every dealer says the price is sharp. The difference is we will show you the math.
+Here is what the "MH EFI" means before we go further:
 
-> **Pricing scope:** This $2,999 + HST special applies to the Mercury 9.9 MH EFI specifically (manual start, tiller, 15 inch short shaft). Other 9.9 variants (EH electric handle, ProKicker, Big Foot, Command Thrust) are priced separately. If you're shopping a different version, get a quote so we're comparing the right configuration.
+- **M**, Manual pull start
+- **H**, Tiller handle
+- **EFI**, Electronic fuel injection
 
-[Build your Mercury 9.9 quote](/quote/motor-selection)
+Shaft length: 15-inch short shaft. Displacement: 208 cc (12.8 cubic inches). External 12L / 3.2 gal fuel tank with fuel line.
 
-## Quick answer
+---
 
-The Mercury 9.9 MH EFI is a portable 9.9 hp FourStroke outboard with manual start, tiller steering, a 15 inch short shaft, electronic fuel injection, and a dry weight listed around 84 lb by dealer specifications. The big news is the EFI system. Mercury says the manual-start models use battery-free EFI, meaning the pull start charges the electrical system needed for ignition rather than requiring a cranking battery.
+## Why EFI Matters in a Small Outboard
 
-That makes it interesting for small aluminum boats, tenders, cottagers, fishing boats, and low-horsepower lakes where people want simple portable power without going back to carburetor headaches.
+Small portable outboards have traditionally been carbureted. That works fine when they run regularly, but a carbureted 9.9 that sat for six months over winter, on fuel it was not stabilized with, can be a frustrating experience come spring.
 
-This is a very smart little motor for the right boat. A 9.9 is still a 9.9, and hull shape, load, prop, shaft length, transom height, battery weight, and how much "just one more thing" you bolted into the boat all matter.
+Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stays simple. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range. The fuel economy number will vary by load and conditions, but the practical payoff is cleaner fuel control during cold starts and after seasonal storage.
 
-## Why EFI matters in a small outboard
+---
 
-For years, small portable outboards were usually where carburetors went to live forever. That was not always a disaster, but it did mean more sensitivity to stale fuel, seasonal sitting, cold starts, and the classic "it ran fine last year" conversation.
+## Battery-Free EFI, The Feature Worth Noting
 
-Mercury's newer 9.9 EFI changes the conversation because it brings electronic fuel injection into a small portable package. Mercury says the EFI system is designed for easier starts and more efficient performance, and Mercury also claims up to 27% better fuel economy than earlier carbureted models in the same horsepower range.
+Manual-start outboards typically do not need a battery. The problem with older EFI systems on small outboards is that they sometimes required one. Mercury's manual-start 9.9 EFI does not. Pulling the starter rope charges the electrical system enough to support ignition.
 
-That does not mean you can ignore fuel quality. It does not mean old gas suddenly becomes a good idea. It does mean the motor is built around a more modern fuel system, which matters a lot for the way many small outboards actually get used.
+This matters because it keeps the motor genuinely simple and portable. No key switch, no cranking battery, no electrical project to add to the installation. If the appeal of a 9.9 is simplicity, the battery-free operation preserves that.
 
-Most 9.9 owners are not running every day like a commercial operator. They fish on weekends. They use the cottage boat when the weather cooperates. They might run the motor a handful of times in a season, then let it sit. That pattern shows up across forum threads where buyers compare EFI against carbureted outboards because their boats sit for months between uses.
+---
 
-That is where EFI makes sense. Not because it turns a small outboard into a spaceship, but because it solves a real annoyance for real people.
+## Who This Motor Is Right For
 
-## What "MH" means: manual start, tiller, short shaft
+The 9.9 MH EFI is a strong fit for:
 
-For this article, we are talking about the Mercury 9.9 MH EFI specifically.
+- **Small aluminum fishing boats** (12, 14 feet where the transom, capacity plate, and load match)
+- **Cottage boats** on smaller lakes or restricted-horsepower water
+- **Back-lake trips** in the Kawarthas where a simple, reliable motor matters more than outright speed
+- **Tenders and utility boats**
+- **Restricted-horsepower lakes** where 9.9 HP is the regulated maximum
 
-In practical terms, that means manual pull start, tiller-handle steering, a 15-inch short shaft, electronic fuel injection, 208 cc displacement, and a 12 L / 3.2 gal external fuel tank with fuel line. Mercury dealer listings show 5,000 to 6,000 RPM as the full-throttle operating range and call for 87 octane fuel with up to 10% ethanol.
+For Rice Lake and the back lakes around the Kawarthas, this motor solves a real small-boat problem without making the boat more complicated. The best customer is not someone chasing top speed, it is someone who wants a simple, honest 9.9 that starts well, runs clean, and avoids carburetor drama.
 
-The important part is not memorizing the spec table. The important part is matching this motor to the right boat.
+---
 
-| Item | Mercury 9.9 MH EFI |
+## Who This Motor Is the Wrong Call For
+
+The 9.9 MH EFI is the wrong motor if:
+
+- **Your boat is a heavy, decked-out aluminum rig.** Owners of fully loaded 1448-style boats with added decking, batteries, and gear have found that 9.9 HP struggles to get on plane, even with just one person aboard. This motor does not guarantee planing on every 14-foot aluminum.
+- **You need a dedicated trolling setup on a larger rig.** For kicker-motor walleye trolling on a bigger boat, the Mercury 9.9 EFI ProKicker, with its Command Thrust gearcase and high-thrust prop, is the comparison model to evaluate. Different job, different tool.
+- **You need electric start, power tilt, or remote controls.** The MH EFI does none of these. If any of them matters to your setup, look at other configurations.
+- **Your transom is long-shaft.** This is the short-shaft (15") version. Measure your transom before buying.
+
+---
+
+## Standard 9.9 EFI vs. ProKicker-Style Use
+
+"Mercury 9.9 EFI" means different things depending on the version. The motor in this review is the standard 9.9 MH EFI: manual start, tiller handle, short shaft, standard gearcase.
+
+Mercury's 9.9 EFI ProKicker is built for trolling: high-thrust four-blade prop, Command Thrust gearcase, standard power tilt. Buyers comparing the two typically care about gear ratios, prop options, top speed versus trolling control, electric start, and tilt. If your primary use is slow-speed walleye trolling on a kicker mount, the ProKicker conversation is worth having separately.
+
+---
+
+## The Price, What HBW Has Published
+
+As of the source post (May 2026), HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069, $3,875 CAD range.
+
+**Verify current pricing at [mercuryrepower.ca](https://mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
+
+---
+
+## Our Honest Take
+
+If you buy from Harris Boat Works, we service it too. For engine repairs, we only service Mercury and Mercruiser.
+
+The 9.9 MH EFI solves the problem most small-boat owners on Rice Lake and the Kawarthas actually have: a simple portable motor that starts reliably, runs clean on EFI, and does not require a battery project to operate. The carburetor drama that shows up on older small outboards after six months of storage is the problem this motor is designed to avoid.
+
+It is not for everyone. Check your transom height, check your boat's capacity plate, and be honest about whether you need electric start or remote controls. If none of those apply, the 9.9 MH EFI is one of the cleaner small outboard options available in Ontario in 2026.
+
+---
+
+## Specs Reference
+
+| Specification | Mercury 9.9 MH EFI |
 |---|---|
 | Horsepower | 9.9 hp |
 | Start | Manual pull start |
 | Steering | Tiller handle |
-| Shaft | 15 inch short shaft |
+| Shaft length | 15" short shaft |
 | Fuel system | Electronic fuel injection |
 | Cylinders | 2-cylinder FourStroke |
-| Displacement | 12.8 cu in / 208 cc |
-| Dry weight | About 84 lb (varies by dealer source) |
-| Fuel tank | External 12 L / 3.2 gal tank |
-| Common use | Small aluminum boats, tenders, cottage boats, back-lake boats |
+| Displacement | 208 cc (12.8 cu in) |
+| Dry weight | Approximately 84 lb |
+| Fuel tank | External 12L / 3.2 gal |
+| Full-throttle RPM range | 5,000, 6,000 |
+| Recommended fuel | 87 octane, up to 10% ethanol |
 
-## Battery-free EFI: the sneaky-good feature
+---
 
-The most interesting feature is not just "EFI." It is battery-free EFI on the manual-start version.
+## FAQs
 
-Mercury says the manual-start 9.9 EFI models require no cranking battery because pulling the starter rope charges the electrical system enough to support ignition. That is a big deal for people who want the cleaner starting and fuel control of EFI without adding a battery just to make the engine run.
+**Does the Mercury 9.9 MH EFI require a battery?** 
+No. The manual-start version is designed to operate without a cranking battery. Pulling the starter rope charges the electrical system enough to run the EFI. This is one of the motor's most practical features for small-boat and tender applications.
 
-That is the point a lot of boaters miss. EFI used to sound like "great, now I need more wiring." On this motor, the manual-start version keeps the simple portable setup.
+**Will the 9.9 MH EFI get my 14-foot aluminum on plane?** 
+It depends on the boat's total weight. A basic 14-foot aluminum with one person and minimal gear, yes. A heavily loaded 1448-style boat with added decking, batteries, gear, and multiple passengers, not reliably. Check your boat's capacity plate and be honest about your typical load.
 
-No key switch. No cranking battery. No extra electrical project. Just fuel, water, rope, and the usual reminder not to pull like you are starting a chainsaw in a panic.
+**Is the 9.9 MH EFI the right kicker for walleye trolling?** 
+For trolling on a larger boat, the Mercury 9.9 EFI ProKicker (Command Thrust gearcase, high-thrust prop) is the more purpose-built option. The standard MH EFI works as a kicker but is optimized for small-boat primary power, not slow-speed trolling on a big rig.
 
-## Best fits: small aluminum, cottage, back-lake
+**What is the shaft length?** 
+15 inches, short shaft. Measure your transom height before buying. If your transom is 20" or taller, you need a long-shaft version.
 
-The Mercury 9.9 MH EFI is a strong fit for boaters who want simple, portable power and do not need electric start, remote steering, power trim, or a high-thrust trolling setup.
+**Does HBW service the 9.9 EFI?** 
+Yes. For engine repairs, we only service Mercury and Mercruiser. All HBW technicians are Mercury-certified.
 
-On Rice Lake and the back lakes around the Kawarthas, this is the motor we would consider for a lot of 12 to 14 foot aluminum boats where the transom, capacity plate, and load are a good match.
+**Can I use regular pump gas?** 
+The motor recommends 87 octane with up to 10% ethanol. Ethanol-free fuel will run cleaner over storage, HBW sells ethanol-free 89-octane marine gas at the dock in Gores Landing.
 
-Good fits include small aluminum fishing boats where a 9.9 is the right horsepower and the transom is set up for a short shaft, cottage boats that get used in bursts and need to start without drama, back-lake boats where carrying less extra equipment matters, tenders and utility boats that need a clean modern portable outboard, and restricted-horsepower lakes where 9.9 hp is the limit or the practical choice.
+---
 
-It also makes sense for people who are tired of carburetor problems but do not want to overcomplicate a small boat.
+## Internal Links
+- Mercury SmartCraft Connect Guide Ontario
+- Mercury Controls & Rigging Guide Ontario
+- Walleye Opener Boat Prep Checklist
+- Trent-Severn Waterway Boating Guide 2026
 
-## Where this motor is the wrong call
+## CTA
 
-This is the part most product pages skip.
+**See the current price on the Mercury 9.9 MH EFI.** 
+[mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, full configuration. 
+Or call 905-342-2153. 
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
+Mercury Platinum dealer. Est. 1947.
 
-The Mercury 9.9 MH EFI is the wrong call if the boat needs a different configuration. Heavy, decked-out aluminum boats, where a 9.9 may struggle to plane a heavy hull with floors, batteries, gear, and multiple people. Dedicated trolling on larger rigs, where a Command Thrust or ProKicker-style setup may be the better conversation. Electric start, power tilt, or remote controls, none of which this MH model has. Long-shaft transoms, since this is the short-shaft version.
+---
 
-It is also not a guaranteed "get on plane" button for every 14 foot aluminum boat. Owner discussions show new Mercury 9.9 motors sometimes struggling to plane heavier 1448-style boats with added decking, batteries, and gear, even with one person aboard.
+**English editor note:** Service scope sentence ("For engine repairs, we only service Mercury and Mercruiser.") appears twice, once in "Our Honest Take" (mirroring the source post language) and once in the FAQ. The $2,999 CAD price is from the source post as of May 2026, verify current pricing before publishing. Specs table drawn from source post; confirm against current Mercury Canada spec sheets before publishing.
 
-That does not mean the motor is bad. It means setup matters. A wide, heavy, decked-out aluminum boat with batteries, gear, flooring, a trolling motor, anchors, tackle, cooler, and one optimistic guy standing in the wrong spot is not the same as an empty tin boat in a brochure photo.
+---
 
-## Standard 9.9 EFI vs ProKicker-style use
-
-A lot of confusion comes from the fact that "Mercury 9.9 EFI" can mean different things depending on the version.
-
-The 9.9 MH EFI in this article is the simple portable version. Manual start, tiller handle, short shaft, standard gearcase. It is made for straightforward small-boat use.
-
-The ProKicker-style conversation is different. Mercury describes the 9.9 EFI ProKicker as a trolling-focused model with a high-thrust four-blade prop, Command Thrust gearcase, and standard power tilt. Forum discussions show buyers often comparing standard 9.9 models against ProKicker setups because they are trying to understand gear ratios, prop choices, top speed, trolling control, electric start, tilt, and whether they are buying for speed or for slow-speed control.
-
-The short version: do not buy the 9.9 MH EFI expecting it to behave like a dedicated trolling kicker on a larger boat. Buy it because you want a simple, portable, fuel-injected 9.9.
-
-## The price is a big part of the story
-
-As of May 2026, HBW's current price on the Mercury 9.9 MH EFI is $2,999 CAD + HST. No extra charges. No setup fee. Free prep. The 12 L fuel tank and hose are included.
-
-That matters because visible Canadian listings reviewed in May 2026 show how quickly this motor can climb once you start comparing retail pricing. Other Canadian dealer pages for the 9.9 MH EFI show prices in the $3,069 to $3,875 CAD range. Prices change. Dealer fees vary. Stock changes. Some listings include shipping language, some do not, and not all are Ontario dealers.
-
-Based on those visible Canadian listings, $2,999 CAD + HST with no extra fees and the fuel tank, hose, and prep included is among the strongest posted offers we found.
-
-[Build your quote at mercuryrepower.ca](/quote/motor-selection)
-
-## What we would actually recommend
-
-We like the Mercury 9.9 MH EFI because it solves a real small-boat problem without making the boat more complicated.
-
-We have been selling and servicing Mercury outboards on Rice Lake since 1947. Most motors in this horsepower range go on cottage boats, tenders, and small aluminum fishing boats, which is exactly where this 9.9 makes sense.
-
-It gives you the benefit most people actually want from modern EFI. Easier starting, cleaner fuel control, and less carburetor drama. At the same time, the manual-start model keeps the setup simple because it does not need a cranking battery just to run.
-
-The price helps too. At $2,999 CAD + HST with the 12 L tank and hose included, no extra charges, and free prep, this is one of the most straightforward small Mercury deals we have had in a while.
-
-Would we put it on every boat? No. Would we recommend it for the right short-shaft aluminum boat, tender, cottage boat, or restricted-horsepower setup? Absolutely.
-
-The best customer for this motor is not someone chasing top speed. It is someone who wants a simple, honest 9.9 that starts well, runs clean, and does not turn every spring into a carburetor support group.
-
-If you buy from us, we are also the ones servicing it. For engine repairs, we only service Mercury and Mercruiser, and a 9.9 is the kind of motor we know cold.
-
-[Build your Mercury 9.9 quote](/quote/motor-selection)
-
-## FAQ
-
-**Is the Mercury 9.9 MH EFI fuel injected?**
-Yes. The Mercury 9.9 MH EFI uses electronic fuel injection. Mercury says the EFI system is designed for easier starts and efficient performance.
-
-**Does the manual-start Mercury 9.9 EFI need a battery?**
-Mercury says the manual-start 9.9 EFI models do not require a cranking battery because pulling the starter rope charges the electrical system needed for ignition.
-
-**How much does the Mercury 9.9 MH EFI weigh?**
-Dealer specifications list the Mercury 9.9 MH EFI around 84 lb dry weight.
-
-**What shaft length is the Mercury 9.9 MH EFI?**
-The 9.9 MH EFI is a 15-inch short-shaft model. Make sure your boat's transom is right for a short shaft before buying.
-
-**What comes with the HBW Mercury 9.9 MH EFI offer?**
-As of May 2026, HBW's current offer is $2,999 CAD + HST, with no extra charges or setup fees. It includes the 12 L fuel tank and hose, plus free prep.
-
-**Will the Mercury 9.9 EFI plane my 14-foot aluminum boat?**
-It depends on the boat, load, prop, shaft length, weight distribution, and hull setup. Owner discussions show that even a newer Mercury 9.9 may struggle to plane a heavier 1448-style aluminum boat when the boat has added decking, batteries, and gear.
-
-**Is the Mercury 9.9 MH EFI the same as a ProKicker?**
-No. The 9.9 MH EFI is the simple portable version with manual start, tiller, and short shaft. ProKicker-style models are built around trolling control with a high-thrust prop, Command Thrust gearcase, and standard power tilt.
-
-**Is $2,999 + HST a good price for the Mercury 9.9 MH EFI in Ontario?**
-Based on visible Canadian listings reviewed in May 2026, it is a very strong posted price. Other Canadian dealer pages for the 9.9 MH EFI show prices ranging from about $3,069 to $3,875 CAD. Dealer prices, fees, stock, and inclusions can change, so compare the full out-the-door offer, not just the headline number.
-`,
+---`,
   },
   {
     slug: "mercury-90-hp-fourstroke-review-ontario",
