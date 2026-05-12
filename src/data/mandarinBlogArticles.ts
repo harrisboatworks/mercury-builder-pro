@@ -2088,99 +2088,218 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
     category: '安省法规中文',
     readTime: '6 分钟',
     keywords: ['安省租船 驾照 中文', 'PCOC 租船 中文', 'Rental Boat Safety Checklist 中文', '多伦多 租船 不需要驾照', '华人 租船 安省 规则'],
-    content: `
-## 快速答案
+    content: `## 快速答案
 
-短答案：**你不需要 PCOC（Pleasure Craft Operator Card）也可以在安省合法租船。**
+在加拿大租船，**通常需要 PCOC（船隻操作員卡）**。部分租船公司會在你前往時提供「臨時免除 PCOC」的 Safety Briefing（限該次租用），但這不是法律默認。即使有臨時免除，安全責任仍然在操作者身上。如果你計劃多次租船或將來買船，建議直接取得 PCOC，因為它一次性終身有效。
 
-Transport Canada 明确规定（[官方页面](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)）：完成 **Rental Boat Safety Checklist** 后，在租船期间作为 proof of competency 有效，仅限那次租船。
+---
 
-也就是说：
+## PCOC 與租船的關係
 
-- 自己拥有动力船 → 必须有 PCOC（终身有效）
-- 租船 → 可以用 PCOC，也可以用临时的 Rental Boat Safety Checklist
+**PCOC（Pleasure Craft Operator Card，船隻操作員卡）** 是 Transport Canada 規定的證件。法律規定：任何在加拿大水域操作有馬達的休閒船的人，必須持有 PCOC 或同等證明。
 
-两者在法律上都合规，但适用场景不同。
+**這個規定適用於租船嗎？** 一般來說，**是的**。
 
-## 两个文件哪里不一样
+**但有一個重要例外：**
 
-| 项目 | PCOC | Rental Boat Safety Checklist |
-|---|---|---|
-| 谁需要 | 任何操作动力船的人 | 仅限租船操作者 |
-| 有效期 | **终身有效** | **仅当次租船** |
-| 费用 | 一次性约 $50 加元 | **免费**（包含在租金里） |
-| 申请方式 | 在线课程 + 测验 | 租船时在现场完成 |
-| 全省 / 全加拿大通用 | 是 | 是（仅限该次租船） |
-| 时间投入 | 3–5 小时 | 约 30 分钟现场简介 |
+許多租船公司可以提供「臨時 PCOC 免除」（Rental Boat Safety Checklist），允許承租人在沒有 PCOC 的情況下操作租用的船。這個免除是針對該次特定的租用，不可轉用於其他船或其他次。
 
-### HBW dealer note
+這個免除需要：
+- 完成租船公司的安全簡報（Safety Briefing）
+- 簽署完成簡報的證明文件
+- 文件在船上隨時可查
 
-第一次来 Rice Lake 的华人家庭最常问：「我没有驾照，可以租船吗？」答案是：**可以**。我们每年帮上百个第一次操作船的家庭完成 Rental Boat Safety Checklist，从未有过任何问题。
+---
 
-## PCOC 适合谁
+## 哪些租船公司提供 PCOC 免除？
 
-值得拿 PCOC 的情况：
+不是所有的租船公司都提供這個。提供的需要：
 
-1. **你打算买船** —— 自己拥有动力船必须有 PCOC，不能用临时检查表
-2. **你常常在不同湖区租船** —— 一次性投资 $50，终身免去现场简介时间
-3. **你计划长期玩水** —— PCOC 也涵盖朋友的船（朋友带你去湖钓鱼）
-4. **家里有人买船** —— 自己有 PCOC 等同备份资格
+1. 持有有效的營業執照
+2. 員工經過培訓，能進行 Safety Briefing
+3. 有書面的 Safety Checklist 流程
 
-PCOC 在线考试有中文学习材料（[BOATsmart!](https://www.boatsmart.ca/) 等机构提供）。考试通过即终身有效，全加拿大通用。
+HBW 的租船在你預訂時會告知當前要求。請致電 905-342-2153 或在預訂時詢問。
 
-## Rental Boat Safety Checklist 适合谁
+如果你在大多倫多區考慮多個租船選擇，建議事先詢問每家公司關於 PCOC 的政策。
 
-适合：
+---
 
-1. **第一次在安省租船的华人家庭** —— 不确定以后会不会再租，先试一次
-2. **GTA 华人来 Rice Lake 一日游** —— 一年来 1–2 次，没必要为 PCOC 投资 $50
-3. **多伦多探亲访友** —— 家人来加拿大旅游，临时玩一天
+## 為什麼建議直接取得 PCOC
 
-我们在租船前的安全简介涵盖：
+如果你正在考慮租船或將來買船，**直接取得 PCOC 更實際**：
 
-- 船的基本操作（启动、加速、转向、停船）
-- 救生衣使用与穿戴
-- 紧急情况应对（落水、机械故障、迷路）
-- Rice Lake 与 FMZ 17 的当地规则
-- 限速区、保护区、浅水区注意事项
+**好處：**
+- **一次性費用** $40-60 加幣
+- **終身有效**（不需要續期）
+- **不受租船公司政策影響**：你可以在任何符合條件的船上操作
+- **沒有現場簡報延遲**：你抵達租船公司時直接拿船離開
+- **適用於買船未來**：如果你之後買船，PCOC 已經有了
+- **線上完成**：2-3 小時，可以在家完成
+- **多家認證機構**：包括中文選項
 
-完成后签字，租船期间作为 proof of competency 完全合法。
+**不建議跳過 PCOC 的情境：**
+- 你計劃多次租船
+- 你計劃將來買船
+- 你想在不同船上操作
+- 你不想在租船日花時間做簡報
 
-## 如果被查到没文件会怎样
+---
 
-加拿大水上警察（RCMP marine units 或 OPP）有权抽查。如果操作者既没有 PCOC 也没有完成 Rental Boat Safety Checklist：
+## 租船 Safety Briefing 通常包含什麼？
 
-- 罚款：每次 $250 加元起
-- 可能被要求立即返港
-- 租船公司可能因此被警告
+如果你選擇用臨時免除，租船公司的 Safety Briefing 通常涵蓋：
 
-这就是为什么 Harris Boat Works 不允许任何人在没完成安全简介的情况下租船 —— 不仅保护你，也保护我们的执照。
+**1. 船隻操作基礎**
+- 啟動與停止馬達
+- 換檔（前進、空檔、後退）
+- 油門與舵的使用
+- 緊急停止程序
 
-## 还要分清楚：钓鱼证不是同一回事
+**2. 安全配備**
+- 救生衣（PFD）的位置與穿戴
+- 信號哨、信號彈
+- 急救包
+- 滅火器（如果適用）
 
-很多华人家庭把这三件事混在一起：
+**3. 通訊與緊急程序**
+- 無線電（VHF）使用基礎
+- 撥打 911 / 加拿大海岸防衛
+- 何時呼救
+- 信號燈與閃光燈
 
-| 文件 | 管什么 |
-|---|---|
-| **PCOC** | 你这个人是否有操作动力船的资格 |
-| **Rental Boat Safety Checklist** | 你这次租船是否合法 |
-| **Pleasure Craft Licence (PCL)** | 你的船是否需要显示号码（10 HP 以上自有船需要） |
-| **Ontario Fishing Licence** | 你是否可以钓鱼，以及可钓鱼种与数量 |
+**4. 水域特定資訊**
+- 該水域的危險（暗礁、淺水、強流）
+- 主要航行通道
+- 港口與避難所
+- 天氣警告應對
 
-详细解释请看我们的 [PCOC、PCL、钓鱼证完整指南](https://www.mercuryrepower.ca/blog/zh/ontario-chinese-boating-license-fishing-guide)。
+**5. 法律規定**
+- PFD 強制要求
+- 不允許酒駕船
+- 速度與航道規則
+- Conservation Officer 檢查
 
-## 在 HBW 租船的实际流程
+**6. 文件**
+- 你必須隨身帶的證件
+- 隨船文件（保險、註冊）
+- 緊急聯絡資訊
 
-1. 在线预订（建议提前一两周，周末旺季提前更早）
-2. 当天到达，签字
-3. 完成 Rental Boat Safety Checklist 简介（约 30 分钟）
-4. 上船，享受
-5. 还船，签退
+簡報時間：**通常 30-60 分鐘**，取決於水域複雜度與你的經驗。
 
-整个流程对华人家庭非常友好。我们的工作人员主要使用英文沟通，但租船 FAQ 有中文页面（[harrisboatworks.ca/rentalsfaqmandarin](https://www.harrisboatworks.ca/rentalsfaqmandarin)）。
+---
 
-**CTA：** 准备好第一次在 Rice Lake 租船？打电话 905-342-2153 或在线预订。我们处理过很多第一次的华人家庭，过程比你想像中简单。
-`,
+## Safety Checklist：你應該確認什麼
+
+不論你是租船還是借船，出航前自己檢查：
+
+**前一晚或當天早上：**
+- [ ] 天氣預報（風速、浪、雷雨警告）
+- [ ] 釣魚證或其他相關許可
+- [ ] PFD 數量與條件
+- [ ] 個人物品（食物、水、防曬、雨具）
+- [ ] 手機充電
+- [ ] 緊急聯絡人知道你的計劃
+
+**抵達租船公司：**
+- [ ] Safety Briefing 完成
+- [ ] 文件簽署
+- [ ] 燃油確認
+- [ ] 船隻外觀檢查（無明顯損傷）
+- [ ] 安全配備齊全
+- [ ] 救生衣穿戴測試
+
+**離開碼頭前：**
+- [ ] 排水塞已安裝
+- [ ] 馬達運轉正常
+- [ ] 通訊設備測試
+- [ ] 鏡子與儀表正常
+- [ ] 船帆/錨繩可用
+- [ ] 知道返航路線
+
+**水上：**
+- [ ] 隨時穿著 PFD（或至少觸手可及）
+- [ ] 保持安全速度
+- [ ] 避開禁航區
+- [ ] 監聽 VHF 16 頻道（如果可能）
+- [ ] 記錄位置與時間
+- [ ] 警惕天氣變化
+
+**返航：**
+- [ ] 倒船入碼頭前先停下確認
+- [ ] 把船繫好或交還租船公司
+- [ ] 確認船與配備齊全
+- [ ] 結算燃油（如果適用）
+
+---
+
+## Rice Lake 特定的安全須知
+
+如果你計劃在 Rice Lake 租船：
+
+**沉沒鐵路**
+- 跨越湖中段，深度約 4 英尺
+- Chartplotter（Navionics、Garmin、C-MAP）會標示
+- 過湖中段時減速
+
+**夏季水草**
+- 大部分湖區水草茂盛
+- 螺旋槳會纏到水草
+- 在淺水區慢行
+
+**西風**
+- 西風會在 32 km 長的東西軸上累積強波
+- 風速超過 25 km/h 時，較小船體會不舒服
+- 風速超過 35 km/h 對小船相當危險
+
+**返航時間**
+- 確認天黑前能返航
+- 沒有航行燈的船，禁止日落後操作
+
+---
+
+## 常見問題
+
+**租船一定要 PCOC 嗎？**
+通常需要。但部分租船公司會提供臨時免除（Safety Briefing），允許該次租用無 PCOC 操作。確認時請致電該租船公司。
+
+**HBW 的租船需要 PCOC 嗎？**
+通常需要，但部分情況下會提供臨時免除。請致電 905-342-2153 確認當前政策。
+
+**租船保險誰負責？**
+租船公司會有他們的責任保險（涵蓋船與第三方），但承租人通常負責船內個人物品和個人傷亡。詳細責任分配請看租船合約。
+
+**如果租船時發生事故誰負責？**
+這需要看合約與情況。一般原則：
+- 操作者責任（如酒駕、超速、無視警告）
+- 設備故障（租船公司責任）
+- 天氣不可抗力（雙方分擔）
+- 第三方故意行為（第三方責任）
+
+**租船需要押金嗎？**
+是。租船公司通常要求預付押金（範圍視船型而定），出船時刷信用卡作為押金，返船時釋放。
+
+**如果我有 PCOC，租船會打折嗎？**
+通常不會。但你可以省下 Safety Briefing 的時間，更早出船。
+
+---
+
+## 內部連結
+
+- [新移民安大略省買船完整指南](/blog/zh/new-immigrant-ontario-boat-buying-guide)
+- [安省華人船主入門：PCOC、PCL、釣魚證](/blog/zh/ontario-chinese-boating-license-fishing-guide)
+- [Rice Lake 釣魚完整攻略](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
+- [多倫多到 Rice Lake 一日釣魚遊](/blog/zh/toronto-rice-lake-one-day-fishing-trip-zh)
+
+---
+
+## 準備租船或取得 PCOC？
+
+**租船：** [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) 或撥打 **905-342-2153**
+
+**PCOC：** 在 Transport Canada 認證機構線上完成（搜尋 "PCOC online")
+
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Platinum 認證船廠 | 自 1947 年`,
     faqs: [
       { question: '在安省租船一定要有 PCOC 吗？', answer: '不一定。Transport Canada 允许租船操作者完成 Rental Boat Safety Checklist 作为 proof of competency。这个简介通常由租船公司在租船前提供，免费，约 30 分钟。' },
       { question: 'Rental Boat Safety Checklist 跟 PCOC 有什么不同？', answer: 'PCOC 终身有效、全国通用、需要在线课程通过测验、费用约 $50。Rental Boat Safety Checklist 仅当次租船有效、免费、现场完成。两者法律效力在租船场景下相同。' },
