@@ -11130,174 +11130,149 @@ If you have a specific hull in mind and want to know if a repower makes sense be
     category: 'How To',
     readTime: '12 min read',
     keywords: ['trailer boat toronto rice lake', 'ontario trailer rules', 'boat launch rice lake'],
-    content: `
-*Last reviewed: 2026-05-07*
+    content: `## Quick Answer
 
-> **Quick answer:** Toronto to Rice Lake, Ontario is roughly 90 minutes via the 401 and Highway 28. Tire pressure, working trailer lights, and a tested coupler are non-negotiable. Plan your launch. Bewdley, Hastings, and Gores Landing all work. Pickup is in person at HBW; we don't ship boats. Quote at mercuryrepower.ca.
-
-> Towing rules in Ontario are set by the Ministry of Transportation Ontario (MTO) and change occasionally. The numbers below reflect MTO regulations as of May 2026. Verify current weight, width, and licensing rules at ontario.ca/page/towing-trailer before any long-distance haul.
-
-Rice Lake, Ontario (in the Kawarthas) sits about 90 minutes northeast of Toronto, close enough for a long weekend, far enough that a lot of boaters have never made the drive with a trailer hitched on. If you're doing it for the first time, or the first time in a while, the trip is straightforward. But there are enough small things that can go wrong between the 401 and the Gores Landing boat ramp that a little prep goes a long way.
-
-This guide covers everything: the drive, the trailer checklist, Ontario's licensing rules for towing, the best boat launches around Rice Lake, and the mistakes we see every spring at the marina. We've been at this since 1947 at Harris Boat Works, three generations of watching boats arrive from the GTA, some of them in better shape than others. In our Aug-Nov 2025 window alone, we logged 1,746 work orders and 584 winterizations. We see what happens to boats that travel unprepared, and it's preventable.
+Trailering a boat from Toronto to Rice Lake takes about 80–90 minutes via Highway 401 east, Highway 115 north, and County Road 28 north into Gores Landing. The route is mostly highway. Plan for trailer brakes if your rig is over 1,400 kg combined. Confirm tire pressure, lights, and bearing condition before you leave. Verify with current traffic conditions before departing.
 
 ---
 
-## Ontario Trailer Rules: What You Actually Need to Know
+## The Route, In Plain Terms
 
-Before you hit the highway, get the paperwork straight. Ontario doesn't require a special driver's licence for most boat trailers, but there are thresholds you need to know.
+From central Toronto: 401 east through Scarborough and Whitby, exit onto Highway 115 northbound at Newcastle/Port Hope. Stay on 115 about 40 minutes through farmland, then exit onto County Road 28 north for the last 15 minutes into Gores Landing.
 
-**Licence requirements by trailer weight:**
+Most of the drive is straight, two-lane highway after you get off 401. The trickiest parts are 401 traffic timing (weekend mornings and Friday afternoons are crowded), and the County Road 28 stretch in late fall when leaves are wet.
 
-- Standard Class G licence: covers trailers with a GVWR (gross vehicle weight rating) of up to 4,600 kg, this covers the vast majority of recreational boat trailers
-- A-frame trailer licence: not required for conventional boat trailers
-- Air brake endorsement: not applicable to recreational trailers
-
-In practical terms: if you're hauling an aluminum fishing boat, a small bowrider, or a 19-foot pontoon, your regular G licence is fine. Where it gets complicated is large pontoons or cabin cruisers on heavy-duty trailers, if you're unsure, check your trailer's GVWR plate on the tongue.
-
-**What you do need:**
-
-- Valid trailer registration (keep it in the tow vehicle)
-- Working trailer lights, brake lights, turn signals, running lights
-- Safety chains attached and crossed under the hitch ball coupler
-- Proper weight distribution, tongue weight should be 10-15% of total trailer weight
-
-Ontario does spot-check towing setups at weigh stations and during RIDE programs. A burned-out trailer light is the easiest fix you'll ever postpone and the most reliably ticketed defect on the road.
+If your GPS routes you through the Trent-Severn parkway or smaller back roads, override it and stay on 115. Faster, smoother, and you can avoid surprises with bridges or weight-restricted roads.
 
 ---
 
-## Trailer Prep Checklist Before You Leave
+## Before You Leave Toronto: Trailer Checklist
 
-Don't leave the driveway without running this. Most roadside problems are preventable.
+Going through this once at home saves you a bad day on the side of the 401. Spend 20 minutes:
 
-### Hitch and Coupler
-- Coupler locked onto ball, pin or clip engaged
-- Safety chains crossed and attached with shackles or approved hooks
-- Breakaway cable (if applicable) connected to tow vehicle
+**Tires**
+- Pressure to spec (check the trailer sidewall). Cold tires read differently than hot, do it before leaving.
+- Sidewall cracks or sun damage. Tires over 5–6 years old should be replaced regardless of tread.
+- Spare tire: present, inflated, the right size, and you know where the jack is.
 
-### Lights
-- Both tail lights working
-- Both brake lights working
-- Both turn signals working
-- Clearance lights (if applicable)
-- Check with someone standing behind the trailer while you operate the pedals
+**Bearings**
+- Touch each hub after a short drive. A hub that's hot to the touch (uncomfortable to keep your hand on) means bearings are dry or failing. Get them packed before the longer drive.
+- Repack annually if you trailer regularly. Bearing failure on the 401 east of Toronto is a very expensive education.
 
-### Tires and Wheels
-- Trailer tires inflated to spec (check the tire sidewall, not the car spec)
-- Lug nuts torqued, trailer wheels are notorious for loosening on the first trip of the season
-- Spare tire present and inflated
-- No visible dry rot or sidewall cracking on tires that wintered outside
+**Lights**
+- Brake lights, turn signals, running lights. Test all of them. A friend at the back is the easy way.
+- Have a backup of replacement bulbs in the tow vehicle.
 
-### Bearings
-- Wheel bearings greased or repacked, this is the one most people skip
-- Bearing Buddies pressed in (if equipped) and grease visible at the zerk fitting
-- No grinding or resistance when you spin a wheel by hand
+**Brakes (if equipped)**
+- Hydraulic surge brakes, check the master cylinder for fluid level and look for leaks.
+- Electric brakes, controller in the tow vehicle is set correctly.
+- Breakaway cable: in place, hooked to the tow vehicle frame, not the ball.
 
-### Tie-Downs
-- At least four tie-down straps across the boat (bow, stern, port, starboard)
-- Bow winch strap snug and winch latched
-- Stern safety chain attached if your trailer has one
-- No straps rubbing on sharp trailer edges
+**Coupler and Safety Chains**
+- Coupler latched and pinned, not just resting on the ball.
+- Safety chains crossed under the coupler, hooked to the tow vehicle frame.
+- Wiring connector in, secure, not dragging.
 
-### Motor
-- Outboard tilted up and locked in the travel position
-- Motor support bracket in place for transom protection on longer trips
-- Engine flush plug reinstalled (if you flushed before trailering)
-
-### Boat
-- Bilge drain plug removed for travel (put it somewhere you won't forget it, cup holder works)
-- No loose gear inside the boat that can shift at highway speed
-- Bimini collapsed and secured
-- Anything that can become a projectile at 110 km/h is tied down or removed
+**Boat-on-Trailer**
+- Bow strap and stern straps tight. Use a winch strap at the bow, not just a rope.
+- Anything loose in the boat (rod holders, coolers, lifejackets) secured or removed.
+- Drain plug installed in the boat (sounds silly until you forget it).
 
 ---
 
-## The Drive: Toronto to Rice Lake
+## Toronto to Gores Landing: Drive Timeline
 
-**The route:** From the 401 east of Toronto, take the 115/35 north toward Peterborough. Past Peterborough, pick up County Road 2 east, then north on County Road 18 toward Gores Landing. The GPS will get you there.
+**Toronto to Whitby (about 30 minutes)** — Highway 401 east. Watch for construction, the worst weekday morning rush hour stretch in Canada. Saturday mornings before 9 a.m. are reliably clear.
 
-Total distance from downtown Toronto: approximately 145-155 km depending on your exact start point. Drive time without a trailer: around 90 minutes. With a trailer and the appropriate speed reduction through construction zones, budget 100-110 minutes.
+**Whitby to Port Hope (about 20 minutes)** — Continuing east on 401. Lighter traffic, faster pace. Watch for OPP enforcement, this stretch has been known for speed checks.
 
-**Where things can go wrong on the drive:**
+**Port Hope to Highway 115 turnoff (about 5 minutes)** — Exit onto Highway 115 north.
 
-Highway 115 north of the 401 is heavily trafficked on Friday afternoons. If you're leaving Toronto after 3:00 p.m. on a long weekend, add 30-45 minutes to your estimate. The bottleneck is typically the 401/115 interchange and the stretch through the Peterborough area.
+**Highway 115 to County Road 28 (about 25 minutes)** — Mostly two-lane through farmland. Watch for left-turning traffic onto side roads, slower-moving local traffic, and seasonal farm equipment.
 
-**Speed and handling:**
-- Reduce highway speed to 100-105 km/h when towing, stability control on modern tow vehicles works best when you're not pushing limits
-- Increase following distance, braking distance with a loaded trailer is significantly longer
-- Avoid abrupt lane changes, especially if you haven't confirmed your trailer's sway sensitivity
-- Check mirrors every 30 seconds, you want to catch a sway early
+**County Road 28 to Gores Landing (about 15 minutes)** — Rural road, well-paved but narrower. The last 5 minutes into Gores Landing is downhill toward the lake; watch your brakes if you're carrying a heavy load.
 
-**Fuel:**
-The drive is short enough that most rigs can make it on a single tank, but if your tow vehicle gets substantially reduced fuel economy under load (most do), plan to stop. There are gas stations at major intersections along County Road 2 near Bewdley. Don't arrive at the ramp running on fumes, turning around to find fuel with a loaded trailer in tow is avoidable.
+**Total: 80–90 minutes** in normal conditions. Add 15–30 minutes on weekend afternoons during cottage season.
 
 ---
 
-## Boat Launches Around Rice Lake
+## Trailer Weight and Tow Vehicle Considerations
 
-Rice Lake has several public and semi-public launch sites. Here's what you're working with:
+**Combined trailer + boat weight under 1,400 kg (3,000 lbs):** Most mid-size SUVs and trucks can handle this without trailer brakes required, but check your tow vehicle's manufacturer ratings.
 
-**Gores Landing:** The ramp directly adjacent to Harris Boat Works. Good ramp, reasonable parking. This is where we see most of our customers launch. The ramp is maintained, and there's usually space on weekday mornings. Weekends in July and August fill up fast, arrive early or expect a wait.
+**Combined weight 1,400–3,400 kg (3,000–7,500 lbs):** Trailer brakes are required by law in Ontario (and a good idea regardless). Verify your tow vehicle's tow rating exceeds the combined load.
 
-**Bewdley:** One of the most-used launches on the south shore. Public ramp maintained by Northumberland County. Parking lot fills quickly on summer weekends.
+**Combined weight over 3,400 kg (7,500 lbs):** A full-size truck or HD truck is typically required. Verify against the tow vehicle's gross combined weight rating (GCWR).
 
-**Harwood:** On the southwest corner of the lake. Another county-maintained ramp, with reasonable access from Highway 2.
-
-**Hastings:** On the north shore via County Road 45. Longer drive from Toronto but less congested on busy weekends. Good option if you're planning to fish the northeast end of the lake.
-
-**Serpent Mounds Provincial Park (Roseneath):** The park maintains a ramp with day-use access. Can be busy on summer weekends, but the ramp quality is good.
-
-A few things all these launches have in common: they all get congested on holiday weekends, none of them have significant marina services on-site, and the ramp quality varies with seasonal water levels. Rice Lake's water level fluctuates, what's a smooth launch in June can be a shallow-water event in late August. Watch your depth and take it slow.
-
-If you want to see what the lake is producing this season before you trailer up, check our [2026 Rice Lake fishing season outlook](https://mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook).
+When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actual numbers is worth the $15.
 
 ---
 
-## Common Rookie Mistakes (And a Few That Aren't Rookie)
+## What to Do at the Launch in Gores Landing
 
-**Forgetting the bilge plug.** It's in the cup holder. Nobody puts it back. You'll get to the ramp, drop the boat in, and watch it slowly fill. Keep a spare attached to the trailer tongue.
+If you're launching at our public ramp at Gores Landing:
 
-**Not walking the lights the night before.** Trailer light systems corrode. The connector at the hitch socket is exposed to everything. A five-minute check in the driveway saves a 30-minute roadside stop.
+1. **Pull into the staging area** before the actual ramp. Get the boat ready to launch (straps off, drain plug in, motor down), not while blocking the ramp.
+2. **Back the trailer down the ramp** until the boat floats off cleanly. Have a friend on the dock to walk the boat to a temporary tie-up.
+3. **Park the tow vehicle and trailer** in the lot. The Gores Landing public lot fills up fast on weekends.
+4. **Boat in the water, trailer parked, you're good.** The whole process should take 5–10 minutes once you've done it a couple of times.
 
-**Bearings.** We see this every season at the service shop. Someone trailers their boat from a dry-stored location, bearings are dry from 6 months sitting, and they seize on the 401. Repack or inspect before the first trip of the season without exception. If you're unsure, our spring commissioning service includes a trailer inspection, the service runs about $511 on average based on 232 spring jobs we completed last season, and it's the right place to catch this before it strands you on the highway.
-
-**Not knowing the ramp.** First time at Gores Landing, first time at Bewdley, walk the ramp before you back down. Ramp angle, surface material (concrete vs. gravel), and depth at the end vary significantly. A 60-second scout prevents a stuck truck.
-
-**Crossing safety chains.** This isn't a rookie mistake, it's what the chains are for. Cross them under the hitch ball in an X pattern. If the hitch fails, the chains keep the trailer from dropping to the road. Don't loop them straight down.
-
-**Too much speed on tight county roads.** The last 20 km to Rice Lake involves winding county roads through small communities. Slow down. The posted limits assume cars, not a combined vehicle length of 10 metres.
+If you're new to launching a trailer, do not learn on a busy Saturday morning at a public ramp. Practice once at a quiet weekday launch first.
 
 ---
 
-## HBW's Role at the Lake
+## Coming Back: The Drive Home
 
-We're at 5369 Harris Boat Works Rd, Gores Landing, right on the water. If your motor needs attention before or after a trip, [book service online](https://hbw.wiki/service) or call us at 905-342-2153. For engine repairs, we only service Mercury and Mercruiser.
+The return trip can be busier than the trip out. Weekend afternoons on 401 west into Toronto can add 30–60 minutes.
 
-If you're thinking about a new boat or motor ahead of the season, build your quote at [mercuryrepower.ca](https://mercuryrepower.ca), real prices, no phone tag required. We publish our numbers. Most regional marinas don't.
+**Best return windows:**
+- Saturday afternoon before 3 p.m.
+- Sunday morning before 11 a.m.
+- Weekday late evening after 7 p.m.
 
-And if you want to make sure your motor is properly commissioned before it goes in the water this spring, see our [spring outboard commissioning checklist](https://mercuryrepower.ca/blog/spring-outboard-commissioning-checklist).
-
-Read more about [the best Mercury outboards for Rice Lake fishing](https://mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing) if you're still working out your rig setup.
-
----
-
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
-
-## Related guides
-
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
-- [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing). Lake Simcoe walleye picks
-- [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout). Lake Ontario salmon and trout setups
-- [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
+**Worst return windows:**
+- Sunday afternoon 2–6 p.m. in summer
+- Friday afternoons (cottage traffic going north meets Toronto rush hour)
 
 ---
 
-## Sources
+## FAQs
 
-- Ontario Ministry of Natural Resources - Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+**How long is the drive from Toronto to Rice Lake?**
+About 80–90 minutes in normal conditions. Saturday and Sunday afternoons during cottage season can add 30 minutes or more.
 
-*Last reviewed: 2026-05-11.*
-`,
+**Do I need trailer brakes for a boat under 1,400 kg?**
+Not legally required in Ontario, but check your tow vehicle's rating. For trailers over 1,400 kg combined, brakes are required.
+
+**What's the speed limit for towing a trailer in Ontario?**
+Same as the posted limit, but never above 110 km/h on most highways. Some trailers have lower speed-rated tires; check yours.
+
+**Is there a closer launch than Gores Landing?**
+Bewdley is about the same drive from Toronto (slightly less on the 401, slightly more on rural roads). Hastings is east, longer. Roseneath is closer for east-Toronto residents.
+
+**Can you receive my boat at HBW for service or repower?**
+Yes. Trailer it to 5369 Harris Boat Works Rd, Gores Landing. We have space to receive boats on trailers. Submit a service request first at [hbw.wiki/service](https://hbw.wiki/service) so we know you're coming.
+
+---
+
+## Internal Links
+
+- [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide), where to launch on Rice Lake
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), conditions and hazards
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), pre-trip motor prep
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
+
+---
+
+## Ready for the Drive?
+
+Build a quote for your Mercury motor, before or after the trip, at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live installed pricing in CAD.
+
+Service requests for HBW: **[hbw.wiki/service](https://hbw.wiki/service)**.
+
+Phone: **905-342-2153**.
+
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
     faqs: [
       {
         question: 'How long does it take to trailer a boat from Toronto to Rice Lake?',
@@ -13844,217 +13819,151 @@ If you're considering a new motor instead of repairing this one, build a Mercury
     category: "Lifestyle",
     readTime: "11 min read",
     keywords: ["Rice Lake boating guide", "Rice Lake fishing 2026", "Rice Lake boat launch", "Rice Lake sunken railway", "FMZ 17 fishing regulations", "Rice Lake walleye opener"],
-    content: `# Rice Lake, Ontario Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes
+    content: `## Quick Answer
 
-*Last reviewed: 2026-05-07*
-
-> **Quick answer:** Rice Lake is shallow, weedy, and unforgiving on props, local knowledge matters. Public launches at Bewdley, Hastings, and Gores Landing. Watch the bars and the Otonabee channel. Best fishing is walleye, crappie, and musky. We service Rice Lake boats year-round from Gores Landing, mercuryrepower.ca.
-
-Rice Lake, Ontario (in the Kawarthas) doesn't make the tourism brochures. It should.
-
-It's a 32-kilometre fishery 90 minutes from downtown Toronto, sitting right in the Trent-Severn system, with more fish per acre than almost any lake in Ontario. It's also genuinely tricky water, shallow, weedy, with one of the most notorious prop hazards in the province sitting four feet below the surface in the middle of the lake.
-
-Harris Boat Works has been on this lake since 1947. We launch boats here, rent them, fuel them, fix them, and pull them out for winter every fall. This guide is what we'd tell you if you walked into the shop on the first warm Saturday in May.
+Rice Lake is a 32-km long shallow lake on the Trent-Severn Waterway, about 80 minutes northeast of Toronto. The water is generally 6–10 ft deep with heavy summer weed growth and a sunken 19th-century railway across the middle (chartplotters mark it, slow down across the lake until you know the crossing). Walleye, bass, and muskie are the main species. Public launches at Bewdley, Hastings, Roseneath, and Harris Boat Works in Gores Landing. Trent-Severn lockage is free June 19 – September 7, 2026.
 
 ---
 
-## Rice Lake at a Glance
+## Where Rice Lake Sits
 
-- **Length:** ~32 km east-west (Bewdley to Hastings)
-- **Width:** ~5 km at widest
-- **Max depth:** 27 ft. Most of the lake is 6-10 ft.
-- **Bottom:** Mudflats, weed beds, sand. Highly fertile water, the reason for the fishing reputation.
-- **Region:** Straddles Northumberland and Peterborough counties; south shore is Gores Landing/Bewdley/Harwood, north shore is Hiawatha/Roseneath, west end opens into the Otonabee River.
-- **Trent-Severn:** Rice Lake is part of the navigable Trent-Severn Waterway between Locks 18 (Hastings) and 19 (Scott's Mills/Peterborough).
-- **Fishery zone:** FMZ 17, same regulations as the Kawarthas.
+Rice Lake is in the Kawartha Lakes region of southern Ontario, part of the Trent-Severn Waterway system. The lake runs roughly east-west, 32 km long, with the east end connecting to the waterway at Hastings and the west end near Bewdley.
 
-Distance from Toronto: about **90 minutes** door-to-water from the eastern GTA, **2 hours** from west of the city. Cobourg is 20 minutes south, Peterborough is 30 minutes north.
+The water comes in from the Otonabee River at the north and drains east via the Trent River into the Trent-Severn system. So the lake is connected to a much bigger water network, you can lock through and travel to Lake Ontario at Trenton or to Georgian Bay at Port Severn if you want a multi-day boat trip.
+
+Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake since 1947. The marina sits directly on the lake's south shore. Three generations of the Harris family have run boats out of this exact location.
 
 ---
 
-## The Sunken Railway. Yes, It's Real
+## What Makes Rice Lake Different
 
-If you take one fact away from this guide, take this one: there is an abandoned railway line submerged across Rice Lake, and it has wrecked more lower units than every other hazard combined.
+**Shallow.** Most of the lake is 6–10 ft deep. The deepest spots are around 18 ft. That shallow profile makes it warm quickly in spring, which is great for fishing, but it also means it weeds up significantly through summer.
 
-The story: the **Cobourg & Peterborough Railway**, chartered in 1834 and completed across Rice Lake in the 1850s (the trestle first carried traffic in 1854). The trestle was damaged by ice in 1861 and never rebuilt. When the lake was later dammed as part of the Trent-Severn system, water levels rose about 8 feet, and now the railway remains sit roughly **4 feet below the surface** across the middle of the lake, running roughly between Hiawatha and Harwood.
+**Weed beds.** Summer growth is heavy in most bays and along structure. Bring a weed-cutting tool for the prop. Plan for slower running speeds in shallow weed-choked areas.
 
-Local boating groups will tell you the south side of the tracks (between Hiawatha and Harwood) is the worst. People have been losing props out there for over a hundred years.
+**The sunken railway.** This is the one hazard everyone has to know. There is an abandoned 19th-century railway submerged across the middle of Rice Lake. It sits roughly 4 feet below the surface. It has been wrecking lower units for over a hundred years. Chartplotters (Navionics, Garmin, C-MAP) mark the crossing clearly. Slow down across the middle of the lake until you know exactly where the structure is.
 
-**Two things to do about this:**
+**The wind.** Rice Lake runs east-west, which is also the prevailing wind direction. A west wind can build chop quickly across the full 32 km fetch. Underpowered hulls and inexperienced operators can get in trouble fast on a windy afternoon. Check the forecast before you launch.
 
-1. **Get a chartplotter or a phone app** with marine charts. Navionics, Garmin, C-MAP, Fishing Hot Spots, any of them mark the railway line clearly.
-2. **Run slowly across the middle of the lake until you've learned the line.** Locals know exactly where the safe crossings are. New boaters take a season to learn it.
-
-The railway is also a serious *fishing* feature, walleye stack along the sunken structure year-round. The same thing that wrecks props attracts fish. Fish it slow, drift it, or anchor up, don't run hard across it.
+**The Trent-Severn connection.** Rice Lake is part of a larger navigable waterway. If you want to boat further, you can lock through east toward the Trent River or west toward Peterborough and the Kawarthas. Lockage is free in 2026 from June 19 to September 7 as part of the Canada Strong Pass.
 
 ---
 
-## Other Hazards Worth Knowing
+## Fish You'll Find
 
-- **Weed beds.** Extensive throughout the lake by mid-summer. Avoid running through them at speed; they'll foul a prop and a trolling motor in a hurry. Great structure for bass, though.
-- **Rock shoals near shorelines and islands.** Particularly the south shore between Gores Landing and Bewdley, and around Sugar Island. Mark the chartplotter, give them room.
-- **Shallow flats at the east and west ends.** The flats around the Otonabee mouth and the Trent inlet (east end) are wadeable depth in spots. Fine in a small boat with a kicker; sketchy in a 21-foot pontoon at speed.
-- **Wind from the west.** Rice Lake's east-west orientation means a west wind builds chop fast across the full 32 km. Check forecast before you commit to a long run east, especially in shoulder seasons.
+**Walleye.** The classic Rice Lake fishery. Trolling is the standard technique. Most consistent in spring and fall, harder in mid-summer when fish move deep or to night feeds. Ontario MNR's Fisheries Management Zone 17 (FMZ 17) regulations apply; check current size and bag limits before your trip. The slot limit on walleye in FMZ 17 changes occasionally — verify against the current Ontario Fishing Regulations Summary before you keep fish.
 
----
+**Smallmouth Bass.** Strong fishery, especially in late spring and early summer. Rocky structure on the south shore, weed edges in protected bays. Tournament-quality water in places.
 
-## Boat Launches. Public vs. HBW
+**Muskie.** Trophy water. Big fish, big lures, mostly fall and early winter. Patience is the technique here.
 
-There are four boat launches on Rice Lake. Three are public; one is ours.
+**Crappie, perch, pike.** Mixed-bag panfish fishing is strong, especially for crappie in spring around brush and submerged wood structure.
 
-| Launch | Location | Lanes | Cost | Notes |
-|--------|----------|-------|------|-------|
-| Bewdley | West end, south shore | 1 | Free | Busy, 30-60 min waits on weekends |
-| Roseneath | North shore | 1 | Free | Smaller ramp, less busy |
-| Harwood | East end, south shore | 1 | Free | Busy, same weekend issues as Bewdley |
-| **Harris Boat Works** | Gores Landing, south shore | **2 (concrete)** | **$20/day, $200/season** | 24/7, parking, fuel, washrooms, courtesy docks |
-
-We operate a paid launch on Rice Lake's south shore at Gores Landing, and we'll be honest about why people use it: the public ramps are single-lane and free, which means waits on a Saturday in July are rough. Two lanes mean we can launch and retrieve simultaneously. The ramp is a deeper, longer concrete pour, usable at low water, when the public ramps start running short. And the parking lot has 50+ trailer spaces with sightlines to the lot.
-
-You also get on-site **ethanol-free 89-octane marine gas**, washrooms with showers, ice, snacks, and courtesy docks, none of which you get at Bewdley or Harwood. Whether that's worth $20 a day depends how much you value your Saturday morning.
-
-If you launch with us regularly, the **$200 season pass** pays for itself by Trip 11. We have customers who buy it on the first warm weekend and never look at the public ramps again.
+You need a valid Ontario fishing licence (Outdoor Card + fishing licence). HBW does not sell fishing licences, get yours online at ontario.ca/fishing or at a licence vendor before your trip.
 
 ---
 
-## Fishing Rice Lake. FMZ 17, 2026 Seasons
+## Where to Launch on Rice Lake
 
-![Ontario walleye slot rule diagram for FMZ Zone 17 (Rice Lake and most Kawartha Lakes): retain only walleye between 35 and 50 cm, release any walleye under 35 cm or over 50 cm.](/lovable-uploads/diagram-walleye-slot-rule.png)
-*The FMZ 17 walleye slot rule applies to Rice Lake. Retain 35-50 cm only. Release fish outside that window. Confirm current regulations at ontario.ca before retaining any fish.*
+Four main public launch options:
 
-Rice Lake is in **Fisheries Management Zone 17**, the same zone as most of the Kawarthas. Here's what's in season and when:
+**Bewdley (west end)**
+Lakefront ramp, public parking. Easy to find off Highway 28. Closer for Toronto-area visitors.
 
-| Species | Season | Sport Limit | Conservation Limit | Notes |
-|---------|--------|-------------|--------------------|-------|
-| **Walleye / Sauger** | 2nd Saturday May - Nov 15 | 4 | 1 | **Retention slot 35-50 cm (13.8-19.7"), only fish IN this slot can be kept; release fish outside the slot** |
-| **Largemouth & Smallmouth Bass** | 3rd Saturday June - Dec 15 | 6 | 2 | No size limit |
-| **Muskellunge** | 1st Saturday June - Dec 15 | 1 | 0 | Min 112 cm (44") |
-| **Northern Pike** | Open all year | 6 | 2 | No size limit |
-| **Yellow Perch** | Open all year | 50 | 25 | - |
-| **Crappie (Black & White)** | Open all year | 30 | 10 | - |
-| **Sunfish (Bluegill, etc.)** | Open all year | 300 | 15 | Only 30 over 18 cm |
-| **Channel Catfish** | 4th Saturday April - Nov 15 | 12 | 6 | - |
+**Roseneath (south shore)**
+Smaller ramp, closer to mid-lake. Good for accessing the middle and east sections.
 
-*Always verify with the [official Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17) before fishing, regulations change.*
+**Gores Landing (south shore, HBW)**
+Public ramp at our location. 2-lane concrete, parking, snacks, washrooms. Direct access to mid-lake and the Trent-Severn east. Day fee applies, see signage at the ramp.
 
-### Key 2026 opener dates
+**Hastings (east end)**
+At the entrance to the Trent-Severn east. Good if you're starting a multi-day Trent-Severn trip.
 
-- **Walleye opener:** Saturday, **May 9, 2026**
-- **Muskie opener:** Saturday, **June 6, 2026**
-- **Bass opener:** Saturday, **June 20, 2026**
-
-**The walleye slot rule trips people up.** Per [Ontario FMZ 17 zone-wide regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17), retained walleye and sauger **must be between 35 and 50 cm** (13.8-19.7"). Anything smaller than 35 cm or larger than 50 cm has to go back, so your dink under-eye and the trophy over 50 are both releases. This is a conservation rule that's done a lot of good for the fishery. Rice Lake walleye populations have rebuilt strongly over the last decade, but the slot direction trips first-time anglers up. (Note: a few specific lakes in FMZ 17. Balsam, Mitchell, have their own protected slot of 37-55 cm where retention is reversed. Rice Lake follows the zone-wide rule above.)
+For most Toronto and GTA visitors, Gores Landing or Bewdley are the easiest options.
 
 ---
 
-## What's Biting When
+## Trent-Severn Free Lockage 2026
 
-| Month | Best Bets | Where / How |
-|-------|-----------|-------------|
-| **May** | Walleye, crappie, perch, pike | Walleye opener weekend, jig the railway line; crappie in shallow weed bays; perch off mud flats |
-| **June** | Walleye, muskie, bass (late) | Trolling crankbaits for walleye; muskie opens June 6; bass opens June 20, topwater early in shallow weeds |
-| **July-August** | Bass, perch, walleye (deep) | Frog baits in weeds for bass; worm harnesses for walleye on deep flats; perch easy off a dock for kids |
-| **September-October** | Walleye, muskie, pike | Walleye stacking on the railway line and deep flats; big muskie pre-turnover |
-| **November** | Walleye, perch (until ice) | Last good week is usually mid-November before ice forms |
+Big news for boaters this year: lockage on the Trent-Severn is **free from June 19 to September 7, 2026** as part of Canada Strong Pass programming. That means you can lock through any Trent-Severn lock during that window without paying lockage fees.
 
-### Hot spots locals fish
+For Rice Lake visitors, this opens up affordable multi-day trips through the Kawartha Lakes and the broader Trent-Severn system. See [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026) for the full breakdown.
 
-- **The railway line**, south side between Hiawatha and Harwood. Walleye structure year-round.
-- **The mouth of the Otonabee** (west end), muskie and bass staging.
-- **Weed edges throughout the lake**, bass and pike all summer.
-- **Deep holes near Bewdley**, summer walleye when fish go deep.
-- **Sugar Island shoals**, smallmouth bass and northern pike.
+**Lockage permits in person only, 2026 season.** Parks Canada has eliminated online lockage permit sales for the 2026 season. Lockage permits must be picked up in person at a lockstation, including the free Canada Strong Pass sticker during the June 19 to September 7 window.
 
 ---
 
-## Amenities Around the Lake
+## Boat Rentals and Borrowing
 
-If you're spending a day or a weekend, the south shore (where most of the cottage country is) has the densest concentration of stops:
+If you don't have a boat, you can rent from a few options on Rice Lake. HBW operates a 9-boat rental fleet (Legend boats with Mercury motors). Walk-up and call-ahead rentals available, see [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) or call 905-342-2153.
 
-- **Gores Landing**. Harris Boat Works, Gores Landing Marina, the local park, a couple of cottage rental operations, the historic United Church.
-- **Bewdley**. Lakeview Restaurant (right on the water), the Conservation Area, the public beach, a small grocery.
-- **Harwood**. Sandy Shore Cottages and the public launch.
-- **Roseneath (north shore)**, small grocery, LCBO. Useful if you're cottaging on that side and need supplies.
-- **Cobourg (20 minutes south)**, full town. Restaurants, hotels, hospital, marine supply if you need a part we don't stock.
-- **Peterborough (30 minutes north)**, large city. All services, including the gateway to the Lift Lock and the upper Trent-Severn.
+Other rental options exist around Bewdley, but availability and quality vary. Call ahead before driving up.
 
 ---
 
-## You Don't Have to Own a Boat
+## Safety, The Stuff People Skip
 
-Rice Lake is a great lake to *try* before you commit to owning. We rent a 9-boat fleet:
+**PFDs.** One per person, accessible, and at least one is a wearable Type III. Required by Transport Canada.
 
-- 2× 23-ft Cruise pontoons (best for families and groups)
-- 2× 24-ft Transporter pontoons + 1× 24 backup
-- 2× 20-ft Transporter pontoons (mid-size, manageable for new pontoon drivers)
-- 2× 16-ft ProSport fishing boats (perfect for walleye and bass)
+**Pleasure Craft Licence (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. The 2026 PCL changes converted lifetime licences to 5-year renewals at $24. Check your PCL is current before you launch.
 
-Half-day, full-day, or multi-day rentals. Mercury power on every boat, life jackets included, brief on the lake's hazards before you leave the dock. **[harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)** or call **905-342-2153**.
+**Pleasure Craft Operator Card (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
 
-GTA cottagers without their own boat, this is how most of our renters discover Rice Lake.
+**Required safety equipment.** Sound-signaling device (whistle or horn), bailer, paddle, anchor, navigation lights for sunset operation. Transport Canada publishes the full list, and CO2-charged life jackets count as PFDs.
 
----
+**The sunken railway.** Worth mentioning twice. Know where it is on your chartplotter. Slow down across the middle of the lake.
 
-## A Few Practical Notes
-
-**You need a Pleasure Craft Operator Card (PCOC)** to operate any motorized boat in Ontario. One-time test, lifetime card. Don't have one? It's an online course, about three hours, $50.
-
-**Your [Pleasure Craft Licence](/blog/pleasure-craft-licence-update-repower-ontario) (PCL) changed in 2026.** Effective December 31, 2025, lifetime PCLs are being phased out and gradually replaced with 5-year licences. New and renewed PCLs are valid 5 years at $24 CAD, issued and renewed online through Transport Canada's PCL portal. If your boat doesn't have a current PCL, sort it before launch day.
-
-**Cell service on the lake** is reasonable on the south shore (Bell, Rogers, Telus all work in Gores Landing/Bewdley). The middle of the lake and the north shore can drop. Don't rely on it as your safety system.
-
-**Marine VHF Channel 16** is the emergency channel for Trent-Severn. Lock 18 (Hastings) and Lock 19 (Scott's Mills) both monitor.
-
-**Ice-out** on Rice Lake is typically late March to mid-April. Walleye opener is the second Saturday of May. The lake is in fishable shape by then in most years.
+**Wind and weather.** Check the forecast. A west wind on Rice Lake at 25+ km/h is enough to make smaller boats uncomfortable; over 35 km/h is genuinely dangerous in smaller hulls.
 
 ---
 
-## Why HBW Is Useful
+## Fuel and Services on Rice Lake
 
-We're at **5369 Harris Boat Works Rd, Gores Landing**. You can't miss the sign on the south shore. We have:
+**HBW (Gores Landing)** sells ethanol-free 89-octane marine fuel directly at our dock. Easier on outboards than the 10% ethanol you get at most pump stations. We're open daily during boating season.
 
-- A 2-lane concrete launch ($20/day, $200/season)
-- Ethanol-free 89-octane marine gas
-- 49 seasonal slips and 4-6 transient slips ($1.00/ft/night)
-- Boat rentals (9-boat fleet)
-- Mercury Marine Platinum dealer service (we'll fix it if it breaks)
-- Three generations of family business, since 1947
-
-If you're new to Rice Lake, the first stop on your first morning is worth making. We'll point out the railway, hand you a chartplotter recommendation, fuel you up, and send you out.
-
-If you've been on this lake for 20 years and we've never met, come say hi.
-
-**Phone:** 905-342-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+For Mercury service, parts, or repower questions, we're a Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbw.wiki/service](https://hbw.wiki/service). Phone 905-342-2153.
 
 ---
 
-## Frequently Asked Questions
+## FAQs
 
-**Where exactly is the sunken railway hazard?**
-It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Marine charts on Navionics, Garmin, C-MAP, and Fishing Hot Spots all mark it clearly. Run slowly across that section until you know the line, or use the channels locals use.
+**How deep is Rice Lake?**
+Most of the lake is 6–10 ft deep. The deepest spots are around 18 ft.
 
-**What's the launch fee at Harris Boat Works?**
-$20 per day or $200 for a seasonal pass (April through November). Seasonal pass pays off after about 11 launches.
+**Is Rice Lake safe for swimming?**
+Yes, with the standard cautions, watch for boat traffic, watch for weeds, avoid the area near the sunken railway. Water quality is generally good but check local advisories before swimming in mid-summer when weed and algae growth peaks.
 
-**Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?**
-No. PCOC is required to operate a motorized boat in Ontario. The exception is short-term rentals where the rental operator issues a temporary "rental boat safety checklist", but most full-day rentals (including ours) require a PCOC.
+**Can I take a small boat from Rice Lake to Peterborough?**
+Yes, via the Otonabee River north out of Rice Lake into the Trent-Severn system. The Peterborough Lift Lock is one of the highlights of the trip.
 
-**Is Rice Lake too shallow for a 21-foot pontoon?**
-No, but you have to know where to go. The main channels and the deeper basin areas are fine. Avoid the flats at the east and west ends, mark the railway, and stay aware of the shoals. We brief every renter before they leave the dock.
+**What's the closest restaurant or pub to HBW?**
+The Captain's Table at the Gores Landing wharf is a 2-minute walk. Other options in nearby Cobourg and Bewdley.
 
-**When does the walleye fishery turn on in spring?**
-Opening day (second Saturday of May) is usually solid. The week after is often the best week of the year for size. By June, the bigger fish move deeper and you're trolling instead of jigging.
+**When does Rice Lake freeze in winter?**
+Usually mid-to-late December, though increasingly unpredictable. Ice fishing is popular when the lake freezes safely. Always check ice conditions independently, don't rely on tradition.
 
-**Do you sell fishing licences at HBW?**
-No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licence online at the [Ontario fishing licence site](https://www.ontario.ca/page/get-fishing-licence) before you head out. Most anglers do this from their phone the night before.
+**Where can I get a Mercury motor serviced near Rice Lake?**
+Harris Boat Works in Gores Landing. Mercury Marine Platinum dealer since 1965. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
-**Phone:** 905-342-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Slip / launch info:** [harrisboatworks.ca/boatslips](https://harrisboatworks.ca/boatslips)
+## Internal Links
+
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
+- [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
+- [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide)
+- [Trailer Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide)
+
+---
+
+## Ready to Boat Rice Lake?
+
+If you need a Mercury motor or repower, build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+
+For service, parts, or rentals, contact us at **[harrisboatworks.ca](https://www.harrisboatworks.ca)** or **905-342-2153**.
+
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Platinum Dealer | Since 1947
 
 ---
 
@@ -14063,8 +13972,7 @@ No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licen
 - Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
 - Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
 - Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
-- Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)
-`,
+- Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)`,
     faqs: [
   {
     "question": "Where exactly is the sunken railway hazard?",
