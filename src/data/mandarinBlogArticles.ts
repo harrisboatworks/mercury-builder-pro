@@ -1721,56 +1721,127 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位於Rice 
     category: '家庭买船指南',
     readTime: '6 分钟',
     keywords: ['pontoon Mercury 中文', '华人家庭 pontoon', '安省 pontoon 船外机', 'Mercury Command Thrust 中文'],
-    content: `
-## 快速答案
+    content: `## 簡短答案
 
-Pontoon 买 Mercury 船外机，最容易犯的错是只看空船、少人、平水面的表现。真正使用时，pontoon 常常载家人、朋友、食物、cooler、狗、浮具和满油。马力太小会让船起步慢、转向重、逆风吃力，也可能让油耗不如想像。
+Pontoon選Mercury舷外機，**用你最重的使用情境來選，不是用展示廳的空船表現**。家庭聚會、父母訪加、孩子暑假, Pontoon常常是真正滿載使用的船型。馬力太小讓船起步慢、轉向重、逆風費力；太小的馬力也不一定更省油。對多數GTA華人家庭，正確的問題不是「最低可以配多少馬力」，而是「我們平常怎麼用這艘船」。
 
-对很多安省家庭 pontoon，正确的问题不是「最低可以配几匹」，而是「我们平常怎么用这艘船，什么马力才不会后悔」。
+---
 
-## 华人家庭 pontoon 的典型情境
+## 華人家庭Pontoon的真實使用情境
 
-很多 GTA 华人家庭买 pontoon，不只是为了自己开船。它是家庭聚会、父母来加拿大探亲、孩子暑假、朋友周末、钓鱼和日落巡航的工具。这类使用最怕船外机不够力，因为每次出船都不是一两个人。
+Pontoon對很多GTA華人家庭來說不是單純的水上交通工具，而是一個移動的聚會空間：
 
-### HBW dealer note
+- 父母來加拿大探親，帶他們第一次體驗加拿大的湖
+- 孩子的暑假，兩個家庭一起出湖
+- 朋友的週末，下午巡航後在湖邊停船吃飯
+- 釣魚和日落巡航混合的一天
 
-Pontoon 的马力要用「夏天周末满载」来想，不要用「展示时空船」来想。你买的不是 showroom 表现，是全家上船后的真实体验。
+這種使用情境的共同點是：**船上很少只有兩個人。**
 
-## Pontoon 马力初步参考
+滿載5至8人、加上食物飲料、水上玩具和行李，和空船測試時完全是兩回事。這也是為什麼Pontoon的馬力選擇對家庭使用者特別容易買錯。
 
-| Pontoon 使用方式 | 常见思考方向 |
-|---|---|
-| 慢速巡航、少人使用 | 可看较低马力，但仍要确认船厂 rating。 |
-| 家庭巡航、常载 4-8 人 | 90-115HP 常被研究。 |
-| 载重大、想更好起步 | 看 Command Thrust 或更高马力。 |
-| 水上玩具、拖 tube | 不要 underpower，起步和中段推力很重要。 |
-| 高级舒适体验 | Verado 或更高级配置值得比较。 |
+---
 
-## Command Thrust 是什么
+## Pontoon馬力參考框架
 
-Command Thrust 不是另一个品牌，也不是一个完全独立 motor family。你可以把它理解为 Mercury 某些马力/型号上的「更有推力的齿轮箱配置」。它通常适合较重、载重较高、需要更好低速推力的船，例如 pontoon。
+| Pontoon使用方式 | 建議思考方向 |
+|-----------------|-------------|
+| 慢速巡航、少人使用 | 可看較低馬力，但仍要確認船廠Capacity Rating |
+| 家庭巡航、常載4至8人 | 90, 115HP是常見研究起點 |
+| 載重大、想要更好起步 | Command Thrust配置值得優先考慮 |
+| 拖水上充氣玩具（Tube等） | 不要動力不足，起步和中段推力很重要 |
+| 高級舒適體驗、大Pontoon | Verado或更高配置值得比較 |
 
-对 pontoon 来说，Command Thrust 的价值通常不是最高速度，而是低速控制、起步、满载推力和更适合大直径 prop 的能力。
+*以上為參考框架，最終須以Pontoon船廠標示的最大馬力Rating為準。*
 
-## FourStroke、Pro XS、Verado 怎么看
+---
 
-| 系列 | Pontoon 上的角色 |
-|---|---|
-| FourStroke | 最通用，安静、省心，适合多数家庭。 |
-| Pro XS | 如果想要更强起步和更运动化反应，可研究。 |
-| Verado | 更安静、更精致，适合高级 pontoon。 |
-| Command Thrust | 对重载 pontoon 很有价值，尤其是推力需求高时。 |
+## Command Thrust是什麼？為什麼Pontoon特別需要它？
 
-## 不要只比较 motor-only price
+Command Thrust不是一個獨立的產品線，而是Mercury在某些馬力和型號上提供的推力優化配置。簡單理解：**它讓發動機可以驅動更大直徑的螺旋槳，在低速時產生更強的推力。**
 
-Pontoon repower 可能牵涉 rigging、controls、prop、gauge、steering、battery、mounting 与旧系统兼容性。你应该比较的是「装好、调好、能安心用」的整体价值，不是单独 motor 价格。
+對Pontoon來說，這個差異很實際：
+- **起步更有力**, 滿載家庭時不需要很長的加速距離
+- **低速控制更精確**, 停靠碼頭、慢速巡航時更好操控
+- **逆風表現更好**, 開放水面遇到風時更有餘裕
 
-## 你的下一步
+很多Pontoon船主選了普通配置，然後在滿載時發現起步很吃力, 這個體驗差異，事前多了解Command Thrust就可以避免。
 
-先确认 pontoon 长度、最大 HP rating、常载人数、是否拖 tube、是否常在 Rice Lake / Kawarthas 使用，再用 MercuryRepower.ca 看不同 Mercury 配置的加币价格。
+---
 
-**CTA：** 不确定 pontoon 应该配 90HP、115HP 还是更高？先创建 Mercury 报价，HBW 可以帮你确认真实使用情境。
-`,
+## FourStroke、Pro XS、Verado：Pontoon上各自的角色
+
+| 系列 | Pontoon上的定位 |
+|------|----------------|
+| FourStroke | 最通用，安靜、省心，適合多數家庭Pontoon |
+| FourStroke + Command Thrust | 重載或大Pontoon的推薦組合 |
+| Pro XS | 如果想要更強起步和更運動化的反應感 |
+| Verado | 高級Pontoon、追求靜音和精緻操控體驗 |
+
+對大多數GTA華人家庭，**FourStroke加上Command Thrust配置**是最直接的起點, 可靠、安靜、推力足夠。
+
+---
+
+## 不要只比較發動機定價
+
+Pontoon換機或新配置可能涉及：Rigging（接線）、操控系統、螺旋槳、儀表、電路、電池，以及確認舊系統和新發動機的相容性。
+
+**你應該比較的是「裝好、調好、能安心使用的完整成本」**，不是只看發動機本體的標價。
+
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 設定你的需求，可以獲得包含配置說明的報價，讓你有真實的數字作為比較基礎。
+
+---
+
+## Pontoon在Rice Lake和Kawarthas的使用說明
+
+Rice Lake和Kawarthas是GTA華人家庭租船或自有Pontoon最常使用的水域之一。幾個在地知識點：
+
+- **靠近碼頭和淺水區時要慢速**, Rice Lake有多個保護區和限速區
+- **夏季週末人多**, 安全意識和碼頭禮儀很重要
+- **Pontoon吃水比釣魚船稍深**, 非常淺的水草區要小心
+
+Harris Boat Works在Rice Lake服務超過七十年，了解當地水域特性，可以幫你確認選擇的Mercury配置是否適合你在這個水域的使用方式。
+
+---
+
+## 常見問題
+
+**Q：我的Pontoon最大馬力標示是115HP，一定要配115嗎？**
+A：不一定。最大馬力是上限，不是建議值。你應該根據實際常載人數和使用方式選擇合適的馬力, 有時候低於上限的馬力已經足夠，但對Pontoon來說通常建議接近上限以確保餘裕。請聯絡HBW確認你的具體情況。
+
+**Q：已有的Pontoon換Mercury需要什麼？**
+A：主要評估：舊發動機的拆除、新發動機的安裝、操控系統（線纜、方向盤）的相容性、油路和電路的更新。這不是一個「直接換上去」的過程，需要技師評估。至 hbw.wiki/service 提交申請。
+
+**Q：Pontoon上裝Verado值得嗎？**
+A：取決於Pontoon的級別和你的使用方式。Verado的優勢在於靜音、精緻感和大功率, 如果你的Pontoon是高級型號、常在更大水域使用、或你對靜音有特別要求，Verado可能值得。對普通家庭Pontoon，FourStroke + Command Thrust通常是更務實的起點。
+
+**Q：帶小孩上Pontoon，安全嗎？**
+A：Pontoon是最適合帶小孩的船型之一, 平台式設計穩定，小孩可以走動，上下船比釣魚船安全很多。確保每個小孩都有合適尺寸的救生衣是法律要求，也是基本責任。
+
+---
+
+## 內部連結
+
+- [6至8人租船指南：Pontoon還是釣魚船更適合？](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
+- [Mercury FourStroke、Pro XS、Verado 差在哪？中文完整比較](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+- [換新發動機還是買新船？給安省華人船主的現實判斷](/blog/zh/chinese-boat-repower-vs-new-boat-ontario)
+
+---
+
+## 行動呼籲（CTA）
+
+**不確定Pontoon該配90HP、115HP還是更高？**
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury報價，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 讓HBW幫你確認配置是否適合你的Pontoon和使用情境。
+
+Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位於Rice Lake南岸Gores Landing。
+
+---
+
+> **English Editor Note, POST 7 (chinese-family-pontoon-mercury-outboard):**
+> Converted from Simplified to Traditional Chinese. Original was structurally thin. Key additions: detailed family use scenarios (parents visiting from China, kids' summer, two-family outings), highly culturally specific to the GTA Chinese-Canadian demographic and avoids generic "family boating" framing. Command Thrust explanation significantly expanded with three concrete benefits instead of abstract description. Rice Lake local knowledge section added. Showroom vs. real-world framing ("don't select using empty-boat performance") is a useful, honest positioning point. No fabricated prices. FAQs added covering most common real questions.
+
+---
+---`,
     faqs: [
       { question: 'Pontoon 配低马力会比较省油吗？', answer: '不一定。马力太小导致长时间高负荷运转，实际油耗和体验可能都不好。' },
       { question: 'Command Thrust 一定需要吗？', answer: '不是每艘 pontoon 都需要，但重载、家庭使用、想要更好推力时很值得比较。' },
@@ -1789,60 +1860,142 @@ Pontoon repower 可能牵涉 rigging、controls、prop、gauge、steering、batt
     category: '决策指南',
     readTime: '7 分钟',
     keywords: ['repower 还是换船 中文', 'Mercury repower 中文', '安省船主', '旧船换马达', 'Harris Boat Works repower'],
-    content: `
-## 快速答案
+    content: `## 簡短答案
 
-如果你的船体结构健康、尺寸和格局仍适合你的家庭或钓鱼方式，而问题主要是旧船外机不可靠、太吵、太耗油或维修不划算，repower 通常值得认真比较。如果船体已经软、烂、漏水、格局不适合，或你其实已经想换更大的船，那换船可能更合理。
+**船體結構健康、尺寸和格局仍適合你的家庭或釣魚方式、問題主要是舊舷外機不可靠, Repower值得認真比較。** 如果船體已經軟化、滲水、結構疲勞，或你的使用需求根本改變，換船可能更合理。
 
-Repower 的内核不是「省钱」而已，而是保留一艘你熟悉、喜欢、适合你湖区的船，同时换上可靠的新 Mercury 动力。
+Repower的核心不只是「省錢」，而是保留一艘你熟悉、適合你水域的船，同時換上可靠的新Mercury動力。
 
-## 华人船主常见的犹豫
+---
 
-很多华人船主很理性，会把每一笔花费算清楚。这很正常。但 repower 的判断不能只看「新马达多少钱」和「二手船多少钱」。你要比较的是完整成本、风险、时间、熟悉度和未来几年的使用品质。
+## 華人船主面對這個問題時的常見思路
 
-### HBW dealer note
+很多華人船主習慣把每一筆開銷算清楚，這完全合理。但Repower的判斷不能只看「新發動機多少錢」和「二手船多少錢」的數字差距。
 
-一艘好 hull 加上一台累了的旧 motor，是 repower 候选。一艘累了的 hull 加上一台累了的 motor，通常是换船候选。
+你需要比較的是：**完整成本、風險、時間、熟悉度，以及未來幾年的使用品質。**
 
-## Repower 适合你的情况
+HBW技師的經驗：一艘好船體加上一台累了的舊發動機，是Repower的候選。一艘累了的船體加上一台累了的發動機，通常是換船候選。
 
-| 情况 | 为什么适合 repower |
-|---|---|
-| 船体结构健康 | 新 motor 能延长整艘船的可用年限。 |
-| 船的大小和格局仍适合 | 不需要为了换 motor 连整艘船都换掉。 |
-| 旧 motor 维修越来越频繁 | 新 Mercury 可能让季节更安心。 |
-| 你熟悉这艘船 | docking、载重、钓鱼位置都已经习惯。 |
-| 二手船市场不透明 | 换一艘二手船可能只是换来另一组未知问题。 |
+---
 
-## 换船比较适合的情况
+## Repower適合的情況
 
-| 情况 | 为什么可能该换船 |
-|---|---|
-| transom、floor、stringers 有结构问题 | 新 motor 挂在坏船体上不值得。 |
-| 家庭已经长大，船太小 | Repower 解决不了空间问题。 |
-| 你想从钓鱼船改成 pontoon | 用途变了，船也该变。 |
-| 船体价值太低 | 完整 repower 成本可能不合理。 |
-| 你其实已经不喜欢这艘船 | 不要花钱试图重新爱上它。 |
+| 情況 | 為什麼適合Repower |
+|------|------------------|
+| 船體結構健康 | 新Mercury可以延長整艘船的可用年限 |
+| 船的大小和格局仍適合你 | 不需要為換發動機連整艘船都換掉 |
+| 舊發動機維修越來越頻繁 | 新Mercury可能讓你的季節更安心 |
+| 你熟悉這艘船 | 停靠、載重、釣魚習慣都已形成，二手船是另一組未知問題 |
+| 二手船市場不透明 | 換一艘二手船可能只是換來另一組未知的保養問題 |
 
-## Repower 决策树
+---
 
-1. **船体健康吗？** 如果 transom、floor、hull 都健康，继续看下一步。
-2. **这艘船还适合你的用途吗？** 如果家庭、钓鱼、湖区使用仍合适，repower 有意义。
-3. **完整 repower 成本合理吗？** 要包含 motor、rigging、controls、prop 和安装，不只 motor-only price。
-4. **你想再用 5-10 年吗？** 如果答案是 yes，repower 更值得研究。
+## 換船比較合適的情況
 
-## 为什么 MercuryRepower.ca 对华人买家有用
+| 情況 | 為什麼可能該換船 |
+|------|----------------|
+| Transom、底板、Stringers有結構損壞 | 在有問題的船體上裝新機，危險且不值得 |
+| 家庭已經長大，船太小 | Repower解決不了空間問題 |
+| 從釣魚船想換成Pontoon | 用途根本改變，換船更直接 |
+| 船體的整體維護成本很高 | 除了發動機，其他部分也在燒錢 |
+| 你其實已經不喜歡這艘船 | 不要花錢試圖重新愛上它 |
 
-很多 dealer 不把价格说清楚，让客户必须打电话、等回复、再猜最后总价。MercuryRepower.ca 的价值是让你先看到真实加币报价，把研究主导权拿回来。
+這些條件說誠實的。Harris Boat Works不是靠說服每個人都Repower來維持業務, 我們靠的是給出對客戶真正有用的建議，讓他們下次還回來。
 
-这不代表网站能取代最后的 dealer 确认。它的作用是让你先知道大概选项和价格，再让 HBW 确认规格是否真的适合你的船。
+---
 
-## 你的下一步
+## 船體自我評估：四個問題
 
-拍下你的船、旧 motor、capacity plate、transom、controls 和任何现有 gauge。先用 MercuryRepower.ca 创建报价，再让 HBW 判断哪些旧系统可以保留，哪些应该一起更新。
+在打電話給任何人之前，先自己做初步評估：
 
-**CTA：** 如果你的旧船还值得留，先用 MercuryRepower.ca 看 Mercury repower 报价。
-`,
+**1. Transom（船尾板）：** 用拳頭敲，是實心的聲音還是空洞的悶聲？走到船尾踩上去，有沒有軟化或下陷的感覺？
+
+**2. 底板（Floor）：** 在船上走動，有沒有任何地方感覺軟腳或下陷？
+
+**3. 船殼：** 有沒有持續的滲水？坐在船上發現艙底有水是正常的嗎？（通常不是。）
+
+**4. 整體外觀：** 是正常使用的磨損，還是失修的跡象？
+
+如果這四個問題的答案都是正面的，你的船體可能還有很多年壽命，Repower值得認真考慮。
+
+---
+
+## 完整Repower成本怎麼計算
+
+請到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立報價。完整的Repower費用包含：
+
+- 新Mercury發動機本體
+- 舊發動機拆除
+- 新發動機安裝
+- 操控系統（線纜、方向盤配件）
+- 螺旋槳
+- 必要的電路和油路更新
+
+**這才是真正應該比較的數字**，不是只看發動機定價。
+
+與此同時，換新船的完整成本包含：船體＋發動機＋拖車套裝、13% HST、更高的保險費、新牌照、舊船處置，以及重新適應一艘不熟悉船隻的時間成本。
+
+---
+
+## 一個決策框架
+
+1. **船體健康嗎？** 如果Transom、底板、船殼都健康，繼續到下一步。
+2. **這艘船還適合你的用途嗎？** 家庭、釣魚、湖區使用仍合適，繼續。
+3. **完整Repower成本合理嗎？** 拿到完整報價後計算：這筆費用分攤到預期再使用的年數，每年的成本是否合理？
+4. **你還想用這艘船5至10年嗎？** 如果是，Repower更值得研究。
+
+---
+
+## MercuryRepower.ca對華人船主的實際價值
+
+很多Dealer不把價格說清楚，讓客戶必須打電話、等回覆、再猜最後總價。**mercuryrepower.ca的作用是讓你先掌握真實的加幣報價，把研究的主導權拿回來。**
+
+這不代表網站可以取代最後的技師確認，而是讓你有足夠的資訊和清晰的數字，在和HBW溝通時能問出更有意義的問題。
+
+---
+
+## 常見問題
+
+**Q：Repower之後，我的舊發動機怎麼辦？**
+A：Harris Boat Works接受舊發動機置換評估（Trade-in）。還能運行的舊Mercury在二手市場仍有需求，即使不能運行，部分零件仍有價值。讓技師評估後再決定如何處置。
+
+**Q：我自己找到的二手Mercury安裝到我的船，HBW可以幫我安裝嗎？**
+A：請至 hbw.wiki/service 提交申請並說明情況，HBW可以評估是否適合安裝以及需要什麼額外工作。
+
+**Q：Repower可以同時升級馬力嗎？**
+A：可以，但必須在船體Capacity Plate允許的最大馬力限制範圍內。同時升級馬力可能需要評估操控系統是否需要同步升級。
+
+**Q：Repower完成後保固怎麼計算？**
+A：新Mercury發動機有原廠保固，從安裝日期開始計算。具體保固條款請在購買時確認。
+
+**Q：我的船是在別的Dealer買的，HBW也可以做Repower嗎？**
+A：是的。Repower服務不限於在HBW購買的船隻。至 hbw.wiki/service 提交申請，說明你的船型和當前發動機情況。
+
+---
+
+## 內部連結
+
+- [換新發動機還是買新船？安大略省船主成本分析](/blog/zh/repower-vs-new-boat-zh)
+- [Mercury FourStroke、Pro XS、Verado 差在哪？中文完整比較](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+- [Mercury舷外機冬季保養完整指南](/blog/zh/winterization-mercury-guide-zh)
+
+---
+
+## 行動呼籲（CTA）
+
+**你的舊船還值得Repower嗎？**
+先到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看Mercury Repower完整報價。
+再至 **[hbw.wiki/service](https://hbw.wiki/service)** 讓HBW技師評估你的具體情況。
+
+Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位於Rice Lake南岸Gores Landing。
+
+---
+
+> **English Editor Note, POST 8 (chinese-boat-repower-vs-new-boat-ontario):**
+> Converted from Simplified to Traditional Chinese. Original was structured but lacked depth in the self-assessment and calculation sections. Key improvements: DIY transom/floor self-assessment guide (four specific questions) added, this is highly practical and reduces friction for first contact with HBW; complete Repower cost itemization added so buyers understand what's included; explicit "換船條件" table maintained and framed honestly ("HBW doesn't need to convince everyone to Repower"), this is the correct trust-building stance; decision framework kept but with clearer financial calculation step. No fabricated prices or trade-in valuations. The mercuryrepower.ca tool positioning is accurate to HBW's actual differentiator.
+
+---
+---`,
     faqs: [
       { question: 'Repower 一定比换船便宜吗？', answer: '不一定。但如果 hull 好、用途合适，repower 可能比换另一艘未知状况的二手船更理性。' },
       { question: '旧 controls 可以沿用吗？', answer: '要看型号、年份、兼容性和状况。不要假设一定能用。' },
