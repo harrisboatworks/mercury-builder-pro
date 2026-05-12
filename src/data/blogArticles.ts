@@ -6549,120 +6549,157 @@ Before you negotiate, anchor your expectations to real numbers, our [2026 Mercur
     category: 'Buying Guide',
     readTime: '9 min read',
     keywords: ['mercury family boat motor', 'family runabout outboard', 'mercury for pontoon', 'best mercury for recreation', 'family boat motor size', 'best Mercury outboard family runabout', 'Mercury 90 HP family boat', 'Mercury 150 HP runabout', 'family runabout horsepower', 'watersports family boat motor', 'quiet outboard family'],
-    content: `
-*Last reviewed: 2026-05-07*
+    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
 
-> **Quick answer:** For most family runabouts in the 17-20 ft range, a Mercury 90-150 FourStroke is the right call. Bigger isn't better, the capacity plate sets your real ceiling, and over-powering creates compliance, insurance, and warranty risk. The configurator at mercuryrepower.ca has installed pricing for every Mercury in that range.
+---
 
-A "family runabout" covers a lot of ground, anything from a 16-foot bowrider tugging the kids around the bay to a 22-foot deck boat pulling a wakeboarder behind a full crew. The right Mercury depends on three things: the boat's length and weight, what you actually do on it, and how much patience you have for refueling.
+## Quick Answer
 
-We've sold and repowered family runabouts on Rice Lake and the Kawarthas for years. This is the version of "what should I put on my boat?" we'd give if you walked into the shop on a Saturday in April.
+For most family runabouts in the 17, 20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
-## The Quick Recommendations by Boat Length
+---
 
-| Boat length | Recommended Mercury | Why |
-|-------------|---------------------|-----|
-| **16-17 ft** | **90 HP FourStroke** | Sweet spot for light family use. Quiet, efficient, planes easily. |
-| **17-18 ft** | **115 HP FourStroke** | More headroom for full crew + gear. The HBW most-popular family pick. |
-| **18-19 ft** | **150 HP FourStroke** | Real watersports capability. Plane with 6 on board. |
-| **19-21 ft** | **175-200 HP V6** | Bigger boats want V6 power. Pro XS option for towing. |
-| **21-22 ft** | **200-250 HP V6** | Premium tier. Watersports, big crew, longer runs. |
+## Full Article
 
-If your situation isn't on this list, the table doesn't matter, the right answer comes from the conversation, not the chart. Call us.
+A "family runabout" covers a lot of ground. It might be a 16-foot bowrider tugging the kids around the bay, or a 22-foot deck boat pulling a wakeboarder behind a full crew. The right Mercury depends on three things: the boat's length and weight, what you actually do with it, and how much you want to spend on fuel.
 
-## Why FourStroke Beats Pro XS for Most Families
+We've rigged and repowered family runabouts on Rice Lake and the Kawarthas for a long time. What follows is the answer we'd give if you walked into the shop on a Saturday in April.
 
-Mercury makes two flavours at most horsepowers: **FourStroke** (the standard) and **Pro XS** (the performance variant). For 90% of family runabouts, FourStroke is the right call. Here's why:
+### The Quick Recommendations by Boat Length
 
-**FourStroke is quieter.** Conversation-quiet at cruise. Pro XS is faster-revving and has a sportier exhaust note, which sounds great for 5 minutes and gets old over a 6-hour day with kids in the boat.
+| Boat Length | Recommended Mercury | Why |
+|---|---|---|
+| 16, 17 ft | 90 HP FourStroke | Sweet spot for light family use. Quiet, efficient, planes easily. |
+| 17, 18 ft | 115 HP FourStroke | More headroom for full crew and gear. Our most popular family pick. |
+| 18, 19 ft | 150 HP FourStroke | Real watersports capability. Planes with six on board. |
+| 19, 21 ft | 175, 200 HP V6 | Bigger boats want V6 power. Pro XS option for towing. |
+| 21, 22 ft | 200, 250 HP V6 | Premium tier. Watersports, big crew, longer runs. |
 
-**FourStroke gets better fuel economy.** Roughly 10-15% better at typical family cruise (3,500-4,200 RPM). On a 6-hour day pulling skiers and tubes, that's real money.
+If your situation isn't on this list, the chart doesn't settle it anyway. The right answer comes from a conversation. Call us.
 
-**FourStroke is smoother at low speed.** The Pro XS sport gearcase is tuned for hole shot and top end; the FourStroke gearcase is tuned for smoother transitions through the rev range. Family use lives in that middle zone.
+### Why FourStroke Beats Pro XS for Most Families
+
+Mercury makes two flavours at most horsepower ratings: **FourStroke** (the standard) and **Pro XS** (the performance variant). For 90% of family runabouts, FourStroke is the right call.
+
+**FourStroke is quieter.** Conversation-quiet at cruise. Pro XS has a sportier exhaust note that sounds great for five minutes and gets old over a six-hour day with kids in the boat.
+
+**FourStroke gets better fuel economy.** Roughly 10, 15% better at typical family cruise (3,500, 4,200 RPM). On a long day pulling skiers and tubes, that's real money.
+
+**FourStroke is smoother at low speed.** The Pro XS sport gearcase is tuned for hole shot and top end. The FourStroke gearcase is tuned for smoother transitions through the rev range. Family use lives in that middle zone.
 
 **Pro XS is the right call when:**
-- You water-ski seriously (the hole shot matters for getting the skier up)
+- You water-ski seriously and the hole shot matters for getting the skier up
 - You want absolute top speed
-- You run a heavier boat with full ballast for wakesurfing
-- The driver actually cares about how the throttle feels
+- You run a heavier hull with full ballast for wakesurfing
+- The driver genuinely cares how the throttle feels
 
-For everyone else, pulling tubes occasionally, cruising to dinner, hauling the kids to the swim spot. FourStroke is the answer. Quieter, more fuel-efficient, and Mercury's most-proven motor family.
+For everyone else, pulling tubes occasionally, cruising to dinner, hauling the kids to the swim spot, FourStroke is the answer.
 
-## Don't Under-Power. Don't Over-Power. Here's How to Tell.
+### Don't Under-Power. Don't Over-Power.
 
-The most common mistake we see on family runabouts: **the previous owner under-powered the boat to save money on the original purchase, and now it struggles whenever the boat is loaded.**
+The most common mistake we see on family runabouts: the previous owner under-powered the boat to save money on the original purchase, and now it struggles whenever the boat is loaded.
 
-A 17-foot bowrider rated for 115 HP, running with a 75 HP motor, four people, full gas, a cooler, and tow toys, will plane sluggishly, struggle in chop, and drink fuel trying. The motor is constantly at 80-90% throttle just to maintain cruise, which is bad for the motor's life and miserable to drive.
+A 17-foot bowrider rated for 115 HP, running with a 75 HP motor, four people, full fuel, a cooler, and tow toys, will plane sluggishly and struggle in chop. The motor runs at 80, 90% throttle constantly just to maintain cruise, bad for motor life and miserable to drive.
 
-**The rule:** look at your boat's max HP rating (on the capacity plate, usually near the helm). For family use with full crew and gear, **don't go more than 25 HP below max.** If your boat is rated 115 HP max, run a 90-115 HP motor. Running an 85 HP "to save fuel" usually backfires.
+**The rule:** Look at your boat's max HP rating on the capacity plate (usually near the helm). For family use with full crew and gear, don't go more than 25 HP below max. If your boat is rated 115 HP max, run a 90, 115 HP motor.
 
-**Don't over-power either.** Going to or above max HP on a family runabout adds fuel cost, makes the boat squirrellier in chop, and on some hulls causes "porpoising" (the bow bouncing rhythmically) that's irritating and unsafe. A boat rated 150 HP max doesn't need a 200 HP motor.
+Don't over-power either. A boat rated 150 HP max doesn't need a 200 HP motor. It adds fuel cost, changes handling in chop, and on some hulls causes porpoising.
 
-## Fuel Math at Family Cruise
+### Fuel Math at Family Cruise
 
-Real Mercury fuel consumption at typical family cruise speeds (3,500-4,200 RPM):
+Real Mercury fuel consumption at typical family cruise speeds (3,500, 4,200 RPM):
 
-| Motor | At cruise | At WOT |
-|-------|-----------|--------|
-| **75 HP FourStroke** | 2.5-3.5 GPH | 6-7 GPH |
-| **90 HP FourStroke** | 3-4 GPH | 8-9 GPH |
-| **115 HP FourStroke** | 4-5 GPH | 10-12 GPH |
-| **150 HP FourStroke** | 5-7 GPH | 14-16 GPH |
-| **175 HP V6 FourStroke** | 6-8 GPH | 16-18 GPH |
-| **200 HP V6 FourStroke** | 7-9 GPH | 18-20 GPH |
-| **250 HP V6 FourStroke** | 8-10 GPH | 22-25 GPH |
+| Motor | At Cruise | At WOT |
+|---|---|---|
+| 90 HP FourStroke | 3, 4 GPH | 8, 9 GPH |
+| 115 HP FourStroke | 4, 5 GPH | 10, 12 GPH |
+| 150 HP FourStroke | 5, 7 GPH | 14, 16 GPH |
+| 175 HP V6 FourStroke | 6, 8 GPH | 16, 18 GPH |
+| 200 HP V6 FourStroke | 7, 9 GPH | 18, 20 GPH |
 
-Translation: a typical family Saturday on Rice Lake, six hours, mixed cruise + a couple of skiing pulls + an hour of tubing, uses roughly:
-- 90 HP boat: 25-35 gallons
-- 115 HP boat: 35-45 gallons
-- 150 HP boat: 45-60 gallons
-- 200 HP boat: 60-80 gallons
+Translation: a typical family Saturday, six hours, mixed cruising, a couple of skiing pulls, an hour of tubing, uses roughly:
 
-At ethanol-free 89 marine gas pricing on the dock, that's $80-$300 per outing depending on motor size. **Pick HP that fits how often you'll boat as much as it fits the boat.** A 200 HP runabout used twice a month is overkill; same boat used 3x a week is right-sized.
+- **90 HP boat:** 25, 35 litres
+- **115 HP boat:** 35, 45 litres
+- **150 HP boat:** 45, 60 litres
+- **200 HP boat:** 60, 80 litres
 
-## What the Family Cruise Actually Needs
+We sell ethanol-free 89 marine gas at the dock in Gores Landing. Pick the HP that fits how often you'll use the boat, not just what looks good at the transom.
 
-For a family runabout, the features that matter:
+### Features Worth Paying For on a Family Runabout
 
-**Power steering**, anything over 115 HP, get hydraulic or electric power steering. Manual steering on bigger motors is exhausting after an hour.
+- **Power steering**, On anything over 115 HP, get hydraulic or electric power steering. Manual steering on bigger motors is tiring after an hour of driving.
+- **Power trim**, Standard on every Mercury 25 HP and up. You'll use it constantly as load and conditions change.
+- **SmartCraft / Mercury Marine App**, Real-time fuel flow lets you find the efficient cruise RPM for your boat. Saves real money over a season.
+- **Active Trim**, Available on V8 Verados and select V6s. Worth it if your driver is still learning; the engine trims itself for conditions.
 
-**Power trim**, standard on every Mercury 25 HP and up. Not optional. You'll trim the bow up and down constantly with shifting load and conditions.
+**What you don't need:** Mercury's premium Verado V8/V10 lineup on a family runabout under 22 feet. They're excellent motors built for performance boats and big cruisers, overkill on a 19-foot bowrider that mostly goes to the swim spot.
 
-**SmartCraft / Mercury Marine App connectivity**, see [our VesselView/SmartCraft guide](/blog/mercury-vesselview-smartcraft-plain-english-guide). Real-time fuel flow lets you find the most efficient cruise RPM for your boat, which saves real money over a season.
+### Pricing, What to Expect in CAD
 
-**Active Trim** (auto-trim), available on V8 Verados and some V6s. Worth it if your driver isn't experienced; the engine trims itself for the conditions.
+These are planning-level ranges for a motor with rigging, prop, and installation on a typical family runabout. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for your specific configuration and current pricing.
 
-**Digital Throttle & Shift (DTS)**, on V8 motors, smoother throttle response and better docking precision. Standard on V8 Verados, optional on some V6 FourStrokes. Nice-to-have, not essential.
 
-**What you don't need:** Mercury's premium Verado V8/V10s on a family runabout under 22 feet. They're great motors but priced for performance fishing boats and big cruisers, overkill on a 19-foot bowrider that mostly goes to the swim spot.
+| Motor | All-In (CAD, before HST) |
+|---|---|
+| 90 HP FourStroke | $15,500, $18,500 |
+| 115 HP FourStroke | $17,500, $22,500 |
+| 150 HP FourStroke | $23,000, $30,000 |
+| 175 HP V6 FourStroke | $26,000, $32,500 |
+| 200 HP V6 FourStroke | $28,000, $35,000 |
 
-## Pricing. Real HBW All-In Numbers
+"All-in" means motor, rigging, prop, and installation. If you're repowering, the trade-in value on your existing motor, typically $1,500, $5,000 depending on age and condition, applies against the total.
 
-These are mid-range CAD prices for a Mercury motor + rigging on a typical family runabout. Use the [configurator](https://mercuryrepower.ca) for the exact build:
+### What We Do
 
-| Motor | All-in pricing (CAD, before HST) |
-|-------|----------------------------------|
-| 75 HP FourStroke | $14,500-$16,500 |
-| 90 HP FourStroke | $15,500-$18,500 |
-| 115 HP FourStroke | $17,500-$22,500 |
-| 150 HP FourStroke | $23,000-$30,000 |
-| 175 HP V6 FourStroke | $26,000-$32,500 |
-| 200 HP V6 FourStroke | $28,000-$35,000 |
-| 250 HP V6 FourStroke | $33,000-$40,000 |
+We rig family runabouts every spring in Gores Landing. Specifically:
 
-"All-in" means motor, rigging, prop, and installation. If you're repowering, factor in trade-in value on your existing motor, for most family runabouts that's $1,500-$5,000 depending on age and condition.
+- **Boat-to-motor matching**, Bring the boat in or send photos with the capacity plate spec, and we'll spec the right HP for how you'll actually use it.
+- **Repower quotes through the live configurator**, Real CAD pricing in about 90 seconds at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+- **Trade-in valuation**, We give fair-market value on your old motor or boat. No lowballing.
+- **Annual service**, Mercury Platinum dealer, factory-trained techs, ethanol-free 89 marine gas at the dock.
 
-## What HBW Does
+If you're genuinely unsure between two HP ratings, call us before you build a quote. Picking right is more important than picking fast.
 
-We rig family runabouts every spring. Specifically:
+---
 
-- **Boat-to-motor matching**, bring your boat in (or send photos + the capacity plate spec) and we'll spec the right HP for how you'll actually use it
-- **Repower quotes through the live configurator**, real CAD pricing in 90 seconds at [mercuryrepower.ca](https://mercuryrepower.ca)
-- **Trade-in valuation** on your old motor or boat, we don't lowball, the configurator includes a trade quote
-- **Annual service** at our Gores Landing shop. Mercury Platinum dealer, factory-trained techs, ethanol-free 89 marine gas at the dock
+## FAQs
 
-If you're not sure between two HPs, call. Picking right is more important than picking fast.
-    `,
+**What's the best Mercury for a 17-foot runabout?** 
+For most 17-foot hulls, the Mercury 115 HP FourStroke. It handles full crew and gear comfortably, planes easily, and is efficient at cruise. The 90 HP works on lighter hulls with lighter loading.
+
+**Can I tow a wakeboarder with a Mercury 115?** 
+Light tubing and one or two beginner skiers, yes. Consistent wakeboarding with a full crew requires the 150 HP or higher. The 115 is marginal for active water sports with heavy loading.
+
+**Should I get FourStroke or Pro XS for a family boat?** 
+FourStroke, for almost every family application. Quieter, better fuel economy at cruise, and smoother in the mid-range where family boating actually happens. Pro XS is for performance and tournament applications.
+
+**What's the capacity plate and why does it matter?** 
+The capacity plate is a Coast Guard-mandated rating on your boat that specifies the maximum HP, maximum persons, and maximum weight. Going above the HP rating creates compliance, insurance, and warranty problems. We won't quote a motor above your capacity plate.
+
+**Is it worth repowering vs. buying a new boat?** 
+For most solid hulls, yes. A repower costs a fraction of a comparable new boat and puts new Mercury performance on a hull you already know. See our [hull replacement vs. repower guide](/blog/boat-hull-replacement-vs-repower-decision) for the full breakdown.
+
+**What does "all-in" pricing mean?** 
+Motor, rigging (controls, harness, gauges), prop, and installation. We quote all-in because that's the only number that matters when you're budgeting. Motor-only prices are interesting trivia.
+
+---
+
+## Internal Links
+
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
+
+---
+
+## CTA
+
+Ready to find the right Mercury for your family runabout? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, real CAD pricing, no phone tag, no "call for price."
+
+Not sure where to start? Call **905-342-2153**. We answer the phone and we'll tell you the honest answer for your hull.
+
+---`,
     faqs: [
       {
         question: 'Is 90 HP enough for an 18-foot family runabout?',
@@ -8398,175 +8435,145 @@ The update is free and takes 15 minutes. There is no reason not to do it.
     category: 'Repower Guides',
     readTime: '14 min read',
     keywords: ['Evinrude to Mercury repower', 'replace Evinrude Ontario', 'Evinrude discontinued parts', 'E-TEC to Mercury', 'Evinrude G2 replacement'],
-    content: `
-*Last reviewed: 2026-05-07*
-
-> **Quick answer:** With Evinrude out of production, parts and service are tightening fast. A Mercury FourStroke repower restores warranty coverage, parts availability, and resale value. Most Evinrude-to-Mercury jobs need new gauges, harness, and controls, we quote it all installed at mercuryrepower.ca.
-
-> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
-
-Switching from Evinrude to Mercury during a repower runs an extra $1,500 to $3,000 CAD in rigging costs because the entire control system has to swap. That sounds like a lot until you remember Evinrude stopped making outboards in 2020, and parts and service support is shrinking every year. The math usually favors the switch. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
-
-## Quick recommendation
-
-If you have a running Evinrude on a hull you plan to keep more than two seasons, switching to Mercury during a repower makes sense for most Ontario boaters. The brand-conversion rigging cost is real but it is one-time. The Evinrude parts shortage problem is forever and getting worse.
-
-We are doing more Evinrude-to-Mercury repowers every year at HBW. The customers who switch are not chasing a brand. They are chasing parts availability, service speed, and resale support. Those are the practical metrics that decide reliability in real life.
-
-If your Evinrude is still running well and the boat is older or a short-term keeper, sometimes the right answer is "run it until it dies." We will tell you that too. The honest answer depends on hull, motor age, and how long you plan to own the boat.
-
-## Why Evinrude owners are switching
-
-BRP shut down Evinrude outboard production in May 2020. As of 2026, that is six years of no new motors and a parts supply that is contracting every year. The practical realities Evinrude owners are running into:
-
-- **Parts availability is dropping.** Some service parts are becoming hard to source. Specialty parts (electronics, specific fuel system components) take weeks instead of days.
-- **Service expertise is shrinking.** Marine technicians who specialize in Evinrude are aging out or retraining. New techs coming into the industry are not learning Evinrude.
-- **Resale value is dropping faster than Mercury or Yamaha.** A 2018 Evinrude on a 2018 hull sells slower in Ontario than the same hull with a Mercury rerig.
-- **Insurance and warranty support is harder.** Some marinas are no longer accepting Evinrude motors for warranty work because BRP's parts pipeline is unreliable.
-
-None of this means a running Evinrude is suddenly worthless. It means the long-term ownership math is shifting away from Evinrude every year. The customers who saw this coming switched in 2022 to 2024. The customers seeing it now are switching in 2026.
-
-## What the Evinrude-to-Mercury conversion actually costs
-
-A Mercury-to-Mercury repower has rigging costs in the $500 to $1,500 range because most of the existing controls, harness, and gauges work with the new motor.
-
-An Evinrude-to-Mercury conversion adds $1,500 to $3,000 on top of standard rigging because the entire control system has to swap:
-
-- **Throttle and shift control** swaps from Evinrude to Mercury (mechanical or DTS depending on motor)
-- **Wiring harness** is replaced (Evinrude and Mercury harnesses are not compatible)
-- **Engine gauges or display** swap to Mercury SmartCraft compatibility
-- **Steering** sometimes swaps too if going from cable to hydraulic, or from older Evinrude hydraulic to Mercury-compatible
-- **Battery and starting** wiring is updated to Mercury spec
-
-Most of this is one-time cost. Once the boat is rigged for Mercury, future Mercury-to-Mercury repowers stay at the lower rigging tier. So the conversion premium pays off if you plan to keep the hull for one more repower cycle (typically 8 to 15 years).
-
-For specific pricing on your boat, [build a quote](/quote/motor-selection) or [give us a call at (905) 342-2153](tel:9053422153).
-
-## What changes the answer
-
-Five things move whether the Evinrude-to-Mercury switch makes sense for your specific situation:
-
-- **Hull condition and remaining life.** A solid 5-to-15 year old hull justifies the conversion. A hull that is going to be replaced in two seasons does not.
-- **Motor age and condition.** A 25-year-old Evinrude near end of life is a clear switch. A 5-year-old Evinrude G2 with low hours is harder, because the motor itself still has years left in it.
-- **How heavily you use the boat.** A 200-hour-a-season user feels parts shortages much faster than a 30-hour-a-season cottage user.
-- **Where you launch and travel.** Boaters who travel (Trent-Severn, Lake Ontario, road trips to Muskoka or Georgian Bay) want a service network that is still showing up. Mercury wins this.
-- **Resale plan.** If you plan to sell the boat in the next 3 years, switching to Mercury before listing typically pays back the conversion cost in faster sale and higher price.
-
-## What HBW checks before recommending the switch
-
-When Evinrude owners come into HBW asking about a Mercury repower, we want to know:
-
-- **Year and HP of the existing Evinrude.** ETEC G1, ETEC G2, and older direct-injection 2-strokes all have different remaining-life profiles.
-- **Hours on the motor.** A 500-hour ETEC has very different math than a 2,000-hour ETEC.
-- **Current symptoms.** Cold start issues, fuel system problems, or warning lights are signs the motor is closer to the end.
-- **Hull make, model, year, and condition.** The hull is the long-term asset. A repower investment goes into the hull's value.
-- **How long you plan to keep the boat.** This is the biggest single variable.
-- **Existing rigging condition.** Sometimes the existing throttle controls and gauges are at end of life anyway, which makes the conversion cost less of a premium because we would have to replace them on a Mercury-to-Mercury repower too.
-- **Budget and financing tolerance.** Most Mercury repowers qualify for Mercury Repower Financing (current rates on our [financing page](/financing)). See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026) for details.
-
-We will not push the switch on customers whose existing Evinrude has years of life left and a clear plan to use the boat short-term. We will recommend the switch when the math actually favors it.
-
-## Common Evinrude-to-Mercury switch mistakes
-
-We see these every season:
-
-1. **Waiting too long.** The customers who came in for "just a quick fuel system check" two years running often end up needing a full repower anyway. Once the Evinrude is dead, you are stuck without a motor during the rush.
-2. **DIY rigging the conversion.** Brand conversions are not a DIY project. Wrong wiring, wrong harness routing, or incorrect throttle calibration can damage the new motor. We do brand conversions in-house with Mercury-certified technicians.
-3. **Cheaping out on the prop.** A Mercury motor with the old Evinrude prop loses 4 mph and 15% fuel economy. We test props on the water during sea-trial of every conversion.
-4. **Skipping the hydraulic steering upgrade.** Older Evinrude installs often have cable steering that the new Mercury could leverage hydraulic. While the dash is open during the conversion is the cheapest time to upgrade.
-5. **Trying to keep a too-small Evinrude HP.** Sometimes the original Evinrude was undersized and the customer adapted by not loading the boat. The Mercury conversion is the right time to step up to the HP that actually fits the use case.
-
-## What to do with the old Evinrude
-
-Once it comes off, the old Evinrude has limited resale value (more so for ETEC G2 motors than older 2-strokes). Options:
-
-- **Trade in.** HBW takes Evinrude trades during a Mercury repower. We will give you fair-market trade-in value applied to the new motor purchase.
-- **Private sale.** Sometimes a small running Evinrude has more value to a small-boat owner who needs a cheap motor than as a trade-in. We can advise on whether private sale makes sense.
-- **Parts donor.** Older Evinrudes have value to mechanics and shops as parts donors. Marginal cash but better than scrap.
-
-The Pleasure Craft Licence (PCL) needs to be updated when the motor changes. We handle the paperwork side of this for HBW customers. See [Pleasure Craft Licence update during repower](/blog/pleasure-craft-licence-update-repower-ontario) for details.
-
-## Related guides
-
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
-- [Pleasure Craft Licence Update During Repower](/blog/pleasure-craft-licence-update-repower-ontario), Transport Canada paperwork
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), choosing the right Mercury family
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), current Mercury Repower Financing details
-
-## Ready to talk through the switch?
-
-Build a quote for your Mercury replacement on the [motor selection page](/quote/motor-selection). Live pricing in CAD, full configuration including the brand-conversion rigging premium where it applies.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through your specific Evinrude-to-Mercury switch before quoting, [give us a call at (905) 342-2153](tel:9053422153). We do these conversions every month and we will give you the honest math on whether to switch now, switch later, or run the Evinrude until it gives up.
+    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+## Quick Answer
+
+With Evinrude out of production since 2020, parts and service support are contracting every year. A Mercury FourStroke repower restores warranty coverage, parts availability, and resale footing. Most Evinrude-to-Mercury jobs need new gauges, harness, and controls, plan for $1,500, $3,000 CAD extra in rigging on top of the motor cost. Get a current installed quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+
 
 ---
 
+## Full Article
 
-## Try the calculator
+Switching from Evinrude to Mercury during a repower adds roughly $1,500, $3,000 CAD in rigging costs because the entire control system has to swap. That sounds like a lot until you remember Evinrude stopped making outboards in May 2020. Parts availability is shrinking every year. The math usually favours the switch, but not always.
 
-Want a real number? Run [the Trade-In Value Estimator](/tools#trade-in-value) - no signup, no email gate, takes 30 seconds.
-## FAQ
+We're doing more Evinrude-to-Mercury repowers every year at HBW. The customers switching aren't chasing a brand. They're chasing parts availability, service speed, and resale support. Those are the practical things that determine real-world reliability.
 
-**Why did Evinrude stop making outboards?**
-BRP (Evinrude's parent company) shut down outboard production in May 2020 to focus on other product lines. As of 2026, no new Evinrude outboards have been built for six years. The brand still exists for parts and service support, but new motor production has ended.
+If your Evinrude is still running well and the boat is a short-term keeper, sometimes the right answer is "run it until it gives up." We'll tell you that too.
 
-**Can I still get parts for my Evinrude?**
-Yes for most common parts, but availability is contracting every year. Common service parts (filters, plugs, anodes, fluids) are still available. Specialty parts (specific electronics, fuel system components for ETEC G1 and G2) are getting harder to source and lead times are getting longer.
+### Why Evinrude Owners Are Switching
 
-**How much does it cost to switch from Evinrude to Mercury?**
-The Mercury motor cost plus an extra $1,500 to $3,000 CAD in brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing on your boat, [build a quote](/quote/motor-selection) or [contact HBW](/contact).
+BRP shut down Evinrude outboard production in May 2020. As of 2026, that's six years with no new motors and a parts supply contracting every year. The practical realities:
 
-**Do I have to replace all the controls and rigging?**
-Yes. Evinrude and Mercury throttle, shift, and harness systems are not compatible. The control system has to swap during the conversion. Steering can sometimes carry over depending on age and type. We assess this during the hull walk-around.
+**Parts availability is dropping.** Common service parts are still accessible. Specialty parts, specific electronics, certain fuel system components, are getting harder to source. Lead times are growing.
 
-**Can I keep my old Evinrude prop on the new Mercury?**
-Almost never. Evinrude and Mercury props have different hub designs and pitch matchups. The right prop for your specific Mercury setup is determined during sea-trial. We test props during every repower at HBW.
+**Service expertise is shrinking.** Marine technicians who specialize in Evinrude are aging out or retraining. New techs coming into the industry aren't learning Evinrude.
 
-**Will my Mercury fit on the same transom as my Evinrude?**
-Usually yes, but transom height and bracket mounting may need verification. Most Evinrude-to-Mercury conversions on aluminum and fiberglass hulls are direct fits. Older transoms may need reinforcement or shimming. We assess during the hull walk-around.
+**Resale is softer.** A 2018 Evinrude on a 2018 hull takes longer to sell in Ontario than the same hull with a Mercury. Buyers know the parts story.
 
-**Should I trade in my old Evinrude or sell it privately?**
-Depends on the motor age and condition. Newer running ETEC G2 motors sometimes have more value in private sale. Older 2-strokes are usually best as trade-in or parts donor. We give fair-market trade-in value during a repower at HBW.
+**Service network is thinning.** Some marinas have stopped accepting Evinrude warranty work because BRP's parts pipeline is unreliable.
 
-**How long does an Evinrude-to-Mercury conversion take?**
-Typical conversions land in 2 to 4 days of shop time, depending on HP class and rigging complexity. Brand conversions take longer than Mercury-to-Mercury repowers because of the additional control system work.
+None of this means a running Evinrude is suddenly worthless. It means the long-term ownership math is shifting away from Evinrude every year.
 
-**What about my Pleasure Craft Licence (PCL)?**
-The PCL must be updated when the motor changes. The license is tied to the boat (HIN), but motor specs are recorded on it. We handle the paperwork for HBW customers. See [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario) for the procedure.
+### What an Evinrude-to-Mercury Conversion Actually Costs
 
-**Is Mercury actually more reliable than Evinrude?**
-The mechanical reliability of late-model Evinrude G2 motors is comparable to Mercury FourStroke. The practical reliability difference comes from Mercury's larger dealer network, faster parts availability, and stronger long-term factory support. Reliability in real life is service availability plus mechanical durability. Mercury wins on the service side.
+A Mercury-to-Mercury repower has rigging costs in the $500, $1,500 range because most existing controls, harness, and gauges work with the new motor.
 
-**Should I just keep my Evinrude until it dies?**
-For some boaters, yes. If your Evinrude is running well, the hull is short-term, and you have a clear plan to replace the boat itself in 2 to 3 years, running the Evinrude makes sense. If the hull is solid and you plan to keep it 8+ years, switching now is usually the right call. Honest answer depends on your specific situation. [Call us](tel:9053422153).
+An Evinrude-to-Mercury conversion adds $1,500, $3,000 on top of standard rigging because the entire control system has to swap:
 
-**What happens if my Evinrude dies in the middle of summer?**
-Wait time for Mercury motors and rigging slots is longest in May through August. A motor failure in July often means a 2 to 4 week wait for replacement, missing peak boating season. The customers who plan ahead in winter or early spring get the easier appointment slots.
+- **Throttle and shift control**, Swaps from Evinrude to Mercury (mechanical or DTS depending on motor)
+- **Wiring harness**, Replaced (Evinrude and Mercury harnesses are not compatible)
+- **Engine gauges or display**, Swaps to Mercury SmartCraft compatibility
+- **Steering**, Sometimes replaced, depending on age and type
+- **Battery and starting wiring**, Updated to Mercury spec
+
+Most of this is one-time cost. Once the boat is rigged for Mercury, future Mercury-to-Mercury repowers stay at the lower rigging tier. The conversion premium pays off if you plan to keep the hull for one more repower cycle.
+
+### What Changes the Answer
+
+Five things move whether the switch makes sense for your specific situation:
+
+1. **Hull condition and remaining life.** A solid 5, 15-year-old hull justifies the conversion. A hull you're replacing in two seasons doesn't.
+2. **Motor age and condition.** A 25-year-old Evinrude near end of life is a clear switch. A newer ETEC G2 with low hours is harder, the motor may still have real years left.
+3. **How heavily you use the boat.** A 200-hour-a-season user feels parts shortages much faster than a 30-hour cottage boater.
+4. **Where you launch and travel.** Boaters who travel the Trent-Severn, Lake Ontario, or road trips to Muskoka want a service network that's still showing up. Mercury wins this.
+5. **Resale plan.** If you're selling the boat in the next few years, switching to Mercury before listing typically pays back in faster sale and stronger price.
+
+### What HBW Checks Before Recommending the Switch
+
+When Evinrude owners come in, we want to know:
+
+- Year and HP of the existing Evinrude (ETEC G1, ETEC G2, and older direct-injection 2-strokes have different remaining-life profiles)
+- Hours on the motor
+- Current symptoms, cold-start issues, fuel system problems, or warning lights
+- Hull make, model, year, and condition
+- How long you plan to keep the boat
+- Existing rigging condition
+- Budget and financing tolerance
+
+We won't push the switch on customers whose Evinrude has years of life left and a clear plan to use the boat short-term. We recommend the switch when the math actually favours it.
+
+### Common Evinrude-to-Mercury Switch Mistakes
+
+**Waiting too long.** The customers who come in for "just a quick fuel system check" two years running often end up needing a full repower anyway. Once the Evinrude dies in July, you're stuck without a motor during the rush.
+
+**DIY rigging the conversion.** Brand conversions are not a DIY project. Wrong wiring or incorrect throttle calibration can damage a new motor. We do brand conversions in-house with Mercury-certified technicians.
+
+**Cheaping out on the prop.** A Mercury motor with an old Evinrude prop runs poorly and loses fuel economy. We test props on the water during every conversion's sea trial.
+
+**Skipping the hydraulic steering upgrade.** Older Evinrude installs often have cable steering. While the dash is open during conversion is the cheapest moment to upgrade.
+
+**Under-sizing HP.** Sometimes the original Evinrude was undersized and customers adapted by not loading the boat fully. The Mercury conversion is the right time to step up to the HP the boat actually wants.
+
+### What to Do With the Old Evinrude
+
+Once it comes off, options are:
+
+- **Trade in.** HBW takes Evinrude trades during a Mercury repower. We give fair-market value applied to the new motor purchase.
+- **Private sale.** Sometimes a small running Evinrude has more value to a small-boat owner who needs a cheap motor than as a trade-in. We can advise.
+- **Parts donor.** Older Evinrudes have some value as parts donors.
+
+The Pleasure Craft Licence (PCL) needs to be updated when the motor changes. We handle the paperwork side for HBW customers.
 
 ---
 
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+## FAQs
+
+**Why did Evinrude stop making outboards?** 
+BRP shut down outboard production in May 2020 to focus on other product lines. As of 2026, no new Evinrude outboards have been built for six years.
+
+**Can I still get parts for my Evinrude?** 
+Yes, for most common parts, but availability is contracting every year. Common service parts (filters, plugs, anodes, fluids) are still accessible. Specialty electronics and fuel system components are getting harder to source.
+
+**How much does it cost to switch from Evinrude to Mercury?** 
+The Mercury motor cost plus an extra $1,500, $3,000 CAD in brand-conversion rigging on top of a standard install. Total all-in costs vary by HP class. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for your specific setup.
+
+**Do I have to replace all the controls and rigging?** 
+Yes. Evinrude and Mercury control systems and harnesses are not compatible. The control system has to swap. Steering can sometimes carry over depending on age and type.
+
+**Can I keep my old Evinrude prop on the new Mercury?** 
+Almost never. Evinrude and Mercury props have different hub designs and pitch match-ups. We test props during every repower sea trial.
+
+**How long does an Evinrude-to-Mercury conversion take?** 
+Typical conversions are 2, 4 days of shop time, longer than Mercury-to-Mercury because of the additional control system work.
+
+**Should I just run my Evinrude until it dies?** 
+For some customers, yes, if the hull is short-term and the Evinrude is running fine. If the hull is solid and you plan to keep it 8+ years, switching now is usually the better call. Honest answer depends on your situation. Call us.
+
+**What happens if my Evinrude dies mid-summer?** 
+Peak wait times for Mercury motors and installation slots run May through August. A motor failure in July typically means 2, 4 weeks without the boat during prime season. Customers who plan ahead in winter or early spring get the easier slots.
 
 ---
 
-## Sources
+## Internal Links
 
-- Parks Canada - Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
-- Parks Canada - Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Transport Canada - Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
+- [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
+- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
 
-*Last reviewed: 2026-05-11.*
-`,
+---
+
+## CTA
+
+Ready to talk through the switch? Build a Mercury quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live pricing in CAD, full configuration including brand-conversion rigging.
+
+Prefer to talk first? Call **905-342-2153**. We do these conversions every month and we'll give you the honest math on whether to switch now, switch later, or run the Evinrude until it gives up.
+
+---`,
     faqs: [
       {
         question: 'Can I keep my Evinrude fuel tank and use it with a Mercury?',
