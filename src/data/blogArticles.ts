@@ -10045,158 +10045,141 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['cheapest mercury outboard canada', 'mercury 2.5hp price', 'small mercury outboard cad'],
-    content: `
+    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 
-*Last reviewed: 2026-05-07*
+---
 
-> **Quick answer:** Mercury's cheapest current outboard in Canada is the 2.5 HP FourStroke portable, under $1,500 CAD. The cheapest motor that fits inside your boat's HP rating is your real ceiling on the low end. Overpowering creates capacity-plate compliance, insurance, liability, and potential warranty problems. Live pricing at mercuryrepower.ca.
+## Quick Answer
 
-The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats. From there, prices step up by HP class through the lineup. The honest answer most boaters need is not "what's the cheapest motor" but "what's the cheapest motor that actually fits my boat." Those are usually different motors. Live pricing on every Mercury we sell, including the 2.5 portable, is on the [motor selection page](/quote/motor-selection).
+Mercury's cheapest current outboard in Canada is the **2.5 HP FourStroke portable**. But the cheapest motor that genuinely fits your boat's use and HP rating is almost always the better question, and those are rarely the same motor. Live pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
-> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
+---
 
-## Quick recommendation
+## Full Article
 
-Do not buy the wrong motor for your boat just because it is cheap. We have watched too many Rice Lake, Ontario customers buy the smallest motor they could afford, spend three seasons unable to get on plane against the afternoon wind, then trade it in for what they should have bought the first time. That is paying twice for the same boat-equipping job.
+The honest answer most boaters need isn't "what's the cheapest motor" but "what's the cheapest motor that actually works for my boat." Those are usually different motors, and confusing them is one of the most common expensive mistakes we see.
 
-If you are looking at the cheapest end of the lineup, the right starting question is: what is my boat actually going to do? A tender for a sailboat, a kicker for a pontoon, or a fishing solo on a 14-foot aluminum at 5 mph have completely different right answers. The cheapest Mercury that solves your actual problem is usually one or two HP classes up from the absolute lowest motor on the lot.
+We've watched too many Rice Lake customers buy the smallest motor they could afford, spend three seasons struggling to get on plane against the afternoon wind, then trade in for what they should have bought the first time. That's paying twice for the same boat-equipping job.
 
-## What changes the answer
+### The Mercury Lineup at the Low End
 
-The right "cheapest" motor depends on six things:
+From smallest to largest, with what each class actually powers:
 
-- **Boat size and weight.** A 12-foot inflatable can be powered by a 2.5 portable. A 16-foot aluminum needs at least 25 HP if you want to plane. Hull weight is the single biggest driver of "minimum useful HP."
-- **Use case.** Fishing solo at trolling speed has totally different power requirements than cruising with two people, which is different again from pulling a tube.
-- **Where you launch.** A pontoon at a sheltered marina dock can run a smaller motor than the same pontoon at a public ramp on Rice Lake, Ontario (in the Kawarthas). The wind picks up across Sugar Island around 2 PM most days in July, and an underpowered motor will not punch back through it.
-- **Solo vs. family.** Adding two adults and a cooler turns "marginal" power into "stranded."
-- **Transom HP rating.** Overpowering a hull creates capacity-plate compliance, insurance, liability, and potential warranty problems. The cheapest motor that fits inside your boat's HP rating is your real ceiling on the low end.
-- **Long-term plan.** Buying the boat for one season and selling it is a different math than buying a boat you plan to own for 15 years. A motor that is "barely enough" gets exhausting fast over multi-season ownership.
-
-## Mercury lineup at the low end
-
-Mercury makes some of the cheapest reliable outboards on the market, especially in the portable tiller class. Here is the lineup in order of size, from smallest to largest. For specific prices on each, see the [motor selection page](/quote/motor-selection), which has live CAD pricing on every motor we stock or order.
-
-| HP class | Common Mercury models | What it powers | Install type |
+| HP Class | Common Models | What It Powers | Install Type |
 |---|---|---|---|
-| 2.5 - 6 HP portable | 2.5 MH, 3.5 MH, 4 MH, 5 MH, 6 MH | Tenders, dinghies, very small inflatables, kicker | Drop-in tiller, no rigging |
-| 8 - 20 HP tiller | 8 EFI, 9.9 MH/EH/ProKicker, 15 MH/EH, 20 MH/EH | Small aluminum (12-14 ft), kicker on bigger boat | Drop-in tiller, no rigging |
-| 25 - 60 HP | 25 EFI, 30 EFI, 40 ELHPT, 50 ELHPT, 60 ELHPT | 14-16 ft aluminum, small consoles | Remote-control install with rigging |
-| 90 - 115 HP | 90 EXLPT, 115 EXLPT FourStroke / Pro XS | 16-19 ft aluminum, fishing boats, small pontoons | Full repower with rigging |
-| 150 - 200 HP | 150 ELPT FourStroke, 175 Pro XS, 200 Pro XS | 18-22 ft pontoons, runabouts | Full repower with hydraulic steering |
-| 250 - 300 HP | 250 ProXS V8, 300 V8 | Performance bass, large pontoons, center consoles | Full repower with hydraulic steering |
+| 2.5, 6 HP portable | 2.5 MH, 3.5 MH, 4 MH, 5 MH, 6 MH | Tenders, dinghies, small inflatables, kicker | Drop-in tiller, no rigging |
+| 8, 20 HP tiller | 8 EFI, 9.9 MH/EH/ProKicker, 15 MH, 20 MH | Small aluminum (12, 14 ft), kicker | Drop-in tiller, no rigging |
+| 25, 60 HP | 25 EFI, 40 ELHPT, 50 ELHPT, 60 ELHPT | 14, 16 ft aluminum, small consoles | Remote-control install with rigging |
+| 90, 115 HP | 90 EXLPT, 115 EXLPT FourStroke / Pro XS | 16, 19 ft aluminum, fishing boats, small pontoons | Full repower with rigging |
+| 150, 200 HP | 150 ELPT FourStroke, 175/200 Pro XS | 18, 22 ft pontoons, runabouts | Full repower with hydraulic steering |
 
-Tiller motors 20 HP and under are essentially drop-in installs. No new rigging, no controls, no extras. The motor is the whole purchase. Once you cross over to remote-control motors at 25 HP and up, you are talking about a full project that includes controls, cables, gauges, prop, and install labour.
+Tiller motors 20 HP and under are essentially drop-in installs. The motor is the whole purchase, no rigging, no controls, no extras.
 
-## Cheap that is not actually cheap
+Once you cross to 25 HP and up, you're into a full project: controls, cables, gauges, prop, and installation labour.
 
-A few mistakes we see often that turn the "cheapest motor" into the most expensive decision:
+For specific pricing on each model, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us.
 
-- **Buying too small.** A 9.9 on a 16-foot aluminum is not going to plane with two adults. You will be back in two seasons buying a 25 or a 40 at full price. That is paying twice.
-- **Buying off-brand.** A no-name 15 HP from an internet retailer is cheaper at the till. Then a part fails in year three, no Canadian dealer carries the parts, and the motor becomes scrap. Mercury parts and service are available across Canada because Mercury has been the dominant outboard brand in Canada for decades. That is not an accident.
-- **Buying used without inspection.** A used motor is a great way to save money. A used motor purchased blind is a great way to spend $4,000 and end up with a paperweight. We inspect every used motor we sell. We will inspect a private-sale motor for you for a fair fee before you buy it.
-- **Skipping rigging on a remote-control install.** The motor is fine. The controls and throttle are 22 years old. You save $2,000 by reusing them. Then the throttle sticks at full speed in the middle of Rice Lake and now you have a real problem. Rigging on a Mercury-to-Mercury repower can usually keep most existing controls (which is part of why Mercury-to-Mercury is the cheapest path), but a non-Mercury-to-Mercury swap usually needs new everything.
+### What Changes the "Cheapest That Works" Answer
 
-## Cheap that is actually cheap
+Six things determine where your real floor is:
 
-A few moves that genuinely save money without compromising the boat:
+**Boat size and weight.** A 12-foot inflatable can be powered by a 2.5 portable. A 16-foot aluminum needs at least 25, 40 HP if you want to plane.
 
-- **Buy in winter.** November through March is our quietest shop time. We have first pick of motors before the spring rush. Lead times are shortest. Sometimes Mercury runs winter or pre-spring promotional rates that drop the financing rate well below the standard rate. Current rates and promotion details are on our [financing page](/financing) and the [promotions page](/promotions).
-- **Trade in your old motor.** Even a dead motor has aluminum and parts value. Our [trade-in valuation tool](/trade-in-value) gives you an instant credit estimate. Trade-in credit reduces the financed amount or the cash you owe at the end.
-- **Mercury to Mercury repower.** Most existing controls and cables can stay. Rigging stays at the low end ($500 to $1,000 CAD for a Mercury-to-Mercury swap, versus $2,000 to $3,000 for a brand conversion). [Live pricing here.](/quote/motor-selection)
-- **Aluminum prop on smaller motors.** On motors up to 115 HP, a standard aluminum prop is $450 CAD and works fine for the typical boater. Stainless steel props are required on 150 HP and up but are not cost-effective on smaller motors unless you have a specific performance reason.
-- **Finance instead of stretching cash.** If your money is earning more than the current Mercury Repower Financing rate in other investments, it is mathematically cheaper to finance the motor and keep your money working. See the [financing page](/financing) for the full math.
+**Use case.** Fishing solo at trolling speed has totally different power requirements than cruising with two people or pulling a tube.
 
-## What HBW checks before recommending the "cheapest" motor for your boat
+**Where you launch.** A pontoon at a sheltered private dock can run a smaller motor than the same pontoon at the Bewdley ramp on a windy Rice Lake afternoon. The wind picks up across Sugar Island around 2 PM most days in July.
 
-We have rigged enough small Mercury motors on Rice Lake aluminum boats to know where the bottom honestly is. Before we recommend a low-end motor, we want to know:
+**Solo vs. family.** Adding two adults and a cooler turns "marginal" power into "stranded."
 
-- **Boat capacity plate.** Maximum HP rating is the real ceiling. We will not over-power your hull. Overpowering creates capacity-plate compliance, insurance, liability, and potential warranty problems, none of them worth saving a few horsepower.
-- **Transom condition.** A soft transom cannot safely hold any motor. We check with a moisture meter as part of the assessment.
-- **What you actually do on the water.** Solo fishing two mornings a week is a totally different motor than weekend family cruising.
-- **Where you launch.** Sheltered private dock vs. Bewdley public ramp on a windy afternoon makes a real difference in the right HP.
-- **Whether you are keeping the boat.** A motor for a one-season project boat is sized differently than a motor for a 15-year boat.
+**Capacity plate.** Overpowering a hull creates compliance, insurance, and warranty problems. The capacity plate sets your ceiling. We won't quote above it.
 
-If the cheapest motor is genuinely the right one for your boat, we will tell you. If a slightly bigger motor pays for itself in capability and resale, we will tell you that too.
+**Long-term plan.** A motor for one season is different math than a motor you're keeping for 15 years.
 
-## When the cheapest Mercury IS the right answer
+### Cheap That Is Not Actually Cheap
 
-There are real situations where the very smallest Mercury motors are the perfect call:
+**Buying too small.** A 9.9 on a 16-foot aluminum is not going to plane with two adults. You'll be back in two seasons buying a 25 or 40 at full price. That's paying twice.
 
-- **Tender or dinghy off a sailboat or cruiser.** A 2.5 to 6 HP portable does the job and stows easily.
-- **Kicker on a bigger boat.** A 9.9 ProKicker is the standard answer for trolling speed control on a fishing or aluminum boat that has a main motor for cruising.
-- **Solo low-speed fishing on small water.** A 9.9 to 15 HP on a 12-14 ft aluminum on sheltered water is a perfectly good setup.
-- **Project boat or restoration.** Rigging a hand-me-down hull yourself with a small motor is a fine path into ownership.
+**Buying off-brand.** A no-name motor is cheaper at the till. Then a part fails in year three, no Canadian dealer carries it, and the motor becomes scrap. Mercury parts and service are available across Canada because Mercury has been the dominant outboard brand here for decades. That network has real value.
 
-## When the cheapest Mercury is NOT the right answer
+**Buying used without inspection.** A used motor is a great way to save money. A used motor purchased blind is a great way to spend $3,000 and end up with a paperweight. We inspect every used motor we sell. We'll inspect a private-sale motor for a fair fee before you buy it.
 
-These are the situations where saving $2,000 on a smaller motor will cost you twice as much over a few seasons:
+**Skipping rigging on a remote-control install.** Saving $2,000 by reusing 22-year-old controls isn't savings if the throttle sticks at full speed on Rice Lake. Mercury-to-Mercury repowers can often keep existing controls in good condition, that's part of what makes Mercury-to-Mercury the cheapest repower path.
 
-- **Heavy hull or fiberglass runabout.** Needs real power to plane.
-- **Family with kids, gear, and a cooler.** Add 200 to 400 lbs of crew weight to whatever the dry boat needs.
-- **Rough water boating.** Lake Ontario, Lake Simcoe in the afternoon, Bay of Quinte. Wind builds and an underpowered motor cannot punch through.
-- **Tubing, skiing, or active water sports.** Needs HP and torque, not the cheapest option.
-- **Long runs across open water.** A 9.9 will eventually get you there, but it is going to be a long, miserable trip.
+### Cheap That Is Actually Cheap
 
-## Related guides
+**Buy in winter.** November through March is our quietest shop period. We have first pick of motors before the spring rush. Lead times are shortest. Mercury sometimes runs promotional financing rates below the standard rate, check the promotions page on [mercuryrepower.ca](https://www.mercuryrepower.ca) for current terms.
 
-- [How Much Does a Mercury Repower Cost in Ontario?](/blog/mercury-repower-cost-ontario-2026-cad), the price guide that walks through every HP class
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), match a motor to your hull, not your wallet
-- [Mercury Outboard Financing in Ontario](/blog/mercury-outboard-financing-ontario-2026), payment math, terms, what counts toward the loan
-- [Mercury Portable Outboards (2.5-20HP) Buyer's Guide](/blog/portable-outboard-mercury-guide-2-20hp), specific guidance for the small tiller class
-- [Trolling Motor vs Kicker: Which Auxiliary Setup Is Right for You?](/blog/electric-trolling-motor-kicker-guide), if you are looking at small motors as a kicker
+**Trade in your old motor.** Even a dead motor has aluminum and parts value. Trade-in credit reduces the amount you're financing or paying outright.
 
-## Ready to find your motor?
+**Mercury-to-Mercury repower.** Most existing controls and cables can stay. Rigging holds to $500, $1,000 CAD versus $2,000, $3,000 for a brand conversion.
 
-Build a quote on the [motor selection page](/quote/motor-selection) in three minutes. Live Mercury pricing, real CAD numbers, every model from the 2.5 portable up to the 300 V8. No phone tag. No "call for price."
+**Aluminum prop on smaller motors.** On motors up to 115 HP, a standard aluminum prop works fine for most boaters and costs considerably less than stainless.
 
-[**Build Your Mercury Quote**](/quote/motor-selection)
+### When the Cheapest Mercury IS the Right Answer
 
-If you want to talk through the right size for your specific boat before you build, [give us a call at (905) 342-2153](tel:9053422153). We answer the phone, and we will not sell you a motor that does not fit your boat.
+Real situations where the smallest Mercury is genuinely the perfect call:
+
+- **Tender or dinghy off a sailboat or cruiser.** A 2.5, 6 HP portable does the job and stows easily.
+- **Kicker on a fishing or pontoon boat.** A 9.9 ProKicker is the standard answer for trolling speed control. No point in more HP than you need for slow fishing passes.
+- **Solo low-speed fishing on small, sheltered water.** A 9.9, 15 HP on a 12, 14 ft aluminum on sheltered water is a perfectly legitimate setup.
+
+### When the Cheapest Mercury Is NOT the Right Answer
+
+**Heavy hull or fiberglass runabout.** Needs real power to plane.
+
+**Family use with passengers and gear.** Add 200, 400 lbs of crew weight to whatever the dry boat needs.
+
+**Rough water.** Lake Ontario, Lake Simcoe in the afternoon, Bay of Quinte. Wind builds and an underpowered motor can't punch back through.
+
+**Active water sports.** Needs HP and torque, not minimum power.
+
+**Long runs across open water.** A 9.9 will eventually get you there. It's just going to be a long day.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+## FAQs
+
+**What's the cheapest Mercury outboard in Canada in 2026?** 
+The cheapest Mercury is the 2.5 HP FourStroke portable, built for tenders, dinghies, and small inflatables. For current 2026 CAD pricing, see the motor selection page at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+
+**What's the cheapest Mercury with electric start?** 
+Mercury offers electric start on motors as small as the 9.9 EH. For specific pricing, see the motor selection page.
+
+**Should I buy the cheapest motor I can afford?** 
+Only if it actually fits your boat and use. Buying too small is the most common expensive mistake we see. The cheapest motor that genuinely fits your hull and use is what you want.
+
+**Can I finance a small Mercury outboard?** 
+Yes. Mercury financing covers motors of any size. For current terms, see the financing page on [mercuryrepower.ca](https://www.mercuryrepower.ca).
+
+**Are small Mercury portable motors reliable?** 
+Yes. Mercury has dominated the small-portable category in Canada for decades. Parts availability is strong. We have customers running 9.9s that are 20+ years old and still going.
+
+**Is it cheaper to buy used?** 
+Sometimes. A well-maintained 5-year-old 9.9 at half the price of new is real savings. A 20-year-old 9.9 with unknown service history at a quarter price is usually a problem waiting. We sell inspected used motors and will inspect private-sale motors for you.
+
+**What's the cheapest Mercury that can pull a tube?** 
+You need at least 60 HP for a single rider reliably, and 90 HP or more for two riders. The cheapest tube-capable Mercury is the 60 EFI FourStroke.
+
+**Do I need rigging when I buy a small tiller Mercury?** 
+No. Tiller motors 20 HP and under are drop-in installs. Hang it on the transom, connect the fuel, and go.
 
 ---
 
-## FAQ
+## Internal Links
 
-**What is the cheapest Mercury outboard in Canada in 2026?**
-The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2026 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
 
-**How much does a 2.5 HP Mercury cost in Canada?**
-Live CAD pricing on the 2.5 MH portable, including HBW's discount off MSRP, is on the [motor selection page](/quote/motor-selection). Tiller motors 20 HP and under are just the motor price (no rigging or extras), so the live number is your all-in.
+---
 
-**What is the cheapest Mercury with electric start?**
-Mercury offers electric start on motors as small as the 9.9 EH (Electric, Hand-tiller) and 9.9 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).
+## CTA
 
-**Is a small Mercury good enough for fishing?**
-For sheltered-water solo fishing on small aluminum, yes. A 9.9 to 15 HP tiller is a classic fishing setup on Rice Lake and Kawartha lakes. For bigger water (Lake Ontario, Lake Simcoe afternoon wind), or for fishing with two adults plus gear, you usually need at least 25 HP to plane reliably.
+Ready to find the right motor for your boat? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, every model from the 2.5 portable through the 300 V8, live CAD pricing, no "call for price."
 
-**Should I buy the cheapest motor I can afford?**
-Only if it actually fits your boat and your use. Buying too small is the most common expensive mistake we see. A 9.9 on a 16-foot aluminum that should have a 25 will leave you stranded against wind and trading up at full price in two seasons. The cheapest motor that genuinely fits your hull and use case is what you want, not the cheapest motor on the lot.
+Not sure what your boat actually needs? Call **905-342-2153**. We won't sell you a motor that doesn't fit your hull.
 
-**Can I finance a small Mercury outboard?**
-Yes. Mercury Repower Financing covers motors of any size, including small portable tillers. Terms run 24 to 84 months at current Mercury Repower Financing rates (lower if a promotional rate is active). Full details on the [financing page](/financing).
-
-**Are Mercury portable motors reliable?**
-Yes. Mercury has dominated the small-portable outboard category in Canada for decades. Parts availability is excellent. Service network is wide. We have customers running 9.9s and 15s that are 25 years old and still going. The current generation of FourStrokes is even more reliable than the 2-stroke generation it replaced.
-
-**Is it cheaper to buy a used Mercury?**
-Sometimes. A 5-year-old 9.9 in good condition at half the price of new is a real savings. A 20-year-old 9.9 with unknown service history at a quarter of the price is usually a problem waiting to happen. We sell inspected used motors and will inspect a private-sale motor for you for a fair fee before you commit.
-
-**How long does a small Mercury outboard last?**
-Properly maintained, a modern Mercury small motor (post-2000s) lasts 1,500 to 2,000 hours of running time before major service. For a recreational boater using a 9.9 for 30 to 60 hours a season, that translates to 25 to 60 years of useful life. Practical limit is usually parts availability over time, not the motor itself wearing out.
-
-**What is the cheapest Mercury that can pull a tube?**
-You need at least 60 HP to pull a tube reliably with one rider, and 90 HP or more for two riders. The cheapest tube-capable Mercury is the 60 EFI FourStroke, but you almost always want at least 90 HP for family tubing on Rice Lake or any open water. See the [motor selection page](/quote/motor-selection) for live pricing on the lineup.
-
-**Do I need rigging when I buy a small Mercury tiller?**
-No. Tiller motors 20 HP and under are drop-in installs. You hang it on the transom, hook up the fuel line, and go. No controls, no cables, no install labour. The motor itself is the whole purchase. Above 25 HP, motors are typically remote-control installs with rigging, controls, and labour as separate line items.
-
-**What is the cheapest Mercury repower I can do on a 16-foot aluminum?**
-A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15,000 CAD all-in for the 25 to 60 HP class). Going Mercury-to-Mercury keeps the rigging at the low end since most existing controls can stay. For a real number on your specific boat, [build a quote](/quote/motor-selection).
-`,
+---`,
     faqs: [
       { question: 'What is the cheapest Mercury outboard in Canada in 2026?', answer: 'The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2026 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).' },
       { question: 'How much does a 2.5 HP Mercury cost in Canada?', answer: 'Live CAD pricing on the 2.5 MH portable, including HBW\'s discount off MSRP, is on the [motor selection page](/quote/motor-selection). Tiller motors 20 HP and under are just the motor price (no rigging or extras), so the live number is your all-in.' },
@@ -11129,205 +11112,137 @@ The lake will be there. The right time to buy is when it makes sense for you, no
     category: 'Repower',
     readTime: '12 min read',
     keywords: ['repower vs new boat', 'boat hull replacement', 'when to repower outboard'],
-    content: `
-*Last reviewed: 2026-05-10*
+    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
 
-> **Quick answer:** If the hull is sound and the motor is tired, repower. If the hull is structurally compromised, soft transom, rotted stringers, hull cracks, replace the boat. Repowering a bad hull is throwing money at a doomed platform. Honest assessment and installed repower quotes at mercuryrepower.ca.
+---
 
-For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).
+## Quick Answer
 
-## Repower or replace? The quick decision tree
+If the hull is sound and the motor is tired, repower. If the hull is rotting, structurally compromised, or fundamentally undersized for how you use it, replace the boat. Repowering a bad hull is throwing money at a doomed platform. Honest assessment and installed repower quotes at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
-Start here:
 
-1. **Is the hull structurally solid?** If the transom, stringers, floor, and hull are sound, repower stays on the table. If the structure is soft or rotten, replacing the boat may be the smarter move.
-2. **Is the boat still the right boat for how you use it?** If the layout, size, seating, storage, and ride still work, a repower can protect a boat you already know. If your family or lake use has outgrown the hull, a new boat may solve more than the motor problem.
-3. **Is the repower less than the cost of changing boats?** Compare the installed motor, rigging, controls, prop, and setup against the real cost of moving into another boat. Do not compare motor-only price against boat-only price.
-4. **Will the boat be worth keeping for another 5-10 years?** If yes, repower can make sense. If you are already mentally done with the boat, do not spend good money trying to fall back in love with it.
+---
 
-HBW rule of thumb: a good hull with a tired motor is a repower candidate. A tired hull with a tired motor is a replacement candidate.
+## Full Article
 
-The decision is not "new boat vs. old boat." It is "do I have a hull worth keeping?" If the answer is yes, repower wins on the math nearly every time. A Mercury repower on a solid 15-year-old hull lands $20,000 to $35,000 CAD all-in for a typical setup, against $50,000 to $90,000 CAD for a comparable new boat package.
+The question isn't "new boat vs. old boat." It's "do I have a hull worth keeping?" If the answer is yes, repower wins on the math in most cases. A new Mercury on a solid hull gives you 80% of the new-boat experience for considerably less money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use.
 
-We have been doing this math with customers at HBW since 1965. Three patterns repeat:
+### Three Patterns We See Repeatedly
 
-- **Customers who want a new boat for the new-boat reasons** (specific hull, latest features, status) should buy a new boat. We sell those too. The repower argument is not for them.
-- **Customers who want a reliable boat that performs like new** are usually better served by a repower. Their hull is fine. Their motor is the limiting factor.
-- **Customers with a soft or compromised hull** should not repower. A new motor on a bad hull is paying premium for an asset that will fail you anyway.
+**Customers who want a new boat for new-boat reasons**, specific hull, latest features, the experience of buying new, should buy one. We sell Legend Boats at HBW. The repower argument isn't for everyone.
 
-The hard part is honestly assessing the hull. Most Kawartha aluminum hulls hold up better than owners assume. Most fiberglass hulls hold up worse than owners assume. We do free hull walk-arounds at HBW. [Schedule one](/contact).
+**Customers who want a reliable boat that performs like new** are usually better served by a repower. Their hull is fine. Their motor is the limiting factor.
 
-## What changes the answer
+**Customers with a soft or compromised hull** should not repower. A new motor on a bad hull is spending premium for an asset that will fail anyway.
 
-Five things move whether to repower or replace:
+The hard part is honestly assessing the hull. Most Ontario aluminum hulls hold up better than owners assume. Fiberglass hulls can go either way. We do free hull walk-arounds at HBW. If you're uncertain, come in.
 
-- **Hull age and condition.** A 10-year-old aluminum hull stored properly is closer to "new" than a 5-year-old fiberglass hull stored badly. Storage history matters more than calendar age.
-- **Hull suitability for current use.** A boat that was right for fishing solo and is now hauling a family of five is undersized. No motor fixes that.
-- **What is on the hull besides the motor.** If the seats, electronics, helm, and trailer are all aging out simultaneously, sometimes the math shifts toward replacement.
-- **Sentimental value.** A boat that grandpa built or that hauled three generations is worth more than the spec sheet says. Some hulls deserve to keep going.
-- **Long-term ownership plan.** A 20+ year keeper justifies a different decision than a 3-year flip.
+### The Honest Math
 
-## The honest math
+For typical Ontario freshwater repowers on a solid hull vs. new boat options:
 
-For typical Ontario freshwater repowers on a solid hull:
-
-| Scenario | Cost (CAD before HST) |
+| Scenario | Cost (CAD, before HST) |
 |---|---|
-| 90 to 115 HP repower on existing hull | $17,000 to $22,000 |
-| 150 to 200 HP repower on existing hull | $23,000 to $36,000 |
-| 250 to 300 HP repower on existing hull | $35,000 to $40,000 |
-| New comparable aluminum boat package (90 to 115 HP) | $50,000 to $70,000 |
-| New comparable fiberglass boat package (150 to 200 HP) | $65,000 to $90,000 |
-| New comparable pontoon package (115 to 150 HP) | $55,000 to $75,000 |
+| 90, 115 HP repower on existing hull | $17,000, $22,000 |
+| 150, 200 HP repower on existing hull | $23,000, $36,000 |
+| 250, 300 HP repower on existing hull | $35,000, $40,000 |
+| New comparable aluminum package (90, 115 HP) | $50,000, $70,000 |
+| New comparable fiberglass package (150, 200 HP) | $65,000, $90,000 |
+| New comparable pontoon package (115, 150 HP) | $55,000, $75,000 |
 
-For specific pricing on your boat, [build a quote](/quote/motor-selection) or [contact HBW](/contact).
+The repower path typically saves $25,000, $50,000 CAD against new. That savings is the deciding factor for most customers, but it's not the deciding factor when the hull is bad.
 
-The repower path saves $25,000 to $50,000 CAD against new in most scenarios. That savings is the deciding factor for most customers. It is not the deciding factor when the hull is bad.
+### When to Repower, The Clear Yes
 
-## When to repower (the clear yes)
+- **Hull is 5, 20 years old, dry-stored, and structurally solid.** Most Ontario aluminum hulls in this range have decades of life left.
+- **Existing seats, helm, and electronics still work or are fixable.** A motor swap doesn't require replacing the whole boat.
+- **The hull fits your use case.** A 16 ft aluminum console for Rice Lake fishing is the right tool. A new 16 ft aluminum console won't feel different on the water.
+- **You like the boat.** Sentimental and lifestyle attachment matters. The boats people keep for 20 years are usually boats they love.
+- **You plan to keep the boat 5+ more years.** The longer the hold, the more the repower math wins.
 
-Repower is the right call when:
+### When to Replace, The Clear No on Repower
 
-- **Hull is 5 to 20 years old, dry-stored, and structurally solid.** Most Ontario aluminum hulls in this range have decades of life left. Most fiberglass hulls in this range need careful inspection but are often fine.
-- **Existing seats, helm, and electronics still work or are fixable.** A motor swap does not require replacing the rest of the boat.
-- **The hull fits your use case.** 16 ft aluminum console for fishing on Rice Lake in the Kawarthas (Ontario) is the right tool. A new 16 ft aluminum console will not feel different on the water.
-- **You like the boat.** Sentimental and lifestyle attachment matters. The boats people keep for 20+ years are usually boats they love.
-- **You plan to keep the boat 5+ more years.** The longer the keep, the more the repower math wins.
+- **Hull is rotting, soft, or has structural problems.** Soft transom, soft floor, hairline cracks at stress points, or repair patches that didn't hold are end-of-life signs. A new motor on a bad hull is good money after bad.
+- **Hull is fundamentally undersized for current use.** A 14 ft aluminum that's now expected to haul a family of five at 25 mph can't do that job. No motor fixes the mismatch.
+- **You hate the boat.** If you don't want to spend more time on the hull, a new motor won't fix that.
+- **Total cost of getting the hull right exceeds half the cost of a comparable new boat.** New floor + transom rebuild + seat replacement + helm + new motor sometimes adds up past new-boat pricing. The math flips.
+- **You plan to sell within 2 years.** The repower premium doesn't pay back fast enough on a short hold.
 
-We see all five conditions met regularly at HBW. Those customers walk out with a new Mercury and a hull they already trust.
+When customers fall into this category, we tell them. We sell new Legend Boats. We're not married to the repower path.
 
-## When to replace (the clear no on repower)
-
-Replace the hull when:
-
-- **Hull is rotting, soft, or has structural problems.** Soft transom, soft floor, hairline cracks at stress points, or visible repair patches that did not hold are signs the hull is at end of life. A new motor on a bad hull is throwing good money after bad.
-- **Hull is fundamentally undersized for current use.** A 14 ft tin boat that is now expected to haul a family of five at 25 mph cannot do that job. No motor fixes the underlying mismatch.
-- **You hate the boat.** If you do not want to spend more time on the hull, a new motor will not fix that. Buying a boat you actually want is more important than saving money on a repower.
-- **The cost of getting the hull right is more than half the cost of a new boat.** New floor + transom rebuild + seat replacement + helm replacement + new motor = often above the new-boat price for a similar package. The math flips.
-- **You plan to flip the boat in less than 2 years.** The repower premium does not pay back fast enough on a short hold.
-
-When customers fall into this category, we tell them. We sell new Legend Boats at HBW. We are not married to the repower path.
-
-## The middle ground
+### The Middle Ground
 
 Some hulls fall between clear yes and clear no:
 
-- **Older fiberglass with cosmetic issues** but solid structure. Repower works but plan for cosmetic refresh during the same shop visit.
-- **Aluminum hulls with minor floor or transom soft spots.** Sometimes a partial floor or transom rebuild as part of the repower extends the hull's life another 10 to 15 years cost-effectively.
-- **Hulls with outdated electronics and rigging.** The repower is the right time to update the electronics and rigging. Combined cost is usually still well below new-boat pricing.
-- **Boats with a kicker mount that is in the wrong place.** Repower is the right time to relocate the kicker bracket if needed. Easier with the dash open.
+- **Older fiberglass with cosmetic issues but solid structure.** Repower works; plan a cosmetic refresh during the same shop visit.
+- **Aluminum hulls with minor soft spots in the floor or transom.** A partial floor or transom repair as part of the repower sometimes extends the hull's life another 10, 15 years cost-effectively.
+- **Hulls with outdated electronics and rigging.** The repower is the right time to update everything. Combined cost is usually still well below new-boat pricing.
 
-We assess these during the hull walk-around. The right answer depends on the specific hull and budget tolerance.
+We assess these during the walk-around. The right answer depends on the specific hull and your budget.
 
-## What HBW checks before recommending one path
+### What HBW Checks Before Recommending One Path
 
-When customers come in asking "should I repower or replace?" we want to know:
+When customers ask "repower or replace?", we want to know:
 
-- **Boat make, model, year, and length**
-- **Hull material (aluminum vs fiberglass)**
-- **Storage history (indoor heated, indoor unheated, outdoor)**
-- **Visible structural condition (we walk around it)**
-- **Floor and transom condition (we tap-test and visually inspect)**
-- **Existing motor age and condition**
-- **Existing rigging, electronics, and seat condition**
-- **Primary use case and how often you use the boat**
-- **Long-term plan (5 years, 10 years, 20 years)**
-- **Budget tolerance and financing options**
+- Boat make, model, year, length, and hull material
+- Storage history (indoor heated, indoor unheated, outdoor)
+- Visible structural condition
+- Existing motor age and condition
+- How often you use the boat and for what
+- Long-term plan (5 years, 10 years, 20 years)
+- Budget tolerance and financing options
 
-We give an honest recommendation. Sometimes the right answer is repower. Sometimes the right answer is replace. Sometimes the right answer is "keep using what you have, your motor still has 200 hours of life and you can decide next year."
+We give an honest recommendation. Sometimes the right answer is "your motor still has 200 hours of life, come back next year."
 
-## Common decision mistakes
+### Common Decision Mistakes
 
-We see these every season:
+**Replacing a hull that was fine.** Customer assumes their 12-year-old aluminum is at end of life because the motor died. Hull is solid. The replacement was unnecessary spending.
 
-1. **Replacing a hull that was fine.** Customer assumes their 12-year-old aluminum hull is at end of life because the motor died. Hull is still solid. Replacement was unnecessary spending.
-2. **Repowering a hull that is rotting.** Customer puts a new $20,000 motor on a hull with a soft transom. The transom fails 18 months later, putting the new motor at risk. Should have replaced the hull or repaired the transom first.
-3. **Replacing because of cosmetic problems.** Faded gel-coat or worn vinyl seats are not structural problems. Cosmetic refresh is much cheaper than replacement.
-4. **Ignoring the trailer.** A 20-year-old trailer with seized bearings and bald tires is a separate replacement decision from the boat itself. Sometimes the trailer is the limiting asset.
-5. **Buying new for the wrong reasons.** "I want a new boat" is a fine reason. "My motor is dead so I need a new boat" usually is not.
+**Repowering a hull that's rotting.** New $20,000 motor on a soft transom. The transom fails 18 months later, putting the new motor at risk.
 
-## Related guides
+**Replacing for cosmetic reasons.** Faded gel-coat or worn vinyl seats aren't structural problems. Cosmetic refresh is much cheaper than replacement.
 
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
-- [Boat Repowering Guide: When to Replace Your Motor](/blog/boat-repowering-guide-when-to-replace-motor), the timing question
-- [Ontario Cottage Boat Motor Repower Guide](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
-- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion specifically
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP sizing for repowers
-
-## Ready to figure out which path is right?
-
-If you think you might be repowering, build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD, full configuration including rigging.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through repower vs. replace before quoting, [give us a call at (905) 342-2153](tel:9053422153) or [come in for a hull walk-around](/contact). We will give you the honest math and the honest answer for your specific boat. Sometimes that answer is "your boat is fine, do not spend the money."
+**Ignoring the trailer.** A 20-year-old trailer with seized bearings is a separate decision from the boat. Sometimes the trailer is the limiting asset.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+## FAQs
+
+**Should I repower or buy a new boat?** 
+Depends on hull condition and use case. For most boaters with a 5, 20-year-old hull that's been stored properly and is structurally solid, repowering saves $25,000, $50,000 CAD and gives you most of the new-boat experience. For hulls with structural issues or use mismatch, replacement makes more sense.
+
+**How long does a typical aluminum hull last?** 
+Properly maintained aluminum hulls regularly last 30, 50+ years. Indoor storage and proper winterization are the biggest factors. Most Kawartha aluminum hulls from the 1990s and 2000s are still on the water.
+
+**What are the signs a hull is at end of life?** 
+Soft floor or transom, hairline cracks at stress points, visible repair patches that didn't hold, water inside the hull foam, or structural damage from impact. Cosmetic issues (faded gel-coat, worn vinyl) are not structural end-of-life signs.
+
+**Does a repower add value to my boat?** 
+A new Mercury motor on a solid hull adds meaningful resale value, typically recovering a significant portion of the repower cost, and makes the boat sell faster.
+
+**Can you assess my boat to help with the decision?** 
+Yes. We do free hull walk-arounds at HBW. Bring the boat to Gores Landing or send photos for a preliminary assessment. The full decision needs eyes on the boat. Call **905-342-2153** to schedule.
+
+**Should I repower a boat I plan to sell soon?** 
+Usually not. The repower premium pays back over multiple seasons of ownership. If you're selling within 12 months, selling as-is and letting the next owner decide usually makes more financial sense.
 
 ---
 
+## Internal Links
 
-## Try the calculator
-
-Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) - no signup, no email gate, takes 30 seconds.
-## FAQ
-
-**Should I repower or buy a new boat?**
-Depends on hull condition and use case. For most boaters with a 5-to-20-year-old hull that's been stored properly and is structurally solid, repowering saves $25,000 to $50,000 CAD against new and gives you 80% of the new-boat experience. For hulls with structural issues or fundamental use mismatch, replacement is the better path.
-
-**How long does a typical aluminum boat hull last?**
-Properly maintained aluminum hulls regularly last 30 to 50+ years. Indoor storage and proper winterization are the biggest factors. Most Kawartha aluminum hulls from the 1990s and 2000s are still on the water in 2026 with some on their second or third Mercury repower.
-
-**How long does a typical fiberglass boat hull last?**
-20 to 40 years depending on storage and use. Fiberglass is more sensitive to UV exposure and water intrusion than aluminum. Outdoor uncovered storage shortens fiberglass life meaningfully. Indoor heated storage extends it.
-
-**What are the signs a boat hull is at end of life?**
-Soft floor or transom (visibly springy or audibly hollow when tapped), hairline cracks at stress points, visible repair patches that did not hold, water inside the hull foam, or structural damage from impact or grounding. Cosmetic issues (faded gel-coat, worn vinyl) are not structural end-of-life signs.
-
-**How much does a Mercury repower cost?**
-Depends on HP. A 25 to 60 HP repower lands $11,000 to $15,000 CAD all-in. A 90 to 115 HP repower lands $17,000 to $22,000 CAD. A 150 to 200 HP repower lands $23,000 to $36,000 CAD. See our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for full ranges and [build a quote](/quote/motor-selection) for your specific boat.
-
-**How much does a new comparable boat cost?**
-Depends on size and brand. A new 16 to 18 ft aluminum console with 90 to 115 HP Mercury package lands $50,000 to $70,000 CAD. A new 18 to 22 ft fiberglass package lands $65,000 to $90,000 CAD. A new 20 to 22 ft pontoon package lands $55,000 to $75,000 CAD. New is consistently $25,000 to $50,000 CAD more than a comparable repower.
-
-**Can I repower a boat that is more than 20 years old?**
-Yes, if the hull is structurally solid. Many 25 to 35-year-old aluminum hulls at HBW are running their second Mercury repower. Older hulls warrant a thorough hull walk-around before committing to the motor purchase. Fiberglass hulls in the 25+ year range need extra inspection.
-
-**Will my old electronics and rigging work with a new Mercury?**
-Mercury-to-Mercury repowers usually keep existing throttle controls, gauges, and harness if they are post-2010 and in good condition. Older rigging often needs replacement. Brand conversions (Evinrude, Yamaha, Honda to Mercury) need new control systems. We assess during the hull walk-around.
-
-**Should I repower a boat I plan to sell soon?**
-Usually not. The repower premium pays back over multiple seasons of ownership. If you plan to sell within 12 months, the repower investment is unlikely to recover in resale price. Better to sell the boat as-is and let the next owner decide.
-
-**Does a repower add value to my boat?**
-A new Mercury motor adds meaningful resale value to a solid hull, often $0.60 to $0.80 per dollar spent on the repower. Not full recovery, but a meaningful uplift. The repower also makes the boat sell faster, which has its own value.
-
-**What if my hull is fine but my trailer is shot?**
-Treat the trailer as a separate decision. A new trailer for an existing boat is $3,000 to $7,000 CAD depending on size and capacity. That investment is usually well worth it on a hull you plan to keep.
-
-**Can HBW assess my boat to help with the decision?**
-Yes. We do free hull walk-arounds at HBW. Bring the boat to us or send photos and we can give you a preliminary assessment. The full decision needs eyes on the boat. [Contact us](/contact) to schedule.
-
-**What is the worst-case scenario for a repower?**
-Putting a new motor on a hull with a hidden structural problem (soft transom, cracked stringer, water-saturated foam). The hull fails 1 to 3 years later, putting the new motor at risk. Avoidable with a thorough hull walk-around before the repower. We do this on every project at HBW.
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
 
 ---
 
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+## CTA
 
----
+Think you might be repowering? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration.
 
-## Sources
+Not sure which path is right? Call **905-342-2153** or come in for a free hull walk-around. We'll give you the honest answer for your specific boat, including "don't spend the money."
 
-- Transport Canada - Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
-
-*Last reviewed: 2026-05-11.*
-`,
+---`,
     faqs: [
       {
         question: 'When should I repower my boat instead of buying a new one?',
