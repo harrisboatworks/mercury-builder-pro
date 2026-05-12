@@ -13520,6 +13520,13 @@ We're a full-service Mercury Platinum dealer and we work on everything from curr
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **New Mercury quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+---
+
+## Sources
+
+- Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)
+- TC-W3 marine 2-stroke oil standard (NMMA-administered specification).
 `,
     faqs: [
   {
@@ -13749,6 +13756,14 @@ Parks Canada doesn't sell fuel at lockstations, only commercial marinas do. Most
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 **Mercury repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
+
+---
+
+## Sources
+
+- Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)
 `,
     faqs: [
   {
@@ -14235,6 +14250,15 @@ No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licen
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 **Slip / launch info:** [harrisboatworks.ca/boatslips](https://harrisboatworks.ca/boatslips)
+
+---
+
+## Sources
+
+- Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
+- Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)
 `,
     faqs: [
   {
@@ -21511,6 +21535,14 @@ The lake is fine. The ramp area is for launching. If you want to overnight on th
 If you're heading up from the GTA and have questions: (905) 342-2153.
 
 If you don't have a boat but want to fish Rice Lake or take the family out, [boat rentals](https://www.harrisboatworks.ca/rentals) are next door.
+
+---
+
+## Sources
+
+- Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
 `,
   },
   {
