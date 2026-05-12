@@ -4202,8 +4202,7 @@ Schedule at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
 Book before April if May timing matters. Questions first? Call **905-342-2153**.
 
-Harris Boat Works | Since 1947 | Mercury Marine Platinum Dealer | Gores Landing, ON
-`,
+Harris Boat Works | Since 1947 | Mercury Marine Platinum Dealer | Gores Landing, ON`,
     howToSteps: [
       { name: 'Visual inspection', text: 'Walk around the boat checking hull for damage, mouse intrusion, cover damage, and loose hardware. Inspect motor cowl for cracks or chewed wiring. Check transom for soft spots and mounting bolts. Look at trailer bearings, tires, lights, and ball coupler.' },
       { name: 'Battery and electrical', text: 'Reinstall the battery if removed for winter. Load test it; below 10.5V under load means replace. Clean and tighten battery terminals. Test bilge pump, lights, gauges, and electronics with the key on but engine off.' },
@@ -10237,8 +10236,7 @@ Configure your motor, V8 FourStroke, Pro XS, or ProKicker, at **[mercuryrepower.
 
 Questions before you configure? Call **905-342-2153**.
 
-Harris Boat Works | Mercury Marine Platinum Dealer | Since 1947 | Gores Landing, ON
-`,
+Harris Boat Works | Mercury Marine Platinum Dealer | Since 1947 | Gores Landing, ON`,
     faqs: [
       {
         question: 'What is the best Mercury outboard for Lake Ontario salmon fishing?',
