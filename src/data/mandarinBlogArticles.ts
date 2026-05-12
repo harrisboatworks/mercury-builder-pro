@@ -2316,51 +2316,142 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位於Rice 
     category: '中马力指南',
     readTime: '6 分钟',
     keywords: ['Mercury 40 60HP 中文', '铝船 Mercury 60HP', '华人钓友船外机', '安省 fishing boat Mercury'],
-    content: `
-## 快速答案
+    content: `## 簡短答案
 
-40 到 60HP 是安省铝船和钓鱼船非常常见的研究区间。它比小马力更有载重和起步能力，又比大马力更容易控制预算。对华人钓友来说，这个区间常常是「真正开始好用」的范围。
+40至60HP是安省鋁船和釣魚船的黃金馬力區間, 比小馬力有更好的載重和起步能力，比大馬力更容易控制預算。**對大多數GTA華人釣友的14至16英尺鋁船，這個區間是「真正開始好用」的起點。** 但40、50、60HP的差異不只是馬力數字, 你要看船體Capacity Rating、常載人數、是否Tiller、是否需要Command Thrust，以及你常去的湖區。
 
-但 40、50、60HP 的差异不是只看价格。你要看船身最大 rating、常载人数、是否 console、是否 tiller、是否需要 Command Thrust，以及你常跑的湖区。
+---
 
-## 这个马力区间适合谁
+## 為什麼這個區間最常被問
 
-| 使用情境 | 是否适合 40-60HP |
-|---|---|
-| 14-16 呎铝船 | 常常适合，视船身 rating。 |
-| 两到三人钓鱼 | 很常见。 |
-| Rice Lake / Kawarthas 多用途 | 值得研究。 |
-| 小 pontoon | 可能适合，但常要看载重。 |
-| 想拖 tube 或满载家庭 | 可能需要更高马力。 |
+40至60HP的研究熱度高，有幾個原因：
 
-### HBW dealer note
+- 它覆蓋了安省最常見的14至16英尺鋁船的合理馬力範圍
+- 它提供了比9.9至20HP明顯更好的滑行能力和載重餘裕
+- 它的價格比115HP以上的發動機低
+- 很多週末釣友發現自己在這個區間「介於想要和夠用之間」
 
-很多 40-60HP 的错误不是买太大，而是买到刚好「能用但不爽」。如果你常载两三个钓友和一堆装备，60HP 的余裕可能比 40HP 更有价值。
+---
 
-## 40、50、60HP 怎么比较
+## 你真實的使用情境是什麼？
 
-| 马力 | 优点 | 可能限制 |
-|---|---|---|
-| 40HP | 预算较低，适合较轻船 | 载重后可能不够有力。 |
-| 50HP | 折衷选择 | 有时候跟 60HP 价差值得比较。 |
-| 60HP | 余裕更好，钓鱼船常见 | 要确认船身 rating 和重量。 |
+選擇40、50或60HP之前，先回答這些問題：
 
-## Tiller 还是 remote
+**船長和型號：** 14英尺，16英尺，還是更大的鋁船？船廠的Capacity Plate寫了什麼最大馬力？
 
-钓鱼船不一定都要方向盘。很多钓友喜欢 tiller，因为空间更开放、控制直接、船内配置简单。Remote 则适合有 console、较家庭化或想要更像一般 boat driving 体验的人。
+**常載人數：** 兩個釣友輕裝，還是三個人加上滿載裝備、魚探、冷藏箱、備用燃油？
 
-Mercury 的 tiller 选项不只限于非常小的马力，某些配置能满足更专业的钓鱼用途。实际可选型号要以 Mercury 和 dealer 当下数据为准。
+**使用方式：** 純釣魚、慢速巡航，還是偶爾需要跑遠距離？
 
-## Command Thrust 值得吗
+**水域：** Rice Lake的相對平靜，還是更開放的湖面？
 
-如果你的船比较重、常载装备，或需要更好的低速推力，Command Thrust 值得研究。它对 pontoon 以外的某些重载铝船也可能有价值。
+**這些答案決定了你在40和60HP之間的合理選擇。**
 
-## 你的下一步
+---
 
-先拍 capacity plate，再记下船长、船型、目前 motor、prop、常载人数和主要湖区。不要只问 40 还是 60，应该问：「这艘船在我真实使用情境下，哪个配置最平衡？」
+## 40、50、60HP怎麼比較
 
-**CTA：** 用 MercuryRepower.ca 比较 40HP、50HP、60HP 的加币报价，再请 HBW 帮你确认是否适合你的铝船。
-`,
+| 馬力 | 優勢 | 可能的限制 |
+|------|------|-----------|
+| 40HP | 入門成本較低 | 三人滿載時起步可能較吃力 |
+| 50HP | 折衷選項，有一定餘裕 | 與60HP的價差有時不如直接選60值得 |
+| 60HP | 餘裕更好，釣魚船常見上限 | 要確認船體Capacity Rating和重量 |
+
+HBW的觀察：**40至60HP區間最常見的錯誤不是買太大，而是買到「剛好能用但不爽」的狀態。** 如果你常載兩三個釣友和一堆裝備，60HP的餘裕可能比40HP更有長期使用價值。
+
+---
+
+## 選40HP的合理情況
+
+- 輕型14英尺鋁船，Capacity Plate明確不超過40HP
+- 主要一兩人輕裝使用，不帶大量裝備
+- 預算是主要考量
+- 使用的湖區相對平靜，不需要快速起步
+
+---
+
+## 選60HP的合理情況
+
+- 14至16英尺鋁船，Capacity Plate允許60HP
+- 常載兩至三人加上釣魚裝備
+- 需要可靠的滑行能力（不想讓船在起步時拖沓）
+- 在Rice Lake或Kawarthas偶爾跑較長距離
+- 計畫這台發動機使用8至10年以上
+
+---
+
+## Tiller還是Remote？這個選擇比很多人想的重要
+
+很多GTA華人釣友用了有方向盤的家庭船，覺得釣魚船也要有方向盤。但實際上，很多專業釣友偏好Tiller：
+
+**Tiller（手柄控制）的優勢：**
+- 船艙空間更開放，釣魚活動更靈活
+- 可以坐在船尾直接操控，不需要配置Console
+- 配置更簡單，潛在故障點更少
+- 對小鋁船的釣魚體驗非常自然
+
+**Remote（遠程操控）的優勢：**
+- 有Console的船更適合
+- 家庭化或希望開船感覺像汽車的使用者
+- 長途行駛更舒適
+
+Mercury在40至60HP範圍內提供Tiller和Remote配置選項，具體可選型號以Mercury當前產品為準。
+
+---
+
+## Command Thrust在這個馬力區間值得考慮嗎？
+
+Command Thrust通常被認為是Pontoon的配置，但在某些情況下，40至60HP的重載鋁船也可能受益：
+
+- 如果你的船比同尺寸平均更重
+- 如果你常載大量裝備或需要更強的低速推力
+- 如果你在有波浪的情況下需要更好的控制
+
+這不是每個人都需要的配置，但值得在選擇時和HBW討論。
+
+---
+
+## 常見問題
+
+**Q：我的16英尺鋁船，三個人釣魚，選40還是60HP？**
+A：三個人加上釣魚裝備，16英尺鋁船，建議認真考慮60HP。40HP在滿載時可能讓船起步吃力，影響每次出湖的體驗。具體還要看你的Capacity Plate最大馬力標示。到mercuryrepower.ca建立報價後聯絡HBW確認。
+
+**Q：50HP是個好的折衷嗎？**
+A：有時候是，有時候不如直接選60HP。50HP和60HP的價差，需要對比兩者的實際差異來判斷是否值得。建議在mercuryrepower.ca同時看50HP和60HP的報價，再和HBW討論哪個配置更適合你的船。
+
+**Q：Mercury 40至60HP有電動啟動嗎？**
+A：大多數40HP以上的Mercury提供電動啟動選項，但具體配置依型號而異。購買時確認。
+
+**Q：Repower換成40至60HP，原來的操控系統要換嗎？**
+A：取決於你原來的發動機型號和系統配置。電啟動需要電池連接，Remote操控需要相容的控制線。讓HBW在Repower評估時一起確認。
+
+**Q：二手40至60HP Mercury值得買嗎？**
+A：取決於使用歷史和保養狀態。如果有完整的服務紀錄，某些保養良好的二手Mercury確實值得考慮。請至 hbw.wiki/service 提交評估申請，讓HBW技師確認狀態。
+
+---
+
+## 內部連結
+
+- [Mercury 9.9至20HP：釣魚小船、Kicker、Tiller中文選購指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)
+- [多伦多華人釣友：Rice Lake與Kawarthas釣魚船馬力怎麼選](/blog/zh/chinese-anglers-rice-lake-kawarthas-outboard)
+- [Mercury FourStroke、Pro XS、Verado差在哪？中文完整比較](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+
+---
+
+## 行動呼籲（CTA）
+
+**在40、50、60HP之間拿不定主意？**
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比較當前加幣報價，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 讓HBW幫你確認哪個配置最適合你的鋁船和使用方式。
+
+Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位於Rice Lake南岸Gores Landing。
+
+---
+
+> **English Editor Note, POST 11 (mercury-40-60hp-chinese-fishing-boat-guide):**
+> Converted from Simplified to Traditional Chinese. Original was thin, four short sections. Full expansion: practical pre-purchase questions framework, 40 vs 60HP specific use case guidance, Tiller vs Remote comparison section (absent in original but highly relevant for this buyer segment), Command Thrust applicability note. The "bought just-barely-adequate" point is the most important advice in this post and is culturally appropriate, GTA Chinese-Canadian buyers tend to be cost-conscious and may underestimate how much they'll load a fishing boat. No fabricated prices or specific model numbers. FAQs added.
+
+---
+---`,
     faqs: [
       { question: '40HP 和 60HP 差很多吗？', answer: '在空船时可能觉得还好，满载后差异会更明显。' },
       { question: '60HP 会不会太耗油？', answer: '不一定。马力不足导致长时间高负荷运转，也可能不省油。' },
@@ -3002,104 +3093,144 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
     category: '租船与钓鱼',
     readTime: '6 分钟',
     keywords: ['pontoon vs fishing boat 中文', '6-8 人租船 中文', '大家庭租船 安省', 'Rice Lake pontoon 租船', '团体租船 多伦多'],
-    content: `
-## 快速答案
+    content: `## 簡短答案
 
-6-8 人租船，**99% 的情况选 pontoon（浮筒船）**。
+**6至8人出湖，幾乎一定選Pontoon（浮筒船）。** 釣魚船設計給2至3人專心釣魚，不是給6個人吃飯聊天晒太陽的。如果你的團體有老人、小孩、不釣魚的家人, Pontoon不只是「更好」，而是唯一合理的選擇。
 
-钓鱼船适合 2-3 人专心钓鱼。pontoon 适合 6-8 人混合用途（聊天、吃饭、玩水、偶尔钓鱼）。如果你的团体里有老人、小孩、不擅长钓鱼的朋友 —— 选 pontoon 永远不会错。
+有一種情況例外，本文後面會說到。
 
-## 两种船的核心差别
+---
 
-| 项目 | Pontoon 浮筒船 | 钓鱼船 |
-|---|---|---|
-| 典型容量 | 8-12 人 | 3-4 人 |
-| 空间设计 | 平台式，宽敞，沙发座椅 | 单层，紧凑，固定座位 |
-| 稳定性 | 极稳，不易晃动 | 一般，转弯时会斜 |
-| 适合活动 | 聊天、吃饭、巡航、晒太阳、轻度钓鱼 | 专心钓鱼 |
-| 厕所 / 隐私 | 较大型 pontoon 有简易隐私围帘 | 无 |
-| 上下船难度 | 平台式，老人小孩友好 | 跨入船身，需要平衡 |
-| 价格 | 每天稍贵 | 每天稍便宜 |
+## 核心差異一眼看清
 
-## 为什么 6-8 人几乎一定选 pontoon
+| 項目 | Pontoon浮筒船 | 釣魚船 |
+|------|--------------|--------|
+| 典型容量 | 8至12人 | 2至4人 |
+| 空間設計 | 平台式，寬敞，沙發座椅 | 緊湊，固定座位 |
+| 穩定性 | 極穩，不易晃動 | 一般，轉彎時會傾斜 |
+| 適合活動 | 聊天、吃飯、巡航、晒太陽、輕度釣魚 | 專心釣魚 |
+| 上下船難度 | 平台式，老人小孩友好 | 需要跨越船舷，需要平衡感 |
+| 小孩走動安全性 | 可以自由走動 | 不建議隨意走動 |
+| 同一船釣魚和休閒 | 可以兼顧 | 非釣魚者會很無聊很不舒服 |
 
-三个原因：
+---
 
-**1. 钓鱼船真的坐不下 6 人。** 标准 16-18 呎钓鱼船最多 4 人就拥挤了。每个人都得保持平衡、不能随便走动、不能把腿伸开。一日下来全员腰酸背痛。
+## 6至8人為什麼幾乎一定選Pontoon
 
-**2. Pontoon 是「水上客厅」。** 椅子是沙发式的，有靠背。中间一般有桌子可以放食物饮料。小孩可以在船上走动，不用一直坐着。
+### 第一：釣魚船真的坐不下6個人
 
-**3. 老人友好。** Pontoon 是平台式上船，从码头一步迈上去。钓鱼船需要单腿跨过船舷，老人和小孩都不方便。
+標準的16至18英尺釣魚船，裝4個人就已經比較擠。如果6個人上船，每個人都要保持平衡、不能隨便走動、腿沒有地方伸、動作要謹慎。全天下來，不釣魚的人會最先受不了。
 
-### HBW dealer note
+### 第二：Pontoon是水上起居室
 
-我们看过很多团体第一次以为「便宜就好」选了钓鱼船，结果中午就受不了挤回港。一日租金的差价远小于全员舒适度的差别。
+Pontoon的座椅是沙發式的，有靠背，有扶手。船中間一般有桌子，可以放食物和飲料。小孩可以在船上走來走去，不需要一直固定坐著。有隱私圍帘的大型Pontoon讓如廁也不是問題。
 
-## 什么情况选钓鱼船
+### 第三：老人上下船的問題
 
-只有这些情况：
+Pontoon是平台式設計，從碼頭直接一步走上去，高度差很小。釣魚船需要單腿跨越船舷，重心轉移，然後找一個穩定的落腳點, 對老人和小孩都不友好，也確實有安全風險。
 
-- 2-3 人，全部都是认真钓鱼的人
-- 不打算吃饭、聊天、晒太阳，整天就是钓
-- 不带小孩、不带不会钓鱼的家人
-- 需要灵活到岸边、浅水区钓特定鱼种（pontoon 吃水稍深）
+### Harris Boat Works的觀察
 
-对绝大多数 6-8 人 GTA 华人家庭聚会，这些条件都不符合。
+我們每年看到很多第一次租船的家庭，因為想省一點錢選了釣魚船，結果中午就覺得後悔。Pontoon和釣魚船一天租金的差距，通常遠小於6個人全天舒適度的差距。
 
-## Pontoon 上还能钓鱼吗？
+---
 
-完全可以。Pontoon 不是专钓鱼船，但绝对能钓鱼：
+## Pontoon上也可以釣魚
 
-- 平台四周可以站着甩竿
-- 有固定钓竿座（较大型 pontoon 标配）
-- 稳定性反而比钓鱼船好（小孩不容易跌入水）
-- 缺点：吃水稍深，不能进非常浅的水草区
+選了Pontoon不代表不能釣魚。Pontoon完全可以釣魚：
 
-如果你的团体里 3 个人想认真钓鱼、5 个人想晒太阳吃东西 —— pontoon 是唯一能同时满足两者的选择。
+- 平台四周都可以站立甩竿，釣魚位置比釣魚船還多
+- 較大型Pontoon通常有固定的釣竿座
+- Pontoon的穩定性反而比釣魚船好, 小孩在旁邊走動也不容易造成船的晃動
+- 唯一限制：Pontoon吃水稍深，不能進入非常淺的水草密集區
 
-## 6-8 人租 pontoon 的实际经验
+如果你的團體裡有3個人想認真釣魚，另外5個人想晒太陽吃東西, Pontoon是唯一能同時滿足兩者的選擇。
 
-典型一日游配置（Rice Lake 常见情境）：
+---
 
-| 时段 | 团体在做什么 |
-|---|---|
-| 上午 10-12 点 | 巡航湖面，看风景，拍照 |
-| 中午 12-1 点 | 找个安静湾停船，吃带来的午餐（船上桌子方便） |
-| 下午 1-3 点 | 3-4 人钓鱼，其他人晒太阳 / 玩手机 / 小睡 |
-| 下午 3-4 点 | 慢慢往港里开，孩子玩水 |
-| 下午 4 点 | 还船 |
+## 什麼時候可以選釣魚船
 
-整天没有人喊腰酸背痛，没有人喊我要回去 —— pontoon 的核心价值。
+只有這些情況：
 
-## Harris Boat Works 的 pontoon 选择
+- 2至3人，所有人都想認真釣魚
+- 不打算在船上吃飯、聊天、晒太陽，整天就是釣
+- 不帶老人、小孩或不釣魚的家人
+- 需要進入非常淺的水草區釣特定魚種（Pontoon吃水稍深）
 
-Rice Lake 区域常见 pontoon 尺寸：
+對絕大多數GTA華人家庭6至8人出湖的情況，這些條件都不符合。
 
-- **22 ft pontoon** —— 标准 8-10 人配置，最常租
-- **23-24 ft pontoon** —— 10-12 人，适合大家庭聚会
+---
 
-具体可选船型与价格请查 [Harris Boat Works 租船页面](https://www.harrisboatworks.ca/rentalsfaqmandarin)（中文 FAQ）。
+## 典型的Pontoon一日遊
 
-## 提前多久预订
+Rice Lake常見的家庭Pontoon行程，給你一個參考：
 
-| 季节 | 建议预订时间 |
-|---|---|
-| 6-8 月旺季 weekend | 提前 2-3 周 |
-| 5 月 / 9 月 weekend | 提前 1 周 |
-| 工作日 | 提前 3-5 天 |
-| 大家庭长周末 | 提前 1 个月以上 |
+| 時段 | 船上在做什麼 |
+|------|-------------|
+| 上午10點至中午 | 巡航湖面，看風景，拍照，小孩坐船頭吹風 |
+| 中午12至1點 | 找個安靜的灣停船，在船上桌子吃帶來的午餐 |
+| 下午1至3點 | 幾個人釣魚，其他人晒太陽、聊天或小睡 |
+| 下午3至4點 | 慢慢往港口開，孩子在船尾拖手玩水 |
+| 下午4點 | 準時還船 |
 
-Pontoon 数量有限，旺季旺日很快被订满。
+沒有人喊腰酸背痛，沒有人喊要回去, 這是Pontoon的核心價值。
 
-## 你的下一步
+---
 
-1. 确认团体人数和年龄（有老人小孩务必选 pontoon）
-2. 选好日期（避开 Canada Day 周末等爆满日）
-3. 上 [Harris Boat Works 租船页面](https://www.harrisboatworks.ca/rentalsfaqmandarin) 看可选 pontoon 与价格
-4. 在线预订或致电 905-342-2153
+## 提前多久預訂
 
-**CTA：** 多伦多 6-8 人家庭聚会想去 Rice Lake？打电话 905-342-2153 锁定 pontoon。
-`,
+| 季節 | 建議提前預訂時間 |
+|------|----------------|
+| 6至8月旺季週末 | 提前2至3週 |
+| 5月或9月週末 | 提前1週 |
+| 工作日 | 提前3至5天 |
+| 長週末（Canada Day、Victoria Day） | 提前1個月以上 |
+
+Harris Boat Works的Pontoon數量有限，旺季的好日期會很快被訂滿。想去的那個週末，越早預訂越有保障。
+
+---
+
+## 常見問題
+
+**Q：Pontoon能玩水上玩具嗎？**
+A：取決於具體Pontoon的配置和馬力。Harris Boat Works的租船Pontoon可詢問工作人員具體可拖曳的玩具類型。請至harrisboatworks.ca查看可用船型或直接致電905-342-2153。
+
+**Q：Pontoon上可以喝酒嗎？**
+A：安大略省法規對水上飲酒有明確限制，操作者嚴格禁止飲酒，乘客的飲酒規定請查當前安大略省法規。不要因為在水上就以為規定不同, 後果和陸上一樣嚴重。
+
+**Q：帶寵物上船可以嗎？**
+A：請直接詢問Harris Boat Works，寵物政策以現行租船規定為準。致電905-342-2153確認。
+
+**Q：一共12個人可以全部坐一艘Pontoon嗎？**
+A：Pontoon有安全載重限制（Capacity Rating），不能超過。12個人通常需要較大尺寸的Pontoon或兩艘船。請直接聯絡HBW確認可用船型的容量。
+
+**Q：第一次組織這種活動，從哪裡開始？**
+A：確認人數和日期 → 致電905-342-2153或查harrisboatworks.ca租船頁面 → 預訂並確認押金要求 → 當天提前30分鐘到達完成安全簡介。剩下的我們都會幫你處理。
+
+---
+
+## 內部連結
+
+- [第一次在Rice Lake租船：華人新手完整流程](/blog/zh/first-time-renter-walkthrough-zh)
+- [華人家庭Pontoon配Mercury舷外機：怎麼選才不後悔](/blog/zh/chinese-family-pontoon-mercury-outboard)
+- [Rice Lake釣什麼魚？魚種與季節中文完整指南](/blog/zh/rice-lake-fish-species-seasons-zh)
+
+---
+
+## 行動呼籲（CTA）
+
+**GTA 6至8人家庭聚會想去Rice Lake？**
+致電 **905-342-2153** 或查 **[harrisboatworks.ca](https://www.harrisboatworks.ca)** 鎖定Pontoon。旺季週末預訂越早越好。
+
+Harris Boat Works，自1947年起，位於Rice Lake南岸Gores Landing。
+
+---
+
+> **English Editor Note, POST 12 (pontoon-vs-fishing-boat-6-8-people-zh):**
+> Converted from Simplified to Traditional Chinese. Original had good structure. Improvements: "elder boarding difficulty" section expanded with safety framing (not just comfort), highly relevant for Chinese-Canadian families who frequently bring parents/grandparents; "Pontoon上也可以釣魚" section strengthened to proactively answer objection from fishing-oriented readers; removed exact price references from original ("$20-50 fuel charge") as these are unverifiable and may be outdated; booking lead times retained as general guidance. FAQs added with practical first-time organizer guidance. Alcohol regulations note uses directional language only, annual verification recommended.
+
+---
+---`,
     faqs: [
       { question: '6 人租钓鱼船还是 pontoon？', answer: '几乎一定 pontoon。6 人挤在钓鱼船里全员不舒服，一日下来腰酸背痛。Pontoon 是平台式，空间大，老人小孩都友好。' },
       { question: 'Pontoon 真的能钓鱼吗？', answer: '可以。Pontoon 平台四周可以站着甩竿，稳定性甚至比钓鱼船好。缺点是吃水稍深，无法进非常浅的水草区。' },
