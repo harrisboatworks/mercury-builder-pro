@@ -14589,179 +14589,130 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['outboard shaft length', 'mercury shaft length guide', '20 inch shaft outboard', '25 inch shaft outboard', 'transom height measurement'],
-    content: `# Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)
+    content: `
+# Outboard Shaft Length Guide: Short, Long, and Extra Long, How to Get It Right
 
-*Last reviewed: 2026-05-07*
+## Quick answer
+Measure your transom height from the bottom of the cutout to the top of the transom. A 15-inch transom needs a short shaft, 20-inch needs a long shaft, 25-inch needs an extra long. Wrong shaft length means cavitation, lost performance, or a submerged powerhead. We confirm shaft length on every quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-> **Quick answer:** Measure transom height from the top to the bottom of the cutout: 15 inches needs a short shaft, 20 inches a long shaft, 25 inches an extra-long. Wrong shaft length means cavitation or a submerged powerhead. We confirm shaft length on every quote, see mercuryrepower.ca.
+## Why shaft length matters more than most people think
 
-Outboard shaft length is the distance from the motor's mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20 inch (Long), and 25 inch (Extra Long). Wrong shaft length causes cavitation, performance loss, or motor damage. Match the shaft to your boat's transom height. Live pricing on every Mercury we sell, including correct shaft selection, is at [/quote/motor-selection](/quote/motor-selection).
+Shaft length determines where the propeller sits in the water column relative to your hull. The rule is straightforward: the cavitation plate (the flat plate just above the prop) should ride roughly level with the bottom of your hull at the prop location when the boat is on plane.
 
-## Quick recommendation
+Too short, and the prop rides too close to the surface, pulling air and cavitating under load. Too long, and the lower unit drags unnecessarily through the water, costing you speed and fuel economy.
 
-Most Mercury motors come in two or three shaft length options. The right one depends on your boat's transom height. The simple rule:
+Neither is a minor problem. We see wrong-shaft installs regularly, sometimes from dealers who did not measure, sometimes from online purchases made without measuring. The fix is either returning the motor before it is rigged, or living with a motor that never performs the way it should.
 
-- **Cavitation plate (the flat plate above the prop) should be roughly even with the bottom of the hull at the prop location**
-- **Too short:** plate is above the hull bottom, prop is too close to the surface, motor cavitates and ventilates
-- **Too long:** plate is below the hull bottom, lower unit drags through water, performance drops
-
-Measure your transom height before ordering. We measure during every walk-around at HBW. Match shaft length to transom height. There's no "splitting the difference", get it right.
+Get the measurement right before you order. It takes five minutes.
 
 ## Mercury shaft length options
 
-Three standard lengths cover most boats:
+### Short shaft, 15 inch (Code: S)
+- Best for: Small aluminum tinnies with low transoms, typically 12 to 14 ft
+- Common Mercury models: Portable motors in the 2.5 to 9.9 HP range
+- Transom height to match: ~15 inches
+- Less common than it used to be. Most modern aluminum boats are built taller than this.
 
-### Short shaft: 15 inch
+### Long shaft, 20 inch (Code: L)
+- Best for: Most aluminum console fishing boats, open runabouts, smaller pontoons, typically 14 to 19 ft
+- Common Mercury models: 9.9 ProKicker, 15, 20, 25, 40, 60, 90 EXLPT, 115 EXLPT, 150 EXLPT (check model code; "L" in the suffix means long shaft)
+- Transom height to match: ~20 inches
+- This is the most common shaft length on Ontario freshwater boats. If you own a standard aluminum fishing boat on Rice Lake, this is probably what you need, but measure first.
 
-- **Mounting code:** S
-- **Best for:** Small tin boats with low transoms (typically 12 to 14 ft)
-- **Common Mercury models:** Portable motors (2.5 HP through 9.9 HP standard)
-- **Transom height to match:** ~15 inches
+### Extra long shaft, 25 inch (Code: XL)
+- Best for: Larger pontoons, deep-V hulls, sailboat auxiliaries, some center-console applications, typically 18 ft+ or boats with deep transoms
+- Common Mercury models: Available on the 9.9 ProKicker, 15, 25, 90, 115, 150, 200, 250, 300 HP, and Verado lines
+- Transom height to match: ~25 inches
+- Pontoon boats vary, some 22-ft pontoons run 20-inch, some run 25-inch depending on model year and transom design. Measure; do not assume.
 
-### Long shaft: 20 inch
-
-- **Mounting code:** L
-- **Best for:** Most aluminum console fishing boats, runabouts, smaller pontoons (typically 14 to 19 ft)
-- **Common Mercury models:** 9.9 ProKicker, 15, 20, 25, 40, 60, 90 EXLPT, 115 EXLPT, 150 EXLPT
-- **Transom height to match:** ~20 inches
-- **Most common shaft length** in Ontario freshwater boats
-
-### Extra long shaft: 25 inch
-
-- **Mounting code:** XL
-- **Best for:** Larger pontoons, sailboat auxiliaries, deep-V hulls, some center consoles (typically 18 ft+ or boats with deep transoms)
-- **Common Mercury models:** Available variants of 9.9 ProKicker, 15, 25, 90, 115, 150, 200, 250, 300 HP and Verado
-- **Transom height to match:** ~25 inches
-
-### Ultra long shaft: 30 inch (XXL)
-
-- **Mounting code:** XXL or U
-- **Best for:** Sailboat auxiliaries, very deep-transom commercial applications
-- **Available on:** Some Mercury models, special order
-- **Less common in Ontario freshwater**
-
-For specific Mercury model availability by shaft length, [build a quote](/quote/motor-selection).
+### Ultra long shaft, 30 inch (Code: XXL or U)
+- Best for: Sailboat auxiliaries and deep-transom commercial applications
+- Less common in Ontario freshwater. Special order on most models.
 
 ## How to measure your transom height
-:::image-placeholder
-slug: shaft-length-vs-transom-diagram
-type: diagram
-aspect: 4:5
-description: Side-profile diagram showing the relationship between shaft length and transom height with labeled cavitation plate position
-prompt: Photorealistic editorial technical diagram. Side profile cross-section of a Mercury outboard mounted on a boat transom. Labeled measurements: transom height arrow (top to bottom), shaft length arrow (mounting bracket to cavitation plate), water line. Three variations side-by-side: 15-inch short, 20-inch long, 25-inch extra long. Mercury cowl details accurate. Clean white background, technical illustration style. No people. 1080x1350. [STYLE ANCHOR]
-image: /lovable-uploads/shaft-length-vs-transom-diagram.png
-:::
 
-You need a tape measure and 5 minutes:
+You need a tape measure and five minutes:
 
-![Diagram showing how to measure outboard shaft length: 15-inch short shaft, 20-inch long shaft, 25-inch extra long shaft on a boat transom in side profile.](/lovable-uploads/diagram-shaft-length-measurement.png)
-*Standard outboard shaft lengths measured from the top of the transom (motor mount) down to the bottom of the hull at the waterline. Mismatched length causes prop ventilation or excess drag.*
+1. Find the lowest point of your hull at the transom, the point where the water contacts the hull when the boat is running on plane. On most aluminum boats, this is the bottom edge of the transom cutout.
+2. Measure straight up from that point to the top of the transom, where the motor mounting bracket will sit.
+3. That measurement is your transom height. Match it to the chart below.
 
-1. **Find the lowest point of the hull at the transom** (the point where water meets hull when running on plane)
-2. **Measure straight up** from that point to the top of the transom (where the motor will mount)
-3. **That measurement is your transom height**
-
-Standard transom heights and matching shafts:
-
-| Transom height | Shaft length needed | Shaft code |
+| Transom Height | Shaft Length Needed | Mercury Code |
 |---|---|---|
 | 15 to 16 inches | Short | S (15") |
 | 19 to 21 inches | Long | L (20") |
-| 24 to 26 inches | Extra long | XL (25") |
-| 29 to 31 inches | Ultra long | XXL (30") |
+| 24 to 26 inches | Extra Long | XL (25") |
+| 29 to 31 inches | Ultra Long | XXL (30") |
 
-If your transom measurement is between standard sizes, the lower number is usually the right call (slightly long is worse than slightly short on most hulls). Verify with a hull walk-around before committing.
+Between sizes? Round down, not up. A motor slightly longer than needed drags more than a motor slightly shorter, and slightly short usually means adjusting mounting height, which is easier than swapping a lower unit. Verify before committing.
 
-## What changes the answer
+## Five things that change the answer
 
-Five things move the right shaft length for your boat:
+1. **Hull design.** Deep-V hulls with steep transom angles sometimes need a 25-inch shaft even when the transom height measures 22 inches.
+2. **Motor mounting position.** Where the motor mounts on the transom affects the effective working shaft length.
+3. **Setback brackets.** Some boats extend the motor 5 to 10 inches behind the transom with a setback bracket. Setback changes the effective shaft-length requirement.
+4. **Hull condition and waterline.** A heavily loaded or unevenly trimmed boat rides differently than the same hull at factory spec.
+5. **Intended use.** High-speed applications sometimes run a slightly shorter shaft than recommended for reduced drag. Not advised for typical recreational use.
 
-- **Transom height** is the primary variable. Measure it.
-- **Hull design.** Deep-V hulls with sharp transom angles sometimes need 25 inch even with 20-inch transom heights. Pontoon hulls often work with 20 inch on what looks like a tall transom because the water sits lower.
-- **Motor placement on the transom.** Mounting bracket position affects effective shaft length. A motor mounted low needs less shaft than one mounted high.
-- **Setback brackets.** Some boats use setback brackets (extending the motor 5 to 10 inches behind the transom). Setback can change effective shaft length requirements.
-- **Use case.** Pure top-speed applications sometimes run shorter than recommended for less drag (with caveats about cavitation). We don't recommend this for typical recreational use.
-
-## Symptoms of wrong shaft length
-
-How to tell:
+## How to tell if your shaft length is wrong
 
 ### Shaft too short
-
-- **Cavitation under load.** Prop ventilates (sucks air), RPMs spike, boat doesn't accelerate.
-- **Bouncy ride at speed.** Motor lifts in waves, prop comes out of water.
-- **Overheating possible.** Cooling water intake may rise out of water.
-- **Cavitation plate visible above the water at speed.** It should be skimming, not airborne.
+- Prop cavitates (ventilates) under load, RPMs spike, the boat will not accelerate cleanly
+- Choppy ride at speed, the motor lifts in waves, the prop breaks the surface
+- Overheating, the cooling water intake can rise above the waterline
+- Cavitation plate is visibly above the water at cruising speed
 
 ### Shaft too long
+- Reduced top speed, the lower unit is dragging more water than it should
+- Worse fuel economy, same cause
+- Motor sounds "loaded" at cruise, working harder than the throttle position should require
+- Cavitation plate is well below the water surface at speed
 
-- **Reduced top speed.** Lower unit drags more water than necessary.
-- **Reduced fuel economy.** Same drag effect.
-- **Cavitation plate well below the water surface at speed.** It should be skimming.
-- **Motor sounds "loaded."** Working harder than it should at cruise.
+If you are seeing any of these symptoms, shaft length is a strong candidate. We diagnose during sea-trial on every repower at HBW.
 
-If you have any of these symptoms, the shaft is probably wrong. We diagnose during sea-trial of every repower at HBW.
+## Decoding Mercury shaft length codes
 
-## Why HBW gets shaft length right
-
-Three things we do that prevent wrong-shaft mistakes:
-
-- **Measure transom during the walk-around.** Every repower starts with a measurement, not a guess.
-- **Know the hull patterns.** Three generations of HBW have rigged thousands of boats. We know that a typical 16 to 18 ft Lund console runs 20-inch, a Princecraft pontoon runs 20 or 25 depending on model year, and a Crestliner Tournament series may need 25.
-- **Confirm at sea-trial.** If shaft length is borderline, we sea-trial and verify cavitation plate position. Wrong shaft is caught and corrected, not lived with.
-
-## Common shaft length mistakes
-
-We see these every season:
-
-1. **Buying online without measuring.** Customer orders 20 inch shaft based on assumption, hull actually needs 25. Now they have an underwater motor.
-2. **Trusting old motor's shaft length.** "My old Mercury was 20 inch" doesn't always tell you what the new motor should be. The old motor may have been wrong too.
-3. **Splitting the difference.** "I need 22 inches, so I'll get the 20 and live with it." No. Wrong-shaft motors don't perform right. Get it right or change the transom mounting.
-4. **Ignoring setback bracket effects.** Some setbacks raise effective transom; some lower it. Account for it.
-5. **Sailboat auxiliaries with short shaft.** Sailboat transoms are usually deep. Long or extra long is the standard. Short shaft sailboat installs cavitate constantly.
-
-## Mercury shaft length codes (decoded)
-
-![Diagram decoding a Mercury outboard model code 60 ELHPT: 60 = horsepower, E = electric start, L = long shaft, H = hand tiller, P = power trim, T = tilt. Common combinations include ELPT, ELHPT, EXLPT, MLH, and CT (Command Thrust).](/lovable-uploads/diagram-mercury-model-code-decoder.png)
-*Quick reference for reading any Mercury outboard model code. The letters are stackable: a 60 ELHPT is electric-start, long-shaft, hand-tiller, with power trim and tilt.*
-
-Mercury's model numbers tell you shaft length:
-
-- **MH** = Manual start, tiller (no shaft suffix typically, comes in standard short for that motor)
-- **EH** = Electric start, tiller
-- **EL** = Electric start, Long shaft (20")
-- **ELH** = Electric start, Long shaft, tiller
-- **EXL** = Electric start, eXtra Long shaft (25")
-- **ELPT** = Electric start, Long shaft, Power Tilt
-- **EXLPT** = Electric start, eXtra Long shaft, Power Tilt
-- **ELHPT** = Electric start, Long shaft, manual tiller, Power Tilt
+| Code | Meaning |
+|---|---|
+| S | Short shaft (15 inch) |
+| L | Long shaft (20 inch) |
+| XL or EXL | Extra Long shaft (25 inch) |
+| XXL or U | Ultra Long shaft (30 inch) |
+| ELPT | Electric start, Long shaft, Power Tilt |
+| EXLPT | Electric start, eXtra Long shaft, Power Tilt |
+| ELH | Electric start, Long shaft, tiller |
+| ELHPT | Electric start, Long shaft, tiller, Power Tilt |
 
 Examples:
-- **Mercury 90 EXLPT FourStroke** = 25-inch shaft (eXtra Long), electric start, Power Tilt
-- **Mercury 9.9 MH** = ~15-inch shaft (short), manual start, tiller
-- **Mercury 60 ELHPT** = 20-inch shaft (Long), electric start, manual tiller, Power Tilt
+- Mercury 90 EXLPT FourStroke = 25-inch shaft, electric start, power tilt
+- Mercury 9.9 MH = Short shaft (15 inch), manual start, tiller
+- Mercury 60 ELHPT = 20-inch shaft, electric start, tiller, power tilt
 
-For Mercury technical reference detail, see our [Mercury 2026 outboard lineup guide](/blog/mercury-2026-outboard-lineup-ontario).
+## Common shaft length mistakes we see every season
 
-## Related guides
+- **Ordering online without measuring.** Customer assumes "long" based on looking at the boat, orders a 20-inch shaft, hull actually needs a 25-inch.
+- **Trusting the old motor shaft length.** The old motor may have been wrong, or it may have been compensated with a different mounting height. Measure the boat, not the old motor.
+- **Splitting the difference.** "My transom measures 22 inches, I will just get the 20-inch and make it work." You cannot make it work.
+- **Forgetting setback effects.** Setback brackets change the effective shaft requirement.
+- **Short-shaft sailboat installs.** Sailboat transoms are typically deep, 20-inch is the minimum, and 25-inch is often correct.
 
-- [Mercury 2026 Outboard Lineup Ontario](/blog/mercury-2026-outboard-lineup-ontario), full Mercury model overview
-- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), control type
-- [Mercury Outboard Rigging Costs Explained](/blog/mercury-outboard-rigging-costs-ontario), rigging detail
-- [Portable Mercury Outboard Guide 2.5 to 20 HP](/blog/portable-outboard-mercury-guide-2-20hp), small motor specifics
-- [Mercury 9.9 ProKicker Rice Lake, Ontario Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker shaft selection
+## How HBW gets shaft length right
+
+Three things we do on every repower that prevent wrong-shaft mistakes:
+
+**We measure the transom during the walk-around.** Every repower starts with a tape measure, not a guess. We see the hull in person before we order.
+
+**We know the hull patterns.** Three generations of rigging experience means we know that a typical 16 to 18 ft Lund console takes a 20-inch, a Princecraft pontoon runs 20 or 25 depending on model year, and a Crestliner Tournament series may need 25.
+
+**We sea-trial borderline cases.** If the transom height is between sizes, we install and run the boat before signing off. Wrong shaft gets caught and corrected before it leaves our lot.
 
 ## Ready to spec the right shaft?
 
-Build a quote on the [motor selection page](/quote/motor-selection). The configurator includes shaft length selection by Mercury model.
+Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). The configurator includes shaft length selection by Mercury model.
 
-[**Build Your Mercury Quote**](/quote/motor-selection)
+Not sure about your transom height? Call us at 905-342-2153 or send a side-profile photo with a tape measure on the transom. We can confirm the right shaft length in five minutes.
 
-If you want to confirm your transom height before ordering, [give us a call at (905) 342-2153](tel:9053422153) or send us a side-profile photo of your boat with a tape measure on the transom. We can confirm the right shaft length in 5 minutes.
-
----
-
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and shaft length is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+*Last reviewed: 2026-05-11.*
 `,
     howToSteps: [
       { name: 'Find the lowest point of the hull at the transom', text: 'Locate the point where water meets hull when running on plane, at the centre of the transom where the motor will mount. This is the bottom reference for the measurement.' },
@@ -14773,58 +14724,12 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
     howToTotalTime: 'PT5M',
     howToTools: ['Tape measure', 'Side-profile photo of the transom (optional)'],
     faqs: [
-      {
-        question: 'What outboard shaft length do I need?',
-        answer: 'Match shaft length to your boat\'s transom height. Standard pairings: 15-inch transom = short shaft (15"). 20-inch transom = long shaft (20"). 25-inch transom = extra long shaft (25"). Measure before ordering.'
-      },
-      {
-        question: 'How do I measure transom height?',
-        answer: 'Tape measure from the lowest point of the hull at the transom (where water meets hull on plane) straight up to the top of the transom (where the motor will mount).'
-      },
-      {
-        question: 'What\'s the most common Mercury shaft length?',
-        answer: '20-inch (Long shaft) is the most common across Ontario freshwater boats. Most aluminum console fishing boats, runabouts, and smaller pontoons use 20-inch. Bigger boats and pontoons go to 25-inch.'
-      },
-      {
-        question: 'What shaft length for a 16 ft aluminum fishing boat?',
-        answer: 'Typically 20-inch (Long). Verify by measuring transom height (should be roughly 19 to 21 inches). Some smaller 16 ft boats with low transoms run 15-inch (Short).'
-      },
-      {
-        question: 'What shaft length for a pontoon?',
-        answer: 'Most pontoons run 20-inch. Some larger pontoons or pontoons with deeper transoms run 25-inch. Verify with measurement.'
-      },
-      {
-        question: 'What shaft length for a sailboat auxiliary?',
-        answer: 'Usually 20-inch (Long) or 25-inch (Extra Long), often with even longer (30-inch / XXL) for deep-transom sailboats. Sailboat transoms are taller than typical powerboat transoms.'
-      },
-      {
-        question: 'What happens if my shaft is too short?',
-        answer: 'Cavitation. The prop ventilates (sucks air), RPMs spike, boat doesn\'t accelerate properly. Cooling water intake may rise out of water at speed, risking overheating. Have to slow down to keep the motor in the water.'
-      },
-      {
-        question: 'What happens if my shaft is too long?',
-        answer: 'Reduced top speed and fuel economy. Lower unit drags more water than necessary. Motor sounds "loaded" at cruise. Less responsive to trim.'
-      },
-      {
-        question: 'Can I run a slightly long shaft instead of slightly short?',
-        answer: 'Slightly long is usually less bad than slightly short. Slightly short causes cavitation; slightly long causes drag. Both are wrong. Get the right shaft.'
-      },
-      {
-        question: 'Does setback bracket affect shaft length?',
-        answer: 'Yes. Setback brackets extend the motor 5 to 10 inches behind the transom. Some increase effective transom height; some don\'t. Confirm with the bracket manufacturer or with HBW.'
-      },
-      {
-        question: 'Can I change shaft length on an existing motor?',
-        answer: 'On most Mercury motors, no. The shaft length is built into the motor. Changing requires a different motor variant. Some motors have field-modifiable shaft extensions, but it\'s not common.'
-      },
-      {
-        question: 'What\'s the cheapest way to get the right shaft?',
-        answer: 'Order the right shaft length the first time. Ordering wrong and exchanging adds shipping, time, and sometimes a restocking fee. We confirm shaft length during the quote process.'
-      },
-      {
-        question: 'What if my old motor was wrong shaft length all along?',
-        answer: 'We see this. Customer says "my old motor was 20-inch" but the boat actually needs 25-inch and the old motor was performing poorly the whole time. Repower is the right time to fix it. ---'
-      },
+      { question: 'What shaft length do I need for a pontoon boat?', answer: 'Most pontoons run 20-inch (long) or 25-inch (extra long), depending on the transom depth. Measure from the bottom of the motor well to the top of the transom. Pontoon transoms vary by manufacturer and model year, do not assume.' },
+      { question: 'What is the most common outboard shaft length in Ontario?', answer: '20-inch (long shaft) is the most common on Ontario freshwater boats. It fits most 14 to 19 ft aluminum fishing boats and open runabouts. But measure your specific boat before ordering.' },
+      { question: 'Can I use a longer shaft than recommended?', answer: 'You can, in the sense that the motor will mount. But an oversized shaft lowers your top speed, burns more fuel, and may cause the motor to load up at cruise. Use the right shaft for your transom.' },
+      { question: 'Does shaft length affect speed or performance?', answer: 'Yes. A shaft that is too long adds lower-unit drag that costs top speed and fuel economy. A shaft that is too short allows the prop to ventilate under load, causing cavitation and power loss.' },
+      { question: 'What if my transom height is between standard shaft lengths?', answer: 'Round down to the shorter shaft in most cases. Adjusting mounting height on a slightly-short shaft is simpler than living with the drag of an oversized one. Always verify with a sea-trial before rigging is finalized.' },
+      { question: 'How do I know what shaft length my Mercury currently is?', answer: 'Look at the model suffix. "L" means 20-inch (long), "XL" or "EXL" means 25-inch (extra long), no suffix or "S" means 15-inch (short). If you cannot find the model plate, call us and we can look it up by serial number.' },
     ]
   },
   // ============================================
