@@ -11302,162 +11302,127 @@ Not sure which path is right? Call **905-342-2153** or come in for a free hull w
     category: 'Performance',
     readTime: '12 min read',
     keywords: ['mercury boost upgrade pontoon', 'mercury boost 150hp', 'mercury software upgrade'],
-    content: `# Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)
+    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
-*Last reviewed: 2026-05-07*
+---
 
-> **Quick answer:** For a 150 HP pontoon, Mercury Boost adds usable mid-range torque without changing the hardware. Worth it if you load heavy or push a wide tube layout. Not worth it if you're already at top speed for your hull. Eligibility check and pricing at mercuryrepower.ca.
+## Quick Answer
 
-For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. The performance gains are minimal in real-world pontoon use (where load and hull design cap top speed regardless of motor tweaks). The interesting part of Boost is what it signals about how Mercury will deliver future upgrades, not whether this specific upgrade pays off today. For your specific motor and use, see [live pricing](/quote/motor-selection) or [contact us](/contact) before committing.
+For most 150 HP pontoon owners, Mercury Boost adds modest real-world performance gains, it's a software upgrade with no hardware change. Worth considering if you load heavy or push a wide tube layout. Less compelling if your hull is already near its speed ceiling. Eligibility check and pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
-## Quick recommendation
 
-Skip Boost on a typical 150 HP pontoon. Here is why: a pontoon's top speed is governed by hull drag, weight, and pontoon-tube design, not by motor output. Adding a few horsepower through a software-only Boost upgrade gives you small gains that customers usually cannot feel.
+---
 
-Boost makes more sense on lighter performance boats where the hull responds to small power changes (bass boats, performance fishing boats, some runabouts). For a 22-foot tritoon hauling four adults, a cooler, and a tube, Boost is a hundred or two hundred dollars in horsepower bragging rights without much practical change.
+## Full Article
 
-Boost gains depend on hull, load, prop, and current setup. The hull-load-prop interaction matters more than the headline HP number, so any "X mph faster" or "worth $Y" framing should be treated as a ballpark for one specific rig, not a guarantee for yours.
+Mercury Boost is a software-only upgrade that increases the maximum output of certain Mercury outboards without changing any hardware. The motor stays the same. What changes is the engine management map, allowing the motor to deliver more power at the top end.
 
-The bigger story is what Boost tells us about Mercury's roadmap. Software-defined performance upgrades are how the next decade of motor improvements will arrive. Buying a 150 HP today and adding software upgrades later is going to be more common, more granular, and probably more interesting than today's first Boost iteration.
+That's interesting. What's equally interesting is what it tells us about where Mercury's upgrade roadmap is heading, more software, more granularity, more options after you buy the motor.
 
-## What Boost actually is
+For a typical 150 HP pontoon owner in 2026, the honest answer on whether to buy Boost right now is: probably not essential, but worth understanding.
 
-Mercury Boost is a software upgrade that increases the maximum output of certain Mercury outboard motors without changing the hardware. The motor itself stays the same. What changes is the engine management map, allowing the motor to deliver more power at the top end.
+### What Boost Actually Is
 
-Boost-eligible motors as of 2026 include specific FourStroke and Pro XS models. For eligibility on your specific motor and the current Boost upgrade pricing, see our [Boost software upgrade eligibility guide](/blog/mercury-boost-software-upgrade-eligibility-2026) or [build a quote](/quote/motor-selection) and the system will flag whether your motor configuration is upgrade-eligible.
+Mercury Boost is an authorized, dealer-installed software upgrade that adjusts the engine management calibration on eligible motors. It's not a tune, not a chip, and not something you do yourself, it requires Mercury's authorized tooling and takes about an hour of dealer service time.
 
-The upgrade itself takes about an hour of dealer service time and requires Mercury's authorized tooling. We do these at HBW. [Live pricing](/quote/motor-selection) shows the cost; current promotion details, if any, are on the [promotions page](/promotions).
+Boost-eligible motors as of 2026 include specific FourStroke and Pro XS models at certain HP classes. For eligibility on your specific motor serial number and current upgrade pricing, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us.
 
-## What changes the answer for your boat
+Boost does not void your Mercury warranty, it's a manufacturer-authorized upgrade. Unauthorized ECU modifications from non-Mercury sources do void warranty. There's an important distinction there.
 
-Five things move whether Boost is worth it for you:
+### Why Most Pontoon Owners Won't Feel It Dramatically
 
-- **Hull type.** Performance boats (bass, performance fishing) feel small power gains. Pontoons (especially heavier tritoons with seating, gear, and passengers) absorb small gains into hull drag.
-- **Loading.** A two-passenger pontoon at half-load might feel a small Boost gain on hole shot. The same pontoon with four adults and a tube load will not.
-- **What you do.** Tournament-style fishing where every minute of plane time matters values small gains. Cruising and family pontoon use does not.
-- **Whether you have already optimized everything else.** If your prop is wrong or your hull is heavy with old gear and water, fix those first. Those gains are bigger than Boost gains.
-- **Budget tolerance.** Some customers buy Boost as a gift to themselves, knowing the practical return is minimal. That is a fine reason if you have the budget. We just want to be honest that the math does not pencil out as a "performance upgrade" the way a new prop or hydraulic steering does.
+Here's the honest context: a pontoon's top speed is governed primarily by hull drag, weight, pontoon tube design, and loading, not just by what the motor is doing at peak output. Small software-driven changes to peak power get absorbed into hull drag before they reach the water in any significant way.
 
-## Real-world pontoon performance reality
+The hierarchy of what actually drives pontoon performance:
 
-We rig a lot of pontoon repowers at HBW. Here is what actually drives pontoon performance, in order of impact:
+1. **Pontoon tube design.** A tritoon with three logs planes faster, runs smoother, and carries more weight than a two-log pontoon, regardless of motor.
+2. **Pontoon size and weight.** A 20 ft pontoon is faster than a 24 ft pontoon at the same HP.
+3. **Loading.** Four adults plus gear vs. two passengers is a meaningful speed difference, often more difference than Boost adds.
+4. **Motor HP class.** Going from 90 to 115 Command Thrust is a clearly felt difference. Going from 115 to 150 is felt.
+5. **Prop selection.** A correctly sized and pitched prop is the most overlooked performance factor on pontoons.
+6. **Trim adjustment.** Free improvement available to almost every pontoon driver.
 
-1. **Pontoon tube design.** A tritoon with three logs planes faster, runs smoother, and carries more weight than a two-log pontoon, regardless of motor. This is the biggest variable.
-2. **Pontoon size and weight.** A 20-foot pontoon is faster than a 24-foot pontoon at the same HP. Smaller and lighter wins.
-3. **Loading.** Empty pontoon vs. four passengers plus gear is a meaningful speed difference. Often more difference than the entire Boost gain.
-4. **Motor HP class.** Going from 90 HP to 115 HP Command Thrust is a felt difference. Going from 115 to 150 is felt. Adding software-Boost to a 150 is barely felt.
-5. **Prop selection.** A correctly sized prop is the single most overlooked performance factor on pontoons. We swap props all the time on customers who never thought about it.
-6. **Trim adjustment.** A pontoon trimmed correctly accelerates faster and runs more efficiently. Not free horsepower, but free improvement.
+Boost lands below most of those factors. If any of the upstream variables are wrong, prop, trim, loading, fix those first. The return per dollar is better.
 
-Boost lands somewhere below all of those. If you have already optimized hull, load, motor selection, prop, and trim, then Boost is a small additional gain. If any of those upstream factors are wrong, fix them first. The dollars per MPH gained are much better.
-
-## When Boost actually makes sense
+### When Boost Actually Makes Sense
 
 There are real scenarios where Boost earns its price:
 
-- **Performance bass boats.** Lighter hull, performance prop already dialed in, every tournament minute counts. Boost adds enough hole shot and top speed to be felt.
-- **Mid-size runabouts with under-prop'd setups.** Same logic.
-- **Smaller two-log pontoons (18 to 20 ft) with lighter loading.** The "feels it" threshold is lower on these. Some customers report a noticeable difference.
-- **Customers who have already optimized everything else.** If hull, load, prop, and trim are all dialed, Boost is the next small step.
+**Performance bass boats or mid-size runabouts** where the hull already responds to small power changes. Tournament fishing where every few seconds off a morning run matters. Lighter two-log pontoons (18, 20 ft) where the speed ceiling isn't as firmly set by hull drag.
 
-For a 22-foot tritoon with full family loading, none of those apply. The boat is what it is and Boost is not going to change that meaningfully.
+**Customers who have already optimized everything else.** If the prop is correct, trim is dialed, and loading is managed, Boost is the next marginal step.
 
-## What HBW checks before recommending Boost
+**Customers who want it as a gift to themselves.** Some customers know the math doesn't pencil out as a strictly practical upgrade and buy it anyway because they enjoy the motor and want to push it. That's a reasonable choice, just go in with clear expectations.
+
+For a 22-foot tritoon hauling four adults and full gear, none of those scenarios apply cleanly. The boat is constrained by its hull and load, and Boost won't change that meaningfully.
+
+### The More Interesting Conversation: Mercury's Software Roadmap
+
+The reason Boost matters beyond its 2026 performance gains is what it signals.
+
+Software-defined performance is the direction the marine industry is heading. Mercury has already signaled interest in more granular performance tiers, use-case profiles, and connected services. Buying a current Mercury motor positions you to participate in future upgrade cycles.
+
+In a few years, we'll likely see more specific unlocks, perhaps a tow mode that emphasizes low-end torque for getting skiers up, separate from a cruise mode tuned for fuel efficiency. Boost is the first widely-deployed iteration of that roadmap.
+
+If you're buying a Mercury today with a 5, 10-year ownership window in mind, the platform you're buying into matters. That's a better reason to care about Boost than the current performance increment.
+
+### What We Check Before Recommending Boost
 
 When customers ask about Boost, we want to know:
 
-- **What boat are you running?** Hull type and weight matter most.
-- **What is your typical loading?** Two passengers vs. six is a different math problem.
-- **What is the current prop?** If the prop is wrong, Boost is putting lipstick on a different problem.
-- **Have you optimized trim?** Free improvement before paid improvement.
-- **What are you trying to achieve?** "Faster top speed" is different from "better hole shot" is different from "stronger pulling power for tubing." Each has different right answers, and Boost is rarely the best answer for any of them.
+- What hull are you running?
+- What's your typical loading?
+- Is the current prop sized correctly?
+- Have you optimized trim?
+- What specifically are you trying to achieve, top speed, hole shot, or pulling power?
 
-If after that conversation Boost still seems like the right call for your situation, we will install it. Honestly, most pontoon customers walk out without Boost. We tell them where the bigger gains are first.
-
-## The future signal
-
-The reason Boost is interesting beyond its current performance impact: it is the first widely-deployed example of Mercury delivering motor upgrades through software instead of hardware.
-
-Look at what is coming:
-
-- **Granular HP tiers.** Today you choose 115 or 150 HP at purchase. In a few years you might choose a base HP and unlock more through software when you need it.
-- **Use-case profiles.** A "tow mode" that boosts low-end torque for skiing and tubing, separate from a "cruise mode" tuned for fuel efficiency.
-- **Diagnostic integration.** Boost-style upgrades come with telemetry. Mercury sees how the motor behaves before and after, which feeds back into product development.
-- **Subscription-style features.** Likely. Some Mercury features may eventually be subscription-unlocked rather than one-time purchases. Whether you like that or not, it is the direction.
-
-If you are buying a Mercury today and thinking about a 5-to-10-year ownership window, the platform is moving toward more software-defined capabilities. Buying a current motor positions you to participate. Buying a 12-year-old used motor probably does not.
-
-That is a more interesting reason to think about Boost than the current $200 in horsepower it adds.
-
-## Related guides
-
-- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026), specific eligibility by motor model
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon motor selection guide
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), the upgrade that usually pays back better than Boost
-- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), if you are still in motor selection mode
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the 115 to 150 step-up math
-- [Pontoon HP Sizing Decision Tree (Ontario)](/blog/pontoon-hp-sizing-decision-tree-ontario), pick the right HP for your tube
-- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats), CT gearcase fit
-- [Common Pontoon Boat Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), what an underpowered pontoon actually does
-
-## Ready to talk through your pontoon setup?
-
-If you are wondering whether Boost makes sense for your specific pontoon, the honest answer is probably no. But the right answer might be a different optimization (a new prop, trim adjustment, load management) that gives you bigger gains for less money.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through your specific pontoon and what would actually make a difference, [give us a call at (905) 342-2153](tel:9053422153) or [send us an email](/contact). We do this for our customers every spring before pontoon season.
+Most pontoon customers walk out without Boost. We point them toward prop and trim optimization first, because those gains are larger and cheaper.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for Boost upgrade and other configurations is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+## FAQs
+
+**Is the Mercury Boost upgrade worth it for a 150 HP pontoon?** 
+For most 150 HP pontoon owners, the gains are real but modest, pontoon performance is constrained more by hull design, loading, and prop than by peak motor output. Boost makes more sense on lighter performance boats where small power changes are felt. On heavy family tritoons, most customers don't notice a meaningful difference.
+
+**What is Mercury Boost?** 
+A software-only upgrade that increases maximum output on eligible Mercury FourStroke and Pro XS motors without hardware changes. Installation takes about an hour using Mercury's authorized tooling at a certified dealer.
+
+**Which Mercury motors are eligible for Boost?** 
+Specific FourStroke and Pro XS models, typically 115 HP and up. For eligibility on your specific motor, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us.
+
+**Does Boost void my Mercury warranty?** 
+No. Boost is a Mercury-authorized upgrade. Warranty stays in effect. Unauthorized non-Mercury ECU modifications will void warranty, important distinction.
+
+**Can I install Boost myself?** 
+No. Boost requires Mercury's authorized tooling and authentication. It's a dealer-installed upgrade only.
+
+**What gives bigger pontoon performance gains than Boost?** 
+In rough order of impact: correct prop selection, proper trim adjustment, lighter loading, and, if you haven't done it, stepping up to a three-log tritoon hull. All of those typically give more performance per dollar on a pontoon than software Boost.
+
+**Will Mercury offer more software upgrades like Boost?** 
+Probably. Software-defined upgrades are the direction the industry is heading. Boost is the first widely-deployed example from Mercury, not the last.
+
+**If I buy Boost now, can I add more software upgrades later?** 
+Mercury's roadmap points toward more upgrades. Whether future upgrades stack with or supersede current Boost depends on Mercury's product decisions. We'd expect compatibility on current platforms, but specifics aren't confirmed.
 
 ---
 
-## FAQ
+## Internal Links
 
-**Is the Mercury Boost upgrade worth it for a 150 HP pontoon?**
-For most 150 HP pontoon owners, no. Pontoon performance is driven by hull design, loading, and prop selection more than by small motor output changes. Boost gains are absorbed by pontoon drag and rarely felt in real-world use. Boost makes more sense on lighter performance boats (bass, performance fishing) where small power changes are felt.
-
-**What is Mercury Boost?**
-Mercury Boost is a software-only upgrade that increases the maximum output of certain FourStroke and Pro XS motors without changing the hardware. The motor stays the same; the engine management map is updated to deliver more peak power. Installation takes about an hour of dealer service time using Mercury's authorized tooling.
-
-**How much does the Mercury Boost upgrade cost?**
-Pricing varies by motor model and current Mercury promotional offers. For your specific motor and live pricing, see the [motor selection page](/quote/motor-selection) or [contact us](/contact). Current Mercury promotional offers (if any) on Boost are on the [promotions page](/promotions).
-
-**Which Mercury motors are eligible for Boost?**
-Specific FourStroke and Pro XS models in the 115 HP and up range as of 2026. For eligibility on your specific motor, see our [Boost eligibility guide](/blog/mercury-boost-software-upgrade-eligibility-2026) or build a quote on the [motor selection page](/quote/motor-selection) and the system will flag whether your motor is upgrade-eligible.
-
-**How much performance does Boost actually add?**
-The horsepower increase varies by model. The real-world performance change depends heavily on the boat and use case. Performance boats (bass, smaller runabouts) feel the gain. Heavier pontoons with full loading typically do not feel a meaningful difference.
-
-**What gives bigger pontoon performance gains than Boost?**
-In rough order of impact: tritoon (three-log) hull design, lighter loading, correct prop selection, correct trim adjustment, and bigger motor HP class. All of those typically give more performance per dollar than software Boost on a heavy pontoon.
-
-**Does Boost void my warranty?**
-No. Mercury Boost is a Mercury-authorized upgrade installed using Mercury tooling at an authorized dealer. Warranty stays in effect. Improperly modified ECU maps from non-Mercury sources will void warranty.
-
-**Can I install Boost myself?**
-No. Boost requires Mercury's authorized tooling and authentication. It is a dealer-installed upgrade only.
-
-**Should I buy Boost when I buy a new motor or wait?**
-Buying a motor and adding Boost later is the same end result as buying a Boost-equipped motor today (assuming both options exist for your model). If you are not sure whether you want it, wait. The upgrade can be added at any future service appointment.
-
-**Will Mercury offer more software upgrades like Boost in the future?**
-Probably yes. Software-defined upgrades are the direction the marine industry is heading. Mercury has already signaled interest in more granular performance tiers, use-case profiles, and connected services. Boost is the first widely-deployed example, not the last.
-
-**Will I notice the Boost upgrade on a 22-foot tritoon?**
-Honestly, probably not. Heavier tritoons absorb small power gains into hull drag. Customers running smaller pontoons with lighter loading sometimes report a noticeable difference. Customers on full-load family tritoons usually do not.
-
-**What should I do instead of Boost on a 150 HP pontoon?**
-Check your prop first. A wrong prop costs you 4 mph and 15% fuel economy. Then check your loading and trim. Most pontoon customers have at least one of those wrong, and fixing them gives bigger gains than Boost. If everything else is optimized, then Boost is a small additional gain. [Contact us](/contact) for a prop and trim assessment.
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-for-family-runabouts)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
 
 ---
 
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)`,
+## CTA
+
+Wondering if Boost makes sense for your specific pontoon? We'll tell you straight. Call **905-342-2153** or build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, the system will flag whether your motor is Boost-eligible.
+
+More often than not, the better upgrade is a prop and trim conversation, and that one's free to start.
+
+---`,
     faqs: [
       {
         question: 'Is Mercury Boost worth it for a pontoon boat?',
@@ -11706,165 +11671,161 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
     category: 'Repower',
     readTime: '10 min read',
     keywords: ['mercury rigging cost', 'outboard rigging ontario', 'boat repower rigging', 'hydraulic steering upgrade', 'mercury install cost'],
-    content: `# Mercury Outboard Rigging Costs Explained (Ontario 2026)
+    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 
-*Last reviewed: 2026-05-07*
+---
 
-> **Quick answer:** Rigging costs vary by job: a like-for-like swap can be under $1,500, a full re-rig with new gauges, harness, and controls runs $3,000-$6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at mercuryrepower.ca.
+## Quick Answer
 
-Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. For a typical Mercury-to-Mercury repower with post-2010 controls in good condition, rigging lands $500 to $1,500 CAD. Brand conversions and full rerigs run higher. Live pricing on every Mercury we sell, with rigging included, is at [/quote/motor-selection](/quote/motor-selection).
+Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $3,000, $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
-> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
 
-## Quick recommendation
+---
 
-Most customers who ask "how much does rigging cost?" get sticker shock from a partial answer. The real number depends on what's already on the boat, what brand the existing motor is, and whether the rigging is at end of life.
+## Full Article
 
-For typical Ontario freshwater repowers in 2026:
+"Rigging cost" is one of the most misunderstood line items in a repower quote. Some customers assume the motor is the whole purchase. Others expect rigging to cost a flat rate. Neither assumption tends to survive contact with the actual job.
 
-- **Mercury-to-Mercury, modern (post-2010) rigging in good shape:** $500 to $1,500 CAD
-- **Mercury-to-Mercury, older or worn rigging needing replacement:** $1,500 to $3,000 CAD
-- **Brand conversion (Evinrude, Yamaha, Honda to Mercury):** add $1,500 to $3,000 CAD over standard
-- **Cable to hydraulic steering upgrade:** add $1,650 to $3,500 CAD
-- **Full new rerig (everything new):** $2,500 to $5,000 CAD
+Here's what rigging actually is, what goes into the cost, and what you can do to keep it at the low end.
 
-Live quotes include rigging in the all-in number at [/quote/motor-selection](/quote/motor-selection).
+### What "Rigging" Actually Covers
 
-## What's actually in "rigging"
-:::image-placeholder
-slug: mercury-rigging-cost-stack
-type: infographic
-aspect: 16:9
-description: Cost stack visualization showing rigging components
-prompt: Photorealistic editorial infographic. Horizontal stacked bar showing Mercury rigging cost breakdown. 7 segments labeled: Throttle/Shift, Steering, Harness, Gauges, Battery Cables, Fuel Hose, Prop. Each segment a different muted color, with $ ranges below. Title: "What's in your Mercury rigging cost". Clean white background, Mercury black/red accents. No people. 1600x900. [STYLE ANCHOR]
-image: /lovable-uploads/mercury-rigging-cost-stack.png
-:::
+Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. The list is longer than most customers expect.
 
-Rigging is the integration work between motor and boat. The components:
+**Throttle and shift control** 
+Console-mounted lever on most boats. Mercury Digital Throttle and Shift (DTS) on higher-HP configurations. For Mercury-to-Mercury repowers with post-2010 controls in good shape, often kept. Older or non-Mercury controls are typically replaced.
 
-### Throttle and shift control
+**Steering** 
+Three types: cable steering (standard under 90 HP, simple, inexpensive), hydraulic steering (standard at 90 HP and up, more comfortable, less maintenance), and power-assist (premium on bigger motors). Cable-to-hydraulic upgrades are common during repowers and are worth doing while the dash is open.
 
-- **Console-mounted lever** (most common on console boats)
-- **Mercury digital throttle and shift (DTS)** on higher-HP motors (typically 150 HP+)
-- **Tiller-integrated control** on tiller motors (no separate component)
+Hydraulic steering conversion costs $1,650, $3,500 CAD depending on motor HP and helm complexity.
 
-For Mercury-to-Mercury repowers with post-2010 controls, often kept. Older controls or non-Mercury controls usually replaced.
+**Wiring harness** 
+Connects motor to controls, gauges, and battery. Mercury standardized harness connectors across motor families around 2010, so Mercury-to-Mercury repowers usually keep the harness if it's in good condition. Brand conversions need a new harness.
 
-### Steering
+**Gauges and displays** 
+Older analog gauges (tach, fuel, water temp) often don't fully support modern Mercury motor data outputs. Mercury SmartCraft digital displays integrate engine data cleanly. Third-party multifunction displays (Garmin, Lowrance, Raymarine) integrate via NMEA 2000. Keeping compatible existing displays is free; adding a SmartCraft VesselView adds several hundred dollars depending on screen size.
 
-Three types:
+**Battery cables and switches** 
+Heavier cable for higher-HP motors. Battery switch and dual-battery selectors replaced as needed.
 
-- **Cable steering:** Standard on motors under 90 HP. Direct, simple, inexpensive. Replaced if older than ~10 years or showing wear.
-- **Hydraulic steering:** Standard on 90 HP and up. More comfortable feel, less maintenance. Replaced if leaking or unresponsive.
-- **Power-assist steering:** Premium option on bigger motors. Easier feel at speed.
+**Fuel hose and connections** 
+Fuel line, primer bulb, fuel filter. Typically replaced during a repower regardless of apparent condition, fuel system age affects new motor reliability, and these parts are cheap insurance.
 
-Cable-to-hydraulic upgrades are common during repowers. Cost: $1,650 to $3,500 CAD depending on motor HP and steering helm complexity.
+**Propeller** 
+Aluminum 3-blade (approximately $450 CAD) for motors up to 115 HP. Stainless 3 or 4-blade ($800, $2,000 CAD) for 150 HP and up. We test props during sea trial of every repower and swap until the motor reaches its rated WOT RPM range.
 
-### Wiring harness
+### 2026 Rigging Cost Ranges by Scenario
 
-The cables that connect motor to controls, gauges, and battery. Mercury has standardized harness connectors across motor families since around 2010, so Mercury-to-Mercury repowers usually keep the harness if it's in good shape. Brand conversions need a new harness.
+| Scenario | Rigging Cost (CAD, before HST) |
+|---|---|
+| Mercury-to-Mercury, post-2010 controls in good shape | $500, $1,500 |
+| Mercury-to-Mercury, older/worn rigging needing replacement | $1,500, $3,000 |
+| Brand conversion (Evinrude, Yamaha, Honda to Mercury) | Add $1,500, $3,000 over standard |
+| Cable to hydraulic steering upgrade | Add $1,650, $3,500 |
+| Full new re-rig (everything new) | $2,500, $5,000 |
 
-### Gauges and displays
+These ranges are before prop and installation labour. The live configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) builds rigging into the all-in quote.
 
-Three options:
+### What Changes Your Rigging Cost
 
-- **Analog gauges:** Tach, fuel, water temp. Older standard.
-- **Mercury SmartCraft digital displays:** VesselView 4, 7, 9 inch units. Modern standard for Mercury motors.
-- **Third-party multifunction displays (Garmin, Lowrance, Raymarine):** Integrate with SmartCraft via NMEA 2000.
+Five things move your quote up or down the range:
 
-Mercury-to-Mercury repowers often keep existing displays if compatible. Older analog gauges sometimes need replacement to support new motor's data outputs.
+**1. Existing rigging condition.** A 5-year-old Mercury rerig with controls and harness in good shape stays at the low end. A 25-year-old boat with cracked cables and corroded connectors hits the high end.
 
-### Battery cables and switches
+**2. Existing rigging brand.** Mercury-to-Mercury saves significantly. Brand conversions add $1,500, $3,000 because every control system component swaps.
 
-Heavier cable for higher-HP motors. Battery switch (on/off, dual-battery selectors). Replaced as needed during rigging inspection.
+**3. Steering type and upgrade decisions.** Keeping existing cable steering is cheaper. Upgrading to hydraulic adds meaningfully but is often worth doing during the repower while the dash is already open. Future upgrades to hydraulic are more expensive and disruptive than doing it during the current job.
 
-### Fuel hose and connections
+**4. Display upgrades.** Keeping existing displays if compatible is free. Adding a Mercury SmartCraft VesselView adds several hundred to over $1,000 depending on size and configuration.
 
-Fuel line from tank to motor, primer bulb, fuel filter. Typically replaced during a repower because fuel system age affects new motor reliability.
+**5. Fuel system condition.** Old fuel hoses and gummed-up filters get replaced. Boats stored with ethanol pump gas sometimes need more than basic hose replacement.
 
-### Propeller
+### Mercury-to-Mercury vs. Brand Conversion, The Cost Difference
 
-Aluminum 3-blade ($450 CAD typical) for motors up to 115 HP. Stainless 3 or 4-blade ($800 to $2,000 CAD) for 150 HP and up. We test props during sea-trial of every repower. See our [propeller selection guide](/blog/mercury-propeller-selection-guide).
-
-### Trim and tilt system
-
-Most modern Mercurys include power trim/tilt. Hydraulic ram, motor housing, and switch. Replaced if leaking or non-functional.
-
-## What changes the rigging cost
-
-Five things move whether your rigging cost is at the low or high end of the range:
-
-- **Existing rigging condition.** A 5-year-old Mercury rerig with controls and harness in good shape: low end. A 25-year-old boat with cracked cables and corroded connectors: high end.
-- **Existing rigging brand.** Mercury-to-Mercury saves significantly. Brand conversions add $1,500 to $3,000.
-- **Steering type and upgrade decisions.** Keeping cable steering is cheaper. Upgrading to hydraulic adds meaningfully but is often worth doing during the repower while the dash is open.
-- **Display upgrades.** Keeping analog gauges is free. Adding a Mercury SmartCraft VesselView is several hundred to over $1,000 depending on size.
-- **Fuel system condition.** Old fuel hoses and filters get replaced. Some boats need a fuel system rebuild beyond just hose replacement.
-
-## What HBW checks during the rigging assessment
-
-When we walk around a boat for a repower quote, we look at:
-
-- **Throttle and shift control age and brand**
-- **Steering type, age, and condition** (visible leaks, smoothness of operation, helm condition)
-- **Wiring harness condition** (corrosion, cracks, brand compatibility)
-- **Gauge or display age and connectivity**
-- **Battery cable gauge and condition**
-- **Fuel hose age, fuel filter location, fuel tank vent condition**
-- **Existing prop condition** (damage, pitch fit for current use)
-- **Trim/tilt system function**
-- **Transom condition** (this is for the install, not strictly rigging, but assessed at the same time)
-
-The walk-around is free. The findings determine where in the rigging cost range your quote lands. For the actual quote, [build it on the motor selection page](/quote/motor-selection) or [call us](tel:9053422153).
-
-## Common rigging cost mistakes
-
-We see these every season:
-
-1. **Trying to keep rigging that's at end of life.** Customer wants to save $1,500 by reusing 20-year-old controls. The new motor is undermined by old rigging that fails in year 2. Pay once.
-2. **Skipping the prop conversation.** A new $20,000 motor with a wrong prop loses 4 mph and 15% fuel economy. The right prop is part of rigging.
-3. **Underestimating brand conversion cost.** Customer thinks "$1,500 to convert from Yamaha to Mercury" when actual brand conversion is $1,500 to $3,000 over standard rigging. Add it to the budget.
-4. **Forgetting steering upgrade math.** If your current cable steering is at end of life and you're going to upgrade it eventually, the cheapest time is during the repower. While the dash is open.
-5. **DIYing partial rigging.** Confident owners sometimes do their own throttle/shift install and then can't figure out why the motor doesn't run right. Brand-conversion rigging is not a DIY project.
-
-## Mercury-to-Mercury vs brand conversion: the cost difference
-
-| Component | Mercury-to-Mercury (post-2010) | Brand conversion |
+| Component | Mercury-to-Mercury (post-2010) | Brand Conversion |
 |---|---|---|
 | Throttle and shift control | Often kept | New required |
 | Wiring harness | Often kept | New required |
 | Gauges or displays | Often kept | New or adapted |
-| Steering | Either works | Often replaced |
+| Steering | Either kept or upgraded | Often replaced |
 | Battery cables | Inspected, replaced as needed | Inspected, replaced as needed |
 | Fuel hose | Replaced | Replaced |
-| Prop | New, sized for new motor | New, sized for new motor |
-| Total rigging premium | Baseline | +$1,500 to $3,000 CAD |
+| Propeller | New, sized for new motor | New, sized for new motor |
+| Total rigging premium | Baseline | +$1,500, $3,000 CAD |
 
-For specific quotes, [build it on the motor selection page](/quote/motor-selection).
+### What We Inspect During the Rigging Assessment
 
-## Related guides
+When we walk around a boat for a repower quote, we look at:
 
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full all-in pricing
-- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion specifically
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop is part of rigging
-- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), steering type decision
-- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower), the full process
+- Throttle and shift control age, brand, and condition
+- Steering type, age, and condition (visible leaks, smoothness, helm feel)
+- Wiring harness condition (corrosion, cracks, brand compatibility)
+- Gauge or display age and connectivity with new motor
+- Battery cable gauge and condition
+- Fuel hose age, filter location, tank vent condition
+- Existing prop condition (damage, pitch fit)
+- Trim/tilt system function
 
+The walk-around is free. The findings determine where in the range your quote lands.
 
-## Try the calculator
+### Common Rigging Cost Mistakes
 
-Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) - no signup, no email gate, takes 30 seconds.
-## Ready for an honest rigging quote?
+**Trying to keep rigging at end of life.** Saving $1,500 by reusing 20-year-old controls is not a saving if the throttle cable fails and takes the new motor with it. Pay once.
 
-Build a quote on the [motor selection page](/quote/motor-selection). Rigging is included in the all-in number. Live CAD pricing. No phone call required to see the price.
+**Skipping the prop conversation.** A new motor with a wrong prop loses meaningful performance and fuel economy. The right prop is part of rigging.
 
-[**Build Your Mercury Quote**](/quote/motor-selection)
+**Underestimating brand conversion cost.** "I'm just switching from Yamaha to Mercury" sounds simple. The actual rigging difference is $1,500, $3,000 over standard. Budget for it.
 
-If you want to talk through your specific boat's rigging condition before quoting, [give us a call at (905) 342-2153](tel:9053422153). We do free walk-arounds and can give you a real range based on what we see.
+**Forgetting the steering upgrade math.** If your cable steering is at end of life and you know you'll upgrade eventually, the cheapest moment is during the repower, the dash is already open.
+
+**DIY partial rigging on a brand conversion.** Brand conversions have enough system interaction (throttle mapping, harness compatibility, sensor calibration) that partial DIY rigging regularly causes problems that cost more to fix than the initial savings.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and rigging configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
-`,
+## FAQs
+
+**What is included in Mercury outboard rigging?** 
+Throttle and shift controls, steering, wiring harness, gauges or display, battery cables and switches, fuel hose and filter, and propeller. Everything connecting the motor to the boat's systems.
+
+**How much does Mercury rigging cost in Ontario?** 
+Mercury-to-Mercury on post-2010 controls in good condition: $500, $1,500 CAD. Brand conversion or full re-rig: $2,500, $5,000 CAD. Hydraulic steering upgrade adds $1,650, $3,500 CAD. All before HST.
+
+**Is rigging included in the quote from mercuryrepower.ca?** 
+Yes. The configurator builds the rigging cost into the all-in installed price.
+
+**Can I keep my existing controls if I'm upgrading to a newer Mercury?** 
+Mercury-to-Mercury repowers with post-2010 controls in good condition usually carry over. We assess during the hull walk-around.
+
+**Why does a brand conversion cost more to rig?** 
+Evinrude, Yamaha, and Honda controls, harnesses, and wiring are not compatible with Mercury. The entire control system needs to swap, adding $1,500, $3,000 CAD to the rigging bill.
+
+**When should I upgrade from cable to hydraulic steering?** 
+Hydraulic steering is standard at 90 HP and up. If your existing cable steering is worn or you're stepping up in HP, the repower is the least expensive time to upgrade, the dash is already open.
+
+**Does rigging include the propeller?** 
+Yes. We size the prop to the motor and hull during sea trial. If a prop swap is needed to hit the motor's rated WOT RPM range, we do it before delivery.
+
+**Is the rigging quote fixed before the job starts?** 
+We quote rigging based on the walk-around assessment. Occasionally, hidden issues (corroded connections, cracked hose behind a panel) surface during the install that require additional work. We contact the customer before proceeding with anything beyond the agreed scope.
+
+---
+
+## Internal Links
+
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
+- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
+
+---
+
+## CTA
+
+Ready for an honest rigging quote? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, rigging is included in the all-in number, line by line.
+
+Prefer to talk through your specific boat's rigging condition first? Call **905-342-2153** or come in for a free walk-around.
+
+---`,
     faqs: [
       {
         question: 'How much does Mercury rigging cost?',
