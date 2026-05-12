@@ -1559,8 +1559,7 @@ Build your kicker package, including the right ProKicker configuration, shaft le
 
 If you'd rather talk through the setup for your specific boat first, call us: **905-342-2153**. We rig fishing boats for Rice Lake every week and can give you the straight answer.
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | [harrisboatworks.ca](https://www.harrisboatworks.ca)
-`,
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | [harrisboatworks.ca](https://www.harrisboatworks.ca)`,
     howToSteps: [
       {
         name: 'Mount the Engine',
@@ -3145,8 +3144,7 @@ Live Mercury pricing for any motor configuration, main, kicker, or both, is at *
 
 If you want to talk through the setup before you configure, call **905-342-2153**. We fish this lake. We rig boats for it. We'll give you the honest answer.
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | [harrisboatworks.ca](https://www.harrisboatworks.ca)
-`,
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | [harrisboatworks.ca](https://www.harrisboatworks.ca)`,
     faqs: [
       {
         question: 'What HP do I really need for Rice Lake?',
