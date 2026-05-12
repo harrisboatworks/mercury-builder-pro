@@ -96,192 +96,174 @@ export const blogArticles: BlogArticle[] = [
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['boat motor horsepower', 'how to choose outboard motor', 'mercury motor sizing', 'boat hp guide', 'outboard motor selection'],
-    content: `# How to Choose the Right Horsepower for Your Boat (2026 Guide)
-
-*Last reviewed: 2026-05-10*
-
-> **Quick answer:** Match the horsepower to your hull's capacity plate first, then pick within that range based on load and use. Bigger isn't better, over-powering creates capacity-plate compliance, insurance, liability, and warranty risk. Most Ontario family runabouts in the 17-20 ft range land between 90 and 150 HP. Build a real installed quote at mercuryrepower.ca.
-
-The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. A common dealer rule of thumb is that most boats run best loaded with around 70 to 80% of their maximum rated horsepower, leaving headroom for varying loads, prop pitch, and conditions. That's a starting point for the conversation, not a rule. Hull design, intended use, and load patterns matter more than the percentage on paper. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).
-
-## About the capacity plate
-
-The capacity plate is a federal compliance label. Transport Canada sets the standards under the Small Vessel Regulations; the boat manufacturer or importer is responsible for applying the maximum horsepower rating to the plate in accordance with those standards. Either way, the number on the plate is the legal ceiling for that hull, exceeding it creates compliance, insurance, liability, and warranty problems.
-
-## Quick recommendation
-
-If you ignore everything else in this article, remember this: do not buy too small a motor. Underpowering a boat is the most expensive mistake recreational boaters make. We see it every season at HBW. Customer buys the smallest motor they can afford, fights the boat for two seasons, then trades up at full price for what they should have bought the first time. That is paying twice for the same job.
-
-The right HP for your specific boat is usually one or two classes above the absolute minimum that will move it. The fuel economy gains from going smaller are real but small. The frustration of underpowering is real and not small.
-
-## What changes the answer
-
-Six things move the right HP for your boat:
-
-- **Hull weight and design.** A 16-foot aluminum tin boat needs less HP than a 16-foot fiberglass runabout because aluminum is lighter. Pontoons need more HP than runabouts of the same length because pontoon hulls have more drag.
-- **Intended use.** Solo fishing at 5 mph has totally different HP requirements than family cruising at 30 mph, which is different again from pulling a tube. Same boat, different right answer.
-- **Passenger and gear loading.** A two-person boat needs less HP than a six-person boat. Adding 800 lbs of crew and gear changes the math meaningfully.
-- **Where you launch and run.** Sheltered private dock vs. Bewdley public ramp vs. Lake Ontario open water all change the practical HP minimum. Wind exposure punishes underpowering.
-- **Maximum HP rating.** The capacity plate sets the ceiling, exceeding it creates capacity-plate compliance, insurance, liability, and potential warranty problems. We won't rig a motor that breaks the rating.
-- **Long-term ownership plan.** A boat you plan to keep 15 years justifies a bigger motor than a boat you plan to flip in 3 years.
-
-## HP class recommendations by boat type
-
-The honest 2026 picture for typical recreational use on Kawartha and Ontario freshwater. For your specific motor and live pricing, see [/quote/motor-selection](/quote/motor-selection).
-
-### Aluminum fishing boats (12 to 14 ft)
-
-Solo fishing on sheltered water: 9.9 to 15 HP tiller. Drop-in install, no rigging needed. Pure motor cost on the [motor selection page](/quote/motor-selection).
-
-Two-person fishing or rougher water: 20 to 25 HP. Still tiller-friendly, still drop-in.
-
-### Aluminum fishing boats (14 to 16 ft)
-
-Solo or two-person at slow trolling speeds: 25 to 40 HP remote.
-
-Two to three people who want to plane and run reasonably: 40 to 60 HP. This is the sweet spot for typical 14 to 16 ft aluminum repowers.
-
-### Aluminum or fiberglass console boats (16 to 18 ft)
-
-Family use, moderate loading, recreational running: 90 to 115 HP. This is the most common Kawartha repower we do at HBW. The 90 ELPT FourStroke or 115 ELPT FourStroke / Pro XS lands here. [Live pricing here.](/quote/motor-selection)
-
-### Pontoons (18 to 20 ft)
-
-Cruising and fishing without active water sports: 90 HP FourStroke is plenty for most setups, especially with Command Thrust.
-
-Family use including occasional tubing or skiing: 115 HP Command Thrust. The Command Thrust gearcase makes a real difference on pontoon hole shot and load-carrying.
-
-### Pontoons (20 to 24 ft)
-
-Cruising and fishing only: 115 HP Command Thrust.
-
-Active water sports, tubing, skiing, multiple passengers: 150 HP. Above 150 HP starts to be diminishing returns on most pontoons unless you have a tritoon and want speed.
-
-### Runabouts and bowriders (18 to 22 ft)
-
-Recreational use: 150 to 200 HP. The exact answer depends on hull weight (fiberglass vs. aluminum, deep-V vs. modified V) and use case.
-
-### Bass boats (17 to 21 ft)
-
-Tournament-level performance: 200 to 250 HP Pro XS. The Pro XS line is the standard tournament motor.
-
-Recreational bass fishing: 150 HP FourStroke or Pro XS lands here, depending on whether you want the performance step-up.
-
-### Center consoles (22 to 28 ft, freshwater)
-
-Light loading, cruising and fishing: 200 to 250 HP single. 
-
-Heavier loading, more passengers, performance-oriented: 250 to 300 HP Pro XS or twin 150 HP setup.
-
-For Mercury Verado-class applications (offshore center consoles, twin/triple installs at the high end), see our [motor families guide](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). Verado is special-order at HBW.
-
-## What HBW checks before recommending HP
-
-When customers ask "what HP should I get?" we want to know:
-
-- **Boat make, model, year, and length.** Hull weight is the biggest single variable.
-- **Capacity plate HP rating.** That is the legal and warranty-backed ceiling.
-- **What you actually do on the water.** Fishing, family cruising, tubing, multi-purpose. Same hull, different right answer for each.
-- **Typical passenger and gear loading.** Solo or family of six is a different motor.
-- **Where you launch and run.** Sheltered or open water.
-- **How long you plan to keep the boat.** Longer holds favor more HP.
-- **Existing prop and rigging.** Sometimes the existing setup is wrong and a different prop with the same motor solves the problem.
-
-We will not over-power your boat. We will not under-power it on purpose to fit a tighter budget if we know it will leave you frustrated. We will give you the honest answer for your specific situation.
-
-## Common HP mistakes
-
-We see these every season:
-
-1. **Buying too small to save money.** A 9.9 on a 16-foot boat that should have a 25 will leave you fighting wind and tide every day. You will trade up in two seasons at full price. Pay once.
-2. **Buying too big because more is better.** A 250 HP on a 17-foot pontoon that the hull is rated for 150 HP is illegal and unsafe. Mercury can decline warranty coverage in that situation, your insurer can deny claims, and you've broken the federal capacity-plate compliance standard. The motor outpowers the hull and feels twitchy.
-3. **Buying for one specific use case and ignoring others.** "I just need it for fishing" is fine until your kids want to tube. Plan for the full use case.
-4. **Picking HP without checking prop.** A correctly-sized motor with a wrong prop loses 4 mph and 15% fuel economy. The HP you bought never reaches the water.
-5. **Ignoring loading.** Empty boat numbers are aspirational. Loaded boat numbers are real life.
-
-## When to step up HP and when to stay
-
-Step up to the next HP class when:
-
-- You routinely run with full passenger and gear loading
-- You plan to add active water sports (tubing, skiing) to the use case
-- You launch on bigger water (Lake Ontario, Lake Simcoe, Bay of Quinte)
-- You want to plane quickly to beat afternoon wind
-- You plan to keep the boat 10+ years
-
-Stay at the current HP class when:
-
-- Your typical loading is light (solo or two-person)
-- Your use is consistent (fishing only, cruising only) and not changing
-- You launch on sheltered water (small Kawartha lakes, bays)
-- You are comfortable with current performance
-
-## Related guides
-
-- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), specific to mid-range FourStroke choices
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the FourStroke-to-Pro XS step-up question
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits which use case
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), the often-overlooked variable that changes performance
-- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), how HP, prop, and trim interact
-
-## Ready to pick your motor?
-
-Build a quote on the [motor selection page](/quote/motor-selection) in three minutes. Live Mercury pricing across every HP class. The system asks for your boat info and use case and recommends appropriate motors.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through HP for your specific boat before you build, [give us a call at (905) 342-2153](tel:9053422153) or [send us an email](/contact). We do this for our customers every year. The honest answer is sometimes "you have the right motor already" and we will tell you that too.
+    content: `**Last reviewed:** 2026-05-07
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+> **Quick answer:** Start with your boat's capacity plate, that number is the legal ceiling, and going over it voids your warranty, creates insurance problems, and is unsafe. For most recreational use, aim for 70–90% of the rated maximum. Bigger isn't always better. Underpowering is the more expensive mistake we see every season. Build a real installed quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+---
+
+## The one thing most people get wrong on horsepower
+
+It's not buying too much. It's buying too little.
+
+Every season we see it: someone buys the smallest motor they can justify, fights their boat for two summers against wind and load, then trades up at full retail for what they should have bought the first time. That's paying twice for one job.
+
+The capacity plate on your boat sets the ceiling. Work inside it, always. But within that range, the right HP is almost never the bottom of the range.
+
+Here's how to think through it.
+
+---
+
+## What actually changes the answer
+
+Six variables move the right HP for your specific boat:
+
+**Hull weight and design.** A 16-foot aluminum tin boat needs less HP than a 16-foot fiberglass runabout. Aluminum is lighter. Pontoons need more HP than runabouts of the same length because of drag from the tube configuration.
+
+**What you actually do on the water.** Solo fishing at 5 mph is a different machine than pulling a tube with four kids aboard. Same boat, totally different right answer.
+
+**How many people and how much gear.** A two-person boat needs meaningfully less HP than one you're routinely loading with six people, a cooler, and a trolling setup. Plan for your real load, not your empty-boat fantasies.
+
+**Where you launch and run.** Sheltered bays on a small Kawartha lake are different from Lake Ontario open water or a breezy afternoon on Rice Lake. Bigger water punishes underpowering in ways that feel dangerous, not just slow.
+
+**The capacity plate.** This is the legal and warranty-backed ceiling. We will not rig a motor that exceeds it, full stop.
+
+**How long you plan to keep the boat.** If you're keeping this hull for 15 years, a bigger motor makes more sense than if you're planning to sell in three.
+
+---
+
+## HP recommendations by boat type
+
+These are working guidelines for typical recreational use on Ontario and Kawartha freshwater. For your specific motor and real installed pricing, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+### Small aluminum fishing boats (12–14 ft)
+Solo fishing on sheltered water: **9.9 to 15 HP tiller.** Drop-in install, no rigging. Just the motor cost.
+
+Two people or rougher water: **20 to 25 HP.** Still tiller-friendly.
+
+### Aluminum fishing boats (14–16 ft)
+Solo or two-person at trolling speeds: **25 to 40 HP remote.**
+
+Two to three people who want to plane and move between spots: **40 to 60 HP.** This is the sweet spot for 14–16 ft aluminum repowers in the Kawarthas.
+
+### Console boats (16–18 ft, aluminum or fibreglass)
+Family use, moderate loading, recreational running: **90 to 115 HP.** This is the most common repower we do at HBW. The Mercury 90 ELPT FourStroke or 115 ELPT FourStroke lands here consistently.
+
+### Pontoons (18–20 ft)
+Cruising and fishing without water sports: **90 HP FourStroke Command Thrust** is plenty for most setups.
+
+Family use including tubing or skiing: **115 HP Command Thrust.** The Command Thrust gearcase makes a real, noticeable difference on hole shot and load-carrying with people aboard.
+
+### Pontoons (20–24 ft)
+Cruising and fishing: **115 HP Command Thrust.**
+
+Active water sports, tubing, skiing, multiple passengers: **150 HP Command Thrust.** Above 150 HP starts to be diminishing returns on most two-tube pontoons.
+
+### Runabouts and bowriders (18–22 ft)
+Recreational family use: **150 to 200 HP.** The exact answer depends on hull weight and whether water sports are in the picture.
+
+### Bass boats (17–21 ft)
+Tournament-level performance: **200 to 250 HP Pro XS.** The Pro XS line is the standard tournament motor.
+
+Recreational bass fishing: **150 HP FourStroke or Pro XS**, depending on whether you need the performance step-up.
+
+---
+
+## What we ask before recommending an HP class
+
+When someone calls and asks "what HP should I get?" we want to know:
+
+- Boat make, model, year, and length
+- What the capacity plate says
+- What you actually do on the water
+- Typical passenger and gear load
+- Where you launch and run
+- How long you plan to keep the boat
+- What prop and rigging you already have
+
+We won't over-power your boat. We also won't recommend the cheapest option if we know it'll leave you frustrated. You'll get the honest answer for your specific setup.
+
+---
+
+## The most common HP mistakes we see
+
+**1. Buying too small to save money.** We've watched customers fight a 9.9 HP on a 16-foot boat that needed a 25. They trade up two seasons later at full price. The savings disappear.
+
+**2. Going over the capacity plate.** A 250 HP on a hull rated for 150 HP is illegal, unsafe, and void of warranty. Mercury won't cover it. Your insurance may not either. The motor also outpowers the hull and feels wrong.
+
+**3. Buying for one use and ignoring the rest.** "I just need it for fishing" is fine until your kids want to tube next summer. Think through the full use case before you buy.
+
+**4. Ignoring the prop.** A right-sized motor with a wrong prop loses real performance. We test props during the sea trial of every repower.
+
+**5. Ignoring load.** Empty boat numbers are aspirational. A family of five with gear and a cooler is a different boat than the demo run.
+
+---
+
+## When to step up, when to stay
+
+**Step up to the next class when:**
+- You routinely run with a full load
+- Water sports are part of the plan
+- You launch on bigger, windier water
+- You want to plane quickly to beat afternoon chop
+- You're keeping the boat 10+ years
+
+**Stay at the current class when:**
+- Your typical load is light, solo or two-person
+- Your use is consistent and focused (fishing only, cruising only)
+- You launch on sheltered lakes and bays
+- You're genuinely comfortable with current performance
+
+---
+
+## Related posts
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits which use case
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), the often-overlooked variable
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
+- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
+
+---
+
+## Ready to figure out your HP?
+
+Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca), real installed pricing across every Mercury HP class, no games. Or call us at **905-342-2153** and we'll talk through your specific boat. Sometimes the honest answer is "you already have the right motor." We'll say that too.
 
 ---
 
 ## FAQ
 
 **How do I choose the right horsepower for my boat?**
-Look at three things: hull weight and length, intended use (fishing vs cruising vs tubing), and the maximum HP on the capacity plate. A common dealer rule of thumb is around 70 to 80% of the rated maximum for typical recreational use, but that's a starting point, not a rule. Hull design, load patterns, and prop selection matter more than the percentage on paper. We will help match a motor to your specific boat at [HBW](/quote/motor-selection).
+Start with the capacity plate on your boat, that's the legal ceiling. Then match HP to your actual use: number of passengers, what you do on the water, and where you run. For most recreational boaters, 70–90% of rated maximum is the target. We're happy to help match a motor to your specific boat.
 
 **What HP do I need for a 16-foot aluminum fishing boat?**
-For solo or two-person trolling, 25 to 40 HP. For three or more passengers who want to plane and run reasonably, 40 to 60 HP. Most 16 ft aluminum fishing boats land in the 40 to 60 HP range for typical Kawartha use.
+For solo or two-person trolling, 25 to 40 HP. For three or more people who want to plane and run between spots, 40 to 60 HP. The 60 HP FourStroke is the most common choice for 16-foot aluminum console boats on Kawartha lakes.
 
 **What HP do I need for an 18-foot pontoon?**
-For cruising and fishing without water sports, 90 HP FourStroke is plenty. For family use with occasional tubing or skiing, 115 HP Command Thrust. Command Thrust matters on pontoons because the gearcase is purpose-built for the load.
+For cruising and fishing without water sports, 90 HP Command Thrust is plenty. For family use with tubing or skiing, step up to 115 HP Command Thrust. The Command Thrust gearcase matters, it's built for the load profile of pontoons.
 
 **What HP do I need for a 20-foot pontoon?**
-For cruising and fishing, 115 HP Command Thrust. For active water sports, tubing, or skiing with multiple passengers, 150 HP. Above 150 HP starts to be diminishing returns unless you have a tritoon.
+Cruising and fishing: 115 HP Command Thrust. Active water sports with multiple passengers: 150 HP Command Thrust. Above 150 HP on a two-tube pontoon starts to deliver diminishing returns.
 
-**What HP do I need for a 22-foot pontoon?**
-For cruising, 115 to 150 HP. For tubing and skiing with full family loading, 150 to 200 HP. Tritoons can take more HP and feel a meaningful difference; two-log pontoons hit a drag wall above 150 HP.
+**What HP for a bass boat?**
+Tournament fishing: 200 to 250 HP Pro XS. Recreational bass fishing: 150 to 200 HP FourStroke or Pro XS. The Pro XS line is the standard in tournament fishing.
 
-**What HP do I need for a bass boat?**
-For tournament-level performance, 200 to 250 HP Pro XS. For recreational bass fishing, 150 to 200 HP FourStroke or Pro XS. The Pro XS line is the standard for tournament fishing.
+**Can I put a bigger motor than the capacity plate allows?**
+No. The capacity plate is the legal and warranty-backed ceiling. Going over voids the Mercury warranty and creates insurance and safety problems. We won't rig it.
 
-**Can I put a bigger motor than the capacity plate says?**
-No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty if we install a motor above the rated maximum. The Coast Guard plate is set by the manufacturer based on hull testing. Going above is illegal and unsafe.
-
-**Can I put a smaller motor than recommended?**
-Yes, but for most recreational boaters that is the wrong call. Underpowering means you fight the boat against wind and load. Most customers who buy smaller than recommended trade up within 2 to 3 seasons.
-
-**Does prop selection affect the HP I need?**
-Yes. A wrong prop can cost you 4 mph and 15% fuel economy on the same motor. Sometimes the right answer is a different prop with the existing motor, not a bigger motor. We test props on the water during the sea-trial of every repower.
+**Does prop selection affect how much HP I need?**
+Yes. A wrong prop can cost you real top speed and fuel economy even on a perfectly-sized motor. Sometimes the fix isn't a bigger motor, it's the right prop on the motor you have. We test props on the water during every repower sea trial.
 
 **What is Mercury Command Thrust and when do I need it?**
-Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke 115 HP and up. It uses a larger gearcase, larger prop, and torque-tuned gear ratios designed for heavy boats (pontoons, work boats, heavy fishing rigs). On pontoons specifically, Command Thrust is usually the right call.
+Command Thrust is a gearcase option (not a separate motor family) available on select FourStroke models. It uses a larger gearcase, larger prop, and torque-tuned gear ratios built for heavy boats. On pontoons, Command Thrust is almost always the right call.
 
-**Should I get a 90 HP or a 115 HP for my pontoon?**
-For a 18 to 20 ft two-log pontoon doing cruising and fishing, 90 HP is plenty. For a 20 to 22 ft pontoon, especially a tritoon, or anything with active water sports in mind, jump to 115 HP Command Thrust. The price difference is meaningful but the capability difference is bigger.
+**Should I get the 90 HP or the 115 HP for my pontoon?**
+For an 18–20 ft two-tube pontoon doing cruising and fishing, 90 HP Command Thrust is enough. For a 20–22 ft pontoon with active water sports in mind, jump to 115 HP Command Thrust. The price difference is real; so is the capability difference.
 
-**How does loading affect HP requirements?**
-A two-person boat needs much less HP than a six-person boat. Adding 800 lbs of crew, gear, and a cooler turns marginal performance into stranded performance. Plan for your full use case loading, not your empty-boat numbers.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)`,
+**Does loading affect how much HP I need?**
+Significantly. A fully loaded family boat behaves like a different machine than an empty one. Plan your HP for your real load, not the number on paper.`,
     faqs: [
       {
         question: 'What happens if I choose too little horsepower?',
@@ -622,191 +604,154 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     category: 'Comparison',
     readTime: '12 min read',
     keywords: ['mercury fourstroke vs verado', 'pro xs vs fourstroke', 'mercury motor comparison', 'best mercury outboard', 'verado vs pro xs'],
-    content: `# Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)
-
-*Last reviewed: 2026-05-07*
-
-> **Quick answer:** FourStroke is the workhorse for fishing, family, and pontoon use. Pro XS is the same powerhead tuned for higher RPM and bass/performance hulls. Verado is the premium V8/V10/V12 tier (naturally aspirated on current models), special order only at HBW, not stocked. For most Ontario freshwater boaters, FourStroke or Pro XS is the right call. Configure either at mercuryrepower.ca.
-
-Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the premium V8/V10/V12 line, 175 to 600 HP, naturally aspirated, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the [motor selection page](/quote/motor-selection).
-
-![Comparison chart of Mercury outboard motor families: FourStroke (2.5-150 HP, recreational, best value and fuel economy), Pro XS (115-400 HP, tournament and performance, fast hole shot), Verado (175-600 HP, premium and multi-engine, quietest and smoothest), SeaPro (15-300 HP, commercial and high-hour use, heavy-duty durability).](/lovable-uploads/diagram-mercury-motor-families.png)
-*All four Mercury outboard families at a glance. The rest of this article goes deeper on each, but if you're skim-reading, the chart above tells you who each family is for.*
-
-## Quick recommendation
-
-For most Ontario boaters reading this article, the right Mercury family is FourStroke. It is what we sell most of, what most factory boats come rigged with, and what fits the typical Rice Lake / Kawartha use case (cruising, family fishing, pontoons, mid-size runabouts).
-
-Pro XS is the right answer when you want performance: tournament fishing, fast morning runs to beat the wind, bass boats, performance pontoons. It costs more than FourStroke at the same HP rating, and it earns the difference if you actually use the performance.
-
-SeaPro is for commercial use: charter operators, fishing guides, rental fleets, anyone running a motor 500+ hours a season under heavy load. It is more durable than the recreational lines and built for daily-use abuse.
-
-Verado is special-order only at HBW. It is a premium V8/V10/V12 line (naturally aspirated on current models) built for high-HP applications (twin and triple installations on offshore center consoles, large yachts). Almost no Ontario freshwater boater needs it. If you genuinely do, [contact us](/contact) and we will price it as a special order.
-
-Avator is Mercury's electric line. The technology is still maturing. We have not seen a strong use case for it yet on Rice Lake.
-
-## What changes the answer
-
-Five things move the right Mercury family for your boat:
-
-- **Boat type and weight.** A 17-foot bass boat asks for different power delivery than a 22-foot pontoon. Pro XS suits the bass boat. FourStroke (with Command Thrust on bigger pontoons) suits the pontoon.
-- **HP rating.** FourStroke covers the entire range from 2.5 to 300 HP. Pro XS starts at 115 HP. Below 115 HP, FourStroke is your only Mercury option in the recreational lineup.
-- **Use case.** Tournament fishing or active water sports favors Pro XS. Cruising, trolling, family use favors FourStroke. Commercial charter or fleet use favors SeaPro.
-- **Budget.** Pro XS costs more than FourStroke at the same HP. Verado costs more than Pro XS. SeaPro costs more than recreational FourStroke. Build a real quote on the [motor selection page](/quote/motor-selection) to see your actual CAD numbers.
-- **Resale and parts supply.** FourStroke and Pro XS have the deepest dealer support and best resale in Ontario. Verado has thinner support inland. SeaPro is a niche but well-supported.
-
-## Side-by-side comparison
-
-| Family | HP range | Best for | Performance focus | Availability at HBW |
-|---|---|---|---|---|
-| FourStroke | 2.5 - 300 HP | Cruising, family use, fishing, pontoons | Fuel economy, smooth running, reliability | In stock and on-order |
-| Pro XS | 115 - 300 HP | Tournament fishing, bass boats, performance pontoons | Fast acceleration, top speed, hole shot | In stock and on-order |
-| SeaPro | 25 - 300 HP | Commercial use, charter, guides, fleet | Durability under heavy load | On-order |
-| Verado | 175 - 600 HP | Offshore center consoles, twin/triple installs, yachts | Naturally-aspirated V8/V10/V12 smooth power, quiet operation | Special-order only |
-| Avator | Electric | Eco-conscious low-HP applications | Zero emissions, quiet | On-order, evolving lineup |
-
-For your specific motor and HBW pricing in CAD, see the [motor selection page](/quote/motor-selection).
-
-## FourStroke deep dive
-
-FourStroke is Mercury's standard recreational line and the bread-and-butter motor for Ontario boating. It covers everything from the 2.5 portable tiller up to the 300 HP V8.
-
-What it is good at: fuel efficiency (modern FourStrokes use 30 to 40% less fuel than the 2-stroke generation they replaced), smooth running, reliability, and being the motor most factory boats come rigged with. The 9.9 ProKicker (a FourStroke variant) is the standard kicker motor on Canadian fishing boats.
-
-Where it shines: aluminum fishing boats, pontoons, runabouts, family use, trolling, cruising. Most repowers we do at HBW are FourStroke installs. The 90 to 115 HP range with Command Thrust is the most common pontoon repower on Rice Lake.
-
-Trade-off: not the fastest motor at a given HP rating. If you want to win tournaments or pull skiers behind a heavy boat at maximum speed, you want Pro XS instead.
-
-## Pro XS deep dive
-
-Pro XS is Mercury's performance line, derived from racing technology and built for fast acceleration, high top speed, and aggressive hole shot. Available from 115 HP up to 300 HP.
-
-What it is good at: getting on plane quickly, holding speed against wind and load, tournament-grade reliability under throttle. The Pro XS line is the standard motor in tournament bass fishing for a reason.
-
-Where it shines: bass boats, performance fishing boats, performance pontoons, anyone who actually uses the performance. The 250 ProXS V8 is a popular choice on 19-21 ft bass boats.
-
-Trade-off: costs more than the equivalent HP FourStroke. If you cruise at half-throttle and never push the boat hard, you are paying for performance you are not using. Honest answer: most pontoons do not need Pro XS. Most aluminum fishing boats do not need Pro XS. Pro XS earns its premium when you actually run hard.
-
-## SeaPro deep dive
-
-SeaPro is Mercury's commercial-duty line. Available from 25 HP to 300 HP. Built heavier and tuned for daily use under load.
-
-What it is good at: running 500+ hours a season under commercial conditions without faltering. Charter operators, fishing guides, rental fleets, government boats, and rescue services run SeaPro because it survives the duty cycle.
-
-Where it shines: any commercial application where the motor is the business. We have set up SeaPro motors for guides on the Trent-Severn and rental operators on smaller Kawartha lakes.
-
-Trade-off: costs more than recreational FourStroke. Overkill for typical recreational use.
-
-## Verado: why it is special-order only at HBW
-
-Verado is Mercury's premium V8/V10/V12 line, available from 175 to 600 HP. Current Verados are naturally aspirated (older inline-6 Verados were supercharged). The V10 lineup expanded in 2025 with a new 425 hp V10 alongside the enhanced 350 hp and existing 400 hp models. It is engineered for high-HP applications, twin and triple installations, and offshore use where smoothness, quiet operation, and instant power are worth a premium.
-
-We do not stock Verado at HBW. The reason is straightforward: almost no Ontario freshwater boater has a use case that fits Verado. Our customers are running aluminum fishing boats, pontoons, runabouts, bass boats, and small center consoles. Pro XS or FourStroke covers all of those at a better cost-per-capability for our market.
-
-If you genuinely have a Verado-appropriate application (a 28+ ft offshore center console, twin or triple engines, premium yacht), [contact us](/contact) and we will price it as a special-order. Lead time is longer than recreational lines and pricing is configuration-specific. The [promotions page](/promotions) shows current Mercury promotional offers, which sometimes include Verado configurations.
-
-For most readers of this article, Verado is not the right call. We are not pushing you toward it because we do not stock it, and because it is rarely the honest right answer for Ontario freshwater boating.
-
-## Decision rules
-
-If you are not sure which family fits your boat, work through these rules in order:
-
-1. **What is the HP rating on your boat's capacity plate?** That sets your ceiling. Below 115 HP, FourStroke is your only recreational Mercury option.
-2. **Is this a recreational, performance, or commercial use case?** Recreational = FourStroke. Performance (tournament fishing, fast runs) = Pro XS. Commercial = SeaPro.
-3. **Do you actually use the performance?** If yes, Pro XS earns the price. If no, FourStroke gives you better fuel economy and resale at the same HP rating.
-4. **Are you running twin or triple engines on a 28+ ft offshore boat?** Verado is the special-order conversation.
-
-If you are still unsure, build a quote on the [motor selection page](/quote/motor-selection) with your boat type and use case selected, and the system will recommend appropriate motors. We can also walk through it on the phone in five minutes.
-
-## What HBW checks before recommending a family
-
-When customers ask "should I get the Pro XS or the FourStroke?" we want to know:
-
-- **What boat are you running?** Hull weight and type drives the answer.
-- **What do you actually do on the water?** Tournament fishing is different from family cruising.
-- **What is your launch and storage situation?** Affects practical motor selection.
-- **What is your budget tolerance for the performance premium?** Pro XS earns the cost when you use it. If you do not, FourStroke is the better value.
-- **Are you keeping the boat 5 years or 15 years?** Longer holds favor the more durable family for your use.
-
-The honest answer most often comes back: FourStroke is the right call. Pro XS for the customers who actually run hard. SeaPro for commercial. Verado for the rare offshore special order.
-
-## Related guides
-
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), match HP to your hull
-- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), specific to mid-range FourStroke choices
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the FourStroke-to-Pro XS step-up question
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop choice changes by family
-- [How Much Does a Mercury Repower Cost in Ontario?](/blog/mercury-repower-cost-ontario-2026-cad), pricing by HP class
-
-## Ready to pick your motor?
-
-Build a quote on the [motor selection page](/quote/motor-selection) in three minutes. Live Mercury pricing across every family in CAD, including FourStroke, Pro XS, SeaPro, and Avator. Verado is special-order, [contact us](/contact) for that conversation.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through which family fits your boat before you build, [give us a call at (905) 342-2153](tel:9053422153). We will give you the honest answer, including the answer that does not maximize the sale.
+    content: `**Last reviewed:** 2026-05-07
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+> **Quick answer:** For most Ontario freshwater boaters, it's FourStroke or Pro XS. FourStroke covers fishing, family, and pontoon use from 2.5 HP up. Pro XS is the same powerhead tuned for performance, worth the premium if you actually run hard. Verado is special order at HBW (almost no Ontario freshwater application needs it). Configure FourStroke or Pro XS at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+---
+
+## The short version
+
+If you're a Rice Lake or Kawartha boater reading this, the motor for you is almost certainly FourStroke. It's what most factory boats come rigged with, what we sell most of, and what fits the typical Ontario use case, cruising, family fishing, pontoons, mid-size runabouts.
+
+Pro XS is the right call when performance actually matters: tournament fishing, bass boats, fast morning runs to beat the wind, performance pontoons. It costs more than FourStroke at the same HP rating. It earns the difference if you use it.
+
+SeaPro is for commercial operators, guides, rental fleets, charter boats, anyone running a motor 500-plus hours a season under load.
+
+Verado is special order only at HBW, and almost no Ontario freshwater boater actually needs it.
+
+Avator (Mercury's electric line) is still maturing. We haven't seen a strong freshwater use case yet.
+
+---
+
+## What changes the answer
+
+**Boat type and weight.** A 17-foot bass boat wants different power delivery than a 22-foot pontoon. Pro XS suits the bass boat. FourStroke, with Command Thrust on bigger pontoons, suits the pontoon.
+
+**HP rating.** FourStroke covers the full range. Pro XS starts at 115 HP. Below 115 HP, FourStroke is your only recreational Mercury option in the standard lineup.
+
+**Use case.** Tournament fishing or active water sports favors Pro XS. Cruising, trolling, and family use favor FourStroke. Commercial use favors SeaPro.
+
+**Budget.** Pro XS costs more than FourStroke at the same HP. If you cruise at half-throttle and rarely push the boat hard, you're paying for performance you're not using.
+
+**Resale and dealer support.** FourStroke and Pro XS have the deepest dealer support in Ontario. Both hold resale well. Verado has thinner inland demand and resale reflects that.
+
+---
+
+## Family-by-family breakdown
+
+| Family | HP range | Best for | Availability at HBW |
+|--------|----------|----------|---------------------|
+| FourStroke | 2.5–300 HP | Cruising, family, fishing, pontoons | In stock and on-order |
+| Pro XS | 115–300 HP | Tournament fishing, bass boats, performance applications | In stock and on-order |
+| SeaPro | Available in multiple HP classes | Commercial use, guides, charters, rental fleets | On-order |
+| Verado | Multiple HP classes in V8/V10/V12 | Offshore centre consoles, twin/triple installs | Special order only |
+| Avator | Electric, limited HP | Eco-conscious low-HP applications | On-order, evolving |
+
+---
+
+## FourStroke: what it does well
+
+FourStroke is Mercury's standard recreational line, bread-and-butter for Ontario boating. It covers everything from a 2.5 HP portable tiller up through the V8 range.
+
+**Where it shines:** fuel efficiency, smooth running, reliability. Modern FourStrokes burn substantially less fuel than the 2-stroke generation they replaced. The 9.9 ProKicker (a FourStroke variant) is the standard kicker motor on Canadian fishing boats.
+
+**Best applications:** aluminum fishing boats, pontoons, runabouts, family use, trolling, cruising. Most repowers at HBW are FourStroke installs. The 90–115 HP range with Command Thrust is the most common pontoon repower we do on Rice Lake.
+
+**The honest trade-off:** It's not the fastest motor at a given HP rating. If you want to win tournaments or pull skiers behind a heavy boat at maximum speed, Pro XS is worth looking at.
+
+---
+
+## Pro XS: when the premium pays off
+
+Pro XS is Mercury's performance line, built for fast acceleration, high top speed, and aggressive hole shot. Available from 115 HP up.
+
+**Where it shines:** tournament bass fishing, getting on plane quickly, holding speed against wind and load.
+
+**Best applications:** bass boats, performance fishing boats, anyone who actually runs the boat hard.
+
+**The honest trade-off:** It costs more than an equivalent-HP FourStroke. If you're mostly cruising at half-throttle, you're paying for performance you're not using. That money is better spent on FourStroke and a good prop.
+
+Most pontoons don't need Pro XS. Most aluminum fishing boats don't either. Pro XS earns its premium when you actually run hard.
+
+---
+
+## SeaPro: for commercial operators
+
+SeaPro is Mercury's commercial-duty line. Built heavier and tuned for daily use under load, think 300–1,000+ hours a season.
+
+**Where it shines:** charter operators, fishing guides, rental fleets, government boats. We've set up SeaPro motors for guides on the Trent-Severn and rental operators on Kawartha lakes.
+
+**The honest trade-off:** Costs more than recreational FourStroke. Overkill for typical recreational use. But if your motor is your livelihood, it's not overkill, it's the right tool.
+
+---
+
+## Verado: why it's special order only at HBW
+
+Verado is Mercury's premium V8/V10/V12 line, engineered for high-HP applications, twin and triple installations on offshore centre consoles, large boats, premium applications.
+
+We don't stock Verado. The reason is simple: almost no Ontario freshwater boater has a use case that fits it. Our customers run aluminum fishing boats, pontoons, runabouts, bass boats, and small centre consoles. FourStroke or Pro XS covers all of those better on cost-per-capability for our market.
+
+If you genuinely have a Verado-appropriate application, a 28+ ft offshore centre console, twin or triple engines, contact us and we'll price a special order. Lead times are longer than recreational lines.
+
+---
+
+## Decision rules
+
+Work through these in order:
+
+1. **What does your capacity plate say?** That's the ceiling. Below 115 HP, FourStroke is your only standard recreational Mercury option.
+2. **Recreational, performance, or commercial?** Recreational = FourStroke. Performance = Pro XS. Commercial = SeaPro.
+3. **Do you actually use the performance?** If yes, Pro XS earns the price. If no, FourStroke gives you better fuel economy and typically similar resale.
+4. **Twin or triple on a 28+ ft offshore boat?** That's the Verado conversation.
+5. **Still not sure?** Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call us at **905-342-2153** and we'll work through it in five minutes.
+
+---
+
+## Related posts
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
+- [Mercury SeaPro: Commercial Outboard Guide](/blog/mercury-seapro-commercial-outboard-guide)
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
+- [Bass Boat Mercury Motor Buying Guide](/blog/bass-boat-mercury-motor-buying-guide)
+
+---
+
+## Ready to pick your family?
+
+Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca), real pricing in CAD across FourStroke, Pro XS, SeaPro, and Avator. Verado is special order; contact us for that conversation.
+
+Call **905-342-2153** if you want to talk through which family fits your boat. We'll give you the straight answer, including the answer that doesn't maximize the sale.
 
 ---
 
 ## FAQ
 
-**What is the difference between Mercury FourStroke and Pro XS?**
-FourStroke is Mercury's standard recreational line, tuned for fuel economy, smooth running, and reliability. Pro XS is Mercury's performance line, tuned for fast acceleration, high top speed, and aggressive hole shot. Pro XS costs more than FourStroke at the same HP rating. The premium pays off if you actually run the boat hard. For typical cruising, family use, and pontoons, FourStroke is the better value.
+**What's the difference between Mercury FourStroke and Pro XS?**
+FourStroke is tuned for fuel economy, smooth running, and reliability. Pro XS is tuned for fast acceleration, top speed, and hole shot. Same basic platform, different tune. Pro XS costs more. It earns the difference if you run hard; it doesn't if you mostly cruise.
 
-**Do I need a Pro XS for fishing?**
-For tournament fishing, bass boats, or anyone who wants the fastest possible runs to beat morning wind, Pro XS earns the price. For typical recreational fishing on Rice Lake or Kawartha lakes (trolling, drifting, working structure at slow speed), FourStroke is plenty. The Pro XS premium does not catch you more fish unless wind or distance is the limiting factor.
+**Do I need Pro XS for fishing?**
+For tournament fishing or anyone trying to beat the morning wind to a spot, yes, Pro XS earns the price. For typical recreational fishing on Rice Lake (trolling, drifting, working structure at slow speed), FourStroke is plenty.
 
 **Is Verado available at HBW?**
-Verado is special-order only at HBW. We do not stock it because almost no Ontario freshwater boater has a use case that fits the Verado premium. If you have a 28+ ft offshore boat, twin or triple engine setup, or a premium yacht application, [contact us](/contact) and we will price a Verado special order. Lead time is longer than recreational lines.
+Special order only. Almost no Ontario freshwater boater needs it. If you have a 28+ ft offshore boat, twin or triple engine setup, or a large premium application, contact us and we'll price a Verado order. Lead times are longer.
 
 **What is Mercury SeaPro for?**
-SeaPro is Mercury's commercial-duty line, built for charter operators, fishing guides, rental fleets, government boats, and any application running 500+ hours a season under heavy load. It is more durable than recreational FourStroke at the same HP rating, and it costs more. For typical recreational use, SeaPro is overkill. For commercial use, it is the right answer.
-
-**What is Mercury Avator?**
-Avator is Mercury's electric outboard line. The lineup is still maturing in 2026 with limited HP options compared to gasoline lines. We have not yet seen a strong recreational use case for Avator on Rice Lake or in the Kawarthas. Marina rental fleets and eco-conscious low-HP applications are the most common customers so far.
+Commercial-duty use: charter boats, fishing guides, rental fleets, government vessels, and anyone running 500-plus hours a season under load. More durable than recreational FourStroke; costs more. The right answer for commercial; overkill for recreational.
 
 **Which Mercury family is most fuel efficient?**
-FourStroke is the most fuel-efficient family across the recreational range. Modern FourStrokes use 30 to 40% less fuel than the 2-stroke generation they replaced, and they run cleaner and quieter. Pro XS is tuned for performance, which means slightly higher fuel use at the same HP. SeaPro fuel use is similar to FourStroke at low load, slightly higher at heavy commercial load.
-
-**Which Mercury family has the best resale value?**
-FourStroke and Pro XS hold resale strongest in Ontario because demand is highest. SeaPro holds resale well in commercial markets. Verado has lower demand inland and resale reflects that. For most recreational buyers in our market, FourStroke and Pro XS are the safest resale bets.
+FourStroke across the recreational range. Modern FourStrokes burn dramatically less fuel than the 2-stroke generation they replaced, and run cleaner and quieter. Pro XS is tuned for performance, which means slightly higher fuel use at the same HP.
 
 **Is FourStroke or Pro XS better for pontoons?**
-For pontoons, FourStroke is the standard recommendation. Specifically, FourStroke with Command Thrust gearcase on motors 115 HP and up. Command Thrust is purpose-built for the load and speed profile of pontoons, with better hole shot and load-carrying than standard gearcases. Pro XS is unusual on pontoons unless you have a specific performance pontoon application.
+FourStroke, specifically with Command Thrust gearcase on 115 HP and up. Command Thrust is purpose-built for pontoon load profiles. Pro XS is unusual on pontoons and rarely the right call.
 
 **Is FourStroke or Pro XS better for bass boats?**
-For tournament-grade bass boats, Pro XS. The acceleration, top speed, and hole shot match what bass anglers need. The 250 ProXS V8 is one of the most popular tournament bass motors. For recreational bass fishing without tournament-level demands, FourStroke at the same HP also works and saves money.
+Tournament-grade bass boats: Pro XS. The acceleration and hole shot match what tournament anglers need. Recreational bass fishing without tournament demands: FourStroke at the same HP also works and saves money.
 
 **Can I switch motor families during a repower?**
-Yes. The motor itself is the choice, and the rigging adjusts to fit the new motor. Most existing controls, prop, and harness can stay if you are going Mercury-to-Mercury. The cost varies by motor selection. Build a quote on the [motor selection page](/quote/motor-selection) to see exact CAD pricing for the family swap.
-
-**How do I know if I have a FourStroke or Pro XS?**
-Look at the cowl. Mercury FourStrokes have a "FourStroke" badge, a "Verado" badge for the premium V8/V10/V12 line, a "Pro XS" badge for the performance line, or a "SeaPro" badge for commercial. The model number on the lower cowl plate also identifies the family. If you are not sure, send us a photo of the motor and we will identify it.
-
-**What is Mercury Command Thrust?**
-Command Thrust is a Mercury gearcase option (not a separate family) available on FourStroke motors 115 HP and up. It uses a larger gearcase, larger prop, and torque-tuned gear ratios designed for heavy boats (pontoons, work boats, heavy fishing rigs). The result is better hole shot and load-carrying than the standard gearcase, with similar fuel economy. We recommend Command Thrust on most pontoon repowers.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
-
----
-
-## Sources
-
-- Parks Canada - Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
-- Parks Canada - Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Ontario Ministry of Natural Resources - Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
-
-*Last reviewed: 2026-05-11.*
-`,
+Yes. The motor is the choice; the rigging adapts. Most existing Mercury controls, props, and harnesses can stay Mercury-to-Mercury. Build a quote to see exact pricing for the swap.`,
     faqs: [
       {
         question: 'What\'s the main advantage of Pro XS over FourStroke?',
