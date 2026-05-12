@@ -8107,6 +8107,7 @@ Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca
       { question: 'Why are new boat sales down if people are still boating?', answer: 'New unit sales dropped as the post-COVID surge corrected, but overall boating expenditure remained strong. People are maintaining, upgrading, and repowering the boats they already own.' },
       { question: 'Is Mercury allocation healthy for 2026?', answer: 'From our position as a Mercury Platinum dealer, new motor allocation is healthy.' },
     ]
+  },
 
   {
     slug: 'boat-rentals-shared-access-booming-2026',
@@ -8380,6 +8381,20 @@ If you are comparing FourStroke vs Pro XS for a specific hull, or you need help 
     { question: 'What is the best Mercury outboard for trolling walleye on Rice Lake?', answer: 'A main motor in the 60 to 115 HP FourStroke range paired with a dedicated Mercury ProKicker 9.9 HP. The ProKicker is purpose-built for low-RPM trolling.' },
     { question: 'How do I choose the right Mercury for my Ontario boat?', answer: 'Start with your hull capacity plate maximum HP. Then consider your primary use. For most Ontario fishing and family boats, the answer lands in the 60 to 115 HP FourStroke range.' },
   ],
+  },
+
+  {
+    slug: 'mercury-avator-electric-boating-ontario',
+    title: 'Mercury Avator & the Future of Electric Boating in Ontario',
+    description: "Mercury's Avator electric outboards are quietly changing what small-boat and cottage boating can look like. Here's how Avator fits into the future of boating for Harris Boat Works customers.",
+    image: '/lovable-uploads/Mercury_Avator_and_The_Future_Blog_Post_Hero_Image.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-02-06',
+    dateModified: '2026-02-06',
+    publishDate: '2026-02-06',
+    category: 'Buying Guide',
+    readTime: '10 min read',
+    keywords: ['mercury avator', 'electric outboard motor', 'avator electric boat', 'electric boating ontario', 'mercury electric motor', 'cottage boat electric', 'rice lake electric outboard', 'avator range runtime'],
     content: `# Mercury Avator Electric Outboards: Honest Advice for Ontario Cottage Boaters
 
 ## Quick answer
@@ -11182,6 +11197,20 @@ For most Ontario boaters switching to Mercury, the timing is a full repower, whe
     { question: 'Why do most Canadian boat manufacturers ship Mercury-rigged?', answer: 'Mercury dealer network in Canada is the deepest, parts supply is most consistent, and the relationship between Mercury Marine and Canadian boat manufacturers goes back decades.' },
     { question: 'Why is HBW only a Mercury dealer?', answer: 'We have been a Mercury dealer since 1965. The depth of expertise, parts inventory, factory tooling, and Mercury Platinum dealer relationship today comes from decades of Mercury-only work. For engine repairs, we only service Mercury and Mercruiser.' },
   ],
+  },
+
+  {
+    slug: 'best-boats-rice-lake-under-30000',
+    title: 'Best Boats for Rice Lake Under $30,000 (2026 Buyer\'s Guide)',
+    description: 'Under $30,000 CAD on Rice Lake, your three best paths in 2026 are a new small aluminum fishing boat with a Mercury under 60 HP, a used family pontoon (often with a recent repower or due for one), or a clean used hull paired with a Mercury repower. We rig and service all three at HBW. The smart money usually skips brand-new entry-level boats and goes into a quality used hull plus a current Mercury motor instead.',
+    image: '/lovable-uploads/Guy_talking_to_salesperson_Mercury.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-04-25',
+    dateModified: '2026-05-04',
+    publishDate: '2026-04-25',
+    category: 'Buying Guide',
+    readTime: '12 min read',
+    keywords: ['best boat rice lake', 'boats under 30000 ontario', 'rice lake fishing boat'],
     content: `# Best Boats for Rice Lake Under $30,000: Three Paths That Actually Work
 
 ## Quick answer
