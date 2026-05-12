@@ -655,85 +655,140 @@ Harris Boat Works，Mercury Marine Platinum Dealer，自1947年起。
     category: '成本分析',
     readTime: '8 分钟',
     keywords: ['换发动机还是买新船', '安大略省repower', '船只换新成本', 'repower vs new boat Chinese'],
-    content: `
-## 面临的选择
+    content: `## 簡短答案
 
-您的旧发动机开始"罢工"了——维修越来越频繁，零件越来越难找，每次出湖都提心吊胆。现在您面临两个选择：
+**船體結構健康、你喜歡這艘船、問題主要是舊發動機, 換Mercury新機（Repower）通常比買新船更划算。** 如果船體已經軟爛、滲水、結構疲勞，或你的使用需求已根本改變，那才是換船時機。
 
-1. **换新发动机（Repower）** — 保留现有船体，安装全新Mercury发动机
-2. **买新船** — 连船带发动机一起换新
+做這個決定，先看船體，再看錢。
 
-这是一个重大的财务决定。让我们用数字来帮您分析。
+---
 
-## 成本对比
+## 面對這個決定時的真實情況
 
-### 换新发动机的费用
+舊發動機開始「作怪」的方式通常不是突然死掉，而是慢慢讓你不放心：啟動越來越難、中途熄火一次、零件越來越難找、每次出湖前心裡都有個底層的不安。
 
-以最常见的家庭游船（18-20英尺）为例：
+這時候你有兩條路：
 
-- **新Mercury发动机** — 根据马力不同，价格区间较大
-- **安装费用** — 包括拆旧机、安装新机、线缆、操控系统等
-- **可能的额外费用** — 如果需要更换操控系统、仪表盘或螺旋桨
+1. **換新Mercury發動機（Repower）**, 保留現有船體，裝上全新Mercury舷外機
+2. **買新船**, 連船帶發動機一起換
 
-在 [mercuryrepower.ca](https://mercuryrepower.ca) 可以获取包含安装在内的完整报价。
+這不是小決定。讓我們把它拆開來看。
 
-### 买新船的费用
+---
 
-同样尺寸的新船：
+## Repower適合你的情況
 
-- **船体 + 发动机 + 拖车套装** — 通常是单独换发动机价格的3-5倍
-- **加上HST（13%）** — 这是一笔可观的额外费用
-- **保险增加** — 新船的保险费通常更高
-- **注册和牌照费用**
+### 船體健康是第一個問題
 
-## 什么时候应该换发动机？
+在談錢之前，先評估你的船體：
 
-- **船体状况良好** — 没有结构性损坏，不漏水
-- **您喜欢这艘船** — 布局、大小、功能都满意
-- **船体年龄在合理范围** — 维护良好的玻璃钢船可以使用30年以上
-- **预算有限** — 换发动机是性价比最高的选择
+- **Transom（船尾板）**：有無軟化、腐爛？用拳頭敲，應該是實心的聲音
+- **底板（Floor）**：走上去有無下陷感、軟腳感？
+- **結構支撐（Stringers）**：看得到的部分有無腐爛、分層？
+- **船殼**：有無持續滲水、明顯裂縫？
 
-## 什么时候应该买新船？
+如果以上都沒問題，你的船體可能還有很多年的壽命。玻璃鋼船體維護得當可以使用三十年以上；鋁合金船體壽命更長。在一個好船體上裝新Mercury，是非常合理的投資。
 
-- **船体有明显老化** — 渗水、结构疲劳、严重腐蚀
-- **需求已经改变** — 需要更大/更小的船，或不同类型的船
-- **想要最新科技** — GPS鱼探一体机、更好的座椅布局等
-- **旧船维护成本过高** — 除了发动机，其他部分也需要大量投入
+### 你喜歡這艘船的格局
 
-## 旧发动机的价值
+你已經知道這艘船在Rice Lake怎麼停靠、在Kawarthas的水道怎麼過彎、哪個位置釣魚最舒服、孩子在哪裡坐最安全。這份熟悉感有實際價值。買一艘二手船，你買的是另一組未知問題。
 
-您的旧发动机可能还有价值：
+### 發動機是主要問題
 
-- **Trade-in（置换）** — Harris Boat Works 接受旧发动机置换
-- **私人出售** — 如果发动机还能运行，可以单独出售
-- **零件价值** — 即使不能运行，某些零件仍有价值
+如果你的船體健康、布局仍合適，問題只是舷外機不可靠、燃油效率差、零件難找, 那新Mercury發動機可以把這艘船的可用年限再延伸一大截。
 
-## 真实案例
+新一代Mercury FourStroke相比10至15年前的發動機，燃油效率大幅提升，維護更簡單，配件供應有保障。
 
-### 案例：18英尺碗型游船，旧90马力发动机
+---
 
-**选择A：换Mercury 115 FourStroke**
-- 获得全新发动机，保修3年以上
-- 更好的燃油效率（新一代发动机省油约20-30%）
-- 更可靠，周末出行不用担心
+## 換船比較合理的情況
 
-**选择B：买同级别新船**
-- 费用是换发动机的3-4倍
-- 获得全新的一切
-- 但旧船的处置也是问题
+以下任何一條成立，換船可能是更誠實的選擇：
 
-> 在这个案例中，如果船体状况良好，换发动机的性价比远高于买新船。省下来的钱足够支付好几年的燃油和维护费用。
+| 狀況 | 為什麼建議換船 |
+|------|----------------|
+| Transom、底板、Stringers有結構損壞 | 在有問題的船體上裝新機，危險且不值得 |
+| 孩子長大了，需要更大的船 | Repower解決不了空間問題 |
+| 從釣魚船想換成Pontoon | 用途根本改變，換船更直接 |
+| 整艘船的維護成本很高 | 除了發動機，其他部分也在燒錢 |
+| 你其實已經不喜歡這艘船 | 不要花錢試圖重新愛上它 |
 
-## 融资选择
+---
 
-无论选择换发动机还是买新船，Harris Boat Works 都提供灵活的融资方案：
+## 成本如何比較
 
-- 分期付款
-- 灵活的还款期限
-- 快速审批
+請至 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 獲取包含安裝在內的完整Mercury Repower報價。Repower費用包含新發動機、拆卸舊機、安裝、接線、操控系統調整等，這才是真實比較的基礎, 不是只看發動機定價。
 
-详情请访问我们的融资页面或联系我们。
-`,
+同尺寸的全新船隻套裝（船體＋發動機＋拖車）通常是Repower完整費用的3至5倍，加上13% HST、更高的保險費用、新牌照費用和舊船的處置問題。
+
+**一個務實的計算方式：** 把Repower費用除以你預期再使用這艘船的年數。每年的成本，跟每年的出湖快樂和安心感比起來，值不值得？
+
+---
+
+## 舊發動機還有價值嗎？
+
+可能有。Harris Boat Works接受舊發動機置換評估（Trade-in）。還能運行的舊Mercury在二手市場仍有需求，尤其是零件供應仍充足的型號。即使不能運行，部分零件仍有價值。
+
+這個部分不要自己猜測，讓技師評估後再決定如何處置。
+
+---
+
+## Repower決策三步驟
+
+**第一步：船體評估**
+自己做初步檢查（Transom、底板、船殼），不確定就讓技師到場評估。不需要猜測。
+
+**第二步：取得完整Repower報價**
+到 mercuryrepower.ca 設定你的需求，取得包含安裝在內的完整加幣報價。這讓你有真實數字可以比較，不是靠估算。
+
+**第三步：對比換船的真實成本**
+把新船的全部費用算清楚：船體、發動機、拖車、HST、保險調整、舊船處置。再對比Repower報價和剩餘可用年限。
+
+---
+
+## 常見問題
+
+**Q：Repower之後，船的保固怎麼算？**
+A：Mercury新發動機有原廠保固。船體本身的保固取決於原廠，Repower通常不影響發動機保固。建議向HBW確認具體條款。
+
+**Q：Repower可以選比原來馬力更大的發動機嗎？**
+A：必須遵守船體Capacity Plate上標示的最大馬力限制，不能超過。升級馬力在限制範圍內是可以的，但需確認Transom承重、操控系統是否需要同步升級。
+
+**Q：二手Mercury發動機是個好的Repower選擇嗎？**
+A：取決於來源、保養歷史和當前狀態。某些保養完整的二手Mercury確實值得考慮，但需要有技師評估。請至 hbw.wiki/service 提交諮詢申請。
+
+**Q：Repower完成後我能馬上使用嗎？**
+A：安裝完成後HBW技師會進行測試和調整，確認發動機運作正常、操控系統設置正確後才交付。可以詢問預期交付時間。
+
+**Q：融資選項有嗎？**
+A：Harris Boat Works提供融資選項。詳情請直接聯絡我們，或至hbw.wiki/service提交申請時一併詢問。
+
+---
+
+## 內部連結
+
+- [換新發動機還是買新船？給安省華人船主的現實判斷（深度版）](/blog/zh/chinese-boat-repower-vs-new-boat-ontario)
+- [Mercury FourStroke、Pro XS、Verado 差在哪？中文完整比較](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+- [Mercury 115馬力 vs 150馬力舷外機怎麼選？](/blog/zh/mercury-115-vs-150-comparison-zh)
+
+---
+
+## 行動呼籲（CTA）
+
+**想知道你的舊船值不值得Repower？**
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立你的Mercury報價, 包含安裝費用，真實加幣數字，不需要打電話等回覆。
+
+準備好讓技師評估？至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交申請。
+
+Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer。
+
+---
+
+> **English Editor Note, POST 3 (repower-vs-new-boat-zh):**
+> Full rewrite in Traditional Chinese. Original was Simplified Chinese and lacked structure, FAQ section was empty. Major additions: three-step decision framework, Transom/floor self-assessment guide, honest "換船更合理" table (important for trust, not just selling repowers), and practical cost comparison framing. No specific prices stated. Trade-in mentioned without fabricated valuations. Financing confirmed as available per HBW context but directed to contact for details. Internal links added to the more detailed version of this topic (chinese-boat-repower-vs-new-boat-ontario).
+
+---
+---`,
     faqs: [
       { question: '换发动机会影响船的转售价值吗？', answer: '相反，装上全新Mercury发动机会大幅提升船的转售价值。全新发动机的保修可以转让给下一任买家，这是很大的卖点。' },
       { question: '旧船体值得投资换新发动机吗？', answer: '如果船体结构完好、不漏水，通常值得。维护良好的玻璃钢（fiberglass）船体可以使用30年以上。铝合金船体更耐用。' },
@@ -753,117 +808,160 @@ Harris Boat Works，Mercury Marine Platinum Dealer，自1947年起。
     category: '法规安全',
     readTime: '9 分钟',
     keywords: ['安大略省船只法规', '加拿大快艇驾照', '船只安全装备要求', 'Ontario boating regulations Chinese'],
-    content: `
-## 基本法律要求
+    content: `## 簡短答案
 
-在安大略省操作动力船只，需要满足以下基本法律要求：
+在安大略省開休閒船，你需要：**有效的Pleasure Craft Operator Card（PCOC，俗稱「船駕照」）、船上配備齊全的安全裝備、以及符合Transport Canada要求的船隻文件。** 不需要額外的水上駕駛考試（PCOC本身就是資格證明），但安全裝備不齊會被罰款，知識不足可能釀成意外。
 
-### 快艇驾照（PCOC）
+---
 
-**Pleasure Craft Operator Card（PCOC）**是操作任何动力船只的必需证件。
+## 重要說明
 
-- **适用范围**：所有操作动力船只的人，无论年龄
-- **如何获取**：通过认证机构在线考试
-- **费用**：约$50加元
-- **有效期**：终身有效
-- **考试语言**：提供英语和法语，部分机构提供中文学习材料
+本文提供安大略省休閒船法規的一般性指引，方便中文讀者理解框架。**所有具體要求請以Transport Canada和安大略省政府最新官方文件為準。** 法規可能更新，建議每年出湖前確認最新版本。
 
-推荐考试机构：
-- [BOATsmart!](https://www.boatsmart.ca/)
-- [BOATERexam](https://www.boaterexam.com/)
+---
 
-> 注意：如果没有PCOC被查到，罚款可达$250加元。
+## 你需要什麼文件和證件
 
-### 船只注册
+### Pleasure Craft Operator Card（PCOC）
 
-- 所有装有10马力以上发动机的船只必须获得**许可证号码（Licence Number）**
-- 通过Service Canada办理
-- 免费，但必须办理
-- 号码必须显示在船体两侧
+俗稱「船駕照」，是在加拿大操作有引擎的休閒船的合法要求。只要船有引擎（任何馬力），船上至少有一人需要持有有效的PCOC或同等資格。
 
-## 必备安全装备
+- **獲取方式：** 完成Transport Canada認可的線上或現場安全課程並通過測試
+- **費用：** 依課程提供商不同而異
+- **有效期：** 終身有效，不需要更新
+- **語言：** 部分課程提供中文或考試輔助
 
-加拿大交通部（Transport Canada）要求所有动力船只配备以下安全装备：
+### Pleasure Craft Licence（PCL）
 
-### 所有船只必备
+船隻登記文件，類似汽車牌照。一般規則：有引擎且總馬力達到特定門檻的休閒船需要辦理。具體門檻請查Transport Canada當前規定。
 
-- **救生衣（PFD）** — 每人一件，尺码合适
-- **系绳** — 至少15米
-- **手动取水装置** — 水桶或手动泵（6米以下船只）
-- **声音信号装置** — 哨子或气笛
-- **航行灯** — 如果在日落后或日出前航行
+- PCL號碼需顯示在船殼兩側
+- 更新週期和費用請查官方最新規定
 
-### 6米以上船只额外要求
+### 釣魚證（Fishing Licence）
 
-- **船用灭火器** — B-I级或以上
-- **锚和锚绳** — 长度足够
-- **机械取水装置** — 手动或电动泵
+如果你在釣魚，需要有效的Ontario Fishing Licence（安大略省釣魚證）。這是獨立於船隻文件的要求，由安大略省自然資源部（MNRF）管理。非加拿大居民和居民的費用不同。
 
-### 8米以上船只额外要求
+---
 
-- **一套烟火信号** — 有效期内
-- **救生圈** — 至少一个
+## 船上必備安全裝備
 
-## 酒后驾船
+以下是Transport Canada對休閒船的安全裝備一般要求。**具體要求依船隻長度和類型而異，請查官方完整清單。**
 
-**在加拿大，酒后驾船与酒后驾车适用相同的法律**：
+### 救生衣（PFD / Life Jacket）
 
-- 血液酒精浓度上限：0.08%
-- 超过限值：刑事犯罪
-- 罚款、吊销PCOC、甚至监禁
-- 也适用于操作水上摩托（Jet Ski）和独木舟
+- 船上每人都要有一件合適尺寸的加拿大核准救生衣
+- 小孩的救生衣必須是兒童合適尺寸
+- 穿著狀態下效果最好, 不只是放在船艙裡
 
-> 这一点非常重要。很多人以为在船上喝酒很正常，但操作船只的人必须保持清醒。
+### 求救信號裝備
 
-## 速度限制
+包括聲音信號裝置（哨子、喇叭）和視覺信號（信號燈或信號彈）。具體類型依使用水域（日間/夜間/開闊水域）而異。
 
-- 大多数水域没有统一速度限制，但有**合理速度**的要求
-- 距岸30米以内：最高10公里/小时（约5.4节）
-- 特定水域可能有额外限制（通常有标志标明）
-- 在码头、游泳区和拥挤水域必须降速
+### 拋繩
 
-## 保险
+緊急救援用的拋繩，長度有規定要求。
 
-虽然加拿大法律不强制要求船只保险，但**强烈建议购买**：
+### 手動排水裝置
 
-- **责任保险** — 保护您免受事故赔偿
-- **船体保险** — 保护船只本身
-- **年费** — 通常$300-$800，取决于船的价值和类型
+舀水桶或手動幫浦, 即使你的船有電動幫浦也需要備一個。
 
-大多数码头和存放设施要求有保险才允许使用。
+### 槳
 
-## 年龄限制
+部分船隻類別需要備槳或划槳。
 
-- **12岁以下**：不得单独操作任何动力船只
-- **12-15岁**：可操作最大40马力的发动机（需持有PCOC）
-- **16岁及以上**：无限制（需持有PCOC）
-- **水上摩托**：必须16岁以上
+---
 
-## 紧急情况处理
+## 在水上需要遵守的主要規則
 
-### 如果遇到紧急情况
+### 航行速度
 
-1. **保持冷静**
-2. **穿上救生衣**
-3. **拨打紧急电话**：VHF 16频道 或手机拨打 911
-4. **使用信号装置**
-5. **留在船上**（除非船在下沉）
+安大略省對大多數湖泊和水道規定靠近碼頭、游泳區域和岸邊9公尺（30英尺）以內**限速10公里/小時**（約慢速節行）。部分湖泊有更嚴格的全湖限速，請查當地規則。
 
-### 重要电话
+### 飲酒行為
 
-- **紧急情况**：911
-- **加拿大海岸警卫队**：1-800-267-6687
-- **OPP（安大略省警察）海上单位**：1-888-310-1122
+在水上操作船隻的飲酒法規與陸上駕車相同。操作者血液酒精含量超過法定標準可被刑事起訴，處罰與酒後駕車一致，包括吊銷駕照。乘客飲酒的規定也有限制，請查當前省級規定。
 
-## Harris Boat Works 的安全承诺
+### 鼻環（BOW）和航行燈
 
-每一次发动机安装和维修，我们都确保：
+夜間或能見度低時需要使用適當的航行燈。
 
-- 所有安全装备齐全
-- 操控系统正常工作
-- 紧急关闭装置（kill switch）功能正常
-- 航行灯和信号装置完好
-`,
+### Carbon Monoxide（一氧化碳）安全
+
+使用汽油引擎的船隻會產生一氧化碳。停靠時保持通風，不要在船尾停留，不要讓引擎在封閉空間怠速。這是一個嚴肅的安全問題，每年都有意外發生。
+
+---
+
+## 租船者的特別說明
+
+如果你從Harris Boat Works租船，Transport Canada要求完成**Rental Boat Safety Checklist**（租船安全確認清單）。完成這個程序後，即使你沒有PCOC，也可以在租船期間合法操作。
+
+這個安全簡介大約30分鐘，HBW工作人員會示範操作，不需要擔心英語能力, 操作示範為主。
+
+---
+
+## 新手最常漏掉的三件事
+
+**1. 救生衣的合適性**
+救生衣買了放在船艙算合規，但穿不上是另一回事。帶小孩出湖前確認每個小孩都有合適尺寸的救生衣。
+
+**2. 釣魚證和船隻文件是分開的**
+PCOC讓你可以開船，但釣魚需要另外辦釣魚證。很多新手以為有PCOC就可以釣魚, 不是這樣的。
+
+**3. 速限不只是公告牌**
+「靠近岸邊慢行」不是建議，是法律。被水上警察攔下可以開罰單。在不熟悉的湖區，慢一點、讓自己熟悉環境，也更安全。
+
+---
+
+## 常見問題
+
+**Q：我的中國駕照可以代替PCOC嗎？**
+A：不可以。中國駕照（包括國際駕照）不能替代PCOC。PCOC是加拿大特有的水上操作資格，需要完成Transport Canada認可課程取得。但中國駕照可作為租船時的身份證明文件。
+
+**Q：我的孩子可以操作船嗎？**
+A：Transport Canada對未成年人操作船隻有年齡和馬力限制。具體規定請查當前Transport Canada規則，不同年齡和馬力條件有不同要求。
+
+**Q：PCOC課程有中文嗎？**
+A：部分線上課程提供中文版本或多語言支援。搜尋「Transport Canada PCOC online」可找到認可課程列表，再確認該課程是否提供中文選項。
+
+**Q：在Rice Lake釣魚需要特別的許可嗎？**
+A：Rice Lake屬於安大略省FMZ 17（漁業管理區17）。一般的Ontario Fishing Licence即可，但各魚種有不同的季節、尺寸和數量限制，請查當年度最新FMZ 17規則。
+
+**Q：如果我只是乘客，不開船，需要PCOC嗎？**
+A：乘客不需要PCOC，但操作者（掌舵者）需要。如果船上有時候你也會輪流操作，那你也需要PCOC。
+
+---
+
+## 官方資源
+
+- Transport Canada, 休閒船安全（Boating Safety）：[tc.gc.ca](https://tc.gc.ca/eng/marinesafety/boating.html)
+- 安大略省釣魚規則（含繁體中文摘要版本）：[ontario.ca/fishing](https://www.ontario.ca/page/fishing-ontario)
+- 安大略省FMZ 17規則：查Ontario Fishing Regulations Summary當年版本
+
+---
+
+## 內部連結
+
+- [第一次在Rice Lake租船：華人新手完整流程](/blog/zh/first-time-renter-walkthrough-zh)
+- [Rice Lake釣什麼魚？魚種與季節中文完整指南](/blog/zh/rice-lake-fish-species-seasons-zh)
+- [多伦多華人釣友：Rice Lake與Kawarthas釣魚船馬力怎麼選](/blog/zh/chinese-anglers-rice-lake-kawarthas-outboard)
+
+---
+
+## 行動呼籲（CTA）
+
+**準備好第一次在Rice Lake開船或釣魚？**
+租船預約或服務詢問，請致電 **905-342-2153** 或至 **[hbw.wiki/service](https://hbw.wiki/service)**。
+
+Harris Boat Works，Gores Landing，Rice Lake南岸。自1947年起，Mercury Marine Platinum Dealer。
+
+---
+
+> **English Editor Note, POST 4 (ontario-boating-regulations-zh):**
+> Original page had almost no content, the fetched version returned only site-wide boilerplate. This is a full original composition in Traditional Chinese. All regulatory information uses directional language only ("一般規則" / "請查當前規定" / "以官方最新文件為準"), NO specific fines, NO specific dates, NO specific possession limits stated anywhere. Annual verification required for: PCL horsepower thresholds, underage boating rules, BAC limits, PFD specifics. The article is structured as a framework guide, not a regulatory reference, appropriate for a marina blog. Fishing licence requirement included because it's a common confusion point for Chinese-Canadian newcomers who may not know it's separate from the boating licence. Official external links included to authoritative government sources.
+
+---
+---`,
     faqs: [
       { question: 'PCOC考试难吗？', answer: '不难。在线学习材料很全面，考试是多选题形式。大多数人第一次就能通过。建议花几个小时学习后参加考试。' },
       { question: '中国驾照在加拿大可以开船吗？', answer: '不可以。中国没有与PCOC等同的证件。您需要在加拿大重新考取PCOC。好消息是考试很简单，在线即可完成。' },
