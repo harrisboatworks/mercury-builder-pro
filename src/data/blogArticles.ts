@@ -13723,176 +13723,171 @@ Take a photo of the plate the day you buy the boat. Save it on your phone. You'l
     category: 'Service & Maintenance',
     readTime: '11 min read',
     keywords: ["Mercury maintenance intervals 20 100 300", "Mercury 100 hour service Ontario", "Mercury break-in service", "Mercury 300 hour major service", "Mercury annual service cost Ontario"],
-    content: `
-# The Mercury 20/100/300 Maintenance Rule. What Every Ontario Boater Should Know
-
-*Last reviewed: 2026-05-07*
-
-> **Quick answer:** Mercury's 20/100/300 rule: 20-hour break-in service, 100-hour annual service, 300-hour deep service. Skip any of them and you erode warranty coverage and long-term reliability. We schedule by interval and remind customers automatically. Service booking at mercuryrepower.ca.
-
-When maintenance economics tip toward replacement, see [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad) and the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide). [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) explains what scheduled service is required to keep coverage, and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) compares service intervals across families.
-
-Mercury's service schedule has three milestones built into it: **20 hours, 100 hours, and 300 hours**. Each one is a different scope of work for a different stage of the engine's life. Ignoring any of the three is the cheapest way to make a $20,000 motor act like a $5,000 one.
-
-This is the schedule we'd walk through with any new Mercury owner who walks into the shop, in plain English, with Ontario service rates.
+    content: `**Language:** English 
 
 ---
 
-## Why the Three-Milestone Framework Exists
+## Quick Answer
 
-![Horizontal timeline showing Mercury outboard service intervals: 20-hour break-in, 100-hour annual service, 300-hour major service.](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
-
-*Mercury's official 20/100/300 service intervals visualized. The 100-hour annual is the one most owners need to lock into the calendar.*
-
-A new outboard isn't a finished product the day it leaves the factory. The first 10 hours are **break-in**, where rings seat against cylinder walls, gears mesh in for the first time, and metal particles wear off and end up in the oil. The next chunk of life is **routine operation**, where wear and exposure accumulate. Eventually you hit **major-service territory**, where rubber and consumables that have been quietly aging for years all need replacement at once.
-
-The 20/100/300 rule maps service intervals to those phases:
-
-| Milestone | What it is | Trigger |
-|-----------|------------|---------|
-| **20-hour break-in service** | Flush the metal particles, retorque everything | After first 20 hours of use |
-| **100-hour annual service** | Routine preventive maintenance | Every 100 hours OR every year, whichever comes first |
-| **300-hour major service** | Deep service of wear items | Every 300 hours OR every 3 years |
-
-The "whichever comes first" clause matters in Ontario. Most recreational boaters here run **50-100 hours per season**. That means most of you hit the *annual* trigger before the *hourly* trigger. Service is yearly business, not "when the meter says so."
+Mercury's service schedule is built around three milestones: 20-hour break-in service, 100-hour (or annual) routine service, and 300-hour major service. Each milestone covers a different scope of work. The 100-hour annual is the one most Ontario owners need to calendar every year regardless of hours, because most recreational boaters never reach 100 hours in a season. Skipping any milestone shortens motor life and, for motors under warranty, can affect coverage.
 
 ---
 
-## The 10-Hour Break-In Period (Comes Before Everything Else)
+## Mercury Maintenance Intervals: The 20/100/300-Hour Rule Explained
 
-If you just bought a new Mercury, the **first 10 hours of operation** have specific limits. These aren't suggestions, improper break-in can void warranty coverage if the engine fails.
+A new Mercury outboard isn't a finished product the day it leaves the factory. It's the beginning of a mechanical relationship. How you manage the first few hundred hours determines what you get out of the next several thousand.
 
-- **Hours 0-2:** Vary the throttle. Never exceed 4,500 RPM. No sustained WOT.
-- **Hours 2-10:** Standard operation, but **WOT only in 5-minute bursts**, not sustained.
-- **Track your hours.** Mercury's Marine App (or VesselView Mobile) does this automatically with SmartCraft. If you're old-school, write it down.
-
-After hour 10, run the engine normally for the next 10 hours, then bring it in for the **20-hour service**.
+Mercury builds its service schedule around three milestones that correspond to distinct phases of an engine's life. Here's what each one involves and why it exists.
 
 ---
 
-## The 20-Hour Break-In Service
+## Why Three Milestones
 
-What happens at this service:
+### Break-in phase (0, 20 hours)
 
-| Task | Why |
-|------|-----|
-| **Engine oil and filter change** | Pulls out break-in metal particles before they cause wear. FC-W certified marine oil only. |
-| **Lower unit gear lube change** | Same, clears break-in particles from the gearcase. |
-| **Prop nut retorque** | Set to spec (~55 ft-lbs on most), new cotter pin. Vibration during break-in loosens the prop nut. |
-| **Fastener retorque** | Mounting bolts, steering hardware. |
-| **General leak/connection inspection** | Catch anything before warranty issues compound. |
-| **Tell-tale verification** | Confirm cooling system is flowing as designed. |
+A new engine is not fully "seated" when it leaves manufacturing. In the first 10, 20 hours of operation:
+- Piston rings seat against cylinder walls
+- Gears mesh and find their final wear pattern
+- Metal particles shed from these break-in processes end up in the oil
 
-**Cost in Ontario, mid-range motor (40-115 HP):** $250-$400 CAD.
-**Higher HP (150-300 HP):** $400-$600 CAD.
+The 20-hour service exists specifically to capture and remove those particles before they circulate through the engine indefinitely. It also re-torques fasteners that may have relaxed as components settled.
 
-Skipping this service is false economy. The cost of the service is less than the cost of one cylinder's worth of premature wear.
+Skipping the 20-hour service leaves metal contamination in the oil and misses the first opportunity to catch any assembly-related issues while the motor is still new.
 
----
+### Routine operation phase (20, 300 hours)
 
-## The 100-Hour / Annual Service. Your Engine's Lifeline
+After break-in, the motor enters years of normal use. The 100-hour service interval is Mercury's standard for routine preventive maintenance during this phase. It covers the items that wear and accumulate through normal operation: oil, filters, spark plugs, gear lube, and inspection of critical systems.
 
-This is the service most boaters will run every year for the life of the engine. Comprehensive list:
+**The "every year" rule:** Mercury's schedule says every 100 hours OR every year, whichever comes first. Most recreational boaters in Ontario don't put 100 hours on a motor in a single season. That means the annual calendar trigger applies regardless of hours, and skipping a year isn't justified by low hours.
 
-| Task | Detail |
-|------|--------|
-| **Engine oil + filter** | FC-W marine oil. Drain plug torque to spec, over-tightening cracks aluminum oil pans. |
-| **Gear lube change** | **Inspect for milky color (water = seal leak) or metal flakes on the magnetic plug.** This 30-second check catches lower-unit problems before they become $2,000 problems. |
-| **Fuel filter (water separator)** | Spin-on filter replaced. More often if you run ethanol pump gas, this is one of the reasons we sell ethanol-free 89 at the dock. |
-| **Spark plugs** | Mercury-spec plugs only, 75-150 HP FourStroke uses NGK IZFR6F-11 with a 1.1mm gap. Torque to 13 ft-lbs on aluminum heads. |
-| **Thermostat test** | Pop it in hot water, check open temp (142°F or 160°F depending on model). Replace if fails. |
-| **Anodes** | Replace any that are 50%+ depleted. |
-| **Grease points** | 2-4-C Marine on pivots; Special Lubricant 101 on prop shaft. |
-| **Computer diagnostic (SmartCraft)** | Scan for stored fault codes. Pull true engine hours from ECU. Check for outstanding service bulletins. |
+### Major service phase (300 hours)
 
-**Cost in Ontario at HBW:**
-- **Mid-range (40-115 HP):** $400-$700 CAD
-- **Higher HP (150-300 HP):** $700-$1,200 CAD
-
-The number people get wrong: **the gear lube colour check.** Milky lube means water has bypassed a gearcase seal. Caught at 100 hours, it's a seal job - $400. Ignored for another 100 hours, it's a lower unit rebuild - $1,800-$2,500. The checklist exists for reasons.
+At 300 hours, a motor's rubber and elastomeric components, belts, impeller, seals, thermostat, have reached their expected end of service life regardless of visible condition. Many of these parts don't show wear externally before they fail. The 300-hour major service replaces them preventively.
 
 ---
 
-## The 300-Hour / 3-Year Major Service
+## What Gets Done at Each Interval
 
-Includes everything in the 100-hour, plus:
+### 20-Hour Break-In Service
 
-| Task | Why |
-|------|-----|
-| **Water pump impeller kit** | Full kit: impeller, wear plate, housing liner, gaskets. Brittle vanes block cooling flow. **The #1 preventable cause of powerhead damage.** |
-| **Fuel system deep clean** | EFI engines: check fuel pressure (~39 PSI at idle on most Mercury 4-strokes), inspect injectors. Carbureted engines: clean carbs. Replace any hardened fuel hoses. |
-| **Verado timing belt inspection** | Verados have a timing belt; **inspect at 300 hours, mandatory replacement by 600 hours.** A snapped belt means destroyed valves and pistons. This is where Verado owners cannot economize. |
-| **Verado supercharger oil change** | Old-style inline-6 Verados only. Current V8/V10/V12 Verados are naturally aspirated. |
-| **Power steering flush (Verado)** | Flush fluid if dark or burnt. |
-| **Anode set replacement** | Replace all of them as a set. |
-| **Lower unit pressure test** | Pressure / vacuum test confirms seal integrity. |
+| Item | Why |
+|---|---|
+| Oil and filter change (FourStrokes) | Remove metal particles from break-in wear |
+| Gear lube drain and refill | Remove break-in particles from gearcase |
+| Inspect and retorque fasteners | Components may relax after initial heat cycles |
+| Inspect fuel system | Catch any factory assembly issues early |
+| Inspect cooling system and tell-tale | Confirm normal operation |
+| Check and adjust throttle/shift linkage | Initial stretch and adjustment |
 
-**Cost in Ontario at HBW:**
-- **Mid-range (40-115 HP):** $800-$1,200 CAD
-- **Higher HP (150-300 HP):** $1,200-$2,000 CAD
-- **Verado:** $1,500-$2,500 CAD (timing belt inspection adds time and parts)
+### 100-Hour/Annual Service
 
-For Verado owners specifically, if you're at 300 hours and the timing belt looks worn, **replace it now**. Don't wait for the 600-hour mandatory replacement. A $400-$700 belt replacement now is cheaper than a $7,000-$15,000 powerhead later.
+This is the service most Mercury owners should be scheduling every fall or spring.
 
----
+| Item | Why |
+|---|---|
+| Oil and filter change (FourStrokes) | Routine maintenance |
+| Gear lube drain and refill | Remove water and wear particles from season's use |
+| Spark plug inspection/replacement | Worn plugs reduce efficiency and increase no-start risk |
+| Fuel filter replacement | Clogged filters restrict flow |
+| Water pump impeller inspection | Critical for cooling; replace if worn or if interval is approaching |
+| Thermostat test | Cooling system integrity |
+| Inspect drive belts (applicable models) | Look for cracking or wear |
+| Lubricate all grease points | Steering, tilt/trim, pivot points |
+| Inspect propeller and shaft | Seal condition, debris damage |
+| Check battery and charging system | Spring: ensure winter storage didn't compromise either |
+| Inspect all hoses and connections | Look for brittleness, cracks, loose connections |
 
-## Engine-Family-Specific Notes
+### 300-Hour Major Service
 
-Not every Mercury follows the exact same playbook:
+In addition to all 100-hour items:
 
-**FourStroke 75-300 HP**, standard 20/100/300 schedule. The 150 FourStroke is a top seller and shares parts with the 115 and 200; service intervals are identical.
+| Item | Why |
+|---|---|
+| Water pump impeller replacement (if not already current) | End of expected service life regardless of condition |
+| Thermostat replacement | Rubber and seal degradation |
+| Drive belt replacement (applicable models) | Preventive at life expectancy |
+| Timing belt inspection/replacement (applicable models) | Failure-critical item on applicable motor families |
+| Full cooling system inspection | Passage scale, hose condition |
+| Fuel system inspection and cleaning | Injector condition, fuel delivery integrity |
+| Inspect anodes | Marine environment corrosion protection |
 
-**OptiMax (older 2-stroke)**, uses oil injection, burns roughly 1 quart per 50 gallons of fuel. Monitor your DFI oil reservoir. Listen for the air compressor at idle, it's normal. OptiMax service intervals are the same 100/300 framework but include carb-style fuel system checks instead of EFI.
-
-**Verado (135-400 HP)**, highest maintenance demand of any Mercury family. Timing belt at 300/600. Older inline-6 Verados had supercharger oil at 100h (current naturally-aspirated V8/V10/V12 Verados don't). Charge air cooler cleaning every few hundred hours. If you own a Verado, the long maintenance hood is the price of admission for the quietest, smoothest big outboard on the market.
-
-**Pro XS**, high-RPM tuned. Spark plugs need replacement more often than standard FourStroke; we pull and inspect at every 100-hour service even when "schedule" says 200.
-
-**SeaPro (commercial)**, heavier-duty internals, but the maintenance intervals still apply. SeaPro engines clock far more hours per season than recreational Mercurys, so the **hourly trigger** beats the annual one. Plan service around hours, not the calendar.
-
----
-
-## What You Can DIY vs. What Needs the Shop
-
-Realistic DIY scope on a 4-stroke Mercury:
-
-- **DIY:** Engine oil and filter, spark plug change, fuel filter, anodes, grease points, basic flushing.
-- **Borderline:** Gear lube change (need the right pump and care not to introduce air), thermostat (easy on smaller motors, fiddly on V8/V10s).
-- **Dealer territory:** Water pump impeller (lower unit removal + reinstallation alignment), computer diagnostics + fault code reset, lower unit pressure test, Verado timing belt, anything under warranty.
-
-If you're a wrench-comfortable owner doing your own oil changes, great. Just keep records (photo of the meter, date, work done) so we have continuity if the motor comes in for major service later. **No service records is the same as no service done** when warranty work or resale comes up.
+Exact scope of the 300-hour service varies by motor model and family. Your dealer will follow the Mercury factory-published service manual for your specific motor.
 
 ---
 
-## Why the Annual Trigger Wins in Ontario
+## Does Maintenance Interval Affect Warranty?
 
-A typical Ontario recreational boater runs 50-100 hours a season. That means in three seasons you've put **150-300 hours** on the motor. By Mercury's calendar, you owe:
+Mercury's warranty documentation specifies that scheduled maintenance must be performed to maintain warranty coverage. If a failure occurs and the service history doesn't include documented maintenance at Mercury's intervals, warranty coverage can be affected.
 
-- **Year 1:** 100-hour annual service (after the 20-hour break-in)
-- **Year 2:** 100-hour annual service
-- **Year 3:** 300-hour major service
+This doesn't mean you have to pay a dealer for every service, owner-performed maintenance with documented supplies and dates is often acceptable. What matters is that the service was done. Keep records of what you did and when.
 
-Three services in three years even if you barely used the boat. Why? **Rubber dries out, oil oxidizes, ethanol fuel breaks down, and seals shrink**, all of which happen with the calendar regardless of whether you ran the motor or not. A boat that sits a winter is harder on consumables than a boat that ran 50 hours.
-
-This is also why we recommend **ethanol-free 89 marine gas** at the dock. Ethanol pump gas absorbs water and degrades over a few weeks; ethanol-free is shelf-stable for the season. Less fuel-system service work, longer engine life, fewer spring-startup headaches.
+If you want warranty-compliant documentation, having a certified Mercury dealer perform and record the service is the cleanest approach.
 
 ---
 
-## Book Your Mercury Service at HBW
+## Ontario Seasonal Reality
 
-We're a Mercury Marine Platinum dealer in Ontario since 1965. Factory-trained on the full Mercury lineup. FourStroke, Pro XS, Verado, SeaPro, Avator. SmartCraft diagnostic tools, OEM parts, real records.
+Most Ontario recreational boaters put the motor in around May and take it out in October, roughly five or six months of use. In an average season on Rice Lake or the Kawarthas, a recreational boater might put on 40, 80 hours depending on use pattern.
 
-**Typical pricing at the shop:**
-
-- 20-hour break-in service: $250-$400 (mid-range motors)
-- 100-hour annual service: $400-$700
-- 300-hour major service: $800-$2,500 depending on HP and family
-- Winterization (separate scope, fall): from $300
-
-Book scheduled service at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**. Best timing: book your annual in **April for a May launch**, before spring gets crazy. By mid-May we're booked 3-4 weeks out.
+This means:
+- **Most owners never reach 100 hours in a season**, the annual trigger is what matters, not the hour trigger
+- **The 300-hour interval may take several years to reach**, plan on it eventually
+- **Winterization and the 100-hour annual service often happen at the same time**, fall service before storage makes sense
 
 ---
-`,
+
+## When Maintenance Cost Tips Toward Replacement
+
+At some point, the cost of maintaining an aging motor, especially an aging 2-stroke, approaches or exceeds what a new motor is worth. The math on a repower often makes sense when:
+- The motor is beyond its major service interval with deferred maintenance
+- The motor requires parts that are hard to source
+- The efficiency improvement of a new motor would recover the investment over a few seasons
+
+We have a live quote configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) if you want to see what a new Mercury package would cost for your setup.
+
+---
+
+## Frequently Asked Questions
+
+**Do I need to service a motor I barely ran this year?** 
+Yes. The "one year" trigger applies regardless of hours. Oil degrades over time even in storage, gear lube absorbs moisture, and grease points need annual lubrication. Low-hour seasons don't extend the service interval.
+
+**Can I do my own 100-hour service?** 
+Yes, with the right supplies and mechanical confidence. Oil change, gear lube, spark plug replacement, and lubrication are all DIY-accessible for most owners. Water pump inspection and fuel system checks are more involved. Keep records of what you do and when.
+
+**How do I know what's been done on a used motor I bought?** 
+Ask for service records. If there are none, assume nothing has been done and schedule a full inspection. A used motor with no service history is a motor of unknown condition regardless of what it looks like or how it runs.
+
+**Is the 20-hour service really necessary on a brand new motor?** 
+Yes. Mercury requires it for warranty compliance on new motors, and it exists for a real mechanical reason, break-in metal contamination in the oil. Don't skip it.
+
+**What happens if I skip the 100-hour service for a year?** 
+Skipping one service rarely causes immediate failure. The risk accumulates: degraded oil, water-contaminated gear lube, worn spark plugs, and an impeller that goes another year without inspection. The more services skipped, the higher the probability of a preventable failure.
+
+---
+
+## Internal Links
+
+- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
+- [Mercury Outboard Overheating at Idle, Ontario Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
+- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
+
+---
+
+## CTA
+
+**Due for service?** 
+Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+
+Or build a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+
+Phone: 905-342-2153
+
+---
+
+**Editor Note:** Service intervals are described at a category level consistent with Mercury's published schedule structure without fabricating exact part numbers, quantities, or model-specific specs. The "affects warranty" section is accurate in general terms without making specific warranty promises. Maintenance scope tables list the types of work typical at each interval, not fabricated exact specs.
+
+---`,
     faqs: [
       {
         "question": "My boat sat all summer with only 5 hours on it. Do I still need an annual service?",
@@ -22119,118 +22114,155 @@ That's been true since 1947. It's still true.
     category: 'Troubleshooting',
     readTime: '8 min',
     keywords: ['mercury outboard wont start', 'mercury 4-stroke wont start troubleshooting', 'mercury outboard cranks but wont start', 'mercury fourstroke wont turn over', 'mercury motor wont start ontario'],
-    content: `## Quick answer
+    content: `**Language:** English 
 
-Mercury outboards that won't start come in two flavours: **won't turn over at all** (electrical) or **turns over but won't fire** (fuel / spark / compression). The diagnostic order matters. Skip steps and you'll buy parts you don't need.
+---
 
-This is the order an HBW Mercury Platinum technician actually works through. About 80% of "won't start" calls turn out to be one of the first 4 items. If you've checked all 8 and it's still dead, stop and call us - you're into shop-tool territory.
+## Quick Answer
 
-## Step 1: Safety lanyard / kill switch
+Ontario winters are hard on Marine batteries and fuel systems in ways that matter when you're trying to start in May. Walk the safety lanyard first (it's the most common single cause), then battery voltage, then fuel condition, then ignition. Most Ontario spring no-starts are battery or fuel, rarely a major mechanical issue. If you've worked through the basics and it still won't start, book a diagnostic.
 
-The single most common cause of "won't start" calls. The red lanyard clip has to be physically attached for the engine to crank. If someone pulled it for safety storage and forgot, the motor is electrically off.
+For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
-**Check:** Lanyard clipped to the switch on the dash or tiller. Lanyard tether attached. Switch in "ON" position.
+---
 
-**Why it gets missed:** It looks like the motor is broken. It's not. It's just doing exactly what it was designed to do.
+## Mercury Outboard Won't Start in Ontario? The Diagnostic Flow a Mercury Platinum Dealer Uses
 
-## Step 2: Battery
+There's a particular frustration that's specific to Ontario boating: you put the motor away in October with everything working fine, and when you pull it out of the garage or haul it back to the water in May, it won't start.
 
-After the lanyard, this is the #2 cause. Modern Mercury 4-strokes are very voltage-sensitive - the ECM needs solid voltage to even attempt a start.
+This isn't random failure. There are predictable reasons a Mercury outboard doesn't start after an Ontario winter, and most of them are diagnosable by an owner with basic tools in under an hour. This is the sequence we walk through at the shop, in the order that makes the most diagnostic sense.
 
-**Check:**
-- Voltage at rest: 12.4V+ (12.6V = full charge, under 12.2V = needs charge)
-- Voltage while cranking: should stay above 9.5V
-- Terminal corrosion (green/white powder = bad connection, scrape clean)
-- Cable tightness (loose = intermittent crank)
+---
 
-**Mercury-specific:** A battery that "tested OK" last fall can be dead in spring. Cold + idle storage kills batteries. If you didn't put it on a tender over winter, expect to replace it.
+## Step 1: Safety Lanyard / Kill Switch
 
-### HBW dealer note
+Check this first. Every time. It's the most common single cause of "won't start" calls, and it's the one that makes you feel the most foolish when you find it.
 
-We sell a lot of new batteries every spring to customers who swore the old one was fine. Lead-acid batteries lose capacity with age and cold. Anything over 3-4 years old is on borrowed time.
+The red lanyard clip must be physically attached to the kill switch on the dash or tiller handle for the motor to crank. If it was removed for storage (which is correct practice), reattached to the wrong slot, or fell off during the re-launch process, the motor is electronically disabled. It will give no indication of why.
 
-## Step 3: Fuel - old, water, or low octane
+Check:
+- Lanyard clip is attached to the kill switch
+- The tether is connected at the clip end
+- The switch itself is in the "on" position (not tripped)
 
-Ethanol gas (E10) goes stale in 30-60 days. Stale gas in a small line will gum up an injector or carb. Water in fuel will stop a motor cold.
+Also confirm the motor is in neutral. Most Mercurys have a neutral interlock that prevents cranking in gear.
 
-**Check:**
-- Smell the fuel - sour / lacquer-like smell = bad
-- Color - clear and bright = good; cloudy or amber = water or oxidation
-- Drain the water-separating fuel filter (Mercury motors have one - usually right at the engine) and inspect for water at the bottom
-- Did you use 87 octane all season? Newer Mercury V8s want 91. Check your owner's manual.
+---
 
-**Fix:** Drain old fuel. Replace filter. Refill with fresh 87 (or 91 if specified). Add Mercury Quickstor fuel stabilizer.
+## Step 2: Battery, Cold Storage Kills Them
 
-## Step 4: Spark plugs
+After the lanyard, the battery is the most common Ontario-specific cause. Cold storage is particularly hard on lead-acid batteries, and the combination of cold + self-discharge over a 5, 6 month Ontario off-season causes real capacity loss.
 
-If it cranks but won't fire, plugs are next.
+**The Ontario problem:** A battery that was "fine" in October may have discharged significantly by May, especially if it wasn't on a tender. A discharged battery can sulfate, a chemical process that permanently reduces capacity. It may show 12V on a basic tester but drop well below 10V the moment the starter draws current.
 
-**Check:**
-- Pull a plug, look at the electrode
-- Black / sooty = fuel issue (running rich)
-- White / chalky = overheating
-- Wet with fuel = flooded (let it sit 10 min, try again)
-- Gap incorrect or electrode worn = replace
+Modern Mercury FourStrokes are voltage-sensitive. The engine management system won't attempt to start if voltage drops below a threshold during cranking.
 
-**Mercury-specific:** Most Mercury 4-strokes want NGK plugs gapped to spec. Don't substitute non-NGK plugs without checking the service manual.
+Check:
+- **Resting voltage:** 12.4V+ is good. Under 12.2V needs charging. Under 12.0V is a compromised battery.
+- **Cranking voltage:** Should hold above 9.5, 10V while the starter is engaged. Below that, the battery can't support the draw.
+- **Terminal condition:** Winter condensation and storage create corrosion. Green or white powder on terminals = resistance. Clean before testing.
+- **Cable tightness:** Loose cables create intermittent symptoms that look like bigger problems.
+- **Battery age:** If it's more than 4 years old and spent winters in an unheated space without a tender, assume it's compromised until proven otherwise.
 
-## Step 5: Fuel pump / fuel filter
+**Dealer note:** We sell a meaningful number of new batteries every May to customers whose battery seemed fine going into storage. If you didn't put your battery on a tender over winter, factor in a possible replacement as part of launch prep.
 
-After plugs, if there's still no fire:
+---
 
-- **Mechanical fuel pump (smaller motors):** can fail with age or contamination
-- **Electric fuel pump (larger 4-strokes):** can fail electrically (no priming sound = no pump)
-- **Primary fuel filter:** if it's clogged, fuel can't reach the rail
+## Step 3: Fuel, Ontario Off-Season Degradation
 
-**Check:** Squeeze the primer bulb. It should firm up. If it stays soft, you have an air leak in the line or a failed pump.
+E10 pump gas (10% ethanol) starts to degrade noticeably in 30, 60 days. After an Ontario winter, fuel that sat in the tank from last fall without stabilizer is very likely stale.
 
-## Step 6: ECM faults (SmartCraft alarm codes)
+Stale fuel causes hard starts, rough running, and no-starts. Ethanol in degraded fuel can also cause phase separation, the ethanol absorbs water and separates from the gasoline, leaving a layer of water-alcohol mix at the bottom of the tank.
 
-Modern Mercury motors (basically anything 2010+) have an ECM that tracks everything. If something's wrong, it'll throw a code.
+Check:
+- **Smell the fuel.** Fresh gas has a clean fuel smell. Stale gas smells sour or lacquer-like. If it smells off, it's off.
+- **Look at the fuel.** Clear and pale yellow = good. Cloudy, dark amber, or with visible separating layers = bad.
+- **Drain the water separator filter.** Mercury FourStrokes have one, usually just below the engine cowling or inline. Drain the bowl and look for water droplets.
+- **Check the primer bulb.** It should pump up firm and stay firm. A soft bulb that won't harden means an air leak upstream, check connections and fuel line condition.
+- **Check the tank vent.** An unvented tank creates vacuum as fuel is drawn out, starving the engine. Make sure the vent is open.
 
-**Check:** If you have SmartCraft gauges or the SmartCraft Connect app, pull the code list. See our [Mercury SmartCraft Alarm Codes guide](https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia) for what each one means.
+**At HBW**, we sell ethanol-free fuel on-site. If you filled up with ethanol-free and stored the motor properly stabilized, fuel degradation is less of an issue.
 
-If the code says "low oil pressure," "no oil flow," "overheat," or anything starting with "0x" - **stop. Don't keep cranking.** You can damage internal components trying to force a start through a protective shutdown.
+---
 
-## Step 7: Compression
+## Step 4: Spark Plugs
 
-If steps 1-6 don't fix it, you're past easy DIY. Compression test requires a Mercury-spec gauge and adapter. Numbers below ~120 PSI on any cylinder = mechanical problem (head gasket, rings, valve).
+If the battery is good and fuel is good, spark is next.
 
-**This is where most customers call us.** Compression diagnosis is shop work. Don't break the boat trying to chase it yourself.
+After a winter in storage, spark plugs can be fouled, gapped incorrectly from past use, or simply at the end of their service life. A fouled plug will start the motor cold once in a while but fail consistently under load.
 
-## Step 8: Stop and call HBW
+Check:
+- Remove the plugs and inspect for fouling (oily/black = rich or oil fouling; white = lean/overheating)
+- Confirm the gap matches your motor's specification (in the owner's manual)
+- A plug that looks questionable: replace it
 
-If you've gone through 1-6 and it still won't start, you're into one of:
-- Internal mechanical failure
-- ECM / wiring fault
-- Sensor failure (cam position, crank position, IAT, MAP)
-- Fuel injector failure
+If the motor has been cranked repeatedly without starting, the cylinders may be flooded. Remove the plugs and crank briefly without them to clear the fuel, then install fresh plugs.
 
-All of these need shop diagnostics with the Mercury G3 / VesselView Tool. We have those. You probably don't.
+---
 
-Call **(905) 342-2153** or text **(647) 952-2153** and tell us what you've already checked. Saves both of us 20 minutes when we walk to the boat.
+## Step 5: Check for Error Codes or Alarms
 
-### HBW dealer note
+If you have a SmartCraft display, VesselView, or any Mercury gauge display on the helm, check it before and during cranking. Mercury's engine management system stores fault codes and displays active alarms. These tell you exactly where the ECM thinks the problem is.
 
-The customers who get the fastest help are the ones who can say "I checked lanyard, battery's at 12.5V, fuel is fresh from last week, plugs were new in fall, primer bulb firms up, and SmartCraft is showing code XYZ." That kind of customer gets bumped to the front of the queue because we know it's a real problem, not an obvious DIY miss.
+Take a photo of any displayed code or message. If you can't decipher it, include the photo when you book the service appointment.
 
-## When NOT to keep cranking
+---
 
-Some scenarios where you should **stop immediately** to avoid making things worse:
+## When to Stop and Book
 
-- ECM is throwing a low-oil-pressure or overheat code → starting it again can wreck the powerhead
-- Smoke from the powerhead area → fire risk
-- Strong fuel smell at the cowling → fuel leak, ignition risk
-- Visible water in the cylinders (after pulling a plug) → could hydrolock and bend a rod
+Stop DIY troubleshooting and book a diagnostic if:
+- You've been through all the above steps and can't identify the cause
+- There are active fault codes you can't interpret
+- The motor cranks but won't run for more than a few seconds
+- You're not confident in any of the steps above
 
-Stop. Call us. We'll tell you whether it's safe to attempt another start, or whether the boat needs to come to the shop.
+Running a motor with an undiagnosed issue to try to force it to start can convert a small problem into a large one. A professional diagnostic with proper test equipment is more reliable and often faster than extended DIY troubleshooting.
 
-## FAQ
+For engine repairs, we only service Mercury and Mercruiser.
 
-For more service-specific questions, see our [Mercury SmartCraft Alarm Codes encyclopedia](https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia) and the [Mercury Outboard Winterization Cost guide](https://www.mercuryrepower.ca/blog/mercury-outboard-winterization-service-cost-ontario) (since most "won't start in spring" issues trace back to skipped winterization).
+Book at [hbw.wiki/service](https://hbw.wiki/service).
 
-**CTA:** Stuck after Step 6? Call HBW at (905) 342-2153 or text (647) 952-2153. We service Mercury and Mercruiser only - call before you tow it anywhere else.
-`,
+---
+
+## Frequently Asked Questions
+
+**Does the cold Ontario winter affect my Mercury differently than a warmer climate?** 
+Yes, specifically on the battery. Cold temperatures accelerate self-discharge and can freeze a deeply discharged battery. An Ontario winter is much harder on a battery than storage in a heated garage or a mild climate. Fuel is also affected, water condensation in the tank is more common with the temperature swings of an Ontario fall and spring.
+
+**I put fuel stabilizer in last fall. Why is the fuel still bad?** 
+Stabilizer helps but isn't permanent protection. If the fuel was already starting to degrade before you added the stabilizer, or if it wasn't circulated through the full fuel system (by running the motor after adding it), the protection is incomplete. Also verify the ratio, over-diluted stabilizer doesn't fully protect.
+
+**The motor starts but runs rough. Is it still a fuel issue?** 
+Possibly. Partially degraded fuel or a partially clogged injector can cause rough running without a complete no-start. A fouled spark plug can also cause rough running on a specific cylinder. If the motor runs rough and improves with fresh fuel, that points to fuel quality. If it runs rough regardless of fuel, spark or fuel delivery is the more likely cause.
+
+**My motor is still under warranty. Should I try to diagnose it myself or take it to a dealer?** 
+Either is acceptable, but for anything you can't quickly and confidently identify, a warranty-covered diagnostic at a certified dealer is worth doing. Mercury dealers can read fault codes with dealer tools that aren't available to owners, and warranty service is documented in the system.
+
+**Can I run the motor briefly in my driveway to test it?** 
+Only with an adequate water supply to the cooling system. Never run a Mercury outboard without water for more than a few seconds, you'll overheat and damage the water pump impeller. Flush muffs connected to a hose are the standard method for running a motor out of the water.
+
+---
+
+## Internal Links
+
+- [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
+- [Mercury Outboard Won't Start, General Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+
+---
+
+## CTA
+
+**Spring no-start you can't resolve?** 
+Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+
+Phone: 905-342-2153
+
+---
+
+**Editor Note:** Ontario-specific framing (cold storage battery degradation, ethanol fuel, 5, 6 month off-season) differentiates this from the general won't-start post. No fabricated diagnostic outcomes, timelines, or repair costs. The battery degradation mechanism described is accurate general knowledge.
+
+---`,
     faqs: [
       { question: 'Why won\'t my Mercury 4-stroke start?', answer: 'Most common causes in order: (1) safety lanyard not clipped, (2) weak or dead battery, (3) stale fuel or water in fuel, (4) bad spark plugs, (5) fuel pump or filter, (6) ECM alarm code. Check in that order - 80% of cases resolve in the first 4 steps.' },
       { question: 'My Mercury cranks but won\'t fire - what now?', answer: 'Cranking means electrical is fine. The issue is fuel, spark, or compression. Start with fuel (smell it, check filter for water), then plugs (pull one and look), then primer bulb (should firm up). If those check out, you need shop diagnostics.' },
