@@ -8628,206 +8628,147 @@ Prefer to talk first? Call **905-342-2153**. We do these conversions every month
     category: 'Repower Cost & Pricing',
     readTime: '12 min read',
     keywords: ['Mercury repower cost Ontario', 'Mercury repower cost Canada 2026', 'Mercury outboard price CAD', 'boat repower cost Ontario', 'Mercury engine price Canada'],
-    content: `
+    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad
 
-*Last reviewed: 2026-05-10*
+---
 
-> **Quick answer:** A Mercury repower in Ontario typically lands $8,000-$30,000 CAD installed depending on horsepower, rigging needs, and controls. The motor itself is roughly two-thirds of the total. We post real installed prices, no phone-call required to get a number. Build yours at mercuryrepower.ca.
+## Quick Answer
 
-For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $3,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to $22,000; 150 HP $23,000 to $30,000; and 200 to 300 HP $35,000 to $40,000, CAD before HST. Live pricing on the motor selection page is the source of truth.
+A Mercury repower in Ontario typically runs **$11,000, $40,000 CAD installed**, depending on horsepower, rigging needs, and controls, before HST. The motor is roughly two-thirds of the total. We post real installed prices. Build yours at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, takes about three minutes.
 
-> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
 
-## Quick recommendation
+---
 
-If you want a real repower number for your boat, build a quote on this site. It takes three minutes. You see the motor cost, the rigging, the install, and the total before you ever talk to us. No phone tag. No "call for price" games.
+## Full Article
 
-If you want to ballpark before you build, here is the honest 2026 picture in CAD. These are ranges. For your specific motor and configuration, the live site has the actual number.
+Most repower cost guides give you a motor price and call it done. That's only about two-thirds of the answer. The bill you'll actually pay includes the motor, rigging, prop, installation, and sea trial. What you're trying to budget is the all-in number, and that's what we'll give you here.
 
-- **9.9 to 25 HP tillers** are usually motor-only purchases in the $3,000 to $5,500 range before HST. Most tillers do not need a full rigging package. [See live pricing on the motor selection page.](/quote/motor-selection)
-- **40 to 60 HP** repowers land $11,000 to $15,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
-- **75 to 115 HP**, the most common range we do, lands $17,000 to $22,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
-- **150 HP** repowers land $23,000 to $30,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
-- **200 to 300 HP** repowers land $35,000 to $40,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
+### 2026 Planning Ranges by HP Class (CAD, Before HST)
 
-Add 13% HST on top of any of those numbers. The live site shows your specific number after a three-minute build.
-
-We have rigged enough boats on Rice Lake in the Kawarthas (Ontario) to know that the customers who get burned are the ones who treat the motor as the whole price. The boat is not done when the motor bolts to the transom. It is done when the steering, controls, gauges, prop, and battery are all matched and the boat has been on Rice Lake, Ontario (in the Kawarthas) under power.
-
-## What changes the answer
-
-A repower quote moves up or down based on six things:
-
-- **Motor HP and family.** A 9.9 ProKicker is a small line. A 250 ProXS V8 is the biggest single purchase most boaters make. The motor itself drives most of the price.
-- **Whether you keep your existing controls.** Mercury-to-Mercury repowers usually keep the existing control box and cables, which keeps rigging at the low end ($500 to $1,000 CAD). Going from a non-Mercury brand or to digital throttle and shift adds new everything in the control system, which pushes rigging to $2,000 to $3,000 CAD.
-- **Steering.** Cable steering on a small motor is fine. Hydraulic steering on anything 150 HP and up is mandatory. Hydraulic conversion runs $1,650 to $3,500 CAD.
-- **Prop selection.** A wrong prop on a perfect motor will cost you 4 mph and 15% fuel economy. We test on the water before you take the boat home. Aluminum props on motors up to 115 HP are $450 CAD. Stainless steel props on 150 HP and up run $800 to $2,000 CAD depending on motor size.
-- **Gauges and wiring.** Old analog gauges do not talk to modern Mercury motors. SmartCraft displays add a line, sized to whatever screen you want. Battery and harness refresh runs $275 to $975 CAD.
-- **Boat condition.** A clean transom and good wiring takes a day to install ($1,400 in labour). A rotten transom, mouse-eaten wiring harness, or a fuel system full of 8-year-old gas pushes labour to $2,500 to $3,500.
-
-![Six-step Mercury repower timeline at Harris Boat Works: Quote (build online or call, three minutes), Booking (deposit confirms install slot), Drop-off (pickup-only at Gores Landing), Rigging (Mercury-certified install in our shop), Sea Trial (WOT verified before delivery), Pickup (hand-off, paperwork, on the water).](/lovable-uploads/diagram-repower-process-timeline.png)
-*A typical Mercury repower at HBW runs 1-3 days off-season and 1-3 weeks at spring peak. The process is the same regardless of motor size: quote, deposit, drop-off, rigging, sea trial, pickup.*
-
-## All-in repower ranges by HP class
-
-This is the 2026 CAD picture before HST. Your specific number comes from the live quote builder.
-
-| Project tier | HP range | All-in range (CAD before HST) | Common boats |
+| Project Tier | HP Range | All-In Range | Common Boats |
 |---|---|---|---|
-| Tiller, motor-only | 9.9 - 25 HP | $3,000 - $5,500 | Tenders, dinghies, kickers, small aluminum tillers |
-| Small remote | 40 - 60 HP | $11,000 - $15,000 | 14-16 ft aluminum, small consoles |
-| Mid | 75 - 115 HP | $17,000 - $22,000 | 16-19 ft aluminum, small pontoons, fishing boats |
-| 150 HP | 150 HP | $23,000 - $30,000 | 18-22 ft pontoons, runabouts, mid-size fishing |
-| High-HP | 200 - 300 HP | $35,000 - $40,000 | Performance bass, large pontoons, center consoles |
-:::image-placeholder
-slug: repower-cost-stack-by-hp-class
-type: infographic
-aspect: 16:9
-description: Stacked bar chart showing what's included in each HP class repower cost: motor, rigging, prop, controls, install labour
-prompt: Photorealistic editorial infographic. Stacked horizontal bar chart showing Mercury repower cost breakdown across 5 HP tiers: 40-60 HP, 75-115 HP, 150 HP, 200-300 HP. Each bar segmented into Motor / Rigging / Prop / Controls / Install Labour with distinct muted colors. Y-axis labels HP class, X-axis CAD before HST. Clean white background, Mercury black accent text, gold for "Install Labour" segment. No people, no logos overlaid. 1600x900. [STYLE ANCHOR]
-image: /lovable-uploads/repower-cost-stack-by-hp-class.png
-:::
+| Tiller, motor-only | 9.9, 25 HP | $3,000, $5,500 | Tenders, kickers, small aluminum tillers |
+| Small remote | 40, 60 HP | $11,000, $15,000 | 14, 16 ft aluminum, small consoles |
+| Mid | 75, 115 HP | $17,000, $22,000 | 16, 19 ft aluminum, small pontoons, fishing boats |
+| 150 HP | 150 HP | $23,000, $30,000 | 18, 22 ft pontoons, runabouts, mid-size fishing |
+| High-HP | 200, 300 HP | $35,000, $40,000 | Performance bass, large pontoons, centre consoles |
 
-The ranges above are 2026 working estimates. The actual price for your motor, your hull, and your configuration is on the [motor selection page](/quote/motor-selection). That is the source of truth. 9.9 to 25 HP tiller motors are usually motor-only purchases with no full rigging package, and the motor itself is the whole purchase. For specific tiller motor pricing (a 9.9 MH versus a 15 MH versus a 20 MH), see [live pricing](/quote/motor-selection).
+Tiller motors (9.9, 25 HP) are typically motor-only purchases, no rigging package. Above 25 HP, you're talking a full project: controls, cables, gauges, prop, and installation labour.
 
-These are HBW's actual working ranges. For your specific motor, hull, and configuration, the live quote builder gives you the real CAD number in three minutes.
+Add 13% HST to any of these numbers.
 
-[**Build Your Mercury Repower Quote**](/quote/motor-selection)
+### What Changes the Final Number
 
-## What goes into the bill
+Six things move a repower quote up or down:
 
-Here is what each line on a repower bill covers and what makes it move.
+**1. Motor HP and family** 
+The motor drives most of the price. A 9.9 ProKicker is a small line item. A 250 Pro XS V8 is the largest single purchase most boaters make.
 
-| Line item | What it covers | What changes the cost |
+**2. Whether you keep your existing controls** 
+Mercury-to-Mercury repowers usually keep the existing control box and cables, which holds rigging to the low end ($500, $1,000 CAD). Going from a non-Mercury brand, or adding digital throttle and shift, pushes rigging to $2,000, $3,000 CAD.
+
+**3. Steering** 
+Cable steering on small motors is fine. Hydraulic steering on anything 150 HP and up is standard. Hydraulic conversion runs $1,650, $3,500 CAD.
+
+**4. Prop selection** 
+A wrong prop on a perfect motor costs you speed and fuel economy. We test on the water before you take the boat home. Aluminum props on motors up to 115 HP run around $450 CAD; stainless steel on 150 HP and up runs $800, $2,000 CAD.
+
+**5. Gauges and wiring** 
+Old analog gauges don't talk to modern Mercury motors. A SmartCraft display adds a line to the quote. Battery and harness refresh runs $275, $975 CAD.
+
+**6. Boat condition** 
+A clean transom and good wiring takes a day to install. A rotten transom or mouse-eaten wiring harness pushes labour from $1,400 to $2,500, $3,500.
+
+### What Goes Into the Bill, Line by Line
+
+| Line Item | What It Covers | What Changes the Cost |
 |---|---|---|
-| Motor | The Mercury outboard itself | HP, family (FourStroke, ProXS, Verado), shaft length, controls type |
-| Rigging ($500 - $3,000 CAD) | Controls, cables, gauges, harness | Mercury-to-Mercury usually low end (existing controls stay); brand conversions or digital upgrades push higher |
-| Prop, aluminum ($450 CAD) | Standard aluminum prop on up to 115 HP | Sized to motor HP and intended use |
-| Prop, stainless steel ($800 - $2,000 CAD) | Stainless prop on 150 HP and up | Required for performance and durability on bigger motors |
-| Steering ($0 - $3,500 CAD) | Cable, hydraulic, or power-assist | Motor HP and existing setup; hydraulic mandatory at 150 HP+ |
-| Battery and harness ($275 - $975 CAD) | New battery, connectors, fuse panel | Boat age and existing wiring condition |
-| Install labour ($1,400 - $3,500 CAD) | 1 to 2 days shop time for clean installs | Boat condition (transom, wiring, fuel system) |
-| Sea-trial and break-in | We test on Rice Lake before delivery | Included in every install |
-| **Add HST (13% Ontario)** | On the total | Standard for Ontario |
+| Motor | The Mercury outboard itself | HP, family, shaft length, controls type |
+| Rigging ($500, $3,000) | Controls, cables, gauges, harness | Mercury-to-Mercury stays low; brand conversions push higher |
+| Prop, aluminum (~$450) | Standard prop on up to 115 HP | Sized to motor HP and use |
+| Prop, stainless ($800, $2,000) | Stainless on 150 HP and up | Required for performance and durability |
+| Steering ($0, $3,500) | Cable, hydraulic, or power-assist | HP and existing setup; hydraulic standard at 150 HP+ |
+| Battery and harness ($275, $975) | Battery, connectors, fuse panel | Boat age and wiring condition |
+| Install labour ($1,400, $3,500) | 1, 2 days shop time | Boat condition (transom, wiring, fuel system) |
+| Sea trial and break-in | Included in every install | Included |
+| HST (13%) | Ontario standard | On the total |
 
-Every motor on this site shows live pricing. The quote builder adds the rigging, install, and prop based on your configuration so you see your actual all-in number, not a range.
+### Why We Don't Post Specific Motor Prices in Blog Posts
 
-### What surprises customers in repower quotes
+Our actual prices are on the live configurator, always current, always in CAD, always for the specific configuration you're building. There's no point copying them into an article that goes stale the moment Mercury adjusts pricing.
 
-The motor price is the easy number. Everything around it is where quotes diverge.
+Our whole position is that you shouldn't have to call us or read a blog post to find out what something costs. The configurator does that job better than any article can.
 
-The customer comparing two repower quotes will see one at $14,000 and one at $17,000 and assume the cheaper shop is the better deal. Then they ask what's included. The cheaper quote is motor only, no controls, no install, customer brings their own prop. The higher quote is fully rigged, installed, propped, and ready to run.
+### What We Check Before Recommending a Motor
 
-The cheaper quote isn't dishonest. It just answers a different question. We give you the installed-price number on the first quote because that's the only number that matters when you're trying to budget. The motor cost alone is interesting trivia. The number that hits your bank account is the install-ready total.
+Before we quote, we want to know:
 
-## Why we do not quote specific motor prices in articles
+- Boat make, model, year, and length
+- Maximum HP rating on the capacity plate
+- Hull condition (we tap-test transoms for soft spots)
+- Existing controls and gauges
+- What you actually do with the boat
+- Where you launch
 
-Quick aside on this. Most dealer websites that quote prices in blog posts have prices that are 1 to 3 years stale, in the wrong currency, or for the wrong shaft length. We do not do that for two reasons.
+We won't quote a motor blind. If you build a quote through the configurator and the configuration seems wrong for your hull, we'll reach out before you proceed to install.
 
-First, our actual prices are on the live site. Always current. Always CAD. Always for the specific configuration you are buying. There is no point copying them into an article that we have to update every time a price changes.
+### When to Repower vs. Buy New
 
-Second, our whole point is that you should not have to call us or read a blog post to find out what something costs. The motor selection page does that job, and it does it better than this article ever could.
-
-If you want a number for a specific motor, [build a quote](/quote/motor-selection). It takes three minutes.
-
-## What HBW checks before recommending a motor
-
-We have rigged enough boats to know that the answer is rarely "buy whatever fits your budget." A bad recommendation costs you money in the wrong prop, the wrong controls, or a motor that overworks itself for the next 15 years. Before we quote, we want to know:
-
-- **Boat make, model, year, and length.** Older hulls have transom limits not all customers know about.
-- **Maximum HP rating on the capacity plate.** We will not over-power a hull. Overpowering creates capacity-plate compliance, insurance, liability, and potential warranty problems.
-- **Hull condition.** Soft transoms cannot hold a heavy motor safely. A walk-around with a moisture meter takes 10 minutes and saves you a lot of money on a mistake.
-- **Existing controls and gauges.** Some are fine. Some need to go in the bin.
-- **What you actually do with the boat.** A guy fishing two mornings a week wants different power than a family pulling tubes on weekends. Same hull, different right answer.
-- **Where you launch.** A pontoon at the Bewdley ramp deals with a different wind situation than one parked at a private dock in Roseneath. The wind picks up across Sugar Island around 2 PM most days in July. If your motor is underpowered, that is when you feel it.
-
-We will not quote a motor blind. If you build a quote on this site and the configuration is wrong for your hull, we will reach out before you go to install.
-
-## When to repower vs. buy new
-
-Repowering makes sense when:
-
-- Your hull is solid (aluminum lasts decades, fiberglass with a good transom can go just as long)
+**Repower makes sense when:**
+- The hull is solid (aluminum lasts decades, good-condition fiberglass can go just as long)
 - The boat fits your family and use
 - The motor is the only thing wrong with it
-- You do not want to start a new payment book at current Mercury Repower Financing rates (see our [financing page](/financing))
 
-Buying new makes sense when:
-
+**Buying new makes sense when:**
 - The hull has structural problems (soft transom, rotten floor, stress cracks)
-- You have outgrown the boat (more passengers, different water, different use)
-- You have not bought a new boat in 25 years and you want to (this is a fine reason)
+- You've outgrown the boat
+- You simply want a new boat (also a completely valid reason)
 
-A meaningful share of the boats we see can be repowered for a fraction of what a comparable new boat costs. The math holds up most of the time. Some of the time, a new boat is the right call. We will tell you which one your boat is, even if it is the answer that costs us the sale.
-
-## Financing
-
-Mercury Repower Financing is available on most jobs. Down payments help. Trade-in credit on your old motor helps more. Payment math, terms, and a calculator are on the [financing page](/financing). If you have an old motor in the garage, our [trade-in valuation tool](/trade-in-value) gives you an instant credit estimate before you commit to anything.
-
-## Current promotions
-
-Mercury runs seasonal warranty and rebate promotions through HBW. Terms rotate throughout the year. For current promotion details, including any active warranty extensions, dealer rebates, or financing offers, see the [promotions page](/promotions).
-
-## Related guides
-
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full process from inspection to lake test
-- [Replacing Your Evinrude with a Mercury Outboard](/blog/evinrude-to-mercury-repower-ontario-guide), specific guidance for owners switching brands
-- [Mercury Outboard Financing in Ontario](/blog/mercury-outboard-financing-ontario-2026), payment math, terms, what counts toward the loan
-- [Boat Hull Replacement vs Repower: When to Replace, When to Buy](/blog/boat-hull-replacement-vs-repower-decision), the honest version of the buy-new vs. repower decision
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), match a motor to your hull, not your wallet
-
-## Ready to price it?
-
-Build your repower quote on this site in three minutes. Live Mercury pricing, real CAD numbers, no phone tag, no salesman in a polo. You see the motor, rigging, install, and total before you ever talk to us.
-
-[**Build Your Mercury Repower Quote**](/quote/motor-selection)
-
-If you would rather talk it through, [give us a call at (905) 342-2153](tel:9053422153) or [send us an email](/contact). We answer the phone.
+Most of the boats we see can be repowered for a fraction of what a comparable new boat costs. The math holds up most of the time. Some of the time, new is the right call. We'll tell you which one your boat is, even if it's the answer that costs us the sale.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+## FAQs
+
+**How much does a Mercury repower cost in Ontario in 2026?** 
+Planning ranges before HST: small remote (40, 60 HP) $11,000, $15,000; mid (75, 115 HP) $17,000, $22,000; 150 HP $23,000, $30,000; high-HP (200, 300 HP) $35,000, $40,000. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for your specific setup.
+
+**What's included in a Mercury repower quote?** 
+Motor, rigging (controls, cables, gauges), prop, install labour, and sea trial. We list every line item. No hidden fees.
+
+**How long does a repower take?** 
+A clean install is 1, 2 days of shop time. From order confirmation to pickup is typically 2, 4 weeks, depending on motor availability. Repowering in winter (November, March) is the fastest path, shortest lead times and first pick of motors.
+
+**Do I need new controls and gauges?** 
+Sometimes. Mercury-to-Mercury repowers usually keep existing post-2010 controls. Brand conversions (Evinrude, Yamaha, Honda to Mercury) need new everything in the control system.
+
+**Can I keep my old prop?** 
+Probably not. A new motor needs a matched prop. Running an old prop on a new motor costs you performance and fuel economy. We pick the prop, lake-test it, and swap it if it doesn't perform.
+
+**What happens to my old motor?** 
+We give you a trade-in credit, even on non-running motors. Aluminum and parts have value. Our trade-in tool gives you an estimate before you commit.
+
+**Do you finance repowers?** 
+Yes. Mercury financing is available on most jobs. For current terms, see the financing page on [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
-## FAQ
+## Internal Links
 
-**How much does a Mercury repower cost in Ontario in 2026?**
-A typical Mercury repower in Ontario in 2026 depends on HP class. HBW planning ranges before HST are: 9.9 to 25 HP tillers at $3,000 to $5,500 motor-only; 40 to 60 HP at $11,000 to $15,000 all-in; 75 to 115 HP at $17,000 to $22,000 all-in; 150 HP at $23,000 to $30,000 all-in; and 200 to 300 HP at $35,000 to $40,000 all-in. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
+- [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
+- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
 
-**What is included in a Mercury repower quote?**
-Motor, rigging (controls, cables, gauges), new prop, install labour, sea-trial, and a full tune-up before delivery. We list every line item on every quote. Nothing hidden, no "shop fees" surprises at the end.
+---
 
-**How long does a Mercury repower take?**
-A clean install is 1 to 2 days of shop time. From the day you confirm the order to the day you pick up the boat is usually 2 to 4 weeks, depending on motor availability. Repowering in winter (November to March) is the fastest. We have first pick of motors before the spring rush.
+## CTA
 
-**Do I need new controls and gauges?**
-Sometimes. Mercury-to-Mercury repowers usually keep the existing control box and cables, which keeps rigging at the low end ($500 to $1,000 CAD). Mechanical Mercury controls from 2010 onward usually carry forward. Anything older than that is usually due for replacement. Digital throttle and shift on newer motors requires new controls regardless. Brand conversions (Evinrude, Yamaha, Honda to Mercury) push rigging to $2,000 to $3,000 CAD because the entire control system needs to swap.
+Ready to price it? Build your repower quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Takes three minutes. You see the motor cost, rigging, installation, and total before you ever talk to us. No phone tag, no "call for price."
 
-**Can I keep my old prop?**
-Probably not. A new motor with different gear ratios, different RPM range, and a different transom height needs a matched prop. Running an old prop on a new motor costs you 4 mph and 15% fuel economy. Aluminum props on motors up to 115 HP are $450 CAD. Stainless steel on 150 HP and up runs $800 to $2,000 CAD. We pick the prop, lake-test it, and swap it if it does not perform.
+Rather talk first? Call **905-342-2153**. We answer the phone.
 
-**What happens to my old motor?**
-We give you a trade-in credit even on dead motors. Aluminum and parts have value. Our [trade-in valuation tool](/trade-in-value) gives you an instant estimate.
-
-**Is repowering worth it on a 25-year-old boat?**
-Depends on the hull. Aluminum hulls last basically forever if the transom is solid. Fiberglass hulls with good transoms can run 30+ years. We check the transom with a moisture meter before quoting. If the hull has structural problems, we will tell you to walk away.
-
-**Do you finance repowers?**
-Yes. Mercury Repower Financing is available on most jobs. Full details and a payment calculator on our [financing page](/financing).
-
-**Can you handle Evinrude, Yamaha, or Honda repowers to Mercury?**
-Yes. We do this every year. The biggest variables are the controls and the steering. Going from a 1990s Evinrude to a modern Mercury usually means new everything in the control system, which adds $2,000 to $3,000 CAD in rigging on top of the motor. We have a specific guide on [replacing Evinrudes with Mercury](/blog/evinrude-to-mercury-repower-ontario-guide).
-
-**Why is Mercury more expensive in Canada than the US?**
-Three reasons: CAD-USD exchange, freight, and Canadian regulatory requirements. Cross-border purchasing is technically possible but the warranty servicing, customs paperwork, and freight usually erase the savings. We sell at the dealer-allowed Canadian MSRP minus our HBW discount. Both numbers are on the website for every motor.
-
-**What is the warranty on a new Mercury motor?**
-Mercury Marine includes 3 years of standard factory warranty on new outboards. HBW also runs seasonal dealer promotions that may extend warranty coverage. For current promotion terms, see the [promotions page](/promotions).
-
-**How do I get started?**
-Build a quote on this site in three minutes, or give us a call at (905) 342-2153. The quote includes motor selection, rigging, install, and total. We do not require an account, an email, or a phone call to see prices.
-`,
+---`,
     faqs: [
       { question: 'How much does a Mercury repower cost in Ontario in 2026?', answer: 'A typical Mercury repower in Ontario in 2026 depends on HP class. HBW planning ranges before HST are: 9.9 to 25 HP tillers at $3,000 to $5,500 motor-only; 40 to 60 HP at $11,000 to $15,000 all-in; 75 to 115 HP at $17,000 to $22,000 all-in; 150 HP at $23,000 to $30,000 all-in; and 200 to 300 HP at $35,000 to $40,000 all-in. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.' },
       { question: 'What is included in a Mercury repower quote?', answer: 'Motor, rigging (controls, cables, gauges), new prop, install labour, sea-trial, and a full tune-up before delivery. We list every line item on every quote. Nothing hidden, no "shop fees" surprises at the end.' },
@@ -8860,72 +8801,43 @@ Build a quote on this site in three minutes, or give us a call at (905) 342-2153
     category: 'Buying Guide',
     readTime: '13 min read',
     keywords: ['mercury vs yamaha outboard', 'mercury vs yamaha Ontario', 'best outboard for Ontario lakes', 'mercury yamaha comparison Canada', 'outboard motor comparison 2026'],
-    content: `
-*Last reviewed: 2026-05-07*
+    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario
 
-> **Quick answer:** Both Mercury and Yamaha are excellent outboards. From HBW's local Ontario service perspective, Mercury is often easier for us to support, dealer network density, parts availability, and resale demand all skew our way in this region. The right choice for your boat depends on hull, dealer access, budget, and use case.
+---
 
-Both Mercury and Yamaha are excellent outboards. The right choice for your boat depends on hull, dealer access, budget, and use case. From HBW's local Ontario service perspective, Mercury is often easier for us to support, dealer network density, parts availability, and factory-OEM relationships with Canadian boat builders all favor Mercury here. Yamaha is a strong motor mechanically but has a thinner Canadian dealer network and fewer factory-rigged Yamaha boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+## Quick Answer
 
-## Quick recommendation
+Mercury and Yamaha both build excellent outboards. For Ontario freshwater boating, Mercury's practical advantage is dealer network density, parts availability, and factory-OEM relationships with Canadian boat builders, not mechanical superiority. If you have a Yamaha-rigged boat and a Yamaha dealer you trust nearby, there's no obvious reason to switch.
 
-Mercury and Yamaha are both excellent outboards mechanically. The decision between them in Ontario comes down to where you boat, how easy it is to get service, and what came with your boat from the factory.
+> **Disclosure:** Harris Boat Works is a Mercury Platinum dealer. We sell Mercury. We're telling you up front so you know where the bias lives.
 
-For most Ontario freshwater customers (Rice Lake, Kawarthas, Lake Simcoe, Lake Ontario), Mercury is often easier for us to support: dealer network density, parts supply speed, factory-OEM relationships with Canadian aluminum builders, and resale demand all skew this way locally. We are not arguing Mercury is mechanically superior. We are sharing what the practical service picture looks like for the typical Ontario freshwater customer.
+---
 
-We have been a Mercury dealer since 1965. The bias is real but downstream of the market reality. Mercury is the brand we sell because Mercury is the brand most Ontario freshwater customers want.
+## Full Article
 
-## What changes the answer
+We're a Mercury dealer. We have been since the 1960s. So take this comparison with that context in mind. We'll try to give you the honest picture, but if you want a truly neutral opinion, you'd need to ask someone who sells neither.
 
-Five things move whether Mercury or Yamaha is right for your specific situation:
+That said, here's what we actually see in Ontario freshwater.
 
-- **Where you boat.** Ontario freshwater favors Mercury. Coastal saltwater regions sometimes favor Yamaha (especially US Gulf Coast and Pacific Northwest).
-- **What came factory-rigged on your boat.** A Yamaha-rigged factory boat is most cost-effective to keep Yamaha. A Mercury-rigged factory boat is most cost-effective to keep Mercury.
-- **Local dealer access.** A nearby Mercury dealer favors Mercury. A nearby Yamaha dealer favors Yamaha. Travel to dealers is meaningful for service.
-- **Brand-conversion cost during repower.** Switching brands adds $1,500 to $3,000 CAD in rigging. Worth the cost in some cases; not in others.
-- **Resale plan.** In Ontario, Mercury holds resale value slightly stronger than Yamaha. Sell-through is faster on Mercury.
+### The Practical Case for Mercury in Ontario
 
-## Mercury advantages in Ontario
+Mercury isn't more popular in Ontario because of magazine reviews. It's popular because of what happens in real life.
 
-The reasons Mercury leads in many Ontario freshwater segments:
+**Dealer network density.** Mercury has more dealers across Ontario than Yamaha. That means common service parts are on a Mercury dealer's shelf, not weeks away. More marine technicians are Mercury-certified. A Mercury motor gets serviced at any Mercury dealer across Canada and the US, useful if you travel.
 
-### 1. Dealer network density
+**Factory-OEM relationships.** Most major Canadian aluminum boat brands (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. The supply chain is Mercury-centric. If you're buying a new aluminum boat, it's probably Mercury-rigged.
 
-Mercury has more dealers across Ontario than Yamaha. That means:
+**Complete lineup coverage.** Mercury runs from 2.5 HP portables through 600+ HP Verados. It covers every recreational HP class and use case. This matters because it means a service relationship with a Mercury dealer can follow you through every boat you own.
 
-- **Parts availability.** Common service parts are on a Mercury dealer's shelf, not 6 weeks away from a regional warehouse.
-- **Service expertise.** More marine technicians are Mercury-certified or Mercury-experienced in Ontario.
-- **Travel-friendly service.** A Mercury motor gets serviced at any Mercury dealer across Canada and the US.
-- **Resale support.** A used Mercury sells faster in Ontario because more buyers are looking for Mercury.
+**Resale demand.** In the Ontario used market, Mercury-powered boats sell a little faster and attract more buyers than Yamaha-equivalent setups. That's not because Mercury is mechanically superior, it's because the buyer pool is larger.
 
-### 2. Factory-OEM relationships
+### What Yamaha Does Well
 
-Most major aluminum boat brands (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. The supply chain is Mercury-centric. Buying a Mercury-rigged factory boat is the most cost-effective way into a new aluminum boat.
+Yamaha is not a bad choice. Modern Yamaha outboards are reliable, fuel-efficient, and well-engineered. We're not going to pretend otherwise.
 
-### 3. Complete lineup coverage
+Yamaha's genuine strengths: strong saltwater corrosion resistance, refined V6 engine feel that some customers prefer, and solid factory relationships in the bass fishing and offshore segments (particularly US coastal markets). If you're on the Great Lakes coastal region or travelling to saltwater, Yamaha's track record there is strong.
 
-Mercury covers every recreational HP class from 2.5 portable up through Mercury's flagship V12 600 HP Verado class. Pro XS for performance. SeaPro for commercial. Avator for electric.
-
-Yamaha has gaps in the lineup at certain HP classes and use cases, particularly in commercial-duty and small-portable applications.
-
-### 4. Local Ontario presence
-
-Mercury has been the dominant Ontario freshwater brand for decades. The local ecosystem (dealers, mechanics, parts, used market, customer familiarity) is Mercury-centric. Switching brands means swimming upstream.
-
-## Yamaha strengths to acknowledge
-
-Yamaha is not a bad choice. Mechanically, modern Yamaha outboards are reliable, fuel-efficient, and well-engineered.
-
-Yamaha's strengths:
-
-- **Saltwater corrosion resistance.** Yamaha has historically been strong in saltwater applications. For Ontario freshwater this matters less.
-- **Smooth running and quiet operation.** Yamaha's V6 motors have a refined feel some customers prefer.
-- **Specific factory relationships.** Some boat brands (especially in the bass and offshore segments) have Yamaha factory relationships.
-- **Strong brand reputation in some regions.** Particularly US coastal markets.
-
-If you have a Yamaha-rigged boat that you like and your local Yamaha dealer treats you well, there is no reason to switch.
-
-## Side-by-side: Mercury vs Yamaha for Ontario freshwater
+### Side-by-Side: Ontario Freshwater
 
 | Factor | Mercury | Yamaha |
 |---|---|---|
@@ -8933,121 +8845,91 @@ If you have a Yamaha-rigged boat that you like and your local Yamaha dealer trea
 | Ontario dealer network density | High | Lower |
 | Factory rigging on Canadian boats | Most common | Less common |
 | Parts availability speed | Faster | Slower |
-| Service expertise availability | Wider | Narrower |
-| Lineup HP coverage | Full (2.5 HP to V12 600 HP) | Strong but with some gaps |
-| Resale value in Ontario | Holds well | Holds, slightly less |
+| Lineup HP coverage | Full (2.5, 600+ HP) | Strong, some gaps |
+| Resale demand in Ontario | Holds well | Holds, slightly less |
 | Best fit | Ontario freshwater | Coastal saltwater, specific applications |
 
-For Mercury pricing in CAD, [build a quote](/quote/motor-selection).
+The mechanical reliability difference is small. The practical service-and-resale difference favours Mercury for the typical Ontario customer.
 
-## When to switch from Yamaha to Mercury
+### When to Switch from Yamaha to Mercury
 
-Repower-time is the cheapest moment to switch brands. Reasons that justify a switch:
+Repower time is the least expensive moment to switch brands.
 
-- **Yamaha dealer access is poor** in your area
-- **You travel boating regions** where Mercury support is much stronger
-- **You plan to sell in 2 to 5 years** and want stronger resale demand
-- **Your existing Yamaha is at end of life** and you have to repower anyway
+**Reasons that justify switching:**
+- Your Yamaha dealer access is poor in your area
+- You travel boating regions where Mercury support is stronger
+- You plan to sell in 2, 5 years and want stronger resale demand
+- Your existing Yamaha is at end of life and you're repowering anyway
 
-Reasons that don't justify a switch:
+**Reasons that don't justify switching:**
+- Your Yamaha is running fine and you have a good local dealer
+- You like the motor and the boat is rigged for it
+- The brand-conversion rigging cost ($1,500, $3,000 CAD over standard rigging) won't pay back in your situation
 
-- **Your Yamaha is running fine** and you have a Yamaha dealer nearby
-- **You like the Yamaha feel** and the boat is rigged for it
-- **Switching costs would not pay back** in your specific situation
+We do Yamaha-to-Mercury conversions at HBW. The conversion cost picture is similar to Evinrude-to-Mercury, see [that guide](/blog/evinrude-to-mercury-repower-ontario-guide) for details.
 
-We do Yamaha-to-Mercury conversions at HBW. The brand-conversion rigging cost is the same as Evinrude-to-Mercury (about $1,500 to $3,000 CAD over standard rigging). See our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide) for the conversion cost picture.
+### What We Check Before Recommending a Switch
 
-## What HBW checks before recommending a switch
+When Yamaha owners come in asking about Mercury, we want to know:
 
-When Yamaha owners come to HBW asking about a Mercury repower, we want to know:
+- Year, HP, hours, and condition of the existing Yamaha
+- Local Yamaha dealer access and quality of the service relationship
+- Boat make, model, and use case
+- Where you boat (sheltered Kawarthas vs. travel to open water)
+- Long-term ownership plan
+- Budget tolerance
 
-- **Year and HP of the existing Yamaha**
-- **Hours and condition of the motor**
-- **Local Yamaha dealer access and your relationship with them**
-- **Boat make, model, and how often you boat**
-- **Where you boat (sheltered Kawarthas vs travel to other regions)**
-- **Long-term ownership plan**
-- **Budget and financing tolerance**
+We won't push a switch on customers whose Yamaha is running fine and whose service relationship works. We recommend switching when the math actually favours it, not to hit a Mercury unit target.
 
-We will not push the switch on customers whose Yamaha is running fine and whose service relationship works. We recommend the switch when the math actually favors it.
+### Common Mistakes in the Mercury vs. Yamaha Decision
 
-## Common mistakes in the Mercury vs Yamaha decision
+**Deciding on spec sheets alone.** Brand specs are similar. The real decision is about service network and use case.
 
-We see these every season:
+**Ignoring local dealer access.** A theoretically better motor two hours away is worse in practice than an adequate motor at the local marina.
 
-1. **Picking on spec sheet alone.** Brand specs are similar. The decision is about service network and use case, not about peak HP or fuel curve.
-2. **Ignoring local dealer access.** A theoretically better motor 2 hours away is worse in practice than an adequate motor at the local marina.
-3. **Switching for marketing reasons.** Magazine reviews and dealer claims do not pay your service bills. Use case and local support matter.
-4. **Mismatching boat brand and motor brand factory rigging.** A Yamaha-rigged boat that gets a Mercury repower has higher rigging cost than necessary.
-5. **Buying based on what's "best" globally rather than what fits your situation.** Mercury wins in Ontario freshwater. Yamaha wins in some saltwater applications. Honda wins in some small-portable applications. Pick the right tool for your job.
+**Switching for marketing reasons.** Magazine reviews and dealer claims don't pay your service bills. Pick the right tool for your situation.
 
-## Related guides
-
-- [Mercury vs Yamaha vs Honda Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), full three-brand comparison
-- [Why Mercury Dominates the Outboard Market](/blog/why-mercury-dominates-outboard-market), the practical case for Mercury
-- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion cost picture
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
-- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for HBW
-
-## Ready to talk Mercury for your boat?
-
-Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration including brand-conversion rigging where it applies.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through Mercury vs Yamaha for your specific boat before quoting, [give us a call at (905) 342-2153](tel:9053422153). We will give you the honest math.
+**Mismatching boat brand and motor brand.** A Yamaha-rigged factory boat that gets a Mercury repower has higher rigging cost than a Mercury-to-Mercury swap. Factor that in.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+## FAQs
+
+**Is Mercury better than Yamaha?** 
+Mechanically, both make excellent reliable motors. In Ontario freshwater, Mercury wins on dealer network density, parts availability, factory-OEM relationships with Canadian boat builders, and resale demand. Mechanically superior? Not clearly. Practically better for most Ontario boaters? We think so.
+
+**Should I switch from Yamaha to Mercury during a repower?** 
+Depends on local dealer access, motor condition, hull remaining life, and ownership plan. If your Yamaha is fine and your local dealer treats you well, there's no obvious reason to switch. If Mercury support is meaningfully stronger in your area, switching at repower time makes sense.
+
+**How much does it cost to switch from Yamaha to Mercury?** 
+Mercury motor cost plus $1,500, $3,000 CAD in brand-conversion rigging above standard install. Total varies by HP class. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+
+**Will my Yamaha controls work with a Mercury motor?** 
+No. Controls, rigging, and harnesses are brand-specific. A brand conversion requires new throttle, shift, and harness systems.
+
+**Does HBW service Yamaha outboards?** 
+Our parts inventory and tooling are Mercury-focused. Some Yamaha service we can handle; non-Mercury work may take longer. Contact us at 905-342-2153 for specifics.
+
+**Which outboard brand has better fuel economy?** 
+Comparable across HP classes. Both brands' modern FourStrokes are fuel-efficient. Prop selection and operating discipline affect fuel economy more than brand does.
 
 ---
 
-## FAQ
+## Internal Links
 
-**Is Mercury better than Yamaha?**
-Mechanically, both brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, factory-OEM relationships with Canadian aluminum boat builders, and resale demand. The practical reliability picture favors Mercury for typical Ontario customers.
-
-**Should I switch from Yamaha to Mercury during a repower?**
-Depends on local dealer access, hull condition, and ownership plan. If your Yamaha dealer access is good and your motor is fine, no need to switch. If you're repowering anyway and Mercury support is stronger in your area, switching makes sense.
-
-**How much does it cost to switch from Yamaha to Mercury?**
-The Mercury motor cost plus an extra $1,500 to $3,000 CAD in brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, [build a quote](/quote/motor-selection).
-
-**Is Yamaha more reliable than Mercury?**
-Mechanically, similar. Both brands have demonstrated long service life with proper maintenance. Reliability in real life is mechanical durability plus service availability. The service availability favors Mercury in Ontario.
-
-**Why do most Canadian aluminum boats come Mercury-rigged?**
-Decades of supply chain integration between Mercury and Canadian boat builders (Lund, Crestliner, Princecraft, Lowe). Customers ask for Mercury, factories rig with Mercury, dealer service network is built around Mercury.
-
-**Is Mercury more expensive than Yamaha?**
-Comparable HP at comparable trim. Pricing varies by model, current promotions, and market conditions. The total cost of ownership math (including service, parts, and resale) tends to favor Mercury in Ontario.
-
-**Should I buy a Mercury or Yamaha for Lake Ontario fishing?**
-For Lake Ontario freshwater fishing, Mercury wins on dealer network and resale support. Both brands handle freshwater well. Local dealer access matters most.
-
-**What about Mercury vs Yamaha for saltwater?**
-For US Gulf Coast and some Pacific Northwest saltwater applications, Yamaha is more competitive. Mercury also makes saltwater motors (SeaPro). For Canadian boating, this is rarely a deciding factor.
-
-**Which has better fuel economy, Mercury or Yamaha?**
-Comparable across HP classes. Both brands' modern FourStrokes are fuel-efficient. Prop selection and operating discipline matter much more than brand for fuel economy. See our [fuel efficiency guide](/blog/mercury-outboard-fuel-efficiency-guide).
-
-**Will my Yamaha controls work with a Mercury motor?**
-No. Brand controls and rigging are not compatible. Brand conversion requires new throttle, shift, and harness systems. We handle this at HBW during conversion repowers.
-
-**Does HBW service Yamaha outboards?**
-Some Yamaha service we handle, particularly for HBW customers with Yamaha-rigged boats. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer. [Contact us](/contact) for non-Mercury service quotes.
-
-**What's the most popular outboard in Ontario, Mercury or Yamaha?**
-Mercury, by a significant margin. Mercury is the dominant brand on Ontario freshwater. Yamaha is well-represented but has a smaller market share than Mercury locally.
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
 
 ---
 
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
-    `,
+## CTA
+
+Shopping Mercury for your boat? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live CAD pricing, full configuration, no "call for price."
+
+Want to talk through Mercury vs. Yamaha for your specific boat before quoting? Call **905-342-2153**. We'll give you the honest answer, even if it's "your Yamaha is fine, don't switch."
+
+---`,
     faqs: [
       {
         question: 'Is Mercury better than Yamaha?',
