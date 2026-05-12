@@ -6170,6 +6170,7 @@ Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new P
       { question: 'Do I need both a trolling motor and a kicker?', answer: 'Not necessarily to start. Most anglers are better served by picking the right first unit for their primary fishery and adding the second unit later.' },
       { question: 'Where can I get a kicker or trolling motor installed near Rice Lake?', answer: 'Request service at hbw.wiki/service or call us at 905-342-2153. We are on Rice Lake in Gores Landing, ON.' },
     ]
+  },
 
   // Week 19: May 11, 2026
   {
