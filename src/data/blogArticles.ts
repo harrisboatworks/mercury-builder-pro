@@ -1214,7 +1214,8 @@ Yes. Damage from not following the break-in protocol may not be covered. We docu
 For modern Mercury FourStrokes, no. Use Mercury-approved four-stroke oil from day one. For 2-strokes, Mercury TC-W3 oil per manufacturer spec. No special break-in formulations needed.
 
 **Can I tow my new Mercury home from HBW and break it in on my own lake?**
-Yes. Many customers do this. Start at idle and no-wake speed, then graduate over the first hour. The break-in protocol works on any lake.`,
+Yes. Many customers do this. Start at idle and no-wake speed, then graduate over the first hour. The break-in protocol works on any lake.
+`,
     howToSteps: [
       {
         name: 'First Hour (0-1 hours)',
@@ -1813,7 +1814,8 @@ For typical recreational use, 90 to 115 HP FourStroke. For bigger-water use or t
 On heavier deep-V aluminum hulls 18 feet and up, Command Thrust gives meaningful hole-shot and load-carrying improvement. On lighter standard-V hulls under 18 feet, the standard gearcase is fine. We assess this per boat.
 
 **Can I use a kicker as my main motor?**
-On small aluminum boats (12–14 ft), yes, a 9.9 or 15 HP can be the only motor. On 16 ft and bigger, you need a proper main motor; the kicker is the auxiliary.`,
+On small aluminum boats (12–14 ft), yes, a 9.9 or 15 HP can be the only motor. On 16 ft and bigger, you need a proper main motor; the kicker is the auxiliary.
+`,
     faqs: [
       {
         question: 'What\'s the minimum HP I should get for my aluminum boat?',
