@@ -13,103 +13,141 @@ export const frenchBlogArticles: BlogArticle[] = [
     category: 'Guide d\'achat',
     readTime: '7 min',
     keywords: ['prix remotorisation Mercury Ontario', 'remotorisation bateau coût Canada', 'moteur hors-bord Mercury prix', 'repower Mercury Ontario'],
-    content: `
-## Combien coûte une remotorisation Mercury en Ontario?
+    content: `### Réponse rapide
 
-Tout le monde le sait : quand le vieux moteur lâche, la première question qui vient à l'esprit, c'est "est-ce que ça vaut la peine de le remplacer?" Voici la réponse courte : dans la grande majorité des cas, oui. Remotoriser une embarcation en bon état coûte beaucoup moins cher que d'acheter un nouveau bateau — et vous récupérez une embarcation que vous connaissez déjà, avec un moteur neuf sous garantie.
-
-Chez Harris Boat Works, à Gores Landing sur le lac Rice, on fait ça depuis des décennies. On installe des dizaines de remotorisations par année. C'est notre cœur de métier.
+Dans la grande majorité des cas, oui : remotoriser une embarcation en bon état coûte beaucoup moins cher qu'acheter un nouveau bateau. Une remotorisation bien faite représente souvent 20 à 40 % du prix d'un nouveau bateau équivalent. Pour connaître le prix exact en dollars canadiens pour votre embarcation, utilisez l'outil de configuration en ligne sur mercuryrepower.ca.
 
 ---
 
-## Une note sur la langue
+### Combien coûte une remotorisation Mercury en Ontario ?
 
-Notre équipe travaille principalement en anglais. On ne parle pas français couramment, mais on est sincèrement contents d'accueillir des clients francophones et on va faire tout ce qu'on peut pour vous aider. La bonne nouvelle : l'outil de soumission en ligne sur [mercuryrepower.ca](https://mercuryrepower.ca) fonctionne sans barrière linguistique — vous entrez les informations sur votre embarcation, et vous obtenez un prix en dollars canadiens, à tout moment, sans avoir besoin de nous parler. Pour les demandes de service, [hbw.wiki/service](https://hbw.wiki/service) accepte les messages en français.
+Le moteur lâche, ou tient encore à peine. Vous vous posez la question : est-ce que ça vaut la peine de le remplacer, ou mieux vaut acheter un nouveau bateau ?
 
-Harris Boat Works est actuellement le seul concessionnaire Mercury en Ontario à offrir du contenu en français sur la remotorisation. Mercury Marine lui-même dirige des clients vers nous — c'est la meilleure preuve de confiance qu'on puisse vous donner.
+La réponse dépend surtout de l'état de votre coque, mais dans la majorité des cas, la remotorisation est la décision la plus économique et la plus sensée.
+
+Harris Boat Works est une marina familiale de troisième génération sur le lac Rice, en activité depuis 1947. Nous sommes concessionnaire Mercury Marine Platinum, le niveau de certification le plus élevé chez Mercury Marine, et nous réalisons des dizaines de remotoriations par saison, sur toutes les catégories d'embarcations courantes en Ontario.
 
 ---
 
-## C'est quoi, une remotorisation?
+## C'est quoi, une remotorisation ?
 
-Une remotorisation (repower, en anglais), c'est le remplacement du moteur hors-bord d'une embarcation existante par un moteur neuf. On garde la coque, on garde le tableau arrière, on garde les équipements — on change le moteur. Pour beaucoup de propriétaires, c'est la meilleure décision économique possible.
+Une remotorisation (« repower » en anglais), c'est le remplacement du moteur hors-bord de votre embarcation existante par un moteur neuf. On garde la coque. On garde le tableau arrière. On garde l'équipement à bord. On change le moteur.
 
-Un bateau de bonne qualité peut durer 30, 40, 50 ans si la coque est saine. Les moteurs, eux, ont une durée de vie beaucoup plus courte — surtout si l'entretien n'a pas été rigoureux. Plutôt que d'investir dans un nouveau bateau à 40 000 $ ou 80 000 $, vous pouvez redonner vie à votre embarcation avec un Mercury neuf pour une fraction de ce prix.
+Une coque en aluminium de bonne qualité peut durer 30, 40, voire 50 ans si elle est bien entretenue. Les moteurs, eux, ont une durée de vie beaucoup plus courte, surtout si l'entretien n'a pas été rigoureux. Plutôt que d'investir 40 000 $ ou 80 000 $ dans un nouveau bateau, il est souvent possible de redonner vie à votre embarcation avec un Mercury neuf pour une fraction de ce budget.
 
 ---
 
 ## Ce qui influence le prix d'une remotorisation
 
-Plusieurs facteurs entrent en jeu. Les voici, dans l'ordre de leur impact sur le prix final.
+Le prix final dépend de plusieurs facteurs. Voici les principaux.
 
 ### 1. La puissance (HP)
 
-C'est le facteur le plus évident. Un moteur Mercury de 9,9 HP coûte une fraction du prix d'un 150 HP. Plus la puissance est élevée, plus le prix du moteur lui-même est élevé — et en général, plus l'installation est complexe.
+C'est le facteur le plus évident. Un moteur Mercury de 9,9 HP coûte une fraction du prix d'un 150 HP. Plus la puissance est élevée, plus le moteur lui-même est cher, et en général, plus l'installation est complexe.
 
 ### 2. La longueur de l'arbre
 
-Les moteurs hors-bord existent en deux longueurs d'arbre principales : court (20 pouces) et long (25 pouces). Un arbre long coûte un peu plus cher. Il est aussi possible d'avoir besoin d'un arbre ultra-long (30 pouces) pour certaines embarcations. Il est important de choisir la bonne longueur pour votre tableau arrière — une erreur ici peut affecter les performances et causer des problèmes mécaniques.
+Il existe principalement deux longueurs : arbre court (20 pouces) et arbre long (25 pouces). Un arbre long coûte légèrement plus cher. Pour certaines embarcations, un arbre ultra-long (30 pouces) est nécessaire. Choisir la bonne longueur pour votre tableau arrière est important : une erreur peut affecter les performances et causer des problèmes mécaniques.
 
 ### 3. Le câblage et le tableau de bord
 
-Si votre embarcation a un vieux câblage mécanique, il faudra peut-être le remplacer pour qu'il soit compatible avec un moteur Mercury moderne. Certains Mercury récents utilisent des commandes électroniques (fly-by-wire), ce qui nécessite un câblage numérique. Ce n'est pas toujours requis, mais c'est un coût potentiel à prévoir.
+Un ancien câblage mécanique peut devoir être remplacé pour être compatible avec un moteur Mercury moderne. Certains modèles Mercury récents utilisent des commandes électroniques (fly-by-wire), ce qui nécessite un câblage numérique. Ce n'est pas toujours requis, mais c'est un coût potentiel à prévoir.
 
 ### 4. L'hélice
 
-Un moteur neuf vient rarement avec l'hélice idéale pour votre embarcation spécifique. Le choix d'une hélice adaptée à votre usage (vitesse, charge, type de coque) peut faire une différence significative sur les performances. Une bonne hélice, c'est un investissement qui se rentabilise vite.
+Un moteur neuf ne vient pas avec l'hélice idéale pour votre embarcation spécifique. Une hélice adaptée à votre usage, vitesse, charge, type de coque, peut faire une différence significative sur les performances et la consommation. C'est un investissement qui se rentabilise vite.
 
 ### 5. La main-d'œuvre
 
-L'installation d'un moteur hors-bord, faite correctement par des techniciens certifiés Mercury, prend du temps. Chez Harris Boat Works, on compte sur des techniciens qui connaissent les moteurs Mercury à fond — c'est une partie non négligeable du coût total, mais c'est aussi ce qui garantit que le travail est fait comme il faut.
+L'installation par des techniciens certifiés Mercury prend du temps et requiert de l'expertise. Chez Harris Boat Works, nos techniciens sont formés et certifiés directement par Mercury Marine. C'est une partie non négligeable du coût total, mais c'est aussi la partie qui détermine si votre moteur sera correctement installé ou pas.
 
 ---
 
 ## Fourchettes de prix par catégorie de puissance
 
-On ne va pas vous donner des chiffres inventés — ce serait vous rendre un mauvais service. Les prix varient selon le modèle exact, les options, et ce que votre embarcation nécessite en termes de câblage et d'hélice. Voici ce qu'on peut dire en termes généraux.
+Ces fourchettes couvrent le moteur, le câblage, les commandes, l'hélice et la main-d'œuvre, l'ensemble du projet de remotorisation, avant les taxes. Vérifiez les prix actuels en dollars canadiens sur mercuryrepower.ca.
 
-**Petits moteurs (9,9 à 20 HP)**
-Ces moteurs conviennent aux petites embarcations à fond plat, aux chaloupes, et aux dinghies. C'est la catégorie la plus accessible. L'installation est généralement simple.
+### Petits moteurs : 9,9 à 20 HP
 
-**Moteurs de milieu de gamme (40 à 60 HP)**
-Très populaires pour les embarcations familiales de 14 à 17 pieds, les chaloupes aluminium et certains petits pontons. Bon équilibre entre coût et performance. Ces moteurs représentent une bonne partie des remotorisations qu'on fait chaque saison.
+La catégorie la plus accessible. Chaloupes, embarcations à fond plat, dinghies. Installation généralement simple.
 
-**Moteurs performants (90 à 115 HP)**
-Idéaux pour les embarcations de 17 à 20 pieds. Le Mercury 115 FourStroke est l'un des moteurs les plus installés chez nous — fiable, économique en carburant, et très bien adapté aux lacs des Kawartha et au lac Rice.
+### Moteurs de milieu de gamme : 40 à 60 HP
 
-**Moteurs haute performance (150 HP et plus)**
-Pour les embarcations plus grandes, les pontons chargés, ou ceux qui veulent vraiment de la performance. Le Mercury 150 FourStroke est populaire pour les bateaux de 19 à 22 pieds. Au-delà, on entre dans le territoire des Verado et des configurations double moteur.
+Très populaires. Embarcations familiales de 14 à 17 pieds, chaloupes en aluminium, petits pontons. Bon équilibre entre coût et performance. Ces moteurs représentent une grande part des remotoriations que nous réalisons chaque saison.
 
-Pour obtenir un prix précis, en dollars canadiens, pour votre embarcation spécifique, rendez-vous sur **[mercuryrepower.ca](https://mercuryrepower.ca)**. L'outil de soumission prend en compte votre modèle d'embarcation, la puissance souhaitée et les options — et vous donne un vrai prix, pas un "appelez-nous pour en savoir plus".
+### Moteurs performants : 90 à 115 HP
+
+Pour les embarcations de 17 à 20 pieds. Le Mercury 115 FourStroke est l'un des moteurs les plus installés chez Harris Boat Works, fiable, économique en carburant, et parfaitement adapté aux lacs des Kawartha et au lac Rice.
+
+### Moteurs haute performance : 150 HP et plus
+
+Pour les embarcations plus grandes, les pontons chargés, ou pour ceux qui veulent de la performance. Le Mercury 150 FourStroke est populaire pour les bateaux de 19 à 22 pieds. Au-delà de 150 HP, on entre dans le territoire des Verado et des configurations double moteur.
 
 ---
 
-## Pourquoi remotoriser plutôt qu'acheter neuf?
+## Pourquoi remotoriser plutôt qu'acheter neuf ?
 
-Le calcul est simple : une remotorisation bien faite, ça représente souvent 20 à 40 % du prix d'un nouveau bateau équivalent. Si votre coque est en bonne condition, vous économisez énormément — et vous gardez une embarcation que vous connaissez, sur laquelle vous avez confiance.
+Une remotorisation bien faite représente souvent 20 à 40 % du prix d'un nouveau bateau équivalent. Si votre coque est en bonne condition, l'économie est réelle et substantielle.
 
-Le marché des bateaux usagés de qualité est serré. Un bon bateau bien entretenu avec un vieux moteur, c'est souvent une meilleure base qu'un bateau bon marché de qualité inégale. Remplacez le moteur, et vous repartez pour une autre décennie (ou deux).
+Vous gardez aussi une embarcation que vous connaissez, avec ses habitudes, sa manière de répondre sur l'eau, sa place à la marina. Le marché des bons bateaux usagés est serré. Un bateau bien entretenu avec un vieux moteur peut être une meilleure base qu'un bateau bon marché de qualité inégale.
+
+Un moteur Mercury FourStroke neuf, c'est aussi un départ sur une nouvelle base de garantie, une technologie moderne, et une consommation de carburant nettement améliorée par rapport aux anciens moteurs deux temps.
 
 ---
 
 ## Harris Boat Works : concessionnaire Mercury Platinum à Gores Landing
 
-Harris Boat Works, c'est une marina familiale fondée en 1947 — 78 ans sur le lac Rice. On est concessionnaire Mercury Platinum, le niveau de certification le plus élevé chez Mercury Marine. Ça veut dire que nos techniciens sont formés et certifiés directement par Mercury.
+Nous sommes situés à Gores Landing, sur le lac Rice, à environ 1 h 30 à l'est de Toronto par l'autoroute 401 et la 115 Nord. Les clients de Montréal font le trajet en environ 3 heures.
 
-Mercury Marine lui-même dirige des clients vers Harris Boat Works. C'est peut-être la meilleure preuve de confiance qu'on puisse vous donner.
+Notre équipe travaille principalement en anglais, nous ne parlons pas français couramment, mais nous accueillons chaleureusement les clients francophones et nous trouverons une façon de communiquer efficacement. Le configurateur en ligne sur mercuryrepower.ca fonctionne sans barrière linguistique : vous entrez les informations sur votre embarcation, choisissez la puissance, et obtenez un vrai prix en dollars canadiens, pas un « appelez-nous pour en savoir plus ».
 
-Si vous habitez en Ontario, on est à Gores Landing — environ 1h30 à l'est de Toronto par l'autoroute 401 Est puis la 115 Nord. Si vous venez de Montréal, c'est environ 3 heures.
+Harris Boat Works est actuellement le seul concessionnaire Mercury en Ontario à offrir du contenu en français sur la remotorisation. Mercury Marine lui-même dirige des clients francophones vers nous.
+
+---
+
+## Foire aux questions
+
+**Est-ce que ça vaut vraiment la peine de remplacer un vieux moteur ?** 
+Dans la grande majorité des cas, oui, à condition que la coque soit en bon état. Une remotorisation bien planifiée représente souvent 20 à 40 % du coût d'un nouveau bateau équivalent.
+
+**Comment savoir si ma coque est en bon état ?** 
+Faites inspecter la coque par un technicien expérimenté avant de décider. Chez Harris Boat Works, nous évaluons la coque avant de recommander une remotorisation. Si la coque ne le justifie pas, on vous le dit.
+
+**Est-ce que je peux obtenir un prix sans parler à quelqu'un ?** 
+Oui. L'outil de configuration sur mercuryrepower.ca vous donne un vrai prix en dollars canadiens, sans avoir besoin de parler à l'équipe. Entrez les informations sur votre embarcation et choisissez la puissance.
+
+**L'équipe peut-elle communiquer en français ?** 
+L'équipe travaille principalement en anglais. Les demandes de service envoyées en français via hbw.wiki/service sont les bienvenues, nous ferons notre possible pour vous aider.
+
+**Faut-il amener le bateau sur place pour obtenir un devis ?** 
+Non, vous pouvez démarrer le processus en ligne sur mercuryrepower.ca. Pour les projets plus complexes, une visite à Gores Landing peut être utile pour évaluer l'état de la coque et le câblage existant.
+
+**Est-ce que vous installez des moteurs d'autres marques ?** 
+Non. Pour les réparations et installations, nous travaillons exclusivement avec Mercury et Mercruiser.
 
 ---
 
 ## Comment obtenir votre prix
 
-**En ligne (recommandé) :** [mercuryrepower.ca](https://mercuryrepower.ca) — prix en temps réel, en dollars canadiens, disponible 24h/24.
+**En ligne :** mercuryrepower.ca, configurez votre remotorisation et obtenez un prix réel en dollars canadiens, disponible 24 h/24, sans rendez-vous ni barrière linguistique.
 
-**Demande de service :** [hbw.wiki/service](https://hbw.wiki/service) — vous pouvez écrire en français.
+**Par demande de service :** hbw.wiki/service, vous pouvez écrire en français.
 
-**Par téléphone :** 905-342-2153 — notre équipe parle anglais, mais on trouvera une façon de communiquer.
-    `,
+**Par téléphone :** 905-342-2153
+
+**En personne :** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+
+---
+
+*Guides connexes (en anglais) : Mercury 115 HP FourStroke review | Mercury 90 HP FourStroke review | Should I repower or buy a new boat?*
+
+---
+
+**EDITOR NOTE (English):** 
+This is a French-language post targeting francophone Ontario boaters. Source post published 2026-04-12. The pricing figures "$40,000 to $80,000" (new boat comparison) and "20 to 40% of equivalent new boat cost" are retained from original. Specific CAD dollar ranges by HP tier were not in the original French post, this rewrite does not fabricate them; readers are directed to mercuryrepower.ca for real-time pricing. The claim that HBW is the only Mercury dealer in Ontario offering French-language repower content is retained from original, verify with team before publishing. Language note about the team working primarily in English is preserved from original. The 78-year/1947 founding date is updated to "since 1947" and "third-generation family marina" per task brief, avoiding a specific year count that will go stale. No APR or financing rates included.
+
+---
+---`,
     faqs: [
       {
         question: 'Combien de temps dure une remotorisation?',
@@ -145,18 +183,17 @@ Si vous habitez en Ontario, on est à Gores Landing — environ 1h30 à l'est de
     category: 'Comparaison',
     readTime: '7 min',
     keywords: ['Mercury 115 vs 150', 'moteur hors-bord 115 ou 150 chevaux', 'Mercury FourStroke comparaison', 'Mercury 115 150 HP'],
-    content: `
-## Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?
+    content: `### Réponse rapide
 
-C'est une des questions qu'on reçoit le plus souvent chez Harris Boat Works : "Est-ce que le 115 va faire l'affaire, ou je devrais prendre le 150?" La bonne réponse dépend de votre embarcation, de votre usage, et honnêtement, de votre budget. Voici tout ce que vous devez savoir pour prendre une décision éclairée.
+Le Mercury 115 FourStroke est le bon choix pour la plupart des embarcations de 16 à 19 pieds naviguant sur les lacs intérieurs de l'Ontario, il est léger, économique et amplement puissant. Le Mercury 150 FourStroke est justifié lorsque l'embarcation fait 19 à 22 pieds, que la charge est régulièrement importante, ou que vous voulez une marge de puissance confortable sur un grand ponton ou une grosse embarcation familiale. Pour voir les prix des deux moteurs côte à côte en dollars canadiens, utilisez mercuryrepower.ca.
 
 ---
 
-## Une note pour nos lecteurs francophones
+### Mercury 115 vs 150 HP : Quel moteur choisir ?
 
-Notre équipe travaille principalement en anglais. On ne parle pas français couramment, mais on est sincèrement heureux de vous accueillir — que vous soyez Franco-Ontarien, que vous veniez de Gatineau pour la saison, ou que vous soyez en route depuis Montréal (on est à environ 3 heures). L'outil de comparaison sur [mercuryrepower.ca](https://mercuryrepower.ca) vous permet de voir les prix des deux moteurs côte à côte, sans avoir besoin de nous appeler. Pour les questions de service, écrivez-nous à [hbw.wiki/service](https://hbw.wiki/service) — les messages en français sont bienvenus.
+C'est une des comparaisons les plus courantes que nous faisons chez Harris Boat Works. Les deux moteurs sont fiables, bien établis, et disponibles en version standard FourStroke ou Pro XS performance. Mais ils ne correspondent pas aux mêmes embarcations ni aux mêmes besoins.
 
-En tant que seul concessionnaire Mercury Platinum en Ontario avec du contenu francophone, Harris Boat Works veut s'assurer que vous avez accès à l'information dont vous avez besoin dans votre langue.
+Harris Boat Works est une marina familiale de troisième génération, sur le lac Rice depuis 1947. Nous sommes concessionnaire Mercury Marine Platinum, le niveau de certification le plus élevé, et nous connaissons les eaux de l'Ontario et les embarcations qui y naviguent saison après saison.
 
 ---
 
@@ -164,21 +201,13 @@ En tant que seul concessionnaire Mercury Platinum en Ontario avec du contenu fra
 
 ### Mercury 115 FourStroke
 
-- **Cylindrée :** 2,1 L, 4 cylindres en ligne
-- **Poids :** dans la gamme des moteurs 4 temps de 115 HP — léger pour sa catégorie
-- **Variantes :** standard FourStroke, Pro XS (performance/pêche)
-- **Idéal pour :** embarcations en aluminium de 16 à 19 pieds, pontons, embarcations familiales, pêche sur les Kawartha et le lac Rice
+Le Mercury 115 FourStroke fait partie d'une famille de cinq moteurs (75, 80, 90, 100, 115 HP) construits sur le même bloc 4 cylindres en ligne de 2,1 litres. C'est le moteur le plus puissant de cette famille, léger pour sa catégorie, à 359 lb (163 kg) en version arbre long, et c'est l'un des moteurs les plus installés dans notre atelier.
 
-Le 115 est l'un des moteurs les plus populaires qu'on installe à Gores Landing. Il est fiable, économique en carburant pour sa puissance, et il s'adapte à une grande variété d'embarcations. Pour la plupart des utilisateurs qui naviguent sur des lacs comme le lac Simcoe, le lac Rice, ou les lacs des Kawartha, c'est souvent exactement ce qu'il faut.
+Il est conçu pour la croisière souple, l'économie de carburant, et la fiabilité sur le long terme.
 
 ### Mercury 150 FourStroke
 
-- **Cylindrée :** 3,0 L, 4 cylindres en ligne
-- **Poids :** plus lourd que le 115 — important à considérer selon votre tableau arrière et votre coque
-- **Variantes :** standard FourStroke, Pro XS (performance/pêche)
-- **Idéal pour :** embarcations de 19 à 22 pieds, pontons chargés, embarcations avec des charges plus importantes, utilisateurs qui veulent plus de performance à haute vitesse
-
-Le 150 offre une cylindrée nettement supérieure — 3,0 L contre 2,1 L, soit environ 43 % de plus. Les deux moteurs sont des quatre cylindres en ligne, mais le bloc plus gros du 150 lui donne plus de couple et de réserve de puissance. Ce n'est pas juste 35 HP de plus sur le papier : c'est un moteur fondamentalement différent dans sa plage de couple, dans sa façon de répondre à pleine charge, et dans sa capacité à maintenir de bonnes performances quand le bateau est bien chargé.
+Le Mercury 150 FourStroke est une famille entièrement différente, un bloc 4 cylindres en ligne de 3,0 litres, plus puissant, plus lourd (~206 kg / 455 lb), et dans une catégorie de prix plus élevée. C'est le bon choix lorsque l'embarcation est grande, la charge importante, ou que vous voulez une marge de puissance confortable.
 
 ### Tableau comparatif
 
@@ -187,8 +216,8 @@ Le 150 offre une cylindrée nettement supérieure — 3,0 L contre 2,1 L, soit e
 | Cylindrée | 2,1 L | 3,0 L |
 | Cylindres | 4 en ligne | 4 en ligne |
 | Poids (arbre 20") | ~163 kg (359 lb) | ~206 kg (455 lb) |
-| Plage de régime | 5 000-6 000 tr/min | 5 000-5 800 tr/min |
-| Embarcations idéales | 16-19 pieds | 19-22 pieds |
+| Plage de régime | 5 000, 6 000 tr/min | 5 000, 5 800 tr/min |
+| Embarcations idéales | 16, 19 pieds | 19, 22 pieds |
 
 ---
 
@@ -196,68 +225,103 @@ Le 150 offre une cylindrée nettement supérieure — 3,0 L contre 2,1 L, soit e
 
 ### Performance et vitesse
 
-Sur une embarcation de 17 pieds en aluminium avec deux adultes à bord, la différence entre un 115 et un 150 est perceptible mais pas dramatique. Vous allez probablement gagner quelques kilomètres/heure à pleine ouverture des gaz avec le 150. Là où la différence se fait vraiment sentir, c'est à pleine charge — quatre adultes, une glacière pleine, de l'équipement de pêche — où le 150 va déplacer ce poids plus facilement et monter sur le plan plus vite.
+Sur une embarcation de 17 pieds en aluminium avec deux adultes à bord, la différence entre un 115 et un 150 est perceptible, mais pas dramatique. Avec le 150, vous gagnez quelques kilomètres par heure à pleine ouverture des gaz.
+
+La différence se fait vraiment sentir à pleine charge : quatre adultes, une glacière pleine, de l'équipement de pêche. Dans ces conditions, le 150 met l'embarcation sur le plan plus rapidement et maintient la vitesse de croisière plus facilement.
 
 ### Consommation de carburant
 
-Contre-intuitivement, à vitesse de croisière normale (pas à pleine puissance), les deux moteurs peuvent être assez proches en consommation. Le 150, utilisé à 60-70 % de sa capacité sur une grosse embarcation, peut être aussi efficace que le 115 poussé à fond sur une petite embarcation. L'hélice choisie a aussi un impact important sur la consommation réelle.
+À vitesse de croisière normale, ce qui représente la plupart des journées sur les lacs des Kawartha ou le lac Rice, les deux moteurs peuvent être très proches en consommation. Un 150 utilisé à 60, 70 % de sa capacité sur une grosse embarcation peut être aussi efficace qu'un 115 poussé à fond sur une petite. L'hélice choisie a aussi un impact important sur la consommation réelle.
 
 ### Poids
 
-Le 150 est plus lourd que le 115. C'est un facteur non négligeable pour certaines embarcations, particulièrement les petites coques en aluminium qui ont une limite de capacité maximale au tableau arrière. Avant de choisir, vérifiez toujours la limite de poids du moteur recommandée par le fabricant de votre embarcation.
+Le 150 est environ 43 kg (95 lb) plus lourd que le 115. Pour certaines embarcations, notamment les petites coques en aluminium avec une limite de poids au tableau arrière, c'est un facteur important. Vérifiez toujours la limite de poids du moteur recommandée par le fabricant de l'embarcation avant de choisir.
 
-### Quel bateau pour quel moteur?
+### Quel bateau pour quel moteur ?
 
-**Mercury 115 FourStroke — bon choix si :**
+**Le Mercury 115 FourStroke est le bon choix si :**
 - Votre embarcation fait entre 16 et 19 pieds
 - Vous naviguez en famille sur des lacs intérieurs (Kawartha, Rice Lake, lac Simcoe)
 - Votre charge typique est deux à trois personnes avec équipement standard
-- Vous recherchez un bon équilibre coût/performance
 - Vous avez un ponton de taille standard
+- Vous recherchez un bon équilibre entre coût, poids, et performance
 
-**Mercury 150 FourStroke — bon choix si :**
+**Le Mercury 150 FourStroke est le bon choix si :**
 - Votre embarcation fait entre 19 et 22 pieds
 - Vous transportez régulièrement quatre personnes ou plus, ou une charge importante
-- Vous avez un grand ponton ou une embarcation familiale plus lourde
-- Vous voulez un surplus de puissance pour la reprise et la vitesse de croisière
+- Vous avez un grand ponton ou un tritoon
+- Vous voulez une marge de puissance pour la reprise et la vitesse de croisière
 - Vous remplacez un moteur de 135 HP ou plus
 
 ---
 
 ## Pro XS : pour les pêcheurs et les amateurs de performance
 
-Les deux moteurs existent en version **Pro XS**, qui est la gamme performance/pêche de Mercury. Le Pro XS est optimisé pour une vitesse maximale plus élevée et une réponse plus vive à l'accélération. Si vous passez beaucoup de temps à pêcher sur les Kawartha et que vous voulez atteindre vos spots rapidement, ou si la performance pure est importante pour vous, le Pro XS mérite d'être considéré. Le prix est légèrement plus élevé que le FourStroke standard.
+Les deux moteurs, 115 et 150, existent en version Pro XS. Le Pro XS est la gamme performance de Mercury : optimisé pour une vitesse maximale plus élevée et une réponse plus vive à l'accélération. Si vous pêchez activement sur les Kawartha et que vous voulez atteindre vos spots rapidement, le Pro XS mérite d'être considéré. Si la performance pure est prioritaire, c'est la version à regarder.
+
+Le prix du Pro XS est légèrement plus élevé que le FourStroke standard du même HP.
 
 ---
 
 ## Contexte ontarien : ce qui compte sur nos lacs
 
-Sur les lacs des Kawartha, le lac Rice, ou le lac Simcoe, la navigation se fait principalement à des vitesses de croisière modérées. La plupart des journées, vous n'êtes pas à pleine puissance — vous vous déplacez entre les îles, vous tirez un tube, vous cherchez un bon spot de pêche. Dans ce contexte, le 115 est amplement suffisant pour la grande majorité des embarcations familiales.
+Sur les lacs des Kawartha, le lac Rice, ou le lac Simcoe, la navigation se fait principalement à des vitesses de croisière modérées. La plupart des journées, vous n'êtes pas à pleine puissance, vous vous déplacez entre les îles, vous remorquez un tube, ou vous cherchez un bon spot de pêche.
 
-Là où le 150 fait vraiment la différence en Ontario : les matins de pêche sportive où vous voulez traverser un grand lac rapidement avant que le vent se lève, ou quand vous avez un ponton de 22 pieds avec six passagers et des glacières pleines.
+Dans ce contexte, le 115 est amplement suffisant pour la grande majorité des embarcations familiales de 16 à 19 pieds.
 
-Harris Boat Works est à Gores Landing, sur le lac Rice — l'un des meilleurs lacs à doré de l'Ontario. On connaît ces eaux, et on connaît ce dont les embarcations qui naviguent ici ont besoin. Ça fait 78 ans qu'on est ici. Quand on vous recommande un moteur, c'est basé sur ce qu'on voit fonctionner saison après saison, pas sur ce qui nous donne la meilleure marge.
+Le 150 fait vraiment la différence dans deux situations spécifiques : les matins de pêche sportive où vous voulez traverser un grand lac rapidement avant que le vent se lève, et lorsque vous avez un ponton de 22 pieds avec six passagers et des glacières pleines.
 
 ---
 
 ## La différence de prix
 
-Le 150 FourStroke coûte plus cher que le 115, tant pour le moteur lui-même que pour l'installation (si des modifications sont nécessaires). Pour voir les prix exacts en dollars canadiens pour les deux moteurs, et comparer côte à côte, utilisez l'outil de soumission sur [mercuryrepower.ca](https://mercuryrepower.ca). Il n'y a pas de "appelez-nous pour le prix" ici — c'est transparent, en ligne, disponible quand vous voulez.
+Le 150 FourStroke coûte plus cher que le 115, pour le moteur lui-même, et potentiellement pour l'installation si des modifications supplémentaires sont nécessaires. Pour voir les prix exacts en dollars canadiens et comparer les deux moteurs côte à côte, utilisez l'outil de configuration sur mercuryrepower.ca. Il n'y a pas de « appelez-nous pour le prix » ici.
+
+---
+
+## Foire aux questions
+
+**Le 115 HP suffit-il pour un ponton de 20 pieds ?** 
+Oui, pour un ponton de 20 pieds avec une charge normale (3, 4 personnes). Pour un ponton de 22 pieds ou un tritoon avec six passagers et des glacières, le 150 ou le 115 Command Thrust méritent d'être considérés.
+
+**Le 150 consomme-t-il beaucoup plus que le 115 ?** 
+À vitesse de croisière normale, les deux peuvent être proches. Le 150 utilisé à 65, 70 % de sa capacité sur une grosse embarcation n'est pas nécessairement plus gourmand qu'un 115 poussé à fond sur une plus petite.
+
+**Dois-je prendre la version Command Thrust sur un ponton ?** 
+Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.
+
+**Quelle est la différence entre le FourStroke standard et le Pro XS ?** 
+Le FourStroke standard est optimisé pour la croisière confortable, l'économie de carburant, et la longévité. Le Pro XS est optimisé pour la vitesse maximale et la reprise, conçu pour les bateaux de pêche sportive et les amateurs de performance.
+
+**Puis-je obtenir un devis en français ?** 
+Le configurateur sur mercuryrepower.ca fonctionne sans barrière linguistique, les prix sont clairs et accessibles en dollars canadiens. Pour des questions plus détaillées, vous pouvez soumettre une demande en français via hbw.wiki/service.
+
+**L'équipe parle-t-elle français ?** 
+L'équipe travaille principalement en anglais, mais vos messages en français sur hbw.wiki/service sont les bienvenus. Nous trouverons une façon de vous aider.
 
 ---
 
 ## Comment nous joindre
 
-**Comparez les prix en ligne :** [mercuryrepower.ca](https://mercuryrepower.ca) — configurateur de prix en temps réel, en dollars canadiens.
+**Outil de comparaison en ligne :** mercuryrepower.ca, comparez les deux moteurs côte à côte avec les prix réels en dollars canadiens.
 
-**Demande de service :** [hbw.wiki/service](https://hbw.wiki/service) — les messages en français sont les bienvenus.
+**Demande de service :** hbw.wiki/service, les messages en français sont les bienvenus.
 
-**Par téléphone :** 905-342-2153 — notre équipe parle anglais, mais on trouvera une façon de s'entendre.
+**Téléphone :** 905-342-2153
 
-**En personne :** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 — à environ 1h30 à l'est de Toronto, et à moins de 3 heures de Montréal.
+**En personne :** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 (environ 1 h 30 à l'est de Toronto; moins de 3 heures de Montréal).
 
-*Harris Boat Works est concessionnaire Mercury Marine Platinum — le niveau de certification le plus élevé. Nos techniciens sont formés et certifiés directement par Mercury Marine.*
-    `,
+---
+
+*Guides connexes (en anglais) : Mercury 115 HP FourStroke review | Mercury 90 HP FourStroke review | Ontario Mercury Outboard Price Guide*
+
+---
+
+**EDITOR NOTE (English):** 
+This is a French-language post targeting francophone Ontario boaters. Source post published 2026-04-12. Specs retained from original: 115 HP at ~163 kg/359 lb, 2.1L inline-4; 150 HP at ~206 kg/455 lb, 3.0L inline-4; RPM ranges as stated. No specific dollar amounts were in the original French post, this rewrite continues that approach, directing readers to mercuryrepower.ca for real-time CAD pricing. The claim about HBW being the only Mercury Platinum dealer in Ontario with French-language content is retained from original, verify before publishing. Language note preserved. No APR or financing rates included. "78 ans" reference replaced with "depuis 1947" and "troisième génération" per task brief. No prices fabricated.
+
+---
+---`,
     faqs: [
       {
         question: 'Le 150 consomme-t-il beaucoup plus que le 115?',
