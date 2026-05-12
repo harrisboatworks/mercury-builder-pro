@@ -4583,220 +4583,159 @@ SeaPro is available in multiple HP classes covering a wide range from smaller si
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['portable outboard', 'small boat motor', 'dinghy motor', 'mercury portable', 'tender motor'],
-    content: `# Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)
+    content: `**Last reviewed:** 2026-05-07
 
-*Last reviewed: 2026-05-10*
+---
 
-> **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular kicker; the 5 is the canoe-and-tender favourite. All current portables are FourStroke. Tiller, electric or manual start, and short or long shaft are the key choices. Configure at mercuryrepower.ca.
+> **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular small-boat motor in Canada. All current portables are FourStroke tiller motors. Key choices: size, shaft length (short vs. long), and manual vs. electric start. No rigging required, drop-in install. Configure at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-Mercury's portable outboard lineup (2.5 HP through 25 HP) updates by model year. Verify exact horsepower, weight, and feature availability at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) or call us; the specs below reflect the spring 2026 lineup.
+---
 
-Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats. The Mercury 9.9 MH is the most popular small-boat motor in Canada. Drop-in install, no rigging required, easy to transport and store. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+## Why portable motors are the right answer on small boats
 
-### Where portables fit in Mercury's full tiller range
+Mercury portable outboards are simple, reliable, and well-suited to the most common small-boat applications in the Kawarthas: cottage tin boats, small fishing rigs, sailboat auxiliaries, and kicker setups on bigger boats.
 
-Mercury tiller options run from small portable motors through select higher-horsepower FourStroke and SeaPro models with the Mercury Advanced Tiller system. The practical split is not "tiller stops at 60 HP." The practical split is whether the boat, use case, and driver actually make sense for a tiller.
+The 9.9 MH in particular is something we sell in volume at HBW every year. It's the workhorse of the Canadian small-boat segment, you bolt it to the transom, attach the fuel line, pull the rope, and go fishing. No rigging. No console. No controls to run. It just works.
 
-For most family boats, pontoons, runabouts, and multi-passenger fishing boats, remote steering is still the better setup. For serious tiller anglers, work boats, and certain guide-style rigs, Advanced Tiller can make sense well above the portable-motor range.
+---
 
-## Quick recommendation
+## What changes the right portable Mercury for your application
 
-For small boat owners on Kawartha lakes, Mercury portable outboards are the standard answer. The 9.9 MH and 15 MH are the workhorses of the small-boat segment. Lighter than they look, simple to operate, and reliable.
+**Boat size and weight.** A 12-foot tin boat needs less HP than a 14-foot heavy-duty aluminum fishing rig.
 
-The "M" in MH stands for manual start (rope pull). The "H" stands for tiller handle. There is no rigging. You bolt the motor to the transom, attach the fuel line, pull the rope, and go fishing. We sell hundreds of these every year at HBW for cottage tin boats, sailboat auxiliaries, and small fishing applications.
+**Use case.** Solo fishing is different from a sailboat auxiliary, which is different from a kicker on a bigger boat. The right choice for each varies.
 
-## What changes the answer for portable Mercury motors
+**Storage and transport.** Smaller portables (under 15 HP) are genuinely hand-carry portable. Larger portables (15–20 HP) are tiller-friendly but heavier, easier with two people.
 
-Five things move which portable Mercury fits your application:
+**Manual vs. electric start.** Manual (rope pull) saves money and weight. Electric start adds convenience at a cost premium and requires a battery.
 
-- **Boat size and weight.** A 12 ft tin boat needs less HP than a 14 ft heavy-duty fishing boat.
-- **Use case.** Solo fishing vs. sailboat auxiliary vs. kicker on a bigger boat all have different needs.
-- **Storage and transport.** Smaller motors (under 15 HP) are easily portable. Larger portable motors (15 to 20 HP) are still tiller-friendly but heavier.
-- **Start type preference.** Manual (rope) start saves money and weight. Electric start adds convenience and battery requirement.
-- **Shaft length.** Most small boats need short shaft (15 inches). Some bigger boats or sailboats need long shaft (20 inches).
+**Shaft length.** Most small boats need short shaft (15 inches). Sailboats and deeper transoms need long shaft (20 inches). Getting this wrong causes problems, cavitation if too short, drag if too long.
 
-## Mercury portable lineup
+---
 
-The Mercury portable range, 2.5 to 20 HP:
+## The Mercury portable lineup
 
 ### Mercury 2.5 MH (2.5 HP)
-
-- **Use:** Very small dinghies, ultralight tin boats, trolling on canoes
-- **Type:** 1-cylinder 4-stroke, manual start, tiller
-- **Weight:** ~19 kg / 41 lb
-- **Best for:** Owners who need a tiny motor for very small boats. Ultralight applications.
+Very small dinghies, ultralight applications. 1-cylinder 4-stroke, manual start.
 
 ### Mercury 3.5 MH (3.5 HP)
-
-- **Use:** Small dinghies, sailboat auxiliaries, very small fishing boats
-- **Type:** 1-cylinder 4-stroke, manual start, tiller
-- **Weight:** ~18 kg / 40 lb
-- **Best for:** Slightly larger applications than the 2.5. Common sailboat auxiliary.
+Small dinghies, sailboat auxiliaries, very small fishing boats. A common choice for sailor-auxiliary use.
 
 ### Mercury 5 MH and 6 MH
-
-- **Use:** Small fishing boats, dinghies, sailboat auxiliaries
-- **Type:** 1-cylinder 4-stroke, manual start, tiller
-- **Weight:** ~25 kg / 55 lb
-- **Best for:** 8 to 11 ft small boats. Lightweight and portable.
+8 to 11-foot small boats. Lightweight and portable.
 
 ### Mercury 9.9 MH (9.9 HP)
+12–14-foot tin boats, kicker motors on bigger boats. The most popular small-boat motor in Canada. 2-cylinder 4-stroke, manual start. The standard cottage fishing setup.
 
-- **Use:** 12 to 14 ft tin boats, kicker on bigger boats, small fishing
-- **Type:** 2-cylinder 4-stroke, manual start, tiller
-- **Weight:** ~38 kg / 84 lb
-- **Best for:** The most popular small-boat motor in Canada. Workhorse of cottage fishing.
+*Note: The 9.9 ProKicker is a different, purpose-built fishing kicker variant, see the ProKicker guide for that specific application.*
 
-The 9.9 ProKicker variant is a different motor, purpose-built for fishing kicker applications. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide) for that.
-
-### Mercury 15 MH and 15 EH
-
-- **Use:** 14 ft tin boats, slightly bigger small fishing applications
-- **Type:** 2-cylinder 4-stroke, manual or electric start, tiller
-- **Weight:** ~45 kg / 99 lb
-- **Best for:** Larger small boats. The 15 HP step-up over 9.9 is meaningful for cruising speed.
+### Mercury 15 MH and 15 EH (15 HP)
+14-foot tin boats, slightly larger small fishing applications. Available in manual or electric start.
 
 ### Mercury 20 EH (20 HP)
+Larger tin boats or smaller aluminum console boats with tiller layouts. Electric start. The top of the portable range, more boat-moving capability, meaningfully heavier.
 
-- **Use:** Larger tin boats, smaller aluminum console boats with tiller
-- **Type:** 2-cylinder 4-stroke, electric start, tiller
-- **Weight:** ~56 kg / 124 lb
-- **Best for:** Heavier or longer small boats where 15 HP isn't enough. The cap of the portable range.
 
-For specific pricing on each, [build a quote](/quote/motor-selection). Portable motors are typically sold as motor-only (no rigging required since most installs are drop-in).
+---
 
 ## Manual vs electric start
 
-Portable motors typically come in manual start (rope pull, designated MH) or electric start (battery and starter, designated EH or EFI variants).
+**Manual start (MH models):**
+- Lower cost, typically a meaningful saving over electric start
+- Lower weight, no battery, no starter motor
+- Simpler, fewer parts to fail
+- No battery maintenance over winter
 
-**Manual start advantages:**
-- **Lower cost** (typically $300 to $500 less)
-- **Lower weight** (no battery, no starter)
-- **Simpler** (fewer parts to fail)
-- **No battery to maintain** during off-season
+**Electric start (EH models):**
+- Easier for operators who prefer not to rope-pull
+- More convenient for older operators or when physical access to the pull start is awkward
+- Requires a battery and ongoing maintenance
 
-**Electric start advantages:**
-- **Easier starting** (especially for less mechanically-inclined operators)
-- **More convenient** for older operators or hands-on fishing
-- **Required for some applications** (some tiller setups can't be reached for rope pull)
+For most small fishing applications, manual start (MH) is fine. For older operators or when convenience matters more than weight and cost, electric start (EH) is worth the premium.
 
-For most small fishing boats, manual start (MH variants) is fine. For older operators or convenience-focused applications, electric start (EH variants) is worth the premium.
+---
 
 ## Shaft length
 
-Most small boats need short shaft (15 inches). Some need long shaft (20 inches):
+**Short shaft (15 inches):** Standard for most tin boats and small dinghies.
 
-- **Short shaft (15 inches):** Standard for most tin boats and small dinghies
-- **Long shaft (20 inches):** Required for sailboat auxiliaries, deeper transoms, some larger small boats
+**Long shaft (20 inches):** Required for sailboat auxiliaries, deeper transoms, some larger small boats.
 
-Wrong shaft length is the most common portable motor mistake. The motor cavitates at speed if the shaft is too short for the transom. The lower unit drags too deep if the shaft is too long.
+Wrong shaft length is the most common portable motor mistake. If the shaft is too short for the transom, the motor cavitates at speed. Too long and the lower unit drags unnecessarily deep.
 
-We measure transom depth at HBW before recommending shaft length. For drop-in installs, the customer can measure transom depth themselves. The standard rule: cavitation plate should be roughly even with the bottom of the hull at the prop location.
+At HBW, we measure transom depth before recommending shaft length on any portable motor sale. If you're buying a drop-in install for a boat you know well, measure transom depth yourself. The rule: cavitation plate should be roughly level with the bottom of the hull at the prop location.
 
-## What HBW checks before recommending a portable Mercury
-
-When customers come for a portable motor purchase, we want to know:
-
-- **Boat make, model, length, and weight class**
-- **Transom height** (for shaft length selection)
-- **Use case** (fishing, sailboat aux, kicker, dinghy)
-- **Solo or two-person typical use**
-- **Manual or electric start preference**
-- **Storage and transport plans** (lighter vs. heavier acceptable)
-- **Existing fuel tank** (some portables come with separate fuel tank, some integrate with bigger boat tank)
-
-Most portable customers know what they want. We confirm the right fit and complete the purchase.
-
-## Common portable motor mistakes
-
-We see these every season:
-
-1. **Wrong shaft length.** Short shaft on a deep transom causes cavitation. Long shaft on a shallow transom causes drag.
-2. **Buying too small for boat size.** A 5 HP on a 14 ft tin boat with two anglers is underpowered. Right-size for actual loading.
-3. **Skipping fuel stabilizer.** Portable motors sit unused often. Untreated fuel gums up carburetors.
-4. **Ignoring break-in.** Portable motors get the same break-in period as bigger Mercurys. Skipping break-in shortens motor life.
-5. **Storage mistakes.** Portable motors stored upright on the floor can leak fuel or oil. Use a motor stand or store horizontally per Mercury guidance.
+---
 
 ## Storage and transport
 
-Portable motors are designed for easy transport but need proper care:
+Portable motors are designed for easy transport, but they need proper care:
 
-- **Storage:** Use a motor stand or wall mount for vertical storage. Horizontal storage is okay if oil and fuel positions are correct (check owner's manual).
-- **Transport:** Most portables can be carried by one or two people. Carrying handles and ergonomic design make this easier. Heavier portables (15+ HP) are easier with two people.
-- **Fuel:** Drain or stabilize before storage longer than a month.
-- **Mounting:** Drop-in installs use transom clamps. Tighten before each launch. Loose clamps cause motor loss in deep water.
+- **Storage:** Use a motor stand or wall mount. Horizontal storage is okay with the correct orientation, check the owner's manual.
+- **Transport:** Most portables under 15 HP are one-person carry with the built-in handle. 15+ HP models are easier with two people.
+- **Fuel:** Drain the system or add fuel stabilizer if the motor will sit unused for more than a month. Untreated fuel gums up carburetors.
+- **Mounting:** Transom clamps must be tight before every launch. Loose clamps = motor loss in deep water.
 
-## Related guides
+---
 
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), small aluminum applications
-- [Mercury 9.9 ProKicker Rice Lake, Ontario Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker-specific 9.9 variant
-- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), control type selection
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), portable motor maintenance
-- [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), break-in for any new Mercury
+## Common portable motor mistakes
+
+**1. Wrong shaft length.** The single most preventable mistake. Measure before you buy.
+
+**2. Buying too small for the boat.** A 5 HP on a 14-foot tin boat with two anglers is underpowered. Right-size for actual loading.
+
+**3. Skipping fuel stabilizer.** Portable motors sit unused for stretches. Untreated fuel creates carburetor problems.
+
+**4. Skipping break-in.** Portable motors have the same break-in requirements as larger Mercurys. Skipping it shortens motor life.
+
+**5. Loose transom clamps.** Check them before every launch. This one gets people in trouble.
+
+---
+
+## Related posts
+- [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide)
+- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide)
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
+
+---
 
 ## Ready to buy a portable Mercury?
 
-Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD on portable models 2.5 to 20 HP.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through portable motor selection for your specific boat, [give us a call at (905) 342-2153](tel:9053422153). We sell hundreds of portable Mercurys every year and can match the right motor to your application.
+Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca), live pricing in CAD on the full portable range. Or call **905-342-2153**. We sell portable Mercurys every season and can match the right motor to your specific application.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
-
----
-
-
-## Try the calculator
-
-Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) - no signup, no email gate, takes 30 seconds.
 ## FAQ
 
-**What's the most popular Mercury portable outboard in Canada?**
-The Mercury 9.9 MH. It's the workhorse of cottage fishing, kicker motors, and small-boat applications. Reliable, lightweight, and easy to transport.
+**What's the most popular Mercury portable outboard in Canada?**  
+The Mercury 9.9 MH. Workhorse of cottage fishing, kicker motors, and small-boat applications across the Kawarthas. Reliable, manageable weight, and easy to transport.
 
-**Do I need rigging for a Mercury portable motor?**
-No, for most applications. Portables are drop-in installs with transom clamps and a separate fuel tank. No control rigging required for tiller variants.
+**Do I need rigging for a Mercury portable motor?**  
+No. Portables are drop-in installs with transom clamps and a separate fuel tank. No control rigging required for tiller variants.
 
-**Can I use a 9.9 as my main motor on a small boat?**
-Yes for 12 to 14 ft tin boats with one or two passengers. The 9.9 is plenty for solo or two-person fishing on sheltered water.
+**Can I use a 9.9 as my main motor on a small boat?**  
+Yes, for 12 to 14-foot tin boats with one or two passengers on sheltered water. The 9.9 is plenty for solo or two-person fishing on smaller Kawartha lakes.
 
-**Manual or electric start for a portable Mercury?**
-Manual start (MH) is lighter, cheaper, and simpler. Electric start (EH) is more convenient and easier on older operators. Both work fine; choose based on preference and budget.
+**Manual or electric start?**  
+Manual start (MH) is lighter, cheaper, and simpler. Electric start (EH) is more convenient. Both are reliable; choose based on your preference and budget.
 
-**What shaft length do I need?**
-Most small boats need short shaft (15 inches). Sailboat auxiliaries and deeper transoms need long shaft (20 inches). Measure transom depth before purchase. Cavitation plate should be even with the bottom of the hull at prop location.
+**What shaft length do I need?**  
+Most small boats need short shaft (15 inches). Sailboats and deeper transoms need long shaft (20 inches). Measure transom depth before purchase, cavitation plate should be roughly level with the bottom of the hull.
 
-**How do I store a portable Mercury motor?**
-Use a motor stand or wall mount for vertical storage. Horizontal storage is okay if oil and fuel positions per owner's manual. Stabilize fuel before storage longer than a month.
+**How do I store a portable Mercury?**  
+Motor stand or wall mount. Stabilize fuel if storing more than a month. Check the owner's manual for correct orientation.
 
-**Is the 9.9 MH the same as the 9.9 ProKicker?**
-No. The 9.9 MH is a general-purpose portable motor. The 9.9 ProKicker is purpose-built for fishing kicker applications, with high-thrust gearcase, larger prop, and longer shaft. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide).
+**Is the 9.9 MH the same as the 9.9 ProKicker?**  
+No, the 9.9 MH is a general-purpose portable motor. The 9.9 ProKicker is purpose-built for fishing kicker applications, with a high-thrust gearcase, larger prop, and longer shaft for big-boat transoms.
 
-**Can I use a portable Mercury on a sailboat?**
-Yes. Sailboat auxiliaries are a common portable application. Long-shaft variants (20 inch) typically required for sailboat transoms.
+**Can I use a portable Mercury on a sailboat?**  
+Yes. Long-shaft (20-inch) variants are typically required for sailboat transom depths.
 
-**How long does a portable Mercury last?**
-Modern portable Mercurys last 1,000+ hours with proper maintenance. For typical recreational use (10 to 50 hours per season), that translates to 20+ years of useful life.
+**Do portable Mercurys need annual maintenance?**  
+Yes. Annual fluid changes, fuel system service, and inspection are recommended. The cost is small relative to motor replacement. We service portables at HBW.
 
-**Can I transport a portable Mercury in my car?**
-Yes for smaller variants (under 15 HP). Most portable Mercurys have carrying handles. Larger portables (15+ HP) are easier with two people. Check owner's manual for transport position (often horizontal with specific orientation).
-
-**Do portable Mercurys need annual maintenance?**
-Yes. Annual fluid changes, fuel system service, and inspection are recommended even on portables. The cost is small relative to motor replacement. We service portables at HBW.
-
-**What's the cost of a Mercury 9.9 MH?**
-For specific 2026 pricing in CAD, [build a quote](/quote/motor-selection). Pricing varies by current promotions and motor configuration.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
-`,
+---`,
     faqs: [
       {
         question: 'What\'s the lightest outboard Mercury makes?',
@@ -4969,109 +4908,171 @@ Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new P
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['boat motor size', 'outboard motor calculator', 'hp for boat weight', 'motor sizing guide', 'boat horsepower'],
-    content: `
-*Last reviewed: 2026-05-07*
+    content: `**Last reviewed:** 2026-05-07
 
-> **Quick answer:** Start with the capacity plate's max HP, that's your federal ceiling. Then pick within the upper third of that range for normal loads, or the lower third if you're pushing a kicker, fuel, and gear. Hull weight, transom width, and use case matter more than rules of thumb. Build a real quote at mercuryrepower.ca.
+---
 
-## How to Size Your Boat Motor
+> **Quick answer:** Start with the capacity plate, that's your legal ceiling and the starting point for every motor sizing conversation. Then match HP to hull weight, typical load, use case, and where you run. We've been matching Mercury motors to Ontario boats since 1965. Build a real installed quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-[Choosing the right horsepower](/blog/how-to-choose-right-horsepower-boat) involves more than just checking your capacity plate. Here's how to think through motor sizing.
+---
 
-### The Starting Point: Capacity Plate
+## Why motor sizing isn't just about the HP number
 
-Every boat has a maximum HP rating. This is your ceiling - never exceed it. But maximum isn't always best.
+People tend to arrive at a motor size conversation one of two ways: they've heard "bigger is better" and they want the most HP they can fit, or they've heard "don't waste money" and they're shopping at the bottom of the capacity range.
 
-**Find Your Plate**: Usually on transom or near helm
-**Look For**: Max HP, max persons, max weight
+Both approaches miss the point.
 
-### Factors That Affect HP Needs
+The right motor size is the one that matches your hull, your typical load, your use case, and your budget, and stays within the capacity plate ceiling. That's a four-variable problem, not a one-variable one.
 
-**Boat Type**:
-- V-hulls: Most efficient, need less HP
-- Pontoons: Need more HP than length suggests
-- Jon boats: Light, plane easily
-- Deep-V offshore: Need power for rough water
+Here's how to work through it.
 
-**Typical Load**:
-- Solo fishing: Less HP needed
-- Full family: More HP for same performance
-- Gear-heavy: Consider weight impact
+---
 
-**Water Conditions**:
-- Protected lakes: Lower HP works
-- Big water/wind: More power is safety
-- Rivers with current: More HP needed
+## Start with the capacity plate, always
 
-**Intended Use**:
-- Cruising: Mid-range HP efficient
-- Fishing: Consider trolling needs
-- Watersports: More HP for pulling
-- Speed: Max HP makes sense
+Every boat has a maximum HP rating stamped on the capacity plate, usually located on the transom or near the helm. This is not a suggestion. It's the legal ceiling set by the manufacturer based on hull testing.
 
-### Sizing Guidelines
+**Never exceed it.** Going over the capacity plate voids Mercury warranty coverage, creates insurance exposure, and compromises the safety of the hull. We will not rig a motor that exceeds the plate, full stop.
 
-**Minimum Power (Gets You Moving)**:
-- 25-30 lbs boat weight per HP
+The capacity plate also shows maximum persons and maximum weight. Those numbers matter too when thinking about loading.
 
-**Recommended Power (Good Performance)**:
-- 15-20 lbs boat weight per HP
+---
 
-**Optimal Power (Excellent Performance)**:
-- 10-15 lbs boat weight per HP
+## The factors that move the right HP
 
-### Real-World Examples
+**Boat type and hull design**
 
-**16ft Aluminum Fishing Boat**:
-- Boat weight: 800 lbs
-- Passengers/gear: 600 lbs
-- Total: 1,400 lbs
-- Recommended: 40-90HP (some 16 ft hulls cap at 60-75 HP - always check the capacity plate)
-- Typical choice: 60HP
-- Why: 60 HP balances hole shot, fuel economy, and capacity plate headroom for most 16 ft aluminum fishing boats. 40 HP is fine for lighter use; 75-90 HP only if your hull plate allows it and you carry heavier loads.
+Different hulls have different HP efficiency:
+- **V-hull runabouts:** Efficient hull designs; need less HP for a given speed
+- **Pontoons:** Blunt-fronted tubes with significant drag; need more HP per foot than their length suggests
+- **Jon boats:** Light, plane easily, lower HP thresholds
+- **Deep-V hulls:** Need power for rough water performance and stability
 
-**22ft Pontoon**:
-- Boat weight: 2,000 lbs
-- Passengers: 1,500 lbs
-- Total: 3,500 lbs
-- Recommended: 90-150HP (Command Thrust recommended at 115 HP and up)
-- Typical choice: 115HP
+**Typical load**
 
-**20ft Bass Boat**:
-- Boat weight: 1,800 lbs
-- Passengers/gear: 500 lbs
-- Total: 2,300 lbs
-- Recommended: 150-225HP (never exceed the capacity plate)
-- Typical choice: 200HP
+This is where most people make their mistake. They size the motor for an empty boat or solo use, then load it up with family, gear, and a full cooler and wonder why it feels underpowered.
 
-### When in Doubt
+Plan for your typical real-world load, not your optimistic empty-boat number.
 
-**Size Up If**:
-- You fish large, exposed water
-- Full loads are common
-- You hate being underpowered
-- Resale value matters
+**Water conditions**
 
-**Size Down If**:
-- Calm, protected waters only
+Protected Kawartha bays: lower HP works fine. Open Rice Lake in the afternoon wind: more HP is a safety consideration, not a luxury. Lake Ontario: even more so. Bigger, more exposed water changes the practical HP minimum.
+
+**Intended use**
+
+- Cruising: mid-range HP is efficient and appropriate
+- Fishing: consider trolling needs alongside main-motor requirements
+- Water sports: more HP for pulling people on tubes and skis
+- Speed-focused use: HP at or near the capacity plate maximum makes sense
+
+---
+
+## Sizing guidelines
+
+These ratios give you a working starting point. **Always confirm against your specific capacity plate.**
+
+| Performance level | Ratio (boat weight to HP) |
+|--|--|
+| Minimum (gets you moving, not much more) | 25–30 lbs of total boat weight per HP |
+| Recommended (good performance, typical use) | 15–20 lbs per HP |
+| Optimal (excellent performance, full loads) | 10–15 lbs per HP |
+
+*Total boat weight = hull weight + maximum passenger and gear load.*
+
+---
+
+## Real-world Ontario examples
+
+### 16-foot aluminum fishing boat
+- Hull weight: approximately 800 lbs
+- Passengers and gear (typical): approximately 600 lbs
+- Total: approximately 1,400 lbs
+- Capacity plate range: check your plate, 16-foot aluminum hulls vary; many rate 60–75 HP, some allow higher
+- **Typical choice: 60 HP FourStroke**, balances hole shot, fuel economy, and headroom for most uses. A 40 HP is fine for lighter solo use; step up only if your hull's plate allows and you consistently carry heavy loads.
+
+### 22-foot pontoon
+- Hull weight: approximately 2,000 lbs
+- Passengers (cottage family): approximately 1,500 lbs
+- Total: approximately 3,500 lbs
+- **Typical choice: 115 HP Command Thrust**, Command Thrust gearcase recommended at 115 HP and above on most pontoons. Handles the load profile pontoons demand.
+
+### 20-foot bass boat
+- Hull weight: approximately 1,800 lbs
+- Passengers and tournament gear: approximately 500 lbs
+- Total: approximately 2,300 lbs
+- **Typical choice: 200 HP Pro XS**, tournament performance on a 20-foot bass hull. Never exceed the capacity plate; check yours.
+
+---
+
+## When to size up vs. size down
+
+**Size up if:**
+- You fish or run on large, exposed water regularly
+- Full family loads are the norm, not the exception
+- You're planning to keep the boat 10+ years
+- Resale value matters and more HP holds it better
+
+**Size down if:**
+- Calm, protected waters only (small Kawartha lakes, sheltered bays)
 - Usually solo or light loads
-- Budget is tight
-- Fuel economy is priority
+- Fuel economy is the primary concern
+- Budget is tight and underpowering is better than no boat at all
 
-### The Harris Boat Works Method
+The middle ground: we usually find the right answer is one HP class above the bare minimum, enough headroom to be comfortable, not so much that you're over-buying for your actual use.
 
-Bring us your boat info and tell us how you fish. We'll recommend the right motor based on decades of experience matching Mercury motors to boats on Ontario waters (Harris Boat Works has been on Rice Lake in the Kawarthas (Ontario) since 1947 and a Mercury dealer since 1965).
+---
 
-**[Get a Personalized Motor Recommendation](/quote)**
+## What HBW brings to this conversation
 
-## Related guides
+Harris Boat Works has been matching Mercury motors to Ontario boats since 1965. Three generations of doing this on Rice Lake in the Kawarthas gives us a practical picture that no HP calculator captures: the lakes you're running, the conditions you'll face in July when the wind comes up, and what it feels like to be underpowered on a Kawartha afternoon.
 
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
-- [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
-- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario), the 115 vs 150 decision
-- [Mercury 150-200hp V6: Performance Made Practical](/blog/mercury-150-200hp-v6-performance). V6 150-200 HP performance
+Bring us your boat info, make, model, year, length, and how you actually use it, and we'll give you a straight answer. That includes telling you when you don't need a bigger motor.
 
-    `,
+---
+
+## Related posts
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
+
+---
+
+## Ready to size your motor?
+
+Build a real installed quote at [mercuryrepower.ca](https://mercuryrepower.ca), real pricing across every Mercury HP class. Or call **905-342-2153** and we'll work through your specific boat.
+
+---
+
+## FAQ
+
+**How do I know what size motor my boat needs?**  
+Start with the capacity plate, your legal ceiling. Then factor in hull weight and design, typical passenger and gear load, where you run, and what you do on the water. The capacity plate sets the maximum; use case and loading determine the best fit within that range.
+
+**Can I put a bigger motor than the capacity plate allows?**  
+No. The capacity plate is the legal ceiling set by the manufacturer. Going over it voids Mercury warranty, creates insurance exposure, and compromises hull safety. We won't rig above the rated maximum.
+
+**What's the most common motor sizing mistake?**  
+Buying too small. Customers optimize for price at the low end of the range, then fight their underpowered boat for two seasons and trade up at full cost. The right motor is almost never the bottom of the acceptable range.
+
+**How does loading affect the HP I need?**  
+Significantly. A fully loaded family boat behaves like a different machine than an empty one. Plan for your real typical load, not the ideal solo-run scenario.
+
+**What does "lbs per HP" mean in motor sizing?**  
+It's a ratio of total loaded boat weight to horsepower. Lower ratio (more HP per pound of boat) = better performance. 10–15 lbs/HP is optimal; 25–30 lbs/HP is the functional minimum for getting moving.
+
+**How does Mercury Command Thrust factor into sizing?**  
+Command Thrust is a gearcase option (not extra HP) that matters for pontoons and heavy hulls. On a pontoon, the right HP choice with Command Thrust will outperform a higher HP choice with a standard gearcase in real-world use. See the [Command Thrust guide](/blog/mercury-command-thrust-guide-pontoon-boats).
+
+**Should I get the same HP my old motor was?**  
+Not necessarily. If you were happy with the old motor, matching HP is a reasonable starting point, but it's worth reviewing whether that HP was actually right for your current use or just what came with the boat originally.
+
+
+---
+
+*Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 | harrisboatworks.ca | 905-342-2153*  
+*Mercury dealer since 1965, family marina on Rice Lake since 1947*`,
     faqs: [
       {
         question: 'Why not just max out the HP rating?',
