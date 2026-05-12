@@ -12493,208 +12493,208 @@ Questions? Call **905-342-2153**. We answer the phone and we won't tell you what
     category: "Lifestyle",
     readTime: "9 min read",
     keywords: ["Trent-Severn Waterway 2026 guide", "Trent-Severn free lockage 2026", "Canada Strong Pass boating", "Trent-Severn locks hours 2026", "Rice Lake Trent-Severn", "boating Trent-Severn for beginners"],
-    content: `# Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan
+    content: `### Quick Answer
 
-*Last reviewed: 2026-05-07*
+The Trent-Severn Waterway is a 386-kilometre navigable system running from Trenton to Port Severn through 44 locks. In 2026, lockage is free under the Canada Strong Pass from June 19 to September 7. For a 20-foot boat, that is roughly $45 per day in fees not paid. Mooring at lockstations is still $1.50 per foot per night. Harris Boat Works sits on Rice Lake between Locks 18 and 19. Navigation season runs May 15 to October 12, 2026.
 
-> **Quick answer:** The Trent-Severn runs 386 km from Trenton to Port Severn through 44 locks. 2026 lockage hours and free-lockage windows are set by Parks Canada. Plan for slow water, debris after spring, and crowded weekends. Service before you go, book at mercuryrepower.ca.
+**Verify all lock hours, fees, and program dates directly with Parks Canada before your trip, as these details are subject to change.**
 
-Repowering before the season? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas). For rigging questions on the new motor, the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) is the companion read.
+---
 
-Big news for 2026: lockage on the Trent-Severn is **free from June 19 to September 7** as part of the [Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass). For a 20-foot boat, that's $45 a day in fees you're not paying, about $315 saved on a full week-long transit, more if you stay seasonal.
+### Full Article
 
-If you've ever thought about running the Trent-Severn, even a weekend stretch of it, 2026 is the year.
+The Trent-Severn is one of those places where a 20-foot aluminum boat built for walleye fishing can lock through a hydraulic lift designed in 1904, anchor beside a 19th-century lock keeper's cottage, and pull into a small-town pub for lunch. The New York Times called it one of the best travel experiences of 2025. Three generations of this family have watched the waterway from the dock at Gores Landing without needing the Times to confirm it.
 
-This is the local's version of the guide. Harris Boat Works sits directly on the waterway at Gores Landing, on Rice Lake, Ontario (in the Kawarthas), between Locks 18 and 19. We've been here since 1947, we've fuelled boats running the system in both directions, and we know which questions first-timers actually ask.
+Harris Boat Works sits on Rice Lake, roughly between Locks 18 and 19. We have been here since 1947. This is the guide we would give a friend who was doing their first trip.
 
 ---
 
 ## What the Trent-Severn Actually Is
 
-The Trent-Severn Waterway is a **386-kilometre navigable system** that connects Lake Ontario at Trenton to Georgian Bay at Port Severn. It's run by [Parks Canada](https://parks.canada.ca/lhn-nhs/on/trentsevern) as a National Historic Site. There are 44 locks (including two flight locks and one marine railway), about 60 bridges, and it cuts through nine watersheds, including Rice Lake, the Kawarthas, Lake Simcoe's connection, and the Severn River.
+386 kilometres. 44 locks. Two flight locks. One marine railway. About 60 bridges. Operated by Parks Canada as a National Historic Site.
 
-The *New York Times* named it one of the best travel experiences of 2025. That wasn't a fluke. There aren't many places on the planet where you can take a 20-foot fishing boat, lock through a hydraulic lift designed in 1904, anchor for the night beside a 19th-century lock keeper's cottage, and have lunch at a small-town pub the next afternoon.
+It connects Lake Ontario at Trenton to Georgian Bay at Port Severn, passing through Rice Lake, the Kawarthas, and the Severn River. The infrastructure ranges from simple manual locks to the Big Chute Marine Railway, which lifts boats over land in a giant cradle, and the Peterborough Lift Lock, one of the largest hydraulic boat lifts in the world.
 
----
-
-## 🚨 Free Lockage 2026. What's Actually Free
-
-The **Canada Strong Pass** runs **June 19 - September 7, 2026**. During that window:
-
-- **Lockage is free** for boats, canoes, and kayaks. Canadian residents and international visitors. No permit needed for the day.
-- **Camping and roofed accommodations** at Parks Canada sites are 25% off.
-- **Youth 17 and under** get free admission to all Parks Canada sites.
-
-What's still going to cost you (per the [Parks Canada Trent-Severn fee schedule](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/tarifs-fees)):
-
-- **Mooring**: $1.50/ft overnight at a lockstation
-- **Shore power**: $12/night
-- **Parking, charts, third-party services**, same as any other year
-
-So a 20-foot boat tying up overnight at a lock pays $30. Plus power, if you need it. That's it. For the price of one day of normal lockage, you can sleep on the waterway.
+Most boats on the waterway are fishing boats, pontoons, and cruisers. It is not a river system, it is a managed navigable waterway where the lock staff do the actual work, and you hold a line.
 
 ---
 
-## What Else Changed for 2026
+## Free Lockage 2026, What's Actually Free
 
-A few operational shifts from Parks Canada that catch first-timers every year. Read these before you push off.
+The Canada Strong Pass program makes lockage free from **June 19 to September 7, 2026**, for Canadian residents and international visitors on all boat types. No permit required for the day.
 
-**Lockage permits in person only, 2026 season.** Parks Canada has eliminated online lockage permit sales for the 2026 season. Lockage permits, including the free Canada Strong Pass sticker during the June 19 to Sept 7 window, must be picked up in person at a lockstation. **Seasonal mooring passes and reservations can still be purchased online** at parks.canada.ca; only lockage moved to in-person-only. The rule that catches first-timers: show up at the lock expecting to buy lockage online and you'll be turned around at the blue line. Bring a card (most stations accept tap), and arrive 15 minutes earlier than you'd planned. Source: [Parks Canada, Canada Strong Pass at the Trent-Severn](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass).
+**What else is free during the pass window:**
+- Camping and roofed accommodations at Parks Canada sites: 25% off
+- Youth 17 and under: free admission to all Parks Canada sites
 
-**25% off Parks Canada camping along the corridor.** Same window (June 19 to Sept 7), Parks Canada-managed campgrounds along the Trent-Severn are 25% off. If you're doing a multi-day transit and would rather sleep on land than tie to a lock wall, this is real money. Worth pricing out before you commit to a route.
+**What is still paid:**
+- Mooring at lockstations: $1.50 per foot per night
+- Shore power: $12 per night
+- Parking, charts, and third-party services
 
-**Paid shoulder seasons, in-person only, system closed outside them.** Lockage is paid (rates below) from **May 15 to June 18** and again from **Sept 8 to Oct 12**, in person at the lockstation. The waterway is closed to lockage outside those dates. If you're planning an early-May shakedown or a mid-October last-run, the gates simply aren't open.
+Example: a 20-foot boat tying up overnight at a lock pays $30 for mooring, plus $12 if you use shore power.
+
+**Verify current program details and dates at Parks Canada before your trip.**
 
 ---
 
-## 2026 Navigation Season and Hours
+## 2026 Navigation Season and Lock Hours
 
-The waterway is open **May 15 - October 12, 2026.** Hours change three times during the season (per the [Parks Canada hours of operation page](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)):
+**Season:** May 15 , October 12, 2026
 
-**May 15 - June 18 (pre-peak):**
-- Mon-Thu: 10:00 am - 3:30 pm
-- Fri-Sun + Victoria Day (May 18): 9:00 am - 6:30 pm
+| Period | Mon, Thu | Fri, Sun + Holidays |
+|---|---|---|
+| May 15 , June 18 | 10:00 am , 3:30 pm | 9:00 am , 6:30 pm |
+| June 19 , Sept 7 (peak) | 9:00 am , 5:30 pm | 9:00 am , 6:30 pm |
+| Sept 8 , Oct 12 | 10:00 am , 3:30 pm | 9:00 am , 4:30 pm |
 
-**June 19 - September 7 (peak, free lockage window):**
-- Mon-Thu: 9:00 am - 5:30 pm
-- Fri-Sun + Canada Day, Civic Holiday, Labour Day: 9:00 am - 6:30 pm
+**The key operational rule:** You must arrive at the blue zone (the boat staging area) by the last lockage time. It is not enough to be nearby. Lockmasters do not open the gates after closing. Build at least 30 minutes of slack into your day's end.
 
-**September 8 - October 12 (post-peak):**
-- Mon-Fri: 10:00 am - 3:30 pm
-- Sat-Sun + Thanksgiving: 9:00 am - 4:30 pm
-
-The rule that catches first-timers: **you have to arrive at the "blue zone", the boat staging area at the lock, by the last lockage time, not just tie up at a marina nearby.** Lockmasters won't open the gates after closing. Plan your day so you have at least 30 minutes of slack at the end.
+**Note:** Hours are set by Parks Canada and are subject to change. Verify the current schedule at parks.canada.ca before departure.
 
 ---
 
 ## A First-Timer's Guide to Locking Through
 
-If you've never locked through, the system looks intimidating. It isn't, it's slow, predictable, and the lockmasters do the actual work.
+The system looks complex. It is slow and predictable, and the lockmaster does most of the work.
 
-What you do:
+**The process:**
 
-1. **Approach slowly.** Wait in the blue zone (marked area before the lock) until the lockmaster signals you in.
-2. **Have fenders and dock lines ready on both sides.** The lock floor is concrete, your gel coat will not be happy if you bounce off the wall.
-3. **Have a person at the bow and a person at the stern** (or run mid-line solo on a small boat). The lockmaster will hand you a rope hung over the lock wall, you hold it as the water rises or falls. You're not tying off; you're keeping the boat against the wall.
-4. **Engine off, in neutral, while the chamber fills or empties.** It takes 8-15 minutes per lock.
-5. **Monitor VHF Channel 16**, that's where Parks Canada will reach you if anything's unusual. (Murray Canal swing bridges monitor Channel 14 specifically.)
+1. Approach slowly. Wait in the blue zone until the lockmaster signals you in.
+2. Have fenders ready on both sides. The lock walls are concrete, gel coat does not bounce well.
+3. Have a person at the bow and one at the stern (or run a single mid-line on a small boat). The lockmaster hands you a rope from the lock wall. You hold it as the water level rises or falls. You are not tying off, you are keeping the boat against the wall.
+4. Engine off or in neutral while the chamber fills or empties. This takes 8 to 15 minutes per lock. Plan about 20 minutes per lock for travel calculations.
+5. Monitor VHF Channel 16. Murray Canal swing bridges specifically use Channel 14.
 
-That's the whole job. A good lockmaster will walk a first-timer through it without making a thing of it.
+A good lockmaster will walk a first-timer through it without making a thing of it. The system handles tens of thousands of transits per season.
 
 ---
 
-## Vessel Constraints. Will Your Boat Fit?
+## Vessel Constraints, Will Your Boat Fit?
 
-A few hard limits to plan around:
+| Constraint | Detail |
+|---|---|
+| Vertical clearance (lowest fixed bridge) | 22 feet (6.7 m) |
+| Water depth at Locks 1, 19 | 8 feet |
+| Water depth at Locks 20, 45 | 6 feet |
+| Big Chute Marine Railway max length | 99.2 feet |
+| Big Chute max beam | 24 feet |
+| Big Chute max weight | 99 tons |
 
-- **Vertical clearance: 22 ft (6.7 m)**, that's the lowest fixed bridge on the system. Anything taller has to come down (radar arches, tall biminis, sailboats with masts un-stepped).
-- **Water depth: 8 ft on Locks 1-19, 6 ft on Locks 20-45.** Most pleasure boats are fine. Deep-draft cruisers, verify.
-- **Big Chute Marine Railway (Lock 44):** carries boats *over* land in a giant carriage. Max 99.2 ft length, 24 ft beam, 99 tons.
-
-Sailboats can transit, but the mast has to come down for the section between Trenton and Lakefield (or wherever your tallest fixed bridge is on your route). Most sailors un-step at Trenton or Frankford.
+Anything taller than 22 feet, radar arches, tall biminis, sailboat masts, needs to come down. Most sailors un-step at Trenton or Frankford before the transit.
 
 ---
 
 ## Fees Outside the Free Window
 
-If you're locking through May 15 - June 18 or September 8 - October 12, here's what you'll pay (all rates per foot of boat length):
+When the Canada Strong Pass is not active, lockage fees apply:
 
 | Permit | Rate |
-|--------|------|
+|---|---|
 | Single lock and return | $1.50/ft |
 | One day | $2.25/ft |
-| Transit (one-way through the system) | $6.00/ft |
+| One-way transit | $6.00/ft |
 | Six days | $6.50/ft |
 | Seasonal | $11.25/ft |
 
-For a 20-foot boat, that's $45 for a day, $225 for a season. Honestly, the seasonal pays for itself fast if you're locking through more than five times a year.
+For a 20-foot boat: $45 for a day, $225 for a seasonal pass. **Confirm current fee schedules with Parks Canada, as these can change between seasons.**
 
 ---
 
 ## A Sample Trip Plan from Rice Lake
 
-Most of our customers don't transit the whole 386 km. They take three or four locks at a time, anchor for the night, eat lunch in a small town, and come back. That's a perfectly good way to do it.
+Most people do not transit all 386 kilometres. They take three or four locks at a time, anchor for the night, eat lunch in a small town, and come back. Here are three trip types from HBW at Gores Landing.
 
-If you're starting from HBW at Gores Landing, here are three trips that work in 2026:
+**Weekend run (2 days, 4 locks):** East from Rice Lake to Lock 18 at Hastings. Overnight at Hastings. Lunch at one of the pubs. Return Sunday. Quiet and scenic. No commercial harbor traffic.
 
-**Weekend run (2 days, 4 locks):** East from Rice Lake to Lock 18 at Hastings. Tie up overnight at Hastings, eat at one of the pubs, return Sunday. Quiet, scenic, and you only run the Otonabee section.
+**Long weekend (4 days, ~10 locks):** West from Rice Lake up the Otonabee through Lock 19 (Scott's Mills) and the Peterborough Lift Lock (Lock 21). Continue to Lakefield and back.
 
-**Long weekend (4 days, ~10 locks):** West from Rice Lake up the Otonabee through Locks 19 (Scott's Mills) and the **Peterborough Lift Lock. Lock 21**, which is the highest hydraulic lift lock in the world (a 65-foot rise in about 90 seconds). Continue to Lakefield and back.
+**Full Kawartha tour (7 days, 17 locks):** Rice Lake to Bobcaygeon and back. Includes the Lift Lock, the flight at Healey Falls, Lakefield, and Buckhorn. The most relaxed pace, best for first-timers wanting to see the system.
 
-**Full Kawartha tour (7 days, 17 locks):** Rice Lake to Bobcaygeon and back. You'll see the Lift Lock, the flight at Healey Falls, Lakefield, Buckhorn, and the heart of the Kawarthas. Most relaxed pace. Best version if you've never done it.
-
-For a full transit (Trenton to Port Severn), plan **5-7 days minimum** at a relaxed pace. Faster is possible but you'll burn the days locking instead of seeing anything.
+For a full Trenton-to-Port-Severn transit, plan at least 5 to 7 days at a relaxed pace.
 
 ---
 
 ## Where to Fuel Up
 
-Marinas with fuel dot the waterway, but they're not evenly spaced. Major fuel stops in order from south to north: Trenton, Frankford, Campbellford, **Harris Boat Works (Gores Landing on Rice Lake)**, Hastings, Lakefield, Buckhorn, Bobcaygeon, Fenelon Falls, Orillia, Port Severn.
+Fuel is available at commercial marinas along the route, not at lockstations.
 
-Two notes about fuel:
+**Fuel stops from south to north:** Trenton, Frankford, Campbellford, Harris Boat Works (Gores Landing on Rice Lake), Hastings, Lakefield, Buckhorn, Bobcaygeon, Fenelon Falls, Orillia, Port Severn.
 
-- **HBW pumps ethanol-free 89-octane marine gas.** That matters if you're storing fuel between trips, ethanol pump gas absorbs water and degrades over a few weeks. Ethanol-free is shelf-stable for the season.
-- **Plan fuel stops conservatively.** Some smaller marinas close mid-week or end-of-season. Call ahead if you're transiting outside peak summer.
+**HBW fuel note:** We pump ethanol-free 89-octane marine gas. Ethanol pump gas absorbs water and degrades over weeks, ethanol-free is shelf-stable for a season. Call ahead if you are transiting outside peak summer, smaller marinas sometimes close mid-week or end-of-season.
 
 ---
 
 ## Don't Own a Boat? You Can Still Do This
 
-Two ways to experience the Trent-Severn without owning:
+**Rent from HBW.** Our 9-boat fleet on Rice Lake includes 16-foot ProSports, 20-foot Transporters, and 23-foot Cruise pontoons. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
-- **Rent a small fishing or pontoon boat for a day from HBW**, we have a 9-boat fleet on Rice Lake (16 ft ProSports, 20 ft Transporters, 23 ft Cruise pontoons). Rice Lake itself is part of the waterway, so technically you're already on the Trent-Severn. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
-- **Houseboat the system**. Le Boat (Smith Falls, but their network includes the Trent-Severn), Egan, and a couple of Kawartha-based outfits rent multi-day houseboats designed for this exact trip. Sleep on board, lock through every day, no boating licence required for most of these (the operator briefs you).
+**Houseboat the system.** Companies including Le Boat operate on the Trent-Severn and offer multi-day trips. Most houseboat operators brief customers on locking, no boating licence required in most rental cases.
 
 ---
 
 ## Why HBW Is a Useful Home Base
 
-If you're driving up from the GTA, **we're 90 minutes from Toronto**, on the south shore of Rice Lake at Gores Landing. We have:
+HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from Toronto.
 
-- **Ethanol-free 89 marine gas** at the dock
-- **Transient slips** (4-6 available, $1.00/ft/night, call ahead)
-- **A 2-lane concrete launch ramp** ($20/day, $200/season) with parking, washrooms, snacks
-- **Service** if your motor decides the trip is over (we're a Mercury Platinum dealer)
-- **Rentals**, if you want to try Rice Lake before committing to a longer trip
+| Service | Detail |
+|---|---|
+| Fuel | Ethanol-free 89-octane marine gas at the dock |
+| Transient slips | 4, 6 available; $1.00/ft/night; call ahead to confirm availability |
+| Launch ramp | 2-lane concrete; $20/day or $200/season |
+| Rentals | 9-boat fleet for day trips |
+| Mercury service | Platinum dealer; for engine repairs, we only service Mercury and Mercruiser |
 
-We've been on this lake since 1947. Three generations of our family have watched the Trent-Severn from this dock. If you want a starting point that knows the system from the water side instead of the tourism-board side, you've got one.
-
-Call **905-342-2153** before you head out, especially if you need a slip or want to confirm fuel availability. And if your old motor's giving you doubts about a 200-km round trip, that's a different conversation, but it's one we have all the time. [mercuryrepower.ca](https://mercuryrepower.ca) for new Mercury pricing.
-
----
-
-## Frequently Asked Questions
-
-**Do I need a special licence to lock through the Trent-Severn?**
-No special lockage licence is required. You do need your standard Pleasure Craft Operator Card (PCOC), that's a one-time test, not annual, and your boat needs a valid Pleasure Craft Licence (PCL). The 2026 PCL changes converted lifetime licences to 5-year renewals at $24, so check yours before you go.
-
-**How long does it take to lock through?**
-A standard lock takes 8-15 minutes from arrival to departure. The Peterborough Lift Lock is faster, the Big Chute Marine Railway is slower (~25 minutes). Plan for 20 minutes per lock when calculating travel days.
-
-**Can I anchor inside a lock chamber overnight?**
-No, but you can tie up at the lockstation walls (above or below the lock) for $1.50/ft. Most lockstations have water and shore power available.
-
-**What's the best part of the system if I only have one day?**
-The Peterborough Lift Lock (Lock 21) and the surrounding Lakefield-Trent canal stretch is the highlight reel. From Rice Lake, that's a solid full day round-trip with one lift-lock cycle, which is the experience.
-
-**Is fuel cash-only at lockstations?**
-Parks Canada doesn't sell fuel at lockstations, only commercial marinas do. Most marinas accept cards. Bring a backup credit card just in case.
+Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. Mercury repower quotes at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 ---
 
-**Phone:** 905-342-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Mercury repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
+## FAQs
+
+**Do I need a special licence to lock through the Trent-Severn?** 
+No. You need a Pleasure Craft Operator Card (PCOC) and a valid Pleasure Craft Licence (PCL), the same requirements as any Ontario boating. No special lockage licence.
+
+**What changed for PCLs in 2026?** 
+Lifetime licences were converted to 5-year renewals at $24. If your PCL was previously lifetime and has not been renewed, check its status before the trip.
+
+**How long does a standard lock take?** 
+8 to 15 minutes from entry to exit. Plan 20 minutes per lock for travel calculations. The Peterborough Lift Lock is faster; Big Chute is slower at about 25 minutes.
+
+**Can I anchor inside a lock chamber overnight?** 
+No. You can tie up at the lockstation walls above or below the lock at $1.50 per foot per night.
+
+**Are water and shore power available at lockstations?** 
+Most lockstations have both. Shore power is $12 per night outside the free-lockage program window.
+
+**Parks Canada doesn't sell fuel at lockstations?** 
+Correct. Fuel comes from commercial marinas along the route. Most marinas accept cards.
+
+**What is the best single-day section of the Trent-Severn?** 
+The Peterborough Lift Lock (Lock 21) and the surrounding Lakefield-Trent canal stretch. The Lift Lock alone is worth the trip.
 
 ---
 
-## Sources
+## Internal Links
+- Walleye Opener Boat Prep Checklist
+- Mercury SmartCraft Connect Guide Ontario
+- Rice Lake Fishing Guide
+- Boat Rentals on Rice Lake
 
-- Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
-- Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)
-`,
+## CTA
+
+**Starting from Rice Lake? HBW is between Locks 18 and 19.** 
+Call 905-342-2153 before you head out, slip availability, fuel confirmation, or anything else. 
+Boat rentals at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). 
+Mercury repower quotes at [mercuryrepower.ca](https://mercuryrepower.ca). 
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
+
+---
+
+**English editor note:** All lock hours, fees, and program dates are from the source post and were current as of May 2026. Verify with Parks Canada before publishing; these change annually. Service scope sentence used in facility table naturally. Transient slip count (4, 6) should be verified as current before publishing.
+
+---
+
+---`,
     faqs: [
   {
     "question": "Do I need a special licence to lock through the Trent-Severn?",
@@ -18788,430 +18788,196 @@ Prices sourced from existing published post (reviewed 2026-05-08). All pricing t
     slug: 'mercury-controls-rigging-guide-ontario',
     title: 'Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class',
     description: 'What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario, by motor class. Real CAD ranges and what HBW includes in a quote.',
-    content: `# Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class
+    content: `### Quick Answer
 
-*Last reviewed: 2026-05-08*
-
-> **Quick answer:** A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add CAD $2,000-$6,000 to the install. Mid-range motors (40-115 HP) typically use a binnacle or side-mount control, hydraulic steering at 115+, and SmartCraft-Connect or analog gauges. V6 motors (150-225 HP) typically use binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. The matrix below shows what fits what.
-
-If you've gotten a Mercury repower quote that just lists "rigging: $2,500" with no breakdown, this guide is for you. Rigging is the part of the quote dealers love to leave vague. We don't operate that way. The components you choose for controls, steering, gauges, wiring, and prop are real engineering decisions, with real cost tradeoffs, and they affect how the boat actually feels at the helm.
-
-This is the canonical reference for Mercury repower rigging in Ontario. It covers the three core decisions (controls, steering, gauges), plus the wiring and prop work that come with them, for Mercury motors from 40 HP up through the 225 HP V6. We pulled the configurations from the actual repowers we do at Harris Boat Works on Rice Lake in the Kawarthas (Ontario), with real CAD prices and the reasoning behind each pairing.
-
-If you're shopping a portable (under 25 HP) or a Verado V8/V10/V12, the rules are different. We focus here on the 40-225 HP repower zone where the bulk of Ontario decisions get made.
+A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000, $6,000+ to the install cost, depending on HP class and configuration. For 40, 115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150, 225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40, 225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
 
 ---
 
-## Why Rigging Is the Quote Line Most Buyers Underestimate
+### Full Article
 
-When a buyer thinks "Mercury repower," they think about the motor itself. Reasonable. The motor is the most expensive single component and the one with the spec sheet you've been studying.
+The motor is the headline. The rigging is the line item most buyers underestimate.
 
-But the motor doesn't move the boat by itself. Between the motor and your hand on the throttle is a chain of components: control box, throttle and shift cables (or the digital wiring that replaces them), steering ram, helm pump, hydraulic lines, gauges, key switch, kill switch, battery wiring, and the prop. Get any of those wrong and the motor underperforms or the install costs jump.
+Between the motor and the helm sits a system: control box, throttle and shift cables or digital wiring, steering ram, helm pump, hydraulic lines, gauges, key switch, kill switch, battery wiring, prop. If any component is wrong or worn, the motor can underperform or the install cost can rise unexpectedly.
 
-Three patterns we see at Harris Boat Works:
+Three patterns come up most often at Harris Boat Works:
 
-1. **Buyer reuses old controls that don't match the new motor.** A 1998 binnacle from a carbureted 90 HP doesn't always work cleanly on a 2026 Mercury 90 EFI, especially if the wiring is corroded or the kill switch has worn out. The "savings" turn into a service call mid-season.
-2. **Buyer skips the gauge upgrade.** A new SmartCraft-equipped motor connected to old analog gauges loses about 80% of what the motor knows about itself. No fault codes, no fuel economy data, no engine hours, no warning before something fails.
-3. **Buyer cheaps out on hydraulic steering.** Cable steering on a 150 HP boat works, but it's heavy, imprecise, and tiring on a long run. Hydraulic adds $1,500-$2,500 and changes how the boat feels.
+**Reusing old controls that don't match the new motor.** A 1998 binnacle from a carbureted 90 HP does not always work cleanly on a 2026 Mercury 90 EFI. Corroded wiring and a worn kill switch can turn into a mid-season service call.
 
-The matrix below is what we'd actually quote for each HP class. It's not exhaustive (there are always edge cases), but it's the typical setup that works for Ontario boaters.
+**Skipping the gauge upgrade.** A new SmartCraft-equipped motor connected to old analog gauges gives up roughly 80% of what the motor knows about itself, fault codes, fuel economy data, engine hours, advance warning before something fails.
+
+**Underspeccing steering on a V6.** Cable steering on a 150 HP technically works. After three hours of driving, it becomes obvious why hydraulic is the standard recommendation for anything 115 HP and up.
 
 ---
 
-## The Compatibility Matrix: Mercury 40-225 HP
+## Compatibility Matrix: Mercury 40, 225 HP
 
-| HP Class | Typical Controls | Typical Steering | Typical Gauges | Typical Wiring | Prop Pitch Range | All-in Rigging (CAD, est.) |
-|---:|---|---|---|---|---|---:|
-| **40-60 HP** | Side-mount mechanical or binnacle | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | 12-13" dia, 11-15" pitch | $1,500-$2,500 |
-| **75-90 HP** | Binnacle mechanical (Gen II) | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | 13-14" dia, 13-19" pitch | $2,000-$3,000 |
-| **115 HP** | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery, ACR if dual | 14" dia, 15-21" pitch | $2,500-$4,000 |
-| **150 HP V6** | Binnacle Gen II mechanical OR DTS | Hydraulic, optional power-assist | VesselView 4/7, SmartCraft typically standard | Dual battery + ACR | 14-15" dia, 17-23" pitch | $3,500-$5,500 |
-| **175-200 HP V6** | Binnacle DTS or Pro XS DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | 14-16" dia, 19-25" pitch | $4,500-$6,500 |
-| **225 HP V6** | Binnacle DTS standard | Power-assist hydraulic | VesselView 9 standard | Dual battery + ACR, switch panel | 14-16" dia, 21-25" pitch | $5,000-$7,500 |
+| HP Class | Typical Controls | Typical Steering | Typical Gauges | Typical Wiring | Rigging Est. (CAD) |
+|---|---|---|---|---|---|
+| 40, 60 HP | Side-mount or binnacle mechanical | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | $1,500, $2,500 |
+| 75, 90 HP | Binnacle Gen II mechanical | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | $2,000, $3,000 |
+| 115 HP | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery | $2,500, $4,000 |
+| 150 HP V6 | Binnacle Gen II or DTS | Hydraulic, optional power-assist | VesselView 4/7 | Dual battery + ACR | $3,500, $5,500 |
+| 175, 200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500, $6,500 |
+| 225 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 9 | Dual battery + ACR, switch panel | $5,000, $7,500 |
 
-These are typical configurations. Your specific boat, helm, console, and budget will move the numbers. But this is the shape of the conversation when we quote a repower at HBW.
+These are typical configurations. Specific boat, helm, console, and budget change the numbers.
 
 ---
 
 ## Controls: Binnacle vs. Side Mount vs. DTS
 
-The control box is what you put your hand on at the helm. There are three main options.
-
 ### Binnacle (Top-Mount) Controls
 
-**What it is:** A single lever that mounts on top of the helm console. Push forward for forward gear, pull back for reverse. Usually includes a neutral lock, throttle-only mode (for warm-up), trim/tilt switches, and a kill switch lanyard. The standard for runabouts, bowriders, fishing boats, and most pontoons with a console.
+Single lever that mounts on top of the helm console. Push forward for forward gear, pull back for reverse. Includes neutral lock, throttle-only mode, trim/tilt switches, and kill switch lanyard. The standard setup for runabouts, bowriders, fishing boats, and most pontoons with a console.
 
-**Mercury options:**
-- **Gen II Single Lever (mechanical):** The workhorse. Connects to the motor via push-pull cables. Used on 30-300 HP motors. CAD $700-$1,200.
-- **Gen II Single Lever DTS (Digital Throttle & Shift):** Same physical lever, but the cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. CAD $1,400-$2,400.
+**Binnacle Gen II Single Lever (mechanical):** CAD $700, $1,200. The workhorse. Connects via push-pull cables. Works reliably on single-engine setups up to 200 HP.
 
-**When to pick which:**
-- Mechanical is fine up through 200 HP if the boat is single-engine and you don't need digital integration.
-- DTS becomes the right call at 250+ HP, on twin-engine setups (sync is a real benefit), or if you want VesselView integration to feel seamless. DTS also opens up cruise control and SmartTow features on supported motors.
+**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400, $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to be seamless.
 
 ### Side-Mount Controls
 
-**What it is:** A control box that mounts on the side of the helm console (or on a pedestal). Same single-lever function as a binnacle. Common on tiller-helm pontoons that have a remote console for a passenger or co-pilot, and on smaller fishing boats with limited dashboard space.
-
-**When you'd use it:** Smaller boats (40-90 HP), some pontoons, anywhere a flush-mount binnacle won't fit on the dash. Less common in modern Ontario repowers, but still in the catalog.
-
-CAD $400-$800. Mechanical only (no DTS in side-mount form).
+Mounts on the side of the helm console or a pedestal. Same function as a binnacle. Used on smaller boats (40, 90 HP), some pontoons with limited dashboard space. Mechanical only, no DTS in side-mount form. CAD $400, $800.
 
 ### DTS (Digital Throttle & Shift)
 
-**What it is:** Mercury's electronic control system. Replaces the mechanical throttle and shift cables with a wiring harness that carries digital signals. The lever feels the same in your hand, but underneath, the motor responds via electronic actuators instead of cables.
-
-**Why it matters:**
-- **Smoother shifting.** No "clunk" between gears. The motor's ECU manages the transition.
-- **Multi-engine sync.** On twin-engine setups, both motors shift and throttle in perfect lock-step automatically.
-- **Cruise control / SmartTow.** Supported features that aren't possible on mechanical setups.
-- **Integration with VesselView.** All the engine data flows through the same harness.
-
-**When DTS is mandatory:** All Mercury V8 (250-400 HP) and V12 (600 HP) motors are DTS-only. They don't accept mechanical controls.
-
-**When DTS is optional:** Some V6 models (150 Pro XS DTS, 200 Pro XS DTS, 225 ELPT Pro XS DTS, 300 Pro XS DTS) ship as DTS variants, with a non-DTS version typically available for $1,500-$2,500 less. Choose based on whether you value the digital benefits enough to justify the cost.
-
-For most single-engine Ontario repowers under 250 HP, mechanical is the right call. DTS earns its keep in twin-engine, performance, or premium-helm applications.
+Mercury's electronic control system. Replaces mechanical throttle and shift cables with a wiring harness. Smoother shifting, no "clunk" between gears, multi-engine sync, cruise control, SmartTow integration. Mandatory on all Mercury V8 and V12 motors. Optional on some V6 models. For most single-engine Ontario repowers under 250 HP, mechanical controls are the right call.
 
 ---
 
 ## Steering: Cable, Hydraulic, or Power-Assist Hydraulic
 
-Steering is the most underrated rigging upgrade. Most repowering boaters notice the difference at the helm before they notice anything else about the new motor.
-
 ### Cable Steering
 
-**What it is:** A mechanical cable runs from the helm wheel to the motor's steering arm. You turn the wheel, the cable pulls, the motor pivots. Simple, cheap, durable.
-
-**When it works:**
-- Up through 90-115 HP on most boats.
-- Pontoons (lower steering loads).
-- Tiller boats (no helm steering at all).
-
-**When it gets tiring:**
-- 115+ HP on V-hull boats. The cable load gets heavy enough that long days on the water leave your arms aching.
-- Any boat where the operator does fine maneuvering at speed (waterskiing, tournament fishing).
-
-**Cost:** CAD $300-$700 for the cable + helm assembly.
+Mechanical cable from helm wheel to motor arm. Simple, durable, inexpensive. Works well through 90, 115 HP on most boats. CAD $300, $700 for the cable and helm assembly. Gets tiring on 115+ HP V-hull boats, especially in sporty conditions or after hours of driving.
 
 ### Hydraulic Steering
 
-**What it is:** A hand-operated hydraulic pump at the helm pushes fluid through hoses to a hydraulic ram at the motor. The ram pivots the motor. Smoother, lighter, and self-centering at speed.
-
-**When it's the right call:**
-- Most 115-225 HP boats. Standard recommendation for V6 motors.
-- Any boat over 18 ft.
-- Anyone who finds cable steering tiring.
-
-**Brands:** SeaStar Solutions (formerly Teleflex) is the dominant brand. SeaStar Pro is the entry hydraulic kit, SeaStar HC5345 is the heavy-duty version for V6+.
-
-**Cost:** CAD $1,500-$2,500 for a complete kit (helm pump, hoses, ram, fluid). Add another CAD $300-$500 for installation labor.
+Helm-mounted pump pushes fluid to a hydraulic ram at the motor. Smoother, lighter, self-centering at speed. The right call for most 115, 225 HP boats. **SeaStar Solutions** is the standard brand, SeaStar Pro for entry-level, HC5345 for V6+ applications. CAD $1,500, $2,500 for a complete kit plus CAD $300, $500 install labor.
 
 ### Power-Assist Hydraulic
 
-**What it is:** Same hydraulic system, but with an electric pump that does most of the work. Your wheel input opens a valve; the pump muscles the motor. One-finger steering at any speed.
-
-**When you need it:**
-- Most V6 (150-225 HP) repowers, especially for twin-engine setups or boats over 22 ft.
-- Boats with high-friction motors (older Verado I6 retrofits, for example).
-- Anyone who really values low effort at the helm.
-
-**Cost:** CAD $2,500-$4,000 for the kit, plus install. The premium over standard hydraulic is real but earned for V6+ applications.
-
-For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150+ HP, lean toward power-assist unless budget is the limiter.
+Electric pump does most of the work. One-finger steering at any speed. Recommended for most V6 (150, 225 HP) repowers, especially twin-engine setups or boats over 22 feet. CAD $2,500, $4,000 for the kit plus install. For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150+ HP, lean toward power-assist unless budget is the constraint.
 
 ---
 
 ## Gauges: Analog, SmartCraft Connect, or VesselView
 
-Gauges are how you see what the motor is doing. The gap between basic and good is bigger here than most buyers realize.
+### Analog Gauges
 
-### Analog Gauges (Tach + Fuel + Maybe Trim)
-
-**What you get:** Mechanical needles showing tach (RPM), fuel level, and trim position. Speedometer is sometimes mechanical (pitot tube on the lower unit) or sometimes a separate electronic GPS speed display.
-
-**When it works:**
-- 40-90 HP outboards on basic fishing boats and small bowriders.
-- Anyone who doesn't want to learn another screen.
-
-**What you give up:** Engine hours, fault codes, fuel economy data, water temperature, oil pressure warnings, battery voltage history. The motor has all that data internally; analog gauges just don't show it.
-
-**Cost:** CAD $400-$800 for a full set.
+Mechanical needles for tach, fuel level, and trim. CAD $400, $800 for a full set. Work well for 40, 90 HP on basic fishing boats. Give up fault codes, engine hours, fuel economy data, and advance warning.
 
 ### SmartCraft Connect (Mercury VesselView Mobile)
 
-**What it is:** A Bluetooth dongle that pulls SmartCraft data from the motor and feeds it to the Mercury VesselView Mobile app on your phone. Add a SmartCraft tach to the dash for at-a-glance RPM, and you've got a complete dashboard at zero screen-real-estate cost.
+Bluetooth module under the cowl that streams engine data to the Mercury Marine app on a phone. The app is free. What you see: RPM, fuel rate, total fuel used, engine temp, battery voltage, engine hours, fault codes with plain-English descriptions, maintenance reminders, Boost eligibility. Compatible with Mercury 4-strokes from 2004 forward, 40 HP and up (25/30 HP only from 2022+). CAD $300, $500 for the module and SmartCraft tach.
 
-**What you get:**
-- Engine hours, RPM, fuel flow, trim, water temp, voltage on your phone.
-- Fault codes with plain-English descriptions.
-- Trip and lifetime fuel use tracking.
-- Fault history exportable to your tech.
+### VesselView
 
-**When it works:**
-- 40-150 HP boats where the buyer wants modern data without a dedicated display.
-- Cottage boats where the phone is always at the helm.
-
-**Cost:** CAD $300-$500 for the dongle + analog SmartCraft tach. Phone is free (you already have one).
-
-### VesselView (4, 7, 9, 12, or 902)
-
-**What it is:** Mercury's color touchscreen displays. Shows everything SmartCraft knows about the motor in real time, plus integrates with chartplotters, fuel tanks, autopilots, and (on bigger displays) maps and sonar.
-
-**Sizes:**
-- **VesselView 4:** 4.3" screen. Basic motor data display. CAD $700-$900.
-- **VesselView 7:** 7" screen. Motor data + smaller navigation overlay. CAD $1,200-$1,500.
-- **VesselView 9:** 9" screen. The sweet spot for most V6 repowers. CAD $1,800-$2,400.
-- **VesselView 12:** 12" screen. Big-boat applications. CAD $2,500-$3,200.
-- **VesselView 902:** Mercury's premium 9" display, integrates with Simrad-style chartplotters. CAD $3,000-$3,800.
-
-**When you need one:**
-- Any V6 repower where the buyer wants real-time engine awareness.
-- Mandatory in practical terms for V8/V10/V12 installs (these motors generate so much data that analog or app-only feels limiting).
-- Twin-engine setups (single screen showing both motors is invaluable).
-
-**Cross-reference:** For a deeper dive on what SmartCraft and VesselView do, see [VesselView and SmartCraft in plain English](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide).
+Mercury's color touchscreen displays, the hardwired version of what SmartCraft Connect does over Bluetooth. VesselView 4: CAD $700, $900. VesselView 7: CAD $1,200, $1,500. VesselView 9: CAD $1,800, $2,400, the sweet spot for most V6 repowers. VesselView 12: CAD $2,500, $3,200. Integrates with chartplotters, fuel tanks, and autopilots.
 
 ---
 
-## Wiring Harness and Battery Setup
+## Wiring and Battery Setup
 
-The unsexy rigging that makes everything else work.
+**Single battery + basic harness (40, 90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400, $700.
 
-### Single Battery + Basic Harness (40-90 HP)
+**Dual battery + ACR (115, 150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700, $1,200.
 
-For most basic outboard installs at this HP level, a single Group 24 or Group 27 starting battery with a basic Mercury wiring harness covers everything. Add a battery switch and a simple fuse panel for accessories (lights, bilge pump, fishfinder).
-
-**Cost:** CAD $400-$700 for battery + cables + switch + basic accessory panel.
-
-### Dual Battery + ACR (115-150 HP)
-
-Once you start adding electronics (chartplotter, fishfinder, stereo, charging port), the load on a single battery starts to add up. A dual-battery setup with an Automatic Charging Relay (ACR) keeps your starting battery isolated when the engine is off, so you can run electronics at the dock without worrying about a no-start in the morning.
-
-**Configuration:**
-- Battery 1: starting battery (cranking duty)
-- Battery 2: house battery (electronics, accessories)
-- ACR: combines the batteries when the engine is running (so both charge), isolates them when it's off.
-
-**Cost:** CAD $700-$1,200 for two batteries + ACR + cables + switch.
-
-### Dual or Triple Battery + Switch Panel (175-225 HP V6)
-
-V6 motors with VesselView, multiple electronics, livewells, and aerators benefit from a more deliberate electrical setup. Triple battery on tournament boats. Big switch panel with breakers for everything. Dedicated charging system so each battery sees the right voltage.
-
-**Cost:** CAD $1,200-$2,000 for the full setup. Higher on tournament-prepped bass boats.
-
-This is also where wiring quality really matters. Marine-grade tinned copper, proper terminal crimps, and heat-shrink-protected connections add up to a dry, reliable install. We've replaced enough corroded helm wiring on used boats to know that the difference between a $200 wiring shortcut and a $1,500 proper job is measured over years, not days.
+**Dual or triple battery + switch panel (175, 225 HP V6):** V6 motors with VesselView, multiple electronics, livewells. CAD $1,200, $2,000, higher on tournament-prepped boats. Use marine-grade tinned copper wiring with heat-shrink connections. A $200 shortcut in wiring materials can become a $1,500 mid-season problem.
 
 ---
 
 ## Prop Selection by HP Class
 
-Prop pitch is what translates motor RPM into boat speed. Wrong pitch means the motor lugs (pitch too high) or revs out without making power (pitch too low). Both wear the motor faster than they should.
-
-The general guidance per HP class:
-
 | HP | Diameter | Pitch Range | Material |
-|---:|---|---|---|
-| 40-50 | 12-13" | 11-15" | Aluminum standard, stainless optional |
-| 60-90 | 13-14" | 13-19" | Aluminum standard, stainless for performance |
-| 115 | 14" | 15-21" | Stainless recommended for any sport use |
-| 150 | 14-15" | 17-23" | Stainless standard |
-| 175-225 | 14-16" | 19-25" | Stainless strongly recommended (aluminum often can't handle the load) |
+|---|---|---|---|
+| 40, 50 | 12, 13" | 11, 15" | Aluminum standard, stainless optional |
+| 60, 90 | 13, 14" | 13, 19" | Aluminum standard, stainless for performance |
+| 115 | 14" | 15, 21" | Stainless recommended for sport use |
+| 150 | 14, 15" | 17, 23" | Stainless standard |
+| 175, 225 | 14, 16" | 19, 25" | Stainless strongly recommended |
 
-These ranges are starting points. Your hull weight, intended use (skiing vs. fishing vs. cruising), and the prop's blade design all push the right pitch up or down. Aluminum props are cheaper (CAD $200-$500) but flex at higher loads. Stainless (CAD $500-$1,200) holds shape, lasts longer, and recovers better after a strike.
+These are starting points. Hull weight and intended use change the correct pitch. Wrong pitch: motor lugs (pitch too high) or revs out without making power (pitch too low). Both wear the motor faster than they should.
 
-For a deep dive on prop selection, including how to read your wide-open-throttle (WOT) RPM and dial in the pitch, see the [Mercury propeller selection guide](https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide).
+**Aluminum:** CAD $200, $500. Cheaper but flexes at higher loads. 
+**Stainless:** CAD $500, $1,200. Holds shape, lasts longer, recovers better after a strike.
 
 ---
 
-## Real-World Rigging Examples (What HBW Has Quoted Recently)
+## Real-World Rigging Examples
 
-The matrix above is the framework. Here's what the framework looks like applied to four real Ontario repower scenarios.
+**18-foot aluminum fishing boat, Mercury 60 ELPT FourStroke:** 
+Controls $850 + cable steering $300 + SmartCraft Connect $400 + single battery harness $500 + 13.5"×17" stainless prop $650 + install labor $1,400 = ~$4,100 rigging on top of the motor price.
 
-### Example 1: 18 ft Aluminum V-Hull Fishing Boat, Mercury 60 ELPT FourStroke
+**21-foot pontoon, Mercury 90 ELPT Command Thrust FourStroke:** 
+Controls $900 + hydraulic steering $1,800 + VesselView 4 $850 + dual battery + ACR $900 + 14"×17" stainless CT prop $750 + install labor $1,800 = ~$7,000 rigging.
 
-**Use case:** Walleye and bass on Rice Lake, Ontario (in the Kawarthas), occasional family tubing.
-**Rigging spec:**
-- Binnacle Gen II mechanical control: $850
-- Cable steering kit (existing, refurbished): $300
-- SmartCraft Connect dongle + tach: $400
-- Single Group 27 starting battery + basic harness: $500
-- 13.5" x 17" stainless prop: $650
-- Install labor (rigging, sea trial, break-in): $1,400
-
-**Rigging total:** ~$4,100 CAD on top of the motor's $12,161.
-
-**All-in landed:** ~$16,300 CAD before HST and trade-in.
-
-### Example 2: 21 ft Pontoon, Mercury 90 ELPT Command Thrust FourStroke
-
-**Use case:** Family cottage boat, 6-8 passengers, occasional skiing.
-**Rigging spec:**
-- Binnacle Gen II mechanical control: $900
-- Hydraulic steering kit (SeaStar Pro): $1,800
-- VesselView 4: $850
-- Dual battery + ACR + switch: $900
-- 14" x 17" stainless prop (Command Thrust): $750
-- Install labor: $1,800
-
-**Rigging total:** ~$7,000 CAD on top of the motor's $15,274.
-
-**All-in landed:** ~$22,300 CAD before HST and trade-in.
-
-### Example 3: 19 ft Bowrider, Mercury 150 L FourStroke Repower
-
-**Use case:** Family runabout, watersports, day cruising.
-**Rigging spec:**
-- Binnacle Gen II mechanical (DTS not needed, single engine): $1,000
-- Power-assist hydraulic steering: $3,200
-- VesselView 7: $1,400
-- Dual battery + ACR + switch panel: $1,000
-- 14.6" x 19" stainless prop: $850
-- Install labor: $2,200
-
-**Rigging total:** ~$9,650 CAD on top of the motor's $22,022.
-
-**All-in landed:** ~$31,700 CAD before HST and trade-in.
-
-### Example 4: 22 ft Bowrider, Mercury 225 ELPT Pro XS Repower
-
-**Use case:** Performance family boat, watersports, cottage commuting.
-**Rigging spec:**
-- Binnacle DTS control: $2,200
-- Power-assist hydraulic steering: $3,600
-- VesselView 9: $2,200
-- Dual battery + ACR + dedicated switch panel: $1,400
-- 15.25" x 21" stainless prop (Enertia or Bravo I): $1,100
-- DTS wiring harness + integration: $1,200
-- Install labor (V6 repowers are more complex): $2,800
-
-**Rigging total:** ~$14,500 CAD on top of the motor's $33,039.
-
-**All-in landed:** ~$47,500 CAD before HST and trade-in.
-
-These are real-world numbers from quotes we build at Harris Boat Works. Your specific boat will move the numbers, but the shape of the breakdown is consistent.
-
-For comparison context, the [Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) walks through how these numbers fit into the full repower decision.
+**19-foot bowrider, Mercury 150 L FourStroke Repower:** 
+Controls $1,000 + power-assist hydraulic $3,200 + VesselView 7 $1,400 + dual battery $1,000 + prop $850 + install labor $2,200 = ~$9,650 rigging.
 
 ---
 
 ## What HBW Includes vs. Charges Separately
 
-Every dealer scopes a quote differently. Here's how we structure ours.
+**Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, 20-hour service reminder, Mercury Canada warranty registration.
 
-**Always included in the rigging line:**
-- All Mercury-supplied wiring harnesses, control cables, and DTS harnesses
-- Sea trial after install
-- Break-in instructions and 20-hour service reminder
-- Factory warranty registration with Mercury Canada
+**Quoted as separate line items:** Control box, steering system, gauges or VesselView, battery and battery system, prop, old motor removal and disposal (typically CAD $200, $400).
 
-**Quoted as separate line items:**
-- The control box itself (binnacle, side mount, or DTS lever)
-- Steering system (cable kit, hydraulic kit, or power-assist kit)
-- Gauges or VesselView display
-- Battery, battery box, charger, switch, fuse panel
-- Prop (we recommend a specific pitch and material based on your hull)
-- Old motor removal and disposal (typically $200-$400)
-- Custom helm console fabrication (rare; only if your old console can't accept the new gauges)
+**Not part of a standard quote:** Trolling motors, fishfinders, stereos, trailer work, cosmetic restoration.
 
-**Not part of a standard quote:**
-- Trolling motors, fishfinders, stereos (we install if you want, but they're separate from the propulsion rigging)
-- Trailer work (different shop, different conversation)
-- Cosmetic restoration (paint, upholstery)
-
-The full quote you get at [mercuryrepower.ca/quote/motor-selection](https://www.mercuryrepower.ca/quote/motor-selection) has all these line items broken out. No surprises at delivery.
+For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
-## Common Mistakes Buyers Make on Rigging
+## Common Rigging Mistakes
 
-The five we see most often:
-
-**1. Reusing old controls "to save money."** Sometimes works. Often doesn't, especially if the old binnacle is corroded inside or the cables have stiffened. A used control box that's three years past its prime can fail mid-season and cost more in tow fees than a new control would have cost up front.
-
-**2. Skipping the gauge upgrade on a SmartCraft motor.** A 2026 Mercury 150 connected to 1998 analog gauges is using maybe 15% of the data the motor produces. No fault codes, no fuel economy display, no warning before something goes wrong. The gauge upgrade pays itself back the first time SmartCraft catches a developing problem.
-
-**3. Underspeccing steering on a V6.** Cable steering on a 150 HP V6 boat technically works. After three hours on the water you'll hate it. Hydraulic is the right answer for any motor 115 HP and up.
-
-**4. Picking a prop pitch by guessing.** Wrong pitch is the most common reason a "perfectly good motor" feels slow. The motor needs to hit its rated WOT RPM under your typical load. If it doesn't, the prop is wrong. Our [prop selection guide](https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide) walks through how to dial it in.
-
-**5. Single battery on a boat with electronics.** A single battery running a chartplotter, fishfinder, stereo, and a starter is asking for a no-start morning. Dual battery + ACR is the right setup once you add electronics. The cost is small. The headache it prevents is real.
+1. **Reusing old controls to save money.** Old cables can be stiff or corroded. A failed binnacle mid-season costs more in towing and service than a new one.
+2. **Skipping the gauge upgrade on a SmartCraft motor.** A 2026 Mercury 150 connected to 1998 analog gauges uses about 15% of the data the motor produces.
+3. **Underspeccing steering on a V6.** Cable steering on 150 HP technically works. After three hours, you know it is wrong.
+4. **Picking prop pitch by guessing.** Wrong pitch is the most common reason a "perfectly good motor" feels slow.
+5. **Single battery on a boat with electronics.** A single battery running chartplotter, fishfinder, stereo, and starter can leave you stranded.
 
 ---
 
-## Frequently Asked Questions
+## FAQs
 
-**How much does Mercury rigging cost in Ontario?**
-For a typical mid-range repower (60-115 HP), expect CAD $2,000-$4,000 in rigging on top of the motor price. For a V6 repower (150-225 HP), expect CAD $3,500-$7,500. The range covers controls, steering, gauges, wiring, and prop. See the matrix above for per-HP-class detail. Real all-in costs are at [mercury-outboard-rigging-costs-ontario](https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario).
+**How much does Mercury rigging cost in Ontario?** 
+For a typical mid-range repower (60, 115 HP), expect CAD $2,000, $4,000 in rigging above the motor price. For a V6 repower (150, 225 HP), expect CAD $3,500, $7,500. These ranges include controls, steering, gauges, wiring, and prop.
 
-**Do I need DTS on a single-engine V6?**
-No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, V8+ motors (where it's mandatory), or if you specifically want VesselView integration to feel seamless.
+**Do I need DTS on a single-engine V6?** 
+No. Mechanical controls work fine on a single-engine 150, 225 HP motor and save CAD $1,500, $2,500. DTS is the right call for twin-engine setups, V8+ motors, or when you want seamless VesselView integration.
 
-**Is hydraulic steering worth it for 90 HP?**
-For most boats, no. Cable steering at 90 HP on a typical fishing boat or pontoon is fine. The exception is a fast bowrider or anyone who finds cable steering tiring. For 115 HP and up, hydraulic is almost always worth the upgrade.
+**Is hydraulic steering worth it at 90 HP?** 
+Usually not on a typical fishing boat. Cable steering at 90 HP is fine. Exception: fast bowrider or anyone who finds cable tiring. For 115 HP and up, hydraulic is almost always worth the upgrade.
 
-**What's the difference between SmartCraft and VesselView?**
-SmartCraft is Mercury's underlying data protocol (it's how the motor talks to gauges and accessories). VesselView is the family of color displays that show SmartCraft data. SmartCraft Connect is the budget option (data goes to your phone via Bluetooth). VesselView is the dedicated screen option. Full breakdown: [VesselView and SmartCraft plain-English guide](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide).
+**How long does a full rigging install take?** 
+Mid-range single-engine (60, 115 HP): typically 1, 2 shop days once the motor is in. V6 with full electronics: 2, 4 days.
 
-**Can I run my new Mercury on my old prop?**
-Sometimes. If the old prop is the right pitch and diameter for the new motor's power and your hull, yes. More often, the new motor is a different HP or generation and wants a different prop. Run the WOT test after install: if the motor doesn't hit its rated RPM under typical load, you need a different prop.
-
-**How long does a full rigging install take?**
-For a mid-range single-engine repower (60-115 HP), typically 1-2 days of shop time once the motor is in. For a V6 repower with full electronics, 2-4 days. The lead time from "you sign" to "you take delivery" depends on parts availability for the controls, steering, and gauges, plus our shop schedule.
-
-**Will my old hydraulic steering work with the new motor?**
-Usually yes, if the ram is compatible with Mercury's tilt tube and the hoses are sound. We inspect the existing hydraulic system during the repower quote and tell you whether it's reusable, needs new fluid and seals, or needs replacement. SeaStar Pro and HC5345 systems from the last 15-20 years generally adapt.
-
-**What's the right shaft length for my repower?**
-Match the shaft length to your transom height. 20" transom = long shaft (L). 25" transom = extra long (XL). 30" transom (rare on outboards, common on bracket installs) = extra extra long (XXL). Measure your old motor or your transom directly. Full guide: [outboard shaft length](https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide).
-
-**Do you offer financing on rigging, or just the motor?**
-Both. Mercury's financing programs apply to the full repower package, motor plus rigging plus install. We work through Mercury Canada's finance partner, with rates that change with their promo windows. Ask during the quote process and we'll match you to the right program.
-
-**Does HBW handle the trade-in on my old motor?**
-Yes. If your old Mercury is in workable condition we'll value it at trade-in time. Non-Mercury motors get evaluated case-by-case (we sell some on consignment, others go to recycling). The trade-in credit is a separate line on your quote.
+**Does HBW handle trade-ins on the old motor?** 
+Yes. Old Mercury motors in workable condition are valued at trade-in. Non-Mercury motors evaluated case-by-case.
 
 ---
 
-## Ready to Build a Repower Quote?
+## Internal Links
+- Mercury SmartCraft Connect Guide Ontario
+- Mercury Outboard Financing Ontario
+- Mercury Repower Cost Ontario 2026
+- Mercury VesselView Guide
 
-The fastest way to size your rigging accurately is to build a quote in our configurator. Pick your motor, add the controls, steering, gauges, wiring, and prop, and you'll see real CAD pricing on every line item before you ever talk to a person.
+## CTA
 
-**Build a quote:** [mercuryrepower.ca/quote/motor-selection](https://www.mercuryrepower.ca/quote/motor-selection)
-
-**Browse current Mercury pricing:** [mercuryrepower.ca/pricing-reference](https://www.mercuryrepower.ca/pricing-reference)
-
-**Talk to us:** Call (905) 342-2153 or email info@harrisboatworks.ca. We'll walk through your boat, your use case, and what rigging package fits.
-
-Harris Boat Works has been on Rice Lake since 1947, a Mercury dealer since 1965, and a Mercury Marine Platinum dealer for over a decade. Pickup only at our Gores Landing shop. We don't ship outboards and we don't deliver. Final out-the-door price is always confirmed by HBW staff.
-
----
-
-
-## Try the calculator
-
-Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) - no signup, no email gate, takes 30 seconds.
-## Related Guides
-
-- [Ontario Mercury Outboard Price Guide (2026)](https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide)
-- [Mercury Repower Cost Ontario 2026 (CAD)](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury Outboard Rigging Costs in Ontario](https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario)
-- [Mercury VesselView and SmartCraft Plain-English Guide](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide)
-- [Mercury Propeller Selection Guide](https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide)
-- [Outboard Shaft Length Guide](https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide)
-- [Mercury Motor Families: FourStroke vs. Pro XS vs. Verado](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
-- [Mercury Repower GTA: How Toronto Buyers Do This](https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination)
+**See real CAD pricing on every rigging line item.** 
+Build your Mercury repower quote at [mercuryrepower.ca](https://mercuryrepower.ca), choose motor, controls, steering, gauges, wiring, prop, and see the configured total before calling anyone. 
+Questions? Call 905-342-2153. 
+Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
 
 ---
 
-*Harris Boat Works is a third-generation family marina in Gores Landing, ON, on Rice Lake. On the lake since 1947. Mercury dealer since 1965. Mercury Marine Platinum dealer. Legend Boats dealer. Pickup only at 5369 Harris Boat Works Rd. We do not ship outboards and we do not deliver. Final out-the-door price is always confirmed by Harris Boat Works staff.*
+**English editor note:** All CAD cost ranges cited are from the source post and should be verified as current before publishing. "For engine repairs, we only service Mercury and Mercruiser." appears naturally in the "What HBW Includes" section.
 
-**Phone:** (905) 342-2153
-**Email:** info@harrisboatworks.ca
-**Quote Builder:** [mercuryrepower.ca/quote/motor-selection](https://www.mercuryrepower.ca/quote/motor-selection)
-**Live Pricing Reference:** [mercuryrepower.ca/pricing-reference](https://www.mercuryrepower.ca/pricing-reference)
-`,
+---
+
+---`,
     image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
