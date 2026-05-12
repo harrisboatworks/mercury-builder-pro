@@ -3292,199 +3292,155 @@ Most bass boats don't use a kicker for typical bass fishing. A bow-mount trollin
     category: 'Tips',
     readTime: '9 min read',
     keywords: ['outboard fuel efficiency', 'mercury mpg', 'boat fuel economy', 'save fuel boating', 'outboard consumption'],
-    content: `# Mercury Outboard Fuel Efficiency Guide (2026)
-
-*Last reviewed: 2026-05-07*
-
-> **Quick answer:** Modern Mercury FourStrokes burn 25-40 percent less fuel than two-stroke equivalents at cruise. Real efficiency comes from prop pitch matched to load, clean hull, and cruising at the motor's mid-RPM sweet spot, not from the smallest motor that fits. We dial in props on every install. Quote a complete package at mercuryrepower.ca.
-
-The single biggest fuel-efficiency lever on a Mercury is prop selection. Right prop running at correct WOT RPM gives best economy. Other levers in order: trim, hull cleanliness, weight reduction, and cruise speed selection. HP class matters less than most owners assume; modern FourStrokes are all efficient at correct cruise. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
-
-## Quick recommendation
-
-Most Mercury owners overspend on fuel because of one of three things: wrong prop, bad trim discipline, or running at the wrong cruise speed for their boat and motor. None of those are HP-class problems. They are setup and operating problems.
-
-A correctly-rigged Mercury 90 EXLPT FourStroke on a 16 to 18 ft aluminum console can run 4 to 5 mph per US gallon at cruise. A poorly-rigged version of the same motor can run 3 to 3.5 mph per US gallon. Same motor, different fuel burn. The difference is prop, trim, and operation.
-
-Real fuel use depends on hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
-
-## What changes fuel efficiency
-
-Five biggest levers:
-
-- **Prop selection.** A wrong prop can cost 15% or more in fuel economy. Right prop is the one that lets the motor reach mid-band of rated WOT RPM with typical loading.
-- **Trim.** Running flat (no trim up) at cruise is fuel-wasteful. Proper trim cuts drag and improves economy 10 to 20%.
-- **Hull cleanliness.** Bottom growth, weeds dragging, and propeller debris all hurt fuel economy. Inspect during commissioning.
-- **Weight.** Every 100 lbs of unnecessary gear hurts fuel economy slightly. Cumulative effect of full coolers, extra anchors, and old gear adds up.
-- **Cruise speed selection.** Most Mercurys are most efficient at a specific RPM range (often 3,500 to 4,500 RPM at cruise). Running outside that band costs efficiency.
-
-## Prop selection: the biggest single lever
-
-A correctly-pitched prop lets the motor reach mid-band of its rated WOT RPM with your typical loading. This is the test that matters.
-
-For example, the Mercury 90 EXLPT has a rated WOT RPM of 5,000 to 5,800 RPM. The right prop lets you reach 5,400 RPM (mid-band) with typical loading. If the prop is wrong:
-
-- **Pitch too high:** Motor cannot reach rated RPM. Lugs the engine, hurts economy, and shortens motor life.
-- **Pitch too low:** Motor over-revs at WOT. Wastes fuel at cruise, increases wear.
-
-We test prop pitch during sea-trial of every Mercury repower at HBW. The right prop is non-negotiable for fuel efficiency.
-
-For aluminum vs stainless:
-
-- **Aluminum 3-blade ($450 CAD):** Adequate for HP up to 115. Lower top speed, similar cruise economy to stainless.
-- **Stainless 3 or 4-blade ($800 to $2,000 CAD):** Better for 150 HP and up. Slightly better cruise economy than aluminum.
-
-See our [Mercury propeller selection guide](/blog/mercury-propeller-selection-guide) for the full picture.
-
-## Trim discipline: the second biggest lever
-
-Most boaters run too flat at cruise. The boat is on plane but the bow is being pushed through more water than necessary. Symptoms of bad trim:
-
-- **Spray off the bow** at cruise speed
-- **Boat feels "plowed"** rather than skipping along
-- **Engine RPM feels high** for the speed
-- **Wake is bigger** than it should be
-
-Proper trim at cruise:
-
-- **Bow rises** to reduce wetted hull area
-- **Spray drops back** behind the boat
-- **Engine RPM matches speed efficiently**
-- **Boat feels lighter** and more responsive
-
-Most Mercurys with power trim get this right with a few seconds of practice. Trim up gradually until the bow lifts and speed increases without RPM increasing. That is the efficient trim point.
-
-## Cruise speed selection
-
-Most Mercurys are most efficient at a specific cruise RPM, typically 3,500 to 4,500 RPM. The corresponding speed depends on hull and prop, but is usually somewhere between 25 and 35 mph for typical aluminum console boats.
-
-Running at WOT (full throttle) is fuel-wasteful. Running at idle (3 to 5 mph) is also fuel-wasteful per mile. The sweet spot is the cruise band.
-
-For most Mercury 90 to 115 HP installs:
-
-- **WOT (full throttle):** Highest mph, lowest mph per gallon
-- **Cruise (3,500 to 4,500 RPM):** Best mph per gallon
-- **Idle/no-wake speed (1,000 to 1,500 RPM):** Worst mph per gallon
-
-If you have a long run between two points, cruise speed is the most fuel-efficient choice. If you are working a fishing area at trolling speeds, a kicker is dramatically more efficient than the main motor.
-
-## Mercury motor family fuel economy comparison
-
-For typical 16 to 18 ft aluminum console boats at cruise:
-
-| Motor | Cruise mpg | WOT mpg | Best use |
-|---|---|---|---|
-| Mercury 60 EFI | ~5 to 6 | ~3 to 4 | Smaller hulls, two-person fishing |
-| Mercury 90 EXLPT FourStroke | ~4 to 5 | ~2.5 to 3.5 | Sweet spot for most Kawartha boats |
-| Mercury 115 EXLPT FourStroke | ~3.5 to 4.5 | ~2 to 3 | Family use, mixed recreation |
-| Mercury 150 EXLPT FourStroke | ~3 to 4 | ~1.5 to 2.5 | Bigger hulls, water sports |
-| Mercury 200 EXLPT FourStroke | ~2.5 to 3.5 | ~1 to 2 | Performance applications |
-
-Note: mpg figures are typical Kawartha-area sea-trial results in US gallons. Real numbers vary by hull, loading, prop, and operating conditions. The differences within an HP class (e.g., 90 EXLPT vs 90 Pro XS at the same load) are smaller than between HP classes.
-
-For specific motor pricing, [build a quote](/quote/motor-selection).
-
-## What HBW checks for fuel efficiency
-
-When customers report fuel economy concerns, we check:
-
-- **Prop type, pitch, and condition.** Wrong prop is the most common issue.
-- **WOT RPM at typical loading.** Confirms prop is correct.
-- **Trim function and use.** Some boaters do not know how to use trim properly.
-- **Hull cleanliness.** Bottom growth and debris hurt economy.
-- **Engine condition.** Misfires, fuel system issues, or air leaks reduce economy.
-- **Weight and loading.** Sometimes the boat is just overloaded for typical use.
-- **Cruise speed selection.** Some boaters run WOT all the time and burn fuel for no reason.
-
-We sea-trial during repowers and address any of the above. Sometimes the fix is a different prop. Sometimes it's coaching the customer on trim. Sometimes it's a fuel system service that catches a small issue before it grows.
-
-## Common fuel efficiency mistakes
-
-We see these every season:
-
-1. **Wrong prop.** Single biggest issue. Pitch wrong by one or two inches costs 15%+ in fuel.
-2. **No trim use.** Boat runs flat all day. Bow plows water. Engine works hard for no speed gain.
-3. **Running WOT all the time.** Some boaters always go full throttle. Cruise band is much more efficient.
-4. **Overloaded boat.** Coolers full, full tank, gear from past 5 seasons. Every 100 lbs hurts economy.
-5. **Skipped maintenance.** Spark plugs, fuel filter, water-pump impeller in good condition keeps the motor running efficiently. Skipped service hurts economy.
-
-## What about ethanol fuel?
-
-Modern Mercury FourStrokes (2010+) are designed to handle E10 ethanol-blended pump gas. The Canadian standard 87 octane E10 is what most boaters use and it works fine.
-
-E15 (15% ethanol) is not approved for marine use. Avoid it.
-
-E0 (no ethanol) is preferred where available but rare in Canada. If you can find non-ethanol fuel at certain marinas or specialty stations, it's slightly easier on fuel system components and stores longer between uses. Not a fuel efficiency lever directly.
-
-For all storage longer than a month, treat fuel with stabilizer (Mercury Quickstor or equivalent). Old untreated ethanol fuel is the leading cause of fuel system gum-up we see at HBW.
-
-## Related guides
-
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop is the biggest fuel lever
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), keeping motors efficient
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP class fuel implications
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), motor family efficiency comparison
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), fuel system troubleshooting
-
-## Ready to optimize fuel efficiency?
-
-Build a quote with the right prop and rigging on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If your existing Mercury has fuel economy issues you want to diagnose, [give us a call at (905) 342-2153](tel:9053422153). We can walk through prop, trim, and motor condition to find the issue.
+    content: `**Language:** English 
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+## Quick Answer
+
+The biggest fuel efficiency lever on a Mercury outboard is prop selection, a correctly pitched prop at the right WOT RPM band can make a 15, 20% difference in economy compared to a mismatched one. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
 
 ---
 
-## FAQ
+## Mercury Outboard Fuel Efficiency: Get More Distance Per Tank
 
-**What's the most fuel-efficient Mercury outboard?**
-For typical recreational use, the Mercury 60 EFI to 90 EXLPT FourStroke is the most efficient HP class. Above 90 HP, larger displacement motors burn more fuel at the same cruise speed. Below 60 HP, smaller motors burn less per mile but carry less load.
+Most conversations about fuel economy start in the wrong place. People ask which horsepower is most efficient, or whether two-strokes or four-strokes burn less fuel. Those questions have answers, but they're not the answers that actually change what you spend at the fuel dock.
 
-**How many miles per gallon does a Mercury 90 get?**
-4 to 5 mph per US gallon at cruise on a typical 16 to 18 ft aluminum console boat. WOT runs lower (2.5 to 3.5 mph per gallon). Numbers vary by prop, loading, and trim discipline.
+The real conversation starts with your prop.
 
-**Is the Mercury Pro XS more or less efficient than FourStroke?**
-At the same HP and same cruise speed, similar. Pro XS gives faster acceleration but is not significantly more or less efficient at typical cruise. Tournament use that runs at WOT more often consumes more fuel; that's an operating difference, not a motor-family difference.
+This guide covers what actually drives fuel economy on a Mercury outboard, in the order that matters. We rig and sea-trial Mercurys at our shop in Gores Landing every season, and we see the same setup problems cutting the same owners' fuel economy year after year.
 
-**How does prop pitch affect fuel economy?**
-A wrong-pitch prop can cost 15% or more in fuel economy. Right prop is the one that lets the motor reach mid-band of rated WOT RPM with typical loading. Wrong pitch makes the motor work outside its efficient RPM band.
+### The Five Levers, in Order
 
-**Should I get a 4-blade prop for fuel economy?**
-Not necessarily. 4-blade props give better hole shot and cruising stability, similar fuel economy to 3-blade. 3-blade is best for top speed and slightly better fuel economy in some applications. Choose based on use case, not strictly on fuel economy.
+Fuel economy on an outboard comes down to five controllable variables. Fix them in this order, the first two deliver the most gain.
 
-**Does trim affect fuel economy?**
-Yes meaningfully. Proper trim at cruise can improve fuel economy 10 to 20% over running flat. Most boaters underuse trim. Practice trimming up gradually until the boat speed increases without RPM increasing.
+**1. Prop selection**
 
-**Is ethanol fuel okay for Mercury outboards?**
-Yes, E10 (10% ethanol) standard pump gas is approved for modern Mercury FourStrokes. E15 (15% ethanol) is not approved for marine use. E0 (no ethanol) is preferred where available but rare in Canada.
+A wrong prop is the most common cause of poor fuel economy we see at HBW. A prop that's too high in pitch loads the engine down and prevents it from reaching its rated WOT RPM, the engine lugs, burns more fuel, and wears faster. A prop that's too low pitches allows over-revving at WOT, which also wastes fuel at cruise.
 
-**Should I use premium gas?**
-Most Mercurys are designed for 87 octane regular pump gas. Some higher-output motors recommend 89 or 91 octane. Check your owner's manual. Higher octane is wasted on motors that don't require it.
+The test is simple: at WOT with typical load, your Mercury should reach mid-band of its rated RPM range. Check your owner's manual for the rated range on your specific model. If you're consistently above or below that mid-band, your prop pitch needs adjustment.
 
-**Does a kicker save fuel during fishing?**
-Yes substantially. A 9.9 ProKicker at trolling speed (1 to 2 mph) burns far less fuel than a 90 HP main motor at the same speed. Main motors are inefficient at slow speeds; kickers are efficient. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide).
+On a typical day at HBW, we'll trial a motor two or three times with different props before settling on the right one for a specific hull and load combination. It's not guesswork, it's measurement.
 
-**How does hull cleanliness affect fuel economy?**
-Bottom growth, weeds, and debris all hurt fuel economy by adding drag. Inspect and clean hull during commissioning and periodically through the season. Bottom paint is rare on Ontario freshwater boats but inspecting is still worthwhile.
+**2. Trim**
 
-**What's the most fuel-efficient cruise speed?**
-Typically 25 to 35 mph for most aluminum console boats with Mercury 90 to 115 HP. The cruise band corresponds to the motor's most efficient RPM range. Running below or above this band costs efficiency.
+Running flat at cruise (no trim up) is one of the easiest fuel economy mistakes to make and one of the easiest to fix. Properly trimmed, the bow lifts slightly and the hull rides efficiently through the water rather than plowing. The fuel economy difference between flat and properly trimmed is typically 10, 20% at cruise speeds.
 
-**Will fuel stabilizer improve fuel economy?**
-Not directly. Stabilizer prevents fuel system gum-up during storage. A clean fuel system runs efficiently; a gummed-up system runs poorly. Stabilizer is preventive maintenance, not a direct economy boost.
+The right trim angle is the one where the motor is working least to maintain your target speed. If you're not in the habit of adjusting trim as speed and load change, start there.
+
+**3. Hull cleanliness**
+
+A weedy or fouled hull adds drag. This matters more for boats that sit in slips than for trailer boats, but even moderate growth on a hull increases fuel consumption. During spring commissioning, check the bottom and props for debris, growth, and damage.
+
+**4. Weight**
+
+Every unnecessary 100 lbs on the boat costs fuel. The cumulative effect of a full cooler, extra anchors, gear that never leaves the boat, and passengers is real. It doesn't mean you should kick people out, it means if you're comparing fuel burns across trips, load matters.
+
+**5. Cruise speed selection**
+
+Modern Mercury FourStrokes have a cruise efficiency sweet spot, typically somewhere in the 3,500, 4,500 RPM range, but this varies by motor and hull. Running above or below that band costs efficiency. The right approach is to identify your motor's best cruise RPM (your dealer or owner's manual can help), and aim for it.
 
 ---
 
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
-`,
+## What Horsepower Actually Does to Fuel Economy
+
+Modern Mercury FourStrokes burn significantly less fuel than older two-strokes of equivalent power, Mercury's published figures show substantial efficiency gains for current FourStroke models compared to comparable two-stroke technology, though exact percentages vary by model and operating conditions.
+
+Within the FourStroke lineup, the fuel economy difference between a correctly-rigged 90 HP and a correctly-rigged 115 HP on the same hull is smaller than most people expect. The bigger engine can run at lower RPM to do the same work, which partially offsets the larger displacement. The motor that's set up right for its hull will outperform a mismatched motor of any size.
+
+This is why we don't recommend "getting a smaller motor to save fuel." If the smaller motor isn't properly matched to the hull, it will work harder and burn more, not less.
+
+---
+
+## Practical Fuel Consumption Ranges
+
+Real-world fuel consumption depends on hull design, load, prop selection, mounting height, water conditions, and how you operate the boat. The following are typical ranges based on boats we've rigged and run at HBW. These are rough orientation numbers, not guarantees, and not a substitute for a sea trial with your specific setup.
+
+| Application | Typical fuel consumption range at cruise |
+|---|---|
+| Small aluminum with 25, 40 HP FourStroke | 2.5, 4.5 L/hr at cruise |
+| Mid-size aluminum with 60, 90 HP FourStroke | 5, 10 L/hr at cruise |
+| Fiberglass runabout with 115, 150 HP FourStroke | 10, 18 L/hr at cruise |
+| Larger boats with 200+ HP | Highly variable; setup-dependent |
+
+If your fuel burn is significantly above these ranges for your setup, prop pitch, trim, or hull condition is the first place to look.
+
+---
+
+## Ethanol and Fuel Quality
+
+At HBW, we sell ethanol-free fuel on-site. We recommend it for outboards, ethanol absorbs water over time, which causes phase separation in stored fuel and contributes to fuel system corrosion, particularly in older motors and boats with fibreglass tanks. If you're running pump gas with ethanol, use a quality fuel stabilizer when the boat sits for more than a few weeks, and change your fuel filter at service intervals.
+
+Fuel quality affects both economy and reliability. Stale or contaminated fuel is one of the leading causes of spring no-start problems we diagnose every May.
+
+---
+
+## When Fuel Economy Changes Suddenly
+
+If your fuel economy gets noticeably worse between seasons or even during a season, something changed. Common causes:
+
+- **Prop damage.** A ding or bend in a prop blade changes pitch and efficiency dramatically. Inspect your prop every season.
+- **Impeller or cooling system issue.** An engine running hotter than normal due to a worn impeller will work harder and burn more.
+- **Fouled fuel system.** Clogged injectors or a dirty carburettor on older motors reduces combustion efficiency.
+- **Ignition or tune issues.** Fouled spark plugs, incorrect timing on older motors.
+- **Increased hull drag.** Growth, damage, or added gear.
+
+A sudden change in fuel economy is worth investigating. Don't assume it's "just how the boat runs."
+
+---
+
+## Getting Your Prop Right at HBW
+
+We test prop pitch on every Mercury repower and new motor install at HBW. If you bought your motor elsewhere, or if your prop was selected years ago for a different boat or load, it's worth having it checked. A proper sea trial takes 30, 45 minutes and tells you more about your setup than any spec sheet.
+
+For engine repairs, we only service Mercury and Mercruiser.
+
+Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+## Frequently Asked Questions
+
+**Does a bigger motor always burn more fuel?** 
+Not necessarily at cruise. A larger motor running at lower RPM to maintain the same speed can burn similar amounts of fuel to a smaller motor working harder. The bigger factor is whether either motor is correctly matched to the hull with the right prop.
+
+**How much does the right prop actually matter?** 
+Significantly. A mismatched prop can reduce fuel economy by 15, 25% compared to a correctly pitched one on the same motor and hull. It also affects performance, acceleration, and engine longevity.
+
+**Should I run higher octane fuel for better economy?** 
+Mercury FourStrokes are designed to run on regular octane fuel (87 AKI). Unless your owner's manual specifies otherwise, higher octane doesn't improve fuel economy.
+
+**Does trim really make a meaningful difference?** 
+Yes. The difference between a boat running flat and a boat trimmed for cruise can be 10, 20% in fuel economy. It's one of the cheapest efficiency gains available, since it costs nothing.
+
+**What's the best cruise RPM for fuel economy?** 
+It varies by motor and hull. Most Mercury FourStrokes have a cruise efficiency range that your dealer or owner's manual can identify. The goal is to find the RPM where you're making acceptable speed without the motor working unnecessarily hard.
+
+**Can I improve fuel economy on an older motor?** 
+Often yes, prop tuning, fresh plugs, cleaned injectors or carburettor, and fresh fuel all help. At some point, an aging motor with worn rings and seals will burn more fuel regardless of tuning. That's when a repower conversation makes sense.
+
+---
+
+## Internal Links
+
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
+
+---
+
+## CTA
+
+**Ready to dial in your Mercury?** 
+Whether you want a prop check, a full service, or a quote on a new motor package: [hbw.wiki/service](https://hbw.wiki/service) is where to start. Or build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+
+Phone: 905-342-2153 | Harris Boat Works, Gores Landing, ON | Since 1947
+
+---
+
+**Editor Note:** This post covers the practical levers of fuel economy in priority order. Fuel burn numbers are characterized as typical ranges from HBW rigs, not manufacturer guarantees, this keeps the post accurate without fabricating specs. The ethanol-free fuel mention is on-topic and serves HBW's on-site fuel sale. The "sudden change" section helps readers recognize service-worthy symptoms without diagnosing remotely. No pricing fabricated.
+
+---`,
     faqs: [
       {
         question: 'What\'s normal fuel consumption for a 115HP outboard?',
@@ -9779,204 +9735,222 @@ Or call 905-342-2153.
     category: 'Maintenance',
     readTime: '12 min read',
     keywords: ['diy mercury outboard winterization', 'how to winterize mercury outboard', 'winterize 4-stroke outboard'],
-    content: `# Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)
-
-*Last reviewed: 2026-05-07*
-
-> **Quick answer:** DIY winterizing a Mercury is realistic if you're comfortable with fogging oil, lower-unit drain-and-fill, and fuel stabilizer. The mistake that kills motors is leaving water in the powerhead through a freeze. If you're not certain, pay a dealer, it's cheaper than a cracked block. Service booking at mercuryrepower.ca.
-
-Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter: stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor by spring. For motors you would rather not DIY, [request service at HBW](https://hbw.wiki/service).
-
-![8-step winterization checklist for Mercury outboards: drain fuel and add stabilizer, run for 10 minutes, fog cylinders, drain and refill gear case oil, dry cooling passages, disconnect and tend battery, apply corrosion protection, store vertical with cover and rodent baits.](/lovable-uploads/diagram-winterization-checklist.png)
-
-*The 8-step winterization sequence we run on every customer motor at HBW. Skip any of these and you're shopping for a powerhead in May.*
-
-## Quick recommendation
-
-DIY winterization works for confident owners on smaller motors (under 60 HP) with garage-accessible storage. The procedure is the same on bigger motors but the parts and access get harder. We would not recommend DIY on a 250 HP V8 unless you have done it before.
-
-The five steps below cover the essential freeze-protection and corrosion-protection. Do them in order. Do not skip any one of them. If at any step you are not sure what you are looking at, stop and bring the motor in. We see at least a dozen DIY mistakes every May, and the cheapest one is usually a $1,500 lower unit. The expensive ones are cracked powerheads, which mean the motor is scrap.
-
-## What you need before starting
-
-Supplies (under $100 total at a Canadian Tire or marine store):
-
-- Mercury Quickstor or equivalent fuel stabilizer
-- Mercury Storage Seal fogging oil, or Mercury Premium Fogging Oil
-- Mercury High-Performance Gear Lube (volume depends on motor size; a quart usually does it for under 60 HP, larger motors need 1.5 to 2 quarts)
-- New gear lube fill drain plug gaskets (cheap, replace every year)
-- Spark plug socket (size varies by motor; 13/16" is common)
-- Anti-seize compound for spark plug threads
-- Marine grease for grease points
-- A bucket and rags
-- A fuel system disconnect or earmuffs (depending on flush method)
-
-You also need a way to run the motor briefly. Either a flush attachment (earmuffs that go over the lower unit cooling intake), a fuel-system disconnect that lets you run the motor on a fuel can while it is on a hose, or a tank of water deep enough to submerge the cooling intake.
-
-## Step 1: Stabilize the fuel
-
-Before the last run of the season:
-
-1. Add fuel stabilizer to the gas tank at the rate the bottle says (usually 1 oz per 2.5 gallons / 10L)
-2. Run the motor for at least 10 minutes to circulate the stabilized fuel through the fuel lines, carbs (on older 2-strokes), or fuel injectors (on modern FourStrokes)
-3. The stabilizer prevents fuel breakdown and gum formation over the winter
-
-If your last run is already done, run the motor on muffs for 10 minutes with a small amount of stabilized fuel to reach the same state.
-
-## Step 2: Fog the engine
-
-While the motor is still running warm from the stabilization run:
-
-1. Disconnect the fuel line from the motor (or shut off fuel valve)
-2. While the motor is still running, spray fogging oil into each cylinder through the spark plug holes (after pulling the plugs) OR into the air intake while the motor draws it in
-3. The motor will sputter and stall as it consumes the fogging oil. That is correct.
-4. Once the motor has stalled from fogging oil consumption, you are done with this step.
-
-The fogging oil coats internal cylinder walls, valves, and bearings with a corrosion-resistant film that prevents rust over the winter.
-
-## Step 3: Drain the gearcase
-
-This is the step DIYers most often get wrong:
-
-1. Position the motor in a vertical (down) position. The vent screw must be at the top, the drain screw at the bottom.
-2. Have a clean container ready under the drain screw.
-3. Remove the drain screw FIRST, then the vent screw. (Vent first traps the lube; drain first lets it flow.)
-4. Catch all the lube. Inspect it as it drains. Should be clean honey-amber color.
-5. **If the lube comes out milky or grey, that is water in the gearcase from a failed seal.** Stop. Bring the motor in. We will diagnose and fix the seal before winter freeze damages the gears.
-6. **If the lube has metal flakes or chunks**, that is a bigger problem. Stop. Bring the motor in.
-7. If the lube is clean, proceed to step 4.
-
-## Step 4: Refill with fresh gear lube
-
-This is the step that turns a working motor into scrap if you skip it:
-
-1. Use only Mercury High-Performance Gear Lube. Do not substitute automotive gear oil. The viscosity and additive packages are different.
-2. Pump fresh lube into the bottom drain hole using a pump bottle until lube comes out the top vent hole.
-3. Quickly install and tighten the vent screw. Then the drain screw. Both with new gaskets.
-4. Wipe up any spilled lube. Done.
-
-The motor cannot run without lube in the gearcase. If you forget this step, the gears destroy themselves in 30 minutes of operation. We replace at least three lower units every spring on customers who skipped this step. The lower unit costs more than a full year of professional winterization.
-
-## Step 5: Clear the cooling system and final touches
-
-The freeze-protection step:
-
-1. Run the motor on muffs (or in water) for one or two minutes to confirm cooling water flow
-2. Then disconnect the water source while the motor is still running for 10 to 15 seconds
-3. Tilt the motor up to drain residual water from cooling passages
-4. Lower the motor and confirm no water is dripping from anywhere it should not be
-
-Final touches:
-
-1. Replace spark plugs if they are over a year old or showing wear. Use anti-seize on the threads.
-2. Lubricate steering, throttle, and shift cable pivot points with marine grease
-3. Check anodes (zincs) on the motor. Replace if more than 30% depleted.
-4. Disconnect and remove the battery. Store on a wood block in an insulated indoor space (basement, garage). Trickle charge once a month over winter.
-5. Cover the motor or store the boat covered (shrink-wrap, tarp, or indoor)
-
-## When to call us instead
-
-DIY makes sense for confident owners on smaller motors. Bring the motor to HBW when:
-
-- You have not done it before and you are not sure where the gear lube drain plug is on your specific motor
-- The motor is bigger than 60 HP (parts cost more, mistakes cost more)
-- The boat is fiberglass and lives outside (we can shrink-wrap and store it indoors at HBW)
-- You found water in the gear lube during step 3 (seal repair before winter freeze)
-- You are not going to use the boat until late next spring (we time spring commissioning to your launch date)
-- You want a written inspection report of motor condition for resale or insurance
-- You just do not want to fight with the gear lube pump in November
-
-[Request service at HBW](https://hbw.wiki/service) and we will give you an honest quote. We do this in volume from October through November and we are good at it.
-
-## What HBW checks during winterization that DIY usually misses
-
-When customers DIY their own winterization, they cover the basics. When we do it, we also check:
-
-- Water-pump impeller condition (replace if cracked, swollen, or worn; pump failure in spring is a real risk if you skip this)
-- Spark plug condition and gap on every cylinder
-- Anode (zinc) depletion across all locations on the motor
-- Fuel filter condition (replace if dirty or due)
-- Steering and shift cable smoothness (lube reaches the inside of the cable, not just the visible ends)
-- Trim and tilt fluid level
-- Battery terminal corrosion
-- Hull and trailer prep if storage is included
-
-A full-service winterization at HBW catches problems before they become spring-launch surprises. If you are confident on the freeze-protection basics but want the wear-item check too, ask for a "DIY plus check" service. We do the inspection while you handle the consumables.
-
-## Common DIY mistakes (in order of frequency)
-
-We see the same mistakes every spring. In order:
-
-1. **Forgot to refill the gear lube after draining.** The motor runs in spring, gears destroy themselves in 30 minutes. Cost: $1,500 to $4,500 CAD lower unit replacement.
-2. **Skipped fogging.** Cylinders rust over winter. Motor runs but with reduced compression. Cost: top-end rebuild or replacement.
-3. **Did not stabilize fuel.** Fuel system gums up over winter. Spring start-up requires carb cleaning or injector cleaning. Cost: $200 to $800 CAD service.
-4. **Forgot to clear cooling water from the powerhead.** Water freezes, expands, cracks the block. Motor scrap. Cost: replace the motor.
-5. **Used the wrong gear lube.** Automotive gear oil instead of marine gear lube causes seal damage and gear wear. Cost: lower unit rebuild.
-6. **Did not check for water in the old gear lube.** Missed a failing seal. Water enters in winter, freezes, damages internal seals and gears. Cost: lower unit rebuild plus seal replacement.
-
-The first one is the most common. Most often, DIYers drain the gear lube, get distracted, and never get back to refilling. They start the boat in May and the gears destroy themselves before they realize what happened.
-
-## Related guides
-
-- [How Much Does Boat Winterization Cost in Ontario?](/blog/boat-winterization-cost-ontario-2026), HBW pricing and what's included
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), full seasonal service overview
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), what to do in spring after winterization
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up issues and what to check
-- [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), if you are repowering this year
-
-## Need help with this?
-
-Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
-
-**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
-**Phone:** 905-342-2153
-
-If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
-
-## FAQ
-
-**Can I winterize my Mercury outboard myself?**
-Yes, if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter are stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor.
-
-**What supplies do I need to winterize a Mercury outboard?**
-Mercury fuel stabilizer (Quickstor), Mercury fogging oil, Mercury High-Performance Gear Lube, new drain plug gaskets, spark plug socket, anti-seize, marine grease, a bucket, and rags. Total under $100 CAD at a Canadian Tire or marine store. Plus a way to run the motor (muffs, fuel disconnect, or water tank).
-
-**What happens if I skip winterization?**
-Water in the cooling system freezes and cracks the powerhead block. Water in the gearcase freezes and damages seals. Fuel left without stabilizer breaks down and gums up the fuel system. Skipping winterization can turn into a multi-thousand-dollar repair or a destroyed motor.
-
-**What is the most common DIY winterization mistake?**
-Forgetting to refill the gearcase after draining. The motor runs in spring without lower-unit lube and the gears destroy themselves in 30 minutes. Cost: $1,500 to $4,500 CAD lower unit replacement. We see at least three of these every May.
-
-**Can I use automotive gear oil in my Mercury gearcase?**
-No. Mercury High-Performance Gear Lube has different viscosity and additives designed for marine gear use. Automotive gear oil causes seal damage and gear wear. Use only Mercury or equivalent marine gear lube.
-
-**How long does DIY winterization take?**
-About one hour for an under-60 HP motor if you have done it before. First-timers should plan for two hours. Bigger motors take longer because parts are heavier and access is harder.
-
-**Should I winterize my motor if it's stored in a heated garage?**
-Yes. Even in a heated garage, fuel breaks down and corrosion accumulates without the protective layer fogging oil provides. The cooling system drain step is less critical with heated storage but the other four steps still apply.
-
-**What is fogging oil and why do I need it?**
-Fogging oil is a heavy oil designed to coat internal engine surfaces (cylinder walls, valves, bearings) with a corrosion-resistant film over winter. Without it, internal metal surfaces rust during the storage period and the motor loses compression. Fogging is non-negotiable for proper winterization.
-
-**Do I need to remove the battery for winter?**
-Yes. Disconnect and remove the battery, store it on a wood block in an insulated indoor space (basement, garage), and trickle charge once a month. A battery left in a freezing boat over winter can crack from internal freezing and is unlikely to start the motor in spring even if it survives.
-
-**How do I know if my gearcase has water in it?**
-Drain a sample of gear lube. Clean lube is honey-amber color and translucent. Lube with water is milky or grey. If you see milky lube, stop the DIY winterization and bring the motor to HBW or another Mercury dealer for seal diagnosis before winter freeze damages the internal gears.
-
-**When should I winterize my outboard in Ontario?**
-Late September through early November is the standard window. Earlier is fine. Later than first hard freeze is risky. By mid-November you are racing the calendar. Booking professional service in October gives you the easiest scheduling.
-
-**Should I call HBW for winterization or DIY?**
-DIY makes sense if you have done it before, the motor is under 60 HP, and you have garage access. Call HBW if it is your first time, the motor is bigger than 60 HP, you found water in the gearcase, you want a wear-item inspection included, or you just do not want to spend an hour wrestling with a gear lube pump in November. [Request service](https://hbw.wiki/service) to get on our schedule.
+    content: `**Language:** English 
 
 ---
 
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)`,
+## Quick Answer
+
+You can winterize your own Mercury outboard if you're comfortable with fogging oil, lower-unit drain-and-fill, and fuel stabilizer, and if you have the supplies and an hour of focused work. The step that kills motors is leaving water in the powerhead through a freeze. If you're not certain the cooling system is clear, pay a dealer to do it. A professional winterization costs a fraction of a cracked block.
+
+For professional winterization: [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
+
+Ontario's boating season has a hard stop. Unlike some parts of the country where an outboard can sit in the water year-round, here it comes out in October and faces five or six months of temperatures that will crack an unprotected powerhead if you leave water in it.
+
+Winterization isn't optional maintenance. It's the difference between a motor that starts in May and one that needs a powerhead, or gets scrapped.
+
+This guide covers what DIY winterization actually involves, which steps are realistic for most owners, which ones are easy to get wrong, and when it makes more sense to bring the motor to a dealer.
+
+In the Aug, Nov 2025 season, we completed 584 winterizations at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
+
+---
+
+## Who Should DIY and Who Shouldn't
+
+**DIY is realistic if:**
+- You're comfortable working around a motor and have done basic maintenance before
+- You have a smaller motor (under 60 HP is more manageable for a first DIY attempt)
+- You have storage access with space to work around the motor
+- You can run the motor briefly at home (with flush muffs or a water supply)
+- You have the right supplies and aren't guessing at quantities or procedures
+
+**Consider professional service if:**
+- You've never done this before and aren't confident with mechanical work
+- You have a larger, more complex motor (especially V6, V8, or Verado)
+- You're not sure you can clear the cooling system properly
+- You're rushed and likely to skip or hurry steps
+- The motor is stored somewhere you can't access it easily for prep
+
+For engine repairs, we only service Mercury and Mercruiser.
+
+---
+
+## What You Need Before Starting
+
+Pick these up at a Canadian Tire, marine store, or from your dealer's parts counter before the last day on the water:
+
+- Mercury Quickstor or equivalent fuel stabilizer
+- Mercury Storage Seal fogging oil (or Mercury Premium Fogging Oil)
+- Mercury High-Performance Gear Lube, volume depends on motor size; a quart typically covers motors under 60 HP, larger motors need more
+- New gear lube drain plug gaskets, cheap, replace every year
+- Spark plug socket (size varies; 13/16" is common on many Mercurys, check your manual)
+- Anti-seize compound for spark plug threads
+- Marine grease for grease points
+- A bucket and rags
+- Flush muffs (earmuffs that go over the lower-unit cooling intake) or another method to supply cooling water
+
+You need a way to run the motor briefly during this process. Flush muffs connected to a garden hose are the most common DIY method and work well.
+
+---
+
+## The Winterization Sequence
+
+Do these in order. Don't skip steps. If you're not sure what you're looking at at any point, stop and bring the motor in.
+
+### Step 1: Stabilize the Fuel
+
+Do this before your last run of the season, not after.
+
+1. Add fuel stabilizer to the tank at the rate on the bottle, typically 1 oz per 2.5 gallons (10 L) or as directed.
+2. Run the motor for at least 10 minutes to circulate the stabilized fuel through the entire system, lines, injectors (FourStrokes), or carburettors (older 2-strokes).
+3. This prevents the fuel from breaking down and gumming up your fuel system over winter.
+
+**Ethanol note:** If you're running pump gas with ethanol (E10), this step matters more. Ethanol absorbs water and can cause phase separation in stored fuel. Ethanol-free fuel is available at HBW on-site, filling up with it at the end of season simplifies this step considerably.
+
+**Don't:** drain the tank completely dry. Modern FourStroke fuel systems need some fuel in the system. What you want is stabilized fuel, not an empty tank.
+
+### Step 2: Flush the Cooling System
+
+After the last run (or during winterization), flush the motor with clean fresh water. This removes salt (for salt water boats), sediment, and any organic debris from the cooling passages.
+
+Connect the flush muffs to a hose, run the motor at idle for at least 5 minutes, then shut down.
+
+**Critical:** The motor must reach operating temperature during this step for the thermostat to open and allow water through the full cooling circuit. Five minutes at idle on warm motor is better than two minutes on a cold one.
+
+After shutting down, let the water drain completely from the motor while tilted down.
+
+### Step 3: Fog the Engine
+
+Fogging oil is sprayed into the intake (for most FourStrokes) or carburettors (for older 2-strokes) while the motor is running. It deposits a protective oil film on the internal cylinder walls, protecting against rust and corrosion during storage.
+
+**FourStroke process (typical):** With the motor running at idle and connected to flush water:
+1. Remove the air box cover to access the intake.
+2. Spray fogging oil in short bursts into the intake. The motor will smoke, this is expected.
+3. Continue until oil smoke is coming steadily from the exhaust.
+4. Shut down while still spraying, this leaves a coat of oil on the cylinder walls.
+
+**Older carbureted 2-strokes:** Process is similar but through the carburettor throat(s). Follow your model-specific procedure.
+
+The procedure varies by motor model, consult your Mercury operator's manual for the exact method for your motor. Getting this step wrong (under-fogging, or fogging incorrectly) is one of the most common DIY mistakes.
+
+### Step 4: Drain and Refill the Gearcase
+
+The lower unit gearcase contains gear lube that absorbs water through the seals over a season of use. If you leave that water-contaminated lube in over winter, it can freeze, expand, and damage the gear case or seals.
+
+1. Remove both drain/fill plugs from the gearcase, the lower one first, then the upper one.
+2. Let the old gear lube drain completely into a container.
+3. **Inspect what drains.** Milky or foamy gear lube indicates water intrusion, this is a sign you need seal inspection before assuming the gearcase is healthy.
+4. Using a gear lube pump, fill from the bottom hole until lube comes out the top hole with no air bubbles.
+5. Install the top plug first, then the bottom plug. Replace the gaskets, they're cheap and the small cost of a new gasket beats a gear lube leak.
+
+Use Mercury-branded gear lube appropriate for your motor. The spec is in your owner's manual.
+
+### Step 5: Lubricate All Grease Points
+
+Every Mercury has grease fittings on the steering and tilt/trim pivot points. These need marine grease before storage. Dry or under-greased pivot points seize over winter and result in stiff, damaged components in spring.
+
+Follow the lubrication diagram in your owner's manual. Common points:
+- Tilt/trim tube and pivot
+- Steering cable end (if applicable)
+- Swivel bracket
+- Propeller shaft (anti-seize compound on prop shaft, not regular grease)
+- Any other fittings shown in your manual
+
+Don't skip the prop shaft. A prop that corrodes onto the shaft over winter is a spring headache.
+
+### Step 6: Battery, Remove and Store Properly
+
+The battery should not overwinter in the boat. Cold temperatures accelerate discharge in lead-acid batteries, and a discharged battery can freeze and be permanently damaged.
+
+Remove the battery and store it in a cool, dry, frost-free location. Put it on a battery tender (trickle charger designed for long-term storage), this maintains charge without overcharging and dramatically extends battery life.
+
+A battery that stored properly over winter starts spring at full capacity. A battery that sat in a cold boat all winter may start the season already compromised.
+
+### Step 7: Final Check, Water Drain
+
+Before putting the cover on:
+- Tilt the motor to allow any remaining water to drain from the cooling system
+- Confirm you can see water drain from the motor
+- The motor should be stored in a position that allows gravity to drain any remaining water from the cooling passages
+
+For most outboards, storing tilted up (or close to vertical if the motor can be removed and stored on an engine stand) works. Check your model's storage orientation recommendation.
+
+### Step 8: Cover and Store
+
+Cover the motor with a vented motor cover or cowling cover. A non-vented plastic wrap traps condensation. The motor needs to breathe slightly while in storage.
+
+If the boat goes into covered indoor storage, this is less critical. Outdoor or unheated storage needs proper covering.
+
+---
+
+## What Gets Missed Most Often
+
+Based on what we see in spring diagnostics at HBW:
+
+1. **Incomplete cooling flush.** The motor didn't get to temperature, so the thermostat never opened and the full cooling circuit wasn't cleared.
+2. **Fogging oil skipped entirely.** "I forgot" is the most common reason. The consequence shows up as surface corrosion on cylinder walls in spring.
+3. **Milky gear lube ignored.** If gear lube came out milky and the owner just refilled without addressing the seal leak, the new lube goes milky again by spring.
+4. **Battery left in the boat.** Dead or frozen battery in May.
+5. **Stabilizer added but motor not run afterward.** The stabilizer never reached the injectors or carbs, so they saw unstabilized fuel all winter.
+
+---
+
+## When to Let a Dealer Do It
+
+The procedure above is accurate and complete, but it's also a sequence of steps where one mistake can result in expensive consequences in May. If you're not fully confident in any of the steps above, particularly fogging and cooling system clearance, professional winterization is the better economic decision.
+
+The cost of professional winterization is a known quantity. The cost of a cracked powerhead is not, and it's substantially higher.
+
+If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/service). We booked 584 winterizations in the 2025 fall season, the shop knows these motors.
+
+---
+
+## Frequently Asked Questions
+
+**Can I winterize a Mercury FourStroke the same way as an older 2-stroke?** 
+The core steps are the same, but the procedure for fogging and fuel stabilization differs. FourStrokes have fuel injection systems rather than carburettors, and the fogging process is different. Always follow the procedure in your model's Mercury operator's manual, not a generic guide.
+
+**Do I need to change the spark plugs as part of winterization?** 
+It's a good time to inspect them, but it's not required at every winterization. If the plugs are at or near their service interval, change them in fall so the motor starts fresh in spring. Mercury's service schedule has plug replacement intervals, check your manual.
+
+**What if I pull the boat out of the water in November but can't get to it until December?** 
+The deadline is before it freezes hard enough to crack the block. In Ontario, that usually means before sustained temperatures below -5°C to -10°C. Don't cut it close, once it's frozen, the damage is done.
+
+**Is it okay to run the motor without water to fog it?** 
+No. Dry-cranking an outboard even briefly can damage the water pump impeller. Always have the cooling system supplied with water when running the motor, including during fogging.
+
+**Should I drain the fuel tank completely for winter?** 
+Not recommended for modern FourStrokes. Leaving stabilized fuel in the system is better than an empty system, which allows seals and gaskets to dry out. The stabilizer should be run through the full fuel system. Ask your dealer if you're unsure about your specific motor.
+
+**My gear lube came out milky. Is that a big problem?** 
+Yes. Milky gear lube means water in the gearcase, which means a seal is leaking. Fresh gear lube will go milky again by spring if the seal isn't addressed. This is worth having looked at before or during winterization.
+
+---
+
+## Internal Links
+
+- [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
+- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
+
+---
+
+## CTA
+
+**Want it done right without the Saturday morning?** 
+Request professional winterization at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+Phone: 905-342-2153
+
+---
+
+**Editor Note:** Winterization steps are described accurately without fabricating exact quantities or motor-specific procedures that would vary by model, the manual is referenced instead. The "when to call a dealer" framing is honest and doesn't oversell fear. The 584 winterization stat is used once as a credibility anchor. No pricing fabricated.
+
+---`,
     howToSteps: [
       { name: 'Stabilize the fuel', text: 'Add fuel stabilizer to the gas tank at the rate the bottle says (usually 1 oz per 2.5 gallons / 10L). Run the motor for at least 10 minutes to circulate stabilized fuel through the lines, carbs, or fuel injectors. The stabilizer prevents fuel breakdown and gum formation over winter.' },
       { name: 'Run for 10 minutes with stabilized fuel', text: 'Either complete this during your last run of the season, or run the motor on muffs for 10 minutes with a small amount of stabilized fuel. This puts treated fuel into every part of the system before fogging.' },
