@@ -1,3 +1,4 @@
+// Last rebuild trigger: 2026-05-12T15:00:00Z (force prerender against current blogArticles.ts)
 /**
  * Static HTML stamping for crawler-friendly per-route HTML.
  *
