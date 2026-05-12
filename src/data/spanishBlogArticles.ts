@@ -561,129 +561,149 @@ This is a Spanish-language post targeting Spanish-speaking boaters in Ontario. S
     category: 'Comparación de motores',
     readTime: '12 min',
     keywords: ['Mercury 115 vs 150', 'motor fuera de borda 115 o 150 HP', 'Mercury FourStroke comparación', 'remotorización Mercury Ontario'],
-    content: `
-## Una nota sobre el idioma
+    content: `### Respuesta rápida
 
-Nuestro equipo en Harris Boat Works trabaja en inglés, no hablamos español, pero haremos todo lo posible para ayudarle. El configurador de precios en [mercuryrepower.ca](https://mercuryrepower.ca) le permite comparar los precios de ambos motores sin necesidad de llamar, funciona sin barrera de idioma. Para preguntas de servicio, escriba en [hbw.wiki/service](https://hbw.wiki/service), los mensajes en español son bienvenidos.
-
-Harris Boat Works es el único concesionario Mercury Platinum en Ontario con contenido en español sobre remotorización y comparación de motores.
+El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y es ideal para botes de 16, 19 pies con 2, 3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y brilla en botes de 19, 22 pies con cargas de 4, 5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
 
 ---
 
-## La pregunta que más nos hacen
+### Artículo completo
 
-"¿El 115 es suficiente, o debería ponerle el 150?" Es probablemente la pregunta más frecuente que recibimos en Harris Boat Works. La respuesta correcta depende de su embarcación, su uso, y honestamente, su presupuesto. Aquí está todo lo que necesita saber.
+La pregunta "¿115 o 150?" es de las más comunes en Harris Boat Works. No tiene una respuesta única, depende de tu bote, tu uso típico, y honestamente, de cuánto peso llevas cuando sales al agua.
 
----
-
-## Especificaciones técnicas
-
-### Mercury 115 FourStroke
-
-- **Cilindrada:** 2,1 L, 4 cilindros en línea
-- **Peso (eje de 20"):** ~163 kg (359 lbs)
-- **Rango de RPM:** 5,000-6,000
-- **Variantes:** FourStroke estándar, Pro XS (rendimiento/pesca)
-- **Ideal para:** embarcaciones de aluminio de 16 a 19 pies, pontones, embarcaciones familiares, pesca en los Kawartha y Rice Lake
-
-El 115 es uno de los motores más populares que instalamos en Gores Landing. Es confiable, económico en combustible para su potencia, y se adapta a una gran variedad de embarcaciones. Para la mayoría de los navegantes que usan lagos como Rice Lake, Lake Simcoe o los lagos Kawartha, es frecuentemente exactamente lo que se necesita.
-
-### Mercury 150 FourStroke
-
-- **Cilindrada:** 3,0 L, 4 cilindros en línea
-- **Peso (eje de 20"):** ~206 kg (455 lbs)
-- **Rango de RPM:** 5,000-5,800
-- **Variantes:** FourStroke estándar, Pro XS (rendimiento/pesca)
-- **Ideal para:** embarcaciones de 19 a 22 pies, pontones grandes con pasajeros, embarcaciones con cargas importantes, quienes buscan más rendimiento a alta velocidad
-
-El 150 tiene una cilindrada considerablemente mayor, 3,0 L contra 2,1 L, es decir aproximadamente 43% más. Ambos motores son 4 cilindros en línea, pero el bloque más grande del 150 le da más torque y reserva de potencia. No son solo 35 HP más en papel: es un motor fundamentalmente diferente en su rango de torque, en cómo responde a plena carga, y en su capacidad de mantener buen rendimiento cuando el bote va bien cargado.
+Este artículo te da las especificaciones reales, la diferencia práctica en el agua, y una forma de decidir sin necesidad de memorizar hojas de datos técnicos.
 
 ---
 
-## Tabla comparativa
+## Especificaciones comparadas
 
-| Especificación | Mercury 115 FourStroke | Mercury 150 FourStroke |
-|---|---|---|
-| Cilindrada | 2,1 L | 3,0 L |
-| Cilindros | 4 en línea | 4 en línea |
-| Peso (eje de 20") | ~163 kg (359 lbs) | ~206 kg (455 lbs) |
-| Diferencia de peso |, | +44 kg (96 lbs) más que el 115 |
-| Rango de RPM | 5,000-6,000 | 5,000-5,800 |
-| Embarcaciones ideales | 16-19 pies | 19-22 pies |
-| Variante Pro XS | Sí | Sí |
+| Característica | Mercury FourStroke 115 | Mercury FourStroke 150 |
+|----------------|----------------------|----------------------|
+| Potencia | 115 HP | 150 HP |
+| Desplazamiento | 2.1 litros (inline-4) | 3.0 litros (inline-4) |
+| Peso aproximado | ~163 kg | ~206 kg (+44 kg / 96 lbs) |
+| RPM de crucero | 5,000, 6,000 RPM | 5,000, 5,800 RPM |
+| Rango de botes | 16, 19 pies | 19, 22 pies |
+| Versión Pro XS | Sí | Sí |
+| Garantía Mercury | 3 años | 3 años |
+
+El 150 tiene un **43% más desplazamiento** que el 115. No es la misma base con más potencia, es un motor más grande con una curva de torque diferente. Esa diferencia se siente en el plano, especialmente con carga completa.
 
 ---
 
-## Las diferencias reales en el día a día
+## La diferencia real en el agua
 
-### Rendimiento y velocidad
+### Con carga ligera (2 adultos, equipo básico de pesca)
 
-En una embarcación de aluminio de 17 pies con dos adultos a bordo, la diferencia entre un 115 y un 150 es perceptible pero no dramática. Probablemente ganará algunos kilómetros por hora a máxima potencia con el 150. Donde la diferencia realmente se nota es con carga completa, cuatro adultos, una hielera llena, equipo de pesca, donde el 150 desplaza ese peso más fácilmente y entra en planeo más rápido.
+En un bote de 17 pies con dos adultos y equipo de pesca liviano, la diferencia entre 115 y 150 es **notoria pero no dramática**. El 150 planeará más rápido y llegará a velocidad de crucero con menos esfuerzo. El 115 llega también, un poco más lento en el plano.
+
+### Con carga completa (4 adultos + cooler + equipaje)
+
+Aquí es donde el 150 demuestra su valor. Con 4 adultos y carga real, el 115 trabaja cerca de su límite para planearse. El tiempo de planeo aumenta, el consumo de combustible sube, y el motor trabaja con menor margen. El 150 maneja esa carga con facilidad.
+
+### En aguas abiertas y viento
+
+Para cruzar aguas como la parte más ancha de Rice Lake, Lake Simcoe o Georgian Bay, el 150 da más margen de seguridad. Puede ajustar la velocidad manteniendo planeado. El 115, especialmente con carga, tiene menos margen de maniobra con viento y oleaje.
 
 ### Consumo de combustible
 
-Contra lo que muchos piensan, a velocidad de crucero normal (no a máxima potencia), ambos motores pueden ser bastante similares en consumo. El 150, usado al 60-70% de su capacidad en una embarcación grande, puede ser tan eficiente como el 115 empujado al máximo en una embarcación pequeña. La hélice elegida también tiene un impacto significativo en el consumo real.
-
-### Peso
-
-El 150 pesa aproximadamente **44 kg (96 lbs) más** que el 115. Es un factor importante para algunas embarcaciones, particularmente los botes de aluminio pequeños que tienen un límite de capacidad máxima en el espejo de popa (transom). Antes de elegir, siempre verifique el límite de peso del motor recomendado por el fabricante de su embarcación.
+Contrariamente a lo que mucha gente asume, el 150 no siempre consume más que el 115. Si el 115 trabaja al 90% de su capacidad para llevar una carga que el 150 maneja al 60, 70%, el consumo puede ser similar o hasta superior en el 115. Dicho esto, para uso ligero con poca gente, el 115 consumirá menos.
 
 ---
 
-## ¿Qué motor para qué bote?
+## El factor peso: esto importa más de lo que crees
 
-**Mercury 115 FourStroke, buena opción si:**
-- Su embarcación mide entre 16 y 19 pies
-- Navega en familia en lagos interiores (Kawartha, Rice Lake, Lake Simcoe)
-- Su carga típica es dos a tres personas con equipo estándar
-- Busca un buen equilibrio costo/rendimiento
-- Tiene un pontón de tamaño estándar
+El 150 pesa **44 kg más** (96 libras) que el 115. Eso puede parecer poco, pero en la popa de un bote tiene efecto real:
 
-**Mercury 150 FourStroke, buena opción si:**
-- Su embarcación mide entre 19 y 22 pies
-- Transporta regularmente cuatro o más personas, o carga importante
-- Tiene un pontón grande o una embarcación familiar más pesada
-- Quiere más potencia para la aceleración y la velocidad de crucero
-- Está reemplazando un motor de 135 HP o más
+1. **Límite de peso del transom**, verifica la placa de capacidad de tu bote. Si ya estás cerca del límite de la popa, el 150 puede excederlo.
+2. **Manejo en agua**, más peso en la popa eleva la proa y puede afectar el plano ideal.
+3. **Remolque**, el GVWR (peso bruto) de tu trailer y vehículo debe incluir el motor.
+
+Antes de comprar el 150 para un bote de 17 pies o menos, verifica la capacidad máxima de motor del fabricante.
 
 ---
 
-## Pro XS: para pescadores y amantes del rendimiento
+## Versión Pro XS: ¿cuándo tiene sentido?
 
-Ambos motores están disponibles en versión **Pro XS**, la línea de rendimiento/pesca de Mercury. El Pro XS está optimizado para mayor velocidad máxima y respuesta más rápida en la aceleración. Si pasa mucho tiempo pescando en los Kawartha y quiere llegar a sus puntos rápidamente, o si el rendimiento puro es importante para usted, el Pro XS vale la pena considerarlo. El precio es ligeramente más alto que el FourStroke estándar.
+Ambos motores existen en versión Pro XS, diseñada específicamente para pesca deportiva y rendimiento agresivo. Las diferencias del Pro XS vs el FourStroke estándar incluyen un perfil de admisión de mayor rendimiento y calibración optimizada para planeado rápido.
 
----
-
-## Contexto de Ontario: lo que importa en nuestros lagos
-
-En los lagos Kawartha, Rice Lake o Lake Simcoe, la navegación se hace principalmente a velocidades de crucero moderadas. La mayoría de los días no está a máxima potencia, se mueve entre las islas, remolca un tubo inflable, busca un buen punto de pesca. En ese contexto, el 115 es más que suficiente para la gran mayoría de las embarcaciones familiares.
-
-Donde el 150 marca la diferencia real en Ontario: las mañanas de pesca deportiva donde quiere cruzar un lago grande rápidamente antes de que se levante el viento, o cuando tiene un pontón de 22 pies con seis pasajeros y hieleras llenas.
-
-Harris Boat Works está en Gores Landing, sobre Rice Lake, uno de los mejores lagos de walleye en Ontario. Conocemos estas aguas, y conocemos lo que las embarcaciones que navegan aquí necesitan. Llevamos 78 años aquí. Cuando le recomendamos un motor, es basándonos en lo que vemos funcionar temporada tras temporada, no en lo que nos da mejor margen.
+Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS es para ti. Para uso familiar o pesca recreativa mixta, el FourStroke estándar cubre todas las necesidades con mayor economía.
 
 ---
 
-## La diferencia de precio
+## ¿Cuál motor es para ti?
 
-El 150 FourStroke cuesta más que el 115, tanto el motor como la instalación (si se necesitan modificaciones). Para ver los precios exactos en dólares canadienses para ambos motores, y compararlos lado a lado, use el configurador en [mercuryrepower.ca](https://mercuryrepower.ca). No hay "llame para el precio" aquí, es transparente, en línea, disponible cuando quiera.
+### Elige el Mercury 115 FourStroke si:
+- Tu bote es de 16, 19 pies
+- Sales típicamente con 2, 3 personas
+- Pescas en Rice Lake, Kawarthas, y lagos interiores similares
+- El precio importa, el 115 es más accesible
+- No buscas rendimiento extremo ni cargas completas regulares
+
+### Elige el Mercury 150 FourStroke si:
+- Tu bote es de 19, 22 pies
+- Sales regularmente con 4, 5 personas o carga completa
+- Navegas en aguas más abiertas con viento y oleaje
+- El planeo rápido importa para salidas de pesca temprana al amanecer
+- Planeas usar el bote para deportes acuáticos (esquí, wakeboard)
 
 ---
 
-## Contáctenos
+## Precios reales (sin llamadas telefónicas)
 
-**Compare precios en línea:** [mercuryrepower.ca](https://mercuryrepower.ca), configurador de precios en tiempo real, en dólares canadienses.
+Harris Boat Works publica precios en línea, algo que la mayoría de los concesionarios no hacen. Para ver los precios actuales en CAD de los motores Mercury 115 y 150, usa el configurador en **mercuryrepower.ca**.
 
-**Solicitud de servicio:** [hbw.wiki/service](https://hbw.wiki/service), puede escribir en español.
-
-**Por teléfono:** 905-342-2153, nuestro equipo habla inglés, pero encontraremos la forma de comunicarnos.
-
-**En persona:** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, a 1,5 horas al este de Toronto.
+El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging completo puede agregar $2,000, $5,000+ CAD dependiendo de la configuración.
 
 ---
 
-*Harris Boat Works, concesionario Mercury Marine Platinum. El nivel más alto de certificación de Mercury. Técnicos formados y certificados directamente por Mercury Marine.*
-    `,
+## Sobre Harris Boat Works
+
+Harris Boat Works lleva 78 años en Rice Lake, Gores Landing, Ontario. Somos concesionario Mercury Marine Platinum, el nivel más alto de certificación Mercury, lo que significa acceso prioritario a partes, técnicos certificados, y manejo directo de garantías con Mercury.
+
+Vendemos aproximadamente **65 motores Mercury nuevos al año**. Sabemos qué funciona en estos lagos.
+
+Rice Lake es uno de los mejores lagos de walleye en Ontario. Nuestros clientes lo saben porque llevan generaciones lanzando aquí.
+
+Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y Mercruiser. *(Nota del editor EN: "For engine repairs, we only service Mercury and Mercruiser.")*
+
+---
+
+## Preguntas frecuentes (FAQ)
+
+**¿El 150 HP garantiza más velocidad máxima que el 115 HP?** 
+Depende del bote, la hélice y el peso. En muchos botes de 17 pies, el 115 puede alcanzar velocidades máximas similares al 150 con hélice optimizada, la diferencia real está en el plano bajo carga y en la reserva de potencia.
+
+**¿Puedo instalar un 150 en un bote que originalmente tenía un 115?** 
+Siempre que el transom y la placa de capacidad del bote lo permitan. Algunos botes de 17 pies tienen certificación para hasta 150 HP; otros solo para 115. Verifica la placa de capacidad antes de comprar.
+
+**¿Cuánto dura un motor Mercury FourStroke con buen mantenimiento?** 
+Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcanzan fácilmente 2,000, 3,000 horas. Hemos visto motores bien mantenidos durar muchos más años que eso en Rice Lake.
+
+**¿Puedo financiar el motor?** 
+Sí. Mercury ofrece opciones de financiamiento. Verifica las condiciones actuales en mercuryrepower.ca, Harris Boat Works aplica las tasas vigentes al momento de la compra.
+
+**¿El equipo de Harris Boat Works habla español?** 
+Nuestro equipo opera en inglés. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual. Para preguntas específicas, puedes escribirnos en español en hbw.wiki/service.
+
+---
+
+## CTA, Compara precios y configura tu motor
+
+Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 150 HP, comparar opciones de rigging, y armar tu presupuesto completo, sin llamadas previas, sin presión.
+
+¿Quieres hablar con alguien? Llama al **905-342-2153** o escríbenos en **hbw.wiki/service**.
+
+Harris Boat Works, Gores Landing, Ontario 
+harrisboatworks.ca | Rice Lake
+
+---
+
+**Nota del editor (English):** Weights and specifications cited are approximate for current-generation Mercury FourStroke models and should be verified against the current Mercury Marine spec sheets before publishing, as specifications can change with model year updates. The Pro XS section should be reviewed to confirm current Pro XS calibration language is accurate for 2026 models. HBW service scope: "For engine repairs, we only service Mercury and Mercruiser."
+
+---
+
+---`,
     faqs: [
       { question: '¿El 150 consume mucho más que el 115?', answer: 'En la práctica, el 150 suele consumir más combustible, pero la diferencia real depende mucho del casco, la hélice, la carga y la velocidad de crucero. Un 115 sobrecargado puede consumir tanto como un 150 con carga normal.' },
       { question: '¿Los dos motores usan las mismas piezas?', answer: 'No. Los bloques son diferentes. Pero ambos son de la familia Mercury FourStroke y comparten la misma red de servicio.' },
@@ -867,143 +887,193 @@ This is a Spanish-language post targeting Spanish-speaking boaters in Ontario. S
     category: 'Regulaciones',
     readTime: '12 min',
     keywords: ['licencia navegación Ontario', 'PCOC Ontario', 'regulaciones bote Ontario', 'permiso de navegación Canadá', 'seguridad embarcación Ontario'],
-    content: `
-## Una nota sobre el idioma
+    content: `### Respuesta rápida
 
-Nuestro equipo en Harris Boat Works trabaja en inglés, no hablamos español, pero haremos todo lo posible para ayudarle. Muchos navegantes hispanohablantes buscan información clara sobre las regulaciones de navegación en Ontario y encuentran principalmente recursos en inglés. Esta guía resume lo que necesita saber, en español, de forma directa.
-
-Nuestro formulario de contacto en [hbw.wiki/service](https://hbw.wiki/service) acepta mensajes en español, y el configurador de precios en [mercuryrepower.ca](https://mercuryrepower.ca) funciona sin barrera de idioma.
-
-Harris Boat Works es el único concesionario Mercury Platinum en Ontario con contenido en español sobre regulaciones y licencias de navegación.
+Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** (Pleasure Craft Operator Card / Carta de Operador de Embarcaciones), un certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la **PCL** (Pleasure Craft Licence), una licencia para la embarcación misma si tiene motor de 10 HP o más, renovable cada 5 años por **$24 CAD** desde el 31 de diciembre de 2025. La multa por no tener la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
 
 ---
 
-## La PCOC: su tarjeta de operador de embarcaciones
+### Artículo completo
 
-La **Pleasure Craft Operator Card (PCOC)** es la certificación federal obligatoria para cualquier persona que opere una embarcación motorizada en Canadá. Está regulada por Transport Canada.
+Navegar en Ontario es uno de los mejores pasatiempos que ofrece la provincia. Pero como en el caso de conducir un automóvil, hay reglas claras que necesitas conocer antes de salir al agua.
 
-A diferencia de una licencia de conducir de vehículo, la PCOC **no expira**. Usted aprueba el examen una vez, recibe su tarjeta, y es válida de por vida.
-
-### ¿Quién debe tenerla?
-
-Cualquier persona que opere el motor de una embarcación recreativa motorizada, sin importar:
-
-- La potencia del motor (incluidos motores eléctricos de pesca / trolling motors)
-- Si la embarcación es suya o prestada
-- Si está en un lago, un río o una vía marítima
-- Que el motor esté en marcha o no (si la embarcación tiene motor, necesita la PCOC)
-
-Si usted tiene el control y la embarcación tiene motor, necesita la tarjeta.
-
-### Restricciones para menores de edad
-
-- **Menores de 12 años:** pueden operar motores de hasta 10 HP sin supervisión directa
-- **De 12 a 15 años:** hasta 40 HP sin supervisión directa
-- **Menores de 16 años:** no pueden operar motos acuáticas (jet skis / PWC)
-
-### Cómo obtener la PCOC
-
-1. **Elija un proveedor acreditado por Transport Canada.** Varios ofrecen el curso y el examen en línea. Busque "pleasure craft operator card test" para encontrar opciones.
-2. **Complete el curso.** Cubre reglas de navegación, equipo de seguridad obligatorio, boyas y balizas, derechos de paso, y más.
-3. **Apruebe el examen.** Serie de preguntas de opción múltiple. Puede repetirlo si no aprueba (pueden aplicar cargos adicionales según el proveedor).
-4. **Reciba su tarjeta.** Una tarjeta temporal generalmente está disponible inmediatamente. La tarjeta permanente llega por correo.
-
-**Costo típico:** entre $40 y $50 CAD.
-
-Para la mayoría de los propietarios recreativos, la forma más común de cumplir con el requisito de competencia es la PCOC. Si alquila una embarcación, en ciertos casos también puede aplicarse el rental boat safety checklist durante el período del alquiler.
-
-**Importante:** Debe llevar la **tarjeta original** a bordo. No se aceptan copias impresas ni fotos digitales.
+Esta guía está diseñada para hispanohablantes que quieren entender el sistema de licencias y regulaciones de Ontario sin tener que traducir documentos técnicos del gobierno. Cubrimos los requisitos legales principales, no reemplazamos la consulta de los documentos oficiales de Transporte Canadá ni del Ministerio de Recursos Naturales y Forestales de Ontario (MNRF), que actualizan sus reglamentos periódicamente.
 
 ---
 
-## El PCL: licencia de la embarcación
+## PCOC, La "licencia de conducir" del navegante
 
-Además de la PCOC (que es para el operador), toda embarcación con motor de 10 HP o más necesita un **Pleasure Craft Licence (PCL)**, la licencia de la embarcación.
+La Pleasure Craft Operator Card (PCOC) es el equivalente náutico de una licencia de conducir. Es emitida por Transporte Canadá y es obligatoria para cualquier persona que opere una embarcación motorizada en aguas canadienses.
 
-| Detalle | Información |
-|---|---|
-| Costo | $24 CAD |
-| Validez | 5 años (desde el 31 de diciembre de 2025) |
-| Requisito de exhibición | Número visible en ambos lados de la proa |
-| Tamaño mínimo de caracteres | 7,5 cm (3 pulgadas) de altura |
-| Se obtiene en | En línea, a través de Transport Canada |
+### Características clave:
 
-No confunda la PCOC con el PCL: la PCOC es la competencia del operador; el PCL es el registro de la embarcación.
+| Característica | Detalle |
+|----------------|---------|
+| Validez | Vitalicia, no expira |
+| Cobertura | Todo Canadá |
+| Requisito | Examen con 75% mínimo de aprobación |
+| Modalidad | En línea, con proveedor acreditado por Transporte Canadá |
+| Costo típico | $40, 50 CAD |
+| Documento requerido | Original físico en la embarcación, no copias, no fotos |
+| Multa sin ella | Desde $250 CAD |
+
+El examen está actualmente disponible en inglés y francés. A la fecha de publicación no existe una versión certificadora oficial en español, para prepararte, puedes usar materiales de estudio en español de terceros y luego presentar el examen en inglés o francés. Verifica la disponibilidad de idiomas directamente en tc.gc.ca.
+
+### ¿Quién necesita la PCOC?
+
+Toda persona que opere el control de una embarcación motorizada, sin importar:
+- Si es propietario o arrendatario
+- Si el motor es pequeño (incluso un motor de pesca eléctrico)
+- Si es residente temporal o permanente
+
+---
+
+## PCL, Licencia de la embarcación
+
+La Pleasure Craft Licence (PCL) es diferente de la PCOC personal. Es la licencia de la **embarcación misma**, equivalente a las placas de un vehículo.
+
+**Aplica si el motor es de 10 HP (7.5 kW) o más.**
+
+### Cambio reciente (diciembre 2025):
+
+Desde el **31 de diciembre de 2025**, la PCL cambió a un esquema de renovación cada **5 años** con un costo de **$24 CAD**. Anteriormente la PCL era gratuita con renovación diferente. Si tienes una PCL antigua, verifica su estatus en tc.gc.ca.
+
+La PCL no es lo mismo que el registro de embarcaciones (que aplica a barcos más grandes o de uso comercial). Para la mayoría de las embarcaciones de recreo de menos de 15 metros, la PCL es suficiente.
+
+---
+
+## Restricciones para menores de edad
+
+Ontario tiene reglas específicas sobre quién puede operar una embarcación según la edad:
+
+| Edad | Restricción |
+|------|------------|
+| Menores de 12 años | Solo pueden operar embarcaciones de hasta 10 HP, sin supervisión adulta |
+| 12, 15 años | Pueden operar hasta 40 HP con supervisión; hasta 10 HP solos |
+| Menores de 16 años | **Prohibido** operar motos acuáticas (PWC / Jet Ski) |
+| 16 años o más | Sin restricciones de HP con PCOC válida |
+
+Todos los menores que operen la embarcación necesitan su propia PCOC, incluso si solo la manejan por unos minutos.
 
 ---
 
 ## Equipo de seguridad obligatorio
 
-Tener su tarjeta no es suficiente, su embarcación también debe estar equipada correctamente. Los requisitos varían según la longitud de la embarcación. Para una embarcación motorizada pequeña (menos de 6 metros / 19,7 pies), el equipo mínimo exigido por Transport Canada incluye:
+Para embarcaciones de menos de 6 metros (aproximadamente 20 pies), el equipo mínimo requerido por Transporte Canadá incluye:
 
-- **Chaleco salvavidas (PFD/lifejacket):** uno por persona a bordo, de talla apropiada
-- **Dispositivo de señalización sonora:** silbato o bocina
-- **Medio para achicar agua:** balde (bailer) o bomba de achique
-- **Línea de rescate flotante:** cuerda de al menos 15 metros (50 pies)
-- **Medio de propulsión manual o ancla con línea**
-- **Luces de navegación:** si navega entre el atardecer y el amanecer
-- **Extintor de incendios:** obligatorio para embarcaciones con motor interno o compartimento de combustible cerrado
+| Equipo | Especificación |
+|--------|---------------|
+| Dispositivos de flotación personal (PFD) | Uno por persona a bordo |
+| Señal sonora (silbato o bocina) | Mínimo 1 |
+| Achicador manual o bomba de sentina | 1 |
+| Línea de rescate flotante | 15 metros mínimo |
+| Propulsión alternativa o ancla | Uno de los dos |
+| Luces de navegación | Obligatorias si navegas de noche o con visibilidad reducida |
+| Extintor de incendios | Si la embarcación tiene cabina o motor fuera de borda cerrado |
 
-Para embarcaciones de más de 6 metros (19,7 pies), se requiere equipo adicional, incluido un dispositivo de flotación tipo aro o cojín de rescate.
-
-Esta lista resume lo más común, pero no sustituye la tabla oficial de Transport Canada. Según la eslora y la configuración de la embarcación, pueden exigirse elementos adicionales como un dispositivo de reabordaje (reboarding device) o una linterna estanca o bengalas aprobadas. Consulte los requisitos completos en el sitio de Transport Canada.
-
----
-
-## Lo que cubre el examen de la PCOC
-
-| Tema | Qué incluye |
-|---|---|
-| Reglas de navegación | Derechos de paso, velocidad segura, navegación nocturna |
-| Equipo de seguridad | Requisitos por tamaño de embarcación |
-| Sistema de boyas y balizas | Colores, formas, significado |
-| Procedimientos de emergencia | Hombre al agua, señales de socorro |
-| Alcohol y navegación | Mismas reglas que al conducir un vehículo |
-| Zonas reguladas | Velocidad, acceso restringido, zonas de baño |
-
-No es un examen difícil si toma el tiempo de estudiar el material. La mayoría de las personas aprueban en el primer intento.
+**Importante:** Este equipo debe estar en condiciones de uso, no solo a bordo. Los chalecos deteriorados o con hongos pueden no ser considerados válidos en una inspección.
 
 ---
 
-## Aplicación de la ley en Ontario
+## Velocidad y reglas de navegación
 
-En Ontario, la aplicación de las leyes de navegación está a cargo principalmente de la **unidad marina de la Ontario Provincial Police (OPP)**. Las patrullas son frecuentes durante la temporada de verano, particularmente los fines de semana largos (Victoria Day, Canada Day, Labour Day).
+### Límite de velocidad universal en Ontario
 
-Durante una inspección, un agente puede pedirle:
-- Su PCOC
-- Los documentos de registro de la embarcación (PCL)
-- Verificación de su equipo de seguridad
+**10 km/h dentro de los 30 metros de la orilla**, esta regla aplica en prácticamente todos los cuerpos de agua de Ontario, salvo zonas designadas específicamente para alta velocidad.
 
-**La multa base por no tener la PCOC es de $250 CAD**, y las multas pueden ser significativas según la gravedad de la infracción.
+### Reglas de paso (Right of Way)
 
-Las leyes de alcohol al volante aplican en el agua: el límite legal es el mismo que en la carretera, 0,08 g/100 ml. Los agentes pueden realizar pruebas de alcoholemia en el agua.
+Las reglas básicas de paso en embarcaciones siguen convenciones similares al tráfico vehicular pero con particularidades náuticas. Las principales:
 
----
+- Las embarcaciones de vela tienen prioridad sobre las de motor en la mayoría de situaciones
+- Las embarcaciones más pequeñas y maniobrables deben ceder paso a las de mayor calado o menor maniobrabilidad
+- En un canal, las embarcaciones que viajan por babor (izquierda) de otro deben ceder
 
-## Licencia de pesca (si planea pescar)
+Para reglas completas, consulta el Reglamento de Colisión (COLREGs) y las guías de Transporte Canadá.
 
-Si va a pescar en Ontario, las personas de **18 a 64 años** necesitan una Outdoors Card (~$9 CAD) más una licencia de pesca deportiva (~$27 CAD para residentes). Los menores de 18 años (residentes canadienses) están exentos, solo necesitan identificación oficial con nombre y fecha de nacimiento. Los mayores de 65 también están exentos.
+### Alcohol al timón
 
-Para más información sobre pesca, temporadas y especies, lea nuestra [guía de pesca en Rice Lake](/blog/es/guia-pesca-rice-lake-ontario).
-
----
-
-## Contáctenos
-
-**Alquiler de botes en Rice Lake:** [harrisboatworks.ca](https://harrisboatworks.ca), flota de 9 embarcaciones disponibles por día.
-
-**Remotorización y precios de motores:** [mercuryrepower.ca](https://mercuryrepower.ca), precios transparentes, en dólares canadienses.
-
-**Solicitud de servicio:** [hbw.wiki/service](https://hbw.wiki/service), puede escribir en español.
-
-**Por teléfono:** 905-342-2153
-
-**En persona:** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+El límite de alcohol en sangre (BAC) es **0.08**, igual que al conducir un auto. Las consecuencias incluyen cargos criminales bajo el Código Criminal de Canadá. La Policía Provincial de Ontario (OPP) realiza patrullajes náuticos especialmente durante fines de semana largos.
 
 ---
 
-*Harris Boat Works, Gores Landing, Ontario, sobre Rice Lake. Marina familiar desde 1947. Concesionario Mercury Marine Platinum.*
-    `,
+## Licencia de pesca: es diferente de la licencia de navegación
+
+Muchas personas confunden las dos. Son requisitos completamente separados:
+
+- La **PCOC** te permite operar la embarcación
+- La **licencia de pesca** te permite pescar en Ontario
+
+Para pescar en Ontario necesitas una **Outdoors Card** (~$9, 11 CAD, válida 3 años) más una **licencia deportiva de pesca** (~$25, 30 CAD anual para residentes). Las personas de **18 a 64 años** necesitan licencia. Verifica en ontario.ca/fishing las reglas actuales para cada categoría de edad y residencia.
+
+---
+
+## Remolque de embarcaciones en carretera
+
+Si remolcas tu bote en un trailer por las carreteras de Ontario:
+
+- Las luces del trailer (stop, direccionales, traseras) deben funcionar
+- La embarcación y el motor deben estar asegurados correctamente
+- Hay restricciones de ancho total, la mayoría de botes recreativos cumplen sin problema
+- El trailer puede requerir su propio registro de placa dependiendo del peso total
+
+Para botes de más de 21 pies o pesos combinados superiores, verifica los requisitos de licencia comercial de conductor en ontario.ca.
+
+---
+
+## Multas comunes y cómo evitarlas
+
+| Infracción | Multa aproximada |
+|-----------|-----------------|
+| Sin PCOC a bordo | Desde $250 CAD |
+| Sin equipo de seguridad | Variable según equipo faltante |
+| Velocidad excesiva cerca de orilla | Variable según municipio |
+| Navegación bajo influencia del alcohol | Cargo criminal, consecuencias severas |
+| Sin PCL válida (para motor 10+ HP) | Variable |
+
+---
+
+## Preguntas frecuentes (FAQ)
+
+**¿La PCOC que obtuve en Quebec sirve para navegar en Ontario?** 
+Sí. La PCOC es federal y válida en toda Canada.
+
+**¿Puedo mostrar mi PCOC en el teléfono?** 
+No. La regulación requiere el original físico. Una foto o copia no es aceptada durante una inspección.
+
+**¿Cuánto tiempo tarda obtener la PCOC?** 
+El examen en línea toma aproximadamente 1, 2 horas de preparación. Si lo apruebas, recibes una tarjeta provisional inmediata y la tarjeta física por correo en semanas. Verifica tiempos actuales con el proveedor.
+
+**¿Qué es el Boating Safety Course que vi en algunas páginas?** 
+Es otro nombre para el mismo proceso, un curso y examen acreditado por Transporte Canadá que resulta en la PCOC. No hay diferencia funcional.
+
+**¿Harris Boat Works puede ayudarme con el proceso de licencia?** 
+No procesamos licencias directamente, pero podemos orientarte hacia los recursos correctos. Nuestro equipo opera en inglés; te recomendamos tc.gc.ca para la guía oficial.
+
+**¿Puedo usar mi bote en EE. UU. con la PCOC canadiense?** 
+La PCOC no equivale a una licencia en otros países. Cada estado tiene sus propios requisitos, verifica las regulaciones del estado específico antes de cruzar la frontera.
+
+---
+
+## CTA, ¿Listo para salir al agua legalmente?
+
+Obtén tu PCOC en línea, renueva tu PCL en tc.gc.ca, y cuando tengas todo en orden, visítanos en Rice Lake.
+
+Si estás pensando en un motor nuevo o en repotenciar tu embarcación, usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas previas.
+
+¿Preguntas? Escríbenos en **hbw.wiki/service** (se aceptan mensajes en español) o llama al **905-342-2153**.
+
+Harris Boat Works 
+5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+harrisboatworks.ca
+
+---
+
+**Nota del editor (English):** All regulatory information (PCOC, PCL, minor age limits, equipment requirements) was current at time of writing but is subject to change by Transport Canada and the Ontario MNRF. Editors must verify against current official sources (tc.gc.ca, ontario.ca) before publishing. The Spanish-language exam availability note should be rechecked, if Transport Canada adds a Spanish-certified exam option, update accordingly. HBW service scope: "For engine repairs, we only service Mercury and Mercruiser."
+
+---
+
+---`,
     faqs: [
       { question: '¿Mi licencia de conducir de vehículo reemplaza la PCOC?', answer: 'No. Son dos certificaciones distintas. Su licencia de conducir no tiene validez en el agua.' },
       { question: '¿La PCOC es válida en otras provincias?', answer: 'Sí. Es una certificación federal, válida en todo Canadá.' },
