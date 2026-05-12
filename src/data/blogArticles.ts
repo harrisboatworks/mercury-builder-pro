@@ -6047,150 +6047,129 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     readTime: '9 min read',
     keywords: ['trolling motor vs kicker', 'kicker motor fishing', 'trolling motor boat', 'mercury kicker', 'auxiliary outboard', 'Mercury 9.9 ProKicker', 'electric trolling motor vs gas', 'bow mount trolling motor', 'auxiliary outboard motor'],
     content: `
-*Last reviewed: 2026-05-07*
+# Trolling Motor vs Kicker Motor: Which Auxiliary Setup Do You Actually Need?
 
-> **Quick answer:** On Rice Lake in the Kawarthas (Ontario), a gas kicker like the Mercury 9.9 ProKicker wins for long trolling days and big-water reach. Electric trolling motors win for stealth and bow-mount precision in shallow weed beds. Most serious anglers run both. We rig either as a complete package, quote at mercuryrepower.ca.
+## Quick answer
+On Rice Lake and the Kawarthas, a gas kicker, specifically the Mercury 9.9 ProKicker, wins for walleye trolling, big water, and all-day range. A bow-mount electric trolling motor wins for shallow-water stealth, spot-lock precision, and solo fishing. Most serious anglers end up running both. They solve different problems. We rig either setup; get a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-If you're sizing the main outboard alongside the kicker, see [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), [Best Motor for Small Lakes in Ontario](/blog/best-motor-small-lakes-ontario), and the [Mercury ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide). For the rigging side (controls, wiring, gauges), the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what a dual-engine setup actually needs.
+## What each one actually does
 
-Short answer: most serious Rice Lake, Ontario (in the Kawarthas) anglers run both. A bow-mount electric for spot-lock and silent precision, a transom kicker for long trolling runs and rough-water reliability. They solve different problems.
+An **electric trolling motor** is battery-powered, rated in pounds of thrust (not horsepower), and mounts at the bow or transom. Modern bow-mount units come with GPS spot-lock (the boat holds position against wind and current automatically), plus wireless foot pedal control and programmable navigation routes.
 
-But if you can only afford one, or you want to pick the right *first* one, the answer depends entirely on what you fish for and how you fish. We rig both setups every spring. Here's the honest breakdown of which wins for which boater, with the math we'd do at the shop if you walked in.
+Brands you will see: Minn Kota, Garmin Force, MotorGuide.
 
-## What Each One Actually Does
+A **gas kicker** is a small outboard mounted alongside your main motor. It runs on gasoline, gives you real propulsion at trolling speeds, and is rated in horsepower like any outboard. The Mercury 9.9 ProKicker is the king of this category, purpose-built for kicker duty with a low-RPM idle, sailboat-mode programming, and a gear ratio tuned for thrust at slow speed rather than top-end speed.
 
-**Electric trolling motor**, battery-powered, prop in the water, mounted at the bow or transom. Rated in **pounds of thrust**, not horsepower. Modern bow-mount units come with GPS spot-lock (the boat holds position automatically against wind and current), wireless foot pedal, and i-Pilot-style navigation. Brands you'll see: Minn Kota, Garmin Force, MotorGuide.
+These are not competing tools. They are complementary. But they cost real money, so most boaters pick one first.
 
-**Gas kicker motor**, a small Mercury outboard mounted alongside your main motor. Rated in horsepower, runs on the same gas as the main, gives you real propulsion at trolling speeds. The 9.9 HP **Mercury ProKicker** is the king of this category, purpose-built for kicker duty with a low-RPM idle, sailboat-mode programming, and a gear ratio tuned for thrust at low speed.
+## Head-to-head: when each one wins
 
-These aren't competing tools. They're complementary. But they cost real money, so most boaters pick one first.
+| Factor | Electric Trolling Motor | Gas Kicker |
+|---|---|---|
+| Noise | Silent | Quiet but audible |
+| Range | Battery-limited (roughly 1 to 6 hours) | Effectively unlimited |
+| Stealth in shallow water | Excellent | Good, not silent |
+| Top trolling speed | ~3 to 5 mph | ~5 to 7 mph |
+| GPS spot-lock | Yes (game-changer) | No |
+| Hands-free control | Yes (foot pedal / wireless) | No |
+| Wind and wave handling | Limited above 1 to 2 ft chop | Excellent |
+| Maintenance | Minimal | Standard outboard service |
+| Upfront cost (CAD, approx.) | $500 to $3,500 (before batteries) | $4,000 to $7,500 installed |
+| Emergency backup propulsion | Limited (battery-dependent) | Full backup |
 
-## Head-to-Head: When Each One Wins
+## When an electric trolling motor wins
 
-| Factor | Electric Trolling | Gas Kicker |
-|--------|------------------|------------|
-| **Noise** | Silent | Quiet but audible |
-| **Range** | Battery-limited (1-6 hours) | Effectively unlimited |
-| **Stealth in shallow water** | Excellent | Good but not silent |
-| **Top speed** | Slow (~3-5 mph) | Real propulsion (~5-7 mph) |
-| **Spot-lock / GPS hold** | Yes, game-changer | No |
-| **Hands-free** | Yes (foot pedal / wireless) | No |
-| **Wind/wave handling** | Limited above 1-2 ft chop | Excellent |
-| **Maintenance** | Minimal | Standard outboard service |
-| **Upfront cost** | $500–$3,500 (motor only, before batteries) | $4,000–$7,500 installed |
-| **Cost over 10 years** | $1,200–$2,500 (battery replacement every 4-6 yrs) | $400–$800 (oil, impeller, plugs) |
-| **Saves wear on main motor** | Yes, if it does the job | Yes, same |
-| **Emergency backup propulsion** | Limited (battery-dependent) | Full backup |
+### You fish shallow water for bass or panfish
+Bass do not tolerate noise. A properly handled bow-mount electric is quiet enough to drift right over fish in 3 feet of water. Same for crappie in spawning bays, perch on weed flats, or pike working lily pads.
 
-## When Electric Trolling Motor Wins
+### You fish solo and need hands-free control
+The foot pedal or wireless spot-lock anchor changes how you fish. You can land a fish, re-bait, and reposition without ever touching a steering wheel or moving a tiller.
 
-**You're a bass or panfish angler who fishes shallow water.** Bass don't tolerate noise. A bow-mount electric, properly handled, is silent enough to drift right over fish. Same for crappie in spawning bays, perch in weed flats, or pike in lily pads.
+### You work structure in 4 feet of water or less
+A kicker gearcase still hangs down 18+ inches. A trolling motor runs comfortably in a foot of water.
 
-**You fish solo and need hands-free precision.** The wireless foot pedal or the spot-lock anchor changes how you fish. You can land a fish, re-bait, and reset position, without touching a steering wheel or moving the kicker tiller. For solo anglers, this is the killer feature.
+### You want spot-lock
+This is the single feature most customers say they wish they had bought sooner. Press a button; the boat holds GPS position against any reasonable wind. We have installed a lot of spot-lock units, and the feedback is consistent: every single customer wants it once they have used it.
 
-**You boat in 4 feet of water or less regularly.** A kicker's gearcase still hangs down 18+ inches. An electric runs in a foot of water without complaint.
+### Honest limitation of electrics
+Battery range is real. A 50 lb-thrust unit running at 70% draws a single deep-cycle battery down in roughly 4 to 5 hours. Lithium (LiFePO4) battery upgrades help significantly but add to the upfront investment.
 
-**You want spot-lock.** This is the feature that matters most. Press a button, the boat holds GPS position against any reasonable wind. No more drifting off the structure you're working. We rigged probably 30 spot-lock units last spring; every customer who got one wishes they'd bought it sooner.
+## When a gas kicker wins
 
-**Honest limitation:** Electric range is real. A 50-lb-thrust unit running at 70% on a single deep-cycle battery gives you maybe 4-5 hours. On Rice Lake's bigger water, you can drain a battery before lunch. Lithium upgrades help (~$1,200 for a quality LiFePO4 setup) but they're not free.
+### You troll for walleye
+This is what kickers were made for. Walleye trolling on Rice Lake demands sustained low-speed propulsion in open water, often in building chop. A gas kicker on a full tank handles an all-day walleye session without complaint.
 
-## When Gas Kicker Wins
+### You fish big water or serious chop
+Lake Simcoe, the Trent-Severn main channel, the Kawarthas in October wind. A gas kicker has enough thrust to push through conditions that strand an electric motor.
 
-**You troll for walleye.** Walleye trolling on Rice Lake, pulling crawler harnesses, deep-divers, or stickbaits along the railway line and the deep flats, is what kickers were made for. You need 5-6 hours of continuous low-speed running, often in chop, often covering miles. An electric will leave you stranded; a 9.9 ProKicker on a tank of gas does it all day.
+### Your main motor is a V6 or V8
+Larger Mercury 4-strokes (175 HP and up) are not built to idle at 600 to 800 RPM for hours. Extended low-RPM operation glazes cylinders and burns oil. Trolling on a dedicated kicker instead of lugging your main motor at idle will extend your powerhead life measurably.
 
-**You fish big water.** Lake Simcoe, Lake Ontario, the Trent-Severn open stretches, the Kawartha lakes in October wind. Anywhere chop builds. A gas kicker has actual thrust to push through wind; a 50-lb electric does not.
+### You want a backup motor
+Main motor will not start at the far end of Rice Lake? The kicker gets you home.
 
-**Your main motor is a V6 or V8.** Bigger Mercury 4-strokes (175 HP and up) don't love being run at 600-800 RPM for hours. It glazes cylinders and burns oil. Trolling on the kicker instead saves hundreds of hours of low-RPM main-motor wear over the life of the boat. We've seen it pay for itself on a single repower-prevention.
+### The Mercury 9.9 ProKicker specifically
+Mercury makes both a standard 9.9 FourStroke and a ProKicker version. For kicker duty, the ProKicker is the right choice:
 
-**You want emergency backup propulsion.** Main motor won't start at the far end of the lake? The kicker gets you home. We've had customers thank us for this exact scenario more than once.
-
-**The Mercury 9.9 ProKicker specifically.** Mercury makes a regular 9.9 FourStroke and a ProKicker version. The ProKicker is **what you want for kicker duty**:
-- Idle drops to ~600 RPM (vs ~750 standard), slower trolling speeds
-- "Sailboat mode" programming, smoother throttle response at low end
-- Gear ratio optimized for thrust, not top speed
+- Idle drops to ~600 RPM vs ~750 on the standard
+- Achieves slower, steadier trolling speeds
+- "Sailboat mode" programming for hands-off running
+- Gear ratio optimized for thrust at low speed, not top-end
 - Available with electric start and power tilt
-- Pricing: ~$5,500–$7,500 CAD installed depending on options
 
-For a serious walleye boat, the ProKicker is the right choice. The standard 9.9 will work but won't troll as slowly or smoothly.
+Approximate installed cost (CAD): $5,500 to $7,500 depending on options. Confirm current pricing at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-## The "Both" Setup. Why Most Serious Anglers End Up Here
+## Why most serious anglers end up running both
 
-Most of our customers who fish 30+ days a year run both. The setup:
+If you fish 30+ days a season and target more than one species, you will eventually want both. The setup that serious Rice Lake anglers run:
 
-- **Bow-mount electric** with spot-lock for working specific structure (drop-offs, weed edges, the railway line)
-- **Transom-mount kicker** for moving spots, trolling long runs, fighting weather
+- Bow-mount electric with spot-lock for working specific structure (drop-offs, weed edges, the railway line)
+- Transom-mount kicker for covering ground between spots, long trolling runs, and handling weather
 
-The electric finds the fish. The kicker covers ground. Together they handle every fishing scenario without burning the main motor's life away.
+The electric finds the fish. The kicker covers water.
 
-Total investment for a quality combo on a 17-19 ft fishing boat:
-- Bow electric (Minn Kota Terrova 80 or similar with spot-lock): $3,000–$4,500
-- Transom kicker (Mercury 9.9 ProKicker installed): $5,500–$7,500
-- Lithium battery upgrade (optional but recommended): ~$1,200
-- **Total: $9,500–$13,200 CAD**
+Approximate combined investment for a quality setup on a 17 to 19 ft fishing boat (CAD):
 
-That's significant. But on a $40,000 fishing boat, it's not crazy, and the resale uplift on a "fully kitted" fishing rig vs. a stock setup is real.
+| Item | Approximate Cost |
+|---|---|
+| Bow-mount electric (e.g. Minn Kota Terrova 80 with spot-lock) | $3,000 to $4,500 |
+| Mercury 9.9 ProKicker, installed | $5,500 to $7,500 |
+| Lithium battery upgrade (optional but recommended) | ~$1,200 |
+| Total | $9,500 to $13,200 |
 
-## The Decision Framework for Rice Lake / Kawartha Boaters
+## The decision framework for Rice Lake and Kawartha boaters
 
 | Your situation | Start with |
-|---------------|-----------|
-| Bass-only angler, weed beds, shallow bays | Bow electric + spot-lock |
-| Walleye trolling main quarry | Mercury 9.9 ProKicker |
-| You fish 100+ hours/season, all species | Both, eventually |
-| You have a big main motor (175 HP+) | Kicker first, it saves your main motor |
-| You fish big water and chop | Kicker first |
-| Limited budget, casual fishing | Decent bow electric (no spot-lock if budget tight) |
+|---|---|
+| Bass-only, weed beds, shallow bays | Bow-mount electric with spot-lock |
+| Walleye trolling is your main game | Mercury 9.9 ProKicker |
+| You fish 100+ hours a season, multiple species | Both, the question is which one first |
+| You have a big main motor (175 HP+) | Kicker first, it protects your main motor |
+| You fish exposed water and building chop | Kicker first |
+| Tight budget, casual angler | A quality bow-mount electric without spot-lock is a reasonable start |
 
-If you're not sure, we'll talk through how you actually fish before quoting either. Wrong-side-of-the-decision happens, but it's not as expensive to fix as it might seem.
+## What we do at HBW
 
-## What HBW Does
+We rig both setups regularly:
+- Mercury 9.9 ProKicker installations with proper transom bracket selection, fuel-line plumbing from the main tank, and tiller or remote linkage to your console
+- Bow-mount trolling motor installs including wiring runs, battery placement, and spot-lock setup and pairing
+- Lithium battery upgrades for boaters running heavy draw on the bow electric
+- Annual kicker service (oil, impeller, plugs) and battery health checks on the electric side
 
-We rig both setups all the time. Specifically:
-- **Mercury 9.9 ProKicker installations** with proper transom bracket selection, fuel-line plumbing from main tank, and tiller or remote linkage to your console
-- **Bow-mount trolling motor installs** including wiring runs, battery placement, and spot-lock setup
-- **Lithium battery upgrades** for boaters running heavy on the bow electric
-- **Service for both**, annual on the kicker (oil, impeller, plugs) and battery health checks on the electric
+For engine repairs, we only service Mercury and Mercruiser.
 
-Book at [hbw.wiki/service](https://hbw.wiki/service) or quote a new ProKicker at [mercuryrepower.ca](https://mercuryrepower.ca).
-    
-
----
-
-## Sources
-
-- Parks Canada — Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
-- Parks Canada — Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Ontario Ministry of Natural Resources — Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new ProKicker at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 *Last reviewed: 2026-05-11.*
 `,
     faqs: [
-      {
-        question: 'How many pounds of thrust do I need for my boat?',
-        answer: 'Rough rule: 5 lbs of thrust per 200 lbs of fully-loaded boat weight. A 2,000-lb fishing boat (loaded with crew, gas, gear) wants 50+ lbs of thrust. Wind matters too, if you fish exposed water, go up a tier (60-70 lbs).'
-      },
-      {
-        question: 'Can I use my main motor at trolling speed instead?',
-        answer: 'Technically yes. Practically no, especially on bigger 4-strokes. Sustained low-RPM running glazes cylinders, builds carbon, and burns oil. The kicker route saves the main motor\'s serviceable life, often more than the kicker costs over a decade.'
-      },
-      {
-        question: 'What\'s "sailboat mode" on Mercury kickers?',
-        answer: 'A programming option Mercury added that smooths throttle response at low RPM and lets the engine idle more slowly. Originally designed for sailboats (smoother docking under power), turns out it\'s exactly what kicker users want for trolling. Available on the 9.9 ProKicker and some other Mercury small-bore models.'
-      },
-      {
-        question: 'Do I need lithium batteries for a trolling motor?',
-        answer: 'You don\'t need them, a deep-cycle lead-acid battery (or two in parallel) works fine for casual use. But for all-day fishing on a 24V or 36V system, lithium is meaningfully better: lighter, longer runtime, longer service life, and they don\'t sag voltage as they discharge. A LiFePO4 setup pays back over 6-8 years.'
-      },
-      {
-        question: 'Can I use a small Mercury 6 HP as a kicker instead of the 9.9?',
-        answer: 'You can, but for trolling specifically the ProKicker 9.9 is dramatically better, slower idle, better gear ratio, sailboat mode. The 6 HP is fine as a backup motor on a small skiff but not optimal as a primary kicker. The price difference between a 6 HP and a 9.9 ProKicker is small relative to the performance difference.'
-      },
-      {
-        question: 'Do I need a separate gas tank for the kicker?',
-        answer: 'Most modern kicker installs run off the main fuel tank with a tee fitting. Saves space and weight. We\'ll spec the right setup based on your boat\'s existing fuel system during the install.'
-      }
+      { question: 'What is the difference between a trolling motor and a kicker motor?', answer: 'A trolling motor is electric, battery-powered, and rated in pounds of thrust. A kicker motor is a small gas outboard rated in horsepower that runs on the same fuel as your main motor. Electric trolling motors offer silence and GPS spot-lock. Gas kickers offer range, real thrust in wind, and backup propulsion.' },
+      { question: 'Is the Mercury 9.9 ProKicker better than a regular 9.9 for trolling?', answer: 'For kicker duty specifically, yes. The ProKicker idles lower, trolls more slowly and steadily, and has a gear ratio tuned for slow-speed thrust rather than top-end speed.' },
+      { question: 'Can I run an electric trolling motor on Rice Lake?', answer: 'Yes, and many anglers do, especially in the shallow bays and weed flats. Battery range becomes a factor on Rice Lake open water. A lithium battery upgrade substantially extends range if you plan to fish the whole lake.' },
+      { question: 'What size trolling motor do I need for my fishing boat?', answer: 'General starting point: 2 lbs of thrust per 100 lbs of loaded boat weight, then round up. A 1,800 lb loaded aluminum boat needs roughly 36 lbs of thrust minimum. Most anglers opt for 55 to 80 lb units to handle wind.' },
+      { question: 'Do I need both a trolling motor and a kicker?', answer: 'Not necessarily to start. Most anglers are better served by picking the right first unit for their primary fishery and adding the second unit later.' },
+      { question: 'Where can I get a kicker or trolling motor installed near Rice Lake?', answer: 'Request service at hbw.wiki/service or call us at 905-342-2153. We are on Rice Lake in Gores Landing, ON.' },
     ]
-  },
 
   // Week 19: May 11, 2026
   {
