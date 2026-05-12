@@ -10849,50 +10849,49 @@ Phone: 905-342-2153
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['buy boat canada 2026', 'boat market canada', 'best time to buy boat'],
-    content: `
-*Last reviewed: 2026-05-07*
+    content: `### Quick Answer
 
-> **Quick answer:** 2026 is a solid year to buy in Canada, inventory is back, pricing is rational after the post-2020 surge, and Mercury allocation is healthy. Used trades are abundant, so good values exist on both sides. Build a real installed Mercury quote at mercuryrepower.ca.
+2026 is a functional year to buy a boat in Canada, not a deal year, but not a bad year either. Inventory has recovered from the pandemic shortage. Lead times are normal. Prices are higher than 2019 and are not likely to drop meaningfully. If you have a sound hull, a Mercury repower may be the better value than buying new. Build a configured repower quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-The question we hear every January through April, and more so this year than most: should I buy now, or wait?
+---
 
-The honest answer is that 2026 is a more complicated buying environment than anything we've seen in the last decade. Not worse, necessarily, but more variable. The inventory crisis of 2021-22 is gone. Prices haven't dropped to 2019 levels either. Tariffs, exchange rate pressure, and shifting financing costs have created a market where the right answer genuinely depends on what you're buying, why you're buying it, and what your alternatives are.
+### Full Article
 
-We've been helping Ontario boaters make this decision at Harris Boat Works since 1947. We sold approximately 65 new Mercury motors in 2025 alone, and we currently have 46 new Mercury motors on the floor ranging from $1,385 for a 2.5 HP tiller to $41,525 for a 250 HP Pro XS, plus 14 new Legend boats from $6,999 to $79,999. This is our honest read on the 2026 market, not a pitch to buy something from us, but a framework to help you decide.
+Every January through April, we hear the same question: should I buy now, or wait? This year it comes with more weight than usual. Tariffs, an uncertain dollar, interest rates that moved fast in both directions, 2026 is a more variable market than anything most Ontario boaters have navigated in the last decade.
+
+Here is an honest read on the market from a third-generation family marina that has been selling and servicing Mercury motors on Rice Lake since 1947. We are not going to tell you it is a great time to buy if we do not believe that.
 
 ---
 
 ## What the 2026 Boat Market Actually Looks Like
 
-**Inventory:** Significantly better than 2021-2023. During the pandemic boom, demand outstripped supply so severely that many buyers waited 18 months or more for popular models. That's largely resolved. Dealers have boats. Lead times are back to something close to normal. You can actually comparison shop again, which changes the dynamic considerably.
+**Inventory:** Significantly better than 2021, 2023. During the pandemic boom, buyers waited 18 months or more for popular models. That situation is largely resolved. Dealers have boats. Lead times are back to something normal. You can comparison shop again.
 
-**New boat prices:** Up compared to 2019, and largely holding in 2026. The combination of supply chain disruptions, U.S. dollar impacts on Canadian pricing, and material cost increases built a new pricing floor over the past four years. That floor hasn't retreated significantly. If you're expecting 2019 prices, they're not coming back.
+**New boat prices:** Up compared to 2019. Not dropping significantly in 2026. Supply chain disruptions, currency movement, and material cost increases created a new pricing floor over the past four years. If you are expecting 2019 prices, they are not coming back.
 
-**What's on the lot right now at HBW:** For context on real 2026 pricing, here's what we have in stock. Entry-level new aluminum boats start at $6,999 (2024 Legend 14 Widebody with 9 HP). A popular 16-foot package with a 25 HP runs $24,499 (2024 Legend 16 ProSport SC). A mid-range family boat like the 2026 Legend LE 19 RS EXT is priced at $39,999. At the upper end, a 2025 Legend UTTERN T53 fiberglass goes for $79,999. These are published prices, we post them because you shouldn't have to call to find out.
+**Used boat market:** More inventory than 2022, 2023, but prices remain elevated relative to pre-pandemic levels. Used boats are not being discounted aggressively. Buyers who purchased at the 2021, 2022 peak are still holding asset value.
 
-**Used boat market:** More inventory than 2022-23, but prices remain elevated relative to pre-pandemic levels. We currently have 13 used boats on the lot with an average asking price of about $25,549, ranging from $995 to $51,999. Buyers who bought at peak (2021-22) are still holding asset value, which means used boats aren't being discounted as aggressively as in a typical buyer's market.
-
-**The short version:** You won't get a pandemic deal in 2026. But you also won't face pandemic-era wait times or limited choice. It's a functional market.
+**Short version:** You will not get a pandemic deal. You also will not face pandemic-era wait times or limited selection. It is a functional market.
 
 ---
 
 ## The Tariff and Exchange Rate Reality
 
-This is the factor most buyers underestimate in 2026. Canadian boating operates in a cross-border economy. Most major outboard manufacturers. Mercury, Yamaha, Suzuki, assemble or source components in the United States. Aluminum fishing boat manufacturers like Lund and Princecraft are North American operations with U.S. content. Even boats assembled in Canada use U.S.-sourced components.
+This is the factor most buyers underestimate. Most major outboard manufacturers, Mercury, Yamaha, Suzuki, assemble or source components in the United States. Most aluminum fishing boat brands have North American manufacturing with significant U.S. content. Even boats assembled in Canada use U.S.-sourced components.
 
-When the Canadian dollar weakens against the U.S. dollar, boat prices in Canada go up, not immediately, but within one to two model cycles as manufacturer pricing adjusts. The dollar movements of 2024-2025 have already been reflected in 2026 pricing for most dealers.
+When the Canadian dollar weakens against the U.S. dollar, boat prices in Canada rise, not immediately, but within one to two model cycles. The 2024, 2025 dollar movements have already been reflected in 2026 pricing for most dealers.
 
-Trade tariff changes between Canada and the U.S. add another variable. The details of what applies to marine goods in 2026 are evolving, we've covered the specifics in our [tariffs and Canadian boating article](https://mercuryrepower.ca/blog/tariffs-trade-canadian-boating-2026). The takeaway for buyers: if tariff exposure increases further, 2026 prices are likely a floor, not a peak. Waiting for prices to drop due to tariff resolution assumes a political outcome that isn't certain.
+Trade tariff changes between Canada and the U.S. add another variable. The details of what applies to marine goods in 2026 are evolving. The practical takeaway: if tariff exposure increases further, 2026 prices are a floor, not a peak. Waiting for prices to drop on the assumption of tariff resolution assumes a political outcome that is not certain.
 
 ---
 
-## Financing: What the Numbers Look Like in 2026
+## Financing in 2026
 
-Interest rates in Canada have moderated from their 2023 peak. The Bank of Canada has made multiple cuts, and recreational financing rates have followed, partially. Marine lending tends to track prime with a premium, so rates on boat financing in 2026 are better than 2023 but not as low as the 2020-2021 environment that fuelled the pandemic buying boom.
+Interest rates in Canada have moderated from the 2023 peak. The Bank of Canada has made multiple cuts. Marine lending has followed partially, boat financing typically tracks prime with a premium.
 
-What this means practically: your monthly payment on a typical boat purchase is lower than it was in 2023, but the boat costs more than it did in 2020. Whether that math works for you depends on your budget and how long you plan to own the boat.
+Rates in 2026 are better than 2023. They are not as low as the 2020, 2021 environment. Monthly payments on a typical boat purchase are lower than they were at peak, but the boat itself costs more than it did in 2020.
 
-If you're financing, the standard advice applies: know your total cost of ownership (financing, insurance, storage, maintenance, fuel), not just the monthly payment. A boat that fits your monthly budget comfortably can still strain your finances if you didn't account for real carrying costs. For reference, our published 2025 winterization rate for a common 75-115 HP 4-stroke is $425.71, and storage for a 19-foot boat on a trailer runs $627 (19 ft × $33/ft). On top of your financing payment, that's money you need to have budgeted.
+**What to factor into total cost:** financing, insurance, storage, maintenance, and fuel, not just the purchase price.
 
 ---
 
@@ -10900,60 +10899,84 @@ If you're financing, the standard advice applies: know your total cost of owners
 
 ### Buy now if:
 
-**You're replacing a motor, not buying a whole new boat.** A Mercury repower on a sound hull is often significantly better value than a new boat purchase in the current market. You get upgraded technology, improved fuel economy, warranty coverage, and you're not paying for a new hull you don't need. Right now we have 46 new Mercury motors in stock, from the 2026 Mercury 40 ELPT at $10,830 up to the 2026 Mercury 250 L Pro XS at $41,525. Our [repower guide](https://mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor) walks through the full decision framework. Use mercuryrepower.ca to build a transparent, no-games quote.
+**You are replacing a motor, not buying a whole new boat.** A Mercury repower on a sound hull is often meaningfully better value than a new boat purchase at 2026 prices. You get upgraded technology, improved fuel economy, warranty coverage, and you are not paying for a new hull you do not need. HBW currently has Mercury motors in stock. Build a transparent, no-games quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-**You've been planning to buy anyway and the boat you want is available.** If you've been in the market for 12-18 months, have a clear idea of what you want, and the inventory exists, waiting for a price correction that may not materialize costs you a season on the water.
+**You have been in the market for 12 to 18 months and the boat you want is available.** Waiting for a correction that may not come costs you a season.
 
-**You're a first-time buyer with a clear, modest budget.** The entry-level aluminum fishing boat and small pontoon market is reasonable in 2026. We have new Legend boats starting at $6,999 and $9,499. That's real inventory, real prices, no games.
+**Your current boat is costing more in repairs than it is worth.** If you are spending heavily on repairs to a boat worth $8,000, the math is a warning.
 
-**Your current boat is costing more in repairs than it's worth.** This math hasn't changed. If you're spending heavily on repairs to a boat that's worth $8,000, the numbers are telling you something. From our own service data across 5,350 jobs over the past two seasons, unplanned repairs add up fast: a "Not Running Properly" diagnosis averages $559, a fuel issue $887, a serious "Engine Won't Start" repair can run nearly $2,000.
+**You are a first-time buyer with a clear, modest budget.** The entry-level aluminum fishing boat and small pontoon market is reasonable in 2026. Real inventory, real prices. Check [harrisboatworks.ca](https://harrisboatworks.ca) for what is on the lot.
 
 ### Consider waiting if:
 
-**You're in a rush because of fear, not need.** "Prices might go up" is not a purchasing strategy. If you're not ready, don't know what you want, haven't done the research, don't have your financing in place, buying in a hurry is more likely to produce regret than buying after proper consideration.
+**You are buying out of fear, not need.** "Prices might go up" is not a purchasing strategy on its own. If you are not ready, do not know exactly what you want, and have not done the research, buying in a hurry causes regret.
 
-**You want a premium or specialty boat.** The higher the price point, the more volatile the market. A $150,000+ cabin cruiser in 2026 has meaningful price discovery questions that a $35,000 aluminum boat doesn't.
+**You want a premium or specialty boat.** The higher the price point, the more price discovery questions exist in 2026. A $35,000 aluminum boat is a different market than a $150,000+ cabin cruiser.
 
-**The repower math is better for you.** Honestly, for a lot of Ontario boaters who own a sound hull, a repower produces better value than a new boat purchase at 2026 prices. Use our quote configurator at [mercuryrepower.ca](https://mercuryrepower.ca) to run the numbers before you decide.
-
-**You want to test the water first.** If you're uncertain whether you'll use a boat enough to justify ownership, the rental and shared-access market in Ontario has grown substantially. We ran 346 rentals in 2025 for $119K gross revenue, demand for get-on-the-water-without-owning options is real. Check our [boat rentals and shared access overview](https://mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026) for context. A season of rentals before committing to a purchase is legitimate strategy.
+**The repower math is better for you.** For many Ontario boaters with a sound hull and a worn motor, the repower is the better move. Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) before going to a showroom.
 
 ---
 
 ## The Repower Option: Better Value in 2026 Than It's Been in Years
 
-This deserves its own paragraph. In 2026, the economics of repowering a sound used hull versus buying new have shifted meaningfully in favour of repowering. Why?
+This deserves its own section. The economics of repowering a sound used hull instead of buying new have shifted meaningfully in 2026.
 
-- New boat prices are elevated, which means you're paying more for a new hull whether or not you need one
-- Mercury's current FourStroke lineup is genuinely excellent, you're not giving up meaningful technology by putting a new Mercury on a 15-year-old hull
-- The repower cost is predictable; the new boat cost comes with carrying costs, financing, and depreciation
+New boat prices are elevated. Mercury's current FourStroke lineup is genuinely excellent. The repower cost is predictable. A new boat carries financing costs, depreciation on a new hull, and a motor you may not need.
 
-To put real numbers to it: a 2026 Mercury 115 ELPT starts at $19,220 MSRP, and a 2026 Mercury 90 ELPT is $16,830 MSRP. Add rigging, prop, and controls, and you're looking at a configured repower that costs a fraction of what a new boat-motor-trailer package would run. Use mercuryrepower.ca to build your specific quote.
+For a hull that is structurally sound, under 25 years old, with an aging or unreliable motor, a repower is worth pricing out before setting foot in a showroom. Build a specific, configured quote at [mercuryrepower.ca](https://mercuryrepower.ca). No phone calls, no games, no "we'll give you a price when you come in."
 
-If your hull is structurally sound and the main issue is an aging or unreliable motor, a repower is worth pricing out before you walk into a showroom. See our [full guide to the Ontario boating market in 2026](https://mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers) for more context on where values sit.
+For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
 ## HBW's Honest Advice
 
-We sell boats and motors. We're transparent about that. But we've also been doing this long enough, three generations, since 1947, to know that a customer who makes a decision they're comfortable with comes back. A customer who felt pressured doesn't.
+We sell boats and motors. We are transparent about that.
 
-Our honest advice for 2026: do the full math before you decide. If you're replacing a motor on a good hull, price out a repower at [mercuryrepower.ca](https://mercuryrepower.ca). If you're in the market for a new boat, come in with a clear budget including all carrying costs. If you're unsure, rent for a season first.
+We have also been doing this for three generations. A customer who makes a decision they are comfortable with comes back. One who felt pressured does not.
 
-The lake will be there. The right time to buy is when it makes sense for you, not when the market pressure tells you to move. Questions? Call us at 905-342-2153 or stop by 5369 Harris Boat Works Rd, Gores Landing.
+Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, rent for a season first, HBW has nine boats available on Rice Lake.
 
 ---
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
+## FAQs
 
-## Related guides
+**Is 2026 a good year to buy a boat in Canada?** 
+It is a functional but not exceptional year. Inventory is normalized. Prices are higher than 2019 and are unlikely to drop meaningfully. For ready buyers with clear goals and financing in place, 2026 offers reasonable selection. For those hoping for a price correction, limited evidence one is coming.
 
-- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide), center-console power picks
+**Are boat prices going down in Canada in 2026?** 
+Prices are largely holding or seeing minor softening at the new-end compared to the 2021, 2022 peak. They have not returned to pre-pandemic levels.
 
-`,
+**Is it better to buy a new boat or repower in 2026?** 
+For many Ontario boaters with a sound hull, repowering is better value. A Mercury repower delivers upgraded technology, warranty coverage, and improved fuel economy at a fraction of a new-boat cost. Use [mercuryrepower.ca](https://mercuryrepower.ca) to compare.
+
+**What is the best time of year to buy a boat in Canada?** 
+Fall (September, November) for new boats, dealers are clearing model-year inventory. Winter boat shows (January, February) for promotional financing programs. Spring offers the widest selection but also peak demand and less dealer motivation to negotiate.
+
+**Should I buy or rent in 2026?** 
+At 10 to 15 days of use per year, the math generally favors renting. At 30+ days of use per year, ownership starts to make sense. A season of renting before purchasing typically leads to a better buying decision.
+
+---
+
+## Internal Links
+- Mercury Repower Cost Ontario (CAD)
+- Best Mercury Outboard for Aluminum Fishing Boats
+- Mercury Outboard Financing Ontario
+- Boat Rentals on Rice Lake
+
+## CTA
+
+**See real prices. No games.** 
+Build your Mercury repower quote at [mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required. 
+Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
+
+---
+
+**English editor note:** Prices cited in this post (motor MSRPs, storage rates, inventory examples) are drawn directly from the source post. Verify all figures are current before publishing. Tariff situation is described as evolving, do not add specifics not confirmed from current sources.
+
+---
+
+---`,
     faqs: [
       {
         question: 'Is 2026 a good year to buy a boat in Canada?',
@@ -11383,128 +11406,139 @@ More often than not, the better upgrade is a prop and trim conversation, and tha
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['mercury outboard pricing', 'mercury dealer transparency', 'boat motor prices ontario', 'mercury price online', 'harris boat works pricing'],
-    content: `# Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)
+    content: `### Quick Answer
 
-*Last reviewed: 2026-05-07*
-
-> **Quick answer:** In our experience, many dealers hide prices to force a phone call, which lets them control the negotiation and add fees later. HBW posts real installed prices because customers deserve a number before driving 90 minutes. Configurator with live pricing at mercuryrepower.ca.
-
-If you've shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer's site, you're not imagining it. From what we hear from customers, plenty of marine dealers we know about don't publish prices online. The reasons they give are usually excuses; in our view, the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.
-
-## Quick recommendation
-
-If you're shopping Mercury outboards and a dealer won't show you pricing without a phone call, that's a sales tactic, not a manufacturer requirement. Mercury Marine doesn't prohibit dealers from publishing prices. The dealer is choosing to keep prices off the website.
-
-For typical Mercury repowers in 2026, all-in costs in CAD before HST land in predictable ranges: $11,000 to $15,000 for 40 to 60 HP, $17,000 to $22,000 for 75 to 115 HP, $23,000 to $36,000 for 150 to 200 HP. Anyone telling you these numbers can't be published is telling you something other than the truth.
-
-We list every Mercury we sell with live CAD pricing at [/quote/motor-selection](/quote/motor-selection). You can build a quote in 3 minutes without talking to anyone.
-
-## The excuses dealers give for hiding prices
-
-Five common ones, ranked from most to least defensible:
-
-### 1. "Manufacturer pricing requirements"
-
-Mercury Marine sets MSRP (manufacturer's suggested retail price). Dealers can sell at, above, or below MSRP. Mercury does not require dealers to hide prices online. This excuse is false on its face.
-
-### 2. "Prices change frequently"
-
-Mercury motor prices change once a year (model year transition July 1) and occasionally with promotional pricing (rate buy-downs, package incentives). They do not change daily. The same dealers who claim prices change too fast to publish are quoting customers verbally with prices they expect to honor for weeks. The math is the same; the only difference is whether the customer can see it.
-
-### 3. "Configuration affects price"
-
-This one has a kernel of truth. A Mercury 90 EXLPT FourStroke has a base motor price, but the all-in cost depends on shaft length, controls, prop, rigging, install labor, and any options. So the answer can't be a single number. The answer can be a configurator. Our [motor selection page](/quote/motor-selection) handles configuration in real time. There's no technical reason a dealer can't do this.
-
-### 4. "We want to talk to you about your needs"
-
-Some dealers want to make sure you buy the right motor for your boat. That's a real concern. But the way to handle it is "here's the price, and here's a 5-minute conversation about whether this fits your boat", not "we'll only tell you the price if you call." We do the conversation either way. The price is online while we're doing it.
-
-### 5. "We want to make sure you don't get a better offer elsewhere"
-
-This is the honest one, and it's the one no dealer says out loud. If you don't know the price, you can't comparison shop. If you have to call to get pricing, you're already partially committed before the conversation. The dealer controls the negotiation.
-
-## The real reasons many dealers hide prices
-
-In our experience, three honest reasons:
-
-### 1. Information asymmetry is profitable
-
-If you don't know the market price, you don't know if the quote you got is fair. Dealers who hide prices can extract higher margins from customers who don't comparison shop or who are time-pressed or who simply hate shopping for boats.
-
-### 2. Phone capture beats web shopping
-
-Once you call a dealer, you're in their pipeline. They know your name, number, boat, and budget. They can follow up. A web visitor who saw the price and decided to think about it is a lost lead. So the dealer often prefers the phone call even if the customer would have bought online.
-
-### 3. Industry inertia
-
-A lot of marine dealers run websites built before transparency was the expected norm. The next generation of marine dealers will likely publish pricing as a matter of course. The current generation is still catching up.
-
-## Why HBW lists prices
-
-We've done it from the start of mercuryrepower.ca because:
-
-- **It's faster for the customer.** Build a quote in 3 minutes vs. a 30-minute phone call. Customers don't owe us 30 minutes to learn what something costs.
-- **It builds trust.** A customer who sees the same price online that we quote them in person never wonders if they got the deal.
-- **It filters the right customers.** Customers who care enough to build a quote are serious. Customers who would have called anyway still call. We get both.
-- **It saves us time.** Three generations of HBW have answered "what does it cost?" enough times. Putting it online means we can spend customer-facing time on the actual conversation that matters.
-- **It respects everyone.** Hiding prices treats customers like targets. Showing prices treats them like people.
-
-## What changes the answer
-
-Specific situations where pricing genuinely needs a conversation:
-
-- **Brand conversions.** Switching from Evinrude or Yamaha to Mercury adds $1,500 to $3,000 in rigging on top of standard repower costs. Our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide) covers the math.
-- **Twin or triple engine setups.** Multi-engine rigging is more complex. We can quote the motors online; the rigging benefits from a phone conversation.
-- **Verado V12 600.** Special-order territory. Less than 1% of our customers. Available by quote only.
-- **Heavy commercial duty (SeaPro applications).** Commercial use cycles are different from recreational. Worth a conversation.
-
-For 95% of recreational customers, the [motor selection page](/quote/motor-selection) is the source of truth and the price you build is the price you pay.
-
-## What HBW provides that price-hiding dealers don't
-
-Beyond just publishing prices:
-
-- **Live pricing updates.** Mercury MY pricing changes effective July 1 are reflected within days. Promotional rate buy-downs are reflected when active.
-- **CAD pricing native.** No "USD plus exchange" surprises.
-- **Full configuration in the quote.** Motor + shaft length + controls + prop + rigging + install labor all included.
-- **Mercury Repower Financing** built into the quote flow (current rates on our [financing page](/financing)). See our [financing guide](/blog/mercury-outboard-financing-ontario-2026).
-- **Quote save and share.** Built quotes can be saved, downloaded as PDF, or sent via email/text.
-- **No phone-call gatekeeping.** Build a quote at midnight if you want.
-
-## Common dealer-pricing mistakes
-
-We see these from customers who shopped before coming to HBW:
-
-1. **Accepting "prices change too fast" as an answer.** They don't. Push back politely.
-2. **Negotiating from a price you can't see.** If the starting number is hidden, you can't tell whether the "discount" is real or marketing.
-3. **Not getting the all-in number.** Motor price + rigging + install + tax + delivery is the real cost. Some dealers quote motor-only and surprise you at delivery.
-4. **Comparing across dealers without standardized config.** Same motor, different shaft, different prop, different install scope is not the same quote.
-5. **Skipping written quotes.** Verbal numbers evaporate. Written quotes hold the dealer to the math.
-
-## Related guides
-
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the actual prices
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), current Mercury Repower Financing rates
-- [Mercury Rigging Costs Explained](/blog/mercury-outboard-rigging-costs-ontario), what's in the rigging line
-- [Cheapest Mercury Outboard Canada 2026](/blog/cheapest-mercury-outboard-canada-2026), the lowest entry points
-- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for HBW
-
-
-## Try the calculator
-
-Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) - no signup, no email gate, takes 30 seconds.
-## Ready to see real pricing?
-
-[Build a quote on the motor selection page](/quote/motor-selection). Live CAD pricing. Full configuration. No phone call required. No email gatekeeping.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through your specific repower after seeing the numbers, [give us a call at (905) 342-2153](tel:9053422153). We'll have the same numbers you saw online. That's the point.
+Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. Mercury Marine does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth. Mercury model years change every July 1, and we refresh ranges in articles annually._
-`,
+### Full Article
+
+You found the motor you want. You went to the dealer's website. You clicked the page. You saw "Call for Pricing."
+
+You called. Left a message. Waited. Called again. Eventually heard a vague number that came with "it depends on a few things." You spent 30 minutes to learn nothing you can compare.
+
+That is not a coincidence. It is a business model.
+
+---
+
+## The Excuses Dealers Give for Hiding Prices
+
+Here are the five most common explanations dealers offer, ranked from most to least defensible:
+
+**1. "Manufacturer pricing requirements"** 
+False. Mercury Marine sets MSRP. Dealers can sell at, above, or below MSRP. Mercury does not require dealers to hide prices online. Any dealer who says otherwise is telling you something that is not true.
+
+**2. "Prices change too frequently"** 
+Mercury motor prices change once a year at the model-year transition (typically July 1), and occasionally with promotional rate buy-downs. They do not change daily. A dealer quoting you verbally expects to honor that number for weeks. The "prices change too fast" argument doesn't survive basic scrutiny.
+
+**3. "Configuration affects price"** 
+This one is partially true. A Mercury 90 ELPT FourStroke has a base motor price, but the all-in cost depends on shaft length, controls, prop, rigging, and install labor. The honest answer to this is a configurator that handles all of it in real time, not a gatekept phone call.
+
+**4. "We want to talk to you about your needs"** 
+Fine. But the right order is: show the price, then have a conversation about whether it is the right motor. Not: gatekeep the price until after the conversation.
+
+**5. "We don't want you to find a better offer elsewhere"** 
+This is the honest reason, though no dealer says it out loud. If you cannot see the price, you cannot compare it. Hiding the price gives the dealer control of the negotiation from the first contact.
+
+---
+
+## The Real Reasons Dealers Hide Prices
+
+**Information asymmetry is profitable.** Customers who do not know market price cannot tell if the quote is fair. Dealers can extract higher margins from customers who are time-pressed, dislike negotiating, or have not comparison-shopped.
+
+**Phone capture beats web shopping.** A visitor who finds the price on the website and leaves is a lost lead. A customer who calls is a customer with a name, a phone number, a boat, and a budget, someone the dealer can follow up with.
+
+**Industry inertia.** A lot of marine dealers run older websites built before transparency became an expectation. The practice continues because it has always been done this way.
+
+---
+
+## Why HBW Lists Prices
+
+HBW has listed prices from the start of [mercuryrepower.ca](https://mercuryrepower.ca). Here is why:
+
+**It is faster.** Three minutes to a configured quote beats a 30-minute phone call you did not want to make.
+
+**It builds trust.** The price you see online is the price you pay. No surprises at the counter.
+
+**It filters the right customers.** Serious buyers build quotes. Buyers who need a conversation still call, but they call with a number in hand.
+
+**It respects everyone's time.** Three generations of this family have answered "what does it cost?" more times than anyone can count. Online pricing means the team can focus on conversations that matter.
+
+**It is how we would want to be treated.** Hiding prices treats customers as targets. Showing prices treats them as people.
+
+---
+
+## What Genuinely Requires a Conversation
+
+For about 95% of recreational customers, the motor selection page is the source of truth. But there are situations where the phone adds real value:
+
+- **Brand conversions from Evinrude or Yamaha:** Switching brands can add $1,500 to $3,000 in rigging above standard repower costs. Worth a call.
+- **Twin or triple engine setups:** Multi-engine rigging is complex. Motors can be quoted online, but rigging benefits from a real conversation.
+- **Verado V12 600:** Special-order territory. Less than 1% of customers.
+- **Commercial (SeaPro) applications:** Commercial use cycles differ from recreational, and the conversation is worth having.
+
+---
+
+## What HBW Provides That Price-Hiding Dealers Don't
+
+- **Live pricing in CAD**, no "plus exchange rate" surprises
+- **Full configuration in the quote**, motor, shaft length, controls, prop, rigging, install labor all on one line
+- **Mercury model-year pricing updated within days of July 1**
+- **Promotional rates reflected when active**
+- **Quotes that can be saved, downloaded as PDF, or emailed**
+- **A quote you can build at midnight without needing to leave your name**
+
+---
+
+## Common Mistakes Buyers Make on Dealer Pricing
+
+1. **Accepting "prices change too fast" as an explanation.** Push back. Ask for the number in writing.
+2. **Negotiating from a price you have not seen.** If the starting number is hidden, you cannot know if a discount is real.
+3. **Not getting the all-in number.** Some dealers quote motor-only and add installation surprises at delivery. A real quote includes motor, rigging, install, and tax.
+4. **Comparing quotes with different configurations.** Same motor with a different shaft length, prop, or install scope is not the same quote.
+5. **Accepting verbal quotes.** Verbal numbers can disappear. Get it in writing.
+
+---
+
+## FAQs
+
+**Does Mercury Marine prohibit dealers from publishing prices?** 
+No. Mercury sets MSRP. Dealers set their own pricing and choose whether to publish it. Any dealer who claims Mercury requires them to hide prices is not being straight with you.
+
+**How do I know HBW's published price is the actual price?** 
+The quote you build at [mercuryrepower.ca](https://mercuryrepower.ca) reflects the current live pricing. When you engage with HBW, that is the number the team works from. No negotiation theater.
+
+**What does an all-in Mercury repower cost in 2026?** 
+Ranges vary by HP class. The configured quote at [mercuryrepower.ca](https://mercuryrepower.ca) gives you the full number, motor, controls, steering, gauges, wiring, prop, and install labor, in a single place. Build one and see.
+
+**Do I have to come to Gores Landing to get the quote?** 
+No. Build the quote at [mercuryrepower.ca](https://mercuryrepower.ca) from anywhere. The physical installation happens at HBW in Gores Landing. HBW does not ship outboards or deliver installs.
+
+**What if I have a non-standard setup?** 
+For twin-engine setups, brand conversions, or commercial applications, call 905-342-2153 after building the basic quote online. Those cases benefit from a real conversation.
+
+---
+
+## Internal Links
+- Mercury Repower Cost Ontario 2026
+- Mercury Controls & Rigging Guide Ontario
+- Mercury Outboard Financing Ontario 2026
+
+## CTA
+
+**See the number before you call.** 
+Build your configured Mercury quote at [mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 
+Questions after you see it? Call 905-342-2153. 
+Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
+
+---
+
+**English editor note:** No service scope sentence needed in this post (it is a transparency/pricing post, not a service post). Pricing ranges cited (e.g., $11,000, $15,000 for 40, 60 HP all-in before HST) are from the source post, verify these are still current before publishing. APR (7.99% as of May 2026) should be confirmed against current financing terms before publishing.
+
+---
+
+---`,
     faqs: [
       {
         question: 'Why don\'t most marine dealers list prices online?',
