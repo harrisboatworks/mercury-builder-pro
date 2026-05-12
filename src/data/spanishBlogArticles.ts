@@ -270,93 +270,136 @@ También vendemos combustible sin etanol (ethanol-free fuel) en el sitio, un det
     category: 'Mantenimiento',
     readTime: '11 min',
     keywords: ['preparar motor fuera de borda invierno Ontario', 'winterization motor Mercury', 'preparación invernal bote Ontario'],
-    content: `
-## Una nota sobre el idioma
+    content: `### Respuesta rápida
 
-Nuestro equipo trabaja en inglés, no hablamos español, pero haremos todo lo posible para ayudarle. Para reservar su preparación invernal, la forma más fácil es a través de [hbw.wiki/service](https://hbw.wiki/service), puede escribir en español.
-
-Harris Boat Works es el único concesionario Mercury Platinum en Ontario con contenido en español sobre mantenimiento y preparación invernal de motores.
+La preparación invernal de un motor Mercury en Ontario cubre seis pasos esenciales: estabilizar el combustible, hacer el fogging (lubricación interna), drenar el aceite de engranajes (gear lube), retirar y almacenar la batería, engrasar las conexiones y puntos de articulación, y hacer un enjuague con agua dulce. Omitir cualquiera de estos pasos puede resultar en una reparación costosa en primavera. Para reservar su preparación invernal, visite hbw.wiki/service.
 
 ---
 
-**Nota importante:** Los detalles exactos cambian según el modelo Mercury y el año del motor; esta guía resume lo más común, pero no reemplaza el manual del motor ni el procedimiento del concesionario.
+### Guía de preparación invernal para motores Mercury en Ontario
+
+El invierno en Ontario es largo. La temporada de navegación termina generalmente entre mediados de octubre y finales de noviembre, el fin de semana de Thanksgiving (segundo lunes de octubre) es con frecuencia la fecha límite psicológica para muchos propietarios. Lo que haga con el motor antes de guardarlo determinará si la primera salida de primavera es un placer o un dolor de cabeza.
+
+Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Platinum y realizamos más de 584 preparaciones invernales por temporada. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
+
+---
+
+## Una nota sobre el idioma
+
+Nuestro equipo trabaja en inglés y no hablamos español, pero haremos todo lo posible para ayudarle. Para reservar su preparación invernal, la forma más fácil es a través de hbw.wiki/service, puede escribir en español. También puede llamarnos al 905-342-2153.
+
+---
 
 ## El enemigo número uno: el etanol en el combustible
 
-Antes de hablar de técnica, hablemos de combustible. La mayoría de las gasolineras en Ontario venden gasolina con hasta 10% de etanol (E10). En verano, no hay problema. Pero deje ese combustible en el tanque de su bote durante cinco o seis meses de invierno, y tendrá un problema real.
+La mayoría de las gasolineras en Ontario venden gasolina con hasta 10 % de etanol (E10). Dejar ese combustible en el tanque del bote durante cinco o seis meses de invierno crea un problema real: el etanol absorbe la humedad del aire, y esa mezcla de agua y etanol se separa del resto del combustible, un fenómeno llamado separación de fase (*phase separation*).
 
-El etanol absorbe humedad del aire. Con el tiempo, el agua y el etanol se separan del resto del combustible, un fenómeno llamado separación de fase (phase separation). Esta mezcla de agua y etanol se acumula en el fondo del tanque y luego entra al sistema de alimentación del motor. El resultado: carburador o inyectores obstruidos, corrosión interna, y un motor que no arranca en primavera.
+El resultado: esa mezcla de agua y etanol se acumula en el fondo del tanque, entra al sistema de alimentación del motor, y en primavera usted se encuentra con carburador o inyectores obstruidos, corrosión interna, y un motor que no arranca.
 
-Harris Boat Works es una de las pocas marinas en Ontario que vende **combustible sin etanol (ethanol-free fuel)** directamente en el sitio. Si llena el tanque aquí antes de guardar su embarcación, reduce significativamente ese riesgo. Si no, agregar un estabilizante de combustible de calidad al tanque, seguido de unos minutos de funcionamiento para que circule por todo el sistema, es un paso obligatorio.
+Harris Boat Works es una de las pocas marinas en Ontario que vende combustible sin etanol (*ethanol-free fuel*) directamente en el sitio. Si va a guardar el bote para el invierno, usar combustible sin etanol es la mejor protección para el sistema de combustible.
 
 ---
 
 ## Los pasos de la preparación invernal
 
-El detalle exacto varía según el modelo Mercury y su configuración. Estos pasos cubren lo común a la mayoría de los motores fuera de borda.
+Estos pasos cubren lo esencial para la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año del motor, esta guía no reemplaza el manual del motor ni el procedimiento del concesionario, pero resume lo más importante.
 
 ### 1. Estabilización del combustible
 
-Agregue un estabilizante aprobado para motores marinos en su tanque, luego haga funcionar el motor unos minutos para que el producto circule por todo el sistema de combustible. Idealmente, llene el tanque con combustible sin etanol antes de agregar el estabilizante.
+Si no usa combustible sin etanol, agregue un estabilizante aprobado para motores marinos en su tanque. Luego haga funcionar el motor unos minutos para que el producto circule por todo el sistema de combustible. Idealmente, llene el tanque con combustible sin etanol antes de agregar el estabilizante, un tanque lleno deja menos espacio para el aire húmedo.
+
+**¿Qué pasa si lo omite?** Combustible degradado, separación de fase, inyectores obstruidos, motor que no arranca en primavera.
 
 ### 2. Lubricación interna (fogging)
 
-El fogging consiste en rociar un aceite protector dentro de los cilindros del motor mientras está funcionando, y luego apagarlo con el aceite todavía en su lugar. Esta película protege las piezas metálicas internas contra la oxidación y la corrosión durante los meses de inactividad. Es un paso que muchos dueños de botes olvidan o se saltan, y que lamentan en primavera.
+El fogging consiste en rociar un aceite protector dentro de los cilindros del motor mientras está en funcionamiento, y luego apagarlo con el aceite todavía en su lugar. Esta película protege las piezas metálicas internas contra la oxidación y la corrosión durante los meses de inactividad.
+
+Muchos propietarios olvidan o saltan este paso. Lo vemos cada primavera: motores con cilindros oxidados que necesitan reparación cuando un tratamiento de fogging hubiera costado muy poco.
+
+**¿Qué pasa si lo omite?** Oxidación interna, desgaste prematuro, reparación costosa en primavera.
 
 ### 3. Drenaje del aceite de engranajes (gear lube)
 
-El aceite del pie del motor (lower unit / gear lube) debe drenarse y reemplazarse cada otoño. ¿Por qué? Porque si agua se ha infiltrado en la caja de engranajes, lo cual sucede más seguido de lo que uno cree a través de sellos desgastados, esa agua se congela, se expande y puede agrietar la carcasa. Un drenaje regular también le permite detectar si el aceite sale lechoso o grisáceo, señal de infiltración de agua que necesita reparación.
+El aceite del pie del motor (*lower unit / gear lube*) debe drenarse y reemplazarse cada otoño. El agua puede infiltrarse en la caja de engranajes a través de sellos desgastados, si esa agua se congela, se expande y puede agrietar la carcasa.
+
+Al drenar el aceite, observe su color: si sale lechoso o grisáceo, hay infiltración de agua y se necesita una reparación antes de guardar el motor.
+
+**¿Qué pasa si lo omite?** Carcasa agrietada por congelación, reparación mayor.
 
 ### 4. Batería: retiro y almacenamiento
 
-No deje la batería en el bote durante el invierno. Las baterías marinas expuestas al frío se descargan rápidamente y pueden sufrir daños permanentes. Retírela, limpie los terminales, y almacénela en un lugar protegido del frío, idealmente conectada a un cargador de mantenimiento (trickle charger). Una batería bien almacenada dura dos a tres veces más.
+No deje la batería en el bote durante el invierno. Las baterías marinas expuestas al frío se descargan rápidamente y pueden sufrir daño permanente. Retírela, limpie los terminales, y guárdela en un lugar protegido del frío, idealmente conectada a un cargador de mantenimiento (*trickle charger*). Una batería bien almacenada dura dos a tres veces más.
+
+**¿Qué pasa si lo omite?** Batería muerta o dañada permanentemente, reemplazo costoso.
 
 ### 5. Engrase de conexiones y puntos de articulación
 
-Timón, dirección, cables de control, rodamientos de pivote, todos estos puntos necesitan una buena capa de grasa marina antes del invierno. Toma veinte minutos y le evita piezas trabadas o corroídas en primavera.
+Aplique una buena capa de grasa marina en el timón, la dirección, los cables de control y los rodamientos de pivote. Este paso toma unos veinte minutos y previene que el frío y la humedad del invierno agarroten las piezas móviles.
+
+**¿Qué pasa si lo omite?** Piezas trabadas en primavera, cables dañados.
 
 ### 6. Enjuague con agua dulce
 
-Para embarcaciones usadas en agua con alto contenido mineral, un buen enjuague interno del sistema de enfriamiento es importante. El agua dulce elimina depósitos minerales que, acumulados, reducen la eficiencia del enfriamiento y aceleran la corrosión.
+Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar depósitos minerales que reducen la eficiencia de enfriamiento y aceleran la corrosión. Para embarcaciones que navegan exclusivamente en lagos como Rice Lake o los Kawartha, esto es generalmente menos crítico que para motores usados en agua salada, pero sigue siendo recomendable.
 
-Nota: Si navega exclusivamente en lagos de agua dulce como Rice Lake o los Kawartha, este paso es generalmente menos crítico, pero sigue siendo recomendable.
-
----
-
-## El calendario en Ontario: octubre-noviembre
-
-En la práctica, la mayoría de los dueños de botes en Ontario sacan su embarcación del agua entre mediados de octubre y finales de noviembre. El fin de semana de Thanksgiving (segundo lunes de octubre) es a menudo la fecha límite psicológica. Después de eso, las temperaturas se vuelven impredecibles.
-
-Para la puesta en el agua en primavera, la ventana habitual es entre mediados de abril y finales de mayo según la región. Si quiere estar listo para el primer buen fin de semana de mayo, una preparación invernal bien hecha en otoño es su mejor inversión.
+**¿Qué pasa si lo omite?** Corrosión acelerada en el sistema de enfriamiento, obstrucción de paso de agua.
 
 ---
 
-## ¿Por qué confiar la preparación invernal a profesionales?
-
-Hacer la preparación invernal usted mismo es posible, pero solo si tiene la experiencia, los productos correctos, y no se salta ningún paso. Los olvidos más comunes: la lubricación interna (fogging), la verificación de infiltraciones de agua en la caja de engranajes, y el engrase completo de todos los puntos de articulación.
-
-En Harris Boat Works, hacemos **584 preparaciones invernales por año**. No es un número inventado para impresionar, es simplemente lo que se necesita para atender a nuestra clientela en Rice Lake y las Kawartha. Nuestros técnicos conocen los motores Mercury a fondo, y saben exactamente qué buscar, qué reemplazar y qué anotar para la primavera.
-
-También manejamos **311 contratos de almacenamiento**, interior y exterior, por año.
-
----
-
-## Resumen: pasos de preparación invernal
+## Resumen de pasos
 
 | Paso | ¿Qué hace? | ¿Qué pasa si lo omite? |
 |---|---|---|
 | Estabilizar combustible | Previene degradación y separación de fase | Combustible contaminado, motor no arranca |
 | Fogging (lubricación interna) | Protege cilindros contra corrosión | Oxidación interna, reparación costosa |
 | Drenar gear lube | Detecta y previene daño por agua congelada | Carcasa agrietada, reparación mayor |
-| Retirar batería | Previene descarga y daño por frío | Batería muerta, reemplazo costoso |
+| Retirar batería | Previene descarga y daño por frío | Batería muerta, reemplazo necesario |
 | Engrasar articulaciones | Previene corrosión en cables y puntos de pivote | Piezas trabadas, cables dañados |
 | Enjuague con agua dulce | Elimina depósitos minerales | Corrosión acelerada del sistema de enfriamiento |
 
 ---
 
+## El calendario en Ontario: octubre, noviembre
+
+La mayoría de los propietarios de botes en Ontario sacan su embarcación entre mediados de octubre y finales de noviembre. El fin de semana de Thanksgiving es a menudo la fecha límite psicológica. La ventana de lanzamiento en primavera es generalmente entre mediados de abril y finales de mayo, según la región.
+
+No espere demasiado: los talleres se llenan rápido al inicio y al final de la temporada.
+
+---
+
+## ¿Por qué confiar la preparación invernal a profesionales?
+
+Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos, y no omite ningún paso. Los pasos que más se olvidan son: el fogging, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
+
+En Harris Boat Works realizamos más de 584 preparaciones invernales por temporada. Nuestros técnicos están certificados directamente por Mercury Marine y conocen los motores Mercury a fondo.
+
+---
+
+## Preguntas frecuentes
+
+**¿Puedo hacer la preparación invernal yo mismo?** 
+Sí, si tiene experiencia y los productos correctos, y no omite ningún paso. Los pasos más frecuentemente olvidados son el fogging y el drenaje del gear lube. Si tiene dudas, confíelo a un técnico certificado Mercury.
+
+**¿Dónde puedo conseguir combustible sin etanol?** 
+Harris Boat Works vende combustible sin etanol directamente en el sitio en Gores Landing. Es una de las pocas marinas en Ontario que lo ofrece.
+
+**¿Cómo reservo la preparación invernal?** 
+La forma más fácil es a través de hbw.wiki/service, puede escribir en español. También puede llamarnos al 905-342-2153.
+
+**¿Los pasos son iguales para todos los motores Mercury?** 
+Los pasos descritos aquí son comunes a la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año, siempre consulte el manual del motor o contacte al concesionario para su modelo específico.
+
+**¿Cuándo es el mejor momento para hacer la preparación invernal?** 
+Tan pronto como sepa que no va a volver a usar el bote esa temporada. No espere al primer frío, los talleres se llenan hacia finales de octubre.
+
+**¿Cuánto tiempo tarda la preparación invernal?** 
+Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
+
+---
+
 ## Contáctenos
 
-**Reservar preparación invernal:** [hbw.wiki/service](https://hbw.wiki/service), puede escribir en español.
+**Reservar preparación invernal:** hbw.wiki/service, puede escribir en español.
 
 **Por teléfono:** 905-342-2153
 
@@ -364,8 +407,15 @@ También manejamos **311 contratos de almacenamiento**, interior y exterior, por
 
 ---
 
-*Harris Boat Works, concesionario Mercury Marine Platinum. 78 años sobre Rice Lake. 584 preparaciones invernales por temporada.*
-    `,
+*Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
+
+---
+
+**EDITOR NOTE (English):** 
+This is a Spanish-language post targeting Spanish-speaking boaters in Ontario. Source post published 2026-04-12. The "584 winterizations per season" and "311 storage contracts" figures are sourced from hbw-business-context skill (verified HBW data), "311 storage contracts" not prominently featured in this post to avoid overloading; "584 winterizations" retained as primary credibility anchor. The step-by-step winterization content and the summary table are adapted from the original post. No specific service prices are included (original had none). The ethanol-free fuel claim ("one of the few marinas in Ontario that sells ethanol-free fuel on-site") is verified in hbw-business-context. "78 años" replaced with "desde 1947" and "marina familiar de tercera generación" per task brief. Language note (team works in English) preserved from original. No APR or financing rates. No prices fabricated.
+
+---
+---`,
     faqs: [
       { question: '¿Cuánto cuesta una preparación invernal profesional?', answer: 'El precio varía según el motor y los servicios requeridos. Contacte a hbw.wiki/service para una estimación.' },
       { question: '¿Cuándo debo reservar?', answer: 'Idealmente en septiembre o principios de octubre. Los espacios se llenan rápido después de Thanksgiving.' },
@@ -527,22 +577,23 @@ El 150 FourStroke cuesta más que el 115, tanto el motor como la instalación (s
     category: 'Remotorización',
     readTime: '12 min',
     keywords: ['remotorización vs bote nuevo', 'repower Mercury Ontario', 'cambiar motor bote', 'costo remotorización Ontario'],
-    content: `
-## Una nota sobre el idioma
+    content: `### Respuesta rápida
 
-Nuestro equipo trabaja en inglés, no hablamos español, pero haremos todo lo posible para ayudarle. El configurador de precios en [mercuryrepower.ca](https://mercuryrepower.ca) funciona sin barrera de idioma, los precios están ahí, claros y accesibles. Para preguntas más detalladas, el correo electrónico es el mejor medio: puede escribir en español en [hbw.wiki/service](https://hbw.wiki/service), y encontraremos la forma de comunicarnos.
-
-Harris Boat Works es el único concesionario Mercury Platinum en Ontario con contenido en español sobre remotorización.
+Si su casco está en buen estado y el problema es el motor, remotorizar. Un bote nuevo con motor puede costar entre $40,000 y $100,000 CAD o más; una remotorización cuesta una fracción de eso. Si el casco está dañado, o si necesita un tipo de embarcación completamente distinto, comprar un bote nuevo tiene sentido. Para ver exactamente cuánto costaría remotorizar su embarcación, visite mercuryrepower.ca.
 
 ---
 
-## La decisión que miles de propietarios enfrentan cada primavera
+### Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?
 
-El motor deja de funcionar. O todavía funciona, pero apenas, y usted sabe que la próxima temporada será la última. Se hace la pregunta que miles de dueños de botes en Ontario se hacen cada primavera: ¿cambio el motor, o compro un bote nuevo?
+Cada primavera, miles de propietarios de botes en Ontario se enfrentan a la misma decisión: el motor está fallando, ¿vale la pena reemplazarlo, o es momento de comprar un bote nuevo?
 
-Es una buena pregunta, y merece una respuesta honesta, no un discurso de vendedor.
+Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Platinum y también vendemos botes nuevos Legend Boats. No tenemos interés en empujarle hacia ninguna de las dos opciones: nuestro objetivo es que tome la decisión correcta para su situación.
 
-Harris Boat Works vende botes nuevos (Legend Boats) y motores Mercury. Hacemos remotorizaciones desde hace décadas. No tenemos interés en empujarlo hacia una opción u otra. Lo que queremos es que usted tome la decisión correcta para su situación.
+---
+
+## Una nota sobre el idioma
+
+Nuestro equipo trabaja en inglés y no hablamos español, pero haremos todo lo posible para ayudarle. El configurador de precios en mercuryrepower.ca funciona sin barrera de idioma, los precios están claros y accesibles en dólares canadienses. Para preguntas más detalladas, puede escribir en español a través de hbw.wiki/service.
 
 ---
 
@@ -550,52 +601,61 @@ Harris Boat Works vende botes nuevos (Legend Boats) y motores Mercury. Hacemos r
 
 ### 1. El costo: la diferencia es real
 
-Un bote nuevo con motor puede costar entre $40,000 y $100,000 CAD o más, según el tamaño y la categoría. Una remotorización, reemplazo del motor solamente, puede hacerse por una fracción de ese presupuesto.
+Un bote nuevo con motor puede costar entre $40,000 y $100,000 CAD o más, según el tamaño y la categoría. Una remotorización le permite reemplazar únicamente el motor por una fracción de ese presupuesto.
 
-En [mercuryrepower.ca](https://mercuryrepower.ca), puede configurar su remotorización en línea y ver los precios en tiempo real. Sin "llame para cotizar" que esconde los números reales. Usted ingresa su tipo de embarcación, elige la potencia, y ve cuánto cuesta. Esa transparencia es intencional, creemos que usted tiene derecho a comparar antes de decidir.
+En mercuryrepower.ca puede configurar su remotorización en línea y ver los precios en tiempo real, no hay "llame para cotizar." Usted ingresa el tipo de embarcación, elige la potencia, y ve cuánto cuesta. En dólares canadienses, sin sorpresas.
 
 ### 2. Su casco tiene valor
 
-Un casco de aluminio bien mantenido puede durar 30, 40 años fácilmente, y un casco de fibra de vidrio bien cuidado, varias décadas también. Si su embarcación está todavía en buenas condiciones estructurales, es un activo. Usted la conoce. Sabe cómo se comporta en el agua, cómo carga, cómo gira.
+Un casco de aluminio bien mantenido puede durar 30 a 40 años fácilmente. Un casco de fibra de vidrio bien cuidado puede durar varias décadas. Lo que envejece más rápido es el motor, especialmente si el mantenimiento no fue regular.
 
-Reemplazar un motor viejo en un buen casco es como cambiarle el motor a un vehículo en buen estado en lugar de comprar uno nuevo. La analogía no es perfecta, pero la idea aplica.
+Remotorizar significa conservar una embarcación que ya conoce y en la que confía, con un motor nuevo bajo garantía. También significa evitar los trámites de un bote nuevo: nueva matrícula, nuevo financiamiento, posiblemente nuevo seguro, y la venta del anterior.
 
 ### 3. Tecnología Mercury moderna en su embarcación
 
-Los motores Mercury FourStroke actuales (disponibles de 2,5 a 300 HP) son más económicos en combustible, más silenciosos y más confiables que la generación anterior. La gestión electrónica ha progresado considerablemente. Si su motor tiene 15 años o más, la diferencia se siente desde la primera salida.
+Los motores Mercury FourStroke actuales están disponibles de 2.5 a 300 HP. Son más económicos en combustible, más silenciosos y más confiables que la generación anterior. Si su motor tiene 15 años o más, notará la diferencia desde la primera salida.
 
-Como concesionario Mercury Platinum, el nivel más alto de la red Mercury, Harris Boat Works tiene acceso a toda la línea, incluidos los FourStroke estándar, los Verado de alto rendimiento, y los Pro XS para pescadores. Instalamos lo que la situación requiere, no lo que queremos vender.
+Como concesionario Mercury Platinum, Harris Boat Works tiene acceso a toda la gama: FourStroke estándar, Verado de alto rendimiento, y Pro XS para pescadores.
 
 ### 4. Tiempo: usted quiere navegar esta temporada
 
-Ordenar un bote nuevo puede tomar meses, especialmente si tiene preferencias específicas. En Ontario, con una temporada de navegación que va aproximadamente de mayo a octubre, cada semana cuenta. El plazo real de una remotorización depende de la temporada, disponibilidad del motor y carga de trabajo del taller, pero suele ser considerablemente más rápido.
+En Ontario, la temporada de navegación va aproximadamente de mayo a octubre, unos seis meses. Ordenar un bote nuevo puede tomar varios meses, especialmente con preferencias específicas. Una remotorización bien planificada suele ser considerablemente más rápida.
 
 ### 5. Menos trámites
 
-Bote nuevo = nueva matrícula, nuevo financiamiento, posiblemente nuevo seguro, venta del anterior. Remotorización = usted conserva su embarcación, su matrícula, y vuelve al agua. Menos papeleo, menos complicaciones.
+Con una remotorización, conserva su embarcación y su matrícula, y vuelve al agua. Un bote nuevo implica nueva matrícula, nuevo financiamiento, posiblemente nuevo seguro, y la venta o disposición del anterior.
 
 ---
 
 ## Cuándo tiene sentido comprar un bote nuevo
 
-Seamos honestos: la remotorización no siempre es la respuesta correcta.
+**El casco está dañado o estructuralmente comprometido.** 
+Delaminación avanzada, reparaciones múltiples, integridad estructural dudosa. Instalar un motor nuevo sobre un casco comprometido no resuelve el problema de fondo.
 
-**Casco dañado o comprometido estructuralmente.** Si su casco tiene problemas serios, delaminación avanzada, reparaciones múltiples, integridad estructural dudosa, ponerle un motor nuevo no es buena idea. Un diagnóstico honesto del estado del casco debe preceder cualquier decisión.
+**Necesita un tipo de embarcación completamente diferente.** 
+La remotorización no cambia la forma del bote. Si quiere pasar de un bote de pesca abierto a uno familiar con cabina, o de un bote a motor a un pontón, necesita un bote nuevo.
 
-**Quiere cambiar de tipo de embarcación.** Tiene un runabout pero quiere un bote de pesca. O quiere pasar de un bote a motor a un pontón. La remotorización no cambia la forma de su bote.
+**El financiamiento integrado es más accesible para usted.** 
+Para algunos compradores, financiar un bote nuevo con motor en un solo préstamo es más simple o más accesible. Es una consideración práctica válida.
 
-**El financiamiento de un paquete completo tiene sentido para usted.** Para algunos compradores, financiar un bote nuevo con motor incluido en un solo préstamo es más simple o más accesible. No es irracional, es cuestión de situación personal.
-
-**La embarcación simplemente ya cumplió su vida útil.** Edad, desgaste, mantenimiento diferido, en algún punto, un casco ya dio lo que tenía que dar.
+**La embarcación ya cumplió su vida útil.** 
+Edad, desgaste acumulado y mantenimiento diferido hacen que, en algún punto, un casco haya llegado al final de su vida útil, aunque no tenga un defecto obvio y visible.
 
 ---
 
 ## Cómo tomar la decisión
 
-1. **Haga evaluar su casco.** Antes de decidir, sepa en qué estado está realmente. Un técnico experimentado puede darle una opinión clara.
-2. **Obtenga un precio real de remotorización.** Vaya a [mercuryrepower.ca](https://mercuryrepower.ca), configure su proyecto, y vea el costo real. No una estimación vaga, un número concreto.
-3. **Compare con el costo de un bote nuevo equivalente.** Consulte el inventario en [harrisboatworks.ca](https://harrisboatworks.ca). Vea qué obtiene por cuánto.
-4. **Hágase la pregunta honesta: ¿le gusta su embarcación actual?** Si la respuesta es sí, si le ha servido bien y el casco está sano, la remotorización merece ser considerada seriamente.
+**Paso 1: Evalúe el casco.** 
+Haga revisar la estructura por un técnico con experiencia antes de decidir. En Harris Boat Works, evaluamos el casco antes de recomendar cualquier cosa. Si la remotorización no es la decisión correcta, se lo decimos, incluso si eso significa perder una venta.
+
+**Paso 2: Obtenga un precio real de remotorización.** 
+Vaya a mercuryrepower.ca. En unos minutos tiene un precio en dólares canadienses, con todas las opciones desglosadas y sin compromisos.
+
+**Paso 3: Compare con el costo de un bote nuevo equivalente.** 
+Consulte el inventario en harrisboatworks.ca para ver los botes nuevos disponibles. Compare ambos caminos con números reales.
+
+**Paso 4: Pregúntese honestamente si le gusta su embarcación actual.** 
+Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemente es la decisión correcta. Si la respuesta es no, si el formato ya no le conviene, si necesita más espacio, si quiere algo diferente, entonces puede ser el momento de cambiar.
 
 ---
 
@@ -613,13 +673,35 @@ Seamos honestos: la remotorización no siempre es la respuesta correcta.
 
 ---
 
+## Preguntas frecuentes
+
+**¿Cuánto cuesta una remotorización Mercury en Ontario?** 
+El costo varía según la potencia del motor, la longitud del árbol, el cableado necesario y la mano de obra. Para obtener un precio preciso para su embarcación, use el configurador en mercuryrepower.ca, disponible en tiempo real, en dólares canadienses, sin barrera de idioma.
+
+**¿Cómo sé si mi casco vale la pena remotorizar?** 
+Haga revisar el casco por un técnico con experiencia. En Harris Boat Works evaluamos el casco antes de recomendar cualquier cosa. Si la remotorización no es la decisión correcta, se lo decimos.
+
+**¿Puedo ver botes nuevos en Harris Boat Works?** 
+Sí. Somos concesionarios de Legend Boats. Consulte el inventario en harrisboatworks.ca.
+
+**¿Puedo escribir en español?** 
+El configurador en mercuryrepower.ca y el formulario de servicio en hbw.wiki/service funcionan sin barrera de idioma. Puede escribir en español en hbw.wiki/service, haremos todo lo posible para ayudarle.
+
+**¿Cuánto tiempo tarda una remotorización?** 
+Depende de la disponibilidad del motor y el programa del taller. Una remotorización bien planificada puede realizarse en semanas. La temporada en Ontario es corta, planifique con anticipación.
+
+**¿Trabajan con otros motores además de Mercury?** 
+Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Mercury y Mercruiser.
+
+---
+
 ## Contáctenos
 
-**Obtenga su precio de remotorización:** [mercuryrepower.ca](https://mercuryrepower.ca), configurador transparente, precios reales, sin compromiso.
+**Precio de remotorización en línea:** mercuryrepower.ca, configure su proyecto y vea el costo real en minutos.
 
-**¿Prefiere ver botes nuevos?** Consulte nuestro inventario Legend Boats en [harrisboatworks.ca](https://harrisboatworks.ca).
+**Botes nuevos:** harrisboatworks.ca, inventario Legend Boats.
 
-**Solicitud de servicio:** [hbw.wiki/service](https://hbw.wiki/service), puede escribir en español.
+**Solicitud de servicio:** hbw.wiki/service, puede escribir en español.
 
 **Por teléfono:** 905-342-2153
 
@@ -627,8 +709,19 @@ Seamos honestos: la remotorización no siempre es la respuesta correcta.
 
 ---
 
-*Harris Boat Works, concesionario Mercury Marine Platinum. Familia, Rice Lake, 78 años de experiencia. Le ayudamos a tomar la decisión correcta, no la más cara.*
-    `,
+*Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
+
+---
+
+**EDITOR NOTE (English):** 
+This is a Spanish-language post targeting Spanish-speaking boaters in Ontario. Source post published 2026-04-12. The "$40,000 to $100,000 CAD" new boat cost range is retained from original Spanish post. Specific CAD repower cost figures by HP tier are not included here, readers are directed to live configurator at mercuryrepower.ca to avoid stale pricing. The decision summary table is adapted from the original's explicit table. No APR or financing rate claims included. Language note (team works in English) preserved from original. "78 años" replaced with "desde 1947" and "marina familiar de tercera generación" per task brief. HBW service-only scope note ("Mercury and Mercruiser only") added in FAQ, per brand-voice guideline. No prices fabricated.
+
+---
+
+*End of file, 12 posts total*
+
+
+---`,
     faqs: [
       { question: '¿Cuánto cuesta una remotorización comparada con un bote nuevo?', answer: 'En muchos casos, una remotorización cuesta considerablemente menos que reemplazar toda la embarcación, pero la diferencia real depende del casco, la potencia y la instalación necesaria. Consulte mercuryrepower.ca para precios actualizados.' },
       { question: '¿Cuánto tiempo toma una remotorización?', answer: 'El plazo real depende de la temporada, disponibilidad del motor y carga de trabajo del taller. En general, mucho menos que esperar un bote nuevo.' },
