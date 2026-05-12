@@ -4176,201 +4176,174 @@ Common configuration. The main motor uses remote control from the helm; the kick
     category: 'Tips',
     readTime: '10 min read',
     keywords: ['mercury propeller selection', 'outboard prop guide', 'boat propeller size', 'mercury prop chart', 'propeller pitch explained'],
-    content: `# Mercury Propeller Selection Guide (2026 Ontario)
-
-*Last reviewed: 2026-05-07*
-
-> **Quick answer:** Match prop pitch so the motor hits its WOT RPM range with a normal load. Too much pitch lugs the motor; too little over-revs it. Aluminum is the default; stainless gains 1-3 MPH and durability but costs more. We re-prop on every install if needed. Standard prop allowance is included, see mercuryrepower.ca.
-
-A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its rated WOT RPM at typical loading, which is the only test that matters. Aluminum 3-blade props (typical $450 CAD) cover up to 115 HP. Stainless 3 or 4-blade props ($800 to $2,000 CAD) take over from 150 HP up. Live pricing on every Mercury motor and prop is at [/quote/motor-selection](/quote/motor-selection).
-
-## Quick recommendation
-
-Most Mercury owners buy the motor and skip the prop conversation. That is the most common reason a brand-new Mercury underperforms. Prop selection is not optional. The right prop is the one that lets your specific motor reach its rated WOT RPM band with your typical loading, on your specific hull.
-
-We test props on the water during the sea-trial of every repower at HBW. Two boats with identical motors but different props can have 4 mph difference in top speed and 15% difference in cruise fuel burn. The right prop costs the same as the wrong prop. Pick the right one.
-
-## What changes the right prop for your boat
-
-Five things move which prop is right for your specific motor and boat:
-
-- **Motor HP and rated WOT RPM band.** Mercury publishes a wide-open throttle (WOT) RPM range for every motor. The right prop lets you reach mid-band at typical loading.
-- **Hull weight and design.** Heavy boats want different prop than light boats. Pontoons want different prop than runabouts. Bass boats want different prop than fishing boats.
-- **Typical loading.** Empty boat numbers are aspirational. Loaded boat numbers are real life. Loading affects prop pitch decisions.
-- **Use case.** Top speed (acceleration vs. top-end), trolling, water sports, and fishing all reward different prop designs.
-- **Material (aluminum vs. stainless).** Aluminum is cheaper and easier to repair. Stainless gives more thrust, better top end, and better damage resistance.
-
-## Aluminum vs stainless: when each makes sense
-
-The aluminum/stainless decision is partly about HP and partly about use case.
-
-| Factor | Aluminum 3-blade | Stainless 3 or 4-blade |
-|---|---|---|
-| Typical price (CAD) | ~$450 | $800 to $2,000 |
-| HP range | Up to 115 HP | 150 HP and up |
-| Acceleration | Adequate | Better |
-| Top speed | Lower | Higher |
-| Damage resistance | Lower (bends easily on rocks) | Higher (more durable) |
-| Repair cost | Lower (can be straightened) | Higher (specialized repair) |
-| Fuel economy | Good | Slightly better |
-| Best for | Recreational, family, mid-HP | Performance, tournament, high HP |
-
-For aluminum prop owners on lower HP motors, aluminum is the right answer. For 150 HP and above, stainless is usually the right answer. For 115 HP, it depends on use case (tournament fishing wants stainless; family fishing is fine with aluminum).
-
-For specific pricing, [build a quote](/quote/motor-selection) with prop included.
-
-## Pitch: the most important number on the prop
-
-Pitch is the theoretical distance the prop moves forward in one revolution. Lower pitch (lower number) gives faster acceleration and lower top speed. Higher pitch (higher number) gives slower acceleration and higher top speed.
-
-For a typical Mercury 90 EXLPT FourStroke on a 16 to 18 ft aluminum console:
-
-- 13 inch pitch: faster hole shot, lower top speed, runs higher RPM
-- 15 inch pitch: balanced acceleration and top speed, mid-range RPM
-- 17 inch pitch: slower hole shot, higher top speed, runs lower RPM
-
-The right pitch is the one that lets the motor reach mid-band of its rated WOT RPM with your typical loading. If WOT comes up short of rated RPM, you need a lower pitch (or you are over-loaded). If WOT is over rated RPM, you need a higher pitch.
-
-We test pitch during sea-trial of every repower. A wrong-pitch prop is the single most common performance issue on otherwise-correctly-installed Mercury motors.
-
-## Diameter and blade count
-
-Diameter is fixed by the gearcase and HP class. The Mercury 90 EXLPT runs different diameter than the 115 EXLPT, which runs different diameter than the 150 EXLPT.
-
-Blade count varies more by application:
-
-- **3-blade:** Standard for most recreational use. Best top speed, good fuel economy.
-- **4-blade:** Better hole shot, better cruising stability, slightly lower top speed. Common on heavy boats, pontoons, and water-sports applications.
-
-For most aluminum console fishing boats, a 3-blade is the right call. For pontoons and water-sports applications, a 4-blade often performs better. For tournament fishing where top speed matters most, 3-blade stainless wins.
-
-## Mercury Command Thrust vs standard prop selection
-
-If you have Mercury Command Thrust on your motor (typical on pontoons and heavy fishing rigs 115 HP and up), the prop selection is different. Command Thrust uses larger gearcase and larger prop, optimized for heavy loads.
-
-Command Thrust props are typically:
-
-- Larger diameter than standard
-- Lower pitch range
-- 4-blade designs more common
-- Optimized for hole shot and load handling rather than top speed
-
-We rig pontoons with Command Thrust regularly at HBW. The prop that comes with the Command Thrust gearcase is usually close to right out of the box, but sea-trial confirms.
-
-## What HBW checks during prop sea-trial
-
-When we deliver a Mercury repower or new motor, we test prop performance on the water:
-
-- **WOT RPM at typical loading.** Right WOT RPM is the single best indicator of correct prop.
-- **Top speed at WOT.** Compared against expected based on hull and motor.
-- **Hole shot from neutral.** How fast the boat planes from idle.
-- **Plane speed.** Lowest speed the boat stays on plane.
-- **Cruise RPM at target speed.** The RPM the motor runs at typical cruise speed (e.g., 25 to 30 mph).
-- **Trim sensitivity.** How responsive the boat is to trim adjustments at speed.
-- **Customer feel.** Subjective assessment of how the boat handles.
-
-If any of these are off, we change props and re-test. Sometimes the right prop is the second one we try. Sometimes it is the fourth. We have a prop test kit at HBW for this reason.
-
-## Common prop mistakes
-
-We see these every season:
-
-1. **Skipping the prop conversation.** Customer buys a Mercury and assumes the dealer puts on "the right prop." Sometimes they get a generic one that does not match their use case. We ask the question every time at HBW.
-2. **Wrong pitch.** Most common error. WOT RPM ends up below or above rated band. Performance suffers.
-3. **Aluminum on a high-HP motor.** Aluminum props above 115 HP get destroyed quickly. Stainless is the right answer at higher HP.
-4. **Ignoring loading.** Customer picks prop for empty-boat use, then loads up the family and gear and underperforms. Test loaded.
-5. **Cheap eBay props of unknown origin.** Mercury props are made by Mercury for a reason. Off-brand props of unknown origin sometimes fit but rarely match performance.
-
-## How often to replace your prop
-
-Modern Mercury props (aluminum or stainless) last many years if not damaged. Common replacement reasons:
-
-- **Damage from rocks, logs, or sand.** A bent or chipped prop loses performance immediately. Repair if minor; replace if major.
-- **Wear over many hundreds of hours.** Performance degrades slowly over long use.
-- **Use case change.** Bought a new family of five, suddenly running heavier loaded. Prop that fit solo fishing no longer fits the new use.
-- **Major motor service.** Sometimes during a repower or major service we recommend a new prop because the old one was close to end of life.
-
-We inspect props during every winterization and spring commissioning. If a prop needs replacement, we tell customers. We do not push prop replacement that is not warranted.
-
-## Related guides
-
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific motor and prop recommendations
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific motor and prop recommendations
-- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), how prop affects fuel economy
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP and prop interact
-- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats), Command Thrust prop differences
-
-## Ready to pick the right prop?
-
-Build a quote with the right prop included on the [motor selection page](/quote/motor-selection). The system asks for hull info and use case and recommends a prop that fits. Sea-trial confirms.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through prop selection for your specific Mercury before quoting, [give us a call at (905) 342-2153](tel:9053422153). We have rigged thousands of Mercurys with the right prop. The prop conversation matters.
+    content: `**Last reviewed:** 2026-05-07
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+> **Quick answer:** Match prop pitch so the motor hits its rated WOT RPM band with a typical load. Too much pitch lugs the motor; too little over-revs it. Aluminum is the default for lower HP; stainless takes over at higher HP and performance applications. We re-prop on every install during the sea trial. Standard prop allowance is included, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+---
+
+## The prop conversation most people skip
+
+Most Mercury owners buy the motor and barely think about the prop. That is the single most common reason a brand-new Mercury underperforms out of the gate.
+
+A wrong prop costs you real top speed, fuel economy, and places the motor outside its rated WOT RPM band, meaning it can't perform to spec. Two boats with identical motors and different props can show a 4 mph difference in top speed and a meaningful gap in cruise fuel burn.
+
+The right prop costs the same as the wrong prop. It's worth the conversation.
+
+---
+
+## What determines the right prop
+
+**Motor HP and rated WOT RPM band.** Mercury publishes a WOT RPM range for every motor. The right prop lets you reach mid-band at typical loading. Too much pitch and you can't reach it. Too little pitch and you blow past it.
+
+**Hull weight and design.** Heavy boats need different prop than light boats. Pontoons want different prop than runabouts. Bass boats want different prop than a family console.
+
+**Typical loading.** Empty boat numbers are aspirational. Loaded boat numbers are real life. Loading affects pitch decisions.
+
+**Use case.** Top speed, hole shot, trolling, water sports, and fishing all reward different prop designs. A prop optimized for tournament top speed is not the same as one optimized for hole shot with a full pontoon load.
+
+**Material (aluminum vs stainless).** Aluminum is cheaper and easier to repair. Stainless provides more thrust, better top end, and better durability at higher HP.
+
+---
+
+## Aluminum vs stainless: when each makes sense
+
+| | Aluminum 3-blade | Stainless 3 or 4-blade |
+|--|--|--|
+| HP range | Lower HP recreational | Higher HP and performance applications |
+| Acceleration | Adequate | Better |
+| Top speed | Lower | Higher |
+| Damage resistance | Bends on rocks, can often be straightened | More durable; more expensive to repair |
+| Best for | Recreational, family, moderate HP | Performance, tournament, higher HP |
+
+For specific pricing, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) with prop included.
+
+---
+
+## Pitch: the most important number
+
+Pitch is the theoretical forward distance the prop moves in one revolution. Lower pitch = faster acceleration, lower top speed, higher RPM. Higher pitch = slower acceleration, higher top speed, lower RPM.
+
+**The rule:** Pick the pitch that lets your motor reach mid-band of its rated WOT RPM with your typical loading.
+
+- If WOT comes up short of rated RPM at full load → try a lower pitch
+- If WOT overshoots rated RPM → try a higher pitch
+
+We test pitch on the water during the sea trial of every repower. A wrong-pitch prop is the most common performance issue on otherwise correctly-installed Mercury motors.
+
+---
+
+## Blade count
+
+Diameter is fixed by the gearcase and HP class, Mercury's gearcase determines the maximum prop diameter.
+
+Blade count is where there's decision-making room:
+
+**3-blade:** Standard for most recreational use. Best top speed, good fuel economy. The default for most installations.
+
+**4-blade:** Better hole shot, better cruising stability, slightly lower top speed. Common on heavy boats, pontoons, water-sports applications, and boats that need to get on plane quickly with full loads.
+
+For most aluminum console fishing boats: 3-blade. For pontoons and water-sports applications: 4-blade often performs better. For tournament bass fishing where top speed matters: 3-blade stainless.
+
+---
+
+## Command Thrust prop selection
+
+If you have Mercury Command Thrust on your motor (typical on pontoons and heavy-hull applications), the prop selection is different from standard. Command Thrust uses a larger gearcase that fits a larger prop, and standard props won't fit or perform correctly on a Command Thrust gearcase.
+
+Command Thrust props typically:
+- Run larger diameter than standard
+- Use a lower pitch range, optimized for hole shot and pulling power
+- Use 4-blade designs more commonly
+- Come in aluminum or stainless depending on HP and use
+
+We rig pontoons with Command Thrust regularly at HBW. The prop that comes standard with a Command Thrust install is usually close to right, but sea trial confirms.
+
+---
+
+## What we check during the prop sea trial
+
+On every repower and new motor delivery at HBW:
+
+- WOT RPM at typical loading (the single best indicator of correct prop)
+- Top speed at WOT (compared against expected for the hull and motor)
+- Hole shot from neutral (how fast the boat planes from idle)
+- Plane speed (lowest speed the boat holds on plane)
+- Cruise RPM at target speed
+- Trim sensitivity at speed
+- Customer subjective feel
+
+If anything is off, we change props and re-test. Sometimes the right prop is the second one we try. Sometimes it takes a few attempts. We have a prop test kit at HBW for this reason, it's part of the repower process.
+
+---
+
+## Common prop mistakes
+
+**1. Skipping the prop conversation entirely.** Assuming "the dealer put on the right prop." Sometimes they did. Often there's a better answer for your specific hull and use case. We ask every time.
+
+**2. Wrong pitch.** Most common error. WOT RPM ends up outside the rated band. Performance suffers.
+
+**3. Aluminum on a high-HP motor.** Aluminum props take a beating above certain HP thresholds and get destroyed quickly. Stainless is the right answer at higher HP.
+
+**4. Picking prop for empty-boat use.** Customer selects pitch based on solo performance, then loads up the family and underperforms. Test loaded.
+
+**5. Off-brand props of unknown origin.** Mercury props are designed for Mercury gearcases. Off-brand props sometimes fit but rarely match the performance of the correct Mercury prop.
+
+---
+
+## How often to replace your prop
+
+Modern Mercury props last many years if they're not damaged. Common replacement reasons:
+- Damage from rocks, logs, sand, or debris (bend or chip = immediate performance hit)
+- Gradual wear over many hundreds of hours
+- Use case change that calls for a different pitch
+- Repower where old prop won't fit new gearcase
+
+We inspect props during every winterization and spring commissioning. If a prop needs replacement, we say so. We don't push replacement that isn't warranted.
+
+---
+
+## Related posts
+- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
+
+---
+
+## Ready to get the right prop?
+
+Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) with prop included. Or call **905-342-2153**, the prop conversation matters and it's a five-minute one.
 
 ---
 
 ## FAQ
 
 **Why does prop selection matter so much?**
-A wrong prop costs you 4 mph top speed, 15% fuel economy, and 1,000 RPM at WOT. The motor cannot perform to spec without the right prop. Two identical motors with different props can perform very differently. Prop is not optional.
+A wrong prop can cost you real top speed and fuel economy, and puts the motor outside its rated WOT RPM band. Two identical motors with different props perform very differently. It's not optional.
 
-**Aluminum or stainless prop for my Mercury?**
-For motors up to 115 HP and recreational use, aluminum is the right answer (~$450 CAD). For 150 HP and up, or for tournament/performance use, stainless is the right answer ($800 to $2,000 CAD). The HP and use case decide.
+**Aluminum or stainless prop?**
+Aluminum for lower-HP recreational use. Stainless for higher-HP applications, performance use, and tournament fishing. The HP and use case decide.
 
 **What is the right pitch for my Mercury?**
-The pitch that lets your motor reach mid-band of its rated WOT RPM with your typical loading. Mercury publishes WOT RPM ranges for every motor (e.g., 90 EXLPT is 5,000 to 5,800 RPM). We test pitch during sea-trial of every repower.
+The pitch that lets your motor reach mid-band of its rated WOT RPM with your typical loading. Mercury publishes WOT RPM ranges for every motor. We test pitch during sea trial.
 
-**Should I get a 3-blade or 4-blade prop?**
-3-blade is standard for most recreational use, top speed, and fuel economy. 4-blade gives better hole shot, cruising stability, and is common on pontoons, water-sports applications, and heavy boats.
+**3-blade or 4-blade?**
+3-blade for most recreational use, best top speed and fuel economy. 4-blade for pontoons, water sports, and heavy boats where hole shot and stability matter more than top end.
 
 **How do I know if my prop is wrong?**
-Symptoms: WOT RPM below or above rated band, slow hole shot, hard to get on plane, lower top speed than expected, poor fuel economy. We diagnose this during sea-trial.
+WOT RPM below or above the rated band. Slow hole shot. Hard to get on plane. Lower top speed than expected. We diagnose during sea trial.
 
-**Do I need a new prop with a Mercury repower?**
-Often yes, especially during brand conversions (Evinrude or Yamaha to Mercury) where the old prop will not fit the Mercury gearcase. Mercury-to-Mercury repowers sometimes keep the existing prop, but we test it during sea-trial and replace if performance is off.
-
-**How much does a Mercury prop cost?**
-Aluminum 3-blade: typically $450 CAD. Stainless 3 or 4-blade: $800 to $2,000 CAD depending on size and design. Specialty performance props can run higher. For specific pricing, [build a quote](/quote/motor-selection).
+**Do I need a new prop during a Mercury repower?**
+Often yes, especially when switching brands (old prop won't fit) or switching from standard to Command Thrust gearcase. Mercury-to-Mercury repowers sometimes keep the existing prop, but we test it and replace if performance is off.
 
 **Can I damage my prop on a Kawartha lake?**
-Yes. Rocks, logs, sand, and submerged debris can chip or bend a prop. Aluminum props bend more easily but can be straightened. Stainless props are more damage-resistant but more expensive to repair.
-
-**How long does a Mercury prop last?**
-Many years if not damaged. Properly maintained aluminum props last 5 to 10+ years of recreational use. Stainless props last 10 to 20+ years. Damage is the most common reason for early replacement.
+Yes. Rocks, logs, sand, and submerged debris are all real hazards. Aluminum props bend more easily but can often be straightened. Stainless props are more damage-resistant but more expensive to repair.
 
 **Should I keep a spare prop?**
-For most recreational boaters on Kawartha lakes, no. Tow back to dock and replace at HBW. For boaters running far from home or on bigger water (Lake Ontario, Trent-Severn travel), a spare prop and basic tools are smart insurance.
-
-**Can I use a Yamaha or Honda prop on a Mercury?**
-Generally no. Each motor brand has different gearcase splines and hub designs. Mercury props are made for Mercury motors. Off-brand props of unknown origin sometimes fit but rarely match performance.
-
-**Does prop selection affect my fuel economy?**
-Yes meaningfully. The right prop running at correct WOT RPM gives the best fuel economy. A wrong prop running outside rated band can cost 15% or more in fuel burn. Prop is one of the biggest fuel economy variables.
-
-**What is Mercury Command Thrust prop?**
-Command Thrust is a Mercury gearcase option (115 HP and up) with larger gearcase and larger prop, optimized for heavy boats (pontoons, work boats). Command Thrust props are typically larger diameter, lower pitch, often 4-blade. See our [Command Thrust guide](/blog/mercury-command-thrust-guide-pontoon-boats).
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
-
----
-
-## Sources
-
-- Parks Canada - Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
-- Parks Canada - Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Ontario Ministry of Natural Resources - Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
-
-*Last reviewed: 2026-05-11.*
+For most recreational boaters on Kawartha lakes, no, tow back to the dock and replace. For boaters running far from home or on bigger water, a spare prop and basic tools are smart insurance.
 `,
     howToSteps: [
       { name: 'Find your motor\'s rated WOT RPM', text: 'Mercury publishes a wide-open throttle (WOT) RPM range for every motor (e.g., 90 EXLPT is 5,000 to 5,800 RPM). The right prop lets you reach mid-band at typical loading. This number is the target.' },
@@ -4440,135 +4413,130 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['mercury seapro', 'commercial outboard', 'guide motor', 'heavy duty outboard', 'commercial boat motor', 'SeaPro vs FourStroke', 'commercial outboard motor', 'guide boat outboard', 'SeaPro 200 hour service', 'charter boat motor'],
-    content: `
-*Last reviewed: 2026-05-10*
-
-> **Quick answer:** Mercury SeaPro is the commercial-grade Mercury outboard line built for high-hour use: guides, charters, rental fleets, work boats, and operators where downtime costs real money. SeaPro can make sense when the boat earns its keep. For typical private recreational use, a standard FourStroke is usually the better value. SeaPro is special order at HBW, so contact us before quoting.
-
-For broader pricing context, see our [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). Commercial buyers comparing engine families should also read [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) for SeaPro warranty specifics.
-
-If your boat earns money, running a fishing guide service, a rental fleet, charter trips, government work, or any application that puts hundreds or thousands of hours on a motor every year, your motor's downtime IS your downtime. Mercury SeaPro is built to keep that downtime as low as possible.
-
-For everyone else, SeaPro is overkill. The standard FourStroke does the job at lower cost. We sell both. The honest version of "which one for you" comes down to two numbers: how many hours you'll run it per year, and how much one breakdown day costs you.
-
-## What Mercury SeaPro Actually Is
-
-SeaPro is a **commercial-spec variant** of Mercury's FourStroke and Pro XS outboards. Same basic powerheads in many cases, but with components and intervals tuned for sustained heavy use:
-
-- **Reinforced lower units**, heavier-gauge gearcase castings, beefier bearings, larger oil capacity
-- **Enhanced cooling system**, bigger water pump, more cooling passages, designed to run continuously without heat-soaking
-- **Commercial-duty design and service planning**, with maintenance intervals that should be confirmed against the exact SeaPro model, application, and Mercury service documentation
-- **Stainless steel hardware** throughout, saltwater-rated even on freshwater models
-- **Heavy-duty mounting and bracketry**
-- **Counter-rotation options** for twin installations
-- **Commercial warranty eligibility** (different terms than recreational)
-
-Available range: **15 HP to 500 HP**, a wider lineup than FourStroke at the high end. Common SeaPro horsepowers we see in Ontario: 60, 90, 115, 150, 200, 250, 300.
-
-## When SeaPro Is Actually Worth It
-
-The real test: **how many hours per year will your boat run?**
-
-| Annual hours | Recommendation |
-|--------------|----------------|
-| **Under 100 hours** (typical recreational) | FourStroke. SeaPro is overkill. |
-| **100-300 hours** (heavy recreational, cottage hard-use) | FourStroke is still fine for most owners. SeaPro may be worth discussing if downtime, load, or resale story matters. |
-| **300-600 hours** (light commercial, guide a few days a week) | SeaPro starts to make sense because commercial-duty design and proper commercial registration matter more at this usage level. |
-| **600-1,500 hours** (full-time guide, charter, rental) | SeaPro is the only sensible answer. The reinforced internals are designed for this. |
-| **1,500+ hours** (commercial workboat, high-volume rental) | SeaPro mandatory. FourStroke would be on borrowed time at this rate. |
-
-The flip-side test: **what does one day of downtime cost you?**
-
-A fishing guide losing a Saturday in walleye season = $400-$800 in cancelled trips plus reputation damage. A rental operator losing a peak-summer boat = $300-$600/day. If you're losing more than $200/day per breakdown, SeaPro's reliability premium pays for itself in one or two saved days per season.
-
-## SeaPro vs FourStroke. Real Differences
-
-| Feature | SeaPro | FourStroke |
-|---------|--------|------------|
-| **Maintenance planning** | Confirm by exact SeaPro model and commercial use case | Standard recreational maintenance schedule |
-| **Lower unit** | Heavy-duty | Standard |
-| **Cooling system** | Enhanced | Standard |
-| **Cylinder coatings** | Plasma-fused (extra durability) on most models | Standard |
-| **Recommended duty** | High-hour, sustained | Recreational |
-| **Warranty** | Commercial warranty terms differ from recreational coverage; confirm by model and use at time of sale | Standard recreational warranty terms |
-| **Price premium** | ~10-15% over FourStroke | - |
-| **Best for** | Guides, charters, rentals, work boats | Recreational |
-| **Hours expected (with care)** | 5,000+ | 3,000-4,000 |
-
-The price premium is real but not enormous. A 90 HP SeaPro vs FourStroke is roughly $1,500-$2,500 CAD more depending on options. Over a 5,000-hour service life on a guide boat, that premium amortizes to less than $0.50/hour.
-
-## SeaPro for Recreational Boaters?
-
-Sometimes, yes, surprisingly. We have customers who chose SeaPro recreationally because they:
-
-- **Fish 200+ hours per season** (serious bass tournament anglers, dedicated walleye trollers)
-- **Run their cottage boat hard**, dawn-to-dusk every weekend all summer
-- **Want the longer service intervals** for less hassle
-- **Plan to keep the motor 15+ years** and want the durability margin
-- **Like the resale story**, a "SeaPro-equipped" boat fetches a small premium on used market
-
-For a 200+ hours/season recreational user, the math gets close. The 200-hour service interval alone means you do annual service on a SeaPro vs twice-a-year on a standard FourStroke at that volume.
-
-## The Specific Models We Recommend
-
-Not every Mercury HP is offered in a SeaPro variant. The most common in Ontario:
-
-**SeaPro 60 ELPT**, small commercial work boats, light guide skiffs. ~$13,500 CAD.
-
-**SeaPro 115 ELPT (or EXLPT)**, the workhorse for medium-duty guide boats and rental fleets. We sell more of this than any other SeaPro size. ~$17,500-$19,500 CAD.
-
-**SeaPro 150 ELPT**, multi-purpose commercial. Some of our charter customers run twin 150 SeaPros on aluminum cabin boats. ~$22,500-$24,500 CAD.
-
-**SeaPro 200/250/300 V8**, the big single-engine commercial setup. Government boats, Coast Guard auxiliary, commercial fishing. ~$32,000-$45,000 CAD depending on HP and options.
-
-These are ballparks, current pricing in the [mercuryrepower.ca configurator](https://mercuryrepower.ca) is more accurate.
-
-## Commercial Warranty Considerations
-
-Mercury offers a **commercial warranty program** for SeaPro motors used in actual commercial applications. The terms differ from recreational coverage, and they need to be handled correctly at the point of sale. Do not assume recreational warranty language applies to a motor being used commercially.
-
-- Different coverage period (sometimes shorter on parts, longer on certain systems)
-- Specific maintenance requirements
-- Requires registration as commercial use at point of sale
-- Can be combined with **Mercury Product Protection (MPP)** extended warranty
-
-If you're a commercial operator, ask your dealer to walk you through the commercial warranty paperwork specifically, recreational warranty assumes you won't run the motor 1,500 hours/year, so claiming under recreational terms while running commercial volumes can create coverage problems.
-
-We've helped guides and rental operators register motors correctly at point of sale. Get this right at the start; it's a pain to retroactively change.
-
-## The Reliability Story
-
-We've sold SeaPro motors in Ontario since the line was introduced. The performance pattern we see:
-
-**Years 1-3 (under warranty):** Both SeaPro and FourStroke are essentially trouble-free if maintained.
-
-**Years 3-7:** Where they start to diverge. FourStrokes that have run 800+ hours/year start showing wear, water pump failures, cooling system buildup, occasional lower-unit issues. SeaPros at the same hour count look like they did at hour 500.
-
-**Years 7-15+:** A SeaPro with documented service history can hit 5,000+ hours and still run well. A FourStroke that's done 5,000 hours in 7 years is usually past its useful life and due for repower or major rebuild.
-
-For a guide running 800-1,000 hours/year, SeaPro stretches the useful life from ~5 years to ~10. That's a real economic difference.
-
-## What HBW Does for Commercial Customers
-
-We support guides and rental operators throughout the Kawarthas:
-
-- **Commercial-spec quoting**, we'll register the motor correctly for commercial warranty terms
-- **Priority service scheduling**, peak-season breakdowns get worked into the schedule fast (we know your boat is income)
-- **Bulk parts stocking**, for high-volume operators, we'll keep the impellers, plugs, and consumables on the shelf
-- **Multi-engine fleet maintenance plans**, predictable annual budget instead of breakdown surprises
-
-If you run a commercial boat operation in the Kawarthas, Trent-Severn, or anywhere within tow distance, we'd rather have a phone conversation about your specific use case than try to fit you into a recreational quoting flow. Call **905-342-2153** and ask for the commercial quote.
-    
+    content: `**Last reviewed:** 2026-05-07
 
 ---
 
-## Sources
+> **Quick answer:** Mercury SeaPro is the commercial-grade FourStroke built for high-hour use, guides, charter boats, rental fleets, work boats. It has beefier internals, longer service intervals, and commercial warranty eligibility. For private recreational use, the standard FourStroke is the right call at lower cost. SeaPro is special order; contact us at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-- Parks Canada - Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
-- Parks Canada - Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Ontario Ministry of Natural Resources - Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+---
 
-*Last reviewed: 2026-05-11.*
+## Who actually needs SeaPro
+
+If your boat earns money, fishing guide service, rental fleet, charter trips, government work, your motor's downtime is your downtime. A Saturday breakdown in walleye season isn't an inconvenience; it's a cancelled day of revenue and a damaged reputation.
+
+Mercury SeaPro is built to minimize that risk. For everyone else, SeaPro is overkill. The standard FourStroke does the job at lower cost.
+
+The honest filter: how many hours will you run it per season, and what does one breakdown day cost you?
+
+---
+
+## What SeaPro actually is
+
+SeaPro is a commercial-spec variant of Mercury's FourStroke outboards. Same basic powerhead architecture in many cases, but with components and service intervals tuned for sustained heavy use:
+
+- Reinforced lower unit, heavier-gauge gearcase castings, beefier bearings, larger oil capacity
+- Enhanced cooling system, more cooling passages, designed for continuous running without heat-soaking
+- Extended oil change interval, 200 hours vs. 100 hours on standard FourStroke
+- Stainless steel hardware throughout, saltwater-rated, even on freshwater models
+- Heavy-duty mounting and bracketry
+- Counter-rotation options for twin installations
+- Commercial warranty eligibility
+
+---
+
+## The hour-based decision guide
+
+| Annual hours | Recommendation |
+|--|--|
+| Under 100 hours (typical recreational) | Standard FourStroke. SeaPro is overkill. |
+| 100–300 hours (heavy recreational, hard cottage use) | FourStroke is still fine. SeaPro gives you fewer service trips on the 200-hour interval. |
+| 300–600 hours (light commercial, guiding a few days a week) | SeaPro starts to pay off. You do fewer oil changes and get more reliability headroom. |
+| 600–1,500 hours (full-time guide, charter, rental fleet) | SeaPro is the sensible answer. The reinforced internals are built for this. |
+| 1,500+ hours (commercial work boat, high-volume rental) | SeaPro mandatory. Standard FourStroke would be on borrowed time at this rate. |
+
+**The flip-side test:** What does one day of downtime cost you?
+
+A fishing guide losing a Saturday in walleye season loses a full day's guide fees and risks cancellation fees and reputation. A rental operator losing a peak-summer boat loses daily rental revenue.
+
+If downtime costs you more than a modest daily amount, SeaPro's reliability premium pays for itself in one or two saved days per season.
+
+---
+
+## SeaPro vs FourStroke: real differences
+
+| Feature | SeaPro | Standard FourStroke |
+|--|--|--|
+| Oil change interval | 200 hours | 100 hours |
+| Lower unit | Heavy-duty | Standard |
+| Cooling system | Enhanced | Standard |
+| Recommended duty | High-hour, sustained | Recreational |
+| Warranty eligibility | Commercial warranty option | Recreational warranty |
+| Price premium | Higher (roughly 10–15% over FourStroke at comparable HP, though varies) |, |
+| Best for | Guides, charters, rentals, work boats | Recreational boaters |
+
+---
+
+## Does SeaPro make sense for recreational boaters?
+
+Occasionally, yes. We have customers who chose SeaPro recreationally because they:
+
+- Fish 200+ hours per season (serious tournament anglers, dedicated walleye trollers)
+- Run their cottage boat hard, dawn-to-dusk every weekend all summer
+- Plan to keep the motor 15+ years and want the durability margin
+- Value the longer service intervals, one oil change per year instead of two at high usage
+
+For a 200+ hours/season recreational user, the math gets close. The 200-hour service interval alone can make the difference between one service per year and two.
+
+---
+
+## What HBW does for commercial customers
+
+We support guides and rental operators throughout the Kawarthas and Trent-Severn:
+
+- **Commercial-spec quoting**, we register the motor correctly for commercial warranty terms. Getting this right at purchase matters; it's a pain to change retroactively.
+- **Priority service scheduling**, peak-season breakdowns get worked into the schedule. We know your boat is income.
+- **Multi-engine fleet maintenance planning**, predictable annual maintenance budget instead of breakdown surprises.
+
+If you run a commercial boat operation in the Kawarthas or anywhere within tow distance of Rice Lake, a phone call about your specific use case will tell you more than this article. Call **905-342-2153** and ask for the commercial quote.
+
+---
+
+## Related posts
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
+
+---
+
+## Request a commercial quote
+
+SeaPro is special order at HBW. Contact us through [mercuryrepower.ca](https://mercuryrepower.ca) or call **905-342-2153**.
+
+---
+
+## FAQ
+
+**What is Mercury SeaPro?**
+SeaPro is Mercury's commercial-duty outboard line, built for guides, charter operators, rental fleets, and commercial applications running hundreds to thousands of hours per season. Same basic powerhead architecture as standard FourStroke, but with reinforced components, enhanced cooling, and longer service intervals.
+
+**How is SeaPro different from FourStroke?**
+SeaPro has a reinforced lower unit, enhanced cooling system, 200-hour oil change interval (vs. 100 hours for standard FourStroke), stainless steel hardware, and commercial warranty eligibility. Costs roughly 10–15% more than comparable FourStroke, depending on configuration.
+
+**Who actually needs SeaPro?**
+Commercial operators running 300+ hours per season: fishing guides, rental fleets, charter operators, government boats. For typical recreational use under 100 hours/year, standard FourStroke is the right call at lower cost.
+
+**Is SeaPro available in stock at HBW?**
+SeaPro is special order at HBW. Contact us for a commercial quote.
+
+**Does Mercury offer a commercial warranty on SeaPro?**
+Yes, Mercury offers commercial warranty eligibility for SeaPro motors used in actual commercial applications. The terms differ from recreational warranty. We handle the registration correctly at point of sale; get in touch before purchase so we set it up right from day one.
+
+**Can a recreational boater buy SeaPro?**
+Yes. It's overkill for most recreational use, but some high-hour recreational boaters (200+ hours/season) find the 200-hour service interval and durability margin worth the price premium.
+
+**What HP is SeaPro available in?**
+SeaPro is available in multiple HP classes covering a wide range from smaller single-engine configurations to large V8 options. Available HP options vary by model year. Contact us for current availability.
 `,
     faqs: [
       {
