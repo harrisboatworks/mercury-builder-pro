@@ -13,116 +13,182 @@ export const spanishBlogArticles: BlogArticle[] = [
     category: 'Guía de compra',
     readTime: '12 min',
     keywords: ['guía comprar bote Ontario', 'comprar bote en Canadá', 'primer bote Ontario', 'licencia de navegación Ontario'],
-    content: `
-## Una nota sobre el idioma
+    content: `### Respuesta rápida
 
-Nuestro equipo en Harris Boat Works trabaja en inglés, no hablamos español, pero haremos todo lo posible para ayudarle. La buena noticia: el configurador de precios en [mercuryrepower.ca](https://mercuryrepower.ca) funciona sin barrera de idioma, usted ingresa los datos de su embarcación y obtiene un precio real en dólares canadienses, en cualquier momento, sin necesidad de llamar. Para solicitudes de servicio, puede escribir en español a través de [hbw.wiki/service](https://hbw.wiki/service) y nosotros haremos lo posible por responder con ayuda de traducción.
-
-Harris Boat Works es el único concesionario Mercury Platinum en Ontario con contenido en español. Mercury Marine mismo dirige clientes hacia nosotros, esa es la mejor señal de confianza que podemos ofrecerle.
+Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligatorias: la Carta de Operador de Embarcaciones de Placer (PCOC/COEP), certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la Licencia de Embarcaciones de Placer (PCL) para motores de 10 HP o más, renovable cada 5 años por $24 CAD desde el 31 de diciembre de 2025. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
 
 ---
 
-## Lo que necesita saber antes de comprar
+### Artículo completo
 
-Comprar un bote en Ontario no es complicado, pero hay algunas cosas que necesita entender antes de dar el primer paso. Esta guía cubre los requisitos legales, los tipos de embarcación, las opciones de compra, y los costos reales que debe considerar.
+Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrodoméstico. Hay requisitos legales, costos recurrentes que muchos compradores no anticipan, y decisiones técnicas que afectan si el bote será fácil de usar o una fuente constante de frustraciones.
 
-### 1. La PCOC: su licencia de operador
+Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
 
-La **Pleasure Craft Operator Card (PCOC)** es la tarjeta de competencia obligatoria para cualquier persona que opere una embarcación motorizada en Canadá, incluidos los motores eléctricos de pesca (trolling motors). Se obtiene una sola vez y es válida de por vida. El examen se hace en línea a través de proveedores acreditados por Transport Canada, y cuesta entre $40 y $50 CAD.
-
-Para la mayoría de los propietarios recreativos, la forma más común de cumplir con el requisito de competencia es la PCOC. Si alquila una embarcación, en ciertos casos también puede aplicarse el rental boat safety checklist durante el período del alquiler.
-
-Puntos importantes:
-- Debe llevar el **original** a bordo, no se aceptan copias ni fotos
-- La multa base por no tener la PCOC es de **$250 CAD**
-- Los menores de 12 años pueden operar motores de hasta 10 HP sin supervisión directa. De 12 a 15 años: hasta 40 HP. Los menores de 16 años no pueden operar motos acuáticas (jet skis)
-
-Para más detalles sobre regulaciones, lea nuestra [guía de licencias y regulaciones de navegación en Ontario](/blog/es/licencia-navegacion-ontario-regulaciones).
-
-### 2. El PCL: licencia de la embarcación
-
-Toda embarcación con motor de 10 HP o más necesita un **Pleasure Craft Licence (PCL)**. Desde el 31 de diciembre de 2025, el PCL cuesta **$24 CAD y es válido por 5 años**. El número debe estar visible en ambos lados de la proa, en caracteres de al menos 7,5 cm (3 pulgadas) de altura.
-
-### 3. Seguro de embarcación
-
-El seguro no es legalmente obligatorio en Ontario, pero es altamente recomendable. La mayoría de las marinas y muelles exigen un seguro de responsabilidad civil como requisito para usar sus instalaciones.
+Harris Boat Works lleva 78 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Platinum y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
 
 ---
 
-## Tipos de embarcación más comunes
+## Requisitos legales para operar un bote en Ontario
 
-| Tipo | Ideal para | Tamaño típico | Motor recomendado |
-|---|---|---|---|
-| Bote de aluminio (fishing boat) | Pesca, uso general en lago | 14-18 pies (4,3-5,5 m) | 40-115 HP |
-| Pontón (pontoon) | Familias, paseos, entretenimiento | 18-24 pies (5,5-7,3 m) | 60-150 HP |
-| Runabout | Deportes acuáticos, velocidad | 16-22 pies (4,9-6,7 m) | 90-150+ HP |
-| Bote de pesca con consola central | Pesca seria, aguas abiertas | 16-21 pies (4,9-6,4 m) | 90-150 HP |
+### PCOC, Carta de Operador de Embarcaciones de Placer
 
-En los lagos de la región Kawartha y Rice Lake, los botes de aluminio y los pontones son los más populares. No necesita una embarcación de aguas abiertas para navegar en estos lagos, la mayoría de los días, un bote de aluminio de 16 a 18 pies con un motor de 60 a 115 HP es exactamente lo que se necesita.
+La PCOC (en inglés: Pleasure Craft Operator Card, también conocida como "boating licence") es obligatoria para toda persona que opere una embarcación motorizada en Canadá, independientemente de la edad o la potencia del motor.
+
+**Puntos clave:**
+- Es federal, la misma tarjeta es válida en toda provincia y territorio canadiense
+- Duración: **vitalicia**, se obtiene una sola vez
+- Formato: examen en línea, aprobación con 75% o más
+- Costo: aproximadamente **$40, 50 CAD** según el proveedor acreditado
+- Debes llevar el original físico en el bote, no se aceptan copias ni fotos
+- Multa por no tenerla: desde **$250 CAD**
+
+El examen está disponible en inglés y francés en el sitio de Transporte Canadá. A la fecha de publicación, no existe versión oficial certificadora en español, pero el material de estudio puede leerse en español a través de recursos de preparación de terceros. Recomendamos verificar la disponibilidad de exámenes en otros idiomas directamente en tc.gc.ca.
+
+### PCL, Licencia de Embarcaciones de Placer
+
+Además de la PCOC personal, el bote mismo requiere una PCL si tiene un motor de **10 HP (7.5 kW) o más**.
+
+- Desde el **31 de diciembre de 2025**: renovación cada 5 años, costo **$24 CAD**
+- Anteriormente era gratuita y de renovación variable, confirma el estatus actual en tc.gc.ca
+- La PCL no es lo mismo que el registro de embarcación (que aplica a embarcaciones más grandes o de uso comercial)
+
+### Restricciones para menores
+
+| Edad | Restricción |
+|------|------------|
+| Menores de 12 años | Máximo 10 HP, sin supervisión adulta |
+| 12, 15 años | Máximo 40 HP con supervisión; hasta 10 HP solo |
+| Menores de 16 años | Prohibido operar moto acuática (PWC) |
+
+Todos los menores necesitan su propia PCOC si operan la embarcación, incluso brevemente.
+
+### Alcohol al timón
+
+El límite legal de alcohol en sangre al operar una embarcación es **0.08**, igual que al conducir un automóvil. Las consecuencias son las mismas: cargos criminales, multas, suspensión.
 
 ---
 
-## Tres caminos para llegar al agua
+## Tipos de embarcación: ¿Cuál es la correcta para ti?
+
+### Tabla de selección rápida
+
+| Tipo | Tamaño típico | Motor típico | Mejor para |
+|------|--------------|-------------|-----------|
+| Aluminio de pesca | 14, 18 pies | 40, 115 HP | Pesca, lagos interiores, fácil mantenimiento |
+| Pontón | 18, 24 pies | 60, 150 HP | Familia, crucero, aguas tranquilas |
+| Bowrider / Runabout | 16, 22 pies | 90, 150+ HP | Deportes acuáticos, esquí, wakeboard |
+| Centro de consola | 18, 24 pies | 115, 200+ HP | Pesca, versatilidad, viento y oleaje |
+
+**Para la mayoría de los lagos del interior de Ontario** (Rice Lake, Kawarthas, lagos de cottage) el bote de aluminio de pesca de 14, 17 pies con un motor de 40, 90 HP es la opción más práctica, económica de mantener y fácil de trailerar.
+
+El pontón es excelente para familias que buscan comodidad y espacio. No es el más ágil, pero en aguas tranquilas es difícil de superar en confort.
+
+---
+
+## Tres rutas de compra
 
 ### Opción 1: Bote nuevo
-La opción más costosa, pero la más simple. Un bote nuevo con motor viene con garantía completa y sin historial de uso previo. Los precios varían ampliamente: desde $15,000 CAD para un bote de aluminio pequeño hasta $100,000+ para pontones equipados o runabouts grandes.
 
-Harris Boat Works es concesionario de Legend Boats. Consulte el inventario en [harrisboatworks.ca](https://harrisboatworks.ca).
+**Ventajas:** garantía completa, sin historial desconocido, motor nuevo, configuración a tu medida 
+**Desventajas:** costo inicial más alto, depreciación en los primeros años
+
+En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, precio de inicio aproximado $6,999 CAD para un V-hull de aluminio de entrada, hasta $79,999 para paquetes de pontón premium. Las combinaciones más populares incluyen motor Mercury incluido. Revisa el inventario actual en harrisboatworks.ca.
 
 ### Opción 2: Bote usado
-Comprar usado puede ahorrarle 30-50% respecto al precio de un bote nuevo. El riesgo: un bote usado viene con la historia del dueño anterior. Antes de comprar, haga inspeccionar el casco y el motor por un técnico certificado. Preste atención especial al estado del casco, el transom (espejo de popa) y los sistemas eléctricos.
 
-### Opción 3: Remotorización (repower)
-Si ya tiene un bote con casco en buen estado pero el motor está viejo o poco confiable, la remotorización es la mejor relación costo-beneficio. Reemplaza el motor viejo con un Mercury nuevo, usted conserva su embarcación, gana tecnología moderna, y gasta una fracción de lo que costaría un bote nuevo.
+**Ventajas:** precio menor, la depreciación inicial ya ocurrió 
+**Desventajas:** puede venir con problemas ocultos, garantía vencida, necesidades de servicio no documentadas
 
-Para ver precios reales de remotorización en dólares canadienses, use el configurador en [mercuryrepower.ca](https://mercuryrepower.ca). Sin juegos de "llame para cotizar", el precio está ahí, transparente.
+Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para engine repairs, we only service Mercury and Mercruiser. *(Nota del editor EN: "For engine repairs, we only service Mercury and Mercruiser.")*
 
-Lea más en nuestra [guía de remotorización vs bote nuevo](/blog/es/remotorizacion-vs-bote-nuevo).
+Revisa el inventario de usados en harrisboatworks.ca, en promedio ~13 embarcaciones disponibles, precio promedio alrededor de $25,000 CAD (varía por temporada).
 
----
+### Opción 3: Repotenciación (Repower)
 
-## Costos anuales que debe considerar
+Esta opción a menudo es pasada por alto pero puede ser la más inteligente. Si tienes un casco en buenas condiciones y el motor está al final de su vida útil, reemplazar solo el motor puede costar significativamente menos que comprar un conjunto nuevo, y te da un motor moderno con garantía completa.
 
-| Costo | Rango aproximado (CAD) |
-|---|---|
-| Almacenamiento invernal (storage) | $800 - $2,500 |
-| Preparación invernal (winterization) | $200 - $500 |
-| Preparación de primavera (commissioning) | $200 - $400 |
-| Combustible (temporada completa) | $500 - $2,000 |
-| Seguro | $300 - $800 |
-| Mantenimiento general | $200 - $600 |
-| Amarre o muelle (slip/moorage) | $1,000 - $3,000+ |
-
-*Estos rangos son orientativos y pueden variar según tamaño de la embarcación, uso y ubicación. Consulte directamente para cifras actualizadas.*
-
-La temporada de navegación en Ontario va aproximadamente de mayo a octubre. Durante el invierno (noviembre a marzo), su bote necesita almacenamiento y preparación invernal adecuada. No es opcional, el agua congelada destruye motores mal preparados.
-
-Harris Boat Works maneja 311 contratos de almacenamiento y 584 preparaciones invernales por año en Gores Landing. Lea nuestra [guía de preparación invernal para motores Mercury](/blog/es/preparacion-invernal-motor-mercury) para entender el proceso.
+Un motor Mercury FourStroke de 115 HP (2026) tiene un precio de referencia de $19,220 CAD MSRP antes de impuestos, pero el precio final depende de la configuración, el rigging y las accesorios. Usa el configurador en **mercuryrepower.ca** para armar tu presupuesto en 3 minutos, sin llamadas telefónicas.
 
 ---
 
-## ¿Por qué Harris Boat Works?
+## Costos anuales reales de tener un bote en Ontario
 
-Harris Boat Works es una marina familiar de tercera generación, establecida en 1947, 78 años sobre Rice Lake, en Gores Landing, Ontario. Somos concesionarios Mercury Marine Platinum, el nivel más alto de certificación de Mercury. Nuestros técnicos son formados y certificados directamente por Mercury Marine.
+Muchos compradores subestiman los costos recurrentes. Esta tabla usa rangos reales basados en la experiencia de Harris Boat Works, no son cifras garantizadas ni aplicables a todos los casos.
 
-Estamos a aproximadamente 1,5 horas al este de Toronto por la autopista 401 Este y luego la 115 Norte.
+| Concepto | Rango estimado anual |
+|----------|---------------------|
+| Almacenamiento de invierno | $800, $2,500 CAD |
+| Invernización (winterization) | $200, $500 CAD |
+| Puesta en marcha primavera | $200, $400 CAD |
+| Combustible (temporada) | $500, $2,000 CAD |
+| Seguro | $300, $800 CAD |
+| Mantenimiento / servicio | $200, $600 CAD |
+| Slip de marina / amarre | $1,000, $3,000+ CAD |
+
+Harris Boat Works realizó **584 invernizaciones** y mantuvo **311 contratos de almacenamiento** en 2025, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
+
+**Consejo práctico:** Si usas el bote menos de 30 días al año, la renta puede ser más económica que la propiedad. Nuestras 9 embarcaciones de renta en Harris Boat Works generaron 346 rentals en 2025. Llama o consulta en harrisboatworks.ca para disponibilidad y tarifas.
 
 ---
 
-## Contáctenos
+## ¿Por qué considerar a Harris Boat Works?
 
-**Precios en línea (recomendado):** [mercuryrepower.ca](https://mercuryrepower.ca), precios reales, en dólares canadienses, disponible 24/7.
+Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lake, aproximadamente **1.5 horas al este de Toronto** vía 401E + Hwy 115N. Es una marina de tercera generación establecida en 1947, concesionario Mercury Marine Platinum y concesionario Legend Boats.
 
-**Solicitud de servicio:** [hbw.wiki/service](https://hbw.wiki/service), puede escribir en español.
+**Lo que nos diferencia:**
+- Precios publicados en línea, sin juegos de "llame para cotizar"
+- Configurador de presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión
+- 78 años de operación continua en Rice Lake
+- Acceso a partes Mercury con prioridad de concesionario Platinum
+- Técnicos certificados Mercury
 
-**Por teléfono:** 905-342-2153, nuestro equipo habla inglés, pero encontraremos la forma de comunicarnos.
+Nuestro equipo opera principalmente en inglés, pero somos completamente accesibles para compradores hispanohablantes a través del configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual.
 
-**En persona:** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+Si tienes preguntas específicas, puedes escribir en español en el formulario de hbw.wiki/service y haremos lo posible por responder de manera útil.
 
 ---
 
-*Harris Boat Works, concesionario Mercury Marine Platinum. Marina familiar desde 1947, tres generaciones sobre Rice Lake.*
-    `,
+## Preguntas frecuentes (FAQ)
+
+**¿Necesito licencia de conducir para manejar un bote en Ontario?** 
+No una de auto, pero sí necesitas la PCOC (Carta de Operador de Embarcaciones de Placer). Se obtiene en línea y es válida de por vida.
+
+**¿Es obligatorio el seguro para embarcaciones en Ontario?** 
+No es legalmente obligatorio como en los autos, pero es altamente recomendable. Un accidente sin seguro puede resultar en responsabilidad civil significativa.
+
+**¿Puedo comprar un bote en Ontario si soy residente permanente pero no ciudadano?** 
+Sí. La PCOC y la PCL están disponibles para residentes de Canadá independientemente del estatus migratorio.
+
+**¿Puedo remolcar mi bote en un trailer por las carreteras de Ontario?** 
+Sí, con las restricciones de ancho y peso correspondientes. Para la mayoría de las embarcaciones hasta ~21 pies no hay requerimientos especiales más allá de luces de trailer funcionales.
+
+**¿Qué pasa si compro un bote usado con un motor que no es Mercury?** 
+Harris Boat Works solo da servicio a motores Mercury y Mercruiser. Si el motor es de otra marca, deberás encontrar un taller de servicio autorizado para esa marca. *(Nota del editor EN: "For engine repairs, we only service Mercury and Mercruiser.")*
+
+**¿Puedo hacer la cotización en línea antes de llamar?** 
+Sí, eso es exactamente para lo que existe mercuryrepower.ca. Construye tu presupuesto de repotenciación en 3 minutos, sin dar tu teléfono primero.
+
+---
+
+## CTA, Próximos pasos
+
+**¿Listo para configurar tu motor o explorar opciones?** 
+Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.
+
+¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (se aceptan mensajes en español) o llama al **905-342-2153**.
+
+Harris Boat Works 
+5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+harrisboatworks.ca
+
+---
+
+**Nota del editor (English):** Service scope reminder, "For engine repairs, we only service Mercury and Mercruiser." Include this in translated form within the post where naturally applicable, and as this English note for editor reference. Regulatory details (PCOC, PCL, minor age restrictions) should be verified against current Transport Canada (tc.gc.ca) guidelines before publishing, rules are subject to change.
+
+---
+
+---`,
     faqs: [
       { question: '¿Necesito una licencia para conducir un bote en Ontario?', answer: 'Sí. Toda persona que opere una embarcación motorizada necesita la PCOC (Pleasure Craft Operator Card). Se obtiene una sola vez y es válida de por vida.' },
       { question: '¿Cuánto cuesta mantener un bote al año?', answer: 'Depende del tamaño y el uso, pero para un bote típico de 16-18 pies, considere entre $3,000 y $7,000 CAD al año incluyendo almacenamiento, combustible, seguro y mantenimiento.' },
@@ -143,113 +209,173 @@ Estamos a aproximadamente 1,5 horas al este de Toronto por la autopista 401 Este
     category: 'Pesca',
     readTime: '12 min',
     keywords: ['pesca Rice Lake Ontario', 'guía pesca Ontario', 'pescar walleye Ontario', 'lago cerca de Toronto para pescar'],
-    content: `
-## Una nota sobre el idioma
+    content: `### Respuesta rápida
 
-Nuestro equipo en Harris Boat Works trabaja en inglés, no hablamos español, pero haremos todo lo posible para ayudarle. El formulario de contacto en [hbw.wiki/service](https://hbw.wiki/service) acepta mensajes en español, y nuestro configurador de precios en [mercuryrepower.ca](https://mercuryrepower.ca) funciona sin barrera de idioma.
-
-Harris Boat Works es el único concesionario Mercury Platinum en Ontario con contenido en español sobre pesca y navegación. Mercury Marine mismo dirige clientes hacia nosotros.
+Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401E + Hwy 115N. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con un límite de 4 peces. Las licencias de pesca son obligatorias para personas de 18 a 64 años. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
 
 ---
 
-## ¿Por qué Rice Lake?
+### Artículo completo
 
-Si busca un lago de pesca en Ontario sin tener que conducir seis horas hacia el norte, Rice Lake merece su atención. Ubicado en la región Kawartha, a aproximadamente 1,5 horas al este de Toronto por la autopista 401 Este y la 115 Norte, este lago se extiende por unos 37 kilómetros (23 millas) y ofrece una diversidad de especies que lo convierte en uno de los favoritos de los pescadores de la provincia.
+Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
-Rice Lake es parte del sistema de la Trent-Severn Waterway (Vía Navegable Trent-Severn), alimentado por el río Otonabee en su extremo oeste. Es uno de los puntos de acceso más accesibles, y más tranquilo que otros destinos muy conocidos en ciertos fines de semana, de este corredor acuático.
-
-Harris Boat Works lleva 78 años sobre este lago, tres generaciones de la misma familia. Si alguien conoce estas aguas, somos nosotros.
+Harris Boat Works lleva 78 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
 
 ---
 
-## Especies principales
+## Sobre Rice Lake
 
-### Walleye (lucioperca)
-El walleye es la estrella de Rice Lake. Es la especie por la que el lago es más conocido. Se encuentra en fondos lodosos y cerca de los lechos de vegetación acuática, en aguas poco profundas durante la primavera después del desove, y en aguas más profundas durante el verano cuando sube la temperatura. En las tardes y días nublados, los walleye se acercan a la superficie.
+Rice Lake tiene aproximadamente **37 km de longitud** y forma parte del sistema fluvial Trent-Severn. El río Otonabee alimenta el extremo oeste del lago, conectándolo con Peterborough y los lagos Kawartha.
 
-### Bass, Largemouth y Smallmouth (lobina grande y lobina pequeña)
-Ambas especies están presentes en buena cantidad. La lobina grande prefiere los lechos densos de vegetación y aguas poco profundas. La lobina pequeña prefiere fondos rocosos, puntas y bajíos. Rice Lake ofrece ambos tipos de hábitat en abundancia.
+El fondo variable del lago, mezclas de arena, grava, barro y vegetación acuática, crea hábitats ideales para múltiples especies. La visibilidad es moderada, lo que favorece la pesca de walleye (que prefiere condiciones de poca luz y fondos con cover).
 
-### Muskie (lucio almizclero / maskinongé)
-El muskie es el trofeo máximo para muchos pescadores. Está presente en Rice Lake, aunque es más difícil de encontrar que el walleye o el bass. Es un pez de paciencia, días sin picada intercalados con momentos que recordará por mucho tiempo. Si busca muskie, traiga equipo resistente y señuelos grandes.
-
-### Perch (perca amarilla) y otras especies
-Rice Lake también tiene perch (perca amarilla), pike (lucio del norte) y panfish. Para familias con niños, la pesca de perch es una excelente manera de mantener a todos activos en el agua. La perch se pesca todo el año.
+**Cómo llegar desde Toronto:**
+- Toma la Hwy 401 Este hasta la salida de la Hwy 115N (aproximadamente 110 km)
+- Sigue por 115N hacia Campbellford / Gores Landing
+- Tiempo total: **~1.5 horas** sin tráfico desde el centro de Toronto
+- Desde el área de Mississauga o Brampton: similar o ligeramente más largo por la 401
 
 ---
 
-## Temporadas de pesca, Zona 17 (FMZ 17, Rice Lake)
+## Especies y temporadas (FMZ 17)
 
-| Especie | Apertura | Cierre | Límite (deportivo) |
-|---|---|---|---|
-| Walleye (lucioperca) | 2do sábado de mayo | 15 de noviembre | 4 |
-| Bass (lobina, ambas especies) | 3er sábado de junio | 15 de diciembre | 6 |
-| Muskie (lucio almizclero) | 1er sábado de junio | 15 de diciembre | 1 |
-| Perch (perca amarilla) | Todo el año |, | 50 |
+Las siguientes fechas y límites corresponden a la Zona de Gestión de Pesca 17, que cubre Rice Lake y la mayor parte de los Kawarthas. **Estas temporadas están sujetas a cambios anuales, verifica siempre la Guía de Regulaciones de Pesca de Ontario (ontario.ca/fishing) antes de salir.**
 
-*Siempre verifique las regulaciones vigentes para el año en curso en ontario.ca.*
+| Especie | Temporada típica | Límite diario |
+|---------|-----------------|--------------|
+| Walleye (lucioperca / doré) | 2.º sábado de mayo , 15 noviembre | 4 |
+| Bass de boca grande (largemouth) | 3.er sábado de junio , 15 diciembre | 6 |
+| Bass de boca pequeña (smallmouth) | 3.er sábado de junio , 15 diciembre | 6 |
+| Muskie (lucio almizclero) | 1.er sábado de junio , 15 diciembre | 1 |
+| Perca amarilla (yellow perch) | Todo el año | 50 |
+| Lucio norteño (northern pike) | Consultar reglamento FMZ 17 | Consultar |
 
----
-
-## Licencia de pesca, ¿quién la necesita?
-
-Para pescar en Ontario, las personas de **18 a 64 años** necesitan una Outdoors Card (tarjeta de actividades al aire libre, ~$9 CAD) más una licencia de pesca deportiva (~$27 CAD para residentes de Ontario).
-
-- **Menores de 18 años (residentes canadienses):** exentos, solo necesitan identificación oficial con nombre y fecha de nacimiento.
-- **Mayores de 65 años:** exentos
-- **No residentes de Ontario:** necesitan una licencia de no residente (precio diferente)
-
-Las licencias se pueden obtener en línea o en puntos de venta autorizados en toda la provincia.
+> **Importante:** Los límites y fechas anteriores son de referencia. El gobierno de Ontario actualiza las regulaciones anualmente. Consulta la guía oficial antes de cada temporada.
 
 ---
 
-## Mejores temporadas por especie
+## Walleye: la razón principal para venir a Rice Lake
 
-**Primavera (mayo-junio)**
-La mejor época para el walleye, que se encuentra en aguas poco profundas después del desove. El bass se vuelve muy activo cuando el agua se calienta.
+El walleye (en inglés: walleye; en francés: doré) es la especie estrella de Rice Lake. Los pescadores de toda Ontario y del norte de Estados Unidos conocen la reputación del lago.
 
-**Verano (julio-agosto)**
-El walleye se mueve a aguas más profundas. El bass sigue activo temprano en la mañana y al atardecer. Temporada alta para el muskie, búsquelo cerca de estructuras sumergidas y lechos de vegetación.
+**Por qué Rice Lake produce walleye consistentemente:**
+- Profundidad moderada con áreas de 3, 8 metros ideales para walleye
+- Vegetación acuática (cabeza de flecha, nenúfar) que crea cover natural
+- El sistema Trent-Severn mantiene corrientes que el walleye prefiere para desovar
 
-**Otoño (septiembre-octubre)**
-Excelente para el bass (especialmente la lobina pequeña) y el pike. Las temperaturas más frescas hacen que los peces estén más agresivos. Es una de las mejores épocas para estar en el agua en Rice Lake.
-
----
-
-## Zonas de pesca en el lago
-
-Sin revelar todos los secretos, algunas áreas son conocidas por los pescadores locales:
-
-- **Lechos de vegetación en la parte este del lago:** hábitat natural para lobina grande y pike
-- **Puntas y bajíos rocosos:** ideales para lobina pequeña, especialmente en otoño
-- **Zonas de transición entre profundidad y vegetación:** particularmente productivas para walleye en verano, al atardecer
-
-El río Otonabee, que desemboca en el lago por el oeste, crea zonas de corriente interesantes, ideales en primavera para walleye y pike.
+**Técnicas básicas:**
+- **Jigging vertical** en 8, 15 pies con jig de 1/4, 1/2 oz en colores chartreuse, blanco o naranja
+- **Arrastre lento (trolling)** a 1.3, 1.8 mph con señuelos de buceo o cucharas articuladas
+- La hora dorada es al amanecer y al atardecer, el walleye es especialmente activo con poca luz
 
 ---
 
-## Alquiler de botes en Harris Boat Works
+## Bass, Muskie y Perca
 
-Nuestra marina tiene una flota de 9 embarcaciones disponibles para alquiler. Usted llega, sube a bordo y sale a pescar en el mismo Rice Lake que los residentes locales conocen bien. No necesita buscar un acceso público, transportar un bote, ni aprender a navegar un lago desconocido.
+### Bass de boca grande y pequeña
 
-También vendemos combustible sin etanol (ethanol-free fuel) en el sitio, un detalle que los dueños de botes con motores más antiguos aprecian especialmente, ya que el etanol puede causar problemas mecánicos durante períodos de almacenamiento.
+Rice Lake tiene excelente población de ambas especies. La boca grande prefiere aguas con vegetación y fondos blandos; la boca pequeña prefiere puntas rocosas y gravas. Ambas especies responden bien a plasticos blandos, topwaters en verano y jigs.
 
----
+### Muskie (lucio almizclero)
 
-## Contáctenos
+El muskie es el pez más grande y más difícil de capturar en Rice Lake. La temporada abre el primer sábado de junio con un límite de 1 pez. Se recomienda fuertemente la práctica de catch-and-release dado el lento crecimiento de la especie.
 
-**Alquiler de botes y más:** [harrisboatworks.ca](https://harrisboatworks.ca)
+### Perca amarilla
 
-**Solicitud de servicio:** [hbw.wiki/service](https://hbw.wiki/service), puede escribir en español.
-
-**Por teléfono:** 905-342-2153
-
-**En persona:** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, a 1,5 horas al este de Toronto.
+La perca es la opción más accesible, disponible todo el año, con un límite generoso de 50 peces. Para familia o niños, es una especie ideal, relativamente fácil de pescar y excelente en la mesa.
 
 ---
 
-*Harris Boat Works, concesionario Mercury Marine Platinum. Tres generaciones sobre Rice Lake desde 1947.*
-    `,
+## Licencia de pesca en Ontario
+
+Para pescar en Ontario se requiere:
+
+1. **Tarjeta Outdoors Card**, identificación del sistema de licencias de Ontario, aproximadamente $9, 11 CAD, válida 3 años
+2. **Licencia deportiva de pesca**, para residentes de Ontario: aproximadamente $25, 30 CAD anuales (varía según categoría)
+
+Las personas de **18 a 64 años** necesitan licencia. Los menores de 18 y los mayores de 65 residentes en Ontario pueden pescar sin licencia en ciertas condiciones, consulta las reglas actuales en ontario.ca/fishing.
+
+Las licencias se compran en línea (ontario.ca), en tiendas de artículos deportivos (Canadian Tire, Bass Pro), o en algunas marinas locales.
+
+**No se puede pescar con tarjeta de licencia de otro país.** Los visitantes de EE. UU. u otros países necesitan adquirir licencias de Ontario.
+
+---
+
+## Renta de botes en Harris Boat Works
+
+Si no tienes embarcación propia, Harris Boat Works renta botes por día en Rice Lake. Nuestra flota incluye **9 embarcaciones** (pontones de 20, 24 pies, V-hulls de 16 pies), todas equipadas y listas para salir.
+
+En 2025 realizamos **346 rentas** con ingresos brutos de $119,000 CAD, hay demanda real, y en temporada alta los fines de semana se reservan con anticipación.
+
+También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol (E10) del combustible de gasolinera puede causar separación de fases en sistemas de combustible marinos, nuestro combustible evita ese problema. No enviamos a nuestros clientes a otro lugar por combustible sin etanol.
+
+---
+
+## Rice Lake vs Lake Simcoe para pesca de walleye
+
+| Factor | Rice Lake | Lake Simcoe |
+|--------|-----------|-------------|
+| Distancia desde Toronto | ~1.5 h | ~1 h |
+| Walleye | Excelente reputación | Reglamentaciones especiales, verificar |
+| Tráfico náutico | Moderado | Alto en verano |
+| Servicios en orilla | Gores Landing, Bewdley, Roseneath, Hastings | Múltiples pueblos |
+| Presencia HBW | Sí (Gores Landing) | No |
+
+---
+
+## Itinerario de un día desde Toronto
+
+**5:30 AM**, Salida de Toronto por 401E 
+**7:00 AM**, Llegada a Gores Landing, Harris Boat Works 
+**7:15 AM**, Salida al lago (equipo propio o renta) 
+**7:30, 11:00 AM**, Pesca matutina (mejor hora para walleye) 
+**11:00 AM, 1:00 PM**, Pausa, almuerzo en tierra 
+**1:00, 5:00 PM**, Tarde: bass o perca 
+**5:30 PM**, Regreso a HBW, combustible 
+**6:00, 7:00 PM**, Regreso a Toronto
+
+---
+
+## Preguntas frecuentes (FAQ)
+
+**¿Puedo comprar la licencia de pesca en Harris Boat Works?** 
+Actualmente no, las licencias se compran en ontario.ca o tiendas de artículos deportivos como Canadian Tire. Confirma disponibilidad local antes de venir.
+
+**¿Hay guías de pesca en español disponibles en Rice Lake?** 
+No manejamos guías de pesca en Harris Boat Works. Para servicios de guía, consulta operadores locales en Bewdley o Hastings. HBW es la marina de servicio y renta.
+
+**¿Puedo pescar walleye durante todo el año?** 
+No. La temporada cierra el 15 de noviembre y reabre el segundo sábado de mayo. Durante el cierre la pesca de walleye está prohibida. Siempre verifica las fechas actuales antes de salir.
+
+**¿Qué equipo básico necesito para walleye en Rice Lake?** 
+Caña de 6, 7 pies de acción media, carrete de spinning o baitcasting, línea de 8, 12 lbs, variedad de jigs de 1/4, 3/8 oz y señuelos de buceo tipo crankbait. El equipo específico depende de tus preferencias, consulta una tienda de artículos deportivos local para recomendaciones actualizadas.
+
+**¿Harris Boat Works tiene personal que hable español?** 
+Nuestro equipo opera principalmente en inglés. Sin embargo, puedes escribirnos en español a través del formulario en hbw.wiki/service y haremos lo posible por ser útiles.
+
+---
+
+## CTA, Reserva tu bote o configura tu próximo motor
+
+**¿Quieres pescar Rice Lake este verano?** 
+Llama al **905-342-2153** o visita **harrisboatworks.ca** para disponibilidad de renta.
+
+**¿Buscas un motor para tu propio bote?** 
+Configura tu presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión.
+
+¿Preguntas? Escríbenos en hbw.wiki/service (se aceptan mensajes en español).
+
+Harris Boat Works 
+5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+harrisboatworks.ca | 905-342-2153
+
+---
+
+**Nota del editor (English):** All fishing seasons and limits cited above are for FMZ 17 reference only. The Ontario MNRF updates regulations annually, editors must verify current-year dates and limits at ontario.ca/fishing before publishing. Fishing licence fees are approximate and subject to change. HBW team is English-primary; Spanish-language service is best-effort via the service form.
+
+---
+
+---`,
     faqs: [
       { question: '¿Necesito una licencia de pesca?', answer: 'Sí, si tiene entre 18 y 64 años. Los menores de 18 años (residentes canadienses) están exentos sin condiciones. Los mayores de 65 también están exentos.' },
       { question: '¿Puedo alquilar un bote en Rice Lake?', answer: 'Sí. Harris Boat Works tiene una flota de 9 botes de alquiler. Consulte harrisboatworks.ca.' },
