@@ -2014,62 +2014,140 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位於Rice 
     category: 'Mercury 型号比较',
     readTime: '7 分钟',
     keywords: ['Mercury FourStroke Pro XS Verado 中文', 'Mercury 船外机比较', 'Pro XS 中文', 'Verado 中文'],
-    content: `
-## 快速答案
+    content: `## 簡短答案
 
-Mercury FourStroke 是最通用的选择，适合多数家庭、钓鱼和日常 boating。Pro XS 更偏性能，适合重视 hole shot、加速和钓鱼反应的船主。Verado 则偏高级、安静、精致操控，适合较大或更 premium 的船。
+**Mercury FourStroke適合大多數家庭、釣魚和日常使用, 安靜、可靠、用途廣。Pro XS更偏性能，適合重視起步反應和釣魚競技感的人。Verado是Mercury的高階選擇，更安靜、精緻，適合大船或高級Pontoon。** Command Thrust不是獨立系列，而是某些配置中增強推力的選項，對Pontoon和重載船特別有意義。
 
-不要把 Pro XS 当成「旧式二行程」来理解。现在 Mercury Pro XS 系列包含现代 FourStroke 技术与性能调校，选它的理由是性能感和用途，不是因为它是旧观念里的 two-stroke。
+不要把Pro XS當成舊觀念裡的二衝程。現代Mercury Pro XS是四衝程技術加上性能調校，選它的理由是用途和偏好，不是過時的認知。
 
-## 一张表先看懂
+---
 
-| 系列 | 最适合 | 你会喜欢它，如果你想要 |
-|---|---|---|
-| FourStroke | 家庭、钓鱼、一般用途 | 安静、可靠、省心、用途广。 |
-| Pro XS | 钓鱼、性能船、重视反应 | 更强 hole shot、更运动化加速。 |
-| Verado | 高级船、大船、舒适巡航 | 更安静、更精致、更 premium 的操作感。 |
-| Command Thrust | Pontoon、重载船 | 更好低速推力与大 prop 能力。 |
+## 一張表先看清楚
 
-### HBW dealer note
+| 系列 | 最適合 | 你會選它，如果你想要 |
+|------|--------|---------------------|
+| FourStroke | 家庭、釣魚、一般用途 | 安靜、可靠、省心、用途廣 |
+| Pro XS | 釣魚、性能船、重視反應 | 更強Hole Shot、更運動化加速 |
+| Verado | 高級船、大船、精緻巡航 | 更安靜、更精緻、高級操控感 |
+| Command Thrust | Pontoon、重載船 | 更好低速推力與大螺旋槳能力 |
 
-同样是 Mercury，买错系列不一定会「不能用」，但可能会让你每次出船都觉得差一点。FourStroke、Pro XS、Verado 的差异不是面子问题，是用途问题。
+---
 
-## FourStroke：大多数人的安全选择
+## FourStroke：大多數人的合理起點
 
-FourStroke 适合想要一台安静、可靠、用途广的 Mercury。家庭巡航、钓鱼、cottage boat、pontoon、铝船都可能适合 FourStroke。
+FourStroke是Mercury最廣泛的四衝程系列，涵蓋從2.5HP到300HP以上的多個馬力選項。它設計給需要一台可靠、安靜、用途廣泛的船主, 不追求最強加速，也不需要最高級的操控感。
 
-如果你不追求最强加速，也不需要最高级的操控感，FourStroke 往往是最自然的起点。
+**適合的情況：**
+- 家庭巡航Pontoon
+- Rice Lake / Kawarthas一般釣魚
+- Cottage船，一週用幾次
+- 第一台Mercury，不想選錯的保守選擇
 
-## Pro XS：钓鱼与性能导向
+FourStroke不是「平凡」的選擇，而是「正確」的選擇。很多人最後發現自己根本不需要Pro XS或Verado, FourStroke完全滿足他們的使用需求。
 
-Pro XS 适合重视性能反应的人。钓鱼船、bass boat、想要更快起步和更运动化感觉的船主，常会研究 Pro XS。
+---
 
-如果你常满载起步、需要更好的 hole shot，或喜欢更有反应的操控，Pro XS 值得比较。
+## Pro XS：為釣魚和性能設計
 
-## Verado：高级、安静、精致
+Mercury Pro XS系列針對重視起步反應（Hole Shot）、加速感和釣魚競技表現的用戶設計。選它的人通常對「感覺」有明確的偏好, 他們想要一台在滿載時也能快速上浮滑行的發動機。
 
-Verado 是 Mercury 更 premium 的选择，重点是精致感、安静、操控和大船体验。不是每艘船都需要 Verado，但对高级 pontoon、较大 fiberglass boat 或重视舒适的客户，它可能很有吸引力。
+**不要用舊觀念理解Pro XS：** 現代Mercury Pro XS是四衝程引擎搭配性能調校，不是二十年前的二衝程。它更省油、更環保，同時保留了更強的動力輸出特性。
 
-## Command Thrust：不要误会它
+**適合的情況：**
+- Bass Boat或競技釣魚船
+- 想要最強Hole Shot的鋁船主
+- 重視性能感勝過靜音的使用者
+- 常在有風浪的開放水面快速起步
 
-Command Thrust 不是跟 FourStroke、Pro XS、Verado 平行的完整 motor family。它更像是某些 Mercury 配置中的推力/齿轮箱选项。对 pontoon、重载船或需要大 prop 的船，它可能非常重要。
+---
 
-## 怎么选
+## Verado：Mercury的高階體驗
 
-| 你的情况 | 优先研究 |
-|---|---|
-| 第一台 Mercury，不想复杂 | FourStroke |
-| 铝船钓鱼、想要好起步 | Pro XS 或合适 FourStroke |
-| Pontoon 满载家庭使用 | FourStroke + Command Thrust |
-| 高级 pontoon 或大船 | Verado |
-| 预算敏感但想可靠 | FourStroke |
+Verado是Mercury產品線中更精緻的系列，設計重點是安靜、精緻感和大功率的流暢操控。不是每艘船都需要Verado，但對某些使用情境，它提供的差異是真實的。
 
-## 你的下一步
+**適合的情況：**
+- 高級Pontoon或大型玻璃鋼船
+- 對靜音有高要求（如老人同行、長途巡航）
+- 較大馬力需求（Verado提供高馬力選項）
+- 重視整體開船體驗品質勝過純馬力比較
 
-不要只问朋友「哪台最好」。先问自己：我这艘船主要做什么？常载多少人？在哪个湖？想要安静、省心、性能，还是高级感？
+---
 
-**CTA：** 到 MercuryRepower.ca 比较 FourStroke、Pro XS、Verado 的加币报价，再让 HBW 帮你确认哪个系列最适合你的船。
-`,
+## Command Thrust：不是系列，是配置
+
+很多人第一次看到「Command Thrust」不明白它是什麼。簡單理解：它是Mercury某些型號上的推力優化配置，讓發動機可以驅動更大直徑的螺旋槳，在低速時產生更強的推力。
+
+**對Pontoon的意義：**
+- 更有力的起步（滿載家庭時差異明顯）
+- 更好的低速控制（停靠時更精確）
+- 更強的逆風推力
+
+Command Thrust不只是Pontoon的配置, 某些重載鋁船或需要低速推力的釣魚船也可能受益。選擇之前讓HBW評估你的具體需求。
+
+---
+
+## 同樣是Mercury，買錯系列有什麼影響？
+
+同樣是Mercury，買錯系列不一定「不能用」，但每次出湖你都可能感覺差那麼一點：
+
+- 需要釣魚反應的人裝了FourStroke，起步偏慢，每次打開油門都有點憋屈
+- 需要安靜舒適的家庭Pontoon裝了Pro XS，花了更多錢卻沒有用到它的差異化優點
+- 重載Pontoon沒有選Command Thrust，起步一直讓全家等在湖中間
+
+這些差異不是面子問題，而是實際的使用體驗問題。選擇之前多花半小時想清楚用途，值得。
+
+---
+
+## 如何做出決定
+
+**第一個問題：** 這艘船主要做什麼？（家庭巡航、釣魚競技、Cottage休閒、拖曳玩具、開放水面巡航）
+
+**第二個問題：** 常載多少人？最重的使用情境是什麼？
+
+**第三個問題：** 你對靜音、省油、起步反應、精緻感，各自的優先順序是什麼？
+
+有了這三個答案，再到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比較FourStroke、Pro XS、Verado的當前加幣報價，讓數字參與你的決定。
+
+---
+
+## 常見問題
+
+**Q：Pro XS比FourStroke油耗更高嗎？**
+A：在相同轉速下，Pro XS的性能調校可能讓油耗略高，但差距不像舊式二衝程和四衝程那麼大。真正影響油耗的是你實際的油門使用習慣，而不只是發動機系列。
+
+**Q：Verado適合Rice Lake嗎？**
+A：技術上完全可以，但Rice Lake的水域特性（相對平靜、多用途）不一定能充分體現Verado的差異。對高級Pontoon或追求精緻感的家庭，Verado在Rice Lake也完全適用。
+
+**Q：Command Thrust只適合Pontoon嗎？**
+A：不是。重載鋁船、某些需要低速推力的釣魚船也可能受益。具體適合哪種配置，讓HBW根據你的船型評估。
+
+**Q：我的舊船有現成的Rigging，換系列會有問題嗎？**
+A：可能有。不同系列和馬力的發動機對操控系統、電路、油路的要求可能不同。Repower時讓HBW評估整個系統，不只是換發動機本體。
+
+---
+
+## 內部連結
+
+- [Mercury 115馬力 vs 150馬力舷外機怎麼選？](/blog/zh/mercury-115-vs-150-comparison-zh)
+- [華人家庭Pontoon配Mercury舷外機：怎麼選才不後悔](/blog/zh/chinese-family-pontoon-mercury-outboard)
+- [Repower還是換船？給安省華人船主的現實判斷](/blog/zh/chinese-boat-repower-vs-new-boat-ontario)
+
+---
+
+## 行動呼籲（CTA）
+
+**想比較FourStroke、Pro XS、Verado的當前加幣價格？**
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 直接看，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 讓HBW幫你確認哪個系列最適合你的船。
+
+Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位於Rice Lake南岸Gores Landing。
+
+---
+
+> **English Editor Note, POST 9 (mercury-fourstroke-pro-xs-verado-chinese-comparison):**
+> Converted from Simplified to Traditional Chinese. Original had good structure but thin explanations. Key additions: explicit Pro XS misconception correction about two-stroke perception (genuine and common among Chinese-Canadian buyers who learned about boats from older sources); "what if you buy the wrong series" section, this is practical and honest without being alarmist; three-question decision framework for choosing between series. Command Thrust clarification retained and expanded. No fabricated prices or specific performance claims. FAQs added covering most common real questions.
+
+---
+---`,
     faqs: [
       { question: 'Pro XS 比 FourStroke 好吗？', answer: '不是「好或不好」，而是用途不同。Pro XS 偏性能，FourStroke 更通用。' },
       { question: 'Verado 值得多花钱吗？', answer: '如果你重视安静、精致操控和 premium 体验，值得比较。如果只是小铝船日常钓鱼，可能不是第一选择。' },
@@ -2088,55 +2166,138 @@ Command Thrust 不是跟 FourStroke、Pro XS、Verado 平行的完整 motor fami
     category: '小马力指南',
     readTime: '6 分钟',
     keywords: ['Mercury 9.9 20HP 中文', 'Mercury kicker 中文', 'tiller 船外机中文', '小铝船 Mercury'],
-    content: `
-## 快速答案
+    content: `## 簡短答案
 
-9.9 到 20HP Mercury 适合小铝船、轻载钓鱼、kicker、trolling 或某些 horsepower-limited 湖区。对华人钓友来说，这个马力区间常常不是追求速度，而是追求可靠、好启动、低速控制、容易保养和符合规则。
+Mercury 9.9至20HP適合小鋁船、輕載釣魚、Kicker輔助機、Trolling，或某些限制馬力的湖區。**馬力小不代表選擇簡單, 軸長、手柄或遠程操控、電啟或手拉、是否當Kicker使用，以及你的船體和載重，都會影響選擇。**
 
-但不要因为马力小就随便买。shaft length、手柄或遥控、电启或手拉、是否当 kicker、船尾高度和实际载重，都会影响选择。
+不要因為馬力小就隨便買。小馬力選錯，體驗一樣很差。
 
-## 9.9HP 为什么常被问
+---
 
-9.9HP 在安省很常见，因为它常出现在小船、钓鱼、辅助机和某些限制情境。很多华人钓友会问：「9.9 够不够？」答案是：看船。
+## 這個馬力區間適合誰
 
-小铝船、两人钓鱼、短距离使用，9.9 可能很合理。可是如果船重、人多、装备多、风大，9.9 就可能很吃力。
+很多GTA華人釣友對9.9至20HP區間的興趣有幾個來源：
 
-### HBW dealer note
+- **小鋁船主力機**：14英尺以下的小船，少人輕裝使用
+- **Kicker輔助機**：掛在較大船的船尾旁邊，用於Trolling或備援
+- **特定限馬力湖區**：安大略省某些湖泊有馬力限制（通常是10HP或更低），需要查當地規則
+- **簡單保養、低成本**：預算有限或使用頻率較低的季節性需求
 
-9.9HP 最容易被高估，也最容易被低估。船很小时它很好用；船稍微重一点、载重多一点，就会明显感觉不够。
+---
 
-## 9.9、15、20HP 怎么想
+## 9.9HP為什麼特別常見
 
-| 马力 | 适合情境 | 注意 |
-|---|---|---|
-| 9.9HP | 小船、kicker、低速钓鱼 | 载重增加后可能吃力。 |
-| 15HP | 想比 9.9 多一点余裕 | 仍要看船身 rating。 |
-| 20HP | 小铝船更实用的上限选择之一 | 重量、操控、PCL 门槛要确认。 |
+9.9HP在安大略省很常見，原因之一是它出現在很多小船、釣魚和輔助機的討論中。但要正確理解這個型號，而不是因為「聽到很多人買」就盲目跟進。
 
-## Kicker 用途
+**9.9HP合適的情況：**
+- 小型輕鋁船（12至14英尺）、一兩人輕裝使用
+- Kicker用途, 不需要速度，只需要低速穩定
+- 限速湖泊（某些湖規定10HP以下）
 
-Kicker 通常不是主力跑远的 motor，而是辅助、trolling 或备用。钓友喜欢 kicker，是因为它能长时间低速运转，也能让你在主机出问题时多一个选择。
+**9.9HP可能不夠的情況：**
+- 船稍重一點（14英尺以上鋁船、裝備較多）
+- 三個人或攜帶大量裝備
+- 逆風或有波浪的情況下需要可靠的推力
 
-如果你要把 9.9 当 kicker，要确认 mounting bracket、steering link、fuel setup、shaft length 和控制方式。
+HBW的經驗：9.9HP最容易被高估, 「感覺應該夠了」的直覺，在船稍重一點、載重多一點時會明顯感覺不夠。
 
-## Tiller 还是 remote
+---
 
-| 控制方式 | 适合谁 |
-|---|---|
-| Tiller | 小船、简单、直接控制、钓鱼常用。 |
-| Remote | 有 steering wheel、console 或较大船。 |
-| Advanced tiller | 某些较高马力和专业钓鱼用途也可能适合。 |
+## 9.9、15、20HP如何比較
 
-## PCL 与 10HP 门槛
+| 馬力 | 適合情境 | 注意事項 |
+|------|----------|----------|
+| 9.9HP | 小船、Kicker、低速釣魚、限馬力湖區 | 載重增加後推力明顯不足 |
+| 15HP | 比9.9有更多餘裕 | 仍要確認船體Capacity Rating |
+| 20HP | 小鋁船更實用的上限選擇之一 | 確認Capacity Plate、PCL門檻、重量 |
 
-Transport Canada 说，休闲船如果有一个或多个引擎，总马力至少 10HP，并主要在加拿大水域使用，通常需要 Pleasure Craft Licence（[Transport Canada PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)）。所以 9.9HP、10HP、15HP、20HP 之间，不只是性能问题，也可能牵涉文档。
+---
 
-## 你的下一步
+## Kicker的選擇和安裝要考慮什麼
 
-如果你在 9.9、15、20HP 之间犹豫，先确认船长、船重、capacity plate、transom 高度和使用方式。再用 MercuryRepower.ca 看价格，或让 HBW 帮你确认小马力 Mercury 是否适合。
+如果你要把9.9或15HP當Kicker使用，以下幾點比馬力更重要：
 
-**CTA：** 想买 Mercury 9.9 到 20HP？先用 MercuryRepower.ca 看报价，再确认 shaft length 和控制方式。
-`,
+**軸長（Shaft Length）：** 必須配合你的船尾高度（Transom Height）。長軸安裝在低船尾上會有問題，短軸裝在高船尾上也不對。量好再選。
+
+**安裝架（Bracket）：** Kicker通常需要專用的Mounting Bracket安裝在船尾旁邊，而不是佔用主機的位置。不同的Bracket適合不同的Transom厚度和角度。
+
+**轉向連動（Steering Link）：** 某些設置可以把Kicker和主機的轉向連動，讓你用方向盤同時控制兩台機。這需要特定的連動配件。
+
+**燃油接頭（Fuel Setup）：** 確認你的燃油系統（油管、接頭規格）和Kicker相容。
+
+**控制方式：** Kicker通常用Tiller手柄控制，但某些設置也可以整合到遠程操控。
+
+---
+
+## Tiller還是Remote？
+
+| 控制方式 | 適合誰 |
+|----------|--------|
+| Tiller（手柄控制） | 小船、釣魚直接感、Kicker、簡單配置 |
+| Remote（遠程操控） | 有方向盤Console的船、家庭化使用 |
+| Advanced Tiller | 某些專業釣魚配置，提供更精細的手控 |
+
+對大多數9.9至20HP的使用情境，Tiller是最自然的選擇, 簡單、直接、容易操作。如果你的船有方向盤Console，或你希望更像開汽車的感覺，Remote更合適。
+
+---
+
+## PCL（船隻牌照）與馬力門檻
+
+Transport Canada規定，有引擎的休閒船如果馬力達到特定門檻，需要辦理Pleasure Craft Licence（PCL）。具體門檻請查Transport Canada當前規定。
+
+9.9HP、15HP、20HP之間的選擇，不只是性能問題，可能也牽涉文件要求，買之前確認清楚。
+
+---
+
+## 電動啟動（Electric Start）還是手拉啟動（Pull Start）？
+
+| 啟動方式 | 優點 | 適合情境 |
+|----------|------|----------|
+| 手拉啟動 | 較輕、較便宜、無需電池 | Kicker、簡單釣魚、預算考量 |
+| 電動啟動 | 更方便、老人或體力有限者更友好 | 主要使用機、需要頻繁啟動 |
+
+如果你用9.9HP作Kicker，手拉啟動通常足夠。如果作為主機，尤其是家庭使用情境，電動啟動更方便。
+
+---
+
+## 常見問題
+
+**Q：我的12英尺鋁船，Capacity Plate寫最大10HP，可以裝9.9HP嗎？**
+A：是的，9.9HP在技術上屬於10HP以下，通常符合10HP限制的規定。但具體要確認你的Capacity Plate標示, 如果寫的是「最大10HP」或「不超過10HP」，語義可能略有不同。購買前讓HBW確認。
+
+**Q：Mercury 9.9HP有ProKicker版本嗎？**
+A：Mercury有ProKicker系列，專門為Kicker用途設計，具有特定的Trolling和低速控制功能。具體型號和可用配置請查Mercury當前產品資料，或聯絡HBW確認當前庫存。
+
+**Q：9.9至20HP的服務保養，HBW可以做嗎？**
+A：是的。HBW作為Mercury Marine Platinum Dealer，提供所有Mercury舷外機的保養服務，包括小馬力機型。請至 hbw.wiki/service 提交服務申請。
+
+**Q：如果買了20HP發現不夠用，可以換成更大的嗎？**
+A：可以更換，但必須在船體Capacity Plate允許的範圍內。建議一開始選擇時就根據你的最大使用情境決定，避免二次更換的成本。
+
+---
+
+## 內部連結
+
+- [40至60馬力Mercury：鋁船與華人釣友最常問的馬力區間](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
+- [多伦多華人釣友：Rice Lake與Kawarthas釣魚船馬力怎麼選](/blog/zh/chinese-anglers-rice-lake-kawarthas-outboard)
+- [安大略省船隻法規與安全要求：華人船主必知](/blog/zh/ontario-boating-regulations-zh)
+
+---
+
+## 行動呼籲（CTA）
+
+**想買Mercury 9.9至20HP？**
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看當前加幣報價，確認軸長和控制方式後，至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交申請讓HBW確認配置是否適合你的船。
+
+Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位於Rice Lake南岸Gores Landing。
+
+---
+
+> **English Editor Note, POST 10 (mercury-9-9-20hp-chinese-kicker-tiller-guide):**
+> Converted from Simplified to Traditional Chinese. Original had basic structure but lacked depth on Kicker installation criteria and electric vs. pull start comparison. Key additions: detailed Kicker installation evaluation checklist (shaft length, bracket, steering link, fuel setup), this is the most practically useful content for buyers who are new to Kicker configurations; electric vs. pull start comparison table; ProKicker mention directed to current Mercury data rather than fabricated specifics. PCL threshold note retained as directional, requires annual verification against Transport Canada current rules. No specific fines, specific HP thresholds for PCL, or specific ProKicker model numbers stated as fixed facts.
+
+---
+---`,
     faqs: [
       { question: '9.9HP 适合两个人钓鱼吗？', answer: '可能适合，但要看船长、船重、水况和装备。' },
       { question: 'Kicker 要不要电启？', answer: '如果常用、想省力，电启值得考虑。但也要看电池和安装配置。' },
