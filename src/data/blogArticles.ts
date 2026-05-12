@@ -20974,135 +20974,175 @@ Two paths.
       { question: "What happens if my shrinkwrap rips over the winter?", answer: "We patch it. We check the lot after big storms. If a wrap fails badly, we'll let you know." },
       { question: "Is the lot really monitored?", answer: "Fenced, with cameras. We're on-site daily through the off-season for service work." },
     ],
-    content: `# Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters
+    content: `## Quick Answer
 
-*Last reviewed: 2026-05-10*
+Harris Boat Works offers outdoor winter storage with shrinkwrap on-site at our Gores Landing marina. Boats are blocked, fully wrapped, and stored on our property from October pickup to spring commissioning. We don't operate indoor storage, this is outdoor only. Pricing is by boat length and what services you bundle (winterize + storage + commissioning is the most common package). Submit a storage request at [hbw.wiki/service](https://hbw.wiki/service).
 
-> **Quick answer:** Harris Boat Works offers outdoor winter boat storage and shrinkwrap in Gores Landing for Rice Lake and Kawartha boaters, up to 30 feet. We don't run indoor storage. If you want a straight answer on what your boat needs before winter and what we actually handle, this is the page.
+---
 
-## Who this is for
+## What HBW Storage Actually Looks Like
 
-You're the right fit for HBW outdoor storage if:
+We've stored boats for Rice Lake and Kawartha-area customers for decades. The setup is straightforward:
 
-- Your boat is 30 feet or under
-- You boat on Rice Lake, the Kawarthas, or the Trent-Severn
-- You want one stop for storage, shrinkwrap, and winterization instead of three different shops
-- You're okay with outdoor storage on a fenced, monitored lot (not heated indoor)
+**Outdoor storage on our property** in Gores Landing. Boats are blocked off the trailer (or remain on trailers, depending on what you prefer), spaced for access, and exposed to Ontario winter weather.
 
-If you need indoor heated storage, we'll point you somewhere else honestly. If your boat is over 30 feet, we can't take it. We'd rather tell you that up front than waste your fall.
+**Shrinkwrap** is the standard winter cover. It's the polyethylene plastic heat-shrunk over a wood or metal frame that goes over the boat. Tight, sheds snow, vents to prevent moisture buildup, and removes cleanly in spring.
 
-## What HBW outdoor storage actually includes
+**Winterization** is the engine and systems prep that goes with storage. It's typically bundled with storage at HBW so the motor isn't left in operating condition through freeze-thaw cycles.
 
-Three things come standard with winter storage. Most marinas charge for them. We don't.
+That's it. No climate control, no indoor heating, no fancy facilities. What you get is a properly winterized boat, properly covered, sitting on a marina property that's been doing this since 1947.
 
-**Free spring check ($99 value).** Your boat gets looked over before you tow it home. Battery, fuel system, lower unit oil, hoses, basic systems. The kind of inspection that catches the $30 winter problem before it becomes the $300 spring problem. Most marinas charge $99 for this as a standalone service. It's included.
+---
 
-**Free summer trailer storage ($150 value).** Once your boat is out of storage and back in the water, your trailer doesn't need to live on your driveway all summer. Drop it here, pick it up in the fall when the boat comes back. That's $150 you'd otherwise pay somewhere or lose to driveway space.
+## Outdoor vs Indoor Storage, The Honest Comparison
 
-**Free shrinkwrap recycling ($35 value).** When we pull the wrap off in spring, it gets recycled instead of landfilled. Small environmental thing. Saves you the disposal fee a lot of marinas charge to handle it.
+This is the question most customers ask, and the honest answer depends on your boat and budget:
 
-That's $284 in included services on top of the storage itself. The math actually matters when you're comparing quotes.
+**Indoor heated storage** is the gold standard for fiberglass cabin cruisers, high-end center consoles, or boats with sensitive interiors and electronics. It protects against freeze-thaw cycles, UV degradation, and moisture damage. It costs significantly more, often 2–3× outdoor storage with shrinkwrap.
 
-## What HBW also handles (priced separately)
+**Indoor unheated storage** sits between the two: protects against weather and UV but not freeze-thaw cycles.
 
-Beyond core storage and shrinkwrap, the shop offers:
+**Outdoor with shrinkwrap** is the practical, cost-effective choice for most aluminum fishing boats, pontoons, and smaller fiberglass boats. Done right, the boat is fully protected for winter at a fraction of the indoor cost.
 
-- **Winterization tiered by engine type.** Different work, different price. 2-stroke, 4-stroke, Optimax/E-TEC, sterndrive (4 & 6 cyl, V6 & V8, Bravo), and inboard. We don't quote a flat number because they're not the same job.
-- **Winterize with oil and filter change.** Bundled service if you want the full pre-storage prep done by us.
-- **Bio-wash hull cleaning ($10/ft).** Chemical hull clean before wrap. Worth it if the boat picked up zebra mussels, scum line, or stained gel coat over the season.
-- **Pontoon enclosures removal and install ($5/ft).** If you've got a full enclosure that needs to come off before wrap and back on in spring.
-- **Shrinkwrap only.** For boats already winterized by someone else (or DIY) who just need the wrap. $20/ft done indoors, $25/ft done outdoors.
+For most Rice Lake and Kawartha-area customers with aluminum or smaller fiberglass boats, outdoor with shrinkwrap is the right answer. If you have a 30+ ft cabin cruiser or a high-end performance boat with sensitive electronics, indoor is usually worth the cost, but you'd need to find a different facility, not us.
 
-Current rates are on the [storage page](https://www.harrisboatworks.ca/winter-storage). They change every fall, so the live page is the source of truth. This guide is for the questions, not the quote.
+---
 
-## Shrinkwrap is not winterization. They're two different jobs.
+## What's Included in HBW Winter Storage
 
-This is the single most expensive misunderstanding in marine storage.
+Most customers bundle these together:
 
-**Shrinkwrap** is a tight plastic cover. It keeps snow, ice, and squirrels out of the boat. It does not protect the engine.
+**Pre-storage winterization**
+- Fuel system stabilization
+- Fog the engine cylinders (FourStroke and 2-stroke)
+- Drain water from cooling system
+- Change gearcase lube (annual or 100-hour interval)
+- Lift the motor up and tilt to drain
+- Battery removal (or trickle-charge setup)
+- Antifreeze in any water systems (livewells, head, freshwater system)
 
-**Winterization** is what protects the engine: fogging the cylinders, draining or stabilizing fuel, replacing lower-unit oil, removing water that'll freeze and crack a block. Without it, a hard freeze can split a powerhead or crack a sterndrive housing. Shrinkwrap won't save you from that. It just keeps the snow off while it happens.
+**Storage**
+- Block boat off trailer (or on trailer, your choice)
+- Position on the property for spring access
+- Standard care during winter (visual checks for damage, snow load, etc.)
 
-If you do one and skip the other, you're wasting money. Either one alone is half a job.
+**Shrinkwrap**
+- Wood or metal frame appropriate for your boat
+- Heat-shrunk polyethylene wrap over the frame
+- Vents installed to prevent moisture buildup
+- Tight fit, sheds snow properly
 
-We do both. We'll also do shrinkwrap-only if your boat is already winterized (some customers handle the engine themselves and just want the wrap). Up to you. Just know which one you're paying for.
+**Spring commissioning** (separate service, often booked at storage time)
+- Remove shrinkwrap
+- Reinstall battery, charge
+- Top up oil, gear lube
+- Test starter, charging system
+- Test all motor functions on muffs
+- Launch and water-test (additional charge)
 
-## Before you drop the boat off: checklist
+Booking all four as a package simplifies your fall and spring transitions. We see your boat once at storage time, once at commissioning, you don't have to think about it in between.
 
-Pull this list, run through it the night before:
+---
 
-- **Fuel.** Top off and add stabilizer if we're not winterizing. If we are, we'll handle it.
-- **Battery.** Can stay in if it's healthy. Disconnect or remove if you want extra peace of mind.
-- **Drain plug.** Pull it. Tape it to the dash where you'll find it.
-- **Valuables.** Fish finders, electronics, rods, ditty boxes, registration, paperwork. Take it home.
-- **Canvas and seats.** Clean and dry. Wet vinyl in a wrapped boat grows mould all winter.
-- **Bilge.** Pump it dry before the boat goes on the trailer.
-- **Trailer.** Straps tight, lights working, jack functional. We have to move it on the lot.
-- **Tow vehicle.** Full tank if you're driving from a distance. The closest fuel after Gores Landing isn't always close.
+## Storage Pricing, In General Terms
 
-If something's broken or making a noise you didn't trust last fall, tell us when you drop it off. Spring is the wrong time to discover problems.
+Outdoor storage with shrinkwrap is priced by boat length. Winterization is priced by engine type and complexity. Spring commissioning is priced by what's included (basic vs. full diagnostic).
 
-## Outdoor vs indoor: honest trade-offs
+Bundling the three (winterize + storage + commission) is the common path and gives a small discount over booking them separately.
 
-We don't offer indoor storage, but we'll tell you the truth about it instead of pretending outdoor is always best.
+For current rates, contact us. Pricing depends on your specific boat, motor, and any extras (water system winterization, electronics protection, etc.).
 
-**Indoor wins on:** dust-free finish, no UV, no thermal cycling, easier on canvas and gel coat over many years.
+---
 
-**Outdoor with proper shrinkwrap wins on:** price (typically half or less of indoor), availability (indoor lots fill up early and have waitlists), and convenience for trailerable boats.
+## When to Book Winter Storage
 
-**For most Rice Lake and Kawartha boats** (aluminum fishing boats, pontoons under 25 feet, runabouts), outdoor with shrinkwrap is the practical answer. For a high-end fibreglass cruiser with custom paint, indoor might be worth the premium. Choose based on your boat, not on what makes the marina more money.
+**September to early October:** Best window. We're not yet at peak demand and we can give you specific scheduling.
 
-## Drop-off and spring pickup: what to expect
+**Mid-to-late October:** Workable but tightening up. Most storage customers are booking by this point.
 
-**Fall drop-off.** Book a slot through the [service request form](https://hbw.wiki/service). Show up, sign in, leave the keys, go home. We handle the rest. Don't time it for the last weekend in October. That week is a zoo and we'd rather have your boat earlier when there's room to do the work properly.
+**November:** Risky for new customers. Snow has often started, fewer dry-day windows for outdoor work.
 
-**Over the winter.** The boat sits on a fenced, monitored lot. We check it after major weather events. If a wrap rips or something looks off, we'll text you.
+**December:** Too late. Schedule for next year.
 
-**Spring pickup.** We run the spring check before you tow it home. You'll know if anything came up over the winter. Usual stuff: a corroded battery terminal, a mouse that found a way in, a soft hose. Better to find that here than at the ramp.
+The customers who call in early November every year asking if we have space, we appreciate them, but it's a tight call. Plan ahead.
 
-## What HBW checks before storage
+---
 
-Storage is the first sign of how a boat got treated all season. Before we wrap it, we look at:
+## What You Need to Have Ready Before Drop-Off
 
-- Hull condition (cracks, soft spots near the transom)
-- Fuel system (water in the bowl, ethanol damage)
-- Lower unit oil (milky means water intrusion, find that now, not in May)
-- Battery health
-- Bilge and stringers
+When you bring the boat to HBW for storage:
 
-If we see something that's going to be expensive in the spring, we tell you in the fall. You decide whether to fix it now or budget for spring. That's the difference between storage at a marina and storage at a parking lot.
+- **Hours on the motor** (since last service or new)
+- **Service history**, if known
+- **Any specific issues you noticed last season** (rough idle, slow shifts, charging problems)
+- **Personal items removed** from the boat (electronics, fish finders, anything theft-prone)
+- **Tank with stabilized fuel** at appropriate level (we'll work with whatever you have, but ¾ to full tank with stabilizer mixed in is ideal)
+- **Trailer in working order** if storing on it (lights, bearings, tires fine for outdoor sitting)
 
-## Questions we hear at the counter
+Submit a service/storage request at [hbw.wiki/service](https://hbw.wiki/service) with your boat details before you bring it in. That way we know what we're working with.
+
+---
+
+## What Spring Commissioning Looks Like
+
+If we're commissioning your boat in spring (which most outdoor-storage customers add):
+
+**Late March to mid-April:** We start booking commissioning slots. Earlier requests get earlier dates.
+
+**Late April to early May:** Peak commissioning weeks. Boats getting ready for May long weekend launches.
+
+**Mid to late May:** Catch-up phase. Boats that booked late or had issues found at the commissioning check.
+
+If you want to launch your boat by the May long weekend, book commissioning by late April. Booking in late May for a launch that weekend isn't realistic, the shop is at capacity.
+
+Full spring commissioning checklist is at [/blog/spring-outboard-commissioning-checklist](/blog/spring-outboard-commissioning-checklist).
+
+---
+
+## FAQs
 
 **Do you offer indoor storage?**
-No. Outdoor only on a fenced, monitored lot with shrinkwrap. If you need indoor, we'll point you to other shops without making a big deal of it.
+No. We're outdoor with shrinkwrap only. For indoor or climate-controlled storage, you'd need a different facility.
 
-**What's the size limit?**
-30 feet. We're not taking anything bigger right now.
+**Can I store on my own trailer?**
+Yes. Most customers do. The trailer needs to be in roadworthy condition (tires, lights, bearings) since we'll need to move it at minimum twice (storage spot and spring launch).
 
-**Do I still need winterization if my boat is shrinkwrapped?**
-Yes. Shrinkwrap and winterization are two different jobs. See the section above. The boat under the wrap still has water in it that needs to be dealt with.
+**Do you cover boats stored outdoors all winter?**
+Yes. That's what the shrinkwrap is for. Snow sheds off, the cover stays tight, the boat stays protected from precipitation and UV.
 
-**When should I book?**
-August or September is ideal. October works. The last week before freeze-up is when everyone calls at once and we start saying no.
+**How much does shrinkwrap cost?**
+By boat length. Contact us for current pricing or visit [hbw.wiki/service](https://hbw.wiki/service) to get a quote.
 
-**Can I leave my battery in?**
-If it's healthy, yes. If it's three years old and you've been jump-starting it, take it home and trickle-charge it. A dead battery in March is a $200 problem you can avoid for free.
+**Can I take items out of the boat after it's wrapped?**
+Yes, but it means cutting and re-wrapping a section. We charge for the re-wrap. Better to clear everything out before we wrap it.
 
-**What happens if my shrinkwrap rips over the winter?**
-We patch it. We check the lot after big storms. If a wrap fails badly, we'll let you know.
+**What if my boat has a sensitive engine or fuel system?**
+Anything 2010 or newer with SmartCraft, EFI, or computerized engine management, we can handle that with proper winterization. The shrinkwrap and outdoor storage are appropriate for almost all modern recreational boats.
 
-**Is the lot really monitored?**
-Fenced, with cameras. We're on-site daily through the off-season for service work.
+**Do you do storage for inboard cruisers or large pontoons?**
+Yes, within size limits. Anything over 28 ft, call us first to confirm we can fit it in.
 
-## Where to go next
+**What if my boat doesn't need shrinkwrap because it's stored indoors at my own location?**
+Then you just need winterization at HBW. Submit a service request and let us know your storage situation. We'll handle the motor work without the wrap.
 
-If you're ready to book: [Request winter storage service](https://hbw.wiki/service).
+---
 
-If you want a phone call first: (905) 342-2153, or text (647) 952-2153.
+## Internal Links
 
-If you're newer to boat ownership and unsure what winterization actually involves, the [Mercury winterization guide](https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization) covers it engine-side. Most customers read it and then book us anyway. Worth knowing what's happening either way.
-`,
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
+
+---
+
+## Ready to Schedule Winter Storage?
+
+Submit a storage request at **[hbw.wiki/service](https://hbw.wiki/service)**. Include your boat details and what you're bundling (winterize, storage, spring commissioning).
+
+Questions first? Call **905-342-2153**.
+
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Platinum Dealer | Since 1947`,
   },
   {
     slug: "rice-lake-boat-launch-guide",
@@ -21125,129 +21165,175 @@ If you're newer to boat ownership and unsure what winterization actually involve
       { question: "Can I launch late at night?", answer: "Yes. Headlights and a flashlight help. The ramp is lit but the parking area gets dark." },
       { question: "Can I stay overnight on the boat?", answer: "The lake is fine. The ramp area is for launching. If you want to overnight on the water, dockage is by waitlist." },
     ],
-    content: `*Last reviewed: 2026-05-10*
+    content: `## Quick Answer
 
-> **Quick answer:** The Harris Boat Works launch ramp at 5369 Harris Boat Works Rd in Gores Landing is two concrete lanes, open 24 hours, with parking, washrooms, and full marina services on-site. $20 daily, $200 season pass. 30 minutes from Peterborough, 20 from Cobourg or Port Hope. This page is the practical guide. What to do before you back down the ramp, what to expect when you get there, and who it's for.
+Rice Lake has four main public boat launch options: Bewdley (west end), Roseneath (south shore), Gores Landing (HBW's location, south shore), and Hastings (east end, Trent-Severn entrance). Each has different facilities, parking, and seasonal access. HBW's Gores Landing ramp is 2-lane concrete with parking and washrooms; day fees apply. Pleasure Craft Licence (PCL) and Pleasure Craft Operator Card (PCOC) are required for powered boats.
 
-## Who this guide is for
+---
 
-- **Anglers** heading out for Rice Lake walleye, bass, or panfish
-- **Cottagers and day visitors** from the GTA, Cobourg, Port Hope, or Peterborough
-- **Trailer boaters** from elsewhere on the Trent-Severn looking for an easy access point
-- **First-time launchers** who want the steps before the audience
+## What Each Public Launch Offers
 
-If you've never backed a trailer down a ramp on a Saturday in May, this is the page that helps you not be the story everyone tells later.
+**Bewdley (west end of Rice Lake)**
+- 1-lane concrete ramp
+- Public parking lot
+- Closest to Highway 28
+- Often busy on weekends
+- No fuel on-site
 
-## Before you back down the ramp: checklist
+**Roseneath (south shore, middle of lake)**
+- 1-lane ramp, asphalt and concrete
+- Limited parking
+- Quieter than Bewdley most days
+- No services
 
-Run this in the parking area, not at the water's edge. The line behind you will appreciate the silence.
+**Gores Landing (HBW, south shore)**
+- 2-lane concrete ramp
+- Parking lot (fills up on weekends)
+- Washrooms, snacks, fuel at HBW
+- Day fee applies (see signage at ramp)
+- Direct access to mid-lake and the Trent-Severn east
 
-- **Drain plug in.** Most ramp horror stories start here.
-- **Straps off.** Bow strap stays on until the boat is in the water.
-- **Battery on, key works.** Quick test in the lot beats trouble at the dock.
-- **Fuel level.** Top up at the on-site pumps before you launch if you're low.
-- **PFDs aboard.** One per person, accessible, the right size.
-- **Safety kit.** Paddle or oar, bailer, sound device, throw rope, waterproof flashlight.
-- **Boating licence (PCOC)** on whoever's driving. Not just in the glove box at home.
-- **Fishing licence** on every angler over 18 (or 65+ resident). Ontario rules apply on Rice Lake. HBW does not sell them.
+**Hastings (east end)**
+- 1-lane ramp
+- Public parking
+- At the entrance to the Trent-Severn east
+- Good if you're locking through to the Trent-Severn system
 
-Do this once on the way to the ramp and you'll do it automatically every time after.
+---
 
-## What's on-site at the HBW ramp
+## How to Choose the Right Launch
 
-You don't have to drive 20 minutes back into town if you forgot something:
+Pick by where you're going:
 
-- Marine gas station with **ethanol-free 89-octane**. Outboards run cleaner on it.
-- Three washrooms with showers, plus a 24/7 port-a-potti for after-hours
-- Mercury and MerCruiser service on-site if something goes wrong (in season)
-- Snacks, ice, and accessories
-- Boat rentals if you forgot the boat. Yes, that happens.
-- Courtesy docks for loading and unloading
+**West-end fishing or Bewdley-area cottage access:** Bewdley.
 
-The two-lane concrete ramp means you can launch and retrieve simultaneously, which matters on a busy weekend. Single-lane public ramps have you waiting for the trailer ahead of you to clear before you can back in. We don't.
+**Middle of the lake (most common for general boating, walleye trolling, or visiting Gores Landing/Roseneath area):** Gores Landing or Roseneath. Gores Landing has better facilities; Roseneath has less of a crowd.
 
-## Parking: daily and overnight
+**East-end fishing or starting a Trent-Severn trip:** Hastings.
 
-Parking is included with your launch fee:
+**Need fuel, washrooms, or first-time launch help:** Gores Landing (HBW). Our staff are there during business hours.
 
-- **Daily ($20).** Launch, park your trailer and tow vehicle, come back, leave. Pay in the office during business hours, or use the after-hours honour-box. Cash, debit, credit, e-transfer, Bitcoin all work.
-- **Season pass ($200).** Unlimited launches all season. If you launch 10+ times a year you're already saving. Anyone running Rice Lake regularly should have one. Pays for itself by the second long weekend.
-- **Overnight ($20/night).** Leave the trailer or rig overnight if you're staying on the lake.
-- **Long-term parking** available for trailers and tow vehicles for boaters keeping their boat in the water all season elsewhere.
+For most Toronto-area or GTA visitors, Gores Landing is the most accessible choice: 2-lane concrete, parking, services, and the most consistent ramp surface.
 
-## A note on the ramp itself
+---
 
-The concrete ramp is the lane you drive on. Beside it is a metal lip. **Do not step on the metal portion in shoes.** It gets slippery, especially when wet, and people land on their backsides every season. Stay on the concrete.
+## Step-by-Step: Launching at Gores Landing (Or Anywhere)
 
-## Who else launches at HBW
+If you're new to launching, this is the basic flow. Most people do it efficiently after a few times.
 
-Most days the ramp sees a mix of:
+**1. Pull into the staging area** (the parking spot before the actual ramp, not on the ramp itself). Do your prep here:
+- Remove trailer straps
+- Install drain plug
+- Lower the motor
+- Make sure ignition is set up and battery is connected
 
-- Aluminum fishing boats heading out for walleye, bass, or perch
-- Pontoons running cottage families to a beach for the afternoon
-- Wakeboard and ski boats from cottages on the south shore
-- Personal watercraft (jet skis)
-- Kayaks and canoes (the courtesy dock is friendlier than wading from a public access)
-- Small sailboats
+**2. Back the trailer down the ramp** at a slow, controlled speed. Keep the boat straight on the trailer. Stop when the boat is mostly floating, not when it's still mostly on the trailer.
 
-The ramp is open to all of the above. We don't gatekeep.
+**3. Have someone walk the boat** off the trailer to a temporary tie-up on the dock or pull it to a holding area. If you're solo, tie a line to the boat before you back in, you'll need to retrieve it from the dock.
 
-## When the ramp gets busy
+**4. Pull the trailer up the ramp** and park in the designated lot. Drive forward, not in reverse, to clear the ramp.
 
-A few realistic notes from running this ramp for decades:
+**5. Boat in water, trailer parked.** You're launched. The whole process takes 5–10 minutes once you've done it a few times.
 
-- **First warm Saturday in May** is the busiest day of the year. Plan for it. Or come Sunday.
-- **Walleye opener weekend** (mid-May, dates change) the parking lot fills early. If you want to be on the water at sunrise, arrive at sunrise and not at 7 a.m.
-- **Long weekend mornings** are busy 8-11 a.m. and slow after lunch. Inverse on the way home: quietest before 4 p.m., busiest 5-7 p.m.
-- **Off-season (Oct-Apr)** the ramp is open and quiet. Cold water rules apply. File a float plan, dress for water temperature, not air temperature.
+**Do not block the ramp doing prep work.** It's a constant frustration at public launches. Use the staging area, then move quickly through the actual ramp.
 
-## Why people choose HBW over public ramps
+---
 
-This isn't a knock on public ramps. They exist for a reason. But here's the trade-off:
+## What You Need to Have on the Boat (Required by Law)
 
-| What you'd compare | Public ramp | HBW ramp |
-|---|---|---|
-| Wait time on busy weekends | 30-60 min common | Two lanes, minimal wait |
-| Parking | First-come, often full | Reserved space included |
-| Lanes | Usually one | Two concrete |
-| Hours | Restricted at some | 24/7, year-round |
-| Marina services on-site | None | Gas, service, rentals, accessories |
-| Washrooms | Variable | Yes, with showers |
+For any powered boat in Ontario waters:
 
-If you're trying to get on the water before sunrise on a derby day, that wait-time difference is the whole game.
+**Pleasure Craft Operator Card (PCOC)** for the operator. One-time test, accessible in the boat or on phone.
 
-## What HBW checks if something goes wrong
+**Valid Pleasure Craft Licence (PCL)** for any boat with a motor 7.5 kW (10 HP) or larger. 2026 PCL changes: lifetime licences converted to 5-year renewals at $24. Check your PCL is current.
 
-If you launch and something's not right (motor won't start, alarm coming on, prop sounds wrong) bring it to the dock and find a staff member. We're a working Mercury service shop. We'll look at it. Sometimes it's a five-minute fix. Sometimes we say "this needs the bench, leave it with us." Better than driving home with the boat on the trailer and a problem you didn't diagnose.
+**Required safety equipment:**
+- One PFD per person (one must be a wearable Type III)
+- Sound-signaling device (whistle, horn)
+- Bailer or manual water pump
+- Anchor or grapnel with line
+- Paddle or oar
+- Navigation lights for sunset operation
 
-## Questions we hear at the counter
+Transport Canada publishes the full list, and there are specific extras for larger boats. Make sure you have everything before you launch.
 
-**Is the ramp really open 24 hours?**
-Yes. 24/7, 365 days a year. The honour box handles after-hours payment.
+---
 
-**How deep is the water at the end of the ramp?**
-Deep enough to launch most boats safely even in low-water years. We don't get the prop-strike calls common at shallow public ramps.
+## Trent-Severn Free Lockage 2026
 
-**Can I pay by e-transfer?**
-Yes. Cash, debit, credit, e-transfer, or Bitcoin during business hours. After hours, use the honour-box or e-transfer.
+If you're launching to lock through the Trent-Severn, big news: **lockage is free from June 19 to September 7, 2026** as part of the Canada Strong Pass. Pick up the free lockage sticker at the lockstation, online sales have been eliminated for 2026.
 
-**Is the ramp in good shape?**
-Two lanes of concrete, lit, with security cameras. Maintained. It has to be, we use it ourselves daily.
+This makes the multi-day Trent-Severn trip much more accessible. See [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026) for the full breakdown.
 
-**Can I get a discount on a season pass?**
-$200 flat. If you launch 10+ times per year it's already cheaper than daily. We don't run launch promos. The pricing is what it is.
+---
 
-**Can I launch late at night?**
-Yes. Headlights and a flashlight help. The ramp is lit but the parking area gets dark.
+## Common Mistakes at Public Launches
 
-**What about overnight on the boat?**
-The lake is fine. The ramp area is for launching. If you want to overnight on the water, dockage is by waitlist.
+**Forgetting the drain plug.** The boat fills with water as you launch. Every Saturday at every busy ramp.
 
-## Where to go next
+**Trying to launch from the staging area.** The staging area is for prep, not launching. Use the actual ramp.
 
-If you're heading up from the GTA and have questions: (905) 342-2153.
+**Doing prep on the ramp.** Pull off, prep, then back in. Don't tie up the ramp for 10 minutes while you load coolers.
 
-If you don't have a boat but want to fish Rice Lake or take the family out, [boat rentals](https://www.harrisboatworks.ca/rentals) are next door.
+**Wrong shaft length on a small boat.** A short-shaft outboard on a deep-V hull cavitates immediately at launch. Make sure your motor matches your boat before you launch.
+
+**Backing in too fast.** Slow, controlled, watch your mirrors. Don't dunk the trailer below the wheel wells.
+
+**Pulling the trailer up too fast with water still draining.** Let the boat clear the trailer fully before you drive up. Water in the trailer bearings is a common cause of bearing failure.
+
+---
+
+## Fishing Regulations and Licences
+
+You need a valid Ontario fishing licence to fish on Rice Lake or anywhere else in Ontario:
+
+- Outdoor Card (one-time purchase)
+- Fishing licence (annual or short-term)
+
+HBW does not sell fishing licences. Get yours online at ontario.ca/fishing or at a local licence vendor before you leave.
+
+Rice Lake is in Ontario MNR's Fisheries Management Zone 17 (FMZ 17). FMZ 17 rules apply, including size limits, bag limits, and season dates. Walleye, bass, and muskie all have specific rules. Check the current Ontario Fishing Regulations Summary before you keep fish.
+
+---
+
+## FAQs
+
+**Are the public launches on Rice Lake free?**
+Some have day-use fees (Gores Landing). Bewdley, Roseneath, and Hastings vary, check at the launch.
+
+**Can I launch a 24 ft boat at any of these ramps?**
+Most ramps can handle up to about 20 ft easily. For 22+ ft, Gores Landing and Hastings are typically the most accommodating. Roseneath and Bewdley are tighter for larger boats.
+
+**Where can I park my trailer for the day?**
+Designated lots at each ramp. Gores Landing has the largest and most reliable parking, but it fills up fast on summer weekends.
+
+**Do I need a PCOC to launch?**
+You need a PCOC to operate the boat, yes. Launching the boat (driving the trailer) doesn't require a PCOC, but the moment you have the motor running on the water, you do.
+
+**Can I leave my trailer overnight at a public launch?**
+Most public launches don't allow overnight parking. Check signage. HBW customers may have trailer storage options, contact us at [hbw.wiki/service](https://hbw.wiki/service).
+
+**What if my boat is bigger than the public ramps can handle?**
+HBW's 2-lane concrete ramp at Gores Landing handles most recreational boats up to about 26 ft. For anything bigger, call us first: 905-342-2153.
+
+---
+
+## Internal Links
+
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
+- [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
+- [Trailer Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide)
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
+
+---
+
+## Ready to Launch?
+
+If you need a Mercury motor before your next launch, build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+
+For service, parts, fuel, or to ask about our ramp at Gores Landing, call **905-342-2153**.
+
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Platinum Dealer | Since 1947
 
 ---
 
@@ -21255,8 +21341,7 @@ If you don't have a boat but want to fish Rice Lake or take the family out, [boa
 
 - Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
 - Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
-`,
+- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)`,
   },
   {
     slug: "mercury-9-9-efi-review-ontario",
