@@ -22222,229 +22222,157 @@ Or call the shop. The 40-60 HP class is a 10-minute conversation if you can tell
     category: 'Buying Guide',
     readTime: '~10 min read',
     keywords: ["outboard trade-in value Ontario", "what is my Mercury outboard worth", "boat motor trade in value Canada", "trade in old outboard for repower", "outboard trade vs private sale"],
-    faqs: [
-      { question: "Will you take any outboard on trade, or only Mercury?", answer: "Any working outboard. We trade Mercury, Yamaha, Honda, Suzuki, Tohatsu, Evinrude, and the older OMC models. Mercury and Yamaha get the strongest trade values because resale demand is highest. We've also taken older 2-strokes that won't run as parts credit, which is usually a few hundred dollars but at least gets the dead weight out of your shed." },
-      { question: "What about a non-running motor?", answer: "We still take it. The trade value drops to scrap-or-parts level (typically 10-25% of working value) but we'll come pick it up if you're trading toward a Mercury repower at HBW. Don't pay to dispose of an outboard, ever. Bring it to us." },
-      { question: "Can I get a trade quote before I commit to the repower?", answer: "Yes. Build a quote at mercuryrepower.ca with the trade-in step, or email photos to info@harrisboatworks.ca. We give a preliminary trade range with the repower quote, no commitment required. Final number is confirmed in person." },
-      { question: "Do I save HST on the trade-in amount?", answer: "Yes, in Ontario. The trade-in credit reduces the taxable amount on your new motor invoice, so you save 13% HST on the trade portion. On a $4,000 trade that's about $520 in actual cash savings versus selling privately. See the worked example above." },
-      { question: "What if my motor has higher hours than the ranges show?", answer: "We still trade it. The deduction widens past 1,000 hours but we don't apply a brick-wall cutoff. A 1,400-hour Yamaha F90 in good condition with documented service is still a worthwhile trade. A 1,400-hour neglected 2-stroke is usually parts-credit only." },
-      { question: "How long does the trade-in evaluation take?", answer: "About 20 minutes when you drop the motor off. We run it on a test stand, check compression, scan for fault codes (if SmartCraft-equipped), inspect the lower unit, and verify the hour reading. The number we email or quote in advance is preliminary; the in-person confirmation is final." },
-      { question: "What about boat trade-ins (whole boat + motor package)?", answer: "Different process. The boat side gets evaluated separately by our boat sales team. Motor portion follows the rules in this post. For pontoons and aluminum fishing boats up to 22 ft, we typically can take the whole package on trade. For larger fiberglass / sterndrive packages, we usually credit the motor and recommend a private listing for the hull." },
-      { question: "Does my old motor have to be running?", answer: "Preferred but not required. A motor that runs and starts cold gets full trade. A motor that runs but has a known issue gets a deduction equal to the repair estimate. A non-runner gets parts-credit pricing. Bring it either way; the alternative (paying to dispose of it) is worse." },
+        faqs: [
+      { question: 'Is there a blue book for outboard motors?', answer: 'No. Mercury, Yamaha, and other manufacturers do not publish residual value tables. Dealers evaluate trades based on brand, hours, age, condition, and market demand.' },
+      { question: 'How much is my Evinrude worth on trade?', answer: 'Very little in 2026. BRP stopped outboard production in 2020, parts availability is shrinking, and certified service is harder to find. We will not make it zero if the motor runs, but expect a significant discount from older value guides.' },
+      { question: 'Does trade-in actually save me money vs selling privately?', answer: 'Often yes, once you factor in the HST savings on the new motor and the time you do not spend dealing with tire-kickers.' },
+      { question: 'Do I need the original controls and rigging to get good trade value?', answer: 'They help. Original Mercury or Yamaha rigging makes the motor drop-in for the next owner without rewiring. Aftermarket controls are not a dealbreaker but they reduce what we can credit.' },
+      { question: 'Can I trade in a motor from a different brand than what I am buying?', answer: 'Yes. We will trade any brand and apply the credit toward a new Mercury repower.' },
+      { question: 'How do you actually sell traded motors?', answer: 'Some go to other customers looking for used motors. Some go to boat brokers or used marine dealers. Some are parted out if they are high-hour or non-running.' },
     ],
-    content: `# What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)
+    content: `# What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works
 
-*Last reviewed: 2026-05-09*
+## Quick answer
+There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-> **Quick answer:** A working Mercury or Yamaha 4-stroke under 1,000 hours typically trades for 30-50% of comparable used retail. Older 2-strokes and Evinrude / OMC motors trade for less or zero. The biggest factor is brand and condition, not just HP. Trade credit on a repower also saves you 13% Ontario HST on that portion of the invoice. Build a quote with trade at mercuryrepower.ca/quote/motor-selection.
+## The first question in every repower conversation
 
-The first question in any repower conversation is "what about my old motor?" It's the right question. The trade-in conversation also unlocks **HST savings** on the repower invoice, which most customers don't realize until we walk them through it.
+"What about my old motor?"
 
-This post is the answer we usually give over the phone, written down. We show you what we look at, what helps and hurts, the 2026 ranges by HP class, and how to get a real number before driving anywhere.
+It is always the first question, and it is the right one. A motor trade changes the whole cost picture, not just by the trade amount, but because in Ontario, **the trade-in credit reduces the taxable amount of the new motor**. That 13% HST saving adds up faster than most people expect.
 
----
+This post is the answer we give over the phone, written down: what we look at, what helps and hurts value, the real ranges for 2026, and how to get a preliminary number before you drive anywhere.
 
-## How HBW Evaluates an Outboard Trade
+## The five things we look at
 
-There's no magic blue book for outboards. Mercury, Yamaha, and the others publish dealer cost sheets but not a residual-value table. What we do, and what every honest dealer does, is look at five things.
+There is no magic database for outboard residuals. What we do, and what any honest dealer does, is evaluate five factors.
 
 ### 1. Brand
-Mercury and Yamaha hold value. Honda holds value but moves slower on resale. Suzuki and Tohatsu have followings but smaller. **Evinrude / OMC has effectively zero trade-in value** since BRP shut down outboard production in 2020. Parts are increasingly hard to source and many models are no longer supported by certified service. We won't punish you for it but we can't credit much against a working motor that nobody wants on resale.
+**Mercury and Yamaha hold value best.** Honda holds value but moves more slowly on resale. Suzuki and Tohatsu have followings but smaller secondary markets.
+
+**Evinrude/OMC motors have very limited trade value** as of 2026. BRP shut down outboard production in 2020. Parts availability has tightened every year since, and many models are no longer supported by certified service. We will not penalize you for owning one, but we cannot credit much against a motor with a shrinking resale market.
 
 ### 2. Hours
-On a Mercury or Yamaha 4-stroke, the curve looks like this (working motor, no major issues):
-- Under 200 hours → top of the range
-- 200-500 hours → solid mid-range
-- 500-1,000 hours → still trades, lower mid-range
-- 1,000-2,000 hours → low-end trade, sometimes parts-only
-- 2,000+ hours → usually parts-only or scrap
+On a Mercury or Yamaha 4-stroke in working condition with no major issues, the value curve looks like this:
 
-Hours alone don't tell the story (a well-maintained 1,500-hour Yamaha can outrun a neglected 600-hour anything), but it's the first number we ask.
+- Under 200 hours: top of the range
+- 200 to 500 hours: solid mid-range
+- 500 to 1,000 hours: still tradeable, lower mid-range
+- 1,000 to 2,000 hours: low-end trade, sometimes parts-only
+- 2,000+ hours: usually parts or scrap value only
 
-### 3. Age and EFI generation
-Mercury 4-strokes built 2014 and later are SmartCraft-compatible and use the modern 14-pin connector. Anything older predates the connector standard, which means a buyer typically needs to swap controls and cabling to use the motor on a different boat. That hurts trade value because we factor in the next owner's install cost.
+Hours alone do not tell the full story. A well-maintained 1,500-hour Yamaha can outvalue a neglected 600-hour anything.
+
+### 3. Age and electronic generation
+Mercury 4-strokes built 2014 and later are SmartCraft-compatible with the modern 14-pin connector. Older motors predate that standard, meaning the next owner typically needs to replace controls and cabling to install the motor on a different boat. We factor in that install cost.
 
 ### 4. Visible condition
-- Cowl condition (cracks, faded paint, missing decals)
-- Lower unit (corrosion, prop damage, skeg damage, oil weep)
-- Powerhead (corrosion on the block, oil leaks, broken zip ties from prior service)
-- Anode condition (consumed but present is fine; stripped-off shows neglect)
+We look at:
+- Cowl: cracks, faded paint, missing decals
+- Lower unit: corrosion, prop damage, skeg damage, oil weep at the seals
+- Powerhead: corrosion on the block, oil leaks, evidence of non-OEM service work
+- Anodes: consumed but present is fine; missing entirely signals neglect
 
-We aren't grading museum pieces. A motor that looks like it's been used and serviced is fine. A motor that looks like it's been ignored for 5 winters is a different story.
+A motor that looks like it has been used and serviced properly is fine. A motor that looks like it sat under a tarp for five winters is a different conversation.
 
 ### 5. Service history
-A binder of service records adds 10-15% to most trades. It also makes it possible for us to **resell the motor with confidence**, which is the actual reason any dealer pays more for a documented trade.
+A service record binder adds 10 to 15% to most trades. Not because we are being generous, it is because a documented motor is one we can resell with confidence.
 
----
+## What adds value
+- Mercury or Yamaha brand rather than Honda, Suzuki, or Evinrude
+- 4-stroke rather than 2-stroke (post-2010, the 2-stroke market has contracted significantly)
+- Under 500 hours with a documented SmartCraft or YDIS hour reading
+- Original Mercury or Yamaha rigging still intact, controls, harness, gauges
+- Recent annual service (current or prior season)
+- Garaged or shrink-wrapped winters rather than tarped storage
+- Stainless prop rather than aluminum (~$300 to $400 retained value)
+- Working power trim with no leaks
+- Digital instruments (VesselView, SmartCraft Connect) bundled in
 
-## What Helps Value (Above Average)
+## What reduces value
+- Evinrude/OMC (very limited 2026 resale market)
+- 2-stroke over 50 HP
+- Saltwater history, corrosion rarely fully reverses
+- Flood or submersion damage, usually unrecoverable for the powerhead
+- Over 1,000 hours without documented service
+- Cracked cowl, missing decals, prior collision evidence
+- Aftermarket controls or rigging the next owner has to undo
+- Oil weep at the lower unit seal (typically a $400 to $700 fix)
+- Stale fuel that ran through the system
 
-These add real money to the trade.
+## Trade vs private sale vs scrap
 
-- **Mercury or Yamaha** rather than Honda / Suzuki / Evinrude
-- **4-stroke** rather than 2-stroke (post-2010 the market shift is brutal)
-- **Under 500 hours** with documented hour reading (SmartCraft / Yamaha YDIS)
-- **Original Mercury / Yamaha rigging** still attached (controls, harness, gauges), which keeps it "drop-in" for the next owner
-- **Recent annual service** (current season is best, prior season is fine)
-- **Garaged or shrink-wrapped winters** rather than tarp-and-weep
-- **Stainless prop** rather than aluminum (about $300-$400 of value retained)
-- **Working power trim** with no leaks
-- **Smart digital instruments** (VesselView, SmartCraft Connect) bundled in
-
----
-
-## What Hurts Value (Below Average)
-
-These are the deductions we have to make.
-
-- **Evinrude / OMC** anything (very limited resale market in 2026)
-- **2-stroke 50+ HP** (more market for vintage tillers under 25 HP than for big 2-strokes)
-- **Salt water history** (corrosion is rarely undone, even after freshwater flushing)
-- **Flood damage** (underwater submersion is usually game over for the powerhead)
-- **Over 1,000 hours** without documented service
-- **Cracked cowl, missing decals, evidence of prior collision damage**
-- **Aftermarket controls or rigging** that the next owner has to undo
-- **Oil weep at the lower unit seal** (usually a $400-$700 fix on someone's dime)
-- **Stale fuel that ran through the system** (varnish in the rails, expensive to clean)
-
-We don't penalize you twice. If the lower unit weeps and the cowl is cracked, you get one deduction for "general age," not two stacked hits.
-
----
-
-## Trade-In vs Private Sale vs Scrap: Which Path?
-
-Three paths, three different numbers, three different headaches.
-
-| Path | Typical net | What you do | Risk |
+| Path | Typical Net | What You Do | Risk |
 |---|---|---|---|
-| **Trade to HBW** | 30-50% of comparable used retail | Tell us about the motor, drop it off when you pick up the new one | None. Done in one transaction. |
-| **Private sale (Kijiji / Facebook)** | 60-80% of used retail | Photos, listing, tire-kickers, cash test, transfer paperwork | Scams, no-shows, weeks of effort, occasional disputes |
-| **Scrap / parts-out** | 5-15% of retail | Drop at metal yard or part out on Marketplace | Time, mess, you become a small business |
+| Trade to HBW | 30 to 50% of comparable used retail | Tell us about the motor, drop it off when you pick up the new one | None, done in one transaction |
+| Private sale (Kijiji / Facebook) | 60 to 80% of used retail | Photos, listing, tire-kickers, cash transactions, transfer paperwork | Scams, no-shows, weeks of effort, occasional disputes |
+| Scrap or parts-out | 5 to 15% of retail | Drop at a metal yard, or part it out yourself | Time, mess, you become a small parts business |
 
-The math case for trade is simple: trade = certain. Private = higher gross, lower net once you account for time, hassle, and the **HST you're not saving**.
+The math case for trade: Trade is certain. Private sale has a higher gross number but lower net once you factor in time, hassle, and the HST you are not saving.
 
----
+## The HST savings most customers miss
 
-## The HST Savings Most Customers Miss
+In Ontario, when you trade a motor as part of a repower at HBW, **the trade credit reduces the taxable amount of the new motor**. That is a 13% HST saving on whatever the trade is worth.
 
-In Ontario, when you trade a motor against a repower at HBW, the **trade-in credit reduces the taxable amount of the new motor**. That's a 13% HST saving on whatever the trade is worth.
+**Worked example.** Say you are repowering with a Mercury 90 ELPT FourStroke at $14,812, and we credit $4,000 for your old motor:
 
-Worked example. Say you're repowering an 18-foot aluminum with a Mercury 90 ELPT FourStroke ($14,812 dealer price), and we credit you $4,000 for your old Mercury 75 in good condition.
-
-| Line | Trade scenario | Private-sale scenario |
+| Line | Trade Scenario | Private Sale Scenario |
 |---|---|---|
 | New motor price | $14,812 | $14,812 |
 | Trade credit | -$4,000 | $0 |
 | Subtotal | $10,812 | $14,812 |
-| HST 13% | $1,406 | $1,926 |
+| HST (13%) | $1,406 | $1,926 |
 | Total to HBW | $12,218 | $16,738 |
-| Cash from selling old motor privately | n/a | $5,000 (assume) |
-| **Net cost to you** | **$12,218** | **$11,738** |
+| Cash from private sale | -- | $5,000 (assumed) |
+| **Net cost** | **$12,218** | **$11,738** |
 
-In this example the private sale wins by about $480, but only if you actually sell privately for $5,000 and it doesn't take three weekends and a cash dispute. Drop the private sale to $4,500 and trade wins. Drop it to $4,000 and trade wins by a lot. Most customers find the private sale grind isn't worth the modest delta once they price their own time.
+In this example, the private sale wins by about $480, but only if you actually sell for $5,000, it does not take three weekends, and there is no cash dispute. If the private sale nets $4,500, trade wins. At $4,000, trade wins by a meaningful margin.
 
-The point: **trade is competitive on net cost with private sale**, not just easier. Talk to us before you list.
+Most customers find the private sale grind is not worth the modest delta once they price their own time. Talk to us before you list.
 
----
+## 2026 trade-in ranges (Ontario, CAD)
 
-## 2026 Trade-In Ranges (Ontario, CAD)
+Working ranges for freshwater, documented Mercury or Yamaha 4-strokes in working condition. Starting points, final number confirmed in person.
 
-Real ranges we're paying for working, freshwater, documented Mercury or Yamaha 4-strokes in 2026. These are starting points; final number depends on the five factors above.
-
-| HP class | Age 0-5 yrs, low hrs | Age 5-10 yrs, mid hrs | Age 10-15 yrs, higher hrs |
+| HP Class | 0 to 5 yrs, Low Hours | 5 to 10 yrs, Mid Hours | 10 to 15 yrs, Higher Hours |
 |---|---|---|---|
-| **9.9-15 HP kicker** | $1,800-$3,000 | $1,200-$2,000 | $600-$1,200 |
-| **25-30 HP** | $2,500-$4,000 | $1,500-$2,800 | $800-$1,600 |
-| **40-50 HP** | $3,500-$5,500 | $2,200-$3,800 | $1,200-$2,200 |
-| **60-75 HP** | $5,000-$7,500 | $3,200-$5,200 | $1,800-$3,200 |
-| **90-115 HP** | $7,000-$10,500 | $4,500-$7,500 | $2,500-$4,500 |
-| **150-200 HP** | $9,500-$14,500 | $6,500-$10,500 | $4,000-$7,000 |
-| **225-300 HP V6** | $13,000-$19,000 | $9,000-$14,500 | $5,500-$10,000 |
+| 9.9 to 15 HP kicker | $1,800 to $3,000 | $1,200 to $2,000 | $600 to $1,200 |
+| 25 to 30 HP | $2,500 to $4,000 | $1,500 to $2,800 | $800 to $1,600 |
+| 40 to 50 HP | $3,500 to $5,500 | $2,200 to $3,800 | $1,200 to $2,200 |
+| 60 to 75 HP | $5,000 to $7,500 | $3,200 to $5,200 | $1,800 to $3,200 |
+| 90 to 115 HP | $7,000 to $10,500 | $4,500 to $7,500 | $2,500 to $4,500 |
+| 150 to 200 HP | $9,500 to $14,500 | $6,500 to $10,500 | $4,000 to $7,000 |
+| 225 to 300 HP V6/V8 | $13,000 to $19,000 | $9,000 to $14,500 | $5,500 to $10,000 |
 
-Numbers are CAD, before HST, for working motors with no major issues. Add 10-15% for documented service binders. Subtract 20-40% for non-Mercury / non-Yamaha. Subtract 50%+ for Evinrude / OMC. **Final numbers are confirmed in person** after we see and run the motor.
+All figures are CAD, before HST, for working motors with no major issues. Add 10 to 15% for documented full service history. Subtract 20 to 40% for non-Mercury/non-Yamaha brands. Subtract 50%+ for Evinrude/OMC. Final number is always confirmed in person after inspection.
 
----
+## How to get a preliminary number before you visit
 
-## How to Get a Real Number Before You Visit
+### Option 1: Build a quote with trade at mercuryrepower.ca
+The quote builder includes a trade-in assessment step. Enter make, model, year, hours, and condition. It returns a preliminary trade range and an all-in repower number with HST.
 
-Two paths.
+[Start at mercuryrepower.ca](https://mercuryrepower.ca)
 
-### 1. Build a quote with trade at mercuryrepower.ca
-
-The [quote builder](/quote/motor-selection) has a trade-in assessment step. You enter the make, model, year, hours, and condition. It generates a preliminary trade range and an all-in repower number. Three minutes, no phone call, no commitment.
-
-### 2. Email us photos
-
-Send 6-8 photos to [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca):
+### Option 2: Send us photos
+Email 6 to 8 photos to **info@harrisboatworks.ca**:
 - Cowl front and both sides
-- Powerhead with cowl off
-- Lower unit (both sides)
+- Powerhead with cowl removed
+- Lower unit both sides
 - Prop close-up
 - Hour-meter reading
-- Any service receipts you have
+- Any service records you have
 
-We reply within one business day with a preliminary trade range and a repower quote that includes it. **No phone tag, no "call for pricing".**
+We reply within one business day with a preliminary trade range and a repower quote that includes it.
 
----
+## Why we are straight with you on trade numbers
 
-## Why HBW Is Honest About This
+We have been on Rice Lake since 1947. Most of our repower customers have been with us for 10 years or more. The number we give you on a trade is one we can defend to our service team and to whoever ends up buying that motor after.
 
-We've been on Rice Lake since 1947 and a Mercury dealer since 1965. Most of our repower customers have been with us for 10+ years. **The number we give you on trade is a number we can defend with our service writers and resale operations.** We can't gold-plate it because we have to actually move the motor afterward, and we can't lowball it because you'd notice and walk.
+We cannot inflate it, because we have to move the motor afterward. We will not lowball it, because you would know and you would walk, and you would tell someone.
 
-We also publish all our [Mercury pricing live](https://mercuryrepower.ca/pricing-reference) so you can see the new-motor side of the transaction without a phone call. Most Ontario dealers don't.
+We also publish all our Mercury pricing live at [mercuryrepower.ca](https://mercuryrepower.ca), so you can see both sides of the transaction without a phone call.
 
-The whole point of [why dealers hide prices online](/blog/why-mercury-dealers-hide-prices-online), and why some are still cagey about trade-in numbers, is that information asymmetry favors them. We've decided to compete the other way.
-
----
-
-## Frequently Asked Questions
-
-**Will you take any outboard on trade, or only Mercury?**
-Any working outboard. We trade Mercury, Yamaha, Honda, Suzuki, Tohatsu, Evinrude, and the older OMC models. Mercury and Yamaha get the strongest trade values because resale demand is highest. We've also taken older 2-strokes that won't run as parts credit, which is usually a few hundred dollars but at least gets the dead weight out of your shed.
-
-**What about a non-running motor?**
-We still take it. The trade value drops to scrap-or-parts level (typically 10-25% of working value) but we'll come pick it up if you're trading toward a Mercury repower at HBW. Don't pay to dispose of an outboard, ever. Bring it to us.
-
-**Can I get a trade quote before I commit to the repower?**
-Yes. Build a quote at mercuryrepower.ca with the trade-in step, or email photos to info@harrisboatworks.ca. We give a preliminary trade range with the repower quote, no commitment required. Final number is confirmed in person.
-
-**Do I save HST on the trade-in amount?**
-Yes, in Ontario. The trade-in credit reduces the taxable amount on your new motor invoice, so you save 13% HST on the trade portion. On a $4,000 trade that's about $520 in actual cash savings versus selling privately. See the worked example above.
-
-**What if my motor has higher hours than the ranges show?**
-We still trade it. The deduction widens past 1,000 hours but we don't apply a brick-wall cutoff. A 1,400-hour Yamaha F90 in good condition with documented service is still a worthwhile trade. A 1,400-hour neglected 2-stroke is usually parts-credit only.
-
-**How long does the trade-in evaluation take?**
-About 20 minutes when you drop the motor off. We run it on a test stand, check compression, scan for fault codes (if SmartCraft-equipped), inspect the lower unit, and verify the hour reading. The number we email or quote in advance is preliminary; the in-person confirmation is final.
-
-**What about boat trade-ins (whole boat + motor package)?**
-Different process. The boat side gets evaluated separately by our boat sales team. Motor portion follows the rules in this post. For pontoons and aluminum fishing boats up to 22 ft, we typically can take the whole package on trade. For larger fiberglass / sterndrive packages, we usually credit the motor and recommend a private listing for the hull.
-
-**Does my old motor have to be running?**
-Preferred but not required. A motor that runs and starts cold gets full trade. A motor that runs but has a known issue gets a deduction equal to the repair estimate. A non-runner gets parts-credit pricing. Bring it either way; the alternative (paying to dispose of it) is worse.
-
----
-
-## Ready to Find Out What Yours Is Worth?
-
-Build a quote in three minutes at our online configurator. The trade-in step gives you a preliminary number and an all-in repower price in CAD before HST.
-
-Or call the shop. We'll talk through your motor in 5 minutes and tell you whether it's worth bringing in.
-
-**Phone:** 905-342-2153
-**Email:** [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca)
-**Configurator:** [mercuryrepower.ca/quote/motor-selection](https://mercuryrepower.ca/quote/motor-selection)
-**Live Mercury pricing:** [mercuryrepower.ca/pricing-reference](https://mercuryrepower.ca/pricing-reference)
-
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON, K0K 2E0
-
-**Related guides:**
-- [Ontario Mercury Outboard Price Guide (2026)](/blog/ontario-mercury-outboard-price-guide)
-- [Mercury Repower Cost in Ontario (2026 CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury Controls and Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario)
-- [Used Outboard Buying Guide (Ontario)](/blog/used-outboard-buying-guide-ontario)
-- [Why Most Mercury Dealers Hide Their Prices Online](/blog/why-mercury-dealers-hide-prices-online)
-- [Pleasure Craft Licence Update After a Repower](/blog/pleasure-craft-licence-update-repower-ontario)`,
+*Last reviewed: 2026-05-11.*`,
   },
   {
     slug: 'mercury-smartcraft-connect-guide-ontario',
