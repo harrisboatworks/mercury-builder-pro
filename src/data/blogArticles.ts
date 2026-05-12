@@ -1066,184 +1066,155 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
-    content: `# Breaking In a New Mercury Motor (2026)
+    content: `**Last reviewed:** 2026-05-07
 
-*Last reviewed: 2026-05-07*
+---
 
-> **Quick answer:** Mercury's break-in is roughly 10 hours: vary RPM in the first hour, avoid sustained wide-open throttle for the first two, and complete the 20-hour service afterward. Skipping break-in shortens piston ring seating and can affect long-term oil consumption. Full schedule and 20-hour service booking at mercuryrepower.ca.
+> **Quick answer:** Mercury's break-in covers roughly the first 10 hours, vary throttle, avoid sustained wide-open throttle in the first hour or two, then gradually open it up with continued variation. Follow the 20-hour oil change on FourStrokes; it flushes the metal particles produced during ring seating. Check the owner's manual for your specific motor model's guidance. Book your 20-hour service at [hbw.wiki/service](https://hbw.wiki/service).
 
-The first 10 hours of a new Mercury are the most important hours of its service life. Mercury's break-in protocol calls for graduated load and RPM during this period: vary throttle, avoid sustained WOT, and follow the specific RPM guidance for the motor model. The first oil change at 20 hours is also important on FourStrokes. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+---
 
-## Quick recommendation
+## Why break-in actually matters
 
-Mercury motors that get a proper break-in last decades longer than motors that get hammered from day one. The customers who skip break-in are the same customers who come back complaining about reduced fuel economy, premature wear, and shorter motor life. Worth doing right.
+The customers who shortcut the break-in are the same ones who come back complaining about reduced fuel economy, premature wear, and shorter motor life. Modern Mercury FourStrokes are precision machines, the rings need to seat properly against the cylinder walls, and that only happens with the right conditions in the first hours of operation.
 
-The break-in is not complicated. Modern Mercury FourStrokes have a specific 10-hour break-in window with manufacturer guidance on RPM ranges and load. Follow it. The first oil change at 20 hours catches break-in particles. After that, normal operation.
+It is not complicated. Follow the graduated RPM protocol. Change the oil at 20 hours. After that, normal operation for the life of the motor.
 
-## What changes the break-in picture
+---
 
-Mercury publishes specific break-in procedures by motor family and model. The general principles are consistent:
+## Why varying RPM is the key
 
-- **First hour:** Idle, no-wake, gentle break-in. No sustained throttle.
-- **Hours 1 to 10:** Graduated RPM with frequent throttle variation. Avoid WOT for sustained periods.
-- **Hours 10 to 20:** Normal operation but still varying load.
-- **Hour 20:** First oil and filter change (FourStroke).
-- **Hour 100:** First major service interval.
+Break-in is about seating the piston rings against the cylinder walls. Sustained RPM at one setting glazes the cylinder walls and prevents proper ring seating. Varying RPM forces the rings to seat across the full range of cylinder geometry.
 
-The specifics vary by motor. Always follow the owner's manual for your specific Mercury. If you bought through HBW, we walk you through the break-in protocol at delivery.
+This is why Mercury, and every other modern outboard manufacturer, emphasizes throttle variation during break-in. It is not about being "gentle" on the engine. It is about ensuring the rings seat correctly for long-term durability.
 
-## The Mercury 10-hour break-in protocol
+---
 
-For most modern Mercury FourStrokes:
+## The Mercury break-in protocol
 
-### First 5 minutes
+For most modern Mercury FourStrokes. **Always refer to the owner's manual for your specific motor model**, the procedures vary by model and family.
 
-- Run at idle to circulate fluids
-- Check telltale water flow
+### First 5–10 minutes
+- Run at idle to circulate fluids and warm up
+- Check the telltale water stream for normal flow
 - Confirm no warning lights or unusual sounds
-- Allow motor to warm up
 
 ### First hour
+- Start at no-wake speed, 10–15 minutes
+- Graduate to moderate cruise RPM
+- Vary throttle continuously, the goal is movement through the RPM range, not a fixed position
 
-- Run at no-wake speed (under 5 mph) for 10 to 15 minutes
-- Then graduate to about 3,000 RPM (cruise speed for most boats)
-- Vary throttle between 2,500 and 3,500 RPM
-- Avoid sustained throttle position
+### Hours 1–2
+- Continue varying throttle across a wider RPM range
+- Brief bursts toward higher RPM are okay
+- Do not run at wide-open throttle for sustained periods
 
-### Hours 1 to 2
-
-- Continue varying throttle in the 2,500 to 4,000 RPM range
-- Brief bursts up to 4,500 RPM are okay
-- Do not run at WOT for more than 1 minute at a time
-
-### Hours 2 to 10
-
-- Vary throttle through full RPM range
-- Sustained cruise at 3,500 to 4,500 RPM is okay
-- WOT for short periods (1 to 3 minutes) is okay
+### Hours 2–10
+- Vary throttle through the full RPM range
+- Sustained cruise at moderate-to-higher RPM is fine
+- Wide-open throttle for short periods (a minute or two at a time) is acceptable
 - Continue varying load and throttle position throughout
 
 ### After 10 hours
-
 - Normal operation
-- WOT for sustained periods is okay (within Mercury's WOT RPM band)
+- Wide-open throttle for sustained periods is fine within Mercury's rated WOT RPM band
 - Continue varying throttle and load through normal use
 
-## Why varying RPM matters
+---
 
-Modern engine break-in is about seating the piston rings against the cylinder walls. Sustained RPM at one position glazes the cylinder walls and prevents proper ring seating. Varying RPM forces the rings to seat across the full range of cylinder geometry.
+## The 20-hour oil change (FourStrokes)
 
-This is why Mercury (and every other modern outboard manufacturer) emphasizes RPM variation during break-in. It is not about being gentle on the engine. It is about ensuring proper ring seating for long-term durability.
-
-## The 20-hour oil change
-
-For Mercury FourStrokes, the first oil and filter change at 20 hours is critical. The break-in process produces metal particles as components seat together. Those particles end up in the oil. Changing oil at 20 hours flushes them out before they can cause wear.
+This is the one maintenance step most new owners skip, and it matters. Break-in produces fine metal particles as components seat together. Those particles end up in the oil. Changing oil and filter at 20 hours flushes them out before they can cause wear.
 
 After the 20-hour change, normal Mercury service intervals apply: oil and filter every 100 hours or annually, whichever comes first.
 
-For 2-stroke motors, the equivalent break-in period uses Mercury's recommended TC-W3 oil through the autoblend or pre-mix system, with similar throttle variation principles.
+At HBW, we book the 20-hour service appointment at delivery so it doesn't get forgotten.
+
+---
 
 ## Common break-in mistakes
 
-We see these every spring:
+**Running wide-open throttle in the first hour.** The most common one. New motor, eager owner, first lake run. Understandable, still wrong.
 
-1. **Running WOT during the first hour.** New owners eager to test top speed. Bad for ring seating and motor longevity.
-2. **Sustained cruise at one RPM.** Setting cruise control mentally and running 3,500 RPM for 2 hours straight. Worse than varying throttle.
-3. **Skipping the 20-hour oil change.** Customer thinks "the motor's barely broken in, why change oil?" The 20-hour change catches break-in particles. Skipping it shortens motor life.
-4. **Ignoring the owner's manual specifics.** Mercury publishes specific break-in procedures by model. Following the generic advice rather than the model-specific procedure misses some important details.
-5. **Loading the boat heavy during break-in.** A new motor under heavy load during break-in works harder than necessary. Lighter loads are easier on a fresh motor.
+**Sustained cruise at one RPM.** Setting it at 3,500 for two hours and not touching the throttle. Worse than varying. The whole point of break-in is RPM variation.
 
-## What HBW does on new motor delivery
+**Skipping the 20-hour oil change.** "The motor's barely used, why change the oil?" The 20-hour change isn't about contaminated oil. It's about flushing break-in debris before it causes wear.
 
-When customers take delivery of a new Mercury at HBW:
+**Ignoring the owner's manual specifics.** The general break-in principles are consistent across Mercury models, but the specific RPM guidance varies. Follow the book for your motor.
 
-- **Initial sea-trial.** We run the motor briefly to verify cooling, charging, and basic operation.
-- **Owner's manual review.** We walk through the break-in protocol specific to the motor model.
-- **Service schedule discussion.** We explain the 20-hour change, 100-hour service, and ongoing maintenance.
-- **Warranty registration.** We complete Mercury warranty registration with serial number and customer info.
-- **First-year service appointment.** We book the 20-hour service in advance so it's not forgotten.
+**Loading the boat heavy during break-in.** A fresh motor under heavy sustained load works harder than necessary. Lighter loads are easier on a new motor.
 
-For specific Mercury pricing, [build a quote](/quote/motor-selection).
+---
 
-## What about break-in for used motors?
+## What we do on new motor delivery at HBW
 
-Used Mercury motors don't need new-motor break-in. They have already broken in. After purchase or transfer, you should:
+When a customer takes delivery of a new Mercury from us:
 
-- **Check oil condition** (FourStroke). Change if old or unknown service history.
-- **Check fuel system** for stale fuel.
-- **Run motor briefly** at HBW or under qualified supervision to verify operation.
-- **Plan first major service** based on motor age and service history.
+- We run a brief initial sea trial to verify cooling, charging, and basic operation
+- We walk through the break-in protocol for the specific motor model
+- We explain the 20-hour service and what happens at the 100-hour interval
+- We complete Mercury warranty registration with serial number and customer info
+- We book the 20-hour service appointment before the customer leaves, so it doesn't get lost
 
-For repower customers buying new Mercurys at HBW, the break-in protocol applies to the new motor. The hull is the same; the motor is the new component.
+---
 
-## Break-in and warranty
+## What about used motors?
 
-Mercury warranty requires break-in compliance. The published break-in procedure in the owner's manual is the binding standard. Customers who damage motors by skipping break-in may have warranty claims denied.
+Used Mercurys don't need new-motor break-in, they're already broken in. After purchase or transfer:
 
-We document break-in compliance during HBW deliveries and follow up on first-year service. The records support warranty support if anything comes up.
+- Check oil condition on FourStrokes; change if old or unknown history
+- Check for stale fuel in the system
+- Run the motor briefly to verify basic operation
+- Plan the next major service based on age and service history
 
-## Related guides
+For repower customers buying a new Mercury at HBW, the break-in applies to the new motor. The hull is the same; the motor is the new component.
 
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), the annual maintenance cycle
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), spring service after first season
-- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), getting peak efficiency from a broken-in motor
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop testing during break-in sea-trial
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), early-life issue diagnostics
+---
 
-## Need help with this?
+## Break-in and Mercury warranty
 
-Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
+Mercury warranty requires break-in compliance per the owner's manual. Damage from improper break-in may not be covered under warranty. We document break-in compliance at HBW deliveries and keep records to support warranty claims if anything comes up.
 
-**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
-**Phone:** 905-342-2153
+---
 
-If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
+## Related posts
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
+
+---
+
+## Need service on your Mercury?
+
+Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+---
 
 ## FAQ
 
 **How long is the Mercury break-in period?**
-For modern Mercury FourStrokes, the break-in period is typically 10 hours of graduated operation. Followed by a 20-hour oil and filter change. Specific procedures vary by motor model; check the owner's manual.
+Roughly 10 hours of graduated operation. Followed by a 20-hour oil and filter change on FourStrokes. Specific procedures vary by motor, check the owner's manual.
 
 **Can I run my new Mercury at full throttle during break-in?**
-For brief periods (1 to 3 minutes) after the first 1 to 2 hours, yes. Sustained WOT during the first 10 hours is not recommended. Vary throttle throughout the break-in period.
+Brief bursts after the first hour or two are acceptable. Sustained wide-open throttle in the first 10 hours is not recommended. Vary throttle throughout.
 
-**Why does Mercury require an oil change at 20 hours?**
-Break-in produces metal particles as engine components seat together. Those particles end up in the oil. The 20-hour oil change flushes them out before they cause wear. Skipping this shortens motor life.
+**Why does Mercury require a 20-hour oil change?**
+Break-in produces metal particles as engine components seat. Those particles end up in the oil. The 20-hour change flushes them before they can cause wear. Skipping it is a false economy.
 
-**Do I need to do anything special with a 2-stroke Mercury during break-in?**
-2-stroke break-in uses Mercury's recommended oil through autoblend or pre-mix system, with similar throttle variation. Specifics vary by motor; check the owner's manual.
-
-**Can I tube or ski with a new Mercury during break-in?**
-Light water sports are okay after the first hour. Sustained heavy load (multiple skiers, full crew tubing) should wait until break-in is complete.
+**Can I tube or ski behind a new Mercury during break-in?**
+Light water sports are okay after the first hour. Sustained heavy load, multiple skiers, full crew tubing, should wait until break-in is complete.
 
 **Will my new Mercury feel different after break-in?**
-Yes, slightly. Properly broken-in motors typically run smoother, achieve full power, and reach full fuel economy potential. The differences are subtle but real.
+Yes, slightly. Properly broken-in motors typically run smoother, reach full power, and achieve their fuel economy potential. The differences are real but subtle.
 
-**What if I bought a new Mercury and skipped break-in?**
-Run a careful inspection (compression test, oil analysis) to see if any damage occurred. Sometimes no harm done; sometimes accelerated wear has begun. Future motor life may be shorter. Going forward, follow normal maintenance and avoid overloading.
+**Does improper break-in affect the Mercury warranty?**
+Yes. Damage from not following the break-in protocol may not be covered. We document break-in compliance at HBW deliveries specifically for this reason.
 
-**Does break-in affect Mercury warranty?**
-Yes. Mercury warranty requires break-in compliance per the owner's manual. Damage from improper break-in may not be covered. We document break-in compliance at HBW deliveries to support warranty.
+**Should I use a special break-in oil or fuel?**
+For modern Mercury FourStrokes, no. Use Mercury-approved four-stroke oil from day one. For 2-strokes, Mercury TC-W3 oil per manufacturer spec. No special break-in formulations needed.
 
-**Can I tow my boat home from HBW and break in on my own lake?**
-Yes. Many customers do this. The break-in protocol works regardless of which lake you're on. Start with idle and no-wake speed, then graduate over the first hour.
-
-**Should I run break-in fuel or special oil?**
-For modern Mercury FourStrokes, no. Use Mercury 25W-50 four-stroke oil from day one. For 2-strokes, use Mercury TC-W3 oil per manufacturer spec. No special "break-in" formulations needed.
-
-**What's the cost of the 20-hour service at HBW?**
-Standard 20-hour service includes oil and filter change plus inspection. For specific pricing, [contact HBW](/contact). Often booked at delivery so it's not forgotten.
-
-**Do used Mercury motors need break-in?**
-No. Used motors are already broken in. After purchase, check oil condition and fuel system, run briefly to verify operation, and follow normal Mercury service intervals.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
-`,
+**Can I tow my new Mercury home from HBW and break it in on my own lake?**
+Yes. Many customers do this. Start at idle and no-wake speed, then graduate over the first hour. The break-in protocol works on any lake.`,
     howToSteps: [
       {
         name: 'First Hour (0-1 hours)',
@@ -1720,158 +1691,129 @@ Build a complete installed quote at [mercuryrepower.ca](https://mercuryrepower.c
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury for aluminum boat', 'best outboard aluminum fishing boat', 'mercury 60hp fishing', 'lund boat motor', 'tracker boat outboard'],
-    content: `# Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)
+    content: `**Last reviewed:** 2026-05-07
 
-*Last reviewed: 2026-05-07*
+---
 
-> **Quick answer:** For most aluminum fishing boats in the 14-18 ft range, a Mercury 25-60 HP FourStroke is the sweet spot. Match the hull's capacity plate, pick tiller or remote based on layout, and choose Command Thrust if you're loading heavy or pushing a wide transom. Installed pricing for every option lives at mercuryrepower.ca.
+> **Quick answer:** For most aluminum fishing boats in the 14–18 ft range, a Mercury 40–115 HP FourStroke is the sweet spot. Match the hull's capacity plate, pick tiller or remote based on your layout, and seriously consider a 9.9 ProKicker if you fish for walleye. Real installed pricing at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-The right Mercury for an aluminum fishing boat depends on hull length and use. Tiller motors 9.9 to 25 HP fit small boats (12 to 14 ft) for solo fishing. Remote-control 40 to 60 HP suits 14 to 16 ft consoles. The 90 to 115 HP class is the sweet spot for 16 to 19 ft fishing boats with two or three anglers and gear. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+---
 
-## Quick recommendation
+## How we think about aluminum fishing boats
 
-For most aluminum fishing boats on Rice Lake and Kawartha lakes, the Mercury FourStroke is the right family. The 9.9 ProKicker is the standard kicker motor. The 60 to 115 HP FourStroke range covers most main-motor needs. Pro XS makes sense if you want tournament-level acceleration on a bass-style hull.
+We rig aluminum fishing boats every season at HBW. On Rice Lake and across the Kawarthas, they're the workhorse of cottage fishing, lightweight, easy to trailer, manageable to maintain.
 
-We rig aluminum fishing boats every year at HBW. The mistakes we see are consistent: customers underbuy on HP, ignore the kicker, run the wrong prop, or skip Command Thrust on heavier hulls. Fix any one of those and the boat performs better than the spec sheet would suggest.
+The mistakes we see are consistent: underbuying on HP, skipping the kicker, running the wrong prop, or skipping Command Thrust on heavier hulls. Fix any one of those and the boat performs noticeably better than before.
 
-## What changes the answer
+Here's how to think through each decision.
 
-Five things move the right Mercury for your aluminum fishing boat:
+---
 
-- **Hull length and weight.** A 14 ft tin boat needs less HP than a 19 ft console. Aluminum is lighter than fiberglass at the same length, so HP requirements are lower than equivalent fiberglass boats.
-- **Console or tiller.** Tiller boats up to 20 HP are drop-in installs (no rigging). Console boats need remote-control motors with rigging, controls, and prop.
-- **Solo or family.** Solo angler at trolling speed has different HP needs than a family with three or four people who want to plane and run between spots.
-- **Where you fish.** Sheltered Rice Lake bays vs. Lake Ontario open water vs. the Trent-Severn system. Bigger water needs more HP for safety and speed.
-- **Whether you have a kicker.** A 9.9 ProKicker on a fishing boat is the standard for trolling speed control. Without one, you compromise either main-motor performance or trolling control.
+## What changes the right motor for your aluminum fishing boat
 
-## Best Mercury matches by aluminum boat size
+**Hull length and weight.** A 14-foot tin boat needs less HP than a 19-foot console. Aluminum hulls are lighter than equivalent fiberglass, so HP requirements trend lower than the same-length fiberglass alternative.
 
-### 12 to 14 ft tin boat (solo or two-person, sheltered water)
+**Tiller or remote control.** Tiller boats under 20 HP are drop-in installs, no rigging required. Console boats need remote-control motors with cables, controls, and prop. Different cost structure entirely.
 
-**Best fit:** 9.9 to 15 HP tiller (Mercury 9.9 MH, 15 MH, or 15 EH for electric start). All drop-in, no rigging.
+**How many people and how much gear.** Solo angler trolling at 3 mph has completely different HP needs than a family of three who want to run between spots.
 
-For pure solo fishing on small lakes, a 9.9 MH is plenty. Step up to 15 if you want a little more cruise speed or you have a heavier hull. Both motors are tiller-only, just-the-motor purchases. See live pricing on the [motor selection page](/quote/motor-selection).
+**Where you fish.** Protected bays on smaller Kawartha lakes vs. open Rice Lake in the afternoon vs. Lake Ontario. Bigger, windier water changes the practical HP minimum.
 
-### 14 to 16 ft tiller or console aluminum
+**Whether you have a kicker.** A 9.9 ProKicker on a fishing boat is the standard for trolling speed control. Without one, you're either sacrificing main-motor performance or sacrificing trolling control. You can't optimize both with one motor.
 
-**Best fit:** 25 to 60 HP. Tiller versions (25 EFI, 30 EFI, 40 EH) for boats without consoles. Remote versions (40 ELHPT, 50 ELHPT, 60 ELHPT) for console boats.
+---
 
-The 60 HP FourStroke is a popular sweet-spot motor for 16 ft aluminum consoles. Plenty of power for two anglers and gear, planes reliably with three people, fuel efficient, and the install fits inside most repower budgets. The all-in repower for this class lands $11,000 to $15,000 CAD. [Live pricing here.](/quote/motor-selection)
+## Best Mercury by boat size
 
-### 16 to 18 ft console aluminum (the most common Kawartha repower)
+### 12–14 ft tin boat (solo or two-person, sheltered water)
 
-**Best fit:** 90 to 115 HP FourStroke. The Mercury 90 EXLPT and 115 EXLPT FourStroke are the most common motors we install on aluminum console boats.
+**Best fit: 9.9 to 15 HP tiller.** The Mercury 9.9 MH, 15 MH, or 15 EH (electric start) are all drop-in, no-rigging purchases. For pure solo fishing on small lakes, a 9.9 MH is plenty. Step up to 15 if you have a heavier hull or want a bit more cruise speed.
 
-For tournament-style fishing on bigger water, step up to 115 Pro XS. The Pro XS earns the price difference if you actually run it hard. For typical recreational fishing, 90 to 115 FourStroke is plenty.
+### 14–16 ft tiller or console aluminum
 
-### 18 to 20 ft aluminum (deep V, heavier hull)
+**Best fit: 25 to 60 HP.** Tiller versions for boats without consoles; remote versions for console boats. The 60 HP FourStroke is the sweet spot for 16-foot aluminum consoles, enough power for two anglers and gear, planes reliably with three people, and fuel efficient. Installed pricing for this class: build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-**Best fit:** 115 to 150 HP. Larger aluminum fishing boats with deep-V hulls (think Lund Rebel XS or Crestliner Tournament series) need real HP to plane reliably. 115 Pro XS or 150 FourStroke or Pro XS are typical.
+### 16–18 ft console aluminum (the most common Kawartha repower)
 
-## What HBW checks before recommending a motor
+**Best fit: 90 to 115 HP FourStroke.** The Mercury 90 EXLPT and 115 EXLPT FourStroke are the most common motors we install on aluminum console boats. This is the sweet spot for most Ontario fishing boats in this size class.
 
-When customers come to HBW with an aluminum fishing boat for repower or new motor, we want to know:
+For tournament-style fishing or bigger open water, step up to 115 Pro XS. The Pro XS earns the premium if you actually run it hard. For typical recreational fishing, FourStroke is the better value.
 
-- Boat make, model, year, and length
-- Maximum HP rating on the capacity plate
-- Number of anglers typical
-- Sheltered vs. open water use
-- Trolling vs. cruising emphasis
-- Whether they want a kicker
-- Existing electronics and rigging condition
-- Budget and financing tolerance
+### 18–20 ft aluminum with deep-V hull
 
-Then we recommend a setup. Most often it is FourStroke 60 to 115 HP plus a 9.9 ProKicker, with a properly sized prop for the specific hull. The right answer is rarely the smallest motor that will fit.
+**Best fit: 115 to 150 HP.** Larger aluminum fishing boats with deep-V hulls need real HP to plane reliably with a full load. The 115 Pro XS or 150 FourStroke/Pro XS land here.
+
+---
 
 ## The kicker question
 
-For serious fishing on Rice Lake or Kawartha lakes, a kicker motor is not optional. The reasons:
+For serious fishing on Rice Lake or the Kawarthas, a kicker motor isn't optional, it's the standard fishing setup. The reasons:
 
-- **Trolling speed control.** A main motor at idle is often too fast for walleye trolling. The 9.9 ProKicker idles down to true trolling speed.
-- **Backup propulsion.** A failed main motor on the water is a tow back to the dock. A kicker gets you home.
-- **Fuel economy at slow speeds.** A 90 HP main motor at 1.5 mph is wasteful. A 9.9 at the same speed sips fuel.
-- **Stealth.** Quieter motor in shallow water.
+**Trolling speed control.** A main motor at idle is almost always too fast for walleye trolling at 1–2 mph. The 9.9 ProKicker idles down to true trolling speed.
 
-The Mercury 9.9 ProKicker is the standard. Long shaft, heavy-thrust prop, integrated tiller mount or remote-control variant. We rig kickers as part of most fishing boat repower projects. See our [Mercury ProKicker Rice Lake fishing guide](/blog/mercury-prokicker-rice-lake-fishing-guide) for details.
+**Backup propulsion.** A failed main motor on the water is a tow back to the dock. A kicker gets you home.
+
+**Fuel economy at slow speeds.** A 90 HP main motor at 1.5 mph wastes fuel. A 9.9 at the same speed sips it.
+
+**Stealth.** Quieter in shallow water.
+
+The Mercury 9.9 ProKicker is the standard, long shaft, high-thrust gearcase, purpose-built for fishing applications. We rig kickers as part of most fishing boat repower projects.
+
+The customers who skip the kicker to save money almost always wish they hadn't. The customers who buy a kicker rarely regret it.
+
+---
 
 ## Common mistakes on aluminum fishing boat repowers
 
-1. **Underbuying HP.** A 25 on a 16 ft aluminum that should have a 40 or 60 leaves you fighting the wind.
-2. **Skipping the kicker.** Customers think they can save $4,000 on the kicker and use the main motor for trolling. Two seasons later they wish they had bought the kicker. The customers who buy a kicker rarely regret it.
-3. **Wrong prop.** A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. We test props on the water during sea-trial of every repower.
-4. **Skipping Command Thrust on heavier hulls.** On 18 to 20 ft deep-V aluminum, Command Thrust gives meaningful hole shot improvement.
-5. **Buying Pro XS when FourStroke would work.** Pro XS earns the cost on tournament hulls. On recreational fishing boats, FourStroke is the better value.
+**1. Underbuying HP.** A 25 HP on a 16-foot aluminum that needs 60 HP leaves you fighting wind and current every day.
 
-## Related guides
+**2. Skipping the kicker.** Two seasons later, they wish they'd bought it. Buy it once.
 
-- [Mercury ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), the standard kicker setup
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), if you also have a pontoon
-- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), specific to mid-range FourStroke
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits your use
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop matters more than most owners realize
+**3. Wrong prop.** A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. We test props on the water during the sea trial of every repower.
+
+**4. Skipping Command Thrust on heavier hulls.** On 18–20 ft deep-V aluminum, Command Thrust gives meaningful hole-shot improvement at full load.
+
+**5. Buying Pro XS when FourStroke would do.** Pro XS earns the cost on tournament hulls and for anglers who run hard every morning. On typical recreational fishing boats, FourStroke is the better value.
+
+---
+
+## Related posts
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide)
+- [Portable Mercury Outboard Guide](/blog/portable-outboard-mercury-guide-2-20hp)
+- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
+
+---
 
 ## Ready to find your motor?
 
-Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD, full configuration including main motor, kicker (if needed), rigging, prop, and install.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through your specific aluminum fishing boat, [give us a call at (905) 342-2153](tel:9053422153). We rig fishing boats every week.
+Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca), real pricing in CAD on the full configuration: main motor, kicker, rigging, prop, and install. Or call us at **905-342-2153**. We rig fishing boats every week and can match a motor to your specific hull.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
-
----
-
-
-## Try the calculator
-
-Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) - no signup, no email gate, takes 30 seconds.
 ## FAQ
 
-**What is the best Mercury outboard for a 16-foot aluminum fishing boat?**
-For 16 ft aluminum console boats with two or three people, a 60 to 90 HP Mercury FourStroke is the typical sweet spot. The 60 EFI handles solo and two-person fishing well. The 90 EXLPT FourStroke gives you more headroom for a family with gear. Both are popular Kawartha repower choices.
+**What's the best Mercury for a 16-foot aluminum fishing boat?**
+For two or three people, a 60 to 90 HP FourStroke is the typical sweet spot. The 60 EFI handles solo and two-person fishing well. The 90 EXLPT FourStroke gives you headroom for a full family with gear. Both are popular Kawartha repower choices.
 
-**What is the best Mercury for a 14-foot aluminum tiller boat?**
-A 15 to 25 HP tiller motor. Mercury 15 MH, 15 EH (electric start), or 25 EFI. All are drop-in tiller installs with no rigging. Choose based on whether you want manual or electric start and how heavily loaded the boat typically is.
+**What's the best Mercury for a 14-foot aluminum tiller boat?**
+A 15 to 25 HP tiller motor. Mercury 15 MH, 15 EH (electric start), or 25 EFI. All are drop-in tiller installs with no rigging. Choose based on whether you want manual or electric start and how heavily loaded your boat typically is.
 
 **Should I get FourStroke or Pro XS for fishing?**
-For tournament fishing or anyone who wants the fastest acceleration to beat morning wind to a fishing spot, Pro XS earns its price. For recreational fishing (trolling, drifting, working structure), FourStroke at the same HP is the better value and saves about $1,500 on the motor.
+For tournament fishing or anyone who wants the fastest acceleration to beat wind to a spot, Pro XS earns its price. For recreational fishing, trolling, drifting, working structure, FourStroke at the same HP is the better value.
 
 **Do I need a kicker motor for fishing?**
-For serious fishing on Rice Lake or Kawartha lakes, a kicker is the standard answer. The 9.9 ProKicker provides trolling speed control, backup propulsion, fuel-efficient slow-speed running, and stealth in shallow water. Most fishing boat repowers we do at HBW include a kicker.
+For serious fishing on Rice Lake or Kawartha lakes, yes, it's the standard setup. The 9.9 ProKicker gives you trolling speed control, backup propulsion, fuel-efficient slow-speed running, and stealth in shallow water.
 
-**What HP do I need for a 16-foot aluminum fishing boat?**
-For solo trolling, 25 to 40 HP is plenty. For two or three anglers who want to plane and run between spots, 40 to 60 HP. Add a 9.9 ProKicker for trolling speed control. The 60 HP FourStroke plus 9.9 ProKicker is the classic Rice Lake setup.
-
-**What is the best Mercury for a 19-foot aluminum console fishing boat?**
-For typical recreational use, 90 to 115 HP FourStroke. For tournament-level performance or bigger-water use (Lake Ontario, Bay of Quinte), 115 to 150 Pro XS. Pair with a 9.9 ProKicker for trolling.
+**What HP for a 19-foot aluminum console fishing boat?**
+For typical recreational use, 90 to 115 HP FourStroke. For bigger-water use or tournament-level performance, 115 to 150 Pro XS. Pair with a 9.9 ProKicker for trolling.
 
 **Should I get Command Thrust on a fishing boat?**
-On heavier deep-V aluminum hulls (18+ ft), Command Thrust gives meaningful hole shot and load-carrying improvement. On lighter standard-V hulls under 18 ft, the standard gearcase is fine. We assess this per boat.
-
-**Is Mercury 9.9 ProKicker worth the price over a regular 9.9?**
-Yes for fishing applications. The ProKicker has a high-thrust gearcase, larger prop, longer shaft for big transoms, and integrated tiller mount. The standard 9.9 is for general use. ProKicker is the purpose-built fishing kicker.
+On heavier deep-V aluminum hulls 18 feet and up, Command Thrust gives meaningful hole-shot and load-carrying improvement. On lighter standard-V hulls under 18 feet, the standard gearcase is fine. We assess this per boat.
 
 **Can I use a kicker as my main motor?**
-On very small aluminum boats (12 to 14 ft), yes. A 9.9 or 15 can be the only motor on a small fishing boat. On 16 ft and bigger, you need a real main motor and the kicker is the auxiliary.
-
-**What is the cost to repower my aluminum fishing boat?**
-Depends on HP. A 25 to 60 HP repower lands $11,000 to $15,000 CAD all-in. A 90 to 115 HP repower lands $17,000 to $22,000 CAD. Add a kicker if needed. See our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for full HP class ranges and [build a quote](/quote/motor-selection) for your specific boat.
-
-**Should I keep my old controls and rigging on a Mercury repower?**
-Mercury-to-Mercury usually keeps existing controls if they are post-2010 and in good condition. Older mechanical Mercury controls often need replacement. Brand conversions (Evinrude, Yamaha to Mercury) need new everything. We assess during the hull walk-around.
-
-**What is the most popular Mercury for fishing boats?**
-The 9.9 ProKicker is the most-installed Mercury kicker in Canada. The 90 EXLPT and 115 EXLPT FourStroke are the most common main motors on 16 to 18 ft aluminum console boats. The combination is the standard Kawartha fishing setup.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)`,
+On small aluminum boats (12–14 ft), yes, a 9.9 or 15 HP can be the only motor. On 16 ft and bigger, you need a proper main motor; the kicker is the auxiliary.`,
     faqs: [
       {
         question: 'What\'s the minimum HP I should get for my aluminum boat?',
