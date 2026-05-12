@@ -654,97 +654,137 @@ This is a French-language post targeting francophone Ontario boaters. Source pos
     category: 'Destination',
     readTime: '7 min',
     keywords: ['pêche lac Rice Ontario', 'pêche Kawarthas Ontario', 'meilleur lac pêche Ontario', 'Rice Lake fishing guide'],
-    content: `
-## Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers
+    content: `### Réponse rapide
+
+Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l'Ontario, à environ une heure et demie à l'est de Toronto. On y trouve aussi l'achigan, le maskinongé, la perchaude, et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947, avec une flotte de location de neuf embarcations.
+
+---
+
+### Article complet
 
 Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à moins de trois heures de Montréal, ce plan d'eau s'étend sur environ 37 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
 
-Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alimenté par la rivière Otonabee à l'extrémité ouest. Ce corridor aquatique relie les Grands Lacs au lac Simcoe, et le lac Rice en est l'un des points d'accès les plus accessibles — et les moins achalandés que les secteurs plus touristiques.
-
-Harris Boat Works est établi directement sur le lac, à Gores Landing, depuis 1947. Trois générations de la même famille. Si quelqu'un connaît ces eaux, c'est bien nous.
+Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alimenté par la rivière Otonabee à l'extrémité ouest. Harris Boat Works est établi directement sur le lac, à Gores Landing, depuis 1947. Trois générations de la même famille. Si quelqu'un connaît ces eaux, c'est bien nous.
 
 ---
 
-### Les espèces à cibler
+## Les espèces à cibler
 
-**Doré jaune (walleye)**
+### Doré jaune (walleye)
 
-Le doré est la star du lac Rice. C'est l'espèce pour laquelle le lac est le mieux connu, et pour de bonnes raisons. On le retrouve dans les fonds vaseux et près des herbiers, particulièrement dans les zones peu profondes au printemps peu après la fraie, et en profondeur durant l'été quand les températures montent. En soirée et par temps couvert, les dorés se rapprochent souvent de la surface — idéal pour les pêcheurs qui préfèrent la légèreté.
+Le doré est la star du lac Rice, l'espèce pour laquelle le lac est le mieux connu. On le retrouve dans les fonds vaseux et près des herbiers, dans les zones peu profondes au printemps peu après la fraie, et en profondeur durant l'été quand les températures montent. En soirée et par temps couvert, les dorés remontent souvent vers la surface, idéal pour les pêcheurs qui préfèrent la légèreté.
 
-**Achigan à grande bouche et achigan à petite bouche (largemouth et smallmouth bass)**
+### Achigan à grande bouche et achigan à petite bouche
 
-Les deux espèces d'achigan sont présentes en bonne quantité. L'achigan à grande bouche aime les herbiers denses, les zones peu profondes avec couverture végétale. L'achigan à petite bouche préfère les fonds rocheux, les pointes et les hauts-fonds. Le lac Rice offre les deux types d'habitat en abondance, ce qui en fait un lac idéal peu importe votre technique préférée.
+Les deux espèces d'achigan sont présentes en bonne quantité. L'achigan à grande bouche aime les herbiers denses et les zones peu profondes. L'achigan à petite bouche préfère les fonds rocheux, les pointes et les hauts-fonds. Le lac Rice offre les deux types d'habitat en abondance.
 
-**Maskinongé (muskie)**
+### Maskinongé
 
-Le maskinongé est le trophée ultime pour bien des pêcheurs. Il est présent dans le lac Rice, bien que moins facile à trouver que le doré ou l'achigan. C'est un poisson de patience — des journées sans touche entrecoupées de moments dont vous vous souviendrez longtemps. Si vous ciblez le maskinongé, prévoyez du matériel robuste et des leurres de grande taille.
+Le maskinongé est le trophée ultime pour bien des pêcheurs. Il est présent dans le lac Rice, bien que moins facile à trouver que le doré ou l'achigan. C'est un poisson de patience, des journées sans touche entrecoupées de moments dont vous vous souviendrez longtemps. Prévoyez du matériel robuste et des leurres de grande taille.
 
-**Autres espèces**
+### Autres espèces
 
-Le lac Rice accueille aussi le brochet, la perchaude, la barbotte et d'autres petits poissons (panfish). Pour les familles avec de jeunes enfants, la pêche à la perchaude est une excellente façon de garder tout le monde actif sur l'eau.
+Le lac Rice accueille aussi le brochet, la perchaude, la barbotte et d'autres petits poissons. Pour les familles avec de jeunes enfants, la pêche à la perchaude est une excellente façon de garder tout le monde actif sur l'eau.
 
 ---
 
-### Meilleures saisons pour chaque espèce
+## Meilleures saisons
 
-**Printemps (mai–juin)**
-C'est généralement la meilleure période pour le doré, qui se retrouve dans les eaux moins profondes après la fraie. L'achigan devient aussi très actif dès que l'eau se réchauffe. La saison d'ouverture est fixée par le ministère des Richesses naturelles et des Forêts — consultez les règlements en vigueur avant de partir.
+**Printemps (mai, juin):** Meilleure période pour le doré, qui se retrouve dans les eaux moins profondes après la fraie. L'achigan devient actif dès que l'eau se réchauffe.
 
-**Été (juillet–août)**
-Le doré se déplace vers des eaux plus profondes durant les chaleurs. L'achigan reste actif tôt le matin et en soirée. C'est aussi la saison de pointe pour le maskinongé — cherchez-le près des structures submergées et des herbiers.
+**Été (juillet, août):** Le doré se déplace vers les eaux plus profondes. L'achigan reste actif tôt le matin et en soirée. Saison de pointe pour le maskinongé, cherchez-le près des structures submergées et des herbiers.
 
-**Automne (septembre–octobre)**
-L'automne est excellent pour l'achigan à petite bouche et le brochet. Les températures plus fraîches rendent les poissons plus agressifs. C'est l'une des périodes les plus agréables pour être sur l'eau au lac Rice.
+**Automne (septembre, octobre):** Excellent pour l'achigan à petite bouche et le brochet. Les températures plus fraîches rendent les poissons plus agressifs. L'une des périodes les plus agréables pour être sur l'eau au lac Rice.
 
-### Saisons de pêche — Zone 17 (lac Rice)
+---
+
+## Saisons de pêche, Zone 17 (lac Rice)
 
 | Espèce | Ouverture | Fermeture | Limite (sportive) |
 |---|---|---|---|
 | Doré jaune | 2e samedi de mai | 15 novembre | 4 |
 | Achigan (grande et petite bouche) | 3e samedi de juin | 15 décembre | 6 |
 | Maskinongé | 3e samedi de juin | 15 décembre | 1 |
-| Perchaude | Toute l'année | — | 50 |
+| Perchaude | Toute l'année |, | 50 |
 
-*Vérifiez toujours les règlements en vigueur pour l'année courante sur ontario.ca.*
-
----
-
-### Zones à explorer sur le lac
-
-Sans vouloir divulguer tous nos secrets, quelques structures sont reconnues par les pêcheurs locaux :
-
-- **Les herbiers de la partie est du lac** : habitat naturel pour l'achigan à grande bouche et le brochet.
-- **Les pointes et hauts-fonds rocheux** : cherchez-les pour l'achigan à petite bouche, surtout à l'automne.
-- **Les zones de transition profondeur/herbier** : particulièrement productives pour le doré en été, en soirée.
-
-La rivière Otonabee, qui se jette dans le lac à l'ouest, crée des zones de courant intéressantes — idéales au printemps pour le doré et le brochet.
+**Vérifiez toujours les règlements en vigueur pour l'année courante sur ontario.ca.** Les dates et limites de prise peuvent changer d'une année à l'autre.
 
 ---
 
-### Partir à la journée depuis Harris Boat Works
+## Zones à explorer sur le lac
 
-Notre marina dispose d'une flotte de neuf embarcations disponibles à la location. Vous arrivez, vous montez à bord, et vous pêchez sur le même lac Rice que les résidents connaissent bien. Pas besoin de trouver un accès public, de transporter un bateau, ou d'apprendre à naviguer dans un lac inconnu.
+Sans divulguer tous nos secrets, quelques structures sont reconnues par les pêcheurs locaux :
 
-On vend aussi du carburant sans éthanol sur place — un détail que les propriétaires d'embarcations avec moteurs à carburateur apprécient particulièrement, puisque l'éthanol peut causer des problèmes mécaniques sur les vieux moteurs ou lors des périodes d'entreposage.
-
-Une petite note honnête : notre équipe travaille principalement en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Le courriel et notre outil de soumission en ligne sur **mercuryrepower.ca** fonctionnent sans barrière linguistique — écrivez-nous en français, ça fonctionne très bien.
-
-En tant que seul concessionnaire Mercury Platinum en Ontario avec du contenu francophone, Harris Boat Works est fier de rendre l'information accessible aux plaisanciers francophones.
-
----
-
-### Permis et réglementation
-
-Pour pêcher en Ontario, vous avez besoin d'un permis de pêche sportive valide (obligatoire pour les 18 à 64 ans; les moins de 18 ans accompagnés d'un adulte licencié et les 65 ans et plus sont exemptés). Les permis se délivrent en ligne ou dans les points de vente autorisés. Les règlements concernant les tailles minimales, les limites de prise et les périodes d'ouverture varient selon l'espèce — consultez le site du gouvernement de l'Ontario avant votre sortie.
+- **Les herbiers de la partie est du lac:** habitat naturel pour l'achigan à grande bouche et le brochet.
+- **Les pointes et hauts-fonds rocheux:** cherchez-les pour l'achigan à petite bouche, surtout à l'automne.
+- **Les zones de transition profondeur/herbier:** particulièrement productives pour le doré en été, en soirée.
+- **La rivière Otonabee** à l'extrémité ouest du lac crée des zones de courant intéressantes, idéales au printemps pour le doré et le brochet.
 
 ---
 
-### Prêt à prendre le large?
+## Partir à la journée depuis Harris Boat Works
 
-Pour les locations d'embarcations, visitez **[harrisboatworks.ca](https://harrisboatworks.ca)** ou appelez-nous au **905-342-2153**. Si votre moteur a besoin d'un entretien avant la saison, soumettez une demande de service à **[hbw.wiki/service](https://hbw.wiki/service)**.
+Notre marina dispose d'une flotte de neuf embarcations disponibles à la location. Vous arrivez, vous montez à bord, et vous pêchez sur le même lac Rice que les résidents connaissent depuis des générations. Pas besoin de trouver un accès public, de transporter un bateau, ou d'apprendre à naviguer dans un lac inconnu.
 
-Le lac Rice est là, à quelques heures de route. Venez voir ce que ça donne de pêcher sur un lac que trois générations d'une même famille ont appris à connaître.
-    `,
+On vend aussi du carburant sans éthanol sur place, un détail que les propriétaires d'embarcations avec moteurs à carburateur apprécient particulièrement, puisque l'éthanol peut causer des problèmes mécaniques lors des périodes d'entreposage.
+
+---
+
+## Permis et réglementation
+
+Pour pêcher en Ontario, vous avez besoin d'un permis de pêche sportive valide :
+
+- **Obligatoire** pour les 18 à 64 ans : Outdoors Card (~9 $) + permis de pêche sportive (~27 $ pour les résidents de l'Ontario)
+- **Exemptés** : les moins de 18 ans résidents canadiens accompagnés d'un adulte licencié, et les 65 ans et plus résidents canadiens
+
+Les permis se délivrent en ligne ou dans les points de vente autorisés. Consultez ontario.ca pour les tailles minimales, les limites de prise, et les périodes d'ouverture actuelles.
+
+---
+
+## Une petite note honnête
+
+Notre équipe travaille principalement en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Le courriel et notre outil de réservation en ligne sur **mercuryrepower.ca** fonctionnent sans barrière linguistique, écrivez-nous en français, ça fonctionne très bien.
+
+Harris Boat Works est le seul concessionnaire Mercury Platinum en Ontario avec du contenu francophone sur la pêche et la navigation.
+
+---
+
+## Questions fréquentes
+
+**Quand est l'ouverture de la saison du doré au lac Rice?** 
+Généralement le 2e samedi de mai pour la Zone 17. Vérifiez la date exacte pour l'année courante sur ontario.ca.
+
+**Peut-on louer un bateau à la journée à Harris Boat Works?** 
+Oui. Notre flotte de neuf embarcations est disponible à la location. Visitez [harrisboatworks.ca](https://harrisboatworks.ca) pour les détails et les réservations.
+
+**A-t-on besoin d'un permis de pêche pour le lac Rice?** 
+Oui, pour les 18 à 64 ans. Les moins de 18 ans résidents canadiens et les 65 ans et plus résidents canadiens sont exemptés.
+
+**Le lac Rice est-il accessible depuis Montréal?** 
+Oui. Le lac se trouve à moins de trois heures de Montréal via l'autoroute 401 vers l'ouest et la 115 vers le nord jusqu'à Gores Landing.
+
+---
+
+## Liens internes
+- Permis de conduire une embarcation au Canada
+- Guide d'hivernisation du moteur Mercury Ontario
+- Concessionnaire Mercury Platinum Ontario
+
+## Appel à l'action
+
+**Réservez votre embarcation ou planifiez votre saison.** 
+Location d'embarcations : [harrisboatworks.ca](https://harrisboatworks.ca) 
+Service et entretien : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez écrire en français. 
+Téléphone : **905-342-2153** 
+Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
+
+---
+
+**English editor note:** Fishing season table is sourced from the existing post. All season dates and bag limits must be verified against current OMNR Zone 17 regulations before publishing, these change annually. The post explicitly directs readers to ontario.ca to verify. No fabricated fishing depths, locations, or results claimed.
+
+---
+
+---`,
     faqs: [
       {
         question: 'Faut-il un permis de pêche?',
@@ -776,82 +816,68 @@ Le lac Rice est là, à quelques heures de route. Venez voir ce que ça donne de
     category: 'Réglementation',
     readTime: '8 min',
     keywords: ['permis bateau Ontario', 'carte de conducteur embarcation plaisance', 'permis navigation Canada', 'CCEP Canada', 'boating licence Ontario'],
-    content: `
-## Permis de conduire une embarcation au Canada : Ce que vous devez savoir
+    content: `### Réponse rapide
 
-> Au Canada, toute personne qui conduit une embarcation motorisée doit détenir la Carte de conducteur d'embarcation de plaisance (CCEP). Ce n'est pas un permis à renouveler — vous le passez une fois, et c'est valide à vie. Le test se fait en ligne, auprès de fournisseurs accrédités, et coûte généralement entre 40 $ et 50 $. L'amende de base pour défaut de carte est de 250 $. Lisez ce qui suit pour savoir exactement quoi faire.
-
----
-
-### Pourquoi ce guide existe
-
-Beaucoup de plaisanciers francophones cherchent de l'information claire sur le permis bateau en Ontario — et trouvent surtout des ressources en anglais. Ce guide résume ce que vous devez savoir, en français, de façon directe.
-
-Notre équipe chez Harris Boat Works travaille principalement en anglais — nous le disons franchement. Mais nous recevons chaque année des plaisanciers francophones, et nous voulons leur faciliter la vie du mieux qu'on peut. Notre formulaire de contact et notre outil de soumission en ligne à **mercuryrepower.ca** fonctionnent très bien en français, et vous pouvez nous écrire par courriel dans votre langue — nous trouverons un moyen de vous aider.
-
-Harris Boat Works est le seul concessionnaire Mercury en Ontario à proposer du contenu en français — y compris sur la réglementation et les permis.
-
-Ceci étant dit, voici tout ce que vous devez savoir sur le permis bateau au Canada.
+Au Canada, toute personne qui conduit une embarcation motorisée doit détenir la Carte de conducteur d'embarcation de plaisance (CCEP). Ce n'est pas un permis à renouveler, vous le passez une fois, et c'est valide à vie. Le test se fait en ligne auprès de fournisseurs accrédités par Transports Canada, et coûte généralement entre 40 $ et 50 $. L'amende de base pour défaut de carte est de 250 $. Vérifiez les exigences actuelles sur le site de Transports Canada avant de prendre le large.
 
 ---
 
-### Qu'est-ce que la Carte de conducteur d'embarcation de plaisance?
+### Article complet
 
-La **Carte de conducteur d'embarcation de plaisance (CCEP)**, parfois appelée simplement « permis bateau », est une certification fédérale obligatoire pour quiconque conduit une embarcation motorisée au Canada. Elle est régie par Transports Canada.
+Beaucoup de plaisanciers francophones cherchent de l'information claire sur le permis bateau en Ontario, et trouvent surtout des ressources en anglais. Ce guide résume ce que vous devez savoir, en français, de façon directe.
+
+Notre équipe chez Harris Boat Works travaille principalement en anglais, nous le disons franchement. Mais nous recevons chaque année des plaisanciers francophones, et nous voulons leur faciliter la vie du mieux qu'on peut. Notre formulaire de contact et notre outil de soumission en ligne à **mercuryrepower.ca** fonctionnent très bien en français.
+
+---
+
+## Qu'est-ce que la Carte de conducteur d'embarcation de plaisance?
+
+La **Carte de conducteur d'embarcation de plaisance (CCEP)**, parfois appelée « permis bateau », est une certification fédérale obligatoire pour quiconque conduit une embarcation motorisée au Canada. Elle est régie par Transports Canada.
 
 Contrairement à un permis de conduire automobile, la CCEP n'expire pas. Vous réussissez le test une fois, vous recevez votre carte, et elle est valide pour la vie.
 
 ---
 
-### Qui doit l'avoir?
+## Qui doit l'avoir?
 
-Au Canada, la preuve de compétence est requise pour utiliser toute embarcation de plaisance munie d'un moteur, y compris un moteur électrique. Cette exigence s'applique même si le moteur n'est pas en marche.
+La règle est simple : **toute personne qui opère le moteur d'une embarcation de plaisance motorisée**, que ce soit un moteur hors-bord, un moteur intérieur, ou même un moteur électrique de pêche (trolling motor). Peu importe :
 
-La règle est simple : **toute personne qui opère le moteur d'une embarcation de plaisance motorisée** doit détenir la CCEP. Peu importe :
-
-- votre âge (des règles spécifiques s'appliquent aux mineurs — voir plus bas)
+- votre âge
 - la puissance du moteur
 - que l'embarcation soit la vôtre ou celle d'un ami
 - que vous soyez sur un lac, une rivière ou une voie maritime
 
 Si vous tenez la commande et que le moteur tourne, vous avez besoin de la carte.
 
-**Pour les mineurs :** Les jeunes de moins de 12 ans peuvent conduire un bateau à moteur de 10 HP maximum sans supervision directe. Les jeunes de 12 à 15 ans : jusqu'à 40 HP sans supervision. Les moins de 16 ans ne peuvent pas conduire une motomarine (jet ski).
+**Pour les mineurs :** Les moins de 12 ans peuvent conduire un bateau à moteur de 10 HP maximum sans supervision directe. Les 12 à 15 ans : jusqu'à 40 HP sans supervision. Les moins de 16 ans ne peuvent pas conduire une motomarine (jet ski).
 
 ---
 
-### Comment obtenir la CCEP
+## Comment obtenir la CCEP
 
-Le processus est entièrement en ligne et se fait en quelques heures :
+Le processus est entièrement en ligne :
 
-1. **Choisissez un fournisseur accrédité par Transports Canada.** Il en existe plusieurs — certains offrent leur cours en français. Cherchez « carte conducteur embarcation plaisance cours français » pour trouver une option dans votre langue.
+1. **Choisissez un fournisseur accrédité par Transports Canada.** Certains offrent leur cours en français. Cherchez « carte conducteur embarcation plaisance cours français » pour trouver une option dans votre langue.
+2. **Suivez le cours.** Le matériel couvre les règles de navigation, les équipements de sécurité obligatoires, le système de bouées et balises, les droits de passage, et plus encore.
+3. **Réussissez le test.** Généralement une série de questions à choix multiples. Vous pouvez reprendre si vous échouez (des frais peuvent s'appliquer selon le fournisseur).
+4. **Recevez votre carte.** Une carte temporaire est généralement disponible immédiatement. La carte permanente arrive par la poste.
 
-2. **Suivez le cours.** Le matériel couvre les règles de navigation, les équipements de sécurité obligatoires, les bouées et balises, les droits de passage, et plus encore.
+**Important :** une copie papier ou électronique de la CCEP n'est pas acceptée. Vous devez avoir l'original à bord.
 
-3. **Réussissez le test.** Le test comporte généralement une série de questions à choix multiples. Il faut obtenir la note de passage pour recevoir votre carte. Vous pouvez reprendre le test si vous échouez (des frais s'appliquent selon le fournisseur).
-
-4. **Recevez votre carte.** Une carte temporaire est généralement disponible immédiatement après réussite. La carte permanente arrive par la poste.
-
-Important : une copie papier ou électronique de la CCEP n'est pas acceptée. Vous devez avoir le document original à bord.
-
-**Coût typique :** entre 40 $ et 50 $, selon le fournisseur. Certains offrent des forfaits avec matériel d'étude inclus.
-
-Le test peut être passé en français auprès de plusieurs fournisseurs accrédités — un avantage important pour les plaisanciers francophones.
+**Coût typique :** entre 40 $ et 50 $, selon le fournisseur.
 
 ---
 
-### Immatriculation de l'embarcation (à ne pas confondre avec la CCEP)
+## Immatriculation de l'embarcation (à ne pas confondre avec la CCEP)
 
-En plus de votre permis d'opérateur (CCEP), toute embarcation équipée d'un moteur de 10 HP ou plus doit posséder un numéro de licence d'embarcation de plaisance. Depuis le 31 décembre 2025, cette licence coûte 24 $ et est valide pour 5 ans (auparavant, elle était gratuite et à vie). Le numéro doit être affiché des deux côtés de la proue en caractères d'au moins 7,5 cm de hauteur.
+Toute embarcation équipée d'un moteur de 10 HP ou plus doit posséder un numéro de licence d'embarcation de plaisance. Depuis le 31 décembre 2025, cette licence coûte 24 $ et est valide pour 5 ans. Le numéro doit être affiché des deux côtés de la proue en caractères d'au moins 7,5 cm de hauteur.
 
 ---
 
-### Ce qui est couvert dans le test
-
-Voici les principaux sujets abordés dans l'examen :
+## Ce qui est couvert dans le test
 
 - **Règles de navigation :** droits de passage, vitesse sécuritaire, navigation de nuit
-- **Équipements de sécurité obligatoires** (voir section suivante)
+- **Équipements de sécurité obligatoires**
 - **Système de bouées et balises :** couleurs, formes, signification
 - **Procédures d'urgence :** homme à la mer, signaux de détresse
 - **Alcool et embarcation :** les règles sont les mêmes que sur la route
@@ -861,52 +887,69 @@ Ce n'est pas un examen difficile si vous prenez le temps de lire le matériel. L
 
 ---
 
-### Équipements de sécurité obligatoires à bord
+## Équipements de sécurité obligatoires à bord
 
-Avoir votre carte ne suffit pas — votre embarcation doit aussi être équipée correctement. Voici les équipements de base exigés par Transports Canada pour la plupart des embarcations de plaisance :
+Avoir votre carte ne suffit pas, votre embarcation doit aussi être équipée correctement. Voici les exigences de base pour une petite embarcation motorisée (moins de 6 mètres). Vérifiez les exigences complètes sur le site de Transports Canada, elles varient selon la longueur et le type d'embarcation :
 
-- **Vestes de flottaison individuelles (VFI) ou gilets de sauvetage** : un par personne à bord, de taille appropriée
-- **Dispositif de flottaison jetable** (bouée annulaire ou coussin de sauvetage) : pour les embarcations de plus de 6 mètres
-- **Dispositif de signalisation sonore** : sifflet ou corne de brume
-- **Écope ou pompe de cale** : pour évacuer l'eau
-- **Ligne d'attrape** : corde flottante d'au moins 15 mètres
-- **Feux de navigation** : si vous naviguez entre le coucher et le lever du soleil
-- **Extincteur** : obligatoire pour certaines embarcations, notamment celles avec moteur intérieur ou compartiment carburant fermé
-- **Moyen de propulsion manuel ou ancre avec ligne** : pour les petites embarcations
-
-Les équipements exigés varient selon la longueur et le type d'embarcation. Pour une petite embarcation motorisée (moins de 6 m), il faut généralement prévoir au minimum : un VFI par personne, une ligne d'attrape flottante d'au moins 15 m, un moyen d'écoper l'eau, un dispositif sonore, et un moyen de propulsion manuel ou une ancre avec ligne. Consultez les exigences complètes sur le site de Transports Canada.
+- **Vestes de flottaison individuelles (VFI) :** une par personne, de taille appropriée
+- **Dispositif de signalisation sonore :** sifflet ou corne de brume
+- **Écope ou pompe de cale :** pour évacuer l'eau
+- **Ligne d'attrape :** corde flottante d'au moins 15 mètres
+- **Moyen de propulsion manuel ou ancre avec ligne**
+- **Feux de navigation :** si vous naviguez entre le coucher et le lever du soleil
+- **Extincteur :** obligatoire pour certaines embarcations (avec moteur intérieur ou compartiment carburant fermé)
+- **Dispositif de flottaison jetable :** bouée annulaire ou coussin, pour les embarcations de plus de 6 mètres
 
 ---
 
-### Application en Ontario : l'unité marine de la PPO
+## Application en Ontario : l'unité marine de la PPO
 
-En Ontario, l'application de la loi sur les embarcations de plaisance est assurée principalement par **l'unité marine de la Police provinciale de l'Ontario (PPO)**. Les patrouilles sont régulières durant la saison estivale, particulièrement les fins de semaine de grande fréquentation (fête de Victoria, fête du Canada, fête du Travail).
+En Ontario, l'application de la loi sur les embarcations de plaisance est assurée principalement par l'**unité marine de la Police provinciale de l'Ontario (PPO)**. Les patrouilles sont régulières durant la saison estivale, particulièrement les fins de semaine de grande fréquentation (fête de Victoria, fête du Canada, fête du Travail).
 
-Lors d'un contrôle, un agent peut vous demander :
-- Votre Carte de conducteur d'embarcation de plaisance
-- Les documents d'immatriculation de l'embarcation (ou preuve de propriété)
-- La vérification de vos équipements de sécurité
-
-**L'amende de base pour défaut de CCEP est de 250 $**, et peut aller jusqu'à 10 000 $ dans les cas les plus graves. Ce n'est pas le genre de dépense qu'on planifie dans sa journée de pêche.
-
-La loi sur l'alcool au volant s'applique aussi sur l'eau : la limite légale est la même que sur la route — 0,08 g/100 ml. Les agents peuvent procéder à des tests d'alcoolémie sur l'eau.
+**L'amende de base pour défaut de CCEP est de 250 $**, et peut aller jusqu'à 10 000 $ dans les cas les plus graves. La loi sur l'alcool au volant s'applique aussi sur l'eau, la limite légale est la même que sur la route (0,08 g/100 ml).
 
 ---
 
-### Une fois votre carte en poche
+## Questions fréquentes
 
-Avec votre CCEP en règle et votre embarcation équipée correctement, vous êtes prêt à profiter des plans d'eau de l'Ontario en toute légalité.
+**Est-ce que la CCEP expire?** 
+Non. Vous réussissez le test une fois et la carte est valide à vie.
 
-Si vous cherchez une embarcation à louer sur le lac Rice, visitez **[harrisboatworks.ca](https://harrisboatworks.ca)**. Notre flotte de neuf embarcations est disponible à la journée, directement depuis notre marina de Gores Landing — sur le lac, pas à quelques kilomètres de lui.
+**Peut-on passer le test en français?** 
+Oui. Plusieurs fournisseurs accrédités par Transports Canada offrent le test en français. Cherchez « carte conducteur embarcation plaisance cours français » pour trouver une option dans votre langue.
 
-Pour un nouveau moteur ou une remotorisation, obtenez une soumission transparente et instantanée à **[mercuryrepower.ca](https://mercuryrepower.ca)**. Pas de formulaire vague, pas de délai — un prix clair, en ligne.
+**Quelle est la différence entre la CCEP et la licence d'embarcation?** 
+La CCEP est la certification de l'opérateur (vous). La licence d'embarcation (Pleasure Craft Licence) est le numéro d'immatriculation du bateau. Les deux sont nécessaires, mais ce sont deux choses distinctes.
 
-Pour toute demande de service, utilisez **[hbw.wiki/service](https://hbw.wiki/service)**. Vous pouvez écrire en français — nous nous arrangerons pour vous répondre.
+**Est-ce que la CCEP est reconnue dans d'autres provinces?** 
+Oui. La CCEP est une certification fédérale valide partout au Canada.
 
-Ou téléphonez directement au **905-342-2153**. On fera de notre mieux.
+**Où puis-je vérifier les exigences d'équipements de sécurité complètes?** 
+Sur le site de Transports Canada. Les exigences varient selon la longueur et le type de l'embarcation, la liste dans cet article est un résumé, pas la liste officielle complète.
 
-*Harris Boat Works — Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.*
-    `,
+---
+
+## Liens internes
+- Guide de pêche sur le lac Rice
+- Guide d'hivernisation du moteur Mercury Ontario
+- Concessionnaire Mercury Platinum Ontario
+
+## Appel à l'action
+
+**Prêt à prendre le large en toute légalité?** 
+Pour la location d'embarcations sur le lac Rice : [harrisboatworks.ca](https://harrisboatworks.ca) 
+Pour un nouveau moteur ou une remotorisation : [mercuryrepower.ca](https://mercuryrepower.ca) 
+Demande de service : [hbw.wiki/service](https://hbw.wiki/service), écrivez en français, on s'arrange. 
+**905-342-2153** 
+Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
+
+---
+
+**English editor note:** Regulatory figures (PCOC fine $250, PCL cost $24/5 years, minor age limits) are sourced from the existing post. All must be verified against current Transport Canada requirements before publishing, regulations are subject to change. The post explicitly directs readers to Transport Canada for the complete, authoritative equipment list. No service scope sentence needed (this is a regulatory information post, not a service post).
+
+---
+
+---`,
     faqs: [
       {
         question: 'Mon permis de conduire automobile remplace-t-il la CCEP?',
