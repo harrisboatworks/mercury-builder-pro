@@ -19482,6 +19482,31 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ## Quick answer
 There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://mercuryrepower.ca).
 
+::decision-card
+heading: What helps or hurts your trade-in value?
+eyebrow: Honest appraisal factors
+subhead: Two things matter most. The condition of your motor, and how easy it is for us to resell.
+leftLabel: What helps your value
+leftCriteria:
+  - Service history with receipts (impeller, lower unit, plugs, oil)
+  - Original cowl in good shape, no major dings or fade
+  - Compression test within 10 percent across cylinders
+  - Runs and shifts cleanly with no smoke or alarms
+  - Current model line (last 5 years of Mercury or major OEM)
+leftOutcome: Top end of our offer range
+leftVariant: recommended
+rightLabel: What hurts your value
+rightCriteria:
+  - No service records and unclear maintenance history
+  - Saltwater use or visible corrosion on powerhead or lower unit
+  - Compression imbalance across cylinders
+  - Smokes, runs rough, or has stored alarm codes
+  - Discontinued model line (15 plus years old, parts hard to source)
+rightOutcome: Bottom of range or sell privately instead
+rightVariant: alternative
+whenInDoubt: Bring it in for a free 30 minute appraisal. We will be honest about both numbers, what we would pay and what a private sale would likely net you.
+::
+
 ## The first question in every repower conversation
 
 "What about my old motor?"
