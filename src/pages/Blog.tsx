@@ -4,6 +4,7 @@ import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogIndexSEO } from '@/components/seo/BlogIndexSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogSubscribeForm } from '@/components/blog/BlogSubscribeForm';
+import { MultilingualHub } from '@/components/blog/MultilingualHub';
 import { getPublishedArticles } from '@/data/blogArticles';
 
 export default function Blog() {
@@ -36,6 +37,8 @@ export default function Blog() {
           </p>
           <div className="mt-10 h-px w-16 bg-repower-navy-900/15 mx-auto" />
         </header>
+
+        <MultilingualHub />
 
         <div className="max-w-[1100px] mx-auto">
           {/* Featured Article */}
