@@ -89,7 +89,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "inLanguage": "en-CA",
         "speakable": {
           "@type": "SpeakableSpecification",
-          "cssSelector": [".article-intro", ".faq-answer", "h1", "h2"]
+          "cssSelector": ["[data-speakable=\"true\"]", ".article-intro", ".faq-answer", "h1", "h2"]
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
