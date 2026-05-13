@@ -367,7 +367,7 @@ export default function MotorPage() {
                 The Mercury 9.9 FourStroke is the most popular small outboard for Ontario tin boats, cottage tenders,
                 and second-motor / kicker setups on Rice Lake and the Kawarthas. Quiet, EFI-equipped, fuel-efficient,
                 and easy to lift on and off the transom. Live CAD pricing online, real Ontario stock, pickup only at
-                our Gores Landing shop on Rice Lake, Family marina on Rice Lake since 1947.
+                our Gores Landing shop on Rice Lake, Mercury dealer since 1965.
               </p>
             )}
             {hp === 60 && (display.toLowerCase().includes('command thrust') || (motor.model_display || '').toLowerCase().includes('command thrust')) && (

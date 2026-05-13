@@ -46,7 +46,7 @@ Harris Boat Works has been Rice Lake’s Mercury repower specialist for three ge
 
 ### Is Harris Boat Works on Rice Lake?
 
-Yes. We are at 5369 Harris Boat Works Rd, Gores Landing, ON, on the south shore of Rice Lake, the closest Mercury Marine Platinum Dealer to the lake, family-owned since 1947 and an authorized Family marina on Rice Lake since 1947.
+Yes. We are at 5369 Harris Boat Works Rd, Gores Landing, ON, on the south shore of Rice Lake, the closest Mercury Marine Platinum Dealer to the lake, family-owned since 1947 and an authorized Mercury dealer since 1965.
 
 ### Can I get a Mercury repower quote in CAD before driving here?
 

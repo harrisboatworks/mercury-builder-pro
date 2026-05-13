@@ -55,7 +55,7 @@ export function QuoteSummaryPageSEO() {
       <title>Your Mercury Outboard Quote Estimate | Harris Boat Works</title>
       <meta
         name="description"
-        content="Review your itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and current promotions. Harris Boat Works, Family marina on Rice Lake since 1947."
+        content="Review your itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and current promotions. Harris Boat Works, Mercury dealer since 1965."
       />
       <link rel="canonical" href={`${SITE_URL}/quote/summary`} />
 

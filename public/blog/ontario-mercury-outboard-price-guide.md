@@ -241,7 +241,7 @@ Mercury's certification levels for dealers are: **Bronze, Silver, Gold, Platinum
 
 For pricing on the motor itself, Platinum and Bronze dealers are generally similar (Mercury Canada sets MSRP, dealers compete on discount). For everything *after* the motor, Platinum makes a real difference: warranty work, complex diagnostic, repower expertise, parts availability, and the ability to handle unusual configurations without sending your boat somewhere else.
 
-Harris Boat Works has been on Rice Lake since 1947, a Family marina on Rice Lake since 1947, and a Mercury Platinum dealer for over a decade. We're the dealer GTA buyers drive 90 minutes to reach, partly because of the pricing transparency and partly because of what comes after the sale.
+Harris Boat Works has been on Rice Lake since 1947, a Mercury dealer since 1965, and a Mercury Platinum dealer for over a decade. We're the dealer GTA buyers drive 90 minutes to reach, partly because of the pricing transparency and partly because of what comes after the sale.
 
 ---
 
@@ -304,7 +304,7 @@ Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no si
 
 ---
 
-*Harris Boat Works is a third-generation family marina in Gores Landing, ON, on Rice Lake. On the lake since 1947. Family marina on Rice Lake since 1947. Mercury Marine Platinum dealer. Legend Boats dealer. Pickup only at 5369 Harris Boat Works Rd. We do not ship outboards and we do not deliver. Final out-the-door price is always confirmed by Harris Boat Works staff.*
+*Harris Boat Works is a third-generation family marina in Gores Landing, ON, on Rice Lake. On the lake since 1947. Mercury dealer since 1965. Mercury Marine Platinum dealer. Legend Boats dealer. Pickup only at 5369 Harris Boat Works Rd. We do not ship outboards and we do not deliver. Final out-the-door price is always confirmed by Harris Boat Works staff.*
 
 **Phone:** (905) 342-2153
 **Email:** info@harrisboatworks.ca

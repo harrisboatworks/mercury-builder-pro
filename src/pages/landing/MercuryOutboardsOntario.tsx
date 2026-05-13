@@ -82,7 +82,7 @@ const LINEUP = [
 const TRUST = [
   { icon: Award, label: 'Mercury Platinum Dealer' },
   { icon: Calendar, label: 'Family-owned since 1947' },
-  { icon: Anchor, label: 'Family marina on Rice Lake since 1947' },
+  { icon: Anchor, label: 'Mercury dealer since 1965' },
   { icon: MapPin, label: 'Rice Lake, Gores Landing' },
 ];
 
@@ -120,7 +120,7 @@ export default function MercuryOutboardsOntario() {
             Mercury Outboards in Ontario
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            The full Mercury Marine outboard lineup at Harris Boat Works, Platinum Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Family marina on Rice Lake since 1947.
+            The full Mercury Marine outboard lineup at Harris Boat Works, Platinum Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">

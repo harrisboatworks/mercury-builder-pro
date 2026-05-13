@@ -17,7 +17,7 @@ import { Anchor, Phone, Award, MapPin, Calendar, Wrench } from 'lucide-react';
 const TRUST_ROW = [
   { icon: Award, label: 'Mercury Platinum Dealer' },
   { icon: Calendar, label: 'Family-owned since 1947' },
-  { icon: Wrench, label: 'Family marina on Rice Lake since 1947' },
+  { icon: Wrench, label: 'Mercury dealer since 1965' },
   { icon: MapPin, label: 'Pickup in Gores Landing' },
 ];
 

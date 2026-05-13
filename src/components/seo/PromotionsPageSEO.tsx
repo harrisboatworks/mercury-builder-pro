@@ -19,7 +19,7 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
     return (
       <Helmet>
         <title>Mercury Outboard Promotions | Harris Boat Works</title>
-        <meta name="description" content="Check back for the latest Mercury outboard motor promotions, rebates, and financing offers. Ontario's trusted Mercury dealer. Family marina on Rice Lake since 1947." />
+        <meta name="description" content="Check back for the latest Mercury outboard motor promotions, rebates, and financing offers. Ontario's trusted Mercury dealer since 1965." />
         <link rel="canonical" href={`${SITE_URL}/promotions`} />
         <meta property="og:title" content="Mercury Promotions | Harris Boat Works" />
         <meta property="og:description" content="Check back for the latest Mercury outboard promotions and offers." />

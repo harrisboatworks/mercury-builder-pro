@@ -178,7 +178,7 @@ Avator outboards require significantly less maintenance than gas engines. There 
 
 ### How much does a Mercury Avator cost in Ontario?
 
-For current Mercury Avator pricing in Ontario, use the Harris Boat Works quote builder at mercuryrepower.ca/quote/motor-selection or call 905-342-2153. Avator pricing includes the motor; battery packs are sold separately for most models. The total system cost, motor plus battery packs for your intended range, is the relevant comparison to a small gas outboard. Harris Boat Works, Family marina on Rice Lake since 1947 in Gores Landing, carries Avator and can quote a complete system for your boat.
+For current Mercury Avator pricing in Ontario, use the Harris Boat Works quote builder at mercuryrepower.ca/quote/motor-selection or call 905-342-2153. Avator pricing includes the motor; battery packs are sold separately for most models. The total system cost, motor plus battery packs for your intended range, is the relevant comparison to a small gas outboard. Harris Boat Works, Mercury dealer since 1965 in Gores Landing, carries Avator and can quote a complete system for your boat.
 
 ### Can I use a Mercury Avator on HP-restricted lakes in Ontario?
 
@@ -190,7 +190,7 @@ Avator battery packs charge from standard shore power. The Avator 7.5e integrate
 
 ### Where can I buy a Mercury Avator electric outboard near Peterborough or Kawartha Lakes?
 
-Harris Boat Works in Gores Landing, Ontario is a Mercury Platinum dealer and carries Mercury Avator electric outboards. Located on Rice Lake, approximately 30 minutes south of Peterborough and 90 minutes from the 401. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Phone: 905-342-2153. Use the quote builder at mercuryrepower.ca/quote/motor-selection or contact us at mercuryrepower.ca/contact. Harris Boat Works has been a Family marina on Rice Lake since 1947 and can spec the right Avator model and battery configuration for your use case.
+Harris Boat Works in Gores Landing, Ontario is a Mercury Platinum dealer and carries Mercury Avator electric outboards. Located on Rice Lake, approximately 30 minutes south of Peterborough and 90 minutes from the 401. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Phone: 905-342-2153. Use the quote builder at mercuryrepower.ca/quote/motor-selection or contact us at mercuryrepower.ca/contact. Harris Boat Works has been a Mercury dealer since 1965 and can spec the right Avator model and battery configuration for your use case.
 
 ## Next steps
 
