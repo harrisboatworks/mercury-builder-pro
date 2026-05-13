@@ -7,19 +7,19 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "The Ontario Boater's Guide to MerCruiser Sterndrives: Maintenance, Repairs, and Repower"
-description: "A Mercury Platinum dealer's guide to MerCruiser sterndrives in Ontario, what wears out, what kills boats, and when repower or outboard conversion makes sense."
+title: "The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower"
+description: "A Mercury Platinum dealer's guide to Mercruiser sterndrives in Ontario, what wears out, what kills boats, and when repower or outboard conversion makes sense."
 category: "Service & Maintenance"
 date_published: 2026-05-14
 date_modified: 2026-05-14
-keywords: ["MerCruiser sterndrive Ontario","MerCruiser bellows replacement Ontario","sterndrive winterization Ontario","MerCruiser repower cost","sterndrive to outboard conversion","MerCruiser Alpha Bravo maintenance"]
+keywords: ["Mercruiser sterndrive Ontario","Mercruiser bellows replacement Ontario","sterndrive winterization Ontario","Mercruiser repower cost","sterndrive to outboard conversion","Mercruiser Alpha Bravo maintenance"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# The Ontario Boater's Guide to MerCruiser Sterndrives: Maintenance, Repairs, and Repower
+# The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower
 
-> A Mercury Platinum dealer's guide to MerCruiser sterndrives in Ontario, what wears out, what kills boats, and when repower or outboard conversion makes sense.
+> A Mercury Platinum dealer's guide to Mercruiser sterndrives in Ontario, what wears out, what kills boats, and when repower or outboard conversion makes sense.
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-14  
@@ -29,17 +29,17 @@ content_type: blog_article
 
 ## Article
 
-# The Ontario Boater's Guide to MerCruiser Sterndrives. Maintenance, Repairs, and Repower
+# The Ontario Boater's Guide to Mercruiser Sterndrives. Maintenance, Repairs, and Repower
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** MerCruiser sterndrives are still serviceable and parts are available, but the market has shifted toward outboards for Ontario freshwater use. Repowering a sterndrive boat to outboard is a significant project, we quote both paths honestly. Get a real number at mercuryrepower.ca.
+> **Quick answer:** Mercruiser sterndrives are still serviceable and parts are available, but the market has shifted toward outboards for Ontario freshwater use. Repowering a sterndrive boat to outboard is a significant project, we quote both paths honestly. Get a real number at mercuryrepower.ca.
 
 Considering converting to outboard power? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what a sterndrive-to-outboard conversion needs at the helm.
 
-There are a lot of sterndrive boats in Ontario. Older Sea Rays, Bayliners, Glastrons, Four Winns, Thundercrafts, the occasional Doral or Crownline. Most of them have a MerCruiser engine inside the boat and a Mercury sterndrive hanging off the transom. Most of those engines are between 15 and 25 years old now.
+There are a lot of sterndrive boats in Ontario. Older Sea Rays, Bayliners, Glastrons, Four Winns, Thundercrafts, the occasional Doral or Crownline. Most of them have a Mercruiser engine inside the boat and a Mercury sterndrive hanging off the transom. Most of those engines are between 15 and 25 years old now.
 
-We service MerCruiser sterndrives at Gores Landing, same shop, same Mercury Platinum techs as our outboard work. This is the guide we wish more sterndrive owners read before something expensive happens.
+We service Mercruiser sterndrives at Gores Landing, same shop, same Mercury Platinum techs as our outboard work. This is the guide we wish more sterndrive owners read before something expensive happens.
 
 ---
 
@@ -53,9 +53,9 @@ Each has trade-offs. Sterndrives give you a full-width swim platform, lower nois
 
 ---
 
-## The Two MerCruiser Drives You'll See in Ontario
+## The Two Mercruiser Drives You'll See in Ontario
 
-**Alpha One (Gen 1 and Gen 2)**, the most common MerCruiser drive in this part of the country. Found behind 4.3L V6, 5.0L V8, and 5.7L V8 engines from roughly 1985 through current production. Up to about 300 HP. Most aluminum-prop family boats.
+**Alpha One (Gen 1 and Gen 2)**, the most common Mercruiser drive in this part of the country. Found behind 4.3L V6, 5.0L V8, and 5.7L V8 engines from roughly 1985 through current production. Up to about 300 HP. Most aluminum-prop family boats.
 
 **Bravo (1, 2, and 3)**, heavier-duty, larger gearcase. Bravo 1 for performance applications. Bravo 2 for big pontoon-style hulls. Bravo 3 has dual counter-rotating props for low-speed control on heavy cruisers. Behind bigger V8s and V10s.
 
@@ -63,7 +63,7 @@ If you don't know which drive you have, the data plate on the upper drive housin
 
 ---
 
-## What Actually Kills MerCruiser Boats
+## What Actually Kills Mercruiser Boats
 
 In order of how often we see it walk into the shop:
 
@@ -99,7 +99,7 @@ Same warning sign as an outboard, same severity. Gear lube should be amber. Milk
 
 ### 4. Raw water pump and impeller
 
-MerCruiser sterndrives are **raw-water cooled**, same as outboards. Lake water in, through the engine, back out. The impeller lives in the drive (Alpha) or in an engine-mounted pump (Bravo + most newer Alphas). Cheaper to replace, harder to ignore, same overheat consequences as an outboard.
+Mercruiser sterndrives are **raw-water cooled**, same as outboards. Lake water in, through the engine, back out. The impeller lives in the drive (Alpha) or in an engine-mounted pump (Bravo + most newer Alphas). Cheaper to replace, harder to ignore, same overheat consequences as an outboard.
 
 **Replace every 2–3 years**, or when the engine starts running hotter than normal at cruise.
 
@@ -156,7 +156,7 @@ A skipped fall properly costs $5,000+. A done-right winterization runs $400–$7
 
 ## When Do You Repower Instead?
 
-A MerCruiser sterndrive engine doesn't last forever. Most we see hit the wall at 15–25 years and 1,500–2,500 hours, depending on care. The decision points:
+A Mercruiser sterndrive engine doesn't last forever. Most we see hit the wall at 15–25 years and 1,500–2,500 hours, depending on care. The decision points:
 
 **Consider repowering if:**
 - The engine has lost compression on one or more cylinders
@@ -166,10 +166,10 @@ A MerCruiser sterndrive engine doesn't last forever. Most we see hit the wall at
 
 **Three repower paths:**
 
-### 1. Remanufactured MerCruiser crate engine + existing drive
+### 1. Remanufactured Mercruiser crate engine + existing drive
 $8,000–$15,000 installed for a typical 4.3L or 5.0L. The cheapest path. Comes with a 1–2 year warranty. Good if your drive is still healthy.
 
-### 2. New MerCruiser engine + new Bravo drive
+### 2. New Mercruiser engine + new Bravo drive
 $30,000–$40,000+ installed for a complete new V8 + Bravo combo. Full new warranty. Most expensive path, and harder to justify on an older hull unless it's a special boat.
 
 ### 3. Sterndrive-to-outboard conversion
@@ -202,22 +202,22 @@ If you're shopping for *another* boat, not just servicing your current one, the 
 | Ontario resale | Strongest | Declining | Niche (ski/wake) |
 | Best for | Fishing, versatility, repower-friendliness | Family cruising, watersports | Tow sports, wake boats |
 
-**The honest take for most Ontario boaters:** outboards have won the volume war. Sterndrive market share is shrinking, parts will get harder to source over the next 10–20 years, and the I/O fleet still on Ontario lakes is quietly aging out. That said, we have customers running 25-year-old MerCruisers that work perfectly because they were maintained. The propulsion type matters less than the maintenance.
+**The honest take for most Ontario boaters:** outboards have won the volume war. Sterndrive market share is shrinking, parts will get harder to source over the next 10–20 years, and the I/O fleet still on Ontario lakes is quietly aging out. That said, we have customers running 25-year-old Mercruisers that work perfectly because they were maintained. The propulsion type matters less than the maintenance.
 
 If you have a great I/O hull and you love the boat, keep it. We'll keep it running. If the cost-to-keep math is going sideways, repower or convert.
 
 ---
 
-## Service Your MerCruiser at HBW
+## Service Your Mercruiser at HBW
 
-We've been a Mercury Platinum dealer in Ontario since 1965. That includes MerCruiser. Same factory training, same parts access, same diagnostics. The difference between us and an outboard-only shop is we know what to do when the answer isn't "remove the cowl and look."
+We've been a Mercury Platinum dealer in Ontario since 1965. That includes Mercruiser. Same factory training, same parts access, same diagnostics. The difference between us and an outboard-only shop is we know what to do when the answer isn't "remove the cowl and look."
 
 What we handle:
 
 - Annual service and winterization
 - Bellows + gimbal bearing jobs (the every-5-years one)
 - Raw water pump, thermostat, manifolds, risers
-- Engine diagnostics and repairs (gas MerCruiser, all sizes)
+- Engine diagnostics and repairs (gas Mercruiser, all sizes)
 - Drive rebuilds (Alpha and Bravo)
 - Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
 - Storage (we shrinkwrap and store 311+ boats every winter, sterndrives included)
@@ -228,7 +228,7 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
 
 ## FAQs
 
-### How often do MerCruiser bellows really need to be changed?
+### How often do Mercruiser bellows really need to be changed?
 
 Every 5–7 years, regardless of how much you used the boat. Rubber dries and cracks with age, not just hours. A boat sitting outside through 6 Ontario winters is harder on bellows than 200 hours of use.
 
@@ -240,15 +240,15 @@ If you have a milky gear lube reading, a growling gimbal bearing, water in the b
 
 Alpha is the lighter-duty, smaller-gearcase drive, best behind 4.3L V6 and 5.0L V8. Bravo is heavier-duty with a bigger gearcase, designed for higher torque, big-block engines, and heavier hulls. Bravos cost more to service, but they're built to handle the load.
 
-### Can I keep running my old MerCruiser indefinitely if I service it religiously?
+### Can I keep running my old Mercruiser indefinitely if I service it religiously?
 
-Within reason, yes. We see well-maintained 25-year-old MerCruisers that run perfectly. The limiting factor is usually parts availability for cosmetic and electrical components, not the engine itself. Mercury still supports a wide range of older engines.
+Within reason, yes. We see well-maintained 25-year-old Mercruisers that run perfectly. The limiting factor is usually parts availability for cosmetic and electrical components, not the engine itself. Mercury still supports a wide range of older engines.
 
 ### Is converting from sterndrive to outboard always worth it?
 
-Not always. If your current MerCruiser is healthy and your hull was designed around the sterndrive look, the conversion math may not work. But if you're staring at a major repair bill and the boat's value can support a $25K+ investment, the outboard route gives you a fresh warranty and better resale. We'll quote both, straight numbers.
+Not always. If your current Mercruiser is healthy and your hull was designed around the sterndrive look, the conversion math may not work. But if you're staring at a major repair bill and the boat's value can support a $25K+ investment, the outboard route gives you a fresh warranty and better resale. We'll quote both, straight numbers.
 
-### Do you service MerCruiser diesel?
+### Do you service Mercruiser diesel?
 
 Yes, though gas is more common in Ontario recreational boats. Bring the model and serial; we'll confirm parts and labour scope before you commit.
 

@@ -63,7 +63,7 @@ You don't have to drive 20 minutes back into town if you forgot something:
 
 - Marine gas station with **ethanol-free 89-octane**. Outboards run cleaner on it.
 - Three washrooms with showers, plus a 24/7 port-a-potti for after-hours
-- Mercury and MerCruiser service on-site if something goes wrong (in season)
+- Mercury and Mercruiser service on-site if something goes wrong (in season)
 - Snacks, ice, and accessories
 - Boat rentals if you forgot the boat. Yes, that happens.
 - Courtesy docks for loading and unloading

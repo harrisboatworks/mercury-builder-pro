@@ -156,7 +156,7 @@ We've been selling and servicing Mercury outboards on Rice Lake since 1947. Most
 
 Would we recommend it for every 17-20 ft boat? No. Some buyers genuinely want the Pro XS for performance, and some genuinely need the 150 V6 for load. The 115 ELPT is the default for boaters who want enough motor and don't want to over-buy.
 
-If you buy from us, we're also the ones servicing it. Mercury and MerCruiser only. The 115 FourStroke is the motor we know cold because it's on so many of the boats that come through our service bay every spring.
+If you buy from us, we're also the ones servicing it. Mercury and Mercruiser only. The 115 FourStroke is the motor we know cold because it's on so many of the boats that come through our service bay every spring.
 
 [Build your Mercury 115 HP quote](/quote/motor-selection)
 

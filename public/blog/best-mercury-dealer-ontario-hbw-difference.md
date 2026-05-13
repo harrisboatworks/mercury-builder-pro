@@ -138,7 +138,7 @@ What we're not necessarily best at:
 - **Walk-in convenience for casual buyers in the GTA** (we're 90 minutes; if location is the main criterion, a closer dealer is closer)
 - **Premium showroom experience** (we're a working family marina, not a polished sales floor)
 - **Selling brands other than Mercury** (we're Mercury-only and Legend Boats)
-- **Sterndrive specialty** (we do MerCruiser but it's not our primary focus)
+- **Sterndrive specialty** (we do Mercruiser but it's not our primary focus)
 - **Specialty PWC / jet ski / inboard tow boats** (we don't sell those)
 
 That honest division is what lets us tell you if HBW is or isn't the right fit before you drive out.
