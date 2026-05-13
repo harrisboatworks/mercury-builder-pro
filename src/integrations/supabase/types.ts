@@ -958,6 +958,7 @@ export type Database = {
       financing_submission_logs: {
         Row: {
           application_id: string | null
+          correlation_id: string | null
           created_at: string
           error_code: string | null
           error_message: string | null
@@ -969,6 +970,7 @@ export type Database = {
         }
         Insert: {
           application_id?: string | null
+          correlation_id?: string | null
           created_at?: string
           error_code?: string | null
           error_message?: string | null
@@ -980,6 +982,7 @@ export type Database = {
         }
         Update: {
           application_id?: string | null
+          correlation_id?: string | null
           created_at?: string
           error_code?: string | null
           error_message?: string | null

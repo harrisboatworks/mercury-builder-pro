@@ -1,0 +1,2 @@
+ALTER TABLE public.financing_submission_logs ADD COLUMN IF NOT EXISTS correlation_id text;
+CREATE INDEX IF NOT EXISTS idx_financing_submission_logs_correlation_id ON public.financing_submission_logs(correlation_id);

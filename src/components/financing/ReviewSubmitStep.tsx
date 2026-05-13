@@ -12,7 +12,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { encryptSIN, getFriendlySinErrorMessage, type SinEncryptionError } from '@/lib/sinEncryption';
+import { encryptSIN, getFriendlySinErrorMessage, generateSubmissionCorrelationId, type SinEncryptionError } from '@/lib/sinEncryption';
 import { logFinancingSubmission } from '@/lib/financingSubmissionLog';
 import { useNavigate } from 'react-router-dom';
 import { Loader2, Check, Edit, ShieldCheck, FileText, CalendarCheck } from 'lucide-react';
@@ -53,6 +53,7 @@ export function ReviewSubmitStep() {
 
   const onSubmit = async (data: Consent) => {
     setIsSubmitting(true);
+    const correlationId = generateSubmissionCorrelationId();
     try {
       // Set consent data
       dispatch({ type: 'SET_CONSENT', payload: data });
@@ -83,6 +84,7 @@ export function ReviewSubmitStep() {
         await logFinancingSubmission({
           stage: 'encrypt_applicant_sin',
           outcome: 'success',
+          correlationId,
           applicationId: state.applicationId,
           userId,
         });
@@ -91,13 +93,14 @@ export function ReviewSubmitStep() {
         await logFinancingSubmission({
           stage: 'encrypt_applicant_sin',
           outcome: 'failure',
+          correlationId,
           applicationId: state.applicationId,
           userId,
           errorCode: sinErr.code || 'unknown',
           errorMessage: sinErr.message,
           metadata: { pgCode: sinErr.pgCode, hint: sinErr.hint },
         });
-        const friendly = getFriendlySinErrorMessage(sinErr.code);
+        const friendly = getFriendlySinErrorMessage(sinErr.code, correlationId);
         toast({ title: friendly.title, description: friendly.description, variant: 'destructive' });
         setIsSubmitting(false);
         return;
@@ -110,6 +113,7 @@ export function ReviewSubmitStep() {
           await logFinancingSubmission({
             stage: 'encrypt_co_applicant_sin',
             outcome: 'success',
+            correlationId,
             applicationId: state.applicationId,
             userId,
           });
@@ -118,13 +122,14 @@ export function ReviewSubmitStep() {
           await logFinancingSubmission({
             stage: 'encrypt_co_applicant_sin',
             outcome: 'failure',
+            correlationId,
             applicationId: state.applicationId,
             userId,
             errorCode: sinErr.code || 'unknown',
             errorMessage: sinErr.message,
             metadata: { pgCode: sinErr.pgCode, hint: sinErr.hint },
           });
-          const friendly = getFriendlySinErrorMessage(sinErr.code);
+          const friendly = getFriendlySinErrorMessage(sinErr.code, correlationId);
           toast({
             title: `Co-applicant: ${friendly.title}`,
             description: friendly.description,
@@ -163,6 +168,7 @@ export function ReviewSubmitStep() {
         await logFinancingSubmission({
           stage: 'db_upsert',
           outcome: 'failure',
+          correlationId,
           applicationId: state.applicationId,
           userId,
           errorCode: (error as any)?.code || 'unknown',
@@ -175,9 +181,10 @@ export function ReviewSubmitStep() {
           (error?.message || '').toLowerCase().includes('row-level security');
         toast({
           title: isPermission ? 'Permission error saving application' : 'Could not save application',
-          description: isPermission
+          description: (isPermission
             ? 'Your account does not have permission to submit this application. Please sign in and try again, or call us at (905) 342-2153.'
-            : (error?.message || 'Please try again, or call us at (905) 342-2153.'),
+            : 'We could not save your application. Please try again, or call us at (905) 342-2153.')
+            + ` Reference: ${correlationId}.`,
           variant: 'destructive',
         });
         setIsSubmitting(false);
@@ -187,6 +194,7 @@ export function ReviewSubmitStep() {
       await logFinancingSubmission({
         stage: 'db_upsert',
         outcome: 'success',
+        correlationId,
         applicationId: application.id,
         userId,
       });
@@ -226,12 +234,13 @@ export function ReviewSubmitStep() {
       // Show success message
       toast({
         title: "Application Submitted!",
-        description: "Your financing application has been submitted successfully.",
+        description: `Your financing application has been submitted successfully. Reference: ${correlationId}.`,
       });
 
       await logFinancingSubmission({
         stage: 'submission',
         outcome: 'success',
+        correlationId,
         applicationId: application.id,
         userId,
       });
@@ -247,13 +256,14 @@ export function ReviewSubmitStep() {
       await logFinancingSubmission({
         stage: 'submission',
         outcome: 'failure',
+        correlationId,
         applicationId: state.applicationId,
         errorCode: err?.code || 'unexpected',
         errorMessage: err?.message || String(error),
       });
       toast({
         title: "Submission Failed",
-        description: "Please check your information and try again.",
+        description: `Please check your information and try again. Reference: ${correlationId}.`,
         variant: "destructive",
       });
     } finally {
