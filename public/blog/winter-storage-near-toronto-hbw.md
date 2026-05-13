@@ -114,7 +114,7 @@ Three reasons GTA boat owners specifically choose HBW for winter storage:
 
 ### 1. The boat is at a Mercury Platinum dealer all winter
 
-Why this matters: any service work that needs doing happens **right there**. No "I'll bring it in next year." Off-season is when our shop has time to do major work, repowers, transom rebuilds, deep diagnostics, MerCruiser bellows replacements.
+Why this matters: any service work that needs doing happens **right there**. No "I'll bring it in next year." Off-season is when our shop has time to do major work, repowers, transom rebuilds, deep diagnostics, Mercruiser bellows replacements.
 
 A typical pattern: GTA customer drops boat off in October for storage. We winterize. While it's stored, we identify needed work and quote. They approve in January-February (when shop is slow and pricing is winter-rate). We do the work. Boat ready for spring with all maintenance current.
 

@@ -49,7 +49,7 @@ This isn't opinion. It's sales data.
 
 In 2010, outboards represented roughly 50% of the recreational marine engine market. By 2026, that number is above 80%. Mercury, Yamaha, Honda, and Suzuki have poured engineering investment into modern 4-stroke outboard development, lighter, quieter, more powerful, and dramatically more fuel-efficient than anything available a decade ago.
 
-Meanwhile, sterndrive R&D has slowed. MerCruiser still makes quality products, and the existing install base is enormous, but the trajectory is clear. The marine industry has voted with its production lines.
+Meanwhile, sterndrive R&D has slowed. Mercruiser still makes quality products, and the existing install base is enormous, but the trajectory is clear. The marine industry has voted with its production lines.
 
 An engine platform with a growing user base means better parts availability, more trained technicians, and stronger resale demand for years to come.
 
@@ -60,11 +60,11 @@ An engine platform with a growing user base means better parts availability, mor
 If you're newer to the conversation, here's the short version.
 
 **Sterndrive (Inboard/Outboard or "I/O"):**
-The engine sits inside the hull, in an engine bay below the cockpit or under a centre hatch. The outdrive unit hangs off the transom and handles steering, trim, and propulsion. MerCruiser is the dominant brand; Volvo Penta is the other major player. Sterndrives were the dominant setup on bowriders and runabouts from the 1970s through the 2000s.
+The engine sits inside the hull, in an engine bay below the cockpit or under a centre hatch. The outdrive unit hangs off the transom and handles steering, trim, and propulsion. Mercruiser is the dominant brand; Volvo Penta is the other major player. Sterndrives were the dominant setup on bowriders and runabouts from the 1970s through the 2000s.
 
 **Outboard:** The entire engine (powerhead, midsection, and lower unit) mounts on the transom and is fully external. Everything is accessible without opening a hatch or pulling a floor panel. Tilt it up, the prop clears the water entirely. Modern outboards are 4-stroke, direct-injected, and available from 2.5hp all the way to 600hp.
 
-If you want deeper background on how sterndrives work and their service requirements, our [MerCruiser sterndrive guide for Ontario owners](https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario) covers the full picture.
+If you want deeper background on how sterndrives work and their service requirements, our [Mercruiser sterndrive guide for Ontario owners](https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario) covers the full picture.
 
 ---
 
@@ -131,7 +131,7 @@ A sterndrive-to-outboard conversion involves removing an outdrive, motor mounts,
 The honest answer: not every time. Here's how we think through it.
 
 **When the outdrive is at end of life.**
-Outdrive service costs are significant, and parts availability for older MerCruiser Alpha One and Bravo series units has gotten tighter. If you're looking at a major outdrive overhaul, the economics of conversion get a lot more interesting. Read more about [what's involved in a full repower](https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower) before you decide.
+Outdrive service costs are significant, and parts availability for older Mercruiser Alpha One and Bravo series units has gotten tighter. If you're looking at a major outdrive overhaul, the economics of conversion get a lot more interesting. Read more about [what's involved in a full repower](https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower) before you decide.
 
 **When the engine is also tired.**
 If both the engine and the outdrive need attention, the rebuild-or-replace math usually favours replace. A full sterndrive mechanical refresh (rebuilt engine, new outdrive, updated exhaust components) often costs more than a properly scoped outboard conversion. Our [Mercury repower cost guide for Ontario (2026)](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) breaks down what you're actually comparing.
@@ -169,11 +169,11 @@ For Kawarthas and GTA boaters, our [complete Kawarthas repower guide](https://ww
 
 ---
 
-> ### MerCruiser Sterndrives We Still Service
+> ### Mercruiser Sterndrives We Still Service
 >
 > If you have a sterndrive and you want to keep it, we support that decision.
 >
-> Harris Boat Works continues to maintain and service MerCruiser sterndrives for owners who want to run them well for years to come. Our service team is Mercury-trained and the platform is one we know inside out.
+> Harris Boat Works continues to maintain and service Mercruiser sterndrives for owners who want to run them well for years to come. Our service team is Mercury-trained and the platform is one we know inside out.
 >
 > One note on scope: **for engine repairs, we only service Mercury and Mercruiser.** If you have a Volvo Penta or other brand, we'll point you to the right specialist.
 >
@@ -206,7 +206,7 @@ Outboards have won the market because they deserve to. The technology is excelle
 
 If you have a tired sterndrive, a sound hull, and a boat you want to keep running for another decade, a Mercury outboard conversion is worth a serious look.
 
-If you want to keep your MerCruiser running, we can help with that too.
+If you want to keep your Mercruiser running, we can help with that too.
 
 Either way, you deserve a straight answer, not a sales pitch.
 

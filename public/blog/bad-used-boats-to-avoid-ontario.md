@@ -69,7 +69,7 @@ If the used boat you're looking at has an older carbureted 2-stroke hanging off 
 
 ### Mid-90s to Mid-2000s Sterndrive Boats With Original, Unserviced Outdrives
 
-Sterndrives from this era. MerCruiser and otherwise, are solid engineering. When they're maintained. The problem is that most of them weren't.
+Sterndrives from this era. Mercruiser and otherwise, are solid engineering. When they're maintained. The problem is that most of them weren't.
 
 Bellows deteriorate. Gimbal bearings fail. When water gets into places it shouldn't, the damage is internal and invisible until it isn't. If the boat you're looking at has an original sterndrive that hasn't been touched since the Clinton administration, treat it as a project, not a boat. Rebuilding or replacing an outdrive is not a casual expense.
 

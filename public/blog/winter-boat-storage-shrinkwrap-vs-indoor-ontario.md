@@ -241,7 +241,7 @@ Fuel stabilization with marine-grade additive, full fogging of the cylinders, ge
 
 ### Do you store sterndrive boats?
 
-Yes, same shrinkwrap, plus the more thorough engine drain that sterndrives require (block, manifolds, every petcock). MerCruiser winterization is more involved than outboard winterization, and we charge accordingly.
+Yes, same shrinkwrap, plus the more thorough engine drain that sterndrives require (block, manifolds, every petcock). Mercruiser winterization is more involved than outboard winterization, and we charge accordingly.
 
 ### What if my boat doesn't fit a standard shrinkwrap?
 

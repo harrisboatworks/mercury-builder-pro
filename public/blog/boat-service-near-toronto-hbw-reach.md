@@ -66,7 +66,7 @@ For routine work (oil change, prop replacement, impeller change), tiers 1-2 are 
 We work on:
 
 - **All Mercury outboards**, current production back through older fleet (1980s onward, with parts availability dependent on age)
-- **MerCruiser sterndrives**. Alpha One, Bravo (1, 2, 3), gas inboard variants
+- **Mercruiser sterndrives**. Alpha One, Bravo (1, 2, 3), gas inboard variants
 - **Mercury Verado**, special-order motors but full service support
 - **Pro XS, FourStroke, SeaPro, Avator**, full Mercury family
 - **All Mercury accessories**, controls, props, gauges, VesselView/SmartCraft, MPP-eligible work
@@ -100,7 +100,7 @@ If your motor is a brand we don't service, we'll refer you. That's the right ans
 
 **Warranty work**, for Mercurys still under standard 3-year coverage or MPP extended. Mercury reimburses qualifying claims. We handle the paperwork.
 
-**Bellows / gimbal bearing on MerCruiser**, sterndrive-specific. Every 5-7 years. See [MerCruiser Sterndrive Guide](/blog/mercruiser-sterndrive-guide-ontario).
+**Bellows / gimbal bearing on Mercruiser**, sterndrive-specific. Every 5-7 years. See [Mercruiser Sterndrive Guide](/blog/mercruiser-sterndrive-guide-ontario).
 
 ---
 

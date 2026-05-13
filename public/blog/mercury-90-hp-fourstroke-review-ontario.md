@@ -142,7 +142,7 @@ We've been selling and servicing Mercury outboards on Rice Lake since 1947. Most
 
 Would we recommend it for every 16 to 18 ft boat? No. Some boats want a 75 (lighter loads, lighter hulls, fuel economy obsessed). Some want a 115 (heavier loads, more headroom, more towing). The 90 is the default we work back from.
 
-If you buy from us, we're also the ones servicing it. Mercury and MerCruiser only, no farmed-out repairs. A 90 ELPT FourStroke is the kind of motor we know cold.
+If you buy from us, we're also the ones servicing it. Mercury and Mercruiser only, no farmed-out repairs. A 90 ELPT FourStroke is the kind of motor we know cold.
 
 [Build your Mercury 90 HP quote](/quote/motor-selection)
 
