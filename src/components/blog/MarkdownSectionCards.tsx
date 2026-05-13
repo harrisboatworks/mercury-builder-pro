@@ -385,6 +385,9 @@ function renderMarkdownWithDirectives(
         />
       );
     }
+    if (chunk.kind === 'decision-card' && chunk.decisionProps) {
+      return <DecisionCard key={`${keyPrefix}-dc-${i}`} {...chunk.decisionProps} />;
+    }
     if (!chunk.content.trim()) return null;
     return (
       <ReactMarkdown
