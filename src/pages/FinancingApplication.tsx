@@ -494,7 +494,7 @@ export default function FinancingApplication() {
           </Button>
           
           {/* Security Message */}
-          <p className="text-xs text-gray-400 font-light">
+          <p className="text-xs text-muted-foreground font-light">
             All information encrypted and secure
           </p>
         </div>
