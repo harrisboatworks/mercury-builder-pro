@@ -14,6 +14,7 @@ import {
 } from './MotorPricingCards';
 import { RelatedPostsGrid } from './RelatedPostsGrid';
 import { DecisionCard, type DecisionCardProps } from './DecisionCard';
+import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './DiagnosticFlowchart';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -212,8 +213,13 @@ function rewriteDecisionCards(md: string): string {
   return md.replace(re, (_m, body) => `:::decision-card\n${body}\n:::`);
 }
 
+function rewriteDiagnosticFlow(md: string): string {
+  const re = /^::diagnostic-flow\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::diagnostic-flow\n${body}\n:::`);
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md)));
+  return rewriteDiagnosticFlow(rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))));
 }
 
 /**
@@ -247,16 +253,17 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
   relatedSlugs?: string[];
   decisionProps?: DecisionCardProps;
+  diagnosticProps?: DiagnosticFlowchartProps;
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -319,6 +326,61 @@ function parseDecisionCardBody(body: string): DecisionCardProps | null {
   };
 }
 
+function parseDiagnosticFlowBody(body: string): DiagnosticFlowchartProps | null {
+  const lines = body.split('\n');
+  const flat: Record<string, string> = {};
+  const stepsMap: Record<number, { label?: string; question?: string; tip?: string }> = {};
+  for (const raw of lines) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) continue;
+    const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    const key = kv[1];
+    const val = kv[2];
+    const stepLabel = /^step(\d+)Label$/.exec(key);
+    const stepQuestion = /^step(\d+)Question$/.exec(key);
+    const stepTip = /^step(\d+)Tip$/.exec(key);
+    if (stepLabel) {
+      const idx = Number(stepLabel[1]);
+      stepsMap[idx] = stepsMap[idx] || {};
+      stepsMap[idx].label = val;
+    } else if (stepQuestion) {
+      const idx = Number(stepQuestion[1]);
+      stepsMap[idx] = stepsMap[idx] || {};
+      stepsMap[idx].question = val;
+    } else if (stepTip) {
+      const idx = Number(stepTip[1]);
+      stepsMap[idx] = stepsMap[idx] || {};
+      stepsMap[idx].tip = val;
+    } else {
+      flat[key] = val;
+    }
+  }
+  if (!flat.heading) return null;
+  const steps = Object.keys(stepsMap)
+    .map((k) => Number(k))
+    .sort((a, b) => a - b)
+    .map((idx) => {
+      const s = stepsMap[idx];
+      if (!s.label || !s.question) return null;
+      return { label: s.label, question: s.question, tip: s.tip };
+    })
+    .filter(Boolean) as DiagnosticFlowchartProps['steps'];
+  const escalation = flat.escalationBody
+    ? {
+        label: flat.escalationLabel,
+        body: flat.escalationBody,
+      }
+    : undefined;
+  return {
+    heading: flat.heading,
+    eyebrow: flat.eyebrow,
+    subhead: flat.subhead,
+    steps,
+    escalation,
+  };
+}
+
 function splitDirectives(md: string): RenderChunk[] {
   const chunks: RenderChunk[] = [];
   let last = 0;
@@ -352,6 +414,9 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'decision-card') {
       const props = parseDecisionCardBody(body);
       if (props) chunks.push({ kind: 'decision-card', content: '', decisionProps: props });
+    } else if (name === 'diagnostic-flow') {
+      const props = parseDiagnosticFlowBody(body);
+      if (props) chunks.push({ kind: 'diagnostic-flow', content: '', diagnosticProps: props });
     }
     last = m.index + m[0].length;
   }
@@ -387,6 +452,9 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'decision-card' && chunk.decisionProps) {
       return <DecisionCard key={`${keyPrefix}-dc-${i}`} {...chunk.decisionProps} />;
+    }
+    if (chunk.kind === 'diagnostic-flow' && chunk.diagnosticProps) {
+      return <DiagnosticFlowchart key={`${keyPrefix}-df-${i}`} {...chunk.diagnosticProps} />;
     }
     if (!chunk.content.trim()) return null;
     return (
