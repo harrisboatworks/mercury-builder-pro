@@ -31,7 +31,7 @@ export default function Blog() {
             Boat Motor Guides & Tips
           </h1>
           <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto leading-relaxed">
-            Expert advice from Ontario's trusted Mercury dealer since 1965.
+            Expert advice from Ontario's trusted Mercury dealer. Family marina on Rice Lake since 1947.
             Learn how to choose, maintain, and get the most from your outboard motor.
           </p>
           <div className="mt-10 h-px w-16 bg-repower-navy-900/15 mx-auto" />

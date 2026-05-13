@@ -10,7 +10,7 @@ export function BlogIndexSEO() {
         "@type": "CollectionPage",
         "@id": `${SITE_URL}/blog#webpage`,
         "name": "Mercury Motor Guides & Boating Tips | Harris Boat Works Blog",
-        "description": "Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Mercury dealer since 1965, helping Ontario boaters.",
+        "description": "Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Family marina on Rice Lake since 1947, helping Ontario boaters.",
         "url": `${SITE_URL}/blog`,
         "isPartOf": {
           "@id": `${SITE_URL}/#website`
@@ -51,7 +51,7 @@ export function BlogIndexSEO() {
   return (
     <Helmet>
       <title>Mercury Motor Guides & Boating Tips | Harris Boat Works Blog</title>
-      <meta name="description" content="Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Mercury dealer since 1965, helping Ontario boaters make informed decisions." />
+      <meta name="description" content="Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Family marina on Rice Lake since 1947, helping Ontario boaters make informed decisions." />
       <meta name="keywords" content="mercury outboard tips, boat motor guide, outboard maintenance, mercury dealer blog, boat buying guide ontario" />
       <link rel="canonical" href={`${SITE_URL}/blog`} />
       
@@ -64,7 +64,7 @@ export function BlogIndexSEO() {
       {/* Twitter */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content="Mercury Motor Guides & Boating Tips" />
-      <meta name="twitter:description" content="Expert advice from Ontario's trusted Mercury dealer since 1965." />
+      <meta name="twitter:description" content="Expert advice from Ontario's trusted Mercury dealer. Family marina on Rice Lake since 1947." />
       
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
