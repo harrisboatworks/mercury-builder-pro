@@ -62,6 +62,7 @@ const AdminQuoteDetail = lazy(() => import("./pages/AdminQuoteDetail"));
 const AdminQuoteBuilder = lazy(() => import("./pages/admin/AdminQuoteBuilder"));
 const FinancingAdmin = lazy(() => import("./components/admin/FinancingAdmin"));
 const AdminFinancingApplications = lazy(() => import("./pages/AdminFinancingApplications"));
+const AdminFinancingSubmissionLogs = lazy(() => import("./pages/AdminFinancingSubmissionLogs"));
 const AdminSecurity = lazy(() => import("./pages/AdminSecurity"));
 const AdminSINEncryptionTest = lazy(() => import("./pages/AdminSINEncryptionTest"));
 const AdminZapier = lazy(() => import("./pages/AdminZapier"));
