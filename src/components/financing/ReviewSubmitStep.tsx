@@ -12,7 +12,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { encryptSIN, getFriendlySinErrorMessage, type SinEncryptionError } from '@/lib/sinEncryption';
+import { encryptSIN, getFriendlySinErrorMessage, generateSubmissionCorrelationId, type SinEncryptionError } from '@/lib/sinEncryption';
 import { logFinancingSubmission } from '@/lib/financingSubmissionLog';
 import { useNavigate } from 'react-router-dom';
 import { Loader2, Check, Edit, ShieldCheck, FileText, CalendarCheck } from 'lucide-react';
