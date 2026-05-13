@@ -326,6 +326,61 @@ function parseDecisionCardBody(body: string): DecisionCardProps | null {
   };
 }
 
+function parseDiagnosticFlowBody(body: string): DiagnosticFlowchartProps | null {
+  const lines = body.split('\n');
+  const flat: Record<string, string> = {};
+  const stepsMap: Record<number, { label?: string; question?: string; tip?: string }> = {};
+  for (const raw of lines) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) continue;
+    const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    const key = kv[1];
+    const val = kv[2];
+    const stepLabel = /^step(\d+)Label$/.exec(key);
+    const stepQuestion = /^step(\d+)Question$/.exec(key);
+    const stepTip = /^step(\d+)Tip$/.exec(key);
+    if (stepLabel) {
+      const idx = Number(stepLabel[1]);
+      stepsMap[idx] = stepsMap[idx] || {};
+      stepsMap[idx].label = val;
+    } else if (stepQuestion) {
+      const idx = Number(stepQuestion[1]);
+      stepsMap[idx] = stepsMap[idx] || {};
+      stepsMap[idx].question = val;
+    } else if (stepTip) {
+      const idx = Number(stepTip[1]);
+      stepsMap[idx] = stepsMap[idx] || {};
+      stepsMap[idx].tip = val;
+    } else {
+      flat[key] = val;
+    }
+  }
+  if (!flat.heading) return null;
+  const steps = Object.keys(stepsMap)
+    .map((k) => Number(k))
+    .sort((a, b) => a - b)
+    .map((idx) => {
+      const s = stepsMap[idx];
+      if (!s.label || !s.question) return null;
+      return { label: s.label, question: s.question, tip: s.tip };
+    })
+    .filter(Boolean) as DiagnosticFlowchartProps['steps'];
+  const escalation = flat.escalationBody
+    ? {
+        label: flat.escalationLabel,
+        body: flat.escalationBody,
+      }
+    : undefined;
+  return {
+    heading: flat.heading,
+    eyebrow: flat.eyebrow,
+    subhead: flat.subhead,
+    steps,
+    escalation,
+  };
+}
+
 function splitDirectives(md: string): RenderChunk[] {
   const chunks: RenderChunk[] = [];
   let last = 0;
