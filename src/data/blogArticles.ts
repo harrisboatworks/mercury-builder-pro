@@ -6816,7 +6816,8 @@ Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercury
   // Week 48: November 30, 2026
   {
     slug: 'mercury-150-200hp-v6-performance',
-    title: 'Mercury 150 vs 175 vs 200 vs 225 vs 250 vs 300. V6 Performance, Compared (2026)',
+    title: 'Mercury 150-300 HP Performance Compared (Ontario 2026)',
+    seoTitle: 'Mercury 150-300 HP Performance Compared (2026)',
     description: "An HBW dealer's honest comparison of Mercury V6 outboards from 150 to 300 HP, what each delivers, who needs which, and where the inflection points actually are.",
     image: '/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero.png',
     author: 'Harris Boat Works',
