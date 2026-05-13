@@ -8989,6 +8989,7 @@ Want to talk through Mercury vs. Yamaha for your specific boat before quoting? C
 ## Quick Answer
 
 For most 17, 19 ft hulls, the Mercury 115 FourStroke is the right call, lighter, cheaper, and fully capable for typical Ontario family use. The 150 earns its price on 18, 22 ft hulls, active watersports, or any boat that loads heavy. Both sit inside the same service footprint. Stay inside your capacity plate. Compare installed pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+
 ::decision-card
 heading: Should you choose Mercury 115 or 150 HP?
 eyebrow: Honest power pick
@@ -9013,6 +9014,8 @@ whenInDoubt: Check your boat's capacity plate first. If the rated max is 115, yo
 ::
 
 ---
+
+## Full Article
 
 The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L inline 4-cylinder. More displacement, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000, $6,000 CAD all-in.
 
