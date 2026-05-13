@@ -100,7 +100,7 @@ En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, precio de inic
 **Ventajas:** precio menor, la depreciación inicial ya ocurrió 
 **Desventajas:** puede venir con problemas ocultos, garantía vencida, necesidades de servicio no documentadas
 
-Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para engine repairs, we only service Mercury and Mercruiser. *(Nota del editor EN: "For engine repairs, we only service Mercury and Mercruiser.")*
+Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para engine repairs, we only service Mercury and Mercruiser.
 
 Revisa el inventario de usados en harrisboatworks.ca, en promedio ~13 embarcaciones disponibles, precio promedio alrededor de $25,000 CAD (varía por temporada).
 
@@ -164,7 +164,7 @@ Sí. La PCOC y la PCL están disponibles para residentes de Canadá independient
 Sí, con las restricciones de ancho y peso correspondientes. Para la mayoría de las embarcaciones hasta ~21 pies no hay requerimientos especiales más allá de luces de trailer funcionales.
 
 **¿Qué pasa si compro un bote usado con un motor que no es Mercury?** 
-Harris Boat Works solo da servicio a motores Mercury y Mercruiser. Si el motor es de otra marca, deberás encontrar un taller de servicio autorizado para esa marca. *(Nota del editor EN: "For engine repairs, we only service Mercury and Mercruiser.")*
+Harris Boat Works solo da servicio a motores Mercury y Mercruiser. Si el motor es de otra marca, deberás encontrar un taller de servicio autorizado para esa marca.
 
 **¿Puedo hacer la cotización en línea antes de llamar?** 
 Sí, eso es exactamente para lo que existe mercuryrepower.ca. Construye tu presupuesto de repotenciación en 3 minutos, sin dar tu teléfono primero.
@@ -181,13 +181,6 @@ Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telef
 Harris Boat Works 
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
 harrisboatworks.ca
-
----
-
-**Nota del editor (English):** Service scope reminder, "For engine repairs, we only service Mercury and Mercruiser." Include this in translated form within the post where naturally applicable, and as this English note for editor reference. Regulatory details (PCOC, PCL, minor age restrictions) should be verified against current Transport Canada (tc.gc.ca) guidelines before publishing, rules are subject to change.
-
----
-
 ---`,
     faqs: [
       { question: '¿Necesito una licencia para conducir un bote en Ontario?', answer: 'Sí. Toda persona que opere una embarcación motorizada necesita la PCOC (Pleasure Craft Operator Card). Se obtiene una sola vez y es válida de por vida.' },
@@ -368,13 +361,6 @@ Configura tu presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión.
 Harris Boat Works 
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
 harrisboatworks.ca | 905-342-2153
-
----
-
-**Nota del editor (English):** All fishing seasons and limits cited above are for FMZ 17 reference only. The Ontario MNRF updates regulations annually, editors must verify current-year dates and limits at ontario.ca/fishing before publishing. Fishing licence fees are approximate and subject to change. HBW team is English-primary; Spanish-language service is best-effort via the service form.
-
----
-
 ---`,
     faqs: [
       { question: '¿Necesito una licencia de pesca?', answer: 'Sí, si tiene entre 18 y 64 años. Los menores de 18 años (residentes canadienses) están exentos sin condiciones. Los mayores de 65 también están exentos.' },
@@ -534,13 +520,6 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 ---
 
 *Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
-
----
-
-**EDITOR NOTE (English):** 
-This is a Spanish-language post targeting Spanish-speaking boaters in Ontario. Source post published 2026-04-12. The "584 winterizations per season" and "311 storage contracts" figures are sourced from hbw-business-context skill (verified HBW data), "311 storage contracts" not prominently featured in this post to avoid overloading; "584 winterizations" retained as primary credibility anchor. The step-by-step winterization content and the summary table are adapted from the original post. No specific service prices are included (original had none). The ethanol-free fuel claim ("one of the few marinas in Ontario that sells ethanol-free fuel on-site") is verified in hbw-business-context. "78 años" replaced with "desde 1947" and "marina familiar de tercera generación" per task brief. Language note (team works in English) preserved from original. No APR or financing rates. No prices fabricated.
-
----
 ---`,
     faqs: [
       { question: '¿Cuánto cuesta una preparación invernal profesional?', answer: 'El precio varía según el motor y los servicios requeridos. Contacte a hbw.wiki/service para una estimación.' },
@@ -665,7 +644,7 @@ Vendemos aproximadamente **65 motores Mercury nuevos al año**. Sabemos qué fun
 
 Rice Lake es uno de los mejores lagos de walleye en Ontario. Nuestros clientes lo saben porque llevan generaciones lanzando aquí.
 
-Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y Mercruiser. *(Nota del editor EN: "For engine repairs, we only service Mercury and Mercruiser.")*
+Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y Mercruiser.
 
 ---
 
@@ -696,13 +675,6 @@ Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 1
 
 Harris Boat Works, Gores Landing, Ontario 
 harrisboatworks.ca | Rice Lake
-
----
-
-**Nota del editor (English):** Weights and specifications cited are approximate for current-generation Mercury FourStroke models and should be verified against the current Mercury Marine spec sheets before publishing, as specifications can change with model year updates. The Pro XS section should be reviewed to confirm current Pro XS calibration language is accurate for 2026 models. HBW service scope: "For engine repairs, we only service Mercury and Mercruiser."
-
----
-
 ---`,
     faqs: [
       { question: '¿El 150 consume mucho más que el 115?', answer: 'En la práctica, el 150 suele consumir más combustible, pero la diferencia real depende mucho del casco, la hélice, la carga y la velocidad de crucero. Un 115 sobrecargado puede consumir tanto como un 150 con carga normal.' },
@@ -856,11 +828,6 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
 ---
 
 *Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
-
----
-
-**EDITOR NOTE (English):** 
-This is a Spanish-language post targeting Spanish-speaking boaters in Ontario. Source post published 2026-04-12. The "$40,000 to $100,000 CAD" new boat cost range is retained from original Spanish post. Specific CAD repower cost figures by HP tier are not included here, readers are directed to live configurator at mercuryrepower.ca to avoid stale pricing. The decision summary table is adapted from the original's explicit table. No APR or financing rate claims included. Language note (team works in English) preserved from original. "78 años" replaced with "desde 1947" and "marina familiar de tercera generación" per task brief. HBW service-only scope note ("Mercury and Mercruiser only") added in FAQ, per brand-voice guideline. No prices fabricated.
 
 ---
 
@@ -1066,13 +1033,6 @@ Si estás pensando en un motor nuevo o en repotenciar tu embarcación, usa el co
 Harris Boat Works 
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
 harrisboatworks.ca
-
----
-
-**Nota del editor (English):** All regulatory information (PCOC, PCL, minor age limits, equipment requirements) was current at time of writing but is subject to change by Transport Canada and the Ontario MNRF. Editors must verify against current official sources (tc.gc.ca, ontario.ca) before publishing. The Spanish-language exam availability note should be rechecked, if Transport Canada adds a Spanish-certified exam option, update accordingly. HBW service scope: "For engine repairs, we only service Mercury and Mercruiser."
-
----
-
 ---`,
     faqs: [
       { question: '¿Mi licencia de conducir de vehículo reemplaza la PCOC?', answer: 'No. Son dos certificaciones distintas. Su licencia de conducir no tiene validez en el agua.' },

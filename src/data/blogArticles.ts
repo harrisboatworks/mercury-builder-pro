@@ -3436,10 +3436,6 @@ Whether you want a prop check, a full service, or a quote on a new motor package
 
 Phone: 905-342-2153 | Harris Boat Works, Gores Landing, ON | Since 1947
 
----
-
-**Editor Note:** This post covers the practical levers of fuel economy in priority order. Fuel burn numbers are characterized as typical ranges from HBW rigs, not manufacturer guarantees, this keeps the post accurate without fabricating specs. The ethanol-free fuel mention is on-topic and serves HBW's on-site fuel sale. The "sudden change" section helps readers recognize service-worthy symptoms without diagnosing remotely. No pricing fabricated.
-
 ---`,
     faqs: [
       {
@@ -5758,13 +5754,6 @@ For Rice Lake and local Kawartha customers, yes. Contact us to arrange hauling a
 [Book service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Platinum dealer. Est. 1947.
-
----
-
-**English editor note:** Service scope sentence used in this post: "For engine repairs, we only service Mercury and Mercruiser." The phrase appears naturally in the "What HBW Does" section. Regulatory detail (Zone 17 opener date, legal start time) intentionally left unspecified year-to-year with a direction to confirm from OMNR, do not fabricate exact dates.
-
----
-
 ---`,
     howToSteps: [
       { name: 'Schedule final service two weeks out', text: 'Two weeks before opener, schedule any remaining service at HBW. Confirm the boat is ready for water with commissioning done. Verify your fishing licence is valid, your Pleasure Craft Operator Card (PCOC) is current, and your Pleasure Craft Licence (PCL) is on the boat.' },
@@ -5997,13 +5986,6 @@ For local Rice Lake and Kawartha customers, yes. Contact us at [hbw.wiki/service
 **End the season right.** Proper winterization in October means a ready boat in May. 
 [Book fall service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
-
----
-
-**English editor note:** Service scope sentence ("For engine repairs, we only service Mercury and Mercruiser.") appears naturally in the motor reliability section. Cold-water survival table sourced from Transport Canada TP 13822, verify current values before publishing. No fabricated lake temperatures or exact seasonal dates.
-
----
-
 ---`,
     faqs: [
       {
@@ -8250,13 +8232,6 @@ Call 905-342-2153 with your serial number, or email info@harrisboatworks.ca.
 HBW confirms eligibility, quotes the installation, and books the visit. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Platinum dealer. Est. 1947.
-
----
-
-**English editor note:** All serial number ranges and eligible model lists are sourced directly from the source post. Verify these against current Mercury Canada Boost program documentation before publishing, eligibility may expand as the program rolls out. Service scope sentence appears naturally at the end of the Ontario context section. Labor rate ranges ($120, $175/hr) are from the source post and should be verified as current.
-
----
-
 ---`,
     faqs: [
       {
@@ -9992,10 +9967,6 @@ Request professional winterization at [hbw.wiki/service](https://hbw.wiki/servic
 
 Phone: 905-342-2153
 
----
-
-**Editor Note:** Winterization steps are described accurately without fabricating exact quantities or motor-specific procedures that would vary by model, the manual is referenced instead. The "when to call a dealer" framing is honest and doesn't oversell fear. The 584 winterization stat is used once as a credibility anchor. No pricing fabricated.
-
 ---`,
     howToSteps: [
       { name: 'Stabilize the fuel', text: 'Add fuel stabilizer to the gas tank at the rate the bottle says (usually 1 oz per 2.5 gallons / 10L). Run the motor for at least 10 minutes to circulate stabilized fuel through the lines, carbs, or fuel injectors. The stabilizer prevents fuel breakdown and gum formation over winter.' },
@@ -10824,10 +10795,6 @@ Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat W
 
 Phone: 905-342-2153
 
----
-
-**Editor Note:** Diagnostic sequence is accurate and ordered by most-to-least-common cause without fabricating exact probabilities. The "stop and bring it in" section is clear without being fear-based. No repair pricing or timelines fabricated.
-
 ---`,
     howToSteps: [
       { name: 'Check the battery', text: 'Voltage at rest should be 12.4V or higher; voltage under crank load should stay above 10.5V. Clean and tighten terminals. Marine batteries last 4 to 6 years; a 7-year-old battery is at end of life regardless of how it tests. A weak battery causes false positives on every other test, so replace it before continuing.' },
@@ -11015,13 +10982,6 @@ At 10 to 15 days of use per year, the math generally favors renting. At 30+ days
 **See real prices. No games.** 
 Build your Mercury repower quote at [mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required. 
 Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
-
----
-
-**English editor note:** Prices cited in this post (motor MSRPs, storage rates, inventory examples) are drawn directly from the source post. Verify all figures are current before publishing. Tariff situation is described as evolving, do not add specifics not confirmed from current sources.
-
----
-
 ---`,
     faqs: [
       {
@@ -11577,13 +11537,6 @@ For twin-engine setups, brand conversions, or commercial applications, call 905-
 Build your configured Mercury quote at [mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 
 Questions after you see it? Call 905-342-2153. 
 Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
-
----
-
-**English editor note:** No service scope sentence needed in this post (it is a transparency/pricing post, not a service post). Pricing ranges cited (e.g., $11,000, $15,000 for 40, 60 HP all-in before HST) are from the source post, verify these are still current before publishing. APR (7.99% as of May 2026) should be confirmed against current financing terms before publishing.
-
----
-
 ---`,
     faqs: [
       {
@@ -12733,13 +12686,6 @@ Call 905-342-2153 before you head out, slip availability, fuel confirmation, or 
 Boat rentals at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). 
 Mercury repower quotes at [mercuryrepower.ca](https://mercuryrepower.ca). 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
-
----
-
-**English editor note:** All lock hours, fees, and program dates are from the source post and were current as of May 2026. Verify with Parks Canada before publishing; these change annually. Service scope sentence used in facility table naturally. Transient slip count (4, 6) should be verified as current before publishing.
-
----
-
 ---`,
     faqs: [
   {
@@ -12924,10 +12870,6 @@ It can. Heat cycles can damage head gaskets and warp components even in brief ov
 Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 Phone: 905-342-2153
-
----
-
-**Editor Note:** Emergency protocol is ordered and action-oriented. The "five steps" structure allows skimming in a real emergency. No repair pricing or specific diagnostic outcomes fabricated. The four causes are general and verifiable. The "don't ignore it" tone is accurate without being alarmist.
 
 ---`,
     howToSteps: [
@@ -13962,10 +13904,6 @@ Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores L
 Or build a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 Phone: 905-342-2153
-
----
-
-**Editor Note:** Service intervals are described at a category level consistent with Mercury's published schedule structure without fabricating exact part numbers, quantities, or model-specific specs. The "affects warranty" section is accurate in general terms without making specific warranty promises. Maintenance scope tables list the types of work typical at each interval, not fabricated exact specs.
 
 ---`,
     faqs: [
@@ -18583,7 +18521,7 @@ Harris Boat Works. Gores Landing, ON, est. 1947
     description: 'Real CAD prices for Mercury outboards in Ontario, by HP tier (portable kickers to V6 repowers), plus what\'s actually included, how MSRP works, and what installed cost looks like at a Mercury Platinum dealer.',
     content: `### Quick Answer
 
-Mercury outboard pricing in Ontario depends on horsepower, controls, prop, rigging, installation, HST, and the boat itself. Harris Boat Works publishes current Mercury quote guidance at mercuryrepower.ca. Use any price ranges in this article for planning only and refresh them from the live quote configurator before publishing.
+Mercury outboard pricing in Ontario depends on horsepower, controls, prop, rigging, installation, HST, and the boat itself. Harris Boat Works publishes current Mercury quote guidance at mercuryrepower.ca. Use any price ranges in this article for planning only and refresh them from the live quote configurator.
 
 ---
 
@@ -18775,13 +18713,6 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
 ---
 
 *Related guides: Mercury 40 vs 60 HP for Ontario boats | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Should I repower or buy a new boat?*
-
----
-
-**EDITOR NOTE (English):** 
-Prices sourced from existing published post (reviewed 2026-05-08). All pricing tables retained from original, these are real HBW dealer prices and should be verified against mercuryrepower.ca/pricing-reference before republishing, as Mercury Canada updates pricing through the season. The all-in installed cost ranges ($25,000, $28,000 for 150 HP, $36,000, $39,000 for 225 Pro XS) are retained from original. Removed any stale APR/financing rate claims. The "up to 7 years" warranty note is clarified as promotional, not standard. Dealer comparison section rewritten to remove "lowest price in Ontario" competitive claim language. Post structure expanded with proper H2/H3 hierarchy, FAQ section formalized, and CTA consolidated. No prices fabricated.
-
----
 ---`,
     image: '/lovable-uploads/hero-ontario-mercury-price-guide.png',
     author: 'Jay Harris',
@@ -19016,13 +18947,6 @@ Yes. Old Mercury motors in workable condition are valued at trade-in. Non-Mercur
 Build your Mercury repower quote at [mercuryrepower.ca](https://mercuryrepower.ca), choose motor, controls, steering, gauges, wiring, prop, and see the configured total before calling anyone. 
 Questions? Call 905-342-2153. 
 Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
-
----
-
-**English editor note:** All CAD cost ranges cited are from the source post and should be verified as current before publishing. "For engine repairs, we only service Mercury and Mercruiser." appears naturally in the "What HBW Includes" section.
-
----
-
 ---`,
     image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
     author: 'Jay Harris',
@@ -19277,13 +19201,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Ontario Mercury Outboard Price Guide | Should I repower or buy a new boat?*
-
----
-
-**EDITOR NOTE (English):** 
-Source post published 2026-05-09. All specs and pricing figures retained from original, these come from live HBW data. The all-in installed cost ranges ($11,000, $15,500) are from the original post. No APR or financing rates mentioned. Added formal FAQ section (original had Q&A in running text, not a dedicated block). Expanded the capacity plate note per brand-voice requirement for specificity. Rice Lake context strengthened. "Note on 14 ft hulls" integrated into a note within the Performance section rather than a standalone subhead, to tighten structure. No prices fabricated.
-
----
 ---`,
   },
   {
@@ -19645,13 +19562,6 @@ The app shows eligibility once SmartCraft Connect is paired. HBW can also check 
 [mercuryrepower.ca](https://mercuryrepower.ca), or call 905-342-2153 with your motor's serial number. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Platinum dealer. Est. 1947.
-
----
-
-**English editor note:** Service scope sentence ("For engine repairs, we only service Mercury and Mercruiser.") appears naturally near the end of the Boost section. Compatibility matrix is sourced from the existing post, verify current model-year compatibility with Mercury Canada before publishing. No fabricated pricing.
-
----
-
 ---`,
   },
   {
@@ -20137,7 +20047,7 @@ Mercury's 9.9 EFI ProKicker is built for trolling: high-thrust four-blade prop, 
 
 ## The Price, What HBW Has Published
 
-As of the source post (May 2026), HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069, $3,875 CAD range.
+As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069, $3,875 CAD range.
 
 **Verify current pricing at [mercuryrepower.ca](https://mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
 
@@ -20206,13 +20116,6 @@ The motor recommends 87 octane with up to 10% ethanol. Ethanol-free fuel will ru
 Or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Platinum dealer. Est. 1947.
-
----
-
-**English editor note:** Service scope sentence ("For engine repairs, we only service Mercury and Mercruiser.") appears twice, once in "Our Honest Take" (mirroring the source post language) and once in the FAQ. The $2,999 CAD price is from the source post as of May 2026, verify current pricing before publishing. Specs table drawn from source post; confirm against current Mercury Canada spec sheets before publishing.
-
----
-
 ---`,
   },
   {
@@ -20371,13 +20274,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Mercury 75 HP FourStroke, why we don't stock it | Mercury 115 HP FourStroke review | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
-
----
-
-**EDITOR NOTE (English):** 
-Source post published 2026-05-10. Specs retained from original (2.1L inline-4, 359 lbs, 8-valve SOHC, 17,000 hours factory testing, 20, 30% fuel savings claim). No dollar prices in original post for this model, none added here; readers directed to quote configurator. FAQ section formalized from scattered Q&A text in original. The "20, 30% less fuel" figure is from the original post, should be treated as real-world range, not a guaranteed spec. Command Thrust vs. standard gearcase section restructured as a comparison table. Added explicit note that we only service Mercury and Mercruiser, per brand voice guidelines.
-
----
 ---`,
   },
 
@@ -20563,13 +20459,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Mercury 90 HP FourStroke review | Mercury 75 HP FourStroke, why we don't stock it | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
-
----
-
-**EDITOR NOTE (English):** 
-Source post published 2026-05-10. All specs retained from original: 359 lbs, 2.1L inline-4, 8-valve SOHC, 17,000 hours factory testing, 35-amp/441-watt alternator, 6,000 RPM, 25, 35% fuel savings. The 150 is described in this post as a "V4 / different family", the original notes it is a "different family entirely," a V6; the price guide lists it as a V6. Ensure technical team confirms exact V6 architecture for 150 in final CMS version. Comparison table retained from original. FAQ formalized from running text. No prices fabricated; dollar figures are in the price guide post (Post 1), not repeated here to avoid stale pricing risk.
-
----
 ---`,
   },
 
@@ -20701,13 +20590,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
-
----
-
-**EDITOR NOTE (English):** 
-Source post published 2026-05-10. Specs retained from original: 2.1L block, 8-valve SOHC, 359 lbs, 35 amp / 441 watt alternator, RPM range 4,500, 5,500 (75) vs 5,000, 6,000 (90), EFI, SmartCraft. The "95% of customers" line is from the original post, retained. No dollar prices for individual models in this post (aligned with original's approach); readers directed to quote configurator. The statement "we don't stock the 75" is a verified HBW business fact from hbw-business-context skill. Added text/phone number per original CTA. FAQ expanded from implicit Q&A in original running text. No prices fabricated.
-
----
 ---`,
   },
 
@@ -20900,13 +20782,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review*
-
----
-
-**EDITOR NOTE (English):** 
-Source post published 2026-05-11. All cost ranges retained from original ($11,000, $15,000 for 40, 60 HP; $17,000, $22,000 for 75, 115 HP; $23,000, $30,000 for 150 HP; $40,000, $70,000+ new boat; $25,000, $50,000 used). No APR or financing rates included, avoided per task brief. "50, 70% of motor investment in resale" figure is from original, retained but flagged as an approximation. The "GTA customers drive 60, 90 minutes" detail was removed from this post (kept in Price Guide post where it's more relevant). FAQ section formalized from original's running Q&A text. Added explicit Legend Boats CTA for new boat path, per brand-voice guideline about HBW being a Legend dealer. No prices fabricated.
-
----
 ---`,
     faqs: [
       { question: 'Is repowering cheaper than buying a new boat?', answer: "Almost always, yes. Typical repower for a 40-115 HP boat lands $11,000 to $22,000 all-in. An equivalent new boat package is $40,000 to $70,000+. Even a 3-5 year-old used boat sits at $25,000 to $50,000. The cost gap is usually $20K-$40K in repower's favour, assuming the hull is sound." },
@@ -21997,10 +21872,6 @@ Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat W
 
 Phone: 905-342-2153
 
----
-
-**Editor Note:** Ontario-specific framing (cold storage battery degradation, ethanol fuel, 5, 6 month off-season) differentiates this from the general won't-start post. No fabricated diagnostic outcomes, timelines, or repair costs. The battery degradation mechanism described is accurate general knowledge.
-
 ---`,
     faqs: [
       { question: 'Why won\'t my Mercury 4-stroke start?', answer: 'Most common causes in order: (1) safety lanyard not clipped, (2) weak or dead battery, (3) stale fuel or water in fuel, (4) bad spark plugs, (5) fuel pump or filter, (6) ECM alarm code. Check in that order - 80% of cases resolve in the first 4 steps.' },
@@ -22170,10 +22041,6 @@ Impeller wear is a maintenance item, not a defect, unless the impeller fails ver
 Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: 905-342-2153
-
----
-
-**Editor Note:** The idle-specific overheating framing makes this post distinct from the general overheating guide. Impeller as primary cause of this symptom pattern is accurate. No repair pricing or exact timelines fabricated. The "no-wake zone" framing grounds it in real Ontario boating context.
 
 ---`,
     faqs: [
@@ -22973,10 +22840,6 @@ Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat W
 
 Phone: 905-342-2153
 
----
-
-**Editor Note:** Beep patterns are described as model-dependent with the manual as authoritative source, this is accurate and avoids fabricating specific codes that could be wrong on a specific motor. Guardian mode and alarm behaviour described at general level consistent with Mercury's published systems. No diagnostic outcomes or repair costs fabricated.
-
 ---`,
     faqs: [
       { question: 'What does a continuous beep mean on a Mercury outboard?', answer: 'A continuous beep can indicate a serious warning such as overheating, overspeed, Guardian activation, or a sensor-related issue. Reduce throttle and diagnose safely.' },
@@ -23153,10 +23016,6 @@ Often yes, the motor started on fuel already in the system but couldn't maintain
 Book a spring diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: 905-342-2153
-
----
-
-**Editor Note:** This post is distinct from the general and Ontario-specific won't-start posts in focusing specifically on the "after sitting" scenario, the winterization connection section adds material that doesn't appear in the other posts. No fabricated diagnostic outcomes or repair costs. The ethanol-free fuel mention is accurate for HBW's on-site offering.
 
 ---
 
@@ -23390,26 +23249,7 @@ HBW 팀은 영어로 소통합니다. 한국어 통역 서비스는 제공하지
 **전문 겨울 정비를 원하신다면:** 
 [hbw.wiki/service](https://hbw.wiki/service)에서 예약하세요. Harris Boat Works는 1947년부터 Rice Lake, Gores Landing에서 운영 중인 Mercury Marine 플래티넘 딜러입니다.
 
-전화: 905-342-2153
-
----
-
-**Editor Note (English):** This Korean-language post is a complete standalone guide for Korean-speaking Ontario boaters. The language note (HBW communicates in English, Korean-speaking customers welcome) is consistent with the original post and is accurate, it's honest without being unwelcoming. All technical content is consistent with the English winterization posts. The stat (584 winterizations) is used as a credibility anchor consistent with HBW business context. The "엔진 수리의 경우, 저희는 Mercury 및 Mercruiser만 서비스합니다" line is the direct Korean translation of the approved service scope sentence. No fabricated pricing or timelines. Contact info matches official HBW info exactly.
-
----
-
----
-
-# DOCUMENT NOTES
-
-**Batch D post count:** 10 (9 English, 1 Korean) 
-**Service scope sentence used:** In every post, once per post 
-**Service CTA:** hbw.wiki/service in every post 
-**Stats used:** 584 winterizations (Posts 2, 10); 507 customer-paid service jobs not explicitly used but implied by "consistent volume of spring diagnostic work", stat was not forced where it didn't fit naturally 
-**Fabrication guardrails:** No repair pricing, no specific service timelines, no exact maintenance specs beyond general interval descriptions, no diagnostic outcomes stated as certain 
-**Language compliance:** Post 10 is full Korean with English-language Editor Note 
-**Internal linking:** All posts cross-link to at least 2 related posts in the batch 
-**Slug format:** Matches original URL slugs exactly`,
+전화: 905-342-2153`,
     faqs: [
       { question: 'Why will my Mercury outboard not start after winter?', answer: 'Common causes include weak battery, loose/corroded terminals, stale fuel, closed tank vent, primer bulb issues, kill switch, neutral safety switch, or fuel system problems.' },
       { question: 'Can old gas stop an outboard from starting?', answer: 'Yes. Stale or contaminated fuel can cause hard starting, no-start, rough running, or stalling after storage.' },
