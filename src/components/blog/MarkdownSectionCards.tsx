@@ -213,8 +213,13 @@ function rewriteDecisionCards(md: string): string {
   return md.replace(re, (_m, body) => `:::decision-card\n${body}\n:::`);
 }
 
+function rewriteDiagnosticFlow(md: string): string {
+  const re = /^::diagnostic-flow\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::diagnostic-flow\n${body}\n:::`);
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md)));
+  return rewriteDiagnosticFlow(rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))));
 }
 
 /**
