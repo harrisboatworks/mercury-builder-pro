@@ -955,6 +955,42 @@ export type Database = {
         }
         Relationships: []
       }
+      financing_submission_logs: {
+        Row: {
+          application_id: string | null
+          created_at: string
+          error_code: string | null
+          error_message: string | null
+          id: string
+          metadata: Json
+          outcome: string
+          stage: string
+          user_id: string | null
+        }
+        Insert: {
+          application_id?: string | null
+          created_at?: string
+          error_code?: string | null
+          error_message?: string | null
+          id?: string
+          metadata?: Json
+          outcome: string
+          stage: string
+          user_id?: string | null
+        }
+        Update: {
+          application_id?: string | null
+          created_at?: string
+          error_code?: string | null
+          error_message?: string | null
+          id?: string
+          metadata?: Json
+          outcome?: string
+          stage?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       google_places_cache: {
         Row: {
           cached_at: string
