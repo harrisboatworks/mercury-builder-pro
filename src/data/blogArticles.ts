@@ -12798,6 +12798,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
 ## Quick Answer
 
 If the overheat alarm is sounding right now: throttle back to idle, check the tell-tale water stream, and assess from there. No stream means the water pump has failed or the intake is blocked, shut down immediately. A strong stream with an alarm may be a sensor or thermostat issue, idle toward shore. When in doubt, shut it down. Running an overheated motor to try to get home is how a relatively small repair becomes an engine replacement.
+
 ::diagnostic-flow
 heading: Mercury overheating? Run this checklist before damage gets expensive
 eyebrow: Emergency diagnostic
@@ -12822,6 +12823,8 @@ escalationBody: Cooling system failures get expensive fast. Tow in or trailer to
 ::
 
 ---
+
+## Outboard Overheating: What to Do Right Now, and How to Prevent It
 
 If you're reading this from the water with the alarm going, skip to the emergency section below. Get yourself safe, then come back for the rest.
 
