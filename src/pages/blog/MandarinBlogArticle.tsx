@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
-import { ArrowLeft, Phone, MapPin, Navigation } from 'lucide-react';
+import { ArrowLeft, Navigation } from 'lucide-react';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 
 export default function MandarinBlogArticle() {
