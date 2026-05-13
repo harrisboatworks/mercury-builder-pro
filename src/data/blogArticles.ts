@@ -20674,6 +20674,29 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 If your hull is sound and the motor is the problem, repower. A 75, 115 HP repower typically costs $17,000, $22,000 all-in. An equivalent new boat package runs $40,000, $70,000+. That gap is real. If the hull is going, or the boat no longer fits how you use it, buying new or used makes more sense. Neither option is always right.
 
+::decision-card
+heading: Should you repower or buy new?
+eyebrow: Honest decision tree
+subhead: Use this when your hull is solid but the motor is tired
+leftLabel: Repower if
+leftCriteria:
+  - Hull, transom, and rigging are solid
+  - You like the boat and how it rides
+  - Budget is roughly half the cost of a comparable new boat
+  - Storage and trailer already work
+leftOutcome: Lean toward repower
+leftVariant: recommended
+rightLabel: Buy new if
+rightCriteria:
+  - Hull has soft spots, structural rot, or major fiberglass issues
+  - Family use has outgrown the boat
+  - Electronics, layout, or seating no longer fit how you boat
+  - You want full Mercury warranty coverage on the whole package
+rightOutcome: Lean toward new
+rightVariant: alternative
+whenInDoubt: Bring photos and a description to a quote and we will tell you which way the numbers point.
+::
+
 ---
 
 ### Should I Repower or Buy a New Boat?
