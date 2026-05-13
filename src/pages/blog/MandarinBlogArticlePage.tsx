@@ -286,7 +286,7 @@ export default function MandarinBlogArticlePage() {
   };
 
   return (
-    <div className="min-h-screen bg-background" lang="zh-Hans">
+    <div className="min-h-screen bg-repower-paper" lang="zh-Hans">
       <Helmet>
         <title>{article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
@@ -302,7 +302,7 @@ export default function MandarinBlogArticlePage() {
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
-      <LuxuryHeader />
+      <RepowerHeader />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
         {/* Back nav */}
