@@ -382,29 +382,7 @@ export default function MandarinBlogArticlePage() {
         )}
 
         {/* CTA */}
-        <section className="text-center bg-primary/5 rounded-2xl p-8 mb-12">
-          <h2 className="text-xl font-light text-foreground mb-3">现在就行动</h2>
-          <p className="text-muted-foreground text-sm mb-6">花五分钟在线配置您的报价</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/quote/motor-selection"
-              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
-            >
-              在线获取报价
-            </Link>
-            <a
-              href="tel:905-342-2153"
-              className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition-colors"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              905-342-2153
-            </a>
-          </div>
-          <p className="text-sm text-muted-foreground mt-4 flex items-center justify-center gap-1">
-            <MapPin className="w-3 h-3" />
-            5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-          </p>
-        </section>
+        <BlogCTA category={article.category} slug={article.slug} variant="banner" />
       </main>
 
       <SiteFooter />
