@@ -89,7 +89,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "inLanguage": "en-CA",
         "speakable": {
           "@type": "SpeakableSpecification",
-          "cssSelector": [".article-intro", ".faq-answer", "h1", "h2"]
+          "cssSelector": ["[data-speakable=\"true\"]", ".article-intro", ".faq-answer", "h1", "h2"]
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -148,7 +148,38 @@ export function BlogSEO({ article }: BlogSEOProps) {
               "text": a
             }
           }))
-      }] : [])
+      }] : []),
+      // ClaimReview schema for the dealer-pricing myth-buster post
+      ...(article.slug === 'why-mercury-dealers-hide-prices-online' ? [
+        {
+          "@type": "ClaimReview",
+          "@id": `${url}#claim-pressure`,
+          "claimReviewed": "Mercury dealers hide prices online because they want to pressure customers into a sales conversation",
+          "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+          "datePublished": article.dateModified || article.datePublished,
+          "reviewRating": { "@type": "Rating", "ratingValue": "1", "bestRating": "5", "alternateName": "Misleading" },
+          "itemReviewed": {
+            "@type": "Claim",
+            "author": { "@type": "Thing", "name": "Common dealer industry assumption" },
+            "datePublished": article.datePublished,
+            "appearance": url
+          }
+        },
+        {
+          "@type": "ClaimReview",
+          "@id": `${url}#claim-pay-more`,
+          "claimReviewed": "You always pay more when prices are published online than when negotiating in person",
+          "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+          "datePublished": article.dateModified || article.datePublished,
+          "reviewRating": { "@type": "Rating", "ratingValue": "1", "bestRating": "5", "alternateName": "False" },
+          "itemReviewed": {
+            "@type": "Claim",
+            "author": { "@type": "Thing", "name": "Common dealer industry assumption" },
+            "datePublished": article.datePublished,
+            "appearance": url
+          }
+        }
+      ] : [])
     ]
   };
 
