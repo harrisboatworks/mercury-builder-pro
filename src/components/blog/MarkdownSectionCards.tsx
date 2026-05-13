@@ -247,15 +247,77 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
   relatedSlugs?: string[];
+  decisionProps?: DecisionCardProps;
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card)\s*\n([\s\S]*?)\n:::/g;
+
+function parseDecisionCardBody(body: string): DecisionCardProps | null {
+  // YAML-ish: top-level `key: value` lines, plus list keys whose values are
+  // indented `- item` lines. Keys: heading, eyebrow, subhead, leftLabel,
+  // leftCriteria, leftOutcome, leftVariant, right*, whenInDoubt.
+  const lines = body.split('\n');
+  const flat: Record<string, string> = {};
+  const lists: Record<string, string[]> = {};
+  let currentList: string | null = null;
+  for (const raw of lines) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) {
+      currentList = null;
+      continue;
+    }
+    const listItem = /^\s+-\s+(.*)$/.exec(line);
+    if (listItem && currentList) {
+      lists[currentList].push(listItem[1].trim());
+      continue;
+    }
+    const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) {
+      currentList = null;
+      continue;
+    }
+    const key = kv[1];
+    const val = kv[2];
+    if (val === '') {
+      lists[key] = [];
+      currentList = key;
+    } else {
+      flat[key] = val;
+      currentList = null;
+    }
+  }
+  if (!flat.heading) return null;
+  const leftCriteria = lists.leftCriteria || [];
+  const rightCriteria = lists.rightCriteria || [];
+  const variantOf = (v?: string): 'recommended' | 'alternative' | undefined => {
+    if (v === 'recommended' || v === 'alternative') return v;
+    return undefined;
+  };
+  return {
+    heading: flat.heading,
+    eyebrow: flat.eyebrow,
+    subhead: flat.subhead,
+    leftColumn: {
+      label: flat.leftLabel || '',
+      criteria: leftCriteria,
+      outcome: flat.leftOutcome || '',
+      variant: variantOf(flat.leftVariant),
+    },
+    rightColumn: {
+      label: flat.rightLabel || '',
+      criteria: rightCriteria,
+      outcome: flat.rightOutcome || '',
+      variant: variantOf(flat.rightVariant),
+    },
+    whenInDoubt: flat.whenInDoubt,
+  };
+}
 
 function splitDirectives(md: string): RenderChunk[] {
   const chunks: RenderChunk[] = [];
@@ -287,6 +349,9 @@ function splitDirectives(md: string): RenderChunk[] {
         .filter(Boolean);
       if (slugs.length)
         chunks.push({ kind: 'related-posts', content: '', relatedSlugs: slugs });
+    } else if (name === 'decision-card') {
+      const props = parseDecisionCardBody(body);
+      if (props) chunks.push({ kind: 'decision-card', content: '', decisionProps: props });
     }
     last = m.index + m[0].length;
   }
