@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/site';
 export const ONTARIO_HUB_FAQ = [
   {
     question: "Where can I buy Mercury outboards in Ontario?",
-    answer: "Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario, family-owned since 1947, Mercury dealer since 1965. We carry the Mercury outboard lineup with real CAD pricing online: portable FourStroke 2.5–20 HP, mid-range FourStroke 25–115 HP, Pro XS 115–250 HP, Command Thrust, SeaPro commercial, and ProKicker trolling motors. Build a quote at mercuryrepower.ca/quote/motor-selection."
+    answer: "Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario, family-owned since 1947, Family marina on Rice Lake since 1947. We carry the Mercury outboard lineup with real CAD pricing online: portable FourStroke 2.5–20 HP, mid-range FourStroke 25–115 HP, Pro XS 115–250 HP, Command Thrust, SeaPro commercial, and ProKicker trolling motors. Build a quote at mercuryrepower.ca/quote/motor-selection."
   },
   {
     question: "What Mercury motor lines are sold at Harris Boat Works?",
@@ -72,7 +72,7 @@ export function MercuryOutboardsOntarioSEO() {
         "@type": ["LocalBusiness", "AutomotiveBusiness"],
         "@id": `${SITE_URL}/mercury-outboards-ontario#localbusiness`,
         "name": "Harris Boat Works, Mercury Platinum Dealer",
-        "description": "Mercury Marine Platinum Dealer serving Ontario. Full Mercury outboard lineup, real CAD pricing online, repower specialists. Family-owned since 1947, Mercury dealer since 1965.",
+        "description": "Mercury Marine Platinum Dealer serving Ontario. Full Mercury outboard lineup, real CAD pricing online, repower specialists. Family-owned since 1947, Family marina on Rice Lake since 1947.",
         "url": `${SITE_URL}/mercury-outboards-ontario`,
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",

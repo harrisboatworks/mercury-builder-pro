@@ -241,7 +241,7 @@ The Mercury Avator is suitable for specific Rice Lake use cases, small car-toppe
 
 ### How do I choose from Mercury's 2026 lineup for my Ontario boat?
 
-Start with your hull's capacity plate maximum HP, then consider how you use your boat: solo fishing, family days, watersports, trolling, or a mix. For most Ontario fishing and family boats, the answer lands in the 60–115 HP FourStroke range. For performance, Pro XS (115–300 HP) is worth considering. For premium quiet operation on a larger boat, Verado starts at 250 HP. Harris Boat Works, Mercury dealer since 1965 in Gores Landing, can narrow this down based on your hull and use. Use the quote builder at mercuryrepower.ca or call 905-342-2153.
+Start with your hull's capacity plate maximum HP, then consider how you use your boat: solo fishing, family days, watersports, trolling, or a mix. For most Ontario fishing and family boats, the answer lands in the 60–115 HP FourStroke range. For performance, Pro XS (115–300 HP) is worth considering. For premium quiet operation on a larger boat, Verado starts at 250 HP. Harris Boat Works, Family marina on Rice Lake since 1947 in Gores Landing, can narrow this down based on your hull and use. Use the quote builder at mercuryrepower.ca or call 905-342-2153.
 
 ### What is the difference between Mercury FourStroke and Mercury Pro XS outboards?
 
@@ -257,7 +257,7 @@ For accurate 2026 Mercury FourStroke pricing in Ontario, use the Harris Boat Wor
 
 ### What is the best Mercury outboard for trolling walleye on Rice Lake?
 
-For walleye trolling on Rice Lake, the most effective setup is a main motor in the 75–15 HP FourStroke range paired with a dedicated Mercury ProKicker 9.9 HP as a trolling motor. Running a full-size outboard at true trolling speeds (1–3 mph) is inefficient and hard on the engine. The ProKicker is purpose-built for this use, runs cleanly at low RPM, and keeps your main motor in good shape for running between spots. For a single-motor setup, a Mercury 9.9 or 25 HP FourStroke tiller works on light 12–14 ft aluminum boats for calm-water walleye work. Harris Boat Works is a Mercury dealer since 1965 in Gores Landing on Rice Lake.
+For walleye trolling on Rice Lake, the most effective setup is a main motor in the 75–15 HP FourStroke range paired with a dedicated Mercury ProKicker 9.9 HP as a trolling motor. Running a full-size outboard at true trolling speeds (1–3 mph) is inefficient and hard on the engine. The ProKicker is purpose-built for this use, runs cleanly at low RPM, and keeps your main motor in good shape for running between spots. For a single-motor setup, a Mercury 9.9 or 25 HP FourStroke tiller works on light 12–14 ft aluminum boats for calm-water walleye work. Harris Boat Works is a Family marina on Rice Lake since 1947 in Gores Landing on Rice Lake.
 
 ## Next steps
 

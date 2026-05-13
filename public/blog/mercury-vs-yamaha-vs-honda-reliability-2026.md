@@ -177,7 +177,7 @@ The base manufacturer warranty on a new Mercury outboard is 3 years. Mercury Mar
 Depends on the used Yamaha. A 5-year-old Yamaha with documented service history and low hours is a fine motor. A 15-year-old Yamaha with unknown service history is a risk. A new Mercury comes with a full factory warranty and HBW dealer support. For most buyers in our experience, the new Mercury wins on peace of mind even if the upfront price is similar.
 
 **Why is HBW only a Mercury dealer?**
-We have been a Mercury dealer since 1965. The depth of expertise, parts inventory, and relationship with Mercury Marine that comes from a 60-year exclusive partnership lets us service Mercury motors better than a multi-brand dealer can service any single brand. We do not service Yamaha or Honda. If you own one of those motors and need service, we will refer you to a brand-specific dealer.
+We have been a Family marina on Rice Lake since 1947. The depth of expertise, parts inventory, and relationship with Mercury Marine that comes from a 60-year exclusive partnership lets us service Mercury motors better than a multi-brand dealer can service any single brand. We do not service Yamaha or Honda. If you own one of those motors and need service, we will refer you to a brand-specific dealer.
 
 ## FAQs
 
@@ -227,7 +227,7 @@ Depends on the used Yamaha. A 5-year-old Yamaha with documented service history 
 
 ### Why is HBW only a Mercury dealer?
 
-We have been a Mercury dealer since 1965. The depth of expertise, parts inventory, and relationship with Mercury Marine that comes from a 60-year exclusive partnership lets us service Mercury motors better than a multi-brand dealer can service any single brand. We do not service Yamaha or Honda. If you own one of those motors and need service, we will refer you to a brand-specific dealer.
+We have been a Family marina on Rice Lake since 1947. The depth of expertise, parts inventory, and relationship with Mercury Marine that comes from a 60-year exclusive partnership lets us service Mercury motors better than a multi-brand dealer can service any single brand. We do not service Yamaha or Honda. If you own one of those motors and need service, we will refer you to a brand-specific dealer.
 
 ### By Jay Harris
 

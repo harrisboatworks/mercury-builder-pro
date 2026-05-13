@@ -39,7 +39,7 @@ export default function MercuryDealerPeterborough() {
             Mercury Dealer Near Peterborough, Ontario
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, about 35 minutes south on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
+            Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, about 35 minutes south on Rice Lake. Family-owned since 1947, Family marina on Rice Lake since 1947.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">

@@ -182,7 +182,7 @@ For Rice Lake ProKicker setups, the engine-hour tracking on the kicker is the ki
 
 ## What HBW Brings Specifically
 
-We've been on Rice Lake since 1947 and a Mercury dealer since 1965. SmartCraft Connect Mobile is one of the easier Mercury add-ons we sell, and we install it at every repower where the customer wants it.
+We've been on Rice Lake since 1947 and a Family marina on Rice Lake since 1947. SmartCraft Connect Mobile is one of the easier Mercury add-ons we sell, and we install it at every repower where the customer wants it.
 
 - We stock both module variants (8M0173128 and 8M0173129).
 - We install during repower so the customer drives away with the app already paired and tested.

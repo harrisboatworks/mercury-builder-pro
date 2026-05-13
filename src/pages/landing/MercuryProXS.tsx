@@ -108,7 +108,7 @@ export default function MercuryProXS() {
             Mercury Pro XS Outboards in Ontario
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Tournament-grade performance from 115 to 250 HP. Real CAD pricing, in stock at Harris Boat Works, Mercury Marine Platinum Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
+            Tournament-grade performance from 115 to 250 HP. Real CAD pricing, in stock at Harris Boat Works, Mercury Marine Platinum Dealer on Rice Lake. Family-owned since 1947, Family marina on Rice Lake since 1947.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">

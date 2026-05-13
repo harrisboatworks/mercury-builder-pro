@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/site';
 const GTA_FAQ = [
   {
     question: "Is there a Mercury dealer that serves the GTA?",
-    answer: "Harris Boat Works on Rice Lake serves GTA boaters from across the Greater Toronto Area. We're 90 minutes east of Toronto via Highway 401, closer than most GTA boaters realize for a Mercury Marine Platinum Dealer. Family-owned since 1947, Mercury dealer since 1965."
+    answer: "Harris Boat Works on Rice Lake serves GTA boaters from across the Greater Toronto Area. We're 90 minutes east of Toronto via Highway 401, closer than most GTA boaters realize for a Mercury Marine Platinum Dealer. Family-owned since 1947, Family marina on Rice Lake since 1947."
   },
   {
     question: "How do GTA customers handle pickup?",
@@ -33,7 +33,7 @@ export function MercuryDealerGTASEO() {
         "@id": `${SITE_URL}/mercury-dealer-gta#webpage`,
         "url": `${SITE_URL}/mercury-dealer-gta`,
         "name": "Mercury Dealer for the GTA | Harris Boat Works, 90 Min East of Toronto",
-        "description": "Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.",
+        "description": "Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Family marina on Rice Lake since 1947. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.",
         "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
         "about": { "@id": "https://mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA",
@@ -91,7 +91,7 @@ export function MercuryDealerGTASEO() {
       <title>Mercury Dealer for the GTA | Harris Boat Works, 90 Min East of Toronto</title>
       <meta
         name="description"
-        content="Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers."
+        content="Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Family marina on Rice Lake since 1947. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers."
       />
       <meta
         name="keywords"
