@@ -20972,6 +20972,20 @@ That's been the model since 1947. It still works.
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Markham Boaters Launch and Why HBW Serves the GTA Chinese-Canadian Community
+
+Markham is inland with no nearby public launch — local boaters trailer either north to **Lake Simcoe** (about 40 minutes via Highway 404) or east to **Rice Lake** (about 70 minutes via 404 → 407 east → 115 north). Lake Simcoe is the natural default for fishing and recreation; Rice Lake offers quieter water and an easier launch scene.
+
+The drive to Rice Lake is 70 minutes via Highway 404 → 407 east → Highway 115 north. Skipping the 407 to avoid tolls adds 15-20 minutes via the 401. Midweek mornings are calmest.
+
+Markham repower customers often:
+
+- **Read our [Mandarin-language guides](https://www.mercuryrepower.ca/blog/zh)** for technical detail before deciding. We have a growing 中文 collection covering pricing, winterization, and repower decisions for GTA Chinese-Canadian boaters.
+- **Justify the drive for Mercury Platinum-level service.** Closer dealers often lack the rigging depth for a clean repower install.
+- **Trust transparent CAD pricing.** Our online quote builder at [mercuryrepower.ca](https://mercuryrepower.ca) works without a phone call — you can build the quote in any language, in your own time, before deciding to make the trip.
 `,
     faqs: [
       { question: 'Is there a Mercury dealer in Markham?', answer: "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Markham - about 70 minutes north. Platinum is the top tier in Mercury's dealer program." },
@@ -21109,6 +21123,20 @@ You see the number before you leave Richmond Hill. You come up when you're decid
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Richmond Hill Boaters Launch and Why HBW Competes on Mercury Platinum Depth
+
+Richmond Hill is inland, with no major public launch in the city — **Lake Wilcox** is small and urban with limited recreational boating. Serious Richmond Hill boaters trailer either north to **Lake Simcoe** (about 50 minutes via Highway 404) or east to **Rice Lake** (about 75 minutes via 404/407/115). Lake Simcoe is the default for most local boaters; many have cottage relationships there.
+
+The drive to Rice Lake is 75 minutes via Highway 404 → 407 east → Highway 115 north. Avoiding the 407 tolls via the 401 adds 15-20 minutes but saves money — most customers run the toll route for service trips and skip it for casual visits.
+
+Why Richmond Hill boaters drive to HBW vs Simcoe-area dealers:
+
+- **Mercury Platinum-level expertise.** For repower work, dealer depth matters more than 20 minutes of drive time. HBW competes on rigging quality, not proximity.
+- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://mercuryrepower.ca) before deciding — no phone calls, no negotiation games, real dealer pricing.
+- **One-stop service + storage.** Many Richmond Hill customers store at HBW over winter, get spring commissioning, and trailer back to Simcoe or Rice Lake for the season.
 `,
     faqs: [
       { question: 'Is there a Mercury Platinum dealer near Richmond Hill?', answer: 'Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Richmond Hill - about 75 minutes north via Highway 404 and County Road 28.' },
@@ -21249,6 +21277,20 @@ That's the deal. It's been the deal since 1947.
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Mississauga Boaters Launch and Why HBW Handles Their Repowers
+
+Mississauga sits on Lake Ontario's west shore. The main local hub is **Port Credit Harbour Marina** — the largest in the city, with public access and an active recreational scene. Smaller launches are scattered along Lakeshore Road, and the **Credit River mouth** is a popular smaller-boat area. The Lakefront Promenade runs from Port Credit east into Etobicoke.
+
+The drive to Rice Lake is 90 minutes via the 401 east and Highway 115 north — basically a half-day round-trip. Mississauga's 401 access is consistently slow east of the 427 — even weekday mornings build. Plan for the extra time or stage your trip outside rush periods.
+
+Why Mississauga boaters trailer to HBW:
+
+- **Annual repower trips.** Many Mississauga customers make the drive once for the repower itself, then run service work closer to home between visits.
+- **Drop-and-pick logistics.** Trailer up midweek, leave the boat for service or storage, pick up when ready.
+- **Mercury Platinum depth.** A clean 115-150 HP repower install needs the rigging hours we put in daily — not every closer dealer has that bench.
 `,
     faqs: [
       { question: 'Is there a Mercury dealer near Mississauga?', answer: 'Mississauga has several Mercury dealers in the broader GTA. Harris Boat Works on Rice Lake is the closest Platinum-tier dealer for west-GTA customers willing to make the 90-minute drive northeast.' },
@@ -21374,6 +21416,20 @@ That's the deal.
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Vaughan Boaters Launch and Why HBW Handles Their Repowers
+
+Vaughan is inland with no nearby public launch. Local boaters trailer either north to **Lake Simcoe** via Highway 400 (Innisfil, Keswick) or east to **Rice Lake** via 407/115. Concord, Maple, and Woodbridge boaters tend to default to Simcoe; some venture east for the Kawarthas.
+
+The drive to Rice Lake is 80 minutes via Highway 400 south → 401 east → Highway 115 north — or via the 407 to skip city traffic. The 400 northbound on Friday afternoons in summer is brutal; reverse it for midweek HBW trips and you get the calmest 80 minutes you'll spend that week.
+
+Why Vaughan boaters drive to HBW for repower:
+
+- **Mercury Platinum-level service.** Closer Simcoe-area dealers handle the volume but not always the rigging depth. For a $15,000-$25,000 repower, the drive is justified.
+- **Once-a-year trip works.** Trailer up for the repower itself, then run service work closer to home.
+- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://mercuryrepower.ca) before the trip — the configurator works without a phone call and shows real pricing.
 `,
     faqs: [
       { question: 'How far is HBW from Vaughan?', answer: 'About 80 minutes via Highway 400 / 404 and Highway 115. Roughly 120 km depending on your part of Vaughan.' },
@@ -21498,6 +21554,20 @@ No fog machine. No runaround. Since 1947.
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Brampton Boaters Launch and Why HBW Is Worth the Trailer Trip
+
+Brampton is inland — no public launch in the city itself. Local boaters either drive south to Lake Ontario (Mississauga's **Port Credit Harbour** or Oakville's **Bronte Harbour**), north to **Lake Simcoe** via the 410/400 corridor, or east to **Rice Lake** via the 401/115. **Heart Lake Conservation Area** in Brampton is electric-motor only — not relevant for outboard owners.
+
+The drive to Rice Lake is 95 minutes via the 410 south, 401 east, and Highway 115 north. Weekend 401 traffic east of the 404 adds 20-30 minutes; midweek mornings are the only stress-free time.
+
+Why Brampton boaters still trailer to HBW:
+
+- **Once-a-year trip pays off.** A proper Mercury repower takes hours of dealer-portal work and shop time. Trailering to HBW for the repower itself, then storing locally for the season, is the pattern many Brampton customers run.
+- **Transparent CAD pricing.** [mercuryrepower.ca](https://mercuryrepower.ca) lets you build the quote at home before deciding to make the trip.
+- **Mercury Platinum-level work.** Closer dealers may lack the rigging depth for a clean install.
 `,
     faqs: [
       { question: 'How far is HBW from Brampton?', answer: 'About 95 minutes via Highway 410 / 401 and Highway 115. Roughly 140 km depending on your part of Brampton.' },
@@ -21626,6 +21696,20 @@ That's been the deal since 1947.
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Oakville Boaters Launch and Why HBW Handles Their Mercury Work
+
+Oakville is one of the GTA's stronger marina towns. **Bronte Harbour** and **Oakville Harbour** are both city-owned with public launches; **Bronte Outer Harbour Marina** handles larger boats. The **Sixteen Mile Creek** mouth at Oakville Harbour is a popular sheltered area for smaller-boat owners.
+
+The drive to Rice Lake is 110 minutes via the QEW east through Toronto, 401 east, and Highway 115 north. Similar to Burlington — weekend QEW through Toronto is slow, midweek mornings are the only sane window for service trips.
+
+Why Oakville boaters drive to HBW for repower:
+
+- **Mercury Platinum-level rigging.** For a $15,000-$25,000 repower investment, the drive is justified when local dealers can't match the install depth.
+- **One-time annual trip.** Many Oakville customers trailer up once for repower or major service, then run lighter maintenance closer to home.
+- **Transparent CAD pricing.** Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) before deciding — the configurator works without a phone call and shows real dealer pricing, not MSRP.
 `,
     faqs: [
       { question: 'How far is HBW from Oakville?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Oakville.' },
@@ -21752,6 +21836,20 @@ That's been true since 1947. It's still true.
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Burlington Boaters Launch and Why HBW Handles Their Repowers
+
+Burlington sits on Lake Ontario's west shore, with significant marina presence. The main local launches are **LaSalle Park Marina** (city-run with public ramp), **Bronte Harbour** just east in Oakville, and various private slips along Burlington Bay. The bay itself is sheltered but largely industrial; most recreational boating happens on open Lake Ontario.
+
+The drive to Rice Lake is roughly 110 minutes via the QEW east through Toronto, then 401 east and Highway 115 north — call it a 2-hour round-trip on a good day. Weekend QEW traffic through Toronto adds 20-40 minutes. Midweek mornings are the only sane option.
+
+Why Burlington boaters still drive to HBW:
+
+- **Same-day round-trips work.** Drop the boat off in the morning, head home; we'll call when it's ready.
+- **Annual repower or winterization trip.** Many Burlington customers trailer their boat to HBW once or twice a year for repower work or winterization + storage, then back to a Burlington-area marina for the season.
+- **Mercury Platinum-level depth.** For a multi-thousand-dollar repower investment, the drive is justified when local dealers can't match the rigging expertise.
 `,
     faqs: [
       { question: 'How far is HBW from Burlington?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Burlington.' },
@@ -22214,6 +22312,20 @@ Transparent pricing before you leave Pickering. The rigging conversation before 
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Pickering Boaters Launch and Why HBW Is Their Mercury Platinum Option
+
+Pickering's signature waterway is **Frenchmans Bay** — a sheltered shallow bay on Lake Ontario, home to **Pickering Harbour Marina** and **East Shore Marina**. Many Pickering boaters never leave the bay's protected waters; others use it as a launch point for open-water Lake Ontario fishing and recreation.
+
+The drive to Rice Lake is 50 minutes via the 401 east and Highway 115 north. The 401 east of the 407 is clear midweek; expect 20 extra minutes on Saturday cottage mornings. Tuesday-Thursday mornings are ideal for service trips.
+
+Why Pickering boaters choose HBW for repower:
+
+- **Drive time math.** 50 minutes to HBW is the same as driving back into central Toronto for a downtown dealer — and you get Mercury Platinum-level service.
+- **Frenchmans Bay-friendly motors.** The bay's shallow depths and sheltered conditions favour different motor setups than open-water boating. We've rigged plenty of Pickering boats.
+- **One-trip annual service.** Trailer up midweek, leave the boat for winterization or repower, pick up when ready. No 401 stress between Pickering and downtown.
 `,
     faqs: [
       { question: 'How far is HBW from Pickering?', answer: 'About 50 minutes via Highway 401 east and Highway 115 north. Roughly 75 km. Closer than most of the GTA - almost a non-decision drive for repower service.' },
@@ -22335,6 +22447,20 @@ That's the deal. Has been since 1947.
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Whitby Boaters Launch and Why HBW Sees Steady Volume from the Area
+
+Whitby has a strong boating community built around **Whitby Harbour Marina** — city-owned with 200+ slips and a public launch. The **Whitby Yacht Club** anchors a strong sailing and power-boating scene; Lake Ontario shoreline here is active year-round with recreational use.
+
+The drive to Rice Lake is 45 minutes via the 401 east and Highway 115 north. Clear midweek, weekend cottage traffic is the only friction. Tuesday-Thursday mornings are ideal for service trips.
+
+Why Whitby boaters are a strong repower market:
+
+- **Mature fleet.** Whitby's long-established marina community means many older Mercury (and other-brand) motors due for repower. We see steady annual volume from the area.
+- **Proximity makes it practical.** 45 minutes is reasonable for a multi-thousand-dollar repower investment — closer than most central Toronto dealers once you factor in 401 traffic.
+- **Mercury Platinum-level depth.** A clean install at HBW vs a rushed install elsewhere is the difference between 10 trouble-free years and a recurring warranty problem.
 `,
     faqs: [
       { question: 'How far is HBW from Whitby?', answer: 'About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.' },
@@ -22461,6 +22587,19 @@ You see the price before you leave Ajax. The rigging gets discussed before we or
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Ajax Boaters Launch and Why Many Repower at HBW
+
+Ajax sits on Lake Ontario's north shore. Most local boating runs out of **Rotary Park boat launch** on the Ajax waterfront or **Frenchmans Bay** on the Pickering border. Frenchmans Bay is the more sheltered option for smaller boats and weekend launches; Rotary Park gives faster access to open water for bigger rigs.
+
+The drive to Rice Lake is 45 minutes via the 401 east and Highway 115 north. It's a clear shot midweek. Saturday mornings in summer add 15-20 minutes as cottage traffic stacks east of Toronto until about 10 AM. For service appointments, midweek mornings give you the road and the shop to yourself.
+
+Why Ajax boaters choose HBW for repower:
+
+- **Mercury Platinum-level rigging depth.** A 115 HP repower involves controls, harness, gauge, and prop matching. Smaller dealers do this work but slower; we do it daily.
+- **One-trip storage + service.** Many Ajax customers store at HBW over winter, get spring commissioning, and trailer back to Lake Ontario for the season. One drive, one trusted shop, no May scheduling friction.
 `,
     faqs: [
       { question: 'How far is HBW from Ajax?', answer: 'About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.' },
@@ -22593,6 +22732,20 @@ You're practically in our neighbourhood. Let's work together.
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Oshawa Boaters Launch and Why Many Are Repower Candidates
+
+Oshawa is a strong east-GTA boating town. **Oshawa Harbour Marina** is the main local hub — city-owned, large facility with public launch and a long recreational history. Lake Ontario shoreline here has a serious boating community with manufacturing-town roots.
+
+The drive to Rice Lake is just 40 minutes via the 401 east and Highway 115 north — easy midweek, weekend cottage traffic the only friction. For service trips, Tuesday-Thursday mornings are ideal.
+
+Why Oshawa is a particularly strong repower market:
+
+- **Many older fiberglass hulls in great shape.** A 1990s-2000s 16-18 ft fiberglass hull with a tired Mercury or Evinrude is an ideal repower candidate. HBW handles a steady flow of these annually.
+- **Proximity makes it practical.** 40 minutes is a reasonable drive for a multi-thousand-dollar repower investment — closer than driving back into central Toronto.
+- **Mercury Platinum-level depth.** A repower done well lasts the rest of the boat's life. Done poorly, it gets brought back for warranty work.
 `,
     faqs: [
       { question: 'How far is HBW from Oshawa?', answer: 'About 40 minutes via Highway 401 east and Highway 115 north. Roughly 65 km. One of the closest GTA cities to Rice Lake.' },
@@ -22725,6 +22878,20 @@ This is what a dealer relationship is supposed to feel like.
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+---
+
+## Where Bowmanville Boaters Launch and Why HBW Is the Closest Mercury Platinum Dealer
+
+Bowmanville sits on Lake Ontario's north shore. Local launches are at the **Bowmanville waterfront** and the **Westside Beach area**. Lake Ontario shoreline here is open and exposed — most Bowmanville boaters fish close to shore or trailer to inland water when conditions favour it.
+
+The drive to Rice Lake is just 35 minutes via the 401 east and Highway 115 north — the shortest commute of any GTA suburb. For most Bowmanville boaters, HBW is the closest Mercury Platinum dealer, period. Driving back into Toronto for service takes longer.
+
+Why Bowmanville boaters choose HBW:
+
+- **Proximity.** 35 minutes door-to-door makes HBW closer than most local service shops once you factor in 401 traffic.
+- **Year-round option.** Many Bowmanville customers keep their boat at HBW for storage and service, fishing Rice Lake or trailering down to Lake Ontario as needed. One marina, all season.
+- **Mercury Platinum depth.** A proper repower or rigging job at HBW takes the time it takes — we don't shortcut the controls and prop matching.
 `,
     faqs: [
       { question: 'How far is HBW from Bowmanville?', answer: 'About 35 minutes via Highway 401 east and Highway 115 north. Roughly 55 km. The closest major GTA-edge city to Rice Lake.' },
