@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
-import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getMandarinArticleBySlug } from '@/data/mandarinBlogArticles';
