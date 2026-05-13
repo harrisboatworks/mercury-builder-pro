@@ -4852,7 +4852,8 @@ Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new P
   // Week 19: May 11, 2026
   {
     slug: 'boat-motor-size-calculator-guide',
-    title: 'What Size Motor Does My Boat Need? Complete Calculator Guide',
+    title: 'Boat Motor Size Guide: How to Calculate the Right HP for Your Boat',
+    seoTitle: 'Boat Motor Size Guide (How to Calculate HP)',
     description: 'Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection.',
     image: '/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero.png',
     author: 'Harris Boat Works',
