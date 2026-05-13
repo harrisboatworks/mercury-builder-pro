@@ -3,7 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getMandarinArticleBySlug } from '@/data/mandarinBlogArticles';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
