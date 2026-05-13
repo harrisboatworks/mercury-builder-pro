@@ -13,6 +13,7 @@ import {
   type MotorPricingRow,
 } from './MotorPricingCards';
 import { RelatedPostsGrid } from './RelatedPostsGrid';
+import { DecisionCard, type DecisionCardProps } from './DecisionCard';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
