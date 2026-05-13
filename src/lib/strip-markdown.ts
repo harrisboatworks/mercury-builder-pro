@@ -140,6 +140,8 @@ export function markdownToNoscriptHtml(input: string | undefined | null): string
 
   // Strip directive blocks (e.g. :::image-placeholder ... :::)
   s = s.replace(/^:::[a-zA-Z0-9_-]+[\s\S]*?^:::\s*$/gm, ' ');
+  // Strip double-colon directive blocks (e.g. ::decision-card ... ::)
+  s = s.replace(/^::[a-zA-Z0-9_-]+[\s\S]*?^::\s*$/gm, ' ');
 
   // Strip code fences and headings/HR/blockquotes
   s = s.replace(/```[\s\S]*?```/g, ' ');
