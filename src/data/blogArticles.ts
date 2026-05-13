@@ -18742,7 +18742,6 @@ Harris Boat Works. Gores Landing, ON, est. 1947
     relatedSlugs: ['mercury-repower-cost-ontario-2026-cad', 'mercury-outboard-financing-ontario-2026', 'outboard-trade-in-value-ontario-hbw'],
     title: 'Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier',
     description: 'Real CAD prices for Mercury outboards in Ontario, by HP tier (portable kickers to V6 repowers), plus what\'s actually included, how MSRP works, and what installed cost looks like at a Mercury Platinum dealer.',
-    image: '/lovable-uploads/hero-mercury-price-guide-counter.png',
     content: `### Quick Answer
 
 Mercury outboard pricing in Ontario depends on horsepower, controls, prop, rigging, installation, HST, and the boat itself. Harris Boat Works publishes current Mercury quote guidance at mercuryrepower.ca. Use any price ranges in this article for planning only and refresh them from the live quote configurator.
@@ -18938,7 +18937,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
 
 *Related guides: Mercury 40 vs 60 HP for Ontario boats | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Should I repower or buy a new boat?*
 ---`,
-    image: '/lovable-uploads/hero-ontario-mercury-price-guide.png',
+    image: '/lovable-uploads/hero-mercury-price-guide-counter.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
     dateModified: '2026-05-08',
