@@ -4357,6 +4357,7 @@ For most recreational boaters on Kawartha lakes, no, tow back to the dock and re
   {
     slug: 'mercury-seapro-commercial-outboard-guide',
     title: 'Mercury SeaPro: The Commercial Outboard Built for Guides, Charters, and High-Hour Use',
+    seoTitle: 'Mercury SeaPro: The Commercial Outboard Explained',
     description: "An HBW guide to Mercury SeaPro outboards, what makes them different from FourStrokes, who actually needs one, and the math on commercial-grade vs recreational reliability.",
     image: '/lovable-uploads/Mercury_SeaPro.png',
     author: 'Harris Boat Works',
@@ -7532,6 +7533,7 @@ Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca
   {
     slug: 'boat-rentals-shared-access-booming-2026',
     title: 'Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water',
+    seoTitle: 'Boat Rentals Are Booming in 2026: HBW\'s Rice Lake Fleet',
     description: 'The boat rental market is surging across North America. Here\'s why shared boating is exploding, what\'s driving the trend, and how Harris Boat Works\' rental fleet on Rice Lake fits into the picture.',
     image: '/lovable-uploads/Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
@@ -9748,6 +9750,7 @@ Or call 905-342-2153.
   {
     slug: 'diy-mercury-outboard-winterization-guide',
     title: 'Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)',
+    seoTitle: 'Can I Winterize My Mercury Outboard Myself? DIY Guide',
     description: 'Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter: stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor by spring. For motors you would rather not DIY, request service at HBW.',
     image: '/lovable-uploads/Late_Season_Boating_Safety_Fall.png',
     author: 'Harris Boat Works',
@@ -10028,6 +10031,7 @@ Phone: 905-342-2153
   {
     slug: 'cheapest-mercury-outboard-canada-2026',
     title: 'What\'s the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)',
+    seoTitle: 'Cheapest Mercury Outboard in Canada 2026 (Price by HP)',
     description: 'The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats. From there, prices step up by HP class through the lineup. The honest answer most boaters need is not "what\'s the cheapest motor" but "what\'s the cheapest motor that actually fits my boat." Those are usually different motors. Live pricing on every Mercury we sell, including the 2.5 portable, is on the [motor selection page](/quote/motor-selection).',
     image: '/lovable-uploads/hero-cheapest-mercury-canada.png',
     author: 'Harris Boat Works',
@@ -11224,6 +11228,7 @@ Not sure which path is right? Call **905-342-2153** or come in for a free hull w
   {
     slug: 'mercury-boost-upgrade-150hp-pontoon-analysis',
     title: 'Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)',
+    seoTitle: 'Mercury Boost Upgrade: Worth It for a 150 HP Pontoon?',
     description: 'For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. The performance gains are minimal in real-world pontoon use (where load and hull design cap top speed regardless of motor tweaks). The interesting part of Boost is what it signals about how Mercury will deliver future upgrades, not whether this specific upgrade pays off today. For your specific motor and use, see live pricing or contact us before committing.',
     image: '/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_2.png',
     author: 'Harris Boat Works',
@@ -12235,6 +12240,7 @@ Not sure about your transom height? Call us at 905-342-2153 or send a side-profi
   {
     slug: "used-outboard-buying-guide-ontario",
     title: "Used Outboard Buying Guide for Ontario Boaters (What to Check Before You Pay)",
+    seoTitle: 'Used Outboard Buying Guide for Ontario Boaters',
     description: "A practical Ontario buyer's checklist for used outboards, tell-tale, gearcase oil, compression, what to walk away from. Written by a third-generation.",
     image: "/lovable-uploads/hero-used-outboard-buying-guide.png",
     author: 'Harris Boat Works',
@@ -13737,6 +13743,7 @@ Take a photo of the plate the day you buy the boat. Save it on your phone. You'l
   {
     slug: 'mercury-maintenance-intervals-20-100-300-rule',
     title: "The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know",
+    seoTitle: 'Mercury 20/100/300 Maintenance Rule (Ontario Guide)',
     description: "A Mercury Platinum dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario, and which jobs are DIY vs dealer.",
     image: '/lovable-uploads/hero-mercury-maintenance-20-100-300.png',
     author: 'Harris Boat Works',
@@ -19003,6 +19010,7 @@ Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
   {
     slug: 'mercury-40-vs-60-hp-outboard-ontario',
     title: 'Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)',
+    seoTitle: 'Mercury 40 vs 60 HP: Which Is Right for Your Boat?',
     description: 'Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs.',
     image: '/lovable-uploads/hero-mercury-40-vs-60-hp-comparison.png',
     author: 'Jay Harris',
@@ -19207,6 +19215,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
   {
     slug: 'outboard-trade-in-value-ontario-hbw',
     title: "What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)",
+    seoTitle: 'What Is My Outboard Worth? Trade-In Values 2026',
     description: "What's your outboard worth on trade? How HBW evaluates outboard trades, what helps and hurts value, 2026 ranges by HP class, and how trade credit saves you HST on a repower.",
     image: '/lovable-uploads/hero-trade-in-value-old-mercury.png',
     author: 'Jay Harris',
@@ -19371,6 +19380,7 @@ We also publish all our Mercury pricing live at [mercuryrepower.ca](https://merc
   {
     slug: 'mercury-smartcraft-connect-guide-ontario',
     title: "Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)",
+    seoTitle: 'Mercury SmartCraft Connect: What It Does (2026 Guide)',
     description: "Mercury SmartCraft Connect compatibility (2004+ and 40 HP+), what the Mercury app shows, install options at HBW, and whether it's worth adding to your motor.",
     image: '/lovable-uploads/hero-smartcraft-connect-app.png',
     author: 'Jay Harris',
@@ -19568,6 +19578,7 @@ Mercury Platinum dealer. Est. 1947.
   {
     slug: "outdoor-boat-storage-shrinkwrap-rice-lake",
     title: "Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters",
+    seoTitle: 'Outdoor Boat Storage & Shrinkwrap on Rice Lake',
     description: "Outdoor winter boat storage and shrinkwrap at Harris Boat Works in Gores Landing on Rice Lake. What's included, what's not, and how to prepare your boat for an Ontario winter.",
     image: "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake.png",
     author: "Harris Boat Works",
@@ -19759,6 +19770,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
   {
     slug: "rice-lake-boat-launch-guide",
     title: "Where to Launch a Boat on Rice Lake: A Practical Guide for Anglers, Cottagers, and Day Visitors",
+    seoTitle: 'Where to Launch a Boat on Rice Lake: A Practical Guide',
     description: "A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp, and who it's for.",
     image: "/lovable-uploads/hero-rice-lake-boat-launch-ramp.png",
     author: "Harris Boat Works",
@@ -20122,6 +20134,7 @@ Mercury Platinum dealer. Est. 1947.
   {
     slug: "mercury-90-hp-fourstroke-review-ontario",
     title: "Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup",
+    seoTitle: 'Mercury 90 HP FourStroke Review (Ontario 2026)',
     description: "An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's the wrong call, and how it fits Rice Lake aluminum boats and pontoons.",
     image: "/lovable-uploads/Best_Mercury_Outboard_Aluminum_Fishing_Boats.png",
     author: "Harris Boat Works",
@@ -20281,6 +20294,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
   {
     slug: "mercury-115-hp-fourstroke-review-ontario",
     title: "Mercury 115 HP FourStroke Review: The Lightest 115 HP Available, and Why That Matters",
+    seoTitle: 'Mercury 115 HP FourStroke Review (Ontario 2026)',
     description: "An honest Ontario buyer's guide to the Mercury 115 HP FourStroke. Mercury's headline mid-range motor with the same 2.1L block as the 75 and 90, tuned hot. What it's right for and where the 115 Pro XS or a V6 makes more sense.",
     image: "/lovable-uploads/hero-mercury-115-aluminum-boat-cruising.png",
     author: "Harris Boat Works",
@@ -20466,6 +20480,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
   {
     slug: "mercury-75-hp-fourstroke-review-ontario",
     title: "Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)",
+    seoTitle: 'Mercury 75 HP FourStroke: Why HBW Doesn\'t Stock It',
     description: "An honest answer from an Ontario Mercury dealer. We don't sell the 75 HP FourStroke. Here's why, what it actually is, and why the Mercury 90 is the smarter buy at almost the same price for the same weight motor.",
     image: "/lovable-uploads/hero-mercury-90-shop-shot.png",
     author: "Harris Boat Works",
@@ -20597,6 +20612,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
   {
     slug: 'mercury-outboard-winterization-service-cost-ontario',
     title: 'Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Platinum Dealer',
+    seoTitle: 'Mercury Outboard Winterization Cost in Ontario (2026)',
     description: 'What does Mercury outboard winterization actually cost in Ontario? An honest 2026 price breakdown from Harris Boat Works on Rice Lake - winterization, shrinkwrap, and outdoor storage, no flat-rate fiction.',
     image: '/lovable-uploads/hero-mercury-winterization-service-cost.png',
     author: 'Jay Harris',
@@ -20621,6 +20637,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
   {
     slug: 'should-i-repower-or-buy-new-boat-ontario',
     title: 'Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)',
+    seoTitle: 'Should I Repower or Buy a New Boat? (Ontario 2026)',
     description: "Repower vs buy new boat: a Mercury Platinum dealer's honest decision guide. Real costs, hull-condition checklist, when each option actually makes sense, and the question most marinas won't ask.",
     image: '/lovable-uploads/hero-repower-vs-buy-new-decision.png',
     author: 'Jay Harris',
@@ -20798,6 +20815,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
   {
     slug: 'mercury-dealer-markham-ontario-hbw',
     title: 'Mercury Dealer for Markham: Why GTA Customers Drive to Rice Lake for Their Repower',
+    seoTitle: 'Mercury Dealer for Markham — Rice Lake Repower',
     description: 'Looking for a Mercury Platinum dealer near Markham? Harris Boat Works on Rice Lake - 70 minutes north - handles repowers, sales, service, and Mercury parts for the Markham/Unionville/Stouffville area without the GTA dealer pressure.',
     image: '/lovable-uploads/hero-gta-markham-family-delivery.png',
     author: 'Jay Harris',
@@ -20942,6 +20960,7 @@ That's been the model since 1947. It still works.
   {
     slug: 'mercury-dealer-richmond-hill-ontario-hbw',
     title: 'Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake',
+    seoTitle: 'Mercury Dealer for Richmond Hill — Rice Lake Repower',
     description: 'Looking for a Mercury dealer near Richmond Hill? Harris Boat Works on Rice Lake - about 75 minutes north - handles Mercury repowers, sales, parts, and winter storage for Richmond Hill / Aurora / Newmarket area customers.',
     image: '/lovable-uploads/hero-gta-richmond-hill-pickup-motor.png',
     author: 'Jay Harris',
@@ -21078,6 +21097,7 @@ You see the number before you leave Richmond Hill. You come up when you're decid
   {
     slug: 'mercury-dealer-mississauga-ontario-hbw',
     title: "Mercury Dealer for Mississauga: Where to Go When Closer Dealers Don't Cut It",
+    seoTitle: 'Mercury Dealer for Mississauga — Rice Lake Repower',
     description: 'Looking for a Mercury Platinum dealer for Mississauga? Harris Boat Works on Rice Lake - about 90 minutes northeast - handles Mercury repowers, sales, service, and Mercury parts for Mississauga / Oakville-edge customers tired of GTA dealer pressure.',
     image: '/lovable-uploads/hero-gta-mississauga-service-counter.png',
     author: 'Jay Harris',
@@ -21218,6 +21238,7 @@ That's the deal. It's been the deal since 1947.
   {
     slug: 'mercury-dealer-vaughan-ontario-hbw',
     title: 'Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake',
+    seoTitle: 'Mercury Dealer for Vaughan — Repower from Rice Lake',
     description: 'Looking for a Mercury Platinum dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north - handles Mercury repowers, sales, parts, and winter storage for Vaughan / Woodbridge / Maple area customers.',
     image: '/lovable-uploads/hero-gta-vaughan-tech-install.png',
     author: 'Jay Harris',
@@ -21720,6 +21741,7 @@ That's been true since 1947. It's still true.
   {
     slug: 'mercury-outboard-wont-start-troubleshooting-ontario',
     title: 'Mercury Outboard Won\'t Start? The Diagnostic Flow a Mercury Platinum Dealer Actually Uses (Ontario)',
+    seoTitle: 'Mercury Outboard Won\'t Start? A Dealer\'s Diagnostic Flow',
     description: 'Mercury outboard won\'t start? A Mercury Platinum dealer\'s actual diagnostic flow - battery to fuel to spark to ECM - what to check yourself before calling, and when to stop and call us instead.',
     image: '/lovable-uploads/hero-mercury-wont-start-troubleshooting.png',
     author: 'Jay Harris',
@@ -21885,6 +21907,7 @@ Phone: 905-342-2153
   {
     slug: 'mercury-outboard-overheating-at-idle-fix-ontario',
     title: 'Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer',
+    seoTitle: 'Mercury Outboard Overheating at Idle? The Real Fix',
     description: 'Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum dealer - water pump impeller, intake debris, thermostat, sensors - and when to stop and call.',
     image: '/lovable-uploads/hero-mercury-overheating-at-idle.png',
     author: 'Jay Harris',
@@ -22689,6 +22712,7 @@ This is what a dealer relationship is supposed to feel like.
   {
     slug: 'mercury-outboard-beeping-codes-guide',
     title: 'Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check',
+    seoTitle: 'Mercury Outboard Beeping Codes: What Each Pattern Means',
     description: 'Mercury outboard beeping? Learn what common beep patterns can mean, why continuous alarms matter, and what information to send when booking Mercury service.',
     image: '/lovable-uploads/hero-mercury-beeping-codes.png',
     author: 'Jay Harris',
@@ -22851,6 +22875,7 @@ Phone: 905-342-2153
   {
     slug: 'mercury-outboard-wont-start-after-sitting',
     title: 'Mercury Outboard Won\'t Start After Sitting? Here\'s the Ontario Boater\'s Checklist',
+    seoTitle: 'Mercury Outboard Won\'t Start After Sitting? Checklist',
     description: 'Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent, kill switch, neutral, and alarms before booking Mercury service.',
     image: '/lovable-uploads/hero-mercury-wont-start-after-sitting.png',
     author: 'Jay Harris',
