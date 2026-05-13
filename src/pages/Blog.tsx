@@ -38,6 +38,8 @@ export default function Blog() {
           <div className="mt-10 h-px w-16 bg-repower-navy-900/15 mx-auto" />
         </header>
 
+        <MultilingualHub />
+
         <div className="max-w-[1100px] mx-auto">
           {/* Featured Article */}
           {publishedArticles.length > 0 && (
