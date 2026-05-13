@@ -140,13 +140,6 @@ Non. Pour les réparations et installations, nous travaillons exclusivement avec
 ---
 
 *Guides connexes (en anglais) : Mercury 115 HP FourStroke review | Mercury 90 HP FourStroke review | Should I repower or buy a new boat?*
-
----
-
-**EDITOR NOTE (English):** 
-This is a French-language post targeting francophone Ontario boaters. Source post published 2026-04-12. The pricing figures "$40,000 to $80,000" (new boat comparison) and "20 to 40% of equivalent new boat cost" are retained from original. Specific CAD dollar ranges by HP tier were not in the original French post, this rewrite does not fabricate them; readers are directed to mercuryrepower.ca for real-time pricing. The claim that HBW is the only Mercury dealer in Ontario offering French-language repower content is retained from original, verify with team before publishing. Language note about the team working primarily in English is preserved from original. The 78-year/1947 founding date is updated to "since 1947" and "third-generation family marina" per task brief, avoiding a specific year count that will go stale. No APR or financing rates included.
-
----
 ---`,
     faqs: [
       {
@@ -314,13 +307,6 @@ L'équipe travaille principalement en anglais, mais vos messages en français su
 ---
 
 *Guides connexes (en anglais) : Mercury 115 HP FourStroke review | Mercury 90 HP FourStroke review | Ontario Mercury Outboard Price Guide*
-
----
-
-**EDITOR NOTE (English):** 
-This is a French-language post targeting francophone Ontario boaters. Source post published 2026-04-12. Specs retained from original: 115 HP at ~163 kg/359 lb, 2.1L inline-4; 150 HP at ~206 kg/455 lb, 3.0L inline-4; RPM ranges as stated. No specific dollar amounts were in the original French post, this rewrite continues that approach, directing readers to mercuryrepower.ca for real-time CAD pricing. The claim about HBW being the only Mercury Platinum dealer in Ontario with French-language content is retained from original, verify before publishing. Language note preserved. No APR or financing rates included. "78 ans" reference replaced with "depuis 1947" and "troisième génération" per task brief. No prices fabricated.
-
----
 ---`,
     faqs: [
       {
@@ -417,7 +403,7 @@ Faire l'hivernisation soi-même est possible, mais seulement si vous avez l'exp�
 
 À Harris Boat Works, nous effectuons 584 hivernisations par année. Nos techniciens connaissent les moteurs Mercury à fond et savent exactement quoi chercher, quoi remplacer, et quoi noter pour le printemps.
 
-Pour les réparations de moteur, nous entretenons uniquement les moteurs Mercury et Mercruiser. *(English editor note: the English canonical sentence is "For engine repairs, we only service Mercury and Mercruiser.")*
+Pour les réparations de moteur, nous entretenons uniquement les moteurs Mercury et Mercruiser.
 
 Notre équipe travaille principalement en anglais. Nous ne parlons pas français couramment, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Le courriel et notre formulaire de demande de service en ligne à **hbw.wiki/service** fonctionnent sans barrière linguistique, vous pouvez écrire en français, et on s'arrange.
 
@@ -453,13 +439,6 @@ Absolument. Une batterie marine laissée dans le bateau par temps de gel se déc
 Réservez en ligne à [hbw.wiki/service](https://hbw.wiki/service) ou appelez le **905-342-2153**. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario. 
 Concessionnaire Mercury Marine Platinum. En affaires depuis 1947.
-
----
-
-**English editor note:** The service scope sentence appears in French as "Pour les réparations de moteur, nous entretenons uniquement les moteurs Mercury et Mercruiser." The English canonical sentence is "For engine repairs, we only service Mercury and Mercruiser." The post is written in French, in HBW voice adapted to French readers. Regulatory caution: winterization window dates are general guidance, not regulated dates.
-
----
-
 ---`,
     faqs: [
       {
@@ -619,13 +598,6 @@ Grosso modo de mai à octobre, environ six mois. C'est une raison de plus de ne 
 ---
 
 *Guides connexes (en anglais) : Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 115 HP FourStroke review*
-
----
-
-**EDITOR NOTE (English):** 
-This is a French-language post targeting francophone Ontario boaters. Source post published 2026-04-12. The "$40,000 to $100,000" new boat comparison figure and "20, 40%" remotorisation cost-to-new-boat ratio are retained from original. The summary decision table is adapted from the original page's explicit table. No APR or financing rate claims included. Language note (team works in English) preserved from original. "78 ans" replaced with "depuis 1947" and "troisième génération" per task brief. The statement about HBW being the only Mercury dealer in Ontario with French-language content is retained from original, verify before publishing. Formal FAQ section added (original had none explicitly labeled). No prices fabricated.
-
----
 ---`,
     faqs: [
       {
@@ -777,13 +749,6 @@ Location d'embarcations : [harrisboatworks.ca](https://harrisboatworks.ca)
 Service et entretien : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez écrire en français. 
 Téléphone : **905-342-2153** 
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
-
----
-
-**English editor note:** Fishing season table is sourced from the existing post. All season dates and bag limits must be verified against current OMNR Zone 17 regulations before publishing, these change annually. The post explicitly directs readers to ontario.ca to verify. No fabricated fishing depths, locations, or results claimed.
-
----
-
 ---`,
     faqs: [
       {
@@ -942,13 +907,6 @@ Pour un nouveau moteur ou une remotorisation : [mercuryrepower.ca](https://mercu
 Demande de service : [hbw.wiki/service](https://hbw.wiki/service), écrivez en français, on s'arrange. 
 **905-342-2153** 
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
-
----
-
-**English editor note:** Regulatory figures (PCOC fine $250, PCL cost $24/5 years, minor age limits) are sourced from the existing post. All must be verified against current Transport Canada requirements before publishing, regulations are subject to change. The post explicitly directs readers to Transport Canada for the complete, authoritative equipment list. No service scope sentence needed (this is a regulatory information post, not a service post).
-
----
-
 ---`,
     faqs: [
       {
