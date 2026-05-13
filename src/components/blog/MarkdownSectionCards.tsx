@@ -14,6 +14,7 @@ import {
 } from './MotorPricingCards';
 import { RelatedPostsGrid } from './RelatedPostsGrid';
 import { DecisionCard, type DecisionCardProps } from './DecisionCard';
+import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './DiagnosticFlowchart';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
