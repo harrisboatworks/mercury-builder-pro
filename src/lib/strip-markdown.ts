@@ -20,6 +20,8 @@ export function stripMarkdown(input: string): string {
 
   // Strip custom directive blocks (e.g. :::image-placeholder ... :::)
   out = out.replace(/^:::[a-zA-Z0-9_-]+[\s\S]*?^:::\s*$/gm, ' ');
+  // Strip double-colon directive blocks (e.g. ::decision-card ... ::)
+  out = out.replace(/^::[a-zA-Z0-9_-]+[\s\S]*?^::\s*$/gm, ' ');
 
   // Strip fenced code blocks
   out = out.replace(/```[\s\S]*?```/g, ' ');
