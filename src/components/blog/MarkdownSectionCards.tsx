@@ -401,6 +401,88 @@ function parseDiagnosticFlowBody(body: string): DiagnosticFlowchartProps | null 
   };
 }
 
+function parseCostStackBody(body: string): CostStackProps | null {
+  const flat: Record<string, string> = {};
+  const itemMap: Record<number, { label?: string; value?: string; note?: string; accent?: boolean }> = {};
+  for (const raw of body.split('\n')) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) continue;
+    const kv = /^([a-zA-Z0-9]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    const key = kv[1];
+    const val = kv[2];
+    const m = /^item(\d+)(Label|Value|Note|Accent)$/.exec(key);
+    if (m) {
+      const idx = Number(m[1]);
+      itemMap[idx] = itemMap[idx] || {};
+      const field = m[2];
+      if (field === 'Label') itemMap[idx].label = val;
+      else if (field === 'Value') itemMap[idx].value = val;
+      else if (field === 'Note') itemMap[idx].note = val;
+      else if (field === 'Accent') itemMap[idx].accent = /^(true|yes|1)$/i.test(val);
+    } else {
+      flat[key] = val;
+    }
+  }
+  if (!flat.heading) return null;
+  const items: CostStackItem[] = Object.keys(itemMap)
+    .map(Number)
+    .sort((a, b) => a - b)
+    .map((i) => itemMap[i])
+    .filter((it) => it.label && it.value)
+    .map((it) => ({ label: it.label!, value: it.value!, note: it.note, accent: it.accent }));
+  const total = flat.totalLabel && flat.totalValue
+    ? { label: flat.totalLabel, value: flat.totalValue }
+    : undefined;
+  return {
+    heading: flat.heading,
+    eyebrow: flat.eyebrow,
+    subhead: flat.subhead,
+    items,
+    total,
+    caveat: flat.caveat,
+  };
+}
+
+function parseBilingualTrustBody(body: string): BilingualTrustCardProps | null {
+  const flat: Record<string, string> = {};
+  const itemMap: Record<number, { en?: string; zh?: string }> = {};
+  for (const raw of body.split('\n')) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) continue;
+    const kv = /^([a-zA-Z0-9]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    const key = kv[1];
+    const val = kv[2];
+    const m = /^item(\d+)(En|Zh)$/.exec(key);
+    if (m) {
+      const idx = Number(m[1]);
+      itemMap[idx] = itemMap[idx] || {};
+      if (m[2] === 'En') itemMap[idx].en = val;
+      else itemMap[idx].zh = val;
+    } else {
+      flat[key] = val;
+    }
+  }
+  if (!flat.heading || !flat.headingTranslated) return null;
+  const items: BilingualTrustItem[] = Object.keys(itemMap)
+    .map(Number)
+    .sort((a, b) => a - b)
+    .map((i) => itemMap[i])
+    .filter((it) => it.en && it.zh)
+    .map((it) => ({ en: it.en!, zh: it.zh! }));
+  const cta = flat.ctaEn && flat.ctaZh && flat.ctaHref
+    ? { en: flat.ctaEn, zh: flat.ctaZh, href: flat.ctaHref }
+    : undefined;
+  return {
+    eyebrow: flat.eyebrow,
+    heading: flat.heading,
+    headingTranslated: flat.headingTranslated,
+    items,
+    cta,
+  };
+}
+
 function splitDirectives(md: string): RenderChunk[] {
   const chunks: RenderChunk[] = [];
   let last = 0;
