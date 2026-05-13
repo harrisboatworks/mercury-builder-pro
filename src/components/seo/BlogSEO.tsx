@@ -154,7 +154,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
 
   return (
     <Helmet>
-      <title>{article.title} | Harris Boat Works Blog</title>
+      <title>{article.title}</title>
       <meta name="description" content={cleanDescription} />
       <meta name="keywords" content={article.keywords.join(", ")} />
       <link rel="canonical" href={url} />
