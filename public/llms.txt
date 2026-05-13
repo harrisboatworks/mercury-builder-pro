@@ -132,19 +132,21 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, Canada
 - Hours: Monday-Friday 8am-5pm, Saturday 9am-2pm, Sunday Closed
 
-## Key Links
+## Pages
 
-- Home: https://www.mercuryrepower.ca/
-- Quote Builder: https://www.mercuryrepower.ca/quote/motor-selection
-- Promotions: https://www.mercuryrepower.ca/promotions
-- Repower Services: https://www.mercuryrepower.ca/repower
-- FAQ (24 answers): https://www.mercuryrepower.ca/faq
-- Blog: https://www.mercuryrepower.ca/blog
-- Finance Calculator: https://www.mercuryrepower.ca/finance-calculator
-- Financing Application: https://www.mercuryrepower.ca/financing-application
-- Contact: https://www.mercuryrepower.ca/contact
-- About Us: https://www.mercuryrepower.ca/about
-- Sitemap: https://www.mercuryrepower.ca/sitemap.xml
+- [Home](https://www.mercuryrepower.ca/): Mercury outboard quote builder for Ontario, CAD pricing, pickup-only at Gores Landing.
+- [Quote Builder](https://www.mercuryrepower.ca/quote/motor-selection): Build a complete itemized Mercury outboard quote in about three minutes.
+- [Repower Services](https://www.mercuryrepower.ca/repower): Mercury Certified Repower Center, full repower workflow and pricing.
+- [Promotions](https://www.mercuryrepower.ca/promotions): Current Mercury rebates, bonus warranty, and seasonal offers.
+- [Finance Calculator](https://www.mercuryrepower.ca/finance-calculator): Estimate monthly payments at 7.99% or 8.99% APR.
+- [Financing Application](https://www.mercuryrepower.ca/financing-application): Online credit application for Mercury motor financing.
+- [FAQ](https://www.mercuryrepower.ca/faq): 24 answers covering pricing, pickup, financing, trade-ins, and warranty.
+- [Blog](https://www.mercuryrepower.ca/blog): Mercury motor guides, repower advice, and Ontario boating tips.
+- [Contact](https://www.mercuryrepower.ca/contact): Phone, email, hours, and Gores Landing location details.
+- [About Us](https://www.mercuryrepower.ca/about): Family-owned Mercury Platinum dealer on Rice Lake since 1947.
+- [Catalog (markdown)](https://www.mercuryrepower.ca/catalog.md): Full agent-readable catalog index in markdown.
+- [Pricing Reference (markdown)](https://www.mercuryrepower.ca/pricing-reference.md): Current Mercury pricing in CAD, listed motors only.
+- [Sitemap](https://www.mercuryrepower.ca/sitemap.xml): Machine-readable list of all indexable pages.
 
 ## For AI Agents
 
