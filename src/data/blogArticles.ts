@@ -10662,6 +10662,31 @@ To book a diagnostic: [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
+::diagnostic-flow
+heading: Won't start? Run this checklist before you call us
+eyebrow: Diagnostic flow
+subhead: Most spring no-starts trace back to one of these five checks
+step1Label: Battery
+step1Question: Are the terminals clean and tight, and does the battery rest above 12.4V?
+step1Tip: A weak or corroded battery is the most common spring no-start. Charge or clean before going further.
+step2Label: Safety lanyard
+step2Question: Is the lanyard clipped to the kill switch?
+step2Tip: Almost every spring lanyard call is the lanyard sitting on the dash, not clipped in. Easy first check.
+step3Label: Fuel
+step3Question: Is there fresh fuel in the tank, and does the primer bulb firm up when squeezed?
+step3Tip: Fuel older than one season can phase-separate, especially with E10. If the bulb stays soft after squeezing, suspect an air leak or empty tank.
+step4Label: Shifter position
+step4Question: Is the shifter fully in neutral?
+step4Tip: The neutral-start interlock prevents cranking unless the shifter is dead-centre neutral. Wiggle it.
+step5Label: Spark and engine cutoff
+step5Question: Have you pulled the cowling and checked the engine cutoff for moisture or a loose connector?
+step5Tip: After winter storage, condensation under the cowling can short the cutoff switch. Dry, reseat, retry.
+escalationLabel: Still no go?
+escalationBody: Call us at (905) 342-2153 or book a slot at /service. We will diagnose it on the trailer or in our shop, whichever is faster for you.
+::
+
+---
+
 ## Mercury Outboard Won't Start: Troubleshooting in Order
 
 A Mercury that cranked fine last fall and refuses to start in spring is one of the most common calls we get from May through early June. It almost always comes down to one of a short list of causes, but identifying which one matters before you start replacing parts.
