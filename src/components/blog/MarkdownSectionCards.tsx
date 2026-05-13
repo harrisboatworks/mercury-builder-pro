@@ -253,12 +253,13 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
   relatedSlugs?: string[];
   decisionProps?: DecisionCardProps;
+  diagnosticProps?: DiagnosticFlowchartProps;
 }
 
 const ANY_DIRECTIVE_RE =
