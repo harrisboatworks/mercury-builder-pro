@@ -4,6 +4,7 @@ import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogIndexSEO } from '@/components/seo/BlogIndexSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogSubscribeForm } from '@/components/blog/BlogSubscribeForm';
+import { MultilingualHub } from '@/components/blog/MultilingualHub';
 import { getPublishedArticles } from '@/data/blogArticles';
 
 export default function Blog() {
