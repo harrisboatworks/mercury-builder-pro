@@ -62,29 +62,93 @@ export interface SinEncryptionError extends Error {
   hint?: string;
 }
 
-export function getFriendlySinErrorMessage(code: string | undefined): { title: string; description: string } {
-  switch (code) {
+// Known SinEncryptionError codes. Keep in sync with encryptSIN() error mapping.
+export type SinErrorCode =
+  | 'permission_denied'
+  | 'function_missing'
+  | 'empty_response'
+  | 'rpc_error'
+  | 'invalid_format'
+  | 'network_error'
+  | 'rate_limited'
+  | 'timeout'
+  | 'unknown';
+
+const DEALER_PHONE = '(905) 342-2153';
+
+/**
+ * Maps a SinEncryptionError code to user-facing copy.
+ *
+ * Never echoes raw error.message, pgCode, hint, or details — those are
+ * sensitive infrastructure detail and belong only in the admin telemetry log.
+ *
+ * The optional correlationId is appended verbatim so the customer can read
+ * it back to support; it carries no PII on its own.
+ */
+export function getFriendlySinErrorMessage(
+  code: string | undefined,
+  correlationId?: string,
+): { title: string; description: string } {
+  const ref = correlationId ? ` Reference: ${correlationId}.` : '';
+  const callUs = `Please call us at ${DEALER_PHONE} for help.`;
+  const tryAgain = `Please try again in a few minutes, or call us at ${DEALER_PHONE}.`;
+
+  switch (code as SinErrorCode | undefined) {
     case 'permission_denied':
       return {
         title: 'Secure submission temporarily unavailable',
-        description: 'We could not securely encrypt your SIN due to a permissions issue on our end. Our team has been notified. Please try again in a few minutes or call us at (905) 342-2153.',
+        description: `Your account does not currently have permission to encrypt your SIN. Our team has been notified and is restoring access. ${tryAgain}${ref}`,
       };
     case 'function_missing':
       return {
-        title: 'Submission service unavailable',
-        description: 'The secure encryption service is temporarily offline. Our team has been notified. Please try again shortly or call us at (905) 342-2153.',
+        title: 'Submission service offline',
+        description: `Our secure encryption service is temporarily unavailable. Our team has been notified. ${tryAgain}${ref}`,
       };
     case 'empty_response':
       return {
-        title: 'Encryption returned no data',
-        description: 'Your SIN could not be encrypted. Please try again, or contact us at (905) 342-2153 if this continues.',
+        title: 'Encryption did not complete',
+        description: `Your SIN was sent for encryption but no result came back. ${tryAgain}${ref}`,
       };
+    case 'invalid_format':
+      return {
+        title: 'Invalid SIN format',
+        description: `Please re-enter your SIN as 9 digits (format XXX-XXX-XXX) and try again.${ref}`,
+      };
+    case 'network_error':
+      return {
+        title: 'Network connection lost',
+        description: `We could not reach our secure encryption service. Check your internet connection and try again.${ref}`,
+      };
+    case 'rate_limited':
+      return {
+        title: 'Too many attempts',
+        description: `For your security we have paused submissions briefly. Please wait a minute and try again.${ref}`,
+      };
+    case 'timeout':
+      return {
+        title: 'Submission timed out',
+        description: `The secure encryption service took too long to respond. ${tryAgain}${ref}`,
+      };
+    case 'rpc_error':
+    case 'unknown':
     default:
       return {
         title: 'Could not securely save your SIN',
-        description: 'There was a problem encrypting your SIN. Please try again, or contact us at (905) 342-2153.',
+        description: `Something went wrong encrypting your SIN. ${callUs}${ref}`,
       };
   }
+}
+
+/**
+ * Generates a short, human-readable correlation ID for tracing a single
+ * financing submission across logs, toasts, and admin tooling.
+ * Format: FIN-YYYYMMDD-XXXXXX (no PII).
+ */
+export function generateSubmissionCorrelationId(): string {
+  const d = new Date();
+  const ymd = `${d.getUTCFullYear()}${String(d.getUTCMonth() + 1).padStart(2, '0')}${String(d.getUTCDate()).padStart(2, '0')}`;
+  const rand = Math.random().toString(36).slice(2, 8).toUpperCase();
+  return `FIN-${ymd}-${rand}`;
 }
 
 /**
