@@ -69,6 +69,10 @@ function pickVariationIndex(): number {
 export function HeroRepower() {
   // SSR/prerender renders baseline (0); hydration picks the real variation.
   const [variantIndex, setVariantIndex] = useState(0);
+  // Defer mounting the <video> until after first paint / LCP. Until then the
+  // <img> poster is the LCP element — it's preloaded in index.html with
+  // fetchpriority=high so it can paint without competing with video metadata.
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
     const idx = pickVariationIndex();
@@ -95,6 +99,31 @@ export function HeroRepower() {
     }
   }, []);
 
+  // Defer video to after LCP. Skip entirely on reduced-motion or Save-Data.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const saveData = (navigator as any)?.connection?.saveData === true;
+    if (reduceMotion || saveData) return;
+
+    const idle = (window as any).requestIdleCallback as
+      | ((cb: () => void, opts?: { timeout: number }) => number)
+      | undefined;
+    let handle: number | undefined;
+    let timer: number | undefined;
+    if (idle) {
+      handle = idle(() => setShowVideo(true), { timeout: 2500 });
+    } else {
+      timer = window.setTimeout(() => setShowVideo(true), 1500);
+    }
+    return () => {
+      if (handle && (window as any).cancelIdleCallback) {
+        (window as any).cancelIdleCallback(handle);
+      }
+      if (timer) window.clearTimeout(timer);
+    };
+  }, []);
+
   const variation = HERO_VARIATIONS[variantIndex] ?? HERO_VARIATIONS[0];
 
   return (
@@ -102,20 +131,36 @@ export function HeroRepower() {
       data-hero-variant={variation.id}
       className="relative min-h-screen w-full overflow-hidden bg-[#050E1C] text-[#F5F1EA] flex items-center"
     >
-      {/* Background hero video loop */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        poster="/hero/hero-poster.jpg"
+      {/* LCP element: static poster image. Preloaded in index.html with
+          fetchpriority=high; rendered eagerly so it paints before any video
+          bytes arrive. */}
+      <img
+        src="/hero/hero-poster.jpg"
+        alt=""
         aria-hidden="true"
-      >
-        <source src="/hero/hero-loop.webm" type="video/webm" />
-        <source src="/hero/hero-loop.mp4" type="video/mp4" />
-      </video>
+        className="absolute inset-0 w-full h-full object-cover"
+        fetchPriority="high"
+        decoding="async"
+        loading="eager"
+        draggable={false}
+      />
+      {/* Background hero video loop — mounted after first paint / LCP. Skipped
+          entirely on prefers-reduced-motion or Save-Data. */}
+      {showVideo && (
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+          poster="/hero/hero-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="/hero/hero-loop.webm" type="video/webm" />
+          <source src="/hero/hero-loop.mp4" type="video/mp4" />
+        </video>
+      )}
       {/* Gradient overlay, softened so the video reads more clearly while keeping bottom legible */}
       <div
         className="absolute inset-0"
