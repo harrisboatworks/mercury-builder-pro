@@ -220,8 +220,24 @@ function rewriteDiagnosticFlow(md: string): string {
   return md.replace(re, (_m, body) => `:::diagnostic-flow\n${body}\n:::`);
 }
 
+function rewriteCostStack(md: string): string {
+  const re = /^::cost-stack\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::cost-stack\n${body}\n:::`);
+}
+
+function rewriteBilingualTrust(md: string): string {
+  const re = /^::bilingual-trust\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::bilingual-trust\n${body}\n:::`);
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteDiagnosticFlow(rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))));
+  return rewriteBilingualTrust(
+    rewriteCostStack(
+      rewriteDiagnosticFlow(
+        rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+      ),
+    ),
+  );
 }
 
 /**
