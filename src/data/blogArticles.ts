@@ -9805,6 +9805,31 @@ For professional winterization: [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
+::diagnostic-flow
+heading: Winterizing your Mercury? Five steps in this order
+eyebrow: Fall checklist
+subhead: Spring no-starts usually trace back to one of these five steps being skipped in fall.
+step1Label: Fuel
+step1Question: Is the tank near full with treated fuel (marine stabilizer added)?
+step1Tip: Top the tank to 95 percent with stabilizer mixed in. Empty space invites condensation, which is the most common cause of spring no-starts.
+step2Label: Fogging oil
+step2Question: Have you fogged the cylinders through the spark plug holes or air intake?
+step2Tip: Mercury recommends running fogging oil through the intake while the motor runs, then a shot directly into each cylinder. Skipping this is the #1 cause of corroded cylinder walls.
+step3Label: Lower unit oil
+step3Question: Has the lower unit oil been changed and inspected for water?
+step3Tip: Milky oil means a seal failure. Better to find it in fall when you have time to fix it, not in spring at the launch ramp.
+step4Label: Water flush and drain
+step4Question: Have you flushed with fresh water and let the motor drain fully tilted down?
+step4Tip: Run the motor on muffs with fresh water for 5 to 10 minutes, then tilt straight down to drain. Leftover water in the block freezes and cracks aluminum.
+step5Label: Battery
+step5Question: Is the battery off the boat or on a maintainer for the winter?
+step5Tip: A frozen, discharged battery is a $200 spring purchase. A trickle charger or full pull-out is $50 of prevention.
+escalationLabel: Want us to handle it?
+escalationBody: Full winterization service runs around $250 to $400 depending on motor size. Includes fuel stabilizer, fogging, lower unit oil, flush, drain, and battery prep. Book at /service or call (905) 342-2153.
+::
+
+---
+
 ## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
 
 Ontario's boating season has a hard stop. Unlike some parts of the country where an outboard can sit in the water year-round, here it comes out in October and faces five or six months of temperatures that will crack an unprotected powerhead if you leave water in it.
@@ -11115,6 +11140,33 @@ Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
 
 If the hull is sound and the motor is tired, repower. If the hull is rotting, structurally compromised, or fundamentally undersized for how you use it, replace the boat. Repowering a bad hull is throwing money at a doomed platform. Honest assessment and installed repower quotes at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
+
+---
+
+::decision-card
+heading: Repower the hull, or replace it?
+eyebrow: Honest hull check
+subhead: The motor is rarely the most expensive thing on a boat. The hull underneath it is.
+leftLabel: Repower the existing hull if
+leftCriteria:
+  - Stringers, transom, and floor are solid (no soft spots, no rot)
+  - Hydraulic steering and rigging are in working order
+  - Hull layout, seating, and gunwale height still suit how you boat
+  - The motor is the only major problem
+  - You are attached to the boat or it has sentimental value
+leftOutcome: Repower this boat
+leftVariant: recommended
+rightLabel: Replace the hull if
+rightCriteria:
+  - Transom is soft, cracked, or has obvious water damage
+  - Stringers are rotting or the floor is spongy
+  - You would need to rebuild more than the motor (electronics, controls, seats)
+  - The hull is 30 plus years old with no maintenance records
+  - Your family use has grown beyond what the boat can carry
+rightOutcome: Sell or scrap, buy a different hull
+rightVariant: alternative
+whenInDoubt: Get an in-person hull inspection before quoting a major repower. We will not quote a serious motor into a hull that will not outlast the new motor.
+::
 
 ---
 
@@ -19153,6 +19205,33 @@ For most 15, 16 ft aluminum fishing boats with two adults, the Mercury 40 HP is 
 
 ---
 
+::decision-card
+heading: Should you choose Mercury 40 or 60 HP?
+eyebrow: Honest power pick
+subhead: For 14 to 18 ft aluminum boats, the answer usually comes down to capacity plate and load.
+leftLabel: Choose 40 HP if
+leftCriteria:
+  - Boat is 14 to 16 ft aluminum (Lund, Princecraft, Smoker Craft, etc.)
+  - Capacity plate caps you at 40 HP
+  - Use is fishing, calm-water cruising, 2 to 3 people max
+  - You want lighter weight on the transom (35 to 40 lb savings vs 60)
+  - Tiller is preferred and 40 HP tiller models suit your setup
+leftOutcome: Pick 40 HP FourStroke
+leftVariant: alternative
+rightLabel: Choose 60 HP if
+rightCriteria:
+  - Boat is 16 to 18 ft aluminum or fibreglass
+  - Capacity plate allows 60 HP or higher
+  - You carry 3 to 4 people, gear, or tow a small tube
+  - You want stronger hole shot with a loaded boat
+  - The boat will see bigger water (Trent-Severn, Kawarthas, Lake Simcoe)
+rightOutcome: Pick 60 HP FourStroke
+rightVariant: recommended
+whenInDoubt: 60 HP gives margin without much more fuel cost. 40 HP is the right call only when your capacity plate caps you there, or weight on the transom is critical.
+::
+
+---
+
 ### Mercury 40 vs 60 HP: Which Outboard for Your Ontario Boat?
 
 The 40-vs-60 question comes through our shop more often than almost any other. Both motors are reliable FourStroke EFI units with the same 3-year warranty. Both start cold. Both run for a thousand-plus hours with proper maintenance. The spec sheets look similar enough that picking wrong is easy.
@@ -20593,6 +20672,32 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     content: `### Quick Answer
 
 The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 359 lb weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is the smarter buy for 95% of customers. We'll order the 75 if your capacity plate requires it.
+
+---
+
+::decision-card
+heading: 75 HP or 90 HP? The honest answer
+eyebrow: Why HBW doesn't stock 75
+subhead: We will order 75 HP, but here is why almost every buyer ends up with the 90.
+leftLabel: Choose 90 HP if
+leftCriteria:
+  - You are shopping the 75 to 90 HP range for a 16 to 18 ft boat
+  - You want stronger hole shot and a bit more top end
+  - The price difference vs 75 HP is typically under $1,500 in 2026
+  - Resale value holds better (more buyer demand for 90 HP)
+  - You want flexibility to add a kicker without underpowering the main
+leftOutcome: Pick 90 HP FourStroke
+leftVariant: recommended
+rightLabel: Choose 75 HP if
+rightCriteria:
+  - Your boat is rated max 75 HP on the capacity plate
+  - You specifically want the lightest powerhead in this range
+  - The budget gap matters more than 15 HP of headroom
+  - You are not towing or carrying full passenger loads
+rightOutcome: Pick 75 HP FourStroke
+rightVariant: alternative
+whenInDoubt: We do not stock 75 HP because 90 percent of buyers pick 90 once they see how small the price gap is. If you want 75, we will order it. If your plate allows 90, get the 90.
+::
 
 ---
 
@@ -23177,6 +23282,31 @@ Phone: 905-342-2153
 A Mercury that ran fine in October and won't start in May didn't randomly break. Something changed over the off-season. In Ontario, the most common causes are: battery discharge and sulfation from cold winter storage, stale or contaminated fuel, corroded electrical connections, and fuel system issues from sitting. Start with the battery, then fuel, those two causes account for the majority of spring no-starts. The safety lanyard check comes first because it's fastest.
 
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+::diagnostic-flow
+heading: Won't start after sitting? Work through these five
+eyebrow: Post-storage diagnostic
+subhead: Long storage is the #1 cause of spring and post-vacation no-starts. Run these in order.
+step1Label: How long has it sat?
+step1Question: Has the boat been stored more than 4 weeks without running?
+step1Tip: 4 weeks is the rough threshold where fuel starts to break down and batteries lose enough charge to affect starting. Anything over 3 months, treat it as a full spring commission.
+step2Label: Battery first
+step2Question: Does the battery read 12.4V or higher at rest, with clean terminals?
+step2Tip: If the boat was on a charger, you are fine. If it sat in storage without a maintainer, the battery is the #1 suspect. Charge fully before further testing.
+step3Label: Fuel age
+step3Question: Is the fuel less than 6 months old, and does the primer bulb firm up?
+step3Tip: Old E10 phase-separates. If the boat is sitting on last season's fuel, drain and refill before troubleshooting further. A soft primer bulb usually means an air leak or empty line.
+step4Label: Carb or EFI clog
+step4Question: Did the engine run well before storage?
+step4Tip: If yes, and fuel + battery check out, suspect varnish buildup in the carb or injector. Carbureted motors are more sensitive to old fuel than EFI. EFI Mercurys usually start once fresh fuel reaches the injectors.
+step5Label: Engine cutoff and spark
+step5Question: Is the lanyard attached, and does the engine crank without firing?
+step5Tip: Cranking but no fire usually points to spark or fuel delivery. Pull a plug to check spark, confirm fuel reaches the rail. If both are present and it still will not fire, that is our cue to step in.
+escalationLabel: Tried everything?
+escalationBody: After storage, the most common no-start fixes we see are carb cleaning ($200 to $400), fuel system flush ($150 to $300), and battery replacement ($120 to $250). Call us at (905) 342-2153 or book at /service.
+::
 
 ---
 
