@@ -10,21 +10,37 @@ import { supabase } from '@/integrations/supabase/client';
  */
 export async function encryptSIN(sin: string): Promise<string> {
   if (!sin || sin.trim() === '') {
-    throw new Error('SIN cannot be empty');
+    const err = new Error('SIN cannot be empty') as SinEncryptionError;
+    err.name = 'SinEncryptionError';
+    err.code = 'invalid_format';
+    throw err;
   }
-  
+
   // Remove any formatting (hyphens, spaces)
   const cleanSIN = sin.replace(/[-\s]/g, '');
-  
+
   // Validate SIN format (9 digits)
   if (!/^\d{9}$/.test(cleanSIN)) {
-    throw new Error('Invalid SIN format. Must be 9 digits.');
+    const err = new Error('Invalid SIN format. Must be 9 digits.') as SinEncryptionError;
+    err.name = 'SinEncryptionError';
+    err.code = 'invalid_format';
+    throw err;
   }
-  
+
   // Call the database function to encrypt
-  const { data, error } = await supabase.rpc('encrypt_sin', {
-    sin_plaintext: cleanSIN
-  });
+  let data: string | null = null;
+  let error: any = null;
+  try {
+    const res = await supabase.rpc('encrypt_sin', { sin_plaintext: cleanSIN });
+    data = res.data as string | null;
+    error = res.error;
+  } catch (networkErr: any) {
+    const err = new Error(networkErr?.message || 'Network error contacting encryption service') as SinEncryptionError;
+    err.name = 'SinEncryptionError';
+    err.code = 'network_error';
+    err.details = networkErr?.name;
+    throw err;
+  }
 
   if (error) {
     console.error('❌ SIN encryption failed:', error);
@@ -34,12 +50,18 @@ export async function encryptSIN(sin: string): Promise<string> {
     err.pgCode = (error as any).code;
     err.details = (error as any).details;
     err.hint = (error as any).hint;
-    // Map common Postgres errors to friendly codes
+    // Map common Postgres / network errors to friendly codes
     const msg = (error.message || '').toLowerCase();
     if (msg.includes('permission denied') || (error as any).code === '42501') {
       err.code = 'permission_denied';
     } else if (msg.includes('does not exist') || (error as any).code === '42883') {
       err.code = 'function_missing';
+    } else if (msg.includes('rate limit') || (error as any).status === 429) {
+      err.code = 'rate_limited';
+    } else if (msg.includes('timeout') || msg.includes('timed out')) {
+      err.code = 'timeout';
+    } else if (msg.includes('failed to fetch') || msg.includes('networkerror')) {
+      err.code = 'network_error';
     }
     throw err;
   }
