@@ -414,6 +414,9 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'decision-card') {
       const props = parseDecisionCardBody(body);
       if (props) chunks.push({ kind: 'decision-card', content: '', decisionProps: props });
+    } else if (name === 'diagnostic-flow') {
+      const props = parseDiagnosticFlowBody(body);
+      if (props) chunks.push({ kind: 'diagnostic-flow', content: '', diagnosticProps: props });
     }
     last = m.index + m[0].length;
   }
