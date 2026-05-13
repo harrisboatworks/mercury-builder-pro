@@ -564,6 +564,12 @@ function renderMarkdownWithDirectives(
     if (chunk.kind === 'diagnostic-flow' && chunk.diagnosticProps) {
       return <DiagnosticFlowchart key={`${keyPrefix}-df-${i}`} {...chunk.diagnosticProps} />;
     }
+    if (chunk.kind === 'cost-stack' && chunk.costStackProps) {
+      return <CostStack key={`${keyPrefix}-cs-${i}`} {...chunk.costStackProps} />;
+    }
+    if (chunk.kind === 'bilingual-trust' && chunk.bilingualTrustProps) {
+      return <BilingualTrustCard key={`${keyPrefix}-bt-${i}`} {...chunk.bilingualTrustProps} />;
+    }
     if (!chunk.content.trim()) return null;
     return (
       <ReactMarkdown
