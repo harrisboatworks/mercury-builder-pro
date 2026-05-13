@@ -23295,6 +23295,13 @@ export function getArticleBySlug(slug: string): BlogArticle | undefined {
 }
 
 export function getRelatedArticles(currentSlug: string, limit: number = 3): BlogArticle[] {
+  const current = blogArticles.find(a => a.slug === currentSlug);
+  if (current?.relatedSlugs?.length) {
+    const manual = current.relatedSlugs
+      .map(slug => blogArticles.find(a => a.slug === slug))
+      .filter((a): a is BlogArticle => Boolean(a) && a!.slug !== currentSlug);
+    if (manual.length > 0) return manual.slice(0, limit);
+  }
   return blogArticles
     .filter(article => article.slug !== currentSlug && isArticlePublished(article))
     .sort((a, b) => {
