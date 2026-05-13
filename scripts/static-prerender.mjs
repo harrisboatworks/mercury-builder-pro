@@ -3508,8 +3508,6 @@ const multilingualBlogSitemapEntries = [
 const hardcodedMultilingualPages = [
   { loc: '/blog/fr/concessionnaire-mercury-platinum-ontario', priority: 0.6, changefreq: 'monthly', lastmod: today },
   { loc: '/blog/zh/mercury-repower-guide-gta', priority: 0.6, changefreq: 'monthly', lastmod: today },
-  { loc: '/blog/hi', priority: 0.4, changefreq: 'monthly', lastmod: today },
-  { loc: '/blog/pa', priority: 0.4, changefreq: 'monthly', lastmod: today },
 ];
 
 const allSitemapEntries = [
