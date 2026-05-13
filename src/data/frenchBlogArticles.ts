@@ -930,7 +930,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
         answer: 'Non. La CCEP concerne la compétence du conducteur; l\'immatriculation (licence de plaisance) concerne l\'embarcation elle-même.'
       }
     ]
-  }
+  },
   {
     slug: 'mercury-hors-bord-ne-demarre-pas-depannage',
     relatedSlugs: ['hivernisation-moteur-mercury-ontario'],
