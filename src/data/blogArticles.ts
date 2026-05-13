@@ -7,6 +7,7 @@ export interface HowToStep {
 export interface BlogArticle {
   slug: string;
   title: string;
+  seoTitle?: string;
   description: string;
   content: string;
   image: string;
