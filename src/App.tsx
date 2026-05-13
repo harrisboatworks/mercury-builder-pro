@@ -75,6 +75,7 @@ const AdminAgentFunnel = lazy(() => import("./pages/admin/AgentFunnel"));
 const AdminStockSync = lazy(() => import("./pages/AdminStockSync"));
 const AdminConnectors = lazy(() => import("./pages/AdminConnectors"));
 const AdminSources = lazy(() => import("./pages/AdminSources"));
+const AdminSEOHealth = lazy(() => import("./pages/AdminSEOHealth"));
 const AdminPricingImport = lazy(() => import("./pages/AdminPricingImport"));
 const MotorOptionsCatalog = lazy(() => import("./components/admin/options/MotorOptionsCatalog"));
 const MotorOptionsManager = lazy(() => import("./components/admin/options/MotorOptionsManager"));
