@@ -417,6 +417,14 @@ function AnimatedRoutes() {
           }
         />
         <Route
+          path="/admin/seo-health"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminSEOHealth />
+            </SecureRoute>
+          }
+        />
+        <Route
           path="/admin/options-catalog"
           element={
             <SecureRoute requireAdmin={true}>
