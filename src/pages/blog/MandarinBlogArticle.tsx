@@ -81,7 +81,7 @@ export default function MandarinBlogArticle() {
   };
 
   return (
-    <div className="min-h-screen bg-background" lang="zh-Hans">
+    <div className="min-h-screen bg-repower-paper" lang="zh-Hans">
       <Helmet>
         <title>Mercury水星舷外机换新指南 GTA华人船主 | Harris Boat Works</title>
         <meta name="description" content="安大略省Mercury水星舷外机换新（Repower）完整指南。Harris Boat Works白金级经销商，在线透明报价，无需电话谈价。GTA华人船主必读。" />
@@ -97,7 +97,7 @@ export default function MandarinBlogArticle() {
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
-      <LuxuryHeader />
+      <RepowerHeader />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-3xl">
         {/* Back nav */}
