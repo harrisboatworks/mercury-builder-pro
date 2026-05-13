@@ -106,7 +106,10 @@ export function getCleanDescription(article: ArticleLike): string {
     return stripped.length <= 170 ? stripped : truncateAtSentence(stripped, 170);
   }
   // Derive from the first real paragraph of body content.
-  const body = (article.content || '').replace(/^\s*#\s+.+\n+/, '');
+  let body = (article.content || '').replace(/^\s*#\s+.+\n+/, '');
+  // Pre-strip directive blocks so we don't pick them as the firstPara source.
+  body = body.replace(/^:::[a-zA-Z0-9_-]+[\s\S]*?^:::\s*$/gm, '');
+  body = body.replace(/^::[a-zA-Z0-9_-]+[\s\S]*?^::\s*$/gm, '');
   const paragraphs = body.split(/\n\s*\n/);
   const firstPara = paragraphs.find((p) => {
     const t = p.trim();
