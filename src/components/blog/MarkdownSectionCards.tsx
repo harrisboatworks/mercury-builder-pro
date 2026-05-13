@@ -519,6 +519,12 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'diagnostic-flow') {
       const props = parseDiagnosticFlowBody(body);
       if (props) chunks.push({ kind: 'diagnostic-flow', content: '', diagnosticProps: props });
+    } else if (name === 'cost-stack') {
+      const props = parseCostStackBody(body);
+      if (props) chunks.push({ kind: 'cost-stack', content: '', costStackProps: props });
+    } else if (name === 'bilingual-trust') {
+      const props = parseBilingualTrustBody(body);
+      if (props) chunks.push({ kind: 'bilingual-trust', content: '', bilingualTrustProps: props });
     }
     last = m.index + m[0].length;
   }
