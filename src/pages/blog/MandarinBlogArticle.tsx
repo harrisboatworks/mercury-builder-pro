@@ -109,7 +109,10 @@ export default function MandarinBlogArticle() {
         </nav>
 
         <article className="prose prose-lg max-w-none text-foreground">
-          <h1 className="text-3xl md:text-4xl font-light text-foreground mb-2">
+          <h1
+            className="font-display font-bold text-repower-navy-900 mb-5"
+            style={{ fontSize: 'clamp(32px, 4.5vw, 56px)', letterSpacing: '-0.025em', lineHeight: 1.1 }}
+          >
             安大略省Mercury水星舷外机换新指南：GTA华人船主必读
           </h1>
           <p className="text-muted-foreground text-sm mb-8">Harris Boat Works | harrisboatworks.ca</p>
