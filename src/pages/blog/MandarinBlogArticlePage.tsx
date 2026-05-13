@@ -343,7 +343,10 @@ export default function MandarinBlogArticlePage() {
           </span>
         </div>
 
-        <h1 className="text-3xl md:text-4xl font-light text-foreground mb-8">
+        <h1
+          className="font-display font-bold text-repower-navy-900 mb-5"
+          style={{ fontSize: 'clamp(32px, 4.5vw, 56px)', letterSpacing: '-0.025em', lineHeight: 1.1 }}
+        >
           {article.title}
         </h1>
 
