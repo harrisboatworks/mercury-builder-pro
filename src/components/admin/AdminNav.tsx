@@ -21,6 +21,7 @@ const navItems = [
   { label: "Sources", to: "/admin/sources" },
   { label: "Connectors", to: "/admin/connectors" },
   { label: "Security", to: "/admin/security" },
+  { label: "SEO Health", to: "/admin/seo-health" },
   { label: "SIN Encryption", to: "/admin/sin-encryption-test" },
   { label: "Zapier Integration", to: "/admin/zapier" },
   { label: "Email Management", to: "/admin/email" },
