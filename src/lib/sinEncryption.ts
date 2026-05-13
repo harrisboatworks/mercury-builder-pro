@@ -21,26 +21,69 @@ export async function encryptSIN(sin: string): Promise<string> {
     throw new Error('Invalid SIN format. Must be 9 digits.');
   }
   
-  try {
-    // Call the database function to encrypt
-    const { data, error } = await supabase.rpc('encrypt_sin', {
-      sin_plaintext: cleanSIN
-    });
-    
-    if (error) {
-      console.error('❌ SIN encryption failed:', error);
-      throw new Error('Failed to encrypt SIN. Please try again.');
+  // Call the database function to encrypt
+  const { data, error } = await supabase.rpc('encrypt_sin', {
+    sin_plaintext: cleanSIN
+  });
+
+  if (error) {
+    console.error('❌ SIN encryption failed:', error);
+    const err = new Error(error.message || 'Failed to encrypt SIN') as SinEncryptionError;
+    err.name = 'SinEncryptionError';
+    err.code = (error as any).code || 'rpc_error';
+    err.pgCode = (error as any).code;
+    err.details = (error as any).details;
+    err.hint = (error as any).hint;
+    // Map common Postgres errors to friendly codes
+    const msg = (error.message || '').toLowerCase();
+    if (msg.includes('permission denied') || (error as any).code === '42501') {
+      err.code = 'permission_denied';
+    } else if (msg.includes('does not exist') || (error as any).code === '42883') {
+      err.code = 'function_missing';
     }
-    
-    if (!data) {
-      throw new Error('Encryption returned no data');
-    }
-    
-    console.log('✅ SIN encrypted successfully (pgsodium AES-256)');
-    return data;
-  } catch (error) {
-    console.error('❌ SIN encryption error:', error);
-    throw new Error('Failed to encrypt SIN. Please contact support if this persists.');
+    throw err;
+  }
+
+  if (!data) {
+    const err = new Error('Encryption returned no data') as SinEncryptionError;
+    err.name = 'SinEncryptionError';
+    err.code = 'empty_response';
+    throw err;
+  }
+
+  console.log('✅ SIN encrypted successfully (pgsodium AES-256)');
+  return data;
+}
+
+export interface SinEncryptionError extends Error {
+  code: string;
+  pgCode?: string;
+  details?: string;
+  hint?: string;
+}
+
+export function getFriendlySinErrorMessage(code: string | undefined): { title: string; description: string } {
+  switch (code) {
+    case 'permission_denied':
+      return {
+        title: 'Secure submission temporarily unavailable',
+        description: 'We could not securely encrypt your SIN due to a permissions issue on our end. Our team has been notified. Please try again in a few minutes or call us at (905) 342-2153.',
+      };
+    case 'function_missing':
+      return {
+        title: 'Submission service unavailable',
+        description: 'The secure encryption service is temporarily offline. Our team has been notified. Please try again shortly or call us at (905) 342-2153.',
+      };
+    case 'empty_response':
+      return {
+        title: 'Encryption returned no data',
+        description: 'Your SIN could not be encrypted. Please try again, or contact us at (905) 342-2153 if this continues.',
+      };
+    default:
+      return {
+        title: 'Could not securely save your SIN',
+        description: 'There was a problem encrypting your SIN. Please try again, or contact us at (905) 342-2153.',
+      };
   }
 }
 
