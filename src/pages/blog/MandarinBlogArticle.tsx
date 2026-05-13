@@ -1,9 +1,10 @@
 import { Helmet } from '@/lib/helmet';
 import { Link } from 'react-router-dom';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
 import { ArrowLeft, Phone, MapPin, Navigation } from 'lucide-react';
+import { BlogCTA } from '@/components/blog/BlogCTA';
 
 export default function MandarinBlogArticle() {
   const url = `${SITE_URL}/blog/zh/mercury-repower-guide-gta`;
