@@ -1,9 +1,10 @@
 import { Helmet } from '@/lib/helmet';
 import { Link } from 'react-router-dom';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
-import { ArrowLeft, Phone, MapPin, Navigation } from 'lucide-react';
+import { ArrowLeft, Navigation } from 'lucide-react';
+import { BlogCTA } from '@/components/blog/BlogCTA';
 
 export default function MandarinBlogArticle() {
   const url = `${SITE_URL}/blog/zh/mercury-repower-guide-gta`;
@@ -80,7 +81,7 @@ export default function MandarinBlogArticle() {
   };
 
   return (
-    <div className="min-h-screen bg-background" lang="zh-Hans">
+    <div className="min-h-screen bg-repower-paper" lang="zh-Hans">
       <Helmet>
         <title>Mercury水星舷外机换新指南 GTA华人船主 | Harris Boat Works</title>
         <meta name="description" content="安大略省Mercury水星舷外机换新（Repower）完整指南。Harris Boat Works白金级经销商，在线透明报价，无需电话谈价。GTA华人船主必读。" />
@@ -96,7 +97,7 @@ export default function MandarinBlogArticle() {
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
-      <LuxuryHeader />
+      <RepowerHeader />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-3xl">
         {/* Back nav */}
@@ -108,7 +109,10 @@ export default function MandarinBlogArticle() {
         </nav>
 
         <article className="prose prose-lg max-w-none text-foreground">
-          <h1 className="text-3xl md:text-4xl font-light text-foreground mb-2">
+          <h1
+            className="font-display font-bold text-repower-navy-900 mb-5"
+            style={{ fontSize: 'clamp(32px, 4.5vw, 56px)', letterSpacing: '-0.025em', lineHeight: 1.1 }}
+          >
             安大略省Mercury水星舷外机换新指南：GTA华人船主必读
           </h1>
           <p className="text-muted-foreground text-sm mb-8">Harris Boat Works | harrisboatworks.ca</p>
@@ -213,29 +217,7 @@ export default function MandarinBlogArticle() {
         </section>
 
         {/* CTA */}
-        <section className="text-center bg-primary/5 rounded-2xl p-8 mb-12">
-          <h2 className="text-xl font-light text-foreground mb-3">现在就行动</h2>
-          <p className="text-muted-foreground text-sm mb-6">花五分钟在线配置您的报价</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/quote/motor-selection"
-              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
-            >
-              在线获取报价
-            </Link>
-            <a
-              href="tel:905-342-2153"
-              className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition-colors"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              905-342-2153
-            </a>
-          </div>
-          <p className="text-sm text-muted-foreground mt-4 flex items-center justify-center gap-1">
-            <MapPin className="w-3 h-3" />
-            5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-          </p>
-        </section>
+        <BlogCTA category="Repower" slug="mercury-repower-guide-gta" variant="banner" />
 
         <footer className="text-center text-xs text-muted-foreground">
           <p>Harris Boat Works, 1947年至今，三代家族经营，安大略省Rice Lake。Mercury Marine 白金级授权经销商。</p>

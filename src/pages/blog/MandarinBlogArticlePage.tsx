@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
-import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getMandarinArticleBySlug } from '@/data/mandarinBlogArticles';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
+import { BlogCTA } from '@/components/blog/BlogCTA';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import {
   Accordion,
@@ -286,7 +287,7 @@ export default function MandarinBlogArticlePage() {
   };
 
   return (
-    <div className="min-h-screen bg-background" lang="zh-Hans">
+    <div className="min-h-screen bg-repower-paper" lang="zh-Hans">
       <Helmet>
         <title>{article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
@@ -302,7 +303,7 @@ export default function MandarinBlogArticlePage() {
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
-      <LuxuryHeader />
+      <RepowerHeader />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
         {/* Back nav */}
@@ -342,7 +343,10 @@ export default function MandarinBlogArticlePage() {
           </span>
         </div>
 
-        <h1 className="text-3xl md:text-4xl font-light text-foreground mb-8">
+        <h1
+          className="font-display font-bold text-repower-navy-900 mb-5"
+          style={{ fontSize: 'clamp(32px, 4.5vw, 56px)', letterSpacing: '-0.025em', lineHeight: 1.1 }}
+        >
           {article.title}
         </h1>
 
@@ -378,29 +382,7 @@ export default function MandarinBlogArticlePage() {
         )}
 
         {/* CTA */}
-        <section className="text-center bg-primary/5 rounded-2xl p-8 mb-12">
-          <h2 className="text-xl font-light text-foreground mb-3">现在就行动</h2>
-          <p className="text-muted-foreground text-sm mb-6">花五分钟在线配置您的报价</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/quote/motor-selection"
-              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
-            >
-              在线获取报价
-            </Link>
-            <a
-              href="tel:905-342-2153"
-              className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition-colors"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              905-342-2153
-            </a>
-          </div>
-          <p className="text-sm text-muted-foreground mt-4 flex items-center justify-center gap-1">
-            <MapPin className="w-3 h-3" />
-            5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-          </p>
-        </section>
+        <BlogCTA category={article.category} slug={article.slug} variant="banner" />
       </main>
 
       <SiteFooter />
