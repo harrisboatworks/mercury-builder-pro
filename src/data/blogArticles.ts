@@ -8990,6 +8990,28 @@ Want to talk through Mercury vs. Yamaha for your specific boat before quoting? C
 
 For most 17, 19 ft hulls, the Mercury 115 FourStroke is the right call, lighter, cheaper, and fully capable for typical Ontario family use. The 150 earns its price on 18, 22 ft hulls, active watersports, or any boat that loads heavy. Both sit inside the same service footprint. Stay inside your capacity plate. Compare installed pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
+::decision-card
+heading: Should you choose Mercury 115 or 150 HP?
+eyebrow: Honest power pick
+subhead: The decision usually comes down to boat length, what you tow, and your capacity plate.
+leftLabel: Choose 115 HP if
+leftCriteria:
+  - Your boat is 17 to 19 ft and rated for 115
+  - Most use is casual cruising, fishing, and light watersports
+  - Hole shot and top speed are not your priority
+  - You would rather spend the budget gap on accessories or storage
+leftOutcome: Pick 115 (FourStroke or Pro XS)
+leftVariant: recommended
+rightLabel: Choose 150 HP if
+rightCriteria:
+  - Your boat is 19 to 22 ft and the capacity plate allows 150
+  - You tow tubes, wakeboarders, or skiers regularly
+  - You want stronger hole shot with a full load of people and gear
+  - You are repowering an older 150 and a like-for-like swap simplifies rigging
+rightOutcome: Pick 150 (FourStroke or Pro XS)
+rightVariant: alternative
+whenInDoubt: Check your boat's capacity plate first. If the rated max is 115, you cannot go higher. If rated 150 and the boat is over 19 ft, the extra power usually pays off the price difference within a season or two of resale value.
+::
 
 ---
 
@@ -12776,6 +12798,29 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
 ## Quick Answer
 
 If the overheat alarm is sounding right now: throttle back to idle, check the tell-tale water stream, and assess from there. No stream means the water pump has failed or the intake is blocked, shut down immediately. A strong stream with an alarm may be a sensor or thermostat issue, idle toward shore. When in doubt, shut it down. Running an overheated motor to try to get home is how a relatively small repair becomes an engine replacement.
+
+::diagnostic-flow
+heading: Mercury overheating? Run this checklist before damage gets expensive
+eyebrow: Emergency diagnostic
+subhead: Most overheats clear with a debris check. Push through an alarm and you risk $2,500+ in powerhead damage.
+step1Label: Stop the boat
+step1Question: Have you throttled down to idle and shifted to neutral?
+step1Tip: Continuing to run an overheating Mercury for even a few minutes can melt powerhead components. Idle down first, then assess.
+step2Label: Telltale stream
+step2Question: Is the telltale (pee stream) flowing, and is it the normal volume?
+step2Tip: A weak or absent stream usually means weeds or debris in the cooling inlet. A normal stream paired with overheating points to a deeper problem (thermostat, water pump, exhaust corrosion).
+step3Label: Cooling inlet
+step3Question: Have you checked the lower unit cooling intake for weeds, plastic, or grocery bags?
+step3Tip: Pulling the boat onto the trailer or tilting the motor up is the fastest way to see and clear blockages. Rice Lake weed lines in late summer are the usual suspect.
+step4Label: Recheck after clearing
+step4Question: Does the telltale return to normal volume and the alarm clear after you idle for a minute or two?
+step4Tip: If yes, run at low RPM for a few more minutes to let things stabilize before returning to cruise. If no, suspect a water pump impeller, typically a 3-year service interval on Mercury outboards.
+step5Label: Alarm persists
+step5Question: Is the overheat alarm still active or coming back at low RPM?
+step5Tip: Shut down. Continuing to run a Mercury with an active overheat alarm risks major powerhead damage. Tow in or trailer back.
+escalationLabel: Alarm still on? Don't push it.
+escalationBody: Cooling system failures get expensive fast. Tow in or trailer to us. We can usually diagnose impeller, thermostat, or exhaust corrosion the same day in season. Call (905) 342-2153 or book at /service.
+::
 
 ---
 
