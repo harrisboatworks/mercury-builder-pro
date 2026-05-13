@@ -706,6 +706,7 @@ export function MarkdownSectionCards({ content, markdownComponents }: Props) {
         key={key}
         role={cfg.role}
         aria-label={cfg.aria}
+        data-speakable="true"
         className={cfg.wrapper}
         style={cfg.style}
       >
