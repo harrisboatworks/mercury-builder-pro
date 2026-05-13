@@ -453,6 +453,9 @@ function renderMarkdownWithDirectives(
     if (chunk.kind === 'decision-card' && chunk.decisionProps) {
       return <DecisionCard key={`${keyPrefix}-dc-${i}`} {...chunk.decisionProps} />;
     }
+    if (chunk.kind === 'diagnostic-flow' && chunk.diagnosticProps) {
+      return <DiagnosticFlowchart key={`${keyPrefix}-df-${i}`} {...chunk.diagnosticProps} />;
+    }
     if (!chunk.content.trim()) return null;
     return (
       <ReactMarkdown
