@@ -211,7 +211,7 @@ That mixed-use reality is what tips most customers from the 40 to the 60 once we
 
 ## What HBW Brings Specifically
 
-We've been on Rice Lake since 1947 and a Family marina on Rice Lake since 1947. The 40-60 HP class is one of our highest-volume repower categories, which means:
+We've been on Rice Lake since 1947 and a Mercury dealer since 1965. The 40-60 HP class is one of our highest-volume repower categories, which means:
 
 - We've rigged 40s and 60s on every common Ontario boat type, so the fitment questions are answered before you ask them.
 - We stock both standard and Command Thrust versions in 40, 50, and 60 HP. Everything in this class is on the lot or available within Mercury Canada's standard order window.

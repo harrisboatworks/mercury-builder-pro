@@ -12,7 +12,7 @@ const TRUST_FAQ = [
   },
   {
     question: "How long has Harris Boat Works been in business?",
-    answer: "The Harris family founded the boat works in 1947 on Rice Lake in Gores Landing, Ontario. We're now a third-generation, family-owned marina with 79 years of continuous operation. Family marina on Rice Lake since 1947."
+    answer: "The Harris family founded the boat works in 1947 on Rice Lake in Gores Landing, Ontario. We're now a third-generation, family-owned marina with 79 years of continuous operation. Mercury dealer since 1965."
   },
   {
     question: "Where is Harris Boat Works located?",
@@ -136,12 +136,12 @@ export function MercuryDealerCanadaSEO() {
       />
       <meta
         name="keywords"
-        content="Mercury dealer Canada, Mercury Platinum Dealer Ontario, Harris Boat Works trust, family-owned marine dealer, Family marina on Rice Lake since 1947, Rice Lake Mercury, authorized Mercury dealer"
+        content="Mercury dealer Canada, Mercury Platinum Dealer Ontario, Harris Boat Works trust, family-owned marine dealer, Mercury dealer since 1965, Rice Lake Mercury, authorized Mercury dealer"
       />
       <link rel="canonical" href={`${SITE_URL}/mercury-dealer-canada-faq`} />
 
       <meta property="og:title" content="Why Buy from Harris Boat Works, Mercury Dealer Canada" />
-      <meta property="og:description" content="Mercury Platinum Dealer. Family-owned since 1947, Family marina on Rice Lake since 1947. Real CAD pricing." />
+      <meta property="og:description" content="Mercury Platinum Dealer. Family-owned since 1947, Mercury dealer since 1965. Real CAD pricing." />
       <meta property="og:url" content={`${SITE_URL}/mercury-dealer-canada-faq`} />
       <meta property="og:type" content="website" />
 

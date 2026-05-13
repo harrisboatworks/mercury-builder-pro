@@ -425,7 +425,7 @@ The fastest way to size your rigging accurately is to build a quote in our confi
 
 **Talk to us:** Call (905) 342-2153 or email info@harrisboatworks.ca. We'll walk through your boat, your use case, and what rigging package fits.
 
-Harris Boat Works has been on Rice Lake since 1947, a Family marina on Rice Lake since 1947, and a Mercury Marine Platinum dealer for over a decade. Pickup only at our Gores Landing shop. We don't ship outboards and we don't deliver. Final out-the-door price is always confirmed by HBW staff.
+Harris Boat Works has been on Rice Lake since 1947, a Mercury dealer since 1965, and a Mercury Marine Platinum dealer for over a decade. Pickup only at our Gores Landing shop. We don't ship outboards and we don't deliver. Final out-the-door price is always confirmed by HBW staff.
 
 ---
 
@@ -445,7 +445,7 @@ Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no si
 
 ---
 
-*Harris Boat Works is a third-generation family marina in Gores Landing, ON, on Rice Lake. On the lake since 1947. Family marina on Rice Lake since 1947. Mercury Marine Platinum dealer. Legend Boats dealer. Pickup only at 5369 Harris Boat Works Rd. We do not ship outboards and we do not deliver. Final out-the-door price is always confirmed by Harris Boat Works staff.*
+*Harris Boat Works is a third-generation family marina in Gores Landing, ON, on Rice Lake. On the lake since 1947. Mercury dealer since 1965. Mercury Marine Platinum dealer. Legend Boats dealer. Pickup only at 5369 Harris Boat Works Rd. We do not ship outboards and we do not deliver. Final out-the-door price is always confirmed by Harris Boat Works staff.*
 
 **Phone:** (905) 342-2153
 **Email:** info@harrisboatworks.ca

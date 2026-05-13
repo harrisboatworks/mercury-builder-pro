@@ -291,7 +291,7 @@ Significantly. A fully loaded family boat behaves like a different machine than 
       },
       {
         question: 'What is the right HP for a fishing boat on Rice Lake or Kawartha Lakes?',
-        answer: 'For a 16-18 ft aluminum fishing boat on Rice Lake or the Kawarthas, the most practical HP range is 60-115 HP. A 75 HP gets a light 16 ft aluminum boat planing quickly and efficiently. A 90 or 115 HP is worth the step-up if you carry two or three people and gear regularly, or fish open stretches of Rice Lake where wind picks up. The 115 HP is the most versatile choice if you want one motor that handles everything. Harris Boat Works, Family marina on Rice Lake since 1947 in Gores Landing on Rice Lake, can match the right HP to your hull.'
+        answer: 'For a 16-18 ft aluminum fishing boat on Rice Lake or the Kawarthas, the most practical HP range is 60-115 HP. A 75 HP gets a light 16 ft aluminum boat planing quickly and efficiently. A 90 or 115 HP is worth the step-up if you carry two or three people and gear regularly, or fish open stretches of Rice Lake where wind picks up. The 115 HP is the most versatile choice if you want one motor that handles everything. Harris Boat Works, Mercury dealer since 1965 in Gores Landing on Rice Lake, can match the right HP to your hull.'
       },
       {
         question: 'Should I choose the maximum HP my boat is rated for?',
@@ -1563,7 +1563,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | [harrisboatwo
   {
     slug: 'why-harris-boat-works-mercury-dealer',
     title: 'Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust',
-    description: 'Discover why Harris Boat Works has been Ontario\'s trusted Family marina on Rice Lake since 1947. Learn about our expertise, inventory, service, and commitment to boaters.',
+    description: 'Discover why Harris Boat Works has been Ontario\'s trusted Mercury dealer since 1965. Learn about our expertise, inventory, service, and commitment to boaters.',
     image: '/lovable-uploads/Boaters_Trust_HBW.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
@@ -2632,7 +2632,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'What is the best Mercury outboard for a 17 ft aluminum fishing boat on Rice Lake?',
-        answer: 'For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. For solo or two-person fishing with tiller control, the 75 HP tiller is efficient and well-suited to Rice Lake\'s shoreline work. For two or three regular passengers or more open-water conditions, the 90 HP provides better loaded performance at the same weight. The 115 HP is worth considering if the hull is heavier or you want long-term headroom. Harris Boat Works. Family marina on Rice Lake since 1947 in Gores Landing on Rice Lake, can assess your specific hull and recommend the right choice.'
+        answer: 'For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. For solo or two-person fishing with tiller control, the 75 HP tiller is efficient and well-suited to Rice Lake\'s shoreline work. For two or three regular passengers or more open-water conditions, the 90 HP provides better loaded performance at the same weight. The 115 HP is worth considering if the hull is heavier or you want long-term headroom. Harris Boat Works. Mercury dealer since 1965 in Gores Landing on Rice Lake, can assess your specific hull and recommend the right choice.'
       },
       {
         question: 'Is the Mercury 115 HP Command Thrust worth it?',
@@ -5024,7 +5024,7 @@ Not necessarily. If you were happy with the old motor, matching HP is a reasonab
 ---
 
 *Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 | harrisboatworks.ca | 905-342-2153*  
-*Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947*`,
+*Mercury dealer since 1965, family marina on Rice Lake since 1947*`,
     faqs: [
       {
         question: 'Why not just max out the HP rating?',
@@ -7689,13 +7689,13 @@ Live CAD pricing on every Mercury we sell is at [mercuryrepower.ca](https://merc
 
 If you want to talk through whether Mercury is the right answer for your specific boat and use case, call 905-342-2153.
 
-Harris Boat Works. Family marina on Rice Lake since 1947, Mercury Platinum dealer today.
+Harris Boat Works. Mercury dealer since 1965, Mercury Platinum dealer today.
 5369 Harris Boat Works Rd, Gores Landing, ON.
 
 *Last reviewed: 2026-05-11.*`,
     faqs: [
       { question: 'Is Mercury actually better than Yamaha or Honda?', answer: 'Mechanically, all three brands make reliable modern four-stroke outboards. The practical difference for Ontario boaters is dealer network, parts availability, and resale. On those metrics, Mercury wins in this region.' },
-      { question: 'Why does HBW sell only Mercury?', answer: 'We have been a Family marina on Rice Lake since 1947. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Platinum dealer relationship today.' },
+      { question: 'Why does HBW sell only Mercury?', answer: 'We have been a Mercury dealer since 1965. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Platinum dealer relationship today.' },
       { question: 'Why do most Canadian boats come Mercury-rigged?', answer: 'Decades of supply chain integration between Mercury and Canadian boat builders (Lund, Crestliner, Princecraft, Lowe). Customers ask for Mercury, factories rig with Mercury.' },
       { question: 'Is Mercury more expensive than Yamaha or Honda?', answer: 'At comparable HP and trim, pricing is similar. Total cost of ownership tends to favor Mercury in Ontario because dealer network density reduces practical service costs.' },
       { question: 'What is Mercury most popular model in Ontario?', answer: 'The Mercury 9.9 ProKicker is the most commonly installed kicker motor on Canadian fishing boats. In the main motor class, the 90 EXLPT FourStroke and 115 EXLPT FourStroke are common on 16 to 18 ft aluminum console boats.' },
@@ -9963,7 +9963,7 @@ Yes. Milky gear lube means water in the gearcase, which means a seal is leaking.
 ## CTA
 
 **Want it done right without the Saturday morning?** 
-Request professional winterization at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+Request professional winterization at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 Phone: 905-342-2153
 
@@ -10297,7 +10297,7 @@ For most Ontario boaters switching to Mercury, the timing is a full repower, whe
     { question: 'How much does it cost to switch from Yamaha or Honda to Mercury?', answer: 'Switching brands during a repower typically adds $2,000 to $3,000 CAD in rigging on top of the motor cost. The full control system (throttle, shift cables, harness, gauges) needs to be replaced when switching brands.' },
     { question: 'Are Yamaha outboards better in saltwater than Mercury?', answer: 'Yamaha has a well-earned saltwater durability reputation. Mercury SeaPro line is purpose-built for commercial and saltwater applications. For Ontario freshwater, Mercury wins on dealer support in this region.' },
     { question: 'Why do most Canadian boat manufacturers ship Mercury-rigged?', answer: 'Mercury dealer network in Canada is the deepest, parts supply is most consistent, and the relationship between Mercury Marine and Canadian boat manufacturers goes back decades.' },
-    { question: 'Why is HBW only a Mercury dealer?', answer: 'We have been a Family marina on Rice Lake since 1947. The depth of expertise, parts inventory, factory tooling, and Mercury Platinum dealer relationship today comes from decades of Mercury-only work. For engine repairs, we only service Mercury and Mercruiser.' },
+    { question: 'Why is HBW only a Mercury dealer?', answer: 'We have been a Mercury dealer since 1965. The depth of expertise, parts inventory, factory tooling, and Mercury Platinum dealer relationship today comes from decades of Mercury-only work. For engine repairs, we only service Mercury and Mercruiser.' },
   ],
   },
 
@@ -10791,7 +10791,7 @@ Intermittent no-start is often a connection problem, a battery terminal that's p
 ## CTA
 
 **Can't find the problem?** 
-Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: 905-342-2153
 
@@ -11396,7 +11396,7 @@ More often than not, the better upgrade is a prop and trim conversation, and tha
       },
       {
         question: 'Is Mercury Boost available in Ontario?',
-        answer: 'Yes. Mercury Boost is available through certified Mercury dealers in Ontario. Harris Boat Works in Gores Landing, Ontario, on Rice Lake, is a Mercury Platinum dealer that performs Boost installations. We sold approximately 65 new Mercury motors in 2025 and have been a Family marina on Rice Lake since 1947. Call 905-342-2153 to confirm current pricing and availability for your motor. Note that eligibility depends on your specific motor model and year; have your motor\'s serial number ready when you call.'
+        answer: 'Yes. Mercury Boost is available through certified Mercury dealers in Ontario. Harris Boat Works in Gores Landing, Ontario, on Rice Lake, is a Mercury Platinum dealer that performs Boost installations. We sold approximately 65 new Mercury motors in 2025 and have been a Mercury dealer since 1965. Call 905-342-2153 to confirm current pricing and availability for your motor. Note that eligibility depends on your specific motor model and year; have your motor\'s serial number ready when you call.'
       }
     ]
   },
@@ -12867,7 +12867,7 @@ It can. Heat cycles can damage head gaskets and warp components even in brief ov
 ## CTA
 
 **After any overheating event, get it checked before the next run.** 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 Phone: 905-342-2153
 
@@ -13023,7 +13023,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **HBW (Gores Landing)** sells ethanol-free 89-octane marine fuel directly at our dock. Easier on outboards than the 10% ethanol you get at most pump stations. We're open daily during boating season.
 
-For Mercury service, parts, or repower questions, we're a Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947. Service requests at [hbw.wiki/service](https://hbw.wiki/service). Phone 905-342-2153.
+For Mercury service, parts, or repower questions, we're a Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbw.wiki/service](https://hbw.wiki/service). Phone 905-342-2153.
 
 ---
 
@@ -13899,7 +13899,7 @@ Skipping one service rarely causes immediate failure. The risk accumulates: degr
 ## CTA
 
 **Due for service?** 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Or build a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
@@ -15146,7 +15146,7 @@ Three things actually matter when evaluating an Ontario Mercury dealer:
 2. **Diagnostic and rigging expertise**
 3. **Pricing transparency and post-sale service relationship**
 
-Harris Boat Works has been a Family marina on Rice Lake since 1947, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
+Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
 
 ---
 
@@ -16265,7 +16265,7 @@ Your existing boat insurance typically covers winter storage; some policies requ
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Family marina on Rice Lake since 1947 and a Mercury Marine Platinum Dealer for most of the modern era. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
+> **Quick answer:** Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Mercury dealer since 1965 and a Mercury Marine Platinum Dealer for most of the modern era. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
 
 The simple version: Harris Boat Works has been at the same dock on Rice Lake, in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965**, most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
 
@@ -16413,7 +16413,7 @@ If the fourth generation takes over, HBW continues. If they don't, we'll find a 
 ## Frequently Asked Questions
 
 **How long has Harris Boat Works been in business?**
-Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Family marina on Rice Lake since 1947, **60 years** as a Mercury Marine dealer in 2026.
+Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026.
 
 **Is HBW family-owned?**
 Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business.
@@ -16454,7 +16454,7 @@ Yes, we're a working family marina. Walking through the slips, watching the rent
 - [Rice Lake Boating Guide](/blog/rice-lake-boating-guide-2026)
 `,
     faqs: [
-      { question: "How long has Harris Boat Works been in business?", answer: "Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Family marina on Rice Lake since 1947, **60 years** as a Mercury Marine dealer in 2026." },
+      { question: "How long has Harris Boat Works been in business?", answer: "Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026." },
       { question: "Is HBW family-owned?", answer: "Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business." },
       { question: "Is HBW a Mercury Platinum dealer?", answer: "Yes. Platinum is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores." },
       { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. About 90 minutes east of central Toronto." },
@@ -18656,7 +18656,7 @@ Mercury dealer certification runs Bronze, Silver, Gold, and Platinum. Platinum r
 
 For the motor price itself, Platinum and Bronze dealers are generally within a few hundred dollars of each other. The difference shows up in warranty work, complex diagnostics, repower expertise, parts availability, and what happens when something goes wrong three years after the sale.
 
-Harris Boat Works has been a Family marina on Rice Lake since 1947. We've been Platinum for over a decade. Some GTA customers drive 90 minutes to Gores Landing to buy here. That's not because we're the lowest price on every single model. It's because when we quote something, that's the price, and when you need service, you're not starting over with a stranger.
+Harris Boat Works has been a Mercury dealer since 1965. We've been Platinum for over a decade. Some GTA customers drive 90 minutes to Gores Landing to buy here. That's not because we're the lowest price on every single model. It's because when we quote something, that's the price, and when you need service, you're not starting over with a stranger.
 
 ---
 
@@ -20929,7 +20929,7 @@ That's been the model since 1947. It still works.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'Is there a Mercury dealer in Markham?', answer: "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Markham - about 70 minutes north. Platinum is the top tier in Mercury's dealer program." },
@@ -21065,7 +21065,7 @@ You see the number before you leave Richmond Hill. You come up when you're decid
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'Is there a Mercury Platinum dealer near Richmond Hill?', answer: 'Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Richmond Hill - about 75 minutes north via Highway 404 and County Road 28.' },
@@ -21204,7 +21204,7 @@ That's the deal. It's been the deal since 1947.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'Is there a Mercury dealer near Mississauga?', answer: 'Mississauga has several Mercury dealers in the broader GTA. Harris Boat Works on Rice Lake is the closest Platinum-tier dealer for west-GTA customers willing to make the 90-minute drive northeast.' },
@@ -21328,7 +21328,7 @@ That's the deal.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'How far is HBW from Vaughan?', answer: 'About 80 minutes via Highway 400 / 404 and Highway 115. Roughly 120 km depending on your part of Vaughan.' },
@@ -21452,7 +21452,7 @@ No fog machine. No runaround. Since 1947.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'How far is HBW from Brampton?', answer: 'About 95 minutes via Highway 410 / 401 and Highway 115. Roughly 140 km depending on your part of Brampton.' },
@@ -21580,7 +21580,7 @@ That's been the deal since 1947.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'How far is HBW from Oakville?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Oakville.' },
@@ -21706,7 +21706,7 @@ That's been true since 1947. It's still true.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'How far is HBW from Burlington?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Burlington.' },
@@ -21868,7 +21868,7 @@ Only with an adequate water supply to the cooling system. Never run a Mercury ou
 ## CTA
 
 **Spring no-start you can't resolve?** 
-Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: 905-342-2153
 
@@ -22038,7 +22038,7 @@ Impeller wear is a maintenance item, not a defect, unless the impeller fails ver
 ## CTA
 
 **Overheating at idle needs to be looked at before your next run.** 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: 905-342-2153
 
@@ -22166,7 +22166,7 @@ Transparent pricing before you leave Pickering. The rigging conversation before 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'How far is HBW from Pickering?', answer: 'About 50 minutes via Highway 401 east and Highway 115 north. Roughly 75 km. Closer than most of the GTA - almost a non-decision drive for repower service.' },
@@ -22287,7 +22287,7 @@ That's the deal. Has been since 1947.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'How far is HBW from Whitby?', answer: 'About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.' },
@@ -22413,7 +22413,7 @@ You see the price before you leave Ajax. The rigging gets discussed before we or
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'How far is HBW from Ajax?', answer: 'About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.' },
@@ -22545,7 +22545,7 @@ You're practically in our neighbourhood. Let's work together.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'How far is HBW from Oshawa?', answer: 'About 40 minutes via Highway 401 east and Highway 115 north. Roughly 65 km. One of the closest GTA cities to Rice Lake.' },
@@ -22677,7 +22677,7 @@ This is what a dealer relationship is supposed to feel like.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 `,
     faqs: [
       { question: 'How far is HBW from Bowmanville?', answer: 'About 35 minutes via Highway 401 east and Highway 115 north. Roughly 55 km. The closest major GTA-edge city to Rice Lake.' },
@@ -22836,7 +22836,7 @@ A sensor fault can trigger a false alarm, yes. But the correct response to a fal
 ## CTA
 
 **Alarm that came back, or one you can't explain?** 
-Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: 905-342-2153
 
@@ -23013,7 +23013,7 @@ Often yes, the motor started on fuel already in the system but couldn't maintain
 ## CTA
 
 **Can't find the problem?** 
-Book a spring diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Family marina on Rice Lake since 1947, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Book a spring diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: 905-342-2153
 

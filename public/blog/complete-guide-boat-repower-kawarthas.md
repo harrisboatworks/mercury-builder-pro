@@ -280,7 +280,7 @@ A soft transom can be repaired before a repower, but it adds meaningful cost, ty
 
 ### What's the best Mercury motor for repowering a Kawartha Lakes fishing boat?
 
-For most 16–19 ft aluminum fishing boats on Kawartha Lakes and Rice Lake, the Mercury 75–115 HP FourStroke range is the right repower target. The 75 HP suits lighter boats and solo or two-person use. The 90 HP is a balanced middle option. The 115 HP is the most popular choice, its larger 2.1L engine handles a full boat confidently and holds strong resale value. For pontoons on the Kawarthas, 90–115 HP is most common. Harris Boat Works, Family marina on Rice Lake since 1947 in Gores Landing on Rice Lake, can spec the right motor for your hull.
+For most 16–19 ft aluminum fishing boats on Kawartha Lakes and Rice Lake, the Mercury 75–115 HP FourStroke range is the right repower target. The 75 HP suits lighter boats and solo or two-person use. The 90 HP is a balanced middle option. The 115 HP is the most popular choice, its larger 2.1L engine handles a full boat confidently and holds strong resale value. For pontoons on the Kawarthas, 90–115 HP is most common. Harris Boat Works, Mercury dealer since 1965 in Gores Landing on Rice Lake, can spec the right motor for your hull.
 
 ## Next steps
 

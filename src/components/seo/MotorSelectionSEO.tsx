@@ -140,7 +140,7 @@ export function MotorSelectionSEO({
       <title>Mercury Outboard Motors, Browse 2.5HP, 600HP & Build a Quote | Harris Boat Works</title>
       <meta
         name="description"
-        content={`Shop Mercury FourStroke, Pro XS, SeaPro and ProKicker outboards from $${minPrice.toLocaleString()}–$${maxPrice.toLocaleString()} CAD. Configure your motor and get instant CAD pricing online, Harris Boat Works, Family marina on Rice Lake since 1947.`}
+        content={`Shop Mercury FourStroke, Pro XS, SeaPro and ProKicker outboards from $${minPrice.toLocaleString()}–$${maxPrice.toLocaleString()} CAD. Configure your motor and get instant CAD pricing online, Harris Boat Works, Mercury dealer since 1965.`}
       />
       <link rel="canonical" href={`${SITE_URL}/quote/motor-selection`} />
 

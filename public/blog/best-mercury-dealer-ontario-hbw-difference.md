@@ -43,7 +43,7 @@ Three things actually matter when evaluating an Ontario Mercury dealer:
 2. **Diagnostic and rigging expertise**
 3. **Pricing transparency and post-sale service relationship**
 
-Harris Boat Works has been a Family marina on Rice Lake since 1947, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
+Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
 
 ---
 

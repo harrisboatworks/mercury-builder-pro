@@ -186,7 +186,7 @@ We reply within one business day with a preliminary trade range and a repower qu
 
 ## Why HBW Is Honest About This
 
-We've been on Rice Lake since 1947 and a Family marina on Rice Lake since 1947. Most of our repower customers have been with us for 10+ years. **The number we give you on trade is a number we can defend with our service writers and resale operations.** We can't gold-plate it because we have to actually move the motor afterward, and we can't lowball it because you'd notice and walk.
+We've been on Rice Lake since 1947 and a Mercury dealer since 1965. Most of our repower customers have been with us for 10+ years. **The number we give you on trade is a number we can defend with our service writers and resale operations.** We can't gold-plate it because we have to actually move the motor afterward, and we can't lowball it because you'd notice and walk.
 
 We also publish all our [Mercury pricing live](https://mercuryrepower.ca/pricing-reference) so you can see the new-motor side of the transaction without a phone call. Most Ontario dealers don't.
 

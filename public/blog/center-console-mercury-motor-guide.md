@@ -174,7 +174,7 @@ Center consoles tend to be stored covered, not shrink-wrapped. Spring start-up i
 
 ## Why Ontario Center Console Buyers Choose HBW
 
-We've been on Rice Lake since 1947 and a Family marina on Rice Lake since 1947. Center-console repowers are a steady part of our shop volume because we cover the trailerable Ontario buyer well.
+We've been on Rice Lake since 1947 and a Mercury dealer since 1965. Center-console repowers are a steady part of our shop volume because we cover the trailerable Ontario buyer well.
 
 - We rig Pro XS V6, Pro XS V8, and Verado center-console setups regularly.
 - We stock common center-console props (Bravo 1 FS, Fury 4, Tempest) and verify WOT RPM in sea trial before delivery.

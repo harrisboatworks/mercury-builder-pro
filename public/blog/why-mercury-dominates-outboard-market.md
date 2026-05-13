@@ -43,7 +43,7 @@ If you are buying an outboard in Ontario in 2026, the practical answer for most 
 
 Reliability and service availability are the same conversation in Canada. A theoretically more reliable motor that takes 6 weeks to get parts for is less reliable in practice than a slightly less perfect motor that gets fixed in 4 days. Mercury is the most-supported outboard at HBW for that reason.
 
-We are biased. We sell Mercury exclusively at HBW. We have been a Family marina on Rice Lake since 1947. The bias is downstream of the market reality, not upstream of it. Mercury has led many Canadian outboard segments for decades, and the customers we serve are the customers buying Mercury.
+We are biased. We sell Mercury exclusively at HBW. We have been a Mercury dealer since 1965. The bias is downstream of the market reality, not upstream of it. Mercury has led many Canadian outboard segments for decades, and the customers we serve are the customers buying Mercury.
 
 ## Why Mercury leads in many Canadian segments (the practical reasons)
 
@@ -117,7 +117,7 @@ We will not pretend Mercury is mechanically superior to Yamaha or Honda when it 
 
 ## Why HBW chose Mercury (and stays with Mercury)
 
-We have been a Family marina on Rice Lake since 1947. That is 60 years of exclusive partnership. The reasons we have not switched:
+We have been a Mercury dealer since 1965. That is 60 years of exclusive partnership. The reasons we have not switched:
 
 - The depth of Mercury expertise compounds. Three generations of HBW technicians have learned Mercury inside and out. Switching brands means starting that curve over.
 - Mercury parts inventory and tooling investment is significant. A new brand would mean new parts shelf, new tooling, new training. Not impossible, but expensive and slow.
@@ -154,7 +154,7 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 "Best" depends on context. Mechanically, Mercury, Yamaha, and Honda all make reliable outboards. In practical terms (dealer network, parts availability, service speed) for Ontario and Canadian freshwater, Mercury wins. In coastal saltwater regions, Yamaha is more competitive. The right brand for you depends on where you live and where you launch.
 
 **Why does HBW only sell Mercury?**
-We have been a Family marina on Rice Lake since 1947. Three generations of expertise, parts inventory, tooling, and a Mercury Platinum dealer relationship that gives factory-direct support. Multi-brand dealers serve a different market. We focus on Mercury depth instead of brand breadth, and that focus pays off in service quality.
+We have been a Mercury dealer since 1965. Three generations of expertise, parts inventory, tooling, and a Mercury Platinum dealer relationship that gives factory-direct support. Multi-brand dealers serve a different market. We focus on Mercury depth instead of brand breadth, and that focus pays off in service quality.
 
 **What is Mercury's market share?**
 Mercury Marine is the largest outboard manufacturer in the world by volume and dealer count. Specific market share percentages vary by region. In Canada, Mercury has the deepest dealer network and the strongest factory-OEM relationships with major boat builders. In coastal US markets, Yamaha is more competitive.
@@ -225,11 +225,11 @@ SmartCraft gives Rice Lake boat owners real-time engine data. RPM, fuel burn, sp
 
 ### Why does Harris Boat Works only sell Mercury outboards?
 
-Harris Boat Works focuses on Mercury because it's the best product for the majority of boats and uses on Rice Lake and the Kawarthas, and because being a Family marina on Rice Lake since 1947 means technicians have deep specialized knowledge. Being specialized means faster diagnostics, more reliable parts sourcing, and work we can stand behind. Selling multiple brands would dilute that depth of expertise and give customers a less well-supported product.
+Harris Boat Works focuses on Mercury because it's the best product for the majority of boats and uses on Rice Lake and the Kawarthas, and because being a Mercury dealer since 1965 means technicians have deep specialized knowledge. Being specialized means faster diagnostics, more reliable parts sourcing, and work we can stand behind. Selling multiple brands would dilute that depth of expertise and give customers a less well-supported product.
 
 ### How does Mercury compare to Yamaha for Rice Lake use?
 
-Both Mercury and Yamaha make excellent outboards. For Rice Lake use specifically, the practical differences come down to support infrastructure. Harris Boat Works has been a Family marina on Rice Lake since 1947, technicians know Mercury in depth, parts are stocked, and warranty work happens locally. Mercury cowlings dominate the docks at Gores Landing, Bewdley, and Hastings, which means local knowledge and service experience are concentrated in Mercury. If you're already in a Yamaha running well, there's no reason to switch. If buying new for a Rice Lake boat, Mercury is the recommendation.
+Both Mercury and Yamaha make excellent outboards. For Rice Lake use specifically, the practical differences come down to support infrastructure. Harris Boat Works has been a Mercury dealer since 1965, technicians know Mercury in depth, parts are stocked, and warranty work happens locally. Mercury cowlings dominate the docks at Gores Landing, Bewdley, and Hastings, which means local knowledge and service experience are concentrated in Mercury. If you're already in a Yamaha running well, there's no reason to switch. If buying new for a Rice Lake boat, Mercury is the recommendation.
 
 ### Is the Mercury Avator electric outboard practical for a Rice Lake cottage?
 
