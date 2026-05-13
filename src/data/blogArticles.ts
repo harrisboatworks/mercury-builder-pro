@@ -23472,6 +23472,449 @@ HBW 팀은 영어로 소통합니다. 한국어 통역 서비스는 제공하지
       { question: 'Should I keep cranking it?', answer: 'No. Repeated cranking can drain the battery and make diagnosis harder. Check basics, then stop and book service if it does not start.' },
     ],
   },
+  {
+    slug: 'boat-trailer-maintenance-guide-ontario',
+    seoTitle: 'Boat Trailer Maintenance Guide (Ontario 2026)',
+    title: 'Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)',
+    description: 'Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks. Service costs at HBW, common failures, and when to repair vs replace.',
+    image: '/lovable-uploads/Mercury_Maintenance_Schedule.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Maintenance',
+    readTime: '~10 min read',
+    keywords: ['boat trailer maintenance', 'trailer bearings', 'boat trailer Ontario', 'trailer service cost', 'trailer bearing repack', 'ST tires', 'boat trailer brakes', 'trailer winterization'],
+    relatedSlugs: ['spring-outboard-commissioning-checklist', 'mercury-outboard-winterization-service-cost-ontario', 'trailer-boat-toronto-to-rice-lake-guide'],
+    content: `## Quick Answer
+
+**Your boat trailer carries the same value as your motor and your boat combined. Skip annual maintenance and you find out the hard way at the worst possible moment, usually mid-launch on a Saturday morning in May.**
+
+- **Bearings**: repack annually OR every 12,000 km; replace at the first sign of grease colour change or play
+- **Brakes**: annual flush + pad inspection; surge or electric, both fail the same way
+- **Tires**: check pressure cold every trip; replace every 5-6 years even if tread looks fine (rubber degrades faster than tread wears)
+- **Lights/wiring**: test before every trip; sealed LED tail lights last 10x longer than standard
+- **Bunks/rollers**: carpet bunks every 4-5 years; rusted bunk brackets are the #1 trailer failure HBW sees
+
+---
+
+## Why Most Boaters Skip Trailer Maintenance Until It Fails
+
+Trailers are easy to ignore. They sit in the driveway most of the year, get pulled out twice for launch and haul-out, and seem fine when they are not. But the trailer is the only thing between your $20,000+ boat-and-motor combo and the asphalt at highway speed.
+
+We see three patterns at HBW:
+
+1. **The bearing burn-out.** Boat owner trailers a 3-hour drive to a tournament. Hub heats up, bearing seizes, wheel locks, boat drags 200 metres before they can stop. Insurance covers some of it but not the holiday.
+2. **The brake fade.** Surge brakes on a loaded trailer have not been serviced in 5 years. Coming down a hill into a launch ramp, the brakes do not grab. Truck and trailer slide into the lake.
+3. **The tire blow-out.** Trailer tires look fine but were manufactured 8 years ago. UV and ozone degraded the rubber from the inside. 80 km/h on the 401 in July, tire shreds, trailer tracks into the ditch.
+
+All three are preventable with a 30-minute annual inspection.
+
+## The 6 Things to Check Every Spring
+
+### 1. Wheel Bearings (Most Common Failure Point)
+
+Bearings are sealed grease cartridges that let the wheels spin freely. Submerging hot bearings in cold lake water creates a vacuum that pulls water into the hub. Once water mixes with grease, corrosion starts immediately.
+
+**Action:**
+- Repack annually (Bearing Buddies make this easy)
+- Replace bearings outright every 4-5 years regardless of appearance
+- Check play with the wheel jacked up, any wiggle means bearings or races are worn
+
+**Cost at HBW:** $80-$120 per axle for repack, $250-$350 for full bearing replacement including parts.
+
+### 2. Brakes (Surge or Electric)
+
+Most Ontario trailers under 2,500 lbs gross use surge brakes, the trailer\'s inertia compresses a hydraulic master cylinder when you brake. Larger trailers use electric brakes controlled from the tow vehicle.
+
+**Action:**
+- Surge: flush the hydraulic line annually with marine-grade brake fluid (DOT 4 or DOT 5)
+- Electric: test the magnet\'s grab strength annually; replace pads when worn
+- Inspect rotors/drums for rust pitting
+
+**Cost at HBW:** $150-$250 for surge brake service; $200-$300 for electric brake service.
+
+### 3. Tires and Pressure
+
+Boat trailer tires (ST-rated) are different from car tires. They have stiffer sidewalls but degrade faster from UV and ozone exposure. The tread can look perfect at 8 years old while the sidewall is structurally compromised.
+
+**Action:**
+- Check cold tire pressure before every trip (target 50-65 PSI depending on size, match the sidewall spec)
+- Replace tires every 5-6 years regardless of tread depth
+- Carry a full-size spare, not a "donut"
+- Check the DOT date code (last 4 digits = week/year of manufacture)
+
+### 4. Lights and Wiring
+
+Trailer lights fail because connectors corrode and constant flexing breaks the wiring inside the harness.
+
+**Action:**
+- Sealed LED lights with a single connector last 10x longer than standard bulbs
+- Apply dielectric grease to the 4- or 7-pin connector every spring
+- Test every trip, a $10 plug-in tester saves you from a $250 OPP ticket
+
+### 5. Bunks, Rollers, and Frame
+
+The bunks (the carpeted boards your hull rests on) and the rollers degrade slowly until you notice your boat sitting unevenly on the trailer.
+
+**Action:**
+- Replace carpet on bunks every 4-5 years (worn carpet means direct wood-on-hull contact)
+- Rusted bunk brackets are the #1 trailer failure HBW sees, rinse the trailer after each dip
+- Inspect the frame for cracks at weld points, especially the cross members
+
+### 6. Winch, Straps, and Safety Chains
+
+The cheapest items on the trailer are usually the most ignored.
+
+**Action:**
+- Lubricate winch gears annually
+- Replace winch strap when fraying appears (Ontario sun degrades polyester within 5 years)
+- Inspect safety chains for cracked links, replace at any sign of corrosion
+
+## Ontario-Specific Considerations
+
+### Road Salt
+
+Ontario uses calcium chloride and sodium chloride on highways from November through April. Even if you do not trailer during salt season, residual salt on the road from before your first spring trip eats into trailer frames within months.
+
+**Action:** Rinse the trailer thoroughly after the first 2-3 spring trips. A garden hose with a sprayer attachment for 5 minutes does the job.
+
+### Gravel Launch Ramps
+
+Many Rice Lake and Kawartha launches have gravel or compacted-dirt access roads. The grit gets into bearings and lights faster than paved ramps. Plan for more frequent bearing maintenance if you launch off gravel weekly.
+
+### 401 Highway Speeds
+
+Ontario\'s 100 km/h posted limit means most boaters trailer at 110+ km/h actual. That is at the upper edge of most ST-rated trailer tires\' rated speed (typically 105 km/h or 65 mph). Heavy loads + summer heat + actual highway speeds = more frequent tire replacements.
+
+## When to Bring Your Trailer to HBW
+
+We service trailers we sell and most major brands. Common reasons customers bring trailers in:
+
+- **Annual bearing repack** — fastest service item, usually done while you wait
+- **Brake conversion or upgrade** — surge to electric, or rusted-out brake replacement
+- **Frame repair** — welding cracked cross members or replacing tongue extensions
+- **Bunk replacement** — full carpet and bracket refresh
+- **Pre-purchase inspection** — buying a used boat-and-trailer combo, get the trailer inspected before the deal closes
+
+Book at [hbw.wiki/service](https://hbw.wiki/service) or call (905) 342-2153.
+
+## When to Replace vs Repair
+
+Trailer frames are weldable. Bunks, rollers, lights, and brakes are all replaceable parts. A 15-year-old trailer with a solid frame is usually worth refurbishing if the underlying structure is sound. Once the frame is cracked through, structurally compromised, or seriously rotted, replacement is the only safe option.
+
+A new mid-size aluminum trailer for a 16-18 ft boat runs $3,000-$5,000 CAD in Ontario. A full refurbishment (bunks, bearings, brakes, lights, tires) on a sound frame is usually $800-$1,500. Math the lifespan honestly.
+
+---
+
+*Last reviewed: 2026-05-13*
+
+By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.`,
+    faqs: [
+      { question: 'How often should I repack trailer bearings?', answer: 'Annually for boats that get used 10+ times per season, or every 12,000 km of trailering. If your bearings get submerged in cold water after a hot drive (very common), repack at the end of the season as well.' },
+      { question: 'Are trailer tires different from car tires?', answer: 'Yes. Special Trailer (ST) tires have stiffer sidewalls and higher load ratings for the same size. Do not substitute passenger car tires. They flex too much and fail at trailer loads.' },
+      { question: 'Do I need to register my boat trailer in Ontario?', answer: 'Yes. All trailers used on Ontario roads must have a permit and license plate from ServiceOntario, regardless of size. Costs about $34 for the permit plus annual sticker.' },
+      { question: 'How long do trailer bunks last?', answer: '5-10 years depending on use. The carpet usually fails first (UV and abrasion), followed by the wood underneath if water gets in. Bunk brackets rust faster on trailers stored outside without covers.' },
+      { question: 'What is the speed limit when towing a boat trailer in Ontario?', answer: '100 km/h on most highways. Trailer tires often have a lower rated speed (typically 105 km/h / 65 mph). Do not push your luck, heat builds quickly at trailer speeds in summer.' },
+    ],
+  },
+  {
+    slug: 'boat-insurance-ontario-guide-2026',
+    seoTitle: 'Boat Insurance in Ontario: What You Need (2026 Guide)',
+    title: 'Boat Insurance in Ontario: What You Actually Need (2026)',
+    description: 'Ontario boat insurance basics. Liability vs hull coverage, what is covered vs not, real annual premium ranges by boat type, and why insurance + extended warranty cover different things.',
+    image: '/lovable-uploads/Boat_Repowering_101_Hero.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Boating',
+    readTime: '~9 min read',
+    keywords: ['boat insurance Ontario', 'marine insurance', 'boat insurance cost', 'liability coverage boats', 'agreed value boat insurance', 'Ontario boat liability', 'pleasure craft insurance'],
+    relatedSlugs: ['mercury-extended-warranty-platinum-ontario', 'outboard-trade-in-value-ontario-hbw', 'mercury-repower-cost-ontario-2026-cad'],
+    content: `## Quick Answer
+
+**Ontario does not legally require boat insurance for most pleasure craft. But for any boat worth more than $5,000, or any boat carrying passengers, basic liability and hull coverage is what every honest dealer recommends. Expect to pay $200-$600/year for a typical 16-22 ft Ontario boat with Mercury power.**
+
+- **Liability**: $1M-$2M minimum (covers damage to other boats, docks, or injuries)
+- **Hull / agreed-value**: replacement cost minus depreciation, with motor and trailer riders
+- **Most home policies do NOT cover boats over 16 ft or over 25 HP** — above that, you need a marine policy
+- **Cost factors**: boat value, engine size, claim history, navigational area (Lake Ontario vs Rice Lake matters)
+
+## Is Boat Insurance Legally Required in Ontario?
+
+Short answer: not for most pleasure craft. Ontario requires automobile insurance but not boat insurance.
+
+Practical answer: yes, you want it. Three reasons:
+
+1. **Marinas, yacht clubs, and many launch facilities require proof of liability before you can dock.** No insurance, no slip.
+2. **Lenders require it if you financed your boat.** Most boat lenders write insurance into the loan terms.
+3. **Liability lawsuits in Canada do not have caps.** A serious injury at the helm can result in a $500,000+ settlement. Without insurance, that is a personal bankruptcy.
+
+A few Ontario fishing tournaments and most cottage docks also require proof of insurance to participate or moor.
+
+## What is Typically Covered
+
+A standard marine policy in Ontario covers:
+
+- **Liability** — Damage to other boats, docks, fuel docks, swimmers, water-skiers. Minimum recommended is $1M; $2M is more common.
+- **Hull (boat structure)** — Damage to the boat itself, including the trailer if listed as a rider. "Agreed value" policies pay what was agreed at policy start, regardless of depreciation. "Actual cash value" depreciates each year.
+- **Engine** — The outboard or sterndrive is usually covered, but high-HP repowers or motor upgrades may need to be reported and added.
+- **Personal effects** — Fishing gear, electronics, life jackets stored on the boat. Limited (usually $1,000-$5,000).
+- **Towing and on-water assistance** — Typically $500-$1,500 included; some policies include unlimited.
+- **Pollution liability** — Spilled fuel cleanup costs.
+
+## What is NOT Covered
+
+Common exclusions to read carefully before signing:
+
+- **Mechanical breakdown** — Engine seizing because of wear or skipped maintenance. (This is what extended warranty covers, see our [Mercury extended warranty guide](/blog/mercury-extended-warranty-platinum-ontario).)
+- **Manufacturer defects** — Covered by the factory warranty, not insurance.
+- **Racing or commercial use** — Standard pleasure-craft policies exclude tournament prize-money fishing, charters, and commercial work.
+- **Boats stored in unsafe conditions** — Outdoor storage during winter without cover voids some hull coverage.
+- **Boats older than 25-30 years** — Many insurers will not underwrite older fiberglass hulls without a marine survey.
+
+## What Does It Cost in Ontario?
+
+Ranges based on typical 2026 Ontario quotes:
+
+| Boat Type | Coverage | Annual Premium |
+|---|---|---|
+| 14-16 ft tinny + 9.9-25 HP | $1M liability, basic hull | $150-$280 |
+| 16-18 ft aluminum + 40-90 HP | $1M liability, agreed value hull | $250-$450 |
+| 18-22 ft pontoon or runabout + 90-150 HP | $2M liability, agreed value | $400-$700 |
+| 22-26 ft cruiser or center console + 150-300 HP | $2M liability, agreed value | $700-$1,500 |
+
+Cost factors:
+
+- **Boat value** — bigger drives premium up
+- **Engine HP** — over 150 HP increases premium meaningfully
+- **Where you boat** — Lake Ontario (open water, weather risk) costs more than inland lakes like Rice Lake
+- **Claim history** — clean record gets best rates
+- **Operator experience** — PCOC alone is minimum; documented experience helps
+- **Storage location** — indoor storage discounts are real
+
+## Who Insures Boats in Ontario?
+
+We do not sell insurance and will not recommend specific carriers (that is between you and your broker). The major Ontario-active marine insurers include:
+
+- Aviva (broad pleasure-craft)
+- The Cooperators
+- Northbridge
+- BoatersGuard / specialty marine
+- Some auto insurance brokers (TD, RBC, Belair) offer marine riders or partnered marine carriers
+
+A licensed insurance broker who specifically handles marine coverage will get you better rates than a generalist agent. Ask if they shop multiple carriers.
+
+## When You Need to Update Your Policy
+
+Re-rate your policy every time you:
+
+- Repower (change motor) — new motor value needs to be on the policy
+- Add a trailer — list as a separate rider
+- Move to a different launching lake or marina — risk zones change
+- Change moorage location — if your boat is now stored at a different marina, update
+- Add electronics over $1,000 — Garmin, Lowrance, Humminbird units depreciate fast but get stolen often
+
+Repowers especially, many customers forget to update their policy after a $15,000+ motor swap. Do not.
+
+## How Insurance Works With Mercury Extended Warranty
+
+Insurance covers accidents, theft, weather damage, and liability. Extended warranty covers mechanical and electrical failures from defects in materials or workmanship. They do not overlap.
+
+- **Hit a deadhead and damage your prop shaft?** Insurance.
+- **ECU dies at 4 years old, 200 hours?** Extended warranty (if you bought Platinum, see our [warranty guide](/blog/mercury-extended-warranty-platinum-ontario)).
+- **Boat stolen from your driveway?** Insurance.
+- **Lower unit gear failure at 3 years old?** Factory warranty (if still active) or extended warranty.
+
+We recommend both for any motor worth $5,000+.
+
+---
+
+*Last reviewed: 2026-05-13*
+
+By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.`,
+    faqs: [
+      { question: 'Do I need insurance for a 9.9 HP boat in Ontario?', answer: 'Not legally, but most marinas require it for any slip. A small basic policy runs $150-$200/year.' },
+      { question: 'Is my boat covered under my homeowners policy?', answer: 'Maybe, but only for boats under 16 ft and under 25 HP. Anything bigger needs a separate marine policy.' },
+      { question: 'What is the difference between agreed value and actual cash value?', answer: 'Agreed value pays the value you and the insurer agreed on at policy start, regardless of depreciation. Actual cash value depreciates each year. Agreed value costs slightly more but pays out properly after a total loss.' },
+      { question: 'Does my insurance cover the boat during winter storage?', answer: 'Most policies cover storage at any approved location. Outdoor storage without proper cover may have reduced coverage, check your wording.' },
+      { question: 'Can I insure my boat through Mercury or HBW?', answer: 'No. Insurance is sold by licensed brokers. We can recommend you find a marine specialist broker, but we do not write policies.' },
+    ],
+  },
+  {
+    slug: 'mercury-extended-warranty-platinum-ontario',
+    seoTitle: 'Mercury Extended Warranty Platinum (Ontario 2026)',
+    title: 'Mercury Extended Warranty (Platinum): What It Covers and Why Ontario Boaters Buy It',
+    description: 'Mercury Product Protection Platinum extends factory warranty up to 8 years total, covering mechanical AND electrical failures. Real CAD pricing by HP. HBW customers get 10% off.',
+    image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Warranty & Protection',
+    readTime: '~12 min read',
+    keywords: ['Mercury extended warranty', 'Mercury Product Protection', 'Platinum warranty', 'Mercury warranty Ontario', 'extended motor warranty', 'Mercury Platinum coverage', 'outboard warranty cost'],
+    relatedSlugs: ['ontario-mercury-outboard-price-guide', 'mercury-repower-cost-ontario-2026-cad', 'outboard-trade-in-value-ontario-hbw'],
+    content: `## Quick Answer
+
+**Mercury Product Protection (Platinum) extends your factory warranty up to 8 years total, covering mechanical AND electrical failures, including the ECU, sensors, alternator, wiring, gauges, and controls. HBW sells Platinum exclusively because the electrical exclusion on Gold is where modern Mercury motors fail most expensively. Customers who purchased their motor from HBW get 10% off.**
+
+- **Covers what your factory warranty covers, for years longer** — up to 8 years total (3-year factory + 5-year extended)
+- **Includes electrical** (Gold does not) — alternator, ECU, sensors, harness, accessories
+- **Transferable** to next owner, adds resale value
+- **Honoured at 3,600+ Mercury dealers** across the US and Canada
+- **HBW exclusive**: 10% off Platinum for customers who purchased their motor from HBW
+
+[Get a quote on /warranty](https://www.harrisboatworks.ca/warranty), transparent CAD pricing by HP and term.
+
+## What Mercury Product Protection Is
+
+Your new Mercury comes with a 3-year factory limited warranty against defects in materials and workmanship. That covers you for the first 3 years. Mercury Product Protection is the factory-backed extended service contract that picks up when the limited warranty ends.
+
+It is not a third-party insurance policy. It is not an aftermarket add-on. It is administered 100% by Mercury Marine, using genuine Mercury and Quicksilver parts, performed by authorized Mercury dealers, same factory standards as your original warranty.
+
+Two tiers exist: **Gold** (mechanical failures only) and **Platinum** (mechanical + electrical + accessories). HBW sells Platinum exclusively. Here is why:
+
+**On modern Mercury outboards (2017+), most expensive failures are electrical.** ECU replacement on a Pro XS V6: $2,500-$3,500 in parts before labour. SmartCraft sensor cascade failures: $1,200+. Alternator + voltage regulator on a Verado: $1,800+. Gold does not cover any of these. Platinum does.
+
+For the price difference between the two tiers (typically $200-$400 across most HP bands), Platinum is the obvious call. We do not carry Gold because we do not want a customer to come back in year 6 with a $3,000 ECU failure and find out their coverage did not include it.
+
+## What Platinum Actually Covers
+
+**Engine internals (mechanical):**
+- Cylinder block, cylinder head, crankshaft, camshaft
+- Pistons, rings, wrist pins, rods
+- Valves, valve train, lifters, rocker arms
+- Timing components (chains, gears, cover)
+- Oil pump, oil pan, harmonic balancer
+- Intake and exhaust manifolds
+
+**Lower unit / gear case:**
+- Bearings, drive shaft, propeller shaft, gears
+- Bearing carrier, internal shift components
+
+**Trim and power steering:**
+- Trim cylinders, trim motor, trim position sender
+- Power steering pump, cylinder, JPO/JPS components
+
+**Fuel system:**
+- Fuel pump, injection pump, fuel/air injectors
+- Air compressor (Verado), flame arrestor
+
+**Electrical (the Gold exclusion):**
+- ECU, ETC, EBC, CDM modules
+- Alternator, rectifier, voltage regulator
+- Sensors, switches, RPM limiter
+- Wiring harness, switch boxes
+- Starter motor, ignition coils, stator
+- Warning horns and modules
+
+**Accessories (the Gold exclusion):**
+- SmartCraft gauges and VesselView
+- Throttle/shift cables, tiller handles
+- Remote controls, joystick controls
+- Analog gauges, switches
+- Emergency stop switch
+- Wiring harness for accessories
+
+**Extra benefits:**
+- $200 per claim on-water tow allowance
+- $200 per claim hoist/haul-out allowance (boats 26 ft or larger)
+- $50 deductible per claim
+- 30-day satisfaction guarantee from purchase
+
+**What is NOT covered:**
+- Propellers (wear item)
+- Routine maintenance items (oil, filters, plugs, impellers, anodes)
+- Damage from accident, abuse, racing, or non-recreational use
+- Used motors imported from outside US/Canada
+
+## Eligibility, When You Can Buy It
+
+To enroll in Mercury Product Protection:
+
+1. **Must be purchased before factory warranty expires.** Once enrolled, coverage starts the day factory warranty ends.
+2. **Engine must be from the current model year or 4 previous model years.** A 2026 motor: covered. A 2021 motor: covered. A 2020 motor: not eligible.
+3. **Under 500 engine hours at time of purchase.**
+4. **Recreational use only.** Charter, commercial fishing, government, or work-related use is excluded.
+5. **Must be US or Canadian-purchased motor.** Imports from outside North America do not qualify.
+
+We verify eligibility using your engine model and serial number. Takes about 10 minutes, provide them via the form at [harrisboatworks.ca/warranty](https://www.harrisboatworks.ca/warranty) and we confirm before you commit.
+
+## Real CAD Pricing (HBW)
+
+| Product Line (HP) | 1 Year | 2 Year | 3 Year | 4 Year | 5 Year |
+|---|---|---|---|---|---|
+| 2.5-14.9 | $76 | $137 | $194 | $247 | $293 |
+| 15-39.9 | $178 | $319 | $454 | $576 | $684 |
+| 40-74.9 | $355 | $639 | $904 | $1,149 | $1,365 |
+| 75-149.9 | $539 | $971 | $1,376 | $1,748 | $2,077 |
+| 150-199.9 | $753 | $1,357 | $1,921 | $2,442 | $2,900 |
+| 200-299.9 | $1,809 | $3,256 | $4,612 | $5,861 | $6,964 |
+| 300-399.9 | $2,580 | $4,644 | $6,579 | $8,358 | $9,932 |
+| 400 | $3,593 | $6,468 | $9,162 | $11,642 | $13,833 |
+| 425 | $3,760 | $6,770 | $9,589 | $12,183 | $14,478 |
+| 500 | $4,870 | $8,766 | $12,417 | $15,777 | $18,748 |
+| 600 | $5,836 | $10,504 | $14,881 | $18,908 | $22,469 |
+
+Taxes and registration fees extra. Final pricing confirmed at registration with Mercury.
+
+**HBW exclusive**: Customers who purchased their motor from HBW get **10% off** any Platinum coverage tier. This is our way of saying thanks for buying the motor here.
+
+## When Platinum Makes Financial Sense
+
+The honest math:
+
+**Buy it if:**
+- You plan to keep the motor 5+ years
+- The motor is 150 HP or larger (electrical failures get expensive fast)
+- You want predictable cost-of-ownership (no surprise $2,500-$5,000 repair bills)
+- You expect to sell the boat within the coverage window (transferability adds resale value)
+- You boat in remote areas where the on-water tow allowance matters
+
+**Skip it if:**
+- You are planning to flip the boat in 12-24 months
+- The motor is under 25 HP (parts cheap, less to fail)
+- You are a commercial or charter user (you are not eligible anyway)
+
+For Ontario boaters who plan to keep their motor 5+ years, Platinum almost always pays for itself if even one major component fails during the coverage period. ECU, fuel injection pump, lower unit gears, or alternator failures alone often exceed the cost of the coverage.
+
+## Transferability and Resale Value
+
+Platinum coverage is transferable to a subsequent recreational-use buyer within 30 days of sale. This matters at resale.
+
+A 5-year-old Mercury 150 HP with active Platinum coverage to year 8 sells for 10-15% more than the same motor with no coverage. The buyer knows they have factory protection for the next 3 years. Sellers who include the transferable warranty in the listing close faster.
+
+The motor must transfer to another recreational user (not commercial, not a dealer-purchased trade-in) for the warranty to follow it.
+
+## What Happens When You File a Claim
+
+You do not deal with Mercury directly. You bring the boat to any authorized Mercury dealer (3,600+ across North America). They diagnose, contact Mercury for approval, and perform the repair using genuine Mercury parts. You pay the $50 deductible. Mercury covers the rest.
+
+If you bought the warranty at HBW but you are broken down at a marina near Algonquin Park, you can have the work done at any authorized Mercury dealer up there. The contract follows the engine.
+
+## How to Get a Quote
+
+Visit [harrisboatworks.ca/warranty](https://www.harrisboatworks.ca/warranty), fill in your motor model and serial number, pick your preferred term length. We confirm eligibility within 1-2 business days and send you the final quote.
+
+HBW customers (motor purchased from us), mention this in the notes field and we apply the 10% discount automatically.
+
+---
+
+*Last reviewed: 2026-05-13*
+
+By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.`,
+    faqs: [
+      { question: 'What is the difference between Mercury Gold and Platinum coverage?', answer: 'Gold covers mechanical failures only. Platinum adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Platinum is the right call. HBW sells Platinum exclusively.' },
+      { question: 'When do I need to buy Mercury Product Protection?', answer: 'Before your 3-year factory warranty expires. Once you have enrolled, the extended coverage takes over the day factory warranty ends. Mercury allows enrollment within 4 model years of the engine.' },
+      { question: 'Is Mercury Product Protection transferable when I sell my boat?', answer: 'Yes. Transferable to a subsequent recreational-use buyer within 30 days of sale. Adds 10-15% to resale value because the new owner inherits ongoing factory protection.' },
+      { question: 'What is the deductible?', answer: '$50 per claim.' },
+      { question: 'Does Mercury Product Protection cover routine maintenance?', answer: 'No. Oil changes, impellers, plugs, anodes, propeller wear, those are maintenance items, not warranty items. You handle those normally.' },
+      { question: 'I bought my motor from HBW. How do I get the 10% discount?', answer: 'Mention it in the notes field on the quote form at /warranty. We verify the original purchase from our records and apply the discount before sending the final quote.' },
+    ],
+  },
+
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
