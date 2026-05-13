@@ -12795,10 +12795,30 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
 ## Quick Answer
 
 If the overheat alarm is sounding right now: throttle back to idle, check the tell-tale water stream, and assess from there. No stream means the water pump has failed or the intake is blocked, shut down immediately. A strong stream with an alarm may be a sensor or thermostat issue, idle toward shore. When in doubt, shut it down. Running an overheated motor to try to get home is how a relatively small repair becomes an engine replacement.
+::diagnostic-flow
+heading: Mercury overheating? Run this checklist before damage gets expensive
+eyebrow: Emergency diagnostic
+subhead: Most overheats clear with a debris check. Push through an alarm and you risk $2,500+ in powerhead damage.
+step1Label: Stop the boat
+step1Question: Have you throttled down to idle and shifted to neutral?
+step1Tip: Continuing to run an overheating Mercury for even a few minutes can melt powerhead components. Idle down first, then assess.
+step2Label: Telltale stream
+step2Question: Is the telltale (pee stream) flowing, and is it the normal volume?
+step2Tip: A weak or absent stream usually means weeds or debris in the cooling inlet. A normal stream paired with overheating points to a deeper problem (thermostat, water pump, exhaust corrosion).
+step3Label: Cooling inlet
+step3Question: Have you checked the lower unit cooling intake for weeds, plastic, or grocery bags?
+step3Tip: Pulling the boat onto the trailer or tilting the motor up is the fastest way to see and clear blockages. Rice Lake weed lines in late summer are the usual suspect.
+step4Label: Recheck after clearing
+step4Question: Does the telltale return to normal volume and the alarm clear after you idle for a minute or two?
+step4Tip: If yes, run at low RPM for a few more minutes to let things stabilize before returning to cruise. If no, suspect a water pump impeller, typically a 3-year service interval on Mercury outboards.
+step5Label: Alarm persists
+step5Question: Is the overheat alarm still active or coming back at low RPM?
+step5Tip: Shut down. Continuing to run a Mercury with an active overheat alarm risks major powerhead damage. Tow in or trailer back.
+escalationLabel: Alarm still on? Don't push it.
+escalationBody: Cooling system failures get expensive fast. Tow in or trailer to us. We can usually diagnose impeller, thermostat, or exhaust corrosion the same day in season. Call (905) 342-2153 or book at /service.
+::
 
 ---
-
-## Outboard Overheating: What to Do Right Now, and How to Prevent It
 
 If you're reading this from the water with the alarm going, skip to the emergency section below. Get yourself safe, then come back for the rest.
 
