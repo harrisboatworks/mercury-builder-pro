@@ -363,7 +363,7 @@ onClick={() => {
                       </div>
                     ) : (
                       <label className="flex flex-col items-center justify-center h-32 cursor-pointer hover:bg-gray-50">
-                        <Upload className="w-8 h-8 text-gray-400 mb-2" />
+                        <Upload className="w-8 h-8 text-muted-foreground mb-2" />
                         <span className="text-sm text-gray-600">Click to upload promo image</span>
                         <span className="text-xs text-gray-500 mt-1">Recommended: 1200x400px</span>
                         <input

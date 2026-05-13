@@ -32,7 +32,7 @@ export const MotorComparisonCard: React.FC<MotorComparisonCardProps> = ({
 
   const StatusIcon = ({ status }: { status: 'winner' | 'loser' | 'equal' }) => {
     if (status === 'winner') return <Check className="w-4 h-4 text-green-600" />;
-    if (status === 'equal') return <Minus className="w-4 h-4 text-gray-400" />;
+    if (status === 'equal') return <Minus className="w-4 h-4 text-muted-foreground" />;
     return null;
   };
 

@@ -67,7 +67,7 @@ export default function StickyQuoteBar({
             {typeof monthly === "number" && monthly > 0 ? (
               <span>≈ {money(Math.round(monthly))}/mo<span className="hidden md:inline"> OAC</span></span>
             ) : financingUnavailable ? (
-              <span className="text-slate-400 text-[10px] md:text-xs">Financing N/A</span>
+              <span className="text-muted-foreground text-[10px] md:text-xs">Financing N/A</span>
             ) : null}
             {typeof coverageYears === "number" && coverageYears > 0 && (
               <span>

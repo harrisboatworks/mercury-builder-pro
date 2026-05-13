@@ -164,13 +164,13 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
         
         {/* Price Range */}
         <div className="mt-6">
-          <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-medium">
+          <p className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium">
             from
           </p>
           <p className="text-2xl font-bold tracking-tight text-gray-900 mt-1">
             ${priceRange.min.toLocaleString()}
             {priceRange.max > priceRange.min && (
-              <span className="text-base font-normal text-gray-400">
+              <span className="text-base font-normal text-muted-foreground">
                 {' '}– ${priceRange.max.toLocaleString()}
               </span>
             )}

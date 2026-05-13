@@ -155,7 +155,7 @@ export const MotorCompatibilityBadge: React.FC<MotorCompatibilityBadgeProps> = (
             <ul className="mt-1.5 space-y-0.5">
               {compatibility.reasons.slice(0, 3).map((reason, i) => (
                 <li key={i} className="text-xs text-gray-600 flex items-start gap-1.5">
-                  <span className="text-gray-400">•</span>
+                  <span className="text-muted-foreground">•</span>
                   {reason}
                 </li>
               ))}

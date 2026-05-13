@@ -39,7 +39,7 @@ export default function XPProgress({ currentXP, totalSteps, currentStep }: XPPro
                   ? 'bg-green-500 text-white' 
                   : i === currentStep 
                     ? 'bg-blue-500 text-white animate-pulse' 
-                    : 'bg-gray-200 text-gray-400'
+                    : 'bg-gray-200 text-muted-foreground'
                 }`}
             >
               {i < currentStep ? '✓' : i + 1}
@@ -66,7 +66,7 @@ export default function XPProgress({ currentXP, totalSteps, currentStep }: XPPro
             className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs
               ${currentXP >= achievement.xp 
                 ? 'bg-yellow-100 text-yellow-800 font-bold' 
-                : 'bg-gray-100 text-gray-400'
+                : 'bg-gray-100 text-muted-foreground'
               }`}
           >
             <span>{achievement.icon}</span>

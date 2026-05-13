@@ -98,7 +98,7 @@ export default function AdminAbandonedQuoteAnalytics() {
       case 'cash_rebate':
         return <DollarSign className="h-4 w-4 text-green-600" />;
       default:
-        return <Mail className="h-4 w-4 text-gray-400" />;
+        return <Mail className="h-4 w-4 text-muted-foreground" />;
     }
   };
 

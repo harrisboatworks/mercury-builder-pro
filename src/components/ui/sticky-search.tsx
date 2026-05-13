@@ -22,7 +22,7 @@ export function StickySearch({
   return (
     <div className="flex items-center">
       <div className="relative flex-1">
-        <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+        <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <Input
           placeholder="Search motors by HP, model, or keyword…"
           value={searchTerm}

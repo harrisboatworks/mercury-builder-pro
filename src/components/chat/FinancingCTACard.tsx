@@ -58,7 +58,7 @@ export function FinancingCTACard({ data }: FinancingCTACardProps) {
           </div>
         </div>
         
-        <div className="text-xs text-gray-400 text-center border-t border-gray-100 pt-3 mb-4">
+        <div className="text-xs text-muted-foreground text-center border-t border-gray-100 pt-3 mb-4">
           Based on ${price.toLocaleString()} + 13% HST + $299 fee
         </div>
         
