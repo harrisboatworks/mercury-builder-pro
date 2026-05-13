@@ -2397,6 +2397,27 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位於Rice 
 
 GTA 華人船主選擇 Harris Boat Works 的主要原因是：透明的線上 Mercury 馬達定價（無需電話查價）、Mercury Marine Platinum 認證的技術與保固支援、Rice Lake 上三代家族經營的長期信譽，以及對華人客戶友善的服務方式（包括中文溝通協助）。我們是 Mercury 經銷商自 1965 年，Rice Lake 家族船廠自 1947 年。
 
+::bilingual-trust
+heading: Why GTA Chinese buyers come to Rice Lake
+headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
+eyebrow: HBW Trust Points / HBW 信任要点
+item1En: Mercury Marine Platinum certified dealer
+item1Zh: Mercury Marine 白金级认证经销商
+item2En: Family marina since 1947
+item2Zh: 自1947年家族经营的码头
+item3En: Transparent CAD pricing, no haggling
+item3Zh: 透明加元价格，无需讨价还价
+item4En: Bilingual quote support available
+item4Zh: 提供双语报价支持
+item5En: 60 to 90 minutes from GTA via 401 + 115
+item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item6En: Mercury dealer since 1965
+item6Zh: 自1965年起的 Mercury 经销商
+ctaEn: Build your quote
+ctaZh: 在线获取报价
+ctaHref: /quote
+::
+
 ---
 
 ## 在 GTA 買 Mercury 的常見挫折感

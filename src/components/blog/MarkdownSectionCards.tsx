@@ -15,6 +15,8 @@ import {
 import { RelatedPostsGrid } from './RelatedPostsGrid';
 import { DecisionCard, type DecisionCardProps } from './DecisionCard';
 import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './DiagnosticFlowchart';
+import { CostStack, type CostStackProps, type CostStackItem } from './CostStack';
+import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustItem } from './BilingualTrustCard';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -218,8 +220,24 @@ function rewriteDiagnosticFlow(md: string): string {
   return md.replace(re, (_m, body) => `:::diagnostic-flow\n${body}\n:::`);
 }
 
+function rewriteCostStack(md: string): string {
+  const re = /^::cost-stack\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::cost-stack\n${body}\n:::`);
+}
+
+function rewriteBilingualTrust(md: string): string {
+  const re = /^::bilingual-trust\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::bilingual-trust\n${body}\n:::`);
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteDiagnosticFlow(rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))));
+  return rewriteBilingualTrust(
+    rewriteCostStack(
+      rewriteDiagnosticFlow(
+        rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+      ),
+    ),
+  );
 }
 
 /**
@@ -253,17 +271,19 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
   relatedSlugs?: string[];
   decisionProps?: DecisionCardProps;
   diagnosticProps?: DiagnosticFlowchartProps;
+  costStackProps?: CostStackProps;
+  bilingualTrustProps?: BilingualTrustCardProps;
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -381,6 +401,88 @@ function parseDiagnosticFlowBody(body: string): DiagnosticFlowchartProps | null 
   };
 }
 
+function parseCostStackBody(body: string): CostStackProps | null {
+  const flat: Record<string, string> = {};
+  const itemMap: Record<number, { label?: string; value?: string; note?: string; accent?: boolean }> = {};
+  for (const raw of body.split('\n')) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) continue;
+    const kv = /^([a-zA-Z0-9]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    const key = kv[1];
+    const val = kv[2];
+    const m = /^item(\d+)(Label|Value|Note|Accent)$/.exec(key);
+    if (m) {
+      const idx = Number(m[1]);
+      itemMap[idx] = itemMap[idx] || {};
+      const field = m[2];
+      if (field === 'Label') itemMap[idx].label = val;
+      else if (field === 'Value') itemMap[idx].value = val;
+      else if (field === 'Note') itemMap[idx].note = val;
+      else if (field === 'Accent') itemMap[idx].accent = /^(true|yes|1)$/i.test(val);
+    } else {
+      flat[key] = val;
+    }
+  }
+  if (!flat.heading) return null;
+  const items: CostStackItem[] = Object.keys(itemMap)
+    .map(Number)
+    .sort((a, b) => a - b)
+    .map((i) => itemMap[i])
+    .filter((it) => it.label && it.value)
+    .map((it) => ({ label: it.label!, value: it.value!, note: it.note, accent: it.accent }));
+  const total = flat.totalLabel && flat.totalValue
+    ? { label: flat.totalLabel, value: flat.totalValue }
+    : undefined;
+  return {
+    heading: flat.heading,
+    eyebrow: flat.eyebrow,
+    subhead: flat.subhead,
+    items,
+    total,
+    caveat: flat.caveat,
+  };
+}
+
+function parseBilingualTrustBody(body: string): BilingualTrustCardProps | null {
+  const flat: Record<string, string> = {};
+  const itemMap: Record<number, { en?: string; zh?: string }> = {};
+  for (const raw of body.split('\n')) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) continue;
+    const kv = /^([a-zA-Z0-9]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    const key = kv[1];
+    const val = kv[2];
+    const m = /^item(\d+)(En|Zh)$/.exec(key);
+    if (m) {
+      const idx = Number(m[1]);
+      itemMap[idx] = itemMap[idx] || {};
+      if (m[2] === 'En') itemMap[idx].en = val;
+      else itemMap[idx].zh = val;
+    } else {
+      flat[key] = val;
+    }
+  }
+  if (!flat.heading || !flat.headingTranslated) return null;
+  const items: BilingualTrustItem[] = Object.keys(itemMap)
+    .map(Number)
+    .sort((a, b) => a - b)
+    .map((i) => itemMap[i])
+    .filter((it) => it.en && it.zh)
+    .map((it) => ({ en: it.en!, zh: it.zh! }));
+  const cta = flat.ctaEn && flat.ctaZh && flat.ctaHref
+    ? { en: flat.ctaEn, zh: flat.ctaZh, href: flat.ctaHref }
+    : undefined;
+  return {
+    eyebrow: flat.eyebrow,
+    heading: flat.heading,
+    headingTranslated: flat.headingTranslated,
+    items,
+    cta,
+  };
+}
+
 function splitDirectives(md: string): RenderChunk[] {
   const chunks: RenderChunk[] = [];
   let last = 0;
@@ -417,6 +519,12 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'diagnostic-flow') {
       const props = parseDiagnosticFlowBody(body);
       if (props) chunks.push({ kind: 'diagnostic-flow', content: '', diagnosticProps: props });
+    } else if (name === 'cost-stack') {
+      const props = parseCostStackBody(body);
+      if (props) chunks.push({ kind: 'cost-stack', content: '', costStackProps: props });
+    } else if (name === 'bilingual-trust') {
+      const props = parseBilingualTrustBody(body);
+      if (props) chunks.push({ kind: 'bilingual-trust', content: '', bilingualTrustProps: props });
     }
     last = m.index + m[0].length;
   }
@@ -455,6 +563,12 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'diagnostic-flow' && chunk.diagnosticProps) {
       return <DiagnosticFlowchart key={`${keyPrefix}-df-${i}`} {...chunk.diagnosticProps} />;
+    }
+    if (chunk.kind === 'cost-stack' && chunk.costStackProps) {
+      return <CostStack key={`${keyPrefix}-cs-${i}`} {...chunk.costStackProps} />;
+    }
+    if (chunk.kind === 'bilingual-trust' && chunk.bilingualTrustProps) {
+      return <BilingualTrustCard key={`${keyPrefix}-bt-${i}`} {...chunk.bilingualTrustProps} />;
     }
     if (!chunk.content.trim()) return null;
     return (

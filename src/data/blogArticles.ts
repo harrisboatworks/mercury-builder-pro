@@ -10184,6 +10184,31 @@ Phone: 905-342-2153
 
 Mercury's cheapest current outboard in Canada is the **2.5 HP FourStroke portable**. But the cheapest motor that genuinely fits your boat's use and HP rating is almost always the better question, and those are rarely the same motor. Live pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
+::cost-stack
+heading: What changes the real out-the-door price?
+eyebrow: Where the money goes
+subhead: A Mercury repower is more than the motor sticker price. Here is where every dollar actually goes.
+item1Label: Motor (the big number)
+item1Value: $12,000 - $35,000 CAD
+item1Note: Mercury MSRP plus any current rebates applied
+item1Accent: true
+item2Label: Rigging (steering, controls, gauges)
+item2Value: $1,500 - $4,500
+item2Note: Cables, controls, key switches, gauge cluster
+item3Label: Propeller
+item3Value: $300 - $1,200
+item3Note: Aluminum starts around $300, stainless 4-blade can hit $1,200
+item4Label: Labour (install + sea trial)
+item4Value: $1,800 - $3,500
+item4Note: Depends on hours and access, bracket installs add time
+item5Label: HST (13 percent)
+item5Value: $2,000 - $5,500
+item5Note: Applied on motor + parts + labour. Trade-in HST credit can offset this.
+totalLabel: All-in typical range
+totalValue: $17,600 - $49,700 CAD
+caveat: Numbers are typical ranges, not quotes. Build your exact quote at mercuryrepower.ca.
+::
+
 ---
 
 ## Full Article
@@ -19481,6 +19506,31 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ## Quick answer
 There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+::decision-card
+heading: What helps or hurts your trade-in value?
+eyebrow: Honest appraisal factors
+subhead: Two things matter most. The condition of your motor, and how easy it is for us to resell.
+leftLabel: What helps your value
+leftCriteria:
+  - Service history with receipts (impeller, lower unit, plugs, oil)
+  - Original cowl in good shape, no major dings or fade
+  - Compression test within 10 percent across cylinders
+  - Runs and shifts cleanly with no smoke or alarms
+  - Current model line (last 5 years of Mercury or major OEM)
+leftOutcome: Top end of our offer range
+leftVariant: recommended
+rightLabel: What hurts your value
+rightCriteria:
+  - No service records and unclear maintenance history
+  - Saltwater use or visible corrosion on powerhead or lower unit
+  - Compression imbalance across cylinders
+  - Smokes, runs rough, or has stored alarm codes
+  - Discontinued model line (15 plus years old, parts hard to source)
+rightOutcome: Bottom of range or sell privately instead
+rightVariant: alternative
+whenInDoubt: Bring it in for a free 30 minute appraisal. We will be honest about both numbers, what we would pay and what a private sale would likely net you.
+::
 
 ## The first question in every repower conversation
 
