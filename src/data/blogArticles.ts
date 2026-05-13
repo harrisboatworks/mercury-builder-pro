@@ -10184,6 +10184,31 @@ Phone: 905-342-2153
 
 Mercury's cheapest current outboard in Canada is the **2.5 HP FourStroke portable**. But the cheapest motor that genuinely fits your boat's use and HP rating is almost always the better question, and those are rarely the same motor. Live pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
+::cost-stack
+heading: What changes the real out-the-door price?
+eyebrow: Where the money goes
+subhead: A Mercury repower is more than the motor sticker price. Here is where every dollar actually goes.
+item1Label: Motor (the big number)
+item1Value: $12,000 - $35,000 CAD
+item1Note: Mercury MSRP plus any current rebates applied
+item1Accent: true
+item2Label: Rigging (steering, controls, gauges)
+item2Value: $1,500 - $4,500
+item2Note: Cables, controls, key switches, gauge cluster
+item3Label: Propeller
+item3Value: $300 - $1,200
+item3Note: Aluminum starts around $300, stainless 4-blade can hit $1,200
+item4Label: Labour (install + sea trial)
+item4Value: $1,800 - $3,500
+item4Note: Depends on hours and access, bracket installs add time
+item5Label: HST (13 percent)
+item5Value: $2,000 - $5,500
+item5Note: Applied on motor + parts + labour. Trade-in HST credit can offset this.
+totalLabel: All-in typical range
+totalValue: $17,600 - $49,700 CAD
+caveat: Numbers are typical ranges, not quotes. Build your exact quote at mercuryrepower.ca.
+::
+
 ---
 
 ## Full Article
