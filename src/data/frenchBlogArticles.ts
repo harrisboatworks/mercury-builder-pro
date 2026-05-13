@@ -156,7 +156,7 @@ Non. Pour les réparations et installations, nous travaillons exclusivement avec
       },
       {
         question: 'Une remotorisation coûte-t-elle moins cher qu\'un bateau neuf?',
-        answer: 'Dans la plupart des cas, oui — si la coque est saine.'
+        answer: 'Dans la plupart des cas, oui , si la coque est saine.'
       },
       {
         question: 'Puis-je obtenir un prix sans appeler?',
@@ -167,7 +167,7 @@ Non. Pour les réparations et installations, nous travaillons exclusivement avec
   {
     slug: 'mercury-115-vs-150-hp-comparaison',
     title: 'Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?',
-    description: 'Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation et prix — tout ce que vous devez savoir pour choisir.',
+    description: 'Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation et prix , tout ce que vous devez savoir pour choisir.',
     image: '/src/assets/blog/mercury-115-vs-150-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
@@ -319,7 +319,7 @@ L'équipe travaille principalement en anglais, mais vos messages en français su
       },
       {
         question: 'Si mon bateau accepte les deux, lequel choisir?',
-        answer: 'Réponse courte : si votre bateau est à la limite entre les deux, choisissez selon la charge réelle que vous transportez la plupart du temps — pas selon la sortie idéale une fois par été.'
+        answer: 'Réponse courte : si votre bateau est à la limite entre les deux, choisissez selon la charge réelle que vous transportez la plupart du temps , pas selon la sortie idéale une fois par été.'
       }
     ]
   },
@@ -451,7 +451,7 @@ Concessionnaire Mercury Marine Platinum. En affaires depuis 1947.
       },
       {
         question: 'Est-ce que Harris Boat Works offre aussi l\'entreposage?',
-        answer: 'Oui. Nous gérons 311 contrats d\'entreposage par année — intérieur et extérieur.'
+        answer: 'Oui. Nous gérons 311 contrats d\'entreposage par année , intérieur et extérieur.'
       }
     ],
     howToSteps: [
@@ -602,7 +602,7 @@ Grosso modo de mai à octobre, environ six mois. C'est une raison de plus de ne 
     faqs: [
       {
         question: 'La remotorisation coûte-t-elle toujours moins cher qu\'un bateau neuf?',
-        answer: 'Dans la grande majorité des cas, oui — à condition que la coque soit en bon état. Le coût d\'une remotorisation représente souvent 20 à 40 % du prix d\'un bateau neuf équivalent.'
+        answer: 'Dans la grande majorité des cas, oui , à condition que la coque soit en bon état. Le coût d\'une remotorisation représente souvent 20 à 40 % du prix d\'un bateau neuf équivalent.'
       },
       {
         question: 'Comment savoir si ma coque est encore bonne?',
@@ -610,7 +610,7 @@ Grosso modo de mai à octobre, environ six mois. C'est une raison de plus de ne 
       },
       {
         question: 'Puis-je garder mon immatriculation actuelle?',
-        answer: 'Oui. Avec une remotorisation, votre embarcation reste la même — vous gardez votre numéro d\'immatriculation et vos assurances.'
+        answer: 'Oui. Avec une remotorisation, votre embarcation reste la même , vous gardez votre numéro d\'immatriculation et vos assurances.'
       }
     ]
   },
@@ -915,22 +915,474 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
       },
       {
         question: 'La CCEP est-elle valide dans les autres provinces?',
-        answer: 'Oui. La Carte de conducteur d\'embarcation de plaisance est une certification fédérale — elle est valide partout au Canada.'
+        answer: 'Oui. La Carte de conducteur d\'embarcation de plaisance est une certification fédérale , elle est valide partout au Canada.'
       },
       {
         question: 'Et si je loue une embarcation?',
-        answer: 'Si vous opérez le moteur, vous avez besoin de la CCEP — même si l\'embarcation est louée. Certains exploitants de location (dont Harris Boat Works) demandent à voir votre carte avant de remettre les clés.'
+        answer: 'Si vous opérez le moteur, vous avez besoin de la CCEP , même si l\'embarcation est louée. Certains exploitants de location (dont Harris Boat Works) demandent à voir votre carte avant de remettre les clés.'
       },
       {
         question: 'La carte est-elle requise pour un kayak ou un canot?',
-        answer: 'Non — seulement pour les embarcations motorisées. Les kayaks, canots et planches à pagaie ne sont pas concernés.'
+        answer: 'Non , seulement pour les embarcations motorisées. Les kayaks, canots et planches à pagaie ne sont pas concernés.'
       },
       {
         question: 'La CCEP est-elle la même chose que l\'immatriculation?',
         answer: 'Non. La CCEP concerne la compétence du conducteur; l\'immatriculation (licence de plaisance) concerne l\'embarcation elle-même.'
       }
     ]
-  }
+  },
+  {
+    slug: 'mercury-hors-bord-ne-demarre-pas-depannage',
+    relatedSlugs: ['hivernisation-moteur-mercury-ontario'],
+    title: 'Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)',
+    description: 'La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une hivernisation incomplète. Suivez les étapes de base dans le bon ordre. Si le moteur ne part toujours pas, apportez-le chez Harris Boat Works.',
+    image: '/lovable-uploads/spring-no-start-flowchart.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Dépannage',
+    readTime: '12 min',
+    keywords: ['Mercury hors-bord ne démarre pas', 'dépannage hors-bord Mercury', 'problème démarrage Mercury', 'moteur bateau ne part pas printemps', 'hors-bord Mercury Québec'],
+    content: `**Langue :** Français (Québec)
+
+---
+
+## Réponse rapide
+
+La plupart des moteurs Mercury hors-bord qui refusent de démarrer ont l\'une de trois causes : une batterie faible ou à plat, du carburant vieilli ou contaminé, ou une hivernisation négligée (ou incomplète). Vérifiez ces éléments dans l\'ordre. Si le moteur ne démarre toujours pas après les vérifications de base, apportez-le chez nous. Insister sur un moteur en panne pour le forcer à partir peut transformer un simple diagnostic en remplacement de pièces.
+
+Pour réserver un diagnostic : [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+## Mercury hors-bord qui ne démarre pas : dépannage dans l\'ordre
+
+Un Mercury qui démarrait sans problème à l\'automne et qui refuse de partir au printemps, c\'est l\'un des appels les plus fréquents que nous recevons de mai à début juin. La cause se trouve presque toujours dans une courte liste, mais il faut identifier laquelle avant de remplacer des pièces.
+
+Ce guide présente la séquence de diagnostic que nous recommandons à tout propriétaire avec des outils de base et une confiance mécanique raisonnable. C\'est la même séquence que nous utilisons à l\'atelier : la batterie en premier, le carburant en deuxième, l\'allumage en troisième, puis les causes moins fréquentes.
+
+**Avant toute chose :** Quelques rappels de sécurité faciles à oublier quand on est frustré :
+- Ne faites pas tourner un hors-bord sans eau plus de quelques secondes, vous risquez de surchauffer la turbine de la pompe à eau.
+- N\'utilisez pas de fluide de démarrage (éther) sur les Mercury hors-bord. Cela peut endommager les segments des moteurs 2 temps et représente un risque d\'incendie.
+- Gardez un extincteur à portée de main si vous inspectez le système de carburant.
+
+---
+
+## Étape 1 : Vérifiez le cordon de sécurité et le contacteur de neutre
+
+C\'est embarrassant quand c\'est la cause, et c\'est la cause assez souvent pour qu\'on commence toujours par là.
+
+Le cordon de sécurité rouge (lanyard du coupe-circuit) doit être physiquement attaché au commutateur pour que le moteur démarre. Si quelqu\'un l\'a retiré pour l\'entreposage ou s\'il s\'est détaché lors de la manutention, le moteur est désactivé électroniquement. Il ne tournera pas, ne fera rien, et ne donnera aucune indication que c\'est la raison.
+
+Vérifiez :
+- Le clip du cordon est attaché au coupe-circuit sur le tableau de bord ou la barre franche
+- Le moteur est au point neutre (la plupart des moteurs ne démarrent pas hors du neutre)
+- La manette est au ralenti, pas avancée
+
+Si l\'un de ces points est incorrect, corrigez-le avant de faire quoi que ce soit d\'autre.
+
+---
+
+## Étape 2 : Vérifiez la batterie
+
+Après le cordon, une batterie faible ou à plat est la cause la plus fréquente d\'un non-démarrage au printemps.
+
+Les Mercury FourStroke modernes sont sensibles à la tension. Le système de gestion du moteur a besoin d\'une tension solide pour seulement tenter de démarrer. Une batterie qui semble avoir un peu de charge peut tout de même être insuffisante.
+
+Vérifiez :
+- **Tension au repos :** doit être de 12,4 V ou plus. Sous 12,0 V, c\'est une batterie faible qui doit être rechargée avant tout autre diagnostic.
+- **Tension en démarrage :** doit rester au-dessus de 9,5 à 10 V pendant que vous lancez le démarreur. Si elle descend plus bas, la batterie ne peut pas soutenir l\'appel de courant du démarreur, remplacez-la.
+- **État des bornes :** la corrosion (poudre verte ou blanche sur les bornes) crée de la résistance. Nettoyez les bornes avant de tirer une conclusion d\'un test de tension.
+- **Connexions de câbles :** des câbles desserrés ou corrodés causent des symptômes intermittents. Resserrez et nettoyez.
+- **Âge de la batterie :** les batteries marines au plomb-acide durent généralement 4 à 6 ans. Si la vôtre est plus vieille, elle est suspecte peu importe les résultats des tests à vide.
+
+Si la batterie est faible, rechargez-la complètement ou remplacez-la avant de continuer. Une batterie faible crée de fausses lectures sur tout le reste du diagnostic, il est impossible d\'avoir des résultats fiables sur quoi que ce soit d\'autre quand la batterie est marginale.
+
+**Note sur le chargeur d\'entretien :** Si vous avez entreposé la batterie tout l\'hiver sans chargeur d\'entretien, elle peut s\'être déchargée au point de sulfater, ce qui cause une perte permanente de capacité. Une batterie qui était « correcte » avant l\'entreposage ne l\'est peut-être plus à la sortie.
+
+---
+
+## Étape 3 : Vérifiez le système de carburant
+
+Le carburant est la deuxième cause la plus fréquente de non-démarrage au printemps, et elle a plusieurs sous-causes.
+
+**Âge du carburant :** L\'essence avec éthanol (l\'essence ordinaire E10) commence à se dégrader en 30 à 60 jours. L\'essence qui a passé l\'hiver dans le réservoir sans stabilisateur est suspecte. L\'essence vieillie peut encrasser les injecteurs, les conduites de carburant et les carburateurs sur les moteurs plus anciens.
+
+- Sentez le carburant : une odeur aigre ou de vernis indique qu\'il est tourné
+- Regardez la couleur : un carburant frais est clair à jaune pâle; trouble, ambré ou foncé, c\'est un problème
+- En cas de doute, pompez le vieux carburant et remplissez avec de l\'essence fraîche
+
+**Eau dans le carburant :** L\'eau se dépose au fond du réservoir. Fréquent sur les bateaux entreposés à l\'extérieur avec des bouchons de remplissage vieux ou mal ajustés, ou sur les bateaux qui ont passé un automne pluvieux.
+
+- Vidangez le filtre à carburant séparateur d\'eau (il y en a un sur le moteur sur la plupart des Mercury FourStroke) et inspectez le bol de vidange pour des gouttelettes d\'eau
+- Un séparateur d\'eau dédié avec un bol transparent rend cette vérification facile
+
+**Filtre à carburant :** Un filtre obstrué restreint le débit. Remplacez-le selon l\'intervalle d\'entretien annuel si ce n\'est pas déjà fait.
+
+**Conduites de carburant :** Les vieilles conduites de carburant en caoutchouc durcissent et se fendillent. Inspectez les fissures, la fragilité ou les zones molles qui pourraient indiquer une détérioration interne. Une conduite fissurée laisse entrer de l\'air dans le système, causant un mélange pauvre ou un non-démarrage.
+
+**Poire d\'amorçage :** Pressez-la. Elle devrait se gonfler et rester ferme après 6 à 8 pressions. Si elle reste molle ou se dégonfle, il y a une fuite d\'air quelque part en amont, vérifiez les raccords des conduites.
+
+**Évent du réservoir :** Assurez-vous que l\'évent du réservoir est ouvert. Un évent fermé ou bouché crée un vide dans le réservoir au fur et à mesure que le carburant est aspiré, ce qui prive le moteur.
+
+---
+
+## Étape 4 : Vérifiez l\'allumage et les bougies
+
+Si la batterie et le carburant sont bons, l\'étincelle est la prochaine étape.
+
+**Inspection des bougies :**
+1. Retirez les bougies (consultez le manuel d\'entretien de votre moteur pour la bonne taille de douille)
+2. Inspectez l\'encrassement : des dépôts noirs et huileux indiquent un mélange riche ou une pollution par l\'huile; des dépôts blancs ou crayeux indiquent un mélange pauvre ou une surchauffe; des bougies humides indiquent un noyage par le carburant
+3. Vérifiez l\'écartement par rapport à la spécification de votre moteur
+4. Remplacez toute bougie qui semble douteuse
+
+**Noyage :** Si le moteur a été lancé à plusieurs reprises sans démarrer, les cylindres peuvent être noyés. Avec les bougies retirées, faites tourner le moteur brièvement pour purger les cylindres, puis réinstallez des bougies neuves.
+
+Ne continuez pas à lancer un moteur noyé avec les bougies installées, cela aggrave le noyage et peut pousser le carburant dans l\'huile.
+
+---
+
+## Étape 5 : Vérifiez le circuit de démarrage
+
+Si le moteur tourne mais ne démarre pas, et que la batterie, le carburant et l\'étincelle sont vérifiés, les prochaines zones sont :
+
+- **Starter ou enrichissement à froid :** Sur les moteurs à carburateur, le starter peut ne pas s\'engager. Sur les FourStroke, l\'ECM gère automatiquement l\'enrichissement à froid, mais cela peut indiquer un problème de capteur.
+- **Position de la manette :** Certains moteurs exigent que la manette soit fermée au démarrage. Consultez le manuel de l\'opérateur.
+
+Si le moteur ne tourne pas du tout (pas un démarrage lent, aucun démarrage) :
+- Vérifiez le fusible principal ou la boîte à fusibles
+- Vérifiez le solénoïde du démarreur (un déclic quand vous tournez la clé indique que le solénoïde fonctionne, possible problème de démarreur ou de connexion; aucun bruit indique un problème de solénoïde ou de connexion)
+
+---
+
+## Quand arrêter et l\'apporter à l\'atelier
+
+Arrêtez le dépannage et réservez un diagnostic professionnel si :
+- Vous avez fait toutes les étapes ci-dessus et vous ne trouvez pas le problème
+- Vous n\'êtes pas confiant pour l\'une des étapes
+- Le moteur démarre mais s\'éteint immédiatement, à répétition
+- Il y a des codes d\'erreur sur un afficheur SmartCraft ou VesselView
+- Il y a une odeur, de la fumée ou un bruit inhabituel pendant le démarrage
+
+Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
+
+Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à démarrer peut transformer un diagnostic de 150 $ en une réparation beaucoup plus sérieuse. Réservez à [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+## Foire aux questions
+
+**Combien de temps prend le diagnostic d\'un Mercury qui ne démarre pas ?**
+Un technicien avec les bons outils peut généralement identifier la cause en 30 à 90 minutes. Le dépannage par le propriétaire à la maison peut prendre plus de temps sans équipement de test spécialisé. Nous n\'estimons pas de délais précis pour des diagnostics à distance.
+
+**Est-ce que je peux endommager le moteur en le lançant à répétition ?**
+Oui, de plusieurs façons : faire tourner à sec (sans eau de refroidissement) endommage la turbine de la pompe à eau en quelques secondes; noyer les cylindres peut pousser du carburant au-delà des segments dans l\'huile; et surcharger une batterie marginale à répétition peut accélérer sa défaillance. Faites le dépannage de façon systématique plutôt que de lancer à répétition en espérant que ça parte.
+
+**Le moteur démarre mais s\'éteint immédiatement. Qu\'est-ce que ça veut dire ?**
+Habituellement un problème d\'alimentation en carburant : le moteur démarre sur le carburant déjà dans le système mais ne peut pas maintenir le débit. Vérifiez la poire d\'amorçage, le filtre à carburant et les raccords des conduites. Cela peut aussi être le mélange au ralenti sur un moteur à carburateur.
+
+**Devrais-je utiliser un additif pour nettoyer les injecteurs ?**
+Les nettoyants doux pour système de carburant utilisés correctement sur un moteur en marche peuvent aider avec de légers dépôts de vernis, mais ils ne règleront pas un injecteur encrassé qui a besoin d\'un nettoyage physique ou d\'un remplacement. Si le système de carburant est resté avec du vieux carburant pendant une saison, un nettoyage professionnel est plus fiable.
+
+**Mon moteur démarrait bien la semaine dernière et maintenant il ne part plus. Qu\'est-ce qui a changé ?**
+Un non-démarrage intermittent est souvent un problème de connexion : une borne de batterie partiellement corrodée, un coupe-circuit qui défaille à l\'interne, ou un système de carburant marginal. Cela peut aussi être le début d\'un problème de pompe à carburant. Commencez par la batterie et le coupe-circuit/cordon même si le moteur démarrait récemment.
+
+---
+
+## Liens internes
+
+- [Hivernisation du moteur Mercury en Ontario](/blog/hivernisation-moteur-mercury-ontario)
+
+---
+
+## Pour nous joindre
+
+**Vous ne trouvez pas le problème ?**
+Réservez un diagnostic à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire Mercury Marine certifié Platinum. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
+
+Téléphone : 905-342-2153
+
+---`,
+    howToSteps: [
+      { name: 'Vérifier la batterie', text: 'La tension au repos doit être de 12,4 V ou plus; la tension en démarrage doit rester au-dessus de 10,5 V. Nettoyez et resserrez les bornes. Les batteries marines durent de 4 à 6 ans; une batterie de 7 ans est en fin de vie peu importe les résultats. Une batterie faible cause de faux positifs sur tous les autres tests, alors remplacez-la avant de continuer.' },
+      { name: 'Vérifier le système de carburant', text: 'L\'essence de plus de 6 mois est suspecte. Vérifiez la présence d\'eau au fond du réservoir. Remplacez le filtre à carburant si l\'intervalle d\'entretien est atteint. Inspectez les conduites pour des fissures ou de la fragilité. La poire d\'amorçage doit se gonfler et rester ferme; si elle reste molle, il y a une fuite d\'air.' },
+      { name: 'Vérifier le cordon du coupe-circuit', text: 'Confirmez que le cordon du coupe-circuit est en place. Un cordon retiré ou manquant empêche le moteur de démarrer. Confirmez aussi que la commande de vitesse est complètement au neutre, puisque le contacteur de neutre bloque autrement le démarrage.' },
+      { name: 'Vérifier l\'allumage et l\'étincelle', text: 'Retirez les bougies et inspectez : noir/humide signifie noyé ou problème de carburant, brun clair/sec signifie correct, vitrifié/blanc signifie pauvre ou surchauffé. Remplacez les bougies à l\'intervalle d\'entretien. Avec une bougie mise à la masse contre le bloc moteur et le démarreur lancé, vous devriez voir une étincelle bleue forte. Une étincelle orange faible ou absente indique un problème d\'allumage.' },
+      { name: 'Vérifier le circuit de démarrage', text: 'Si les bases sont bonnes mais que le moteur ne tourne pas, écoutez un déclic quand vous tournez la clé. Aucun déclic indique un problème de solénoïde. Un démarrage qui grogne ou peine indique un démarreur usé. Vérifiez les connexions corrodées ou desserrées au démarreur, au solénoïde et au commutateur d\'allumage.' },
+      { name: 'Tester la compression', text: 'Si tout le reste est bon mais que le moteur ne démarre toujours pas, la compression peut être en cause. Une compression basse ou inégale entre les cylindres pointe vers des segments usés, un cylindre endommagé ou un joint de culasse défaillant. Le test de compression nécessite un manomètre et le retrait des bougies.' },
+      { name: 'Arrêter et appeler pour un diagnostic', text: 'Lancer le démarreur plus de 10 secondes à la fois surchauffe le démarreur et la pompe à eau. Si le moteur ne démarre pas après 3 tentatives sur les bases, arrêtez. Réservez un diagnostic certifié Mercury chez Harris Boat Works plutôt que de risquer plus de dommages avec une mauvaise réparation maison.' },
+    ],
+    howToTotalTime: 'PT30M',
+    howToTools: ['Multimètre', 'Douille à bougies', 'Bougies de rechange', 'Testeur de batterie sous charge', 'Manomètre de compression (optionnel)'],
+    faqs: [
+      {
+        question: 'Pourquoi mon Mercury hors-bord ne démarre pas après l\'hiver ?',
+        answer: 'Les raisons les plus fréquentes sont du carburant vieilli ou avec séparation de phase, une batterie déchargée et des bougies encrassées. L\'essence avec éthanol (la norme en Ontario et au Québec) commence à se dégrader après 30 jours et absorbe l\'humidité durant l\'hiver, créant une couche eau-éthanol qui ne brûle pas. Commencez le diagnostic avec du carburant frais, une batterie chargée et des bougies neuves. Si les trois sont corrects et que le moteur ne part toujours pas, vérifiez le cordon du coupe-circuit et le contacteur de neutre avant de passer à un diagnostic en concession. Chez Harris Boat Works, un diagnostic « ne démarre pas » se situe en moyenne autour de 540 $ selon notre historique de bons de travail; connaître ce chiffre à l\'avance vous aide à décider quand le bricolage maison a atteint ses limites.'
+      },
+      {
+        question: 'Qu\'est-ce que ça veut dire quand mon hors-bord tourne mais ne démarre pas ?',
+        answer: 'Quand un hors-bord tourne normalement mais ne s\'allume pas, les causes les plus fréquentes sont liées au carburant : essence vieillie, filtre à carburant obstrué, poire d\'amorçage qui ne tient pas la pression, ou moteur noyé. Si l\'alimentation en carburant est correcte, passez à l\'étincelle : retirez les bougies et inspectez l\'encrassement, les dommages ou un mauvais écartement. Si les bougies sont bonnes et que le carburant est frais, un Mercury à injection (EFI) peut avoir un défaut de capteur qui empêche l\'allumage. Cela demande un concessionnaire avec l\'équipement de diagnostic Mercury pour lire les codes de défaut du module de commande du moteur.'
+      },
+      {
+        question: 'Qu\'est-ce que ça veut dire quand mon hors-bord démarre puis s\'éteint immédiatement ?',
+        answer: 'Un hors-bord qui démarre et s\'éteint immédiatement indique généralement une de trois choses : un dispositif de sécurité qui se déclenche (cordon du coupe-circuit pas bien enclenché, ou un système d\'avertissement qui détecte un défaut), un problème d\'alimentation en carburant qui prive le moteur au démarrage, ou un code de défaut ECM qui cause un arrêt de protection. Vérifiez d\'abord le cordon, c\'est la cause la plus fréquente. Si le moteur s\'éteint avec un signal sonore d\'avertissement, notez si c\'est un seul bip ou un motif, puisque les codes d\'alarme Mercury indiquent des catégories de défaut précises. Des démarrages répétés suivis d\'arrêts immédiats finiront par noyer le moteur, alors arrêtez les tentatives de démarrage et faites le diagnostic d\'abord.'
+      },
+      {
+        question: 'Puis-je utiliser du fluide de démarrage sur un Mercury FourStroke ?',
+        answer: 'Le fluide de démarrage (aérosol à base d\'éther) n\'est généralement pas recommandé pour les Mercury FourStroke hors-bord. Les moteurs 4 temps comptent sur l\'huile moteur pour la lubrification des parois des cylindres, et l\'éther peut décaper ce film d\'huile, causant potentiellement le rayage des cylindres. Cela peut aussi causer des retours de flamme qui endommagent les pièces d\'admission d\'air. Si un Mercury FourStroke ne démarre pas avec du carburant frais et une bonne batterie, la bonne décision est un diagnostic approprié plutôt que du fluide de démarrage. Il existe des produits d\'huile de brumisation approuvés par Mercury qui servent à un autre usage (l\'hivernisation), mais les aides au démarrage à l\'éther sont un risque sur les 4 temps modernes.'
+      },
+      {
+        question: 'Comment savoir si la batterie de mon hors-bord est assez forte pour démarrer le moteur ?',
+        answer: 'Une batterie de bateau qui lit 12,4 à 12,6 V au repos peut tout de même échouer sous la charge de démarrage d\'un hors-bord à injection. Le test fiable est un test sous charge, pas une lecture de tension au repos. La plupart des magasins de pièces automobiles (Canadian Tire, Napa) feront un test sous charge gratuitement. Une batterie marine en santé doit maintenir au moins 9,6 V sous pleine charge de démarrage pendant 15 secondes. Si la vôtre tombe sous ce seuil, elle ne démarrera pas un Mercury FourStroke de façon fiable, surtout par temps froid. Une batterie de plus de 4 à 5 ans qui échoue les tests sous charge doit être remplacée, pas rechargée et espérée.'
+      },
+      {
+        question: 'Pourquoi mon Mercury démarre bien mais tourne irrégulièrement ?',
+        answer: 'Une marche irrégulière après le démarrage pointe souvent vers des problèmes partiels d\'alimentation en carburant : filtre partiellement obstrué, poire d\'amorçage avec un clapet faible, eau dans le carburant, ou injecteur encrassé. Sur les moteurs à carburateur, des dépôts de vernis dans les gicleurs sont fréquents après l\'entreposage hivernal. Sur les moteurs à injection, une lecture de pression de pompe défaillante ou un mauvais injecteur peut causer un ralenti irrégulier et des hésitations. Autre possibilité : un cylindre qui rate à cause d\'une bougie encrassée. Retirez les bougies et inspectez; remplacez celles qui semblent douteuses. Une marche irrégulière peut aussi indiquer une surchauffe, vérifiez que le témoin d\'eau (tell-tale) coule. Selon nos données de bons de travail, les interventions de surchauffe chez Harris Boat Works se situent en moyenne autour de 370 $.'
+      },
+      {
+        question: 'Comment réinitialiser un Mercury qui s\'est arrêté sur l\'eau ?',
+        answer: 'Si un Mercury a déclenché un arrêt sur l\'eau à cause d\'une surchauffe, d\'une pression d\'huile ou d\'un défaut de capteur, ne le redémarrez pas simplement pour le faire fonctionner. Le défaut qui a causé l\'arrêt est toujours présent. Tournez la clé à off, attendez 5 minutes et tentez un seul redémarrage. S\'il démarre et que le signal sonore s\'arrête, surveillez attentivement le reste de la sortie. Si le signal se déclenche à nouveau, arrêtez immédiatement et appelez à l\'aide. Continuer à faire tourner un moteur qui avertit activement d\'un défaut risque de causer des dommages sérieux. Faites lire les codes de défaut par un concessionnaire avant la prochaine sortie.'
+      },
+      {
+        question: 'Est-ce mauvais de lancer le démarreur d\'un moteur qui ne part pas, à répétition ?',
+        answer: 'Oui. Lancer un moteur qui ne démarre pas à répétition cause plusieurs problèmes : ça vide la batterie plus vite, rendant chaque tentative subséquente plus faible; si le moteur se noie, ça pousse plus de carburant dans les cylindres à chaque tentative; et s\'il y a de l\'eau dans le moteur, lancer à répétition peut causer des dommages hydrauliques catastrophiques aux bielles. Une meilleure approche est de faire le diagnostic systématiquement, en réglant une cause potentielle à la fois, plutôt que d\'user le démarreur. Si après 3 ou 4 tentatives sérieuses le moteur ne part pas, arrêtez de lancer et diagnostiquez.'
+      },
+      {
+        question: 'C\'est quoi le cordon du coupe-circuit Mercury et où s\'attache-t-il ?',
+        answer: 'Le cordon de coupure d\'urgence Mercury (aussi appelé lanyard du coupe-circuit) est un câble de sécurité spiralé avec un clip à un bout qui s\'attache au conducteur. L\'autre bout se branche dans le commutateur d\'arrêt d\'urgence sur le côté du panneau de commande ou de la barre franche. Si le clip est retiré, soit volontairement, soit parce que le conducteur est tombé à l\'eau, le circuit s\'ouvre et le moteur s\'arrête. Cela empêche aussi le moteur de démarrer si le clip n\'est pas en place. Le clip doit être complètement inséré dans le boîtier du commutateur, pas simplement appuyé légèrement. C\'est l\'une des causes les plus souvent négligées d\'une situation « ne démarre pas ».'
+      },
+      {
+        question: 'Quand devrais-je appeler un concessionnaire Mercury plutôt que de faire le dépannage moi-même ?',
+        answer: 'Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d\'avertissement se fait entendre et le moteur s\'arrête en protection; vous soupçonnez que de l\'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l\'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbw.wiki/service ou appelez au 905-342-2153.'
+      }
+    ]
+  },
+  {
+    slug: 'remotorisation-mercury-gta-toronto',
+    relatedSlugs: ['prix-remotorisation-mercury-ontario', 'remotorisation-vs-bateau-neuf'],
+    title: 'Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)',
+    description: 'Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport. Du concessionnaire qui le fait à longueur d\'année.',
+    image: '/lovable-uploads/hero-mercury-repower-gta.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Guide d\'achat',
+    readTime: '12 min',
+    keywords: ['remotorisation Mercury GTA', 'remotorisation Mercury Toronto', 'remotorisation Mercury Mississauga', 'coût remotorisation bateau GTA', 'concessionnaire Mercury Platinum Ontario'],
+    content: `# Remotorisation Mercury dans la GTA : comment un plaisancier de la région de Toronto remotorise chez Harris Boat Works (2026)
+
+*Dernière révision : 2026-05-13*
+
+> **Réponse rapide :** Les plaisanciers de la GTA remotorisent chez Harris Boat Works parce que nous donnons des soumissions installées en ligne, gardons l\'inventaire Mercury en stock et complétons la plupart des remotoriations en 7 à 14 jours à l\'atelier. Vous laissez le bateau à Gores Landing, vous le récupérez mis en service et essayé sur l\'eau. Commencez le configurateur à mercuryrepower.ca.
+
+Vous avez décidé de remotoriser. Peut-être que votre vieux moteur est à bout de souffle; peut-être qu\'une réfection du système de carburant coûte autant qu\'un Mercury neuf. Dans tous les cas, vous êtes dans la GTA et vous devez comprendre : **comment ça fonctionne sur le plan logistique quand le concessionnaire est à 90 minutes de route ?**
+
+C\'est la version du parcours que nous donnerions à un plaisancier de Toronto, Mississauga, Markham ou Hamilton qui appelle pour une remotorisation. **Nous ne sommes pas situés dans la GTA. Nous sommes à Gores Landing, en Ontario, sur le lac Rice, à environ 90 minutes à l\'est du centre-ville de Toronto.** Les plaisanciers de la GTA viennent nous voir régulièrement parce que nous sommes un concessionnaire Mercury Marine certifié Platinum avec des prix d\'installation transparents. La logistique est rodée; voici comment ça se passe.
+
+![Carte du sud de l\'Ontario montrant Harris Boat Works à Gores Landing sur le lac Rice avec un rayon de conduite de 90 minutes couvrant l\'est de Toronto, les Kawarthas, Cobourg, Bowmanville, Peterborough et Belleville.](/lovable-uploads/diagram-hbw-service-area-map.png)
+
+*D\'où viennent nos clients. Le rayon de conduite de 90 minutes couvre la plus grande partie de l\'est de la GTA, les Kawarthas, Northumberland, Durham et la baie de Quinte.*
+
+---
+
+## La décision de remotoriser (passez à la suite si vous êtes déjà décidé)
+
+Avant la logistique, assurez-vous que la remotorisation est la bonne décision. Trois vérifications rapides :
+
+1. **Votre coque vaut-elle la peine d\'être conservée ?** Si la coque a des fissures, un tableau arrière mou ou une pourriture importante du pont, remotoriser, c\'est mettre un cœur neuf dans un corps mourant.
+
+2. **Quel est le calcul sur votre moteur actuel ?** Une remotorisation Mercury 150 HP moderne (moteur, câblage, hélice, installation) coûte environ 23 000 $ à 30 000 $ tout inclus en CAD. Un nouvel ensemble bateau équivalent coûte 50 000 $ à 80 000 $ et plus. Le calcul favorise habituellement la remotorisation, mais seulement si votre coque a 5 bonnes années ou plus devant elle.
+
+3. **Allez-vous garder le bateau pendant 5 ans ou plus ?** La valeur d\'une remotorisation se compose au fil des années. Si vous vendez dans 2 ans, payer 25 000 $ pour un moteur neuf ne se récupère pas à la revente.
+
+Si les trois disent oui, vous êtes un candidat à la remotorisation. Le reste de cet article porte sur la logistique réelle.
+
+---
+
+## Les cinq étapes d\'une remotorisation GTA chez Harris Boat Works
+
+### Étape 1 : La soumission par le configurateur (15 minutes, depuis votre divan)
+
+Avant de faire quoi que ce soit d\'autre, obtenez un vrai prix.
+
+Allez à **[mercuryrepower.ca](https://mercuryrepower.ca)**, choisissez la puissance Mercury qui convient à votre bateau, sélectionnez la longueur d\'arbre et les commandes, ajoutez une hélice, et vous verrez un prix tout inclus installé en CAD. **Environ 90 secondes.** Aucun appel commercial requis. Aucun « on vous rappelle ».
+
+Apportez les informations sur votre échange si vous en avez (année, heures, état du moteur actuel) et le configurateur vous donne aussi une estimation de crédit d\'échange.
+
+Cette étape compte parce que la plupart des concessionnaires GTA ne donneront pas de prix ferme sans visite en personne. Le configurateur veut dire que **vous pouvez comparer le prix tout inclus de Harris Boat Works aux estimations de concessionnaires locaux sans devoir vous déplacer**.
+
+### Étape 2 : L\'appel téléphonique (30 à 60 minutes)
+
+Si le chiffre du configurateur fonctionne, appelez au **905-342-2153**. Nous couvrirons :
+
+- Confirmer la spécification du moteur (parfois, la longueur d\'arbre demande une vérification sur le tableau arrière; nous vous guidons pour la mesure)
+- Passer en revue tout câblage optionnel (DTS, mise à niveau de la direction hydraulique, hélice en acier inoxydable)
+- Discuter des options de garantie prolongée MPP (à considérer)
+- Planifier l\'installation
+- Discuter de la logistique de transport (étape suivante)
+
+**Délai d\'attente pour une remotorisation :** typiquement 2 à 4 semaines en haute saison (avril à juin, septembre à novembre), plus court hors saison. L\'appel téléphonique réserve la place.
+
+### Étape 3 : Transport du bateau jusqu\'à Harris Boat Works (1 jour, varie selon l\'approche)
+
+Vous avez trois options pour amener le bateau à Gores Landing :
+
+**Option A. Le remorquer vous-même.** La plus fréquente. Depuis le centre-ville de Toronto : 90 minutes vers l\'est sur la 401, sortie Cobourg, suivez la route régionale 18 vers le nord jusqu\'à Gores Landing. Depuis l\'ouest de la GTA (Oakville, Burlington) : ajoutez 30 à 60 minutes. Nous avons du stationnement pour les remorques sur le terrain; vous laissez le bateau, vous laissez la remorque ou vous la ramenez chez vous.
+
+**Option B. Engager un transporteur de bateaux.** Plusieurs services de transport de bateaux ontariens font la route GTA à Kawartha. Coût typique : 300 $ à 600 $ pour un aller pour un bateau typique de 18 à 22 pieds. Cherchez « boat transport Ontario » ou demandez-nous, nous connaissons les opérateurs. Utile si vous n\'avez pas de véhicule de remorquage ou que vous ne voulez pas conduire une remorque.
+
+**Option C. Certains clients laissent le bateau chez Harris Boat Works après une saison.** Si vous l\'entreposez déjà chez nous pour l\'hiver, le bateau est sur place. La remotorisation se fait hors saison sans coût de transport.
+
+La plupart des clients de la GTA choisissent l\'option A. Le trajet 401 plus route régionale 18 est simple.
+
+### Étape 4 : L\'installation (1 à 2 semaines à l\'atelier)
+
+Le vieux moteur sort, le nouveau Mercury entre. Le travail comprend :
+
+- **Retrait du moteur existant**, vidange des fluides, débranchement du câblage, levage
+- **Inspection du tableau arrière**, nous cherchons des zones molles, des fissures, des dommages aux pièces. Presque toujours propre sur des coques de moins de 20 ans; parfois des problèmes sur des bateaux plus vieux.
+- **Installation du nouveau moteur**, boulons selon spécification, vérification de l\'alignement, étanchéité du tableau arrière
+- **Câblage**, commandes (ou DTS), conduites de carburant, jauges ou afficheur VesselView, tringlerie de direction, câblage de batterie
+- **Choix d\'hélice**, nous avons des hélices en acier inoxydable et en aluminium en stock; le bon pas est calculé selon votre coque, le poids et l\'usage
+- **Essai sur l\'eau**, test sur le lac Rice pour vérifier que le régime au plein gaz atteint la spécification Mercury, sans survitesse, avec passage de vitesses fluide, plage de trim complète, débit du témoin d\'eau (tell-tale)
+- **Réglage**, ajustement du pas de l\'hélice si nécessaire; parfois 1 ou 2 changements pour bien ajuster les performances
+- **Documentation**, enregistrement de la garantie, registres de service, inscription au MPP si acheté
+
+**Temps total écoulé :** 7 à 14 jours selon la charge de travail et la complexité. La plupart des remotoriations sont terminées en 10 jours.
+
+### Étape 5 : Récupération, vérification sur l\'eau, retour à la maison (4 à 8 heures)
+
+Nous appelons quand c\'est prêt. Vous revenez. Nous vous expliquons le nouveau moteur au quai : commandes, jauges, instructions de rodage, calendrier d\'entretien, paperasse MPP.
+
+**Important : la période de rodage de 10 heures.** Votre Mercury neuf n\'est pas prêt au plein régime pour les 10 premières heures. Nous vous expliquons :
+- Premières 2 heures : variez les gaz, pas de plein gaz prolongé, pas de régime élevé soutenu
+- Prochaines 8 heures : élargissez progressivement la plage d\'utilisation
+- Après 20 heures : ramenez le bateau pour le **service de rodage de 20 heures** (c\'est essentiel)
+
+Vous pouvez essayer le moteur sur le lac Rice avant de partir, ou aller doucement sur la remorque jusqu\'à la GTA et faire le rodage sur votre plan d\'eau habituel.
+
+---
+
+## Ce que coûte vraiment une remotorisation dans la GTA
+
+Vrais prix tout inclus pour les remotoriations GTA typiques (CAD avant TVH) :
+
+| Bateau et nouveau moteur | Plage de prix tout inclus | Ce qui est inclus |
+|---|---|---|
+| **Bateau de pêche 17 pi et Mercury 90 HP FourStroke** | 15 500 $ à 18 500 $ | Moteur, câblage, commandes, hélice, installation, essai sur l\'eau |
+| **Runabout 19 pi et Mercury 150 HP FourStroke** | 23 000 $ à 30 000 $ | Idem plus mise à niveau direction assistée |
+| **Ponton 20 pi et Mercury 115 HP CT FourStroke** | 19 000 $ à 23 000 $ | Idem plus boîtier d\'engrenage Command Thrust |
+| **Bowrider 22 pi et Mercury 200 HP V6 FourStroke** | 28 000 $ à 35 000 $ | Idem plus manette numérique DTS |
+| **Bass boat 22 pi et Mercury 200 HP V6 Pro XS** | 30 000 $ à 36 000 $ | Idem plus hélice acier inoxydable et réglage Pro XS |
+
+Ces plages incluent le calcul du crédit d\'échange. Si votre moteur actuel vaut 4 000 $ à 8 000 $ en échange, c\'est déjà compté. Le configurateur affiche le chiffre précis pour votre bateau.
+
+**Comparé à l\'achat d\'un nouveau bateau équivalent :**
+- Nouvel ensemble runabout 19 pi (bateau, 150 HP, remorque) : 50 000 $ à 80 000 $ et plus
+- Remotoriation de votre coque 19 pi actuelle : 23 000 $ à 30 000 $
+
+La remotorisation l\'emporte de 25 000 $ à 50 000 $ sur la plupart des bateaux actuels. Exceptions : coques en très mauvais état, ou bateaux que vous voulez agrandir ou changer de style.
+
+---
+
+## Pourquoi les plaisanciers de la GTA viennent à Harris Boat Works plutôt que de rester local
+
+Une remotorisation à Toronto chez un concessionnaire Mercury de la GTA est théoriquement possible. Voici pourquoi la plupart des clients de la GTA aboutissent chez Harris Boat Works :
+
+**1. Expertise de concessionnaire Mercury Marine certifié Platinum sur le câblage.** Les Mercury modernes (V6, V8 SmartCraft, DTS, joystick) demandent une connaissance du câblage de niveau usine. Les concessionnaires de niveau inférieur travaillent souvent bien sur les FourStroke standards, mais moins fiablement sur les variantes haut de gamme.
+
+**2. Le configurateur et la transparence des prix.** Les remotoriations GTA chez les concessionnaires « appelez pour un prix » se révèlent souvent 3 000 $ à 5 000 $ plus chères que l\'équivalent câblé chez nous. Le calcul joue en notre faveur.
+
+**3. Évaluation de l\'échange.** Nous avons des données de service réelles en Ontario sur les valeurs de Mercury usagés. Certains concessionnaires urbains sous-évaluent les échanges. La soumission d\'échange du configurateur est honnête.
+
+**4. Relation de service sur la prochaine décennie.** Nous documentons tout. L\'historique de service de votre moteur reste à notre atelier. Quand des réclamations MPP surviennent dans 5 ans, le concessionnaire qui a vendu le moteur traite la réclamation, c\'est ainsi que le système fonctionne le mieux.
+
+**5. Expertise en réglage d\'hélice.** La plupart des problèmes de remotorisation 6 mois plus tard sont des problèmes de choix d\'hélice. Nous faisons un essai sur l\'eau de chaque installation sur le lac Rice avant la livraison et nous ajustons le pas de l\'hélice au besoin. Les concessionnaires locaux sans accès à l\'eau à l\'atelier ne peuvent pas toujours le faire, ils installent sur la remorque et vous découvrez plus tard si l\'hélice est mauvaise.
+
+---
+
+## Ce qu\'il NE FAUT PAS faire comme client GTA en remotorisation
+
+Erreurs que nous voyons chez des plaisanciers de la GTA :
+
+**1. Acheter un Mercury chez une source non Mercury.** Petites annonces, enchères en ligne, Mercury importés des États-Unis, la plupart n\'ont **aucune couverture de garantie canadienne**. Le moteur lui-même est identique; le réseau de garantie ne l\'honorera pas. Vous économisez quelques milliers de dollars d\'avance, vous en perdez plusieurs en réparations à vos frais sur la durée de vie du moteur.
+
+**2. Sauter le service de rodage de 20 heures.** Essentiel pour la validité de la garantie. Nous le facturons 250 $ à 400 $; le coût de le sauter est potentiellement la garantie au complet.
+
+**3. Ne pas inclure le transport au budget.** 300 $ à 600 $ par direction pour un transport engagé, ça s\'additionne. Si vous n\'avez pas de remorque, planifiez-le.
+
+**4. Choisir une puissance Mercury inadaptée à la coque.** Les acheteurs de la GTA surdimensionnent parfois « par sécurité ». Aller à la puissance maximale ou au-dessus crée des problèmes de tenue, des coûts de carburant et du marsouinage sur certaines coques. Adaptez la puissance au design de la coque.
+
+**5. Sauter l\'essai sur l\'eau.** Certains concessionnaires (pas nous) livrent sans test sur l\'eau. Insistez toujours pour un essai; les problèmes de performance sont beaucoup plus faciles à régler à l\'atelier qu\'à votre quai.
+
+---
+
+## Quand commencer à planifier votre remotorisation (calendrier)
+
+La saison de navigation en Ontario est courte. Le moment de réservation compte :
+
+- **Hiver (décembre à mars)** : idéal. Nous avons du temps en atelier, des pièces disponibles, parfois des prix d\'hiver, moteur prêt pour le printemps.
+- **Début du printemps (avril)** : encore bon. L\'horaire se remplit d\'ici la fin avril.
+- **Pleine saison (mai à juin)** : serré. Souvent 3 à 4 semaines d\'attente. Possible de mettre à l\'eau avec le nouveau moteur en plein été.
+- **Mi-saison (juillet à août)** : vous perdrez 2 à 3 semaines de navigation pour l\'installation, généralement pas la peine sauf si votre vieux moteur lâche.
+- **Automne (septembre à novembre)** : bon, l\'atelier est actif mais pas saturé. Moteur prêt pour le printemps suivant.
+
+Si vous envisagez une remotorisation pour le printemps 2026, **commencez le configurateur maintenant et réservez l\'installation pour janvier à mars 2026.**
+
+---
+
+## Foire aux questions
+
+**Combien coûte une remotorisation Mercury dans la GTA ?**
+Cela dépend de la puissance et du bateau actuel. Plages typiques : installation 90 HP de 15 500 $ à 18 500 $; installation 150 HP de 23 000 $ à 30 000 $; installation 200 HP V6 de 28 000 $ à 35 000 $. Le configurateur à mercuryrepower.ca donne votre chiffre précis en 90 secondes.
+
+**Combien de temps prend une remotorisation chez Harris Boat Works ?**
+Installation, essai sur l\'eau et réglage d\'hélice typiques : 7 à 14 jours à l\'atelier. Délai de réservation de 2 à 4 semaines en haute saison. Planifiez le projet total comme 4 à 6 semaines entre la soumission et le moteur sur l\'eau.
+
+**Puis-je remorquer mon bateau de Toronto à Harris Boat Works moi-même ?**
+Oui. 401 vers l\'est jusqu\'à Cobourg, vers le nord sur la route régionale 18 jusqu\'à Gores Landing. Environ 90 minutes du centre-ville de Toronto. Nous avons du stationnement pour remorques sur place.
+
+**Organisez-vous le transport de bateau depuis la GTA ?**
+Nous n\'opérons pas de transport, mais nous travaillons avec plusieurs services de transport marin ontariens. Coût typique de 300 $ à 600 $ par direction pour un bateau de 18 à 22 pieds. Nous pouvons vous référer.
+
+**Mon Mercury sera-t-il admissible à la garantie si je l\'ai acheté ailleurs et que je veux le faire entretenir chez Harris Boat Works ?**
+Oui. Le réseau de garantie canadien Mercury honore la couverture chez n\'importe quel concessionnaire autorisé peu importe où le moteur a été acheté. Apportez les papiers d\'achat; nous enregistrons le travail dans le système central de Mercury.
+
+**Puis-je choisir un Pro XS plutôt qu\'un FourStroke pour la remotorisation ?**
+Cela dépend de l\'usage. Pro XS pour les applications de performance (ski, sports nautiques, opération à haut régime, vitesse de pointe maximale). FourStroke pour la croisière, l\'efficacité énergétique, l\'usage familial.
+
+**Que se passe-t-il si mon bateau a besoin de plus qu\'un moteur ?**
+Scénario fréquent. Les remotoriations font souvent émerger d\'autres travaux : mises à niveau de câblage (direction hydraulique, jauges, commandes), renforcement du tableau arrière, remplacement du système de carburant, mises à jour électriques. Nous spécifions tout dans la soumission et vous décidez ce qui est inclus ou reporté.
+
+**Faites-vous des remotoriations à deux moteurs ?**
+Oui, configurations V6 ou V8 jumelées sur les plus gros bateaux (en mer, bass boats, deck boats). Même configurateur, même processus, temps d\'installation plus long (typiquement 14 à 21 jours pour les jumelés). Les installations Pro XS V6 jumelées sont fréquentes à notre atelier.
+
+**Quelle est la valeur d\'échange de mon moteur actuel ?**
+Très variable. Un Mercury 150 de 5 ans à faible heures s\'échange pour 5 500 $ à 7 500 $. Un 90 HP de 12 ans à hautes heures s\'échange pour 1 500 $ à 2 500 $. Le configurateur estime selon les spécifications de votre moteur.
+
+---
+
+**Téléphone :** 905-342-2153
+**Configurateur :** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Demandes de service :** [hbw.wiki/service](https://hbw.wiki/service)
+**Adresse :** 5369 Harris Boat Works Rd, Gores Landing, ON
+`,
+    faqs: [
+      { question: 'Combien coûte une remotorisation Mercury dans la GTA ?', answer: 'Cela dépend de la puissance et du bateau actuel. Plages typiques : installation 90 HP de 15 500 $ à 18 500 $; installation 150 HP de 23 000 $ à 30 000 $; installation 200 HP V6 de 28 000 $ à 35 000 $. Le configurateur à mercuryrepower.ca donne votre chiffre précis en 90 secondes.' },
+      { question: 'Combien de temps prend une remotorisation chez Harris Boat Works ?', answer: 'Installation, essai sur l\'eau et réglage d\'hélice typiques : 7 à 14 jours à l\'atelier. Délai de réservation de 2 à 4 semaines en haute saison. Planifiez le projet total comme 4 à 6 semaines entre la soumission et le moteur sur l\'eau.' },
+      { question: 'Puis-je remorquer mon bateau de Toronto à Harris Boat Works moi-même ?', answer: 'Oui. 401 vers l\'est jusqu\'à Cobourg, vers le nord sur la route régionale 18 jusqu\'à Gores Landing. Environ 90 minutes du centre-ville de Toronto. Nous avons du stationnement pour remorques sur place.' },
+      { question: 'Organisez-vous le transport de bateau depuis la GTA ?', answer: 'Nous n\'opérons pas de transport, mais nous travaillons avec plusieurs services de transport marin ontariens. Coût typique de 300 $ à 600 $ par direction pour un bateau de 18 à 22 pieds. Nous pouvons vous référer.' },
+      { question: 'Mon Mercury sera-t-il admissible à la garantie si je l\'ai acheté ailleurs ?', answer: 'Oui. Le réseau de garantie canadien Mercury honore la couverture chez n\'importe quel concessionnaire autorisé peu importe où le moteur a été acheté. Apportez les papiers d\'achat; nous enregistrons le travail dans le système central de Mercury.' },
+      { question: 'Puis-je choisir un Pro XS plutôt qu\'un FourStroke pour la remotorisation ?', answer: 'Cela dépend de l\'usage. Pro XS pour les applications de performance (ski, sports nautiques, opération à haut régime, vitesse de pointe maximale). FourStroke pour la croisière, l\'efficacité énergétique, l\'usage familial.' },
+      { question: 'Que se passe-t-il si mon bateau a besoin de plus qu\'un moteur ?', answer: 'Scénario fréquent. Les remotoriations font souvent émerger d\'autres travaux : mises à niveau de câblage (direction hydraulique, jauges, commandes), renforcement du tableau arrière, remplacement du système de carburant, mises à jour électriques. Nous spécifions tout dans la soumission et vous décidez ce qui est inclus ou reporté.' },
+      { question: 'Faites-vous des remotoriations à deux moteurs ?', answer: 'Oui, configurations V6 ou V8 jumelées sur les plus gros bateaux (en mer, bass boats, deck boats). Même configurateur, même processus, temps d\'installation plus long (typiquement 14 à 21 jours pour les jumelés). Les installations Pro XS V6 jumelées sont fréquentes à notre atelier.' },
+      { question: 'Quelle est la valeur d\'échange de mon moteur actuel ?', answer: 'Très variable. Un Mercury 150 de 5 ans à faible heures s\'échange pour 5 500 $ à 7 500 $. Un 90 HP de 12 ans à hautes heures s\'échange pour 1 500 $ à 2 500 $. Le configurateur estime selon les spécifications de votre moteur.' },
+    ],
+  },
+
 ];
 
 export function getFrenchArticleBySlug(slug: string): BlogArticle | undefined {
