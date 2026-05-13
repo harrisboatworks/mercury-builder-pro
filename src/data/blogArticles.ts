@@ -19,6 +19,7 @@ export interface BlogArticle {
   readTime: string;
   faqs?: { question: string; answer: string }[];
   keywords: string[];
+  relatedSlugs?: string[]; // Manual cluster override; falls back to recency in getRelatedArticles
   howToSteps?: HowToStep[]; // For instructional articles - enables HowTo schema
   howToTotalTime?: string; // ISO 8601 duration like "PT60M"
   howToSupplies?: string[]; // List of supplies / materials
