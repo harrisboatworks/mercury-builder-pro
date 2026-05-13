@@ -25,6 +25,193 @@ import { marked } from 'marked';
 // Configure marked: GFM tables/strike, no auto line-break paragraphs.
 marked.setOptions({ gfm: true, breaks: false });
 
+// HTML-escape a string for safe insertion into prerendered markup.
+function escHtml(v) {
+  return String(v ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// Parse a YAML-ish directive body into { flat, lists, items }.
+// Mirrors the parsers in src/components/blog/MarkdownSectionCards.tsx so
+// prerendered HTML matches what React renders client-side.
+function parseDirectiveBody(body) {
+  const flat = {};
+  const lists = {};
+  let currentList = null;
+  for (const raw of String(body).split('\n')) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) { currentList = null; continue; }
+    const listItem = /^\s+-\s+(.*)$/.exec(line);
+    if (listItem && currentList) {
+      lists[currentList].push(listItem[1].trim());
+      continue;
+    }
+    const kv = /^([a-zA-Z0-9]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) { currentList = null; continue; }
+    const key = kv[1];
+    const val = kv[2];
+    if (val === '') {
+      lists[key] = [];
+      currentList = key;
+    } else {
+      flat[key] = val;
+      currentList = null;
+    }
+  }
+  return { flat, lists };
+}
+
+function renderDecisionCardHtml(body) {
+  const { flat, lists } = parseDirectiveBody(body);
+  if (!flat.heading) return '';
+  const eyebrow = flat.eyebrow
+    ? `<div class="text-xs font-bold uppercase tracking-wide text-mercury-red mb-2">${escHtml(flat.eyebrow)}</div>`
+    : '';
+  const subhead = flat.subhead
+    ? `<p class="font-sans text-sm text-repower-navy-900/70 mt-2 mb-0">${escHtml(flat.subhead)}</p>`
+    : '';
+  const col = (label, criteria, outcome, variant, defaultVariant) => {
+    const v = (variant === 'recommended' || variant === 'alternative') ? variant : defaultVariant;
+    const outcomeClass = v === 'recommended'
+      ? 'bg-repower-navy-900 text-white'
+      : 'bg-repower-paper text-repower-navy-900 border border-repower-navy-900/15';
+    const items = (criteria || []).map(c =>
+      `<li class="flex items-start gap-2 text-sm text-repower-navy-900 leading-snug"><span aria-hidden="true" class="h-4 w-4 mt-0.5 flex-shrink-0 text-repower-navy-900">&#10003;</span><span>${escHtml(c)}</span></li>`
+    ).join('');
+    return `<div class="flex flex-col gap-4 p-6 md:p-8 flex-1"><div class="text-xs font-bold uppercase tracking-wide text-repower-navy-900">${escHtml(label || '')}</div><ul class="flex flex-col gap-2.5 list-none pl-0 m-0">${items}</ul><div class="mt-auto rounded-full px-4 py-2 text-center text-sm font-display font-semibold ${outcomeClass}">${escHtml(outcome || '')}</div></div>`;
+  };
+  const left = col(flat.leftLabel, lists.leftCriteria, flat.leftOutcome, flat.leftVariant, 'recommended');
+  const right = col(flat.rightLabel, lists.rightCriteria, flat.rightOutcome, flat.rightVariant, 'alternative');
+  const whenInDoubt = flat.whenInDoubt
+    ? `<div class="border-t border-repower-navy-900/15 px-6 py-4 md:px-8 text-sm italic text-charcoal text-repower-navy-900/80 text-center"><span class="font-semibold not-italic mr-1">When in doubt:</span>${escHtml(flat.whenInDoubt)}</div>`
+    : '';
+  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0">${escHtml(flat.heading)}</h3>${subhead}</div><div class="flex flex-col md:flex-row mt-2 divide-y md:divide-y-0 md:divide-x divide-repower-navy-900/15">${left}${right}</div>${whenInDoubt}</div>`;
+}
+
+function renderDiagnosticFlowHtml(body) {
+  const flat = {};
+  const stepsMap = {};
+  for (const raw of String(body).split('\n')) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) continue;
+    const kv = /^([a-zA-Z0-9]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    const key = kv[1]; const val = kv[2];
+    const sl = /^step(\d+)Label$/.exec(key);
+    const sq = /^step(\d+)Question$/.exec(key);
+    const st = /^step(\d+)Tip$/.exec(key);
+    if (sl) { const i = +sl[1]; stepsMap[i] = stepsMap[i] || {}; stepsMap[i].label = val; }
+    else if (sq) { const i = +sq[1]; stepsMap[i] = stepsMap[i] || {}; stepsMap[i].question = val; }
+    else if (st) { const i = +st[1]; stepsMap[i] = stepsMap[i] || {}; stepsMap[i].tip = val; }
+    else flat[key] = val;
+  }
+  if (!flat.heading) return '';
+  const indices = Object.keys(stepsMap).map(Number).sort((a, b) => a - b);
+  const stepRows = indices.map((idx, i) => {
+    const s = stepsMap[idx];
+    if (!s.label || !s.question) return '';
+    const isLast = i === indices.length - 1;
+    const connector = isLast ? '' : '<div class="w-px flex-1 bg-repower-navy-900/20 mt-2 mb-0 min-h-[2rem]"></div>';
+    const tip = s.tip ? `<p class="mt-2 text-sm text-repower-navy-900/70 leading-relaxed">${escHtml(s.tip)}</p>` : '';
+    return `<div class="flex gap-4 md:gap-6"><div class="flex flex-col items-center"><div class="flex items-center justify-center h-10 w-10 rounded-full bg-repower-navy-900 text-white font-display font-semibold text-sm">${i + 1}</div>${connector}</div><div class="flex-1 pb-6 md:pb-8"><div class="font-display font-bold text-base text-repower-navy-900">${escHtml(s.label)}</div><div class="mt-1.5 flex items-start gap-2 text-sm text-repower-navy-900"><span aria-hidden="true" class="h-4 w-4 mt-0.5 flex-shrink-0 text-repower-navy-900/60">?</span><span class="leading-snug">${escHtml(s.question)}</span></div>${tip}</div></div>`;
+  }).join('');
+  const eyebrow = flat.eyebrow ? `<div class="text-xs font-bold uppercase tracking-wide text-mercury-red mb-2">${escHtml(flat.eyebrow)}</div>` : '';
+  const subhead = flat.subhead ? `<p class="font-sans text-sm text-repower-navy-900/70 mt-2 mb-0">${escHtml(flat.subhead)}</p>` : '';
+  const escalation = flat.escalationBody
+    ? `<div class="bg-repower-paper border-t border-repower-navy-900/15 px-6 py-5 md:px-8"><div class="flex items-start gap-3"><span aria-label="Wrench" class="h-5 w-5 mt-0.5 flex-shrink-0 text-repower-navy-900">&#x1F527;</span><div>${flat.escalationLabel ? `<div class="font-display font-semibold text-sm text-repower-navy-900">${escHtml(flat.escalationLabel)}</div>` : ''}<p class="text-sm text-repower-navy-900/80 leading-relaxed mt-0.5">${escHtml(flat.escalationBody)}</p></div></div></div>`
+    : '';
+  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0">${escHtml(flat.heading)}</h3>${subhead}</div><div class="px-6 pt-4 pb-2 md:px-8 md:pt-6">${stepRows}</div>${escalation}</div>`;
+}
+
+function renderCostStackHtml(body) {
+  const flat = {};
+  const itemMap = {};
+  for (const raw of String(body).split('\n')) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) continue;
+    const kv = /^([a-zA-Z0-9]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    const key = kv[1]; const val = kv[2];
+    const m = /^item(\d+)(Label|Value|Note|Accent)$/.exec(key);
+    if (m) {
+      const i = +m[1]; itemMap[i] = itemMap[i] || {};
+      const f = m[2];
+      if (f === 'Label') itemMap[i].label = val;
+      else if (f === 'Value') itemMap[i].value = val;
+      else if (f === 'Note') itemMap[i].note = val;
+      else if (f === 'Accent') itemMap[i].accent = /^(true|yes|1)$/i.test(val);
+    } else flat[key] = val;
+  }
+  if (!flat.heading) return '';
+  const items = Object.keys(itemMap).map(Number).sort((a, b) => a - b)
+    .map(i => itemMap[i]).filter(it => it.label && it.value);
+  const eyebrow = flat.eyebrow ? `<div class="text-xs font-bold uppercase tracking-wide text-mercury-red mb-2">${escHtml(flat.eyebrow)}</div>` : '';
+  const subhead = flat.subhead ? `<p class="font-sans text-sm text-repower-navy-900/70 mt-2 mb-0">${escHtml(flat.subhead)}</p>` : '';
+  const rows = items.map(it => {
+    const barClass = it.accent ? 'bg-repower-mercury-red/15' : 'bg-repower-navy-900/10';
+    const valueClass = it.accent ? 'text-mercury-red' : 'text-repower-navy-900';
+    const note = it.note ? `<p class="italic text-repower-navy-900/60 text-xs px-1 m-0">${escHtml(it.note)}</p>` : '';
+    return `<div class="flex flex-col gap-1"><div class="flex items-center justify-between gap-4 rounded-md px-4 py-3 ${barClass}"><span class="font-display font-semibold text-repower-navy-900 text-sm md:text-base">${escHtml(it.label)}</span><span class="font-display font-bold text-sm md:text-base ${valueClass}">${escHtml(it.value)}</span></div>${note}</div>`;
+  }).join('');
+  const total = (flat.totalLabel && flat.totalValue)
+    ? `<div class="bg-repower-navy-900 text-white px-6 py-4 md:px-8 flex items-center justify-between gap-4"><span class="font-display font-bold text-lg">${escHtml(flat.totalLabel)}</span><span class="font-display font-bold text-lg">${escHtml(flat.totalValue)}</span></div>`
+    : '';
+  const caveat = flat.caveat ? `<div class="border-t border-repower-navy-900/15 px-6 py-3 md:px-8 text-center italic text-repower-navy-900/60 text-xs">${escHtml(flat.caveat)}</div>` : '';
+  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0">${escHtml(flat.heading)}</h3>${subhead}</div><div class="px-6 py-6 md:px-8 md:py-8 flex flex-col gap-3">${rows}</div>${total}${caveat}</div>`;
+}
+
+function renderBilingualTrustHtml(body) {
+  const flat = {};
+  const itemMap = {};
+  for (const raw of String(body).split('\n')) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) continue;
+    const kv = /^([a-zA-Z0-9]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    const key = kv[1]; const val = kv[2];
+    const m = /^item(\d+)(En|Zh)$/.exec(key);
+    if (m) {
+      const i = +m[1]; itemMap[i] = itemMap[i] || {};
+      if (m[2] === 'En') itemMap[i].en = val; else itemMap[i].zh = val;
+    } else flat[key] = val;
+  }
+  if (!flat.heading || !flat.headingTranslated) return '';
+  const items = Object.keys(itemMap).map(Number).sort((a, b) => a - b)
+    .map(i => itemMap[i]).filter(it => it.en && it.zh);
+  const eyebrow = flat.eyebrow ? `<div class="text-xs font-bold uppercase tracking-wide text-mercury-red mb-2">${escHtml(flat.eyebrow)}</div>` : '';
+  const tiles = items.map(it =>
+    `<div class="rounded-lg bg-repower-navy-900/5 p-4 flex flex-col gap-1"><span class="font-display font-semibold text-repower-navy-900 text-sm">${escHtml(it.en)}</span><span class="font-sans text-repower-navy-900/70 text-sm" lang="zh-Hans">${escHtml(it.zh)}</span></div>`
+  ).join('');
+  const cta = (flat.ctaEn && flat.ctaZh && flat.ctaHref)
+    ? `<a href="${escHtml(flat.ctaHref)}" class="block bg-repower-mercury-red text-white text-center px-6 py-4 md:px-8 hover:opacity-90 transition-opacity"><span class="block font-display font-bold text-base">${escHtml(flat.ctaEn)}</span><span class="block font-sans text-sm opacity-90 mt-0.5" lang="zh-Hans">${escHtml(flat.ctaZh)}</span></a>`
+    : '';
+  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0">${escHtml(flat.heading)}</h3><p class="font-sans text-base text-repower-navy-900/80 mt-1 mb-0" lang="zh-Hans">${escHtml(flat.headingTranslated)}</p></div><div class="px-6 py-6 md:px-8 md:py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">${tiles}</div>${cta}</div>`;
+}
+
+// Replace authoring directives (`::name ... ::`) with prerendered HTML
+// matching the React component output, so crawlers see real markup.
+function expandVisualDirectives(md) {
+  // Use a placeholder marker so marked does not mangle the HTML afterward.
+  // We will swap markers back to HTML after marked.parse runs.
+  const slots = [];
+  const sub = (re, renderer) =>
+    md.replace(re, (_m, body) => {
+      const html = renderer(body);
+      if (!html) return '';
+      slots.push(html);
+      return `\n\n<!--PRERENDER_DIRECTIVE_${slots.length - 1}-->\n\n`;
+    });
+  md = sub(/^::decision-card\s*\n([\s\S]*?)\n::\s*$/gm, renderDecisionCardHtml);
+  md = sub(/^::diagnostic-flow\s*\n([\s\S]*?)\n::\s*$/gm, renderDiagnosticFlowHtml);
+  md = sub(/^::cost-stack\s*\n([\s\S]*?)\n::\s*$/gm, renderCostStackHtml);
+  md = sub(/^::bilingual-trust\s*\n([\s\S]*?)\n::\s*$/gm, renderBilingualTrustHtml);
+  return { md, slots };
+}
+
 // Render an article's markdown body to HTML for the <noscript> fallback.
 // Strips the leading H1 (the page already renders one), the author footer,
 // and any custom :::directive::: blocks our renderer handles separately.
@@ -37,10 +224,18 @@ function renderArticleBodyHtml(content) {
   s = s.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
   s = s.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
   s = s.replace(/\n+\s*By Jay Harris[\s\S]*$/i, '');
-  // Strip custom directive blocks (e.g. :::image-placeholder ... :::).
+  // Expand visual directives (decision-card, diagnostic-flow, cost-stack,
+  // bilingual-trust) into HTML matching the React components. Other
+  // `:::name ... :::` directive blocks (image-placeholder, motor-pricing,
+  // related-posts) are still stripped, the SPA renders them after hydration.
+  const { md: expanded, slots } = expandVisualDirectives(s);
+  s = expanded;
   s = s.replace(/^:::[a-zA-Z0-9_-]+[\s\S]*?^:::\s*$/gm, ' ');
   try {
-    return marked.parse(s);
+    let html = marked.parse(s);
+    // Restore prerendered directive HTML after marked runs.
+    html = html.replace(/<!--PRERENDER_DIRECTIVE_(\d+)-->/g, (_m, i) => slots[Number(i)] || '');
+    return html;
   } catch (err) {
     console.warn('[static-prerender] marked render failed:', err?.message);
     return '';
