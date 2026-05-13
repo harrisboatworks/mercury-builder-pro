@@ -39,7 +39,7 @@ export default function MercuryDealerGTA() {
             Mercury Dealer for the Greater Toronto Area
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Harris Boat Works on Rice Lake serves GTA, Lake Simcoe, and Lake Scugog Mercury buyers, about 90 minutes east of Toronto on the 401. Family-owned since 1947, Mercury dealer since 1965.
+            Harris Boat Works on Rice Lake serves GTA, Lake Simcoe, and Lake Scugog Mercury buyers, about 90 minutes east of Toronto on the 401. Family-owned since 1947, Family marina on Rice Lake since 1947.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">

@@ -33,7 +33,7 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Mercury dealer since 1965 and a Mercury Marine Platinum Dealer for most of the modern era. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
+> **Quick answer:** Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Family marina on Rice Lake since 1947 and a Mercury Marine Platinum Dealer for most of the modern era. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
 
 The simple version: Harris Boat Works has been at the same dock on Rice Lake, in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965**, most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
 
@@ -181,7 +181,7 @@ If the fourth generation takes over, HBW continues. If they don't, we'll find a 
 ## Frequently Asked Questions
 
 **How long has Harris Boat Works been in business?**
-Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026.
+Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Family marina on Rice Lake since 1947, **60 years** as a Mercury Marine dealer in 2026.
 
 **Is HBW family-owned?**
 Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business.
@@ -225,7 +225,7 @@ Yes, we're a working family marina. Walking through the slips, watching the rent
 
 ### How long has Harris Boat Works been in business?
 
-Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026.
+Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Family marina on Rice Lake since 1947, **60 years** as a Mercury Marine dealer in 2026.
 
 ### Is HBW family-owned?
 

@@ -62,7 +62,7 @@ export function AboutPageSEO() {
   return (
     <Helmet>
       <title>About Harris Boat Works | Family-Owned Since 1947 | Mercury Dealer Ontario</title>
-      <meta name="description" content="Harris Boat Works: family-owned since 1947, Mercury dealer since 1965. CSI Award-winning service on Rice Lake, Ontario. 79 years of marine expertise serving the Kawarthas, Toronto, and Peterborough." />
+      <meta name="description" content="Harris Boat Works: family-owned since 1947, Family marina on Rice Lake since 1947. CSI Award-winning service on Rice Lake, Ontario. 79 years of marine expertise serving the Kawarthas, Toronto, and Peterborough." />
       <meta name="keywords" content="Harris Boat Works, Mercury dealer Ontario, Rice Lake boat dealer, Kawartha Lakes marine, boat dealer Peterborough, Mercury repower center, family boat dealer" />
       <link rel="canonical" href={`${SITE_URL}/about`} />
       

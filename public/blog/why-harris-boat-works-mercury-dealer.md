@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust"
-description: "Discover why Harris Boat Works has been Ontario's trusted Mercury dealer since 1965. Learn about our expertise, inventory, service, and commitment to boaters."
+description: "Discover why Harris Boat Works has been Ontario's trusted Mercury dealer. Family marina on Rice Lake since 1947. Learn about our expertise, inventory, service, and commitment to boaters."
 category: "About Us"
 date_published: 2026-05-04
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust
 
-> Discover why Harris Boat Works has been Ontario's trusted Mercury dealer since 1965. Learn about our expertise, inventory, service, and commitment to boaters.
+> Discover why Harris Boat Works has been Ontario's trusted Mercury dealer. Family marina on Rice Lake since 1947. Learn about our expertise, inventory, service, and commitment to boaters.
 
 **Category:** About Us  
 **Published:** 2026-05-04  
@@ -31,9 +31,9 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-10*
 
-> **Quick answer:** HBW has been on Rice Lake in the Kawarthas (Ontario) since 1947 and a Mercury dealer since 1965, three generations, current Mercury Marine Platinum Dealer. We post installed pricing online via the configurator, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
+> **Quick answer:** HBW has been on Rice Lake in the Kawarthas (Ontario) since 1947 and a Family marina on Rice Lake since 1947, three generations, current Mercury Marine Platinum Dealer. We post installed pricing online via the configurator, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
 
-Harris Boat Works has been a Mercury dealer since 1965. Three generations of HBW have rigged Mercurys, serviced them, and stood behind them. We are a Mercury Platinum dealer, which gives us factory-direct access to support, training, and inventory. We sell Mercury exclusively because the math works for our customers and our shop. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Harris Boat Works has been a Family marina on Rice Lake since 1947. Three generations of HBW have rigged Mercurys, serviced them, and stood behind them. We are a Mercury Platinum dealer, which gives us factory-direct access to support, training, and inventory. We sell Mercury exclusively because the math works for our customers and our shop. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 

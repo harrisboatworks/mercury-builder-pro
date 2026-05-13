@@ -10,7 +10,7 @@ export function HomepageSEO() {
         "@id": "https://mercuryrepower.ca/#webpage",
         "url": "https://mercuryrepower.ca/",
         "name": "Mercury Repower Quotes Online, Real Prices, No Forms | Harris Boat Works",
-        "description": "Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
+        "description": "Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Platinum Dealer on Rice Lake, family-owned since 1947, Family marina on Rice Lake since 1947.",
         "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
         "about": { "@id": "https://mercuryrepower.ca/#organization" },
         "primaryImageOfPage": { "@id": "https://mercuryrepower.ca/#logo" },

@@ -187,7 +187,7 @@ For FMZ 17 bass season dates (third Saturday in June for largemouth in most of s
 
 ## What HBW Brings Specifically
 
-We've been on Rice Lake since 1947 and a Mercury dealer since 1965. The bass-boat repower is one of our highest-volume categories every spring.
+We've been on Rice Lake since 1947 and a Family marina on Rice Lake since 1947. The bass-boat repower is one of our highest-volume categories every spring.
 
 - We rig Pro XS and FourStroke motors weekly. The prop selection, hydraulic steering, and kicker bracket details are routine.
 - We stock common bass props (Fury 4, Tempest, Bravo, Spitfire) and verify WOT RPM in sea trial before delivery.

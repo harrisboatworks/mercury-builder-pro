@@ -244,7 +244,7 @@ No. You cannot legally or safely exceed the maximum horsepower rating on your bo
 
 ### What is the right HP for a fishing boat on Rice Lake or Kawartha Lakes?
 
-For a 16–18 ft aluminum fishing boat on Rice Lake or the Kawarthas, the most practical HP range is 60–115 HP. A 75 HP gets a light 16 ft aluminum boat planing quickly and efficiently. A 90 or 115 HP is worth the step-up if you carry two or three people and gear regularly, or fish open stretches of Rice Lake where wind picks up. The 115 HP is the most versatile choice if you want one motor that handles everything. Harris Boat Works, Mercury dealer since 1965 in Gores Landing on Rice Lake, can match the right HP to your hull.
+For a 16–18 ft aluminum fishing boat on Rice Lake or the Kawarthas, the most practical HP range is 60–115 HP. A 75 HP gets a light 16 ft aluminum boat planing quickly and efficiently. A 90 or 115 HP is worth the step-up if you carry two or three people and gear regularly, or fish open stretches of Rice Lake where wind picks up. The 115 HP is the most versatile choice if you want one motor that handles everything. Harris Boat Works, Family marina on Rice Lake since 1947 in Gores Landing on Rice Lake, can match the right HP to your hull.
 
 ### Should I choose the maximum HP my boat is rated for?
 
