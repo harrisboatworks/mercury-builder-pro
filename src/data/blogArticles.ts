@@ -3134,6 +3134,33 @@ If you want to walk through your specific boat first, call us at 905-342-2153 or
 
 ---
 
+::decision-card
+heading: Mercury Pro XS or FourStroke for your bass boat?
+eyebrow: Honest power family pick
+subhead: Both are great. The real question is how you actually fish.
+leftLabel: Choose Pro XS if
+leftCriteria:
+  - You fish bass tournaments or run in heavy chop
+  - Your boat is rated for the higher RPM and Pro XS horsepower
+  - You want maximum hole shot and top end
+  - You are comfortable trading some fuel economy for performance
+  - The boat will live mostly on lakes you ride hard
+leftOutcome: Pick Pro XS
+leftVariant: recommended
+rightLabel: Choose FourStroke if
+rightCriteria:
+  - You fish recreationally, not tournaments
+  - Boat use includes family time, not just bass runs
+  - You want lower fuel burn and a quieter idle
+  - The Pro XS price gap does not justify the speed gain for your use
+  - You are repowering an older bass boat that was originally FourStroke
+rightOutcome: Pick FourStroke
+rightVariant: alternative
+whenInDoubt: For competitive tournaments, Pro XS pays for itself in time saved between spots. For weekend fishing, FourStroke is the smarter buy.
+::
+
+---
+
 ## Bass boats are a different conversation
 
 Bass boats are built for one thing: run fast to a spot and fish it well. They're lighter than most recreational hulls, built to plane fast, and typically used by anglers who care about both speed and reliability.
@@ -3498,6 +3525,31 @@ Phone: 905-342-2153 | Harris Boat Works, Gores Landing, ON | Since 1947
 
 ## Quick answer
 Most Ontario center console buyers are running trailerable 18 to 25 ft hulls on Lake Ontario, the Bay of Quinte, or occasionally Georgian Bay. The right Mercury motor is usually a 200 to 250 HP V6 Pro XS for fishing-focused single-engine setups, or a 250 to 300 HP V8 for larger or premium twin configurations. The Florida offshore assumptions built into most center console guides do not apply here. Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+::decision-card
+heading: Single or twin Mercurys on a center console?
+eyebrow: Honest rigging pick
+subhead: Most 22 to 25 ft center consoles run great on a single. Twins are about redundancy, not speed.
+leftLabel: Choose single engine if
+leftCriteria:
+  - Center console is 22 to 25 ft
+  - Most runs are coastal cruising, family use, dock-and-dine
+  - Fuel economy and quiet operation matter
+  - You want single-engine simplicity (one motor to maintain)
+  - The boat is rated for a single-engine setup
+leftOutcome: Single Mercury 250 or 300 HP
+leftVariant: recommended
+rightLabel: Choose twin engines if
+rightCriteria:
+  - Center console is 25 ft or larger and runs offshore
+  - Redundancy matters (limp-home capability if one fails)
+  - You want maximum performance for chasing fish or rough water
+  - Twin-engine handling at the dock is a feature, not a problem
+  - The boat was designed for twins from the factory
+rightOutcome: Twin Mercury V8 outboards
+rightVariant: alternative
+whenInDoubt: Single 300 HP Verado handles most 22 to 25 ft center consoles beautifully. Twins are only worth it if you fish offshore or want the safety net of redundancy.
+::
 
 ## Why this guide is different
 
@@ -4733,6 +4785,31 @@ Yes. Annual fluid changes, fuel system service, and inspection are recommended. 
 
 ## Quick answer
 On Rice Lake and the Kawarthas, a gas kicker, specifically the Mercury 9.9 ProKicker, wins for walleye trolling, big water, and all-day range. A bow-mount electric trolling motor wins for shallow-water stealth, spot-lock precision, and solo fishing. Most serious anglers end up running both. They solve different problems. We rig either setup; get a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+::decision-card
+heading: Trolling motor or kicker motor for your boat?
+eyebrow: Honest auxiliary pick
+subhead: Different waters, different answers. Rice Lake bass and Lake Ontario salmon need different tools.
+leftLabel: Choose a trolling motor if
+leftCriteria:
+  - You fish predominantly in 8 to 15 ft of water
+  - Spot-Lock and GPS-anchor are important
+  - Stealth matters (no gas engine running while fishing)
+  - Battery management is something you can handle
+  - Primary use is bass, walleye drifting, or controlled presentations
+leftOutcome: Pick a trolling motor (Minn Kota or Lowrance)
+leftVariant: recommended
+rightLabel: Choose a kicker motor if
+rightCriteria:
+  - You troll for salmon or lake trout in deep water (40 ft or more)
+  - All-day trolling outlasts any practical battery
+  - You don't want to babysit charging schedules
+  - Boat is on bigger water (Lake Ontario, Simcoe deep zones)
+  - You want simpler, less maintenance, more range
+rightOutcome: Pick a Mercury 9.9 EFI kicker
+rightVariant: alternative
+whenInDoubt: For Rice Lake and Kawarthas bass/walleye, the trolling motor wins. For Lake Ontario salmon, the kicker wins.
+::
 
 ## What each one actually does
 
