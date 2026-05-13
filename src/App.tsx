@@ -314,6 +314,14 @@ function AnimatedRoutes() {
           }
         />
         <Route
+          path="/admin/financing-submission-logs"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminFinancingSubmissionLogs />
+            </SecureRoute>
+          }
+        />
+        <Route
           path="/admin/security"
           element={
             <SecureRoute requireAdmin={true}>
