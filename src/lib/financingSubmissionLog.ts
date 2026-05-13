@@ -13,6 +13,7 @@ export type SubmissionOutcome = 'success' | 'failure';
 interface LogParams {
   stage: SubmissionStage;
   outcome: SubmissionOutcome;
+  correlationId: string;
   applicationId?: string | null;
   userId?: string | null;
   errorCode?: string | null;
@@ -27,9 +28,10 @@ export async function logFinancingSubmission(params: LogParams): Promise<void> {
       user_id: params.userId ?? null,
       stage: params.stage,
       outcome: params.outcome,
+      correlation_id: params.correlationId,
       error_code: params.errorCode ?? null,
       error_message: params.errorMessage ? String(params.errorMessage).slice(0, 1000) : null,
-      metadata: params.metadata ?? {},
+      metadata: { ...(params.metadata ?? {}), correlation_id: params.correlationId },
     });
   } catch (e) {
     // Never let logging itself break the user flow
