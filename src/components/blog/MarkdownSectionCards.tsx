@@ -205,8 +205,15 @@ function rewriteRelatedGuides(md: string): string {
   );
 }
 
+function rewriteDecisionCards(md: string): string {
+  // Authors write `::decision-card\n...\n::` (double colon).
+  // Convert to a triple-colon directive so the standard splitter handles it.
+  const re = /^::decision-card\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::decision-card\n${body}\n:::`);
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteRelatedGuides(rewritePricingTables(md));
+  return rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md)));
 }
 
 /**
