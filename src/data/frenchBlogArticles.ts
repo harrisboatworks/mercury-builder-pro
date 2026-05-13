@@ -1383,6 +1383,1196 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s\'échange pour 5 500 
     ],
   },
 
+  {
+    slug: 'revue-mercury-75-hp-fourstroke-ontario',
+    relatedSlugs: ['revue-mercury-90-hp-fourstroke-ontario', 'revue-mercury-115-hp-fourstroke-ontario'],
+    title: "Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)",
+    seoTitle: "Mercury 75 HP FourStroke : pourquoi HBW ne le stocke pas",
+    description: "Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici pourquoi, ce qu'il est réellement, et pourquoi le Mercury 90 est l'achat plus avisé à presque le même prix pour le même moteur.",
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Avis produit',
+    readTime: '7 min',
+    keywords: ['revue Mercury 75 HP', 'Mercury 75 HP FourStroke', 'Mercury 75 vs 90', 'Mercury 75 ELPT Ontario', 'Mercury 90 mieux que 75'],
+    faqs: [
+      { question: "Pourquoi HBW ne tient-il pas le Mercury 75 HP FourStroke en stock?", answer: "Parce que c'est le même moteur physique que le 90, le même poids, une très petite différence de prix, et le 90 a plus de marge de manœuvre et conserve mieux sa valeur. Nous orientons les clients vers le 90." },
+      { question: "HBW peut-il commander un Mercury 75 si je le veux vraiment?", answer: "Oui. Nous pouvons commander n'importe quel moteur Mercury que Mercury fabrique. Nous ne gardons simplement pas le 75 sur l'étagère parce que nous recommandons le 90 dans presque tous les cas." },
+      { question: "Quelle est la différence réelle entre un 75 et un 90 Mercury FourStroke?", answer: "Même bloc 2,1 L. Même poids à sec (359 lb). Différente calibration logicielle, différent ajustement d'hélice. Le 75 est limité à 5 500 RPM. Le 90 est limité à 6 000 RPM. Le 90 a plus de puissance maximale pour le même moteur physique." },
+      { question: "Le Mercury 90 vaut-il le supplément par rapport au 75?", answer: "Pour la plupart des bateaux et des acheteurs, oui. Même moteur, plus de marge, meilleure valeur de revente, différence de coût marginale. Le calcul est difficile à contester une fois exposé." },
+      { question: "Ma plaque de capacité indique 75 HP max. Puis-je y mettre un 90?", answer: "Non. La plaque de capacité est le plafond légal. Un 90 sur une coque de 75 HP est en surpuissance, annule votre assurance dans la plupart des cas, et crée un vrai risque de sécurité. Achetez le 75 si la plaque dit 75. Nous vous aiderons." },
+      { question: "Un Mercury 75 fonctionnera-t-il sur un ponton?", answer: "Techniquement oui pour les plus petits pontons sous 20 pi avec des charges légères. Nous ne le recommandons pas. Les pontons demandent du couple et une capacité de charge, ce que le 90 ELPT Command Thrust offre." },
+      { question: "Puis-je obtenir un 75 Mercury usagé?", answer: "Parfois, oui. Des 75 usagés se présentent sur le marché. Nous pouvons aider à évaluer l'état et décider si un 75 usagé a plus de sens qu'un 90 neuf pour votre situation." },
+    ],
+    content: `### Réponse rapide
+
+Le Mercury 75 HP FourStroke est le même moteur physique que le 90, même bloc 2,1 L 4 cylindres en ligne, même poids de 359 lb, avec un plafond de RPM plus bas et une différence de prix plus petite que la plupart des gens pensent. Harris Boat Works ne tient pas le 75 en stock parce que le 90 est l'achat plus intelligent pour 95 % des clients. Nous commanderons le 75 si votre plaque de capacité l'exige.
+
+---
+
+### Mercury 75 HP FourStroke : pourquoi nous ne le tenons pas en stock
+
+On nous pose régulièrement la question sur le Mercury 75 HP FourStroke. Habituellement la question ressemble à : "Le 75 est-il assez bon, ou devrais-je passer au 90?" Voici notre réponse honnête : le 90 est presque toujours le meilleur choix, et la raison pour laquelle nous ne tenons pas le 75 en stock, c'est que c'est le même moteur.
+
+Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire Mercury Marine certifié Platinum. Ce n'est pas une tentative de vous faire dépenser plus, c'est une explication d'une réalité d'ingénierie légitime.
+
+---
+
+## Ce qu'est réellement le Mercury 75 HP
+
+Le Mercury 75 HP FourStroke fait partie de la même famille que les 80, 90, 100 et 115. Les cinq moteurs fonctionnent sur le même bloc 2,1 L 4 cylindres en ligne avec un arbre à cames simple en tête à 8 soupapes, un train de soupapes sans entretien, et le même alternateur, les mêmes dimensions et les mêmes essais en usine.
+
+| Spécification | Mercury 75 ELPT | Mercury 90 ELPT |
+|---|---|---|
+| Bloc | 2,1 L 4 cyl. en ligne | 2,1 L 4 cyl. en ligne |
+| Train de soupapes | SOHC 8 soupapes, sans entretien | SOHC 8 soupapes, sans entretien |
+| Poids à sec | 359 lb | 359 lb |
+| RPM pleins gaz | 4 500 à 5 500 | 5 000 à 6 000 |
+| Alternateur | 35 A / 441 W | 35 A / 441 W |
+| Système d'alimentation | EFI | EFI |
+| Compatible SmartCraft | Oui | Oui |
+| Garantie | 3 ans standard | 3 ans standard |
+
+La différence entre le 75 et le 90 est le logiciel, le réglage d'hélice et le plafond de RPM. C'est tout. Le 75 est calibré pour culminer à 4 500 à 5 500 RPM. Le 90 monte à 5 000 à 6 000. Aucun changement de poids. Une très petite différence de prix.
+
+Le 90 conserve aussi mieux sa valeur de revente et a plus de demande sur le marché de l'usagé.
+
+---
+
+## Pourquoi HBW ne tient pas le Mercury 75 en stock
+
+Trois raisons :
+
+1. **C'est le même moteur que le 90.** Même bloc, même poids, mêmes exigences d'entretien.
+2. **La différence de prix est minime.** Pas suffisamment pour justifier la marge que vous abandonnez.
+3. **Le 90 conserve mieux sa valeur de revente.** Le 75 se trouve dans un écart entre les moteurs que les gens veulent réellement.
+
+Pour 95 % des clients, le 75 est le mauvais moteur à acheter quand le 90 existe à presque le même prix et au même poids.
+
+---
+
+## Quand le 75 pourrait avoir du sens
+
+Trois scénarios réels :
+
+**La plaque de capacité l'impose.** Certaines coques de 16 à 17 pi sont cotées pour 75 HP maximum. Si la plaque dit 75, vous obtenez un 75. Nous le commanderons et nous n'essaierons pas de vous convaincre d'acheter quelque chose d'illégal.
+
+**Une contrainte d'assurance ou de licence s'applique.** Rare en Ontario, mais certaines applications commerciales ont des plafonds de HP qui atterrissent à 75.
+
+**Un 75 usagé à faibles heures à un prix assez bas.** Si un 75 usagé avec 200 heures est disponible à un prix significativement inférieur à un 90 neuf, le calcul peut fonctionner.
+
+---
+
+## Ce que nous mettrions sur votre bateau à la place
+
+| Type de bateau | Notre recommandation |
+|---|---|
+| Bateau de pêche en aluminium 14 à 17 pi | 90 ELPT FourStroke, embase standard. Plane plus facilement, croisière plus rapide au même régime. |
+| Petit ponton sous 20 pi | 90 ELPT Command Thrust, l'embase CT fait une différence significative sur les coques à fond plat. |
+| Petite vedette de chalet | 90 ELPT FourStroke, même logique que le bateau de pêche. |
+| Remotorisation d'un vieux 60 à 75 HP deux temps | 90 ELPT FourStroke, plus léger, plus silencieux, plus propre, plus efficace. |
+
+Si votre coque est cotée pour un maximum de 60 HP, vous êtes dans la conversation du Mercury 60 ELPT FourStroke, pas celle-ci. Le 60 fonctionne sur un bloc plus petit de 1,0 L, un moteur entièrement différent.
+
+---
+
+## Questions fréquentes
+
+**Le Mercury 75 HP est-il un mauvais moteur?**
+Non. Ce n'est pas un mauvais moteur, c'est le même moteur que le 90 avec moins de marge dans la plage de RPM.
+
+**Pourquoi HBW ne tient pas le 75 en stock?**
+Parce que c'est le même moteur physique que le 90, même poids, différence de prix minimale, et le 90 a plus de marge et une meilleure valeur de revente.
+
+**Puis-je obtenir le 75 en version Command Thrust?**
+Oui, c'est disponible. Mais si vous avez besoin de Command Thrust pour un ponton, le 90 CT est un meilleur investissement.
+
+**Que se passe-t-il si ma coque se situe entre 60 et 75 HP sur la plaque de capacité?**
+Appelez-nous au 905-342-2153.
+
+**Le 75 HP est-il significativement moins cher que le 90?**
+Pas significativement. Les chiffres exacts varient avec la tarification de Mercury Canada.
+
+---
+
+## Bâtissez une soumission, sur le 90
+
+Si vous êtes venu ici en regardant le 75 et que cela a confirmé ce que vous soupçonniez, allez bâtir une soumission sur le 90 à mercuryrepower.ca. Vrais prix CAD, vraies configurations.
+
+Si vous avez une situation de plaque de capacité ou une question de moteur usagé, appelez-nous au 905-342-2153.
+
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+`,
+  },
+  {
+    slug: 'revue-mercury-90-hp-fourstroke-ontario',
+    relatedSlugs: ['revue-mercury-115-hp-fourstroke-ontario', 'revue-mercury-75-hp-fourstroke-ontario'],
+    title: "Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury",
+    seoTitle: 'Revue Mercury 90 HP FourStroke (Ontario 2026)',
+    description: "Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il est le mauvais choix, et comment il s'intègre aux bateaux d'aluminium et pontons du lac Rice.",
+    image: '/lovable-uploads/Best_Mercury_Outboard_Aluminum_Fishing_Boats.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Avis produit',
+    readTime: '9 min',
+    keywords: ['revue Mercury 90 HP', 'Mercury 90 HP FourStroke', 'Mercury 90 ELPT Ontario', 'Mercury 90 CT Command Thrust', '90 HP ponton', '90 HP bateau aluminium'],
+    faqs: [
+      { question: "Combien pèse le Mercury 90 HP FourStroke?", answer: "Mercury indique le 90 ELPT standard à 359 lb à sec. La version Command Thrust est de 363 lb. Plus léger que les vieux deux temps qu'il remplace habituellement." },
+      { question: "Le 90 HP est-il suffisant pour un bateau d'aluminium de 17 pi?", answer: "Pour la plupart des bateaux de pêche en aluminium de 17 pi avec deux à quatre personnes et de l'équipement normal, oui. Si vous transportez régulièrement lourd ou voulez la vitesse de pointe maximale, le 115 est la meilleure réponse." },
+      { question: "Quelle est la différence entre 90 ELPT et 90 ELPT Command Thrust?", answer: "Même tête motrice. Embase différente. Le Command Thrust est plus grand, fait tourner une plus grosse hélice, et tire mieux les charges plus lourdes. Bon choix pour les pontons. Moins courant sur les bateaux de pêche en aluminium." },
+      { question: "Un 90 fera-t-il planer mon ponton?", answer: "Cela dépend de la taille du ponton, du style de coque, de la charge et de l'hélice. Un 90 CT fera planer un ponton typique de chalet de 18 à 22 pi avec une charge normale. Un tritoon de 24 pi avec huit personnes à bord demande un 115 CT ou 150." },
+      { question: "Le Mercury 90 a-t-il besoin d'une batterie?", answer: "Oui. Le 90 ELPT est à démarrage électrique. Vous avez besoin d'une batterie de démarrage marine (Group 24 ou 27 typique, selon le bateau)." },
+      { question: "Le 90 est-il à injection de carburant?", answer: "Oui. Tous les Mercury 90 HP FourStroke utilisent l'injection électronique de carburant. Démarrage plus facile, fonctionnement plus propre, meilleure économie de carburant que les vieux deux temps à carburateur." },
+      { question: "Quelle est la garantie?", answer: "Garantie d'usine de 3 ans en standard. Mercury offre une bonification promotionnelle de 3 ans une grande partie de l'année qui la porte à 6 ans au total. Demandez-nous le statut promotionnel actuel lors de la soumission." },
+    ],
+    content: `### Réponse rapide
+
+Le Mercury 90 HP FourStroke est le choix par défaut pour la plupart des bateaux de pêche en aluminium de 16 à 18 pi et des pontons de taille moyenne jusqu'à environ 22 pi en Ontario. Il fonctionne sur le même bloc 2,1 L 4 cylindres en ligne que les 75 et 115, pèse 359 lb, et est calibré pour une croisière douce et l'économie de carburant plutôt que la performance. Pour les pontons, prenez la version Command Thrust (CT). Pour les bateaux de pêche en aluminium, prenez l'embase standard.
+
+---
+
+### Revue du Mercury 90 HP FourStroke
+
+Nous vendons plus de moteurs Mercury dans la famille 75 à 115 HP que dans toute autre classe. Et au sein de cette famille, le 90 est là où la plupart des clients aboutissent, non pas parce que c'est l'option la moins chère, mais parce que c'est vraiment le bon choix pour la plupart des bateaux de l'Ontario dans la plage de 16 à 20 pi.
+
+Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire Mercury Marine certifié Platinum. Le 90 FourStroke est un moteur que nous connaissons bien.
+
+---
+
+## Ce que la famille 90 HP partage réellement
+
+Le Mercury 90 HP FourStroke fait partie d'une famille de cinq moteurs construits sur le même bloc 2,1 L 4 cylindres en ligne : les 75, 80, 90, 100 et 115. Tous utilisent un arbre à cames simple en tête à 8 soupapes avec un train de soupapes sans entretien, pas d'entretien régulier de cames, pas d'ajustements de jeu de soupapes pour la vie du moteur. Mercury a effectué 17 000 heures d'essais en usine sur cette génération avant la mise en marché.
+
+Les différences entre les 90, 100 et 115 sont la calibration, le plafond de RPM et le prix. Il n'y a aucune pénalité de poids en montant. Le 90 ELPT et le 115 ELPT pèsent tous les deux 359 lb.
+
+Les moteurs couverts dans cet article sont le **90 ELPT FourStroke** standard et le **90 ELPT Command Thrust**. Il existe aussi un 90 à contre-rotation (pour configurations jumelées) et un 90 EXLPT (arbre 25 po pour tableaux arrière plus hauts).
+
+---
+
+## Ce que "ELPT" et "CT" signifient
+
+- **E**, démarrage électrique (bouton-poussoir, pas de corde)
+- **L**, arbre long (20 po), correspond au tableau arrière le plus courant
+- **PT**, trim et inclinaison assistés (Power Trim)
+- **CT**, embase Command Thrust, embase plus grande, hélice plus grande
+
+---
+
+## Où le 90 HP est la bonne réponse
+
+### Bateaux de pêche en aluminium de 16 à 18 pi
+
+Lund, Princecraft, Crestliner, Legend ProSport, ce sont les coques pour lesquelles le 90 ELPT a été conçu. Charge typique : deux à quatre personnes, équipement complet, moteur de pêche à la traîne, deux batteries. Sur ces bateaux, le 90 plane proprement, croisière vers 28 à 32 mi/h, et culmine vers 38 à 42 mi/h selon l'hélice et la charge.
+
+### Pontons de taille moyenne jusqu'à environ 22 pi
+
+Pour un ponton transportant quatre à six personnes avec des charges normales de chalet, le **90 ELPT Command Thrust** est le choix. L'embase CT fait tourner une hélice de 14 ou 14,5 po au lieu de la 13 po standard.
+
+### Vedettes familiales en fibre de verre de 16 à 18 pi
+
+Croisière, traction d'une chambre à air, baignade, pêche occasionnelle, le 90 gère tout cela sans travailler fort.
+
+### Remotorisations remplaçant des deux temps de 70 à 90 HP
+
+Les vieux deux temps Mercury, Yamaha et OMC dans cette classe de puissance sont remplacés chaque saison. Le 90 ELPT FourStroke ressort généralement plus léger que le moteur qu'il remplace, plus silencieux, plus propre, et 20 à 30 % plus efficace en carburant.
+
+---
+
+## Où le 90 HP est le mauvais choix
+
+**Coque cotée sous 75 HP.** La plaque de capacité est le plafond. Un bateau d'aluminium de 16 pi coté pour 75 HP max devrait recevoir le 75, pas le 90.
+
+**Tritoons lourds, pontons de 24 pi et plus, ou maisons flottantes.** Le 90 poussera ces bateaux, mais il travaillera plus fort qu'il ne le devrait. Ces applications ont besoin de 115 CT ou plus.
+
+**Hole-shot de bass boat.** Le 90 ELPT FourStroke n'est pas un Pro XS. Il est calibré pour l'économie de carburant, la croisière douce et la durabilité.
+
+**Longueur d'arbre incorrecte.** Un arbre court (15 po) sur un tableau arrière de 20 po met l'hélice trop près de la surface.
+
+---
+
+## Embase standard vs Command Thrust
+
+| | Embase standard | Command Thrust |
+|---|---|---|
+| Profil de l'embase | Hydrodynamique, moins de traînée à vitesse | Physiquement plus grande |
+| Taille de l'hélice | environ 13 po | 14 à 14,5 po |
+| Force | Vitesse de pointe, efficacité énergétique | Couple à bas régime, hole-shot |
+| Idéal pour | Bateaux de pêche aluminium, vedettes légères | Pontons, coques lourdes |
+
+Règle générale : les bateaux de pêche en aluminium par défaut prennent le standard. Les pontons par défaut prennent le CT.
+
+---
+
+## Comment le 90 se compare au 75 et au 115
+
+Le 75, le 90 et le 115 sont le même bloc avec des calibrations différentes. Aucune pénalité de poids en montant. La seule pénalité réelle entre le 75, le 90 et le 115 est le prix et la consommation de carburant pleins gaz.
+
+La plupart des bateaux veulent soit le 90, soit le 115. Le 75 convient aux coques plus petites ou aux situations où la plaque de capacité l'impose, nous ne stockons pas le 75 parce que le 90 est le même moteur physique pour un coût additionnel modeste.
+
+---
+
+## Ce que nous recommanderions réellement
+
+**Pour la plupart des bateaux de pêche en aluminium de 16 à 18 pi sur le lac Rice et les Kawarthas :** 90 ELPT FourStroke, embase standard.
+
+**Pour les pontons de taille moyenne jusqu'à 22 pi :** 90 ELPT Command Thrust.
+
+**Pour les charges lourdes sur un bateau de 18 à 20 pi :** Considérez le 115 ELPT.
+
+**Si la coque est cotée sous 75 HP :** Nous commanderons le 75.
+
+Si vous achetez chez nous, nous sommes aussi ceux qui l'entretiennent. Pour les réparations de moteur, nous ne faisons que du Mercury et du Mercruiser.
+
+---
+
+## Questions fréquentes
+
+**Le 90 HP est-il bon pour un ponton de 22 pi?**
+Oui, avec l'embase Command Thrust.
+
+**Le 90 HP FourStroke est-il un Pro XS?**
+Non. Le Pro XS est une calibration différente, plafond de RPM plus haut, embase sport, hole-shot plus agressif.
+
+**La longueur d'arbre est-elle importante?**
+Oui, ce n'est pas optionnel.
+
+**Combien le 90 HP économise-t-il en carburant par rapport à un vieux deux temps?**
+Typiquement 20 à 30 % moins de carburant pour la même journée sur l'eau.
+
+**Le 90 CT est-il le même moteur que le 90 standard?**
+Même tête motrice. Embase différente.
+
+**Puis-je commander un 75 si ma plaque de capacité l'exige?**
+Oui.
+
+---
+
+## Bâtissez une soumission
+
+Bâtissez votre soumission de 90 HP à mercuryrepower.ca, choisissez l'embase standard ou CT, la longueur d'arbre et l'hélice. Voyez de vrais prix CAD en quelques minutes.
+
+Questions? Appelez 905-342-2153 ou soumettez une demande de service à hbw.wiki/service.
+
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+`,
+  },
+  {
+    slug: 'revue-mercury-115-hp-fourstroke-ontario',
+    relatedSlugs: ['mercury-115-vs-150-hp-comparaison', 'revue-mercury-90-hp-fourstroke-ontario'],
+    title: "Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte",
+    seoTitle: 'Revue Mercury 115 HP FourStroke (Ontario 2026)',
+    description: "Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de Mercury avec le même bloc 2,1 L que les 75 et 90, calibré chaud. Pour quoi il est bon et où le 115 Pro XS ou un V6 a plus de sens.",
+    image: '/lovable-uploads/hero-mercury-115-aluminum-boat-cruising.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Avis produit',
+    readTime: '10 min',
+    keywords: ['revue Mercury 115 HP', 'Mercury 115 HP FourStroke', 'Mercury 115 ELPT Ontario', 'Mercury 115 CT Command Thrust', '115 HP ponton', 'Mercury 115 vs 150', 'Mercury 115 FourStroke vs Pro XS'],
+    faqs: [
+      { question: "Combien pèse le Mercury 115 HP FourStroke?", answer: "359 lb à sec pour le ELPT standard. 363 lb pour la version Command Thrust. Mercury affirme que c'est le hors-bord 115 HP le plus léger disponible." },
+      { question: "Quelle est la différence entre le 115 FourStroke et le 115 Pro XS?", answer: "Même tête motrice 2,1 L, calibration différente. Le Pro XS est calibré pour le hole-shot et la performance à haut régime avec une embase sport. Le FourStroke standard est la calibration de tous les jours." },
+      { question: "Le 115 est-il suffisant pour un bateau d'aluminium de 19 pi?", answer: "Pour la plupart des bateaux de pêche en aluminium de 19 pi avec des charges normales, oui. Si vous transportez régulièrement lourd, le 115 est à la limite de ce qu'il peut faire confortablement." },
+      { question: "Un 115 fera-t-il planer mon ponton de 22 pi?", answer: "Avec l'amélioration Command Thrust et une charge normale de chalet, oui. Le 115 CT est la réponse standard pour les pontons de 20 à 22 pi. 24 pi et plus, vous voulez le 150 V6." },
+      { question: "Quelle est la garantie?", answer: "Garantie d'usine de 3 ans en standard. Mercury offre une bonification promotionnelle de 3 ans une grande partie de l'année, la portant à 6 ans au total." },
+      { question: "Le 115 est-il à injection de carburant?", answer: "Oui. Tous les Mercury 115 HP FourStroke utilisent l'EFI." },
+      { question: "Le 115 fonctionne-t-il avec les jauges SmartCraft?", answer: "Oui. Intégration complète SmartCraft disponible. NMEA 2000, VesselView mobile, Active Trim. Mise à niveau courante lors d'une remotorisation." },
+      { question: "Puis-je obtenir un 115 HP en contre-rotation?", answer: "Oui. Mercury fabrique un 115 CXL pour configurations à deux moteurs. Moins courant chez HBW parce que les 115 jumelés sont inhabituels sur les bateaux du lac Rice, mais disponibles pour la bonne application." },
+    ],
+    content: `### Réponse rapide
+
+Le Mercury 115 HP FourStroke pèse 359 lb, ce qui en fait le hors-bord 115 HP le plus léger disponible. Il fonctionne sur le même bloc 2,1 L 4 cylindres en ligne que les 75 et 90, calibré à 6 000 RPM. C'est le bon moteur pour les bateaux de pêche en aluminium de 17 à 20 pi et les pontons de taille moyenne à grande (avec Command Thrust), et c'est le choix par défaut pour les plaisanciers ontariens qui veulent une vraie marge sans entrer dans le territoire des V6.
+
+---
+
+### Revue du Mercury 115 HP FourStroke
+
+"Le 115 HP le plus léger disponible" n'est pas une formule marketing, c'est une spécification qui change le comportement d'un bateau. Une différence de poids de 80 à 100 lb par rapport aux vieux deux temps que ce moteur remplace couramment affecte la façon dont la coque s'assoit dans l'eau, la vitesse à laquelle elle plane, l'économie de carburant et la charge sur l'attelage de la remorque.
+
+Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire Mercury Marine certifié Platinum. Le 115 FourStroke est l'un des moteurs que nous vendons et entretenons le plus.
+
+---
+
+## Pourquoi "le 115 HP le plus léger" compte vraiment
+
+Le Mercury 115 ELPT FourStroke pèse 359 lb. Un vieux Mercury 115 OptiMax, le moteur qu'il remplace couramment, pèse environ 425 lb. C'est 80 à 100 lb de différence. Sur un bateau de pêche en aluminium de 17 à 20 pi, ce changement de poids fait des choses réelles :
+
+- La coque s'assoit plus haut au repos, améliorant l'économie de carburant avant même de tourner la clé.
+- Le bateau plane plus tôt avec la même charge.
+- Le tableau arrière subit moins de stress à long terme.
+- Le poids sur la flèche de remorque diminue.
+
+---
+
+## Ce que la famille 2,1 L partage
+
+Le 115 HP FourStroke appartient à la famille 75 à 115 HP de Mercury : cinq moteurs (75, 80, 90, 100, 115) construits sur le même bloc 2,1 L 4 cylindres en ligne avec un SOHC 8 soupapes, train de soupapes sans entretien, et 17 000 heures d'essais en usine sur cette génération.
+
+Ce qu'ils partagent tous :
+- Même bloc 2,1 L 4 cyl. en ligne
+- Train de soupapes sans entretien
+- Alternateur 35 A / 441 W
+- Compatibilité SmartCraft
+- Garantie standard d'usine de 3 ans
+
+Le 115 est la calibration la plus élevée de cette famille. Il monte à 6 000 RPM. Le passage du 90 au 115 est une calibration, pas un moteur différent. Aucune pénalité de poids.
+
+---
+
+## Ce que "ELPT" et "CT" signifient
+
+- **E**, démarrage électrique
+- **L**, arbre long (20 po)
+- **PT**, trim et inclinaison assistés depuis le poste de pilotage
+- **CT**, embase Command Thrust (embase plus grande, hélice plus grande, typiquement 14 ou 14,5 po au lieu de 13)
+
+Cet article couvre le **115 ELPT FourStroke** et le **115 ELPT Command Thrust**. Il existe aussi un 115 Pro XS (calibré performance, embase sport) et un 115 à contre-rotation (configurations jumelées).
+
+---
+
+## Quand prendre l'amélioration Command Thrust
+
+| Type de bateau | Prendre CT? |
+|---|---|
+| Ponton (toute taille) | Presque toujours |
+| Bateau de pêche en aluminium | Rarement |
+| Vedette en fibre de verre | Cas par cas |
+
+Le CT vous donne plus de puissance de traction à bas régime et de hole-shot au prix d'une certaine vitesse de pointe.
+
+---
+
+## Où le 115 HP FourStroke est la bonne réponse
+
+### Bateaux de pêche en aluminium de 17 à 20 pi avec charges plus lourdes
+
+Un bateau de 16 pi avec deux pêcheurs est la mission du 90. Quand la coque est un Lund, Princecraft, Crestliner ou Legend de 17 à 20 pi avec quatre personnes, équipement complet, vivier, deux batteries et un moteur de pêche à la traîne à l'avant, le 115 est le bon choix. Croisière vers 30 à 35 mi/h, culmine vers 42 à 48 mi/h.
+
+### Pontons de taille moyenne à grande, 20 à 24 pi
+
+C'est ici que le 115 CT prouve sa valeur. Un ponton de 22 pi avec une charge familiale complète et une glacière mérite au moins 90 CT. Le 115 CT est la bonne réponse si le ponton est un tritoon.
+
+### Vedettes familiales qui font un peu de tout
+
+Croisière, pêche, traction de chambre à air, sports nautiques occasionnels, le 115 gère tout cela sans travailler fort.
+
+### Remotorisations à partir de vieux deux temps
+
+Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les vieux 115 OptiMax, 115 à 150 OMC et 90 à 115 Yamaha deux temps. Résultat : le bateau se sent plus léger, fonctionne plus silencieusement, et utilise 25 à 35 % moins de carburant.
+
+---
+
+## Où le 115 HP FourStroke est le mauvais choix
+
+**Hole-shot de bass boat.** Le 115 ELPT FourStroke est calibré pour l'économie, la croisière douce et la fiabilité.
+
+**Tritoons lourds, pontons de 24 pi et plus, maisons flottantes.** Ces applications ont besoin du 150 V6 ou plus.
+
+**Coques cotées sous 90 HP.** La plaque de capacité est le plafond.
+
+**Quand vous avez réellement besoin du 150.** Ne compromettez pas.
+
+---
+
+## Comment le 115 se compare au 90 et au 150
+
+| | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
+|---|---|---|---|
+| Bloc | 2,1 L 4 cyl. en ligne | 2,1 L 4 cyl. en ligne | 3,0 L V4, famille différente |
+| Poids à sec | 359 lb | 359 lb (363 CT) | environ 455 lb |
+| RPM pleins gaz | 5 000 à 6 000 | 5 000 à 6 000 | 5 000 à 5 800 |
+| Plage idéale | 16 à 18 pi alu, pontons moyens | 17 à 20 pi alu, pontons moyens-grands | 19 à 22 pi, plateformes plus grandes |
+| Prix vs 115 | Moins | (référence) | Plus (environ 5 000 $ et plus) |
+
+**90 vs 115 :** Calibration, pas un moteur différent. Aucun changement de poids.
+
+**115 vs 150 :** Famille complètement différente. Le 150 est un V6, plus lourd d'environ 100 lb.
+
+---
+
+## Ce que nous recommanderions réellement
+
+**Bateau de pêche en aluminium 17 à 20 pi, acheteur ontarien voulant une vraie marge sans aller V6 :** 115 ELPT FourStroke. Embase standard.
+
+**Ponton de taille moyenne à grande, 20 à 24 pi, charges normales de chalet :** 115 ELPT Command Thrust.
+
+**Même bateau mais vous voulez le hole-shot et exploitez une plateforme de pêche de tournoi :** 115 Pro XS. Moteur différent, prix différent.
+
+Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, nous ne travaillons que sur Mercury et Mercruiser.
+
+---
+
+## Questions fréquentes
+
+**Le 115 FourStroke est-il vraiment le 115 HP le plus léger disponible?**
+Oui, à 359 lb.
+
+**Le 115 FourStroke est-il le même moteur que le 90?**
+Même bloc 2,1 L. Calibration différente.
+
+**Le 150 est-il comparable au 115?**
+Non. Famille différente, bloc différent, classe de poids différente (environ 100 lb plus lourd).
+
+**Quand le 115 CT a-t-il du sens par rapport au 90 CT?**
+Quand le ponton fait 20 à 24 pi, quand vous transportez régulièrement 5 à 6 personnes, ou quand c'est un tritoon.
+
+**Quelles économies de carburant puis-je m'attendre en remotorisant à partir d'un vieux deux temps?**
+Typiquement 25 à 35 % moins de carburant.
+
+**Le 115 Pro XS existe-t-il en Command Thrust?**
+Non, le Pro XS utilise une embase sport conçue pour les applications de performance.
+
+---
+
+## Bâtissez une soumission
+
+Voyez le 115 ELPT, le 115 CT et le 115 Pro XS côte à côte à mercuryrepower.ca. Vrais prix CAD, vraies configurations.
+
+Questions sur la version qui convient à votre bateau? Appelez 905-342-2153 ou soumettez une demande de service à hbw.wiki/service.
+
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+`,
+  },
+  {
+    slug: 'surchauffe-moteur-mercury-guide-urgence',
+    title: "Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)",
+    description: "Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Platinum pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines secondes, quoi vérifier au quai, et comment l'éviter.",
+    image: '/lovable-uploads/hero-outboard-overheating.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Dépannage',
+    readTime: '9 min',
+    keywords: ['surchauffe hors-bord quoi faire', 'Mercury hors-bord surchauffe', 'Mercury remplacement turbine', 'jet témoin faible', 'lac Rice prise eau bouchée', 'alarme surchauffe hors-bord'],
+    faqs: [
+      { question: "Combien de temps puis-je faire fonctionner un hors-bord en surchauffe avant les dommages?", answer: "Moins d'une minute, dans le pire des cas. Une turbine fonctionnant à sec cuit en 30 secondes. Un moteur tournant chaud à cause d'un thermostat coincé peut vous donner 2 à 3 minutes avant que les dommages au niveau du joint de culasse commencent. La réponse sécuritaire : arrêtez-le à la première alarme. Ne négociez pas avec la jauge de température." },
+      { question: "Mon jet témoin est constant mais mon alarme continue de sonner, qu'est-ce qui se passe?", answer: "Un jet signifie que l'eau bouge, mais cela ne prouve pas que le système de refroidissement circule pleinement à l'interne. Coupables courants : un thermostat coincé, un capteur de température défaillant, ou un blocage interne partiel. Apportez-le pour un vrai diagnostic." },
+      { question: "Devrais-je remplacer la turbine moi-même?", answer: "Sur les plus petits moteurs (moins de 30 HP), oui, c'est simple, bien documenté, et les pièces sont peu coûteuses. Sur les V6 et V8 modernes avec trim électrique, embases sensibles à l'alignement et SmartCraft, le ratio main-d'œuvre/erreur empire. Nous chargeons moins de 200 $ en main-d'œuvre sur la plupart des travaux." },
+      { question: "À quelle fréquence devrais-je rincer mon moteur?", answer: "Après chaque utilisation est la meilleure pratique. Au minimum, après tout voyage dans des herbes, du limon ou de l'eau peu profonde. Utilisez le port de rinçage sur le capot avec un boyau d'arrosage, faites tourner pendant 10 minutes au ralenti." },
+      { question: "Le carburant sans éthanol affecte-t-il la surchauffe?", answer: "Pas directement, la surchauffe est un problème du côté refroidissement, pas du côté carburant. Mais l'essence à la pompe avec éthanol stresse le reste du moteur de façons qui aggravent les problèmes." },
+      { question: "Mon bateau est sur l'eau et je panique. Que dois-je faire?", answer: "Réduisez à ralenti, vérifiez le jet témoin, coupez le moteur s'il est faible/absent, inclinez vers le haut, dégagez les prises, attendez 15 minutes, redémarrez et vérifiez le jet. Si l'alarme revient, appelez un remorqueur. **905-342-2153** si vous êtes dans notre secteur." }
+    ],
+    howToSteps: [
+      { name: 'Réduisez à ralenti', text: "Passer de pleins gaz directement à moteur arrêté peut causer ses propres dommages sur une tête motrice chaude. Descendez d'abord au ralenti. Donnez-vous 30 secondes pour réfléchir avant de décider de la prochaine étape." },
+      { name: 'Regardez le jet témoin', text: "Un jet fort et régulier signifie que l'eau de refroidissement coule; le problème peut être un capteur, un thermostat ou un blocage interne, donc continuez au ralenti vers le rivage. Un jet faible et hésitant signifie que la turbine est défaillante ou partiellement bouchée; ralenti seulement. Pas de jet, arrêtez." },
+      { name: "Coupez le moteur si l'alarme persiste ou que le jet est faible/absent", text: "Inclinez le moteur hors de l'eau. Inspectez les grilles de prise d'eau sur l'embase pour des herbes, du plastique ou des débris coincés dans les grilles. Sur le lac Rice et les Kawarthas en été, la réponse est presque toujours des herbes." },
+      { name: "Dégagez la prise à la main", text: "Retirez les herbes, sacs, fil de pêche ou sable des grilles de prise à la main. Un crochet ou un tournevis aide pour les débris tenaces." },
+      { name: "Attendez 10 à 15 minutes avant de redémarrer", text: "Laissez la tête motrice refroidir. Vérifiez le jet témoin lorsque vous le redémarrez. S'il revient plein et que l'alarme ne revient pas au ralenti, vous êtes probablement bon pour rentrer à bas régime." },
+      { name: "Si l'alarme revient, ne luttez pas", text: "Appelez un remorqueur, dérivez vers le rivage, ou pagayez s'il le faut. Faire tourner un moteur en surchauffe juste pour rentrer, c'est comment une turbine de 40 $ devient une réparation d'embase et tête motrice de 4 500 $." }
+    ],
+    howToTotalTime: 'PT15M',
+    howToTools: ["Crochet à bateau ou tournevis (dégagement de la prise)", "Boyau d'arrosage et oreilles de rinçage (diagnostic au quai)", "Trousse de turbine de rechange (optionnelle à bord)"],
+    content: `## Réponse rapide
+
+Si l'alarme de surchauffe sonne en ce moment : réduisez à ralenti, vérifiez le jet témoin (telltale), et évaluez à partir de là. Pas de jet signifie que la pompe à eau a échoué ou que la prise est bloquée, arrêtez immédiatement. Un jet fort avec une alarme peut être un problème de capteur ou de thermostat, allez au ralenti vers le rivage. En cas de doute, arrêtez. Faire tourner un moteur en surchauffe pour essayer de rentrer, c'est comment une réparation relativement petite devient un remplacement de moteur.
+
+---
+
+## Surchauffe d'un hors-bord : quoi faire maintenant et comment l'éviter
+
+Si vous lisez ceci depuis l'eau avec l'alarme qui sonne, sautez à la section d'urgence ci-dessous. Mettez-vous en sécurité, puis revenez pour le reste.
+
+Si vous lisez ceci du rivage, tant mieux. Le meilleur moment pour apprendre quoi faire quand un Mercury surchauffe, c'est avant que cela arrive.
+
+---
+
+## Sur l'eau maintenant : faites ceci dans l'ordre
+
+### Étape 1 : Réduisez à ralenti, mais ne coupez pas encore
+
+Aller des pleins gaz directement à moteur arrêté peut causer ses propres problèmes sur une tête motrice chaude. Descendez d'abord au ralenti. Cela vous donne 30 secondes pour évaluer.
+
+### Étape 2 : Vérifiez le jet témoin
+
+Le jet témoin (telltale) est le petit jet d'eau de refroidissement qui sort du capot ou de la zone de l'embase de votre moteur. C'est votre indicateur le plus immédiat.
+
+| État du jet témoin | Ce que cela signifie probablement |
+|---|---|
+| Jet fort et régulier | L'eau coule. Le problème peut être un thermostat, un capteur ou un blocage interne. Allez vers le rivage au ralenti. |
+| Faible ou hésitant | La turbine défaille ou la prise est partiellement bloquée. Ralenti seulement, n'accélérez pas. |
+| Aucun jet | La pompe à eau a échoué ou la prise est complètement bloquée. **Arrêtez maintenant.** |
+| Fort à vitesse de croisière, faible ou absent au ralenti | Turbine usée classique. |
+
+### Étape 3 : Si le jet est faible ou absent, arrêtez
+
+Inclinez le moteur hors de l'eau. Inspectez les grilles de prise d'eau de refroidissement sur l'embase. Dans les lacs ontariens, le coupable le plus courant est les herbes, un sac de plastique ou des débris coincés dans les grilles.
+
+Dégagez la prise à la main. Un crochet à bateau ou un tournevis aide.
+
+### Étape 4 : Attendez avant de redémarrer
+
+Laissez la tête motrice refroidir pendant 10 à 15 minutes avant de tenter un redémarrage. Quand vous redémarrez, surveillez le jet témoin immédiatement.
+
+### Étape 5 : Si l'alarme revient, arrêtez
+
+Ne luttez pas. Appelez un remorqueur, dérivez vers le rivage, ou utilisez une autre méthode de propulsion.
+
+---
+
+## Les quatre causes les plus courantes que nous voyons
+
+### 1. Prise d'eau de refroidissement bloquée
+
+Herbes, débris, sacs de plastique, et dans certaines eaux ontariennes, accumulation de moules zébrées peuvent bloquer les grilles de prise d'eau de refroidissement.
+
+**Prévention :** Inspectez les grilles de prise lors de la mise en service au printemps.
+
+### 2. Turbine de pompe à eau usée ou défaillante
+
+La turbine est une roue à pales en caoutchouc dans l'embase qui pousse l'eau de refroidissement vers la tête motrice. Elle s'use avec l'âge.
+
+**Symptômes :** Jet témoin faible au ralenti qui s'améliore à régime plus élevé, alarme intermittente.
+
+**Intervalle d'entretien :** Mercury recommande de remplacer la turbine de la pompe à eau tous les 2 à 3 ans ou 200 heures, selon la première éventualité.
+
+### 3. Défaillance du thermostat
+
+Le thermostat régule la température de l'eau de refroidissement à l'intérieur du moteur. Un thermostat coincé fermé piège l'eau chaude dans la tête motrice.
+
+**Symptômes de thermostat coincé fermé :** Alarme de surchauffe avec jet témoin fort.
+
+### 4. Blocage interne ou tartre dans les passages d'eau
+
+Sur les moteurs plus vieux ou ceux fonctionnant en eau dure, le tartre et les dépôts minéraux peuvent s'accumuler à l'intérieur des passages d'eau de refroidissement.
+
+---
+
+## Prévention : ce qu'il faut réellement faire
+
+**Remplacez la turbine de la pompe à eau selon le calendrier.** C'est la mesure préventive la plus efficace.
+
+**Gardez les grilles de prise d'eau de refroidissement dégagées.**
+
+**Surveillez le jet témoin chaque fois que vous faites tourner le moteur.**
+
+**N'ignorez pas un jet témoin faible.**
+
+**Planifiez un entretien régulier.**
+
+---
+
+## Quand prendre rendez-vous pour le service
+
+Après tout événement de surchauffe, même un qui s'est résolu sur l'eau, faites vérifier le moteur.
+
+Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
+
+Si vous soupçonnez un problème du système de refroidissement, prenez rendez-vous avant votre prochaine sortie : [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+## Questions fréquentes
+
+**L'alarme s'est déclenchée une fois mais le moteur semble bien maintenant. Dois-je l'apporter?**
+Oui. Un événement de surchauffe unique qui s'est résolu lui-même devrait quand même être diagnostiqué.
+
+**À quoi ressemble le jet témoin quand il est normal?**
+Un jet d'eau continu et régulier, pas hésitant ou intermittent, et perceptible à tous les régimes y compris au ralenti.
+
+**Puis-je remplacer la turbine de la pompe à eau moi-même?**
+Sur les plus petits moteurs, c'est une tâche DIY gérable.
+
+**Comment savoir si la turbine est usée sans démonter l'embase?**
+Le comportement du jet témoin est le meilleur indicateur.
+
+**La surchauffe endommage-t-elle le moteur même si je l'arrête rapidement?**
+Cela peut. Les cycles de chaleur peuvent endommager les joints de culasse.
+
+---
+
+## Liens internes
+
+- [Intervalles d'entretien Mercury](/blog/mercury-maintenance-intervals-20-100-300-rule)
+
+---
+
+## Appel à l'action
+
+**Après tout événement de surchauffe, faites-le vérifier avant la prochaine sortie.**
+Prenez rendez-vous à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire Mercury Marine certifié Platinum. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
+
+Téléphone : 905-342-2153
+`,
+  },
+  {
+    slug: 'entretien-remorque-bateau-ontario',
+    seoTitle: 'Guide d\'entretien de remorque de bateau (Ontario 2026)',
+    title: "Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)",
+    description: "Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux. Coûts de service chez HBW, défaillances courantes, et quand réparer ou remplacer.",
+    image: '/lovable-uploads/Mercury_Maintenance_Schedule.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Entretien',
+    readTime: '10 min',
+    keywords: ['entretien remorque bateau', 'roulements remorque', 'remorque bateau Ontario', 'coût service remorque', 'pneus ST', 'freins remorque bateau'],
+    relatedSlugs: [],
+    content: `## Réponse rapide
+
+**Votre remorque de bateau porte la même valeur que votre moteur et votre bateau combinés. Sautez l'entretien annuel et vous le découvrez de la pire façon au pire moment, habituellement en pleine mise à l'eau un samedi matin de mai.**
+
+- **Roulements** : regraisser annuellement OU tous les 12 000 km; remplacer au premier signe de changement de couleur de la graisse ou de jeu
+- **Freins** : rinçage annuel et inspection des plaquettes; à inertie ou électriques, les deux échouent de la même façon
+- **Pneus** : vérifier la pression à froid avant chaque sortie; remplacer tous les 5 à 6 ans même si la bande de roulement semble bonne (le caoutchouc se dégrade plus vite que la bande s'use)
+- **Lumières et câblage** : tester avant chaque sortie; les feux DEL scellés durent 10 fois plus longtemps que les ampoules standard
+- **Tasseaux et rouleaux** : tapis tous les 4 à 5 ans; les supports rouillés sont la défaillance numéro un que HBW voit
+
+---
+
+## Pourquoi la plupart des plaisanciers sautent l'entretien jusqu'à la défaillance
+
+Les remorques sont faciles à ignorer. Elles restent dans l'entrée la plupart de l'année, sont sorties deux fois pour la mise à l'eau et la sortie, et semblent correctes alors qu'elles ne le sont pas. Mais la remorque est la seule chose entre votre combo bateau-moteur de plus de 20 000 $ et l'asphalte à vitesse d'autoroute.
+
+Nous voyons trois schémas chez HBW :
+
+1. **L'épuisement du roulement.** Le propriétaire fait 3 heures de route vers un tournoi. Le moyeu chauffe, le roulement se grippe, la roue se bloque, le bateau traîne 200 mètres avant qu'il puisse arrêter.
+2. **L'affaiblissement des freins.** Les freins à inertie sur une remorque chargée n'ont pas été entretenus depuis 5 ans. En descendant une côte vers une rampe, les freins ne mordent pas. Camion et remorque glissent dans le lac.
+3. **L'éclatement de pneu.** Les pneus de remorque semblent bons mais ont été fabriqués il y a 8 ans. Les rayons UV et l'ozone ont dégradé le caoutchouc de l'intérieur. À 80 km/h sur la 401 en juillet, le pneu se déchire.
+
+Les trois sont évitables avec une inspection annuelle de 30 minutes.
+
+---
+
+## Les six choses à vérifier chaque printemps
+
+### 1. Roulements de roue (point de défaillance le plus courant)
+
+Les roulements sont des cartouches de graisse scellées qui permettent aux roues de tourner librement. Submerger des roulements chauds dans l'eau froide du lac crée un vide qui aspire l'eau dans le moyeu.
+
+**Action :**
+- Regraisser annuellement (les Bearing Buddies facilitent cela)
+- Remplacer les roulements complètement tous les 4 à 5 ans peu importe l'apparence
+- Vérifier le jeu avec la roue soulevée
+
+**Coût chez HBW :** 80 $ à 120 $ par essieu pour le regraissage, 250 $ à 350 $ pour le remplacement complet incluant les pièces.
+
+### 2. Freins (à inertie ou électriques)
+
+La plupart des remorques ontariennes sous 2 500 lb brut utilisent des freins à inertie. Les remorques plus grandes utilisent des freins électriques contrôlés depuis le véhicule remorqueur.
+
+**Action :**
+- À inertie : rincer la conduite hydraulique annuellement avec du liquide de freins de qualité marine (DOT 4 ou DOT 5)
+- Électriques : tester la force d'attraction de l'aimant annuellement; remplacer les plaquettes usées
+- Inspecter rotors et tambours pour piqûres de rouille
+
+**Coût chez HBW :** 150 $ à 250 $ pour service de freins à inertie; 200 $ à 300 $ pour service de freins électriques.
+
+### 3. Pneus et pression
+
+Les pneus de remorque de bateau (cotés ST) sont différents des pneus d'auto. Ils ont des flancs plus rigides mais se dégradent plus vite à cause des UV et de l'ozone.
+
+**Action :**
+- Vérifier la pression à froid avant chaque sortie (cible 50 à 65 PSI selon la taille)
+- Remplacer les pneus tous les 5 à 6 ans peu importe la profondeur de la bande de roulement
+- Transporter une roue de secours pleine taille
+- Vérifier le code de date DOT (les 4 derniers chiffres = semaine/année de fabrication)
+
+### 4. Lumières et câblage
+
+Les lumières de remorque échouent parce que les connecteurs corrodent et la flexion constante brise le câblage à l'intérieur.
+
+**Action :**
+- Les feux DEL scellés avec un seul connecteur durent 10 fois plus longtemps que les ampoules standard
+- Appliquer de la graisse diélectrique sur le connecteur 4 ou 7 broches chaque printemps
+- Tester chaque sortie, un testeur enfichable de 10 $ vous évite une contravention de 250 $ de l'OPP
+
+### 5. Tasseaux, rouleaux et cadre
+
+Les tasseaux (les planches recouvertes de tapis sur lesquelles repose votre coque) et les rouleaux se dégradent lentement.
+
+**Action :**
+- Remplacer le tapis sur les tasseaux tous les 4 à 5 ans
+- Les supports de tasseaux rouillés sont la défaillance numéro un que HBW voit, rincez la remorque après chaque trempette
+- Inspecter le cadre pour fissures aux points de soudure
+
+### 6. Treuil, sangles et chaînes de sécurité
+
+Les articles les moins chers sur la remorque sont habituellement les plus ignorés.
+
+**Action :**
+- Lubrifier les engrenages du treuil annuellement
+- Remplacer la sangle du treuil quand l'effilochage apparaît
+- Inspecter les chaînes de sécurité pour maillons fissurés
+
+---
+
+## Considérations spécifiques à l'Ontario
+
+### Sel de voirie
+
+L'Ontario utilise du chlorure de calcium et de sodium sur les autoroutes de novembre à avril. Même si vous ne remorquez pas pendant la saison du sel, les résidus sur la route avant votre première sortie printanière s'attaquent aux cadres en quelques mois.
+
+**Action :** Rincez la remorque à fond après les 2 à 3 premières sorties printanières.
+
+### Rampes de mise à l'eau en gravier
+
+Plusieurs rampes du lac Rice et des Kawarthas ont des routes d'accès en gravier ou en terre compactée. Le gravier entre dans les roulements et lumières plus vite que les rampes pavées.
+
+### Vitesses de l'autoroute 401
+
+La limite affichée de 100 km/h en Ontario signifie que la plupart des plaisanciers remorquent à 110+ km/h en réalité. C'est à la limite supérieure de la vitesse cotée pour la plupart des pneus de remorque ST (typiquement 105 km/h ou 65 mi/h).
+
+---
+
+## Quand apporter votre remorque chez HBW
+
+Nous entretenons les remorques que nous vendons et la plupart des grandes marques. Raisons courantes pour lesquelles les clients apportent leurs remorques :
+
+- **Regraissage annuel des roulements**, le service le plus rapide, habituellement fait pendant que vous attendez
+- **Conversion ou amélioration des freins**, à inertie vers électrique
+- **Réparation de cadre**, soudure de membrures fissurées
+- **Remplacement de tasseaux**, rafraîchissement complet
+- **Inspection avant achat**, achat d'un combo bateau-remorque usagé
+
+Réservez à [hbw.wiki/service](https://hbw.wiki/service) ou appelez (905) 342-2153.
+
+---
+
+## Quand remplacer plutôt que réparer
+
+Les cadres de remorque sont soudables. Tasseaux, rouleaux, lumières et freins sont tous des pièces remplaçables. Une remorque de 15 ans avec un cadre solide vaut habituellement la peine d'être remise à neuf.
+
+Une nouvelle remorque en aluminium de taille moyenne pour un bateau de 16 à 18 pi coûte 3 000 $ à 5 000 $ CAD en Ontario. Un rafraîchissement complet (tasseaux, roulements, freins, lumières, pneus) sur un cadre solide coûte habituellement 800 $ à 1 500 $.
+
+---
+
+*Dernière révision : 2026-05-13*
+
+Par Harris Boat Works, concessionnaire Mercury Marine certifié Platinum, marina familiale depuis 1947 sur le lac Rice.`,
+    faqs: [
+      { question: "À quelle fréquence devrais-je regraisser les roulements de remorque?", answer: "Annuellement pour les bateaux qui sont utilisés 10 fois ou plus par saison, ou tous les 12 000 km de remorquage. Si vos roulements sont submergés en eau froide après une route chaude (très courant), regraissez aussi à la fin de la saison." },
+      { question: "Les pneus de remorque sont-ils différents des pneus d'auto?", answer: "Oui. Les pneus Special Trailer (ST) ont des flancs plus rigides et des cotes de charge plus élevées pour la même taille. Ne substituez pas des pneus d'auto. Ils fléchissent trop et défaillent aux charges de remorque." },
+      { question: "Dois-je immatriculer ma remorque de bateau en Ontario?", answer: "Oui. Toutes les remorques utilisées sur les routes de l'Ontario doivent avoir un permis et une plaque d'immatriculation de ServiceOntario, peu importe la taille. Coûte environ 34 $ pour le permis plus la vignette annuelle." },
+      { question: "Combien de temps durent les tasseaux de remorque?", answer: "5 à 10 ans selon l'utilisation. Le tapis échoue habituellement en premier (UV et abrasion), suivi du bois en dessous si l'eau y entre." },
+      { question: "Quelle est la limite de vitesse pour remorquer une remorque de bateau en Ontario?", answer: "100 km/h sur la plupart des autoroutes. Les pneus de remorque ont souvent une vitesse cotée plus basse (typiquement 105 km/h / 65 mi/h). Ne forcez pas votre chance, la chaleur s'accumule rapidement aux vitesses de remorquage en été." },
+    ],
+  },
+  {
+    slug: 'guide-assurance-bateau-ontario-2026',
+    seoTitle: "Assurance bateau en Ontario : ce dont vous avez besoin (guide 2026)",
+    title: "Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)",
+    description: "Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne l'est pas, fourchettes de primes annuelles réelles par type de bateau, et pourquoi assurance et garantie prolongée couvrent des choses différentes.",
+    image: '/lovable-uploads/Boat_Repowering_101_Hero.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Assurance',
+    readTime: '9 min',
+    keywords: ['assurance bateau Ontario', 'assurance maritime', 'coût assurance bateau', 'couverture responsabilité bateaux', 'assurance bateau valeur convenue', 'assurance embarcation de plaisance'],
+    relatedSlugs: ['garantie-prolongee-mercury-platinum-ontario'],
+    content: `## Réponse rapide
+
+**L'Ontario n'exige pas légalement d'assurance bateau pour la plupart des embarcations de plaisance. Mais pour tout bateau d'une valeur supérieure à 5 000 $, ou tout bateau transportant des passagers, une couverture de base responsabilité et coque est ce que tout concessionnaire honnête recommande. Attendez-vous à payer 200 $ à 600 $ par année pour un bateau ontarien typique de 16 à 22 pi avec moteur Mercury.**
+
+- **Responsabilité** : 1 M$ à 2 M$ minimum (couvre dommages à d'autres bateaux, quais ou blessures)
+- **Coque / valeur convenue** : coût de remplacement moins dépréciation, avec avenants pour moteur et remorque
+- **La plupart des polices habitation NE couvrent PAS les bateaux de plus de 16 pi ou plus de 25 HP**, au-dessus de cela, vous avez besoin d'une police maritime
+- **Facteurs de coût** : valeur du bateau, taille du moteur, historique de réclamations, zone de navigation (lac Ontario vs lac Rice)
+
+---
+
+## L'assurance bateau est-elle légalement requise en Ontario?
+
+Réponse courte : pas pour la plupart des embarcations de plaisance. L'Ontario exige l'assurance automobile mais pas l'assurance bateau.
+
+Réponse pratique : oui, vous la voulez. Trois raisons :
+
+1. **Marinas, clubs nautiques et plusieurs installations de mise à l'eau exigent une preuve de responsabilité avant que vous puissiez accoster.** Pas d'assurance, pas de quai.
+2. **Les prêteurs l'exigent si vous avez financé votre bateau.** La plupart des prêteurs marins inscrivent l'assurance dans les conditions du prêt.
+3. **Les poursuites en responsabilité au Canada n'ont pas de plafonds.** Une blessure grave au poste de pilotage peut entraîner un règlement de plus de 500 000 $. Sans assurance, c'est une faillite personnelle.
+
+Quelques tournois de pêche ontariens et la plupart des quais de chalet exigent aussi une preuve d'assurance pour participer ou amarrer.
+
+---
+
+## Ce qui est typiquement couvert
+
+Une police maritime standard en Ontario couvre :
+
+- **Responsabilité**, dommages à d'autres bateaux, quais, postes à essence, baigneurs, skieurs nautiques. Le minimum recommandé est 1 M$; 2 M$ est plus courant.
+- **Coque (structure du bateau)**, dommages au bateau lui-même, incluant la remorque si elle est inscrite comme avenant. Les polices à "valeur convenue" paient ce qui a été convenu au début, peu importe la dépréciation.
+- **Moteur**, le hors-bord ou le moteur intérieur est habituellement couvert, mais les remotorisations à haute puissance peuvent devoir être déclarées.
+- **Effets personnels**, équipement de pêche, électronique, vestes de sauvetage rangés sur le bateau. Limité (habituellement 1 000 $ à 5 000 $).
+- **Remorquage et assistance sur l'eau**, typiquement 500 $ à 1 500 $ inclus.
+- **Responsabilité pollution**, coûts de nettoyage de carburant déversé.
+
+---
+
+## Ce qui N'est PAS couvert
+
+Exclusions courantes à lire attentivement avant de signer :
+
+- **Bris mécanique**, moteur qui se grippe à cause d'usure ou d'entretien sauté. (C'est ce que la garantie prolongée couvre, voir notre [guide de garantie prolongée Mercury](/blog/garantie-prolongee-mercury-platinum-ontario).)
+- **Défauts de fabrication**, couverts par la garantie d'usine, pas l'assurance.
+- **Course ou usage commercial**, les polices standard d'embarcations de plaisance excluent les tournois avec bourses, les nolisements et le travail commercial.
+- **Bateaux entreposés dans des conditions non sécuritaires**, l'entreposage extérieur durant l'hiver sans housse annule certaines couvertures de coque.
+- **Bateaux de plus de 25 à 30 ans**, plusieurs assureurs ne souscriront pas de coques en fibre de verre plus vieilles sans inspection maritime.
+
+---
+
+## Combien cela coûte en Ontario
+
+Fourchettes basées sur des soumissions ontariennes typiques de 2026 :
+
+| Type de bateau | Couverture | Prime annuelle |
+|---|---|---|
+| 14 à 16 pi en aluminium + 9,9 à 25 HP | 1 M$ responsabilité, coque de base | 150 $ à 280 $ |
+| 16 à 18 pi en aluminium + 40 à 90 HP | 1 M$ responsabilité, coque valeur convenue | 250 $ à 450 $ |
+| 18 à 22 pi ponton ou vedette + 90 à 150 HP | 2 M$ responsabilité, valeur convenue | 400 $ à 700 $ |
+| 22 à 26 pi croiseur ou center console + 150 à 300 HP | 2 M$ responsabilité, valeur convenue | 700 $ à 1 500 $ |
+
+Facteurs de coût :
+
+- **Valeur du bateau**, plus gros fait monter la prime
+- **Puissance du moteur**, au-dessus de 150 HP augmente la prime de façon significative
+- **Où vous naviguez**, le lac Ontario (eau libre, risque météo) coûte plus cher que les lacs intérieurs comme le lac Rice
+- **Historique de réclamations**, dossier propre obtient les meilleurs taux
+- **Expérience de l'opérateur**, la CCEP seule est le minimum
+- **Lieu d'entreposage**, les rabais pour entreposage intérieur sont réels
+
+---
+
+## Qui assure les bateaux en Ontario
+
+Nous ne vendons pas d'assurance et ne recommanderons pas de transporteurs spécifiques (cela vous regarde, vous et votre courtier). Les principaux assureurs maritimes actifs en Ontario incluent :
+
+- Aviva (large embarcations de plaisance)
+- The Cooperators
+- Northbridge
+- BoatersGuard / spécialiste maritime
+- Certains courtiers d'assurance auto (TD, RBC, Belair) offrent des avenants maritimes ou des transporteurs maritimes partenaires
+
+Un courtier d'assurance autorisé qui gère spécifiquement la couverture maritime obtiendra de meilleurs taux qu'un agent généraliste.
+
+---
+
+## Quand mettre à jour votre police
+
+Refaites évaluer votre police chaque fois que vous :
+
+- Remotorisez (changez de moteur), la nouvelle valeur du moteur doit être sur la police
+- Ajoutez une remorque, à inscrire comme avenant séparé
+- Déménagez à un lac de mise à l'eau ou marina différent, les zones de risque changent
+- Changez d'emplacement d'amarrage
+- Ajoutez de l'électronique de plus de 1 000 $, les unités Garmin, Lowrance, Humminbird se déprécient vite mais sont souvent volées
+
+Les remotorisations surtout, plusieurs clients oublient de mettre à jour leur police après un changement de moteur de plus de 15 000 $. Ne le faites pas.
+
+---
+
+## Comment l'assurance fonctionne avec la garantie prolongée Mercury
+
+L'assurance couvre les accidents, le vol, les dommages météo et la responsabilité. La garantie prolongée couvre les défaillances mécaniques et électriques dues à des défauts de matériaux ou de fabrication. Elles ne se chevauchent pas.
+
+- **Frapper un billot et endommager votre arbre d'hélice?** Assurance.
+- **L'ECU meurt à 4 ans, 200 heures?** Garantie prolongée (si vous avez acheté Platinum, voir notre [guide de garantie](/blog/garantie-prolongee-mercury-platinum-ontario)).
+- **Bateau volé dans votre entrée?** Assurance.
+- **Défaillance d'engrenages d'embase à 3 ans?** Garantie d'usine (si encore active) ou garantie prolongée.
+
+Nous recommandons les deux pour tout moteur d'une valeur de 5 000 $ et plus.
+
+---
+
+*Dernière révision : 2026-05-13*
+
+Par Harris Boat Works, concessionnaire Mercury Marine certifié Platinum, marina familiale depuis 1947 sur le lac Rice.`,
+    faqs: [
+      { question: "Ai-je besoin d'assurance pour un bateau de 9,9 HP en Ontario?", answer: "Pas légalement, mais la plupart des marinas l'exigent pour tout quai. Une petite police de base coûte 150 $ à 200 $ par année." },
+      { question: "Mon bateau est-il couvert par ma police habitation?", answer: "Peut-être, mais seulement pour les bateaux de moins de 16 pi et moins de 25 HP. Tout ce qui est plus grand a besoin d'une police maritime distincte." },
+      { question: "Quelle est la différence entre valeur convenue et valeur au comptant réelle?", answer: "La valeur convenue paie la valeur que vous et l'assureur avez convenue au début de la police, peu importe la dépréciation. La valeur au comptant réelle déprécie chaque année. La valeur convenue coûte légèrement plus mais paie correctement après une perte totale." },
+      { question: "Mon assurance couvre-t-elle le bateau pendant l'entreposage hivernal?", answer: "La plupart des polices couvrent l'entreposage à tout endroit approuvé. L'entreposage extérieur sans housse appropriée peut avoir une couverture réduite, vérifiez le libellé." },
+      { question: "Puis-je assurer mon bateau via Mercury ou HBW?", answer: "Non. L'assurance est vendue par des courtiers autorisés. Nous pouvons recommander de trouver un courtier spécialiste maritime, mais nous n'écrivons pas de polices." },
+    ],
+  },
+  {
+    slug: 'garantie-prolongee-mercury-platinum-ontario',
+    seoTitle: 'Garantie prolongée Mercury Platinum (Ontario 2026)',
+    title: "Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent",
+    description: "Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les défaillances mécaniques ET électriques. Vrais prix CAD par HP. Les clients HBW obtiennent 10 % de rabais.",
+    image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Garantie',
+    readTime: '12 min',
+    keywords: ['garantie prolongée Mercury', 'Mercury Product Protection', 'garantie Platinum', 'garantie Mercury Ontario', 'garantie moteur prolongée', 'couverture Mercury Platinum'],
+    relatedSlugs: ['prix-remotorisation-mercury-ontario'],
+    content: `## Réponse rapide
+
+**Mercury Product Protection (Platinum) prolonge votre garantie d'usine jusqu'à 8 ans au total, couvrant les défaillances mécaniques ET électriques, incluant l'ECU, les capteurs, l'alternateur, le câblage, les jauges et les commandes. HBW vend exclusivement Platinum parce que l'exclusion électrique sur Gold est l'endroit où les moteurs Mercury modernes échouent le plus chèrement. 10 % de rabais sur la garantie prolongée Platinum pour les clients ayant acheté leur moteur chez Harris Boat Works.**
+
+- **Couvre ce que votre garantie d'usine couvre, pendant des années de plus**, jusqu'à 8 ans au total (3 ans d'usine + 5 ans prolongé)
+- **Inclut l'électrique** (Gold ne le fait pas), alternateur, ECU, capteurs, faisceau, accessoires
+- **Transférable** au prochain propriétaire, ajoute de la valeur à la revente
+- **Honoré chez plus de 3 600 concessionnaires Mercury** aux États-Unis et au Canada
+- **Exclusivité HBW** : 10 % de rabais sur Platinum pour les clients ayant acheté leur moteur chez HBW
+
+[Obtenez une soumission sur /warranty](https://www.harrisboatworks.ca/warranty), tarification CAD transparente par HP et durée.
+
+---
+
+## Ce qu'est Mercury Product Protection
+
+Votre nouveau Mercury vient avec une garantie limitée d'usine de 3 ans contre les défauts de matériaux et de fabrication. Cela vous couvre pour les 3 premières années. Mercury Product Protection est le contrat de service prolongé soutenu par l'usine qui prend le relais quand la garantie limitée se termine.
+
+Ce n'est pas une police d'assurance tierce. Ce n'est pas un ajout après-vente. Elle est administrée à 100 % par Mercury Marine, en utilisant des pièces Mercury et Quicksilver authentiques, effectuée par des concessionnaires Mercury autorisés, mêmes normes d'usine que votre garantie d'origine.
+
+Deux niveaux existent : **Gold** (défaillances mécaniques seulement) et **Platinum** (mécaniques + électriques + accessoires). HBW vend Platinum exclusivement. Voici pourquoi :
+
+**Sur les hors-bord Mercury modernes (2017+), la plupart des défaillances coûteuses sont électriques.** Remplacement d'ECU sur un Pro XS V6 : 2 500 $ à 3 500 $ en pièces avant la main-d'œuvre. Cascade de défaillances de capteurs SmartCraft : 1 200 $ et plus. Alternateur et régulateur de tension sur un Verado : 1 800 $ et plus. Gold ne couvre rien de cela. Platinum oui.
+
+Pour la différence de prix entre les deux niveaux (typiquement 200 $ à 400 $ à travers la plupart des plages de HP), Platinum est le choix évident.
+
+---
+
+## Ce que Platinum couvre réellement
+
+**Composants internes du moteur (mécaniques) :**
+- Bloc cylindre, culasse, vilebrequin, arbre à cames
+- Pistons, segments, axes de piston, bielles
+- Soupapes, train de soupapes, poussoirs, culbuteurs
+- Composants de distribution (chaînes, engrenages, couvercle)
+- Pompe à huile, carter, amortisseur harmonique
+- Collecteurs d'admission et d'échappement
+
+**Embase / boîte de vitesses :**
+- Roulements, arbre d'entraînement, arbre d'hélice, engrenages
+- Porte-roulement, composants internes de changement de vitesse
+
+**Trim et direction assistée :**
+- Cylindres de trim, moteur de trim, capteur de position de trim
+- Pompe de direction assistée, cylindre, composants JPO/JPS
+
+**Système d'alimentation :**
+- Pompe à carburant, pompe d'injection, injecteurs carburant/air
+- Compresseur d'air (Verado), pare-flammes
+
+**Électrique (l'exclusion Gold) :**
+- Modules ECU, ETC, EBC, CDM
+- Alternateur, redresseur, régulateur de tension
+- Capteurs, interrupteurs, limiteur de RPM
+- Faisceau de câblage, boîtes d'interrupteurs
+- Démarreur, bobines d'allumage, stator
+- Klaxons et modules d'avertissement
+
+**Accessoires (l'exclusion Gold) :**
+- Jauges SmartCraft et VesselView
+- Câbles d'accélération/changement de vitesse, poignées de barre franche
+- Commandes à distance, commandes joystick
+- Jauges analogiques, interrupteurs
+- Interrupteur d'arrêt d'urgence
+- Faisceau de câblage pour accessoires
+
+**Avantages supplémentaires :**
+- Allocation de remorquage sur l'eau de 200 $ par réclamation
+- Allocation de levage/sortie de 200 $ par réclamation (bateaux de 26 pi et plus)
+- Franchise de 50 $ par réclamation
+- Garantie de satisfaction de 30 jours à partir de l'achat
+
+**Ce qui N'est PAS couvert :**
+- Hélices (pièce d'usure)
+- Articles d'entretien régulier (huile, filtres, bougies, turbines, anodes)
+- Dommages d'accident, abus, course ou usage non récréatif
+- Moteurs usagés importés de l'extérieur des États-Unis/Canada
+
+---
+
+## Admissibilité, quand vous pouvez l'acheter
+
+Pour vous inscrire à Mercury Product Protection :
+
+1. **Doit être acheté avant l'expiration de la garantie d'usine.** Une fois inscrit, la couverture commence le jour où la garantie d'usine se termine.
+2. **Le moteur doit être de l'année modèle courante ou des 4 années modèles précédentes.** Un moteur 2026 : couvert. Un moteur 2021 : couvert. Un moteur 2020 : non admissible.
+3. **Moins de 500 heures moteur au moment de l'achat.**
+4. **Usage récréatif seulement.** Nolisement, pêche commerciale, gouvernemental ou usage lié au travail est exclu.
+5. **Doit être un moteur acheté aux États-Unis ou au Canada.** Les importations de l'extérieur de l'Amérique du Nord ne se qualifient pas.
+
+Nous vérifions l'admissibilité à l'aide du modèle et du numéro de série de votre moteur. Cela prend environ 10 minutes, fournissez-les via le formulaire à [harrisboatworks.ca/warranty](https://www.harrisboatworks.ca/warranty).
+
+---
+
+## Vrais prix CAD (HBW)
+
+| Gamme produit (HP) | 1 an | 2 ans | 3 ans | 4 ans | 5 ans |
+|---|---|---|---|---|---|
+| 2,5 à 14,9 | 76 $ | 137 $ | 194 $ | 247 $ | 293 $ |
+| 15 à 39,9 | 178 $ | 319 $ | 454 $ | 576 $ | 684 $ |
+| 40 à 74,9 | 355 $ | 639 $ | 904 $ | 1 149 $ | 1 365 $ |
+| 75 à 149,9 | 539 $ | 971 $ | 1 376 $ | 1 748 $ | 2 077 $ |
+| 150 à 199,9 | 753 $ | 1 357 $ | 1 921 $ | 2 442 $ | 2 900 $ |
+| 200 à 299,9 | 1 809 $ | 3 256 $ | 4 612 $ | 5 861 $ | 6 964 $ |
+| 300 à 399,9 | 2 580 $ | 4 644 $ | 6 579 $ | 8 358 $ | 9 932 $ |
+| 400 | 3 593 $ | 6 468 $ | 9 162 $ | 11 642 $ | 13 833 $ |
+| 425 | 3 760 $ | 6 770 $ | 9 589 $ | 12 183 $ | 14 478 $ |
+| 500 | 4 870 $ | 8 766 $ | 12 417 $ | 15 777 $ | 18 748 $ |
+| 600 | 5 836 $ | 10 504 $ | 14 881 $ | 18 908 $ | 22 469 $ |
+
+Taxes et frais d'enregistrement en sus. Tarification finale confirmée à l'enregistrement avec Mercury.
+
+**Exclusivité HBW** : 10 % de rabais sur la garantie prolongée Platinum pour les clients ayant acheté leur moteur chez Harris Boat Works.
+
+---
+
+## Quand Platinum a un sens financier
+
+Le calcul honnête :
+
+**Achetez-le si :**
+- Vous prévoyez garder le moteur 5 ans ou plus
+- Le moteur est de 150 HP ou plus (les défaillances électriques deviennent coûteuses rapidement)
+- Vous voulez un coût de propriété prévisible (pas de factures surprises de 2 500 $ à 5 000 $)
+- Vous prévoyez vendre le bateau dans la fenêtre de couverture (la transférabilité ajoute de la valeur à la revente)
+- Vous naviguez dans des zones éloignées où l'allocation de remorquage sur l'eau compte
+
+**Sautez-le si :**
+- Vous prévoyez revendre le bateau dans 12 à 24 mois
+- Le moteur est de moins de 25 HP (pièces peu coûteuses, moins à défaillir)
+- Vous êtes un usager commercial ou de nolisement (vous n'êtes pas admissible de toute façon)
+
+Pour les plaisanciers ontariens qui prévoient garder leur moteur 5 ans ou plus, Platinum se rentabilise presque toujours si même un composant majeur défaille pendant la période de couverture.
+
+---
+
+## Transférabilité et valeur de revente
+
+La couverture Platinum est transférable à un acheteur subséquent à usage récréatif dans les 30 jours de la vente. Cela compte à la revente.
+
+Un Mercury 150 HP de 5 ans avec couverture Platinum active jusqu'à l'année 8 se vend pour 10 à 15 % de plus que le même moteur sans couverture. L'acheteur sait qu'il a une protection d'usine pour les 3 prochaines années.
+
+---
+
+## Ce qui se passe quand vous faites une réclamation
+
+Vous ne traitez pas directement avec Mercury. Vous apportez le bateau à n'importe quel concessionnaire Mercury autorisé (plus de 3 600 à travers l'Amérique du Nord). Ils diagnostiquent, contactent Mercury pour approbation, et effectuent la réparation à l'aide de pièces Mercury authentiques. Vous payez la franchise de 50 $. Mercury couvre le reste.
+
+Si vous avez acheté la garantie chez HBW mais que vous êtes en panne dans une marina près du parc Algonquin, vous pouvez faire faire le travail par n'importe quel concessionnaire Mercury autorisé là-bas.
+
+---
+
+## Comment obtenir une soumission
+
+Visitez [harrisboatworks.ca/warranty](https://www.harrisboatworks.ca/warranty), remplissez le modèle et le numéro de série de votre moteur, choisissez votre durée préférée. Nous confirmons l'admissibilité dans 1 à 2 jours ouvrables et vous envoyons la soumission finale.
+
+Clients HBW (moteur acheté chez nous), mentionnez-le dans le champ notes et nous appliquons automatiquement le rabais de 10 %.
+
+---
+
+*Dernière révision : 2026-05-13*
+
+Par Harris Boat Works, concessionnaire Mercury Marine certifié Platinum, marina familiale depuis 1947 sur le lac Rice.`,
+    faqs: [
+      { question: "Quelle est la différence entre les couvertures Mercury Gold et Platinum?", answer: "Gold couvre seulement les défaillances mécaniques. Platinum ajoute la couverture électrique et accessoires (ECU, capteurs, alternateur, câblage, jauges, commandes). Sur les hors-bord Mercury modernes où la plupart des défaillances coûteuses sont électriques, Platinum est le bon choix. HBW vend exclusivement Platinum." },
+      { question: "Quand dois-je acheter Mercury Product Protection?", answer: "Avant l'expiration de votre garantie d'usine de 3 ans. Une fois inscrit, la couverture prolongée prend le relais le jour où la garantie d'usine se termine. Mercury permet l'inscription dans les 4 années modèles du moteur." },
+      { question: "Mercury Product Protection est-elle transférable quand je vends mon bateau?", answer: "Oui. Transférable à un acheteur subséquent à usage récréatif dans les 30 jours de la vente. Ajoute 10 à 15 % à la valeur de revente parce que le nouveau propriétaire hérite de la protection d'usine continue." },
+      { question: "Quelle est la franchise?", answer: "50 $ par réclamation." },
+      { question: "Mercury Product Protection couvre-t-elle l'entretien régulier?", answer: "Non. Vidanges d'huile, turbines, bougies, anodes, usure d'hélice, ce sont des articles d'entretien, pas des articles de garantie. Vous les gérez normalement." },
+      { question: "J'ai acheté mon moteur chez HBW. Comment obtenir le rabais de 10 %?", answer: "Mentionnez-le dans le champ notes du formulaire de soumission à /warranty. Nous vérifions l'achat original dans nos dossiers et appliquons le rabais avant d'envoyer la soumission finale." },
+    ],
+  },
+  {
+    slug: 'gamme-mercury-hors-bord-2026-ontario',
+    title: "Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens",
+    description: "La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la croisière, la pêche et l'usage familial. Pro XS (115 à 300 HP) pour la pêche de performance. SeaPro (25 à 300 HP) pour usage commercial. Verado (250 à 600+ HP) pour le large (commande spéciale chez HBW). Avator pour l'électrique.",
+    image: '/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: "Guide d'achat",
+    readTime: '10 min',
+    keywords: ['gamme Mercury 2026', 'modèles hors-bord Mercury', 'Mercury FourStroke 2026', 'Mercury Verado V10', 'hors-bord électrique Avator', 'hors-bord Mercury Ontario', 'concessionnaire Mercury Ontario'],
+    content: `# Gamme de hors-bord Mercury 2026 : ce que les plaisanciers ontariens doivent vraiment savoir
+
+## Réponse rapide
+
+La gamme Mercury 2026 couvre quatre familles principales : FourStroke (2,5 à 300 HP) pour l'usage quotidien en Ontario, Pro XS pour la pêche de performance, SeaPro pour usage commercial, et Verado pour les applications haut de gamme en haute mer. Pour la plupart des bateaux du lac Rice et des Kawarthas, la réponse se trouve dans la plage FourStroke 40 à 150 HP. Bâtissez une soumission CAD en direct à [mercuryrepower.ca](https://mercuryrepower.ca).
+
+## Pourquoi nous écrivons ceci
+
+Nous sommes un concessionnaire Mercury. Nous le sommes depuis 1965. Voici une analyse honnête de concessionnaire de la gamme Mercury, pas un dépotoir de fiches techniques, mais la réponse pratique à "quel Mercury convient à mon bateau?"
+
+Nous vendons toutes les familles de la gamme ci-dessous (Verado est en commande spéciale seulement).
+
+## Découpage des familles Mercury
+
+### FourStroke, le moteur ontarien de tous les jours
+
+Plage HP : 2,5 à 300 HP
+
+Pour qui : Plaisanciers récréatifs. Bateaux de pêche, pontons familiaux, vedettes, bateaux de chalet.
+
+La gamme FourStroke est le best-seller de Mercury en volume en Ontario parce qu'elle couvre toute la plage d'usage récréatif. Un 2,5 HP à barre franche pour un bateau sur le toit. Un 9,9 pour un kicker. Un 25 pour un bateau d'aluminium léger. Un 40, 60 ou 75 pour des configurations de pêche moyennes. Un 90, 115 ou 150 pour des bateaux d'aluminium ou de fibre de verre plus grands. Un 200 ou 250 pour des center consoles. Jusqu'à 300 HP pour les applications en grande eau.
+
+**FourStroke Command Thrust** mérite une mention spécifique pour les plaisanciers ontariens. Disponible sur le 115 HP et plus, conçu pour les charges de couple plus élevées que les pontons et coques plus lourdes imposent à l'embase. Si vous remotorisez un ponton, demandez spécifiquement Command Thrust.
+
+Ce que FourStroke fait bien : efficacité énergétique en croisière, ralenti doux, fonctionnement silencieux, démarrage à froid facile, longs intervalles d'entretien.
+
+Ce que FourStroke n'est pas : rapide à sortir du trou.
+
+### Pro XS, pêche de performance et applications de vitesse
+
+Pour qui : pêcheurs de bass, compétiteurs de tournois de doré, quiconque veut atteindre l'autre bout du lac le plus vite possible.
+
+Pro XS est calibré pour la performance. Hole-shot plus rapide, plafond de RPM plus élevé, accélération plus forte que le FourStroke équivalent en HP. Dans le monde de la pêche de tournoi en Ontario, Pro XS est la norme.
+
+### SeaPro, usage commercial
+
+Pour qui : opérateurs commerciaux. Guides de pêche, taxis nautiques, bateaux à appâts, embarcations municipales, flottes de location.
+
+Le SeaPro est calibré pour un usage soutenu lourd : couple maximal à plus bas régime, embases robustes, et composants conçus pour de longues heures sous charge.
+
+### Verado, haut de gamme à haute puissance pour le large
+
+Pour qui : grands center consoles offshore. Installations jumelées/triples sur de plus gros bateaux. Acheteurs qui veulent un raffinement maximal, isolation phonique et puissance pour eau libre ou conditions des Grands Lacs.
+
+Presque aucun plaisancier d'eau douce ontarien sur un lac intérieur typique n'a besoin d'un Verado. Si vous exploitez un bateau de pêche de 20 pi sur le lac Rice, un FourStroke 150 ou 200 est le meilleur choix. Nous offrons Verado en commande spéciale.
+
+### Avator, électrique (en émergence)
+
+La gamme électrique Mercury Avator couvre les applications portatives plus petites et de moyenne portée. Pour la plupart de la pêche et de la plaisance familiale en Ontario, un FourStroke à essence reste le choix pratique. L'autonomie de la batterie et l'infrastructure de recharge ne sont pas encore là pour un usage de remplacement complet.
+
+## Faire correspondre le moteur au cas d'usage ontarien
+
+| Cas d'usage | Famille de moteur | Plage HP |
+|---|---|---|
+| Bateau de pêche en aluminium léger, 14 à 16 pi | FourStroke | 25 à 60 HP |
+| Bateau de pêche/famille moyen, 16 à 18 pi | FourStroke | 60 à 115 HP |
+| Bateau de pêche ou famille plus grand, 18 à 20 pi | FourStroke | 115 à 150 HP |
+| Ponton, 22 à 24 pi | FourStroke Command Thrust | 115 à 150 HP |
+| Bass boat de tournoi | Pro XS | 200 à 250 HP |
+| Center console, grande eau ontarienne | FourStroke ou Verado | 200 à 300+ HP |
+| Guide commercial ou location | SeaPro | Selon la cote de la coque |
+| Kicker de bateau sur le toit | FourStroke | 9,9 à 15 HP |
+| Kicker dédié à la traîne | FourStroke ProKicker | 9,9 HP |
+
+Ce tableau est un point de départ, pas une prescription. Le bon HP pour votre coque spécifique dépend de la plaque de capacité, de la charge totale et de l'usage prévu.
+
+## Comment bâtir votre soumission
+
+Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soumissionné individuellement) à [mercuryrepower.ca](https://mercuryrepower.ca). Le configurateur de soumission inclut moteur, gréement, commandes, hélice et installation, le chiffre complet, pas seulement l'autocollant du moteur.
+
+Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous avez besoin d'aide pour le dimensionnement de ponton et la configuration Command Thrust, appelez 905-342-2153.
+
+*Dernière révision : 2026-05-13.*
+`,
+    faqs: [
+      { question: "Quel est le meilleur moteur Mercury pour un bateau de pêche sur le lac Rice?", answer: "Pour la plupart des bateaux de pêche de 14 à 18 pi sur le lac Rice, un Mercury FourStroke dans la plage 40 à 115 HP est le bon choix. Ajouter un ProKicker 9,9 HP dédié à la traîne est une configuration populaire." },
+      { question: "Quelle est la différence entre Mercury FourStroke et Mercury Pro XS?", answer: "FourStroke est calibré pour l'efficacité, la croisière douce et la polyvalence. Pro XS est calibré pour la performance : hole-shot plus rapide, plafond de RPM plus élevé, accélération plus forte. Pour la plupart des usages de chalet et de pêche occasionnelle en Ontario, FourStroke est le meilleur choix tout-usage." },
+      { question: "Le Mercury Verado est-il pertinent pour la navigation intérieure ontarienne?", answer: "Pour la plupart des lacs intérieurs ontariens (lac Rice, Kawarthas, lac Simcoe), non. Verado est conçu pour les applications offshore. Pour les bateaux de pêche et familiaux intérieurs typiques, un FourStroke jusqu'à 300 HP fait le travail." },
+      { question: "Quels moteurs Mercury Harris Boat Works tient-il en stock pour 2026?", answer: "Nous tenons en stock et commandons toute la gamme FourStroke, les moteurs de performance Pro XS, les moteurs commerciaux SeaPro, et les hors-bord électriques Mercury Avator. Verado est en commande spéciale seulement." },
+      { question: "Quel est le meilleur hors-bord Mercury pour la pêche du doré à la traîne sur le lac Rice?", answer: "Un moteur principal dans la plage FourStroke 60 à 115 HP jumelé à un Mercury ProKicker 9,9 HP dédié. Le ProKicker est conçu spécifiquement pour la traîne à bas régime." },
+      { question: "Comment choisir le bon Mercury pour mon bateau ontarien?", answer: "Commencez avec le HP maximum de la plaque de capacité de votre coque. Puis considérez votre usage principal. Pour la plupart des bateaux de pêche et familiaux ontariens, la réponse se trouve dans la plage FourStroke 60 à 115 HP." },
+    ],
+  },
 ];
 
 export function getFrenchArticleBySlug(slug: string): BlogArticle | undefined {
