@@ -1940,11 +1940,19 @@ function blogArticleSchema(article) {
   return { "@context": "https://schema.org", "@graph": graph };
 }
 
+function stripVisualDirectiveBlocks(text) {
+  return String(text || '')
+    .replace(/^:::[a-zA-Z0-9_-]+[\s\S]*?^:::\s*$/gm, ' ')
+    .replace(/^::[a-zA-Z0-9_-]+[\s\S]*?^::\s*$/gm, ' ')
+    .replace(/:::[a-zA-Z0-9_-]+[\s\S]*?:::(?=\s|$)/g, ' ')
+    .replace(/::[a-zA-Z0-9_-]+\s+[\s\S]*?\s+::(?=\s|$|[^a-zA-Z0-9_-])/g, ' ');
+}
+
 // Extract first ~280 chars of plain text from blog content for noscript intro.
 function firstParagraph(content, fallback) {
   if (!content) return sanitizeSchemaText(fallback);
   // Drop leading H1 heading line so it doesn't duplicate the rendered <h1>.
-  const withoutH1 = String(content).replace(/^\s*#\s+.+(?:\r?\n|$)/, '');
+  const withoutH1 = stripVisualDirectiveBlocks(String(content).replace(/^\s*#\s+.+(?:\r?\n|$)/, ''));
   const stripped = withoutH1
     .replace(/```[\s\S]*?```/g, ' ')
     .replace(/<[^>]*>/g, ' ')
