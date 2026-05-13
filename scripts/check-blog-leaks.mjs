@@ -19,7 +19,10 @@ const LEAK_PATTERNS = [
   { pattern: /\bTODO:/i, name: 'TODO leak' },
 ];
 
-const FILES = await glob('src/data/{blog,mandarin,korean,french,spanish}BlogArticles.ts');
+const FILES = [
+  ...(await glob('src/data/blogArticles.ts')),
+  ...(await glob('src/data/{mandarin,korean,french,spanish}BlogArticles.ts')),
+];
 
 const errors = [];
 for (const file of FILES) {
