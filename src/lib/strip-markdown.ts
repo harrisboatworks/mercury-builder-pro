@@ -22,6 +22,10 @@ export function stripMarkdown(input: string): string {
   out = out.replace(/^:::[a-zA-Z0-9_-]+[\s\S]*?^:::\s*$/gm, ' ');
   // Strip double-colon directive blocks (e.g. ::decision-card ... ::)
   out = out.replace(/^::[a-zA-Z0-9_-]+[\s\S]*?^::\s*$/gm, ' ');
+  // Inline-tolerant fallback: catches directives whose newlines were already
+  // collapsed (e.g. by the \n unescape above, or upstream flatteners).
+  out = out.replace(/:::[a-zA-Z0-9_-]+[\s\S]*?:::(?=\s|$)/g, ' ');
+  out = out.replace(/::[a-zA-Z0-9_-]+\s+[\s\S]*?\s+::(?=\s|$|[^a-zA-Z0-9_-])/g, ' ');
 
   // Strip fenced code blocks
   out = out.replace(/```[\s\S]*?```/g, ' ');
