@@ -154,13 +154,13 @@ export function BlogSEO({ article }: BlogSEOProps) {
 
   return (
     <Helmet>
-      <title>{article.title}</title>
+      <title>{article.seoTitle ?? article.title}</title>
       <meta name="description" content={cleanDescription} />
       <meta name="keywords" content={article.keywords.join(", ")} />
       <link rel="canonical" href={url} />
       
       {/* Open Graph */}
-      <meta property="og:title" content={article.title} />
+      <meta property="og:title" content={article.seoTitle ?? article.title} />
       <meta property="og:description" content={cleanDescription} />
       <meta property="og:image" content={`${SITE_URL}${article.image}`} />
       <meta property="og:url" content={url} />
@@ -172,7 +172,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={article.title} />
+      <meta name="twitter:title" content={article.seoTitle ?? article.title} />
       <meta name="twitter:description" content={cleanDescription} />
       <meta name="twitter:image" content={`${SITE_URL}${article.image}`} />
       
