@@ -105,7 +105,7 @@ export function MobileQuoteCTA({ triggerCardCount = 2, onStartQuote }: MobileQuo
           <button
             onClick={() => setDismissed(true)}
             className="absolute -top-2 -right-1 w-7 h-7 flex items-center justify-center 
-              rounded-full bg-white/90 shadow-sm text-gray-400 text-xs
+              rounded-full bg-white/90 shadow-sm text-muted-foreground text-xs
               active:bg-gray-100 transition-colors"
             aria-label="Dismiss"
           >

@@ -146,7 +146,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-white dark:bg-gray-950 rounded-t-lg">
           <div className="flex items-center space-x-2">
-            <HelpCircle className="w-5 h-5 text-gray-400" />
+            <HelpCircle className="w-5 h-5 text-muted-foreground" />
             <h3 className="font-normal text-gray-600 dark:text-gray-300">Harris Support</h3>
           </div>
           <div className="flex items-center space-x-2">
@@ -154,7 +154,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMinimized(!isMinimized)}
-              className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0 hidden sm:flex"
+              className="text-muted-foreground hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0 hidden sm:flex"
             >
               <Minimize2 className="w-4 h-4" />
             </Button>
@@ -162,7 +162,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(false)}
-              className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0"
+              className="text-muted-foreground hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0"
             >
               <X className="w-4 h-4" />
             </Button>
@@ -203,7 +203,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
                   onChange={(e) => setInputText(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask us anything..."
-                  className="flex-1 px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300 text-sm font-normal placeholder:text-gray-400"
+                  className="flex-1 px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300 text-sm font-normal placeholder:text-muted-foreground"
                   disabled={isLoading}
                 />
                 <Button

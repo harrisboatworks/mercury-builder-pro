@@ -452,7 +452,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
               ? 'text-amber-500'
               : isDark
                 ? (isFocused ? 'text-[#F5F1EA]' : 'text-[#F5F1EA]/50')
-                : 'text-gray-400'}
+                : 'text-muted-foreground'}
           `}
         >
           {isAIQuery ? (
@@ -523,7 +523,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
               <kbd className={`px-2 py-1 text-xs font-mono rounded shadow-sm ${isDark ? 'bg-[#F5F1EA]/5 border border-[#F5F1EA]/15 text-[#F5F1EA]/60' : 'bg-gray-100 border border-gray-200 text-gray-500'}`}>
                 /
               </kbd>
-              <span className={`text-xs font-light ${isDark ? 'text-[#F5F1EA]/50' : 'text-gray-400'}`}>to search</span>
+              <span className={`text-xs font-light ${isDark ? 'text-[#F5F1EA]/50' : 'text-muted-foreground'}`}>to search</span>
             </motion.div>
           )}
         </AnimatePresence>
@@ -547,7 +547,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
         {query && (
           <button
             onClick={handleClear}
-            className={`absolute ${filterSlot ? 'right-14' : 'right-4'} top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 transition-colors`}
+            className={`absolute ${filterSlot ? 'right-14' : 'right-4'} top-1/2 -translate-y-1/2 p-1 text-muted-foreground hover:text-gray-600 transition-colors`}
           >
             <X className="w-5 h-5" />
           </button>
@@ -663,7 +663,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                               className="w-full h-full object-cover" 
                             />
                           ) : (
-                            <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                            <div className="w-full h-full flex items-center justify-center text-muted-foreground text-xs">
                               {motor.hp}HP
                             </div>
                           )}
@@ -703,7 +703,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     onClick={clearRecentSearches}
-                    className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                    className="text-xs text-muted-foreground hover:text-gray-600 transition-colors"
                   >
                     Clear
                   </motion.button>
@@ -718,7 +718,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                       onClick={() => handleRecentSearchClick(search)}
                       className="w-full text-left px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md transition-colors flex items-center gap-2"
                     >
-                      <History className="w-4 h-4 text-gray-400" />
+                      <History className="w-4 h-4 text-muted-foreground" />
                       <span className="truncate">{search}</span>
                     </motion.button>
                   ))}

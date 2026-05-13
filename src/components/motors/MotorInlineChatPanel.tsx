@@ -127,7 +127,7 @@ const RotatingPromptSection = ({
         transition={{ duration: 0.25 }}
         className="pt-2"
       >
-        <p className="text-[10px] text-gray-400 mb-2 uppercase tracking-wide px-1">Common Questions</p>
+        <p className="text-[10px] text-muted-foreground mb-2 uppercase tracking-wide px-1">Common Questions</p>
         <div className="flex flex-wrap gap-1.5">
           {prompts.map((prompt, idx) => (
             <motion.button
@@ -369,7 +369,7 @@ export function MotorInlineChatPanel({
         </button>
         <button
           onClick={handleStartFresh}
-          className="p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full hover:bg-gray-100"
+          className="p-2 text-muted-foreground hover:text-gray-600 transition-colors rounded-full hover:bg-gray-100"
           title="Start fresh conversation"
         >
           <RefreshCw className="w-4 h-4" />
@@ -470,7 +470,7 @@ export function MotorInlineChatPanel({
             <button
               onClick={() => handleSend()}
               disabled={!inputText.trim() || isLoading}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-muted-foreground hover:text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <Send className="w-4 h-4" />
             </button>

@@ -370,7 +370,7 @@ export default function MotorDetailsPremiumModal({
                   
                   <button 
                     onClick={onClose} 
-                    className="p-2 text-gray-400 hover:text-gray-700 transition-colors active:scale-95 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full hover:bg-gray-100" 
+                    className="p-2 text-muted-foreground hover:text-gray-700 transition-colors active:scale-95 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full hover:bg-gray-100" 
                     aria-label="Close"
                   >
                     <X className="w-5 h-5" />
@@ -386,7 +386,7 @@ export default function MotorDetailsPremiumModal({
                     <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
                   </div>
                   {motor?.model_number && (
-                    <p className="text-xs font-mono text-gray-400 mb-1">{motor.model_number}</p>
+                    <p className="text-xs font-mono text-muted-foreground mb-1">{motor.model_number}</p>
                   )}
                   {motor && <StockStatusIndicator motor={motor} />}
                 </div>
@@ -715,7 +715,7 @@ export default function MotorDetailsPremiumModal({
                               </div>
                             ))}
                           </div>
-                          <p className="text-xs text-gray-400 mt-2 italic">
+                          <p className="text-xs text-muted-foreground mt-2 italic">
                             Understanding the model code helps you identify exactly what features this motor includes.
                           </p>
                         </div>
@@ -928,14 +928,14 @@ export default function MotorDetailsPremiumModal({
                   
                   {/* Price Display */}
                   <div className="border-t border-gray-100 pt-6">
-                    <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-light mb-2">
+                    <p className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-light mb-2">
                       from
                     </p>
                     {(() => {
                       const dp = getDisplayPrices(msrp, price);
                       return <>
                         {dp.showMsrp && dp.displayMsrp && (
-                          <p className="text-base text-gray-400 font-normal line-through">
+                          <p className="text-base text-muted-foreground font-normal line-through">
                             {money(dp.displayMsrp)}
                           </p>
                         )}
@@ -1100,7 +1100,7 @@ export default function MotorDetailsPremiumModal({
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
-                className="lg:hidden fixed bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-400 pointer-events-none z-50"
+                className="lg:hidden fixed bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted-foreground pointer-events-none z-50"
               >
                 <span className="text-xs font-normal bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">Swipe up for more</span>
                 <ChevronDown className="w-4 h-4 animate-bounce" />

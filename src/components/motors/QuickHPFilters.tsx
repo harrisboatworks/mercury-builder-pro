@@ -62,7 +62,7 @@ export function QuickHPFilters({ motors, activeFilter, onFilterChange, className
                 ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg shadow-gray-900/25 scale-[1.02]' 
                 : hasStock
                   ? 'bg-white text-gray-600 border border-gray-200 hover:border-gray-400 hover:shadow-lg hover:shadow-gray-200/50 hover:scale-[1.03] hover:-translate-y-0.5'
-                  : 'bg-gray-50 text-gray-300 border border-gray-100 cursor-not-allowed opacity-60'
+                  : 'bg-gray-50 text-muted-foreground border border-gray-100 cursor-not-allowed opacity-60'
             )}
           >
             <span className="relative z-10">
@@ -76,7 +76,7 @@ export function QuickHPFilters({ motors, activeFilter, onFilterChange, className
                   ? 'bg-white/20 text-white'
                   : hasStock
                     ? 'bg-gray-100 text-gray-500'
-                    : 'bg-transparent text-gray-300'
+                    : 'bg-transparent text-muted-foreground'
               )}
             >
               {count}
