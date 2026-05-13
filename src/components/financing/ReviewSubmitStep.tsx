@@ -74,6 +74,66 @@ export function ReviewSubmitStep() {
 
       // Get current user
       const { data: { user } } = await supabase.auth.getUser();
+      const userId = user?.id ?? null;
+
+      // Encrypt SINs first so we can surface specific errors before the DB upsert
+      let applicantSinEncrypted: string;
+      try {
+        applicantSinEncrypted = await encryptSIN(validated.applicant.sin);
+        await logFinancingSubmission({
+          stage: 'encrypt_applicant_sin',
+          outcome: 'success',
+          applicationId: state.applicationId,
+          userId,
+        });
+      } catch (e) {
+        const sinErr = e as SinEncryptionError;
+        await logFinancingSubmission({
+          stage: 'encrypt_applicant_sin',
+          outcome: 'failure',
+          applicationId: state.applicationId,
+          userId,
+          errorCode: sinErr.code || 'unknown',
+          errorMessage: sinErr.message,
+          metadata: { pgCode: sinErr.pgCode, hint: sinErr.hint },
+        });
+        const friendly = getFriendlySinErrorMessage(sinErr.code);
+        toast({ title: friendly.title, description: friendly.description, variant: 'destructive' });
+        setIsSubmitting(false);
+        return;
+      }
+
+      let coApplicantSinEncrypted: string | null = null;
+      if (validated.coApplicant?.sin) {
+        try {
+          coApplicantSinEncrypted = await encryptSIN(validated.coApplicant.sin);
+          await logFinancingSubmission({
+            stage: 'encrypt_co_applicant_sin',
+            outcome: 'success',
+            applicationId: state.applicationId,
+            userId,
+          });
+        } catch (e) {
+          const sinErr = e as SinEncryptionError;
+          await logFinancingSubmission({
+            stage: 'encrypt_co_applicant_sin',
+            outcome: 'failure',
+            applicationId: state.applicationId,
+            userId,
+            errorCode: sinErr.code || 'unknown',
+            errorMessage: sinErr.message,
+            metadata: { pgCode: sinErr.pgCode, hint: sinErr.hint },
+          });
+          const friendly = getFriendlySinErrorMessage(sinErr.code);
+          toast({
+            title: `Co-applicant: ${friendly.title}`,
+            description: friendly.description,
+            variant: 'destructive',
+          });
+          setIsSubmitting(false);
+          return;
+        }
+      }
 
       // Save to database
       const { data: application, error } = await supabase
@@ -91,10 +151,8 @@ export function ReviewSubmitStep() {
           status: 'pending',
           current_step: 7,
           completed_steps: [1, 2, 3, 4, 5, 6, 7],
-          applicant_sin_encrypted: await encryptSIN(validated.applicant.sin),
-          co_applicant_sin_encrypted: validated.coApplicant?.sin 
-            ? await encryptSIN(validated.coApplicant.sin)
-            : null,
+          applicant_sin_encrypted: applicantSinEncrypted,
+          co_applicant_sin_encrypted: coApplicantSinEncrypted,
         })
         .select()
         .single();
@@ -102,8 +160,36 @@ export function ReviewSubmitStep() {
       // CRITICAL: Check DB error before continuing
       if (error || !application) {
         console.error('Financing application DB write failed:', error);
-        throw new Error(error?.message || 'Failed to save application');
+        await logFinancingSubmission({
+          stage: 'db_upsert',
+          outcome: 'failure',
+          applicationId: state.applicationId,
+          userId,
+          errorCode: (error as any)?.code || 'unknown',
+          errorMessage: error?.message || 'No application returned',
+          metadata: { details: (error as any)?.details, hint: (error as any)?.hint },
+        });
+        const isPermission =
+          (error as any)?.code === '42501' ||
+          (error?.message || '').toLowerCase().includes('permission denied') ||
+          (error?.message || '').toLowerCase().includes('row-level security');
+        toast({
+          title: isPermission ? 'Permission error saving application' : 'Could not save application',
+          description: isPermission
+            ? 'Your account does not have permission to submit this application. Please sign in and try again, or call us at (905) 342-2153.'
+            : (error?.message || 'Please try again, or call us at (905) 342-2153.'),
+          variant: 'destructive',
+        });
+        setIsSubmitting(false);
+        return;
       }
+
+      await logFinancingSubmission({
+        stage: 'db_upsert',
+        outcome: 'success',
+        applicationId: application.id,
+        userId,
+      });
 
       // Send confirmation emails (non-blocking - don't fail submission if email fails)
       // Field names MUST match the Zod schema in supabase/functions/send-financing-confirmation-email/index.ts
@@ -143,6 +229,13 @@ export function ReviewSubmitStep() {
         description: "Your financing application has been submitted successfully.",
       });
 
+      await logFinancingSubmission({
+        stage: 'submission',
+        outcome: 'success',
+        applicationId: application.id,
+        userId,
+      });
+
       // Redirect to success page after a brief delay to show confetti
       setTimeout(() => {
         navigate(`/financing/success?id=${application.id}`);
@@ -150,6 +243,14 @@ export function ReviewSubmitStep() {
 
     } catch (error) {
       console.error('Submission error:', error);
+      const err = error as any;
+      await logFinancingSubmission({
+        stage: 'submission',
+        outcome: 'failure',
+        applicationId: state.applicationId,
+        errorCode: err?.code || 'unexpected',
+        errorMessage: err?.message || String(error),
+      });
       toast({
         title: "Submission Failed",
         description: "Please check your information and try again.",
