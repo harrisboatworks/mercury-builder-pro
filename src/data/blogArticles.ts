@@ -19765,6 +19765,12 @@ totalValue: We do not sandbag trades, but we are not Kelley Blue Book either
 caveat: Final trade value is set after a 15-minute in-person inspection at HBW. We hook it up on muffs, check compression, scan codes if SmartCraft equipped, and look at the lower unit. Bring it to (905) 342-2153 or book at /quote.
 ::
 
+::pull-quote
+quote: I called three dealers about repowering my pontoon. Two ghosted me. Jay had a **written quote in my inbox the same afternoon**, with the trade-in number already baked in. That is why I drove past two closer shops to pick it up.
+attribution: Mark T.
+source: HBW Customer, Rice Lake 2026
+::
+
 ::decision-card
 heading: What helps or hurts your trade-in value?
 eyebrow: Honest appraisal factors
