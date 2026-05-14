@@ -210,6 +210,34 @@ function renderBilingualTrustHtml(body) {
   return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0 text-balance tracking-tight">${escHtml(flat.heading)}</h3><p class="font-sans text-base text-muted-foreground leading-relaxed mt-1 mb-0" lang="zh-Hans">${escHtml(flat.headingTranslated)}</p></div><div class="px-6 py-6 md:px-8 md:py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">${tiles}</div>${cta}</div>`;
 }
 
+function renderPullQuoteHtml(body) {
+  const lines = String(body).split('\n');
+  const flat = {};
+  let lastKey = null;
+  for (const raw of lines) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) { lastKey = null; continue; }
+    const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+    if (kv) { flat[kv[1]] = kv[2]; lastKey = kv[1]; }
+    else if (lastKey && /^\s+/.test(raw)) {
+      flat[lastKey] = (flat[lastKey] ? flat[lastKey] + ' ' : '') + line.trim();
+    } else { lastKey = null; }
+  }
+  if (!flat.quote) return '';
+  // Render inline **bold** as Mercury-red accent spans, escape the rest.
+  const parts = flat.quote.split(/(\*\*[^*]+\*\*)/g);
+  const quoteHtml = parts.map(p => {
+    const m = /^\*\*([^*]+)\*\*$/.exec(p);
+    if (m) return `<span class="text-mercury-red font-semibold">${escHtml(m[1])}</span>`;
+    return escHtml(p);
+  }).join('');
+  const hasFooter = Boolean(flat.attribution || flat.source);
+  const footer = hasFooter
+    ? `<div class="mt-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.14em] text-repower-paper/70 font-medium"><span aria-hidden="true">&ndash;</span>${flat.attribution ? `<span>${escHtml(flat.attribution)}</span>` : ''}${flat.attribution && flat.source ? '<span aria-hidden="true">&ndash;</span>' : ''}${flat.source ? `<span>${escHtml(flat.source)}</span>` : ''}</div>`
+    : '';
+  return `<div class="my-8 w-full bg-repower-paper p-4 rounded-2xl shadow-sm border border-border/30"><div class="bg-repower-navy-900 text-repower-paper rounded-xl p-8 md:p-10 relative overflow-hidden"><span aria-hidden="true" class="absolute top-2 left-4 md:top-3 md:left-6 font-display text-mercury-red leading-none select-none pointer-events-none" style="font-size:6rem">&ldquo;</span><blockquote class="relative font-display text-2xl md:text-3xl leading-tight font-semibold text-balance text-repower-paper m-0 pt-8 md:pt-6">${quoteHtml}</blockquote>${footer}</div></div>`;
+}
+
 // Replace authoring directives (`::name ... ::`) with prerendered HTML
 // matching the React component output, so crawlers see real markup.
 function expandVisualDirectives(md) {
@@ -227,6 +255,7 @@ function expandVisualDirectives(md) {
   md = sub(/^::diagnostic-flow\s*\n([\s\S]*?)\n::\s*$/gm, renderDiagnosticFlowHtml);
   md = sub(/^::cost-stack\s*\n([\s\S]*?)\n::\s*$/gm, renderCostStackHtml);
   md = sub(/^::bilingual-trust\s*\n([\s\S]*?)\n::\s*$/gm, renderBilingualTrustHtml);
+  md = sub(/^::pull-quote\s*\n([\s\S]*?)\n::\s*$/gm, renderPullQuoteHtml);
   return { md, slots };
 }
 

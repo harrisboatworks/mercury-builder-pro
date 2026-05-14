@@ -17,6 +17,7 @@ import { DecisionCard, type DecisionCardProps } from './DecisionCard';
 import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './DiagnosticFlowchart';
 import { CostStack, type CostStackProps, type CostStackItem } from './CostStack';
 import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustItem } from './BilingualTrustCard';
+import { PullQuote, type PullQuoteProps } from './PullQuote';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -230,11 +231,18 @@ function rewriteBilingualTrust(md: string): string {
   return md.replace(re, (_m, body) => `:::bilingual-trust\n${body}\n:::`);
 }
 
+function rewritePullQuote(md: string): string {
+  const re = /^::pull-quote\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::pull-quote\n${body}\n:::`);
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteBilingualTrust(
-    rewriteCostStack(
-      rewriteDiagnosticFlow(
-        rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+  return rewritePullQuote(
+    rewriteBilingualTrust(
+      rewriteCostStack(
+        rewriteDiagnosticFlow(
+          rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+        ),
       ),
     ),
   );
@@ -271,7 +279,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -280,10 +288,11 @@ interface RenderChunk {
   diagnosticProps?: DiagnosticFlowchartProps;
   costStackProps?: CostStackProps;
   bilingualTrustProps?: BilingualTrustCardProps;
+  pullQuoteProps?: PullQuoteProps;
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -483,6 +492,33 @@ function parseBilingualTrustBody(body: string): BilingualTrustCardProps | null {
   };
 }
 
+function parsePullQuoteBody(body: string): PullQuoteProps | null {
+  // Simple key/value parser. The `quote` value may continue on indented
+  // continuation lines, mirroring how authors paste multi-sentence quotes.
+  const lines = body.split('\n');
+  const flat: Record<string, string> = {};
+  let lastKey: string | null = null;
+  for (const raw of lines) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) { lastKey = null; continue; }
+    const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+    if (kv) {
+      flat[kv[1]] = kv[2];
+      lastKey = kv[1];
+    } else if (lastKey && /^\s+/.test(raw)) {
+      flat[lastKey] = (flat[lastKey] ? flat[lastKey] + ' ' : '') + line.trim();
+    } else {
+      lastKey = null;
+    }
+  }
+  if (!flat.quote) return null;
+  return {
+    quote: flat.quote,
+    attribution: flat.attribution || undefined,
+    source: flat.source || undefined,
+  };
+}
+
 function splitDirectives(md: string): RenderChunk[] {
   const chunks: RenderChunk[] = [];
   let last = 0;
@@ -525,6 +561,9 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'bilingual-trust') {
       const props = parseBilingualTrustBody(body);
       if (props) chunks.push({ kind: 'bilingual-trust', content: '', bilingualTrustProps: props });
+    } else if (name === 'pull-quote') {
+      const props = parsePullQuoteBody(body);
+      if (props) chunks.push({ kind: 'pull-quote', content: '', pullQuoteProps: props });
     }
     last = m.index + m[0].length;
   }
@@ -569,6 +608,9 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'bilingual-trust' && chunk.bilingualTrustProps) {
       return <BilingualTrustCard key={`${keyPrefix}-bt-${i}`} {...chunk.bilingualTrustProps} />;
+    }
+    if (chunk.kind === 'pull-quote' && chunk.pullQuoteProps) {
+      return <PullQuote key={`${keyPrefix}-pq-${i}`} {...chunk.pullQuoteProps} />;
     }
     if (!chunk.content.trim()) return null;
     return (
