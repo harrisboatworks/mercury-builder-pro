@@ -16944,6 +16944,31 @@ Call us at 905-342-2153 or request service online. We'll give you a straight ans
 
 > **Quick answer:** Some used boats are worth buying; many will drain your bank account. The worst offenders we see in Ontario: hulls with structural rot, sterndrives facing imminent rebuild, brand-orphaned motors with no parts pipeline, and wet-floor pontoons hiding deck damage. Inspect transom flex, lower-unit oil colour, and fuel system condition before any private-sale used purchase. The cheap boat is rarely the cheap boat.
 
+::decision-card
+heading: New Mercury outboard, or solid used?
+eyebrow: The real trade-off
+subhead: Half our customers ask this within the first 10 minutes of walking in. Here's how we actually think about it on the showroom floor.
+leftLabel: New Mercury
+leftCriteria:
+  - You want full Mercury factory warranty (5 + 5 = 10 years possible)
+  - You finance and need lender-approved collateral
+  - You will own the boat 7+ years and amortize the cost
+  - You want the latest tech (SmartCraft, joystick, V8/V10 power options)
+  - Resale value matters to you down the line
+leftOutcome: Higher upfront cost, but lower per-hour cost of ownership over a long run. Mercury 5+5 covers most failure scenarios.
+leftVariant: recommended
+rightLabel: Used Mercury
+rightCriteria:
+  - Cash budget is tight or you want to spend the difference on a better boat
+  - You have a mechanic, or you're handy with a wrench
+  - You only need the motor for 3-5 years
+  - You're willing to accept some service history unknowns
+  - You found a low-hour motor from a trusted source (like HBW certified used)
+rightOutcome: Lower upfront cost, higher risk on repairs after year 2 if the warranty is gone. Buy from a dealer who services Mercury and stand behind it.
+rightVariant: alternative
+whenInDoubt: Bring us the boat. We'll quote both a new motor and a comparable used motor from our inventory so you can see the real per-month cost difference. No pressure either way, we sell both.
+::
+
 ## The Used Boat Market Is Full of Money Pits
 
 Every spring, thousands of Ontario buyers hit Kijiji, Facebook Marketplace, and AutoTrader looking for a deal on a used boat. Some find one. A lot don't.
