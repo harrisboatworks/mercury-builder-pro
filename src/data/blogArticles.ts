@@ -9721,6 +9721,31 @@ Harris Boat Works | Mercury Marine Platinum Dealer | Since 1947 | Gores Landing,
 ## Quick answer
 Boat winterization in Ontario is not a flat number, it depends on motor size, what services you bundle, and whether you are adding shrinkwrap and storage. Motor winterization is the most critical piece. Skipping it risks a cracked block, which costs several thousand dollars to repair or replace. Book before October to get the easier slots. Request service at [hbw.wiki/service](https://hbw.wiki/service).
 
+::cost-stack
+heading: What goes into a Mercury winterization quote?
+eyebrow: Where the money goes
+subhead: A full marina winterization is usually 5 line items. Here is what each one covers and the typical CAD range.
+item1Label: Fuel stabilizer + ethanol treatment
+item1Value: $30 - $50
+item1Note: Marine-grade stabilizer mixed into a near-full tank to prevent phase separation over winter
+item2Label: Fogging oil through cylinders
+item2Value: $50 - $80
+item2Note: Mercury recommends fogging the intake while running, then a shot into each cylinder. Prevents cylinder wall corrosion.
+item2Accent: true
+item3Label: Lower unit oil change + inspection
+item3Value: $50 - $90
+item3Note: Old oil out, fresh oil in, magnetic plug checked. Milky oil here is the biggest fall finding we make.
+item4Label: Cooling system flush + drain
+item4Value: $40 - $70
+item4Note: Run fresh water for 5 to 10 minutes on muffs, then tilt straight down to drain. Prevents block-freeze cracks.
+item5Label: Battery prep
+item5Value: $25 - $50
+item5Note: Either pulled to indoor storage with a maintainer, or a tender installed on board. Cheap insurance.
+totalLabel: Typical all-in range
+totalValue: $250 - $400 CAD
+caveat: Pricing varies by motor size, accessibility, and current shop rate. HST extra. Book a winterization slot at /service.
+::
+
 ## Why the price varies (and why flat rates mislead you)
 
 A 9.9 HP tiller is a 90-minute job. A 250 HP V8 Verado is a 3-hour job with more oil capacity, more spark plugs, a more complex fuel system, and more lower unit to service. Same checklist, completely different amounts of time and parts.
