@@ -22,7 +22,7 @@ import { BlogTable } from '@/components/blog/BlogTable';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { ShaftLengthPicker } from '@/components/tools/ShaftLengthPicker';
-import { TradeInValueEstimator } from '@/components/tools/TradeInValueEstimator';
+
 import { RepowerCostEstimator } from '@/components/tools/RepowerCostEstimator';
 import { BoostEligibilityChecker } from '@/components/tools/BoostEligibilityChecker';
 import { 
