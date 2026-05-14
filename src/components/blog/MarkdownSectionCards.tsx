@@ -231,11 +231,18 @@ function rewriteBilingualTrust(md: string): string {
   return md.replace(re, (_m, body) => `:::bilingual-trust\n${body}\n:::`);
 }
 
+function rewritePullQuote(md: string): string {
+  const re = /^::pull-quote\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::pull-quote\n${body}\n:::`);
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteBilingualTrust(
-    rewriteCostStack(
-      rewriteDiagnosticFlow(
-        rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+  return rewritePullQuote(
+    rewriteBilingualTrust(
+      rewriteCostStack(
+        rewriteDiagnosticFlow(
+          rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+        ),
       ),
     ),
   );
