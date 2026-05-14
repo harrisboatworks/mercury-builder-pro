@@ -14056,6 +14056,31 @@ Take a photo of the plate the day you buy the boat. Save it on your phone. You'l
 
 Mercury's service schedule is built around three milestones: 20-hour break-in service, 100-hour (or annual) routine service, and 300-hour major service. Each milestone covers a different scope of work. The 100-hour annual is the one most Ontario owners need to calendar every year regardless of hours, because most recreational boaters never reach 100 hours in a season. Skipping any milestone shortens motor life and, for motors under warranty, can affect coverage.
 
+::cost-stack
+heading: What each Mercury service interval actually costs
+eyebrow: Service cost by hour milestone
+subhead: Mercury's 20/100/300-hour rule is the maintenance schedule that keeps your warranty valid and your motor running long-term. Here are real Ontario shop costs at each tier so you can budget realistically.
+item1Label: 20-hour break-in service (one-time)
+item1Value: $180 - $320
+item1Note: First service on a new motor or after a major repair. Oil + filter change, lower unit oil check, fastener torque check, fuel system inspection. Mercury warranty depends on this being documented.
+item2Label: Annual service (every 100 hours or 1 year, whichever first)
+item2Value: $280 - $480
+item2Note: Engine oil + filter, lower unit oil + check magnetic plug, spark plugs (if due), water-separating fuel filter, anodes inspected, propeller hardware check, fuel stabilizer review. Standard for most Rice Lake recreational use.
+item2Accent: true
+item3Label: 200-hour service add-on items
+item3Value: +$120 - $220 on top of annual
+item3Note: Air filter (if equipped), thermostat inspection, sensor diagnostic scan with SmartCraft if equipped. Bigger V6/V8 motors need this more rigorously than smaller 4-strokes.
+item4Label: 300-hour major service
+item4Value: $650 - $1,200
+item4Note: Full annual service plus water pump impeller replacement (mandatory at this milestone), gear case pressure test, full fuel system pressure check, valve adjustment if specified for your motor. Skip this and your warranty is at risk.
+item5Label: 500-hour and 1,000-hour milestones
+item5Value: $900 - $2,500 depending on findings
+item5Note: Full 300-hour service plus deeper inspection of valves, timing belt or chain (model-dependent), and any deferred items. This is the "rebuild it now or accept reduced life" tier.
+totalLabel: Average annual cost if you do it right
+totalValue: $350 - $700 / year for typical recreational use
+caveat: Hours-based services apply if you exceed the 100/300 hour mark in a season. Most Rice Lake recreational owners run 30-80 hours/year and follow the annual interval. Book at /service or call (905) 342-2153.
+::
+
 ---
 
 ## Mercury Maintenance Intervals: The 20/100/300-Hour Rule Explained
