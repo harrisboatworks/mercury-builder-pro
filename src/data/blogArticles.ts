@@ -19951,6 +19951,8 @@ We cannot inflate it, because we have to move the motor afterward. We will not l
 
 We also publish all our Mercury pricing live at [mercuryrepower.ca](https://mercuryrepower.ca), so you can see both sides of the transaction without a phone call.
 
+> **Want a number right now?** Try our [Trade-In Value Estimator](/trade-in-value). Same fields, instant CAD ballpark. Or call us at [(905) 342-2153](tel:+19053422153) and we'll walk it through with you.
+
 *Last reviewed: 2026-05-11.*`,
   },
   {
