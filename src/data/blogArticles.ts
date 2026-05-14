@@ -8913,6 +8913,8 @@ Ready to price it? Build your repower quote at **[mercuryrepower.ca](https://www
 
 Rather talk first? Call **905-342-2153**. We answer the phone.
 
+> **Want the all-in number?** Try our [Repower Cost Estimator](/tools#repower-cost). Motor, rigging, and labour, ballpark CAD, no email required. Or call [(905) 342-2153](tel:+19053422153) for a real quote against your serial number.
+
 ---`,
     faqs: [
       { question: 'How much does a Mercury repower cost in Ontario in 2026?', answer: 'A typical Mercury repower in Ontario in 2026 depends on HP class. HBW planning ranges before HST are: 9.9 to 25 HP tillers at $3,000 to $5,500 motor-only; 40 to 60 HP at $11,000 to $15,000 all-in; 75 to 115 HP at $17,000 to $22,000 all-in; 150 HP at $23,000 to $30,000 all-in; and 200 to 300 HP at $35,000 to $40,000 all-in. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.' },
