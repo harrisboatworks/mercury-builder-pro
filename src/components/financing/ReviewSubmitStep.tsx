@@ -162,9 +162,9 @@ export function ReviewSubmitStep() {
         co_applicant_sin_encrypted: coApplicantSinEncrypted,
       };
 
-      // For anon submitters we cannot do .select() because anon has no SELECT
-      // policy on financing_applications (PII protection). For signed in users
-      // we still .select() so we get the canonical row back.
+      // Anon submitters use plain insert (no UPDATE/SELECT policy on this
+      // table for the anon role). Signed in users use upsert so they can
+      // resume an existing draft, and we read the row back via .select().
       let applicationId: string | undefined = applicationRowId;
       let error: any = null;
       if (user?.id) {
@@ -178,7 +178,7 @@ export function ReviewSubmitStep() {
       } else {
         const res = await supabase
           .from('financing_applications')
-          .upsert(upsertPayload);
+          .insert(upsertPayload);
         error = res.error;
       }
       const application = applicationId ? { id: applicationId } : null;
