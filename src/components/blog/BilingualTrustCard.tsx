@@ -22,12 +22,17 @@ export function BilingualTrustCard({
     <div className="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden">
       <div className="px-6 pt-6 md:px-8 md:pt-8">
         {eyebrow ? (
-          <div className="text-xs font-bold uppercase tracking-wide text-mercury-red mb-2">
+          <div className="text-[11px] uppercase tracking-[0.14em] font-medium text-muted-foreground mb-2">
             {eyebrow}
           </div>
         ) : null}
-        <h3 className="font-display font-bold text-2xl text-repower-navy-900 m-0">{heading}</h3>
-        <p className="font-sans text-base text-repower-navy-900/80 mt-1 mb-0" lang="zh-Hans">
+        <h3 className="font-display font-bold text-2xl text-repower-navy-900 m-0 text-balance tracking-tight">
+          {heading}
+        </h3>
+        <p
+          className="font-sans text-base text-muted-foreground leading-relaxed mt-1 mb-0"
+          lang="zh-Hans"
+        >
           {headingTranslated}
         </p>
       </div>
