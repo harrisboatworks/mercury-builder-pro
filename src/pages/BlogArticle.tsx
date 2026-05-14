@@ -21,10 +21,8 @@ import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { BlogTable } from '@/components/blog/BlogTable';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
-import { ShaftLengthPicker } from '@/components/tools/ShaftLengthPicker';
 
-import { RepowerCostEstimator } from '@/components/tools/RepowerCostEstimator';
-import { BoostEligibilityChecker } from '@/components/tools/BoostEligibilityChecker';
+
 import { 
   Accordion, 
   AccordionContent, 
@@ -407,23 +405,8 @@ export default function BlogArticle() {
             />
           </div>
 
-          {/* Interactive tool: Shaft Length Picker (slug-conditional) */}
-          {article.slug === 'outboard-shaft-length-guide' && (
-            <ShaftLengthPicker />
-          )}
 
 
-
-
-          {/* Interactive tool: Repower Cost Estimator (slug-conditional) */}
-          {article.slug === 'mercury-repower-cost-ontario-2026-cad' && (
-            <RepowerCostEstimator />
-          )}
-
-          {/* Interactive tool: Boost Eligibility Checker (slug-conditional) */}
-          {article.slug === 'mercury-boost-upgrade-150hp-pontoon-analysis' && (
-            <BoostEligibilityChecker />
-          )}
 
           {/* Author Byline (bottom) */}
           <div className="mt-10 pt-6 border-t border-repower-navy-900/10">

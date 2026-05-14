@@ -8913,6 +8913,8 @@ Ready to price it? Build your repower quote at **[mercuryrepower.ca](https://www
 
 Rather talk first? Call **905-342-2153**. We answer the phone.
 
+> **Want the all-in number?** Try our [Repower Cost Estimator](/tools#repower-cost). Motor, rigging, and labour, ballpark CAD, no email required. Or call [(905) 342-2153](tel:+19053422153) for a real quote against your serial number.
+
 ---`,
     faqs: [
       { question: 'How much does a Mercury repower cost in Ontario in 2026?', answer: 'A typical Mercury repower in Ontario in 2026 depends on HP class. HBW planning ranges before HST are: 9.9 to 25 HP tillers at $3,000 to $5,500 motor-only; 40 to 60 HP at $11,000 to $15,000 all-in; 75 to 115 HP at $17,000 to $22,000 all-in; 150 HP at $23,000 to $30,000 all-in; and 200 to 300 HP at $35,000 to $40,000 all-in. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.' },
@@ -11696,6 +11698,8 @@ Wondering if Boost makes sense for your specific pontoon? We'll tell you straigh
 
 More often than not, the better upgrade is a prop and trim conversation, and that one's free to start.
 
+> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether the promo applies to you. Or call [(905) 342-2153](tel:+19053422153) if you want to talk it through.
+
 ---`,
     faqs: [
       {
@@ -12552,6 +12556,8 @@ Three things we do on every repower that prevent wrong-shaft mistakes:
 Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). The configurator includes shaft length selection by Mercury model.
 
 Not sure about your transom height? Call us at 905-342-2153 or send a side-profile photo with a tape measure on the transom. We can confirm the right shaft length in five minutes.
+
+> **Need a quick shaft-length check?** Try our [Shaft Length Picker](/tools#shaft-length). Punch in your transom height and we will tell you if you want a 15", 20", 25", or 30" shaft. Or call us at [(905) 342-2153](tel:+19053422153) and we will measure with you on the phone.
 
 *Last reviewed: 2026-05-11.*
 `,
