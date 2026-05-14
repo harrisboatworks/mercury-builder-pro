@@ -200,14 +200,14 @@ function renderBilingualTrustHtml(body) {
   if (!flat.heading || !flat.headingTranslated) return '';
   const items = Object.keys(itemMap).map(Number).sort((a, b) => a - b)
     .map(i => itemMap[i]).filter(it => it.en && it.zh);
-  const eyebrow = flat.eyebrow ? `<div class="text-xs font-bold uppercase tracking-wide text-mercury-red mb-2">${escHtml(flat.eyebrow)}</div>` : '';
+  const eyebrow = flat.eyebrow ? `<div class="text-[11px] uppercase tracking-[0.14em] font-medium text-muted-foreground mb-2">${escHtml(flat.eyebrow)}</div>` : '';
   const tiles = items.map(it =>
     `<div class="rounded-lg bg-repower-navy-900/5 p-4 flex flex-col gap-1"><span class="font-display font-semibold text-repower-navy-900 text-sm">${escHtml(it.en)}</span><span class="font-sans text-repower-navy-900/70 text-sm" lang="zh-Hans">${escHtml(it.zh)}</span></div>`
   ).join('');
   const cta = (flat.ctaEn && flat.ctaZh && flat.ctaHref)
     ? `<a href="${escHtml(flat.ctaHref)}" class="block bg-repower-mercury-red text-white text-center px-6 py-4 md:px-8 hover:opacity-90 transition-opacity"><span class="block font-display font-bold text-base">${escHtml(flat.ctaEn)}</span><span class="block font-sans text-sm opacity-90 mt-0.5" lang="zh-Hans">${escHtml(flat.ctaZh)}</span></a>`
     : '';
-  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0">${escHtml(flat.heading)}</h3><p class="font-sans text-base text-repower-navy-900/80 mt-1 mb-0" lang="zh-Hans">${escHtml(flat.headingTranslated)}</p></div><div class="px-6 py-6 md:px-8 md:py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">${tiles}</div>${cta}</div>`;
+  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0 text-balance tracking-tight">${escHtml(flat.heading)}</h3><p class="font-sans text-base text-muted-foreground leading-relaxed mt-1 mb-0" lang="zh-Hans">${escHtml(flat.headingTranslated)}</p></div><div class="px-6 py-6 md:px-8 md:py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">${tiles}</div>${cta}</div>`;
 }
 
 // Replace authoring directives (`::name ... ::`) with prerendered HTML
