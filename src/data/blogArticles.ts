@@ -4951,6 +4951,8 @@ Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new P
 
 > **Quick answer:** Start with the capacity plate, that's your legal ceiling and the starting point for every motor sizing conversation. Then match HP to hull weight, typical load, use case, and where you run. We've been matching Mercury motors to Ontario boats since 1965. Build a real installed quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
+
+> **Pick the right shaft:** Try our [Shaft Length Picker](/tools#shaft-length) to check if you need a 20" or 25" shaft for your boat. Free, no email.
 ---
 
 ## Why motor sizing isn't just about the HP number
@@ -8190,6 +8192,8 @@ Children under 18 may fish under certain conditions without a licence. Confirm c
 
 Mercury Boost is a software-based engine calibration update, not a hardware kit, that improves mid-range acceleration by 5, 21% on eligible motors. Eligibility is determined by serial number, not model year. The dealer-installed version covers FourStroke 175, 300 HP, Pro XS 175, 300 HP, and Verado 250, 350 HP from specific serial numbers (see table below). The factory-installed version comes pre-loaded on new Pro XS and Verado models built in Q2 2026 and later. Boost does not void Mercury's warranty.
 
+
+> **Check yours:** Run the [Boost Eligibility Checker](/tools#boost-eligibility) to see if your motor qualifies in 30 seconds. Free.
 ---
 
 ### Full Article
@@ -10184,6 +10188,8 @@ Phone: 905-342-2153
 
 Mercury's cheapest current outboard in Canada is the **2.5 HP FourStroke portable**. But the cheapest motor that genuinely fits your boat's use and HP rating is almost always the better question, and those are rarely the same motor. Live pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
+
+> **Quick estimate:** Try our [Repower Cost Estimator](/tools#repower-cost) for a CAD ballpark based on your boat size and current motor. Free, no email required.
 ::cost-stack
 heading: What changes the real out-the-door price?
 eyebrow: Where the money goes
@@ -18771,6 +18777,8 @@ Harris Boat Works. Gores Landing, ON, est. 1947
 
 Mercury outboard pricing in Ontario depends on horsepower, controls, prop, rigging, installation, HST, and the boat itself. Harris Boat Works publishes current Mercury quote guidance at mercuryrepower.ca. Use any price ranges in this article for planning only and refresh them from the live quote configurator.
 
+
+> **Quick estimate:** Try our [Repower Cost Estimator](/tools#repower-cost) for your specific HP and setup. Free, instant CAD ballpark.
 ---
 
 ### Ontario Mercury Outboard Price Guide
@@ -19507,6 +19515,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ## Quick answer
 There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://mercuryrepower.ca).
 
+
+> **Quick estimate:** Try our [Trade-In Value Estimator](/trade-in-value) for an instant ballpark number on your current motor. Free, no email required.
 ::decision-card
 heading: What helps or hurts your trade-in value?
 eyebrow: Honest appraisal factors
@@ -20976,6 +20986,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 If your hull is sound and the motor is the problem, repower. A 75, 115 HP repower typically costs $17,000, $22,000 all-in. An equivalent new boat package runs $40,000, $70,000+. That gap is real. If the hull is going, or the boat no longer fits how you use it, buying new or used makes more sense. Neither option is always right.
 
+
+> **Run the numbers:** Use our [Repower Cost Estimator](/tools#repower-cost) to get a CAD ballpark for the repower side of this decision. Free, instant.
 ::decision-card
 heading: Should you repower or buy new?
 eyebrow: Honest decision tree
