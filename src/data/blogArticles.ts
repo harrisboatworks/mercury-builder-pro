@@ -24223,6 +24223,31 @@ By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice 
 
 [Get a quote on /warranty](https://www.harrisboatworks.ca/warranty), transparent CAD pricing by HP and term.
 
+::cost-stack
+heading: What an extended Mercury warranty actually costs
+eyebrow: The math at a glance
+subhead: Mercury Product Protection (extended warranty) prices vary by motor size and term. Here are realistic Ontario ranges so you can compare against the cost of a single major repair.
+item1Label: Small portable (2.5 to 20 HP), 2-year extension
+item1Value: $200 - $450
+item1Note: Cheapest peace of mind on the lineup. Worth it if the motor is a kicker you depend on.
+item2Label: Mid-range (25 to 90 HP), 3-year extension
+item2Value: $600 - $1,100
+item2Note: Most common bracket on Rice Lake. Powerhead replacement on a 90 HP runs $5,500 to $9,000 without coverage.
+item3Label: High-HP (115 to 200 HP), 3-year extension
+item3Value: $900 - $1,800
+item3Note: Best value tier. One blown injector pump or ECU on a V6 covers the cost of the warranty 2 to 3 times over.
+item3Accent: true
+item4Label: Big block (225 to 400 HP), 3-year extension
+item4Value: $1,500 - $3,200
+item4Note: V8 and V10 outboards. Repair labour alone on a V10 powerhead can exceed $4K, parts are extra.
+item5Label: HBW Platinum dealer discount
+item5Value: 10% off
+item5Note: We're a Mercury Marine Platinum dealer. Customers who purchased the motor from HBW get 10% off the published Mercury Product Protection price.
+totalLabel: Reality check
+totalValue: Coverage costs less than one bad day
+caveat: Pricing is illustrative and subject to Mercury Marine's current rate sheet. Coverage terms vary by motor model year. For a real quote against your serial number, call (905) 342-2153 or use /quote.
+::
+
 ## What Mercury Product Protection Is
 
 Your new Mercury comes with a 3-year factory limited warranty against defects in materials and workmanship. That covers you for the first 3 years. Mercury Product Protection is the factory-backed extended service contract that picks up when the limited warranty ends.
