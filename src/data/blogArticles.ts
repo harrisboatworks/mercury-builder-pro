@@ -18597,7 +18597,28 @@ Harris Boat Works. Gores Landing, ON. Est. 1947.
 
 > **Quick answer:** Mercury's current 4-stroke outboards run on 87 octane regular gasoline. Premium isn't required and doesn't help. The bigger fuel issue is ethanol: E10 pump gas absorbs water, phase-separates in storage, and gums fuel systems. Use ethanol-free 89 marine gas where available (HBW sells it at the dock), or run fuel stabilizer in every tank if you cannot avoid E10. Older supercharged inline-6 Verados require 91 octane premium.
 
-You're standing at the pump. The motor ran fine last fall. It's been sitting all winter and you want to fill it up and get on the water.
+::diagnostic-flow
+heading: Mercury running rough or won't stay running? Work the fuel system in this order.
+eyebrow: Fuel diagnostic flow
+subhead: 5 things to check in order before you call the shop. This catches the most common fuel-side causes we see at the marina.
+step1Label: Squeeze the primer bulb until firm
+step1Question: Pump the primer bulb until it goes hard. If it never firms up, you have an air leak somewhere between the tank and the motor (cracked bulb, loose hose clamp, dry-rotted line, or a tank vent stuck closed). If it firms up but the motor still won't run, move to step 2.
+step1Tip: A bulb that collapses while running points to a clogged tank pickup or pinched fuel line.
+step2Label: Check for water and old fuel in the tank
+step2Question: If the gas has been sitting since last fall, it's likely degraded. Pull a sample from the lowest point of the tank into a clear jar. Water settles to the bottom and looks like a separate layer. Cloudy, dark, or varnish-smelling fuel is stale. Drain it, dispose of it properly, and refill with fresh ethanol-free 89 if you can get it.
+step3Label: Replace the water-separating fuel filter
+step3Question: Most Mercury rigs have a 10-micron water-separating filter (the silver canister near the motor). Unscrew it, dump the contents into a jar, and look for water or rust. Spin on a fresh one. Filters are cheap insurance and should be changed every 100 hours or annually anyway.
+step3Tip: Lube the new filter's gasket with a dab of clean oil before spinning it on. Hand tight, then a quarter turn more.
+step4Label: Inspect the fuel lines and connections
+step4Question: Walk the line from tank to motor. Look for cracks, soft spots, kinks, or fuel weeping at any clamp or fitting. The quick-connect at the motor is a common air-leak point. Replace anything questionable. Marine-grade fuel hose only, no automotive rubber.
+step5Label: Pull and inspect the spark plugs
+step5Question: While you're in there, pull the plugs. Wet plugs mean it's getting fuel but not firing (ignition issue). Dry plugs mean no fuel is reaching the cylinders (still a fuel-delivery problem). Black sooty plugs suggest it's running rich (carb or injector issue). New plugs are $5 each and tell you a lot.
+step5Tip: Gap matters. Check the Mercury service manual for your specific motor before installing new plugs.
+escalationLabel: Still won't run right? Call us at (905) 342-2153.
+escalationBody: If the basics check out and it's still rough, we run fuel pressure tests, injector flow checks, and ECU diagnostics that aren't practical at home. EFI motors especially need scan tools to read what's actually happening at the rail.
+::
+
+
 
 Regular, mid-grade, or premium? What's this E10 label mean?
 
