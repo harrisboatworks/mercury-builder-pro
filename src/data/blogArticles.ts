@@ -24008,10 +24008,10 @@ HBW 팀은 영어로 소통합니다. 한국어 통역 서비스는 제공하지
     seoTitle: 'Boat Trailer Maintenance Guide (Ontario 2026)',
     title: 'Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)',
     description: 'Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks. Service costs at HBW, common failures, and when to repair vs replace.',
-    image: '/lovable-uploads/Mercury_Maintenance_Schedule.png',
+    image: '/lovable-uploads/hero-trailering-mistakes-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-05-14',
     publishDate: '2026-05-13',
     category: 'Maintenance',
     readTime: '~10 min read',
@@ -24028,6 +24028,31 @@ HBW 팀은 영어로 소통합니다. 한국어 통역 서비스는 제공하지
 - **Bunks/rollers**: carpet bunks every 4-5 years; rusted bunk brackets are the #1 trailer failure HBW sees
 
 ---
+
+::cost-stack
+heading: What annual trailer service actually costs in Ontario
+eyebrow: Trailer maintenance budget
+subhead: Most trailer problems come from skipped maintenance. Here are the real Ontario shop costs for the 5 things you should be doing once a year on a boat trailer.
+item1Label: Wheel bearing repack
+item1Value: $60 - $120 per axle
+item1Note: Pull, clean, inspect, re-grease both bearings per hub. Single axle is one wheel side per side. Tandem is double. Most-skipped service we see on used trailers.
+item1Accent: true
+item2Label: Bearing buddy or oil-bath inspection
+item2Value: $20 - $40
+item2Note: If your trailer has bearing buddies, top off grease. If it has oil-bath hubs (heavier-duty trailers), check sight glass and oil colour. Milky oil means water intrusion, replace immediately.
+item3Label: Tire replacement
+item3Value: $120 - $250 per tire
+item3Note: Trailer tires age out before they wear out. 5-year rule of thumb in Ontario sun. Look for sidewall cracking. ST-rated marine tires only, not passenger.
+item4Label: Brake service (if equipped)
+item4Value: $150 - $400 per axle
+item4Note: Surge or electric brake systems on heavier trailers need annual inspection. Submerging brakes in lake water shortens life. Most aluminum-fishing-boat trailers don't have brakes; bigger fiberglass and pontoon trailers do.
+item5Label: Lights + wiring + winch strap
+item5Value: $30 - $150
+item5Note: LED bulb replacements, ground wire inspection, winch strap replacement if frayed. Cheap insurance that keeps you legal on the highway.
+totalLabel: Typical annual all-in (single axle, no brakes)
+totalValue: $150 - $350 / year
+caveat: Tandem trailers, braked trailers, and corroded older units cost more. Aluminum trailers in Rice Lake fresh water hold up better than steel in salt-treated road conditions. Book trailer service at /service.
+::
 
 ## Why Most Boaters Skip Trailer Maintenance Until It Fails
 
