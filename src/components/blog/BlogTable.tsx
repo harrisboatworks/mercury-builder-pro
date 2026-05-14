@@ -109,22 +109,28 @@ export function BlogTable({ children }: { children?: ReactNode }) {
       const cells = Children.toArray((row.props as any).children).filter(isValidElement) as ReactElement[];
       const isTotal = ri === totalRowIdx;
       const lastIdx = cells.length - 1;
-      const styledCells = cells.map((c, ci) =>
-        styleCell(c, {
+      const styledCells = cells.map((c, ci) => {
+        const cellKind = isTotal ? (ci === 0 ? 'label' : ci === lastIdx ? 'value' : null) : null;
+        const styled = styleCell(c, {
           numeric: numericCols.has(ci),
           isHeader: false,
           totalRow: isTotal,
-          totalCell: isTotal ? (ci === 0 ? 'label' : ci === lastIdx ? 'value' : null) : null,
-        }),
-      );
+          totalCell: cellKind,
+        });
+        if (isTotal && cellKind === 'value') {
+          return cloneElement(styled, { 'data-blog-cell-type': 'total-value' } as any);
+        }
+        return styled;
+      });
       const rowExtras = isTotal
         ? 'bg-repower-navy-900/5 border-t-2 border-repower-navy-900/30'
         : `${ri > 0 ? 'border-t border-border/30' : ''} even:bg-repower-paper/30 hover:bg-mercury-red/5 transition-colors`;
-      return cloneElement(
-        row,
-        { key: `br-${ri}`, className: mergeClass((row.props as any).className, rowExtras) },
-        styledCells,
-      );
+      const rowProps: any = {
+        key: `br-${ri}`,
+        className: mergeClass((row.props as any).className, rowExtras),
+      };
+      if (isTotal) rowProps['data-blog-row-type'] = 'total';
+      return cloneElement(row, rowProps, styledCells);
     });
     newTbody = cloneElement(tbody, {}, styledBodyRows);
   }
@@ -137,8 +143,8 @@ export function BlogTable({ children }: { children?: ReactNode }) {
       transition={{ duration: 0.3 }}
       className="not-prose my-8 w-full rounded-2xl border border-border/30 bg-repower-paper p-3 md:p-4 shadow-sm"
     >
-      <div className="overflow-x-auto rounded-xl bg-card">
-        <table className="w-full border-collapse" style={{ minWidth: 600 }}>
+      <div className="w-full overflow-x-auto rounded-xl bg-card">
+        <table className="w-full border-collapse">
           {newThead}
           {newTbody}
         </table>
