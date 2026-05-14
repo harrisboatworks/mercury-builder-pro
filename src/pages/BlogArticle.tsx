@@ -21,10 +21,8 @@ import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { BlogTable } from '@/components/blog/BlogTable';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
-import { ShaftLengthPicker } from '@/components/tools/ShaftLengthPicker';
 
-import { RepowerCostEstimator } from '@/components/tools/RepowerCostEstimator';
-import { BoostEligibilityChecker } from '@/components/tools/BoostEligibilityChecker';
+
 import { 
   Accordion, 
   AccordionContent, 
