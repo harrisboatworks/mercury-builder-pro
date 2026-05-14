@@ -14226,6 +14226,31 @@ Phone: 905-342-2153
 
 > **Quick answer:** Shrinkwrap is cheaper and weatherproof but condenses moisture inside if vented poorly. Indoor storage is dry, climate-stable, and gentler on upholstery and gel coat, but costs more. For long-term value retention, indoor wins. Indoor and shrinkwrap pricing at mercuryrepower.ca.
 
+::decision-card
+heading: Shrinkwrap outdoors, or pay for indoor storage?
+eyebrow: Decision guide
+subhead: The right answer depends on your boat type, where you live, and how much you trust your tarp. Here's how we actually advise customers each fall.
+leftLabel: Shrinkwrap outside
+leftCriteria:
+  - Aluminum or fiberglass hull in good condition
+  - You have a paved driveway, lakeside lot, or low-cost outdoor space
+  - You don't mind a small risk of wind/snow damage if the wrap fails
+  - Your boat is under $40K replacement value
+  - You winterize properly and the boat isn't sitting in salty conditions
+leftOutcome: Typically $300 to $700 in Ontario for shrinkwrap + outdoor spot. Cheapest option that still seals out snow, ice, and most rodents.
+leftVariant: alternative
+rightLabel: Indoor storage
+rightCriteria:
+  - High-value boat ($40K+) or rare/collectible hull
+  - Wooden interior, real leather seats, or sensitive electronics
+  - You want the boat ready to launch in April without a full prep cycle
+  - You live in a high-wind zone, near salt-treated roads, or under heavy trees
+  - You want to keep the gel coat looking new for resale
+rightOutcome: $900 to $2,200 in Ontario depending on heated vs unheated and length. Worth it on high-value or low-tolerance boats.
+rightVariant: recommended
+whenInDoubt: Most Rice Lake customers shrinkwrap outside. If you're 50/50 on it, the cheap option is shrinkwrap; the safe option is indoor. We do both, book either at /service.
+::
+
 Planning a spring repower instead of another season on the old motor? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario). For maintenance on the existing motor, [Mercury Maintenance Intervals (20/100/300-Hour Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule) covers what should be done before winter.
 
 Every fall we have the same conversation about thirty times. *"Is shrinkwrap enough? Should I pay for indoor? Is heated worth the extra money?"*
