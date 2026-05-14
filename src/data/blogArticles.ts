@@ -4017,6 +4017,31 @@ Harris Boat Works | Since 1947 | Mercury Marine Platinum Dealer | Gores Landing,
 
 ---
 
+::decision-card
+eyebrow: Mercury control type decision
+heading: Tiller-steer or remote-helm Mercury?
+subhead: More than just where the stick goes. The tiller-vs-remote decision changes how you fish, how you drive, and how you trailer. Here's how to pick.
+leftLabel: Tiller-steer
+leftCriteria:
+  - You fish solo or 1-2 people and want to spot-cast from the back of the boat
+  - You run a 14-18 ft aluminum tin boat (Lund WC, Princecraft Holiday, Legend Tin)
+  - You like having open deck space in the front of the boat
+  - You don't need bilge gauges, fancy electronics, or a wheel
+  - 20 to 60 HP range, no bigger
+leftOutcome: Cheapest, lightest, fewer parts to break. Perfect for back-trolling and casting. Mercury 20-60 HP tiller, $4,500-$9,500 installed.
+leftVariant: alternative
+rightLabel: Remote helm
+rightCriteria:
+  - You run with passengers, family, or kids who need a windshield to hide behind
+  - You're 16-22+ ft and want gauges, electronics, livewell controls at your fingertips
+  - You go further from the launch and value sitting forward at speed
+  - You want power steering, hydraulic trim, SmartCraft displays
+  - 60 HP and up, especially 90 HP+
+rightOutcome: More comfortable, more capable, more expensive. Mercury 90 HP remote with mechanical controls, $14K-$17K installed. Add $2-4K for full SmartCraft / hydraulic upgrade.
+rightVariant: recommended
+whenInDoubt: If your boat has a built-in console with windshield, you want remote. If your boat is a tin with bench seats and no console, you want tiller. The middle case (14-16 ft with console) goes either way; we usually push remote on those, because it ages better as kids and gear pile in.
+::
+
 ## The simple version
 
 Most small boats want tiller. Most bigger boats want remote control. The question isn't complicated unless you're in the crossover zone, which is 14 to 16-foot hulls in the 25 to 40 HP range.
