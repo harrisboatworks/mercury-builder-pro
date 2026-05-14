@@ -401,6 +401,7 @@ export default function BlogArticle() {
                     containerClassName="my-6"
                   />
                 ),
+                table: ({ node, children }) => <BlogTable>{children}</BlogTable>,
               }}
             />
           </div>
