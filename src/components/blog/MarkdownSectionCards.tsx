@@ -561,6 +561,9 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'bilingual-trust') {
       const props = parseBilingualTrustBody(body);
       if (props) chunks.push({ kind: 'bilingual-trust', content: '', bilingualTrustProps: props });
+    } else if (name === 'pull-quote') {
+      const props = parsePullQuoteBody(body);
+      if (props) chunks.push({ kind: 'pull-quote', content: '', pullQuoteProps: props });
     }
     last = m.index + m[0].length;
   }
