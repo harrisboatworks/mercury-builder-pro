@@ -119,16 +119,29 @@ function renderDiagnosticFlowHtml(body) {
     const s = stepsMap[idx];
     if (!s.label || !s.question) return '';
     const isLast = i === indices.length - 1;
-    const connector = isLast ? '' : '<div class="w-px flex-1 bg-repower-navy-900/20 mt-2 mb-0 min-h-[2rem]"></div>';
-    const tip = s.tip ? `<p class="mt-2 text-sm text-repower-navy-900/70 leading-relaxed">${escHtml(s.tip)}</p>` : '';
-    return `<div class="flex gap-4 md:gap-6"><div class="flex flex-col items-center"><div class="flex items-center justify-center h-10 w-10 rounded-full bg-repower-navy-900 text-white font-display font-semibold text-sm">${i + 1}</div>${connector}</div><div class="flex-1 pb-6 md:pb-8"><div class="font-display font-bold text-base text-repower-navy-900">${escHtml(s.label)}</div><div class="mt-1.5 flex items-start gap-2 text-sm text-repower-navy-900"><span aria-hidden="true" class="h-4 w-4 mt-0.5 flex-shrink-0 text-repower-navy-900/60">?</span><span class="leading-snug">${escHtml(s.question)}</span></div>${tip}</div></div>`;
+    const connector = isLast ? '' : '<div class="flex-1 border-l-2 border-l-repower-navy-900/30 mt-2 mb-0 min-h-[2rem]"></div>';
+    const tip = s.tip
+      ? `<div class="mt-2 flex items-start gap-2 bg-yellow-50 border-l-2 border-l-yellow-400 rounded-r-md px-3 py-2"><span aria-hidden="true" class="h-4 w-4 mt-0.5 flex-shrink-0 text-yellow-600">&#128161;</span><p class="text-sm text-repower-navy-900/80 leading-relaxed m-0">${escHtml(s.tip)}</p></div>`
+      : '';
+    return `<div class="flex gap-4 md:gap-6"><div class="flex flex-col items-center"><div class="flex items-center justify-center h-10 w-10 rounded-full bg-mercury-red text-white font-display font-semibold text-base tabular-nums shadow-sm">${i + 1}</div>${connector}</div><div class="flex-1 pb-6 md:pb-8"><div class="font-display font-bold text-base text-repower-navy-900 tracking-tight text-balance">${escHtml(s.label)}</div><div class="mt-1.5 flex items-start gap-2 text-sm text-repower-navy-900"><span aria-hidden="true" class="h-4 w-4 mt-0.5 flex-shrink-0 text-repower-navy-900/60">?</span><span class="leading-snug">${escHtml(s.question)}</span></div>${tip}</div></div>`;
   }).join('');
-  const eyebrow = flat.eyebrow ? `<div class="text-xs font-bold uppercase tracking-wide text-mercury-red mb-2">${escHtml(flat.eyebrow)}</div>` : '';
-  const subhead = flat.subhead ? `<p class="font-sans text-sm text-repower-navy-900/70 mt-2 mb-0">${escHtml(flat.subhead)}</p>` : '';
-  const escalation = flat.escalationBody
-    ? `<div class="bg-repower-paper border-t border-repower-navy-900/15 px-6 py-5 md:px-8"><div class="flex items-start gap-3"><span aria-label="Wrench" class="h-5 w-5 mt-0.5 flex-shrink-0 text-repower-navy-900">&#x1F527;</span><div>${flat.escalationLabel ? `<div class="font-display font-semibold text-sm text-repower-navy-900">${escHtml(flat.escalationLabel)}</div>` : ''}<p class="text-sm text-repower-navy-900/80 leading-relaxed mt-0.5">${escHtml(flat.escalationBody)}</p></div></div></div>`
-    : '';
-  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0">${escHtml(flat.heading)}</h3>${subhead}</div><div class="px-6 pt-4 pb-2 md:px-8 md:pt-6">${stepRows}</div>${escalation}</div>`;
+  const eyebrow = flat.eyebrow ? `<div class="text-[11px] uppercase tracking-[0.14em] font-medium text-muted-foreground mb-2">${escHtml(flat.eyebrow)}</div>` : '';
+  const subhead = flat.subhead ? `<p class="font-sans text-sm text-muted-foreground leading-relaxed mt-2 mb-0">${escHtml(flat.subhead)}</p>` : '';
+  let escalation = '';
+  if (flat.escalationBody) {
+    const phoneMatch = flat.escalationBody.match(/(\+?\d[\d\s().-]{8,}\d)/);
+    let bodyHtml;
+    if (phoneMatch) {
+      const raw = phoneMatch[1];
+      const tel = raw.replace(/[^\d+]/g, '');
+      const [before, after] = flat.escalationBody.split(raw);
+      bodyHtml = `${escHtml(before)}<a href="tel:${escHtml(tel)}" class="font-display font-semibold text-base underline decoration-white/40 underline-offset-2 hover:decoration-white">${escHtml(raw)}</a>${escHtml(after || '')}`;
+    } else {
+      bodyHtml = escHtml(flat.escalationBody);
+    }
+    escalation = `<div class="bg-repower-navy-900 text-white border-t border-repower-navy-900/15 px-6 py-5 md:px-8"><div class="flex items-start gap-3"><span aria-label="Wrench" class="h-5 w-5 mt-0.5 flex-shrink-0 text-white">&#x1F527;</span><div>${flat.escalationLabel ? `<div class="font-display font-semibold text-sm text-white">${escHtml(flat.escalationLabel)}</div>` : ''}<p class="text-sm text-white/90 leading-relaxed mt-0.5">${bodyHtml}</p></div></div></div>`;
+  }
+  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0 text-balance tracking-tight">${escHtml(flat.heading)}</h3>${subhead}</div><div class="px-6 pt-4 pb-2 md:px-8 md:pt-6">${stepRows}</div>${escalation}</div>`;
 }
 
 function renderCostStackHtml(body) {
