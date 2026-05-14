@@ -1702,6 +1702,31 @@ Build a complete installed quote at [mercuryrepower.ca](https://mercuryrepower.c
 
 ---
 
+::decision-card
+eyebrow: Hull material decision
+heading: Aluminum or fiberglass? Same question, two right answers.
+subhead: Both materials make great boats, but they reward different priorities. Here's the framework we use with HBW customers.
+leftLabel: Aluminum
+leftCriteria:
+  - You fish, run shallow water, hit logs or rocks occasionally
+  - You trailer regularly and want a lighter rig
+  - You launch at unimproved ramps where dragging happens
+  - You want lower maintenance and won't repaint or gel-coat-fix
+  - Repair-ability matters to you (welding > fiberglass work)
+leftOutcome: Lighter, more forgiving, easier to fix. Modern welded aluminum (Lund, Princecraft, Legend Tin) is the right hull for 80% of Rice Lake fishing customers. 16-18 ft aluminum with 60-90 HP Mercury, $25K-$45K.
+leftVariant: recommended
+rightLabel: Fiberglass
+rightCriteria:
+  - You want a quieter, smoother ride on bigger water
+  - Cosmetics, gel coat depth, and resale curb appeal matter
+  - You're 18-22+ ft for runabout, bowrider, or wakeboard use
+  - You can absorb higher maintenance (gel coat, blisters, hull cleaning)
+  - You'll keep the boat 8+ years and value the smoother trip
+rightOutcome: Heavier, more comfortable in chop, prettier. Right answer for runabouts, ski boats, and bigger fiberglass cruisers. 19-23 ft fiberglass with 200+ HP Mercury, $55K-$110K.
+rightVariant: alternative
+whenInDoubt: Most Kawartha and Rice Lake customers buy aluminum because the trip to the boat is short, the boats hit stuff, and the resale market loves them. Fiberglass is a lifestyle pick on bigger water. Both are right; the wrong one is whatever doesn't match how you actually boat.
+::
+
 ## How we think about aluminum fishing boats
 
 We rig aluminum fishing boats every season at HBW. On Rice Lake and across the Kawarthas, they're the workhorse of cottage fishing, lightweight, easy to trailer, manageable to maintain.
