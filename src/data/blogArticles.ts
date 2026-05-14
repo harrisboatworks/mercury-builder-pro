@@ -24122,6 +24122,31 @@ By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice 
 - **Most home policies do NOT cover boats over 16 ft or over 25 HP** — above that, you need a marine policy
 - **Cost factors**: boat value, engine size, claim history, navigational area (Lake Ontario vs Rice Lake matters)
 
+::cost-stack
+heading: What boat insurance actually costs in Ontario in 2026
+eyebrow: Annual premium by boat type
+subhead: Boat insurance pricing varies wildly by hull type, motor size, declared value, and your home insurer's bundling discount. These are realistic 2026 Ontario annual premium ranges for liability + physical damage. Not quotes, frameworks.
+item1Label: Small fishing boat under 30 HP, hull value under $10K
+item1Value: $180 - $350 / year
+item1Note: 14 to 16 ft aluminum tin boats. Often bundled with home or cottage policy for an extra $150 to $250 a year. Cheapest insurance on the lake.
+item2Label: Mid-size fishing / runabout, 50 to 150 HP, value $15K to $35K
+item2Value: $450 - $900 / year
+item2Note: Most Rice Lake fishing boats and small runabouts. Cracked windshield or prop strike claim economics shift toward replacement at this tier.
+item3Label: Performance bass boat or wakeboard boat, 175 to 250 HP, value $40K to $80K
+item3Value: $900 - $1,800 / year
+item3Note: Higher premiums driven by speed, tournament use, and theft attractiveness. Lock your hubs.
+item3Accent: true
+item4Label: New Legend or similar package, 150 to 300 HP, value $50K to $120K
+item4Value: $1,200 - $2,400 / year
+item4Note: Most common bracket for HBW package customers. Often a financing-lender requirement during the loan term.
+item5Label: Pontoon, 90 to 250 HP, value $40K to $90K
+item5Value: $600 - $1,300 / year
+item5Note: Pontoons typically insure cheaper than equivalent-value V-hulls because of lower speeds and lower-collision-loss history. Worth quoting separately if switching from a runabout.
+totalLabel: Quick rule of thumb
+totalValue: Roughly 1.5 to 2.5% of declared hull value per year
+caveat: Premiums vary by insurer, boating experience, location, claim history, and whether you bundle with home or auto. These ranges assume Ontario residency, freshwater use, and no major prior claims. Get 3 quotes minimum.
+::
+
 ## Is Boat Insurance Legally Required in Ontario?
 
 Short answer: not for most pleasure craft. Ontario requires automobile insurance but not boat insurance.
