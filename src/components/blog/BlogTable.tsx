@@ -10,7 +10,10 @@ function getText(node: ReactNode): string {
   if (node == null || typeof node === 'boolean') return '';
   if (typeof node === 'string' || typeof node === 'number') return String(node);
   if (Array.isArray(node)) return node.map(getText).join('');
-  if (isValidElement(node)) return getText((node.props as any).children);
+  if (isValidElement(node)) {
+    const props = node.props as any;
+    return getText(props?.children);
+  }
   return '';
 }
 
