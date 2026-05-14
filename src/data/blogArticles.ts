@@ -19589,6 +19589,32 @@ There is no official blue book for outboards. Trade-in value depends on brand, h
 
 
 > **Quick estimate:** Try our [Trade-In Value Estimator](/trade-in-value) for an instant ballpark number on your current motor. Free, no email required.
+
+::cost-stack
+heading: What your trade-in is actually worth, by condition
+eyebrow: Trade-in value ladder
+subhead: Mercury outboard trade-in value depends mostly on condition, hours, and whether it runs. Here is how we look at a trade on the shop floor.
+item1Label: Runs great, full service history, low hours
+item1Value: 55 to 75% of comparable retail used price
+item1Note: The unicorn category. Original owner, all receipts, compression numbers documented. We can sell this immediately, so we pay the most.
+item1Accent: true
+item2Label: Runs, decent shape, some unknowns
+item2Value: 35 to 50% of comparable retail used price
+item2Note: Most trade-ins fall here. Started, ran around the dock, but the service history is patchy or there are obvious cosmetic issues. We discount for the diagnostic time on our end.
+item3Label: Won't start, but turns over
+item3Value: $300 to $1,500 depending on HP
+item3Note: We can usually get these running with carb work, fuel system flush, and new spark plugs. Pricing reflects parts and roughly 4 to 8 hours of shop labour we have to absorb before resale.
+item4Label: Seized, locked-up, or major mechanical damage
+item4Value: $100 to $500
+item4Note: Scrap or parts-motor value. Lower unit, cowl, and electronics may still be sellable separately. We do not buy these for resale.
+item5Label: 1990s and older 2-stroke
+item5Value: $200 to $1,200 regardless of running condition
+item5Note: Old carbureted 2-strokes have limited market in Ontario in 2026. We will take them on trade, but the value is what we can resell to a fixer-upper, not blue-book optimistic numbers.
+totalLabel: Honest framing
+totalValue: We do not sandbag trades, but we are not Kelley Blue Book either
+caveat: Final trade value is set after a 15-minute in-person inspection at HBW. We hook it up on muffs, check compression, scan codes if SmartCraft equipped, and look at the lower unit. Bring it to (905) 342-2153 or book at /quote.
+::
+
 ::decision-card
 heading: What helps or hurts your trade-in value?
 eyebrow: Honest appraisal factors
