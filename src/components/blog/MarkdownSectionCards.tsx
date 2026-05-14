@@ -518,6 +518,8 @@ function parsePullQuoteBody(body: string): PullQuoteProps | null {
     source: flat.source || undefined,
   };
 }
+
+function splitDirectives(md: string): RenderChunk[] {
   const chunks: RenderChunk[] = [];
   let last = 0;
   let m: RegExpExecArray | null;
