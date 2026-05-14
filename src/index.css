@@ -1931,9 +1931,9 @@ html {
    editorial frame, header accent, and zebra/hover treatment everywhere. */
 .blog-article-prose table,
 article .blog-article-prose table {
-  display: block;
+  display: table;
   width: 100%;
-  overflow-x: auto;
+  table-layout: auto;
   border-collapse: separate;
   border-spacing: 0;
   background: hsl(var(--card));
@@ -1970,5 +1970,22 @@ article .blog-article-prose table {
 .blog-article-prose table tbody tr:hover {
   background: hsl(var(--mercury-red) / 0.05);
   transition: background-color 150ms ease;
+}
+/* Total-row emphasis (mirrors BlogTable.tsx data attributes for prerender path) */
+.blog-article-prose table tr[data-blog-row-type="total"] {
+  background: hsl(var(--repower-navy-900) / 0.05) !important;
+  border-top: 2px solid hsl(var(--repower-navy-900) / 0.3);
+}
+.blog-article-prose table tr[data-blog-row-type="total"] td {
+  font-weight: 600;
+  color: hsl(var(--repower-navy-900));
+}
+.blog-article-prose table td[data-blog-cell-type="total-value"],
+.blog-article-prose table tr[data-blog-row-type="total"] td[data-blog-cell-type="total-value"] {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: hsl(var(--mercury-red));
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 
