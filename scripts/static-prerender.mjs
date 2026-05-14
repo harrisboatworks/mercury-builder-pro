@@ -69,27 +69,31 @@ function renderDecisionCardHtml(body) {
   const { flat, lists } = parseDirectiveBody(body);
   if (!flat.heading) return '';
   const eyebrow = flat.eyebrow
-    ? `<div class="text-xs font-bold uppercase tracking-wide text-mercury-red mb-2">${escHtml(flat.eyebrow)}</div>`
+    ? `<div class="text-[11px] uppercase tracking-[0.14em] font-medium text-muted-foreground mb-2">${escHtml(flat.eyebrow)}</div>`
     : '';
   const subhead = flat.subhead
-    ? `<p class="font-sans text-sm text-repower-navy-900/70 mt-2 mb-0">${escHtml(flat.subhead)}</p>`
+    ? `<p class="font-sans text-sm text-muted-foreground leading-relaxed mt-2 mb-0">${escHtml(flat.subhead)}</p>`
     : '';
   const col = (label, criteria, outcome, variant, defaultVariant) => {
     const v = (variant === 'recommended' || variant === 'alternative') ? variant : defaultVariant;
-    const outcomeClass = v === 'recommended'
+    const isRec = v === 'recommended';
+    const edgeClass = isRec
+      ? 'border-l-[3px] border-l-mercury-red bg-mercury-red/5'
+      : 'border-l-[3px] border-l-repower-navy-900 bg-white';
+    const outcomeClass = isRec
       ? 'bg-repower-navy-900 text-white'
       : 'bg-repower-paper text-repower-navy-900 border border-repower-navy-900/15';
     const items = (criteria || []).map(c =>
       `<li class="flex items-start gap-2 text-sm text-repower-navy-900 leading-snug"><span aria-hidden="true" class="h-4 w-4 mt-0.5 flex-shrink-0 text-repower-navy-900">&#10003;</span><span>${escHtml(c)}</span></li>`
     ).join('');
-    return `<div class="flex flex-col gap-4 p-6 md:p-8 flex-1"><div class="text-xs font-bold uppercase tracking-wide text-repower-navy-900">${escHtml(label || '')}</div><ul class="flex flex-col gap-2.5 list-none pl-0 m-0">${items}</ul><div class="mt-auto rounded-full px-4 py-2 text-center text-sm font-display font-semibold ${outcomeClass}">${escHtml(outcome || '')}</div></div>`;
+    return `<div class="flex flex-col gap-4 p-6 md:p-8 flex-1 ${edgeClass}"><div class="text-[11px] uppercase tracking-[0.14em] font-medium text-muted-foreground">${escHtml(label || '')}</div><ul class="flex flex-col gap-2.5 list-none pl-0 m-0">${items}</ul><div class="mt-auto rounded-full px-4 py-2 text-center text-sm font-display font-semibold ${outcomeClass}">${escHtml(outcome || '')}</div></div>`;
   };
   const left = col(flat.leftLabel, lists.leftCriteria, flat.leftOutcome, flat.leftVariant, 'recommended');
   const right = col(flat.rightLabel, lists.rightCriteria, flat.rightOutcome, flat.rightVariant, 'alternative');
   const whenInDoubt = flat.whenInDoubt
-    ? `<div class="border-t border-repower-navy-900/15 px-6 py-4 md:px-8 text-sm italic text-charcoal text-repower-navy-900/80 text-center"><span class="font-semibold not-italic mr-1">When in doubt:</span>${escHtml(flat.whenInDoubt)}</div>`
+    ? `<div class="border-t border-repower-navy-900/15 px-6 py-4 md:px-8 text-sm italic text-repower-navy-900/80 text-center"><span class="font-semibold not-italic mr-1">When in doubt:</span>${escHtml(flat.whenInDoubt)}</div>`
     : '';
-  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0">${escHtml(flat.heading)}</h3>${subhead}</div><div class="flex flex-col md:flex-row mt-2 divide-y md:divide-y-0 md:divide-x divide-repower-navy-900/15">${left}${right}</div>${whenInDoubt}</div>`;
+  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0 text-balance tracking-tight">${escHtml(flat.heading)}</h3>${subhead}</div><div class="flex flex-col md:flex-row mt-2 divide-y md:divide-y-0 md:divide-x divide-repower-navy-900/15">${left}${right}</div>${whenInDoubt}</div>`;
 }
 
 function renderDiagnosticFlowHtml(body) {
