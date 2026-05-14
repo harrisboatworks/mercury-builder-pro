@@ -17,6 +17,7 @@ import { DecisionCard, type DecisionCardProps } from './DecisionCard';
 import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './DiagnosticFlowchart';
 import { CostStack, type CostStackProps, type CostStackItem } from './CostStack';
 import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustItem } from './BilingualTrustCard';
+import { PullQuote, type PullQuoteProps } from './PullQuote';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
