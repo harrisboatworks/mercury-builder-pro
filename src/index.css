@@ -1912,3 +1912,12 @@ html {
 }
 
 
+
+/* Blog directive component utilities (mercury-red helpers) */
+@layer utilities {
+  .text-mercury-red { color: hsl(var(--mercury-red)); }
+  .bg-mercury-red { background-color: hsl(var(--mercury-red)); }
+  .bg-mercury-red\/5 { background-color: hsl(var(--mercury-red) / 0.05); }
+  .border-l-mercury-red { border-left-color: hsl(var(--mercury-red)); }
+  .border-mercury-red { border-color: hsl(var(--mercury-red)); }
+}
