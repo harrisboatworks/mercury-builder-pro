@@ -492,7 +492,32 @@ function parseBilingualTrustBody(body: string): BilingualTrustCardProps | null {
   };
 }
 
-function splitDirectives(md: string): RenderChunk[] {
+function parsePullQuoteBody(body: string): PullQuoteProps | null {
+  // Simple key/value parser. The `quote` value may continue on indented
+  // continuation lines, mirroring how authors paste multi-sentence quotes.
+  const lines = body.split('\n');
+  const flat: Record<string, string> = {};
+  let lastKey: string | null = null;
+  for (const raw of lines) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) { lastKey = null; continue; }
+    const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+    if (kv) {
+      flat[kv[1]] = kv[2];
+      lastKey = kv[1];
+    } else if (lastKey && /^\s+/.test(raw)) {
+      flat[lastKey] = (flat[lastKey] ? flat[lastKey] + ' ' : '') + line.trim();
+    } else {
+      lastKey = null;
+    }
+  }
+  if (!flat.quote) return null;
+  return {
+    quote: flat.quote,
+    attribution: flat.attribution || undefined,
+    source: flat.source || undefined,
+  };
+}
   const chunks: RenderChunk[] = [];
   let last = 0;
   let m: RegExpExecArray | null;
