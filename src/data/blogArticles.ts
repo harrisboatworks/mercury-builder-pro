@@ -24104,10 +24104,10 @@ By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice 
     seoTitle: 'Boat Insurance in Ontario: What You Need (2026 Guide)',
     title: 'Boat Insurance in Ontario: What You Actually Need (2026)',
     description: 'Ontario boat insurance basics. Liability vs hull coverage, what is covered vs not, real annual premium ranges by boat type, and why insurance + extended warranty cover different things.',
-    image: '/lovable-uploads/Boat_Repowering_101_Hero.png',
+    image: '/lovable-uploads/hero-legend-boats-mercury-package.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-05-14',
     publishDate: '2026-05-13',
     category: 'Boating',
     readTime: '~9 min read',
@@ -24146,6 +24146,8 @@ totalLabel: Quick rule of thumb
 totalValue: Roughly 1.5 to 2.5% of declared hull value per year
 caveat: Premiums vary by insurer, boating experience, location, claim history, and whether you bundle with home or auto. These ranges assume Ontario residency, freshwater use, and no major prior claims. Get 3 quotes minimum.
 ::
+
+> **For Legend Boats customers:** If you bought a Legend through HBW, Legend Boats has a partner insurance page at [insurance.legendboats.com](https://insurance.legendboats.com) set up specifically for Legend customers. Worth a quote alongside your other 3.
 
 ## Is Boat Insurance Legally Required in Ontario?
 
