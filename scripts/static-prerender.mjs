@@ -3452,8 +3452,28 @@ function sanitizeSchemaValue(value) {
   return value;
 }
 
+function detectLang(path) {
+  if (path.startsWith('/blog/fr/')) return 'fr-CA';
+  if (path.startsWith('/blog/zh/')) return 'zh-Hans';
+  if (path.startsWith('/blog/ko/')) return 'ko';
+  if (path.startsWith('/blog/es/')) return 'es';
+  return 'en';
+}
+
+function detectOgLocale(path) {
+  if (path.startsWith('/blog/fr/')) return 'fr_CA';
+  if (path.startsWith('/blog/zh/')) return 'zh_CN';
+  if (path.startsWith('/blog/ko/')) return 'ko_KR';
+  if (path.startsWith('/blog/es/')) return 'es_ES';
+  return 'en_CA';
+}
+
 function stamp(route) {
   let html = shell;
+  html = html.replace(
+    /<html lang="en">/i,
+    `<html lang="${detectLang(route.path)}">`
+  );
 
   // NOTE: All Helmet-managed tags (title, description, canonical, JSON-LD) are
   // stamped with data-rh="true" so react-helmet-async adopts them on hydration
