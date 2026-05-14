@@ -40,7 +40,14 @@ export function CostStack({ eyebrow, heading, subhead, items, total, caveat }: C
             : '';
           const valueClass = item.accent ? 'text-mercury-red' : 'text-repower-navy-900';
           return (
-            <div key={i} className={`flex flex-col gap-1 ${dividerClass}`}>
+            <motion.div
+              key={i}
+              initial={{ y: 8 }}
+              whileInView={{ y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: i * 0.06 }}
+              className={`flex flex-col gap-1 ${dividerClass}`}
+            >
               <div className={`flex items-center justify-between gap-4 rounded-md px-4 py-3 ${rowAccent}`}>
                 <span className="font-display font-semibold text-repower-navy-900 text-sm md:text-base">
                   {item.label}
