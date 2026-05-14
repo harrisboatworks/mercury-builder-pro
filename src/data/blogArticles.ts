@@ -23284,6 +23284,34 @@ Mercury outboard beep patterns vary by model, year, and whether the boat has Sma
 
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
+::diagnostic-flow
+heading: What to do when your Mercury starts beeping
+eyebrow: Beep diagnostic flow
+subhead: Most Mercury alarms fall into one of these patterns. Work through this in order. Most marina calls we get could be solved with these 5 steps.
+step1Number: 1
+step1Title: Stop and idle the motor down
+step1Body: Pull the throttle back to idle (or shut off and re-start at idle on the water). A beeping motor at WOT is a guaranteed way to make the problem worse.
+step1Tip: Continuous beep at idle means stop running it entirely. Tow in.
+step2Number: 2
+step2Title: Identify the pattern
+step2Body: One long continuous beep at startup is normally just the system check. A short beep every few seconds at idle is usually low oil. A continuous beep that does NOT stop is overheat or low oil pressure, both serious.
+step3Number: 3
+step3Title: Check the telltale stream
+step3Body: If the beep is continuous, look at the pee-stream out the side of the cowl. No stream or weak stream means cooling problem. Stop running the motor.
+step3Tip: A strong telltale with continuous beep usually points to oil pressure, not overheat.
+step4Number: 4
+step4Title: Check oil level (4-strokes)
+step4Body: Pull the dipstick on a 4-stroke. Low oil triggers a low-oil-pressure beep. Top up with the right Mercury 4-stroke oil and re-start. If the beep clears, you found it.
+step5Number: 5
+step5Title: Pull codes with SmartCraft if equipped
+step5Body: VesselView or SmartCraft-linked plotters show fault codes that turn beeps into plain English. Note the exact code before calling the shop.
+step5Tip: Take a photo of the code on the screen so you can text it to us.
+escalationTitle: Still beeping after all 5? Call us.
+escalationBody: Continuous beeps that do not clear after stopping, checking water and oil, and pulling codes need a tech. We can usually diagnose by phone in under 5 minutes.
+escalationCta: Call (905) 342-2153
+escalationCtaLink: tel:+19053422153
+::
+
 ---
 
 ## Mercury Outboard Beeping Codes: What Each Pattern Means and What to Check
