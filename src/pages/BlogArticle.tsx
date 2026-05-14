@@ -412,10 +412,8 @@ export default function BlogArticle() {
             <ShaftLengthPicker />
           )}
 
-          {/* Interactive tool: Trade-In Value Estimator (slug-conditional) */}
-          {article.slug === 'outboard-trade-in-value-ontario-hbw' && (
-            <TradeInValueEstimator />
-          )}
+
+
 
           {/* Interactive tool: Repower Cost Estimator (slug-conditional) */}
           {article.slug === 'mercury-repower-cost-ontario-2026-cad' && (
