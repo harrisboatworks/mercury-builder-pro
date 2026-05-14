@@ -59,7 +59,7 @@ export function CostStack({ eyebrow, heading, subhead, items, total, caveat }: C
               {item.note ? (
                 <p className="italic text-muted-foreground text-xs px-1 m-0">{item.note}</p>
               ) : null}
-            </div>
+            </motion.div>
           );
         })}
       </div>
