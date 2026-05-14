@@ -166,19 +166,20 @@ function renderCostStackHtml(body) {
   if (!flat.heading) return '';
   const items = Object.keys(itemMap).map(Number).sort((a, b) => a - b)
     .map(i => itemMap[i]).filter(it => it.label && it.value);
-  const eyebrow = flat.eyebrow ? `<div class="text-xs font-bold uppercase tracking-wide text-mercury-red mb-2">${escHtml(flat.eyebrow)}</div>` : '';
-  const subhead = flat.subhead ? `<p class="font-sans text-sm text-repower-navy-900/70 mt-2 mb-0">${escHtml(flat.subhead)}</p>` : '';
-  const rows = items.map(it => {
-    const barClass = it.accent ? 'bg-repower-mercury-red/15' : 'bg-repower-navy-900/10';
+  const eyebrow = flat.eyebrow ? `<div class="text-[11px] uppercase tracking-[0.14em] font-medium text-muted-foreground mb-2">${escHtml(flat.eyebrow)}</div>` : '';
+  const subhead = flat.subhead ? `<p class="font-sans text-sm text-muted-foreground leading-relaxed mt-2 mb-0">${escHtml(flat.subhead)}</p>` : '';
+  const rows = items.map((it, i) => {
+    const dividerClass = i > 0 ? 'border-t border-border/40 pt-3 mt-3' : '';
+    const rowAccent = it.accent ? 'bg-mercury-red/5 border-l-2 border-l-mercury-red' : '';
     const valueClass = it.accent ? 'text-mercury-red' : 'text-repower-navy-900';
-    const note = it.note ? `<p class="italic text-repower-navy-900/60 text-xs px-1 m-0">${escHtml(it.note)}</p>` : '';
-    return `<div class="flex flex-col gap-1"><div class="flex items-center justify-between gap-4 rounded-md px-4 py-3 ${barClass}"><span class="font-display font-semibold text-repower-navy-900 text-sm md:text-base">${escHtml(it.label)}</span><span class="font-display font-bold text-sm md:text-base ${valueClass}">${escHtml(it.value)}</span></div>${note}</div>`;
+    const note = it.note ? `<p class="italic text-muted-foreground text-xs px-1 m-0">${escHtml(it.note)}</p>` : '';
+    return `<div class="flex flex-col gap-1 ${dividerClass}"><div class="flex items-center justify-between gap-4 rounded-md px-4 py-3 ${rowAccent}"><span class="font-display font-semibold text-repower-navy-900 text-sm md:text-base">${escHtml(it.label)}</span><span class="font-display font-bold text-sm md:text-base text-right tabular-nums ${valueClass}">${escHtml(it.value)}</span></div>${note}</div>`;
   }).join('');
   const total = (flat.totalLabel && flat.totalValue)
-    ? `<div class="bg-repower-navy-900 text-white px-6 py-4 md:px-8 flex items-center justify-between gap-4"><span class="font-display font-bold text-lg">${escHtml(flat.totalLabel)}</span><span class="font-display font-bold text-lg">${escHtml(flat.totalValue)}</span></div>`
+    ? `<div class="bg-repower-paper border-t-2 border-repower-navy-900/30 text-repower-navy-900 px-6 py-4 md:px-8 flex items-center justify-between gap-4"><span class="font-display font-bold text-lg tracking-tight">${escHtml(flat.totalLabel)}</span><span class="font-display font-bold text-xl text-right tabular-nums">${escHtml(flat.totalValue)}</span></div>`
     : '';
-  const caveat = flat.caveat ? `<div class="border-t border-repower-navy-900/15 px-6 py-3 md:px-8 text-center italic text-repower-navy-900/60 text-xs">${escHtml(flat.caveat)}</div>` : '';
-  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0">${escHtml(flat.heading)}</h3>${subhead}</div><div class="px-6 py-6 md:px-8 md:py-8 flex flex-col gap-3">${rows}</div>${total}${caveat}</div>`;
+  const caveat = flat.caveat ? `<div class="border-t border-repower-navy-900/15 px-6 py-3 md:px-8 text-center italic text-muted-foreground text-xs">${escHtml(flat.caveat)}</div>` : '';
+  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0 text-balance tracking-tight">${escHtml(flat.heading)}</h3>${subhead}</div><div class="px-6 py-6 md:px-8 md:py-8 flex flex-col">${rows}</div>${total}${caveat}</div>`;
 }
 
 function renderBilingualTrustHtml(body) {
