@@ -18804,6 +18804,31 @@ Mercury outboard pricing in Ontario depends on horsepower, controls, prop, riggi
 
 
 > **Quick estimate:** Try our [Repower Cost Estimator](/tools#repower-cost) for your specific HP and setup. Free, instant CAD ballpark.
+
+::cost-stack
+heading: How Mercury outboard prices stack up in Ontario
+eyebrow: Pricing by HP category
+subhead: Mercury prices in Canada fall into 5 clear bands. These are MSRP-ish 2026 starting points before HST. Real out-the-door pricing depends on shaft length, controls, rigging, and trade.
+item1Label: Portable tiller (2.5 to 20 HP)
+item1Value: $1,400 - $4,200
+item1Note: Small kicker and dinghy motors. 9.9 EFI ProKicker is HBW's most-sold in this range. Cash-and-carry friendly.
+item2Label: Mid-range mechanical (25 to 60 HP)
+item2Value: $4,800 - $9,800
+item2Note: Aluminum-fishing-boat sweet spot. 40 to 60 HP is the working range for most 16 to 18 ft hulls. Tiller and remote both available.
+item3Label: High-HP FourStroke (75 to 150 HP)
+item3Value: $11,500 - $19,500
+item3Note: The Rice Lake repower bread-and-butter. 90 and 115 HP are our highest-volume Mercury skus.
+item3Accent: true
+item4Label: V6 Pro XS or V8 FourStroke (175 to 300 HP)
+item4Value: $22,000 - $38,000
+item4Note: Bass boats, larger aluminum, big pontoons. Pro XS V6 is competitive vs Yamaha. Verado V8 is the quiet premium option.
+item5Label: V10 Verado (350 to 400 HP)
+item5Value: $46,000 - $54,000+
+item5Note: Twin or triple outboards on big offshore boats and large pontoons. Most Ontario customers don't need this band.
+totalLabel: Repower budget reality check
+totalValue: Add 20 to 35% on top of motor price for rigging
+caveat: Pricing varies by model year, shaft length, controls package, gauges, propeller, and rigging labor. HST extra. For an actual quote, use the configurator at /quote.
+::
 ---
 
 ### Ontario Mercury Outboard Price Guide
