@@ -1931,9 +1931,9 @@ html {
    editorial frame, header accent, and zebra/hover treatment everywhere. */
 .blog-article-prose table,
 article .blog-article-prose table {
-  display: block;
+  display: table;
   width: 100%;
-  overflow-x: auto;
+  table-layout: auto;
   border-collapse: separate;
   border-spacing: 0;
   background: hsl(var(--card));
