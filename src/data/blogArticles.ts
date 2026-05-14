@@ -11696,6 +11696,8 @@ Wondering if Boost makes sense for your specific pontoon? We'll tell you straigh
 
 More often than not, the better upgrade is a prop and trim conversation, and that one's free to start.
 
+> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether the promo applies to you. Or call [(905) 342-2153](tel:+19053422153) if you want to talk it through.
+
 ---`,
     faqs: [
       {
