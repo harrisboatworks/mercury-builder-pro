@@ -3452,8 +3452,28 @@ function sanitizeSchemaValue(value) {
   return value;
 }
 
+function detectLang(path) {
+  if (path.startsWith('/blog/fr/')) return 'fr-CA';
+  if (path.startsWith('/blog/zh/')) return 'zh-Hans';
+  if (path.startsWith('/blog/ko/')) return 'ko';
+  if (path.startsWith('/blog/es/')) return 'es';
+  return 'en';
+}
+
+function detectOgLocale(path) {
+  if (path.startsWith('/blog/fr/')) return 'fr_CA';
+  if (path.startsWith('/blog/zh/')) return 'zh_CN';
+  if (path.startsWith('/blog/ko/')) return 'ko_KR';
+  if (path.startsWith('/blog/es/')) return 'es_ES';
+  return 'en_CA';
+}
+
 function stamp(route) {
   let html = shell;
+  html = html.replace(
+    /<html lang="en">/i,
+    `<html lang="${detectLang(route.path)}">`
+  );
 
   // NOTE: All Helmet-managed tags (title, description, canonical, JSON-LD) are
   // stamped with data-rh="true" so react-helmet-async adopts them on hydration
@@ -3509,6 +3529,7 @@ function stamp(route) {
     { re: /<meta\s+property=["']og:url["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:url" content="${ogUrl}" />` },
     { re: /<meta\s+property=["']og:type["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:type" content="${ogType}" />` },
     { re: /<meta\s+property=["']og:image["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:image" content="${ogImage}" />` },
+    { re: /<meta\s+property=["']og:locale["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:locale" content="${detectOgLocale(route.path)}" />` },
     { re: /<meta\s+name=["']twitter:title["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:title" content="${escapeHtml(route.title)}" />` },
     { re: /<meta\s+name=["']twitter:description["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:description" content="${escapeHtml(route.description)}" />` },
     { re: /<meta\s+name=["']twitter:url["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:url" content="${ogUrl}" />` },
