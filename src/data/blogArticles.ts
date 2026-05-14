@@ -19953,7 +19953,7 @@ We also publish all our Mercury pricing live at [mercuryrepower.ca](https://merc
 
 > **Want a number right now?** Try our [Trade-In Value Estimator](/trade-in-value). Same fields, instant CAD ballpark. Or call us at [(905) 342-2153](tel:+19053422153) and we'll walk it through with you.
 
-*Last reviewed: 2026-05-11.*\`,
+*Last reviewed: 2026-05-11.*`,
   },
   {
     slug: 'mercury-smartcraft-connect-guide-ontario',
