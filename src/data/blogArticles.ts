@@ -24147,6 +24147,8 @@ totalValue: Roughly 1.5 to 2.5% of declared hull value per year
 caveat: Premiums vary by insurer, boating experience, location, claim history, and whether you bundle with home or auto. These ranges assume Ontario residency, freshwater use, and no major prior claims. Get 3 quotes minimum.
 ::
 
+> **For Legend Boats customers:** If you bought a Legend through HBW, Legend Boats has a partner insurance page at [insurance.legendboats.com](https://insurance.legendboats.com) set up specifically for Legend customers. Worth a quote alongside your other 3.
+
 ## Is Boat Insurance Legally Required in Ontario?
 
 Short answer: not for most pleasure craft. Ontario requires automobile insurance but not boat insurance.
