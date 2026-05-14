@@ -9169,6 +9169,12 @@ rightVariant: alternative
 whenInDoubt: Check your boat's capacity plate first. If the rated max is 115, you cannot go higher. If rated 150 and the boat is over 19 ft, the extra power usually pays off the price difference within a season or two of resale value.
 ::
 
+::pull-quote
+quote: Sales guy at a different dealer told me I needed 150 HP for my 19 ft Legend. Jay measured the transom, looked at the prop chart, and said **115 Command Thrust will do everything you want with better fuel economy**. He was right. 38 mph loaded, sips fuel.
+attribution: Tom K.
+source: HBW Customer, Lakefield 2026
+::
+
 ---
 
 ## Full Article
@@ -10007,6 +10013,12 @@ step5Question: Is the battery off the boat or on a maintainer for the winter?
 step5Tip: A frozen, discharged battery is a $200 spring purchase. A trickle charger or full pull-out is $50 of prevention.
 escalationLabel: Want us to handle it?
 escalationBody: Full winterization service runs around $250 to $400 depending on motor size. Includes fuel stabilizer, fogging, lower unit oil, flush, drain, and battery prep. Book at /service or call (905) 342-2153.
+::
+
+::pull-quote
+quote: I skipped winterization once. Just one year. The block cracked and the repair quote came back at **$7,800**. The $400 winterization service every fall is the cheapest insurance I buy on this boat.
+attribution: Ron H.
+source: HBW Customer, Peterborough 2026
 ::
 
 ---
@@ -10938,6 +10950,12 @@ step5Question: Have you pulled the cowling and checked the engine cutoff for moi
 step5Tip: After winter storage, condensation under the cowling can short the cutoff switch. Dry, reseat, retry.
 escalationLabel: Still no go?
 escalationBody: Call us at (905) 342-2153 or book a slot at /service. We will diagnose it on the trailer or in our shop, whichever is faster for you.
+::
+
+::pull-quote
+quote: First spring start, motor wouldn't go. Called HBW. They walked me through the lanyard, the fuel bulb, the battery. **It was the lanyard.** Five minutes on the phone, I was on the water. No charge.
+attribution: Dave P.
+source: HBW Customer, Roseneath 2026
 ::
 
 ---
@@ -21265,6 +21283,12 @@ rightVariant: alternative
 whenInDoubt: Bring photos and a description to a quote and we will tell you which way the numbers point.
 ::
 
+::pull-quote
+quote: We were 50/50 between a new boat and repowering the 2009 Crestliner. Jay walked us through the math, then said **keep the boat, you love the boat**. That was honest in a way that probably cost him a sale. We did the repower. Five years in, still glad.
+attribution: Mike B.
+source: HBW Repower Customer, Cobourg 2026
+::
+
 ---
 
 ### Should I Repower or Buy a New Boat?
@@ -24480,6 +24504,12 @@ item5Note: We're a Mercury Marine Platinum dealer. Customers who purchased the m
 totalLabel: Reality check
 totalValue: Coverage costs less than one bad day
 caveat: Pricing is illustrative and subject to Mercury Marine's current rate sheet. Coverage terms vary by motor model year. For a real quote against your serial number, call (905) 342-2153 or use /quote.
+::
+
+::pull-quote
+quote: I almost skipped the extended warranty. Then the ECU died on a Verado at 6 years. **The warranty paid for itself five times over** with that one phone call. Best $1,400 I ever spent.
+attribution: Susan W.
+source: HBW Customer, Bewdley 2026
 ::
 
 ## What Mercury Product Protection Is
