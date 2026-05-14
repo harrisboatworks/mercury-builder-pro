@@ -140,27 +140,48 @@ export function ReviewSubmitStep() {
         }
       }
 
-      // Save to database
-      const { data: application, error } = await supabase
-        .from('financing_applications')
-        .upsert({
-          id: state.applicationId || undefined,
-          user_id: user?.id,
-          quote_id: state.quoteId,
-          purchase_data: validated.purchaseDetails,
-          applicant_data: validated.applicant,
-          employment_data: validated.employment,
-          financial_data: validated.financial,
-          co_applicant_data: validated.coApplicant,
-          references_data: validated.references,
-          status: 'pending',
-          current_step: 7,
-          completed_steps: [1, 2, 3, 4, 5, 6, 7],
-          applicant_sin_encrypted: applicantSinEncrypted,
-          co_applicant_sin_encrypted: coApplicantSinEncrypted,
-        })
-        .select()
-        .single();
+      // Save to database.
+      // We generate the row id client-side so that anonymous (not signed in)
+      // submitters do not need a SELECT policy to read the row back after insert.
+      // For signed in users with an existing draft, we keep their applicationId.
+      const applicationRowId = state.applicationId || (typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : undefined);
+      const upsertPayload = {
+        id: applicationRowId,
+        user_id: user?.id ?? null,
+        quote_id: state.quoteId,
+        purchase_data: validated.purchaseDetails,
+        applicant_data: validated.applicant,
+        employment_data: validated.employment,
+        financial_data: validated.financial,
+        co_applicant_data: validated.coApplicant,
+        references_data: validated.references,
+        status: 'pending' as const,
+        current_step: 7,
+        completed_steps: [1, 2, 3, 4, 5, 6, 7],
+        applicant_sin_encrypted: applicantSinEncrypted,
+        co_applicant_sin_encrypted: coApplicantSinEncrypted,
+      };
+
+      // For anon submitters we cannot do .select() because anon has no SELECT
+      // policy on financing_applications (PII protection). For signed in users
+      // we still .select() so we get the canonical row back.
+      let applicationId: string | undefined = applicationRowId;
+      let error: any = null;
+      if (user?.id) {
+        const res = await supabase
+          .from('financing_applications')
+          .upsert(upsertPayload)
+          .select()
+          .single();
+        error = res.error;
+        applicationId = res.data?.id ?? applicationRowId;
+      } else {
+        const res = await supabase
+          .from('financing_applications')
+          .upsert(upsertPayload);
+        error = res.error;
+      }
+      const application = applicationId ? { id: applicationId } : null;
 
       // CRITICAL: Check DB error before continuing
       if (error || !application) {
