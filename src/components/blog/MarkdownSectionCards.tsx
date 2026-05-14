@@ -609,6 +609,9 @@ function renderMarkdownWithDirectives(
     if (chunk.kind === 'bilingual-trust' && chunk.bilingualTrustProps) {
       return <BilingualTrustCard key={`${keyPrefix}-bt-${i}`} {...chunk.bilingualTrustProps} />;
     }
+    if (chunk.kind === 'pull-quote' && chunk.pullQuoteProps) {
+      return <PullQuote key={`${keyPrefix}-pq-${i}`} {...chunk.pullQuoteProps} />;
+    }
     if (!chunk.content.trim()) return null;
     return (
       <ReactMarkdown
