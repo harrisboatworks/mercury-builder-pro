@@ -360,7 +360,7 @@ export default function BlogArticle() {
           )}
 
           {/* Content */}
-          <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 prose-table:w-full prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-repower-navy-900/20 prose-td:border-b prose-td:border-repower-navy-900/10 prose-th:py-2 prose-td:py-2 prose-th:px-3 prose-td:px-3">
+          <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 blog-article-prose">
             <MarkdownSectionCards
               content={(() => {
                 let c = article.content.replace(/^\s*#\s+.+\n+/, '');
