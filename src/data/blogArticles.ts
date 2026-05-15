@@ -11352,7 +11352,7 @@ Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
     slug: 'boat-hull-replacement-vs-repower-decision',
     relatedSlugs: ['should-i-repower-or-buy-new-boat-ontario', 'mercury-repower-cost-ontario-2026-cad', 'outboard-trade-in-value-ontario-hbw'],
     title: 'Boat Hull Replacement vs Repower: The Honest Decision (2026)',
-    description: 'For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn\'t structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).',
+    description: 'For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury delivers 80% of the new-boat experience for half the money.',
     image: '/lovable-uploads/hero-hull-vs-repower.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-29',
