@@ -1,5 +1,5 @@
 ---
-canonical: https://www.mercuryrepower.ca/blog/mercury-150-200hp-v6-performance.md
+canonical: https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide.md
 last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
@@ -25,7 +25,7 @@ content_type: blog_article
 **Published:** 2026-05-13  
 **Last updated:** 2026-05-13  
 **Read time:** 10 min read  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-200hp-v6-performance
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide
 
 ## Article
 

@@ -6974,10 +6974,10 @@ Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercury
 
   // Week 48: November 30, 2026
   {
-    slug: 'mercury-150-200hp-v6-performance',
-    title: 'Mercury 150-300 HP Performance Compared (Ontario 2026)',
-    seoTitle: 'Mercury 150-300 HP Performance Compared (2026)',
-    description: "An HBW dealer's honest comparison of Mercury V6 outboards from 150 to 300 HP, what each delivers, who needs which, and where the inflection points actually are.",
+    slug: 'mercury-150-300hp-pro-xs-performance-guide',
+    title: 'Mercury 150-300 HP Pro XS Compared for Ontario Boats',
+    seoTitle: 'Mercury 150-300 HP Pro XS Compared | Ontario Guide',
+    description: "HBW compares Mercury 150, 175, 200, 225, 250, and 300 HP Pro XS outboards for Ontario boats, with honest fit guidance.",
     image: '/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
@@ -6985,17 +6985,19 @@ Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercury
     publishDate: '2026-05-13',
     category: 'Buying Guide',
     readTime: '10 min read',
-    keywords: ['mercury 150 200 v6', 'mercury 3.4 v6', 'mercury v6 vs inline', 'mercury 175 pro xs', 'mercury v6 comparison', 'Mercury 150 175 200 225 V6 comparison', 'Mercury V6 Pro XS performance', 'Mercury 200 vs 225 vs 250', 'Mercury 175 EXLPT', 'Mercury 250 Pro XS'],
+    keywords: ['mercury 150 pro xs', 'mercury 175 pro xs', 'mercury 200 pro xs', 'mercury 225 pro xs', 'mercury 250 pro xs', 'mercury 300 pro xs', 'mercury v6 vs v8', 'mercury pro xs comparison ontario', 'mercury 150-300 hp guide'],
     content: `
 *Last reviewed: 2026-05-10*
 
-> **Quick answer:** Mercury's V6 lineup, 150, 175, 200, 225, 250, 300, shares a common architecture with progressively more displacement and tune. The 200-225 is the sweet spot for most Ontario center consoles and runabouts. The 300 makes sense only with the right hull and prop. Compare installed pricing at mercuryrepower.ca.
+> **Quick answer:** The current Mercury 150 Pro XS is an inline-4. The Pro XS V6 range starts at 175 HP, while the 300 Pro XS is a V8. For many Ontario runabouts and fishing boats, the 200-225 HP range is the sweet spot, but the right answer depends on your hull rating, load, use, and budget.
 
-Mercury's V6 lineup is where things get interesting. From the 150 (technically still an inline-4 in current Pro XS, but a V6 historically) up to the 300 Pro XS, this is where you choose between "enough motor" and "exactly the right motor for what I do."
+The 150-300 HP Mercury range is where a lot of boaters either get the motor exactly right or spend a pile of money chasing the wrong kind of power.
 
-We sell V6 motors every week. Customers ask the same questions over and over: which one is right for me, what's the real difference, where does the inflection point sit. This is the version of that conversation we'd have at the shop.
+The first thing to clear up: the current Mercury 150 Pro XS is an inline-4, not a V6. The V6 Pro XS family starts at 175 HP, and the 300 Pro XS moves into V8 territory. That matters because you are not just comparing horsepower. You are comparing weight, torque, rigging, hull fit, handling, fuel use, and whether the boat will actually feel better on Rice Lake or just sound better in a spec sheet.
 
-**One housekeeping note before we dive in:** Mercury's 150 Pro XS is an **inline-4, 3.0L**, same block as the 150 FourStroke, just performance-tuned. The V6 in the Pro XS lineup actually starts at **175 HP**. Old marketing material sometimes calls the 150 a V6; that's wrong, and Mercury's current spec sheets confirm it. We've corrected it across our content but you may still see the error elsewhere.
+Harris Boat Works is a family-owned marina on Rice Lake, established in 1947, and a Mercury Marine Platinum Dealer. We sell and rig these motors, so this guide is built around the real customer question: which one makes sense for your boat, your water, and your budget?
+
+The current Pro XS lineup in this range spans three architectures: 150 HP inline-4, 175-250 HP V6, and 300 HP V8.
 
 ## The Quick Comparison Table
 
@@ -7013,6 +7015,8 @@ We sell V6 motors every week. Customers ask the same questions over and over: wh
 - Mercury's "Boost" software upgrade can add HP to existing motors (eligible serial numbers, see [our Boost software upgrade guide](/blog/mercury-boost-software-upgrade-eligibility-2026))
 - Resale values don't dramatically separate based on HP rating within the V6 range
 
+> Pricing below is a planning range, not a quote. Installed cost changes with shaft length, controls, gauges, prop, steering, rigging, trade-in value, and current Mercury programs. For a real number, use the quote builder at MercuryRepower.ca.
+
 ## Where Each One Wins
 
 ### 150 Pro XS (Inline-4, 3.0L)
@@ -7025,7 +7029,7 @@ Performance-tuned inline-4. Same block as the 150 FourStroke, but with a sport g
 - You'll never need more than 50-55 mph
 - Budget-conscious, meaningfully cheaper than 175 V6
 
-**Pricing:** ~$22,500-$26,500 CAD all-in.
+**Typical planning range:** ~$22,500-$26,500 CAD all-in.
 
 ### 175 Pro XS (V6, 3.4L)
 
@@ -7036,7 +7040,7 @@ The smallest of the V6 family. Real V6 power and torque in a still-manageable pa
 - You expect to upgrade later (the 200/225/250 Pro XS is the same physical motor with different software)
 - Your boat tops out at 19 feet but you want headroom
 
-**Pricing:** ~$26,500-$31,500 CAD all-in.
+**Typical planning range:** ~$26,500-$31,500 CAD all-in.
 
 ### 200 Pro XS (V6, 3.4L). The Most Popular
 
@@ -7047,7 +7051,7 @@ If you ask us which Mercury we sell most often in the V6 range, it's the **200 P
 - You want a single motor that handles cruise, watersports, and serious fishing equally well
 - The 175 feels like compromise but the 250 feels like overkill
 
-**Pricing:** ~$29,500-$34,000 CAD all-in.
+**Typical planning range:** ~$29,500-$34,000 CAD all-in.
 
 ### 225 Pro XS (V6, 3.4L)
 
@@ -7058,7 +7062,7 @@ The bridge between 200 (sweet spot) and 250 (max V6). Same motor as 200, more so
 - Watersports with consistent ballast
 - Tournament fishing where every second of hole shot matters
 
-**Pricing:** ~$32,000-$36,500 CAD all-in.
+**Typical planning range:** ~$32,000-$36,500 CAD all-in.
 
 ### 250 Pro XS (V6, 3.4L)
 
@@ -7069,7 +7073,7 @@ Top of the V6 calibration. Maximum HP on the same physical V6 platform.
 - Twin-engine setups on bigger hulls (twin 250 V6s = 500 HP at lower weight than twin V8s)
 - You want max V6 without going to V8
 
-**Pricing:** ~$34,500-$39,500 CAD all-in.
+**Typical planning range:** ~$34,500-$39,500 CAD all-in.
 
 ### 300 V8 Pro XS. The Step Up
 
@@ -7081,7 +7085,7 @@ Mercury's V8 platform. Different motor entirely, bigger displacement (4.6L), mor
 - 22+ ft hulls
 - DTS is standard (V6 makes it optional)
 
-**Pricing:** ~$39,500-$44,000 CAD all-in.
+**Typical planning range:** ~$39,500-$44,000 CAD all-in.
 
 ## The Real Decision Framework
 
@@ -13483,7 +13487,8 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
   {
     slug: 'mercruiser-sterndrive-guide-ontario',
     title: "The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower",
-    description: "A Mercury Platinum dealer's guide to Mercruiser sterndrives in Ontario, what wears out, what kills boats, and when repower or outboard conversion makes sense. By Harris Boat Works.",
+    seoTitle: 'Mercruiser Sterndrive Maintenance Ontario | HBW Guide',
+    description: "Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris Boat Works.",
     image: '/lovable-uploads/hero-mercruiser-sterndrive-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-14',
@@ -13501,9 +13506,11 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 
 Considering converting to outboard power? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what a sterndrive-to-outboard conversion needs at the helm.
 
-There are a lot of sterndrive boats in Ontario. Older Sea Rays, Bayliners, Glastrons, Four Winns, Thundercrafts, the occasional Doral or Crownline. Most of them have a Mercruiser engine inside the boat and a Mercury sterndrive hanging off the transom. Most of those engines are between 15 and 25 years old now.
+Your Mercruiser sterndrive does not need mystery. It needs the right maintenance, especially before an Ontario winter gets involved.
 
-We service Mercruiser sterndrives at Gores Landing, same shop, same Mercury Platinum techs as our outboard work. This is the guide we wish more sterndrive owners read before something expensive happens.
+Around here, most expensive I/O problems come from the same few places: missed winterization, old bellows, water intrusion, tired manifolds and risers, or a drive that has been quietly asking for help since Labour Day. The boat usually gave warnings. They were just easy to ignore when the weather was nice.
+
+Harris Boat Works is a family-owned Rice Lake marina established in 1947 and a Mercury Marine Platinum Dealer in Gores Landing, Ontario. We service Mercruiser sterndrives, winterize them, store them, and when the repair bill stops making sense, we'll tell you that too. No scare tactics. Boats already cost enough without adding drama.
 
 ---
 
@@ -13614,7 +13621,7 @@ A reasonable annual routine for an Ontario sterndrive:
 - Drain or refill drive with fresh gear lube
 - Cover or shrinkwrap
 
-A skipped fall properly costs $5,000+. A done-right winterization runs $400-$700 at HBW depending on engine size and configuration.
+A skipped fall can easily become a **$5,000+** problem. A proper winterization at HBW typically runs **$400-$700**, depending on engine size and configuration.
 
 ---
 
@@ -13676,6 +13683,8 @@ If you have a great I/O hull and you love the boat, keep it. We'll keep it runni
 
 We've been a Mercury Platinum dealer in Ontario since 1965. That includes Mercruiser. Same factory training, same parts access, same diagnostics. The difference between us and an outboard-only shop is we know what to do when the answer isn't "remove the cowl and look."
 
+For engine repairs, we only service Mercury and Mercruiser.
+
 What we handle:
 
 - Annual service and winterization
@@ -13720,7 +13729,8 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
   {
     slug: 'mercury-vesselview-smartcraft-plain-english-guide',
     title: "Mercury VesselView, SmartCraft, and the New Mercury Marine App: A Plain-English Guide",
-    description: "Plain-English explanation of Mercury's VesselView, SmartCraft, the new Mercury Marine App, DTS, and Active Trim, what they actually do, what they cost, and which ones you'll use.",
+    seoTitle: 'Mercury VesselView & SmartCraft Explained | Ontario Guide',
+    description: "Plain-English guide to Mercury VesselView, SmartCraft, Active Trim, and the Mercury Marine App from HBW on Rice Lake.",
     image: '/lovable-uploads/hero-vesselview-smartcraft.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
@@ -13738,9 +13748,11 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
 
 For pricing on the engines that ship with SmartCraft, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers DTS and gauge wiring in detail, and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) explains which engines include DTS standard.
 
-Most Mercury owners we talk to know they have "smart" features on their motor and have no idea how to actually use them. The dash gauge says fuel flow. The phone app pairs sometimes. There's a thing called Active Trim that the previous owner mentioned but never explained.
+Mercury has a lot of smart technology now. Some of it is genuinely useful. Some of it sounds useful until you are staring at a dash menu at the dock wondering why your phone won't pair.
 
-This is the version of that conversation we'd have at the shop. No marketing copy, no jargon, just what each piece is, what it costs, and whether you'll actually use it.
+Here's the plain-English version: VesselView is the display, SmartCraft is the engine data network behind it, and the Mercury Marine App brings some of that information to your phone. Together, they can show fuel use, engine hours, alarms, service reminders, and performance data.
+
+Harris Boat Works is a family-owned marina in Gores Landing on Rice Lake, established in 1947, and a Mercury Marine Platinum Dealer. We install and service this equipment, so this is the version of the conversation we'd have at the shop: what it does, what is worth paying for, and what is just another screen to poke at when you should be boating.
 
 ---
 
@@ -13817,7 +13829,7 @@ You also pick one of **five Active Trim profiles**, higher number means more tri
 
 The catch: **Active Trim doesn't see shallow water.** It's making decisions about hull attitude based on speed and RPM. If you're entering a shallow spot, take manual trim control before the prop hits the bottom. The system isn't a substitute for awareness.
 
-Active Trim is **compatible with Mercury FourStroke 40-600 HP, SmartCraft-capable two-strokes, and SmartCraft-capable gas/diesel sterndrives**, it's broadly available. If your boat has SmartCraft and a compatible trim system, it can run Active Trim.
+Active Trim is offered across many SmartCraft-capable Mercury setups, including a wide range of FourStroke outboards and SmartCraft-capable sterndrives. Compatibility depends on the motor year, rigging, and current SmartCraft setup, so confirm with your dealer before ordering parts.
 
 ---
 
@@ -15958,7 +15970,7 @@ We don't operate transport, but we work with several Ontario marine transport se
 Yes. Mercury's Canadian warranty network honours coverage at any authorized dealer regardless of where the motor was purchased. Bring purchase paperwork; we register the work in Mercury's central system.
 
 **Can I pick a Pro XS over a FourStroke for repower?**
-Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-200hp-v6-performance) for the specific decision matrix.
+Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-300hp-pro-xs-performance-guide) for the specific decision matrix.
 
 **What if my boat needs more than just a motor?**
 Common scenario. Repowers often surface adjacent work, rigging upgrades (hydraulic steering, gauges, controls), transom reinforcement, fuel system replacement, electrical updates. We'll spec it all in the quote and you decide what to include or defer.
@@ -15987,7 +15999,7 @@ Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 
       { question: "Can I trailer my boat from Toronto to HBW myself?", answer: "Yes, 401 east to Cobourg, north on County Rd 18 to Gores Landing. About 90 minutes from central Toronto. We have trailer parking on-site." },
       { question: "Do you arrange boat transport from the GTA?", answer: "We don't operate transport, but we work with several Ontario marine transport services. Typical cost $300-$600 each way for an 18-22 ft boat. We can refer." },
       { question: "Will my Mercury be eligible for warranty if I bought it elsewhere and want it serviced at HBW?", answer: "Yes. Mercury's Canadian warranty network honours coverage at any authorized dealer regardless of where the motor was purchased. Bring purchase paperwork; we register the work in Mercury's central system." },
-      { question: "Can I pick a Pro XS over a FourStroke for repower?", answer: "Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-200hp-v6-performance) for the specific decision matrix." },
+      { question: "Can I pick a Pro XS over a FourStroke for repower?", answer: "Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-300hp-pro-xs-performance-guide) for the specific decision matrix." },
       { question: "What if my boat needs more than just a motor?", answer: "Common scenario. Repowers often surface adjacent work, rigging upgrades (hydraulic steering, gauges, controls), transom reinforcement, fuel system replacement, electrical updates. We'll spec it all in the quote and you decide what to include or defer." },
       { question: "Do you do twin-engine repowers?", answer: "Yes, twin V6 or V8 setups on bigger boats (offshore, bass boats, deck boats). Same configurator, same workflow, longer install time (typically 14-21 days for twins). Twin Pro XS V6 installations are common in our shop." },
       { question: "What's the trade-in value on my current motor?", answer: "Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 12-year-old 90 HP with high hours trades for $1,500-$2,500. The configurator estimates based on your motor's specs." },

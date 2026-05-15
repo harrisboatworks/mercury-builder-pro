@@ -209,7 +209,7 @@ We don't operate transport, but we work with several Ontario marine transport se
 Yes. Mercury's Canadian warranty network honours coverage at any authorized dealer regardless of where the motor was purchased. Bring purchase paperwork; we register the work in Mercury's central system.
 
 **Can I pick a Pro XS over a FourStroke for repower?**
-Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-200hp-v6-performance) for the specific decision matrix.
+Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-300hp-pro-xs-performance-guide) for the specific decision matrix.
 
 **What if my boat needs more than just a motor?**
 Common scenario. Repowers often surface adjacent work, rigging upgrades (hydraulic steering, gauges, controls), transom reinforcement, fuel system replacement, electrical updates. We'll spec it all in the quote and you decide what to include or defer.
@@ -256,7 +256,7 @@ Yes. Mercury's Canadian warranty network honours coverage at any authorized deal
 
 ### Can I pick a Pro XS over a FourStroke for repower?
 
-Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-200hp-v6-performance) for the specific decision matrix.
+Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-300hp-pro-xs-performance-guide) for the specific decision matrix.
 
 ### What if my boat needs more than just a motor?
 

@@ -127,7 +127,7 @@ Bring us your boat info and tell us how you fish. We'll recommend the right moto
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
 - [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
 - [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario), the 115 vs 150 decision
-- [Mercury 150-200hp V6: Performance Made Practical](/blog/mercury-150-200hp-v6-performance). V6 150–200 HP performance
+- [Mercury 150-200hp V6: Performance Made Practical](/blog/mercury-150-300hp-pro-xs-performance-guide). V6 150–200 HP performance
 
 ## FAQs
 
