@@ -24695,7 +24695,7 @@ By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice 
     title: "Rice Lake's Full-Service Marina Since 1947",
     seoTitle: "Rice Lake Full-Service Marina Since 1947 | Harris Boat Works",
     description: "Rice Lake's full-service marina since 1947: Mercury Platinum dealer, 65 slips, launch ramp, rentals, service, storage. 35 min from the GTA.",
-    image: "/lovable-uploads/hero-best-marina-rice-lake-ontario.png",
+    image: "/lovable-uploads/hero-best-marina-rice-lake-ontario.jpg",
     author: "Harris Boat Works",
     datePublished: "2026-05-15",
     dateModified: "2026-05-15",
