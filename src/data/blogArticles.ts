@@ -25077,7 +25077,7 @@ Mercury Marine Platinum Dealer. Established 1947.
     slug: "toronto-to-rice-lake-drive-in-process",
     title: "Toronto to Rice Lake: How HBW Drive-In Service Works",
     seoTitle: "Toronto to Rice Lake: How HBW Drive-In Service Works",
-    description: "Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service, repower, or winter storage.",
+    description: "Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service, repower, or winter storage. Plan your drive-in visit.",
     image: "/lovable-uploads/hero-boat-service-near-toronto.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-15",
