@@ -226,7 +226,7 @@ Or call the shop. The center-console conversation is usually 15 minutes if you c
 
 **Related guides:**
 - [Best Mercury Outboard for Lake Ontario Salmon and Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout)
-- [Mercury 150-200 HP V6 Performance](/blog/mercury-150-200hp-v6-performance)
+- [Mercury 150-200 HP V6 Performance](/blog/mercury-150-300hp-pro-xs-performance-guide)
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
 - [Mercury Controls and Rigging Guide](/blog/mercury-controls-rigging-guide-ontario)
 - [Mercury Repower Cost in Ontario (2026 CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
