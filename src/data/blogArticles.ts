@@ -20167,7 +20167,7 @@ Mercury Platinum dealer. Est. 1947.
     slug: "outdoor-boat-storage-shrinkwrap-rice-lake",
     title: "Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters",
     seoTitle: 'Outdoor Boat Storage & Shrinkwrap on Rice Lake',
-    description: "Outdoor winter boat storage and shrinkwrap at Harris Boat Works in Gores Landing on Rice Lake. What's included, what's not, and how to prepare your boat for an Ontario winter.",
+    description: "Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included, what's not, and how to prep for an Ontario winter.",
     image: "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
