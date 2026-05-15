@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury VesselView, SmartCraft, and the New Mercury Marine App: A Plain-English Guide"
-description: "Plain-English explanation of Mercury's VesselView, SmartCraft, the new Mercury Marine App, DTS, and Active Trim, what they actually do, what they cost, and which ones..."
+description: "Plain-English guide to Mercury VesselView, SmartCraft, Active Trim, and the Mercury Marine App from HBW on Rice Lake."
 category: "Tech & Features"
 date_published: 2026-05-15
 date_modified: 2026-05-15
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury VesselView, SmartCraft, and the New Mercury Marine App: A Plain-English Guide
 
-> Plain-English explanation of Mercury's VesselView, SmartCraft, the new Mercury Marine App, DTS, and Active Trim, what they actually do, what they cost, and which ones...
+> Plain-English guide to Mercury VesselView, SmartCraft, Active Trim, and the Mercury Marine App from HBW on Rice Lake.
 
 **Category:** Tech & Features  
 **Published:** 2026-05-15  
@@ -37,9 +37,11 @@ content_type: blog_article
 
 For pricing on the engines that ship with SmartCraft, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers DTS and gauge wiring in detail, and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) explains which engines include DTS standard.
 
-Most Mercury owners we talk to know they have "smart" features on their motor and have no idea how to actually use them. The dash gauge says fuel flow. The phone app pairs sometimes. There's a thing called Active Trim that the previous owner mentioned but never explained.
+Mercury has a lot of smart technology now. Some of it is genuinely useful. Some of it sounds useful until you are staring at a dash menu at the dock wondering why your phone won't pair.
 
-This is the version of that conversation we'd have at the shop. No marketing copy, no jargon, just what each piece is, what it costs, and whether you'll actually use it.
+Here's the plain-English version: VesselView is the display, SmartCraft is the engine data network behind it, and the Mercury Marine App brings some of that information to your phone. Together, they can show fuel use, engine hours, alarms, service reminders, and performance data.
+
+Harris Boat Works is a family-owned marina in Gores Landing on Rice Lake, established in 1947, and a Mercury Marine Platinum Dealer. We install and service this equipment, so this is the version of the conversation we'd have at the shop: what it does, what is worth paying for, and what is just another screen to poke at when you should be boating.
 
 ---
 
@@ -64,7 +66,7 @@ What you need to know:
 - **Cost to transition:** zero, same hardware, new software.
 - **Multi-engine boats** now use the **SmartCraft Connect Mobile multi-engine module (part 8M0173129)**, which mounts under the helm and supports up to 4 engines.
 
-If you bought your boat used and there's no module under the cowl, that's the part to add: a **SmartCraft Connect Mobile** module runs $225–$275 USD plus installation. We'll spec the right one and install it.
+If you bought your boat used and there's no module under the cowl, that's the part to add: a **SmartCraft Connect Mobile** module runs $225-$275 USD plus installation. We'll spec the right one and install it.
 
 ---
 
@@ -95,7 +97,7 @@ What that gets you:
 - **Easier docking.** You can make tiny throttle adjustments, half a notch, that mechanical cables can't reproduce.
 - **No cable wear.** Mechanical cables stretch and corrode over years; electronic signals don't.
 
-DTS is **standard** on the V8 250–400 HP Mercurys (including all V8/V10 Verados) and **optional** on V6 175–225 HP FourStrokes. If you're running a smaller engine, you have mechanical throttle and shift, and that's fine. The benefit shows up at higher horsepower and on larger boats where the cable run is longer and the precision matters more.
+DTS is **standard** on the V8 250-400 HP Mercurys (including all V8/V10 Verados) and **optional** on V6 175-225 HP FourStrokes. If you're running a smaller engine, you have mechanical throttle and shift, and that's fine. The benefit shows up at higher horsepower and on larger boats where the cable run is longer and the precision matters more.
 
 Worth retrofitting? Almost never on existing boats. DTS retrofit involves changing the lever, the cables, the helm wiring, and possibly the engine's computer. New repower? Worth it on V8s.
 
@@ -116,7 +118,7 @@ You also pick one of **five Active Trim profiles**, higher number means more tri
 
 The catch: **Active Trim doesn't see shallow water.** It's making decisions about hull attitude based on speed and RPM. If you're entering a shallow spot, take manual trim control before the prop hits the bottom. The system isn't a substitute for awareness.
 
-Active Trim is **compatible with Mercury FourStroke 40–600 HP, SmartCraft-capable two-strokes, and SmartCraft-capable gas/diesel sterndrives**, it's broadly available. If your boat has SmartCraft and a compatible trim system, it can run Active Trim.
+Active Trim is offered across many SmartCraft-capable Mercury setups, including a wide range of FourStroke outboards and SmartCraft-capable sterndrives. Compatibility depends on the motor year, rigging, and current SmartCraft setup, so confirm with your dealer before ordering parts.
 
 ---
 
@@ -154,7 +156,7 @@ Honest take, customer-by-customer:
 
 We install SmartCraft Connect modules, configure the Mercury Marine App, set up multi-function display integration with Simrad/Garmin/Raymarine over NMEA 2000, and service every SmartCraft-capable Mercury.
 
-Most installs are 2–3 hours and run **$300–$500 plus parts**. We can do them as part of a service visit, a winter storage drop-off, or as a standalone appointment.
+Most installs are 2-3 hours and run **$300-$500 plus parts**. We can do them as part of a service visit, a winter storage drop-off, or as a standalone appointment.
 
 Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**.
 

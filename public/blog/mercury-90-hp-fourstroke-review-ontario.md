@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,122 +29,142 @@ content_type: blog_article
 
 ## Article
 
-# Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup
+### Quick Answer
 
-*Last reviewed: 2026-05-10*
+The Mercury 90 HP FourStroke is the default pick for most 16, 18 ft aluminum fishing boats and mid-size pontoons up to about 22 ft in Ontario. It runs on the same 2.1L inline-4 block as the 75 and 115, weighs 359 lbs, and is tuned for smooth cruising and fuel economy rather than performance. For pontoons, take the Command Thrust (CT) version. For aluminum fishing boats, take the standard gearcase.
 
-The Mercury 90 HP FourStroke is the motor most Ontario boaters end up at after they've stopped trying to talk themselves into something smaller.
+---
 
-It's the middle of Mercury's 75-115 HP family. Same 2.1L inline-4 block as the 75, the 100, and the 115. Different tuning, different RPM ceiling, different price. The 90 ends up on more boats than its siblings because it's where weight, fuel economy, and "enough motor" line up cleanly for a 16 to 18 ft aluminum hull or a mid-size pontoon.
+### Mercury 90 HP FourStroke Review
 
-> **Pricing scope:** This article is about the standard 90 ELPT FourStroke and the 90 ELPT Command Thrust. There's also a counter-rotation 90 (twin-engine setups), and a 90 EXLPT (XL shaft for 25" transoms). Different SKU, different price. If you're shopping a specific configuration, [build a quote](/quote/motor-selection) so we're comparing the right one.
+We sell more Mercury motors in the 75, 115 HP family than any other class. And within that family, the 90 is where most customers end up, not because it's the cheapest option, and not because we steer people there, but because it's genuinely the right fit for most Ontario boats in the 16, 20 ft range.
 
-[Build your Mercury 90 HP quote](/quote/motor-selection)
+Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Platinum dealer. The 90 FourStroke is a motor we know well, and one we're honest about when it's the wrong call.
 
-## Quick answer
+---
 
-The Mercury 90 ELPT FourStroke is a 2.1L inline-4 outboard with electric start, power trim and tilt, a 20" long shaft, electronic fuel injection, and a dry weight around 359 lb. The Command Thrust version (CT) adds a larger gearcase that swings a bigger prop, which matters more on pontoons and heavier hulls than people expect. Mercury rates it for 5,000 to 6,000 RPM at full throttle and backs it with the 6-year warranty (3 factory + 3 promotional, when active).
+## What the 90 HP Family Actually Shares
 
-It's the right motor for 16 to 18 ft aluminum fishing boats running normal loads, mid-size pontoons up to about 22 ft, family runabouts that don't need 115 HP of headroom, and most cottage repowers where the old motor was a 70 to 90 HP two-stroke.
+The Mercury 90 HP FourStroke is part of a five-motor family built on the same 2.1L inline-4 block: the 75, 80, 90, 100, and 115. All use an 8-valve single overhead cam with a maintenance-free valve train, no regular cam service, no valve lash adjustments for the life of the motor. Mercury ran 17,000 hours of factory testing on this generation before shipping.
 
-It's the wrong motor if you're putting it on a heavy tri-toon, a bass boat that needs the Pro XS hole-shot, or a hull rated for under 75 HP.
+The differences between the 90, 100, and 115 are tuning, RPM ceiling, and price. There is no weight penalty as you step up. The 90 ELPT and the 115 ELPT both weigh 359 lbs.
 
-## What the 90 HP family actually shares
+The motors covered in this post are the standard **90 ELPT FourStroke** and the **90 ELPT Command Thrust**. There are also a counter-rotation 90 (for twin setups) and a 90 EXLPT (25" shaft for taller transoms). Different SKUs, different prices, different applications.
 
-The 75, 80, 90, 100, and 115 HP FourStrokes are all the same block. Mercury runs them off a 2.1L inline-4 with an 8-valve single overhead cam, and the differences come from tuning, RPM ceiling, and gearcase choice.
+---
 
-That matters for two reasons.
+## What "ELPT" and "CT" Mean
 
-First, the 90 inherits the durability story Mercury built around the V6 and V8 motors. The maintenance-free valve train on these mid-range FourStrokes is the same architecture used on the bigger engines. No regular cam service. No valve lash adjustments for the life of the motor. Mercury ran 17,000 hours of factory testing on this generation before they shipped them.
+- **E**, Electric start (push-button, not pull cord)
+- **L**, Long shaft (20"), fits the most common transom
+- **PT**, Power trim and tilt, you trim the motor up and down from the helm
+- **CT**, Command Thrust gearcase, larger lower unit, bigger prop swing
 
-Second, the prop and gearcase choices have more impact than the horsepower number on the cowl. A 90 with the right prop on a Command Thrust gearcase will out-pull a 100 on the wrong setup. We've watched it happen at the dock more than once.
+---
 
-## What "ELPT" and "CT" mean
+## Where the 90 HP Is the Right Answer
 
-The model code tells you the configuration:
+### 16, 18 ft aluminum fishing boats
 
-- **E** is electric start (push-button, not pull-cord)
-- **L** is long shaft (20" fits the most common transom)
-- **PT** is power trim and tilt (you trim the motor up and down from the helm)
-- **CT** is Command Thrust gearcase (larger gearcase, bigger prop swing)
+Lund, Princecraft, Crestliner, Legend ProSport, these are the hulls the 90 ELPT was built for. Typical load: two to four people, full gear, trolling motor, a couple of batteries. On those boats, the 90 planes cleanly, cruises around 28, 32 mph, and tops out around 38, 42 mph depending on prop and load. It has headroom for the occasional full boat.
 
-So a "90 ELPT FourStroke" is electric start, long shaft, power trim, standard gearcase. A "90 ELPT CT FourStroke" is the same motor with the bigger gearcase. Different SKU, different price, often different recommendation depending on your boat.
+### Mid-size pontoons up to ~22 ft
 
-There's also a 90 EXLPT (XL shaft for 25" transoms, common on offshore-style hulls and some pontoons) and a counter-rotation 90 for twin-engine setups. Most cottage and aluminum fishing repowers don't need either, but it's worth knowing they exist before someone tries to sell you one.
+For a pontoon carrying four to six people with normal cottage loads, the **90 ELPT Command Thrust** is the call. The CT gearcase swings a 14 or 14.5" prop instead of the standard 13", which translates directly to hole-shot on a flat-bottom hull. Standard gearcase pontoon 90s are slower to plane and work harder doing it.
 
-## Where the 90 HP is the right answer
+### Family runabouts in the 16, 18 ft fibreglass range
 
-The 90 lands cleanly on:
+Cruising, towing a tube, swimming, occasional fishing, the 90 handles all of it without working hard.
 
-- **16 to 18 ft aluminum fishing boats** (Lund, Princecraft, Crestliner, Legend, etc.) running two to four people with gear, a trolling motor, and a couple of batteries. The boat planes cleanly, cruises around 28 to 32 mph, and tops out around 38 to 42 mph depending on prop and load.
-- **Mid-size pontoons up to ~22 ft** with normal cottage loads (four to six people). The Command Thrust version is the right call here. The bigger gearcase swings a 14 or 14.5" prop instead of the standard 13", which translates directly into hole-shot on a heavier flat-bottom hull.
-- **Family runabouts (16 to 18 ft fibreglass)** doing typical lake use. Cruise, tow a tube, swim, fish a bit. The 90 handles this without straining.
-- **Repowers replacing 70 to 90 HP two-strokes.** Most older 70-90 HP Mercury, Yamaha, and OMC two-strokes can come off and a 90 ELPT goes on without rigging headaches. Lighter than the old motor, quieter, cleaner, more fuel-efficient. The boat usually runs better than it did when it was new.
+### Repowers replacing 70, 90 HP two-strokes
 
-On Rice Lake and the Kawarthas, this is the motor we sell more of than any other in the 75-115 family. It's the right answer for the boats people actually own.
+Older Mercury, Yamaha, and OMC two-strokes in this power class are being replaced every season. The 90 ELPT FourStroke typically comes out lighter than the motor it's replacing, quieter, cleaner, and 20, 30% more fuel-efficient for the same day on the water. Most owners say the boat runs better than it did when new.
 
-## Where the 90 HP is the wrong call
+---
 
-This is the part product pages skip.
+## Where the 90 HP Is the Wrong Call
 
-The 90 is wrong if:
+**Hull rated under 75 HP.** The capacity plate is the ceiling. A 16 ft aluminum boat rated for 75 HP max should get the 75, not the 90. We can order a 75 if the plate forces it.
 
-- **Your hull is rated for under 75 HP.** The capacity plate is the ceiling, not a suggestion. A 16 ft aluminum boat rated for 75 HP gets a 75, not a 90, even if you've seen someone's brother-in-law put a bigger motor on his.
-- **You're powering a heavy tri-toon, a houseboat, or a 24+ ft pontoon with full load.** That's 115 CT or higher territory. The 90 will push it, but it'll work harder than you want for the life of the motor.
-- **You want the bass-boat hole-shot.** The 90 ELPT FourStroke is not a Pro XS. It's tuned for fuel economy, smooth cruising, and durability. If you want the throat-punch acceleration off the dock, the 90 Pro XS (different motor, V-twin or 2.1L tuned hot) or stepping up to a 115 Pro XS is the conversation.
-- **You're buying short shaft (15") for a 20" transom.** The motor will not be in the water deep enough to cool properly. Shaft length matches transom height. We see this mistake more often than you'd think on online dealer transactions.
+**Heavy tritoons, 24+ ft pontoons, or houseboats.** The 90 will push those boats, but it'll work harder than it should for its service life. Those applications need 115 CT or higher.
 
-A common pattern at the shop: customer comes in with a 17 ft glass runabout and a tired 115 two-stroke, asking us to repower with another 115. Once we look at the hull, the load, the way the boat actually gets used, and what the customer cares about (fuel economy, quiet ride, reliability), the 90 ELPT FourStroke is sometimes the better answer. The boat goes on plane easier with less weight, runs quieter, and burns 20-30% less fuel for the same day on the water.
+**Bass-boat hole-shot.** The 90 ELPT FourStroke is not a Pro XS. It's tuned for fuel economy, smooth cruising, and durability. If you want strong off-the-dock acceleration on a 19 ft fishing boat, the conversation shifts to a 90 Pro XS or a 115 Pro XS.
 
-## Standard gearcase vs Command Thrust
+**Mismatched shaft length.** A short shaft (15") on a 20" transom puts the prop too close to the surface. The motor won't cool properly, and you'll ventilate. Shaft length must match transom height. Measure before you order, or let us measure for you.
 
-This is where 90 HP buyers get tripped up.
+---
 
-The **standard gearcase** has a hydrodynamic profile tuned for less drag at speed. Good for aluminum fishing boats and lighter runabouts where top-end and fuel efficiency matter more than hole-shot.
+## Standard Gearcase vs. Command Thrust
 
-The **Command Thrust (CT) gearcase** is physically larger and swings a bigger prop. Less top-end, more low-end pulling power. Right call for pontoons, houseboats, heavier hulls, and any boat that struggles to get on plane fully loaded.
+| | Standard Gearcase | Command Thrust |
+|---|---|---|
+| Gearcase profile | Hydrodynamic, lower drag at speed | Physically larger |
+| Prop size | ~13" | 14, 14.5" |
+| Strength | Top-end speed, fuel efficiency | Low-end thrust, hole-shot |
+| Best for | Aluminum fishing boats, lighter runabouts | Pontoons, heavy hulls, boats that struggle to plane |
 
-Rule of thumb at HBW: aluminum fishing boats default to standard. Pontoons default to Command Thrust. Heavy or unusual hulls, we ask about the load and the use case before recommending.
+Rule of thumb: aluminum fishing boats default to standard. Pontoons default to CT. Heavy or unusual hulls, tell us the load and use case before we recommend.
 
-## How the 90 compares to the 75 and the 115
+---
 
-Same family, same block, different tuning.
+## How the 90 Compares to the 75 and the 115
 
-| | 75 ELPT | 90 ELPT | 115 ELPT |
-|---|---|---|---|
-| Full-throttle RPM | 4,500-5,500 | 5,000-6,000 | 5,000-6,000 |
-| Dry weight | 359 lb | 359 lb (363 CT) | 359 lb (363 CT) |
-| Best hull range | 14-17 ft aluminum, light pontoons | 16-18 ft aluminum, mid pontoons | 17-20 ft aluminum, larger pontoons |
-| Repower for | Old 60-75 two-strokes | Old 75-90 two-strokes | Old 90-115 two-strokes |
+The 75, 90, and 115 are the same block with different tuning. There is no weight penalty stepping up. The only real penalty going from 75 to 90 to 115 is price and fuel burn at full throttle.
 
-The weight is identical (or near-identical) across the family. That's the same physical motor with different software, different prop, sometimes different gearcase. So the only real penalty for stepping up from 75 to 90 to 115 is price and fuel burn at full throttle. There's no weight penalty.
+Most boats want either the 90 or the 115. The 75 is right for smaller hulls or situations where the capacity plate forces it, we don't actually stock the 75 because the 90 is the same physical motor at a small additional cost and has better headroom and better resale value.
 
-Most boats want either the 90 or the 115. The 75 is right for smaller hulls or where fuel economy is the main goal. (At HBW we don't actually stock the 75. The 90 is the same physical motor at very small additional cost. We can order a 75 if the capacity plate forces it, but otherwise we recommend the 90.)
+If you're already shopping the 90 and wondering about the 115: the step from 90 to 115 is tuning, not a different motor. There's no weight change. For a 17, 18 ft aluminum fishing boat that will regularly carry four adults and full gear, the 115 is worth considering. For a 16 ft boat running two anglers, the 90 is the right call and the 115 is extra motor you won't use.
 
-## What HBW checks before recommending the 90
+---
 
-Before we quote a 90, we look at:
+## What We'd Actually Recommend
 
-- **Capacity plate** (the ceiling, non-negotiable)
-- **Hull rating** (some 17 ft hulls max out at 75 even when the plate would suggest more, load distribution matters)
-- **Transom height** (15", 20", or 25", wrong shaft length is the most common online-shopping mistake)
-- **Existing rigging** (cables, controls, gauges, fuel system, sometimes the rigging job is bigger than the motor swap)
-- **Use case** (fishing, cruising, tubing, mixed) which informs prop and gearcase choice
-- **Load patterns** (max number of people, gear weight) which informs CT vs standard
+**For most 16, 18 ft aluminum fishing boats on Rice Lake and the Kawarthas:** 90 ELPT FourStroke, standard gearcase.
 
-That's the checklist before we give a real number, not after. A motor that's correct on paper and wrong in the boat is still the wrong motor.
+**For mid-size pontoons up to 22 ft:** 90 ELPT Command Thrust.
 
-## What we'd actually recommend
+**For heavy loads on an 18, 20 ft boat:** Consider the 115 ELPT instead.
 
-The 90 ELPT FourStroke is the motor we'd put on most 16 to 18 ft aluminum fishing boats and a lot of mid-size pontoons (with the Command Thrust upgrade). It hits the spot where weight, fuel economy, reliability, and "enough motor" all line up.
+**If the hull is rated under 75 HP:** We'll order the 75. We're not going to put an illegal motor on your boat.
 
-We've been selling and servicing Mercury outboards on Rice Lake since 1947. Most repowers in this size class go on cottage runabouts, family aluminum fishing boats, and pontoons that the previous owner ran into the ground. The 90 is usually the right answer because it's lighter than the old two-stroke it's replacing, runs cleaner, holds a value better, and comes with the 6-year warranty backing.
+If you buy from us, we're also the ones servicing it. For engine repairs, we only service Mercury and Mercruiser, no farmed-out repairs, no strangers touching your motor.
 
-Would we recommend it for every 16 to 18 ft boat? No. Some boats want a 75 (lighter loads, lighter hulls, fuel economy obsessed). Some want a 115 (heavier loads, more headroom, more towing). The 90 is the default we work back from.
+---
 
-If you buy from us, we're also the ones servicing it. Mercury and Mercruiser only, no farmed-out repairs. A 90 ELPT FourStroke is the kind of motor we know cold.
+## Frequently Asked Questions
 
-[Build your Mercury 90 HP quote](/quote/motor-selection)
+**Is the 90 HP good for a 22 ft pontoon?** 
+Yes, with the Command Thrust gearcase. Standard gearcase on a 22 ft pontoon is undersized for typical cottage loads. If the pontoon is a tritoon or you're carrying six people regularly, consider the 115 CT.
+
+**Is the 90 HP FourStroke a Pro XS?** 
+No. The Pro XS is a different tuning, higher RPM ceiling, sport gearcase, more aggressive hole-shot. The standard 90 ELPT FourStroke is tuned for smooth cruising and fuel economy.
+
+**Does shaft length matter?** 
+Yes, it's not optional. A short shaft on a 20" transom puts the prop too shallow to cool the motor properly. We measure every transom that comes through the shop.
+
+**How much does the 90 HP save on fuel vs. an old two-stroke?** 
+Typically 20, 30% less fuel for the same day on the water. The exact number depends on the old motor's condition and how you use the boat.
+
+**Is the 90 CT the same motor as the 90 standard?** 
+Same powerhead. Different gearcase. Different SKU, different price, different prop size, and often a different recommendation depending on your hull.
+
+**Can I order a 75 if my capacity plate requires it?** 
+Yes. We'll order whatever the plate allows and not try to talk you into something you can't legally put on your boat.
+
+---
+
+## Build a Quote
+
+Build your 90 HP quote at mercuryrepower.ca, pick the standard or CT gearcase, shaft length, and prop. See real CAD pricing in minutes.
+
+Questions? Call 905-342-2153 or submit a service request at hbw.wiki/service.
+
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+
+---
+
+*Related guides: Mercury 75 HP FourStroke, why we don't stock it | Mercury 115 HP FourStroke review | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
+---
 
 ## FAQs
 

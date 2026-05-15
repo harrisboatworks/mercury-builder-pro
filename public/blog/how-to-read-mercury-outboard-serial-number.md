@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -131,7 +131,7 @@ The cowl says "115 FourStroke." The model number says exactly which 115 FourStro
 
 ## Decoding the Year (When the Year Isn't Printed)
 
-Mercury doesn't always stamp the model year on the engine. Production years run mid-July to mid-July, not Jan–Dec, and Mercury thinks in **serial number ranges**, not calendar years.
+Mercury doesn't always stamp the model year on the engine. Production years run mid-July to mid-July, not Jan-Dec, and Mercury thinks in **serial number ranges**, not calendar years.
 
 To find the year:
 
@@ -198,7 +198,7 @@ A motor with no serial isn't necessarily stolen, but it's a flag worth taking se
 
 ## Try the calculator
 
-Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) - no signup, no email gate, takes 30 seconds.
 ## Quick Reference Card
 
 The five pieces of information on every Mercury and where they live:

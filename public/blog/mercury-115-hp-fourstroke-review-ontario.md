@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,136 +29,167 @@ content_type: blog_article
 
 ## Article
 
-# Mercury 115 HP FourStroke Review: The Lightest 115 HP Available, and Why That Matters
+### Quick Answer
 
-*Last reviewed: 2026-05-10*
+The Mercury 115 HP FourStroke weighs 359 lbs, making it the lightest 115 HP outboard available. It runs on the same 2.1L inline-4 block as the 75 and 90, tuned to 6,000 RPM. It's the right motor for 17, 20 ft aluminum fishing boats and mid-to-large pontoons (with Command Thrust), and it's the default choice for Ontario boaters who want real headroom without crossing into V6 territory and the price jump that comes with it.
 
-The Mercury 115 HP FourStroke is the motor Mercury keeps headlining for one specific reason: it's the lightest 115 HP outboard available.
+---
 
-That sounds like marketing until you watch a customer try to repower a 19 ft aluminum fishing boat that was rigged for a heavy 115 two-stroke and discover that switching to a 359 lb modern FourStroke changes how the boat sits in the water. Less stern weight. Better trim. The boat planes faster on less throttle. The customer thinks the new motor is more powerful. It's actually just lighter.
+### Mercury 115 HP FourStroke Review
 
-That's the 115 FourStroke story. Same 2.1L block as the 75, the 90, and the 100. Tuned to run higher in the RPM band. Wrapped in the lightest 115 HP cowling on the market. For 17 to 20 ft aluminum boats, mid-to-large pontoons, and family runabouts that want headroom without crossing into V6 territory, the 115 is the answer.
+"Lightest 115 HP available" isn't a marketing line, it's a spec that changes how a boat behaves. An 80, 100 lb weight difference over the older two-stroke motors this motor commonly replaces affects how the hull sits in the water, how early it gets on plane, what the fuel economy looks like, and what happens at the trailer hitch.
 
-> **Pricing scope:** This article is about the standard 115 ELPT FourStroke and the 115 ELPT Command Thrust. There's also a 115 Pro XS (different motor, tuned for performance hole-shot) and a counter-rotation 115 (twin engine setups). Different SKUs, different prices, different recommendations. If you're shopping a specific configuration, [build a quote](/quote/motor-selection) so we're comparing the right one.
+Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Platinum dealer. The 115 FourStroke is one of the motors we sell and service most. Here's an honest look at where it makes sense, and where it doesn't.
 
-[Build your Mercury 115 HP quote](/quote/motor-selection)
+---
 
-## Quick answer
+## Why "Lightest 115 HP Available" Actually Matters
 
-The Mercury 115 ELPT FourStroke is a 2.1L inline-4 outboard with electric start, power trim and tilt, a 20" long shaft, electronic fuel injection, SmartCraft digital integration, and a dry weight of 359 lb (363 lb in the Command Thrust version). Mercury rates it for 5,000 to 6,000 RPM at full throttle and backs it with the 6-year warranty (3 factory + 3 promotional, when active).
+The Mercury 115 ELPT FourStroke weighs 359 lbs. An older Mercury 115 OptiMax, the motor it commonly replaces, weighs around 425 lbs. That's 80, 100 lbs of difference. On a 17, 20 ft aluminum fishing boat, that weight change does real things:
 
-It's the right motor for 17 to 20 ft aluminum fishing boats, mid-to-large pontoons (especially with the Command Thrust gearcase), family runabouts wanting watersports headroom, and most repowers stepping out of older 115 two-strokes or smaller V6s.
+- The hull sits higher at rest, improving fuel economy before you even turn the key.
+- The boat planes earlier with the same load.
+- The transom takes less stress over the long term.
+- Trailer tongue weight drops, which matters if you're hauling with a half-ton truck.
 
-It's the wrong motor if you need bass-boat hole-shot (look at the 115 Pro XS), you're powering a 24+ ft heavy tri-toon (look at the 150 V6), or your hull is rated for under 90 HP.
+Those aren't abstract benefits. They're what customers notice after a season.
 
-## Why "lightest 115 HP available" actually matters
+---
 
-Mercury's marketing department leads with the weight number, and most buyers' eyes glaze over. They shouldn't.
+## What the 2.1L Family Shares
 
-A modern Mercury 115 FourStroke at 359 lb is roughly 80 to 100 lb lighter than the older Mercury 115 OptiMax it commonly replaces (425 lb-ish), and significantly lighter than equivalent two-stroke V6 motors that used to sit in this size class. On a 17 to 19 ft aluminum hull, that weight difference shows up everywhere:
+The 115 HP FourStroke belongs to Mercury's 75, 115 HP family: five motors (75, 80, 90, 100, 115) built on the same 2.1L inline-4 block with an 8-valve SOHC, maintenance-free valve train, and 17,000 hours of factory testing on this generation before shipping.
 
-- **The boat sits flatter at rest.** Less stern squat means less water in the bilge area on a wet day, easier loading, better balance.
-- **The boat planes earlier.** Less weight to lift means the hull breaks free with less throttle. Customers report the boat feels "more responsive" without realizing the motor is just lighter.
-- **Fuel economy improves.** Same horsepower, less hull drag fighting weight, lower fuel burn at cruise.
-- **Trailer towing is easier.** 80 lb less rear-of-boat weight matters when you're towing 90 minutes from Toronto to Rice Lake.
+What they all share:
+- Same 2.1L inline-4 block
+- Maintenance-free valve train (no cam service, no valve lash adjustments)
+- 35-amp / 441-watt alternator
+- SmartCraft compatibility
+- 3-year factory standard warranty (plus available promotional bonus years)
 
-"Lightest 115 HP available" is the spec line that does the most actual work for an Ontario boater. It's not just a number on the brochure.
+The 115 is the highest tuning of this family. It runs to 6,000 RPM and makes peak HP later in the power curve. Compared to the 90, the step from 90 to 115 is tuning, not a different motor. There is no weight penalty. The only real cost is price and fuel burn at full throttle.
 
-## What the 2.1L family shares
+---
 
-The 75, 80, 90, 100, and 115 HP FourStrokes are all built on the same 2.1L inline-4 block. The 115 is the highest tuning of that family, runs to 6,000 RPM, makes peak HP later in the curve, optimized for boats that want headroom.
+## What "ELPT" and "CT" Mean
 
-What that means in practice:
+- **E**, Electric start
+- **L**, Long shaft (20"), fits the most common transom
+- **PT**, Power trim and tilt from the helm
+- **CT**, Command Thrust gearcase (larger lower unit, bigger prop swing, typically 14 or 14.5" instead of 13")
 
-- **Same maintenance-free valve train** as the smaller motors in the family (and the same architecture as Mercury's V6 and V8 motors). No regular cam service. No valve lash adjustments for the life of the motor.
-- **Same 17,000 hours of factory testing** before this generation shipped.
-- **Same 3 + 3 = 6 year warranty** (3 factory + 3 promotional bonus when active).
-- **Same alternator output** (35 amp, 441 watts), enough to run modern fishing electronics, lights, livewell pumps, accessories.
-- **Same SmartCraft digital integration**, gauges, VesselView mobile, Active Trim, all available.
+This post covers the **115 ELPT FourStroke** and the **115 ELPT Command Thrust**. There's also a 115 Pro XS (performance-tuned, sport gearcase) and a counter-rotation 115 (for twin setups). Different SKUs, different prices, different applications. Use the quote builder at mercuryrepower.ca to compare.
 
-You're getting the family durability story with the family's highest-tuning motor.
+---
 
-## What "ELPT" and "CT" mean
+## When to Take the Command Thrust Upgrade
 
-Same model code system as the 75 and 90:
+| Boat Type | Take CT? |
+|---|---|
+| Pontoon (any size) | Almost always |
+| Aluminum fishing boat | Rarely |
+| Fibreglass runabout | Case by case |
 
-- **E** is electric start
-- **L** is long shaft (20")
-- **PT** is power trim and tilt
-- **CT** is Command Thrust gearcase (larger, bigger prop swing)
+CT gives you more low-end pulling power and hole-shot at the cost of some top-end speed. On a flat-bottom pontoon hull, that trade-off is worth it every time. On an aluminum fishing boat that runs at speed, the standard gearcase's lower drag profile is the better fit.
 
-A "115 ELPT FourStroke" is electric start, long shaft, power trim, standard gearcase. A "115 ELPT CT FourStroke" is the same motor with the larger gearcase. The Command Thrust upgrade is where 115 buyers most often get tripped up.
+---
 
-## When to take the Command Thrust upgrade
+## Where the 115 HP FourStroke Is the Right Answer
 
-For pontoons: almost always.
+### 17, 20 ft aluminum fishing boats with heavier loads
 
-For aluminum fishing boats: rarely.
+A 16 ft boat with two anglers is the 90's job. When the hull is a 17, 20 ft Lund, Princecraft, Crestliner, or Legend with four people, full gear, a livewell, two batteries, and a trolling motor up front, the 115 is the right call. Cruise around 30, 35 mph, top out around 42, 48 mph depending on prop and load.
 
-For glass runabouts: case-by-case.
+### Mid-to-large pontoons, 20, 24 ft
 
-The Command Thrust gearcase is physically larger and swings a bigger prop (usually 14 or 14.5" diameter instead of 13"). The bigger prop trades top-end speed for low-end pulling power. On a pontoon, that translates directly into hole-shot, planing speed, and load-carrying ability. On an aluminum fishing boat that's already light and slick, you don't need it, the standard gearcase is more efficient.
+This is where the 115 CT earns its keep. A 22 ft pontoon with a full family load and a cooler deserves at least 90 CT. The 115 CT is the right answer if the pontoon is a tritoon, if you tow tubes, or if the boat simply sits heavy.
 
-Rule at HBW: if it's a pontoon, default to CT. If it's not, default to standard. We adjust based on the specific boat and load.
+### Family runabouts that do a bit of everything
 
-## Where the 115 HP FourStroke is the right answer
+Cruise, fish, tow a tube, watersports occasionally, the 115 handles all of it without working hard, and does it fuel-efficiently.
 
-The 115 ELPT lands cleanly on:
+### Repowers from older two-strokes
 
-- **17 to 20 ft aluminum fishing boats** running heavier loads (four people, full gear, livewell, two batteries, kicker, trolling motor). Boats from Lund, Princecraft, Crestliner, Legend in this size range. Cruise around 30 to 35 mph, top out around 42 to 48 mph depending on prop and load.
-- **Mid-to-large pontoons (20 to 24 ft)** with normal cottage loads. The CT version is the right call here. The bigger gearcase makes a meaningful difference on a flat-bottom hull.
-- **Family runabouts (17 to 20 ft fibreglass)** doing mixed-use cottage life. Cruise, fish, tow a tube, watersports occasionally. The 115 has the headroom for tubing and skiing without straining.
-- **Repowers replacing 115 to 150 HP older two-strokes.** Most boats originally rigged with a 115 OptiMax, 115-150 OMC, 90-115 Yamaha two-stroke can step into a 115 FourStroke and run better than they did when new. Lighter, quieter, cleaner, more reliable. The boat usually feels reborn.
-- **Repowers stepping down from a 150 V6 that was always too much motor.** Some boats were originally over-powered. A modern 115 FourStroke does the job the original buyer thought they needed the V6 for.
+The most common repower candidates for the 115 ELPT are older 115 OptiMax, 115, 150 OMC, and 90, 115 Yamaha two-strokes. Occasionally a boat that had a 150 V6 but found it was more motor than needed steps down to the 115.
 
-## Where the 115 HP FourStroke is the wrong call
+The outcome on most of these repowers: the boat feels lighter, runs quieter, and uses 25, 35% less fuel for the same day on the water. After a season, some customers don't miss the V6 feel at all.
 
-Skip the standard 115 ELPT if:
+---
 
-- **You need bass-boat hole-shot.** The 115 ELPT FourStroke is tuned for fuel economy, smooth cruising, and reliability. The 115 Pro XS is the same powerhead tuned hot, with a sport gearcase, designed for hole-shot. If you're chasing acceleration off the dock for tournament fishing, the Pro XS is the conversation.
-- **You're powering a heavy tri-toon, a 24+ ft pontoon with full load, or a houseboat.** That's 150 V6 or higher. The 115 will push it, but it'll work harder than you want for the life of the motor.
-- **Your hull is rated for under 90 HP.** Capacity plate is the ceiling. Don't argue with it.
-- **You want to step into a V6 anyway.** If you're already considering 150 because the boat needs it (tubing four kids, hauling a fully-loaded fishing tournament rig), don't compromise to a 115 FourStroke. Get the V6.
+## Where the 115 HP FourStroke Is the Wrong Call
 
-A common pattern: customer comes in with a 19 ft glass runabout, a tired 150 OMC two-stroke from 1998, and the assumption that they need to repower with a 150. Once we look at how they actually use the boat (cruise, fish, occasional tubing), the 115 ELPT FourStroke is sometimes the right answer. Lighter than the V6 they're considering, cheaper to run, easier to insure, and the boat is rated for it. They keep the headroom they need without paying for headroom they don't.
+**Bass-boat hole-shot.** The 115 ELPT FourStroke is tuned for fuel economy, smooth cruising, and reliability, not snapping off the dock. If you want strong acceleration on a 19 ft fishing rig, the 115 Pro XS is the different motor you're looking for.
 
-## How the 115 compares to the 90 and the 150
+**Heavy tritoons, 24+ ft pontoons with full loads, or houseboats.** These applications need 150 V6 or higher. The 115 will push them, but it'll work harder than it should over its service life.
+
+**Hulls rated under 90 HP.** Capacity plate is the ceiling. If the plate says 90 HP max, a 115 is illegal. We won't put it on your boat.
+
+**When you actually need the 150.** If you've already been thinking about the 150 because the boat needs it, don't compromise. Buying the 115 to save money on a hull that genuinely wants a V6 just means you'll be doing this again in a few years.
+
+---
+
+## How the 115 Compares to the 90 and the 150
 
 | | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
 |---|---|---|---|
-| Engine block | 2.1L inline-4 | 2.1L inline-4 | 3.0L V6 |
-| Full-throttle RPM | 5,000-6,000 | 5,000-6,000 | 5,200-6,000 |
-| Dry weight | 359 lb | 359 lb (363 CT) | 455 lb |
-| Best hull range | 16-18 ft aluminum, mid pontoons | 17-20 ft aluminum, mid-large pontoons | 19-22 ft aluminum, large pontoons, runabouts |
-| Repower for | Old 75-90 two-strokes | Old 90-150 two-strokes | Old 150-200 two-strokes |
+| Block | 2.1L inline-4 | 2.1L inline-4 | 3.0L V4 / different family |
+| Dry weight | 359 lbs | 359 lbs (363 CT) | ~455 lbs |
+| Full-throttle RPM | 5,000, 6,000 | 5,000, 6,000 | 5,000, 5,800 |
+| Best hull range | 16, 18 ft aluminum, mid pontoons | 17, 20 ft aluminum, mid-large pontoons | 19, 22 ft, larger platforms |
+| Price vs. 115 | Less |, | More (~$5,000+ more) |
 
-The 90 to 115 step is tuning, not a different motor. Same physical 2.1L block. Mercury squeezes more peak HP out of the 115 by pushing the RPM ceiling higher and tuning the prop for more aggressive use. There's no weight penalty going from 90 to 115. The decision is hull size, load, and use case.
+**90 vs. 115:** Tuning, not a different motor. No weight change. Price difference is real but modest. If the boat regularly carries four people and full gear, the 115 is worth it.
 
-The 115 to 150 step is a different family entirely. The 150 is a V6 with a different block, different cylinder count, different weight class (~100 lb heavier), different price. Most boats that genuinely need 150 HP don't make sense with a 115. Most boats that work fine with a 115 don't benefit from a 150.
+**115 vs. 150:** Completely different family. The 150 is a V6, heavier by about 100 lbs, in a different price bracket. Don't let someone talk you into a 150 for a hull that fits the 115, and don't settle for the 115 on a hull that genuinely needs the 150.
 
-## What HBW checks before recommending the 115
+---
 
-- **Capacity plate** (always first)
-- **Hull condition and load patterns**
-- **Transom height** (20" or 25", the 115 is most commonly ELPT 20" but EXLPT 25" exists)
-- **Existing rigging** (cables, controls, gauges, fuel system)
-- **Use case** (fishing, cruising, watersports, mixed) which informs prop and gearcase
-- **Whether the customer should be looking at the Pro XS instead** (if hole-shot matters)
-- **Whether the customer should be looking at the 150 V6 instead** (if load is genuinely heavy)
+## What We'd Actually Recommend
 
-The 115 is in a spot where it can be the right answer or the wrong answer depending on the boat. We don't quote a 115 without asking how it'll get used.
+**17, 20 ft aluminum fishing boat, Ontario buyer wanting real headroom without going V6:** 115 ELPT FourStroke. Standard gearcase.
 
-## What we'd actually recommend
+**Mid-to-large pontoon, 20, 24 ft, normal cottage loads:** 115 ELPT Command Thrust.
 
-The 115 ELPT FourStroke is the motor we'd put on a 17 to 20 ft aluminum fishing boat or a mid-to-large pontoon (with CT) for an Ontario boater who wants real headroom without crossing into V6 territory. It's where the 2.1L family delivers its best balance of power, weight, and fuel economy.
+**Same boat but you want hole-shot and run a tournament or performance fishing platform:** 115 Pro XS. Different motor, different price, worth asking about specifically.
 
-We've been selling and servicing Mercury outboards on Rice Lake since 1947. Most 115 FourStroke repowers we do replace older 115 OptiMax or 115-150 two-strokes that have hit the end of their service life. The boat invariably feels lighter, runs quieter, and uses 25-35% less fuel for the same day on the water. Customers who were nervous about giving up V6 sound and "feel" usually report they don't miss it after a season.
+If you buy from us, we service it. For engine repairs, we only work on Mercury and Mercruiser.
 
-Would we recommend it for every 17-20 ft boat? No. Some buyers genuinely want the Pro XS for performance, and some genuinely need the 150 V6 for load. The 115 ELPT is the default for boaters who want enough motor and don't want to over-buy.
+---
 
-If you buy from us, we're also the ones servicing it. Mercury and Mercruiser only. The 115 FourStroke is the motor we know cold because it's on so many of the boats that come through our service bay every spring.
+## Frequently Asked Questions
 
-[Build your Mercury 115 HP quote](/quote/motor-selection)
+**Is the 115 FourStroke really the lightest 115 HP available?** 
+Yes, at 359 lbs, it's lighter than equivalent outboards in the same horsepower class. The older Mercury 115 OptiMax it commonly replaces weighed around 425 lbs.
+
+**Is the 115 FourStroke the same motor as the 90?** 
+Same 2.1L block. Different tuning, different RPM ceiling. No weight difference. The step from 90 to 115 is software and tuning, not a different motor.
+
+**Is the 150 comparable to the 115?** 
+No. Different family, different block, different cylinder architecture, different weight class (~100 lbs heavier), different price point. Don't compare them as if they're close relatives.
+
+**When does the 115 CT make sense over the 90 CT?** 
+When the pontoon is 20, 24 ft, when you regularly carry 5, 6 people, when it's a tritoon, or when you tow tubes. If the pontoon is 18, 20 ft and loads are light, the 90 CT is fine.
+
+**What fuel savings can I expect repowering from an old two-stroke?** 
+Typically 25, 35% less fuel for the same day on the water. The exact number depends on the old motor's condition and how hard you used it.
+
+**Does the 115 Pro XS come in Command Thrust?** 
+No, the Pro XS uses a sport gearcase designed for performance applications, not the CT gearcase. If you're shopping between Pro XS and standard FourStroke, use the quote builder to compare both.
+
+---
+
+## Build a Quote
+
+See the 115 ELPT, 115 CT, and 115 Pro XS side by side at mercuryrepower.ca. Real CAD prices, real configurations, no "call for quote" games.
+
+Questions about which version fits your boat? Call 905-342-2153 or submit a service request at hbw.wiki/service.
+
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+
+---
+
+*Related guides: Mercury 90 HP FourStroke review | Mercury 75 HP FourStroke, why we don't stock it | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
+---
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,159 +29,161 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-07*
+### Quick Answer
 
-> **Quick answer:** Cold-water Ontario boating, spring or fall, means dressing for water temperature, not air temperature. Wear a PFD, file a float plan, carry a charged VHF. Cold-water immersion is the biggest risk in any shoulder season. Lake Ontario water temps stay below 15 deg C through May. See Transport Canada TP 13822 for survival guidance. Book service at mercuryrepower.ca.
+In Ontario shoulder seasons, spring and fall, the biggest boating risk is the water temperature, not the air temperature. Dress for water temperature, not air temperature. Wear your PFD. File a float plan. Carry a charged VHF radio on Channel 16. Cold-water immersion below 15°C can cause incapacitation within minutes. See Transport Canada's cold-water survival guidance (TP 13822) for full detail.
 
-## Cold-Water Boating Safety in Ontario
+---
 
-Ontario's shoulder seasons, both spring and fall, offer some of the best boating conditions: fewer crowds, calm water, and excellent fishing. But cold water demands extra safety awareness any time the lake is below 15 deg C, and that includes most of May on Lake Ontario, not just October.
+### Full Article
 
-### The Cold Water Reality
+The shoulder seasons on Ontario lakes have a lot going for them, fewer boats, calmer water in the mornings, better walleye and bass fishing. What they also have is cold water, changing weather, and a margin for error that shrinks fast.
 
-**Why Cold Water is Dangerous**:
-Ontario waters are cold for more of the year than people realize. Lake Ontario surface temps often sit below 15 deg C through May. Inland lakes warm faster but cool fast in late September. Below 15 deg C, hypothermia can set in within 30 to 40 minutes of immersion. See [Transport Canada's cold-water survival guidance](https://tc.canada.ca/en/marine-transportation/publications/tp-13822-survival-cold-waters-2003) for the full safety procedures.
+A breakdown in July is an inconvenience. A breakdown in October with cold water and early darkness is a different situation. This post covers what changes in fall and spring boating, and what to have in place before it does.
 
-**Cold Water Shock**:
-- Initial gasp reflex (dangerous if underwater)
-- Rapid breathing and panic
-- Increased heart rate and blood pressure
-- Impaired swimming ability within minutes
+---
 
-**Hypothermia Timeline**:
-| Water Temp | Time to Exhaustion | Survival Time |
-|------------|-------------------|---------------|
-| 15°C (59°F) | 30-40 minutes | 1-2 hours |
-| 10°C (50°F) | 15-20 minutes | 30-40 minutes |
-| 5°C (41°F) | 5-10 minutes | 15-20 minutes |
+## The Cold Water Reality
 
-### Essential Fall Safety Gear
+Ontario waters are cold for more of the year than most boaters think. Lake Ontario surface temperatures often stay below 15°C through May. Inland lakes like Rice Lake warm faster but cool quickly in late September.
 
-**Personal Flotation**:
-- Wear your PFD at all times (not just carry it)
-- Consider a float coat for warmth and flotation
-- Inflatable PFDs work but manual activation preferred in cold
-- Bright colours for visibility
+Below 15°C, cold-water shock sets in immediately on immersion, the involuntary gasp reflex, rapid breathing, and increased heart rate that make controlled swimming difficult. Hypothermia follows.
 
-**Layering System**:
+**Cold-water survival time reference (Transport Canada TP 13822):**
+
+| Water Temperature | Time to Exhaustion | Estimated Survival Time |
+|---|---|---|
+| 15°C (59°F) | 30, 40 minutes | 1, 2 hours |
+| 10°C (50°F) | 15, 20 minutes | 30, 40 minutes |
+| 5°C (41°F) | 5, 10 minutes | 15, 20 minutes |
+
+The takeaway: at 10°C, you may have 30 minutes of survival time, and that assumes you can hold on. Verify current guidance at Transport Canada's official boating safety resources.
+
+---
+
+## Essential Fall Safety Gear
+
+### Personal Flotation, Wear It, Don't Store It
+
+A PFD carried in a locker does nothing when you are in the water. In shoulder seasons, wear it. Consider a float coat for the dual function of warmth and flotation. Inflatable PFDs work, but in cold water, a manually activated inflatable gives you more control than an auto-inflate that may trigger from splashing.
+
+### Layering System for Cold Water Boating
+
 - Moisture-wicking base layer
-- Insulating mid-layer (fleece or wool)
-- Waterproof/windproof outer layer
-- Avoid cotton (holds moisture)
+- Insulating mid-layer (fleece or wool, not cotton)
+- Waterproof, windproof outer layer
 
-**Additional Gear**:
-- Waterproof gloves
-- Warm hat (most heat lost through head)
-- Spare dry clothes in waterproof bag
-- Emergency blanket
+Cotton holds moisture against the skin. If it gets wet, it provides no insulation. Leave it onshore.
 
-### Weather Awareness
+### Additional Cold-Weather Gear
 
-**Fall Weather Patterns**:
-Ontario fall weather changes rapidly. A calm morning can turn to dangerous conditions by afternoon.
+Waterproof gloves, a warm hat, spare dry clothes in a waterproof bag, and an emergency blanket. None of this is complicated, and all of it matters more in October than it does in July.
 
-**Check Before You Go**:
-- Environment Canada marine forecast
-- Wind predictions (especially NW winds)
-- Approaching cold fronts
-- Fog forecasts for early morning
+---
 
-**Warning Signs on the Water**:
-- Rapidly dropping temperature
-- Building winds from the north
-- Dark clouds on horizon
-- Sudden fog
+## Weather Awareness
 
-![Fall boating on Ontario waters requires extra vigilance](/lovable-uploads/Late_Season_Boating_Safety_Fall.png)
+Ontario fall weather changes fast. A calm morning on Rice Lake can turn into building northwest wind by afternoon, particularly after a cold front moves through. Check Environment Canada's marine forecast before you go, not just the general region forecast but wind direction, wave height, and whether a front is approaching.
 
-### Communication & Float Plans
+**Warning signs on the water:** rapidly dropping temperature, north winds building, dark clouds on the horizon, sudden fog.
 
-**Always Tell Someone**:
-- Where you're going
-- Expected return time
-- Who's with you
-- Your boat description
+When you see any of these, the decision to head back is easier to make if you made a plan for it before you left the dock.
 
-**Communication Devices**:
-- VHF radio (channel 16 for emergencies)
-- Cell phone in waterproof case
-- Personal locator beacon (PLB) for remote areas
-- Whistle attached to PFD
+---
 
-**Cell Coverage Reality**:
-Many Ontario lakes have spotty coverage. Don't rely solely on your phone.
+## Communication and Float Plans
 
-### Motor Reliability Matters More
+### Tell Someone Where You Are Going
 
-**Why Fall Demands Reliability**:
-A breakdown in July is an inconvenience. A breakdown in October can be life-threatening with cold water and early darkness.
+Before every shoulder-season trip: tell someone where you are going, expected return time, who is with you, and your boat description. This is not complicated. It is the difference between a search that starts when you are still on the water and one that starts the next morning.
 
-**Pre-Fall Motor Checks**:
-- Fresh fuel (treat for ethanol)
-- Test battery and charging system
-- Check all safety shutoffs
-- Verify starting reliability
+### Communication Gear Priority
 
-**Cold Start Considerations**:
-- Allow proper warm-up time
-- Don't over-choke
-- Check fuel lines for stiffness
-- Carry spare spark plugs
+VHF radio on Channel 16 is the standard. Cell coverage on many Ontario lakes is unreliable, do not rely only on your phone for communication offshore. A personal locator beacon (PLB) for remote or offshore trips. A whistle attached to your PFD.
 
-**[Book Fall Motor Service](/contact)**
+---
 
-### Emergency Procedures
+## Motor Reliability Matters More in Fall
 
-**If Someone Falls In**:
-1. Throw flotation immediately
-2. Approach carefully (don't create another victim)
-3. Get them out quickly - every second counts
-4. Get them warm immediately
-5. Call for help
+A running motor gets you home. A failed motor in October on a cold lake is not the same situation as a failed motor in July. Before any shoulder-season trip:
 
-**Self-Rescue**:
-- Stay calm - control your breathing
-- Don't try to swim immediately (wait for cold shock to pass)
-- Use the HELP position (Heat Escape Lessening Posture)
-- Swim to boat, not shore, if possible
+- Fresh fuel, ethanol treated or ethanol-free (HBW sells ethanol-free marine fuel at the dock in Gores Landing)
+- Battery and charging system tested
+- All safety shutoffs working
+- Reliable cold-starting confirmed
 
-**Treating Hypothermia**:
-- Remove wet clothing
-- Warm core first (armpits, groin, neck)
-- Avoid rubbing extremities
-- No alcohol
-- Seek medical attention
+Cold starts are harder than warm-weather starts. Allow proper warm-up time. Check fuel lines for stiffness. Carry spare spark plugs.
 
-### When to Call It a Season
+If you are not sure about your motor's reliability heading into fall, book a pre-fall inspection through [hbw.wiki/service](https://hbw.wiki/service). For engine repairs, we only service Mercury and Mercruiser.
 
-**Signs It's Time**:
+---
+
+## Emergency Procedures
+
+### If Someone Falls In
+
+1. Throw flotation immediately, cushion, life ring, rope
+2. Approach carefully; the boat can become a hazard in a confused recovery
+3. Get them out of the water as quickly as possible, every second reduces the survival window
+4. Get them warm immediately, remove wet clothing, apply heat to the core (armpits, groin, neck)
+5. Call for help, VHF Channel 16
+
+### If You Fall In
+
+Don't panic and don't try to swim immediately. Cold-water shock makes the first 30 to 90 seconds the most dangerous. Control your breathing. Use the HELP position (Heat Escape Lessening Posture, bring knees to chest, cross arms over the chest) to conserve body heat. Get to the boat, not the shore, if possible.
+
+**Treating hypothermia:** Remove wet clothing. Warm the core first. Do not rub extremities. No alcohol. Seek medical attention even if the person seems to have recovered.
+
+---
+
+## When to Call It a Season
+
+**Signs it is time:**
 - Water temperature below 10°C
 - Ice forming on shorelines
-- Unable to dress appropriately for conditions
-- Motor becoming unreliable in cold
+- You cannot dress appropriately for the conditions
+- The motor is unreliable in cold
 
-**Winterization Matters**:
-Proper fall shutdown protects your motor for spring. Schedule winterization before hard freezes.
+When you call it a season, do it right. Proper winterization protects your motor from the inside out. Fuel stabilization, gear lube change, internal lubrication (fogging), battery removed and on a tender, all grease points serviced. A motor properly winterized in October is ready to run in May. One that was not can cost you a significant repair bill before the season even starts.
 
-**[Schedule Winterization Service](/contact)**
+Schedule winterization at [hbw.wiki/service](https://hbw.wiki/service) before the fall rush. Harris Boat Works completed 584 winterizations last season, it is one of our core services.
 
-**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
+---
 
-## Related guides
+## FAQs
 
-- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide), the full Mercury service schedule
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
-- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips), off-season storage tips
+**Why does fall boating feel safe but isn't?** 
+Air temperature is comfortable. The boat feels stable. The risk is the water temperature, not the air temperature. If you go in, the water temperature determines the outcome, not how warm the day feels from the helm.
 
-## Need help with this?
+**How cold is Rice Lake in spring and fall?** 
+Rice Lake warms faster than Lake Ontario, but September and October surface temperatures drop quickly. In spring, the lake can still be well below 15°C in May. Check a live weather station for current conditions.
 
-Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
+**Should I wear a PFD all the time in shoulder seasons?** 
+Yes. The time to put on a PFD is before you need it. In cold water, there is no time to find it after an unexpected situation.
 
-**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
-**Phone:** 905-342-2153
+**What VHF channel should I monitor?** 
+Channel 16. This is the distress and calling channel. Parks Canada and Coast Guard monitor it. Murray Canal swing bridges use Channel 14 specifically.
 
-If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
+**When should I book fall winterization?** 
+As early as possible. Service slots fill in October. If you wait until the first cold night, you may be waiting for a slot that does not exist.
+
+**Does HBW pick up boats for winterization?** 
+For local Rice Lake and Kawartha customers, yes. Contact us at [hbw.wiki/service](https://hbw.wiki/service) or 905-342-2153.
+
+---
+
+## Internal Links
+- Mercury Outboard Service Schedule
+- Walleye Opener Boat Prep Checklist
+- Mercury Motor Winterization Guide
+- Spring Outboard Commissioning Checklist
+
+## CTA
+
+**End the season right.** Proper winterization in October means a ready boat in May. 
+[Book fall service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+---
 
 ## FAQs
 

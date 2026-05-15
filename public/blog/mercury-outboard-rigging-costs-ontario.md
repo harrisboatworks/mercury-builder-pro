@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,163 +29,160 @@ content_type: blog_article
 
 ## Article
 
-# Mercury Outboard Rigging Costs Explained (Ontario 2026)
+**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 
-*Last reviewed: 2026-05-07*
+---
 
-> **Quick answer:** Rigging costs vary by job: a like-for-like swap can be under $1,500, a full re-rig with new gauges, harness, and controls runs $3,000-$6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at mercuryrepower.ca.
+## Quick Answer
 
-Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. For a typical Mercury-to-Mercury repower with post-2010 controls in good condition, rigging lands $500 to $1,500 CAD. Brand conversions and full rerigs run higher. Live pricing on every Mercury we sell, with rigging included, is at [/quote/motor-selection](/quote/motor-selection).
+Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $3,000, $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
-> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
+---
 
-## Quick recommendation
+## Full Article
 
-Most customers who ask "how much does rigging cost?" get sticker shock from a partial answer. The real number depends on what's already on the boat, what brand the existing motor is, and whether the rigging is at end of life.
+"Rigging cost" is one of the most misunderstood line items in a repower quote. Some customers assume the motor is the whole purchase. Others expect rigging to cost a flat rate. Neither assumption tends to survive contact with the actual job.
 
-For typical Ontario freshwater repowers in 2026:
+Here's what rigging actually is, what goes into the cost, and what you can do to keep it at the low end.
 
-- **Mercury-to-Mercury, modern (post-2010) rigging in good shape:** $500 to $1,500 CAD
-- **Mercury-to-Mercury, older or worn rigging needing replacement:** $1,500 to $3,000 CAD
-- **Brand conversion (Evinrude, Yamaha, Honda to Mercury):** add $1,500 to $3,000 CAD over standard
-- **Cable to hydraulic steering upgrade:** add $1,650 to $3,500 CAD
-- **Full new rerig (everything new):** $2,500 to $5,000 CAD
+### What "Rigging" Actually Covers
 
-Live quotes include rigging in the all-in number at [/quote/motor-selection](/quote/motor-selection).
+Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. The list is longer than most customers expect.
 
-## What's actually in "rigging"
-:::image-placeholder
-slug: mercury-rigging-cost-stack
-type: infographic
-aspect: 16:9
-description: Cost stack visualization showing rigging components
-prompt: Photorealistic editorial infographic. Horizontal stacked bar showing Mercury rigging cost breakdown. 7 segments labeled: Throttle/Shift, Steering, Harness, Gauges, Battery Cables, Fuel Hose, Prop. Each segment a different muted color, with $ ranges below. Title: "What's in your Mercury rigging cost". Clean white background, Mercury black/red accents. No people. 1600x900. [STYLE ANCHOR]
-image: /lovable-uploads/mercury-rigging-cost-stack.png
-:::
+**Throttle and shift control** 
+Console-mounted lever on most boats. Mercury Digital Throttle and Shift (DTS) on higher-HP configurations. For Mercury-to-Mercury repowers with post-2010 controls in good shape, often kept. Older or non-Mercury controls are typically replaced.
 
-Rigging is the integration work between motor and boat. The components:
+**Steering** 
+Three types: cable steering (standard under 90 HP, simple, inexpensive), hydraulic steering (standard at 90 HP and up, more comfortable, less maintenance), and power-assist (premium on bigger motors). Cable-to-hydraulic upgrades are common during repowers and are worth doing while the dash is open.
 
-### Throttle and shift control
+Hydraulic steering conversion costs $1,650, $3,500 CAD depending on motor HP and helm complexity.
 
-- **Console-mounted lever** (most common on console boats)
-- **Mercury digital throttle and shift (DTS)** on higher-HP motors (typically 150 HP+)
-- **Tiller-integrated control** on tiller motors (no separate component)
+**Wiring harness** 
+Connects motor to controls, gauges, and battery. Mercury standardized harness connectors across motor families around 2010, so Mercury-to-Mercury repowers usually keep the harness if it's in good condition. Brand conversions need a new harness.
 
-For Mercury-to-Mercury repowers with post-2010 controls, often kept. Older controls or non-Mercury controls usually replaced.
+**Gauges and displays** 
+Older analog gauges (tach, fuel, water temp) often don't fully support modern Mercury motor data outputs. Mercury SmartCraft digital displays integrate engine data cleanly. Third-party multifunction displays (Garmin, Lowrance, Raymarine) integrate via NMEA 2000. Keeping compatible existing displays is free; adding a SmartCraft VesselView adds several hundred dollars depending on screen size.
 
-### Steering
+**Battery cables and switches** 
+Heavier cable for higher-HP motors. Battery switch and dual-battery selectors replaced as needed.
 
-Three types:
+**Fuel hose and connections** 
+Fuel line, primer bulb, fuel filter. Typically replaced during a repower regardless of apparent condition, fuel system age affects new motor reliability, and these parts are cheap insurance.
 
-- **Cable steering:** Standard on motors under 90 HP. Direct, simple, inexpensive. Replaced if older than ~10 years or showing wear.
-- **Hydraulic steering:** Standard on 90 HP and up. More comfortable feel, less maintenance. Replaced if leaking or unresponsive.
-- **Power-assist steering:** Premium option on bigger motors. Easier feel at speed.
+**Propeller** 
+Aluminum 3-blade (approximately $450 CAD) for motors up to 115 HP. Stainless 3 or 4-blade ($800, $2,000 CAD) for 150 HP and up. We test props during sea trial of every repower and swap until the motor reaches its rated WOT RPM range.
 
-Cable-to-hydraulic upgrades are common during repowers. Cost: $1,650 to $3,500 CAD depending on motor HP and steering helm complexity.
+### 2026 Rigging Cost Ranges by Scenario
 
-### Wiring harness
+| Scenario | Rigging Cost (CAD, before HST) |
+|---|---|
+| Mercury-to-Mercury, post-2010 controls in good shape | $500, $1,500 |
+| Mercury-to-Mercury, older/worn rigging needing replacement | $1,500, $3,000 |
+| Brand conversion (Evinrude, Yamaha, Honda to Mercury) | Add $1,500, $3,000 over standard |
+| Cable to hydraulic steering upgrade | Add $1,650, $3,500 |
+| Full new re-rig (everything new) | $2,500, $5,000 |
 
-The cables that connect motor to controls, gauges, and battery. Mercury has standardized harness connectors across motor families since around 2010, so Mercury-to-Mercury repowers usually keep the harness if it's in good shape. Brand conversions need a new harness.
+These ranges are before prop and installation labour. The live configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) builds rigging into the all-in quote.
 
-### Gauges and displays
+### What Changes Your Rigging Cost
 
-Three options:
+Five things move your quote up or down the range:
 
-- **Analog gauges:** Tach, fuel, water temp. Older standard.
-- **Mercury SmartCraft digital displays:** VesselView 4, 7, 9 inch units. Modern standard for Mercury motors.
-- **Third-party multifunction displays (Garmin, Lowrance, Raymarine):** Integrate with SmartCraft via NMEA 2000.
+**1. Existing rigging condition.** A 5-year-old Mercury rerig with controls and harness in good shape stays at the low end. A 25-year-old boat with cracked cables and corroded connectors hits the high end.
 
-Mercury-to-Mercury repowers often keep existing displays if compatible. Older analog gauges sometimes need replacement to support new motor's data outputs.
+**2. Existing rigging brand.** Mercury-to-Mercury saves significantly. Brand conversions add $1,500, $3,000 because every control system component swaps.
 
-### Battery cables and switches
+**3. Steering type and upgrade decisions.** Keeping existing cable steering is cheaper. Upgrading to hydraulic adds meaningfully but is often worth doing during the repower while the dash is already open. Future upgrades to hydraulic are more expensive and disruptive than doing it during the current job.
 
-Heavier cable for higher-HP motors. Battery switch (on/off, dual-battery selectors). Replaced as needed during rigging inspection.
+**4. Display upgrades.** Keeping existing displays if compatible is free. Adding a Mercury SmartCraft VesselView adds several hundred to over $1,000 depending on size and configuration.
 
-### Fuel hose and connections
+**5. Fuel system condition.** Old fuel hoses and gummed-up filters get replaced. Boats stored with ethanol pump gas sometimes need more than basic hose replacement.
 
-Fuel line from tank to motor, primer bulb, fuel filter. Typically replaced during a repower because fuel system age affects new motor reliability.
+### Mercury-to-Mercury vs. Brand Conversion, The Cost Difference
 
-### Propeller
-
-Aluminum 3-blade ($450 CAD typical) for motors up to 115 HP. Stainless 3 or 4-blade ($800 to $2,000 CAD) for 150 HP and up. We test props during sea-trial of every repower. See our [propeller selection guide](/blog/mercury-propeller-selection-guide).
-
-### Trim and tilt system
-
-Most modern Mercurys include power trim/tilt. Hydraulic ram, motor housing, and switch. Replaced if leaking or non-functional.
-
-## What changes the rigging cost
-
-Five things move whether your rigging cost is at the low or high end of the range:
-
-- **Existing rigging condition.** A 5-year-old Mercury rerig with controls and harness in good shape: low end. A 25-year-old boat with cracked cables and corroded connectors: high end.
-- **Existing rigging brand.** Mercury-to-Mercury saves significantly. Brand conversions add $1,500 to $3,000.
-- **Steering type and upgrade decisions.** Keeping cable steering is cheaper. Upgrading to hydraulic adds meaningfully but is often worth doing during the repower while the dash is open.
-- **Display upgrades.** Keeping analog gauges is free. Adding a Mercury SmartCraft VesselView is several hundred to over $1,000 depending on size.
-- **Fuel system condition.** Old fuel hoses and filters get replaced. Some boats need a fuel system rebuild beyond just hose replacement.
-
-## What HBW checks during the rigging assessment
-
-When we walk around a boat for a repower quote, we look at:
-
-- **Throttle and shift control age and brand**
-- **Steering type, age, and condition** (visible leaks, smoothness of operation, helm condition)
-- **Wiring harness condition** (corrosion, cracks, brand compatibility)
-- **Gauge or display age and connectivity**
-- **Battery cable gauge and condition**
-- **Fuel hose age, fuel filter location, fuel tank vent condition**
-- **Existing prop condition** (damage, pitch fit for current use)
-- **Trim/tilt system function**
-- **Transom condition** (this is for the install, not strictly rigging, but assessed at the same time)
-
-The walk-around is free. The findings determine where in the rigging cost range your quote lands. For the actual quote, [build it on the motor selection page](/quote/motor-selection) or [call us](tel:9053422153).
-
-## Common rigging cost mistakes
-
-We see these every season:
-
-1. **Trying to keep rigging that's at end of life.** Customer wants to save $1,500 by reusing 20-year-old controls. The new motor is undermined by old rigging that fails in year 2. Pay once.
-2. **Skipping the prop conversation.** A new $20,000 motor with a wrong prop loses 4 mph and 15% fuel economy. The right prop is part of rigging.
-3. **Underestimating brand conversion cost.** Customer thinks "$1,500 to convert from Yamaha to Mercury" when actual brand conversion is $1,500 to $3,000 over standard rigging. Add it to the budget.
-4. **Forgetting steering upgrade math.** If your current cable steering is at end of life and you're going to upgrade it eventually, the cheapest time is during the repower. While the dash is open.
-5. **DIYing partial rigging.** Confident owners sometimes do their own throttle/shift install and then can't figure out why the motor doesn't run right. Brand-conversion rigging is not a DIY project.
-
-## Mercury-to-Mercury vs brand conversion: the cost difference
-
-| Component | Mercury-to-Mercury (post-2010) | Brand conversion |
+| Component | Mercury-to-Mercury (post-2010) | Brand Conversion |
 |---|---|---|
 | Throttle and shift control | Often kept | New required |
 | Wiring harness | Often kept | New required |
 | Gauges or displays | Often kept | New or adapted |
-| Steering | Either works | Often replaced |
+| Steering | Either kept or upgraded | Often replaced |
 | Battery cables | Inspected, replaced as needed | Inspected, replaced as needed |
 | Fuel hose | Replaced | Replaced |
-| Prop | New, sized for new motor | New, sized for new motor |
-| Total rigging premium | Baseline | +$1,500 to $3,000 CAD |
+| Propeller | New, sized for new motor | New, sized for new motor |
+| Total rigging premium | Baseline | +$1,500, $3,000 CAD |
 
-For specific quotes, [build it on the motor selection page](/quote/motor-selection).
+### What We Inspect During the Rigging Assessment
 
-## Related guides
+When we walk around a boat for a repower quote, we look at:
 
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full all-in pricing
-- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion specifically
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop is part of rigging
-- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), steering type decision
-- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower), the full process
+- Throttle and shift control age, brand, and condition
+- Steering type, age, and condition (visible leaks, smoothness, helm feel)
+- Wiring harness condition (corrosion, cracks, brand compatibility)
+- Gauge or display age and connectivity with new motor
+- Battery cable gauge and condition
+- Fuel hose age, filter location, tank vent condition
+- Existing prop condition (damage, pitch fit)
+- Trim/tilt system function
 
-## Try the calculator
+The walk-around is free. The findings determine where in the range your quote lands.
 
-Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
-## Ready for an honest rigging quote?
+### Common Rigging Cost Mistakes
 
-Build a quote on the [motor selection page](/quote/motor-selection). Rigging is included in the all-in number. Live CAD pricing. No phone call required to see the price.
+**Trying to keep rigging at end of life.** Saving $1,500 by reusing 20-year-old controls is not a saving if the throttle cable fails and takes the new motor with it. Pay once.
 
-[**Build Your Mercury Quote**](/quote/motor-selection)
+**Skipping the prop conversation.** A new motor with a wrong prop loses meaningful performance and fuel economy. The right prop is part of rigging.
 
-If you want to talk through your specific boat's rigging condition before quoting, [give us a call at (905) 342-2153](tel:9053422153). We do free walk-arounds and can give you a real range based on what we see.
+**Underestimating brand conversion cost.** "I'm just switching from Yamaha to Mercury" sounds simple. The actual rigging difference is $1,500, $3,000 over standard. Budget for it.
+
+**Forgetting the steering upgrade math.** If your cable steering is at end of life and you know you'll upgrade eventually, the cheapest moment is during the repower, the dash is already open.
+
+**DIY partial rigging on a brand conversion.** Brand conversions have enough system interaction (throttle mapping, harness compatibility, sensor calibration) that partial DIY rigging regularly causes problems that cost more to fix than the initial savings.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and rigging configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+## FAQs
+
+**What is included in Mercury outboard rigging?** 
+Throttle and shift controls, steering, wiring harness, gauges or display, battery cables and switches, fuel hose and filter, and propeller. Everything connecting the motor to the boat's systems.
+
+**How much does Mercury rigging cost in Ontario?** 
+Mercury-to-Mercury on post-2010 controls in good condition: $500, $1,500 CAD. Brand conversion or full re-rig: $2,500, $5,000 CAD. Hydraulic steering upgrade adds $1,650, $3,500 CAD. All before HST.
+
+**Is rigging included in the quote from mercuryrepower.ca?** 
+Yes. The configurator builds the rigging cost into the all-in installed price.
+
+**Can I keep my existing controls if I'm upgrading to a newer Mercury?** 
+Mercury-to-Mercury repowers with post-2010 controls in good condition usually carry over. We assess during the hull walk-around.
+
+**Why does a brand conversion cost more to rig?** 
+Evinrude, Yamaha, and Honda controls, harnesses, and wiring are not compatible with Mercury. The entire control system needs to swap, adding $1,500, $3,000 CAD to the rigging bill.
+
+**When should I upgrade from cable to hydraulic steering?** 
+Hydraulic steering is standard at 90 HP and up. If your existing cable steering is worn or you're stepping up in HP, the repower is the least expensive time to upgrade, the dash is already open.
+
+**Does rigging include the propeller?** 
+Yes. We size the prop to the motor and hull during sea trial. If a prop swap is needed to hit the motor's rated WOT RPM range, we do it before delivery.
+
+**Is the rigging quote fixed before the job starts?** 
+We quote rigging based on the walk-around assessment. Occasionally, hidden issues (corroded connections, cracked hose behind a panel) surface during the install that require additional work. We contact the customer before proceeding with anything beyond the agreed scope.
+
+---
+
+## Internal Links
+
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
+- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
+
+---
+
+## CTA
+
+Ready for an honest rigging quote? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, rigging is included in the all-in number, line by line.
+
+Prefer to talk through your specific boat's rigging condition first? Call **905-342-2153** or come in for a free walk-around.
+
+---
 
 ## FAQs
 

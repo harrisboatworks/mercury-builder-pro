@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -33,7 +33,7 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** For a typical 20-foot aluminum boat at around $40,000, plan on **$5,800–$7,500 per year in operating costs** cash-bought, slip, storage, winterization, insurance, fuel, routine service, PCL. Add a typical 10-year loan and the all-in number rises to about $10,000/year. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
+> **Quick answer:** For a typical 20-foot aluminum boat at around $40,000, plan on **$5,800-$7,500 per year in operating costs** cash-bought, slip, storage, winterization, insurance, fuel, routine service, PCL. Add a typical 10-year loan and the all-in number rises to about $10,000/year. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
 
 If you're shopping your first boat or thinking about whether to keep your current one, the *purchase price* is only part of the question. The bigger question is: **what does it cost to keep it on the water every year?**
 
@@ -43,9 +43,9 @@ Most online articles answer that with American numbers, generic ranges, and no s
 
 ## The Two-Number Summary
 
-For a typical 20-foot aluminum fishing boat valued at around $40,000, **plan on roughly $5,800–$7,500 per year of operating cost in Ontario** (cash-bought, no loan payment). Add a typical 10-year loan and the all-in number rises to about **$10,000/year**.
+For a typical 20-foot aluminum fishing boat valued at around $40,000, **plan on roughly $5,800-$7,500 per year of operating cost in Ontario** (cash-bought, no loan payment). Add a typical 10-year loan and the all-in number rises to about **$10,000/year**.
 
-For a 22-foot pontoon at $55,000, scale that up to roughly $7,500–$9,500 a year cash-bought, or about $12,000–$14,000 financed.
+For a 22-foot pontoon at $55,000, scale that up to roughly $7,500-$9,500 a year cash-bought, or about $12,000-$14,000 financed.
 
 These are *operating* numbers, slip, storage, winterization, insurance, fuel, routine service, PCL, not depreciation or opportunity cost. The full sample budget is in Section 7 below; if you only read one section, read that one.
 
@@ -63,7 +63,7 @@ If you keep your boat in the water at a marina seasonally instead of trailering 
 - **Transient (overnight):** $1.00/ft per night, minimum $20. Weekly $5/ft. Monthly $10/ft.
 - **49 slips** at HBW Gores Landing.
 
-**Ontario range:** $40–$60/ft seasonal at rural Kawartha marinas. $100–$150+/ft at urban Lake Ontario marinas. Toronto/Mississauga slip rates are a different category entirely.
+**Ontario range:** $40-$60/ft seasonal at rural Kawartha marinas. $100-$150+/ft at urban Lake Ontario marinas. Toronto/Mississauga slip rates are a different category entirely.
 
 If you trailer instead of slipping, **substitute launch fees**: HBW is $20/day or $200/season. Public launches around Rice Lake, Ontario (in the Kawarthas) (Bewdley, Roseneath, Harwood) are free but single-lane and busy on weekends.
 
@@ -77,15 +77,15 @@ Boat insurance is **not legally required** in Ontario, but most marinas (includi
 
 **Ontario rates:**
 
-- **Annual premium:** typically **1–3% of hull value**, averaging ~1.5%
-- $30,000 boat → $300–$900/year
-- $50,000 boat → $500–$1,500/year
-- $80,000 boat → $800–$2,400/year
-- Most marinas require **$2–3 million liability minimum**
+- **Annual premium:** typically **1-3% of hull value**, averaging ~1.5%
+- $30,000 boat → $300-$900/year
+- $50,000 boat → $500-$1,500/year
+- $80,000 boat → $800-$2,400/year
+- Most marinas require **$2-3 million liability minimum**
 
 Quotes vary widely based on boat type, claims history, and where you operate. Get three quotes; insurance is one of the few line items where shopping around makes a real difference.
 
-**Annual budget for $40K boat:** $400–$1,000.
+**Annual budget for $40K boat:** $400-$1,000.
 
 ---
 
@@ -100,17 +100,17 @@ In Ontario, you don't get to skip winter storage. The boat has to come out of th
 - **Outdoor with trailer, no shrinkwrap, up to 21 ft:** $36/ft (storage only)
 
 **Winterization (separate scope, fall):**
-- **40–60 HP 4-stroke:** $337.84
-- **75–115 HP 4-stroke:** $425.71
-- Larger engines, sterndrives, twin setups: $500–$900+
+- **40-60 HP 4-stroke:** $337.84
+- **75-115 HP 4-stroke:** $425.71
+- Larger engines, sterndrives, twin setups: $500-$900+
 
 **Indoor storage** (we don't offer; some Ontario competitors do):
-- Indoor unheated: $40–$60/ft (~$840–$1,260 for 21-ft boat)
-- Indoor heated: $60–$90/ft (~$1,260–$1,890 for 21-ft boat)
+- Indoor unheated: $40-$60/ft (~$840-$1,260 for 21-ft boat)
+- Indoor heated: $60-$90/ft (~$1,260-$1,890 for 21-ft boat)
 
-**Annual budget for 21-ft outdoor + winterized:** ~$1,000–$1,200 all-in at HBW.
+**Annual budget for 21-ft outdoor + winterized:** ~$1,000-$1,200 all-in at HBW.
 
-**The "what if I skip it" cost:** A cracked engine block from a missed winterization runs **$5,000–$10,000+**. Skipped winterization is the most expensive way to save $400.
+**The "what if I skip it" cost:** A cracked engine block from a missed winterization runs **$5,000-$10,000+**. Skipped winterization is the most expensive way to save $400.
 
 ---
 
@@ -120,28 +120,28 @@ The biggest variable on the list, since it depends on how much you actually use 
 
 **Fuel burn (typical Ontario boats):**
 
-- **2-stroke 75 HP** running 25–30 L/hour at typical cruise
-- **Mercury 4-stroke 90–115 HP** running 15–18 L/hour at typical cruise
-- **Mercury 4-stroke 200 HP V6** running 25–35 L/hour at cruise
+- **2-stroke 75 HP** running 25-30 L/hour at typical cruise
+- **Mercury 4-stroke 90-115 HP** running 15-18 L/hour at typical cruise
+- **Mercury 4-stroke 200 HP V6** running 25-35 L/hour at cruise
 
 **Fuel pricing:**
 
-- **Pump gas (with ethanol)** in Ontario: ~$1.50–$1.65/L, varies seasonally
-- **HBW dock, ethanol-free 89 marine:** typically $0.20–$0.40/L premium over pump
+- **Pump gas (with ethanol)** in Ontario: ~$1.50-$1.65/L, varies seasonally
+- **HBW dock, ethanol-free 89 marine:** typically $0.20-$0.40/L premium over pump
 
 **Why ethanol-free is worth the premium for many owners:**
 - Doesn't absorb water during storage (huge for a boat that sits)
 - Easier on fuel system components (longer carb / injector life)
 - More stable shelf life, 6+ months vs. 30 days for ethanol pump gas
-- Slightly better fuel economy in most outboards (~3–5%)
+- Slightly better fuel economy in most outboards (~3-5%)
 
-**Annual fuel budget (50–100 hours per season):**
+**Annual fuel budget (50-100 hours per season):**
 
-- **90 HP 4-stroke, 75 hours, ethanol-free:** ~$1,800–$2,200
-- **150 HP 4-stroke, 75 hours, ethanol-free:** ~$2,400–$3,200
-- **200 HP V6, 75 hours, ethanol-free:** ~$3,000–$4,200
+- **90 HP 4-stroke, 75 hours, ethanol-free:** ~$1,800-$2,200
+- **150 HP 4-stroke, 75 hours, ethanol-free:** ~$2,400-$3,200
+- **200 HP V6, 75 hours, ethanol-free:** ~$3,000-$4,200
 
-For most recreational owners, **fuel is $1,500–$3,500 a year**.
+For most recreational owners, **fuel is $1,500-$3,500 a year**.
 
 ---
 
@@ -151,18 +151,18 @@ Mercury's 20/100/300 schedule applies in Ontario, with the **annual trigger** be
 
 **HBW annual service pricing:**
 
-- **20-hour break-in service** (one-time, after first 20 hours): $250–$400 mid-range
-- **100-hour annual service** (every year regardless of hours): $400–$700 mid-range; $700–$1,200 V6
-- **300-hour major service** (every 3 years): $800–$1,200 mid-range; $1,200–$2,500 V6/Verado
+- **20-hour break-in service** (one-time, after first 20 hours): $250-$400 mid-range
+- **100-hour annual service** (every year regardless of hours): $400-$700 mid-range; $700-$1,200 V6
+- **300-hour major service** (every 3 years): $800-$1,200 mid-range; $1,200-$2,500 V6/Verado
 
 **Other annual line items:**
 
-- Bottom paint refresh (if applicable): $300–$600
-- Cover/canvas cleaning: $100–$250
-- Trailer service (bearings, brakes, lights): $150–$400
-- Detailing (varies): $200–$600
+- Bottom paint refresh (if applicable): $300-$600
+- Cover/canvas cleaning: $100-$250
+- Trailer service (bearings, brakes, lights): $150-$400
+- Detailing (varies): $200-$600
 
-**Annual maintenance budget (year-2 onward, mid-range engine):** $500–$1,500. Plan on the higher end.
+**Annual maintenance budget (year-2 onward, mid-range engine):** $500-$1,500. Plan on the higher end.
 
 ---
 
@@ -193,7 +193,7 @@ This category used to be near-zero. It's still essentially negligible.
 
 **Add a loan payment** (10-year financing, 8% interest, 20% down on $40K): about **$4,200/year**. Total all-in: **~$10,000/year**.
 
-For a higher-tier boat, say a 22-ft pontoon at $55K, scale up about 25–30%. For a 26-ft cuddy or sterndrive cruiser, scale up further still.
+For a higher-tier boat, say a 22-ft pontoon at $55K, scale up about 25-30%. For a 26-ft cuddy or sterndrive cruiser, scale up further still.
 
 ---
 
@@ -204,14 +204,14 @@ Here's what most online cost calculators get wrong: ownership costs over time **
 Reasonable 10-year planning numbers for the 20-ft, $40K example:
 
 - **Routine (slip + insurance + storage + maintenance + fuel):** ~$50,000 over 10 years
-- **Major repairs / replacements:** ~$5,000–$15,000 (impeller jobs, battery, props, electronics, possible repower)
-- **Loan interest** (if financed): ~$15,000–$20,000
-- **Resale at 10 years:** boats lose 20–30% in year 1, maybe 50–60% by year 10. Recover ~$15,000–$20,000.
+- **Major repairs / replacements:** ~$5,000-$15,000 (impeller jobs, battery, props, electronics, possible repower)
+- **Loan interest** (if financed): ~$15,000-$20,000
+- **Resale at 10 years:** boats lose 20-30% in year 1, maybe 50-60% by year 10. Recover ~$15,000-$20,000.
 
-**Net cost over 10 years (cash-bought):** ~$50,000–$60,000.
-**Net cost over 10 years (financed):** ~$70,000–$85,000.
+**Net cost over 10 years (cash-bought):** ~$50,000-$60,000.
+**Net cost over 10 years (financed):** ~$70,000-$85,000.
 
-That's why people repower. A $20,000 Mercury repower on a 15-year-old hull resets the engine clock and extends the boat's useful life another 10–15 years, for about half the cost of buying new.
+That's why people repower. A $20,000 Mercury repower on a 15-year-old hull resets the engine clock and extends the boat's useful life another 10-15 years, for about half the cost of buying new.
 
 ---
 
@@ -219,7 +219,7 @@ That's why people repower. A $20,000 Mercury repower on a 15-year-old hull reset
 
 A few places HBW's pricing differs from what you'd find elsewhere:
 
-**Ethanol-free fuel.** The premium pays for itself in reduced fuel-system maintenance work and longer engine life. For a heavily-used boat, ethanol-free saves $200–$500/year in service work alone.
+**Ethanol-free fuel.** The premium pays for itself in reduced fuel-system maintenance work and longer engine life. For a heavily-used boat, ethanol-free saves $200-$500/year in service work alone.
 
 **Transparent quote configurator.** [mercuryrepower.ca](https://mercuryrepower.ca) gives you real Mercury pricing in 90 seconds. No "call for a quote" games, no wasted weekends comparing dealer estimates that come back wildly different. The price you see is the price.
 

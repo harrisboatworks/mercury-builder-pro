@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -47,7 +47,7 @@ If you're headed to the Kawarthas, the Trent-Severn, or Rice Lake this season, r
 
 ### 1. Wrong Tongue Weight
 
-Tongue weight, the downward force the trailer puts on the hitch ball, should sit at **10–15% of your total loaded trailer weight**. Outside that window, things go wrong in both directions.
+Tongue weight, the downward force the trailer puts on the hitch ball, should sit at **10-15% of your total loaded trailer weight**. Outside that window, things go wrong in both directions.
 
 Too light: the trailer rear lifts and you get sway at highway speed. Once a loaded boat trailer starts swaying, most tow vehicles have a hard time correcting it.
 
@@ -81,7 +81,7 @@ Twenty minutes at the start of the season. It's worth it.
 
 The most common roadside breakdown for Ontario boaters. Trailer tires often look fine, low tread wear, because they don't log enough highway kilometers to wear down. They age out instead.
 
-UV exposure and ozone oxidize the rubber compound even when the tire's sitting in a driveway all winter. **Replace trailer tires every 5–6 years** regardless of tread, and check sidewalls for cracking every spring.
+UV exposure and ozone oxidize the rubber compound even when the tire's sitting in a driveway all winter. **Replace trailer tires every 5-6 years** regardless of tread, and check sidewalls for cracking every spring.
 
 If your tires are from 2018 and you're heading from the GTA to Rice Lake on the 115, you're rolling the dice. New trailer tires are cheap. A highway blowout is not.
 
@@ -101,7 +101,7 @@ Two minutes at the ramp. Every time.
 
 An outboard hanging freely on a transom isn't built to absorb highway vibration. Without a transom saver, the motor's weight swings on the tilt/trim system and steering cable over every bump on every Ontario back road north of the city.
 
-Over one season, that wears steering arms, transom brackets, and trim ram seals. On a Mercury FourStroke in the 60–200 hp range, those repairs add up fast.
+Over one season, that wears steering arms, transom brackets, and trim ram seals. On a Mercury FourStroke in the 60-200 hp range, those repairs add up fast.
 
 Transom savers cost next to nothing. They attach between the trailer roller and the motor cavitation plate and distribute the load off the lower unit. Use one every time the motor goes on the road.
 

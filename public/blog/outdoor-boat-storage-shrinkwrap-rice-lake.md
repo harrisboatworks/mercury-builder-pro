@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters"
-description: "Outdoor winter boat storage and shrinkwrap at Harris Boat Works in Gores Landing on Rice Lake. What's included, what's not, and how to prepare your boat for an..."
+description: "Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included, what's not, and how to prep for an Ontario winter."
 category: "Service & Maintenance"
 date_published: 2026-05-10
 date_modified: 2026-05-10
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters
 
-> Outdoor winter boat storage and shrinkwrap at Harris Boat Works in Gores Landing on Rice Lake. What's included, what's not, and how to prepare your boat for an...
+> Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included, what's not, and how to prep for an Ontario winter.
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-10  
@@ -29,134 +29,175 @@ content_type: blog_article
 
 ## Article
 
-# Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters
+## Quick Answer
 
-*Last reviewed: 2026-05-10*
+Harris Boat Works offers outdoor winter storage with shrinkwrap on-site at our Gores Landing marina. Boats are blocked, fully wrapped, and stored on our property from October pickup to spring commissioning. We don't operate indoor storage, this is outdoor only. Pricing is by boat length and what services you bundle (winterize + storage + commissioning is the most common package). Submit a storage request at [hbw.wiki/service](https://hbw.wiki/service).
 
-> **Quick answer:** Harris Boat Works offers outdoor winter boat storage and shrinkwrap in Gores Landing for Rice Lake and Kawartha boaters, up to 30 feet. We don't run indoor storage. If you want a straight answer on what your boat needs before winter and what we actually handle, this is the page.
+---
 
-## Who this is for
+## What HBW Storage Actually Looks Like
 
-You're the right fit for HBW outdoor storage if:
+We've stored boats for Rice Lake and Kawartha-area customers for decades. The setup is straightforward:
 
-- Your boat is 30 feet or under
-- You boat on Rice Lake, the Kawarthas, or the Trent-Severn
-- You want one stop for storage, shrinkwrap, and winterization instead of three different shops
-- You're okay with outdoor storage on a fenced, monitored lot (not heated indoor)
+**Outdoor storage on our property** in Gores Landing. Boats are blocked off the trailer (or remain on trailers, depending on what you prefer), spaced for access, and exposed to Ontario winter weather.
 
-If you need indoor heated storage, we'll point you somewhere else honestly. If your boat is over 30 feet, we can't take it. We'd rather tell you that up front than waste your fall.
+**Shrinkwrap** is the standard winter cover. It's the polyethylene plastic heat-shrunk over a wood or metal frame that goes over the boat. Tight, sheds snow, vents to prevent moisture buildup, and removes cleanly in spring.
 
-## What HBW outdoor storage actually includes
+**Winterization** is the engine and systems prep that goes with storage. It's typically bundled with storage at HBW so the motor isn't left in operating condition through freeze-thaw cycles.
 
-Three things come standard with winter storage. Most marinas charge for them. We don't.
+That's it. No climate control, no indoor heating, no fancy facilities. What you get is a properly winterized boat, properly covered, sitting on a marina property that's been doing this since 1947.
 
-**Free spring check ($99 value).** Your boat gets looked over before you tow it home. Battery, fuel system, lower unit oil, hoses, basic systems. The kind of inspection that catches the $30 winter problem before it becomes the $300 spring problem. Most marinas charge $99 for this as a standalone service. It's included.
+---
 
-**Free summer trailer storage ($150 value).** Once your boat is out of storage and back in the water, your trailer doesn't need to live on your driveway all summer. Drop it here, pick it up in the fall when the boat comes back. That's $150 you'd otherwise pay somewhere or lose to driveway space.
+## Outdoor vs Indoor Storage, The Honest Comparison
 
-**Free shrinkwrap recycling ($35 value).** When we pull the wrap off in spring, it gets recycled instead of landfilled. Small environmental thing. Saves you the disposal fee a lot of marinas charge to handle it.
+This is the question most customers ask, and the honest answer depends on your boat and budget:
 
-That's $284 in included services on top of the storage itself. The math actually matters when you're comparing quotes.
+**Indoor heated storage** is the gold standard for fiberglass cabin cruisers, high-end center consoles, or boats with sensitive interiors and electronics. It protects against freeze-thaw cycles, UV degradation, and moisture damage. It costs significantly more, often 2–3× outdoor storage with shrinkwrap.
 
-## What HBW also handles (priced separately)
+**Indoor unheated storage** sits between the two: protects against weather and UV but not freeze-thaw cycles.
 
-Beyond core storage and shrinkwrap, the shop offers:
+**Outdoor with shrinkwrap** is the practical, cost-effective choice for most aluminum fishing boats, pontoons, and smaller fiberglass boats. Done right, the boat is fully protected for winter at a fraction of the indoor cost.
 
-- **Winterization tiered by engine type.** Different work, different price. 2-stroke, 4-stroke, Optimax/E-TEC, sterndrive (4 & 6 cyl, V6 & V8, Bravo), and inboard. We don't quote a flat number because they're not the same job.
-- **Winterize with oil and filter change.** Bundled service if you want the full pre-storage prep done by us.
-- **Bio-wash hull cleaning ($10/ft).** Chemical hull clean before wrap. Worth it if the boat picked up zebra mussels, scum line, or stained gel coat over the season.
-- **Pontoon enclosures removal and install ($5/ft).** If you've got a full enclosure that needs to come off before wrap and back on in spring.
-- **Shrinkwrap only.** For boats already winterized by someone else (or DIY) who just need the wrap. $20/ft done indoors, $25/ft done outdoors.
+For most Rice Lake and Kawartha-area customers with aluminum or smaller fiberglass boats, outdoor with shrinkwrap is the right answer. If you have a 30+ ft cabin cruiser or a high-end performance boat with sensitive electronics, indoor is usually worth the cost, but you'd need to find a different facility, not us.
 
-Current rates are on the [storage page](https://www.harrisboatworks.ca/winter-storage). They change every fall, so the live page is the source of truth. This guide is for the questions, not the quote.
+---
 
-## Shrinkwrap is not winterization. They're two different jobs.
+## What's Included in HBW Winter Storage
 
-This is the single most expensive misunderstanding in marine storage.
+Most customers bundle these together:
 
-**Shrinkwrap** is a tight plastic cover. It keeps snow, ice, and squirrels out of the boat. It does not protect the engine.
+**Pre-storage winterization**
+- Fuel system stabilization
+- Fog the engine cylinders (FourStroke and 2-stroke)
+- Drain water from cooling system
+- Change gearcase lube (annual or 100-hour interval)
+- Lift the motor up and tilt to drain
+- Battery removal (or trickle-charge setup)
+- Antifreeze in any water systems (livewells, head, freshwater system)
 
-**Winterization** is what protects the engine: fogging the cylinders, draining or stabilizing fuel, replacing lower-unit oil, removing water that'll freeze and crack a block. Without it, a hard freeze can split a powerhead or crack a sterndrive housing. Shrinkwrap won't save you from that. It just keeps the snow off while it happens.
+**Storage**
+- Block boat off trailer (or on trailer, your choice)
+- Position on the property for spring access
+- Standard care during winter (visual checks for damage, snow load, etc.)
 
-If you do one and skip the other, you're wasting money. Either one alone is half a job.
+**Shrinkwrap**
+- Wood or metal frame appropriate for your boat
+- Heat-shrunk polyethylene wrap over the frame
+- Vents installed to prevent moisture buildup
+- Tight fit, sheds snow properly
 
-We do both. We'll also do shrinkwrap-only if your boat is already winterized (some customers handle the engine themselves and just want the wrap). Up to you. Just know which one you're paying for.
+**Spring commissioning** (separate service, often booked at storage time)
+- Remove shrinkwrap
+- Reinstall battery, charge
+- Top up oil, gear lube
+- Test starter, charging system
+- Test all motor functions on muffs
+- Launch and water-test (additional charge)
 
-## Before you drop the boat off: checklist
+Booking all four as a package simplifies your fall and spring transitions. We see your boat once at storage time, once at commissioning, you don't have to think about it in between.
 
-Pull this list, run through it the night before:
+---
 
-- **Fuel.** Top off and add stabilizer if we're not winterizing. If we are, we'll handle it.
-- **Battery.** Can stay in if it's healthy. Disconnect or remove if you want extra peace of mind.
-- **Drain plug.** Pull it. Tape it to the dash where you'll find it.
-- **Valuables.** Fish finders, electronics, rods, ditty boxes, registration, paperwork. Take it home.
-- **Canvas and seats.** Clean and dry. Wet vinyl in a wrapped boat grows mould all winter.
-- **Bilge.** Pump it dry before the boat goes on the trailer.
-- **Trailer.** Straps tight, lights working, jack functional. We have to move it on the lot.
-- **Tow vehicle.** Full tank if you're driving from a distance. The closest fuel after Gores Landing isn't always close.
+## Storage Pricing, In General Terms
 
-If something's broken or making a noise you didn't trust last fall, tell us when you drop it off. Spring is the wrong time to discover problems.
+Outdoor storage with shrinkwrap is priced by boat length. Winterization is priced by engine type and complexity. Spring commissioning is priced by what's included (basic vs. full diagnostic).
 
-## Outdoor vs indoor: honest trade-offs
+Bundling the three (winterize + storage + commission) is the common path and gives a small discount over booking them separately.
 
-We don't offer indoor storage, but we'll tell you the truth about it instead of pretending outdoor is always best.
+For current rates, contact us. Pricing depends on your specific boat, motor, and any extras (water system winterization, electronics protection, etc.).
 
-**Indoor wins on:** dust-free finish, no UV, no thermal cycling, easier on canvas and gel coat over many years.
+---
 
-**Outdoor with proper shrinkwrap wins on:** price (typically half or less of indoor), availability (indoor lots fill up early and have waitlists), and convenience for trailerable boats.
+## When to Book Winter Storage
 
-**For most Rice Lake and Kawartha boats** (aluminum fishing boats, pontoons under 25 feet, runabouts), outdoor with shrinkwrap is the practical answer. For a high-end fibreglass cruiser with custom paint, indoor might be worth the premium. Choose based on your boat, not on what makes the marina more money.
+**September to early October:** Best window. We're not yet at peak demand and we can give you specific scheduling.
 
-## Drop-off and spring pickup: what to expect
+**Mid-to-late October:** Workable but tightening up. Most storage customers are booking by this point.
 
-**Fall drop-off.** Book a slot through the [service request form](https://hbw.wiki/service). Show up, sign in, leave the keys, go home. We handle the rest. Don't time it for the last weekend in October. That week is a zoo and we'd rather have your boat earlier when there's room to do the work properly.
+**November:** Risky for new customers. Snow has often started, fewer dry-day windows for outdoor work.
 
-**Over the winter.** The boat sits on a fenced, monitored lot. We check it after major weather events. If a wrap rips or something looks off, we'll text you.
+**December:** Too late. Schedule for next year.
 
-**Spring pickup.** We run the spring check before you tow it home. You'll know if anything came up over the winter. Usual stuff: a corroded battery terminal, a mouse that found a way in, a soft hose. Better to find that here than at the ramp.
+The customers who call in early November every year asking if we have space, we appreciate them, but it's a tight call. Plan ahead.
 
-## What HBW checks before storage
+---
 
-Storage is the first sign of how a boat got treated all season. Before we wrap it, we look at:
+## What You Need to Have Ready Before Drop-Off
 
-- Hull condition (cracks, soft spots near the transom)
-- Fuel system (water in the bowl, ethanol damage)
-- Lower unit oil (milky means water intrusion, find that now, not in May)
-- Battery health
-- Bilge and stringers
+When you bring the boat to HBW for storage:
 
-If we see something that's going to be expensive in the spring, we tell you in the fall. You decide whether to fix it now or budget for spring. That's the difference between storage at a marina and storage at a parking lot.
+- **Hours on the motor** (since last service or new)
+- **Service history**, if known
+- **Any specific issues you noticed last season** (rough idle, slow shifts, charging problems)
+- **Personal items removed** from the boat (electronics, fish finders, anything theft-prone)
+- **Tank with stabilized fuel** at appropriate level (we'll work with whatever you have, but ¾ to full tank with stabilizer mixed in is ideal)
+- **Trailer in working order** if storing on it (lights, bearings, tires fine for outdoor sitting)
 
-## Questions we hear at the counter
+Submit a service/storage request at [hbw.wiki/service](https://hbw.wiki/service) with your boat details before you bring it in. That way we know what we're working with.
+
+---
+
+## What Spring Commissioning Looks Like
+
+If we're commissioning your boat in spring (which most outdoor-storage customers add):
+
+**Late March to mid-April:** We start booking commissioning slots. Earlier requests get earlier dates.
+
+**Late April to early May:** Peak commissioning weeks. Boats getting ready for May long weekend launches.
+
+**Mid to late May:** Catch-up phase. Boats that booked late or had issues found at the commissioning check.
+
+If you want to launch your boat by the May long weekend, book commissioning by late April. Booking in late May for a launch that weekend isn't realistic, the shop is at capacity.
+
+Full spring commissioning checklist is at [/blog/spring-outboard-commissioning-checklist](/blog/spring-outboard-commissioning-checklist).
+
+---
+
+## FAQs
 
 **Do you offer indoor storage?**
-No. Outdoor only on a fenced, monitored lot with shrinkwrap. If you need indoor, we'll point you to other shops without making a big deal of it.
+No. We're outdoor with shrinkwrap only. For indoor or climate-controlled storage, you'd need a different facility.
 
-**What's the size limit?**
-30 feet. We're not taking anything bigger right now.
+**Can I store on my own trailer?**
+Yes. Most customers do. The trailer needs to be in roadworthy condition (tires, lights, bearings) since we'll need to move it at minimum twice (storage spot and spring launch).
 
-**Do I still need winterization if my boat is shrinkwrapped?**
-Yes. Shrinkwrap and winterization are two different jobs. See the section above. The boat under the wrap still has water in it that needs to be dealt with.
+**Do you cover boats stored outdoors all winter?**
+Yes. That's what the shrinkwrap is for. Snow sheds off, the cover stays tight, the boat stays protected from precipitation and UV.
 
-**When should I book?**
-August or September is ideal. October works. The last week before freeze-up is when everyone calls at once and we start saying no.
+**How much does shrinkwrap cost?**
+By boat length. Contact us for current pricing or visit [hbw.wiki/service](https://hbw.wiki/service) to get a quote.
 
-**Can I leave my battery in?**
-If it's healthy, yes. If it's three years old and you've been jump-starting it, take it home and trickle-charge it. A dead battery in March is a $200 problem you can avoid for free.
+**Can I take items out of the boat after it's wrapped?**
+Yes, but it means cutting and re-wrapping a section. We charge for the re-wrap. Better to clear everything out before we wrap it.
 
-**What happens if my shrinkwrap rips over the winter?**
-We patch it. We check the lot after big storms. If a wrap fails badly, we'll let you know.
+**What if my boat has a sensitive engine or fuel system?**
+Anything 2010 or newer with SmartCraft, EFI, or computerized engine management, we can handle that with proper winterization. The shrinkwrap and outdoor storage are appropriate for almost all modern recreational boats.
 
-**Is the lot really monitored?**
-Fenced, with cameras. We're on-site daily through the off-season for service work.
+**Do you do storage for inboard cruisers or large pontoons?**
+Yes, within size limits. Anything over 28 ft, call us first to confirm we can fit it in.
 
-## Where to go next
+**What if my boat doesn't need shrinkwrap because it's stored indoors at my own location?**
+Then you just need winterization at HBW. Submit a service request and let us know your storage situation. We'll handle the motor work without the wrap.
 
-If you're ready to book: [Request winter storage service](https://hbw.wiki/service).
+---
 
-If you want a phone call first: (905) 342-2153, or text (647) 952-2153.
+## Internal Links
 
-If you're newer to boat ownership and unsure what winterization actually involves, the [Mercury winterization guide](https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization) covers it engine-side. Most customers read it and then book us anyway. Worth knowing what's happening either way.
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
+
+---
+
+## Ready to Schedule Winter Storage?
+
+Submit a storage request at **[hbw.wiki/service](https://hbw.wiki/service)**. Include your boat details and what you're bundling (winterize, storage, spring commissioning).
+
+Questions first? Call **905-342-2153**.
+
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Platinum Dealer | Since 1947
 
 ## FAQs
 

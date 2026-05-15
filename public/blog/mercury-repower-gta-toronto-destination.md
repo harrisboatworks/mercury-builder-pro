@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -129,11 +129,11 @@ Real all-in pricing for typical GTA repowers (CAD before HST):
 
 | Boat → New motor | All-in price range | What's included |
 |---|---|---|
-| **17 ft fishing → Mercury 90 HP FourStroke** | $15,500–$18,500 | Motor, rigging, controls, prop, install, sea trial |
-| **19 ft runabout → Mercury 150 HP FourStroke** | $23,000–$30,000 | Same + power steering upgrade |
-| **20 ft pontoon → Mercury 115 HP CT FourStroke** | $19,000–$23,000 | Same + Command Thrust gearcase upgrade |
-| **22 ft bowrider → Mercury 200 HP V6 FourStroke** | $28,000–$35,000 | Same + DTS digital throttle |
-| **22 ft bass boat → Mercury 200 HP V6 Pro XS** | $30,000–$36,000 | Same + stainless prop + Pro XS hole-shot tuning |
+| **17 ft fishing → Mercury 90 HP FourStroke** | $15,500-$18,500 | Motor, rigging, controls, prop, install, sea trial |
+| **19 ft runabout → Mercury 150 HP FourStroke** | $23,000-$30,000 | Same + power steering upgrade |
+| **20 ft pontoon → Mercury 115 HP CT FourStroke** | $19,000-$23,000 | Same + Command Thrust gearcase upgrade |
+| **22 ft bowrider → Mercury 200 HP V6 FourStroke** | $28,000-$35,000 | Same + DTS digital throttle |
+| **22 ft bass boat → Mercury 200 HP V6 Pro XS** | $30,000-$36,000 | Same + stainless prop + Pro XS hole-shot tuning |
 
 These ranges include trade-in credit math. If your existing motor is worth $4,000-$8,000 in trade, that's already factored. The configurator shows your specific boat number.
 

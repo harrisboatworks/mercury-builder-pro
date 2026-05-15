@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,126 +29,132 @@ content_type: blog_article
 
 ## Article
 
-# Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)
+### Quick Answer
 
-*Last reviewed: 2026-05-07*
-
-> **Quick answer:** In our experience, many dealers hide prices to force a phone call, which lets them control the negotiation and add fees later. HBW posts real installed prices because customers deserve a number before driving 90 minutes. Configurator with live pricing at mercuryrepower.ca.
-
-If you've shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer's site, you're not imagining it. From what we hear from customers, plenty of marine dealers we know about don't publish prices online. The reasons they give are usually excuses; in our view, the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.
-
-## Quick recommendation
-
-If you're shopping Mercury outboards and a dealer won't show you pricing without a phone call, that's a sales tactic, not a manufacturer requirement. Mercury Marine doesn't prohibit dealers from publishing prices. The dealer is choosing to keep prices off the website.
-
-For typical Mercury repowers in 2026, all-in costs in CAD before HST land in predictable ranges: $11,000 to $15,000 for 40 to 60 HP, $17,000 to $22,000 for 75 to 115 HP, $23,000 to $36,000 for 150 to 200 HP. Anyone telling you these numbers can't be published is telling you something other than the truth.
-
-We list every Mercury we sell with live CAD pricing at [/quote/motor-selection](/quote/motor-selection). You can build a quote in 3 minutes without talking to anyone.
-
-## The excuses dealers give for hiding prices
-
-Five common ones, ranked from most to least defensible:
-
-### 1. "Manufacturer pricing requirements"
-
-Mercury Marine sets MSRP (manufacturer's suggested retail price). Dealers can sell at, above, or below MSRP. Mercury does not require dealers to hide prices online. This excuse is false on its face.
-
-### 2. "Prices change frequently"
-
-Mercury motor prices change once a year (model year transition July 1) and occasionally with promotional pricing (rate buy-downs, package incentives). They do not change daily. The same dealers who claim prices change too fast to publish are quoting customers verbally with prices they expect to honor for weeks. The math is the same; the only difference is whether the customer can see it.
-
-### 3. "Configuration affects price"
-
-This one has a kernel of truth. A Mercury 90 EXLPT FourStroke has a base motor price, but the all-in cost depends on shaft length, controls, prop, rigging, install labor, and any options. So the answer can't be a single number. The answer can be a configurator. Our [motor selection page](/quote/motor-selection) handles configuration in real time. There's no technical reason a dealer can't do this.
-
-### 4. "We want to talk to you about your needs"
-
-Some dealers want to make sure you buy the right motor for your boat. That's a real concern. But the way to handle it is "here's the price, and here's a 5-minute conversation about whether this fits your boat", not "we'll only tell you the price if you call." We do the conversation either way. The price is online while we're doing it.
-
-### 5. "We want to make sure you don't get a better offer elsewhere"
-
-This is the honest one, and it's the one no dealer says out loud. If you don't know the price, you can't comparison shop. If you have to call to get pricing, you're already partially committed before the conversation. The dealer controls the negotiation.
-
-## The real reasons many dealers hide prices
-
-In our experience, three honest reasons:
-
-### 1. Information asymmetry is profitable
-
-If you don't know the market price, you don't know if the quote you got is fair. Dealers who hide prices can extract higher margins from customers who don't comparison shop or who are time-pressed or who simply hate shopping for boats.
-
-### 2. Phone capture beats web shopping
-
-Once you call a dealer, you're in their pipeline. They know your name, number, boat, and budget. They can follow up. A web visitor who saw the price and decided to think about it is a lost lead. So the dealer often prefers the phone call even if the customer would have bought online.
-
-### 3. Industry inertia
-
-A lot of marine dealers run websites built before transparency was the expected norm. The next generation of marine dealers will likely publish pricing as a matter of course. The current generation is still catching up.
-
-## Why HBW lists prices
-
-We've done it from the start of mercuryrepower.ca because:
-
-- **It's faster for the customer.** Build a quote in 3 minutes vs. a 30-minute phone call. Customers don't owe us 30 minutes to learn what something costs.
-- **It builds trust.** A customer who sees the same price online that we quote them in person never wonders if they got the deal.
-- **It filters the right customers.** Customers who care enough to build a quote are serious. Customers who would have called anyway still call. We get both.
-- **It saves us time.** Three generations of HBW have answered "what does it cost?" enough times. Putting it online means we can spend customer-facing time on the actual conversation that matters.
-- **It respects everyone.** Hiding prices treats customers like targets. Showing prices treats them like people.
-
-## What changes the answer
-
-Specific situations where pricing genuinely needs a conversation:
-
-- **Brand conversions.** Switching from Evinrude or Yamaha to Mercury adds $1,500 to $3,000 in rigging on top of standard repower costs. Our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide) covers the math.
-- **Twin or triple engine setups.** Multi-engine rigging is more complex. We can quote the motors online; the rigging benefits from a phone conversation.
-- **Verado V12 600.** Special-order territory. Less than 1% of our customers. Available by quote only.
-- **Heavy commercial duty (SeaPro applications).** Commercial use cycles are different from recreational. Worth a conversation.
-
-For 95% of recreational customers, the [motor selection page](/quote/motor-selection) is the source of truth and the price you build is the price you pay.
-
-## What HBW provides that price-hiding dealers don't
-
-Beyond just publishing prices:
-
-- **Live pricing updates.** Mercury MY pricing changes effective July 1 are reflected within days. Promotional rate buy-downs are reflected when active.
-- **CAD pricing native.** No "USD plus exchange" surprises.
-- **Full configuration in the quote.** Motor + shaft length + controls + prop + rigging + install labor all included.
-- **Mercury Repower Financing at 7.99% APR (as of May 2026)** built into the quote flow. See our [financing guide](/blog/mercury-outboard-financing-ontario-2026).
-- **Quote save and share.** Built quotes can be saved, downloaded as PDF, or sent via email/text.
-- **No phone-call gatekeeping.** Build a quote at midnight if you want.
-
-## Common dealer-pricing mistakes
-
-We see these from customers who shopped before coming to HBW:
-
-1. **Accepting "prices change too fast" as an answer.** They don't. Push back politely.
-2. **Negotiating from a price you can't see.** If the starting number is hidden, you can't tell whether the "discount" is real or marketing.
-3. **Not getting the all-in number.** Motor price + rigging + install + tax + delivery is the real cost. Some dealers quote motor-only and surprise you at delivery.
-4. **Comparing across dealers without standardized config.** Same motor, different shaft, different prop, different install scope is not the same quote.
-5. **Skipping written quotes.** Verbal numbers evaporate. Written quotes hold the dealer to the math.
-
-## Related guides
-
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the actual prices
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), 7.99% APR financing
-- [Mercury Rigging Costs Explained](/blog/mercury-outboard-rigging-costs-ontario), what's in the rigging line
-- [Cheapest Mercury Outboard Canada 2026](/blog/cheapest-mercury-outboard-canada-2026), the lowest entry points
-- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for HBW
-
-## Try the calculator
-
-Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
-## Ready to see real pricing?
-
-[Build a quote on the motor selection page](/quote/motor-selection). Live CAD pricing. Full configuration. No phone call required. No email gatekeeping.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through your specific repower after seeing the numbers, [give us a call at (905) 342-2153](tel:9053422153). We'll have the same numbers you saw online. That's the point.
+Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. Mercury Marine does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth. Mercury model years change every July 1, and we refresh ranges in articles annually._
+### Full Article
+
+You found the motor you want. You went to the dealer's website. You clicked the page. You saw "Call for Pricing."
+
+You called. Left a message. Waited. Called again. Eventually heard a vague number that came with "it depends on a few things." You spent 30 minutes to learn nothing you can compare.
+
+That is not a coincidence. It is a business model.
+
+---
+
+## The Excuses Dealers Give for Hiding Prices
+
+Here are the five most common explanations dealers offer, ranked from most to least defensible:
+
+**1. "Manufacturer pricing requirements"** 
+False. Mercury Marine sets MSRP. Dealers can sell at, above, or below MSRP. Mercury does not require dealers to hide prices online. Any dealer who says otherwise is telling you something that is not true.
+
+**2. "Prices change too frequently"** 
+Mercury motor prices change once a year at the model-year transition (typically July 1), and occasionally with promotional rate buy-downs. They do not change daily. A dealer quoting you verbally expects to honor that number for weeks. The "prices change too fast" argument doesn't survive basic scrutiny.
+
+**3. "Configuration affects price"** 
+This one is partially true. A Mercury 90 ELPT FourStroke has a base motor price, but the all-in cost depends on shaft length, controls, prop, rigging, and install labor. The honest answer to this is a configurator that handles all of it in real time, not a gatekept phone call.
+
+**4. "We want to talk to you about your needs"** 
+Fine. But the right order is: show the price, then have a conversation about whether it is the right motor. Not: gatekeep the price until after the conversation.
+
+**5. "We don't want you to find a better offer elsewhere"** 
+This is the honest reason, though no dealer says it out loud. If you cannot see the price, you cannot compare it. Hiding the price gives the dealer control of the negotiation from the first contact.
+
+---
+
+## The Real Reasons Dealers Hide Prices
+
+**Information asymmetry is profitable.** Customers who do not know market price cannot tell if the quote is fair. Dealers can extract higher margins from customers who are time-pressed, dislike negotiating, or have not comparison-shopped.
+
+**Phone capture beats web shopping.** A visitor who finds the price on the website and leaves is a lost lead. A customer who calls is a customer with a name, a phone number, a boat, and a budget, someone the dealer can follow up with.
+
+**Industry inertia.** A lot of marine dealers run older websites built before transparency became an expectation. The practice continues because it has always been done this way.
+
+---
+
+## Why HBW Lists Prices
+
+HBW has listed prices from the start of [mercuryrepower.ca](https://mercuryrepower.ca). Here is why:
+
+**It is faster.** Three minutes to a configured quote beats a 30-minute phone call you did not want to make.
+
+**It builds trust.** The price you see online is the price you pay. No surprises at the counter.
+
+**It filters the right customers.** Serious buyers build quotes. Buyers who need a conversation still call, but they call with a number in hand.
+
+**It respects everyone's time.** Three generations of this family have answered "what does it cost?" more times than anyone can count. Online pricing means the team can focus on conversations that matter.
+
+**It is how we would want to be treated.** Hiding prices treats customers as targets. Showing prices treats them as people.
+
+---
+
+## What Genuinely Requires a Conversation
+
+For about 95% of recreational customers, the motor selection page is the source of truth. But there are situations where the phone adds real value:
+
+- **Brand conversions from Evinrude or Yamaha:** Switching brands can add $1,500 to $3,000 in rigging above standard repower costs. Worth a call.
+- **Twin or triple engine setups:** Multi-engine rigging is complex. Motors can be quoted online, but rigging benefits from a real conversation.
+- **Verado V12 600:** Special-order territory. Less than 1% of customers.
+- **Commercial (SeaPro) applications:** Commercial use cycles differ from recreational, and the conversation is worth having.
+
+---
+
+## What HBW Provides That Price-Hiding Dealers Don't
+
+- **Live pricing in CAD**, no "plus exchange rate" surprises
+- **Full configuration in the quote**, motor, shaft length, controls, prop, rigging, install labor all on one line
+- **Mercury model-year pricing updated within days of July 1**
+- **Promotional rates reflected when active**
+- **Quotes that can be saved, downloaded as PDF, or emailed**
+- **A quote you can build at midnight without needing to leave your name**
+
+---
+
+## Common Mistakes Buyers Make on Dealer Pricing
+
+1. **Accepting "prices change too fast" as an explanation.** Push back. Ask for the number in writing.
+2. **Negotiating from a price you have not seen.** If the starting number is hidden, you cannot know if a discount is real.
+3. **Not getting the all-in number.** Some dealers quote motor-only and add installation surprises at delivery. A real quote includes motor, rigging, install, and tax.
+4. **Comparing quotes with different configurations.** Same motor with a different shaft length, prop, or install scope is not the same quote.
+5. **Accepting verbal quotes.** Verbal numbers can disappear. Get it in writing.
+
+---
+
+## FAQs
+
+**Does Mercury Marine prohibit dealers from publishing prices?** 
+No. Mercury sets MSRP. Dealers set their own pricing and choose whether to publish it. Any dealer who claims Mercury requires them to hide prices is not being straight with you.
+
+**How do I know HBW's published price is the actual price?** 
+The quote you build at [mercuryrepower.ca](https://mercuryrepower.ca) reflects the current live pricing. When you engage with HBW, that is the number the team works from. No negotiation theater.
+
+**What does an all-in Mercury repower cost in 2026?** 
+Ranges vary by HP class. The configured quote at [mercuryrepower.ca](https://mercuryrepower.ca) gives you the full number, motor, controls, steering, gauges, wiring, prop, and install labor, in a single place. Build one and see.
+
+**Do I have to come to Gores Landing to get the quote?** 
+No. Build the quote at [mercuryrepower.ca](https://mercuryrepower.ca) from anywhere. The physical installation happens at HBW in Gores Landing. HBW does not ship outboards or deliver installs.
+
+**What if I have a non-standard setup?** 
+For twin-engine setups, brand conversions, or commercial applications, call 905-342-2153 after building the basic quote online. Those cases benefit from a real conversation.
+
+---
+
+## Internal Links
+- Mercury Repower Cost Ontario 2026
+- Mercury Controls & Rigging Guide Ontario
+- Mercury Outboard Financing Ontario 2026
+
+## CTA
+
+**See the number before you call.** 
+Build your configured Mercury quote at [mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 
+Questions after you see it? Call 905-342-2153. 
+Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
+---
 
 ## FAQs
 

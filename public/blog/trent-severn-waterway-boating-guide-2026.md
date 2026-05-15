@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,199 +29,201 @@ content_type: blog_article
 
 ## Article
 
-# Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan
+### Quick Answer
 
-*Last reviewed: 2026-05-07*
+The Trent-Severn Waterway is a 386-kilometre navigable system running from Trenton to Port Severn through 44 locks. In 2026, lockage is free under the Canada Strong Pass from June 19 to September 7. For a 20-foot boat, that is roughly $45 per day in fees not paid. Mooring at lockstations is still $1.50 per foot per night. Harris Boat Works sits on Rice Lake between Locks 18 and 19. Navigation season runs May 15 to October 12, 2026.
 
-> **Quick answer:** The Trent-Severn runs 386 km from Trenton to Port Severn through 44 locks. 2026 lockage hours and free-lockage windows are set by Parks Canada. Plan for slow water, debris after spring, and crowded weekends. Service before you go, book at mercuryrepower.ca.
+**Verify all lock hours, fees, and program dates directly with Parks Canada before your trip, as these details are subject to change.**
 
-Repowering before the season? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas). For rigging questions on the new motor, the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) is the companion read.
+---
 
-Big news for 2026: lockage on the Trent-Severn is **free from June 19 to September 7** as part of the [Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass). For a 20-foot boat, that's $45 a day in fees you're not paying, about $315 saved on a full week-long transit, more if you stay seasonal.
+### Full Article
 
-If you've ever thought about running the Trent-Severn, even a weekend stretch of it, 2026 is the year.
+The Trent-Severn is one of those places where a 20-foot aluminum boat built for walleye fishing can lock through a hydraulic lift designed in 1904, anchor beside a 19th-century lock keeper's cottage, and pull into a small-town pub for lunch. The New York Times called it one of the best travel experiences of 2025. Three generations of this family have watched the waterway from the dock at Gores Landing without needing the Times to confirm it.
 
-This is the local's version of the guide. Harris Boat Works sits directly on the waterway at Gores Landing, on Rice Lake, Ontario (in the Kawarthas), between Locks 18 and 19. We've been here since 1947, we've fuelled boats running the system in both directions, and we know which questions first-timers actually ask.
+Harris Boat Works sits on Rice Lake, roughly between Locks 18 and 19. We have been here since 1947. This is the guide we would give a friend who was doing their first trip.
 
 ---
 
 ## What the Trent-Severn Actually Is
 
-The Trent-Severn Waterway is a **386-kilometre navigable system** that connects Lake Ontario at Trenton to Georgian Bay at Port Severn. It's run by [Parks Canada](https://parks.canada.ca/lhn-nhs/on/trentsevern) as a National Historic Site. There are 44 locks (including two flight locks and one marine railway), about 60 bridges, and it cuts through nine watersheds, including Rice Lake, the Kawarthas, Lake Simcoe's connection, and the Severn River.
+386 kilometres. 44 locks. Two flight locks. One marine railway. About 60 bridges. Operated by Parks Canada as a National Historic Site.
 
-The *New York Times* named it one of the best travel experiences of 2025. That wasn't a fluke. There aren't many places on the planet where you can take a 20-foot fishing boat, lock through a hydraulic lift designed in 1904, anchor for the night beside a 19th-century lock keeper's cottage, and have lunch at a small-town pub the next afternoon.
+It connects Lake Ontario at Trenton to Georgian Bay at Port Severn, passing through Rice Lake, the Kawarthas, and the Severn River. The infrastructure ranges from simple manual locks to the Big Chute Marine Railway, which lifts boats over land in a giant cradle, and the Peterborough Lift Lock, one of the largest hydraulic boat lifts in the world.
 
----
-
-## 🚨 Free Lockage 2026. What's Actually Free
-
-The **Canada Strong Pass** runs **June 19 – September 7, 2026**. During that window:
-
-- **Lockage is free** for boats, canoes, and kayaks. Canadian residents and international visitors. No permit needed for the day.
-- **Camping and roofed accommodations** at Parks Canada sites are 25% off.
-- **Youth 17 and under** get free admission to all Parks Canada sites.
-
-What's still going to cost you (per the [Parks Canada Trent-Severn fee schedule](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/tarifs-fees)):
-
-- **Mooring**: $1.50/ft overnight at a lockstation
-- **Shore power**: $12/night
-- **Parking, charts, third-party services**, same as any other year
-
-So a 20-foot boat tying up overnight at a lock pays $30. Plus power, if you need it. That's it. For the price of one day of normal lockage, you can sleep on the waterway.
+Most boats on the waterway are fishing boats, pontoons, and cruisers. It is not a river system, it is a managed navigable waterway where the lock staff do the actual work, and you hold a line.
 
 ---
 
-## What Else Changed for 2026
+## Free Lockage 2026, What's Actually Free
 
-A few operational shifts from Parks Canada that catch first-timers every year. Read these before you push off.
+The Canada Strong Pass program makes lockage free from **June 19 to September 7, 2026**, for Canadian residents and international visitors on all boat types. No permit required for the day.
 
-**Lockage permits in person only, 2026 season.** Parks Canada has eliminated online lockage permit sales for the 2026 season. Lockage permits, including the free Canada Strong Pass sticker during the June 19 to Sept 7 window, must be picked up in person at a lockstation. **Seasonal mooring passes and reservations can still be purchased online** at parks.canada.ca; only lockage moved to in-person-only. The rule that catches first-timers: show up at the lock expecting to buy lockage online and you'll be turned around at the blue line. Bring a card (most stations accept tap), and arrive 15 minutes earlier than you'd planned. Source: [Parks Canada, Canada Strong Pass at the Trent-Severn](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass).
+**What else is free during the pass window:**
+- Camping and roofed accommodations at Parks Canada sites: 25% off
+- Youth 17 and under: free admission to all Parks Canada sites
 
-**25% off Parks Canada camping along the corridor.** Same window (June 19 to Sept 7), Parks Canada-managed campgrounds along the Trent-Severn are 25% off. If you're doing a multi-day transit and would rather sleep on land than tie to a lock wall, this is real money. Worth pricing out before you commit to a route.
+**What is still paid:**
+- Mooring at lockstations: $1.50 per foot per night
+- Shore power: $12 per night
+- Parking, charts, and third-party services
 
-**Paid shoulder seasons, in-person only, system closed outside them.** Lockage is paid (rates below) from **May 15 to June 18** and again from **Sept 8 to Oct 12**, in person at the lockstation. The waterway is closed to lockage outside those dates. If you're planning an early-May shakedown or a mid-October last-run, the gates simply aren't open.
+Example: a 20-foot boat tying up overnight at a lock pays $30 for mooring, plus $12 if you use shore power.
+
+**Verify current program details and dates at Parks Canada before your trip.**
 
 ---
 
-## 2026 Navigation Season and Hours
+## 2026 Navigation Season and Lock Hours
 
-The waterway is open **May 15 – October 12, 2026.** Hours change three times during the season (per the [Parks Canada hours of operation page](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)):
+**Season:** May 15 , October 12, 2026
 
-**May 15 – June 18 (pre-peak):**
-- Mon–Thu: 10:00 am – 3:30 pm
-- Fri–Sun + Victoria Day (May 18): 9:00 am – 6:30 pm
+| Period | Mon, Thu | Fri, Sun + Holidays |
+|---|---|---|
+| May 15 , June 18 | 10:00 am , 3:30 pm | 9:00 am , 6:30 pm |
+| June 19 , Sept 7 (peak) | 9:00 am , 5:30 pm | 9:00 am , 6:30 pm |
+| Sept 8 , Oct 12 | 10:00 am , 3:30 pm | 9:00 am , 4:30 pm |
 
-**June 19 – September 7 (peak, free lockage window):**
-- Mon–Thu: 9:00 am – 5:30 pm
-- Fri–Sun + Canada Day, Civic Holiday, Labour Day: 9:00 am – 6:30 pm
+**The key operational rule:** You must arrive at the blue zone (the boat staging area) by the last lockage time. It is not enough to be nearby. Lockmasters do not open the gates after closing. Build at least 30 minutes of slack into your day's end.
 
-**September 8 – October 12 (post-peak):**
-- Mon–Fri: 10:00 am – 3:30 pm
-- Sat–Sun + Thanksgiving: 9:00 am – 4:30 pm
-
-The rule that catches first-timers: **you have to arrive at the "blue zone", the boat staging area at the lock, by the last lockage time, not just tie up at a marina nearby.** Lockmasters won't open the gates after closing. Plan your day so you have at least 30 minutes of slack at the end.
+**Note:** Hours are set by Parks Canada and are subject to change. Verify the current schedule at parks.canada.ca before departure.
 
 ---
 
 ## A First-Timer's Guide to Locking Through
 
-If you've never locked through, the system looks intimidating. It isn't, it's slow, predictable, and the lockmasters do the actual work.
+The system looks complex. It is slow and predictable, and the lockmaster does most of the work.
 
-What you do:
+**The process:**
 
-1. **Approach slowly.** Wait in the blue zone (marked area before the lock) until the lockmaster signals you in.
-2. **Have fenders and dock lines ready on both sides.** The lock floor is concrete, your gel coat will not be happy if you bounce off the wall.
-3. **Have a person at the bow and a person at the stern** (or run mid-line solo on a small boat). The lockmaster will hand you a rope hung over the lock wall, you hold it as the water rises or falls. You're not tying off; you're keeping the boat against the wall.
-4. **Engine off, in neutral, while the chamber fills or empties.** It takes 8–15 minutes per lock.
-5. **Monitor VHF Channel 16**, that's where Parks Canada will reach you if anything's unusual. (Murray Canal swing bridges monitor Channel 14 specifically.)
+1. Approach slowly. Wait in the blue zone until the lockmaster signals you in.
+2. Have fenders ready on both sides. The lock walls are concrete, gel coat does not bounce well.
+3. Have a person at the bow and one at the stern (or run a single mid-line on a small boat). The lockmaster hands you a rope from the lock wall. You hold it as the water level rises or falls. You are not tying off, you are keeping the boat against the wall.
+4. Engine off or in neutral while the chamber fills or empties. This takes 8 to 15 minutes per lock. Plan about 20 minutes per lock for travel calculations.
+5. Monitor VHF Channel 16. Murray Canal swing bridges specifically use Channel 14.
 
-That's the whole job. A good lockmaster will walk a first-timer through it without making a thing of it.
+A good lockmaster will walk a first-timer through it without making a thing of it. The system handles tens of thousands of transits per season.
 
 ---
 
-## Vessel Constraints. Will Your Boat Fit?
+## Vessel Constraints, Will Your Boat Fit?
 
-A few hard limits to plan around:
+| Constraint | Detail |
+|---|---|
+| Vertical clearance (lowest fixed bridge) | 22 feet (6.7 m) |
+| Water depth at Locks 1, 19 | 8 feet |
+| Water depth at Locks 20, 45 | 6 feet |
+| Big Chute Marine Railway max length | 99.2 feet |
+| Big Chute max beam | 24 feet |
+| Big Chute max weight | 99 tons |
 
-- **Vertical clearance: 22 ft (6.7 m)**, that's the lowest fixed bridge on the system. Anything taller has to come down (radar arches, tall biminis, sailboats with masts un-stepped).
-- **Water depth: 8 ft on Locks 1–19, 6 ft on Locks 20–45.** Most pleasure boats are fine. Deep-draft cruisers, verify.
-- **Big Chute Marine Railway (Lock 44):** carries boats *over* land in a giant carriage. Max 99.2 ft length, 24 ft beam, 99 tons.
-
-Sailboats can transit, but the mast has to come down for the section between Trenton and Lakefield (or wherever your tallest fixed bridge is on your route). Most sailors un-step at Trenton or Frankford.
+Anything taller than 22 feet, radar arches, tall biminis, sailboat masts, needs to come down. Most sailors un-step at Trenton or Frankford before the transit.
 
 ---
 
 ## Fees Outside the Free Window
 
-If you're locking through May 15 – June 18 or September 8 – October 12, here's what you'll pay (all rates per foot of boat length):
+When the Canada Strong Pass is not active, lockage fees apply:
 
 | Permit | Rate |
-|--------|------|
+|---|---|
 | Single lock and return | $1.50/ft |
 | One day | $2.25/ft |
-| Transit (one-way through the system) | $6.00/ft |
+| One-way transit | $6.00/ft |
 | Six days | $6.50/ft |
 | Seasonal | $11.25/ft |
 
-For a 20-foot boat, that's $45 for a day, $225 for a season. Honestly, the seasonal pays for itself fast if you're locking through more than five times a year.
+For a 20-foot boat: $45 for a day, $225 for a seasonal pass. **Confirm current fee schedules with Parks Canada, as these can change between seasons.**
 
 ---
 
 ## A Sample Trip Plan from Rice Lake
 
-Most of our customers don't transit the whole 386 km. They take three or four locks at a time, anchor for the night, eat lunch in a small town, and come back. That's a perfectly good way to do it.
+Most people do not transit all 386 kilometres. They take three or four locks at a time, anchor for the night, eat lunch in a small town, and come back. Here are three trip types from HBW at Gores Landing.
 
-If you're starting from HBW at Gores Landing, here are three trips that work in 2026:
+**Weekend run (2 days, 4 locks):** East from Rice Lake to Lock 18 at Hastings. Overnight at Hastings. Lunch at one of the pubs. Return Sunday. Quiet and scenic. No commercial harbor traffic.
 
-**Weekend run (2 days, 4 locks):** East from Rice Lake to Lock 18 at Hastings. Tie up overnight at Hastings, eat at one of the pubs, return Sunday. Quiet, scenic, and you only run the Otonabee section.
+**Long weekend (4 days, ~10 locks):** West from Rice Lake up the Otonabee through Lock 19 (Scott's Mills) and the Peterborough Lift Lock (Lock 21). Continue to Lakefield and back.
 
-**Long weekend (4 days, ~10 locks):** West from Rice Lake up the Otonabee through Locks 19 (Scott's Mills) and the **Peterborough Lift Lock. Lock 21**, which is the highest hydraulic lift lock in the world (a 65-foot rise in about 90 seconds). Continue to Lakefield and back.
+**Full Kawartha tour (7 days, 17 locks):** Rice Lake to Bobcaygeon and back. Includes the Lift Lock, the flight at Healey Falls, Lakefield, and Buckhorn. The most relaxed pace, best for first-timers wanting to see the system.
 
-**Full Kawartha tour (7 days, 17 locks):** Rice Lake to Bobcaygeon and back. You'll see the Lift Lock, the flight at Healey Falls, Lakefield, Buckhorn, and the heart of the Kawarthas. Most relaxed pace. Best version if you've never done it.
-
-For a full transit (Trenton to Port Severn), plan **5–7 days minimum** at a relaxed pace. Faster is possible but you'll burn the days locking instead of seeing anything.
+For a full Trenton-to-Port-Severn transit, plan at least 5 to 7 days at a relaxed pace.
 
 ---
 
 ## Where to Fuel Up
 
-Marinas with fuel dot the waterway, but they're not evenly spaced. Major fuel stops in order from south to north: Trenton, Frankford, Campbellford, **Harris Boat Works (Gores Landing on Rice Lake)**, Hastings, Lakefield, Buckhorn, Bobcaygeon, Fenelon Falls, Orillia, Port Severn.
+Fuel is available at commercial marinas along the route, not at lockstations.
 
-Two notes about fuel:
+**Fuel stops from south to north:** Trenton, Frankford, Campbellford, Harris Boat Works (Gores Landing on Rice Lake), Hastings, Lakefield, Buckhorn, Bobcaygeon, Fenelon Falls, Orillia, Port Severn.
 
-- **HBW pumps ethanol-free 89-octane marine gas.** That matters if you're storing fuel between trips, ethanol pump gas absorbs water and degrades over a few weeks. Ethanol-free is shelf-stable for the season.
-- **Plan fuel stops conservatively.** Some smaller marinas close mid-week or end-of-season. Call ahead if you're transiting outside peak summer.
+**HBW fuel note:** We pump ethanol-free 89-octane marine gas. Ethanol pump gas absorbs water and degrades over weeks, ethanol-free is shelf-stable for a season. Call ahead if you are transiting outside peak summer, smaller marinas sometimes close mid-week or end-of-season.
 
 ---
 
 ## Don't Own a Boat? You Can Still Do This
 
-Two ways to experience the Trent-Severn without owning:
+**Rent from HBW.** Our 9-boat fleet on Rice Lake includes 16-foot ProSports, 20-foot Transporters, and 23-foot Cruise pontoons. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
-- **Rent a small fishing or pontoon boat for a day from HBW**, we have a 9-boat fleet on Rice Lake (16 ft ProSports, 20 ft Transporters, 23 ft Cruise pontoons). Rice Lake itself is part of the waterway, so technically you're already on the Trent-Severn. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
-- **Houseboat the system**. Le Boat (Smith Falls, but their network includes the Trent-Severn), Egan, and a couple of Kawartha-based outfits rent multi-day houseboats designed for this exact trip. Sleep on board, lock through every day, no boating licence required for most of these (the operator briefs you).
+**Houseboat the system.** Companies including Le Boat operate on the Trent-Severn and offer multi-day trips. Most houseboat operators brief customers on locking, no boating licence required in most rental cases.
 
 ---
 
 ## Why HBW Is a Useful Home Base
 
-If you're driving up from the GTA, **we're 90 minutes from Toronto**, on the south shore of Rice Lake at Gores Landing. We have:
+HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from Toronto.
 
-- **Ethanol-free 89 marine gas** at the dock
-- **Transient slips** (4–6 available, $1.00/ft/night, call ahead)
-- **A 2-lane concrete launch ramp** ($20/day, $200/season) with parking, washrooms, snacks
-- **Service** if your motor decides the trip is over (we're a Mercury Platinum dealer)
-- **Rentals**, if you want to try Rice Lake before committing to a longer trip
+| Service | Detail |
+|---|---|
+| Fuel | Ethanol-free 89-octane marine gas at the dock |
+| Transient slips | 4, 6 available; $1.00/ft/night; call ahead to confirm availability |
+| Launch ramp | 2-lane concrete; $20/day or $200/season |
+| Rentals | 9-boat fleet for day trips |
+| Mercury service | Platinum dealer; for engine repairs, we only service Mercury and Mercruiser |
 
-We've been on this lake since 1947. Three generations of our family have watched the Trent-Severn from this dock. If you want a starting point that knows the system from the water side instead of the tourism-board side, you've got one.
-
-Call **905-342-2153** before you head out, especially if you need a slip or want to confirm fuel availability. And if your old motor's giving you doubts about a 200-km round trip, that's a different conversation, but it's one we have all the time. [mercuryrepower.ca](https://mercuryrepower.ca) for new Mercury pricing.
-
----
-
-## Frequently Asked Questions
-
-**Do I need a special licence to lock through the Trent-Severn?**
-No special lockage licence is required. You do need your standard Pleasure Craft Operator Card (PCOC), that's a one-time test, not annual, and your boat needs a valid Pleasure Craft Licence (PCL). The 2026 PCL changes converted lifetime licences to 5-year renewals at $24, so check yours before you go.
-
-**How long does it take to lock through?**
-A standard lock takes 8–15 minutes from arrival to departure. The Peterborough Lift Lock is faster, the Big Chute Marine Railway is slower (~25 minutes). Plan for 20 minutes per lock when calculating travel days.
-
-**Can I anchor inside a lock chamber overnight?**
-No, but you can tie up at the lockstation walls (above or below the lock) for $1.50/ft. Most lockstations have water and shore power available.
-
-**What's the best part of the system if I only have one day?**
-The Peterborough Lift Lock (Lock 21) and the surrounding Lakefield-Trent canal stretch is the highlight reel. From Rice Lake, that's a solid full day round-trip with one lift-lock cycle, which is the experience.
-
-**Is fuel cash-only at lockstations?**
-Parks Canada doesn't sell fuel at lockstations, only commercial marinas do. Most marinas accept cards. Bring a backup credit card just in case.
+Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. Mercury repower quotes at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 ---
 
-**Phone:** 905-342-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Mercury repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
+## FAQs
+
+**Do I need a special licence to lock through the Trent-Severn?** 
+No. You need a Pleasure Craft Operator Card (PCOC) and a valid Pleasure Craft Licence (PCL), the same requirements as any Ontario boating. No special lockage licence.
+
+**What changed for PCLs in 2026?** 
+Lifetime licences were converted to 5-year renewals at $24. If your PCL was previously lifetime and has not been renewed, check its status before the trip.
+
+**How long does a standard lock take?** 
+8 to 15 minutes from entry to exit. Plan 20 minutes per lock for travel calculations. The Peterborough Lift Lock is faster; Big Chute is slower at about 25 minutes.
+
+**Can I anchor inside a lock chamber overnight?** 
+No. You can tie up at the lockstation walls above or below the lock at $1.50 per foot per night.
+
+**Are water and shore power available at lockstations?** 
+Most lockstations have both. Shore power is $12 per night outside the free-lockage program window.
+
+**Parks Canada doesn't sell fuel at lockstations?** 
+Correct. Fuel comes from commercial marinas along the route. Most marinas accept cards.
+
+**What is the best single-day section of the Trent-Severn?** 
+The Peterborough Lift Lock (Lock 21) and the surrounding Lakefield-Trent canal stretch. The Lift Lock alone is worth the trip.
+
+---
+
+## Internal Links
+- Walleye Opener Boat Prep Checklist
+- Mercury SmartCraft Connect Guide Ontario
+- Rice Lake Fishing Guide
+- Boat Rentals on Rice Lake
+
+## CTA
+
+**Starting from Rice Lake? HBW is between Locks 18 and 19.** 
+Call 905-342-2153 before you head out, slip availability, fuel confirmation, or anything else. 
+Boat rentals at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). 
+Mercury repower quotes at [mercuryrepower.ca](https://mercuryrepower.ca). 
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
+---
 
 ## FAQs
 
@@ -231,7 +233,7 @@ No special lockage licence is required. You do need your standard Pleasure Craft
 
 ### How long does it take to lock through?
 
-A standard lock takes 8–15 minutes from arrival to departure. The Peterborough Lift Lock is faster, the Big Chute Marine Railway is slower (~25 minutes). Plan for 20 minutes per lock when calculating travel days.
+A standard lock takes 8-15 minutes from arrival to departure. The Peterborough Lift Lock is faster, the Big Chute Marine Railway is slower (~25 minutes). Plan for 20 minutes per lock when calculating travel days.
 
 ### Can I anchor inside a lock chamber overnight?
 
@@ -260,12 +262,3 @@ Parks Canada doesn't sell fuel at lockstations, only commercial marinas do. Most
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 
----
-
-## Sources
-
-- Parks Canada, Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
-- Parks Canada, Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Transport Canada, Pleasure Craft Licence (5-year validity; required for recreational craft with engines totalling 10 hp or more operated in Canadian waters). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
-
-*Last reviewed: 2026-05-11.*

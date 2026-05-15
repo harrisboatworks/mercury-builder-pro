@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -193,7 +193,7 @@ For the full winterization picture, see our [DIY Mercury Outboard Winterization 
 
 ## Spring Wake-Up Routine
 
-1. **Check resting voltage.** After an hour off charge: 12.6V+ = healthy. 12.4–12.5V = okay. Below 12.4V = recharge and retest. Below 12.2V after a full charge = replace it.
+1. **Check resting voltage.** After an hour off charge: 12.6V+ = healthy. 12.4-12.5V = okay. Below 12.4V = recharge and retest. Below 12.2V after a full charge = replace it.
 2. **Load test.** Voltage alone isn't the whole picture, a battery can read 12.6V and still fail under cranking load. Our shop load tests, and most auto parts stores will test for free.
 3. **Inspect terminals.** White or green crust is corrosion. Clean with a paste of baking soda and water, rinse, dry, and apply dielectric grease before reconnecting. This prevents recurrence.
 4. **Check water levels (flooded batteries only).** Top up with distilled water, never tap water.
@@ -224,8 +224,8 @@ Pushing a tired battery through one more season is exactly how you end up strand
 | Starting (cranking) | Outboard cranking only | Inspect terminals spring/fall | Fails load test, or resting V < 12.2V |
 | Deep cycle | Trolling motor, accessories | Inspect spring/fall | Can't hold charge through a day of use |
 | Dual purpose | Single battery, mixed light use | Inspect spring/fall | Fails load test, or resting V < 12.2V |
-| Flooded lead-acid | Budget, maintained | Monthly water level check | 3–5 years, or failure |
-| AGM | Most recreational boats | Spring inspection only | 5–7 years, or failure |
+| Flooded lead-acid | Budget, maintained | Monthly water level check | 3-5 years, or failure |
+| AGM | Most recreational boats | Spring inspection only | 5-7 years, or failure |
 | Lithium | High-use, weight-sensitive | Per manufacturer spec | Per manufacturer spec |
 
 **Voltage reference:** 12.7V = full · 12.4V = 75% · 12.2V = 50% · Below 11.9V = discharged, possibly damaged

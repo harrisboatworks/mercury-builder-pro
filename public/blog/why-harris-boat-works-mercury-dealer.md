@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,284 +29,138 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-10*
+# Why Harris Boat Works Is the Mercury Dealer Rice Lake Boaters Come Back To
 
-> **Quick answer:** HBW has been on Rice Lake in the Kawarthas (Ontario) since 1947 and a Mercury dealer since 1965, three generations, current Mercury Marine Platinum Dealer. We post installed pricing online via the configurator, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
+## Quick answer
+Harris Boat Works has been selling and servicing Mercury outboards since 1965, three generations of one family on the same dock in Gores Landing, Ontario. We are a Mercury Platinum dealer today, the highest dealer tier Mercury awards. We sell Mercury exclusively, post real installed pricing at mercuryrepower.ca, and do the kind of honest boat-to-motor matching that takes local lake knowledge. If you want straight answers and a dealer who will still be here when you need service five years from now, that is the short case for us.
 
-Harris Boat Works has been a Mercury dealer since 1965. Three generations of HBW have rigged Mercurys, serviced them, and stood behind them. We are a Mercury Platinum dealer, which gives us factory-direct access to support, training, and inventory. We sell Mercury exclusively because the math works for our customers and our shop. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+## Why this question comes up
 
-## Quick recommendation
+Most Ontario boaters have had at least one bad dealer experience. You call for a price, get a runaround, get transferred, get told someone will call you back, and eventually piece together a number through Google that is probably out of date.
 
-If you are buying a Mercury outboard in southern Ontario, HBW is one of a small group of dealers worth considering. Mercury has more dealers than any other outboard brand in Canada, but most are multi-brand shops with split focus. HBW is exclusive Mercury. We are also a Mercury Platinum dealer (the highest dealer tier), which means factory-direct support and faster parts and service.
+We get it. We built the quote configurator at mercuryrepower.ca specifically because that experience is frustrating and it does not need to be that way. But beyond the pricing transparency, people ask why HBW specifically, and that is a fair question worth a real answer.
 
-We are biased. We sell only Mercury and we want your business. But the bias is downstream of the math. Our exclusive Mercury focus produces deeper expertise and faster service than multi-brand shops can typically deliver. That is why three generations of customers have repowered at HBW.
+## What "Mercury Platinum dealer" actually means
 
-## What sets HBW apart
+Mercury does not hand out Platinum status as a marketing favour. It is the highest tier in their dealer rating system, awarded based on sales volume, service quality, technician certification levels, customer satisfaction, and operational standards.
 
-Five things that distinguish HBW from typical marine dealers:
+What it means in practice for you:
 
-### 1. Three generations of family ownership
+| Platinum benefit | What it does for you |
+|---|---|
+| Priority parts allocation | Faster repair turnaround during the busy season |
+| Earlier access to new model inventory | You get first pick before allocation tightens |
+| Factory-direct technical support | Complex issues escalate to Mercury engineers, not a general helpline |
+| Higher-level technician certification | Our techs train at the top Mercury tier |
+| Faster warranty claim processing | Less waiting when something needs to be made right under warranty |
 
-HBW was founded in 1947 by my grandfather. Mercury dealership came in 1965. My father carried the business through the 1970s, 80s, and 90s. I'm running it now in 2026. Three generations of HBW have learned Mercury inside and out.
+Most multi-brand dealers do not reach Platinum because it is hard to maintain the standards across multiple product lines at once. Exclusive Mercury focus is a big part of why we hold it.
 
-That continuity matters. Some of our long-term customers have done business with three generations of Harris family. The institutional knowledge transfers. The relationships outlast specific transactions.
+## Three generations. One brand.
 
-### 2. Mercury Platinum dealer status
+My grandfather founded Harris Boat Works in 1947. He added the Mercury dealership in 1965. My father ran the business through the 70s, 80s, and 90s. I am running it now.
 
-Mercury rates dealers in tiers based on volume, service quality, customer satisfaction, and operational standards. Platinum is the top tier.
+That is not a sales line. It means our technicians have been learning Mercury, and only Mercury, for decades. The institutional knowledge does not reset with staff turnover the way it does at bigger, busier shops. Some of our service customers have brought their boats to three generations of Harrises. We know their motors the way a family doctor knows a patient history.
 
-What Platinum status gives our customers:
+## Why we only sell Mercury
 
-- **Priority parts allocation** during high-demand periods
-- **Earlier access to new product launches**
-- **Factory-direct technical support** for complex service issues
-- **Mercury-certified technician training** at higher levels
-- **Better warranty support** with faster claim processing
+We do not carry Yamaha, Honda, or Suzuki. Not because those are bad motors, they are not, but because the depth-versus-breadth tradeoff is clear for our customer base.
 
-Most multi-brand dealers do not reach Platinum status because they split focus across multiple brands. Exclusive Mercury focus is part of why we maintain Platinum.
+Most boats on Rice Lake and the Kawarthas came Mercury-rigged from the factory. The boaters who find us have usually already decided on Mercury; they are deciding on a dealer. Splitting our parts inventory, tooling, and training across multiple brands would dilute the thing that makes us useful to them: a shop that knows Mercury inside and out.
 
-### 3. Exclusive Mercury focus
+The expertise compounds over decades. Deep parts inventory. Mercury-specific tooling. Technicians who have seen every Mercury problem worth knowing about on Ontario freshwater.
 
-We sell Mercury exclusively. No Yamaha. No Honda. No Suzuki.
+## Local knowledge that transfers to your boat
 
-This is not because other brands are bad motors. It's because the depth-vs-breadth tradeoff strongly favors depth for our customer base. Our customers are mostly Ontario freshwater boaters whose boats came Mercury-rigged from the factory. Building exclusive Mercury expertise serves them better than splitting attention across brands.
+We are not a generic marine dealer. We are an Ontario freshwater Mercury dealer. That distinction matters more than it sounds.
 
-The expertise compounds over time:
+### Boat-to-motor matching
+Recommending a motor is not just reading a spec sheet. It is knowing what a 20-foot aluminum boat actually does at full load on Rice Lake in a chop, and what HP class makes that boat plane properly without slugging down in a turn. We have done enough of those sea trials on local water to have real opinions, not theoretical ones.
 
-- **Three generations of technicians** have learned only Mercury
-- **Parts inventory and tooling** is Mercury-specific and deep
-- **Training investments** focus on Mercury
-- **Customer expectations** are calibrated to Mercury
+### Prop selection
+Prop selection on paper is guesswork. Prop selection after a sea trial is data. We size the prop for your hull, your load, and how you actually use the boat.
 
-### 4. Local Ontario freshwater specialization
+### Seasonal and service pattern knowledge
+Ontario freshwater has its own rhythm: ice-out, spring prep, the long summer on the hook, fall winterization. We have structured our service operation around that cycle for decades.
 
-We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and connected waters. The local knowledge matters.
+## What we do for repower customers
 
-What the local specialization gives our customers:
+1. **Honest hull walk-around.** If the boat is not worth repowering, we tell you that.
+2. **Use-case driven motor selection.** What you do with the boat matters as much as the hull rating.
+3. **Transparent installed pricing.** Live pricing is at mercuryrepower.ca. Motor, rigging, prop, install, all of it.
+4. **Sea trial and prop confirmation.** We do not hand you the keys in the parking lot.
+5. **PCL update.** If the HP class changes, your Pleasure Craft Licence needs to be updated. We handle that as part of the project.
+6. **Warranty registration and service log.** Documented from day one, which matters if you ever sell the boat.
 
-- **Boat-to-motor matching** specific to Ontario hulls and use cases
-- **Prop selection** based on actual sea-trial experience on local lakes
-- **Service patterns** matched to Ontario seasonal cycles
-- **Customer base** that overlaps with yours (you may know other HBW customers)
-- **Reputation accountability** in a small enough market that quality matters
+We also evaluate trade-ins on old motors, working or not. Even a dead motor has value in aluminum and parts.
 
-We are not a generic marine dealer. We are an Ontario freshwater Mercury dealer.
+## What we do for service customers
 
-### 5. Full-service marina capabilities
+You do not have to have bought from us to get service from us. We service Mercury outboards regardless of where you bought them.
 
-HBW is more than a sales counter. We are a full-service marina:
+For engine repairs, we only service Mercury and Mercruiser. That is our depth, and we do not dilute it.
 
-- **Mercury sales and service** (the core business)
-- **Legend Boats sales** (we are also a Legend dealer)
-- **Boat hauling** for Rice Lake and Kawartha customers
-- **Outdoor winter storage and shrinkwrap** with proper winterization
-- **Winterization and spring commissioning** services
-- **Used boat sales and trade-ins**
-- **Pleasure Craft Licence (PCL) administration** for repower customers
+Standard service we offer: spring commissioning, mid-season service, fall winterization, warranty work, annual diagnostics, computer diagnostics for modern Mercury fault codes, and parts for common Mercury service items.
 
-The integrated services let customers do everything in one place.
+To request service: [hbw.wiki/service](https://hbw.wiki/service)
 
-## What HBW does for repower customers
+## What we do not do
 
-When customers come to HBW for a Mercury repower, they get:
-
-- **Honest hull walk-around** to confirm the boat is repower-worthy
-- **Use-case-driven motor selection** matched to the specific boat and use
-- **Live pricing transparency** on the [motor selection page](/quote/motor-selection)
-- **Prop selection during sea-trial** to confirm performance
-- **PCL update** as part of the project
-- **Service log entry** for warranty support and resale value
-- **Mercury Repower Financing** at 7.99% APR (as of May 2026) (qualified buyers)
-- **Trade-in evaluation** for old motors
-
-We do not push repowers that are not warranted. Sometimes customers come in with a motor that has years of life left. We tell them that and they go fish.
-
-## What HBW does for service customers
-
-For ongoing service customers (whether HBW repower customers or not):
-
-- **Spring commissioning** to bring the motor back from winter
-- **Mid-season service** as needed
-- **Fall winterization** to protect through storage
-- **Annual diagnostic** with detailed service log
-- **Warranty work** for in-warranty Mercurys
-- **Parts inventory** for common Mercury service items
-- **Computer diagnostic** for modern Mercury fault codes
-
-For HBW service, [request service](https://hbw.wiki/service) or [call (905) 342-2153](tel:9053422153).
-
-## What HBW does for new Mercury buyers
-
-For new Mercury buyers (not repower):
-
-- **New Mercury 2026 inventory** across the lineup
-- **New boat-and-motor packages** with Legend Boats
-- **Sales financing options** including Mercury Repower Financing
-- **Delivery and break-in coaching**
-- **Warranty registration** with Mercury
-- **First-year service appointment** booked at delivery
-
-For new Mercury pricing, [build a quote](/quote/motor-selection).
-
-## Common questions about HBW
-
-We get these regularly:
-
-### "Are you the most competitive on Mercury pricing?"
-
-Mercury sets MSRP. Dealer pricing is competitive across the dealer network. Our pricing is in line with other Mercury dealers. We compete on service quality, expertise, and long-term relationships, not on cutting corners on price.
-
-### "Can I get a better deal at a multi-brand dealer?"
-
-Sometimes nominally on motor price, but the long-term math usually favors HBW. Multi-brand dealers have split focus and may not have the parts depth, technician training, or factory relationships that exclusive Mercury Platinum gives us.
-
-### "Do you handle non-Mercury motors?"
-
-Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer and require part-sourcing. [Contact us](/contact) for non-Mercury service quotes.
-
-### "What if I bought my boat elsewhere?"
-
-We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and now come to HBW for service. Mercury warranty applies regardless of original dealer.
-
-### "How long has HBW been in business?"
-
-Founded 1947 by my grandfather. Mercury dealership since 1965. Three generations of family ownership. Continuous operation in Gores Landing on Rice Lake.
-
-## What HBW does not do
-
-We are honest about our limits:
-
-- **Saltwater servicing.** We are an Ontario freshwater shop. Saltwater applications are outside our core expertise.
-- **Sailboat-specific outfitting.** We service Mercury auxiliary motors on sailboats but we are not a sailboat dealer.
-- **Personal watercraft (PWC).** Mercury makes outboards, not PWC. We do not sell or service PWCs.
+- **Saltwater servicing.** We are a freshwater shop.
+- **Personal watercraft.** Mercury makes outboards. We do not sell or service PWCs.
 - **Jet boats or jet drives.** Outboard-specific shop.
-- **Most non-Mercury repowers.** We can do them but Mercury is our depth.
+- **Most non-Mercury brands for engine repair.** We can help with some non-Mercury service but our parts and tooling are Mercury-specific.
+- **Sailboat outfitting beyond the motor.**
 
-We refer to other shops or specialists when the work falls outside our core. Honest answers help customers find the right shop for their specific need.
+If the work falls outside our core, we will tell you that and point you toward a shop that is better set up for it.
 
-## Related guides
+## Financing
 
-- [Why Mercury Dominates the Outboard Market](/blog/why-mercury-dominates-outboard-market), the case for Mercury
-- [Mercury vs Yamaha vs Honda Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), brand comparison
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), pricing details
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), financing options
-- [Complete Guide to Boat Repowering in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full repower process
+Mercury Repower Financing is available through HBW. Rates are set by DealerPlan and change with market conditions, treat any rate you see online as a planning-level figure and confirm the current rate at [mercuryrepower.ca](https://mercuryrepower.ca) before committing to anything. Mercury also runs seasonal promotional rate offers that can be meaningfully below the standard rate.
 
-## Ready to talk Mercury at HBW?
+## Ready to talk through a repower or service?
 
-Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration including rigging, prop, and install.
+Build a complete installed quote at [mercuryrepower.ca](https://mercuryrepower.ca), real pricing, no phone call required. When you are ready to move forward or want to talk through your specific boat, call us at 905-342-2153 or request service at [hbw.wiki/service](https://hbw.wiki/service).
 
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through your specific Mercury needs before quoting, [give us a call at (905) 342-2153](tel:9053422153). We are at the shop most weekdays. Saturday hours during the boating season. [Visit us](/contact) at the marina in Gores Landing.
-
----
-
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
-
----
-
-## FAQ
-
-**How long has Harris Boat Works been a Mercury dealer?**
-Since 1965. Three generations of family ownership. The marina itself was founded in 1947. Continuous operation in Gores Landing on Rice Lake.
-
-**What is a Mercury Platinum dealer?**
-The highest dealer tier in Mercury's dealer rating system. Platinum status reflects volume, service quality, customer satisfaction, and operational standards. Gives dealers priority access to parts, training, and factory support. HBW is a Mercury Platinum dealer.
-
-**Why does HBW only sell Mercury?**
-Three generations of expertise, parts inventory, and tooling are Mercury-specific. Multi-brand dealers split focus. Exclusive Mercury focus produces deeper expertise that serves our customer base better. Mercury is also the dominant brand in Ontario freshwater so the math works.
-
-**Where is HBW located?**
-Gores Landing, Ontario, on the south shore of Rice Lake. Roughly 90 minutes east of Toronto, 30 minutes north of Cobourg.
-
-**What does HBW sell?**
-Mercury outboard motors (the core business). Legend Boats. Used boats. Service and storage. Repower projects. We do not sell saltwater motors, PWCs, jet boats, or non-Mercury outboards as a primary line.
-
-**Can I bring a non-Mercury motor to HBW for service?**
-Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer and require part-sourcing. [Contact us](/contact) for quotes.
-
-**Does HBW offer financing?**
-Yes. Mercury Repower Financing at 7.99% APR for qualified buyers. We process applications in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
-
-**Does HBW offer storage?**
-Yes. HBW offers outdoor winter storage with shrinkwrap and proper winterization. We do not offer on-site indoor storage. If indoor storage is the right fit for your boat, we can talk through options and point you in the right direction.
-
-**Does HBW pick up boats?**
-For Rice Lake and local Kawartha customers, yes. Hauling and full marina services are available. [Contact us](/contact) for hauling quotes.
-
-**Who runs HBW now?**
-Jay Harris, 3rd-generation owner. The Harris family has run the marina continuously since 1947.
-
-**How can I get in touch with HBW?**
-Phone: (905) 342-2153. Text: (647) 952-2153. Email: info@harrisboatworks.ca. [Contact us](/contact). Visit in person in Gores Landing during business hours.
-
-**What are HBW's hours?**
-Vary seasonally. Generally weekdays year-round, with Saturday hours during the boating season (May through October). [Contact us](/contact) for current hours.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+*Last reviewed: 2026-05-11.*
 
 ## FAQs
 
 ### How long has Harris Boat Works been a Mercury dealer?
 
-Since 1965. Three generations of family ownership. The marina itself was founded in 1947. Continuous operation in Gores Landing on Rice Lake.
+Since 1965. The marina itself was founded in 1947. Three generations of continuous family ownership in Gores Landing on Rice Lake.
 
-### What is a Mercury Platinum dealer?
+### What does Mercury Platinum dealer status mean?
 
-The highest dealer tier in Mercury's dealer rating system. Platinum status reflects volume, service quality, customer satisfaction, and operational standards. Gives dealers priority access to parts, training, and factory support. HBW is a Mercury Platinum dealer.
+Platinum is the highest tier in Mercury dealer rating system. It is based on volume, service quality, technician certification, customer satisfaction, and operational standards. It gives us priority parts access, higher-level technical support, and faster warranty processing.
 
 ### Why does HBW only sell Mercury?
 
-Three generations of expertise, parts inventory, and tooling are Mercury-specific. Multi-brand dealers split focus. Exclusive Mercury focus produces deeper expertise that serves our customer base better. Mercury is also the dominant brand in Ontario freshwater so the math works.
+Depth over breadth. Three generations of parts inventory, tooling, and technician training are Mercury-specific. Our customer base is overwhelmingly Mercury-rigged.
 
 ### Where is HBW located?
 
-Gores Landing, Ontario, on the south shore of Rice Lake. Roughly 90 minutes east of Toronto, 30 minutes north of Cobourg.
-
-### What does HBW sell?
-
-Mercury outboard motors (the core business). Legend Boats. Used boats. Service and storage. Repower projects. We do not sell saltwater motors, PWCs, jet boats, or non-Mercury outboards as a primary line.
+Gores Landing, Ontario, on the south shore of Rice Lake. Roughly 90 minutes east of Toronto, 30 minutes north of Cobourg. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ### Can I bring a non-Mercury motor to HBW for service?
 
-Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer and require part-sourcing. [Contact us](/contact) for quotes.
+Some non-Mercury service we can handle, but our parts and tooling are Mercury-focused. Non-Mercury work takes longer and may cost more. Call us at 905-342-2153 to discuss.
 
-### Does HBW offer financing?
+### What if I bought my boat or motor somewhere else?
 
-Yes. Mercury Repower Financing at 7.99% APR for qualified buyers. We process applications in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
+We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and found us for service. Mercury warranty applies regardless of the original dealer.
 
 ### Does HBW offer storage?
 
-Yes. HBW offers outdoor winter storage with shrinkwrap and proper winterization. We do not offer on-site indoor storage. If indoor storage is the right fit for your boat, we can talk through options and point you in the right direction.
-
-### Does HBW pick up boats?
-
-For Rice Lake and local Kawartha customers, yes. Hauling and full marina services are available. [Contact us](/contact) for hauling quotes.
+Yes, outdoor winter storage with shrinkwrap. We do not offer indoor heated storage. Pricing varies by boat size. Contact us at hbw.wiki/service for specifics.
 
 ### Who runs HBW now?
 
-Jay Harris, 3rd-generation owner. The Harris family has run the marina continuously since 1947.
+Jay Harris, third-generation owner. The Harris family has operated continuously since 1947.
 
-### How can I get in touch with HBW?
+### How do I get in touch?
 
-Phone: (905) 342-2153. Text: (647) 952-2153. Email: info@harrisboatworks.ca. [Contact us](/contact). Visit in person in Gores Landing during business hours.
-
-### What are HBW's hours?
-
-Vary seasonally. Generally weekdays year-round, with Saturday hours during the boating season (May through October). [Contact us](/contact) for current hours.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+Phone: 905-342-2153. Service requests: hbw.wiki/service. In person in Gores Landing during business hours.
 
 ## Next steps
 
