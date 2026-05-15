@@ -2053,7 +2053,7 @@ const BLOG_TABLE_FALLBACKS = {
 // Build blog article route configs.
 const blogArticleRoutes = blogArticles.map(article => ({
   path: `/blog/${article.slug}`,
-  title: `${article.title} | Harris Boat Works Blog`,
+  title: `${article.seoTitle || article.title} | Harris Boat Works Blog`,
   description: article.description,
   ogImage: `${SITE_URL}${article.image}`,
   ogType: 'article',
