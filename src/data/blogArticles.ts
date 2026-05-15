@@ -6974,10 +6974,10 @@ Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercury
 
   // Week 48: November 30, 2026
   {
-    slug: 'mercury-150-200hp-v6-performance',
-    title: 'Mercury 150-300 HP Performance Compared (Ontario 2026)',
-    seoTitle: 'Mercury 150-300 HP Performance Compared (2026)',
-    description: "An HBW dealer's honest comparison of Mercury V6 outboards from 150 to 300 HP, what each delivers, who needs which, and where the inflection points actually are.",
+    slug: 'mercury-150-300hp-pro-xs-performance-guide',
+    title: 'Mercury 150-300 HP Pro XS Compared for Ontario Boats',
+    seoTitle: 'Mercury 150-300 HP Pro XS Compared | Ontario Guide',
+    description: "HBW compares Mercury 150, 175, 200, 225, 250, and 300 HP Pro XS outboards for Ontario boats, with honest fit guidance.",
     image: '/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
@@ -6985,17 +6985,19 @@ Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercury
     publishDate: '2026-05-13',
     category: 'Buying Guide',
     readTime: '10 min read',
-    keywords: ['mercury 150 200 v6', 'mercury 3.4 v6', 'mercury v6 vs inline', 'mercury 175 pro xs', 'mercury v6 comparison', 'Mercury 150 175 200 225 V6 comparison', 'Mercury V6 Pro XS performance', 'Mercury 200 vs 225 vs 250', 'Mercury 175 EXLPT', 'Mercury 250 Pro XS'],
+    keywords: ['mercury 150 pro xs', 'mercury 175 pro xs', 'mercury 200 pro xs', 'mercury 225 pro xs', 'mercury 250 pro xs', 'mercury 300 pro xs', 'mercury v6 vs v8', 'mercury pro xs comparison ontario', 'mercury 150-300 hp guide'],
     content: `
 *Last reviewed: 2026-05-10*
 
-> **Quick answer:** Mercury's V6 lineup, 150, 175, 200, 225, 250, 300, shares a common architecture with progressively more displacement and tune. The 200-225 is the sweet spot for most Ontario center consoles and runabouts. The 300 makes sense only with the right hull and prop. Compare installed pricing at mercuryrepower.ca.
+> **Quick answer:** The current Mercury 150 Pro XS is an inline-4. The Pro XS V6 range starts at 175 HP, while the 300 Pro XS is a V8. For many Ontario runabouts and fishing boats, the 200-225 HP range is the sweet spot, but the right answer depends on your hull rating, load, use, and budget.
 
-Mercury's V6 lineup is where things get interesting. From the 150 (technically still an inline-4 in current Pro XS, but a V6 historically) up to the 300 Pro XS, this is where you choose between "enough motor" and "exactly the right motor for what I do."
+The 150-300 HP Mercury range is where a lot of boaters either get the motor exactly right or spend a pile of money chasing the wrong kind of power.
 
-We sell V6 motors every week. Customers ask the same questions over and over: which one is right for me, what's the real difference, where does the inflection point sit. This is the version of that conversation we'd have at the shop.
+The first thing to clear up: the current Mercury 150 Pro XS is an inline-4, not a V6. The V6 Pro XS family starts at 175 HP, and the 300 Pro XS moves into V8 territory. That matters because you are not just comparing horsepower. You are comparing weight, torque, rigging, hull fit, handling, fuel use, and whether the boat will actually feel better on Rice Lake or just sound better in a spec sheet.
 
-**One housekeeping note before we dive in:** Mercury's 150 Pro XS is an **inline-4, 3.0L**, same block as the 150 FourStroke, just performance-tuned. The V6 in the Pro XS lineup actually starts at **175 HP**. Old marketing material sometimes calls the 150 a V6; that's wrong, and Mercury's current spec sheets confirm it. We've corrected it across our content but you may still see the error elsewhere.
+Harris Boat Works is a family-owned marina on Rice Lake, established in 1947, and a Mercury Marine Platinum Dealer. We sell and rig these motors, so this guide is built around the real customer question: which one makes sense for your boat, your water, and your budget?
+
+The current Pro XS lineup in this range spans three architectures: 150 HP inline-4, 175-250 HP V6, and 300 HP V8.
 
 ## The Quick Comparison Table
 
