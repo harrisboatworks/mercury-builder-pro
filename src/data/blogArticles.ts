@@ -13729,7 +13729,8 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
   {
     slug: 'mercury-vesselview-smartcraft-plain-english-guide',
     title: "Mercury VesselView, SmartCraft, and the New Mercury Marine App: A Plain-English Guide",
-    description: "Plain-English explanation of Mercury's VesselView, SmartCraft, the new Mercury Marine App, DTS, and Active Trim, what they actually do, what they cost, and which ones you'll use.",
+    seoTitle: 'Mercury VesselView & SmartCraft Explained | Ontario Guide',
+    description: "Plain-English guide to Mercury VesselView, SmartCraft, Active Trim, and the Mercury Marine App from HBW on Rice Lake.",
     image: '/lovable-uploads/hero-vesselview-smartcraft.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
