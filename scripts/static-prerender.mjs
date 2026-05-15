@@ -1896,7 +1896,7 @@ function blogArticleSchema(article) {
   };
 
   const articleNode = {
-      "@type": "Article",
+      "@type": "BlogPosting",
       "@id": `${url}#article`,
       "headline": sanitizeSchemaText(article.title),
       "description": description,
@@ -2098,7 +2098,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
     htmlLang: inLanguage,
     schemas: [{
       "@context": "https://schema.org",
-      "@type": "Article",
+      "@type": "BlogPosting",
       "headline": article.title,
       "description": article.description,
       "inLanguage": inLanguage,
@@ -2367,7 +2367,7 @@ function caseStudyDetailSchema(study) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "BlogPosting",
         "@id": `${url}#article`,
         headline: study.title,
         description: study.excerpt,
