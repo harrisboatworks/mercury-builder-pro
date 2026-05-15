@@ -13621,7 +13621,7 @@ A reasonable annual routine for an Ontario sterndrive:
 - Drain or refill drive with fresh gear lube
 - Cover or shrinkwrap
 
-A skipped fall properly costs $5,000+. A done-right winterization runs $400-$700 at HBW depending on engine size and configuration.
+A skipped fall can easily become a **$5,000+** problem. A proper winterization at HBW typically runs **$400-$700**, depending on engine size and configuration.
 
 ---
 
