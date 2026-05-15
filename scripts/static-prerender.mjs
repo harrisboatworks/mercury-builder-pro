@@ -2096,18 +2096,33 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
     h1: article.title,
     intro: firstParagraph(article.content, article.description),
     htmlLang: inLanguage,
-    schemas: [{
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": article.title,
-      "description": article.description,
-      "inLanguage": inLanguage,
-      "datePublished": article.datePublished,
-      "dateModified": article.dateModified || article.datePublished,
-      "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
-      "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
-      "mainEntityOfPage": `${SITE_URL}/blog/${langCode}/${article.slug}`
-    }],
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": article.title,
+        "description": article.description,
+        "inLanguage": inLanguage,
+        "datePublished": article.datePublished,
+        "dateModified": article.dateModified || article.datePublished,
+        "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+        "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+        "mainEntityOfPage": `${SITE_URL}/blog/${langCode}/${article.slug}`
+      },
+      ...(Array.isArray(article.faqs) && article.faqs.length > 0 ? [{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "inLanguage": inLanguage,
+        "mainEntity": article.faqs.map(f => ({
+          "@type": "Question",
+          "name": f.questionHtml || f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.answerHtml || f.answer
+          }
+        }))
+      }] : [])
+    ],
     extraNoscript: () => {
       const bodyHtml = renderArticleBodyHtml(article.content);
       const faqHtml = (article.faqs && article.faqs.length > 0)
