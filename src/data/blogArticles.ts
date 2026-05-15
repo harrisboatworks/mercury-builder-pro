@@ -18059,6 +18059,14 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 *Harris Boat Works, est. 1947. Mercury Marine Platinum Dealer. Gores Landing, Ontario.*
 *905-342-2153 | [harrisboatworks.ca](https://www.harrisboatworks.ca)*
 `,
+    faqs: [
+      { question: "How long should a used boat walkaround inspection take?", answer: "Plan on 30 minutes minimum. Five before you go (HIN, records, cold-start video), five for first impression and trailer, ten on the hull, five on topside and interior, eight on the outboard, and two on trailer details. Rushing any segment is how problems get missed." },
+      { question: "What's the single most important thing to check on a used boat?", answer: "Transom flex. Grab both sides of the motor mount and push and pull, hard. Any movement at all means the transom core is rotted, and that repair often costs more than the boat is worth. If the transom flexes, walk away regardless of how clean the rest of the boat looks." },
+      { question: "What does milky or grey gear oil mean?", answer: "Water in the lower unit, from a failed seal or cracked housing. Left alone, it destroys the gears. Drain a sample on white paper towel: fresh gear oil is translucent gold or green. Milky, grey, or chocolate-brown is a deal-breaker until the lower unit is rebuilt." },
+      { question: "Should I get a compression test on a used outboard?", answer: "Yes, on any motor over 5 years old. All cylinders should read within 10% of each other. Low or uneven compression points to rings, valves, or worse. A seller who refuses a compression test is hiding something. Auto parts stores rent or sell marine compression testers." },
+      { question: "How can I tell if a used boat's floor is rotten?", answer: "Stomp test. Walk the full floor from transom to bow, pressing firmly with each step. Soft spots, sponginess, or flex mean the plywood sub-floor is saturated and stringers below may be compromised too. Stringer rot is a full restoration job, not a repair." },
+      { question: "What about the boat I just looked at? Can HBW help me decide?", answer: "Yes. If the hull is solid and the motor is the weak link, that's exactly what we repower. Build a quote at mercuryrepower.ca, or reach out through hbw.wiki/service if you want a second set of eyes on what you're looking at." },
+    ],
   },
   {
     slug: 'docking-boat-in-wind-rice-lake',
