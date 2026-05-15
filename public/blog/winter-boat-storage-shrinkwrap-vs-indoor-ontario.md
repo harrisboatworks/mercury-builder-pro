@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,6 +35,31 @@ content_type: blog_article
 
 > **Quick answer:** Shrinkwrap is cheaper and weatherproof but condenses moisture inside if vented poorly. Indoor storage is dry, climate-stable, and gentler on upholstery and gel coat, but costs more. For long-term value retention, indoor wins. Indoor and shrinkwrap pricing at mercuryrepower.ca.
 
+::decision-card
+heading: Shrinkwrap outdoors, or pay for indoor storage?
+eyebrow: Decision guide
+subhead: The right answer depends on your boat type, where you live, and how much you trust your tarp. Here's how we actually advise customers each fall.
+leftLabel: Shrinkwrap outside
+leftCriteria:
+  - Aluminum or fiberglass hull in good condition
+  - You have a paved driveway, lakeside lot, or low-cost outdoor space
+  - You don't mind a small risk of wind/snow damage if the wrap fails
+  - Your boat is under $40K replacement value
+  - You winterize properly and the boat isn't sitting in salty conditions
+leftOutcome: Typically $300 to $700 in Ontario for shrinkwrap + outdoor spot. Cheapest option that still seals out snow, ice, and most rodents.
+leftVariant: alternative
+rightLabel: Indoor storage
+rightCriteria:
+  - High-value boat ($40K+) or rare/collectible hull
+  - Wooden interior, real leather seats, or sensitive electronics
+  - You want the boat ready to launch in April without a full prep cycle
+  - You live in a high-wind zone, near salt-treated roads, or under heavy trees
+  - You want to keep the gel coat looking new for resale
+rightOutcome: $900 to $2,200 in Ontario depending on heated vs unheated and length. Worth it on high-value or low-tolerance boats.
+rightVariant: recommended
+whenInDoubt: Most Rice Lake customers shrinkwrap outside. If you're 50/50 on it, the cheap option is shrinkwrap; the safe option is indoor. We do both, book either at /service.
+::
+
 Planning a spring repower instead of another season on the old motor? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario). For maintenance on the existing motor, [Mercury Maintenance Intervals (20/100/300-Hour Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule) covers what should be done before winter.
 
 Every fall we have the same conversation about thirty times. *"Is shrinkwrap enough? Should I pay for indoor? Is heated worth the extra money?"*
@@ -55,11 +80,11 @@ What happens if you skip winterization (regardless of storage method):
 
 | Failure | Cost to Fix |
 |---------|-------------|
-| **Cracked engine block** (water freezes inside cooling passages) | $5,000 – $10,000+ engine replacement |
-| **Cracked lower unit / sterndrive** (water freezes in the gearcase) | $1,500 – $4,500 |
+| **Cracked engine block** (water freezes inside cooling passages) | $5,000 - $10,000+ engine replacement |
+| **Cracked lower unit / sterndrive** (water freezes in the gearcase) | $1,500 - $4,500 |
 | **Corroded cylinder walls** (no fogging oil = surface rust over winter) | Loss of compression in spring, rebuild work |
-| **Gummed fuel system** (untreated ethanol breaks down, clogs injectors) | $200 – $800 |
-| **Dead battery** (left uncharged in freezing temps) | $200 – $500 replacement |
+| **Gummed fuel system** (untreated ethanol breaks down, clogs injectors) | $200 - $800 |
+| **Dead battery** (left uncharged in freezing temps) | $200 - $500 replacement |
 
 Your storage choice affects what *else* protects the boat. UV, snow, wind, pests. It doesn't change the freeze-protection requirement.
 
@@ -67,14 +92,14 @@ Your storage choice affects what *else* protects the boat. UV, snow, wind, pests
 
 ## Shrinkwrap Storage. Ontario's Default, and Why
 
-Shrinkwrap is **7–12 mil polyethylene film, heat-shrunk tight over a support frame, with venting installed to prevent condensation**. It's designed to handle a season, single use, recyclable in spring.
+Shrinkwrap is **7-12 mil polyethylene film, heat-shrunk tight over a support frame, with venting installed to prevent condensation**. It's designed to handle a season, single use, recyclable in spring.
 
 A professional shrinkwrap job includes:
 
 - Boat cleaned and dried
 - Support poles erected to create a peaked roof (so snow doesn't pool)
 - Film draped, heat-shrunk to fit
-- 2–4 vents installed (without these, you'll have mold by April)
+- 2-4 vents installed (without these, you'll have mold by April)
 - Strapping for wind and snow load
 - Access door cut for spring un-wrapping
 
@@ -94,9 +119,9 @@ A professional shrinkwrap job includes:
 - **Snow load failure** if the support frame is weak or undersized
 - **No temperature regulation**, same temperature as outside
 
-**HBW pricing 2025–2026:** $33/ft for trailer boats up to 21 ft, $35/ft for larger. That's **$693 for a 21-ft fishing boat** or **$770 for a 22-ft pontoon**, including the wrap, the frame, the vents, and the strapping.
+**HBW pricing 2025-2026:** $33/ft for trailer boats up to 21 ft, $35/ft for larger. That's **$693 for a 21-ft fishing boat** or **$770 for a 22-ft pontoon**, including the wrap, the frame, the vents, and the strapping.
 
-**Other Ontario dealers:** outdoor shrinkwrap storage runs $30–$37/ft across the province; some marinas charge $58/ft for outdoor with shrinkwrap (Muskoka pricing).
+**Other Ontario dealers:** outdoor shrinkwrap storage runs $30-$37/ft across the province; some marinas charge $58/ft for outdoor with shrinkwrap (Muskoka pricing).
 
 ---
 
@@ -115,14 +140,14 @@ Indoor unheated is the next tier up. Building keeps the boat out of the elements
 
 **Cons:**
 
-- **Costs more**, typically $40–$60/ft including basic shrinkwrap or cover
+- **Costs more**, typically $40-$60/ft including basic shrinkwrap or cover
 - **Limited availability**, most Ontario indoor capacity books out by September
 - **Drop-off windows**, you can't just show up; storage facilities want appointments
 - **Condensation** without good air circulation in the building
 
 **Ontario pricing for indoor unheated:**
 - $37/ft (Timber Marine, 9-month contract)
-- $40–$60/ft including shrinkwrap (Crate Marine Belleville and others)
+- $40-$60/ft including shrinkwrap (Crate Marine Belleville and others)
 - $55/ft (Muskoka Boat Gallery)
 
 For most aluminum fishing boats, pontoons, and modern fibreglass runabouts, **the protection delta over outdoor shrinkwrap doesn't justify the cost**. For older fibreglass, dark-coloured gelcoat, or a hull where you want to slow oxidation, it's worth considering.
@@ -142,7 +167,7 @@ Heated indoor keeps the building above 5°C (40°F) all winter. The differentiat
 
 **Cons:**
 
-- **Most expensive option**: $60–$90/ft, sometimes more
+- **Most expensive option**: $60-$90/ft, sometimes more
 - **Very limited availability** in Ontario, heated boat storage is a niche service
 - **Energy costs** are real and increasing
 - **Some still require partial winterization** (fuel, oil) regardless
@@ -166,7 +191,7 @@ Heated indoor keeps the building above 5°C (40°F) all winter. The differentiat
 
 | | **Outdoor + shrinkwrap** | **Indoor unheated** | **Indoor heated** |
 |---|---|---|---|
-| **Cost (21-ft boat)** | ~$700 (HBW) | ~$840–$1,260 | ~$1,260–$1,890 |
+| **Cost (21-ft boat)** | ~$700 (HBW) | ~$840-$1,260 | ~$1,260-$1,890 |
 | **Snow protection** | Good (with frame) | Excellent | Excellent |
 | **UV protection** | Good | Excellent | Excellent |
 | **Wind protection** | Good | Excellent | Excellent |
@@ -175,7 +200,7 @@ Heated indoor keeps the building above 5°C (40°F) all winter. The differentiat
 | **Off-season access** | Difficult | Easy | Easy |
 | **Booking lead time** | September/October | September | August/September |
 
-For a typical 21-ft Ontario fishing boat or pontoon, outdoor shrinkwrap saves $500–$1,200 over indoor, money that's better spent on winterization done right, a quality cover frame, and an early-spring service.
+For a typical 21-ft Ontario fishing boat or pontoon, outdoor shrinkwrap saves $500-$1,200 over indoor, money that's better spent on winterization done right, a quality cover frame, and an early-spring service.
 
 ---
 
@@ -183,7 +208,7 @@ For a typical 21-ft Ontario fishing boat or pontoon, outdoor shrinkwrap saves $5
 
 Our standard winter storage package includes:
 
-- Full shrinkwrap with support frame, 2–4 vents, and weather strapping
+- Full shrinkwrap with support frame, 2-4 vents, and weather strapping
 - Mercury-trained winterization on the engine: fuel stabilization, fogging, gearcase drain and refill
 - Cooling system drain (freeze protection)
 - Steering and throttle cable lubrication
@@ -191,7 +216,7 @@ Our standard winter storage package includes:
 - Battery removed and brought indoors on a trickle charger through winter
 - Optional: spring commissioning add-on (we pull it off, prep it, water-test, deliver to your slip)
 
-**Pricing:** $33–$35/ft shrinkwrap + winterization fees ($300–$700 depending on engine size). All-in for a 21-ft fishing boat with a 90 HP 4-stroke is roughly $1,000–$1,200. For a 22-ft pontoon with a 115 ELPT CT, $1,200–$1,400.
+**Pricing:** $33-$35/ft shrinkwrap + winterization fees ($300-$700 depending on engine size). All-in for a 21-ft fishing boat with a 90 HP 4-stroke is roughly $1,000-$1,200. For a 22-ft pontoon with a 115 ELPT CT, $1,200-$1,400.
 
 We do **311+ storage contracts a year**. That's a meaningful chunk of our fall and spring shop time. The system is dialled in, you drop it off, you pick it up, the boat works.
 

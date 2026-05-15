@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -140,10 +140,10 @@ If both the engine and the outdrive need attention, the rebuild-or-replace math 
 This is the critical check. Outboard brackets mount to the transom. If the transom is soft (delamination, rot, moisture intrusion), that's a separate project that needs to be addressed first. A reputable repower shop will inspect and tell you the truth here. We do.
 
 **When the boat is worth it.**
-A repower should make economic sense for the hull you have. Don't spend $35,000–$45,000 on a fresh outboard package for a hull with $12,000 in market value. If you're uncertain where you land, our [boat hull vs. repower decision guide](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision) is a good starting point.
+A repower should make economic sense for the hull you have. Don't spend $35,000-$45,000 on a fresh outboard package for a hull with $12,000 in market value. If you're uncertain where you land, our [boat hull vs. repower decision guide](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision) is a good starting point.
 
 **When you plan to keep the boat.**
-Repowers are long-term plays. If you're keeping the boat for another 10–15 years, the investment makes sense. If you're planning to sell in two seasons, the calculus is different.
+Repowers are long-term plays. If you're keeping the boat for another 10-15 years, the investment makes sense. If you're planning to sell in two seasons, the calculus is different.
 
 ---
 
@@ -199,7 +199,7 @@ We're not the biggest dealer in Ontario. But we're on the water, we know Rice La
 
 ## Try the calculator
 
-Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
+Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) - no signup, no email gate, takes 30 seconds.
 ## The Bottom Line
 
 Outboards have won the market because they deserve to. The technology is excellent, the service access is better, the Ontario freshwater use case fits them well, and the long-term ownership economics are stronger for most boaters.

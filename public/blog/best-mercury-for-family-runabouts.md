@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,118 +29,156 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-07*
+**Canonical URL:** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
 
-> **Quick answer:** For most family runabouts in the 17-20 ft range, a Mercury 90-150 FourStroke is the right call. Bigger isn't better, the capacity plate sets your real ceiling, and over-powering creates compliance, insurance, and warranty risk. The configurator at mercuryrepower.ca has installed pricing for every Mercury in that range.
+---
 
-A "family runabout" covers a lot of ground, anything from a 16-foot bowrider tugging the kids around the bay to a 22-foot deck boat pulling a wakeboarder behind a full crew. The right Mercury depends on three things: the boat's length and weight, what you actually do on it, and how much patience you have for refueling.
+## Quick Answer
 
-We've sold and repowered family runabouts on Rice Lake and the Kawarthas for years. This is the version of "what should I put on my boat?" we'd give if you walked into the shop on a Saturday in April.
+For most family runabouts in the 17, 20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
-## The Quick Recommendations by Boat Length
+---
 
-| Boat length | Recommended Mercury | Why |
-|-------------|---------------------|-----|
-| **16-17 ft** | **90 HP FourStroke** | Sweet spot for light family use. Quiet, efficient, planes easily. |
-| **17-18 ft** | **115 HP FourStroke** | More headroom for full crew + gear. The HBW most-popular family pick. |
-| **18-19 ft** | **150 HP FourStroke** | Real watersports capability. Plane with 6 on board. |
-| **19-21 ft** | **175-200 HP V6** | Bigger boats want V6 power. Pro XS option for towing. |
-| **21-22 ft** | **200-250 HP V6** | Premium tier. Watersports, big crew, longer runs. |
+## Full Article
 
-If your situation isn't on this list, the table doesn't matter, the right answer comes from the conversation, not the chart. Call us.
+A "family runabout" covers a lot of ground. It might be a 16-foot bowrider tugging the kids around the bay, or a 22-foot deck boat pulling a wakeboarder behind a full crew. The right Mercury depends on three things: the boat's length and weight, what you actually do with it, and how much you want to spend on fuel.
 
-## Why FourStroke Beats Pro XS for Most Families
+We've rigged and repowered family runabouts on Rice Lake and the Kawarthas for a long time. What follows is the answer we'd give if you walked into the shop on a Saturday in April.
 
-Mercury makes two flavours at most horsepowers: **FourStroke** (the standard) and **Pro XS** (the performance variant). For 90% of family runabouts, FourStroke is the right call. Here's why:
+### The Quick Recommendations by Boat Length
 
-**FourStroke is quieter.** Conversation-quiet at cruise. Pro XS is faster-revving and has a sportier exhaust note, which sounds great for 5 minutes and gets old over a 6-hour day with kids in the boat.
+| Boat Length | Recommended Mercury | Why |
+|---|---|---|
+| 16, 17 ft | 90 HP FourStroke | Sweet spot for light family use. Quiet, efficient, planes easily. |
+| 17, 18 ft | 115 HP FourStroke | More headroom for full crew and gear. Our most popular family pick. |
+| 18, 19 ft | 150 HP FourStroke | Real watersports capability. Planes with six on board. |
+| 19, 21 ft | 175, 200 HP V6 | Bigger boats want V6 power. Pro XS option for towing. |
+| 21, 22 ft | 200, 250 HP V6 | Premium tier. Watersports, big crew, longer runs. |
 
-**FourStroke gets better fuel economy.** Roughly 10-15% better at typical family cruise (3,500-4,200 RPM). On a 6-hour day pulling skiers and tubes, that's real money.
+If your situation isn't on this list, the chart doesn't settle it anyway. The right answer comes from a conversation. Call us.
 
-**FourStroke is smoother at low speed.** The Pro XS sport gearcase is tuned for hole shot and top end; the FourStroke gearcase is tuned for smoother transitions through the rev range. Family use lives in that middle zone.
+### Why FourStroke Beats Pro XS for Most Families
+
+Mercury makes two flavours at most horsepower ratings: **FourStroke** (the standard) and **Pro XS** (the performance variant). For 90% of family runabouts, FourStroke is the right call.
+
+**FourStroke is quieter.** Conversation-quiet at cruise. Pro XS has a sportier exhaust note that sounds great for five minutes and gets old over a six-hour day with kids in the boat.
+
+**FourStroke gets better fuel economy.** Roughly 10, 15% better at typical family cruise (3,500, 4,200 RPM). On a long day pulling skiers and tubes, that's real money.
+
+**FourStroke is smoother at low speed.** The Pro XS sport gearcase is tuned for hole shot and top end. The FourStroke gearcase is tuned for smoother transitions through the rev range. Family use lives in that middle zone.
 
 **Pro XS is the right call when:**
-- You water-ski seriously (the hole shot matters for getting the skier up)
+- You water-ski seriously and the hole shot matters for getting the skier up
 - You want absolute top speed
-- You run a heavier boat with full ballast for wakesurfing
-- The driver actually cares about how the throttle feels
+- You run a heavier hull with full ballast for wakesurfing
+- The driver genuinely cares how the throttle feels
 
-For everyone else, pulling tubes occasionally, cruising to dinner, hauling the kids to the swim spot. FourStroke is the answer. Quieter, more fuel-efficient, and Mercury's most-proven motor family.
+For everyone else, pulling tubes occasionally, cruising to dinner, hauling the kids to the swim spot, FourStroke is the answer.
 
-## Don't Under-Power. Don't Over-Power. Here's How to Tell.
+### Don't Under-Power. Don't Over-Power.
 
-The most common mistake we see on family runabouts: **the previous owner under-powered the boat to save money on the original purchase, and now it struggles whenever the boat is loaded.**
+The most common mistake we see on family runabouts: the previous owner under-powered the boat to save money on the original purchase, and now it struggles whenever the boat is loaded.
 
-A 17-foot bowrider rated for 115 HP, running with a 75 HP motor, four people, full gas, a cooler, and tow toys, will plane sluggishly, struggle in chop, and drink fuel trying. The motor is constantly at 80-90% throttle just to maintain cruise, which is bad for the motor's life and miserable to drive.
+A 17-foot bowrider rated for 115 HP, running with a 75 HP motor, four people, full fuel, a cooler, and tow toys, will plane sluggishly and struggle in chop. The motor runs at 80, 90% throttle constantly just to maintain cruise, bad for motor life and miserable to drive.
 
-**The rule:** look at your boat's max HP rating (on the capacity plate, usually near the helm). For family use with full crew and gear, **don't go more than 25 HP below max.** If your boat is rated 115 HP max, run a 90-115 HP motor. Running an 85 HP "to save fuel" usually backfires.
+**The rule:** Look at your boat's max HP rating on the capacity plate (usually near the helm). For family use with full crew and gear, don't go more than 25 HP below max. If your boat is rated 115 HP max, run a 90, 115 HP motor.
 
-**Don't over-power either.** Going to or above max HP on a family runabout adds fuel cost, makes the boat squirrellier in chop, and on some hulls causes "porpoising" (the bow bouncing rhythmically) that's irritating and unsafe. A boat rated 150 HP max doesn't need a 200 HP motor.
+Don't over-power either. A boat rated 150 HP max doesn't need a 200 HP motor. It adds fuel cost, changes handling in chop, and on some hulls causes porpoising.
 
-## Fuel Math at Family Cruise
+### Fuel Math at Family Cruise
 
-Real Mercury fuel consumption at typical family cruise speeds (3,500-4,200 RPM):
+Real Mercury fuel consumption at typical family cruise speeds (3,500, 4,200 RPM):
 
-| Motor | At cruise | At WOT |
-|-------|-----------|--------|
-| **75 HP FourStroke** | 2.5–3.5 GPH | 6–7 GPH |
-| **90 HP FourStroke** | 3–4 GPH | 8–9 GPH |
-| **115 HP FourStroke** | 4–5 GPH | 10–12 GPH |
-| **150 HP FourStroke** | 5–7 GPH | 14–16 GPH |
-| **175 HP V6 FourStroke** | 6–8 GPH | 16–18 GPH |
-| **200 HP V6 FourStroke** | 7–9 GPH | 18–20 GPH |
-| **250 HP V6 FourStroke** | 8–10 GPH | 22–25 GPH |
+| Motor | At Cruise | At WOT |
+|---|---|---|
+| 90 HP FourStroke | 3, 4 GPH | 8, 9 GPH |
+| 115 HP FourStroke | 4, 5 GPH | 10, 12 GPH |
+| 150 HP FourStroke | 5, 7 GPH | 14, 16 GPH |
+| 175 HP V6 FourStroke | 6, 8 GPH | 16, 18 GPH |
+| 200 HP V6 FourStroke | 7, 9 GPH | 18, 20 GPH |
 
-Translation: a typical family Saturday on Rice Lake, six hours, mixed cruise + a couple of skiing pulls + an hour of tubing, uses roughly:
-- 90 HP boat: 25-35 gallons
-- 115 HP boat: 35-45 gallons
-- 150 HP boat: 45-60 gallons
-- 200 HP boat: 60-80 gallons
+Translation: a typical family Saturday, six hours, mixed cruising, a couple of skiing pulls, an hour of tubing, uses roughly:
 
-At ethanol-free 89 marine gas pricing on the dock, that's $80-$300 per outing depending on motor size. **Pick HP that fits how often you'll boat as much as it fits the boat.** A 200 HP runabout used twice a month is overkill; same boat used 3x a week is right-sized.
+- **90 HP boat:** 25, 35 litres
+- **115 HP boat:** 35, 45 litres
+- **150 HP boat:** 45, 60 litres
+- **200 HP boat:** 60, 80 litres
 
-## What the Family Cruise Actually Needs
+We sell ethanol-free 89 marine gas at the dock in Gores Landing. Pick the HP that fits how often you'll use the boat, not just what looks good at the transom.
 
-For a family runabout, the features that matter:
+### Features Worth Paying For on a Family Runabout
 
-**Power steering**, anything over 115 HP, get hydraulic or electric power steering. Manual steering on bigger motors is exhausting after an hour.
+- **Power steering**, On anything over 115 HP, get hydraulic or electric power steering. Manual steering on bigger motors is tiring after an hour of driving.
+- **Power trim**, Standard on every Mercury 25 HP and up. You'll use it constantly as load and conditions change.
+- **SmartCraft / Mercury Marine App**, Real-time fuel flow lets you find the efficient cruise RPM for your boat. Saves real money over a season.
+- **Active Trim**, Available on V8 Verados and select V6s. Worth it if your driver is still learning; the engine trims itself for conditions.
 
-**Power trim**, standard on every Mercury 25 HP and up. Not optional. You'll trim the bow up and down constantly with shifting load and conditions.
+**What you don't need:** Mercury's premium Verado V8/V10 lineup on a family runabout under 22 feet. They're excellent motors built for performance boats and big cruisers, overkill on a 19-foot bowrider that mostly goes to the swim spot.
 
-**SmartCraft / Mercury Marine App connectivity**, see [our VesselView/SmartCraft guide](/blog/mercury-vesselview-smartcraft-plain-english-guide). Real-time fuel flow lets you find the most efficient cruise RPM for your boat, which saves real money over a season.
+### Pricing, What to Expect in CAD
 
-**Active Trim** (auto-trim), available on V8 Verados and some V6s. Worth it if your driver isn't experienced; the engine trims itself for the conditions.
+These are planning-level ranges for a motor with rigging, prop, and installation on a typical family runabout. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for your specific configuration and current pricing.
 
-**Digital Throttle & Shift (DTS)**, on V8 motors, smoother throttle response and better docking precision. Standard on V8 Verados, optional on some V6 FourStrokes. Nice-to-have, not essential.
+| Motor | All-In (CAD, before HST) |
+|---|---|
+| 90 HP FourStroke | $15,500, $18,500 |
+| 115 HP FourStroke | $17,500, $22,500 |
+| 150 HP FourStroke | $23,000, $30,000 |
+| 175 HP V6 FourStroke | $26,000, $32,500 |
+| 200 HP V6 FourStroke | $28,000, $35,000 |
 
-**What you don't need:** Mercury's premium Verado V8/V10s on a family runabout under 22 feet. They're great motors but priced for performance fishing boats and big cruisers, overkill on a 19-foot bowrider that mostly goes to the swim spot.
+"All-in" means motor, rigging, prop, and installation. If you're repowering, the trade-in value on your existing motor, typically $1,500, $5,000 depending on age and condition, applies against the total.
 
-## Pricing. Real HBW All-In Numbers
+### What We Do
 
-These are mid-range CAD prices for a Mercury motor + rigging on a typical family runabout. Use the [configurator](https://mercuryrepower.ca) for the exact build:
+We rig family runabouts every spring in Gores Landing. Specifically:
 
-| Motor | All-in pricing (CAD, before HST) |
-|-------|----------------------------------|
-| 75 HP FourStroke | $14,500–$16,500 |
-| 90 HP FourStroke | $15,500–$18,500 |
-| 115 HP FourStroke | $17,500–$22,500 |
-| 150 HP FourStroke | $23,000–$30,000 |
-| 175 HP V6 FourStroke | $26,000–$32,500 |
-| 200 HP V6 FourStroke | $28,000–$35,000 |
-| 250 HP V6 FourStroke | $33,000–$40,000 |
+- **Boat-to-motor matching**, Bring the boat in or send photos with the capacity plate spec, and we'll spec the right HP for how you'll actually use it.
+- **Repower quotes through the live configurator**, Real CAD pricing in about 90 seconds at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+- **Trade-in valuation**, We give fair-market value on your old motor or boat. No lowballing.
+- **Annual service**, Mercury Platinum dealer, factory-trained techs, ethanol-free 89 marine gas at the dock.
 
-"All-in" means motor, rigging, prop, and installation. If you're repowering, factor in trade-in value on your existing motor, for most family runabouts that's $1,500–$5,000 depending on age and condition.
+If you're genuinely unsure between two HP ratings, call us before you build a quote. Picking right is more important than picking fast.
 
-## What HBW Does
+---
 
-We rig family runabouts every spring. Specifically:
+## FAQs
 
-- **Boat-to-motor matching**, bring your boat in (or send photos + the capacity plate spec) and we'll spec the right HP for how you'll actually use it
-- **Repower quotes through the live configurator**, real CAD pricing in 90 seconds at [mercuryrepower.ca](https://mercuryrepower.ca)
-- **Trade-in valuation** on your old motor or boat, we don't lowball, the configurator includes a trade quote
-- **Annual service** at our Gores Landing shop. Mercury Platinum dealer, factory-trained techs, ethanol-free 89 marine gas at the dock
+**What's the best Mercury for a 17-foot runabout?** 
+For most 17-foot hulls, the Mercury 115 HP FourStroke. It handles full crew and gear comfortably, planes easily, and is efficient at cruise. The 90 HP works on lighter hulls with lighter loading.
 
-If you're not sure between two HPs, call. Picking right is more important than picking fast.
+**Can I tow a wakeboarder with a Mercury 115?** 
+Light tubing and one or two beginner skiers, yes. Consistent wakeboarding with a full crew requires the 150 HP or higher. The 115 is marginal for active water sports with heavy loading.
+
+**Should I get FourStroke or Pro XS for a family boat?** 
+FourStroke, for almost every family application. Quieter, better fuel economy at cruise, and smoother in the mid-range where family boating actually happens. Pro XS is for performance and tournament applications.
+
+**What's the capacity plate and why does it matter?** 
+The capacity plate is a Coast Guard-mandated rating on your boat that specifies the maximum HP, maximum persons, and maximum weight. Going above the HP rating creates compliance, insurance, and warranty problems. We won't quote a motor above your capacity plate.
+
+**Is it worth repowering vs. buying a new boat?** 
+For most solid hulls, yes. A repower costs a fraction of a comparable new boat and puts new Mercury performance on a hull you already know. See our [hull replacement vs. repower guide](/blog/boat-hull-replacement-vs-repower-decision) for the full breakdown.
+
+**What does "all-in" pricing mean?** 
+Motor, rigging (controls, harness, gauges), prop, and installation. We quote all-in because that's the only number that matters when you're budgeting. Motor-only prices are interesting trivia.
+
+---
+
+## Internal Links
+
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
+
+---
+
+## CTA
+
+Ready to find the right Mercury for your family runabout? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, real CAD pricing, no phone tag, no "call for price."
+
+Not sure where to start? Call **905-342-2153**. We answer the phone and we'll tell you the honest answer for your hull.
+
+---
 
 ## FAQs
 
@@ -166,7 +204,7 @@ Significantly. Modern Mercury 4-strokes are conversation-quiet at cruise; old 2-
 
 ### How much should fuel cost on a typical family Saturday?
 
-$80–$300 depending on motor size and how hard you run it. Modern Mercurys (FourStrokes especially) are fuel-efficient by historical standards; a 90-115 HP family boat run sensibly is genuinely cheap to operate compared to even ten years ago.
+$80-$300 depending on motor size and how hard you run it. Modern Mercurys (FourStrokes especially) are fuel-efficient by historical standards; a 90-115 HP family boat run sensibly is genuinely cheap to operate compared to even ten years ago.
 
 ## Next steps
 

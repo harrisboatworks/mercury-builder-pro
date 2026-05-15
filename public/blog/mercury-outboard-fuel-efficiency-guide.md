@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,198 +29,151 @@ content_type: blog_article
 
 ## Article
 
-# Mercury Outboard Fuel Efficiency Guide (2026)
-
-*Last reviewed: 2026-05-07*
-
-> **Quick answer:** Modern Mercury FourStrokes burn 25-40 percent less fuel than two-stroke equivalents at cruise. Real efficiency comes from prop pitch matched to load, clean hull, and cruising at the motor's mid-RPM sweet spot, not from the smallest motor that fits. We dial in props on every install. Quote a complete package at mercuryrepower.ca.
-
-The single biggest fuel-efficiency lever on a Mercury is prop selection. Right prop running at correct WOT RPM gives best economy. Other levers in order: trim, hull cleanliness, weight reduction, and cruise speed selection. HP class matters less than most owners assume; modern FourStrokes are all efficient at correct cruise. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
-
-## Quick recommendation
-
-Most Mercury owners overspend on fuel because of one of three things: wrong prop, bad trim discipline, or running at the wrong cruise speed for their boat and motor. None of those are HP-class problems. They are setup and operating problems.
-
-A correctly-rigged Mercury 90 EXLPT FourStroke on a 16 to 18 ft aluminum console can run 4 to 5 mph per US gallon at cruise. A poorly-rigged version of the same motor can run 3 to 3.5 mph per US gallon. Same motor, different fuel burn. The difference is prop, trim, and operation.
-
-Real fuel use depends on hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
-
-## What changes fuel efficiency
-
-Five biggest levers:
-
-- **Prop selection.** A wrong prop can cost 15% or more in fuel economy. Right prop is the one that lets the motor reach mid-band of rated WOT RPM with typical loading.
-- **Trim.** Running flat (no trim up) at cruise is fuel-wasteful. Proper trim cuts drag and improves economy 10 to 20%.
-- **Hull cleanliness.** Bottom growth, weeds dragging, and propeller debris all hurt fuel economy. Inspect during commissioning.
-- **Weight.** Every 100 lbs of unnecessary gear hurts fuel economy slightly. Cumulative effect of full coolers, extra anchors, and old gear adds up.
-- **Cruise speed selection.** Most Mercurys are most efficient at a specific RPM range (often 3,500 to 4,500 RPM at cruise). Running outside that band costs efficiency.
-
-## Prop selection: the biggest single lever
-
-A correctly-pitched prop lets the motor reach mid-band of its rated WOT RPM with your typical loading. This is the test that matters.
-
-For example, the Mercury 90 EXLPT has a rated WOT RPM of 5,000 to 5,800 RPM. The right prop lets you reach 5,400 RPM (mid-band) with typical loading. If the prop is wrong:
-
-- **Pitch too high:** Motor cannot reach rated RPM. Lugs the engine, hurts economy, and shortens motor life.
-- **Pitch too low:** Motor over-revs at WOT. Wastes fuel at cruise, increases wear.
-
-We test prop pitch during sea-trial of every Mercury repower at HBW. The right prop is non-negotiable for fuel efficiency.
-
-For aluminum vs stainless:
-
-- **Aluminum 3-blade ($450 CAD):** Adequate for HP up to 115. Lower top speed, similar cruise economy to stainless.
-- **Stainless 3 or 4-blade ($800 to $2,000 CAD):** Better for 150 HP and up. Slightly better cruise economy than aluminum.
-
-See our [Mercury propeller selection guide](/blog/mercury-propeller-selection-guide) for the full picture.
-
-## Trim discipline: the second biggest lever
-
-Most boaters run too flat at cruise. The boat is on plane but the bow is being pushed through more water than necessary. Symptoms of bad trim:
-
-- **Spray off the bow** at cruise speed
-- **Boat feels "plowed"** rather than skipping along
-- **Engine RPM feels high** for the speed
-- **Wake is bigger** than it should be
-
-Proper trim at cruise:
-
-- **Bow rises** to reduce wetted hull area
-- **Spray drops back** behind the boat
-- **Engine RPM matches speed efficiently**
-- **Boat feels lighter** and more responsive
-
-Most Mercurys with power trim get this right with a few seconds of practice. Trim up gradually until the bow lifts and speed increases without RPM increasing. That is the efficient trim point.
-
-## Cruise speed selection
-
-Most Mercurys are most efficient at a specific cruise RPM, typically 3,500 to 4,500 RPM. The corresponding speed depends on hull and prop, but is usually somewhere between 25 and 35 mph for typical aluminum console boats.
-
-Running at WOT (full throttle) is fuel-wasteful. Running at idle (3 to 5 mph) is also fuel-wasteful per mile. The sweet spot is the cruise band.
-
-For most Mercury 90 to 115 HP installs:
-
-- **WOT (full throttle):** Highest mph, lowest mph per gallon
-- **Cruise (3,500 to 4,500 RPM):** Best mph per gallon
-- **Idle/no-wake speed (1,000 to 1,500 RPM):** Worst mph per gallon
-
-If you have a long run between two points, cruise speed is the most fuel-efficient choice. If you are working a fishing area at trolling speeds, a kicker is dramatically more efficient than the main motor.
-
-## Mercury motor family fuel economy comparison
-
-For typical 16 to 18 ft aluminum console boats at cruise:
-
-| Motor | Cruise mpg | WOT mpg | Best use |
-|---|---|---|---|
-| Mercury 60 EFI | ~5 to 6 | ~3 to 4 | Smaller hulls, two-person fishing |
-| Mercury 90 EXLPT FourStroke | ~4 to 5 | ~2.5 to 3.5 | Sweet spot for most Kawartha boats |
-| Mercury 115 EXLPT FourStroke | ~3.5 to 4.5 | ~2 to 3 | Family use, mixed recreation |
-| Mercury 150 EXLPT FourStroke | ~3 to 4 | ~1.5 to 2.5 | Bigger hulls, water sports |
-| Mercury 200 EXLPT FourStroke | ~2.5 to 3.5 | ~1 to 2 | Performance applications |
-
-Note: mpg figures are typical Kawartha-area sea-trial results in US gallons. Real numbers vary by hull, loading, prop, and operating conditions. The differences within an HP class (e.g., 90 EXLPT vs 90 Pro XS at the same load) are smaller than between HP classes.
-
-For specific motor pricing, [build a quote](/quote/motor-selection).
-
-## What HBW checks for fuel efficiency
-
-When customers report fuel economy concerns, we check:
-
-- **Prop type, pitch, and condition.** Wrong prop is the most common issue.
-- **WOT RPM at typical loading.** Confirms prop is correct.
-- **Trim function and use.** Some boaters do not know how to use trim properly.
-- **Hull cleanliness.** Bottom growth and debris hurt economy.
-- **Engine condition.** Misfires, fuel system issues, or air leaks reduce economy.
-- **Weight and loading.** Sometimes the boat is just overloaded for typical use.
-- **Cruise speed selection.** Some boaters run WOT all the time and burn fuel for no reason.
-
-We sea-trial during repowers and address any of the above. Sometimes the fix is a different prop. Sometimes it's coaching the customer on trim. Sometimes it's a fuel system service that catches a small issue before it grows.
-
-## Common fuel efficiency mistakes
-
-We see these every season:
-
-1. **Wrong prop.** Single biggest issue. Pitch wrong by one or two inches costs 15%+ in fuel.
-2. **No trim use.** Boat runs flat all day. Bow plows water. Engine works hard for no speed gain.
-3. **Running WOT all the time.** Some boaters always go full throttle. Cruise band is much more efficient.
-4. **Overloaded boat.** Coolers full, full tank, gear from past 5 seasons. Every 100 lbs hurts economy.
-5. **Skipped maintenance.** Spark plugs, fuel filter, water-pump impeller in good condition keeps the motor running efficiently. Skipped service hurts economy.
-
-## What about ethanol fuel?
-
-Modern Mercury FourStrokes (2010+) are designed to handle E10 ethanol-blended pump gas. The Canadian standard 87 octane E10 is what most boaters use and it works fine.
-
-E15 (15% ethanol) is not approved for marine use. Avoid it.
-
-E0 (no ethanol) is preferred where available but rare in Canada. If you can find non-ethanol fuel at certain marinas or specialty stations, it's slightly easier on fuel system components and stores longer between uses. Not a fuel efficiency lever directly.
-
-For all storage longer than a month, treat fuel with stabilizer (Mercury Quickstor or equivalent). Old untreated ethanol fuel is the leading cause of fuel system gum-up we see at HBW.
-
-## Related guides
-
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop is the biggest fuel lever
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), keeping motors efficient
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP class fuel implications
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), motor family efficiency comparison
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), fuel system troubleshooting
-
-## Ready to optimize fuel efficiency?
-
-Build a quote with the right prop and rigging on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If your existing Mercury has fuel economy issues you want to diagnose, [give us a call at (905) 342-2153](tel:9053422153). We can walk through prop, trim, and motor condition to find the issue.
+**Language:** English 
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+## Quick Answer
+
+The biggest fuel efficiency lever on a Mercury outboard is prop selection, a correctly pitched prop at the right WOT RPM band can make a 15, 20% difference in economy compared to a mismatched one. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
 
 ---
 
-## FAQ
+## Mercury Outboard Fuel Efficiency: Get More Distance Per Tank
 
-**What's the most fuel-efficient Mercury outboard?**
-For typical recreational use, the Mercury 60 EFI to 90 EXLPT FourStroke is the most efficient HP class. Above 90 HP, larger displacement motors burn more fuel at the same cruise speed. Below 60 HP, smaller motors burn less per mile but carry less load.
+Most conversations about fuel economy start in the wrong place. People ask which horsepower is most efficient, or whether two-strokes or four-strokes burn less fuel. Those questions have answers, but they're not the answers that actually change what you spend at the fuel dock.
 
-**How many miles per gallon does a Mercury 90 get?**
-4 to 5 mph per US gallon at cruise on a typical 16 to 18 ft aluminum console boat. WOT runs lower (2.5 to 3.5 mph per gallon). Numbers vary by prop, loading, and trim discipline.
+The real conversation starts with your prop.
 
-**Is the Mercury Pro XS more or less efficient than FourStroke?**
-At the same HP and same cruise speed, similar. Pro XS gives faster acceleration but is not significantly more or less efficient at typical cruise. Tournament use that runs at WOT more often consumes more fuel; that's an operating difference, not a motor-family difference.
+This guide covers what actually drives fuel economy on a Mercury outboard, in the order that matters. We rig and sea-trial Mercurys at our shop in Gores Landing every season, and we see the same setup problems cutting the same owners' fuel economy year after year.
 
-**How does prop pitch affect fuel economy?**
-A wrong-pitch prop can cost 15% or more in fuel economy. Right prop is the one that lets the motor reach mid-band of rated WOT RPM with typical loading. Wrong pitch makes the motor work outside its efficient RPM band.
+### The Five Levers, in Order
 
-**Should I get a 4-blade prop for fuel economy?**
-Not necessarily. 4-blade props give better hole shot and cruising stability, similar fuel economy to 3-blade. 3-blade is best for top speed and slightly better fuel economy in some applications. Choose based on use case, not strictly on fuel economy.
+Fuel economy on an outboard comes down to five controllable variables. Fix them in this order, the first two deliver the most gain.
 
-**Does trim affect fuel economy?**
-Yes meaningfully. Proper trim at cruise can improve fuel economy 10 to 20% over running flat. Most boaters underuse trim. Practice trimming up gradually until the boat speed increases without RPM increasing.
+**1. Prop selection**
 
-**Is ethanol fuel okay for Mercury outboards?**
-Yes, E10 (10% ethanol) standard pump gas is approved for modern Mercury FourStrokes. E15 (15% ethanol) is not approved for marine use. E0 (no ethanol) is preferred where available but rare in Canada.
+A wrong prop is the most common cause of poor fuel economy we see at HBW. A prop that's too high in pitch loads the engine down and prevents it from reaching its rated WOT RPM, the engine lugs, burns more fuel, and wears faster. A prop that's too low pitches allows over-revving at WOT, which also wastes fuel at cruise.
 
-**Should I use premium gas?**
-Most Mercurys are designed for 87 octane regular pump gas. Some higher-output motors recommend 89 or 91 octane. Check your owner's manual. Higher octane is wasted on motors that don't require it.
+The test is simple: at WOT with typical load, your Mercury should reach mid-band of its rated RPM range. Check your owner's manual for the rated range on your specific model. If you're consistently above or below that mid-band, your prop pitch needs adjustment.
 
-**Does a kicker save fuel during fishing?**
-Yes substantially. A 9.9 ProKicker at trolling speed (1 to 2 mph) burns far less fuel than a 90 HP main motor at the same speed. Main motors are inefficient at slow speeds; kickers are efficient. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide).
+On a typical day at HBW, we'll trial a motor two or three times with different props before settling on the right one for a specific hull and load combination. It's not guesswork, it's measurement.
 
-**How does hull cleanliness affect fuel economy?**
-Bottom growth, weeds, and debris all hurt fuel economy by adding drag. Inspect and clean hull during commissioning and periodically through the season. Bottom paint is rare on Ontario freshwater boats but inspecting is still worthwhile.
+**2. Trim**
 
-**What's the most fuel-efficient cruise speed?**
-Typically 25 to 35 mph for most aluminum console boats with Mercury 90 to 115 HP. The cruise band corresponds to the motor's most efficient RPM range. Running below or above this band costs efficiency.
+Running flat at cruise (no trim up) is one of the easiest fuel economy mistakes to make and one of the easiest to fix. Properly trimmed, the bow lifts slightly and the hull rides efficiently through the water rather than plowing. The fuel economy difference between flat and properly trimmed is typically 10, 20% at cruise speeds.
 
-**Will fuel stabilizer improve fuel economy?**
-Not directly. Stabilizer prevents fuel system gum-up during storage. A clean fuel system runs efficiently; a gummed-up system runs poorly. Stabilizer is preventive maintenance, not a direct economy boost.
+The right trim angle is the one where the motor is working least to maintain your target speed. If you're not in the habit of adjusting trim as speed and load change, start there.
+
+**3. Hull cleanliness**
+
+A weedy or fouled hull adds drag. This matters more for boats that sit in slips than for trailer boats, but even moderate growth on a hull increases fuel consumption. During spring commissioning, check the bottom and props for debris, growth, and damage.
+
+**4. Weight**
+
+Every unnecessary 100 lbs on the boat costs fuel. The cumulative effect of a full cooler, extra anchors, gear that never leaves the boat, and passengers is real. It doesn't mean you should kick people out, it means if you're comparing fuel burns across trips, load matters.
+
+**5. Cruise speed selection**
+
+Modern Mercury FourStrokes have a cruise efficiency sweet spot, typically somewhere in the 3,500, 4,500 RPM range, but this varies by motor and hull. Running above or below that band costs efficiency. The right approach is to identify your motor's best cruise RPM (your dealer or owner's manual can help), and aim for it.
 
 ---
 
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+## What Horsepower Actually Does to Fuel Economy
+
+Modern Mercury FourStrokes burn significantly less fuel than older two-strokes of equivalent power, Mercury's published figures show substantial efficiency gains for current FourStroke models compared to comparable two-stroke technology, though exact percentages vary by model and operating conditions.
+
+Within the FourStroke lineup, the fuel economy difference between a correctly-rigged 90 HP and a correctly-rigged 115 HP on the same hull is smaller than most people expect. The bigger engine can run at lower RPM to do the same work, which partially offsets the larger displacement. The motor that's set up right for its hull will outperform a mismatched motor of any size.
+
+This is why we don't recommend "getting a smaller motor to save fuel." If the smaller motor isn't properly matched to the hull, it will work harder and burn more, not less.
+
+---
+
+## Practical Fuel Consumption Ranges
+
+Real-world fuel consumption depends on hull design, load, prop selection, mounting height, water conditions, and how you operate the boat. The following are typical ranges based on boats we've rigged and run at HBW. These are rough orientation numbers, not guarantees, and not a substitute for a sea trial with your specific setup.
+
+| Application | Typical fuel consumption range at cruise |
+|---|---|
+| Small aluminum with 25, 40 HP FourStroke | 2.5, 4.5 L/hr at cruise |
+| Mid-size aluminum with 60, 90 HP FourStroke | 5, 10 L/hr at cruise |
+| Fiberglass runabout with 115, 150 HP FourStroke | 10, 18 L/hr at cruise |
+| Larger boats with 200+ HP | Highly variable; setup-dependent |
+
+If your fuel burn is significantly above these ranges for your setup, prop pitch, trim, or hull condition is the first place to look.
+
+---
+
+## Ethanol and Fuel Quality
+
+At HBW, we sell ethanol-free fuel on-site. We recommend it for outboards, ethanol absorbs water over time, which causes phase separation in stored fuel and contributes to fuel system corrosion, particularly in older motors and boats with fibreglass tanks. If you're running pump gas with ethanol, use a quality fuel stabilizer when the boat sits for more than a few weeks, and change your fuel filter at service intervals.
+
+Fuel quality affects both economy and reliability. Stale or contaminated fuel is one of the leading causes of spring no-start problems we diagnose every May.
+
+---
+
+## When Fuel Economy Changes Suddenly
+
+If your fuel economy gets noticeably worse between seasons or even during a season, something changed. Common causes:
+
+- **Prop damage.** A ding or bend in a prop blade changes pitch and efficiency dramatically. Inspect your prop every season.
+- **Impeller or cooling system issue.** An engine running hotter than normal due to a worn impeller will work harder and burn more.
+- **Fouled fuel system.** Clogged injectors or a dirty carburettor on older motors reduces combustion efficiency.
+- **Ignition or tune issues.** Fouled spark plugs, incorrect timing on older motors.
+- **Increased hull drag.** Growth, damage, or added gear.
+
+A sudden change in fuel economy is worth investigating. Don't assume it's "just how the boat runs."
+
+---
+
+## Getting Your Prop Right at HBW
+
+We test prop pitch on every Mercury repower and new motor install at HBW. If you bought your motor elsewhere, or if your prop was selected years ago for a different boat or load, it's worth having it checked. A proper sea trial takes 30, 45 minutes and tells you more about your setup than any spec sheet.
+
+For engine repairs, we only service Mercury and Mercruiser.
+
+Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+## Frequently Asked Questions
+
+**Does a bigger motor always burn more fuel?** 
+Not necessarily at cruise. A larger motor running at lower RPM to maintain the same speed can burn similar amounts of fuel to a smaller motor working harder. The bigger factor is whether either motor is correctly matched to the hull with the right prop.
+
+**How much does the right prop actually matter?** 
+Significantly. A mismatched prop can reduce fuel economy by 15, 25% compared to a correctly pitched one on the same motor and hull. It also affects performance, acceleration, and engine longevity.
+
+**Should I run higher octane fuel for better economy?** 
+Mercury FourStrokes are designed to run on regular octane fuel (87 AKI). Unless your owner's manual specifies otherwise, higher octane doesn't improve fuel economy.
+
+**Does trim really make a meaningful difference?** 
+Yes. The difference between a boat running flat and a boat trimmed for cruise can be 10, 20% in fuel economy. It's one of the cheapest efficiency gains available, since it costs nothing.
+
+**What's the best cruise RPM for fuel economy?** 
+It varies by motor and hull. Most Mercury FourStrokes have a cruise efficiency range that your dealer or owner's manual can identify. The goal is to find the RPM where you're making acceptable speed without the motor working unnecessarily hard.
+
+**Can I improve fuel economy on an older motor?** 
+Often yes, prop tuning, fresh plugs, cleaned injectors or carburettor, and fresh fuel all help. At some point, an aging motor with worn rings and seals will burn more fuel regardless of tuning. That's when a repower conversation makes sense.
+
+---
+
+## Internal Links
+
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
+
+---
+
+## CTA
+
+**Ready to dial in your Mercury?** 
+Whether you want a prop check, a full service, or a quote on a new motor package: [hbw.wiki/service](https://hbw.wiki/service) is where to start. Or build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+
+Phone: 905-342-2153 | Harris Boat Works, Gores Landing, ON | Since 1947
+
+---
 
 ## FAQs
 
@@ -242,15 +195,15 @@ Idling uses minimal fuel (about 0.5 GPH for a 100HP motor), but extended idling 
 
 ### Does ethanol-free fuel improve outboard fuel efficiency?
 
-Ethanol-free fuel produces slightly better fuel economy than E10 (10% ethanol), typically a 3–5% improvement, because ethanol contains less energy per litre than gasoline. In Ontario, ethanol-free marine fuel is available at many marinas. Beyond efficiency, ethanol-free fuel is better for older fuel systems, ethanol absorbs water, can damage rubber components in older carburettors, and promotes fuel degradation during long storage. For modern EFI Mercury outboards, E10 is approved and works fine; ethanol-free is still preferable if available.
+Ethanol-free fuel produces slightly better fuel economy than E10 (10% ethanol), typically a 3-5% improvement, because ethanol contains less energy per litre than gasoline. In Ontario, ethanol-free marine fuel is available at many marinas. Beyond efficiency, ethanol-free fuel is better for older fuel systems, ethanol absorbs water, can damage rubber components in older carburettors, and promotes fuel degradation during long storage. For modern EFI Mercury outboards, E10 is approved and works fine; ethanol-free is still preferable if available.
 
 ### What is the best cruising speed for fuel economy on Rice Lake?
 
-On Rice Lake, the most fuel-efficient cruising speed for most outboard boats is the speed at which the hull is fully on plane and stable, typically 22–32 km/h, corresponding to roughly 3,500–4,500 RPM on a properly propped motor. Fuel consumption at full throttle is often 2–3 times higher than at efficient cruise. For a round trip from Gores Landing to Bewdley and back, roughly 16 km, the fuel difference between efficient cruise and wide-open is measurable. Run at efficient cruise and you'll spend less on fuel and put less wear on the engine.
+On Rice Lake, the most fuel-efficient cruising speed for most outboard boats is the speed at which the hull is fully on plane and stable, typically 22-32 km/h, corresponding to roughly 3,500-4,500 RPM on a properly propped motor. Fuel consumption at full throttle is often 2-3 times higher than at efficient cruise. For a round trip from Gores Landing to Bewdley and back, roughly 16 km, the fuel difference between efficient cruise and wide-open is measurable. Run at efficient cruise and you'll spend less on fuel and put less wear on the engine.
 
 ### Does repowering with a newer Mercury outboard save fuel?
 
-Yes, significantly. A modern Mercury FourStroke EFI outboard is substantially more fuel-efficient than an older two-stroke or early EFI motor of the same horsepower. A customer repowering from a 10–15 year old two-stroke 150HP to a current Mercury 150HP FourStroke typically sees fuel consumption drop by 30–50% at comparable cruising speeds. Over a season, that adds up to hundreds of dollars in fuel savings. The fuel savings alone rarely pay off a repower in the short term, but they meaningfully reduce the ongoing operating cost of the new engine.
+Yes, significantly. A modern Mercury FourStroke EFI outboard is substantially more fuel-efficient than an older two-stroke or early EFI motor of the same horsepower. A customer repowering from a 10-15 year old two-stroke 150HP to a current Mercury 150HP FourStroke typically sees fuel consumption drop by 30-50% at comparable cruising speeds. Over a season, that adds up to hundreds of dollars in fuel savings. The fuel savings alone rarely pay off a repower in the short term, but they meaningfully reduce the ongoing operating cost of the new engine.
 
 ### How do I read my Mercury SmartCraft fuel economy display?
 
@@ -258,7 +211,7 @@ Mercury's SmartCraft system displays fuel economy in several formats: instantane
 
 ### What fuel should I use in my Mercury outboard in Ontario?
 
-Mercury recommends regular unleaded gasoline with a minimum 87 octane rating for most FourStroke and Pro XS outboards; Verado models may recommend 89 octane, check your owner's manual. In Ontario, most marina fuel is E10 (10% ethanol blend), which is approved by Mercury for current models. Ethanol-free premium marine fuel, when available, offers slightly better efficiency (3–5%) and is preferable for long-term storage situations. Never use E15 or higher ethanol blends, these are not approved for Marine use and can damage fuel system components.
+Mercury recommends regular unleaded gasoline with a minimum 87 octane rating for most FourStroke and Pro XS outboards; Verado models may recommend 89 octane, check your owner's manual. In Ontario, most marina fuel is E10 (10% ethanol blend), which is approved by Mercury for current models. Ethanol-free premium marine fuel, when available, offers slightly better efficiency (3-5%) and is preferable for long-term storage situations. Never use E15 or higher ethanol blends, these are not approved for Marine use and can damage fuel system components.
 
 ## Next steps
 

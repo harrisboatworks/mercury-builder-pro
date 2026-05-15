@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -47,11 +47,11 @@ We've stored 311+ boats per year for the last several seasons. Many of them come
 
 | Storage option | Typical pricing (21-ft boat) | What's included |
 |---------------|----------------------------|-----------------|
-| **GTA outdoor + shrinkwrap (urban)** | $700–$1,200 | Shrinkwrap, outdoor parking, basic winterize |
-| **GTA indoor unheated** | $1,200–$2,000 | Indoor parking, basic winterize, no UV |
-| **GTA indoor heated** | $1,800–$3,500 | Indoor heated, no winterization needed |
-| **Muskoka indoor heated** | $2,500–$4,000+ | Premium service, distance |
-| **HBW outdoor + shrinkwrap + winterize** | **$700–$1,200** | Shrinkwrap (frame, vents, strapping) + full Mercury winterization + battery removal + spring commissioning prep |
+| **GTA outdoor + shrinkwrap (urban)** | $700-$1,200 | Shrinkwrap, outdoor parking, basic winterize |
+| **GTA indoor unheated** | $1,200-$2,000 | Indoor parking, basic winterize, no UV |
+| **GTA indoor heated** | $1,800-$3,500 | Indoor heated, no winterization needed |
+| **Muskoka indoor heated** | $2,500-$4,000+ | Premium service, distance |
+| **HBW outdoor + shrinkwrap + winterize** | **$700-$1,200** | Shrinkwrap (frame, vents, strapping) + full Mercury winterization + battery removal + spring commissioning prep |
 
 For most GTA boats, **HBW outdoor + shrinkwrap + winterize comes out roughly the same as GTA outdoor** but bundles in the full winterization service that often costs extra at urban marinas. **The price isn't the differentiator, the service is.**
 

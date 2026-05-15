@@ -1,25 +1,25 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury SmartCraft Alarm Codes: What Every Beep, Light, and Fault Code Means (2026 Encyclopedia)"
-description: "A Mercury Platinum dealer's complete guide to Mercury SmartCraft and Guardian alarm codes, what each beep means, what's serious, what's not, and what to do right now."
+title: "Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)"
+description: "Complete Mercury SmartCraft alarm code reference from an Ontario Platinum dealer: what each code means, severity, and exactly what to do next. No forum guesswork."
 category: "Troubleshooting"
 date_published: 2026-05-25
 date_modified: 2026-05-25
-keywords: ["Mercury SmartCraft alarm codes","Mercury Guardian alarm","Mercury fault codes list","SmartCraft warning beeps","Mercury overheat alarm","Mercury low oil pressure alarm","Mercury rev limiter"]
+keywords: ["mercury smartcraft alarm codes","mercury smartcraft alarm codes list","mercury smartcraft alarm codes meanings","mercury alarm code list","smartcraft fault codes mercury","mercury outboard error codes","mercury smartcraft diagnostic","mercury outboard warning lights"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury SmartCraft Alarm Codes: What Every Beep, Light, and Fault Code Means (2026 Encyclopedia)
+# Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)
 
-> A Mercury Platinum dealer's complete guide to Mercury SmartCraft and Guardian alarm codes, what each beep means, what's serious, what's not, and what to do right now.
+> Complete Mercury SmartCraft alarm code reference from an Ontario Platinum dealer: what each code means, severity, and exactly what to do next. No forum guesswork.
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-25  
@@ -29,286 +29,117 @@ content_type: blog_article
 
 ## Article
 
-# Mercury SmartCraft Alarm Codes: What Every Beep, Light, and Fault Code Means (2026 Encyclopedia)
+# Mercury SmartCraft Alarm Codes: What the Beeps Mean and What to Do Next
 
-*Last reviewed: 2026-05-07*
+## Quick answer
+Mercury SmartCraft alarms are warnings, not decorations. A single beep at key-on is normally a system test, while continuous or repeated beeps can indicate issues such as overheat, low oil, water in fuel, overspeed, sensor faults, or Engine Guardian protection. If the alarm continues or power is reduced, reduce throttle, get the boat to a safe place, and have the fault diagnosed.
 
-> **Quick answer:** SmartCraft alarms range from minor (low fuel, service due) to critical (overheat, low oil pressure). The first response to any alarm: idle down and assess. Don't ignore an alarm to finish the day, most critical alarms protect against catastrophic damage. Diagnostic booking at mercuryrepower.ca.
+Mercury's own documentation describes the warning horn as emitting either a continuous beep or intermittent short beeps. The Engine Guardian system may reduce power to protect the engine when a problem is detected.
 
-If your Mercury just started beeping and you're trying to figure out what to do, read the **Audible Warning Patterns** section first, then come back. Don't keep running the motor while the alarm is active. Some alarms mean "annoying"; some mean "you have 30 seconds before something catastrophic happens." We'll tell you which is which.
+## First: do not ignore the beep
+A Mercury alarm is trying to tell you something. It may be minor. It may be serious. But it is not background music.
 
-We've been a Mercury Platinum dealer in Ontario since 1965. We diagnose SmartCraft codes every week in our shop. This is the most complete, plain-English Mercury alarm code guide we've ever published, built from Mercury's official Guardian system documentation, factory training materials, and the codes we actually see come through the shop.
+Some boaters hear a beep and keep running because the engine "still seems fine." That is how a warning becomes a repair bill with a personality.
 
----
+## Common Mercury warning patterns
 
-## The Two Alarm Systems on Your Mercury
+| Alarm pattern | What it may indicate | What to do |
+|---|---|---|
+| One beep at key-on | Normal system test on many setups | Usually normal if it stops |
+| Four beeps every 2 minutes | Can indicate low oil reserve or water in fuel on applicable systems | Check display/manual and book diagnosis if unsure |
+| Continuous beep | Can indicate overheat, overspeed, sensor issue, or Guardian condition | Reduce throttle, check water flow, stop if needed |
+| Beeping plus reduced power | Engine Guardian may be limiting power | Do not force it; get diagnosed |
+| SmartCraft text warning | Specific fault or system warning | Record exact message before cycling power |
 
-Modern Mercury outboards (2004 and newer at 40 HP+, 2022 and newer at 25 HP+ with electric start) use two integrated warning systems:
+This table is a starting point, not a replacement for the correct Mercury manual for your serial number. Mercury systems vary by year, horsepower, rigging, display, and engine family.
 
-**Guardian System**, the audible alarm horn at the helm. Built into virtually every electric-start Mercury since the early 2000s. Speaks in beep patterns. **This is the system that wakes you up at 3,500 RPM in the middle of the lake.**
+## What SmartCraft is actually doing
+SmartCraft is Mercury's engine information and monitoring system. Depending on your setup, it may display RPM, coolant temperature, battery voltage, fuel data, engine hours, alarms, and diagnostic information. The warning horn gets your attention. The display, if equipped, gives more context.
 
-**SmartCraft Diagnostic Codes**, fault codes generated by the engine ECU and displayed on:
-- A Mercury VesselView display (502, 703, 903, or VesselView Mobile via app)
-- Compatible chartplotters (Simrad, Garmin, Raymarine via NMEA 2000 + SmartCraft Connect)
-- Mercury diagnostic tools at the dealer (laptop with G3 software)
+If your boat has a SmartCraft display, take a photo of the exact warning before turning everything off. That photo can save a lot of guessing later.
 
-Guardian is the alarm; SmartCraft is the explanation. They work together: the alarm tells you something is wrong RIGHT NOW; the SmartCraft fault code tells the dealer (or anyone with a diagnostic tool) exactly what.
+## HBW dealer note
+"It was beeping" is useful. "It beeped four times every couple minutes, then the SmartCraft screen said water in fuel" is much more useful. Your future service writer will silently thank you. Maybe not out loud. We are still marina people.
 
----
+## What to do when the alarm sounds
 
-## Audible Warning Patterns. What the Beeps Actually Mean
+### Reduce throttle
+If the alarm sounds while running, reduce throttle. If the engine is in Guardian mode, do not try to power through it.
 
-The **single most useful piece of information** for a Mercury owner: the beep patterns are standardized across modern Mercurys. Memorize these. Don't memorize anything else from this article, just these.
+### Check the obvious water-flow signs
+If it may be overheating, look for water flow from the tell-tale and check whether weeds, mud, or debris are blocking the water intakes. Do not put hands near moving parts. Do not run the engine dry.
 
-| Beep pattern | What it means | Severity | What to do |
-|--------------|---------------|----------|------------|
-| **One short beep at startup** (less than 1 second) | System self-check passed, all good | OK | Carry on |
-| **Six short beeps every 5 seconds** | **Engine overheating (Guardian active)** | 🔴 CRITICAL | Throttle to idle, check tell-tale, kill engine if no flow. See our [Outboard Overheating guide](/blog/outboard-overheating-emergency-guide). |
-| **Four short beeps every 5 seconds** | **Low oil pressure** | 🔴 CRITICAL | **STOP IMMEDIATELY.** Don't restart. Towing only. Continued running will destroy the engine in minutes. |
-| **One long beep (continuous, 5+ seconds)** | Critical engine fault. Guardian has activated power reduction | 🔴 CRITICAL | Idle to shore. Do not run hard. Engine is in protection mode. |
-| **Two short beeps every 5 seconds** | Water in fuel detected (water-separator filter alarm) | 🟡 HIGH | Throttle back. Drain fuel-water separator. If alarm continues, return to dock. |
-| **Three short beeps every 5 seconds** | Battery voltage low or charging system fault | 🟡 MEDIUM | Reduce electrical load. Check charging at next stop. |
-| **Five short beeps every 5 seconds** | Maintenance reminder (100-hour or annual service due) | 🟢 LOW | Not an emergency. Schedule service when convenient. |
-| **Continuous fast beeping at WOT** | Rev-limiter active (engine over-revving) | 🟡 MEDIUM | Throttle back. Likely a ventilation issue, wrong prop, or out-of-water test. |
+### Watch the temperature and voltage
+If your display shows temperature or voltage, note the numbers. High temperature and low voltage can both trigger warnings depending on the system.
 
-**The difference that matters:** RED = stop now. YELLOW = head back. GREEN = book service.
+### Record the alarm
+Write down:
+- Beep pattern
+- Display message
+- RPM when it happened
+- Speed/load
+- Water conditions
+- Whether power was reduced
+- Whether the engine restarted normally
 
-If you can't tell which pattern you're hearing, **default to "throttle to idle and head back to the dock."** A few wasted minutes of an outing is nothing compared to a $5,000+ powerhead replacement from running through a critical alarm.
+## What not to do
+- Do not keep running at speed with an active alarm.
+- Do not assume all beeps mean the same thing.
+- Do not clear codes and pretend nothing happened.
+- Do not replace random parts based on a forum post from 2009.
+- Do not unplug warning systems because the sound is annoying. The sound is annoying on purpose.
 
----
+## Why this matters on Rice Lake and the Kawarthas
+Ontario boating seasons are short. If your boat throws an alarm in July, losing a weekend hurts. If it throws an alarm before a long weekend, it hurts in bold.
 
-## What "Guardian System" Actually Does Behind the Scenes
+That is why fault information matters. A proper description can help the shop decide whether this is likely a quick check, a fuel issue, a cooling issue, a sensor fault, or something that needs deeper diagnostics.
 
-When Guardian detects a critical condition (overheat, low oil pressure, knock sensor activity), it doesn't just beep. **It actively reduces engine power.** This is the most important thing to understand:
+## When to request service
+Request service if:
+- The alarm repeats.
+- The engine goes into Guardian mode.
+- Temperature rises.
+- The tell-tale is weak or inconsistent.
+- The alarm appears after winter storage.
+- You see "water in fuel," "overheat," or sensor warnings.
+- You are not sure what the alarm means.
 
-- Above 4,500 RPM: **automatic RPM rollback** to a safe level (typically 2,000-3,000 RPM)
-- Sustained critical condition: **power reduced to a "limp home" state** (~1,000-1,500 RPM)
-- Catastrophic risk (fuel pressure failure, severe knock): **engine shut down**
+For engine repairs, we only service Mercury and Mercruiser. Submit requests at [hbw.wiki/service](https://hbw.wiki/service).
 
-**This is a feature, not a malfunction.** The engine is protecting itself. If you experience sudden RPM drop with the alarm active, don't fight it. Guardian is buying you time to get to safety. Trying to override it (mashing the throttle) won't restore power; it'll just stress the protection system.
+## Bottom line
+SmartCraft alarms are there to protect the engine and the day. A one-beep key-on test may be normal. Repeated or continuous alarms deserve attention.
 
-When the underlying condition is resolved (e.g., water flow restored after clearing weeds), Guardian releases. You'll know because the alarm stops and full RPM range returns.
+If your Mercury is beeping, record the pattern, take a photo of the display, reduce throttle, and get it checked before the small warning becomes the expensive version.
 
----
+Need Mercury alarm diagnosis near Rice Lake, Peterborough, or the Kawarthas? Submit a service request at [hbw.wiki/service](https://hbw.wiki/service).
 
-## SmartCraft Fault Code Categories
-
-When you have a VesselView display, Mercury Marine App, or a chartplotter showing engine data, you'll see **specific fault codes** alongside or instead of the audible alarm. Mercury fault codes follow categories, the exact code numbers vary by motor generation but the categories are consistent:
-
-### Engine sensor faults (P0xxx series, common)
-
-These are the codes you see most often. Sensor failures don't usually mean the engine is dying, they mean the ECU has lost a piece of information it expects.
-
-| Symptom | Probable code area | What's happening |
-|---------|-------------------|------------------|
-| Engine runs but RPM display erratic | RPM sensor / crankshaft position | Sensor or wire harness, usually fixable in shop |
-| Random rev changes, not driver-induced | MAP (manifold air pressure) sensor | Sensor degradation or vacuum leak |
-| Black smoke, rough idle | IAT (intake air temp) sensor | Sensor failed; ECU is using fallback fuel mapping |
-| "Coolant temp" or "engine temp" warning | Temperature sensor (NTC) | Could be real overheat OR sensor failure, diagnose at dealer |
-| Throttle response delayed | TPS (throttle position sensor) | Common wear item on older motors |
-
-### Fuel system faults
-
-| Symptom | Probable area |
-|---------|---------------|
-| Hard start, won't run | Fuel pump pressure low |
-| Stalls under load | Injector clog / fuel filter blocked |
-| "Water in fuel" alarm | Fuel-water separator filter saturated |
-
-### Cooling system faults
-
-| Symptom | Probable area |
-|---------|---------------|
-| Overheat alarm + steam | Real overheat, see [Overheating guide](/blog/outboard-overheating-emergency-guide) |
-| Overheat alarm but no visible issue | Bad temp sensor OR partial impeller damage OR thermostat stuck |
-| Overheat at WOT only | Poppet valve clogged (high-RPM cooling restriction) |
-
-### Electrical faults
-
-| Symptom | Probable area |
-|---------|---------------|
-| Slow crank, voltage warning | Battery weak / charging fault / loose connection |
-| Random shutdowns | Ground fault, ignition wire chafe |
-| Dashboard intermittent | NMEA 2000 / SmartCraft connection issue |
-
-### Knock / detonation
-
-A knock sensor detects abnormal combustion (often from low-octane fuel or bad timing). On Mercury V8/V10/V12, sustained knock activates Guardian and reduces power. **Run 87 octane minimum on V8/V10s, 89 on older inline-6 supercharged Verados.** If you're getting a knock alarm on premium-tier fuel, that's a diagnostic issue, bring it in.
-
----
-
-## The 12 Most-Encountered Codes (and What Each Means in Real Terms)
-
-Based on our shop's actual diagnostic logs over the last few years, here are the 12 codes Mercury owners see most often. **The exact code number varies by motor model; the underlying issue is the same.**
-
-### 1. "Coolant temperature high" / Overheat
-**Audible:** 6 short beeps every 5 sec
-**Most common cause:** weeds/debris blocking water intake (Rice Lake / Kawarthas, mid-summer)
-**Less common:** worn impeller (>3 years), stuck thermostat, cracked water pump housing
-**Action:** see our [Outboard Overheating guide](/blog/outboard-overheating-emergency-guide)
-
-### 2. "Oil pressure low" / Low oil pressure
-**Audible:** 4 short beeps every 5 sec
-**Most common cause:** insufficient oil level (check with motor cold, vertical)
-**Less common:** failed oil pump, worn rod bearings (catastrophic)
-**Action:** STOP. Don't restart. Tow if necessary.
-
-### 3. "Water in fuel" / Fuel-water separator
-**Audible:** 2 short beeps every 5 sec
-**Most common cause:** condensation or contaminated fuel (especially with ethanol pump gas)
-**Action:** drain fuel-water separator filter (it has a clear bowl at the bottom). Replace filter if it's been more than a season.
-
-### 4. "Battery voltage low"
-**Audible:** 3 short beeps every 5 sec
-**Most common cause:** old battery (5+ years), corroded terminal connection
-**Less common:** failed alternator/stator
-**Action:** check connections. Test battery on a multimeter. Replace if below 12.4V at rest.
-
-### 5. "RPM sensor" / Crankshaft position
-**Display:** RPM erratic or 0 RPM
-**Most common cause:** sensor wire damage, sensor failure
-**Action:** dealer diagnostic. Sensor swap is straightforward.
-
-### 6. "MAP sensor" / Manifold air pressure
-**Display:** rough idle, hesitation
-**Most common cause:** vacuum leak or sensor degradation (4-5+ years)
-**Action:** dealer diagnostic. Often a $50-$120 part + 30-60 min labour.
-
-### 7. "Knock detected"
-**Display:** power reduced, alarm active
-**Most common cause:** wrong octane fuel (using 87 in old Verado that needs 89)
-**Less common:** carbon buildup, advanced timing fault
-**Action:** fill with correct octane. If alarm persists, bring it in.
-
-### 8. "Maintenance due" / 100-hour or 300-hour reminder
-**Audible:** 5 short beeps every 5 sec
-**Display:** countdown to service in hours
-**Action:** book service. Not an emergency. See our [20/100/300 Maintenance guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
-
-### 9. "Throttle position sensor"
-**Display:** throttle response feels off, sometimes shifts to limp mode
-**Most common cause:** TPS wear (5-7 years on older motors)
-**Action:** sensor replacement at dealer.
-
-### 10. "Engine over-rev"
-**Audible:** continuous fast beeping, rev-limiter active
-**Most common cause:** ventilation (motor blew out of water, prop slipping)
-**Less common:** wrong prop pitch (under-pitched prop revs too high at WOT)
-**Action:** trim down. If chronic, prop selection is wrong.
-
-### 11. "Charging system fault"
-**Display:** voltage warning, often paired with battery low
-**Most common cause:** stator failure, regulator failure
-**Action:** dealer diagnostic. Stators run $300-$700; regulators $150-$300.
-
-### 12. "Communications fault" / NMEA / SmartCraft network
-**Display:** chartplotter loses engine data
-**Most common cause:** loose terminator, broken NMEA 2000 cable, water in connection
-**Action:** check NMEA 2000 backbone first (terminators on both ends, all T-connectors clean). Often a 5-minute fix.
-
----
-
-## What Mercury Hides From You (and Where to Find It)
-
-Mercury's **complete fault code reference is dealer-only**. The factory G3 diagnostic software ($3,000+ for the laptop kit) decodes every possible code into the official Mercury service description. **Owners and forum users typically only see partial codes**, which is why so many internet "Mercury fault code lists" are incomplete and contradictory.
-
-The honest answer to "what does code Pxxxx mean?": **a Mercury Platinum dealer can decode it on a diagnostic laptop in about 60 seconds.** That's what the dealer network exists for. We've decoded thousands.
-
-If you've already pulled a fault code on your Mercury Marine App and you want to know what it means before you bring the boat in, **send us a photo** at [hbw.wiki/service](https://hbw.wiki/service). We'll look it up in Mercury's official database and tell you what's actually wrong.
-
----
-
-## When to Run Through an Alarm vs. When to Stop
-
-**Stop immediately (no exceptions):**
-- 4 beeps every 5 seconds (low oil pressure)
-- Continuous beep + power reduction (Guardian shutdown)
-- Smoke from the cowl
-- Burning smell
-
-**Throttle to idle, head to dock:**
-- 6 beeps every 5 seconds (overheat), after first checking tell-tale
-- Knock alarm on V8/V10/V12
-- Any alarm you don't recognize the pattern of
-
-**Continue with awareness:**
-- 5 beeps every 5 sec (maintenance reminder), book service when convenient
-- Single intermittent alarm at one specific RPM range, note the RPM, mention it at next service
-
-**The general rule:** if you have to ask whether to keep running it, the answer is no. The cost of a tow back to the dock is $200-$400 in the Kawarthas. The cost of a destroyed powerhead is $5,000-$15,000. The risk math always favours stopping.
-
----
-
-## What HBW Does
-
-We diagnose SmartCraft codes every week. Specifically:
-
-- **Code lookup with motor on the trailer**, bring it in, we plug into the SmartCraft port, decode every active and historical fault code in about 15 minutes. Diagnostic fee typically $80-$120.
-- **Computer diagnostic with G3 software**. Mercury's factory diagnostic system. Decodes codes recreational tools can't see, including stored fault history.
-- **Repair vs. replace recommendations**, sometimes a code is a $40 sensor; sometimes it's a sign of internal damage that means repower. We'll tell you which.
-- **Pre-purchase inspections**, buying a used Mercury? We can pull the fault code history during inspection. Past codes tell a story even after they're cleared.
-- **Emergency advice**, call us at **905-342-2153** if you're on the water with an active alarm and don't know what to do.
-
-Book at [hbw.wiki/service](https://hbw.wiki/service).
-
----
-
-## Quick Reference Card. Print This or Save the Image
-
-Save this URL or screenshot the audible warning table above. It's the single most useful piece of Mercury knowledge for any owner:
-
-- **6 beeps** = overheat → throttle to idle, check tell-tale, kill if needed
-- **4 beeps** = low oil pressure → STOP, do not restart
-- **2 beeps** = water in fuel → drain separator
-- **3 beeps** = battery / charging → reduce load, check at dock
-- **5 beeps** = maintenance due → book service
-- **1 long beep** = critical fault, Guardian active → idle home
-- **Continuous fast** = rev limiter → throttle back
-
----
-
-**Phone (emergency on-water):** 905-342-2153
-**Diagnostic appointments:** [hbw.wiki/service](https://hbw.wiki/service)
-**New Mercury quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
----
-
-**Disclaimer:** This guide covers the general behavior of Mercury SmartCraft and Guardian systems on modern (2004+) electric-start Mercury outboards. Specific behavior varies by motor model, year, and software revision. Always defer to your specific motor's owner's manual for definitive guidance. When in doubt about an active alarm, stop the motor and contact a Mercury Platinum dealer.
+## Related guides
+- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
+- [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
+- [Mercury Outboard Won't Start Troubleshooting (Ontario)](/blog/mercury-outboard-wont-start-troubleshooting-ontario)
+- [Mercury Outboard Overheating at Idle](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
 
 ## FAQs
 
-### My Mercury Marine App shows a fault code but the alarm isn't going off, should I be worried?
+### What does one beep mean on a Mercury outboard?
 
-A historical (cleared) fault means the motor detected an issue at some point but it's resolved now. Worth mentioning at next service. An active fault with no audible alarm is unusual, possibly a non-critical code (maintenance reminder, communications fault). Bring it in for diagnostics if you're not sure.
+On many Mercury setups, one beep at key-on is a normal system test. If the beeping continues or changes pattern, check the display/manual and get it diagnosed.
 
-### Can I clear a fault code myself?
+### What does a continuous Mercury alarm mean?
 
-Some non-critical codes (maintenance reminder, network communication) clear after the underlying condition is resolved or after a key cycle. Critical codes (overheat, low oil pressure) require dealer-level diagnostic action to clear properly, and clearing them without addressing the root cause is dangerous.
+A continuous alarm can indicate a serious condition such as overheating, overspeed, sensor issues, or Engine Guardian activation. Reduce throttle and investigate safely.
 
-### What's the difference between a "Guardian alarm" and a "fault code"?
+### What is Mercury Engine Guardian?
 
-Guardian is the active power-reduction system that responds to critical conditions in real-time. Fault codes are the recorded events the ECU stores. Guardian saves the engine; fault codes tell us what happened.
+Engine Guardian monitors critical engine sensors and can reduce power when it detects a problem to help protect the engine.
 
-### Why don't manufacturers publish complete fault code lists?
+### Should I keep driving if the alarm is on?
 
-Mercury's reasoning: misinterpretation. A fault code typically requires looking at multiple data points (RPM, temp, fuel pressure, voltage at the time of the fault) to know what it actually means. A code that says "MAP sensor out of range" might be the sensor, or might be a manifold leak, an ignition fault, or a wiring problem. Without the full diagnostic context, the code alone can mislead. Mercury keeps the master decoder dealer-only specifically to prevent owners from misdiagnosing.
+Do not keep running hard with an active alarm. Reduce throttle, get to a safe place, and have the issue diagnosed.
 
-### My old (pre-2004) Mercury doesn't seem to have any of this, does that mean it's safer?
+### What should I send HBW?
 
-No, older Mercurys often lacked Guardian protection entirely. They could overheat catastrophically without warning. SmartCraft and Guardian on modern motors are the engine's protection systems; their existence makes modern Mercurys MORE durable, not less.
-
-### Is the Mercury Marine App enough for diagnostic, or do I need the dealer tool?
-
-The Mercury Marine App shows you that something is wrong and gives you a category. The dealer tool tells you exactly what's wrong, including stored fault history (sometimes the motor saw something concerning months ago and self-cleared, the dealer tool sees that). Both have a place.
-
-### What does it cost to get a SmartCraft diagnostic at HBW?
-
-Typically $80-$120 for a full code scan + interpretation, including a written report of all active and historical codes. Often the diagnostic fee is credited toward repair work if you proceed with the fix.
-
-### Should I be reading these codes myself or just bringing it to a dealer?
-
-The audible warning patterns, yes, every Mercury owner should know those 8-9 patterns. The detailed fault codes, bring it in. The dealer tool sees things consumer tools can't, and Mercury's interpretation database is dealer-only. The few minutes it takes us to pull codes saves a lot of misdiagnosed self-repair.
+Send the engine serial number, exact alarm pattern, display photo, RPM/speed when it happened, and whether the engine reduced power.
 
 ## Next steps
 

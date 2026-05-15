@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,116 +29,140 @@ content_type: blog_article
 
 ## Article
 
-# Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)
+### Quick Answer
 
-*Last reviewed: 2026-05-10*
+The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 359 lb weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is the smarter buy for 95% of customers. We'll order the 75 if your capacity plate requires it.
 
-We don't sell the Mercury 75 HP FourStroke at Harris Boat Works.
+---
 
-Mercury makes it. It's a real motor. Most dealers stock it. We don't, and we've been making that call for a few years now, and we figured we'd write down why instead of having the same conversation at the counter every time someone asks.
+::decision-card
+heading: 75 HP or 90 HP? The honest answer
+eyebrow: Why HBW doesn't stock 75
+subhead: We will order 75 HP, but here is why almost every buyer ends up with the 90.
+leftLabel: Choose 90 HP if
+leftCriteria:
+  - You are shopping the 75 to 90 HP range for a 16 to 18 ft boat
+  - You want stronger hole shot and a bit more top end
+  - The price difference vs 75 HP is typically under $1,500 in 2026
+  - Resale value holds better (more buyer demand for 90 HP)
+  - You want flexibility to add a kicker without underpowering the main
+leftOutcome: Pick 90 HP FourStroke
+leftVariant: recommended
+rightLabel: Choose 75 HP if
+rightCriteria:
+  - Your boat is rated max 75 HP on the capacity plate
+  - You specifically want the lightest powerhead in this range
+  - The budget gap matters more than 15 HP of headroom
+  - You are not towing or carrying full passenger loads
+rightOutcome: Pick 75 HP FourStroke
+rightVariant: alternative
+whenInDoubt: We do not stock 75 HP because 90 percent of buyers pick 90 once they see how small the price gap is. If you want 75, we will order it. If your plate allows 90, get the 90.
+::
 
-The short version: it's the same motor as the 90. Same 2.1L block. Same 359 lb. Minimal price difference. The 90 has more headroom. There's no reason to choose 75 over 90 unless something specific forces your hand. So we point customers at the 90 and don't tie up money on a SKU that doesn't help them.
+---
 
-If you came here looking for "Mercury 75 HP review Ontario" and that's the answer you needed, we're done. Go [build a quote on the 90](/quote/motor-selection). If you want the math behind why, keep reading.
+### Mercury 75 HP FourStroke: Why We Don't Stock It
 
-## Quick answer
+We get asked about the Mercury 75 HP FourStroke regularly. Usually the question sounds like: "Is the 75 good enough, or should I go to the 90?" Here's our honest answer: the 90 is almost always the better call, and the reason we don't stock the 75 is that it's the same motor.
 
-The Mercury 75 ELPT FourStroke is a real Mercury motor: 2.1L inline-4 block, 359 lb dry weight, 4,500-5,500 RPM redline, electric start, long shaft, power trim, EFI. Same powerhead as Mercury's 80, 90, 100, and 115 HP FourStrokes.
+Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Platinum dealer. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
 
-HBW doesn't stock it. We recommend customers go with the 90 ELPT FourStroke instead. Same physical motor, same weight, very small price difference, higher RPM ceiling, more headroom for whatever the boat needs to do later.
+---
 
-If you're set on a 75 specifically, we can order one. We just won't be the dealer who tells you it's the smarter buy.
+## What the Mercury 75 HP Actually Is
 
-## Why HBW doesn't stock the Mercury 75
+The Mercury 75 HP FourStroke is part of the same family as the 80, 90, 100, and 115. All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
 
-Three reasons. None of them are about the motor being bad.
+| Specification | Mercury 75 ELPT | Mercury 90 ELPT |
+|---|---|---|
+| Block | 2.1L inline-4 | 2.1L inline-4 |
+| Valve train | 8-valve SOHC, maintenance-free | 8-valve SOHC, maintenance-free |
+| Dry weight | 359 lbs | 359 lbs |
+| Full-throttle RPM | 4,500, 5,500 | 5,000, 6,000 |
+| Alternator | 35 amp / 441 watt | 35 amp / 441 watt |
+| Fuel system | EFI | EFI |
+| SmartCraft compatible | Yes | Yes |
+| Warranty | 3-year standard | 3-year standard |
 
-**Reason 1: It's the same physical motor as the 90.**
+The difference between the 75 and 90 is software, prop tuning, and RPM ceiling. That's it. The 75 is tuned to peak at 4,500, 5,500 RPM. The 90 runs to 5,000, 6,000. No weight change. A very small price difference.
 
-The 75, 80, 90, 100, and 115 HP Mercury FourStrokes all run off the same 2.1L inline-4 block. Same 8-valve single overhead cam. Same maintenance-free valve train. Same alternator. Same dimensions. Mercury runs the same factory testing on all of them (17,000 hours of factory testing on this generation before they shipped).
+The 90 also holds better resale value and has more demand on the used market. If you're ever selling the boat, the 90 is a much easier conversation than the 75.
 
-The differences are software, prop tuning, and RPM ceiling. The 75 is tuned to deliver peak HP at a lower RPM (4,500-5,500). The 90 is tuned to push it higher (5,000-6,000). That's it. Same engine.
+---
 
-**Reason 2: Same weight.**
+## Why HBW Doesn't Stock the Mercury 75
 
-Mercury lists both the 75 ELPT and the 90 ELPT at 359 lb dry. Identical. Whatever your hull, transom, or trailer setup is built for, the choice between 75 and 90 doesn't change weight at all.
+Three reasons:
 
-**Reason 3: Minimal price difference.**
+1. **It's the same motor as the 90.** Same block, same weight, same maintenance requirements.
+2. **The price difference is minimal.** We don't publish exact figures because Mercury pricing and dealer pricing vary, but it's not enough to justify the headroom you give up.
+3. **The 90 holds resale value better.** The 75 sits in a gap between motors people actually want: the 60 below it and the 90 above it.
 
-We're not going to publish exact figures because Mercury pricing moves and dealer pricing varies. But the gap between a 75 ELPT and a 90 ELPT is small, and once you factor in the 90's higher resale value (more buyers when you sell the boat later, more demand on the used market), the actual cost of ownership difference rounds to noise.
+For 95% of customers, the 75 is the wrong motor to buy when the 90 exists at nearly the same price and weight.
 
-When someone calls and asks for a 75, the conversation goes:
+---
 
-> "Same motor, same weight, very small price increase, more headroom, holds value better. The only reason to buy the 75 is if you're locked into a 75 specifically, capacity plate, insurance, a tight budget where every $300 matters. Otherwise the 90 is the smarter buy."
+## When the 75 Might Actually Make Sense
 
-We've never had a customer say "I want the 75 anyway" once they've heard the math. So we stopped stocking it.
+There are three real scenarios where the 75 is the right call:
 
-## What the Mercury 75 actually is
+**The capacity plate forces it.** Some 16, 17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
 
-For completeness, here's what the 75 is when it does come up:
+**An insurance or licensing constraint applies.** Rare in Ontario, but some commercial or shared-use applications have HP caps that land on 75. If you're in that situation, call us and we'll confirm the right configuration.
 
-- **2.1L inline-4 block.** Same as the 90, 100, and 115.
-- **8-valve single overhead cam (SOHC).** Maintenance-free valve train.
-- **Full-throttle RPM range:** 4,500 to 5,500 (lower than the 90's 5,000-6,000).
-- **Dry weight:** 359 lb (same as the 90 ELPT).
-- **Alternator:** 35 amp / 441 watt with water-cooled voltage regulator.
-- **Electric start, long shaft (20"), power trim and tilt** in standard ELPT trim.
-- **EFI**, electronic fuel injection.
-- **SmartCraft compatible**, works with Mercury digital gauges, VesselView mobile, Active Trim.
-- **Warranty:** 3-year factory standard, plus 3-year promotional bonus most of the year (6 years total when promo is active).
+**A used 75 with low hours is priced low enough to matter.** If a used 75 with 200 hours is available for significantly less than a new 90, the math might work out. We can help you assess the used motor honestly and tell you if it's worth it.
 
-It's not a bad motor. It's just the same motor as the 90 with less software headroom.
+---
 
-## When the 75 might actually make sense
+## What We'd Put on Your Boat Instead
 
-Three scenarios where the 75 is the right call:
+| Boat Type | Our Recommendation |
+|---|---|
+| 14, 17 ft aluminum fishing boat | 90 ELPT FourStroke, standard gearcase. Plans easier, cruises faster at the same throttle, more headroom. |
+| Small pontoon under 20 ft | 90 ELPT Command Thrust, CT gearcase makes a meaningful difference on flat-bottom hulls. A 75 standard would technically work but run harder than ideal. |
+| Lighter cottage runabout | 90 ELPT FourStroke, same logic as fishing boat. |
+| Repowering an old 60, 75 HP two-stroke | 90 ELPT FourStroke, lighter, quieter, cleaner, more efficient. Holds resale better than the 75 over the life of the motor. |
 
-**Capacity plate forces it.** Some 16 to 17 ft hulls are rated for a maximum of 75 HP. The plate is the ceiling, not a suggestion. If your boat is rated for 75 max, you buy the 75, not the 90. We can order a 75 for that case. The plate decides.
+If your hull is rated for 60 HP maximum, you're in the Mercury 60 ELPT FourStroke conversation, not this one. The 60 runs on a smaller 1.0L block, an entirely different motor.
 
-**Insurance or licensing constraint.** Rare in Ontario, but some commercial or shared-use boat applications have horsepower caps that hit 75. If that's your situation, you already know.
+If your hull is rated for 90 HP or higher, skip directly to the 90 review or go build a quote.
 
-**Used 75 inventory price beats new 90 by enough to matter.** Sometimes a used 75 with low hours shows up at a price that genuinely beats a new 90. Different conversation. We'll help you assess the used motor and tell you honestly if it's worth it. Often it isn't (older two-stroke vs new FourStroke is rarely the same thing).
+---
 
-For 95% of customers, none of those apply. The 90 is the right answer.
+## Frequently Asked Questions
 
-## What we'd put on your boat instead
+**Is the Mercury 75 HP a bad motor?** 
+No. It's not a bad motor, it's the same motor as the 90 with less headroom in the RPM range. If you need a 75 because the capacity plate requires it, it's the right motor. It's just not the right choice when the 90 is available at minimal additional cost.
 
-Most boats that show up at HBW asking about a 75 are 14-17 ft aluminum fishing boats, lighter cottage runabouts, or smaller pontoons. For those:
+**Why doesn't HBW stock the 75?** 
+Because it's the same physical motor as the 90, same weight, minimal price difference, and the 90 has more headroom and better resale value. Stocking the 75 would mean offering customers a worse long-term buy at nearly the same price.
 
-- **14-17 ft aluminum fishing boat:** the 90 ELPT FourStroke. Standard gearcase. The boat planes easier than it would on a 75, cruises slightly faster at the same throttle position, and has the headroom for a heavier load when the kids come along.
-- **Smaller pontoons under 20 ft:** the 90 ELPT Command Thrust. The CT gearcase makes a meaningful difference on a flat-bottom hull. A 75 standard would technically work but you'd be running it harder than you should for the life of the motor.
-- **Lighter cottage runabouts:** the 90 ELPT FourStroke. Same logic as the aluminum fishing boats.
-- **Repowering an old 60-75 HP two-stroke:** the 90 ELPT FourStroke. The boat will feel like a different boat. Lighter, quieter, cleaner, more efficient. Same dollar value as the 75 over the life of the motor because the 90 holds resale better.
+**Can I get the 75 in a Command Thrust version?** 
+Yes, it's available. But if you need Command Thrust for a pontoon, the 90 CT is a better investment for the same reasons the 90 is better than the 75 on a fishing boat.
 
-If your hull is rated for 60 HP max, you're not in the 75 conversation at all. Different motor (the [Mercury 60 ELPT FourStroke](/blog/mercury-40-vs-60-hp-outboard-ontario) is on a smaller 1.0L block).
+**What if my hull falls between 60 and 75 HP on the capacity plate?** 
+Call us at 905-342-2153. Some hulls have specific configurations that matter, year, model, trim level. Five minutes of conversation usually sorts it out.
 
-If your hull is rated for 90 or higher, this whole article is moot. Go to the [90 review](/blog/mercury-90-hp-fourstroke-review-ontario) or skip straight to a quote.
+**Does the 75 HP have a Command Thrust version?** 
+Yes. Same logic applies: if Command Thrust makes sense for your hull, the 90 CT is the better long-term value.
 
-## What HBW checks before recommending anything in this size range
+**Is the 75 HP significantly cheaper than the 90?** 
+Not significantly. The exact figures vary with Mercury Canada pricing, but it's not the kind of gap that should drive the decision for most buyers.
 
-Before we quote a 75 or 90 (whichever ends up being right), we look at:
+---
 
-- **Capacity plate.** Always first. Non-negotiable.
-- **Hull weight and rating.** Some 17 ft aluminum boats with heavy decking and storage want more motor than the plate's minimum.
-- **Transom height.** 15", 20", or 25". Most 75s on Rice Lake are 20" long shaft (ELPT). Wrong shaft length is the most common online-shopping mistake we see customers make.
-- **Use case.** Fishing two anglers? The 75 is fine. Six people on a pontoon? Step up.
-- **Existing rigging.** Sometimes the controls, cables, and harness are older than the motor and need replacement before the new motor goes on. We'll tell you on the front end so you're not surprised on the invoice.
+## Build a Quote, on the 90
 
-If we look at all of that and the 75 turns out to be the right answer for some specific reason, we'll order one. We just don't keep them on the shelf.
+If you came here looking at the 75 and this confirmed what you suspected, go build a quote on the 90 at mercuryrepower.ca. Real CAD prices, real configurations.
 
-## What we'd actually recommend
+If you have a capacity plate situation or a used motor question, call us at 905-342-2153. We'll help you work through it honestly.
 
-If you're shopping a Mercury motor in the 75 to 90 HP range:
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
-**Go with the 90 ELPT FourStroke (or 90 ELPT Command Thrust for a pontoon).** Same physical motor as the 75. Same weight. Marginally more money. More headroom. Better resale. No reason to pay for "less motor" when there isn't actually less motor.
+---
 
-**If your hull is rated for 75 max,** the 75 is your motor. Buy it. We'll order it for you. We won't talk you into something you can't legally put on your boat.
-
-**If you want the math broken down for your specific boat,** call (905) 342-2153 or text (647) 952-2153. Five minutes of conversation usually settles it.
-
-We've been selling and servicing Mercury outboards on Rice Lake since 1947. We don't make stocking decisions based on what we wish customers would buy. We make them based on what actually serves the customer. The 75 not being on our shelf is one of those decisions.
-
-[Build your Mercury 90 HP quote](/quote/motor-selection)
+*Related guides: Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
+---
 
 ## FAQs
 

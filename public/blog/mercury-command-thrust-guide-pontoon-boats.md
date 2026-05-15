@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,194 +29,145 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-10*
-
-> **Quick answer:** Command Thrust uses a larger gearcase and prop than the standard FourStroke at the same horsepower. On a loaded pontoon or a heavy aluminum hull, that means faster planing, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See pricing at mercuryrepower.ca.
-
-Mercury Command Thrust is the gearcase option that turns a "good" pontoon Mercury into a "great" one. It is not a separate motor family. It is a gearcase option available on select Mercury models, including common pontoon-friendly sizes below and above 115 HP.
-
-The bigger gearcase, larger prop, and torque-tuned ratio give pontoons meaningful hole shot and load-handling improvement. The cost premium over standard is usually worth it on pontoons, especially when the boat is loaded with people, fuel, coolers, and cottage gear. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
-
-## Quick recommendation
-
-For pontoons 18 ft and up, Command Thrust is the right call. The gearcase costs an extra $500 to $1,500 CAD over the standard gearcase at the same HP, and the performance improvement on pontoons is meaningful. We see customers switch from standard-gearcase setups to Command Thrust and report 25 to 50% better hole shot when loaded.
-
-The Command Thrust math works on pontoons because pontoons are heavy, blunt-fronted hulls that need pulling power more than top speed. It does not always work on aluminum console fishing boats or runabouts. The gearcase is a tool; pontoons are the right job.
-
-## What Command Thrust actually is
-
-Command Thrust is a Mercury gearcase variant available on select Mercury FourStroke, ProKicker, Pro XS, and related high-thrust applications. For HBW customers, the common decision points are usually 60 CT, 90 CT, 115 CT, and larger pontoon or heavy-hull setups. The differences from the standard gearcase:
-
-- **Larger gearcase nose.** More volume displaced under load, less cavitation in heavy boats.
-- **Larger prop diameter.** The bigger gearcase fits a bigger prop, which moves more water per revolution.
-- **Torque-tuned gear ratio.** Trades some top end for more pulling power and lower planing speeds.
-- **Heavier-duty internal components.** Built for sustained heavy-load running.
-- **Thrust-bearing reinforcement.** Handles the higher loads that come with bigger boats.
-
-It is not a motor swap. It is a gearcase swap. The powerhead is the same Mercury FourStroke. The gearcase changes how the power gets to the water.
-
-## Why Command Thrust matters specifically on pontoons
-
-Pontoons are unique among recreational hulls. They are:
-
-- **Blunt-fronted** (the front pontoon noses push water rather than slicing it)
-- **Heavy** (aluminum tubes, fiberglass furniture, full hardware adds up)
-- **Wide** (more drag than a similar-length runabout)
-- **Slow to plane** (the hull design fights the transition from displacement to plane)
-
-Standard gearcases are built around runabout hydrodynamics. Pontoons are different. Command Thrust is the gearcase that matches pontoon hydrodynamics:
-
-- The bigger nose handles the heavier load without cavitation
-- The bigger prop pushes more water for hole shot
-- The torque-tuned ratio gets the boat on plane sooner
-- The lower planing speeds let pontoons cruise efficiently
-
-The result on a pontoon: noticeably stronger hole shot when loaded, faster plane time, better load-handling in water sports applications, more comfortable cruising at lower speeds. None of these come from extra HP. They come from the gearcase.
-
-## When to spec Command Thrust
-
-The clear yes for Command Thrust:
-
-- **18 to 24 ft pontoons** (most pontoon repowers we do at HBW)
-- **Tritoons and party pontoons** (heavier hulls, more passengers)
-- **Heavy fishing boats** with full gear, dual livewells, and heavy electronics
-- **Large center consoles and deep-V hulls** in the 22 to 28 ft range
-- **Any boat used for water sports** where hole shot matters
-- **Twin and triple installations** (rare on freshwater, common on offshore)
-
-The clear no:
-
-- **Small aluminum tin boats** (12 to 16 ft) - too light, the gearcase advantage is wasted
-- **Bass boats** built for top-end speed - the Command Thrust ratio costs too much top speed
-- **Light recreational runabouts** under 18 ft - standard gearcase is plenty
-- **Tournament fishing applications** where acceleration matters more than loaded hole shot
-
-The middle ground:
-
-- **17 to 19 ft aluminum console fishing boats** - standard gearcase is fine for most uses; Command Thrust can help on heavier hulls or with heavy gear
-- **20 ft fiberglass runabouts** - depends on use case (water sports vs. cruising)
-- **Mid-size center consoles 18 to 22 ft** - depends on hull weight and intended use
-
-We assess this per boat at HBW. The right answer depends on the specific hull and use case.
-
-## What HBW checks before spec'ing Command Thrust
-
-When pontoon (or other heavy boat) customers come in for a repower, we want to know:
-
-- **Hull length, type, and weight class**
-- **Maximum HP rating on the capacity plate**
-- **Tube count on pontoons (two vs three)**
-- **Typical passenger and gear loading**
-- **Use case (cruising, water sports, heavy loading)**
-- **Where you boat** (sheltered vs. open water)
-- **Existing gearcase configuration**
-
-Most pontoon repowers come out as Command Thrust recommendations. Most fishing boat repowers under 18 ft come out as standard gearcase. The motor purchase pricing is the same; the gearcase makes the difference.
-
-## Command Thrust prop selection
-
-A Command Thrust gearcase requires Command Thrust props. The larger diameter, different geometry, and different hub design mean standard props will not fit or perform correctly on a Command Thrust setup.
-
-Command Thrust props are typically:
-
-- **Larger diameter** (typically 14 to 17 inches depending on motor HP)
-- **Lower pitch range** (typically 14 to 19 inches for pontoons)
-- **4-blade designs more common** (better hole shot, smoother trolling)
-- **Aluminum or stainless** depending on HP class and use
-
-For pontoons, 4-blade aluminum is the most common Command Thrust prop choice. We test props during sea-trial of every Command Thrust install to confirm WOT RPM and hole shot performance.
-
-For specific pricing, [build a quote](/quote/motor-selection) including the right Command Thrust prop for your motor and hull.
-
-## Common Command Thrust mistakes
-
-We see these every season:
-
-1. **Skipping Command Thrust to save money on a pontoon.** The single most common pontoon repower mistake. Customer picks the cheaper standard 90 HP and trades up to Command Thrust within 2 to 3 seasons.
-2. **Using a standard prop on a Command Thrust gearcase.** Some customers try to save money on the prop. The performance loss eats the savings within months.
-3. **Spec'ing Command Thrust on a small fishing boat.** A 14 ft tin boat at 90 CT gives up top speed for nothing. Standard gearcase is the right call on small boats.
-4. **Pairing Command Thrust with the wrong HP for the hull.** Command Thrust does not fix an undersized motor. A 90 CT on a 22 ft pontoon used for water sports is still underpowered. Pick the right HP first, then add Command Thrust.
-5. **Forgetting to update the prop during a repower from standard to CT.** When upgrading from a standard gearcase setup to a Command Thrust setup, the existing prop will not fit. New prop is required.
-
-## Command Thrust vs other Mercury gearcase options
-
-Mercury also offers other gearcase variants:
-
-- **SeaPro gearcase.** Heavy-duty commercial-use gearcase for SeaPro motors. Similar to Command Thrust but built for commercial-duty cycles.
-- **Torque Master gearcase.** Lighter-weight gearcase variant for some applications.
-- **Sport Master gearcase.** Performance-oriented gearcase for high-speed applications.
-
-Command Thrust is the recreational pontoon and heavy-boat gearcase. Most HBW customers running pontoons end up with Command Thrust. Other gearcase variants apply in specific use cases. We assess per boat.
-
-## Related guides
-
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), which Mercury for which pontoon
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the HP step-up math
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop selection for Command Thrust
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits your use
-- [Best Pontoon Boats for Rice Lake, Ontario Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoon selection for Kawartha use
-- [Pontoon HP Sizing Decision Tree (Ontario)](/blog/pontoon-hp-sizing-decision-tree-ontario), HP sizing for tube hulls
-- [Common Pontoon Boat Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), problems CT solves
-- [Mercury Boost 150 HP Upgrade for Pontoons](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 10 HP software bump analysis
-
-## Ready to repower with Command Thrust?
-
-Build a quote with Command Thrust on the [motor selection page](/quote/motor-selection). The system asks for hull info and use case and recommends the right HP class and Command Thrust where applicable.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through Command Thrust for your specific pontoon or heavy boat before quoting, [give us a call at (905) 342-2153](tel:9053422153). We rig Command Thrust setups every week and can give you the honest answer for your hull and use case.
+**Last reviewed:** 2026-05-10
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+> **Quick answer:** Mercury Command Thrust uses a larger gearcase and larger prop than the standard FourStroke at the same horsepower. On a loaded pontoon, that translates to faster planing, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See real pricing at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+---
+
+## What Command Thrust actually is, and what it isn't
+
+Command Thrust is a gearcase option, not a separate motor family. The powerhead is the same Mercury FourStroke. What changes is everything below the water: a larger gearcase nose, a larger prop, and torque-tuned gear ratios designed for heavy boats.
+
+It is available on select Mercury models, including common pontoon-friendly HP classes. When customers ask us "should I get Command Thrust?", the first question is always: what hull are you running? Because Command Thrust is purpose-built for pontoons and other heavy displacement hulls, and it's the wrong call on small, light boats.
+
+---
+
+## What changes in a Command Thrust gearcase
+
+**Larger gearcase nose.** More volume displaced under load. Less cavitation on heavy hulls.
+
+**Larger prop diameter.** The bigger gearcase fits a bigger prop, which moves more water per revolution. More water moved = more thrust at low RPM.
+
+**Torque-tuned gear ratio.** Command Thrust trades some top-end speed for more hole-shot and pulling power. On a pontoon, this is exactly the trade you want. On a bass boat, it's the wrong trade.
+
+**Heavier-duty internal components.** Built for sustained heavy-load running.
+
+It is not a motor swap. It is a gearcase swap on the same powerhead.
+
+---
+
+## Why Command Thrust matters specifically on pontoons
+
+Pontoons are different from runabouts. They are:
+- **Blunt-fronted**, the tube noses push water instead of slicing it
+- **Heavy**, aluminum tubes, fibreglass decking, full hardware
+- **Wide**, significantly more drag than a similar-length runabout
+- **Slow to plane**, the hull geometry resists the transition from displacement to planing
+
+Standard gearcases are built around runabout physics. Command Thrust matches pontoon physics. The result on a pontoon: faster plane time, stronger hole shot when loaded, more comfortable cruising at lower RPM, better load-handling for water sports. None of this comes from extra horsepower. It comes from the gearcase.
+
+Customers switch from standard-gearcase pontoon setups to Command Thrust and notice the difference immediately, especially with a full load aboard.
+
+---
+
+## When to spec Command Thrust, and when not to
+
+**Clear yes:**
+- 18–24 ft pontoons (most pontoon repowers we do at HBW)
+- Tritoons and party pontoons
+- Heavy fishing rigs with full gear, dual livewells, heavy electronics
+- Large centre consoles and deep-V hulls in the 22–28 ft range
+- Any boat used for water sports where hole shot matters
+
+**Clear no:**
+- Small aluminum tin boats (12–16 ft), too light; the gearcase advantage is wasted and you give up top speed
+- Tournament bass boats, the Command Thrust ratio costs too much top speed
+- Light recreational runabouts under 18 ft, standard gearcase is plenty
+
+**Assess case by case:**
+- 17–19 ft aluminum console fishing boats, standard gearcase is fine for most; Command Thrust helps on heavier hulls with full gear
+- 20 ft fibreglass runabouts, depends on use case
+
+We make this call per boat at HBW. The right answer depends on the specific hull and how you use it.
+
+---
+
+## Command Thrust prop selection
+
+A Command Thrust gearcase requires Command Thrust props. The larger diameter, different geometry, and different hub design mean standard props won't fit or perform correctly.
+
+Command Thrust props typically:
+- Run larger diameter than standard (specific size depends on motor HP)
+- Use a lower pitch range, optimized for hole shot and load handling rather than top speed
+- Use 4-blade designs more often, better hole shot and smoother trolling
+- Come in aluminum or stainless depending on HP class and use
+
+For pontoons, 4-blade aluminum is the most common Command Thrust prop. We test props during the sea trial of every Command Thrust install at HBW.
+
+---
+
+## Common Command Thrust mistakes
+
+**1. Skipping Command Thrust to save money on a pontoon.** The single most common pontoon repower mistake. Customer picks the cheaper standard gearcase, trades up to Command Thrust within two or three seasons. The savings disappear. Pay once.
+
+**2. Using a standard prop on a Command Thrust gearcase.** Some customers try to save money on the prop. The performance loss eats the savings fast, and standard props may not even fit correctly.
+
+**3. Speccing Command Thrust on a small light fishing boat.** A 14-foot tin boat with a 90 HP Command Thrust gives up top speed in exchange for nothing. Standard gearcase is right on small, light boats.
+
+**4. Pairing Command Thrust with an undersized motor.** Command Thrust doesn't fix underpowering. A 90 HP Command Thrust on a 22-foot pontoon used for water sports is still underpowered. Right HP first, then add Command Thrust.
+
+**5. Forgetting to budget for a new prop when upgrading.** When converting from a standard gearcase to Command Thrust, the existing prop won't fit. A new Command Thrust prop is required.
+
+---
+
+## Can you retrofit Command Thrust to an existing motor?
+
+Sometimes. A Command Thrust conversion depends on the specific motor, existing gearcase, shaft length, and controls. In most cases it's cleaner and more cost-effective to choose the right gearcase during a planned repower. If you're not already planning a repower and want to explore a standalone conversion, contact us and we'll walk through whether it makes sense for your specific setup.
+
+---
+
+## Related posts
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
+
+---
+
+## Ready to repower with Command Thrust?
+
+Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). Or call **905-342-2153**, we rig Command Thrust setups every week and can give you the honest answer for your hull.
 
 ---
 
 ## FAQ
 
 **What is Mercury Command Thrust?**
-Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke 115 HP and up. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for heavy boats (pontoons, work boats, heavy fishing rigs).
+A gearcase option available on select Mercury FourStroke models. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for heavy boats. Not a separate motor family, same powerhead, different gearcase.
 
 **Do I need Command Thrust on a pontoon?**
-For pontoons 18 ft and up, yes. Command Thrust gives meaningful hole shot, load-handling, and pulling power that the standard gearcase cannot match on pontoons. The cost premium is worth it.
-
-**How much does Command Thrust cost over the standard gearcase?**
-Typically $500 to $1,500 CAD over the standard gearcase at the same HP, depending on motor class and prop selection. For specific pricing, [build a quote](/quote/motor-selection).
+For most pontoons 18 ft and up, yes. Command Thrust gives hole-shot, load-handling, and pulling power the standard gearcase can't match on a pontoon hull. The cost premium is worth it.
 
 **Will my standard prop fit on a Command Thrust gearcase?**
-No. Command Thrust gearcases require Command Thrust props. The larger diameter, different geometry, and different hub design are not compatible with standard props.
-
-**Is Command Thrust available on all Mercury motors?**
-No. Command Thrust is not available on every Mercury motor, but it is available on select high-thrust models below and above 115 HP. For pontoon customers, the important options are usually 60 CT, 90 CT, 115 CT, and larger CT-style setups. The right answer depends on the exact motor family, shaft length, gearcase, and hull.
+No. Command Thrust gearcases require Command Thrust props, the larger diameter and different hub design aren't compatible with standard props.
 
 **Does Command Thrust hurt top speed?**
-Slightly, yes. The torque-tuned ratio trades some top end for hole shot and pulling power. Top speed differences are typically 2 to 5 mph compared to standard gearcase. On pontoons, this is the right trade. On bass boats, it usually is not.
+Slightly, the torque-tuned ratio trades some top end for hole shot and pulling power. Typically 2–5 mph difference compared to standard gearcase. On pontoons, this trade is the right one.
 
 **Will Command Thrust improve fuel economy?**
-On heavy boats running at lower planing speeds (typical pontoon use), yes. The lower planing speed lets the motor cruise at more efficient RPM. On lighter boats running at higher speeds, fuel economy is similar or slightly worse than standard gearcase.
+On heavy boats running at lower planing speeds, yes. The lower planing speed lets the motor cruise at more efficient RPM. On lighter, faster boats the effect is less clear.
 
 **Should I get Command Thrust on a fishing boat?**
-For aluminum console fishing boats under 18 ft, standard gearcase is fine. For 18+ ft deep-V aluminum or heavy fishing rigs with full gear, Command Thrust gives meaningful improvement. We assess per boat.
-
-**Can I retrofit Command Thrust to my existing Mercury motor?**
-Sometimes. A Command Thrust conversion depends on the exact motor, gearcase, shaft length, controls, prop, and whether the swap makes financial sense. In most cases, it is cleaner and more cost-effective to choose the right gearcase during a planned repower. The cost includes the new gearcase, new prop, and labor. Sometimes worth doing as a separate project; usually most cost-effective during a planned repower.
-
-**Will Command Thrust work with my existing rigging?**
-Yes in most cases. The motor mounting, throttle, shift, and steering systems are the same. The gearcase is below the powerhead and does not affect rigging compatibility.
+On aluminum console fishing boats under 18 ft, standard gearcase is usually fine. For 18+ ft deep-V aluminum or heavy fishing rigs with full gear, Command Thrust gives meaningful improvement. We assess per boat.
 
 **Is Command Thrust the same as SeaPro?**
-No. SeaPro is a Mercury motor family built for commercial-duty cycles. Command Thrust is a gearcase option available on multiple motor families. SeaPro motors do come with similar high-thrust gearcases optimized for heavy use, but Command Thrust specifically refers to the FourStroke and Pro XS gearcase upgrade.
+No. SeaPro is a Mercury motor family built for commercial-duty cycles. Command Thrust is a gearcase option available on recreational FourStroke motors.
 
 **How long does a Command Thrust gearcase last?**
-Properly maintained, the same lifespan as the motor itself (1,500 to 2,000+ hours). The internal components are heavier-duty than the standard gearcase. Annual gearcase lube replacement during winterization is critical for longevity.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+With proper maintenance, same as the motor itself. Annual gearcase lube replacement during winterization is critical for longevity.
 
 ## FAQs
 

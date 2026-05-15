@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide"
-description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat, what to check, in what order, and when to walk away."
+description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order, and when to walk away."
 category: "Buying Guide"
 date_published: 2026-06-24
 date_modified: 2026-06-24
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
 
-> A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat, what to check, in what order, and when to walk away.
+> A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order, and when to walk away.
 
 **Category:** Buying Guide  
 **Published:** 2026-06-24  
@@ -67,7 +67,7 @@ If a seller won't answer these questions before you show up, that tells you some
 
 ---
 
-## Minutes 0–5: First Impression
+## Minutes 0-5: First Impression
 
 Before you touch anything, take 60 seconds to just look.
 
@@ -77,7 +77,7 @@ Does it look stored well, or does it look like someone cleaned it up for the lis
 
 ---
 
-## Minutes 5–15: Hull Inspection
+## Minutes 5-15: Hull Inspection
 
 This is the most important ten minutes. Structural problems are expensive, often more expensive than the boat itself.
 
@@ -103,7 +103,7 @@ Look at the hull near the waterline. Clusters of small bubbles or pocks in the g
 
 ---
 
-## Minutes 15–20: Topside and Interior
+## Minutes 15-20: Topside and Interior
 
 ### Walk every inch of the floor
 
@@ -119,7 +119,7 @@ Turn on the battery switch and test everything: fuel gauge, tach, trim, bilge pu
 
 ---
 
-## Minutes 20–28: Outboard or Sterndrive
+## Minutes 20-28: Outboard or Sterndrive
 
 ### Visual inspection
 
@@ -143,7 +143,7 @@ If the motor is over 5 years old, request a compression test, or bring your own 
 
 ---
 
-## Minutes 28–30: Trailer
+## Minutes 28-30: Trailer
 
 You checked the tires at the start. Now go a bit deeper.
 
@@ -216,7 +216,29 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 
 ## FAQs
 
-_(no FAQs)_
+### How long should a used boat walkaround inspection take?
+
+Plan on 30 minutes minimum. Five before you go (HIN, records, cold-start video), five for first impression and trailer, ten on the hull, five on topside and interior, eight on the outboard, and two on trailer details. Rushing any segment is how problems get missed.
+
+### What's the single most important thing to check on a used boat?
+
+Transom flex. Grab both sides of the motor mount and push and pull, hard. Any movement at all means the transom core is rotted, and that repair often costs more than the boat is worth. If the transom flexes, walk away regardless of how clean the rest of the boat looks.
+
+### What does milky or grey gear oil mean?
+
+Water in the lower unit, from a failed seal or cracked housing. Left alone, it destroys the gears. Drain a sample on white paper towel: fresh gear oil is translucent gold or green. Milky, grey, or chocolate-brown is a deal-breaker until the lower unit is rebuilt.
+
+### Should I get a compression test on a used outboard?
+
+Yes, on any motor over 5 years old. All cylinders should read within 10% of each other. Low or uneven compression points to rings, valves, or worse. A seller who refuses a compression test is hiding something. Auto parts stores rent or sell marine compression testers.
+
+### How can I tell if a used boat's floor is rotten?
+
+Stomp test. Walk the full floor from transom to bow, pressing firmly with each step. Soft spots, sponginess, or flex mean the plywood sub-floor is saturated and stringers below may be compromised too. Stringer rot is a full restoration job, not a repair.
+
+### What about the boat I just looked at? Can HBW help me decide?
+
+Yes. If the hull is solid and the motor is the weak link, that's exactly what we repower. Build a quote at mercuryrepower.ca, or reach out through hbw.wiki/service if you want a second set of eyes on what you're looking at.
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,183 +29,155 @@ content_type: blog_article
 
 ## Article
 
-# Breaking In a New Mercury Motor (2026)
+**Last reviewed:** 2026-05-07
 
-*Last reviewed: 2026-05-07*
+---
 
-> **Quick answer:** Mercury's break-in is roughly 10 hours: vary RPM in the first hour, avoid sustained wide-open throttle for the first two, and complete the 20-hour service afterward. Skipping break-in shortens piston ring seating and can affect long-term oil consumption. Full schedule and 20-hour service booking at mercuryrepower.ca.
+> **Quick answer:** Mercury's break-in covers roughly the first 10 hours, vary throttle, avoid sustained wide-open throttle in the first hour or two, then gradually open it up with continued variation. Follow the 20-hour oil change on FourStrokes; it flushes the metal particles produced during ring seating. Check the owner's manual for your specific motor model's guidance. Book your 20-hour service at [hbw.wiki/service](https://hbw.wiki/service).
 
-The first 10 hours of a new Mercury are the most important hours of its service life. Mercury's break-in protocol calls for graduated load and RPM during this period: vary throttle, avoid sustained WOT, and follow the specific RPM guidance for the motor model. The first oil change at 20 hours is also important on FourStrokes. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+---
 
-## Quick recommendation
+## Why break-in actually matters
 
-Mercury motors that get a proper break-in last decades longer than motors that get hammered from day one. The customers who skip break-in are the same customers who come back complaining about reduced fuel economy, premature wear, and shorter motor life. Worth doing right.
+The customers who shortcut the break-in are the same ones who come back complaining about reduced fuel economy, premature wear, and shorter motor life. Modern Mercury FourStrokes are precision machines, the rings need to seat properly against the cylinder walls, and that only happens with the right conditions in the first hours of operation.
 
-The break-in is not complicated. Modern Mercury FourStrokes have a specific 10-hour break-in window with manufacturer guidance on RPM ranges and load. Follow it. The first oil change at 20 hours catches break-in particles. After that, normal operation.
+It is not complicated. Follow the graduated RPM protocol. Change the oil at 20 hours. After that, normal operation for the life of the motor.
 
-## What changes the break-in picture
+---
 
-Mercury publishes specific break-in procedures by motor family and model. The general principles are consistent:
+## Why varying RPM is the key
 
-- **First hour:** Idle, no-wake, gentle break-in. No sustained throttle.
-- **Hours 1 to 10:** Graduated RPM with frequent throttle variation. Avoid WOT for sustained periods.
-- **Hours 10 to 20:** Normal operation but still varying load.
-- **Hour 20:** First oil and filter change (FourStroke).
-- **Hour 100:** First major service interval.
+Break-in is about seating the piston rings against the cylinder walls. Sustained RPM at one setting glazes the cylinder walls and prevents proper ring seating. Varying RPM forces the rings to seat across the full range of cylinder geometry.
 
-The specifics vary by motor. Always follow the owner's manual for your specific Mercury. If you bought through HBW, we walk you through the break-in protocol at delivery.
+This is why Mercury, and every other modern outboard manufacturer, emphasizes throttle variation during break-in. It is not about being "gentle" on the engine. It is about ensuring the rings seat correctly for long-term durability.
 
-## The Mercury 10-hour break-in protocol
+---
 
-For most modern Mercury FourStrokes:
+## The Mercury break-in protocol
 
-### First 5 minutes
+For most modern Mercury FourStrokes. **Always refer to the owner's manual for your specific motor model**, the procedures vary by model and family.
 
-- Run at idle to circulate fluids
-- Check telltale water flow
+### First 5–10 minutes
+- Run at idle to circulate fluids and warm up
+- Check the telltale water stream for normal flow
 - Confirm no warning lights or unusual sounds
-- Allow motor to warm up
 
 ### First hour
+- Start at no-wake speed, 10–15 minutes
+- Graduate to moderate cruise RPM
+- Vary throttle continuously, the goal is movement through the RPM range, not a fixed position
 
-- Run at no-wake speed (under 5 mph) for 10 to 15 minutes
-- Then graduate to about 3,000 RPM (cruise speed for most boats)
-- Vary throttle between 2,500 and 3,500 RPM
-- Avoid sustained throttle position
+### Hours 1–2
+- Continue varying throttle across a wider RPM range
+- Brief bursts toward higher RPM are okay
+- Do not run at wide-open throttle for sustained periods
 
-### Hours 1 to 2
-
-- Continue varying throttle in the 2,500 to 4,000 RPM range
-- Brief bursts up to 4,500 RPM are okay
-- Do not run at WOT for more than 1 minute at a time
-
-### Hours 2 to 10
-
-- Vary throttle through full RPM range
-- Sustained cruise at 3,500 to 4,500 RPM is okay
-- WOT for short periods (1 to 3 minutes) is okay
+### Hours 2–10
+- Vary throttle through the full RPM range
+- Sustained cruise at moderate-to-higher RPM is fine
+- Wide-open throttle for short periods (a minute or two at a time) is acceptable
 - Continue varying load and throttle position throughout
 
 ### After 10 hours
-
 - Normal operation
-- WOT for sustained periods is okay (within Mercury's WOT RPM band)
+- Wide-open throttle for sustained periods is fine within Mercury's rated WOT RPM band
 - Continue varying throttle and load through normal use
 
-## Why varying RPM matters
+---
 
-Modern engine break-in is about seating the piston rings against the cylinder walls. Sustained RPM at one position glazes the cylinder walls and prevents proper ring seating. Varying RPM forces the rings to seat across the full range of cylinder geometry.
+## The 20-hour oil change (FourStrokes)
 
-This is why Mercury (and every other modern outboard manufacturer) emphasizes RPM variation during break-in. It is not about being gentle on the engine. It is about ensuring proper ring seating for long-term durability.
-
-## The 20-hour oil change
-
-For Mercury FourStrokes, the first oil and filter change at 20 hours is critical. The break-in process produces metal particles as components seat together. Those particles end up in the oil. Changing oil at 20 hours flushes them out before they can cause wear.
+This is the one maintenance step most new owners skip, and it matters. Break-in produces fine metal particles as components seat together. Those particles end up in the oil. Changing oil and filter at 20 hours flushes them out before they can cause wear.
 
 After the 20-hour change, normal Mercury service intervals apply: oil and filter every 100 hours or annually, whichever comes first.
 
-For 2-stroke motors, the equivalent break-in period uses Mercury's recommended TC-W3 oil through the autoblend or pre-mix system, with similar throttle variation principles.
+At HBW, we book the 20-hour service appointment at delivery so it doesn't get forgotten.
+
+---
 
 ## Common break-in mistakes
 
-We see these every spring:
+**Running wide-open throttle in the first hour.** The most common one. New motor, eager owner, first lake run. Understandable, still wrong.
 
-1. **Running WOT during the first hour.** New owners eager to test top speed. Bad for ring seating and motor longevity.
-2. **Sustained cruise at one RPM.** Setting cruise control mentally and running 3,500 RPM for 2 hours straight. Worse than varying throttle.
-3. **Skipping the 20-hour oil change.** Customer thinks "the motor's barely broken in, why change oil?" The 20-hour change catches break-in particles. Skipping it shortens motor life.
-4. **Ignoring the owner's manual specifics.** Mercury publishes specific break-in procedures by model. Following the generic advice rather than the model-specific procedure misses some important details.
-5. **Loading the boat heavy during break-in.** A new motor under heavy load during break-in works harder than necessary. Lighter loads are easier on a fresh motor.
+**Sustained cruise at one RPM.** Setting it at 3,500 for two hours and not touching the throttle. Worse than varying. The whole point of break-in is RPM variation.
 
-## What HBW does on new motor delivery
+**Skipping the 20-hour oil change.** "The motor's barely used, why change the oil?" The 20-hour change isn't about contaminated oil. It's about flushing break-in debris before it causes wear.
 
-When customers take delivery of a new Mercury at HBW:
+**Ignoring the owner's manual specifics.** The general break-in principles are consistent across Mercury models, but the specific RPM guidance varies. Follow the book for your motor.
 
-- **Initial sea-trial.** We run the motor briefly to verify cooling, charging, and basic operation.
-- **Owner's manual review.** We walk through the break-in protocol specific to the motor model.
-- **Service schedule discussion.** We explain the 20-hour change, 100-hour service, and ongoing maintenance.
-- **Warranty registration.** We complete Mercury warranty registration with serial number and customer info.
-- **First-year service appointment.** We book the 20-hour service in advance so it's not forgotten.
+**Loading the boat heavy during break-in.** A fresh motor under heavy sustained load works harder than necessary. Lighter loads are easier on a new motor.
 
-For specific Mercury pricing, [build a quote](/quote/motor-selection).
+---
 
-## What about break-in for used motors?
+## What we do on new motor delivery at HBW
 
-Used Mercury motors don't need new-motor break-in. They have already broken in. After purchase or transfer, you should:
+When a customer takes delivery of a new Mercury from us:
 
-- **Check oil condition** (FourStroke). Change if old or unknown service history.
-- **Check fuel system** for stale fuel.
-- **Run motor briefly** at HBW or under qualified supervision to verify operation.
-- **Plan first major service** based on motor age and service history.
+- We run a brief initial sea trial to verify cooling, charging, and basic operation
+- We walk through the break-in protocol for the specific motor model
+- We explain the 20-hour service and what happens at the 100-hour interval
+- We complete Mercury warranty registration with serial number and customer info
+- We book the 20-hour service appointment before the customer leaves, so it doesn't get lost
 
-For repower customers buying new Mercurys at HBW, the break-in protocol applies to the new motor. The hull is the same; the motor is the new component.
+---
 
-## Break-in and warranty
+## What about used motors?
 
-Mercury warranty requires break-in compliance. The published break-in procedure in the owner's manual is the binding standard. Customers who damage motors by skipping break-in may have warranty claims denied.
+Used Mercurys don't need new-motor break-in, they're already broken in. After purchase or transfer:
 
-We document break-in compliance during HBW deliveries and follow up on first-year service. The records support warranty support if anything comes up.
+- Check oil condition on FourStrokes; change if old or unknown history
+- Check for stale fuel in the system
+- Run the motor briefly to verify basic operation
+- Plan the next major service based on age and service history
 
-## Related guides
+For repower customers buying a new Mercury at HBW, the break-in applies to the new motor. The hull is the same; the motor is the new component.
 
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), the annual maintenance cycle
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), spring service after first season
-- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), getting peak efficiency from a broken-in motor
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop testing during break-in sea-trial
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), early-life issue diagnostics
+---
 
-## Need help with this?
+## Break-in and Mercury warranty
 
-Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
+Mercury warranty requires break-in compliance per the owner's manual. Damage from improper break-in may not be covered under warranty. We document break-in compliance at HBW deliveries and keep records to support warranty claims if anything comes up.
 
-**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
-**Phone:** 905-342-2153
+---
 
-If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
+## Related posts
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
+
+---
+
+## Need service on your Mercury?
+
+Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+---
 
 ## FAQ
 
 **How long is the Mercury break-in period?**
-For modern Mercury FourStrokes, the break-in period is typically 10 hours of graduated operation. Followed by a 20-hour oil and filter change. Specific procedures vary by motor model; check the owner's manual.
+Roughly 10 hours of graduated operation. Followed by a 20-hour oil and filter change on FourStrokes. Specific procedures vary by motor, check the owner's manual.
 
 **Can I run my new Mercury at full throttle during break-in?**
-For brief periods (1 to 3 minutes) after the first 1 to 2 hours, yes. Sustained WOT during the first 10 hours is not recommended. Vary throttle throughout the break-in period.
+Brief bursts after the first hour or two are acceptable. Sustained wide-open throttle in the first 10 hours is not recommended. Vary throttle throughout.
 
-**Why does Mercury require an oil change at 20 hours?**
-Break-in produces metal particles as engine components seat together. Those particles end up in the oil. The 20-hour oil change flushes them out before they cause wear. Skipping this shortens motor life.
+**Why does Mercury require a 20-hour oil change?**
+Break-in produces metal particles as engine components seat. Those particles end up in the oil. The 20-hour change flushes them before they can cause wear. Skipping it is a false economy.
 
-**Do I need to do anything special with a 2-stroke Mercury during break-in?**
-2-stroke break-in uses Mercury's recommended oil through autoblend or pre-mix system, with similar throttle variation. Specifics vary by motor; check the owner's manual.
-
-**Can I tube or ski with a new Mercury during break-in?**
-Light water sports are okay after the first hour. Sustained heavy load (multiple skiers, full crew tubing) should wait until break-in is complete.
+**Can I tube or ski behind a new Mercury during break-in?**
+Light water sports are okay after the first hour. Sustained heavy load, multiple skiers, full crew tubing, should wait until break-in is complete.
 
 **Will my new Mercury feel different after break-in?**
-Yes, slightly. Properly broken-in motors typically run smoother, achieve full power, and reach full fuel economy potential. The differences are subtle but real.
+Yes, slightly. Properly broken-in motors typically run smoother, reach full power, and achieve their fuel economy potential. The differences are real but subtle.
 
-**What if I bought a new Mercury and skipped break-in?**
-Run a careful inspection (compression test, oil analysis) to see if any damage occurred. Sometimes no harm done; sometimes accelerated wear has begun. Future motor life may be shorter. Going forward, follow normal maintenance and avoid overloading.
+**Does improper break-in affect the Mercury warranty?**
+Yes. Damage from not following the break-in protocol may not be covered. We document break-in compliance at HBW deliveries specifically for this reason.
 
-**Does break-in affect Mercury warranty?**
-Yes. Mercury warranty requires break-in compliance per the owner's manual. Damage from improper break-in may not be covered. We document break-in compliance at HBW deliveries to support warranty.
+**Should I use a special break-in oil or fuel?**
+For modern Mercury FourStrokes, no. Use Mercury-approved four-stroke oil from day one. For 2-strokes, Mercury TC-W3 oil per manufacturer spec. No special break-in formulations needed.
 
-**Can I tow my boat home from HBW and break in on my own lake?**
-Yes. Many customers do this. The break-in protocol works regardless of which lake you're on. Start with idle and no-wake speed, then graduate over the first hour.
-
-**Should I run break-in fuel or special oil?**
-For modern Mercury FourStrokes, no. Use Mercury 25W-50 four-stroke oil from day one. For 2-strokes, use Mercury TC-W3 oil per manufacturer spec. No special "break-in" formulations needed.
-
-**What's the cost of the 20-hour service at HBW?**
-Standard 20-hour service includes oil and filter change plus inspection. For specific pricing, [contact HBW](/contact). Often booked at delivery so it's not forgotten.
-
-**Do used Mercury motors need break-in?**
-No. Used motors are already broken in. After purchase, check oil condition and fuel system, run briefly to verify operation, and follow normal Mercury service intervals.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+**Can I tow my new Mercury home from HBW and break it in on my own lake?**
+Yes. Many customers do this. Start at idle and no-wake speed, then graduate over the first hour. The break-in protocol works on any lake.
 
 ## FAQs
 
@@ -247,7 +219,7 @@ The break-in procedure covers the first 10 engine hours, which could be complete
 
 ### Can I use my new Mercury motor for towing a tube or skier during break-in?
 
-Avoid full sustained wide-open-throttle pulls during the first 3 hours. After that, brief full-throttle bursts (under 30 seconds in hours 2–3, up to 1–2 minutes in hours 4–10) are acceptable. By hours 4–10, moderate towing use is fine as long as you're not holding wide-open throttle for extended stretches. The key is variation, a couple of tow runs mixed in with cruising and varying speeds won't harm the break-in.
+Avoid full sustained wide-open-throttle pulls during the first 3 hours. After that, brief full-throttle bursts (under 30 seconds in hours 2-3, up to 1-2 minutes in hours 4-10) are acceptable. By hours 4-10, moderate towing use is fine as long as you're not holding wide-open throttle for extended stretches. The key is variation, a couple of tow runs mixed in with cruising and varying speeds won't harm the break-in.
 
 ### Where can I get my Mercury motor's 20-hour oil change done near Gores Landing or Rice Lake?
 

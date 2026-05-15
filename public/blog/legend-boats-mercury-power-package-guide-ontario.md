@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -67,21 +67,21 @@ The Pulse is built differently from anything else in the lineup, **rotomolded HD
 
 **Best for:** First-time boaters, kids' boats, cottage runabouts, anyone who wants a near-indestructible hull that doesn't need spring service.
 
-### R Series, budget aluminum, 12–16 ft
+### R Series, budget aluminum, 12-16 ft
 
-The R Series is **riveted aluminum**, not welded, the entry price comes from the rivets. Two configurations: **R Series Ultralite** (12–14 ft, boat-only options) and **R Series ProSport** (14–16 ft, motor + trailer packages).
+The R Series is **riveted aluminum**, not welded, the entry price comes from the rivets. Two configurations: **R Series Ultralite** (12-14 ft, boat-only options) and **R Series ProSport** (14-16 ft, motor + trailer packages).
 
-Starting at **$5,399 CAD** for the smallest Ultralite hulls; ProSport packages with a Mercury 25 ELPT and trailer run **$15,000–$22,000** all-in.
+Starting at **$5,399 CAD** for the smallest Ultralite hulls; ProSport packages with a Mercury 25 ELPT and trailer run **$15,000-$22,000** all-in.
 
 **Best for:** Budget-conscious anglers, kicker / second-boat buyers, light-duty utility.
 
-### XF Series, 16–18 ft, serious fishing
+### XF Series, 16-18 ft, serious fishing
 
-The XF Series moves up to **welded aluminum** with a deeper-V hull (17° deadrise, the same as Legend's premium hulls). Starting **$36,999 CAD** with a Mercury 50 ELPT; max-rigged with a **Mercury 90 ELPT**, you're around **$48,000–$52,000 CAD**.
+The XF Series moves up to **welded aluminum** with a deeper-V hull (17° deadrise, the same as Legend's premium hulls). Starting **$36,999 CAD** with a Mercury 50 ELPT; max-rigged with a **Mercury 90 ELPT**, you're around **$48,000-$52,000 CAD**.
 
 **Best for:** Mid-range fishermen who want a real fishing boat without going to premium pricing. Solid all-around platform.
 
-### XT Series, 17–20 ft, premium fishing/family hybrid
+### XT Series, 17-20 ft, premium fishing/family hybrid
 
 The XT Series is **brand-new for 2026** and the most-talked-about Legend lineup we've seen in years. Four lengths: **17 XT, 18 XT, 19 XT, 20 XT.** Starting at **$56,999 CAD** for the 17 with a Mercury 115 EXLPT; the 20 XT with a Mercury 175 lands around **$71,999 CAD.**
 
@@ -100,7 +100,7 @@ What's new on the XT:
 
 The Titanium is the heaviest-duty V-hull in the line. **0.125-gauge aluminum** (everything else is 0.100), **RIGS gunnel system, hydraulic steering**, full tournament-style fishing layout. Starting **$86,999 CAD** with a Mercury 115 EXLPT; max HP is 150.
 
-**Best for:** Tournament anglers, guides, anyone running serious water who wants the thickest hull in the lineup. Less common, we move 1–2 a year.
+**Best for:** Tournament anglers, guides, anyone running serious water who wants the thickest hull in the lineup. Less common, we move 1-2 a year.
 
 ---
 
@@ -108,21 +108,21 @@ The Titanium is the heaviest-duty V-hull in the line. **0.125-gauge aluminum** (
 
 Three series across three positioning bands:
 
-### LE Series, entry-level pontoons, 15–21 ft
+### LE Series, entry-level pontoons, 15-21 ft
 
-Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mercury **25–40 ELPT Command Thrust** standard depending on size. Starting **$39,999 CAD** for the 15 LE C; the 21 LE rigged with a Mercury 90 EXLPT runs around **$48,000–$50,000 CAD**.
+Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mercury **25-40 ELPT Command Thrust** standard depending on size. Starting **$39,999 CAD** for the 15 LE C; the 21 LE rigged with a Mercury 90 EXLPT runs around **$48,000-$50,000 CAD**.
 
 **Best for:** First-time pontoon buyers, weekend cottage families, anyone who wants the pontoon experience without premium pricing.
 
-### Q Series, premium comfort pontoons, 21–23 ft
+### Q Series, premium comfort pontoons, 21-23 ft
 
 Step-up tier. **2-tube or 3-tube** options. Garmin 52CV GPS standard. Premium furniture and finish. Starting **$56,999 CAD**.
 
 **Best for:** Buyers who want comfort and electronics without the design statement of the Halo.
 
-### Halo, modern-design pontoons, 19–23 ft
+### Halo, modern-design pontoons, 19-23 ft
 
-The Halo is Legend's most distinctive pontoon, **PolyForm construction**, **360° seating**, **JBL audio**, modern aesthetic that doesn't look like every other pontoon at the marina. **$48,999–$51,999 CAD** depending on size. Mercury 115 EXLPT standard.
+The Halo is Legend's most distinctive pontoon, **PolyForm construction**, **360° seating**, **JBL audio**, modern aesthetic that doesn't look like every other pontoon at the marina. **$48,999-$51,999 CAD** depending on size. Mercury 115 EXLPT standard.
 
 **Best for:** Younger families, design-conscious buyers, anyone who wants a pontoon that doesn't blend into the dock.
 
@@ -134,19 +134,19 @@ The standard motor on each Legend hull is sized for the typical use case, but th
 
 | Hull | Standard Mercury | Common upgrade | When to upgrade |
 |------|------------------|----------------|-----------------|
-| **Pulse 10** | None (boat-only or small 4-stroke) | Mercury 9.9–15 4-stroke | Always, boat needs power |
-| **R Ultralite 12–14** | None or 9.9 ProKicker | 15–25 ELPT | If using as primary boat, not kicker |
-| **R ProSport 14–16** | Mercury 20–25 ELPT | Mercury 30–40 ELPT | More capacity, more weight on board |
-| **XF 16–18** | Mercury 50–90 ELPT | Mercury 90–115 ELPT | Family days with full crew, watersports |
-| **XT 17–20** | Mercury 90–175 | Pro XS upgrade | Tournament fishing, top speed matters |
+| **Pulse 10** | None (boat-only or small 4-stroke) | Mercury 9.9-15 4-stroke | Always, boat needs power |
+| **R Ultralite 12-14** | None or 9.9 ProKicker | 15-25 ELPT | If using as primary boat, not kicker |
+| **R ProSport 14-16** | Mercury 20-25 ELPT | Mercury 30-40 ELPT | More capacity, more weight on board |
+| **XF 16-18** | Mercury 50-90 ELPT | Mercury 90-115 ELPT | Family days with full crew, watersports |
+| **XT 17-20** | Mercury 90-175 | Pro XS upgrade | Tournament fishing, top speed matters |
 | **Titanium 19** | Mercury 115 EXLPT | Mercury 150 | Max HP rating; for tournament-grade performance |
-| **LE 15–21** | Mercury 25–40 ELPT CT | Mercury 60–115 ELPT CT | More passengers, watersports towing |
-| **Q 21–23** | Mercury 60 ELPT CT | Mercury 150–250 | Watersports, larger passenger loads |
-| **Halo 19–23** | Mercury 115 EXLPT | Verado options on 23 | Premium experience, single-engine boat |
+| **LE 15-21** | Mercury 25-40 ELPT CT | Mercury 60-115 ELPT CT | More passengers, watersports towing |
+| **Q 21-23** | Mercury 60 ELPT CT | Mercury 150-250 | Watersports, larger passenger loads |
+| **Halo 19-23** | Mercury 115 EXLPT | Verado options on 23 | Premium experience, single-engine boat |
 
 **Command Thrust (CT)** matters on pontoons. It's a larger gearcase that turns a bigger prop more slowly, way more thrust at low speed, much better for moving heavy pontoon hulls. Standard on most LE Series motors and a no-brainer on heavier pontoons.
 
-**Pro XS** matters on the XT 18 and up. Performance-tuned variants of the FourStroke with sport gearcases and higher RPM ceilings. Adds 3–5 mph top end and quicker hole shot. Worth it on a tournament-spec hull.
+**Pro XS** matters on the XT 18 and up. Performance-tuned variants of the FourStroke with sport gearcases and higher RPM ceilings. Adds 3-5 mph top end and quicker hole shot. Worth it on a tournament-spec hull.
 
 **Verado** is the premium option on bigger Halo and Q Series pontoons, naturally aspirated V8/V10s, the smoothest and quietest Mercury platform. Significant cost step; for higher-end boats only.
 
@@ -170,7 +170,7 @@ Legend's "All-In Pricing" model means the price you see on the website includes:
 - Extended warranty (Mercury Product Protection, well worth considering)
 - Accessories (anchors, life jackets beyond minimum, fishing electronics beyond standard)
 
-Plan on **5–8% on top of the listed price** for HST and reasonable optional equipment. Bigger optional packages can push higher.
+Plan on **5-8% on top of the listed price** for HST and reasonable optional equipment. Bigger optional packages can push higher.
 
 ---
 
@@ -178,7 +178,7 @@ Plan on **5–8% on top of the listed price** for HST and reasonable optional eq
 
 A few things that aren't on the Legend website:
 
-**Mercury repower path is built-in.** Every Legend ships with a Mercury outboard, and we're a Mercury Platinum dealer. When the original engine eventually needs replacement (10–15 years out, typically), we already have your records, your boat history, and the right rigging knowledge. No starting over with a new dealer.
+**Mercury repower path is built-in.** Every Legend ships with a Mercury outboard, and we're a Mercury Platinum dealer. When the original engine eventually needs replacement (10-15 years out, typically), we already have your records, your boat history, and the right rigging knowledge. No starting over with a new dealer.
 
 **On-water service.** We're at Gores Landing on Rice Lake. If your Legend needs warranty work or service, you don't have to trailer it 90 minutes to a dealer in another county. Drop it at our slip, pick it up running.
 

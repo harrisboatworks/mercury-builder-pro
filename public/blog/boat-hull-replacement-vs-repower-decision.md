@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Hull Replacement vs Repower: The Honest Decision (2026)"
-description: "For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision."
+description: "For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury delivers 80% of the new-boat experience for half the money."
 category: "Repower"
 date_published: 2026-04-29
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Boat Hull Replacement vs Repower: The Honest Decision (2026)
 
-> For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision.
+> For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury delivers 80% of the new-boat experience for half the money.
 
 **Category:** Repower  
 **Published:** 2026-04-29  
@@ -29,194 +29,163 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-10*
+**Canonical URL:** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
 
-> **Quick answer:** If the hull is sound and the motor is tired, repower. If the hull is structurally compromised, soft transom, rotted stringers, hull cracks, replace the boat. Repowering a bad hull is throwing money at a doomed platform. Honest assessment and installed repower quotes at mercuryrepower.ca.
+---
 
-For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).
+## Quick Answer
 
-## Repower or replace? The quick decision tree
+If the hull is sound and the motor is tired, repower. If the hull is rotting, structurally compromised, or fundamentally undersized for how you use it, replace the boat. Repowering a bad hull is throwing money at a doomed platform. Honest assessment and installed repower quotes at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
-Start here:
+---
 
-1. **Is the hull structurally solid?** If the transom, stringers, floor, and hull are sound, repower stays on the table. If the structure is soft or rotten, replacing the boat may be the smarter move.
-2. **Is the boat still the right boat for how you use it?** If the layout, size, seating, storage, and ride still work, a repower can protect a boat you already know. If your family or lake use has outgrown the hull, a new boat may solve more than the motor problem.
-3. **Is the repower less than the cost of changing boats?** Compare the installed motor, rigging, controls, prop, and setup against the real cost of moving into another boat. Do not compare motor-only price against boat-only price.
-4. **Will the boat be worth keeping for another 5-10 years?** If yes, repower can make sense. If you are already mentally done with the boat, do not spend good money trying to fall back in love with it.
+::decision-card
+heading: Repower the hull, or replace it?
+eyebrow: Honest hull check
+subhead: The motor is rarely the most expensive thing on a boat. The hull underneath it is.
+leftLabel: Repower the existing hull if
+leftCriteria:
+  - Stringers, transom, and floor are solid (no soft spots, no rot)
+  - Hydraulic steering and rigging are in working order
+  - Hull layout, seating, and gunwale height still suit how you boat
+  - The motor is the only major problem
+  - You are attached to the boat or it has sentimental value
+leftOutcome: Repower this boat
+leftVariant: recommended
+rightLabel: Replace the hull if
+rightCriteria:
+  - Transom is soft, cracked, or has obvious water damage
+  - Stringers are rotting or the floor is spongy
+  - You would need to rebuild more than the motor (electronics, controls, seats)
+  - The hull is 30 plus years old with no maintenance records
+  - Your family use has grown beyond what the boat can carry
+rightOutcome: Sell or scrap, buy a different hull
+rightVariant: alternative
+whenInDoubt: Get an in-person hull inspection before quoting a major repower. We will not quote a serious motor into a hull that will not outlast the new motor.
+::
 
-HBW rule of thumb: a good hull with a tired motor is a repower candidate. A tired hull with a tired motor is a replacement candidate.
+---
 
-The decision is not "new boat vs. old boat." It is "do I have a hull worth keeping?" If the answer is yes, repower wins on the math nearly every time. A Mercury repower on a solid 15-year-old hull lands $20,000 to $35,000 CAD all-in for a typical setup, against $50,000 to $90,000 CAD for a comparable new boat package.
+## Full Article
 
-We have been doing this math with customers at HBW since 1965. Three patterns repeat:
+The question isn't "new boat vs. old boat." It's "do I have a hull worth keeping?" If the answer is yes, repower wins on the math in most cases. A new Mercury on a solid hull gives you 80% of the new-boat experience for considerably less money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use.
 
-- **Customers who want a new boat for the new-boat reasons** (specific hull, latest features, status) should buy a new boat. We sell those too. The repower argument is not for them.
-- **Customers who want a reliable boat that performs like new** are usually better served by a repower. Their hull is fine. Their motor is the limiting factor.
-- **Customers with a soft or compromised hull** should not repower. A new motor on a bad hull is paying premium for an asset that will fail you anyway.
+### Three Patterns We See Repeatedly
 
-The hard part is honestly assessing the hull. Most Kawartha aluminum hulls hold up better than owners assume. Most fiberglass hulls hold up worse than owners assume. We do free hull walk-arounds at HBW. [Schedule one](/contact).
+**Customers who want a new boat for new-boat reasons**, specific hull, latest features, the experience of buying new, should buy one. We sell Legend Boats at HBW. The repower argument isn't for everyone.
 
-## What changes the answer
+**Customers who want a reliable boat that performs like new** are usually better served by a repower. Their hull is fine. Their motor is the limiting factor.
 
-Five things move whether to repower or replace:
+**Customers with a soft or compromised hull** should not repower. A new motor on a bad hull is spending premium for an asset that will fail anyway.
 
-- **Hull age and condition.** A 10-year-old aluminum hull stored properly is closer to "new" than a 5-year-old fiberglass hull stored badly. Storage history matters more than calendar age.
-- **Hull suitability for current use.** A boat that was right for fishing solo and is now hauling a family of five is undersized. No motor fixes that.
-- **What is on the hull besides the motor.** If the seats, electronics, helm, and trailer are all aging out simultaneously, sometimes the math shifts toward replacement.
-- **Sentimental value.** A boat that grandpa built or that hauled three generations is worth more than the spec sheet says. Some hulls deserve to keep going.
-- **Long-term ownership plan.** A 20+ year keeper justifies a different decision than a 3-year flip.
+The hard part is honestly assessing the hull. Most Ontario aluminum hulls hold up better than owners assume. Fiberglass hulls can go either way. We do free hull walk-arounds at HBW. If you're uncertain, come in.
 
-## The honest math
+### The Honest Math
 
-For typical Ontario freshwater repowers on a solid hull:
+For typical Ontario freshwater repowers on a solid hull vs. new boat options:
 
-| Scenario | Cost (CAD before HST) |
+| Scenario | Cost (CAD, before HST) |
 |---|---|
-| 90 to 115 HP repower on existing hull | $17,000 to $22,000 |
-| 150 to 200 HP repower on existing hull | $23,000 to $36,000 |
-| 250 to 300 HP repower on existing hull | $35,000 to $40,000 |
-| New comparable aluminum boat package (90 to 115 HP) | $50,000 to $70,000 |
-| New comparable fiberglass boat package (150 to 200 HP) | $65,000 to $90,000 |
-| New comparable pontoon package (115 to 150 HP) | $55,000 to $75,000 |
+| 90, 115 HP repower on existing hull | $17,000, $22,000 |
+| 150, 200 HP repower on existing hull | $23,000, $36,000 |
+| 250, 300 HP repower on existing hull | $35,000, $40,000 |
+| New comparable aluminum package (90, 115 HP) | $50,000, $70,000 |
+| New comparable fiberglass package (150, 200 HP) | $65,000, $90,000 |
+| New comparable pontoon package (115, 150 HP) | $55,000, $75,000 |
 
-For specific pricing on your boat, [build a quote](/quote/motor-selection) or [contact HBW](/contact).
+The repower path typically saves $25,000, $50,000 CAD against new. That savings is the deciding factor for most customers, but it's not the deciding factor when the hull is bad.
 
-The repower path saves $25,000 to $50,000 CAD against new in most scenarios. That savings is the deciding factor for most customers. It is not the deciding factor when the hull is bad.
+### When to Repower, The Clear Yes
 
-## When to repower (the clear yes)
+- **Hull is 5, 20 years old, dry-stored, and structurally solid.** Most Ontario aluminum hulls in this range have decades of life left.
+- **Existing seats, helm, and electronics still work or are fixable.** A motor swap doesn't require replacing the whole boat.
+- **The hull fits your use case.** A 16 ft aluminum console for Rice Lake fishing is the right tool. A new 16 ft aluminum console won't feel different on the water.
+- **You like the boat.** Sentimental and lifestyle attachment matters. The boats people keep for 20 years are usually boats they love.
+- **You plan to keep the boat 5+ more years.** The longer the hold, the more the repower math wins.
 
-Repower is the right call when:
+### When to Replace, The Clear No on Repower
 
-- **Hull is 5 to 20 years old, dry-stored, and structurally solid.** Most Ontario aluminum hulls in this range have decades of life left. Most fiberglass hulls in this range need careful inspection but are often fine.
-- **Existing seats, helm, and electronics still work or are fixable.** A motor swap does not require replacing the rest of the boat.
-- **The hull fits your use case.** 16 ft aluminum console for fishing on Rice Lake in the Kawarthas (Ontario) is the right tool. A new 16 ft aluminum console will not feel different on the water.
-- **You like the boat.** Sentimental and lifestyle attachment matters. The boats people keep for 20+ years are usually boats they love.
-- **You plan to keep the boat 5+ more years.** The longer the keep, the more the repower math wins.
+- **Hull is rotting, soft, or has structural problems.** Soft transom, soft floor, hairline cracks at stress points, or repair patches that didn't hold are end-of-life signs. A new motor on a bad hull is good money after bad.
+- **Hull is fundamentally undersized for current use.** A 14 ft aluminum that's now expected to haul a family of five at 25 mph can't do that job. No motor fixes the mismatch.
+- **You hate the boat.** If you don't want to spend more time on the hull, a new motor won't fix that.
+- **Total cost of getting the hull right exceeds half the cost of a comparable new boat.** New floor + transom rebuild + seat replacement + helm + new motor sometimes adds up past new-boat pricing. The math flips.
+- **You plan to sell within 2 years.** The repower premium doesn't pay back fast enough on a short hold.
 
-We see all five conditions met regularly at HBW. Those customers walk out with a new Mercury and a hull they already trust.
+When customers fall into this category, we tell them. We sell new Legend Boats. We're not married to the repower path.
 
-## When to replace (the clear no on repower)
-
-Replace the hull when:
-
-- **Hull is rotting, soft, or has structural problems.** Soft transom, soft floor, hairline cracks at stress points, or visible repair patches that did not hold are signs the hull is at end of life. A new motor on a bad hull is throwing good money after bad.
-- **Hull is fundamentally undersized for current use.** A 14 ft tin boat that is now expected to haul a family of five at 25 mph cannot do that job. No motor fixes the underlying mismatch.
-- **You hate the boat.** If you do not want to spend more time on the hull, a new motor will not fix that. Buying a boat you actually want is more important than saving money on a repower.
-- **The cost of getting the hull right is more than half the cost of a new boat.** New floor + transom rebuild + seat replacement + helm replacement + new motor = often above the new-boat price for a similar package. The math flips.
-- **You plan to flip the boat in less than 2 years.** The repower premium does not pay back fast enough on a short hold.
-
-When customers fall into this category, we tell them. We sell new Legend Boats at HBW. We are not married to the repower path.
-
-## The middle ground
+### The Middle Ground
 
 Some hulls fall between clear yes and clear no:
 
-- **Older fiberglass with cosmetic issues** but solid structure. Repower works but plan for cosmetic refresh during the same shop visit.
-- **Aluminum hulls with minor floor or transom soft spots.** Sometimes a partial floor or transom rebuild as part of the repower extends the hull's life another 10 to 15 years cost-effectively.
-- **Hulls with outdated electronics and rigging.** The repower is the right time to update the electronics and rigging. Combined cost is usually still well below new-boat pricing.
-- **Boats with a kicker mount that is in the wrong place.** Repower is the right time to relocate the kicker bracket if needed. Easier with the dash open.
+- **Older fiberglass with cosmetic issues but solid structure.** Repower works; plan a cosmetic refresh during the same shop visit.
+- **Aluminum hulls with minor soft spots in the floor or transom.** A partial floor or transom repair as part of the repower sometimes extends the hull's life another 10, 15 years cost-effectively.
+- **Hulls with outdated electronics and rigging.** The repower is the right time to update everything. Combined cost is usually still well below new-boat pricing.
 
-We assess these during the hull walk-around. The right answer depends on the specific hull and budget tolerance.
+We assess these during the walk-around. The right answer depends on the specific hull and your budget.
 
-## What HBW checks before recommending one path
+### What HBW Checks Before Recommending One Path
 
-When customers come in asking "should I repower or replace?" we want to know:
+When customers ask "repower or replace?", we want to know:
 
-- **Boat make, model, year, and length**
-- **Hull material (aluminum vs fiberglass)**
-- **Storage history (indoor heated, indoor unheated, outdoor)**
-- **Visible structural condition (we walk around it)**
-- **Floor and transom condition (we tap-test and visually inspect)**
-- **Existing motor age and condition**
-- **Existing rigging, electronics, and seat condition**
-- **Primary use case and how often you use the boat**
-- **Long-term plan (5 years, 10 years, 20 years)**
-- **Budget tolerance and financing options**
+- Boat make, model, year, length, and hull material
+- Storage history (indoor heated, indoor unheated, outdoor)
+- Visible structural condition
+- Existing motor age and condition
+- How often you use the boat and for what
+- Long-term plan (5 years, 10 years, 20 years)
+- Budget tolerance and financing options
 
-We give an honest recommendation. Sometimes the right answer is repower. Sometimes the right answer is replace. Sometimes the right answer is "keep using what you have, your motor still has 200 hours of life and you can decide next year."
+We give an honest recommendation. Sometimes the right answer is "your motor still has 200 hours of life, come back next year."
 
-## Common decision mistakes
+### Common Decision Mistakes
 
-We see these every season:
+**Replacing a hull that was fine.** Customer assumes their 12-year-old aluminum is at end of life because the motor died. Hull is solid. The replacement was unnecessary spending.
 
-1. **Replacing a hull that was fine.** Customer assumes their 12-year-old aluminum hull is at end of life because the motor died. Hull is still solid. Replacement was unnecessary spending.
-2. **Repowering a hull that is rotting.** Customer puts a new $20,000 motor on a hull with a soft transom. The transom fails 18 months later, putting the new motor at risk. Should have replaced the hull or repaired the transom first.
-3. **Replacing because of cosmetic problems.** Faded gel-coat or worn vinyl seats are not structural problems. Cosmetic refresh is much cheaper than replacement.
-4. **Ignoring the trailer.** A 20-year-old trailer with seized bearings and bald tires is a separate replacement decision from the boat itself. Sometimes the trailer is the limiting asset.
-5. **Buying new for the wrong reasons.** "I want a new boat" is a fine reason. "My motor is dead so I need a new boat" usually is not.
+**Repowering a hull that's rotting.** New $20,000 motor on a soft transom. The transom fails 18 months later, putting the new motor at risk.
 
-## Related guides
+**Replacing for cosmetic reasons.** Faded gel-coat or worn vinyl seats aren't structural problems. Cosmetic refresh is much cheaper than replacement.
 
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
-- [Boat Repowering Guide: When to Replace Your Motor](/blog/boat-repowering-guide-when-to-replace-motor), the timing question
-- [Ontario Cottage Boat Motor Repower Guide](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
-- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion specifically
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP sizing for repowers
-
-## Ready to figure out which path is right?
-
-If you think you might be repowering, build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD, full configuration including rigging.
-
-[**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you want to talk through repower vs. replace before quoting, [give us a call at (905) 342-2153](tel:9053422153) or [come in for a hull walk-around](/contact). We will give you the honest math and the honest answer for your specific boat. Sometimes that answer is "your boat is fine, do not spend the money."
+**Ignoring the trailer.** A 20-year-old trailer with seized bearings is a separate decision from the boat. Sometimes the trailer is the limiting asset.
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+## FAQs
+
+**Should I repower or buy a new boat?** 
+Depends on hull condition and use case. For most boaters with a 5, 20-year-old hull that's been stored properly and is structurally solid, repowering saves $25,000, $50,000 CAD and gives you most of the new-boat experience. For hulls with structural issues or use mismatch, replacement makes more sense.
+
+**How long does a typical aluminum hull last?** 
+Properly maintained aluminum hulls regularly last 30, 50+ years. Indoor storage and proper winterization are the biggest factors. Most Kawartha aluminum hulls from the 1990s and 2000s are still on the water.
+
+**What are the signs a hull is at end of life?** 
+Soft floor or transom, hairline cracks at stress points, visible repair patches that didn't hold, water inside the hull foam, or structural damage from impact. Cosmetic issues (faded gel-coat, worn vinyl) are not structural end-of-life signs.
+
+**Does a repower add value to my boat?** 
+A new Mercury motor on a solid hull adds meaningful resale value, typically recovering a significant portion of the repower cost, and makes the boat sell faster.
+
+**Can you assess my boat to help with the decision?** 
+Yes. We do free hull walk-arounds at HBW. Bring the boat to Gores Landing or send photos for a preliminary assessment. The full decision needs eyes on the boat. Call **905-342-2153** to schedule.
+
+**Should I repower a boat I plan to sell soon?** 
+Usually not. The repower premium pays back over multiple seasons of ownership. If you're selling within 12 months, selling as-is and letting the next owner decide usually makes more financial sense.
 
 ---
 
-## Try the calculator
+## Internal Links
 
-Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
-## FAQ
-
-**Should I repower or buy a new boat?**
-Depends on hull condition and use case. For most boaters with a 5-to-20-year-old hull that's been stored properly and is structurally solid, repowering saves $25,000 to $50,000 CAD against new and gives you 80% of the new-boat experience. For hulls with structural issues or fundamental use mismatch, replacement is the better path.
-
-**How long does a typical aluminum boat hull last?**
-Properly maintained aluminum hulls regularly last 30 to 50+ years. Indoor storage and proper winterization are the biggest factors. Most Kawartha aluminum hulls from the 1990s and 2000s are still on the water in 2026 with some on their second or third Mercury repower.
-
-**How long does a typical fiberglass boat hull last?**
-20 to 40 years depending on storage and use. Fiberglass is more sensitive to UV exposure and water intrusion than aluminum. Outdoor uncovered storage shortens fiberglass life meaningfully. Indoor heated storage extends it.
-
-**What are the signs a boat hull is at end of life?**
-Soft floor or transom (visibly springy or audibly hollow when tapped), hairline cracks at stress points, visible repair patches that did not hold, water inside the hull foam, or structural damage from impact or grounding. Cosmetic issues (faded gel-coat, worn vinyl) are not structural end-of-life signs.
-
-**How much does a Mercury repower cost?**
-Depends on HP. A 25 to 60 HP repower lands $11,000 to $15,000 CAD all-in. A 90 to 115 HP repower lands $17,000 to $22,000 CAD. A 150 to 200 HP repower lands $23,000 to $36,000 CAD. See our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for full ranges and [build a quote](/quote/motor-selection) for your specific boat.
-
-**How much does a new comparable boat cost?**
-Depends on size and brand. A new 16 to 18 ft aluminum console with 90 to 115 HP Mercury package lands $50,000 to $70,000 CAD. A new 18 to 22 ft fiberglass package lands $65,000 to $90,000 CAD. A new 20 to 22 ft pontoon package lands $55,000 to $75,000 CAD. New is consistently $25,000 to $50,000 CAD more than a comparable repower.
-
-**Can I repower a boat that is more than 20 years old?**
-Yes, if the hull is structurally solid. Many 25 to 35-year-old aluminum hulls at HBW are running their second Mercury repower. Older hulls warrant a thorough hull walk-around before committing to the motor purchase. Fiberglass hulls in the 25+ year range need extra inspection.
-
-**Will my old electronics and rigging work with a new Mercury?**
-Mercury-to-Mercury repowers usually keep existing throttle controls, gauges, and harness if they are post-2010 and in good condition. Older rigging often needs replacement. Brand conversions (Evinrude, Yamaha, Honda to Mercury) need new control systems. We assess during the hull walk-around.
-
-**Should I repower a boat I plan to sell soon?**
-Usually not. The repower premium pays back over multiple seasons of ownership. If you plan to sell within 12 months, the repower investment is unlikely to recover in resale price. Better to sell the boat as-is and let the next owner decide.
-
-**Does a repower add value to my boat?**
-A new Mercury motor adds meaningful resale value to a solid hull, often $0.60 to $0.80 per dollar spent on the repower. Not full recovery, but a meaningful uplift. The repower also makes the boat sell faster, which has its own value.
-
-**What if my hull is fine but my trailer is shot?**
-Treat the trailer as a separate decision. A new trailer for an existing boat is $3,000 to $7,000 CAD depending on size and capacity. That investment is usually well worth it on a hull you plan to keep.
-
-**Can HBW assess my boat to help with the decision?**
-Yes. We do free hull walk-arounds at HBW. Bring the boat to us or send photos and we can give you a preliminary assessment. The full decision needs eyes on the boat. [Contact us](/contact) to schedule.
-
-**What is the worst-case scenario for a repower?**
-Putting a new motor on a hull with a hidden structural problem (soft transom, cracked stringer, water-saturated foam). The hull fails 1 to 3 years later, putting the new motor at risk. Avoidable with a thorough hull walk-around before the repower. We do this on every project at HBW.
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
 
 ---
 
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+## CTA
+
+Think you might be repowering? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration.
+
+Not sure which path is right? Call **905-342-2153** or come in for a free hull walk-around. We'll give you the honest answer for your specific boat, including "don't spend the money."
+
+---
 
 ## FAQs
 
@@ -258,7 +227,7 @@ Yes. When you replace a motor on a registered or licensed pleasure craft in Cana
 
 ### What are the hidden costs of keeping an older boat hull?
 
-Beyond the motor, older hulls commonly require: wiring inspection and possible rewire (marine wiring becomes brittle after 15–20 years); fuel tank and fuel line assessment for corrosion or ethanol compatibility; hardware and running light updates; navigation electronics replacement; and possible helm or steering system service. These costs aren't automatic, but they're common enough that any repower budget on a boat over 15 years old should include a contingency for ancillary work. Our shop rate is $140/hr median, and older boats tend to find surprises once work starts. A full marine survey by a certified surveyor is worth the investment for boats over 20 years old.
+Beyond the motor, older hulls commonly require: wiring inspection and possible rewire (marine wiring becomes brittle after 15-20 years); fuel tank and fuel line assessment for corrosion or ethanol compatibility; hardware and running light updates; navigation electronics replacement; and possible helm or steering system service. These costs aren't automatic, but they're common enough that any repower budget on a boat over 15 years old should include a contingency for ancillary work. Our shop rate is $140/hr median, and older boats tend to find surprises once work starts. A full marine survey by a certified surveyor is worth the investment for boats over 20 years old.
 
 ### Does repowering a boat affect its resale value?
 

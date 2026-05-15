@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -42,7 +42,7 @@ After that, most people spend a season or two pressing buttons and hoping for th
 This post is the explanation you didn't get at the dealer. Practical, Mercury-specific, and written for the conditions you're actually dealing with on this lake.
 
 ![Side-profile diagram comparing three outboard trim angles on a boat: negative trim with the motor tucked in shows the bow plowing water and the boat fighting through chop slowly, neutral trim shows the boat planing efficiently in a balanced cruise, and positive trim with the motor tucked out shows the bow lifted high with the propeller ventilating above the waterline causing RPM spikes and lost thrust.](/lovable-uploads/diagram-trim-angles.png)
-*The three trim states every boater should recognize. Most of this article is about staying in the middle one — neutral, planing efficiently, with the prop fully wetted.*
+*The three trim states every boater should recognize. Most of this article is about staying in the middle one - neutral, planing efficiently, with the prop fully wetted.*
 
 ---
 

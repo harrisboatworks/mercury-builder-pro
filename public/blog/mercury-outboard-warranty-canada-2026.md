@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -101,9 +101,9 @@ Coverage tiers, durations, and pricing depend on the specific motor, region, cur
 We can confirm what's available for your specific motor and current promotions when you quote with us.
 
 **What MPP costs (rough):** Pricing varies by motor HP and term length. As a rough range:
-- A 90 HP 4-stroke with a 5-year MPP: roughly $1,200–$1,800 CAD
-- A 200 HP V6 with a 5-year MPP: roughly $1,800–$2,800 CAD
-- A V8/V10 Verado with a 5-year MPP: roughly $2,800–$4,000+ CAD
+- A 90 HP 4-stroke with a 5-year MPP: roughly $1,200-$1,800 CAD
+- A 200 HP V6 with a 5-year MPP: roughly $1,800-$2,800 CAD
+- A V8/V10 Verado with a 5-year MPP: roughly $2,800-$4,000+ CAD
 
 **Is it worth it?** Honest take from our shop: for motors over 90 HP, **yes**, the cost of one major out-of-warranty repair (cracked block, blown head gasket, lower unit rebuild) easily exceeds the MPP price. For smaller motors, it's a closer call; the math depends on how risk-tolerant you are. Most of our 115 HP+ buyers add MPP. About half of our 90 HP buyers do. Below 90 HP, it's less common.
 

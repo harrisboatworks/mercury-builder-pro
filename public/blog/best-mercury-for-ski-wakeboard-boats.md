@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -83,17 +83,17 @@ If wakesurfing is the primary use, consider an inboard tow boat instead. We'll b
 
 | Motor | All-in pricing (CAD, before HST) |
 |-------|----------------------------------|
-| 175 HP Pro XS | $26,500–$31,500 |
-| 200 HP V6 Pro XS | $29,500–$34,000 |
-| 225 HP V6 Pro XS | $32,000–$36,500 |
-| 250 HP V8 Pro XS | $36,500–$40,500 |
-| 300 HP V8 Pro XS | $39,500–$44,000 |
+| 175 HP Pro XS | $26,500-$31,500 |
+| 200 HP V6 Pro XS | $29,500-$34,000 |
+| 225 HP V6 Pro XS | $32,000-$36,500 |
+| 250 HP V8 Pro XS | $36,500-$40,500 |
+| 300 HP V8 Pro XS | $39,500-$44,000 |
 
 Pricing includes the motor, rigging, prop, and installation. Use the [configurator](https://mercuryrepower.ca) for exact current pricing.
 
 For a tow boat repower, you also typically want:
-- **Stainless steel prop** instead of aluminum, better hole shot, more durable. Add $300–$700.
-- **Hydraulic steering**, non-negotiable on V6+ for towing precision. $1,500–$2,500 if not already on the boat.
+- **Stainless steel prop** instead of aluminum, better hole shot, more durable. Add $300-$700.
+- **Hydraulic steering**, non-negotiable on V6+ for towing precision. $1,500-$2,500 if not already on the boat.
 - **DTS (Digital Throttle & Shift)** if available, much better feel for skier pulls. Standard on V8 Pro XS, optional on V6.
 
 ## V6 vs V8. The Real Decision

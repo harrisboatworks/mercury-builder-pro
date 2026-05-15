@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,129 +29,183 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-10*
+## Quick Answer
 
-> **Quick answer:** The Harris Boat Works launch ramp at 5369 Harris Boat Works Rd in Gores Landing is two concrete lanes, open 24 hours, with parking, washrooms, and full marina services on-site. $20 daily, $200 season pass. 30 minutes from Peterborough, 20 from Cobourg or Port Hope. This page is the practical guide. What to do before you back down the ramp, what to expect when you get there, and who it's for.
+Rice Lake has four main public boat launch options: Bewdley (west end), Roseneath (south shore), Gores Landing (HBW's location, south shore), and Hastings (east end, Trent-Severn entrance). Each has different facilities, parking, and seasonal access. HBW's Gores Landing ramp is 2-lane concrete with parking and washrooms; day fees apply. Pleasure Craft Licence (PCL) and Pleasure Craft Operator Card (PCOC) are required for powered boats.
 
-## Who this guide is for
+---
 
-- **Anglers** heading out for Rice Lake walleye, bass, or panfish
-- **Cottagers and day visitors** from the GTA, Cobourg, Port Hope, or Peterborough
-- **Trailer boaters** from elsewhere on the Trent-Severn looking for an easy access point
-- **First-time launchers** who want the steps before the audience
+## What Each Public Launch Offers
 
-If you've never backed a trailer down a ramp on a Saturday in May, this is the page that helps you not be the story everyone tells later.
+**Bewdley (west end of Rice Lake)**
+- 1-lane concrete ramp
+- Public parking lot
+- Closest to Highway 28
+- Often busy on weekends
+- No fuel on-site
 
-## Before you back down the ramp: checklist
+**Roseneath (south shore, middle of lake)**
+- 1-lane ramp, asphalt and concrete
+- Limited parking
+- Quieter than Bewdley most days
+- No services
 
-Run this in the parking area, not at the water's edge. The line behind you will appreciate the silence.
+**Gores Landing (HBW, south shore)**
+- 2-lane concrete ramp
+- Parking lot (fills up on weekends)
+- Washrooms, snacks, fuel at HBW
+- Day fee applies (see signage at ramp)
+- Direct access to mid-lake and the Trent-Severn east
 
-- **Drain plug in.** Most ramp horror stories start here.
-- **Straps off.** Bow strap stays on until the boat is in the water.
-- **Battery on, key works.** Quick test in the lot beats trouble at the dock.
-- **Fuel level.** Top up at the on-site pumps before you launch if you're low.
-- **PFDs aboard.** One per person, accessible, the right size.
-- **Safety kit.** Paddle or oar, bailer, sound device, throw rope, waterproof flashlight.
-- **Boating licence (PCOC)** on whoever's driving. Not just in the glove box at home.
-- **Fishing licence** on every angler over 18 (or 65+ resident). Ontario rules apply on Rice Lake. HBW does not sell them.
+**Hastings (east end)**
+- 1-lane ramp
+- Public parking
+- At the entrance to the Trent-Severn east
+- Good if you're locking through to the Trent-Severn system
 
-Do this once on the way to the ramp and you'll do it automatically every time after.
+---
 
-## What's on-site at the HBW ramp
+## How to Choose the Right Launch
 
-You don't have to drive 20 minutes back into town if you forgot something:
+Pick by where you're going:
 
-- Marine gas station with **ethanol-free 89-octane**. Outboards run cleaner on it.
-- Three washrooms with showers, plus a 24/7 port-a-potti for after-hours
-- Mercury and Mercruiser service on-site if something goes wrong (in season)
-- Snacks, ice, and accessories
-- Boat rentals if you forgot the boat. Yes, that happens.
-- Courtesy docks for loading and unloading
+**West-end fishing or Bewdley-area cottage access:** Bewdley.
 
-The two-lane concrete ramp means you can launch and retrieve simultaneously, which matters on a busy weekend. Single-lane public ramps have you waiting for the trailer ahead of you to clear before you can back in. We don't.
+**Middle of the lake (most common for general boating, walleye trolling, or visiting Gores Landing/Roseneath area):** Gores Landing or Roseneath. Gores Landing has better facilities; Roseneath has less of a crowd.
 
-## Parking: daily and overnight
+**East-end fishing or starting a Trent-Severn trip:** Hastings.
 
-Parking is included with your launch fee:
+**Need fuel, washrooms, or first-time launch help:** Gores Landing (HBW). Our staff are there during business hours.
 
-- **Daily ($20).** Launch, park your trailer and tow vehicle, come back, leave. Pay in the office during business hours, or use the after-hours honour-box. Cash, debit, credit, e-transfer, Bitcoin all work.
-- **Season pass ($200).** Unlimited launches all season. If you launch 10+ times a year you're already saving. Anyone running Rice Lake regularly should have one. Pays for itself by the second long weekend.
-- **Overnight ($20/night).** Leave the trailer or rig overnight if you're staying on the lake.
-- **Long-term parking** available for trailers and tow vehicles for boaters keeping their boat in the water all season elsewhere.
+For most Toronto-area or GTA visitors, Gores Landing is the most accessible choice: 2-lane concrete, parking, services, and the most consistent ramp surface.
 
-## A note on the ramp itself
+---
 
-The concrete ramp is the lane you drive on. Beside it is a metal lip. **Do not step on the metal portion in shoes.** It gets slippery, especially when wet, and people land on their backsides every season. Stay on the concrete.
+## Step-by-Step: Launching at Gores Landing (Or Anywhere)
 
-## Who else launches at HBW
+If you're new to launching, this is the basic flow. Most people do it efficiently after a few times.
 
-Most days the ramp sees a mix of:
+**1. Pull into the staging area** (the parking spot before the actual ramp, not on the ramp itself). Do your prep here:
+- Remove trailer straps
+- Install drain plug
+- Lower the motor
+- Make sure ignition is set up and battery is connected
 
-- Aluminum fishing boats heading out for walleye, bass, or perch
-- Pontoons running cottage families to a beach for the afternoon
-- Wakeboard and ski boats from cottages on the south shore
-- Personal watercraft (jet skis)
-- Kayaks and canoes (the courtesy dock is friendlier than wading from a public access)
-- Small sailboats
+**2. Back the trailer down the ramp** at a slow, controlled speed. Keep the boat straight on the trailer. Stop when the boat is mostly floating, not when it's still mostly on the trailer.
 
-The ramp is open to all of the above. We don't gatekeep.
+**3. Have someone walk the boat** off the trailer to a temporary tie-up on the dock or pull it to a holding area. If you're solo, tie a line to the boat before you back in, you'll need to retrieve it from the dock.
 
-## When the ramp gets busy
+**4. Pull the trailer up the ramp** and park in the designated lot. Drive forward, not in reverse, to clear the ramp.
 
-A few realistic notes from running this ramp for decades:
+**5. Boat in water, trailer parked.** You're launched. The whole process takes 5–10 minutes once you've done it a few times.
 
-- **First warm Saturday in May** is the busiest day of the year. Plan for it. Or come Sunday.
-- **Walleye opener weekend** (mid-May, dates change) the parking lot fills early. If you want to be on the water at sunrise, arrive at sunrise and not at 7 a.m.
-- **Long weekend mornings** are busy 8-11 a.m. and slow after lunch. Inverse on the way home: quietest before 4 p.m., busiest 5-7 p.m.
-- **Off-season (Oct-Apr)** the ramp is open and quiet. Cold water rules apply. File a float plan, dress for water temperature, not air temperature.
+**Do not block the ramp doing prep work.** It's a constant frustration at public launches. Use the staging area, then move quickly through the actual ramp.
 
-## Why people choose HBW over public ramps
+---
 
-This isn't a knock on public ramps. They exist for a reason. But here's the trade-off:
+## What You Need to Have on the Boat (Required by Law)
 
-| What you'd compare | Public ramp | HBW ramp |
-|---|---|---|
-| Wait time on busy weekends | 30-60 min common | Two lanes, minimal wait |
-| Parking | First-come, often full | Reserved space included |
-| Lanes | Usually one | Two concrete |
-| Hours | Restricted at some | 24/7, year-round |
-| Marina services on-site | None | Gas, service, rentals, accessories |
-| Washrooms | Variable | Yes, with showers |
+For any powered boat in Ontario waters:
 
-If you're trying to get on the water before sunrise on a derby day, that wait-time difference is the whole game.
+**Pleasure Craft Operator Card (PCOC)** for the operator. One-time test, accessible in the boat or on phone.
 
-## What HBW checks if something goes wrong
+**Valid Pleasure Craft Licence (PCL)** for any boat with a motor 7.5 kW (10 HP) or larger. 2026 PCL changes: lifetime licences converted to 5-year renewals at $24. Check your PCL is current.
 
-If you launch and something's not right (motor won't start, alarm coming on, prop sounds wrong) bring it to the dock and find a staff member. We're a working Mercury service shop. We'll look at it. Sometimes it's a five-minute fix. Sometimes we say "this needs the bench, leave it with us." Better than driving home with the boat on the trailer and a problem you didn't diagnose.
+**Required safety equipment:**
+- One PFD per person (one must be a wearable Type III)
+- Sound-signaling device (whistle, horn)
+- Bailer or manual water pump
+- Anchor or grapnel with line
+- Paddle or oar
+- Navigation lights for sunset operation
 
-## Questions we hear at the counter
+Transport Canada publishes the full list, and there are specific extras for larger boats. Make sure you have everything before you launch.
 
-**Is the ramp really open 24 hours?**
-Yes. 24/7, 365 days a year. The honour box handles after-hours payment.
+---
 
-**How deep is the water at the end of the ramp?**
-Deep enough to launch most boats safely even in low-water years. We don't get the prop-strike calls common at shallow public ramps.
+## Trent-Severn Free Lockage 2026
 
-**Can I pay by e-transfer?**
-Yes. Cash, debit, credit, e-transfer, or Bitcoin during business hours. After hours, use the honour-box or e-transfer.
+If you're launching to lock through the Trent-Severn, big news: **lockage is free from June 19 to September 7, 2026** as part of the Canada Strong Pass. Pick up the free lockage sticker at the lockstation, online sales have been eliminated for 2026.
 
-**Is the ramp in good shape?**
-Two lanes of concrete, lit, with security cameras. Maintained. It has to be, we use it ourselves daily.
+This makes the multi-day Trent-Severn trip much more accessible. See [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026) for the full breakdown.
 
-**Can I get a discount on a season pass?**
-$200 flat. If you launch 10+ times per year it's already cheaper than daily. We don't run launch promos. The pricing is what it is.
+---
 
-**Can I launch late at night?**
-Yes. Headlights and a flashlight help. The ramp is lit but the parking area gets dark.
+## Common Mistakes at Public Launches
 
-**What about overnight on the boat?**
-The lake is fine. The ramp area is for launching. If you want to overnight on the water, dockage is by waitlist.
+**Forgetting the drain plug.** The boat fills with water as you launch. Every Saturday at every busy ramp.
 
-## Where to go next
+**Trying to launch from the staging area.** The staging area is for prep, not launching. Use the actual ramp.
 
-If you're heading up from the GTA and have questions: (905) 342-2153.
+**Doing prep on the ramp.** Pull off, prep, then back in. Don't tie up the ramp for 10 minutes while you load coolers.
 
-If you don't have a boat but want to fish Rice Lake or take the family out, [boat rentals](https://www.harrisboatworks.ca/rentals) are next door.
+**Wrong shaft length on a small boat.** A short-shaft outboard on a deep-V hull cavitates immediately at launch. Make sure your motor matches your boat before you launch.
+
+**Backing in too fast.** Slow, controlled, watch your mirrors. Don't dunk the trailer below the wheel wells.
+
+**Pulling the trailer up too fast with water still draining.** Let the boat clear the trailer fully before you drive up. Water in the trailer bearings is a common cause of bearing failure.
+
+---
+
+## Fishing Regulations and Licences
+
+You need a valid Ontario fishing licence to fish on Rice Lake or anywhere else in Ontario:
+
+- Outdoor Card (one-time purchase)
+- Fishing licence (annual or short-term)
+
+HBW does not sell fishing licences. Get yours online at ontario.ca/fishing or at a local licence vendor before you leave.
+
+Rice Lake is in Ontario MNR's Fisheries Management Zone 17 (FMZ 17). FMZ 17 rules apply, including size limits, bag limits, and season dates. Walleye, bass, and muskie all have specific rules. Check the current Ontario Fishing Regulations Summary before you keep fish.
+
+---
+
+## FAQs
+
+**Are the public launches on Rice Lake free?**
+Some have day-use fees (Gores Landing). Bewdley, Roseneath, and Hastings vary, check at the launch.
+
+**Can I launch a 24 ft boat at any of these ramps?**
+Most ramps can handle up to about 20 ft easily. For 22+ ft, Gores Landing and Hastings are typically the most accommodating. Roseneath and Bewdley are tighter for larger boats.
+
+**Where can I park my trailer for the day?**
+Designated lots at each ramp. Gores Landing has the largest and most reliable parking, but it fills up fast on summer weekends.
+
+**Do I need a PCOC to launch?**
+You need a PCOC to operate the boat, yes. Launching the boat (driving the trailer) doesn't require a PCOC, but the moment you have the motor running on the water, you do.
+
+**Can I leave my trailer overnight at a public launch?**
+Most public launches don't allow overnight parking. Check signage. HBW customers may have trailer storage options, contact us at [hbw.wiki/service](https://hbw.wiki/service).
+
+**What if my boat is bigger than the public ramps can handle?**
+HBW's 2-lane concrete ramp at Gores Landing handles most recreational boats up to about 26 ft. For anything bigger, call us first: 905-342-2153.
+
+---
+
+## Internal Links
+
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
+- [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
+- [Trailer Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide)
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
+
+---
+
+## Ready to Launch?
+
+If you need a Mercury motor before your next launch, build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+
+For service, parts, fuel, or to ask about our ramp at Gores Landing, call **905-342-2153**.
+
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Platinum Dealer | Since 1947
+
+---
+
+## Sources
+
+- Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
+- Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+- Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
 
 ## FAQs
 
@@ -198,12 +252,3 @@ The lake is fine. The ramp area is for launching. If you want to overnight on th
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 
----
-
-## Sources
-
-- Parks Canada, Trent-Severn Waterway free lockage and Canada Strong Pass, valid June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
-- Parks Canada, Trent-Severn lockage hours (seasonal, subject to change). [parks.canada.ca hours](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
-- Ontario Ministry of Natural Resources, Fisheries Management Zone 17 regulations (walleye/sauger and other species seasons, limits, exceptions). [ontario.ca](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
-
-*Last reviewed: 2026-05-11.*

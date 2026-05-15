@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -83,9 +83,9 @@ Approach downwind and the wind is adding speed while you're trying to bleed it o
 
 ## Slip-Style Docking in a Crosswind
 
-Come in at an angle, 20–30 degrees off the slip centerline, from the upwind side. This puts the wind at your back quarter rather than broadside.
+Come in at an angle, 20-30 degrees off the slip centerline, from the upwind side. This puts the wind at your back quarter rather than broadside.
 
-**Use the wind to do the last 2–3 feet.** As you get close, reduce throttle and let the wind nudge the bow across into alignment. You're not fighting the breeze, you're using it as an invisible hand to guide you in. This sounds counterintuitive until you try it once.
+**Use the wind to do the last 2-3 feet.** As you get close, reduce throttle and let the wind nudge the bow across into alignment. You're not fighting the breeze, you're using it as an invisible hand to guide you in. This sounds counterintuitive until you try it once.
 
 **Never add throttle to fight wind at close range.** Seeing the boat go sideways and adding power is how you arrive at the dock too fast. Slow down, use neutral, and let the physics help. Short bursts in gear are better than sustained throttle when you need to hold position.
 
@@ -93,11 +93,11 @@ Come in at an angle, 20–30 degrees off the slip centerline, from the upwind si
 
 ## Side-Tie Docking in a Crosswind
 
-**Wind onto the dock (onshore):** Approach at 30–45 degrees, aim upstream of where you want to land, cut throttle earlier than feels right, and drift in. Get a bow line to the dock first, then use it as a pivot to walk the stern alongside. Easier than it looks once you trust it.
+**Wind onto the dock (onshore):** Approach at 30-45 degrees, aim upstream of where you want to land, cut throttle earlier than feels right, and drift in. Get a bow line to the dock first, then use it as a pivot to walk the stern alongside. Easier than it looks once you trust it.
 
 **Wind off the dock (offshore):** Trickier. Approach steeper, closer to 45 degrees, maintain a little more speed than feels comfortable, and get a spring line on the dock mid-ship as fast as possible. A spring line running forward to a cleat gives you control that throttle cannot replicate. The [late season safety guide](https://www.mercuryrepower.ca/blog/late-season-boating-safety) covers line handling in rougher conditions.
 
-Regardless of scenario: at 4–5 feet out, a short burst of reverse kills forward momentum and straightens the boat. Then get a line on before you drift.
+Regardless of scenario: at 4-5 feet out, a short burst of reverse kills forward momentum and straightens the boat. Then get a line on before you drift.
 
 ---
 

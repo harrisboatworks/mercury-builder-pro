@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,156 +29,147 @@ content_type: blog_article
 
 ## Article
 
-# Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About
+### Quick Answer
 
-*Last reviewed: 2026-05-10*
+The Mercury 9.9 MH EFI is a manual-start, tiller-handle, short-shaft portable with electronic fuel injection and no cranking battery required. It is well suited to small aluminum fishing boats, cottage boats, tenders, and restricted-horsepower lakes. It is not a guaranteed planing motor for every 14-foot aluminum, and it is not the right call if you need electric start, power tilt, remote controls, or a long-shaft transom. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range.
 
-The Mercury 9.9 MH EFI is one of those motors that sounds boring until you understand why people keep asking about it.
+---
 
-The Mercury 9.9 MH EFI is getting attention because it brings modern fuel injection to a small, simple, manual-start outboard without turning the boat into a wiring project.
+### Full Article
 
-As of May 2026, Harris Boat Works is offering the Mercury 9.9 MH EFI for $2,999 CAD + HST with no extra charges or setup fees. That includes the 12 L fuel tank and hose, plus free prep.
+Most 9.9 HP outboards on Ontario boats are doing one of two things: serving as the primary motor on a small aluminum or tender, or riding on the stern corner of a bigger rig as a walleye trolling kicker. The Mercury 9.9 MH EFI is built for the first job.
 
-Yes, we know how that sounds. Every dealer says the price is sharp. The difference is we will show you the math.
+Here is what the "MH EFI" means before we go further:
 
-> **Pricing scope:** This $2,999 + HST special applies to the Mercury 9.9 MH EFI specifically (manual start, tiller, 15 inch short shaft). Other 9.9 variants (EH electric handle, ProKicker, Big Foot, Command Thrust) are priced separately. If you're shopping a different version, get a quote so we're comparing the right configuration.
+- **M**, Manual pull start
+- **H**, Tiller handle
+- **EFI**, Electronic fuel injection
 
-[Build your Mercury 9.9 quote](/quote/motor-selection)
+Shaft length: 15-inch short shaft. Displacement: 208 cc (12.8 cubic inches). External 12L / 3.2 gal fuel tank with fuel line.
 
-## Quick answer
+---
 
-The Mercury 9.9 MH EFI is a portable 9.9 hp FourStroke outboard with manual start, tiller steering, a 15 inch short shaft, electronic fuel injection, and a dry weight listed around 84 lb by dealer specifications. The big news is the EFI system. Mercury says the manual-start models use battery-free EFI, meaning the pull start charges the electrical system needed for ignition rather than requiring a cranking battery.
+## Why EFI Matters in a Small Outboard
 
-That makes it interesting for small aluminum boats, tenders, cottagers, fishing boats, and low-horsepower lakes where people want simple portable power without going back to carburetor headaches.
+Small portable outboards have traditionally been carbureted. That works fine when they run regularly, but a carbureted 9.9 that sat for six months over winter, on fuel it was not stabilized with, can be a frustrating experience come spring.
 
-This is a very smart little motor for the right boat. A 9.9 is still a 9.9, and hull shape, load, prop, shaft length, transom height, battery weight, and how much "just one more thing" you bolted into the boat all matter.
+Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stays simple. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range. The fuel economy number will vary by load and conditions, but the practical payoff is cleaner fuel control during cold starts and after seasonal storage.
 
-## Why EFI matters in a small outboard
+---
 
-For years, small portable outboards were usually where carburetors went to live forever. That was not always a disaster, but it did mean more sensitivity to stale fuel, seasonal sitting, cold starts, and the classic "it ran fine last year" conversation.
+## Battery-Free EFI, The Feature Worth Noting
 
-Mercury's newer 9.9 EFI changes the conversation because it brings electronic fuel injection into a small portable package. Mercury says the EFI system is designed for easier starts and more efficient performance, and Mercury also claims up to 27% better fuel economy than earlier carbureted models in the same horsepower range.
+Manual-start outboards typically do not need a battery. The problem with older EFI systems on small outboards is that they sometimes required one. Mercury's manual-start 9.9 EFI does not. Pulling the starter rope charges the electrical system enough to support ignition.
 
-That does not mean you can ignore fuel quality. It does not mean old gas suddenly becomes a good idea. It does mean the motor is built around a more modern fuel system, which matters a lot for the way many small outboards actually get used.
+This matters because it keeps the motor genuinely simple and portable. No key switch, no cranking battery, no electrical project to add to the installation. If the appeal of a 9.9 is simplicity, the battery-free operation preserves that.
 
-Most 9.9 owners are not running every day like a commercial operator. They fish on weekends. They use the cottage boat when the weather cooperates. They might run the motor a handful of times in a season, then let it sit. That pattern shows up across forum threads where buyers compare EFI against carbureted outboards because their boats sit for months between uses.
+---
 
-That is where EFI makes sense. Not because it turns a small outboard into a spaceship, but because it solves a real annoyance for real people.
+## Who This Motor Is Right For
 
-## What "MH" means: manual start, tiller, short shaft
+The 9.9 MH EFI is a strong fit for:
 
-For this article, we are talking about the Mercury 9.9 MH EFI specifically.
+- **Small aluminum fishing boats** (12, 14 feet where the transom, capacity plate, and load match)
+- **Cottage boats** on smaller lakes or restricted-horsepower water
+- **Back-lake trips** in the Kawarthas where a simple, reliable motor matters more than outright speed
+- **Tenders and utility boats**
+- **Restricted-horsepower lakes** where 9.9 HP is the regulated maximum
 
-In practical terms, that means manual pull start, tiller-handle steering, a 15-inch short shaft, electronic fuel injection, 208 cc displacement, and a 12 L / 3.2 gal external fuel tank with fuel line. Mercury dealer listings show 5,000 to 6,000 RPM as the full-throttle operating range and call for 87 octane fuel with up to 10% ethanol.
+For Rice Lake and the back lakes around the Kawarthas, this motor solves a real small-boat problem without making the boat more complicated. The best customer is not someone chasing top speed, it is someone who wants a simple, honest 9.9 that starts well, runs clean, and avoids carburetor drama.
 
-The important part is not memorizing the spec table. The important part is matching this motor to the right boat.
+---
 
-| Item | Mercury 9.9 MH EFI |
+## Who This Motor Is the Wrong Call For
+
+The 9.9 MH EFI is the wrong motor if:
+
+- **Your boat is a heavy, decked-out aluminum rig.** Owners of fully loaded 1448-style boats with added decking, batteries, and gear have found that 9.9 HP struggles to get on plane, even with just one person aboard. This motor does not guarantee planing on every 14-foot aluminum.
+- **You need a dedicated trolling setup on a larger rig.** For kicker-motor walleye trolling on a bigger boat, the Mercury 9.9 EFI ProKicker, with its Command Thrust gearcase and high-thrust prop, is the comparison model to evaluate. Different job, different tool.
+- **You need electric start, power tilt, or remote controls.** The MH EFI does none of these. If any of them matters to your setup, look at other configurations.
+- **Your transom is long-shaft.** This is the short-shaft (15") version. Measure your transom before buying.
+
+---
+
+## Standard 9.9 EFI vs. ProKicker-Style Use
+
+"Mercury 9.9 EFI" means different things depending on the version. The motor in this review is the standard 9.9 MH EFI: manual start, tiller handle, short shaft, standard gearcase.
+
+Mercury's 9.9 EFI ProKicker is built for trolling: high-thrust four-blade prop, Command Thrust gearcase, standard power tilt. Buyers comparing the two typically care about gear ratios, prop options, top speed versus trolling control, electric start, and tilt. If your primary use is slow-speed walleye trolling on a kicker mount, the ProKicker conversation is worth having separately.
+
+---
+
+## The Price, What HBW Has Published
+
+As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069, $3,875 CAD range.
+
+**Verify current pricing at [mercuryrepower.ca](https://mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
+
+---
+
+## Our Honest Take
+
+If you buy from Harris Boat Works, we service it too. For engine repairs, we only service Mercury and Mercruiser.
+
+The 9.9 MH EFI solves the problem most small-boat owners on Rice Lake and the Kawarthas actually have: a simple portable motor that starts reliably, runs clean on EFI, and does not require a battery project to operate. The carburetor drama that shows up on older small outboards after six months of storage is the problem this motor is designed to avoid.
+
+It is not for everyone. Check your transom height, check your boat's capacity plate, and be honest about whether you need electric start or remote controls. If none of those apply, the 9.9 MH EFI is one of the cleaner small outboard options available in Ontario in 2026.
+
+---
+
+## Specs Reference
+
+| Specification | Mercury 9.9 MH EFI |
 |---|---|
 | Horsepower | 9.9 hp |
 | Start | Manual pull start |
 | Steering | Tiller handle |
-| Shaft | 15 inch short shaft |
+| Shaft length | 15" short shaft |
 | Fuel system | Electronic fuel injection |
 | Cylinders | 2-cylinder FourStroke |
-| Displacement | 12.8 cu in / 208 cc |
-| Dry weight | About 84 lb (varies by dealer source) |
-| Fuel tank | External 12 L / 3.2 gal tank |
-| Common use | Small aluminum boats, tenders, cottage boats, back-lake boats |
+| Displacement | 208 cc (12.8 cu in) |
+| Dry weight | Approximately 84 lb |
+| Fuel tank | External 12L / 3.2 gal |
+| Full-throttle RPM range | 5,000, 6,000 |
+| Recommended fuel | 87 octane, up to 10% ethanol |
 
-## Battery-free EFI: the sneaky-good feature
+---
 
-The most interesting feature is not just "EFI." It is battery-free EFI on the manual-start version.
+## FAQs
 
-Mercury says the manual-start 9.9 EFI models require no cranking battery because pulling the starter rope charges the electrical system enough to support ignition. That is a big deal for people who want the cleaner starting and fuel control of EFI without adding a battery just to make the engine run.
+**Does the Mercury 9.9 MH EFI require a battery?** 
+No. The manual-start version is designed to operate without a cranking battery. Pulling the starter rope charges the electrical system enough to run the EFI. This is one of the motor's most practical features for small-boat and tender applications.
 
-That is the point a lot of boaters miss. EFI used to sound like "great, now I need more wiring." On this motor, the manual-start version keeps the simple portable setup.
+**Will the 9.9 MH EFI get my 14-foot aluminum on plane?** 
+It depends on the boat's total weight. A basic 14-foot aluminum with one person and minimal gear, yes. A heavily loaded 1448-style boat with added decking, batteries, gear, and multiple passengers, not reliably. Check your boat's capacity plate and be honest about your typical load.
 
-No key switch. No cranking battery. No extra electrical project. Just fuel, water, rope, and the usual reminder not to pull like you are starting a chainsaw in a panic.
+**Is the 9.9 MH EFI the right kicker for walleye trolling?** 
+For trolling on a larger boat, the Mercury 9.9 EFI ProKicker (Command Thrust gearcase, high-thrust prop) is the more purpose-built option. The standard MH EFI works as a kicker but is optimized for small-boat primary power, not slow-speed trolling on a big rig.
 
-## Best fits: small aluminum, cottage, back-lake
+**What is the shaft length?** 
+15 inches, short shaft. Measure your transom height before buying. If your transom is 20" or taller, you need a long-shaft version.
 
-The Mercury 9.9 MH EFI is a strong fit for boaters who want simple, portable power and do not need electric start, remote steering, power trim, or a high-thrust trolling setup.
+**Does HBW service the 9.9 EFI?** 
+Yes. For engine repairs, we only service Mercury and Mercruiser. All HBW technicians are Mercury-certified.
 
-On Rice Lake and the back lakes around the Kawarthas, this is the motor we would consider for a lot of 12 to 14 foot aluminum boats where the transom, capacity plate, and load are a good match.
+**Can I use regular pump gas?** 
+The motor recommends 87 octane with up to 10% ethanol. Ethanol-free fuel will run cleaner over storage, HBW sells ethanol-free 89-octane marine gas at the dock in Gores Landing.
 
-Good fits include small aluminum fishing boats where a 9.9 is the right horsepower and the transom is set up for a short shaft, cottage boats that get used in bursts and need to start without drama, back-lake boats where carrying less extra equipment matters, tenders and utility boats that need a clean modern portable outboard, and restricted-horsepower lakes where 9.9 hp is the limit or the practical choice.
+---
 
-It also makes sense for people who are tired of carburetor problems but do not want to overcomplicate a small boat.
+## Internal Links
+- Mercury SmartCraft Connect Guide Ontario
+- Mercury Controls & Rigging Guide Ontario
+- Walleye Opener Boat Prep Checklist
+- Trent-Severn Waterway Boating Guide 2026
 
-## Where this motor is the wrong call
+## CTA
 
-This is the part most product pages skip.
-
-The Mercury 9.9 MH EFI is the wrong call if the boat needs a different configuration. Heavy, decked-out aluminum boats, where a 9.9 may struggle to plane a heavy hull with floors, batteries, gear, and multiple people. Dedicated trolling on larger rigs, where a Command Thrust or ProKicker-style setup may be the better conversation. Electric start, power tilt, or remote controls, none of which this MH model has. Long-shaft transoms, since this is the short-shaft version.
-
-It is also not a guaranteed "get on plane" button for every 14 foot aluminum boat. Owner discussions show new Mercury 9.9 motors sometimes struggling to plane heavier 1448-style boats with added decking, batteries, and gear, even with one person aboard.
-
-That does not mean the motor is bad. It means setup matters. A wide, heavy, decked-out aluminum boat with batteries, gear, flooring, a trolling motor, anchors, tackle, cooler, and one optimistic guy standing in the wrong spot is not the same as an empty tin boat in a brochure photo.
-
-## Standard 9.9 EFI vs ProKicker-style use
-
-A lot of confusion comes from the fact that "Mercury 9.9 EFI" can mean different things depending on the version.
-
-The 9.9 MH EFI in this article is the simple portable version. Manual start, tiller handle, short shaft, standard gearcase. It is made for straightforward small-boat use.
-
-The ProKicker-style conversation is different. Mercury describes the 9.9 EFI ProKicker as a trolling-focused model with a high-thrust four-blade prop, Command Thrust gearcase, and standard power tilt. Forum discussions show buyers often comparing standard 9.9 models against ProKicker setups because they are trying to understand gear ratios, prop choices, top speed, trolling control, electric start, tilt, and whether they are buying for speed or for slow-speed control.
-
-The short version: do not buy the 9.9 MH EFI expecting it to behave like a dedicated trolling kicker on a larger boat. Buy it because you want a simple, portable, fuel-injected 9.9.
-
-## The price is a big part of the story
-
-As of May 2026, HBW's current price on the Mercury 9.9 MH EFI is $2,999 CAD + HST. No extra charges. No setup fee. Free prep. The 12 L fuel tank and hose are included.
-
-That matters because visible Canadian listings reviewed in May 2026 show how quickly this motor can climb once you start comparing retail pricing. Other Canadian dealer pages for the 9.9 MH EFI show prices in the $3,069 to $3,875 CAD range. Prices change. Dealer fees vary. Stock changes. Some listings include shipping language, some do not, and not all are Ontario dealers.
-
-Based on those visible Canadian listings, $2,999 CAD + HST with no extra fees and the fuel tank, hose, and prep included is among the strongest posted offers we found.
-
-[Build your quote at mercuryrepower.ca](/quote/motor-selection)
-
-## What we would actually recommend
-
-We like the Mercury 9.9 MH EFI because it solves a real small-boat problem without making the boat more complicated.
-
-We have been selling and servicing Mercury outboards on Rice Lake since 1947. Most motors in this horsepower range go on cottage boats, tenders, and small aluminum fishing boats, which is exactly where this 9.9 makes sense.
-
-It gives you the benefit most people actually want from modern EFI. Easier starting, cleaner fuel control, and less carburetor drama. At the same time, the manual-start model keeps the setup simple because it does not need a cranking battery just to run.
-
-The price helps too. At $2,999 CAD + HST with the 12 L tank and hose included, no extra charges, and free prep, this is one of the most straightforward small Mercury deals we have had in a while.
-
-Would we put it on every boat? No. Would we recommend it for the right short-shaft aluminum boat, tender, cottage boat, or restricted-horsepower setup? Absolutely.
-
-The best customer for this motor is not someone chasing top speed. It is someone who wants a simple, honest 9.9 that starts well, runs clean, and does not turn every spring into a carburetor support group.
-
-If you buy from us, we are also the ones servicing it. For engine repairs, we only service Mercury and Mercruiser, and a 9.9 is the kind of motor we know cold.
-
-[Build your Mercury 9.9 quote](/quote/motor-selection)
-
-## FAQ
-
-**Is the Mercury 9.9 MH EFI fuel injected?**
-Yes. The Mercury 9.9 MH EFI uses electronic fuel injection. Mercury says the EFI system is designed for easier starts and efficient performance.
-
-**Does the manual-start Mercury 9.9 EFI need a battery?**
-Mercury says the manual-start 9.9 EFI models do not require a cranking battery because pulling the starter rope charges the electrical system needed for ignition.
-
-**How much does the Mercury 9.9 MH EFI weigh?**
-Dealer specifications list the Mercury 9.9 MH EFI around 84 lb dry weight.
-
-**What shaft length is the Mercury 9.9 MH EFI?**
-The 9.9 MH EFI is a 15-inch short-shaft model. Make sure your boat's transom is right for a short shaft before buying.
-
-**What comes with the HBW Mercury 9.9 MH EFI offer?**
-As of May 2026, HBW's current offer is $2,999 CAD + HST, with no extra charges or setup fees. It includes the 12 L fuel tank and hose, plus free prep.
-
-**Will the Mercury 9.9 EFI plane my 14-foot aluminum boat?**
-It depends on the boat, load, prop, shaft length, weight distribution, and hull setup. Owner discussions show that even a newer Mercury 9.9 may struggle to plane a heavier 1448-style aluminum boat when the boat has added decking, batteries, and gear.
-
-**Is the Mercury 9.9 MH EFI the same as a ProKicker?**
-No. The 9.9 MH EFI is the simple portable version with manual start, tiller, and short shaft. ProKicker-style models are built around trolling control with a high-thrust prop, Command Thrust gearcase, and standard power tilt.
-
-**Is $2,999 + HST a good price for the Mercury 9.9 MH EFI in Ontario?**
-Based on visible Canadian listings reviewed in May 2026, it is a very strong posted price. Other Canadian dealer pages for the 9.9 MH EFI show prices ranging from about $3,069 to $3,875 CAD. Dealer prices, fees, stock, and inclusions can change, so compare the full out-the-door offer, not just the headline number.
+**See the current price on the Mercury 9.9 MH EFI.** 
+[mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, full configuration. 
+Or call 905-342-2153. 
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
+Mercury Platinum dealer. Est. 1947.
+---
 
 ## FAQs
 

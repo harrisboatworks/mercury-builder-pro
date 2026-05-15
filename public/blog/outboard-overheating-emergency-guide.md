@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)"
-description: "A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating, what to do in the next 60 seconds, what to check at the dock, and how."
+description: "A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock, and how to avoid it."
 category: "Troubleshooting"
 date_published: 2026-05-09
 date_modified: 2026-05-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)
 
-> A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating, what to do in the next 60 seconds, what to check at the dock, and how.
+> A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock, and how to avoid it.
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-09  
@@ -29,201 +29,185 @@ content_type: blog_article
 
 ## Article
 
-# Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)
-
-*Last reviewed: 2026-05-07*
-
-> **Quick answer:** If your Mercury alarms hot, idle down immediately, kill the motor at the first safe spot, and check for a clogged or missing tell-tale. Don't keep running, overheating destroys head gaskets and powerheads. Most causes are impeller, intake blockage, or thermostat. Service booking at mercuryrepower.ca.
-
-For preventive maintenance, see [Mercury Maintenance Intervals (20/100/300-Hour Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule). If overheating points to an aging powerhead, [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad) and the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) cover replacement options, and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) explains coverage on a new build.
-
-If you're reading this on the water with the overheat alarm going off, **skip ahead to the next section**. Get yourself sorted, then come back for the rest.
-
-If you're reading it from your couch on a Wednesday in February, good. The best time to learn about overheating is before it happens. Five minutes here might save you a $2,500 head gasket job, or a $4,500 powerhead.
-
-This is the emergency-then-prevention guide we'd give a customer who walks into the shop at Gores Landing. Mercury-specific, Rice Lake, Ontario (in the Kawarthas)-tested, no fluff.
+**Language:** English 
 
 ---
 
-## On the Water Right Now? Do This in This Order.
+## Quick Answer
 
-![Outboard overheating emergency troubleshooting flowchart: starts with the alarm sounding, branches by whether the telltale stream is flowing, by RPM behaviour, and by whether the motor has been over-revving.](/lovable-uploads/diagram-overheating-troubleshooting.png)
+If the overheat alarm is sounding right now: throttle back to idle, check the tell-tale water stream, and assess from there. No stream means the water pump has failed or the intake is blocked, shut down immediately. A strong stream with an alarm may be a sensor or thermostat issue, idle toward shore. When in doubt, shut it down. Running an overheated motor to try to get home is how a relatively small repair becomes an engine replacement.
 
-*If you only remember one thing from this article: when in doubt, shut it down. The diagram above is the conversation we have over the phone with customers who call from the lake.*
-
-### 1. Throttle back to idle. Don't shut it off yet.
-
-Going from WOT straight to engine-off can do its own damage to a hot powerhead. Drop to idle first. Buy yourself 30 seconds to think.
-
-### 2. Look at the tell-tale stream
-
-The tell-tale (the little water stream out the back of the motor) is your first diagnostic. Right now:
-
-- **Strong, steady stream**, cooling water is flowing. Overheat may be a sensor fault, a thermostat, or an internal blockage. Continue at idle, head for shore.
-- **Weak, sputtering stream**, impeller is failing or partially blocked. Idle in only.
-- **No stream at all**, water pump has failed or the intake is blocked solid. **Shut down.** Running dry kills an impeller in 30 seconds and a powerhead in a few minutes.
-
-### 3. If the alarm keeps ringing or the stream is weak/gone, kill the engine.
-
-Tilt the motor up out of the water. Look at the intake screens on the lower unit (the slots where water gets pulled in). On Rice Lake and the Kawarthas in summer, the answer is almost always **weeds, plastic, or a chunk of bottom debris** stuck in the grates.
-
-Clear it by hand. A boat hook or a screwdriver helps for stubborn stuff.
-
-### 4. Wait 10–15 minutes before restarting.
-
-Let the powerhead cool. Check the stream when you fire it back up. If it comes back full and the alarm doesn't return at idle, you're probably fine to head home **at low RPM**.
-
-### 5. If the alarm comes back, don't fight it.
-
-Call for a tow, drift to shore, or paddle if you have to. Running an overheated motor "just to get home" is how a $40 impeller becomes a $4,500 lower unit and powerhead repair.
-
-We've fixed both kinds of boats. The towed-in boat is always cheaper.
+::diagnostic-flow
+heading: Mercury overheating? Run this checklist before damage gets expensive
+eyebrow: Emergency diagnostic
+subhead: Most overheats clear with a debris check. Push through an alarm and you risk $2,500+ in powerhead damage.
+step1Label: Stop the boat
+step1Question: Have you throttled down to idle and shifted to neutral?
+step1Tip: Continuing to run an overheating Mercury for even a few minutes can melt powerhead components. Idle down first, then assess.
+step2Label: Telltale stream
+step2Question: Is the telltale (pee stream) flowing, and is it the normal volume?
+step2Tip: A weak or absent stream usually means weeds or debris in the cooling inlet. A normal stream paired with overheating points to a deeper problem (thermostat, water pump, exhaust corrosion).
+step3Label: Cooling inlet
+step3Question: Have you checked the lower unit cooling intake for weeds, plastic, or grocery bags?
+step3Tip: Pulling the boat onto the trailer or tilting the motor up is the fastest way to see and clear blockages. Rice Lake weed lines in late summer are the usual suspect.
+step4Label: Recheck after clearing
+step4Question: Does the telltale return to normal volume and the alarm clear after you idle for a minute or two?
+step4Tip: If yes, run at low RPM for a few more minutes to let things stabilize before returning to cruise. If no, suspect a water pump impeller, typically a 3-year service interval on Mercury outboards.
+step5Label: Alarm persists
+step5Question: Is the overheat alarm still active or coming back at low RPM?
+step5Tip: Shut down. Continuing to run a Mercury with an active overheat alarm risks major powerhead damage. Tow in or trailer back.
+escalationLabel: Alarm still on? Don't push it.
+escalationBody: Cooling system failures get expensive fast. Tow in or trailer to us. We can usually diagnose impeller, thermostat, or exhaust corrosion the same day in season. Call (905) 342-2153 or book at /service.
+::
 
 ---
 
-## What's Actually Happening Inside
+## Outboard Overheating: What to Do Right Now, and How to Prevent It
 
-A Mercury outboard is **raw-water cooled**, there's no closed loop, no antifreeze in the powerhead. Water gets pulled in through the lower unit grates, pushed up by the impeller in the water pump, routed through the cylinder head and exhaust passages, and exits through the tell-tale and the prop hub.
+If you're reading this from the water with the alarm going, skip to the emergency section below. Get yourself safe, then come back for the rest.
 
-If anything in that chain stops moving water, parts heat up fast. The thermostat opens at about 143°F (62°C). At 200°F+, head gaskets fail. By 250°F, you're warping a cylinder head. Past that, you're seizing the powerhead.
+If you're reading this from shore, good. The best time to learn what to do when a Mercury overheats is before it happens. Understanding what causes overheating, how to read the tell-tale, and what the alarm patterns mean can be the difference between a $40 impeller replacement and a $4,500 powerhead job.
 
-The components at risk:
-
-- **Cylinder head**, warps under heat, $1,500–$3,000 to repair or replace
-- **Head gasket**, blown gasket lets coolant water into the cylinders, $800–$2,000
-- **Water pump impeller**, toast in 30 seconds running dry, $40–$80 part + 1–2 hours labour
-- **Powerhead**, seized, $4,000–$7,000+ depending on motor
+This is the on-water response guide and prevention overview we'd walk through with any customer at the shop. Mercury-specific, Ontario conditions, no filler.
 
 ---
 
-## The Five Causes (in Order of How Often We See Them)
+## On the Water Right Now: Do This in Order
 
-### 1. Blocked water intake (most common, especially mid-summer)
+### Step 1: Throttle back to idle, but don't shut down yet
 
-Weeds, plastic bags, fishing line, sand, mud, anything sucked against the intake grates blocks flow. Rice Lake's weed beds peak in late July and August; that's when our service phone rings.
+Going from wide-open throttle directly to engine-off can cause its own problems on a hot powerhead. Drop to idle first. This gives you 30 seconds to assess before deciding whether to shut down.
 
-**Fix:** clear the grates. Two minutes.
+### Step 2: Check the tell-tale
 
-### 2. Worn or shredded impeller
+The tell-tale is the small stream of cooling water that exits the cowling or lower unit area on your motor. It's your most immediate indicator of what's happening inside the cooling system.
 
-The water pump impeller is a rubber paddle wheel. It wears with use, gets brittle from sitting through a winter, and eventually loses fins or cracks across its body. Mercury's general guidance is:
+| Tell-tale state | What it likely means |
+|---|---|
+| Strong, steady stream | Water is flowing. Problem may be a thermostat, sensor, or internal blockage. Head for shore at idle. |
+| Weak or sputtering | Impeller is failing or intake is partially blocked. Idle in only, do not accelerate. |
+| No stream at all | Water pump has failed or intake is completely blocked. **Shut down now.** |
+| Strong at cruise, weak or absent at idle | Classic worn impeller, getting by at high RPM but insufficient vacuum at low RPM. |
 
-> **Inspect the impeller annually or every 100 hours. Replace at the 300-hour service, or sooner if inspection shows wear, hardening, or severe-use conditions.**
+### Step 3: If the stream is weak or absent, shut down
 
-The exact interval is in your owner's manual by serial number. A boat that ran 25 hours last season and 30 the season before still warrants a real spring inspection, rubber dries, cracks, and gets pressed against the housing over a 6-month winter, even at low hours.
+Tilt the motor up out of the water. Inspect the cooling water intake screens on the lower unit, the slots where water enters. In Ontario lakes, the most common culprit is weeds, a plastic bag, or debris lodged in the screens.
 
-**Fix:** new impeller, $40 part. We replace it as part of any 300-hour service, or whenever a 100-hour inspection shows wear.
+Clear the intake by hand. A boat hook or a screwdriver helps with stubborn debris.
 
-### 3. Stuck thermostat
+### Step 4: Wait before restarting
 
-Thermostats fail closed (engine overheats from startup) or stuck open (engine never gets to operating temp, runs sluggish, fouls plugs). The closed-failure version triggers the overheat alarm 3–5 minutes after startup, even with a clean intake and good impeller.
+Let the powerhead cool for 10, 15 minutes before attempting a restart. When you start it again, watch the tell-tale immediately. If the stream is strong and the alarm doesn't return at idle, you may be clear to head home, at low RPM.
 
-**Fix:** new thermostat. $30–$60 part. Change every 2–3 years as preventive, they're cheap, the labour is minimal.
+### Step 5: If the alarm returns, stop
 
-### 4. Clogged poppet valve (high-RPM-only overheats)
+Don't fight it. Call for a tow, drift to shore, or use another propulsion method. Running an overheated motor "just to get home" is the decision that turns a serviceable motor into one that needs a new powerhead.
 
-The poppet valve is a pressure-relief valve in the cooling system. When it clogs, the engine runs cool at idle but overheats at WOT or high cruise. **If your tell-tale is fine at idle but the alarm hits at 4,000 RPM, this is the prime suspect.**
-
-**Fix:** clean or replace. We see this on motors that have run hard in silty water without regular flushing.
-
-### 5. Internal scale and mineral buildup
-
-If you've replaced impeller, thermostat, and poppet valve and it still overheats, internal cooling passages are gummed up. Time for a cooling system flush with a marine descaler. This isn't a DIY job on most newer Mercurys; it requires the right product and the right technique to not damage gaskets.
-
----
-
-## Diagnostic Flow at the Dock
-
-Once the boat's back on the trailer or at the dock, step through this in order:
-
-1. **Tell-tale flow on muffs**. Garden hose to the engine flush port (or earmuffs over the intakes), motor on, watch the stream. Strong = pump is OK. Weak = pull the lower unit and look at the impeller.
-2. **Pull the lower unit and inspect the impeller**. Visual check. Cracked, missing fins, hardened, or melted = replace.
-3. **Test the thermostat in hot water**. Drop it in a pot of water on the stove with a thermometer. Should pop open around 143°F. Doesn't open = replace.
-4. **If it overheats at high RPM only**. Pull the poppet valve, clean or replace.
-5. **Still overheating**. Internal flush time. Bring it in.
+We've seen both kinds of boats at the shop. The one that got towed is always cheaper to repair.
 
 ---
 
-## Why Rice Lake (and the Kawarthas Generally) Eats Impellers
+## The Four Most Common Causes We See
 
-A few things specific to this part of Ontario:
+### 1. Blocked Cooling Intake
 
-- **Heavy weed growth** by mid-July. The intake is constantly catching plant matter. Even when it's not blocking flow, it's getting drawn against the impeller and abrading rubber.
-- **Silty bottom.** Rice Lake's mud and silt get sucked through the cooling passages with the water. Over years, they build up internal scale. Regular flushing is the only counter.
-- **6-month off-season.** From November to April, that impeller sits dry, deformed against the pump housing. It comes out of storage already partly compromised.
+Weeds, debris, plastic bags, and in some Ontario waters, zebra mussel buildup can block the lower-unit cooling intake screens. This is the most common on-water overheating cause on Rice Lake and the Kawarthas.
 
-If you fish or run weed beds heavily on Rice Lake, **inspect the impeller every spring**, that's the severe-use exception to the 300-hour replacement framing. Replace it any year inspection shows hardening, wear, or fin damage. $40 in parts and an hour of labour, vs. the kind of bills overheating writes.
+**Prevention:** Inspect the intake screens during commissioning each spring. Clear any debris you can see. If you're frequently in weedy water, check it more often.
+
+### 2. Worn or Failed Water Pump Impeller
+
+The impeller is a rubber vane wheel inside the lower unit that drives cooling water up to the powerhead. It wears with age, degrades from sand, and can fail suddenly after a debris blockage.
+
+**Symptoms:** Weak tell-tale at idle that improves at higher RPM, intermittent overheat alarm while idling or in no-wake zones, sputtering tell-tale.
+
+**Service interval:** Mercury recommends replacing the water pump impeller every 2, 3 years or 200 hours, whichever comes first. This is one of the most important preventive maintenance items on an outboard and one of the most frequently skipped.
+
+**Don't ignore it:** A weak tell-tale last fall that you kept fishing through means the impeller may be at or past its limit. Don't start next season without addressing it.
+
+### 3. Thermostat Failure
+
+The thermostat regulates the cooling water temperature inside the motor. A thermostat stuck closed traps hot water in the powerhead; a thermostat stuck open prevents the motor from reaching proper operating temperature (less of an overheating risk, but it causes other problems including poor fuel economy and excessive wear from running too cold).
+
+**Symptoms of stuck-closed thermostat:** Overheat alarm with strong tell-tale (water is flowing, but can't get out fast enough). Motor may reach operating temperature and then continue heating.
+
+Thermostat replacement is part of standard major service on most motors and is relatively straightforward. If you're seeing overheat symptoms with normal tell-tale flow, the thermostat is a likely suspect.
+
+### 4. Internal Blockage or Water Passage Scale
+
+In older motors or motors run in hard water, scale and mineral deposits can build up inside the cooling water passages, reducing flow. This is a slower-developing problem that usually shows up as gradual overheating at higher speeds rather than sudden alarm events.
+
+This type of issue generally requires professional diagnosis and cleaning. It's not something you can assess visually from the outside.
 
 ---
 
-## Prevention Habits (the Stuff That Actually Matters)
+## Prevention: What to Actually Do
 
-Three habits that prevent 90% of overheating calls:
+The best overheating prevention is straightforward:
 
-**1. Check the tell-tale stream every single time you start the motor.** First 30 seconds. Strong stream = you're fine to go. Weak or absent = kill it before you leave the dock. This is the single most important habit.
+**Replace the water pump impeller on schedule.** This is the single most effective preventive measure. If you don't know when yours was last done, assume it's due.
 
-**2. Flush after every trip.** Especially if you've been in weed beds or near the bottom. Mercurys have a freshwater flush port on the cowl, hook a hose to it for 10 minutes after each outing. It's free and it doubles your cooling system's lifespan.
+**Keep the cooling intake screens clear.** Inspect during commissioning and again mid-season if you're in weedy water.
 
-**3. Inspect the impeller every spring.** Replacement happens at the 300-hour service, but the spring inspection is what catches the brittle, wintered-out impeller before it fails on the water. The number of customers we see who've "never had a problem with the old one", and then had a problem with the old one, is high. Make spring inspection the rule.
+**Watch the tell-tale every time you run the motor.** This takes about two seconds, glance at it after startup and periodically during operation. A weakening tell-tale is a warning before the alarm sounds.
 
-A bonus habit if you run remote: **carry a spare impeller and the right tools on board.** It's a 30-minute job at the dock if you have the parts. Not a job at all if you don't.
+**Don't ignore a weak tell-tale.** "It's been a bit weak but the alarm hasn't gone off" is a boat that's one ride away from a problem.
+
+**Schedule regular maintenance.** A thermostat check and cooling system inspection are part of Mercury's scheduled service intervals. Keeping to the schedule means a technician is looking at the cooling system regularly.
 
 ---
 
-## When to Call HBW
+## When to Book Service
 
-Some overheating problems aren't 5-minute fixes:
+After any overheating event, even one that resolved itself on the water, have the motor checked. Overheating can cause invisible damage, head gaskets, warped components, and thermostat failure are not always obvious from the outside.
 
-- Persistent alarm after impeller AND thermostat are confirmed good
-- Burning-rubber smell (impeller has run dry, possible internal damage)
-- Overheating at high RPM only after multiple component swaps (poppet valve, internal scale)
-- Any indication of head gasket trouble (white smoke, water in oil, milky residue on the dipstick)
-- A single overheat event lasting more than 30 seconds, it's worth a compression check before it becomes a bigger story
+For engine repairs, we only service Mercury and Mercruiser.
 
-We're a Mercury Platinum dealer, factory-trained on the full Mercury cooling-system diagnostic. SmartCraft-equipped motors give us data the dashboard alarm doesn't, actual peak temperatures, where in the cycle the spike happened, and whether anything else flagged at the same time. That data shortens the diagnosis from "guess and replace parts" to "we know exactly what failed."
-
-Book a service slot at **[hbw.wiki/service](https://hbw.wiki/service)**.
-
-If your motor is older or the repair is going to run more than half the cost of a replacement, that's a different conversation, and one we'll have honestly. Mercury repower pricing is on **[mercuryrepower.ca](https://mercuryrepower.ca)** with no games, no "call for quote."
+If you suspect a cooling system problem, book before your next run: [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
 ## Frequently Asked Questions
 
-**How long can I run an overheating outboard before damage?**
-Less than a minute, in the worst case. A dry-running impeller cooks in 30 seconds. A motor running hot from a stuck thermostat may give you 2–3 minutes before head-gasket-level damage starts. The safe answer is: shut it down at the first alarm. Don't bargain with the temperature gauge.
+**The alarm went off once but the motor seems fine now. Do I need to bring it in?** 
+Yes. A single overheat event that resolved itself should still be diagnosed. It means something happened, whether a debris blockage that cleared, a beginning impeller failure, or a sensor issue. The cause needs to be identified before the next run.
 
-**My tell-tale stream is steady but my alarm keeps going off, what gives?**
-A stream means water is moving, but it doesn't prove the cooling system is fully circulating internally. Common culprits: a stuck thermostat, a failed temp sensor, or partial internal blockage. Bring it in for a real diagnosis.
+**What does the tell-tale look like when it's normal?** 
+A continuous, steady stream of water, not sputtering or intermittent, and noticeable at all RPMs including idle. The stream should be warm (not ice cold, which would indicate the thermostat is stuck open) but not steaming (which would indicate overheating).
 
-**Should I replace the impeller myself?**
-On smaller motors (under 30 HP), yes, it's straightforward, well-documented, and the parts are cheap. On modern V6/V8s with electric trim, alignment-sensitive lower units, and SmartCraft, the labour-to-mistake ratio gets worse. We charge under $200 in labour on most jobs and we've done thousands.
+**Can I replace the water pump impeller myself?** 
+On smaller motors, it's a manageable DIY task for someone comfortable with mechanical work, it requires removing the lower unit. On larger or more complex motors, it's worth having a technician do it. The impeller kit itself is not expensive; most of the cost is labour for lower-unit removal.
 
-**How often should I flush my motor?**
-After every use is best practice. At minimum, after any trip in weeds, silt, or shallow water. Use the flush port on the cowl with a garden hose, run for 10 minutes at idle (or per Mercury's spec for your model), shut down.
+**How do I know if the impeller is worn without taking the lower unit apart?** 
+The tell-tale behaviour is the best indicator. A strong stream at cruise that weakens or sputters at idle is the classic worn impeller pattern. If your tell-tale has changed from what it used to be, that's a signal.
 
-**Does ethanol-free fuel affect overheating?**
-Not directly, overheating is a cooling-side problem, not a fuel-side one. But ethanol pump gas does stress the rest of the motor in ways that compound problems. We sell ethanol-free 89-octane marine gas at the dock for this reason.
-
-**My boat is on the water and I'm panicking. What do I do?**
-Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear intakes, wait 15 minutes, restart and check stream. If alarm returns, call for a tow, don't try to make it home. **905-342-2153** if you're in our area.
+**Does overheating damage the motor even if I shut it down quickly?** 
+It can. Heat cycles can damage head gaskets and warp components even in brief overheating events. The faster you shut down, the less likely serious damage is, but an overheating event is still worth having inspected.
 
 ---
 
-## Need help with this?
+## Internal Links
 
-Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
+- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Overheating at Idle, Ontario Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
+- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
 
-**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
-**Phone:** 905-342-2153
+---
 
-If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
+## CTA
+
+**After any overheating event, get it checked before the next run.** 
+Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+
+Phone: 905-342-2153
+
+---
 
 ## FAQs
 
 ### How long can I run an overheating outboard before damage?
 
-Less than a minute, in the worst case. A dry-running impeller cooks in 30 seconds. A motor running hot from a stuck thermostat may give you 2–3 minutes before head-gasket-level damage starts. The safe answer is: shut it down at the first alarm. Don't bargain with the temperature gauge.
+Less than a minute, in the worst case. A dry-running impeller cooks in 30 seconds. A motor running hot from a stuck thermostat may give you 2-3 minutes before head-gasket-level damage starts. The safe answer is: shut it down at the first alarm. Don't bargain with the temperature gauge.
 
 ### My tell-tale stream is steady but my alarm keeps going off, what gives?
 

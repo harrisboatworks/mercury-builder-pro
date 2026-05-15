@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-financing-guide-ontario.md
-last_updated: 2026-05-11
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,115 +29,119 @@ content_type: blog_article
 
 ## Article
 
-*Last reviewed: 2026-05-10*
+# Financing a Boat Motor in Ontario: What to Know Before You Sign Anything
 
-> **Quick answer:** HBW offers Mercury Repower Financing through DealerPlan: 7.99 percent APR (as of May 2026) on motor packages $10,000 and up, 8.99 percent under $10,000. Financing isn't available below $5,000. A $299 DealerPlan fee applies. Apply with your installed quote from mercuryrepower.ca.
+## Quick answer
+Financing a new outboard motor in Ontario works much like financing a vehicle: a lender advances the purchase amount, you repay it over an agreed term with interest. The main variables are the total financed amount, your credit profile, your down payment or trade-in, and the term length you choose. Dealer financing through Mercury's program bundles the motor, rigging, prop, install, and HST into a single loan. Bank or credit union financing keeps the loan separate from the dealer but may offer a better rate if you have a strong existing relationship. Build a real quote first at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-## Financing Your New Mercury Outboard
+## Why the motor price is not the loan amount
+The number on the sticker is the motor. The number you actually finance is the motor plus rigging, plus controls and cables, plus the prop, plus install labour, plus Ontario HST at 13%. On a mid-range 4-stroke outboard with full rigging, that difference can easily add 30 to 40% to the base motor cost.
 
-A new Mercury motor is an investment. Financing makes it manageable and can get you on the water sooner. Here's what you need to know.
+If you go into a financing conversation with a motor price in your head and a loan based on that price, you will be short. Build a complete installed quote first.
 
-### Financing Options
+## Your financing options in Ontario
 
-**Dealer Financing** (Through Harris Boat Works):
-- Competitive rates
-- Quick approval process
-- Mercury-backed programs available
-- Bundled with purchase
+### Dealer financing (Mercury Repower program through HBW)
+Mercury's DealerPlan financing bundles everything (motor, rigging, prop, install, and HST) into a single financed amount with one monthly payment and one rate.
 
-**Bank/Credit Union**:
-- May offer lower rates if you have relationship
-- Separate application process
-- Not marine-specific
+What works well:
+- Bundled into the purchase, one application, one lender, one payment
+- Can include the full project cost including tax
+- Mercury runs seasonal promotional rates that can be meaningfully below the standard rate
+- Faster approval turnaround than a traditional loan (typically 24 to 48 hours)
 
-**Home Equity Line**:
-- Often lowest rates
-- Uses home as collateral
-- Best for larger purchases
+What to watch:
+- Rates change with market conditions, always confirm the current rate at mercuryrepower.ca before signing
+- The standard rate may be higher than what your bank or credit union offers for the same credit profile
+- Compare the total interest cost over the full term, not just the monthly payment
 
-### Typical Terms
+### Bank or credit union
+If you have a strong banking relationship and good credit, your bank or credit union may offer a better rate than the dealer program. The tradeoff is that it is a separate process.
 
-**Loan Amounts**: $5,000 - $50,000+
-**Terms**: 12-180 months
-**Rates**: Vary by credit and term
+What works well:
+- Potentially lower rate for well-qualified borrowers with an established lending relationship
+- Independent process means you know your rate before you are sitting at a dealer signing anything
+- Works with any dealer, any brand
 
-**General Guidance**:
-- Shorter term = lower total cost
-- Longer term = lower [monthly payment](/blog/mercury-outboard-financing-ontario-2026)
-- Match term to expected ownership
+What to watch:
+- Not marine-specific, you will need to cover tax and other project costs separately if the lender advances only part of the total
+- May require more documentation and take longer to approve
+- A pre-approved rate is only valid for a limited period
 
-### What Affects Approval
+### Home equity line of credit (HELOC)
+Often the lowest rate available because your home secures the loan. Worth considering for larger projects.
 
-**Credit Score**: Higher score = better rates
-**Income**: Stable income helps
-**Debt-to-Income**: Lower is better
-**Down Payment**: Larger down payment helps
+What works well:
+- Typically the lowest rate of the three options
+- Flexible draw-down and repayment terms
 
-### Down Payment Considerations
+What to watch:
+- Your home is the collateral, that is a real risk to understand clearly before using this route
+- Approval and draw-down takes longer than dealer or bank financing
+- Not the right tool for an impulse or time-sensitive purchase
 
-**Zero Down**: Sometimes available for qualified buyers
-**10-20% Down**: Common for good credit
-**Trade-In Value**: Can serve as down payment
+## What affects your approval
+- Credit score is the primary driver of rate and terms
+- Debt-to-income ratio
+- Down payment
+- Trade-in credit
+- Loan term
 
-### Sample Payments
+## How to compare options honestly
+Do not compare monthly payments across different term lengths. A 96-month payment looks attractive next to a 48-month payment, but you will pay significantly more in total interest.
 
-*Estimates only - actual rates and terms vary*
+Compare these things instead:
+1. Total interest cost
+2. Out-the-door rate (including any fees)
+3. Prepayment flexibility
+4. What is included (dealer financing can bundle tax, bank financing typically does not)
 
-**Mercury 115HP (~$13,000)**:
-- 48 months: ~$300/month
-- 72 months: ~$215/month
-- 96 months: ~$175/month
+## How to get ready to apply
+Before you start a financing application, have these ready:
+- Full repower quote with installed total (build at mercuryrepower.ca)
+- Two recent pay stubs or proof of income
+- A general sense of your existing monthly debt obligations
+- Your trade-in motor's make, model, year, and condition
+- A down payment figure you are comfortable with
 
-**Mercury 60HP (~$9,000)**:
-- 48 months: ~$210/month
-- 72 months: ~$150/month
-- 96 months: ~$120/month
+## A note on estimated monthly payments
+A payment estimate based on a motor price and an assumed rate is only useful if both numbers happen to match your actual situation. Mercury motor pricing changes annually. Financing rates change with market conditions and Mercury's promotional calendar. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca). The financing calculator pulls the actual current installed total and applies the current confirmed rate.
 
-### Pre-Approval Benefits
+## Sources
 
-Get pre-approved before shopping:
-- Know your budget
-- Negotiate from strength
-- Faster purchase process
-- Lock in rate
+- Current financing options shown on the [financing page](/financing) and confirmed with your quote. As of May 2026, qualified buyers, subject to change.
 
-### Financing Through Harris Boat Works
-
-We offer:
-- Quick credit applications
-- Same-day approvals (often)
-- Competitive rates
-- Mercury promotional financing
-- Trade-in assistance
-
-**[Get Financing Information](/quote)**
-
-For real CAD pricing on what you'd actually be financing, see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad), it breaks down complete repower totals by HP class so you can size your loan accurately.
-
-## Related guides
-
-- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), current financing rates and terms
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
-- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
-- [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
+*Last reviewed: 2026-05-11.*
 
 ## FAQs
 
-### What credit score do I need for boat motor financing?
+### What is the typical term for boat motor financing in Ontario?
 
-Scores above 700 typically qualify for the best rates. Scores 650-700 usually approve with slightly higher rates. Below 650 may require larger down payment or co-signer.
+Most repower customers finance over 48 to 84 months. 60 and 72 months are the most common.
 
-### Can I finance a motor for a boat I already own?
+### Is dealer financing better than my bank?
 
-Yes. Financing works the same whether you're repowering an existing boat or rigging a new one. The motor is the collateral.
+It depends on your credit profile and your existing banking relationship. Dealer financing is faster and bundles everything including tax. Your bank may offer a lower rate if you have excellent credit and a strong relationship.
 
-### Are there seasonal promotions for financing?
+### Does the old motor have any trade-in value?
 
-Promotional offers vary by season, and Mercury warranty extensions are not always active. The standard Mercury warranty is 3 years. When Mercury runs a bonus warranty promotion, qualifying motors may receive additional factory-backed coverage, but the offer dates, eligible models, and paperwork rules matter. If warranty length is part of your buying decision, ask us to confirm the current Mercury promotion before you sign. We will tell you what is active, what is expired, and what actually applies to the motor you are quoting.
+Yes. Working motors have the most value. Dead motors still have value in aluminum and parts. Trade-in credit reduces the financed total.
 
-### What happens if I want to sell my boat before the loan is paid?
+### Can I pay off the financing early?
 
-You'll need to pay off the remaining balance when you sell. The motor serves as collateral, so the title isn't clear until the loan is satisfied.
+Confirm prepayment terms before you sign. Most Mercury Repower Financing arrangements allow early payoff without penalty, but verify on your specific agreement.
+
+### Is HST included in the financing?
+
+Through the Mercury Repower program at HBW, yes. Ontario HST at 13% is included in the financed amount.
+
+### When should I use a HELOC instead of dealer financing?
+
+If your HELOC rate is meaningfully lower than the dealer rate and you are comfortable using your home as collateral, the total interest savings over a longer term can be real. Worth discussing with your bank or financial advisor.
+
+### Where do I start?
+
+Build a full installed quote at mercuryrepower.ca. That gives you the real loan amount, not just the motor price.
 
 ## Next steps
 
