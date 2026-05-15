@@ -13067,7 +13067,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
   {
     slug: "outboard-overheating-emergency-guide",
     title: "Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)",
-    description: "A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating, what to do in the next 60 seconds, what to check at the dock, and how.",
+    seoTitle: "Mercury Outboard Overheating: What to Do Right Now",
+    description: "A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock, and how to avoid it.",
     image: "/lovable-uploads/hero-mercury-overheating-dockside.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-09",
