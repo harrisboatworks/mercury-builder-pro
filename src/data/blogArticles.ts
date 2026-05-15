@@ -10590,7 +10590,7 @@ For most Ontario boaters switching to Mercury, the timing is a full repower, whe
   {
     slug: 'best-boats-rice-lake-under-30000',
     title: 'Best Boats for Rice Lake Under $30,000 (2026 Buyer\'s Guide)',
-    description: 'Under $30,000 CAD on Rice Lake, your three best paths in 2026 are a new small aluminum fishing boat with a Mercury under 60 HP, a used family pontoon (often with a recent repower or due for one), or a clean used hull paired with a Mercury repower. We rig and service all three at HBW. The smart money usually skips brand-new entry-level boats and goes into a quality used hull plus a current Mercury motor instead.',
+    description: "Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a clean used hull repowered at HBW. We rig all three.",
     image: '/lovable-uploads/Guy_talking_to_salesperson_Mercury.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-25',
