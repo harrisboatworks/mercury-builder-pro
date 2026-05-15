@@ -15240,7 +15240,8 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
   {
     slug: 'mercury-smartcraft-alarm-codes-encyclopedia',
     title: "Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)",
-    description: "Complete list of Mercury SmartCraft alarm codes and what each one means, from an Ontario Mercury Platinum dealer. Code-by-code reference for diagnostics, severity, and what to do next - no forum guesswork.",
+    seoTitle: "Mercury SmartCraft Alarm Codes: Complete List & Meanings",
+    description: "Complete Mercury SmartCraft alarm code reference from an Ontario Platinum dealer: what each code means, severity, and exactly what to do next. No forum guesswork.",
     image: '/lovable-uploads/hero-mercury-smartcraft-alarm-codes.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
