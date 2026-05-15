@@ -7015,6 +7015,8 @@ The current Pro XS lineup in this range spans three architectures: 150 HP inline
 - Mercury's "Boost" software upgrade can add HP to existing motors (eligible serial numbers, see [our Boost software upgrade guide](/blog/mercury-boost-software-upgrade-eligibility-2026))
 - Resale values don't dramatically separate based on HP rating within the V6 range
 
+> Pricing below is a planning range, not a quote. Installed cost changes with shaft length, controls, gauges, prop, steering, rigging, trade-in value, and current Mercury programs. For a real number, use the quote builder at MercuryRepower.ca.
+
 ## Where Each One Wins
 
 ### 150 Pro XS (Inline-4, 3.0L)
