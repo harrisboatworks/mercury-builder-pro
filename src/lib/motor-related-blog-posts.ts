@@ -42,7 +42,7 @@ export function getMotorRelatedBlogSlugs(motor: MotorLike): string[] {
     const deny = new Set<string>();
     if (isTiller || isKickerClass || isProKicker) {
       deny.add('mercury-controls-rigging-guide-ontario');
-      deny.add('mercury-150-200hp-v6-performance');
+      deny.add('mercury-150-300hp-pro-xs-performance-guide');
       deny.add('mercury-boost-upgrade-150hp-pontoon-analysis');
       deny.add('center-console-mercury-motor-guide');
       deny.add('best-mercury-outboard-lake-ontario-salmon-trout');
@@ -71,7 +71,7 @@ export function getMotorRelatedBlogSlugs(motor: MotorLike): string[] {
       out.push('mercury-prokicker-rice-lake-fishing-guide');
       out.push('electric-trolling-motor-kicker-guide');
     } else if (family === 'SeaPro') out.push('mercury-seapro-commercial-outboard-guide');
-    else if (family === 'Verado') out.push('mercury-150-200hp-v6-performance');
+    else if (family === 'Verado') out.push('mercury-150-300hp-pro-xs-performance-guide');
 
     // PRIORITY 3 — HP class (skip for kickers ≤15)
     if (!isKickerClass) {
@@ -89,15 +89,15 @@ export function getMotorRelatedBlogSlugs(motor: MotorLike): string[] {
         out.push('mercury-115-vs-150-hp-outboard-ontario');
         out.push('best-mercury-outboard-pontoon-boats');
       } else if (hp >= 150 && hp <= 200) {
-        out.push('mercury-150-200hp-v6-performance');
+        out.push('mercury-150-300hp-pro-xs-performance-guide');
         out.push('mercury-115-vs-150-hp-outboard-ontario');
       } else if (hp >= 200 && hp <= 300) {
-        out.push('mercury-150-200hp-v6-performance');
+        out.push('mercury-150-300hp-pro-xs-performance-guide');
         out.push('center-console-mercury-motor-guide');
         out.push('best-mercury-outboard-lake-ontario-salmon-trout');
       } else if (hp > 300) {
         out.push('center-console-mercury-motor-guide');
-        out.push('mercury-150-200hp-v6-performance');
+        out.push('mercury-150-300hp-pro-xs-performance-guide');
       }
     }
 
