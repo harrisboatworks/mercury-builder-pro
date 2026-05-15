@@ -17864,7 +17864,8 @@ Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](http
   {
     slug: 'used-boat-walkaround-inspection-ontario',
     title: "The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide",
-    description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat, what to check, in what order, and when to walk away.",
+    seoTitle: "Used Boat Walkaround Inspection: Ontario Buyer's Guide",
+    description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order, and when to walk away.",
     image: '/lovable-uploads/hero-used-boat-walkaround.png',
     author: 'Jay Harris',
     datePublished: '2026-06-24',
