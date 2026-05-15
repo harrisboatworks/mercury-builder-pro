@@ -13487,7 +13487,8 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
   {
     slug: 'mercruiser-sterndrive-guide-ontario',
     title: "The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower",
-    description: "A Mercury Platinum dealer's guide to Mercruiser sterndrives in Ontario, what wears out, what kills boats, and when repower or outboard conversion makes sense. By Harris Boat Works.",
+    seoTitle: 'Mercruiser Sterndrive Maintenance Ontario | HBW Guide',
+    description: "Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris Boat Works.",
     image: '/lovable-uploads/hero-mercruiser-sterndrive-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-14',
