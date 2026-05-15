@@ -7029,7 +7029,7 @@ Performance-tuned inline-4. Same block as the 150 FourStroke, but with a sport g
 - You'll never need more than 50-55 mph
 - Budget-conscious, meaningfully cheaper than 175 V6
 
-**Pricing:** ~$22,500-$26,500 CAD all-in.
+**Typical planning range:** ~$22,500-$26,500 CAD all-in.
 
 ### 175 Pro XS (V6, 3.4L)
 
@@ -7040,7 +7040,7 @@ The smallest of the V6 family. Real V6 power and torque in a still-manageable pa
 - You expect to upgrade later (the 200/225/250 Pro XS is the same physical motor with different software)
 - Your boat tops out at 19 feet but you want headroom
 
-**Pricing:** ~$26,500-$31,500 CAD all-in.
+**Typical planning range:** ~$26,500-$31,500 CAD all-in.
 
 ### 200 Pro XS (V6, 3.4L). The Most Popular
 
@@ -7051,7 +7051,7 @@ If you ask us which Mercury we sell most often in the V6 range, it's the **200 P
 - You want a single motor that handles cruise, watersports, and serious fishing equally well
 - The 175 feels like compromise but the 250 feels like overkill
 
-**Pricing:** ~$29,500-$34,000 CAD all-in.
+**Typical planning range:** ~$29,500-$34,000 CAD all-in.
 
 ### 225 Pro XS (V6, 3.4L)
 
@@ -7062,7 +7062,7 @@ The bridge between 200 (sweet spot) and 250 (max V6). Same motor as 200, more so
 - Watersports with consistent ballast
 - Tournament fishing where every second of hole shot matters
 
-**Pricing:** ~$32,000-$36,500 CAD all-in.
+**Typical planning range:** ~$32,000-$36,500 CAD all-in.
 
 ### 250 Pro XS (V6, 3.4L)
 
@@ -7073,7 +7073,7 @@ Top of the V6 calibration. Maximum HP on the same physical V6 platform.
 - Twin-engine setups on bigger hulls (twin 250 V6s = 500 HP at lower weight than twin V8s)
 - You want max V6 without going to V8
 
-**Pricing:** ~$34,500-$39,500 CAD all-in.
+**Typical planning range:** ~$34,500-$39,500 CAD all-in.
 
 ### 300 V8 Pro XS. The Step Up
 
@@ -7085,7 +7085,7 @@ Mercury's V8 platform. Different motor entirely, bigger displacement (4.6L), mor
 - 22+ ft hulls
 - DTS is standard (V6 makes it optional)
 
-**Pricing:** ~$39,500-$44,000 CAD all-in.
+**Typical planning range:** ~$39,500-$44,000 CAD all-in.
 
 ## The Real Decision Framework
 
