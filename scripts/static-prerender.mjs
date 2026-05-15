@@ -1896,7 +1896,7 @@ function blogArticleSchema(article) {
   };
 
   const articleNode = {
-      "@type": "Article",
+      "@type": "BlogPosting",
       "@id": `${url}#article`,
       "headline": sanitizeSchemaText(article.title),
       "description": description,
@@ -2053,7 +2053,7 @@ const BLOG_TABLE_FALLBACKS = {
 // Build blog article route configs.
 const blogArticleRoutes = blogArticles.map(article => ({
   path: `/blog/${article.slug}`,
-  title: `${article.title} | Harris Boat Works Blog`,
+  title: `${article.seoTitle || article.title} | Harris Boat Works Blog`,
   description: article.description,
   ogImage: `${SITE_URL}${article.image}`,
   ogType: 'article',
@@ -2088,7 +2088,7 @@ const blogArticleRoutes = blogArticles.map(article => ({
 function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale, inLanguage) {
   return articles.map(article => ({
     path: `/blog/${langCode}/${article.slug}`,
-    title: `${article.title} | Harris Boat Works Blog`,
+    title: `${article.seoTitle || article.title} | Harris Boat Works Blog`,
     description: article.description,
     ogImage: article.image ? (article.image.startsWith('http') ? article.image : `${SITE_URL}${article.image}`) : undefined,
     ogType: 'article',
@@ -2098,7 +2098,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
     htmlLang: inLanguage,
     schemas: [{
       "@context": "https://schema.org",
-      "@type": "Article",
+      "@type": "BlogPosting",
       "headline": article.title,
       "description": article.description,
       "inLanguage": inLanguage,
@@ -2367,7 +2367,7 @@ function caseStudyDetailSchema(study) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "BlogPosting",
         "@id": `${url}#article`,
         headline: study.title,
         description: study.excerpt,
