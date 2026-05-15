@@ -2367,7 +2367,7 @@ function caseStudyDetailSchema(study) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
+        "@type": "Article",
         "@id": `${url}#article`,
         headline: study.title,
         description: study.excerpt,
