@@ -13829,7 +13829,7 @@ You also pick one of **five Active Trim profiles**, higher number means more tri
 
 The catch: **Active Trim doesn't see shallow water.** It's making decisions about hull attitude based on speed and RPM. If you're entering a shallow spot, take manual trim control before the prop hits the bottom. The system isn't a substitute for awareness.
 
-Active Trim is **compatible with Mercury FourStroke 40-600 HP, SmartCraft-capable two-strokes, and SmartCraft-capable gas/diesel sterndrives**, it's broadly available. If your boat has SmartCraft and a compatible trim system, it can run Active Trim.
+Active Trim is offered across many SmartCraft-capable Mercury setups, including a wide range of FourStroke outboards and SmartCraft-capable sterndrives. Compatibility depends on the motor year, rigging, and current SmartCraft setup, so confirm with your dealer before ordering parts.
 
 ---
 
