@@ -401,6 +401,17 @@ export default function BlogArticle() {
                   />
                 ),
                 table: ({ node, children }) => <BlogTable>{children}</BlogTable>,
+                hr: () => <hr className="my-8 border-t border-repower-navy-900/15" />,
+                ul: ({ node, children, ...props }) => (
+                  <ul className="list-disc pl-6 my-4 space-y-2 text-repower-navy-900/85" {...props}>{children}</ul>
+                ),
+                ol: ({ node, children, start, ...props }) => (
+                  // Drop `start` — directive splitting can leave list halves with stale start values (e.g. "13.").
+                  <ol className="list-decimal pl-6 my-4 space-y-2 text-repower-navy-900/85" {...props}>{children}</ol>
+                ),
+                li: ({ node, children, ...props }) => (
+                  <li className="leading-relaxed" {...props}>{children}</li>
+                ),
               }}
             />
           </div>
