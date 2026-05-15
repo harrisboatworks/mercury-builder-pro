@@ -13748,9 +13748,11 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
 
 For pricing on the engines that ship with SmartCraft, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers DTS and gauge wiring in detail, and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) explains which engines include DTS standard.
 
-Most Mercury owners we talk to know they have "smart" features on their motor and have no idea how to actually use them. The dash gauge says fuel flow. The phone app pairs sometimes. There's a thing called Active Trim that the previous owner mentioned but never explained.
+Mercury has a lot of smart technology now. Some of it is genuinely useful. Some of it sounds useful until you are staring at a dash menu at the dock wondering why your phone won't pair.
 
-This is the version of that conversation we'd have at the shop. No marketing copy, no jargon, just what each piece is, what it costs, and whether you'll actually use it.
+Here's the plain-English version: VesselView is the display, SmartCraft is the engine data network behind it, and the Mercury Marine App brings some of that information to your phone. Together, they can show fuel use, engine hours, alarms, service reminders, and performance data.
+
+Harris Boat Works is a family-owned marina in Gores Landing on Rice Lake, established in 1947, and a Mercury Marine Platinum Dealer. We install and service this equipment, so this is the version of the conversation we'd have at the shop: what it does, what is worth paying for, and what is just another screen to poke at when you should be boating.
 
 ---
 
