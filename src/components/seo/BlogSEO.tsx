@@ -42,7 +42,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "BlogPosting",
         "@id": `${url}#article`,
         "headline": article.title,
         "description": cleanDescription,
