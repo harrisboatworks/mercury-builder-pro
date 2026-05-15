@@ -9790,7 +9790,7 @@ Harris Boat Works | Mercury Marine Platinum Dealer | Since 1947 | Gores Landing,
   {
     slug: 'boat-winterization-cost-ontario-2026',
     title: 'How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)',
-    seoTitle: 'Boat Winterization Cost Ontario: 2026 Price Guide',
+    seoTitle: 'Boat Winterization Cost Ontario 2026 | HBW Guide',
     description: 'Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap, and storage at HBW.',
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
     author: 'Harris Boat Works',
@@ -13067,7 +13067,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
   {
     slug: "outboard-overheating-emergency-guide",
     title: "Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)",
-    seoTitle: "Mercury Outboard Overheating: What to Do Right Now",
+    seoTitle: "Mercury Outboard Overheating: What To Do Right Now",
     description: "A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock, and how to avoid it.",
     image: "/lovable-uploads/hero-mercury-overheating-dockside.png",
     author: 'Harris Boat Works',
@@ -15240,7 +15240,7 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
   {
     slug: 'mercury-smartcraft-alarm-codes-encyclopedia',
     title: "Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)",
-    seoTitle: "Mercury SmartCraft Alarm Codes: Complete List & Meanings",
+    seoTitle: "Mercury SmartCraft Alarm Codes: Complete Guide",
     description: "Complete Mercury SmartCraft alarm code reference from an Ontario Platinum dealer: what each code means, severity, and exactly what to do next. No forum guesswork.",
     image: '/lovable-uploads/hero-mercury-smartcraft-alarm-codes.png',
     author: 'Harris Boat Works',
@@ -17864,7 +17864,7 @@ Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](http
   {
     slug: 'used-boat-walkaround-inspection-ontario',
     title: "The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide",
-    seoTitle: "Used Boat Walkaround Inspection: Ontario Buyer's Guide",
+    seoTitle: "30-Minute Used Boat Walkaround Inspection Guide",
     description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order, and when to walk away.",
     image: '/lovable-uploads/hero-used-boat-walkaround.png',
     author: 'Jay Harris',
