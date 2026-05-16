@@ -256,9 +256,8 @@ function expandVisualDirectives(md) {
   md = sub(/^::cost-stack\s*\n([\s\S]*?)\n::\s*$/gm, renderCostStackHtml);
   md = sub(/^::bilingual-trust\s*\n([\s\S]*?)\n::\s*$/gm, renderBilingualTrustHtml);
   md = sub(/^::pull-quote\s*\n([\s\S]*?)\n::\s*$/gm, renderPullQuoteHtml);
-  md = sub(/^:::walkaround-lead\s*\n([\s\S]*?)\n:::\s*$/gm, () =>
-    '<aside class="walkaround-lead-fallback"><p><strong>Get the printable PDF guide.</strong> For the printable PDF, visit <a href="https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario">mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario</a> and download the file from the page.</p></aside>'
-  );
+  // Bodiless directive: a single line `::walkaround-lead-capture`.
+  md = sub(/^(::walkaround-lead-capture)\s*$/gm, renderWalkaroundLeadCaptureHtml);
   return { md, slots };
 }
 
