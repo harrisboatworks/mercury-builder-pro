@@ -531,6 +531,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
   {
     slug: 'mercury-115-vs-150-comparacion',
     title: 'Mercury 115 vs 150 HP: Comparación completa para remotorización',
+    seoTitle: 'Mercury 115 vs 150 HP: comparación completa',
     description: 'Comparación detallada entre Mercury 115 FourStroke (2,1L) y 150 FourStroke (3,0L): especificaciones, rendimiento, peso, consumo y cuál es mejor para su embarcación en Ontario.',
     image: '/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png',
     author: 'Harris Boat Works',
@@ -845,6 +846,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
   {
     slug: 'licencia-navegacion-ontario-regulaciones',
     title: 'Licencia de navegación y regulaciones de seguridad en Ontario',
+    seoTitle: 'Licencia de navegación y seguridad en Ontario',
     description: 'Guía completa sobre la PCOC, PCL, equipo de seguridad obligatorio y regulaciones de navegación en Ontario. Todo lo que necesita saber para navegar legalmente en Canadá.',
     image: '/lovable-uploads/es-licencia-navegacion-ontario-regulaciones-hero.png',
     author: 'Harris Boat Works',
