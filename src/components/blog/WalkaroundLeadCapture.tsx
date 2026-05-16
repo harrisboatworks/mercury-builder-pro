@@ -1,121 +1,98 @@
-import { useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
-import { CheckCircle, Download, Loader2 } from 'lucide-react';
+import { useState, FormEvent } from "react";
 
-const PDF_HREF = '/lovable-uploads/HBW-Used-Boat-Walkaround-Guide.pdf';
+type Status = "idle" | "loading" | "success" | "error";
+
+const SUPABASE_URL =
+  (import.meta as any).env?.VITE_SUPABASE_URL ||
+  "https://eutsoqdpjurknjsshxes.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY =
+  (import.meta as any).env?.VITE_SUPABASE_PUBLISHABLE_KEY || "";
+
+const PDF_URL = "/lovable-uploads/HBW-Used-Boat-Walkaround-Guide.pdf";
 
 export default function WalkaroundLeadCapture() {
-  const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState<string>('');
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
 
-  async function handleSubmit(e: React.FormEvent) {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setErrorMsg('');
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-      setStatus('error');
-      setErrorMsg('Please enter a valid email address.');
-      return;
-    }
-    setStatus('loading');
+    setStatus("loading");
     try {
-      const { data, error } = await supabase.functions.invoke('subscribe-walkaround', {
-        body: { email: email.trim(), firstName: firstName.trim() || undefined },
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/subscribe-walkaround`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SUPABASE_PUBLISHABLE_KEY,
+          Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+        },
+        body: JSON.stringify({
+          email: email.trim().toLowerCase(),
+          firstName: firstName.trim() || undefined,
+        }),
       });
-      if (error || !data?.ok) {
-        setStatus('error');
-        setErrorMsg('Something went wrong. Please try again.');
-        return;
-      }
-      setStatus('success');
+      if (res.ok) setStatus("success");
+      else setStatus("error");
     } catch {
-      setStatus('error');
-      setErrorMsg('Network error. Please try again.');
+      setStatus("error");
     }
-  }
+  };
 
-  if (status === 'success') {
+  const btnClass =
+    "bg-[#E26A2C] hover:bg-[#c95a23] text-white font-semibold px-6 py-3 rounded w-full sm:w-auto transition-colors";
+
+  if (status === "success") {
     return (
-      <div className="my-6 rounded-lg border border-repower-navy-900/15 bg-repower-paper p-6">
-        <div className="flex items-start gap-3">
-          <CheckCircle className="mt-1 h-6 w-6 flex-shrink-0 text-repower-navy-900" aria-hidden="true" />
-          <div className="flex-1">
-            <p className="m-0 mb-3 font-display text-base font-semibold text-repower-navy-900">
-              Thanks. Check your inbox. You can also download right now:
-            </p>
-            <a
-              href={PDF_HREF}
-              download
-              className="inline-flex items-center gap-2 rounded bg-repower-navy-900 px-6 py-3 font-sans text-sm font-semibold text-white no-underline transition hover:bg-repower-navy-800"
-            >
-              <Download className="h-4 w-4" aria-hidden="true" />
-              Download the PDF
-            </a>
-          </div>
-        </div>
+      <div className="bg-[#0B2545] text-white rounded-lg p-6 my-8">
+        <h3 className="text-xl font-bold mb-2">Thanks &mdash; your guide is ready</h3>
+        <p className="text-sm opacity-90 mb-4">
+          Check your email for confirmation. Or grab the PDF right now:
+        </p>
+        <a
+          href={PDF_URL}
+          target="_blank"
+          rel="noopener"
+          className={`${btnClass} inline-block text-center`}
+        >
+          Download the PDF
+        </a>
       </div>
     );
   }
 
   return (
-    <div className="my-6 rounded-lg border border-repower-navy-900/15 bg-repower-paper p-6">
-      <h3 className="m-0 mb-1 font-display text-xl font-bold text-repower-navy-900">
-        Get the printable PDF
-      </h3>
-      <p className="m-0 mb-4 font-sans text-sm text-repower-navy-900/75">
-        Free 13-page inspection guide. We'll email you the link.
+    <div className="bg-[#0B2545] text-white rounded-lg p-6 my-8">
+      <h3 className="text-xl font-bold mb-2">Get the printable PDF</h3>
+      <p className="text-sm opacity-90 mb-4">
+        Free 13-page used-boat inspection guide. We'll email you the link plus occasional
+        Rice Lake &amp; Mercury repower tips. Unsubscribe anytime.
       </p>
-      <form onSubmit={handleSubmit} className="space-y-3">
-        <div className="grid gap-3 md:grid-cols-2">
-          <div>
-            <label htmlFor="walkaround-fname" className="sr-only">First name</label>
-            <input
-              id="walkaround-fname"
-              type="text"
-              placeholder="First name (optional)"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              disabled={status === 'loading'}
-              autoComplete="given-name"
-              className="w-full rounded border border-repower-navy-900/20 bg-white px-3 py-2 font-sans text-sm text-repower-navy-900 placeholder:text-repower-navy-900/40 focus:border-repower-navy-900 focus:outline-none focus:ring-2 focus:ring-repower-navy-900/15"
-            />
-          </div>
-          <div>
-            <label htmlFor="walkaround-email" className="sr-only">Email address</label>
-            <input
-              id="walkaround-email"
-              type="email"
-              required
-              placeholder="Email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              disabled={status === 'loading'}
-              autoComplete="email"
-              className="w-full rounded border border-repower-navy-900/20 bg-white px-3 py-2 font-sans text-sm text-repower-navy-900 placeholder:text-repower-navy-900/40 focus:border-repower-navy-900 focus:outline-none focus:ring-2 focus:ring-repower-navy-900/15"
-            />
-          </div>
-        </div>
-        {status === 'error' && errorMsg && (
-          <p className="m-0 font-sans text-sm text-red-600">{errorMsg}</p>
-        )}
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          className="inline-flex items-center gap-2 rounded bg-repower-navy-900 px-6 py-3 font-sans text-sm font-semibold text-white transition hover:bg-repower-navy-800 disabled:opacity-60"
-        >
-          {status === 'loading' ? (
-            <>
-              <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-              Sending...
-            </>
-          ) : (
-            'Get the guide'
-          )}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First name (optional)"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          className="bg-white text-[#0B2545] px-4 py-3 rounded w-full mb-3"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="bg-white text-[#0B2545] px-4 py-3 rounded w-full mb-3"
+        />
+        <button type="submit" disabled={status === "loading"} className={btnClass}>
+          {status === "loading" ? "Sending\u2026" : "Get the guide"}
         </button>
-        <p className="m-0 font-sans text-xs text-repower-navy-900/55">
-          One email with the link. No spam. Unsubscribe anytime.
-        </p>
+        {status === "error" && (
+          <p className="text-red-300 text-sm mt-3">
+            Something went wrong. Please try again or email info@harrisboatworks.ca.
+          </p>
+        )}
       </form>
     </div>
   );
