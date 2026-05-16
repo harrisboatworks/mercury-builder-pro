@@ -8805,6 +8805,8 @@ A Mercury repower in Ontario typically runs **$11,000, $40,000 CAD installed**, 
 
 Most repower cost guides give you a motor price and call it done. That's only about two-thirds of the answer. The bill you'll actually pay includes the motor, rigging, prop, installation, and sea trial. What you're trying to budget is the all-in number, and that's what we'll give you here.
 
+![Mercury repower cost breakdown showing motor, rigging, controls, prop, labour, taxes, and configuration variables](/lovable-uploads/mercury-repower-cost-breakdown-ontario.png)
+
 ### 2026 Planning Ranges by HP Class (CAD, Before HST)
 
 | Project Tier | HP Range | All-In Range | Common Boats |
@@ -10982,6 +10984,8 @@ source: HBW Customer, Roseneath 2026
 ::
 
 ---
+
+![Mercury outboard won't start diagnostic flowchart showing no crank, cranks but no start, starts then dies, and warning alarm paths](/lovable-uploads/mercury-outboard-wont-start-diagnostic-flowchart.png)
 
 ## Mercury Outboard Won't Start: Troubleshooting in Order
 
@@ -19078,6 +19082,8 @@ caveat: Pricing varies by model year, shaft length, controls package, gauges, pr
 ::
 ---
 
+![Mercury outboard price guide by horsepower tier for Ontario boaters with planning-range caveat](/lovable-uploads/ontario-mercury-outboard-price-tier-chart.png)
+
 ### Ontario Mercury Outboard Price Guide
 
 Getting a straight answer on Mercury outboard prices in Ontario used to mean calling four dealers, waiting on hold, and receiving four different numbers, none of which told you what was actually included.
@@ -21363,6 +21369,8 @@ Here's the honest breakdown.
 
 ---
 
+![Ontario boat repower vs new boat decision matrix comparing hull condition, budget, sentimental value, downtime, warranty, and use case](/lovable-uploads/repower-vs-new-boat-decision-matrix-ontario.png)
+
 ## The Cost Math
 
 All figures are CAD, before HST, before trade-in credit, before any Mercury promotions.
@@ -22731,6 +22739,8 @@ A Mercury that overheats at idle but runs fine at speed is a classic symptom of 
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
+
+![Mercury outboard overheating decision tree showing telltale stream, intake blockage, alarm severity, and when to shut down](/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree.png)
 
 ## Mercury Outboard Overheating at Idle: What's Actually Causing It (Ontario)
 
