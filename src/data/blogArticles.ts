@@ -10019,6 +10019,8 @@ For broader context on storage options across the Kawarthas, see our [Kawartha L
 
 ---
 
+![DIY Mercury winterization risk checklist — 8 things that go wrong when boat owners winterize themselves](/lovable-uploads/diy-mercury-winterization-risk-checklist.png)
+
 ## Quick Answer
 
 You can winterize your own Mercury outboard if you're comfortable with fogging oil, lower-unit drain-and-fill, and fuel stabilizer, and if you have the supplies and an hour of focused work. The step that kills motors is leaving water in the powerhead through a freeze. If you're not certain the cooling system is clear, pay a dealer to do it. A professional winterization costs a fraction of a cracked block.
