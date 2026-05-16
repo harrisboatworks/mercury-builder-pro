@@ -18438,7 +18438,9 @@ Two related guides in the same cluster:
     category: "Buying Guide",
     readTime: '~12 min read',
     keywords: ["used boat inspection","buying guide","ontario","transom check","pre-purchase"],
-    content: `# The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
+    content: `> **📥 Download this guide as a printable PDF.** Bring the full 30-minute walkaround inspection checklist with you to look at a boat. [**Get the free printable guide →**](/lovable-uploads/HBW-Used-Boat-Walkaround-Guide.pdf)
+
+# The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
 
 *Last reviewed: 2026-05-07*
 
