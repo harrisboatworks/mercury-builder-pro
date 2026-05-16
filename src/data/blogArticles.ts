@@ -356,7 +356,7 @@ Five things move how often and how aggressively you should service:
 
 - **Hours of use per year.** A motor running 50 hours a season needs different service than a motor running 200 hours a season. More hours means earlier service intervals.
 - **Operating environment.** Sheltered Rice Lake, Ontario fishing is gentle on a motor. Lake Ontario salmon fishing in 4-foot chop is hard. Saltwater is harder still (most Mercury motors in Canada do not see saltwater regularly).
-- **Storage conditions.** Indoor heated storage is gentlest. Outdoor uncovered with snow load is hardest. Affects what you do at winterization and spring commissioning.
+- **[Storage conditions](/blog/boat-storage-kawartha-lakes).** Indoor heated storage is gentlest. Outdoor uncovered with snow load is hardest. Affects what you do at winterization and spring commissioning.
 - **Motor age.** Newer motors under warranty get a different service cadence than older motors. Modern FourStrokes (post-2010) are more service-tolerant than 2-strokes from the 1990s.
 - **Fuel quality.** Ethanol-blended pump gas is the standard fuel in Ontario and is fine for modern motors as long as you do not let it sit untreated. Old gas in old motors is the leading cause of fuel system problems we see at HBW.
 
@@ -2510,7 +2510,7 @@ For Rice Lake cottage use, brand matters less than configuration. The right leng
 
 **Boat lift at the cottage.** Best for the hull and motor, out of the water, protected from corrosion and dock damage.
 
-**In-water slip at a marina or cottage dock.** Convenient and lower up-front cost, but the hull sits in water continuously.
+**In-water [slip at a marina](/blog/best-marina-rice-lake-ontario) or cottage dock.** Convenient and lower up-front cost, but the hull sits in water continuously.
 
 **Shore storage on a trailer.** Most flexible, you can travel to other lakes. Highest exposure to weather if uncovered.
 
@@ -2973,7 +2973,7 @@ Rice Lake is a specific lake with specific characteristics. Generic "what outboa
 
 **The sunken railway.** There is an abandoned 19th-century railway submerged across the middle of Rice Lake. It sits roughly 4 feet below the surface. It has been wrecking lower units for over a hundred years. Slow down across the middle of the lake until you know the crossing. Chartplotters (Navionics, Garmin, C-MAP) mark it.
 
-**Public ramp access.** Bewdley, Hastings, Roseneath, and HBW's Gores Landing ramp are the main access points. Motor and boat selection should account for trailer size, parking constraints, and ramp slope at the launch you use most.
+**Public ramp access.** Bewdley, Hastings, Roseneath, and [HBW's Gores Landing ramp](/blog/best-marina-rice-lake-ontario) are the main access points. Motor and boat selection should account for trailer size, parking constraints, and ramp slope at the launch you use most.
 
 **Trent-Severn access.** The east end of Rice Lake connects to the [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern). Boats that travel the system need reliable mid-range cruise performance for the lock-to-lock runs.
 
@@ -3943,7 +3943,7 @@ Spring commissioning is not the same job every time. Five things affect how aggr
 
 **Quality of last fall's winterization.** A properly winterized motor needs verification. A skipped or rushed winterization is a different conversation.
 
-**Storage conditions.** Indoors under cover is gentlest on a motor. Outdoors uncovered all winter is harder on fuel systems, electrical, and rubber components.
+**[Storage conditions](/blog/boat-storage-kawartha-lakes).** Indoors under cover is gentlest on a motor. Outdoors uncovered all winter is harder on fuel systems, electrical, and rubber components.
 
 **Motor age.** Older motors, pre-2010 FourStrokes, 2-stroke carbureted engines, often need more attention on the fuel system and ignition.
 
@@ -7917,7 +7917,7 @@ Pre-owned boats typically account for about 80% of all boat transactions in a gi
 - Financing is improving.
 - Luxury tax is gone.
 
-We have been on Rice Lake since 1947. The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
+We have been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
 Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
@@ -8026,7 +8026,7 @@ If you have rented enough that the math now points to ownership, build a quote a
 
 If you want to talk through which boat fits your use case before you build, call us at 905-342-2153 or visit HBW at 5369 Harris Boat Works Rd, Gores Landing.
 
-We have been renting and selling boats on Rice Lake since 1947. We will give you the honest answer for your situation, including whether ownership makes sense yet.
+We have been [renting and selling boats on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). We will give you the honest answer for your situation, including whether ownership makes sense yet.
 
 *Last reviewed: 2026-05-11.*
 `,
@@ -11033,7 +11033,7 @@ The sticker price is not the real cost of ownership. Three things move the five-
 
 **Insurance.** Primarily hull value and horsepower based. A 60 HP boat costs less to insure than a 150 HP boat.
 
-**Storage.** Trailer storage at home costs nothing. Outdoor marina storage on Rice Lake runs several hundred dollars a year and up.
+**Storage.** Trailer storage at home costs nothing. Outdoor [marina storage on Rice Lake](/blog/best-marina-rice-lake-ontario) runs several hundred dollars a year and up.
 
 **Service.** A new Mercury under warranty is essentially free to maintain for the first several years. An older motor out of warranty costs more per season in service.
 
@@ -11176,7 +11176,7 @@ When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actu
 
 ## What to Do at the Launch in Gores Landing
 
-If you're launching at our public ramp at Gores Landing:
+If you're launching at [our public ramp at Gores Landing](/blog/best-marina-rice-lake-ontario):
 
 1. **Pull into the staging area** before the actual ramp. Get the boat ready to launch (straps off, drain plug in, motor down), not while blocking the ramp.
 2. **Back the trailer down the ramp** until the boat floats off cleanly. Have a friend on the dock to walk the boat to a temporary tie-up.
@@ -14155,7 +14155,7 @@ What we handle:
 - Engine diagnostics and repairs (gas Mercruiser, all sizes)
 - Drive rebuilds (Alpha and Bravo)
 - Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
-- Storage (we shrinkwrap and store 311+ boats every winter, sterndrives included)
+- [Storage](/blog/boat-storage-kawartha-lakes) (we shrinkwrap and store 311+ boats every winter, sterndrives included)
 
 Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**.
 
@@ -15180,7 +15180,7 @@ Quotes vary widely based on boat type, claims history, and where you operate. Ge
 
 ## 3. Winter Storage and Winterization
 
-In Ontario, you don't get to skip winter storage. The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
+In Ontario, you don't get to skip [winter storage](/blog/boat-storage-kawartha-lakes). The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
 
 **HBW pricing 2026:**
 
@@ -17017,7 +17017,7 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
 
 > **Quick answer:** GTA boaters store at HBW for the same reason they service here: capacity, straight pricing, and a proper Mercury winterization before the boat sits. HBW storage is outdoor shrinkwrap storage, not on-site indoor storage. Book by September or you may be waiting.
 
-Every September, GTA boaters face the same decision: where do I store the boat for winter? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
+Every September, GTA boaters face the same decision: [where do I store the boat for winter](/blog/boat-storage-kawartha-lakes)? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
 
 Most GTA boat owners haven't considered driving the boat to Rice Lake, Ontario for winter storage, because the assumption is "rural = cheaper but inconvenient." Half right. **The pricing is roughly equivalent. The convenience is similar. What's different is who works on the boat all winter.**
 
@@ -17248,7 +17248,7 @@ Your existing boat insurance typically covers winter storage; some policies requ
 
 > **Quick answer:** Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Mercury dealer since 1965 and a Mercury Marine Platinum Dealer for most of the modern era. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
 
-The simple version: Harris Boat Works has been at the same dock on Rice Lake, in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965**, most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
+The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965**, most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
 
 We don't lead with this often. The day-to-day work (selling Mercurys, doing repowers, storing boats, running the rental fleet) feels too much like just doing the job to merit a lot of "look at us" content. But occasionally a customer asks why they should trust HBW with a $25,000 repower, a season's storage, or a recurring service relationship. **The answer is partly the technical work. The other part is that we've been here long enough to know where the bodies are buried.**
 
@@ -17625,7 +17625,7 @@ If your pontoon is showing any of these signs, or if you're running an undersize
 
 **Get a repower quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
-Harris Boat Works has been on Rice Lake since 1947. We're a Mercury Marine Platinum dealer, and we know what boats in this region actually need, not what looks good on a spec sheet.
+Harris Boat Works has been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). We're a Mercury Marine Platinum dealer, and we know what boats in this region actually need, not what looks good on a spec sheet.
 
 Call us at 905-342-2153 or request service online. We'll give you a straight answer.
 
@@ -24482,7 +24482,7 @@ Phone: 905-342-2153
 
 ## Quick Answer
 
-A Mercury that ran fine in October and won't start in May didn't randomly break. Something changed over the off-season. In Ontario, the most common causes are: battery discharge and sulfation from cold winter storage, stale or contaminated fuel, corroded electrical connections, and fuel system issues from sitting. Start with the battery, then fuel, those two causes account for the majority of spring no-starts. The safety lanyard check comes first because it's fastest.
+A Mercury that ran fine in October and won't start in May didn't randomly break. Something changed over the off-season. In Ontario, the most common causes are: battery discharge and sulfation from cold [winter storage](/blog/boat-storage-kawartha-lakes), stale or contaminated fuel, corroded electrical connections, and fuel system issues from sitting. Start with the battery, then fuel, those two causes account for the majority of spring no-starts. The safety lanyard check comes first because it's fastest.
 
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -24951,7 +24951,7 @@ caveat: Tandem trailers, braked trailers, and corroded older units cost more. Al
 
 ## Why Most Boaters Skip Trailer Maintenance Until It Fails
 
-Trailers are easy to ignore. They sit in the driveway most of the year, get pulled out twice for launch and haul-out, and seem fine when they are not. But the trailer is the only thing between your $20,000+ boat-and-motor combo and the asphalt at highway speed.
+Trailers are easy to ignore. They sit in the driveway most of the year, get pulled out twice for launch and [haul-out](/blog/boat-storage-kawartha-lakes), and seem fine when they are not. But the trailer is the only thing between your $20,000+ boat-and-motor combo and the asphalt at highway speed.
 
 We see three patterns at HBW:
 
