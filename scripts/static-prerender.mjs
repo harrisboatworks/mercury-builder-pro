@@ -291,6 +291,12 @@ function renderArticleBodyHtml(content) {
   }
 }
 
+function renderWalkaroundLeadCaptureHtml() {
+  // Crawler-friendly fallback: simple heading + direct PDF download link.
+  // The live React component progressively enhances over this after hydration.
+  return `<div class="my-6 rounded-lg border border-repower-navy-900/15 bg-repower-paper p-6"><h3 class="m-0 mb-1 font-display text-xl font-bold text-repower-navy-900">Get the printable PDF</h3><p class="m-0 mb-4 font-sans text-sm text-repower-navy-900/75">Free 13-page inspection guide.</p><a href="/lovable-uploads/HBW-Used-Boat-Walkaround-Guide.pdf" download class="inline-block rounded bg-repower-navy-900 px-6 py-3 font-sans text-sm font-semibold text-white no-underline">Download the PDF</a></div>`;
+}
+
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
