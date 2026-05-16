@@ -614,6 +614,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 ---
 
+![Mercury outboard families: FourStroke, Pro XS, Verado (HBW diagram)](/lovable-uploads/diagram-mercury-motor-families.png)
+
 ## The short version
 
 If you're a Rice Lake or Kawartha boater reading this, the motor for you is almost certainly FourStroke. It's what most factory boats come rigged with, what we sell most of, and what fits the typical Ontario use case, cruising, family fishing, pontoons, mid-size runabouts.
@@ -8474,6 +8476,8 @@ Mercury Platinum dealer. Est. 1947.
     content: `
 # Pleasure Craft Licence Update During a Repower: What Ontario Boaters Need to Know in 2026
 
+![Ontario PCL 2026 update changes after repower (HBW diagram)](/lovable-uploads/diagram-pcl-2026-changes.png)
+
 ## Quick answer
 When you change motors on a licensed pleasure craft in Canada, you must update your Pleasure Craft Licence (PCL) with Transport Canada within 30 days. Updates are free. New licences, renewals, and transfers now carry a $24 fee as of December 31, 2025. Your PCL is now valid for five years, not for life. At HBW, we provide the motor specs you need on your repower invoice so you can complete the update yourself.
 
@@ -11381,6 +11385,8 @@ Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
 
 ---
 
+![Repower vs hull replacement decision diagram (HBW)](/lovable-uploads/diagram-hull-vs-repower.png)
+
 ## Quick Answer
 
 If the hull is sound and the motor is tired, repower. If the hull is rotting, structurally compromised, or fundamentally undersized for how you use it, replace the boat. Repowering a bad hull is throwing money at a doomed platform. Honest assessment and installed repower quotes at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
@@ -12196,6 +12202,8 @@ Prefer to talk through your specific boat's rigging condition first? Call **905-
     content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
 ---
+
+![Mercury repower process timeline at HBW (diagram)](/lovable-uploads/diagram-repower-process-timeline.png)
 
 ## Quick Answer
 
@@ -13939,6 +13947,8 @@ This is how to find it, what it tells you, and what we can look up for you with 
 
 ---
 
+![How to decode a Mercury outboard serial number (HBW diagram)](/lovable-uploads/diagram-mercury-serial-number-decoder.png)
+
 ## The Golden Rule
 
 ![Diagram decoding the Mercury outboard model number 1F60413GZ: country of origin (1 USA), family and HP (F60 FourStroke 60 HP), configuration code (413 remote electric power-trim), shaft variant (G), year code (Z 2023). Note: this is the model number, not the serial number.](/lovable-uploads/diagram-mercury-model-number-decoder.png)
@@ -14151,6 +14161,8 @@ Take a photo of the plate the day you buy the boat. Save it on your phone. You'l
     content: `**Language:** English 
 
 ---
+
+![Mercury maintenance interval timeline: 20, 100, 300 hours (HBW diagram)](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
 
 ## Quick Answer
 
@@ -22709,6 +22721,8 @@ Phone: 905-342-2153
     content: `**Language:** English 
 
 ---
+
+![Mercury overheating troubleshooting flowchart (HBW diagram)](/lovable-uploads/diagram-overheating-troubleshooting.png)
 
 ## Quick Answer
 
