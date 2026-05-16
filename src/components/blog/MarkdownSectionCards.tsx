@@ -237,12 +237,23 @@ function rewritePullQuote(md: string): string {
   return md.replace(re, (_m, body) => `:::pull-quote\n${body}\n:::`);
 }
 
+function rewriteWalkaroundLeadCapture(md: string): string {
+  // Bodiless directive: a single line `::walkaround-lead-capture` becomes
+  // `:::walkaround-lead-capture\n\n:::` so the standard splitter matches it.
+  return md.replace(
+    /^::walkaround-lead-capture\s*$/gm,
+    ':::walkaround-lead-capture\n\n:::',
+  );
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewritePullQuote(
-    rewriteBilingualTrust(
-      rewriteCostStack(
-        rewriteDiagnosticFlow(
-          rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+  return rewriteWalkaroundLeadCapture(
+    rewritePullQuote(
+      rewriteBilingualTrust(
+        rewriteCostStack(
+          rewriteDiagnosticFlow(
+            rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+          ),
         ),
       ),
     ),
