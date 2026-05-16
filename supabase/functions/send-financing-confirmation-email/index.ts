@@ -24,19 +24,54 @@ const corsHeaders = {
 };
 
 // Send one SMS via Twilio. Returns true on success, false on failure (logs and swallows error).
+function toE164(input: string): string {
+  const trimmed = String(input || '').trim();
+  if (trimmed.startsWith('+')) {
+    const digits = trimmed.slice(1).replace(/\D/g, '');
+    return '+' + digits;
+  }
+  const digits = trimmed.replace(/\D/g, '');
+  if (digits.length === 10) return '+1' + digits;
+  if (digits.length === 11 && digits.startsWith('1')) return '+' + digits;
+  if (digits.length === 0) return '';
+  return '+' + digits;
+}
+
+async function logSmsAttempt(toPhone: string, body: string, status: 'sent' | 'failed', errorText: string | null): Promise<void> {
+  try {
+    const supabaseUrl = Deno.env.get('SUPABASE_URL');
+    const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+    if (!supabaseUrl || !supabaseServiceKey) return;
+    const sb = createClient(supabaseUrl, supabaseServiceKey);
+    await sb.from('sms_logs').insert({
+      to_phone: toPhone,
+      message: body,
+      status,
+      error: errorText,
+    });
+  } catch (logErr) {
+    console.warn('Failed to write sms_logs entry', (logErr as Error)?.message);
+  }
+}
+
 async function sendTwilioSms(to: string, body: string): Promise<boolean> {
   const accountSid = Deno.env.get('TWILIO_ACCOUNT_SID');
   const authToken = Deno.env.get('TWILIO_AUTH_TOKEN');
   const fromNumber = Deno.env.get('TWILIO_FROM_NUMBER');
+  const normalizedTo = toE164(to);
+  if (!normalizedTo) {
+    console.warn('Twilio SMS: empty phone after normalization, skipping (raw=', to, ')');
+    return false;
+  }
   if (!accountSid || !authToken || !fromNumber) {
-    console.warn('Twilio credentials missing, skipping SMS to', to);
+    console.warn('Twilio credentials missing, skipping SMS to', normalizedTo);
     return false;
   }
   try {
     const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
     const auth = btoa(`${accountSid}:${authToken}`);
     const form = new URLSearchParams();
-    form.append('To', to);
+    form.append('To', normalizedTo);
     form.append('From', fromNumber);
     form.append('Body', body);
     const resp = await fetch(url, {
@@ -49,13 +84,22 @@ async function sendTwilioSms(to: string, body: string): Promise<boolean> {
     });
     const data = await resp.json();
     if (!resp.ok) {
-      console.error('Twilio SMS error', { to, status: resp.status, data });
+      console.error('Twilio SMS error', { to: normalizedTo, raw: to, status: resp.status, data });
+      await logSmsAttempt(
+        normalizedTo,
+        body,
+        'failed',
+        `Twilio ${resp.status}: ${JSON.stringify(data).slice(0, 500)}`,
+      );
       return false;
     }
-    console.log('Twilio SMS sent', { to, sid: data.sid });
+    console.log('Twilio SMS sent', { to: normalizedTo, raw: to, sid: data.sid });
+    await logSmsAttempt(normalizedTo, body, 'sent', data?.sid ? `sid:${data.sid}` : null);
     return true;
   } catch (err) {
-    console.error('Twilio SMS exception', { to, err: (err as Error)?.message });
+    const msg = (err as Error)?.message;
+    console.error('Twilio SMS exception', { to: normalizedTo, raw: to, err: msg });
+    await logSmsAttempt(normalizedTo, body, 'failed', `exception: ${msg}`);
     return false;
   }
 }
