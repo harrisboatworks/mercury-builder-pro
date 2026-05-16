@@ -3738,7 +3738,7 @@ Pickup is at Gores Landing. That is not a downside, it means your motor was rigg
     relatedSlugs: ['mercury-outboard-winterization-service-cost-ontario', 'mercury-outboard-wont-start-troubleshooting', 'mercury-maintenance-intervals-20-100-300-rule'],
     title: 'Spring Outboard Commissioning Checklist (2026 Ontario)',
     description: 'Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical, and hull. Book early at HBW Ontario.',
-    image: '/lovable-uploads/How_to_Choose_HP.png',
+    image: '/lovable-uploads/hero-spring-commissioning-checklist.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-30',
     dateModified: '2026-05-04',
