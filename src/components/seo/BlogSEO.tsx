@@ -44,7 +44,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       {
         "@type": "BlogPosting",
         "@id": `${url}#article`,
-        "headline": article.title,
+        "headline": article.seoTitle ?? article.title,
         "description": cleanDescription,
         "image": `${SITE_URL}${article.image}`,
         "author": {
