@@ -9917,7 +9917,7 @@ We offer outdoor winter storage at HBW with shrinkwrap. We do not offer indoor h
 
 Outdoor storage with shrinkwrap is the practical answer for most Rice Lake and Kawartha boats: aluminum fishing boats, pontoons, runabouts. For high-end fibreglass cruisers with custom paint, indoor might be worth the premium at another shop. Choose based on your boat, not based on what makes the marina more money.
 
-Contact us for current per-foot rates.
+Contact us for current per-foot rates. Note that Harris Boat Works is closed December 1 to April 1 with no service performed during winter months, so storage drop-off windows close in late fall and pickups resume in early April.
 
 ## Shrinkwrap: separate from winterization
 
