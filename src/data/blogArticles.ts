@@ -25028,7 +25028,7 @@ We bundle storage into straightforward tiers based on what your boat needs and h
 - Pre-launch safety check
 - Ready-to-launch handoff
 
-Most customers choose the middle or full package because it eliminates phone tag between fall and spring. You drop the boat off in October, pick it up in April, and it's ready to run. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months, so all storage drop-offs and pickups happen on either side of that window. For a detailed breakdown of what's included at each step, see our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
+Most customers choose the middle or full package because it eliminates phone tag between fall and spring. You drop the boat off in October, pick it up in April, and it's ready to run. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months, so all storage drop-offs and pickups happen on either side of that window. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service. For a detailed breakdown of what's included at each step, see our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
 
 ---
 
