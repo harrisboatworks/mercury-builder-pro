@@ -18438,9 +18438,7 @@ Two related guides in the same cluster:
     category: "Buying Guide",
     readTime: '~12 min read',
     keywords: ["used boat inspection","buying guide","ontario","transom check","pre-purchase"],
-    content: `:::walkaround-lead
-
-:::
+    content: `::walkaround-lead-capture
 
 # The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
 
