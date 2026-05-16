@@ -892,7 +892,9 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer。
     category: '法规安全',
     readTime: '9 分钟',
     keywords: ['安大略省船只法规', '加拿大快艇驾照', '船只安全装备要求', 'Ontario boating regulations Chinese'],
-    content: `## 简短答案
+    content: `![加拿大船只安全许可清单 - PCOC + 钓鱼证 + 救生衣 + 必备装备 / Ontario Boating Safety Checklist](/lovable-uploads/chinese-pcoc-licence-safety-checklist.png)
+
+## 简短答案
 
 在安大略省開休閒船，你需要：**有效的Pleasure Craft Operator Card（PCOC，俗稱「船驾照」）、船上配備齊全的安全裝備、以及符合Transport Canada要求的船隻文件。** 不需要額外的水上駕駛考試（PCOC本身就是資格證明），但安全裝備不齊會被罰款，知識不足可能釀成意外。
 
