@@ -512,7 +512,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
   },
   {
     slug: 'winterization-mercury-guide-zh',
-    title: 'Mercury 引擎冬化完整指南 (中文版):DIY 还是交给专业?',
+    title: 'Mercury 引擎冬化完整指南 (中文版)：DIY 还是交给专业？',
     seoTitle: 'Mercury 引擎冬化完整指南 (中文版)',
     description: 'Mercury 引擎冬化的 5 个关键步骤、DIY 常见错误、专业服务价格区间。HBW Mercury 白金级冬化服务详解。',
     image: winterizationHero,
@@ -523,7 +523,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
     category: '维护保养',
     readTime: '7 分钟',
     keywords: ['Mercury冬季保养', '舷外机winterization', '安大略省船冬季存放', 'Mercury winterization guide Chinese'],
-    content: `> **简短答案:** Mercury 引擎冬化包含 5 个核心步骤:抽水冷却系统、加防冻液、雾化引擎、换齿轮箱油、稳定燃油。每项都做错都会春天损坏引擎。Harris Boat Works (HBW) Mercury 白金级认证冬化服务起价约加币 $250-450 (具体看引擎大小)。DIY 风险高于多数车主想象 — 我们每年春天看到 $800-3000 的 DIY 错误修复账单。
+    content: `> **简短答案：** Mercury 引擎冬化包含 5 个核心步骤：抽水冷却系统、加防冻液、雾化引擎、换齿轮箱油、稳定燃油。每项做错都会春天损坏引擎。Harris Boat Works (HBW) Mercury 白金级认证冬化服务起价约加币 $250-450 (具体看引擎大小)。DIY 风险高于多数车主想象 — 我们每年春天看到 $800-3000 的 DIY 错误修复账单。
 
 ## 为什么冬化这么重要
 
@@ -539,7 +539,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 
 把 marine-grade propylene glycol 防冻液灌入冷却系统,替换残留水。
 
-**重要:必须用 marine antifreeze。汽车防冻液 (ethylene glycol) 有毒,会污染莱斯湖。**
+**重要：必须用 marine antifreeze。汽车防冻液 (ethylene glycol) 有毒,会污染莱斯湖。**
 
 ### 3. 雾化引擎 (Fogging)
 
@@ -587,7 +587,7 @@ HBW 是 [Mercury 白金级认证经销商](https://www.mercurymarine.com/canada/
 - 火花塞检查 + 更换 (如需)
 - 完整书面冬化记录 (保修索赔时很关键)
 
-**价格:根据引擎大小,每年价格略变动。请致电 (905) 342-2153 获取最新报价。**
+**价格：根据引擎大小,每年价格略变动。请致电 (905) 342-2153 获取最新报价。**
 
 ## 送船时间
 
@@ -622,7 +622,7 @@ HBW 是 [Mercury 白金级认证经销商](https://www.mercurymarine.com/canada/
 
 ## 相关阅读
 
-本主题完整指南:**[GTA 华人船主冬储完整指南](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)**
+本主题完整指南：**[GTA 华人船主冬储完整指南](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)**
 
 同系列:
 - [GTA → 莱斯湖 一日游地图](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
