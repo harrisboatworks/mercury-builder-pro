@@ -18,6 +18,7 @@ import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './Diagnostic
 import { CostStack, type CostStackProps, type CostStackItem } from './CostStack';
 import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustItem } from './BilingualTrustCard';
 import { PullQuote, type PullQuoteProps } from './PullQuote';
+import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
