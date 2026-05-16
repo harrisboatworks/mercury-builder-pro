@@ -3396,7 +3396,9 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
     category: '租船与钓鱼',
     readTime: '6 分钟',
     keywords: ['pontoon vs fishing boat 中文', '6-8 人租船 中文', '大家庭租船 安省', 'Rice Lake pontoon 租船', '团体租船 多伦多'],
-    content: `## 简短答案
+    content: `![Pontoon 还是 钓鱼船 / Pontoon or Fishing Boat decision card for Toronto Chinese families](/lovable-uploads/chinese-pontoon-vs-fishing-boat-decision.png)
+
+## 简短答案
 
 **6至8人出湖，幾乎一定選Pontoon（浮筒船）。** 钓鱼船設計給2至3人專心钓鱼，不是給6個人吃飯聊天晒太陽的。如果你的團體有老人、小孩、不钓鱼的家人, Pontoon不只是「更好」，而是唯一合理的選擇。
 
@@ -4013,7 +4015,9 @@ Harris Boat Works，自1947年起，位於Rice Lake南岸Gores Landing。
     category: '成本分析',
     readTime: '10 min read',
     keywords: ['mercury repower gta', 'gta 华人 mercury', 'mercury 換機 安省', 'gta chinese boater mercury', 'rice lake mercury repower'],
-    content: `## 快速答案
+    content: `![Mercury 服务与换机路径 / Mercury Service & Repower Pathway from GTA to HBW](/lovable-uploads/chinese-mercury-service-repower-pathway.png)
+
+## 快速答案
 
 如果你的船外機已經老舊、頻繁出問題，換一台新的船外機（Repower）通常比換一艘新船更划算。船身還好的情況下，Repower 讓你用更低的成本獲得全新動力。
 
@@ -4476,6 +4480,8 @@ Harris Boat Works 是 Rice Lake 上家族经营·1947 年至今 的 Mercury Mari
 **慢起床型适合"放松一下"心态。** 但要注意夏季周末傍晚的雷阵雨概率，建议下午 4:30 之前一定要返港。
 
 ---
+
+![GTA 到 莱斯湖 一日游地图 / GTA to Rice Lake day-trip route map](/lovable-uploads/chinese-gta-to-rice-lake-day-trip.png)
 
 ## 自驾路线（推荐）
 
