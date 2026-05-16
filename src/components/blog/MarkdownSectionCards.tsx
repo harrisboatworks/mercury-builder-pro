@@ -565,6 +565,8 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'pull-quote') {
       const props = parsePullQuoteBody(body);
       if (props) chunks.push({ kind: 'pull-quote', content: '', pullQuoteProps: props });
+    } else if (name === 'walkaround-lead') {
+      chunks.push({ kind: 'walkaround-lead', content: '' });
     }
     last = m.index + m[0].length;
   }
