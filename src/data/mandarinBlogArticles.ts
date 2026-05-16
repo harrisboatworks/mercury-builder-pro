@@ -1579,8 +1579,9 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
   },
   {
     slug: 'chinese-anglers-rice-lake-kawarthas-outboard',
-    title: '多伦多华人钓友：Rice Lake 与 Kawarthas 钓鱼船马力怎么选',
-    description: '给多伦多华人钓友的 Rice Lake 与 Kawarthas 船外机选购指南：铝船、bass boat、kicker、tiller、40-60HP、90-115HP 怎么选。',
+    title: '莱斯湖与 Kawarthas 钓鱼船引擎指南 (中文版)：华人 angler 怎么选 Mercury',
+    seoTitle: '莱斯湖钓鱼船 Mercury 引擎指南 (中文版)',
+    description: '莱斯湖 + Kawartha Lakes 钓鱼最佳 Mercury 引擎选择：tinnies、铝制钓鱼船、bass boat 配置。HBW Mercury 白金级认证为 GTA 华人 angler 提供完整 Mercury 配置。',
     image: '/lovable-uploads/zh-chinese-anglers-rice-lake-kawarthas-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
