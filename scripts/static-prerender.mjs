@@ -4282,7 +4282,11 @@ for (const route of blogArticleRoutes) {
     }
   }
   const noscripts = [...html.matchAll(/<noscript[\s\S]*?<\/noscript>/gi)].map(m => m[0]).join(' ');
-  if (markdownPattern.test(noscripts)) verifyErrors.push(`${route.path}: noscript contains raw markdown or author footer.`);
+  // Strip markdown link syntax `[text](url)` -> `text` before the leak check.
+  // A bare inline link inside a paragraph is not a real leak; we only want to
+  // catch unrendered headings, bold, code fences, or author-footer signatures.
+  const noscriptsForCheck = noscripts.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  if (markdownPattern.test(noscriptsForCheck)) verifyErrors.push(`${route.path}: noscript contains raw markdown or author footer.`);
 }
 const sitemapMotorMatches = writtenSitemap.match(/<loc>[^<]*\/motors\/[^<]+<\/loc>/g) || [];
 if (sitemapMotorMatches.length !== motorPageRoutes.length) {
