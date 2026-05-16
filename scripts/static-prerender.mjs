@@ -368,6 +368,7 @@ function loadAllBlogArticlesForSitemap() {
     const items = getSitemapEligibleArticles().map(a => ({
       slug: a.slug,
       title: a.title,
+      seoTitle: a.seoTitle,
       image: a.image,
       publishDate: a.publishDate || null,
       datePublished: a.datePublished || null,
@@ -401,6 +402,7 @@ function loadBlogArticles() {
     const items = getSitemapEligibleArticles().map(a => ({
       slug: a.slug,
       title: a.title,
+      seoTitle: a.seoTitle,
       description: getCleanDescription(a),
       image: a.image,
       datePublished: a.datePublished,
@@ -526,6 +528,7 @@ function loadTranslatedBlogArticles(modulePath, exportName) {
     const items = (${exportName} || []).map(a => ({
       slug: a.slug,
       title: a.title,
+      seoTitle: a.seoTitle,
       description: getCleanDescription(a),
       image: a.image,
       datePublished: a.datePublished,
