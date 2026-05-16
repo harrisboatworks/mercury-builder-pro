@@ -29,7 +29,9 @@ content_type: blog_article
 
 ## Article
 
-> **📥 Download this guide as a printable PDF.** Bring the full 30-minute walkaround inspection checklist with you to look at a boat. [**Get the free printable guide →**](/lovable-uploads/HBW-Used-Boat-Walkaround-Guide.pdf)
+:::walkaround-lead
+
+:::
 
 # The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
 
@@ -218,11 +220,11 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 
 ---
 
-## Save this guide for the next walkaround
+## Get the printable guide
 
-[**📥 Download the printable PDF (single 9-page file)**](/lovable-uploads/HBW-Used-Boat-Walkaround-Guide.pdf)
+:::walkaround-lead
 
-Print it. Take it with you. Use it on the next boat you go look at.
+:::
 
 ## FAQs
 
