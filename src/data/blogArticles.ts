@@ -753,7 +753,10 @@ FourStroke, specifically with Command Thrust gearcase on 115 HP and up. Command 
 Tournament-grade bass boats: Pro XS. The acceleration and hole shot match what tournament anglers need. Recreational bass fishing without tournament demands: FourStroke at the same HP also works and saves money.
 
 **Can I switch motor families during a repower?**
-Yes. The motor is the choice; the rigging adapts. Most existing Mercury controls, props, and harnesses can stay Mercury-to-Mercury. Build a quote to see exact pricing for the swap.`,
+Yes. The motor is the choice; the rigging adapts. Most existing Mercury controls, props, and harnesses can stay Mercury-to-Mercury. Build a quote to see exact pricing for the swap.
+
+For an angler-specific deep dive on Pro XS, see our [Rice Lake and Kawarthas Pro XS repower guide](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers).
+`,
     faqs: [
       {
         question: 'What\'s the main advantage of Pro XS over FourStroke?',
@@ -2969,7 +2972,10 @@ Live Mercury pricing for any motor configuration, main, kicker, or both, is at *
 
 If you want to talk through the setup before you configure, call **905-342-2153**. We fish this lake. We rig boats for it. We'll give you the honest answer.
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | [harrisboatworks.ca](https://www.harrisboatworks.ca)`,
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | [harrisboatworks.ca](https://www.harrisboatworks.ca)
+
+Tournament-minded anglers should also see our [Pro XS repower guide for Rice Lake and Kawartha anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers) for the performance side of the conversation.
+`,
     faqs: [
       {
         question: 'What HP do I really need for Rice Lake?',
@@ -8238,6 +8244,9 @@ Children under 18 may fish under certain conditions without a licence. Confirm c
 - Transport Canada, Pleasure Craft Licence (5-year validity, 10 hp threshold). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
 
 *Last reviewed: 2026-05-11.*
+
+
+If you're new to Rice Lake or comparing services, see our [full-service marina overview](/blog/best-marina-rice-lake-ontario) for slips, launch, storage, and service in one place.
 `,
     faqs: [
       { question: 'When does walleye season open on Rice Lake?', answer: 'The second Saturday in May for FMZ 17. Confirm the exact calendar date for 2026 at ontario.ca.' },
@@ -9960,6 +9969,9 @@ Request winterization, shrinkwrap, storage, or the full package at [hbw.wiki/ser
 Or call 905-342-2153.
 
 *Last reviewed: 2026-05-11.*
+
+
+For broader context on storage options across the Kawarthas, see our [Kawartha Lakes boat storage guide](/blog/boat-storage-kawartha-lakes).
 `,
     faqs: [
       { question: 'What does boat winterization cost in Ontario?', answer: 'It depends on motor size, scope of service, and whether you bundle shrinkwrap, storage, and spring commissioning. Motor-only winterization is the smallest line item. A full package is significantly more. Request a quote based on your specific boat at hbw.wiki/service.' },
@@ -14574,6 +14586,9 @@ We've stored boats in Gores Landing for three generations. Mercury Marine Platin
 **Drop-off:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 ---
+
+
+If you're shopping for storage locations beyond shrinkwrap details, our [Kawartha Lakes storage overview](/blog/boat-storage-kawartha-lakes) covers options across Rice Lake and the broader region.
 `,
     faqs: [
       {
@@ -19473,7 +19488,10 @@ Yes. Old Mercury motors in workable condition are valued at trade-in. Non-Mercur
 Build your Mercury repower quote at [mercuryrepower.ca](https://mercuryrepower.ca), choose motor, controls, steering, gauges, wiring, prop, and see the configured total before calling anyone. 
 Questions? Call 905-342-2153. 
 Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
----`,
+---
+
+If you're spec'ing a pontoon or heavy-load setup, our [Command Thrust vs standard gearcase guide](/blog/mercury-command-thrust-vs-standard-gearcase) covers when CT makes sense.
+`,
     image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
@@ -21633,6 +21651,9 @@ Markham repower customers often:
 - **Read our [Mandarin-language guides](https://www.mercuryrepower.ca/blog/zh)** for technical detail before deciding. We have a growing 中文 collection covering pricing, winterization, and repower decisions for GTA Chinese-Canadian boaters.
 - **Justify the drive for Mercury Platinum-level service.** Closer dealers often lack the rigging depth for a clean repower install.
 - **Trust transparent CAD pricing.** Our online quote builder at [mercuryrepower.ca](https://mercuryrepower.ca) works without a phone call — you can build the quote in any language, in your own time, before deciding to make the trip.
+
+
+Markham customers often combine their trip with a service drop, see our [drive-in service walkthrough](/blog/toronto-to-rice-lake-drive-in-process).
 `,
     faqs: [
       { question: 'Is there a Mercury dealer in Markham?', answer: "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Markham - about 70 minutes north. Platinum is the top tier in Mercury's dealer program." },
