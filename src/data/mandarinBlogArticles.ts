@@ -985,7 +985,7 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer。
   },
   {
     slug: 'ontario-boating-regulations-zh',
-    title: '安大略船只法规完整指南:PCOC、PCL、安全装备清单 (中文版)',
+    title: '安大略船只法规完整指南：PCOC、PCL、安全装备清单 (中文版)',
     seoTitle: '安大略船只法规完整指南 (中文版)',
     description: '在安大略驾船需要 PCOC + PCL + 钓鱼证 + 必备安全装备。HBW 不销售证件,本指南教您从 ServiceOntario 和 Transport Canada 自助办理。',
     image: regulationsHero,
@@ -1000,13 +1000,13 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer。
 
 ## 三大必备证件
 
-### 1. Pleasure Craft Operator Card (PCOC) - 船只操作员证
+### 1. Pleasure Craft Operator Card (PCOC) 船只操作员证
 
 任何在加拿大水域使用带引擎船只的人都需要这张卡。一次性考试,加币 $50-80。网上在线考试可以做。终身有效,无需续期。加拿大全境通用。
 
 不持卡操作引擎船只罚款最高 $250。湖警 (OPP Marine) 经常在莱斯湖检查这张卡。
 
-### 2. Pleasure Craft Licence (PCL) - 船只牌照
+### 2. Pleasure Craft Licence (PCL) 船只牌照
 
 带 10 马力以上引擎的船只必须有 PCL 牌照。免费 ([Transport Canada](https://tc.canada.ca/en) 颁发)。网上申请,1-2 周邮寄到家。10 年有效期,到期前续约。号码必须贴在船头两侧。
 
@@ -1016,7 +1016,7 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer。
 
 加拿大公民 + 永久居民 18 岁以上钓鱼必备。[Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) 网上申请。一年期约 $25-35 (Outdoors Card 一次性 $9 另算)。短期 (1 天/3 天/8 天) 价格更低。必须随身携带,OPP / MNR 会查。
 
-**重要:** HBW 不销售钓鱼证。需要自己在 ontario.ca 网上申请。
+**重要：** HBW 不销售钓鱼证。需要自己在 ontario.ca 网上申请。
 
 ## 船上必备装备清单
 
