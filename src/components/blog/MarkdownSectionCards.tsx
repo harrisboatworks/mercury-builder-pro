@@ -237,12 +237,23 @@ function rewritePullQuote(md: string): string {
   return md.replace(re, (_m, body) => `:::pull-quote\n${body}\n:::`);
 }
 
+function rewriteWalkaroundLeadCapture(md: string): string {
+  // Bodiless directive: a single line `::walkaround-lead-capture` becomes
+  // `:::walkaround-lead-capture\n\n:::` so the standard splitter matches it.
+  return md.replace(
+    /^::walkaround-lead-capture\s*$/gm,
+    ':::walkaround-lead-capture\n\n:::',
+  );
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewritePullQuote(
-    rewriteBilingualTrust(
-      rewriteCostStack(
-        rewriteDiagnosticFlow(
-          rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+  return rewriteWalkaroundLeadCapture(
+    rewritePullQuote(
+      rewriteBilingualTrust(
+        rewriteCostStack(
+          rewriteDiagnosticFlow(
+            rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+          ),
         ),
       ),
     ),
@@ -280,7 +291,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -293,7 +304,7 @@ interface RenderChunk {
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -565,8 +576,8 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'pull-quote') {
       const props = parsePullQuoteBody(body);
       if (props) chunks.push({ kind: 'pull-quote', content: '', pullQuoteProps: props });
-    } else if (name === 'walkaround-lead') {
-      chunks.push({ kind: 'walkaround-lead', content: '' });
+    } else if (name === 'walkaround-lead-capture') {
+      chunks.push({ kind: 'walkaround-lead-capture', content: '' });
     }
     last = m.index + m[0].length;
   }
@@ -615,7 +626,7 @@ function renderMarkdownWithDirectives(
     if (chunk.kind === 'pull-quote' && chunk.pullQuoteProps) {
       return <PullQuote key={`${keyPrefix}-pq-${i}`} {...chunk.pullQuoteProps} />;
     }
-    if (chunk.kind === 'walkaround-lead') {
+    if (chunk.kind === 'walkaround-lead-capture') {
       return <WalkaroundLeadCapture key={`${keyPrefix}-wl-${i}`} />;
     }
     if (!chunk.content.trim()) return null;
