@@ -736,6 +736,16 @@ Call **905-342-2153** if you want to talk through which family fits your boat. W
 
 ---
 
+---
+
+## What we see at HBW
+
+Almost every motor that leaves our service bay falls into one of the three families. FourStroke 60-150 dominates the pontoon and family-runabout repower side. Pro XS 150-300 covers serious anglers and bass-boat repowers. Verado V8/V10 lives on Sea Ray, Boston Whaler, Robalo, and the 28-foot center-console crowd.
+
+The decision usually comes down to how the boat actually gets used. FourStroke if comfort and quiet matter most. Pro XS if hole-shot and top-end matter most. Verado if it's a heavy boat or twin-engine application.
+
+---
+
 ## FAQ
 
 **What's the difference between Mercury FourStroke and Pro XS?**
@@ -1829,6 +1839,16 @@ The customers who skip the kicker to save money almost always wish they hadn't. 
 ## Ready to find your motor?
 
 Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca), real pricing in CAD on the full configuration: main motor, kicker, rigging, prop, and install. Or call us at **905-342-2153**. We rig fishing boats every week and can match a motor to your specific hull.
+
+---
+
+---
+
+## What we see at HBW
+
+The sweet spot for aluminum fishing boats 14-17 feet is the Mercury 25-60 HP FourStroke. Lightweight tinny + small Mercury is the most common rig in our service bay. The 60 EFI Command Thrust is our top recommendation for 17-footers carrying 3-4 people and gear.
+
+Anything over 75 HP on a sub-17-foot aluminum hull usually exceeds the boat's max HP plate. Always check the capacity plate before quoting the repower -- the most common rejection at the shop is "owner wants a 90 on a hull rated for 60."
 
 ---
 
@@ -3317,6 +3337,16 @@ Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) with actual
 
 ---
 
+---
+
+## What we see at HBW
+
+Bass-boat repower customers at our shop almost always come in asking for Pro XS. The decision is rarely about HP -- it's about hole-shot and top-end on a tournament rig that needs to run hard from spot to spot. A Pro XS 200 on a Ranger 188 will outpunch a FourStroke 200 even though dyno numbers are close.
+
+The Verado V8 conversation comes up for the biggest boats (21-foot+ bass boats with twin-engine setups, or heavy multi-species rigs). Those are the customers running Champion 220 or Skeeter ZX series.
+
+---
+
 ## FAQ
 
 **Is Pro XS really faster than FourStroke?**
@@ -3494,6 +3524,16 @@ We test prop pitch on every Mercury repower and new motor install at HBW. If you
 For engine repairs, we only service Mercury and Mercruiser.
 
 Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+---
+
+## What we see at HBW
+
+Fuel economy on a Mercury depends on three things: prop, RPM, and load. A correctly-propped FourStroke 90 on a 17-foot aluminum runs about 5-6 nautical mph per gallon at 3500-4000 RPM. Same motor over-propped runs 3-4 mpg at the same speed. Big difference.
+
+The most common fuel-economy callback at our shop is a 4-blade prop running the motor under its RPM band. Drop pitch by one or switch to a 3-blade and the WOT comes up to spec; fuel burn drops by 15-25%.
 
 ---
 
@@ -3903,6 +3943,16 @@ If you'd rather have us handle commissioning:
 We cover the full checklist above plus computer diagnostics on Mercury SmartCraft systems, sea-trial after the bench work, and a written record of everything done. For engine repairs, we only service Mercury and Mercruiser.
 
 Schedule at [hbw.wiki/service](https://hbw.wiki/service). Book before April if May launch timing matters. After the May long weekend, spring service demand usually gets heavier, so earlier requests are easier to plan around.
+
+---
+
+---
+
+## What we see at HBW
+
+Center-console repowers in Ontario are dominated by Verado V8 and V10. Most CC customers on Lake Ontario, Bay of Quinte, or Georgian Bay want twin Verado 250s or 300s. Single-engine Pro XS works on smaller (20-foot) CCs but most owners eventually upgrade to twin power for redundancy.
+
+The biggest install consideration on CC repowers: digital throttle and shift integration. SmartCraft Connect or VesselView Mobile usually goes in at the same time. Plan for an extra 2-3 days on the install schedule for the wiring and calibration.
 
 ---
 
@@ -4421,6 +4471,16 @@ We inspect props during every winterization and spring commissioning. If a prop 
 ## Ready to get the right prop?
 
 Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) with prop included. Or call **905-342-2153**, the prop conversation matters and it's a five-minute one.
+
+---
+
+---
+
+## What we see at HBW
+
+90% of "my boat feels slow" or "won't get on plane" callbacks at our shop are prop, not powerhead. The customer bought an off-brand prop online or kept the original prop after a horsepower bump.
+
+The other common one: pitch is wrong for the load. A 4-blade Enertia that ran great on a clean boat at 2,000 lbs feels sluggish once you add 600 lbs of gear, fuel, and passengers. Drop one pitch and the same prop runs perfect. Easier to test pitches than guess.
 
 ---
 
@@ -8401,6 +8461,16 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
+---
+
+## What we see at HBW
+
+Boost is Mercury's software-only HP upgrade for select FourStroke and Pro XS models -- adds 10-25 HP via a flash, no hardware change. The most common customer who comes in asking is a 150 FourStroke owner on a pontoon who wishes they had specced the 175.
+
+Eligibility depends on year, model code, and powerhead serial number. We can check eligibility in our portal in a few minutes. Flash time at the shop is roughly 90 minutes plus the customer-portal activation. Not every motor is a candidate -- carbureted and pre-2018 EFI are typically out.
+
+---
+
 ## FAQs
 
 **Does Boost void my warranty?** 
@@ -9298,6 +9368,16 @@ For typical recreational use, family fishing, cruising, casual water sports, the
 
 ---
 
+---
+
+## What we see at HBW
+
+The 115 versus 150 question is the most-quoted comparison at our shop. Customers walk in expecting to save by going with the 115. By the time we add controls, props, and rigging, the spread is usually only $1,500-$2,500 installed. For a 19-foot pontoon or a 20-foot bowrider, the extra HP pays off in two-up cruising and tube-pulling.
+
+The exception: aluminum tinnies under 17 feet. There the 115 is the better match. Lighter on the transom, easier on fuel, and matches the hull's design max.
+
+---
+
 ## FAQs
 
 **Is the Mercury 150 worth the extra money over the 115?** 
@@ -9461,6 +9541,16 @@ If you have the cash and your other money is not earning more than the financing
 - Current financing options are shown on the [financing page](/financing) and confirmed with your quote at [mercuryrepower.ca](https://mercuryrepower.ca). As of May 2026, qualified buyers, subject to change.
 
 *Last reviewed: 2026-05-11.*
+---
+
+## What we see at HBW
+
+Most boat financing in Ontario routes through a handful of marine lenders -- the same names you see at every dealer. Approval depends on credit score and debt-to-income, but the down payment we typically see on $25-50K boats is 15-20%.
+
+The mistake we watch customers make: financing the motor + boat together at a 15-year term to keep monthly cost low. If you sell the boat in year 5, you're upside-down on the balance. Better path: shorter term, slightly higher monthly, no negative equity when the boat changes hands.
+
+---
+
 `,
     faqs: [
       { question: 'Can I finance a Mercury repower in Ontario?', answer: 'Yes. Mercury Repower Financing through HBW covers the full project: motor, rigging, controls, prop, install labour, and Ontario HST. Terms run from 24 to 84 months. Current rates and live payment options are at mercuryrepower.ca.' },
@@ -10637,6 +10727,16 @@ A well-maintained Yamaha or Honda will outlast a neglected Mercury. We see this 
 For most Ontario boaters switching to Mercury, the timing is a full repower, when the old motor is going anyway and the rigging is getting replaced regardless.
 
 *Last reviewed: 2026-05-11.*
+---
+
+## What we see at HBW
+
+After three generations of running this shop, we've serviced every major outboard brand. Mercury is what we sell new because the platform, the rigging compatibility, and the parts pipeline beat the competition. But honestly, late-model Yamaha and Honda are reliable motors -- the difference at the powerhead level is small.
+
+The bigger reliability swing is who installed and rigged the motor, and whether the owner kept up with the 100-hour service. A botched install kills a perfect motor faster than the brand badge ever does.
+
+---
+
 `,
     faqs: [
     { question: 'Which outboard brand is most reliable in 2026: Mercury, Yamaha, or Honda?', answer: 'All three produce reliable four-stroke outboards. The practical reliability difference in Ontario (how fast you can get a motor fixed when something goes wrong) favors Mercury, because of dealer network density and parts availability in this region.' },
@@ -12144,6 +12244,16 @@ The walk-around is free. The findings determine where in the range your quote la
 
 ---
 
+---
+
+## What we see at HBW
+
+Rigging costs depend almost entirely on what's on the boat now. If existing controls match the new motor's connector type, rigging adds $400-800. If we're upgrading to digital throttle, swapping harnesses, or replacing throttle/shift cables, the rigging bill can hit $2-4K.
+
+The hidden cost: SmartCraft display. Most repower customers want the data screen, which adds $1,200-2,000 with install. Optional but worth it for fuel-burn and engine-data visibility. We don't push it unless the customer asks.
+
+---
+
 ## FAQs
 
 **What is included in Mercury outboard rigging?** 
@@ -12643,6 +12753,16 @@ Not sure about your transom height? Call us at 905-342-2153 or send a side-profi
 > **Need a quick shaft-length check?** Try our [Shaft Length Picker](/tools#shaft-length). Punch in your transom height and we will tell you if you want a 15", 20", 25", or 30" shaft. Or call us at [(905) 342-2153](tel:+19053422153) and we will measure with you on the phone.
 
 *Last reviewed: 2026-05-11.*
+---
+
+## What we see at HBW
+
+The single most common rigging mistake we see on used-boat purchases: wrong shaft length on a repower. Owner pulled a 15-inch short-shaft, ordered a 20-inch long-shaft expecting "more boat coverage", and the prop is now too deep to plane efficiently.
+
+Always measure the transom from the top edge to the cavitation plate centerline before ordering. 15" for most tinnies, 20" for bowriders and pontoons, 25" for offshore-style hulls. When in doubt, send us a photo and a tape measure reading -- we'll spec it before quoting the install.
+
+---
+
 `,
     howToSteps: [
       { name: 'Find the lowest point of the hull at the transom', text: 'Locate the point where water meets hull when running on plane, at the centre of the transom where the motor will mount. This is the bottom reference for the measurement.' },
@@ -13488,6 +13608,16 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 **HBW (Gores Landing)** sells ethanol-free 89-octane marine fuel directly at our dock. Easier on outboards than the 10% ethanol you get at most pump stations. We're open daily during boating season.
 
 For Mercury service, parts, or repower questions, we're a Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbw.wiki/service](https://hbw.wiki/service). Phone 905-342-2153.
+
+---
+
+---
+
+## What we see at HBW
+
+Rice Lake has its own quirks. Stumps in the central basin, weed mats in late July, and a navigable channel between the islands that catches every first-time boater. Most of our marine-tow callbacks in summer involve someone running aground on Tick Island or Black Island shoals.
+
+The good news: the lake is small enough that you can learn the hazards in a season. Slow down in the west end shallows, stay in the marked channel between islands, and pull your prop up at the Hastings end of the lock chamber. Walleye and largemouth fishing are best at sunrise and sunset.
 
 ---
 
@@ -14669,6 +14799,16 @@ We've stored boats in Gores Landing for three generations. Mercury Marine Platin
 
 
 If you're shopping for storage locations beyond shrinkwrap details, our [Kawartha Lakes storage overview](/blog/boat-storage-kawartha-lakes) covers options across Rice Lake and the broader region.
+---
+
+## What we see at HBW
+
+We've been shrinkwrapping boats on the south shore of Rice Lake for decades. Most years we wrap 300-400 boats between October and mid-November. The customers who pay the indoor-storage premium at other facilities are usually offshore fiberglass owners ($75K+ boats) or commercial guides. For the typical aluminum fishing rig or 19-foot pontoon, outdoor shrinkwrap is the smart spend.
+
+What separates a good shrinkwrap job from a bad one: tying the tarp to a frame, not just to the gunwales. Snow load splits ungo unframed wraps by January every year. We frame every wrap.
+
+---
+
 `,
     faqs: [
       {
@@ -14926,6 +15066,16 @@ If the math feels stretched, we have **rentals**. Nine-boat fleet on Rice Lake (
 There's no shame in renting. There's a lot of shame in over-extending into a boat you can't afford to maintain. Maintenance neglect ages a boat 10x faster than honest use does.
 
 ---
+---
+
+## What we see at HBW
+
+The first-year ownership cost usually surprises new boaters. Boat + motor is the big number, but storage, insurance, gas, dock or trailer, and the 20-hour first service add up. On a $35K pontoon, expect another $4-6K in first-year costs after the purchase.
+
+Year two through five averages out lower if winterization and 100-hour service are kept current. The boats that get expensive in year five are the ones whose owners skipped impeller changes and gear-lube changes. Those repairs end up costing more than what the maintenance would have.
+
+---
+
 `,
     faqs: [
       {
@@ -15315,6 +15465,16 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **New Mercury quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+---
+
+## What we see at HBW
+
+The most common warranty mistake we see at our shop: the customer buys a Mercury at a non-authorized dealer, has it installed by a generic marine tech, then comes to us when something goes wrong. Mercury Canada will honor the limited warranty but only if the install paperwork, dealer authorization, and 20-hour service are on file. Often they aren't.
+
+We push customers toward Platinum dealer service because the install + first service get logged with Mercury Canada at the moment of completion. That paper trail is the difference between a 60-day warranty fight and a 1-day approval.
+
+---
+
 `,
     faqs: [
       {
@@ -16049,6 +16209,16 @@ The Ontario boating season is short. Repower booking timing matters:
 - **Fall (September-November)**: good, shop is active but not capacity-constrained. Motor ready for next spring.
 
 If you're considering a repower for spring 2026, **start the configurator now, book the install for January-March 2026.**
+
+---
+
+---
+
+## What we see at HBW
+
+GTA boaters drive past three or four Toronto-area Mercury dealers to reach us. The reason isn't always price (though we are competitive). It's the install package: Platinum dealer paperwork, proper rigging photos, and a labour rate that runs $40-60/hr below downtown Toronto marine shops.
+
+The drive is about an hour from Markham, 90 minutes from Mississauga. Most repower customers drop off Friday afternoon, pick up Tuesday or Wednesday of the following week. We do not offer pickup or delivery -- drop-off only.
 
 ---
 
@@ -19567,6 +19737,16 @@ Real installed cost on a 90 FourStroke on a fishing boat with existing controls 
 
 ---
 
+---
+
+## What we see at HBW
+
+The controls-and-rigging audit is the first thing we do on every repower quote. 6 out of 10 motors that look "fine to keep the existing controls" actually need new cables, new shift linkage, or a fresh harness. Skipping the audit and quoting "drop-in install" is how customers end up with surprise add-ons mid-job.
+
+The exception: identical replacement (e.g., 60 EFI for a 60 EFI). Carbon-copy swaps re-use existing rigging cleanly. Anything jumping HP class or family triggers the full audit.
+
+---
+
 ## FAQs
 
 **How much does Mercury rigging cost in Ontario?** 
@@ -20830,6 +21010,16 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Fuel tank | External 12L / 3.2 gal |
 | Full-throttle RPM range | 5,000, 6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
+
+---
+
+---
+
+## What we see at HBW
+
+The 9.9 EFI is the workhorse kicker in our service bay. We see them on every musky boat in the Kawarthas, every salmon rig on Lake Ontario, and as primary power on small tinnies for cottage runs. The EFI version is the upgrade everyone wants over the carbureted 9.9.
+
+The 5-amp alternator option is the one upgrade we always recommend -- charges the boat's house battery while trolling. The remote-control plumbing kit is the other. Mounted right, a 9.9 EFI lasts 15-20 years with basic maintenance.
 
 ---
 
