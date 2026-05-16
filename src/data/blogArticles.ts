@@ -9917,7 +9917,7 @@ We offer outdoor winter storage at HBW with shrinkwrap. We do not offer indoor h
 
 Outdoor storage with shrinkwrap is the practical answer for most Rice Lake and Kawartha boats: aluminum fishing boats, pontoons, runabouts. For high-end fibreglass cruisers with custom paint, indoor might be worth the premium at another shop. Choose based on your boat, not based on what makes the marina more money.
 
-Contact us for current per-foot rates. Note that Harris Boat Works is closed December 1 to April 1 with no service performed during winter months, so storage drop-off windows close in late fall and pickups resume in early April.
+Contact us for current per-foot rates. Note that Harris Boat Works is closed December 1 to April 1 with no service performed during winter months, so storage drop-off windows close in late fall and pickups resume in early April. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 ## Shrinkwrap: separate from winterization
 
@@ -14615,7 +14615,7 @@ If you're new to HBW, calling in late August / early September means you get int
 
 ## Book Winter Storage at HBW
 
-We've stored boats in Gores Landing for three generations. Mercury Marine Platinum dealer service on the engine, professional shrinkwrap on the hull, our property as the storage lot. Drop off in fall, ready to launch in spring.
+We've stored boats in Gores Landing for three generations. Mercury Marine Platinum dealer service on the engine, professional shrinkwrap on the hull, our property as the storage lot. Drop off in fall, ready to launch in spring. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 **Phone:** 905-342-2153
 **Online:** [harrisboatworks.ca/winter-storage](https://harrisboatworks.ca/winter-storage)
@@ -20353,7 +20353,7 @@ For current rates, contact us. Pricing depends on your specific boat, motor, and
 
 **December:** Too late. Schedule for next year.
 
-The customers who call in early November every year asking if we have space, we appreciate them, but it's a tight call. Plan ahead. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months; the marina reopens early April for spring commissioning.
+The customers who call in early November every year asking if we have space, we appreciate them, but it's a tight call. Plan ahead. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months; the marina reopens early April for spring commissioning. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 ---
 
@@ -24910,7 +24910,7 @@ A few things worth knowing if you're new to Rice Lake:
 
 ## Booking, contacting, getting started
 
-For service, storage, or a quote, the fastest path is [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number and what you need. For rentals, [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals). For everything else, including slip availability for next season, call 905-342-2153. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months; the season opens early April.
+For service, storage, or a quote, the fastest path is [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number and what you need. For rentals, [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals). For everything else, including slip availability for next season, call 905-342-2153. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months; the season opens early April. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -25028,7 +25028,7 @@ We bundle storage into straightforward tiers based on what your boat needs and h
 - Pre-launch safety check
 - Ready-to-launch handoff
 
-Most customers choose the middle or full package because it eliminates phone tag between fall and spring. You drop the boat off in October, pick it up in April, and it's ready to run. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months, so all storage drop-offs and pickups happen on either side of that window. For a detailed breakdown of what's included at each step, see our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
+Most customers choose the middle or full package because it eliminates phone tag between fall and spring. You drop the boat off in October, pick it up in April, and it's ready to run. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months, so all storage drop-offs and pickups happen on either side of that window. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service. For a detailed breakdown of what's included at each step, see our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
 
 ---
 
