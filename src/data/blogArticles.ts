@@ -3366,6 +3366,8 @@ The right Mercury for a bass boat depends on whether you're fishing competitivel
 
 ---
 
+::walkaround-lead-capture
+
 ## HP recommendations for bass boats
 
 **Recreational bass fishing (17–19 ft):** 150–175 HP FourStroke or Pro XS. Plenty of power for Ontario lakes without tournament-level cost.
@@ -3807,6 +3809,8 @@ Mercury's premium outboard. Quieter, smoother, and more refined than Pro XS at c
 For most Ontario fishing-focused center consoles, Verado is more motor than the job requires and adds significant cost. We recommend Verado for twin-engine setups where the ride quality and noise difference actually matters across multiple hours at cruise.
 
 **Best for:** Premium builds, twin-engine setups, buyers prioritizing ride quality and quiet operation.
+
+::walkaround-lead-capture
 
 ## Recommended motor by boat size
 
@@ -5611,6 +5615,8 @@ Upgrading your outboard? Your current motor has value. Here's how to get the bes
 - Mid-summer (everyone's boating)
 - Fall (season winding down)
 - When you need it done urgently
+
+::walkaround-lead-capture
 
 ### Trade-In vs Private Sale
 
@@ -12918,6 +12924,8 @@ You need a tape measure and five minutes:
 
 Between sizes? Round down, not up. A motor slightly longer than needed drags more than a motor slightly shorter, and slightly short usually means adjusting mounting height, which is easier than swapping a lower unit. Verify before committing.
 
+::walkaround-lead-capture
+
 ## Five things that change the answer
 
 1. **Hull design.** Deep-V hulls with steep transom angles sometimes need a 25-inch shaft even when the transom height measures 22 inches.
@@ -13130,6 +13138,8 @@ While the plugs are out, look at them:
 - **White or blistered**, running lean and hot; head gasket trouble
 
 While you're at it, smell the fuel in the line. Stale gas smells like varnish. Water in the filter looks like water in the filter.
+
+::walkaround-lead-capture
 
 ### The On-Water Test, Don't Skip This
 
@@ -14466,6 +14476,8 @@ The cowl says "115 FourStroke." The model number says exactly which 115 FourStro
 
 ---
 
+::walkaround-lead-capture
+
 ## Decoding the Year (When the Year Isn't Printed)
 
 Mercury doesn't always stamp the model year on the engine. Production years run mid-July to mid-July, not Jan-Dec, and Mercury thinks in **serial number ranges**, not calendar years.
@@ -15186,6 +15198,8 @@ In Ontario, you don't get to skip winter storage. The boat has to come out of th
 **The "what if I skip it" cost:** A cracked engine block from a missed winterization runs **$5,000-$10,000+**. Skipped winterization is the most expensive way to save $400.
 
 ---
+
+::walkaround-lead-capture
 
 ## 4. Fuel
 
@@ -20468,6 +20482,8 @@ It is always the first question, and it is the right one. A motor trade changes 
 
 This post is the answer we give over the phone, written down: what we look at, what helps and hurts value, the real ranges for 2026, and how to get a preliminary number before you drive anywhere.
 
+::walkaround-lead-capture
+
 ## The five things we look at
 
 There is no magic database for outboard residuals. What we do, and what any honest dealer does, is evaluate five factors.
@@ -22015,6 +22031,8 @@ You've owned it 3+ years. You know how it handles, where the wires are, what qui
 Hard starting. Dropping cylinders. No parts available. Getting more expensive every season. If the motor is the problem and the rest of the boat is fine, replace the motor.
 
 ---
+
+::walkaround-lead-capture
 
 ## When Buying New (or Used) Actually Makes Sense
 
