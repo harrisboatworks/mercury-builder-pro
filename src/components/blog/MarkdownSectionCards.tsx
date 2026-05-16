@@ -280,7 +280,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -293,7 +293,7 @@ interface RenderChunk {
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
