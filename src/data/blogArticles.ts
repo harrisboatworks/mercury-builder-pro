@@ -25426,13 +25426,13 @@ By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice 
   {
     slug: "best-marina-rice-lake-ontario",
     title: "Rice Lake's Full-Service Marina Since 1947",
-    seoTitle: "Rice Lake Full-Service Marina Since 1947 | Harris Boat Works",
+    seoTitle: "Rice Lake's Full-Service Marina Since 1947 | Harris Boat Works",
     description: "Rice Lake's full-service marina since 1947: Mercury Platinum dealer, 65 slips, launch ramp, rentals, service, storage. 35 min from the GTA.",
     image: "/lovable-uploads/hero-best-marina-rice-lake-ontario.jpg",
     author: "Harris Boat Works",
-    datePublished: "2026-05-15",
-    dateModified: "2026-05-15",
-    publishDate: "2026-05-15",
+    datePublished: "2026-05-16",
+    dateModified: "2026-05-16",
+    publishDate: "2026-05-16",
     category: "Rice Lake & Local",
     readTime: "10 min read",
     keywords: ["best marina rice lake ontario", "rice lake marina", "harris boat works", "gores landing marina", "mercury dealer rice lake", "rice lake boat slips", "rice lake boat launch", "rice lake winter storage"],
@@ -25444,7 +25444,7 @@ By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice 
       { question: "How far is Harris Boat Works from Toronto and the GTA?", answer: "About 90 minutes from downtown Toronto on a normal Saturday. Highway 401 east to Exit 461 (Port Hope), then north on Highway 28 / County Road 18 for roughly 15 minutes to Gores Landing. From Markham or Pickering you're closer to 75 minutes. From Mississauga add 20-30 minutes depending on the 401. We're the closest full-service Mercury marina east of the GTA. Customers regularly drive out for service appointments and storage drop-offs and are home the same afternoon." },
       { question: "Do you offer pontoon rentals on Rice Lake?", answer: "Yes. We rent pontoons and aluminum fishing boats out of our Gores Landing dock through the spring, summer, and early fall season. Pontoons are the popular choice for families and groups; fishing boats are sized for two to three anglers chasing walleye, bass, or muskie. Rentals include the boat, motor, fuel for the day, life jackets, and a quick orientation if you're new to the lake. Booking and current rates are at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)." },
       { question: "Do you store boats over winter on Rice Lake?", answer: "Yes, outdoor storage with shrinkwrap on our property in Gores Landing. We typically bundle winterization, storage, and spring commissioning so the boat goes away in October properly winterized and comes back in April ready to launch. We don't run indoor heated storage; for cabin cruisers or high-end performance boats that need indoor, we'll point you to other shops without making a thing of it. Full breakdown of what's included is in our [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)." },
-      { question: "What other marinas are on Rice Lake?", answer: "Several other marinas and resort operations run on Rice Lake, including a south-shore resort marina, a couple of Bewdley-area marinas, and additional resort-based operations, along with smaller cottage-area docks and ramps. Each has its own focus, some are resort-first with marina amenities attached, some are slip-and-fuel, some are seasonal cottage operations. Harris Boat Works is the full-service marina end of the spectrum: sales, service, parts, rentals, and storage under one roof." },
+      { question: "What's included in HBW's full-service package?", answer: "One property, one phone number, every service a Mercury-powered boat needs across a full Ontario season. Launch ramp, 65 seasonal slips, fuel dock, Mercury sales as a Platinum dealer, in-house warranty and diagnostic service on Mercury and Mercruiser, pontoon and fishing boat rentals, outdoor winter storage with shrinkwrap, winterization, spring commissioning, and a parts counter stocked to Platinum-tier requirements. The point of full-service is that nothing gets handed off to a third shop. You drop the boat once and pick it up ready to run. Bookings and service requests at [hbw.wiki/service](https://hbw.wiki/service)." },
       { question: "Can I bring my boat from outside the Kawarthas for service?", answer: "Yes, and a lot of customers do. We service Mercury and Mercruiser boats brought in from across the GTA, Northumberland, Peterborough, and the broader Kawarthas. Drop-off is straightforward: book a service slot, trailer the boat to Gores Landing, leave it with us. For larger jobs (repowers, full diagnostic work, winter storage bundles) we plan the timeline so you only need to drive out once or twice. Submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number." },
     ],
     content: `![Harris Boat Works full-service marina wheel - 8 services from a Mercury Platinum dealer on Rice Lake](/lovable-uploads/hbw-full-service-marina-wheel.png)
@@ -25459,13 +25459,13 @@ Harris Boat Works is the oldest marina on Rice Lake, established 1947 in Gores L
 
 "Best" is a soft word. On a working lake like Rice, it has to mean something specific or it doesn't mean anything at all. Here's the honest list of what matters when you're picking a home base:
 
-- **Launch access** — public ramp or marina ramp, parking, and a dock to tie off while you sort out the trailer.
-- **Slips and dockage** — seasonal slip availability, electrical, water, and how protected the basin is when the wind comes up out of the west.
-- **Fuel** — on-water gas dock, not a 20-minute trailer to the nearest station.
-- **Mercury service and parts** — for most Rice Lake boats, the motor is a Mercury. Having an authorized shop on the lake matters when something is wrong in July.
-- **Storage** — somewhere to put the boat from October to April that isn't your driveway.
-- **Rentals** — for guests, family who don't own boats, or trying a pontoon before you buy one.
-- **People who know the lake** — where the rocks are off Black Island, when the walleye move in spring, which ramps get shallow in August.
+- **Launch access**: public ramp or marina ramp, parking, and a dock to tie off while you sort out the trailer.
+- **Slips and dockage**: seasonal slip availability, electrical, water, and how protected the basin is when the wind comes up out of the west.
+- **Fuel**: on-water gas dock, not a 20-minute trailer to the nearest station.
+- **Mercury service and parts**: for most Rice Lake boats, the motor is a Mercury. Having an authorized shop on the lake matters when something is wrong in July.
+- **Storage**: somewhere to put the boat from October to April that isn't your driveway.
+- **Rentals**: for guests, family who don't own boats, or trying a pontoon before you buy one.
+- **People who know the lake**: where the rocks are off Black Island, when the walleye move in spring, which ramps get shallow in August.
 
 A marina that does most of these well is a full-service marina. A marina that does one or two and outsources the rest is a slip operator or a resort with a dock. Both have a place. They're not the same thing.
 
@@ -25503,18 +25503,19 @@ It also matters because Rice Lake has its own conditions. Shallow in spots, weed
 
 ---
 
-## Rice Lake marinas compared by what they offer
+## What full-service Mercury support looks like on Rice Lake
 
-This table only includes what each marina advertises on their own website. No commentary on quality, just service coverage.
+Mercury Marine Platinum status is the top tier of Mercury's dealer program. It is measured every year and it is not handed out for showing up. Here is what it actually looks like operationally at Harris Boat Works:
 
-| Marina | Slips | Launch ramp | Mercury authorized service | Winter storage | Boat rentals | Years on the lake |
-|---|---|---|---|---|---|---|
-| Harris Boat Works (Gores Landing) | 65 | Yes | Yes (Mercury Platinum) | Yes (outdoor + shrinkwrap) | Yes (pontoon + fishing) | Since 1947 |
-| South-shore resort marina | Limited slips | Yes | Not advertised | Seasonal | Yes | Long-running |
-| Bewdley-area marina A | Limited slips | Yes | Not advertised | Seasonal | Limited | Long-running |
-| Bewdley-area marina B | Limited slips | Yes | Not advertised | Seasonal | Yes | Long-running resort |
+- **Factory-trained technicians.** Our service techs hold current Mercury certifications across the FourStroke, Pro XS, Verado, and Mercruiser families. Training is renewed annually as Mercury updates platforms and diagnostic procedures.
+- **Parts on hand, not on order.** Platinum dealers carry a deeper parts inventory than standard tiers. Common service items (impellers, anodes, water pump kits, plugs, filters, common gaskets) sit on the shelf. Less common parts ship in one to two business days through the Mercury parts network.
+- **Warranty work in-house.** If your Mercury is under factory warranty or covered by Mercury Product Protection, we open and close the claim ourselves. Nothing gets trucked to a third shop. Same for recall work.
+- **Repower capacity.** New motor, rigging, controls, gauges, and propeller all happen in one bay with one work order. The motor and the rigging kit come from the same parts counter.
+- **Year-round service availability.** April through November is in-season service. December through March is the winter service window for repowers, rebuilds, and major projects so the boat is ready when the lake opens.
 
-A marina should make boating easier. If it creates more phone calls than lake time, something has gone sideways. Pick the one whose service coverage actually matches what you'll need across a full season, not just July.
+A marina should make boating easier. If it creates more phone calls than lake time, something has gone sideways. The full-service Mercury model on Rice Lake exists so a Friday-afternoon problem does not eat a long weekend, and so the same shop that sold you the motor is still the shop fixing it in year seven.
+
+Service intake and current scheduling are at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
