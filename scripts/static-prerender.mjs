@@ -368,6 +368,7 @@ function loadAllBlogArticlesForSitemap() {
     const items = getSitemapEligibleArticles().map(a => ({
       slug: a.slug,
       title: a.title,
+      seoTitle: a.seoTitle,
       image: a.image,
       publishDate: a.publishDate || null,
       datePublished: a.datePublished || null,
