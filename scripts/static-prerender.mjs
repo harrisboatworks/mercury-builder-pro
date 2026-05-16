@@ -402,6 +402,7 @@ function loadBlogArticles() {
     const items = getSitemapEligibleArticles().map(a => ({
       slug: a.slug,
       title: a.title,
+      seoTitle: a.seoTitle,
       description: getCleanDescription(a),
       image: a.image,
       datePublished: a.datePublished,
