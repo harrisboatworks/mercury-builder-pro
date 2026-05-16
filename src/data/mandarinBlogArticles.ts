@@ -1590,164 +1590,119 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
     category: '钓鱼指南',
     readTime: '7 分钟',
     keywords: ['Rice Lake 华人钓鱼船外机', 'Kawarthas 钓鱼船', 'Toronto Chinese anglers', 'Mercury fishing outboard 中文'],
-    content: `## 简短答案
+    content: `> **简短答案：** 莱斯湖 + Kawartha Lakes 钓鱼最佳 Mercury 引擎选择：tinnies 14-17 英尺用 25-60 HP FourStroke，铝制钓鱼船 17-19 英尺用 75-115 HP FourStroke 或 Pro XS，bass boat 18-21 英尺用 150-200 Pro XS。HBW Mercury 白金级认证为 GTA 华人 angler 提供从入门到 tournament 级别的完整 Mercury 配置。
 
-Rice Lake和Kawarthas钓鱼船选马力，不能只看最高速度。对钓友来说，**低速操控、起步能力、载重、稳定性、Trolling配置和保养便利性**，比多跑几公里时速更重要。14至16英尺铝船常见的研究区间是20至60马力；更大的铝船或多用途钓鱼船可能会看75至115马力。最终仍以船体Capacity Plate为准。
+## 莱斯湖钓鱼概况
 
-::bilingual-trust
-heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
-eyebrow: HBW Trust Points / HBW 信任要点
-item1En: Mercury Marine Platinum certified dealer
-item1Zh: [Mercury Marine](https://www.mercurymarine.com/canada/en/) 白金级认证经销商
-item2En: Family marina since 1947
-item2Zh: 自1947年家族经营的码头
-item3En: Transparent CAD pricing, no haggling
-item3Zh: 透明加元价格，无需讨价还价
-item4En: Bilingual quote support available
-item4Zh: 提供双语报价支持
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
-item6En: Mercury dealer since 1965
-item6Zh: 自1965年起的 Mercury 经销商
-ctaEn: Build your quote
-ctaZh: 在线获取报价
-ctaHref: /quote
-::
+莱斯湖 (Rice Lake) 在安大略 Fishing Management Zone 17 (FMZ 17) 内。主要鱼种：
 
----
+- **Walleye (黄鲈)** — 春秋两季主力，30-46 cm 不能保留，每天 4 条限额
+- **Largemouth bass (大口黑鲈)** — 整夏季可钓，4 条限额，季节性限制
+- **Smallmouth bass (小口黑鲈)** — 同上
+- **Northern pike (北方狗鱼)** — 4 条限额
+- **Musky (真鲈)** — 1 条限额，必须 91 cm 以上才能保留
 
-## 你的真实使用情境是什么
+完整法规请查 [Ontario fishing regulations](https://www.ontario.ca/page/fishing-regulations)。
 
-很多GTA华人钓友不是住在湖边, 你是从Toronto、Markham、Richmond Hill、Scarborough或North York周末开车出发的。这代表每次出湖的时间都很宝贵：到了湖边，你不想花半天处理启动问题、马力不足、螺旋桨不合或操控不顺的状况。
+## Kawartha Lakes 概况
 
-你想要的是：上船，启动，走。
+Kawartha Lakes 是莱斯湖东北的湖群 (Pigeon Lake、Chemong Lake、Stoney Lake 等)。主要差异：
 
-这就是为什么「看起来够用」和「真的够用」之间的差距，对周末钓友特别重要。
+- 莱斯湖更浅 (平均 3-4 米)，水草多
+- Kawartha 湖群更深 (5-15 米)，岩底多
+- Kawartha 更适合 musky 和 lake trout
+- 莱斯湖更适合 walleye 和 bass
 
----
+## 钓鱼船 + Mercury 引擎配置
 
-## 常见使用情境与马力参考
+### 14-17 英尺 Tinny (铝制小船)
 
-| 船型 / 用途 | 常见Mercury研究区间 | 适合情境 |
-|-------------|---------------------|----------|
-| 小型铝船、近岸钓鱼 | 9.9, 20HP | 轻载、短距离、简单维护 |
-| 14, 16英尺铝船 | 25, 60HP | Rice Lake / Kawarthas常见钓鱼使用 |
-| 16, 18英尺铝船、多用途 | 60, 115HP | 更好的载重与起步能力 |
-| Bass Boat / 竞技风格 | Pro XS系列 | 重视Hole Shot、加速与操控 |
-| Trolling / 辅助机 | 9.9 ProKicker或小马力 | 长时间低速控制 |
+- **典型用途：** 1-2 人 weekend angler，主要莱斯湖
+- **推荐引擎：** Mercury 25-60 HP FourStroke
+- **特点：** 轻 (容易拖船和入水)、省油、价格低
+- **HBW 销售：** Legend Splash 系列或 Legend Xterminator 17
 
-*以上为参考区间，最终须以船体Capacity Plate上标示的最大马力为准。*
+### 17-19 英尺铝制钓鱼船
 
----
+- **典型用途：** 2-4 人 serious angler，莱斯湖 + Kawartha
+- **推荐引擎：** Mercury 75-115 HP FourStroke (家庭) 或 Pro XS (速度)
+- **特点：** 平衡，最常见的 GTA 华人 angler 选择
+- **HBW 销售：** Legend Pulse 18-19 或 Legend Splash 18
 
-## 两个人测试结果不代表三个人实际使用
+### 18-21 英尺 Bass Boat / Multi-species
 
-HBW技师经常提醒：「钓鱼船最怕『看起来够用，实际上不够用』。」
+- **典型用途：** Tournament-level 钓鱼，速度要求高
+- **推荐引擎：** Mercury 150-200 HP Pro XS
+- **特点：** 起步快、最高速度高、专为钓鱼优化
+- **HBW 销售：** Legend Pulse 21 + Pro XS package
 
-两个人、半箱油、没有风、平静水面的结果，不能代表三个钓友、满载装备、逆风回航的真实状况。
+### 18-22 英尺 Pontoon (家庭 + 偶尔钓鱼)
 
-**选马力时，请用你最重的使用情境来想，不是最轻的。**
+- **典型用途：** 6-8 人家庭游 + 偶尔钓鱼
+- **推荐引擎：** Mercury 90-150 HP FourStroke
+- **特点：** 稳定，钓鱼版本有 livewell 和 rod holders
+- **HBW 销售：** Legend Splash 22 fishing edition
 
----
+## 我们在 HBW 看到的实地见证
 
-## Rice Lake使用情境
+每年 4 月 launch 季节 + 5 月 walleye 开钓季节，我们看到 GTA 华人 angler 的最常见配置：
 
-Rice Lake夏天周末热闹，你会遇到：其他船的波浪、变化的风向、浅水区和水草带、码头进出的空间限制。在这些情况下，「低速控制」和「可靠启动」的重要性不亚于最高速度。
+**第一选择 (60% 的客户)：** 17-19 英尺铝制 fishing boat + Mercury 90-115 FourStroke。理由：投资合理、家庭可用、莱斯湖 + Kawartha 都能跑。
 
-Rice Lake不是需要你追求最高马力的地方，但要避免明显动力不足（Underpower）。铝船或Pontoon在满载后，低马力会让船难以有效进入滑行状态，油耗也不一定比高马力省。
+**第二选择 (25% 的客户)：** Pontoon + 钓鱼版本 (Legend Splash 22 fishing 或类似)。理由：家人陪同时间多，钓鱼是周末"附加"，pontoon 主要功能是聚会。
 
-Rice Lake属于**FMZ 17**（渔业管理区17）。钓鱼前请查当年度安大略省官方钓鱼规则，以FMZ 17的最新规定为准。不要依赖社群群组截图或旧文章作为规则判断依据。
+**第三选择 (15% 的客户)：** Bass boat + Pro XS。理由：tournament-level 或对钓鱼速度有高要求。
 
----
+## 莱斯湖的特殊性
 
-## Kawarthas使用情境
+每年 7 月下旬到 8 月，莱斯湖的中央 basin 长满水草 (milfoil)。这时候大部分 angler 转移到湖东头 (东边 Hastings) 或湖西头 (Bewdley)。
 
-Kawarthas的湖区和Trent-Severn水道让你不只待在一个地方钓鱼, 你可能会跑一段水路、过水闸（Lock）、停靠不同的码头，也可能从钓鱼模式转成家庭巡航模式。这时候发动机的稳定性、低速操控和中段加速都很重要。
+**给 GTA 华人 angler 的实地建议：**
 
-如果你计划同一个行程从Rice Lake延伸到Trent-Severn水道，确认你的发动机型号可以在水闸限速内顺畅低速运行。
+- 5-6 月：walleye 早晨 + 傍晚最佳
+- 7-8 月：bass 最佳，但避开中央 basin 水草
+- 9 月：fall walleye 大暴发，最佳月份
+- 10 月：bass + pike 接力，仍有不错收获
 
----
+## Pre-purchase 考虑
 
-## FourStroke还是Pro XS？
+如果您正在考虑买 fishing boat：
 
-| 如果你重视 | 优先看 |
-|------------|--------|
-| 安静、省油、日常可靠 | Mercury FourStroke |
-| 起步、加速、钓鱼性能反应 | Mercury Pro XS |
-| 重载、Pontoon或需要更大推力 | Command Thrust配置 |
-| 高级操控、静音、大船体验 | Verado |
+1. **检查 capacity plate** — 厂家规定的最大马力 (max HP)。引擎超过 capacity 法律上不允许
+2. **测量 transom 高度** — 决定 shaft length。15 英寸短 shaft 给 14-17 英尺船，20 英寸长 shaft 给 17-22 英尺
+3. **看 hull 完整性** — 焊缝、ribs、bottom 是否变形
+4. **试启动引擎** — 至少 cold start 一次。Mercury 引擎 cold start 后应该 5-10 秒就能 idle 稳定
+5. **检查 PCL 牌照** — 二手船买家必须重新申请新牌照
 
-对大多数GTA周末钓友来说，Mercury FourStroke是最自然的起点。Pro XS适合真的重视起步反应和钓鱼性能的人, 不是因为它「比较好」，而是因为它为不同的使用优先顺序设计。
+详见我们的 [二手船购买 30 分钟检查清单](/blog/used-boat-walkaround-inspection-ontario)。
 
----
+## 常见问题
 
-## 钓友最容易忽略的三件事
+**Q：莱斯湖最适合的引擎大小是多少？** 17-19 英尺铝制钓鱼船 + Mercury 90-115 HP FourStroke 是甜蜜点。家庭 + 钓鱼都够用。
 
-**1. 螺旋桨比你想像的更重要**
-同一台发动机，螺旋桨不同，起步和最高速度都会不同。买新发动机时，请让HBW技师根据你的船型和使用方式确认螺旋桨选择，而不是只用附件桨。
+**Q：Pro XS 200 比 FourStroke 200 真有意义吗？** 看用途。tournament-level angler 想要 hole shot 和最高速度选 Pro XS。家庭 + 偶尔钓鱼选 FourStroke 更安静省油。
 
-**2. 轴长不能靠猜**
-Shaft Length（轴长）错误会影响性能、操控和安全。需要测量你的Transom高度后确认。
+**Q：能 trade-in 旧 Mercury 引擎到 HBW 吗？** 能。HBW 有 trade-in 服务。Mercury 引擎在 trade-in 时通常给 20-40% 的新引擎价格。
 
-**3. 旧的操控配件不一定适合新发动机**
-控制线、仪表、油路、电路都需要确认相容性。完整的Repower不只是换发动机本体，而是确认整个系统正确运作。
+**Q：Kawartha Lakes 钓 musky 需要什么样的船？** 最少 18 英尺 + 90 HP 引擎。musky 钓需要长时间 trolling + 突然 fight，船的稳定性 + 引擎可靠性都关键。
 
----
+## 联系我们
 
-## 如何开始你的研究
+- 电话：(905) 342-2153
+- 邮件：info@harrisboatworks.ca
+- 网站：[harrisboatworks.ca](https://www.harrisboatworks.ca)
 
-1. 确认你的船长、Capacity Plate最大马力限制、常载人数、主要钓法（岸钓、Trolling、Bass钓）
-2. 记下你常去的湖区（Rice Lake、Kawarthas特定水道）
-3. 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看不同马力区间的当前加币报价
-4. 联络HBW确认配置是否适合你的船体和使用情境
-
----
-
+[Mercury 白金级经销商](https://www.mercurymarine.com/canada/en/) · 莱斯湖 Gores Landing · 自 1947 年
 
 ---
 
 ## 相关阅读
 
-本主题完整指南：**[GTA 华人 Rice Lake 一日游完整行程规划：从多伦多出发到玩一天](/blog/zh/gta-chinese-rice-lake-day-trip-plan)**
+本主题完整指南：**[GTA → 莱斯湖 一日游地图](/blog/zh/gta-chinese-rice-lake-day-trip-plan)**
 
-同系列的另外两篇：
-- [6-8 人租船指南：pontoon 还是钓鱼船更适合？](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
-- [为什么 GTA 华人船主愿意到 Rice Lake 找 Harris Boat Works](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
-
----
-
-## 常见问题
-
-**Q：我的14英尺铝船，两个人钓鱼，40马力够吗？**
-A：取决于船体Capacity Plate标示。如果最大马力允许且你通常只带基本装备，40马力对14英尺铝船通常够用。但如果你常带第三个人或大量装备，60马力的余裕更有价值。请在mercuryrepower.ca看报价后联络HBW确认。
-
-**Q：Kawarthas有水闸限速，对发动机选择有影响吗？**
-A：有间接影响。水闸速限要求低速运行，选择低速操控良好的发动机配置（例如适当的螺旋桨）很重要。过水闸时通常不需要大马力，但需要稳定的低速操控。
-
-**Q：Rice Lake FMZ 17的规则在哪里查？**
-A：安大略省政府每年发布钓鱼规则摘要（[Ontario fishing regulations](https://www.ontario.ca/page/fishing-regulations) Summary），包含FMZ 17详细规定。可在ontario.ca搜寻当年版本，也有繁体中文摘要版本可供参考。
-
-**Q：我的旧发动机是二冲程，换成Mercury FourStroke值得吗？**
-A：现代Mercury FourStroke相比二冲程省油约30%至40%，且排放更环保、运转更安静。对周末钓友来说，油耗和噪音都是长期使用体验。如果旧机已到寿命末期，换FourStroke通常是很值得的升级。至mercuryrepower.ca建立报价后，让HBW评估你的具体情况。
-
----
-
-## 内部连结
-
-- [Mercury 9.9至20HP：钓鱼小船、Kicker、Tiller中文指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)
-- [40至60马力Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
-- [Rice Lake钓什么鱼？鱼种与季节中文完整指南](/blog/zh/rice-lake-fish-species-seasons-zh)
-
----
-
-## 行动呼吁（CTA）
-
-**想知道你的钓鱼船适合40、60还是90马力？**
-先到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认配置是否适合你的船。
-
-Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位于Rice Lake南岸Gores Landing。
----`,
+同系列：
+- [Mercury 引擎家族对比 (中文版)](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+- [Pontoon 还是钓鱼船：6-8 人船型选择](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)`,
     faqs: [
       { question: 'Rice Lake 钓鱼船需要很大马力吗？', answer: '不一定。很多钓鱼船重点不是最大马力，而是合适马力、正确 prop、稳定启动和低速控制。' },
       { question: '华人钓友常买 kicker 吗？', answer: '如果常 trolling、想要辅助动力或长时间低速控制，小马力 kicker 很有意义。' },
