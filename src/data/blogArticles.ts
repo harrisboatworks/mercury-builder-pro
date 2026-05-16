@@ -2556,7 +2556,7 @@ Two related guides in the same cluster:
     slug: 'mercury-75-vs-90-vs-115-comparison',
     title: 'Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)',
     description: 'For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives...',
-    image: '/lovable-uploads/Comparing_Motor_Families.png',
+    image: '/lovable-uploads/mercury-75-90-115-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-26',
     dateModified: '2026-05-04',
