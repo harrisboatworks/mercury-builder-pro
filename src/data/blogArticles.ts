@@ -25459,13 +25459,13 @@ Harris Boat Works is the oldest marina on Rice Lake, established 1947 in Gores L
 
 "Best" is a soft word. On a working lake like Rice, it has to mean something specific or it doesn't mean anything at all. Here's the honest list of what matters when you're picking a home base:
 
-- **Launch access** — public ramp or marina ramp, parking, and a dock to tie off while you sort out the trailer.
-- **Slips and dockage** — seasonal slip availability, electrical, water, and how protected the basin is when the wind comes up out of the west.
-- **Fuel** — on-water gas dock, not a 20-minute trailer to the nearest station.
-- **Mercury service and parts** — for most Rice Lake boats, the motor is a Mercury. Having an authorized shop on the lake matters when something is wrong in July.
-- **Storage** — somewhere to put the boat from October to April that isn't your driveway.
-- **Rentals** — for guests, family who don't own boats, or trying a pontoon before you buy one.
-- **People who know the lake** — where the rocks are off Black Island, when the walleye move in spring, which ramps get shallow in August.
+- **Launch access**: public ramp or marina ramp, parking, and a dock to tie off while you sort out the trailer.
+- **Slips and dockage**: seasonal slip availability, electrical, water, and how protected the basin is when the wind comes up out of the west.
+- **Fuel**: on-water gas dock, not a 20-minute trailer to the nearest station.
+- **Mercury service and parts**: for most Rice Lake boats, the motor is a Mercury. Having an authorized shop on the lake matters when something is wrong in July.
+- **Storage**: somewhere to put the boat from October to April that isn't your driveway.
+- **Rentals**: for guests, family who don't own boats, or trying a pontoon before you buy one.
+- **People who know the lake**: where the rocks are off Black Island, when the walleye move in spring, which ramps get shallow in August.
 
 A marina that does most of these well is a full-service marina. A marina that does one or two and outsources the rest is a slip operator or a resort with a dock. Both have a place. They're not the same thing.
 
