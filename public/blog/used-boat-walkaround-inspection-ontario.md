@@ -29,9 +29,7 @@ content_type: blog_article
 
 ## Article
 
-:::walkaround-lead
-
-:::
+::walkaround-lead-capture
 
 # The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
 
@@ -222,9 +220,7 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 
 ## Get the printable guide
 
-:::walkaround-lead
-
-:::
+::walkaround-lead-capture
 
 ## FAQs
 
