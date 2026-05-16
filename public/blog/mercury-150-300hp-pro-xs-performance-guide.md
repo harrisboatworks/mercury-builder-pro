@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -40,6 +40,8 @@ The first thing to clear up: the current Mercury 150 Pro XS is an inline-4, not 
 Harris Boat Works is a family-owned marina on Rice Lake, established in 1947, and a Mercury Marine Platinum Dealer. We sell and rig these motors, so this guide is built around the real customer question: which one makes sense for your boat, your water, and your budget?
 
 The current Pro XS lineup in this range spans three architectures: 150 HP inline-4, 175-250 HP V6, and 300 HP V8.
+
+![Mercury Pro XS architecture chart comparing 150 inline-4, 175-250 V6, and 300 V8 outboards](/lovable-uploads/mercury-pro-xs-150-300-architecture-chart.png)
 
 ## The Quick Comparison Table
 

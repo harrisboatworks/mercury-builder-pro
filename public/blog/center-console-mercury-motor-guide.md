@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false

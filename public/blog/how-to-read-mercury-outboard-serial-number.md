@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -42,6 +42,8 @@ Your Mercury's serial number is the only piece of information on the motor that 
 This is how to find it, what it tells you, and what we can look up for you with it.
 
 ---
+
+![How to decode a Mercury outboard serial number (HBW diagram)](/lovable-uploads/diagram-mercury-serial-number-decoder.png)
 
 ## The Golden Rule
 

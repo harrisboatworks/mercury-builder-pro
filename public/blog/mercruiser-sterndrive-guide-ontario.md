@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -64,6 +64,8 @@ Each has trade-offs. Sterndrives give you a full-width swim platform, lower nois
 If you don't know which drive you have, the data plate on the upper drive housing has the model. Take a photo and bring it in, we can also pull it from your boat's serial.
 
 ---
+
+![Mercruiser sterndrive failure-points diagram showing bellows, water intrusion, manifolds, risers, winterization, and drive service](/lovable-uploads/mercruiser-sterndrive-ontario-failure-points.png)
 
 ## What Actually Kills Mercruiser Boats
 

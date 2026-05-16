@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -28,6 +28,8 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario
 
 ## Article
+
+![Harris Boat Works full-service marina wheel - 8 services from a Mercury Platinum dealer on Rice Lake](/lovable-uploads/hbw-full-service-marina-wheel.png)
 
 ## Quick answer
 
@@ -90,9 +92,9 @@ This table only includes what each marina advertises on their own website. No co
 | Marina | Slips | Launch ramp | Mercury authorized service | Winter storage | Boat rentals | Years on the lake |
 |---|---|---|---|---|---|---|
 | Harris Boat Works (Gores Landing) | 65 | Yes | Yes (Mercury Platinum) | Yes (outdoor + shrinkwrap) | Yes (pontoon + fishing) | Since 1947 |
-| Lang's Resort (south shore) | Yes | Yes | Not advertised | Seasonal | Yes | Long-running resort |
-| Plank Road Marina (Bewdley) | Yes | Yes | Not advertised | Seasonal | Limited | Long-running |
-| Muskie Bay Resort (Bewdley area) | Yes | Yes | Not advertised | Seasonal | Yes | Long-running resort |
+| South-shore resort marina | Limited slips | Yes | Not advertised | Seasonal | Yes | Long-running |
+| Bewdley-area marina A | Limited slips | Yes | Not advertised | Seasonal | Limited | Long-running |
+| Bewdley-area marina B | Limited slips | Yes | Not advertised | Seasonal | Yes | Long-running resort |
 
 A marina should make boating easier. If it creates more phone calls than lake time, something has gone sideways. Pick the one whose service coverage actually matches what you'll need across a full season, not just July.
 
@@ -104,7 +106,7 @@ A marina should make boating easier. If it creates more phone calls than lake ti
 eyebrow: Rice Lake marina decision
 heading: Which marina fits how you actually use the boat?
 subhead: Two honest paths. Pick the one that matches your situation.
-left-label: If you need Mercury service, repower, or year-round support
+left-label: If you need Mercury service, repower, or seasonal support
 left-criteria:
 - Mercury or Mercruiser motor (new or older)
 - Want service, parts, and storage in one place
@@ -154,7 +156,7 @@ A few things worth knowing if you're new to Rice Lake:
 
 ## Booking, contacting, getting started
 
-For service, storage, or a quote, the fastest path is [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number and what you need. For rentals, [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals). For everything else, including slip availability for next season, call 905-342-2153.
+For service, storage, or a quote, the fastest path is [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number and what you need. For rentals, [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals). For everything else, including slip availability for next season, call 905-342-2153. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months; the season opens early April. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -190,7 +192,7 @@ Yes, outdoor storage with shrinkwrap on our property in Gores Landing. We typica
 
 ### What other marinas are on Rice Lake?
 
-Lang's Resort (south shore), Plank Road Marina (Bewdley), Muskie Bay Resort (north shore near Bewdley), and Elmhirst's Resort (south shore) all operate on Rice Lake in some form, along with several smaller cottage-area docks and ramps. Each has its own focus, some are resort-first with marina amenities attached, some are slip-and-fuel, some are seasonal cottage operations. Harris Boat Works is the full-service marina end of the spectrum: sales, service, parts, rentals, and storage under one roof.
+Several other marinas and resort operations run on Rice Lake, including a south-shore resort marina, a couple of Bewdley-area marinas, and additional resort-based operations, along with smaller cottage-area docks and ramps. Each has its own focus, some are resort-first with marina amenities attached, some are slip-and-fuel, some are seasonal cottage operations. Harris Boat Works is the full-service marina end of the spectrum: sales, service, parts, rentals, and storage under one roof.
 
 ### Can I bring my boat from outside the Kawarthas for service?
 

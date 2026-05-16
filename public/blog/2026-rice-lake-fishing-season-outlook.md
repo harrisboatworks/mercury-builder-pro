@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -159,6 +159,8 @@ Children under 18 may fish under certain conditions without a licence. Confirm c
 - Transport Canada, Pleasure Craft Licence (5-year validity, 10 hp threshold). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
 
 *Last reviewed: 2026-05-11.*
+
+If you're new to Rice Lake or comparing services, see our [full-service marina overview](/blog/best-marina-rice-lake-ontario) for slips, launch, storage, and service in one place.
 
 ## FAQs
 

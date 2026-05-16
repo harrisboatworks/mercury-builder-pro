@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -157,6 +157,8 @@ Live Mercury pricing for any motor configuration, main, kicker, or both, is at *
 If you want to talk through the setup before you configure, call **905-342-2153**. We fish this lake. We rig boats for it. We'll give you the honest answer.
 
 Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | [harrisboatworks.ca](https://www.harrisboatworks.ca)
+
+Tournament-minded anglers should also see our [Pro XS repower guide for Rice Lake and Kawartha anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers) for the performance side of the conversation.
 
 ## FAQs
 

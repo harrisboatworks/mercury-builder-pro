@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -33,6 +33,8 @@ content_type: blog_article
 
 ---
 
+![Mercury overheating troubleshooting flowchart (HBW diagram)](/lovable-uploads/diagram-overheating-troubleshooting.png)
+
 ## Quick Answer
 
 A Mercury that overheats at idle but runs fine at speed is a classic symptom of a worn water pump impeller. The impeller can generate enough vacuum at high RPM to move cooling water adequately, but loses suction at low RPM. It needs replacement, and the longer you wait, the more likely you are to turn a routine impeller job into a powerhead job. Other causes: blocked cooling intake, thermostat issue, or a sensor fault. Check the tell-tale first.
@@ -40,6 +42,8 @@ A Mercury that overheats at idle but runs fine at speed is a classic symptom of 
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
+
+![Mercury outboard overheating decision tree showing telltale stream, intake blockage, alarm severity, and when to shut down](/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree.png)
 
 ## Mercury Outboard Overheating at Idle: What's Actually Causing It (Ontario)
 

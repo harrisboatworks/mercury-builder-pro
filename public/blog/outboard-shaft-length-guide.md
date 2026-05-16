@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -67,6 +67,8 @@ Get the measurement right before you order. It takes five minutes.
 ### Ultra long shaft, 30 inch (Code: XXL or U)
 - Best for: Sailboat auxiliaries and deep-transom commercial applications
 - Less common in Ontario freshwater. Special order on most models.
+
+![Outboard shaft length diagram showing how to measure transom height and match short, long, and extra-long shaft motors](/lovable-uploads/outboard-shaft-length-transom-measurement-diagram.png)
 
 ## How to measure your transom height
 
