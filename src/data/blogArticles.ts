@@ -8915,6 +8915,16 @@ Most of the boats we see can be repowered for a fraction of what a comparable ne
 
 ---
 
+## What we see at HBW
+
+Most repower quotes that come through our shop fall into one of three buckets. The biggest is the 25-year-old aluminum Lund or Princecraft with a tired 60 to 90 HP. Owner wants a quote on a new 60 to 90 FourStroke, drops off the boat, and we work through controls, rigging harness, prop, and battery. Total installed almost always lands $5,500 to $9,500 plus HST depending on what we find on the boat.
+
+The second is a 21- to 24-foot pontoon getting a 150 to 200 HP repower. These run higher. Controls and rigging on pontoons tend to need more work, prop matching matters more, and a SmartCraft display often gets added or upgraded.
+
+The third is the "I want a Pro XS" angler swap. Existing controls usually carry over but we always check rigging tube, throttle cable length, and steering hookup before quoting the install hours.
+
+---
+
 ## FAQs
 
 **How much does a Mercury repower cost in Ontario in 2026?** 
@@ -11324,6 +11334,14 @@ We sell boats and motors. We are transparent about that.
 We have also been doing this for three generations. A customer who makes a decision they are comfortable with comes back. One who felt pressured does not.
 
 Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, rent for a season first, HBW has nine boats available on Rice Lake.
+
+---
+
+## What we see at HBW
+
+First weekend in May, the shop fills up with no-starts. Nine out of ten are the same three things. The battery is dead because the charger was not plugged in over winter. Fuel went stale because no stabilizer was added before storage. Or the kill-switch lanyard got bumped during winterization and the helm does not realize it.
+
+The fourth most common: corroded battery terminals from a boat that sat outside in salt-spray weather. Cleaning the terminals plus a fresh battery solves more spring no-starts than any other repair.
 
 ---
 
@@ -19541,6 +19559,14 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
+## What we see at HBW
+
+Pricing in our quote book moves three or four times a year. Mercury Canada bulletins drive most of it, and dealer programs (Spring Boost, Buy-and-Win, etc.) layer on top. The number a customer sees on a competitor's website is usually MSRP without HST, without controls, without rigging, without install, and without prop. Half our first conversations are clarifying what is actually included.
+
+Real installed cost on a 90 FourStroke on a fishing boat with existing controls usually lands $11,500 to $13,500 all-in. Same motor on a pontoon getting a SmartCraft display and a new prop ends up $13,500 to $15,500. We quote the installed number, not the box-only number.
+
+---
+
 ## FAQs
 
 **How much does Mercury rigging cost in Ontario?** 
@@ -22894,7 +22920,7 @@ Sensor diagnosis requires dealer tools to read temperature sensor values against
 
 ## Ontario Context: Why Idle Overheating Shows Up More in Summer
 
-Ontario boating involves a lot of slow-speed running: navigating marinas and launch ramps, no-wake zones, trolling on Rice Lake and the Kawarthas, idling while waiting for a lock on the Trent-Severn.
+Ontario boating involves a lot of slow-speed running: navigating marinas and launch ramps, no-wake zones, trolling on Rice Lake and the Kawarthas, idling while waiting for a lock on the [Trent-Severn](https://parks.canada.ca/lhn-nhs/on/trentsevern).
 
 A motor with a marginal impeller can go an entire season of mostly high-speed running without triggering an alarm, and then the first time you spend 20 minutes in a no-wake zone, the alarm sounds. The motor wasn't fine before; it was just masking the problem at speed.
 
@@ -22914,6 +22940,14 @@ After any overheating event, have the motor inspected before the next run. Heat 
 For engine repairs, we only service Mercury and Mercruiser.
 
 Book at [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+## What we see at HBW
+
+Rice Lake's central basin is thick with stumps and milfoil in late July. The number-one overheating call we get in August is a clogged water intake from weeds, not a failed impeller. Boater hits 70 km/h, sucks up a wad of weed, the alarm goes off, panic sets in.
+
+The actual fix at the shop, after the impeller test, is usually a five-minute hose-and-pick clean of the intake screen. If the alarm has been on for more than a minute or two, we pressure-test the powerhead before sign-off. Heat damage compounds fast on Pro XS V8 powerheads.
 
 ---
 
