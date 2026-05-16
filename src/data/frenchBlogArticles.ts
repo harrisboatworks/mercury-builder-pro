@@ -167,6 +167,7 @@ Non. Pour les réparations et installations, nous travaillons exclusivement avec
   {
     slug: 'mercury-115-vs-150-hp-comparaison',
     title: 'Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?',
+    seoTitle: 'Mercury 115 vs 150 HP : quel moteur choisir?',
     description: 'Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation et prix , tout ce que vous devez savoir pour choisir.',
     image: '/src/assets/blog/mercury-115-vs-150-hero.jpg',
     author: 'Harris Boat Works',
@@ -326,6 +327,7 @@ L'équipe travaille principalement en anglais, mais vos messages en français su
   {
     slug: 'hivernisation-moteur-mercury-ontario',
     title: 'Guide d\'hivernisation de votre moteur Mercury hors-bord en Ontario',
+    seoTitle: 'Hivernisation de votre moteur Mercury en Ontario',
     description: 'Les étapes essentielles pour préparer votre moteur Mercury pour l\'hiver ontarien : stabilisation du carburant, lubrification interne, vidange d\'huile, entreposage de la batterie.',
     image: '/src/assets/blog/winterization-mercury-hero.jpg',
     author: 'Harris Boat Works',
@@ -466,6 +468,7 @@ Concessionnaire Mercury Marine Platinum. En affaires depuis 1947.
   {
     slug: 'remotorisation-vs-bateau-neuf',
     title: 'Remotorisation ou achat d\'un bateau neuf : Quelle est la meilleure option?',
+    seoTitle: 'Remotorisation ou bateau neuf : que choisir?',
     description: 'Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur Mercury neuf ou acheter un nouveau bateau.',
     image: '/src/assets/blog/remotorisation-vs-neuf-hero.jpg',
     author: 'Harris Boat Works',
@@ -617,6 +620,7 @@ Grosso modo de mai à octobre, environ six mois. C'est une raison de plus de ne 
   {
     slug: 'peche-lac-rice-ontario-guide-plaisanciers',
     title: 'Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers',
+    seoTitle: 'Pêche sur le lac Rice, Ontario : guide pratique',
     description: 'Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d\'embarcations chez Harris Boat Works.',
     image: '/src/assets/blog/peche-lac-rice-hero.jpg',
     author: 'Harris Boat Works',
@@ -772,6 +776,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
   {
     slug: 'permis-bateau-ontario-carte-conducteur-embarcation',
     title: 'Permis de conduire une embarcation au Canada : Ce que vous devez savoir',
+    seoTitle: 'Permis d\'embarcation au Canada : l\'essentiel',
     description: 'Guide complet sur la Carte de conducteur d\'embarcation de plaisance (CCEP) au Canada : qui en a besoin, comment l\'obtenir, coût, équipements obligatoires et réglementation en Ontario.',
     image: '/src/assets/blog/permis-bateau-hero.jpg',
     author: 'Harris Boat Works',
@@ -935,6 +940,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
     slug: 'mercury-hors-bord-ne-demarre-pas-depannage',
     relatedSlugs: ['hivernisation-moteur-mercury-ontario'],
     title: 'Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)',
+    seoTitle: 'Mercury hors-bord qui ne démarre pas (2026)',
     description: 'La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une hivernisation incomplète. Suivez les étapes de base dans le bon ordre. Si le moteur ne part toujours pas, apportez-le chez Harris Boat Works.',
     image: '/lovable-uploads/spring-no-start-flowchart.png',
     author: 'Harris Boat Works',
@@ -1163,6 +1169,7 @@ Téléphone : 905-342-2153
     slug: 'remotorisation-mercury-gta-toronto',
     relatedSlugs: ['prix-remotorisation-mercury-ontario', 'remotorisation-vs-bateau-neuf'],
     title: 'Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)',
+    seoTitle: 'Remotorisation Mercury dans la GTA (2026)',
     description: 'Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport. Du concessionnaire qui le fait à longueur d\'année.',
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
     author: 'Harris Boat Works',
@@ -1841,6 +1848,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
   {
     slug: 'surchauffe-moteur-mercury-guide-urgence',
     title: "Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)",
+    seoTitle: "Votre Mercury surchauffe : quoi faire",
     description: "Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Platinum pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines secondes, quoi vérifier au quai, et comment l'éviter.",
     image: '/lovable-uploads/hero-outboard-overheating.png',
     author: 'Harris Boat Works',
@@ -2481,6 +2489,7 @@ Par Harris Boat Works, concessionnaire Mercury Marine certifié Platinum, marina
   {
     slug: 'gamme-mercury-hors-bord-2026-ontario',
     title: "Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens",
+    seoTitle: "Gamme Mercury hors-bord 2026 pour l'Ontario",
     description: "La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la croisière, la pêche et l'usage familial. Pro XS (115 à 300 HP) pour la pêche de performance. SeaPro (25 à 300 HP) pour usage commercial. Verado (250 à 600+ HP) pour le large (commande spéciale chez HBW). Avator pour l'électrique.",
     image: '/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
