@@ -1,59 +1,55 @@
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { CheckCircle, Download, Loader2, FileText } from 'lucide-react';
+import { CheckCircle, Download, Loader2 } from 'lucide-react';
 
 const PDF_HREF = '/lovable-uploads/HBW-Used-Boat-Walkaround-Guide.pdf';
 
 export default function WalkaroundLeadCapture() {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState<string>('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setError(null);
+    setErrorMsg('');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-      setError('Please enter a valid email address.');
+      setStatus('error');
+      setErrorMsg('Please enter a valid email address.');
       return;
     }
-    setLoading(true);
+    setStatus('loading');
     try {
-      const { data, error: fnErr } = await supabase.functions.invoke('subscribe-walkaround', {
+      const { data, error } = await supabase.functions.invoke('subscribe-walkaround', {
         body: { email: email.trim(), firstName: firstName.trim() || undefined },
       });
-      if (fnErr || !data?.ok) {
-        setError('Something went wrong. Please try again or email us directly.');
-      } else {
-        setSuccess(true);
+      if (error || !data?.ok) {
+        setStatus('error');
+        setErrorMsg('Something went wrong. Please try again.');
+        return;
       }
+      setStatus('success');
     } catch {
-      setError('Network error. Please try again.');
-    } finally {
-      setLoading(false);
+      setStatus('error');
+      setErrorMsg('Network error. Please try again.');
     }
-  };
+  }
 
-  if (success) {
+  if (status === 'success') {
     return (
-      <div className="my-8 rounded-lg border border-[#20384d]/15 bg-white p-6 shadow-sm md:p-8">
+      <div className="my-6 rounded-lg border border-repower-navy-900/15 bg-repower-paper p-6">
         <div className="flex items-start gap-3">
-          <CheckCircle className="mt-1 h-6 w-6 flex-shrink-0 text-[#20384d]" />
+          <CheckCircle className="mt-1 h-6 w-6 flex-shrink-0 text-repower-navy-900" aria-hidden="true" />
           <div className="flex-1">
-            <h3 className="m-0 text-lg font-semibold text-[#20384d]">You're in. Grab the guide below.</h3>
-            <p className="mt-1 mb-4 text-sm text-[#20384d]/75">
-              We've also emailed you the link so you can find it later.
+            <p className="m-0 mb-3 font-display text-base font-semibold text-repower-navy-900">
+              Thanks. Check your inbox. You can also download right now:
             </p>
             <a
               href={PDF_HREF}
               download
-              className="inline-flex items-center gap-2 rounded-md bg-[#20384d] px-5 py-3 text-sm font-medium text-white no-underline transition hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded bg-repower-navy-900 px-6 py-3 font-sans text-sm font-semibold text-white no-underline transition hover:bg-repower-navy-800"
             >
-              <Download className="h-4 w-4" />
+              <Download className="h-4 w-4" aria-hidden="true" />
               Download the PDF
             </a>
           </div>
@@ -63,67 +59,64 @@ export default function WalkaroundLeadCapture() {
   }
 
   return (
-    <div className="my-8 overflow-hidden rounded-lg border border-[#20384d]/15 bg-white shadow-sm">
-      <div className="bg-[#20384d] px-6 py-4 md:px-8">
-        <div className="flex items-center gap-2 text-white">
-          <FileText className="h-5 w-5" />
-          <h3 className="m-0 text-lg font-semibold">Get the printable PDF</h3>
-        </div>
-      </div>
-      <div className="px-6 py-6 md:px-8">
-        <p className="mt-0 mb-5 text-sm text-[#20384d]/80">
-          Free 13-page inspection guide. We'll email you the link.
-        </p>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-2">
-            <div>
-              <Label htmlFor="walkaround-fname">First name (optional)</Label>
-              <Input
-                id="walkaround-fname"
-                type="text"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                disabled={loading}
-                autoComplete="given-name"
-                className="mt-1"
-              />
-            </div>
-            <div>
-              <Label htmlFor="walkaround-email">
-                Email <span className="text-[#20384d]/60">(required)</span>
-              </Label>
-              <Input
-                id="walkaround-email"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={loading}
-                autoComplete="email"
-                className="mt-1"
-              />
-            </div>
+    <div className="my-6 rounded-lg border border-repower-navy-900/15 bg-repower-paper p-6">
+      <h3 className="m-0 mb-1 font-display text-xl font-bold text-repower-navy-900">
+        Get the printable PDF
+      </h3>
+      <p className="m-0 mb-4 font-sans text-sm text-repower-navy-900/75">
+        Free 13-page inspection guide. We'll email you the link.
+      </p>
+      <form onSubmit={handleSubmit} className="space-y-3">
+        <div className="grid gap-3 md:grid-cols-2">
+          <div>
+            <label htmlFor="walkaround-fname" className="sr-only">First name</label>
+            <input
+              id="walkaround-fname"
+              type="text"
+              placeholder="First name (optional)"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              disabled={status === 'loading'}
+              autoComplete="given-name"
+              className="w-full rounded border border-repower-navy-900/20 bg-white px-3 py-2 font-sans text-sm text-repower-navy-900 placeholder:text-repower-navy-900/40 focus:border-repower-navy-900 focus:outline-none focus:ring-2 focus:ring-repower-navy-900/15"
+            />
           </div>
-          {error && <p className="text-sm text-red-600">{error}</p>}
-          <Button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-[#20384d] text-white hover:opacity-90 md:w-auto"
-          >
-            {loading ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Sending...
-              </>
-            ) : (
-              'Get the guide'
-            )}
-          </Button>
-          <p className="m-0 text-xs text-[#20384d]/60">
-            One email with the link. No spam. Unsubscribe anytime.
-          </p>
-        </form>
-      </div>
+          <div>
+            <label htmlFor="walkaround-email" className="sr-only">Email address</label>
+            <input
+              id="walkaround-email"
+              type="email"
+              required
+              placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={status === 'loading'}
+              autoComplete="email"
+              className="w-full rounded border border-repower-navy-900/20 bg-white px-3 py-2 font-sans text-sm text-repower-navy-900 placeholder:text-repower-navy-900/40 focus:border-repower-navy-900 focus:outline-none focus:ring-2 focus:ring-repower-navy-900/15"
+            />
+          </div>
+        </div>
+        {status === 'error' && errorMsg && (
+          <p className="m-0 font-sans text-sm text-red-600">{errorMsg}</p>
+        )}
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className="inline-flex items-center gap-2 rounded bg-repower-navy-900 px-6 py-3 font-sans text-sm font-semibold text-white transition hover:bg-repower-navy-800 disabled:opacity-60"
+        >
+          {status === 'loading' ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+              Sending...
+            </>
+          ) : (
+            'Get the guide'
+          )}
+        </button>
+        <p className="m-0 font-sans text-xs text-repower-navy-900/55">
+          One email with the link. No spam. Unsubscribe anytime.
+        </p>
+      </form>
     </div>
   );
 }
