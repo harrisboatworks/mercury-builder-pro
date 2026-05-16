@@ -18438,7 +18438,9 @@ Two related guides in the same cluster:
     category: "Buying Guide",
     readTime: '~12 min read',
     keywords: ["used boat inspection","buying guide","ontario","transom check","pre-purchase"],
-    content: `> **📥 Download this guide as a printable PDF.** Bring the full 30-minute walkaround inspection checklist with you to look at a boat. [**Get the free printable guide →**](/lovable-uploads/HBW-Used-Boat-Walkaround-Guide.pdf)
+    content: `:::walkaround-lead
+
+:::
 
 # The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
 
@@ -18627,11 +18629,12 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 
 ---
 
-## Save this guide for the next walkaround
+## Get the printable guide
 
-[**📥 Download the printable PDF (single 9-page file)**](/lovable-uploads/HBW-Used-Boat-Walkaround-Guide.pdf)
+:::walkaround-lead
 
-Print it. Take it with you. Use it on the next boat you go look at.
+:::
+
 `,
     faqs: [
       { question: "How long should a used boat walkaround inspection take?", answer: "Plan on 30 minutes minimum. Five before you go (HIN, records, cold-start video), five for first impression and trailer, ten on the hull, five on topside and interior, eight on the outboard, and two on trailer details. Rushing any segment is how problems get missed." },

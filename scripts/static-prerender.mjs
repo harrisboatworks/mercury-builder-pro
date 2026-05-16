@@ -256,6 +256,9 @@ function expandVisualDirectives(md) {
   md = sub(/^::cost-stack\s*\n([\s\S]*?)\n::\s*$/gm, renderCostStackHtml);
   md = sub(/^::bilingual-trust\s*\n([\s\S]*?)\n::\s*$/gm, renderBilingualTrustHtml);
   md = sub(/^::pull-quote\s*\n([\s\S]*?)\n::\s*$/gm, renderPullQuoteHtml);
+  md = sub(/^:::walkaround-lead\s*\n([\s\S]*?)\n:::\s*$/gm, () =>
+    '<aside class="walkaround-lead-fallback"><p><strong>Get the printable PDF guide.</strong> For the printable PDF, visit <a href="https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario">mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario</a> and download the file from the page.</p></aside>'
+  );
   return { md, slots };
 }
 

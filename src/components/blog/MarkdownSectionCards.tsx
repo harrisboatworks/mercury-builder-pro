@@ -18,6 +18,7 @@ import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './Diagnostic
 import { CostStack, type CostStackProps, type CostStackItem } from './CostStack';
 import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustItem } from './BilingualTrustCard';
 import { PullQuote, type PullQuoteProps } from './PullQuote';
+import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -279,7 +280,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -292,7 +293,7 @@ interface RenderChunk {
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -564,6 +565,8 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'pull-quote') {
       const props = parsePullQuoteBody(body);
       if (props) chunks.push({ kind: 'pull-quote', content: '', pullQuoteProps: props });
+    } else if (name === 'walkaround-lead') {
+      chunks.push({ kind: 'walkaround-lead', content: '' });
     }
     last = m.index + m[0].length;
   }
@@ -611,6 +614,9 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'pull-quote' && chunk.pullQuoteProps) {
       return <PullQuote key={`${keyPrefix}-pq-${i}`} {...chunk.pullQuoteProps} />;
+    }
+    if (chunk.kind === 'walkaround-lead') {
+      return <WalkaroundLeadCapture key={`${keyPrefix}-wl-${i}`} />;
     }
     if (!chunk.content.trim()) return null;
     return (
