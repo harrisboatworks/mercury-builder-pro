@@ -24910,7 +24910,7 @@ A few things worth knowing if you're new to Rice Lake:
 
 ## Booking, contacting, getting started
 
-For service, storage, or a quote, the fastest path is [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number and what you need. For rentals, [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals). For everything else, including slip availability for next season, call 905-342-2153. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months; the season opens early April.
+For service, storage, or a quote, the fastest path is [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number and what you need. For rentals, [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals). For everything else, including slip availability for next season, call 905-342-2153. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months; the season opens early April. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
