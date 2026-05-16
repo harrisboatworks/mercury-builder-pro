@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -42,6 +42,8 @@ A Mercury repower in Ontario typically runs **$11,000, $40,000 CAD installed**, 
 ## Full Article
 
 Most repower cost guides give you a motor price and call it done. That's only about two-thirds of the answer. The bill you'll actually pay includes the motor, rigging, prop, installation, and sea trial. What you're trying to budget is the all-in number, and that's what we'll give you here.
+
+![Mercury repower cost breakdown showing motor, rigging, controls, prop, labour, taxes, and configuration variables](/lovable-uploads/mercury-repower-cost-breakdown-ontario.png)
 
 ### 2026 Planning Ranges by HP Class (CAD, Before HST)
 

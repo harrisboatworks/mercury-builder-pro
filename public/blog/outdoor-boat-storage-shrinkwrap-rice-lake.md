@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -109,6 +109,8 @@ For current rates, contact us. Pricing depends on your specific boat, motor, and
 
 ---
 
+![Rice Lake boat storage timeline - Sept to May at Harris Boat Works](/lovable-uploads/rice-lake-storage-timeline.png)
+
 ## When to Book Winter Storage
 
 **September to early October:** Best window. We're not yet at peak demand and we can give you specific scheduling.
@@ -119,7 +121,7 @@ For current rates, contact us. Pricing depends on your specific boat, motor, and
 
 **December:** Too late. Schedule for next year.
 
-The customers who call in early November every year asking if we have space, we appreciate them, but it's a tight call. Plan ahead.
+The customers who call in early November every year asking if we have space, we appreciate them, but it's a tight call. Plan ahead. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months; the marina reopens early April for spring commissioning. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 ---
 

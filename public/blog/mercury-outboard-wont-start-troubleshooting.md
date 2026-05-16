@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -71,6 +71,8 @@ source: HBW Customer, Roseneath 2026
 ::
 
 ---
+
+![Mercury outboard won't start diagnostic flowchart showing no crank, cranks but no start, starts then dies, and warning alarm paths](/lovable-uploads/mercury-outboard-wont-start-diagnostic-flowchart.png)
 
 ## Mercury Outboard Won't Start: Troubleshooting in Order
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -60,6 +60,8 @@ totalValue: Add 20 to 35% on top of motor price for rigging
 caveat: Pricing varies by model year, shaft length, controls package, gauges, propeller, and rigging labor. HST extra. For an actual quote, use the configurator at /quote.
 ::
 ---
+
+![Mercury outboard price guide by horsepower tier for Ontario boaters with planning-range caveat](/lovable-uploads/ontario-mercury-outboard-price-tier-chart.png)
 
 ### Ontario Mercury Outboard Price Guide
 

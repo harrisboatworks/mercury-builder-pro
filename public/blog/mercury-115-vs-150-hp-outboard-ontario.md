@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -67,6 +67,8 @@ source: HBW Customer, Lakefield 2026
 ::
 
 ---
+
+![Mercury 115 vs 150 horsepower decision matrix for Ontario fishing boats, pontoons, family runabouts, load, and budget](/lovable-uploads/mercury-115-vs-150-decision-matrix-ontario.png)
 
 ## Full Article
 

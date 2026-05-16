@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -36,6 +36,8 @@ content_type: blog_article
 > **Quick answer:** For most Ontario freshwater boaters, it's FourStroke or Pro XS. FourStroke covers fishing, family, and pontoon use from 2.5 HP up. Pro XS is the same powerhead tuned for performance, worth the premium if you actually run hard. Verado is special order at HBW (almost no Ontario freshwater application needs it). Configure FourStroke or Pro XS at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 ---
+
+![Mercury outboard families: FourStroke, Pro XS, Verado (HBW diagram)](/lovable-uploads/diagram-mercury-motor-families.png)
 
 ## The short version
 
@@ -123,6 +125,8 @@ If you genuinely have a Verado-appropriate application, a 28+ ft offshore centre
 
 ---
 
+![Mercury FourStroke, Pro XS, and Verado comparison graphic showing best fit, personality, boat type, and tradeoffs](/lovable-uploads/mercury-fourstroke-proxs-verado-comparison.png)
+
 ## Decision rules
 
 Work through these in order:
@@ -177,6 +181,8 @@ Tournament-grade bass boats: Pro XS. The acceleration and hole shot match what t
 
 **Can I switch motor families during a repower?**
 Yes. The motor is the choice; the rigging adapts. Most existing Mercury controls, props, and harnesses can stay Mercury-to-Mercury. Build a quote to see exact pricing for the swap.
+
+For an angler-specific deep dive on Pro XS, see our [Rice Lake and Kawarthas Pro XS repower guide](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers).
 
 ## FAQs
 

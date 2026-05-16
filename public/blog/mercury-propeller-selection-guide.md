@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -87,6 +87,8 @@ Pitch is the theoretical forward distance the prop moves in one revolution. Lowe
 We test pitch on the water during the sea trial of every repower. A wrong-pitch prop is the most common performance issue on otherwise correctly-installed Mercury motors.
 
 ---
+
+![Mercury propeller selection wheel showing acceleration, top speed, load, RPM range, blade count, pitch, and diameter tradeoffs](/lovable-uploads/mercury-propeller-selection-tradeoff-wheel.png)
 
 ## Blade count
 

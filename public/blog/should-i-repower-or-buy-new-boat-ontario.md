@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -74,6 +74,8 @@ Harris Boat Works sells both Mercury motors and Legend Boats. We also tell peopl
 Here's the honest breakdown.
 
 ---
+
+![Ontario boat repower vs new boat decision matrix comparing hull condition, budget, sentimental value, downtime, warranty, and use case](/lovable-uploads/repower-vs-new-boat-decision-matrix-ontario.png)
 
 ## The Cost Math
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-storage-kawartha-lakes.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -32,6 +32,8 @@ content_type: blog_article
 > **Quick answer:** Harris Boat Works offers winter boat storage, shrinkwrap, winterization, and spring commissioning from our Rice Lake marina in Gores Landing — accessible to boaters across the Kawartha Lakes (Rice, Pigeon, Sturgeon, Buckhorn, Stoney) and the GTA-east region. Storing where you boat means no spring scavenger hunt for the battery, cover, paperwork, or "who has the key?"
 
 ---
+
+![Kawartha boat storage decision map - indoor vs outdoor vs shrinkwrap vs tarp flowchart](/lovable-uploads/kawartha-boat-storage-decision-map.png)
 
 ## What good boat storage actually includes
 
@@ -77,7 +79,7 @@ We bundle storage into straightforward tiers based on what your boat needs and h
 - Pre-launch safety check
 - Ready-to-launch handoff
 
-Most customers choose the middle or full package because it eliminates phone tag between fall and spring. You drop the boat off in October, pick it up in April, and it's ready to run. For a detailed breakdown of what's included at each step, see our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
+Most customers choose the middle or full package because it eliminates phone tag between fall and spring. You drop the boat off in October, pick it up in April, and it's ready to run. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months, so all storage drop-offs and pickups happen on either side of that window. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service. For a detailed breakdown of what's included at each step, see our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
 
 ---
 

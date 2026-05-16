@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -67,6 +67,8 @@ When you see a "$549 winterization" posted on a marina website, that number was 
 
 We quote winterization based on what is in front of us.
 
+![Ontario boat winterization cost drivers graphic showing engine type, number of engines, shrinkwrap, storage, battery, and spring prep](/lovable-uploads/boat-winterization-cost-drivers-ontario.png)
+
 ## What changes your winterization cost
 
 **Motor size and type.** A small tiller takes less time and fewer parts than a large V8. Bigger motors cost more to winterize, this is unavoidable.
@@ -117,7 +119,7 @@ We offer outdoor winter storage at HBW with shrinkwrap. We do not offer indoor h
 
 Outdoor storage with shrinkwrap is the practical answer for most Rice Lake and Kawartha boats: aluminum fishing boats, pontoons, runabouts. For high-end fibreglass cruisers with custom paint, indoor might be worth the premium at another shop. Choose based on your boat, not based on what makes the marina more money.
 
-Contact us for current per-foot rates.
+Contact us for current per-foot rates. Note that Harris Boat Works is closed December 1 to April 1 with no service performed during winter months, so storage drop-off windows close in late fall and pickups resume in early April. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 ## Shrinkwrap: separate from winterization
 
@@ -185,6 +187,8 @@ Request winterization, shrinkwrap, storage, or the full package at [hbw.wiki/ser
 Or call 905-342-2153.
 
 *Last reviewed: 2026-05-11.*
+
+For broader context on storage options across the Kawarthas, see our [Kawartha Lakes boat storage guide](/blog/boat-storage-kawartha-lakes).
 
 ## FAQs
 

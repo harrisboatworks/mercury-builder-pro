@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -238,13 +238,15 @@ If you're new to HBW, calling in late August / early September means you get int
 
 ## Book Winter Storage at HBW
 
-We've stored boats in Gores Landing for three generations. Mercury Marine Platinum dealer service on the engine, professional shrinkwrap on the hull, our property as the storage lot. Drop off in fall, ready to launch in spring.
+We've stored boats in Gores Landing for three generations. Mercury Marine Platinum dealer service on the engine, professional shrinkwrap on the hull, our property as the storage lot. Drop off in fall, ready to launch in spring. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 **Phone:** 905-342-2153
 **Online:** [harrisboatworks.ca/winter-storage](https://harrisboatworks.ca/winter-storage)
 **Drop-off:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 ---
+
+If you're shopping for storage locations beyond shrinkwrap details, our [Kawartha Lakes storage overview](/blog/boat-storage-kawartha-lakes) covers options across Rice Lake and the broader region.
 
 ## FAQs
 

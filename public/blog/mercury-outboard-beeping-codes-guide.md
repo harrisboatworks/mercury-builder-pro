@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide.md
-last_updated: 2026-05-15
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -84,6 +84,8 @@ The distinction matters because beep patterns are how Mercury's engine managemen
 Getting the pattern right before calling a dealer or booking service helps narrow the diagnostic significantly.
 
 ---
+
+![Mercury outboard warning beep action card explaining continuous beep, intermittent beeps, SmartCraft display, and manual confirmation](/lovable-uploads/mercury-outboard-beep-codes-action-card.png)
 
 ## Common Beep Patterns and What They Indicate
 
