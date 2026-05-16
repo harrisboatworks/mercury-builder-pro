@@ -18629,9 +18629,7 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 
 ## Get the printable guide
 
-:::walkaround-lead
-
-:::
+::walkaround-lead-capture
 
 `,
     faqs: [
