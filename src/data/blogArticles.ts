@@ -1021,7 +1021,7 @@ Yes if the hull is structurally solid. Many cottage aluminum hulls 25 to 40 year
 **Do I need a new prop with a Mercury repower?**
 Often yes, especially during brand conversions. Mercury-to-Mercury repowers sometimes keep existing props. We test props during sea-trial of every repower.
 
-**What about my Pleasure Craft Licence (PCL)?**
+**What about my [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)?**
 The PCL must be updated when motor HP, brand, or model changes. We handle the paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
 
 **How long does a typical repower take?**
@@ -1478,7 +1478,7 @@ Most variants include alternator output. Specific charging capacity varies by mo
 **How long does a Mercury 9.9 ProKicker last?**
 Properly maintained, these motors run a long time. They operate at lower RPM than main motors, which is easier on components. Annual service matters. Skip it and you'll learn why the hard way, usually mid-season.
 
-**Do I need to update my Pleasure Craft Licence when adding a kicker?**
+**Do I need to update my [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) when adding a kicker?**
 Adding a kicker changes your combined HP and may require a PCL update. We handle this paperwork for HBW customers.
 
 ---
@@ -1655,7 +1655,7 @@ Ontario freshwater has its own rhythm: ice-out, spring prep, the long summer on 
 2. **Use-case driven motor selection.** What you do with the boat matters as much as the hull rating.
 3. **Transparent installed pricing.** Live pricing is at mercuryrepower.ca. Motor, rigging, prop, install, all of it.
 4. **Sea trial and prop confirmation.** We do not hand you the keys in the parking lot.
-5. **PCL update.** If the HP class changes, your Pleasure Craft Licence needs to be updated. We handle that as part of the project.
+5. **PCL update.** If the HP class changes, your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) needs to be updated. We handle that as part of the project.
 6. **Warranty registration and service log.** Documented from day one, which matters if you ever sell the boat.
 
 We also evaluate trade-ins on old motors, working or not. Even a dead motor has value in aluminum and parts.
@@ -2895,7 +2895,7 @@ Rice Lake is a specific lake with specific characteristics. Generic "what outboa
 
 **Public ramp access.** Bewdley, Hastings, Roseneath, and HBW's Gores Landing ramp are the main access points. Motor and boat selection should account for trailer size, parking constraints, and ramp slope at the launch you use most.
 
-**Trent-Severn access.** The east end of Rice Lake connects to the Trent-Severn Waterway. Boats that travel the system need reliable mid-range cruise performance for the lock-to-lock runs.
+**Trent-Severn access.** The east end of Rice Lake connects to the [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern). Boats that travel the system need reliable mid-range cruise performance for the lock-to-lock runs.
 
 ---
 
@@ -3930,9 +3930,9 @@ If anything sounds wrong, smells wrong, or shows a warning light, stop. That's a
 ### Step 10, Documentation
 
 - **Update your service log** with date, hours, and what was done.
-- **Verify Pleasure Craft Licence (PCL)** is current. Expired PCL is a fine on the water.
+- **Verify [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)** is current. Expired PCL is a fine on the water.
 - **Confirm insurance** is renewed for the season.
-- **Check that Pleasure Craft Operator Card (PCOC)** is accessible in the boat.
+- **Check that [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC)** is accessible in the boat.
 
 ---
 
@@ -5886,8 +5886,8 @@ Five factors affect how thorough your opener prep needs to be:
 - Confirm spring commissioning is complete. If it is not, book it now. Service slots fill in May.
 - Schedule any final service at [hbw.wiki/service](https://hbw.wiki/service) if needed.
 - Check your fishing licence is valid for the new season. Renew online if not.
-- Confirm your Pleasure Craft Operator Card (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
-- Confirm your Pleasure Craft Licence (PCL) is displayed on the bow and current. Renewals are now $24 for five years. Without it, an OPP marine patrol will ticket you.
+- Confirm your [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
+- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) is displayed on the bow and current. Renewals are now $24 for five years. Without it, an OPP marine patrol will ticket you.
 
 ### One Week Before Opener
 
@@ -5992,7 +5992,7 @@ For Rice Lake and local Kawartha customers, yes. Contact us to arrange hauling a
 - Spring Outboard Commissioning Checklist
 - Mercury 9.9 EFI Review, kicker options
 - Mercury Outboard Won't Start Troubleshooting
-- Trent-Severn Waterway Boating Guide 2026
+- [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
 
 ## CTA
 
@@ -6080,7 +6080,7 @@ Mercury Platinum dealer. Est. 1947.
     keywords: ['cold water boating safety', 'ontario boating safety', 'hypothermia prevention', 'spring boating safety', 'fall boating safety', 'pfd cold water'],
     content: `### Quick Answer
 
-In Ontario shoulder seasons, spring and fall, the biggest boating risk is the water temperature, not the air temperature. Dress for water temperature, not air temperature. Wear your PFD. File a float plan. Carry a charged VHF radio on Channel 16. Cold-water immersion below 15°C can cause incapacitation within minutes. See Transport Canada's cold-water survival guidance (TP 13822) for full detail.
+In Ontario shoulder seasons, spring and fall, the biggest boating risk is the water temperature, not the air temperature. Dress for water temperature, not air temperature. Wear your PFD. File a float plan. Carry a charged VHF radio on Channel 16. Cold-water immersion below 15°C can cause incapacitation within minutes. See [Transport Canada](https://tc.canada.ca/en)'s cold-water survival guidance (TP 13822) for full detail.
 
 ---
 
@@ -6211,7 +6211,7 @@ Rice Lake warms faster than Lake Ontario, but September and October surface temp
 Yes. The time to put on a PFD is before you need it. In cold water, there is no time to find it after an unexpected situation.
 
 **What VHF channel should I monitor?** 
-Channel 16. This is the distress and calling channel. Parks Canada and Coast Guard monitor it. Murray Canal swing bridges use Channel 14 specifically.
+Channel 16. This is the distress and calling channel. [Parks Canada](https://parks.canada.ca/lhn-nhs/on/trentsevern) and Coast Guard monitor it. Murray Canal swing bridges use Channel 14 specifically.
 
 **When should I book fall winterization?** 
 As early as possible. Service slots fill in October. If you wait until the first cold night, you may be waiting for a slot that does not exist.
@@ -6528,7 +6528,7 @@ If yes to most, repower makes sense.
 
 ## 2027 Mercury Outboard Preview
 
-As we look toward the 2027 model year, here's what to expect from Mercury Marine's lineup.
+As we look toward the 2027 model year, here's what to expect from [Mercury Marine](https://www.mercurymarine.com/canada/en/)'s lineup.
 
 ### Expected Updates
 
@@ -6816,7 +6816,7 @@ We sell ethanol-free 89 marine gas at the dock in Gores Landing. Pick the HP tha
 
 - **Power steering**, On anything over 115 HP, get hydraulic or electric power steering. Manual steering on bigger motors is tiring after an hour of driving.
 - **Power trim**, Standard on every Mercury 25 HP and up. You'll use it constantly as load and conditions change.
-- **SmartCraft / Mercury Marine App**, Real-time fuel flow lets you find the efficient cruise RPM for your boat. Saves real money over a season.
+- **SmartCraft / [Mercury Marine](https://www.mercurymarine.com/canada/en/) App**, Real-time fuel flow lets you find the efficient cruise RPM for your boat. Saves real money over a season.
 - **Active Trim**, Available on V8 Verados and select V6s. Worth it if your driver is still learning; the engine trims itself for conditions.
 
 **What you don't need:** Mercury's premium Verado V8/V10 lineup on a family runabout under 22 feet. They're excellent motors built for performance boats and big cruisers, overkill on a 19-foot bowrider that mostly goes to the swim spot.
@@ -7358,7 +7358,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 
 ### Dealer Promotional Programs
 
-Note: Mercury Marine has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
+Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
 
 **Harris Boat Works Current Offer**:
 - 7-Year Factory-Backed Warranty included with every new Mercury
@@ -7910,7 +7910,7 @@ Harris Boat Works has sold Mercury exclusively since 1965. We are not a neutral 
 
 ## What "established North American presence" means in practice
 
-Mercury Marine is one of the leading outboard manufacturers in the world by volume. In Canada, that translates to more dealerships, more certified technicians, and deeper parts supply chains than any other outboard brand.
+[Mercury Marine](https://www.mercurymarine.com/canada/en/) is one of the leading outboard manufacturers in the world by volume. In Canada, that translates to more dealerships, more certified technicians, and deeper parts supply chains than any other outboard brand.
 
 When your motor needs a water pump impeller on a Thursday in August, that means the part is on a shelf at a local dealer. When you sell the boat in five years, the buyer local dealer already knows the platform.
 
@@ -8315,8 +8315,8 @@ For specific pricing on Mercury motors, build a quote at [mercuryrepower.ca](htt
 ## What you need legally to fish Rice Lake
 
 - Ontario Outdoors Card and Fishing Licence Tag, required for residents aged 18 to 64. Non-residents need the equivalent.
-- Pleasure Craft Operator Card (PCOC), required for all motorized vessel operators.
-- Pleasure Craft Licence (PCL), required for any boat with a motor totalling at least 10 hp. PCLs are now valid for 5 years; renewals carry a $24 fee.
+- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC), required for all motorized vessel operators.
+- [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL), required for any boat with a motor totalling at least 10 hp. PCLs are now valid for 5 years; renewals carry a $24 fee.
 
 Children under 18 may fish under certain conditions without a licence. Confirm current rules at ontario.ca.
 
@@ -8362,7 +8362,7 @@ If you're new to Rice Lake or comparing services, see our [full-service marina o
     keywords: ['Mercury Boost software upgrade', 'Mercury Boost eligible engines', 'Mercury software calibration', 'Mercury acceleration upgrade', 'Mercury dealer upgrade Ontario'],
     content: `### Quick Answer
 
-Mercury Boost is a software-based engine calibration update, not a hardware kit, that improves mid-range acceleration by 5, 21% on eligible motors. Eligibility is determined by serial number, not model year. The dealer-installed version covers FourStroke 175, 300 HP, Pro XS 175, 300 HP, and Verado 250, 350 HP from specific serial numbers (see table below). The factory-installed version comes pre-loaded on new Pro XS and Verado models built in Q2 2026 and later. Boost does not void Mercury's warranty.
+[Mercury Boost](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) is a software-based engine calibration update, not a hardware kit, that improves mid-range acceleration by 5, 21% on eligible motors. Eligibility is determined by serial number, not model year. The dealer-installed version covers FourStroke 175, 300 HP, Pro XS 175, 300 HP, and Verado 250, 350 HP from specific serial numbers (see table below). The factory-installed version comes pre-loaded on new Pro XS and Verado models built in Q2 2026 and later. Boost does not void Mercury's warranty.
 
 
 > **Check yours:** Run the [Boost Eligibility Checker](/tools#boost-eligibility) to see if your motor qualifies in 30 seconds. Free.
@@ -8566,7 +8566,7 @@ Mercury Platinum dealer. Est. 1947.
     readTime: '9 min read',
     keywords: ['pleasure craft licence update', 'PCL repower Ontario', 'Transport Canada boat licence', 'update boat registration after repower', 'PCL rules 2026'],
     content: `
-# Pleasure Craft Licence Update During a Repower: What Ontario Boaters Need to Know in 2026
+# [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) Update During a Repower: What Ontario Boaters Need to Know in 2026
 
 ![Ontario PCL 2026 update changes after repower (HBW diagram)](/lovable-uploads/diagram-pcl-2026-changes.png)
 
@@ -8603,7 +8603,7 @@ The PCL is Transport Canada's identification number for your boat, the federal e
 
 A few important distinctions:
 - The PCL is tied to the hull (identified by the Hull Identification Number, or HIN). It stays with the boat, not the owner.
-- The Pleasure Craft Operator Card (PCOC) is your personal operator licence. These are two separate documents.
+- The [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) is your personal operator licence. These are two separate documents.
 - The PCL is not proof of ownership. It is an identification document.
 - Any pleasure craft with a motor totalling at least 10 hp (7.5 kW) operated principally in Canadian waters requires a PCL.
 
@@ -8779,7 +8779,7 @@ Once it comes off, options are:
 - **Private sale.** Sometimes a small running Evinrude has more value to a small-boat owner who needs a cheap motor than as a trade-in. We can advise.
 - **Parts donor.** Older Evinrudes have some value as parts donors.
 
-The Pleasure Craft Licence (PCL) needs to be updated when the motor changes. We handle the paperwork side for HBW customers.
+The [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) needs to be updated when the motor changes. We handle the paperwork side for HBW customers.
 
 ---
 
@@ -9782,7 +9782,7 @@ That affects motor selection in three specific ways:
 
 ## Cold Water Safety, A Note Worth Reading
 
-Lake Ontario's water stays cold well into summer and drops cold again early in fall. Transport Canada's guidance on cold-water immersion is clear: water below 15°C reduces cold shock survival time significantly, even for strong swimmers.
+Lake Ontario's water stays cold well into summer and drops cold again early in fall. [Transport Canada](https://tc.canada.ca/en)'s guidance on cold-water immersion is clear: water below 15°C reduces cold shock survival time significantly, even for strong swimmers.
 
 Dress for water temperature, not air temperature. Wear a PFD. File a float plan. These aren't formalities, they're the difference between a bad day and a tragedy. The lake doesn't negotiate.
 
@@ -11836,7 +11836,7 @@ Most pontoon customers walk out without Boost. We point them toward prop and tri
 
 ## FAQs
 
-**Is the Mercury Boost upgrade worth it for a 150 HP pontoon?** 
+**Is the [Mercury Boost upgrade](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) worth it for a 150 HP pontoon?** 
 For most 150 HP pontoon owners, the gains are real but modest, pontoon performance is constrained more by hull design, loading, and prop than by peak motor output. Boost makes more sense on lighter performance boats where small power changes are felt. On heavy family tritoons, most customers don't notice a meaningful difference.
 
 **What is Mercury Boost?** 
@@ -11941,7 +11941,7 @@ More often than not, the better upgrade is a prop and trim conversation, and tha
     keywords: ['mercury outboard pricing', 'mercury dealer transparency', 'boat motor prices ontario', 'mercury price online', 'harris boat works pricing'],
     content: `### Quick Answer
 
-Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. Mercury Marine does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
+Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. [Mercury Marine](https://www.mercurymarine.com/canada/en/) does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
 
 ---
 
@@ -12488,7 +12488,7 @@ Back at the shop:
 - Tighten any connections that loosened during sea trial
 - Document final configuration in service log
 - Complete Mercury warranty registration
-- Update Pleasure Craft Licence (PCL) paperwork, required by Transport Canada when the motor changes, often forgotten elsewhere
+- Update [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) paperwork, required by Transport Canada when the motor changes, often forgotten elsewhere
 - Print final documentation for customer
 
 #### Step 10: Pickup and Break-In Coaching, 30, 60 Minutes
@@ -13008,7 +13008,7 @@ Questions? Call **905-342-2153**. We answer the phone and we won't tell you what
 | 6 | Best Mercury Outboard for Lake Simcoe Walleye Fishing | best-mercury-outboard-lake-simcoe-walleye-fishing |
 | 7 | What's the Cheapest Mercury Outboard in Canada in 2026? | cheapest-mercury-outboard-canada-2026 |
 | 8 | Boat Hull Replacement vs. Repower, The Honest Decision | boat-hull-replacement-vs-repower-decision |
-| 9 | Mercury Boost Software Upgrade on a 150 HP Pontoon, Is It Worth It? | mercury-boost-upgrade-150hp-pontoon-analysis |
+| 9 | [Mercury Boost](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) Software Upgrade on a 150 HP Pontoon, Is It Worth It? | mercury-boost-upgrade-150hp-pontoon-analysis |
 | 10 | Mercury Outboard Rigging Costs Explained, Ontario 2026 | mercury-outboard-rigging-costs-ontario |
 | 11 | What Happens During a Mercury Repower, Step-by-Step Process | what-happens-during-mercury-repower |
 | 12 | Used Outboard Buying Guide for Ontario Boaters | used-outboard-buying-guide-ontario |`,
@@ -13051,7 +13051,7 @@ Questions? Call **905-342-2153**. We answer the phone and we won't tell you what
     keywords: ["Trent-Severn Waterway 2026 guide", "Trent-Severn free lockage 2026", "Canada Strong Pass boating", "Trent-Severn locks hours 2026", "Rice Lake Trent-Severn", "boating Trent-Severn for beginners"],
     content: `### Quick Answer
 
-The Trent-Severn Waterway is a 386-kilometre navigable system running from Trenton to Port Severn through 44 locks. In 2026, lockage is free under the Canada Strong Pass from June 19 to September 7. For a 20-foot boat, that is roughly $45 per day in fees not paid. Mooring at lockstations is still $1.50 per foot per night. Harris Boat Works sits on Rice Lake between Locks 18 and 19. Navigation season runs May 15 to October 12, 2026.
+The [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) is a 386-kilometre navigable system running from Trenton to Port Severn through 44 locks. In 2026, lockage is free under the Canada Strong Pass from June 19 to September 7. For a 20-foot boat, that is roughly $45 per day in fees not paid. Mooring at lockstations is still $1.50 per foot per night. Harris Boat Works sits on Rice Lake between Locks 18 and 19. Navigation season runs May 15 to October 12, 2026.
 
 **Verify all lock hours, fees, and program dates directly with Parks Canada before your trip, as these details are subject to change.**
 
@@ -13208,7 +13208,7 @@ Call 905-342-2153 before heading out if you need a slip or want to confirm fuel 
 ## FAQs
 
 **Do I need a special licence to lock through the Trent-Severn?** 
-No. You need a Pleasure Craft Operator Card (PCOC) and a valid Pleasure Craft Licence (PCL), the same requirements as any Ontario boating. No special lockage licence.
+No. You need a [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) and a valid [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL), the same requirements as any Ontario boating. No special lockage licence.
 
 **What changed for PCLs in 2026?** 
 Lifetime licences were converted to 5-year renewals at $24. If your PCL was previously lifetime and has not been renewed, check its status before the trip.
@@ -13545,7 +13545,7 @@ Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice
 
 **Crappie, perch, pike.** Mixed-bag panfish fishing is strong, especially for crappie in spring around brush and submerged wood structure.
 
-You need a valid Ontario fishing licence (Outdoor Card + fishing licence). HBW does not sell fishing licences, get yours online at ontario.ca/fishing or at a licence vendor before your trip.
+You need a valid [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) (Outdoor Card + fishing licence). HBW does not sell fishing licences, get yours online at ontario.ca/fishing or at a licence vendor before your trip.
 
 ---
 
@@ -13591,9 +13591,9 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **PFDs.** One per person, accessible, and at least one is a wearable Type III. Required by Transport Canada.
 
-**Pleasure Craft Licence (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. The 2026 PCL changes converted lifetime licences to 5-year renewals at $24. Check your PCL is current before you launch.
+**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. The 2026 PCL changes converted lifetime licences to 5-year renewals at $24. Check your PCL is current before you launch.
 
-**Pleasure Craft Operator Card (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
+**[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
 
 **Required safety equipment.** Sound-signaling device (whistle or horn), bailer, paddle, anchor, navigation lights for sunset operation. Transport Canada publishes the full list, and CO2-charged life jackets count as PFDs.
 
@@ -13954,7 +13954,7 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
     readTime: '9 min read',
     keywords: ["Mercury VesselView SmartCraft guide", "Mercury Marine App", "SmartCraft Connect installation", "Active Trim Mercury", "Digital Throttle and Shift", "VesselView Mobile replacement"],
     content: `
-# Mercury VesselView, SmartCraft, and the New Mercury Marine App. A Plain-English Guide
+# Mercury VesselView, SmartCraft, and the New [Mercury Marine](https://www.mercurymarine.com/canada/en/) App. A Plain-English Guide
 
 *Last reviewed: 2026-05-07*
 
@@ -14290,7 +14290,7 @@ This whole exercise, for a private buyer about to spend $4,000 to $14,000 on a u
 If the bracket plate is gone and the freeze-plug stamp is unreadable:
 
 - **Check service receipts**, any prior service work would have referenced the serial.
-- **Check the boat's Pleasure Craft Licence**, sometimes the serial was recorded.
+- **Check the boat's [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)**, sometimes the serial was recorded.
 - **Check insurance documents**, same.
 - **Bring it to us**, we can sometimes identify the motor from the casting numbers and other markings, but this is detective work, not a quick lookup.
 - **Worst case**, we can pressure-test, compression-test, and document the actual current condition without the serial. It's a less complete picture, but it's something.
@@ -14992,11 +14992,11 @@ Mercury's 20/100/300 schedule applies in Ontario, with the **annual trigger** be
 
 ---
 
-## 6. Pleasure Craft Licence (PCL)
+## 6. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)
 
 [Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. New and renewed PCLs are **5-year licences at $24 CAD**, issued and renewed online through Transport Canada's PCL portal (existing lifetime PCLs are gradually being replaced). Amortized: **$5/year**.
 
-PCOC (operator card) is a one-time test, lifetime card. ~$50 once, never again.
+[PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (operator card) is a one-time test, lifetime card. ~$50 once, never again.
 
 This category used to be near-zero. It's still essentially negligible.
 
@@ -15138,7 +15138,7 @@ A few facts that matter:
 
 - **Legend is a Canadian company** headquartered in Whitefish, Ontario, near Sudbury. Boats are designed by Canadians for Canadian boating conditions.
 - **Sells exclusively in Canada.** Legend isn't trying to be a global brand, every model is sized, equipped, and warrantied for Canadian buyers.
-- **Mercury Marine is Legend's exclusive engine partner.** Every Legend ships with a Mercury outboard, eligible for Mercury's standard 3-year warranty (extendable to 8 years).
+- **[Mercury Marine](https://www.mercurymarine.com/canada/en/) is Legend's exclusive engine partner.** Every Legend ships with a Mercury outboard, eligible for Mercury's standard 3-year warranty (extendable to 8 years).
 - **6-Year WOWranty** on Legend boat components, **Leakproof for Life** hull warranty (transferable up to 10 years), and a **Lifetime Floor Warranty.**
 - **All-In Pricing** in Ontario includes freight, prep, and most essential equipment. The number on the page is close to the number that drives away.
 
@@ -15439,7 +15439,7 @@ The owner's manual has the full list. The ones we see most often in our shop:
 
 **The dealer network.** Every authorized Mercury dealer in Canada honours warranty work, regardless of where the motor was purchased. So if you buy in Ontario and move to BC, your warranty doesn't lapse, but the closest dealer is now four provinces away, and warranty work needs to be done at an authorized dealer.
 
-**Cross-border purchases.** Mercury motors imported privately from the US **do NOT have Canadian warranty coverage.** This catches buyers who think they're getting a deal at a US dealer. Mercury Canada and Mercury USA are separate warranty entities, a US-purchased motor has US coverage only, and that coverage doesn't apply at Canadian dealers. If you're tempted, do the math including the lifetime cost of out-of-warranty repairs.
+**Cross-border purchases.** Mercury motors imported privately from the US **do NOT have Canadian warranty coverage.** This catches buyers who think they're getting a deal at a US dealer. [Mercury Canada](https://www.mercurymarine.com/canada/en/) and Mercury USA are separate warranty entities, a US-purchased motor has US coverage only, and that coverage doesn't apply at Canadian dealers. If you're tempted, do the math including the lifetime cost of out-of-warranty repairs.
 
 **The HST/GST factor.** When you buy MPP at the same time as a new motor, the MPP cost gets bundled into the original sale total, which means you pay HST on the MPP. Some customers split the purchases (buy the motor first, MPP a few months later) to spread the tax hit. The trade-off: Mercury sometimes runs MPP promotions that are only available at point-of-sale, so splitting can cost you a discount. Ask your dealer about current promos before deciding.
 
@@ -15766,7 +15766,7 @@ The trip makes sense for: **repowers**, **major motor purchases ($15K+)**, **boa
 Customers from the GTA who make the drive often combine it with:
 
 - **A Rice Lake fishing day**, we have a [comprehensive Rice Lake guide](/blog/rice-lake-boating-guide-2026) covering launches, hazards, fish species
-- **A Trent-Severn Waterway day**, we sit on the TSW; June-September lockage is free in 2026 (Canada Strong Pass). [Trent-Severn 2026 guide](/blog/trent-severn-waterway-boating-guide-2026)
+- **A [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) day**, we sit on the TSW; June-September lockage is free in 2026 (Canada Strong Pass). [Trent-Severn 2026 guide](/blog/trent-severn-waterway-boating-guide-2026)
 - **Boat rentals**, try a Mercury-powered rental for the day before committing to a purchase ([rental info](https://harrisboatworks.ca/rentals))
 - **Lunch in Bewdley**. Lakeview Restaurant, a 5-minute drive from us, is on the water
 
@@ -15853,7 +15853,7 @@ Harris Boat Works has been a Mercury dealer since 1965, third-generation family 
 
 ## The Mercury Dealer Tier System (What Actually Matters)
 
-Mercury Marine ranks its dealers in a three-tier certification system. The tiers determine:
+[Mercury Marine](https://www.mercurymarine.com/canada/en/) ranks its dealers in a three-tier certification system. The tiers determine:
 
 - **What service work the dealer is qualified to do** (warranty, complex repairs, specific motor families)
 - **Diagnostic equipment the dealer has access to** (G3 software is dealer-only, $3,000+ kit)
@@ -16571,9 +16571,9 @@ Each rental includes:
 - **Restroom + ice / snacks** at the marina before you leave
 
 What you bring:
-- **Valid Pleasure Craft Operator Card (PCOC)**, required to operate a motorized boat in Canada unless a rental-specific safety checklist applies. If you do not have one, ask before booking so there are no surprises at the dock. A full PCOC is valid for life once earned; course/test pricing varies by approved provider.
+- **Valid [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC)**, required to operate a motorized boat in Canada unless a rental-specific safety checklist applies. If you do not have one, ask before booking so there are no surprises at the dock. A full PCOC is valid for life once earned; course/test pricing varies by approved provider.
 - **Sunscreen, hats, water, snacks**
-- **Fishing gear and licence if fishing.** Ontario fishing licence fees depend on residency, licence type, and duration. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST. Check ontario.ca before your trip because licence rules and fees can change.
+- **Fishing gear and licence if fishing.** [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) fees depend on residency, licence type, and duration. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST. Check ontario.ca before your trip because licence rules and fees can change.
 - **Cooler and refreshments** for the day
 
 What's NOT included:
@@ -17021,7 +17021,7 @@ Through the 1950s and early 1960s, outboards started taking over. Light, easier 
 
 ## Becoming a Mercury Dealer, 1965
 
-In 1965, Mercury Marine was the rising power in outboards. Carl Kiekhaefer's company growing fast, building motors that were lighter and more reliable than the competition. Becoming a Mercury dealer in 1965 meant signing on to a relationship that's now in its 60th year.
+In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the rising power in outboards. Carl Kiekhaefer's company growing fast, building motors that were lighter and more reliable than the competition. Becoming a Mercury dealer in 1965 meant signing on to a relationship that's now in its 60th year.
 
 **Why Mercury, then and now:**
 
@@ -17912,7 +17912,7 @@ Save or print this. Four minutes at the driveway beats an hour on the shoulder o
 
 ## What Ontario Law Says About Your Trailer
 
-A quick reference. Regulations change, verify current requirements with the [MTO Driver's Handbook](https://www.ontario.ca/document/official-mto-drivers-handbook/towing) or ServiceOntario before relying on this summary.
+A quick reference. Regulations change, verify current requirements with the [MTO Driver's Handbook](https://www.ontario.ca/document/official-mto-drivers-handbook/towing) or [ServiceOntario](https://www.ontario.ca/page/serviceontario) before relying on this summary.
 
 **Trailer plate requirements:** All trailers on Ontario public roads must be registered and plated separately from the tow vehicle. Ontario treats trailers as separate vehicles. Registration is a one-time fee (around $72 for original plate and permit). See [ontario.ca/page/register-trailer](https://www.ontario.ca/page/register-trailer) for the full document list.
 
@@ -19353,7 +19353,7 @@ Here is what motor-only pricing usually does not include: HST (13% in Ontario), 
 
 Mercury sets a Manufacturer's Suggested Retail Price (MSRP) for every model. Dealer selling prices are at or below that number. We publish both side by side: what Mercury says it's worth, and what we actually charge.
 
-Discounts at Harris Boat Works typically run 5, 12% off MSRP depending on the model and any active Mercury Canada promotions. Some dealers post MSRP and call it a "price." We don't.
+Discounts at Harris Boat Works typically run 5, 12% off MSRP depending on the model and any active [Mercury Canada](https://www.mercurymarine.com/canada/en/) promotions. Some dealers post MSRP and call it a "price." We don't.
 
 ---
 
@@ -19709,7 +19709,7 @@ Controls $1,000 + power-assist hydraulic $3,200 + VesselView 7 $1,400 + dual bat
 
 ## What HBW Includes vs. Charges Separately
 
-**Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, 20-hour service reminder, Mercury Canada warranty registration.
+**Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, 20-hour service reminder, [Mercury Canada](https://www.mercurymarine.com/canada/en/) warranty registration.
 
 **Quoted as separate line items:** Control box, steering system, gauges or VesselView, battery and battery system, prop, old motor removal and disposal (typically CAD $200, $400).
 
@@ -20439,7 +20439,7 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 
 ## Boost Upgrade Eligibility
 
-Mercury Boost is a paid software upgrade that improves mid-range acceleration on compatible motors. SmartCraft Connect lets you check eligibility directly from the app. As of 2026, Boost is available on select Mercury FourStroke and Pro XS models, eligibility is motor-by-motor by serial number. The app gives a definitive answer in seconds.
+[Mercury Boost](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) is a paid software upgrade that improves mid-range acceleration on compatible motors. SmartCraft Connect lets you check eligibility directly from the app. As of 2026, Boost is available on select Mercury FourStroke and Pro XS models, eligibility is motor-by-motor by serial number. The app gives a definitive answer in seconds.
 
 You do not need SmartCraft Connect to buy Boost, HBW can also check eligibility using diagnostic tools. SmartCraft Connect makes it self-serve.
 
@@ -20709,7 +20709,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
     ],
     content: `## Quick Answer
 
-Rice Lake has four main public boat launch options: Bewdley (west end), Roseneath (south shore), Gores Landing (HBW's location, south shore), and Hastings (east end, Trent-Severn entrance). Each has different facilities, parking, and seasonal access. HBW's Gores Landing ramp is 2-lane concrete with parking and washrooms; day fees apply. Pleasure Craft Licence (PCL) and Pleasure Craft Operator Card (PCOC) are required for powered boats.
+Rice Lake has four main public boat launch options: Bewdley (west end), Roseneath (south shore), Gores Landing (HBW's location, south shore), and Hastings (east end, Trent-Severn entrance). Each has different facilities, parking, and seasonal access. HBW's Gores Landing ramp is 2-lane concrete with parking and washrooms; day fees apply. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) and [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) are required for powered boats.
 
 ---
 
@@ -20827,7 +20827,7 @@ This makes the multi-day Trent-Severn trip much more accessible. See [Trent-Seve
 
 ## Fishing Regulations and Licences
 
-You need a valid Ontario fishing licence to fish on Rice Lake or anywhere else in Ontario:
+You need a valid [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) to fish on Rice Lake or anywhere else in Ontario:
 
 - Outdoor Card (one-time purchase)
 - Fishing licence (annual or short-term)
@@ -21049,7 +21049,7 @@ The motor recommends 87 octane with up to 10% ethanol. Ethanol-free fuel will ru
 - Mercury SmartCraft Connect Guide Ontario
 - Mercury Controls & Rigging Guide Ontario
 - Walleye Opener Boat Prep Checklist
-- Trent-Severn Waterway Boating Guide 2026
+- [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
 
 ## CTA
 
@@ -21549,7 +21549,7 @@ Call us at 905-342-2153. Some hulls have specific configurations that matter, ye
 Yes. Same logic applies: if Command Thrust makes sense for your hull, the 90 CT is the better long-term value.
 
 **Is the 75 HP significantly cheaper than the 90?** 
-Not significantly. The exact figures vary with Mercury Canada pricing, but it's not the kind of gap that should drive the decision for most buyers.
+Not significantly. The exact figures vary with [Mercury Canada](https://www.mercurymarine.com/canada/en/) pricing, but it's not the kind of gap that should drive the decision for most buyers.
 
 ---
 
@@ -24277,7 +24277,7 @@ Phone: 905-342-2153
 
 **Title:** Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너 완벽 매뉴얼 
 **Meta Title:** Mercury 선외기 겨울 보관 가이드 | Harris Boat Works 온타리오 
-**Meta Description:** 온타리오의 혹독한 겨울로부터 Mercury 선외기를 보호하는 6단계 겨울 정비 가이드. 해리스 보트웍스(Harris Boat Works), Mercury Marine 플래티넘 딜러. 
+**Meta Description:** 온타리오의 혹독한 겨울로부터 Mercury 선외기를 보호하는 6단계 겨울 정비 가이드. 해리스 보트웍스(Harris Boat Works), [Mercury Marine](https://www.mercurymarine.com/canada/en/) 플래티넘 딜러. 
 **Slug:** ko/mercury-outboard-winterization-guide 
 **Language:** Korean (한국어) 
 
@@ -24779,7 +24779,7 @@ Cost factors:
 - **Engine HP** — over 150 HP increases premium meaningfully
 - **Where you boat** — Lake Ontario (open water, weather risk) costs more than inland lakes like Rice Lake
 - **Claim history** — clean record gets best rates
-- **Operator experience** — PCOC alone is minimum; documented experience helps
+- **Operator experience** — [PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) alone is minimum; documented experience helps
 - **Storage location** — indoor storage discounts are real
 
 ## Who Insures Boats in Ontario?
@@ -24878,7 +24878,7 @@ item5Value: 10% off
 item5Note: We're a Mercury Marine Platinum dealer. Customers who purchased the motor from HBW get 10% off the published Mercury Product Protection price.
 totalLabel: Reality check
 totalValue: Coverage costs less than one bad day
-caveat: Pricing is illustrative and subject to Mercury Marine's current rate sheet. Coverage terms vary by motor model year. For a real quote against your serial number, call (905) 342-2153 or use /quote.
+caveat: Pricing is illustrative and subject to [Mercury Marine](https://www.mercurymarine.com/canada/en/)'s current rate sheet. Coverage terms vary by motor model year. For a real quote against your serial number, call (905) 342-2153 or use /quote.
 ::
 
 ::pull-quote
@@ -25175,7 +25175,7 @@ The drive is Highway 401 east to Exit 461 (Port Hope), then about 15 minutes nor
 A few things worth knowing if you're new to Rice Lake:
 
 - It's a warm, shallow, multi-species fishery, walleye, bass, muskie, perch, panfish.
-- It's part of the Trent-Severn Waterway system but you don't have to navigate locks to get on the water from Gores Landing. Drop in, run the lake.
+- It's part of the [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) system but you don't have to navigate locks to get on the water from Gores Landing. Drop in, run the lake.
 - It runs east-west, roughly 30 km long, with several islands and a long south shore lined with cottages.
 - It's east of Peterborough and north of Cobourg, family-friendly, and historically a summer destination for GTA families since the 1800s.
 - The lake freezes hard most winters. Ice fishing is a real season here.
@@ -25539,7 +25539,7 @@ The more we know before you arrive, the faster drop-off goes. A 10-minute phone 
 - Boat title or registration (especially for first visits)
 - Any prior service records
 - Keys. Lots of customers leave keys at home. The boat isn't going far without you, but we can't move it in the yard without them.
-- PCL (Pleasure Craft Licence) sticker visible on the hull
+- PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)) sticker visible on the hull
 
 ---
 
