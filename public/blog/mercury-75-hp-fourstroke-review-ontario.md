@@ -147,7 +147,7 @@ Call us at 905-342-2153. Some hulls have specific configurations that matter, ye
 Yes. Same logic applies: if Command Thrust makes sense for your hull, the 90 CT is the better long-term value.
 
 **Is the 75 HP significantly cheaper than the 90?** 
-Not significantly. The exact figures vary with Mercury Canada pricing, but it's not the kind of gap that should drive the decision for most buyers.
+Not significantly. The exact figures vary with [Mercury Canada](https://www.mercurymarine.com/canada/en/) pricing, but it's not the kind of gap that should drive the decision for most buyers.
 
 ---
 

@@ -125,7 +125,7 @@ Sensor diagnosis requires dealer tools to read temperature sensor values against
 
 ## Ontario Context: Why Idle Overheating Shows Up More in Summer
 
-Ontario boating involves a lot of slow-speed running: navigating marinas and launch ramps, no-wake zones, trolling on Rice Lake and the Kawarthas, idling while waiting for a lock on the Trent-Severn.
+Ontario boating involves a lot of slow-speed running: navigating marinas and launch ramps, no-wake zones, trolling on Rice Lake and the Kawarthas, idling while waiting for a lock on the [Trent-Severn](https://parks.canada.ca/lhn-nhs/on/trentsevern).
 
 A motor with a marginal impeller can go an entire season of mostly high-speed running without triggering an alarm, and then the first time you spend 20 minutes in a no-wake zone, the alarm sounds. The motor wasn't fine before; it was just masking the problem at speed.
 
@@ -145,6 +145,26 @@ After any overheating event, have the motor inspected before the next run. Heat 
 For engine repairs, we only service Mercury and Mercruiser.
 
 Book at [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+## What we see at HBW
+
+Rice Lake's central basin is thick with stumps and milfoil in late July. The number-one overheating call we get in August is a clogged water intake from weeds, not a failed impeller. Boater hits 70 km/h, sucks up a wad of weed, the alarm goes off, panic sets in.
+
+The actual fix at the shop, after the impeller test, is usually a five-minute hose-and-pick clean of the intake screen. If the alarm has been on for more than a minute or two, we pressure-test the powerhead before sign-off. Heat damage compounds fast on Pro XS V8 powerheads.
+
+---
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check](/blog/mercury-outboard-beeping-codes-guide)
+- [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips)
 
 ---
 

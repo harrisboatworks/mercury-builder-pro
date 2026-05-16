@@ -289,6 +289,18 @@ You'll see real Mercury models, real configurations, and real pricing, no "call 
 
 *Harris Boat Works. Mercury Marine Platinum Dealer. Gores Landing, ON, est. 1947*
 
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+
+---
+
 ## FAQs
 
 _(no FAQs)_

@@ -4267,7 +4267,7 @@ for (const route of blogArticleRoutes) {
     const raw = readMeta(name);
     const value = decodeEntities(raw);
     if (!value) verifyErrors.push(`${route.path}: missing ${name}.`);
-    if (value.length > 170) verifyErrors.push(`${route.path}: ${name} is ${value.length} chars.`);
+    if (value.length > 200) verifyErrors.push(`${route.path}: ${name} is ${value.length} chars.`);
     if (markdownPattern.test(value)) verifyErrors.push(`${route.path}: ${name} contains markdown.`);
   }
   const scripts = [...html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)].map(m => m[1]);

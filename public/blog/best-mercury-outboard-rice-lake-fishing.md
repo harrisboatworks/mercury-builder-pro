@@ -49,7 +49,7 @@ Rice Lake is a specific lake with specific characteristics. Generic "what outboa
 
 **Public ramp access.** Bewdley, Hastings, Roseneath, and HBW's Gores Landing ramp are the main access points. Motor and boat selection should account for trailer size, parking constraints, and ramp slope at the launch you use most.
 
-**Trent-Severn access.** The east end of Rice Lake connects to the Trent-Severn Waterway. Boats that travel the system need reliable mid-range cruise performance for the lock-to-lock runs.
+**Trent-Severn access.** The east end of Rice Lake connects to the [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern). Boats that travel the system need reliable mid-range cruise performance for the lock-to-lock runs.
 
 ---
 

@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-# Pleasure Craft Licence Update During a Repower: What Ontario Boaters Need to Know in 2026
+# [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) Update During a Repower: What Ontario Boaters Need to Know in 2026
 
 ![Ontario PCL 2026 update changes after repower (HBW diagram)](/lovable-uploads/diagram-pcl-2026-changes.png)
 
@@ -66,7 +66,7 @@ The PCL is Transport Canada's identification number for your boat, the federal e
 
 A few important distinctions:
 - The PCL is tied to the hull (identified by the Hull Identification Number, or HIN). It stays with the boat, not the owner.
-- The Pleasure Craft Operator Card (PCOC) is your personal operator licence. These are two separate documents.
+- The [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) is your personal operator licence. These are two separate documents.
 - The PCL is not proof of ownership. It is an identification document.
 - Any pleasure craft with a motor totalling at least 10 hp (7.5 kW) operated principally in Canadian waters requires a PCL.
 

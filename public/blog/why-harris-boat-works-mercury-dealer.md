@@ -89,7 +89,7 @@ Ontario freshwater has its own rhythm: ice-out, spring prep, the long summer on 
 2. **Use-case driven motor selection.** What you do with the boat matters as much as the hull rating.
 3. **Transparent installed pricing.** Live pricing is at mercuryrepower.ca. Motor, rigging, prop, install, all of it.
 4. **Sea trial and prop confirmation.** We do not hand you the keys in the parking lot.
-5. **PCL update.** If the HP class changes, your Pleasure Craft Licence needs to be updated. We handle that as part of the project.
+5. **PCL update.** If the HP class changes, your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) needs to be updated. We handle that as part of the project.
 6. **Warranty registration and service log.** Documented from day one, which matters if you ever sell the boat.
 
 We also evaluate trade-ins on old motors, working or not. Even a dead motor has value in aluminum and parts.

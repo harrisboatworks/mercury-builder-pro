@@ -161,6 +161,18 @@ This information cuts diagnostic time significantly.
 
 ---
 
+---
+
+## Related at HBW
+
+The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips)
+- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule)
+
+---
+
 ## Frequently Asked Questions
 
 **Does every Mercury motor use the same beep patterns?** 

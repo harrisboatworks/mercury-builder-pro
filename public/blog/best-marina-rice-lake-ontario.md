@@ -147,7 +147,7 @@ The drive is Highway 401 east to Exit 461 (Port Hope), then about 15 minutes nor
 A few things worth knowing if you're new to Rice Lake:
 
 - It's a warm, shallow, multi-species fishery, walleye, bass, muskie, perch, panfish.
-- It's part of the Trent-Severn Waterway system but you don't have to navigate locks to get on the water from Gores Landing. Drop in, run the lake.
+- It's part of the [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) system but you don't have to navigate locks to get on the water from Gores Landing. Drop in, run the lake.
 - It runs east-west, roughly 30 km long, with several islands and a long south shore lined with cottages.
 - It's east of Peterborough and north of Cobourg, family-friendly, and historically a summer destination for GTA families since the 1800s.
 - The lake freezes hard most winters. Ice fishing is a real season here.
@@ -162,6 +162,13 @@ Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 Mercury Marine Platinum Dealer. Established 1947.
 Full marina home page: [harrisboatworks.ca](https://www.harrisboatworks.ca).
+
+## What we see at HBW
+
+We have been on this stretch of the south shore since 1947. Three generations of the same family running it. The customers we see most often: GTA boaters who drove out for the day, Kawartha cottagers who keep their boat on a trailer, and Mercury repower customers from across south-central Ontario who came specifically for Platinum-level certification.
+
+What sets us apart is not fancy amenities. It is the depth on the service side: Mercury Marine Platinum dealer, certified techs, and the parts-counter relationship that lets us source bizarre 1990s Mercruiser parts in a day or two when the customer needs them.
+
 ---
 
 ## FAQs

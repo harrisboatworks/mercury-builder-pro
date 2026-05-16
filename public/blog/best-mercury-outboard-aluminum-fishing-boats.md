@@ -155,6 +155,16 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca), real pricing in
 
 ---
 
+---
+
+## What we see at HBW
+
+The sweet spot for aluminum fishing boats 14-17 feet is the Mercury 25-60 HP FourStroke. Lightweight tinny + small Mercury is the most common rig in our service bay. The 60 EFI Command Thrust is our top recommendation for 17-footers carrying 3-4 people and gear.
+
+Anything over 75 HP on a sub-17-foot aluminum hull usually exceeds the boat's max HP plate. Always check the capacity plate before quoting the repower -- the most common rejection at the shop is "owner wants a 90 on a hull rated for 60."
+
+---
+
 ## FAQ
 
 **What's the best Mercury for a 16-foot aluminum fishing boat?**

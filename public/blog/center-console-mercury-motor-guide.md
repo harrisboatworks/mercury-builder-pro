@@ -180,6 +180,18 @@ Pickup is at Gores Landing. That is not a downside, it means your motor was rigg
 
 *Last reviewed: 2026-05-11.*
 
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)](/blog/best-mercury-for-family-runabouts)
+- [Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use](/blog/pontoon-hp-sizing-decision-tree-ontario)
+
+---
+
 ## FAQs
 
 ### What Mercury motor fits a 20 to 22 ft center console in Ontario?

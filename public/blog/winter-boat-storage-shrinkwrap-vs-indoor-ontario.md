@@ -247,6 +247,15 @@ We've stored boats in Gores Landing for three generations. Mercury Marine Platin
 ---
 
 If you're shopping for storage locations beyond shrinkwrap details, our [Kawartha Lakes storage overview](/blog/boat-storage-kawartha-lakes) covers options across Rice Lake and the broader region.
+---
+
+## What we see at HBW
+
+We've been shrinkwrapping boats on the south shore of Rice Lake for decades. Most years we wrap 300-400 boats between October and mid-November. The customers who pay the indoor-storage premium at other facilities are usually offshore fiberglass owners ($75K+ boats) or commercial guides. For the typical aluminum fishing rig or 19-foot pontoon, outdoor shrinkwrap is the smart spend.
+
+What separates a good shrinkwrap job from a bad one: tying the tarp to a frame, not just to the gunwales. Snow load splits ungo unframed wraps by January every year. We frame every wrap.
+
+---
 
 ## FAQs
 

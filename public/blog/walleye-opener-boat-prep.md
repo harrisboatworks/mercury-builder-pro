@@ -66,8 +66,8 @@ Five factors affect how thorough your opener prep needs to be:
 - Confirm spring commissioning is complete. If it is not, book it now. Service slots fill in May.
 - Schedule any final service at [hbw.wiki/service](https://hbw.wiki/service) if needed.
 - Check your fishing licence is valid for the new season. Renew online if not.
-- Confirm your Pleasure Craft Operator Card (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
-- Confirm your Pleasure Craft Licence (PCL) is displayed on the bow and current. Renewals are now $24 for five years. Without it, an OPP marine patrol will ticket you.
+- Confirm your [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
+- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) is displayed on the bow and current. Renewals are now $24 for five years. Without it, an OPP marine patrol will ticket you.
 
 ### One Week Before Opener
 
@@ -172,7 +172,7 @@ For Rice Lake and local Kawartha customers, yes. Contact us to arrange hauling a
 - Spring Outboard Commissioning Checklist
 - Mercury 9.9 EFI Review, kicker options
 - Mercury Outboard Won't Start Troubleshooting
-- Trent-Severn Waterway Boating Guide 2026
+- [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
 
 ## CTA
 

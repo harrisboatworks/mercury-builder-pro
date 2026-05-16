@@ -160,7 +160,7 @@ Controls $1,000 + power-assist hydraulic $3,200 + VesselView 7 $1,400 + dual bat
 
 ## What HBW Includes vs. Charges Separately
 
-**Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, 20-hour service reminder, Mercury Canada warranty registration.
+**Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, 20-hour service reminder, [Mercury Canada](https://www.mercurymarine.com/canada/en/) warranty registration.
 
 **Quoted as separate line items:** Control box, steering system, gauges or VesselView, battery and battery system, prop, old motor removal and disposal (typically CAD $200, $400).
 
@@ -177,6 +177,24 @@ For engine repairs, we only service Mercury and Mercruiser.
 3. **Underspeccing steering on a V6.** Cable steering on 150 HP technically works. After three hours, you know it is wrong.
 4. **Picking prop pitch by guessing.** Wrong pitch is the most common reason a "perfectly good motor" feels slow.
 5. **Single battery on a boat with electronics.** A single battery running chartplotter, fishfinder, stereo, and starter can leave you stranded.
+
+---
+
+## What we see at HBW
+
+Pricing in our quote book moves three or four times a year. Mercury Canada bulletins drive most of it, and dealer programs (Spring Boost, Buy-and-Win, etc.) layer on top. The number a customer sees on a competitor's website is usually MSRP without HST, without controls, without rigging, without install, and without prop. Half our first conversations are clarifying what is actually included.
+
+Real installed cost on a 90 FourStroke on a fishing boat with existing controls usually lands $11,500 to $13,500 all-in. Same motor on a pontoon getting a SmartCraft display and a new prop ends up $13,500 to $15,500. We quote the installed number, not the box-only number.
+
+---
+
+---
+
+## What we see at HBW
+
+The controls-and-rigging audit is the first thing we do on every repower quote. 6 out of 10 motors that look "fine to keep the existing controls" actually need new cables, new shift linkage, or a fresh harness. Skipping the audit and quoting "drop-in install" is how customers end up with surprise add-ons mid-job.
+
+The exception: identical replacement (e.g., 60 EFI for a 60 EFI). Carbon-copy swaps re-use existing rigging cleanly. Anything jumping HP class or family triggers the full audit.
 
 ---
 

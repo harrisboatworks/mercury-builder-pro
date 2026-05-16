@@ -150,7 +150,7 @@ The owner's manual has the full list. The ones we see most often in our shop:
 
 **The dealer network.** Every authorized Mercury dealer in Canada honours warranty work, regardless of where the motor was purchased. So if you buy in Ontario and move to BC, your warranty doesn't lapse, but the closest dealer is now four provinces away, and warranty work needs to be done at an authorized dealer.
 
-**Cross-border purchases.** Mercury motors imported privately from the US **do NOT have Canadian warranty coverage.** This catches buyers who think they're getting a deal at a US dealer. Mercury Canada and Mercury USA are separate warranty entities, a US-purchased motor has US coverage only, and that coverage doesn't apply at Canadian dealers. If you're tempted, do the math including the lifetime cost of out-of-warranty repairs.
+**Cross-border purchases.** Mercury motors imported privately from the US **do NOT have Canadian warranty coverage.** This catches buyers who think they're getting a deal at a US dealer. [Mercury Canada](https://www.mercurymarine.com/canada/en/) and Mercury USA are separate warranty entities, a US-purchased motor has US coverage only, and that coverage doesn't apply at Canadian dealers. If you're tempted, do the math including the lifetime cost of out-of-warranty repairs.
 
 **The HST/GST factor.** When you buy MPP at the same time as a new motor, the MPP cost gets bundled into the original sale total, which means you pay HST on the MPP. Some customers split the purchases (buy the motor first, MPP a few months later) to spread the tax hit. The trade-off: Mercury sometimes runs MPP promotions that are only available at point-of-sale, so splitting can cost you a discount. Ask your dealer about current promos before deciding.
 
@@ -176,6 +176,15 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **New Mercury quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+---
+
+## What we see at HBW
+
+The most common warranty mistake we see at our shop: the customer buys a Mercury at a non-authorized dealer, has it installed by a generic marine tech, then comes to us when something goes wrong. Mercury Canada will honor the limited warranty but only if the install paperwork, dealer authorization, and 20-hour service are on file. Often they aren't.
+
+We push customers toward Platinum dealer service because the install + first service get logged with Mercury Canada at the moment of completion. That paper trail is the difference between a 60-day warranty fight and a 1-day approval.
+
+---
 
 ## FAQs
 

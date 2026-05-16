@@ -140,6 +140,16 @@ The walk-around is free. The findings determine where in the range your quote la
 
 ---
 
+---
+
+## What we see at HBW
+
+Rigging costs depend almost entirely on what's on the boat now. If existing controls match the new motor's connector type, rigging adds $400-800. If we're upgrading to digital throttle, swapping harnesses, or replacing throttle/shift cables, the rigging bill can hit $2-4K.
+
+The hidden cost: SmartCraft display. Most repower customers want the data screen, which adds $1,200-2,000 with install. Optional but worth it for fuel-burn and engine-data visibility. We don't push it unless the customer asks.
+
+---
+
 ## FAQs
 
 **What is included in Mercury outboard rigging?** 

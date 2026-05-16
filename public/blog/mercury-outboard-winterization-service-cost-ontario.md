@@ -124,6 +124,18 @@ Beyond core winterization, shrinkwrap, and storage:
 
 If you want a phone call first: **(905) 342-2153**. Or text **(647) 952-2153**.
 
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide)
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist)
+
+---
+
 ## FAQs
 
 ### How much does Mercury outboard winterization cost in Ontario?

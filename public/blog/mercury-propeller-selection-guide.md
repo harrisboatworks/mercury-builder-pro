@@ -174,6 +174,16 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) with prop includ
 
 ---
 
+---
+
+## What we see at HBW
+
+90% of "my boat feels slow" or "won't get on plane" callbacks at our shop are prop, not powerhead. The customer bought an off-brand prop online or kept the original prop after a horsepower bump.
+
+The other common one: pitch is wrong for the load. A 4-blade Enertia that ran great on a clean boat at 2,000 lbs feels sluggish once you add 600 lbs of gear, fuel, and passengers. Drop one pitch and the same prop runs perfect. Easier to test pitches than guess.
+
+---
+
 ## FAQ
 
 **Why does prop selection matter so much?**

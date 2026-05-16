@@ -179,6 +179,18 @@ Call 905-342-2153 or text 647-952-2153. If a repower isn't right, we'll say so. 
 
 ---
 
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower)
+- [Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower)
+
+---
+
 ## Frequently Asked Questions
 
 **How much does a typical repower cost in Ontario?** 

@@ -152,7 +152,7 @@ Back at the shop:
 - Tighten any connections that loosened during sea trial
 - Document final configuration in service log
 - Complete Mercury warranty registration
-- Update Pleasure Craft Licence (PCL) paperwork, required by Transport Canada when the motor changes, often forgotten elsewhere
+- Update [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) paperwork, required by Transport Canada when the motor changes, often forgotten elsewhere
 - Print final documentation for customer
 
 #### Step 10: Pickup and Break-In Coaching, 30, 60 Minutes
@@ -175,6 +175,18 @@ Customer drives away with a new Mercury, full documentation, and a clear picture
 **Transom inspection during install.** Some shops bolt a new motor to a transom they didn't inspect. We inspect every transom with the motor off. This is where problems hide.
 
 **Sea trial with prop testing before delivery.** Some shops install the motor and tell the customer to come back if something doesn't feel right. We test on the water and confirm the prop is correct before you leave.
+
+---
+
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower)
+- [Evinrude to Mercury Repower in Ontario (2026 Guide)](/blog/evinrude-to-mercury-repower-ontario-guide)
 
 ---
 

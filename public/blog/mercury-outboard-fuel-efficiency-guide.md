@@ -136,6 +136,16 @@ Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or 
 
 ---
 
+---
+
+## What we see at HBW
+
+Fuel economy on a Mercury depends on three things: prop, RPM, and load. A correctly-propped FourStroke 90 on a 17-foot aluminum runs about 5-6 nautical mph per gallon at 3500-4000 RPM. Same motor over-propped runs 3-4 mpg at the same speed. Big difference.
+
+The most common fuel-economy callback at our shop is a 4-blade prop running the motor under its RPM band. Drop pitch by one or switch to a 3-blade and the WOT comes up to spec; fuel burn drops by 15-25%.
+
+---
+
 ## Frequently Asked Questions
 
 **Does a bigger motor always burn more fuel?** 

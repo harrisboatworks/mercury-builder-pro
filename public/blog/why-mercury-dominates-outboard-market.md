@@ -40,7 +40,7 @@ Harris Boat Works has sold Mercury exclusively since 1965. We are not a neutral 
 
 ## What "established North American presence" means in practice
 
-Mercury Marine is one of the leading outboard manufacturers in the world by volume. In Canada, that translates to more dealerships, more certified technicians, and deeper parts supply chains than any other outboard brand.
+[Mercury Marine](https://www.mercurymarine.com/canada/en/) is one of the leading outboard manufacturers in the world by volume. In Canada, that translates to more dealerships, more certified technicians, and deeper parts supply chains than any other outboard brand.
 
 When your motor needs a water pump impeller on a Thursday in August, that means the part is on a shelf at a local dealer. When you sell the boat in five years, the buyer local dealer already knows the platform.
 

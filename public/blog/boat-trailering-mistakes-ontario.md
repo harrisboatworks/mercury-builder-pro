@@ -166,7 +166,7 @@ Save or print this. Four minutes at the driveway beats an hour on the shoulder o
 
 ## What Ontario Law Says About Your Trailer
 
-A quick reference. Regulations change, verify current requirements with the [MTO Driver's Handbook](https://www.ontario.ca/document/official-mto-drivers-handbook/towing) or ServiceOntario before relying on this summary.
+A quick reference. Regulations change, verify current requirements with the [MTO Driver's Handbook](https://www.ontario.ca/document/official-mto-drivers-handbook/towing) or [ServiceOntario](https://www.ontario.ca/page/serviceontario) before relying on this summary.
 
 **Trailer plate requirements:** All trailers on Ontario public roads must be registered and plated separately from the tow vehicle. Ontario treats trailers as separate vehicles. Registration is a one-time fee (around $72 for original plate and permit). See [ontario.ca/page/register-trailer](https://www.ontario.ca/page/register-trailer) for the full document list.
 

@@ -220,6 +220,18 @@ Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](http
 
 *Harris Boat Works. Gores Landing, ON. Est. 1947. Mercury Marine Platinum Dealer.*
 
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Evinrude to Mercury Repower in Ontario (2026 Guide)](/blog/evinrude-to-mercury-repower-ontario-guide)
+- [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](/blog/complete-guide-boat-repower-kawarthas)
+
+---
+
 ## FAQs
 
 _(no FAQs)_

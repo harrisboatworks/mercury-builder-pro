@@ -191,6 +191,13 @@ For storage quotes, winterization bookings, and spring commissioning, the fastes
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 Mercury Marine Platinum Dealer. Established 1947.
+
+## What we see at HBW
+
+Storage season kicks off the second weekend of October. By mid-November, the outdoor lot is packed. Most of our storage customers are GTA-based (Toronto, Markham, Mississauga) and chose Rice Lake specifically because of the storage pricing and the proximity to highway 401.
+
+The pattern we see year over year: customers underbook in October, then panic-call in early November when winter hits. Our advice: book in September, drop off in mid-October. Cheaper that way, and you do not get stuck calling around at the last minute. Harris Boat Works is drop-off only and the marina is closed Dec 1 to April 1.
+
 ---
 
 ## FAQs

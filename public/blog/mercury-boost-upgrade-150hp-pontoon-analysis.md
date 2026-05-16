@@ -108,7 +108,7 @@ Most pontoon customers walk out without Boost. We point them toward prop and tri
 
 ## FAQs
 
-**Is the Mercury Boost upgrade worth it for a 150 HP pontoon?** 
+**Is the [Mercury Boost upgrade](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) worth it for a 150 HP pontoon?** 
 For most 150 HP pontoon owners, the gains are real but modest, pontoon performance is constrained more by hull design, loading, and prop than by peak motor output. Boost makes more sense on lighter performance boats where small power changes are felt. On heavy family tritoons, most customers don't notice a meaningful difference.
 
 **What is Mercury Boost?** 

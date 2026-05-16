@@ -105,6 +105,15 @@ If you have the cash and your other money is not earning more than the financing
 - Current financing options are shown on the [financing page](/financing) and confirmed with your quote at [mercuryrepower.ca](https://mercuryrepower.ca). As of May 2026, qualified buyers, subject to change.
 
 *Last reviewed: 2026-05-11.*
+---
+
+## What we see at HBW
+
+Most boat financing in Ontario routes through a handful of marine lenders -- the same names you see at every dealer. Approval depends on credit score and debt-to-income, but the down payment we typically see on $25-50K boats is 15-20%.
+
+The mistake we watch customers make: financing the motor + boat together at a 15-year term to keep monthly cost low. If you sell the boat in year 5, you're upside-down on the balance. Better path: shorter term, slightly higher monthly, no negative equity when the boat changes hands.
+
+---
 
 ## FAQs
 
