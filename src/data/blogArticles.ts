@@ -13339,7 +13339,9 @@ Phone: 905-342-2153
     category: "Lifestyle",
     readTime: "11 min read",
     keywords: ["Rice Lake boating guide", "Rice Lake fishing 2026", "Rice Lake boat launch", "Rice Lake sunken railway", "FMZ 17 fishing regulations", "Rice Lake walleye opener"],
-    content: `## Quick Answer
+    content: `![Rice Lake practical boating map - Gores Landing perspective with fishing zones, hazards, and key towns](/lovable-uploads/rice-lake-practical-boating-map.png)
+
+## Quick Answer
 
 Rice Lake is a 32-km long shallow lake on the Trent-Severn Waterway, about 80 minutes northeast of Toronto. The water is generally 6–10 ft deep with heavy summer weed growth and a sunken 19th-century railway across the middle (chartplotters mark it, slow down across the lake until you know the crossing). Walleye, bass, and muskie are the main species. Public launches at Bewdley, Hastings, Roseneath, and Harris Boat Works in Gores Landing. Trent-Severn lockage is free June 19 – September 7, 2026.
 
@@ -20337,6 +20339,8 @@ For current rates, contact us. Pricing depends on your specific boat, motor, and
 
 ---
 
+![Rice Lake boat storage timeline - Sept to May at Harris Boat Works](/lovable-uploads/rice-lake-storage-timeline.png)
+
 ## When to Book Winter Storage
 
 **September to early October:** Best window. We're not yet at peak demand and we can give you specific scheduling.
@@ -24777,7 +24781,9 @@ By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice 
       { question: "What other marinas are on Rice Lake?", answer: "Several other marinas and resort operations run on Rice Lake, including a south-shore resort marina, a couple of Bewdley-area marinas, and additional resort-based operations, along with smaller cottage-area docks and ramps. Each has its own focus, some are resort-first with marina amenities attached, some are slip-and-fuel, some are seasonal cottage operations. Harris Boat Works is the full-service marina end of the spectrum: sales, service, parts, rentals, and storage under one roof." },
       { question: "Can I bring my boat from outside the Kawarthas for service?", answer: "Yes, and a lot of customers do. We service Mercury and Mercruiser boats brought in from across the GTA, Northumberland, Peterborough, and the broader Kawarthas. Drop-off is straightforward: book a service slot, trailer the boat to Gores Landing, leave it with us. For larger jobs (repowers, full diagnostic work, winter storage bundles) we plan the timeline so you only need to drive out once or twice. Submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number." },
     ],
-    content: `## Quick answer
+    content: `![Harris Boat Works full-service marina wheel - 8 services from a Mercury Platinum dealer on Rice Lake](/lovable-uploads/hbw-full-service-marina-wheel.png)
+
+## Quick answer
 
 Harris Boat Works is the oldest marina on Rice Lake, established 1947 in Gores Landing. Mercury Marine Platinum dealer (the only one on the lake), 65 slips, full-service centre, launch ramp, fishing boat and pontoon rentals, winter storage with shrinkwrap, and three generations of Rice Lake expertise. About 35-90 minutes from the GTA via Highway 401 and the Port Hope exit, depending on where you start. Quote, service, and storage requests at [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -24973,6 +24979,8 @@ Full marina home page: [harrisboatworks.ca](https://www.harrisboatworks.ca).
     content: `> **Quick answer:** Harris Boat Works offers winter boat storage, shrinkwrap, winterization, and spring commissioning from our Rice Lake marina in Gores Landing — accessible to boaters across the Kawartha Lakes (Rice, Pigeon, Sturgeon, Buckhorn, Stoney) and the GTA-east region. Storing where you boat means no spring scavenger hunt for the battery, cover, paperwork, or "who has the key?"
 
 ---
+
+![Kawartha boat storage decision map - indoor vs outdoor vs shrinkwrap vs tarp flowchart](/lovable-uploads/kawartha-boat-storage-decision-map.png)
 
 ## What good boat storage actually includes
 
