@@ -2642,6 +2642,8 @@ The 90 is the most-installed Mercury in this class for a reason. It performs wel
 
 For the typical 16 to 18 ft aluminum console at HBW, the all-in repower lands $17,000 to $22,000 CAD. [Live pricing here.](/quote/motor-selection)
 
+::walkaround-lead-capture
+
 ## Mercury 115 EXLPT FourStroke: when the step-up earns its price
 
 The 115 HP FourStroke is the right call when:
@@ -4295,6 +4297,8 @@ We sell both configurations at HBW. The decision comes down to honest analysis o
 - Sailboat auxiliaries where remote rigging is unnecessarily complex
 
 ---
+
+::walkaround-lead-capture
 
 ## The crossover zone: 14–16 ft hulls, 25–40 HP
 
@@ -20282,6 +20286,8 @@ The 60 weighs 23 lbs more. On a light 15 ft aluminum with a transom already sitt
 
 ---
 
+::walkaround-lead-capture
+
 ## Performance on Common Ontario Boats
 
 These are real-world figures from boats rigged by Harris Boat Works. Conditions, load, and hull cleanliness all affect the numbers. Treat them as ballparks.
@@ -21460,6 +21466,8 @@ Older Mercury, Yamaha, and OMC two-strokes in this power class are being replace
 
 ---
 
+::walkaround-lead-capture
+
 ## Where the 90 HP Is the Wrong Call
 
 **Hull rated under 75 HP.** The capacity plate is the ceiling. A 16 ft aluminum boat rated for 75 HP max should get the 75, not the 90. We can order a 75 if the plate forces it.
@@ -21621,6 +21629,8 @@ The 115 is the highest tuning of this family. It runs to 6,000 RPM and makes pea
 This post covers the **115 ELPT FourStroke** and the **115 ELPT Command Thrust**. There's also a 115 Pro XS (performance-tuned, sport gearcase) and a counter-rotation 115 (for twin setups). Different SKUs, different prices, different applications. Use the quote builder at mercuryrepower.ca to compare.
 
 ---
+
+::walkaround-lead-capture
 
 ## When to Take the Command Thrust Upgrade
 
@@ -21815,6 +21825,8 @@ The difference between the 75 and 90 is software, prop tuning, and RPM ceiling. 
 The 90 also holds better resale value and has more demand on the used market. If you're ever selling the boat, the 90 is a much easier conversation than the 75.
 
 ---
+
+::walkaround-lead-capture
 
 ## Why HBW Doesn't Stock the Mercury 75
 
