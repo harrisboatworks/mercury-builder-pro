@@ -71,7 +71,7 @@ Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice
 
 **Crappie, perch, pike.** Mixed-bag panfish fishing is strong, especially for crappie in spring around brush and submerged wood structure.
 
-You need a valid Ontario fishing licence (Outdoor Card + fishing licence). HBW does not sell fishing licences, get yours online at ontario.ca/fishing or at a licence vendor before your trip.
+You need a valid [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) (Outdoor Card + fishing licence). HBW does not sell fishing licences, get yours online at ontario.ca/fishing or at a licence vendor before your trip.
 
 ---
 
@@ -117,9 +117,9 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **PFDs.** One per person, accessible, and at least one is a wearable Type III. Required by Transport Canada.
 
-**Pleasure Craft Licence (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. The 2026 PCL changes converted lifetime licences to 5-year renewals at $24. Check your PCL is current before you launch.
+**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. The 2026 PCL changes converted lifetime licences to 5-year renewals at $24. Check your PCL is current before you launch.
 
-**Pleasure Craft Operator Card (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
+**[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
 
 **Required safety equipment.** Sound-signaling device (whistle or horn), bailer, paddle, anchor, navigation lights for sunset operation. Transport Canada publishes the full list, and CO2-charged life jackets count as PFDs.
 
@@ -134,6 +134,16 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 **HBW (Gores Landing)** sells ethanol-free 89-octane marine fuel directly at our dock. Easier on outboards than the 10% ethanol you get at most pump stations. We're open daily during boating season.
 
 For Mercury service, parts, or repower questions, we're a Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbw.wiki/service](https://hbw.wiki/service). Phone 905-342-2153.
+
+---
+
+---
+
+## What we see at HBW
+
+Rice Lake has its own quirks. Stumps in the central basin, weed mats in late July, and a navigable channel between the islands that catches every first-time boater. Most of our marine-tow callbacks in summer involve someone running aground on Tick Island or Black Island shoals.
+
+The good news: the lake is small enough that you can learn the hazards in a season. Slow down in the west end shallows, stay in the marked channel between islands, and pull your prop up at the Hastings end of the lock chamber. Walleye and largemouth fishing are best at sunrise and sunset.
 
 ---
 

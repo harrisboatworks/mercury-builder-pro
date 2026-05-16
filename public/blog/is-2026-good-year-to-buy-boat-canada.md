@@ -119,6 +119,14 @@ Our 2026 advice: do the full math before deciding. If you are replacing a motor 
 
 ---
 
+## What we see at HBW
+
+First weekend in May, the shop fills up with no-starts. Nine out of ten are the same three things. The battery is dead because the charger was not plugged in over winter. Fuel went stale because no stabilizer was added before storage. Or the kill-switch lanyard got bumped during winterization and the helm does not realize it.
+
+The fourth most common: corroded battery terminals from a boat that sat outside in salt-spray weather. Cleaning the terminals plus a fresh battery solves more spring no-starts than any other repair.
+
+---
+
 ## FAQs
 
 **Is 2026 a good year to buy a boat in Canada?** 

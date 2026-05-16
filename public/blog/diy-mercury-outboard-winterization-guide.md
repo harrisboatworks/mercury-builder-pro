@@ -236,6 +236,18 @@ If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/serv
 
 ---
 
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist)
+- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Platinum Dealer](/blog/mercury-outboard-winterization-service-cost-ontario)
+
+---
+
 ## Frequently Asked Questions
 
 **Can I winterize a Mercury FourStroke the same way as an older 2-stroke?** 

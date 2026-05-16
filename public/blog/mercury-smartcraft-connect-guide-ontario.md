@@ -152,7 +152,7 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 
 ## Boost Upgrade Eligibility
 
-Mercury Boost is a paid software upgrade that improves mid-range acceleration on compatible motors. SmartCraft Connect lets you check eligibility directly from the app. As of 2026, Boost is available on select Mercury FourStroke and Pro XS models, eligibility is motor-by-motor by serial number. The app gives a definitive answer in seconds.
+[Mercury Boost](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) is a paid software upgrade that improves mid-range acceleration on compatible motors. SmartCraft Connect lets you check eligibility directly from the app. As of 2026, Boost is available on select Mercury FourStroke and Pro XS models, eligibility is motor-by-motor by serial number. The app gives a definitive answer in seconds.
 
 You do not need SmartCraft Connect to buy Boost, HBW can also check eligibility using diagnostic tools. SmartCraft Connect makes it self-serve.
 

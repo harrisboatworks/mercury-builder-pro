@@ -31,7 +31,7 @@ content_type: blog_article
 
 ### Quick Answer
 
-The Trent-Severn Waterway is a 386-kilometre navigable system running from Trenton to Port Severn through 44 locks. In 2026, lockage is free under the Canada Strong Pass from June 19 to September 7. For a 20-foot boat, that is roughly $45 per day in fees not paid. Mooring at lockstations is still $1.50 per foot per night. Harris Boat Works sits on Rice Lake between Locks 18 and 19. Navigation season runs May 15 to October 12, 2026.
+The [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) is a 386-kilometre navigable system running from Trenton to Port Severn through 44 locks. In 2026, lockage is free under the Canada Strong Pass from June 19 to September 7. For a 20-foot boat, that is roughly $45 per day in fees not paid. Mooring at lockstations is still $1.50 per foot per night. Harris Boat Works sits on Rice Lake between Locks 18 and 19. Navigation season runs May 15 to October 12, 2026.
 
 **Verify all lock hours, fees, and program dates directly with Parks Canada before your trip, as these details are subject to change.**
 
@@ -188,7 +188,7 @@ Call 905-342-2153 before heading out if you need a slip or want to confirm fuel 
 ## FAQs
 
 **Do I need a special licence to lock through the Trent-Severn?** 
-No. You need a Pleasure Craft Operator Card (PCOC) and a valid Pleasure Craft Licence (PCL), the same requirements as any Ontario boating. No special lockage licence.
+No. You need a [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) and a valid [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL), the same requirements as any Ontario boating. No special lockage licence.
 
 **What changed for PCLs in 2026?** 
 Lifetime licences were converted to 5-year renewals at $24. If your PCL was previously lifetime and has not been renewed, check its status before the trip.

@@ -189,7 +189,7 @@ This whole exercise, for a private buyer about to spend $4,000 to $14,000 on a u
 If the bracket plate is gone and the freeze-plug stamp is unreadable:
 
 - **Check service receipts**, any prior service work would have referenced the serial.
-- **Check the boat's Pleasure Craft Licence**, sometimes the serial was recorded.
+- **Check the boat's [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)**, sometimes the serial was recorded.
 - **Check insurance documents**, same.
 - **Bring it to us**, we can sometimes identify the motor from the casting numbers and other markings, but this is detective work, not a quick lookup.
 - **Worst case**, we can pressure-test, compression-test, and document the actual current condition without the serial. It's a less complete picture, but it's something.

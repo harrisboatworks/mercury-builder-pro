@@ -73,7 +73,7 @@ Through the 1950s and early 1960s, outboards started taking over. Light, easier 
 
 ## Becoming a Mercury Dealer, 1965
 
-In 1965, Mercury Marine was the rising power in outboards. Carl Kiekhaefer's company growing fast, building motors that were lighter and more reliable than the competition. Becoming a Mercury dealer in 1965 meant signing on to a relationship that's now in its 60th year.
+In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the rising power in outboards. Carl Kiekhaefer's company growing fast, building motors that were lighter and more reliable than the competition. Becoming a Mercury dealer in 1965 meant signing on to a relationship that's now in its 60th year.
 
 **Why Mercury, then and now:**
 

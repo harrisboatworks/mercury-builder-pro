@@ -119,7 +119,19 @@ Once it comes off, options are:
 - **Private sale.** Sometimes a small running Evinrude has more value to a small-boat owner who needs a cheap motor than as a trade-in. We can advise.
 - **Parts donor.** Older Evinrudes have some value as parts donors.
 
-The Pleasure Craft Licence (PCL) needs to be updated when the motor changes. We handle the paperwork side for HBW customers.
+The [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) needs to be updated when the motor changes. We handle the paperwork side for HBW customers.
+
+---
+
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](/blog/complete-guide-boat-repower-kawarthas)
+- [Boat Repowering Guide: When to Replace Your Motor (2026)](/blog/boat-repowering-guide-when-to-replace-motor)
 
 ---
 

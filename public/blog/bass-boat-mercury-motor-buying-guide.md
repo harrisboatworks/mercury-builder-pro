@@ -153,6 +153,28 @@ Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) with actual
 
 ---
 
+---
+
+## What we see at HBW
+
+Bass-boat repower customers at our shop almost always come in asking for Pro XS. The decision is rarely about HP -- it's about hole-shot and top-end on a tournament rig that needs to run hard from spot to spot. A Pro XS 200 on a Ranger 188 will outpunch a FourStroke 200 even though dyno numbers are close.
+
+The Verado V8 conversation comes up for the biggest boats (21-foot+ bass boats with twin-engine setups, or heavy multi-species rigs). Those are the customers running Champion 220 or Skeeter ZX series.
+
+---
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)](/blog/center-console-mercury-motor-guide)
+- [The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)](/blog/best-mercury-for-family-runabouts)
+
+---
+
 ## FAQ
 
 **Is Pro XS really faster than FourStroke?**

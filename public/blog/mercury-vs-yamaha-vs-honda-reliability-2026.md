@@ -116,6 +116,15 @@ A well-maintained Yamaha or Honda will outlast a neglected Mercury. We see this 
 For most Ontario boaters switching to Mercury, the timing is a full repower, when the old motor is going anyway and the rigging is getting replaced regardless.
 
 *Last reviewed: 2026-05-11.*
+---
+
+## What we see at HBW
+
+After three generations of running this shop, we've serviced every major outboard brand. Mercury is what we sell new because the platform, the rigging compatibility, and the parts pipeline beat the competition. But honestly, late-model Yamaha and Honda are reliable motors -- the difference at the powerhead level is small.
+
+The bigger reliability swing is who installed and rigged the motor, and whether the owner kept up with the 100-hour service. A botched install kills a perfect motor faster than the brand badge ever does.
+
+---
 
 ## FAQs
 

@@ -134,6 +134,28 @@ For typical recreational use, family fishing, cruising, casual water sports, the
 
 ---
 
+---
+
+## What we see at HBW
+
+The 115 versus 150 question is the most-quoted comparison at our shop. Customers walk in expecting to save by going with the 115. By the time we add controls, props, and rigging, the spread is usually only $1,500-$2,500 installed. For a 19-foot pontoon or a 20-foot bowrider, the extra HP pays off in two-up cruising and tube-pulling.
+
+The exception: aluminum tinnies under 17 feet. There the 115 is the better match. Lighter on the transom, easier on fuel, and matches the hull's design max.
+
+---
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide)
+
+---
+
 ## FAQs
 
 **Is the Mercury 150 worth the extra money over the 115?** 

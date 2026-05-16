@@ -79,7 +79,7 @@ Here is what motor-only pricing usually does not include: HST (13% in Ontario), 
 
 Mercury sets a Manufacturer's Suggested Retail Price (MSRP) for every model. Dealer selling prices are at or below that number. We publish both side by side: what Mercury says it's worth, and what we actually charge.
 
-Discounts at Harris Boat Works typically run 5, 12% off MSRP depending on the model and any active Mercury Canada promotions. Some dealers post MSRP and call it a "price." We don't.
+Discounts at Harris Boat Works typically run 5, 12% off MSRP depending on the model and any active [Mercury Canada](https://www.mercurymarine.com/canada/en/) promotions. Some dealers post MSRP and call it a "price." We don't.
 
 ---
 

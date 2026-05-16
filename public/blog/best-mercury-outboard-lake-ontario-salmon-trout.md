@@ -53,7 +53,7 @@ That affects motor selection in three specific ways:
 
 ## Cold Water Safety, A Note Worth Reading
 
-Lake Ontario's water stays cold well into summer and drops cold again early in fall. Transport Canada's guidance on cold-water immersion is clear: water below 15°C reduces cold shock survival time significantly, even for strong swimmers.
+Lake Ontario's water stays cold well into summer and drops cold again early in fall. [Transport Canada](https://tc.canada.ca/en)'s guidance on cold-water immersion is clear: water below 15°C reduces cold shock survival time significantly, even for strong swimmers.
 
 Dress for water temperature, not air temperature. Wear a PFD. File a float plan. These aren't formalities, they're the difference between a bad day and a tragedy. The lake doesn't negotiate.
 

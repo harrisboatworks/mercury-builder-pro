@@ -156,6 +156,28 @@ Call **905-342-2153** if you want to talk through which family fits your boat. W
 
 ---
 
+---
+
+## What we see at HBW
+
+Almost every motor that leaves our service bay falls into one of the three families. FourStroke 60-150 dominates the pontoon and family-runabout repower side. Pro XS 150-300 covers serious anglers and bass-boat repowers. Verado V8/V10 lives on Sea Ray, Boston Whaler, Robalo, and the 28-foot center-console crowd.
+
+The decision usually comes down to how the boat actually gets used. FourStroke if comfort and quiet matter most. Pro XS if hole-shot and top-end matter most. Verado if it's a heavy boat or twin-engine application.
+
+---
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide)
+- [Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)](/blog/center-console-mercury-motor-guide)
+
+---
+
 ## FAQ
 
 **What's the difference between Mercury FourStroke and Pro XS?**

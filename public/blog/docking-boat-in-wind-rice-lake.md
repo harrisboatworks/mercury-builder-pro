@@ -197,6 +197,18 @@ No pressure. But if you want to stop having that heart-rate moment every time yo
 
 *Harris Boat Works. Est. 1947. Gores Landing, ON. Mercury Platinum Dealer*
 
+---
+
+## Related at HBW
+
+The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use)
+- [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake)
+
+---
+
 ## FAQs
 
 _(no FAQs)_

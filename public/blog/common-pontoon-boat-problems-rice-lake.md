@@ -198,6 +198,18 @@ Harris Boat Works has been on Rice Lake since 1947. We're a Mercury Marine Plati
 
 Call us at 905-342-2153 or request service online. We'll give you a straight answer.
 
+---
+
+## Related at HBW
+
+The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Best Boats for Rice Lake Under $30,000 (2026 Buyer](/blog/best-boats-rice-lake-under-30000)
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)](/blog/mercury-prokicker-rice-lake-fishing-guide)
+
+---
+
 ## FAQs
 
 _(no FAQs)_

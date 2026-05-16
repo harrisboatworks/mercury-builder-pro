@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-# Mercury VesselView, SmartCraft, and the New Mercury Marine App. A Plain-English Guide
+# Mercury VesselView, SmartCraft, and the New [Mercury Marine](https://www.mercurymarine.com/canada/en/) App. A Plain-English Guide
 
 *Last reviewed: 2026-05-07*
 

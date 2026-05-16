@@ -63,7 +63,7 @@ item5Value: 10% off
 item5Note: We're a Mercury Marine Platinum dealer. Customers who purchased the motor from HBW get 10% off the published Mercury Product Protection price.
 totalLabel: Reality check
 totalValue: Coverage costs less than one bad day
-caveat: Pricing is illustrative and subject to Mercury Marine's current rate sheet. Coverage terms vary by motor model year. For a real quote against your serial number, call (905) 342-2153 or use /quote.
+caveat: Pricing is illustrative and subject to [Mercury Marine](https://www.mercurymarine.com/canada/en/)'s current rate sheet. Coverage terms vary by motor model year. For a real quote against your serial number, call (905) 342-2153 or use /quote.
 ::
 
 ::pull-quote

@@ -190,6 +190,18 @@ Running a motor with an undiagnosed problem to try to force it to start can turn
 
 ---
 
+---
+
+## Related at HBW
+
+The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
+- [Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check](/blog/mercury-outboard-beeping-codes-guide)
+
+---
+
 ## Frequently Asked Questions
 
 **How long does it take to diagnose a Mercury no-start?** 

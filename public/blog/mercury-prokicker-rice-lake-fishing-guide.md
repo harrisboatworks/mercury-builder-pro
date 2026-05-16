@@ -156,6 +156,18 @@ Most customers fall into one of two answers: 9.9 ProKicker tiller for fishing, o
 
 ---
 
+---
+
+## Related at HBW
+
+The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [2026 Rice Lake Fishing Season Outlook](/blog/2026-rice-lake-fishing-season-outlook)
+- [Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)](/blog/docking-boat-in-wind-rice-lake)
+
+---
+
 ## FAQs
 
 **Do I need a kicker for Rice Lake fishing?**
@@ -182,7 +194,7 @@ Most variants include alternator output. Specific charging capacity varies by mo
 **How long does a Mercury 9.9 ProKicker last?**
 Properly maintained, these motors run a long time. They operate at lower RPM than main motors, which is easier on components. Annual service matters. Skip it and you'll learn why the hard way, usually mid-season.
 
-**Do I need to update my Pleasure Craft Licence when adding a kicker?**
+**Do I need to update my [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) when adding a kicker?**
 Adding a kicker changes your combined HP and may require a PCL update. We handle this paperwork for HBW customers.
 
 ---

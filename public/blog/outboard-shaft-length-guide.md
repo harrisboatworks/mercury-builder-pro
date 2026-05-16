@@ -156,6 +156,15 @@ Not sure about your transom height? Call us at 905-342-2153 or send a side-profi
 > **Need a quick shaft-length check?** Try our [Shaft Length Picker](/tools#shaft-length). Punch in your transom height and we will tell you if you want a 15", 20", 25", or 30" shaft. Or call us at [(905) 342-2153](tel:+19053422153) and we will measure with you on the phone.
 
 *Last reviewed: 2026-05-11.*
+---
+
+## What we see at HBW
+
+The single most common rigging mistake we see on used-boat purchases: wrong shaft length on a repower. Owner pulled a 15-inch short-shaft, ordered a 20-inch long-shaft expecting "more boat coverage", and the prop is now too deep to plane efficiently.
+
+Always measure the transom from the top edge to the cavitation plate centerline before ordering. 15" for most tinnies, 20" for bowriders and pontoons, 25" for offshore-style hulls. When in doubt, send us a photo and a tape measure reading -- we'll spec it before quoting the install.
+
+---
 
 ## FAQs
 

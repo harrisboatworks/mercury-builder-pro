@@ -166,11 +166,11 @@ Mercury's 20/100/300 schedule applies in Ontario, with the **annual trigger** be
 
 ---
 
-## 6. Pleasure Craft Licence (PCL)
+## 6. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)
 
 [Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. New and renewed PCLs are **5-year licences at $24 CAD**, issued and renewed online through Transport Canada's PCL portal (existing lifetime PCLs are gradually being replaced). Amortized: **$5/year**.
 
-PCOC (operator card) is a one-time test, lifetime card. ~$50 once, never again.
+[PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (operator card) is a one-time test, lifetime card. ~$50 once, never again.
 
 This category used to be near-zero. It's still essentially negligible.
 
@@ -238,6 +238,15 @@ If you're considering ownership and the math above feels manageable, great. Welc
 If the math feels stretched, we have **rentals**. Nine-boat fleet on Rice Lake (16-ft fishing through 24-ft pontoon), half-day or full-day, Mercury power on every boat. **$119K in rentals through 2025**, growing every year. People love it. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 There's no shame in renting. There's a lot of shame in over-extending into a boat you can't afford to maintain. Maintenance neglect ages a boat 10x faster than honest use does.
+
+---
+---
+
+## What we see at HBW
+
+The first-year ownership cost usually surprises new boaters. Boat + motor is the big number, but storage, insurance, gas, dock or trailer, and the 20-hour first service add up. On a $35K pontoon, expect another $4-6K in first-year costs after the purchase.
+
+Year two through five averages out lower if winterization and 100-hour service are kept current. The boats that get expensive in year five are the ones whose owners skipped impeller changes and gear-lube changes. Those repairs end up costing more than what the maintenance would have.
 
 ---
 

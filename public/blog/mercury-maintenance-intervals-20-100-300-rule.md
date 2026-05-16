@@ -180,6 +180,18 @@ We have a live quote configurator at [mercuryrepower.ca](https://www.mercuryrepo
 
 ---
 
+---
+
+## Related at HBW
+
+The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Breaking In a New Mercury Motor (2026)](/blog/breaking-in-new-mercury-motor-guide)
+- [Mercury Outboard Won](/blog/mercury-outboard-wont-start-troubleshooting)
+
+---
+
 ## Frequently Asked Questions
 
 **Do I need to service a motor I barely ran this year?** 

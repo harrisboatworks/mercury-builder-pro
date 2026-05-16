@@ -49,7 +49,7 @@ Harris Boat Works has been a Mercury dealer since 1965, third-generation family 
 
 ## The Mercury Dealer Tier System (What Actually Matters)
 
-Mercury Marine ranks its dealers in a three-tier certification system. The tiers determine:
+[Mercury Marine](https://www.mercurymarine.com/canada/en/) ranks its dealers in a three-tier certification system. The tiers determine:
 
 - **What service work the dealer is qualified to do** (warranty, complex repairs, specific motor families)
 - **Diagnostic equipment the dealer has access to** (G3 software is dealer-only, $3,000+ kit)

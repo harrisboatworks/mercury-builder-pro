@@ -117,7 +117,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 
 ### Dealer Promotional Programs
 
-Note: Mercury Marine has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
+Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
 
 **Harris Boat Works Current Offer**:
 - 7-Year Factory-Backed Warranty included with every new Mercury

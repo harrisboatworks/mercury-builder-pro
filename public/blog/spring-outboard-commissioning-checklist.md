@@ -155,9 +155,9 @@ If anything sounds wrong, smells wrong, or shows a warning light, stop. That's a
 ### Step 10, Documentation
 
 - **Update your service log** with date, hours, and what was done.
-- **Verify Pleasure Craft Licence (PCL)** is current. Expired PCL is a fine on the water.
+- **Verify [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)** is current. Expired PCL is a fine on the water.
 - **Confirm insurance** is renewed for the season.
-- **Check that Pleasure Craft Operator Card (PCOC)** is accessible in the boat.
+- **Check that [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC)** is accessible in the boat.
 
 ---
 
@@ -168,6 +168,28 @@ If you'd rather have us handle commissioning:
 We cover the full checklist above plus computer diagnostics on Mercury SmartCraft systems, sea-trial after the bench work, and a written record of everything done. For engine repairs, we only service Mercury and Mercruiser.
 
 Schedule at [hbw.wiki/service](https://hbw.wiki/service). Book before April if May launch timing matters. After the May long weekend, spring service demand usually gets heavier, so earlier requests are easier to plan around.
+
+---
+
+---
+
+## What we see at HBW
+
+Center-console repowers in Ontario are dominated by Verado V8 and V10. Most CC customers on Lake Ontario, Bay of Quinte, or Georgian Bay want twin Verado 250s or 300s. Single-engine Pro XS works on smaller (20-foot) CCs but most owners eventually upgrade to twin power for redundancy.
+
+The biggest install consideration on CC repowers: digital throttle and shift integration. SmartCraft Connect or VesselView Mobile usually goes in at the same time. Plan for an extra 2-3 days on the install schedule for the wiring and calibration.
+
+---
+
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Platinum Dealer](/blog/mercury-outboard-winterization-service-cost-ontario)
+- [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
 

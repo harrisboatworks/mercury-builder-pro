@@ -31,7 +31,7 @@ content_type: blog_article
 
 ## Quick Answer
 
-Rice Lake has four main public boat launch options: Bewdley (west end), Roseneath (south shore), Gores Landing (HBW's location, south shore), and Hastings (east end, Trent-Severn entrance). Each has different facilities, parking, and seasonal access. HBW's Gores Landing ramp is 2-lane concrete with parking and washrooms; day fees apply. Pleasure Craft Licence (PCL) and Pleasure Craft Operator Card (PCOC) are required for powered boats.
+Rice Lake has four main public boat launch options: Bewdley (west end), Roseneath (south shore), Gores Landing (HBW's location, south shore), and Hastings (east end, Trent-Severn entrance). Each has different facilities, parking, and seasonal access. HBW's Gores Landing ramp is 2-lane concrete with parking and washrooms; day fees apply. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) and [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) are required for powered boats.
 
 ---
 
@@ -149,7 +149,7 @@ This makes the multi-day Trent-Severn trip much more accessible. See [Trent-Seve
 
 ## Fishing Regulations and Licences
 
-You need a valid Ontario fishing licence to fish on Rice Lake or anywhere else in Ontario:
+You need a valid [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) to fish on Rice Lake or anywhere else in Ontario:
 
 - Outdoor Card (one-time purchase)
 - Fishing licence (annual or short-term)

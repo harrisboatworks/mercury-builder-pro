@@ -31,7 +31,7 @@ content_type: blog_article
 
 ### Quick Answer
 
-Mercury Boost is a software-based engine calibration update, not a hardware kit, that improves mid-range acceleration by 5, 21% on eligible motors. Eligibility is determined by serial number, not model year. The dealer-installed version covers FourStroke 175, 300 HP, Pro XS 175, 300 HP, and Verado 250, 350 HP from specific serial numbers (see table below). The factory-installed version comes pre-loaded on new Pro XS and Verado models built in Q2 2026 and later. Boost does not void Mercury's warranty.
+[Mercury Boost](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) is a software-based engine calibration update, not a hardware kit, that improves mid-range acceleration by 5, 21% on eligible motors. Eligibility is determined by serial number, not model year. The dealer-installed version covers FourStroke 175, 300 HP, Pro XS 175, 300 HP, and Verado 250, 350 HP from specific serial numbers (see table below). The factory-installed version comes pre-loaded on new Pro XS and Verado models built in Q2 2026 and later. Boost does not void Mercury's warranty.
 
 > **Check yours:** Run the [Boost Eligibility Checker](/tools#boost-eligibility) to see if your motor qualifies in 30 seconds. Free.
 ---
@@ -126,6 +126,16 @@ A 5, 21% improvement in that band is most noticeable on:
 Ontario's boating season is short. If your eligible motor qualifies for Boost, getting it done before spring launch is worth a conversation with us.
 
 For engine repairs, we only service Mercury and Mercruiser.
+
+---
+
+---
+
+## What we see at HBW
+
+Boost is Mercury's software-only HP upgrade for select FourStroke and Pro XS models -- adds 10-25 HP via a flash, no hardware change. The most common customer who comes in asking is a 150 FourStroke owner on a pontoon who wishes they had specced the 175.
+
+Eligibility depends on year, model code, and powerhead serial number. We can check eligibility in our portal in a few minutes. Flash time at the shop is roughly 90 minutes plus the customer-portal activation. Not every motor is a candidate -- carbureted and pre-2018 EFI are typically out.
 
 ---
 

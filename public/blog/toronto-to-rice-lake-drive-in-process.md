@@ -73,7 +73,7 @@ The more we know before you arrive, the faster drop-off goes. A 10-minute phone 
 - Boat title or registration (especially for first visits)
 - Any prior service records
 - Keys. Lots of customers leave keys at home. The boat isn't going far without you, but we can't move it in the yard without them.
-- PCL (Pleasure Craft Licence) sticker visible on the hull
+- PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)) sticker visible on the hull
 
 ---
 

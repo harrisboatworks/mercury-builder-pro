@@ -115,7 +115,7 @@ Cost factors:
 - **Engine HP** — over 150 HP increases premium meaningfully
 - **Where you boat** — Lake Ontario (open water, weather risk) costs more than inland lakes like Rice Lake
 - **Claim history** — clean record gets best rates
-- **Operator experience** — PCOC alone is minimum; documented experience helps
+- **Operator experience** — [PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) alone is minimum; documented experience helps
 - **Storage location** — indoor storage discounts are real
 
 ## Who Insures Boats in Ontario?

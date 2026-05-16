@@ -134,6 +134,16 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 
 ---
 
+---
+
+## What we see at HBW
+
+The 9.9 EFI is the workhorse kicker in our service bay. We see them on every musky boat in the Kawarthas, every salmon rig on Lake Ontario, and as primary power on small tinnies for cottage runs. The EFI version is the upgrade everyone wants over the carbureted 9.9.
+
+The 5-amp alternator option is the one upgrade we always recommend -- charges the boat's house battery while trolling. The remote-control plumbing kit is the other. Mounted right, a 9.9 EFI lasts 15-20 years with basic maintenance.
+
+---
+
 ## FAQs
 
 **Does the Mercury 9.9 MH EFI require a battery?** 
@@ -160,7 +170,7 @@ The motor recommends 87 octane with up to 10% ethanol. Ethanol-free fuel will ru
 - Mercury SmartCraft Connect Guide Ontario
 - Mercury Controls & Rigging Guide Ontario
 - Walleye Opener Boat Prep Checklist
-- Trent-Severn Waterway Boating Guide 2026
+- [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
 
 ## CTA
 

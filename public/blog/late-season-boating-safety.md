@@ -31,7 +31,7 @@ content_type: blog_article
 
 ### Quick Answer
 
-In Ontario shoulder seasons, spring and fall, the biggest boating risk is the water temperature, not the air temperature. Dress for water temperature, not air temperature. Wear your PFD. File a float plan. Carry a charged VHF radio on Channel 16. Cold-water immersion below 15°C can cause incapacitation within minutes. See Transport Canada's cold-water survival guidance (TP 13822) for full detail.
+In Ontario shoulder seasons, spring and fall, the biggest boating risk is the water temperature, not the air temperature. Dress for water temperature, not air temperature. Wear your PFD. File a float plan. Carry a charged VHF radio on Channel 16. Cold-water immersion below 15°C can cause incapacitation within minutes. See [Transport Canada](https://tc.canada.ca/en)'s cold-water survival guidance (TP 13822) for full detail.
 
 ---
 
@@ -162,7 +162,7 @@ Rice Lake warms faster than Lake Ontario, but September and October surface temp
 Yes. The time to put on a PFD is before you need it. In cold water, there is no time to find it after an unexpected situation.
 
 **What VHF channel should I monitor?** 
-Channel 16. This is the distress and calling channel. Parks Canada and Coast Guard monitor it. Murray Canal swing bridges use Channel 14 specifically.
+Channel 16. This is the distress and calling channel. [Parks Canada](https://parks.canada.ca/lhn-nhs/on/trentsevern) and Coast Guard monitor it. Murray Canal swing bridges use Channel 14 specifically.
 
 **When should I book fall winterization?** 
 As early as possible. Service slots fill in October. If you wait until the first cold night, you may be waiting for a slot that does not exist.

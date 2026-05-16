@@ -35,7 +35,7 @@ content_type: blog_article
 
 ## 2027 Mercury Outboard Preview
 
-As we look toward the 2027 model year, here's what to expect from Mercury Marine's lineup.
+As we look toward the 2027 model year, here's what to expect from [Mercury Marine](https://www.mercurymarine.com/canada/en/)'s lineup.
 
 ### Expected Updates
 

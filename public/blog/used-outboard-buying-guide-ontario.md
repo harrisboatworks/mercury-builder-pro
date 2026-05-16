@@ -239,7 +239,7 @@ Questions? Call **905-342-2153**. We answer the phone and we won't tell you what
 | 6 | Best Mercury Outboard for Lake Simcoe Walleye Fishing | best-mercury-outboard-lake-simcoe-walleye-fishing |
 | 7 | What's the Cheapest Mercury Outboard in Canada in 2026? | cheapest-mercury-outboard-canada-2026 |
 | 8 | Boat Hull Replacement vs. Repower, The Honest Decision | boat-hull-replacement-vs-repower-decision |
-| 9 | Mercury Boost Software Upgrade on a 150 HP Pontoon, Is It Worth It? | mercury-boost-upgrade-150hp-pontoon-analysis |
+| 9 | [Mercury Boost](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) Software Upgrade on a 150 HP Pontoon, Is It Worth It? | mercury-boost-upgrade-150hp-pontoon-analysis |
 | 10 | Mercury Outboard Rigging Costs Explained, Ontario 2026 | mercury-outboard-rigging-costs-ontario |
 | 11 | What Happens During a Mercury Repower, Step-by-Step Process | what-happens-during-mercury-repower |
 | 12 | Used Outboard Buying Guide for Ontario Boaters | used-outboard-buying-guide-ontario |

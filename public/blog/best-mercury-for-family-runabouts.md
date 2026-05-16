@@ -110,7 +110,7 @@ We sell ethanol-free 89 marine gas at the dock in Gores Landing. Pick the HP tha
 
 - **Power steering**, On anything over 115 HP, get hydraulic or electric power steering. Manual steering on bigger motors is tiring after an hour of driving.
 - **Power trim**, Standard on every Mercury 25 HP and up. You'll use it constantly as load and conditions change.
-- **SmartCraft / Mercury Marine App**, Real-time fuel flow lets you find the efficient cruise RPM for your boat. Saves real money over a season.
+- **SmartCraft / [Mercury Marine](https://www.mercurymarine.com/canada/en/) App**, Real-time fuel flow lets you find the efficient cruise RPM for your boat. Saves real money over a season.
 - **Active Trim**, Available on V8 Verados and select V6s. Worth it if your driver is still learning; the engine trims itself for conditions.
 
 **What you don't need:** Mercury's premium Verado V8/V10 lineup on a family runabout under 22 feet. They're excellent motors built for performance boats and big cruisers, overkill on a 19-foot bowrider that mostly goes to the swim spot.
@@ -139,6 +139,18 @@ We rig family runabouts every spring in Gores Landing. Specifically:
 - **Annual service**, Mercury Platinum dealer, factory-trained techs, ethanol-free 89 marine gas at the dock.
 
 If you're genuinely unsure between two HP ratings, call us before you build a quote. Picking right is more important than picking fast.
+
+---
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use](/blog/pontoon-hp-sizing-decision-tree-ontario)
+- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-outboard-ontario)
 
 ---
 

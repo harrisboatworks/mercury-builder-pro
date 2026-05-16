@@ -154,6 +154,18 @@ If you want to walk through your specific boat first, call us at 905-342-2153 or
 
 *Last reviewed: 2026-05-11.*
 
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Boat Repowering Guide: When to Replace Your Motor (2026)](/blog/boat-repowering-guide-when-to-replace-motor)
+- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/should-i-repower-or-buy-new-boat-ontario)
+
+---
+
 ## FAQs
 
 ### What is a boat repower?

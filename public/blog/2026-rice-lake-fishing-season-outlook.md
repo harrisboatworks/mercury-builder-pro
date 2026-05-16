@@ -147,8 +147,8 @@ For specific pricing on Mercury motors, build a quote at [mercuryrepower.ca](htt
 ## What you need legally to fish Rice Lake
 
 - Ontario Outdoors Card and Fishing Licence Tag, required for residents aged 18 to 64. Non-residents need the equivalent.
-- Pleasure Craft Operator Card (PCOC), required for all motorized vessel operators.
-- Pleasure Craft Licence (PCL), required for any boat with a motor totalling at least 10 hp. PCLs are now valid for 5 years; renewals carry a $24 fee.
+- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC), required for all motorized vessel operators.
+- [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL), required for any boat with a motor totalling at least 10 hp. PCLs are now valid for 5 years; renewals carry a $24 fee.
 
 Children under 18 may fish under certain conditions without a licence. Confirm current rules at ontario.ca.
 
@@ -161,6 +161,18 @@ Children under 18 may fish under certain conditions without a licence. Confirm c
 *Last reviewed: 2026-05-11.*
 
 If you're new to Rice Lake or comparing services, see our [full-service marina overview](/blog/best-marina-rice-lake-ontario) for slips, launch, storage, and service in one place.
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)](/blog/docking-boat-in-wind-rice-lake)
+- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use)
+
+---
 
 ## FAQs
 

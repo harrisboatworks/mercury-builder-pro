@@ -130,6 +130,16 @@ Most of the boats we see can be repowered for a fraction of what a comparable ne
 
 ---
 
+## What we see at HBW
+
+Most repower quotes that come through our shop fall into one of three buckets. The biggest is the 25-year-old aluminum Lund or Princecraft with a tired 60 to 90 HP. Owner wants a quote on a new 60 to 90 FourStroke, drops off the boat, and we work through controls, rigging harness, prop, and battery. Total installed almost always lands $5,500 to $9,500 plus HST depending on what we find on the boat.
+
+The second is a 21- to 24-foot pontoon getting a 150 to 200 HP repower. These run higher. Controls and rigging on pontoons tend to need more work, prop matching matters more, and a SmartCraft display often gets added or upgraded.
+
+The third is the "I want a Pro XS" angler swap. Existing controls usually carry over but we always check rigging tube, throttle cable length, and steering hookup before quoting the install hours.
+
+---
+
 ## FAQs
 
 **How much does a Mercury repower cost in Ontario in 2026?** 
