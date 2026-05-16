@@ -24830,9 +24830,9 @@ This table only includes what each marina advertises on their own website. No co
 | Marina | Slips | Launch ramp | Mercury authorized service | Winter storage | Boat rentals | Years on the lake |
 |---|---|---|---|---|---|---|
 | Harris Boat Works (Gores Landing) | 65 | Yes | Yes (Mercury Platinum) | Yes (outdoor + shrinkwrap) | Yes (pontoon + fishing) | Since 1947 |
-| Lang's Resort (south shore) | Yes | Yes | Not advertised | Seasonal | Yes | Long-running resort |
-| Plank Road Marina (Bewdley) | Yes | Yes | Not advertised | Seasonal | Limited | Long-running |
-| Muskie Bay Resort (Bewdley area) | Yes | Yes | Not advertised | Seasonal | Yes | Long-running resort |
+| South-shore resort marina | Limited slips | Yes | Not advertised | Seasonal | Yes | Long-running |
+| Bewdley-area marina A | Limited slips | Yes | Not advertised | Seasonal | Limited | Long-running |
+| Bewdley-area marina B | Limited slips | Yes | Not advertised | Seasonal | Yes | Long-running resort |
 
 A marina should make boating easier. If it creates more phone calls than lake time, something has gone sideways. Pick the one whose service coverage actually matches what you'll need across a full season, not just July.
 
