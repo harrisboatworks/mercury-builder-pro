@@ -7007,6 +7007,8 @@ Harris Boat Works is a family-owned marina on Rice Lake, established in 1947, an
 
 The current Pro XS lineup in this range spans three architectures: 150 HP inline-4, 175-250 HP V6, and 300 HP V8.
 
+![Mercury Pro XS architecture chart comparing 150 inline-4, 175-250 V6, and 300 V8 outboards](/lovable-uploads/mercury-pro-xs-150-300-architecture-chart.png)
+
 ## The Quick Comparison Table
 
 | Motor | Block | Displacement | Approx weight | Top speed (typical 18-20 ft hull) | Best for |
@@ -9197,6 +9199,8 @@ source: HBW Customer, Lakefield 2026
 ::
 
 ---
+
+![Mercury 115 vs 150 horsepower decision matrix for Ontario fishing boats, pontoons, family runabouts, load, and budget](/lovable-uploads/mercury-115-vs-150-decision-matrix-ontario.png)
 
 ## Full Article
 
@@ -13558,6 +13562,8 @@ If you don't know which drive you have, the data plate on the upper drive housin
 
 ---
 
+![Mercruiser sterndrive failure-points diagram showing bellows, water intrusion, manifolds, risers, winterization, and drive service](/lovable-uploads/mercruiser-sterndrive-ontario-failure-points.png)
+
 ## What Actually Kills Mercruiser Boats
 
 In order of how often we see it walk into the shop:
@@ -13779,6 +13785,8 @@ Here's the plain-English version: VesselView is the display, SmartCraft is the e
 Harris Boat Works is a family-owned marina in Gores Landing on Rice Lake, established in 1947, and a Mercury Marine Platinum Dealer. We install and service this equipment, so this is the version of the conversation we'd have at the shop: what it does, what is worth paying for, and what is just another screen to poke at when you should be boating.
 
 ---
+
+![Diagram explaining how Mercury VesselView, SmartCraft, Active Trim, and the Mercury Marine App connect](/lovable-uploads/mercury-vesselview-smartcraft-app-ecosystem.png)
 
 ## SmartCraft Is the Engine's Computer. Everything Else Plugs Into It.
 
@@ -23659,6 +23667,8 @@ The distinction matters because beep patterns are how Mercury's engine managemen
 Getting the pattern right before calling a dealer or booking service helps narrow the diagnostic significantly.
 
 ---
+
+![Mercury outboard warning beep action card explaining continuous beep, intermittent beeps, SmartCraft display, and manual confirmation](/lovable-uploads/mercury-outboard-beep-codes-action-card.png)
 
 ## Common Beep Patterns and What They Indicate
 
