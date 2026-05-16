@@ -5117,6 +5117,8 @@ Harris Boat Works（HBW）是 Rice Lake 上自 1947 年家族经营的 marina，
 
 ---
 
+![Bilingual Chinese and English Rice Lake rental checklist for Toronto anglers covering booking, licence, safety, group size, and what to bring](/lovable-uploads/toronto-chinese-rice-lake-rental-checklist.png)
+
 ## 租船选择：Pontoon 还是钓鱼船？
 
 不同的家庭组合，适合不同的船型。简单的判断框架：

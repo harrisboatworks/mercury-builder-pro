@@ -702,6 +702,8 @@ If you genuinely have a Verado-appropriate application, a 28+ ft offshore centre
 
 ---
 
+![Mercury FourStroke, Pro XS, and Verado comparison graphic showing best fit, personality, boat type, and tradeoffs](/lovable-uploads/mercury-fourstroke-proxs-verado-comparison.png)
+
 ## Decision rules
 
 Work through these in order:
@@ -4327,6 +4329,8 @@ Pitch is the theoretical forward distance the prop moves in one revolution. Lowe
 We test pitch on the water during the sea trial of every repower. A wrong-pitch prop is the most common performance issue on otherwise correctly-installed Mercury motors.
 
 ---
+
+![Mercury propeller selection wheel showing acceleration, top speed, load, RPM range, blade count, pitch, and diameter tradeoffs](/lovable-uploads/mercury-propeller-selection-tradeoff-wheel.png)
 
 ## Blade count
 
@@ -9861,6 +9865,8 @@ When you see a "$549 winterization" posted on a marina website, that number was 
 
 We quote winterization based on what is in front of us.
 
+![Ontario boat winterization cost drivers graphic showing engine type, number of engines, shrinkwrap, storage, battery, and spring prep](/lovable-uploads/boat-winterization-cost-drivers-ontario.png)
+
 ## What changes your winterization cost
 
 **Motor size and type.** A small tiller takes less time and fewer parts than a large V8. Bigger motors cost more to winterize, this is unavoidable.
@@ -12506,6 +12512,8 @@ Get the measurement right before you order. It takes five minutes.
 ### Ultra long shaft, 30 inch (Code: XXL or U)
 - Best for: Sailboat auxiliaries and deep-transom commercial applications
 - Less common in Ontario freshwater. Special order on most models.
+
+![Outboard shaft length diagram showing how to measure transom height and match short, long, and extra-long shaft motors](/lovable-uploads/outboard-shaft-length-transom-measurement-diagram.png)
 
 ## How to measure your transom height
 
