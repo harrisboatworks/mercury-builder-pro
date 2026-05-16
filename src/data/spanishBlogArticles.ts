@@ -33,7 +33,7 @@ Harris Boat Works lleva 78 años en Rice Lake, Ontario, tercera generación, con
 
 ### PCOC, Carta de Operador de Embarcaciones de Placer
 
-La PCOC (en inglés: Pleasure Craft Operator Card, también conocida como "boating licence") es obligatoria para toda persona que opere una embarcación motorizada en Canadá, independientemente de la edad o la potencia del motor.
+La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency), también conocida como "boating licence") es obligatoria para toda persona que opere una embarcación motorizada en Canadá, independientemente de la edad o la potencia del motor.
 
 **Puntos clave:**
 - Es federal, la misma tarjeta es válida en toda provincia y territorio canadiense
@@ -483,7 +483,7 @@ No espere demasiado: los talleres se llenan rápido al inicio y al final de la t
 
 Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos, y no omite ningún paso. Los pasos que más se olvidan son: el fogging, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
 
-En Harris Boat Works realizamos más de 584 preparaciones invernales por temporada. Nuestros técnicos están certificados directamente por Mercury Marine y conocen los motores Mercury a fondo.
+En Harris Boat Works realizamos más de 584 preparaciones invernales por temporada. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/canada/en/) y conocen los motores Mercury a fondo.
 
 ---
 
@@ -858,7 +858,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     keywords: ['licencia navegación Ontario', 'PCOC Ontario', 'regulaciones bote Ontario', 'permiso de navegación Canadá', 'seguridad embarcación Ontario'],
     content: `### Respuesta rápida
 
-Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** (Pleasure Craft Operator Card / Carta de Operador de Embarcaciones), un certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la **PCL** (Pleasure Craft Licence), una licencia para la embarcación misma si tiene motor de 10 HP o más, renovable cada 5 años por **$24 CAD** desde el 31 de diciembre de 2025. La multa por no tener la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
+Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones), un certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)), una licencia para la embarcación misma si tiene motor de 10 HP o más, renovable cada 5 años por **$24 CAD** desde el 31 de diciembre de 2025. La multa por no tener la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
 
 ---
 

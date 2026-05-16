@@ -44,7 +44,7 @@ Harris Boat Works(HBW)는 Rice Lake 호숫가에 위치한 3대째 가족 경영
 
 **네, 필요합니다.**
 
-캐나다에서 엔진이 달린 보트(전기 트롤링 모터 포함)를 조종하려면 **PCOC(Pleasure Craft Operator Card, 여가용 선박 조종 자격증)**가 필요합니다. 연방법으로 전국 어디서나 적용됩니다.
+캐나다에서 엔진이 달린 보트(전기 트롤링 모터 포함)를 조종하려면 **PCOC([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency), 여가용 선박 조종 자격증)**가 필요합니다. 연방법으로 전국 어디서나 적용됩니다.
 
 - 온라인 시험으로 취득 가능
 - 비용 약 $40~$50
@@ -755,8 +755,8 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
 
 **온타리오에서 동력 보트를 운항하려면 PCOC 1장, PCL 1장이 필수입니다. 미면허 운항은 OPP 단속 시 $250부터 과태료가 시작됩니다.**
 
-- **PCOC (Pleasure Craft Operator Card)**: 약 $40-50, 평생 유효, 모든 동력 보트 필수, 원본 카드 휴대
-- **PCL (Pleasure Craft Licence)**: 10HP 이상 엔진 필수, $24/5년, hull에 7.5cm 이상으로 표시
+- **PCOC ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency))**: 약 $40-50, 평생 유효, 모든 동력 보트 필수, 원본 카드 휴대
+- **PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences))**: 10HP 이상 엔진 필수, $24/5년, hull에 7.5cm 이상으로 표시
 - **미성년자 규정**: 12세 미만 ≤10HP, 12-15세 ≤40HP, 16세 미만 PWC 운항 금지
 - **PCL 갱신**: 엔진 변경 시 Transport Canada에 갱신 필요 — HBW가 repower 시 함께 안내
 
