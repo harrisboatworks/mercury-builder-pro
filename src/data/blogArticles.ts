@@ -356,7 +356,7 @@ Five things move how often and how aggressively you should service:
 
 - **Hours of use per year.** A motor running 50 hours a season needs different service than a motor running 200 hours a season. More hours means earlier service intervals.
 - **Operating environment.** Sheltered Rice Lake, Ontario fishing is gentle on a motor. Lake Ontario salmon fishing in 4-foot chop is hard. Saltwater is harder still (most Mercury motors in Canada do not see saltwater regularly).
-- **Storage conditions.** Indoor heated storage is gentlest. Outdoor uncovered with snow load is hardest. Affects what you do at winterization and spring commissioning.
+- **[Storage conditions](/blog/boat-storage-kawartha-lakes).** Indoor heated storage is gentlest. Outdoor uncovered with snow load is hardest. Affects what you do at winterization and spring commissioning.
 - **Motor age.** Newer motors under warranty get a different service cadence than older motors. Modern FourStrokes (post-2010) are more service-tolerant than 2-strokes from the 1990s.
 - **Fuel quality.** Ethanol-blended pump gas is the standard fuel in Ontario and is fine for modern motors as long as you do not let it sit untreated. Old gas in old motors is the leading cause of fuel system problems we see at HBW.
 
@@ -3943,7 +3943,7 @@ Spring commissioning is not the same job every time. Five things affect how aggr
 
 **Quality of last fall's winterization.** A properly winterized motor needs verification. A skipped or rushed winterization is a different conversation.
 
-**Storage conditions.** Indoors under cover is gentlest on a motor. Outdoors uncovered all winter is harder on fuel systems, electrical, and rubber components.
+**[Storage conditions](/blog/boat-storage-kawartha-lakes).** Indoors under cover is gentlest on a motor. Outdoors uncovered all winter is harder on fuel systems, electrical, and rubber components.
 
 **Motor age.** Older motors, pre-2010 FourStrokes, 2-stroke carbureted engines, often need more attention on the fuel system and ignition.
 
@@ -14155,7 +14155,7 @@ What we handle:
 - Engine diagnostics and repairs (gas Mercruiser, all sizes)
 - Drive rebuilds (Alpha and Bravo)
 - Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
-- Storage (we shrinkwrap and store 311+ boats every winter, sterndrives included)
+- [Storage](/blog/boat-storage-kawartha-lakes) (we shrinkwrap and store 311+ boats every winter, sterndrives included)
 
 Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**.
 
@@ -15180,7 +15180,7 @@ Quotes vary widely based on boat type, claims history, and where you operate. Ge
 
 ## 3. Winter Storage and Winterization
 
-In Ontario, you don't get to skip winter storage. The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
+In Ontario, you don't get to skip [winter storage](/blog/boat-storage-kawartha-lakes). The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
 
 **HBW pricing 2026:**
 
@@ -17017,7 +17017,7 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
 
 > **Quick answer:** GTA boaters store at HBW for the same reason they service here: capacity, straight pricing, and a proper Mercury winterization before the boat sits. HBW storage is outdoor shrinkwrap storage, not on-site indoor storage. Book by September or you may be waiting.
 
-Every September, GTA boaters face the same decision: where do I store the boat for winter? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
+Every September, GTA boaters face the same decision: [where do I store the boat for winter](/blog/boat-storage-kawartha-lakes)? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
 
 Most GTA boat owners haven't considered driving the boat to Rice Lake, Ontario for winter storage, because the assumption is "rural = cheaper but inconvenient." Half right. **The pricing is roughly equivalent. The convenience is similar. What's different is who works on the boat all winter.**
 
@@ -24482,7 +24482,7 @@ Phone: 905-342-2153
 
 ## Quick Answer
 
-A Mercury that ran fine in October and won't start in May didn't randomly break. Something changed over the off-season. In Ontario, the most common causes are: battery discharge and sulfation from cold winter storage, stale or contaminated fuel, corroded electrical connections, and fuel system issues from sitting. Start with the battery, then fuel, those two causes account for the majority of spring no-starts. The safety lanyard check comes first because it's fastest.
+A Mercury that ran fine in October and won't start in May didn't randomly break. Something changed over the off-season. In Ontario, the most common causes are: battery discharge and sulfation from cold [winter storage](/blog/boat-storage-kawartha-lakes), stale or contaminated fuel, corroded electrical connections, and fuel system issues from sitting. Start with the battery, then fuel, those two causes account for the majority of spring no-starts. The safety lanyard check comes first because it's fastest.
 
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -24951,7 +24951,7 @@ caveat: Tandem trailers, braked trailers, and corroded older units cost more. Al
 
 ## Why Most Boaters Skip Trailer Maintenance Until It Fails
 
-Trailers are easy to ignore. They sit in the driveway most of the year, get pulled out twice for launch and haul-out, and seem fine when they are not. But the trailer is the only thing between your $20,000+ boat-and-motor combo and the asphalt at highway speed.
+Trailers are easy to ignore. They sit in the driveway most of the year, get pulled out twice for launch and [haul-out](/blog/boat-storage-kawartha-lakes), and seem fine when they are not. But the trailer is the only thing between your $20,000+ boat-and-motor combo and the asphalt at highway speed.
 
 We see three patterns at HBW:
 
