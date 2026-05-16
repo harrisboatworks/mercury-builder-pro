@@ -492,6 +492,19 @@ _Service pricing varies by motor size, boat type, and storage tier. The actual p
 
 ---
 
+
+---
+
+## Related at HBW
+
+The full topic hub: **[mercury-smartcraft-alarm-code-encyclopedia](/blog/mercury-smartcraft-alarm-code-encyclopedia)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Breaking In a New Mercury Motor (2026)](/blog/breaking-in-new-mercury-motor-guide)
+
+---
+
 ## FAQ
 
 **How often should I service my Mercury outboard?**
@@ -746,6 +759,19 @@ The decision usually comes down to how the boat actually gets used. FourStroke i
 
 ---
 
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide)
+- [Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)](/blog/center-console-mercury-motor-guide)
+
+---
+
 ## FAQ
 
 **What's the difference between Mercury FourStroke and Pro XS?**
@@ -989,6 +1015,19 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 ## Try the calculator
 
 Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) - no signup, no email gate, takes 30 seconds.
+
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower)
+- [Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower)
+
+---
+
 ## FAQ
 
 **How long does a Mercury outboard last?**
@@ -1209,6 +1248,19 @@ Mercury warranty requires break-in compliance per the owner's manual. Damage fro
 ## Need service on your Mercury?
 
 Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+---
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[mercury-smartcraft-alarm-code-encyclopedia](/blog/mercury-smartcraft-alarm-code-encyclopedia)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury Outboard Won\](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
 
 ---
 
@@ -1449,6 +1501,19 @@ When you come in for a fishing-boat repower or kicker add-on, we want to know:
 - Budget
 
 Most customers fall into one of two answers: 9.9 ProKicker tiller for fishing, or 9.9 ProKicker remote for family-fishing. The rigging differs. Getting this right once saves a retrofit later.
+
+---
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[rice-lake-boating-guide-2026](/blog/rice-lake-boating-guide-2026)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)
+- [2026 Rice Lake Fishing Season Outlook](/blog/2026-rice-lake-fishing-season-outlook)
 
 ---
 
@@ -2965,6 +3030,19 @@ The capacity plate sets the ceiling. Everything else helps us find the right mot
 
 ---
 
+
+---
+
+## Related at HBW
+
+The full topic hub: **[rice-lake-boating-guide-2026](/blog/rice-lake-boating-guide-2026)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [2026 Rice Lake Fishing Season Outlook](/blog/2026-rice-lake-fishing-season-outlook)
+- [Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)](/blog/docking-boat-in-wind-rice-lake)
+
+---
+
 ## FAQs
 
 **What HP do I need for a 16 ft aluminum boat on Rice Lake?**
@@ -3187,7 +3265,20 @@ If you want to walk through your specific boat first, call us at 905-342-2153 or
 ## Sources
 - Parks Canada, Trent-Severn Waterway Canada Strong Pass free lockage, June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
 
-*Last reviewed: 2026-05-11.*`,
+*Last reviewed: 2026-05-11.*
+
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Boat Repowering Guide: When to Replace Your Motor (2026)](/blog/boat-repowering-guide-when-to-replace-motor)
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower)
+
+---
+`,
         faqs: [
       { question: 'What is a boat repower?', answer: 'Replacing your existing outboard with a new Mercury while keeping the hull. The process covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a sea-trial. What it costs depends on HP class, motor family, and the condition of your existing rigging.' },
       { question: 'How long does a Mercury repower take at HBW?', answer: 'A clean install runs one to two days of shop time. From the day you confirm the order to pickup is typically a few weeks, depending on motor availability. Off-season repowers (October through March) move faster.' },
@@ -3344,6 +3435,19 @@ Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) with actual
 Bass-boat repower customers at our shop almost always come in asking for Pro XS. The decision is rarely about HP -- it's about hole-shot and top-end on a tournament rig that needs to run hard from spot to spot. A Pro XS 200 on a Ranger 188 will outpunch a FourStroke 200 even though dyno numbers are close.
 
 The Verado V8 conversation comes up for the biggest boats (21-foot+ bass boats with twin-engine setups, or heavy multi-species rigs). Those are the customers running Champion 220 or Skeeter ZX series.
+
+---
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)](/blog/center-console-mercury-motor-guide)
+- [The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)](/blog/best-mercury-for-family-runabouts)
 
 ---
 
@@ -3778,7 +3882,20 @@ We do not oversell Verado to fishing-focused buyers. Pro XS is the right motor f
 
 Pickup is at Gores Landing. That is not a downside, it means your motor was rigged by a tech who has put a lot of Lake Ontario and Bay of Quinte center consoles in the water.
 
-*Last reviewed: 2026-05-11.*`,
+*Last reviewed: 2026-05-11.*
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)](/blog/best-mercury-for-family-runabouts)
+- [Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use](/blog/pontoon-hp-sizing-decision-tree-ontario)
+
+---
+`,
         faqs: [
       { question: 'What Mercury motor fits a 20 to 22 ft center console in Ontario?', answer: 'The Mercury 200 Pro XS V6 (3.4L) is the most common choice and the one we recommend most often for 20 to 22 ft hulls. It is fast enough for Lake Ontario salmon fishing, light enough to keep the rig trailerable, and a solid all-around motor.' },
       { question: 'Do I need twin motors on a center console in Ontario?', answer: 'It depends on the hull and how you use it. Most Ontario trailerable center consoles in the 20 to 24 ft range are designed for single-engine setups. If you are running 25+ km offshore on Lake Ontario in shoulder seasons, twin-engine redundancy is a serious safety consideration.' },
@@ -3953,6 +4070,19 @@ Schedule at [hbw.wiki/service](https://hbw.wiki/service). Book before April if M
 Center-console repowers in Ontario are dominated by Verado V8 and V10. Most CC customers on Lake Ontario, Bay of Quinte, or Georgian Bay want twin Verado 250s or 300s. Single-engine Pro XS works on smaller (20-foot) CCs but most owners eventually upgrade to twin power for redundancy.
 
 The biggest install consideration on CC repowers: digital throttle and shift integration. SmartCraft Connect or VesselView Mobile usually goes in at the same time. Plan for an extra 2-3 days on the install schedule for the wiring and calibration.
+
+---
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario)
+- [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
 
@@ -6849,6 +6979,19 @@ If you're genuinely unsure between two HP ratings, call us before you build a qu
 
 ---
 
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use](/blog/pontoon-hp-sizing-decision-tree-ontario)
+- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-outboard-ontario)
+
+---
+
 ## FAQs
 
 **What's the best Mercury for a 17-foot runabout?** 
@@ -8330,6 +8473,19 @@ Children under 18 may fish under certain conditions without a licence. Confirm c
 
 
 If you're new to Rice Lake or comparing services, see our [full-service marina overview](/blog/best-marina-rice-lake-ontario) for slips, launch, storage, and service in one place.
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[rice-lake-boating-guide-2026](/blog/rice-lake-boating-guide-2026)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)](/blog/docking-boat-in-wind-rice-lake)
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)](/blog/mercury-prokicker-rice-lake-fishing-guide)
+
+---
 `,
     faqs: [
       { question: 'When does walleye season open on Rice Lake?', answer: 'The second Saturday in May for FMZ 17. Confirm the exact calendar date for 2026 at ontario.ca.' },
@@ -8780,6 +8936,19 @@ Once it comes off, options are:
 - **Parts donor.** Older Evinrudes have some value as parts donors.
 
 The [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) needs to be updated when the motor changes. We handle the paperwork side for HBW customers.
+
+---
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](/blog/complete-guide-boat-repower-kawarthas)
+- [Boat Repowering Guide: When to Replace Your Motor (2026)](/blog/boat-repowering-guide-when-to-replace-motor)
 
 ---
 
@@ -9375,6 +9544,19 @@ For typical recreational use, family fishing, cruising, casual water sports, the
 The 115 versus 150 question is the most-quoted comparison at our shop. Customers walk in expecting to save by going with the 115. By the time we add controls, props, and rigging, the spread is usually only $1,500-$2,500 installed. For a 19-foot pontoon or a 20-foot bowrider, the extra HP pays off in two-up cruising and tube-pulling.
 
 The exception: aluminum tinnies under 17 feet. There the 115 is the better match. Lighter on the transom, easier on fuel, and matches the hull's design max.
+
+---
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide)
 
 ---
 
@@ -10341,6 +10523,19 @@ If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/serv
 
 ---
 
+
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist)
+- [Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario)
+
+---
+
 ## Frequently Asked Questions
 
 **Can I winterize a Mercury FourStroke the same way as an older 2-stroke?** 
@@ -11243,6 +11438,19 @@ Stop troubleshooting and book a professional diagnostic if:
 For engine repairs, we only service Mercury and Mercruiser.
 
 Running a motor with an undiagnosed problem to try to force it to start can turn a $150 diagnostic into a much more serious repair. Book at [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[mercury-smartcraft-alarm-code-encyclopedia](/blog/mercury-smartcraft-alarm-code-encyclopedia)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
+- [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips)
 
 ---
 
@@ -12511,6 +12719,19 @@ Customer drives away with a new Mercury, full documentation, and a clear picture
 **Transom inspection during install.** Some shops bolt a new motor to a transom they didn't inspect. We inspect every transom with the motor off. This is where problems hide.
 
 **Sea trial with prop testing before delivery.** Some shops install the motor and tell the customer to come back if something doesn't feel right. We test on the water and confirm the prop is correct before you leave.
+
+---
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower)
+- [Evinrude to Mercury Repower in Ontario (2026 Guide)](/blog/evinrude-to-mercury-repower-ontario-guide)
 
 ---
 
@@ -14506,6 +14727,19 @@ We have a live quote configurator at [mercuryrepower.ca](https://www.mercuryrepo
 
 ---
 
+
+---
+
+## Related at HBW
+
+The full topic hub: **[mercury-smartcraft-alarm-code-encyclopedia](/blog/mercury-smartcraft-alarm-code-encyclopedia)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Breaking In a New Mercury Motor (2026)](/blog/breaking-in-new-mercury-motor-guide)
+- [Mercury Outboard Won\](/blog/mercury-outboard-wont-start-troubleshooting)
+
+---
+
 ## Frequently Asked Questions
 
 **Do I need to service a motor I barely ran this year?** 
@@ -14809,6 +15043,19 @@ What separates a good shrinkwrap job from a bad one: tying the tarp to a frame, 
 
 ---
 
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide)
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist)
+
+---
 `,
     faqs: [
       {
@@ -18150,6 +18397,19 @@ Either way, you deserve a straight answer, not a sales pitch.
 Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](https://hbw.wiki/service).
 
 *Harris Boat Works. Gores Landing, ON. Est. 1947. Mercury Marine Platinum Dealer.*
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Evinrude to Mercury Repower in Ontario (2026 Guide)](/blog/evinrude-to-mercury-repower-ontario-guide)
+- [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](/blog/complete-guide-boat-repower-kawarthas)
+
+---
 `,
   },
   {
@@ -18539,6 +18799,19 @@ No pressure. But if you want to stop having that heart-rate moment every time yo
 ---
 
 *Harris Boat Works. Est. 1947. Gores Landing, ON. Mercury Platinum Dealer*
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[rice-lake-boating-guide-2026](/blog/rice-lake-boating-guide-2026)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)](/blog/mercury-prokicker-rice-lake-fishing-guide)
+- [Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)
+
+---
 `,
   },
   {
@@ -18813,6 +19086,19 @@ You'll see real Mercury models, real configurations, and real pricing, no "call 
 ---
 
 *Harris Boat Works. Mercury Marine Platinum Dealer. Gores Landing, ON, est. 1947*
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+
+---
 `,
   },
   {
@@ -23138,6 +23424,19 @@ Book at [hbw.wiki/service](https://hbw.wiki/service).
 Rice Lake's central basin is thick with stumps and milfoil in late July. The number-one overheating call we get in August is a clogged water intake from weeds, not a failed impeller. Boater hits 70 km/h, sucks up a wad of weed, the alarm goes off, panic sets in.
 
 The actual fix at the shop, after the impeller test, is usually a five-minute hose-and-pick clean of the intake screen. If the alarm has been on for more than a minute or two, we pressure-test the powerhead before sign-off. Heat damage compounds fast on Pro XS V8 powerheads.
+
+---
+
+
+---
+
+## Related at HBW
+
+The full topic hub: **[mercury-smartcraft-alarm-code-encyclopedia](/blog/mercury-smartcraft-alarm-code-encyclopedia)** -- start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips)
+- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule)
 
 ---
 
