@@ -4263,18 +4263,11 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 
 **我们只为 Mercury 和 Mercruiser 发动机提供维修服务**。这是 HBW 的标准范围，不接其他品牌。
 
-| 品牌 / 类型 | HBW 是否服务 | 备注 |
+| 服务范围 | 我们做 | 我们不做 |
 |---|---|---|
-| Mercury 四冲程（FourStroke）| ✅ 是 | 完整保养、保修、大修 |
-| Mercury Pro XS | ✅ 是 | 包括竞技型号常规服务 |
-| Mercury SeaPro | ✅ 是 | 商用 / 高耐久型号 |
-| Mercury Verado | ✅ 是 | 但 Verado 在 HBW 销售为特别订货，请提前联系 |
-| Mercruiser 汽油 sterndrive | ✅ 是 | 包括 Bravo / Alpha 系列 |
-| Yamaha 外挂机 | ❌ 否 | 请找 Yamaha 授权经销商 |
-| Honda 外挂机 | ❌ 否 | 请找 Honda 授权经销商 |
-| Suzuki / Tohatsu | ❌ 否 | 请找对应授权经销商 |
-| Mercury 赛事专用机 | 视情况 | 请提前联系 |
-| 内置柴油机 | ❌ 否 | 不在我们的服务范围内 |
+| 发动机品牌 | Mercury / Mercruiser（全系） | Yamaha / Honda / Suzuki / Tohatsu |
+| 服务类型 | 保养、诊断、维修、保修工作、冬储、春季开机 | 内燃柴油船机、Mercury 赛车系列（个别评估） |
+| 操作员卡 / 钓鱼证 | 不销售（请到 ontario.ca 办理） | — |
 
 如果你的船是 Mercury 或 Mercruiser，欢迎通过 [https://hbw.wiki/service](https://hbw.wiki/service) 提交服务请求。如果是其他品牌，请直接找对应授权点，避免来回奔波。
 
@@ -4309,7 +4302,7 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 
 ### 4. "SmartCraft 故障码灯亮了，我等等再说"
 
-Mercury 现代发动机的 ECU 报警是有原因的。很多 GTA 华人船主习惯"灯亮了再开几次看看"，结果小问题拖成大问题。看到 SmartCraft 警告灯，**当次出航结束就应该联系经销商诊断**。
+很多 GTA 华人船主习惯忽略 SmartCraft 报警或 ECU 故障码，觉得船还能跑就不要紧。这是最贵的省钱方式。一旦有报警，**当次出航结束就应该联系经销商诊断**，等到下次故障可能已经是大修。
 
 ### 5. "冬储再说，反正冬天还早"
 
@@ -4777,7 +4770,7 @@ Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 Merc
 ### 谁需要
 
 - **18 至 64 岁的安省居民**：在安省水域钓鱼必须有证。
-- **65 岁及以上的安省居民**：仍需 Outdoors Card，但部分钓鱼证免费或减免。
+- **65 岁及以上的安省居民**：免持渔鱼证（Fishing Licence Tag），但仍需持有 Outdoors Card（每 3 年更新一次）。具体规定以 ontario.ca/page/fishing-licence 上的最新信息为准。
 - **18 岁以下儿童**：可以在父母（持证）的限额下一起钓，自己不需单独的证。
 - **非居民**（包括中国游客、来访亲友）：有专门的非居民钓鱼证，价格通常较高。
 
@@ -4800,7 +4793,7 @@ Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 Merc
 
 Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季节、尺寸限制、持有量每年由 MNRF 更新。最常见的目标鱼种：
 
-- **Walleye（黄鱼/玻璃鱼）：** 有季节窗口和尺寸限制（slot size），具体数字每年可能调整
+- **碧古鱼 (Walleye)：** 有季节窗口和尺寸限制（slot size），具体数字每年可能调整
 - **Smallmouth / Largemouth Bass（鲈鱼）：** 通常有禁渔期（春季产卵期）和持有量限制
 - **Muskie（北方狗鱼）：** 严格的最小尺寸和持有量限制
 - **Perch、Sunfish、Crappie（杂鱼）：** 限制较宽松，适合带小孩
@@ -5003,7 +4996,7 @@ Rice Lake 几个对买家友好的特点：
 - **交付前讲解：** 第一次买船的家庭，我们会在交付时安排基础操作讲解，包括启动、靠泊、加油、保养注意事项。
 - **如有翻译需求请提前告知：** 我们没有专职翻译，但可以协调安排。
 
-我们不假装是"中文专卖店"，但我们认真对待每一位华人客户。
+我们不假装是规模最大的经销商，但我们用心做好每一笔生意。
 
 ---
 
@@ -5017,7 +5010,7 @@ Rice Lake 几个对买家友好的特点：
 
 HBW 的在线报价工具 [mercuryrepower.ca](https://mercuryrepower.ca) 在你生成报价时会显示可用的贷款选项和大致月供估算，方便你和家人讨论。我们这里不列具体利率，因为利率每个月都在变，以你提交申请时的当下条款为准。
 
-**一个老实的提醒：** 不要因为"月供看起来不贵"就买超出预算的船。船的真实成本不只是船价，还包括保险、燃油、保养、冬储、上牌和拖车（如果自己拖）。
+**一个老实的提醒：** 不要因为时间紧或价格便宜，就跳过试船、验机或验车这几步。这几步省掉，后面踩的坑会比省下的钱多很多。
 
 ---
 
@@ -5117,7 +5110,7 @@ Harris Boat Works（HBW）是 Rice Lake 上自 1947 年家族经营的 marina，
 - **距离合理：** 多伦多市区约 90 分钟，Markham 75 分钟，Pickering 60 分钟。一天来回完全没问题，不需要订酒店。
 - **湖水温和：** Rice Lake 较浅、水温较暖，鱼活动旺盛，孩子和老人在 pontoon 上也比较安心。
 - **没有船闸：** 从 Gores Landing 公共码头直接下水，不需要过 Trent-Severn Waterway 的任何 lock，省时省心。
-- **多鱼种：** Walleye（黄鱼/玻璃鱼）、Smallmouth/Largemouth Bass（鲈鱼）、Muskie（北方狗鱼）、Perch 和 Sunfish（适合带小孩）一湖全有。
+- **多鱼种：** 碧古鱼（Walleye）、Smallmouth/Largemouth Bass（鲈鱼）、Muskie（北方狗鱼）、Perch 和 Sunfish（适合带小孩）一湖全有。
 - **家庭友好：** Gores Landing 有公共码头、餐厅、洗手间，pontoon 上可以 BBQ、午餐、午睡。
 
 如果你是头一次带家人来这一带，可以先看看我们的 [Rice Lake 最佳 marina 介绍](/blog/best-marina-rice-lake-ontario)（英文），里面有 HBW 的实景航拍图和码头布局。
@@ -5191,7 +5184,7 @@ Harris Boat Works（HBW）是 Rice Lake 上自 1947 年家族经营的 marina，
 
 如果一日游有钓鱼计划，先了解一下 Rice Lake 的鱼情：
 
-- **Walleye（黄鱼 / 玻璃鱼）：** 5 月到 7 月最旺，傍晚日落前后最好钓。Ontario 有 slot size 限制和数量限制，请查 Ontario Ministry of Natural Resources（MNR）发布的当年钓鱼条例。
+- **碧古鱼（Walleye）：** 5 月到 7 月最旺，傍晚日落前后最好钓。Ontario 有 slot size 限制和数量限制，请查 Ontario Ministry of Natural Resources（MNR）发布的当年钓鱼条例。
 - **Bass（鲈鱼）：** Smallmouth 和 Largemouth 都有，正式开放期通常在 6 月底（每年开放日略有调整，请以 MNR 公告为准）。
 - **Muskie（北方狗鱼）：** Rice Lake 是安省有名的 muskie 水域，秋天最好。属于"trophy"鱼，多数为 catch-and-release。
 - **Panfish（Perch / Sunfish）：** 全季都钓得到，适合带小孩入门。
