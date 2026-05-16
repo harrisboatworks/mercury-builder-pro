@@ -242,7 +242,7 @@ export default function BlogArticle() {
       {/* Floating Share Bar */}
       <FloatingShareBar
         url={articleUrl}
-        title={article.title}
+        title={article.seoTitle ?? article.title}
         description={cleanDescription}
         articleSlug={article.slug}
       />
@@ -315,7 +315,7 @@ export default function BlogArticle() {
               </div>
               <BlogShareButtons
                 url={articleUrl}
-                title={article.title}
+                title={article.seoTitle ?? article.title}
                 description={cleanDescription}
                 image={article.image}
                 variant="inline"
@@ -451,7 +451,7 @@ export default function BlogArticle() {
           <div className="mt-14 pt-10 border-t border-repower-navy-900/10">
             <BlogShareButtons
               url={articleUrl}
-              title={article.title}
+              title={article.seoTitle ?? article.title}
               description={cleanDescription}
               image={article.image}
               variant="full"
