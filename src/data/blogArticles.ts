@@ -14615,7 +14615,7 @@ If you're new to HBW, calling in late August / early September means you get int
 
 ## Book Winter Storage at HBW
 
-We've stored boats in Gores Landing for three generations. Mercury Marine Platinum dealer service on the engine, professional shrinkwrap on the hull, our property as the storage lot. Drop off in fall, ready to launch in spring.
+We've stored boats in Gores Landing for three generations. Mercury Marine Platinum dealer service on the engine, professional shrinkwrap on the hull, our property as the storage lot. Drop off in fall, ready to launch in spring. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 **Phone:** 905-342-2153
 **Online:** [harrisboatworks.ca/winter-storage](https://harrisboatworks.ca/winter-storage)
