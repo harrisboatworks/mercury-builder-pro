@@ -25503,18 +25503,19 @@ It also matters because Rice Lake has its own conditions. Shallow in spots, weed
 
 ---
 
-## Rice Lake marinas compared by what they offer
+## What full-service Mercury support looks like on Rice Lake
 
-This table only includes what each marina advertises on their own website. No commentary on quality, just service coverage.
+Mercury Marine Platinum status is the top tier of Mercury's dealer program. It is measured every year and it is not handed out for showing up. Here is what it actually looks like operationally at Harris Boat Works:
 
-| Marina | Slips | Launch ramp | Mercury authorized service | Winter storage | Boat rentals | Years on the lake |
-|---|---|---|---|---|---|---|
-| Harris Boat Works (Gores Landing) | 65 | Yes | Yes (Mercury Platinum) | Yes (outdoor + shrinkwrap) | Yes (pontoon + fishing) | Since 1947 |
-| South-shore resort marina | Limited slips | Yes | Not advertised | Seasonal | Yes | Long-running |
-| Bewdley-area marina A | Limited slips | Yes | Not advertised | Seasonal | Limited | Long-running |
-| Bewdley-area marina B | Limited slips | Yes | Not advertised | Seasonal | Yes | Long-running resort |
+- **Factory-trained technicians.** Our service techs hold current Mercury certifications across the FourStroke, Pro XS, Verado, and Mercruiser families. Training is renewed annually as Mercury updates platforms and diagnostic procedures.
+- **Parts on hand, not on order.** Platinum dealers carry a deeper parts inventory than standard tiers. Common service items (impellers, anodes, water pump kits, plugs, filters, common gaskets) sit on the shelf. Less common parts ship in one to two business days through the Mercury parts network.
+- **Warranty work in-house.** If your Mercury is under factory warranty or covered by Mercury Product Protection, we open and close the claim ourselves. Nothing gets trucked to a third shop. Same for recall work.
+- **Repower capacity.** New motor, rigging, controls, gauges, and propeller all happen in one bay with one work order. The motor and the rigging kit come from the same parts counter.
+- **Year-round service availability.** April through November is in-season service. December through March is the winter service window for repowers, rebuilds, and major projects so the boat is ready when the lake opens.
 
-A marina should make boating easier. If it creates more phone calls than lake time, something has gone sideways. Pick the one whose service coverage actually matches what you'll need across a full season, not just July.
+A marina should make boating easier. If it creates more phone calls than lake time, something has gone sideways. The full-service Mercury model on Rice Lake exists so a Friday-afternoon problem does not eat a long weekend, and so the same shop that sold you the motor is still the shop fixing it in year seven.
+
+Service intake and current scheduling are at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
