@@ -615,6 +615,9 @@ function renderMarkdownWithDirectives(
     if (chunk.kind === 'pull-quote' && chunk.pullQuoteProps) {
       return <PullQuote key={`${keyPrefix}-pq-${i}`} {...chunk.pullQuoteProps} />;
     }
+    if (chunk.kind === 'walkaround-lead') {
+      return <WalkaroundLeadCapture key={`${keyPrefix}-wl-${i}`} />;
+    }
     if (!chunk.content.trim()) return null;
     return (
       <ReactMarkdown
