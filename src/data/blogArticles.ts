@@ -24858,7 +24858,7 @@ A marina should make boating easier. If it creates more phone calls than lake ti
 eyebrow: Rice Lake marina decision
 heading: Which marina fits how you actually use the boat?
 subhead: Two honest paths. Pick the one that matches your situation.
-left-label: If you need Mercury service, repower, or year-round support
+left-label: If you need Mercury service, repower, or seasonal support
 left-criteria:
 - Mercury or Mercruiser motor (new or older)
 - Want service, parts, and storage in one place
