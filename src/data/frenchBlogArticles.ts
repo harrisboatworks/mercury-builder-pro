@@ -1183,7 +1183,7 @@ Téléphone : 905-342-2153
 
 *Dernière révision : 2026-05-13*
 
-> **Réponse rapide :** Les plaisanciers de la GTA remotorisent chez Harris Boat Works parce que nous donnons des soumissions installées en ligne, gardons l\'inventaire Mercury en stock et complétons la plupart des remotoriations en 7 à 14 jours à l\'atelier. Vous laissez le bateau à Gores Landing, vous le récupérez mis en service et essayé sur l\'eau. Commencez le configurateur à mercuryrepower.ca.
+> **Réponse rapide :** Les plaisanciers de la GTA remotorisent chez Harris Boat Works parce que nous donnons des soumissions installées en ligne, maintenons une bonne profondeur d\'inventaire Mercury (les modèles courants sont normalement disponibles) et complétons la plupart des remotoriations dans un délai typique de 1 à 2 semaines à l\'atelier, selon la complexité et la charge saisonnière. Vous laissez le bateau à Gores Landing, vous le récupérez mis en service et essayé sur l\'eau. Commencez le configurateur à mercuryrepower.ca.
 
 Vous avez décidé de remotoriser. Peut-être que votre vieux moteur est à bout de souffle; peut-être qu\'une réfection du système de carburant coûte autant qu\'un Mercury neuf. Dans tous les cas, vous êtes dans la GTA et vous devez comprendre : **comment ça fonctionne sur le plan logistique quand le concessionnaire est à 90 minutes de route ?**
 
@@ -1258,7 +1258,7 @@ Le vieux moteur sort, le nouveau Mercury entre. Le travail comprend :
 - **Réglage**, ajustement du pas de l\'hélice si nécessaire; parfois 1 ou 2 changements pour bien ajuster les performances
 - **Documentation**, enregistrement de la garantie, registres de service, inscription au MPP si acheté
 
-**Temps total écoulé :** 7 à 14 jours selon la charge de travail et la complexité. La plupart des remotoriations sont terminées en 10 jours.
+**Temps total écoulé :** généralement 1 à 2 semaines à l\'atelier, selon la charge de travail et la complexité.
 
 ### Étape 5 : Récupération, vérification sur l\'eau, retour à la maison (4 à 8 heures)
 
@@ -1347,7 +1347,7 @@ Si vous envisagez une remotorisation pour le printemps 2026, **commencez le conf
 Cela dépend de la puissance et du bateau actuel. Plages typiques : installation 90 HP de 15 500 $ à 18 500 $; installation 150 HP de 23 000 $ à 30 000 $; installation 200 HP V6 de 28 000 $ à 35 000 $. Le configurateur à mercuryrepower.ca donne votre chiffre précis en 90 secondes.
 
 **Combien de temps prend une remotorisation chez Harris Boat Works ?**
-Installation, essai sur l\'eau et réglage d\'hélice typiques : 7 à 14 jours à l\'atelier. Délai de réservation de 2 à 4 semaines en haute saison. Planifiez le projet total comme 4 à 6 semaines entre la soumission et le moteur sur l\'eau.
+Installation, essai sur l\'eau et réglage d\'hélice : généralement 1 à 2 semaines à l\'atelier, plus de temps en haute saison. Délai de réservation de 2 à 4 semaines en haute saison. Planifiez le projet total comme 4 à 6 semaines entre la soumission et le moteur sur l\'eau.
 
 **Puis-je remorquer mon bateau de Toronto à Harris Boat Works moi-même ?**
 Oui. 401 vers l\'est jusqu\'à Cobourg, vers le nord sur la route régionale 18 jusqu\'à Gores Landing. Environ 90 minutes du centre-ville de Toronto. Nous avons du stationnement pour remorques sur place.
@@ -1365,7 +1365,7 @@ Cela dépend de l\'usage. Pro XS pour les applications de performance (ski, spor
 Scénario fréquent. Les remotoriations font souvent émerger d\'autres travaux : mises à niveau de câblage (direction hydraulique, jauges, commandes), renforcement du tableau arrière, remplacement du système de carburant, mises à jour électriques. Nous spécifions tout dans la soumission et vous décidez ce qui est inclus ou reporté.
 
 **Faites-vous des remotoriations à deux moteurs ?**
-Oui, configurations V6 ou V8 jumelées sur les plus gros bateaux (en mer, bass boats, deck boats). Même configurateur, même processus, temps d\'installation plus long (typiquement 14 à 21 jours pour les jumelés). Les installations Pro XS V6 jumelées sont fréquentes à notre atelier.
+Oui, configurations V6 ou V8 jumelées sur les plus gros bateaux (en mer, bass boats, deck boats). Même configurateur, même processus, temps d\'installation plus long (généralement 2 à 3 semaines pour les jumelés). Les installations Pro XS V6 jumelées sont fréquentes à notre atelier.
 
 **Quelle est la valeur d\'échange de mon moteur actuel ?**
 Très variable. Un Mercury 150 de 5 ans à faible heures s\'échange pour 5 500 $ à 7 500 $. Un 90 HP de 12 ans à hautes heures s\'échange pour 1 500 $ à 2 500 $. Le configurateur estime selon les spécifications de votre moteur.
@@ -1379,13 +1379,13 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s\'échange pour 5 500 
 `,
     faqs: [
       { question: 'Combien coûte une remotorisation Mercury dans la GTA ?', answer: 'Cela dépend de la puissance et du bateau actuel. Plages typiques : installation 90 HP de 15 500 $ à 18 500 $; installation 150 HP de 23 000 $ à 30 000 $; installation 200 HP V6 de 28 000 $ à 35 000 $. Le configurateur à mercuryrepower.ca donne votre chiffre précis en 90 secondes.' },
-      { question: 'Combien de temps prend une remotorisation chez Harris Boat Works ?', answer: 'Installation, essai sur l\'eau et réglage d\'hélice typiques : 7 à 14 jours à l\'atelier. Délai de réservation de 2 à 4 semaines en haute saison. Planifiez le projet total comme 4 à 6 semaines entre la soumission et le moteur sur l\'eau.' },
+      { question: 'Combien de temps prend une remotorisation chez Harris Boat Works ?', answer: 'Installation, essai sur l\'eau et réglage d\'hélice : généralement 1 à 2 semaines à l\'atelier, plus de temps en haute saison. Délai de réservation de 2 à 4 semaines en haute saison. Planifiez le projet total comme 4 à 6 semaines entre la soumission et le moteur sur l\'eau.' },
       { question: 'Puis-je remorquer mon bateau de Toronto à Harris Boat Works moi-même ?', answer: 'Oui. 401 vers l\'est jusqu\'à Cobourg, vers le nord sur la route régionale 18 jusqu\'à Gores Landing. Environ 90 minutes du centre-ville de Toronto. Nous avons du stationnement pour remorques sur place.' },
       { question: 'Organisez-vous le transport de bateau depuis la GTA ?', answer: 'Nous n\'opérons pas de transport, mais nous travaillons avec plusieurs services de transport marin ontariens. Coût typique de 300 $ à 600 $ par direction pour un bateau de 18 à 22 pieds. Nous pouvons vous référer.' },
       { question: 'Mon Mercury sera-t-il admissible à la garantie si je l\'ai acheté ailleurs ?', answer: 'Oui. Le réseau de garantie canadien Mercury honore la couverture chez n\'importe quel concessionnaire autorisé peu importe où le moteur a été acheté. Apportez les papiers d\'achat; nous enregistrons le travail dans le système central de Mercury.' },
       { question: 'Puis-je choisir un Pro XS plutôt qu\'un FourStroke pour la remotorisation ?', answer: 'Cela dépend de l\'usage. Pro XS pour les applications de performance (ski, sports nautiques, opération à haut régime, vitesse de pointe maximale). FourStroke pour la croisière, l\'efficacité énergétique, l\'usage familial.' },
       { question: 'Que se passe-t-il si mon bateau a besoin de plus qu\'un moteur ?', answer: 'Scénario fréquent. Les remotoriations font souvent émerger d\'autres travaux : mises à niveau de câblage (direction hydraulique, jauges, commandes), renforcement du tableau arrière, remplacement du système de carburant, mises à jour électriques. Nous spécifions tout dans la soumission et vous décidez ce qui est inclus ou reporté.' },
-      { question: 'Faites-vous des remotoriations à deux moteurs ?', answer: 'Oui, configurations V6 ou V8 jumelées sur les plus gros bateaux (en mer, bass boats, deck boats). Même configurateur, même processus, temps d\'installation plus long (typiquement 14 à 21 jours pour les jumelés). Les installations Pro XS V6 jumelées sont fréquentes à notre atelier.' },
+      { question: 'Faites-vous des remotoriations à deux moteurs ?', answer: 'Oui, configurations V6 ou V8 jumelées sur les plus gros bateaux (en mer, bass boats, deck boats). Même configurateur, même processus, temps d\'installation plus long (généralement 2 à 3 semaines pour les jumelés). Les installations Pro XS V6 jumelées sont fréquentes à notre atelier.' },
       { question: 'Quelle est la valeur d\'échange de mon moteur actuel ?', answer: 'Très variable. Un Mercury 150 de 5 ans à faible heures s\'échange pour 5 500 $ à 7 500 $. Un 90 HP de 12 ans à hautes heures s\'échange pour 1 500 $ à 2 500 $. Le configurateur estime selon les spécifications de votre moteur.' },
     ],
   },
@@ -1415,7 +1415,7 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s\'échange pour 5 500 
     ],
     content: `### Réponse rapide
 
-Le Mercury 75 HP FourStroke est le même moteur physique que le 90, même bloc 2,1 L 4 cylindres en ligne, même poids de 359 lb, avec un plafond de RPM plus bas et une différence de prix plus petite que la plupart des gens pensent. Harris Boat Works ne tient pas le 75 en stock parce que le 90 est l'achat plus intelligent pour 95 % des clients. Nous commanderons le 75 si votre plaque de capacité l'exige.
+Le Mercury 75 HP FourStroke est le même moteur physique que le 90, même bloc 2,1 L 4 cylindres en ligne, même poids de 359 lb, avec un plafond de RPM plus bas et une différence de prix plus petite que la plupart des gens pensent. Harris Boat Works ne tient pas le 75 en stock parce que le 90 est l'achat plus intelligent pour la grande majorité des clients. Nous commanderons le 75 si votre plaque de capacité l'exige.
 
 ---
 
@@ -1456,7 +1456,7 @@ Trois raisons :
 2. **La différence de prix est minime.** Pas suffisamment pour justifier la marge que vous abandonnez.
 3. **Le 90 conserve mieux sa valeur de revente.** Le 75 se trouve dans un écart entre les moteurs que les gens veulent réellement.
 
-Pour 95 % des clients, le 75 est le mauvais moteur à acheter quand le 90 existe à presque le même prix et au même poids.
+Pour la grande majorité des clients, le 75 est le mauvais moteur à acheter quand le 90 existe à presque le même prix et au même poids.
 
 ---
 
@@ -2178,7 +2178,7 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
     relatedSlugs: ['garantie-prolongee-mercury-platinum-ontario'],
     content: `## Réponse rapide
 
-**L'Ontario n'exige pas légalement d'assurance bateau pour la plupart des embarcations de plaisance. Mais pour tout bateau d'une valeur supérieure à 5 000 $, ou tout bateau transportant des passagers, une couverture de base responsabilité et coque est ce que tout concessionnaire honnête recommande. Attendez-vous à payer 200 $ à 600 $ par année pour un bateau ontarien typique de 16 à 22 pi avec moteur Mercury.**
+**En Ontario, l'assurance bateau n'est généralement pas obligatoire pour toutes les embarcations de plaisance, mais elle peut être exigée par un prêteur, une marina, un programme de financement ou une installation d'entreposage. Pour tout bateau d'une valeur supérieure à 5 000 $, ou tout bateau transportant des passagers, une couverture de base responsabilité et coque est ce que tout concessionnaire honnête recommande. Plusieurs propriétaires verront des primes annuelles de quelques centaines de dollars, mais le vrai coût dépend de la valeur du bateau, du moteur, du remorquage, de l'usage, du dossier du conducteur et des protections choisies. Demandez des soumissions à un courtier ou à votre assureur.**
 
 - **Responsabilité** : 1 M$ à 2 M$ minimum (couvre dommages à d'autres bateaux, quais ou blessures)
 - **Coque / valeur convenue** : coût de remplacement moins dépréciation, avec avenants pour moteur et remorque
@@ -2324,7 +2324,7 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
 - **Honoré chez plus de 3 600 concessionnaires Mercury** aux États-Unis et au Canada
 - **Exclusivité HBW** : 10 % de rabais sur Platinum pour les clients ayant acheté leur moteur chez HBW
 
-[Obtenez une soumission sur /warranty](https://www.harrisboatworks.ca/warranty), tarification CAD transparente par HP et durée.
+Obtenez une soumission par le formulaire de contact à [mercuryrepower.ca](https://mercuryrepower.ca) ou appelez le 905-342-2153 pour la tarification Platinum actuelle par HP et durée.
 
 ---
 
