@@ -2406,7 +2406,7 @@ Pour vous inscrire à Mercury Product Protection :
 4. **Usage récréatif seulement.** Nolisement, pêche commerciale, gouvernemental ou usage lié au travail est exclu.
 5. **Doit être un moteur acheté aux États-Unis ou au Canada.** Les importations de l'extérieur de l'Amérique du Nord ne se qualifient pas.
 
-Nous vérifions l'admissibilité à l'aide du modèle et du numéro de série de votre moteur. Cela prend environ 10 minutes, fournissez-les via le formulaire à [harrisboatworks.ca/warranty](https://www.harrisboatworks.ca/warranty).
+Nous vérifions l'admissibilité à l'aide du modèle et du numéro de série de votre moteur. Cela prend environ 10 minutes, fournissez-les via le formulaire de contact à [mercuryrepower.ca](https://mercuryrepower.ca) ou par téléphone au 905-342-2153.
 
 ---
 
@@ -2470,7 +2470,7 @@ Si vous avez acheté la garantie chez HBW mais que vous êtes en panne dans une 
 
 ## Comment obtenir une soumission
 
-Visitez [harrisboatworks.ca/warranty](https://www.harrisboatworks.ca/warranty), remplissez le modèle et le numéro de série de votre moteur, choisissez votre durée préférée. Nous confirmons l'admissibilité dans 1 à 2 jours ouvrables et vous envoyons la soumission finale.
+Visitez [mercuryrepower.ca](https://mercuryrepower.ca) et utilisez le formulaire de contact, ou appelez le 905-342-2153. Donnez-nous le modèle et le numéro de série de votre moteur et votre durée préférée. Nous confirmons l'admissibilité dans 1 à 2 jours ouvrables et vous envoyons la soumission finale.
 
 Clients HBW (moteur acheté chez nous), mentionnez-le dans le champ notes et nous appliquons automatiquement le rabais de 10 %.
 
@@ -2485,7 +2485,7 @@ Par Harris Boat Works, concessionnaire Mercury Marine certifié Platinum, marina
       { question: "Mercury Product Protection est-elle transférable quand je vends mon bateau?", answer: "Oui. Transférable à un acheteur subséquent à usage récréatif dans les 30 jours de la vente. Ajoute 10 à 15 % à la valeur de revente parce que le nouveau propriétaire hérite de la protection d'usine continue." },
       { question: "Quelle est la franchise?", answer: "50 $ par réclamation." },
       { question: "Mercury Product Protection couvre-t-elle l'entretien régulier?", answer: "Non. Vidanges d'huile, turbines, bougies, anodes, usure d'hélice, ce sont des articles d'entretien, pas des articles de garantie. Vous les gérez normalement." },
-      { question: "J'ai acheté mon moteur chez HBW. Comment obtenir le rabais de 10 %?", answer: "Mentionnez-le dans le champ notes du formulaire de soumission à /warranty. Nous vérifions l'achat original dans nos dossiers et appliquons le rabais avant d'envoyer la soumission finale." },
+      { question: "J'ai acheté mon moteur chez HBW. Comment obtenir le rabais de 10 %?", answer: "Mentionnez-le dans le champ notes du formulaire de contact à mercuryrepower.ca, ou par téléphone au 905-342-2153. Nous vérifions l'achat original dans nos dossiers et appliquons le rabais avant d'envoyer la soumission finale." },
     ],
   },
   {
