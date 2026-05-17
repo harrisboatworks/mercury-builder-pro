@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
+import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { SITE_URL } from '@/lib/site';
 import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
@@ -9,6 +10,7 @@ import { getSpanishArticleBySlug } from '@/data/spanishBlogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
+import { AuthorByline } from '@/components/blog/AuthorByline';
 import {
   Accordion,
   AccordionContent,
@@ -316,7 +318,11 @@ export default function SpanishBlogArticlePage() {
         {article.image && !heroImgError && (
           <div className="mb-8 rounded-xl overflow-hidden">
             <img
-              src={article.image}
+              src={optimizeImage(article.image, 1280)}
+              srcSet={buildSrcSet(article.image)}
+              sizes="(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw"
+              loading="eager"
+              fetchPriority="high"
               alt={article.title}
               className="w-full h-64 md:h-80 object-cover"
               onError={() => setHeroImgError(true)}
@@ -344,6 +350,9 @@ export default function SpanishBlogArticlePage() {
         <h1 className="text-3xl md:text-4xl font-light text-foreground mb-8">
           {article.title}
         </h1>
+        <div className="mb-8 pb-4 border-b border-border">
+          <AuthorByline name="Jay Harris" title="Distribuidor Mercury Platinum desde 1965" />
+        </div>
 
         {/* Table of Contents */}
         {tocItems.length > 2 && (
