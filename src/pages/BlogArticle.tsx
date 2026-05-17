@@ -299,7 +299,7 @@ export default function BlogArticle() {
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline name={article.author} />
+                <AuthorByline name="Jay Harris" title="Mercury Platinum Dealer since 1965" />
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
                   {parseLocalDate(article.datePublished).toLocaleDateString('en-US', {
