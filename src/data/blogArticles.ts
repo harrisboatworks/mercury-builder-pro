@@ -28193,6 +28193,690 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 `,
   },
 
+  {
+    slug: 'mercury-dts-vs-mechanical-controls-ontario-repower',
+    title: 'Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know',
+    seoTitle: 'Mercury DTS vs Mechanical Controls Ontario | Harris Boat Works',
+    description: 'Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer\'s honest take on which fits which Ontario repower project. Compatibility, cost, ride feel, and when mechanical is still the right answer.',
+    image: '/lovable-uploads/hero-dts-vs-mechanical-controls.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guides',
+    readTime: '7 min read',
+    keywords: ['mercury dts vs mechanical controls ontario repower', 'mercury dts vs mechanical controls ontario repower ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
+    content: `# Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know
+
+## Quick answer
+
+Mercury Digital Throttle & Shift (DTS) replaces the old mechanical cable-and-lever system with an electronic control head that sends digital signals to the motor. DTS feels smoother, looks cleaner at the helm, and is required on most Mercury V8 and V10 outboards (150 HP and up depending on model). Mechanical controls still work fine on most Mercury FourStroke outboards from 9.9 HP up to about 150 HP, and they cost roughly $400-$800 less than the DTS equivalent fully installed. For an Ontario boater repowering a small-to-mid-size fishing boat or pontoon with a Mercury 25-115 HP, mechanical is usually the smarter buy. For a repower into a Mercury Pro XS 175+ or a Verado, you don't have a choice. We install both at Harris Boat Works, and the right call usually depends on motor size and what the helm looks like today.
+
+## What you're actually choosing between
+
+**Mechanical controls** are the traditional setup. A throttle/shift lever at the helm connects to the outboard via two steel push-pull cables routed through the boat. Move the lever, the cable moves, the motor responds. The system is mature, cheap, and easy for any marine tech to service. If a cable seizes or kinks, replacing it is a few hundred dollars in parts and labour.
+
+**DTS** is Mercury's digital control system. The control head at the helm is electronic, with a chrome lever, digital display, and a START/STOP button. Instead of cables, the control sends signals over the Mercury SmartCraft network to the motor's electronic throttle and shift actuators. There are no cables to seize, the response is precise, and the system integrates with VesselView, autopilot, and joystick if you have them.
+
+The chemistry difference creates real consequences in compatibility, cost, ride, and serviceability.
+
+## Compatibility, the part most buyers miss
+
+This is the part of the conversation that decides the choice before anything else does.
+
+**Mechanical controls are compatible with:**
+- All Mercury FourStroke outboards 9.9 HP through 115 HP
+- Most Mercury FourStroke 150 HP (depending on rigging configuration)
+- Mercury Pro XS 115-175 HP in most configurations
+
+**DTS is required on:**
+- All Mercury Verado outboards
+- Most Mercury V8 and V10 4.6L FourStroke outboards (175 HP through 600 HP depending on family)
+- Mercury Pro XS V8/V10 platforms (250 HP and up)
+- Any twin or triple application using Mercury SmartCraft joystick piloting
+
+If your repower is into a 90 HP FourStroke on a small fishing boat, mechanical is straightforward and the right call. If you're repowering into a Mercury 250 Pro XS V8, you're getting DTS whether you want it or not. The middle range (150-175 HP) is where the buyer actually has to choose.
+
+## Cost: mechanical wins by $400-$800
+
+Mechanical controls installed: typically $250-$450 in parts (control head, cables, hardware) plus 1-2 hours of rigging labour at $135-$165/hour.
+
+DTS installed: typically $800-$1,200 in parts (digital control, harness, SmartCraft integration kit) plus 2-3 hours of rigging labour for cleaner installation and configuration.
+
+For a typical Ontario repower in 2026, you're looking at $400-$800 more total for DTS. That isn't a deal-breaker number on a $13,000 motor purchase, but it isn't nothing either, especially when the mechanical setup will do everything most owners actually need.
+
+## Ride feel: DTS is smoother
+
+This is the honest one. DTS has a noticeable feel advantage at low speeds. The shift engagement is silky, the throttle response is linear and predictable, and there's no cable lag. On a properly-rigged mechanical setup, the difference is small. On a poorly-rigged or older mechanical setup with worn cables, the difference is significant.
+
+Where DTS really shines is in maneuvering: docking, slow trolling, holding position in current. The digital system gives you precise small throttle adjustments without the dead spot a mechanical cable can develop. For an Ontario boater who docks regularly in tight Kawartha marina slips or runs slow trolling speeds for walleye, that precision is genuinely useful.
+
+For a boater who launches and runs out to a fishing hole at cruise speed, the mechanical setup will do exactly the same job for $600 less.
+
+## Serviceability: mechanical is more democratic
+
+A mechanical control system is something any competent marine tech can service anywhere. Cables, levers, pulleys: 50-year-old technology that hasn't fundamentally changed. If something seizes in the middle of a season, parts are available off the shelf at any Mercury dealer.
+
+DTS service requires Mercury diagnostic tools (CDS or G3) and trained service technicians. The system is reliable but when it does fail, the repair is dealer-level, not roadside. For a boater who keeps the boat at a remote cottage and likes to fix things themselves, mechanical has a real edge.
+
+This is one reason we recommend keeping rigging documentation in the boat. Our [Mercury Controls & Rigging Compatibility Matrix](/blog/mercury-controls-rigging-guide-ontario) covers the spec sheets in detail.
+
+## When mechanical is still the right answer
+
+The mechanical decision usually wins when at least two of these are true:
+
+- The motor is 150 HP or smaller
+- The existing helm already has mechanical controls and the cables are recent
+- You like simple, owner-serviceable systems
+- The boat is a fishing platform where the helm sees more abuse than precision
+
+Customers we steer toward mechanical: repowers on 16-18 foot aluminum fishing boats, owners who flip boats every 3-5 years, and any project where the $600 saved buys a better trailer or fishfinder.
+
+## When DTS is the right answer
+
+The DTS decision usually wins when at least two of these are true:
+
+- The motor is 175 HP or larger (often you have no choice)
+- The boat is a center console, pontoon, or runabout where the helm aesthetic matters
+- You run twin or triple engines and need integrated SmartCraft
+- You already use VesselView or want joystick piloting
+
+Customers we steer toward DTS: V8 and V10 repowers, premium pontoon packages with the [Boost software upgrade](/blog/mercury-boost-software-upgrade-eligibility-2026), and any boat where the SmartCraft network is doing real work.
+
+## What we do at Harris Boat Works
+
+We install both systems regularly. When a customer comes in for a repower, the first thing we check is the motor model they're putting on, because that often makes the choice for them. The second thing we check is the existing helm: if the boat already has mechanical and the cables are in good shape, keeping mechanical is the cheap, clean answer. If the cables are tired or the helm wiring is a mess, DTS sometimes makes more sense even on a smaller motor because we're rebuilding the helm anyway.
+
+For an honest cost-benefit conversation on your specific boat, email info@harrisboatworks.ca with your hull details, current control setup, and target Mercury model. We'll tell you what we'd do in your situation.
+
+## FAQ
+
+**Can I retrofit DTS onto a boat that currently has mechanical controls?**
+Yes, but it isn't usually a smart spend. The retrofit involves new control head, new harness, possibly new helm wiring, and SmartCraft integration. Cost runs $1,500-$3,000 above what the mechanical system would have cost. Unless you're already rebuilding the helm or upgrading to a motor that requires DTS, keep what works.
+
+**Does DTS need a separate battery or charging system?**
+No. DTS draws power from the standard outboard charging system and the boat's main starting battery. It does require clean 12V power, so if your battery setup is borderline, fix that first. Our [Mercury Boat Battery Guide](/blog/mercury-boat-battery-guide-ontario) covers the basics.
+
+**What happens if the DTS digital display fails on the water?**
+Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it has never stranded a customer.
+
+**Are mechanical cables really 50-year-old technology?**
+Functionally, yes. Modern cables have better materials and seals, but the principle has not changed. They wear out predictably (most cables are good for 10-15 years of average use), they're cheap, and they're easy to replace.
+
+**Do mechanical and DTS controls work with the same Mercury props?**
+Yes. The control system is independent of propeller choice. Whatever prop is correctly matched to your hull and motor will work with either control system. Our [Mercury Controls & Rigging Compatibility Matrix](/blog/mercury-controls-rigging-guide-ontario) covers prop selection in detail.
+
+**Is there a fuel economy difference?**
+Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a gallon at cruise. Nobody we have ever serviced has measured a meaningful difference. The motor model, the prop, and the hull matter far more than the control system.
+
+## Sources
+
+- Mercury Marine SmartCraft and DTS technical documentation ([mercurymarine.com/ca/en/owner-resources](https://www.mercurymarine.com/ca/en/owner-resources/))
+- Mercury Marine outboard rigging guide (dealer technical reference, 2026)
+- Transport Canada Construction Standards for Small Vessels (TP 1332)
+- HBW internal rigging records, 2020-2026
+
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+`,
+  },
+  {
+    slug: 'boat-trim-explained-rice-lake-ontario',
+    title: 'Boat Trim Explained for Rice Lake Boaters, Without the Jargon',
+    seoTitle: 'Boat Trim Explained Rice Lake Ontario | Harris Boat Works',
+    description: 'How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Platinum dealer.',
+    image: '/lovable-uploads/hero-boat-trim-rice-lake.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'How-To',
+    readTime: '7 min read',
+    keywords: ['boat trim explained rice lake ontario', 'boat trim explained rice lake ontario ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
+    content: `# Boat Trim Explained for Rice Lake Boaters, Without the Jargon
+
+## Quick answer
+
+Boat trim is the angle of your outboard relative to the transom, controlled by the trim button on your throttle. Trimming the motor IN (down) pushes the bow down and helps you get on plane quickly from a stop. Trimming OUT (up) lifts the bow once you're on plane, which reduces drag, improves fuel economy, and gives you a smoother ride. The wrong trim setting wastes fuel, soaks your passengers with spray, makes the boat porpoise like a rocking horse, or buries the bow in chop. On Rice Lake at typical cruise speeds with a 14-19 foot aluminum boat and a Mercury outboard, the right trim setting is usually about 30-50 percent of the way out once you're up on plane. The rest of this guide explains how to feel that without overthinking it.
+
+## What trim actually does
+
+Your outboard is mounted to the transom by a bracket that can pivot up and down. The trim button on your throttle control runs a hydraulic ram that changes this angle. When the motor angles in toward the transom, the propeller thrust pushes the bow down. When the motor angles out away from the transom, the thrust pushes the bow up.
+
+That's it. Everything else is just the consequence of bow angle relative to the water.
+
+## The three trim positions you actually use
+
+**Trim full IN (down):** for hole shot and getting on plane.
+The bow stays down, the prop bites cleanly, the boat accelerates without "plowing" or burying the nose. Most boats need trim fully in for the first 3-5 seconds when you push the throttle from idle to cruise.
+
+**Trim partially OUT (mid-position):** for cruise speed.
+Once the boat is up on plane and running, trim out until the bow lifts and the boat feels smooth, fast, and quiet. You want to feel the boat "settle" onto the water rather than fight against it. On most Rice Lake aluminum fishing boats, this is about 30-50 percent of the trim range.
+
+**Trim full OUT (up):** for shallow water, beaching, or driving on a trailer.
+This is the position for getting the prop out of the way, not for running at speed. If you run at cruise speed with trim full out, the prop will lose grip and ventilate, and the bow will bounce uncontrollably.
+
+## The mistakes we see most often on Rice Lake
+
+### Mistake 1: leaving trim full IN at cruise
+
+This is the most common one. People hit the throttle with trim in, the boat planes nicely, then they forget to trim out. The result: bow stays low, the hull pushes more water than it should, fuel burn is high, top speed is reduced, and the ride is wetter than it needs to be.
+
+**Fix:** once you feel the boat on plane (usually 5-8 seconds after throttle-up), trim out gradually until the bow lifts and the boat feels smooth.
+
+### Mistake 2: porpoising from too much trim OUT
+
+If you trim out too far at cruise, the bow lifts so much that the hull lifts off the water in front, then drops back, then lifts again. This rocking-horse motion is called porpoising. It's uncomfortable, it wastes fuel, and it scares passengers.
+
+**Fix:** trim in slightly until the porpoising stops. The boat should feel level and smooth, not bouncing.
+
+### Mistake 3: ignoring trim in chop
+
+Rice Lake gets 1-2 foot chop when the wind picks up from the southwest. In choppy water, the bow needs to be DOWN, not up. Lower bow cuts through chop. Higher bow slams into chop.
+
+**Fix:** trim in 1-2 button presses when conditions get bumpy. You sacrifice a knot or two of speed but the ride and the boat both thank you.
+
+## Reading what your boat is telling you
+
+You don't need a trim gauge to get trim right. The boat tells you everything you need to know:
+
+- **Bow too high (porpoising or bouncing in calm water):** trim in.
+- **Bow too low (spray over the windshield, sluggish acceleration, plowing feel):** trim out.
+- **Boat feels heavy on the wheel:** trim in slightly, you're fighting the bow lift.
+- **Boat feels loose or wandering at speed:** trim in slightly, you've gone too far out.
+- **Prop ventilating or losing grip in turns:** trim in, the prop is angling too high to stay in clean water.
+
+After a few weeks of running your boat, you'll trim without thinking about it. The motor will tell you what it wants.
+
+## Trim and fuel economy
+
+The right trim setting at cruise can save 10-20 percent on fuel compared to running with trim full in. On a Mercury 90 HP burning 6-7 gallons per hour at cruise, that's worth real money over a season. The exact savings depend on hull design, load, and conditions, but the direction is consistent: proper trim equals lower fuel burn.
+
+This is one of the reasons we tell new boat owners that the trim button is the cheapest performance upgrade their boat has. It costs nothing, and using it right makes the boat noticeably faster and quieter.
+
+## Trim on different boat types
+
+**Aluminum V-hull fishing boats** (the most common Rice Lake setup): respond well to trim, need about 30-50 percent trim out at cruise.
+
+**Pontoons:** less responsive to trim than V-hulls because the flat hull doesn't "ride" on the water the same way. Most pontoons need minimal trim, usually 10-25 percent out at cruise. Over-trimming a pontoon doesn't help speed and can cause the front to wander.
+
+**Bass boats and performance hulls:** very trim-sensitive, need careful adjustment to extract top speed. These boats reward an operator who pays attention.
+
+**Bowriders and runabouts:** similar to V-hulls but heavier, often need slightly more trim in for the family-load condition.
+
+## Trim and Mercury Pro XS
+
+If you own a Mercury Pro XS or are considering one, the trim conversation gets more interesting. Pro XS motors are designed for higher-performance applications and respond differently to trim than a standard FourStroke. The optimum trim is usually further out, top speed is more trim-sensitive, and a good operator can find an extra 2-4 mph just by playing with the button. Our [Mercury Pro XS Repower Guide for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers) covers this in detail.
+
+## What we do at Harris Boat Works
+
+When customers buy a new boat from us, we run through the trim basics on the launch day. It's a 5-minute conversation that saves people years of frustration. For owners coming in for service who mention "the boat feels slow" or "it bounces a lot," the trim conversation is usually the first diagnostic step. About half the time, trim is the issue. The other half, it's a propeller or a worn impeller, both of which we'll find on inspection.
+
+If you'd like a structured run-through of trim on your specific boat, email info@harrisboatworks.ca and we can usually walk you through it in 5 minutes. For the broader boat handling conversation, our [Docking in Wind on Rice Lake](/blog/docking-boat-in-wind-rice-lake) post covers another piece of the same skill set.
+
+## FAQ
+
+**How do I know if my trim is broken?**
+Press the trim up and down buttons with the motor in the water at idle. The motor should pivot smoothly through its full range. If you hear the motor straining but the trim doesn't move, the hydraulic ram or trim relay is the likely culprit. We diagnose this regularly, usually a $300-$600 repair.
+
+**Can I use trim in reverse?**
+Sort of. Most modern Mercury outboards have a "shallow water" position that's trim partially out, intended for very low-speed maneuvering in shallow areas. You should not run at speed in reverse with significant trim out.
+
+**Does trim affect steering response?**
+Yes, modestly. More trim out generally makes the boat feel looser at speed. Less trim makes the boat feel more stable but slower.
+
+**What's the trim limit switch?**
+A small switch in the trim system that prevents you from trimming the motor too far out at speed (where the prop would ventilate and the boat could become unstable). It's a safety feature, not a malfunction.
+
+**How does trim interact with hydrofoils or trim tabs?**
+A hydrofoil (the wing-shaped attachment some owners bolt to the cavitation plate) helps the boat get on plane faster and stay on plane at lower speeds. Trim tabs (separate hydraulic plates on the transom) give you fine control over bow attitude independent of the motor. Both can be useful, but they add cost and complexity. We can advise if either is worth it for your specific setup.
+
+**Can the wrong trim damage my motor?**
+Sustained running with the prop ventilating (trim too far out) can be hard on the gearcase and lower unit. Running with trim full in at high speed for long periods stresses the motor mount and the transom. Both are unusual, but neither does the boat any favours.
+
+## Sources
+
+- Mercury Marine outboard operation guide (dealer technical reference, 2026)
+- Transport Canada Pleasure Craft Safety Guide
+- HBW dealer experience, 2018-2026 customer service records
+
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+`,
+  },
+  {
+    slug: 'mercury-outboard-spring-run-up-checklist-ontario',
+    title: 'Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario',
+    seoTitle: 'Mercury Spring Run-Up Checklist Ontario | Harris Boat Works',
+    description: 'Boring spring checks prevent expensive May surprises. A Mercury Platinum dealer\'s step-by-step run-up checklist for Ontario boaters opening up their boat for the season.',
+    image: '/lovable-uploads/hero-spring-run-up-checklist.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Maintenance',
+    readTime: '8 min read',
+    keywords: ['mercury outboard spring run up checklist ontario', 'mercury outboard spring run up checklist ontario ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
+    content: `# Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario
+
+## Quick answer
+
+Before you launch your Mercury outboard for the first time after winter storage, work through this five-minute checklist: check the battery voltage and connections, inspect the fuel for separation or stale fuel, look for damaged or dry-rotted fuel lines, confirm the propeller is tight and undamaged, check the lower unit oil for water contamination, and at the dock, watch for the telltale water stream from the cooling system within 30 seconds of starting. If anything looks wrong, do not run the motor under load. Most Ontario spring no-starts and overheat events are preventable with this exact checklist. It takes longer to read this paragraph than to actually do it.
+
+## Why spring run-up matters in Ontario
+
+A Mercury outboard that sits from October to May goes through five months of cold, fuel breakdown, condensation, and pest activity. Most boats come out of storage just fine. The ones that don't usually fail in one of three ways: they won't start, they overheat within 5 minutes, or they run rough and stall. All three failure modes are predictable. All three are preventable.
+
+We see roughly 40 spring run-up issues in a typical April-May at our service shop. About 30 of those would have been avoided if the owner had spent 10 minutes on a structured run-up before launching.
+
+## The checklist
+
+### Before you leave home
+
+**1. Battery voltage and terminals.** With the motor off and disconnected from any chargers for at least an hour, measure the battery voltage with a multimeter. You want to see 12.4-12.7 volts on a healthy fully-charged battery. Below 12.2 volts means the battery is undercharged or failing. Cracked, swollen, or leaking batteries should not go into the boat: they should go to a recycler.
+
+Clean the battery terminals if there's any white powder or corrosion, tighten the terminal bolts, and confirm the battery is secured in its tray. A battery that slides around in chop is a battery that loses contact at the worst time.
+
+For more on battery selection and care, our [Mercury Boat Battery Guide](/blog/mercury-boat-battery-guide-ontario) covers the full conversation.
+
+**2. Fuel inspection.** Open the fuel tank and look at the fuel. Fresh gasoline looks pale yellow and smells like gasoline. Old fuel looks darker, often with a varnish smell. Phase-separated ethanol-blend fuel looks cloudy or has visible water at the bottom. If any of those describe your fuel, drain it before launching. We see ethanol-related fuel issues every spring and they account for a meaningful share of our spring "won't run right" calls.
+
+**3. Fuel lines.** Visually inspect the fuel line from tank to motor. Look for cracking, dry rot, kinks, or rodent damage. Mice can chew through a fuel line in a single weekend if the boat sat unmonitored. Replace any line that looks suspect: $20-$40 in parts versus a $4,000 powerhead repair after fuel-air mixture damage.
+
+**4. Propeller condition.** Spin the prop by hand (motor off, in neutral). It should spin freely but with some resistance from the gearcase. Look for dents, chunks taken out of blade edges, or fishing line wrapped around the shaft. Confirm the prop nut is tight (don't over-tighten, the nut should be hand-snug plus 1/4 turn with a wrench).
+
+### At the launch ramp
+
+**5. Trim and tilt operation.** With the motor down, press the trim button up and down through the full range. The motor should pivot smoothly and quietly. Grinding, hesitation, or no movement at all means the trim hydraulic system needs attention.
+
+**6. Lower unit oil check.** This is the one most owners skip. Remove the lower oil fill plug (the upper plug, near the top of the gearcase) and look at the oil. Healthy gear oil is dark green or brown and smooth. Milky white or chocolate-milk colored oil means water has gotten in, which means the seal needs replacing before you run the motor. Skipping this check and running a motor with water-contaminated gear oil is how you turn a $200 seal job into a $2,000 gearcase rebuild.
+
+### Starting the motor
+
+**7. Prime the fuel system.** Squeeze the primer bulb until it's firm. This pushes fuel from the tank to the motor and confirms the line is clear.
+
+**8. First start.** With the motor down in the water (always, never run a Mercury outboard out of water without a flush attachment), key on, choke or fast-idle as needed for cold starts, and crank.
+
+A healthy motor should start within 3-5 seconds of cranking. If it cranks but won't start, stop after 10 seconds, wait 60 seconds, and try again. Repeatedly cranking a flooded motor can drain the battery and overheat the starter.
+
+**9. Telltale water stream.** Within 30 seconds of the motor starting, you should see a steady stream of water exiting the small "pee hole" on the side of the motor. This stream confirms the water pump is working. If you don't see water flow within 30-45 seconds, shut the motor down. Running without water flow will overheat the motor in under 2 minutes and cause expensive damage.
+
+A weak or intermittent water stream means the water pump impeller needs replacement, which is a routine $200-$400 service item we do dozens of times every spring.
+
+**10. Idle check.** Let the motor idle for 2-3 minutes at the dock. Listen for unusual sounds (knocking, hissing, irregular firing) and watch for smoke beyond the normal first-start exhaust. Brief blue or white smoke at first start is normal as oil burns off. Continuous heavy smoke means something is wrong.
+
+**11. Test under light load.** Idle out from the dock at no-wake speed. Run for 2-3 minutes at idle to confirm everything is steady. Then bump up to 2,500-3,000 RPM for another 2-3 minutes. Watch the gauges (if you have SmartCraft, watch RPM, fuel flow, water temp). Listen for new sounds.
+
+**12. Test under full load.** Once you've confirmed everything looks normal at low and medium RPM, run the boat through the full RPM range. Trim through the range. The motor should accelerate cleanly to its target WOT (wide-open throttle) RPM.
+
+If anything feels wrong during this sequence, stop. Don't push through. Most spring problems get worse, not better, when ignored.
+
+## When something is wrong, the most likely culprits
+
+**Won't start at all:** dead battery, bad ground, flooded engine, or a fuel system issue. In that order, check those four.
+
+**Starts but won't stay running:** stale fuel, clogged carb or fuel injector (less common on modern Mercury FourStrokes with EFI), or a fuel filter that needs replacing.
+
+**Starts but runs rough:** ethanol-related fuel issue, weak spark from old plugs, or a vacuum leak somewhere in the air intake.
+
+**Starts but no water flow:** impeller failure. Stop the motor. Do not run. We've seen impellers go from "fine in November" to "failed in May" sitting through one winter, especially if the boat was stored with the lower unit slightly tilted up and the impeller compressed against the housing.
+
+**Overheats within 5 minutes:** impeller, blocked water intake (mud, weeds, mouse nest), or a stuck thermostat. Same rule: stop the motor.
+
+Our [Mercury Outboard Won't Start Troubleshooting Guide](/blog/mercury-outboard-wont-start-troubleshooting-ontario) and [Mercury Overheating Guide](/blog/mercury-overheating-troubleshooting) cover these in more detail if you want to dig deeper.
+
+## What we see at HBW
+
+The single most common spring issue we diagnose is a weak or dead battery. Number two is a fuel-related issue (stale fuel, ethanol separation, or fuel line problems). Number three is impeller failure. Together those three account for roughly 80 percent of our April-May service calls. All three are 5-10 minute checks the owner can do themselves.
+
+If you want a structured walk-through of any step, email info@harrisboatworks.ca with your motor model and what's not behaving. For full spring commissioning service where we do the run-up plus a full inspection, our intake is at hbw.wiki/service.
+
+For engine repairs, we only service Mercury and Mercruiser.
+
+## FAQ
+
+**My motor sat unused for two seasons. Do I need anything beyond this checklist?**
+Probably yes. Two-year storage usually means stale fuel (definitely drain), possibly damaged fuel lines, and a higher chance of impeller failure. A full pre-launch service is worth the few hundred dollars. We've seen multiple cases where the owner skipped this and the first start did $3,000-$5,000 of damage.
+
+**Is it ok to run my Mercury on a hose with earmuffs for the first start?**
+Yes, with a properly-fitted flush attachment that delivers enough water flow. This is how dealers do first-starts for new motors. It's also how careful owners verify the cooling system before the boat goes in the water. Just confirm strong water flow at the muffs and the telltale before running.
+
+**My battery reads 11.8 volts. Can I jump-start it and go boating?**
+You can, but you shouldn't expect the battery to recover under boat use. Jumping a deeply-discharged battery to start the motor is a one-way trip: the alternator output isn't enough to fully recharge a deeply-discharged marine battery under typical use. Replace the battery, then go boating.
+
+**Does ethanol-free premium fuel solve all my fuel problems?**
+No, but it helps. Ethanol-free fuel doesn't phase-separate in storage and doesn't attract water. It's worth the extra cost if available, especially for boats that get used infrequently or stored for long periods. Stabil or Sta-Bil 360 also helps for any fuel.
+
+**Should I always change the impeller in spring?**
+Mercury's recommendation is every 3 years or 300 hours of use. In Ontario freshwater, many impellers last 4-5 years. If you have any doubt, $200-$400 to replace it is cheap insurance compared to overheating and seizing the powerhead.
+
+**What's the worst spring issue you've ever seen?**
+A customer who didn't check anything, didn't watch for telltale water, and ran for 10 minutes at cruise with a failed impeller. The motor overheated, the head warped, the powerhead seized. Total damage estimated at $7,500. The whole disaster was preventable with a 30-second look at the pee-hole.
+
+## Sources
+
+- Mercury Marine seasonal maintenance procedures (dealer technical reference, 2026)
+- Transport Canada Pleasure Craft Safety Guide
+- HBW spring service intake records, 2020-2026
+
+## About the author
+
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+`,
+  },
+  {
+    slug: 'accidentally-increase-boat-service-bills-ontario',
+    title: 'How Ontario Boat Owners Accidentally Make Their Service Bills Bigger',
+    seoTitle: 'How to Lower Boat Service Bills Ontario | Harris Boat Works',
+    description: 'The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina\'s honest list of the avoidable habits that cost owners thousands.',
+    image: '/lovable-uploads/hero-service-bills-prevention.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Maintenance',
+    readTime: '8 min read',
+    keywords: ['accidentally increase boat service bills ontario', 'accidentally increase boat service bills ontario ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
+    content: `# How Ontario Boat Owners Accidentally Make Their Service Bills Bigger
+
+## Quick answer
+
+The expensive Mercury service bills we see at our marina almost always start as a $50-$200 problem the owner could have caught early. Ignored alarm codes, stale ethanol fuel, weak batteries that strain the starter, skipped winterization, DIY wiring with crimp connectors instead of marine-grade terminals, and "I'll check the impeller next year" are the six biggest culprits. Roughly 70 percent of the service work we quote between $1,500 and $8,000 traces back to a smaller original issue that was either invisible or ignored. The point of this post isn't to scold anyone. It's to share what we actually see and let owners avoid the path that leads there.
+
+## What we see at HBW
+
+Our service shop processes roughly 200-300 Mercury service jobs per year. The big-bill jobs (anything over $1,500) almost never come from sudden, unpredictable failures. They come from a chain of small problems that compounded.
+
+Here are the six patterns we see most often, in order of how expensive they get.
+
+## 1. Ignored alarm codes
+
+The most expensive pattern, by a wide margin.
+
+Modern Mercury outboards have alarm systems that warn you about low oil pressure, overheating, low voltage, and water in fuel. The alarm beeps, a code shows on your SmartCraft display, and the motor enters a protective mode that limits RPM.
+
+What we wish more owners would do: stop the motor, check the [SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) we maintain, and figure out what's wrong before continuing.
+
+What we see often: owners ignore the alarm, run the motor at limited RPM all weekend hoping it "fixes itself," and Monday morning the motor is in the shop with a $4,000-$8,000 repair.
+
+The most expensive case we've seen in recent years: a customer ran a Mercury 250 Pro XS with a low oil pressure alarm for two hours of cruising. The lower powerhead bearings seized. Total damage: $11,200 for a powerhead replacement. Original problem: a leaking oil filter seal, a $75 part.
+
+**The fix:** when an alarm beeps, stop. Check the code. If you're not sure, call your dealer. Running through alarms costs more than calling a tow.
+
+## 2. Stale fuel and ethanol problems
+
+The most common pattern in spring.
+
+Ethanol-blended gasoline (E10, which is most gasoline sold in Ontario) phase-separates over time. The water gets in, the ethanol attracts more water, and what was fuel turns into a thin layer of ethanol-water sludge sitting at the bottom of your tank. That sludge is what your fuel pickup is pulling into the engine on the first warm Saturday in May.
+
+What we wish more owners would do: drain old fuel before storage, run the engine until the carb or fuel rail is empty, and use ethanol-free fuel or fuel stabilizer for any boat that sits more than 6 weeks.
+
+What we see often: owners launch in spring, the motor runs rough or won't start, and they keep cranking until they kill the battery and drain the fuel pump.
+
+**The fix:** any boat that sat for more than 60 days needs a fuel check before launch. See our [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario) for the structured walk-through.
+
+## 3. Weak batteries that strain everything downstream
+
+The most overlooked pattern.
+
+A weak battery doesn't always fail dramatically. It often fails slowly: cranking the starter harder than it should, taxing the alternator, causing voltage drops in the rest of the boat's electrical system. Mercury's electronic control system (the brain that runs EFI, ignition timing, SmartCraft) is voltage-sensitive. Low or fluctuating voltage causes intermittent faults that don't always show as a clean alarm code.
+
+What we wish more owners would do: test the battery in spring, replace any battery older than 4 years that doesn't pass a load test, and keep the terminals clean and tight.
+
+What we see often: owners "stretch" a tired battery into a 5th or 6th season, the boat develops intermittent EFI faults, and they spend $800-$1,500 on diagnostic time chasing electrical gremlins that go away when we install a $200 battery.
+
+**The fix:** treat batteries as a wear item. Replace at 4-5 years even if they "still seem fine." Our [Mercury Boat Battery Guide](/blog/mercury-boat-battery-guide-ontario) covers selection and care.
+
+## 4. Skipped or sloppy winterization
+
+The most damaging single-event pattern.
+
+A properly-winterized Mercury outboard can sit through an Ontario winter at zero damage. A non-winterized motor can crack a block, ruin a powerhead, or freeze-split a cooling jacket in a single overnight cold snap. The repair is often more than the motor is worth.
+
+What we wish more owners would do: have a Mercury Platinum dealer do the winterization, or follow Mercury's published procedure carefully if doing it themselves. Confirm fogging oil is applied, the lower unit oil is changed, and any water has been drained from the powerhead cooling system.
+
+What we see often: owners "did it themselves" but skipped a step. The most common skip is not running the engine long enough to confirm fogging oil was actually pulled through. Second most common: leaving the lower unit slightly tilted up so the impeller compresses against the housing all winter.
+
+**The fix:** winterization is one of the few things genuinely worth paying a dealer to do, every year. The cost ($350-$550 for a typical Mercury) is a small fraction of what a freeze-damaged powerhead costs to replace. Service intake at hbw.wiki/service.
+
+For engine repairs, we only service Mercury and Mercruiser.
+
+## 5. DIY wiring with the wrong terminals
+
+The slowest-burn pattern.
+
+Marine electrical environments are brutal: salt-free freshwater is still humid, vibration is constant, and connections are exposed. Automotive crimp connectors and plain copper terminals corrode within a year or two in a boat. The corrosion creates resistance, the resistance creates voltage drops, the voltage drops create intermittent faults, and the intermittent faults end up in our shop as "the SmartCraft says something different every time."
+
+What we wish more owners would do: use marine-grade tinned copper terminals, marine-grade heat-shrink, and adhesive-lined heat-shrink butt connectors. Spend the extra $5 per connection.
+
+What we see often: owners DIY a fishfinder or trolling motor install with whatever connectors were in the toolbox. Two years later we're tracing a parasitic draw or a SmartCraft fault back to a corroded crimp behind the console.
+
+**The fix:** any new electrical work uses marine-grade terminals or it isn't done right. The difference is a few dollars per connection.
+
+## 6. "I'll check the impeller next year"
+
+The most predictable pattern.
+
+The water pump impeller is the rubber component that pumps cooling water through the motor. Mercury specifies replacement every 3 years or 300 hours. Most Ontario freshwater impellers last 4-5 years in practice. Past that, the failure rate climbs sharply, and an impeller failure means the motor overheats fast and can seize.
+
+What we wish more owners would do: replace the impeller on Mercury's schedule, or at minimum check it visually every 2-3 years. $200-$400 done as routine maintenance.
+
+What we see often: owners stretch impellers to 6-7 years, the impeller fails on a Saturday in July, the owner doesn't notice the telltale water flow drop, and we're rebuilding a powerhead Monday.
+
+**The fix:** impeller replacement is cheap insurance. The cost difference between routine replacement and overheating-driven repair is roughly 10x.
+
+## The pattern across all six
+
+In every case, the small problem is cheap to fix. The big problem (the one we end up quoting) is what happens when the small problem is ignored or missed. The owners who avoid the big bills are the ones who:
+
+1. Stop the motor when something is wrong
+2. Don't run through alarm codes
+3. Keep up with seasonal maintenance instead of skipping years
+4. Spend a little money on the boring stuff (batteries, impellers, fuel hygiene)
+5. Pay attention to small symptoms
+
+This isn't a sales pitch for the most expensive service plan. Most of what's on this list is owner-level prevention or a few hundred dollars of routine maintenance at a dealer.
+
+## What we won't sell you
+
+Worth being explicit about: there are services some marinas push that we don't think Ontario freshwater boaters actually need annually. Examples include "fuel system cleaner" treatments on healthy motors, "full electrical diagnostic" without a specific symptom, and "premium hull treatments" that don't do much on aluminum hulls. We'd rather get the basics right and let you save the money.
+
+If you want a structured pre-season inspection on your specific boat, our service intake is at hbw.wiki/service. We'll tell you what's actually worth doing and what isn't.
+
+## FAQ
+
+**My motor has an alarm that comes and goes. Is it safe to ignore?**
+No. Intermittent alarms usually point to either a degrading sensor or a real intermittent problem. Either way, the diagnostic is cheaper now than the repair later. Get it checked at a Mercury Platinum dealer.
+
+**How much does proper winterization cost?**
+$350-$550 for a typical Mercury 25-150 HP. More for larger V8/V10 motors. The cost varies by service shop and what's included (some shops include lower unit oil change, others charge separately).
+
+**Is ethanol-free fuel really worth the extra cost?**
+For boats used regularly through the season, marginal benefit. For boats stored long periods or used infrequently, definitely worth it. Stabilizer is a cheaper alternative if ethanol-free isn't available locally.
+
+**How can I tell if my battery is failing before it dies?**
+Load test at a dealer ($20-$40 or free at most marinas). Or watch for slow cranking, dim lights when starting, or any electrical fault codes that come and go.
+
+**Is DIY winterization safe to do myself?**
+It can be, if you follow Mercury's published procedure carefully and have the right tools. The most common DIY failure modes are not running long enough to fully fog the cylinders, skipping the lower unit oil change, and not draining cooling water properly. A $400 dealer winterization is cheap insurance.
+
+**What's the most common "small problem becomes big problem" we see at HBW?**
+Tied between ignored alarms (most expensive when it happens) and skipped impeller replacement (most common). Both are 100 percent preventable.
+
+## Sources
+
+- Mercury Marine seasonal maintenance procedures (dealer technical reference, 2026)
+- Mercury Marine SmartCraft alarm code documentation
+- Transport Canada Pleasure Craft Safety Guide
+- HBW service shop records, 2018-2026
+
+## About the author
+
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+`,
+  },
+  {
+    slug: 'repair-repower-or-sell-boat-ontario-decision-guide',
+    title: 'Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide',
+    seoTitle: 'Repair Repower or Sell Boat Ontario | Harris Boat Works',
+    description: 'When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum dealer\'s honest framework for choosing between repair, repower, and sell.',
+    image: '/lovable-uploads/hero-repair-repower-sell-decision.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guides',
+    readTime: '9 min read',
+    keywords: ['repair repower or sell boat ontario decision guide', 'repair repower or sell boat ontario decision guide ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
+    content: `# Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide
+
+## Quick answer
+
+When a major repair bill lands on an aging Mercury outboard, you have three real options. **Repair:** fix the specific problem and keep the existing motor. Makes sense when the rest of the motor is solid and the repair is well under the cost of a repower. **Repower:** replace the motor entirely with a new or recent Mercury. Makes sense when the existing motor has multiple aging components and the boat itself is worth keeping. **Sell:** sell the boat as-is with full disclosure of the issue, or sell after a partial repair, and put the proceeds toward a different setup. Makes sense when the boat itself no longer fits the owner's life. The honest answer for most Ontario boaters is: repair if the bill is under 30 percent of the motor's value, repower if the bill is over 60 percent of the motor's value and the boat is in good shape, and sell when the boat is no longer matching how you actually use the water.
+
+## The framework
+
+The decision usually feels emotional. People love their boats, hate spending money on repairs, and want to be told the simple answer. The simple answer doesn't exist, but the framework is straightforward. Three questions decide it:
+
+1. **What is the repair bill, as a percentage of the motor's current market value?**
+2. **What is the boat itself worth, and is it the right boat for how you actually use the water now?**
+3. **How many more seasons do you want this boat to last?**
+
+Work through those three questions in order. The answer falls out of them.
+
+## Question 1: the repair bill ratio
+
+Get a written estimate from a Mercury Platinum dealer or qualified service shop. Then look up the current private-sale value of your motor on similar-vintage listings (Kijiji, Facebook Marketplace, broker sites).
+
+| Repair bill as % of motor value | Lean toward |
+|---|---|
+| Under 30% | Repair |
+| 30-60% | Repair if the rest of the motor is healthy, repower if it isn't |
+| 60-100% | Repower in almost all cases |
+| Over 100% | Sell or repower depending on the boat |
+
+The 30 percent threshold is a useful rule of thumb. A $1,500 repair on a $6,000 motor is a 25 percent ratio: easy repair decision. A $4,500 repair on a $6,000 motor is a 75 percent ratio: hard to justify when a new Mercury will give you 5-8 years of warranty and 15-20 years of expected service life.
+
+## Question 2: the boat itself
+
+The motor is half the conversation. The other half is the hull.
+
+**The hull is solid and the boat fits you:** repair or repower based on Question 1. Both are reasonable.
+
+**The hull has serious issues** (rotten transom, soft floor, structural cracks, major gelcoat failure on fiberglass): selling becomes more attractive, because pouring repower money into a hull with structural problems is the worst of both worlds.
+
+**The boat doesn't fit your current life:** maybe the kids grew up and you don't water-ski anymore. Maybe you want a pontoon for cottage entertaining instead of the fishing boat you bought when you were single. Maybe you've upgraded fishing platforms and the current boat is too small. In these cases, even a perfectly-functional boat is the wrong answer to the next 5-10 years of your boating.
+
+This is the question most owners under-weight. They focus on the motor decision because that's where the repair bill is, but the boat-fit question often points to selling even when the motor decision points to repair.
+
+Our [Used Boat Walkaround Guide](/blog/used-boat-walkaround-inspection-ontario) covers what we look for when assessing hull condition.
+
+## Question 3: how long do you want this boat to last?
+
+If your honest answer is "I want this boat for 2-3 more seasons and then I'll buy something different," repair almost always wins. Spend the minimum to get through your remaining ownership timeline, then sell as-is.
+
+If your honest answer is "I want to keep this boat for 10+ years," repower wins when the motor is past mid-life. A new Mercury will outlast the old one by 15 years and saves you from this exact decision happening again in 3 years.
+
+If your answer is "I'm not sure," repair is the conservative choice. You can always repower next year.
+
+## The repair option, in detail
+
+**When repair wins:**
+- The repair bill is well under 30% of motor value
+- The motor has under 800-1,000 hours (mid-life or earlier)
+- The rest of the motor looks healthy on inspection
+- You like the boat as it is
+- You'd be paying yourself back through 3+ more seasons of use
+
+**What we recommend:** get the repair done by a Mercury Platinum dealer if possible. Quality of work matters more than price on a repair you want to last. Use Mercury OEM parts for anything internal (powerhead, gearcase, fuel system).
+
+**The trap:** repairing a motor that has multiple aging components and watching the next failure happen 18 months later. If your tech is telling you "we're fixing X but Y and Z are also borderline," you're probably already in repower territory.
+
+## The repower option, in detail
+
+**When repower wins:**
+- The repair bill is over 60% of motor value, OR multiple components are aging
+- The boat itself is in good shape and worth keeping
+- You want 5-8 years of warranty and a known maintenance horizon
+- You plan to keep the boat 7+ years
+- You're financing the purchase (warranty matters more when you're still making payments)
+
+**What we recommend:** a Mercury Platinum dealer for the install, with Mercury Product Protection (MPP) for extended warranty coverage. Match motor horsepower carefully to your boat's capacity plate. Read our [Complete Boat Repower Guide for the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) for the full process walkthrough.
+
+**The honest math:** a new Mercury 90 HP repower on a typical Ontario aluminum boat lands in the $13,000-$15,000 range in 2026 including controls, rigging, and labour. For most owners, that buys 8 years of warranty and 15-20 years of expected motor life. The cost-per-year math is usually better than people expect.
+
+For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guide](/blog/new-vs-used-mercury-outboard-ontario) covers the trade-offs.
+
+## The sell option, in detail
+
+**When sell wins:**
+- The boat itself no longer fits your life
+- The hull has serious structural issues
+- You can't honestly answer "I want this for 5+ more years"
+- The repair bill plus other deferred maintenance adds up to a number that doesn't make sense
+
+**What we recommend:** decide first whether you're selling as-is (disclose all known issues), making a small repair to make the boat saleable (sometimes worth it), or trading in through a dealer.
+
+**As-is private sale:** highest price but slowest, most paperwork, hardest emotional process. Use Kijiji, Facebook Marketplace, or boat-specific broker sites. Full disclosure protects you legally.
+
+**Make-it-saleable repair:** sometimes spending $500-$1,500 to fix the headline problem doubles the resale price. Worth doing if the repair is minor and the price gap is large.
+
+**Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/boat-motor-trade-in-guide) covers what to expect.
+
+## Common scenarios we see
+
+**The 15-year-old boat with a 12-year-old motor and a $3,500 powerhead repair:**
+Usually repower. The boat is fine, the motor is past mid-life, and $3,500 buys you nothing but a tired motor that will need its next repair within 18 months. A $13,000 repower buys you 8 years of warranty and a clean second life for the boat.
+
+**The 8-year-old boat with a 6-year-old motor and a $1,200 fuel system repair:**
+Repair. The motor has plenty of life left, the repair is well under 30 percent of value, and the boat fits your life.
+
+**The 20-year-old boat with a rotten transom and a $4,000 motor estimate:**
+Sell. The motor decision is moot when the hull is failing. Don't pour a repower into a hull that won't support it.
+
+**The 10-year-old pontoon you bought for family entertaining but the kids are 20 now:**
+Probably sell. Even if the boat is fine, the question is whether this is the boat you want for the next 5 years.
+
+## What we do at Harris Boat Works
+
+We see this decision multiple times per week, especially in spring and fall. When a customer comes in with a repair estimate that feels uncomfortably big, the first conversation we have is the framework above. We're a Mercury Platinum dealer and a Legend Boats dealer, so we're not neutral: we'd rather sell you a new motor or a new boat than do a $3,000 repair. But we'd much rather give you honest advice and have you come back to us for the next repower than push you into a decision that doesn't fit your situation.
+
+For a structured conversation on your specific boat, motor, and budget, email info@harrisboatworks.ca with the details and we'll tell you what we'd do in your situation. For the repower-specific decision, our [Should I Repower or Buy New?](/blog/should-i-repower-or-buy-new-boat-ontario) decision guide covers that side of the conversation.
+
+## FAQ
+
+**Is it ever worth repowering a boat with a damaged hull?**
+Rarely. A new motor on a tired hull is the worst dollar-per-year boat anyone owns. If the hull needs significant work, sell or scrap and start with a sound boat.
+
+**Can I finance just a repower without buying the whole boat?**
+Yes. Mercury Marine financing programs (current rates available through your Mercury Platinum dealer) handle motor-only purchases. Many marine lenders also finance just the motor. Talk to a dealer for current rates.
+
+**What's the resale impact of doing a repower right before selling?**
+Usually you don't recover the full cost. A boat with a new motor sells for more than the same boat with a tired motor, but typically you'll recover 60-80% of the repower cost in higher sale price. Repowering to sell only makes sense if the boat is otherwise excellent and the motor was the only issue.
+
+**How do I get an honest repair estimate?**
+Get two estimates from Mercury Platinum dealers. Ask each one to write out specifically what parts are being replaced and why. Avoid open-ended "we'll see what we find" estimates that have no upper bound.
+
+**Does the season matter for selling?**
+Yes, significantly. Spring (March-May) is the best time to sell a boat in Ontario. Late fall (October-November) is the worst. If you can time your decision, sell in spring.
+
+**Will Harris Boat Works tell me the truth if repair is the better answer?**
+Yes. We are not a parts-volume shop. We make our long-term business by being honest about what makes sense, even when "honest" means we're not the ones doing the work.
+
+## Sources
+
+- Mercury Marine Canada warranty policy ([mercurymarine.com/ca/en/owner-resources/warranty-information](https://www.mercurymarine.com/ca/en/owner-resources/warranty-information/))
+- Mercury Product Protection extended warranty program details (Mercury Dealer Portal, 2026)
+- Transport Canada Construction Standards for Small Vessels (TP 1332)
+- HBW internal repower and trade-in records, 2018-2026
+
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+`,
+  },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
