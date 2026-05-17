@@ -2,6 +2,7 @@ import { Helmet } from '@/lib/helmet';
 import { BlogArticle } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
 import { getCleanDescription, sanitizeForSchema } from '@/lib/strip-markdown';
+import { EN_TO_FR_SLUG } from '@/data/frenchEnglishSlugMap';
 
 interface BlogSEOProps {
   article: BlogArticle;
