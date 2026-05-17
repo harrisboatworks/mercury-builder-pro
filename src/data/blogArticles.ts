@@ -3347,6 +3347,9 @@ Before we tell you "repower" versus "buy new" versus "walk away," we want to kno
 - How long you plan to keep the boat
 - Budget range and financing interest
 
+
+![Mercury repower mid-install in the HBW service bay](/lovable-uploads/inline/inline-repower-shop.png)
+
 ## When a repower makes sense
 - The hull is solid
 - The boat still fits your family and how you use it
@@ -5885,6 +5888,9 @@ Upgrading your outboard? Your current motor has value. Here's how to get the bes
 - When you need it done urgently
 
 ::walkaround-lead-capture
+
+
+![Used aluminum fishing boat with Mercury outboard prepped for trade-in evaluation](/lovable-uploads/inline/inline-trade-in-eval.png)
 
 ### Trade-In vs Private Sale
 
@@ -13855,6 +13861,9 @@ A seller who refuses an on-water test is telling you something.
 **Freeze damage.** If it wasn't properly winterized in Ontario, the powerhead may have frozen. Cracked block, blown welch plug, hairline crack in a cylinder head, none of these always show on a casual inspection. A pressure test catches it; a cold-running test usually won't.
 
 **Outdoor storage, no cover.** UV damage on cowls, dried-out rubber, faded plastic, all tell you how the rest of the motor was treated. If the outside was neglected, assume the service schedule was too.
+
+
+![Compression test gauge connected to a Mercury outboard powerhead during pre-purchase inspection](/lovable-uploads/inline/inline-compression-test.png)
 
 ### Deal-Breakers: When to Walk
 
@@ -21879,6 +21888,9 @@ The customers who call in early November every year asking if we have space, we 
 
 ---
 
+
+![Fiberglass bowrider mid-shrinkwrap in a Canadian marina yard](/lovable-uploads/inline/inline-shrinkwrap-process.png)
+
 ## What You Need to Have Ready Before Drop-Off
 
 When you bring the boat to HBW for storage:
@@ -22460,6 +22472,9 @@ Rule of thumb: aluminum fishing boats default to standard. Pontoons default to C
 
 ---
 
+
+![Mercury 90 HP FourStroke mounted on the transom of an aluminum fishing boat](/lovable-uploads/inline/inline-mercury-90.png)
+
 ## How the 90 Compares to the 75 and the 115
 
 The 75, 90, and 115 are the same block with different tuning. There is no weight penalty stepping up. The only real penalty going from 75 to 90 to 115 is price and fuel burn at full throttle.
@@ -22632,6 +22647,9 @@ The most common repower candidates for the 115 ELPT are older 115 OptiMax, 115, 
 The outcome on most of these repowers: the boat feels lighter, runs quieter, and uses 25, 35% less fuel for the same day on the water. After a season, some customers don't miss the V6 feel at all.
 
 ---
+
+
+![Mercury 115 HP FourStroke mounted on a fiberglass runabout at golden hour](/lovable-uploads/inline/inline-mercury-115.png)
 
 ## Where the 115 HP FourStroke Is the Wrong Call
 
@@ -26534,6 +26552,9 @@ when-in-doubt: If your motor is a Mercury and you want one phone number from May
 
 ---
 
+
+![Rice Lake marina dock at golden hour with mixed boat types in the slips](/lovable-uploads/inline/inline-marina-dock-golden-hour.png)
+
 ## GTA access
 
 For GTA boaters, Rice Lake is the closest serious freshwater lake east of the city, and Harris Boat Works is the closest full-service Mercury marina once you cross the 401.
@@ -27156,6 +27177,9 @@ For a tournament angler running 60 km in a day, the response wins — you're not
 Honest framing matters. We sell both because they're both right for different people.
 
 ---
+
+
+![Mercury Pro XS at full throttle on a bass boat across Rice Lake at sunrise](/lovable-uploads/inline/inline-pro-xs-action.png)
 
 ## Hole-shot, top-end, and where they matter
 
