@@ -137,6 +137,32 @@ Six variables move the right HP for your specific boat:
 
 ---
 
+::decision-card
+eyebrow: HP sizing decision
+heading: How heavy do you actually load the boat?
+subhead: The plate max is the ceiling, not the recommendation. Where you target inside that range depends on load.
+leftLabel: Light load (1 to 2 people, fishing gear)
+leftCriteria:
+  - Solo or two-person fishing most outings
+  - Light tackle, no tow toys, half tank
+  - Calm protected water (Rice Lake, small Kawarthas)
+  - You care more about fuel economy than hole shot
+leftOutcome: Target 60 to 70 percent of plate max
+leftVariant: alternative
+rightLabel: Heavy load (4+ people, tubes, full gear)
+rightCriteria:
+  - Family of four plus a friend most weekends
+  - Tubing, wakeboarding, or skiing on the regular
+  - Full cooler, full tank, full gear
+  - Bigger lakes with chop (Simcoe, Scugog, Lake Ontario shoreline)
+rightOutcome: Target 90 to 100 percent of plate max
+rightVariant: recommended
+whenInDoubt: Underpowered boats are the #1 complaint we hear. Step up before you step down. Resale on a maxed-out rig is also stronger.
+::
+
+---
+
+
 ## HP recommendations by boat type
 
 These are working guidelines for typical recreational use on Ontario and Kawartha freshwater. For your specific motor and real installed pricing, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
@@ -1723,6 +1749,15 @@ We do not carry Yamaha, Honda, or Suzuki. Not because those are bad motors, they
 Most boats on Rice Lake and the Kawarthas came Mercury-rigged from the factory. The boaters who find us have usually already decided on Mercury; they are deciding on a dealer. Splitting our parts inventory, tooling, and training across multiple brands would dilute the thing that makes us useful to them: a shop that knows Mercury inside and out.
 
 The expertise compounds over decades. Deep parts inventory. Mercury-specific tooling. Technicians who have seen every Mercury problem worth knowing about on Ontario freshwater.
+
+::pull-quote
+quote: I shopped two other Mercury dealers before HBW. The other quotes were three days to a callback. **Jay had a real number in 90 seconds** and answered my follow-up the same afternoon. Easy decision.
+attribution: Brian K.
+source: Peterborough
+::
+
+---
+
 
 ## Local knowledge that transfers to your boat
 
@@ -5576,6 +5611,34 @@ What to watch:
 - Trade-in credit
 - Loan term
 
+::cost-stack
+heading: Monthly payment ranges by financing path
+eyebrow: $15K vs $25K scenarios
+subhead: Same motor, three financing paths. Numbers below are estimates at typical 2026 Ontario rates over 84 months.
+item1Label: Pay cash — $15,000 motor
+item1Value: $0/month
+item1Note: No interest, no DealerPlan fee, fastest paperwork. Best total cost if you have the cash.
+item2Label: Pay cash — $25,000 motor
+item2Value: $0/month
+item2Note: Same advantage at the larger ticket. Saves roughly $5,500 in interest over 7 years.
+item3Label: Bank loan at 9.5% — $15,000
+item3Value: ~$245/month
+item3Note: Unsecured personal loan. Approval and rate depend on credit. Faster than dealer financing.
+item3Accent: true
+item4Label: Mercury Marine financing at 8.99% — $15,000
+item4Value: ~$240/month
+item4Note: $299 DealerPlan fee added post-tax. Often the best rate for the under $10K range.
+item5Label: Mercury Marine financing at 7.99% — $25,000
+item5Value: ~$390/month
+item5Note: Lower tier rate kicks in at $10K+. $299 DealerPlan fee still applies.
+totalLabel: Best path for most buyers
+totalValue: Mercury financing at $25K+
+caveat: Financing not available under $5,000. Apply at mercuryrepower.ca/finance for real numbers on your purchase.
+::
+
+---
+
+
 ## How to compare options honestly
 Do not compare monthly payments across different term lengths. A 96-month payment looks attractive next to a 48-month payment, but you will pay significantly more in total interest.
 
@@ -7610,6 +7673,34 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 - Spring delivery available
 - Ideal for repower projects
 
+::cost-stack
+heading: 2026 Mercury tier pricing — what you actually pay in CAD
+eyebrow: All-in ballparks
+subhead: Motor MSRP is one line on the invoice. Here is the full picture across Mercury's tiers, before any trade-in or current promo.
+item1Label: FourStroke 9.9 (kicker / small tiller)
+item1Value: $4,200 - $5,800
+item1Note: Motor only. Add ~$400 for ProKicker remote conversion.
+item2Label: FourStroke 60 to 115 (mid-range main)
+item2Value: $11,500 - $17,800
+item2Note: Most common Rice Lake / Kawarthas repower range. Includes Command Thrust where applicable.
+item2Accent: true
+item3Label: FourStroke / Pro XS 150 to 250 (V6)
+item3Value: $18,500 - $32,000
+item3Note: Bass boats, performance hulls, offshore Lake Ontario rigs
+item4Label: Install and rigging (any tier)
+item4Value: $1,500 - $4,500
+item4Note: Cables, controls, gauges, prop swap. Brand conversions add $1,500 to $3,000.
+item5Label: First-year service (100-hour)
+item5Value: $400 - $700
+item5Note: Oil, gear lube, plugs, water pump check. Required for warranty.
+totalLabel: Typical all-in range
+totalValue: $17,600 - $40,000+ CAD
+caveat: HST extra. Live pricing and current promos at mercuryrepower.ca.
+::
+
+---
+
+
 ### The Winter Buying Advantage
 
 **Why Winter Is Often Best**:
@@ -8115,6 +8206,15 @@ Because it works as a bridge.
 The boating industry has known for years that people who try boating through rentals or clubs are significantly more likely to become boat owners than people who never get on the water at all. The trial lowers the barrier. Someone who has never piloted a boat is much more likely to buy one after a few good experiences than someone who has only read about it.
 
 We see that in our own customer base. People rent a Legend ProSport for a long weekend, decide they want their own, and come back to talk about a quote. That progression is not theoretical for us; it is part of how a real portion of our boat sales come together.
+
+::pull-quote
+quote: I'm in Toronto five days a week. Owning a boat for ten Saturdays a year never made financial sense. **Renting from HBW lets me bring the kids up, fish all day, hand the keys back.** No winterization headache.
+attribution: Alex W.
+source: Toronto
+::
+
+---
+
 
 ## When renting makes more sense than buying
 
@@ -9031,6 +9131,15 @@ Five things move whether the switch makes sense for your specific situation:
 3. **How heavily you use the boat.** A 200-hour-a-season user feels parts shortages much faster than a 30-hour cottage boater.
 4. **Where you launch and travel.** Boaters who travel the Trent-Severn, Lake Ontario, or road trips to Muskoka want a service network that's still showing up. Mercury wins this.
 5. **Resale plan.** If you're selling the boat in the next few years, switching to Mercury before listing typically pays back in faster sale and stronger price.
+
+::pull-quote
+quote: Loved my old Johnson 90 but Evinrude's gone and the parts kept getting harder. Jay walked me through the Mercury 90 FourStroke swap and three weeks later it was on the transom. **First start of the season I forgot what a quiet motor sounds like.**
+attribution: Dave M.
+source: Bewdley
+::
+
+---
+
 
 ### What HBW Checks Before Recommending the Switch
 
@@ -10152,6 +10261,32 @@ The same boat handles salmon trolling offshore, walleye fishing on Bay of Quinte
 
 ---
 
+::decision-card
+eyebrow: Lake Ontario HP decision
+heading: How far offshore do you actually run for salmon?
+subhead: Lake Ontario is two different fisheries. Be honest about the one you fish most.
+leftLabel: Near-shore and calm bays
+leftCriteria:
+  - Most days you stay within sight of the marina
+  - You troll in protected water and only leave on calm forecasts
+  - Fuel economy matters more than top end
+  - Boat is 17 to 19 ft with a single main
+leftOutcome: Mercury 115 to 150 FourStroke, no kicker required
+leftVariant: alternative
+rightLabel: 20+ miles for offshore salmon
+rightCriteria:
+  - You run east-west to find temperature breaks
+  - You fish 3 to 6 ft chop regularly, not just on calm days
+  - A 9.9 ProKicker for slow trolling is non-negotiable
+  - Boat is 21 ft or bigger with offshore-rated hull
+rightOutcome: Pro XS or FourStroke V8 (200 to 300 HP) plus 9.9 ProKicker
+rightVariant: recommended
+whenInDoubt: If you have ever been caught out when Lake Ontario turned, size up the main and add the kicker. The lake does not negotiate.
+::
+
+---
+
+
 ## Mercury Pro XS V8 vs FourStroke V8, Which One for Lake Ontario?
 
 Both are capable on Lake Ontario. Here's the honest comparison:
@@ -11041,6 +11176,32 @@ The point is not that Yamaha or Honda fail more. The point is that when any moto
 
 **Our honest take:** Nothing wrong with the motor itself. The practical reliability disadvantage comes from the thinner dealer network in Ontario, not from the engineering.
 
+::decision-card
+eyebrow: Brand decision
+heading: Switch brands, or stay where you are?
+subhead: All three brands are mechanically reliable in 2026. The deciding factor is who services it when something goes wrong.
+leftLabel: Service network matters most
+leftCriteria:
+  - You boat in Ontario and want parts in hand same week
+  - You travel the Trent-Severn or run between lakes
+  - You do not have a current dealer relationship
+  - You want resale support when you eventually sell
+leftOutcome: Mercury wins on Ontario dealer density
+leftVariant: recommended
+rightLabel: You already have a relationship that works
+rightCriteria:
+  - Your current Yamaha or Honda dealer treats you well
+  - Parts and service have not been a problem
+  - The motor is under 10 years old with reasonable hours
+  - Switching brands adds $1,500 to $3,000 in rigging
+rightOutcome: Stay with what works. Reliability follows the relationship.
+rightVariant: alternative
+whenInDoubt: If your current dealer has been slow or quoted parts at 6+ week lead times, the switch usually pays for itself in one repower cycle.
+::
+
+---
+
+
 ## What reliability actually requires (regardless of brand)
 
 Maintenance habits are more predictive of motor longevity than brand choice. What kills outboards:
@@ -11789,6 +11950,32 @@ Rates in 2026 are better than 2023. They are not as low as the 2020, 2021 enviro
 **The repower math is better for you.** For many Ontario boaters with a sound hull and a worn motor, the repower is the better move. Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) before going to a showroom.
 
 ---
+
+::decision-card
+eyebrow: 2026 timing decision
+heading: Buy this season, or wait for fall pricing?
+subhead: The 2026 market is not collapsing and not booming. Your timing depends on whether you can wait.
+leftLabel: You need a boat for this season
+leftCriteria:
+  - You sold or lost your previous boat and want water time in 2026
+  - You have a family vacation or cottage booked that needs the boat
+  - Current inventory has something close to what you want
+  - You can pay or finance now without stretching
+leftOutcome: Buy now, the market is what it is. Lose a season chasing a discount.
+leftVariant: recommended
+rightLabel: You can wait until late fall
+rightCriteria:
+  - You have a working boat that will get through 2026
+  - You want a specific model or HP not currently in stock
+  - You want to negotiate from a position of patience
+  - October to December dealer flexibility matters to you
+rightOutcome: Wait. Off-season pricing and trade-in flexibility are real.
+rightVariant: alternative
+whenInDoubt: A season on the water is worth more than 5 percent off a motor. If a missed summer hurts more than the discount helps, buy now.
+::
+
+---
+
 
 ## The Repower Option: Better Value in 2026 Than It's Been in Years
 
@@ -15657,6 +15844,15 @@ The Halo is Legend's most distinctive pontoon, **PolyForm construction**, **360�
 
 ---
 
+::pull-quote
+quote: Test-drove three pontoons. **The Legend with the Mercury 115 Command Thrust was the only one that planed clean with seven adults on it.** That was the test that ended my shopping.
+attribution: Karen L.
+source: Kawarthas cottage
+::
+
+---
+
+
 ## Mercury Power Pairings That Make Sense
 
 The standard motor on each Legend hull is sized for the typical use case, but the question we get most is *should I upgrade?* Here's the framework:
@@ -17490,6 +17686,15 @@ These aren't things a new dealer can fake. They take time. We have time on Rice 
 
 ---
 
+::pull-quote
+quote: My grandfather bought his first boat from Don Harris in the 50s. I bought my last three motors from Jay. **Some things on this lake don't change, and that's a good thing.**
+attribution: Mike S.
+source: Third-generation Rice Lake cottager
+::
+
+---
+
+
 ## The Rice Lake Lens. Why Location Matters
 
 A dealer in Toronto sells Mercurys. We sell Mercurys *to people who'll use them on Rice Lake, the Kawarthas, and the Trent-Severn.* Different application.
@@ -17704,6 +17909,29 @@ You'll feel it before you see it: a soft spot underfoot, usually near the bow, t
 If you're buying a used pontoon, press down on the deck with your foot in a few spots before you commit. A solid deck is firm. A compromised one will give slightly. That flex tells you everything.
 
 ---
+
+::diagnostic-flow
+heading: Pontoon acting up? Run this check before calling
+eyebrow: Pontoon diagnostic flow
+subhead: Most Rice Lake pontoon calls trace back to one of these four. Work through them in order.
+step1Label: Weeds in the prop
+step1Question: Tilt the motor up. Are there weeds, fishing line, or zebra mussels wrapped around the prop shaft?
+step1Tip: Rice Lake is shallow and weedy. A wrapped prop kills hole shot and overheats the lower unit. Clear it before you assume the motor is bad.
+step2Label: Corroded fittings at the helm
+step2Question: Check the back of the helm and the bow nav-light wiring. Any green crust, soft insulation, or loose ring terminals?
+step2Tip: Pontoon wiring lives in open weather. Green corrosion is the most common cause of intermittent gauges, no-start, and dead bow lights. Disconnect, clean, dielectric grease, reconnect.
+step3Label: Soft spots in the deck
+step3Question: Walk the deck barefoot. Any spongy areas, especially around the fuel tank, the helm base, or the rear corners?
+step3Tip: A soft deck means the marine plywood is rotting under the carpet. Catch it early and it's a panel swap. Catch it late and it's a full deck rebuild.
+step4Label: Tube damage from grounding
+step4Question: With the pontoon out of the water, inspect both tubes for dents, weld cracks, or unusual streaking near the nose cones.
+step4Tip: Rice Lake has rock shelves. A hard grounding can crack a weld without obvious leakage. If a tube sits lower in the water than the others, get it pressure-tested before next season.
+escalationLabel: Found something or unsure?
+escalationBody: Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at /service or call (905) 342-2153.
+::
+
+---
+
 
 ### 4. Wiring Corrosion at the Helm and Bow
 
