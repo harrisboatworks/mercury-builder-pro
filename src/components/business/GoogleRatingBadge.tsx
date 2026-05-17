@@ -1,4 +1,5 @@
-import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
+import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
+import { GOOGLE_REVIEWS_URL } from '@/config/googleReviews';
 import { Star } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -8,18 +9,17 @@ interface GoogleRatingBadgeProps {
   tone?: 'default' | 'dark';
 }
 
-const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/place/Harris+Boat+Works/@44.1264476,-78.2111697,17z/data=!4m8!3m7!1s0x89d583f7a1111111:0x1234567890abcdef!8m2!3d44.1264476!4d-78.2111697!9m1!1b1!16s%2Fg%2F1tdqqt8h?entry=ttu';
-
 export function GoogleRatingBadge({ variant = 'compact', className = '', tone = 'default' }: GoogleRatingBadgeProps) {
-  const { data: placeData, isLoading, error } = useGooglePlaceData();
+  const { rating, totalReviews, isLive, isLoading } = useGoogleReviewStats();
   const isDark = tone === 'dark';
   const ratingTextClass = isDark ? 'text-repower-cream' : 'text-foreground';
   const reviewTextClass = isDark ? 'text-repower-cream/55' : 'text-muted-foreground';
   const fullBadgeClass = isDark
     ? 'border border-repower-cream/10 bg-repower-cream/[0.04] hover:bg-repower-cream/[0.07]'
     : 'bg-muted/50 hover:bg-muted';
-  
-  if (isLoading) {
+
+  // Only show skeleton on first load when we have no fallback yet (defensive — fallback always exists)
+  if (isLoading && !isLive && !rating) {
     return (
       <div className={`flex items-center gap-2 ${className}`}>
         <Skeleton className="h-5 w-5 rounded-full" />
@@ -27,14 +27,7 @@ export function GoogleRatingBadge({ variant = 'compact', className = '', tone = 
       </div>
     );
   }
-  
-  // Gracefully hide if no data
-  if (error || !placeData?.rating) {
-    return null;
-  }
-  
-  const { rating, totalReviews } = placeData;
-  
+
   if (variant === 'compact') {
     return (
       <a
