@@ -1219,6 +1219,12 @@ At HBW, we book the 20-hour service appointment at delivery so it doesn't get fo
 
 ---
 
+::pull-quote
+quote: First time I bought new, I almost skipped the break-in because another dealer said "just baby it for a few hours." **HBW walked me through the real Mercury procedure step by step.** Two seasons in, the motor still sounds brand new.
+attribution: Greg T.
+source: Cobourg
+::
+
 ## Common break-in mistakes
 
 **Running wide-open throttle in the first hour.** The most common one. New motor, eager owner, first lake run. Understandable, still wrong.
@@ -2933,6 +2939,12 @@ The part that trips people up is the math. A repower on a typical cottage alumin
 **Whether the boat will stay in the family.** Boats headed to the kids or grandkids are worth the repower investment. Boats you plan to sell next year usually are not.
 
 **Maintenance history.** A boat with consistent winterization records is a different repower candidate than one that has been "running fine" without professional service for ten years.
+
+::pull-quote
+quote: The boat hasn't left our cottage in 22 years. The Mercury 60 finally gave up last summer. Jay quoted a Mercury 75 swap that included winterizing and a spring launch. **We're back on the lake without driving the boat anywhere.**
+attribution: Tracy L.
+source: Kawartha cottage
+::
 
 ## The common cottage boat scenarios we see at HBW
 
@@ -5478,6 +5490,29 @@ Protected Kawartha bays: lower HP works fine. Open Rice Lake in the afternoon wi
 
 ---
 
+::decision-card
+eyebrow: HP sizing approach
+heading: Are you matching a new hull or repowering one you know?
+subhead: The right HP target depends as much on how well you know the boat as on what the plate says.
+leftLabel: New boat, hull you don't know yet
+leftCriteria:
+  - Buying a hull you haven't owned before
+  - Resale matters in 3 to 5 years
+  - You'll typically run with mixed loads
+  - You want the boat to handle worst-case days
+leftOutcome: Size to capacity plate max
+leftVariant: recommended
+rightLabel: Repower of a hull you know well
+rightCriteria:
+  - You've owned this boat 5+ seasons
+  - You know your typical load and usage
+  - You want efficiency, not max top end
+  - Resale is not the primary concern
+rightOutcome: Target 70 to 85 percent of plate max
+rightVariant: alternative
+whenInDoubt: The under-powered complaint is the #1 thing we hear on resale day. If you're on the fence, step up, not down.
+::
+
 ## Sizing guidelines
 
 These ratios give you a working starting point. **Always confirm against your specific capacity plate.**
@@ -6246,6 +6281,29 @@ Five factors affect how thorough your opener prep needs to be:
 - **Check all required safety gear:** a Transport Canada-approved PFD for every person on board, throwable cushion, anchor and rope, paddle, bailer, sound device, lights, fire extinguisher.
 - **Top off fuel with fresh gas.** If you treated your tank last fall with stabilizer and ran it through the system, you are in better shape. If not, fill with fresh and add stabilizer before any long storage.
 
+::diagnostic-flow
+eyebrow: Walleye opener checklist
+heading: Pre-opener prep in the order that matters
+subhead: Walleye opener morning is the worst time to find a problem. Run these five checks in this sequence the week before, not the morning of.
+step1Label: Battery and electrical
+step1Question: Does the main battery load test, and are all connections clean?
+step1Tip: Cold spring mornings expose weak batteries. Load-test it on the bench, don't trust a resting voltage reading. Wire-brush terminals and grease them.
+step2Label: Fuel system and filter
+step2Question: Is the fuel fresh, stabilized, and is the filter under a year old?
+step2Tip: Old fuel is the #1 spring no-start at our shop. Run the tank near empty in fall, top up with fresh in spring, and replace the water-separator filter while you're in there.
+step3Label: Motor flush and tell-tale
+step3Question: Will the motor start, idle smoothly on muffs, and produce a steady tell-tale stream?
+step3Tip: Steady tell-tale within 30 seconds of start means the impeller is good. Weak or absent stream means stop and replace before the lake.
+step4Label: Trailer bearings and tires
+step4Question: Do the trailer hubs run cool after a 20-minute test tow, and are tires at sidewall PSI?
+step4Tip: Cold-stored bearings dry out. Spin the wheels by hand listening for grinding, and check date code on tires. A blowout on opener weekend ends the trip.
+step5Label: Live well, nav lights, electronics
+step5Question: Does the live well fill and drain, and do nav lights work on both bow and stern?
+step5Tip: Walleye opener often means early starts and late returns in low light. Nav lights are not optional at dusk. Test the live well pump before you need it for keepers.
+escalationLabel: Want HBW to do the opener prep?
+escalationBody: We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a sea trial. Book early at /service or call (905) 342-2153.
+::
+
 ### Three Days Before Opener
 
 - Check the weather forecast. Early May in Ontario can turn fast, wind builds, cold fronts arrive.
@@ -6919,6 +6977,29 @@ As we look toward the 2027 model year, here's what to expect from [Mercury Marin
 - Feature migration to more models
 - Efficiency improvements
 
+::decision-card
+eyebrow: Wait vs buy now
+heading: Is the 2027 release worth holding for?
+subhead: New tech is exciting on paper. The first season of any new platform also turns up the things the engineers missed. Decide based on your tolerance for being early.
+leftLabel: Wait for the new lineup
+leftCriteria:
+  - You specifically want digital throttle or Avator electric
+  - You don't need the boat this season
+  - You're comfortable being a first-year owner
+  - The new feature changes how you'd use the boat
+leftOutcome: Hold for spring 2027 release
+leftVariant: alternative
+rightLabel: Buy current lineup now
+rightCriteria:
+  - You need the boat this season
+  - You want proven reliability and known service intervals
+  - The new feature isn't a deal-breaker for your use
+  - You'd rather avoid first-year recall surprises
+rightOutcome: Current FourStroke or Pro XS
+rightVariant: recommended
+whenInDoubt: First-year platforms always have something. If the boat is your weekend escape and not a tech experiment, buy what's working today.
+::
+
 ### Buying Now vs Waiting
 
 **Buy 2026 If**:
@@ -7031,6 +7112,28 @@ Conventional wisdom says year-end is deal time. Is that true for boat motors? He
 - Inventory may be limited
 - Best deals are on what's in stock
 - Not necessarily lowest prices
+
+::cost-stack
+eyebrow: Off-season buying math
+heading: What you actually save buying December through February
+subhead: Off-season pricing is not a single discount. It is a stack of small advantages that add up. Numbers below are 2026 CAD ranges based on a mid-size Mercury repower at HBW.
+item1Label: Motor pricing vs spring baseline
+item1Value: Save $400 to $1,200
+item1Note: Manufacturer winter promotions and dealer inventory clearance typically beat spring pricing by 3 to 6 percent.
+item2Label: Install scheduling
+item2Value: Save $200 to $500
+item2Note: Winter shop time is cheaper than spring crunch. Same work, less wait, sometimes a small labour break.
+item3Label: Mercury Product Protection enrollment
+item3Value: Save $200 to $600
+item3Note: MPP is often promoted with bonus coverage years during winter. Same warranty, lower effective cost.
+item3Accent: true
+item4Label: Trade-in valuation timing
+item4Value: Roughly flat to slightly down
+item4Note: Trade-in values soften slightly in off-season. Plan for this if you're rolling a trade into the deal.
+totalLabel: Typical total off-season advantage
+totalValue: $800 to $2,300
+caveat: All CAD, pickup only. Numbers are typical ranges, not guarantees. Build your specific quote at mercuryrepower.ca.
+::
 
 ### What Really Matters
 
@@ -8200,6 +8303,31 @@ Industry survey data from the Baird/MRAA Pulse Report: roughly 71% of dealers re
 
 Used boat prices have pulled back 5 to 10% from pandemic highs.
 
+::cost-stack
+eyebrow: 2026 Ontario boat market ranges
+heading: What you'll actually pay for a boat in 2026
+subhead: Real Ontario CAD ranges by category. New-boat pricing has softened from the 2022 peak. Used pricing has finally normalized. Repower remains the best dollar-per-season deal.
+item1Label: Aluminum fishing boat, 16 to 18 ft new
+item1Value: $22,000 to $42,000
+item1Note: Package with 40 to 90 HP Mercury FourStroke and trailer. Range depends on console, electronics, and live well config.
+item2Label: Pontoon, 20 to 22 ft new
+item2Value: $38,000 to $75,000
+item2Note: Dual or triple tube with 90 to 150 HP. Mid-range is the sweet spot for most cottage owners.
+item3Label: Bowrider or runabout, 18 to 21 ft new
+item3Value: $55,000 to $110,000
+item3Note: Fiberglass with 150 to 250 HP. Tower, upholstery, and audio package drive the upper end.
+item4Label: Used boat, 5 to 10 years old
+item4Value: $15,000 to $45,000
+item4Note: Wide range. Hull condition, hours, and trailer matter more than year. Always check compression and lower unit oil.
+item5Label: Repower of an existing hull
+item5Value: $12,000 to $24,000
+item5Note: Best dollar-per-season value if the hull and trailer are sound. New motor, new warranty, no boat-shopping required.
+item5Accent: true
+totalLabel: Best value path for most buyers
+totalValue: Repower if the hull is good
+caveat: All CAD, pickup only at Gores Landing. Build a repower quote at mercuryrepower.ca.
+::
+
 ## The segments that matter on Rice Lake
 
 The categories most relevant to Rice Lake (aluminum fishing boats, pontoons, smaller trailerable rigs) are among the most resilient.
@@ -8473,6 +8601,29 @@ The FourStroke line is Mercury volume seller in Ontario because it covers the fu
 What FourStroke does well: fuel efficiency at cruise, smooth idle, quiet operation, easy cold-start, long service intervals.
 
 What FourStroke is not: fast out of the hole.
+
+::decision-card
+eyebrow: FourStroke vs Pro XS
+heading: How are you actually using the motor?
+subhead: Most Ontario boaters do not need a Pro XS. A correctly propped FourStroke handles the lake just fine. Pro XS earns its keep in specific use cases.
+leftLabel: Mercury FourStroke is the right call
+leftCriteria:
+  - Fishing, cruising, family pontoon
+  - Predictable load, predictable speeds
+  - Fuel economy matters more than hole shot
+  - Want the longest service intervals and quietest ride
+leftOutcome: FourStroke 90 to 200 HP
+leftVariant: recommended
+rightLabel: Mercury Pro XS earns the upgrade
+rightCriteria:
+  - Tournament bass or walleye fishing
+  - Wakeboarding, skiing, towing heavy loads
+  - You routinely run at the top of your motor's range
+  - Top-end speed and hole shot matter
+rightOutcome: Pro XS 115 to 250 HP
+rightVariant: alternative
+whenInDoubt: Buyers who pick Pro XS for the badge usually find a FourStroke would have done the job for less money and less fuel. Pick by use case, not by name.
+::
 
 ### Pro XS, performance fishing and speed applications
 
@@ -19368,6 +19519,29 @@ Approach downwind and the wind is adding speed while you're trying to bleed it o
 
 ---
 
+::diagnostic-flow
+eyebrow: Wind-docking sequence
+heading: Coming in on a windy Rice Lake afternoon? Run the list before you commit
+subhead: Rice Lake's prevailing west wind builds steady chop by mid-afternoon. The wrong approach turns a routine dock into a fender-grinding mess. Work the five steps in order before final approach.
+step1Label: Assess wind direction relative to the slip
+step1Question: Is the wind pushing you onto the dock, off the dock, or square at the slip mouth?
+step1Tip: Cross-onto wind is the easiest, you can let the boat drift in. Cross-off wind is hardest and requires power-on holding. Decide before you commit to a line.
+step2Label: Set fenders and lines before final approach
+step2Question: Are bow, stern, and spring lines pre-rigged on the windward side?
+step2Tip: A crew member fumbling for a line in 20 km/h wind is how dings happen. Tie the lines on the cleats, coil them in the cockpit, and place fenders at the right height before you turn into the wind.
+step3Label: Approach into the wind whenever possible
+step3Question: Can you turn the boat so the bow points into the wind on final?
+step3Tip: Wind into the bow lets you control speed with throttle alone. Wind from behind takes away your brakes. If approaching with the wind is unavoidable, plan a slower, longer approach.
+step4Label: Use the wind to lay the boat down
+step4Question: Can you cut power early and let the wind drift you the last few feet onto fenders?
+step4Tip: On a cross-onto wind, kill power 8 to 10 feet out and let the wind do the work. Idle in is harder to control than a gentle drift.
+step5Label: Know when to abort
+step5Question: If the approach is going wrong, will you re-circle or push through?
+step5Tip: A clean re-circle costs 90 seconds. A bad dock costs a fender, a rub rail, or worse. The right call is almost always to back off, go around, and try again with a fresh setup.
+escalationLabel: Want better control on windy days?
+escalationBody: Power-assist steering and a bow thruster make a real difference on bigger boats. Talk to us about rigging upgrades at (905) 342-2153.
+::
+
 ## Slip-Style Docking in a Crosswind
 
 Come in at an angle, 20-30 degrees off the slip centerline, from the upwind side. This puts the wind at your back quarter rather than broadside.
@@ -20641,6 +20815,29 @@ Electric pump does most of the work. One-finger steering at any speed. Recommend
 
 ---
 
+::decision-card
+eyebrow: Controls upgrade decision
+heading: Is digital throttle worth the upgrade?
+subhead: DTS (Digital Throttle and Shift) is smoother, future-proof, and built for the new Mercury platform. It also adds $1,500 to $3,000 to the rigging bill. Match it to the boat.
+leftLabel: Stick with mechanical cable controls
+leftCriteria:
+  - Motor is 90 HP or smaller
+  - Existing rigging is in good shape
+  - You're not planning to upgrade the boat soon
+  - Budget matters more than the smoother feel
+leftOutcome: Cable controls, $0 to $400 to refresh
+leftVariant: alternative
+rightLabel: Go to DTS digital controls
+rightCriteria:
+  - Motor is 100+ HP, new build or full repower
+  - You want smooth idle shifting and joystick-ready wiring
+  - You plan to keep the boat 7+ years
+  - You'd add VesselView or autopilot later
+rightOutcome: DTS controls, $1,500 to $3,000 extra
+rightVariant: recommended
+whenInDoubt: If you'll see this boat in five years, the digital path is the cheaper long-term choice. If you'll flip it in two, cable is fine.
+::
+
 ## Gauges: Analog, SmartCraft Connect, or VesselView
 
 ### Analog Gauges
@@ -21373,6 +21570,29 @@ The module is purchased separately from the motor. Pricing is set by Mercury Can
 
 ---
 
+::decision-card
+eyebrow: SmartCraft tier decision
+heading: How seriously do you actually use the boat?
+subhead: SmartCraft Connect is not free. The phone app and module add real cost. The payback depends on how much time you spend on the water and whether you share the boat.
+leftLabel: Basic SmartCraft Link is enough
+leftCriteria:
+  - You boat a handful of times per season
+  - You already have working analog gauges
+  - You don't track maintenance digitally
+  - Single user, simple use case
+leftOutcome: Stock gauges, no upgrade
+leftVariant: alternative
+rightLabel: SmartCraft Connect pays back season one
+rightCriteria:
+  - 30+ hours per season on the water
+  - You share the boat with family or partners
+  - You want service intervals tracked automatically
+  - You'd benefit from fuel-burn and route history
+rightOutcome: SmartCraft Connect + Mercury app
+rightVariant: recommended
+whenInDoubt: If you've ever forgotten when the last lower-unit service was, Connect tracks it for you. That alone is usually worth the upgrade.
+::
+
 ## How It Compares to VesselView Mobile and SmartCraft Gauges
 
 **SmartCraft Connect Mobile** is the current Mercury phone-app product. The phone is the display. This is what new installs in 2026 should use.
@@ -21962,6 +22182,12 @@ The 9.9 MH EFI is the wrong motor if:
 - **Your transom is long-shaft.** This is the short-shaft (15") version. Measure your transom before buying.
 
 ---
+
+::pull-quote
+quote: Bought the 9.9 EFI as a kicker for trolling. **Ended up using it more than the main motor** on small-lake mornings. Quietest motor I've owned and the EFI starts on the first pull every time.
+attribution: Steve H.
+source: Peterborough
+::
 
 ## Standard 9.9 EFI vs. ProKicker-Style Use
 
