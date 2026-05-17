@@ -5697,7 +5697,10 @@ Use FAQPage.
 
 Add HowTo only if the final CMS page keeps the safety checklist as step-by-step instructions.
 
-Add ImageObject for checklist infographic.`,
+Add ImageObject for checklist infographic.
+
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
+`,
   },
   {
     slug: 'mercury-outboard-service-repair-toronto-ontario',
@@ -5860,6 +5863,8 @@ Include service CTA as https://hbw.wiki/service.
 
 
 > 相关指南：[Mercury 不启动、报警、过热怎么办](/blog/zh/mercury-outboard-troubleshooting-chinese-ontario)。
+
+HBW 自 1947 年起就经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
 `,
   },
   {
@@ -6016,6 +6021,8 @@ Consider Event schema only for official free fishing periods if implemented care
 Add ImageObject for date infographic.
 
 > 相关指南：[Rice Lake 春夏秋冬钓什么](/blog/zh/rice-lake-fishing-season-guide-chinese)。
+
+HBW 自 1947 年起就经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
 `,
   },
   {
@@ -6203,7 +6210,10 @@ Keep the copy useful, human, local, and honest. Avoid over-polished corporate Ch
 
 Sources used in this batch
 
-Factual statements about PCOC, proof of competency, electric trolling motors, Rental Boat Safety Checklist, and acceptable documents come from Transport Canada PCOC. Factual statements about Pleasure Craft Licence, 10HP/7.5kW threshold, bow display, PCL vs PCOC, and registration caveats come from Transport Canada PCL. Safety-equipment references come from the Transport Canada Safe Boating Guide. Ontario 2026 free fishing dates and licence-exemption caveats come from Ontario free family fishing. Chinese-language fishing-regulation availability comes from Ontario Traditional Chinese fishing regulations. FMZ 16 and Lake Simcoe exception references come from Ontario FMZ 16. FMZ 17 and Kawartha-area exception/bait references come from Ontario FMZ 17. Harris Boat Works facts about Rice Lake, rentals, boat operator card requirement, services, Mercury/Legend positioning, winterization, storage, launch, slips, and history come from Harris Boat Works.`,
+Factual statements about PCOC, proof of competency, electric trolling motors, Rental Boat Safety Checklist, and acceptable documents come from Transport Canada PCOC. Factual statements about Pleasure Craft Licence, 10HP/7.5kW threshold, bow display, PCL vs PCOC, and registration caveats come from Transport Canada PCL. Safety-equipment references come from the Transport Canada Safe Boating Guide. Ontario 2026 free fishing dates and licence-exemption caveats come from Ontario free family fishing. Chinese-language fishing-regulation availability comes from Ontario Traditional Chinese fishing regulations. FMZ 16 and Lake Simcoe exception references come from Ontario FMZ 16. FMZ 17 and Kawartha-area exception/bait references come from Ontario FMZ 17. Harris Boat Works facts about Rice Lake, rentals, boat operator card requirement, services, Mercury/Legend positioning, winterization, storage, launch, slips, and history come from Harris Boat Works.
+
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
+`,
   },
   {
     slug: 'toronto-chinese-buying-first-boat-rent-or-buy',
@@ -6357,6 +6367,8 @@ Internally link to Mandarin rental post, Mandarin safety checklist, Mercury repo
 
 
 > 相关指南：[GTA 华人从租船到买船路线图](/blog/zh/gta-chinese-rent-to-buy-boat-roadmap)。
+
+HBW 自 1947 年起就经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
 `,
   },
   {
@@ -6491,6 +6503,8 @@ Add comparison Table in visible content.
 Add ImageObject for horsepower selector visual.
 
 > 相关指南：[FourStroke vs Pro XS 中文对比指南](/blog/zh/mercury-fourstroke-vs-pro-xs-chinese)。
+
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
 `,
   },
   {
@@ -6629,6 +6643,8 @@ Add ImageObject.
 Consider internal links to rent-vs-buy, horsepower guide, Rice Lake rental guide, and winterization/storage pages.
 
 > 相关指南：[钓鱼船 vs Pontoon：先想你真的怎么用](/blog/zh/fishing-boat-vs-pontoon-chinese-ontario)。
+
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
 `,
   },
   {
@@ -6792,7 +6808,10 @@ Use FAQPage.
 
 Consider Service schema for Mercury repower if this becomes a commercial landing page.
 
-Add ImageObject for repower decision tree.`,
+Add ImageObject for repower decision tree.
+
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
+`,
   },
   {
     slug: 'mercury-outboard-price-dealer-guide-toronto-chinese',
@@ -6978,6 +6997,8 @@ Sources used in this batch
 HBW business, rental, dealer, service, and Rice Lake claims are based on Harris Boat Works, Harris Boat Works rentals, and Harris Boat Works Mercury Outboards. Mercury product-family claims are based on Mercury FourStroke 2.5-20hp, Mercury FourStroke 25-30hp, Mercury FourStroke 75-150hp, and Mercury Pro XS. Boating licence and operator-card claims are based on Transport Canada PCOC and Transport Canada PCL. Fishing-rule context is based on Ontario Traditional Chinese fishing regulations and Ontario FMZ 17.
 
 > 相关指南：[安省华人 boat ownership cost 中文指南](/blog/zh/boat-ownership-cost-ontario-chinese)。
+
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
 `,
   },
   {
@@ -7117,7 +7138,10 @@ PCL 是船的 ownership proof 吗？
 
 HBW 维修所有品牌引擎吗？
 
-For engine repairs, we only service Mercury and Mercruiser.`,
+For engine repairs, we only service Mercury and Mercruiser.
+
+HBW 自 1947 年起就经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
+`,
   },
   {
     slug: 'ontario-boat-winterization-chinese-guide',
@@ -7226,7 +7250,10 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 Winterization 和 spring commissioning 有什么区别？
 
-Winterization 是秋天为过冬做准备。Spring commissioning 是春天为重新下水做准备。一个负责睡得安全，一个负责醒得正常。船也需要一点起床仪式，只是比人类贵一点。`,
+Winterization 是秋天为过冬做准备。Spring commissioning 是春天为重新下水做准备。一个负责睡得安全，一个负责醒得正常。船也需要一点起床仪式，只是比人类贵一点。
+
+HBW 自 1947 年起就经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
+`,
   },
   {
     slug: 'used-boat-buying-checklist-toronto-chinese',
@@ -7381,7 +7408,10 @@ FAQ
 
 HBW 可以检查或维修所有二手船引擎吗？
 
-For engine repairs, we only service Mercury and Mercruiser.`,
+For engine repairs, we only service Mercury and Mercruiser.
+
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
+`,
   },
   {
     slug: 'mercury-fourstroke-vs-pro-xs-chinese',
@@ -7528,7 +7558,10 @@ Repower 可以只换 motor，不换 rigging 吗？
 
 我应该买最大 horsepower 吗？
 
-不一定。你应该买适合 hull rating、使用方式、载重和预算的 horsepower。最大不等于最好。船也有自己的脾气，别把它当健身房 PR 来挑战。`,
+不一定。你应该买适合 hull rating、使用方式、载重和预算的 horsepower。最大不等于最好。船也有自己的脾气，别把它当健身房 PR 来挑战。
+
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
+`,
   },
   {
     slug: 'fishing-boat-vs-pontoon-chinese-ontario',
@@ -7675,7 +7708,10 @@ Fishing boat 可以带家人玩吗？
 
 Fishing boat 和 pontoon 都需要 PCOC 吗？
 
-如果操作有马达的休闲船，一般需要 proof of competency；PCOC 是常见证明之一 (Transport Canada PCOC)。`,
+如果操作有马达的休闲船，一般需要 proof of competency；PCOC 是常见证明之一 (Transport Canada PCOC)。
+
+HBW 自 1947 年起就经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
+`,
   },
   {
     slug: 'toronto-chinese-boat-buying-guide-ontario',
@@ -7879,163 +7915,110 @@ HBW 适合 GTA 华人买家吗？
     keywords: ['Mercury 故障排查', 'outboard troubleshooting', '船外机不启动', 'SmartCraft alarm', '安省 Mercury service', 'HBW service'],
     content: `# Mercury 船外机故障排查中文指南：先别一直拧钥匙
 
-快速答案
+## 快速答案
 
-如果 Mercury 船外机无法启动、持续 warning beep、疑似过热、明显没力、震动、闻到 fuel smell 或冷却水流异常，先停止硬试，记录症状，再预约专业检查。HBW 是 Rice Lake 的 Mercury repower and service destination，页面说明提供 Mercury outboards、professional installation、factory-trained techs、lake test 和 warranty registration 等 Mercury-related support (HBW Mercury Outboards)。
+如果 Mercury 船外机无法启动、警报持续响、疑似过热、明显没力、震动、闻到燃油味或冷却水流异常，请先停止硬试，记录症状，再预约专业检查。HBW 位于 Rice Lake 旁，是 Mercury 授权的 repower 与服务枢纽——提供 Mercury 船外机销售、专业安装、厂家认证技师维护、湖测和保修登记等一条龙支持。
 
-最贵的故障排查方式，是一边说“再试一次”，一边把问题试大。船外机不是老电视，拍两下不会更好。
+过度试探才是成本最高的"排查"：反复强行启动只会扩损。船外机不是老电视，拍两下不会更好。
 
-先分清症状
+## 先分清症状
 
-不要一上来就问“是不是坏了”。先把症状说清楚。
+不要一上来就问"是不是坏了"。先把症状说清楚。
 
-症状
+| 症状 | 先做什么 | 不要做什么 |
+|---|---|---|
+| 完全没反应 | 检查电池、安全捞绳（kill switch）、档位是否在空档 | 不要连续长时间打马达 |
+| 能转但不启动 | 记录燃油状态、电池电压、启动声音和是否有警报 | 不要一直试到电池没电 |
+| 警报响（warning beep） | 立刻减速或停止，记录警报模式和当时情况 | 不要当作"可能没事"继续跑 |
+| 疑似过热 | 停止运行，检查冷却水流是否正常 | 不要继续高速运行 |
+| 没力或转速异常 | 记录负载、螺旋桨、燃油、天气和发生时间 | 不要强行开回很远 |
+| 震动 | 检查螺旋桨是否明显受损 | 不要忽略传动箱或螺旋桨问题 |
+| 闻到燃油味 | 立刻重视，避免一切火源 | 不要继续启动 |
 
-先做什么
+这不是让你自己修引擎。是让你给 service team 一个清楚的起点。清楚描述症状，通常比"它怪怪的"有用很多。
 
-不要做什么
+## 无法启动：先看简单的
 
-完全没反应
+Mercury 船外机无法启动，常见第一步不是拆东西，而是确认基础条件：
 
-检查 battery、kill switch、gear 是否在 neutral
+- 电池是否有电
+- 电池端子是否松动或腐蚀
+- 安全捞绳（kill switch）是否正确插好
+- 档位是否处于空档（Neutral）
+- 燃油是否足够
+- 燃油管路和油箱透气孔是否正常
+- 是否有明显的燃油味
+- 是否有警报或仪表报警
 
-不要连续长时间 crank
+如果这些都正常，但马达还是不启动，就不要继续硬试。连续尝试可能让电池没电，也可能让真正的问题更难判断。
 
-能转但不启动
+针对船外机维修，HBW 专注 Mercury 与 Mercruiser 全系。
 
-记录 fuel、battery、启动声音和是否有 warning
+## 警报响（Warning beep）：不要忽略
 
-不要一直试到电池没电
-
-Warning beep
-
-立刻减速或停止，记录 beep 模式和情况
-
-不要当作“可能没事”继续跑
-
-疑似过热
-
-停止运行，检查是否有冷却水流异常
-
-不要继续高速运行
-
-没力或转速异常
-
-记录 load、prop、fuel、天气和发生时间
-
-不要强行开回很远
-
-震动
-
-检查 prop 是否明显受损
-
-不要忽略 lower unit 或 prop 问题
-
-Fuel smell
-
-立刻重视，避免火源
-
-不要继续启动
-
-这不是让你自己修 motor。是让你给 service team 一个清楚的起点。清楚描述症状，通常比“它怪怪的”有用很多。
-
-无法启动：先看简单的
-
-Mercury outboard 无法启动，常见第一步不是拆东西，而是确认基础条件：
-
-Battery 是否有电。
-
-Battery terminals 是否松动或腐蚀。
-
-Kill switch 是否正确。
-
-Gear 是否在 neutral。
-
-Fuel 是否足够。
-
-Fuel line 和 tank vent 是否正常。
-
-是否有明显 fuel smell。
-
-是否有 warning beep 或 alarm。
-
-如果这些都正常，但 motor 还是不启动，就不要继续硬试。连续尝试可能让电池没电，也可能让真正的问题更难判断。
-
-For engine repairs, we only service Mercury and Mercruiser.
-
-Warning beep：不要忽略
-
-Warning beep 的意义不是“提醒你之后有空查一下”。它是在告诉你系统发现了某种需要注意的情况。不同 model、rigging 和 system 的 warning 可能不同，所以不要在网上随便找一个答案就套用到自己的 motor。
+Warning beep 的意义不是"提醒你之后有空查一下"。它是在告诉你系统发现了某种需要注意的情况。不同型号、线束配置和系统的警报含义可能不同，所以不要在网上随便找一个答案就套用到自己的马达。
 
 正确做法：
 
-减速或停止。
+- 减速或停止
+- 观察水流、温度、仪表和声音
+- 记录警报出现时的速度、负载、天气、油量和操作
+- 如果不确定，安排 Mercury service
 
-观察水流、温度、仪表和声音。
+现代船外机的问题常常不只是马达本体，还可能和线束（rigging）、操控线束、仪表或螺旋桨设置有关。Mercury repower 与安装会涉及完整的线束、操控线缆、仪表更换、螺旋桨匹配、湖测和保修登记——这也是为什么单凭一个症状很难下结论。
 
-记录 beep 出现时的速度、负载、天气、油量和操作。
+## 疑似过热：立刻停
 
-如果不确定，安排 service。
-
-HBW 的 Mercury page 说明 Mercury repower 和 installation 涉及 rigging、controls/cables、gauges as applicable、prop、lake test 和 warranty registration，这也说明现代 outboard 的问题常常不只是 motor 本体，还可能和 rigging、controls、gauges 或 prop setup 有关 (HBW Mercury Outboards)。
-
-疑似过热：立刻停
-
-如果你怀疑 outboard overheating，先停。不要继续高速运行来“看看会不会自己好”。过热问题可能和冷却水流、堵塞、impeller、thermostat、sensor 或其他系统有关。没有现场诊断，不应该猜。
+如果你怀疑船外机过热，先停。不要继续高速运行来"看看会不会自己好"。过热问题可能和冷却水流、堵塞、水泵叶轮（impeller）、节温器、传感器或其他系统有关。没有现场诊断，不应该猜。
 
 你可以记录：
 
-出现时间。
+- 出现时间
+- 当时速度
+- 是否载重
+- 冷却水流是否正常，以及停机前是否出现异常音或异常温度
+- 是否有水草、淤泥、浅水或杂物可能影响进水口
+- 是否同时有警报响
 
-当时速度。
+这些信息比"它热了"更有用。Service team 不在船上，只能靠你带回来的线索开始。
 
-是否载重。
+## 没力、起步慢、速度上不去
 
-冷却水流是否和平常不同。
+动力损失不一定是引擎故障。它可能和螺旋桨、负载、燃油、纵倾（trim）、船体状况、船底污损、线束或马达健康有关。不要急着下结论。
 
-是否有 weeds、mud、shallow water 或 debris 可能影响水 intake。
+HBW 的 repower 评估会根据船体、载荷和你在 Rice Lake 的实际使用方式来选配马力；同时也提醒：动手前请先查看船身的载荷铭牌（capacity plate）确认最大马力。
 
-是否同时有 warning beep。
+这也是为什么 troubleshooting 不能只看马力数字。船、马达、螺旋桨和负载是一套系统。一个环节不对，整条船都会开始摆脸色。
 
-这些信息比“它热了”更有用。Service team 不在船上，只能靠你带回来的线索开始。
+## 什么时候该考虑 repower
 
-没力、起步慢、速度上不去
+如果维修成本开始接近新马达成本的一大部分，继续修不一定划算。原则上：当 repair 成本接近一台新 Mercury 的一半，repower 通常更聪明——你换回的不只是马力，还有 modern reliability、warranty 覆盖和更低油耗。
 
-Power loss 不一定是 engine failure。它可能和 prop、load、fuel、trim、hull condition、bottom fouling、rigging 或 motor health 有关。不要急着下结论。
+这不是说每个故障都该换马达。很多问题值得修。但如果老马达每年都来一次新惊喜，repower 就不只是"买新玩具"，而是买回整个夏天的可靠性。
 
-HBW 的 Mercury page 把 repower sizing 讲得很实际：如果不确定，会 based on hull、load 和 how you use the boat on Rice Lake 来 size motor；页面也提醒 check your capacity plate for max HP (HBW Mercury Outboards)。
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，Mercury Marine Platinum dealer 与 Legend Boats dealer 双认证。如果你的 Mercury 或 Mercruiser 有启动、警报、过热、没力、震动或燃油味问题，请提交 HBW service request。如果你怀疑旧马达已经不值得继续修，到 MercuryRepower.ca 看 repower 方向。
 
-这也是为什么 troubleshooting 不能只看 horsepower。船、motor、prop 和 load 是一套系统。一个环节不对，整条船都会开始摆脸色。
+## FAQ
 
-什么时候该考虑 repower
+**Mercury 船外机无法启动，我应该一直试吗？**
 
-如果 repair costs 开始接近新 motor 成本的一大部分，继续修不一定划算。HBW 的 Mercury page 直接写到，如果 repair costs start approaching half the cost of a new motor, repower is usually smarter，并说明 repower 可以带来 modern reliability、warranty 和 better fuel burn (HBW Mercury Outboards)。
+不应该。先检查电池、安全捞绳、空档、燃油和明显警报。连续长时间尝试可能让问题更糟，也会让诊断更乱。
 
-这不是说每个故障都该换 motor。很多问题值得修。但如果老 motor 每年都来一次新惊喜，repower 就不只是“买新玩具”，而是买回 summer reliability。
+**Mercury outboard warning beep 可以继续开吗？**
 
-如果你的 Mercury 或 Mercruiser 有启动、warning beep、过热、没力、震动或 fuel smell 问题，提交 HBW service request。如果你怀疑旧 motor 已经不值得继续修，去 MercuryRepower.ca 看 repower 方向。
+不要默认可以。先减速或停止，记录情况。如果不确定，安排 Mercury service。警报不是背景音乐。
 
-FAQ
+**Mercury 船外机过热怎么办？**
 
-Mercury 船外机无法启动，我应该一直试吗？
+先停止运行，记录水流、速度、载重、是否有水草或杂物、是否有警报。不要继续高速跑。
 
-不应该。先检查 battery、kill switch、neutral、fuel 和明显 warning。连续长时间尝试可能让问题更糟，也会让诊断更乱。
+**没力是不是一定要换马达？**
 
-Mercury outboard warning beep 可以继续开吗？
+不一定。动力损失可能和螺旋桨、负载、燃油、纵倾、船体、线束或引擎健康有关。先诊断，再决定 repair 或 repower。
 
-不要默认可以。先减速或停止，记录情况。如果不确定，安排 Mercury service。Warning beep 不是背景音乐。
+**HBW 维修哪些引擎？**
 
-Mercury 船外机过热怎么办？
-
-先停止运行，记录水流、速度、载重、是否有 weeds 或 debris、是否有 warning beep。不要继续高速跑。
-
-没力是不是一定要换 motor？
-
-不一定。Power loss 可能和 prop、load、fuel、trim、hull、rigging 或 engine health 有关。先诊断，再决定 repair 或 repower。
-
-HBW 维修哪些引擎？
-
-For engine repairs, we only service Mercury and Mercruiser.`,
+针对船外机维修，HBW 专注 Mercury 与 Mercruiser 全系。`,
   },
   {
     slug: 'rice-lake-fishing-season-guide-chinese',
@@ -8150,7 +8133,10 @@ Free fishing 日期是不是不用管任何规则？
 
 带孩子第一次钓鱼，选 fishing boat 还是 pontoon？
 
-如果主要目标是家庭体验，pontoon 通常更舒服。如果主要目标是认真钓鱼，fishing boat 更合适。第一次不确定，先租再决定。`,
+如果主要目标是家庭体验，pontoon 通常更舒服。如果主要目标是认真钓鱼，fishing boat 更合适。第一次不确定，先租再决定。
+
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
+`,
   },
   {
     slug: 'boat-ownership-cost-ontario-chinese',
@@ -8309,7 +8295,10 @@ PCL 是 ownership proof 吗？
 
 HBW 能帮哪些 ownership 项目？
 
-HBW 页面列出 boat sales、service、repair、boat rentals、winterization、storage、slips、Mercury outboards 和 MerCruiser support (Harris Boat Works)。`,
+HBW 页面列出 boat sales、service、repair、boat rentals、winterization、storage、slips、Mercury outboards 和 MerCruiser support (Harris Boat Works)。
+
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Platinum dealer 与 Legend Boats dealer。
+`,
   },
   {
     slug: 'gta-chinese-rent-to-buy-boat-roadmap',
