@@ -148,6 +148,7 @@ const MercuryPontoonOutboards = lazy(() => import("./pages/landing/MercuryPontoo
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
 const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
+const BlogIndexFr = lazy(() => import("./pages/blog/BlogIndexFr"));
 const MandarinBlogArticle = lazy(() => import("./pages/blog/MandarinBlogArticle"));
 const MandarinBlogArticlePage = lazy(() => import("./pages/blog/MandarinBlogArticlePage"));
 const KoreanBlogArticlePage = lazy(() => import("./pages/blog/KoreanBlogArticlePage"));
