@@ -1383,6 +1383,29 @@ The Mercury 9.9 ProKicker is the right kicker motor for Rice Lake walleye trolli
 
 ---
 
+::decision-card
+eyebrow: Kicker decision
+heading: Do you actually need a 9.9 ProKicker?
+subhead: Trolling style is the real deciding factor. Be honest about how often you actually troll.
+leftLabel: Rig the ProKicker
+leftCriteria:
+  - You troll walleye on Rice Lake at 1 to 2 mph regularly
+  - You fish multi-hour trolling sessions for walleye, bass, or muskie
+  - Your main motor is 60 HP or larger and won't idle slow enough
+  - You want quiet, fuel-efficient, hands-on speed control
+leftOutcome: 9.9 ProKicker, tiller on fishing boats, remote on bigger consoles
+leftVariant: recommended
+rightLabel: Skip the kicker
+rightCriteria:
+  - You bass fish run-and-gun, bow-mount handles positioning
+  - You troll occasionally and the main motor idles slow enough
+  - Budget is tight and an electric trolling motor covers the same job
+  - Boat is under 14 ft and a second outboard is overkill
+rightOutcome: Save the money, run a bow-mount or just the main
+rightVariant: alternative
+whenInDoubt: If walleye is on your list, get the ProKicker. The customers who skip it on Rice Lake usually add one within two seasons.
+::
+
 ## What the 9.9 ProKicker Actually Is
 
 A lot of customers walk in asking about a "9.9 for trolling" and mean different things. So let's be precise.
@@ -2008,6 +2031,29 @@ On small aluminum boats (12–14 ft), yes, a 9.9 or 15 HP can be the only motor.
 > **Quick answer:** Pontoons need torque and hole shot, not just top speed. For most 18–22 ft Ontario pontoons, Mercury 90–150 HP FourStroke with Command Thrust is the right answer. The gearcase matters as much as the horsepower number. Build an installed pontoon repower quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 ---
+
+::decision-card
+eyebrow: Pontoon HP decision
+heading: How big is your pontoon and how do you load it?
+subhead: Tube count and use case matter more than the HP number alone.
+leftLabel: 16 to 18 ft two-tube, cruising and light fishing
+leftCriteria:
+  - 6 people maximum, no active water sports
+  - Sheltered Kawartha bays, short runs
+  - Fuel economy and quiet matter
+  - You want the more affordable setup
+leftOutcome: 90 HP Command Thrust FourStroke
+leftVariant: recommended
+rightLabel: 20 to 22+ ft tritoon, full crew with water sports
+rightCriteria:
+  - 8 to 10 passengers, tubing or skiing weekly
+  - Open water on Rice Lake or larger Kawartha lakes
+  - Fast hole shot with the boat loaded matters
+  - Long-term hold, you want the right motor once
+rightOutcome: 150 HP Command Thrust (200 HP on bigger tritoons)
+rightVariant: alternative
+whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in this HP range. The only real question is the HP number.
+::
 
 ## The gearcase is the part most people overlook
 
@@ -2961,6 +3007,29 @@ For most Rice Lake fishing setups, the right combination is a Mercury 60–115 H
 
 ---
 
+::decision-card
+eyebrow: Rice Lake fishing style
+heading: Weed lines or whole-lake runs?
+subhead: How you fish Rice Lake decides the main-motor HP and whether you need a kicker.
+leftLabel: You fish weed lines and stay local
+leftCriteria:
+  - Slow trolling for walleye along weed edges
+  - Short runs out of Bewdley, Gores Landing, or Hastings
+  - You spend more time fishing than running
+  - 16 to 17 ft aluminum console
+leftOutcome: 60 to 90 HP FourStroke + 9.9 ProKicker for trolling
+leftVariant: recommended
+rightLabel: You cover the whole lake fast
+rightCriteria:
+  - Bass tournament style, run-and-gun between spots
+  - Crossings from the west end to Hastings or up to the Trent
+  - Heavy boat, full gear, sometimes three anglers
+  - 18 to 19 ft fishing boat
+rightOutcome: 115 to 150 HP FourStroke or Pro XS, kicker optional
+rightVariant: alternative
+whenInDoubt: Mind the submerged railway across the middle of the lake. More HP makes a strike worse, not better. Mark it on the chartplotter before you decide on top speed.
+::
+
 ## The Rice Lake Variables That Drive Motor Selection
 
 Rice Lake is a specific lake with specific characteristics. Generic "what outboard should I buy" advice misses the point. Here's what actually matters for this water:
@@ -3170,6 +3239,12 @@ That said, a repower is not always the right answer.
 **How long you plan to keep the boat.** A five-year hold favors a lower-investment repower. A fifteen-year hold justifies more motor investment, a new Mercury will outlast the rest of the boat.
 
 **What brand motor you have now.** Mercury-to-Mercury repowers usually carry over your existing controls, which keeps costs down. Brand conversions from Evinrude, Yamaha, or Honda to Mercury require new controls and harness throughout, which adds to the project.
+
+::pull-quote
+quote: My old Johnson 90 finally let go on the Trent-Severn last August. Jay walked me through the new vs used math, and the new Mercury was actually the cheaper play once I ran **5 years out**. Should have done it in 2022.
+attribution: Brian K.
+source: HBW Bewdley Repower Customer, 2025
+::
 
 ## What the repower process looks like at HBW
 
@@ -6885,6 +6960,29 @@ For most family runabouts in the 17, 20 ft range, a **Mercury 90, 150 FourStroke
 
 ---
 
+::decision-card
+eyebrow: Runabout use-case decision
+heading: Calm cruising or active watersports?
+subhead: Same boat length, two very different right answers on motor and gearcase.
+leftLabel: Primary use is calm cruising and dinner runs
+leftCriteria:
+  - Mostly 2 to 4 people, light loading
+  - Occasional tubing for the kids
+  - Fuel economy and quiet matter most
+  - You want lower upfront cost
+leftOutcome: 90 to 115 HP FourStroke, standard gearcase
+leftVariant: recommended
+rightLabel: You tow watersports regularly
+rightCriteria:
+  - Skiing, wakeboarding, or wakesurfing most weekends
+  - 4 to 6 people aboard with full gear
+  - Hole shot with the boat loaded matters
+  - Boat is 19 ft or larger
+rightOutcome: 150 to 200 HP, Pro XS if hole shot is critical
+rightVariant: alternative
+whenInDoubt: Check the capacity plate first. Then size for how you actually use the boat on a typical Saturday, not the once-a-year scenario.
+::
+
 ## Full Article
 
 A "family runabout" covers a lot of ground. It might be a 16-foot bowrider tugging the kids around the bay, or a 22-foot deck boat pulling a wakeboarder behind a full crew. The right Mercury depends on three things: the boat's length and weight, what you actually do with it, and how much you want to spend on fuel.
@@ -7085,6 +7183,29 @@ Not sure where to start? Call **905-342-2153**. We answer the phone and we'll te
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Outboard ski and wakeboard boats want torque and hole-shot. A Mercury 200-300 V8 FourStroke with the right prop pitch is the right call for most 19-22 ft hulls. Pro XS gains a bit of top end at the expense of mid-range. Stay inside the capacity plate. Quote installed at mercuryrepower.ca.
+
+::decision-card
+eyebrow: Wake profile decision
+heading: Wakeboarding or skiing? Different wake, different motor.
+subhead: Skiing wants a flat clean wake. Wakeboarding wants a big firm one. The motor spec follows.
+leftLabel: Skiing is the focus
+leftCriteria:
+  - Slalom or course skiing most of the time
+  - You want a flat, clean, low wake
+  - Hole shot for getting the skier up matters most
+  - Lighter boat, minimal ballast
+leftOutcome: 175 to 200 HP Pro XS, sport-tuned gearcase, stainless prop
+leftVariant: recommended
+rightLabel: Wakeboarding is the focus
+rightCriteria:
+  - You want a big, lipped, firm wake to ride
+  - You run real ballast (1,000 lb or more)
+  - Boat is 20 ft or larger with a tow tower
+  - Sustained mid-range torque matters more than top end
+rightOutcome: 225 to 300 HP V6 or V8, more weight, more sustained pull
+rightVariant: alternative
+whenInDoubt: If the household does both, build for the bigger wake. A wakeboard rig still pulls a skier. A ski rig struggles to throw a real wakeboard wake.
+::
 
 For pricing, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). To compare engine families, read [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). Rigging and warranty details are covered in the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026).
 
@@ -9260,6 +9381,29 @@ Mercury and Yamaha both build excellent outboards. For Ontario freshwater boatin
 > **Disclosure:** Harris Boat Works is a Mercury Platinum dealer. We sell Mercury. We're telling you up front so you know where the bias lives.
 
 ---
+
+::decision-card
+eyebrow: Brand decision
+heading: Switch to Mercury or stay on Yamaha?
+subhead: Dealer access in your region is the deciding factor for most Ontario owners.
+leftLabel: Switch to Mercury
+leftCriteria:
+  - No Yamaha dealer within an hour drive
+  - You travel and want broader Canadian dealer coverage
+  - You plan to sell in 2 to 5 years (stronger Ontario resale)
+  - You are repowering anyway, the switch cost is just rigging
+leftOutcome: Mercury wins on Ontario service network and resale
+leftVariant: recommended
+rightLabel: Stay on Yamaha
+rightCriteria:
+  - You have a trusted Yamaha dealer in your town
+  - Existing Yamaha is running well with hours left
+  - Boat came factory-rigged Yamaha and you like the integration
+  - You boat Great Lakes coastal or travel to saltwater often
+rightOutcome: Brand-switch rigging ($1,500 to $3,000) won't pay back
+rightVariant: alternative
+whenInDoubt: Drive to your nearest Yamaha and Mercury dealer. Whichever shop you'd actually trust with the boat on a Tuesday afternoon is the right brand.
+::
 
 ## Full Article
 
@@ -12373,6 +12517,37 @@ Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap
 
 
 ---
+
+::cost-stack
+eyebrow: Where the money goes
+heading: What's actually in a Mercury rigging quote?
+subhead: Rigging is everything between the motor and the boat. Typical 90 to 115 HP Mercury-to-Mercury repower with post-2010 controls in good condition.
+item1Label: Throttle and shift control (if replaced)
+item1Value: $400 - $900
+item1Note: Often kept on post-2010 Mercury-to-Mercury. Brand conversions need new.
+item2Label: Steering (cable, kept or refreshed)
+item2Value: $200 - $600
+item2Note: Hydraulic upgrade adds $1,650 to $3,500 and is usually worth doing while the dash is open.
+item2Accent: true
+item3Label: Wiring harness and connectors
+item3Value: $150 - $400
+item3Note: Mercury harness post-2010 usually carries over. Brand swap requires a full new harness.
+item4Label: Gauges or SmartCraft display
+item4Value: $0 - $1,200
+item4Note: Compatible existing gauges stay for free. SmartCraft VesselView adds several hundred to $1,200+.
+item5Label: Fuel hose, primer bulb, water-separator filter
+item5Value: $80 - $200
+item5Note: Replaced on every repower as cheap insurance against old fuel parts hurting a new motor.
+item6Label: Propeller (aluminum 3-blade, 90 to 115 HP)
+item6Value: $400 - $500
+item6Note: Stainless 3 or 4-blade for 150 HP and up runs $800 to $2,000. We pitch-test on sea-trial.
+item7Label: Install labour (Mercury-to-Mercury, post-2010)
+item7Value: $700 - $1,400
+item7Note: Mount, hang, torque, hook up, bench-test, water-test. Brand conversions add 4 to 8 hours.
+totalLabel: Typical Mercury-to-Mercury 90-115 HP rigging total
+totalValue: $1,900 - $5,200 CAD
+caveat: Before HST. Brand conversions add $1,500 to $3,000. Hydraulic steering upgrade adds $1,650 to $3,500. Get the line-by-line at mercuryrepower.ca.
+::
 
 ## Full Article
 
@@ -18251,6 +18426,29 @@ Here's the full picture, the good, the honest, and the stuff that will actually 
 
 ---
 
+::decision-card
+eyebrow: Repower platform decision
+heading: Outboard or sterndrive on your hull?
+subhead: For most Ontario bowriders and runabouts, the math points one way. Big hulls and dedicated tow boats are the exception.
+leftLabel: Boat is under 20 ft (bowrider, runabout, pontoon, deck boat)
+leftCriteria:
+  - Ontario freshwater, mostly inland lakes
+  - Reliability and fuel economy matter
+  - You want shallow-water trim ability for Kawartha shoals
+  - Resale matters in 5 to 10 years
+leftOutcome: Go outboard. 2026 market has decisively moved.
+leftVariant: recommended
+rightLabel: Boat is 22+ ft with high-deadrise hull or dedicated tow boat
+rightCriteria:
+  - Big-water cruiser with cabin, indoor cockpit comfort matters
+  - Watersports inboard tow boat where wake shape is the whole point
+  - You want maximum cockpit space with no transom motor
+  - You'll keep the boat 10+ years and accept the service intervals
+rightOutcome: Sterndrive or inboard can still make sense
+rightVariant: alternative
+whenInDoubt: Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders coming for sterndrive repower leave with an outboard quote.
+::
+
 ## The Big Picture: Outboards Have Won the Market
 
 This isn't opinion. It's sales data.
@@ -19169,6 +19367,26 @@ Battery-related no-starts are one of the most common spring service calls our te
 This guide is the preventive medicine version of that service call. Battery types, switch setups, parasitic drain, winter storage, spring wake-up, everything you need so May long weekend starts the way it's supposed to.
 
 ---
+
+::diagnostic-flow
+heading: Battery won't crank? Diagnose in this order.
+eyebrow: Marine battery triage
+subhead: Most marine battery "failures" are one of these four things. Walk in order, don't guess.
+step1Label: Load test
+step1Question: Does the battery hold above 9.5V under starter load?
+step1Tip: Resting voltage lies. A tired battery can read 12.4V at rest and collapse to 8V the moment the starter pulls. Get a real load test at any auto parts store, free.
+step2Label: Terminals and cables
+step2Question: Are the terminals clean and the cable connections tight?
+step2Tip: White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, then dielectric grease.
+step3Label: Charging system (alternator output)
+step3Question: With the engine at 1,500 RPM, does battery voltage read 13.8V to 14.4V?
+step3Tip: Under 13.5V running means the alternator or voltage regulator isn't charging. The battery is being drained by the boat, not failing on its own.
+step4Label: Age and replacement
+step4Question: Is the battery 5+ years old, or did it spend a winter without a maintainer?
+step4Tip: Even a "good" 5-year-old AGM is on borrowed time. Replace proactively instead of stranded at the launch ramp on May 24 weekend.
+escalationLabel: Want HBW to diagnose?
+escalationBody: We test batteries, charging systems, and parasitic drain in one appointment. Book at /service or call (905) 342-2153.
+::
 
 ## Why Batteries Are Our #1 Spring Service Call
 
@@ -21917,7 +22135,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     category: 'Service & Pricing',
     readTime: '7 min',
     keywords: ['mercury outboard winterization cost ontario', 'boat winterization price kawartha', 'shrinkwrap cost ontario per foot', 'mercury winterization service cost', 'boat storage rice lake price', 'harris boat works winterization'],
-    content: `\n## Quick answer\n\n- **Winterization:** tiered by engine type. We quote per boat, not flat-rate. Live rates on our [winter storage page](https://www.harrisboatworks.ca/winter-storage).\n- **Shrinkwrap only:** $20/ft if done in our shop, $25/ft if done outdoors at the lot.\n- **[Outdoor winter storage](/blog/boat-storage-kawartha-lakes):** includes shrinkwrap, a spring check ($99 value), summer trailer parking ($150 value), and wrap recycling ($35 value). $284 of stuff most marinas charge extra for is bundled in.\n- **Indoor storage:** not offered. HBW is outdoor + shrinkwrap. If you need heated indoor, we'll point you somewhere else honestly.\n- **Size limit:** boats up to 30 feet.\n\nIf you just want a quote: [request service](https://hbw.wiki/service). The rest of this page explains the why.\n\n## Why we don't quote a flat winterization rate\n\nWhen you see "$549 winterization" on a competitor's site, that's a marketing simplification. Here's what's actually in scope on a real Mercury winterization, and why the price varies:\n\n**A 9.9 HP 4-stroke tiller** is a 90-minute job: flush, fuel stabilizer, fog the cylinder, drain the cooling system, change the lower-unit oil. One spark plug, two if you're being thorough.\n\n**A 250 HP V8 Verado** is a 3-hour job with four spark plugs, more oil capacity, a bigger lower unit, an electronic fuel system that needs proper SmartCraft attention, and an alternator/voltage regulator that lives in water. Same procedure list, different amount of work.\n\n**A sterndrive (4-cylinder, V6, V8, Bravo)** is a different job again. You're draining the block, the manifolds, the raw-water lines. Adding marine-grade antifreeze in the right places. Checking the gimbal bearing. The lower unit alone is a half-hour of work most outboards don't have.\n\n**A 2-stroke** is its own beast - older fuel/oil mix concerns, premix carb cleaning, different fogging approach.\n\nMost marinas roll all of that into a flat "winterization" rate. You're either paying for work that didn't happen on your motor, or skipping work that should have happened. We'd rather quote you the real job.\n\n## What HBW winterization includes (the procedure, regardless of price tier)\n\nEvery Mercury we winterize gets the same procedure list. The time, parts, and tier change with the engine. The steps don't:\n\n1. **Engine flush** - 10 to 15 minutes on muffs with fresh water to clear lake water, silt, and debris\n2. **Fuel stabilizer** - Mercury Quickstor added to fuel, engine run 10 minutes to circulate it through the entire fuel system\n3. **Fogging** - cylinders fogged with Mercury Storage Seal until the engine **smokes and stalls** (this is the critical step, partial fogging means partial protection)\n4. **Spark plugs** - removed, cylinders fogged individually, new plugs installed\n5. **Oil change** - full crankcase oil + filter, drained while warm for full evacuation\n6. **Lower-unit gear oil change** - drained, inspected for water intrusion (milky oil = a seal failure you need to know about), refilled with Mercury High Performance gear oil\n7. **Cooling system drain** - all water out of the block, water passages, tell-tale\n8. **Battery prep** - removed from boat, terminals cleaned, stored on a smart charger in a heated building (cold kills batteries; never leave one in a cold boat)\n\nSkip any of these and you're rolling the dice on a cracked block, a corroded fuel system, or a dead battery you didn't know about until the spring launch ramp. Hard freezes in Ontario do real damage. We've replaced enough cracked powerheads from skipped-step winterizations to know the math doesn't favour shortcuts.\n\nFor the full step-by-step, our [DIY Mercury winterization guide](https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization) walks through every step in detail. Most customers read it and then book us anyway. Worth knowing what's happening either way.\n\n## Shrinkwrap pricing (separate from winterization)\n\nShrinkwrap and winterization are two different jobs. This is the single most expensive confusion in marine storage.\n\n- **Shrinkwrap** is the tight plastic cover. It keeps snow, ice, and squirrels out. It does not protect the engine.\n- **Winterization** is what protects the engine. Without it, the wrap is just keeping snow off a boat that's freezing from the inside.\n\nCustomers who handle their own winterization (DIY-ers, repower customers who want to do it themselves, boats stored in someone's barn over winter) sometimes just want the wrap. Here's what that costs at HBW:\n\n| Where shrinkwrap is done | Price | Why |\n|---|---|---|\n| **In our shop** | **$20/ft** | Climate-controlled, no wind, faster work, tighter seams |\n| **Outdoors at the lot** | **$25/ft** | Wind makes the heat-shrink harder, takes longer, more material loss |\n\nSo a 20 ft pontoon getting shrinkwrapped in our shop is $400. The same boat wrapped outside at the lot is $500. You can drop it off, get the wrap done, and tow it home to store on your own property if that's the plan. We do this all the time for cottage owners who store at the cottage.\n\n## Outdoor winter storage pricing\n\nIf you're going to keep the boat with us through winter, three things get bundled in that most marinas charge extra for:\n\n| Service | Standalone Value | At HBW |\n|---|---|---|\n| **Spring check** (battery, fuel system, lower unit oil, hoses, basic systems) | $99 | Included |\n| **Summer trailer parking** (drop it after launch, pick it up in fall) | $150 | Included |\n| **Shrinkwrap recycling** (instead of landfilling the plastic in spring) | $35 | Included |\n| **Total bundled value** | **$284** | Included |\n\nThat $284 in real services bundled into storage matters when you're comparing quotes. A storage rate that looks $200 lower somewhere else often isn't, once you add back what they charge for the spring check and the trailer parking and the wrap disposal.\n\nLive storage rates (per-foot) are on our [winter storage page](https://www.harrisboatworks.ca/winter-storage). They adjust each fall. We'd rather you see the live number than memorize one we update once and forget.\n\n## What HBW doesn't offer\n\n**Indoor heated storage.** We're outdoor only, on a fenced and monitored lot. If you have a high-end fibreglass cruiser with custom paint that you want kept indoors, we'll honestly point you to other shops. For most Rice Lake and Kawartha boats (aluminum fishing boats, pontoons, runabouts), outdoor with proper shrinkwrap is the practical answer at about half the cost of indoor.\n\n**Boats over 30 feet.** We're not taking them right now. We'd rather tell you that up front than waste your fall.\n\n## Extras that come up at the counter\n\nBeyond core winterization, shrinkwrap, and storage:\n\n- **Bio-wash hull cleaning: $10/ft.** Chemical hull clean before wrap. Worth it if the boat picked up zebra mussels, scum line, or stained gel coat over the season.\n- **Pontoon enclosures removal and install: $5/ft.** If you've got a full enclosure that needs to come off before wrap and back on in spring.\n- **Winterization + oil & filter change bundle.** Pre-storage prep done by us. Saves a service appointment in spring.\n\n## How to book\n\n1. Go to [hbw.wiki/service](https://hbw.wiki/service) and submit a service request.\n2. Tell us your motor make/model/HP, boat length, and which services you want (winterization, shrinkwrap, storage, or any combination).\n3. We'll come back with a real quote based on your specific boat.\n4. Book a drop-off slot. August and September are ideal. October works. The last week before freeze-up is when everyone calls at once.\n\nIf you want a phone call first: **(905) 342-2153**. Or text **(647) 952-2153**.\n
+    content: `\n::cost-stack\neyebrow: What you actually pay for\nheading: Mercury winterization cost breakdown (typical 90 to 150 HP)\nsubhead: Tiered by engine. Typical 4-stroke outboard 90 to 150 HP at HBW. Smaller and larger motors scale accordingly.\nitem1Label: Engine flush + fuel stabilizer\nitem1Value: $40 - $70\nitem1Note: Mercury Quickstor added, engine run 10 min to circulate through the full fuel system.\nitem2Label: Cylinder fogging (Mercury Storage Seal)\nitem2Value: $50 - $90\nitem2Note: Fogged until the engine smokes and stalls. The critical step. Partial fogging means partial protection.\nitem2Accent: true\nitem3Label: Spark plugs (new, installed)\nitem3Value: $60 - $140\nitem3Note: 4 plugs typical on inline 4-cyl, more on V6/V8. OEM Mercury plugs only.\nitem4Label: Crankcase oil + filter change\nitem4Value: $80 - $150\nitem4Note: Full evacuation while warm. Old oil out, fresh Mercury oil in.\nitem5Label: Lower-unit gear oil change + inspection\nitem5Value: $50 - $90\nitem5Note: Milky oil means a seal failure caught in fall, not in spring at the launch.\nitem6Label: Cooling system drain + battery prep\nitem6Value: $50 - $90\nitem6Note: All water out of block. Battery pulled to heated storage on a smart charger.\ntotalLabel: Typical 90 to 150 HP all-in\ntotalValue: $330 - $630 CAD\ncaveat: Before HST. 9.9 HP tiller is lower (~90 min job). 250 HP V8 Verado is higher (~3 hr job). Sterndrive is its own tier. Request a real quote at hbw.wiki/service.\n::\n\n## Quick answer\n\n- **Winterization:** tiered by engine type. We quote per boat, not flat-rate. Live rates on our [winter storage page](https://www.harrisboatworks.ca/winter-storage).\n- **Shrinkwrap only:** $20/ft if done in our shop, $25/ft if done outdoors at the lot.\n- **[Outdoor winter storage](/blog/boat-storage-kawartha-lakes):** includes shrinkwrap, a spring check ($99 value), summer trailer parking ($150 value), and wrap recycling ($35 value). $284 of stuff most marinas charge extra for is bundled in.\n- **Indoor storage:** not offered. HBW is outdoor + shrinkwrap. If you need heated indoor, we'll point you somewhere else honestly.\n- **Size limit:** boats up to 30 feet.\n\nIf you just want a quote: [request service](https://hbw.wiki/service). The rest of this page explains the why.\n\n## Why we don't quote a flat winterization rate\n\nWhen you see "$549 winterization" on a competitor's site, that's a marketing simplification. Here's what's actually in scope on a real Mercury winterization, and why the price varies:\n\n**A 9.9 HP 4-stroke tiller** is a 90-minute job: flush, fuel stabilizer, fog the cylinder, drain the cooling system, change the lower-unit oil. One spark plug, two if you're being thorough.\n\n**A 250 HP V8 Verado** is a 3-hour job with four spark plugs, more oil capacity, a bigger lower unit, an electronic fuel system that needs proper SmartCraft attention, and an alternator/voltage regulator that lives in water. Same procedure list, different amount of work.\n\n**A sterndrive (4-cylinder, V6, V8, Bravo)** is a different job again. You're draining the block, the manifolds, the raw-water lines. Adding marine-grade antifreeze in the right places. Checking the gimbal bearing. The lower unit alone is a half-hour of work most outboards don't have.\n\n**A 2-stroke** is its own beast - older fuel/oil mix concerns, premix carb cleaning, different fogging approach.\n\nMost marinas roll all of that into a flat "winterization" rate. You're either paying for work that didn't happen on your motor, or skipping work that should have happened. We'd rather quote you the real job.\n\n## What HBW winterization includes (the procedure, regardless of price tier)\n\nEvery Mercury we winterize gets the same procedure list. The time, parts, and tier change with the engine. The steps don't:\n\n1. **Engine flush** - 10 to 15 minutes on muffs with fresh water to clear lake water, silt, and debris\n2. **Fuel stabilizer** - Mercury Quickstor added to fuel, engine run 10 minutes to circulate it through the entire fuel system\n3. **Fogging** - cylinders fogged with Mercury Storage Seal until the engine **smokes and stalls** (this is the critical step, partial fogging means partial protection)\n4. **Spark plugs** - removed, cylinders fogged individually, new plugs installed\n5. **Oil change** - full crankcase oil + filter, drained while warm for full evacuation\n6. **Lower-unit gear oil change** - drained, inspected for water intrusion (milky oil = a seal failure you need to know about), refilled with Mercury High Performance gear oil\n7. **Cooling system drain** - all water out of the block, water passages, tell-tale\n8. **Battery prep** - removed from boat, terminals cleaned, stored on a smart charger in a heated building (cold kills batteries; never leave one in a cold boat)\n\nSkip any of these and you're rolling the dice on a cracked block, a corroded fuel system, or a dead battery you didn't know about until the spring launch ramp. Hard freezes in Ontario do real damage. We've replaced enough cracked powerheads from skipped-step winterizations to know the math doesn't favour shortcuts.\n\nFor the full step-by-step, our [DIY Mercury winterization guide](https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization) walks through every step in detail. Most customers read it and then book us anyway. Worth knowing what's happening either way.\n\n## Shrinkwrap pricing (separate from winterization)\n\nShrinkwrap and winterization are two different jobs. This is the single most expensive confusion in marine storage.\n\n- **Shrinkwrap** is the tight plastic cover. It keeps snow, ice, and squirrels out. It does not protect the engine.\n- **Winterization** is what protects the engine. Without it, the wrap is just keeping snow off a boat that's freezing from the inside.\n\nCustomers who handle their own winterization (DIY-ers, repower customers who want to do it themselves, boats stored in someone's barn over winter) sometimes just want the wrap. Here's what that costs at HBW:\n\n| Where shrinkwrap is done | Price | Why |\n|---|---|---|\n| **In our shop** | **$20/ft** | Climate-controlled, no wind, faster work, tighter seams |\n| **Outdoors at the lot** | **$25/ft** | Wind makes the heat-shrink harder, takes longer, more material loss |\n\nSo a 20 ft pontoon getting shrinkwrapped in our shop is $400. The same boat wrapped outside at the lot is $500. You can drop it off, get the wrap done, and tow it home to store on your own property if that's the plan. We do this all the time for cottage owners who store at the cottage.\n\n## Outdoor winter storage pricing\n\nIf you're going to keep the boat with us through winter, three things get bundled in that most marinas charge extra for:\n\n| Service | Standalone Value | At HBW |\n|---|---|---|\n| **Spring check** (battery, fuel system, lower unit oil, hoses, basic systems) | $99 | Included |\n| **Summer trailer parking** (drop it after launch, pick it up in fall) | $150 | Included |\n| **Shrinkwrap recycling** (instead of landfilling the plastic in spring) | $35 | Included |\n| **Total bundled value** | **$284** | Included |\n\nThat $284 in real services bundled into storage matters when you're comparing quotes. A storage rate that looks $200 lower somewhere else often isn't, once you add back what they charge for the spring check and the trailer parking and the wrap disposal.\n\nLive storage rates (per-foot) are on our [winter storage page](https://www.harrisboatworks.ca/winter-storage). They adjust each fall. We'd rather you see the live number than memorize one we update once and forget.\n\n## What HBW doesn't offer\n\n**Indoor heated storage.** We're outdoor only, on a fenced and monitored lot. If you have a high-end fibreglass cruiser with custom paint that you want kept indoors, we'll honestly point you to other shops. For most Rice Lake and Kawartha boats (aluminum fishing boats, pontoons, runabouts), outdoor with proper shrinkwrap is the practical answer at about half the cost of indoor.\n\n**Boats over 30 feet.** We're not taking them right now. We'd rather tell you that up front than waste your fall.\n\n## Extras that come up at the counter\n\nBeyond core winterization, shrinkwrap, and storage:\n\n- **Bio-wash hull cleaning: $10/ft.** Chemical hull clean before wrap. Worth it if the boat picked up zebra mussels, scum line, or stained gel coat over the season.\n- **Pontoon enclosures removal and install: $5/ft.** If you've got a full enclosure that needs to come off before wrap and back on in spring.\n- **Winterization + oil & filter change bundle.** Pre-storage prep done by us. Saves a service appointment in spring.\n\n## How to book\n\n1. Go to [hbw.wiki/service](https://hbw.wiki/service) and submit a service request.\n2. Tell us your motor make/model/HP, boat length, and which services you want (winterization, shrinkwrap, storage, or any combination).\n3. We'll come back with a real quote based on your specific boat.\n4. Book a drop-off slot. August and September are ideal. October works. The last week before freeze-up is when everyone calls at once.\n\nIf you want a phone call first: **(905) 342-2153**. Or text **(647) 952-2153**.\n
 
 ---
 
@@ -23223,6 +23441,29 @@ Ontario winters are hard on Marine batteries and fuel systems in ways that matte
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
+
+::diagnostic-flow
+heading: Mercury won't start? Walk these five in order.
+eyebrow: Spring no-start triage
+subhead: Most Ontario spring no-starts trace to one of the first three steps. Work in order, don't skip ahead.
+step1Label: Safety lanyard and shift position
+step1Question: Is the kill-switch lanyard physically clipped on and the shifter in neutral?
+step1Tip: Single most common cause of "won't crank" calls. Five-second check. Do it first every time.
+step2Label: Battery
+step2Question: Does resting voltage read 12.4V+ and hold above 9.5V while cranking?
+step2Tip: Cold Ontario storage kills batteries. Older than 4 years and sat all winter without a tender, assume compromised and load-test.
+step3Label: Fuel condition
+step3Question: Is the fuel less than 60 days old, treated, and does the primer bulb pump up firm?
+step3Tip: E10 starts degrading in 30 to 60 days. Smell it, look at it, drain the water-separator. Stale fuel and phase separation are the #2 Ontario spring no-start.
+step4Label: Spark plugs
+step4Question: Plugs in spec, gapped right, not fouled?
+step4Tip: Pull one. Black or oily means fouled. White means lean. Fresh tan-brown is good. If unsure, replace, plugs are cheap insurance.
+step5Label: Call a tech
+step5Question: Worked through 1 to 4 and still no start?
+step5Tip: At this point it's likely ECM, sensor, fuel pump, or compression. Needs a Mercury-certified diagnostic. Book at hbw.wiki/service or call (905) 342-2153.
+escalationLabel: Want us to diagnose?
+escalationBody: HBW runs full Mercury and Mercruiser diagnostics. Most spring no-starts resolve same-day. Book at /service or call (905) 342-2153.
+::
 
 ## Mercury Outboard Won't Start in Ontario? The Diagnostic Flow a Mercury Platinum Dealer Uses
 
@@ -26303,6 +26544,29 @@ Mercury Marine Platinum Dealer. Established 1947.
     content: `> **Quick answer:** Command Thrust is a Mercury gearcase option — bigger lower unit, lower gear ratio, and a larger prop that moves more water at lower RPM. It meaningfully improves hole-shot, low-speed handling, and on-plane stability on heavy boats: pontoons, full-load fishing rigs, and any application where you need authority at low speed. Standard gearcase is lighter, faster at top end, and the right call for light hulls running for top speed. The right answer depends on the boat, the load, and how you use it.
 
 ---
+
+::decision-card
+eyebrow: Gearcase decision
+heading: Command Thrust or standard gearcase?
+subhead: Same horsepower, different gearcase. Boat weight and how you load it decide.
+leftLabel: Go Command Thrust
+leftCriteria:
+  - Pontoon of any size, or heavy aluminum deck boat
+  - Heavy fishing rig with three anglers, livewell, batteries
+  - Houseboat, cruiser, or displacement hull
+  - You need hole shot and authority more than top end
+leftOutcome: Command Thrust, plus a CT-spec 4-blade prop
+leftVariant: recommended
+rightLabel: Stay on standard gearcase
+rightCriteria:
+  - Light bass boat tuned for outright top speed
+  - Skiff, tinnie, or any hull under 16 ft
+  - Solo runs, no heavy passenger load
+  - The last 2 to 3 mph of top end actually matters to you
+rightOutcome: Standard gearcase, higher gear ratio, properly matched prop
+rightVariant: alternative
+whenInDoubt: On a pontoon, go CT. On a light bass boat, go standard. Most of the wrong choices we see are pontoons rigged standard and bass boats rigged CT.
+::
 
 ## What Command Thrust actually changes
 
