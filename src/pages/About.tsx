@@ -10,7 +10,6 @@ import { GoogleReviewsCarousel } from '@/components/reviews/GoogleReviewsCarouse
 import { GoogleMapEmbed } from '@/components/maps/GoogleMapEmbed';
 import { OpeningHoursDisplay } from '@/components/business/OpeningHoursDisplay';
 import { GooglePhotoGallery } from '@/components/business/GooglePhotoGallery';
-import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
