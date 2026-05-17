@@ -90,6 +90,8 @@ This is why most factory-rigged Ontario 16-19 ft aluminum boats come with the 90
 
 The Command Thrust gearcase is a larger-diameter lower unit with a different prop range. It's available on the 90 and 115 HP FourStroke. The benefit is more torque for moving heavy hulls — particularly pontoons.
 
+![Mercury standard gearcase compared to the larger-diameter Command Thrust gearcase, side by side](/lovable-uploads/inline-command-thrust-gearcase.png)
+
 The rule of thumb: **if you're putting a 90 or 115 on a pontoon, you almost certainly want CT.** The standard gearcase works on a planing hull; the CT is engineered for the displacement loads a pontoon presents. The price gap is usually $400-700 over the standard gearcase, and the performance difference on a loaded pontoon is meaningful.
 
 For aluminum fishing boats, the standard gearcase is fine unless you're running heavy with multiple people and gear regularly.
