@@ -230,6 +230,8 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 ---
 
+![Two aluminum boats with different Mercury horsepower at dealership](/lovable-uploads/inline/inline-horsepower-selection.png)
+
 ## When to step up, when to stay
 
 **Step up to the next class when:**
@@ -1250,6 +1252,8 @@ When a customer takes delivery of a new Mercury from us:
 - We book the 20-hour service appointment before the customer leaves, so it doesn't get lost
 
 ---
+
+![New Mercury FourStroke at break-in trolling speed on calm Rice Lake morning](/lovable-uploads/inline/inline-mercury-break-in.png)
 
 ## What about used motors?
 
@@ -4986,6 +4990,8 @@ whenInDoubt: Most Ontario recreational buyers do not need SeaPro. If you are not
 
 ---
 
+![Mercury SeaPro commercial outboard on rugged working fishing boat](/lovable-uploads/inline/inline-mercury-seapro-commercial.png)
+
 ## Does SeaPro make sense for recreational boaters?
 
 Occasionally, yes. We have customers who chose SeaPro recreationally because they:
@@ -6364,6 +6370,8 @@ escalationBody: We run a pre-opener service every spring, typically $200 to $350
 - Confirm the legal start time, walleye season on Zone 17 typically opens at sunrise. Verify the current year's regulations from the OMNR before opener day.
 
 ---
+
+![Walleye-opener dawn boat prep on Rice Lake dock](/lovable-uploads/inline/inline-walleye-opener-dawn.png)
 
 ## What HBW Does for Opener Prep Customers
 
@@ -11651,6 +11659,8 @@ Used pontoons in the 18 to 22 ft range at a price that leaves repower room are c
 
 **Trade-off:** A used pontoon at this price will likely have an older motor. That is not a problem if you have accounted for a repower, but it is a problem if you assumed the motor was included in the deal.
 
+![Affordable 16-foot aluminum fishing boat with Mercury 40 anchored on Rice Lake](/lovable-uploads/inline/inline-affordable-rice-lake-boat.png)
+
 ### Path 3: Clean used hull plus a Mercury repower at HBW
 
 This is the path the most experienced buyers take. They find a hull that someone else has neglected the motor on (usually priced accordingly) and bring it to HBW for a new Mercury. The hull gets another fifteen-plus years. The motor is brand new with full warranty.
@@ -12742,6 +12752,8 @@ In a few years, we'll likely see more specific unlocks, perhaps a tow mode that 
 
 If you're buying a Mercury today with a 5, 10-year ownership window in mind, the platform you're buying into matters. That's a better reason to care about Boost than the current performance increment.
 
+![Mercury 150 Pro XS Boost outboard on tritoon pontoon transom](/lovable-uploads/inline/inline-boost-150hp-pontoon.png)
+
 ### What We Check Before Recommending Boost
 
 When customers ask about Boost, we want to know:
@@ -13154,6 +13166,8 @@ Five things move your quote up or down the range:
 **4. Display upgrades.** Keeping existing displays if compatible is free. Adding a Mercury SmartCraft VesselView adds several hundred to over $1,000 depending on size and configuration.
 
 **5. Fuel system condition.** Old fuel hoses and gummed-up filters get replaced. Boats stored with ethanol pump gas sometimes need more than basic hose replacement.
+
+![Mercury FourStroke mid-rigging with cables and harnesses routed at workshop](/lovable-uploads/inline/inline-mercury-rigging-install.png)
 
 ### Mercury-to-Mercury vs. Brand Conversion, The Cost Difference
 
@@ -22336,6 +22350,8 @@ As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + 
 **Verify current pricing at [mercuryrepower.ca](https://mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
 
 ---
+
+![Mercury 9.9 EFI ProKicker kicker alongside main outboard on fishing boat transom](/lovable-uploads/inline/inline-mercury-9-9-prokicker.png)
 
 ## Our Honest Take
 
