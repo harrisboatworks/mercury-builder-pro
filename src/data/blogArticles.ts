@@ -3698,6 +3698,28 @@ This is why we don't recommend "getting a smaller motor to save fuel." If the sm
 
 ---
 
+::cost-stack
+eyebrow: 2026 Ontario fuel cost ranges
+heading: What you'll actually spend on fuel per season
+subhead: Estimates based on Ontario marina gas pricing and realistic GPH for a properly propped Mercury FourStroke 90 to 150.
+item1Label: Weekend family cruiser (50 hrs/season)
+item1Value: $550 to $850
+item1Note: Mostly cruise speeds, light to moderate load. Mid 90 to 115 HP class.
+item2Label: Heavy weekender (100 hrs/season)
+item2Value: $1,100 to $1,800
+item2Note: Tubing and skiing pulls burn 20 to 30 percent higher than straight cruising. 115 to 150 HP class.
+item3Label: Seasonal angler (75 hrs/season)
+item3Value: $700 to $1,100
+item3Note: Lots of trolling and idle hours stretch fuel further. A kicker cuts main engine burn in half on slow days.
+item4Label: Lake Ontario offshore (150 hrs/season)
+item4Value: $2,200 to $3,400
+item4Note: Longer runs at higher cruise, often loaded. 200 HP class FourStroke or Pro XS.
+item4Accent: true
+totalLabel: Biggest variable
+totalValue: Prop pitch, not horsepower
+caveat: A mismatched prop adds 15 to 25 percent to every line above. Get the prop right first; the rest follows.
+::
+
 ## Practical Fuel Consumption Ranges
 
 Real-world fuel consumption depends on hull design, load, prop selection, mounting height, water conditions, and how you operate the boat. The following are typical ranges based on boats we've rigged and run at HBW. These are rough orientation numbers, not guarantees, and not a substitute for a sea trial with your specific setup.
@@ -4110,6 +4132,29 @@ If the battery is more than 4–5 years old, replace it regardless of how it tes
 - **Inspect anodes.** Replace if 30% or more depleted. Anodes protect your underwater metal. Depleted anodes stop working.
 
 ---
+
+::diagnostic-flow
+eyebrow: First start of the season
+heading: Spring commissioning in the order that matters
+subhead: Skip the order and you'll diagnose a problem you created. Run these in sequence the first day out of storage.
+step1Label: Fuel system check
+step1Question: Is the fuel from last fall still in the tank, and was it stabilized?
+step1Tip: Stale gas is the #1 spring no-start at our shop. If fuel sat untreated over winter, drain it and start fresh. Replace the fuel filter while you're in there.
+step2Label: Water pump and impeller
+step2Question: Has the impeller been replaced or inspected within the last two seasons?
+step2Tip: A rubber impeller hardens and cracks in storage. If you can't remember the last change, do it now. A $40 impeller saves a $2,500 powerhead.
+step3Label: Battery and electrical
+step3Question: Does the battery hold a load test, and are all connections clean?
+step3Tip: A battery that read 12.6V on the bench can still fail under starter load. Wire-brush the terminals and apply dielectric grease.
+step4Label: Flush and dry start on muffs
+step4Question: Will the motor start, idle, and reach operating temp on muffs?
+step4Tip: Watch for a steady tell-tale stream within 30 seconds of start. Weak or absent flow means stop immediately and re-check the impeller.
+step5Label: First water trial
+step5Question: Does the motor reach its rated WOT RPM with normal load?
+step5Tip: Below the rated band means prop, fouling, or a fuel issue. Above the band means under-propped. Either way, fix before a full day out.
+escalationLabel: Want us to handle it?
+escalationBody: Spring commissioning at HBW is typically $200 to $350 depending on motor size. Includes all five steps above plus a sea trial when possible. Book at /service or call (905) 342-2153.
+::
 
 ### Step 5, Lubrication
 
@@ -5042,6 +5087,29 @@ Small dinghies, sailboat auxiliaries, very small fishing boats. A common choice 
 12–14-foot tin boats, kicker motors on bigger boats. The most popular small-boat motor in Canada. 2-cylinder 4-stroke, manual start. The standard cottage fishing setup.
 
 *Note: The 9.9 ProKicker is a different, purpose-built fishing kicker variant, see the ProKicker guide for that specific application.*
+
+::decision-card
+eyebrow: Portable Mercury sizing
+heading: What are you actually pushing?
+subhead: The portable Mercury lineup covers a wide range of jobs. The right choice depends less on the hull and more on what role the motor plays.
+leftLabel: Dinghy, canoe, or small jon boat
+leftCriteria:
+  - Tender for a larger boat at anchor
+  - Solo or two-person fishing on a small pond or river
+  - Boat under 12 feet, light aluminum or inflatable
+  - Want one-hand carry and easy stowage
+leftOutcome: Mercury 2.5 to 6 HP MH
+leftVariant: alternative
+rightLabel: Small fishing boat or backup kicker
+rightCriteria:
+  - 14 to 16 foot aluminum used regularly
+  - Trolling for walleye or bass on Kawartha lakes
+  - Backup or kicker for a larger main motor
+  - Need electric start and remote tiller options
+rightOutcome: Mercury 9.9 to 20 HP EH or ELH
+rightVariant: recommended
+whenInDoubt: A 9.9 EFI is the most versatile motor in this range. It carries like a portable but punches like a small kicker. Most owners who buy a 5 wish they'd bought the 9.9 within a season.
+::
 
 ### Mercury 15 MH and 15 EH (15 HP)
 14-foot tin boats, slightly larger small fishing applications. Available in manual or electric start.
@@ -6715,6 +6783,34 @@ Winter is the perfect time to plan and execute a repower. Your boat sits anyway 
 - Lake test when conditions allow
 - Adjustments and setup
 - Delivery before spring
+
+::cost-stack
+eyebrow: Off-season repower budget
+heading: What a winter repower actually costs
+subhead: Winter pricing typically runs 5 to 10 percent better than spring. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
+item1Label: Motor (90 to 150 HP FourStroke)
+item1Value: $13,500 to $22,000
+item1Note: Range covers Mercury 90 ELPT through 150 ELPT. Pro XS adds roughly $1,500 to $2,500 over the FourStroke.
+item2Label: Install and rigging
+item2Value: $1,200 to $2,400
+item2Note: Mounting, hardware, alignment, water test. Higher end if the transom needs reinforcement.
+item3Label: Control conversion (if needed)
+item3Value: $800 to $2,000
+item3Note: Cable to digital, or tiller to side mount. Often required when stepping up from a 2-stroke.
+item4Label: New propeller
+item4Value: $350 to $1,200
+item4Note: Sized after sea trial. Standard allowance applies on most installs.
+item5Label: First-year service
+item5Value: $200 to $350
+item5Note: 20-hour break-in service. Included on many repower packages at HBW.
+item6Label: Mercury Product Protection (optional)
+item6Value: $700 to $1,800
+item6Note: 8-year total coverage. Best value if you finance or plan to keep the boat past year 5.
+item6Accent: true
+totalLabel: Typical out-the-door range
+totalValue: $16,000 to $28,000
+caveat: All pricing CAD, pickup only at Gores Landing. Build your specific quote at mercuryrepower.ca.
+::
 
 ### Assessment Checklist
 
@@ -8482,6 +8578,29 @@ This is the strongest argument for Avator in Ontario. There are lakes in the Kaw
 The Avator 35e, 75e, and 110e fit squarely into restricted-use scenarios where an electric motor of meaningful power is genuinely needed.
 
 One important note on regulations: HP restrictions and electric-only restrictions are not the same thing, and they vary by specific water body. Some "electric only" lakes technically permit electric motors up to 7.5 kW aggregate power under the federal Vessel Operation Restriction Regulations, which covers the larger Avator models. Confirm your specific lake rules before you buy anything.
+
+::decision-card
+eyebrow: Electric vs gas decision
+heading: Is the Avator the right call for how you actually boat?
+subhead: Electric outboards have a real place in Ontario, but the range and recharge math is honest. Match the motor to the use case, not the headline.
+leftLabel: Avator electric makes sense
+leftCriteria:
+  - Small calm lake, mostly under 3 hours per outing
+  - Electric-only or strict HP-restricted water
+  - Quiet morning fishing or noise-sensitive cottage neighbours
+  - Second boat alongside a gas-powered main rig
+leftOutcome: Avator 7.5e or 20e fits the job
+leftVariant: recommended
+rightLabel: Stick with gas FourStroke
+rightCriteria:
+  - Bigger water, longer days, or open lake crossings
+  - You want range and quick refuel, not a recharge wait
+  - Towing tubes or pulling a skier
+  - One boat doing every job
+rightOutcome: Mercury 9.9 to 25 FourStroke
+rightVariant: alternative
+whenInDoubt: The Avator is not a one-for-one swap for a gas kicker. It's a different tool. If you're not sure your typical outing fits inside the runtime envelope, the FourStroke is still the safer call.
+::
 
 ### Small boats making short runs from a cottage dock
 A 14-foot aluminum boat or a small fibreglass tender making short trips, across the bay, to a nearby island, up a quiet river, is a good Avator candidate. The range is enough, the charging setup at most cottages (standard 110V outlet) is workable overnight, and you get genuine benefits: no fumes, minimal noise, very low maintenance.
@@ -12360,6 +12479,29 @@ The hierarchy of what actually drives pontoon performance:
 
 Boost lands below most of those factors. If any of the upstream variables are wrong, prop, trim, loading, fix those first. The return per dollar is better.
 
+::decision-card
+eyebrow: Boost eligibility check
+heading: Is your setup actually a Boost candidate?
+subhead: Boost is a software unlock on specific late-model Mercury motors. The math only works on certain hulls and certain owners. Most pontoon owners do not feel it dramatically.
+leftLabel: Boost is worth the conversation
+leftCriteria:
+  - Mercury 150 FourStroke, 2024 or newer
+  - Heavier pontoon (triple tube, 24 foot or larger)
+  - You load the boat with 6+ people regularly
+  - You're already at the top of your motor's working range
+leftOutcome: Talk to us about Boost
+leftVariant: recommended
+rightLabel: Boost is not the right lever
+rightCriteria:
+  - Pre-2024 Mercury 150 (Boost is not available)
+  - Light dual-tube pontoon with 2 to 4 people typical
+  - You're already getting plane and cruise on spec
+  - You'd be better served by a prop change first
+rightOutcome: Skip Boost, check the prop
+rightVariant: alternative
+whenInDoubt: A correctly pitched prop fixes most feels-underpowered complaints on pontoons at a fraction of the Boost cost. Try the prop first.
+::
+
 ### When Boost Actually Makes Sense
 
 There are real scenarios where Boost earns its price:
@@ -16011,6 +16153,29 @@ The phrase "improper installation" matters. **A Mercury installed by your buddy 
 
 ---
 
+::decision-card
+eyebrow: Extended warranty decision
+heading: Should you buy Mercury Product Protection?
+subhead: MPP extends coverage up to 8 total years. Worth it for some buyers, overkill for others. The honest answer depends on how you pay and how long you keep the boat.
+leftLabel: Take MPP extended coverage
+leftCriteria:
+  - You're financing the motor over 5+ years
+  - You plan to keep the boat 7+ years
+  - You run the motor hard (heavy hours, towing, offshore)
+  - Peace of mind matters more than the upfront cost
+leftOutcome: 8-year MPP package
+leftVariant: recommended
+rightLabel: Factory coverage is enough
+rightCriteria:
+  - You're paying cash
+  - You typically flip boats every 3 to 5 years
+  - You run a modest seasonal schedule
+  - You service religiously and keep records
+rightOutcome: Stick with the 3-year factory
+rightVariant: alternative
+whenInDoubt: MPP is transferable to a second owner, which adds to resale value. If you're close to the line, the extra coverage usually pays back at trade-in time.
+::
+
 ## Mercury Product Protection (MPP). The Extended Warranty
 
 If you want coverage beyond the standard three years, Mercury offers **Mercury Product Protection (MPP)**, an optional extended-coverage program (typically marketed in Gold, Silver, and Platinum tiers depending on availability). MPP is not part of the factory standard warranty.
@@ -18523,6 +18688,29 @@ Check both every time: strap tight, hook fully engaged, chain secured, not just 
 Two minutes at the ramp. Every time.
 
 ---
+
+::diagnostic-flow
+eyebrow: Roadside diagnosis
+heading: Trailer acting up? Work the symptoms in this order
+subhead: Most highway trailer failures trace back to one of these five checks. Pull over at the first sign and run the list before you continue.
+step1Label: Hot wheel hubs
+step1Question: Can you hold your hand on the hub for 5 seconds after a 30-minute run?
+step1Tip: A hub too hot to touch means bearing failure is minutes away. Stop, let it cool, and limp to the nearest service. Do not continue at highway speed.
+step2Label: Tire pressure and condition
+step2Question: Are both trailer tires at the sidewall PSI, with no sidewall cracking?
+step2Tip: Under-inflated tires build heat fast and blow out. Trailer tires age out at 5 to 7 years even with good tread. Check the date code.
+step3Label: Tongue weight
+step3Question: Does the tongue sit level on the ball, not nose-up or nose-down?
+step3Tip: 10 to 15 percent of trailer weight should be on the tongue. Too light causes sway; too heavy overloads the rear axle. Re-balance load forward or back.
+step4Label: Load distribution
+step4Question: Is the bow of the boat snug against the bow stop, with the transom strapped?
+step4Tip: A boat that shifts on the trailer changes tongue weight at speed. Tighten the bow strap and re-check both transom tie-downs before continuing.
+step5Label: Lights and connection
+step5Question: Do brake lights, turn signals, and running lights all work with the truck engine running?
+step5Tip: A bad ground at the trailer plug is the most common cause. Clean the contacts, wiggle the plug, and confirm before merging back on the highway.
+escalationLabel: Bearings or tires need attention?
+escalationBody: We service trailer bearings and tires alongside motor work at HBW. Call (905) 342-2153 before you head home if you noticed any of the above on the way in.
+::
 
 ### 6. Not Securing the Motor
 
