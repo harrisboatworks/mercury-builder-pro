@@ -11805,6 +11805,8 @@ When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actu
 
 ---
 
+![Pickup truck towing an aluminum fishing boat eastbound on Highway 401 at golden hour](/lovable-uploads/inline/inline-401-east-trailering.png)
+
 ## What to Do at the Launch in Gores Landing
 
 If you're launching at [our public ramp at Gores Landing](/blog/best-marina-rice-lake-ontario):
@@ -15702,6 +15704,8 @@ Indoor unheated is the next tier up. Building keeps the boat out of the elements
 For most aluminum fishing boats, pontoons, and modern fibreglass runabouts, **the protection delta over outdoor shrinkwrap doesn't justify the cost**. For older fibreglass, dark-coloured gelcoat, or a hull where you want to slow oxidation, it's worth considering.
 
 ---
+
+![Heated indoor boat storage facility with pleasure craft on stands](/lovable-uploads/inline/inline-indoor-heated-storage.png)
 
 ## Indoor Heated Storage. The Premium Tier
 
@@ -24501,6 +24505,8 @@ Sensor diagnosis requires dealer tools to read temperature sensor values against
 
 ---
 
+![Mercury outboard cooling system diagnostic with temperature sensor and service manual visible](/lovable-uploads/inline/inline-overheating-diagnostic.png)
+
 ## Ontario Context: Why Idle Overheating Shows Up More in Summer
 
 Ontario boating involves a lot of slow-speed running: navigating marinas and launch ramps, no-wake zones, trolling on Rice Lake and the Kawarthas, idling while waiting for a lock on the [Trent-Severn](https://parks.canada.ca/lhn-nhs/on/trentsevern).
@@ -26766,6 +26772,8 @@ If you boat on any of these lakes, storing at HBW means your boat winters on a c
 
 ---
 
+![Rows of shrinkwrapped pleasure boats in a Canadian marina winter storage yard](/lovable-uploads/inline/inline-winter-storage-yard.png)
+
 ## Store at HBW vs Haul Home — which is right for you?
 
 ::decision-card
@@ -27606,6 +27614,8 @@ The used-Mercury decision usually wins when at least two of these are true:
 
 Customers we steer toward used: occasional weekenders who do not log many hours, buyers replacing a tired motor on a boat they plan to flip in a few years, and people who genuinely enjoy the wrench-it-yourself side of boating.
 
+![New and used Mercury FourStroke powerheads side-by-side on a workshop bench](/lovable-uploads/inline/inline-new-vs-used-powerheads.png)
+
 ## What we do at Harris Boat Works
 
 We are a Mercury Platinum dealer, which means new motor sales and Mercury Product Protection paperwork are a core part of the business. We also broker used boats and motors regularly, sometimes from trade-ins, sometimes from local consignment, sometimes from estate sales. When a customer walks in deciding between a $13,000 new repower and a $7,500 used motor, we do not push one direction. We walk through the math above with the customer's actual boat and actual budget, and the honest answer is usually obvious by the end of the conversation.
@@ -27737,6 +27747,8 @@ If you are doing this math on a regular basis, get a marine surveyor to issue a 
 
 ::walkaround-lead-capture
 
+![Macro close-up of a Transport Canada Compliance Notice showing max persons, horsepower, and load fields](/lovable-uploads/inline/inline-capacity-plate-macro.png)
+
 ## What this means for engine repowering
 
 When customers come to us at Harris Boat Works for a repower, the capacity plate is the first thing we check. There are three common scenarios:
@@ -27855,6 +27867,8 @@ For a lot of Ontario boaters, neither hull is "wrong." The decision comes down t
 - **Two-person fishing focus on Rice Lake / Pigeon / Sturgeon**: V-hull (aluminum) usually wins on cost and capability.
 - **Cottage entertaining with mixed-age groups**: pontoon usually wins.
 - **"I want a boat that does everything"**: a 19-22 foot tritoon with the right motor package gets you close on the calm-water side; a 19-foot deep-V runabout gets you close on the rough-water side. Neither does both.
+
+![Aluminum V-hull cutting through 1 to 2 foot chop on a windy Lake Simcoe afternoon](/lovable-uploads/inline/inline-v-hull-action-chop.png)
 
 ## How Rice Lake and the Kawarthas fit in
 
@@ -27985,6 +27999,8 @@ This is why a [Used Boat Walkaround Guide](/blog/used-boat-walkaround-inspection
 The marketplace is honest about this: a 10-year-old fiberglass bowrider in clean condition holds more dollars than a comparable aluminum boat. Buyers see the gelcoat finish as evidence of care; they see scratches on aluminum as evidence of use.
 
 Whether that gap is "worth" the higher purchase price depends on your ownership timeline. If you keep boats 3-5 years and move on, fiberglass tends to recover more of your investment. If you keep boats 10+ years and don't care about resale, aluminum is the cheaper path through the ownership cycle.
+
+![Welded aluminum hull surface next to glossy fiberglass gelcoat finish, split-frame comparison](/lovable-uploads/inline/inline-hull-surface-comparison.png)
 
 ## The repair conversation
 
