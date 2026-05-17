@@ -88,6 +88,16 @@ Expert guides for Ontario boaters (selected — full list at /blog):
 - DIY Mercury Outboard Winterization Guide — /blog/diy-mercury-outboard-winterization-guide
 - Spring Outboard Commissioning Checklist — /blog/spring-outboard-commissioning-checklist
 
+## Mandarin / Chinese (Simplified) content
+
+We publish Simplified Chinese boating content for our GTA Mandarin-speaking customers (Toronto, Markham, Richmond Hill, Scarborough, North York, Mississauga). The canonical hub organizes 40+ Mandarin pages into 8 sections (first-time Rice Lake rentals, PCOC/PCL licensing, safety, Mercury outboard selection, buying, repower, service, and winterization/storage):
+
+- https://www.mercuryrepower.ca/blog/zh/ontario-boating-guide-toronto-chinese — 多伦多华人安省 boating 完整指南 (Complete Mandarin Ontario boating guide)
+
+Mandarin blog index: https://www.mercuryrepower.ca/blog/zh/
+
+All Mandarin pages are linked from the hub above. Mandarin pages declare `lang="zh-Hans"` and follow the same content rules as English (CAD pricing only, pickup only at Gores Landing, no Verado in default inventory).
+
 ## Repower FAQ Topics
 
 Expert answers to 25 Mercury outboard repower questions:
