@@ -15200,6 +15200,8 @@ A real Mercury serial number is short, alphanumeric, and unique to your specific
 - \`2A678901\`
 - \`0M345678\` (older motors sometimes have a leading \`0\` that newer references ignore)
 
+![Mercury outboard transom bracket showing the ID plate where the serial number is stamped](/lovable-uploads/inline/inline-mercury-serial-tag-location.png)
+
 The serial is **stamped or laser-etched on a small plate** on the motor's transom bracket. You will NOT find date or horsepower hidden in the digits — Mercury does not embed the spec into the serial like a car VIN. You look the serial up in Mercury's catalog or any reputable parts site (Crowley Marine, PartsVu, MarineEngine) to get year, model variant, and parts compatibility.
 
 If you want a quick check, send us your serial number through mercuryrepower.ca and we'll run it through the Mercury dealer system.
