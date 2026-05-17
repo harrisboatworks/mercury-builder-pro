@@ -11,10 +11,10 @@ import { locations } from '../data/locations';
 // English (English is the canonical surface; translated posts are alternates).
 const MULTILINGUAL_PRIORITY = 0.6;
 
-const HARDCODED_TRANSLATED_PAGES: Array<{ loc: string }> = [
-  { loc: '/blog/fr/concessionnaire-mercury-platinum-ontario' },
-  { loc: '/blog/zh/mercury-repower-guide-gta' },
-];
+// Hardcoded translated pages list intentionally empty — every translated
+// post is enumerated via the *BlogArticles data sources below. Adding
+// the same slug here caused duplicate <url> entries in sitemap.xml.
+const HARDCODED_TRANSLATED_PAGES: Array<{ loc: string }> = [];
 
 function buildMultilingualBlogEntries(today: string): SitemapEntry[] {
   const sets: Array<{ lang: string; articles: typeof blogArticles }> = [
