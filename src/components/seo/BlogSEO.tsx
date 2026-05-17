@@ -2,6 +2,7 @@ import { Helmet } from '@/lib/helmet';
 import { BlogArticle } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
 import { getCleanDescription, sanitizeForSchema } from '@/lib/strip-markdown';
+import { EN_TO_FR_SLUG } from '@/data/frenchEnglishSlugMap';
 
 interface BlogSEOProps {
   article: BlogArticle;
@@ -201,6 +202,15 @@ export function BlogSEO({ article }: BlogSEOProps) {
       <meta name="description" content={cleanDescription} />
       <meta name="keywords" content={article.keywords.join(", ")} />
       <link rel="canonical" href={url} />
+      {EN_TO_FR_SLUG[article.slug] && (
+        <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/blog/fr/${EN_TO_FR_SLUG[article.slug]}`} />
+      )}
+      {EN_TO_FR_SLUG[article.slug] && (
+        <link rel="alternate" hrefLang="en-CA" href={url} />
+      )}
+      {EN_TO_FR_SLUG[article.slug] && (
+        <link rel="alternate" hrefLang="x-default" href={url} />
+      )}
       
       {/* Open Graph */}
       <meta property="og:title" content={article.seoTitle ?? article.title} />

@@ -7,6 +7,7 @@ import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getFrenchArticleBySlug, getPublishedFrenchArticles } from '@/data/frenchBlogArticles';
+import { FR_TO_EN_SLUG } from '@/data/frenchEnglishSlugMap';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
@@ -313,7 +314,12 @@ export default function FrenchBlogArticlePage() {
         <meta name="description" content={article.description} />
         <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="fr-CA" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
+        {FR_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog/${FR_TO_EN_SLUG[article.slug]}`} />
+        )}
+        {FR_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog/${FR_TO_EN_SLUG[article.slug]}`} />
+        )}
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:url" content={url} />

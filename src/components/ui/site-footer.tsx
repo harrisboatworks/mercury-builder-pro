@@ -21,6 +21,7 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
     { label: 'Promotions', href: '/promotions' },
     { label: 'Financing', href: '/finance-calculator' },
     { label: 'Blog', href: '/blog' },
+    { label: 'Blogue français', href: '/blog/fr' },
     { label: 'FAQ', href: '/faq' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },

@@ -106,7 +106,7 @@ export function MultilingualHub() {
           </Link>
           <span className="mx-2 text-repower-navy-900/30">·</span>
           <Link
-            to="/blog/fr/prix-remotorisation-mercury-ontario"
+            to="/blog/fr"
             className="hover:text-repower-mercury-red transition-colors"
           >
             Français ({frenchBlogArticles.length})
