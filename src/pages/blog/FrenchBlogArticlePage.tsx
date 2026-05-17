@@ -7,6 +7,7 @@ import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getFrenchArticleBySlug, getPublishedFrenchArticles } from '@/data/frenchBlogArticles';
+import { FR_TO_EN_SLUG } from '@/data/frenchEnglishSlugMap';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
