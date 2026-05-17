@@ -3415,6 +3415,12 @@ If you want to walk through your specific boat first, call us at 905-342-2153 or
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
+
+> Related guide: [Repair, repower, or sell? The honest 3-way decision](/blog/repair-repower-or-sell-boat-ontario-decision-guide).
+
+
+> Related guide: [DTS vs mechanical controls for your repower](/blog/mercury-dts-vs-mechanical-controls-ontario-repower).
+
 ## Related at HBW
 
 The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
@@ -4324,6 +4330,9 @@ We sell ethanol-free marine gas on-site at Harris Boat Works in Gores Landing. I
 - [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
 
 ---
+
+
+> Related guide: [Mercury spring run-up checklist for Ontario](/blog/mercury-outboard-spring-run-up-checklist-ontario).
 
 ## Ready to Book Spring Service?
 
@@ -16705,6 +16714,9 @@ Need Mercury alarm diagnosis near Rice Lake, Peterborough, or the Kawarthas? Sub
 
 Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
 
+
+> Related guide: [How Ontario boat owners accidentally increase service bills](/blog/accidentally-increase-boat-service-bills-ontario).
+
 ## Related guides
 - [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
 - [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
@@ -19818,6 +19830,9 @@ No pressure. But if you want to stop having that heart-rate moment every time yo
 
 ---
 
+
+> Related guide: [Boat trim explained for Rice Lake boaters](/blog/boat-trim-explained-rice-lake-ontario).
+
 ## Related at HBW
 
 The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
@@ -20367,6 +20382,12 @@ If your boat fits any of these descriptions, a pre-season service appointment is
 For more on how on-board monitoring tools can help you track your boat's electrical health in real time, see our [Mercury VesselView and SmartCraft Plain-English Guide](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide).
 
 ---
+
+
+> Related guide: [How small problems become big service bills](/blog/accidentally-increase-boat-service-bills-ontario).
+
+
+> Related guide: [Mercury spring run-up checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario).
 
 ## Battery, Switch, or Charging System Question? We Diagnose and Fix All of It.
 
@@ -21126,6 +21147,9 @@ Yes. Old Mercury motors in workable condition are valued at trade-in. Non-Mercur
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
+
+> Related guide: [Mercury DTS vs mechanical controls for Ontario repowers](/blog/mercury-dts-vs-mechanical-controls-ontario-repower).
 
 ## CTA
 
@@ -22295,6 +22319,9 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 
 ---
 
+
+> Related guide: [Boat trim for Rice Lake boaters](/blog/boat-trim-explained-rice-lake-ontario).
+
 ## Sources
 
 - Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
@@ -23254,6 +23281,9 @@ A soft transom means the hull needs structural repair before any motor goes on i
 Depends on motor availability and shop schedule. A well-planned repower with a motor in stock can often be completed in a week or two. Plan ahead, Ontario's season is short.
 
 ---
+
+
+> Related guide: [Repair, repower, or sell: the 3-way decision](/blog/repair-repower-or-sell-boat-ontario-decision-guide).
 
 ## Ready to Price It Out?
 
@@ -24486,6 +24516,9 @@ Only with an adequate water supply to the cooling system. Never run a Mercury ou
 ## Reviewed by
 
 Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+
+
+> Related guide: [Mercury spring run-up checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario).
 
 ## CTA
 
@@ -27387,6 +27420,12 @@ Honest counter-positioning. Pro XS is the wrong answer if:
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
+
+> Related guide: [Boat trim basics for Rice Lake](/blog/boat-trim-explained-rice-lake-ontario).
+
+
+> Related guide: [DTS vs mechanical controls, what Pro XS buyers should know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower).
+
 ## More from HBW on Mercury performance and repowers
 
 - [Mercury 150–300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide) — full lineup walk-through with HP, weights, and use cases
@@ -27771,6 +27810,9 @@ Once you factor in cross-border duties, exchange rates, and the loss of Canadian
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
+
+> Related guide: [When selling the boat is the right answer](/blog/repair-repower-or-sell-boat-ontario-decision-guide).
 
 ## Sources
 
