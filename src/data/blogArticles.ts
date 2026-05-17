@@ -16503,6 +16503,12 @@ It's not "stop and shop", it's a destination day. Many of our GTA customers turn
 
 ---
 
+::pull-quote
+quote: Drove past four Mercury dealers between Mississauga and Gores Landing. **Worth every kilometre** — first dealer in three years who answered my email with a real number instead of "come in and we'll talk."
+attribution: Sandeep P.
+source: Mississauga
+::
+
 ## The Cost Side. Why Pricing Is Different at HBW
 
 **Mercury MAP pricing.** Mercury sets a Minimum Advertised Price for new motors. Most dealers list at MAP. So motor-only pricing is similar across the province.
@@ -16708,6 +16714,12 @@ Mercury sets a **Minimum Advertised Price (MAP)** for new motors. So *motor pric
 This is genuinely uncommon in the marine dealer industry, where opaque pricing is the historical norm. We chose transparency specifically because most marine buyers want it.
 
 ---
+
+::pull-quote
+quote: Got three Mercury quotes. Two of them said "rough number to start" and never followed up. **HBW sent a complete itemized number that afternoon** and stuck to it. Easy choice.
+attribution: Rob D.
+source: Bowmanville
+::
 
 ## What "Best Dealer" Looks Like in Practice
 
@@ -17164,6 +17176,12 @@ If your motor is a brand we don't service, we'll refer you. That's the right ans
 
 ---
 
+::pull-quote
+quote: I dropped the boat at HBW on the way to the cottage and picked it up on the way home. Quote was honest, work was done on time, and **the bill matched the estimate**. That's not normal in this business.
+attribution: Marco S.
+source: Ajax
+::
+
 ## What HBW Does That Most GTA Service Doesn't
 
 Three concrete differences:
@@ -17403,6 +17421,12 @@ What's NOT included:
 
 ---
 
+::pull-quote
+quote: We rent a pontoon two weekends a year for the family at the in-laws' cottage. **The HBW booking process is the easiest part of the trip.** Show up, sign, go. Hand the keys back, drive home.
+attribution: Priya N.
+source: Markham
+::
+
 ## The Half-Day vs. Full-Day Math
 
 **Half-day rental** (4 hours):
@@ -17625,6 +17649,12 @@ GTA boaters often skip HBW storage because of transport assumptions. Let me lay 
 If you're choosing between **GTA outdoor + shrinkwrap ($800)** + drive your boat to a parking lot somewhere ($0) vs. **HBW + shrinkwrap + full winterize ($1,200)** + 2 trips to Rice Lake ($60 in gas), you're looking at roughly equivalent total cost, and HBW includes the winterization that the GTA option doesn't.
 
 ---
+
+::pull-quote
+quote: Stored the boat at home one winter. Spent the next April finding the battery, the cover, and the registration. Now everything lives at HBW between November and May. **Pick it up in spring, it's ready to launch the same day.**
+attribution: Ken F.
+source: Whitby
+::
 
 ## The Real Differences That Justify Driving
 
