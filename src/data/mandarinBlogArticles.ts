@@ -8497,6 +8497,143 @@ HBW 能帮从租船到买船的整个过程吗？
 HBW 网站说明提供 boat rentals、boat sales、service、repair、winterization、storage、Mercury outboards、MerCruiser support 和 Legend Boats (Harris Boat Works)。`,
   },
 
+  {
+    slug: 'ontario-boating-guide-toronto-chinese',
+    title: '多伦多华人安省 boating 完整指南',
+    seoTitle: '多伦多华人安省 Boating 完整指南',
+    description: 'Harris Boat Works 的中文 boating 指南：Rice Lake 租船、PCOC、PCL、钓鱼、买船、Mercury 船外机、repower、service、winterization 和 storage。',
+    image: '/lovable-uploads/hero-zh-ontario-boating-guide-toronto-chinese.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guides',
+    readTime: '16 分钟',
+    keywords: ['多伦多华人 boating', '安省 Mandarin boating hub', 'GTA Chinese marina', 'Harris Boat Works', 'Mercury Platinum dealer', 'Rice Lake boating', 'PCOC', 'repower 中文指南'],
+    content: `# 多伦多华人安省 boating 完整指南
+
+## 快速答案
+
+如果你是多伦多、Markham、Richmond Hill、Scarborough、North York 或 Mississauga 的华人朋友，第一次想认真了解安省 boating，从这一页开始就够了。这是 Harris Boat Works 的中文 boating 中心：从 Rice Lake 第一次租船、PCOC 和 PCL 证件、安全清单、Mercury 船外机选择、买船流程、repower、service、winterization 到 storage，所有 GTA 华人最常问的问题都在这里。每个部分都链到我们已经写好的详细中文指南。
+
+需要 Mercury 报价就去 [mercuryrepower.ca](https://mercuryrepower.ca)，需要预约 service 就去 [hbw.wiki/service](https://hbw.wiki/service)，需要租船就看 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)。其他问题继续往下看。
+
+## 1. 第一次来 Rice Lake
+
+第一次带家人来 Rice Lake，不是要买船，也不是要研究 Mercury 150 HP，只是想知道租船和钓鱼到底是怎么回事。这些指南帮你把一日游从模糊变成清晰：
+
+- [多伦多华人家庭 Rice Lake 租船钓鱼一日游指南](/blog/zh/rice-lake-boat-rental-fishing-day-trip-toronto)
+- [第一次在 Rice Lake 租船：华人新手完整流程](/blog/zh/first-time-renter-walkthrough-zh)
+- [GTA 华人 Rice Lake 一日游完整行程规划](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
+- [多伦多到 Rice Lake 一日钓鱼游完整指南](/blog/zh/toronto-rice-lake-one-day-fishing-trip-zh)
+
+如果你已经能想象出整个一天的画面，下一步是把安全和证件搞清楚。
+
+## 2. 安全、证件、规则
+
+加拿大操作有马达的休闲船需要 proof of competency。租船时有 Rental Boat Safety Checklist。船只需要 PCL。钓鱼需要 fishing licence。这些不是吓人的法律细节，是不踩坑的最低门槛：
+
+- [安省第一次租船/开船安全清单](/blog/zh/ontario-first-time-boat-rental-safety-checklist)
+- [PCOC 与租船安全清单一次讲清](/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh)
+- [安省船只法规完整指南：PCOC、PCL、安全装备清单](/blog/zh/ontario-boating-regulations-zh)
+- [GTA 华人 PCL + 钓鱼证完整办理指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
+- [安省华人船主入门：PCOC、PCL、钓鱼证一次讲清楚](/blog/zh/ontario-chinese-boating-license-fishing-guide)
+
+把这些搞定，你可以开始考虑下一步：要不要直接买船。
+
+## 3. 准备买船
+
+不是每个人都需要买船。有人租一年发现没那么频繁，有人租两次就发现非买不可。这一组指南帮你把"先租还是先买"、"什么船型"、"二手还是新船"、"船的具体检查"全部讲清楚：
+
+- [多伦多华人买船第一步：先租船，还是直接买船？](/blog/zh/toronto-chinese-buying-first-boat-rent-or-buy)
+- [多伦多华人买船完整指南](/blog/zh/toronto-chinese-boat-buying-guide-ontario)
+- [多伦多华人在 Rice Lake 买船完整指南](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [多伦多华人二手船购买检查清单](/blog/zh/used-boat-buying-checklist-toronto-chinese)
+- [多伦多华人钓鱼船 vs Pontoon Boat 怎么选](/blog/zh/fishing-boat-vs-pontoon-chinese-ontario)
+- [Pontoon 还是钓鱼船？6-8 人 GTA 华人家庭船型选择指南](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
+- [多伦多华人买 Pontoon Boat 指南](/blog/zh/pontoon-boat-buying-guide-toronto-chinese-rice-lake)
+- [华人家庭买 pontoon：Mercury 船外机怎么配才不后悔](/blog/zh/chinese-family-pontoon-mercury-outboard)
+- [新移民安大略省购船完整指南](/blog/zh/new-immigrant-ontario-boat-buying-guide)
+- [GTA 华人从租船到买船路线图](/blog/zh/gta-chinese-rent-to-buy-boat-roadmap)
+
+如果你已经决定买船，下一步是 Mercury 动力的选择。
+
+## 4. 选择 Mercury 动力
+
+Mercury 是 HBW 卖了 60 多年的品牌。我们是 Mercury Marine Platinum dealer，不是兼着卖几台的小店。马力怎么选、FourStroke 和 Pro XS 怎么分、为什么不要只问最低价，这些都在这里：
+
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+- [Mercury FourStroke vs Pro XS 中文对比](/blog/zh/mercury-fourstroke-vs-pro-xs-chinese)
+- [Mercury 引擎家族对比：FourStroke vs Pro XS vs Verado](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+- [Mercury 115马力 vs 150马力舷外机：如何选择？](/blog/zh/mercury-115-vs-150-comparison-zh)
+- [9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
+- [大多伦多华人买 Mercury 船外机指南](/blog/zh/chinese-mercury-outboard-guide-toronto)
+- [多伦多华人买 Mercury 船外机：为什么不要只问"最低价"？](/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese)
+
+如果你的船已经有 Mercury 但开始考虑换新，下一节是 repower 的中文指南。
+
+## 5. Repower：什么时候换 Mercury
+
+很多 GTA 华人船主第一次面对 repower 决策时都觉得很模糊：到底是换 Mercury，还是直接买新船？这些指南给你一个清晰的判断框架：
+
+- [安大略省 Mercury 换新船外机完整指南：GTA 华人船主必读](/blog/zh/mercury-repower-guide-gta)
+- [华人船主 Boat Repower 中文指南：什么时候该换 Mercury 船外机，而不是买新船？](/blog/zh/boat-repower-vs-new-boat-chinese-ontario)
+- [换新发动机还是买新船？安大略省船主成本分析](/blog/zh/repower-vs-new-boat-zh)
+- [Repower 还是换船？给安省华人船主的现实判断](/blog/zh/chinese-boat-repower-vs-new-boat-ontario)
+
+需要具体报价？[mercuryrepower.ca](https://mercuryrepower.ca) 一分钟构建你的 quote，HBW 会用真实价格、真实流程回复你。
+
+## 6. Service 和持有成本
+
+买船不是只买船。安省 boating season 短，但 service、winterization、storage、保险、trailer 这些项目全年都在花钱。这一组指南帮你不被持有成本吓到：
+
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+- [多伦多华人船主 Mercury 船外机维修保养指南](/blog/zh/mercury-outboard-service-repair-toronto-ontario)
+- [Mercury 船外机故障排查中文指南](/blog/zh/mercury-outboard-troubleshooting-chinese-ontario)
+- [安省华人船主春季开船检查清单](/blog/zh/ontario-spring-boat-checklist-chinese)
+- [安省船只冬化中文指南：为什么不能跳过 winterization](/blog/zh/ontario-boat-winterization-chinese-guide)
+- [Mercury 引擎冬化完整指南 (中文版)：DIY 还是交给专业？](/blog/zh/winterization-mercury-guide-zh)
+- [GTA 华人船主冬储完整指南](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
+- [安省华人 Boat Ownership Cost Guide：买船不是只买船](/blog/zh/boat-ownership-cost-ontario-chinese)
+
+For engine repairs, we only service Mercury and Mercruiser. 需要预约 service 直接走 [hbw.wiki/service](https://hbw.wiki/service)。
+
+## 7. Rice Lake 和钓鱼
+
+Rice Lake 是 HBW 的主场，也是 GTA 华人钓友最容易上手的湖区之一。这一组讲鱼种、季节、规则、湖区对比：
+
+- [Rice Lake 钓鱼完整攻略：多伦多华人钓友必读](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
+- [Rice Lake 钓什么鱼？鱼种与季节中文完整指南](/blog/zh/rice-lake-fish-species-seasons-zh)
+- [多伦多华人 Rice Lake 钓鱼季节指南](/blog/zh/rice-lake-fishing-season-guide-chinese)
+- [安省免鱼牌周末：华人家庭第一次去 Rice Lake 钓鱼前要知道什么](/blog/zh/ontario-free-family-fishing-rice-lake-chinese-guide)
+- [多伦多出发钓鱼去哪：Rice Lake、Lake Simcoe、Kawarthas 怎么选](/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas)
+- [莱斯湖与 Kawarthas 钓鱼船引擎指南：华人 angler 怎么选 Mercury](/blog/zh/chinese-anglers-rice-lake-kawarthas-outboard)
+- [Lake Simcoe 华人钓友船外机指南](/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard)
+
+## 8. 为什么选 Harris Boat Works
+
+我们不是最便宜的，也不是最大的。我们是 Gores Landing 的家族 marina，自 1947 年起在 Rice Lake，是 Mercury Marine Platinum dealer 和 Legend Boats dealer。GTA 华人船主选我们的理由是直接、透明、不玩报价游戏：
+
+- [为什么 GTA 华人船主选择 Harris Boat Works？](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
+
+## 下一步怎么走
+
+不管你在 boating 路线图的哪一站，下一步通常是这三个之一：
+
+- **想试试 Rice Lake 之前先租**：[harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)
+- **想知道 Mercury 报价**：[mercuryrepower.ca](https://mercuryrepower.ca)
+- **船有问题要 service**：[hbw.wiki/service](https://hbw.wiki/service)
+
+如果你有具体的中文问题，可以邮件 info@harrisboatworks.ca。我们用中文回复 GTA 华人船主的频率比你想象的高。
+
+## 关于作者
+
+由 Jay Harris 和 Harris Boat Works 团队整理。HBW 是 Gores Landing 的家族 marina，从 1947 年起在 Rice Lake 服务。Mercury Marine Platinum dealer，Legend Boats dealer。我们用中文写这些指南是因为 GTA 华人船主值得直接的答案，不是机器翻译过来的废话。[Read Jay\'s full bio](/about/jay-harris).
+
+For engine repairs, we only service Mercury and Mercruiser.`,
+  },
+
 ];
 
 export function getMandarinArticleBySlug(slug: string): BlogArticle | undefined {
