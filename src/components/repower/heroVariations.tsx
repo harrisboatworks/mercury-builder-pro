@@ -86,7 +86,7 @@ export const HERO_VARIATIONS: HeroVariation[] = [
     subheading:
       'Modern Mercury power, fitted to the hull you already own. No sales pressure. Real prices upfront.',
     stats: [
-      { n: '295', l: 'Google reviews' },
+      { n: '301', l: 'Google reviews' },
       { n: '4.6', l: 'star rating' },
       { n: 'Platinum', l: 'Mercury dealer' },
     ],

@@ -151,5 +151,6 @@ export function generateDailyTestimonials(
 
 export function generateReviewCount(_date = new Date()): number {
   // Fixed count for consistency across all pages — update when real Google review count changes
-  return 170;
+  // Live Google total as of 2026-05-17: 301 reviews, 4.6★
+  return 301;
 }
