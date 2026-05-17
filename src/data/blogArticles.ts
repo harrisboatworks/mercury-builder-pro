@@ -6960,6 +6960,29 @@ For most family runabouts in the 17, 20 ft range, a **Mercury 90, 150 FourStroke
 
 ---
 
+::decision-card
+eyebrow: Runabout use-case decision
+heading: Calm cruising or active watersports?
+subhead: Same boat length, two very different right answers on motor and gearcase.
+leftLabel: Primary use is calm cruising and dinner runs
+leftCriteria:
+  - Mostly 2 to 4 people, light loading
+  - Occasional tubing for the kids
+  - Fuel economy and quiet matter most
+  - You want lower upfront cost
+leftOutcome: 90 to 115 HP FourStroke, standard gearcase
+leftVariant: recommended
+rightLabel: You tow watersports regularly
+rightCriteria:
+  - Skiing, wakeboarding, or wakesurfing most weekends
+  - 4 to 6 people aboard with full gear
+  - Hole shot with the boat loaded matters
+  - Boat is 19 ft or larger
+rightOutcome: 150 to 200 HP, Pro XS if hole shot is critical
+rightVariant: alternative
+whenInDoubt: Check the capacity plate first. Then size for how you actually use the boat on a typical Saturday, not the once-a-year scenario.
+::
+
 ## Full Article
 
 A "family runabout" covers a lot of ground. It might be a 16-foot bowrider tugging the kids around the bay, or a 22-foot deck boat pulling a wakeboarder behind a full crew. The right Mercury depends on three things: the boat's length and weight, what you actually do with it, and how much you want to spend on fuel.
@@ -7160,6 +7183,29 @@ Not sure where to start? Call **905-342-2153**. We answer the phone and we'll te
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Outboard ski and wakeboard boats want torque and hole-shot. A Mercury 200-300 V8 FourStroke with the right prop pitch is the right call for most 19-22 ft hulls. Pro XS gains a bit of top end at the expense of mid-range. Stay inside the capacity plate. Quote installed at mercuryrepower.ca.
+
+::decision-card
+eyebrow: Wake profile decision
+heading: Wakeboarding or skiing? Different wake, different motor.
+subhead: Skiing wants a flat clean wake. Wakeboarding wants a big firm one. The motor spec follows.
+leftLabel: Skiing is the focus
+leftCriteria:
+  - Slalom or course skiing most of the time
+  - You want a flat, clean, low wake
+  - Hole shot for getting the skier up matters most
+  - Lighter boat, minimal ballast
+leftOutcome: 175 to 200 HP Pro XS, sport-tuned gearcase, stainless prop
+leftVariant: recommended
+rightLabel: Wakeboarding is the focus
+rightCriteria:
+  - You want a big, lipped, firm wake to ride
+  - You run real ballast (1,000 lb or more)
+  - Boat is 20 ft or larger with a tow tower
+  - Sustained mid-range torque matters more than top end
+rightOutcome: 225 to 300 HP V6 or V8, more weight, more sustained pull
+rightVariant: alternative
+whenInDoubt: If the household does both, build for the bigger wake. A wakeboard rig still pulls a skier. A ski rig struggles to throw a real wakeboard wake.
+::
 
 For pricing, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). To compare engine families, read [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). Rigging and warranty details are covered in the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026).
 
@@ -9335,6 +9381,29 @@ Mercury and Yamaha both build excellent outboards. For Ontario freshwater boatin
 > **Disclosure:** Harris Boat Works is a Mercury Platinum dealer. We sell Mercury. We're telling you up front so you know where the bias lives.
 
 ---
+
+::decision-card
+eyebrow: Brand decision
+heading: Switch to Mercury or stay on Yamaha?
+subhead: Dealer access in your region is the deciding factor for most Ontario owners.
+leftLabel: Switch to Mercury
+leftCriteria:
+  - No Yamaha dealer within an hour drive
+  - You travel and want broader Canadian dealer coverage
+  - You plan to sell in 2 to 5 years (stronger Ontario resale)
+  - You are repowering anyway, the switch cost is just rigging
+leftOutcome: Mercury wins on Ontario service network and resale
+leftVariant: recommended
+rightLabel: Stay on Yamaha
+rightCriteria:
+  - You have a trusted Yamaha dealer in your town
+  - Existing Yamaha is running well with hours left
+  - Boat came factory-rigged Yamaha and you like the integration
+  - You boat Great Lakes coastal or travel to saltwater often
+rightOutcome: Brand-switch rigging ($1,500 to $3,000) won't pay back
+rightVariant: alternative
+whenInDoubt: Drive to your nearest Yamaha and Mercury dealer. Whichever shop you'd actually trust with the boat on a Tuesday afternoon is the right brand.
+::
 
 ## Full Article
 
@@ -12448,6 +12517,37 @@ Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap
 
 
 ---
+
+::cost-stack
+eyebrow: Where the money goes
+heading: What's actually in a Mercury rigging quote?
+subhead: Rigging is everything between the motor and the boat. Typical 90 to 115 HP Mercury-to-Mercury repower with post-2010 controls in good condition.
+item1Label: Throttle and shift control (if replaced)
+item1Value: $400 - $900
+item1Note: Often kept on post-2010 Mercury-to-Mercury. Brand conversions need new.
+item2Label: Steering (cable, kept or refreshed)
+item2Value: $200 - $600
+item2Note: Hydraulic upgrade adds $1,650 to $3,500 and is usually worth doing while the dash is open.
+item2Accent: true
+item3Label: Wiring harness and connectors
+item3Value: $150 - $400
+item3Note: Mercury harness post-2010 usually carries over. Brand swap requires a full new harness.
+item4Label: Gauges or SmartCraft display
+item4Value: $0 - $1,200
+item4Note: Compatible existing gauges stay for free. SmartCraft VesselView adds several hundred to $1,200+.
+item5Label: Fuel hose, primer bulb, water-separator filter
+item5Value: $80 - $200
+item5Note: Replaced on every repower as cheap insurance against old fuel parts hurting a new motor.
+item6Label: Propeller (aluminum 3-blade, 90 to 115 HP)
+item6Value: $400 - $500
+item6Note: Stainless 3 or 4-blade for 150 HP and up runs $800 to $2,000. We pitch-test on sea-trial.
+item7Label: Install labour (Mercury-to-Mercury, post-2010)
+item7Value: $700 - $1,400
+item7Note: Mount, hang, torque, hook up, bench-test, water-test. Brand conversions add 4 to 8 hours.
+totalLabel: Typical Mercury-to-Mercury 90-115 HP rigging total
+totalValue: $1,900 - $5,200 CAD
+caveat: Before HST. Brand conversions add $1,500 to $3,000. Hydraulic steering upgrade adds $1,650 to $3,500. Get the line-by-line at mercuryrepower.ca.
+::
 
 ## Full Article
 
