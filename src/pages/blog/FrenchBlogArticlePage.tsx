@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
+import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { SITE_URL } from '@/lib/site';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
@@ -337,7 +338,11 @@ export default function FrenchBlogArticlePage() {
         {article.image && !heroImgError && (
           <div className="mb-8 rounded-xl overflow-hidden">
             <img
-              src={article.image}
+              src={optimizeImage(article.image, 1280)}
+              srcSet={buildSrcSet(article.image)}
+              sizes="(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw"
+              loading="eager"
+              fetchPriority="high"
               alt={article.title}
               className="w-full h-64 md:h-80 object-cover"
               onError={() => setHeroImgError(true)}
