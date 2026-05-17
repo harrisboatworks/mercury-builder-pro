@@ -245,6 +245,11 @@
       ]
     }
   ],
+  "images": {
+    "sizes": [320, 640, 768, 1024, 1280, 1920],
+    "minimumCacheTTL": 31536000,
+    "formats": ["image/avif", "image/webp"]
+  },
   "crons": [
     {
       "path": "/api/cron/google-sheets-sync",
