@@ -1,12 +1,6 @@
 import { BlogArticle } from './blogArticles';
 
 import newImmigrantHero from '@/assets/blog/new-immigrant-boat-guide-hero.png';
-import riceLakeHero from '@/assets/blog/rice-lake-fishing-zh-hero.png';
-import winterizationHero from '@/assets/blog/winterization-mercury-zh-hero.png';
-import mercury115vs150Hero from '@/assets/blog/mercury-115-vs-150-zh-hero.png';
-import repowerVsNewHero from '@/assets/blog/repower-vs-new-boat-zh-hero.png';
-import regulationsHero from '@/assets/blog/ontario-boating-regulations-zh-hero.png';
-import chineseFamily23Cruise from '@/assets/blog/chinese-family-23cruise-rice-lake.jpg';
 import chineseFamilyMultiGen from '@/assets/blog/chinese-family-legend-multigen.jpg';
 
 export const mandarinBlogArticles: BlogArticle[] = [
@@ -353,7 +347,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
     slug: 'rice-lake-fishing-guide-toronto-chinese',
     title: 'Rice Lake钓鱼完整攻略：多伦多华人钓友必读',
     description: 'Rice Lake（赖斯湖）钓鱼完整指南。鱼种、季节、装备、钓点、许可证信息，从多伦多出发仅1.5小时车程。',
-    image: riceLakeHero,
+    image: '/lovable-uploads/hero-rice-lake-fishing-guide-toronto-chinese.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
@@ -540,7 +534,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
     title: 'Mercury 引擎冬化完整指南 (中文版)：DIY 还是交给专业？',
     seoTitle: 'Mercury 引擎冬化完整指南 (中文版)',
     description: 'Mercury 引擎冬化的 5 个关键步骤、DIY 常见错误、专业服务价格区间。HBW Mercury 白金级冬化服务详解。',
-    image: winterizationHero,
+    image: '/lovable-uploads/hero-winterization-mercury-guide-zh.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
@@ -664,7 +658,7 @@ HBW 是 [Mercury 白金级认证经销商](https://www.mercurymarine.com/canada/
     slug: 'mercury-115-vs-150-comparison-zh',
     title: 'Mercury 115马力 vs 150马力舷外机：如何选择？',
     description: 'Mercury FourStroke 115马力和150马力舷外机详细对比。价格、性能、油耗、适用船型全面分析，帮助您做出正确选择。',
-    image: mercury115vs150Hero,
+    image: '/lovable-uploads/hero-mercury-115-vs-150-comparison-zh.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
@@ -845,7 +839,7 @@ Harris Boat Works，Mercury Marine Platinum Dealer，自1947年起。
     slug: 'repower-vs-new-boat-zh',
     title: '换新发动机还是买新船？安大略省船主成本分析',
     description: '详细对比换新发动机（Repower）和购买新船的成本、优劣势。帮助安大略省华人船主做出明智的经济决策。',
-    image: repowerVsNewHero,
+    image: '/lovable-uploads/hero-repower-vs-new-boat-zh.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
@@ -1013,7 +1007,7 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer。
     title: '安大略船只法规完整指南：PCOC、PCL、安全装备清单 (中文版)',
     seoTitle: '安大略船只法规完整指南 (中文版)',
     description: '在安大略驾船需要 PCOC + PCL + 钓鱼证 + 必备安全装备。HBW 不销售证件,本指南教您从 ServiceOntario 和 Transport Canada 自助办理。',
-    image: regulationsHero,
+    image: '/lovable-uploads/hero-ontario-boating-regulations-zh.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
@@ -1898,7 +1892,7 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位于Rice 
     slug: 'chinese-family-pontoon-mercury-outboard',
     title: '华人家庭买 pontoon：Mercury 船外机怎么配才不后悔',
     description: '给 GTA 华人家庭的 pontoon 船外机中文指南：马力、Command Thrust、载重、家庭安全、Rice Lake/Kawarthas 使用情境与 Mercury 报价。',
-    image: chineseFamily23Cruise,
+    image: '/lovable-uploads/hero-chinese-family-pontoon-mercury-outboard.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
     dateModified: '2026-05-10',
