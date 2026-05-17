@@ -28272,6 +28272,8 @@ The mechanical decision usually wins when at least two of these are true:
 
 Customers we steer toward mechanical: repowers on 16-18 foot aluminum fishing boats, owners who flip boats every 3-5 years, and any project where the $600 saved buys a better trailer or fishfinder.
 
+![Traditional mechanical Mercury throttle and shift control with cables routed at boat helm](/lovable-uploads/inline/inline-mechanical-controls-cables.png)
+
 ## When DTS is the right answer
 
 The DTS decision usually wins when at least two of these are true:
@@ -28405,6 +28407,8 @@ This is one of the reasons we tell new boat owners that the trim button is the c
 
 **Bowriders and runabouts:** similar to V-hulls but heavier, often need slightly more trim in for the family-load condition.
 
+![Aluminum fishing boat porpoising with bow too high, showing incorrect outboard trim](/lovable-uploads/inline/inline-wrong-trim-porpoising.png)
+
 ## Trim and Mercury Pro XS
 
 If you own a Mercury Pro XS or are considering one, the trim conversation gets more interesting. Pro XS motors are designed for higher-performance applications and respond differently to trim than a standard FourStroke. The optimum trim is usually further out, top speed is more trim-sensitive, and a good operator can find an extra 2-4 mph just by playing with the button. Our [Mercury Pro XS Repower Guide for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers) covers this in detail.
@@ -28512,6 +28516,8 @@ A weak or intermittent water stream means the water pump impeller needs replacem
 **12. Test under full load.** Once you've confirmed everything looks normal at low and medium RPM, run the boat through the full RPM range. Trim through the range. The motor should accelerate cleanly to its target WOT (wide-open throttle) RPM.
 
 If anything feels wrong during this sequence, stop. Don't push through. Most spring problems get worse, not better, when ignored.
+
+![Healthy telltale water stream from Mercury outboard cooling system pee-hole](/lovable-uploads/inline/inline-mercury-telltale-water-stream.png)
 
 ## When something is wrong, the most likely culprits
 
@@ -28654,6 +28660,8 @@ What we wish more owners would do: use marine-grade tinned copper terminals, mar
 What we see often: owners DIY a fishfinder or trolling motor install with whatever connectors were in the toolbox. Two years later we're tracing a parasitic draw or a SmartCraft fault back to a corroded crimp behind the console.
 
 **The fix:** any new electrical work uses marine-grade terminals or it isn't done right. The difference is a few dollars per connection.
+
+![Heavily corroded boat battery terminal next to terminal cleaner brush](/lovable-uploads/inline/inline-corroded-battery-terminal.png)
 
 ## 6. "I'll check the impeller next year"
 
@@ -28824,6 +28832,8 @@ For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guid
 **Make-it-saleable repair:** sometimes spending $500-$1,500 to fix the headline problem doubles the resale price. Worth doing if the repair is minor and the price gap is large.
 
 **Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/boat-motor-trade-in-guide) covers what to expect.
+
+![Aging aluminum boat transom with surface oxidation around motor mount](/lovable-uploads/inline/inline-aging-boat-transom.png)
 
 ## Common scenarios we see
 
