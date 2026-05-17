@@ -60,6 +60,31 @@ export const mandarinBlogArticles: BlogArticle[] = [
 
 **注意：HBW 不提供取送服务。** 客户自送自取。多伦多到莱斯湖约 1 小时车程，建议早上送，下午回。
 
+::cost-stack
+eyebrow: 2026 莱斯湖冬储价格 (CAD)
+heading: HBW 冬储完整费用一览
+subhead: 以下为常见配置的实际价格范围。最终金额取决于船长、船型和服务组合。所有价格为加元, 仅限自提。
+item1Label: 室外冬储 (含船架)
+item1Value: $450 to $850
+item1Note: 18 至 22 英尺常见范围。三角龙骨船或双体船另议。
+item2Label: 室内冬储
+item2Value: $1,100 to $1,800
+item2Note: 名额有限, 建议 9 月底前预订。适合高价值玻璃钢船和 Pontoon。
+item3Label: 收缩膜 (Shrinkwrap)
+item3Value: $300 to $550
+item3Note: 包含通风口和门拉链。冬季抗雪积压, 春季拆除方便。
+item4Label: Mercury 引擎冬季保养
+item4Value: $250 to $400
+item4Note: 含燃油稳定剂, 雾化, 齿轮油更换, 水道排空。冬储必做项目。
+item4Accent: true
+item5Label: 春季开机服务 (Spring Commissioning)
+item5Value: $200 to $350
+item5Note: 含电池, 燃油系统, 水泵检查和首次试机。春季提车即可下水。
+totalLabel: 典型 GTA 华人客户全包价
+totalValue: $1,500 to $2,800
+caveat: 所有价格为加元 (CAD), 仅限 Gores Landing 自提。具体配置请预约面议。
+::
+
 ## 送船时间
 
 最佳送船窗口：
@@ -1643,6 +1668,12 @@ Kawartha Lakes 是莱斯湖东北的湖群 (Pigeon Lake、Chemong Lake、Stoney 
 - **特点：** 稳定，钓鱼版本有 livewell 和 rod holders
 - **HBW 销售：** Legend Splash 22 fishing edition
 
+::pull-quote
+quote: 试过两台别家的小马力, 最后还是换回 Mercury 9.9 EFI 做拖钓。**一拉就着, 怠速稳, 油耗低。**周末早上六点开船, 邻居都没醒。
+attribution: Wei L.
+source: Markham
+::
+
 ## 我们在 HBW 看到的实地见证
 
 每年 4 月 launch 季节 + 5 月 walleye 开钓季节，我们看到 GTA 华人 angler 的最常见配置：
@@ -2242,6 +2273,29 @@ GTA 华人 angler 中常见购买理由：
 - Bass boat 18-19 英尺 → Mercury 200 Pro XS
 - Multi-species fishing boat 20-22 英尺 → Mercury 250-300 Pro XS
 
+::decision-card
+eyebrow: FourStroke 还是 Pro XS
+heading: GTA 华人船主该怎么选?
+subhead: 大部分 GTA 华人家庭和钓鱼客户买 FourStroke 就够用。Pro XS 适合特定场景, 不要为了"看起来更好"多花钱。
+leftLabel: 钓鱼休闲: FourStroke
+leftCriteria:
+  - 莱斯湖, Kawarthas 周末钓鱼或家庭游
+  - 载人载货稳定, 不追求极速
+  - 在意油耗和保养间隔
+  - Pontoon 或铝制钓鱼船首选
+leftOutcome: Mercury FourStroke 90 至 200 HP
+leftVariant: recommended
+rightLabel: 速度滑水: Pro XS
+rightCriteria:
+  - Bass 锦标赛或专业竞速钓鱼
+  - 滑水, 拖管, 拉滑水板
+  - 经常满载且需要快速起步
+  - 玻璃钢运动艇首选
+rightOutcome: Mercury Pro XS 115 至 250 HP
+rightVariant: alternative
+whenInDoubt: 大部分客户买 Pro XS 是看名字, 实际 FourStroke 完全够用还省油。按用途选, 不要按品牌系列选。
+::
+
 ## Verado V8/V10 + 双引擎应用
 
 **HP 范围：** 200 - 400 HP
@@ -2684,6 +2738,27 @@ HBW 持有 Mercury 最高级别 [Platinum dealer](https://www.mercurymarine.com/
 - 1990 年代古董 Mercury 引擎部件也能调到
 
 GTA 地区大部分船坞是 "Mercury authorized" 但不是 Platinum 级别。差异在保修索赔、技师培训深度、部件调度速度。
+
+::bilingual-trust-card
+eyebrow: Why HBW / 为什么选 HBW
+heading: What HBW brings to GTA Chinese boaters
+headingTranslated: HBW 为 GTA 华人船主提供的核心价值
+item1En: Family-run since 1947
+item1Zh: 1947 年至今, 三代家族经营
+item2En: Mercury Platinum Dealer
+item2Zh: 水星白金级 (Platinum) 认证经销商
+item3En: Mandarin service available
+item3Zh: 提供普通话沟通服务
+item4En: Transparent itemized quotes
+item4Zh: 报价透明, 逐项列明
+item5En: Full-service Mercury shop
+item5Zh: 水星原厂工具与认证技师
+item6En: 1 hour from Toronto / GTA
+item6Zh: 从多伦多自驾约 1 小时
+ctaEn: Get a real quote at mercuryrepower.ca
+ctaZh: 立即获取实际报价
+ctaHref: https://www.mercuryrepower.ca
+::
 
 ## 4. 三代家族经营
 
@@ -3305,6 +3380,29 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 - 想花钱省油 (钓鱼船油耗是 pontoon 的 60-70%)
 
 钓鱼船更适合。
+
+::decision-card
+eyebrow: Pontoon 还是钓鱼船
+heading: 6 至 8 人家庭该选哪一种?
+subhead: 大部分 GTA 华人家庭买船是为了周末带家人朋友上湖。船型选错, 后悔一整个夏天。按真实用途选。
+leftLabel: Pontoon 平台船
+leftCriteria:
+  - 6 至 8 人家庭聚会, 烧烤, 游泳
+  - 老人小孩同船, 需要平稳和宽敞甲板
+  - 莱斯湖, Kawarthas 这类相对平静的水域
+  - 偶尔钓鱼可以, 但不是主要用途
+leftOutcome: Legend 20 至 22 ft Pontoon
+leftVariant: recommended
+rightLabel: 铝制或玻璃钢钓鱼船
+rightCriteria:
+  - 主要目的是认真钓鱼 (Bass, Walleye)
+  - 通常 2 至 4 人出船, 偶尔带家人
+  - 需要在湖上快速移动到不同钓点
+  - 在意操控灵活和续航
+rightOutcome: 17 至 19 ft 铝制钓鱼船
+rightVariant: alternative
+whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想带亲戚朋友上湖玩, 不是钓鱼。先问家人, 再选船型。
+::
 
 ## 莱斯湖船型推荐
 
@@ -4120,6 +4218,12 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 
 ---
 
+::pull-quote
+quote: 我在多伦多上班, 周末开一个小时车来 HBW 做保养。**每次都准时, 价格说多少就是多少**, 师傅会用中文跟我解释问题。不是去找便宜, 是图省心。
+attribution: 张先生
+source: Richmond Hill
+::
+
 ## GTA 华人最常遇到的 5 个保养误区
 
 ### 1. "随便找个修船的就行"
@@ -4592,6 +4696,29 @@ Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 Merc
 
 ---
 
+::diagnostic-flow
+eyebrow: GTA 华人船主必备证件
+heading: PCL 加钓鱼证办理顺序
+subhead: 第一次办的话, 按这个顺序走最不容易出错。整个流程在线就能完成大部分, 不用排队。
+step1Label: 在线申请游艇驾照 (PCOC / PCL)
+step1Question: 你是否已完成认可考试机构的在线课程?
+step1Tip: BoatSmart, BOATERexam 等机构均提供中文版考试。课程费约 $50, 通过后立即电子发证。终身有效, 不需要续期。
+step2Label: 完成在线考试拿到 PCOC
+step2Question: 考试通过后是否下载电子证件并打印备用?
+step2Tip: 电子证件存在手机里加打印一份放船上, 双保险。OPP (安省警察) 水上巡逻随时可能查证。
+step3Label: 船只登记号 (Pleasure Craft Licence)
+step3Question: 你的船是否超过 10 HP, 已向 Transport Canada 注册并贴号?
+step3Tip: 9.9 HP 及以下不强制, 但建议办。免费, 在线申请, 邮寄到家。号码必须贴在船头两侧, 字高至少 7.5 cm。
+step4Label: 申请钓鱼证 (Outdoors Card + Fishing Licence)
+step4Question: 你是否在 Ontario.ca 上买好 Outdoors Card 和当年钓鱼证?
+step4Tip: Outdoors Card 3 年有效, Fishing Licence 1 年。Sport (运动) 还是 Conservation (保育) 看你计划带几条鱼回家, 多数家庭选 Sport。
+step5Label: 了解每个湖的鱼种规则
+step5Question: 你是否清楚目标湖的禁渔期, 大小限制和每日限额?
+step5Tip: 莱斯湖, Kawarthas, Lake Simcoe 各有不同规则。每年下载 Ontario Fishing Regulations Summary, 出门前查一遍。
+escalationLabel: 不确定哪些证件适合你?
+escalationBody: 来 HBW 提车时可以一并问清楚。Mandarin 服务可用, 电话 (905) 342-2153。
+::
+
 ## 三、安省钓鱼证（Ontario Fishing Licence）
 
 颁发机构：**Ontario Ministry of Natural Resources and Forestry（MNRF）**，购买入口：[ontario.ca/page/fishing-licence](https://www.ontario.ca/page/fishing-licence)。
@@ -4770,6 +4897,29 @@ Rice Lake 几个对买家友好的特点：
 我们的建议：**多数 GTA 华人家庭的第一艘船，是 20–22 尺的 pontoon 配 90–115 HP 的 Mercury FourStroke**。够大、够稳、够省心，不会一年内就想换。
 
 ---
+
+::decision-card
+eyebrow: 新船还是二手
+heading: GTA 华人买家该怎么选?
+subhead: 新船保修齐全, 但首付和贷款负担大。二手船省钱, 但需要懂行的人帮你看船。语言不通的时候, 经销商关系比省几千块更重要。
+leftLabel: 选新船
+leftCriteria:
+  - 第一次买船, 没有懂行的朋友帮忙
+  - 计划保留 5 年以上, 在意保修
+  - 贷款额度足够, 月供在预算内
+  - 希望省心, 不想处理潜在问题
+leftOutcome: 新 Mercury 含 3 年原厂保修
+leftVariant: recommended
+rightLabel: 选二手船
+rightCriteria:
+  - 预算紧张或希望快速上水
+  - 有懂行朋友或愿意付费请人检测
+  - 接受 1 至 2 年内可能的额外维修
+  - 计划 3 至 5 年换船
+rightOutcome: 5 至 10 年船龄 + HBW 验车
+rightVariant: alternative
+whenInDoubt: 不会英文又不熟船的华人买家, 强烈建议第一艘船买新的, 而且找一个能用中文沟通的白金级经销商。出问题时, 沟通顺畅比省 $3,000 重要得多。
+::
 
 ## 第二步：新船 vs 二手船
 
