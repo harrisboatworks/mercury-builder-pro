@@ -9,6 +9,7 @@ import { getPunjabiArticleBySlug } from '@/data/punjabiBlogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
+import { AuthorByline } from '@/components/blog/AuthorByline';
 import {
   Accordion,
   AccordionContent,
@@ -341,6 +342,9 @@ export default function PunjabiBlogArticlePage() {
         <h1 className="text-3xl md:text-4xl font-light text-foreground mb-8">
           {article.title}
         </h1>
+        <div className="mb-8 pb-4 border-b border-border">
+          <AuthorByline name="Jay Harris" title="1965 ਤੋਂ Mercury Platinum ਡੀਲਰ" />
+        </div>
 
         {tocItems.length > 2 && (
           <div className="mb-8">

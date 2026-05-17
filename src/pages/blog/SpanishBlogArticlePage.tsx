@@ -9,6 +9,7 @@ import { getSpanishArticleBySlug } from '@/data/spanishBlogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
+import { AuthorByline } from '@/components/blog/AuthorByline';
 import {
   Accordion,
   AccordionContent,
@@ -344,6 +345,9 @@ export default function SpanishBlogArticlePage() {
         <h1 className="text-3xl md:text-4xl font-light text-foreground mb-8">
           {article.title}
         </h1>
+        <div className="mb-8 pb-4 border-b border-border">
+          <AuthorByline name="Jay Harris" title="Distribuidor Mercury Platinum desde 1965" />
+        </div>
 
         {/* Table of Contents */}
         {tocItems.length > 2 && (
