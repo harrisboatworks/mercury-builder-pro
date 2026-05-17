@@ -5199,6 +5199,9 @@ At HBW, we measure transom depth before recommending shaft length on any portabl
 
 ---
 
+
+![Portable Mercury FourStroke outboard on small aluminum boat at lake shore](/lovable-uploads/inline/inline-portable-mercury-dinghy.png)
+
 ## Storage and transport
 
 Portable motors are designed for easy transport, but they need proper care:
@@ -8802,6 +8805,9 @@ The Avator 7.5e on a light car-topper can run about 5 miles at full throttle on 
 ### Noise-sensitive situations
 Early morning fishing, evening cruises, areas where exhaust smell is genuinely objectionable. Avator near-silent operation is a real advantage.
 
+
+![Mercury Avator electric outboard mounted on aluminum boat at cottage dock](/lovable-uploads/inline/inline-avator-electric-dock.png)
+
 ### A second, dedicated quiet boat alongside a gas-powered main boat
 This is how a lot of cottage families would realistically use Avator in Ontario. Your main boat is a gas-powered fishing rig that handles the full-day, long-range work. The Avator-powered small boat is what you take out in the morning for fishing close to the dock.
 
@@ -9471,6 +9477,9 @@ When Evinrude owners come in, we want to know:
 - Budget and financing tolerance
 
 We won't push the switch on customers whose Evinrude has years of life left and a clear plan to use the boat short-term. We recommend the switch when the math actually favours it.
+
+
+![Old Evinrude removed beside new Mercury FourStroke ready for install](/lovable-uploads/inline/inline-evinrude-to-mercury-swap.png)
 
 ### Common Evinrude-to-Mercury Switch Mistakes
 
@@ -14126,6 +14135,9 @@ Anything taller than 22 feet, radar arches, tall biminis, sailboat masts, needs 
 
 ---
 
+
+![Pleasure boat in Trent-Severn Waterway lock chamber mid-fill](/lovable-uploads/inline/inline-trent-severn-lock-chamber.png)
+
 ## Fees Outside the Free Window
 
 When the Canada Strong Pass is not active, lockage fees apply:
@@ -16206,6 +16218,9 @@ Three series across three positioning bands:
 Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mercury **25-40 ELPT Command Thrust** standard depending on size. Starting **$39,999 CAD** for the 15 LE C; the 21 LE rigged with a Mercury 90 EXLPT runs around **$48,000-$50,000 CAD**.
 
 **Best for:** First-time pontoon buyers, weekend cottage families, anyone who wants the pontoon experience without premium pricing.
+
+
+![Legend pontoon with Mercury 115 Command Thrust cruising Kawartha lake](/lovable-uploads/inline/inline-legend-pontoon-cruising.png)
 
 ### Q Series, premium comfort pontoons, 21-23 ft
 
@@ -20938,6 +20953,9 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 ---
 
+
+![Mercury DTS digital throttle and shift control on boat console](/lovable-uploads/inline/inline-dts-throttle-control.png)
+
 ## Wiring and Battery Setup
 
 **Single battery + basic harness (40, 90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400, $700.
@@ -21703,6 +21721,9 @@ Most modern chartplotters from Garmin and Humminbird can read Mercury engine dat
 For most Ontario freshwater boaters with a Mercury 60, 115 HP and a basic fishfinder, Path A is overkill. SmartCraft Connect alone is the right answer.
 
 ---
+
+
+![Mercury SmartCraft Connect display and VesselView Mobile app at helm](/lovable-uploads/inline/inline-smartcraft-connect-dashboard.png)
 
 ## Install: DIY vs. HBW
 
@@ -26373,6 +26394,9 @@ For the price difference between the two tiers (typically $200-$400 across most 
 - Routine maintenance items (oil, filters, plugs, impellers, anodes)
 - Damage from accident, abuse, racing, or non-recreational use
 - Used motors imported from outside US/Canada
+
+
+![Mercury Product Protection warranty document with FourStroke outboard](/lovable-uploads/inline/inline-warranty-documents.png)
 
 ## Eligibility, When You Can Buy It
 
