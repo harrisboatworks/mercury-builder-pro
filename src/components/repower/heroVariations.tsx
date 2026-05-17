@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { GOOGLE_REVIEWS_FALLBACK } from '@/config/googleReviews';
 
 export interface HeroStat {
   n: string;
@@ -86,8 +87,8 @@ export const HERO_VARIATIONS: HeroVariation[] = [
     subheading:
       'Modern Mercury power, fitted to the hull you already own. No sales pressure. Real prices upfront.',
     stats: [
-      { n: '301', l: 'Google reviews' },
-      { n: '4.6', l: 'star rating' },
+      { n: String(GOOGLE_REVIEWS_FALLBACK.totalReviews), l: 'Google reviews' },
+      { n: GOOGLE_REVIEWS_FALLBACK.rating.toFixed(1), l: 'star rating' },
       { n: 'Platinum', l: 'Mercury dealer' },
     ],
     ctaLabel: 'See My Mercury Price',

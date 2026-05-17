@@ -1,84 +1,53 @@
-# Tier 1 Blog Insertion + EDT Date Fix
+# Centralize Google review totals
 
-## Findings from current codebase
+## Audit findings
 
-- `src/data/blogArticles.ts` already has scheduled-publish gating via `publishDate` + `isArticlePublished` (line 25). Future-dated entries are already hidden until their date arrives — no rollout work needed.
-- `BlogArticle` body content is rendered via `MarkdownSectionCards`, which already uses `remark-gfm` (line 81 of that component). **Markdown pipe tables already render.** No table-renderer change needed. The legacy line-by-line `renderContent` in `BlogArticle.tsx` is no longer the path used for body content.
-- The relevant date bug is real: `new Date("2026-05-07")` is parsed as UTC midnight = May 6 8 PM EDT, so `isArticlePublished` flips a day early.
-- Blog article shape uses fields: `slug, title, description, content, image, author, datePublished, dateModified, publishDate, category, readTime, faqs, keywords` (no `internalLinks`, no `heroImageAlt`, no `primaryKeyword/secondaryKeywords`, no `lastModifiedDate`). I will map the user's spec to actual fields.
+Live (already pull from `google-places` edge function via `useGooglePlaceData`):
+- `src/components/business/GoogleRatingBadge.tsx` ✅
+- `src/components/reviews/GoogleReviewsCarousel.tsx` ✅
 
-## Field mapping (spec → real schema)
+Hardcoded values still present:
+1. `src/lib/activityGenerator.ts` — `generateReviewCount()` returns literal `301`.
+2. `src/components/repower/heroVariations.tsx` line 89–90 — `'301'` Google reviews and `'4.6'` star rating in the `frustration` hero variation stats array.
+3. `src/pages/Repower.tsx` line 56/439 — consumes `generateReviewCount()`.
+4. `src/pages/Promotions.tsx` line 200/210 — consumes `generateReviewCount()`.
 
-| Spec field | Real field |
-|---|---|
-| `heroImage` | `image` |
-| `metaDescription` | `description` |
-| `publishedDate` | `datePublished` + `publishDate` |
-| `lastModifiedDate` | `dateModified` |
-| `primaryKeyword` + `secondaryKeywords` | merged into `keywords[]` |
-| `heroImageAlt`, `internalLinks` | not supported by schema — dropped, will be reported |
+No JSON-LD `aggregateRating` blocks use hardcoded review counts (only blog `Review` schemas with `ratingValue: "1"` for misleading-claim refutations — unrelated).
 
 ## Plan
 
-### 1. EDT date helper
-
-Add to `src/data/blogArticles.ts` (just above `isArticlePublished`):
+### 1. New single source of truth: `src/config/googleReviews.ts`
 
 ```ts
-export function parseLocalDate(dateString: string): Date {
-  const [y, m, d] = dateString.split('-').map(Number);
-  return new Date(y, m - 1, d);
-}
+// One place. Update only this constant when live totals change.
+export const GOOGLE_REVIEWS_FALLBACK = {
+  rating: 4.6,
+  totalReviews: 301,
+  asOf: '2026-05-17',
+} as const;
+
+export const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/...'; // moved from GoogleRatingBadge
 ```
 
-Update `isArticlePublished` to use `parseLocalDate(publishDate)` instead of `new Date(publishDate)`.
+### 2. New hook: `src/hooks/useGoogleReviewStats.ts`
 
-### 2. BlogCard date display
+Thin wrapper around `useGooglePlaceData` that returns `{ rating, totalReviews, isLive }` — falling back to `GOOGLE_REVIEWS_FALLBACK` when the edge function hasn't resolved or errored. This way every consumer gets live numbers when available and the same fallback otherwise.
 
-In `src/components/blog/BlogCard.tsx` (line 50), replace `new Date(article.datePublished)` with `parseLocalDate(article.datePublished)` and import the helper.
+### 3. Refactor consumers
 
-Also update the date display at the top of `src/pages/BlogArticle.tsx` (around line 348) to use `parseLocalDate`.
+- `src/lib/activityGenerator.ts` `generateReviewCount()` → return `GOOGLE_REVIEWS_FALLBACK.totalReviews` (keeps it sync for non-React callers; deprecate-comment pointing to the hook).
+- `src/components/repower/heroVariations.tsx` — convert the `frustration` variation's stats to a function/getter that accepts live stats, OR keep static but sourced from `GOOGLE_REVIEWS_FALLBACK` (simpler — Repower.tsx already calls the hook and can override the two stat values at render time).
+- `src/pages/Repower.tsx` — replace `generateReviewCount()` with `useGoogleReviewStats()`; inject live total into the `frustration` hero stats before rendering.
+- `src/pages/Promotions.tsx` — replace `generateReviewCount()` with `useGoogleReviewStats()`.
+- `src/components/business/GoogleRatingBadge.tsx` — import `GOOGLE_REVIEWS_URL` from config; keep edge-function-backed display, but fall through to fallback via the new hook so the badge never disappears on a cold cache.
 
-### 3. Skip table renderer change
+### 4. Verify
 
-Tables already render via `remark-gfm` in `MarkdownSectionCards`. No-op.
+- Grep for `301`, `295`, `170`, `4.6` near `review|rating` to confirm zero remaining hardcoded literals outside `googleReviews.ts`.
+- Build pass.
 
-### 4. Insert 4 new article entries
+## Technical notes
 
-Append to `blogArticles` array (after the most recent entry):
-
-1. `used-outboard-buying-guide-ontario` — datePublished/publishDate `2026-05-07`, dateModified `2026-05-07`, category `'Buying Guide'`, image `/lovable-uploads/hero-used-outboard-buying-guide.png`
-2. `trent-severn-waterway-boating-guide-2026` — `2026-05-08`, category matched to `2026-rice-lake-fishing-season-outlook`, image `/lovable-uploads/hero-trent-severn-waterway-2026.png`
-3. `outboard-overheating-emergency-guide` — `2026-05-09`, category matched to `mercury-outboard-wont-start-troubleshooting`, image `/lovable-uploads/hero-outboard-overheating.png`
-4. `rice-lake-boating-guide-2026` — `2026-05-10`, category matched to #2, image `/lovable-uploads/hero-rice-lake-boating-guide.png`
-
-For each:
-- `description` = frontmatter `meta_description`, kept ≤160 chars (truncate cleanly if needed — the prerender build fails >160).
-- `content` = full markdown body from line ~21 onward, **excluding** the `[CUSTOMER STORY OPPORTUNITY ...]` line (replaced with a `// TODO: Add customer story for <slug>` comment placed adjacent to the entry).
-- `faqs` = the `## Frequently Asked Questions` Q&A pairs.
-- `keywords` = `[primary_keyword, ...secondary_keywords]` from frontmatter.
-- `readTime` computed from word count (≈200 wpm), e.g. `'7 min read'`.
-- `author` = `'Harris Boat Works'`.
-- For Post 4, add a contextual link to `/blog/pleasure-craft-licence-update-repower-ontario` in the Practical Notes section where PCL is mentioned.
-
-### 5. Description length guard
-
-The build prerender enforces ≤160 chars on description / og:description / twitter:description (we hit this twice already). Each new article's `description` will be checked and trimmed before insertion.
-
-### 6. Sitemap
-
-`public/sitemap.xml` — add 4 `<url>` entries with `<lastmod>` = `publishDate`. (Sitemap is committed static XML in this repo.)
-
-### 7. Verification
-
-- Build passes (description ≤160 chars on all 4 new posts).
-- 4 new entries present, no `[CUSTOMER STORY OPPORTUNITY]` strings in `blogArticles.ts`.
-- Future-dated posts hidden from `/blog` until their EDT date.
-- Sitemap includes all 4.
-
-### Report after build
-
-- Article count before/after (+4)
-- Build status
-- Confirm dates gate correctly in EDT
-- Note dropped fields (`heroImageAlt`, `internalLinks`, `primaryKeyword`/`secondaryKeywords` as separate fields) and how they were folded in
+- No backend change. No edge function change. No new dependencies.
+- `generateReviewCount()` stays exported (used in `activityGenerator` callers); it just reads from the new config so updating the live number is a one-line edit in `src/config/googleReviews.ts`.
+- The hook is React-only; the constant is the fallback for non-React contexts (PDFs, activity generator, SEO strings if ever needed).

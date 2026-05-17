@@ -20,7 +20,8 @@ import {
   Check, X
 } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import { generateDailyTestimonials, generateReviewCount } from '@/lib/activityGenerator';
+import { generateDailyTestimonials } from '@/lib/activityGenerator';
+import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
 import { allTestimonials } from '@/lib/testimonialData';
 
 const warningSignsData = [
@@ -53,7 +54,7 @@ const whyHarrisData = [
 export default function Repower() {
   const [guideDialogOpen, setGuideDialogOpen] = useState(false);
   const dailyTestimonials = useMemo(() => generateDailyTestimonials(allTestimonials, 3), []);
-  const reviewCount = useMemo(() => generateReviewCount(), []);
+  const { totalReviews: reviewCount } = useGoogleReviewStats();
 
   return (
     <RepowerLayout>

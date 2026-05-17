@@ -1,6 +1,7 @@
 // src/lib/activityGenerator.ts
 import { templates, firstNames, ontarioCities, motorModels, timePhrases } from "@/lib/activityMessages";
 import { regionalReferences } from "@/lib/canadian-messages";
+import { GOOGLE_REVIEWS_FALLBACK } from "@/config/googleReviews";
 
 // Deterministic PRNG utilities (xmur3 + mulberry32)
 function xmur3(str: string) {
@@ -149,8 +150,11 @@ export function generateDailyTestimonials(
   }));
 }
 
+/**
+ * @deprecated In React components prefer `useGoogleReviewStats()` so the number
+ * updates live from the google-places edge function. This sync helper exists
+ * for non-React callers and returns the centralized fallback.
+ */
 export function generateReviewCount(_date = new Date()): number {
-  // Fixed count for consistency across all pages — update when real Google review count changes
-  // Live Google total as of 2026-05-17: 301 reviews, 4.6★
-  return 301;
+  return GOOGLE_REVIEWS_FALLBACK.totalReviews;
 }
