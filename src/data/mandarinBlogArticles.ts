@@ -5278,6 +5278,805 @@ Mercury Marine 白金级经销商，1947 年至今。
     ],
   },
 
+  {
+    slug: 'rice-lake-boat-rental-fishing-day-trip-toronto',
+    title: '多伦多华人家庭 Rice Lake 租船钓鱼一日游指南',
+    seoTitle: '多伦多华人 Rice Lake 租船钓鱼指南',
+    description: '给多伦多、Markham、Richmond Hill 华人家庭的 Rice Lake 租船钓鱼一日游指南：船牌、鱼牌、安全、孩子、装备、天气与第一次租船注意事项。',
+    image: '/lovable-uploads/hero-zh-rice-lake-boat-rental-fishing-day-trip-toronto.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guides',
+    readTime: '13 分钟',
+    keywords: ['Rice Lake 租船', '多伦多华人钓鱼', 'GTA 一日游', 'boat rental Ontario', 'Harris Boat Works', '钓鱼指南'],
+    content: `# 多伦多华人家庭 Rice Lake 租船钓鱼一日游指南
+
+如果你住在 Toronto、Markham、Richmond Hill、Scarborough、North York 或 Mississauga，想带家人去 Rice Lake 租船钓鱼，最重要的不是先问“哪里最便宜”，而是先确认三件事：开船的人是否有合适的操作资格、钓鱼的人是否需要鱼牌、船上安全装备和天气是否适合当天出行。Harris Boat Works 位于 Rice Lake 的 Gores Landing，提供 fishing boat 和 pontoon boat rentals，并说明租船司机需要 boat operator’s card；这类要求出发前就要确认，到了码头才发现少一张卡，气氛会比没钓到鱼还尴尬一点 (Harris Boat Works, Transport Canada PCOC).
+
+为什么 Rice Lake 很适合 GTA 华人家庭第一次租船钓鱼
+
+Rice Lake 对 GTA 华人家庭的吸引力很直接：它不像真正远北湖区那么折腾，但又比城市岸钓更有“出去玩了一天”的感觉。很多家庭第一次不是要买船，也不是要研究 Mercury 150HP 和 prop slip；他们只是想知道能不能带孩子、父母、朋友安全地玩一天，顺便看看钓鱼到底是不是那么上瘾。
+
+HBW 的优势是位置和经验。Harris Boat Works 是 Gores Landing 的 Rice Lake marina，页面列出 boat rentals、boat launch、slips、winterization、storage 和 service 等服务，并写明从 1947 年起服务 Rice Lake boaters (Harris Boat Works). 对第一次来的家庭来说，这种地方不是“网红打卡点”，而是有人真正在湖边处理船、天气、启动问题和客户问题很多年的地方。
+
+出发前先确认这 7 件事
+
+要确认什么
+
+为什么重要
+
+开船的人是否有 proof of competency
+
+Transport Canada 说，在加拿大操作带 motor 的 recreational boat 需要 proof of competency，电动 trolling motor 也包括在内 (Transport Canada PCOC).
+
+租船是否接受 Rental Boat Safety Checklist
+
+Transport Canada 说明，completed Rental Boat Safety Checklist 只在租船期间有效，不能当作永久 boating licence (Transport Canada PCOC).
+
+是否需要 fishing licence
+
+Ontario 免费钓鱼期间之外，钓鱼证要求取决于身份、年龄、居住状态和 licence 类型；官方也提供中文 fishing regulations summary (Ontario Traditional Chinese fishing regulations).
+
+当天是否属于 free family fishing
+
+Ontario 2026 年有 Family Fishing Weekend、Mother’s Day Weekend、Father’s Day Weekend 和 Family Fishing Week，但免费钓鱼仍需遵守 catch limits、size limits、sanctuaries 和 fishing regulations (Ontario free family fishing).
+
+天气和风
+
+新手家庭不要只看温度，风、雷雨和能见度更重要。官方安全指南也提醒安全装备只是最低要求，活动和天气不同，可能需要带更多装备 (Transport Canada Safe Boating Guide).
+
+孩子和长辈的舒适度
+
+帽子、防晒、水、零食、晕船可能性、厕所计划，比你想象中更决定当天体验。鱼会不会咬钩不听我们安排，孩子饿不饿可是真的会立刻开会。
+
+预订和到达时间
+
+HBW 页面说明 boat rentals 可以 online reserve；第一次租船不要卡点到，留时间听说明、装东西、问问题 (Harris Boat Works).
+
+租 pontoon 还是 fishing boat？
+
+如果是家庭第一次出行，pontoon 通常更适合聊天、带孩子、带长辈和轻松巡航。它不是为了让你像 bass tournament 一样到处冲点，而是让一家人舒服地在湖上待一段时间。
+
+如果主要目标是钓鱼，fishing boat 更直接。它通常更适合两三个人认真钓、换位置、带基本钓具。选择之前先问自己：这趟是“家庭湖上一日游，顺便钓鱼”，还是“钓鱼为主，家人只是希望你不要太夸张”？答案不一样，船也不一样。
+
+华人家庭第一次租船最容易忽略的现实问题
+
+很多人会把“租船钓鱼”想得太简单：上船、开走、钓鱼、拍照、回家。现实是，湖上体验由很多小事决定。
+
+孩子的耐心：第一次不要安排太长，也不要把“必须钓到鱼”当成 KPI。
+
+装备不要太多：新手带太多竿、箱子、椅子，船上反而乱。
+
+救生衣要合身：船上每个人都需要合适的 PFD/lifejacket；不要把“有一件”当成“适合这个人”。
+
+手机不是安全计划：手机要有电，但湖上不要把导航、天气、拍照和紧急联系都压在一台快没电的手机上。
+
+鱼不保证上班：钓鱼叫 fishing，不叫 catching。这个英文区别很有用，也很残酷。
+
+Rice Lake 钓鱼规则要怎么查？
+
+Rice Lake 和 Kawarthas 的规则不要靠朋友群一句“应该可以”。Ontario fishing regulations 按 Fisheries Management Zone、鱼种、季节、尺寸、数量和例外规则来管理，官方中文页面说明 annual guide 包含 recreational fishing licences、open seasons、catch limits 和 southern Ontario fishing zones (Ontario Traditional Chinese fishing regulations).
+
+如果你在 Rice Lake 或 Kawarthas 一带钓鱼，应该查当年的官方 Ontario regulations 和对应 FMZ 页面；FMZ 17 官方页面也提醒，zone-wide seasons and limits 会受到 species exceptions、waterbody exceptions 和 fish sanctuaries 影响 (Ontario FMZ 17). 不要用“去年朋友说可以”当规则。鱼可能记性不好，执法不会。
+
+一日游建议行程
+
+早上：不要迟到
+
+第一次租船，早一点到比赶着上船更重要。给自己时间停车、整理东西、听安全说明、问清楚船上操作和回来流程。
+
+中午：别把钓鱼搞成考试
+
+如果有孩子或第一次来的朋友，把目标设成“安全、舒服、体验湖上钓鱼”。能钓到鱼很好，没钓到也不是失败。很多家庭第一次真正记住的不是鱼，是大家在船上终于从手机里抬头看了一会儿湖。
+
+下午：早点收，不要硬撑
+
+风变大、孩子累、太阳太强、大家开始烦，就该回。好的 boating day 不是最后一刻冲回码头，而是大家回家路上还愿意说“下次再来”。
+
+HBW 的建议
+
+如果你第一次从 GTA 来 Rice Lake 租船钓鱼，先把这件事当成 family day trip，不要当成专业钓鱼比赛。确认资格、确认天气、确认规则、少带一点没用的东西，多带一点水和耐心。船上最贵的东西不一定是装备，有时候是全家人终于有半天在同一个地方做同一件事。
+
+CTA
+
+想安排 Rice Lake 租船或了解 Harris Boat Works 的 rental、service、launch、slip 和 marina 服务，可以从 Harris Boat Works 开始。已经有自己的船、正在考虑 Mercury outboard 或 repower，可以到 MercuryRepower.ca 先看透明报价。
+
+FAQ
+
+多伦多华人家庭去 Rice Lake 租船钓鱼，需要 PCOC 吗？
+
+在加拿大操作带 motor 的 recreational boat 通常需要 proof of competency；Transport Canada 也说明电动 trolling motor 包括在内 (Transport Canada PCOC). HBW 页面也写明 rental driver 需要 boat operator’s card，所以预订前应先确认租船要求 (Harris Boat Works).
+
+租船时 Rental Boat Safety Checklist 可以代替 PCOC 吗？
+
+Transport Canada 说明 completed Rental Boat Safety Checklist 可以作为 proof of competency，但只在租船期间有效，不是永久 PCOC (Transport Canada PCOC). 实际租船政策还要按 rental operator 的要求执行。
+
+Free fishing weekend 是不是完全不用管规则？
+
+不是。Ontario 说明免费钓鱼期间 Canadian residents 可以不用买 fishing licence，但仍必须遵守 conservation licence catch limits、size limits、sanctuaries 和 fishing regulations，并携带政府签发、有姓名和生日的证件 (Ontario free family fishing).
+
+Rice Lake 适合第一次带孩子钓鱼吗？
+
+适合，但前提是你把行程安排得现实一点。第一次带孩子上船，安全、天气、零食、防晒、厕所计划和行程长度，比钓鱼技术更重要。
+
+我英文不好，可以先看中文规则吗？
+
+可以。Ontario 提供 Traditional Chinese fishing regulations summary，说明它包含 recreational fishing licences、open seasons、catch limits 和 southern Ontario fishing zones (Ontario Traditional Chinese fishing regulations). 但具体当天规则仍应查当年官方页面和对应 FMZ。
+
+租船钓鱼应该带什么？
+
+带政府证件、需要的 licence/proof、合适衣物、防晒、水、食物、手机充电、基本钓具和耐心。安全装备要求要按船只和法律执行，Transport Canada Safe Boating Guide 列出不同长度 pleasure craft 的 minimum safety equipment requirements (Transport Canada Safe Boating Guide).
+
+HBW 在哪里？
+
+Harris Boat Works 位于 Gores Landing, Ontario，在 Rice Lake 服务 boaters；官网列出 boat rentals、boat launch、slips、storage、winterization、service 和 sales 等服务 (Harris Boat Works).
+
+Schema notes
+
+Use BlogPosting.
+
+Use FAQPage with every FAQ above.
+
+Add ImageObject for the checklist visual.
+
+Add Organization publisher as Harris Boat Works.
+
+Link service/rental CTA to https://www.harrisboatworks.ca; repower CTA to https://mercuryrepower.ca.`,
+  },
+  {
+    slug: 'ontario-first-time-boat-rental-safety-checklist',
+    title: '安省第一次租船/开船安全清单：救生衣、船牌、10HP 和常见误区',
+    seoTitle: '安省第一次租船开船安全清单',
+    description: '安省华人第一次租船或开船前必看：PCOC、Rental Boat Safety Checklist、PCL、10HP 门槛、救生衣、安全装备和常见误区。',
+    image: '/lovable-uploads/hero-zh-ontario-first-time-boat-rental-safety-checklist.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'How-To',
+    readTime: '10 分钟',
+    keywords: ['第一次租船', '安大略省船只安全', 'Rental Boat Safety Checklist', 'PCOC', 'Transport Canada', '华人新手'],
+    content: `# 安省第一次租船/开船安全清单：救生衣、船牌、10HP 和常见误区
+
+在安省第一次租船或开船，先别急着研究“开多快”。你需要先分清楚 PCOC、Rental Boat Safety Checklist、PCL 和 fishing licence。Transport Canada 说，操作带 motor 的 recreational boat 需要 proof of competency，PCOC 只是其中一种；如果船有一个或多个 engine，总马力至少 10HP，并主要在加拿大水域使用，通常还需要 Pleasure Craft Licence number 显示在船头两侧 (Transport Canada PCOC, Transport Canada PCL).
+
+先把 4 个东西分清楚
+
+名称
+
+中文理解
+
+管什么
+
+容易搞错的地方
+
+PCOC
+
+Pleasure Craft Operator Card
+
+操作人是否有基本 boating safety 知识
+
+不是纸印一张就可以；Transport Canada 说明 paper/electronic copy of a PCOC is not acceptable (Transport Canada PCOC).
+
+Rental Boat Safety Checklist
+
+租船安全清单
+
+租船期间的 proof of competency 形式之一
+
+只对该次 rental period 有效，不是长期证件 (Transport Canada PCOC).
+
+PCL
+
+Pleasure Craft Licence
+
+船只识别号码，类似车牌
+
+PCL 不是 proof of ownership，也不同于 PCOC (Transport Canada PCL).
+
+Fishing licence
+
+钓鱼证
+
+钓鱼是否合法、可钓鱼种/数量等
+
+它不是开船证，也不是船牌。Ontario 中文 fishing regulations summary 包含 licences、seasons、catch limits 和 fishing zones (Ontario Traditional Chinese fishing regulations).
+
+10HP 门槛到底是什么意思？
+
+Transport Canada 说明，如果 recreational pleasure craft 有一个或多个 engine，总马力至少 10 horsepower / 7.5 kW，并且主要在加拿大水域使用，通常需要 Pleasure Craft Licence (Transport Canada PCL). 这个 licence number 必须显示在船头两侧，作用类似汽车 licence plate，但不是 ownership proof (Transport Canada PCL).
+
+这也是为什么很多小船会出现 9.9HP 的马力配置。不是因为 9.9 比 10.0 有神秘东方玄学，而是 10HP 是法规上非常重要的门槛。
+
+船上安全装备：最低要求不是最佳准备
+
+Transport Canada Safe Boating Guide 列出 pleasure craft 的 minimum safety equipment requirements，包括每个人一件 lifejacket 或 PFD、reboarding device、至少 15 m 的 buoyant heaving line 等项目，并按船长和类型列出不同要求 (Transport Canada Safe Boating Guide). 安全装备表是最低线，不是“有这些就一定适合今天出门”的保证。
+
+第一次上船，建议你把安全装备分成三类：
+
+法律和船只要求：PFD、抛绳、bailer/manual pump、sound-signalling device、navigation lights、fire extinguisher 等，按船和使用场景确认。
+
+当天实际需要：天气、风、温度、孩子、老人、是否傍晚回来、手机电量。
+
+常识装备：水、防晒、帽子、小毛巾、垃圾袋、备用衣服。
+
+安全装备最怕“船上有，但不知道在哪里”。如果真需要时还在翻座椅下面，那就不叫准备，叫寻宝。
+
+租船前问清楚这些问题
+
+谁可以开？
+
+问清楚 rental operator 对 driver 的要求。HBW 官网说明 rental driver 需要 boat operator’s card (Harris Boat Works). 如果你打算让朋友轮流开，别默认每个人都符合要求。
+
+有没有安全说明？
+
+第一次租船，要认真听 dock staff 的说明。包括启动、熄火、trim、靠码头、浅水、返航时间、紧急联系、加油或 fuel policy。
+
+可以去哪里，不建议去哪里？
+
+不同湖区有浅水、weed、rock、channel、speed/no-wake 区域。第一次不要把“探索”当成任务。你的目标是安全回来，不是证明 Google Maps 也会迷路。
+
+华人新手最常见的 8 个误区
+
+把汽车驾照当开船证：汽车驾照不是 PCOC。
+
+以为 free fishing weekend 等于没有规则：免费期间仍要遵守 regulations、catch limits、size limits 和 sanctuaries (Ontario free family fishing).
+
+只带成人救生衣：孩子需要合适尺寸的 PFD。
+
+不看风，只看太阳：太阳好不代表湖面好。
+
+第一次就安排太久：先做短一点、成功率高一点的行程。
+
+船上东西堆太多：杂物越多，移动越乱。
+
+不问返航流程：几点回来、在哪里靠、谁帮忙、晚了怎么办，都要问。
+
+用朋友经验替代官方规则：规则每年可能更新，水体也有例外。
+
+HBW 的建议
+
+第一次租船或开船，不要把安全看成麻烦。安全不是为了吓人，是为了让这一天真的好玩。你把证件、装备、天气和规则提前处理好，上船以后才有空间享受 Rice Lake，而不是一路担心“我们是不是少带了什么”。
+
+CTA
+
+如果你计划在 Rice Lake 租船或安排 marina 服务，可以从 Harris Boat Works 开始。已有 Mercury 或 Mercruiser engine 需要 service，请使用 https://hbw.wiki/service 提交服务请求。
+
+FAQ
+
+PCOC 和 PCL 有什么区别？
+
+PCOC 是操作人的 proof of competency 形式之一，PCL 是船只的 licence number；Transport Canada 明确说明 Pleasure Craft Licence 不同于 Pleasure Craft Operator Card (Transport Canada PCL).
+
+租船可以不用 PCOC 吗？
+
+Transport Canada 说明 completed Rental Boat Safety Checklist 可以在 rental period 期间作为 proof of competency，但实际租船 operator 仍可有自己的要求 (Transport Canada PCOC). HBW 页面说明 rental driver 需要 boat operator’s card (Harris Boat Works).
+
+10HP 以下的船就完全不用管吗？
+
+不是。10HP 是 PCL 的重要门槛，但 proof of competency、安全装备、天气、航行规则和 fishing regulations 仍然要根据实际情况确认 (Transport Canada PCOC, Transport Canada PCL).
+
+船上每个人都需要救生衣吗？
+
+Transport Canada Safe Boating Guide 的 minimum safety equipment requirements 包括每个人一件 lifejacket 或 PFD，具体装备还取决于船长、船型和使用情境 (Transport Canada Safe Boating Guide).
+
+安省 free fishing weekend 可以租船钓鱼吗？
+
+免费钓鱼期间，Canadian residents 可以不用买 fishing licence，但仍要遵守 fishing regulations，并不自动免除 boating proof of competency、rental operator rules 或安全装备要求 (Ontario free family fishing, Transport Canada PCOC).
+
+我应该用中文规则还是英文规则？
+
+可以先看 Ontario 的 Traditional Chinese fishing regulations summary 理解大方向，但实际出行前仍建议核对官方英文 FMZ 页面、当年 summary 和水体例外 (Ontario Traditional Chinese fishing regulations).
+
+Schema notes
+
+Use BlogPosting.
+
+Use FAQPage.
+
+Add HowTo only if the final CMS page keeps the safety checklist as step-by-step instructions.
+
+Add ImageObject for checklist infographic.`,
+  },
+  {
+    slug: 'mercury-outboard-service-repair-toronto-ontario',
+    title: '多伦多华人船主 Mercury 船外机维修保养指南',
+    seoTitle: '多伦多华人 Mercury 船外机维修保养',
+    description: '给多伦多和安省华人船主的 Mercury 船外机维修保养指南：启动困难、报警、冬化、保养记录、送修前准备和 HBW 服务范围。',
+    image: '/lovable-uploads/hero-zh-mercury-outboard-service-repair-toronto-ontario.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Maintenance',
+    readTime: '9 分钟',
+    keywords: ['Mercury 维修', 'outboard service', '多伦多船只维修', 'Rice Lake service', 'Harris Boat Works', '船外机保养'],
+    content: `# 多伦多华人船主 Mercury 船外机维修保养指南
+
+如果你在 GTA 或安省有 Mercury 船外机需要维修或保养，先不要只发一句“发动不了，多少钱修？”最有用的信息是 motor model、serial number、horsepower、症状、报警声音、什么时候发生、油箱和电池情况、上次 winterization 和 maintenance 记录。Harris Boat Works 是 Rice Lake 的 Mercury Marine Platinum dealer，并在官网说明提供 Mercury Outboards 和 MerCruiser engines 的 sales、service 和 factory-backed support (Harris Boat Works).
+
+For engine repairs, we only service Mercury and Mercruiser.
+
+为什么 Mercury 船外机维修要讲清楚症状
+
+船外机问题常常不是一个“坏了”的问题，而是一串线索。启动困难可能是电池、燃油、火花、kill switch、fuel line、seasonal storage 或操作步骤。报警可能和温度、油压、传感器、SmartCraft 信息或维护状态有关。你给的信息越具体，service team 越能判断下一步。
+
+华人船主常见的沟通问题不是不愿意讲，而是不知道哪些信息重要。英文术语也会让人紧张。其实送修不需要写论文，只要把有用线索整理出来。
+
+送修前先准备这些信息
+
+信息
+
+为什么重要
+
+Motor brand、model、horsepower
+
+确认是不是 HBW 服务范围内的 Mercury/Mercruiser。
+
+Serial number
+
+Mercury 零件、保修、型号细节通常需要 serial number。
+
+船型和长度
+
+同一个 motor 在不同 hull 上表现不同。
+
+问题什么时候发生
+
+冷启动、热启动、加速、怠速、转弯、上 plane、满载时，意义不同。
+
+有没有 beep/alarm
+
+报警次数、长短、是否有 SmartCraft/VesselView message 很重要。
+
+电池年龄和状态
+
+很多“发动机问题”从弱电池开始，尤其春天。
+
+燃油多久了
+
+旧油、进水、冬季储存都会影响启动和运行。
+
+上次 winterization
+
+安省冬天不客气。跳过 winterization，春天常常会用账单把你教育回来。
+
+视频或照片
+
+短视频比“声音怪怪的”有用。声音怪怪的这个描述，技术含量和“车不太对劲”差不多。
+
+最常见的 Mercury service 场景
+
+春天发动不了
+
+春天 no-start 很常见，尤其是电池弱、燃油旧、冬季储存不理想或启动流程不熟。不要连续硬打 starter。先检查基本项，再提交 service request。
+
+运行时报警或 beeping
+
+报警不要忽略。把报警模式、出现转速、是否伴随限速或 power loss 记录下来。不要只说“它叫了”。船外机不是无缘无故在湖上发表意见。
+
+Overheating 或出水异常
+
+如果怀疑 overheating，停止硬跑。冷却水、impeller、intake blockage、浅水 weeds 都可能相关。继续跑可能把小问题变成大问题。
+
+Winterization 和 seasonal maintenance
+
+安省船主不能把 winterization 当成“可有可无”。HBW 官网列出 winterization 和 storage 服务，并说明为 Rice Lake boaters 提供 service and repair (Harris Boat Works).
+
+GTA 船主为什么愿意去 Rice Lake 找 HBW
+
+从 Toronto、Markham 或 Richmond Hill 到 Rice Lake 不是最近的选择。问题是，船外机维修不是只看地图距离。你要找的是懂 Mercury、懂本地 freshwater 使用、懂 seasonal storage 和 winterization 的服务团队。
+
+HBW 的定位不是“最大 showroom”。HBW 的价值是 Rice Lake 上做了很久、Mercury/Mercruiser 熟、愿意把事情讲清楚。对不想在 dealer game 里猜价格、猜范围、猜谁负责的客户来说，这很重要。
+
+什么情况适合立刻提交 service request？
+
+Motor 无法启动，而且你已经确认 kill switch、battery connection 和 fuel basics。
+
+出现持续 alarm、overheating、power loss 或异常震动。
+
+Lower unit 有明显 leak、impact 或 gear oil 问题。
+
+春季第一次启动后运行不稳。
+
+你不知道上次 winterization 是否正确完成。
+
+你买了 used boat/motor，想做 baseline inspection。
+
+Service request 怎么写才有用？
+
+一个好的 service request 可以这样写：
+
+Mercury 90HP FourStroke，serial number XXXXX。2021 年 motor。春天第一次启动，starter 转但不点火。电池今年充过，油箱里可能是去年秋天的油。没有 SmartCraft message，没有长 beep。船在 Rice Lake 附近。想请 HBW 检查 no-start 和 spring commissioning。
+
+这种信息比“修一下多少钱”有用得多。维修不是猜谜节目，线索越好，判断越快。
+
+CTA
+
+需要 Mercury 或 Mercruiser engine repair/service，请到 https://hbw.wiki/service 提交 service request。正在考虑换新 Mercury outboard 或 repower，可以到 MercuryRepower.ca 先看透明报价。
+
+FAQ
+
+HBW 维修所有品牌船外机吗？
+
+For engine repairs, we only service Mercury and Mercruiser. HBW 官网说明 Harris Boat Works 是 Mercury Marine Platinum dealer，并销售和服务 Mercury Outboards 与 MerCruiser engines (Harris Boat Works).
+
+Mercury 船外机发动不了，最先检查什么？
+
+先检查 kill switch、battery connection、电池电量、fuel level、fuel line、gear position 和是否有 alarm/message。不要长时间连续打 starter；如果基本项确认后仍不启动，提交 service request。
+
+我在多伦多，可以找 HBW 吗？
+
+可以，但要根据船的位置、运输方式和服务类型安排。HBW 位于 Gores Landing on Rice Lake，官网说明服务 Rice Lake boaters，并提供 service、repair、winterization 和 storage 等服务 (Harris Boat Works).
+
+送修前一定要知道 serial number 吗？
+
+强烈建议准备。Mercury 零件、型号识别和 service history 判断通常需要 serial number。找不到也可以说明，但有 serial number 会省时间。
+
+Mercury 报警还能继续开吗？
+
+不建议硬开。报警是 engine 告诉你有问题或需要检查。记录报警模式、转速、运行状态和任何显示信息，然后提交 service request。
+
+春天 no-start 是不是一定很严重？
+
+不一定。春天 no-start 很多时候和电池、燃油、储存、连接或基础维护有关。但不要因为“可能不严重”就一直硬试，先把症状记录清楚。
+
+旧船旧马达应该修还是 repower？
+
+看 hull condition、motor age、repair estimate、未来使用计划和预算。维修可以解决局部问题；repower 是重新投资整套动力系统。想看 Mercury repower 方向，可以用 MercuryRepower.ca 先了解选项。
+
+Schema notes
+
+Use BlogPosting.
+
+Use FAQPage.
+
+Add Service schema if the page is used as a service landing page.
+
+Include service CTA as https://hbw.wiki/service.`,
+  },
+  {
+    slug: 'ontario-free-family-fishing-rice-lake-chinese-guide',
+    title: '安省免鱼牌周末：华人家庭第一次去 Rice Lake 钓鱼前要知道什么',
+    seoTitle: '安省免鱼牌周末 Rice Lake 中文指南',
+    description: '安省免费家庭钓鱼日中文指南：2026 日期、谁可以免鱼牌、哪些规则仍然适用、Rice Lake 家庭钓鱼准备和租船注意事项。',
+    image: '/lovable-uploads/hero-zh-ontario-free-family-fishing-rice-lake-chinese-guide.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guides',
+    readTime: '10 分钟',
+    keywords: ['免费钓鱼', '安大略省 family fishing', 'Rice Lake', '华人家庭', '钓鱼证', 'Ontario fishing'],
+    content: `# 安省免鱼牌周末：华人家庭第一次去 Rice Lake 钓鱼前要知道什么
+
+Ontario 2026 年免费家庭钓鱼时间包括 February 14-16、May 9-10、June 20-21 和 June 27-July 5；这些期间 Canadian residents 可以不买 fishing licence 去钓鱼，但仍必须遵守 conservation licence catch limits、size limits、sanctuaries 和 fishing regulations，并携带显示姓名和生日的政府证件 (Ontario free family fishing). 简单说：免鱼牌不是免规则。鱼牌可以免，规矩不能免，鱼也不会因为你带孩子来就主动排队上钩。
+
+2026 安省免费钓鱼日期
+
+免费钓鱼期间
+
+2026 日期
+
+Family Fishing Weekend
+
+February 14-16, 2026
+
+Mother’s Day Weekend
+
+May 9-10, 2026
+
+Father’s Day Weekend
+
+June 20-21, 2026
+
+Family Fishing Week
+
+June 27-July 5, 2026
+
+这些日期来自 Ontario 官方 free family fishing 页面 (Ontario free family fishing).
+
+谁可以在这些日子免 fishing licence？
+
+Ontario 官方页面写明，Canadian residents 可以在这些 free fishing periods 免费钓鱼，不需要买 fishing licence (Ontario free family fishing). 但这不是对所有人、所有情况、所有规则的全面豁免。
+
+出发前建议确认：
+
+你是否属于 Canadian resident。
+
+每个人年龄和身份是否符合 licence exemption。
+
+钓鱼地点属于哪个 Fisheries Management Zone。
+
+当天目标鱼种是否 open season。
+
+是否有 size limits、catch limits、sanctuaries 或 waterbody exceptions。
+
+免费期间仍要遵守哪些规则？
+
+Ontario 官方页面明确说明，免费钓鱼期间仍要遵守 conservation licence catch limits、size limits、sanctuaries 和 fishing regulations，并携带政府签发、显示姓名和生日的 permit 或 identification card (Ontario free family fishing).
+
+这点对第一次带孩子钓鱼的家庭很重要。不要以为“免鱼牌”就等于“随便钓”。真正安全、舒服、不会惹麻烦的一天，通常来自出发前 10 分钟把规则查清楚。
+
+Rice Lake 家庭钓鱼为什么适合这个主题
+
+Rice Lake 对 GTA 华人家庭来说，是一个很自然的第一次 boating/fishing day trip 选择。你可以把它当成从 Toronto 区域出发的湖上体验，而不是直接进入“买船、拖船、停船、winter storage”的完整船主世界。
+
+HBW 位于 Rice Lake 的 Gores Landing，并在官网列出 boat rentals、fishing boats、pontoon boats、launch ramp、slips、winterization、storage、service 和 repair 等服务 (Harris Boat Works). 对第一次来的家庭来说，有租船和 marina 支持，比自己摸索所有东西更现实。
+
+第一次家庭钓鱼怎么准备？
+
+先查规则，再查天气
+
+规则决定能不能钓、钓什么、留多少。天气决定你要不要出门。两个都重要，顺序不要反。
+
+给孩子准备“成功体验”
+
+孩子第一次钓鱼，不一定要钓大鱼。让他们知道怎么拿竿、怎么等、怎么安全坐船、怎么处理失望，比强行追求 trophy fish 更有意义。
+
+不要把免费钓鱼日安排得太满
+
+免费钓鱼日通常人会更多。出发、停车、租船、上船、返航都可能比平时更慢一点。把行程排松，心情会好很多。
+
+带足防晒、水和零食
+
+湖上太阳比你在停车场感觉更强。华人家庭很会准备吃的，这是优点。只是别把船变成移动火锅店，空间还是要留给人。
+
+如果同时租船，需要注意什么？
+
+免费钓鱼只处理 fishing licence 的问题，不自动处理开船资格。Transport Canada 说明，操作带 motor 的 recreational boat 需要 proof of competency，包括 electric trolling motor；completed Rental Boat Safety Checklist 只在 rental period 有效 (Transport Canada PCOC). HBW 页面也写明 rental driver 需要 boat operator’s card (Harris Boat Works).
+
+所以正确顺序是：
+
+查 free fishing date。
+
+查 fishing regulations 和 FMZ。
+
+确认租船 driver 要求。
+
+预订船。
+
+看天气。
+
+准备安全和家庭用品。
+
+HBW 的建议
+
+免费钓鱼周末最适合“第一次试试看”的家庭。不要把它做成压力很大的考试。做好规则、安全和预订，给家人一个轻松的 Rice Lake day trip。钓到鱼当然好；没钓到，至少你们有一天一起在湖上，而不是在家里分散刷五个屏幕。
+
+CTA
+
+想计划 Rice Lake 租船、launch、slip 或 marina day trip，可以从 Harris Boat Works 开始。已经有船、正在考虑 Mercury motor 或 repower，可以到 MercuryRepower.ca 看透明报价。
+
+FAQ
+
+2026 年安省免费钓鱼日期是什么？
+
+Ontario 官方列出的 2026 free family fishing dates 是 February 14-16、May 9-10、June 20-21 和 June 27-July 5 (Ontario free family fishing).
+
+免费钓鱼期间是不是不用任何证件？
+
+不是。Ontario 官方说明免费期间仍要携带政府签发、显示姓名和生日的 permit 或 identification card (Ontario free family fishing).
+
+免费钓鱼期间可以随便留鱼吗？
+
+不可以。免费期间仍要遵守 conservation licence catch limits、size limits、sanctuaries 和 fishing regulations (Ontario free family fishing).
+
+Rice Lake 属于哪个 fishing zone？
+
+出行前应查当年 Ontario Fishing Regulations Summary 和相关 Fisheries Management Zone 页面。FMZ 17 页面覆盖 Kawartha-area 多个水体和例外规则，并提醒 zone-wide seasons and limits 可能受 species exceptions、waterbody exceptions 和 fish sanctuaries 影响 (Ontario FMZ 17).
+
+免费钓鱼周末租船还需要开船资格吗？
+
+需要按 boating rules 和 rental operator requirements 执行。Transport Canada 说明操作带 motor 的 recreational boat 需要 proof of competency；免费钓鱼不等于免费开船资格 (Transport Canada PCOC).
+
+华人家庭第一次去，适合选哪个免费钓鱼时间？
+
+通常晚春到夏初更适合家庭日游，因为天气和孩子舒适度更容易安排。具体还要看天气、船只 availability、规则和家庭时间。
+
+需要提前订船吗？
+
+建议提前。HBW 官网说明 boat rentals 可以 reserve online，并提供 fishing boat 和 pontoon boat rental 信息 (Harris Boat Works).
+
+Schema notes
+
+Use BlogPosting.
+
+Use FAQPage.
+
+Consider Event schema only for official free fishing periods if implemented carefully and not implying HBW hosts those provincial events.
+
+Add ImageObject for date infographic.`,
+  },
+  {
+    slug: 'toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas',
+    title: '多伦多出发钓鱼去哪：Rice Lake、Lake Simcoe、Kawarthas 怎么选',
+    seoTitle: '多伦多出发钓鱼：Rice Lake vs Simcoe',
+    description: '多伦多华人钓鱼去哪？比较 Rice Lake、Lake Simcoe 和 Kawarthas：家庭租船、岸钓、冰钓、规则、车程心态和第一次 boating/fishing 选择。',
+    image: '/lovable-uploads/hero-zh-toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guides',
+    readTime: '16 分钟',
+    keywords: ['Rice Lake', 'Lake Simcoe', 'Kawarthas', '多伦多钓鱼', '湖区对比', '华人钓友'],
+    content: `# 多伦多出发钓鱼去哪：Rice Lake、Lake Simcoe、Kawarthas 怎么选
+
+如果你从 GTA 出发，Rice Lake 更适合家庭租船、pontoon day trip、第一次湖上钓鱼和后续 boat ownership/repower 需求；Lake Simcoe 更适合很多人熟悉的 open-water fishing 和 ice fishing 话题，但规则和水体例外需要认真查；Kawarthas 更像一个大区域，适合已经愿意花时间探索不同 lake、lock、cottage 和 boat-use scenarios 的人。无论去哪，都不要只看别人群里一句“这里好钓”，要查 Ontario fishing regulations、FMZ 和当年水体例外 (Ontario Traditional Chinese fishing regulations, Ontario FMZ 16, Ontario FMZ 17).
+
+先问自己：你要的是钓鱼，还是湖上一天？
+
+很多 GTA 华人说“想去钓鱼”，其实背后有三种完全不同的需求。
+
+第一种是认真钓鱼的人：他们关心鱼种、季节、钓点、风向、船、电子设备和规则。第二种是家庭出游的人：他们关心孩子、停车、厕所、租船、安全、天气、会不会太累。第三种是潜在船主：他们想先体验湖上生活，然后才会开始研究 boat、motor、Mercury、storage 和 service。
+
+这三种人需要的内容不一样。把它们混在一起，就会得到最常见的失败行程：大人累、孩子烦、鱼没钓到、回家还堵车。
+
+三个方向怎么选？
+
+选择
+
+最适合谁
+
+优点
+
+注意事项
+
+Rice Lake
+
+第一次家庭租船、GTA day trip、pontoon/fishing boat 体验、未来 boat ownership/repower buyer
+
+HBW 位于 Rice Lake，提供 boat rentals、launch、slips、service、winterization、storage 等 marina 服务 (Harris Boat Works).
+
+出发前确认 rental requirements、weather、operator card 和 fishing regulations。
+
+Lake Simcoe
+
+熟悉钓鱼的人、ice fishing 关注者、想比较不同季节鱼种的人
+
+社群讨论多，冬季和 Lake Simcoe 相关内容多。
+
+Lake Simcoe 在 FMZ 16 页面有 waterbody exception；不能只看 general zone rules (Ontario FMZ 16).
+
+Kawarthas
+
+已经愿意探索多个湖区、locks、cottages 和 boating routes 的人
+
+选择多，适合长期 boating/fishing lifestyle。
+
+区域大，不同水体规则和条件不同，FMZ 17 页面也提醒有 exceptions、sanctuaries 和 bait rules (Ontario FMZ 17).
+
+Rice Lake：适合家庭和第一次租船体验
+
+Rice Lake 的优势不是“每个人都一定钓爆”。没有任何诚实的 marina 应该这么承诺。它的优势是对 GTA 家庭来说比较容易理解：湖、租船、钓鱼、pontoon、marina、一天行程、未来如果喜欢再继续研究船和 motor。
+
+HBW 的 Rice Lake 位置让这条路线更有商业意义。家庭先来租船，后来可能考虑 boat ownership；已有船主可能需要 service、winterization、storage 或 Mercury repower。这是一个自然漏斗，不是硬推销。
+
+Lake Simcoe：适合更认真查规则的人
+
+Lake Simcoe 对 GTA 华人钓友很有存在感，尤其是 ice fishing 和不同鱼种讨论。但越热门的湖，越不能靠二手信息。Ontario FMZ 16 页面列出 Lake Simcoe、Lake Couchiching、Green River、Trent Canal System 等 waterbody exceptions，说明 Lake Simcoe 相关规则需要按官方页面仔细确认 (Ontario FMZ 16).
+
+如果你的目标是 ice fishing 或特定鱼种，Lake Simcoe 可能是更自然的搜索起点。但如果你的目标是家庭第一次租船、pontoon day trip、Rice Lake boating lifestyle，Simcoe 不一定是最顺的第一步。
+
+Kawarthas：适合把 boating 当长期生活方式的人
+
+Kawarthas 不是一个单一钓点，而是一整套 lake、river、lock、cottage 和 boating culture。对已经有船、想探索、愿意学习规则的人，这是好地方。对第一次家庭出行的人，它可能选择太多，反而不知道从哪里开始。
+
+FMZ 17 页面说明该 zone 里有多处 Kawartha-area waterbodies，并提醒 zone-wide seasons and limits 会受到 species exceptions、waterbody exceptions 和 sanctuaries 影响 (Ontario FMZ 17). 简单说，Kawarthas 很好，但不要把一个湖的经验自动套到另一个湖。
+
+如果你是第一次从 GTA 出发，怎么选？
+
+选 Rice Lake，如果你想要家庭租船和简单湖上体验
+
+你想带孩子、父母或朋友上船，想要 marina 支持，想先体验一天，再决定以后是否买船、换 motor 或 repower。这个时候 Rice Lake + HBW 是很自然的入口。
+
+选 Lake Simcoe，如果你是带目标的钓友
+
+你已经知道要钓什么、什么季节、什么规则、是否 ice fishing，并愿意花时间研究 waterbody exceptions。这个时候 Simcoe 更像专业钓友路线。
+
+选 Kawarthas，如果你想长期探索
+
+你有船、准备多次出行、愿意学不同湖区。Kawarthas 的价值不是一天打卡，而是慢慢变熟。
+
+华人钓友搜索内容时最容易踩的坑
+
+只看中文攻略，不看官方规则：中文攻略帮助理解，但官方规则才是规则。
+
+只看别人钓到鱼，不看他们去的季节：同一个湖，不同时间完全不同。
+
+只看车程，不看当天体力：开车、上船、晒太阳、钓鱼、返航、再开回 GTA，真的会累。
+
+把岸钓和船钓混为一谈：两者装备、规则、安全、成本、体验都不同。
+
+不知道自己是游客还是未来船主：游客找 day trip，船主找 service、storage、repower 和长期信任。
+
+HBW 的建议
+
+如果你第一次带家人从 GTA 出发，先选一个简单、可控、有支持的 Rice Lake day trip。等你真的喜欢湖上生活，再研究 boat ownership、Mercury outboard、storage 和 repower。别一开始就把自己推到“买船、拖船、停船、修船、冬化”全套流程里。 boating 很好玩，但它不需要第一天就把你变成项目经理。
+
+CTA
+
+想计划 Rice Lake 租船、launch、slip 或 marina visit，可以从 Harris Boat Works 开始。已有船、正在考虑 Mercury outboard 或 repower，可以到 MercuryRepower.ca 看透明报价。
+
+FAQ
+
+多伦多出发第一次钓鱼，Rice Lake 和 Lake Simcoe 哪个更适合？
+
+如果是家庭租船和第一次湖上体验，Rice Lake 更容易做成可控 day trip。Lake Simcoe 更适合已经知道目标鱼种、季节和规则的人，尤其要查 FMZ 16 的 Lake Simcoe waterbody exceptions (Ontario FMZ 16).
+
+Kawarthas 是不是比 Rice Lake 更好？
+
+不是“更好”，而是不同。Kawarthas 是更大的 boating/fishing 区域，适合长期探索；Rice Lake 对第一次租船和 HBW 相关服务更直接。
+
+去这些地方钓鱼需要查什么规则？
+
+至少查 Ontario Fishing Regulations Summary、对应 Fisheries Management Zone、open seasons、catch limits、size limits、sanctuaries 和 waterbody exceptions。Ontario 也提供 Traditional Chinese fishing regulations summary 帮助中文读者理解大方向 (Ontario Traditional Chinese fishing regulations).
+
+Lake Simcoe 的规则为什么要特别查？
+
+Ontario FMZ 16 页面列出 Lake Simcoe 和相关水体的 waterbody exception，因此不能只看 general zone rules (Ontario FMZ 16).
+
+Rice Lake 租船适合不会开船的人吗？
+
+不应该把“不会”当成没关系。操作带 motor 的 recreational boat 通常需要 proof of competency，rental operator 也会有自己的要求；HBW 页面说明 rental driver 需要 boat operator’s card (Transport Canada PCOC, Harris Boat Works).
+
+如果我以后想买船或换 Mercury motor，应该从哪里开始？
+
+先从真实使用场景开始：家庭、钓鱼、载重、湖区、storage、service 和预算。考虑 Mercury outboard 或 repower 时，可以用 MercuryRepower.ca 先看透明报价。
+
+中文攻略够不够？
+
+中文攻略适合理解问题和做计划，但规则、日期和限制应以 Ontario 和 Transport Canada 官方页面为准 (Ontario free family fishing, Transport Canada PCOC).
+
+Schema notes
+
+Use BlogPosting.
+
+Use FAQPage.
+
+Add ItemList or comparison table markup only if the CMS supports clean structured output.
+
+Add ImageObject for comparison visual.
+
+Batch implementation checklist
+
+Item
+
+Required action
+
+Language
+
+Publish as Simplified Chinese first; add Traditional variants later if possible.
+
+Hreflang
+
+Use zh-Hans-CA for Simplified Chinese Canada pages if supported.
+
+Internal links
+
+Link all five posts to a Mandarin/GTA boating hub. Link rental posts to HBW rentals/general page. Link Mercury service post to https://hbw.wiki/service. Link Mercury/repower mentions to https://mercuryrepower.ca.
+
+Add BlogPosting and FAQPage to every post. Add ImageObject once visuals are created.
+
+Visuals
+
+Generate one useful infographic per post; do not use generic stock photos as the only visual.
+
+Fact-checking
+
+Recheck Ontario dates yearly. Recheck Transport Canada requirements if regulations change.
+
+Tone
+
+Keep the copy useful, human, local, and honest. Avoid over-polished corporate Chinese.
+
+Sources used in this batch
+
+Factual statements about PCOC, proof of competency, electric trolling motors, Rental Boat Safety Checklist, and acceptable documents come from Transport Canada PCOC. Factual statements about Pleasure Craft Licence, 10HP/7.5kW threshold, bow display, PCL vs PCOC, and registration caveats come from Transport Canada PCL. Safety-equipment references come from the Transport Canada Safe Boating Guide. Ontario 2026 free fishing dates and licence-exemption caveats come from Ontario free family fishing. Chinese-language fishing-regulation availability comes from Ontario Traditional Chinese fishing regulations. FMZ 16 and Lake Simcoe exception references come from Ontario FMZ 16. FMZ 17 and Kawartha-area exception/bait references come from Ontario FMZ 17. Harris Boat Works facts about Rice Lake, rentals, boat operator card requirement, services, Mercury/Legend positioning, winterization, storage, launch, slips, and history come from Harris Boat Works.`,
+  },
 ];
 
 export function getMandarinArticleBySlug(slug: string): BlogArticle | undefined {
