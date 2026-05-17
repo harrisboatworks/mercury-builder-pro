@@ -1528,6 +1528,9 @@ We do this as part of most fishing-boat repowers at HBW. For standalone kicker i
 
 ---
 
+
+![Mercury 90 main and 9.9 ProKicker mounted on a trolling rig at dawn](/lovable-uploads/inline/inline-prokicker-trolling-setup.png)
+
 ## Mistakes We See Every Season
 
 **Skipping the kicker.** Customer plans to use the main motor for trolling. Two seasons in, they've found their own answer. The ProKicker install is cheaper and easier as part of a repower than retrofitted later.
@@ -3533,6 +3536,9 @@ If you're considering a kicker for a backup or occasional slow-trolling use, not
 
 ---
 
+
+![Tournament-rigged bass boat with Mercury Pro XS and 9.9 ProKicker on a calm Ontario dawn](/lovable-uploads/inline/inline-bass-tournament.png)
+
 ## Warranty
 
 Mercury outboards sold in Canada come with a standard 3-year limited warranty covering defects in materials and workmanship. Annual service by an authorized Mercury dealer is required to maintain warranty validity.
@@ -3749,6 +3755,9 @@ Real-world fuel consumption depends on hull design, load, prop selection, mounti
 If your fuel burn is significantly above these ranges for your setup, prop pitch, trim, or hull condition is the first place to look.
 
 ---
+
+
+![Mercury SmartCraft fuel-flow gauge showing live GPH reading at cruising RPM](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
 
 ## Ethanol and Fuel Quality
 
@@ -3979,6 +3988,9 @@ This is the most common Ontario center console application.
 **Motor:** Mercury 250 Pro XS V8 (4.6L) for fishing; 300 Verado V8 if quiet ride at cruise matters more than hole-shot.
 **Performance:** 50 to 60 mph two-up.
 **Use case:** Lake Ontario salmon tournament days, bigger-water Bay of Quinte.
+
+
+![24-foot center-console fishing boat with twin Mercury Verado V8 outboards](/lovable-uploads/inline/inline-center-console-twin-verados.png)
 
 ### 25 to 28 ft twin-engine
 **Motor:** Twin 250 Pro XS V8 for performance; twin 300 Verado V8 for premium ride.
@@ -10092,6 +10104,9 @@ Most 150 EXLPT repowers at HBW land in the $23,000, $36,000 CAD range all-in, be
 Mercury also makes a 150 Pro XS V6, a different engine architecture (V6 instead of inline 4) optimized for performance applications. This motor is the right call for tournament-level bass fishing where acceleration to morning spots matters, or performance hulls built for the V6's weight.
 
 For typical recreational use, family fishing, cruising, casual water sports, the FourStroke 150 is the better value. The Pro XS V6 earns its premium on tournament applications.
+
+
+![Mercury 115 HP and 150 HP FourStroke side-by-side on identical transoms](/lovable-uploads/inline/inline-115-vs-150-comparison.png)
 
 ### The Mistakes We See Every Season
 
@@ -21235,6 +21250,9 @@ These are real-world figures from boats rigged by Harris Boat Works. Conditions,
 - **40 HP:** Only on a 16 ft pontoon, lightly loaded, and ideally with the Command Thrust gearcase. Even then, expect a slow planing time.
 - **60 HP:** Fine on 18 ft. The 60 Command Thrust is the popular call, pontoons reward the bigger gear ratio more than fishing boats do.
 
+
+![Mercury 40 HP and 60 HP FourStroke side-by-side on identical 16-foot aluminum boat transoms](/lovable-uploads/inline/inline-40-vs-60-comparison.png)
+
 ### 20 ft pontoon
 
 The 60 CT is the minimum we recommend on a 20 ft pontoon with four people aboard. Below that, the boat won't plane reliably when loaded. We see the consequences of undersizing pontoons every season, lugging motors, slow times getting on plane, premature wear.
@@ -23060,6 +23078,9 @@ Before we recommend a repower, we walk around the boat. Here's what we look at:
 If the hull passes, we'll quote the repower. If it doesn't, we'll tell you, even if that costs us the motor sale.
 
 ---
+
+
+![Aging aluminum fishing boat in service bay with old motor removed and repower quote on the gunwale](/lovable-uploads/inline/inline-repower-decision-moment.png)
 
 ## Trade-In Is the Third Option
 
@@ -27406,6 +27427,9 @@ Take a typical 24 ft pontoon, full cottage load, eight to ten adults, coolers, k
 Approximate, of course. Actual numbers depend on the specific hull, the specific load, the specific prop, and conditions on the day. The point isn't the exact seconds — it's the size of the gap. CT changes how the boat behaves with weight in it, and that's what matters on a pontoon used for the job pontoons are used for.
 
 ---
+
+
+![Standard Mercury gearcase next to Command Thrust gearcase with the larger prop visible](/lovable-uploads/inline/inline-gearcase-comparison.png)
 
 ## Prop selection on Command Thrust
 
