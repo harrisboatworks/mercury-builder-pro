@@ -77,11 +77,15 @@ Within this family, the differences are calibration and prop matching — same p
 
 The V6 Pro XS comes with full SmartCraft compatibility, advanced rigging options, and Mercury's most aggressive throttle mapping. This is serious performance equipment, not casual recreational power.
 
+![Mercury Pro XS V6-rigged tournament bass boat at speed on an Ontario lake, two anglers visible](/lovable-uploads/inline-pro-xs-bass-boat-action.png)
+
 ## The V8 family — 250 / 300 Pro XS
 
 The 250 and 300 Pro XS use Mercury's 4.6L V8 powerhead. These are large motors for large boats — performance pontoons in the 24-26 ft class, fast fibreglass cruisers, offshore-style fishing rigs.
 
 For most Ontario freshwater applications, the V8 Pro XS is overkill. Where it earns its money: water-ski tournament boats, wakeboard boats, performance pontoons that actually run fast with full loads, fishing rigs targeting Bay of Quinte / Lake Simcoe / Great Lakes shorelines where you need to move between spots fast.
+
+![Mercury Pro XS rigging detail showing digital throttle, hydraulic steering, and SmartCraft gauges on a tournament-spec bass boat](/lovable-uploads/inline-pro-xs-rigging-detail.png)
 
 ## Pro XS vs FourStroke — the actual decision
 
