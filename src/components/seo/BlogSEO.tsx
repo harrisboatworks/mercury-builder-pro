@@ -47,16 +47,28 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "headline": article.seoTitle ?? article.title,
         "description": cleanDescription,
         "image": `${SITE_URL}${article.image}`,
-        "author": {
-          "@type": "Person",
-          "name": "Jay Harris",
-          "jobTitle": "3rd-Generation Owner",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "Harris Boat Works",
-            "@id": `${SITE_URL}/#organization`
-          }
-        },
+        "author": /troubleshoot|alarm|wont-start|overheating|winterization|smartcraft-alarm|service-cost|electrical/.test(article.slug)
+          ? {
+              "@type": "Organization",
+              "name": "Harris Boat Works Service Team",
+              "url": `${SITE_URL}/about/jay-harris`,
+              "parentOrganization": {
+                "@type": "Organization",
+                "name": "Harris Boat Works",
+                "url": "https://harrisboatworks.ca"
+              }
+            }
+          : {
+              "@type": "Person",
+              "name": "Jay Harris",
+              "jobTitle": "Owner, Harris Boat Works",
+              "url": `${SITE_URL}/about/jay-harris`,
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Harris Boat Works",
+                "url": "https://harrisboatworks.ca"
+              }
+            },
         "publisher": {
           "@type": "Organization",
           "name": "Harris Boat Works",
