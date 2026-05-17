@@ -1,6 +1,7 @@
 // src/lib/activityGenerator.ts
 import { templates, firstNames, ontarioCities, motorModels, timePhrases } from "@/lib/activityMessages";
 import { regionalReferences } from "@/lib/canadian-messages";
+import { GOOGLE_REVIEWS_FALLBACK } from "@/config/googleReviews";
 
 // Deterministic PRNG utilities (xmur3 + mulberry32)
 function xmur3(str: string) {
