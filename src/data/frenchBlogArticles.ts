@@ -1118,6 +1118,14 @@ Réservez un diagnostic à [hbw.wiki/service](https://hbw.wiki/service). Harris 
 
 Téléphone : 905-342-2153
 
+---
+
+## Portée de service
+
+Si vous demandez un rendez-vous de service chez HBW, voici la limite importante à connaître :
+
+Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
+
 ---`,
     howToSteps: [
       { name: 'Vérifier la batterie', text: 'La tension au repos doit être de 12,4 V ou plus; la tension en démarrage doit rester au-dessus de 10,5 V. Nettoyez et resserrez les bornes. Les batteries marines durent de 4 à 6 ans; une batterie de 7 ans est en fin de vie peu importe les résultats. Une batterie faible cause de faux positifs sur tous les autres tests, alors remplacez-la avant de continuer.' },
