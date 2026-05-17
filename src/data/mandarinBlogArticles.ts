@@ -7641,6 +7641,826 @@ Fishing boat 和 pontoon 都需要 PCOC 吗？
 
 如果操作有马达的休闲船，一般需要 proof of competency；PCOC 是常见证明之一 (Transport Canada PCOC)。`,
   },
+  {
+    slug: 'toronto-chinese-boat-buying-guide-ontario',
+    title: '多伦多华人买船完整指南',
+    seoTitle: '多伦多华人买船完整指南',
+    description: '多伦多华人第一次在安省买船怎么开始？HBW 用中文讲清租船、PCOC、PCL、钓鱼船、pontoon、Mercury 马力、service、storage 和 repower。',
+    image: '/lovable-uploads/hero-zh-toronto-chinese-boat-buying-guide-ontario.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guides',
+    readTime: '11 分钟',
+    keywords: ['多伦多华人买船', 'GTA Chinese boat buying', 'Ontario boat buyer', '完整买船指南', 'Harris Boat Works', 'Mercury Platinum dealer'],
+    content: `# 多伦多华人买船完整指南：先别急着问最低价
+
+快速答案
+
+多伦多华人第一次在安省买船，最好的顺序不是先刷 listing，也不是先问“最低多少钱”。更好的顺序是：先租船体验，确认 PCOC 或 proof of competency，了解 Pleasure Craft Licence，决定 fishing boat 还是 pontoon，按真实用途选 Mercury horsepower，再把 service、storage、winterization 和未来 repower 成本一起算进去。
+
+Harris Boat Works 是 Gores Landing, Ontario 的 Rice Lake family marina，页面说明提供 boat sales、service、storage、winterization、rentals、Legend Boats、Mercury outboards 和 MerCruiser support，并且自 1947 年起服务 Rice Lake boaters (Harris Boat Works)。
+
+先别从船开始，先从你怎么用船开始
+
+很多第一次买船的人会问：“哪条船最好？”这个问题不够准确。真正该问的是：“我们家会怎么用这条船？”
+
+如果你住在 Markham、Richmond Hill、Scarborough、North York、Mississauga 或 Toronto，开车去 Rice Lake 或 Kawarthas 用船，你的使用方式可能是周末家庭出游、朋友聚会、钓鱼、cottage transport 或孩子第一次接触 boating。每一种用途适合的船都不一样。
+
+Fishing boat 适合认真钓鱼、换钓点、拖钓、收纳鱼具。Pontoon 适合家人、朋友、老人、孩子和舒服地在湖上待久一点。Used boat 可能省钱，但检查和文件很重要。Repower 适合 hull 很好但 motor 老了的船主。
+
+买船不是买一个周末玩具。它是买一套生活方式，也是一套维护计划。听起来没那么浪漫，但比买错船之后解释给家人听要好多了。
+
+第一步：先租一次
+
+如果你还没确定自己适合 fishing boat 还是 pontoon，先租一天。HBW 的 Rice Lake rentals 页面明确写着提供 “Pontoons and Fishing Boats”，并要求 “Driver of Boat Must Have a Boat Operator\'s License” (HBW Rice Lake Boat Rentals)。
+
+租船能回答 showroom 回答不了的问题：
+
+家里老人上船是否舒服。
+
+孩子是否喜欢。
+
+你到底会不会认真钓鱼。
+
+Pontoon 的空间是否更适合家庭。
+
+Fishing boat 的灵活性是否真的需要。
+
+从 GTA 开到 Rice Lake 的节奏是否适合你们家。
+
+一天 rental 的经验，可能比三周论坛争论更有用。论坛里每个人都很懂，尤其是没花你钱的人。
+
+第二步：先把 PCOC 和 PCL 搞清楚
+
+PCOC 是人。PCL 是船。
+
+Transport Canada 说明，在加拿大操作有 motor 的 recreational boat，一般需要 proof of competency；PCOC 是常见证明之一，而且 PCOC 有效期是 lifetime，但纸质或电子 copy 不能代替实体卡 (Transport Canada PCOC)。
+
+Transport Canada 也说明，如果 recreational pleasure craft 有一台或多台合计至少 10 horsepower 的 engine，并且主要在 Canadian waters 使用，通常需要 Pleasure Craft Licence；PCL 号码必须显示在船头两侧，而且 PCL 不是 proof of ownership (Transport Canada PCL)。
+
+文件
+
+管什么
+
+常见误区
+
+PCOC
+
+操作者是否有 proof of competency
+
+手机照片不等于实体卡
+
+PCL
+
+船只 identification
+
+PCL 不是 ownership proof
+
+Bill of sale
+
+交易证明
+
+卖家口头说清楚不够
+
+Insurance
+
+风险保障
+
+不是操作许可
+
+第三步：选船型
+
+Pontoon 适合谁
+
+Pontoon 通常适合家庭、朋友、老人、孩子、慢慢 cruising、湖上聊天和舒服地待一下午。很多华人家庭一开始以为自己要买 fishing boat，实际用起来发现全家更喜欢 pontoon。
+
+如果你们家每次出门都带 food、cooler、towels、kids gear、朋友和“这个也带上吧”的袋子，pontoon 很可能更现实。
+
+Fishing boat 适合谁
+
+Fishing boat 适合认真钓鱼、两三个人移动、找结构、换点、收纳鱼竿和更专注的 angling setup。Rice Lake 和 Kawarthas 有很强的 fishing appeal，但 fishing 也要按规则来。
+
+Ontario 的 fishing regulations summary 是 recreational fishing rules 的年度指南，涵盖 licences、open seasons、catch limits 和 southern Ontario fishing zones (Ontario Fishing Regulations Traditional Chinese)。
+
+第四步：选 Mercury horsepower
+
+不要只问“最大能装多少”。要看 hull rating、载重、用途、prop、rigging、shaft length、controls 和预算。HBW 的 Mercury page 列出 Mercury family 包括 Portable 2.5-20 HP、FourStroke 25-60 HP、EFI FourStroke 75-150 HP、Pro XS 115-300 HP、Verado 250-600 HP 和 SeaPro 40-500 HP，并说明 HBW stock Mercury outboards from 2.5-600 HP (HBW Mercury Outboards)。
+
+使用场景
+
+常见动力思路
+
+小 aluminum boat
+
+便携或中小马力 Mercury
+
+家庭 pontoon
+
+注重安静、载重、巡航和可靠性
+
+Fishing boat
+
+看 trolling、hole shot、载重和钓鱼方式
+
+Performance fishing
+
+可能考虑 Pro XS，但要看 hull 是否合适
+
+旧船 repower
+
+先确认 hull、transom、rating 和 rigging
+
+第五步：把 ownership 一起算进去
+
+买船不只是 purchase price。还要考虑：
+
+Insurance。
+
+PCOC 和 PCL。
+
+Safety gear。
+
+Trailer。
+
+Fuel。
+
+Service。
+
+Winterization。
+
+Storage。
+
+Launch。
+
+Future repower。
+
+HBW 页面说明提供 boat sales、service、repair、transient and seasonal boat slips、winterization、storage、boat rentals、Mercury and MerCruiser support (Harris Boat Works)。这就是为什么选 dealer 不只是看谁今天最低价。你买的不是一张 invoice，你买的是后面几年谁接电话、谁做 service、谁告诉你实话。
+
+HBW 的诚实建议
+
+如果你第一次买船，别让面子、朋友意见或 YouTube 评论区替你做决定。先租一次，确认家人真的喜欢，再选船型，再选 horsepower，再考虑 service 和 storage。
+
+Harris Boat Works 不是最大最闪的 dealer。HBW 的优势是 Rice Lake 本地经验、Mercury focus、family business since 1947、透明 repower quote 和长期 service 关系。买船这件事，信任比 showroom 灯光重要。
+
+还没确定船型，先看 HBW Rice Lake rentals。已经有船、想换 Mercury outboard，去 MercuryRepower.ca。需要 service、winterization 或 commissioning，提交 HBW service request。
+
+FAQ
+
+多伦多华人第一次买船，应该先买还是先租？
+
+如果不确定船型，先租。HBW 的 Rice Lake rentals 页面提供 pontoon 和 fishing boat rentals，可以先体验再决定 (HBW Rice Lake Boat Rentals)。
+
+PCOC 和 PCL 有什么区别？
+
+PCOC 是 operator 的 proof of competency。PCL 是船只 identification。Transport Canada 明确说 PCL 不同于 PCOC，而且 PCL 不是 proof of ownership (Transport Canada PCL)。
+
+Fishing boat 和 pontoon 哪个更适合家庭？
+
+大多数家庭、老人、孩子和朋友一起出门，pontoon 更舒服。认真钓鱼比例高，fishing boat 更合适。
+
+买 Mercury outboard 应该看什么？
+
+看 hull rating、用途、载重、rigging、shaft length、controls、prop 和预算。不要只看最大 horsepower。
+
+HBW 适合 GTA 华人买家吗？
+
+适合想要 Rice Lake、Kawarthas、Mercury outboard、rentals、service、storage 和 long-term support 的买家。HBW 位于 Gores Landing，服务 Rice Lake，并提供 boat sales、rentals、winterization、storage、Mercury and MerCruiser support (Harris Boat Works)。`,
+  },
+  {
+    slug: 'mercury-outboard-troubleshooting-chinese-ontario',
+    title: 'Mercury 船外机故障排查中文指南',
+    seoTitle: 'Mercury 船外机故障排查中文指南',
+    description: 'Mercury 船外机无法启动、beeping、过热、没力怎么办？HBW 用中文讲清安全排查、什么时候停止尝试、什么时候预约 Mercury/Mercruiser service。',
+    image: '/lovable-uploads/hero-zh-mercury-outboard-troubleshooting-chinese-ontario.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Maintenance',
+    readTime: '8 分钟',
+    keywords: ['Mercury 故障排查', 'outboard troubleshooting', '船外机不启动', 'SmartCraft alarm', '安省 Mercury service', 'HBW service'],
+    content: `# Mercury 船外机故障排查中文指南：先别一直拧钥匙
+
+快速答案
+
+如果 Mercury 船外机无法启动、持续 warning beep、疑似过热、明显没力、震动、闻到 fuel smell 或冷却水流异常，先停止硬试，记录症状，再预约专业检查。HBW 是 Rice Lake 的 Mercury repower and service destination，页面说明提供 Mercury outboards、professional installation、factory-trained techs、lake test 和 warranty registration 等 Mercury-related support (HBW Mercury Outboards)。
+
+最贵的故障排查方式，是一边说“再试一次”，一边把问题试大。船外机不是老电视，拍两下不会更好。
+
+先分清症状
+
+不要一上来就问“是不是坏了”。先把症状说清楚。
+
+症状
+
+先做什么
+
+不要做什么
+
+完全没反应
+
+检查 battery、kill switch、gear 是否在 neutral
+
+不要连续长时间 crank
+
+能转但不启动
+
+记录 fuel、battery、启动声音和是否有 warning
+
+不要一直试到电池没电
+
+Warning beep
+
+立刻减速或停止，记录 beep 模式和情况
+
+不要当作“可能没事”继续跑
+
+疑似过热
+
+停止运行，检查是否有冷却水流异常
+
+不要继续高速运行
+
+没力或转速异常
+
+记录 load、prop、fuel、天气和发生时间
+
+不要强行开回很远
+
+震动
+
+检查 prop 是否明显受损
+
+不要忽略 lower unit 或 prop 问题
+
+Fuel smell
+
+立刻重视，避免火源
+
+不要继续启动
+
+这不是让你自己修 motor。是让你给 service team 一个清楚的起点。清楚描述症状，通常比“它怪怪的”有用很多。
+
+无法启动：先看简单的
+
+Mercury outboard 无法启动，常见第一步不是拆东西，而是确认基础条件：
+
+Battery 是否有电。
+
+Battery terminals 是否松动或腐蚀。
+
+Kill switch 是否正确。
+
+Gear 是否在 neutral。
+
+Fuel 是否足够。
+
+Fuel line 和 tank vent 是否正常。
+
+是否有明显 fuel smell。
+
+是否有 warning beep 或 alarm。
+
+如果这些都正常，但 motor 还是不启动，就不要继续硬试。连续尝试可能让电池没电，也可能让真正的问题更难判断。
+
+For engine repairs, we only service Mercury and Mercruiser.
+
+Warning beep：不要忽略
+
+Warning beep 的意义不是“提醒你之后有空查一下”。它是在告诉你系统发现了某种需要注意的情况。不同 model、rigging 和 system 的 warning 可能不同，所以不要在网上随便找一个答案就套用到自己的 motor。
+
+正确做法：
+
+减速或停止。
+
+观察水流、温度、仪表和声音。
+
+记录 beep 出现时的速度、负载、天气、油量和操作。
+
+如果不确定，安排 service。
+
+HBW 的 Mercury page 说明 Mercury repower 和 installation 涉及 rigging、controls/cables、gauges as applicable、prop、lake test 和 warranty registration，这也说明现代 outboard 的问题常常不只是 motor 本体，还可能和 rigging、controls、gauges 或 prop setup 有关 (HBW Mercury Outboards)。
+
+疑似过热：立刻停
+
+如果你怀疑 outboard overheating，先停。不要继续高速运行来“看看会不会自己好”。过热问题可能和冷却水流、堵塞、impeller、thermostat、sensor 或其他系统有关。没有现场诊断，不应该猜。
+
+你可以记录：
+
+出现时间。
+
+当时速度。
+
+是否载重。
+
+冷却水流是否和平常不同。
+
+是否有 weeds、mud、shallow water 或 debris 可能影响水 intake。
+
+是否同时有 warning beep。
+
+这些信息比“它热了”更有用。Service team 不在船上，只能靠你带回来的线索开始。
+
+没力、起步慢、速度上不去
+
+Power loss 不一定是 engine failure。它可能和 prop、load、fuel、trim、hull condition、bottom fouling、rigging 或 motor health 有关。不要急着下结论。
+
+HBW 的 Mercury page 把 repower sizing 讲得很实际：如果不确定，会 based on hull、load 和 how you use the boat on Rice Lake 来 size motor；页面也提醒 check your capacity plate for max HP (HBW Mercury Outboards)。
+
+这也是为什么 troubleshooting 不能只看 horsepower。船、motor、prop 和 load 是一套系统。一个环节不对，整条船都会开始摆脸色。
+
+什么时候该考虑 repower
+
+如果 repair costs 开始接近新 motor 成本的一大部分，继续修不一定划算。HBW 的 Mercury page 直接写到，如果 repair costs start approaching half the cost of a new motor, repower is usually smarter，并说明 repower 可以带来 modern reliability、warranty 和 better fuel burn (HBW Mercury Outboards)。
+
+这不是说每个故障都该换 motor。很多问题值得修。但如果老 motor 每年都来一次新惊喜，repower 就不只是“买新玩具”，而是买回 summer reliability。
+
+如果你的 Mercury 或 Mercruiser 有启动、warning beep、过热、没力、震动或 fuel smell 问题，提交 HBW service request。如果你怀疑旧 motor 已经不值得继续修，去 MercuryRepower.ca 看 repower 方向。
+
+FAQ
+
+Mercury 船外机无法启动，我应该一直试吗？
+
+不应该。先检查 battery、kill switch、neutral、fuel 和明显 warning。连续长时间尝试可能让问题更糟，也会让诊断更乱。
+
+Mercury outboard warning beep 可以继续开吗？
+
+不要默认可以。先减速或停止，记录情况。如果不确定，安排 Mercury service。Warning beep 不是背景音乐。
+
+Mercury 船外机过热怎么办？
+
+先停止运行，记录水流、速度、载重、是否有 weeds 或 debris、是否有 warning beep。不要继续高速跑。
+
+没力是不是一定要换 motor？
+
+不一定。Power loss 可能和 prop、load、fuel、trim、hull、rigging 或 engine health 有关。先诊断，再决定 repair 或 repower。
+
+HBW 维修哪些引擎？
+
+For engine repairs, we only service Mercury and Mercruiser.`,
+  },
+  {
+    slug: 'rice-lake-fishing-season-guide-chinese',
+    title: '多伦多华人 Rice Lake 钓鱼季节指南',
+    seoTitle: 'Rice Lake 钓鱼季节中文指南',
+    description: '多伦多华人什么时候去 Rice Lake 钓鱼？HBW 用中文讲清春夏秋季节、Family Fishing、FMZ 17、钓鱼规则、租船和安全准备。',
+    image: '/lovable-uploads/hero-zh-rice-lake-fishing-season-guide-chinese.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'How-To',
+    readTime: '9 分钟',
+    keywords: ['Rice Lake 钓鱼季节', '安省钓鱼季节', '华人钓友', 'spring fishing', 'walleye opener', 'HBW 钓鱼指南'],
+    content: `# 多伦多华人 Rice Lake 钓鱼季节指南：先查规则，再开车
+
+快速答案
+
+多伦多华人去 Rice Lake 钓鱼，最重要不是先问哪里鱼最多，而是先确认 Ontario fishing regulations、FMZ 17、open season、catch limits、size limits、sanctuaries、licence 或 free family fishing period。Ontario 的 Fishing Regulations Summary 是 recreational fishing rules 的年度指南，涵盖 licences、open seasons、catch limits 和 southern Ontario fishing zones (Ontario Fishing Regulations Traditional Chinese)。
+
+Rice Lake 是好地方，但鱼不会因为你从 Markham 开了两个小时就自动上钩。规则也不会因为你第一次来就变温柔。
+
+先查规则，再安排周末
+
+Rice Lake 属于安省钓鱼管理体系的一部分，钓鱼规则要按 zone、species、season、limits、waterbody exceptions 和 sanctuaries 来看。Ontario 的 FMZ 17 页面说明，zone-wide seasons and limits 适用于 zone 内水域，除非有 species exceptions、waterbody exceptions 或 fish sanctuaries (Ontario FMZ 17)。
+
+这句话很重要：不要只问朋友“现在能不能钓”。朋友可能是好人，但朋友不一定是 regulation summary。
+
+2026 Free Family Fishing 日期
+
+Ontario 允许 Canadian residents 在一年中四个 free fishing periods 免买 fishing licence，但仍然必须遵守 conservation licence catch limits、size limits、sanctuaries 和 fishing regulations，并携带含姓名和出生日期的政府 ID (Ontario Free Family Fishing)。
+
+Free fishing period
+
+2026 dates
+
+Family Fishing Weekend
+
+February 14-16, 2026
+
+Mother’s Day Weekend
+
+May 9-10, 2026
+
+Father’s Day Weekend
+
+June 20-21, 2026
+
+Family Fishing Week
+
+June 27-July 5, 2026
+
+Free fishing 不等于 free-for-all。免 licence，不免规则。
+
+春季：兴奋可以，别乱来
+
+春天大家都想上水。水冷，天气变化快，船也刚从 winter storage 状态回来。春季 fishing trip 前要确认 boat safety gear、PCOC、PCL、weather、battery、fuel 和 motor condition。
+
+Transport Canada 说明，在加拿大操作有 motor 的 recreational boat 需要 proof of competency，PCOC 有效期是 lifetime，但 paper or electronic copy of a PCOC is not acceptable (Transport Canada PCOC)。
+
+如果是自己的船，春季第一次下水前别省略检查。如果是租船，HBW rental page 明确要求 driver has Boat Operator\'s License，并提供 Rice Lake pontoon and fishing boat rentals (HBW Rice Lake Boat Rentals)。
+
+夏季：家庭体验最好，但船流量也更高
+
+夏天适合家庭、朋友、孩子和第一次钓鱼体验。这个时候 pontoon rental 和 fishing boat rental 都很受欢迎。HBW 的 rentals 页面标题明确写着 Rice Lake Boat Rentals, Pontoons and Fishing Boats (HBW Rice Lake Boat Rentals)。
+
+夏天的问题不是没事做，是太多人想同一天做同一件事。提前看 availability、准备 PCOC、安全装备、sunscreen、water、snacks 和 fishing rules，会让整天顺很多。
+
+一个很现实的小建议：如果带孩子第一次钓鱼，不要把目标设成“必须钓到很多”。目标应该是安全、舒服、开心、愿意下次再来。鱼不是 KPI。
+
+秋季：安静，但要看天气和冬化时间
+
+秋天 Rice Lake 比夏天安静，很多船主喜欢这个节奏。但秋季也接近 winterization、storage 和 season close。不要把最后一次钓鱼安排到完全没有后手。
+
+HBW 页面说明提供 winterization、storage、transient and seasonal slips、service 和 repair (Harris Boat Works)。如果你的船在秋季还有 motor 问题，别把它留到春天。春天的问题会排队，秋天的问题还比较诚实。
+
+华人家庭第一次 Rice Lake 钓鱼建议
+
+先决定租 pontoon 还是 fishing boat。
+
+确认 operator licence requirement。
+
+查 Ontario fishing regulations。
+
+查 FMZ 17 和目标 species 的 season/limits。
+
+带政府 ID，尤其是 free fishing period。
+
+带足救生衣、水、防晒和衣物。
+
+不确定就问 marina，不要问一个“我以前都是这样”的朋友。
+
+想先体验 Rice Lake 钓鱼，查看 HBW Rice Lake rentals。已有 Mercury 或 Mercruiser 需要 service，提交 HBW service request。想换 Mercury outboard，去 MercuryRepower.ca。
+
+FAQ
+
+Rice Lake 钓鱼要 fishing licence 吗？
+
+通常需要，除非你符合 free family fishing period 等条件。即使在 free fishing period，也必须遵守 catch limits、size limits、sanctuaries 和 fishing regulations (Ontario Free Family Fishing)。
+
+Rice Lake 属于哪个 fishing zone？
+
+Rice Lake 要按 Ontario fishing regulations 和相关 zone 规则查询。FMZ 17 页面说明 zone-wide seasons and limits 之外，还要看 species exceptions、waterbody exceptions 和 fish sanctuaries (Ontario FMZ 17)。
+
+多伦多出发去 Rice Lake 钓鱼适合租船吗？
+
+适合。HBW 在 Rice Lake 提供 pontoon 和 fishing boat rentals，并要求 driver has Boat Operator\'s License (HBW Rice Lake Boat Rentals)。
+
+Free fishing 日期是不是不用管任何规则？
+
+不是。Free fishing 只是特定期间 Canadian residents 可以不买 fishing licence，但仍必须遵守 catch limits、size limits、sanctuaries 和 fishing regulations (Ontario Free Family Fishing)。
+
+带孩子第一次钓鱼，选 fishing boat 还是 pontoon？
+
+如果主要目标是家庭体验，pontoon 通常更舒服。如果主要目标是认真钓鱼，fishing boat 更合适。第一次不确定，先租再决定。`,
+  },
+  {
+    slug: 'boat-ownership-cost-ontario-chinese',
+    title: '安省华人 Boat Ownership Cost Guide',
+    seoTitle: '安省华人船主养船成本指南',
+    description: '安省买船后到底有哪些成本？HBW 用中文讲清 purchase price、PCOC、PCL、insurance、fuel、service、storage、winterization、trailer 和 repower。',
+    image: '/lovable-uploads/hero-zh-boat-ownership-cost-ontario-chinese.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guides',
+    readTime: '10 分钟',
+    keywords: ['船只持有成本', 'boat ownership cost Ontario', '华人船主预算', 'winterization 费用', 'HBW service cost', 'Mercury 维护成本'],
+    content: `# 安省华人 Boat Ownership Cost Guide：买船不是只买船
+
+快速答案
+
+安省买船后的真实成本不只是 purchase price。还要考虑 PCOC、Pleasure Craft Licence、insurance、safety gear、fuel、trailer、service、winterization、storage、moorage、launch、repairs 和未来 repower。HBW 提供 boat sales、service、repair、boat rentals、winterization、storage、slips、Mercury outboards 和 MerCruiser support (Harris Boat Works)。
+
+如果一个 boat deal 看起来便宜得像捡到宝，先别急着开心。船很少免费送你惊喜，但它很擅长晚一点给你 invoice。
+
+买船不是只买船
+
+第一次买船的人最容易只看两个数字：船价和月供。真实 ownership 是一整套系统。
+
+成本类别
+
+为什么要算
+
+Purchase price
+
+买船本身
+
+Taxes and fees
+
+交易和注册相关
+
+PCOC
+
+Operator proof of competency
+
+PCL
+
+船只 identification
+
+Insurance
+
+风险保障
+
+Safety gear
+
+救生衣、required equipment
+
+Fuel
+
+使用越多越明显
+
+Service
+
+保养和问题处理
+
+Winterization
+
+安省冬天不能忽略
+
+Storage
+
+室外、室内、marina、trailer 都不同
+
+Trailer
+
+Tires、bearings、lights、ownership
+
+Repower
+
+旧 motor 或长期升级计划
+
+这张表不是吓你。它是让你买得清醒。清醒买船，通常比冲动买船便宜。
+
+PCOC 和 PCL 的成本逻辑
+
+Transport Canada 说明，操作有 motor 的 recreational boat 需要 proof of competency，PCOC 有效期是 lifetime，但 paper or electronic copy of a PCOC is not acceptable (Transport Canada PCOC)。
+
+Transport Canada 也说明，10 HP 或以上、主要在 Canada waters 使用的 pleasure craft 通常需要 PCL，PCL 号码要显示在船头两侧，并且 PCL 不是 proof of ownership (Transport Canada PCL)。
+
+这些不是大成本，但它们是 ownership 的基础。如果第一步文件都乱，后面会很烦。
+
+Service 和 winterization 是正常成本，不是坏消息
+
+很多新船主把 service 当作“出问题才花钱”。更好的看法是：service 是保护 boating season 的成本。安省 boating season 短，错过一个周末就很可惜。
+
+HBW 页面说明提供 service、repair、winterization、storage、transient and seasonal boat slips (Harris Boat Works)。如果你买 Mercury 或 Mercruiser，service 关系尤其重要。
+
+For engine repairs, we only service Mercury and Mercruiser.
+
+Storage 和 winterization 要提前想
+
+很多 GTA 买家在春天买船时很兴奋，到了秋天才想起：“这船冬天放哪？”如果你没有 cottage、driveway、trailer 或合适 storage plan，秋天会变得很现实。
+
+Storage 不是“找个空地放着”。你要考虑 cover、water drainage、battery、trailer、snow load、security、access 和春天 launch convenience。HBW 是 full-service marina，提供 winterization and storage，适合 Rice Lake and Kawarthas boaters (Harris Boat Works)。
+
+Fuel、trailer 和安全装备：小项加起来不小
+
+Fuel 是最容易被低估的 operating cost。Trailer 也不是一次性存在，它有 tires、bearings、lights、brakes if applicable、ownership 和 maintenance。Safety gear 也不能随便凑。
+
+Transport Canada 的 Safe Boating Guide 按 boat type 和 length 列出最低 safety equipment 要求，船主要按自己船型核对 (Transport Canada Safe Boating Guide)。
+
+安全装备不是为了给 inspector 看。它是为了你真的需要时能用。这个道理很简单，只是很多人到用的时候才想起来。
+
+Repower 是长期成本，也是机会
+
+如果 hull 很好但 old outboard 不可靠，repower 可能比买新船更合理。HBW 的 Mercury page 说明，如果 hull is solid，repower 是提升 reliability、fuel economy 和 performance 的方式之一，不用买整条新船；页面还列出 repower pricing 通常包括 motor、rigging、controls/cables、gauges as applicable、prop、removal、installation、lake test 和 warranty registration (HBW Mercury Outboards)。
+
+这就是为什么 ownership cost 不能只看今年。买船时就要想：这条船三年后、五年后还值不值得继续维护？如果答案是 yes，repower 可能是未来选项。
+
+HBW 的透明建议
+
+不要只问“最低价”。问：
+
+What is included?
+
+What is not included?
+
+Who services it?
+
+Where will it be stored?
+
+What happens in fall?
+
+What happens if the motor starts acting up?
+
+If the motor gets old, is the hull worth repowering?
+
+HBW 的 Mercury page 说明 repower includes removal、installation、lake test 和 warranty registration 等内容，透明列出包含项比一句“great deal”更有用 (HBW Mercury Outboards)。
+
+想看 Mercury repower 方向，去 MercuryRepower.ca。需要 service、winterization 或 storage，提交 HBW service request。还没确定要不要买船，先看 HBW Rice Lake rentals。
+
+FAQ
+
+安省养船最大的隐藏成本是什么？
+
+通常不是某一个项目，而是 service、winterization、storage、fuel、trailer 和时间成本加在一起。买船前就应该把这些放进预算。
+
+PCOC 是一次性的吗？
+
+Transport Canada 说明 PCOC valid for life，但纸质或电子 copy 不被接受 (Transport Canada PCOC)。
+
+PCL 是 ownership proof 吗？
+
+不是。Transport Canada 说明 PCL 是 identification，不是 proof of ownership (Transport Canada PCL)。
+
+旧船什么时候该考虑 repower？
+
+如果 hull 很好，但 motor 老、维修频繁或不可靠，可以考虑 repower。HBW 的 Mercury page 说明 solid hull repower can improve reliability、fuel economy 和 performance without buying a whole new boat (HBW Mercury Outboards)。
+
+HBW 能帮哪些 ownership 项目？
+
+HBW 页面列出 boat sales、service、repair、boat rentals、winterization、storage、slips、Mercury outboards 和 MerCruiser support (Harris Boat Works)。`,
+  },
+  {
+    slug: 'gta-chinese-rent-to-buy-boat-roadmap',
+    title: 'GTA 华人从租船到买船路线图',
+    seoTitle: 'GTA 华人从租船到买船路线图',
+    description: 'GTA 华人想从租船升级到买船？HBW 用中文讲清先租 pontoon 或 fishing boat、拿 PCOC、选船型、选 Mercury、规划 service/storage 和 repower。',
+    image: '/lovable-uploads/hero-zh-gta-chinese-rent-to-buy-boat-roadmap.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guides',
+    readTime: '11 分钟',
+    keywords: ['rent to buy boat', 'GTA 华人租到买', 'first boat roadmap', 'rental experience', 'HBW rentals', 'Mercury buying path'],
+    content: `# GTA 华人从租船到买船路线图：先体验，再决定
+
+快速答案
+
+GTA 华人从租船升级到买船，最聪明的路线是：先在 Rice Lake 租 pontoon 或 fishing boat，确认家人真的喜欢，再准备 PCOC，比较船型，了解 PCL 和 ownership 文件，规划 service、winterization、storage 和 insurance，最后再选择 Mercury power 或 repower 方案。HBW 的 Rice Lake rentals 页面提供 pontoon and fishing boat rentals，并要求 driver has Boat Operator\'s License (HBW Rice Lake Boat Rentals)。
+
+先租不是犹豫。先租是聪明。尤其是当一条船的价格比一次 rental 高很多的时候，这个逻辑应该不难。
+
+路线图
+
+阶段
+
+你要做什么
+
+目的
+
+1. 租一次
+
+试 pontoon 或 fishing boat
+
+确认真实偏好
+
+2. 准备 PCOC
+
+取得 operator proof of competency
+
+合规开船
+
+3. 比较船型
+
+家庭、钓鱼、朋友、cottage use
+
+避免买错船
+
+4. 算 ownership
+
+storage、service、fuel、insurance、trailer
+
+避免预算误判
+
+5. 看 Mercury power
+
+horsepower、hull、load、use
+
+选对 motor
+
+6. 买船或 used boat
+
+查文件、condition、lake test
+
+降低风险
+
+7. 建立 service plan
+
+winterization、storage、repower
+
+长期靠谱
+
+第一次租船：别只看天气
+
+第一次租船当然要看天气，但更应该看家庭反应。谁开心？谁紧张？谁一直钓鱼？谁只想坐着聊天？谁五分钟问一次 snacks 在哪里？
+
+这些答案决定你该买 pontoon 还是 fishing boat。HBW 的 rental page 标题明确写着 Rice Lake Boat Rentals, Pontoons and Fishing Boats，并列出 weekday、Saturday 和 Sunday hours (HBW Rice Lake Boat Rentals)。
+
+租船当天也可以观察：
+
+你们喜欢慢慢 cruising 还是认真 fishing。
+
+孩子和老人是否 comfortable。
+
+你是否真的愿意负责 docking、fuel、cleaning 和 logistics。
+
+GTA 到 Rice Lake 的 drive 是否适合经常来。
+
+你更想拥有，还是一年租几次就够。
+
+PCOC：租船和买船都会遇到
+
+Transport Canada 说明，在加拿大操作有 motor 的 recreational boat 需要 proof of competency，PCOC 是常见证明之一；Rental Boat Safety Checklist 可以作为 proof of competency，但只在 rental period 有效 (Transport Canada PCOC)。
+
+这点对 GTA 华人很重要。租船时可能有 rental checklist，但如果你买船，不能把 rental checklist 当成长期解决方案。PCOC 是更长期的基础。
+
+从租 pontoon 到买 pontoon
+
+如果你租 pontoon 后发现全家都舒服，孩子愿意再来，老人上下船不紧张，朋友也开心，那 pontoon ownership 值得考虑。
+
+Pontoon buyer 要重点想：
+
+Seating and layout。
+
+Storage。
+
+Mercury horsepower。
+
+Trailer or marina storage。
+
+Winterization。
+
+Cover。
+
+Family comfort。
+
+Docking confidence。
+
+HBW 是 authorized Legend Boats dealer，并在网站上说明销售 affordable boats and pontoons，包括 fishing rigs and family pontoons (Harris Boat Works)。
+
+从租 fishing boat 到买 fishing boat
+
+如果你租 fishing boat 后发现自己真正喜欢找点、换点、操控、收纳鱼竿和认真钓鱼，那 fishing boat ownership 更合理。
+
+但 fishing buyer 要更认真看 Ontario fishing regulations。Ontario fishing regulations summary 是 recreational fishing rules 的年度指南，涵盖 licences、open seasons、catch limits 和 fishing zones (Ontario Fishing Regulations Traditional Chinese)。
+
+Fishing boat 不是“更小就更简单”。认真钓鱼会带来 electronics、batteries、trolling motor、storage、prop、trailer 和 service 的问题。别被 boat size 骗了，小船也会有大脾气。
+
+买之前先算 storage 和 service
+
+GTA 买家常见问题是：买的时候在春夏，很兴奋；秋天才发现 storage、winterization、trailer 和 service 都要安排。HBW 网站说明提供 winterization、storage、transient and seasonal slips、service and repair (Harris Boat Works)。
+
+买船前先问：
+
+冬天放哪里？
+
+谁 winterize？
+
+谁 service？
+
+如果 Mercury 或 Mercruiser 有问题，去哪？
+
+Trailer 是否能安全上高速？
+
+家里 driveway 或 cottage 是否能放？
+
+你是否愿意每年处理这些事？
+
+For engine repairs, we only service Mercury and Mercruiser.
+
+什么时候从买船转向 repower
+
+有些人不是从 rental 到 new boat，而是从 used boat 到 repower。比如你买到一条 hull 很好的二手船，但 old outboard 不可靠。HBW 的 Mercury page 说明，如果 hull is solid，repower 可以提升 reliability、fuel economy 和 performance without buying a whole new boat，并列出 repower 通常包括 motor、rigging、controls/cables、gauges as applicable、prop、removal、installation、lake test 和 warranty registration (HBW Mercury Outboards)。
+
+这条路线很适合懂得长期使用价值的买家。不是每个人都需要新船。有时候好 hull 加对的 Mercury power，就是最聪明的组合。
+
+HBW 的建议：先建立关系，再买更安心
+
+如果你从 GTA 来 Rice Lake，先租一次，跟 marina 建立一点真实接触，再决定买船。你会更清楚谁说话靠谱，谁会解释细节，谁只想今天成交。
+
+HBW 是 family-owned since 1947 的 Rice Lake marina，网站说明服务 generations of boaters from Toronto and Peterborough，并提供 rentals、sales、service、storage、winterization、Mercury and Legend support (Harris Boat Works)。
+
+第一步，先看 HBW Rice Lake rentals。如果你已经从 rental 走到 ownership，想看 Mercury outboard 或 repower，去 MercuryRepower.ca。如果已经有船，需要 service、winterization 或 storage，提交 HBW service request。
+
+FAQ
+
+GTA 华人第一次 boating，先租一天够吗？
+
+一天不一定够做最终决定，但足够发现很多真实偏好，比如 family comfort、boat type、driving confidence 和是否愿意长期 ownership。
+
+租船时的 Rental Boat Safety Checklist 可以长期用吗？
+
+不可以。Transport Canada 说明 completed Rental Boat Safety Checklist 只在 rental period 有效 (Transport Canada PCOC)。
+
+从租 pontoon 到买 pontoon，最该注意什么？
+
+要看 layout、载重、storage、Mercury horsepower、winterization、storage 和家人是否真的喜欢。
+
+从租 fishing boat 到买 fishing boat，最该注意什么？
+
+要看 fishing style、electronics、trolling needs、trailer、Mercury power、service plan 和 Ontario fishing regulations。
+
+HBW 能帮从租船到买船的整个过程吗？
+
+HBW 网站说明提供 boat rentals、boat sales、service、repair、winterization、storage、Mercury outboards、MerCruiser support 和 Legend Boats (Harris Boat Works)。`,
+  },
+
 ];
 
 export function getMandarinArticleBySlug(slug: string): BlogArticle | undefined {
