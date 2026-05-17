@@ -44,6 +44,8 @@ For an Ontario buyer, the FourStroke decision is rarely about whether to choose 
 
 Within each HP class, there are configuration options that matter more than most buyers realize: shaft length, electric vs manual start, tiller vs remote, standard vs Command Thrust gearcase, and rigging family compatibility.
 
+![Mercury FourStroke lineup from 40 HP through 150 HP arranged in ascending order at HBW service bay](/lovable-uploads/inline-fourstroke-hp-lineup.png)
+
 ## HP selection: how to actually decide
 
 The first rule: **don't exceed your capacity plate**. Your boat's Coast Guard capacity plate lists a maximum horsepower. Going over voids your insurance in most cases and creates real safety risk. We don't repower boats over their capacity rating, and no honest Mercury dealer should.
