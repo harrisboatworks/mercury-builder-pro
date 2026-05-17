@@ -5496,7 +5496,10 @@ Add ImageObject for the checklist visual.
 
 Add Organization publisher as Harris Boat Works.
 
-Link service/rental CTA to https://www.harrisboatworks.ca; repower CTA to https://mercuryrepower.ca.`,
+Link service/rental CTA to https://www.harrisboatworks.ca; repower CTA to https://mercuryrepower.ca.
+
+> 相关指南：[租船还是买船：第一步怎么走](/blog/zh/toronto-chinese-buying-first-boat-rent-or-buy)。
+`,
   },
   {
     slug: 'ontario-first-time-boat-rental-safety-checklist',
