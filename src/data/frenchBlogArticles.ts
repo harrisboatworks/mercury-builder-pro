@@ -2326,6 +2326,8 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
 
 Obtenez une soumission par le formulaire de contact à [mercuryrepower.ca](https://mercuryrepower.ca) ou appelez le 905-342-2153 pour la tarification Platinum actuelle par HP et durée.
 
+> **Note importante :** les détails de couverture, les prix et l'admissibilité peuvent changer selon le moteur, la date d'achat et le programme Mercury en vigueur. HBW confirme toujours la couverture exacte au moment de la soumission, et toutes les figures dans ce guide doivent être validées avec Mercury Canada avant achat.
+
 ---
 
 ## Ce qu'est Mercury Product Protection
