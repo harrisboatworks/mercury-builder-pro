@@ -29194,6 +29194,1438 @@ At minimum, turn the battery switch to OFF. Better is to remove the battery enti
 Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
 `,
   },
+
+  // ============================================
+  // SEO Sprint 2026-05-17 (new articles)
+  // ============================================
+  {
+    slug: 'mercury-dealer-peterborough-ontario-hbw',
+    title: 'Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake',
+    seoTitle: 'Mercury Dealer Peterborough | Repower & Service from Rice Lake',
+    description: 'Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28. Live online repower quotes, Otonabee + Kawartha service routine, family marina since 1947.',
+    image: '/lovable-uploads/hero-mercury-dealer-peterborough.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Dealer Locations',
+    readTime: '6 min read',
+    keywords: ['mercury dealer peterborough', 'peterborough mercury outboard', 'mercury platinum dealer ontario', 'kawartha mercury repower'],
+    content: `## Quick Answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 35 minutes south of Peterborough via Highway 28 South to County Road 9, then County Road 18 into Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote at the kitchen table before you make the drive. Family-owned since 1947, Mercury Platinum since 1965.
+
+## Peterborough boaters don't need to commute to the GTA for a Mercury dealer
+
+Most Peterborough boating questions get answered with a drive south through Lakefield or a drive west into the Kawarthas. The Mercury dealer math is a third option that a lot of Peterborough customers don't think about until they need a real conversation about a repower: HBW is 35 minutes south on Highway 28, and the route avoids any of the GTA congestion that makes a Mississauga or Burlington dealer a four-hour round trip.
+
+For Peterborough customers, the conversation we have most often is "I've been driving to Toronto for warranty work and it's becoming impractical." Same warranty network. Closer dealer. Easier scheduling.
+
+## What Peterborough boaters typically use HBW for
+
+The pattern we see from Peterborough regulars looks like this:
+
+- **Spring commissioning** — they drop off in April, pick up in May with the motor commissioned, tested, and ready for the Otonabee
+- **Mid-season service** — an impeller, a fuel issue, a SmartCraft fault that needs a Mercury Platinum diagnostic
+- **Repower decisions** — when the old motor is past mid-life and the math starts looking ugly, we walk through repower vs new boat vs sell with real numbers
+- **Fall winterization + storage** — boat stays with us through the off-season, gets full winterization, picks back up at spring launch
+- **Trade-in conversations** — the Trade-In Value Guide at mercuryrepower.ca gives a starting number; we close the actual valuation in person
+
+The Peterborough boaters who use us most don't come for the sale. They come because once you have a service relationship with a Mercury Platinum shop on Rice Lake, the rest of the year gets simpler.
+
+## Why Peterborough customers drive past closer shops
+
+Peterborough has marinas. Peterborough has general boat shops. What it has less of is Mercury Platinum dealer depth with full repower capacity.
+
+Platinum is Mercury's top dealer tier — it reflects parts inventory depth, technical training hours, warranty authorization, and SmartCraft diagnostic equipment. For routine work (oil changes, props, basic seasonal service) any qualified Mercury dealer is fine. For a full repower or a hard warranty case, Platinum-tier resolution paths matter.
+
+The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing — motor, rigging, controls, prop, install labour, HST — in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers.
+
+## Getting to Harris Boat Works from Peterborough
+
+Route: Highway 28 South through Lakefield, then County Road 9 east toward Gores Landing, then County Road 18 into the marina. Mostly highway and rural county road. Last 10 minutes is scenic Rice Lake country.
+
+Approximate drive time: 35 minutes outside rush hour. From east Peterborough (around Trent University), shave 5 minutes. From west Peterborough (toward Lakefield), the drive is slightly longer but still under 40 minutes.
+
+Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+Phone: 905-342-2153
+Service requests: hbw.wiki/service
+Motor pricing: mercuryrepower.ca
+
+## What HBW handles for Peterborough customers
+
+**Mercury outboard sales**
+Full Mercury lineup: 2.5 HP portables through 600 HP Verado (Verado is special-order — most Peterborough/Kawartha boats need FourStroke or Pro XS). Honest conversation about what fits your boat and your use case on the Otonabee, Trent system, or Kawartha lakes.
+
+**Repower service**
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial on Rice Lake before pickup. We don't deliver motors on trailers and hope they run right — every install gets water-tested before it leaves the shop.
+
+**Mercury parts and service**
+Platinum-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
+
+**Winter storage**
+Outdoor with shrinkwrap. No indoor storage. For Peterborough customers who boat on Rice Lake, the Otonabee, or anywhere in the Trent-Severn system, year-round storage at HBW means the boat is already close to launch in spring.
+
+**Live installed pricing online**
+mercuryrepower.ca, real Canadian dollars, full configuration. Build a quote before you leave Peterborough.
+
+## The Peterborough customer profile we see most often
+
+Peterborough boaters tend to know boats. The city has a deep boating culture — Trent University boaters, Otonabee day-cruisers, Kawartha cottagers, and a strong fishing community on the Kawartha chain. The call-for-quote runaround frustrates Peterborough buyers more than most because they've usually already done their research before they make the call.
+
+Our quote builder skips that step. The price you see is the price you pay. Three generations of HBW have built this business on returning customers and referrals, not on quota-driven sales tactics.
+
+## What we see at HBW
+
+The most common Peterborough question we get isn't about a specific motor — it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/should-i-repower-or-buy-new-boat-ontario) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
+
+For Peterborough customers specifically: the closer service relationship is the under-rated benefit. A repower done at HBW means the dealer who installed the motor is also the one doing your annual maintenance. That's how warranty issues get resolved fast.
+
+## How to make the drive worth it
+
+Build your quote at mercuryrepower.ca first. Takes about three minutes. You'll see real installed pricing for the motor and rigging options you're considering.
+
+If you have a specific service issue, submit a request at hbw.wiki/service. That's how 90% of our service intake starts — faster than a phone call, and it routes directly to the right person.
+
+For a motor purchase conversation, call ahead: 905-342-2153. We'll have someone ready when you arrive.
+
+## Frequently Asked Questions, Peterborough
+
+**Can I use HBW as my regular Mercury service shop, not just for a repower?**
+Yes. A 35-minute drive each way works for spring commissioning, mid-season service, and fall winterization. Many of our Peterborough regulars have made this their annual routine.
+
+**Do you service the Trent-Severn or just Rice Lake boats?**
+We service Mercury and Mercruiser outboards regardless of where the boat lives. Trent-Severn, Kawarthas, Lake Ontario, Otonabee — same shop, same diagnostics. For engine repairs, we only service Mercury and Mercruiser.
+
+**Is HBW closer than a Toronto dealer?**
+For most Peterborough addresses, yes — Toronto is roughly 90-120 minutes through GTA traffic; HBW is 35 minutes via Highway 28. The drive is also more pleasant.
+
+**What do you charge for a Mercury repower?**
+Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number based on your boat and the motor you're considering. Most repowers in our area land in the $13,000-$25,000 range including HST.
+
+**Can I store my boat with you year-round?**
+Yes. Outdoor storage with shrinkwrap. For Peterborough customers who launch on Rice Lake or the Trent system, year-round storage at HBW makes the launch logistics simpler.
+
+**Do you sell new boats too?**
+Yes. We're also a Legend Boats dealer. Aluminum fishing boats and pontoons primarily, all Mercury-rigged. Worth a conversation if you're in the new-boat market.
+
+Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+
+*Last reviewed: 2026-05-17.*
+`,
+  },
+  {
+    slug: 'mercury-dealer-cobourg-ontario-hbw',
+    title: 'Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake',
+    seoTitle: 'Mercury Dealer Cobourg | Repower & Service from Rice Lake',
+    description: 'Harris Boat Works is the closest Mercury Platinum dealer for Cobourg, ~25 minutes north via County Road 18. Live online repower quotes, Lake Ontario + Rice Lake service routine, family marina since 1947.',
+    image: '/lovable-uploads/hero-mercury-dealer-cobourg.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Dealer Locations',
+    readTime: '6 min read',
+    keywords: ['mercury dealer cobourg', 'cobourg mercury outboard', 'northumberland mercury dealer', 'rice lake mercury dealer'],
+    content: `## Quick Answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 25 minutes north of Cobourg via County Road 18. We handle Mercury outboard sales, repowers, parts, and service. Cobourg is one of the closer markets to HBW — for many Cobourg addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
+
+## Cobourg has Lake Ontario shoreline, but most local boating happens north
+
+The Cobourg waterfront has a real boating community — the harbour, the sailing club, the day-cruisers and small powerboats running out of the inner harbour. What it doesn't have, geographically, is a deep inland boating market within town limits. Most of Cobourg's serious recreational boating happens north, on Rice Lake and the Kawartha system, where the cottage country actually starts.
+
+That's why Cobourg customers end up driving 25 minutes north to HBW more often than they end up driving 90 minutes west to a Toronto-area dealer. The boat is going to live north anyway. The dealer being north makes the logistics work.
+
+## What Cobourg boaters typically use HBW for
+
+The Cobourg customer pattern splits into two groups:
+
+**The cottage owner** — has a place on Rice Lake or in the Kawarthas, keeps a boat there, drives up from Cobourg most weekends. Wants a dealer that knows the lake and isn't 90 minutes back into the GTA.
+
+**The town-based boater** — keeps the boat in Cobourg or trailers from Cobourg, uses Lake Ontario or makes regular trips to the Kawartha system. Wants quality Mercury service that doesn't involve a road trip.
+
+For both groups, the pattern is:
+
+- Spring commissioning and launch prep
+- Mid-season service (impellers, fuel system, SmartCraft diagnostics)
+- Repower decisions when the old motor is past mid-life
+- Fall winterization and storage
+- Trade-in evaluations when upgrading
+
+## The Mercury Platinum factor
+
+Cobourg has marinas. What it has less of is Mercury Platinum dealer depth.
+
+Platinum is Mercury's top dealer tier. It reflects parts inventory depth, technical training, warranty authorization, and full SmartCraft diagnostic capability. For routine service, any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, Platinum-tier resolution paths matter.
+
+The closer Cobourg dealers tend to be in lower Mercury tiers, or are non-Mercury shops. For warranty work on a newer Mercury, the dealer tier shows up in resolution speed.
+
+## Getting to Harris Boat Works from Cobourg
+
+Route: County Road 18 north from Cobourg, straight into Gores Landing. About as simple as a route gets — one road for most of the trip.
+
+Approximate drive time: 25 minutes outside rush hour. From the Cobourg harbour or downtown, allow 25-30 minutes. From north Cobourg, it's closer to 20 minutes.
+
+Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+Phone: 905-342-2153
+Service requests: hbw.wiki/service
+Motor pricing: mercuryrepower.ca
+
+## What HBW handles for Cobourg customers
+
+**Mercury outboard sales**
+Full Mercury lineup: 2.5 HP through 600 HP Verado. FourStroke for most Cobourg boats (cruising, fishing, family use). Pro XS for performance applications. Verado is special-order territory and rarely the right answer for a Lake Ontario or Rice Lake boat under 21 feet.
+
+**Repower service**
+Full job: motor, rigging, controls, prop selection, installation, sea trial on Rice Lake. For Cobourg customers, the convenience of having the install done where the boat will spend most of its season is meaningful.
+
+**Mercury parts and service**
+Platinum-tier parts depth and warranty authorization. SmartCraft diagnostics, complete service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
+
+**Winter storage**
+Outdoor with shrinkwrap. No indoor option. For Cobourg customers whose boat lives on Rice Lake during the season, year-round storage at HBW means the launch is already at the lake when spring arrives.
+
+**Trailer-in service for Lake Ontario boats**
+Cobourg customers whose boat lives on Lake Ontario can trailer up for major service. The 25-minute drive each way is short enough that a same-day service visit works for routine jobs.
+
+## What Cobourg buyers tell us most often
+
+The most common Cobourg feedback we hear is about the call-for-quote frustration at other dealers. Cobourg has a high concentration of informed buyers — people who've researched the motor they want, know the specifications, and just need a real number to compare. The phone-call-required pricing model frustrates this group the most.
+
+Our quote builder at mercuryrepower.ca shows real installed CAD pricing in three minutes. Motor, rigging, controls, prop, install labour, HST — all on one line. The price you see is the price you pay. For an informed Cobourg buyer, that alone justifies the 25-minute drive.
+
+## What we see at HBW
+
+The single most underrated benefit for Cobourg customers is the ongoing service relationship that comes from having the dealer 25 minutes away. Most repower customers don't think about this at purchase time — they're focused on the motor cost. Two years in, when the boat needs an impeller mid-season and parts are on the shelf at HBW, that proximity matters.
+
+The other thing we see specifically with Cobourg customers: many of them have already moved boat storage to the Rice Lake area because the Cobourg waterfront storage market is tight. Once the boat is already up here, HBW is the logical service shop.
+
+## How to start
+
+Build your quote at mercuryrepower.ca. Real installed CAD pricing in three minutes. No callback, no form, no negotiation theatre.
+
+If you have a service issue, submit a request at hbw.wiki/service. That routes directly to the right tech.
+
+For a motor purchase conversation, call: 905-342-2153.
+
+## Frequently Asked Questions, Cobourg
+
+**Is HBW the closest Mercury dealer to Cobourg?**
+For most Cobourg addresses, yes — we're 25 minutes north via County Road 18. Closer dealers may exist for specific motor brands or general boat service, but for Mercury Platinum-tier work, HBW is the nearest option.
+
+**Do you service boats that live on Lake Ontario, not Rice Lake?**
+Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer-in for service all season. For engine repairs, we only service Mercury and Mercruiser.
+
+**Can I get the boat picked up and dropped off?**
+HBW does NOT offer pickup or delivery — customers bring the boat to us. We have trailer parking on site for drop-offs.
+
+**What's the typical repower cost from a Cobourg perspective?**
+Depends on horsepower and current rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in the typical Cobourg boat range ($10,000-$25,000 hull value) land in the $13,000-$22,000 installed range.
+
+**Can I store my boat with you year-round?**
+Yes. Outdoor storage with shrinkwrap. For Cobourg customers whose boat already lives on Rice Lake or in the Kawarthas during the season, year-round storage at HBW is logistically clean.
+
+**Do you do warranty work on a Mercury I bought elsewhere?**
+Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork; we register the work in Mercury's central system.
+
+Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+
+*Last reviewed: 2026-05-17.*
+`,
+  },
+  {
+    slug: 'mercury-dealer-port-hope-ontario-hbw',
+    title: 'Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake',
+    seoTitle: 'Mercury Dealer Port Hope | Repower & Service from Rice Lake',
+    description: 'Harris Boat Works is the closest Mercury Platinum dealer for Port Hope, ~30 minutes north via County Road 18. Live online repower quotes, Ganaraska + Rice Lake service routine, family marina since 1947.',
+    image: '/lovable-uploads/hero-mercury-dealer-port-hope.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Dealer Locations',
+    readTime: '6 min read',
+    keywords: ['mercury dealer port hope', 'port hope mercury outboard', 'ganaraska mercury dealer', 'northumberland mercury platinum'],
+    content: `## Quick Answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW — for most Port Hope addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
+
+## Port Hope has the Ganaraska River and Lake Ontario, but most local boating happens inland
+
+Port Hope's waterfront is a working harbour with a smaller recreational boating community than Cobourg next door. The Ganaraska is a fishing destination (the salmon run is legendary) but it's not a powerboat river. Lake Ontario sailing and small powerboats use the harbour, but the deeper recreational boating market in this area runs north — Rice Lake, the Trent system, the Kawarthas.
+
+That's why Port Hope Mercury customers tend to end up at HBW. The boat is going north anyway, and the Mercury dealer being north makes the math work.
+
+## What Port Hope boaters typically use HBW for
+
+The Port Hope customer pattern looks like Cobourg's, with more weight toward the cottage owner profile:
+
+**The cottage owner** — has a property somewhere on Rice Lake or in the Kawarthas, keeps the boat at the cottage, drives up from Port Hope on weekends. Wants a dealer that knows the lake and is closer than the GTA.
+
+**The salmon fisherman** — Ganaraska River runs serious salmon traffic in fall. Port Hope anglers who own a boat often have a second boat or trailer-portable rig for Lake Ontario or Rice Lake. Mercury 9.9 ProKickers are common in this crowd.
+
+**The town-based boater** — keeps the boat in Port Hope or trailers from town, mixes Lake Ontario and inland trips. Wants Mercury service that doesn't require a road trip into the GTA.
+
+For all three groups, the pattern is:
+- Spring commissioning
+- Mid-season service (impellers, fuel system, SmartCraft work)
+- Repower decisions when the old motor is past mid-life
+- Fall winterization + storage
+- Trade-in valuations when upgrading
+
+## The Mercury Platinum factor
+
+Port Hope has a few general boat shops. What it doesn't have within town limits is a Mercury Platinum dealer.
+
+Platinum is Mercury's top dealer tier — parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
+
+For Port Hope customers with newer Mercury outboards under warranty, the closer Platinum dealer typically wins the long-term service relationship.
+
+## Getting to Harris Boat Works from Port Hope
+
+Route: County Road 28 north from Port Hope through Garden Hill, then County Road 18 east to Gores Landing. Mostly rural county road. Last 15 minutes is scenic Rice Lake country.
+
+Approximate drive time: 30 minutes outside rush hour. From the Port Hope waterfront, allow 30 minutes. From the Highway 401 area of Port Hope, slightly shorter.
+
+Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+Phone: 905-342-2153
+Service requests: hbw.wiki/service
+Motor pricing: mercuryrepower.ca
+
+## What HBW handles for Port Hope customers
+
+**Mercury outboard sales**
+Full Mercury lineup: 2.5 HP through 600 HP. For Port Hope customers, FourStroke covers most use cases (cruising, family fishing, pontoons, cottage boats). Pro XS for performance fishing or fast-running tournament setups. The Mercury 9.9 ProKicker is a Port Hope angler favourite — common on Lake Ontario salmon rigs and on Kawartha bass boats.
+
+**Repower service**
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, install, lake test on Rice Lake. Every install gets water-tested before pickup.
+
+**Mercury parts and service**
+Platinum-tier parts depth, warranty authorization, SmartCraft diagnostics. For engine repairs, we only service Mercury and Mercruiser.
+
+**Winter storage**
+Outdoor with shrinkwrap. No indoor option. For Port Hope customers whose boat already lives on Rice Lake or in the Kawarthas during the season, year-round storage at HBW makes the spring launch logistics simpler.
+
+**Trailer-in for Lake Ontario boats**
+Port Hope customers with Lake Ontario boats can trailer up for major service. Half-hour drive each way works fine for routine maintenance.
+
+## What Port Hope buyers typically ask first
+
+The most common Port Hope question is about the difference between a "fast price quote" and a real installed cost. Other dealers will give a verbal motor-only number over the phone. We give the full installed cost — motor, rigging, controls, prop, install labour, HST — at mercuryrepower.ca. Real Canadian dollars. No phone tag required.
+
+That transparency is what most Port Hope informed buyers respond to. The drive becomes worth it when the dealer treats the buyer like an adult who can read a number.
+
+## What we see at HBW
+
+The single most underrated benefit for Port Hope customers is the small-shop accountability. We're a 3-generation family marina on Rice Lake — when a Port Hope customer has a bad experience, word gets around fast. The Port Hope-to-Rice Lake recreational boating community is tight. Most of our Port Hope customers came in via referral from another Port Hope or Cobourg-area customer.
+
+The other thing we see consistently: the Mercury 9.9 ProKicker installs are disproportionate from Port Hope addresses. Salmon fishermen and Kawartha anglers in Port Hope tend to know exactly what they want and just need a dealer that can install it cleanly.
+
+## How to start
+
+Build your quote at mercuryrepower.ca. Real installed CAD pricing in three minutes.
+
+If you have a service issue, submit a request at hbw.wiki/service.
+
+For a motor purchase conversation, call: 905-342-2153.
+
+## Frequently Asked Questions, Port Hope
+
+**Is HBW the closest Mercury Platinum dealer to Port Hope?**
+For most Port Hope addresses, yes. We're 30 minutes north via County Road 28 and County Road 18. Closer non-Platinum Mercury shops may exist; for Platinum-tier service, HBW is the nearest option.
+
+**Do you service Lake Ontario salmon boats, not just inland?**
+Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs, we only service Mercury and Mercruiser.
+
+**Do you install Mercury 9.9 ProKickers?**
+Yes — we install a lot of them, especially for Port Hope and Cobourg anglers running primary motors with a ProKicker for trolling control. Full install includes mounting, linkage to the primary throttle, electrical, and steering tie-bar setup.
+
+**What's the typical Port Hope repower cost?**
+Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in our region land in the $13,000-$25,000 installed range including HST.
+
+**Can I store my boat with you year-round?**
+Yes. Outdoor with shrinkwrap. For Port Hope customers whose boat lives on Rice Lake or in the Kawarthas during the season, year-round storage at HBW makes the launch logistics simpler.
+
+**Do you offer pickup/delivery?**
+No. HBW does NOT offer pickup or delivery. Customers bring their boat to us. We have trailer parking on site for drop-offs.
+
+**Can I trade in my current boat or motor?**
+Yes. Trade-in valuations are done in person at HBW. The Trade-In Value Guide at mercuryrepower.ca gives a starting estimate; the actual valuation happens when we see the boat.
+
+Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+
+*Last reviewed: 2026-05-17.*
+`,
+  },
+  {
+    slug: 'mercury-dealer-lindsay-ontario-hbw',
+    title: 'Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake',
+    seoTitle: 'Mercury Dealer Lindsay | Repower & Service from Rice Lake',
+    description: 'Harris Boat Works is a Mercury Platinum dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake + Kawartha Lakes boaters service routine, online repower quotes, family marina since 1947.',
+    image: '/lovable-uploads/hero-mercury-dealer-lindsay.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Dealer Locations',
+    readTime: '6 min read',
+    keywords: ['mercury dealer lindsay', 'kawartha lakes mercury', 'lindsay mercury platinum', 'sturgeon lake mercury dealer'],
+    content: `## Quick Answer
+
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south. We handle Mercury outboard sales, repowers, parts, and service. For Kawartha Lakes boaters, Lindsay is the regional hub — and HBW is the closest Mercury Platinum dealer with full repower capacity. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
+
+## Lindsay is the Kawartha Lakes hub
+
+Lindsay sits at the centre of the Kawartha Lakes region, with Sturgeon Lake to the north, the Scugog River running through town, and the Trent-Severn Waterway connecting it all. The local boating community is significant — fishing, cruising, cottagers, water sports, the full mix. Boats in this region tend to spend more days on the water per year than anywhere else in southern Ontario.
+
+What Lindsay has less of is Mercury Platinum dealer depth with full repower capacity. The closer dealers tend to be in lower Mercury tiers or are non-Mercury shops. For a major repower or a complex warranty case, the dealer tier matters.
+
+## What Lindsay boaters typically use HBW for
+
+The Lindsay customer pattern centers on serious cottage and fishing use:
+
+**The Kawartha cottager** — has property on Sturgeon, Pigeon, or Buckhorn Lake, runs a 16-20 foot aluminum or pontoon. Wants a Mercury Platinum shop that can handle the seasonal service routine without disrupting the cottage time.
+
+**The serious angler** — Sturgeon Lake walleye and muskie fishing is legitimate. Anglers running Pro XS or FourStroke setups for tournament-grade work need dealer-tier diagnostics and parts depth that smaller shops don't carry.
+
+**The cruise-boat owner** — Trent-Severn cruisers running 24-foot inboard/outboard or larger need a Mercury MerCruiser shop. HBW handles MerCruiser sterndrives as well as outboards.
+
+For all three, the pattern is:
+- Spring commissioning before opening day
+- Mid-season service (impellers, fuel issues, SmartCraft diagnostics)
+- Repower decisions when the old motor hits mid-life
+- Fall winterization timed to lock-up
+- Winter storage with spring launch already organized
+
+## The Trent-Severn factor
+
+Many Lindsay boaters cruise the Trent-Severn — through Bobcaygeon, Burleigh Falls, the Buckhorn locks, and down into Rice Lake. The lower Trent connects Rice Lake to the Kawartha system through the Hastings lock. That means a Lindsay-area boat that cruises the full Trent system is going to pass right by HBW anyway.
+
+For Lindsay customers planning a major Trent-Severn cruise, dropping the boat at HBW for service before the trip means the boat starts the cruise in known-good condition and the dealer is in the network if anything comes up mid-trip.
+
+## Getting to Harris Boat Works from Lindsay
+
+Route: Highway 35 south through Pontypool, then Highway 7A east to Highway 115 south, then County Road 28 south to Gores Landing. Mostly two-lane highway with some county road for the last 15 minutes.
+
+Approximate drive time: 45 minutes outside peak summer traffic. From east Lindsay or Bobcaygeon-area routes, allow closer to 50-55 minutes.
+
+Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+Phone: 905-342-2153
+Service requests: hbw.wiki/service
+Motor pricing: mercuryrepower.ca
+
+## What HBW handles for Lindsay customers
+
+**Mercury outboard sales**
+Full lineup: 2.5 HP through 600 HP. For Kawartha cottagers, FourStroke 90/115/150 covers most setups. For Sturgeon Lake muskie/walleye anglers, Pro XS 115-200 is the common spec. ProKicker 9.9 trolling motors install on most Lindsay-area fishing rigs.
+
+**Repower service**
+Full repower including motor, rigging, controls, throttle and shift cables, prop matching, install, sea trial on Rice Lake. Lindsay customers can drop off, get the work done, and pick up commissioned and water-tested.
+
+**MerCruiser sterndrive service**
+For Trent-Severn cruisers with MerCruiser sterndrives, we handle full service, repair, and repower. For engine repairs, we only service Mercury and Mercruiser.
+
+**Mercury parts and service**
+Platinum-tier parts depth, warranty authorization, SmartCraft diagnostics.
+
+**Winter storage**
+Outdoor with shrinkwrap. For Lindsay customers whose boat will launch on Rice Lake or cruise the lower Trent, storage at HBW puts the spring launch already at the water.
+
+## What Lindsay buyers tell us most often
+
+Lindsay-area boaters tend to be experienced. The Kawartha Lakes region has a higher concentration of multi-boat households and serious cottagers than most parts of southern Ontario. They've owned several boats, dealt with several dealers, and they know the call-for-quote pricing model when they see it.
+
+Our installed pricing online at mercuryrepower.ca is what informed Lindsay buyers respond to. Real Canadian dollars, full configuration, three minutes to a complete quote. The 45-minute drive becomes worth it when the dealer respects your time.
+
+## What we see at HBW
+
+The most underrated benefit for Lindsay customers is the seasonal storage relationship. A lot of cottagers run into the same problem in October: where to store the boat. The Kawartha-region storage market gets tight. HBW offers outdoor shrinkwrap storage with full winterization done by the same shop that knows the motor. Lindsay customers who set up that routine end up doing it for 5-10 years running.
+
+The other observation: Lindsay-area cottagers often have older Mercury outboards (10-15 years) that are still running fine but starting to need attention. Repower vs continued service decisions are common conversations. The honest answer depends on the hull condition — but for a sound hull under 15 years old, a properly executed repower is usually the dollar-per-year winner.
+
+## How to start
+
+Build your quote at mercuryrepower.ca. Real installed CAD pricing in three minutes.
+
+If you have a service issue, submit a request at hbw.wiki/service.
+
+For a motor purchase or repower conversation, call: 905-342-2153.
+
+## Frequently Asked Questions, Lindsay
+
+**Is HBW worth the 45-minute drive vs a closer Lindsay-area shop?**
+For routine service (oil change, basic seasonal work), maybe not. For a major repower, complex warranty issue, or Platinum-tier diagnostics, the dealer tier matters more than the drive time. The drive is also part of a nicer day out than most service trips.
+
+**Do you service Trent-Severn cruisers and MerCruiser sterndrives?**
+Yes. We service Mercury outboards and MerCruiser sterndrives. For engine repairs, we only service Mercury and Mercruiser.
+
+**Do you install ProKickers on Sturgeon Lake fishing boats?**
+Yes — common spec on Kawartha-area aluminum fishing boats. Full install includes mounting, throttle linkage, electrical, and tie-bar steering setup.
+
+**What's a typical Kawartha-area repower cost?**
+Depends on horsepower. Most repowers on 16-20 foot aluminum or pontoon hulls land in the $13,000-$25,000 installed range including HST. The quote builder at mercuryrepower.ca gives a real CAD number based on your boat.
+
+**Can I drop off at HBW before a Trent-Severn cruise?**
+Yes — many Lindsay customers do exactly that. Spring service before the cruising season, motor in known-good condition before a long trip, network coverage if anything comes up mid-trip.
+
+**Can I store my boat with you year-round?**
+Yes. Outdoor with shrinkwrap. For Lindsay cottagers who want to skip the Kawartha storage market and pick up the boat already at Rice Lake in spring, this works well.
+
+**Do you offer pickup/delivery?**
+No. HBW does NOT offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site.
+
+Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+
+*Last reviewed: 2026-05-17.*
+`,
+  },
+  {
+    slug: 'mercury-dealer-northumberland-county-hbw',
+    title: 'Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop',
+    seoTitle: 'Mercury Dealer Northumberland County | HBW Rice Lake',
+    description: 'Harris Boat Works is the Mercury Platinum dealer serving Northumberland County since 1947. Rice Lake, Cobourg, Port Hope, Hastings, Brighton, Trent system. Live online repower quotes, full Mercury + MerCruiser service.',
+    image: '/lovable-uploads/hero-mercury-dealer-northumberland.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Dealer Locations',
+    readTime: '5 min read',
+    keywords: ['mercury dealer northumberland county', 'northumberland mercury platinum', 'rice lake mercury dealer', 'trent system mercury'],
+    content: `## Quick Answer
+
+Harris Boat Works in Gores Landing is the Mercury Marine Platinum Dealer serving Northumberland County. Family-owned since 1947, Mercury Platinum since 1965. We're located on Rice Lake within Northumberland County, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we're not "the closer option" — we ARE the local Mercury dealer. Installed pricing is published online at mercuryrepower.ca.
+
+## What "local" means in Northumberland County
+
+Northumberland County stretches from the Lake Ontario shore north to the Trent system, and includes a wide range of waterfront communities — Cobourg's harbour, Port Hope's Ganaraska, the Hastings lock at the bottom of Rice Lake, Brighton on Presqu'ile Bay, the Trent River through Campbellford. The county is one of the most water-connected regions in southern Ontario.
+
+For Mercury outboard service, the county has historically been served by a mix of small general boat shops and dealers that focus on other brands. HBW has been the Mercury anchor since 1965, sitting right on Rice Lake at Gores Landing.
+
+If you live anywhere in Northumberland County, HBW is your local Mercury Platinum dealer.
+
+## Coverage across the county
+
+Drive time from HBW (Gores Landing) to each major Northumberland community:
+
+| Community | Drive time | Route |
+|---|---|---|
+| Cobourg | 25 min | County Road 18 south |
+| Port Hope | 30 min | County Road 18 + County Road 28 south |
+| Hastings | 25 min | County Road 9 east + bridge over Trent |
+| Brighton | 50 min | Highway 401 east to County Road 64 |
+| Campbellford | 35 min | County Road 35 east |
+| Colborne | 35 min | Highway 401 east |
+| Trent Hills | 30 min | County Road 35 east |
+
+Most of the county is within 30 minutes of HBW. None of it is more than an hour.
+
+## What HBW handles for Northumberland customers
+
+**Mercury outboard sales**
+Full Mercury lineup: 2.5 HP portables through 600 HP Verado. For Northumberland's mixed boating profile (Lake Ontario harbour boats, Rice Lake fishing rigs, Trent system cruisers, cottage pontoons), FourStroke covers most use cases. Pro XS for performance fishing. ProKicker 9.9 for trolling.
+
+**Mercury repower service**
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, install, lake test on Rice Lake. Northumberland customers can drop off, get the work done, and pick up commissioned.
+
+**MerCruiser sterndrive service**
+For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle full service, repair, and repower. For engine repairs, we only service Mercury and Mercruiser.
+
+**Mercury parts and service**
+Platinum-tier parts depth, warranty authorization, SmartCraft diagnostics.
+
+**Winter storage**
+Outdoor with shrinkwrap. For Northumberland boaters who already boat on Rice Lake, year-round storage means the spring launch is already at the lake.
+
+**Legend Boats**
+Aluminum fishing boats and pontoons. All Mercury-rigged. Worth a conversation if you're in the new-boat market.
+
+## The Northumberland boating profile
+
+Northumberland County has a wider range of boating than most Ontario counties:
+
+**Lake Ontario harbour boats** — Cobourg, Port Hope, Brighton harbours. Smaller powerboats, sailing, day-cruising. Mercury 50-150 HP common.
+
+**Rice Lake fishing and cottage boats** — the heart of recreational boating in the county. 14-18 foot aluminum, pontoons, Mercury 40-115 HP. Walleye, bass, muskie fishing.
+
+**Trent River and Trent-Severn cruisers** — larger boats running the lock system, often MerCruiser sterndrives or Mercury Verado-sized power.
+
+**Bay of Quinte access from the east of the county** — Brighton-area boats accessing Bay of Quinte muskie fishing. Larger aluminum or fiberglass, Mercury Pro XS or FourStroke 150-250 HP.
+
+This range is why HBW carries the full Mercury lineup and full SmartCraft diagnostic capability. The Northumberland service mix isn't dominated by one boat type.
+
+## Why local matters more than dealer distance
+
+In some markets, "local" is just a 5-kilometer marketing claim. In Northumberland, "local" is functional. The Northumberland boating community is small enough that a bad service experience travels by word of mouth fast. HBW is the dealer that picks up the phone when a Cobourg customer's neighbour calls because the original customer recommended us.
+
+Three generations of HBW have been on Rice Lake. That's longer than most boats in the county have been on the water.
+
+## What we see at HBW
+
+The Northumberland customer mix is more diverse than any other regional market we serve. A typical service week might include a Cobourg sailboat owner picking up parts, a Rice Lake cottager dropping off for fall winterization, a Brighton Bay of Quinte angler bringing a Pro XS in for an impeller, and a Trent River cruiser scheduling MerCruiser service. That mix is what makes Northumberland different from a more homogeneous GTA service market.
+
+For repower decisions specifically, the most common Northumberland scenario we see: a 15-20 year old Mercury (often a 90 or 115 HP) on a 16-18 foot aluminum fishing boat. The motor still runs but is starting to need more attention. The owner asks "is repower worth it on this hull?" Our [Repower vs Buy New decision guide](/blog/should-i-repower-or-buy-new-boat-ontario) walks through the math. For Northumberland-area sound hulls under 15 years old, the answer is almost always "yes, repower wins."
+
+## How to start
+
+Build your quote at mercuryrepower.ca. Real installed CAD pricing.
+
+If you have a service issue, submit a request at hbw.wiki/service.
+
+For a motor purchase or repower conversation, call: 905-342-2153.
+
+## Frequently Asked Questions, Northumberland County
+
+**Is HBW the only Mercury Platinum dealer in Northumberland County?**
+Yes. For Mercury Platinum-tier service within Northumberland County, HBW is the option. There may be lower-tier Mercury dealers or non-Mercury shops closer to specific addresses; for Platinum-tier work, HBW is the local choice.
+
+**Do you handle warranty work on a Mercury bought elsewhere?**
+Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork.
+
+**Do you service Bay of Quinte fishing boats from Brighton?**
+Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it's worth — that's an honest call.
+
+**Do you service Trent River cruisers in the Campbellford / Trent Hills area?**
+Yes. We handle both Mercury outboards and MerCruiser sterndrives. For engine repairs, we only service Mercury and Mercruiser.
+
+**What's the typical repower cost in Northumberland?**
+Depends on horsepower and current rigging. The quote builder at mercuryrepower.ca gives a real CAD number. Most repowers in the typical Northumberland boat range land in the $13,000-$25,000 installed range including HST.
+
+**Can I store my boat with you year-round?**
+Yes. Outdoor storage with shrinkwrap. For Northumberland boaters whose boat already lives on Rice Lake during the season, year-round storage at HBW puts the spring launch already at the water.
+
+**Do you offer pickup/delivery?**
+No. HBW does NOT offer pickup or delivery. Customers bring their boat to us.
+
+**Do you sell new boats?**
+Yes. We're also a Legend Boats dealer — aluminum fishing boats and pontoons, all Mercury-rigged.
+
+Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+
+*Last reviewed: 2026-05-17.*
+`,
+  },
+  {
+    slug: 'mercury-fourstroke-buyer-guide-ontario',
+    title: 'Mercury FourStroke Buyer Guide for Ontario (2026)',
+    seoTitle: 'Mercury FourStroke Buyer Guide Ontario | Harris Boat Works',
+    description: 'The canonical Mercury FourStroke buyer guide for Ontario. 2.5-300 HP coverage, which HP for which boat, prices, options, install considerations. From Ontario\'s Mercury Platinum dealer since 1965.',
+    image: '/lovable-uploads/hero-mercury-fourstroke-buyer-guide.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guide',
+    readTime: '9 min read',
+    keywords: ['mercury fourstroke buyer guide', 'mercury fourstroke ontario', 'mercury fourstroke pricing', 'mercury outboard buyer guide ontario'],
+    content: `## Quick Answer
+
+Mercury FourStroke is the default Mercury outboard for Ontario freshwater boating. The family covers 2.5 HP portables through 300 HP V8s, and for the vast majority of Ontario boats — aluminum fishing rigs, pontoons, cottage runabouts, family fishing boats — FourStroke is the right answer. Mercury Pro XS is the performance-tuned alternative if you actually run hard; Verado is special-order territory and rarely the right call on a freshwater boat. This guide is the starting point for any FourStroke buying decision in Ontario. Build a real installed quote at mercuryrepower.ca.
+
+## Why FourStroke is the default for Ontario
+
+Most Ontario boats came factory-rigged with a Mercury FourStroke. That's not an accident — the major Canadian aluminum builders (Lund, Crestliner, Princecraft, Lowe) and most fibreglass runabout builders package FourStroke as the standard motor across their lineups. When you repower an Ontario boat, the question is usually "which FourStroke" — not "Mercury FourStroke or something else."
+
+The reasons are practical, not marketing:
+
+- **Fuel efficiency** — modern 4-strokes burn 30-40% less fuel than the 2-strokes they replaced
+- **Quiet operation** — important on the small lakes where Ontario does most of its boating
+- **Long service life** — properly maintained, 15-25 years of useful service is realistic
+- **Mercury dealer network density** — more parts on more shelves across more service shops than any other outboard brand in the country
+- **Resale support** — Mercury-powered Ontario boats sell faster and to a wider buyer pool than equivalent setups with other brands
+
+For an Ontario buyer, the FourStroke decision is rarely about whether to choose Mercury. It's about which HP class and which gearcase option.
+
+## The FourStroke lineup (2026)
+
+| HP Range | Configuration | Typical Boats |
+|---|---|---|
+| 2.5 - 6 | Portable, single-cylinder | Dinghies, small tenders, very small fishing boats |
+| 8 - 9.9 | Portable or ProKicker | Small fishing boats, kicker motors on larger rigs |
+| 15 - 20 | Portable or compact | 12-14 foot car-toppers, small aluminum |
+| 25 - 30 | Mid-weight | 14-16 foot aluminum, small pontoons |
+| 40 - 60 | Inline-3 | 14-17 foot aluminum, small pontoons |
+| 75 - 115 | 2.1L inline-4 | 16-19 foot aluminum, mid-size pontoons (CT version) |
+| 150 | 3.0L inline-4 | 18-22 foot aluminum + fibreglass, larger pontoons |
+| 175 - 225 | 3.4L V6 | 19-22 foot runabouts, larger pontoons, ski boats |
+| 250 - 300 | 4.6L V8 | 20+ foot cruisers, performance pontoons, larger fibreglass |
+
+Within each HP class, there are configuration options that matter more than most buyers realize: shaft length, electric vs manual start, tiller vs remote, standard vs Command Thrust gearcase, and rigging family compatibility.
+
+## HP selection: how to actually decide
+
+The first rule: **don't exceed your capacity plate**. Your boat's Coast Guard capacity plate lists a maximum horsepower. Going over voids your insurance in most cases and creates real safety risk. We don't repower boats over their capacity rating, and no honest Mercury dealer should.
+
+Within the legal max, the right HP depends on:
+
+**Hull weight and intended use.** A 16-foot aluminum running solo for bass fishing wants different power than the same hull running four adults and gear to a cottage. Lighter use = smaller HP works fine. Heavier loads = the larger HP earns its weight.
+
+**Cruise speed expectations.** Most Ontario cruise targets are 25-32 MPH. A properly matched motor hits that range comfortably. Underpowered means you're holding the throttle wide-open just to plane; over-powered means you waste fuel hitting 38+ MPH unnecessarily.
+
+**Trim and load conditions you actually run.** A pontoon with 8 people and coolers is a different load problem than a 2-person fishing trip. Match the motor to the heaviest realistic load you'll see, not the lightest.
+
+For most Ontario use cases, these are the typical sweet spots we see at HBW:
+
+| Boat Type | Length | Typical FourStroke HP |
+|---|---|---|
+| Aluminum fishing | 14-16 ft | 40-60 HP |
+| Aluminum fishing | 16-18 ft | 75-115 HP |
+| Aluminum fishing | 18-20 ft | 115-150 HP |
+| Pontoon (small) | 20-22 ft | 60-90 HP |
+| Pontoon (mid) | 20-22 ft | 90-115 HP CT |
+| Pontoon (large/triple-tube) | 22-26 ft | 150-200 HP |
+| Fibreglass runabout | 17-19 ft | 115-150 HP |
+| Fibreglass runabout | 19-22 ft | 150-225 HP |
+| Cottage cruiser | 18-22 ft | 90-150 HP |
+
+The Command Thrust (CT) option on the 90 and 115 is worth understanding — see the gearcase section below.
+
+## The 75 / 90 / 115 question
+
+The 75, 90, and 115 HP FourStroke share the same 2.1L inline-4 powerhead. Same block, same weight (359 lb), same physical footprint. The difference is software calibration, prop matching, and RPM limit.
+
+For Ontario aluminum fishing boats (16-19 ft) and mid-size pontoons, this is the most common decision range, and the 90 is the sweet spot for most buyers. Here's why:
+
+- **75 HP** — RPM-limited to 5,500. Same motor as the 90, less performance. The price gap to the 90 is smaller than most buyers expect. We rarely recommend the 75 unless your capacity plate maxes at 75.
+- **90 HP** — RPM-limited to 6,000. Same physical motor as the 75 with more performance headroom. The default recommendation for most 16-19 ft Ontario boats.
+- **115 HP** — RPM-limited to 6,300. Same motor with full performance unlock. Worth the upgrade when the boat is heavier or you want full planing margin.
+
+This is why most factory-rigged Ontario 16-19 ft aluminum boats come with the 90 HP. It's the right answer most of the time.
+
+## Command Thrust (CT) on the 90 and 115
+
+The Command Thrust gearcase is a larger-diameter lower unit with a different prop range. It's available on the 90 and 115 HP FourStroke. The benefit is more torque for moving heavy hulls — particularly pontoons.
+
+The rule of thumb: **if you're putting a 90 or 115 on a pontoon, you almost certainly want CT.** The standard gearcase works on a planing hull; the CT is engineered for the displacement loads a pontoon presents. The price gap is usually $400-700 over the standard gearcase, and the performance difference on a loaded pontoon is meaningful.
+
+For aluminum fishing boats, the standard gearcase is fine unless you're running heavy with multiple people and gear regularly.
+
+## Shaft length: 20" vs 25" (and the rare 30")
+
+Match the shaft length to your transom height:
+
+- **15" (short shaft, S)** — small portable motors, very few full-size boats
+- **20" (long shaft, L)** — standard for most 14-18 ft aluminum and small fibreglass
+- **25" (extra-long, XL)** — standard for most 18+ ft fibreglass, larger aluminum, pontoons
+- **30" (XXL)** — rare; very large offshore or specialty boats
+
+Measure your transom from the top of the boat-side bracket to the cavitation plate area. Most factory-rigged Ontario boats are already set up correctly — if you're repowering an existing boat, the new motor should match the old motor's shaft length unless the previous setup was wrong.
+
+For more detail, see our [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide).
+
+## Tiller vs Remote (and ProKicker)
+
+For motors 30 HP and under, tiller is common — you steer with the motor handle directly. For motors 40 HP and up, remote (cable steering + throttle) is standard.
+
+The ProKicker is a special tiller configuration on the 9.9 HP (and recently 15/25) designed as a kicker motor — a secondary motor used for trolling on a primary-motored boat. ProKickers have:
+
+- Higher gear ratio for low-speed trolling
+- Heavy-duty alternator for accessory power
+- Big-foot lower unit for better low-speed thrust
+- Adjustable angle for matched-steering with the primary motor
+
+Most serious Ontario walleye, muskie, and bass setups run a 9.9 ProKicker on the transom alongside their primary motor.
+
+## What an installed FourStroke costs in Ontario (2026)
+
+Installed pricing varies by HP, rigging complexity, and trade-in credit. Real CAD installed ranges for typical Ontario repowers:
+
+| HP | Typical installed cost (CAD, with HST) |
+|---|---|
+| 9.9 ProKicker | $4,500 - $5,500 |
+| 25 | $6,500 - $8,000 |
+| 40 | $8,500 - $11,000 |
+| 60 | $10,500 - $13,500 |
+| 90 | $13,500 - $17,500 |
+| 115 | $15,500 - $19,500 |
+| 150 | $18,500 - $24,500 |
+| 200 V6 | $24,500 - $31,000 |
+| 250 V8 | $30,000 - $38,000 |
+
+These are general ranges based on 2026 pricing. Your actual installed price depends on existing rigging condition, prop spec, and any required upgrades (controls, gauges, harness, hydraulic steering). Build a real quote at mercuryrepower.ca for the actual number on your boat.
+
+## What we see at HBW
+
+The most common FourStroke decision mistake we see: buyers focusing on the motor HP number without thinking about the rigging context. A new 115 HP on a 15-year-old boat with original mechanical controls, single-cable steering, and worn-out gauges is going to feel like an underwhelming repower. The new motor is fine; the rigging context is what's holding it back.
+
+Our standard repower includes a rigging assessment. If the controls are tired, we recommend replacement at the same time. The math: $1,500-$3,000 in fresh rigging makes the difference between a repower that feels new and one that just runs.
+
+The other observation: customers consistently under-spec horsepower when they own their first boat, and over-spec on the second one. Match the motor to your actual use case, not the spec sheet aspirations.
+
+## Related guides
+
+- [Mercury Pro XS Buyer Guide](/blog/mercury-pro-xs-buyer-guide-ontario) — the performance-tuned alternative
+- [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario)
+- [Mercury 75 vs 90 vs 115 comparison](/blog/mercury-75-vs-90-vs-115-comparison)
+- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide)
+- [Mercury Command Thrust vs Standard Gearcase](/blog/mercury-command-thrust-vs-standard-gearcase)
+- [How to Read Your Boat's Capacity Plate](/blog/how-to-read-boat-capacity-plate-ontario)
+- [Mercury ProKicker Guide for Rice Lake Fishing](/blog/mercury-prokicker-rice-lake-fishing-guide)
+
+## How to get a quote
+
+Build your real installed FourStroke quote at [mercuryrepower.ca](https://mercuryrepower.ca). Live CAD pricing, full configuration, three minutes. No phone call required.
+
+For complex repowers (twin-engine setups, brand conversions, or unusual configurations), call 905-342-2153 after building the basic quote.
+
+## Frequently Asked Questions
+
+**What's the most popular Mercury FourStroke in Ontario?**
+The 90 HP and 115 HP are the most-installed FourStroke motors on Ontario boats. They cover the 16-19 ft aluminum + small pontoon market, which is the largest segment of recreational boating in the province.
+
+**Is FourStroke better than Pro XS?**
+Neither is "better" — they're tuned for different use cases. FourStroke prioritizes fuel efficiency, quiet operation, and longevity. Pro XS prioritizes acceleration, top-end speed, and tournament-grade performance. For most Ontario freshwater boating, FourStroke is the right tool.
+
+**How long does a Mercury FourStroke last?**
+Properly maintained, 15-25 years of useful service is realistic. The motor that fails early is almost always one that missed oil changes, skipped impeller replacements, or got winterized improperly. Brand matters less than service habits.
+
+**Do I need Command Thrust?**
+For pontoons running 90 or 115 HP, almost always yes. For aluminum fishing boats at the same HP, usually no unless you're consistently running heavy loads.
+
+**What's the price difference between a 75 and a 90 FourStroke?**
+Typically $800-$1,500 at MSRP. Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases.
+
+**Can I tow water-ski with a FourStroke?**
+Yes — the larger FourStrokes (150+ HP V8) handle ski and wake boats fine. For tournament-grade ski performance, the Pro XS variants offer more aggressive throttle response, but a 200 HP FourStroke pulls skiers without any drama.
+
+**How do I match the prop to a new FourStroke?**
+Prop matching is part of the install. The right prop depends on hull, weight, intended use, and target RPM range at cruise. We sea-trial every install at HBW and adjust prop pitch as needed.
+
+**Does Mercury warranty come with a new FourStroke?**
+Yes — Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Platinum) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-warranty-what-you-need-to-know) for details.
+
+Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+
+*Last reviewed: 2026-05-17.*
+`,
+  },
+  {
+    slug: 'mercury-pro-xs-buyer-guide-ontario',
+    title: 'Mercury Pro XS Buyer Guide for Ontario (2026)',
+    seoTitle: 'Mercury Pro XS Buyer Guide Ontario | Harris Boat Works',
+    description: 'The canonical Mercury Pro XS buyer guide for Ontario boaters. 115-300 HP coverage, bass and tournament fishing applications, pontoon performance setups, real installed pricing.',
+    image: '/lovable-uploads/hero-mercury-pro-xs-buyer-guide.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guide',
+    readTime: '8 min read',
+    keywords: ['mercury pro xs buyer guide', 'mercury pro xs ontario', 'mercury pro xs pricing', 'mercury performance outboard'],
+    content: `## Quick Answer
+
+Mercury Pro XS is the performance-tuned outboard line in the Mercury lineup. Same Mercury reliability and dealer network as FourStroke, with aggressive throttle response, higher RPM ceilings, and prop matching tuned for top-end speed and acceleration. For Ontario boaters, Pro XS makes sense when you actually run hard — bass tournaments, walleye anglers needing to outrun weather, performance pontoons, fast-running fibreglass. For cruising and family fishing, FourStroke is the smarter spend. Build a real installed Pro XS quote at mercuryrepower.ca.
+
+## Where Pro XS fits in the Mercury lineup
+
+Mercury makes three main outboard families: FourStroke (the default, broadest range, fuel-efficient), Pro XS (performance-tuned), and Verado (large supercharged offerings, special-order territory). SeaPro is the commercial-grade variant.
+
+Pro XS shares core architecture with FourStroke — same engineering teams, same dealer network, same parts catalogue overlap. The differences are calibration, prop pitch, throttle mapping, and in some models the powerhead itself (the 175-250 Pro XS uses Mercury's 3.4L V6 not available in the same HP class FourStroke).
+
+The Pro XS lineup as of 2026:
+
+| HP Range | Configuration | Typical Application |
+|---|---|---|
+| 115 - 150 | 2.1L inline-4 (115) or 3.0L inline-4 (150) | Bass boats, performance fishing, pontoon performance setups |
+| 175 - 200 - 225 | 3.4L V6 | Tournament bass boats, performance fibreglass, larger pontoons |
+| 250 - 300 | 4.6L V8 | Offshore fishing, performance cruisers, large performance pontoons |
+
+The 115 Pro XS shares the FourStroke 2.1L powerhead with different tuning. The 175 and above are V6/V8 architectures that aren't available in FourStroke trim — these are Pro XS-exclusive engine families.
+
+## Who actually needs Pro XS in Ontario
+
+The honest answer: **not most Ontario boaters.** For cruising, family fishing, casual pontoon use, and cottage runabouts, FourStroke does the job better — more efficient, quieter, smoother. The Pro XS premium only earns its money when you genuinely use the performance.
+
+The Ontario customers who do benefit from Pro XS:
+
+**Tournament bass anglers.** Run-times matter. Hole-shot acceleration matters. Top-end speed matters. The 175-200 Pro XS V6 is the dominant tournament setup in Ontario bass boat circles.
+
+**Serious walleye anglers running larger waters.** Lake Simcoe, Bay of Quinte, Lake Nipissing, big-water fishing where you need to move between spots fast and want to outrun afternoon weather. 150 Pro XS or 175-200 Pro XS V6 common.
+
+**Performance pontoon owners.** Triple-tube pontoons running 200-300 HP for water sports or fast cruising. Pro XS V6 or V8 setups.
+
+**Fast fibreglass runabouts.** 19-21 ft fibreglass cruisers running 200-250 HP for water-ski, wakeboarding, fast lake-running.
+
+**Boats with capacity for it.** If your boat's capacity plate is rated for 200 HP and you spec a 150 FourStroke, you're leaving performance on the table. The Pro XS might be the right answer up to your boat's rated maximum.
+
+If you don't see your use case on this list, FourStroke is probably the right answer for you.
+
+## The 115 Pro XS — the gateway
+
+The 115 Pro XS is the entry into the Pro XS family. It uses the same 2.1L powerhead as the 115 FourStroke, with:
+
+- Aggressive throttle mapping (faster response)
+- Different prop matching (higher pitch, tuned for top-end)
+- RPM limit higher than FourStroke 115
+- Slightly different sound (more "boat sport" character)
+
+The 115 Pro XS is available with Command Thrust gearcase, which is the right choice for performance pontoon setups in this HP range.
+
+The honest take: most 16-19 ft Ontario boats don't need the Pro XS premium over a 115 FourStroke. The buyers who do benefit are those running serious fishing tournaments or performance pontoons in the 115 HP class. For everyone else, the 115 FourStroke is the smarter spend.
+
+## The 150 Pro XS — the inline-4 ceiling
+
+The 150 Pro XS uses Mercury's 3.0L inline-4 powerhead (not the same as the 115 Pro XS / FourStroke 115's 2.1L). It's the largest inline-4 in the Mercury lineup and the practical ceiling for inline-4 architecture.
+
+For mid-size aluminum fishing boats (18-21 ft) and mid-pontoons running performance applications, the 150 Pro XS is a strong middle option. It's the Ontario tournament walleye sweet spot.
+
+The 150 Pro XS shares some service intervals with the FourStroke 150 but with more aggressive performance calibration.
+
+## The V6 family — 175 / 200 / 225 Pro XS
+
+The 175, 200, and 225 Pro XS share Mercury's 3.4L V6 powerhead. This engine family is the dominant performance fishing motor in Ontario bass boat tournaments and serious walleye applications on larger waters.
+
+Within this family, the differences are calibration and prop matching — same physical engine, different RPM ceilings and tuning. The 200 is the most-installed of the three on Ontario tournament boats.
+
+The V6 Pro XS comes with full SmartCraft compatibility, advanced rigging options, and Mercury's most aggressive throttle mapping. This is serious performance equipment, not casual recreational power.
+
+## The V8 family — 250 / 300 Pro XS
+
+The 250 and 300 Pro XS use Mercury's 4.6L V8 powerhead. These are large motors for large boats — performance pontoons in the 24-26 ft class, fast fibreglass cruisers, offshore-style fishing rigs.
+
+For most Ontario freshwater applications, the V8 Pro XS is overkill. Where it earns its money: water-ski tournament boats, wakeboard boats, performance pontoons that actually run fast with full loads, fishing rigs targeting Bay of Quinte / Lake Simcoe / Great Lakes shorelines where you need to move between spots fast.
+
+## Pro XS vs FourStroke — the actual decision
+
+If you've read this far and you're still trying to decide between Pro XS and FourStroke at a given HP, here's the simple framework:
+
+**Choose FourStroke if:**
+- Cruise speeds are your priority (25-32 MPH range)
+- Fuel efficiency matters more than top-end speed
+- The boat is for family / cottage / casual fishing use
+- You boat 30-50 days per season
+- Quiet operation matters (small lakes, early mornings)
+
+**Choose Pro XS if:**
+- Tournament fishing (bass, walleye, serious anglers)
+- Top-end speed matters (water sports, big-water runs)
+- Hole-shot acceleration matters (heavy loaded boats getting on plane fast)
+- Performance pontoon applications
+- You'd actually use the difference in horsepower delivery
+
+The pricing premium for Pro XS over the equivalent FourStroke runs roughly $1,500-$3,000 depending on HP class. That's the cost of the performance upgrade.
+
+## What an installed Pro XS costs in Ontario (2026)
+
+| HP | Typical installed cost (CAD, with HST) |
+|---|---|
+| 115 Pro XS | $17,000 - $21,500 |
+| 150 Pro XS | $20,500 - $26,500 |
+| 175 Pro XS V6 | $25,500 - $32,000 |
+| 200 Pro XS V6 | $27,500 - $34,500 |
+| 225 Pro XS V6 | $30,000 - $37,500 |
+| 250 Pro XS V8 | $33,000 - $41,000 |
+| 300 Pro XS V8 | $37,500 - $46,500 |
+
+These are general 2026 ranges. Your real installed price depends on existing rigging, prop spec, hydraulic steering requirements, and any harness work. Build a real quote at mercuryrepower.ca.
+
+## What we see at HBW
+
+The most common Pro XS mistake we see: Ontario buyers buying Pro XS for "just in case" reasons when their actual use is family cruising. The aggressive throttle response and tuned prop matching are great for tournament anglers; for a family pontoon doing weekend cruises and tubing pulls, the Pro XS feels twitchy compared to the smoother FourStroke at the same HP.
+
+If you don't actively use the performance, you're paying premium for something that's working against your day-to-day experience.
+
+The other observation: Pro XS V6 buyers consistently report they wish they'd gone one HP class higher. The 200 buyer wishes they had a 225, the 225 wishes for a 250, etc. The Pro XS family rewards horsepower headroom. If you're already committing to Pro XS, lean toward the upper end of your boat's capacity rating.
+
+## Related guides
+
+- [Mercury FourStroke Buyer Guide](/blog/mercury-fourstroke-buyer-guide-ontario)
+- [Mercury Pro XS Repower Guide for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers)
+- [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
+- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [Bass Boat Mercury Motor Buying Guide](/blog/bass-boat-mercury-motor-buying-guide)
+- [How to Read Your Boat's Capacity Plate](/blog/how-to-read-boat-capacity-plate-ontario)
+
+## How to get a quote
+
+Build your real installed Pro XS quote at [mercuryrepower.ca](https://mercuryrepower.ca). Live CAD pricing, full configuration including SmartCraft rigging, hydraulic steering, and prop matching for performance applications.
+
+For tournament or competitive setups, call 905-342-2153 after building the basic quote — we'll walk through prop options and SmartCraft configuration in detail.
+
+## Frequently Asked Questions
+
+**Is Pro XS worth the premium over FourStroke?**
+For tournament fishing, performance pontoons, water sports applications, and big-water running — yes. For cruising, family use, casual fishing — no. FourStroke is the better tool for most Ontario boaters.
+
+**What's the most popular Pro XS in Ontario?**
+The 200 Pro XS V6 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is the walleye sweet spot for mid-size aluminum on big water.
+
+**Does Pro XS use the same powerhead as FourStroke?**
+The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175-225 Pro XS uses the 3.4L V6 (Pro XS exclusive). The 250-300 Pro XS uses the 4.6L V8.
+
+**Can I get Command Thrust on a Pro XS?**
+Yes — Command Thrust is available on the 115 Pro XS for pontoon applications. Higher HP Pro XS V6 and V8 motors use different gearcase options designed for their performance ranges.
+
+**Does Pro XS warranty match FourStroke?**
+Yes — same Mercury limited warranty (3 years standard). Mercury Product Protection (Platinum) extension applies the same way.
+
+**Can I repower from a FourStroke to a Pro XS?**
+Yes, but the rigging context matters. Pro XS performance often benefits from SmartCraft upgrades, hydraulic steering, performance throttle controls. The motor swap itself is straightforward; the full rigging context is where the Pro XS value shows up.
+
+**Is Pro XS louder than FourStroke?**
+Slightly. Pro XS tuning produces a more "sport" exhaust character. Most owners describe it as a feature, not a problem. For small Ontario lakes where quiet matters, FourStroke is the quieter option.
+
+**Should I buy Pro XS new or used?**
+Pro XS resale stays strong. A used Pro XS in good condition from a known service history is reasonable. A used Pro XS from unknown history is a higher-risk bet than the same-aged FourStroke because Pro XS owners tend to run them harder.
+
+Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+
+*Last reviewed: 2026-05-17.*
+`,
+  },
+  {
+    slug: 'mercury-avator-range-rice-lake-cottage',
+    title: 'Mercury Avator Electric Outboard Range on Rice Lake (2026)',
+    seoTitle: 'Mercury Avator Range Rice Lake | Ontario Electric Outboard',
+    description: 'How far a Mercury Avator electric outboard actually goes on Rice Lake. Real-world range by model, battery configuration, charging logistics for cottage applications.',
+    image: '/lovable-uploads/hero-avator-range-rice-lake.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Electric Boating',
+    readTime: '6 min read',
+    keywords: ['mercury avator range', 'avator electric outboard rice lake', 'mercury electric outboard ontario', 'avator cottage range'],
+    content: `## Quick Answer
+
+A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model and battery configuration, not the marketing range numbers. For the typical cottage use case — short runs from the dock to a fishing spot or a neighbour's dock — the smaller Avator 7.5e on a 13-14 ft car-topper delivers about 5 miles at full throttle or up to 34 miles at quarter-throttle. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
+
+## What "range" actually means on an electric outboard
+
+Range on an electric outboard depends on:
+
+1. **Battery capacity** (kWh)
+2. **Throttle setting** (full throttle drains 4-6x faster than quarter-throttle)
+3. **Boat weight + passengers + gear**
+4. **Hull efficiency** (a flat-bottom aluminum is more efficient than a heavy V-hull)
+5. **Water and weather conditions** (chop and wind reduce range significantly)
+6. **Battery temperature** (cold water lowers usable capacity)
+
+Mercury's published Avator range numbers are honest in the sense that they reflect specific test conditions. But "5 miles at full throttle" doesn't mean "5 miles of useful range in real conditions." Plan on 60-70% of Mercury's published numbers for realistic Rice Lake conditions.
+
+## Avator range on Rice Lake by model
+
+### Avator 7.5e
+
+Built for small car-toppers and tenders — boats under 14 ft. Single integrated 1 kWh battery.
+
+Real-world Rice Lake range:
+- Full throttle: ~3-4 miles practical
+- Half throttle: ~8-12 miles practical
+- Quarter throttle: ~20-25 miles practical (mostly trolling speeds)
+
+Use case fit: A small fishing boat moving between docks on the south or east shore of Rice Lake. A cottage tender running short trips. Not enough for a full-day fishing trip that crosses the lake multiple times.
+
+### Avator 20e
+
+Mid-tier compact electric, supports external 2,300 Wh battery packs (up to 3).
+
+Real-world range with 1 external pack: similar to 7.5e numbers, but on slightly larger boats.
+Real-world range with 3 packs: 2-3x the single-pack range.
+
+Use case fit: A 14-16 ft aluminum cottage boat making short to medium-range trips. Adding battery packs is how you extend range, at significant cost.
+
+### Avator 35e
+
+Designed for 14-18 ft boats, supports up to 4 external 2,300 Wh packs.
+
+Real-world Rice Lake range with 2 packs:
+- Full throttle: ~6-8 miles practical
+- Half throttle: ~15-20 miles practical
+
+Use case fit: Mid-size cottage boat doing short to medium runs. Sufficient for most Rice Lake cottage day-trip patterns if not running full throttle constantly.
+
+### Avator 75e and 110e
+
+Larger Power Center battery system, supports up to 4 packs of 5,400 Wh each.
+
+These are the only Avator models in serious consideration for primary outboard duty on a mid-size (16-20 ft) Ontario freshwater boat. Even then, the practical range is shorter than gas-powered equivalents, and charging logistics are a real factor.
+
+## The Rice Lake cottage use case
+
+Most Rice Lake cottagers run trips that fall into one of three patterns:
+
+**Short hop** — dock to neighbour's dock, dock to nearby fishing spot, dock to swimming bay. Often under 2 miles round trip. Even the smallest Avator handles this comfortably.
+
+**Half-day** — out for a morning fishing trip, lunch back at the dock, maybe an evening run. 5-10 miles total over a few hours. Most Avator models with 2+ battery packs handle this.
+
+**Full-day** — out for 6-8 hours, multiple fishing spots, crossing the lake, running back into wind. 15-25+ miles total. This is where Avator stops being practical for most setups.
+
+For the first two patterns, Avator works. For the third, plan on running a gas outboard with a trolling motor as the better answer.
+
+## Charging at the cottage
+
+Charging is half the Avator equation. The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger external 2,300 Wh packs take longer — plan on overnight per pack from 110V.
+
+What that means in practice:
+
+**110V cottage with multiple outlets**: works for overnight charging of 1-2 packs simultaneously. Standard cottage electrical handles this fine.
+
+**110V cottage with limited outlets**: bottleneck. Charging 3-4 packs from one outlet means rotating them through overnight cycles. Manageable but requires planning.
+
+**240V cottage**: a 240V charger drops charge time meaningfully. Worth investing in if you're running an Avator 75e or 110e with multiple packs.
+
+**Remote / off-grid cottage**: Avator becomes impractical. Solar charging is theoretically possible but the math is rough. If your cottage doesn't have reliable shore power, plan on gas.
+
+## The honest comparison
+
+For Rice Lake cottage applications, the Avator vs gas outboard decision usually comes out like this:
+
+| Use Pattern | Avator | Gas Outboard |
+|---|---|---|
+| Short hops, dock-to-dock | Excellent fit | Overkill |
+| Half-day light use | Good fit | Standard answer |
+| Full-day fishing crossing the lake | Range limited | Standard answer |
+| Multi-day trips without charging access | Doesn't work | Standard answer |
+| Quiet operation (early morning fishing) | Major advantage | — |
+| Low maintenance | Major advantage | More service required |
+| Cottage charging logistics | Required infrastructure | None |
+| Cold weather operation | Reduced capacity | Standard |
+
+## What we see at HBW
+
+Most of our Rice Lake Avator conversations end with the customer keeping their gas outboard and adding an Avator as a second small boat. The Avator-on-a-small-boat-for-quiet-mornings is a great use case. The Avator-as-primary-outboard-on-a-Rice-Lake-fishing-boat is a setup that works only for very specific cottage patterns.
+
+The customers who have made primary-Avator setups work are typically running smaller boats (14-16 ft), staying close to their dock, and have reliable cottage shore power for overnight charging.
+
+For most Rice Lake fishing patterns covering significant distance, gas outboard plus a trolling motor remains the right tool.
+
+## Related guides
+
+- [Mercury Avator & the Future of Electric Boating in Ontario](/blog/mercury-avator-electric-boating-ontario)
+- [Mercury Avator vs Torqeedo Comparison](/blog/mercury-avator-vs-torqeedo)
+- [Charging a Mercury Avator at Your Cottage](/blog/mercury-avator-charging-cottage-dock)
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
+
+## Frequently Asked Questions
+
+**How far can a Mercury Avator 7.5e really go on Rice Lake?**
+3-4 miles at full throttle, 8-12 miles at half, 20-25 miles at quarter (trolling) speeds. Reduce 20-30% for wind, chop, and cold-water conditions.
+
+**Can I charge an Avator at the dock with regular cottage power?**
+Yes for the 7.5e (110V, 3-4 hours). Larger Avator packs benefit from a 240V charger for faster turnaround. Standard cottage electrical generally works for overnight charging of 1-2 packs.
+
+**Is Avator practical as a primary motor on Rice Lake?**
+For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no — gas outboard is still the right answer.
+
+**Can I run a Mercury Avator on an HP-restricted Ontario lake?**
+Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying.
+
+**Does Avator work in cold weather?**
+Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions.
+
+**What does an Avator setup cost installed?**
+Pricing depends heavily on model and battery configuration. Build a quote at mercuryrepower.ca for real Canadian pricing on a specific Avator setup. The smallest 7.5e setups start under $5,000 installed; larger 75e/110e setups with multiple packs run $15,000-$25,000+.
+
+Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+
+*Last reviewed: 2026-05-17.*
+`,
+  },
+  {
+    slug: 'mercury-avator-vs-torqeedo',
+    title: 'Mercury Avator vs Torqeedo: Honest Comparison for Ontario Boaters (2026)',
+    seoTitle: 'Mercury Avator vs Torqeedo | Ontario Electric Outboard Comparison',
+    description: 'An Ontario Mercury Platinum dealer\'s honest comparison of Mercury Avator vs Torqeedo electric outboards. Dealer network, service support, models, and which one to choose for cottage use.',
+    image: '/lovable-uploads/hero-avator-vs-torqeedo.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Electric Boating',
+    readTime: '7 min read',
+    keywords: ['mercury avator vs torqeedo', 'electric outboard comparison ontario', 'avator torqeedo', 'electric outboard dealer ontario'],
+    content: `## Quick Answer
+
+Both Mercury Avator and Torqeedo make legitimate electric outboards. The deciding factor for most Ontario buyers is not the motor itself but the dealer network and service support. Mercury Avator has the deepest Mercury Platinum dealer network in Canada, which means parts, service, and warranty work happen at any Mercury dealer across the country. Torqeedo has a smaller but specialized dealer network, often through marine electronics shops rather than traditional outboard dealers. For most Ontario boaters who want long-term service support, Mercury Avator wins on infrastructure. Torqeedo may win on specific technical features for niche applications.
+
+## Up front: we sell Mercury
+
+Harris Boat Works is a Mercury Marine Platinum Dealer. We do not sell Torqeedo. This comparison is intended to be honest, but you should know our bias before reading it. We've been a Mercury dealer since 1965 — three generations of selling, servicing, and supporting Mercury outboards on Rice Lake.
+
+If you want a truly neutral comparison, find a marine specialty shop that carries both brands. Those exist in some Ontario markets, mostly in Toronto and Ottawa.
+
+## What both companies actually make
+
+**Mercury Avator (Mercury Marine):**
+- Backed by Mercury Marine (Brunswick Corporation), one of the largest outboard manufacturers globally
+- Full integration with Mercury's SmartCraft / VesselView ecosystem
+- Models: 7.5e, 20e, 35e, 75e, 110e (2026 lineup)
+- Power range: 750W to 11,000W (roughly equivalent to 3 HP up to 30 HP in propulsion terms, though Mercury rates by watts not HP)
+- Battery system: integrated (7.5e) or external Power Center / 2,300 Wh packs (larger models)
+- Service through: any Mercury dealer in Canada with electrical service capability
+
+**Torqeedo:**
+- German company, now owned by Yamaha (acquired 2024)
+- Specialized electric propulsion focus since founding
+- Models: Travel series (portable), Cruise series (mid-size), Deep Blue (large)
+- Power range: small portable to large commercial-grade
+- Battery system: integrated or external lithium packs
+- Service through: Torqeedo-authorized dealers and marine electronics specialists
+
+The product gap is smaller than the marketing makes it seem. Both companies have invested heavily in lithium battery integration, both have produced reliable motors in commercial use, both have published spec sheets that are roughly honest in real-world conditions.
+
+## The dealer network difference
+
+Mercury Avator inherits Mercury's broader Canadian dealer network — hundreds of Mercury dealers across the country, with Mercury Platinum dealers like HBW handling the most complex repower and service work. For Ontario buyers specifically, there's a Mercury dealer within an hour of nearly every populated area.
+
+Torqeedo's Canadian dealer network is smaller and more concentrated in larger urban markets. For a Toronto, Ottawa, or Vancouver buyer, Torqeedo support is reasonable. For a Northumberland County, Kawartha Lakes, or remote-cottage buyer, the nearest Torqeedo authorized service may be several hours away.
+
+For routine maintenance (annual service, prop replacement, battery checks), the dealer distance matters less than it does for warranty work or major repair. Where it really matters: parts availability. Mercury Avator parts are on shelves at Mercury Platinum dealers. Torqeedo parts often require ordering from Torqeedo Canada directly.
+
+## Battery technology
+
+This is where the two companies are most directly comparable. Both use lithium-ion battery technology. Both have integrated battery management systems. Both have published charge times that are honest in good conditions.
+
+Where they differ:
+
+**Mercury Avator** uses Mercury's proprietary Power Center system for the larger models, which integrates with SmartCraft for charge monitoring, range estimation, and load reporting. Smaller models use integrated batteries (7.5e).
+
+**Torqeedo** uses Torqeedo's proprietary Power 24-3500 battery line and the larger Power 48-5000 series. Battery management is integrated with Torqeedo's display systems.
+
+Neither battery system is interchangeable with the other brand. Plan on staying within one ecosystem.
+
+## Charging
+
+Both brands charge from standard household 110V outlets. Larger battery packs benefit from 240V charging.
+
+Charge times are similar between brands at equivalent battery capacities. Plan on:
+- Small portable batteries (1-2 kWh): 3-6 hours from 110V
+- Mid-size batteries (3-5 kWh): overnight from 110V, faster from 240V
+- Large battery banks (10+ kWh): 240V required for practical charging
+
+For Ontario cottage applications, standard 110V outlet charging handles most use cases. If you're running a large battery bank, plan on a 240V charger install at the dock or boathouse.
+
+## Service and parts reality
+
+**Mercury Avator service:**
+- Annual service through any Mercury dealer with electrical service capability
+- Parts on local dealer shelves
+- Warranty work at any authorized Mercury dealer in Canada
+- SmartCraft diagnostic capability at Mercury Platinum dealers
+- For engine repairs, HBW services Mercury and Mercruiser only
+
+**Torqeedo service:**
+- Service through Torqeedo authorized dealers (smaller network in Ontario)
+- Parts typically ordered from Torqeedo Canada (not stocked locally)
+- Warranty work requires authorized Torqeedo dealer
+- Some independent marine electronics shops can service older Torqeedo models
+
+For most Ontario buyers, the practical service infrastructure difference is the deciding factor.
+
+## Where Torqeedo may win
+
+Torqeedo has been in the electric outboard market longer than Mercury Avator. They have:
+
+- More installed base in specific commercial and rental applications
+- More mature technology in some specific battery chemistries
+- Stronger reputation among electric-boating purists who tracked the company's evolution
+- Specific products (sailboat-assist motors, commercial-grade Deep Blue) that don't have direct Mercury Avator equivalents
+
+For specialized applications (commercial use, sailboat auxiliary, large electric cruisers), Torqeedo's product depth may matter more than dealer network.
+
+## Where Mercury Avator wins
+
+For typical Ontario recreational boating:
+
+- Dealer network depth across the country
+- Parts availability at local dealers
+- SmartCraft integration with existing Mercury rigging
+- Warranty support from the same dealer who installed the motor
+- Resale market — Mercury Avator follows Mercury's overall resale strength
+- Service continuity — Mercury Marine is a large company with sustained product investment
+
+The Yamaha-Torqeedo acquisition is positive for Torqeedo's long-term stability, but the Canadian dealer network for Torqeedo remains thinner than Mercury's.
+
+## What we see at HBW
+
+We get more Mercury Avator inquiries than we did even a year ago. The customers who buy Avator successfully tend to be cottage owners running it as a secondary motor on a small dedicated quiet boat, while keeping their primary gas outboard on the main fishing boat.
+
+The customers who try to make Avator (or Torqeedo) their primary motor on a Rice Lake fishing boat consistently report range frustration. Both brands have the same physics constraint — lithium batteries don't yet match gas tanks for full-day Ontario freshwater use cases.
+
+For pure side-by-side product comparison without the dealer factor: both brands make legitimate motors. Both will run reliably if installed and maintained properly. The deciding factor is almost always service infrastructure, which for Ontario freshwater buyers tends to favour Mercury Avator.
+
+## Related guides
+
+- [Mercury Avator & the Future of Electric Boating in Ontario](/blog/mercury-avator-electric-boating-ontario)
+- [Mercury Avator Range on Rice Lake](/blog/mercury-avator-range-rice-lake-cottage)
+- [Charging a Mercury Avator at Your Cottage](/blog/mercury-avator-charging-cottage-dock)
+
+## Frequently Asked Questions
+
+**Which has better range, Avator or Torqeedo?**
+At comparable battery capacities, the brands are similar. Range is more about boat hull, weight, and throttle setting than brand. Both publish range numbers that hold up at quarter-throttle and fall off at full throttle.
+
+**Is Torqeedo cheaper than Avator?**
+Pricing depends on the specific model and battery configuration. Entry-level Torqeedo Travel models can be cheaper than Avator 7.5e setups. Mid-size and larger setups are roughly comparable. Always compare full installed cost including batteries and charger, not motor-only sticker prices.
+
+**Can I service a Torqeedo at HBW?**
+No. HBW is a Mercury Marine Platinum Dealer. For engine repairs, we only service Mercury and Mercruiser. For Torqeedo service in Ontario, you'll need an authorized Torqeedo dealer.
+
+**Does Mercury Avator come with a warranty?**
+Yes. Mercury's standard limited warranty applies. Coverage details depend on model and use case. Mercury Product Protection extension is available for the larger Avator models.
+
+**Will Yamaha discontinue Torqeedo now that they own it?**
+No public indication of that. Yamaha acquired Torqeedo to expand their electric propulsion portfolio. The German operations and product line continue. Whether Yamaha-branded electric outboards appear in the future is unclear.
+
+**Should I wait for the next generation of either brand?**
+Probably not. The current product lines from both brands are mature, reliable products. The next generation may improve battery capacity or charge speed, but the core use case (short-range quiet electric boating) is well-served by current products.
+
+**Which is better for an HP-restricted lake?**
+Either brand qualifies for most HP-restricted lakes. Federal regulations allow electric motors up to 7.5 kW aggregate power on electric-only lakes. Both Avator and Torqeedo offer models in that range.
+
+Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+
+*Last reviewed: 2026-05-17.*
+`,
+  },
+  {
+    slug: 'mercury-avator-charging-cottage-dock',
+    title: 'Charging a Mercury Avator at Your Cottage Dock (2026)',
+    seoTitle: 'Mercury Avator Cottage Charging | Ontario Electric Outboard',
+    description: 'How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage electric boating.',
+    image: '/lovable-uploads/hero-avator-charging-cottage.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Electric Boating',
+    readTime: '6 min read',
+    keywords: ['mercury avator charging', 'electric outboard cottage charging', 'avator dock charging', 'ontario electric boat charging'],
+    content: `## Quick Answer
+
+Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger Avator models with external 2,300 Wh or 5,400 Wh battery packs benefit from a 240V charger for faster turnaround, but 110V overnight charging is workable for most cottage applications. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.
+
+## What charging actually requires
+
+A Mercury Avator charging setup needs three things:
+
+1. **A reliable power source** — typically shore power at the dock or boathouse
+2. **The correct charger for your battery configuration** — Mercury's chargers come in different output ratings
+3. **A protected outdoor outlet** — GFCI-protected, rated for outdoor use, weatherproof
+
+For a cottage with existing dock or boathouse power, the setup is usually straightforward. For a cottage without dock power, you're either running an extension cord from the house (works for small Avator models, awkward for larger ones) or having a marine electrician install a dedicated dock outlet.
+
+## Charge times by Avator model
+
+### Avator 7.5e (integrated 1 kWh battery)
+
+- **Standard 110V outlet**: 3-4 hours from empty to full
+- **240V charging**: not applicable for this model (single integrated battery, 110V charger only)
+
+For typical cottage use (a few hours on the water, then dock for the night), the 7.5e's overnight 110V charge is comfortable.
+
+### Avator 20e and 35e (external 2,300 Wh packs, up to 3-4 packs)
+
+- **Standard 110V outlet, single pack**: ~10-12 hours
+- **240V charger, single pack**: ~3-4 hours
+- **Multiple packs simultaneously**: depends on charger configuration
+
+For multi-pack setups, overnight 110V charging works if you have outlets to spare. A single 240V charger is the better answer for serious use.
+
+### Avator 75e and 110e (Power Center system, 5,400 Wh packs)
+
+- **Standard 110V**: practical only for trickle charging or single-pack maintenance
+- **240V charger**: required for realistic daily use, ~6-10 hours per Power Center fill
+
+For Avator 75e or 110e, plan on installing 240V charging infrastructure at your cottage.
+
+## The cottage electrical reality
+
+Most Ontario cottages were built with electrical service designed for cottage loads — lights, basic appliances, water pump, maybe an air conditioner. Adding Avator charging on top of normal cottage use needs some planning:
+
+**100A service cottage** — plenty of capacity for Avator charging on top of normal loads. Add a dedicated dock outlet, you're done.
+
+**60A service cottage** — usually enough for Avator 7.5e or single-pack 20e/35e charging. Larger multi-pack setups may push the panel limits when running other loads simultaneously.
+
+**Off-grid or remote cottage** — Avator generally doesn't work without shore power. Solar charging is theoretically possible but the math rarely works out for serious use. Plan on a gas outboard for off-grid cottages.
+
+A marine electrician can assess your cottage panel and tell you what your realistic Avator charging options are. Worth the $200-300 consultation before buying a large Avator setup.
+
+## Dock outlet installation
+
+For a dedicated Avator charging outlet at the dock:
+
+- **GFCI-protected** — mandatory for outdoor outlets near water
+- **Weatherproof in-use cover** — the outlet stays sealed even with a plug inserted
+- **Properly grounded** — marine-grade grounding to prevent stray current corrosion
+- **Wire gauge rated for the load** — typically 12 AWG for 20A circuits, heavier for 240V
+
+Have a licensed electrician do the dock outlet install. Marine electrical near water is one of the few areas where a DIY approach creates real safety risk. Cost typically runs $400-800 for a 110V dedicated outlet, $800-1,500 for a 240V install, plus any cottage panel work required.
+
+## Charging logistics for cottage trips
+
+For weekend cottagers running Avator:
+
+**Arrive Friday evening with battery at 50%**: drive up after work, motor sits on the trailer. Charging starts Friday night.
+
+**Saturday morning**: battery fully charged. Run the motor through the day.
+
+**Saturday evening**: dock the boat, plug in. Battery charges overnight.
+
+**Sunday**: battery fully charged for Sunday running.
+
+This pattern works fine with overnight charging for most Avator models. The single-day "I'll run all day Saturday and Sunday" pattern is where charging becomes a constraint — you need 240V to turn the battery around fast enough.
+
+## Cold weather and off-season charging
+
+Avator batteries lose meaningful capacity in cold weather. Late-season operation (October-November on Ontario lakes) means reduced range and slower charging.
+
+For off-season storage (December-March), Mercury recommends storing battery packs at 50-80% charge in a heated space. Don't leave packs at the cottage through winter — battery degradation in cold storage is real.
+
+This is one of the practical differences from gas: a gas outboard can sit at the cottage through winter (properly winterized). An Avator setup means battery packs come home to a heated garage every fall.
+
+## What we see at HBW
+
+The most common cottage Avator setup question we get: "Can I just run an extension cord from the house?"
+
+For the Avator 7.5e, yes — a heavy-gauge outdoor extension cord (12 AWG or better, rated for the length) works for a small Avator's overnight charging. Not ideal but functional.
+
+For larger Avator setups (35e and up), an extension cord becomes impractical. Voltage drop over long runs reduces charge rate, and running heavy cords through cottage traffic patterns creates trip hazards. For these setups, a proper dock outlet install is the right answer.
+
+The other common situation: cottagers who add Avator without consulting their cottage electrical capacity. The first big charge cycle blows a breaker, the panel needs upgrading, and the project that was supposed to be "buy a quiet electric motor" becomes "rewire the cottage." Have an electrician check your panel capacity before you commit.
+
+## Related guides
+
+- [Mercury Avator & the Future of Electric Boating in Ontario](/blog/mercury-avator-electric-boating-ontario)
+- [Mercury Avator Range on Rice Lake](/blog/mercury-avator-range-rice-lake-cottage)
+- [Mercury Avator vs Torqeedo Comparison](/blog/mercury-avator-vs-torqeedo)
+- [Boat Electrical Safety Checklist](/blog/boat-electrical-safety-checklist-ontario-freshwater)
+
+## Frequently Asked Questions
+
+**Can I charge a Mercury Avator from a standard cottage outlet?**
+For the Avator 7.5e, yes — 110V standard outlet, 3-4 hour charge. For larger Avator models, 110V works for overnight charging but a 240V charger speeds it up significantly.
+
+**Do I need a special charger?**
+The charger comes with the Avator. Mercury supplies the appropriate charger for each model. For 240V upgrades, the higher-output charger is an additional purchase but uses the same battery interface.
+
+**What does a dock outlet install cost?**
+$400-800 for a 110V GFCI dedicated outlet, $800-1,500 for a 240V install. Marine electrician required for the install — don't DIY near water.
+
+**Can I charge with solar at a remote cottage?**
+Theoretically yes, practically no for serious use. The solar array required to charge a meaningful Avator battery bank is large and expensive. For remote cottages without shore power, gas outboards remain the practical answer.
+
+**Should I leave battery packs at the cottage over winter?**
+No. Mercury recommends bringing battery packs to a heated space at 50-80% charge for winter storage. Cold storage degrades lithium batteries.
+
+**How long do Avator batteries last (lifecycle)?**
+Mercury rates the battery packs for hundreds of full charge cycles before noticeable capacity loss. For typical cottage use (weekend running through summer), a properly cared-for battery pack lasts 8-12 years before reaching meaningful degradation.
+
+**Does fast charging shorten battery life?**
+Slightly. Frequent 240V fast charging reduces battery lifecycle compared to slower 110V charging. For cottage use where overnight charging works, 110V is gentler on the battery.
+
+**What happens if the cottage loses power overnight while charging?**
+Charging stops, the battery stays at whatever level it reached. When power returns, the charger picks back up. No damage to the battery from power interruption.
+
+Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+
+*Last reviewed: 2026-05-17.*
+`,
+  },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
