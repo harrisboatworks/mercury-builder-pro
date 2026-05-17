@@ -441,6 +441,14 @@ Absolument. Une batterie marine laissée dans le bateau par temps de gel se déc
 Réservez en ligne à [hbw.wiki/service](https://hbw.wiki/service) ou appelez le **905-342-2153**. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario. 
 Concessionnaire Mercury Marine Platinum. En affaires depuis 1947.
+
+---
+
+## Portée de service
+
+Si vous demandez un rendez-vous de service chez HBW, voici la limite importante à connaître :
+
+Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 ---`,
     faqs: [
       {
