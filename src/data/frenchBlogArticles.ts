@@ -2022,6 +2022,14 @@ Cela peut. Les cycles de chaleur peuvent endommager les joints de culasse.
 Prenez rendez-vous à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Platinum. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
 
 Téléphone : 905-342-2153
+
+---
+
+## Portée de service
+
+Si vous demandez un rendez-vous de service chez HBW, voici la limite importante à connaître :
+
+Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 `,
   },
   {
