@@ -16,6 +16,7 @@ import { TableOfContents } from '@/components/blog/TableOfContents';
 import { getArticleBySlug, getRelatedArticles, parseLocalDate } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
+import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { BlogTable } from '@/components/blog/BlogTable';
@@ -336,9 +337,13 @@ export default function BlogArticle() {
               </div>
             ) : (
               <img
-                src={article.image}
+                src={optimizeImage(article.image, 1280)}
+                srcSet={buildSrcSet(article.image)}
+                sizes="(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw"
                 alt={article.title}
                 className="w-full h-full object-contain"
+                loading="eager"
+                fetchPriority="high"
                 onError={() => setHeroImgError(true)}
               />
             )}
