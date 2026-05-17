@@ -4934,6 +4934,29 @@ If downtime costs you more than a modest daily amount, SeaPro's reliability prem
 
 ---
 
+::decision-card
+eyebrow: Commercial vs recreational duty
+heading: Do you actually need a SeaPro?
+subhead: SeaPro is built for operators who cannot afford downtime. For most Ontario boaters, it is overkill at a price premium you will not recover.
+leftLabel: If you run a guide service, water taxi, or commercial fishing operation
+leftCriteria:
+  - Annual hours above 300 to 600, with some seasons hitting 1,500+
+  - One breakdown day costs more than a modest daily rate in lost revenue
+  - Extended 200-hour oil change intervals reduce service trips
+  - Reinforced lower unit and enhanced cooling handle sustained loads
+leftOutcome: SeaPro is built for this
+leftVariant: alternative
+rightLabel: If you are a heavy-use recreational angler
+rightCriteria:
+  - Weekend fishing, cottage use, or family boating under 200 hours per season
+  - Standard FourStroke reliability is more than adequate
+  - The 10 to 15 percent price premium is not recovered in service savings
+  - Annual maintenance at 100-hour intervals is acceptable
+rightOutcome: FourStroke is enough
+rightVariant: recommended
+whenInDoubt: Most Ontario recreational buyers do not need SeaPro. If you are not earning income from the boat, the standard FourStroke is the smarter buy.
+::
+
 ## SeaPro vs FourStroke: real differences
 
 | Feature | SeaPro | Standard FourStroke |
@@ -8896,6 +8919,12 @@ Classic Rice Lake walleye approaches:
 
 Bewdley, Sugar Island area, and the central basin are the zones most regulars focus on.
 
+::pull-quote
+quote: Been fishing Rice Lake for 18 years. The walleye numbers came back stronger than I expected after the 2024 slot rule changes. **Spring 2026 has been the best opener I can remember.** Bass and crappie are right where they should be too.
+attribution: Marc D.
+source: Cobourg
+::
+
 ## Bass season on Rice Lake
 
 Largemouth and smallmouth bass season opens the third Saturday in June in FMZ 17. The combined daily limit is two fish; possession limit is six.
@@ -11737,6 +11766,12 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 ---
 
+::pull-quote
+quote: Pull the boat from Mississauga to Rice Lake every Friday in summer, hour and ten minutes door to ramp. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
+attribution: Jamal R.
+source: Mississauga
+::
+
 ## Trailer Weight and Tow Vehicle Considerations
 
 **Combined trailer + boat weight under 1,400 kg (3,000 lbs):** Most mid-size SUVs and trucks can handle this without trailer brakes required, but check your tow vehicle's manufacturer ratings.
@@ -14028,6 +14063,27 @@ The system looks complex. It is slow and predictable, and the lockmaster does mo
 A good lockmaster will walk a first-timer through it without making a thing of it. The system handles tens of thousands of transits per season.
 
 ---
+
+::decision-card
+eyebrow: Boat sizing for the Trent-Severn
+heading: Will your boat actually fit through the locks?
+subhead: In 2026, free lockage from June 19 to September 7 means more boats will try the system. Make sure yours is one of them.
+leftLabel: If you mostly stay on one lake or section between locks
+leftCriteria:
+  - Fishing on Rice Lake, the Kawarthas, or a single stretch
+  - Pontoon boats, wide fishing rigs, and smaller cruisers all work fine
+  - No beam or draft restrictions on open water
+  - Locking through only one or two locks for a weekend trip
+leftOutcome: Any size fits
+rightLabel: If you plan to run the full lock system
+rightCriteria:
+  - Long-distance transit from Trenton to Port Severn or vice versa
+  - Beam under 8.5 feet clears all locks without issue
+  - Draft under 3 feet handles the shallowest chambers
+  - Length 21 to 25 feet is the practical sweet spot
+rightOutcome: Check your dimensions
+whenInDoubt: Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 22 foot vertical clearance at fixed bridges too.
+::
 
 ## Vessel Constraints, Will Your Boat Fit?
 
@@ -21972,6 +22028,27 @@ Pick by where you're going:
 For most Toronto-area or GTA visitors, Gores Landing is the most accessible choice: 2-lane concrete, parking, services, and the most consistent ramp surface.
 
 ---
+
+::decision-card
+eyebrow: Which Rice Lake ramp makes sense
+heading: Pick the launch that matches your boat and schedule
+subhead: Not all ramps handle all boats the same way. Match the ramp to your hull size and how busy you want your Saturday morning to be.
+leftLabel: If you are launching a small fishing boat or pontoon
+leftCriteria:
+  - Boat under 18 feet, light aluminum or pontoon
+  - Comfortable with a shallow, easy-access ramp
+  - Do not mind a busy summer Saturday
+  - Prefer proximity to mid-lake fishing and the Trent-Severn east
+leftOutcome: Gores Landing public ramp
+rightLabel: If you are launching a bigger boat or trailering on weekends
+rightCriteria:
+  - Boat 20 to 24 feet, deeper draft, or heavier rig
+  - Want deeper water and more parking on peak days
+  - Prefer less congestion while you rig the boat
+  - Need a ramp that handles larger trailers reliably
+rightOutcome: Provincial park ramps east on the lake
+whenInDoubt: Gores Landing works for most recreational boats up to about 26 feet. If you are unsure, call ahead at 905-342-2153 and we will point you to the right ramp for your rig.
+::
 
 ## Step-by-Step: Launching at Gores Landing (Or Anywhere)
 
