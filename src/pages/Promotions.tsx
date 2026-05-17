@@ -15,7 +15,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { toast } from 'sonner';
 import useEmblaCarousel from 'embla-carousel-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import { generateDailyTestimonials, generateReviewCount } from '@/lib/activityGenerator';
+import { generateDailyTestimonials } from '@/lib/activityGenerator';
+import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
 import { allTestimonials } from '@/lib/testimonialData';
 import { PromotionsPageSEO } from '@/components/seo/PromotionsPageSEO';
 import { PromotionHero } from '@/components/promotions/PromotionHero';
@@ -197,7 +198,7 @@ export default function Promotions() {
       generateDailyTestimonials(allTestimonials, 6), 
       []
     );
-    const reviewCount = useMemo(() => generateReviewCount(), []);
+    const { totalReviews: reviewCount } = useGoogleReviewStats();
 
     return (
       <section className="bg-white py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">
