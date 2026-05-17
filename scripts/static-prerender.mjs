@@ -3804,10 +3804,11 @@ const multilingualBlogSitemapEntries = [
   changefreq: 'monthly',
 }));
 
-const hardcodedMultilingualPages = [
-  { loc: '/blog/fr/concessionnaire-mercury-platinum-ontario', priority: 0.6, changefreq: 'monthly', lastmod: today },
-  { loc: '/blog/zh/mercury-repower-guide-gta', priority: 0.6, changefreq: 'monthly', lastmod: today },
-];
+// Hardcoded multilingual pages removed — all translated blog posts are
+// emitted via the multilingualBlogSitemapEntries arrays above, which
+// iterate over the visible*Articles data sources. Keeping a parallel
+// hardcoded list caused duplicate <url> entries in sitemap.xml.
+const hardcodedMultilingualPages = [];
 
 const allSitemapEntries = [
   ...staticSitemapEntries.map(e => ({ ...e, lastmod: today })),

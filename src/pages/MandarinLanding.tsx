@@ -305,6 +305,12 @@ export default function MandarinLanding() {
         {/* Blog links */}
         <nav className="mt-4 space-y-2 text-center">
           <p className="text-sm font-medium text-foreground mb-3">📖 中文文章</p>
+          <Link
+            to="/blog/zh/ontario-boating-guide-toronto-chinese"
+            className="block text-primary hover:underline text-sm font-semibold"
+          >
+            ⭐ 多伦多华人安省 boating 完整指南（中心页）→
+          </Link>
           <Link to="/blog/zh/mercury-repower-guide-gta" className="block text-primary hover:underline text-sm">
             舷外机换新指南 →
           </Link>
