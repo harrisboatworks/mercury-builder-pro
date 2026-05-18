@@ -2174,13 +2174,15 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       }] : [])
     ],
     extraNoscript: () => {
+      const heroHtml = renderHeroPictureHtml(article.image, article.title);
+      const bylineHtml = renderAuthorBylineHtml(article.author);
       const bodyHtml = renderArticleBodyHtml(article.content);
       const faqHtml = (article.faqs && article.faqs.length > 0)
         ? '<section><h2>FAQ</h2><dl>' + article.faqs.map(f =>
             `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
           ).join('') + '</dl></section>'
         : '';
-      return `${dealerStripHtml}<article>${bodyHtml}</article>${faqHtml}`;
+      return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${faqHtml}`;
     }
   }));
 }
