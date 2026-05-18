@@ -63,7 +63,8 @@ for (const dir of SCAN_DIRS) {
   }
 }
 
-const problems = [];
+const variantProblems = []; // hard fail: source exists but variants missing
+const brokenRefs = []; // soft warn: source file itself doesn't exist
 let okCount = 0;
 let skippedCount = 0;
 
@@ -71,18 +72,12 @@ for (const [fname, sources] of referenced) {
   const base = basename(fname, extname(fname));
   const masterPath = join(UPLOADS_DIR, fname);
 
-  // Source PNG/JPG must exist (else it's a broken reference, separate problem).
   if (!existsSync(masterPath)) {
-    problems.push({
-      file: fname,
-      missing: ['SOURCE FILE'],
-      sources: [...sources].slice(0, 3),
-    });
+    brokenRefs.push({ file: fname, sources: [...sources].slice(0, 3) });
     continue;
   }
 
-  // Skip tiny images (< 50KB) — they don't benefit from responsive variants
-  // and the WebP pipeline only ran on files >300KB originally.
+  // Skip tiny images (< 50KB) — too small to benefit from responsive variants.
   const sizeKB = statSync(masterPath).size / 1024;
   if (sizeKB < 50) {
     skippedCount++;
@@ -93,7 +88,11 @@ for (const [fname, sources] of referenced) {
     (suf) => !existsSync(join(UPLOADS_DIR, base + suf)),
   );
   if (missing.length) {
-    problems.push({ file: fname, missing, sources: [...sources].slice(0, 3) });
+    variantProblems.push({
+      file: fname,
+      missing,
+      sources: [...sources].slice(0, 3),
+    });
   } else {
     okCount++;
   }
@@ -103,24 +102,33 @@ console.log(`\nResponsive WebP variant check`);
 console.log(`  Scanned ${referenced.size} referenced image(s)`);
 console.log(`  OK:       ${okCount}`);
 console.log(`  Skipped:  ${skippedCount}  (< 50KB, variants not required)`);
-console.log(`  Problems: ${problems.length}\n`);
+console.log(`  Missing variants: ${variantProblems.length}  (hard fail)`);
+console.log(`  Broken refs:      ${brokenRefs.length}  (warn only)\n`);
 
-if (problems.length) {
-  for (const p of problems) {
-    console.log(`  ✗ ${p.file}`);
-    console.log(`      missing: ${p.missing.join(', ')}`);
-    console.log(`      ref by:  ${p.sources.join(', ')}`);
+if (brokenRefs.length) {
+  console.warn('Broken image references (source file missing):');
+  for (const p of brokenRefs) {
+    console.warn(`  ! ${p.file}  — ref by: ${p.sources.join(', ')}`);
+  }
+  console.log('');
+}
+
+if (variantProblems.length) {
+  console.error('Missing responsive WebP variants:');
+  for (const p of variantProblems) {
+    console.error(`  ✗ ${p.file}`);
+    console.error(`      missing: ${p.missing.join(', ')}`);
+    console.error(`      ref by:  ${p.sources.join(', ')}`);
   }
   console.log('');
   if (!WARN_ONLY) {
     console.error(
-      `FAIL: ${problems.length} image(s) missing responsive WebP variants.\n` +
-        `Run cwebp to regenerate, or pass --warn to soft-fail.\n`,
+      `FAIL: ${variantProblems.length} image(s) missing responsive WebP variants.\n` +
+        `Regenerate with cwebp (-resize 640/1024/1920), or pass --warn to soft-fail.\n`,
     );
     process.exit(1);
-  } else {
-    console.warn('WARN: missing variants reported above (soft-fail).\n');
   }
+  console.warn('WARN: variant gaps reported above (soft-fail).\n');
 } else {
   console.log('All referenced images have full responsive WebP coverage.\n');
 }
