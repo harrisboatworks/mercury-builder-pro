@@ -301,52 +301,92 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
 
       {/* Lightbox Modal */}
       {showLightbox && (
-        <div className="fixed inset-0 z-[10000] bg-black/90 flex items-center justify-center">
-          <div className="relative max-w-4xl max-h-[90vh] w-full h-full flex items-center justify-center p-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setShowLightbox(false)}
-              className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 text-white z-10"
+        <div
+          className="fixed inset-0 z-[10000] bg-black/95 flex items-center justify-center"
+          onClick={() => setShowLightbox(false)}
+        >
+          {/* Close button — high contrast, safe-area aware, generous tap target */}
+          <button
+            type="button"
+            aria-label="Close image viewer"
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowLightbox(false);
+            }}
+            className="absolute right-4 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white text-black shadow-lg ring-2 ring-black/20 active:scale-95 transition"
+            style={{ top: 'max(1rem, env(safe-area-inset-top))' }}
+          >
+            <X className="h-6 w-6" strokeWidth={2.5} />
+          </button>
+
+          {/* Image counter */}
+          {displayImages.length > 1 && (
+            <div
+              className="absolute left-4 z-20 rounded-full bg-black/70 px-3 py-1.5 text-sm font-medium text-white"
+              style={{ top: 'max(1rem, env(safe-area-inset-top))' }}
             >
-              <X className="h-5 w-5" />
-            </Button>
-            
+              {selectedIndex + 1} / {displayImages.length}
+            </div>
+          )}
+
+          <div
+            className="relative flex h-full w-full items-center justify-center p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={lightboxEnhancedUrls[selectedIndex] || displayImages[selectedIndex]}
               alt={`${motorTitle} - Full size`}
-              className="max-w-[85vw] max-h-[75vh] md:max-w-[70vw] md:max-h-[70vh] object-contain"
+              className="max-w-[92vw] max-h-[70vh] md:max-w-[70vw] md:max-h-[75vh] object-contain"
               onError={() => handleImageError(displayImages[selectedIndex])}
             />
-            
-            {/* Image counter in lightbox */}
-            {displayImages.length > 1 && (
-              <div className="absolute top-4 left-4 bg-black/60 text-white text-sm px-3 py-1 rounded-full">
-                {selectedIndex + 1} of {displayImages.length}
-              </div>
-            )}
-            
-            {displayImages.length > 1 && (
-              <>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={handlePrevious}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={handleNext}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </Button>
-              </>
-            )}
           </div>
+
+          {/* Nav arrows — bottom-positioned on mobile for thumb reach, solid bg */}
+          {displayImages.length > 1 && (
+            <div
+              className="absolute left-0 right-0 z-20 flex items-center justify-center gap-6 px-4 md:hidden"
+              style={{ bottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
+            >
+              <button
+                type="button"
+                aria-label="Previous image"
+                onClick={(e) => { e.stopPropagation(); handlePrevious(); }}
+                className="flex h-14 w-14 items-center justify-center rounded-full bg-white text-black shadow-lg ring-2 ring-black/20 active:scale-95 transition"
+              >
+                <ChevronLeft className="h-7 w-7" strokeWidth={2.5} />
+              </button>
+              <button
+                type="button"
+                aria-label="Next image"
+                onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                className="flex h-14 w-14 items-center justify-center rounded-full bg-white text-black shadow-lg ring-2 ring-black/20 active:scale-95 transition"
+              >
+                <ChevronRight className="h-7 w-7" strokeWidth={2.5} />
+              </button>
+            </div>
+          )}
+
+          {/* Desktop side arrows */}
+          {displayImages.length > 1 && (
+            <>
+              <button
+                type="button"
+                aria-label="Previous image"
+                onClick={(e) => { e.stopPropagation(); handlePrevious(); }}
+                className="absolute left-4 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-black shadow-lg hover:bg-white md:flex"
+              >
+                <ChevronLeft className="h-6 w-6" strokeWidth={2.5} />
+              </button>
+              <button
+                type="button"
+                aria-label="Next image"
+                onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                className="absolute right-4 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-black shadow-lg hover:bg-white md:flex"
+              >
+                <ChevronRight className="h-6 w-6" strokeWidth={2.5} />
+              </button>
+            </>
+          )}
         </div>
       )}
     </div>
