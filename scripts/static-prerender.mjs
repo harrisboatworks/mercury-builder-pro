@@ -3015,6 +3015,44 @@ const routes = [
     }
   },
   // ============================================================
+  // Language-index hub pages — /blog/{fr,zh,ko,es,hi,pa}
+  // Without these, Vercel's /blog/:slug rewrite would 404 the hub
+  // (no dist/blog/fr/index.html exists) and crawlers see no content.
+  // Stamps a noscript article list per language, mirroring /blog above.
+  // ============================================================
+  ...[
+    { lang: 'fr', articles: frenchBlogArticles,   htmlLang: 'fr',      ogLocale: 'fr_CA',  h1: 'Guides Mercury et conseils nautiques',           intro: 'Conseils d\'experts sur les moteurs hors-bord Mercury, remotorisation, entretien et achat — par le concessionnaire Mercury Marine Platinum de l\'Ontario depuis 1947.', backTo: 'Tous les articles' },
+    { lang: 'zh', articles: mandarinBlogArticles, htmlLang: 'zh-Hans', ogLocale: 'zh_CN',  h1: '水星马达指南与船艇技巧',                         intro: '安大略省自1947年起的水星白金经销商，提供水星舷外机、动力升级、保养与购买的专业建议。', backTo: '所有文章' },
+    { lang: 'ko', articles: koreanBlogArticles,   htmlLang: 'ko',      ogLocale: 'ko_KR',  h1: 'Mercury 모터 가이드 & 보팅 팁',                  intro: '1947년부터 온타리오의 Mercury Marine 플래티넘 딜러가 제공하는 Mercury 선외기, 리파워, 정비 및 구매 가이드.', backTo: '전체 글' },
+    { lang: 'es', articles: spanishBlogArticles,  htmlLang: 'es',      ogLocale: 'es_419', h1: 'Guías Mercury y consejos de navegación',         intro: 'Consejos expertos sobre motores fueraborda Mercury, repotenciación, mantenimiento y compra — del distribuidor Mercury Marine Platinum de Ontario desde 1947.', backTo: 'Todos los artículos' },
+    { lang: 'hi', articles: [],                   htmlLang: 'hi',      ogLocale: 'hi_IN',  h1: 'Mercury मोटर गाइड और बोटिंग टिप्स',              intro: '1947 से ओंटारियो के Mercury Marine प्लेटिनम डीलर से Mercury आउटबोर्ड मोटरों पर विशेषज्ञ सलाह।', backTo: 'सभी लेख' },
+    { lang: 'pa', articles: [],                   htmlLang: 'pa',      ogLocale: 'pa_IN',  h1: 'Mercury ਮੋਟਰ ਗਾਈਡਾਂ ਅਤੇ ਬੋਟਿੰਗ ਟਿਪਸ',           intro: '1947 ਤੋਂ ਓਨਟਾਰੀਓ ਦੇ Mercury Marine ਪਲੈਟੀਨਮ ਡੀਲਰ ਤੋਂ Mercury ਆਊਟਬੋਰਡ ਮੋਟਰਾਂ ਬਾਰੇ ਮਾਹਰ ਸਲਾਹ।', backTo: 'ਸਾਰੇ ਲੇਖ' },
+  ].map(({ lang, articles, htmlLang, ogLocale, h1, intro, backTo }) => ({
+    path: `/blog/${lang}`,
+    title: `${h1} | Harris Boat Works`,
+    description: intro,
+    h1,
+    intro,
+    htmlLang,
+    ogLocale,
+    schemas: [genericPageSchema(`/blog/${lang}`, h1, intro)],
+    extraNoscript: () => {
+      const visible = (articles || []).filter(a => a.isPublished !== false);
+      if (visible.length === 0) {
+        return `<section><p>${escapeHtml(backTo)} — <a href="/blog">English blog</a></p></section>`;
+      }
+      const sorted = visible.slice().sort((a, b) =>
+        String(b.datePublished || b.publishDate || '').localeCompare(String(a.datePublished || a.publishDate || ''))
+      );
+      const items = sorted.map(a => {
+        const title = escapeHtml(a.title || a.slug);
+        const desc = a.description ? `<p>${escapeHtml(a.description)}</p>` : '';
+        return `<li><a href="/blog/${lang}/${a.slug}">${title}</a>${desc}</li>`;
+      }).join('');
+      return `<section><h2>${escapeHtml(backTo)} (${sorted.length})</h2><ul>${items}</ul></section>`;
+    }
+  })),
+  // ============================================================
   // /pricing-reference: HTML twin of /pricing-reference.md
   // AI engines sometimes strip the .md extension when citing the resource.
   // The .md remains canonical machine-readable data; this HTML page is the
