@@ -326,43 +326,8 @@ export default function BlogArticle() {
             </div>
           </header>
 
-          {/* Featured Image */}
-          <div className="aspect-[16/9] overflow-hidden rounded-lg bg-repower-paper border border-repower-navy-900/10 mb-10">
-            {heroImgError ? (
-              <div className="w-full h-full flex items-center justify-center bg-repower-navy-900 text-white">
-                <div className="text-center px-4">
-                  <span className="block text-3xl font-display font-bold tracking-tight">Harris Boat Works</span>
-                  <span className="block text-sm mt-1 opacity-80 uppercase tracking-widest">Mercury Authorized Dealer</span>
-                </div>
-              </div>
-            ) : (
-              <picture>
-                {/* Same-origin PNG/JPG → prefer pre-generated responsive WebP variants */}
-                {(() => {
-                  if (!/^\/.+\.(png|jpe?g)$/i.test(article.image)) return null;
-                  const base = article.image.replace(/\.(png|jpe?g)$/i, '');
-                  const srcSet = `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`;
-                  return (
-                    <source
-                      srcSet={srcSet}
-                      sizes="(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw"
-                      type="image/webp"
-                    />
-                  );
-                })()}
-                <img
-                  src={optimizeImage(article.image, 1280)}
-                  srcSet={buildSrcSet(article.image)}
-                  sizes="(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw"
-                  alt={article.title}
-                  className="w-full h-full object-contain"
-                  loading="eager"
-                  fetchPriority="high"
-                  onError={() => setHeroImgError(true)}
-                />
-              </picture>
-            )}
-          </div>
+          {/* Featured Image — shared <picture> component (see BlogHeroPicture) */}
+          <BlogHeroPicture image={article.image} alt={article.title} />
 
           {/* Language switcher */}
           <LanguageSwitcher currentLang="en" currentSlug={article.slug} />
