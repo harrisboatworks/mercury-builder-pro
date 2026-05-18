@@ -1204,6 +1204,78 @@ export type Database = {
         }
         Relationships: []
       }
+      hbw_bot_reminders: {
+        Row: {
+          attempts: number
+          available_at: string
+          claimed_at: string | null
+          created_at: string
+          created_by: string | null
+          due_at: string
+          id: string
+          last_error: string | null
+          max_attempts: number
+          metadata: Json
+          platform: string
+          reminder_text: string
+          sent_at: string | null
+          source_command: string | null
+          source_event_id: string | null
+          source_message_ts: string | null
+          status: string
+          target: Json
+          target_key: string | null
+          updated_at: string
+          username: string | null
+        }
+        Insert: {
+          attempts?: number
+          available_at?: string
+          claimed_at?: string | null
+          created_at?: string
+          created_by?: string | null
+          due_at: string
+          id?: string
+          last_error?: string | null
+          max_attempts?: number
+          metadata?: Json
+          platform: string
+          reminder_text: string
+          sent_at?: string | null
+          source_command?: string | null
+          source_event_id?: string | null
+          source_message_ts?: string | null
+          status?: string
+          target: Json
+          target_key?: string | null
+          updated_at?: string
+          username?: string | null
+        }
+        Update: {
+          attempts?: number
+          available_at?: string
+          claimed_at?: string | null
+          created_at?: string
+          created_by?: string | null
+          due_at?: string
+          id?: string
+          last_error?: string | null
+          max_attempts?: number
+          metadata?: Json
+          platform?: string
+          reminder_text?: string
+          sent_at?: string | null
+          source_command?: string | null
+          source_event_id?: string | null
+          source_message_ts?: string | null
+          status?: string
+          target?: Json
+          target_key?: string | null
+          updated_at?: string
+          username?: string | null
+        }
+        Relationships: []
+      }
       hbw_knowledge: {
         Row: {
           active: boolean | null
@@ -4576,6 +4648,22 @@ export type Database = {
         }
         Returns: boolean
       }
+      claim_due_hbw_bot_reminders: {
+        Args: {
+          p_gateway_secret: string
+          p_limit?: number
+          p_now?: string
+          p_stale_after_seconds?: number
+        }
+        Returns: {
+          created_at: string
+          due_at: string
+          id: string
+          platform: string
+          reminder_text: string
+          target: Json
+        }[]
+      }
       claim_openclaw_slack_fallback_jobs: {
         Args: {
           p_limit?: number
@@ -4617,6 +4705,10 @@ export type Database = {
           deleted_succeeded: number
         }[]
       }
+      complete_hbw_bot_reminder: {
+        Args: { p_gateway_secret: string; p_id: string }
+        Returns: undefined
+      }
       complete_openclaw_slack_fallback_job: {
         Args: {
           p_id: string
@@ -4624,6 +4716,30 @@ export type Database = {
           p_worker_secret: string
         }
         Returns: undefined
+      }
+      create_hbw_bot_reminder: {
+        Args: {
+          p_created_by?: string
+          p_due_at: string
+          p_gateway_secret: string
+          p_metadata?: Json
+          p_platform: string
+          p_reminder_text: string
+          p_source_command?: string
+          p_source_event_id?: string
+          p_source_message_ts?: string
+          p_target: Json
+          p_username?: string
+        }
+        Returns: {
+          created_at: string
+          due_at: string
+          id: string
+          platform: string
+          reminder_text: string
+          status: string
+          target: Json
+        }[]
       }
       customer_brief: {
         Args: { p_limit?: number; p_query: string }
@@ -4906,6 +5022,15 @@ export type Database = {
           id: string
           status: string
         }[]
+      }
+      fail_hbw_bot_reminder: {
+        Args: {
+          p_error: string
+          p_gateway_secret: string
+          p_id: string
+          p_retry_after_seconds?: number
+        }
+        Returns: undefined
       }
       fail_openclaw_slack_fallback_job: {
         Args: {
