@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
+import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
@@ -340,20 +341,14 @@ export default function FrenchBlogArticlePage() {
           </Link>
         </nav>
 
-        {/* Hero image */}
-        {article.image && !heroImgError && (
-          <div className="mb-8 rounded-xl overflow-hidden">
-            <img
-              src={optimizeImage(article.image, 1280)}
-              srcSet={buildSrcSet(article.image)}
-              sizes="(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw"
-              loading="eager"
-              fetchPriority="high"
-              alt={article.title}
-              className="w-full h-64 md:h-80 object-cover"
-              onError={() => setHeroImgError(true)}
-            />
-          </div>
+        {/* Hero image — shared <picture> component */}
+        {article.image && (
+          <BlogHeroPicture
+            image={article.image}
+            alt={article.title}
+            wrapperClassName="mb-8 rounded-xl overflow-hidden"
+            className="w-full h-64 md:h-80 object-cover"
+          />
         )}
 
         <LanguageSwitcher currentLang="fr" currentSlug={article.slug} />

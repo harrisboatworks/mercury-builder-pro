@@ -116,12 +116,12 @@
     { "source": "/auth/tiktok/callback", "destination": "/index.html" },
     { "source": "/fr", "destination": "/index.html" },
     { "source": "/zh", "destination": "/index.html" },
-    { "source": "/blog/fr", "destination": "/index.html" },
-    { "source": "/blog/zh", "destination": "/index.html" },
-    { "source": "/blog/ko", "destination": "/index.html" },
-    { "source": "/blog/es", "destination": "/index.html" },
-    { "source": "/blog/hi", "destination": "/index.html" },
-    { "source": "/blog/pa", "destination": "/index.html" },
+    { "source": "/blog/fr", "destination": "/blog/fr/index.html" },
+    { "source": "/blog/zh", "destination": "/blog/zh/index.html" },
+    { "source": "/blog/ko", "destination": "/blog/ko/index.html" },
+    { "source": "/blog/es", "destination": "/blog/es/index.html" },
+    { "source": "/blog/hi", "destination": "/blog/hi/index.html" },
+    { "source": "/blog/pa", "destination": "/blog/pa/index.html" },
     { "source": "/blog/fr/:slug", "destination": "/index.html" },
     { "source": "/blog/zh/:slug", "destination": "/index.html" },
     { "source": "/blog/ko/:slug", "destination": "/index.html" },
@@ -160,6 +160,16 @@
     { "source": "/terms", "destination": "/terms/index.html" }
   ],
   "headers": [
+    {
+      "_comment": "HTML / dynamic catch-all MUST come first — Vercel header rules with duplicate keys apply LAST-MATCH-WINS, so the long-cache rules below must override this short SWR default. (Previously this rule was at the bottom and was clobbering /lovable-uploads/* and /assets/* caching.)",
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=1, stale-while-revalidate=59"
+        }
+      ]
+    },
     {
       "source": "/assets/(.*)",
       "headers": [
@@ -239,15 +249,6 @@
         { "key": "X-Robots-Tag", "value": "noindex, follow" },
         { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400" },
         { "key": "Access-Control-Allow-Origin", "value": "*" }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "s-maxage=1, stale-while-revalidate=59"
-        }
       ]
     }
   ],

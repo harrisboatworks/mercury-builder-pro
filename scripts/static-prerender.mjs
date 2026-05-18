@@ -2063,6 +2063,46 @@ const BLOG_TABLE_FALLBACKS = {
     '</tbody></table>',
 };
 
+// ============================================================
+// Hero <picture> + author byline noscript helpers
+// Mirrors src/components/blog/BlogHeroPicture.tsx and AuthorByline.tsx
+// so crawlers + LLMs see the responsive WebP srcset and credentials
+// without executing JS. Keep in sync if those components change.
+// ============================================================
+function renderHeroPictureHtml(image, alt) {
+  if (!image) return '';
+  const safeAlt = escapeHtml(alt || '');
+  const isLocalRaster = /^\/.+\.(png|jpe?g)$/i.test(image);
+  if (!isLocalRaster) {
+    return `<figure class="blog-hero"><img src="${escapeHtml(image)}" alt="${safeAlt}" loading="eager" fetchpriority="high" /></figure>`;
+  }
+  const base = image.replace(/\.(png|jpe?g)$/i, '');
+  const srcSet = `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`;
+  const sizes = '(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw';
+  return (
+    `<figure class="blog-hero">` +
+      `<picture>` +
+        `<source srcset="${srcSet}" sizes="${sizes}" type="image/webp" />` +
+        `<img src="${escapeHtml(image)}" alt="${safeAlt}" loading="eager" fetchpriority="high" />` +
+      `</picture>` +
+    `</figure>`
+  );
+}
+
+function renderAuthorBylineHtml(authorName) {
+  const name = escapeHtml(authorName || 'Jay Harris');
+  const isJay = (authorName || 'Jay Harris') === 'Jay Harris';
+  const credentials = isJay
+    ? 'Owner, Harris Boat Works · 3rd-generation family marina since 1947 · Mercury Marine Platinum Dealer'
+    : '';
+  const link = isJay ? ` <a href="/about/jay-harris">View bio →</a>` : '';
+  return (
+    `<aside class="author-byline" itemscope itemtype="https://schema.org/Person">` +
+      `<span>By <span itemprop="name">${name}</span>${credentials ? `, <span itemprop="description">${escapeHtml(credentials)}</span>` : ''}${link}</span>` +
+    `</aside>`
+  );
+}
+
 // Build blog article route configs.
 const blogArticleRoutes = blogArticles.map(article => ({
   path: `/blog/${article.slug}`,
@@ -2074,8 +2114,8 @@ const blogArticleRoutes = blogArticles.map(article => ({
   intro: firstParagraph(article.content, article.description),
   schemas: [blogArticleSchema(article)],
   extraNoscript: () => {
-    // Full article body, bots that don't execute JS now see the entire
-    // post (~1000–2000 words), not just the noscript intro paragraph.
+    const heroHtml = renderHeroPictureHtml(article.image, article.title);
+    const bylineHtml = renderAuthorBylineHtml(article.author);
     const bodyHtml = renderArticleBodyHtml(article.content);
     const faqHtml = (article.faqs && article.faqs.length > 0)
       ? '<section><h2>Frequently Asked Questions</h2><dl>' + article.faqs.map(f =>
@@ -2083,11 +2123,8 @@ const blogArticleRoutes = blogArticles.map(article => ({
         ).join('') + '</dl></section>'
       : '';
     const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
-    // Dealer credentials strip — identical on every blog post. Sits between
-    // the hero image (rendered client-side / referenced via og:image) and the
-    // article body so crawlers + LLMs see HBW credentials inline with content.
     const dealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>Since 1947</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
-    return `${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}`;
+    return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}`;
   }
 }));
 
@@ -2137,13 +2174,15 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       }] : [])
     ],
     extraNoscript: () => {
+      const heroHtml = renderHeroPictureHtml(article.image, article.title);
+      const bylineHtml = renderAuthorBylineHtml(article.author);
       const bodyHtml = renderArticleBodyHtml(article.content);
       const faqHtml = (article.faqs && article.faqs.length > 0)
         ? '<section><h2>FAQ</h2><dl>' + article.faqs.map(f =>
             `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
           ).join('') + '</dl></section>'
         : '';
-      return `${dealerStripHtml}<article>${bodyHtml}</article>${faqHtml}`;
+      return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${faqHtml}`;
     }
   }));
 }
@@ -2975,6 +3014,44 @@ const routes = [
       return `<section><h2>All blog posts (${published.length})</h2><ul>${items}</ul></section>`;
     }
   },
+  // ============================================================
+  // Language-index hub pages — /blog/{fr,zh,ko,es,hi,pa}
+  // Without these, Vercel's /blog/:slug rewrite would 404 the hub
+  // (no dist/blog/fr/index.html exists) and crawlers see no content.
+  // Stamps a noscript article list per language, mirroring /blog above.
+  // ============================================================
+  ...[
+    { lang: 'fr', articles: frenchBlogArticles,   htmlLang: 'fr',      ogLocale: 'fr_CA',  h1: 'Guides Mercury et conseils nautiques',           intro: 'Conseils d\'experts sur les moteurs hors-bord Mercury, remotorisation, entretien et achat — par le concessionnaire Mercury Marine Platinum de l\'Ontario depuis 1947.', backTo: 'Tous les articles' },
+    { lang: 'zh', articles: mandarinBlogArticles, htmlLang: 'zh-Hans', ogLocale: 'zh_CN',  h1: '水星马达指南与船艇技巧',                         intro: '安大略省自1947年起的水星白金经销商，提供水星舷外机、动力升级、保养与购买的专业建议。', backTo: '所有文章' },
+    { lang: 'ko', articles: koreanBlogArticles,   htmlLang: 'ko',      ogLocale: 'ko_KR',  h1: 'Mercury 모터 가이드 & 보팅 팁',                  intro: '1947년부터 온타리오의 Mercury Marine 플래티넘 딜러가 제공하는 Mercury 선외기, 리파워, 정비 및 구매 가이드.', backTo: '전체 글' },
+    { lang: 'es', articles: spanishBlogArticles,  htmlLang: 'es',      ogLocale: 'es_419', h1: 'Guías Mercury y consejos de navegación',         intro: 'Consejos expertos sobre motores fueraborda Mercury, repotenciación, mantenimiento y compra — del distribuidor Mercury Marine Platinum de Ontario desde 1947.', backTo: 'Todos los artículos' },
+    { lang: 'hi', articles: [],                   htmlLang: 'hi',      ogLocale: 'hi_IN',  h1: 'Mercury मोटर गाइड और बोटिंग टिप्स',              intro: '1947 से ओंटारियो के Mercury Marine प्लेटिनम डीलर से Mercury आउटबोर्ड मोटरों पर विशेषज्ञ सलाह।', backTo: 'सभी लेख' },
+    { lang: 'pa', articles: [],                   htmlLang: 'pa',      ogLocale: 'pa_IN',  h1: 'Mercury ਮੋਟਰ ਗਾਈਡਾਂ ਅਤੇ ਬੋਟਿੰਗ ਟਿਪਸ',           intro: '1947 ਤੋਂ ਓਨਟਾਰੀਓ ਦੇ Mercury Marine ਪਲੈਟੀਨਮ ਡੀਲਰ ਤੋਂ Mercury ਆਊਟਬੋਰਡ ਮੋਟਰਾਂ ਬਾਰੇ ਮਾਹਰ ਸਲਾਹ।', backTo: 'ਸਾਰੇ ਲੇਖ' },
+  ].map(({ lang, articles, htmlLang, ogLocale, h1, intro, backTo }) => ({
+    path: `/blog/${lang}`,
+    title: `${h1} | Harris Boat Works`,
+    description: intro,
+    h1,
+    intro,
+    htmlLang,
+    ogLocale,
+    schemas: [genericPageSchema(`/blog/${lang}`, h1, intro)],
+    extraNoscript: () => {
+      const visible = (articles || []).filter(a => a.isPublished !== false);
+      if (visible.length === 0) {
+        return `<section><p>${escapeHtml(backTo)} — <a href="/blog">English blog</a></p></section>`;
+      }
+      const sorted = visible.slice().sort((a, b) =>
+        String(b.datePublished || b.publishDate || '').localeCompare(String(a.datePublished || a.publishDate || ''))
+      );
+      const items = sorted.map(a => {
+        const title = escapeHtml(a.title || a.slug);
+        const desc = a.description ? `<p>${escapeHtml(a.description)}</p>` : '';
+        return `<li><a href="/blog/${lang}/${a.slug}">${title}</a>${desc}</li>`;
+      }).join('');
+      return `<section><h2>${escapeHtml(backTo)} (${sorted.length})</h2><ul>${items}</ul></section>`;
+    }
+  })),
   // ============================================================
   // /pricing-reference: HTML twin of /pricing-reference.md
   // AI engines sometimes strip the .md extension when citing the resource.
