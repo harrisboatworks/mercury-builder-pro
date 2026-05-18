@@ -13,7 +13,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import FinancingForm, { FinancingFormValues } from '@/components/admin/FinancingForm';
 import { toast } from 'sonner';
 import AdminNav from '@/components/admin/AdminNav';
-import { Mic, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mic, CheckCircle2, AlertCircle, Clock } from 'lucide-react';
 import { promoEndOfDay } from '@/lib/quote-utils';
 interface DbMotor {
   id: string;
