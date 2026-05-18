@@ -337,13 +337,19 @@ export default function BlogArticle() {
               </div>
             ) : (
               <picture>
-                {/* Same-origin PNG/JPG → prefer pre-generated WebP variant for huge byte savings */}
-                {/^\/.+\.(png|jpe?g)$/i.test(article.image) && (
-                  <source
-                    srcSet={article.image.replace(/\.(png|jpe?g)$/i, '.webp')}
-                    type="image/webp"
-                  />
-                )}
+                {/* Same-origin PNG/JPG → prefer pre-generated responsive WebP variants */}
+                {(() => {
+                  if (!/^\/.+\.(png|jpe?g)$/i.test(article.image)) return null;
+                  const base = article.image.replace(/\.(png|jpe?g)$/i, '');
+                  const srcSet = `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`;
+                  return (
+                    <source
+                      srcSet={srcSet}
+                      sizes="(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw"
+                      type="image/webp"
+                    />
+                  );
+                })()}
                 <img
                   src={optimizeImage(article.image, 1280)}
                   srcSet={buildSrcSet(article.image)}
