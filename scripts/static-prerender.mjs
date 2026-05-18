@@ -719,7 +719,13 @@ function homepageSchema() {
           { "@type": "Brand", "name": "Mercury Marine" },
           { "@type": "Brand", "name": "Legend Boats" }
         ],
-        "award": "Mercury Marine Platinum Dealer"
+        "award": "Mercury Marine Platinum Dealer",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.6",
+          "reviewCount": "180",
+          "bestRating": "5"
+        }
       },
       {
         "@type": "Service",
@@ -730,6 +736,40 @@ function homepageSchema() {
         "areaServed": [
           { "@type": "State", "name": "Ontario" },
           { "@type": "Country", "name": "Canada" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.mercuryrepower.ca/#service-repower",
+        "name": "Mercury Outboard Repower",
+        "serviceType": "Outboard Motor Repower",
+        "provider": { "@id": "https://www.mercuryrepower.ca/#organization" },
+        "areaServed": [
+          { "@type": "City", "name": "Toronto" },
+          { "@type": "City", "name": "Peterborough" },
+          { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
+          { "@type": "AdministrativeArea", "name": "Northumberland County" },
+          { "@type": "AdministrativeArea", "name": "Durham Region" },
+          { "@type": "City", "name": "Cobourg" },
+          { "@type": "City", "name": "Markham" },
+          { "@type": "City", "name": "Richmond Hill" },
+          { "@type": "City", "name": "Scarborough" },
+          { "@type": "City", "name": "North York" },
+          { "@type": "City", "name": "Mississauga" },
+          { "@type": "AdministrativeArea", "name": "Bay of Quinte" }
+        ],
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "CAD",
+          "lowPrice": "11000",
+          "highPrice": "40000"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.mercuryrepower.ca/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mercuryrepower.ca/" }
         ]
       }
     ]
