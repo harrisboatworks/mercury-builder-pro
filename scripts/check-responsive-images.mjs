@@ -1,0 +1,126 @@
+#!/usr/bin/env node
+/**
+ * Verifies that every /lovable-uploads/*.{png,jpg,jpeg} image referenced from
+ * blog markdown, blog data, or motor/location/case-study markdown has the
+ * responsive WebP variants the runtime <picture>/srcSet pipeline expects:
+ *   - <base>.webp       (1920w master)
+ *   - <base>-1024.webp  (tablet)
+ *   - <base>-640.webp   (mobile)
+ *
+ * Exits non-zero (CI failure) when any variant is missing so the build blocks
+ * regressions before they reach production.
+ *
+ * Usage:
+ *   node scripts/check-responsive-images.mjs           # fail on missing
+ *   node scripts/check-responsive-images.mjs --warn    # log only
+ */
+
+import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
+import { join, dirname, basename, extname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(__dirname, '..');
+const UPLOADS_DIR = join(ROOT, 'public', 'lovable-uploads');
+const WARN_ONLY = process.argv.includes('--warn');
+
+// Directories to scan for image references.
+const SCAN_DIRS = [
+  join(ROOT, 'public', 'blog'),
+  join(ROOT, 'public', 'locations'),
+  join(ROOT, 'public', 'motors'),
+  join(ROOT, 'public', 'case-studies'),
+  join(ROOT, 'src', 'data'),
+  join(ROOT, 'src', 'pages'),
+  join(ROOT, 'src', 'components'),
+];
+
+const REF_RE = /\/lovable-uploads\/([A-Za-z0-9_\-.]+?\.(?:png|jpg|jpeg))/gi;
+const REQUIRED_SUFFIXES = ['.webp', '-1024.webp', '-640.webp'];
+
+function walk(dir) {
+  const out = [];
+  if (!existsSync(dir)) return out;
+  for (const entry of readdirSync(dir)) {
+    const p = join(dir, entry);
+    const s = statSync(p);
+    if (s.isDirectory()) out.push(...walk(p));
+    else if (/\.(md|mdx|ts|tsx|js|jsx|json)$/i.test(entry)) out.push(p);
+  }
+  return out;
+}
+
+const referenced = new Map(); // filename -> Set of source files
+for (const dir of SCAN_DIRS) {
+  for (const file of walk(dir)) {
+    const content = readFileSync(file, 'utf8');
+    let m;
+    while ((m = REF_RE.exec(content)) !== null) {
+      const fname = m[1];
+      if (!referenced.has(fname)) referenced.set(fname, new Set());
+      referenced.get(fname).add(file.replace(ROOT + '/', ''));
+    }
+  }
+}
+
+const problems = [];
+let okCount = 0;
+let skippedCount = 0;
+
+for (const [fname, sources] of referenced) {
+  const base = basename(fname, extname(fname));
+  const masterPath = join(UPLOADS_DIR, fname);
+
+  // Source PNG/JPG must exist (else it's a broken reference, separate problem).
+  if (!existsSync(masterPath)) {
+    problems.push({
+      file: fname,
+      missing: ['SOURCE FILE'],
+      sources: [...sources].slice(0, 3),
+    });
+    continue;
+  }
+
+  // Skip tiny images (< 50KB) — they don't benefit from responsive variants
+  // and the WebP pipeline only ran on files >300KB originally.
+  const sizeKB = statSync(masterPath).size / 1024;
+  if (sizeKB < 50) {
+    skippedCount++;
+    continue;
+  }
+
+  const missing = REQUIRED_SUFFIXES.filter(
+    (suf) => !existsSync(join(UPLOADS_DIR, base + suf)),
+  );
+  if (missing.length) {
+    problems.push({ file: fname, missing, sources: [...sources].slice(0, 3) });
+  } else {
+    okCount++;
+  }
+}
+
+console.log(`\nResponsive WebP variant check`);
+console.log(`  Scanned ${referenced.size} referenced image(s)`);
+console.log(`  OK:       ${okCount}`);
+console.log(`  Skipped:  ${skippedCount}  (< 50KB, variants not required)`);
+console.log(`  Problems: ${problems.length}\n`);
+
+if (problems.length) {
+  for (const p of problems) {
+    console.log(`  ✗ ${p.file}`);
+    console.log(`      missing: ${p.missing.join(', ')}`);
+    console.log(`      ref by:  ${p.sources.join(', ')}`);
+  }
+  console.log('');
+  if (!WARN_ONLY) {
+    console.error(
+      `FAIL: ${problems.length} image(s) missing responsive WebP variants.\n` +
+        `Run cwebp to regenerate, or pass --warn to soft-fail.\n`,
+    );
+    process.exit(1);
+  } else {
+    console.warn('WARN: missing variants reported above (soft-fail).\n');
+  }
+} else {
+  console.log('All referenced images have full responsive WebP coverage.\n');
+}
