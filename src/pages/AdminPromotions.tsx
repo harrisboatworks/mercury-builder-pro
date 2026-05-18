@@ -426,6 +426,26 @@ const AdminPromotions = () => {
     });
   }, [promotions]);
 
+  // Promos expiring within 7 days (for the in-admin warning banner).
+  const expiringSoon = useMemo(() => {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    const cutoff = new Date(now);
+    cutoff.setDate(cutoff.getDate() + 7);
+    return promotions
+      .filter(p => {
+        if (!p.is_active || !p.end_date) return false;
+        const end = promoEndOfDay(p.end_date);
+        return end >= now && end <= promoEndOfDay(cutoff.toISOString().split('T')[0]);
+      })
+      .map(p => {
+        const end = promoEndOfDay(p.end_date!);
+        const daysLeft = Math.max(0, Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
+        return { ...p, daysLeft };
+      })
+      .sort((a, b) => a.daysLeft - b.daysLeft);
+  }, [promotions]);
+
   return (
     <main className="container mx-auto px-4 py-8">
       <AdminNav />
