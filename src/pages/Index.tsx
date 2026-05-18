@@ -11,7 +11,7 @@ import { RepowerLayout } from '@/components/repower/RepowerLayout';
 import { HeroRepower } from '@/components/repower/HeroRepower';
 import { RepowerCta } from '@/components/repower/RepowerCta';
 import { TrustStrip } from '@/components/repower/TrustStrip';
-import { RepowerMath } from '@/components/repower/RepowerMath';
+
 import { HowItWorksCard, HowItWorksGrid } from '@/components/repower/HowItWorksCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -158,7 +158,7 @@ export default function Index() {
           </div>
         </section>
 
-        <RepowerMath />
+        
         {/* HOW IT WORKS */}
         <section className="py-16 md:py-32 px-4 sm:px-6 md:px-14 bg-[#0A1828] text-[#F5F1EA]">
           <div className="max-w-[1400px] mx-auto">
