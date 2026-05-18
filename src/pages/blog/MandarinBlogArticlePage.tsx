@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
+import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
@@ -189,28 +190,8 @@ export default function MandarinBlogArticlePage() {
             </div>
           </header>
 
-          {/* Featured Image */}
-          <div className="aspect-[16/9] overflow-hidden rounded-lg bg-repower-paper border border-repower-navy-900/10 mb-10">
-            {heroImgError ? (
-              <div className="w-full h-full flex items-center justify-center bg-repower-navy-900 text-white">
-                <div className="text-center px-4">
-                  <span className="block text-3xl font-display font-bold tracking-tight">Harris Boat Works</span>
-                  <span className="block text-sm mt-1 opacity-80 uppercase tracking-widest">Mercury Authorized Dealer</span>
-                </div>
-              </div>
-            ) : (
-              <img
-                src={optimizeImage(article.image, 1280)}
-              srcSet={buildSrcSet(article.image)}
-              sizes="(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw"
-              loading="eager"
-              fetchPriority="high"
-                alt={article.title}
-                className="w-full h-full object-contain"
-                onError={() => setHeroImgError(true)}
-              />
-            )}
-          </div>
+          {/* Featured Image — shared <picture> component */}
+          <BlogHeroPicture image={article.image} alt={article.title} />
 
           {/* Language switcher */}
           <LanguageSwitcher currentLang="zh" currentSlug={article.slug} />
