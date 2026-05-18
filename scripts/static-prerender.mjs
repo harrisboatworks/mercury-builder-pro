@@ -2063,6 +2063,46 @@ const BLOG_TABLE_FALLBACKS = {
     '</tbody></table>',
 };
 
+// ============================================================
+// Hero <picture> + author byline noscript helpers
+// Mirrors src/components/blog/BlogHeroPicture.tsx and AuthorByline.tsx
+// so crawlers + LLMs see the responsive WebP srcset and credentials
+// without executing JS. Keep in sync if those components change.
+// ============================================================
+function renderHeroPictureHtml(image, alt) {
+  if (!image) return '';
+  const safeAlt = escapeHtml(alt || '');
+  const isLocalRaster = /^\/.+\.(png|jpe?g)$/i.test(image);
+  if (!isLocalRaster) {
+    return `<figure class="blog-hero"><img src="${escapeHtml(image)}" alt="${safeAlt}" loading="eager" fetchpriority="high" /></figure>`;
+  }
+  const base = image.replace(/\.(png|jpe?g)$/i, '');
+  const srcSet = `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`;
+  const sizes = '(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw';
+  return (
+    `<figure class="blog-hero">` +
+      `<picture>` +
+        `<source srcset="${srcSet}" sizes="${sizes}" type="image/webp" />` +
+        `<img src="${escapeHtml(image)}" alt="${safeAlt}" loading="eager" fetchpriority="high" />` +
+      `</picture>` +
+    `</figure>`
+  );
+}
+
+function renderAuthorBylineHtml(authorName) {
+  const name = escapeHtml(authorName || 'Jay Harris');
+  const isJay = (authorName || 'Jay Harris') === 'Jay Harris';
+  const credentials = isJay
+    ? 'Owner, Harris Boat Works · 3rd-generation family marina since 1947 · Mercury Marine Platinum Dealer'
+    : '';
+  const link = isJay ? ` <a href="/about/jay-harris">View bio →</a>` : '';
+  return (
+    `<aside class="author-byline" itemscope itemtype="https://schema.org/Person">` +
+      `<span>By <span itemprop="name">${name}</span>${credentials ? `, <span itemprop="description">${escapeHtml(credentials)}</span>` : ''}${link}</span>` +
+    `</aside>`
+  );
+}
+
 // Build blog article route configs.
 const blogArticleRoutes = blogArticles.map(article => ({
   path: `/blog/${article.slug}`,
@@ -2074,8 +2114,8 @@ const blogArticleRoutes = blogArticles.map(article => ({
   intro: firstParagraph(article.content, article.description),
   schemas: [blogArticleSchema(article)],
   extraNoscript: () => {
-    // Full article body, bots that don't execute JS now see the entire
-    // post (~1000–2000 words), not just the noscript intro paragraph.
+    const heroHtml = renderHeroPictureHtml(article.image, article.title);
+    const bylineHtml = renderAuthorBylineHtml(article.author);
     const bodyHtml = renderArticleBodyHtml(article.content);
     const faqHtml = (article.faqs && article.faqs.length > 0)
       ? '<section><h2>Frequently Asked Questions</h2><dl>' + article.faqs.map(f =>
@@ -2083,11 +2123,8 @@ const blogArticleRoutes = blogArticles.map(article => ({
         ).join('') + '</dl></section>'
       : '';
     const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
-    // Dealer credentials strip — identical on every blog post. Sits between
-    // the hero image (rendered client-side / referenced via og:image) and the
-    // article body so crawlers + LLMs see HBW credentials inline with content.
     const dealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>Since 1947</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
-    return `${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}`;
+    return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}`;
   }
 }));
 
