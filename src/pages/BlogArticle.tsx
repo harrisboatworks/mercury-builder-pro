@@ -336,16 +336,25 @@ export default function BlogArticle() {
                 </div>
               </div>
             ) : (
-              <img
-                src={optimizeImage(article.image, 1280)}
-                srcSet={buildSrcSet(article.image)}
-                sizes="(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw"
-                alt={article.title}
-                className="w-full h-full object-contain"
-                loading="eager"
-                fetchPriority="high"
-                onError={() => setHeroImgError(true)}
-              />
+              <picture>
+                {/* Same-origin PNG/JPG → prefer pre-generated WebP variant for huge byte savings */}
+                {/^\/.+\.(png|jpe?g)$/i.test(article.image) && (
+                  <source
+                    srcSet={article.image.replace(/\.(png|jpe?g)$/i, '.webp')}
+                    type="image/webp"
+                  />
+                )}
+                <img
+                  src={optimizeImage(article.image, 1280)}
+                  srcSet={buildSrcSet(article.image)}
+                  sizes="(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw"
+                  alt={article.title}
+                  className="w-full h-full object-contain"
+                  loading="eager"
+                  fetchPriority="high"
+                  onError={() => setHeroImgError(true)}
+                />
+              </picture>
             )}
           </div>
 
