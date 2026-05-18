@@ -57,14 +57,20 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
       {/* Main Image */}
       <figure className={cn("relative", containerClassName)}>
         <div className="relative group cursor-pointer">
-          <img
-            src={src}
-            alt={alt}
-            className={cn("w-full h-auto rounded-lg shadow-sm transition-all duration-200 group-hover:shadow-md", className)}
-            loading="lazy"
-            onClick={handleImageClick}
-            onLoad={() => setImageLoaded(true)}
-          />
+          <picture>
+            {/* Prefer pre-generated WebP variant when src is a same-origin PNG/JPG asset */}
+            {/^\/.+\.(png|jpe?g)$/i.test(src) && (
+              <source srcSet={src.replace(/\.(png|jpe?g)$/i, '.webp')} type="image/webp" />
+            )}
+            <img
+              src={src}
+              alt={alt}
+              className={cn("w-full h-auto rounded-lg shadow-sm transition-all duration-200 group-hover:shadow-md", className)}
+              loading="lazy"
+              onClick={handleImageClick}
+              onLoad={() => setImageLoaded(true)}
+            />
+          </picture>
           
           {/* Expand Hint */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-all duration-200 rounded-lg" onClick={handleImageClick}>
