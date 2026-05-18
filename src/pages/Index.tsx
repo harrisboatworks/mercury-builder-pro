@@ -11,7 +11,7 @@ import { RepowerLayout } from '@/components/repower/RepowerLayout';
 import { HeroRepower } from '@/components/repower/HeroRepower';
 import { RepowerCta } from '@/components/repower/RepowerCta';
 import { TrustStrip } from '@/components/repower/TrustStrip';
-import { RepowerMath } from '@/components/repower/RepowerMath';
+
 import { HowItWorksCard, HowItWorksGrid } from '@/components/repower/HowItWorksCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
