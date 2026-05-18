@@ -719,7 +719,13 @@ function homepageSchema() {
           { "@type": "Brand", "name": "Mercury Marine" },
           { "@type": "Brand", "name": "Legend Boats" }
         ],
-        "award": "Mercury Marine Platinum Dealer"
+        "award": "Mercury Marine Platinum Dealer",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.6",
+          "reviewCount": "180",
+          "bestRating": "5"
+        }
       },
       {
         "@type": "Service",
@@ -730,6 +736,40 @@ function homepageSchema() {
         "areaServed": [
           { "@type": "State", "name": "Ontario" },
           { "@type": "Country", "name": "Canada" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.mercuryrepower.ca/#service-repower",
+        "name": "Mercury Outboard Repower",
+        "serviceType": "Outboard Motor Repower",
+        "provider": { "@id": "https://www.mercuryrepower.ca/#organization" },
+        "areaServed": [
+          { "@type": "City", "name": "Toronto" },
+          { "@type": "City", "name": "Peterborough" },
+          { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
+          { "@type": "AdministrativeArea", "name": "Northumberland County" },
+          { "@type": "AdministrativeArea", "name": "Durham Region" },
+          { "@type": "City", "name": "Cobourg" },
+          { "@type": "City", "name": "Markham" },
+          { "@type": "City", "name": "Richmond Hill" },
+          { "@type": "City", "name": "Scarborough" },
+          { "@type": "City", "name": "North York" },
+          { "@type": "City", "name": "Mississauga" },
+          { "@type": "AdministrativeArea", "name": "Bay of Quinte" }
+        ],
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "CAD",
+          "lowPrice": "11000",
+          "highPrice": "40000"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.mercuryrepower.ca/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mercuryrepower.ca/" }
         ]
       }
     ]
@@ -2938,8 +2978,8 @@ const routes = [
 
   {
     path: '/',
-    title: 'Mercury Repower Ontario: Trade-In, Financing & Online Quotes | Harris Boat Works',
-    description: "Ontario's Mercury Repower Centre on Rice Lake. Family-owned since 1947, Mercury Platinum Dealer since 1965. Trade-in valuations, financing, and live CAD quotes, pickup at Gores Landing.",
+    title: 'Mercury Repower Ontario: Live CAD Quotes | Harris Boat Works',
+    description: 'Build a full Mercury outboard repower quote in CAD online — motor, install, financing, trade-in. Mercury Platinum Dealer since 1965. Pickup in Gores Landing.',
     h1: 'Mercury Outboard Quotes: Real Prices, No Forms',
     intro: 'Build a real Mercury outboard quote online in three minutes. Live CAD pricing, financing options, and trade-in estimates. Family-owned Mercury Platinum Dealer on Rice Lake since 1947, selling Mercury since 1965.',
     schemas: [homepageSchema()]
