@@ -58,10 +58,19 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
       <figure className={cn("relative", containerClassName)}>
         <div className="relative group cursor-pointer">
           <picture>
-            {/* Prefer pre-generated WebP variant when src is a same-origin PNG/JPG asset */}
-            {/^\/.+\.(png|jpe?g)$/i.test(src) && (
-              <source srcSet={src.replace(/\.(png|jpe?g)$/i, '.webp')} type="image/webp" />
-            )}
+            {/* Prefer pre-generated responsive WebP variants when src is a same-origin PNG/JPG asset */}
+            {(() => {
+              if (!/^\/.+\.(png|jpe?g)$/i.test(src)) return null;
+              const base = src.replace(/\.(png|jpe?g)$/i, '');
+              const srcSet = `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`;
+              return (
+                <source
+                  srcSet={srcSet}
+                  sizes="(min-width: 1024px) 800px, (min-width: 640px) 90vw, 100vw"
+                  type="image/webp"
+                />
+              );
+            })()}
             <img
               src={src}
               alt={alt}
