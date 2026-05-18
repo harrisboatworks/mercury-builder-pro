@@ -8,7 +8,8 @@
     "build": "node scripts/generate-markdown-twins.mjs && vite build && node scripts/static-prerender.mjs && node scripts/indexnow-submit.mjs",
     "build:dev": "vite build --mode development",
     "check:blog-leaks": "node scripts/check-blog-leaks.mjs",
-    "prebuild": "npm run check:blog-leaks",
+    "check:responsive-images": "node scripts/check-responsive-images.mjs",
+    "prebuild": "npm run check:blog-leaks && npm run check:responsive-images",
     "lint": "eslint .",
     "lint:tokens": "node scripts/check-design-tokens.mjs",
     "preview": "vite preview"
