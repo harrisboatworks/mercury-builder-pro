@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
 import { PageTransition } from '@/components/ui/page-transition';
 import { BoatInformation } from '@/components/quote-builder/BoatInformation';
 import { BoatInfoPageSEO } from '@/components/seo/BoatInfoPageSEO';
 import { useQuote } from '@/contexts/QuoteContext';
-import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { BoatInfo } from '@/components/QuoteBuilder';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
@@ -74,22 +74,29 @@ export default function BoatInfoPage() {
     <PageTransition>
       <BoatInfoPageSEO />
       <QuoteLayout>
-        <div className="space-y-6">
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" onClick={handleBack} className="border-repower-navy-900/20 hover:border-repower-navy-900/30 font-light">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Purchase Path
-            </Button>
-          </div>
-          
-          <BoatInformation 
+        <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
+          <button
+            onClick={handleBack}
+            className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back
+          </button>
+        </div>
+        <QuotePageShell
+          eyebrow="Step 3 · Your Boat"
+          title="Tell us about your boat"
+          subhead="A few details help us match the right shaft length, controls, and rigging."
+          className="!py-6 md:!py-8"
+        >
+          <BoatInformation
             onStepComplete={handleStepComplete}
             onBack={handleBack}
             selectedMotor={state.motor!}
             onShowCompatibleMotors={handleShowCompatibleMotors}
             includeTradeIn={false}
           />
-        </div>
+        </QuotePageShell>
       </QuoteLayout>
     </PageTransition>
   );

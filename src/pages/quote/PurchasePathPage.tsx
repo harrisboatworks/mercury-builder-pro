@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
 import { PageTransition } from '@/components/ui/page-transition';
 import PurchasePath from '@/components/quote-builder/PurchasePath';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -92,22 +93,27 @@ export default function PurchasePathPage() {
   return (
     <PageTransition>
       <QuoteLayout>
-        <div className="space-y-3 sm:space-y-6">
-          {/* Premium Back Button */}
-          <button 
+        <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
+          <button
             onClick={handleBack}
-            className="flex items-center gap-1.5 text-repower-navy-900/65 hover:text-repower-navy-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px]"
+            className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
             aria-label="Back to options"
           >
-            <ChevronLeft className="h-5 w-5" />
-            <span className="text-sm font-medium">Back</span>
+            <ChevronLeft className="h-4 w-4" />
+            Back
           </button>
-          
+        </div>
+        <QuotePageShell
+          eyebrow="Step 2 · Installation"
+          title="Loose motor or professional install?"
+          subhead="Pick how you'd like to take delivery. You can change this later."
+          className="!py-6 md:!py-8"
+        >
           <PurchasePath
             selectedMotor={state.motor!}
             onSelectPath={handleStepComplete}
           />
-        </div>
+        </QuotePageShell>
       </QuoteLayout>
     </PageTransition>
   );

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
 import { PageTransition } from '@/components/ui/page-transition';
 import InstallationConfig from '@/components/quote-builder/InstallationConfig';
 import { useQuote } from '@/contexts/QuoteContext';
-import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { computeDelta } from '@/lib/ui-delta';
@@ -110,20 +110,27 @@ export default function InstallationPage() {
   return (
     <PageTransition>
       <QuoteLayout>
-          <div className="space-y-3 sm:space-y-6">
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" onClick={handleBack} className="border-repower-navy-900/20 hover:border-repower-navy-900/30 font-light">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Trade-In
-            </Button>
-          </div>
-          
-          <InstallationConfig 
+        <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
+          <button
+            onClick={handleBack}
+            className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Trade-In
+          </button>
+        </div>
+        <QuotePageShell
+          eyebrow="Step 5 · Installation"
+          title="Configure your installation"
+          subhead="Tell us how you'd like the motor rigged. We handle controls, steering, and dispose of your old one."
+          className="!py-6 md:!py-8"
+        >
+          <InstallationConfig
             selectedMotor={state.motor}
             boatInfo={state.boatInfo}
             onComplete={handleStepComplete}
           />
-        </div>
+        </QuotePageShell>
       </QuoteLayout>
     </PageTransition>
   );
