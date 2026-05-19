@@ -11247,7 +11247,7 @@ Questions before you configure? Call **905-342-2153**.
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-Harris Boat Works | Mercury Marine Platinum Dealer | Since 1947 | Gores Landing, ON`,
+Harris Boat Works | Mercury Marine Platinum Dealer | Family-owned since 1947 | Mercury dealer since 1965 | Gores Landing, ON`,
     faqs: [
       {
         question: 'What is the best Mercury outboard for Lake Ontario salmon fishing?',
