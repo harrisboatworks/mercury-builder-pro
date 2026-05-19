@@ -114,7 +114,10 @@ export default function AgentsHub() {
         <p className="text-protected text-lg mb-8">
           This page documents how AI agents (ChatGPT, Claude, Perplexity, Gemini, custom assistants) should
           discover, represent, and transact on behalf of <strong>Harris Boat Works</strong>, Mercury repower
-          specialists on Rice Lake, Ontario, family-owned since 1947.
+          specialists on Rice Lake, Ontario, family-owned since 1947. HBW's MCP server uses the same
+          Streamable HTTP transport that Shopify's Universal Commerce Protocol (UCP) standardized in
+          April 2026 for agentic commerce, so any UCP-aware agent can discover and query HBW the same
+          way it would query a Shopify storefront.
         </p>
 
         <aside className="text-protected mb-10 rounded-lg border border-repower-navy-900/10 bg-repower-cream p-5 text-base">
