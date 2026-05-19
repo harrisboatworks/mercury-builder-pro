@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -109,6 +109,8 @@ Ranges based on typical 2026 Ontario quotes:
 | 18-22 ft pontoon or runabout + 90-150 HP | $2M liability, agreed value | $400-$700 |
 | 22-26 ft cruiser or center console + 150-300 HP | $2M liability, agreed value | $700-$1,500 |
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 Cost factors:
 
 - **Boat value** — bigger drives premium up
@@ -142,6 +144,10 @@ Re-rate your policy every time you:
 
 Repowers especially, many customers forget to update their policy after a $15,000+ motor swap. Do not.
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## How Insurance Works With Mercury Extended Warranty
 
 Insurance covers accidents, theft, weather damage, and liability. Extended warranty covers mechanical and electrical failures from defects in materials or workmanship. They do not overlap.
@@ -157,6 +163,7 @@ We recommend both for any motor worth $5,000+.
 
 *Last reviewed: 2026-05-13*
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.
 
 ## FAQs

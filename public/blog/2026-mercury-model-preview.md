@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-mercury-model-preview.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -52,6 +52,29 @@ As we look toward the 2027 model year, here's what to expect from [Mercury Marin
 - Feature migration to more models
 - Efficiency improvements
 
+::decision-card
+eyebrow: Wait vs buy now
+heading: Is the 2027 release worth holding for?
+subhead: New tech is exciting on paper. The first season of any new platform also turns up the things the engineers missed. Decide based on your tolerance for being early.
+leftLabel: Wait for the new lineup
+leftCriteria:
+  - You specifically want digital throttle or Avator electric
+  - You don't need the boat this season
+  - You're comfortable being a first-year owner
+  - The new feature changes how you'd use the boat
+leftOutcome: Hold for spring 2027 release
+leftVariant: alternative
+rightLabel: Buy current lineup now
+rightCriteria:
+  - You need the boat this season
+  - You want proven reliability and known service intervals
+  - The new feature isn't a deal-breaker for your use
+  - You'd rather avoid first-year recall surprises
+rightOutcome: Current FourStroke or Pro XS
+rightVariant: recommended
+whenInDoubt: First-year platforms always have something. If the boat is your weekend escape and not a tech experiment, buy what's working today.
+::
+
 ### Buying Now vs Waiting
 
 **Buy 2026 If**:
@@ -65,6 +88,8 @@ As we look toward the 2027 model year, here's what to expect from [Mercury Marin
 - Want latest features
 - Specific model expected to change
 - Timeline allows waiting
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ### Transition Period Tips
 
@@ -100,6 +125,8 @@ We'll provide:
 - [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works is Mercury
 - [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario). Mercury vs Yamaha for Ontario
 - [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), reliability comparison: Mercury vs Yamaha vs Honda
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

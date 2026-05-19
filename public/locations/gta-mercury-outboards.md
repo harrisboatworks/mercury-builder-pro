@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/gta-mercury-outboards
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -79,6 +79,29 @@ If downtime costs you more than a modest daily amount, SeaPro's reliability prem
 
 ---
 
+::decision-card
+eyebrow: Commercial vs recreational duty
+heading: Do you actually need a SeaPro?
+subhead: SeaPro is built for operators who cannot afford downtime. For most Ontario boaters, it is overkill at a price premium you will not recover.
+leftLabel: If you run a guide service, water taxi, or commercial fishing operation
+leftCriteria:
+  - Annual hours above 300 to 600, with some seasons hitting 1,500+
+  - One breakdown day costs more than a modest daily rate in lost revenue
+  - Extended 200-hour oil change intervals reduce service trips
+  - Reinforced lower unit and enhanced cooling handle sustained loads
+leftOutcome: SeaPro is built for this
+leftVariant: alternative
+rightLabel: If you are a heavy-use recreational angler
+rightCriteria:
+  - Weekend fishing, cottage use, or family boating under 200 hours per season
+  - Standard FourStroke reliability is more than adequate
+  - The 10 to 15 percent price premium is not recovered in service savings
+  - Annual maintenance at 100-hour intervals is acceptable
+rightOutcome: FourStroke is enough
+rightVariant: recommended
+whenInDoubt: Most Ontario recreational buyers do not need SeaPro. If you are not earning income from the boat, the standard FourStroke is the smarter buy.
+::
+
 ## SeaPro vs FourStroke: real differences
 
 | Feature | SeaPro | Standard FourStroke |
@@ -92,6 +115,10 @@ If downtime costs you more than a modest daily amount, SeaPro's reliability prem
 | Best for | Guides, charters, rentals, work boats | Recreational boaters |
 
 ---
+
+![Mercury SeaPro commercial outboard on rugged working fishing boat](/lovable-uploads/inline/inline-mercury-seapro-commercial.png)
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Does SeaPro make sense for recreational boaters?
 
@@ -153,6 +180,8 @@ Yes. It's overkill for most recreational use, but some high-hour recreational bo
 
 **What HP is SeaPro available in?**
 SeaPro is available in multiple HP classes covering a wide range from smaller single-engine configurations to large V8 options. Available HP options vary by model year. Contact us for current availability.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

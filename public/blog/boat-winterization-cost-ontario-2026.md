@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -117,6 +117,8 @@ Optional add-ons available separately or as a package:
 
 We offer outdoor winter storage at HBW with shrinkwrap. We do not offer indoor heated storage. For indoor heated, we will point you to the right options in the region rather than pretend we have it.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 Outdoor storage with shrinkwrap is the practical answer for most Rice Lake and Kawartha boats: aluminum fishing boats, pontoons, runabouts. For high-end fibreglass cruisers with custom paint, indoor might be worth the premium at another shop. Choose based on your boat, not based on what makes the marina more money.
 
 Contact us for current per-foot rates. Note that Harris Boat Works is closed December 1 to April 1 with no service performed during winter months, so storage drop-off windows close in late fall and pickups resume in early April. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
@@ -189,6 +191,8 @@ Or call 905-342-2153.
 *Last reviewed: 2026-05-11.*
 
 For broader context on storage options across the Kawarthas, see our [Kawartha Lakes boat storage guide](/blog/boat-storage-kawartha-lakes).
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

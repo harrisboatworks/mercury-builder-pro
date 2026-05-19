@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-boating-season-tips.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -74,6 +74,8 @@ Ontario's boating season is precious - roughly May through October. Here's how t
 - Less boat traffic
 - Prepare for cold mornings
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Fall Preparation**:
 - Dress in layers
 - Ensure heater/warmth if equipped
@@ -120,6 +122,8 @@ Ontario's boating season is precious - roughly May through October. Here's how t
 - [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
 - [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips), off-season storage tips
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

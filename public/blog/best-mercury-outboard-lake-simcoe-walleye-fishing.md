@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -82,6 +82,8 @@ Lake Simcoe-specific factors that push the HP recommendation higher than Rice La
 
 For customers who fish both lakes:
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 | Factor | Rice Lake | Lake Simcoe |
 |---|---|---|
 | Typical hull length | 16, 18 ft | 17, 19 ft |
@@ -147,6 +149,7 @@ Ready to build your Simcoe walleye setup? Build a main-and-kicker quote at **[me
 
 Prefer to talk through your specific setup first? Call **905-342-2153**. We rig fishing boats for Simcoe regularly.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

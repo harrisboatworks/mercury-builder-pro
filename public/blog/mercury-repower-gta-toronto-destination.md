@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -135,6 +135,8 @@ Real all-in pricing for typical GTA repowers (CAD before HST):
 | **22 ft bowrider → Mercury 200 HP V6 FourStroke** | $28,000-$35,000 | Same + DTS digital throttle |
 | **22 ft bass boat → Mercury 200 HP V6 Pro XS** | $30,000-$36,000 | Same + stainless prop + Pro XS hole-shot tuning |
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 These ranges include trade-in credit math. If your existing motor is worth $4,000-$8,000 in trade, that's already factored. The configurator shows your specific boat number.
 
 **Compared to buying a new equivalent boat:**
@@ -241,6 +243,8 @@ Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 
 - [Why drive to HBW from Toronto?](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
 - [Boat service near Toronto: HBW's Ontario reach](/blog/boat-service-near-toronto-hbw-reach)
 - [Mercury Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026)
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

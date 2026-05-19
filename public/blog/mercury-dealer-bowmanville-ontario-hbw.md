@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -88,6 +88,8 @@ Outdoor with shrinkwrap. No indoor. At 35 minutes, year-round storage here is on
 
 ## Getting to Harris Boat Works from Bowmanville
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Route:** Highway 401 east (briefly, if coming from west Bowmanville) or straight to Highway 115 north, then County Road 28 north to Gores Landing. From central or east Bowmanville, you're barely on the 401 before you're heading north on 115. Rural roads start almost immediately after you turn north.
 
 **Approximate drive time:** Around 35 minutes. From east Bowmanville, it may be slightly less. It's one of the most straightforward routes of any city we serve from the GTA.
@@ -156,6 +158,8 @@ Why Bowmanville boaters choose HBW:
 - **Proximity.** 35 minutes door-to-door makes HBW closer than most local service shops once you factor in 401 traffic.
 - **Year-round option.** Many Bowmanville customers keep their boat at HBW for storage and service, fishing Rice Lake or trailering down to Lake Ontario as needed. One marina, all season.
 - **Mercury Platinum depth.** A proper repower or rigging job at HBW takes the time it takes — we don't shortcut the controls and prop matching.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

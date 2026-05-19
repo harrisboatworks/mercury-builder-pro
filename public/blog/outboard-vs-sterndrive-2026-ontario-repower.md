@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -42,6 +42,29 @@ That's exactly why we can tell you what most dealers won't: in 2026, if you're r
 Here's the full picture, the good, the honest, and the stuff that will actually help you make a decision.
 
 ---
+
+::decision-card
+eyebrow: Repower platform decision
+heading: Outboard or sterndrive on your hull?
+subhead: For most Ontario bowriders and runabouts, the math points one way. Big hulls and dedicated tow boats are the exception.
+leftLabel: Boat is under 20 ft (bowrider, runabout, pontoon, deck boat)
+leftCriteria:
+  - Ontario freshwater, mostly inland lakes
+  - Reliability and fuel economy matter
+  - You want shallow-water trim ability for Kawartha shoals
+  - Resale matters in 5 to 10 years
+leftOutcome: Go outboard. 2026 market has decisively moved.
+leftVariant: recommended
+rightLabel: Boat is 22+ ft with high-deadrise hull or dedicated tow boat
+rightCriteria:
+  - Big-water cruiser with cabin, indoor cockpit comfort matters
+  - Watersports inboard tow boat where wake shape is the whole point
+  - You want maximum cockpit space with no transom motor
+  - You'll keep the boat 10+ years and accept the service intervals
+rightOutcome: Sterndrive or inboard can still make sense
+rightVariant: alternative
+whenInDoubt: Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders coming for sterndrive repower leave with an outboard quote.
+::
 
 ## The Big Picture: Outboards Have Won the Market
 
@@ -121,6 +144,8 @@ Mercury's current generation of digital throttle and shift, VesselView displays,
 This is the number that ends most debates. A late-model outboard repower dramatically increases the resale value of a sound hull. An old, tired sterndrive on an otherwise good boat is a liability to most buyers, they're calculating the cost of repair or conversion before they even make an offer. A clean outboard installation changes the conversation entirely.
 
 ### Cleaner Repower Process
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 A sterndrive-to-outboard conversion involves removing an outdrive, motor mounts, and associated systems and replacing them with a bracket and outboard package. It's real work, but it's not an engine bay rebuild. There's no cylinder head work, no manifold replacement, no exhaust riser risk assessment. The installation is purpose-built and clean.
 
@@ -231,6 +256,8 @@ Two related guides in the same cluster:
 - [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](/blog/complete-guide-boat-repower-kawarthas)
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

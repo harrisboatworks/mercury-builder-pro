@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-pickering-ontario-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -82,6 +82,8 @@ Outdoor with shrinkwrap. No indoor. At 50 minutes, some Pickering customers find
 
 ## Getting to Harris Boat Works from Pickering
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Route:** Highway 401 east to Highway 115 north, then County Road 28 north to Gores Landing. Mostly highway until the last 15 minutes, which is rural county road.
 
 **Approximate drive time:** Around 50 minutes outside rush hour. From eastern Pickering, this is one of the shorter GTA drives in our coverage area.
@@ -145,6 +147,8 @@ Why Pickering boaters choose HBW for repower:
 - **Drive time math.** 50 minutes to HBW is the same as driving back into central Toronto for a downtown dealer — and you get Mercury Platinum-level service.
 - **Frenchmans Bay-friendly motors.** The bay's shallow depths and sheltered conditions favour different motor setups than open-water boating. We've rigged plenty of Pickering boats.
 - **One-trip annual service.** Trailer up midweek, leave the boat for winterization or repower, pick up when ready. No 401 stress between Pickering and downtown.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

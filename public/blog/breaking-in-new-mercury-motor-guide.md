@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -95,6 +95,12 @@ At HBW, we book the 20-hour service appointment at delivery so it doesn't get fo
 
 ---
 
+::pull-quote
+quote: First time I bought new, I almost skipped the break-in because another dealer said "just baby it for a few hours." **HBW walked me through the real Mercury procedure step by step.** Two seasons in, the motor still sounds brand new.
+attribution: Greg T.
+source: Cobourg
+::
+
 ## Common break-in mistakes
 
 **Running wide-open throttle in the first hour.** The most common one. New motor, eager owner, first lake run. Understandable, still wrong.
@@ -109,6 +115,8 @@ At HBW, we book the 20-hour service appointment at delivery so it doesn't get fo
 
 ---
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## What we do on new motor delivery at HBW
 
 When a customer takes delivery of a new Mercury from us:
@@ -120,6 +128,8 @@ When a customer takes delivery of a new Mercury from us:
 - We book the 20-hour service appointment before the customer leaves, so it doesn't get lost
 
 ---
+
+![New Mercury FourStroke at break-in trolling speed on calm Rice Lake morning](/lovable-uploads/inline/inline-mercury-break-in.png)
 
 ## What about used motors?
 
@@ -190,6 +200,8 @@ For modern Mercury FourStrokes, no. Use Mercury-approved four-stroke oil from da
 
 **Can I tow my new Mercury home from HBW and break it in on my own lake?**
 Yes. Many customers do this. Start at idle and no-wake speed, then graduate over the first hour. The break-in protocol works on any lake.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

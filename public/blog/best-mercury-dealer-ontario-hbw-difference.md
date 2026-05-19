@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -104,9 +104,17 @@ This is genuinely uncommon in the marine dealer industry, where opaque pricing i
 
 ---
 
+::pull-quote
+quote: Got three Mercury quotes. Two of them said "rough number to start" and never followed up. **HBW sent a complete itemized number that afternoon** and stuck to it. Easy choice.
+attribution: Rob D.
+source: Bowmanville
+::
+
 ## What "Best Dealer" Looks Like in Practice
 
 A real "best Mercury dealer" comparison should evaluate:
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Tier:** Mercury Platinum vs. lower
 **Diagnostic capability:** G3 software present + multiple trained techs
@@ -222,6 +230,8 @@ Technically yes. In practice, Platinum dealers do most repowers because the work
 - [Why drive from Toronto to HBW?](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
 - [GTA Repower walkthrough](/blog/mercury-repower-gta-toronto-destination)
 - [Mercury Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026)
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

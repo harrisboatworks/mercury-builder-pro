@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -116,6 +116,8 @@ Hard starting. Dropping cylinders. No parts available. Getting more expensive ev
 
 ---
 
+::walkaround-lead-capture
+
 ## When Buying New (or Used) Actually Makes Sense
 
 **The hull is going.** 
@@ -145,6 +147,10 @@ Before we recommend a repower, we walk around the boat. Here's what we look at:
 If the hull passes, we'll quote the repower. If it doesn't, we'll tell you, even if that costs us the motor sale.
 
 ---
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+![Aging aluminum fishing boat in service bay with old motor removed and repower quote on the gunwale](/lovable-uploads/inline/inline-repower-decision-moment.png)
 
 ## Trade-In Is the Third Option
 
@@ -213,6 +219,8 @@ Depends on motor availability and shop schedule. A well-planned repower with a m
 
 ---
 
+> Related guide: [Repair, repower, or sell: the 3-way decision](/blog/repair-repower-or-sell-boat-ontario-decision-guide).
+
 ## Ready to Price It Out?
 
 A repower quote takes three minutes at mercuryrepower.ca. Real CAD prices, all configurations, no "call for quote" games.
@@ -226,6 +234,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -106,6 +106,27 @@ A good lockmaster will walk a first-timer through it without making a thing of i
 
 ---
 
+::decision-card
+eyebrow: Boat sizing for the Trent-Severn
+heading: Will your boat actually fit through the locks?
+subhead: In 2026, free lockage from June 19 to September 7 means more boats will try the system. Make sure yours is one of them.
+leftLabel: If you mostly stay on one lake or section between locks
+leftCriteria:
+  - Fishing on Rice Lake, the Kawarthas, or a single stretch
+  - Pontoon boats, wide fishing rigs, and smaller cruisers all work fine
+  - No beam or draft restrictions on open water
+  - Locking through only one or two locks for a weekend trip
+leftOutcome: Any size fits
+rightLabel: If you plan to run the full lock system
+rightCriteria:
+  - Long-distance transit from Trenton to Port Severn or vice versa
+  - Beam under 8.5 feet clears all locks without issue
+  - Draft under 3 feet handles the shallowest chambers
+  - Length 21 to 25 feet is the practical sweet spot
+rightOutcome: Check your dimensions
+whenInDoubt: Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 22 foot vertical clearance at fixed bridges too.
+::
+
 ## Vessel Constraints, Will Your Boat Fit?
 
 | Constraint | Detail |
@@ -120,6 +141,10 @@ A good lockmaster will walk a first-timer through it without making a thing of i
 Anything taller than 22 feet, radar arches, tall biminis, sailboat masts, needs to come down. Most sailors un-step at Trenton or Frankford before the transit.
 
 ---
+
+![Pleasure boat in Trent-Severn Waterway lock chamber mid-fill](/lovable-uploads/inline/inline-trent-severn-lock-chamber.png)
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Fees Outside the Free Window
 
@@ -223,6 +248,8 @@ Call 905-342-2153 before you head out, slip availability, fuel confirmation, or 
 Boat rentals at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). 
 Mercury repower quotes at [mercuryrepower.ca](https://mercuryrepower.ca). 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

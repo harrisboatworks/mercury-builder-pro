@@ -1,14 +1,33 @@
 ---
-slug: mercury-fourstroke-buyer-guide-ontario
-title: Mercury FourStroke Buyer Guide for Ontario (2026)
-seoTitle: Mercury FourStroke Buyer Guide Ontario | Harris Boat Works
-description: The canonical Mercury FourStroke buyer guide for Ontario. 2.5-300 HP coverage, which HP for which boat, prices, options, install considerations. From Ontario's Mercury Platinum dealer since 1965.
-publishDate: 2026-05-17
-hero_placeholder: /lovable-uploads/hero-mercury-fourstroke-buyer-guide.png
-language: en
+canonical: https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario.md
+last_updated: 2026-05-19
+currency: CAD
+pickup_only: true
+delivery_offered: false
+location: Gores Landing, ON, Canada
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
+title: "Mercury FourStroke Buyer Guide for Ontario (2026)"
+description: "The canonical Mercury FourStroke buyer guide for Ontario. 2.5-300 HP coverage, which HP for which boat, prices, options, install considerations."
+category: "Buying Guide"
+date_published: 2026-05-17
+date_modified: 2026-05-17
+keywords: ["mercury fourstroke buyer guide","mercury fourstroke ontario","mercury fourstroke pricing","mercury outboard buyer guide ontario"]
+author: Harris Boat Works
+content_type: blog_article
 ---
 
 # Mercury FourStroke Buyer Guide for Ontario (2026)
+
+> The canonical Mercury FourStroke buyer guide for Ontario. 2.5-300 HP coverage, which HP for which boat, prices, options, install considerations.
+
+**Category:** Buying Guide  
+**Published:** 2026-05-17  
+**Last updated:** 2026-05-17  
+**Read time:** 9 min read  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario
+
+## Article
 
 ## Quick Answer
 
@@ -43,8 +62,6 @@ For an Ontario buyer, the FourStroke decision is rarely about whether to choose 
 | 250 - 300 | 4.6L V8 | 20+ foot cruisers, performance pontoons, larger fibreglass |
 
 Within each HP class, there are configuration options that matter more than most buyers realize: shaft length, electric vs manual start, tiller vs remote, standard vs Command Thrust gearcase, and rigging family compatibility.
-
-![Mercury FourStroke lineup from 40 HP through 150 HP arranged in ascending order at HBW service bay](/lovable-uploads/inline-fourstroke-hp-lineup.png)
 
 ## HP selection: how to actually decide
 
@@ -90,8 +107,6 @@ This is why most factory-rigged Ontario 16-19 ft aluminum boats come with the 90
 
 The Command Thrust gearcase is a larger-diameter lower unit with a different prop range. It's available on the 90 and 115 HP FourStroke. The benefit is more torque for moving heavy hulls — particularly pontoons.
 
-![Mercury standard gearcase compared to the larger-diameter Command Thrust gearcase, side by side](/lovable-uploads/inline-command-thrust-gearcase.png)
-
 The rule of thumb: **if you're putting a 90 or 115 on a pontoon, you almost certainly want CT.** The standard gearcase works on a planing hull; the CT is engineered for the displacement loads a pontoon presents. The price gap is usually $400-700 over the standard gearcase, and the performance difference on a loaded pontoon is meaningful.
 
 For aluminum fishing boats, the standard gearcase is fine unless you're running heavy with multiple people and gear regularly.
@@ -120,7 +135,7 @@ The ProKicker is a special tiller configuration on the 9.9 HP (and recently 15/2
 - Big-foot lower unit for better low-speed thrust
 - Adjustable angle for matched-steering with the primary motor
 
-Most serious Ontario walleye, muskie, and bass setups run a 9.9 ProKicker on the transom alongside their primary motor.
+Most serious Ontario walleye, muskie, and bass setups run a 9.9 ProKicker on the transom alongside their primary motor. If you're shopping the 9.9 to 15 HP tiller class specifically, we have a dedicated [Mercury 9.9 vs 15 HP comparison guide](/blog/mercury-9-9-vs-15-hp-tiller-ontario) that walks through capacity plate, HP-restricted lakes, and kicker motor use.
 
 ## What an installed FourStroke costs in Ontario (2026)
 
@@ -194,3 +209,23 @@ Yes — Mercury's standard 3-year limited warranty applies. Mercury Product Prot
 Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-05-17.*
+
+## FAQs
+
+_(no FAQs)_
+
+## Next steps
+
+- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
+- Repower information: https://www.mercuryrepower.ca/repower
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+

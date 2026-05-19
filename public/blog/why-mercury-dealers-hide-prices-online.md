@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -84,6 +84,8 @@ HBW has listed prices from the start of [mercuryrepower.ca](https://mercuryrepow
 
 **It builds trust.** The price you see online is the price you pay. No surprises at the counter.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **It filters the right customers.** Serious buyers build quotes. Buyers who need a conversation still call, but they call with a number in hand.
 
 **It respects everyone's time.** Three generations of this family have answered "what does it cost?" more times than anyone can count. Online pricing means the team can focus on conversations that matter.
@@ -154,6 +156,8 @@ For twin-engine setups, brand conversions, or commercial applications, call 905-
 Build your configured Mercury quote at [mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 
 Questions after you see it? Call 905-342-2153. 
 Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

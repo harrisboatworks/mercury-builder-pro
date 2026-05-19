@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -56,6 +56,12 @@ The part that trips people up is the math. A repower on a typical cottage alumin
 
 **Maintenance history.** A boat with consistent winterization records is a different repower candidate than one that has been "running fine" without professional service for ten years.
 
+::pull-quote
+quote: The boat hasn't left our cottage in 22 years. The Mercury 60 finally gave up last summer. Jay quoted a Mercury 75 swap that included winterizing and a spring launch. **We're back on the lake without driving the boat anywhere.**
+attribution: Tracy L.
+source: Kawartha cottage
+::
+
 ## The common cottage boat scenarios we see at HBW
 
 ### The old aluminum fishing boat
@@ -75,6 +81,8 @@ Mercury Command Thrust matters on pontoons. Pontoon hulls are heavy and blunt-fr
 
 ### The tin boat
 A 14 to 16 ft tiller boat used for solo fishing and quick runs. The motor has been getting harder to start and parts for it have been getting harder to find. These are simple repowers, smaller motor, less rigging, lower cost.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## When should you repower a cottage boat?
 
@@ -129,6 +137,8 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for a starti
 We do cottage repowers every season. We will give you the honest answer for your boat.
 
 *Last reviewed: 2026-05-11.*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

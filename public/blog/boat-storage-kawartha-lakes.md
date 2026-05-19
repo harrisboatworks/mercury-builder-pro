@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-storage-kawartha-lakes.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -111,7 +111,11 @@ HBW is based on Rice Lake in Gores Landing, but our storage customers come from 
 
 If you boat on any of these lakes, storing at HBW means your boat winters on a connected waterway in the same region. In spring, you commission it, launch on Rice Lake, and run the Trent-Severn to your home lake — or trailer it the short distance back to your usual ramp.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ---
+
+![Rows of shrinkwrapped pleasure boats in a Canadian marina winter storage yard](/lovable-uploads/inline/inline-winter-storage-yard.png)
 
 ## Store at HBW vs Haul Home — which is right for you?
 
@@ -198,6 +202,7 @@ Storage season kicks off the second weekend of October. By mid-November, the out
 
 The pattern we see year over year: customers underbook in October, then panic-call in early November when winter hits. Our advice: book in September, drop off in mid-October. Cheaper that way, and you do not get stuck calling around at the last minute. Harris Boat Works is drop-off only and the marina is closed Dec 1 to April 1.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

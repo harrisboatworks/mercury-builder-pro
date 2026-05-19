@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -40,6 +40,29 @@ Ontario winters are hard on Marine batteries and fuel systems in ways that matte
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
+
+::diagnostic-flow
+heading: Mercury won't start? Walk these five in order.
+eyebrow: Spring no-start triage
+subhead: Most Ontario spring no-starts trace to one of the first three steps. Work in order, don't skip ahead.
+step1Label: Safety lanyard and shift position
+step1Question: Is the kill-switch lanyard physically clipped on and the shifter in neutral?
+step1Tip: Single most common cause of "won't crank" calls. Five-second check. Do it first every time.
+step2Label: Battery
+step2Question: Does resting voltage read 12.4V+ and hold above 9.5V while cranking?
+step2Tip: Cold Ontario storage kills batteries. Older than 4 years and sat all winter without a tender, assume compromised and load-test.
+step3Label: Fuel condition
+step3Question: Is the fuel less than 60 days old, treated, and does the primer bulb pump up firm?
+step3Tip: E10 starts degrading in 30 to 60 days. Smell it, look at it, drain the water-separator. Stale fuel and phase separation are the #2 Ontario spring no-start.
+step4Label: Spark plugs
+step4Question: Plugs in spec, gapped right, not fouled?
+step4Tip: Pull one. Black or oily means fouled. White means lean. Fresh tan-brown is good. If unsure, replace, plugs are cheap insurance.
+step5Label: Call a tech
+step5Question: Worked through 1 to 4 and still no start?
+step5Tip: At this point it's likely ECM, sensor, fuel pump, or compression. Needs a Mercury-certified diagnostic. Book at hbw.wiki/service or call (905) 342-2153.
+escalationLabel: Want us to diagnose?
+escalationBody: HBW runs full Mercury and Mercruiser diagnostics. Most spring no-starts resolve same-day. Book at /service or call (905) 342-2153.
+::
 
 ## Mercury Outboard Won't Start in Ontario? The Diagnostic Flow a Mercury Platinum Dealer Uses
 
@@ -104,6 +127,8 @@ Check:
 
 If the battery is good and fuel is good, spark is next.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 After a winter in storage, spark plugs can be fouled, gapped incorrectly from past use, or simply at the end of their service life. A fouled plug will start the motor cold once in a while but fail consistently under load.
 
 Check:
@@ -166,6 +191,12 @@ Only with an adequate water supply to the cooling system. Never run a Mercury ou
 
 ---
 
+## Reviewed by
+
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+
+> Related guide: [Mercury spring run-up checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario).
+
 ## CTA
 
 **Spring no-start you can't resolve?** 
@@ -173,6 +204,7 @@ Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat W
 
 Phone: 905-342-2153
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

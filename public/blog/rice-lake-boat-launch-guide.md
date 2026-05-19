@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -71,7 +71,7 @@ Pick by where you're going:
 
 **West-end fishing or Bewdley-area cottage access:** Bewdley.
 
-**Middle of the lake (most common for general boating, walleye trolling, or visiting Gores Landing/Roseneath area):** Gores Landing or Roseneath. Gores Landing has better facilities; Roseneath has less of a crowd.
+**Middle of the lake (most common for general boating, walleye trolling, or visiting Gores Landing/Roseneath area):** [Gores Landing](/blog/best-marina-rice-lake-ontario) or Roseneath. Gores Landing has better facilities; Roseneath has less of a crowd.
 
 **East-end fishing or starting a Trent-Severn trip:** Hastings.
 
@@ -80,6 +80,27 @@ Pick by where you're going:
 For most Toronto-area or GTA visitors, Gores Landing is the most accessible choice: 2-lane concrete, parking, services, and the most consistent ramp surface.
 
 ---
+
+::decision-card
+eyebrow: Which Rice Lake ramp makes sense
+heading: Pick the launch that matches your boat and schedule
+subhead: Not all ramps handle all boats the same way. Match the ramp to your hull size and how busy you want your Saturday morning to be.
+leftLabel: If you are launching a small fishing boat or pontoon
+leftCriteria:
+  - Boat under 18 feet, light aluminum or pontoon
+  - Comfortable with a shallow, easy-access ramp
+  - Do not mind a busy summer Saturday
+  - Prefer proximity to mid-lake fishing and the Trent-Severn east
+leftOutcome: Gores Landing public ramp
+rightLabel: If you are launching a bigger boat or trailering on weekends
+rightCriteria:
+  - Boat 20 to 24 feet, deeper draft, or heavier rig
+  - Want deeper water and more parking on peak days
+  - Prefer less congestion while you rig the boat
+  - Need a ramp that handles larger trailers reliably
+rightOutcome: Provincial park ramps east on the lake
+whenInDoubt: Gores Landing works for most recreational boats up to about 26 feet. If you are unsure, call ahead at 905-342-2153 and we will point you to the right ramp for your rig.
+::
 
 ## Step-by-Step: Launching at Gores Landing (Or Anywhere)
 
@@ -126,6 +147,8 @@ Transport Canada publishes the full list, and there are specific extras for larg
 ## Trent-Severn Free Lockage 2026
 
 If you're launching to lock through the Trent-Severn, big news: **lockage is free from June 19 to September 7, 2026** as part of the Canada Strong Pass. Pick up the free lockage sticker at the lockstation, online sales have been eliminated for 2026.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 This makes the multi-day Trent-Severn trip much more accessible. See [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026) for the full breakdown.
 
@@ -201,10 +224,14 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 
 ---
 
+> Related guide: [Boat trim for Rice Lake boaters](/blog/boat-trim-explained-rice-lake-ontario).
+
 ## Sources
 
 - Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
 - Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 - Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
 
 ## FAQs

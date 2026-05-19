@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -82,6 +82,8 @@ This post covers the **115 ELPT FourStroke** and the **115 ELPT Command Thrust**
 
 ---
 
+::walkaround-lead-capture
+
 ## When to Take the Command Thrust Upgrade
 
 | Boat Type | Take CT? |
@@ -112,9 +114,13 @@ Cruise, fish, tow a tube, watersports occasionally, the 115 handles all of it wi
 
 The most common repower candidates for the 115 ELPT are older 115 OptiMax, 115, 150 OMC, and 90, 115 Yamaha two-strokes. Occasionally a boat that had a 150 V6 but found it was more motor than needed steps down to the 115.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 The outcome on most of these repowers: the boat feels lighter, runs quieter, and uses 25, 35% less fuel for the same day on the water. After a season, some customers don't miss the V6 feel at all.
 
 ---
+
+![Mercury 115 HP FourStroke mounted on a fiberglass runabout at golden hour](/lovable-uploads/inline/inline-mercury-115.png)
 
 ## Where the 115 HP FourStroke Is the Wrong Call
 
@@ -189,6 +195,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Mercury 90 HP FourStroke review | Mercury 75 HP FourStroke, why we don't stock it | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

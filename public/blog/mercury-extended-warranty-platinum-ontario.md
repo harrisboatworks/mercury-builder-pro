@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -134,6 +134,8 @@ For the price difference between the two tiers (typically $200-$400 across most 
 - Damage from accident, abuse, racing, or non-recreational use
 - Used motors imported from outside US/Canada
 
+![Mercury Product Protection warranty document with FourStroke outboard](/lovable-uploads/inline/inline-warranty-documents.png)
+
 ## Eligibility, When You Can Buy It
 
 To enroll in Mercury Product Protection:
@@ -143,6 +145,8 @@ To enroll in Mercury Product Protection:
 3. **Under 500 engine hours at time of purchase.**
 4. **Recreational use only.** Charter, commercial fishing, government, or work-related use is excluded.
 5. **Must be US or Canadian-purchased motor.** Imports from outside North America do not qualify.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 We verify eligibility using your engine model and serial number. Takes about 10 minutes, provide them via the form at [harrisboatworks.ca/warranty](https://www.harrisboatworks.ca/warranty) and we confirm before you commit.
 
@@ -198,6 +202,10 @@ You do not deal with Mercury directly. You bring the boat to any authorized Merc
 
 If you bought the warranty at HBW but you are broken down at a marina near Algonquin Park, you can have the work done at any authorized Mercury dealer up there. The contract follows the engine.
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## How to Get a Quote
 
 Visit [harrisboatworks.ca/warranty](https://www.harrisboatworks.ca/warranty), fill in your motor model and serial number, pick your preferred term length. We confirm eligibility within 1-2 business days and send you the final quote.
@@ -208,6 +216,7 @@ HBW customers (motor purchased from us), mention this in the notes field and we 
 
 *Last reviewed: 2026-05-13*
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.
 
 ## FAQs

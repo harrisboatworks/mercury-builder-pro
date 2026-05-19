@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -78,6 +78,10 @@ Used pontoons in the 18 to 22 ft range at a price that leaves repower room are c
 
 **Trade-off:** A used pontoon at this price will likely have an older motor. That is not a problem if you have accounted for a repower, but it is a problem if you assumed the motor was included in the deal.
 
+![Affordable 16-foot aluminum fishing boat with Mercury 40 anchored on Rice Lake](/lovable-uploads/inline/inline-affordable-rice-lake-boat.png)
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ### Path 3: Clean used hull plus a Mercury repower at HBW
 
 This is the path the most experienced buyers take. They find a hull that someone else has neglected the motor on (usually priced accordingly) and bring it to HBW for a new Mercury. The hull gets another fifteen-plus years. The motor is brand new with full warranty.
@@ -94,7 +98,7 @@ The sticker price is not the real cost of ownership. Three things move the five-
 
 **Insurance.** Primarily hull value and horsepower based. A 60 HP boat costs less to insure than a 150 HP boat.
 
-**Storage.** Trailer storage at home costs nothing. Outdoor marina storage on Rice Lake runs several hundred dollars a year and up.
+**Storage.** Trailer storage at home costs nothing. Outdoor [marina storage on Rice Lake](/blog/best-marina-rice-lake-ontario) runs several hundred dollars a year and up.
 
 **Service.** A new Mercury under warranty is essentially free to maintain for the first several years. An older motor out of warranty costs more per season in service.
 
@@ -134,6 +138,8 @@ Two related guides in the same cluster:
 - [2026 Rice Lake Fishing Season Outlook](/blog/2026-rice-lake-fishing-season-outlook)
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

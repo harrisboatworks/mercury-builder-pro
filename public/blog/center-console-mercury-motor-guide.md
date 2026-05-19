@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -104,6 +104,8 @@ For most Ontario fishing-focused center consoles, Verado is more motor than the 
 
 **Best for:** Premium builds, twin-engine setups, buyers prioritizing ride quality and quiet operation.
 
+::walkaround-lead-capture
+
 ## Recommended motor by boat size
 
 ### 17 to 19 ft trailerable
@@ -122,6 +124,10 @@ This is the most common Ontario center console application.
 **Motor:** Mercury 250 Pro XS V8 (4.6L) for fishing; 300 Verado V8 if quiet ride at cruise matters more than hole-shot.
 **Performance:** 50 to 60 mph two-up.
 **Use case:** Lake Ontario salmon tournament days, bigger-water Bay of Quinte.
+
+![24-foot center-console fishing boat with twin Mercury Verado V8 outboards](/lovable-uploads/inline/inline-center-console-twin-verados.png)
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ### 25 to 28 ft twin-engine
 **Motor:** Twin 250 Pro XS V8 for performance; twin 300 Verado V8 for premium ride.
@@ -191,6 +197,8 @@ Two related guides in the same cluster:
 - [Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use](/blog/pontoon-hp-sizing-decision-tree-ontario)
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

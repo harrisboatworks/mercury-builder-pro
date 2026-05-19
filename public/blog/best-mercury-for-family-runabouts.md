@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -38,6 +38,29 @@ content_type: blog_article
 For most family runabouts in the 17, 20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
+
+::decision-card
+eyebrow: Runabout use-case decision
+heading: Calm cruising or active watersports?
+subhead: Same boat length, two very different right answers on motor and gearcase.
+leftLabel: Primary use is calm cruising and dinner runs
+leftCriteria:
+  - Mostly 2 to 4 people, light loading
+  - Occasional tubing for the kids
+  - Fuel economy and quiet matter most
+  - You want lower upfront cost
+leftOutcome: 90 to 115 HP FourStroke, standard gearcase
+leftVariant: recommended
+rightLabel: You tow watersports regularly
+rightCriteria:
+  - Skiing, wakeboarding, or wakesurfing most weekends
+  - 4 to 6 people aboard with full gear
+  - Hole shot with the boat loaded matters
+  - Boat is 19 ft or larger
+rightOutcome: 150 to 200 HP, Pro XS if hole shot is critical
+rightVariant: alternative
+whenInDoubt: Check the capacity plate first. Then size for how you actually use the boat on a typical Saturday, not the once-a-year scenario.
+::
 
 ## Full Article
 
@@ -112,6 +135,8 @@ We sell ethanol-free 89 marine gas at the dock in Gores Landing. Pick the HP tha
 - **Power trim**, Standard on every Mercury 25 HP and up. You'll use it constantly as load and conditions change.
 - **SmartCraft / [Mercury Marine](https://www.mercurymarine.com/canada/en/) App**, Real-time fuel flow lets you find the efficient cruise RPM for your boat. Saves real money over a season.
 - **Active Trim**, Available on V8 Verados and select V6s. Worth it if your driver is still learning; the engine trims itself for conditions.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **What you don't need:** Mercury's premium Verado V8/V10 lineup on a family runabout under 22 feet. They're excellent motors built for performance boats and big cruisers, overkill on a 19-foot bowrider that mostly goes to the swim spot.
 
@@ -190,6 +215,7 @@ Ready to find the right Mercury for your family runabout? Build a quote at **[me
 
 Not sure where to start? Call **905-342-2153**. We answer the phone and we'll tell you the honest answer for your hull.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

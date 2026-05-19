@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -138,6 +138,8 @@ A freshly painted lower unit on an older motor is not a sign of good maintenance
 
 Fresh paint on a lower unit is one of the oldest tricks for hiding corrosion, impact damage, or prop strikes that have never been properly assessed. A well-maintained motor has a lower unit that looks its age, with honest wear and the original finish, not a fresh coat of black slapped on before listing.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 If you see it, ask why it was painted. If the answer is vague, factor in the cost of a full lower unit inspection before you commit.
 
 ---
@@ -232,6 +234,8 @@ Or call us at 905-342-2153. We're at Rice Lake, Ontario (in the Kawarthas), Gore
 ---
 
 *Harris Boat Works. Mercury Platinum Dealer. Gores Landing, ON*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

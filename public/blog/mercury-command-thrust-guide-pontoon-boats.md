@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -99,6 +99,8 @@ We make this call per boat at HBW. The right answer depends on the specific hull
 
 A Command Thrust gearcase requires Command Thrust props. The larger diameter, different geometry, and different hub design mean standard props won't fit or perform correctly.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 Command Thrust props typically:
 - Run larger diameter than standard (specific size depends on motor HP)
 - Use a lower pitch range, optimized for hole shot and load handling rather than top speed
@@ -168,6 +170,8 @@ No. SeaPro is a Mercury motor family built for commercial-duty cycles. Command T
 
 **How long does a Command Thrust gearcase last?**
 With proper maintenance, same as the motor itself. Annual gearcase lube replacement during winterization is critical for longevity.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

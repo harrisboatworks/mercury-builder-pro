@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -70,7 +70,17 @@ Most boats on Rice Lake and the Kawarthas came Mercury-rigged from the factory. 
 
 The expertise compounds over decades. Deep parts inventory. Mercury-specific tooling. Technicians who have seen every Mercury problem worth knowing about on Ontario freshwater.
 
+::pull-quote
+quote: I shopped two other Mercury dealers before HBW. The other quotes were three days to a callback. **Jay had a real number in 90 seconds** and answered my follow-up the same afternoon. Easy decision.
+attribution: Brian K.
+source: Peterborough
+::
+
+---
+
 ## Local knowledge that transfers to your boat
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 We are not a generic marine dealer. We are an Ontario freshwater Mercury dealer. That distinction matters more than it sounds.
 
@@ -122,6 +132,7 @@ Mercury Repower Financing is available through HBW. Rates are set by DealerPlan 
 
 Build a complete installed quote at [mercuryrepower.ca](https://mercuryrepower.ca), real pricing, no phone call required. When you are ready to move forward or want to talk through your specific boat, call us at 905-342-2153 or request service at [hbw.wiki/service](https://hbw.wiki/service).
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Last reviewed: 2026-05-11.*
 
 ## FAQs

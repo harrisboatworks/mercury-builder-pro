@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -114,6 +114,8 @@ For serious fishing on Rice Lake or the Kawarthas, a kicker motor isn't optional
 
 **Trolling speed control.** A main motor at idle is almost always too fast for walleye trolling at 1–2 mph. The 9.9 ProKicker idles down to true trolling speed.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Backup propulsion.** A failed main motor on the water is a tow back to the dock. A kicker gets you home.
 
 **Fuel economy at slow speeds.** A 90 HP main motor at 1.5 mph wastes fuel. A 9.9 at the same speed sips it.
@@ -187,6 +189,8 @@ On heavier deep-V aluminum hulls 18 feet and up, Command Thrust gives meaningful
 
 **Can I use a kicker as my main motor?**
 On small aluminum boats (12–14 ft), yes, a 9.9 or 15 HP can be the only motor. On 16 ft and bigger, you need a proper main motor; the kicker is the auxiliary.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

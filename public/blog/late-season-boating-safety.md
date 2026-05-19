@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -99,6 +99,8 @@ Before every shoulder-season trip: tell someone where you are going, expected re
 
 ### Communication Gear Priority
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 VHF radio on Channel 16 is the standard. Cell coverage on many Ontario lakes is unreliable, do not rely only on your phone for communication offshore. A personal locator beacon (PLB) for remote or offshore trips. A whistle attached to your PFD.
 
 ---
@@ -183,6 +185,8 @@ For local Rice Lake and Kawartha customers, yes. Contact us at [hbw.wiki/service
 **End the season right.** Proper winterization in October means a ready boat in May. 
 [Book fall service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

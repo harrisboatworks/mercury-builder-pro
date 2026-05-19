@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -94,6 +94,8 @@ Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real CAD
 
 **Approximate drive time:** Around 70 minutes in normal traffic. The last 30 minutes is rural, county roads through farmland and then cottage country. Most Markham customers say the shift from 404 to cottage roads is part of the appeal.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 **Phone:** 905-342-2153  
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)  
@@ -168,6 +170,8 @@ Markham repower customers often:
 - **Trust transparent CAD pricing.** Our online quote builder at [mercuryrepower.ca](https://mercuryrepower.ca) works without a phone call — you can build the quote in any language, in your own time, before deciding to make the trip.
 
 Markham customers often combine their trip with a service drop, see our [drive-in service walkthrough](/blog/toronto-to-rice-lake-drive-in-process).
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

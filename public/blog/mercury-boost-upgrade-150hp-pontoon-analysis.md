@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -70,6 +70,29 @@ The hierarchy of what actually drives pontoon performance:
 
 Boost lands below most of those factors. If any of the upstream variables are wrong, prop, trim, loading, fix those first. The return per dollar is better.
 
+::decision-card
+eyebrow: Boost eligibility check
+heading: Is your setup actually a Boost candidate?
+subhead: Boost is a software unlock on specific late-model Mercury motors. The math only works on certain hulls and certain owners. Most pontoon owners do not feel it dramatically.
+leftLabel: Boost is worth the conversation
+leftCriteria:
+  - Mercury 150 FourStroke, 2024 or newer
+  - Heavier pontoon (triple tube, 24 foot or larger)
+  - You load the boat with 6+ people regularly
+  - You're already at the top of your motor's working range
+leftOutcome: Talk to us about Boost
+leftVariant: recommended
+rightLabel: Boost is not the right lever
+rightCriteria:
+  - Pre-2024 Mercury 150 (Boost is not available)
+  - Light dual-tube pontoon with 2 to 4 people typical
+  - You're already getting plane and cruise on spec
+  - You'd be better served by a prop change first
+rightOutcome: Skip Boost, check the prop
+rightVariant: alternative
+whenInDoubt: A correctly pitched prop fixes most feels-underpowered complaints on pontoons at a fraction of the Boost cost. Try the prop first.
+::
+
 ### When Boost Actually Makes Sense
 
 There are real scenarios where Boost earns its price:
@@ -86,11 +109,15 @@ For a 22-foot tritoon hauling four adults and full gear, none of those scenarios
 
 The reason Boost matters beyond its 2026 performance gains is what it signals.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 Software-defined performance is the direction the marine industry is heading. Mercury has already signaled interest in more granular performance tiers, use-case profiles, and connected services. Buying a current Mercury motor positions you to participate in future upgrade cycles.
 
 In a few years, we'll likely see more specific unlocks, perhaps a tow mode that emphasizes low-end torque for getting skiers up, separate from a cruise mode tuned for fuel efficiency. Boost is the first widely-deployed iteration of that roadmap.
 
 If you're buying a Mercury today with a 5, 10-year ownership window in mind, the platform you're buying into matters. That's a better reason to care about Boost than the current performance increment.
+
+![Mercury 150 Pro XS Boost outboard on tritoon pontoon transom](/lovable-uploads/inline/inline-boost-150hp-pontoon.png)
 
 ### What We Check Before Recommending Boost
 
@@ -150,6 +177,7 @@ More often than not, the better upgrade is a prop and trim conversation, and tha
 
 > **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether the promo applies to you. Or call [(905) 342-2153](tel:+19053422153) if you want to talk it through.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

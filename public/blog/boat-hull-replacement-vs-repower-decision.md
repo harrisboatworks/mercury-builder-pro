@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -119,6 +119,8 @@ When customers fall into this category, we tell them. We sell new Legend Boats. 
 
 Some hulls fall between clear yes and clear no:
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 - **Older fiberglass with cosmetic issues but solid structure.** Repower works; plan a cosmetic refresh during the same shop visit.
 - **Aluminum hulls with minor soft spots in the floor or transom.** A partial floor or transom repair as part of the repower sometimes extends the hull's life another 10, 15 years cost-effectively.
 - **Hulls with outdated electronics and rigging.** The repower is the right time to update everything. Combined cost is usually still well below new-boat pricing.
@@ -187,6 +189,7 @@ Think you might be repowering? Build a quote at **[mercuryrepower.ca](https://ww
 
 Not sure which path is right? Call **905-342-2153** or come in for a free hull walk-around. We'll give you the honest answer for your specific boat, including "don't spend the money."
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

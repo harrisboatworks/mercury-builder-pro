@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -56,7 +56,7 @@ The anglers we see repowering to Pro XS are usually moving from one of three pla
 
 **Old two-stroke V6** (mid-90s to early 2000s Mercury, OMC, Yamaha). The two-stroke is loud, smoky, fuel-hungry, and getting harder to keep parts for. A modern Pro XS V6 makes more usable power, burns less fuel, runs quieter, and starts every time.
 
-**FourStroke that doesn't have the punch they want.** A FourStroke 200 will get a 19-foot bass boat on plane just fine. A 200 Pro XS will get the same boat on plane noticeably faster, with a sharper throttle response, and a higher top end. For tournament anglers who clear weed lines on Rice Lake and run between spots on Stoney or Buckhorn, that difference is real.
+**FourStroke that doesn't have the punch they want.** A FourStroke 200 will get a 19-foot bass boat on plane just fine. A 200 Pro XS will get the same boat on plane noticeably faster, with a sharper throttle response, and a higher top end. For tournament anglers who clear weed lines on [Rice Lake](/blog/best-marina-rice-lake-ontario) and run between spots on Stoney or Buckhorn, that difference is real.
 
 **Tired older Pro XS.** The Optimax-era Pro XS earned a strong reputation. Owners coming out of those motors usually want the modern Pro XS because the response and the sound profile they remember are still there — plus modern reliability and fuel efficiency.
 
@@ -116,6 +116,10 @@ Honest framing matters. We sell both because they're both right for different pe
 
 ---
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+![Mercury Pro XS at full throttle on a bass boat across Rice Lake at sunrise](/lovable-uploads/inline/inline-pro-xs-action.png)
+
 ## Hole-shot, top-end, and where they matter
 
 Different Kawartha water rewards different things:
@@ -173,6 +177,14 @@ Honest counter-positioning. Pro XS is the wrong answer if:
 
 ---
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
+> Related guide: [Boat trim basics for Rice Lake](/blog/boat-trim-explained-rice-lake-ontario).
+
+> Related guide: [DTS vs mechanical controls, what Pro XS buyers should know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower).
+
 ## More from HBW on Mercury performance and repowers
 
 - [Mercury 150–300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide) — full lineup walk-through with HP, weights, and use cases
@@ -184,6 +196,8 @@ For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepow
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 Mercury Marine Platinum Dealer. Established 1947.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

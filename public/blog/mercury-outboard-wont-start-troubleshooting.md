@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -144,6 +144,8 @@ Fuel is the second most common cause of spring no-start, and it has several sub-
 
 **Fuel tank vent:** Ensure the fuel tank vent is open. A closed or clogged vent creates vacuum in the tank as fuel is drawn out, starving the engine.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ---
 
 ## Step 4: Check the Ignition, Spark Plugs
@@ -236,6 +238,7 @@ Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat W
 
 Phone: 905-342-2153
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

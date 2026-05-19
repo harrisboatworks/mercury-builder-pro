@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -68,7 +68,7 @@ caveat: Tandem trailers, braked trailers, and corroded older units cost more. Al
 
 ## Why Most Boaters Skip Trailer Maintenance Until It Fails
 
-Trailers are easy to ignore. They sit in the driveway most of the year, get pulled out twice for launch and haul-out, and seem fine when they are not. But the trailer is the only thing between your $20,000+ boat-and-motor combo and the asphalt at highway speed.
+Trailers are easy to ignore. They sit in the driveway most of the year, get pulled out twice for launch and [haul-out](/blog/boat-storage-kawartha-lakes), and seem fine when they are not. But the trailer is the only thing between your $20,000+ boat-and-motor combo and the asphalt at highway speed.
 
 We see three patterns at HBW:
 
@@ -120,6 +120,8 @@ Trailer lights fail because connectors corrode and constant flexing breaks the w
 - Sealed LED lights with a single connector last 10x longer than standard bulbs
 - Apply dielectric grease to the 4- or 7-pin connector every spring
 - Test every trip, a $10 plug-in tester saves you from a $250 OPP ticket
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ### 5. Bunks, Rollers, and Frame
 
@@ -177,6 +179,7 @@ A new mid-size aluminum trailer for a 16-18 ft boat runs $3,000-$5,000 CAD in On
 
 *Last reviewed: 2026-05-13*
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.
 
 ## FAQs

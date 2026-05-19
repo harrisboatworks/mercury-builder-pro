@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -122,6 +122,8 @@ Mercury also makes a 150 Pro XS V6, a different engine architecture (V6 instead 
 
 For typical recreational use, family fishing, cruising, casual water sports, the FourStroke 150 is the better value. The Pro XS V6 earns its premium on tournament applications.
 
+![Mercury 115 HP and 150 HP FourStroke side-by-side on identical transoms](/lovable-uploads/inline/inline-115-vs-150-comparison.png)
+
 ### The Mistakes We See Every Season
 
 **Buying 115 HP to save money on a hull that wants 150.** A 22 ft pontoon at 115 HP feels underpowered when loaded. The customer trades up within a couple seasons at full price. Should have bought the 150 the first time.
@@ -129,6 +131,8 @@ For typical recreational use, family fishing, cruising, casual water sports, the
 **Buying 150 HP when 115 was plenty.** A 17 ft aluminum used for solo fishing at 150 HP is overkill. The motor outpowers the hull's typical use. The savings on the 115 are better spent on a kicker or electronics.
 
 **Picking on top speed alone.** Most recreational use happens at cruise. Hole shot and load handling matter more than peak speed for typical Ontario boating.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Skipping Command Thrust on pontoons.** Both the 115 and 150 have Command Thrust gearcase options. On pontoons, Command Thrust is usually the right call regardless of HP class, it moves performance on the hole shot meaningfully.
 
@@ -189,12 +193,17 @@ Mercury-to-Mercury repowers from 115 to 150 often keep existing post-2010 contro
 
 ---
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## CTA
 
 Ready to pick your motor? Build a quote for the 115 or 150 at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration including rigging and prop.
 
 Not sure which HP is right for your hull? Call **905-342-2153**. We rig boats in this HP class every week and can give you the honest answer for your specific boat and use case.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

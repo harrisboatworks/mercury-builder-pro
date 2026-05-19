@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,6 +35,29 @@ For most Rice Lake fishing setups, the right combination is a Mercury 60–115 H
 
 ---
 
+::decision-card
+eyebrow: Rice Lake fishing style
+heading: Weed lines or whole-lake runs?
+subhead: How you fish Rice Lake decides the main-motor HP and whether you need a kicker.
+leftLabel: You fish weed lines and stay local
+leftCriteria:
+  - Slow trolling for walleye along weed edges
+  - Short runs out of Bewdley, Gores Landing, or Hastings
+  - You spend more time fishing than running
+  - 16 to 17 ft aluminum console
+leftOutcome: 60 to 90 HP FourStroke + 9.9 ProKicker for trolling
+leftVariant: recommended
+rightLabel: You cover the whole lake fast
+rightCriteria:
+  - Bass tournament style, run-and-gun between spots
+  - Crossings from the west end to Hastings or up to the Trent
+  - Heavy boat, full gear, sometimes three anglers
+  - 18 to 19 ft fishing boat
+rightOutcome: 115 to 150 HP FourStroke or Pro XS, kicker optional
+rightVariant: alternative
+whenInDoubt: Mind the submerged railway across the middle of the lake. More HP makes a strike worse, not better. Mark it on the chartplotter before you decide on top speed.
+::
+
 ## The Rice Lake Variables That Drive Motor Selection
 
 Rice Lake is a specific lake with specific characteristics. Generic "what outboard should I buy" advice misses the point. Here's what actually matters for this water:
@@ -47,7 +70,7 @@ Rice Lake is a specific lake with specific characteristics. Generic "what outboa
 
 **The sunken railway.** There is an abandoned 19th-century railway submerged across the middle of Rice Lake. It sits roughly 4 feet below the surface. It has been wrecking lower units for over a hundred years. Slow down across the middle of the lake until you know the crossing. Chartplotters (Navionics, Garmin, C-MAP) mark it.
 
-**Public ramp access.** Bewdley, Hastings, Roseneath, and HBW's Gores Landing ramp are the main access points. Motor and boat selection should account for trailer size, parking constraints, and ramp slope at the launch you use most.
+**Public ramp access.** Bewdley, Hastings, Roseneath, and [HBW's Gores Landing ramp](/blog/best-marina-rice-lake-ontario) are the main access points. Motor and boat selection should account for trailer size, parking constraints, and ramp slope at the launch you use most.
 
 **Trent-Severn access.** The east end of Rice Lake connects to the [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern). Boats that travel the system need reliable mid-range cruise performance for the lock-to-lock runs.
 
@@ -84,6 +107,8 @@ Fast acceleration, maximum top speed, tournament-ready. The Pro XS earns its pre
 **Recommended:** 16–18 ft aluminum console + Mercury 90–115 HP FourStroke (Command Thrust if the boat is loaded heavy).
 
 More passengers, more gear, slower pace. FourStroke gives you fuel economy and quiet running. Command Thrust gearcase makes a meaningful difference if you're consistently running a full boat.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -159,6 +184,8 @@ If you want to talk through the setup before you configure, call **905-342-2153*
 Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | [harrisboatworks.ca](https://www.harrisboatworks.ca)
 
 Tournament-minded anglers should also see our [Pro XS repower guide for Rice Lake and Kawartha anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers) for the performance side of the conversation.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

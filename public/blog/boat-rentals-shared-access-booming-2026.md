@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -70,9 +70,19 @@ We are not a rental-only business. Rentals are part of what we do, but our core 
 
 Because it works as a bridge.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 The boating industry has known for years that people who try boating through rentals or clubs are significantly more likely to become boat owners than people who never get on the water at all. The trial lowers the barrier. Someone who has never piloted a boat is much more likely to buy one after a few good experiences than someone who has only read about it.
 
 We see that in our own customer base. People rent a Legend ProSport for a long weekend, decide they want their own, and come back to talk about a quote. That progression is not theoretical for us; it is part of how a real portion of our boat sales come together.
+
+::pull-quote
+quote: I'm in Toronto five days a week. Owning a boat for ten Saturdays a year never made financial sense. **Renting from HBW lets me bring the kids up, fish all day, hand the keys back.** No winterization headache.
+attribution: Alex W.
+source: Toronto
+::
+
+---
 
 ## When renting makes more sense than buying
 
@@ -105,9 +115,11 @@ If you have rented enough that the math now points to ownership, build a quote a
 
 If you want to talk through which boat fits your use case before you build, call us at 905-342-2153 or visit HBW at 5369 Harris Boat Works Rd, Gores Landing.
 
-We have been renting and selling boats on Rice Lake since 1947. We will give you the honest answer for your situation, including whether ownership makes sense yet.
+We have been [renting and selling boats on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). We will give you the honest answer for your situation, including whether ownership makes sense yet.
 
 *Last reviewed: 2026-05-11.*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -90,6 +90,8 @@ Outdoor with shrinkwrap. No indoor. If you store your boat in Mississauga and on
 
 **Route:** Highway 401 east through Toronto, then Highway 115 east, then County Road 28 north into Gores Landing.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Approximate drive time:** Around 90 minutes outside rush hour. On a weekday morning or Saturday before 9 a.m., the 401 through Toronto can be manageable. Midday Saturday or Sunday afternoon, plan for more. The last 30 minutes from 115 to Gores Landing is rural, genuinely pleasant drive once you're off the highway.
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
@@ -161,6 +163,8 @@ Why Mississauga boaters trailer to HBW:
 - **Annual repower trips.** Many Mississauga customers make the drive once for the repower itself, then run service work closer to home between visits.
 - **Drop-and-pick logistics.** Trailer up midweek, leave the boat for service or storage, pick up when ready.
 - **Mercury Platinum depth.** A clean 115-150 HP repower install needs the rigging hours we put in daily — not every closer dealer has that bench.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

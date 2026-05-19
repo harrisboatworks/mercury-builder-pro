@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -95,11 +95,19 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 ---
 
+::pull-quote
+quote: Pull the boat from Mississauga to Rice Lake every Friday in summer, hour and ten minutes door to ramp. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
+attribution: Jamal R.
+source: Mississauga
+::
+
 ## Trailer Weight and Tow Vehicle Considerations
 
 **Combined trailer + boat weight under 1,400 kg (3,000 lbs):** Most mid-size SUVs and trucks can handle this without trailer brakes required, but check your tow vehicle's manufacturer ratings.
 
 **Combined weight 1,400–3,400 kg (3,000–7,500 lbs):** Trailer brakes are required by law in Ontario (and a good idea regardless). Verify your tow vehicle's tow rating exceeds the combined load.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Combined weight over 3,400 kg (7,500 lbs):** A full-size truck or HD truck is typically required. Verify against the tow vehicle's gross combined weight rating (GCWR).
 
@@ -107,9 +115,11 @@ When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actu
 
 ---
 
+![Pickup truck towing an aluminum fishing boat eastbound on Highway 401 at golden hour](/lovable-uploads/inline/inline-401-east-trailering.png)
+
 ## What to Do at the Launch in Gores Landing
 
-If you're launching at our public ramp at Gores Landing:
+If you're launching at [our public ramp at Gores Landing](/blog/best-marina-rice-lake-ontario):
 
 1. **Pull into the staging area** before the actual ramp. Get the boat ready to launch (straps off, drain plug in, motor down), not while blocking the ramp.
 2. **Back the trailer down the ramp** until the boat floats off cleanly. Have a friend on the dock to walk the boat to a temporary tie-up.
@@ -171,6 +181,7 @@ Service requests for HBW: **[hbw.wiki/service](https://hbw.wiki/service)**.
 
 Phone: **905-342-2153**.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947
 
 ## FAQs

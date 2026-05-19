@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-financing-guide-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -75,6 +75,8 @@ What works well:
 - Typically the lowest rate of the three options
 - Flexible draw-down and repayment terms
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 What to watch:
 - Your home is the collateral, that is a real risk to understand clearly before using this route
 - Approval and draw-down takes longer than dealer or bank financing
@@ -86,6 +88,33 @@ What to watch:
 - Down payment
 - Trade-in credit
 - Loan term
+
+::cost-stack
+heading: Monthly payment ranges by financing path
+eyebrow: $15K vs $25K scenarios
+subhead: Same motor, three financing paths. Numbers below are estimates at typical 2026 Ontario rates over 84 months.
+item1Label: Pay cash — $15,000 motor
+item1Value: $0/month
+item1Note: No interest, no DealerPlan fee, fastest paperwork. Best total cost if you have the cash.
+item2Label: Pay cash — $25,000 motor
+item2Value: $0/month
+item2Note: Same advantage at the larger ticket. Saves roughly $5,500 in interest over 7 years.
+item3Label: Bank loan at 9.5% — $15,000
+item3Value: ~$245/month
+item3Note: Unsecured personal loan. Approval and rate depend on credit. Faster than dealer financing.
+item3Accent: true
+item4Label: Mercury Marine financing at 8.99% — $15,000
+item4Value: ~$240/month
+item4Note: $299 DealerPlan fee added post-tax. Often the best rate for the under $10K range.
+item5Label: Mercury Marine financing at 7.99% — $25,000
+item5Value: ~$390/month
+item5Note: Lower tier rate kicks in at $10K+. $299 DealerPlan fee still applies.
+totalLabel: Best path for most buyers
+totalValue: Mercury financing at $25K+
+caveat: Financing not available under $5,000. Apply at mercuryrepower.ca/finance for real numbers on your purchase.
+::
+
+---
 
 ## How to compare options honestly
 Do not compare monthly payments across different term lengths. A 96-month payment looks attractive next to a 48-month payment, but you will pay significantly more in total interest.
@@ -112,6 +141,8 @@ A payment estimate based on a motor price and an assumed rate is only useful if 
 - Current financing options shown on the [financing page](/financing) and confirmed with your quote. As of May 2026, qualified buyers, subject to change.
 
 *Last reviewed: 2026-05-11.*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -40,6 +40,29 @@ Mercury and Yamaha both build excellent outboards. For Ontario freshwater boatin
 > **Disclosure:** Harris Boat Works is a Mercury Platinum dealer. We sell Mercury. We're telling you up front so you know where the bias lives.
 
 ---
+
+::decision-card
+eyebrow: Brand decision
+heading: Switch to Mercury or stay on Yamaha?
+subhead: Dealer access in your region is the deciding factor for most Ontario owners.
+leftLabel: Switch to Mercury
+leftCriteria:
+  - No Yamaha dealer within an hour drive
+  - You travel and want broader Canadian dealer coverage
+  - You plan to sell in 2 to 5 years (stronger Ontario resale)
+  - You are repowering anyway, the switch cost is just rigging
+leftOutcome: Mercury wins on Ontario service network and resale
+leftVariant: recommended
+rightLabel: Stay on Yamaha
+rightCriteria:
+  - You have a trusted Yamaha dealer in your town
+  - Existing Yamaha is running well with hours left
+  - Boat came factory-rigged Yamaha and you like the integration
+  - You boat Great Lakes coastal or travel to saltwater often
+rightOutcome: Brand-switch rigging ($1,500 to $3,000) won't pay back
+rightVariant: alternative
+whenInDoubt: Drive to your nearest Yamaha and Mercury dealer. Whichever shop you'd actually trust with the boat on a Tuesday afternoon is the right brand.
+::
 
 ## Full Article
 
@@ -96,6 +119,8 @@ Repower time is the least expensive moment to switch brands.
 
 We do Yamaha-to-Mercury conversions at HBW. The conversion cost picture is similar to Evinrude-to-Mercury, see [that guide](/blog/evinrude-to-mercury-repower-ontario-guide) for details.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ### What We Check Before Recommending a Switch
 
 When Yamaha owners come in asking about Mercury, we want to know:
@@ -151,12 +176,17 @@ Comparable across HP classes. Both brands' modern FourStrokes are fuel-efficient
 
 ---
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## CTA
 
 Shopping Mercury for your boat? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live CAD pricing, full configuration, no "call for price."
 
 Want to talk through Mercury vs. Yamaha for your specific boat before quoting? Call **905-342-2153**. We'll give you the honest answer, even if it's "your Yamaha is fine, don't switch."
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

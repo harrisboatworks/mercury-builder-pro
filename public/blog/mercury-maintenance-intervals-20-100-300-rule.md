@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -150,6 +150,8 @@ Exact scope of the 300-hour service varies by motor model and family. Your deale
 
 ## Does Maintenance Interval Affect Warranty?
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 Mercury's warranty documentation specifies that scheduled maintenance must be performed to maintain warranty coverage. If a failure occurs and the service history doesn't include documented maintenance at Mercury's intervals, warranty coverage can be affected.
 
 This doesn't mean you have to pay a dealer for every service, owner-performed maintenance with documented supplies and dates is often acceptable. What matters is that the service was done. Keep records of what you did and when.
@@ -228,6 +230,7 @@ Or build a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 Phone: 905-342-2153
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

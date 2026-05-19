@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -75,6 +75,29 @@ Small dinghies, sailboat auxiliaries, very small fishing boats. A common choice 
 
 *Note: The 9.9 ProKicker is a different, purpose-built fishing kicker variant, see the ProKicker guide for that specific application.*
 
+::decision-card
+eyebrow: Portable Mercury sizing
+heading: What are you actually pushing?
+subhead: The portable Mercury lineup covers a wide range of jobs. The right choice depends less on the hull and more on what role the motor plays.
+leftLabel: Dinghy, canoe, or small jon boat
+leftCriteria:
+  - Tender for a larger boat at anchor
+  - Solo or two-person fishing on a small pond or river
+  - Boat under 12 feet, light aluminum or inflatable
+  - Want one-hand carry and easy stowage
+leftOutcome: Mercury 2.5 to 6 HP MH
+leftVariant: alternative
+rightLabel: Small fishing boat or backup kicker
+rightCriteria:
+  - 14 to 16 foot aluminum used regularly
+  - Trolling for walleye or bass on Kawartha lakes
+  - Backup or kicker for a larger main motor
+  - Need electric start and remote tiller options
+rightOutcome: Mercury 9.9 to 20 HP EH or ELH
+rightVariant: recommended
+whenInDoubt: A 9.9 EFI is the most versatile motor in this range. It carries like a portable but punches like a small kicker. Most owners who buy a 5 wish they'd bought the 9.9 within a season.
+::
+
 ### Mercury 15 MH and 15 EH (15 HP)
 14-foot tin boats, slightly larger small fishing applications. Available in manual or electric start.
 
@@ -104,6 +127,8 @@ For most small fishing applications, manual start (MH) is fine. For older operat
 
 **Short shaft (15 inches):** Standard for most tin boats and small dinghies.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Long shaft (20 inches):** Required for sailboat auxiliaries, deeper transoms, some larger small boats.
 
 Wrong shaft length is the most common portable motor mistake. If the shaft is too short for the transom, the motor cavitates at speed. Too long and the lower unit drags unnecessarily deep.
@@ -111,6 +136,8 @@ Wrong shaft length is the most common portable motor mistake. If the shaft is to
 At HBW, we measure transom depth before recommending shaft length on any portable motor sale. If you're buying a drop-in install for a boat you know well, measure transom depth yourself. The rule: cavitation plate should be roughly level with the bottom of the hull at the prop location.
 
 ---
+
+![Portable Mercury FourStroke outboard on small aluminum boat at lake shore](/lovable-uploads/inline/inline-portable-mercury-dinghy.png)
 
 ## Storage and transport
 
@@ -180,6 +207,7 @@ Yes. Long-shaft (20-inch) variants are typically required for sailboat transom d
 **Do portable Mercurys need annual maintenance?**  
 Yes. Annual fluid changes, fuel system service, and inspection are recommended. The cost is small relative to motor replacement. We service portables at HBW.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

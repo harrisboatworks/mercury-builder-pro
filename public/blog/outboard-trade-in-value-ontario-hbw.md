@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -100,6 +100,8 @@ It is always the first question, and it is the right one. A motor trade changes 
 
 This post is the answer we give over the phone, written down: what we look at, what helps and hurts value, the real ranges for 2026, and how to get a preliminary number before you drive anywhere.
 
+::walkaround-lead-capture
+
 ## The five things we look at
 
 There is no magic database for outboard residuals. What we do, and what any honest dealer does, is evaluate five factors.
@@ -156,6 +158,8 @@ A service record binder adds 10 to 15% to most trades. Not because we are being 
 - Aftermarket controls or rigging the next owner has to undo
 - Oil weep at the lower unit seal (typically a $400 to $700 fix)
 - Stale fuel that ran through the system
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Trade vs private sale vs scrap
 
@@ -231,6 +235,7 @@ We also publish all our Mercury pricing live at [mercuryrepower.ca](https://merc
 
 > **Want a number right now?** Try our [Trade-In Value Estimator](/trade-in-value). Same fields, instant CAD ballpark. Or call us at [(905) 342-2153](tel:+19053422153) and we'll walk it through with you.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Last reviewed: 2026-05-11.*
 
 ## FAQs

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -91,6 +91,12 @@ Upgrading your outboard? Your current motor has value. Here's how to get the bes
 - Fall (season winding down)
 - When you need it done urgently
 
+::walkaround-lead-capture
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+![Used aluminum fishing boat with Mercury outboard prepped for trade-in evaluation](/lovable-uploads/inline/inline-trade-in-eval.png)
+
 ### Trade-In vs Private Sale
 
 **Trade-In Advantages**:
@@ -139,6 +145,8 @@ Upgrading your outboard? Your current motor has value. Here's how to get the bes
 - [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
 - [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide). SmartCraft gauges explained
 - [Mercury Digital Throttle & Shift (DTS): What You Need to Know](/blog/mercury-digital-throttle-shift-guide). Digital Throttle & Shift basics
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -109,6 +109,8 @@ This is what kickers were made for. Walleye trolling on Rice Lake demands sustai
 ### You fish big water or serious chop
 Lake Simcoe, the Trent-Severn main channel, the Kawarthas in October wind. A gas kicker has enough thrust to push through conditions that strand an electric motor.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ### Your main motor is a V6 or V8
 Larger Mercury 4-strokes (175 HP and up) are not built to idle at 600 to 800 RPM for hours. Extended low-RPM operation glazes cylinders and burns oil. Trolling on a dedicated kicker instead of lugging your main motor at idle will extend your powerhead life measurably.
 
@@ -168,6 +170,8 @@ For engine repairs, we only service Mercury and Mercruiser.
 Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new ProKicker at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 *Last reviewed: 2026-05-11.*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

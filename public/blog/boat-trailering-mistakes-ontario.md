@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -97,6 +97,29 @@ Two minutes at the ramp. Every time.
 
 ---
 
+::diagnostic-flow
+eyebrow: Roadside diagnosis
+heading: Trailer acting up? Work the symptoms in this order
+subhead: Most highway trailer failures trace back to one of these five checks. Pull over at the first sign and run the list before you continue.
+step1Label: Hot wheel hubs
+step1Question: Can you hold your hand on the hub for 5 seconds after a 30-minute run?
+step1Tip: A hub too hot to touch means bearing failure is minutes away. Stop, let it cool, and limp to the nearest service. Do not continue at highway speed.
+step2Label: Tire pressure and condition
+step2Question: Are both trailer tires at the sidewall PSI, with no sidewall cracking?
+step2Tip: Under-inflated tires build heat fast and blow out. Trailer tires age out at 5 to 7 years even with good tread. Check the date code.
+step3Label: Tongue weight
+step3Question: Does the tongue sit level on the ball, not nose-up or nose-down?
+step3Tip: 10 to 15 percent of trailer weight should be on the tongue. Too light causes sway; too heavy overloads the rear axle. Re-balance load forward or back.
+step4Label: Load distribution
+step4Question: Is the bow of the boat snug against the bow stop, with the transom strapped?
+step4Tip: A boat that shifts on the trailer changes tongue weight at speed. Tighten the bow strap and re-check both transom tie-downs before continuing.
+step5Label: Lights and connection
+step5Question: Do brake lights, turn signals, and running lights all work with the truck engine running?
+step5Tip: A bad ground at the trailer plug is the most common cause. Clean the contacts, wiggle the plug, and confirm before merging back on the highway.
+escalationLabel: Bearings or tires need attention?
+escalationBody: We service trailer bearings and tires alongside motor work at HBW. Call (905) 342-2153 before you head home if you noticed any of the above on the way in.
+::
+
 ### 6. Not Securing the Motor
 
 An outboard hanging freely on a transom isn't built to absorb highway vibration. Without a transom saver, the motor's weight swings on the tilt/trim system and steering cable over every bump on every Ontario back road north of the city.
@@ -108,6 +131,8 @@ Transom savers cost next to nothing. They attach between the trailer roller and 
 ---
 
 ### 7. Failed or Unplugged Trailer Lights
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 Ontario police ticket trailer lighting violations, and they're not shy about it. Working brake lights, turn signals, and tail lights are required, not optional.
 
@@ -198,6 +223,8 @@ We do Mercury repowers and full electrical service at Harris Boat Works. If your
 
 *Harris Boat Works, est. 1947. Gores Landing, ON. Mercury Marine Platinum Dealer.*
 *905-342-2153 | mercuryrepower.ca*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

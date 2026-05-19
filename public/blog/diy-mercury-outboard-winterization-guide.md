@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -39,7 +39,7 @@ content_type: blog_article
 
 You can winterize your own Mercury outboard if you're comfortable with fogging oil, lower-unit drain-and-fill, and fuel stabilizer, and if you have the supplies and an hour of focused work. The step that kills motors is leaving water in the powerhead through a freeze. If you're not certain the cooling system is clear, pay a dealer to do it. A professional winterization costs a fraction of a cracked block.
 
-For professional winterization: [hbw.wiki/service](https://hbw.wiki/service).
+For professional winterization and [winter boat storage in the Kawarthas](/blog/boat-storage-kawartha-lakes): [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
@@ -176,6 +176,8 @@ The lower unit gearcase contains gear lube that absorbs water through the seals 
 
 Use Mercury-branded gear lube appropriate for your motor. The spec is in your owner's manual.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ### Step 5: Lubricate All Grease Points
 
 Every Mercury has grease fittings on the steering and tilt/trim pivot points. These need marine grease before storage. Dry or under-greased pivot points seize over winter and result in stiff, damaged components in spring.
@@ -278,6 +280,10 @@ Yes. Milky gear lube means water in the gearcase, which means a seal is leaking.
 
 ---
 
+## Reviewed by
+
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+
 ## CTA
 
 **Want it done right without the Saturday morning?** 
@@ -285,6 +291,7 @@ Request professional winterization at [hbw.wiki/service](https://hbw.wiki/servic
 
 Phone: 905-342-2153
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

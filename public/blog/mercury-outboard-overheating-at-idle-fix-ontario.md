@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -119,9 +119,13 @@ In some cases, the overheat alarm is triggered by a faulty temperature sensor ra
 - The motor doesn't feel or sound like it's struggling
 - The alarm is intermittent and doesn't correlate with observable symptoms
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 Sensor diagnosis requires dealer tools to read temperature sensor values against actual powerhead temperature. If you suspect a sensor issue, this is a professional diagnostic.
 
 ---
+
+![Mercury outboard cooling system diagnostic with temperature sensor and service manual visible](/lovable-uploads/inline/inline-overheating-diagnostic.png)
 
 ## Ontario Context: Why Idle Overheating Shows Up More in Summer
 
@@ -202,6 +206,7 @@ Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores L
 
 Phone: 905-342-2153
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

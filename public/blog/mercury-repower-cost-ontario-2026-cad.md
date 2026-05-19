@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -112,6 +112,8 @@ Before we quote, we want to know:
 - What you actually do with the boat
 - Where you launch
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 We won't quote a motor blind. If you build a quote through the configurator and the configuration seems wrong for your hull, we'll reach out before you proceed to install.
 
 ### When to Repower vs. Buy New
@@ -182,6 +184,7 @@ Rather talk first? Call **905-342-2153**. We answer the phone.
 
 > **Want the all-in number?** Try our [Repower Cost Estimator](/tools#repower-cost). Motor, rigging, and labour, ballpark CAD, no email required. Or call [(905) 342-2153](tel:+19053422153) for a real quote against your serial number.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

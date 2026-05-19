@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -43,7 +43,7 @@ Rice Lake is in the Kawartha Lakes region of southern Ontario, part of the Trent
 
 The water comes in from the Otonabee River at the north and drains east via the Trent River into the Trent-Severn system. So the lake is connected to a much bigger water network, you can lock through and travel to Lake Ontario at Trenton or to Georgian Bay at Port Severn if you want a multi-day boat trip.
 
-Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake since 1947. The marina sits directly on the lake's south shore. Three generations of the Harris family have run boats out of this exact location.
+Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake since 1947. [The marina](/blog/best-marina-rice-lake-ontario) sits directly on the lake's south shore. Three generations of the Harris family have run boats out of this exact location.
 
 ---
 
@@ -108,6 +108,8 @@ For Rice Lake visitors, this opens up affordable multi-day trips through the Kaw
 ## Boat Rentals and Borrowing
 
 If you don't have a boat, you can rent from a few options on Rice Lake. HBW operates a 9-boat rental fleet (Legend boats with Mercury motors). Walk-up and call-ahead rentals available, see [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) or call 905-342-2153.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 Other rental options exist around Bewdley, but availability and quality vary. Call ahead before driving up.
 
@@ -194,6 +196,8 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 - Parks Canada, [Trent-Severn Waterway lockage fees and Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
 - Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
 - Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/page/fishing-regulations-zone-17)
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 - Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)
 
 ## FAQs

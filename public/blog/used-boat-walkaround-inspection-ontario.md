@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -123,6 +123,8 @@ Turn on the battery switch and test everything: fuel gauge, tach, trim, bilge pu
 
 ## Minutes 20-28: Outboard or Sterndrive
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ### Visual inspection
 
 Ask to have the cowl removed. A seller who won't take it off has something to hide. Look at the powerhead: oil leaks, corrosion, cracked hoses, carbon around the exhaust ports. Fresh paint on the powerhead is a yellow flag, it can be hiding corrosion or repair work.
@@ -218,9 +220,15 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 
 ---
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## Get the printable guide
 
 ::walkaround-lead-capture
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -44,6 +44,26 @@ Battery-related no-starts are one of the most common spring service calls our te
 This guide is the preventive medicine version of that service call. Battery types, switch setups, parasitic drain, winter storage, spring wake-up, everything you need so May long weekend starts the way it's supposed to.
 
 ---
+
+::diagnostic-flow
+heading: Battery won't crank? Diagnose in this order.
+eyebrow: Marine battery triage
+subhead: Most marine battery "failures" are one of these four things. Walk in order, don't guess.
+step1Label: Load test
+step1Question: Does the battery hold above 9.5V under starter load?
+step1Tip: Resting voltage lies. A tired battery can read 12.4V at rest and collapse to 8V the moment the starter pulls. Get a real load test at any auto parts store, free.
+step2Label: Terminals and cables
+step2Question: Are the terminals clean and the cable connections tight?
+step2Tip: White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, then dielectric grease.
+step3Label: Charging system (alternator output)
+step3Question: With the engine at 1,500 RPM, does battery voltage read 13.8V to 14.4V?
+step3Tip: Under 13.5V running means the alternator or voltage regulator isn't charging. The battery is being drained by the boat, not failing on its own.
+step4Label: Age and replacement
+step4Question: Is the battery 5+ years old, or did it spend a winter without a maintainer?
+step4Tip: Even a "good" 5-year-old AGM is on borrowed time. Replace proactively instead of stranded at the launch ramp on May 24 weekend.
+escalationLabel: Want HBW to diagnose?
+escalationBody: We test batteries, charging systems, and parasitic drain in one appointment. Book at /service or call (905) 342-2153.
+::
 
 ## Why Batteries Are Our #1 Spring Service Call
 
@@ -131,6 +151,8 @@ This is how boats come in dead every spring: the switch was left on **BOTH** all
 One more note: never switch directly from 1 to 2 while the engine is running. Switch to Both first, then to the other bank. Going directly from 1 to 2 with the alternator running can spike voltage and damage electronics.
 
 ### Adding an ACR or VSR
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 An Automatic Charging Relay (ACR) or Voltage Sensitive Relay (VSR) monitors both battery banks and automatically connects them for charging when the engine runs, then isolates them when it shuts off. Both batteries charge on every engine run. Neither can drain the other in storage. No operator input required. If you're doing a dual battery upgrade, an ACR is worth the investment.
 
@@ -248,6 +270,12 @@ For more on how on-board monitoring tools can help you track your boat's electri
 
 ---
 
+> Related guide: [How small problems become big service bills](/blog/accidentally-increase-boat-service-bills-ontario).
+
+> Related guide: [Mercury spring run-up checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario).
+
+> Related guide: [Boat electrical safety checklist for Ontario freshwater](/blog/boat-electrical-safety-checklist-ontario-freshwater).
+
 ## Battery, Switch, or Charging System Question? We Diagnose and Fix All of It.
 
 Battery problems are fixable. They're also preventable, if you know what to check and when.
@@ -258,6 +286,8 @@ Looking for a replacement battery, smart charger, terminal hardware, or switch c
 
 Harris Boat Works. Gores Landing, ON. Est. 1947.  
 [hbw.wiki/service](https://hbw.wiki/service) · 905-342-2153
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-ajax-ontario-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -85,6 +85,8 @@ Outdoor with shrinkwrap. No indoor. Ajax customers who boat on Rice Lake or the 
 
 ## Getting to Harris Boat Works from Ajax
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Route:** Highway 401 east to Highway 115 north, then County Road 28 north to Gores Landing. Clean highway run for most of it, the last 15 minutes is rural county road once you're off 115.
 
 **Approximate drive time:** Around 45 minutes outside rush hour. Ajax's position east of the main GTA traffic clusters makes this a particularly clean run on most mornings.
@@ -147,6 +149,8 @@ Why Ajax boaters choose HBW for repower:
 
 - **Mercury Platinum-level rigging depth.** A 115 HP repower involves controls, harness, gauge, and prop matching. Smaller dealers do this work but slower; we do it daily.
 - **One-trip storage + service.** Many Ajax customers store at HBW over winter, get spring commissioning, and trailer back to Lake Ontario for the season. One drive, one trusted shop, no May scheduling friction.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 
