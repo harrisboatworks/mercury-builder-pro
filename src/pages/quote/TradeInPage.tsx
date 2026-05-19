@@ -5,7 +5,7 @@ import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShe
 import { PageTransition } from '@/components/ui/page-transition';
 import { TradeInValuation } from '@/components/quote-builder/TradeInValuation';
 import { useQuote } from '@/contexts/QuoteContext';
-import { Button } from '@/components/ui/button';
+
 import { ArrowLeft } from 'lucide-react';
 import type { TradeInInfo } from '@/lib/trade-valuation';
 import { Skeleton } from '@/components/ui/skeleton';
