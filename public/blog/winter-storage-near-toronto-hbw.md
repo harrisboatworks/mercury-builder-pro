@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,7 @@ content_type: blog_article
 
 > **Quick answer:** GTA boaters store at HBW for the same reason they service here: capacity, straight pricing, and a proper Mercury winterization before the boat sits. HBW storage is outdoor shrinkwrap storage, not on-site indoor storage. Book by September or you may be waiting.
 
-Every September, GTA boaters face the same decision: where do I store the boat for winter? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
+Every September, GTA boaters face the same decision: [where do I store the boat for winter](/blog/boat-storage-kawartha-lakes)? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
 
 Most GTA boat owners haven't considered driving the boat to Rice Lake, Ontario for winter storage, because the assumption is "rural = cheaper but inconvenient." Half right. **The pricing is roughly equivalent. The convenience is similar. What's different is who works on the boat all winter.**
 
@@ -108,6 +108,12 @@ If you're choosing between **GTA outdoor + shrinkwrap ($800)** + drive your boat
 
 ---
 
+::pull-quote
+quote: Stored the boat at home one winter. Spent the next April finding the battery, the cover, and the registration. Now everything lives at HBW between November and May. **Pick it up in spring, it's ready to launch the same day.**
+attribution: Ken F.
+source: Whitby
+::
+
 ## The Real Differences That Justify Driving
 
 Three reasons GTA boat owners specifically choose HBW for winter storage:
@@ -135,6 +141,8 @@ For owners renting a summer slip at HBW: spring commissioning is essentially fre
 ## When NOT to Drive to HBW for Storage
 
 Honest cases where local GTA storage makes more sense:
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 - **Boat is owned by a Lake Ontario marina dweller.** If your boat lives in a Toronto-area slip and you boat exclusively on Lake Ontario, the round-trip storage transport doesn't pencil out vs. local options.
 - **You're renting a slip in the GTA somewhere that includes winter storage.** Some marina contracts bundle slip + storage; you're already paying for it.
@@ -195,6 +203,10 @@ Current 2026 HBW pricing (CAD before HST):
 
 ---
 
+## Reviewed by
+
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+
 ## Frequently Asked Questions
 
 **How much does winter boat storage cost in the GTA?**
@@ -234,6 +246,8 @@ Your existing boat insurance typically covers winter storage; some policies requ
 - [Winter Storage Decision Guide (shrinkwrap vs indoor)](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario)
 - [Mercury Maintenance Intervals 20/100/300](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [GTA Repower walkthrough](/blog/mercury-repower-gta-toronto-destination), if storage time becomes repower time
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

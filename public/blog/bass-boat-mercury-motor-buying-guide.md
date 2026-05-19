@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -91,6 +91,8 @@ The right Mercury for a bass boat depends on whether you're fishing competitivel
 
 ---
 
+::walkaround-lead-capture
+
 ## HP recommendations for bass boats
 
 **Recreational bass fishing (17–19 ft):** 150–175 HP FourStroke or Pro XS. Plenty of power for Ontario lakes without tournament-level cost.
@@ -127,7 +129,11 @@ What is standard at the tournament level is a bow-mount trolling motor for posit
 
 If you're considering a kicker for a backup or occasional slow-trolling use, not all bass boat hulls are configured for transom-mount kickers. Bring the boat in and we'll assess whether it works for your specific setup.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ---
+
+![Tournament-rigged bass boat with Mercury Pro XS and 9.9 ProKicker on a calm Ontario dawn](/lovable-uploads/inline/inline-bass-tournament.png)
 
 ## Warranty
 
@@ -175,6 +181,10 @@ Two related guides in the same cluster:
 
 ---
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## FAQ
 
 **Is Pro XS really faster than FourStroke?**
@@ -197,6 +207,8 @@ Standard 3-year limited warranty covering defects in materials and workmanship. 
 
 **Can I use a kicker motor on a bass boat?**
 Most bass boats don't use a kicker for typical bass fishing. A bow-mount trolling motor is standard for positioning. A transom-mounted kicker is possible on some hulls; bring the boat in and we'll assess whether it makes sense for your specific setup.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

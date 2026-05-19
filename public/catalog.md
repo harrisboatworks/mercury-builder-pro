@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -54,27 +54,28 @@ Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario 
 ## Motors
 
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
-- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
+- [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
 - [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
-- [9.9EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9eh-fourstroke.md)
+- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
 - [15 MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke.md)
 - [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
-- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
 - [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke.md)
+- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
 - [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
 - [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
 - [40 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-command-thrust-fourstroke.md)
 - [40 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-fourstroke.md)
 - [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke.md)
+- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
 - [90 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke.md)
-- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
 - [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
 - [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
-- [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
+- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
 - [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs.md)
-- [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs.md)
+- [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
 - [200 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-exlpt-proxs.md)
+- [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs.md)
 
 ## Case studies
 
@@ -108,7 +109,7 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Mercury vs Yamaha Outboards in Ontario (2026)](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario.md)
 - [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md)
 - [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario.md)
-- [Mercury Outboard Financing in Ontario (2026 Guide)](https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md)
+- [Boat Repower Financing in Ontario (2026 Guide)](https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md)
 - [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md)
 - [Evinrude to Mercury Repower in Ontario (2026 Guide)](https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md)
 - [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md)

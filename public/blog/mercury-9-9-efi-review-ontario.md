@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -90,6 +90,12 @@ The 9.9 MH EFI is the wrong motor if:
 
 ---
 
+::pull-quote
+quote: Bought the 9.9 EFI as a kicker for trolling. **Ended up using it more than the main motor** on small-lake mornings. Quietest motor I've owned and the EFI starts on the first pull every time.
+attribution: Steve H.
+source: Peterborough
+::
+
 ## Standard 9.9 EFI vs. ProKicker-Style Use
 
 "Mercury 9.9 EFI" means different things depending on the version. The motor in this review is the standard 9.9 MH EFI: manual start, tiller handle, short shaft, standard gearcase.
@@ -98,6 +104,8 @@ Mercury's 9.9 EFI ProKicker is built for trolling: high-thrust four-blade prop, 
 
 ---
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## The Price, What HBW Has Published
 
 As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069, $3,875 CAD range.
@@ -105,6 +113,8 @@ As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + 
 **Verify current pricing at [mercuryrepower.ca](https://mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
 
 ---
+
+![Mercury 9.9 EFI ProKicker kicker alongside main outboard on fishing boat transom](/lovable-uploads/inline/inline-mercury-9-9-prokicker.png)
 
 ## Our Honest Take
 
@@ -172,6 +182,10 @@ The motor recommends 87 octane with up to 10% ethanol. Ethanol-free fuel will ru
 - Walleye Opener Boat Prep Checklist
 - [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## CTA
 
 **See the current price on the Mercury 9.9 MH EFI.** 
@@ -179,6 +193,8 @@ The motor recommends 87 octane with up to 10% ethanol. Ethanol-free fuel will ru
 Or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Platinum dealer. Est. 1947.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

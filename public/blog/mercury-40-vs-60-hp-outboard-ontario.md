@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -102,6 +102,8 @@ The 60 weighs 23 lbs more. On a light 15 ft aluminum with a transom already sitt
 
 ---
 
+::walkaround-lead-capture
+
 ## Performance on Common Ontario Boats
 
 These are real-world figures from boats rigged by Harris Boat Works. Conditions, load, and hull cleanliness all affect the numbers. Treat them as ballparks.
@@ -123,11 +125,15 @@ These are real-world figures from boats rigged by Harris Boat Works. Conditions,
 - **40 HP:** Only on a 16 ft pontoon, lightly loaded, and ideally with the Command Thrust gearcase. Even then, expect a slow planing time.
 - **60 HP:** Fine on 18 ft. The 60 Command Thrust is the popular call, pontoons reward the bigger gear ratio more than fishing boats do.
 
+![Mercury 40 HP and 60 HP FourStroke side-by-side on identical 16-foot aluminum boat transoms](/lovable-uploads/inline/inline-40-vs-60-comparison.png)
+
 ### 20 ft pontoon
 
 The 60 CT is the minimum we recommend on a 20 ft pontoon with four people aboard. Below that, the boat won't plane reliably when loaded. We see the consequences of undersizing pontoons every season, lugging motors, slow times getting on plane, premature wear.
 
 ---
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## The Command Thrust Question
 
@@ -143,7 +149,7 @@ If the boat is a 16 ft aluminum fishing boat that lives at WOT chasing walleye, 
 
 It exists. The 50 ELPT FourStroke runs the same 4-cylinder powerhead as the 60 with a different ECU map. It makes sense in two narrow situations: your capacity plate maxes out at 50 HP (not 60), or you want the 4-cylinder smoothness and amperage of the 60 but your hull is marginal for it.
 
-For most repowers, customers pick the 40 or the 60. The 50 is a niche pick, but we stock and quote it.
+For most repowers, customers pick the 40 or the 60. The 50 is a niche pick, but we stock and quote it. Shopping smaller? Our [Mercury 9.9 vs 15 HP tiller comparison](/blog/mercury-9-9-vs-15-hp-tiller-ontario) covers the small-motor decision points for jon boats, kickers, and sailboat auxiliaries.
 
 ---
 
@@ -206,6 +212,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Ontario Mercury Outboard Price Guide | Should I repower or buy a new boat?*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

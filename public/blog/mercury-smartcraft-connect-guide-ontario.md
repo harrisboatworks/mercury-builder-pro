@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -92,6 +92,29 @@ The module is purchased separately from the motor. Pricing is set by Mercury Can
 
 ---
 
+::decision-card
+eyebrow: SmartCraft tier decision
+heading: How seriously do you actually use the boat?
+subhead: SmartCraft Connect is not free. The phone app and module add real cost. The payback depends on how much time you spend on the water and whether you share the boat.
+leftLabel: Basic SmartCraft Link is enough
+leftCriteria:
+  - You boat a handful of times per season
+  - You already have working analog gauges
+  - You don't track maintenance digitally
+  - Single user, simple use case
+leftOutcome: Stock gauges, no upgrade
+leftVariant: alternative
+rightLabel: SmartCraft Connect pays back season one
+rightCriteria:
+  - 30+ hours per season on the water
+  - You share the boat with family or partners
+  - You want service intervals tracked automatically
+  - You'd benefit from fuel-burn and route history
+rightOutcome: SmartCraft Connect + Mercury app
+rightVariant: recommended
+whenInDoubt: If you've ever forgotten when the last lower-unit service was, Connect tracks it for you. That alone is usually worth the upgrade.
+::
+
 ## How It Compares to VesselView Mobile and SmartCraft Gauges
 
 **SmartCraft Connect Mobile** is the current Mercury phone-app product. The phone is the display. This is what new installs in 2026 should use.
@@ -116,9 +139,13 @@ For most Ontario freshwater boaters with a Mercury 60, 115 HP and a basic fishfi
 
 ---
 
+![Mercury SmartCraft Connect display and VesselView Mobile app at helm](/lovable-uploads/inline/inline-smartcraft-connect-dashboard.png)
+
 ## Install: DIY vs. HBW
 
 The module installs in roughly 30 minutes on a single-engine boat. It plugs into the SmartCraft network harness on the motor and gets a 12V power tap. Mercury markets it as customer-installable.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **DIY works if:** You have done basic electrical work on your boat, you are comfortable removing the cowl, and you know which connector on the motor's harness is the SmartCraft service port.
 
@@ -196,12 +223,18 @@ The app shows eligibility once SmartCraft Connect is paired. HBW can also check 
 - Mercury 9.9 EFI Review Ontario
 - Mercury Outboard Motor Families Guide
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## CTA
 
 **Add SmartCraft Connect to your repower quote.** 
 [mercuryrepower.ca](https://mercuryrepower.ca), or call 905-342-2153 with your motor's serial number. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Platinum dealer. Est. 1947.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

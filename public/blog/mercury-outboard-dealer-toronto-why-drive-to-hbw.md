@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -101,6 +101,12 @@ It's not "stop and shop", it's a destination day. Many of our GTA customers turn
 
 ---
 
+::pull-quote
+quote: Drove past four Mercury dealers between Mississauga and Gores Landing. **Worth every kilometre** — first dealer in three years who answered my email with a real number instead of "come in and we'll talk."
+attribution: Sandeep P.
+source: Mississauga
+::
+
 ## The Cost Side. Why Pricing Is Different at HBW
 
 **Mercury MAP pricing.** Mercury sets a Minimum Advertised Price for new motors. Most dealers list at MAP. So motor-only pricing is similar across the province.
@@ -114,6 +120,8 @@ It's not "stop and shop", it's a destination day. Many of our GTA customers turn
 3. **Trade-in valuation**, we have actual Ontario service-data on used Mercury values. Some urban dealers low-ball trade-ins to make the new-motor sale look better. The transparent thing is to value the trade fairly and let you see the math.
 
 4. **MPP extended warranty pricing**. Mercury Product Protection runs about the same dealer-to-dealer at MAP, but **how it's offered** varies. We discuss it before quote-finalization. Some dealers add it at the very end as upsell.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 For a typical GTA repower (e.g., 150 HP FourStroke + rigging on a 19-foot runabout), the all-in quote difference between a transparent dealer and an opaque one is often **$1,500-$3,000.** That covers a lot of drive time.
 
@@ -207,6 +215,8 @@ Yes. Mercury's warranty network extends across Canada. Bring your purchase paper
 **Configurator (transparent pricing):** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

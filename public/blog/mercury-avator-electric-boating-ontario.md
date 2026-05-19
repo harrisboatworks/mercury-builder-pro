@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -67,6 +67,29 @@ The Avator 35e, 75e, and 110e fit squarely into restricted-use scenarios where a
 
 One important note on regulations: HP restrictions and electric-only restrictions are not the same thing, and they vary by specific water body. Some "electric only" lakes technically permit electric motors up to 7.5 kW aggregate power under the federal Vessel Operation Restriction Regulations, which covers the larger Avator models. Confirm your specific lake rules before you buy anything.
 
+::decision-card
+eyebrow: Electric vs gas decision
+heading: Is the Avator the right call for how you actually boat?
+subhead: Electric outboards have a real place in Ontario, but the range and recharge math is honest. Match the motor to the use case, not the headline.
+leftLabel: Avator electric makes sense
+leftCriteria:
+  - Small calm lake, mostly under 3 hours per outing
+  - Electric-only or strict HP-restricted water
+  - Quiet morning fishing or noise-sensitive cottage neighbours
+  - Second boat alongside a gas-powered main rig
+leftOutcome: Avator 7.5e or 20e fits the job
+leftVariant: recommended
+rightLabel: Stick with gas FourStroke
+rightCriteria:
+  - Bigger water, longer days, or open lake crossings
+  - You want range and quick refuel, not a recharge wait
+  - Towing tubes or pulling a skier
+  - One boat doing every job
+rightOutcome: Mercury 9.9 to 25 FourStroke
+rightVariant: alternative
+whenInDoubt: The Avator is not a one-for-one swap for a gas kicker. It's a different tool. If you're not sure your typical outing fits inside the runtime envelope, the FourStroke is still the safer call.
+::
+
 ### Small boats making short runs from a cottage dock
 A 14-foot aluminum boat or a small fibreglass tender making short trips, across the bay, to a nearby island, up a quiet river, is a good Avator candidate. The range is enough, the charging setup at most cottages (standard 110V outlet) is workable overnight, and you get genuine benefits: no fumes, minimal noise, very low maintenance.
 
@@ -75,8 +98,12 @@ The Avator 7.5e on a light car-topper can run about 5 miles at full throttle on 
 ### Noise-sensitive situations
 Early morning fishing, evening cruises, areas where exhaust smell is genuinely objectionable. Avator near-silent operation is a real advantage.
 
+![Mercury Avator electric outboard mounted on aluminum boat at cottage dock](/lovable-uploads/inline/inline-avator-electric-dock.png)
+
 ### A second, dedicated quiet boat alongside a gas-powered main boat
 This is how a lot of cottage families would realistically use Avator in Ontario. Your main boat is a gas-powered fishing rig that handles the full-day, long-range work. The Avator-powered small boat is what you take out in the morning for fishing close to the dock.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Where Avator does not make sense right now
 
@@ -131,6 +158,7 @@ But we are also a shop that has been on Rice Lake since 1947, and we have watche
 
 If a short-range quiet runabout is genuinely what your cottage situation calls for, Avator is worth serious consideration. If you are looking for a full-day fishing motor that handles Rice Lake top-to-bottom in a 17-foot aluminum boat, a gas FourStroke is still the right answer today.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Last reviewed: 2026-05-11.*
 
 ## FAQs

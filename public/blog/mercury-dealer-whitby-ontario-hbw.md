@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -82,6 +82,8 @@ Outdoor with shrinkwrap. No indoor. At 45 minutes, the year-round storage relati
 
 ## Getting to Harris Boat Works from Whitby
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Route:** Highway 401 east to Highway 115 north, then County Road 28 north to Gores Landing. Mostly highway, the transition from 401 to 115 is clean, and the last stretch on County Road 28 is rural driving through cottage country.
 
 **Approximate drive time:** Around 45 minutes outside rush hour. From north Whitby toward Brooklin, you may get there even a bit faster. From Whitby south near the 401, it's a very manageable drive.
@@ -145,6 +147,8 @@ Why Whitby boaters are a strong repower market:
 - **Mature fleet.** Whitby's long-established marina community means many older Mercury (and other-brand) motors due for repower. We see steady annual volume from the area.
 - **Proximity makes it practical.** 45 minutes is reasonable for a multi-thousand-dollar repower investment — closer than most central Toronto dealers once you factor in 401 traffic.
 - **Mercury Platinum-level depth.** A clean install at HBW vs a rushed install elsewhere is the difference between 10 trouble-free years and a recurring warranty problem.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

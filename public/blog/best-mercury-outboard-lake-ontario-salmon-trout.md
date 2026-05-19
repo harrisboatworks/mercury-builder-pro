@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -87,6 +87,33 @@ The same boat handles salmon trolling offshore, walleye fishing on Bay of Quinte
 
 ---
 
+::decision-card
+eyebrow: Lake Ontario HP decision
+heading: How far offshore do you actually run for salmon?
+subhead: Lake Ontario is two different fisheries. Be honest about the one you fish most.
+leftLabel: Near-shore and calm bays
+leftCriteria:
+  - Most days you stay within sight of the marina
+  - You troll in protected water and only leave on calm forecasts
+  - Fuel economy matters more than top end
+  - Boat is 17 to 19 ft with a single main
+leftOutcome: Mercury 115 to 150 FourStroke, no kicker required
+leftVariant: alternative
+rightLabel: 20+ miles for offshore salmon
+rightCriteria:
+  - You run east-west to find temperature breaks
+  - You fish 3 to 6 ft chop regularly, not just on calm days
+  - A 9.9 ProKicker for slow trolling is non-negotiable
+  - Boat is 21 ft or bigger with offshore-rated hull
+rightOutcome: Pro XS or FourStroke V8 (200 to 300 HP) plus 9.9 ProKicker
+rightVariant: recommended
+whenInDoubt: If you have ever been caught out when Lake Ontario turned, size up the main and add the kicker. The lake does not negotiate.
+::
+
+---
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## Mercury Pro XS V8 vs FourStroke V8, Which One for Lake Ontario?
 
 Both are capable on Lake Ontario. Here's the honest comparison:
@@ -152,6 +179,7 @@ Configure your motor, V8 FourStroke, Pro XS, or ProKicker, at **[mercuryrepower.
 
 Questions before you configure? Call **905-342-2153**.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | Mercury Marine Platinum Dealer | Since 1947 | Gores Landing, ON
 
 ## FAQs

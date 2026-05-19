@@ -1,14 +1,33 @@
 ---
-slug: mercury-avator-vs-torqeedo
-title: Mercury Avator vs Torqeedo: Honest Comparison for Ontario Boaters (2026)
-seoTitle: Mercury Avator vs Torqeedo | Ontario Electric Outboard Comparison
-description: An Ontario Mercury Platinum dealer's honest comparison of Mercury Avator vs Torqeedo electric outboards. Dealer network, service support, models, and which one to choose for cottage use.
-publishDate: 2026-05-17
-hero_placeholder: /lovable-uploads/hero-avator-vs-torqeedo.png
-language: en
+canonical: https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo.md
+last_updated: 2026-05-19
+currency: CAD
+pickup_only: true
+delivery_offered: false
+location: Gores Landing, ON, Canada
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
+title: "Mercury Avator vs Torqeedo: Honest Comparison for Ontario Boaters (2026)"
+description: "An Ontario Mercury Platinum dealer's honest comparison of Mercury Avator vs Torqeedo electric outboards. Dealer network, service support, models, and which one to..."
+category: "Electric Boating"
+date_published: 2026-05-17
+date_modified: 2026-05-17
+keywords: ["mercury avator vs torqeedo","electric outboard comparison ontario","avator torqeedo","electric outboard dealer ontario"]
+author: Harris Boat Works
+content_type: blog_article
 ---
 
 # Mercury Avator vs Torqeedo: Honest Comparison for Ontario Boaters (2026)
+
+> An Ontario Mercury Platinum dealer's honest comparison of Mercury Avator vs Torqeedo electric outboards. Dealer network, service support, models, and which one to...
+
+**Category:** Electric Boating  
+**Published:** 2026-05-17  
+**Last updated:** 2026-05-17  
+**Read time:** 7 min read  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo
+
+## Article
 
 ## Quick Answer
 
@@ -152,3 +171,23 @@ Either brand qualifies for most HP-restricted lakes. Federal regulations allow e
 Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-05-17.*
+
+## FAQs
+
+_(no FAQs)_
+
+## Next steps
+
+- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
+- Repower information: https://www.mercuryrepower.ca/repower
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+

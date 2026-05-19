@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -81,6 +81,29 @@ Approach downwind and the wind is adding speed while you're trying to bleed it o
 
 ---
 
+::diagnostic-flow
+eyebrow: Wind-docking sequence
+heading: Coming in on a windy Rice Lake afternoon? Run the list before you commit
+subhead: Rice Lake's prevailing west wind builds steady chop by mid-afternoon. The wrong approach turns a routine dock into a fender-grinding mess. Work the five steps in order before final approach.
+step1Label: Assess wind direction relative to the slip
+step1Question: Is the wind pushing you onto the dock, off the dock, or square at the slip mouth?
+step1Tip: Cross-onto wind is the easiest, you can let the boat drift in. Cross-off wind is hardest and requires power-on holding. Decide before you commit to a line.
+step2Label: Set fenders and lines before final approach
+step2Question: Are bow, stern, and spring lines pre-rigged on the windward side?
+step2Tip: A crew member fumbling for a line in 20 km/h wind is how dings happen. Tie the lines on the cleats, coil them in the cockpit, and place fenders at the right height before you turn into the wind.
+step3Label: Approach into the wind whenever possible
+step3Question: Can you turn the boat so the bow points into the wind on final?
+step3Tip: Wind into the bow lets you control speed with throttle alone. Wind from behind takes away your brakes. If approaching with the wind is unavoidable, plan a slower, longer approach.
+step4Label: Use the wind to lay the boat down
+step4Question: Can you cut power early and let the wind drift you the last few feet onto fenders?
+step4Tip: On a cross-onto wind, kill power 8 to 10 feet out and let the wind do the work. Idle in is harder to control than a gentle drift.
+step5Label: Know when to abort
+step5Question: If the approach is going wrong, will you re-circle or push through?
+step5Tip: A clean re-circle costs 90 seconds. A bad dock costs a fender, a rub rail, or worse. The right call is almost always to back off, go around, and try again with a fresh setup.
+escalationLabel: Want better control on windy days?
+escalationBody: Power-assist steering and a bow thruster make a real difference on bigger boats. Talk to us about rigging upgrades at (905) 342-2153.
+::
+
 ## Slip-Style Docking in a Crosswind
 
 Come in at an angle, 20-30 degrees off the slip centerline, from the upwind side. This puts the wind at your back quarter rather than broadside.
@@ -116,6 +139,8 @@ A [Mercury Command Thrust gearcase](https://www.mercuryrepower.ca/blog/mercury-c
 ## The 3 Things to Do Before You Dock
 
 Do these before you're close enough to the dock that timing matters.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **1. Fenders out, both sides.** You don't always know which side you'll land on. Both sides, every time, stop second-guessing it at 20 feet out.
 
@@ -199,6 +224,8 @@ No pressure. But if you want to stop having that heart-rate moment every time yo
 
 ---
 
+> Related guide: [Boat trim explained for Rice Lake boaters](/blog/boat-trim-explained-rice-lake-ontario).
+
 ## Related at HBW
 
 The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
@@ -208,6 +235,8 @@ Two related guides in the same cluster:
 - [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake)
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

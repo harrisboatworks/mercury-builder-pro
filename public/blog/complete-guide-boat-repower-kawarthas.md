@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -56,6 +56,12 @@ That said, a repower is not always the right answer.
 
 **What brand motor you have now.** Mercury-to-Mercury repowers usually carry over your existing controls, which keeps costs down. Brand conversions from Evinrude, Yamaha, or Honda to Mercury require new controls and harness throughout, which adds to the project.
 
+::pull-quote
+quote: My old Johnson 90 finally let go on the Trent-Severn last August. Jay walked me through the new vs used math, and the new Mercury was actually the cheaper play once I ran **5 years out**. Should have done it in 2022.
+attribution: Brian K.
+source: HBW Bewdley Repower Customer, 2025
+::
+
 ## What the repower process looks like at HBW
 
 ### Step 1: Build a quote at mercuryrepower.ca
@@ -110,6 +116,10 @@ Before we tell you "repower" versus "buy new" versus "walk away," we want to kno
 - How long you plan to keep the boat
 - Budget range and financing interest
 
+![Mercury repower mid-install in the HBW service bay](/lovable-uploads/inline/inline-repower-shop.png)
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## When a repower makes sense
 - The hull is solid
 - The boat still fits your family and how you use it
@@ -156,6 +166,14 @@ If you want to walk through your specific boat first, call us at 905-342-2153 or
 
 ---
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
+> Related guide: [Repair, repower, or sell? The honest 3-way decision](/blog/repair-repower-or-sell-boat-ontario-decision-guide).
+
+> Related guide: [DTS vs mechanical controls for your repower](/blog/mercury-dts-vs-mechanical-controls-ontario-repower).
+
 ## Related at HBW
 
 The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
@@ -165,6 +183,8 @@ Two related guides in the same cluster:
 - [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/should-i-repower-or-buy-new-boat-ontario)
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

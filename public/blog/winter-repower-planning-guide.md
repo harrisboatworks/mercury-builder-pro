@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-repower-planning-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -71,7 +71,37 @@ Winter is the perfect time to plan and execute a repower. Your boat sits anyway 
 - Adjustments and setup
 - Delivery before spring
 
+::cost-stack
+eyebrow: Off-season repower budget
+heading: What a winter repower actually costs
+subhead: Winter pricing typically runs 5 to 10 percent better than spring. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
+item1Label: Motor (90 to 150 HP FourStroke)
+item1Value: $13,500 to $22,000
+item1Note: Range covers Mercury 90 ELPT through 150 ELPT. Pro XS adds roughly $1,500 to $2,500 over the FourStroke.
+item2Label: Install and rigging
+item2Value: $1,200 to $2,400
+item2Note: Mounting, hardware, alignment, water test. Higher end if the transom needs reinforcement.
+item3Label: Control conversion (if needed)
+item3Value: $800 to $2,000
+item3Note: Cable to digital, or tiller to side mount. Often required when stepping up from a 2-stroke.
+item4Label: New propeller
+item4Value: $350 to $1,200
+item4Note: Sized after sea trial. Standard allowance applies on most installs.
+item5Label: First-year service
+item5Value: $200 to $350
+item5Note: 20-hour break-in service. Included on many repower packages at HBW.
+item6Label: Mercury Product Protection (optional)
+item6Value: $700 to $1,800
+item6Note: 8-year total coverage. Best value if you finance or plan to keep the boat past year 5.
+item6Accent: true
+totalLabel: Typical out-the-door range
+totalValue: $16,000 to $28,000
+caveat: All pricing CAD, pickup only at Gores Landing. Build your specific quote at mercuryrepower.ca.
+::
+
 ### Assessment Checklist
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Evaluate Your Current Motor**:
 - Compression test results
@@ -118,6 +148,8 @@ If yes to most, repower makes sense.
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 - [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

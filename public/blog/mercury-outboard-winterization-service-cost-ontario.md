@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-winterization-service-cost-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,11 +29,39 @@ content_type: blog_article
 
 ## Article
 
+::cost-stack
+eyebrow: What you actually pay for
+heading: Mercury winterization cost breakdown (typical 90 to 150 HP)
+subhead: Tiered by engine. Typical 4-stroke outboard 90 to 150 HP at HBW. Smaller and larger motors scale accordingly.
+item1Label: Engine flush + fuel stabilizer
+item1Value: $40 - $70
+item1Note: Mercury Quickstor added, engine run 10 min to circulate through the full fuel system.
+item2Label: Cylinder fogging (Mercury Storage Seal)
+item2Value: $50 - $90
+item2Note: Fogged until the engine smokes and stalls. The critical step. Partial fogging means partial protection.
+item2Accent: true
+item3Label: Spark plugs (new, installed)
+item3Value: $60 - $140
+item3Note: 4 plugs typical on inline 4-cyl, more on V6/V8. OEM Mercury plugs only.
+item4Label: Crankcase oil + filter change
+item4Value: $80 - $150
+item4Note: Full evacuation while warm. Old oil out, fresh Mercury oil in.
+item5Label: Lower-unit gear oil change + inspection
+item5Value: $50 - $90
+item5Note: Milky oil means a seal failure caught in fall, not in spring at the launch.
+item6Label: Cooling system drain + battery prep
+item6Value: $50 - $90
+item6Note: All water out of block. Battery pulled to heated storage on a smart charger.
+totalLabel: Typical 90 to 150 HP all-in
+totalValue: $330 - $630 CAD
+caveat: Before HST. 9.9 HP tiller is lower (~90 min job). 250 HP V8 Verado is higher (~3 hr job). Sterndrive is its own tier. Request a real quote at hbw.wiki/service.
+::
+
 ## Quick answer
 
 - **Winterization:** tiered by engine type. We quote per boat, not flat-rate. Live rates on our [winter storage page](https://www.harrisboatworks.ca/winter-storage).
 - **Shrinkwrap only:** $20/ft if done in our shop, $25/ft if done outdoors at the lot.
-- **Outdoor winter storage:** includes shrinkwrap, a spring check ($99 value), summer trailer parking ($150 value), and wrap recycling ($35 value). $284 of stuff most marinas charge extra for is bundled in.
+- **[Outdoor winter storage](/blog/boat-storage-kawartha-lakes):** includes shrinkwrap, a spring check ($99 value), summer trailer parking ($150 value), and wrap recycling ($35 value). $284 of stuff most marinas charge extra for is bundled in.
 - **Indoor storage:** not offered. HBW is outdoor + shrinkwrap. If you need heated indoor, we'll point you somewhere else honestly.
 - **Size limit:** boats up to 30 feet.
 
@@ -126,6 +154,12 @@ If you want a phone call first: **(905) 342-2153**. Or text **(647) 952-2153**.
 
 ---
 
+## Reviewed by
+
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## Related at HBW
 
 The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
@@ -135,6 +169,8 @@ Two related guides in the same cluster:
 - [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist)
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

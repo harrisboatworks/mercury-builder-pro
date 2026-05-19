@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -110,6 +110,8 @@ Engine tilted away from the boat. Bow rises. Less hull in the water, more speed 
 
 **Top-speed runs.** Trimming out reduces hull drag and lets the boat run on a smaller wetted surface. Just don't overdo it (more on that below).
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Light loads.** Fewer passengers, empty cooler, nobody on the ski platform, lighter load means the bow wants to ride higher naturally. Some outward trim brings the hull into balance.
 
 **Towing a tube.** When you've got kids on a tube and you're running in a circle, trim out slightly helps the boat stay responsive and nimble. Not the same as running wide-open, read your conditions and your load.
@@ -193,6 +195,8 @@ Trim is one of those skills that feels obvious once it clicks. Ten minutes on th
 ---
 
 Questions about Active Trim or whether your boat is rigged for it? Build a quote on [mercuryrepower.ca](https://www.mercuryrepower.ca) or request service at [hbw.wiki/service](https://hbw.wiki/service).
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

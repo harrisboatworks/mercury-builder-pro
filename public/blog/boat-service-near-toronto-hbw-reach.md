@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -104,6 +104,12 @@ If your motor is a brand we don't service, we'll refer you. That's the right ans
 
 ---
 
+::pull-quote
+quote: I dropped the boat at HBW on the way to the cottage and picked it up on the way home. Quote was honest, work was done on time, and **the bill matched the estimate**. That's not normal in this business.
+attribution: Marco S.
+source: Ajax
+::
+
 ## What HBW Does That Most GTA Service Doesn't
 
 Three concrete differences:
@@ -117,6 +123,8 @@ For a complex problem (intermittent stalls, occasional fault codes, weird perfor
 ### 2. Factory-trained techs (not just trained, factory-trained)
 
 Mercury runs ongoing certification programs for dealer techs. To stay Platinum, we have to keep techs current on the latest Mercury release (Avator, V12 Verado, current SmartCraft software, etc.).
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 A tech at a non-authorized shop may have learned Mercurys 10 years ago and never been formally retrained. They can do basic work; on modern V8 V10 with electronics, they're guessing.
 
@@ -224,6 +232,8 @@ Yes, that's a common combo. October drop-off, complete annual service + winteriz
 - [Why drive from Toronto to HBW?](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
 - [GTA Repower walkthrough](/blog/mercury-repower-gta-toronto-destination)
 - [Winter Storage near Toronto](/blog/winter-storage-near-toronto-hbw)
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-vs-standard-gearcase.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -32,6 +32,29 @@ content_type: blog_article
 > **Quick answer:** Command Thrust is a Mercury gearcase option — bigger lower unit, lower gear ratio, and a larger prop that moves more water at lower RPM. It meaningfully improves hole-shot, low-speed handling, and on-plane stability on heavy boats: pontoons, full-load fishing rigs, and any application where you need authority at low speed. Standard gearcase is lighter, faster at top end, and the right call for light hulls running for top speed. The right answer depends on the boat, the load, and how you use it.
 
 ---
+
+::decision-card
+eyebrow: Gearcase decision
+heading: Command Thrust or standard gearcase?
+subhead: Same horsepower, different gearcase. Boat weight and how you load it decide.
+leftLabel: Go Command Thrust
+leftCriteria:
+  - Pontoon of any size, or heavy aluminum deck boat
+  - Heavy fishing rig with three anglers, livewell, batteries
+  - Houseboat, cruiser, or displacement hull
+  - You need hole shot and authority more than top end
+leftOutcome: Command Thrust, plus a CT-spec 4-blade prop
+leftVariant: recommended
+rightLabel: Stay on standard gearcase
+rightCriteria:
+  - Light bass boat tuned for outright top speed
+  - Skiff, tinnie, or any hull under 16 ft
+  - Solo runs, no heavy passenger load
+  - The last 2 to 3 mph of top end actually matters to you
+rightOutcome: Standard gearcase, higher gear ratio, properly matched prop
+rightVariant: alternative
+whenInDoubt: On a pontoon, go CT. On a light bass boat, go standard. Most of the wrong choices we see are pontoons rigged standard and bass boats rigged CT.
+::
 
 ## What Command Thrust actually changes
 
@@ -99,6 +122,10 @@ Approximate, of course. Actual numbers depend on the specific hull, the specific
 
 ---
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+![Standard Mercury gearcase next to Command Thrust gearcase with the larger prop visible](/lovable-uploads/inline/inline-gearcase-comparison.png)
+
 ## Prop selection on Command Thrust
 
 CT is a torque story, and the prop is how that torque reaches the water. Get this wrong and you've spent the CT premium for no benefit.
@@ -152,6 +179,10 @@ For pontoon owners specifically, see also [best pontoon boats for Rice Lake cott
 
 ---
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## Get a real quote
 
 For a real CAD quote with CT vs standard configurations side-by-side on your specific boat, use the quote builder at [mercuryrepower.ca](https://mercuryrepower.ca). For service bookings, gearcase-swap assessments, and shop appointments, [hbw.wiki/service](https://hbw.wiki/service).
@@ -159,6 +190,8 @@ For a real CAD quote with CT vs standard configurations side-by-side on your spe
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 Mercury Marine Platinum Dealer. Established 1947.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

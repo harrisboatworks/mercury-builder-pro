@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -58,6 +58,28 @@ Conventional wisdom says year-end is deal time. Is that true for boat motors? He
 - Best deals are on what's in stock
 - Not necessarily lowest prices
 
+::cost-stack
+eyebrow: Off-season buying math
+heading: What you actually save buying December through February
+subhead: Off-season pricing is not a single discount. It is a stack of small advantages that add up. Numbers below are 2026 CAD ranges based on a mid-size Mercury repower at HBW.
+item1Label: Motor pricing vs spring baseline
+item1Value: Save $400 to $1,200
+item1Note: Manufacturer winter promotions and dealer inventory clearance typically beat spring pricing by 3 to 6 percent.
+item2Label: Install scheduling
+item2Value: Save $200 to $500
+item2Note: Winter shop time is cheaper than spring crunch. Same work, less wait, sometimes a small labour break.
+item3Label: Mercury Product Protection enrollment
+item3Value: Save $200 to $600
+item3Note: MPP is often promoted with bonus coverage years during winter. Same warranty, lower effective cost.
+item3Accent: true
+item4Label: Trade-in valuation timing
+item4Value: Roughly flat to slightly down
+item4Note: Trade-in values soften slightly in off-season. Plan for this if you're rolling a trade into the deal.
+totalLabel: Typical total off-season advantage
+totalValue: $800 to $2,300
+caveat: All CAD, pickup only. Numbers are typical ranges, not guarantees. Build your specific quote at mercuryrepower.ca.
+::
+
 ### What Really Matters
 
 **Focus On**:
@@ -65,6 +87,8 @@ Conventional wisdom says year-end is deal time. Is that true for boat motors? He
 - Fair market pricing
 - Dealer reputation and support
 - Warranty and service access
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Less Important**:
 - Being the "best deal ever"
@@ -99,6 +123,8 @@ Before you negotiate, anchor your expectations to real numbers, our [2026 Mercur
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 - [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

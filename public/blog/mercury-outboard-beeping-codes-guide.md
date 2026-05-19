@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -123,6 +123,8 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 ---
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## What to Do When the Alarm Sounds
 
 **Step 1: Don't panic, but don't ignore it.** Reduce throttle and assess.
@@ -207,6 +209,7 @@ Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat W
 
 Phone: 905-342-2153
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

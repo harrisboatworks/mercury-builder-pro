@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -89,6 +89,29 @@ Protected Kawartha bays: lower HP works fine. Open Rice Lake in the afternoon wi
 
 ---
 
+::decision-card
+eyebrow: HP sizing approach
+heading: Are you matching a new hull or repowering one you know?
+subhead: The right HP target depends as much on how well you know the boat as on what the plate says.
+leftLabel: New boat, hull you don't know yet
+leftCriteria:
+  - Buying a hull you haven't owned before
+  - Resale matters in 3 to 5 years
+  - You'll typically run with mixed loads
+  - You want the boat to handle worst-case days
+leftOutcome: Size to capacity plate max
+leftVariant: recommended
+rightLabel: Repower of a hull you know well
+rightCriteria:
+  - You've owned this boat 5+ seasons
+  - You know your typical load and usage
+  - You want efficiency, not max top end
+  - Resale is not the primary concern
+rightOutcome: Target 70 to 85 percent of plate max
+rightVariant: alternative
+whenInDoubt: The under-powered complaint is the #1 thing we hear on resale day. If you're on the fence, step up, not down.
+::
+
 ## Sizing guidelines
 
 These ratios give you a working starting point. **Always confirm against your specific capacity plate.**
@@ -100,6 +123,8 @@ These ratios give you a working starting point. **Always confirm against your sp
 | Optimal (excellent performance, full loads) | 10–15 lbs per HP |
 
 *Total boat weight = hull weight + maximum passenger and gear load.*
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -193,6 +218,8 @@ Not necessarily. If you were happy with the old motor, matching HP is a reasonab
 ---
 
 *Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 | harrisboatworks.ca | 905-342-2153*  
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Mercury dealer since 1965, family marina on Rice Lake since 1947*
 
 ## FAQs

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -111,6 +111,8 @@ This is not a sales pitch; it is just what we have seen on Rice Lake for years. 
 
 **Legend Boats.** We are a Legend dealer. Legend is a Canadian company, factory Mercury-rigged, and designed for Canadian lakes and weather. The supply chain integration matters for parts and service.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Princecraft.** Also a Canadian brand. Mercury-rigged from the factory as a standard option. Common on Ontario cottage lakes.
 
 **Manitou.** US-built, premium pontoon brand. Well-regarded for build quality and finish.
@@ -137,7 +139,7 @@ For Rice Lake cottage use, brand matters less than configuration. The right leng
 
 **Boat lift at the cottage.** Best for the hull and motor, out of the water, protected from corrosion and dock damage.
 
-**In-water slip at a marina or cottage dock.** Convenient and lower up-front cost, but the hull sits in water continuously.
+**In-water [slip at a marina](/blog/best-marina-rice-lake-ontario) or cottage dock.** Convenient and lower up-front cost, but the hull sits in water continuously.
 
 **Shore storage on a trailer.** Most flexible, you can travel to other lakes. Highest exposure to weather if uncovered.
 
@@ -164,6 +166,8 @@ Two related guides in the same cluster:
 - [Best Boats for Rice Lake Under $30,000 (2026 Buyer](/blog/best-boats-rice-lake-under-30000)
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

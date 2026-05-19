@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -85,6 +85,14 @@ Five things move whether the switch makes sense for your specific situation:
 4. **Where you launch and travel.** Boaters who travel the Trent-Severn, Lake Ontario, or road trips to Muskoka want a service network that's still showing up. Mercury wins this.
 5. **Resale plan.** If you're selling the boat in the next few years, switching to Mercury before listing typically pays back in faster sale and stronger price.
 
+::pull-quote
+quote: Loved my old Johnson 90 but Evinrude's gone and the parts kept getting harder. Jay walked me through the Mercury 90 FourStroke swap and three weeks later it was on the transom. **First start of the season I forgot what a quiet motor sounds like.**
+attribution: Dave M.
+source: Bewdley
+::
+
+---
+
 ### What HBW Checks Before Recommending the Switch
 
 When Evinrude owners come in, we want to know:
@@ -98,6 +106,10 @@ When Evinrude owners come in, we want to know:
 - Budget and financing tolerance
 
 We won't push the switch on customers whose Evinrude has years of life left and a clear plan to use the boat short-term. We recommend the switch when the math actually favours it.
+
+![Old Evinrude removed beside new Mercury FourStroke ready for install](/lovable-uploads/inline/inline-evinrude-to-mercury-swap.png)
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ### Common Evinrude-to-Mercury Switch Mistakes
 
@@ -178,6 +190,7 @@ Ready to talk through the switch? Build a Mercury quote at **[mercuryrepower.ca]
 
 Prefer to talk first? Call **905-342-2153**. We do these conversions every month and we'll give you the honest math on whether to switch now, switch later, or run the Evinrude until it gives up.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

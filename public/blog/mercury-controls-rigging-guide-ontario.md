@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -102,6 +102,29 @@ Electric pump does most of the work. One-finger steering at any speed. Recommend
 
 ---
 
+::decision-card
+eyebrow: Controls upgrade decision
+heading: Is digital throttle worth the upgrade?
+subhead: DTS (Digital Throttle and Shift) is smoother, future-proof, and built for the new Mercury platform. It also adds $1,500 to $3,000 to the rigging bill. Match it to the boat.
+leftLabel: Stick with mechanical cable controls
+leftCriteria:
+  - Motor is 90 HP or smaller
+  - Existing rigging is in good shape
+  - You're not planning to upgrade the boat soon
+  - Budget matters more than the smoother feel
+leftOutcome: Cable controls, $0 to $400 to refresh
+leftVariant: alternative
+rightLabel: Go to DTS digital controls
+rightCriteria:
+  - Motor is 100+ HP, new build or full repower
+  - You want smooth idle shifting and joystick-ready wiring
+  - You plan to keep the boat 7+ years
+  - You'd add VesselView or autopilot later
+rightOutcome: DTS controls, $1,500 to $3,000 extra
+rightVariant: recommended
+whenInDoubt: If you'll see this boat in five years, the digital path is the cheaper long-term choice. If you'll flip it in two, cable is fine.
+::
+
 ## Gauges: Analog, SmartCraft Connect, or VesselView
 
 ### Analog Gauges
@@ -118,9 +141,13 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 ---
 
+![Mercury DTS digital throttle and shift control on boat console](/lovable-uploads/inline/inline-dts-throttle-control.png)
+
 ## Wiring and Battery Setup
 
 **Single battery + basic harness (40, 90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400, $700.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **Dual battery + ACR (115, 150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700, $1,200.
 
@@ -223,6 +250,12 @@ Yes. Old Mercury motors in workable condition are valued at trade-in. Non-Mercur
 - Mercury Repower Cost Ontario 2026
 - Mercury VesselView Guide
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
+> Related guide: [Mercury DTS vs mechanical controls for Ontario repowers](/blog/mercury-dts-vs-mechanical-controls-ontario-repower).
+
 ## CTA
 
 **See real CAD pricing on every rigging line item.** 
@@ -232,6 +265,8 @@ Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
 ---
 
 If you're spec'ing a pontoon or heavy-load setup, our [Command Thrust vs standard gearcase guide](/blog/mercury-command-thrust-vs-standard-gearcase) covers when CT makes sense.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

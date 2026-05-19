@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -45,7 +45,7 @@ Spring commissioning is not the same job every time. Five things affect how aggr
 
 **Quality of last fall's winterization.** A properly winterized motor needs verification. A skipped or rushed winterization is a different conversation.
 
-**Storage conditions.** Indoors under cover is gentlest on a motor. Outdoors uncovered all winter is harder on fuel systems, electrical, and rubber components.
+**[Storage conditions](/blog/boat-storage-kawartha-lakes).** Indoors under cover is gentlest on a motor. Outdoors uncovered all winter is harder on fuel systems, electrical, and rubber components.
 
 **Motor age.** Older motors, pre-2010 FourStrokes, 2-stroke carbureted engines, often need more attention on the fuel system and ignition.
 
@@ -103,6 +103,29 @@ If the battery is more than 4–5 years old, replace it regardless of how it tes
 
 ---
 
+::diagnostic-flow
+eyebrow: First start of the season
+heading: Spring commissioning in the order that matters
+subhead: Skip the order and you'll diagnose a problem you created. Run these in sequence the first day out of storage.
+step1Label: Fuel system check
+step1Question: Is the fuel from last fall still in the tank, and was it stabilized?
+step1Tip: Stale gas is the #1 spring no-start at our shop. If fuel sat untreated over winter, drain it and start fresh. Replace the fuel filter while you're in there.
+step2Label: Water pump and impeller
+step2Question: Has the impeller been replaced or inspected within the last two seasons?
+step2Tip: A rubber impeller hardens and cracks in storage. If you can't remember the last change, do it now. A $40 impeller saves a $2,500 powerhead.
+step3Label: Battery and electrical
+step3Question: Does the battery hold a load test, and are all connections clean?
+step3Tip: A battery that read 12.6V on the bench can still fail under starter load. Wire-brush the terminals and apply dielectric grease.
+step4Label: Flush and dry start on muffs
+step4Question: Will the motor start, idle, and reach operating temp on muffs?
+step4Tip: Watch for a steady tell-tale stream within 30 seconds of start. Weak or absent flow means stop immediately and re-check the impeller.
+step5Label: First water trial
+step5Question: Does the motor reach its rated WOT RPM with normal load?
+step5Tip: Below the rated band means prop, fouling, or a fuel issue. Above the band means under-propped. Either way, fix before a full day out.
+escalationLabel: Want us to handle it?
+escalationBody: Spring commissioning at HBW is typically $200 to $350 depending on motor size. Includes all five steps above plus a sea trial when possible. Book at /service or call (905) 342-2153.
+::
+
 ### Step 5, Lubrication
 
 - **Check engine oil level** (FourStroke). Should be at the full mark on the dipstick. If it looks milky, water got in, that's a shop visit before you run it.
@@ -131,6 +154,8 @@ If the battery is more than 4–5 years old, replace it regardless of how it tes
 ### Step 8, Test Run on Muffs
 
 This is the gate before the boat goes in the water:
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 - **Connect muffs** to the lower unit cooling water intakes. Make sure they're snug and water is flowing through them before you crank.
 - **Start the motor.** It should start within 3–5 cranks on a properly winterized motor. Slow or no-start indicates a fuel or ignition issue.
@@ -224,12 +249,15 @@ We sell ethanol-free marine gas on-site at Harris Boat Works in Gores Landing. I
 
 ---
 
+> Related guide: [Mercury spring run-up checklist for Ontario](/blog/mercury-outboard-spring-run-up-checklist-ontario).
+
 ## Ready to Book Spring Service?
 
 Schedule at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
 Book before April if May timing matters. Questions first? Call **905-342-2153**.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | Since 1947 | Mercury Marine Platinum Dealer | Gores Landing, ON
 
 ## FAQs

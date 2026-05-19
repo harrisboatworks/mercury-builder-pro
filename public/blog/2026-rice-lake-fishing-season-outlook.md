@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -84,6 +84,12 @@ Classic Rice Lake walleye approaches:
 
 Bewdley, Sugar Island area, and the central basin are the zones most regulars focus on.
 
+::pull-quote
+quote: Been fishing Rice Lake for 18 years. The walleye numbers came back stronger than I expected after the 2024 slot rule changes. **Spring 2026 has been the best opener I can remember.** Bass and crappie are right where they should be too.
+attribution: Marc D.
+source: Cobourg
+::
+
 ## Bass season on Rice Lake
 
 Largemouth and smallmouth bass season opens the third Saturday in June in FMZ 17. The combined daily limit is two fish; possession limit is six.
@@ -105,6 +111,8 @@ These are the bread-and-butter species for casual anglers, kids, and ice fishers
 - Northern pike: Open all year, two per day, six possession.
 
 These species also make Rice Lake accessible to people who are not chasing walleye or bass. A warm summer bay with decent weed structure is all you need.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## The Trent-Severn Waterway: free lockage this summer
 
@@ -173,6 +181,8 @@ Two related guides in the same cluster:
 - [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use)
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

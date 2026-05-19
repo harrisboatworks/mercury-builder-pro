@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -82,6 +82,8 @@ Older Mercury, Yamaha, and OMC two-strokes in this power class are being replace
 
 ---
 
+::walkaround-lead-capture
+
 ## Where the 90 HP Is the Wrong Call
 
 **Hull rated under 75 HP.** The capacity plate is the ceiling. A 16 ft aluminum boat rated for 75 HP max should get the 75, not the 90. We can order a 75 if the plate forces it.
@@ -93,6 +95,8 @@ Older Mercury, Yamaha, and OMC two-strokes in this power class are being replace
 **Mismatched shaft length.** A short shaft (15") on a 20" transom puts the prop too close to the surface. The motor won't cool properly, and you'll ventilate. Shaft length must match transom height. Measure before you order, or let us measure for you.
 
 ---
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Standard Gearcase vs. Command Thrust
 
@@ -106,6 +110,8 @@ Older Mercury, Yamaha, and OMC two-strokes in this power class are being replace
 Rule of thumb: aluminum fishing boats default to standard. Pontoons default to CT. Heavy or unusual hulls, tell us the load and use case before we recommend.
 
 ---
+
+![Mercury 90 HP FourStroke mounted on the transom of an aluminum fishing boat](/lovable-uploads/inline/inline-mercury-90.png)
 
 ## How the 90 Compares to the 75 and the 115
 
@@ -164,6 +170,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Mercury 75 HP FourStroke, why we don't stock it | Mercury 115 HP FourStroke review | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

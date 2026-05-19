@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -95,6 +95,33 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 - Spring delivery available
 - Ideal for repower projects
 
+::cost-stack
+heading: 2026 Mercury tier pricing — what you actually pay in CAD
+eyebrow: All-in ballparks
+subhead: Motor MSRP is one line on the invoice. Here is the full picture across Mercury's tiers, before any trade-in or current promo.
+item1Label: FourStroke 9.9 (kicker / small tiller)
+item1Value: $4,200 - $5,800
+item1Note: Motor only. Add ~$400 for ProKicker remote conversion.
+item2Label: FourStroke 60 to 115 (mid-range main)
+item2Value: $11,500 - $17,800
+item2Note: Most common Rice Lake / Kawarthas repower range. Includes Command Thrust where applicable.
+item2Accent: true
+item3Label: FourStroke / Pro XS 150 to 250 (V6)
+item3Value: $18,500 - $32,000
+item3Note: Bass boats, performance hulls, offshore Lake Ontario rigs
+item4Label: Install and rigging (any tier)
+item4Value: $1,500 - $4,500
+item4Note: Cables, controls, gauges, prop swap. Brand conversions add $1,500 to $3,000.
+item5Label: First-year service (100-hour)
+item5Value: $400 - $700
+item5Note: Oil, gear lube, plugs, water pump check. Required for warranty.
+totalLabel: Typical all-in range
+totalValue: $17,600 - $40,000+ CAD
+caveat: HST extra. Live pricing and current promos at mercuryrepower.ca.
+::
+
+---
+
 ### The Winter Buying Advantage
 
 **Why Winter Is Often Best**:
@@ -114,6 +141,8 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 - Cannot water test immediately
 - Some models may be sold out
 - Must wait for on-water enjoyment
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ### Dealer Promotional Programs
 
@@ -206,6 +235,8 @@ For complete installed-repower pricing in CAD, including the rigging, controls, 
 - [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario), financing basics for Ontario buyers
 - [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 - [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

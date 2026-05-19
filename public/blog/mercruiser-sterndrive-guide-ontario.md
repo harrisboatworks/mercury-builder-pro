@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -106,6 +106,8 @@ Same warning sign as an outboard, same severity. Gear lube should be amber. Milk
 Mercruiser sterndrives are **raw-water cooled**, same as outboards. Lake water in, through the engine, back out. The impeller lives in the drive (Alpha) or in an engine-mounted pump (Bravo + most newer Alphas). Cheaper to replace, harder to ignore, same overheat consequences as an outboard.
 
 **Replace every 2-3 years**, or when the engine starts running hotter than normal at cruise.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ### 5. Engine block freeze damage
 
@@ -226,11 +228,13 @@ What we handle:
 - Engine diagnostics and repairs (gas Mercruiser, all sizes)
 - Drive rebuilds (Alpha and Bravo)
 - Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
-- Storage (we shrinkwrap and store 311+ boats every winter, sterndrives included)
+- [Storage](/blog/boat-storage-kawartha-lakes) (we shrinkwrap and store 311+ boats every winter, sterndrives included)
 
 Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**.
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

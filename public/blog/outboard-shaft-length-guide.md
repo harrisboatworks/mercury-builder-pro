@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -87,6 +87,8 @@ You need a tape measure and five minutes:
 
 Between sizes? Round down, not up. A motor slightly longer than needed drags more than a motor slightly shorter, and slightly short usually means adjusting mounting height, which is easier than swapping a lower unit. Verify before committing.
 
+::walkaround-lead-capture
+
 ## Five things that change the answer
 
 1. **Hull design.** Deep-V hulls with steep transom angles sometimes need a 25-inch shaft even when the transom height measures 22 inches.
@@ -102,6 +104,8 @@ Between sizes? Round down, not up. A motor slightly longer than needed drags mor
 - Choppy ride at speed, the motor lifts in waves, the prop breaks the surface
 - Overheating, the cooling water intake can rise above the waterline
 - Cavitation plate is visibly above the water at cruising speed
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ### Shaft too long
 - Reduced top speed, the lower unit is dragging more water than it should
@@ -165,6 +169,8 @@ The single most common rigging mistake we see on used-boat purchases: wrong shaf
 Always measure the transom from the top edge to the cavitation plate centerline before ordering. 15" for most tinnies, 20" for bowriders and pontoons, 25" for offshore-style hulls. When in doubt, send us a photo and a tape measure reading -- we'll spec it before quoting the install.
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -87,6 +87,8 @@ The more we know before you arrive, the faster drop-off goes. A 10-minute phone 
 
 ---
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## At HBW — what drop-off looks like
 
 When you arrive in Gores Landing:
@@ -156,6 +158,8 @@ For marina slips, rentals, and general information: [harrisboatworks.ca](https:/
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 Mercury Marine Platinum Dealer. Established 1947.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

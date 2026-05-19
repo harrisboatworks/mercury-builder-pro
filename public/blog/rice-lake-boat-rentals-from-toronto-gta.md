@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -39,7 +39,7 @@ You're in Toronto, you don't own a boat, but you'd like to have one for a day. T
 
 **Rice Lake, Ontario (in the Kawarthas) is the answer most GTA boaters don't know about.** 90 minutes from downtown Toronto, gentle calm freshwater, fish, family-friendly, and on a Saturday morning you can be on the water before the people stuck in traffic on the way to Muskoka have made it past Barrie.
 
-Harris Boat Works has rented boats on Rice Lake since long before Airbnb made "shared access" a thing. We've been on this lake since 1947, and the rental fleet grew naturally from generations of GTA visitors asking the same question: *can we just borrow one of these for the day?*
+[Harris Boat Works](/blog/best-marina-rice-lake-ontario) has rented boats on Rice Lake since long before Airbnb made "shared access" a thing. We've been on this lake since 1947, and the rental fleet grew naturally from generations of GTA visitors asking the same question: *can we just borrow one of these for the day?*
 
 This is the version of the rental day we'd walk you through if you called and asked.
 
@@ -123,6 +123,12 @@ What's NOT included:
 
 ---
 
+::pull-quote
+quote: We rent a pontoon two weekends a year for the family at the in-laws' cottage. **The HBW booking process is the easiest part of the trip.** Show up, sign, go. Hand the keys back, drive home.
+attribution: Priya N.
+source: Markham
+::
+
 ## The Half-Day vs. Full-Day Math
 
 **Half-day rental** (4 hours):
@@ -138,6 +144,8 @@ What's NOT included:
 - Best for: groups who arrive early and want maximum on-water time
 
 For a GTA family driving up at 8 AM and leaving at 4-5 PM: **half-day morning** is the most-popular pattern. Gets you on the water by 10 AM, off by 2 PM, lunch stop at Lakeview Restaurant in Bewdley, drive home before rush hour.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -241,6 +249,8 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
 - [Rice Lake Boating Guide](/blog/rice-lake-boating-guide-2026), comprehensive lake info
 - [Trent-Severn 2026, free lockage](/blog/trent-severn-waterway-boating-guide-2026), explore beyond Rice Lake
 - [Why drive from Toronto to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), if a rental experience makes you consider ownership
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

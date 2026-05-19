@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -100,6 +100,8 @@ Practical tip: take a clear photo of the plate and save it on your phone. You wi
 
 ---
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## How to Get Boost Installed
 
 Boost is dealer-installed. You cannot download or apply it yourself, Mercury's diagnostic software is dealer-exclusive.
@@ -174,6 +176,8 @@ Call 905-342-2153 with your serial number, or email info@harrisboatworks.ca.
 HBW confirms eligibility, quotes the installation, and books the visit. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Platinum dealer. Est. 1947.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -36,6 +36,29 @@ content_type: blog_article
 > **Quick answer:** Pontoons need torque and hole shot, not just top speed. For most 18–22 ft Ontario pontoons, Mercury 90–150 HP FourStroke with Command Thrust is the right answer. The gearcase matters as much as the horsepower number. Build an installed pontoon repower quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 ---
+
+::decision-card
+eyebrow: Pontoon HP decision
+heading: How big is your pontoon and how do you load it?
+subhead: Tube count and use case matter more than the HP number alone.
+leftLabel: 16 to 18 ft two-tube, cruising and light fishing
+leftCriteria:
+  - 6 people maximum, no active water sports
+  - Sheltered Kawartha bays, short runs
+  - Fuel economy and quiet matter
+  - You want the more affordable setup
+leftOutcome: 90 HP Command Thrust FourStroke
+leftVariant: recommended
+rightLabel: 20 to 22+ ft tritoon, full crew with water sports
+rightCriteria:
+  - 8 to 10 passengers, tubing or skiing weekly
+  - Open water on Rice Lake or larger Kawartha lakes
+  - Fast hole shot with the boat loaded matters
+  - Long-term hold, you want the right motor once
+rightOutcome: 150 HP Command Thrust (200 HP on bigger tritoons)
+rightVariant: alternative
+whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in this HP range. The only real question is the HP number.
+::
 
 ## The gearcase is the part most people overlook
 
@@ -90,6 +113,8 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 
 ## Why Command Thrust makes the difference on pontoons
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 Pontoons are unique among recreational hulls:
 - Blunt-fronted, the noses push water rather than slice it
 - Heavy, aluminum tubes, fibreglass furniture, full hardware add up fast
@@ -142,6 +167,10 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). The system asks
 
 ---
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## FAQ
 
 **What's the best Mercury for an 18-foot pontoon?**
@@ -161,6 +190,8 @@ FourStroke is almost always the right answer for pontoons. Pro XS is built for t
 
 **What's the most popular Mercury for pontoons in Ontario?**
 The 115 ELPT Command Thrust FourStroke. Fits the most common pontoon (20 ft two-tube), the most common use case (family cruising with occasional water sports), and the most common capacity rating.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

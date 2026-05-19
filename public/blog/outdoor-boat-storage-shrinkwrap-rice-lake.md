@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -37,7 +37,7 @@ Harris Boat Works offers outdoor winter storage with shrinkwrap on-site at our G
 
 ## What HBW Storage Actually Looks Like
 
-We've stored boats for Rice Lake and Kawartha-area customers for decades. The setup is straightforward:
+We've stored boats for Rice Lake and [Kawartha-area customers](/blog/boat-storage-kawartha-lakes) for decades. The setup is straightforward:
 
 **Outdoor storage on our property** in Gores Landing. Boats are blocked off the trailer (or remain on trailers, depending on what you prefer), spaced for access, and exposed to Ontario winter weather.
 
@@ -119,11 +119,15 @@ For current rates, contact us. Pricing depends on your specific boat, motor, and
 
 **November:** Risky for new customers. Snow has often started, fewer dry-day windows for outdoor work.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **December:** Too late. Schedule for next year.
 
 The customers who call in early November every year asking if we have space, we appreciate them, but it's a tight call. Plan ahead. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months; the marina reopens early April for spring commissioning. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 ---
+
+![Fiberglass bowrider mid-shrinkwrap in a Canadian marina yard](/lovable-uploads/inline/inline-shrinkwrap-process.png)
 
 ## What You Need to Have Ready Before Drop-Off
 
@@ -199,6 +203,7 @@ Submit a storage request at **[hbw.wiki/service](https://hbw.wiki/service)**. In
 
 Questions first? Call **905-342-2153**.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Platinum Dealer | Since 1947
 
 ## FAQs

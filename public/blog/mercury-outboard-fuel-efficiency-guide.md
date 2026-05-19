@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -89,6 +89,28 @@ This is why we don't recommend "getting a smaller motor to save fuel." If the sm
 
 ---
 
+::cost-stack
+eyebrow: 2026 Ontario fuel cost ranges
+heading: What you'll actually spend on fuel per season
+subhead: Estimates based on Ontario marina gas pricing and realistic GPH for a properly propped Mercury FourStroke 90 to 150.
+item1Label: Weekend family cruiser (50 hrs/season)
+item1Value: $550 to $850
+item1Note: Mostly cruise speeds, light to moderate load. Mid 90 to 115 HP class.
+item2Label: Heavy weekender (100 hrs/season)
+item2Value: $1,100 to $1,800
+item2Note: Tubing and skiing pulls burn 20 to 30 percent higher than straight cruising. 115 to 150 HP class.
+item3Label: Seasonal angler (75 hrs/season)
+item3Value: $700 to $1,100
+item3Note: Lots of trolling and idle hours stretch fuel further. A kicker cuts main engine burn in half on slow days.
+item4Label: Lake Ontario offshore (150 hrs/season)
+item4Value: $2,200 to $3,400
+item4Note: Longer runs at higher cruise, often loaded. 200 HP class FourStroke or Pro XS.
+item4Accent: true
+totalLabel: Biggest variable
+totalValue: Prop pitch, not horsepower
+caveat: A mismatched prop adds 15 to 25 percent to every line above. Get the prop right first; the rest follows.
+::
+
 ## Practical Fuel Consumption Ranges
 
 Real-world fuel consumption depends on hull design, load, prop selection, mounting height, water conditions, and how you operate the boat. The following are typical ranges based on boats we've rigged and run at HBW. These are rough orientation numbers, not guarantees, and not a substitute for a sea trial with your specific setup.
@@ -103,6 +125,10 @@ Real-world fuel consumption depends on hull design, load, prop selection, mounti
 If your fuel burn is significantly above these ranges for your setup, prop pitch, trim, or hull condition is the first place to look.
 
 ---
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+![Mercury SmartCraft fuel-flow gauge showing live GPH reading at cruising RPM](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
 
 ## Ethanol and Fuel Quality
 
@@ -183,6 +209,7 @@ Whether you want a prop check, a full service, or a quote on a new motor package
 
 Phone: 905-342-2153 | Harris Boat Works, Gores Landing, ON | Since 1947
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

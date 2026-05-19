@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,6 +35,29 @@ The Mercury 9.9 ProKicker is the right kicker motor for Rice Lake walleye trolli
 
 ---
 
+::decision-card
+eyebrow: Kicker decision
+heading: Do you actually need a 9.9 ProKicker?
+subhead: Trolling style is the real deciding factor. Be honest about how often you actually troll.
+leftLabel: Rig the ProKicker
+leftCriteria:
+  - You troll walleye on Rice Lake at 1 to 2 mph regularly
+  - You fish multi-hour trolling sessions for walleye, bass, or muskie
+  - Your main motor is 60 HP or larger and won't idle slow enough
+  - You want quiet, fuel-efficient, hands-on speed control
+leftOutcome: 9.9 ProKicker, tiller on fishing boats, remote on bigger consoles
+leftVariant: recommended
+rightLabel: Skip the kicker
+rightCriteria:
+  - You bass fish run-and-gun, bow-mount handles positioning
+  - You troll occasionally and the main motor idles slow enough
+  - Budget is tight and an electric trolling motor covers the same job
+  - Boat is under 14 ft and a second outboard is overkill
+rightOutcome: Save the money, run a bow-mount or just the main
+rightVariant: alternative
+whenInDoubt: If walleye is on your list, get the ProKicker. The customers who skip it on Rice Lake usually add one within two seasons.
+::
+
 ## What the 9.9 ProKicker Actually Is
 
 A lot of customers walk in asking about a "9.9 for trolling" and mean different things. So let's be precise.
@@ -67,7 +90,7 @@ A 9.9 ProKicker at working speed is in its element:
 - **Efficient at low speeds.** You can troll all day on a tank.
 - **Tiller control is precise.** Fine adjustments to trolling speed and direction happen at your hand, not across the cockpit.
 
-This is why the ProKicker-plus-main-motor setup has been standard on Rice Lake fishing boats for decades. The customers who skip it spend two seasons wishing they hadn't.
+This is why the ProKicker-plus-main-motor setup has been standard on [Rice Lake fishing boats](/blog/best-marina-rice-lake-ontario) for decades. The customers who skip it spend two seasons wishing they hadn't.
 
 ---
 
@@ -123,7 +146,11 @@ Bolting a motor to the transom is the easy part. Here's what a proper ProKicker 
 
 We do this as part of most fishing-boat repowers at HBW. For standalone kicker installs on an existing boat, same process. Get a full quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ---
+
+![Mercury 90 main and 9.9 ProKicker mounted on a trolling rig at dawn](/lovable-uploads/inline/inline-prokicker-trolling-setup.png)
 
 ## Mistakes We See Every Season
 
@@ -214,6 +241,7 @@ Build your kicker package, including the right ProKicker configuration, shaft le
 
 If you'd rather talk through the setup for your specific boat first, call us: **905-342-2153**. We rig fishing boats for Rice Lake every week and can give you the straight answer.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | [harrisboatworks.ca](https://www.harrisboatworks.ca)
 
 ## FAQs

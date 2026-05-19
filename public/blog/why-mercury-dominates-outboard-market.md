@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -58,6 +58,8 @@ Mercury FourStroke covers 2.5 HP through 300 HP. Pro XS handles performance fish
 ### 4. Parts and service continuity over the motor life
 A well-maintained Mercury lasts 15 to 25 years. Mercury depth in Ontario means we can service every motor we sell for the full life of that motor.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## Where Mercury is not automatically the right answer
 
 **Coastal saltwater.** Yamaha has strong saltwater dealer coverage. In Florida or Pacific Northwest, the dealer math may favor Yamaha.
@@ -79,6 +81,7 @@ If you want to talk through whether Mercury is the right answer for your specifi
 Harris Boat Works. Mercury dealer since 1965, Mercury Platinum dealer today.
 5369 Harris Boat Works Rd, Gores Landing, ON.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Last reviewed: 2026-05-11.*
 
 ## FAQs

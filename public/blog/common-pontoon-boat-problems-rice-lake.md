@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -99,6 +99,28 @@ If you're buying a used pontoon, press down on the deck with your foot in a few 
 
 ---
 
+::diagnostic-flow
+heading: Pontoon acting up? Run this check before calling
+eyebrow: Pontoon diagnostic flow
+subhead: Most Rice Lake pontoon calls trace back to one of these four. Work through them in order.
+step1Label: Weeds in the prop
+step1Question: Tilt the motor up. Are there weeds, fishing line, or zebra mussels wrapped around the prop shaft?
+step1Tip: Rice Lake is shallow and weedy. A wrapped prop kills hole shot and overheats the lower unit. Clear it before you assume the motor is bad.
+step2Label: Corroded fittings at the helm
+step2Question: Check the back of the helm and the bow nav-light wiring. Any green crust, soft insulation, or loose ring terminals?
+step2Tip: Pontoon wiring lives in open weather. Green corrosion is the most common cause of intermittent gauges, no-start, and dead bow lights. Disconnect, clean, dielectric grease, reconnect.
+step3Label: Soft spots in the deck
+step3Question: Walk the deck barefoot. Any spongy areas, especially around the fuel tank, the helm base, or the rear corners?
+step3Tip: A soft deck means the marine plywood is rotting under the carpet. Catch it early and it's a panel swap. Catch it late and it's a full deck rebuild.
+step4Label: Tube damage from grounding
+step4Question: With the pontoon out of the water, inspect both tubes for dents, weld cracks, or unusual streaking near the nose cones.
+step4Tip: Rice Lake has rock shelves. A hard grounding can crack a weld without obvious leakage. If a tube sits lower in the water than the others, get it pressure-tested before next season.
+escalationLabel: Found something or unsure?
+escalationBody: Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at /service or call (905) 342-2153.
+::
+
+---
+
 ### 4. Wiring Corrosion at the Helm and Bow
 
 Aluminum pontoons are excellent platforms for corrosion. The combination of moisture, aluminum, dissimilar metals, and electrical current in a marine environment creates ideal conditions for corrosion to take hold, especially at the helm console and anywhere in the bow.
@@ -112,6 +134,8 @@ What we see most: corroded wiring harnesses at the helm, green and brittle conne
 - Accessories that stop functioning mid-season
 
 Wiring work is time-consuming to fix right. Keeping up with it (cleaning and protecting connections with dielectric grease, replacing any corroded terminal ends before they fail) is far cheaper than rewiring a console.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -194,7 +218,7 @@ If your pontoon is showing any of these signs, or if you're running an undersize
 
 **Get a repower quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
-Harris Boat Works has been on Rice Lake since 1947. We're a Mercury Marine Platinum dealer, and we know what boats in this region actually need, not what looks good on a spec sheet.
+Harris Boat Works has been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). We're a Mercury Marine Platinum dealer, and we know what boats in this region actually need, not what looks good on a spec sheet.
 
 Call us at 905-342-2153 or request service online. We'll give you a straight answer.
 
@@ -209,6 +233,8 @@ Two related guides in the same cluster:
 - [Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)](/blog/mercury-prokicker-rice-lake-fishing-guide)
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

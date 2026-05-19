@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-oshawa-ontario-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -88,6 +88,8 @@ Outdoor with shrinkwrap. No indoor. At 40 minutes, year-round storage here makes
 
 ---
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## Getting to Harris Boat Works from Oshawa
 
 **Route:** Highway 401 east to Highway 115 north, then County Road 28 north to Gores Landing. Clean run, you're off the worst of the GTA traffic the moment you leave Oshawa east.
@@ -156,6 +158,8 @@ Why Oshawa is a particularly strong repower market:
 - **Many older fiberglass hulls in great shape.** A 1990s-2000s 16-18 ft fiberglass hull with a tired Mercury or Evinrude is an ideal repower candidate. HBW handles a steady flow of these annually.
 - **Proximity makes it practical.** 40 minutes is a reasonable drive for a multi-thousand-dollar repower investment — closer than driving back into central Toronto.
 - **Mercury Platinum-level depth.** A repower done well lasts the rest of the boat's life. Done poorly, it gets brought back for warranty work.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

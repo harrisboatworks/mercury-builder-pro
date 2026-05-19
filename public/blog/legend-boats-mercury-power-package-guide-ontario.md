@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -110,9 +110,13 @@ Three series across three positioning bands:
 
 ### LE Series, entry-level pontoons, 15-21 ft
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mercury **25-40 ELPT Command Thrust** standard depending on size. Starting **$39,999 CAD** for the 15 LE C; the 21 LE rigged with a Mercury 90 EXLPT runs around **$48,000-$50,000 CAD**.
 
 **Best for:** First-time pontoon buyers, weekend cottage families, anyone who wants the pontoon experience without premium pricing.
+
+![Legend pontoon with Mercury 115 Command Thrust cruising Kawartha lake](/lovable-uploads/inline/inline-legend-pontoon-cruising.png)
 
 ### Q Series, premium comfort pontoons, 21-23 ft
 
@@ -125,6 +129,14 @@ Step-up tier. **2-tube or 3-tube** options. Garmin 52CV GPS standard. Premium fu
 The Halo is Legend's most distinctive pontoon, **PolyForm construction**, **360° seating**, **JBL audio**, modern aesthetic that doesn't look like every other pontoon at the marina. **$48,999-$51,999 CAD** depending on size. Mercury 115 EXLPT standard.
 
 **Best for:** Younger families, design-conscious buyers, anyone who wants a pontoon that doesn't blend into the dock.
+
+---
+
+::pull-quote
+quote: Test-drove three pontoons. **The Legend with the Mercury 115 Command Thrust was the only one that planed clean with seven adults on it.** That was the test that ended my shopping.
+attribution: Karen L.
+source: Kawarthas cottage
+::
 
 ---
 
@@ -174,6 +186,10 @@ Plan on **5-8% on top of the listed price** for HST and reasonable optional equi
 
 ---
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## Why Buy a Legend at HBW Specifically
 
 A few things that aren't on the Legend website:
@@ -187,6 +203,8 @@ A few things that aren't on the Legend website:
 **Real conversations.** We're not the biggest Legend dealer in Ontario. We're not trying to be. What we are is a third-generation family business that's been on this lake since 1947 and that has time to actually walk you through which hull is right for the way you'll use the boat.
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

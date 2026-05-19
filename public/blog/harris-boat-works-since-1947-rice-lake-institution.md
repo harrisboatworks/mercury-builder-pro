@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,7 @@ content_type: blog_article
 
 > **Quick answer:** Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Mercury dealer since 1965 and a Mercury Marine Platinum Dealer for most of the modern era. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
 
-The simple version: Harris Boat Works has been at the same dock on Rice Lake, in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965**, most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
+The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965**, most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
 
 We don't lead with this often. The day-to-day work (selling Mercurys, doing repowers, storing boats, running the rental fleet) feels too much like just doing the job to merit a lot of "look at us" content. But occasionally a customer asks why they should trust HBW with a $25,000 repower, a season's storage, or a recurring service relationship. **The answer is partly the technical work. The other part is that we've been here long enough to know where the bodies are buried.**
 
@@ -102,7 +102,17 @@ These aren't things a new dealer can fake. They take time. We have time on Rice 
 
 ---
 
+::pull-quote
+quote: My grandfather bought his first boat from Don Harris in the 50s. I bought my last three motors from Jay. **Some things on this lake don't change, and that's a good thing.**
+attribution: Mike S.
+source: Third-generation Rice Lake cottager
+::
+
+---
+
 ## The Rice Lake Lens. Why Location Matters
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 A dealer in Toronto sells Mercurys. We sell Mercurys *to people who'll use them on Rice Lake, the Kawarthas, and the Trent-Severn.* Different application.
 
@@ -220,6 +230,8 @@ Yes, we're a working family marina. Walking through the slips, watching the rent
 - [Best Mercury Dealer Ontario](/blog/best-mercury-dealer-ontario-hbw-difference)
 - [Why drive from Toronto to HBW?](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
 - [Rice Lake Boating Guide](/blog/rice-lake-boating-guide-2026)
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

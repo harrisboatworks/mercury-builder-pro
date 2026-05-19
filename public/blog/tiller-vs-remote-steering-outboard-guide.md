@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -114,6 +114,8 @@ We sell both configurations at HBW. The decision comes down to honest analysis o
 
 ---
 
+::walkaround-lead-capture
+
 ## The crossover zone: 14–16 ft hulls, 25–40 HP
 
 This is where it gets honest:
@@ -133,6 +135,8 @@ This is where it gets honest:
 We see customers go either way on this size class. The deciding factor is almost always use case, solo fishing often stays tiller; family use usually goes remote.
 
 ---
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Tiller variants
 
@@ -210,6 +214,8 @@ Yes. The tiller arm includes throttle (rotating handle) and shift (forward, neut
 
 **Can I add a tiller kicker to a remote-control main motor boat?**
 Common configuration. The main motor uses remote control from the helm; the kicker is a separate tiller motor for trolling speed control. Works well for fishing boats.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

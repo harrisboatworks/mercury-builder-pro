@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -67,6 +67,31 @@ Six variables move the right HP for your specific boat:
 
 ---
 
+::decision-card
+eyebrow: HP sizing decision
+heading: How heavy do you actually load the boat?
+subhead: The plate max is the ceiling, not the recommendation. Where you target inside that range depends on load.
+leftLabel: Light load (1 to 2 people, fishing gear)
+leftCriteria:
+  - Solo or two-person fishing most outings
+  - Light tackle, no tow toys, half tank
+  - Calm protected water (Rice Lake, small Kawarthas)
+  - You care more about fuel economy than hole shot
+leftOutcome: Target 60 to 70 percent of plate max
+leftVariant: alternative
+rightLabel: Heavy load (4+ people, tubes, full gear)
+rightCriteria:
+  - Family of four plus a friend most weekends
+  - Tubing, wakeboarding, or skiing on the regular
+  - Full cooler, full tank, full gear
+  - Bigger lakes with chop (Simcoe, Scugog, Lake Ontario shoreline)
+rightOutcome: Target 90 to 100 percent of plate max
+rightVariant: recommended
+whenInDoubt: Underpowered boats are the #1 complaint we hear. Step up before you step down. Resale on a maxed-out rig is also stronger.
+::
+
+---
+
 ## HP recommendations by boat type
 
 These are working guidelines for typical recreational use on Ontario and Kawartha freshwater. For your specific motor and real installed pricing, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
@@ -99,6 +124,8 @@ Recreational family use: **150 to 200 HP.** The exact answer depends on hull wei
 
 ### Bass boats (17–21 ft)
 Tournament-level performance: **200 to 250 HP Pro XS.** The Pro XS line is the standard tournament motor.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 Recreational bass fishing: **150 HP FourStroke or Pro XS**, depending on whether you need the performance step-up.
 
@@ -133,6 +160,8 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 **5. Ignoring load.** Empty boat numbers are aspirational. A family of five with gear and a cooler is a different boat than the demo run.
 
 ---
+
+![Two aluminum boats with different Mercury horsepower at dealership](/lovable-uploads/inline/inline-horsepower-selection.png)
 
 ## When to step up, when to stay
 
@@ -196,6 +225,8 @@ Command Thrust is a gearcase option (not a separate motor family) available on s
 For an 18–20 ft two-tube pontoon doing cruising and fishing, 90 HP Command Thrust is enough. For a 20–22 ft pontoon with active water sports in mind, jump to 115 HP Command Thrust. The price difference is real; so is the capability difference.
 
 **Does loading affect how much HP I need?**
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Significantly. A fully loaded family boat behaves like a different machine than an empty one. Plan your HP for your real load, not the number on paper.
 
 ## FAQs

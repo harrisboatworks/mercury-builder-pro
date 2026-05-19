@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -86,6 +86,29 @@ The phrase "improper installation" matters. **A Mercury installed by your buddy 
 
 ---
 
+::decision-card
+eyebrow: Extended warranty decision
+heading: Should you buy Mercury Product Protection?
+subhead: MPP extends coverage up to 8 total years. Worth it for some buyers, overkill for others. The honest answer depends on how you pay and how long you keep the boat.
+leftLabel: Take MPP extended coverage
+leftCriteria:
+  - You're financing the motor over 5+ years
+  - You plan to keep the boat 7+ years
+  - You run the motor hard (heavy hours, towing, offshore)
+  - Peace of mind matters more than the upfront cost
+leftOutcome: 8-year MPP package
+leftVariant: recommended
+rightLabel: Factory coverage is enough
+rightCriteria:
+  - You're paying cash
+  - You typically flip boats every 3 to 5 years
+  - You run a modest seasonal schedule
+  - You service religiously and keep records
+rightOutcome: Stick with the 3-year factory
+rightVariant: alternative
+whenInDoubt: MPP is transferable to a second owner, which adds to resale value. If you're close to the line, the extra coverage usually pays back at trade-in time.
+::
+
 ## Mercury Product Protection (MPP). The Extended Warranty
 
 If you want coverage beyond the standard three years, Mercury offers **Mercury Product Protection (MPP)**, an optional extended-coverage program (typically marketed in Gold, Silver, and Platinum tiers depending on availability). MPP is not part of the factory standard warranty.
@@ -110,6 +133,8 @@ We can confirm what's available for your specific motor and current promotions w
 The other factor: resale. A used motor with transferable MPP coverage is meaningfully easier to sell, and at a higher price.
 
 ---
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Buying a Used Mercury. Does the Warranty Transfer?
 
@@ -185,6 +210,8 @@ The most common warranty mistake we see at our shop: the customer buys a Mercury
 We push customers toward Platinum dealer service because the install + first service get logged with Mercury Canada at the moment of completion. That paper trail is the difference between a 60-day warranty fight and a 1-day approval.
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

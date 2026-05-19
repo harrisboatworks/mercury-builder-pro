@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -126,7 +126,11 @@ While the plugs are out, look at them:
 - **Black, sooty, or oily**, running rich, possible oil burn, or carbon buildup
 - **White or blistered**, running lean and hot; head gasket trouble
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 While you're at it, smell the fuel in the line. Stale gas smells like varnish. Water in the filter looks like water in the filter.
+
+::walkaround-lead-capture
 
 ### The On-Water Test, Don't Skip This
 
@@ -148,6 +152,8 @@ A seller who refuses an on-water test is telling you something.
 **Freeze damage.** If it wasn't properly winterized in Ontario, the powerhead may have frozen. Cracked block, blown welch plug, hairline crack in a cylinder head, none of these always show on a casual inspection. A pressure test catches it; a cold-running test usually won't.
 
 **Outdoor storage, no cover.** UV damage on cowls, dried-out rubber, faded plastic, all tell you how the rest of the motor was treated. If the outside was neglected, assume the service schedule was too.
+
+![Compression test gauge connected to a Mercury outboard powerhead during pre-purchase inspection](/lovable-uploads/inline/inline-compression-test.png)
 
 ### Deal-Breakers: When to Walk
 
@@ -242,6 +248,8 @@ Questions? Call **905-342-2153**. We answer the phone and we won't tell you what
 | 9 | [Mercury Boost](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) Software Upgrade on a 150 HP Pontoon, Is It Worth It? | mercury-boost-upgrade-150hp-pontoon-analysis |
 | 10 | Mercury Outboard Rigging Costs Explained, Ontario 2026 | mercury-outboard-rigging-costs-ontario |
 | 11 | What Happens During a Mercury Repower, Step-by-Step Process | what-happens-during-mercury-repower |
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 | 12 | Used Outboard Buying Guide for Ontario Boaters | used-outboard-buying-guide-ontario |
 
 ## FAQs

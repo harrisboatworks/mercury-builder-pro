@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -125,6 +125,8 @@ The impeller is a rubber vane wheel inside the lower unit that drives cooling wa
 
 **Don't ignore it:** A weak tell-tale last fall that you kept fishing through means the impeller may be at or past its limit. Don't start next season without addressing it.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ### 3. Thermostat Failure
 
 The thermostat regulates the cooling water temperature inside the motor. A thermostat stuck closed traps hot water in the powerhead; a thermostat stuck open prevents the motor from reaching proper operating temperature (less of an overheating risk, but it causes other problems including poor fuel economy and excessive wear from running too cold).
@@ -201,6 +203,7 @@ Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores L
 
 Phone: 905-342-2153
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

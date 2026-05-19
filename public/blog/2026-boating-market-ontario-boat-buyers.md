@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -50,11 +50,38 @@ Industry survey data from the Baird/MRAA Pulse Report: roughly 71% of dealers re
 
 Used boat prices have pulled back 5 to 10% from pandemic highs.
 
+::cost-stack
+eyebrow: 2026 Ontario boat market ranges
+heading: What you'll actually pay for a boat in 2026
+subhead: Real Ontario CAD ranges by category. New-boat pricing has softened from the 2022 peak. Used pricing has finally normalized. Repower remains the best dollar-per-season deal.
+item1Label: Aluminum fishing boat, 16 to 18 ft new
+item1Value: $22,000 to $42,000
+item1Note: Package with 40 to 90 HP Mercury FourStroke and trailer. Range depends on console, electronics, and live well config.
+item2Label: Pontoon, 20 to 22 ft new
+item2Value: $38,000 to $75,000
+item2Note: Dual or triple tube with 90 to 150 HP. Mid-range is the sweet spot for most cottage owners.
+item3Label: Bowrider or runabout, 18 to 21 ft new
+item3Value: $55,000 to $110,000
+item3Note: Fiberglass with 150 to 250 HP. Tower, upholstery, and audio package drive the upper end.
+item4Label: Used boat, 5 to 10 years old
+item4Value: $15,000 to $45,000
+item4Note: Wide range. Hull condition, hours, and trailer matter more than year. Always check compression and lower unit oil.
+item5Label: Repower of an existing hull
+item5Value: $12,000 to $24,000
+item5Note: Best dollar-per-season value if the hull and trailer are sound. New motor, new warranty, no boat-shopping required.
+item5Accent: true
+totalLabel: Best value path for most buyers
+totalValue: Repower if the hull is good
+caveat: All CAD, pickup only at Gores Landing. Build a repower quote at mercuryrepower.ca.
+::
+
 ## The segments that matter on Rice Lake
 
 The categories most relevant to Rice Lake (aluminum fishing boats, pontoons, smaller trailerable rigs) are among the most resilient.
 
 ## The luxury tax on boats is gone
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 Canada federal luxury tax, introduced in the 2022 budget, applied to boats priced above $250,000. According to Canada Revenue Agency Luxury Tax Notice LTN5, the luxury tax on subject vessels is no longer payable as of November 5, 2025.
 
@@ -75,7 +102,7 @@ Pre-owned boats typically account for about 80% of all boat transactions in a gi
 - Financing is improving.
 - Luxury tax is gone.
 
-We have been on Rice Lake since 1947. The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
+We have been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
 Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
@@ -85,6 +112,7 @@ Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca
 - NMMA, U.S. new powerboat retail sales (2024-2025 unit data).
 - Bank of Canada, policy rate (2025 series of cuts).
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Last reviewed: 2026-05-11.*
 
 ## FAQs

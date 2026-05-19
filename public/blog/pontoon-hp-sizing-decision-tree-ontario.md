@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -161,6 +161,8 @@ At this size and load, a 90 HP motor is underpowered. You'll feel it on every ru
 
 Welcome to actual pontoon performance. A tritoon with a 200 or 250 HP Mercury gets on plane fast, handles real chop, and has the power to pull a tube reliably with people still on the deck. This is the setup families with teenage kids or active watersports use should be building to.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 Anything less than 200 HP on a loaded tritoon is a constant compromise. You can do it, but you'll feel like you're always short of power.
 
 ---
@@ -300,6 +302,8 @@ Two related guides in the same cluster:
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

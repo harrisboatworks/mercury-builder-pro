@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -154,6 +154,10 @@ For most aluminum fishing boats, pontoons, and modern fibreglass runabouts, **th
 
 ---
 
+![Heated indoor boat storage facility with pleasure craft on stands](/lovable-uploads/inline/inline-indoor-heated-storage.png)
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## Indoor Heated Storage. The Premium Tier
 
 Heated indoor keeps the building above 5°C (40°F) all winter. The differentiator isn't UV or snow, it's that the boat doesn't experience freezing temperatures at all.
@@ -256,6 +260,8 @@ We've been shrinkwrapping boats on the south shore of Rice Lake for decades. Mos
 What separates a good shrinkwrap job from a bad one: tying the tarp to a frame, not just to the gunwales. Snow load splits ungo unframed wraps by January every year. We frame every wrap.
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

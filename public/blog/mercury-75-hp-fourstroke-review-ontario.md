@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -90,6 +90,8 @@ The 90 also holds better resale value and has more demand on the used market. If
 
 ---
 
+::walkaround-lead-capture
+
 ## Why HBW Doesn't Stock the Mercury 75
 
 Three reasons:
@@ -105,6 +107,8 @@ For 95% of customers, the 75 is the wrong motor to buy when the 90 exists at nea
 ## When the 75 Might Actually Make Sense
 
 There are three real scenarios where the 75 is the right call:
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 **The capacity plate forces it.** Some 16, 17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
 
@@ -162,6 +166,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

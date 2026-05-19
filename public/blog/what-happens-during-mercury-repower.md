@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -129,6 +129,8 @@ Mercury-certified technician installs:
 - Mercury SmartCraft display (if specified) installed and configured
 - Trim/tilt tested for full range of motion
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 All connections double-checked. Motor is started on muffs (water-cooling adapter) to verify cooling, ignition, and basic operation before launch.
 
 #### Step 8: Sea Trial with Prop Testing, Typically Half a Day
@@ -233,6 +235,7 @@ Ready to schedule your repower? Build a quote at **[mercuryrepower.ca](https://w
 
 Questions about the process for your specific boat? Call **905-342-2153** or come in for a free hull walk-around. We do free walk-arounds and can answer process questions before you commit.
 
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -91,9 +91,36 @@ Rates in 2026 are better than 2023. They are not as low as the 2020, 2021 enviro
 
 **You are buying out of fear, not need.** "Prices might go up" is not a purchasing strategy on its own. If you are not ready, do not know exactly what you want, and have not done the research, buying in a hurry causes regret.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **You want a premium or specialty boat.** The higher the price point, the more price discovery questions exist in 2026. A $35,000 aluminum boat is a different market than a $150,000+ cabin cruiser.
 
 **The repower math is better for you.** For many Ontario boaters with a sound hull and a worn motor, the repower is the better move. Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) before going to a showroom.
+
+---
+
+::decision-card
+eyebrow: 2026 timing decision
+heading: Buy this season, or wait for fall pricing?
+subhead: The 2026 market is not collapsing and not booming. Your timing depends on whether you can wait.
+leftLabel: You need a boat for this season
+leftCriteria:
+  - You sold or lost your previous boat and want water time in 2026
+  - You have a family vacation or cottage booked that needs the boat
+  - Current inventory has something close to what you want
+  - You can pay or finance now without stretching
+leftOutcome: Buy now, the market is what it is. Lose a season chasing a discount.
+leftVariant: recommended
+rightLabel: You can wait until late fall
+rightCriteria:
+  - You have a working boat that will get through 2026
+  - You want a specific model or HP not currently in stock
+  - You want to negotiate from a position of patience
+  - October to December dealer flexibility matters to you
+rightOutcome: Wait. Off-season pricing and trade-in flexibility are real.
+rightVariant: alternative
+whenInDoubt: A season on the water is worth more than 5 percent off a motor. If a missed summer hurts more than the discount helps, buy now.
+::
 
 ---
 
@@ -157,6 +184,8 @@ At 10 to 15 days of use per year, the math generally favors renting. At 30+ days
 **See real prices. No games.** 
 Build your Mercury repower quote at [mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required. 
 Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

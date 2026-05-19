@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -72,6 +72,8 @@ If it may be overheating, look for water flow from the tell-tale and check wheth
 ### Watch the temperature and voltage
 If your display shows temperature or voltage, note the numbers. High temperature and low voltage can both trigger warnings depending on the system.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ### Record the alarm
 Write down:
 - Beep pattern
@@ -113,10 +115,18 @@ If your Mercury is beeping, record the pattern, take a photo of the display, red
 
 Need Mercury alarm diagnosis near Rice Lake, Peterborough, or the Kawarthas? Submit a service request at [hbw.wiki/service](https://hbw.wiki/service).
 
+## Reviewed by
+
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+
+> Related guide: [How Ontario boat owners accidentally increase service bills](/blog/accidentally-increase-boat-service-bills-ontario).
+
 ## Related guides
 - [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
 - [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
 - [Mercury Outboard Won't Start Troubleshooting (Ontario)](/blog/mercury-outboard-wont-start-troubleshooting-ontario)
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 - [Mercury Outboard Overheating at Idle](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
 
 ## FAQs

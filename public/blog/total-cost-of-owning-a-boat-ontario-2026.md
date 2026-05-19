@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -91,7 +91,7 @@ Quotes vary widely based on boat type, claims history, and where you operate. Ge
 
 ## 3. Winter Storage and Winterization
 
-In Ontario, you don't get to skip winter storage. The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
+In Ontario, you don't get to skip [winter storage](/blog/boat-storage-kawartha-lakes). The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
 
 **HBW pricing 2026:**
 
@@ -113,6 +113,8 @@ In Ontario, you don't get to skip winter storage. The boat has to come out of th
 **The "what if I skip it" cost:** A cracked engine block from a missed winterization runs **$5,000-$10,000+**. Skipped winterization is the most expensive way to save $400.
 
 ---
+
+::walkaround-lead-capture
 
 ## 4. Fuel
 
@@ -140,6 +142,8 @@ The biggest variable on the list, since it depends on how much you actually use 
 - **90 HP 4-stroke, 75 hours, ethanol-free:** ~$1,800-$2,200
 - **150 HP 4-stroke, 75 hours, ethanol-free:** ~$2,400-$3,200
 - **200 HP V6, 75 hours, ethanol-free:** ~$3,000-$4,200
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 For most recreational owners, **fuel is $1,500-$3,500 a year**.
 
@@ -249,6 +253,8 @@ The first-year ownership cost usually surprises new boaters. Boat + motor is the
 Year two through five averages out lower if winterization and 100-hour service are kept current. The boats that get expensive in year five are the ones whose owners skipped impeller changes and gear-lube changes. Those repairs end up costing more than what the maintenance would have.
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

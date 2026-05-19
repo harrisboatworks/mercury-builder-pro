@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -94,6 +94,8 @@ The features people actually use: **fuel flow at cruise** (saves real money over
 
 What that gets you:
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 - **Zero hesitation.** Move the lever, the engine responds immediately. No cable lag.
 - **Smoother shifting.** The "clunk" goes away. Forward, neutral, reverse all transition cleanly.
 - **Easier docking.** You can make tiny throttle adjustments, half a notch, that mechanical cables can't reproduce.
@@ -163,6 +165,8 @@ Most installs are 2-3 hours and run **$300-$500 plus parts**. We can do them as 
 Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**.
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

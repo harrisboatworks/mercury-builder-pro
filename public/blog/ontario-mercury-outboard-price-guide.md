@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -162,6 +162,8 @@ This is the core of Ontario Mercury sales. These are the motors powering most po
 
 ## V6 Mercury Outboards: 150, 225 HP
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 This is where repowers get serious. These motors go on 19, 24 ft bowriders, large aluminum fishing boats, walleye rigs, and the occasional deep-V. If you're shopping a 150, 175, 200, or 225, you're likely not making a same-day decision.
 
 | HP | Common Model | Dealer Price (CAD) | MSRP (CAD) | Best For |
@@ -236,6 +238,10 @@ The dealer price shown is the motor price. Final out-the-door price depends on c
 
 ---
 
+## About the author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
 ## Ready to Build a Quote?
 
 Three ways to get a real price:
@@ -251,6 +257,8 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
 ---
 
 *Related guides: Mercury 40 vs 60 HP for Ontario boats | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Should I repower or buy a new boat?*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

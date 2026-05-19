@@ -1,14 +1,33 @@
 ---
-slug: mercury-pro-xs-buyer-guide-ontario
-title: Mercury Pro XS Buyer Guide for Ontario (2026)
-seoTitle: Mercury Pro XS Buyer Guide Ontario | Harris Boat Works
-description: The canonical Mercury Pro XS buyer guide for Ontario boaters. 115-300 HP coverage, bass and tournament fishing applications, pontoon performance setups, real installed pricing.
-publishDate: 2026-05-17
-hero_placeholder: /lovable-uploads/hero-mercury-pro-xs-buyer-guide.png
-language: en
+canonical: https://www.mercuryrepower.ca/blog/mercury-pro-xs-buyer-guide-ontario.md
+last_updated: 2026-05-19
+currency: CAD
+pickup_only: true
+delivery_offered: false
+location: Gores Landing, ON, Canada
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
+title: "Mercury Pro XS Buyer Guide for Ontario (2026)"
+description: "The canonical Mercury Pro XS buyer guide for Ontario boaters. 115-300 HP coverage, bass and tournament fishing applications, pontoon performance setups, real..."
+category: "Buying Guide"
+date_published: 2026-05-17
+date_modified: 2026-05-17
+keywords: ["mercury pro xs buyer guide","mercury pro xs ontario","mercury pro xs pricing","mercury performance outboard"]
+author: Harris Boat Works
+content_type: blog_article
 ---
 
 # Mercury Pro XS Buyer Guide for Ontario (2026)
+
+> The canonical Mercury Pro XS buyer guide for Ontario boaters. 115-300 HP coverage, bass and tournament fishing applications, pontoon performance setups, real...
+
+**Category:** Buying Guide  
+**Published:** 2026-05-17  
+**Last updated:** 2026-05-17  
+**Read time:** 8 min read  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pro-xs-buyer-guide-ontario
+
+## Article
 
 ## Quick Answer
 
@@ -77,15 +96,11 @@ Within this family, the differences are calibration and prop matching — same p
 
 The V6 Pro XS comes with full SmartCraft compatibility, advanced rigging options, and Mercury's most aggressive throttle mapping. This is serious performance equipment, not casual recreational power.
 
-![Mercury Pro XS V6-rigged tournament bass boat at speed on an Ontario lake, two anglers visible](/lovable-uploads/inline-pro-xs-bass-boat-action.png)
-
 ## The V8 family — 250 / 300 Pro XS
 
 The 250 and 300 Pro XS use Mercury's 4.6L V8 powerhead. These are large motors for large boats — performance pontoons in the 24-26 ft class, fast fibreglass cruisers, offshore-style fishing rigs.
 
 For most Ontario freshwater applications, the V8 Pro XS is overkill. Where it earns its money: water-ski tournament boats, wakeboard boats, performance pontoons that actually run fast with full loads, fishing rigs targeting Bay of Quinte / Lake Simcoe / Great Lakes shorelines where you need to move between spots fast.
-
-![Mercury Pro XS rigging detail showing digital throttle, hydraulic steering, and SmartCraft gauges on a tournament-spec bass boat](/lovable-uploads/inline-pro-xs-rigging-detail.png)
 
 ## Pro XS vs FourStroke — the actual decision
 
@@ -174,3 +189,23 @@ Pro XS resale stays strong. A used Pro XS in good condition from a known service
 Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-05-17.*
+
+## FAQs
+
+_(no FAQs)_
+
+## Next steps
+
+- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
+- Repower information: https://www.mercuryrepower.ca/repower
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+

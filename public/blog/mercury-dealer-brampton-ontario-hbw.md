@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-brampton-ontario-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -84,6 +84,8 @@ Outdoor with shrinkwrap. No indoor. For most Brampton customers, local storage p
 
 ## Getting to Harris Boat Works from Brampton
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Route:** Highway 410 south to Highway 401 east (or take Highway 427 east to 401), then Highway 401 east through Toronto, exit Highway 115 east, then County Road 28 north into Gores Landing.
 
 **Approximate drive time:** Around 95 minutes outside rush hour. The 401 through Toronto is the wild card. Saturday mornings early or weekday mornings before 7 a.m. are the most reliable windows.
@@ -148,6 +150,8 @@ Why Brampton boaters still trailer to HBW:
 - **Once-a-year trip pays off.** A proper Mercury repower takes hours of dealer-portal work and shop time. Trailering to HBW for the repower itself, then storing locally for the season, is the pattern many Brampton customers run.
 - **Transparent CAD pricing.** [mercuryrepower.ca](https://mercuryrepower.ca) lets you build the quote at home before deciding to make the trip.
 - **Mercury Platinum-level work.** Closer dealers may lack the rigging depth for a clean install.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

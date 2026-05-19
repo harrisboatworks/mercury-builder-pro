@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -55,9 +55,34 @@ What FourStroke does well: fuel efficiency at cruise, smooth idle, quiet operati
 
 What FourStroke is not: fast out of the hole.
 
+::decision-card
+eyebrow: FourStroke vs Pro XS
+heading: How are you actually using the motor?
+subhead: Most Ontario boaters do not need a Pro XS. A correctly propped FourStroke handles the lake just fine. Pro XS earns its keep in specific use cases.
+leftLabel: Mercury FourStroke is the right call
+leftCriteria:
+  - Fishing, cruising, family pontoon
+  - Predictable load, predictable speeds
+  - Fuel economy matters more than hole shot
+  - Want the longest service intervals and quietest ride
+leftOutcome: FourStroke 90 to 200 HP
+leftVariant: recommended
+rightLabel: Mercury Pro XS earns the upgrade
+rightCriteria:
+  - Tournament bass or walleye fishing
+  - Wakeboarding, skiing, towing heavy loads
+  - You routinely run at the top of your motor's range
+  - Top-end speed and hole shot matter
+rightOutcome: Pro XS 115 to 250 HP
+rightVariant: alternative
+whenInDoubt: Buyers who pick Pro XS for the badge usually find a FourStroke would have done the job for less money and less fuel. Pick by use case, not by name.
+::
+
 ### Pro XS, performance fishing and speed applications
 
 Who it is for: bass anglers, walleye tournament competitors, anyone who wants to get to the other end of the lake as fast as possible.
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 Pro XS is tuned for performance. Faster hole shot, higher top-end RPM, stronger acceleration than the equivalent FourStroke HP. In the Ontario tournament fishing world, Pro XS is the standard.
 
@@ -99,6 +124,8 @@ Live CAD pricing on every Mercury family (except Verado, which is quoted individ
 If you are comparing FourStroke vs Pro XS for a specific hull, or you need help with pontoon sizing and Command Thrust configuration, call 905-342-2153.
 
 *Last reviewed: 2026-05-11.*
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

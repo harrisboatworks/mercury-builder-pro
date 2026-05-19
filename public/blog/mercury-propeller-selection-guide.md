@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -114,6 +114,8 @@ Command Thrust props typically:
 - Use 4-blade designs more commonly
 - Come in aluminum or stainless depending on HP and use
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 We rig pontoons with Command Thrust regularly at HBW. The prop that comes standard with a Command Thrust install is usually close to right, but sea trial confirms.
 
 ---
@@ -209,6 +211,8 @@ Yes. Rocks, logs, sand, and submerged debris are all real hazards. Aluminum prop
 
 **Should I keep a spare prop?**
 For most recreational boaters on Kawartha lakes, no, tow back to the dock and replace. For boaters running far from home or on bigger water, a spare prop and basic tools are smart insurance.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

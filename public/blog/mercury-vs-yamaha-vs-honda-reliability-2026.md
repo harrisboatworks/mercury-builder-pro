@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -77,9 +77,36 @@ The point is not that Yamaha or Honda fail more. The point is that when any moto
 ### Honda
 **Strengths:** Reliable four-stroke engineering. Quiet operation, fuel-efficient at cruise, well-built mechanically. Strong reputation in the small-HP portable class.
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Where to be careful:** Honda outboard dealer network in Ontario is smaller than either Mercury or Yamaha. Honda also has fewer options at the higher end of the HP range.
 
 **Our honest take:** Nothing wrong with the motor itself. The practical reliability disadvantage comes from the thinner dealer network in Ontario, not from the engineering.
+
+::decision-card
+eyebrow: Brand decision
+heading: Switch brands, or stay where you are?
+subhead: All three brands are mechanically reliable in 2026. The deciding factor is who services it when something goes wrong.
+leftLabel: Service network matters most
+leftCriteria:
+  - You boat in Ontario and want parts in hand same week
+  - You travel the Trent-Severn or run between lakes
+  - You do not have a current dealer relationship
+  - You want resale support when you eventually sell
+leftOutcome: Mercury wins on Ontario dealer density
+leftVariant: recommended
+rightLabel: You already have a relationship that works
+rightCriteria:
+  - Your current Yamaha or Honda dealer treats you well
+  - Parts and service have not been a problem
+  - The motor is under 10 years old with reasonable hours
+  - Switching brands adds $1,500 to $3,000 in rigging
+rightOutcome: Stay with what works. Reliability follows the relationship.
+rightVariant: alternative
+whenInDoubt: If your current dealer has been slow or quoted parts at 6+ week lead times, the switch usually pays for itself in one repower cycle.
+::
+
+---
 
 ## What reliability actually requires (regardless of brand)
 
@@ -125,6 +152,8 @@ After three generations of running this shop, we've serviced every major outboar
 The bigger reliability swing is who installed and rigged the motor, and whether the owner kept up with the 100-hour service. A botched install kills a perfect motor faster than the brand badge ever does.
 
 ---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

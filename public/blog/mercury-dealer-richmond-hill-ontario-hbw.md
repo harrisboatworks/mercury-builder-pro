@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw.md
-last_updated: 2026-05-16
+last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -90,6 +90,8 @@ Outdoor with shrinkwrap. No indoor option. If climate-controlled indoor storage 
 
 ## Getting to Harris Boat Works from Richmond Hill
 
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 **Route:** Highway 404 north to Highway 115 east, then exit to County Road 28 north into Gores Landing.
 
 **Approximate drive time:** Around 75 minutes in normal traffic. The route on 404 north is familiar to any Richmond Hill resident who's driven to cottage country. The last 30 minutes is rural, county roads, farmland, and then Rice Lake in the distance.
@@ -158,6 +160,8 @@ Why Richmond Hill boaters drive to HBW vs Simcoe-area dealers:
 - **Mercury Platinum-level expertise.** For repower work, dealer depth matters more than 20 minutes of drive time. HBW competes on rigging quality, not proximity.
 - **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://mercuryrepower.ca) before deciding — no phone calls, no negotiation games, real dealer pricing.
 - **One-stop service + storage.** Many Richmond Hill customers store at HBW over winter, get spring commissioning, and trailer back to Simcoe or Rice Lake for the season.
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

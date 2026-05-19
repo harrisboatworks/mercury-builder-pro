@@ -1,14 +1,33 @@
 ---
-slug: mercury-avator-charging-cottage-dock
-title: Charging a Mercury Avator at Your Cottage Dock (2026)
-seoTitle: Mercury Avator Cottage Charging | Ontario Electric Outboard
-description: How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage electric boating.
-publishDate: 2026-05-17
-hero_placeholder: /lovable-uploads/hero-avator-charging-cottage.png
-language: en
+canonical: https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock.md
+last_updated: 2026-05-19
+currency: CAD
+pickup_only: true
+delivery_offered: false
+location: Gores Landing, ON, Canada
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
+title: "Charging a Mercury Avator at Your Cottage Dock (2026)"
+description: "How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage electric boating."
+category: "Electric Boating"
+date_published: 2026-05-17
+date_modified: 2026-05-17
+keywords: ["mercury avator charging","electric outboard cottage charging","avator dock charging","ontario electric boat charging"]
+author: Harris Boat Works
+content_type: blog_article
 ---
 
 # Charging a Mercury Avator at Your Cottage Dock (2026)
+
+> How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage electric boating.
+
+**Category:** Electric Boating  
+**Published:** 2026-05-17  
+**Last updated:** 2026-05-17  
+**Read time:** 6 min read  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock
+
+## Article
 
 ## Quick Answer
 
@@ -139,3 +158,23 @@ Charging stops, the battery stays at whatever level it reached. When power retur
 Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-05-17.*
+
+## FAQs
+
+_(no FAQs)_
+
+## Next steps
+
+- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
+- Repower information: https://www.mercuryrepower.ca/repower
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+
