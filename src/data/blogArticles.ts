@@ -91,7 +91,7 @@ export const blogArticles: BlogArticle[] = [
     slug: 'mercury-9-9-vs-15-hp-tiller-ontario',
     title: "Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?",
     description: "Mercury 9.9 vs 15 HP tiller comparison for Ontario boaters: real differences in weight, fuel, capacity-plate limits, HP-restricted lakes, and kicker motor use. Honest dealer take.",
-    image: '/lovable-uploads/hero-mercury-fourstroke-buyer-guide.png',
+    image: '/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4.png',
     author: 'Jay Harris',
     datePublished: '2026-05-18',
     dateModified: '2026-05-18',
