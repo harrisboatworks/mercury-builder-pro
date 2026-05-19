@@ -306,8 +306,23 @@ const SHELL_PATH = join(DIST, 'index.html');
 const SITE_URL = 'https://www.mercuryrepower.ca';
 const MIN_BYTES = 4 * 1024;
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
+const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
+const TSX_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'tsx.cmd' : 'tsx');
+const VITE_NODE_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'vite-node.cmd' : 'vite-node');
 
 const shellPath = (path) => JSON.stringify(path);
+const runTsx = (file, options = {}) => execSync(`${shellPath(TSX_BIN)} ${shellPath(file)}`, {
+  cwd: ROOT,
+  encoding: 'utf8',
+  timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
+  ...options,
+});
+const runViteNode = (file, options = {}) => execSync(`${shellPath(VITE_NODE_BIN)} ${shellPath(file)}`, {
+  cwd: ROOT,
+  encoding: 'utf8',
+  timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
+  ...options,
+});
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = BUILD_FETCH_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -340,7 +355,7 @@ function loadFaqItems() {
   const tmpFile = join(ROOT, 'scripts', '.faq-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' });
+    const out = runTsx(tmpFile);
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
@@ -356,7 +371,7 @@ function loadCaseStudies() {
   const tmpFile = join(ROOT, 'scripts', '.casestudies-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' });
+    const out = runTsx(tmpFile);
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
