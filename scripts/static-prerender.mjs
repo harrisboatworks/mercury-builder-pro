@@ -387,7 +387,7 @@ function loadLocations() {
   const tmpFile = join(ROOT, 'scripts', '.locations-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' });
+    const out = runTsx(tmpFile);
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
@@ -413,7 +413,7 @@ function loadAllBlogArticlesForSitemap() {
   const tmpFile = join(ROOT, 'scripts', '.blog-dump-all.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
+    const out = runTsx(tmpFile, { maxBuffer: 16 * 1024 * 1024 });
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
@@ -465,7 +465,7 @@ function loadBlogArticles() {
   const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    const out = runTsx(tmpFile, { maxBuffer: 64 * 1024 * 1024 });
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
