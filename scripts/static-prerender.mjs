@@ -2979,7 +2979,7 @@ const routes = [
   {
     path: '/',
     title: 'Mercury Repower Ontario: Live CAD Quotes | Harris Boat Works',
-    description: 'Build a full Mercury outboard repower quote in CAD online — motor, install, financing, trade-in. Mercury Platinum Dealer since 1965. Pickup in Gores Landing.',
+    description: 'Build a full Mercury outboard repower quote in CAD online: motor, install, financing, trade-in. Mercury Platinum Dealer since 1965. Pickup in Gores Landing.',
     h1: 'Mercury Outboard Quotes: Real Prices, No Forms',
     intro: 'Build a real Mercury outboard quote online in three minutes. Live CAD pricing, financing options, and trade-in estimates. Family-owned Mercury Platinum Dealer on Rice Lake since 1947, selling Mercury since 1965.',
     schemas: [homepageSchema()]
