@@ -23,6 +23,10 @@
       "Every install lake-tested on Rice Lake"
     ]
   },
+  "standards": [
+    "Model Context Protocol (MCP) - implemented",
+    "Universal Commerce Protocol (UCP) - aligned, full conformance pending spec v1.0"
+  ],
   "description": "Ontario's Mercury Repower Centre on Rice Lake. Family-owned since 1947. Mercury Marine Platinum Dealer, Mercury-only since 1965, specializing in outboard sales, repowering, and factory-authorized service. CSI Award winner. Authorized Legend Boats dealer for new pontoon and aluminum boats. Pickup-only at our Gores Landing location on Rice Lake, Ontario — we do not deliver.",
   "founded": 1947,
   "mercuryDealerSince": 1965,

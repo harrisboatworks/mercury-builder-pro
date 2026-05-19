@@ -117,6 +117,18 @@ export default function AgentsHub() {
           specialists on Rice Lake, Ontario, family-owned since 1947.
         </p>
 
+        <aside className="text-protected mb-10 rounded-lg border border-repower-navy-900/10 bg-repower-cream p-5 text-base">
+          <p className="m-0">
+            <strong>Standards alignment:</strong> Built for the same agentic-commerce future Shopify
+            just announced with UCP (Universal Commerce Protocol, April 2026). HBW's MCP server,
+            <code>/.well-known</code> discovery files, and CAD-priced quote API already implement
+            the pattern UCP standardizes. We're tracking the spec as it stabilizes and will publish
+            full UCP conformance once v1.0 lands.
+          </p>
+        </aside>
+
+
+
         <section className="mb-10">
           <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Discovery endpoints</h2>
           <ul className="text-protected space-y-2">
