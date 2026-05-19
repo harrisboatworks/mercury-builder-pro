@@ -241,24 +241,19 @@ export default function TradeInPage() {
     return (
       <PageTransition>
         <QuoteLayout>
-          <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
-            {/* Skeleton back button */}
+          <QuotePageShell eyebrow="Step 4 · Trade-In" title="Trading in your current motor?">
             <Skeleton className="h-9 w-32" />
-            
-            {/* Skeleton card */}
-            <div className="p-8 border border-border bg-card rounded-lg space-y-6">
+            <div className="p-8 border border-repower-navy-900/10 bg-white space-y-6">
               <div className="space-y-3">
                 <Skeleton className="h-8 w-64" />
                 <Skeleton className="h-5 w-96" />
               </div>
-              
-              {/* Skeleton trade-in options */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
                 <Skeleton className="h-28 rounded-lg" />
                 <Skeleton className="h-28 rounded-lg" />
               </div>
             </div>
-          </div>
+          </QuotePageShell>
         </QuoteLayout>
       </PageTransition>
     );
@@ -267,40 +262,31 @@ export default function TradeInPage() {
   return (
     <PageTransition>
       <QuoteLayout>
-          <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
-            <div className="flex items-center gap-4">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={handleBack}
-                className="border-repower-navy-900/20 hover:border-repower-navy-900/30 font-light"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back
-              </Button>
-            </div>
-          
+        <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
+          <button
+            onClick={handleBack}
+            className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back
+          </button>
+        </div>
+        <QuotePageShell
+          eyebrow="Step 4 · Trade-In"
+          title="Trading in your current motor?"
+          subhead="Get an instant credit estimate. Final value is confirmed by our team on pickup."
+          className="!py-6 md:!py-8"
+        >
           {showSaveIndicator && (
             <div className="flex items-center gap-2 text-xs text-repower-gold animate-in fade-in slide-in-from-top-1 duration-300">
-              <svg 
-                className="w-3.5 h-3.5" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M5 13l4 4L19 7" 
-                />
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
               <span className="font-normal">Changes saved</span>
             </div>
           )}
-          
-          {/* Trade-in valuation */}
-          <TradeInValuation 
+
+          <TradeInValuation
             tradeInInfo={tradeInInfo}
             onTradeInChange={handleTradeInChange}
             onAutoAdvance={handleComplete}
@@ -310,35 +296,33 @@ export default function TradeInPage() {
             customerName={state.customerName}
             selectedMotorPrice={state.motor?.price || state.motor?.basePrice || state.motor?.msrp}
           />
-        </div>
-      
-      <AlertDialog open={showExitDialog} onOpenChange={setShowExitDialog}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Discard trade-in information?</AlertDialogTitle>
-            <AlertDialogDescription className="font-normal">
-              You have unsaved trade-in details. If you leave now, your trade-in information will be lost.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel className="font-normal">
-              Stay on Page
-            </AlertDialogCancel>
-            <AlertDialogAction
-              className="font-medium"
-              onClick={() => {
-                setIsDirty(false);
-                setShowExitDialog(false);
-                if (pendingNavigation) {
-                  navigate(pendingNavigation);
-                }
-              }}
-            >
-              Leave Without Saving
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+        </QuotePageShell>
+
+        <AlertDialog open={showExitDialog} onOpenChange={setShowExitDialog}>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Discard trade-in information?</AlertDialogTitle>
+              <AlertDialogDescription className="font-normal">
+                You have unsaved trade-in details. If you leave now, your trade-in information will be lost.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel className="font-normal">Stay on Page</AlertDialogCancel>
+              <AlertDialogAction
+                className="font-medium"
+                onClick={() => {
+                  setIsDirty(false);
+                  setShowExitDialog(false);
+                  if (pendingNavigation) {
+                    navigate(pendingNavigation);
+                  }
+                }}
+              >
+                Leave Without Saving
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </QuoteLayout>
     </PageTransition>
   );
