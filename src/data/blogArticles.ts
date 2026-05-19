@@ -22122,7 +22122,7 @@ If the boat is a 16 ft aluminum fishing boat that lives at WOT chasing walleye, 
 
 It exists. The 50 ELPT FourStroke runs the same 4-cylinder powerhead as the 60 with a different ECU map. It makes sense in two narrow situations: your capacity plate maxes out at 50 HP (not 60), or you want the 4-cylinder smoothness and amperage of the 60 but your hull is marginal for it.
 
-For most repowers, customers pick the 40 or the 60. The 50 is a niche pick, but we stock and quote it.
+For most repowers, customers pick the 40 or the 60. The 50 is a niche pick, but we stock and quote it. Shopping smaller? Our [Mercury 9.9 vs 15 HP tiller comparison](/blog/mercury-9-9-vs-15-hp-tiller-ontario) covers the small-motor decision points for jon boats, kickers, and sailboat auxiliaries.
 
 ---
 
