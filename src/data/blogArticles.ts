@@ -30753,7 +30753,7 @@ The ProKicker is a special tiller configuration on the 9.9 HP (and recently 15/2
 - Big-foot lower unit for better low-speed thrust
 - Adjustable angle for matched-steering with the primary motor
 
-Most serious Ontario walleye, muskie, and bass setups run a 9.9 ProKicker on the transom alongside their primary motor.
+Most serious Ontario walleye, muskie, and bass setups run a 9.9 ProKicker on the transom alongside their primary motor. If you're shopping the 9.9 to 15 HP tiller class specifically, we have a dedicated [Mercury 9.9 vs 15 HP comparison guide](/blog/mercury-9-9-vs-15-hp-tiller-ontario) that walks through capacity plate, HP-restricted lakes, and kicker motor use.
 
 ## What an installed FourStroke costs in Ontario (2026)
 
