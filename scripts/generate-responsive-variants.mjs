@@ -1,38 +1,59 @@
 #!/usr/bin/env node
 /**
- * Auto-generate responsive WebP + AVIF variants for every PNG/JPG in
- * public/lovable-uploads that is >= 50KB and missing one or more of:
- *   - <base>.webp / .avif       (master, capped at 1920w)
- *   - <base>-1024.webp / .avif  (tablet)
- *   - <base>-640.webp / .avif   (mobile)
+ * Auto-generate responsive WebP variants for referenced PNG/JPG uploads that
+ * are >= 50KB and missing one or more of:
+ *   - <base>.webp       (master, capped at 1920w)
+ *   - <base>-1024.webp  (tablet)
+ *   - <base>-640.webp   (mobile)
  *
  * Idempotent: existing variants are left alone. Skips small images
  * (the responsive-image check also skips < 50KB sources).
  *
- * Runs in prebuild ahead of check-responsive-images.mjs so new hero
- * PNGs dropped into public/lovable-uploads automatically get covered.
+ * Runs in prebuild ahead of check-responsive-images.mjs. It intentionally only
+ * covers referenced files/formats required by that check so production builds do
+ * not spend minutes converting hundreds of unused uploads or slow AVIF variants.
+ * Pass --include-avif or GENERATE_AVIF=1 for a one-off full AVIF backfill.
  */
 
-import { readdirSync, existsSync, statSync } from 'node:fs';
+import { readdirSync, existsSync, statSync, readFileSync } from 'node:fs';
 import { join, dirname, basename, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const UPLOADS_DIR = join(__dirname, '..', 'public', 'lovable-uploads');
+const ROOT = join(__dirname, '..');
+const UPLOADS_DIR = join(ROOT, 'public', 'lovable-uploads');
 const MIN_BYTES = 50 * 1024;
 const WEBP_QUALITY = 80;
 const AVIF_QUALITY = 55;
+const INCLUDE_AVIF = process.argv.includes('--include-avif') || process.env.GENERATE_AVIF === '1';
+
+const SCAN_DIRS = [
+  join(ROOT, 'public', 'blog'),
+  join(ROOT, 'public', 'locations'),
+  join(ROOT, 'public', 'motors'),
+  join(ROOT, 'public', 'case-studies'),
+  join(ROOT, 'src', 'data'),
+  join(ROOT, 'src', 'pages'),
+  join(ROOT, 'src', 'components'),
+];
+
+const REF_RE = /\/lovable-uploads\/([A-Za-z0-9_\-.]+?\.(?:png|jpg|jpeg))/gi;
 
 // Each format gets the same three widths.
-const WIDTHS = [
+const WEBP_WIDTHS = [
   { suffix: '.webp', ext: '.webp', width: 1920, format: 'webp' },
   { suffix: '-1024.webp', ext: '.webp', width: 1024, format: 'webp' },
   { suffix: '-640.webp', ext: '.webp', width: 640, format: 'webp' },
+];
+
+const AVIF_WIDTHS = [
   { suffix: '.avif', ext: '.avif', width: 1920, format: 'avif' },
   { suffix: '-1024.avif', ext: '.avif', width: 1024, format: 'avif' },
   { suffix: '-640.avif', ext: '.avif', width: 640, format: 'avif' },
 ];
+
+const WIDTHS = INCLUDE_AVIF ? [...WEBP_WIDTHS, ...AVIF_WIDTHS] : WEBP_WIDTHS;
 
 if (!existsSync(UPLOADS_DIR)) {
   console.log('No public/lovable-uploads directory; skipping variant generation.');
