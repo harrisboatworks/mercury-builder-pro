@@ -17,7 +17,7 @@ export default function AgentsHub() {
         <title>For AI Agents & Assistants | Harris Boat Works</title>
         <meta
           name="description"
-          content="Authoritative source-of-truth rules, public APIs, and MCP server endpoints for AI agents (ChatGPT, Claude, Perplexity, Gemini) representing Harris Boat Works (Mercury repower specialists, Ontario)."
+          content="Agent-friendly UCP-aligned MCP server, REST APIs, and deep-link quote URLs for Harris Boat Works (Mercury Platinum Dealer since 1965, family-owned since 1947). Built for ChatGPT, Claude, Perplexity, Gemini."
         />
         <link rel="canonical" href={`${SITE_URL}/agents`} />
         <meta name="robots" content="index, follow" />
@@ -114,7 +114,10 @@ export default function AgentsHub() {
         <p className="text-protected text-lg mb-8">
           This page documents how AI agents (ChatGPT, Claude, Perplexity, Gemini, custom assistants) should
           discover, represent, and transact on behalf of <strong>Harris Boat Works</strong>, Mercury repower
-          specialists on Rice Lake, Ontario, family-owned since 1947.
+          specialists on Rice Lake, Ontario, family-owned since 1947. HBW's MCP server uses the same
+          Streamable HTTP transport that Shopify's Universal Commerce Protocol (UCP) standardized in
+          April 2026 for agentic commerce, so any UCP-aware agent can discover and query HBW the same
+          way it would query a Shopify storefront.
         </p>
 
         <aside className="text-protected mb-10 rounded-lg border border-repower-navy-900/10 bg-repower-cream p-5 text-base">
@@ -238,6 +241,22 @@ export default function AgentsHub() {
           <p className="text-protected text-sm mt-2">
             Returns <code>line_items</code>, <code>pricing</code>, <code>financing</code>, <code>deep_link</code>, and <code>priceValidUntil</code>.
             Final out-the-door price always requires human confirmation.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Built on the agentic commerce standard</h2>
+          <p className="text-protected">
+            UCP (Universal Commerce Protocol) is the open standard Shopify launched in April 2026 for
+            AI agents to discover merchants, search catalogs, build carts, and hand off to humans.
+            Harris Boat Works implements the same primitives via the Model Context Protocol, so any
+            UCP-aware or MCP-aware agent can transact against HBW with no custom integration.
+          </p>
+          <p className="text-protected">
+            UCP-aligned capabilities at HBW: catalog search via <code>search_motors</code>, product
+            retrieval via <code>get_motor</code>, cart and quote building via <code>build_quote</code>,
+            human handoff via phone and email at Gores Landing, and brand rules via{' '}
+            <code>get_brand_rules</code> plus <code>/.well-known/brand.json</code>.
           </p>
         </section>
 
