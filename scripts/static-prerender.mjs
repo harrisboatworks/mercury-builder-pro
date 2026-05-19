@@ -2254,7 +2254,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
 }
 
 const frDealerStripHtml = '<div class="dealer-confidence-strip"><span>Concessionnaire Mercury Platinum</span><span>·</span><span>Famille propriétaire depuis 1947</span><span>·</span><span>Concessionnaire Mercury depuis 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Constructeur de devis disponible</a></div>';
-const koDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury 플래티넘 딜러</span><span>·</span><span>1947년부터</span><span>·</span><span>온타리오주 Gores Landing</span><span>·</span><a href="/quote/motor-selection">견적 도구 사용 가능</a></div>';
+const koDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury 플래티넘 딜러</span><span>·</span><span>1947년부터 가족 운영</span><span>·</span><span>1965년부터 Mercury 딜러</span><span>·</span><span>온타리오주 Gores Landing</span><span>·</span><a href="/quote/motor-selection">견적 도구 사용 가능</a></div>';
 const zhDealerStripHtml = '<div class="dealer-confidence-strip"><span>水星白金经销商</span><span>·</span><span>自1947年</span><span>·</span><span>安大略省 Gores Landing</span><span>·</span><a href="/quote/motor-selection">在线报价工具</a></div>';
 const esDealerStripHtml = '<div class="dealer-confidence-strip"><span>Distribuidor Mercury Platinum</span><span>·</span><span>Desde 1947</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Cotizador disponible</a></div>';
 
