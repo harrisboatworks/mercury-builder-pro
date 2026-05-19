@@ -452,8 +452,8 @@ export default function PromoSelectionPage() {
               )}
             </div>
           </div>
-        </div>
-      </div>
+        </QuotePageShell>
+      </QuoteLayout>
     </PageTransition>
   );
 }
