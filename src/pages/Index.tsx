@@ -45,8 +45,8 @@ const HOW_IT_WORKS = [
   {
     icon: Shield,
     image: stepPickupImage,
-    title: 'Lock it with a refundable deposit',
-    body: 'Hold your motor and pricing with a small refundable deposit. We confirm install date and walk you through next steps.',
+    title: 'Water-tested on Rice Lake before pickup',
+    body: 'Every Mercury we install gets a real water test on Rice Lake before you pick it up. You drive home with a motor that has been run, tuned, and verified, not a dyno number on a spec sheet.',
   },
 ];
 
@@ -118,6 +118,17 @@ export default function Index() {
 
       <main className="flex-1">
         <HeroRepower />
+
+        {/* PICKUP-BY-DESIGN BAND */}
+        <section className="bg-repower-cream border-y border-repower-navy-900/10">
+          <div className="container mx-auto px-4 py-4 md:py-5 text-center">
+            <p className="font-sans text-sm md:text-base text-repower-navy-900/85 leading-relaxed max-w-3xl mx-auto">
+              <span className="font-semibold text-repower-navy-900">Pickup at Gores Landing, by design.</span>{' '}
+              Every motor we install gets water-tested on Rice Lake first, so you drive home with a Mercury that has been run, not just bolted on. About 90 minutes from Toronto. Worth the drive.
+            </p>
+          </div>
+        </section>
+
         <TrustStrip />
 
         {/* HERITAGE BAND */}
@@ -218,7 +229,7 @@ export default function Index() {
                   {[
                     'Pay only for the motor, not a whole new boat.',
                     'Modern Mercury fuel economy and quiet running.',
-                    'Bonus warranty coverage may be available during current Mercury promotions.',
+                    'Get 7 years of Mercury factory coverage on most new outboards at HBW (Mercury Marine Get 7 promotion, see motor for current dates and eligibility).',
                     'Mercury-Certified technicians who sell what they service.',
                   ].map(line => (
                     <li key={line} className="flex flex-row items-start gap-3 text-repower-cream/90 text-sm md:text-base leading-snug md:leading-relaxed">

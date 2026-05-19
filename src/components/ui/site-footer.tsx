@@ -171,8 +171,18 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
           </div>
         </div>
 
+        {/* AI Brief Link */}
+        <div className="mt-12 border-t border-repower-cream/10 pt-6 text-center">
+          <Link
+            to="/agents"
+            className="font-sans text-xs md:text-sm text-repower-cream/55 hover:text-repower-cream transition-colors"
+          >
+            Researching with an AI? This site is built for that. Read the AI brief →
+          </Link>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-repower-cream/10 pt-8 md:flex-row">
+        <div className="mt-6 flex flex-col items-center justify-between gap-4 border-t border-repower-cream/10 pt-8 md:flex-row">
           <p className="font-sans text-sm text-repower-cream/45">
             © {currentYear} {COMPANY_INFO.name}. All rights reserved.
           </p>
