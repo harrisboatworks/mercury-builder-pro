@@ -60,7 +60,30 @@ if (!existsSync(UPLOADS_DIR)) {
   process.exit(0);
 }
 
-const sources = readdirSync(UPLOADS_DIR).filter((f) => /\.(png|jpe?g)$/i.test(f));
+function walk(dir) {
+  const out = [];
+  if (!existsSync(dir)) return out;
+  for (const entry of readdirSync(dir)) {
+    const p = join(dir, entry);
+    const s = statSync(p);
+    if (s.isDirectory()) out.push(...walk(p));
+    else if (/\.(md|mdx|ts|tsx|js|jsx|json)$/i.test(entry)) out.push(p);
+  }
+  return out;
+}
+
+const referenced = new Set();
+for (const dir of SCAN_DIRS) {
+  for (const file of walk(dir)) {
+    const content = readFileSync(file, 'utf8');
+    let m;
+    while ((m = REF_RE.exec(content)) !== null) referenced.add(m[1]);
+  }
+}
+
+const sources = [...referenced].filter(
+  (f) => /\.(png|jpe?g)$/i.test(f) && existsSync(join(UPLOADS_DIR, f)),
+);
 
 let generated = 0;
 let skipped = 0;
