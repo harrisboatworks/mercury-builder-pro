@@ -305,8 +305,34 @@ const PUBLIC = join(ROOT, 'public');
 const SHELL_PATH = join(DIST, 'index.html');
 const SITE_URL = 'https://www.mercuryrepower.ca';
 const MIN_BYTES = 4 * 1024;
+const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
+const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
+const TSX_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'tsx.cmd' : 'tsx');
+const VITE_NODE_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'vite-node.cmd' : 'vite-node');
 
 const shellPath = (path) => JSON.stringify(path);
+const runTsx = (file, options = {}) => execSync(`${shellPath(TSX_BIN)} ${shellPath(file)}`, {
+  cwd: ROOT,
+  encoding: 'utf8',
+  timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
+  ...options,
+});
+const runViteNode = (file, options = {}) => execSync(`${shellPath(VITE_NODE_BIN)} ${shellPath(file)}`, {
+  cwd: ROOT,
+  encoding: 'utf8',
+  timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
+  ...options,
+});
+
+async function fetchWithTimeout(url, options = {}, timeoutMs = BUILD_FETCH_TIMEOUT_MS) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
 
 if (!existsSync(SHELL_PATH)) {
   console.error(`[static-prerender] FATAL: ${SHELL_PATH} not found, run vite build first`);
@@ -329,7 +355,7 @@ function loadFaqItems() {
   const tmpFile = join(ROOT, 'scripts', '.faq-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' });
+    const out = runTsx(tmpFile);
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
@@ -345,7 +371,7 @@ function loadCaseStudies() {
   const tmpFile = join(ROOT, 'scripts', '.casestudies-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' });
+    const out = runTsx(tmpFile);
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
@@ -361,7 +387,7 @@ function loadLocations() {
   const tmpFile = join(ROOT, 'scripts', '.locations-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' });
+    const out = runTsx(tmpFile);
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
@@ -387,7 +413,7 @@ function loadAllBlogArticlesForSitemap() {
   const tmpFile = join(ROOT, 'scripts', '.blog-dump-all.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
+    const out = runTsx(tmpFile, { maxBuffer: 16 * 1024 * 1024 });
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
@@ -439,7 +465,7 @@ function loadBlogArticles() {
   const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    const out = runTsx(tmpFile, { maxBuffer: 64 * 1024 * 1024 });
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
@@ -457,7 +483,7 @@ async function loadMotors() {
   const API_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api';
   // 1) Try the public API first.
   try {
-    const res = await fetch(API_URL, { headers: { Accept: 'application/json' } });
+    const res = await fetchWithTimeout(API_URL, { headers: { Accept: 'application/json' } });
     if (res.ok) {
       const json = await res.json();
       const motors = Array.isArray(json?.motors) ? json.motors : [];
@@ -512,7 +538,7 @@ async function loadMotors() {
     );
   }
   const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&availability=neq.Exclude&order=horsepower.asc&limit=500`;
-  const res = await fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
+  const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
   if (!res.ok) {
     throw new Error(`[static-prerender] FATAL: Supabase fallback failed ${res.status} ${res.statusText}`);
   }
@@ -562,7 +588,7 @@ function loadTranslatedBlogArticles(modulePath, exportName) {
   // the entire zh-CN sitemap to silently empty out without anyone noticing.
   // We'd rather a red Vercel deploy than a silent multilingual SEO blackout.
   try {
-    const out = execSync(`npx vite-node ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    const out = runViteNode(tmpFile, { maxBuffer: 64 * 1024 * 1024 });
     const parsed = JSON.parse(out);
     if (!Array.isArray(parsed)) {
       throw new Error(`[static-prerender] ${exportName} loader did not return an array`);
