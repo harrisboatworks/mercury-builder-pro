@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Auto-generate responsive WebP variants for every PNG/JPG in
+ * Auto-generate responsive WebP + AVIF variants for every PNG/JPG in
  * public/lovable-uploads that is >= 50KB and missing one or more of:
- *   - <base>.webp       (master, capped at 1920w)
- *   - <base>-1024.webp  (tablet)
- *   - <base>-640.webp   (mobile)
+ *   - <base>.webp / .avif       (master, capped at 1920w)
+ *   - <base>-1024.webp / .avif  (tablet)
+ *   - <base>-640.webp / .avif   (mobile)
  *
  * Idempotent: existing variants are left alone. Skips small images
  * (the responsive-image check also skips < 50KB sources).
@@ -21,11 +21,17 @@ import sharp from 'sharp';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const UPLOADS_DIR = join(__dirname, '..', 'public', 'lovable-uploads');
 const MIN_BYTES = 50 * 1024;
-const QUALITY = 80;
-const VARIANTS = [
-  { suffix: '.webp', width: 1920 },
-  { suffix: '-1024.webp', width: 1024 },
-  { suffix: '-640.webp', width: 640 },
+const WEBP_QUALITY = 80;
+const AVIF_QUALITY = 55;
+
+// Each format gets the same three widths.
+const WIDTHS = [
+  { suffix: '.webp', ext: '.webp', width: 1920, format: 'webp' },
+  { suffix: '-1024.webp', ext: '.webp', width: 1024, format: 'webp' },
+  { suffix: '-640.webp', ext: '.webp', width: 640, format: 'webp' },
+  { suffix: '.avif', ext: '.avif', width: 1920, format: 'avif' },
+  { suffix: '-1024.avif', ext: '.avif', width: 1024, format: 'avif' },
+  { suffix: '-640.avif', ext: '.avif', width: 640, format: 'avif' },
 ];
 
 if (!existsSync(UPLOADS_DIR)) {
@@ -47,7 +53,7 @@ for (const file of sources) {
     continue;
   }
   const base = basename(file, extname(file));
-  const missing = VARIANTS.filter(
+  const missing = WIDTHS.filter(
     (v) => !existsSync(join(UPLOADS_DIR, base + v.suffix)),
   );
   if (!missing.length) continue;
@@ -55,14 +61,16 @@ for (const file of sources) {
   for (const v of missing) {
     const out = join(UPLOADS_DIR, base + v.suffix);
     try {
-      // Don't upscale: only resize when source is wider than target.
       const img = sharp(full);
       const meta = await img.metadata();
       const targetWidth = meta.width && meta.width > v.width ? v.width : meta.width;
-      await img
-        .resize({ width: targetWidth, withoutEnlargement: true })
-        .webp({ quality: QUALITY })
-        .toFile(out);
+      let pipeline = img.resize({ width: targetWidth, withoutEnlargement: true });
+      if (v.format === 'webp') {
+        pipeline = pipeline.webp({ quality: WEBP_QUALITY });
+      } else {
+        pipeline = pipeline.avif({ quality: AVIF_QUALITY, effort: 4 });
+      }
+      await pipeline.toFile(out);
       generated++;
       console.log(`  + ${base + v.suffix}`);
     } catch (err) {
