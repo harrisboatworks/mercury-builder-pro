@@ -11247,7 +11247,7 @@ Questions before you configure? Call **905-342-2153**.
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-Harris Boat Works | Mercury Marine Platinum Dealer | Since 1947 | Gores Landing, ON`,
+Harris Boat Works | Mercury Marine Platinum Dealer | Family-owned since 1947 | Mercury dealer since 1965 | Gores Landing, ON`,
     faqs: [
       {
         question: 'What is the best Mercury outboard for Lake Ontario salmon fishing?',
@@ -12700,7 +12700,7 @@ Stop troubleshooting and book a professional diagnostic if:
 
 For engine repairs, we only service Mercury and Mercruiser.
 
-Running a motor with an undiagnosed problem to try to force it to start can turn a $150 diagnostic into a much more serious repair. Book at [hbw.wiki/service](https://hbw.wiki/service).
+If you've tried the simple stuff and it still won't start, stop guessing and call us. Forcing it usually turns a small fix into a big one. Phone (905) 342-2153 or book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
