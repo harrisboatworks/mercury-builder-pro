@@ -45,8 +45,8 @@ const HOW_IT_WORKS = [
   {
     icon: Shield,
     image: stepPickupImage,
-    title: 'Lock it with a refundable deposit',
-    body: 'Hold your motor and pricing with a small refundable deposit. We confirm install date and walk you through next steps.',
+    title: 'Water-tested on Rice Lake before pickup',
+    body: 'Every Mercury we install gets a real water test on Rice Lake before you pick it up. You drive home with a motor that has been run, tuned, and verified, not a dyno number on a spec sheet.',
   },
 ];
 
