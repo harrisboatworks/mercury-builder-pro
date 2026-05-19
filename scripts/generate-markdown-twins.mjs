@@ -9,8 +9,19 @@ const PUBLIC = join(ROOT, 'public');
 const SITE_URL = 'https://www.mercuryrepower.ca';
 const PUBLIC_QUOTE_API = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api';
 const TWIN_DATE = new Date().toISOString().split('T')[0];
+const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
 
 const shellPath = (path) => JSON.stringify(path);
+
+async function fetchWithTimeout(url, options = {}, timeoutMs = BUILD_FETCH_TIMEOUT_MS) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
 
 function loadCaseStudies() {
   const dumpScript = `
@@ -80,7 +91,7 @@ async function loadAllQuoteBuilderMotors() {
   }
   // Match MotorSelectionPage: select all, order by hp asc, then JS-filter.
   const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&order=horsepower.asc&limit=2000`;
-  const res = await fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
+  const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
   if (!res.ok) throw new Error(`[markdown-twins] FATAL: motor_models fetch failed ${res.status} ${res.statusText}`);
   const all = await res.json();
   return (all || []).filter(m => {
@@ -95,7 +106,7 @@ async function loadAllQuoteBuilderMotors() {
 async function loadMotors() {
   const API_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api';
   try {
-    const res = await fetch(API_URL, { headers: { Accept: 'application/json' } });
+    const res = await fetchWithTimeout(API_URL, { headers: { Accept: 'application/json' } });
     if (res.ok) {
       const json = await res.json();
       const motors = Array.isArray(json?.motors) ? json.motors : [];
@@ -137,7 +148,7 @@ async function loadMotors() {
     throw new Error('[markdown-twins] FATAL: public-motors-api unreachable and no publishable Supabase key is available.');
   }
   const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&availability=neq.Exclude&order=horsepower.asc&limit=500`;
-  const res = await fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
+  const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
   if (!res.ok) throw new Error(`[markdown-twins] FATAL: Supabase fallback failed ${res.status} ${res.statusText}`);
   return res.json();
 }
