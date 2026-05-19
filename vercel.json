@@ -161,7 +161,7 @@
   ],
   "headers": [
     {
-      "_comment": "HTML / dynamic catch-all MUST come first — Vercel header rules with duplicate keys apply LAST-MATCH-WINS, so the long-cache rules below must override this short SWR default. (Previously this rule was at the bottom and was clobbering /lovable-uploads/* and /assets/* caching.)",
+      
       "source": "/(.*)",
       "headers": [
         {
