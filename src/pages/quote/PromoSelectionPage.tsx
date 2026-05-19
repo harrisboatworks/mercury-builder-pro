@@ -10,6 +10,8 @@ import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { cn } from '@/lib/utils';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { PageTransition } from '@/components/ui/page-transition';
+import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
 import { calculateMonthly, FINANCING_MINIMUM } from '@/lib/finance';
 
 type PromoOptionId = 'no_payments' | 'special_financing' | 'cash_rebate';
@@ -222,28 +224,25 @@ export default function PromoSelectionPage() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-b from-background via-secondary/30 to-accent/50">
-        {/* Header */}
-        <div className="container mx-auto px-4 py-6">
-          <Button
-            variant="ghost"
+      <QuoteLayout>
+        <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
+          <button
             onClick={handleBack}
-            className="text-foreground hover:bg-accent"
+            className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
+            <ArrowLeft className="w-4 h-4" />
             Back
-          </Button>
+          </button>
         </div>
-
-        {/* Main Content */}
-        <div className="container mx-auto px-4 pb-12">
-          <div className="max-w-4xl mx-auto text-center">
+        <QuotePageShell className="!py-6 md:!py-8">
+          <div className="text-center">
             {/* Mercury Logo */}
             <img
               src={mercuryLogo}
               alt="Mercury Marine"
-              className="h-12 mx-auto mb-6 brightness-0 "
+              className="h-12 mx-auto mb-6 brightness-0"
             />
+
 
             {/* Main Headline */}
             <motion.h1
@@ -453,8 +452,8 @@ export default function PromoSelectionPage() {
               )}
             </div>
           </div>
-        </div>
-      </div>
+        </QuotePageShell>
+      </QuoteLayout>
     </PageTransition>
   );
 }
