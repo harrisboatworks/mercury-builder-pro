@@ -9,7 +9,8 @@
     "build:dev": "vite build --mode development",
     "check:blog-leaks": "node scripts/check-blog-leaks.mjs",
     "check:responsive-images": "node scripts/check-responsive-images.mjs",
-    "prebuild": "npm run check:blog-leaks && npm run check:responsive-images",
+    "generate:responsive-variants": "node scripts/generate-responsive-variants.mjs",
+    "prebuild": "npm run check:blog-leaks && npm run generate:responsive-variants && npm run check:responsive-images",
     "lint": "eslint .",
     "lint:tokens": "node scripts/check-design-tokens.mjs",
     "preview": "vite preview"
