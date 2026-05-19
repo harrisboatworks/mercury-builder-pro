@@ -10,8 +10,16 @@ const SITE_URL = 'https://www.mercuryrepower.ca';
 const PUBLIC_QUOTE_API = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api';
 const TWIN_DATE = new Date().toISOString().split('T')[0];
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
+const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
+const TSX_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'tsx.cmd' : 'tsx');
 
 const shellPath = (path) => JSON.stringify(path);
+const runTsx = (file, options = {}) => execSync(`${shellPath(TSX_BIN)} ${shellPath(file)}`, {
+  cwd: ROOT,
+  encoding: 'utf8',
+  timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
+  ...options,
+});
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = BUILD_FETCH_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -31,7 +39,7 @@ function loadCaseStudies() {
   const tmpFile = join(ROOT, 'scripts', '.casestudies-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    return JSON.parse(execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' }));
+    return JSON.parse(runTsx(tmpFile));
   } finally {
     try { rmSync(tmpFile); } catch {}
   }
@@ -45,7 +53,7 @@ function loadLocations() {
   const tmpFile = join(ROOT, 'scripts', '.locations-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    return JSON.parse(execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' }));
+    return JSON.parse(runTsx(tmpFile));
   } finally {
     try { rmSync(tmpFile); } catch {}
   }
@@ -67,7 +75,7 @@ function loadBlogArticles() {
   const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    return JSON.parse(execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
+    return JSON.parse(runTsx(tmpFile, { maxBuffer: 64 * 1024 * 1024 }));
   } finally {
     try { rmSync(tmpFile); } catch {}
   }
