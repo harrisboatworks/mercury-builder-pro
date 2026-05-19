@@ -12700,7 +12700,7 @@ Stop troubleshooting and book a professional diagnostic if:
 
 For engine repairs, we only service Mercury and Mercruiser.
 
-Running a motor with an undiagnosed problem to try to force it to start can turn a $150 diagnostic into a much more serious repair. Book at [hbw.wiki/service](https://hbw.wiki/service).
+If you've tried the simple stuff and it still won't start, stop guessing and call us. Forcing it usually turns a small fix into a big one. Phone (905) 342-2153 or book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
