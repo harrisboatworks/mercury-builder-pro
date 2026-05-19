@@ -118,6 +118,17 @@ export default function Index() {
 
       <main className="flex-1">
         <HeroRepower />
+
+        {/* PICKUP-BY-DESIGN BAND */}
+        <section className="bg-repower-cream border-y border-repower-navy-900/10">
+          <div className="container mx-auto px-4 py-4 md:py-5 text-center">
+            <p className="font-sans text-sm md:text-base text-repower-navy-900/85 leading-relaxed max-w-3xl mx-auto">
+              <span className="font-semibold text-repower-navy-900">Pickup at Gores Landing, by design.</span>{' '}
+              Every motor we install gets water-tested on Rice Lake first, so you drive home with a Mercury that has been run, not just bolted on. About 90 minutes from Toronto. Worth the drive.
+            </p>
+          </div>
+        </section>
+
         <TrustStrip />
 
         {/* HERITAGE BAND */}
