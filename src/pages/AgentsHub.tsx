@@ -17,7 +17,7 @@ export default function AgentsHub() {
         <title>For AI Agents & Assistants | Harris Boat Works</title>
         <meta
           name="description"
-          content="Authoritative source-of-truth rules, public APIs, and MCP server endpoints for AI agents (ChatGPT, Claude, Perplexity, Gemini) representing Harris Boat Works (Mercury repower specialists, Ontario)."
+          content="Agent-friendly UCP-aligned MCP server, REST APIs, and deep-link quote URLs for Harris Boat Works (Mercury Platinum Dealer since 1965, family-owned since 1947). Built for ChatGPT, Claude, Perplexity, Gemini."
         />
         <link rel="canonical" href={`${SITE_URL}/agents`} />
         <meta name="robots" content="index, follow" />
