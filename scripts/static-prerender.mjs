@@ -3138,6 +3138,7 @@ const routes = [
     schemas: [agentsPageSchema()],
     extraNoscript: () =>
       '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Platinum Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +
+      '<section><h2>Built on the agentic commerce standard</h2><p>Universal Commerce Protocol (UCP) is the open standard Shopify launched April 2026 for AI agents to discover merchants, search catalogs, build carts, and hand off to humans. HBW implements the same primitives via MCP, so any UCP-aware agent can query us the same way it would query a Shopify storefront.</p><p>UCP-aligned capabilities at HBW: catalog search via search_motors, product retrieval via get_motor, cart/quote building via build_quote, human handoff via phone (905) 342-2153 or info@harrisboatworks.ca at Gores Landing, brand rules via get_brand_rules and /.well-known/brand.json.</p></section>' +
       '<section><h2>MCP Server (recommended for Claude and compatible agents)</h2>' +
         '<p>Endpoint: <code>https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server</code></p>' +
         '<p>Transport: JSON-RPC 2.0 over HTTPS.</p>' +
