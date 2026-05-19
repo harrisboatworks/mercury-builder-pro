@@ -2189,7 +2189,7 @@ const blogArticleRoutes = blogArticles.map(article => ({
         ).join('') + '</dl></section>'
       : '';
     const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
-    const dealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>Since 1947</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+    const dealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>Family-owned since 1947</span><span>·</span><span>Mercury dealer since 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
     return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}`;
   }
 }));
