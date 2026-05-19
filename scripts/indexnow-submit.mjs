@@ -17,6 +17,17 @@ const SITE = `https://${HOST}`;
 const KEY = '03999430e4bae3d7d7be108f62646dbf';
 const KEY_LOCATION = `${SITE}/${KEY}.txt`;
 const ENDPOINT = 'https://api.indexnow.org/indexnow';
+const INDEXNOW_TIMEOUT_MS = Number(process.env.INDEXNOW_TIMEOUT_MS || 5000);
+
+async function fetchWithTimeout(url, options = {}, timeoutMs = INDEXNOW_TIMEOUT_MS) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
 
 function normalize(u) {
   try {
@@ -50,7 +61,7 @@ async function submitToIndexNow() {
   console.log(`[indexnow:build] submitting ${urls.length} URLs (key ${KEY.slice(0, 8)}…)`);
 
   try {
-    const response = await fetch(ENDPOINT, {
+    const response = await fetchWithTimeout(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify({
