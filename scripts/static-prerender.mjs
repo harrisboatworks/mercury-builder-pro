@@ -3132,9 +3132,9 @@ const routes = [
   {
     path: '/agents',
     title: 'AI Agent Integration: Harris Boat Works Mercury Dealer',
-    description: 'Agent-friendly endpoints for AI assistants (ChatGPT, Claude, Perplexity, Gemini). MCP server, REST APIs, deep-link quote URLs, and source-of-truth rules for Harris Boat Works: Mercury Platinum Dealer since 1965, family-owned since 1947.',
+    description: 'Agent-friendly UCP-aligned MCP server, REST APIs, and deep-link quote URLs for Harris Boat Works (Mercury Platinum Dealer since 1965, family-owned since 1947). Built for ChatGPT, Claude, Perplexity, Gemini.',
     h1: 'AI Agent Integration: Harris Boat Works',
-    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents.',
+    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW\'s MCP server uses the same Streamable HTTP transport that Shopify\'s Universal Commerce Protocol (UCP) standardized in April 2026 for agentic commerce.',
     schemas: [agentsPageSchema()],
     extraNoscript: () =>
       '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Platinum Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +
