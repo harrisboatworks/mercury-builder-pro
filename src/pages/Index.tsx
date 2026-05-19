@@ -218,7 +218,7 @@ export default function Index() {
                   {[
                     'Pay only for the motor, not a whole new boat.',
                     'Modern Mercury fuel economy and quiet running.',
-                    'Bonus warranty coverage may be available during current Mercury promotions.',
+                    'Get 7 years of Mercury factory coverage on most new outboards at HBW (Mercury Marine Get 7 promotion, see motor for current dates and eligibility).',
                     'Mercury-Certified technicians who sell what they service.',
                   ].map(line => (
                     <li key={line} className="flex flex-row items-start gap-3 text-repower-cream/90 text-sm md:text-base leading-snug md:leading-relaxed">
