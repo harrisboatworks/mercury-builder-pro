@@ -177,6 +177,14 @@ If the motor doesn't crank at all (not a slow crank, no crank):
 
 ---
 
+## Step 6: Check for ECM Fault Codes or Alarms
+
+If battery, fuel, spark, and the starting circuit all check out and the motor still won't start, the next layer is the ECM. If you have a SmartCraft display, VesselView, or any Mercury gauge on the helm, check it before and during cranking. Mercury's engine management system stores fault codes and displays active alarms that point to exactly where the ECM thinks the problem is.
+
+Take a photo of any displayed code or message. If you can't decipher it, include the photo when you book the service appointment. Beyond this point you're into ECM, sensor, fuel pump, or compression territory, which needs a Mercury-certified diagnostic with dealer tools (Mercury G3) that owners don't have access to.
+
+---
+
 ## When to Stop and Bring It In
 
 Stop troubleshooting and book a professional diagnostic if:
