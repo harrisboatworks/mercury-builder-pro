@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-05-19
+last_updated: 2026-05-20
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -180,7 +180,7 @@ Configure your motor, V8 FourStroke, Pro XS, or ProKicker, at **[mercuryrepower.
 Questions before you configure? Call **905-342-2153**.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-Harris Boat Works | Mercury Marine Platinum Dealer | Since 1947 | Gores Landing, ON
+Harris Boat Works | Mercury Marine Platinum Dealer | Family-owned since 1947 | Mercury dealer since 1965 | Gores Landing, ON
 
 ## FAQs
 

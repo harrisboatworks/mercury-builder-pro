@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination.md
-last_updated: 2026-05-19
+last_updated: 2026-05-20
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)"
 description: "A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline, transport. From the dealer that does this every..."
 category: "Mercury Outboards"
-date_published: 2026-05-26
-date_modified: 2026-05-07
+date_published: 2026-05-19
+date_modified: 2026-05-19
 keywords: ["Mercury repower GTA","Mercury repower Toronto","Mercury repower Mississauga","boat repower GTA cost","outboard repower process Toronto","Mercury Platinum repower dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline, transport. From the dealer that does this every...
 
 **Category:** Mercury Outboards  
-**Published:** 2026-05-26  
-**Last updated:** 2026-05-07  
+**Published:** 2026-05-19  
+**Last updated:** 2026-05-19  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination
 

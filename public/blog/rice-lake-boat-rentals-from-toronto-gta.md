@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta.md
-last_updated: 2026-05-19
+last_updated: 2026-05-20
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide"
 description: "A Rice Lake boat rental day from the GTA, drive time, pricing, what's included, what to bring. From Harris Boat Works, the marina that's been on Rice Lake s..."
 category: "Boating Lifestyle"
-date_published: 2026-05-31
-date_modified: 2026-05-07
+date_published: 2026-05-16
+date_modified: 2026-05-16
 keywords: ["Rice Lake boat rentals","boat rentals near Toronto","Kawarthas pontoon rentals","family boat rental Ontario","day trip boat rental GTA","pontoon rental Toronto"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > A Rice Lake boat rental day from the GTA, drive time, pricing, what's included, what to bring. From Harris Boat Works, the marina that's been on Rice Lake s...
 
 **Category:** Boating Lifestyle  
-**Published:** 2026-05-31  
-**Last updated:** 2026-05-07  
+**Published:** 2026-05-16  
+**Last updated:** 2026-05-16  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta
 
