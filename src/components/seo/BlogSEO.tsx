@@ -8,8 +8,15 @@ interface BlogSEOProps {
   article: BlogArticle;
 }
 
+function getDealerCityFromSlug(slug: string): string | null {
+  const m = slug.match(/^mercury-dealer-(.+?)(?:-ontario)?-hbw$/);
+  if (!m) return null;
+  return m[1].split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
 export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
+  const dealerCity = getDealerCityFromSlug(article.slug);
   const cleanDescription = getCleanDescription(article);
 
   // Calculate word count from content
@@ -192,7 +199,28 @@ export function BlogSEO({ article }: BlogSEOProps) {
             "appearance": url
           }
         }
-      ] : [])
+      ] : []),
+      ...(dealerCity ? [{
+        "@type": "LocalBusiness",
+        "@id": `${url}#localbusiness`,
+        "name": "Harris Boat Works",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "5369 Harris Boat Works Rd",
+          "addressLocality": "Gores Landing",
+          "addressRegion": "ON",
+          "postalCode": "K0K 2E0",
+          "addressCountry": "CA"
+        },
+        "telephone": "+1-905-342-2153",
+        "url": SITE_URL,
+        "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
+        "priceRange": "$$",
+        "areaServed": [
+          { "@type": "City", "name": `${dealerCity}, Ontario` },
+          { "@type": "Place", "name": "Greater Toronto Area" }
+        ]
+      }] : [])
     ]
   };
 
