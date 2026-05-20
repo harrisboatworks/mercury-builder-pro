@@ -7,11 +7,11 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Dealer for Mississauga: Where to Go When Closer Dealers Don't Cut It"
-description: "Looking for a Mercury Platinum dealer for Mississauga? Harris Boat Works on Rice Lake - about 90 minutes northeast - handles Mercury repowers, sales, service, and..."
+title: "Mercury Repower Cost in Mississauga (2026): Real Motor Prices from a Platinum Dealer"
+description: "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Platinum dealer on Rice Lake. Build an installed total online."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-05-20
 keywords: ["mercury dealer mississauga","mercury repower mississauga","mercury outboard mississauga ontario","boat motor dealer mississauga","harris boat works mississauga customers"]
 author: Harris Boat Works
 content_type: blog_article
