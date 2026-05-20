@@ -47,11 +47,20 @@ export function useContainerAwareScale(
     // Use the smaller scale to ensure image fits (maintains aspect ratio)
     const optimalScale = Math.min(scaleForHeight, scaleForWidth);
     
-    // Clamp between min and max
-    const clampedScale = Math.max(minScale, Math.min(maxScale, optimalScale));
+    // Quality-aware cap: don't upscale low-resolution images (would look pixelated/blurry).
+    // Tiered cap based on the image's smaller natural dimension.
+    const naturalMin = Math.min(imgWidth, imgHeight);
+    let qualityMaxScale = maxScale;
+    if (naturalMin < 250) qualityMaxScale = 1.0;
+    else if (naturalMin < 450) qualityMaxScale = 1.25;
+    else if (naturalMin < 700) qualityMaxScale = 1.5;
+    
+    // Clamp between min and quality-adjusted max
+    const clampedScale = Math.max(minScale, Math.min(qualityMaxScale, optimalScale));
     
     setScale(clampedScale);
   }, [targetFillPercent, maxScale, minScale]);
+
 
   const handleImageLoad = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
     const img = e.currentTarget;
