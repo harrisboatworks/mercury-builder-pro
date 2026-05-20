@@ -99,7 +99,7 @@ If anything feels wrong during this sequence, stop. Don't push through. Most spr
 
 **Overheats within 5 minutes:** impeller, blocked water intake (mud, weeds, mouse nest), or a stuck thermostat. Same rule: stop the motor.
 
-Our [Mercury Outboard Won't Start Troubleshooting Guide](/blog/mercury-outboard-wont-start-troubleshooting-ontario) and [Mercury Overheating Guide](/blog/mercury-overheating-troubleshooting) cover these in more detail if you want to dig deeper.
+Our [Mercury Outboard Won't Start Troubleshooting Guide](/blog/mercury-outboard-wont-start-troubleshooting) and [Mercury Overheating Guide](/blog/mercury-overheating-troubleshooting) cover these in more detail if you want to dig deeper.
 
 ## What we see at HBW
 

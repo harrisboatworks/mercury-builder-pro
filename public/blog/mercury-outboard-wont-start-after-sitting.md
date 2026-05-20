@@ -200,7 +200,7 @@ Often yes, the motor started on fuel already in the system but couldn't maintain
 ## Internal Links
 
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Mercury Outboard Won't Start, Ontario Diagnostic Flow](/blog/mercury-outboard-wont-start-troubleshooting-ontario)
+- [Mercury Outboard Won't Start, Ontario Diagnostic Flow](/blog/mercury-outboard-wont-start-troubleshooting)
 - [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
 
 ---

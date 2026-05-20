@@ -63,6 +63,7 @@
     { "source": "/mercury-outboards-oshawa", "destination": "/locations/oshawa-mercury-dealer", "statusCode": 301 },
     { "source": "/mercury-outboards-bowmanville", "destination": "/locations/bowmanville-courtice-mercury-dealer", "statusCode": 301 },
     { "source": "/repower-quote", "destination": "/quote/motor-selection", "statusCode": 301 },
+    { "source": "/blog/mercury-outboard-wont-start-troubleshooting-ontario", "destination": "/blog/mercury-outboard-wont-start-troubleshooting", "statusCode": 301 },
     { "source": "/blog/mercury-150-200hp-v6-performance", "destination": "/blog/mercury-150-300hp-pro-xs-performance-guide", "statusCode": 301 },
     { "source": "/blog/mercury-fourstroke-vs-verado-comparison", "destination": "/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado", "statusCode": 301 },
     { "source": "/blog/troubleshooting-outboard-overheating", "destination": "/blog/outboard-overheating-emergency-guide", "statusCode": 301 },
