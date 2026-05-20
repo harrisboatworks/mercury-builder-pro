@@ -18,6 +18,7 @@ import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './Diagnostic
 import { CostStack, type CostStackProps, type CostStackItem } from './CostStack';
 import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustItem } from './BilingualTrustCard';
 import { PullQuote, type PullQuoteProps } from './PullQuote';
+import { MercuryPriceTable, type MercuryPriceTableProps } from './MercuryPriceTable';
 import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 
 // ---------------------------------------------------------------------------
@@ -246,13 +247,29 @@ function rewriteWalkaroundLeadCapture(md: string): string {
   );
 }
 
+function rewriteMercuryPriceTable(md: string): string {
+  // Supports both bodied (`::mercury-price-table\nkey: value\n::`) and
+  // bodiless (`::mercury-price-table`) forms. Bodiless => full list.
+  let out = md.replace(
+    /^::mercury-price-table\s*\n([\s\S]*?)\n::\s*$/gm,
+    (_m, body) => `:::mercury-price-table\n${body}\n:::`,
+  );
+  out = out.replace(
+    /^::mercury-price-table\s*$/gm,
+    ':::mercury-price-table\n\n:::',
+  );
+  return out;
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteWalkaroundLeadCapture(
-    rewritePullQuote(
-      rewriteBilingualTrust(
-        rewriteCostStack(
-          rewriteDiagnosticFlow(
-            rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+  return rewriteMercuryPriceTable(
+    rewriteWalkaroundLeadCapture(
+      rewritePullQuote(
+        rewriteBilingualTrust(
+          rewriteCostStack(
+            rewriteDiagnosticFlow(
+              rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+            ),
           ),
         ),
       ),
@@ -291,7 +308,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -301,10 +318,11 @@ interface RenderChunk {
   costStackProps?: CostStackProps;
   bilingualTrustProps?: BilingualTrustCardProps;
   pullQuoteProps?: PullQuoteProps;
+  mercuryPriceTableProps?: MercuryPriceTableProps;
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -578,6 +596,26 @@ function splitDirectives(md: string): RenderChunk[] {
       if (props) chunks.push({ kind: 'pull-quote', content: '', pullQuoteProps: props });
     } else if (name === 'walkaround-lead-capture') {
       chunks.push({ kind: 'walkaround-lead-capture', content: '' });
+    } else if (name === 'mercury-price-table') {
+      const props: MercuryPriceTableProps = {};
+      for (const raw of body.split('\n')) {
+        const line = raw.trim();
+        if (!line) continue;
+        const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+        if (!kv) continue;
+        const key = kv[1];
+        const val = kv[2].trim();
+        if (key === 'group' && /^(portable|mid-range|high-output|v6-v8)$/.test(val)) {
+          props.group = val as MercuryPriceTableProps['group'];
+        } else if (key === 'minHp') {
+          const n = Number(val);
+          if (Number.isFinite(n)) props.minHp = n;
+        } else if (key === 'maxHp') {
+          const n = Number(val);
+          if (Number.isFinite(n)) props.maxHp = n;
+        }
+      }
+      chunks.push({ kind: 'mercury-price-table', content: '', mercuryPriceTableProps: props });
     }
     last = m.index + m[0].length;
   }
@@ -628,6 +666,9 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'walkaround-lead-capture') {
       return <WalkaroundLeadCapture key={`${keyPrefix}-wl-${i}`} />;
+    }
+    if (chunk.kind === 'mercury-price-table') {
+      return <MercuryPriceTable key={`${keyPrefix}-mpt-${i}`} {...(chunk.mercuryPriceTableProps || {})} />;
     }
     if (!chunk.content.trim()) return null;
     return (

@@ -238,6 +238,84 @@ function renderPullQuoteHtml(body) {
   return `<div class="my-8 w-full bg-repower-paper p-4 rounded-2xl shadow-sm border border-border/30"><div class="bg-repower-navy-900 text-repower-paper rounded-xl p-8 md:p-10 relative overflow-hidden"><span aria-hidden="true" class="absolute top-2 left-4 md:top-3 md:left-6 font-display text-mercury-red leading-none select-none pointer-events-none" style="font-size:6rem">&ldquo;</span><blockquote class="relative font-display text-2xl md:text-3xl leading-tight font-semibold text-balance text-repower-paper m-0 pt-8 md:pt-6">${quoteHtml}</blockquote>${footer}</div></div>`;
 }
 
+// Mirror src/data/motorPriceTable.ts in plain Node, so the same CSV drives
+// both the React component and the crawler-visible prerendered HTML.
+const MOTOR_GROUPS_PRERENDER = [
+  { key: 'portable',    label: 'Portable (2.5 to 20 HP)',     description: 'Tenders, canoes, small tin boats, kickers.',                minHp: 0,   maxHp: 20 },
+  { key: 'mid-range',   label: 'Mid-Range (25 to 60 HP)',     description: 'Fishing boats, small bowriders, smaller pontoons.',         minHp: 25,  maxHp: 60 },
+  { key: 'high-output', label: 'High-Output (75 to 150 HP)',  description: 'Bowriders, larger pontoons, dedicated fishing rigs.',       minHp: 75,  maxHp: 150 },
+  { key: 'v6-v8',       label: 'V6 and V8 (175 to 300 HP)',   description: 'Performance bowriders, deck boats, tournament platforms.',  minHp: 175, maxHp: 9999 },
+];
+let _motorPriceRowsCache = null;
+function loadMotorPriceRows() {
+  if (_motorPriceRowsCache) return _motorPriceRowsCache;
+  try {
+    const csvPath = join(__dirname, '..', 'src', 'data', 'mercury-dealer-prices.csv');
+    const raw = readFileSync(csvPath, 'utf8');
+    const lines = raw.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+    const rows = [];
+    for (let i = 1; i < lines.length; i++) {
+      const cells = lines[i].split(',').map(c => c.trim());
+      if (cells.length < 4) continue;
+      const [modelNumber, description, msrpStr, dealerStr] = cells;
+      const hpMatch = /^\s*(\d+(?:\.\d+)?)/.exec(description);
+      if (!hpMatch) continue;
+      const hp = parseFloat(hpMatch[1]);
+      const dealerPrice = Number(String(dealerStr).replace(/[^\d.]/g, ''));
+      if (!Number.isFinite(hp) || !Number.isFinite(dealerPrice) || dealerPrice <= 0) continue;
+      if (/verado/i.test(description)) continue;
+      let group;
+      if (hp <= 20) group = 'portable';
+      else if (hp <= 60) group = 'mid-range';
+      else if (hp <= 150) group = 'high-output';
+      else group = 'v6-v8';
+      rows.push({ modelNumber, description, hp, dealerPrice, group });
+    }
+    rows.sort((a, b) => a.hp - b.hp || a.description.localeCompare(b.description));
+    _motorPriceRowsCache = rows;
+    return rows;
+  } catch (err) {
+    console.warn('[static-prerender] mercury-dealer-prices.csv load failed:', err?.message);
+    _motorPriceRowsCache = [];
+    return [];
+  }
+}
+function fmtCadPrerender(n) {
+  return '$' + Number(n).toLocaleString('en-CA', { maximumFractionDigits: 0 });
+}
+function renderMercuryPriceTableHtml(body) {
+  const params = {};
+  for (const raw of String(body || '').split('\n')) {
+    const line = raw.trim();
+    if (!line) continue;
+    const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    const k = kv[1]; const v = kv[2].trim();
+    if (k === 'group' && /^(portable|mid-range|high-output|v6-v8)$/.test(v)) params.group = v;
+    else if (k === 'minHp') { const n = Number(v); if (Number.isFinite(n)) params.minHp = n; }
+    else if (k === 'maxHp') { const n = Number(v); if (Number.isFinite(n)) params.maxHp = n; }
+  }
+  const all = loadMotorPriceRows();
+  const filtered = all.filter(r => {
+    if (params.group && r.group !== params.group) return false;
+    if (typeof params.minHp === 'number' && r.hp < params.minHp) return false;
+    if (typeof params.maxHp === 'number' && r.hp > params.maxHp) return false;
+    return true;
+  });
+  if (!filtered.length) return '';
+  const groups = MOTOR_GROUPS_PRERENDER
+    .map(g => ({ g, rows: filtered.filter(r => r.group === g.key) }))
+    .filter(x => x.rows.length > 0);
+  if (!groups.length) return '';
+  const sections = groups.map(({ g, rows }) => {
+    const tbody = rows.map(r =>
+      `<tr class="border-b border-border/40 last:border-b-0"><td class="py-2 pr-3 text-repower-navy-900">${escHtml(r.description)}</td><td class="py-2 px-3 text-right tabular-nums text-repower-navy-900">${escHtml(String(r.hp))}</td><td class="py-2 pl-3 text-right tabular-nums font-semibold text-repower-navy-900">${escHtml(fmtCadPrerender(r.dealerPrice))}</td></tr>`
+    ).join('');
+    return `<section class="flex flex-col gap-3"><header><h4 class="font-display font-semibold text-lg text-repower-navy-900 m-0">${escHtml(g.label)}</h4><p class="text-xs text-muted-foreground m-0 mt-0.5">${escHtml(g.description)}</p></header><div class="overflow-x-auto"><table class="w-full text-sm border-collapse"><thead><tr class="border-b border-repower-navy-900/30"><th class="text-left py-2 pr-3 font-display font-semibold text-repower-navy-900">Model</th><th class="text-right py-2 px-3 font-display font-semibold text-repower-navy-900 tabular-nums w-16">HP</th><th class="text-right py-2 pl-3 font-display font-semibold text-repower-navy-900 tabular-nums w-32">Price (CAD)</th></tr></thead><tbody>${tbody}</tbody></table></div></section>`;
+  }).join('');
+  return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8"><div class="text-[11px] uppercase tracking-[0.14em] font-medium text-muted-foreground mb-2">Mercury Outboard Pricing (CAD)</div><h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0 text-balance tracking-tight">Current dealer pricing by HP class</h3><p class="font-sans text-sm text-muted-foreground leading-relaxed mt-2 mb-0">Bare motor pricing in CAD, before HST. Pricing tracks the same CSV the rest of the site uses.</p></div><div class="px-6 py-6 md:px-8 md:py-8 flex flex-col gap-8">${sections}</div><div class="border-t border-repower-navy-900/15 px-6 py-4 md:px-8 text-xs text-muted-foreground italic">Motor prices are the bare motor. A full repower also includes rigging, controls, and installation. <a href="/quote/motor-selection" class="text-mercury-red font-semibold not-italic underline underline-offset-2">Build an installed total in the quote builder</a>.</div></div>`;
+}
+
 // Replace authoring directives (`::name ... ::`) with prerendered HTML
 // matching the React component output, so crawlers see real markup.
 function expandVisualDirectives(md) {
@@ -256,6 +334,10 @@ function expandVisualDirectives(md) {
   md = sub(/^::cost-stack\s*\n([\s\S]*?)\n::\s*$/gm, renderCostStackHtml);
   md = sub(/^::bilingual-trust\s*\n([\s\S]*?)\n::\s*$/gm, renderBilingualTrustHtml);
   md = sub(/^::pull-quote\s*\n([\s\S]*?)\n::\s*$/gm, renderPullQuoteHtml);
+  // Bodied mercury-price-table form: `::mercury-price-table\nkey: val\n::`
+  md = sub(/^::mercury-price-table\s*\n([\s\S]*?)\n::\s*$/gm, renderMercuryPriceTableHtml);
+  // Bodiless mercury-price-table form: a single line `::mercury-price-table`
+  md = sub(/^(::mercury-price-table)\s*$/gm, () => renderMercuryPriceTableHtml(''));
   // Bodiless directive: a single line `::walkaround-lead-capture`.
   md = sub(/^(::walkaround-lead-capture)\s*$/gm, renderWalkaroundLeadCaptureHtml);
   return { md, slots };

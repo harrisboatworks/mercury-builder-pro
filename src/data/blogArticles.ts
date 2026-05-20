@@ -21466,23 +21466,14 @@ A plain 9.9 MH (manual start, tiller, no trim) sits at the bottom of the lineup.
 
 ---
 
-## Portable Mercury Outboards: 2.5, 25 HP
+## Current Mercury Outboard Prices by HP Class
 
-This is where fishing tenders, canoes, dinghies, and 12, 16 ft tin boats live. These motors are carbureted or EFI depending on size, and most in this range use tiller steering.
+This is the full current Mercury outboard lineup we sell, grouped by HP class. The table below is generated from the same pricing data the rest of mercuryrepower.ca uses, so prices stay in sync site-wide.
 
-| HP | Common Model | Dealer Price (CAD) | MSRP (CAD) | Best For |
-|----|---|---:|---:|---|
-| 2.5 | 2.5 MH FourStroke | $1,271 | $1,385 | Dinghy, canoe, small tin |
-| 3.5 | 3.5 MH FourStroke | $1,524 | $1,660 | Small fishing boat, tiny kicker |
-| 5 | 5 MH FourStroke | $2,019 | $2,200 | Sailboat auxiliary, small tin |
-| 8 | 8 MH FourStroke | $3,036 | $3,310 | 12, 14 ft tin boat |
-| 9.9 | 9.9 MH FourStroke | $2,999 | $3,875 | 14 ft tin, kicker for medium fishing rig |
-| 9.9 | 9.9 ELPT CT ProKicker EFI | $4,901 | $5,345 | Serious trolling kicker, big fishing platforms |
-| 15 | 15 MH FourStroke | $3,872 | $4,225 | 14, 16 ft fishing boat |
-| 20 | 20 ELHPT FourStroke | $5,390 | $5,880 | 16 ft fishing boat, small bowrider |
-| 25 | 25 ELHPT FourStroke | $6,111 | $6,665 | 16, 18 ft tin, small runabout |
+::mercury-price-table
+::
 
-*Prices are dealer selling prices in CAD, before HST, controls, prop, and installation. Subject to change as Mercury Canada updates pricing. Verify current prices at mercuryrepower.ca.*
+*Prices are dealer selling prices in CAD, before HST, controls, prop, and installation. Subject to change as Mercury Canada updates pricing.*
 
 ### What changes the price within a class
 
@@ -21491,30 +21482,7 @@ This is where fishing tenders, canoes, dinghies, and 12, 16 ft tin boats live. T
 - **Power trim:** Adds $400, $600. Worth it for motors that are going in and out of weedy water regularly.
 - **Command Thrust:** Adds $400, $1,000. Designed for pontoons and heavy hulls. If you're mounting a 9.9 on a pontoon as a trolling motor, this is the right gearcase.
 
----
-
-## Mid-Range Mercury Outboards: 30, 115 HP
-
-This is the core of Ontario Mercury sales. These are the motors powering most pontoons, fishing boats, and small bowriders on Rice Lake, Lake Simcoe, Pigeon Lake, and across the Kawarthas. If you're repowering a 16, 20 ft hull, you're likely shopping here.
-
-| HP | Common Model | Dealer Price (CAD) | MSRP (CAD) | Best For |
-|----|---|---:|---:|---|
-| 30 | 30 ELPT FourStroke | $7,805 | $8,515 | 16, 18 ft tin, small bowrider |
-| 40 | 40 ELPT FourStroke | $9,532 | $10,830 | 16 ft fishing boat, small pontoon |
-| 40 | 40 ELPT Command Thrust | $9,900 | $11,250 | 18 ft pontoon, heavy tin |
-| 50 | 50 ELPT FourStroke | $10,703 | $12,165 | 18 ft fishing boat, small pontoon |
-| 60 | 60 ELPT FourStroke | $12,161 | $13,820 | 18 ft fishing boat, 20 ft pontoon |
-| 60 | 60 ELPT Command Thrust | $12,469 | $14,170 | 20 ft pontoon (the popular CT pick) |
-| 75 | 75 ELPT FourStroke | $14,190 | $16,125 | 18, 19 ft fishing/runabout |
-| 90 | 90 ELPT FourStroke | $14,812 | $16,830 | 18, 20 ft bowrider, 22 ft pontoon |
-| 90 | 90 ELPT Command Thrust | $15,274 | $17,355 | 22 ft pontoon, heavier tritoon |
-| 115 | 115 ELPT FourStroke | $16,913 | $19,220 | 19, 21 ft bowrider, 23 ft pontoon |
-| 115 | 115 ELPT Command Thrust | $17,364 | $19,730 | 22, 24 ft pontoon, heavy tritoon |
-| 115 | 115 ELPT Pro XS | $17,320 | $19,680 | Performance fishing 19 ft bass/walleye |
-
-*Prices are dealer selling prices in CAD, before HST, controls, prop, and installation.*
-
-### Things to know about this tier
+### Things to know about the mid-range tier
 
 **Command Thrust matters on pontoons.** If you're putting a 60, 115 HP motor on a 20, 24 ft pontoon, Command Thrust is the right call in almost every case. The premium is $300, $500 over the standard gearcase, it pays for itself the first weekend the boat planes on the first try with a full load.
 
@@ -21522,29 +21490,9 @@ This is the core of Ontario Mercury sales. These are the motors powering most po
 
 **Pro XS vs. standard FourStroke at 115 HP.** Both run on the same 2.1L inline-4 platform. The FourStroke is tuned for smooth cruising and fuel economy. The Pro XS is tuned for hole-shot and a higher RPM ceiling. For a family bowrider or pontoon, take the FourStroke. For a bass boat or anyone who wants snappier acceleration, take the Pro XS. Price difference at 115 HP is under $50.
 
----
-
-## V6 Mercury Outboards: 150, 225 HP
+### Things to know about the V6 and V8 tier
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-This is where repowers get serious. These motors go on 19, 24 ft bowriders, large aluminum fishing boats, walleye rigs, and the occasional deep-V. If you're shopping a 150, 175, 200, or 225, you're likely not making a same-day decision.
-
-| HP | Common Model | Dealer Price (CAD) | MSRP (CAD) | Best For |
-|----|---|---:|---:|---|
-| 150 | 150 L FourStroke | $22,022 | $25,025 | 19, 21 ft bowrider, big aluminum |
-| 150 | 150 ELPT Pro XS | $24,107 | $27,395 | 19 ft bass/walleye, performance bowrider |
-| 175 | 175 L FourStroke | $27,269 | $30,990 | 21 ft bowrider, deep-V fishing |
-| 175 | 175 EXLPT Pro XS | $28,006 | $31,825 | 20 ft bass boat, tournament-prepped |
-| 200 | 200 XL FourStroke | $27,044 | $30,730 | 21, 22 ft bowrider, family runabout |
-| 200 | 200 ELPT Pro XS | $28,122 | $31,955 | 20, 22 ft bass/walleye |
-| 225 | 225 L FourStroke | $32,307 | $36,715 | 22, 24 ft bowrider, deck boat |
-| 225 | 225 ELPT Pro XS | $33,039 | $37,545 | 22 ft tournament fishing platform |
-| 225 | 225 XL FourStroke | $34,315 | $38,995 | 22, 24 ft bowrider, tall transom |
-
-*Prices are dealer selling prices in CAD, before HST, controls, prop, and installation.*
-
-### Things to know about the V6 tier
 
 **The 150 FourStroke is our most common repower for 19, 21 ft bowriders.** It's lighter than the V6 motors above it (180 lbs lighter than the 200), gets better fuel economy, and has more than enough power for skiing, tubing, and cruising Rice Lake or Lake Simcoe.
 
