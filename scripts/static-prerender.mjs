@@ -3260,11 +3260,11 @@ const routes = [
   // ============================================================
   {
     path: '/pricing-reference',
-    title: 'Mercury Outboard Prices in Canada, Every Model in CAD (2026) | Harris Boat Works',
-    description: 'Current Mercury outboard prices in Canada, every FourStroke and Pro XS model from 2.5 HP to 300 HP in CAD, with MSRP and dealer selling price side by side. Harris Boat Works, Gores Landing, Ontario.',
-    h1: 'Mercury Outboard Prices in Canada (CAD, 2026)',
+    title: 'Mercury Outboard Prices in Ontario (CAD, 2026) | Harris Boat Works',
+    description: 'Current Mercury outboard prices in Ontario, every FourStroke and Pro XS model from 2.5 HP to 300 HP in CAD, with MSRP and dealer selling price side by side. Pickup only at Harris Boat Works, Gores Landing, Ontario.',
+    h1: 'Mercury Outboard Prices in Ontario (CAD, 2026)',
     intro: 'Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury\'s MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total, build a quote in the configurator. Pickup only at Gores Landing, Ontario.',
-    schemas: [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Canada (CAD, 2026)', 'Current Mercury outboard prices in Canada, every FourStroke and Pro XS model from 2.5 HP to 300 HP in CAD, with MSRP and dealer selling price side by side.')],
+    schemas: [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Ontario (CAD, 2026)', 'Current Mercury outboard prices in Ontario, every FourStroke and Pro XS model from 2.5 HP to 300 HP in CAD, with MSRP and dealer selling price side by side.')],
     extraHead:
       '<link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />',
     extraNoscript: () => {
