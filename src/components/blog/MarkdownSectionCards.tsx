@@ -18,6 +18,7 @@ import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './Diagnostic
 import { CostStack, type CostStackProps, type CostStackItem } from './CostStack';
 import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustItem } from './BilingualTrustCard';
 import { PullQuote, type PullQuoteProps } from './PullQuote';
+import { MercuryPriceTable, type MercuryPriceTableProps } from './MercuryPriceTable';
 import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 
 // ---------------------------------------------------------------------------
@@ -246,13 +247,29 @@ function rewriteWalkaroundLeadCapture(md: string): string {
   );
 }
 
+function rewriteMercuryPriceTable(md: string): string {
+  // Supports both bodied (`::mercury-price-table\nkey: value\n::`) and
+  // bodiless (`::mercury-price-table`) forms. Bodiless => full list.
+  let out = md.replace(
+    /^::mercury-price-table\s*\n([\s\S]*?)\n::\s*$/gm,
+    (_m, body) => `:::mercury-price-table\n${body}\n:::`,
+  );
+  out = out.replace(
+    /^::mercury-price-table\s*$/gm,
+    ':::mercury-price-table\n\n:::',
+  );
+  return out;
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteWalkaroundLeadCapture(
-    rewritePullQuote(
-      rewriteBilingualTrust(
-        rewriteCostStack(
-          rewriteDiagnosticFlow(
-            rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+  return rewriteMercuryPriceTable(
+    rewriteWalkaroundLeadCapture(
+      rewritePullQuote(
+        rewriteBilingualTrust(
+          rewriteCostStack(
+            rewriteDiagnosticFlow(
+              rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+            ),
           ),
         ),
       ),
