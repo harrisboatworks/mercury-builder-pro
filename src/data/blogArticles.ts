@@ -878,9 +878,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
-    title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)',
-    seoTitle: 'Mercury FourStroke vs Pro XS vs Verado (2026)',
-    description: 'Mercury motor families compared. For most Ontario freshwater boaters, FourStroke or Pro XS is the right answer — not Verado. Honest comparison from Ontario\'s Mercury Platinum dealer covering FourStroke (2.5–300 HP), Pro XS (115–300 HP), SeaPro (commercial), Verado (special-order only), and Avator (electric).',
+    title: 'FourStroke vs Pro XS vs Verado: Which Mercury You Need',
+    seoTitle: 'FourStroke vs Pro XS vs Verado: Which Mercury You Need',
+    description: 'For 95% of Ontario freshwater boats, it\'s FourStroke or Pro XS, not Verado. We sell all three. Honest call from a Platinum dealer on Rice Lake.',
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2024-04-10',
@@ -1410,8 +1410,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   },
   {
     slug: 'breaking-in-new-mercury-motor-guide',
-    title: 'Breaking In a New Mercury Motor (2026)',
-    description: 'The first 10 hours of a new Mercury are the most important hours of its service life. Mercury\'s break-in protocol calls for graduated load and RPM during this period: vary throttle, avoid sustained WOT, and follow the specific RPM guidance for the motor model. The first oil change at 20 hours is...',
+    title: 'How to Break In a New Mercury Outboard (10-Hour Guide)',
+    description: 'The first 10 hours decide how long your Mercury lasts. Mercury\'s exact break-in protocol, plus the 3 mistakes we see most often.',
     image: '/lovable-uploads/Breaking_In_New_Mercury_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
@@ -2342,8 +2342,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 3: January 19, 2026
   {
     slug: 'best-mercury-outboard-pontoon-boats',
-    title: "Best Mercury Outboard for Pontoon Boats (2026 Ontario Guide)",
-    description: "For 18 to 22 ft pontoons in Ontario, the Mercury 90 to 150 HP FourStroke with Command Thrust is the right answer. Command Thrust is the gearcase that matters on pontoons. Cruising-only setups can run a 90 CT; family use with water sports wants 115 to 150 CT. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
+    title: "Best Mercury for a Pontoon: 90 to 150 HP CT (2026)",
+    description: "For 18-22 ft pontoons in Ontario, it's a Mercury 90-150 HP FourStroke with Command Thrust. The gearcase matters more than the HP number. Here's why.",
     image: '/lovable-uploads/hero-best-mercury-pontoon.png',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
@@ -2570,8 +2570,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: 'mercury-command-thrust-guide-pontoon-boats',
-    title: "Mercury Command Thrust Guide for Pontoon Boats (2026)",
-    description: "Mercury Command Thrust is the gearcase option that turns a \\\"good\\\" pontoon Mercury into a \\\"great\\\" one. It is not a separate motor family. It is a gearcase upgrade available on Mercury FourStroke 115 HP and up. The bigger gearcase, larger prop, and torque-tuned gear ratio give pontoons meaningful hole shot and load-handling improvement. The cost premium over standard is worth it on pontoons. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
+    title: "Mercury Command Thrust on a Pontoon: Worth the Money?",
+    description: "Command Thrust adds about $400-700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't.",
     image: '/lovable-uploads/Mercury_Pontoon_Buyers_Guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
@@ -2944,8 +2944,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 4: January 26, 2026
   {
     slug: 'mercury-75-vs-90-vs-115-comparison',
-    title: 'Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)',
-    description: 'For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives...',
+    title: 'Mercury 75 vs 90 vs 115 HP: Which One We\'d Pick (2026)',
+    description: 'We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP FourStroke wins. Here\'s where 75 and 115 actually make sense.',
     image: '/lovable-uploads/mercury-75-90-115-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-26',
@@ -3983,8 +3983,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-outboard-fuel-efficiency-guide',
     relatedSlugs: ['mercury-propeller-selection-guide', 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado', 'breaking-in-new-mercury-motor-guide'],
-    title: 'Mercury Outboard Fuel Efficiency Guide (2026)',
-    description: 'The single biggest fuel-efficiency lever on a Mercury is prop selection. Right prop running at correct WOT RPM gives best economy. Other levers in order: trim, hull cleanliness, weight reduction, and cruise speed selection. HP class matters less than most owners assume; modern FourStrokes are all...',
+    title: 'Mercury Outboard Fuel Economy: How to Get Better MPG',
+    description: 'Prop selection moves your Mercury\'s MPG more than HP class does. The 5 levers that actually change fuel burn, ranked by impact.',
     image: '/lovable-uploads/Break_In_Infographic.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-16',
@@ -8753,8 +8753,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: '2026-boating-market-ontario-boat-buyers',
-    title: 'What the 2026 Boating Market Means for Ontario Boat Buyers',
-    description: 'The North American boating market is stabilizing in 2026 with healthier inventory, improving financing, and Canada\'s luxury tax on boats repealed. Here\'s the full picture for Ontario buyers at Harris Boat Works.',
+    title: 'Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)',
+    description: 'Inventory is back, dealer discounts are easing, financing rates are dropping. What that means for Ontario buyers in 2026, from a dealer who\'d rather you wait if you should.',
     image: '/lovable-uploads/What_the_boating_market_means_blog_hero_image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',

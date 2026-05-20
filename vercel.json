@@ -133,6 +133,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/mercury-warranty-what-you-need-to-know",
+      "destination": "/blog/mercury-outboard-warranty-canada-2026",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/mercury-150-200hp-v6-performance",
       "destination": "/blog/mercury-150-300hp-pro-xs-performance-guide",
       "statusCode": 301
