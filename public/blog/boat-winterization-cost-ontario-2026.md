@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-05-19
+last_updated: 2026-05-20
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -46,7 +46,6 @@ Boat winterization in Ontario is not a flat number, it depends on motor size, wh
 | Total typical all-in range | $250 to $400 |
 
 Prices are typical CAD ranges, HST extra. Final pricing depends on motor size and condition.
-
 
 ::cost-stack
 heading: What goes into a Mercury winterization quote?

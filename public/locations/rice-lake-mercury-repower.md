@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/rice-lake-mercury-repower
-last_updated: 2026-05-19
+last_updated: 2026-05-20
 currency: CAD
 pickup_only: true
 delivery_offered: false

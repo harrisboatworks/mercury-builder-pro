@@ -1,5 +1,5 @@
 ---
-canonical: https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke
+canonical: https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke
 last_updated: 2026-05-20
 currency: CAD
 pickup_only: true
@@ -7,31 +7,31 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-motor_id: 4fa932da-bd7e-4d2f-b1da-9aaed16932a8
-slug: fourstroke-9-9hp-9-9elh-fourstroke
+motor_id: daf945bb-4f71-44a9-aee4-00a3010ed255
+slug: fourstroke-6hp-6mh-fourstroke
 family: FourStroke
-horsepower: 9.9
-model_number: 1A10311LK
+horsepower: 6
+model_number: 1FX6201KK
 availability: in_stock
-price_cad: 3399
+price_cad: 2085
 ---
 
-# 9.9ELH FourStroke
+# 6MH FourStroke
 
-Mercury FourStroke 9.9 HP outboard motor (model 1A10311LK).
+Mercury FourStroke 6 HP outboard motor (model 1FX6201KK).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 9.9ELH FourStroke
+- **Model:** 6MH FourStroke
 - **Family:** Mercury FourStroke
-- **Horsepower:** 9.9 HP
-- **Model number:** 1A10311LK
+- **Horsepower:** 6 HP
+- **Model number:** 1FX6201KK
 
 ## Pricing (CAD)
 
-- **Selling price:** $3,399
-- **MSRP:** $4,435
+- **Selling price:** $2,085
+- **MSRP:** $2,275
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
@@ -50,8 +50,8 @@ Boats 16 ft and over, loaded family boats, or anything that needs to plane with 
 
 ## Build a quote
 
-- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke
-- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=4fa932da-bd7e-4d2f-b1da-9aaed16932a8
+- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke
+- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=daf945bb-4f71-44a9-aee4-00a3010ed255
 
 ## Public Quote API
 
@@ -60,7 +60,7 @@ Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1
 ```json
 {
   "action": "build_quote",
-  "motor_id": "4fa932da-bd7e-4d2f-b1da-9aaed16932a8",
+  "motor_id": "daf945bb-4f71-44a9-aee4-00a3010ed255",
   "trade_in": null,
   "contact": null
 }

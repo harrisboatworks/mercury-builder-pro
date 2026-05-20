@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw.md
-last_updated: 2026-05-19
+last_updated: 2026-05-20
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)"
 description: "A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math, the price difference, and what you actually get fo..."
 category: "Mercury Outboards"
-date_published: 2026-05-22
-date_modified: 2026-05-07
+date_published: 2026-05-12
+date_modified: 2026-05-12
 keywords: ["Mercury outboard dealer Toronto","Mercury dealer GTA","Mercury dealer Mississauga","Mercury dealer Brampton","Mercury Platinum dealer Toronto","drive to Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math, the price difference, and what you actually get fo...
 
 **Category:** Mercury Outboards  
-**Published:** 2026-05-22  
-**Last updated:** 2026-05-07  
+**Published:** 2026-05-12  
+**Last updated:** 2026-05-12  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw
 
