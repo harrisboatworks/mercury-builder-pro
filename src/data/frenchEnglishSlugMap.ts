@@ -9,7 +9,7 @@ export const FR_TO_EN_SLUG: Record<string, string> = {
   'mercury-115-vs-150-hp-comparaison': 'mercury-115-vs-150-hp-outboard-ontario',
   'hivernisation-moteur-mercury-ontario': 'diy-mercury-outboard-winterization-guide',
   'remotorisation-vs-bateau-neuf': 'boat-repowering-guide-when-to-replace-motor',
-  'mercury-hors-bord-ne-demarre-pas-depannage': 'mercury-outboard-wont-start-troubleshooting-ontario',
+  'mercury-hors-bord-ne-demarre-pas-depannage': 'mercury-outboard-wont-start-troubleshooting',
   'surchauffe-moteur-mercury-guide-urgence': 'mercury-outboard-overheating-at-idle-fix-ontario',
   'entretien-remorque-bateau-ontario': 'boat-trailer-maintenance-guide-ontario',
   'guide-assurance-bateau-ontario-2026': 'boat-insurance-ontario-guide-2026',

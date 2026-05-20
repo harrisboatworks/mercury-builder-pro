@@ -17382,7 +17382,7 @@ Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruis
 ## Related guides
 - [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
 - [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
-- [Mercury Outboard Won't Start Troubleshooting (Ontario)](/blog/mercury-outboard-wont-start-troubleshooting-ontario)
+- [Mercury Outboard Won't Start Troubleshooting (Ontario)](/blog/mercury-outboard-wont-start-troubleshooting)
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 - [Mercury Outboard Overheating at Idle](/blog/mercury-outboard-overheating-at-idle-fix-ontario)`,
@@ -26465,7 +26465,7 @@ Often yes, the motor started on fuel already in the system but couldn't maintain
 ## Internal Links
 
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Mercury Outboard Won't Start, Ontario Diagnostic Flow](/blog/mercury-outboard-wont-start-troubleshooting-ontario)
+- [Mercury Outboard Won't Start, Ontario Diagnostic Flow](/blog/mercury-outboard-wont-start-troubleshooting)
 - [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
@@ -29280,7 +29280,7 @@ If anything feels wrong during this sequence, stop. Don't push through. Most spr
 
 **Overheats within 5 minutes:** impeller, blocked water intake (mud, weeds, mouse nest), or a stuck thermostat. Same rule: stop the motor.
 
-Our [Mercury Outboard Won't Start Troubleshooting Guide](/blog/mercury-outboard-wont-start-troubleshooting-ontario) and [Mercury Overheating Guide](/blog/mercury-overheating-troubleshooting) cover these in more detail if you want to dig deeper.
+Our [Mercury Outboard Won't Start Troubleshooting Guide](/blog/mercury-outboard-wont-start-troubleshooting) and [Mercury Overheating Guide](/blog/mercury-overheating-troubleshooting) cover these in more detail if you want to dig deeper.
 
 ## What we see at HBW
 
