@@ -561,8 +561,24 @@ function loadBlogArticles() {
 // (model_key, model_display, model_number, family, horsepower, shaft_code,
 //  start_type, control_type, msrp, sale_price, dealer_price, base_price,
 //  manual_overrides, availability, in_stock, hero_image_url, image_url, updated_at).
+async function fetchAllSupabaseMotors() {
+  const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
+  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY;
+  if (!SUPABASE_KEY) return { ok: false, data: [], reason: 'no-key' };
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&availability=neq.Exclude&order=horsepower.asc&limit=500`;
+  try {
+    const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
+    if (!res.ok) return { ok: false, data: [], reason: `${res.status} ${res.statusText}` };
+    const data = await res.json();
+    return { ok: true, data };
+  } catch (err) {
+    return { ok: false, data: [], reason: err.message };
+  }
+}
+
 async function loadMotors() {
   const API_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api';
+  let apiMotors = [];
   // 1) Try the public API first.
   try {
     const res = await fetchWithTimeout(API_URL, { headers: { Accept: 'application/json' } });
@@ -573,7 +589,7 @@ async function loadMotors() {
         console.log(`[static-prerender] loadMotors via public-motors-api → ${motors.length} motors`);
         // Normalize API records to the internal shape. The API already filters
         // out Verado, applies the price hierarchy, and provides slug.
-        return motors.map(m => ({
+        apiMotors = motors.map(m => ({
           id: m.id,
           model_key: m.slug,                  // we use slug as the URL key
           model: 'Outboard',
@@ -600,33 +616,42 @@ async function loadMotors() {
           image_url: m.imageUrl,
           updated_at: json.lastUpdated || new Date().toISOString(),
         }));
+      } else {
+        console.warn('[static-prerender] public-motors-api returned 0 motors, will use Supabase only');
       }
-      console.warn('[static-prerender] public-motors-api returned 0 motors, falling back to Supabase');
     } else {
-      console.warn(`[static-prerender] public-motors-api ${res.status} ${res.statusText}, falling back to Supabase`);
+      console.warn(`[static-prerender] public-motors-api ${res.status} ${res.statusText}, will use Supabase only`);
     }
   } catch (err) {
-    console.warn('[static-prerender] public-motors-api error:', err.message, ' -  falling back to Supabase');
+    console.warn('[static-prerender] public-motors-api error:', err.message, ' - will use Supabase only');
   }
 
-  // 2) Fallback: Supabase REST. REQUIRE the publishable key here, fail loudly.
-  const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY;
-  if (!SUPABASE_KEY) {
+  // 2) Top up with ALL non-Exclude motors from Supabase so brochure / out-of-stock
+  // motors (e.g. FS_30_ELHPT) also get prerendered /motors/{slug}/index.html pages.
+  // Without this, share links to those motors return Vercel 404.
+  const sb = await fetchAllSupabaseMotors();
+  if (!sb.ok && apiMotors.length === 0) {
     throw new Error(
-      '[static-prerender] FATAL: public-motors-api unreachable AND no VITE_SUPABASE_PUBLISHABLE_KEY in build env. ' +
-      'Refusing to ship a build with 0 /motors/{slug} pages. ' +
-      'Add VITE_SUPABASE_PUBLISHABLE_KEY to Vercel env vars or fix the public-motors-api edge function.'
+      `[static-prerender] FATAL: public-motors-api unreachable AND Supabase fallback failed (${sb.reason}). ` +
+      'Refusing to ship a build with 0 /motors/{slug} pages.'
     );
   }
-  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&availability=neq.Exclude&order=horsepower.asc&limit=500`;
-  const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
-  if (!res.ok) {
-    throw new Error(`[static-prerender] FATAL: Supabase fallback failed ${res.status} ${res.statusText}`);
+  if (!sb.ok) {
+    console.warn(`[static-prerender] Supabase top-up failed (${sb.reason}); proceeding with ${apiMotors.length} API motors only`);
+    return apiMotors;
   }
-  const data = await res.json();
-  console.log(`[static-prerender] loadMotors via Supabase fallback → ${data.length} motors`);
-  return data;
+
+  // Merge: prefer API record (price hierarchy already resolved) when model_key matches.
+  const byKey = new Map();
+  for (const m of sb.data) {
+    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
+  }
+  for (const m of apiMotors) {
+    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
+  }
+  const merged = Array.from(byKey.values());
+  console.log(`[static-prerender] loadMotors merged → ${merged.length} motors (API: ${apiMotors.length}, Supabase: ${sb.data.length})`);
+  return merged;
 }
 
 const faqItems = loadFaqItems();
