@@ -41,27 +41,19 @@ export default function PricingReference() {
   return (
     <>
       <Helmet>
-        <title>Mercury Outboard Pricing Reference (CAD) | Harris Boat Works</title>
+        <title>Mercury Outboard Prices in Canada, Every Model in CAD (2026) | Harris Boat Works</title>
         <meta
           name="description"
-          content="Current Mercury outboard pricing in CAD — 98 motors, SKU-level. All FourStroke and Pro XS models from 2.5 HP to 300 HP. Pickup only at Gores Landing, Ontario."
+          content="Current Mercury outboard prices in Canada, every FourStroke and Pro XS model from 2.5 HP to 300 HP in CAD, with MSRP and dealer selling price side by side. Harris Boat Works, Gores Landing, Ontario."
         />
         <link rel="canonical" href="https://www.mercuryrepower.ca/pricing-reference" />
         <link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />
       </Helmet>
       <main className="container mx-auto max-w-5xl px-4 py-8">
-        <h1 className="text-3xl font-bold mb-4">Mercury Outboard Pricing Reference (CAD)</h1>
-        <p className="mb-4 text-muted-foreground">
-          <strong>Prices in CAD. Pickup only at Gores Landing, ON. Final price confirmed by HBW.</strong>
-        </p>
-        <p className="mb-6 text-sm">
-          <a className="text-primary underline" href="/quote/motor-selection">
-            Build a quote in the configurator →
-          </a>
-          {" · "}
-          <a className="text-primary underline" href="/pricing-reference.md">
-            Machine-readable version: /pricing-reference.md
-          </a>
+        <h1 className="text-3xl font-bold mb-4">Mercury Outboard Prices in Canada (CAD, 2026)</h1>
+        <p className="mb-6">
+          Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury's MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total,{' '}
+          <a className="text-primary underline" href="/quote/motor-selection">build a quote in the configurator</a>. Pickup only at Gores Landing, Ontario.
         </p>
         {loading ? (
           <p>Loading current pricing…</p>
@@ -72,10 +64,10 @@ export default function PricingReference() {
           />
         ) : (
           <p>
-            Pricing data is temporarily unavailable. See{" "}
+            Pricing data is temporarily unavailable. See{' '}
             <a className="text-primary underline" href="/pricing-reference.md">
               /pricing-reference.md
-            </a>{" "}
+            </a>{' '}
             or call (905) 342-2153.
           </p>
         )}
