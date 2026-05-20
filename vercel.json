@@ -442,7 +442,7 @@
     },
     {
       "source": "/motors/:slug",
-      "destination": "/motors/:slug/index.html"
+      "destination": "/index.html"
     },
     {
       "source": "/quote/motor-selection",
