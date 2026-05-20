@@ -596,6 +596,26 @@ function splitDirectives(md: string): RenderChunk[] {
       if (props) chunks.push({ kind: 'pull-quote', content: '', pullQuoteProps: props });
     } else if (name === 'walkaround-lead-capture') {
       chunks.push({ kind: 'walkaround-lead-capture', content: '' });
+    } else if (name === 'mercury-price-table') {
+      const props: MercuryPriceTableProps = {};
+      for (const raw of body.split('\n')) {
+        const line = raw.trim();
+        if (!line) continue;
+        const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+        if (!kv) continue;
+        const key = kv[1];
+        const val = kv[2].trim();
+        if (key === 'group' && /^(portable|mid-range|high-output|v6-v8)$/.test(val)) {
+          props.group = val as MercuryPriceTableProps['group'];
+        } else if (key === 'minHp') {
+          const n = Number(val);
+          if (Number.isFinite(n)) props.minHp = n;
+        } else if (key === 'maxHp') {
+          const n = Number(val);
+          if (Number.isFinite(n)) props.maxHp = n;
+        }
+      }
+      chunks.push({ kind: 'mercury-price-table', content: '', mercuryPriceTableProps: props });
     }
     last = m.index + m[0].length;
   }
@@ -646,6 +666,9 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'walkaround-lead-capture') {
       return <WalkaroundLeadCapture key={`${keyPrefix}-wl-${i}`} />;
+    }
+    if (chunk.kind === 'mercury-price-table') {
+      return <MercuryPriceTable key={`${keyPrefix}-mpt-${i}`} {...(chunk.mercuryPriceTableProps || {})} />;
     }
     if (!chunk.content.trim()) return null;
     return (
