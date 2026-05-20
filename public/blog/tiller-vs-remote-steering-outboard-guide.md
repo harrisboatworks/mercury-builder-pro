@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-> **Quick answer:** Tiller is right for small boats under 16 ft, kicker motors, and solo fishing where you sit at the back. Remote control is right for console boats, family use, and anything where the operator is at the helm, not the transom. The line is usually around 15–20 HP and 14–16 ft hull length. Configure either at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** Tiller is right for small boats under 16 ft, kicker motors, and solo fishing where you sit at the back. Remote control is right for console boats, family use, and anything where the operator is at the helm, not the transom. The line is usually around 15–20 HP and 14–16 ft hull length. Configure either at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -185,7 +185,7 @@ We rig both at HBW. Specific recommendations depend on motor HP and how you use 
 
 ## Ready to choose?
 
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca), live pricing in CAD with full configuration options for both tiller and remote. Or call **905-342-2153** and we'll walk through what's right for your boat.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD with full configuration options for both tiller and remote. Or call **905-342-2153** and we'll walk through what's right for your boat.
 
 ---
 

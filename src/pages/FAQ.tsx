@@ -210,7 +210,7 @@ export default function FAQ() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" asChild className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
-                <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer">
                   Build Your Quote
                   <ChevronRight className="h-4 w-4 ml-1" />
                 </a>

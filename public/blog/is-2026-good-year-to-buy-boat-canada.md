@@ -31,7 +31,7 @@ content_type: blog_article
 
 ### Quick Answer
 
-2026 is a functional year to buy a boat in Canada, not a deal year, but not a bad year either. Inventory has recovered from the pandemic shortage. Lead times are normal. Prices are higher than 2019 and are not likely to drop meaningfully. If you have a sound hull, a Mercury repower may be the better value than buying new. Build a configured repower quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+2026 is a functional year to buy a boat in Canada, not a deal year, but not a bad year either. Inventory has recovered from the pandemic shortage. Lead times are normal. Prices are higher than 2019 and are not likely to drop meaningfully. If you have a sound hull, a Mercury repower may be the better value than buying new. Build a configured repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -79,7 +79,7 @@ Rates in 2026 are better than 2023. They are not as low as the 2020, 2021 enviro
 
 ### Buy now if:
 
-**You are replacing a motor, not buying a whole new boat.** A Mercury repower on a sound hull is often meaningfully better value than a new boat purchase at 2026 prices. You get upgraded technology, improved fuel economy, warranty coverage, and you are not paying for a new hull you do not need. HBW currently has Mercury motors in stock. Build a transparent, no-games quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+**You are replacing a motor, not buying a whole new boat.** A Mercury repower on a sound hull is often meaningfully better value than a new boat purchase at 2026 prices. You get upgraded technology, improved fuel economy, warranty coverage, and you are not paying for a new hull you do not need. HBW currently has Mercury motors in stock. Build a transparent, no-games quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 **You have been in the market for 12 to 18 months and the boat you want is available.** Waiting for a correction that may not come costs you a season.
 
@@ -95,7 +95,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **You want a premium or specialty boat.** The higher the price point, the more price discovery questions exist in 2026. A $35,000 aluminum boat is a different market than a $150,000+ cabin cruiser.
 
-**The repower math is better for you.** For many Ontario boaters with a sound hull and a worn motor, the repower is the better move. Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) before going to a showroom.
+**The repower math is better for you.** For many Ontario boaters with a sound hull and a worn motor, the repower is the better move. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before going to a showroom.
 
 ---
 
@@ -130,7 +130,7 @@ This deserves its own section. The economics of repowering a sound used hull ins
 
 New boat prices are elevated. Mercury's current FourStroke lineup is genuinely excellent. The repower cost is predictable. A new boat carries financing costs, depreciation on a new hull, and a motor you may not need.
 
-For a hull that is structurally sound, under 25 years old, with an aging or unreliable motor, a repower is worth pricing out before setting foot in a showroom. Build a specific, configured quote at [mercuryrepower.ca](https://mercuryrepower.ca). No phone calls, no games, no "we'll give you a price when you come in."
+For a hull that is structurally sound, under 25 years old, with an aging or unreliable motor, a repower is worth pricing out before setting foot in a showroom. Build a specific, configured quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). No phone calls, no games, no "we'll give you a price when you come in."
 
 For engine repairs, we only service Mercury and Mercruiser.
 
@@ -142,7 +142,7 @@ We sell boats and motors. We are transparent about that.
 
 We have also been doing this for three generations. A customer who makes a decision they are comfortable with comes back. One who felt pressured does not.
 
-Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, rent for a season first, HBW has nine boats available on Rice Lake.
+Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, rent for a season first, HBW has nine boats available on Rice Lake.
 
 ---
 
@@ -163,7 +163,7 @@ It is a functional but not exceptional year. Inventory is normalized. Prices are
 Prices are largely holding or seeing minor softening at the new-end compared to the 2021, 2022 peak. They have not returned to pre-pandemic levels.
 
 **Is it better to buy a new boat or repower in 2026?** 
-For many Ontario boaters with a sound hull, repowering is better value. A Mercury repower delivers upgraded technology, warranty coverage, and improved fuel economy at a fraction of a new-boat cost. Use [mercuryrepower.ca](https://mercuryrepower.ca) to compare.
+For many Ontario boaters with a sound hull, repowering is better value. A Mercury repower delivers upgraded technology, warranty coverage, and improved fuel economy at a fraction of a new-boat cost. Use [mercuryrepower.ca](https://www.mercuryrepower.ca) to compare.
 
 **What is the best time of year to buy a boat in Canada?** 
 Fall (September, November) for new boats, dealers are clearing model-year inventory. Winter boat shows (January, February) for promotional financing programs. Spring offers the widest selection but also peak demand and less dealer motivation to negotiate.
@@ -182,7 +182,7 @@ At 10 to 15 days of use per year, the math generally favors renting. At 30+ days
 ## CTA
 
 **See real prices. No games.** 
-Build your Mercury repower quote at [mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required. 
+Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required. 
 Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).

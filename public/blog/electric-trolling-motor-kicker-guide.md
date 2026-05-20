@@ -32,7 +32,7 @@ content_type: blog_article
 # Trolling Motor vs Kicker Motor: Which Auxiliary Setup Do You Actually Need?
 
 ## Quick answer
-On Rice Lake and the Kawarthas, a gas kicker, specifically the Mercury 9.9 ProKicker, wins for walleye trolling, big water, and all-day range. A bow-mount electric trolling motor wins for shallow-water stealth, spot-lock precision, and solo fishing. Most serious anglers end up running both. They solve different problems. We rig either setup; get a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+On Rice Lake and the Kawarthas, a gas kicker, specifically the Mercury 9.9 ProKicker, wins for walleye trolling, big water, and all-day range. A bow-mount electric trolling motor wins for shallow-water stealth, spot-lock precision, and solo fishing. Most serious anglers end up running both. They solve different problems. We rig either setup; get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ::decision-card
 heading: Trolling motor or kicker motor for your boat?
@@ -126,7 +126,7 @@ Mercury makes both a standard 9.9 FourStroke and a ProKicker version. For kicker
 - Gear ratio optimized for thrust at low speed, not top-end
 - Available with electric start and power tilt
 
-Approximate installed cost (CAD): $5,500 to $7,500 depending on options. Confirm current pricing at [mercuryrepower.ca](https://mercuryrepower.ca).
+Approximate installed cost (CAD): $5,500 to $7,500 depending on options. Confirm current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Why most serious anglers end up running both
 
@@ -167,7 +167,7 @@ We rig both setups regularly:
 
 For engine repairs, we only service Mercury and Mercruiser.
 
-Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new ProKicker at [mercuryrepower.ca](https://mercuryrepower.ca).
+Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new ProKicker at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 *Last reviewed: 2026-05-11.*
 

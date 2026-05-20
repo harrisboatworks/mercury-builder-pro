@@ -14,8 +14,8 @@ export function MercuryRepowerFAQSEO() {
         "url": `${SITE_URL}/mercury-repower-faq`,
         "name": "Mercury Outboard Repower FAQ, Every Question Answered | Harris Boat Works",
         "description": "Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Family-owned Mercury Marine Platinum Dealer on Rice Lake since 1947, Mercury dealer since 1965.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#organization" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/mercury-repower-faq#breadcrumb` },
         "mainEntity": { "@id": `${SITE_URL}/mercury-repower-faq#faqpage` }

@@ -224,7 +224,7 @@ Yes, we're a working family marina. Walking through the slips, watching the rent
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Marina + Rentals:** [harrisboatworks.ca](https://harrisboatworks.ca)
-**Repower Quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Repower Quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 **Related guides:**
 - [Best Mercury Dealer Ontario](/blog/best-mercury-dealer-ontario-hbw-difference)

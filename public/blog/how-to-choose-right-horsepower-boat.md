@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-> **Quick answer:** Start with your boat's capacity plate, that number is the legal ceiling, and going over it voids your warranty, creates insurance problems, and is unsafe. For most recreational use, aim for 70–90% of the rated maximum. Bigger isn't always better. Underpowering is the more expensive mistake we see every season. Build a real installed quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** Start with your boat's capacity plate, that number is the legal ceiling, and going over it voids your warranty, creates insurance problems, and is unsafe. For most recreational use, aim for 70–90% of the rated maximum. Bigger isn't always better. Underpowering is the more expensive mistake we see every season. Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -94,7 +94,7 @@ whenInDoubt: Underpowered boats are the #1 complaint we hear. Step up before you
 
 ## HP recommendations by boat type
 
-These are working guidelines for typical recreational use on Ontario and Kawartha freshwater. For your specific motor and real installed pricing, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+These are working guidelines for typical recreational use on Ontario and Kawartha freshwater. For your specific motor and real installed pricing, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ### Small aluminum fishing boats (12–14 ft)
 Solo fishing on sheltered water: **9.9 to 15 HP tiller.** Drop-in install, no rigging. Just the motor cost.
@@ -191,7 +191,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 ## Ready to figure out your HP?
 
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca), real installed pricing across every Mercury HP class, no games. Or call us at **905-342-2153** and we'll talk through your specific boat. Sometimes the honest answer is "you already have the right motor." We'll say that too.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real installed pricing across every Mercury HP class, no games. Or call us at **905-342-2153** and we'll talk through your specific boat. Sometimes the honest answer is "you already have the right motor." We'll say that too.
 
 ---
 

@@ -146,7 +146,7 @@ Why Vaughan boaters drive to HBW for repower:
 
 - **Mercury Platinum-level service.** Closer Simcoe-area dealers handle the volume but not always the rigging depth. For a $15,000-$25,000 repower, the drive is justified.
 - **Once-a-year trip works.** Trailer up for the repower itself, then run service work closer to home.
-- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://mercuryrepower.ca) before the trip — the configurator works without a phone call and shows real pricing.
+- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before the trip — the configurator works without a phone call and shows real pricing.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

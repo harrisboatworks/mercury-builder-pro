@@ -272,7 +272,7 @@ Mostly yes on Mercurys made after about 2005, unless the meter was replaced. Mer
 
 ### Do you still service older outboards?
 
-We're a full-service Mercury Platinum dealer and we work on everything from current models back through the older Mercury fleet. If parts exist for your motor, we can get them. If they don't, we'll tell you that too, we're not going to lead you on. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **New Mercury quotes:** [mercuryrepower.ca](https://mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+We're a full-service Mercury Platinum dealer and we work on everything from current models back through the older Mercury fleet. If parts exist for your motor, we can get them. If they don't, we'll tell you that too, we're not going to lead you on. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **New Mercury quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 ## Next steps
 

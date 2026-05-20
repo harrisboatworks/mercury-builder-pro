@@ -150,7 +150,7 @@ For most Rice Lake fishing, walleye-focused, aluminum console boat, the setup th
 
 The kicker is not optional if you are serious about walleye trolling. Speed control at 1.5 to 2 mph with a 60 to 115 HP main motor is not practical without it. The savings you think you are making by skipping the kicker disappear the first windy June morning when you are fighting your main motor's idle to hold 1.8 mph.
 
-For specific pricing on Mercury motors, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+For specific pricing on Mercury motors, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## What you need legally to fish Rice Lake
 

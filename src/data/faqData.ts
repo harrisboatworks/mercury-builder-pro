@@ -35,11 +35,11 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'What\'s included in a repower package?',
-        answer: 'A Mercury repower package at Harris Boat Works includes the new Mercury outboard motor, installation, and full rigging, that means new throttle and shift controls, steering connections, fuel lines, and gauges as required. We handle everything so you\'re not left with a new motor and old, incompatible hardware. Use the configurator at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> to see what\'s included and get live pricing on the motor that fits your boat.'
+        answer: 'A Mercury repower package at Harris Boat Works includes the new Mercury outboard motor, installation, and full rigging, that means new throttle and shift controls, steering connections, fuel lines, and gauges as required. We handle everything so you\'re not left with a new motor and old, incompatible hardware. Use the configurator at <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> to see what\'s included and get live pricing on the motor that fits your boat.'
       },
       {
         question: 'Can I repower a pontoon boat?',
-        answer: 'Yes, pontoons are one of the most common repower candidates. Because pontoons are heavy and sit high in the water, we typically recommend Mercury motors with Command Thrust, which uses a larger gearcase to generate more thrust at lower RPM. This makes a big difference in getting a loaded pontoon on plane and handling in wind or current. Most pontoon repowers fall in the 90–150hp range, depending on the tube configuration (double vs. triple) and how you use the boat. Build a quote at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> and we\'ll confirm the right motor and shaft length for your pontoon.'
+        answer: 'Yes, pontoons are one of the most common repower candidates. Because pontoons are heavy and sit high in the water, we typically recommend Mercury motors with Command Thrust, which uses a larger gearcase to generate more thrust at lower RPM. This makes a big difference in getting a loaded pontoon on plane and handling in wind or current. Most pontoon repowers fall in the 90–150hp range, depending on the tube configuration (double vs. triple) and how you use the boat. Build a quote at <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> and we\'ll confirm the right motor and shaft length for your pontoon.'
       }
     ]
   },
@@ -51,7 +51,7 @@ export const faqCategories: FAQCategory[] = [
     items: [
       {
         question: 'How do I choose the right horsepower for my boat?',
-        answer: 'Start with your boat\'s maximum horsepower rating, which is stamped on the capacity plate near the transom, you cannot exceed this rating safely or legally. From there, match the motor to how you use the boat: fishing and cruising at moderate speeds works fine with mid-range power, while watersports and larger loads benefit from topping out closer to the maximum. If your boat is rated for 115hp, running 90hp is fine; running 150hp is not. When in doubt, bring your boat specs to <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> and we can help you choose the right fit.'
+        answer: 'Start with your boat\'s maximum horsepower rating, which is stamped on the capacity plate near the transom, you cannot exceed this rating safely or legally. From there, match the motor to how you use the boat: fishing and cruising at moderate speeds works fine with mid-range power, while watersports and larger loads benefit from topping out closer to the maximum. If your boat is rated for 115hp, running 90hp is fine; running 150hp is not. When in doubt, bring your boat specs to <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> and we can help you choose the right fit.'
       },
       {
         question: 'How do I know what shaft length I need?',
@@ -59,11 +59,11 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'What\'s the difference between Mercury FourStroke and Pro XS?',
-        answer: 'Mercury FourStroke is the standard lineup, quiet, fuel-efficient, and built for everyday use on family boats, fishing boats, and pontoons. Pro XS is Mercury\'s performance-oriented line, engineered for higher RPM, faster hole shots, and applications where top speed and acceleration matter, such as tournament fishing and performance runabouts. FourStroke is the right choice for most repower customers. Pro XS makes sense if you\'re chasing performance and your boat\'s hull and transom rating can support it. Both carry Mercury\'s warranty and are available through <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
+        answer: 'Mercury FourStroke is the standard lineup, quiet, fuel-efficient, and built for everyday use on family boats, fishing boats, and pontoons. Pro XS is Mercury\'s performance-oriented line, engineered for higher RPM, faster hole shots, and applications where top speed and acceleration matter, such as tournament fishing and performance runabouts. FourStroke is the right choice for most repower customers. Pro XS makes sense if you\'re chasing performance and your boat\'s hull and transom rating can support it. Both carry Mercury\'s warranty and are available through <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
       },
       {
         question: 'What is Command Thrust and do I need it?',
-        answer: 'Command Thrust is Mercury\'s designation for a larger gearcase and lower unit, designed to generate more thrust at lower RPM. It\'s built for pontoons, heavier aluminum boats, and any application where the boat is difficult to get on plane or needs strong low-speed control, think docking a loaded pontoon in a crosswind. If you have a standard runabout or fishing boat, a regular gearcase is fine. If you\'re on a pontoon or a heavy hull, Command Thrust gives you noticeably better handling and pushing power. We\'ll confirm whether Command Thrust is right for your boat when you get your quote at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
+        answer: 'Command Thrust is Mercury\'s designation for a larger gearcase and lower unit, designed to generate more thrust at lower RPM. It\'s built for pontoons, heavier aluminum boats, and any application where the boat is difficult to get on plane or needs strong low-speed control, think docking a loaded pontoon in a crosswind. If you have a standard runabout or fishing boat, a regular gearcase is fine. If you\'re on a pontoon or a heavy hull, Command Thrust gives you noticeably better handling and pushing power. We\'ll confirm whether Command Thrust is right for your boat when you get your quote at <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
       },
       {
         question: 'What is a ProKicker and when do I need one?',
@@ -71,7 +71,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'What is Mercury SmartCraft Connect?',
-        answer: 'SmartCraft Connect is a compact device that wirelessly streams real-time engine data, RPM, speed, fuel consumption, trim position, and maintenance alerts, to the free Mercury Marine app on your smartphone or tablet. It was formerly called VesselView Mobile (same product, new name). There are two versions: SmartCraft Connect Mobile (Bluetooth only, streams to your phone) and SmartCraft Connect (Bluetooth + NMEA 2000, also integrates with compatible chartplotters and MFDs). Compatibility: motors 40hp and up from 2004 or newer, and 25hp and up from 2022 or newer. It supports 1–4 engines. SmartCraft Connect is available as an accessory on new Mercury repowers at Harris Boat Works, ask us to include it in your quote at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
+        answer: 'SmartCraft Connect is a compact device that wirelessly streams real-time engine data, RPM, speed, fuel consumption, trim position, and maintenance alerts, to the free Mercury Marine app on your smartphone or tablet. It was formerly called VesselView Mobile (same product, new name). There are two versions: SmartCraft Connect Mobile (Bluetooth only, streams to your phone) and SmartCraft Connect (Bluetooth + NMEA 2000, also integrates with compatible chartplotters and MFDs). Compatibility: motors 40hp and up from 2004 or newer, and 25hp and up from 2022 or newer. It supports 1–4 engines. SmartCraft Connect is available as an accessory on new Mercury repowers at Harris Boat Works, ask us to include it in your quote at <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
       }
     ]
   },
@@ -83,11 +83,11 @@ export const faqCategories: FAQCategory[] = [
     items: [
       {
         question: 'How much does a Mercury repower cost?',
-        answer: 'Mercury repower costs at Harris Boat Works range from approximately $1,895 for a 4hp kicker to $30,000 or more for a 250–300hp performance engine. The price depends on the specific motor model, shaft length, and any rigging or controls required. The most accurate way to get pricing is to use the live quote configurator at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>, prices are current and updated in real time, including any active sale pricing.'
+        answer: 'Mercury repower costs at Harris Boat Works range from approximately $1,895 for a 4hp kicker to $30,000 or more for a 250–300hp performance engine. The price depends on the specific motor model, shaft length, and any rigging or controls required. The most accurate way to get pricing is to use the live quote configurator at <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>, prices are current and updated in real time, including any active sale pricing.'
       },
       {
         question: 'Can I finance a Mercury repower?',
-        answer: 'Yes, financing is available on Mercury repower packages. The <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> configurator shows monthly payment estimates alongside the purchase price for each motor, so you can compare options before you commit. Financing is available to qualified Ontario customers. To proceed, build your quote on mercuryrepower.ca and follow the financing steps in the configurator, or contact Harris Boat Works directly at <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
+        answer: 'Yes, financing is available on Mercury repower packages. The <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> configurator shows monthly payment estimates alongside the purchase price for each motor, so you can compare options before you commit. Financing is available to qualified Ontario customers. To proceed, build your quote on mercuryrepower.ca and follow the financing steps in the configurator, or contact Harris Boat Works directly at <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
       },
       {
         question: 'Can I trade in my old motor?',
@@ -95,7 +95,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'Are there any current Mercury promotions?',
-        answer: 'Mercury regularly runs seasonal promotions including extended warranty programs, rebate offers, and financing specials. These change throughout the year. The configurator at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> automatically applies any active promotions to your quote so you always see the best available pricing. You can also call Harris Boat Works at <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a> to ask about current offers.'
+        answer: 'Mercury regularly runs seasonal promotions including extended warranty programs, rebate offers, and financing specials. These change throughout the year. The configurator at <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> automatically applies any active promotions to your quote so you always see the best available pricing. You can also call Harris Boat Works at <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a> to ask about current offers.'
       }
     ]
   },
@@ -115,7 +115,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'Can you repower a boat that currently has a Yamaha, Honda, or Suzuki motor?',
-        answer: 'Yes, we convert boats from any brand to Mercury. If your current motor is a Yamaha, Honda, Suzuki, or any other brand, we handle the full switchover including new Mercury-compatible controls, rigging, and gauges. The repower process is the same regardless of what\'s coming off. Your old motor can be taken in on trade or disposed of through us. Get a quote for the Mercury motor that fits your boat at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
+        answer: 'Yes, we convert boats from any brand to Mercury. If your current motor is a Yamaha, Honda, Suzuki, or any other brand, we handle the full switchover including new Mercury-compatible controls, rigging, and gauges. The repower process is the same regardless of what\'s coming off. Your old motor can be taken in on trade or disposed of through us. Get a quote for the Mercury motor that fits your boat at <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
       },
       {
         question: 'What happens to my old motor after a repower?',
@@ -127,7 +127,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'What boat brands can you repower?',
-        answer: 'We repower all boat brands, Lund, Tracker, Princecraft, Legend, Crestliner, Starcraft, Alumacraft, and any other manufacturer. Mercury outboard motors are designed to fit standard transom configurations, and we handle any custom mounting or rigging requirements as part of the repower package. It doesn\'t matter what brand of motor is currently on the boat, we convert from Yamaha, Honda, Suzuki, Johnson, Evinrude, or any other make to Mercury. Get a quote for the Mercury motor that fits your boat at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
+        answer: 'We repower all boat brands, Lund, Tracker, Princecraft, Legend, Crestliner, Starcraft, Alumacraft, and any other manufacturer. Mercury outboard motors are designed to fit standard transom configurations, and we handle any custom mounting or rigging requirements as part of the repower package. It doesn\'t matter what brand of motor is currently on the boat, we convert from Yamaha, Honda, Suzuki, Johnson, Evinrude, or any other make to Mercury. Get a quote for the Mercury motor that fits your boat at <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
       },
       {
         question: 'Do you offer winterization and storage?',
@@ -151,7 +151,7 @@ export const faqCategories: FAQCategory[] = [
     items: [
       {
         question: 'What is Mercury\'s warranty on new outboards?',
-        answer: 'New Mercury outboard motors come with a standard 3-year limited warranty covering defects in materials and workmanship. Right now, when you buy any new Mercury from Harris Boat Works, you get 7 full years of factory-backed warranty coverage, no third-party insurance, just straight Mercury protection from a Platinum Dealer since 1965. Check <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> or contact us for details.'
+        answer: 'New Mercury outboard motors come with a standard 3-year limited warranty covering defects in materials and workmanship. Right now, when you buy any new Mercury from Harris Boat Works, you get 7 full years of factory-backed warranty coverage, no third-party insurance, just straight Mercury protection from a Platinum Dealer since 1965. Check <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> or contact us for details.'
       },
       {
         question: 'Where are Mercury outboards made?',

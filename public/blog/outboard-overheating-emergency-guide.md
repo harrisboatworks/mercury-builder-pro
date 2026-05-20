@@ -230,7 +230,7 @@ Not directly, overheating is a cooling-side problem, not a fuel-side one. But et
 
 ### My boat is on the water and I'm panicking. What do I do?
 
-Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear intakes, wait 15 minutes, restart and check stream. If alarm returns, call for a tow, don't try to make it home. **905-342-2153** if you're in our area. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **Mercury repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear intakes, wait 15 minutes, restart and check stream. If alarm returns, call for a tow, don't try to make it home. **905-342-2153** if you're in our area. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **Mercury repower quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 ## Next steps
 

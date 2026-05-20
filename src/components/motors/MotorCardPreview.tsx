@@ -404,7 +404,7 @@ function MotorCardPreviewInner({
     
     const displayName = formatMotorDisplayName(title);
     const priceValue = price || msrp;
-    const siteUrl = 'https://mercuryrepower.ca';
+    const siteUrl = 'https://www.mercuryrepower.ca';
     const imageUrlFull = imageUrl?.startsWith('/') 
       ? `${siteUrl}${imageUrl}` 
       : imageUrl;

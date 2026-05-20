@@ -10,22 +10,22 @@ export function GlobalSEO() {
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://mercuryrepower.ca/#website",
-        "url": "https://mercuryrepower.ca/",
+        "@id": "https://www.mercuryrepower.ca/#website",
+        "url": "https://www.mercuryrepower.ca/",
         "name": "Mercury Repower Quote Builder",
-        "publisher": { "@id": "https://mercuryrepower.ca/#organization" },
+        "publisher": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA"
       },
       {
         "@type": "Organization",
-        "@id": "https://mercuryrepower.ca/#organization",
+        "@id": "https://www.mercuryrepower.ca/#organization",
         "name": "Harris Boat Works",
         "alternateName": "HBW",
         "legalName": "Harris Boat Works",
         "url": "https://www.harrisboatworks.ca/",
         "logo": {
           "@type": "ImageObject",
-          "@id": "https://mercuryrepower.ca/#logo",
+          "@id": "https://www.mercuryrepower.ca/#logo",
           "url": "https://www.harrisboatworks.ca/logo.png",
           "caption": "Harris Boat Works"
         },
@@ -52,14 +52,14 @@ export function GlobalSEO() {
       },
       {
         "@type": ["LocalBusiness", "Store", "AutoRepair"],
-        "@id": "https://mercuryrepower.ca/#localbusiness",
+        "@id": "https://www.mercuryrepower.ca/#localbusiness",
         "name": "Harris Boat Works",
         "image": "https://www.harrisboatworks.ca/logo.png",
         "url": "https://www.harrisboatworks.ca/",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "priceRange": "$$",
-        "parentOrganization": { "@id": "https://mercuryrepower.ca/#organization" },
+        "parentOrganization": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "5369 Harris Boat Works Rd",
@@ -76,7 +76,7 @@ export function GlobalSEO() {
         "areaServed": [
           {
             "@type": "Place",
-            "@id": "https://mercuryrepower.ca/#rice-lake-ontario",
+            "@id": "https://www.mercuryrepower.ca/#rice-lake-ontario",
             "name": "Rice Lake, Ontario",
             "alternateName": ["Rice Lake (Ontario)", "Rice Lake, Kawartha Lakes"],
             "description": "Freshwater lake in the Kawartha Lakes region, southern Ontario, Canada. Approximately 90 minutes east of Toronto. Distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota.",

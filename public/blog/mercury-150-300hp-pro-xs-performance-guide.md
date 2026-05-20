@@ -178,7 +178,7 @@ V6 sales and repowers are our most common high-end work. Specifically:
 - **Rigging upgrades**, hydraulic steering, stainless prop, DTS where available
 - **Boost software upgrade evaluations**, for eligible Pro XS V6 owners wanting to step up HP without buying a new motor
 
-If you're considering a V6 repower, the 90-second configurator quote at [mercuryrepower.ca](https://mercuryrepower.ca) gets you a real number. For more nuanced discussions, twin vs single, V6 vs V8, Pro XS vs FourStroke, call **905-342-2153**.
+If you're considering a V6 repower, the 90-second configurator quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) gets you a real number. For more nuanced discussions, twin vs single, V6 vs V8, Pro XS vs FourStroke, call **905-342-2153**.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

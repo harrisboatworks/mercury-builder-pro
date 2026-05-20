@@ -21,10 +21,10 @@ export function RepowerPageSEO() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://mercuryrepower.ca/#business",
+        "@id": "https://www.mercuryrepower.ca/#business",
         "name": "Harris Boat Works",
         "description": "Mercury Certified Repower Center serving Ontario boaters since 1947. Expert outboard motor repowering on Rice Lake. Pickup only at Gores Landing, no shipping. Valid government-issued photo ID required at pickup.",
-        "url": "https://mercuryrepower.ca",
+        "url": "https://www.mercuryrepower.ca",
         "telephone": "(905) 342-2153",
         "email": "info@harrisboatworks.ca",
         "address": {
@@ -45,10 +45,10 @@ export function RepowerPageSEO() {
       },
       {
         "@type": "Service",
-        "@id": "https://mercuryrepower.ca/repower#service",
+        "@id": "https://www.mercuryrepower.ca/repower#service",
         "name": "Mercury Outboard Repower Service",
         "serviceType": "Boat Motor Replacement",
-        "provider": { "@id": "https://mercuryrepower.ca/#business" },
+        "provider": { "@id": "https://www.mercuryrepower.ca/#business" },
         "areaServed": ["Rice Lake", "Kawarthas", "Peterborough", "GTA", "Toronto", "Ontario"],
         "description": "Professional Mercury outboard motor repower service. Get 70% of the benefit of a new boat for 30% of the cost. Includes professional installation and lake testing. Pickup only at Gores Landing, no shipping. Valid government-issued photo ID required.",
         "offers": {
@@ -112,10 +112,10 @@ export function RepowerPageSEO() {
       },
       {
         "@type": "WebPage",
-        "@id": "https://mercuryrepower.ca/repower#webpage",
-        "url": "https://mercuryrepower.ca/repower",
+        "@id": "https://www.mercuryrepower.ca/repower#webpage",
+        "url": "https://www.mercuryrepower.ca/repower",
         "name": "Mercury Outboard Repower Ontario | Harris Boat Works",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
@@ -123,13 +123,13 @@ export function RepowerPageSEO() {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://mercuryrepower.ca/"
+              "item": "https://www.mercuryrepower.ca/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Repower",
-              "item": "https://mercuryrepower.ca/repower"
+              "item": "https://www.mercuryrepower.ca/repower"
             }
           ]
         }
@@ -142,14 +142,14 @@ export function RepowerPageSEO() {
       <title>Ontario's Mercury Repower Centre on Rice Lake | Harris Boat Works</title>
       <meta name="description" content="Harris Boat Works is Ontario's Mercury Repower Centre, Mercury Marine Platinum Dealer, Mercury-only since 1965, family-owned since 1947. Transparent CAD pricing. Every install lake-tested on Rice Lake. Pickup at Gores Landing." />
       <meta name="keywords" content="mercury repower ontario, boat repower rice lake, outboard motor replacement, mercury dealer kawarthas, repower cottage boat, mercury four stroke, boat motor upgrade" />
-      <link rel="canonical" href="https://mercuryrepower.ca/repower" />
+      <link rel="canonical" href="https://www.mercuryrepower.ca/repower" />
       
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Outboard Repower Ontario | Harris Boat Works" />
       <meta property="og:description" content="70% of the benefit for 30% of the cost. Expert Mercury repowers on Rice Lake since 1965." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://mercuryrepower.ca/repower" />
-      <meta property="og:image" content="https://mercuryrepower.ca/social-share.jpg" />
+      <meta property="og:url" content="https://www.mercuryrepower.ca/repower" />
+      <meta property="og:image" content="https://www.mercuryrepower.ca/social-share.jpg" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

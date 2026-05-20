@@ -34,8 +34,8 @@ export function MercuryDealerPeterboroughSEO() {
         "url": `${SITE_URL}/mercury-dealer-peterborough`,
         "name": "Mercury Dealer Peterborough Ontario | Harris Boat Works, 35 Min South",
         "description": "Mercury Marine Platinum Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#organization" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/mercury-dealer-peterborough#breadcrumb` },
         "mainEntity": { "@id": `${SITE_URL}/mercury-dealer-peterborough#faqpage` }
@@ -53,7 +53,7 @@ export function MercuryDealerPeterboroughSEO() {
         "@id": `${SITE_URL}/mercury-dealer-peterborough#service`,
         "name": "Mercury Outboard Sales & Repower, Peterborough Area",
         "description": "Mercury outboard sales, repower, and service for Peterborough, Lakefield, Bridgenorth, Buckhorn, and Kawartha Lakes boaters. Pickup only at Gores Landing on Rice Lake.",
-        "provider": { "@id": "https://mercuryrepower.ca/#organization" },
+        "provider": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "areaServed": {
           "@type": "Place",
           "name": "Peterborough, Ontario",

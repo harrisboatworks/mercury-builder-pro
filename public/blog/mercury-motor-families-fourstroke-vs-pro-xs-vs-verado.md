@@ -35,7 +35,7 @@ content_type: blog_article
 
 > **Quick answer**
 >
-> For most Ontario freshwater boaters, the right choice is FourStroke or Pro XS — not Verado. FourStroke covers fishing, family, and pontoon use from 2.5 HP up. Pro XS is the same powerhead tuned for performance, worth the premium when you actually run hard. Verado is Mercury's supercharged offshore line — it's special-order territory at HBW, and almost no Ontario freshwater application needs it. If you're researching Verado, this guide is honest about when it makes sense and (more often) when it doesn't. Configure FourStroke or Pro XS at [mercuryrepower.ca](https://mercuryrepower.ca).
+> For most Ontario freshwater boaters, the right choice is FourStroke or Pro XS — not Verado. FourStroke covers fishing, family, and pontoon use from 2.5 HP up. Pro XS is the same powerhead tuned for performance, worth the premium when you actually run hard. Verado is Mercury's supercharged offshore line — it's special-order territory at HBW, and almost no Ontario freshwater application needs it. If you're researching Verado, this guide is honest about when it makes sense and (more often) when it doesn't. Configure FourStroke or Pro XS at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -156,7 +156,7 @@ Work through these in order:
 2. **Recreational, performance, or commercial?** Recreational = FourStroke. Performance = Pro XS. Commercial = SeaPro.
 3. **Do you actually use the performance?** If yes, Pro XS earns the price. If no, FourStroke gives you better fuel economy and typically similar resale.
 4. **Twin or triple on a 28+ ft offshore boat?** That's the Verado conversation.
-5. **Still not sure?** Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call us at **905-342-2153** and we'll work through it in five minutes.
+5. **Still not sure?** Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us at **905-342-2153** and we'll work through it in five minutes.
 
 ---
 
@@ -174,7 +174,7 @@ Work through these in order:
 
 ## Ready to pick your family?
 
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca), real pricing in CAD across FourStroke, Pro XS, SeaPro, and Avator. Verado is special order; contact us for that conversation.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing in CAD across FourStroke, Pro XS, SeaPro, and Avator. Verado is special order; contact us for that conversation.
 
 Call **905-342-2153** if you want to talk through which family fits your boat. We'll give you the straight answer, including the answer that doesn't maximize the sale.
 

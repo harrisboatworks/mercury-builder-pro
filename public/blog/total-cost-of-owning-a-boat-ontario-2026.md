@@ -225,7 +225,7 @@ A few places HBW's pricing differs from what you'd find elsewhere:
 
 **Ethanol-free fuel.** The premium pays for itself in reduced fuel-system maintenance work and longer engine life. For a heavily-used boat, ethanol-free saves $200-$500/year in service work alone.
 
-**Transparent quote configurator.** [mercuryrepower.ca](https://mercuryrepower.ca) gives you real Mercury pricing in 90 seconds. No "call for a quote" games, no wasted weekends comparing dealer estimates that come back wildly different. The price you see is the price.
+**Transparent quote configurator.** [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you real Mercury pricing in 90 seconds. No "call for a quote" games, no wasted weekends comparing dealer estimates that come back wildly different. The price you see is the price.
 
 **Bundled storage + service.** Drop off in fall for shrinkwrap + winterization, optionally add spring commissioning. One trip, one invoice, no chasing two different vendors for the engine work and the storage.
 

@@ -208,7 +208,7 @@ Mercury Boost is a software calibration that increases mid-range torque from the
 
 ### Which Mercury motors are eligible for the Boost upgrade?
 
-Mercury Boost eligibility is specific to certain FourStroke and Verado model years and requires digital throttle-and-shift (DTS) capability or VesselView integration. Not all Mercury FourStrokes are eligible, eligibility is based on the engine's ECM architecture and the availability of the Boost calibration for that specific model and year. Check the [Mercury Boost eligibility guide](https://mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026) for a current list, or confirm your motor's eligibility with a certified Mercury dealer before purchasing.
+Mercury Boost eligibility is specific to certain FourStroke and Verado model years and requires digital throttle-and-shift (DTS) capability or VesselView integration. Not all Mercury FourStrokes are eligible, eligibility is based on the engine's ECM architecture and the availability of the Boost calibration for that specific model and year. Check the [Mercury Boost eligibility guide](https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026) for a current list, or confirm your motor's eligibility with a certified Mercury dealer before purchasing.
 
 ### Will Mercury Boost make my pontoon go faster?
 

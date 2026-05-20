@@ -206,7 +206,7 @@ HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from
 | Rentals | 9-boat fleet for day trips |
 | Mercury service | Platinum dealer; for engine repairs, we only service Mercury and Mercruiser |
 
-Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. Mercury repower quotes at [mercuryrepower.ca](https://mercuryrepower.ca).
+Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. Mercury repower quotes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -246,7 +246,7 @@ The Peterborough Lift Lock (Lock 21) and the surrounding Lakefield-Trent canal s
 **Starting from Rice Lake? HBW is between Locks 18 and 19.** 
 Call 905-342-2153 before you head out, slip availability, fuel confirmation, or anything else. 
 Boat rentals at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). 
-Mercury repower quotes at [mercuryrepower.ca](https://mercuryrepower.ca). 
+Mercury repower quotes at [mercuryrepower.ca](https://www.mercuryrepower.ca). 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -272,7 +272,7 @@ The Peterborough Lift Lock (Lock 21) and the surrounding Lakefield-Trent canal s
 
 ### Is fuel cash-only at lockstations?
 
-Parks Canada doesn't sell fuel at lockstations, only commercial marinas do. Most marinas accept cards. Bring a backup credit card just in case. --- **Phone:** 905-342-2153 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) **Mercury repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
+Parks Canada doesn't sell fuel at lockstations, only commercial marinas do. Most marinas accept cards. Bring a backup credit card just in case. --- **Phone:** 905-342-2153 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) **Mercury repower quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 ## Next steps
 

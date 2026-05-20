@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-> **Quick answer:** For most aluminum fishing boats in the 14–18 ft range, a Mercury 40–115 HP FourStroke is the sweet spot. Match the hull's capacity plate, pick tiller or remote based on your layout, and seriously consider a 9.9 ProKicker if you fish for walleye. Real installed pricing at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** For most aluminum fishing boats in the 14–18 ft range, a Mercury 40–115 HP FourStroke is the sweet spot. Match the hull's capacity plate, pick tiller or remote based on your layout, and seriously consider a 9.9 ProKicker if you fish for walleye. Real installed pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -94,7 +94,7 @@ Here's how to think through each decision.
 
 ### 14–16 ft tiller or console aluminum
 
-**Best fit: 25 to 60 HP.** Tiller versions for boats without consoles; remote versions for console boats. The 60 HP FourStroke is the sweet spot for 16-foot aluminum consoles, enough power for two anglers and gear, planes reliably with three people, and fuel efficient. Installed pricing for this class: build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+**Best fit: 25 to 60 HP.** Tiller versions for boats without consoles; remote versions for console boats. The 60 HP FourStroke is the sweet spot for 16-foot aluminum consoles, enough power for two anglers and gear, planes reliably with three people, and fuel efficient. Installed pricing for this class: build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ### 16–18 ft console aluminum (the most common Kawartha repower)
 
@@ -153,7 +153,7 @@ The customers who skip the kicker to save money almost always wish they hadn't. 
 
 ## Ready to find your motor?
 
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca), real pricing in CAD on the full configuration: main motor, kicker, rigging, prop, and install. Or call us at **905-342-2153**. We rig fishing boats every week and can match a motor to your specific hull.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing in CAD on the full configuration: main motor, kicker, rigging, prop, and install. Or call us at **905-342-2153**. We rig fishing boats every week and can match a motor to your specific hull.
 
 ---
 

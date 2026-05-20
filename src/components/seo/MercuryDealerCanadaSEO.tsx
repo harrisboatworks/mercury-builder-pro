@@ -62,8 +62,8 @@ export function MercuryDealerCanadaSEO() {
         "url": `${SITE_URL}/mercury-dealer-canada-faq`,
         "name": "Why Buy from Harris Boat Works, Mercury Dealer Canada FAQ | Family-Owned Since 1947",
         "description": "Trust questions about Harris Boat Works: Mercury Platinum Dealer status, family ownership since 1947, dealer since 1965, warranty, financing, Canadian pricing, full Mercury lineup.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#organization" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/mercury-dealer-canada-faq#breadcrumb` },
         "mainEntity": { "@id": `${SITE_URL}/mercury-dealer-canada-faq#faqpage` }
@@ -78,7 +78,7 @@ export function MercuryDealerCanadaSEO() {
       },
       {
         "@type": "Organization",
-        "@id": "https://mercuryrepower.ca/#organization",
+        "@id": "https://www.mercuryrepower.ca/#organization",
         "name": "Harris Boat Works",
         "alternateName": "HBW",
         "url": "https://www.harrisboatworks.ca/",

@@ -65,7 +65,7 @@ If those three say go, you're a repower candidate. The rest of this is about the
 
 Before you do anything else, get a real number.
 
-Go to **[mercuryrepower.ca](https://mercuryrepower.ca)**, pick the Mercury HP that fits your boat, select shaft length and controls, add a prop, and you'll see all-in installed pricing in CAD. **About 90 seconds.** No sales call required. No "we'll get back to you."
+Go to **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, pick the Mercury HP that fits your boat, select shaft length and controls, add a prop, and you'll see all-in installed pricing in CAD. **About 90 seconds.** No sales call required. No "we'll get back to you."
 
 Bring trade-in info if you have it (year, hours, condition of your existing motor) and the configurator gives you a trade credit estimate too.
 
@@ -206,7 +206,7 @@ The drive is about an hour from Markham, 90 minutes from Mississauga. Most repow
 ## Frequently Asked Questions
 
 **How much does a Mercury repower cost in the GTA?**
-Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,500; 150 HP install $23,000-$30,000; 200 HP V6 install $28,000-$35,000. The [mercuryrepower.ca configurator](https://mercuryrepower.ca) gives your specific number in 90 seconds.
+Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,500; 150 HP install $23,000-$30,000; 200 HP V6 install $28,000-$35,000. The [mercuryrepower.ca configurator](https://www.mercuryrepower.ca) gives your specific number in 90 seconds.
 
 **How long does a repower take at HBW?**
 Typical install + sea trial + prop tuning: 7-14 days at the shop. Booking lead time is 2-4 weeks during peak season. Plan total project as 4-6 weeks from configurator-quote to motor-on-water.
@@ -235,7 +235,7 @@ Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 
 ---
 
 **Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Configurator:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
@@ -250,7 +250,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### How much does a Mercury repower cost in the GTA?
 
-Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,500; 150 HP install $23,000-$30,000; 200 HP V6 install $28,000-$35,000. The [mercuryrepower.ca configurator](https://mercuryrepower.ca) gives your specific number in 90 seconds.
+Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,500; 150 HP install $23,000-$30,000; 200 HP V6 install $28,000-$35,000. The [mercuryrepower.ca configurator](https://www.mercuryrepower.ca) gives your specific number in 90 seconds.
 
 ### How long does a repower take at HBW?
 

@@ -113,7 +113,7 @@ source: Mississauga
 
 **Where dealer pricing actually differs:**
 
-1. **Rigging and install pricing**, installing a Mercury 200 HP V6 on a 21-foot bowrider isn't just bolting it on. It's hours of rigging (controls, steering, gauges, prop selection, sea trial). Some dealers charge $1,500-$2,500. Some charge $4,000+. We publish ours transparently in the [configurator](https://mercuryrepower.ca).
+1. **Rigging and install pricing**, installing a Mercury 200 HP V6 on a 21-foot bowrider isn't just bolting it on. It's hours of rigging (controls, steering, gauges, prop selection, sea trial). Some dealers charge $1,500-$2,500. Some charge $4,000+. We publish ours transparently in the [configurator](https://www.mercuryrepower.ca).
 
 2. **All-in vs. add-on quoting**, many dealers quote a "headline" price and add line items at delivery (controls, prop, freight, prep). Our pricing is **all-in before HST** in the live configurator, and the price you see is the price you pay.
 
@@ -133,7 +133,7 @@ This is the single biggest reason GTA boaters end up choosing HBW: **you don't n
 
 Most marine dealers in the GTA still operate "call for pricing", meaning you fill out a form, wait 1-2 days, get an estimate without details, then negotiate. That model works for the dealer (they control the conversation); it works against you (you can't compare).
 
-**[mercuryrepower.ca](https://mercuryrepower.ca)** is our online quote configurator. Pick your motor (98 Mercury models in current inventory), select your shaft length and controls, add a prop, see install pricing, see optional MPP, see trade-in credit math, get a final all-in number. **In about 90 seconds.** Then book a phone call or visit if you want to verify. No "we'll get back to you."
+**[mercuryrepower.ca](https://www.mercuryrepower.ca)** is our online quote configurator. Pick your motor (98 Mercury models in current inventory), select your shaft length and controls, add a prop, see install pricing, see optional MPP, see trade-in credit math, get a final all-in number. **In about 90 seconds.** Then book a phone call or visit if you want to verify. No "we'll get back to you."
 
 This isn't a brochure tool. It's the same data our staff uses. The price you see at home is the price we'd quote you in person.
 
@@ -212,7 +212,7 @@ Yes. Mercury's warranty network extends across Canada. Bring your purchase paper
 
 ---
 **Phone:** 905-342-2153
-**Configurator (transparent pricing):** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Configurator (transparent pricing):** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 

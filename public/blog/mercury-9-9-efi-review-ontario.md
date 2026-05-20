@@ -110,7 +110,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069, $3,875 CAD range.
 
-**Verify current pricing at [mercuryrepower.ca](https://mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
+**Verify current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
 
 ---
 
@@ -189,7 +189,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 ## CTA
 
 **See the current price on the Mercury 9.9 MH EFI.** 
-[mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, full configuration. 
+[mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration. 
 Or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Platinum dealer. Est. 1947.

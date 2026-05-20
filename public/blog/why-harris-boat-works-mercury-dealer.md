@@ -126,11 +126,11 @@ If the work falls outside our core, we will tell you that and point you toward a
 
 ## Financing
 
-Mercury Repower Financing is available through HBW. Rates are set by DealerPlan and change with market conditions, treat any rate you see online as a planning-level figure and confirm the current rate at [mercuryrepower.ca](https://mercuryrepower.ca) before committing to anything. Mercury also runs seasonal promotional rate offers that can be meaningfully below the standard rate.
+Mercury Repower Financing is available through HBW. Rates are set by DealerPlan and change with market conditions, treat any rate you see online as a planning-level figure and confirm the current rate at [mercuryrepower.ca](https://www.mercuryrepower.ca) before committing to anything. Mercury also runs seasonal promotional rate offers that can be meaningfully below the standard rate.
 
 ## Ready to talk through a repower or service?
 
-Build a complete installed quote at [mercuryrepower.ca](https://mercuryrepower.ca), real pricing, no phone call required. When you are ready to move forward or want to talk through your specific boat, call us at 905-342-2153 or request service at [hbw.wiki/service](https://hbw.wiki/service).
+Build a complete installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing, no phone call required. When you are ready to move forward or want to talk through your specific boat, call us at 905-342-2153 or request service at [hbw.wiki/service](https://hbw.wiki/service).
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Last reviewed: 2026-05-11.*

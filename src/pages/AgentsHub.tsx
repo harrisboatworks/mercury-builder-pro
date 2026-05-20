@@ -76,7 +76,7 @@ export default function AgentsHub() {
                 {
                   "@type": "Question",
                   "name": "How do I send a customer to a prefilled Harris Boat Works quote configurator?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Build a deep-link URL: https://mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}, any combination of params is supported. Get MOTOR_ID from list_motors or search_motors." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "Build a deep-link URL: https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}, any combination of params is supported. Get MOTOR_ID from list_motors or search_motors." }
                 },
                 {
                   "@type": "Question",
@@ -200,7 +200,7 @@ export default function AgentsHub() {
       "sellingPrice": 17495,
       "availability": "In Stock",
       "imageUrl": "https://...",
-      "url": "https://mercuryrepower.ca/motors/..."
+      "url": "https://www.mercuryrepower.ca/motors/..."
     }
   ]
 }`}

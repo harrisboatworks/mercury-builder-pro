@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-> **Quick answer:** Mercury SeaPro is the commercial-grade FourStroke built for high-hour use, guides, charter boats, rental fleets, work boats. It has beefier internals, longer service intervals, and commercial warranty eligibility. For private recreational use, the standard FourStroke is the right call at lower cost. SeaPro is special order; contact us at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** Mercury SeaPro is the commercial-grade FourStroke built for high-hour use, guides, charter boats, rental fleets, work boats. It has beefier internals, longer service intervals, and commercial warranty eligibility. For private recreational use, the standard FourStroke is the right call at lower cost. SeaPro is special order; contact us at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -154,7 +154,7 @@ If you run a commercial boat operation in the Kawarthas or anywhere within tow d
 
 ## Request a commercial quote
 
-SeaPro is special order at HBW. Contact us through [mercuryrepower.ca](https://mercuryrepower.ca) or call **905-342-2153**.
+SeaPro is special order at HBW. Contact us through [mercuryrepower.ca](https://www.mercuryrepower.ca) or call **905-342-2153**.
 
 ---
 

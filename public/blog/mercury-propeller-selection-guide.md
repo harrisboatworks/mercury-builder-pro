@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-> **Quick answer:** Match prop pitch so the motor hits its rated WOT RPM band with a typical load. Too much pitch lugs the motor; too little over-revs it. Aluminum is the default for lower HP; stainless takes over at higher HP and performance applications. We re-prop on every install during the sea trial. Standard prop allowance is included, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** Match prop pitch so the motor hits its rated WOT RPM band with a typical load. Too much pitch lugs the motor; too little over-revs it. Aluminum is the default for lower HP; stainless takes over at higher HP and performance applications. We re-prop on every install during the sea trial. Standard prop allowance is included, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -71,7 +71,7 @@ The right prop costs the same as the wrong prop. It's worth the conversation.
 | Damage resistance | Bends on rocks, can often be straightened | More durable; more expensive to repair |
 | Best for | Recreational, family, moderate HP | Performance, tournament, higher HP |
 
-For specific pricing, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) with prop included.
+For specific pricing, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with prop included.
 
 ---
 
@@ -172,7 +172,7 @@ We inspect props during every winterization and spring commissioning. If a prop 
 
 ## Ready to get the right prop?
 
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) with prop included. Or call **905-342-2153**, the prop conversation matters and it's a five-minute one.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with prop included. Or call **905-342-2153**, the prop conversation matters and it's a five-minute one.
 
 ---
 

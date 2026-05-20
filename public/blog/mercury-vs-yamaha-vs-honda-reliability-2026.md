@@ -32,7 +32,7 @@ content_type: blog_article
 # Mercury vs Yamaha vs Honda Outboard Reliability in 2026: An Honest Comparison
 
 ## Quick answer
-Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None has a clear mechanical defect rate that rules it out. For Ontario boaters, the practical reliability difference comes from dealer network, parts availability, and how fast you can get a motor fixed when something goes wrong. On those metrics, Mercury wins in this region. Full disclosure: we have sold Mercury exclusively since 1965. Build a live CAD quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None has a clear mechanical defect rate that rules it out. For Ontario boaters, the practical reliability difference comes from dealer network, parts availability, and how fast you can get a motor fixed when something goes wrong. On those metrics, Mercury wins in this region. Full disclosure: we have sold Mercury exclusively since 1965. Build a live CAD quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Let us be honest about who is writing this
 

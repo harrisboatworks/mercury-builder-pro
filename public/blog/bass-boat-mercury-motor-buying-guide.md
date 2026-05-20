@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-> **Quick answer:** For tournament bass fishing, Mercury Pro XS is the answer, lighter, tuned for higher RPM, and noticeably faster hole shot and top speed. For recreational bass fishing without tournament demands, FourStroke at the same HP saves money without sacrificing much. Repower or new motor pricing at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** For tournament bass fishing, Mercury Pro XS is the answer, lighter, tuned for higher RPM, and noticeably faster hole shot and top speed. For recreational bass fishing without tournament demands, FourStroke at the same HP saves money without sacrificing much. Repower or new motor pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -101,7 +101,7 @@ The right Mercury for a bass boat depends on whether you're fishing competitivel
 
 **Elite level, 21 ft and up:** 250–300 HP Pro XS. Common at the top of the Ontario tournament trail. Match the motor to the hull rating, never exceed it.
 
-For your specific boat and HP, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) to see real installed pricing.
+For your specific boat and HP, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) to see real installed pricing.
 
 ---
 
@@ -155,7 +155,7 @@ Extended protection plans are available. Ask us about it at point of sale.
 
 ## Ready to configure your bass boat motor?
 
-Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) with actual current pricing. Or call **905-342-2153**, we handle bass boat repowers and can assess whether your transom and rigging are ready for a swap.
+Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with actual current pricing. Or call **905-342-2153**, we handle bass boat repowers and can assess whether your transom and rigging are ready for a swap.
 
 ---
 

@@ -165,7 +165,7 @@ export default function MandarinLanding() {
               许多顾客在购买船用发动机时，最担心的一件事就是：价格不透明，需要打电话"谈价格"，而且全程要用英语进行。
             </p>
             <p>
-              我们建立了 <a href="https://mercuryrepower.ca" className="text-primary hover:underline font-medium">mercuryrepower.ca</a> ——一个完全透明、在线自助的报价配置工具：
+              我们建立了 <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline font-medium">mercuryrepower.ca</a> ——一个完全透明、在线自助的报价配置工具：
             </p>
             <ul className="list-disc list-inside space-y-1 text-muted-foreground">
               <li>自行选择发动机型号、功率和配置</li>
@@ -194,7 +194,7 @@ export default function MandarinLanding() {
               <div>
                 <h3 className="font-medium text-foreground">🌐 在线报价工具</h3>
                 <p className="text-muted-foreground text-sm">
-                  <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 的配置工具不需要语言交流——您直接选择规格，系统自动生成报价。
+                  <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 的配置工具不需要语言交流——您直接选择规格，系统自动生成报价。
                 </p>
               </div>
             </div>

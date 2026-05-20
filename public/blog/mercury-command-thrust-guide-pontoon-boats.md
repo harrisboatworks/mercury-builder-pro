@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-> **Quick answer:** Mercury Command Thrust uses a larger gearcase and larger prop than the standard FourStroke at the same horsepower. On a loaded pontoon, that translates to faster planing, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See real pricing at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** Mercury Command Thrust uses a larger gearcase and larger prop than the standard FourStroke at the same horsepower. On a loaded pontoon, that translates to faster planing, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See real pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -141,7 +141,7 @@ Sometimes. A Command Thrust conversion depends on the specific motor, existing g
 
 ## Ready to repower with Command Thrust?
 
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). Or call **905-342-2153**, we rig Command Thrust setups every week and can give you the honest answer for your hull.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). Or call **905-342-2153**, we rig Command Thrust setups every week and can give you the honest answer for your hull.
 
 ---
 

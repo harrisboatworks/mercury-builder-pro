@@ -153,7 +153,7 @@ Why Oakville boaters drive to HBW for repower:
 
 - **Mercury Platinum-level rigging.** For a $15,000-$25,000 repower investment, the drive is justified when local dealers can't match the install depth.
 - **One-time annual trip.** Many Oakville customers trailer up once for repower or major service, then run lighter maintenance closer to home.
-- **Transparent CAD pricing.** Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) before deciding — the configurator works without a phone call and shows real dealer pricing, not MSRP.
+- **Transparent CAD pricing.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding — the configurator works without a phone call and shows real dealer pricing, not MSRP.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

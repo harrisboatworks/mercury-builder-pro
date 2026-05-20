@@ -32,7 +32,7 @@ content_type: blog_article
 # Financing a Boat Motor in Ontario: What to Know Before You Sign Anything
 
 ## Quick answer
-Financing a new outboard motor in Ontario works much like financing a vehicle: a lender advances the purchase amount, you repay it over an agreed term with interest. The main variables are the total financed amount, your credit profile, your down payment or trade-in, and the term length you choose. Dealer financing through Mercury's program bundles the motor, rigging, prop, install, and HST into a single loan. Bank or credit union financing keeps the loan separate from the dealer but may offer a better rate if you have a strong existing relationship. Build a real quote first at [mercuryrepower.ca](https://mercuryrepower.ca).
+Financing a new outboard motor in Ontario works much like financing a vehicle: a lender advances the purchase amount, you repay it over an agreed term with interest. The main variables are the total financed amount, your credit profile, your down payment or trade-in, and the term length you choose. Dealer financing through Mercury's program bundles the motor, rigging, prop, install, and HST into a single loan. Bank or credit union financing keeps the loan separate from the dealer but may offer a better rate if you have a strong existing relationship. Build a real quote first at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Why the motor price is not the loan amount
 The number on the sticker is the motor. The number you actually finance is the motor plus rigging, plus controls and cables, plus the prop, plus install labour, plus Ontario HST at 13%. On a mid-range 4-stroke outboard with full rigging, that difference can easily add 30 to 40% to the base motor cost.
@@ -134,7 +134,7 @@ Before you start a financing application, have these ready:
 - A down payment figure you are comfortable with
 
 ## A note on estimated monthly payments
-A payment estimate based on a motor price and an assumed rate is only useful if both numbers happen to match your actual situation. Mercury motor pricing changes annually. Financing rates change with market conditions and Mercury's promotional calendar. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca). The financing calculator pulls the actual current installed total and applies the current confirmed rate.
+A payment estimate based on a motor price and an assumed rate is only useful if both numbers happen to match your actual situation. Mercury motor pricing changes annually. Financing rates change with market conditions and Mercury's promotional calendar. Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The financing calculator pulls the actual current installed total and applies the current confirmed rate.
 
 ## Sources
 

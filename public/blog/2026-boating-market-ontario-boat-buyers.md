@@ -32,7 +32,7 @@ content_type: blog_article
 # What the 2026 Boating Market Means for Ontario Boat Buyers
 
 ## Quick answer
-The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, used-boat values have corrected, and the federal luxury tax on boats over $250,000 has been repealed as of November 5, 2025 per CRA Luxury Tax Notice LTN5. If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, used-boat values have corrected, and the federal luxury tax on boats over $250,000 has been repealed as of November 5, 2025 per CRA Luxury Tax Notice LTN5. If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## The post-pandemic reset is complete
 
@@ -104,7 +104,7 @@ Pre-owned boats typically account for about 80% of all boat transactions in a gi
 
 We have been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
-Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Sources
 
