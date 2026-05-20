@@ -12747,7 +12747,6 @@ Intermittent no-start is often a connection problem, a battery terminal that's p
 ## Internal Links
 
 - [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
-- [Mercury Outboard Won't Start, Ontario Diagnostic Flow](/blog/mercury-outboard-wont-start-troubleshooting-ontario)
 - [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
 
 ---
