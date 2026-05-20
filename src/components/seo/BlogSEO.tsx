@@ -8,8 +8,15 @@ interface BlogSEOProps {
   article: BlogArticle;
 }
 
+function getDealerCityFromSlug(slug: string): string | null {
+  const m = slug.match(/^mercury-dealer-(.+?)(?:-ontario)?-hbw$/);
+  if (!m) return null;
+  return m[1].split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
 export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
+  const dealerCity = getDealerCityFromSlug(article.slug);
   const cleanDescription = getCleanDescription(article);
 
   // Calculate word count from content
