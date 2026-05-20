@@ -17913,7 +17913,7 @@ If the configurator number works, call **905-342-2153**. We'll cover:
 - Schedule the install
 - Discuss boat transport logistics (next stage)
 
-**Wait time for repower install:** typically 2-4 weeks during peak season (April-June, September-November), shorter in off-season. The phone call locks the slot.
+**Wait time for repower install:** typically 2-4 weeks during peak season (April-June, September-November), and shorter at the start and end of the season. The phone call locks the slot.
 
 ### Stage 3: Boat transport to HBW (1 day, varies by approach)
 
@@ -17923,7 +17923,7 @@ You have three options for getting the boat to Gores Landing:
 
 **Option B. Hire boat transport.** Several Ontario boat-transport services do GTA-to-Kawartha runs. Typical cost: $300-$600 each way for a typical 18-22 ft boat. Search "boat transport Ontario" or ask us, we know the operators. Useful if you don't own a tow vehicle or don't want to drive a trailer.
 
-**Option C. Some customers leave the boat at HBW after a season.** If you're already storing with us for the winter, the boat is here. Repower happens during off-season at no transport cost.
+**Option C. Some customers leave the boat at HBW after a season.** If you're already storing with us over the winter, the boat is already here, so there's no transport step. We do the repower once the shop reopens in the spring, and you skip the transport cost entirely.
 
 Most GTA customers go with Option A. The 401 + County Rd 18 drive is straightforward.
 
@@ -18013,15 +18013,15 @@ Mistakes we see GTA boaters make:
 
 ## When to Start Planning Your Repower (Timing)
 
-The Ontario boating season is short. Repower booking timing matters:
+The Ontario boating season is short, and so is our install window. The shop runs early April through November. The marina is closed December 1 to April 1, and no install work happens over the winter. That makes booking timing matter:
 
-- **Winter (December-March)**: ideal. We have shop time, parts available, winter pricing sometimes applies, motor ready for spring.
-- **Early spring (April)**: still good. Schedule fills up by late April.
-- **Peak spring (May-June)**: tight. Often 3-4 week wait. Possible to launch with new motor mid-summer.
-- **Mid-season (July-August)**: you'll lose 2-3 weeks of boating to the install, usually not worth it unless your old motor is failing.
-- **Fall (September-November)**: good, shop is active but not capacity-constrained. Motor ready for next spring.
+- **Winter (December-March)**: planning season. The shop is closed, but this is the time to run the configurator, lock your spec, and book a slot. Boats booked over the winter get first pick of the early-April calendar.
+- **Early spring (April)**: install season opens. The first slots fill fast, often by late April.
+- **Peak spring (May-June)**: busy. Often a 3-4 week wait. Book now and you can still be on the water with the new motor by mid-summer.
+- **Mid-season (July-August)**: you'll lose 2-3 weeks of boating to the install. Usually not worth it unless your old motor is failing.
+- **Fall (September-November)**: good. The shop is active but not capacity-constrained, and your motor is ready for next spring.
 
-If you're considering a repower for spring 2026, **start the configurator now, book the install for January-March 2026.**
+If you're planning a repower, **start the configurator now and book your slot. Installs run early April through November.**
 
 ---
 
