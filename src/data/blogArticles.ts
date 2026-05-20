@@ -2570,8 +2570,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: 'mercury-command-thrust-guide-pontoon-boats',
-    title: "Mercury Command Thrust Guide for Pontoon Boats (2026)",
-    description: "Mercury Command Thrust is the gearcase option that turns a \\\"good\\\" pontoon Mercury into a \\\"great\\\" one. It is not a separate motor family. It is a gearcase upgrade available on Mercury FourStroke 115 HP and up. The bigger gearcase, larger prop, and torque-tuned gear ratio give pontoons meaningful hole shot and load-handling improvement. The cost premium over standard is worth it on pontoons. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
+    title: "Mercury Command Thrust on a Pontoon: Worth the Money?",
+    description: "Command Thrust adds about $400-700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't.",
     image: '/lovable-uploads/Mercury_Pontoon_Buyers_Guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
