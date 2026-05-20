@@ -199,7 +199,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
             "appearance": url
           }
         }
-      ] : [])
+      ] : []),
       ...(dealerCity ? [{
         "@type": "LocalBusiness",
         "@id": `${url}#localbusiness`,
