@@ -3260,11 +3260,11 @@ const routes = [
   // ============================================================
   {
     path: '/pricing-reference',
-    title: 'Mercury Outboard Pricing Reference (CAD) | Harris Boat Works',
-    description: 'Current Mercury outboard pricing in CAD, 98 motors, SKU-level. All FourStroke and Pro XS models from 2.5 HP to 300 HP. Pickup only at Gores Landing, Ontario.',
-    h1: 'Mercury Outboard Pricing Reference (CAD)',
-    intro: 'Curated Mercury outboards listed in the Harris Boat Works quote builder, with current CAD pricing. Pickup only at Gores Landing, Ontario. Final price confirmed by HBW staff.',
-    schemas: [genericPageSchema('/pricing-reference', 'Mercury Outboard Pricing Reference (CAD)', 'Current Mercury outboard pricing in CAD, all FourStroke and Pro XS models, generated from the same data source as the quote builder.')],
+    title: 'Mercury Outboard Prices in Canada, Every Model in CAD (2026) | Harris Boat Works',
+    description: 'Current Mercury outboard prices in Canada, every FourStroke and Pro XS model from 2.5 HP to 300 HP in CAD, with MSRP and dealer selling price side by side. Harris Boat Works, Gores Landing, Ontario.',
+    h1: 'Mercury Outboard Prices in Canada (CAD, 2026)',
+    intro: 'Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury\'s MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total, build a quote in the configurator. Pickup only at Gores Landing, Ontario.',
+    schemas: [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Canada (CAD, 2026)', 'Current Mercury outboard prices in Canada, every FourStroke and Pro XS model from 2.5 HP to 300 HP in CAD, with MSRP and dealer selling price side by side.')],
     extraHead:
       '<link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />',
     extraNoscript: () => {
@@ -3278,9 +3278,7 @@ const routes = [
         const noH1 = body.replace(/^\s*#\s+.+(?:\r?\n|$)/, '');
         const html = marked.parse(noH1);
         return (
-          '<p><strong>Prices in CAD. Pickup only at Gores Landing, ON. Final price confirmed by HBW.</strong></p>' +
-          '<p><a href="/quote/motor-selection">Build a quote in the configurator →</a> &nbsp;·&nbsp; ' +
-          '<a href="/pricing-reference.md">Machine-readable version: /pricing-reference.md</a></p>' +
+          '<p><a href="/quote/motor-selection">Build a quote in the configurator →</a></p>' +
           html
         );
       } catch (err) {
