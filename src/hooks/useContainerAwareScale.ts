@@ -35,29 +35,35 @@ export function useContainerAwareScale(
     if (containerHeight === 0 || containerWidth === 0) return;
 
     const { width: imgWidth, height: imgHeight } = imageDimensionsRef.current;
-    
-    // Calculate target dimensions (what we want to fill)
+
+    // The <img> uses object-contain, so it's already rendered at the largest
+    // size that fits within the container while preserving aspect ratio.
+    // Compute that contained/displayed size first.
+    const containedScale = Math.min(
+      containerWidth / imgWidth,
+      containerHeight / imgHeight
+    );
+    const displayedWidth = imgWidth * containedScale;
+    const displayedHeight = imgHeight * containedScale;
+
+    // How much room is left up to the target fill % of the container?
     const targetHeight = containerHeight * targetFillPercent;
     const targetWidth = containerWidth * targetFillPercent;
-    
-    // Calculate scale needed for each dimension
-    const scaleForHeight = targetHeight / imgHeight;
-    const scaleForWidth = targetWidth / imgWidth;
-    
-    // Use the smaller scale to ensure image fits (maintains aspect ratio)
+    const scaleForHeight = targetHeight / displayedHeight;
+    const scaleForWidth = targetWidth / displayedWidth;
     const optimalScale = Math.min(scaleForHeight, scaleForWidth);
-    
-    // Quality-aware cap: don't upscale low-resolution images (would look pixelated/blurry).
+
+    // Quality-aware cap: don't upscale low-resolution images (pixelation).
     // Tiered cap based on the image's smaller natural dimension.
     const naturalMin = Math.min(imgWidth, imgHeight);
     let qualityMaxScale = maxScale;
     if (naturalMin < 250) qualityMaxScale = 1.0;
-    else if (naturalMin < 450) qualityMaxScale = 1.25;
-    else if (naturalMin < 700) qualityMaxScale = 1.5;
-    
-    // Clamp between min and quality-adjusted max
+    else if (naturalMin < 450) qualityMaxScale = 1.1;
+    else if (naturalMin < 700) qualityMaxScale = 1.25;
+
+    // Clamp between min and quality-adjusted max. Never less than 1 (object-contain already fits).
     const clampedScale = Math.max(minScale, Math.min(qualityMaxScale, optimalScale));
-    
+
     setScale(clampedScale);
   }, [targetFillPercent, maxScale, minScale]);
 
