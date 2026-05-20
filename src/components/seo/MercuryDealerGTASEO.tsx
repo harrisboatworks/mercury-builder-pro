@@ -34,8 +34,8 @@ export function MercuryDealerGTASEO() {
         "url": `${SITE_URL}/mercury-dealer-gta`,
         "name": "Mercury Dealer for the GTA | Harris Boat Works, 90 Min East of Toronto",
         "description": "Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#organization" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/mercury-dealer-gta#breadcrumb` },
         "mainEntity": { "@id": `${SITE_URL}/mercury-dealer-gta#faqpage` }
@@ -53,7 +53,7 @@ export function MercuryDealerGTASEO() {
         "@id": `${SITE_URL}/mercury-dealer-gta#service`,
         "name": "Mercury Outboard Sales & Repower, GTA",
         "description": "Mercury outboard sales, repower, and service for the Greater Toronto Area, Lake Simcoe, Lake Scugog, and the Trent-Severn Waterway. Bring boat for install or pick up loose motor for self-install. Pickup only at Gores Landing.",
-        "provider": { "@id": "https://mercuryrepower.ca/#organization" },
+        "provider": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "areaServed": [
           {
             "@type": "Place",

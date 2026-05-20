@@ -228,7 +228,7 @@ It depends on the launch. County-run ramps in Northumberland (Bewdley, Harwood) 
 
 ### What should I check on my outboard before trailering?
 
-Before trailering, ensure the outboard is tilted fully up and the tilt lock engaged to prevent motor bounce on the road. Reinstall the engine flush plug if you flushed the motor. Make sure the motor support bracket or transom saver is in place for trips over an hour, road vibration transmits through the transom, and a transom saver distributes that load across the trailer rather than the transom. If the motor hasn't run yet this season, check our [spring outboard commissioning checklist](https://mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) before the first launch. Our spring startup service averages about $511 based on 232 jobs completed last season, it's worth having it done before the first long haul.
+Before trailering, ensure the outboard is tilted fully up and the tilt lock engaged to prevent motor bounce on the road. Reinstall the engine flush plug if you flushed the motor. Make sure the motor support bracket or transom saver is in place for trips over an hour, road vibration transmits through the transom, and a transom saver distributes that load across the trailer rather than the transom. If the motor hasn't run yet this season, check our [spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) before the first launch. Our spring startup service averages about $511 based on 232 jobs completed last season, it's worth having it done before the first long haul.
 
 ### Is Rice Lake suitable for all boat sizes?
 

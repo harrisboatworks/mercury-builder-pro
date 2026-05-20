@@ -916,7 +916,7 @@ Sur le site de Transports Canada. Les exigences varient selon la longueur et le 
 
 **Prêt à prendre le large en toute légalité?** 
 Pour la location d'embarcations sur le lac Rice : [harrisboatworks.ca](https://harrisboatworks.ca) 
-Pour un nouveau moteur ou une remotorisation : [mercuryrepower.ca](https://mercuryrepower.ca) 
+Pour un nouveau moteur ou une remotorisation : [mercuryrepower.ca](https://www.mercuryrepower.ca) 
 Demande de service : [hbw.wiki/service](https://hbw.wiki/service), écrivez en français, on s'arrange. 
 **905-342-2153** 
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
@@ -1231,7 +1231,7 @@ Si les trois disent oui, vous êtes un candidat à la remotorisation. Le reste d
 
 Avant de faire quoi que ce soit d\'autre, obtenez un vrai prix.
 
-Allez à **[mercuryrepower.ca](https://mercuryrepower.ca)**, choisissez la puissance Mercury qui convient à votre bateau, sélectionnez la longueur d\'arbre et les commandes, ajoutez une hélice, et vous verrez un prix tout inclus installé en CAD. **Environ 90 secondes.** Aucun appel commercial requis. Aucun « on vous rappelle ».
+Allez à **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, choisissez la puissance Mercury qui convient à votre bateau, sélectionnez la longueur d\'arbre et les commandes, ajoutez une hélice, et vous verrez un prix tout inclus installé en CAD. **Environ 90 secondes.** Aucun appel commercial requis. Aucun « on vous rappelle ».
 
 Apportez les informations sur votre échange si vous en avez (année, heures, état du moteur actuel) et le configurateur vous donne aussi une estimation de crédit d\'échange.
 
@@ -1389,7 +1389,7 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s\'échange pour 5 500 
 ---
 
 **Téléphone :** 905-342-2153
-**Configurateur :** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Configurateur :** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Demandes de service :** [hbw.wiki/service](https://hbw.wiki/service)
 **Adresse :** 5369 Harris Boat Works Rd, Gores Landing, ON
 `,
@@ -2348,7 +2348,7 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
 - **Honoré chez plus de 3 600 concessionnaires Mercury** aux États-Unis et au Canada
 - **Exclusivité HBW** : 10 % de rabais sur Platinum pour les clients ayant acheté leur moteur chez HBW
 
-Obtenez une soumission par le formulaire de contact à [mercuryrepower.ca](https://mercuryrepower.ca) ou appelez le 905-342-2153 pour la tarification Platinum actuelle par HP et durée.
+Obtenez une soumission par le formulaire de contact à [mercuryrepower.ca](https://www.mercuryrepower.ca) ou appelez le 905-342-2153 pour la tarification Platinum actuelle par HP et durée.
 
 > **Note importante :** les détails de couverture, les prix et l'admissibilité peuvent changer selon le moteur, la date d'achat et le programme Mercury en vigueur. HBW confirme toujours la couverture exacte au moment de la soumission, et toutes les figures dans ce guide doivent être validées avec Mercury Canada avant achat.
 
@@ -2430,7 +2430,7 @@ Pour vous inscrire à Mercury Product Protection :
 4. **Usage récréatif seulement.** Nolisement, pêche commerciale, gouvernemental ou usage lié au travail est exclu.
 5. **Doit être un moteur acheté aux États-Unis ou au Canada.** Les importations de l'extérieur de l'Amérique du Nord ne se qualifient pas.
 
-Nous vérifions l'admissibilité à l'aide du modèle et du numéro de série de votre moteur. Cela prend environ 10 minutes, fournissez-les via le formulaire de contact à [mercuryrepower.ca](https://mercuryrepower.ca) ou par téléphone au 905-342-2153.
+Nous vérifions l'admissibilité à l'aide du modèle et du numéro de série de votre moteur. Cela prend environ 10 minutes, fournissez-les via le formulaire de contact à [mercuryrepower.ca](https://www.mercuryrepower.ca) ou par téléphone au 905-342-2153.
 
 ---
 
@@ -2494,7 +2494,7 @@ Si vous avez acheté la garantie chez HBW mais que vous êtes en panne dans une 
 
 ## Comment obtenir une soumission
 
-Visitez [mercuryrepower.ca](https://mercuryrepower.ca) et utilisez le formulaire de contact, ou appelez le 905-342-2153. Donnez-nous le modèle et le numéro de série de votre moteur et votre durée préférée. Nous confirmons l'admissibilité dans 1 à 2 jours ouvrables et vous envoyons la soumission finale.
+Visitez [mercuryrepower.ca](https://www.mercuryrepower.ca) et utilisez le formulaire de contact, ou appelez le 905-342-2153. Donnez-nous le modèle et le numéro de série de votre moteur et votre durée préférée. Nous confirmons l'admissibilité dans 1 à 2 jours ouvrables et vous envoyons la soumission finale.
 
 Clients HBW (moteur acheté chez nous), mentionnez-le dans le champ notes et nous appliquons automatiquement le rabais de 10 %.
 
@@ -2529,7 +2529,7 @@ Par Harris Boat Works, concessionnaire Mercury Marine certifié Platinum, marina
 
 ## Réponse rapide
 
-La gamme Mercury 2026 couvre quatre familles principales : FourStroke (2,5 à 300 HP) pour l'usage quotidien en Ontario, Pro XS pour la pêche de performance, SeaPro pour usage commercial, et Verado pour les applications haut de gamme en haute mer. Pour la plupart des bateaux du lac Rice et des Kawarthas, la réponse se trouve dans la plage FourStroke 40 à 150 HP. Bâtissez une soumission CAD en direct à [mercuryrepower.ca](https://mercuryrepower.ca).
+La gamme Mercury 2026 couvre quatre familles principales : FourStroke (2,5 à 300 HP) pour l'usage quotidien en Ontario, Pro XS pour la pêche de performance, SeaPro pour usage commercial, et Verado pour les applications haut de gamme en haute mer. Pour la plupart des bateaux du lac Rice et des Kawarthas, la réponse se trouve dans la plage FourStroke 40 à 150 HP. Bâtissez une soumission CAD en direct à [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Pourquoi nous écrivons ceci
 
@@ -2593,7 +2593,7 @@ Ce tableau est un point de départ, pas une prescription. Le bon HP pour votre c
 
 ## Comment bâtir votre soumission
 
-Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soumissionné individuellement) à [mercuryrepower.ca](https://mercuryrepower.ca). Le configurateur de soumission inclut moteur, gréement, commandes, hélice et installation, le chiffre complet, pas seulement l'autocollant du moteur.
+Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soumissionné individuellement) à [mercuryrepower.ca](https://www.mercuryrepower.ca). Le configurateur de soumission inclut moteur, gréement, commandes, hélice et installation, le chiffre complet, pas seulement l'autocollant du moteur.
 
 Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous avez besoin d'aide pour le dimensionnement de ponton et la configuration Command Thrust, appelez 905-342-2153.
 

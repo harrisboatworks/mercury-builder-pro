@@ -105,7 +105,7 @@ Mercury offers Command Thrust across a meaningful range of the lineup, but avail
 - **Pro XS 175–200:** CT is offered and useful on heavily loaded performance fishing rigs.
 - **Above 200 HP:** CT availability narrows. Big V8s rarely use it because the application is usually light, fast hulls.
 
-For the exact 2026 CT availability for a specific HP, model code, and shaft length, check the live lineup at [mercuryrepower.ca](https://mercuryrepower.ca) or call HBW. Mercury reshuffles the lineup periodically and the live data is the only reliable source.
+For the exact 2026 CT availability for a specific HP, model code, and shaft length, check the live lineup at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call HBW. Mercury reshuffles the lineup periodically and the live data is the only reliable source.
 
 ---
 
@@ -185,7 +185,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## Get a real quote
 
-For a real CAD quote with CT vs standard configurations side-by-side on your specific boat, use the quote builder at [mercuryrepower.ca](https://mercuryrepower.ca). For service bookings, gearcase-swap assessments, and shop appointments, [hbw.wiki/service](https://hbw.wiki/service).
+For a real CAD quote with CT vs standard configurations side-by-side on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). For service bookings, gearcase-swap assessments, and shop appointments, [hbw.wiki/service](https://hbw.wiki/service).
 
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
@@ -222,7 +222,7 @@ CT swings a bigger-diameter prop than standard — typically 14"–15" diameter 
 
 ### Does Command Thrust cost more?
 
-Yes, modestly. The CT gearcase and the CT-spec prop carry a price premium over the standard equivalents — exact difference depends on HP and current Mercury pricing. On a typical pontoon repower the CT premium is a small fraction of the total job and it pays back the first time the boat planes with a full load instead of plowing. For up-to-date CAD pricing on a CT vs standard configuration for your boat, run a quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call HBW. We'll show both options side-by-side and let the numbers and the use case decide.
+Yes, modestly. The CT gearcase and the CT-spec prop carry a price premium over the standard equivalents — exact difference depends on HP and current Mercury pricing. On a typical pontoon repower the CT premium is a small fraction of the total job and it pays back the first time the boat planes with a full load instead of plowing. For up-to-date CAD pricing on a CT vs standard configuration for your boat, run a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call HBW. We'll show both options side-by-side and let the numbers and the use case decide.
 
 ### How do I know if my Mercury already has Command Thrust?
 

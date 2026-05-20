@@ -32,7 +32,7 @@ content_type: blog_article
 # Outboard Shaft Length Guide: Short, Long, and Extra Long, How to Get It Right
 
 ## Quick answer
-Measure your transom height from the bottom of the cutout to the top of the transom. A 15-inch transom needs a short shaft, 20-inch needs a long shaft, 25-inch needs an extra long. Wrong shaft length means cavitation, lost performance, or a submerged powerhead. We confirm shaft length on every quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+Measure your transom height from the bottom of the cutout to the top of the transom. A 15-inch transom needs a short shaft, 20-inch needs a long shaft, 25-inch needs an extra long. Wrong shaft length means cavitation, lost performance, or a submerged powerhead. We confirm shaft length on every quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Why shaft length matters more than most people think
 
@@ -153,7 +153,7 @@ Three things we do on every repower that prevent wrong-shaft mistakes:
 
 ## Ready to spec the right shaft?
 
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). The configurator includes shaft length selection by Mercury model.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The configurator includes shaft length selection by Mercury model.
 
 Not sure about your transom height? Call us at 905-342-2153 or send a side-profile photo with a tape measure on the transom. We can confirm the right shaft length in five minutes.
 

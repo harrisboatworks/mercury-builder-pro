@@ -59,7 +59,7 @@ A marina that does most of these well is a full-service marina. A marina that do
 |---|---|---|
 | Launch ramp | Day-trippers and slip holders | Walk-in during operating hours |
 | 65 seasonal slips | Boaters wanting a home base on Rice Lake | Call 905-342-2153 in late winter for the season |
-| Mercury sales (Platinum dealer) | New motor, repower, or full boat package | [mercuryrepower.ca](https://mercuryrepower.ca) |
+| Mercury sales (Platinum dealer) | New motor, repower, or full boat package | [mercuryrepower.ca](https://www.mercuryrepower.ca) |
 | Mercury and Mercruiser service | Warranty, repower, diagnostics, repairs | [hbw.wiki/service](https://hbw.wiki/service) |
 | Pontoon and fishing boat rentals | Visitors, families, day trips | [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) |
 | Winter storage + shrinkwrap | Outdoor storage, October-April | [hbw.wiki/service](https://hbw.wiki/service) |

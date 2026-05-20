@@ -114,7 +114,7 @@ If wakesurfing is the primary use, consider an inboard tow boat instead. We'll b
 | 250 HP V8 Pro XS | $36,500-$40,500 |
 | 300 HP V8 Pro XS | $39,500-$44,000 |
 
-Pricing includes the motor, rigging, prop, and installation. Use the [configurator](https://mercuryrepower.ca) for exact current pricing.
+Pricing includes the motor, rigging, prop, and installation. Use the [configurator](https://www.mercuryrepower.ca) for exact current pricing.
 
 For a tow boat repower, you also typically want:
 - **Stainless steel prop** instead of aluminum, better hole shot, more durable. Add $300-$700.
@@ -150,7 +150,7 @@ We rig outboard tow boats every spring. Specifically:
 
 Tow boats run hard. We'll talk through your annual hours and use case before quoting, sometimes the right answer is "your existing motor still has life if we service it" instead of "buy a new V8." We'll be honest either way.
 
-Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercuryrepower.ca](https://mercuryrepower.ca).
+Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

@@ -156,7 +156,7 @@ The other observation: Pro XS V6 buyers consistently report they wish they'd gon
 
 ## How to get a quote
 
-Build your real installed Pro XS quote at [mercuryrepower.ca](https://mercuryrepower.ca). Live CAD pricing, full configuration including SmartCraft rigging, hydraulic steering, and prop matching for performance applications.
+Build your real installed Pro XS quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). Live CAD pricing, full configuration including SmartCraft rigging, hydraulic steering, and prop matching for performance applications.
 
 For tournament or competitive setups, call 905-342-2153 after building the basic quote — we'll walk through prop options and SmartCraft configuration in detail.
 

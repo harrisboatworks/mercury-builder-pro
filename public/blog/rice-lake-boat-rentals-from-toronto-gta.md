@@ -204,7 +204,7 @@ If you have a great rental day and start thinking about ownership, talk to us be
 
 - We sell new Mercury motors + Legend Boats (Canadian-designed aluminum and pontoon, sold exclusively in Canada)
 - We do pre-purchase inspections on used boats and motors
-- We offer a **trade quote** through our [configurator](https://mercuryrepower.ca) that's based on actual Ontario service-data, not Florida blue-book guesswork
+- We offer a **trade quote** through our [configurator](https://www.mercuryrepower.ca) that's based on actual Ontario service-data, not Florida blue-book guesswork
 
 The rental experience is a useful gut-check on what kind of boat owner you'd be. Pontoon families often realize they want pontoons. Fishing families realize they want fishing boats. The rental day saves you from buying the wrong boat at the wrong price.
 

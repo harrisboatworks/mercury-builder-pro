@@ -135,7 +135,7 @@ If you book opener prep at Harris Boat Works, the service includes:
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-Book through [hbw.wiki/service](https://hbw.wiki/service). If you are considering a new motor rather than prepping the old one, build a Mercury repower quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+Book through [hbw.wiki/service](https://hbw.wiki/service). If you are considering a new motor rather than prepping the old one, build a Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 For engine repairs, we only service Mercury and Mercruiser.
 

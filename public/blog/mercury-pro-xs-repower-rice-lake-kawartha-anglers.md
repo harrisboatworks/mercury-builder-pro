@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-> **Quick answer:** Mercury Pro XS is the angler-focused outboard family across 115–300 HP. For Rice Lake and Kawartha bass, walleye, and muskie boats, the sweet spot is usually 175–225 HP Pro XS V6 — strong hole-shot, fuel-efficient cruise, and proven reliability. The 150 Pro XS is inline-4 (lighter); 300 Pro XS is V8 (heaviest, fastest). The right choice depends on hull rating, fishing style, and budget. Quote: [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** Mercury Pro XS is the angler-focused outboard family across 115–300 HP. For Rice Lake and Kawartha bass, walleye, and muskie boats, the sweet spot is usually 175–225 HP Pro XS V6 — strong hole-shot, fuel-efficient cruise, and proven reliability. The 150 Pro XS is inline-4 (lighter); 300 Pro XS is V8 (heaviest, fastest). The right choice depends on hull rating, fishing style, and budget. Quote: [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -148,7 +148,7 @@ A Pro XS repower isn't just the motor. The line items add up:
 
 As a planning range only — pricing depends on configuration — a typical 175–225 Pro XS V6 build lands somewhere between roughly the high teens of thousands and the mid-thirties of thousands CAD installed. A 150 Pro XS inline-4 build is lower. A 300 Pro XS V8 build is higher.
 
-Don't budget off this paragraph. Run a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) — the quote builder uses our actual pricing, accounts for what we can reuse from your existing setup, and shows financing options if applicable. Numbers in CAD, no surprises.
+Don't budget off this paragraph. Run a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) — the quote builder uses our actual pricing, accounts for what we can reuse from your existing setup, and shows financing options if applicable. Numbers in CAD, no surprises.
 
 ---
 
@@ -191,7 +191,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision) — when the hull is the limit, not the motor
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) — current planning ranges across the lineup
 
-For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepower.ca](https://mercuryrepower.ca). For service bookings and shop appointments, [hbw.wiki/service](https://hbw.wiki/service).
+For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). For service bookings and shop appointments, [hbw.wiki/service](https://hbw.wiki/service).
 
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
@@ -212,7 +212,7 @@ No. The 150 Pro XS is an inline-4. The Pro XS V6 family is the 175, 200, 225, an
 
 ### How much does a Pro XS repower cost in Ontario?
 
-It depends on HP, rigging, and what's reusable on your boat. As a planning range only, a typical Pro XS repower in the 175–250 HP V6 range — including motor, controls, gauges, prop, steering, install labour, and taxes — runs from roughly the high teens of thousands to the mid-thirties of thousands CAD. A 300 Pro XS V8 build sits higher. A 150 Pro XS inline-4 build sits lower. Pricing depends on configuration and what we can carry over from your existing setup. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://mercuryrepower.ca).
+It depends on HP, rigging, and what's reusable on your boat. As a planning range only, a typical Pro XS repower in the 175–250 HP V6 range — including motor, controls, gauges, prop, steering, install labour, and taxes — runs from roughly the high teens of thousands to the mid-thirties of thousands CAD. A 300 Pro XS V8 build sits higher. A 150 Pro XS inline-4 build sits lower. Pricing depends on configuration and what we can carry over from your existing setup. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ### Do I need Command Thrust on my Pro XS?
 
@@ -232,7 +232,7 @@ Mercury Pro XS comes with a standard 3-year limited factory warranty in Canada. 
 
 ### Does HBW finance repowers?
 
-Yes, on repowers above $5,000 CAD. We offer financing through Mercury's preferred lenders with rates that depend on the financed amount — under $10,000 CAD is one rate tier, $10,000 and above is a slightly lower rate tier. There's also a small DealerPlan fee added to the financed total. Repowers under $5,000 don't qualify for financing through this program. The fastest way to see your actual numbers — payment, term options, total interest — is to run a quote at [mercuryrepower.ca](https://mercuryrepower.ca) and select the financing option.
+Yes, on repowers above $5,000 CAD. We offer financing through Mercury's preferred lenders with rates that depend on the financed amount — under $10,000 CAD is one rate tier, $10,000 and above is a slightly lower rate tier. There's also a small DealerPlan fee added to the financed total. Repowers under $5,000 don't qualify for financing through this program. The fastest way to see your actual numbers — payment, term options, total interest — is to run a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and select the financing option.
 
 ## Next steps
 

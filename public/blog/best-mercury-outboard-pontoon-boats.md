@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-> **Quick answer:** Pontoons need torque and hole shot, not just top speed. For most 18–22 ft Ontario pontoons, Mercury 90–150 HP FourStroke with Command Thrust is the right answer. The gearcase matters as much as the horsepower number. Build an installed pontoon repower quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** Pontoons need torque and hole shot, not just top speed. For most 18–22 ft Ontario pontoons, Mercury 90–150 HP FourStroke with Command Thrust is the right answer. The gearcase matters as much as the horsepower number. Build an installed pontoon repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -163,7 +163,7 @@ If your needs have shifted toward active water sports and your two-tube isn't ke
 
 ## Ready to repower your pontoon?
 
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). The system asks for your hull info and use case and recommends the right HP class and gearcase. Or call **905-342-2153**, we rig pontoons every week and can give you the honest answer for your specific hull.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The system asks for your hull info and use case and recommends the right HP class and gearcase. Or call **905-342-2153**, we rig pontoons every week and can give you the honest answer for your specific hull.
 
 ---
 

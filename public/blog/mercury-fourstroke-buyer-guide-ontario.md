@@ -176,7 +176,7 @@ The other observation: customers consistently under-spec horsepower when they ow
 
 ## How to get a quote
 
-Build your real installed FourStroke quote at [mercuryrepower.ca](https://mercuryrepower.ca). Live CAD pricing, full configuration, three minutes. No phone call required.
+Build your real installed FourStroke quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). Live CAD pricing, full configuration, three minutes. No phone call required.
 
 For complex repowers (twin-engine setups, brand conversions, or unusual configurations), call 905-342-2153 after building the basic quote.
 

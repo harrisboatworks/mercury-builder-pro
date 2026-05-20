@@ -159,7 +159,7 @@ Mercury warranty requires break-in compliance per the owner's manual. Damage fro
 
 ## Need service on your Mercury?
 
-Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 

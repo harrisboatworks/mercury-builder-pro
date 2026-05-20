@@ -125,7 +125,7 @@ export default function FrenchBlogArticle() {
           <div className="bg-primary/5 rounded-xl p-6 mb-8 not-prose">
             <h2 className="text-lg font-medium text-foreground mb-2">Réponse rapide</h2>
             <p className="text-foreground text-sm">
-              Harris Boat Works est concessionnaire <strong>Mercury Marine Platinum</strong> à Gores Landing, en Ontario, le niveau le plus élevé du réseau Mercury. On sert les plaisanciers de l'Ontario et du Québec depuis 1947, avec des prix transparents en ligne et une approche franche. Bâtissez votre soumission en temps réel à <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>.
+              Harris Boat Works est concessionnaire <strong>Mercury Marine Platinum</strong> à Gores Landing, en Ontario, le niveau le plus élevé du réseau Mercury. On sert les plaisanciers de l'Ontario et du Québec depuis 1947, avec des prix transparents en ligne et une approche franche. Bâtissez votre soumission en temps réel à <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>.
             </p>
           </div>
 
@@ -142,7 +142,7 @@ export default function FrenchBlogArticle() {
           </p>
           <p>Nous, on a choisi de faire autrement.</p>
           <p>
-            <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> est un configurateur de soumission en temps réel. Vous choisissez votre moteur, vos options, et vous voyez le prix réel, en dollars canadiens, immédiatement. Le prix que vous voyez, c'est le prix. Tout le monde voit le même chiffre.
+            <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> est un configurateur de soumission en temps réel. Vous choisissez votre moteur, vos options, et vous voyez le prix réel, en dollars canadiens, immédiatement. Le prix que vous voyez, c'est le prix. Tout le monde voit le même chiffre.
           </p>
 
           <h2>Qu'est-ce qu'une remotorisation (repower)?</h2>
@@ -165,7 +165,7 @@ export default function FrenchBlogArticle() {
 
           <h2>Comment travailler avec nous en français</h2>
           <ol>
-            <li><strong>Bâtissez votre soumission en ligne</strong>, <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>, aucun échange verbal requis.</li>
+            <li><strong>Bâtissez votre soumission en ligne</strong>, <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>, aucun échange verbal requis.</li>
             <li><strong>Envoyez une demande par formulaire</strong>, <a href="https://hbw.wiki/service" className="text-primary hover:underline">hbw.wiki/service</a>, vous pouvez écrire en français.</li>
             <li><strong>Appelez si vous préférez</strong>, 905-342-2153, on va prendre le temps qu'il faut.</li>
             <li><strong>Venez nous voir</strong>, une conversation en personne règle bien des choses.</li>

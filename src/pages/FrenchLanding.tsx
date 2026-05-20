@@ -158,7 +158,7 @@ export default function FrenchLanding() {
               <div>
                 <h3 className="font-medium text-foreground">Le configurateur de prix en ligne</h3>
                 <p className="text-muted-foreground text-sm">
-                  <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>, bâtissez votre soumission Mercury en temps réel, voyez les vrais prix, choisissez votre moteur sans négocier au téléphone.
+                  <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>, bâtissez votre soumission Mercury en temps réel, voyez les vrais prix, choisissez votre moteur sans négocier au téléphone.
                 </p>
               </div>
             </div>

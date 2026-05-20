@@ -32,7 +32,7 @@ content_type: blog_article
 # Why Mercury Outboards Make Practical Sense for Ontario Boaters (And Where We Are Biased)
 
 ## Quick answer
-Mercury wins in Ontario for practical reasons: dealer network density, parts availability, and resale demand. Yamaha and Honda make reliable motors. But when something breaks in July on Rice Lake, which brand gets you back on the water faster? In this region, that is usually Mercury. Full disclosure: we sell Mercury exclusively and have since 1965. Build a live CAD quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+Mercury wins in Ontario for practical reasons: dealer network density, parts availability, and resale demand. Yamaha and Honda make reliable motors. But when something breaks in July on Rice Lake, which brand gets you back on the water faster? In this region, that is usually Mercury. Full disclosure: we sell Mercury exclusively and have since 1965. Build a live CAD quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Let us get the bias disclosure out of the way
 
@@ -74,7 +74,7 @@ Expertise depth, parts inventory investment, customer fit. Three generations of 
 
 ## Ready to build your quote?
 
-Live CAD pricing on every Mercury we sell is at [mercuryrepower.ca](https://mercuryrepower.ca).
+Live CAD pricing on every Mercury we sell is at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 If you want to talk through whether Mercury is the right answer for your specific boat and use case, call 905-342-2153.
 

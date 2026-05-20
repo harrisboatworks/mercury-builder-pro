@@ -7,17 +7,17 @@ export function ContactPageSEO() {
     "@graph": [
       {
         "@type": "ContactPage",
-        "@id": "https://mercuryrepower.ca/contact#webpage",
-        "url": "https://mercuryrepower.ca/contact",
+        "@id": "https://www.mercuryrepower.ca/contact#webpage",
+        "url": "https://www.mercuryrepower.ca/contact",
         "name": "Contact Harris Boat Works",
         "description": "Mercury dealer on Rice Lake, phone (905) 342-2153, text (647) 952-2153, email info@harrisboatworks.ca.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#localbusiness" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#localbusiness" },
         "inLanguage": "en-CA"
       },
       {
         "@type": ["LocalBusiness", "Store", "AutoRepair"],
-        "@id": "https://mercuryrepower.ca/#localbusiness",
+        "@id": "https://www.mercuryrepower.ca/#localbusiness",
         "name": "Harris Boat Works",
         "image": "https://www.harrisboatworks.ca/logo.png",
         "url": "https://www.harrisboatworks.ca/",

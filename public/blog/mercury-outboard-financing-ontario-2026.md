@@ -33,7 +33,7 @@ content_type: blog_article
 
 ## Quick answer
 
-Most Ontario boaters finance a Mercury repower through Canadian marine lenders, not through Mercury Marine's branded financing programme. Mercury's official "Repower Financing" advertised on mercurymarine.com is administered through Medallion Bank and is available to **U.S. residents only** — sales and registrations outside the United States are explicitly excluded. The financing you can actually access in Ontario is through standard Canadian marine lending — typical terms run 24 to 84 months, secured by the engine package, with most approvals back inside 24 to 48 hours. Build a project quote at [mercuryrepower.ca](https://mercuryrepower.ca) and we'll walk through the financing options that are real here.
+Most Ontario boaters finance a Mercury repower through Canadian marine lenders, not through Mercury Marine's branded financing programme. Mercury's official "Repower Financing" advertised on mercurymarine.com is administered through Medallion Bank and is available to **U.S. residents only** — sales and registrations outside the United States are explicitly excluded. The financing you can actually access in Ontario is through standard Canadian marine lending — typical terms run 24 to 84 months, secured by the engine package, with most approvals back inside 24 to 48 hours. Build a project quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and we'll walk through the financing options that are real here.
 
 ## What Mercury's official Repower Financing actually covers
 
@@ -74,7 +74,7 @@ That last point comes up more than people expect. A newer, more fuel-efficient 4
 
 ### 1. Total amount financed
 
-The whole project cost: motor, rigging, controls, prop, install labour, and Ontario HST at 13%. Not just the motor sticker price. Build a full quote at [mercuryrepower.ca](https://mercuryrepower.ca) to get the real number.
+The whole project cost: motor, rigging, controls, prop, install labour, and Ontario HST at 13%. Not just the motor sticker price. Build a full quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) to get the real number.
 
 ### 2. Down payment
 
@@ -90,7 +90,7 @@ Shorter terms cost less in total interest but have higher monthly payments. Most
 
 ### 5. Rate environment
 
-Marine financing rates move with the broader interest rate environment in Canada. Rates change. The rate you see in any article is a planning-level reference, not a quote. Confirm the current rate when you build your actual project at [mercuryrepower.ca](https://mercuryrepower.ca).
+Marine financing rates move with the broader interest rate environment in Canada. Rates change. The rate you see in any article is a planning-level reference, not a quote. Confirm the current rate when you build your actual project at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## What you can finance
 
@@ -146,7 +146,7 @@ The mistake we watch customers make: financing the motor and boat together at a 
 ## Sources
 
 - Mercury Marine Canada — [Repower Financing programme terms](https://www.mercurymarine.com/ca/en/land/find-a-repower-center/financing) (administered through Medallion Bank; U.S. residents only)
-- Current Ontario financing options through HBW are shown on the [HBW quote builder](https://mercuryrepower.ca) at the end of your project build
+- Current Ontario financing options through HBW are shown on the [HBW quote builder](https://www.mercuryrepower.ca) at the end of your project build
 
 *Last reviewed: 2026-05-17.*
 
@@ -176,7 +176,7 @@ Confirm prepayment terms before you sign. Most marine financing allows early pay
 Yes. HST at 13% is added to the project total and included in the financed amount. You do not pay tax separately upfront.
 
 **How do I get started?**
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). You will see the full installed cost, then live payment options at current rates and terms.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). You will see the full installed cost, then live payment options at current rates and terms.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

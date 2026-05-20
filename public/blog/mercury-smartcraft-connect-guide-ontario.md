@@ -88,7 +88,7 @@ The module lives under the cowl on a single-engine boat, or under the helm on a 
 | 8M0173128 | Under-cowl single-engine module | One Mercury outboard |
 | 8M0173129 | Under-helm 1-to-4 engine module | Twins, triples, quads |
 
-The module is purchased separately from the motor. Pricing is set by Mercury Canada and updates annually. See the current price at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
+The module is purchased separately from the motor. Pricing is set by Mercury Canada and updates annually. See the current price at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call 905-342-2153.
 
 ---
 
@@ -211,7 +211,7 @@ The app shows eligibility once SmartCraft Connect is paired. HBW can also check 
 
 ## Two Paths Forward
 
-**If you are repowering:** Add the module to your quote at [mercuryrepower.ca](https://mercuryrepower.ca). HBW installs it during rigging and you leave with the app already paired.
+**If you are repowering:** Add the module to your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). HBW installs it during rigging and you leave with the app already paired.
 
 **If you already have a compatible motor:** Call HBW at 905-342-2153 with your serial number. HBW confirms compatibility, quotes the module, and books an install slot, about 30 minutes of shop time.
 
@@ -230,7 +230,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 ## CTA
 
 **Add SmartCraft Connect to your repower quote.** 
-[mercuryrepower.ca](https://mercuryrepower.ca), or call 905-342-2153 with your motor's serial number. 
+[mercuryrepower.ca](https://www.mercuryrepower.ca), or call 905-342-2153 with your motor's serial number. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Platinum dealer. Est. 1947.
 

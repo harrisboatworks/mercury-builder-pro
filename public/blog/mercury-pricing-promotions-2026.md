@@ -227,7 +227,7 @@ Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back
 
 **[Get Current Pricing](/quote)**
 
-For complete installed-repower pricing in CAD, including the rigging, controls, prop, and labour components above, see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
+For complete installed-repower pricing in CAD, including the rigging, controls, prop, and labour components above, see our canonical [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
 
 ## Related guides
 

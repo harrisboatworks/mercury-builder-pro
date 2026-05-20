@@ -32,7 +32,7 @@ content_type: blog_article
 # What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works
 
 ## Quick answer
-There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://mercuryrepower.ca).
+There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 > **Quick estimate:** Try our [Trade-In Value Estimator](/trade-in-value) for an instant ballpark number on your current motor. Free, no email required.
 
@@ -212,7 +212,7 @@ All figures are CAD, before HST, for working motors with no major issues. Add 10
 ### Option 1: Build a quote with trade at mercuryrepower.ca
 The quote builder includes a trade-in assessment step. Enter make, model, year, hours, and condition. It returns a preliminary trade range and an all-in repower number with HST.
 
-[Start at mercuryrepower.ca](https://mercuryrepower.ca)
+[Start at mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 ### Option 2: Send us photos
 Email 6 to 8 photos to **info@harrisboatworks.ca**:
@@ -231,7 +231,7 @@ We have been on Rice Lake since 1947. Most of our repower customers have been wi
 
 We cannot inflate it, because we have to move the motor afterward. We will not lowball it, because you would know and you would walk, and you would tell someone.
 
-We also publish all our Mercury pricing live at [mercuryrepower.ca](https://mercuryrepower.ca), so you can see both sides of the transaction without a phone call.
+We also publish all our Mercury pricing live at [mercuryrepower.ca](https://www.mercuryrepower.ca), so you can see both sides of the transaction without a phone call.
 
 > **Want a number right now?** Try our [Trade-In Value Estimator](/trade-in-value). Same fields, instant CAD ballpark. Or call us at [(905) 342-2153](tel:+19053422153) and we'll walk it through with you.
 

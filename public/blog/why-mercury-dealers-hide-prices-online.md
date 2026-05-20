@@ -31,7 +31,7 @@ content_type: blog_article
 
 ### Quick Answer
 
-Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. [Mercury Marine](https://www.mercurymarine.com/canada/en/) does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
+Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. [Mercury Marine](https://www.mercurymarine.com/canada/en/) does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://www.mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
 
 ---
 
@@ -78,7 +78,7 @@ This is the honest reason, though no dealer says it out loud. If you cannot see 
 
 ## Why HBW Lists Prices
 
-HBW has listed prices from the start of [mercuryrepower.ca](https://mercuryrepower.ca). Here is why:
+HBW has listed prices from the start of [mercuryrepower.ca](https://www.mercuryrepower.ca). Here is why:
 
 **It is faster.** Three minutes to a configured quote beats a 30-minute phone call you did not want to make.
 
@@ -132,13 +132,13 @@ For about 95% of recreational customers, the motor selection page is the source 
 No. Mercury sets MSRP. Dealers set their own pricing and choose whether to publish it. Any dealer who claims Mercury requires them to hide prices is not being straight with you.
 
 **How do I know HBW's published price is the actual price?** 
-The quote you build at [mercuryrepower.ca](https://mercuryrepower.ca) reflects the current live pricing. When you engage with HBW, that is the number the team works from. No negotiation theater.
+The quote you build at [mercuryrepower.ca](https://www.mercuryrepower.ca) reflects the current live pricing. When you engage with HBW, that is the number the team works from. No negotiation theater.
 
 **What does an all-in Mercury repower cost in 2026?** 
-Ranges vary by HP class. The configured quote at [mercuryrepower.ca](https://mercuryrepower.ca) gives you the full number, motor, controls, steering, gauges, wiring, prop, and install labor, in a single place. Build one and see.
+Ranges vary by HP class. The configured quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you the full number, motor, controls, steering, gauges, wiring, prop, and install labor, in a single place. Build one and see.
 
 **Do I have to come to Gores Landing to get the quote?** 
-No. Build the quote at [mercuryrepower.ca](https://mercuryrepower.ca) from anywhere. The physical installation happens at HBW in Gores Landing. HBW does not ship outboards or deliver installs.
+No. Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) from anywhere. The physical installation happens at HBW in Gores Landing. HBW does not ship outboards or deliver installs.
 
 **What if I have a non-standard setup?** 
 For twin-engine setups, brand conversions, or commercial applications, call 905-342-2153 after building the basic quote online. Those cases benefit from a real conversation.
@@ -153,7 +153,7 @@ For twin-engine setups, brand conversions, or commercial applications, call 905-
 ## CTA
 
 **See the number before you call.** 
-Build your configured Mercury quote at [mercuryrepower.ca](https://mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 
+Build your configured Mercury quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 
 Questions after you see it? Call 905-342-2153. 
 Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
 

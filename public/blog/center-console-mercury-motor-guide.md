@@ -32,7 +32,7 @@ content_type: blog_article
 # Choosing a Mercury Motor for Your Center Console: An Ontario-First Guide
 
 ## Quick answer
-Most Ontario center console buyers are running trailerable 18 to 25 ft hulls on Lake Ontario, the Bay of Quinte, or occasionally Georgian Bay. The right Mercury motor is usually a 200 to 250 HP V6 Pro XS for fishing-focused single-engine setups, or a 250 to 300 HP V8 for larger or premium twin configurations. The Florida offshore assumptions built into most center console guides do not apply here. Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+Most Ontario center console buyers are running trailerable 18 to 25 ft hulls on Lake Ontario, the Bay of Quinte, or occasionally Georgian Bay. The right Mercury motor is usually a 200 to 250 HP V6 Pro XS for fishing-focused single-engine setups, or a 250 to 300 HP V8 for larger or premium twin configurations. The Florida offshore assumptions built into most center console guides do not apply here. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ::decision-card
 heading: Single or twin Mercurys on a center console?

@@ -98,7 +98,7 @@ Mercury sets a **Minimum Advertised Price (MAP)** for new motors. So *motor pric
 
 4. **MPP extended warranty pricing**, same motor, same MPP terms, but presentation varies. Honest dealers discuss MPP early; opaque dealers add it at the end as upsell.
 
-**HBW's approach:** all-in pricing in the [mercuryrepower.ca configurator](https://mercuryrepower.ca). The price you see at home is the price we'd quote in person. **No "call for pricing" games, no surprise add-ons.**
+**HBW's approach:** all-in pricing in the [mercuryrepower.ca configurator](https://www.mercuryrepower.ca). The price you see at home is the price we'd quote in person. **No "call for pricing" games, no surprise add-ons.**
 
 This is genuinely uncommon in the marine dealer industry, where opaque pricing is the historical norm. We chose transparency specifically because most marine buyers want it.
 
@@ -222,7 +222,7 @@ Technically yes. In practice, Platinum dealers do most repowers because the work
 
 ---
 **Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Configurator:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 

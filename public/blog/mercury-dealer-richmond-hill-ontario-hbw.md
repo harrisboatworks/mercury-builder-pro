@@ -158,7 +158,7 @@ The drive to Rice Lake is 75 minutes via Highway 404 → 407 east → Highway 11
 Why Richmond Hill boaters drive to HBW vs Simcoe-area dealers:
 
 - **Mercury Platinum-level expertise.** For repower work, dealer depth matters more than 20 minutes of drive time. HBW competes on rigging quality, not proximity.
-- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://mercuryrepower.ca) before deciding — no phone calls, no negotiation games, real dealer pricing.
+- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding — no phone calls, no negotiation games, real dealer pricing.
 - **One-stop service + storage.** Many Richmond Hill customers store at HBW over winter, get spring commissioning, and trailer back to Simcoe or Rice Lake for the season.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).

@@ -32,7 +32,7 @@ content_type: blog_article
 # Why People Rent Before They Buy (And What Our Numbers Actually Show)
 
 ## Quick answer
-Renting a boat is a smart first step for cottagers, new boaters, and buyers who are not sure what size or style fits their life. In 2025, Harris Boat Works completed 346 rentals across a 9-boat fleet, that is real demand, not a theory. If you are ready to own, start building a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+Renting a boat is a smart first step for cottagers, new boaters, and buyers who are not sure what size or style fits their life. In 2025, Harris Boat Works completed 346 rentals across a 9-boat fleet, that is real demand, not a theory. If you are ready to own, start building a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## The full post
 
@@ -111,7 +111,7 @@ That maintenance discipline matters for two reasons. The obvious one: customers 
 
 ## Ready to own?
 
-If you have rented enough that the math now points to ownership, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). Real Mercury pricing in Canadian dollars, full configuration, rigging and install included.
+If you have rented enough that the math now points to ownership, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). Real Mercury pricing in Canadian dollars, full configuration, rigging and install included.
 
 If you want to talk through which boat fits your use case before you build, call us at 905-342-2153 or visit HBW at 5369 Harris Boat Works Rd, Gores Landing.
 

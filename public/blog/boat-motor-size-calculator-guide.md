@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-> **Quick answer:** Start with the capacity plate, that's your legal ceiling and the starting point for every motor sizing conversation. Then match HP to hull weight, typical load, use case, and where you run. We've been matching Mercury motors to Ontario boats since 1965. Build a real installed quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** Start with the capacity plate, that's your legal ceiling and the starting point for every motor sizing conversation. Then match HP to hull weight, typical load, use case, and where you run. We've been matching Mercury motors to Ontario boats since 1965. Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 > **Pick the right shaft:** Try our [Shaft Length Picker](/tools#shaft-length) to check if you need a 20" or 25" shaft for your boat. Free, no email.
 ---
@@ -188,7 +188,7 @@ Bring us your boat info, make, model, year, length, and how you actually use it,
 
 ## Ready to size your motor?
 
-Build a real installed quote at [mercuryrepower.ca](https://mercuryrepower.ca), real pricing across every Mercury HP class. Or call **905-342-2153** and we'll work through your specific boat.
+Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing across every Mercury HP class. Or call **905-342-2153** and we'll work through your specific boat.
 
 ---
 

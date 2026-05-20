@@ -121,7 +121,7 @@ export default function MandarinBlogArticle() {
           <div className="bg-primary/5 rounded-xl p-6 mb-8 not-prose">
             <h2 className="text-lg font-medium text-foreground mb-2">快速答案</h2>
             <p className="text-foreground text-sm">
-              如果您在安大略省拥有一艘船，但发动机已经老旧、故障频繁，换新发动机（Repower）通常比换一艘新船划算得多。Harris Boat Works 是 Mercury Marine 白金级授权经销商，提供全透明在线报价——在 <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 即可查看真实加元价格。
+              如果您在安大略省拥有一艘船，但发动机已经老旧、故障频繁，换新发动机（Repower）通常比换一艘新船划算得多。Harris Boat Works 是 Mercury Marine 白金级授权经销商，提供全透明在线报价——在 <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 即可查看真实加元价格。
             </p>
           </div>
 
@@ -152,7 +152,7 @@ export default function MandarinBlogArticle() {
             许多经销商的网站上只写着"致电询价"。我们不这么做。
           </p>
           <p>
-            <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 是一个完全公开、实时更新的在线报价工具：
+            <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 是一个完全公开、实时更新的在线报价工具：
           </p>
           <ol>
             <li>选择发动机类型和马力</li>
@@ -176,7 +176,7 @@ export default function MandarinBlogArticle() {
             <li><strong>大型发动机（90–115马力）</strong>, 适合较大的家庭游船</li>
             <li><strong>高性能发动机（150马力以上）</strong>, 适合大型快艇和双发配置</li>
           </ul>
-          <p>精确报价请访问 <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a></p>
+          <p>精确报价请访问 <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a></p>
         </article>
 
         {/* Driving directions */}

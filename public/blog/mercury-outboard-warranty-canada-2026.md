@@ -193,13 +193,13 @@ If you bought a Mercury elsewhere and want warranty work done in our shop, we ca
 
 Service requests: [hbw.wiki/service](https://hbw.wiki/service).
 
-New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepower.ca).
+New Mercury quotes (with MPP options): [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
 **Phone:** 905-342-2153
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**New Mercury quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**New Mercury quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 ---
 

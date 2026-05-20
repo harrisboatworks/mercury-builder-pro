@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-> **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular small-boat motor in Canada. All current portables are FourStroke tiller motors. Key choices: size, shaft length (short vs. long), and manual vs. electric start. No rigging required, drop-in install. Configure at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular small-boat motor in Canada. All current portables are FourStroke tiller motors. Key choices: size, shaft length (short vs. long), and manual vs. electric start. No rigging required, drop-in install. Configure at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -174,7 +174,7 @@ Portable motors are designed for easy transport, but they need proper care:
 
 ## Ready to buy a portable Mercury?
 
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca), live pricing in CAD on the full portable range. Or call **905-342-2153**. We sell portable Mercurys every season and can match the right motor to your specific application.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD on the full portable range. Or call **905-342-2153**. We sell portable Mercurys every season and can match the right motor to your specific application.
 
 ---
 

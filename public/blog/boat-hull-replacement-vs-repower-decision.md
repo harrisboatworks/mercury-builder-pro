@@ -228,7 +228,7 @@ Only up to the maximum HP rating shown on the boat's capacity plate. The capacit
 
 ### Do I need to update my boat registration after a repower?
 
-Yes. When you replace a motor on a registered or licensed pleasure craft in Canada, you're required to update the pleasure craft licence to reflect the new motor information, including horsepower, serial number, and fuel type. The licence update is straightforward but mandatory. Operating with outdated licence information can create issues with boating enforcement and insurance claims. Our [Kawarthas repower guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas) covers the administrative steps involved in a repower in Ontario.
+Yes. When you replace a motor on a registered or licensed pleasure craft in Canada, you're required to update the pleasure craft licence to reflect the new motor information, including horsepower, serial number, and fuel type. The licence update is straightforward but mandatory. Operating with outdated licence information can create issues with boating enforcement and insurance claims. Our [Kawarthas repower guide](https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas) covers the administrative steps involved in a repower in Ontario.
 
 ### What are the hidden costs of keeping an older boat hull?
 

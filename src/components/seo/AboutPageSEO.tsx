@@ -7,17 +7,17 @@ export function AboutPageSEO() {
     "@graph": [
       {
         "@type": "AboutPage",
-        "@id": "https://mercuryrepower.ca/about#webpage",
-        "url": "https://mercuryrepower.ca/about",
+        "@id": "https://www.mercuryrepower.ca/about#webpage",
+        "url": "https://www.mercuryrepower.ca/about",
         "name": "About Harris Boat Works",
         "description": "Family-owned Mercury dealer on Rice Lake, Ontario since 1947.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#organization" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA"
       },
       {
         "@type": "Organization",
-        "@id": "https://mercuryrepower.ca/#organization",
+        "@id": "https://www.mercuryrepower.ca/#organization",
         "name": "Harris Boat Works",
         "alternateName": "HBW",
         "url": "https://www.harrisboatworks.ca/",
