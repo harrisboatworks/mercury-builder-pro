@@ -11,6 +11,7 @@
     "check:responsive-images": "node scripts/check-responsive-images.mjs",
     "generate:responsive-variants": "node scripts/generate-responsive-variants.mjs",
     "prebuild": "npm run check:blog-leaks && npm run generate:responsive-variants && npm run check:responsive-images",
+    "verify:gta-sitemap": "node scripts/verify-gta-sitemap.mjs",
     "lint": "eslint .",
     "lint:tokens": "node scripts/check-design-tokens.mjs",
     "preview": "vite preview"
