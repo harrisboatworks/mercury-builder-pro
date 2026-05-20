@@ -11317,6 +11317,20 @@ Harris Boat Works | Mercury Marine Platinum Dealer | Family-owned since 1947 | M
 ## Quick answer
 Boat winterization in Ontario is not a flat number, it depends on motor size, what services you bundle, and whether you are adding shrinkwrap and storage. Motor winterization is the most critical piece. Skipping it risks a cracked block, which costs several thousand dollars to repair or replace. Book before October to get the easier slots. Request service at [hbw.wiki/service](https://hbw.wiki/service).
 
+## Winterization price summary (CAD)
+
+| Service | Price (CAD) |
+| --- | --- |
+| Fuel stabilizer + ethanol treatment | $30 to $50 |
+| Fogging oil through cylinders | $50 to $80 |
+| Lower unit oil change + inspection | $50 to $90 |
+| Cooling system flush + drain | $40 to $70 |
+| Battery prep | $25 to $50 |
+| Total typical all-in range | $250 to $400 |
+
+Prices are typical CAD ranges, HST extra. Final pricing depends on motor size and condition.
+
+
 ::cost-stack
 heading: What goes into a Mercury winterization quote?
 eyebrow: Where the money goes
