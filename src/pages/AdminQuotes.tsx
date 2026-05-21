@@ -676,6 +676,32 @@ const AdminQuotes = () => {
             </TableBody>
           </Table>
         </div>
+        {rows.length > PAGE_SIZE && (
+          <div className="flex items-center justify-between mt-3 pt-3 border-t">
+            <div className="text-xs text-muted-foreground">
+              Showing {pageStart + 1}-{Math.min(pageStart + PAGE_SIZE, rows.length)} of {rows.length}
+            </div>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                disabled={currentPage === 1}
+                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              >
+                Previous
+              </Button>
+              <span className="text-xs">Page {currentPage} of {totalPages}</span>
+              <Button
+                variant="outline"
+                size="sm"
+                disabled={currentPage >= totalPages}
+                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+              >
+                Next
+              </Button>
+            </div>
+          </div>
+        )}
       </Card>
     </main>
   );
