@@ -49,15 +49,15 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
             : 'bg-gradient-to-b from-[#050E1C]/65 to-transparent py-5'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 xl:px-14 flex flex-row flex-nowrap items-center justify-between gap-3 md:gap-4 xl:gap-6">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 xl:px-14 flex flex-row flex-nowrap items-center justify-between gap-4 md:gap-6 min-[1500px]:gap-8">
           {/* Logo lockup, always horizontal */}
-          <Link to="/" className="flex flex-row flex-nowrap items-center justify-start gap-1.5 sm:gap-2 lg:gap-3 min-w-0 overflow-hidden shrink-0">
+          <Link to="/" className="flex flex-row flex-nowrap items-center justify-start gap-1.5 sm:gap-2 lg:gap-3 min-w-0 shrink-0">
             <img src={harrisLogo} alt="Harris Boat Works" className="h-6 sm:h-7 md:h-8 lg:h-9 w-auto shrink-0" />
             <div className="w-px h-6 sm:h-7 bg-[#F5F1EA]/20 shrink-0" />
             <img
               src={mercuryLogo}
               alt="Mercury Marine"
-              className="h-5 sm:h-6 md:h-7 w-auto shrink-0"
+              className="h-5 sm:h-6 md:h-7 w-auto shrink-0 hidden min-[1500px]:block"
             />
             <div className="flex items-center pl-1.5 sm:pl-2 lg:pl-3 border-l border-[#F5F1EA]/15 shrink-0">
               <img
@@ -69,7 +69,7 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden min-[1366px]:flex flex-1 items-center justify-center gap-5 2xl:gap-7 min-w-0">
+          <nav className="hidden min-[1500px]:flex flex-1 items-center justify-center gap-5 2xl:gap-7 min-w-0">
             {NAV_LINKS.map((link) => {
               const active =
                 link.to === '/'
@@ -95,7 +95,7 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
           <div className="ml-auto flex items-center justify-end gap-3 shrink-0">
             <Link
               to="/quote/motor-selection"
-              className="hidden min-[1366px]:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-4 py-2 lg:px-5 lg:py-2.5 rounded uppercase tracking-wider text-[11px] lg:text-xs font-semibold whitespace-nowrap transition-colors duration-200"
+              className="hidden min-[1500px]:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-4 py-2 lg:px-5 lg:py-2.5 rounded uppercase tracking-wider text-[11px] lg:text-xs font-semibold whitespace-nowrap transition-colors duration-200"
             >
               Build Quote
               <ChevronRight className="w-3.5 h-3.5" />
@@ -103,20 +103,20 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
             {!user && (
               <button
                 onClick={() => navigate('/auth')}
-                className="hidden min-[1366px]:inline-flex font-sans text-sm text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
+                className="hidden min-[1500px]:inline-flex font-sans text-sm text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
               >
                 Sign In
               </button>
             )}
             <Link
               to="/quote/motor-selection"
-              className="hidden md:inline-flex min-[1366px]:hidden items-center gap-1.5 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-3 py-2 rounded uppercase tracking-wider text-[11px] font-semibold whitespace-nowrap transition-colors duration-200"
+              className="hidden md:inline-flex min-[1500px]:hidden items-center gap-1.5 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-3 py-2 rounded uppercase tracking-wider text-[11px] font-semibold whitespace-nowrap transition-colors duration-200"
             >
               Quote
               <ChevronRight className="w-3.5 h-3.5" />
             </Link>
             <button
-              className="min-[1366px]:hidden p-2 text-[#F5F1EA]"
+              className="min-[1500px]:hidden p-2 text-[#F5F1EA]"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
             >
