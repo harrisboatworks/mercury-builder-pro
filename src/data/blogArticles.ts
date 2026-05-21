@@ -24382,8 +24382,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-dealer-mississauga-ontario-hbw',
     title: "Mercury Dealer for Mississauga: Where to Go When Closer Dealers Don't Cut It",
-    seoTitle: 'Mercury Dealer for Mississauga — Rice Lake Repower',
-    description: 'Looking for a Mercury Platinum dealer for Mississauga? Harris Boat Works on Rice Lake - about 90 minutes northeast - handles Mercury repowers, sales, service, and Mercury parts for Mississauga / Oakville-edge customers tired of GTA dealer pressure.',
+    seoTitle: 'Mercury Repower Cost in Mississauga',
+    description: 'What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Platinum dealer on Rice Lake. Build an installed total online.',
     image: '/lovable-uploads/hero-gta-mississauga-service-counter.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
