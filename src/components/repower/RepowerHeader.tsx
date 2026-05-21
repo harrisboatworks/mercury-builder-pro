@@ -49,15 +49,15 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
             : 'bg-gradient-to-b from-[#050E1C]/65 to-transparent py-5'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 xl:px-14 flex flex-row flex-nowrap items-center justify-between gap-3 md:gap-4 xl:gap-6">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 xl:px-14 flex flex-row flex-nowrap items-center justify-between gap-4 md:gap-6 min-[1500px]:gap-8">
           {/* Logo lockup, always horizontal */}
-          <Link to="/" className="flex flex-row flex-nowrap items-center justify-start gap-1.5 sm:gap-2 lg:gap-3 min-w-0 overflow-hidden shrink-0">
+          <Link to="/" className="flex flex-row flex-nowrap items-center justify-start gap-1.5 sm:gap-2 lg:gap-3 min-w-0 shrink-0">
             <img src={harrisLogo} alt="Harris Boat Works" className="h-6 sm:h-7 md:h-8 lg:h-9 w-auto shrink-0" />
             <div className="w-px h-6 sm:h-7 bg-[#F5F1EA]/20 shrink-0" />
             <img
               src={mercuryLogo}
               alt="Mercury Marine"
-              className="h-5 sm:h-6 md:h-7 w-auto shrink-0"
+              className="h-5 sm:h-6 md:h-7 w-auto shrink-0 hidden min-[1500px]:block"
             />
             <div className="flex items-center pl-1.5 sm:pl-2 lg:pl-3 border-l border-[#F5F1EA]/15 shrink-0">
               <img
@@ -69,7 +69,7 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden min-[1366px]:flex flex-1 items-center justify-center gap-5 2xl:gap-7 min-w-0">
+          <nav className="hidden min-[1500px]:flex flex-1 items-center justify-center gap-5 2xl:gap-7 min-w-0">
             {NAV_LINKS.map((link) => {
               const active =
                 link.to === '/'
