@@ -374,7 +374,7 @@ const AdminQuotes = () => {
           <div className="relative flex-1 min-w-[200px] max-w-sm">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search name, email, motor..."
+              placeholder="Search name, email, motor, ref # (e.g. HBW-00827)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-9 h-9"
