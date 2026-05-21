@@ -232,19 +232,67 @@ const AdminQuotes = () => {
       return db - da;
     });
 
-    // Text search
+    // Text search (with HBW- ref prioritization)
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase().trim();
-      merged = merged.filter(r =>
-        (r.customer_name || '').toLowerCase().includes(q) ||
-        (r.customer_email || '').toLowerCase().includes(q) ||
-        (r._motor_info || '').toLowerCase().includes(q) ||
-        (r._reference_number || '').toLowerCase().includes(q)
-      );
+      const isRef = /^hbw-?\d+/i.test(q);
+      if (isRef) {
+        const normalized = q.replace(/^hbw-?/i, 'hbw-');
+        merged = merged.filter(r => (r._reference_number || '').toLowerCase().includes(normalized));
+      } else {
+        merged = merged.filter(r =>
+          (r.customer_name || '').toLowerCase().includes(q) ||
+          (r.customer_email || '').toLowerCase().includes(q) ||
+          (r._motor_info || '').toLowerCase().includes(q) ||
+          (r._reference_number || '').toLowerCase().includes(q)
+        );
+      }
+    }
+
+    // HP filter
+    if (hpFilter !== 'all') {
+      merged = merged.filter(r => hpInBucket(parseHp(r._motor_info || ''), hpFilter));
+    }
+
+    // Model contains filter
+    if (modelFilter.trim()) {
+      const mf = modelFilter.toLowerCase().trim();
+      merged = merged.filter(r => (r._motor_info || '').toLowerCase().includes(mf));
+    }
+
+    // Date range filter
+    if (dateRangeFilter !== 'all') {
+      merged = merged.filter(r => dateInRange(r.created_at, dateRangeFilter));
     }
 
     return merged;
-  }, [customerQuoteRows, savedQuoteRows, quoteSourceFilter, searchQuery]);
+  }, [customerQuoteRows, savedQuoteRows, quoteSourceFilter, searchQuery, hpFilter, modelFilter, dateRangeFilter]);
+
+  // Reset page on filter change
+  useEffect(() => { setCurrentPage(1); }, [searchQuery, hpFilter, modelFilter, dateRangeFilter, quoteSourceFilter]);
+
+  // Paginate
+  const totalPages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+  const pageStart = (currentPage - 1) * PAGE_SIZE;
+  const pagedRows = rows.slice(pageStart, pageStart + PAGE_SIZE);
+
+  // Recent anonymous quotes grouped by motor (last 24h)
+  const recentAnonGroups = useMemo(() => {
+    const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+    const anon = savedQuoteRows.filter(r =>
+      r._is_soft_lead && r.created_at && new Date(r.created_at).getTime() >= cutoff
+    );
+    const groups = new Map<string, UnifiedQuoteRow[]>();
+    anon.forEach(r => {
+      const key = r._motor_info || 'Unknown motor';
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key)!.push(r);
+    });
+    return Array.from(groups.entries())
+      .map(([motor, items]) => ({ motor, items }))
+      .sort((a, b) => b.items.length - a.items.length);
+  }, [savedQuoteRows]);
+  const [showAnonPanel, setShowAnonPanel] = useState(true);
 
   const fmt = (n: number | null | undefined) => (n == null ? '-' : `$${Math.round(Number(n)).toLocaleString()}`);
 
