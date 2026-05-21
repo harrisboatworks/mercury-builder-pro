@@ -1,53 +1,34 @@
-# Centralize Google review totals
+## Problem
 
-## Audit findings
+On desktop between ~1366px and ~1500px, the header in `src/components/repower/RepowerHeader.tsx` tries to fit too much on one row:
 
-Live (already pull from `google-places` edge function via `useGooglePlaceData`):
-- `src/components/business/GoogleRatingBadge.tsx` ✅
-- `src/components/reviews/GoogleReviewsCarousel.tsx` ✅
+- Logo lockup: Harris logo + divider + Mercury logo + divider + Mercury Repower Center badge
+- 10 nav links (Engines, Promotions, Repower, Trade-In Value, Tools, Financing, About, Blog, FAQ, Contact)
+- Build Quote button + Sign In
 
-Hardcoded values still present:
-1. `src/lib/activityGenerator.ts` — `generateReviewCount()` returns literal `301`.
-2. `src/components/repower/heroVariations.tsx` line 89–90 — `'301'` Google reviews and `'4.6'` star rating in the `frustration` hero variation stats array.
-3. `src/pages/Repower.tsx` line 56/439 — consumes `generateReviewCount()`.
-4. `src/pages/Promotions.tsx` line 200/210 — consumes `generateReviewCount()`.
+The lockup uses `overflow-hidden`, so when space runs out the Repower Center badge gets visually clipped rather than wrapping, and nav links sit flush against it with almost no gap.
 
-No JSON-LD `aggregateRating` blocks use hardcoded review counts (only blog `Review` schemas with `ratingValue: "1"` for misleading-claim refutations — unrelated).
+## Options (pick one or combine)
 
-## Plan
+**1. Raise the desktop nav breakpoint (smallest change)**
+Change `min-[1366px]` to `min-[1500px]` (or `xl:` = 1280 → `2xl:` = 1536) on the nav, Build Quote, and Sign In. Below that, show the compact "Quote" button + hamburger that already exists. Pro: zero layout risk. Con: more screens fall back to the hamburger.
 
-### 1. New single source of truth: `src/config/googleReviews.ts`
+**2. Slim the logo lockup at mid-desktop widths**
+Hide the Mercury wordmark (middle logo) between 1366px and ~1500px, keep Harris + Repower Center badge. The Mercury brand is still represented by the Repower Center badge. Pro: keeps full nav visible earlier. Con: small brand compromise at one breakpoint band.
 
-```ts
-// One place. Update only this constant when live totals change.
-export const GOOGLE_REVIEWS_FALLBACK = {
-  rating: 4.6,
-  totalReviews: 301,
-  asOf: '2026-05-17',
-} as const;
+**3. Trim the nav itself**
+Move 2 lower-priority links (e.g. Blog, FAQ) into a "More" dropdown, or drop them from the top bar entirely at 1366–1500px and only show them ≥1500px. Keeps logos intact.
 
-export const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/...'; // moved from GoogleRatingBadge
-```
+**4. Fix the clipping symptom only**
+Remove `overflow-hidden` from the logo lockup and add a real min-gap (e.g. `gap-6`) between the lockup and the nav so nothing can visually sit "behind" the badge. Doesn't solve tightness, just the overlap appearance.
 
-### 2. New hook: `src/hooks/useGoogleReviewStats.ts`
+**Recommended combo:** #1 + #4. Push the full nav to `min-[1500px]`, and remove `overflow-hidden` plus add a guaranteed gap so the lockup can never visually collide with the nav. Between 1280–1499px users get the compact "Quote" button + hamburger, which already works well.
 
-Thin wrapper around `useGooglePlaceData` that returns `{ rating, totalReviews, isLive }` — falling back to `GOOGLE_REVIEWS_FALLBACK` when the edge function hasn't resolved or errored. This way every consumer gets live numbers when available and the same fallback otherwise.
+## Files touched
 
-### 3. Refactor consumers
+- `src/components/repower/RepowerHeader.tsx` only (presentation change, no logic).
 
-- `src/lib/activityGenerator.ts` `generateReviewCount()` → return `GOOGLE_REVIEWS_FALLBACK.totalReviews` (keeps it sync for non-React callers; deprecate-comment pointing to the hook).
-- `src/components/repower/heroVariations.tsx` — convert the `frustration` variation's stats to a function/getter that accepts live stats, OR keep static but sourced from `GOOGLE_REVIEWS_FALLBACK` (simpler — Repower.tsx already calls the hook and can override the two stat values at render time).
-- `src/pages/Repower.tsx` — replace `generateReviewCount()` with `useGoogleReviewStats()`; inject live total into the `frustration` hero stats before rendering.
-- `src/pages/Promotions.tsx` — replace `generateReviewCount()` with `useGoogleReviewStats()`.
-- `src/components/business/GoogleRatingBadge.tsx` — import `GOOGLE_REVIEWS_URL` from config; keep edge-function-backed display, but fall through to fallback via the new hook so the badge never disappears on a cold cache.
+## Questions before I implement
 
-### 4. Verify
-
-- Grep for `301`, `295`, `170`, `4.6` near `review|rating` to confirm zero remaining hardcoded literals outside `googleReviews.ts`.
-- Build pass.
-
-## Technical notes
-
-- No backend change. No edge function change. No new dependencies.
-- `generateReviewCount()` stays exported (used in `activityGenerator` callers); it just reads from the new config so updating the live number is a one-line edit in `src/config/googleReviews.ts`.
-- The hook is React-only; the constant is the fallback for non-React contexts (PDFs, activity generator, SEO strings if ever needed).
+- Do you want to keep all 10 nav links visible on large desktop, or is it OK to move Blog/FAQ into a "More" menu?
+- Is it acceptable for 1366–1499px screens to use the hamburger (option 1), or do you want the full nav to stay visible at 1366px and we slim the logo lockup instead (option 2)?
