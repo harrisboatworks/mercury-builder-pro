@@ -435,9 +435,118 @@ const AdminQuotes = () => {
             <Badge variant="secondary" className="text-xs">{showPenalizedOnly ? customerQuoteRows.length : penalizedTotal}</Badge>
           </div>
         </div>
+
+        {/* Secondary filter row: HP / Model / Date */}
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-1.5">
+            <Label className="text-sm">HP:</Label>
+            <select
+              value={hpFilter}
+              onChange={(e) => setHpFilter(e.target.value)}
+              className="text-sm border rounded px-2 py-1"
+            >
+              <option value="all">All HP</option>
+              <option value="2.5-9.9">2.5 to 9.9</option>
+              <option value="15-25">15 to 25</option>
+              <option value="30-60">30 to 60</option>
+              <option value="75-115">75 to 115</option>
+              <option value="150+">150+</option>
+            </select>
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <Label className="text-sm whitespace-nowrap">Model contains:</Label>
+            <Input
+              value={modelFilter}
+              onChange={(e) => setModelFilter(e.target.value)}
+              placeholder="e.g. Command Thrust"
+              className="h-8 w-48 text-sm"
+            />
+          </div>
+
+          <div className="flex items-center gap-1">
+            <Label className="text-sm mr-1">Date:</Label>
+            {[
+              { v: 'today', l: 'Today' },
+              { v: '7d', l: 'Last 7d' },
+              { v: '30d', l: 'Last 30d' },
+              { v: 'all', l: 'All' },
+            ].map(opt => (
+              <Button
+                key={opt.v}
+                variant={dateRangeFilter === opt.v ? 'default' : 'outline'}
+                size="sm"
+                className="h-7 px-2 text-xs"
+                onClick={() => setDateRangeFilter(opt.v)}
+              >
+                {opt.l}
+              </Button>
+            ))}
+          </div>
+
+          <div className="text-xs text-muted-foreground ml-auto">
+            Showing {rows.length === 0 ? 0 : pageStart + 1}{rows.length > 0 ? `-${Math.min(pageStart + PAGE_SIZE, rows.length)}` : ''} of {rows.length}
+          </div>
+        </div>
       </div>
 
+      {/* Recent anonymous quotes panel (last 24h) */}
+      {recentAnonGroups.length > 0 && (
+        <Card className="p-3 mb-4 border-yellow-300 bg-yellow-50 dark:bg-yellow-950/20">
+          <button
+            type="button"
+            onClick={() => setShowAnonPanel(v => !v)}
+            className="flex items-center justify-between w-full text-left"
+          >
+            <div className="flex items-center gap-2">
+              <Badge variant="outline" className="text-[10px]">👤 Anonymous, last 24h</Badge>
+              <span className="text-sm font-medium">
+                {recentAnonGroups.reduce((s, g) => s + g.items.length, 0)} quotes across {recentAnonGroups.length} models
+              </span>
+              <span className="text-xs text-muted-foreground">Useful when a caller can't find their quote</span>
+            </div>
+            <span className="text-xs text-muted-foreground">{showAnonPanel ? 'Hide' : 'Show'}</span>
+          </button>
+          {showAnonPanel && (
+            <div className="mt-3 space-y-2">
+              {recentAnonGroups.map(g => {
+                const refs = g.items
+                  .map(i => i._reference_number)
+                  .filter(Boolean) as string[];
+                const refRange = refs.length === 0
+                  ? '-'
+                  : refs.length === 1
+                    ? refs[0]
+                    : `${refs[refs.length - 1]} to ${refs[0]}`;
+                return (
+                  <div key={g.motor} className="flex items-center justify-between gap-3 text-sm bg-background/60 rounded px-3 py-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <Badge variant="secondary" className="text-[10px]">{g.items.length}x</Badge>
+                      <span className="font-medium truncate">{g.motor}</span>
+                      <span className="text-xs text-muted-foreground whitespace-nowrap">{refRange}</span>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="h-7 text-xs"
+                      onClick={() => {
+                        setModelFilter(g.motor.replace(/^\d+(\.\d+)?HP\s*/i, ''));
+                        setDateRangeFilter('today');
+                        setQuoteSourceFilter('anonymous');
+                      }}
+                    >
+                      View configurations
+                    </Button>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </Card>
+      )}
+
       <Card className="p-4">
+
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
