@@ -95,7 +95,7 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
           <div className="ml-auto flex items-center justify-end gap-3 shrink-0">
             <Link
               to="/quote/motor-selection"
-              className="hidden min-[1366px]:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-4 py-2 lg:px-5 lg:py-2.5 rounded uppercase tracking-wider text-[11px] lg:text-xs font-semibold whitespace-nowrap transition-colors duration-200"
+              className="hidden min-[1500px]:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-4 py-2 lg:px-5 lg:py-2.5 rounded uppercase tracking-wider text-[11px] lg:text-xs font-semibold whitespace-nowrap transition-colors duration-200"
             >
               Build Quote
               <ChevronRight className="w-3.5 h-3.5" />
@@ -103,20 +103,20 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
             {!user && (
               <button
                 onClick={() => navigate('/auth')}
-                className="hidden min-[1366px]:inline-flex font-sans text-sm text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
+                className="hidden min-[1500px]:inline-flex font-sans text-sm text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
               >
                 Sign In
               </button>
             )}
             <Link
               to="/quote/motor-selection"
-              className="hidden md:inline-flex min-[1366px]:hidden items-center gap-1.5 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-3 py-2 rounded uppercase tracking-wider text-[11px] font-semibold whitespace-nowrap transition-colors duration-200"
+              className="hidden md:inline-flex min-[1500px]:hidden items-center gap-1.5 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-3 py-2 rounded uppercase tracking-wider text-[11px] font-semibold whitespace-nowrap transition-colors duration-200"
             >
               Quote
               <ChevronRight className="w-3.5 h-3.5" />
             </Link>
             <button
-              className="min-[1366px]:hidden p-2 text-[#F5F1EA]"
+              className="min-[1500px]:hidden p-2 text-[#F5F1EA]"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
             >
