@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Repower Cost in Mississauga (2026): Real Motor Prices from a Platinum Dealer"
+title: "Mercury Repower Cost in Mississauga"
 description: "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Platinum dealer on Rice Lake. Build an installed total online."
 category: "Service Area"
 date_published: 2026-05-11
