@@ -63,6 +63,43 @@ const AdminQuotes = () => {
   const [leadSourceFilter, setLeadSourceFilter] = useState<string>('all');
   const [quoteSourceFilter, setQuoteSourceFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [hpFilter, setHpFilter] = useState<string>('all');
+  const [modelFilter, setModelFilter] = useState('');
+  const [dateRangeFilter, setDateRangeFilter] = useState<string>('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  const PAGE_SIZE = 50;
+
+  // Parse HP from "40HP 40 ELPT Command Thrust FourStroke"
+  const parseHp = (motorInfo: string): number | null => {
+    if (!motorInfo) return null;
+    const m = motorInfo.match(/^(\d+(?:\.\d+)?)\s*HP/i);
+    return m ? parseFloat(m[1]) : null;
+  };
+  const hpInBucket = (hp: number | null, bucket: string): boolean => {
+    if (bucket === 'all') return true;
+    if (hp == null) return false;
+    switch (bucket) {
+      case '2.5-9.9': return hp >= 2.5 && hp <= 9.9;
+      case '15-25': return hp >= 15 && hp <= 25;
+      case '30-60': return hp >= 30 && hp <= 60;
+      case '75-115': return hp >= 75 && hp <= 115;
+      case '150+': return hp >= 150;
+      default: return true;
+    }
+  };
+  const dateInRange = (created: string | null, range: string): boolean => {
+    if (range === 'all' || !created) return true;
+    const d = new Date(created).getTime();
+    const now = Date.now();
+    const day = 24 * 60 * 60 * 1000;
+    if (range === 'today') {
+      const start = new Date(); start.setHours(0,0,0,0);
+      return d >= start.getTime();
+    }
+    if (range === '7d') return d >= now - 7 * day;
+    if (range === '30d') return d >= now - 30 * day;
+    return true;
+  };
 
   useEffect(() => {
     document.title = 'Quotes | Admin';
