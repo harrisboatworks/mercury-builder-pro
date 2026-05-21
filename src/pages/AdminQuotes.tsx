@@ -547,9 +547,9 @@ const AdminQuotes = () => {
 
       <Card className="p-4">
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto max-h-[70vh] overflow-y-auto">
           <Table>
-            <TableHeader>
+            <TableHeader className="sticky top-0 bg-background z-10">
               <TableRow>
                 <TableHead>Ref #</TableHead>
                 <TableHead>Date</TableHead>
@@ -572,7 +572,7 @@ const AdminQuotes = () => {
                   <TableCell colSpan={11}>{searchQuery ? 'No results matching search.' : 'No quotes found.'}</TableCell>
                 </TableRow>
               ) : (
-                rows.map((r) => {
+                pagedRows.map((r) => {
                   const penalty = !!r.penalty_applied;
                   const percent = r.penalty_factor != null ? Math.round((1 - Number(r.penalty_factor)) * 100) : null;
                   return (
