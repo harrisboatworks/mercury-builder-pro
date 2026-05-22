@@ -244,7 +244,7 @@ The one thing we don't see often is a customer who buys the 9.9, runs it for a s
 
 Mercury's MSRP and Canadian dealer pricing both shift through the year, so the numbers below are a snapshot. Build a current quote for either motor in CAD at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) for the exact figure.
 
-As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 6-gallon portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required.
+As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 6-gallon portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
 
 ## Common Mistakes
 
@@ -1033,7 +1033,7 @@ Work through these in order:
 
 ## Ready to pick your family?
 
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing in CAD across FourStroke, Pro XS, SeaPro, and Avator. Verado is special order; contact us for that conversation.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing in CAD across FourStroke, Pro XS, SeaPro, and Avator. To [see real Mercury outboard prices](/pricing-reference) by HP without building a quote, check our price reference. Verado is special order; contact us for that conversation.
 
 Call **905-342-2153** if you want to talk through which family fits your boat. We'll give you the straight answer, including the answer that doesn't maximize the sale.
 
@@ -3233,7 +3233,7 @@ The customers we see at HBW in spring usually fit one of three patterns: the boa
 
 All three are repower candidates, if the hull is good.
 
-The part that trips people up is the math. A repower on a typical cottage aluminum boat or pontoon lands at a fraction of what a comparable new boat costs. The hull is the asset. The motor is the wear part.
+The part that trips people up is the math. A repower on a typical cottage aluminum boat or pontoon lands at a fraction of what a comparable new boat costs. The hull is the asset. The motor is the wear part. For [what every Mercury model costs](/pricing-reference) in CAD, see our full price reference.
 
 ## What actually changes the decision for cottage boats
 
@@ -3584,7 +3584,7 @@ A Kawartha boat repower means replacing your outboard motor with a new Mercury w
 
 Three out of four boats that come to HBW for a repower assessment turn out to be better repower candidates than buy-new candidates. That ratio has been pretty consistent.
 
-The math is usually straightforward: a solid used hull plus a current Mercury costs significantly less than a new boat with comparable capability, and you skip the depreciation hit that hammers new-boat buyers in the first few years.
+The math is usually straightforward: a solid used hull plus a current Mercury costs significantly less than a new boat with comparable capability, and you skip the depreciation hit that hammers new-boat buyers in the first few years. See [our full Mercury outboard price list](/pricing-reference) for the CAD numbers behind that math.
 
 That said, a repower is not always the right answer.
 
@@ -6221,7 +6221,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Trade-in value depends on brand, horsepower, age, and condition. Mercury holds value best in Ontario; Yamaha takes a small penalty, Honda and Suzuki larger ones. We anchor against median selling prices and cap the credit at the motor subtotal. Get an instant trade estimate inside the configurator at mercuryrepower.ca.
+> **Quick answer:** Trade-in value depends on brand, horsepower, age, and condition. Mercury holds value best in Ontario; Yamaha takes a small penalty, Honda and Suzuki larger ones. We anchor against median selling prices and cap the credit at the motor subtotal. Get an instant trade estimate inside the configurator at mercuryrepower.ca, and compare it against [the Mercury price reference](/pricing-reference) for the new motor you would put in its place.
 
 ## Maximizing Your Motor Trade-In Value
 
@@ -7627,7 +7627,7 @@ A fair deal when you need it beats waiting indefinitely for a perfect deal. That
 
 **[Get Year-End Pricing](/quote)**
 
-Before you negotiate, anchor your expectations to real numbers, our [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) is the canonical CAD price reference for complete repowers at every HP tier.
+Before you negotiate, anchor your expectations to real numbers, our [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) is the canonical CAD price reference for complete repowers at every HP tier. For [current Mercury pricing in CAD](/pricing-reference) on individual motors, see our price reference.
 
 ## Related guides
 
@@ -10160,7 +10160,7 @@ A clean transom and good wiring takes a day to install. A rotten transom or mous
 
 ### Why We Don't Post Specific Motor Prices in Blog Posts
 
-Our actual prices are on the live configurator, always current, always in CAD, always for the specific configuration you're building. There's no point copying them into an article that goes stale the moment Mercury adjusts pricing.
+Our actual prices are on the live configurator, always current, always in CAD, always for the specific configuration you're building, with [Mercury MSRP and dealer pricing side by side](/pricing-reference) on every model in the lineup. There's no point copying them into an article that goes stale the moment Mercury adjusts pricing.
 
 Our whole position is that you shouldn't have to call us or read a blog post to find out what something costs. The configurator does that job better than any article can.
 
@@ -10549,7 +10549,7 @@ source: HBW Customer, Lakefield 2026
 
 ## Full Article
 
-The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L inline 4-cylinder. More displacement, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000, $6,000 CAD all-in.
+The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L inline 4-cylinder. More displacement, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000, $6,000 CAD all-in. For [Mercury outboard prices from 2.5 to 300 HP](/pricing-reference), see our full reference.
 
 Whether that difference is worth paying comes down to three questions: What hull are you putting it on? How do you use it? How do you load it?
 
@@ -22105,7 +22105,7 @@ All prices in CAD, before HST, before any trade-in credit.
 | 60 ELPT FourStroke | roughly $13,500, $15,000 |
 | 60 ELPT Command Thrust | roughly $14,000, $15,500 |
 
-Install and rigging in this class typically adds $1,500, $3,000 over the motor price, depending on what the boat needs: controls, gauges, fuel lines, prop, battery cabling.
+Install and rigging in this class typically adds $1,500, $3,000 over the motor price, depending on what the boat needs: controls, gauges, fuel lines, prop, battery cabling. For [current Mercury motor pricing](/pricing-reference) on every HP class, see our full reference.
 
 A working older motor typically adds $1,000, $3,000 in trade-in credit depending on age, hours, and condition. It's worth asking.
 
@@ -23898,7 +23898,7 @@ All figures are CAD, before HST, before trade-in credit, before any Mercury prom
 
 The repower-vs-new gap is usually $20,000, $40,000. That's the difference between repowering and still having $25,000 in the bank, vs. financing a new boat.
 
-Repower costs include motor, rigging, controls, prop, install, and small accessories most jobs need, battery, fuel hoses, primer bulb, gauges if upgrading. They do not include winterization or storage, which run separately.
+Repower costs include motor, rigging, controls, prop, install, and small accessories most jobs need, battery, fuel hoses, primer bulb, gauges if upgrading. They do not include winterization or storage, which run separately. For [what a new Mercury costs](/pricing-reference) by HP tier on the motor side, see our full price reference.
 
 ---
 
@@ -30539,7 +30539,7 @@ Installed pricing varies by HP, rigging complexity, and trade-in credit. Real CA
 | 200 V6 | $24,500 - $31,000 |
 | 250 V8 | $30,000 - $38,000 |
 
-These are general ranges based on 2026 pricing. Your actual installed price depends on existing rigging condition, prop spec, and any required upgrades (controls, gauges, harness, hydraulic steering). Build a real quote at mercuryrepower.ca for the actual number on your boat.
+These are general ranges based on 2026 pricing. Your actual installed price depends on existing rigging condition, prop spec, and any required upgrades (controls, gauges, harness, hydraulic steering). For [Mercury outboard prices in Ontario](/pricing-reference) on every FourStroke model in CAD, see our full price reference. Build a real quote at mercuryrepower.ca for the actual number on your boat.
 
 ## What we see at HBW
 
@@ -30715,7 +30715,7 @@ The pricing premium for Pro XS over the equivalent FourStroke runs roughly $1,50
 | 250 Pro XS V8 | $33,000 - $41,000 |
 | 300 Pro XS V8 | $37,500 - $46,500 |
 
-These are general 2026 ranges. Your real installed price depends on existing rigging, prop spec, hydraulic steering requirements, and any harness work. Build a real quote at mercuryrepower.ca.
+These are general 2026 ranges. Your real installed price depends on existing rigging, prop spec, hydraulic steering requirements, and any harness work. [Browse every Mercury price](/pricing-reference) in CAD on our price reference, then build a real quote at mercuryrepower.ca.
 
 ## What we see at HBW
 
