@@ -24089,7 +24089,7 @@ You've been there. You find a motor online, you like what you see, and then ther
 
 That's not an accident. The call-for-quote system exists to put a salesperson in the conversation before you've decided what you want. Once you're talking, they can shape what you're considering.
 
-We don't do that. Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows you real installed pricing in Canadian dollars in about three minutes. No account required, no callback, no negotiation opener. You see the motor, the installation, the rigging, what it actually costs to have a Mercury running on your boat.
+We don't do that. Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows you real installed pricing in Canadian dollars in about three minutes. No account required, no callback, no negotiation opener. You see the motor, the installation, the rigging, what it actually costs to have a Mercury running on your boat. If you would rather skim [current Mercury prices in CAD](/pricing-reference) before building anything, the full motor price list is published too.
 
 If you build a quote and decide to buy somewhere else, that's fine. The point is that you made an informed decision, not one that was managed by a sales process.
 
@@ -24253,7 +24253,7 @@ If you've tried to price a Mercury outboard lately, you've likely hit the wall: 
 
 This isn't incompetence. It's a sales strategy. Getting you on the phone before you have a price lets the dealer control the comparison. Once you're talking, the assumption is that personal rapport and anchoring will do the work that transparency would short-circuit.
 
-We just put the price online. Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows real installed pricing in Canadian dollars, motor, rigging, and installation, before you've talked to anyone. You can compare, think it over, and call us when you've decided what you want.
+We just put the price online. Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows real installed pricing in Canadian dollars, motor, rigging, and installation, before you've talked to anyone. You can compare, think it over, and call us when you've decided what you want. For [Mercury outboard pricing, every model](/pricing-reference) on one page, see our price reference.
 
 If you use that and then buy from a closer dealer, fine. You'll buy with your eyes open.
 
@@ -24408,7 +24408,7 @@ Mississauga has marine dealers. Some carry Mercury. The experience at a lot of G
 
 By this point you've spent an hour or two on the phone and still don't know what the motor costs to actually put on your boat.
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows you installed pricing, motor plus rigging, in Canadian dollars, in about three minutes. No account, no callback, no opener for a negotiation. The number you see is real.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows you installed pricing, motor plus rigging, in Canadian dollars, in about three minutes. No account, no callback, no opener for a negotiation. The number you see is real. To see [what a Mercury outboard costs](/pricing-reference) without building a quote, check our published price reference.
 
 If you price it here and decide a local dealer is the better call, that's fine. You're making an informed comparison now, not a managed one.
 
@@ -24565,7 +24565,7 @@ We're not going to pretend that's nothing. Here's why some Vaughan customers mak
 
 The number one reason Vaughan customers tell us they drove up: they built a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and the pricing was cleaner than anything they'd gotten closer to home.
 
-Our quote builder shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. Not a "starting at" figure. Not a range. A number you can actually compare against.
+Our quote builder shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. Not a "starting at" figure. Not a range. A number you can actually compare against. To [see Mercury prices before you drive out](/pricing-reference), our full motor price list is published in CAD.
 
 For anyone who's played the call-for-quote game with a GTA dealer, having a real price visible before any conversation starts is a different experience. You come in with the information, not looking for it.
 
@@ -24712,7 +24712,7 @@ If you're the kind of buyer who researches carefully, decides once, and executes
 
 The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to unlock. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.
 
-Our quote builder fixes that. Real installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. See the price, think it over, call us if you have questions, drive up when you're ready.
+Our quote builder fixes that. Real installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. See the price, think it over, call us if you have questions, drive up when you're ready. Or skim [our published Mercury price list](/pricing-reference) first if you just want a feel for what motors cost.
 
 ## What a Repower Really Involves
 
@@ -24855,7 +24855,7 @@ If you've bought a motor before and the experience left you feeling like you wer
 
 ## Pricing That Doesn't Require a Conversation to Unlock
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. Before you talk to anyone. Before you're a "prospect."
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. Before you talk to anyone. Before you're a "prospect." For [Mercury outboard prices by horsepower](/pricing-reference) on one page, see our published price reference.
 
 If you build a quote, look at the number, and decide to buy from a closer Oakville-area dealer, good. You'll make that choice with real information. That's the point.
 
@@ -24996,7 +24996,7 @@ We'll be straight about it.
 
 Most marine dealers in the greater Hamilton-Burlington corridor don't publish installed pricing online. They want you to call, and with good reason from their perspective. Once you're in a conversation, they can manage the comparison. They can anchor, pitch, and build rapport before you've made up your mind.
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. No call, no form, no process. You see the number, think it over, and engage us when you're ready.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. No call, no form, no process. You see the number, think it over, and engage us when you're ready. If you just want to see [every Mercury model priced in CAD](/pricing-reference), that list is published too.
 
 The customers who find this meaningful are the ones who've already done the research and just want a fair, transparent number. They're not looking to be sold. They're looking to buy.
 
@@ -25355,7 +25355,7 @@ You can find Mercury dealers closer to Pickering. What you'll likely find when y
 
 This isn't accidental. It's a process designed to put a salesperson in the conversation before you've made up your mind. Once you're talking, they can shape what you're considering.
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) does the opposite. Real installed pricing in Canadian dollars, in about three minutes, before any conversation starts. You see the number. You think it over. You engage us when you're ready.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) does the opposite. Real installed pricing in Canadian dollars, in about three minutes, before any conversation starts. You see the number. You think it over. You engage us when you're ready. Prefer to scan the list first? [What each Mercury motor costs](/pricing-reference) is published on our price reference.
 
 ## Mercury Platinum, Third Generation
 
@@ -25492,7 +25492,7 @@ At 45 minutes, that's a realistic model. You're not driving 90 minutes each way 
 
 The call-for-quote model is standard across GTA marine dealers. You look up a motor online, find no price, call, and start a conversation you didn't fully want yet. The price emerges through the interaction, not before it.
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) works the other way. Installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes, before you talk to anyone. See the number. Decide if it makes sense. Engage us when you're ready.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) works the other way. Installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes, before you talk to anyone. See the number. Decide if it makes sense. Engage us when you're ready. For [Mercury pricing for every model](/pricing-reference) on one page, see our published price reference.
 
 Whitby customers who've used this tell us the thing they value most is making the trip knowing exactly what they're coming to spend, not hoping the price turns out to be reasonable.
 
@@ -25638,7 +25638,7 @@ That kind of relationship works when the drive is 45 minutes. It works well when
 
 Durham Region buyers tend to be experienced boaters. They've owned boats, dealt with dealers, and they know when they're being managed versus when someone's actually being helpful. The call-for-quote process frustrates this buyer the most, because they've already done the research, they just can't get a number.
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. No form, no callback, no process to get through. You see what it costs. You make a decision.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. No form, no callback, no process to get through. You see what it costs. You make a decision. For [the full Mercury price list](/pricing-reference) without building a quote, see our published price reference.
 
 ## Mercury Platinum, Rice Lake Since 1947
 
@@ -25782,7 +25782,7 @@ At 40 minutes, the whole service relationship becomes practical, not just the on
 
 ## The Pricing Conversation Starts Before You Arrive
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. Real numbers, no callback, no process to navigate.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. Real numbers, no callback, no process to navigate. For [Mercury MSRP and dealer prices](/pricing-reference) side by side, see our published price list.
 
 For Oshawa buyers who know what they want and just need a clean number, that's the difference. The pricing question is answered before you make the drive.
 
@@ -25926,7 +25926,7 @@ That proximity changes the whole relationship with a dealer. It means:
 
 Bowmanville and the broader Clarington area has a genuine boating culture, Lake Ontario access, Rice Lake not far north, the Trent-Severn within reach. A lot of residents here are serious boat owners, not casual ones. They know what a good dealer relationship looks like, and they notice when they're not getting one.
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. That's the starting point. Real number, visible before any conversation, no process to navigate.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. That's the starting point. Real number, visible before any conversation, no process to navigate. To [see what you would pay for a Mercury](/pricing-reference) without building a quote, our motor price list is published.
 
 ## The Repower Capital of the Region
 
@@ -29835,7 +29835,7 @@ Peterborough has marinas. Peterborough has general boat shops. What it has less 
 
 Platinum is Mercury's top dealer tier — it reflects parts inventory depth, technical training hours, warranty authorization, and SmartCraft diagnostic equipment. For routine work (oil changes, props, basic seasonal service) any qualified Mercury dealer is fine. For a full repower or a hard warranty case, Platinum-tier resolution paths matter.
 
-The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing — motor, rigging, controls, prop, install labour, HST — in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers.
+The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing — motor, rigging, controls, prop, install labour, HST — in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers. For [Mercury prices from 2.5 to 300 HP](/pricing-reference) on one page, see our published price reference.
 
 ## Getting to Harris Boat Works from Peterborough
 
@@ -29989,7 +29989,7 @@ Cobourg customers whose boat lives on Lake Ontario can trailer up for major serv
 
 The most common Cobourg feedback we hear is about the call-for-quote frustration at other dealers. Cobourg has a high concentration of informed buyers — people who've researched the motor they want, know the specifications, and just need a real number to compare. The phone-call-required pricing model frustrates this group the most.
 
-Our quote builder at mercuryrepower.ca shows real installed CAD pricing in three minutes. Motor, rigging, controls, prop, install labour, HST — all on one line. The price you see is the price you pay. For an informed Cobourg buyer, that alone justifies the 25-minute drive.
+Our quote builder at mercuryrepower.ca shows real installed CAD pricing in three minutes. Motor, rigging, controls, prop, install labour, HST — all on one line. The price you see is the price you pay. For an informed Cobourg buyer, that alone justifies the 25-minute drive. For [current Mercury outboard prices](/pricing-reference) across the lineup, see our published price list.
 
 ## What we see at HBW
 
@@ -30120,7 +30120,7 @@ The other thing we see consistently: the Mercury 9.9 ProKicker installs are disp
 
 ## How to start
 
-Build your quote at mercuryrepower.ca. Real installed CAD pricing in three minutes.
+Build your quote at mercuryrepower.ca. Real installed CAD pricing in three minutes. For [real Mercury prices in Canadian dollars](/pricing-reference) on every model, see our published price list.
 
 If you have a service issue, submit a request at hbw.wiki/service.
 
@@ -30232,7 +30232,7 @@ Outdoor with shrinkwrap. For Lindsay customers whose boat will launch on Rice La
 
 Lindsay-area boaters tend to be experienced. The Kawartha Lakes region has a higher concentration of multi-boat households and serious cottagers than most parts of southern Ontario. They've owned several boats, dealt with several dealers, and they know the call-for-quote pricing model when they see it.
 
-Our installed pricing online at mercuryrepower.ca is what informed Lindsay buyers respond to. Real Canadian dollars, full configuration, three minutes to a complete quote. The 45-minute drive becomes worth it when the dealer respects your time.
+Our installed pricing online at mercuryrepower.ca is what informed Lindsay buyers respond to. Real Canadian dollars, full configuration, three minutes to a complete quote. The 45-minute drive becomes worth it when the dealer respects your time. To [browse Mercury outboard prices](/pricing-reference) before you commit to building a quote, check our published price reference.
 
 ## What we see at HBW
 
@@ -30365,7 +30365,7 @@ For repower decisions specifically, the most common Northumberland scenario we s
 
 ## How to start
 
-Build your quote at mercuryrepower.ca. Real installed CAD pricing.
+Build your quote at mercuryrepower.ca. Real installed CAD pricing. For [Mercury pricing without a quote](/pricing-reference), see our published price list.
 
 If you have a service issue, submit a request at hbw.wiki/service.
 
