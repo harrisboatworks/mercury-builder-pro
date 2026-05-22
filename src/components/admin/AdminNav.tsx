@@ -21,6 +21,7 @@ const navItems = [
   { label: "Option Rules", to: "/admin/option-rules" },
   { label: "Sources", to: "/admin/sources" },
   { label: "Connectors", to: "/admin/connectors" },
+  { label: "Growth Agent", to: "/admin/growth-agent" },
   { label: "Security", to: "/admin/security" },
   { label: "SEO Health", to: "/admin/seo-health" },
   { label: "SIN Encryption", to: "/admin/sin-encryption-test" },
