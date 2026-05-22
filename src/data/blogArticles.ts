@@ -24061,7 +24061,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-dealer-markham-ontario-hbw',
     title: 'Mercury Dealer for Markham: Why GTA Customers Drive to Rice Lake for Their Repower',
-    seoTitle: 'Mercury Dealer for Markham — Rice Lake Repower',
+    seoTitle: 'Mercury Dealer for Markham, Rice Lake Repower',
     description: 'Looking for a Mercury Platinum dealer near Markham? Harris Boat Works on Rice Lake - 70 minutes north - handles repowers, sales, service, and Mercury parts for the Markham/Unionville/Stouffville area without the GTA dealer pressure.',
     image: '/lovable-uploads/hero-gta-markham-family-delivery.png',
     author: 'Jay Harris',
@@ -24202,7 +24202,7 @@ That's been the model since 1947. It still works.
 
 ## Where Markham Boaters Launch and Why HBW Serves the GTA Chinese-Canadian Community
 
-Markham is inland with no nearby public launch — local boaters trailer either north to **Lake Simcoe** (about 40 minutes via Highway 404) or east to **Rice Lake** (about 70 minutes via 404 → 407 east → 115 north). Lake Simcoe is the natural default for fishing and recreation; Rice Lake offers quieter water and an easier launch scene.
+Markham is inland with no nearby public launch, local boaters trailer either north to **Lake Simcoe** (about 40 minutes via Highway 404) or east to **Rice Lake** (about 70 minutes via 404 → 407 east → 115 north). Lake Simcoe is the natural default for fishing and recreation; Rice Lake offers quieter water and an easier launch scene.
 
 The drive to Rice Lake is 70 minutes via Highway 404 → 407 east → Highway 115 north. Skipping the 407 to avoid tolls adds 15-20 minutes via the 401. Midweek mornings are calmest.
 
@@ -24210,7 +24210,7 @@ Markham repower customers often:
 
 - **Read our [Mandarin-language guides](https://www.mercuryrepower.ca/blog/zh)** for technical detail before deciding. We have a growing 中文 collection covering pricing, winterization, and repower decisions for GTA Chinese-Canadian boaters.
 - **Justify the drive for Mercury Platinum-level service.** Closer dealers often lack the rigging depth for a clean repower install.
-- **Trust transparent CAD pricing.** Our online quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) works without a phone call — you can build the quote in any language, in your own time, before deciding to make the trip.
+- **Trust transparent CAD pricing.** Our online quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) works without a phone call, you can build the quote in any language, in your own time, before deciding to make the trip.
 
 
 Markham customers often combine their trip with a service drop, see our [drive-in service walkthrough](/blog/toronto-to-rice-lake-drive-in-process).
@@ -24227,7 +24227,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-dealer-richmond-hill-ontario-hbw',
     title: 'Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake',
-    seoTitle: 'Mercury Dealer for Richmond Hill — Rice Lake Repower',
+    seoTitle: 'Mercury Dealer for Richmond Hill, Rice Lake Repower',
     description: 'Looking for a Mercury dealer near Richmond Hill? Harris Boat Works on Rice Lake - about 75 minutes north - handles Mercury repowers, sales, parts, and winter storage for Richmond Hill / Aurora / Newmarket area customers.',
     image: '/lovable-uploads/hero-gta-richmond-hill-pickup-motor.png',
     author: 'Jay Harris',
@@ -24360,14 +24360,14 @@ You see the number before you leave Richmond Hill. You come up when you're decid
 
 ## Where Richmond Hill Boaters Launch and Why HBW Competes on Mercury Platinum Depth
 
-Richmond Hill is inland, with no major public launch in the city — **Lake Wilcox** is small and urban with limited recreational boating. Serious Richmond Hill boaters trailer either north to **Lake Simcoe** (about 50 minutes via Highway 404) or east to **Rice Lake** (about 75 minutes via 404/407/115). Lake Simcoe is the default for most local boaters; many have cottage relationships there.
+Richmond Hill is inland, with no major public launch in the city, **Lake Wilcox** is small and urban with limited recreational boating. Serious Richmond Hill boaters trailer either north to **Lake Simcoe** (about 50 minutes via Highway 404) or east to **Rice Lake** (about 75 minutes via 404/407/115). Lake Simcoe is the default for most local boaters; many have cottage relationships there.
 
-The drive to Rice Lake is 75 minutes via Highway 404 → 407 east → Highway 115 north. Avoiding the 407 tolls via the 401 adds 15-20 minutes but saves money — most customers run the toll route for service trips and skip it for casual visits.
+The drive to Rice Lake is 75 minutes via Highway 404 → 407 east → Highway 115 north. Avoiding the 407 tolls via the 401 adds 15-20 minutes but saves money, most customers run the toll route for service trips and skip it for casual visits.
 
 Why Richmond Hill boaters drive to HBW vs Simcoe-area dealers:
 
 - **Mercury Platinum-level expertise.** For repower work, dealer depth matters more than 20 minutes of drive time. HBW competes on rigging quality, not proximity.
-- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding — no phone calls, no negotiation games, real dealer pricing.
+- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding, no phone calls, no negotiation games, real dealer pricing.
 - **One-stop service + storage.** Many Richmond Hill customers store at HBW over winter, get spring commissioning, and trailer back to Simcoe or Rice Lake for the season.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -24518,15 +24518,15 @@ That's the deal. It's been the deal since 1947.
 
 ## Where Mississauga Boaters Launch and Why HBW Handles Their Repowers
 
-Mississauga sits on Lake Ontario's west shore. The main local hub is **Port Credit Harbour Marina** — the largest in the city, with public access and an active recreational scene. Smaller launches are scattered along Lakeshore Road, and the **Credit River mouth** is a popular smaller-boat area. The Lakefront Promenade runs from Port Credit east into Etobicoke.
+Mississauga sits on Lake Ontario's west shore. The main local hub is **Port Credit Harbour Marina**, the largest in the city, with public access and an active recreational scene. Smaller launches are scattered along Lakeshore Road, and the **Credit River mouth** is a popular smaller-boat area. The Lakefront Promenade runs from Port Credit east into Etobicoke.
 
-The drive to Rice Lake is 90 minutes via the 401 east and Highway 115 north — basically a half-day round-trip. Mississauga's 401 access is consistently slow east of the 427 — even weekday mornings build. Plan for the extra time or stage your trip outside rush periods.
+The drive to Rice Lake is 90 minutes via the 401 east and Highway 115 north, basically a half-day round-trip. Mississauga's 401 access is consistently slow east of the 427, even weekday mornings build. Plan for the extra time or stage your trip outside rush periods.
 
 Why Mississauga boaters trailer to HBW:
 
 - **Annual repower trips.** Many Mississauga customers make the drive once for the repower itself, then run service work closer to home between visits.
 - **Drop-and-pick logistics.** Trailer up midweek, leave the boat for service or storage, pick up when ready.
-- **Mercury Platinum depth.** A clean 115-150 HP repower install needs the rigging hours we put in daily — not every closer dealer has that bench.
+- **Mercury Platinum depth.** A clean 115-150 HP repower install needs the rigging hours we put in daily, not every closer dealer has that bench.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
@@ -24541,7 +24541,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-dealer-vaughan-ontario-hbw',
     title: 'Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake',
-    seoTitle: 'Mercury Dealer for Vaughan — Repower from Rice Lake',
+    seoTitle: 'Mercury Dealer for Vaughan, Repower from Rice Lake',
     description: 'Looking for a Mercury Platinum dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north - handles Mercury repowers, sales, parts, and winter storage for Vaughan / Woodbridge / Maple area customers.',
     image: '/lovable-uploads/hero-gta-vaughan-tech-install.png',
     author: 'Jay Harris',
@@ -24663,13 +24663,13 @@ That's the deal.
 
 Vaughan is inland with no nearby public launch. Local boaters trailer either north to **Lake Simcoe** via Highway 400 (Innisfil, Keswick) or east to **Rice Lake** via 407/115. Concord, Maple, and Woodbridge boaters tend to default to Simcoe; some venture east for the Kawarthas.
 
-The drive to Rice Lake is 80 minutes via Highway 400 south → 401 east → Highway 115 north — or via the 407 to skip city traffic. The 400 northbound on Friday afternoons in summer is brutal; reverse it for midweek HBW trips and you get the calmest 80 minutes you'll spend that week.
+The drive to Rice Lake is 80 minutes via Highway 400 south → 401 east → Highway 115 north, or via the 407 to skip city traffic. The 400 northbound on Friday afternoons in summer is brutal; reverse it for midweek HBW trips and you get the calmest 80 minutes you'll spend that week.
 
 Why Vaughan boaters drive to HBW for repower:
 
 - **Mercury Platinum-level service.** Closer Simcoe-area dealers handle the volume but not always the rigging depth. For a $15,000-$25,000 repower, the drive is justified.
 - **Once-a-year trip works.** Trailer up for the repower itself, then run service work closer to home.
-- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before the trip — the configurator works without a phone call and shows real pricing.
+- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before the trip, the configurator works without a phone call and shows real pricing.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
@@ -24804,7 +24804,7 @@ No fog machine. No runaround. Since 1947.
 
 ## Where Brampton Boaters Launch and Why HBW Is Worth the Trailer Trip
 
-Brampton is inland — no public launch in the city itself. Local boaters either drive south to Lake Ontario (Mississauga's **Port Credit Harbour** or Oakville's **Bronte Harbour**), north to **Lake Simcoe** via the 410/400 corridor, or east to **Rice Lake** via the 401/115. **Heart Lake Conservation Area** in Brampton is electric-motor only — not relevant for outboard owners.
+Brampton is inland, no public launch in the city itself. Local boaters either drive south to Lake Ontario (Mississauga's **Port Credit Harbour** or Oakville's **Bronte Harbour**), north to **Lake Simcoe** via the 410/400 corridor, or east to **Rice Lake** via the 401/115. **Heart Lake Conservation Area** in Brampton is electric-motor only, not relevant for outboard owners.
 
 The drive to Rice Lake is 95 minutes via the 410 south, 401 east, and Highway 115 north. Weekend 401 traffic east of the 404 adds 20-30 minutes; midweek mornings are the only stress-free time.
 
@@ -24953,13 +24953,13 @@ That's been the deal since 1947.
 
 Oakville is one of the GTA's stronger marina towns. **Bronte Harbour** and **Oakville Harbour** are both city-owned with public launches; **Bronte Outer Harbour Marina** handles larger boats. The **Sixteen Mile Creek** mouth at Oakville Harbour is a popular sheltered area for smaller-boat owners.
 
-The drive to Rice Lake is 110 minutes via the QEW east through Toronto, 401 east, and Highway 115 north. Similar to Burlington — weekend QEW through Toronto is slow, midweek mornings are the only sane window for service trips.
+The drive to Rice Lake is 110 minutes via the QEW east through Toronto, 401 east, and Highway 115 north. Similar to Burlington, weekend QEW through Toronto is slow, midweek mornings are the only sane window for service trips.
 
 Why Oakville boaters drive to HBW for repower:
 
 - **Mercury Platinum-level rigging.** For a $15,000-$25,000 repower investment, the drive is justified when local dealers can't match the install depth.
 - **One-time annual trip.** Many Oakville customers trailer up once for repower or major service, then run lighter maintenance closer to home.
-- **Transparent CAD pricing.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding — the configurator works without a phone call and shows real dealer pricing, not MSRP.
+- **Transparent CAD pricing.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding, the configurator works without a phone call and shows real dealer pricing, not MSRP.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
@@ -25098,7 +25098,7 @@ That's been true since 1947. It's still true.
 
 Burlington sits on Lake Ontario's west shore, with significant marina presence. The main local launches are **LaSalle Park Marina** (city-run with public ramp), **Bronte Harbour** just east in Oakville, and various private slips along Burlington Bay. The bay itself is sheltered but largely industrial; most recreational boating happens on open Lake Ontario.
 
-The drive to Rice Lake is roughly 110 minutes via the QEW east through Toronto, then 401 east and Highway 115 north — call it a 2-hour round-trip on a good day. Weekend QEW traffic through Toronto adds 20-40 minutes. Midweek mornings are the only sane option.
+The drive to Rice Lake is roughly 110 minutes via the QEW east through Toronto, then 401 east and Highway 115 north, call it a 2-hour round-trip on a good day. Weekend QEW traffic through Toronto adds 20-40 minutes. Midweek mornings are the only sane option.
 
 Why Burlington boaters still drive to HBW:
 
@@ -25440,13 +25440,13 @@ Transparent pricing before you leave Pickering. The rigging conversation before 
 
 ## Where Pickering Boaters Launch and Why HBW Is Their Mercury Platinum Option
 
-Pickering's signature waterway is **Frenchmans Bay** — a sheltered shallow bay on Lake Ontario, home to **Pickering Harbour Marina** and **East Shore Marina**. Many Pickering boaters never leave the bay's protected waters; others use it as a launch point for open-water Lake Ontario fishing and recreation.
+Pickering's signature waterway is **Frenchmans Bay**, a sheltered shallow bay on Lake Ontario, home to **Pickering Harbour Marina** and **East Shore Marina**. Many Pickering boaters never leave the bay's protected waters; others use it as a launch point for open-water Lake Ontario fishing and recreation.
 
 The drive to Rice Lake is 50 minutes via the 401 east and Highway 115 north. The 401 east of the 407 is clear midweek; expect 20 extra minutes on Saturday cottage mornings. Tuesday-Thursday mornings are ideal for service trips.
 
 Why Pickering boaters choose HBW for repower:
 
-- **Drive time math.** 50 minutes to HBW is the same as driving back into central Toronto for a downtown dealer — and you get Mercury Platinum-level service.
+- **Drive time math.** 50 minutes to HBW is the same as driving back into central Toronto for a downtown dealer, and you get Mercury Platinum-level service.
 - **Frenchmans Bay-friendly motors.** The bay's shallow depths and sheltered conditions favour different motor setups than open-water boating. We've rigged plenty of Pickering boats.
 - **One-trip annual service.** Trailer up midweek, leave the boat for winterization or repower, pick up when ready. No 401 stress between Pickering and downtown.
 
@@ -25579,14 +25579,14 @@ That's the deal. Has been since 1947.
 
 ## Where Whitby Boaters Launch and Why HBW Sees Steady Volume from the Area
 
-Whitby has a strong boating community built around **Whitby Harbour Marina** — city-owned with 200+ slips and a public launch. The **Whitby Yacht Club** anchors a strong sailing and power-boating scene; Lake Ontario shoreline here is active year-round with recreational use.
+Whitby has a strong boating community built around **Whitby Harbour Marina**, city-owned with 200+ slips and a public launch. The **Whitby Yacht Club** anchors a strong sailing and power-boating scene; Lake Ontario shoreline here is active year-round with recreational use.
 
 The drive to Rice Lake is 45 minutes via the 401 east and Highway 115 north. Clear midweek, weekend cottage traffic is the only friction. Tuesday-Thursday mornings are ideal for service trips.
 
 Why Whitby boaters are a strong repower market:
 
 - **Mature fleet.** Whitby's long-established marina community means many older Mercury (and other-brand) motors due for repower. We see steady annual volume from the area.
-- **Proximity makes it practical.** 45 minutes is reasonable for a multi-thousand-dollar repower investment — closer than most central Toronto dealers once you factor in 401 traffic.
+- **Proximity makes it practical.** 45 minutes is reasonable for a multi-thousand-dollar repower investment, closer than most central Toronto dealers once you factor in 401 traffic.
 - **Mercury Platinum-level depth.** A clean install at HBW vs a rushed install elsewhere is the difference between 10 trouble-free years and a recurring warranty problem.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -25872,14 +25872,14 @@ You're practically in our neighbourhood. Let's work together.
 
 ## Where Oshawa Boaters Launch and Why Many Are Repower Candidates
 
-Oshawa is a strong east-GTA boating town. **Oshawa Harbour Marina** is the main local hub — city-owned, large facility with public launch and a long recreational history. Lake Ontario shoreline here has a serious boating community with manufacturing-town roots.
+Oshawa is a strong east-GTA boating town. **Oshawa Harbour Marina** is the main local hub, city-owned, large facility with public launch and a long recreational history. Lake Ontario shoreline here has a serious boating community with manufacturing-town roots.
 
-The drive to Rice Lake is just 40 minutes via the 401 east and Highway 115 north — easy midweek, weekend cottage traffic the only friction. For service trips, Tuesday-Thursday mornings are ideal.
+The drive to Rice Lake is just 40 minutes via the 401 east and Highway 115 north, easy midweek, weekend cottage traffic the only friction. For service trips, Tuesday-Thursday mornings are ideal.
 
 Why Oshawa is a particularly strong repower market:
 
 - **Many older fiberglass hulls in great shape.** A 1990s-2000s 16-18 ft fiberglass hull with a tired Mercury or Evinrude is an ideal repower candidate. HBW handles a steady flow of these annually.
-- **Proximity makes it practical.** 40 minutes is a reasonable drive for a multi-thousand-dollar repower investment — closer than driving back into central Toronto.
+- **Proximity makes it practical.** 40 minutes is a reasonable drive for a multi-thousand-dollar repower investment, closer than driving back into central Toronto.
 - **Mercury Platinum-level depth.** A repower done well lasts the rest of the boat's life. Done poorly, it gets brought back for warranty work.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -26022,15 +26022,15 @@ This is what a dealer relationship is supposed to feel like.
 
 ## Where Bowmanville Boaters Launch and Why HBW Is the Closest Mercury Platinum Dealer
 
-Bowmanville sits on Lake Ontario's north shore. Local launches are at the **Bowmanville waterfront** and the **Westside Beach area**. Lake Ontario shoreline here is open and exposed — most Bowmanville boaters fish close to shore or trailer to inland water when conditions favour it.
+Bowmanville sits on Lake Ontario's north shore. Local launches are at the **Bowmanville waterfront** and the **Westside Beach area**. Lake Ontario shoreline here is open and exposed, most Bowmanville boaters fish close to shore or trailer to inland water when conditions favour it.
 
-The drive to Rice Lake is just 35 minutes via the 401 east and Highway 115 north — the shortest commute of any GTA suburb. For most Bowmanville boaters, HBW is the closest Mercury Platinum dealer, period. Driving back into Toronto for service takes longer.
+The drive to Rice Lake is just 35 minutes via the 401 east and Highway 115 north, the shortest commute of any GTA suburb. For most Bowmanville boaters, HBW is the closest Mercury Platinum dealer, period. Driving back into Toronto for service takes longer.
 
 Why Bowmanville boaters choose HBW:
 
 - **Proximity.** 35 minutes door-to-door makes HBW closer than most local service shops once you factor in 401 traffic.
 - **Year-round option.** Many Bowmanville customers keep their boat at HBW for storage and service, fishing Rice Lake or trailering down to Lake Ontario as needed. One marina, all season.
-- **Mercury Platinum depth.** A proper repower or rigging job at HBW takes the time it takes — we don't shortcut the controls and prop matching.
+- **Mercury Platinum depth.** A proper repower or rigging job at HBW takes the time it takes, we don't shortcut the controls and prop matching.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
@@ -29821,11 +29821,11 @@ For Peterborough customers, the conversation we have most often is "I've been dr
 
 The pattern we see from Peterborough regulars looks like this:
 
-- **Spring commissioning** — they drop off in April, pick up in May with the motor commissioned, tested, and ready for the Otonabee
-- **Mid-season service** — an impeller, a fuel issue, a SmartCraft fault that needs a Mercury Platinum diagnostic
-- **Repower decisions** — when the old motor is past mid-life and the math starts looking ugly, we walk through repower vs new boat vs sell with real numbers
-- **Fall winterization + storage** — boat stays with us through the off-season, gets full winterization, picks back up at spring launch
-- **Trade-in conversations** — the Trade-In Value Guide at mercuryrepower.ca gives a starting number; we close the actual valuation in person
+- **Spring commissioning**, they drop off in April, pick up in May with the motor commissioned, tested, and ready for the Otonabee
+- **Mid-season service**, an impeller, a fuel issue, a SmartCraft fault that needs a Mercury Platinum diagnostic
+- **Repower decisions**, when the old motor is past mid-life and the math starts looking ugly, we walk through repower vs new boat vs sell with real numbers
+- **Fall winterization + storage**, boat stays with us through the off-season, gets full winterization, picks back up at spring launch
+- **Trade-in conversations**, the Trade-In Value Guide at mercuryrepower.ca gives a starting number; we close the actual valuation in person
 
 The Peterborough boaters who use us most don't come for the sale. They come because once you have a service relationship with a Mercury Platinum shop on Rice Lake, the rest of the year gets simpler.
 
@@ -29833,9 +29833,9 @@ The Peterborough boaters who use us most don't come for the sale. They come beca
 
 Peterborough has marinas. Peterborough has general boat shops. What it has less of is Mercury Platinum dealer depth with full repower capacity.
 
-Platinum is Mercury's top dealer tier — it reflects parts inventory depth, technical training hours, warranty authorization, and SmartCraft diagnostic equipment. For routine work (oil changes, props, basic seasonal service) any qualified Mercury dealer is fine. For a full repower or a hard warranty case, Platinum-tier resolution paths matter.
+Platinum is Mercury's top dealer tier, it reflects parts inventory depth, technical training hours, warranty authorization, and SmartCraft diagnostic equipment. For routine work (oil changes, props, basic seasonal service) any qualified Mercury dealer is fine. For a full repower or a hard warranty case, Platinum-tier resolution paths matter.
 
-The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing — motor, rigging, controls, prop, install labour, HST — in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers. For [Mercury prices from 2.5 to 300 HP](/pricing-reference) on one page, see our published price reference.
+The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing, motor, rigging, controls, prop, install labour, HST, in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers. For [Mercury prices from 2.5 to 300 HP](/pricing-reference) on one page, see our published price reference.
 
 ## Getting to Harris Boat Works from Peterborough
 
@@ -29851,10 +29851,10 @@ Motor pricing: mercuryrepower.ca
 ## What HBW handles for Peterborough customers
 
 **Mercury outboard sales**
-Full Mercury lineup: 2.5 HP portables through 600 HP Verado (Verado is special-order — most Peterborough/Kawartha boats need FourStroke or Pro XS). Honest conversation about what fits your boat and your use case on the Otonabee, Trent system, or Kawartha lakes.
+Full Mercury lineup: 2.5 HP portables through 600 HP Verado (Verado is special-order, most Peterborough/Kawartha boats need FourStroke or Pro XS). Honest conversation about what fits your boat and your use case on the Otonabee, Trent system, or Kawartha lakes.
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial on Rice Lake before pickup. We don't deliver motors on trailers and hope they run right — every install gets water-tested before it leaves the shop.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial on Rice Lake before pickup. We don't deliver motors on trailers and hope they run right, every install gets water-tested before it leaves the shop.
 
 **Mercury parts and service**
 Platinum-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
@@ -29867,13 +29867,13 @@ mercuryrepower.ca, real Canadian dollars, full configuration. Build a quote befo
 
 ## The Peterborough customer profile we see most often
 
-Peterborough boaters tend to know boats. The city has a deep boating culture — Trent University boaters, Otonabee day-cruisers, Kawartha cottagers, and a strong fishing community on the Kawartha chain. The call-for-quote runaround frustrates Peterborough buyers more than most because they've usually already done their research before they make the call.
+Peterborough boaters tend to know boats. The city has a deep boating culture, Trent University boaters, Otonabee day-cruisers, Kawartha cottagers, and a strong fishing community on the Kawartha chain. The call-for-quote runaround frustrates Peterborough buyers more than most because they've usually already done their research before they make the call.
 
 Our quote builder skips that step. The price you see is the price you pay. Three generations of HBW have built this business on returning customers and referrals, not on quota-driven sales tactics.
 
 ## What we see at HBW
 
-The most common Peterborough question we get isn't about a specific motor — it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/should-i-repower-or-buy-new-boat-ontario) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
+The most common Peterborough question we get isn't about a specific motor, it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/should-i-repower-or-buy-new-boat-ontario) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
 
 For Peterborough customers specifically: the closer service relationship is the under-rated benefit. A repower done at HBW means the dealer who installed the motor is also the one doing your annual maintenance. That's how warranty issues get resolved fast.
 
@@ -29881,7 +29881,7 @@ For Peterborough customers specifically: the closer service relationship is the 
 
 Build your quote at mercuryrepower.ca first. Takes about three minutes. You'll see real installed pricing for the motor and rigging options you're considering.
 
-If you have a specific service issue, submit a request at hbw.wiki/service. That's how 90% of our service intake starts — faster than a phone call, and it routes directly to the right person.
+If you have a specific service issue, submit a request at hbw.wiki/service. That's how 90% of our service intake starts, faster than a phone call, and it routes directly to the right person.
 
 For a motor purchase conversation, call ahead: 905-342-2153. We'll have someone ready when you arrive.
 
@@ -29891,10 +29891,10 @@ For a motor purchase conversation, call ahead: 905-342-2153. We'll have someone 
 Yes. A 35-minute drive each way works for spring commissioning, mid-season service, and fall winterization. Many of our Peterborough regulars have made this their annual routine.
 
 **Do you service the Trent-Severn or just Rice Lake boats?**
-We service Mercury and Mercruiser outboards regardless of where the boat lives. Trent-Severn, Kawarthas, Lake Ontario, Otonabee — same shop, same diagnostics. For engine repairs, we only service Mercury and Mercruiser.
+We service Mercury and Mercruiser outboards regardless of where the boat lives. Trent-Severn, Kawarthas, Lake Ontario, Otonabee, same shop, same diagnostics. For engine repairs, we only service Mercury and Mercruiser.
 
 **Is HBW closer than a Toronto dealer?**
-For most Peterborough addresses, yes — Toronto is roughly 90-120 minutes through GTA traffic; HBW is 35 minutes via Highway 28. The drive is also more pleasant.
+For most Peterborough addresses, yes, Toronto is roughly 90-120 minutes through GTA traffic; HBW is 35 minutes via Highway 28. The drive is also more pleasant.
 
 **What do you charge for a Mercury repower?**
 Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number based on your boat and the motor you're considering. Most repowers in our area land in the $13,000-$25,000 range including HST.
@@ -29925,11 +29925,11 @@ Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned o
     keywords: ['mercury dealer cobourg', 'cobourg mercury outboard', 'northumberland mercury dealer', 'rice lake mercury dealer'],
     content: `## Quick Answer
 
-Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 25 minutes north of Cobourg via County Road 18. We handle Mercury outboard sales, repowers, parts, and service. Cobourg is one of the closer markets to HBW — for many Cobourg addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 25 minutes north of Cobourg via County Road 18. We handle Mercury outboard sales, repowers, parts, and service. Cobourg is one of the closer markets to HBW, for many Cobourg addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
 
 ## Cobourg has Lake Ontario shoreline, but most local boating happens north
 
-The Cobourg waterfront has a real boating community — the harbour, the sailing club, the day-cruisers and small powerboats running out of the inner harbour. What it doesn't have, geographically, is a deep inland boating market within town limits. Most of Cobourg's serious recreational boating happens north, on Rice Lake and the Kawartha system, where the cottage country actually starts.
+The Cobourg waterfront has a real boating community, the harbour, the sailing club, the day-cruisers and small powerboats running out of the inner harbour. What it doesn't have, geographically, is a deep inland boating market within town limits. Most of Cobourg's serious recreational boating happens north, on Rice Lake and the Kawartha system, where the cottage country actually starts.
 
 That's why Cobourg customers end up driving 25 minutes north to HBW more often than they end up driving 90 minutes west to a Toronto-area dealer. The boat is going to live north anyway. The dealer being north makes the logistics work.
 
@@ -29937,9 +29937,9 @@ That's why Cobourg customers end up driving 25 minutes north to HBW more often t
 
 The Cobourg customer pattern splits into two groups:
 
-**The cottage owner** — has a place on Rice Lake or in the Kawarthas, keeps a boat there, drives up from Cobourg most weekends. Wants a dealer that knows the lake and isn't 90 minutes back into the GTA.
+**The cottage owner**, has a place on Rice Lake or in the Kawarthas, keeps a boat there, drives up from Cobourg most weekends. Wants a dealer that knows the lake and isn't 90 minutes back into the GTA.
 
-**The town-based boater** — keeps the boat in Cobourg or trailers from Cobourg, uses Lake Ontario or makes regular trips to the Kawartha system. Wants quality Mercury service that doesn't involve a road trip.
+**The town-based boater**, keeps the boat in Cobourg or trailers from Cobourg, uses Lake Ontario or makes regular trips to the Kawartha system. Wants quality Mercury service that doesn't involve a road trip.
 
 For both groups, the pattern is:
 
@@ -29959,7 +29959,7 @@ The closer Cobourg dealers tend to be in lower Mercury tiers, or are non-Mercury
 
 ## Getting to Harris Boat Works from Cobourg
 
-Route: County Road 18 north from Cobourg, straight into Gores Landing. About as simple as a route gets — one road for most of the trip.
+Route: County Road 18 north from Cobourg, straight into Gores Landing. About as simple as a route gets, one road for most of the trip.
 
 Approximate drive time: 25 minutes outside rush hour. From the Cobourg harbour or downtown, allow 25-30 minutes. From north Cobourg, it's closer to 20 minutes.
 
@@ -29987,13 +29987,13 @@ Cobourg customers whose boat lives on Lake Ontario can trailer up for major serv
 
 ## What Cobourg buyers tell us most often
 
-The most common Cobourg feedback we hear is about the call-for-quote frustration at other dealers. Cobourg has a high concentration of informed buyers — people who've researched the motor they want, know the specifications, and just need a real number to compare. The phone-call-required pricing model frustrates this group the most.
+The most common Cobourg feedback we hear is about the call-for-quote frustration at other dealers. Cobourg has a high concentration of informed buyers, people who've researched the motor they want, know the specifications, and just need a real number to compare. The phone-call-required pricing model frustrates this group the most.
 
-Our quote builder at mercuryrepower.ca shows real installed CAD pricing in three minutes. Motor, rigging, controls, prop, install labour, HST — all on one line. The price you see is the price you pay. For an informed Cobourg buyer, that alone justifies the 25-minute drive. For [current Mercury outboard prices](/pricing-reference) across the lineup, see our published price list.
+Our quote builder at mercuryrepower.ca shows real installed CAD pricing in three minutes. Motor, rigging, controls, prop, install labour, HST, all on one line. The price you see is the price you pay. For an informed Cobourg buyer, that alone justifies the 25-minute drive. For [current Mercury outboard prices](/pricing-reference) across the lineup, see our published price list.
 
 ## What we see at HBW
 
-The single most underrated benefit for Cobourg customers is the ongoing service relationship that comes from having the dealer 25 minutes away. Most repower customers don't think about this at purchase time — they're focused on the motor cost. Two years in, when the boat needs an impeller mid-season and parts are on the shelf at HBW, that proximity matters.
+The single most underrated benefit for Cobourg customers is the ongoing service relationship that comes from having the dealer 25 minutes away. Most repower customers don't think about this at purchase time, they're focused on the motor cost. Two years in, when the boat needs an impeller mid-season and parts are on the shelf at HBW, that proximity matters.
 
 The other thing we see specifically with Cobourg customers: many of them have already moved boat storage to the Rice Lake area because the Cobourg waterfront storage market is tight. Once the boat is already up here, HBW is the logical service shop.
 
@@ -30008,13 +30008,13 @@ For a motor purchase conversation, call: 905-342-2153.
 ## Frequently Asked Questions, Cobourg
 
 **Is HBW the closest Mercury dealer to Cobourg?**
-For most Cobourg addresses, yes — we're 25 minutes north via County Road 18. Closer dealers may exist for specific motor brands or general boat service, but for Mercury Platinum-tier work, HBW is the nearest option.
+For most Cobourg addresses, yes, we're 25 minutes north via County Road 18. Closer dealers may exist for specific motor brands or general boat service, but for Mercury Platinum-tier work, HBW is the nearest option.
 
 **Do you service boats that live on Lake Ontario, not Rice Lake?**
 Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer-in for service all season. For engine repairs, we only service Mercury and Mercruiser.
 
 **Can I get the boat picked up and dropped off?**
-HBW does NOT offer pickup or delivery — customers bring the boat to us. We have trailer parking on site for drop-offs.
+HBW does NOT offer pickup or delivery, customers bring the boat to us. We have trailer parking on site for drop-offs.
 
 **What's the typical repower cost from a Cobourg perspective?**
 Depends on horsepower and current rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in the typical Cobourg boat range ($10,000-$25,000 hull value) land in the $13,000-$22,000 installed range.
@@ -30045,11 +30045,11 @@ Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned o
     keywords: ['mercury dealer port hope', 'port hope mercury outboard', 'ganaraska mercury dealer', 'northumberland mercury platinum'],
     content: `## Quick Answer
 
-Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW — for most Port Hope addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
 
 ## Port Hope has the Ganaraska River and Lake Ontario, but most local boating happens inland
 
-Port Hope's waterfront is a working harbour with a smaller recreational boating community than Cobourg next door. The Ganaraska is a fishing destination (the salmon run is legendary) but it's not a powerboat river. Lake Ontario sailing and small powerboats use the harbour, but the deeper recreational boating market in this area runs north — Rice Lake, the Trent system, the Kawarthas.
+Port Hope's waterfront is a working harbour with a smaller recreational boating community than Cobourg next door. The Ganaraska is a fishing destination (the salmon run is legendary) but it's not a powerboat river. Lake Ontario sailing and small powerboats use the harbour, but the deeper recreational boating market in this area runs north, Rice Lake, the Trent system, the Kawarthas.
 
 That's why Port Hope Mercury customers tend to end up at HBW. The boat is going north anyway, and the Mercury dealer being north makes the math work.
 
@@ -30057,11 +30057,11 @@ That's why Port Hope Mercury customers tend to end up at HBW. The boat is going 
 
 The Port Hope customer pattern looks like Cobourg's, with more weight toward the cottage owner profile:
 
-**The cottage owner** — has a property somewhere on Rice Lake or in the Kawarthas, keeps the boat at the cottage, drives up from Port Hope on weekends. Wants a dealer that knows the lake and is closer than the GTA.
+**The cottage owner**, has a property somewhere on Rice Lake or in the Kawarthas, keeps the boat at the cottage, drives up from Port Hope on weekends. Wants a dealer that knows the lake and is closer than the GTA.
 
-**The salmon fisherman** — Ganaraska River runs serious salmon traffic in fall. Port Hope anglers who own a boat often have a second boat or trailer-portable rig for Lake Ontario or Rice Lake. Mercury 9.9 ProKickers are common in this crowd.
+**The salmon fisherman**, Ganaraska River runs serious salmon traffic in fall. Port Hope anglers who own a boat often have a second boat or trailer-portable rig for Lake Ontario or Rice Lake. Mercury 9.9 ProKickers are common in this crowd.
 
-**The town-based boater** — keeps the boat in Port Hope or trailers from town, mixes Lake Ontario and inland trips. Wants Mercury service that doesn't require a road trip into the GTA.
+**The town-based boater**, keeps the boat in Port Hope or trailers from town, mixes Lake Ontario and inland trips. Wants Mercury service that doesn't require a road trip into the GTA.
 
 For all three groups, the pattern is:
 - Spring commissioning
@@ -30074,7 +30074,7 @@ For all three groups, the pattern is:
 
 Port Hope has a few general boat shops. What it doesn't have within town limits is a Mercury Platinum dealer.
 
-Platinum is Mercury's top dealer tier — parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
+Platinum is Mercury's top dealer tier, parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
 
 For Port Hope customers with newer Mercury outboards under warranty, the closer Platinum dealer typically wins the long-term service relationship.
 
@@ -30092,7 +30092,7 @@ Motor pricing: mercuryrepower.ca
 ## What HBW handles for Port Hope customers
 
 **Mercury outboard sales**
-Full Mercury lineup: 2.5 HP through 600 HP. For Port Hope customers, FourStroke covers most use cases (cruising, family fishing, pontoons, cottage boats). Pro XS for performance fishing or fast-running tournament setups. The Mercury 9.9 ProKicker is a Port Hope angler favourite — common on Lake Ontario salmon rigs and on Kawartha bass boats.
+Full Mercury lineup: 2.5 HP through 600 HP. For Port Hope customers, FourStroke covers most use cases (cruising, family fishing, pontoons, cottage boats). Pro XS for performance fishing or fast-running tournament setups. The Mercury 9.9 ProKicker is a Port Hope angler favourite, common on Lake Ontario salmon rigs and on Kawartha bass boats.
 
 **Repower service**
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, install, lake test on Rice Lake. Every install gets water-tested before pickup.
@@ -30108,13 +30108,13 @@ Port Hope customers with Lake Ontario boats can trailer up for major service. Ha
 
 ## What Port Hope buyers typically ask first
 
-The most common Port Hope question is about the difference between a "fast price quote" and a real installed cost. Other dealers will give a verbal motor-only number over the phone. We give the full installed cost — motor, rigging, controls, prop, install labour, HST — at mercuryrepower.ca. Real Canadian dollars. No phone tag required.
+The most common Port Hope question is about the difference between a "fast price quote" and a real installed cost. Other dealers will give a verbal motor-only number over the phone. We give the full installed cost, motor, rigging, controls, prop, install labour, HST, at mercuryrepower.ca. Real Canadian dollars. No phone tag required.
 
 That transparency is what most Port Hope informed buyers respond to. The drive becomes worth it when the dealer treats the buyer like an adult who can read a number.
 
 ## What we see at HBW
 
-The single most underrated benefit for Port Hope customers is the small-shop accountability. We're a 3-generation family marina on Rice Lake — when a Port Hope customer has a bad experience, word gets around fast. The Port Hope-to-Rice Lake recreational boating community is tight. Most of our Port Hope customers came in via referral from another Port Hope or Cobourg-area customer.
+The single most underrated benefit for Port Hope customers is the small-shop accountability. We're a 3-generation family marina on Rice Lake, when a Port Hope customer has a bad experience, word gets around fast. The Port Hope-to-Rice Lake recreational boating community is tight. Most of our Port Hope customers came in via referral from another Port Hope or Cobourg-area customer.
 
 The other thing we see consistently: the Mercury 9.9 ProKicker installs are disproportionate from Port Hope addresses. Salmon fishermen and Kawartha anglers in Port Hope tend to know exactly what they want and just need a dealer that can install it cleanly.
 
@@ -30135,7 +30135,7 @@ For most Port Hope addresses, yes. We're 30 minutes north via County Road 28 and
 Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs, we only service Mercury and Mercruiser.
 
 **Do you install Mercury 9.9 ProKickers?**
-Yes — we install a lot of them, especially for Port Hope and Cobourg anglers running primary motors with a ProKicker for trolling control. Full install includes mounting, linkage to the primary throttle, electrical, and steering tie-bar setup.
+Yes, we install a lot of them, especially for Port Hope and Cobourg anglers running primary motors with a ProKicker for trolling control. Full install includes mounting, linkage to the primary throttle, electrical, and steering tie-bar setup.
 
 **What's the typical Port Hope repower cost?**
 Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in our region land in the $13,000-$25,000 installed range including HST.
@@ -30169,11 +30169,11 @@ Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned o
     keywords: ['mercury dealer lindsay', 'kawartha lakes mercury', 'lindsay mercury platinum', 'sturgeon lake mercury dealer'],
     content: `## Quick Answer
 
-Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south. We handle Mercury outboard sales, repowers, parts, and service. For Kawartha Lakes boaters, Lindsay is the regional hub — and HBW is the closest Mercury Platinum dealer with full repower capacity. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south. We handle Mercury outboard sales, repowers, parts, and service. For Kawartha Lakes boaters, Lindsay is the regional hub, and HBW is the closest Mercury Platinum dealer with full repower capacity. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
 
 ## Lindsay is the Kawartha Lakes hub
 
-Lindsay sits at the centre of the Kawartha Lakes region, with Sturgeon Lake to the north, the Scugog River running through town, and the Trent-Severn Waterway connecting it all. The local boating community is significant — fishing, cruising, cottagers, water sports, the full mix. Boats in this region tend to spend more days on the water per year than anywhere else in southern Ontario.
+Lindsay sits at the centre of the Kawartha Lakes region, with Sturgeon Lake to the north, the Scugog River running through town, and the Trent-Severn Waterway connecting it all. The local boating community is significant, fishing, cruising, cottagers, water sports, the full mix. Boats in this region tend to spend more days on the water per year than anywhere else in southern Ontario.
 
 What Lindsay has less of is Mercury Platinum dealer depth with full repower capacity. The closer dealers tend to be in lower Mercury tiers or are non-Mercury shops. For a major repower or a complex warranty case, the dealer tier matters.
 
@@ -30181,11 +30181,11 @@ What Lindsay has less of is Mercury Platinum dealer depth with full repower capa
 
 The Lindsay customer pattern centers on serious cottage and fishing use:
 
-**The Kawartha cottager** — has property on Sturgeon, Pigeon, or Buckhorn Lake, runs a 16-20 foot aluminum or pontoon. Wants a Mercury Platinum shop that can handle the seasonal service routine without disrupting the cottage time.
+**The Kawartha cottager**, has property on Sturgeon, Pigeon, or Buckhorn Lake, runs a 16-20 foot aluminum or pontoon. Wants a Mercury Platinum shop that can handle the seasonal service routine without disrupting the cottage time.
 
-**The serious angler** — Sturgeon Lake walleye and muskie fishing is legitimate. Anglers running Pro XS or FourStroke setups for tournament-grade work need dealer-tier diagnostics and parts depth that smaller shops don't carry.
+**The serious angler**, Sturgeon Lake walleye and muskie fishing is legitimate. Anglers running Pro XS or FourStroke setups for tournament-grade work need dealer-tier diagnostics and parts depth that smaller shops don't carry.
 
-**The cruise-boat owner** — Trent-Severn cruisers running 24-foot inboard/outboard or larger need a Mercury MerCruiser shop. HBW handles MerCruiser sterndrives as well as outboards.
+**The cruise-boat owner**, Trent-Severn cruisers running 24-foot inboard/outboard or larger need a Mercury MerCruiser shop. HBW handles MerCruiser sterndrives as well as outboards.
 
 For all three, the pattern is:
 - Spring commissioning before opening day
@@ -30196,7 +30196,7 @@ For all three, the pattern is:
 
 ## The Trent-Severn factor
 
-Many Lindsay boaters cruise the Trent-Severn — through Bobcaygeon, Burleigh Falls, the Buckhorn locks, and down into Rice Lake. The lower Trent connects Rice Lake to the Kawartha system through the Hastings lock. That means a Lindsay-area boat that cruises the full Trent system is going to pass right by HBW anyway.
+Many Lindsay boaters cruise the Trent-Severn, through Bobcaygeon, Burleigh Falls, the Buckhorn locks, and down into Rice Lake. The lower Trent connects Rice Lake to the Kawartha system through the Hastings lock. That means a Lindsay-area boat that cruises the full Trent system is going to pass right by HBW anyway.
 
 For Lindsay customers planning a major Trent-Severn cruise, dropping the boat at HBW for service before the trip means the boat starts the cruise in known-good condition and the dealer is in the network if anything comes up mid-trip.
 
@@ -30238,7 +30238,7 @@ Our installed pricing online at mercuryrepower.ca is what informed Lindsay buyer
 
 The most underrated benefit for Lindsay customers is the seasonal storage relationship. A lot of cottagers run into the same problem in October: where to store the boat. The Kawartha-region storage market gets tight. HBW offers outdoor shrinkwrap storage with full winterization done by the same shop that knows the motor. Lindsay customers who set up that routine end up doing it for 5-10 years running.
 
-The other observation: Lindsay-area cottagers often have older Mercury outboards (10-15 years) that are still running fine but starting to need attention. Repower vs continued service decisions are common conversations. The honest answer depends on the hull condition — but for a sound hull under 15 years old, a properly executed repower is usually the dollar-per-year winner.
+The other observation: Lindsay-area cottagers often have older Mercury outboards (10-15 years) that are still running fine but starting to need attention. Repower vs continued service decisions are common conversations. The honest answer depends on the hull condition, but for a sound hull under 15 years old, a properly executed repower is usually the dollar-per-year winner.
 
 ## How to start
 
@@ -30257,13 +30257,13 @@ For routine service (oil change, basic seasonal work), maybe not. For a major re
 Yes. We service Mercury outboards and MerCruiser sterndrives. For engine repairs, we only service Mercury and Mercruiser.
 
 **Do you install ProKickers on Sturgeon Lake fishing boats?**
-Yes — common spec on Kawartha-area aluminum fishing boats. Full install includes mounting, throttle linkage, electrical, and tie-bar steering setup.
+Yes, common spec on Kawartha-area aluminum fishing boats. Full install includes mounting, throttle linkage, electrical, and tie-bar steering setup.
 
 **What's a typical Kawartha-area repower cost?**
 Depends on horsepower. Most repowers on 16-20 foot aluminum or pontoon hulls land in the $13,000-$25,000 installed range including HST. The quote builder at mercuryrepower.ca gives a real CAD number based on your boat.
 
 **Can I drop off at HBW before a Trent-Severn cruise?**
-Yes — many Lindsay customers do exactly that. Spring service before the cruising season, motor in known-good condition before a long trip, network coverage if anything comes up mid-trip.
+Yes, many Lindsay customers do exactly that. Spring service before the cruising season, motor in known-good condition before a long trip, network coverage if anything comes up mid-trip.
 
 **Can I store my boat with you year-round?**
 Yes. Outdoor with shrinkwrap. For Lindsay cottagers who want to skip the Kawartha storage market and pick up the boat already at Rice Lake in spring, this works well.
@@ -30291,11 +30291,11 @@ Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned o
     keywords: ['mercury dealer northumberland county', 'northumberland mercury platinum', 'rice lake mercury dealer', 'trent system mercury'],
     content: `## Quick Answer
 
-Harris Boat Works in Gores Landing is the Mercury Marine Platinum Dealer serving Northumberland County. Family-owned since 1947, Mercury Platinum since 1965. We're located on Rice Lake within Northumberland County, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we're not "the closer option" — we ARE the local Mercury dealer. Installed pricing is published online at mercuryrepower.ca.
+Harris Boat Works in Gores Landing is the Mercury Marine Platinum Dealer serving Northumberland County. Family-owned since 1947, Mercury Platinum since 1965. We're located on Rice Lake within Northumberland County, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we're not "the closer option", we ARE the local Mercury dealer. Installed pricing is published online at mercuryrepower.ca.
 
 ## What "local" means in Northumberland County
 
-Northumberland County stretches from the Lake Ontario shore north to the Trent system, and includes a wide range of waterfront communities — Cobourg's harbour, Port Hope's Ganaraska, the Hastings lock at the bottom of Rice Lake, Brighton on Presqu'ile Bay, the Trent River through Campbellford. The county is one of the most water-connected regions in southern Ontario.
+Northumberland County stretches from the Lake Ontario shore north to the Trent system, and includes a wide range of waterfront communities, Cobourg's harbour, Port Hope's Ganaraska, the Hastings lock at the bottom of Rice Lake, Brighton on Presqu'ile Bay, the Trent River through Campbellford. The county is one of the most water-connected regions in southern Ontario.
 
 For Mercury outboard service, the county has historically been served by a mix of small general boat shops and dealers that focus on other brands. HBW has been the Mercury anchor since 1965, sitting right on Rice Lake at Gores Landing.
 
@@ -30341,13 +30341,13 @@ Aluminum fishing boats and pontoons. All Mercury-rigged. Worth a conversation if
 
 Northumberland County has a wider range of boating than most Ontario counties:
 
-**Lake Ontario harbour boats** — Cobourg, Port Hope, Brighton harbours. Smaller powerboats, sailing, day-cruising. Mercury 50-150 HP common.
+**Lake Ontario harbour boats**, Cobourg, Port Hope, Brighton harbours. Smaller powerboats, sailing, day-cruising. Mercury 50-150 HP common.
 
-**Rice Lake fishing and cottage boats** — the heart of recreational boating in the county. 14-18 foot aluminum, pontoons, Mercury 40-115 HP. Walleye, bass, muskie fishing.
+**Rice Lake fishing and cottage boats**, the heart of recreational boating in the county. 14-18 foot aluminum, pontoons, Mercury 40-115 HP. Walleye, bass, muskie fishing.
 
-**Trent River and Trent-Severn cruisers** — larger boats running the lock system, often MerCruiser sterndrives or Mercury Verado-sized power.
+**Trent River and Trent-Severn cruisers**, larger boats running the lock system, often MerCruiser sterndrives or Mercury Verado-sized power.
 
-**Bay of Quinte access from the east of the county** — Brighton-area boats accessing Bay of Quinte muskie fishing. Larger aluminum or fiberglass, Mercury Pro XS or FourStroke 150-250 HP.
+**Bay of Quinte access from the east of the county**, Brighton-area boats accessing Bay of Quinte muskie fishing. Larger aluminum or fiberglass, Mercury Pro XS or FourStroke 150-250 HP.
 
 This range is why HBW carries the full Mercury lineup and full SmartCraft diagnostic capability. The Northumberland service mix isn't dominated by one boat type.
 
@@ -30380,7 +30380,7 @@ Yes. For Mercury Platinum-tier service within Northumberland County, HBW is the 
 Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork.
 
 **Do you service Bay of Quinte fishing boats from Brighton?**
-Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it's worth — that's an honest call.
+Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it's worth, that's an honest call.
 
 **Do you service Trent River cruisers in the Campbellford / Trent Hills area?**
 Yes. We handle both Mercury outboards and MerCruiser sterndrives. For engine repairs, we only service Mercury and Mercruiser.
@@ -30395,7 +30395,7 @@ Yes. Outdoor storage with shrinkwrap. For Northumberland boaters whose boat alre
 No. HBW does NOT offer pickup or delivery. Customers bring their boat to us.
 
 **Do you sell new boats?**
-Yes. We're also a Legend Boats dealer — aluminum fishing boats and pontoons, all Mercury-rigged.
+Yes. We're also a Legend Boats dealer, aluminum fishing boats and pontoons, all Mercury-rigged.
 
 Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 

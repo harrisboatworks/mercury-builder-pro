@@ -138,14 +138,14 @@ That's the deal. Has been since 1947.
 
 ## Where Whitby Boaters Launch and Why HBW Sees Steady Volume from the Area
 
-Whitby has a strong boating community built around **Whitby Harbour Marina** — city-owned with 200+ slips and a public launch. The **Whitby Yacht Club** anchors a strong sailing and power-boating scene; Lake Ontario shoreline here is active year-round with recreational use.
+Whitby has a strong boating community built around **Whitby Harbour Marina**, city-owned with 200+ slips and a public launch. The **Whitby Yacht Club** anchors a strong sailing and power-boating scene; Lake Ontario shoreline here is active year-round with recreational use.
 
 The drive to Rice Lake is 45 minutes via the 401 east and Highway 115 north. Clear midweek, weekend cottage traffic is the only friction. Tuesday-Thursday mornings are ideal for service trips.
 
 Why Whitby boaters are a strong repower market:
 
 - **Mature fleet.** Whitby's long-established marina community means many older Mercury (and other-brand) motors due for repower. We see steady annual volume from the area.
-- **Proximity makes it practical.** 45 minutes is reasonable for a multi-thousand-dollar repower investment — closer than most central Toronto dealers once you factor in 401 traffic.
+- **Proximity makes it practical.** 45 minutes is reasonable for a multi-thousand-dollar repower investment, closer than most central Toronto dealers once you factor in 401 traffic.
 - **Mercury Platinum-level depth.** A clean install at HBW vs a rushed install elsewhere is the difference between 10 trouble-free years and a recurring warranty problem.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).

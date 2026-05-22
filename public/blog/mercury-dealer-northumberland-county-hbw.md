@@ -31,11 +31,11 @@ content_type: blog_article
 
 ## Quick Answer
 
-Harris Boat Works in Gores Landing is the Mercury Marine Platinum Dealer serving Northumberland County. Family-owned since 1947, Mercury Platinum since 1965. We're located on Rice Lake within Northumberland County, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we're not "the closer option" — we ARE the local Mercury dealer. Installed pricing is published online at mercuryrepower.ca.
+Harris Boat Works in Gores Landing is the Mercury Marine Platinum Dealer serving Northumberland County. Family-owned since 1947, Mercury Platinum since 1965. We're located on Rice Lake within Northumberland County, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we're not "the closer option", we ARE the local Mercury dealer. Installed pricing is published online at mercuryrepower.ca.
 
 ## What "local" means in Northumberland County
 
-Northumberland County stretches from the Lake Ontario shore north to the Trent system, and includes a wide range of waterfront communities — Cobourg's harbour, Port Hope's Ganaraska, the Hastings lock at the bottom of Rice Lake, Brighton on Presqu'ile Bay, the Trent River through Campbellford. The county is one of the most water-connected regions in southern Ontario.
+Northumberland County stretches from the Lake Ontario shore north to the Trent system, and includes a wide range of waterfront communities, Cobourg's harbour, Port Hope's Ganaraska, the Hastings lock at the bottom of Rice Lake, Brighton on Presqu'ile Bay, the Trent River through Campbellford. The county is one of the most water-connected regions in southern Ontario.
 
 For Mercury outboard service, the county has historically been served by a mix of small general boat shops and dealers that focus on other brands. HBW has been the Mercury anchor since 1965, sitting right on Rice Lake at Gores Landing.
 
@@ -81,13 +81,13 @@ Aluminum fishing boats and pontoons. All Mercury-rigged. Worth a conversation if
 
 Northumberland County has a wider range of boating than most Ontario counties:
 
-**Lake Ontario harbour boats** — Cobourg, Port Hope, Brighton harbours. Smaller powerboats, sailing, day-cruising. Mercury 50-150 HP common.
+**Lake Ontario harbour boats**, Cobourg, Port Hope, Brighton harbours. Smaller powerboats, sailing, day-cruising. Mercury 50-150 HP common.
 
-**Rice Lake fishing and cottage boats** — the heart of recreational boating in the county. 14-18 foot aluminum, pontoons, Mercury 40-115 HP. Walleye, bass, muskie fishing.
+**Rice Lake fishing and cottage boats**, the heart of recreational boating in the county. 14-18 foot aluminum, pontoons, Mercury 40-115 HP. Walleye, bass, muskie fishing.
 
-**Trent River and Trent-Severn cruisers** — larger boats running the lock system, often MerCruiser sterndrives or Mercury Verado-sized power.
+**Trent River and Trent-Severn cruisers**, larger boats running the lock system, often MerCruiser sterndrives or Mercury Verado-sized power.
 
-**Bay of Quinte access from the east of the county** — Brighton-area boats accessing Bay of Quinte muskie fishing. Larger aluminum or fiberglass, Mercury Pro XS or FourStroke 150-250 HP.
+**Bay of Quinte access from the east of the county**, Brighton-area boats accessing Bay of Quinte muskie fishing. Larger aluminum or fiberglass, Mercury Pro XS or FourStroke 150-250 HP.
 
 This range is why HBW carries the full Mercury lineup and full SmartCraft diagnostic capability. The Northumberland service mix isn't dominated by one boat type.
 
@@ -120,7 +120,7 @@ Yes. For Mercury Platinum-tier service within Northumberland County, HBW is the 
 Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork.
 
 **Do you service Bay of Quinte fishing boats from Brighton?**
-Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it's worth — that's an honest call.
+Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it's worth, that's an honest call.
 
 **Do you service Trent River cruisers in the Campbellford / Trent Hills area?**
 Yes. We handle both Mercury outboards and MerCruiser sterndrives. For engine repairs, we only service Mercury and Mercruiser.
@@ -135,7 +135,7 @@ Yes. Outdoor storage with shrinkwrap. For Northumberland boaters whose boat alre
 No. HBW does NOT offer pickup or delivery. Customers bring their boat to us.
 
 **Do you sell new boats?**
-Yes. We're also a Legend Boats dealer — aluminum fishing boats and pontoons, all Mercury-rigged.
+Yes. We're also a Legend Boats dealer, aluminum fishing boats and pontoons, all Mercury-rigged.
 
 Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 

@@ -149,15 +149,15 @@ This is what a dealer relationship is supposed to feel like.
 
 ## Where Bowmanville Boaters Launch and Why HBW Is the Closest Mercury Platinum Dealer
 
-Bowmanville sits on Lake Ontario's north shore. Local launches are at the **Bowmanville waterfront** and the **Westside Beach area**. Lake Ontario shoreline here is open and exposed — most Bowmanville boaters fish close to shore or trailer to inland water when conditions favour it.
+Bowmanville sits on Lake Ontario's north shore. Local launches are at the **Bowmanville waterfront** and the **Westside Beach area**. Lake Ontario shoreline here is open and exposed, most Bowmanville boaters fish close to shore or trailer to inland water when conditions favour it.
 
-The drive to Rice Lake is just 35 minutes via the 401 east and Highway 115 north — the shortest commute of any GTA suburb. For most Bowmanville boaters, HBW is the closest Mercury Platinum dealer, period. Driving back into Toronto for service takes longer.
+The drive to Rice Lake is just 35 minutes via the 401 east and Highway 115 north, the shortest commute of any GTA suburb. For most Bowmanville boaters, HBW is the closest Mercury Platinum dealer, period. Driving back into Toronto for service takes longer.
 
 Why Bowmanville boaters choose HBW:
 
 - **Proximity.** 35 minutes door-to-door makes HBW closer than most local service shops once you factor in 401 traffic.
 - **Year-round option.** Many Bowmanville customers keep their boat at HBW for storage and service, fishing Rice Lake or trailering down to Lake Ontario as needed. One marina, all season.
-- **Mercury Platinum depth.** A proper repower or rigging job at HBW takes the time it takes — we don't shortcut the controls and prop matching.
+- **Mercury Platinum depth.** A proper repower or rigging job at HBW takes the time it takes, we don't shortcut the controls and prop matching.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

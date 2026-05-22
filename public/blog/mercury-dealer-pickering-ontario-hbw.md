@@ -138,13 +138,13 @@ Transparent pricing before you leave Pickering. The rigging conversation before 
 
 ## Where Pickering Boaters Launch and Why HBW Is Their Mercury Platinum Option
 
-Pickering's signature waterway is **Frenchmans Bay** — a sheltered shallow bay on Lake Ontario, home to **Pickering Harbour Marina** and **East Shore Marina**. Many Pickering boaters never leave the bay's protected waters; others use it as a launch point for open-water Lake Ontario fishing and recreation.
+Pickering's signature waterway is **Frenchmans Bay**, a sheltered shallow bay on Lake Ontario, home to **Pickering Harbour Marina** and **East Shore Marina**. Many Pickering boaters never leave the bay's protected waters; others use it as a launch point for open-water Lake Ontario fishing and recreation.
 
 The drive to Rice Lake is 50 minutes via the 401 east and Highway 115 north. The 401 east of the 407 is clear midweek; expect 20 extra minutes on Saturday cottage mornings. Tuesday-Thursday mornings are ideal for service trips.
 
 Why Pickering boaters choose HBW for repower:
 
-- **Drive time math.** 50 minutes to HBW is the same as driving back into central Toronto for a downtown dealer — and you get Mercury Platinum-level service.
+- **Drive time math.** 50 minutes to HBW is the same as driving back into central Toronto for a downtown dealer, and you get Mercury Platinum-level service.
 - **Frenchmans Bay-friendly motors.** The bay's shallow depths and sheltered conditions favour different motor setups than open-water boating. We've rigged plenty of Pickering boats.
 - **One-trip annual service.** Trailer up midweek, leave the boat for winterization or repower, pick up when ready. No 401 stress between Pickering and downtown.
 

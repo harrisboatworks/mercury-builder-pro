@@ -149,14 +149,14 @@ You're practically in our neighbourhood. Let's work together.
 
 ## Where Oshawa Boaters Launch and Why Many Are Repower Candidates
 
-Oshawa is a strong east-GTA boating town. **Oshawa Harbour Marina** is the main local hub — city-owned, large facility with public launch and a long recreational history. Lake Ontario shoreline here has a serious boating community with manufacturing-town roots.
+Oshawa is a strong east-GTA boating town. **Oshawa Harbour Marina** is the main local hub, city-owned, large facility with public launch and a long recreational history. Lake Ontario shoreline here has a serious boating community with manufacturing-town roots.
 
-The drive to Rice Lake is just 40 minutes via the 401 east and Highway 115 north — easy midweek, weekend cottage traffic the only friction. For service trips, Tuesday-Thursday mornings are ideal.
+The drive to Rice Lake is just 40 minutes via the 401 east and Highway 115 north, easy midweek, weekend cottage traffic the only friction. For service trips, Tuesday-Thursday mornings are ideal.
 
 Why Oshawa is a particularly strong repower market:
 
 - **Many older fiberglass hulls in great shape.** A 1990s-2000s 16-18 ft fiberglass hull with a tired Mercury or Evinrude is an ideal repower candidate. HBW handles a steady flow of these annually.
-- **Proximity makes it practical.** 40 minutes is a reasonable drive for a multi-thousand-dollar repower investment — closer than driving back into central Toronto.
+- **Proximity makes it practical.** 40 minutes is a reasonable drive for a multi-thousand-dollar repower investment, closer than driving back into central Toronto.
 - **Mercury Platinum-level depth.** A repower done well lasts the rest of the boat's life. Done poorly, it gets brought back for warranty work.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).

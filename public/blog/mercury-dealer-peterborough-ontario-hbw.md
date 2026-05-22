@@ -43,11 +43,11 @@ For Peterborough customers, the conversation we have most often is "I've been dr
 
 The pattern we see from Peterborough regulars looks like this:
 
-- **Spring commissioning** — they drop off in April, pick up in May with the motor commissioned, tested, and ready for the Otonabee
-- **Mid-season service** — an impeller, a fuel issue, a SmartCraft fault that needs a Mercury Platinum diagnostic
-- **Repower decisions** — when the old motor is past mid-life and the math starts looking ugly, we walk through repower vs new boat vs sell with real numbers
-- **Fall winterization + storage** — boat stays with us through the off-season, gets full winterization, picks back up at spring launch
-- **Trade-in conversations** — the Trade-In Value Guide at mercuryrepower.ca gives a starting number; we close the actual valuation in person
+- **Spring commissioning**, they drop off in April, pick up in May with the motor commissioned, tested, and ready for the Otonabee
+- **Mid-season service**, an impeller, a fuel issue, a SmartCraft fault that needs a Mercury Platinum diagnostic
+- **Repower decisions**, when the old motor is past mid-life and the math starts looking ugly, we walk through repower vs new boat vs sell with real numbers
+- **Fall winterization + storage**, boat stays with us through the off-season, gets full winterization, picks back up at spring launch
+- **Trade-in conversations**, the Trade-In Value Guide at mercuryrepower.ca gives a starting number; we close the actual valuation in person
 
 The Peterborough boaters who use us most don't come for the sale. They come because once you have a service relationship with a Mercury Platinum shop on Rice Lake, the rest of the year gets simpler.
 
@@ -55,9 +55,9 @@ The Peterborough boaters who use us most don't come for the sale. They come beca
 
 Peterborough has marinas. Peterborough has general boat shops. What it has less of is Mercury Platinum dealer depth with full repower capacity.
 
-Platinum is Mercury's top dealer tier — it reflects parts inventory depth, technical training hours, warranty authorization, and SmartCraft diagnostic equipment. For routine work (oil changes, props, basic seasonal service) any qualified Mercury dealer is fine. For a full repower or a hard warranty case, Platinum-tier resolution paths matter.
+Platinum is Mercury's top dealer tier, it reflects parts inventory depth, technical training hours, warranty authorization, and SmartCraft diagnostic equipment. For routine work (oil changes, props, basic seasonal service) any qualified Mercury dealer is fine. For a full repower or a hard warranty case, Platinum-tier resolution paths matter.
 
-The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing — motor, rigging, controls, prop, install labour, HST — in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers.
+The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing, motor, rigging, controls, prop, install labour, HST, in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers.
 
 ## Getting to Harris Boat Works from Peterborough
 
@@ -73,10 +73,10 @@ Motor pricing: mercuryrepower.ca
 ## What HBW handles for Peterborough customers
 
 **Mercury outboard sales**
-Full Mercury lineup: 2.5 HP portables through 600 HP Verado (Verado is special-order — most Peterborough/Kawartha boats need FourStroke or Pro XS). Honest conversation about what fits your boat and your use case on the Otonabee, Trent system, or Kawartha lakes.
+Full Mercury lineup: 2.5 HP portables through 600 HP Verado (Verado is special-order, most Peterborough/Kawartha boats need FourStroke or Pro XS). Honest conversation about what fits your boat and your use case on the Otonabee, Trent system, or Kawartha lakes.
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial on Rice Lake before pickup. We don't deliver motors on trailers and hope they run right — every install gets water-tested before it leaves the shop.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial on Rice Lake before pickup. We don't deliver motors on trailers and hope they run right, every install gets water-tested before it leaves the shop.
 
 **Mercury parts and service**
 Platinum-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
@@ -89,13 +89,13 @@ mercuryrepower.ca, real Canadian dollars, full configuration. Build a quote befo
 
 ## The Peterborough customer profile we see most often
 
-Peterborough boaters tend to know boats. The city has a deep boating culture — Trent University boaters, Otonabee day-cruisers, Kawartha cottagers, and a strong fishing community on the Kawartha chain. The call-for-quote runaround frustrates Peterborough buyers more than most because they've usually already done their research before they make the call.
+Peterborough boaters tend to know boats. The city has a deep boating culture, Trent University boaters, Otonabee day-cruisers, Kawartha cottagers, and a strong fishing community on the Kawartha chain. The call-for-quote runaround frustrates Peterborough buyers more than most because they've usually already done their research before they make the call.
 
 Our quote builder skips that step. The price you see is the price you pay. Three generations of HBW have built this business on returning customers and referrals, not on quota-driven sales tactics.
 
 ## What we see at HBW
 
-The most common Peterborough question we get isn't about a specific motor — it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/should-i-repower-or-buy-new-boat-ontario) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
+The most common Peterborough question we get isn't about a specific motor, it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/should-i-repower-or-buy-new-boat-ontario) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
 
 For Peterborough customers specifically: the closer service relationship is the under-rated benefit. A repower done at HBW means the dealer who installed the motor is also the one doing your annual maintenance. That's how warranty issues get resolved fast.
 
@@ -103,7 +103,7 @@ For Peterborough customers specifically: the closer service relationship is the 
 
 Build your quote at mercuryrepower.ca first. Takes about three minutes. You'll see real installed pricing for the motor and rigging options you're considering.
 
-If you have a specific service issue, submit a request at hbw.wiki/service. That's how 90% of our service intake starts — faster than a phone call, and it routes directly to the right person.
+If you have a specific service issue, submit a request at hbw.wiki/service. That's how 90% of our service intake starts, faster than a phone call, and it routes directly to the right person.
 
 For a motor purchase conversation, call ahead: 905-342-2153. We'll have someone ready when you arrive.
 
@@ -113,10 +113,10 @@ For a motor purchase conversation, call ahead: 905-342-2153. We'll have someone 
 Yes. A 35-minute drive each way works for spring commissioning, mid-season service, and fall winterization. Many of our Peterborough regulars have made this their annual routine.
 
 **Do you service the Trent-Severn or just Rice Lake boats?**
-We service Mercury and Mercruiser outboards regardless of where the boat lives. Trent-Severn, Kawarthas, Lake Ontario, Otonabee — same shop, same diagnostics. For engine repairs, we only service Mercury and Mercruiser.
+We service Mercury and Mercruiser outboards regardless of where the boat lives. Trent-Severn, Kawarthas, Lake Ontario, Otonabee, same shop, same diagnostics. For engine repairs, we only service Mercury and Mercruiser.
 
 **Is HBW closer than a Toronto dealer?**
-For most Peterborough addresses, yes — Toronto is roughly 90-120 minutes through GTA traffic; HBW is 35 minutes via Highway 28. The drive is also more pleasant.
+For most Peterborough addresses, yes, Toronto is roughly 90-120 minutes through GTA traffic; HBW is 35 minutes via Highway 28. The drive is also more pleasant.
 
 **What do you charge for a Mercury repower?**
 Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number based on your boat and the motor you're considering. Most repowers in our area land in the $13,000-$25,000 range including HST.

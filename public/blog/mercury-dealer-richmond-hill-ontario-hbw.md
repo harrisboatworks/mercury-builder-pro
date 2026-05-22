@@ -151,14 +151,14 @@ You see the number before you leave Richmond Hill. You come up when you're decid
 
 ## Where Richmond Hill Boaters Launch and Why HBW Competes on Mercury Platinum Depth
 
-Richmond Hill is inland, with no major public launch in the city — **Lake Wilcox** is small and urban with limited recreational boating. Serious Richmond Hill boaters trailer either north to **Lake Simcoe** (about 50 minutes via Highway 404) or east to **Rice Lake** (about 75 minutes via 404/407/115). Lake Simcoe is the default for most local boaters; many have cottage relationships there.
+Richmond Hill is inland, with no major public launch in the city, **Lake Wilcox** is small and urban with limited recreational boating. Serious Richmond Hill boaters trailer either north to **Lake Simcoe** (about 50 minutes via Highway 404) or east to **Rice Lake** (about 75 minutes via 404/407/115). Lake Simcoe is the default for most local boaters; many have cottage relationships there.
 
-The drive to Rice Lake is 75 minutes via Highway 404 → 407 east → Highway 115 north. Avoiding the 407 tolls via the 401 adds 15-20 minutes but saves money — most customers run the toll route for service trips and skip it for casual visits.
+The drive to Rice Lake is 75 minutes via Highway 404 → 407 east → Highway 115 north. Avoiding the 407 tolls via the 401 adds 15-20 minutes but saves money, most customers run the toll route for service trips and skip it for casual visits.
 
 Why Richmond Hill boaters drive to HBW vs Simcoe-area dealers:
 
 - **Mercury Platinum-level expertise.** For repower work, dealer depth matters more than 20 minutes of drive time. HBW competes on rigging quality, not proximity.
-- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding — no phone calls, no negotiation games, real dealer pricing.
+- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding, no phone calls, no negotiation games, real dealer pricing.
 - **One-stop service + storage.** Many Richmond Hill customers store at HBW over winter, get spring commissioning, and trailer back to Simcoe or Rice Lake for the season.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
