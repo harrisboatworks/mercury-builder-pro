@@ -117,6 +117,33 @@ export const PaymentsDashboard = () => {
     }
   };
 
+  const handleExport = () => {
+    if (recentPayments.length === 0) {
+      toast({ title: 'Nothing to export', description: 'No payments available.' });
+      return;
+    }
+    const headers = ['Reference', 'Customer Name', 'Customer Email', 'Amount (CAD)', 'Type', 'Status', 'Created'];
+    const escape = (v: any) => {
+      const s = String(v ?? '');
+      return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+    };
+    const rows = recentPayments.map(p => [
+      p.reference, p.customerName ?? '', p.customerEmail, p.amount.toFixed(2),
+      p.paymentType, p.status, new Date(p.created).toISOString(),
+    ].map(escape).join(','));
+    const csv = [headers.join(','), ...rows].join('\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `payments-${new Date().toISOString().slice(0, 10)}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    toast({ title: 'Export Complete', description: `${recentPayments.length} payments exported.` });
+  };
+
   const filteredPayments = recentPayments.filter(payment =>
     payment.customerEmail.toLowerCase().includes(searchTerm.toLowerCase()) ||
     payment.customerName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -135,9 +162,9 @@ export const PaymentsDashboard = () => {
             <TrendingUp className="w-4 h-4 mr-2" />
             {isLoading ? 'Refreshing...' : 'Refresh Data'}
           </Button>
-          <Button variant="outline">
+          <Button variant="outline" onClick={handleExport} disabled={recentPayments.length === 0}>
             <Download className="w-4 h-4 mr-2" />
-            Export
+            Export CSV
           </Button>
         </div>
       </div>
