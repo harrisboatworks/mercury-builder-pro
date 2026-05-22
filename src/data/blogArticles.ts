@@ -581,7 +581,7 @@ Significantly. A fully loaded family boat behaves like a different machine than 
     slug: 'mercury-motor-maintenance-seasonal-tips',
     title: "Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)",
     seoTitle: "Mercury Motor Maintenance: Ontario Seasonal Care (2026)",
-    description: "Spring, summer, fall, winter, the Mercury maintenance schedule for Ontario boaters. Service intervals, fogging, and the $4,000 winterization mistake.",
+    description: "Spring, summer, fall, and winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 winterization mistake.",
     image: '/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips.png',
     author: 'Harris Boat Works',
     datePublished: '2024-05-20',
