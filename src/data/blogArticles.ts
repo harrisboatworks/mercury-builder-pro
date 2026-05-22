@@ -90,7 +90,8 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: 'mercury-9-9-vs-15-hp-tiller-ontario',
     title: "Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?",
-    description: "Mercury 9.9 vs 15 HP tiller comparison for Ontario boaters: real differences in weight, fuel, capacity-plate limits, HP-restricted lakes, and kicker motor use. Honest dealer take.",
+    seoTitle: "Mercury 9.9 vs 15 HP Tiller: Which One for Ontario?",
+    description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca.",
     image: '/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4.png',
     author: 'Jay Harris',
     datePublished: '2026-05-18',
@@ -579,8 +580,8 @@ Significantly. A fully loaded family boat behaves like a different machine than 
   {
     slug: 'mercury-motor-maintenance-seasonal-tips',
     title: "Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)",
-    seoTitle: "Mercury Motor Maintenance: Seasonal Care (2026)",
-    description: "Mercury motor maintenance in Ontario follows a seasonal cycle: spring commissioning, summer check, fall winterization, and winter storage. Done right at HBW.",
+    seoTitle: "Mercury Motor Maintenance: Ontario Seasonal Care (2026)",
+    description: "Spring, summer, fall, winter, the Mercury maintenance schedule for Ontario boaters. Service intervals, fogging, and the $4,000 winterization mistake.",
     image: '/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips.png',
     author: 'Harris Boat Works',
     datePublished: '2024-05-20',
@@ -879,8 +880,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
     title: 'FourStroke vs Pro XS vs Verado: Which Mercury You Need',
-    seoTitle: 'FourStroke vs Pro XS vs Verado: Which Mercury You Need',
-    description: 'For 95% of Ontario freshwater boats, it\'s FourStroke or Pro XS, not Verado. We sell all three. Honest call from a Platinum dealer on Rice Lake.',
+    seoTitle: "FourStroke vs Pro XS vs Verado: Mercury Buyer's Guide",
+    description: 'Decide between Mercury FourStroke, Pro XS, and Verado. Real differences, common Ontario hull pairings, and live CAD quotes at mercuryrepower.ca.',
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2024-04-10',
@@ -1134,7 +1135,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'boat-repowering-guide-when-to-replace-motor',
     title: 'Boat Repowering Guide: When to Replace Your Motor (2026)',
-    description: 'The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you\'re a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).',
+    seoTitle: 'Boat Repower Guide: When to Replace & Ontario Costs',
+    description: "When is it time to repower? Honest Ontario cost ranges, signs your motor is done, and a Mercury repower decision framework from Rice Lake's dealer since 1947.",
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
     datePublished: '2024-03-05',
@@ -1145,7 +1147,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Repower when annual repair bills approach 25-30 percent of a new motor's price, when parts for your old powerhead are scarce, or when the hull is sound but the motor is tired. A modern Mercury FourStroke pays back in fuel, reliability, and resale. Build an installed repower quote, motor, rigging, and labour, at mercuryrepower.ca.
+> **Quick answer:** Repower when annual repair bills approach 25-30 percent of a new motor's price, when parts for your old powerhead are scarce, or when the hull is sound but the motor is tired. A modern Mercury FourStroke pays back in fuel, reliability, and resale. [Start your Mercury repower](/repower), motor, rigging, and labour priced in CAD at mercuryrepower.ca.
 
 The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you're a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -1411,7 +1413,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   {
     slug: 'breaking-in-new-mercury-motor-guide',
     title: 'How to Break In a New Mercury Outboard (10-Hour Guide)',
-    description: 'The first 10 hours decide how long your Mercury lasts. Mercury\'s exact break-in protocol, plus the 3 mistakes we see most often.',
+    seoTitle: 'How to Break In a New Mercury Outboard (10-Hour Guide)',
+    description: 'The 10-hour Mercury break-in, step by step. RPM targets, what to avoid, and the first-service interval that protects your warranty.',
     image: '/lovable-uploads/Breaking_In_New_Mercury_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
@@ -1673,6 +1676,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-prokicker-rice-lake-fishing-guide',
     title: "Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)",
+    seoTitle: "Mercury 9.9 ProKicker: Rice Lake Fishing Guide (2026)",
     description: "The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount or remote-control variant. It does what main motors cannot: idle down to true walleye trolling speed (1 to 2 mph) without spooking fish. We install ProKickers on most fishing boat repowers at HBW. Live pricing on every Mercury we sell, including ProKicker, is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/ProKicker_Rice_Lake_Hero.png',
     author: 'Harris Boat Works',
