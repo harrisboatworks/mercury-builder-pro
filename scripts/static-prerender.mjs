@@ -3261,10 +3261,10 @@ const routes = [
   {
     path: '/pricing-reference',
     title: 'Mercury Outboard Prices in Ontario (CAD, 2026) | Harris Boat Works',
-    description: 'Current Mercury outboard prices in Ontario, every FourStroke and Pro XS model from 2.5 HP to 300 HP in CAD, with MSRP and dealer selling price side by side. Pickup only at Harris Boat Works, Gores Landing, Ontario.',
+    description: 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.',
     h1: 'Mercury Outboard Prices in Ontario (CAD, 2026)',
     intro: 'Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury\'s MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total, build a quote in the configurator. Pickup only at Gores Landing, Ontario.',
-    schemas: [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Ontario (CAD, 2026)', 'Current Mercury outboard prices in Ontario, every FourStroke and Pro XS model from 2.5 HP to 300 HP in CAD, with MSRP and dealer selling price side by side.')],
+    schemas: [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Ontario (CAD, 2026)', 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.')],
     extraHead:
       '<link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />',
     extraNoscript: () => {
@@ -3289,9 +3289,9 @@ const routes = [
   },
   {
     path: '/agents',
-    title: 'AI Agent Integration: Harris Boat Works Mercury Dealer',
-    description: 'Agent-friendly UCP-aligned MCP server, REST APIs, and deep-link quote URLs for Harris Boat Works (Mercury Platinum Dealer since 1965, family-owned since 1947). Built for ChatGPT, Claude, Perplexity, Gemini.',
-    h1: 'AI Agent Integration: Harris Boat Works',
+    title: 'For AI Agents & Assistants | Harris Boat Works',
+    description: 'Harris Boat Works for AI agents, MCP server, REST quote APIs, and deep-link quote URLs. Ontario Mercury dealer, family marina since 1947.',
+    h1: 'For AI Agents & Assistants',
     intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW\'s MCP server uses the same Streamable HTTP transport that Shopify\'s Universal Commerce Protocol (UCP) standardized in April 2026 for agentic commerce.',
     schemas: [agentsPageSchema()],
     extraNoscript: () =>

@@ -23,7 +23,7 @@ const EXPECTED = {
   title: 'Mercury Outboard Prices in Ontario (CAD, 2026) | Harris Boat Works',
   h1: 'Mercury Outboard Prices in Ontario (CAD, 2026)',
   description:
-    "Current Mercury outboard prices in Ontario, every FourStroke and Pro XS model from 2.5 HP to 300 HP in CAD, with MSRP and dealer selling price side by side. Pickup only at Harris Boat Works, Gores Landing, Ontario.",
+    "Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.",
 };
 
 const DASH_RE = /[\u2014\u2013]/; // em-dash, en-dash
