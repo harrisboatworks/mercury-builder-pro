@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { CreditCard, DollarSign, TrendingUp, Users, Search, Download } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 interface PaymentStats {
   totalRevenue: number;
@@ -19,10 +20,10 @@ interface RecentPayment {
   amount: number;
   customerEmail: string;
   customerName?: string;
-  paymentType: 'deposit' | 'quote';
-  status: 'succeeded' | 'pending' | 'failed';
+  paymentType: string;
+  status: string;
   created: string;
-  sessionId: string;
+  reference: string;
 }
 
 export const PaymentsDashboard = () => {
@@ -38,75 +39,72 @@ export const PaymentsDashboard = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  // Mock data for demonstration
-  useEffect(() => {
-    // In a real app, this would fetch from Stripe API via edge function
-    setStats({
-      totalRevenue: 15750,
-      totalPayments: 23,
-      avgPaymentAmount: 685,
-      depositsCount: 18,
-      quotesCount: 5
-    });
-
-    setRecentPayments([
-      {
-        id: 'pi_1234567890',
-        amount: 500,
-        customerEmail: 'john@example.com',
-        customerName: 'John Smith',
-        paymentType: 'deposit',
-        status: 'succeeded',
-        created: new Date().toISOString(),
-        sessionId: 'cs_test_1234'
-      },
-      {
-        id: 'pi_0987654321',
-        amount: 1000,
-        customerEmail: 'sarah@example.com', 
-        customerName: 'Sarah Johnson',
-        paymentType: 'deposit',
-        status: 'succeeded',
-        created: new Date(Date.now() - 86400000).toISOString(),
-        sessionId: 'cs_test_5678'
-      },
-      {
-        id: 'pi_1122334455',
-        amount: 12500,
-        customerEmail: 'mike@example.com',
-        customerName: 'Mike Wilson',
-        paymentType: 'quote',
-        status: 'succeeded',
-        created: new Date(Date.now() - 172800000).toISOString(),
-        sessionId: 'cs_test_9012'
-      }
-    ]);
-  }, []);
-
-  const handleRefreshData = async () => {
+  const loadPayments = useCallback(async (showToast = false) => {
     setIsLoading(true);
     try {
-      // TODO: Implement actual data fetching from Stripe via edge function
-      toast({
-        title: "Data Refreshed",
-        description: "Payment data has been updated from Stripe.",
+      const { data, error } = await supabase
+        .from('payments')
+        .select('id, zaprite_order_id, customer_email, customer_name, amount_cents, payment_type, status, created_at, paid_at')
+        .order('created_at', { ascending: false })
+        .limit(100);
+
+      if (error) throw error;
+
+      const rows = data ?? [];
+      const paid = rows.filter((p: any) => p.status === 'succeeded' || p.status === 'paid');
+      const totalRevenue = paid.reduce((s: number, p: any) => s + (p.amount_cents ?? 0), 0) / 100;
+      const depositsCount = paid.filter((p: any) => p.payment_type === 'deposit').length;
+      const quotesCount = paid.filter((p: any) => p.payment_type !== 'deposit').length;
+
+      setStats({
+        totalRevenue,
+        totalPayments: paid.length,
+        avgPaymentAmount: paid.length ? Math.round(totalRevenue / paid.length) : 0,
+        depositsCount,
+        quotesCount,
       });
-    } catch (error) {
+
+      setRecentPayments(
+        rows.map((p: any) => ({
+          id: p.id,
+          amount: (p.amount_cents ?? 0) / 100,
+          customerEmail: p.customer_email ?? '',
+          customerName: p.customer_name ?? undefined,
+          paymentType: p.payment_type ?? 'payment',
+          status: p.status ?? 'unknown',
+          created: p.paid_at ?? p.created_at,
+          reference: p.zaprite_order_id ?? p.id,
+        }))
+      );
+
+      if (showToast) {
+        toast({ title: 'Data Refreshed', description: 'Payment data has been updated.' });
+      }
+    } catch (error: any) {
+      console.error('Failed to load payments:', error);
       toast({
-        title: "Refresh Failed", 
-        description: "Unable to refresh payment data. Please try again.",
-        variant: "destructive"
+        title: 'Load Failed',
+        description: error?.message || 'Unable to load payment data.',
+        variant: 'destructive',
       });
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [toast]);
+
+  useEffect(() => {
+    loadPayments();
+  }, [loadPayments]);
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'succeeded': return 'bg-green-100 text-green-800';
+      case 'succeeded':
+      case 'paid':
+        return 'bg-green-100 text-green-800';
       case 'pending': return 'bg-yellow-100 text-yellow-800';
-      case 'failed': return 'bg-red-100 text-red-800';
+      case 'failed':
+      case 'expired':
+        return 'bg-red-100 text-red-800';
       default: return 'bg-gray-100 text-gray-800';
     }
   };
@@ -122,7 +120,7 @@ export const PaymentsDashboard = () => {
   const filteredPayments = recentPayments.filter(payment =>
     payment.customerEmail.toLowerCase().includes(searchTerm.toLowerCase()) ||
     payment.customerName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    payment.id.toLowerCase().includes(searchTerm.toLowerCase())
+    payment.reference.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -133,7 +131,7 @@ export const PaymentsDashboard = () => {
           <p className="text-muted-foreground">Track deposits and payment processing</p>
         </div>
         <div className="flex gap-2">
-          <Button onClick={handleRefreshData} disabled={isLoading} variant="outline">
+          <Button onClick={() => loadPayments(true)} disabled={isLoading} variant="outline">
             <TrendingUp className="w-4 h-4 mr-2" />
             {isLoading ? 'Refreshing...' : 'Refresh Data'}
           </Button>
@@ -153,22 +151,18 @@ export const PaymentsDashboard = () => {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">${stats.totalRevenue.toLocaleString()}</div>
-            <p className="text-xs text-muted-foreground">
-              +12% from last month
-            </p>
+            <p className="text-xs text-muted-foreground">Across completed payments</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Payments</CardTitle>
+            <CardTitle className="text-sm font-medium">Completed Payments</CardTitle>
             <CreditCard className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.totalPayments}</div>
-            <p className="text-xs text-muted-foreground">
-              +5 from last week
-            </p>
+            <p className="text-xs text-muted-foreground">Succeeded / paid</p>
           </CardContent>
         </Card>
 
@@ -178,10 +172,8 @@ export const PaymentsDashboard = () => {
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">${stats.avgPaymentAmount}</div>
-            <p className="text-xs text-muted-foreground">
-              -2% from last month
-            </p>
+            <div className="text-2xl font-bold">${stats.avgPaymentAmount.toLocaleString()}</div>
+            <p className="text-xs text-muted-foreground">Per completed payment</p>
           </CardContent>
         </Card>
 
@@ -193,7 +185,7 @@ export const PaymentsDashboard = () => {
           <CardContent>
             <div className="text-2xl font-bold">{stats.depositsCount}</div>
             <p className="text-xs text-muted-foreground">
-              {stats.quotesCount} quote payments
+              {stats.quotesCount} other payments
             </p>
           </CardContent>
         </Card>
@@ -221,14 +213,14 @@ export const PaymentsDashboard = () => {
           <div className="space-y-4">
             {filteredPayments.length === 0 ? (
               <div className="text-center py-8 text-muted-foreground">
-                {searchTerm ? 'No payments found matching your search.' : 'No payments yet.'}
+                {isLoading ? 'Loading payments...' : searchTerm ? 'No payments found matching your search.' : 'No payments yet.'}
               </div>
             ) : (
               filteredPayments.map((payment) => (
                 <div key={payment.id} className="flex items-center justify-between p-4 border rounded-lg">
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-medium">{payment.customerName || payment.customerEmail}</span>
+                      <span className="font-medium">{payment.customerName || payment.customerEmail || 'Unknown'}</span>
                       <Badge className={getPaymentTypeColor(payment.paymentType)}>
                         {payment.paymentType}
                       </Badge>
@@ -237,7 +229,7 @@ export const PaymentsDashboard = () => {
                       </Badge>
                     </div>
                     <div className="text-sm text-muted-foreground mt-1">
-                      {payment.customerEmail} • {payment.id} • {new Date(payment.created).toLocaleDateString()}
+                      {payment.customerEmail} • {payment.reference} • {new Date(payment.created).toLocaleDateString()}
                     </div>
                   </div>
                   <div className="text-right">
@@ -249,40 +241,6 @@ export const PaymentsDashboard = () => {
                 </div>
               ))
             )}
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Quick Actions */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Quick Actions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Button variant="outline" className="h-auto p-4">
-              <div className="text-center">
-                <CreditCard className="w-8 h-8 mx-auto mb-2" />
-                <div className="font-medium">View in Stripe</div>
-                <div className="text-sm text-muted-foreground">Open Stripe Dashboard</div>
-              </div>
-            </Button>
-            
-            <Button variant="outline" className="h-auto p-4">
-              <div className="text-center">
-                <Download className="w-8 h-8 mx-auto mb-2" />
-                <div className="font-medium">Export Report</div>
-                <div className="text-sm text-muted-foreground">Download payment data</div>
-              </div>
-            </Button>
-
-            <Button variant="outline" className="h-auto p-4">
-              <div className="text-center">
-                <TrendingUp className="w-8 h-8 mx-auto mb-2" />
-                <div className="font-medium">Analytics</div>
-                <div className="text-sm text-muted-foreground">View detailed reports</div>
-              </div>
-            </Button>
           </div>
         </CardContent>
       </Card>
