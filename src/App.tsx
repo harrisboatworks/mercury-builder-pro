@@ -75,6 +75,7 @@ const AdminInventory = lazy(() => import("./pages/AdminInventory"));
 const AdminAgentFunnel = lazy(() => import("./pages/admin/AgentFunnel"));
 const AdminStockSync = lazy(() => import("./pages/AdminStockSync"));
 const AdminConnectors = lazy(() => import("./pages/AdminConnectors"));
+const AdminGrowthAgent = lazy(() => import("./pages/AdminGrowthAgent"));
 const AdminSources = lazy(() => import("./pages/AdminSources"));
 const AdminSEOHealth = lazy(() => import("./pages/AdminSEOHealth"));
 const AdminPricingImport = lazy(() => import("./pages/AdminPricingImport"));
@@ -406,6 +407,14 @@ function AnimatedRoutes() {
           element={
             <SecureRoute requireAdmin={true}>
               <AdminConnectors />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/growth-agent"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminGrowthAgent />
             </SecureRoute>
           }
         />
