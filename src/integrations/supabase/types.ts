@@ -1057,6 +1057,101 @@ export type Database = {
         }
         Relationships: []
       }
+      growth_agent_audit_runs: {
+        Row: {
+          completed_at: string | null
+          created_by: string | null
+          id: string
+          scores: Json
+          site_url: string
+          source: string
+          started_at: string
+          status: string
+          summary: Json
+        }
+        Insert: {
+          completed_at?: string | null
+          created_by?: string | null
+          id?: string
+          scores?: Json
+          site_url?: string
+          source?: string
+          started_at?: string
+          status?: string
+          summary?: Json
+        }
+        Update: {
+          completed_at?: string | null
+          created_by?: string | null
+          id?: string
+          scores?: Json
+          site_url?: string
+          source?: string
+          started_at?: string
+          status?: string
+          summary?: Json
+        }
+        Relationships: []
+      }
+      growth_agent_findings: {
+        Row: {
+          category: string
+          created_at: string
+          details: string
+          evidence: Json
+          fix_payload: Json
+          id: string
+          owner_lane: string
+          page_url: string
+          recommendation: string
+          run_id: string | null
+          severity: string
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          details: string
+          evidence?: Json
+          fix_payload?: Json
+          id?: string
+          owner_lane?: string
+          page_url: string
+          recommendation: string
+          run_id?: string | null
+          severity: string
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          details?: string
+          evidence?: Json
+          fix_payload?: Json
+          id?: string
+          owner_lane?: string
+          page_url?: string
+          recommendation?: string
+          run_id?: string | null
+          severity?: string
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "growth_agent_findings_run_id_fkey"
+            columns: ["run_id"]
+            isOneToOne: false
+            referencedRelation: "growth_agent_audit_runs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       hbw_bot_brief_receipts: {
         Row: {
           brief_type: string
