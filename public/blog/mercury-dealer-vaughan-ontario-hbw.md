@@ -140,13 +140,13 @@ That's the deal.
 
 Vaughan is inland with no nearby public launch. Local boaters trailer either north to **Lake Simcoe** via Highway 400 (Innisfil, Keswick) or east to **Rice Lake** via 407/115. Concord, Maple, and Woodbridge boaters tend to default to Simcoe; some venture east for the Kawarthas.
 
-The drive to Rice Lake is 80 minutes via Highway 400 south → 401 east → Highway 115 north — or via the 407 to skip city traffic. The 400 northbound on Friday afternoons in summer is brutal; reverse it for midweek HBW trips and you get the calmest 80 minutes you'll spend that week.
+The drive to Rice Lake is 80 minutes via Highway 400 south → 401 east → Highway 115 north, or via the 407 to skip city traffic. The 400 northbound on Friday afternoons in summer is brutal; reverse it for midweek HBW trips and you get the calmest 80 minutes you'll spend that week.
 
 Why Vaughan boaters drive to HBW for repower:
 
 - **Mercury Platinum-level service.** Closer Simcoe-area dealers handle the volume but not always the rigging depth. For a $15,000-$25,000 repower, the drive is justified.
 - **Once-a-year trip works.** Trailer up for the repower itself, then run service work closer to home.
-- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before the trip — the configurator works without a phone call and shows real pricing.
+- **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before the trip, the configurator works without a phone call and shows real pricing.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

@@ -159,7 +159,7 @@ That's been the model since 1947. It still works.
 
 ## Where Markham Boaters Launch and Why HBW Serves the GTA Chinese-Canadian Community
 
-Markham is inland with no nearby public launch — local boaters trailer either north to **Lake Simcoe** (about 40 minutes via Highway 404) or east to **Rice Lake** (about 70 minutes via 404 → 407 east → 115 north). Lake Simcoe is the natural default for fishing and recreation; Rice Lake offers quieter water and an easier launch scene.
+Markham is inland with no nearby public launch, local boaters trailer either north to **Lake Simcoe** (about 40 minutes via Highway 404) or east to **Rice Lake** (about 70 minutes via 404 → 407 east → 115 north). Lake Simcoe is the natural default for fishing and recreation; Rice Lake offers quieter water and an easier launch scene.
 
 The drive to Rice Lake is 70 minutes via Highway 404 → 407 east → Highway 115 north. Skipping the 407 to avoid tolls adds 15-20 minutes via the 401. Midweek mornings are calmest.
 
@@ -167,7 +167,7 @@ Markham repower customers often:
 
 - **Read our [Mandarin-language guides](https://www.mercuryrepower.ca/blog/zh)** for technical detail before deciding. We have a growing 中文 collection covering pricing, winterization, and repower decisions for GTA Chinese-Canadian boaters.
 - **Justify the drive for Mercury Platinum-level service.** Closer dealers often lack the rigging depth for a clean repower install.
-- **Trust transparent CAD pricing.** Our online quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) works without a phone call — you can build the quote in any language, in your own time, before deciding to make the trip.
+- **Trust transparent CAD pricing.** Our online quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) works without a phone call, you can build the quote in any language, in your own time, before deciding to make the trip.
 
 Markham customers often combine their trip with a service drop, see our [drive-in service walkthrough](/blog/toronto-to-rice-lake-drive-in-process).
 

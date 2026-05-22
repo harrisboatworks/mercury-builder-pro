@@ -141,7 +141,7 @@ No fog machine. No runaround. Since 1947.
 
 ## Where Brampton Boaters Launch and Why HBW Is Worth the Trailer Trip
 
-Brampton is inland — no public launch in the city itself. Local boaters either drive south to Lake Ontario (Mississauga's **Port Credit Harbour** or Oakville's **Bronte Harbour**), north to **Lake Simcoe** via the 410/400 corridor, or east to **Rice Lake** via the 401/115. **Heart Lake Conservation Area** in Brampton is electric-motor only — not relevant for outboard owners.
+Brampton is inland, no public launch in the city itself. Local boaters either drive south to Lake Ontario (Mississauga's **Port Credit Harbour** or Oakville's **Bronte Harbour**), north to **Lake Simcoe** via the 410/400 corridor, or east to **Rice Lake** via the 401/115. **Heart Lake Conservation Area** in Brampton is electric-motor only, not relevant for outboard owners.
 
 The drive to Rice Lake is 95 minutes via the 410 south, 401 east, and Highway 115 north. Weekend 401 traffic east of the 404 adds 20-30 minutes; midweek mornings are the only stress-free time.
 

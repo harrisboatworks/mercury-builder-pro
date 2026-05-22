@@ -145,7 +145,7 @@ That's been true since 1947. It's still true.
 
 Burlington sits on Lake Ontario's west shore, with significant marina presence. The main local launches are **LaSalle Park Marina** (city-run with public ramp), **Bronte Harbour** just east in Oakville, and various private slips along Burlington Bay. The bay itself is sheltered but largely industrial; most recreational boating happens on open Lake Ontario.
 
-The drive to Rice Lake is roughly 110 minutes via the QEW east through Toronto, then 401 east and Highway 115 north — call it a 2-hour round-trip on a good day. Weekend QEW traffic through Toronto adds 20-40 minutes. Midweek mornings are the only sane option.
+The drive to Rice Lake is roughly 110 minutes via the QEW east through Toronto, then 401 east and Highway 115 north, call it a 2-hour round-trip on a good day. Weekend QEW traffic through Toronto adds 20-40 minutes. Midweek mornings are the only sane option.
 
 Why Burlington boaters still drive to HBW:
 

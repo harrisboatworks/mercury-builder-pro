@@ -31,11 +31,11 @@ content_type: blog_article
 
 ## Quick Answer
 
-Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 25 minutes north of Cobourg via County Road 18. We handle Mercury outboard sales, repowers, parts, and service. Cobourg is one of the closer markets to HBW — for many Cobourg addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 25 minutes north of Cobourg via County Road 18. We handle Mercury outboard sales, repowers, parts, and service. Cobourg is one of the closer markets to HBW, for many Cobourg addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
 
 ## Cobourg has Lake Ontario shoreline, but most local boating happens north
 
-The Cobourg waterfront has a real boating community — the harbour, the sailing club, the day-cruisers and small powerboats running out of the inner harbour. What it doesn't have, geographically, is a deep inland boating market within town limits. Most of Cobourg's serious recreational boating happens north, on Rice Lake and the Kawartha system, where the cottage country actually starts.
+The Cobourg waterfront has a real boating community, the harbour, the sailing club, the day-cruisers and small powerboats running out of the inner harbour. What it doesn't have, geographically, is a deep inland boating market within town limits. Most of Cobourg's serious recreational boating happens north, on Rice Lake and the Kawartha system, where the cottage country actually starts.
 
 That's why Cobourg customers end up driving 25 minutes north to HBW more often than they end up driving 90 minutes west to a Toronto-area dealer. The boat is going to live north anyway. The dealer being north makes the logistics work.
 
@@ -43,9 +43,9 @@ That's why Cobourg customers end up driving 25 minutes north to HBW more often t
 
 The Cobourg customer pattern splits into two groups:
 
-**The cottage owner** — has a place on Rice Lake or in the Kawarthas, keeps a boat there, drives up from Cobourg most weekends. Wants a dealer that knows the lake and isn't 90 minutes back into the GTA.
+**The cottage owner**, has a place on Rice Lake or in the Kawarthas, keeps a boat there, drives up from Cobourg most weekends. Wants a dealer that knows the lake and isn't 90 minutes back into the GTA.
 
-**The town-based boater** — keeps the boat in Cobourg or trailers from Cobourg, uses Lake Ontario or makes regular trips to the Kawartha system. Wants quality Mercury service that doesn't involve a road trip.
+**The town-based boater**, keeps the boat in Cobourg or trailers from Cobourg, uses Lake Ontario or makes regular trips to the Kawartha system. Wants quality Mercury service that doesn't involve a road trip.
 
 For both groups, the pattern is:
 
@@ -65,7 +65,7 @@ The closer Cobourg dealers tend to be in lower Mercury tiers, or are non-Mercury
 
 ## Getting to Harris Boat Works from Cobourg
 
-Route: County Road 18 north from Cobourg, straight into Gores Landing. About as simple as a route gets — one road for most of the trip.
+Route: County Road 18 north from Cobourg, straight into Gores Landing. About as simple as a route gets, one road for most of the trip.
 
 Approximate drive time: 25 minutes outside rush hour. From the Cobourg harbour or downtown, allow 25-30 minutes. From north Cobourg, it's closer to 20 minutes.
 
@@ -93,13 +93,13 @@ Cobourg customers whose boat lives on Lake Ontario can trailer up for major serv
 
 ## What Cobourg buyers tell us most often
 
-The most common Cobourg feedback we hear is about the call-for-quote frustration at other dealers. Cobourg has a high concentration of informed buyers — people who've researched the motor they want, know the specifications, and just need a real number to compare. The phone-call-required pricing model frustrates this group the most.
+The most common Cobourg feedback we hear is about the call-for-quote frustration at other dealers. Cobourg has a high concentration of informed buyers, people who've researched the motor they want, know the specifications, and just need a real number to compare. The phone-call-required pricing model frustrates this group the most.
 
-Our quote builder at mercuryrepower.ca shows real installed CAD pricing in three minutes. Motor, rigging, controls, prop, install labour, HST — all on one line. The price you see is the price you pay. For an informed Cobourg buyer, that alone justifies the 25-minute drive.
+Our quote builder at mercuryrepower.ca shows real installed CAD pricing in three minutes. Motor, rigging, controls, prop, install labour, HST, all on one line. The price you see is the price you pay. For an informed Cobourg buyer, that alone justifies the 25-minute drive.
 
 ## What we see at HBW
 
-The single most underrated benefit for Cobourg customers is the ongoing service relationship that comes from having the dealer 25 minutes away. Most repower customers don't think about this at purchase time — they're focused on the motor cost. Two years in, when the boat needs an impeller mid-season and parts are on the shelf at HBW, that proximity matters.
+The single most underrated benefit for Cobourg customers is the ongoing service relationship that comes from having the dealer 25 minutes away. Most repower customers don't think about this at purchase time, they're focused on the motor cost. Two years in, when the boat needs an impeller mid-season and parts are on the shelf at HBW, that proximity matters.
 
 The other thing we see specifically with Cobourg customers: many of them have already moved boat storage to the Rice Lake area because the Cobourg waterfront storage market is tight. Once the boat is already up here, HBW is the logical service shop.
 
@@ -114,13 +114,13 @@ For a motor purchase conversation, call: 905-342-2153.
 ## Frequently Asked Questions, Cobourg
 
 **Is HBW the closest Mercury dealer to Cobourg?**
-For most Cobourg addresses, yes — we're 25 minutes north via County Road 18. Closer dealers may exist for specific motor brands or general boat service, but for Mercury Platinum-tier work, HBW is the nearest option.
+For most Cobourg addresses, yes, we're 25 minutes north via County Road 18. Closer dealers may exist for specific motor brands or general boat service, but for Mercury Platinum-tier work, HBW is the nearest option.
 
 **Do you service boats that live on Lake Ontario, not Rice Lake?**
 Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer-in for service all season. For engine repairs, we only service Mercury and Mercruiser.
 
 **Can I get the boat picked up and dropped off?**
-HBW does NOT offer pickup or delivery — customers bring the boat to us. We have trailer parking on site for drop-offs.
+HBW does NOT offer pickup or delivery, customers bring the boat to us. We have trailer parking on site for drop-offs.
 
 **What's the typical repower cost from a Cobourg perspective?**
 Depends on horsepower and current rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in the typical Cobourg boat range ($10,000-$25,000 hull value) land in the $13,000-$22,000 installed range.

@@ -31,11 +31,11 @@ content_type: blog_article
 
 ## Quick Answer
 
-Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south. We handle Mercury outboard sales, repowers, parts, and service. For Kawartha Lakes boaters, Lindsay is the regional hub — and HBW is the closest Mercury Platinum dealer with full repower capacity. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south. We handle Mercury outboard sales, repowers, parts, and service. For Kawartha Lakes boaters, Lindsay is the regional hub, and HBW is the closest Mercury Platinum dealer with full repower capacity. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
 
 ## Lindsay is the Kawartha Lakes hub
 
-Lindsay sits at the centre of the Kawartha Lakes region, with Sturgeon Lake to the north, the Scugog River running through town, and the Trent-Severn Waterway connecting it all. The local boating community is significant — fishing, cruising, cottagers, water sports, the full mix. Boats in this region tend to spend more days on the water per year than anywhere else in southern Ontario.
+Lindsay sits at the centre of the Kawartha Lakes region, with Sturgeon Lake to the north, the Scugog River running through town, and the Trent-Severn Waterway connecting it all. The local boating community is significant, fishing, cruising, cottagers, water sports, the full mix. Boats in this region tend to spend more days on the water per year than anywhere else in southern Ontario.
 
 What Lindsay has less of is Mercury Platinum dealer depth with full repower capacity. The closer dealers tend to be in lower Mercury tiers or are non-Mercury shops. For a major repower or a complex warranty case, the dealer tier matters.
 
@@ -43,11 +43,11 @@ What Lindsay has less of is Mercury Platinum dealer depth with full repower capa
 
 The Lindsay customer pattern centers on serious cottage and fishing use:
 
-**The Kawartha cottager** — has property on Sturgeon, Pigeon, or Buckhorn Lake, runs a 16-20 foot aluminum or pontoon. Wants a Mercury Platinum shop that can handle the seasonal service routine without disrupting the cottage time.
+**The Kawartha cottager**, has property on Sturgeon, Pigeon, or Buckhorn Lake, runs a 16-20 foot aluminum or pontoon. Wants a Mercury Platinum shop that can handle the seasonal service routine without disrupting the cottage time.
 
-**The serious angler** — Sturgeon Lake walleye and muskie fishing is legitimate. Anglers running Pro XS or FourStroke setups for tournament-grade work need dealer-tier diagnostics and parts depth that smaller shops don't carry.
+**The serious angler**, Sturgeon Lake walleye and muskie fishing is legitimate. Anglers running Pro XS or FourStroke setups for tournament-grade work need dealer-tier diagnostics and parts depth that smaller shops don't carry.
 
-**The cruise-boat owner** — Trent-Severn cruisers running 24-foot inboard/outboard or larger need a Mercury MerCruiser shop. HBW handles MerCruiser sterndrives as well as outboards.
+**The cruise-boat owner**, Trent-Severn cruisers running 24-foot inboard/outboard or larger need a Mercury MerCruiser shop. HBW handles MerCruiser sterndrives as well as outboards.
 
 For all three, the pattern is:
 - Spring commissioning before opening day
@@ -58,7 +58,7 @@ For all three, the pattern is:
 
 ## The Trent-Severn factor
 
-Many Lindsay boaters cruise the Trent-Severn — through Bobcaygeon, Burleigh Falls, the Buckhorn locks, and down into Rice Lake. The lower Trent connects Rice Lake to the Kawartha system through the Hastings lock. That means a Lindsay-area boat that cruises the full Trent system is going to pass right by HBW anyway.
+Many Lindsay boaters cruise the Trent-Severn, through Bobcaygeon, Burleigh Falls, the Buckhorn locks, and down into Rice Lake. The lower Trent connects Rice Lake to the Kawartha system through the Hastings lock. That means a Lindsay-area boat that cruises the full Trent system is going to pass right by HBW anyway.
 
 For Lindsay customers planning a major Trent-Severn cruise, dropping the boat at HBW for service before the trip means the boat starts the cruise in known-good condition and the dealer is in the network if anything comes up mid-trip.
 
@@ -100,7 +100,7 @@ Our installed pricing online at mercuryrepower.ca is what informed Lindsay buyer
 
 The most underrated benefit for Lindsay customers is the seasonal storage relationship. A lot of cottagers run into the same problem in October: where to store the boat. The Kawartha-region storage market gets tight. HBW offers outdoor shrinkwrap storage with full winterization done by the same shop that knows the motor. Lindsay customers who set up that routine end up doing it for 5-10 years running.
 
-The other observation: Lindsay-area cottagers often have older Mercury outboards (10-15 years) that are still running fine but starting to need attention. Repower vs continued service decisions are common conversations. The honest answer depends on the hull condition — but for a sound hull under 15 years old, a properly executed repower is usually the dollar-per-year winner.
+The other observation: Lindsay-area cottagers often have older Mercury outboards (10-15 years) that are still running fine but starting to need attention. Repower vs continued service decisions are common conversations. The honest answer depends on the hull condition, but for a sound hull under 15 years old, a properly executed repower is usually the dollar-per-year winner.
 
 ## How to start
 
@@ -119,13 +119,13 @@ For routine service (oil change, basic seasonal work), maybe not. For a major re
 Yes. We service Mercury outboards and MerCruiser sterndrives. For engine repairs, we only service Mercury and Mercruiser.
 
 **Do you install ProKickers on Sturgeon Lake fishing boats?**
-Yes — common spec on Kawartha-area aluminum fishing boats. Full install includes mounting, throttle linkage, electrical, and tie-bar steering setup.
+Yes, common spec on Kawartha-area aluminum fishing boats. Full install includes mounting, throttle linkage, electrical, and tie-bar steering setup.
 
 **What's a typical Kawartha-area repower cost?**
 Depends on horsepower. Most repowers on 16-20 foot aluminum or pontoon hulls land in the $13,000-$25,000 installed range including HST. The quote builder at mercuryrepower.ca gives a real CAD number based on your boat.
 
 **Can I drop off at HBW before a Trent-Severn cruise?**
-Yes — many Lindsay customers do exactly that. Spring service before the cruising season, motor in known-good condition before a long trip, network coverage if anything comes up mid-trip.
+Yes, many Lindsay customers do exactly that. Spring service before the cruising season, motor in known-good condition before a long trip, network coverage if anything comes up mid-trip.
 
 **Can I store my boat with you year-round?**
 Yes. Outdoor with shrinkwrap. For Lindsay cottagers who want to skip the Kawartha storage market and pick up the boat already at Rice Lake in spring, this works well.

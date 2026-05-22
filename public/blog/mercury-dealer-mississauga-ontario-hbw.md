@@ -154,15 +154,15 @@ That's the deal. It's been the deal since 1947.
 
 ## Where Mississauga Boaters Launch and Why HBW Handles Their Repowers
 
-Mississauga sits on Lake Ontario's west shore. The main local hub is **Port Credit Harbour Marina** — the largest in the city, with public access and an active recreational scene. Smaller launches are scattered along Lakeshore Road, and the **Credit River mouth** is a popular smaller-boat area. The Lakefront Promenade runs from Port Credit east into Etobicoke.
+Mississauga sits on Lake Ontario's west shore. The main local hub is **Port Credit Harbour Marina**, the largest in the city, with public access and an active recreational scene. Smaller launches are scattered along Lakeshore Road, and the **Credit River mouth** is a popular smaller-boat area. The Lakefront Promenade runs from Port Credit east into Etobicoke.
 
-The drive to Rice Lake is 90 minutes via the 401 east and Highway 115 north — basically a half-day round-trip. Mississauga's 401 access is consistently slow east of the 427 — even weekday mornings build. Plan for the extra time or stage your trip outside rush periods.
+The drive to Rice Lake is 90 minutes via the 401 east and Highway 115 north, basically a half-day round-trip. Mississauga's 401 access is consistently slow east of the 427, even weekday mornings build. Plan for the extra time or stage your trip outside rush periods.
 
 Why Mississauga boaters trailer to HBW:
 
 - **Annual repower trips.** Many Mississauga customers make the drive once for the repower itself, then run service work closer to home between visits.
 - **Drop-and-pick logistics.** Trailer up midweek, leave the boat for service or storage, pick up when ready.
-- **Mercury Platinum depth.** A clean 115-150 HP repower install needs the rigging hours we put in daily — not every closer dealer has that bench.
+- **Mercury Platinum depth.** A clean 115-150 HP repower install needs the rigging hours we put in daily, not every closer dealer has that bench.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

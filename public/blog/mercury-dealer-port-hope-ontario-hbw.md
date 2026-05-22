@@ -31,11 +31,11 @@ content_type: blog_article
 
 ## Quick Answer
 
-Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW — for most Port Hope addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
 
 ## Port Hope has the Ganaraska River and Lake Ontario, but most local boating happens inland
 
-Port Hope's waterfront is a working harbour with a smaller recreational boating community than Cobourg next door. The Ganaraska is a fishing destination (the salmon run is legendary) but it's not a powerboat river. Lake Ontario sailing and small powerboats use the harbour, but the deeper recreational boating market in this area runs north — Rice Lake, the Trent system, the Kawarthas.
+Port Hope's waterfront is a working harbour with a smaller recreational boating community than Cobourg next door. The Ganaraska is a fishing destination (the salmon run is legendary) but it's not a powerboat river. Lake Ontario sailing and small powerboats use the harbour, but the deeper recreational boating market in this area runs north, Rice Lake, the Trent system, the Kawarthas.
 
 That's why Port Hope Mercury customers tend to end up at HBW. The boat is going north anyway, and the Mercury dealer being north makes the math work.
 
@@ -43,11 +43,11 @@ That's why Port Hope Mercury customers tend to end up at HBW. The boat is going 
 
 The Port Hope customer pattern looks like Cobourg's, with more weight toward the cottage owner profile:
 
-**The cottage owner** — has a property somewhere on Rice Lake or in the Kawarthas, keeps the boat at the cottage, drives up from Port Hope on weekends. Wants a dealer that knows the lake and is closer than the GTA.
+**The cottage owner**, has a property somewhere on Rice Lake or in the Kawarthas, keeps the boat at the cottage, drives up from Port Hope on weekends. Wants a dealer that knows the lake and is closer than the GTA.
 
-**The salmon fisherman** — Ganaraska River runs serious salmon traffic in fall. Port Hope anglers who own a boat often have a second boat or trailer-portable rig for Lake Ontario or Rice Lake. Mercury 9.9 ProKickers are common in this crowd.
+**The salmon fisherman**, Ganaraska River runs serious salmon traffic in fall. Port Hope anglers who own a boat often have a second boat or trailer-portable rig for Lake Ontario or Rice Lake. Mercury 9.9 ProKickers are common in this crowd.
 
-**The town-based boater** — keeps the boat in Port Hope or trailers from town, mixes Lake Ontario and inland trips. Wants Mercury service that doesn't require a road trip into the GTA.
+**The town-based boater**, keeps the boat in Port Hope or trailers from town, mixes Lake Ontario and inland trips. Wants Mercury service that doesn't require a road trip into the GTA.
 
 For all three groups, the pattern is:
 - Spring commissioning
@@ -60,7 +60,7 @@ For all three groups, the pattern is:
 
 Port Hope has a few general boat shops. What it doesn't have within town limits is a Mercury Platinum dealer.
 
-Platinum is Mercury's top dealer tier — parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
+Platinum is Mercury's top dealer tier, parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
 
 For Port Hope customers with newer Mercury outboards under warranty, the closer Platinum dealer typically wins the long-term service relationship.
 
@@ -78,7 +78,7 @@ Motor pricing: mercuryrepower.ca
 ## What HBW handles for Port Hope customers
 
 **Mercury outboard sales**
-Full Mercury lineup: 2.5 HP through 600 HP. For Port Hope customers, FourStroke covers most use cases (cruising, family fishing, pontoons, cottage boats). Pro XS for performance fishing or fast-running tournament setups. The Mercury 9.9 ProKicker is a Port Hope angler favourite — common on Lake Ontario salmon rigs and on Kawartha bass boats.
+Full Mercury lineup: 2.5 HP through 600 HP. For Port Hope customers, FourStroke covers most use cases (cruising, family fishing, pontoons, cottage boats). Pro XS for performance fishing or fast-running tournament setups. The Mercury 9.9 ProKicker is a Port Hope angler favourite, common on Lake Ontario salmon rigs and on Kawartha bass boats.
 
 **Repower service**
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, install, lake test on Rice Lake. Every install gets water-tested before pickup.
@@ -94,13 +94,13 @@ Port Hope customers with Lake Ontario boats can trailer up for major service. Ha
 
 ## What Port Hope buyers typically ask first
 
-The most common Port Hope question is about the difference between a "fast price quote" and a real installed cost. Other dealers will give a verbal motor-only number over the phone. We give the full installed cost — motor, rigging, controls, prop, install labour, HST — at mercuryrepower.ca. Real Canadian dollars. No phone tag required.
+The most common Port Hope question is about the difference between a "fast price quote" and a real installed cost. Other dealers will give a verbal motor-only number over the phone. We give the full installed cost, motor, rigging, controls, prop, install labour, HST, at mercuryrepower.ca. Real Canadian dollars. No phone tag required.
 
 That transparency is what most Port Hope informed buyers respond to. The drive becomes worth it when the dealer treats the buyer like an adult who can read a number.
 
 ## What we see at HBW
 
-The single most underrated benefit for Port Hope customers is the small-shop accountability. We're a 3-generation family marina on Rice Lake — when a Port Hope customer has a bad experience, word gets around fast. The Port Hope-to-Rice Lake recreational boating community is tight. Most of our Port Hope customers came in via referral from another Port Hope or Cobourg-area customer.
+The single most underrated benefit for Port Hope customers is the small-shop accountability. We're a 3-generation family marina on Rice Lake, when a Port Hope customer has a bad experience, word gets around fast. The Port Hope-to-Rice Lake recreational boating community is tight. Most of our Port Hope customers came in via referral from another Port Hope or Cobourg-area customer.
 
 The other thing we see consistently: the Mercury 9.9 ProKicker installs are disproportionate from Port Hope addresses. Salmon fishermen and Kawartha anglers in Port Hope tend to know exactly what they want and just need a dealer that can install it cleanly.
 
@@ -121,7 +121,7 @@ For most Port Hope addresses, yes. We're 30 minutes north via County Road 28 and
 Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs, we only service Mercury and Mercruiser.
 
 **Do you install Mercury 9.9 ProKickers?**
-Yes — we install a lot of them, especially for Port Hope and Cobourg anglers running primary motors with a ProKicker for trolling control. Full install includes mounting, linkage to the primary throttle, electrical, and steering tie-bar setup.
+Yes, we install a lot of them, especially for Port Hope and Cobourg anglers running primary motors with a ProKicker for trolling control. Full install includes mounting, linkage to the primary throttle, electrical, and steering tie-bar setup.
 
 **What's the typical Port Hope repower cost?**
 Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in our region land in the $13,000-$25,000 installed range including HST.
