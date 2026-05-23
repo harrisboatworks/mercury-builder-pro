@@ -701,7 +701,8 @@ export function QuoteRevealCinematic({
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
-              className="absolute bottom-16 text-xs text-repower-navy-900/55"
+              className="absolute bottom-16 text-[11px] font-medium uppercase"
+              style={{ color: 'rgba(245, 241, 234, 0.5)', letterSpacing: '0.22em' }}
             >
               Tap anywhere to continue
             </motion.div>
