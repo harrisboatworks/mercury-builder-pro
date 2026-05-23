@@ -488,10 +488,10 @@ export default function AdminGrowthAgent() {
                           <TableCell>
                             <div className="flex flex-col gap-2">
                               <Button size="sm" variant="outline" onClick={() => markStatus(finding, "approved")}>
-                                Approve
+                                Approve lane
                               </Button>
                               <Button size="sm" variant="ghost" onClick={() => markStatus(finding, "ignored")}>
-                                Ignore
+                                Ignore item
                               </Button>
                             </div>
                           </TableCell>
