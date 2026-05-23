@@ -4,7 +4,7 @@ import { useSound } from '@/contexts/SoundContext';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { money, calculateMonthly } from '@/lib/quote-utils';
-import { X, Shield, Sparkles } from 'lucide-react';
+import { X, Shield } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import harrisLogo from '@/assets/harris-logo.png';
 import harrisLogoWhite from '@/assets/harris-logo-white.png';
