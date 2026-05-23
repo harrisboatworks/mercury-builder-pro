@@ -346,7 +346,7 @@ export default function AdminGrowthAgent() {
   return (
     <div className="min-h-screen bg-slate-50">
       <AdminNav />
-      <main className="container mx-auto px-4 py-6 space-y-6">
+      <main className="container mx-auto px-4 pt-6 pb-32 space-y-6">
         <section className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
           <div className="space-y-2 max-w-3xl">
             <div className="flex items-center gap-2 text-sm font-medium text-slate-600">
