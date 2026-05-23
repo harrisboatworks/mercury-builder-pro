@@ -360,7 +360,9 @@ export default function AdminGrowthAgent() {
             <h1 className="text-3xl font-semibold tracking-tight text-slate-950">SEO, GEO, and deploy verification queue</h1>
             <p className="text-sm leading-6 text-slate-600">
               A Mercury-specific version of the AI CMO loop: crawl the live site, find crawler-visible issues,
-              rank work by business value, and keep fixes approval-based.
+              and rank work by business value. The owning lane should ship safe, evidence-backed open items without
+              waiting on Jay — loop Jay in only for business-judgment calls (pricing, factual claims, brand positioning,
+              major page strategy, credentials, customer data, account changes).
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
