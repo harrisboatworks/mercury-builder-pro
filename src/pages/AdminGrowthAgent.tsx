@@ -207,8 +207,12 @@ function scoreValue(run: GrowthRun, key: keyof NonNullable<GrowthRun["scores"]>)
   return Math.max(0, Math.min(100, Math.round(run.scores?.[key] ?? 0)));
 }
 
+function isActiveStatus(status: FindingStatus) {
+  return status === "open" || status === "approved";
+}
+
 function categoryCount(findings: GrowthFinding[], category: FindingCategory) {
-  return findings.filter((finding) => finding.category === category && finding.status !== "fixed").length;
+  return findings.filter((finding) => finding.category === category && isActiveStatus(finding.status)).length;
 }
 
 function isFallbackRun(run: GrowthRun) {
@@ -260,7 +264,7 @@ export default function AdminGrowthAgent() {
 
   const run = data?.run ?? fallbackRun;
   const findings = data?.findings ?? fallbackFindings;
-  const openFindings = findings.filter((finding) => finding.status !== "fixed");
+  const openFindings = findings.filter((finding) => isActiveStatus(finding.status));
   const filteredFindings = activeTab === "all" ? openFindings : openFindings.filter((finding) => finding.category === activeTab);
 
   const severityStats = useMemo(() => {
@@ -356,7 +360,9 @@ export default function AdminGrowthAgent() {
             <h1 className="text-3xl font-semibold tracking-tight text-slate-950">SEO, GEO, and deploy verification queue</h1>
             <p className="text-sm leading-6 text-slate-600">
               A Mercury-specific version of the AI CMO loop: crawl the live site, find crawler-visible issues,
-              rank work by business value, and keep fixes approval-based.
+              and rank work by business value. The owning lane should ship safe, evidence-backed open items without
+              waiting on Jay — loop Jay in only for business-judgment calls (pricing, factual claims, brand positioning,
+              major page strategy, credentials, customer data, account changes).
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -482,10 +488,10 @@ export default function AdminGrowthAgent() {
                           <TableCell>
                             <div className="flex flex-col gap-2">
                               <Button size="sm" variant="outline" onClick={() => markStatus(finding, "approved")}>
-                                Approve
+                                Approve lane
                               </Button>
                               <Button size="sm" variant="ghost" onClick={() => markStatus(finding, "ignored")}>
-                                Ignore
+                                Ignore item
                               </Button>
                             </div>
                           </TableCell>
