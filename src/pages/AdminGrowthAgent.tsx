@@ -207,8 +207,12 @@ function scoreValue(run: GrowthRun, key: keyof NonNullable<GrowthRun["scores"]>)
   return Math.max(0, Math.min(100, Math.round(run.scores?.[key] ?? 0)));
 }
 
+function isActiveStatus(status: FindingStatus) {
+  return status === "open" || status === "approved";
+}
+
 function categoryCount(findings: GrowthFinding[], category: FindingCategory) {
-  return findings.filter((finding) => finding.category === category && finding.status !== "fixed").length;
+  return findings.filter((finding) => finding.category === category && isActiveStatus(finding.status)).length;
 }
 
 function isFallbackRun(run: GrowthRun) {
