@@ -708,7 +708,7 @@ export function QuoteRevealCinematic({
           )}
         </AnimatePresence>
 
-        {/* Subtle horizontal line accent with refined animation */}
+        {/* Subtle horizontal hairline accent — warm cream */}
         <AnimatePresence>
           {(stage === 'details' || stage === 'complete') && (
             <motion.div
@@ -716,7 +716,7 @@ export function QuoteRevealCinematic({
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               className="absolute top-[64%] md:top-[74%] w-24 h-px origin-center"
-              style={{ background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent)' }}
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(245, 241, 234, 0.35), transparent)' }}
             />
           )}
         </AnimatePresence>
@@ -726,22 +726,22 @@ export function QuoteRevealCinematic({
           {(stage === 'details' || stage === 'complete') && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 0.7, y: 0 }}
+              animate={{ opacity: 0.75, y: 0 }}
               transition={{ duration: 0.8, delay: 1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute bottom-10 md:bottom-12 flex flex-col items-center gap-2"
+              className="absolute bottom-10 md:bottom-12 flex flex-col items-center gap-2.5"
               style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
             >
-              <span 
-                className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] font-medium"
-                style={{ color: '#9CA3AF' }}
+              <span
+                className="text-[9px] md:text-[10px] uppercase font-medium"
+                style={{ color: 'rgba(245, 241, 234, 0.5)', letterSpacing: '0.3em' }}
               >
                 Authorized Dealer
               </span>
-              <img 
+              <img
                 src={mercuryLogo}
                 alt="Mercury Marine"
                 className="h-5 md:h-7 w-auto"
-                style={{ 
+                style={{
                   filter: 'brightness(0) invert(1)',
                   opacity: 0.7,
                 }}
@@ -755,17 +755,18 @@ export function QuoteRevealCinematic({
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.5 }}
           transition={{ delay: 1.5, duration: 0.5 }}
-          className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/10"
+          className="absolute bottom-0 left-0 right-0 h-px bg-white/10"
           style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
         >
           <motion.div
             className="h-full"
             style={{
               width: `${progress}%`,
-              background: 'linear-gradient(90deg, hsl(var(--promo-gold-1)), rgba(212,175,55,0.5))',
+              background: 'linear-gradient(90deg, rgba(245, 241, 234, 0.55), rgba(245, 241, 234, 0.2))',
             }}
           />
         </motion.div>
+
       </motion.div>
     </AnimatePresence>
   );
