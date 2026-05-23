@@ -57,29 +57,47 @@ export default function ToolsIndex() {
 
         <main className="max-w-5xl mx-auto px-4 py-10 md:py-14">
           <header className="mb-10 md:mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="block h-px w-8 bg-repower-mercury-red/70" aria-hidden />
+              <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-repower-mercury-red">
+                Free Tools
+              </span>
+            </div>
+            <h1
+              className="font-display font-bold text-repower-navy-900 leading-[1.05] tracking-[-0.025em]"
+              style={{ fontSize: 'clamp(32px, 4vw, 48px)' }}
+            >
               Free Mercury Repower Tools
             </h1>
-            <p className="text-base md:text-lg text-muted-foreground max-w-3xl">
+            <p className="mt-4 font-sans text-[17px] text-repower-navy-900/65 leading-relaxed max-w-3xl">
               Four quick calculators to help you scope a repower before you call. No signup, no
               email gate, real CAD numbers.
             </p>
+            <div className="mt-7 h-px w-full bg-repower-navy-900/10" aria-hidden />
           </header>
 
           <section aria-label="Available tools" className="grid gap-6 md:grid-cols-2 mb-14">
             {TOOLS.map(({ id, name, description, Icon }) => (
               <div
                 key={id}
-                className="rounded-xl border border-border bg-card p-6 flex flex-col"
+                className="rounded-xl border border-repower-navy-900/15 bg-white p-6 flex flex-col shadow-sm"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  <div className="p-2 rounded-lg bg-repower-navy-900/5 text-repower-navy-900">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <h2 className="text-lg font-semibold text-foreground">{name}</h2>
+                  <h2 className="font-display font-bold text-lg text-repower-navy-900" style={{ letterSpacing: '-0.02em' }}>
+                    {name}
+                  </h2>
                 </div>
-                <p className="text-sm text-muted-foreground mb-5 flex-1">{description}</p>
-                <Button asChild variant="outline" className="w-full sm:w-auto self-start">
+                <p className="font-sans text-[14px] text-repower-navy-900/70 mb-5 flex-1 leading-relaxed">
+                  {description}
+                </p>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full sm:w-auto self-start border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5"
+                >
                   <a href={`#${id}`}>
                     Open tool
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
@@ -95,11 +113,18 @@ export default function ToolsIndex() {
                 key={id}
                 id={id}
                 aria-labelledby={`${id}-heading`}
-                className="scroll-mt-24 border-t border-border pt-10"
+                className="scroll-mt-24 border-t border-repower-navy-900/10 pt-10"
               >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="block h-px w-8 bg-repower-mercury-red/70" aria-hidden />
+                  <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-repower-mercury-red">
+                    Tool
+                  </span>
+                </div>
                 <h2
                   id={`${id}-heading`}
-                  className="text-2xl md:text-3xl font-bold text-foreground mb-6"
+                  className="font-display font-bold text-repower-navy-900 mb-6 leading-[1.1] tracking-[-0.025em]"
+                  style={{ fontSize: 'clamp(26px, 3vw, 34px)' }}
                 >
                   {name}
                 </h2>
