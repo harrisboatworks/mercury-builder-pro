@@ -602,49 +602,48 @@ export function QuoteRevealCinematic({
                   transition={{ delay: 0.3, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
                   className="text-center"
                 >
-                  <motion.span 
+                  <motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.4 }}
-                    className="flex items-center justify-center gap-1 text-[10px] uppercase tracking-[0.2em] mb-2"
-                    style={{ color: '#10B981' }}
+                    className="block text-[10px] md:text-[11px] font-medium uppercase mb-2"
+                    style={{ color: 'rgba(245, 241, 234, 0.55)', letterSpacing: '0.22em' }}
                   >
-                    <Sparkles className="w-3 h-3" />
                     {tradeInValue && tradeInValue > 0 ? 'Savings + Trade-In' : 'Total Savings'}
                   </motion.span>
-                  <span 
-                    className="font-outfit text-lg md:text-xl font-semibold"
-                    style={{ color: '#10B981' }}
+                  <span
+                    className="font-display text-lg md:text-xl font-semibold tabular-nums"
+                    style={{ color: 'rgba(250, 248, 244, 0.95)', letterSpacing: '-0.02em' }}
                   >
                     {money(savings)}
                   </span>
                 </motion.div>
               )}
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 15, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
                 className="text-center"
               >
-                <motion.span 
+                <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.7, duration: 0.4 }}
-                  className="flex items-center justify-center gap-1 text-[10px] uppercase tracking-[0.2em] mb-2"
-                  style={{ color: '#6B7280' }}
+                  className="flex items-center justify-center gap-1.5 text-[10px] md:text-[11px] font-medium uppercase mb-2"
+                  style={{ color: 'rgba(245, 241, 234, 0.55)', letterSpacing: '0.22em' }}
                 >
-                  <Shield className="w-3 h-3" />
+                  <Shield className="w-3 h-3" strokeWidth={1.5} />
                   Coverage
                 </motion.span>
-                <span 
-                  className="font-outfit text-lg md:text-xl font-semibold"
-                  style={{ color: '#E5E7EB' }}
+                <span
+                  className="font-display text-lg md:text-xl font-semibold"
+                  style={{ color: 'rgba(250, 248, 244, 0.95)', letterSpacing: '-0.02em' }}
                 >
                   {coverageYears} Years
                 </span>
               </motion.div>
-              
+
               {/* Selected Promo Bonus */}
               {selectedPromoOption && selectedPromoValue && (
                 <motion.div
@@ -653,19 +652,18 @@ export function QuoteRevealCinematic({
                   transition={{ delay: 0.7, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
                   className="text-center"
                 >
-                  <motion.span 
+                  <motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.9, duration: 0.4 }}
-                    className="flex items-center justify-center gap-1 text-[10px] uppercase tracking-[0.2em] mb-2"
-                    style={{ color: '#D4AF37' }}
+                    className="block text-[10px] md:text-[11px] font-medium uppercase mb-2"
+                    style={{ color: 'rgba(245, 241, 234, 0.55)', letterSpacing: '0.22em' }}
                   >
-                    <Sparkles className="w-3 h-3" />
                     Your Bonus
                   </motion.span>
-                  <span 
-                    className="font-outfit text-lg md:text-xl font-semibold"
-                    style={{ color: '#D4AF37' }}
+                  <span
+                    className="font-display text-lg md:text-xl font-semibold"
+                    style={{ color: 'rgba(250, 248, 244, 0.95)', letterSpacing: '-0.02em' }}
                   >
                     {getPromoLabel(selectedPromoOption, selectedPromoValue)}
                   </span>
@@ -674,6 +672,7 @@ export function QuoteRevealCinematic({
             </motion.div>
           )}
         </AnimatePresence>
+
 
         {/* Skip Intro button with label - smooth fade transition, better touch target */}
         <motion.button
