@@ -414,17 +414,18 @@ export function QuoteRevealCinematic({
           )}
         </AnimatePresence>
 
-        {/* Motor Name - Luxury serif typography with refined blur entrance */}
+        {/* Motor Name - Editorial display type, neutral halo */}
         <AnimatePresence>
           {(stage !== 'spotlight') && (
             <motion.h2
               initial={{ opacity: 0, y: 20, filter: 'blur(4px)', scale: 0.95 }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute top-[26%] md:top-[34%] font-outfit text-xl md:text-3xl font-medium tracking-wide text-center px-4"
-              style={{ 
-                color: '#F5F5F5',
-                textShadow: '0 0 30px rgba(212, 175, 55, 0.3), 0 2px 10px rgba(0, 0, 0, 0.5)'
+              className="absolute top-[26%] md:top-[34%] font-display text-xl md:text-3xl font-medium text-center px-4"
+              style={{
+                color: 'rgba(245, 241, 234, 0.95)',
+                letterSpacing: '-0.02em',
+                textShadow: '0 2px 18px rgba(0, 0, 0, 0.5)',
               }}
             >
               {motorName}
@@ -441,27 +442,29 @@ export function QuoteRevealCinematic({
               transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
               className="absolute top-[32%] md:top-[40%] flex flex-col items-center"
             >
-              <motion.span 
-                className="text-xs md:text-xs uppercase tracking-[0.25em] mb-1"
-                style={{ color: '#6B7280' }}
+              <motion.span
+                className="text-[10px] md:text-[11px] font-medium uppercase mb-1.5"
+                style={{ color: 'rgba(245, 241, 234, 0.5)', letterSpacing: '0.22em' }}
               >
                 MSRP
               </motion.span>
-              <motion.span 
-                className="font-outfit text-xl md:text-2xl tabular-nums relative"
-                style={{ color: '#6B7280' }}
+              <motion.span
+                className="font-display text-xl md:text-2xl tabular-nums relative"
+                style={{ color: 'rgba(245, 241, 234, 0.55)', letterSpacing: '-0.02em' }}
               >
                 {money(msrp)}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
-                  className="absolute top-1/2 left-0 right-0 h-0.5 bg-repower-mercury-red/50/70 origin-left"
+                  className="absolute top-1/2 left-0 right-0 h-px origin-left"
+                  style={{ background: 'rgba(245, 241, 234, 0.45)' }}
                 />
               </motion.span>
             </motion.div>
           )}
         </AnimatePresence>
+
 
         {/* Price Display - Elegant serif with separate glow layer (fixes gold box bug) */}
         <AnimatePresence>
