@@ -683,15 +683,16 @@ export function QuoteRevealCinematic({
           onClick={handleSkip}
           disabled={isSkipping}
           className="absolute top-4 right-4 md:top-6 md:right-6 flex items-center gap-2 px-4 py-3 md:px-3 md:py-2 min-h-[44px] min-w-[44px] rounded-full transition-colors hover:bg-white/5"
-          style={{ 
-            color: '#9CA3AF',
+          style={{
+            color: 'rgba(245, 241, 234, 0.6)',
             paddingTop: 'max(0.75rem, env(safe-area-inset-top))',
           }}
           aria-label="Skip intro"
         >
-          <span className="text-xs font-medium tracking-wide">Skip Intro</span>
-          <X className="h-4 w-4" />
+          <span className="text-[11px] font-medium uppercase" style={{ letterSpacing: '0.22em' }}>Skip</span>
+          <X className="h-4 w-4" strokeWidth={1.5} />
         </motion.button>
+
 
         {/* Tap to skip hint - mobile only */}
         <AnimatePresence>
