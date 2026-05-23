@@ -1,59 +1,53 @@
-## Answer to Steve's question (now, no code)
+# Cinematic Intro — Style Refinement
 
-I checked the database directly. There is **no quote in any table** with the name "Steve", a Steve email, or a Steve phone number in the last 21 days — not in `customer_quotes`, `saved_quotes`, `contact_inquiries`, or `trade_valuation_leads`.
+Goal: bring `src/components/quote-builder/QuoteRevealCinematic.tsx` up to the same higher-grade visual register as the rest of the site (Repower hero, Motor Selection page, design-token system). No copy changes, no animation timing changes, no stage logic changes, no layout repositioning. Pure typography + finish.
 
-What DOES exist: on the morning of **May 21, 2026 between 6:58 AM and 7:04 AM**, six anonymous quotes for the **40 ELPT Command Thrust FourStroke** were built back-to-back from the public site, all soft-leads with no contact info attached:
+## Scope
 
-| Ref # | Time (UTC) | Motor |
-|---|---|---|
-| HBW-00823 | 06:58 | 40 ELPT CT FourStroke |
-| HBW-00824 | 07:02 | 40 ELPT CT FourStroke |
-| HBW-00825 | 07:03 | 40 ELPT CT FourStroke |
-| HBW-00826 | 07:03 | 40 ELPT CT FourStroke |
-| HBW-00827 | 07:04 | 40 ELPT CT FourStroke |
-| HBW-00828 | 07:04 | 40 ELPT CT FourStroke |
+Single file: `src/components/quote-builder/QuoteRevealCinematic.tsx`.
 
-That run of six in six minutes for the exact motor Steve asked about is almost certainly him iterating on options. He never gave the system his name, email, or phone, so it saved as anonymous. If you ask him for a reference number, any HBW-008xx in that range will pull up his configuration. Otherwise, ask him roughly when he built it and offer to reproduce.
+## What the site looks like now (reference)
 
-## What's wrong with the admin Quotes page
+- Display type: `font-display` (Inter Tight), tight tracking (`-0.025em` to `-0.03em`), heavy weight for hero numerals.
+- Eyebrow type: Inter 11–12px, semibold, uppercase, `letter-spacing: 0.22em`, paired with a thin hairline rule.
+- Color story: navy-900 on cream, with `repower-gold` (subtle champagne hairline) and `repower-mercury-red` reserved for accents/eyebrows.
+- Restrained finishes: hairline dividers, small framed "stat" pills, no neon, no bright emerald green, no heavy yellow gold.
 
-`src/pages/AdminQuotes.tsx` already has a search box (top-left, "Search name, email, motor...") and source/status/source filters. Three real problems:
+## What the cinematic looks like now (the gap)
 
-1. **You can't search by reference number visibly.** It actually does search ref # under the hood (line 205), but the placeholder doesn't say so, so nobody tries `HBW-00827`.
-2. **Anonymous quotes have no customer name to match on**, so name search returns nothing for the most common case — exactly Steve's situation.
-3. **No motor / HP / date-range filter.** When a customer says "I built a 40 ELPT CT", you have to scan the whole list. Also no pagination — saved_quotes pulls 500 rows and dumps them in one scroll.
+- Uses `font-outfit` everywhere — feels lighter/rounder than the new `font-display` (Inter Tight).
+- Bright yellow `#D4AF37` / `--promo-gold-1` glow, breathing brightness, large blurred radial glow disc behind the price.
+- Emerald `#10B981 → #059669` "Save X%" pill with neon shadow — clashes with the refined palette.
+- Generic Tailwind grays (`#6B7280`, `#9CA3AF`, `#E5E7EB`) instead of the muted navy/cream-on-dark tokens the rest of the site uses.
+- Sparkles icons scattered through eyebrows.
+- Hairline accent is a yellow gold gradient line.
 
-## Plan (admin-only UX, no schema changes)
+## Proposed refinement
 
-Edit `src/pages/AdminQuotes.tsx` only:
+Typography
+- Swap `font-outfit` → `font-display` everywhere in this file (motor name H2, MSRP value, price numerals, detail values).
+- Tighten tracking on the price numerals (`tracking-tight` → explicit `letter-spacing: -0.03em`) to match the hero treatment.
+- Standardize all eyebrow labels (Your Price, MSRP, Total Savings, Coverage, Your Bonus, Authorized Dealer) on Inter 10–11px, `font-medium`, `letter-spacing: 0.22em` — one consistent eyebrow recipe instead of three close variants.
+- Motor name: keep position, but switch to `font-display`, medium weight, slightly tighter tracking, drop the gold textShadow to a subtle neutral one.
 
-1. **Better search**
-   - Change placeholder to `"Search name, email, motor, ref # (e.g. HBW-00827)..."`.
-   - Auto-detect `HBW-` prefix and prioritize ref-number match (exact, case-insensitive) so a single keystroke jumps to the row.
+Color & finish
+- Replace the bright yellow gold (`#D4AF37`, `--promo-gold-1`) used on the price text, glow, hairline, and bonus value with a restrained champagne/cream tone — a single muted warm token, used sparingly. The price reads as luminous off-white with a subtle warm halo, not "gold leaf."
+- Tone down the breathing glow: smaller radius, lower opacity, slower cycle (visual register only, not timing of the reveal stages).
+- "Save X%" badge: drop the emerald gradient + colored shadow; render as a small framed pill with a hairline border and warm-cream text, matching the 70% / 30% pill on the Repower hero.
+- Swap raw hex grays for a small set of dark-mode neutrals applied via inline style (since this overlay lives outside the cream-paper surface system): a single ink-on-dark scale (e.g. high / mid / low contrast white) so labels, values, and helper text feel like one family.
+- Replace the yellow-gold hairline accent below the price with a thin warm-cream hairline (`linear-gradient(90deg, transparent, rgba(245,241,234,0.35), transparent)`).
+- Remove decorative `Sparkles` icons from eyebrows (keep `Shield` on Coverage). Eyebrows become pure type + hairline, matching the rest of the site.
+- Progress bar at the bottom: switch from yellow-gold gradient to the same warm-cream hairline tone at low opacity.
 
-2. **New filters in the existing filter row**
-   - **HP** dropdown: All / 2.5–9.9 / 15–25 / 30–60 / 75–115 / 150+. Filters on parsed HP from `_motor_info`.
-   - **Model contains** small text input (e.g. type `Command Thrust` or `ELPT CT`).
-   - **Date range** quick chips: Today, Last 7 days, Last 30 days, All.
+Out of scope (not touching)
+- Stage timeline, durations, sound cues, haptics, confetti trigger, skip behavior, tap-to-skip, iOS guards.
+- Component positioning percentages, image sizing, Mercury logo placement.
+- Any other file. No token additions to `index.css` or `tailwind.config.ts` — all values applied locally to this overlay since it's a one-off dark cinematic context.
 
-3. **Pagination / virtualization**
-   - Show 50 rows per page with prev/next + "Showing X–Y of Z" counter. Pure client-side over the already-fetched array, no DB change.
+## Acceptance
 
-4. **Highlight anonymous / recent activity**
-   - Add a "Recent anonymous quotes (last 24h)" collapsible panel above the table, grouped by motor model, so phone-in cases like Steve's are surfaced immediately. Each group shows count + ref-number range + "View configurations" expander.
-
-5. **Sticky table header** so scrolling a long list keeps Date / Customer / Motor / Ref # visible.
-
-## Out of scope (not doing unless you ask)
-
-- No changes to `saved_quotes`/`customer_quotes` schema or RLS.
-- No change to the public quote flow (i.e. not going to force customers to enter name/phone before saving — that's a separate product decision).
-- No bulk delete or merging of anonymous duplicates.
-
-## Files touched
-
-- `src/pages/AdminQuotes.tsx` only.
-
-## Quick question before I build
-
-Do you want me to also add an **"Outreach" button on each anonymous row** that lets you mark it as "Followed up by phone — Steve" with a free-text contact name, so next time the row carries a label? Or keep the anonymous rows truly anonymous and rely on ref # only?
+- All text in the overlay uses `font-display` (or Inter for eyebrows) — no `font-outfit` references remain in this file.
+- No bright yellow gold (`#D4AF37`, `#FFD700`, `--promo-gold-1`) used on text, glow, or hairline. Confetti color palette can stay as the celebratory burst.
+- No emerald green pill; savings badge reads as a refined hairline-framed chip.
+- Eyebrows share one consistent recipe; Sparkles icons removed from eyebrow rows.
+- Visual feel matches `RepowerHero` and the Motor Selection H1/subhead pairing — restrained, editorial, high-grade — while remaining a dark cinematic moment.
