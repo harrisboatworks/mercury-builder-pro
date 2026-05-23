@@ -264,7 +264,7 @@ export default function AdminGrowthAgent() {
 
   const run = data?.run ?? fallbackRun;
   const findings = data?.findings ?? fallbackFindings;
-  const openFindings = findings.filter((finding) => finding.status !== "fixed");
+  const openFindings = findings.filter((finding) => isActiveStatus(finding.status));
   const filteredFindings = activeTab === "all" ? openFindings : openFindings.filter((finding) => finding.category === activeTab);
 
   const severityStats = useMemo(() => {
