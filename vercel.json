@@ -128,6 +128,11 @@
       "statusCode": 301
     },
     {
+      "source": "/mercurypricelist",
+      "destination": "/pricing-reference",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/mercury-outboard-wont-start-troubleshooting-ontario",
       "destination": "/blog/mercury-outboard-wont-start-troubleshooting",
       "statusCode": 301
