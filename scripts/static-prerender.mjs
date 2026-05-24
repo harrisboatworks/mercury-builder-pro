@@ -1052,13 +1052,7 @@ function contactPageSchema() {
           { "@type": "State", "name": "Ontario" },
           { "@type": "Country", "name": "Canada" }
         ],
-        "sameAs": [
-          "https://www.harrisboatworks.ca/",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks",
-          "https://www.youtube.com/@HarrisBoatWorks",
-          "https://g.page/harrisboatworks"
-        ],
+        "sameAs": BUSINESS_SAME_AS,
         "aggregateRating": LIVE_AGGREGATE_RATING,
         "openingHoursSpecification": LIVE_OPENING_HOURS
       }
