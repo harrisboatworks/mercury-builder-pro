@@ -1684,7 +1684,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     dateModified: '2026-05-23',
     category: 'Fishing',
     readTime: '10 min read',
-    keywords: ['mercury prokicker', 'kicker motor rice lake', 'trolling motor ontario', 'prokicker installation', 'mercury 9.9 prokicker', 'kicker motor fishing boat', 'rice lake walleye trolling'],
+    keywords: ['Mercury 9.9 ProKicker Rice Lake', 'Mercury ProKicker Ontario', '9.9 kicker motor walleye trolling', 'Mercury 9.9 ProKicker vs standard 9.9', 'ProKicker EFI guide', 'kicker motor Rice Lake'],
     content: `## Quick Answer
 
 The Mercury 9.9 ProKicker is the right kicker motor for Rice Lake walleye trolling. It's not the same motor as a standard 9.9 portable, it has a high-thrust gearcase, a larger prop, longer shaft options, and either tiller or remote-control variants. It idles down to true walleye trolling speed (1–2 mph) without fighting the throttle. If you're rigging a fishing boat for Rice Lake or the Kawarthas, this is the one. Build your kicker package at [mercuryrepower.ca](https://www.mercuryrepower.ca).
