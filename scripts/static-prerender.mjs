@@ -25,6 +25,30 @@ import { marked } from 'marked';
 // Configure marked: GFM tables/strike, no auto line-break paragraphs.
 marked.setOptions({ gfm: true, breaks: false });
 
+// Load Google Places cache (rating, review count, opening hours) so the
+// LocalBusiness JSON-LD always matches what Google itself shows. Refreshed
+// by scripts/fetch-google-places-data.mjs in the build pipeline.
+let GOOGLE_PLACES_CACHE = {
+  ratingValue: '4.6',
+  reviewCount: '301',
+  openingHoursSpecification: [],
+};
+try {
+  const cachePath = new URL('../src/data/google-places-cache.json', import.meta.url);
+  GOOGLE_PLACES_CACHE = { ...GOOGLE_PLACES_CACHE, ...JSON.parse(readFileSync(cachePath, 'utf8')) };
+} catch (err) {
+  console.warn('[static-prerender] google-places-cache.json missing, using fallback rating/hours.');
+}
+const LIVE_AGGREGATE_RATING = {
+  '@type': 'AggregateRating',
+  ratingValue: GOOGLE_PLACES_CACHE.ratingValue,
+  reviewCount: GOOGLE_PLACES_CACHE.reviewCount,
+  bestRating: '5',
+};
+const LIVE_OPENING_HOURS = Array.isArray(GOOGLE_PLACES_CACHE.openingHoursSpecification)
+  ? GOOGLE_PLACES_CACHE.openingHoursSpecification
+  : [];
+
 // HTML-escape a string for safe insertion into prerendered markup.
 function escHtml(v) {
   return String(v ?? '')
