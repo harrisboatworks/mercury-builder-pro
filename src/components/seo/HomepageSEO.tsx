@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 
 export function HomepageSEO() {
   const structuredData = {
@@ -42,13 +43,7 @@ export function HomepageSEO() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "sameAs": [
-          "https://www.harrisboatworks.ca/",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks",
-          "https://www.youtube.com/@HarrisBoatWorks",
-          "https://g.page/harrisboatworks"
-        ]
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": ["LocalBusiness", "Store", "AutoRepair"],
@@ -91,7 +86,8 @@ export function HomepageSEO() {
           { "@type": "Brand", "name": "Mercury Marine" },
           { "@type": "Brand", "name": "Legend Boats" }
         ],
-        "award": "Mercury Marine Platinum Dealer"
+        "award": "Mercury Marine Platinum Dealer",
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "Service",

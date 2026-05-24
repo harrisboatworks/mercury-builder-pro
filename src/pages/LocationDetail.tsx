@@ -3,7 +3,7 @@ import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
-import { COMPANY_INFO } from '@/lib/companyInfo';
+import { COMPANY_INFO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { getLocationBySlug } from '@/data/locations';
 import { Button } from '@/components/ui/button';
 import {
@@ -158,6 +158,7 @@ export default function LocationDetail() {
           description:
             'Sales catchment only, customers from this area travel to Gores Landing for pickup. No mobile service, no delivery.',
         },
+        sameAs: BUSINESS_SAME_AS,
       },
       {
         '@type': 'Place',

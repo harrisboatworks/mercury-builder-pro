@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 
 const TRUST_FAQ = [
   {
@@ -107,13 +108,7 @@ export function MercuryDealerCanadaSEO() {
           "Boat winterization",
           "Boat storage"
         ],
-        "sameAs": [
-          "https://www.harrisboatworks.ca/",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks",
-          "https://www.youtube.com/@HarrisBoatWorks",
-          "https://g.page/harrisboatworks"
-        ]
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "FAQPage",

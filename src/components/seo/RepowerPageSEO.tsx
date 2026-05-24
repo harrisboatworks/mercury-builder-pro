@@ -1,4 +1,5 @@
 import { Helmet } from '@/lib/helmet';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { getAllFAQItems } from '@/data/faqData';
 
 // Select the key repower questions for this page's schema
@@ -41,7 +42,8 @@ export function RepowerPageSEO() {
           "longitude": -78.2564
         },
         "foundingDate": "1947",
-        "priceRange": "$$"
+        "priceRange": "$$",
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "Service",

@@ -23,6 +23,21 @@ import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
 
+// Verified external profiles for the Harris Boat Works LocalBusiness entity.
+// Mirrors BUSINESS_SAME_AS in src/lib/companyInfo.ts. HTTPS only, no duplicates.
+const BUSINESS_SAME_AS = [
+  "https://www.harrisboatworks.ca/",
+  "https://www.facebook.com/harrisboatworks",
+  "https://www.instagram.com/harrisboatworks",
+  "https://www.youtube.com/@HarrisBoatWorks",
+  "https://g.page/harrisboatworks",
+  "https://www.wikidata.org/wiki/Q139910292",
+  "https://x.com/HarrisBoatWorks",
+  "https://www.yelp.ca/biz/harris-boat-works-gores-landing",
+  "https://www.tripadvisor.ca/Attraction_Review-g670874-d15017131-Reviews-Harris_Boat_Works-Gores_Landing_Ontario.html",
+  "https://directory.northumberlandtourism.com/Home/View/harris-boat-works-ltd"
+];
+
 // Configure marked: GFM tables/strike, no auto line-break paragraphs.
 marked.setOptions({ gfm: true, breaks: false });
 
@@ -828,13 +843,7 @@ function homepageSchema() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "sameAs": [
-          "https://www.harrisboatworks.ca/",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks",
-          "https://www.youtube.com/@HarrisBoatWorks",
-          "https://g.page/harrisboatworks"
-        ]
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": ["LocalBusiness", "Store", "AutoRepair"],
@@ -879,7 +888,8 @@ function homepageSchema() {
         ],
         "award": "Mercury Marine Platinum Dealer",
         "aggregateRating": LIVE_AGGREGATE_RATING,
-        "openingHoursSpecification": LIVE_OPENING_HOURS
+        "openingHoursSpecification": LIVE_OPENING_HOURS,
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "Service",
@@ -977,13 +987,7 @@ function aboutPageSchema() {
           "Boat storage",
           "Legend Boats"
         ],
-        "sameAs": [
-          "https://www.harrisboatworks.ca/",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks",
-          "https://www.youtube.com/@HarrisBoatWorks",
-          "https://g.page/harrisboatworks"
-        ]
+        "sameAs": BUSINESS_SAME_AS
       }
     ]
   };
@@ -1049,13 +1053,7 @@ function contactPageSchema() {
           { "@type": "State", "name": "Ontario" },
           { "@type": "Country", "name": "Canada" }
         ],
-        "sameAs": [
-          "https://www.harrisboatworks.ca/",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks",
-          "https://www.youtube.com/@HarrisBoatWorks",
-          "https://g.page/harrisboatworks"
-        ],
+        "sameAs": BUSINESS_SAME_AS,
         "aggregateRating": LIVE_AGGREGATE_RATING,
         "openingHoursSpecification": LIVE_OPENING_HOURS
       }
@@ -1096,7 +1094,8 @@ function repowerSchema() {
         },
         "geo": { "@type": "GeoCoordinates", "latitude": 44.1147, "longitude": -78.2564 },
         "foundingDate": "1947",
-        "priceRange": "$$"
+        "priceRange": "$$",
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "Service",
@@ -1617,13 +1616,7 @@ function mercuryDealerCanadaSchema() {
         },
         "award": ["Mercury Marine Platinum Dealer", "Authorized Legend Boats Dealer"],
         "knowsAbout": ["Mercury outboard motors", "MerCruiser sterndrives", "Marine repower", "Boat winterization", "Boat storage"],
-        "sameAs": [
-          "https://www.harrisboatworks.ca/",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks",
-          "https://www.youtube.com/@HarrisBoatWorks",
-          "https://g.page/harrisboatworks"
-        ]
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "FAQPage",
@@ -1955,7 +1948,8 @@ function mercuryOutboardsOntarioSchema() {
           "Marine repower"
         ],
         // Sourced from src/data/mercuryOutboardsOffers.js — shared with MercuryOutboardsOntarioSEO.tsx
-        "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS
+        "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS,
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "FAQPage",
@@ -2209,7 +2203,8 @@ function blogArticleSchema(article) {
       "areaServed": [
         { "@type": "City", "name": `${dealerCity}, Ontario` },
         { "@type": "Place", "name": "Greater Toronto Area" }
-      ]
+      ],
+      "sameAs": BUSINESS_SAME_AS
     });
   }
 
@@ -2768,6 +2763,7 @@ function locationDetailSchema(loc) {
           name: loc.region,
           description: "Sales catchment only, customers from this area travel to Gores Landing for pickup. No mobile service, no delivery.",
         },
+        sameAs: BUSINESS_SAME_AS,
       },
       {
         "@type": "Place",

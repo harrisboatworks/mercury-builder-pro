@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import googlePlaces from '@/data/google-places-cache.json';
 
 const LIVE_AGGREGATE_RATING = {
@@ -72,13 +73,7 @@ export function ContactPageSEO() {
           { "@type": "State", "name": "Ontario" },
           { "@type": "Country", "name": "Canada" }
         ],
-        "sameAs": [
-          "https://www.harrisboatworks.ca/",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks",
-          "https://www.youtube.com/@HarrisBoatWorks",
-          "https://g.page/harrisboatworks"
-        ],
+        "sameAs": BUSINESS_SAME_AS,
         "aggregateRating": LIVE_AGGREGATE_RATING,
         "openingHoursSpecification": LIVE_OPENING_HOURS
       }

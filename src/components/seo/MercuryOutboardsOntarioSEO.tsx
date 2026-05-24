@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '@/data/mercuryOutboardsOffers.js';
 
 export const ONTARIO_HUB_FAQ = [
@@ -112,7 +113,8 @@ export function MercuryOutboardsOntarioSEO() {
           "Mercury ProKicker trolling motors",
           "Marine repower"
         ],
-        "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS
+        "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS,
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "FAQPage",
