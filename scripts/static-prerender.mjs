@@ -1915,7 +1915,7 @@ function proXS250NoscriptHtml() {
   );
 }
 
-
+function mercuryProXSSchema() {
   return {
     "@context": "https://schema.org",
     "@graph": [
