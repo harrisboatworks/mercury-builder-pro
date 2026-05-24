@@ -4220,12 +4220,60 @@ function detectOgLocale(path) {
   return 'en_CA';
 }
 
+// Phase-1 analytics: page-id / page-category stable mapping.
+// Mirrors src/lib/analytics.ts so prerendered HTML and runtime Helmet agree.
+const PAGE_ID_MAP = {
+  '/': 'HOME',
+  '/index': 'HOME',
+  '/repower': 'M1',
+  '/mercury-outboards-ontario': 'M2',
+  '/mercury-pro-xs': 'M3',
+  '/mercury/pro-xs-250': 'M4',
+  '/mercury-pontoon-outboards': 'M5',
+  '/faq': 'F1',
+  '/mercury-repower-faq': 'F1',
+};
+function computePageCategory(pathname) {
+  if (pathname === '/' || pathname === '/index') return 'home';
+  if (pathname.startsWith('/quote')) return 'quote';
+  if (pathname.startsWith('/locations')) return 'location';
+  if (pathname.startsWith('/case-studies')) return 'case_study';
+  if (pathname.startsWith('/blog')) return 'blog';
+  if (pathname === '/faq' || pathname.endsWith('-faq')) return 'faq';
+  if (pathname.startsWith('/repower') || pathname.startsWith('/mercury')) return 'money';
+  return 'other';
+}
+function computePageId(pathname) {
+  if (PAGE_ID_MAP[pathname]) return PAGE_ID_MAP[pathname];
+  if (pathname.startsWith('/quote')) return 'QUOTE';
+  const seg = pathname.replace(/^\//, '').replace(/\/$/, '');
+  if (!seg) return 'HOME';
+  return seg.replace(/\//g, '_').replace(/[^a-zA-Z0-9_-]/g, '').toUpperCase() || 'OTHER';
+}
+
 function stamp(route) {
   let html = shell;
   html = html.replace(
     /<html lang="en">/i,
     `<html lang="${detectLang(route.path)}">`
   );
+
+  // Per-route analytics page tags (Helmet adopts these on hydration via data-rh="true").
+  const pageId = route.pageId || computePageId(route.path);
+  const pageCategory = route.pageCategory || computePageCategory(route.path);
+  const pageIdTag = `<meta data-rh="true" name="page-id" content="${escapeHtml(pageId)}" />`;
+  const pageCatTag = `<meta data-rh="true" name="page-category" content="${escapeHtml(pageCategory)}" />`;
+  if (/<meta\s+name=["']page-id["'][^>]*>/i.test(html)) {
+    html = html.replace(/<meta\s+name=["']page-id["'][^>]*>/i, pageIdTag);
+  } else {
+    html = html.replace(/<\/head>/i, `${pageIdTag}\n  </head>`);
+  }
+  if (/<meta\s+name=["']page-category["'][^>]*>/i.test(html)) {
+    html = html.replace(/<meta\s+name=["']page-category["'][^>]*>/i, pageCatTag);
+  } else {
+    html = html.replace(/<\/head>/i, `${pageCatTag}\n  </head>`);
+  }
+
 
   // NOTE: All Helmet-managed tags (title, description, canonical, JSON-LD) are
   // stamped with data-rh="true" so react-helmet-async adopts them on hydration
