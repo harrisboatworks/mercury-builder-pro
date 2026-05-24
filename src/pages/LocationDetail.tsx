@@ -3,7 +3,7 @@ import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
-import { COMPANY_INFO } from '@/lib/companyInfo';
+import { COMPANY_INFO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { getLocationBySlug } from '@/data/locations';
 import { Button } from '@/components/ui/button';
 import {
