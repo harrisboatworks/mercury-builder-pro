@@ -244,7 +244,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       )}
       
       {/* Open Graph */}
-      <meta property="og:title" content={article.seoTitle ?? article.title} />
+      <meta property="og:title" content={renderedTitle} />
       <meta property="og:description" content={cleanDescription} />
       <meta property="og:image" content={`${SITE_URL}${article.image}`} />
       <meta property="og:url" content={url} />
