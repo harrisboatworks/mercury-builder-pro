@@ -256,7 +256,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={article.seoTitle ?? article.title} />
+      <meta name="twitter:title" content={renderedTitle} />
       <meta name="twitter:description" content={cleanDescription} />
       <meta name="twitter:image" content={`${SITE_URL}${article.image}`} />
       
