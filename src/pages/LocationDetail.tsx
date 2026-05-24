@@ -107,6 +107,9 @@ export default function LocationDetail() {
   const url = `${SITE_URL}/locations/${location.slug}`;
   const lf = location.longForm;
   const h1 = lf?.h1 ?? `Mercury Outboards for ${location.region} Buyers`;
+  const pageTitle = lf ? `${lf.h1} | Harris Boat Works` : location.title;
+  const metaDesc = lf?.metaDescription ?? location.metaDescription;
+  const canonical = lf?.canonical ?? url;
   const contextBullets = (lf?.keyFacts ?? location.localContext).slice(0, 6);
   const faqs = (lf?.faqs ?? location.faqs).slice(0, lf ? 8 : 4);
   const useCases = USE_CASES_BY_SLUG[location.slug] ?? DEFAULT_USE_CASES;
@@ -119,8 +122,8 @@ export default function LocationDetail() {
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: location.title,
-        description: location.metaDescription,
+        name: pageTitle,
+        description: metaDesc,
         inLanguage: 'en-CA',
       },
       {
@@ -128,7 +131,7 @@ export default function LocationDetail() {
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Pickup Areas', item: `${SITE_URL}/locations` },
-          { '@type': 'ListItem', position: 3, name: location.title, item: url },
+          { '@type': 'ListItem', position: 3, name: pageTitle, item: url },
         ],
       },
       {
@@ -171,20 +174,49 @@ export default function LocationDetail() {
           acceptedAnswer: { '@type': 'Answer', text: faq.answer },
         })),
       },
+      ...(lf
+        ? [{
+            '@type': 'Article',
+            '@id': `${url}#article`,
+            headline: lf.h1,
+            description: metaDesc,
+            mainEntityOfPage: url,
+            datePublished: lf.lastReviewed,
+            dateModified: lf.lastReviewed,
+            image: lf.heroImage ? `${SITE_URL}${lf.heroImage}` : undefined,
+            author: { '@type': 'Organization', name: COMPANY_INFO.name },
+            publisher: { '@type': 'Organization', name: COMPANY_INFO.name },
+          }]
+        : []),
     ],
   };
 
   return (
     <div className="min-h-screen bg-repower-paper">
       <Helmet>
-        <title>{location.title}</title>
-        <meta name="description" content={location.metaDescription} />
-        <link rel="canonical" href={url} />
+        <title>{pageTitle}</title>
+        <meta name="description" content={metaDesc} />
+        <link rel="canonical" href={canonical} />
         <script type="application/ld+json">{JSON.stringify(jsonLdGraph)}</script>
       </Helmet>
       <RepowerHeader />
       <div className="pt-[64px] lg:pt-[72px]" />
       <main>
+        {/* HERO IMAGE (long-form only) */}
+        {lf?.heroImage && (
+          <section className="bg-repower-navy-900">
+            <div className="container mx-auto px-0 md:px-4 max-w-5xl">
+              <img
+                src={lf.heroImage}
+                alt={lf.heroAlt ?? lf.h1}
+                className="w-full h-auto aspect-[16/9] object-cover md:rounded-b-xl"
+                loading="eager"
+                fetchPriority="high"
+              />
+            </div>
+          </section>
+        )}
+
         {/* HERO */}
         <section className="bg-repower-navy-900 text-repower-cream">
           <div className="container mx-auto px-4 py-16 md:py-24 max-w-3xl">
@@ -194,7 +226,22 @@ export default function LocationDetail() {
             <h1 className="mt-6 text-4xl md:text-5xl font-semibold tracking-tight">
               {h1}
             </h1>
+            {lf?.lastReviewed && (
+              <p className="mt-3 text-sm italic text-repower-cream/60">
+                Last reviewed: {lf.lastReviewed}
+              </p>
+            )}
             <div className="mt-5 h-px w-16 bg-repower-gold" aria-hidden="true" />
+
+            {lf?.quickAnswer && (
+              <div className="mt-6 rounded-lg border-l-4 border-repower-gold bg-repower-cream/5 px-5 py-4">
+                <p className="text-sm font-semibold text-repower-gold uppercase tracking-wider mb-2">
+                  Quick answer
+                </p>
+                <p className="text-repower-cream/90 leading-relaxed">{lf.quickAnswer}</p>
+              </div>
+            )}
+
             <p className="mt-6 text-lg text-repower-cream/80 leading-relaxed">
               {location.intro}
             </p>
@@ -264,6 +311,42 @@ export default function LocationDetail() {
             </div>
           </div>
         </section>
+
+        {/* LONG-FORM BODY SECTIONS */}
+        {lf?.sections && lf.sections.length > 0 && (
+          <section className="container mx-auto px-4 py-16 max-w-3xl">
+            <div className="prose prose-lg max-w-none">
+              {lf.sections.map((sec) => (
+                <div key={sec.heading} className="mb-10">
+                  <h2 className="text-2xl font-semibold text-foreground mb-4">{sec.heading}</h2>
+                  {sec.paragraphs.map((p, idx) =>
+                    p.startsWith('- ') ? (
+                      <ul key={idx} className="list-disc pl-6 space-y-1 text-foreground/85">
+                        {p.split('\n').map((line, j) => (
+                          <li key={j}>{line.replace(/^-\s*/, '')}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p key={idx} className="text-foreground/85 leading-relaxed mb-4">{p}</p>
+                    )
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* WHAT WE SEE AT HBW — From the Shop card */}
+        {lf?.whatWeSeeAtHBW && (
+          <section className="container mx-auto px-4 pb-4 max-w-3xl">
+            <div className="rounded-xl border-l-4 border-repower-gold bg-repower-cream/40 p-6 md:p-8">
+              <h2 className="text-xl font-semibold text-foreground mb-3">
+                What we see at HBW
+              </h2>
+              <p className="text-foreground/85 leading-relaxed">{lf.whatWeSeeAtHBW}</p>
+            </div>
+          </section>
+        )}
 
         {/* PICKUP BOUNDARY, single polished box */}
         <section className="container mx-auto px-4 py-16 max-w-3xl">

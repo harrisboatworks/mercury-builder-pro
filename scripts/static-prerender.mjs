@@ -2804,20 +2804,33 @@ const caseStudyDetailRoutes = caseStudies.map((s) => ({
     (s.isIllustrative ? `<p><em>Note: imagery for this case study is illustrative pending real photography.</em></p>` : ''),
 }));
 
-const locationDetailRoutes = locations.map((loc) => ({
-  path: `/locations/${loc.slug}`,
-  title: `${loc.title} | Harris Boat Works`,
-  description: loc.intro.slice(0, 300),
-  h1: loc.title,
-  intro: loc.intro,
-  schemas: [locationDetailSchema(loc)],
-  extraNoscript: () =>
-    `<section><h2>About this pickup area</h2><p>${escapeHtml(loc.intro)} Travel: ${escapeHtml(loc.driveTime)}. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, Ontario. Sales catchment only, no mobile service, no delivery.</p></section>` +
-    `<section><h2>Popular boat uses in ${escapeHtml(loc.region)}</h2><ul>${loc.popularBoats.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul></section>` +
-    `<section><h2>Recommended next steps</h2><ul>${loc.recommendedLinks.map((l) => `<li><a href="${escapeHtml(l.href)}">${escapeHtml(l.label)}</a></li>`).join('')}</ul></section>` +
-    `<section><h2>FAQ</h2><dl>${loc.faqs.map((f) => `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`).join('')}</dl></section>` +
-    `<p><a href="/locations">← All Mercury pickup areas</a></p>`,
-}));
+const locationDetailRoutes = locations.map((loc) => {
+  const lf = loc.longForm;
+  const cleanTitle = lf ? `${lf.h1} | Harris Boat Works` : `${loc.title} | Harris Boat Works`;
+  const description = lf?.metaDescription ?? loc.metaDescription ?? loc.intro.slice(0, 300);
+  const h1 = lf?.h1 ?? loc.title;
+  return {
+    path: `/locations/${loc.slug}`,
+    title: cleanTitle,
+    description,
+    h1,
+    intro: loc.intro,
+    schemas: [locationDetailSchema(loc)],
+    extraNoscript: () =>
+      (lf?.heroImage ? `<p><img src="${escapeHtml(lf.heroImage)}" alt="${escapeHtml(lf.heroAlt ?? h1)}" /></p>` : '') +
+      (lf?.lastReviewed ? `<p><em>Last reviewed: ${escapeHtml(lf.lastReviewed)}</em></p>` : '') +
+      (lf?.quickAnswer ? `<blockquote><strong>Quick answer:</strong> ${escapeHtml(lf.quickAnswer)}</blockquote>` : '') +
+      `<section><h2>About this pickup area</h2><p>${escapeHtml(loc.intro)} Travel: ${escapeHtml(loc.driveTime)}. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, Ontario. Sales catchment only, no mobile service, no delivery.</p></section>` +
+      (lf?.keyFacts ? `<section><h2>Key facts</h2><ul>${lf.keyFacts.map((k) => `<li>${escapeHtml(k)}</li>`).join('')}</ul></section>` : '') +
+      (lf?.sections ? lf.sections.map((sec) => `<section><h2>${escapeHtml(sec.heading)}</h2>${sec.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join('')}</section>`).join('') : '') +
+      (lf?.whatWeSeeAtHBW ? `<section><h2>What we see at HBW</h2><p>${escapeHtml(lf.whatWeSeeAtHBW)}</p></section>` : '') +
+      `<section><h2>Popular boat uses in ${escapeHtml(loc.region)}</h2><ul>${loc.popularBoats.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul></section>` +
+      `<section><h2>Recommended next steps</h2><ul>${loc.recommendedLinks.map((l) => `<li><a href="${escapeHtml(l.href)}">${escapeHtml(l.label)}</a></li>`).join('')}</ul></section>` +
+      `<section><h2>FAQ</h2><dl>${loc.faqs.map((f) => `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`).join('')}</dl></section>` +
+      (lf?.visit ? `<section><h2>Visit Harris Boat Works</h2><p>${escapeHtml(lf.visit)}</p></section>` : '') +
+      `<p><a href="/locations">← All Mercury pickup areas</a></p>`,
+  };
+});
 
 console.log(`[static-prerender] generated ${caseStudyDetailRoutes.length} /case-studies/{slug} routes`);
 console.log(`[static-prerender] generated ${locationDetailRoutes.length} /locations/{slug} routes`);

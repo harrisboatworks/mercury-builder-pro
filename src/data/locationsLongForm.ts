@@ -4,6 +4,7 @@
 // rewrite. No em dashes. En dashes only inside number ranges.
 
 import type { LocationPageData, LocationLink, LocationFAQ } from './locations';
+import { LOCATION_LONGFORM_EXTRAS } from './locationsLongFormExtras';
 
 export interface LocationSection {
   heading: string;
@@ -20,6 +21,14 @@ export interface LocationLongForm {
   related: LocationLink[];
   lat?: number;
   lng?: number;
+  /** Standards-upgrade fields (Bucket 2 Batch 1, May 2026). */
+  quickAnswer?: string;
+  lastReviewed?: string;
+  whatWeSeeAtHBW?: string;
+  heroImage?: string;
+  heroAlt?: string;
+  metaDescription?: string;
+  canonical?: string;
 }
 
 const PICKUP_POLICY =
@@ -48,6 +57,8 @@ interface SpecInput {
 
 function toLocation(s: SpecInput): LocationPageData {
   const visit = s.visitExtra ? `${VISIT}\n\n${s.visitExtra}` : VISIT;
+  const extras = LOCATION_LONGFORM_EXTRAS[s.slug];
+  const canonical = `https://www.mercuryrepower.ca/locations/${s.slug}`;
   return {
     slug: s.slug,
     title: s.title,
@@ -80,6 +91,13 @@ function toLocation(s: SpecInput): LocationPageData {
       related: s.related,
       lat: s.lat,
       lng: s.lng,
+      quickAnswer: extras?.quickAnswer,
+      lastReviewed: extras?.lastReviewed,
+      whatWeSeeAtHBW: extras?.whatWeSeeAtHBW,
+      heroImage: extras?.heroImage,
+      heroAlt: extras?.heroAlt,
+      metaDescription: s.metaDescription,
+      canonical,
     },
   };
 }
@@ -88,7 +106,7 @@ const SPECS: SpecInput[] = [
   // 1. Port Hope
   {
     slug: 'port-hope',
-    title: 'Mercury Repower near Port Hope, Ontario | Mercuryrepower.ca',
+    title: 'Mercury Repower near Port Hope, Ontario',
     metaDescription:
       'Mercury repower 30 min north of Port Hope in Gores Landing. Mercury Platinum Dealer. Quote, rig, Rice Lake water test, pickup at HBW.',
     region: 'Port Hope',
@@ -156,7 +174,7 @@ const SPECS: SpecInput[] = [
   // 2. Bewdley
   {
     slug: 'bewdley',
-    title: 'Mercury Repower for Bewdley Boaters, Ontario | Mercuryrepower.ca',
+    title: 'Mercury Repower for Bewdley Boaters, Ontario',
     metaDescription:
       'Mercury repower 15 min east of Bewdley along Rice Lake. Mercury Platinum Dealer, same-lake water test, pickup in Gores Landing.',
     region: 'Bewdley',
@@ -224,7 +242,7 @@ const SPECS: SpecInput[] = [
   // 3. Gores Landing
   {
     slug: 'gores-landing',
-    title: 'Mercury Repower in Gores Landing, Ontario | Mercuryrepower.ca',
+    title: 'Mercury Repower in Gores Landing, Ontario',
     metaDescription:
       'Mercury Platinum Dealer in Gores Landing on Rice Lake. The village marina, family-owned since 1947. Pickup at the shop after the lake test.',
     region: 'Gores Landing',
@@ -293,7 +311,7 @@ const SPECS: SpecInput[] = [
   // 4. Roseneath
   {
     slug: 'roseneath',
-    title: 'Mercury Repower for Roseneath Boaters, Ontario | Mercuryrepower.ca',
+    title: 'Mercury Repower for Roseneath Boaters, Ontario',
     metaDescription:
       'Mercury repower 15 min west of Roseneath along Rice Lake. Mercury Platinum Dealer, same-lake water test, pickup in Gores Landing.',
     region: 'Roseneath',
@@ -361,7 +379,7 @@ const SPECS: SpecInput[] = [
   // 5. Hastings
   {
     slug: 'hastings',
-    title: 'Mercury Repower for Hastings, Ontario Boaters | Mercuryrepower.ca',
+    title: 'Mercury Repower for Hastings, Ontario Boaters',
     metaDescription:
       'Mercury repower 25–30 min from Hastings around Rice Lake. Mercury Platinum Dealer. Trent-system boaters welcome. Pickup at Gores Landing.',
     region: 'Hastings',
@@ -429,7 +447,7 @@ const SPECS: SpecInput[] = [
   // 6. Lakefield
   {
     slug: 'lakefield',
-    title: 'Mercury Repower for Lakefield, Ontario Boaters | Mercuryrepower.ca',
+    title: 'Mercury Repower for Lakefield, Ontario Boaters',
     metaDescription:
       'Mercury repower 45 min south of Lakefield in Gores Landing. Mercury Platinum Dealer. Stony Lake boats welcome. Pickup after Rice Lake water test.',
     region: 'Lakefield',
@@ -497,7 +515,7 @@ const SPECS: SpecInput[] = [
   // 7. Bridgenorth
   {
     slug: 'bridgenorth',
-    title: 'Bridgenorth Mercury Repower | Mercuryrepower.ca',
+    title: 'Bridgenorth Mercury Repower',
     metaDescription:
       'Mercury Platinum Dealer, 40 min south of Bridgenorth. Chemong Lake pontoon repowers, water-tested on Rice Lake, pickup at Gores Landing.',
     region: 'Bridgenorth',
@@ -564,7 +582,7 @@ const SPECS: SpecInput[] = [
   // 8. Lindsay
   {
     slug: 'lindsay',
-    title: 'Lindsay Mercury Repower | Mercuryrepower.ca',
+    title: 'Lindsay Mercury Repower',
     metaDescription:
       'Mercury Platinum Dealer, ~60 min east of Lindsay. Sturgeon, Scugog, Cameron repowers welcome. Pickup at Gores Landing.',
     region: 'Lindsay',
@@ -631,7 +649,7 @@ const SPECS: SpecInput[] = [
   // 9. Bobcaygeon
   {
     slug: 'bobcaygeon',
-    title: 'Bobcaygeon Mercury Repower | Mercuryrepower.ca',
+    title: 'Bobcaygeon Mercury Repower',
     metaDescription:
       'Mercury Platinum Dealer, ~75 min south of Bobcaygeon. Pigeon, Sturgeon, Buckhorn repowers welcome. Pickup at Gores Landing.',
     region: 'Bobcaygeon',
@@ -698,7 +716,7 @@ const SPECS: SpecInput[] = [
   // 10. Buckhorn
   {
     slug: 'buckhorn',
-    title: 'Buckhorn Mercury Repower | Mercuryrepower.ca',
+    title: 'Buckhorn Mercury Repower',
     metaDescription:
       'Mercury Platinum Dealer, ~70 min south of Buckhorn. Northern Kawartha cottage repowers. Pickup at Gores Landing on Rice Lake.',
     region: 'Buckhorn',
@@ -765,7 +783,7 @@ const SPECS: SpecInput[] = [
   // 11. Northumberland County
   {
     slug: 'northumberland-county',
-    title: 'Northumberland County Mercury Repower | Mercuryrepower.ca',
+    title: 'Northumberland County Mercury Repower',
     metaDescription:
       'Mercury Platinum Dealer, based in Gores Landing on Rice Lake. All of Northumberland County within ~30 min. Pickup at our dock.',
     region: 'Northumberland County',
