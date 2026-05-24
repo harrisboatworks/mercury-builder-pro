@@ -18,6 +18,9 @@ export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
   const dealerCity = getDealerCityFromSlug(article.slug);
   const cleanDescription = getCleanDescription(article);
+  // Use seoTitle verbatim when set (sized to ≤60 chars incl. its own brand suffix).
+  // Only fall back to "{title} | Harris Boat Works Blog" when seoTitle is absent.
+  const renderedTitle = article.seoTitle || `${article.title} | Harris Boat Works Blog`;
 
   // Calculate word count from content
   const wordCount = article.content.trim().split(/\s+/).length;
