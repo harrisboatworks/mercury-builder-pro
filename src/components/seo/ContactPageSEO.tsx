@@ -1,5 +1,16 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import googlePlaces from '@/data/google-places-cache.json';
+
+const LIVE_AGGREGATE_RATING = {
+  "@type": "AggregateRating",
+  ratingValue: googlePlaces.ratingValue,
+  reviewCount: googlePlaces.reviewCount,
+  bestRating: "5",
+};
+const LIVE_OPENING_HOURS = Array.isArray(googlePlaces.openingHoursSpecification)
+  ? googlePlaces.openingHoursSpecification
+  : [];
 
 export function ContactPageSEO() {
   const structuredData = {
