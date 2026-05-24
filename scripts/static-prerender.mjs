@@ -2203,7 +2203,8 @@ function blogArticleSchema(article) {
       "areaServed": [
         { "@type": "City", "name": `${dealerCity}, Ontario` },
         { "@type": "Place", "name": "Greater Toronto Area" }
-      ]
+      ],
+      "sameAs": BUSINESS_SAME_AS
     });
   }
 
