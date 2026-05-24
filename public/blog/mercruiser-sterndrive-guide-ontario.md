@@ -216,7 +216,7 @@ If you have a great I/O hull and you love the boat, keep it. We'll keep it runni
 
 ## Service Your Mercruiser at HBW
 
-We've been a Mercury Platinum dealer in Ontario since 1965. That includes Mercruiser. Same factory training, same parts access, same diagnostics. The difference between us and an outboard-only shop is we know what to do when the answer isn't "remove the cowl and look."
+We've been a Mercury dealer in Ontario since 1965. That includes Mercruiser. Same factory training, same parts access, same diagnostics. The difference between us and an outboard-only shop is we know what to do when the answer isn't "remove the cowl and look."
 
 For engine repairs, we only service Mercury and Mercruiser.
 

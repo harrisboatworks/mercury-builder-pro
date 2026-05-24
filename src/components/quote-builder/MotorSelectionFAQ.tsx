@@ -20,7 +20,7 @@ const FAQS = [
   {
     question: 'Can I build a Mercury outboard quote online in Ontario?',
     answer:
-      'Yes. mercuryrepower.ca is the online Mercury outboard quote builder for Ontario, run by Harris Boat Works, Mercury Marine Platinum Dealer since 1965, family-owned in Gores Landing on Rice Lake since 1947. Build a complete itemized quote in CAD, motor, controls, propeller, install, financing, and trade-in credit, in about three minutes. The price you see is the price you pay. No phone call required.',
+      'Yes. mercuryrepower.ca is the online Mercury outboard quote builder for Ontario, run by Harris Boat Works, Mercury Marine Platinum Dealer · Mercury dealer since 1965, family-owned in Gores Landing on Rice Lake since 1947. Build a complete itemized quote in CAD, motor, controls, propeller, install, financing, and trade-in credit, in about three minutes. The price you see is the price you pay. No phone call required.',
   },
   {
     question: 'Is the pricing in CAD?',

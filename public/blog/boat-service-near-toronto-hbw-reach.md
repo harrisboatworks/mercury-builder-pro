@@ -41,7 +41,7 @@ If you Google "boat service Toronto" or "Mercury repair GTA" you get a long list
 
 Here's the honest version: **most GTA boat service is provided by general-purpose marinas that work on multiple brands, including Mercury, but that don't have factory-level Mercury training or diagnostic equipment.** A handful of authorized Mercury dealers in the GTA do, they're a fraction of the listings.
 
-We're a Mercury Platinum dealer in Ontario since 1965, and we service Mercury motors for boaters from across the GTA, Hamilton, Burlington, Oakville, Mississauga, Toronto, Markham, every week. This is the version of "what's the right service for my motor" we'd walk a GTA boater through.
+We're a Mercury dealer in Ontario since 1965, and we service Mercury motors for boaters from across the GTA, Hamilton, Burlington, Oakville, Mississauga, Toronto, Markham, every week. This is the version of "what's the right service for my motor" we'd walk a GTA boater through.
 
 ---
 

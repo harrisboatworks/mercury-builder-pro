@@ -155,7 +155,7 @@ For twin-engine setups, brand conversions, or commercial applications, call 905-
 **See the number before you call.** 
 Build your configured Mercury quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 
 Questions after you see it? Call 905-342-2153. 
-Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
+Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---

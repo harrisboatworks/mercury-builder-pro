@@ -167,7 +167,7 @@ The Captain's Table at the Gores Landing wharf is a 2-minute walk. Other options
 Usually mid-to-late December, though increasingly unpredictable. Ice fishing is popular when the lake freezes safely. Always check ice conditions independently, don't rely on tradition.
 
 **Where can I get a Mercury motor serviced near Rice Lake?**
-Harris Boat Works in Gores Landing. Mercury Marine Platinum dealer since 1965. For engine repairs, we only service Mercury and Mercruiser.
+Harris Boat Works in Gores Landing. Mercury Marine Platinum Dealer · Mercury dealer since 1965. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 

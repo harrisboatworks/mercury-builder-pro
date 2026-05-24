@@ -73,7 +73,7 @@ export default function HowToRepower() {
             How to Repower a Boat
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            The seven-step Mercury repower process at Harris Boat Works, from online quote to lake-tested pickup at Gores Landing on Rice Lake. Family-owned since 1947, Mercury Platinum Dealer since 1965.
+            The seven-step Mercury repower process at Harris Boat Works, from online quote to lake-tested pickup at Gores Landing on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
           </p>
           <div className="mt-8">
             <Button asChild size="lg">

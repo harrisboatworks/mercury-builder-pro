@@ -254,7 +254,7 @@ function motorMarkdown(m) {
     `# ${display}`,
     '',
     `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}.`,
-    'Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.',
+    'Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.',
     '',
     '## Quick facts',
     '',

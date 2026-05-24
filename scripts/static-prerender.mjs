@@ -1417,7 +1417,7 @@ function mercuryRepowerFaqSchema() {
         "@id": `${SITE_URL}/mercury-repower-faq#webpage`,
         "url": `${SITE_URL}/mercury-repower-faq`,
         "name": "Mercury Outboard Repower FAQ: Every Question Answered | Harris Boat Works",
-        "description": "Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Platinum Dealer since 1965.",
+        "description": "Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Platinum Dealer · Mercury dealer since 1965.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -2482,7 +2482,7 @@ function motorPageSchema(m, slug) {
     "@type": "Product",
     "@id": `${url}#product`,
     "name": display,
-    "description": `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. Sold and serviced by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.`,
+    "description": `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. Sold and serviced by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.`,
     "brand": { "@type": "Brand", "name": "Mercury Marine" },
     "manufacturer": { "@type": "Organization", "name": "Mercury Marine" },
     "category": "Outboard Motor",
@@ -2562,7 +2562,7 @@ const motorPageRoutes = motorRecords
       : 'Contact for pricing';
 
     const title = `${display}: Mercury Outboard${modelNo ? ` ${modelNo}` : ''} | Harris Boat Works`;
-    const description = `${display}: Mercury ${family} ${m.horsepower} HP${shaft ? ` ${shaft} shaft` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD · ${inStock ? 'In stock' : 'Special order'} · 7-yr warranty available · Pickup at Gores Landing, ON. Mercury Marine Platinum Dealer since 1965.`;
+    const description = `${display}: Mercury ${family} ${m.horsepower} HP${shaft ? ` ${shaft} shaft` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD · ${inStock ? 'In stock' : 'Special order'} · 7-yr warranty available · Pickup at Gores Landing, ON. Mercury Marine Platinum Dealer · Mercury dealer since 1965.`;
 
     return {
       path: `/motors/${slug}`,
@@ -2574,7 +2574,7 @@ const motorPageRoutes = motorRecords
       ...(image ? { ogImage: image } : {}),
       ogType: 'product',
       h1: display,
-      intro: `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965, family-owned since 1947. Pickup only at our Gores Landing location.`,
+      intro: `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965, family-owned since 1947. Pickup only at our Gores Landing location.`,
       schemas: [motorPageSchema(m, slug)],
       extraNoscript: () =>
         '<table><caption>Specifications</caption><tbody>' +
@@ -3374,9 +3374,9 @@ const routes = [
   {
     path: '/mercury-repower-faq',
     title: 'Mercury Outboard Repower FAQ: Every Question Answered | Harris Boat Works',
-    description: 'Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Platinum Dealer since 1965 on Rice Lake, Ontario.',
+    description: 'Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Platinum Dealer · Mercury dealer since 1965 on Rice Lake, Ontario.',
     h1: 'Mercury Outboard Repower FAQ',
-    intro: 'Every question we get about repowering a boat with a new Mercury outboard, answered by Ontario\'s Mercury Marine Platinum Dealer since 1965. Family-owned on Rice Lake since 1947.',
+    intro: 'Every question we get about repowering a boat with a new Mercury outboard, answered by Ontario\'s Mercury Marine Platinum Dealer · Mercury dealer since 1965. Family-owned on Rice Lake since 1947.',
     schemas: [mercuryRepowerFaqSchema()],
     extraNoscript: () =>
       '<dl>' +
@@ -3388,9 +3388,9 @@ const routes = [
   {
     path: '/how-to-repower-a-boat',
     title: 'How to Repower a Boat, 7-Step Mercury Repower Process | Harris Boat Works',
-    description: 'Step-by-step guide to repowering a boat with a new Mercury outboard: quote, sizing, deposit, scheduling, install, lake-test, and pickup. Mercury Platinum Dealer since 1965.',
+    description: 'Step-by-step guide to repowering a boat with a new Mercury outboard: quote, sizing, deposit, scheduling, install, lake-test, and pickup. Mercury dealer since 1965.',
     h1: 'How to Repower a Boat',
-    intro: 'The seven-step Mercury repower process at Harris Boat Works, from online quote to lake-tested pickup at Gores Landing on Rice Lake. Family-owned since 1947, Mercury Platinum Dealer since 1965.',
+    intro: 'The seven-step Mercury repower process at Harris Boat Works, from online quote to lake-tested pickup at Gores Landing on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.',
     schemas: [howToRepowerSchema()],
     extraNoscript: () =>
       '<ol>' +
@@ -3535,7 +3535,7 @@ const routes = [
   {
     path: '/trade-in-value',
     title: 'Trade-In Value Estimator: Mercury & Other Outboards | Harris Boat Works',
-    description: 'Estimate your outboard trade-in value in CAD. Anchored to our actual selling prices, not blue-book guesses. Mercury, Yamaha, Honda, Suzuki, Tohatsu, Evinrude, Johnson accepted. Mercury Platinum Dealer since 1965.',
+    description: 'Estimate your outboard trade-in value in CAD. Anchored to our actual selling prices, not blue-book guesses. Mercury, Yamaha, Honda, Suzuki, Tohatsu, Evinrude, Johnson accepted. Mercury dealer since 1965.',
     h1: 'Trade-In Value Estimator',
     intro: 'Get an instant CAD trade-in estimate for your outboard motor. Our valuation engine is anchored to Harris Boat Works\' real selling prices, not stale blue-book numbers. Trade credit applies directly to a new Mercury repower quote.',
     schemas: [{
@@ -3619,7 +3619,7 @@ const routes = [
   {
     path: '/compare',
     title: 'Compare Mercury Outboards Side-by-Side: HP, Weight & CAD Price | Harris Boat Works',
-    description: 'Compare Mercury outboard motors side-by-side: horsepower, dry weight, shaft length, family, real CAD pricing, and availability. Mercury Platinum Dealer since 1965 on Rice Lake, Ontario.',
+    description: 'Compare Mercury outboard motors side-by-side: horsepower, dry weight, shaft length, family, real CAD pricing, and availability. Mercury dealer since 1965 on Rice Lake, Ontario.',
     h1: 'Compare Mercury Outboards',
     intro: 'Compare any two or three Mercury outboards side-by-side, horsepower, weight, shaft length, family, CAD price, and availability. Pull from our live inventory and decide between the FourStroke, Pro XS, Command Thrust, SeaPro, or ProKicker that fits your boat.',
     schemas: [{
@@ -3691,7 +3691,7 @@ const routes = [
   {
     path: '/financing-application',
     title: 'Mercury Outboard Financing Application: Apply Online (CAD) | Harris Boat Works',
-    description: 'Apply online for Mercury outboard financing through DealerPlan. 7.99–8.99% APR, $5,000 minimum, terms to 144 months. Mercury Platinum Dealer since 1965 on Rice Lake.',
+    description: 'Apply online for Mercury outboard financing through DealerPlan. 7.99–8.99% APR, $5,000 minimum, terms to 144 months. Mercury dealer since 1965 on Rice Lake.',
     h1: 'Mercury Outboard Financing Application',
     intro: 'Apply for Mercury outboard financing online through DealerPlan. Approval typically within 1 business day. Tiered rates: 8.99% under $10,000 and 7.99% over $10,000. $5,000 minimum financed amount, terms up to 144 months. Submitted information is encrypted and stored securely.',
     schemas: [{
@@ -4205,7 +4205,7 @@ function motorMarkdown(m) {
     `# ${display}`,
     '',
     `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}.`,
-    `Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.`,
+    `Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.`,
     '',
     '## Quick facts',
     '',

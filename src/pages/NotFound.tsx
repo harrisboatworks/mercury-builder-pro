@@ -92,7 +92,7 @@ const NotFound = () => {
 
           <p className="font-sans text-sm text-repower-navy-900/55 max-w-[50ch] mx-auto">
             Harris Boat Works · Gores Landing, Rice Lake · (905) 342-2153<br />
-            Mercury Platinum dealer since 1965 · Family marina since 1947
+            Mercury dealer since 1965 · Family marina since 1947
           </p>
         </div>
       </main>

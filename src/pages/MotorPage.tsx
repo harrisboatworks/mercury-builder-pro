@@ -244,7 +244,7 @@ export default function MotorPage() {
     modelNo ? `, model ${modelNo}` : ''
   }). ${price ? `${formatCAD(price)} CAD` : 'Contact for pricing'} · ${
     inStock ? 'In stock' : 'Special order'
-  } · Pickup at Gores Landing, ON · Mercury Marine Platinum Dealer since 1965.`;
+  } · Pickup at Gores Landing, ON · Mercury Marine Platinum Dealer · Mercury dealer since 1965.`;
 
   return (
     <>
@@ -356,7 +356,7 @@ export default function MotorPage() {
             <h2>About the {display}</h2>
             <p>
               The {display} is a Mercury {family} outboard rated at {hp} HP, sold and serviced by Harris Boat Works on Rice
-              Lake, Ontario, Mercury Marine Platinum Dealer since 1965 and family-owned since 1947. All Mercury motors
+              Lake, Ontario, Mercury Marine Platinum Dealer · Mercury dealer since 1965 and family-owned since 1947. All Mercury motors
               are sold with full factory warranty, registered to you on pickup at our Gores Landing location. We do not
               ship outboards.
             </p>
