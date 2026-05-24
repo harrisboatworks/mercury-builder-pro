@@ -1818,6 +1818,103 @@ const ONTARIO_HUB_FAQ_PRERENDER = [
   { question: "Is Harris Boat Works near me?", answer: "If you're in Ontario, probably yes. Travel times: Peterborough 35 min, Cobourg 20 min, Port Hope 25 min, Lindsay 50 min, Bowmanville 45 min, Oshawa 55 min, Port Perry 50 min, downtown Toronto 90 min via 401. We also serve Northumberland County, Hastings County, the Kawarthas, and the GTA. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0." }
 ];
 
+// ============================================================
+// Pro XS 250 — high-intent SKU landing page at /mercury/pro-xs-250
+// ============================================================
+
+const PRO_XS_250_HERO_IMAGE_PRERENDER =
+  'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769028305971-mercury-250-hp-v-8-pro-xs-fs-port-front-3-4-detail-image-1701169513978.jpg';
+
+const PRO_XS_250_VARIANTS_PRERENDER = [
+  { name: '250 ELPT Pro XS', sku: '12500033A', shaft: '20 inch (Long)', controls: 'Mechanical remote', msrp: 39205, hbwPrice: 34502, availability: 'InStock', availabilityLabel: 'In stock', offerName: '250 ELPT Pro XS (20-inch Long shaft, mechanical remote)' },
+  { name: '250 EXLPT Pro XS', sku: '12500034A', shaft: '25 inch (XL)', controls: 'Mechanical remote', msrp: 40105, hbwPrice: 35294, availability: 'BackOrder', availabilityLabel: 'Available to order', offerName: '250 EXLPT Pro XS (25-inch XL shaft, mechanical remote)' },
+  { name: '250 ELPT Pro XS DTS', sku: '12500094A', shaft: '20 inch (Long)', controls: 'Digital Throttle & Shift', msrp: 41525, hbwPrice: 36542, availability: 'InStock', availabilityLabel: 'In stock', offerName: '250 ELPT Pro XS DTS (20-inch Long shaft, Digital Throttle & Shift)' },
+  { name: '250 EXLPT Pro XS DTS', sku: '12500096A', shaft: '25 inch (XL)', controls: 'Digital Throttle & Shift', msrp: 42465, hbwPrice: 37367, availability: 'BackOrder', availabilityLabel: 'Available to order', offerName: '250 EXLPT Pro XS DTS (25-inch XL shaft, Digital Throttle & Shift)' },
+];
+
+const PRO_XS_250_FAQ_PRERENDER = [
+  { question: 'What does a Mercury Pro XS 250 cost in Canada?', answer: 'At Harris Boat Works, the Pro XS 250 runs from $34,502 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,367 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, as of May 2026, and include 7-year warranty coverage under the current Mercury promotion.' },
+  { question: 'Is the Pro XS 250 in stock?', answer: 'The two 20-inch (ELPT) variants are in stock at Gores Landing, Ontario. The 25-inch (EXLPT) variants we bring in to order. Confirm current availability in the quote builder or call us.' },
+  { question: 'What warranty comes with a Pro XS 250?', answer: 'Every Pro XS 250 sold under the Mercury promotion running to June 14, 2026 includes 7-year warranty coverage at no extra cost. After the promotion ends, standard Mercury warranty terms apply. We confirm exact coverage when we quote you.' },
+  { question: 'Can I finance a Pro XS 250?', answer: 'Yes. Financing is available on approved credit through Mercury Finance. Build a quote and we will show you current rate and monthly options, or call 905-342-2153.' },
+  { question: 'How long does a Pro XS 250 repower take?', answer: 'Most repowers run 2 to 3 weeks from confirmed order to water-ready, depending on rigging. Spring (April and May) runs longer because every shop in Ontario is booked. Plan ahead.' },
+];
+
+function mercuryProXS250Schemas() {
+  const canonical = `${SITE_URL}/mercury/pro-xs-250`;
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Mercury Pro XS 250 Outboard Motor',
+    description: 'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. 7-year warranty coverage, sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
+    brand: { '@type': 'Brand', name: 'Mercury Marine' },
+    category: 'Outboard Motor',
+    image: PRO_XS_250_HERO_IMAGE_PRERENDER,
+    offers: PRO_XS_250_VARIANTS_PRERENDER.map(v => ({
+      '@type': 'Offer',
+      name: v.offerName,
+      sku: v.sku,
+      price: String(v.hbwPrice),
+      priceCurrency: 'CAD',
+      availability: `https://schema.org/${v.availability}`,
+      url: canonical,
+      seller: {
+        '@type': 'AutoDealer',
+        name: 'Harris Boat Works',
+        url: 'https://www.harrisboatworks.ca',
+        ...(v.sku === '12500033A' ? { sameAs: 'https://www.wikidata.org/wiki/Q139910292' } : {}),
+      },
+    })),
+  };
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: PRO_XS_250_FAQ_PRERENDER.map(f => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  };
+  return [productSchema, faqSchema];
+}
+
+function proXS250NoscriptHtml() {
+  const fmt = n => '$' + n.toLocaleString('en-CA');
+  const rows = PRO_XS_250_VARIANTS_PRERENDER.map(v =>
+    `<tr><th scope="row">${escapeHtml(v.name)}</th><td>${escapeHtml(v.shaft)}</td><td>${escapeHtml(v.controls)}</td><td>${fmt(v.msrp)}</td><td><strong>${fmt(v.hbwPrice)}</strong></td><td>${fmt(v.msrp - v.hbwPrice)}</td><td>${escapeHtml(v.availabilityLabel)}</td></tr>`
+  ).join('');
+  return (
+    '<p>Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,502 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake. Four configurations, the same number our sales desk sees, and 7-year warranty coverage on every one.</p>' +
+    '<p><a href="/quote/motor-selection">Build Your Quote</a> &nbsp; <a href="tel:+19053422153">Call 905-342-2153</a></p>' +
+    '<h2>Pro XS 250 prices: all four configurations</h2>' +
+    '<table><caption>Mercury Pro XS 250 configurations and CAD pricing (May 2026)</caption>' +
+    '<thead><tr><th scope="col">Configuration</th><th scope="col">Shaft</th><th scope="col">Controls</th><th scope="col">MSRP</th><th scope="col">HBW Price</th><th scope="col">You Save</th><th scope="col">Availability</th></tr></thead>' +
+    `<tbody>${rows}</tbody></table>` +
+    '<p><small>Prices in CAD, current as of May 2026. The two 20-inch (ELPT) variants are in stock now; the 25-inch (EXLPT) variants we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, and installation labour are not included.</small></p>' +
+    '<h2>What is included in the price</h2>' +
+    '<ul>' +
+      '<li>Four-stroke 4.6L V8, 250 HP at the prop</li>' +
+      '<li>Electric start, power trim, factory-set shaft length</li>' +
+      '<li>Mechanical remote controls, or Digital Throttle &amp; Shift on the DTS variants</li>' +
+      '<li>7-year Mercury warranty coverage under the promotion currently running to June 14, 2026. After it ends, standard warranty terms apply.</li>' +
+      '<li>The same price our sales desk sees. No inflate-to-negotiate.</li>' +
+    '</ul>' +
+    '<p>Not included: 13% HST. Rigging and installation labour. Optional starting battery, prop upgrades, and gauges.</p>' +
+    '<h2>Which Pro XS 250 is right for your boat?</h2>' +
+    '<p>The 250 Pro XS is built for boats that want hole-shot and top end: bass boats, mid-size bowriders, lighter fish-and-ski rigs.</p>' +
+    '<p><strong>Shaft length, 20 inch or 25 inch?</strong> A 20-inch transom takes the Long shaft (ELPT). A 25-inch transom takes the Extra-Long shaft (EXLPT). If you are repowering, match the same shaft as the old motor.</p>' +
+    '<p><strong>Mechanical remote or DTS?</strong> DTS adds roughly $2,000; worth it for VesselView integration or joystick-capable rigging, otherwise the mechanical remote is the right call.</p>' +
+    '<h2>Why buy your Pro XS 250 from Harris Boat Works</h2>' +
+    '<p>Mercury dealer since 1965, Mercury Platinum tier today, third-generation family business on the same Rice Lake dock since 1947. We sell, rig, water-test, and service the motor every season after.</p>' +
+    '<h2>Frequently asked questions</h2>' +
+    '<dl>' +
+    PRO_XS_250_FAQ_PRERENDER.map(i =>
+      `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+    ).join('') +
+    '</dl>'
+  );
+}
+
 function mercuryProXSSchema() {
   return {
     "@context": "https://schema.org",
@@ -3547,6 +3644,16 @@ const routes = [
       '</dl>'
   },
   {
+    path: '/mercury/pro-xs-250',
+    title: 'Mercury Pro XS 250 Price Canada | From $34,502 CAD | Harris Boat Works',
+    description: 'Mercury Pro XS 250 from $34,502 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, 7-year warranty coverage, in stock. Build your quote in 2 minutes.',
+    h1: 'Mercury Pro XS 250 Price in Canada: From $34,502 CAD',
+    intro: 'Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,502 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake. Four configurations, the same number our sales desk sees, and 7-year warranty coverage on every one.',
+    ogImage: PRO_XS_250_HERO_IMAGE_PRERENDER,
+    schemas: mercuryProXS250Schemas(),
+    extraNoscript: () => proXS250NoscriptHtml(),
+  },
+  {
     path: '/mercury-outboards-ontario',
     title: 'Mercury Outboards Ontario: Full Lineup at Harris Boat Works | Mercury Dealer Since 1965',
     description: 'Mercury Marine outboards in Ontario, full lineup (FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Platinum Dealer on Rice Lake, family-owned since 1947.',
@@ -4046,6 +4153,7 @@ const staticSitemapEntries = [
   { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },
   { loc: '/mercury-dealer-canada-faq', priority: 0.8, changefreq: 'monthly' },
   { loc: '/mercury-pro-xs', priority: 0.85, changefreq: 'weekly' },
+  { loc: '/mercury/pro-xs-250', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury-outboards-ontario', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury-pontoon-outboards', priority: 0.8, changefreq: 'monthly' },
   { loc: '/agents', priority: 0.8, changefreq: 'monthly' },

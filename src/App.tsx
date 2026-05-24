@@ -142,6 +142,7 @@ const MercuryDealerCobourg = lazy(() => import("./pages/landing/MercuryDealerCob
 const MercuryDealerGTA = lazy(() => import("./pages/landing/MercuryDealerGTA"));
 // Pilot SEO landing pages (Batch 3 — Product hub + lineup)
 const MercuryProXS = lazy(() => import("./pages/landing/MercuryProXS"));
+const MercuryProXS250 = lazy(() => import("./pages/landing/MercuryProXS250"));
 const MercuryOutboardsOntario = lazy(() => import("./pages/landing/MercuryOutboardsOntario"));
 // Pilot SEO landing pages (Batch 4 — Pontoon)
 const MercuryPontoonOutboards = lazy(() => import("./pages/landing/MercuryPontoonOutboards"));
@@ -605,6 +606,7 @@ function AnimatedRoutes() {
         <Route path="/mercury-outboards-bowmanville" element={<Navigate to="/locations/bowmanville-courtice-mercury-dealer" replace />} />
         {/* Pilot SEO Landing Pages — Batch 3 (Product hub + lineup) */}
         <Route path="/mercury-pro-xs" element={<MercuryProXS />} />
+        <Route path="/mercury/pro-xs-250" element={<MercuryProXS250 />} />
         <Route path="/mercury-outboards-ontario" element={<MercuryOutboardsOntario />} />
         {/* Pilot SEO Landing Pages — Batch 4 (Pontoon) */}
         <Route path="/mercury-pontoon-outboards" element={<MercuryPontoonOutboards />} />
