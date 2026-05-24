@@ -64,10 +64,10 @@ export function FAQPageSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Outboard Repower FAQ, Harris Boat Works | mercuryrepower.ca</title>
+      <title>Mercury Outboard Repower FAQ | Harris Boat Works</title>
       <meta
         name="description"
-        content="Get expert answers to 24 Mercury outboard repower questions. Choosing the right HP, SmartCraft Connect, repower costs, financing, pontoon repowers, winterization, from Ontario's Mercury Marine Platinum Dealer since 1947."
+        content="24 answers on Mercury repower in Ontario: HP choice, SmartCraft Connect, CAD costs, financing, pontoon repowers, winterization. HBW, dealer since 1965."
       />
       <meta
         name="keywords"
