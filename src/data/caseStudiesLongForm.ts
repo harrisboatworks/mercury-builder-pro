@@ -168,7 +168,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     beforeMotor: '175 HP V6 FourStroke',
     afterMotor: 'Mercury 200 HP Pro XS V8 4.6L with Boost',
     hpJump: '175 → 200 (+25 HP Boost on demand)',
-    heroImage: '/lovable-uploads/case-study-pontoon-boost-retrofit-hero-v2.png',
+    heroImage: '/lovable-uploads/case-study-pontoon-boost-retrofit-hero-v3.png',
     customerQuote:
       'Press the Boost button and a heavy tritoon planes in 4–5 seconds instead of 10.',
     recommendation:
@@ -281,7 +281,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     beforeMotor: '70–90 HP 2-stroke (Mercury Sport or legacy Evinrude)',
     afterMotor: 'Mercury 90 HP FourStroke EFI',
     hpJump: 'Modernization (similar HP, modern EFI)',
-    heroImage: '/lovable-uploads/case-study-two-stroke-to-fourstroke-modernization-hero-v2.png',
+    heroImage: '/lovable-uploads/case-study-two-stroke-to-fourstroke-modernization-hero-v3.png',
     customerQuote:
       'No oil mixing, half the idle noise, and roughly 30% better fuel burn at cruise.',
     recommendation:
@@ -397,7 +397,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     beforeMotor: 'Older 250 HP Verado',
     afterMotor: 'Mercury 300 HP V8 Verado (special-order)',
     hpJump: '250 → 300 Verado V8',
-    heroImage: '/lovable-uploads/case-study-verado-v8-special-order-repower-hero-v2.png',
+    heroImage: '/lovable-uploads/case-study-verado-v8-special-order-repower-hero-v3.png',
     customerQuote:
       'Quiet at idle, smoother at cruise, and the next ten years of ownership under current Mercury warranty.',
     recommendation:
@@ -511,7 +511,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     beforeMotor: 'No kicker or old 4–9.9 HP gas kicker',
     afterMotor: 'Mercury Avator 7.5e electric outboard',
     hpJump: 'Silent kicker add (3.5 HP gas equivalent)',
-    heroImage: '/lovable-uploads/case-study-avator-electric-kicker-trolling-hero-v2.png',
+    heroImage: '/lovable-uploads/case-study-avator-electric-kicker-trolling-hero-v3.png',
     customerQuote:
       'Silent troll, no fuel ritual, and a battery you charge like a phone.',
     recommendation:
@@ -628,7 +628,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     beforeMotor: 'Standard Mercury 60 HP FourStroke',
     afterMotor: 'Mercury 60 HP FourStroke Command Thrust',
     hpJump: 'Same HP, bigger gearcase + high-thrust prop',
-    heroImage: '/lovable-uploads/case-study-command-thrust-heavy-aluminum-hero-v2.png',
+    heroImage: '/lovable-uploads/case-study-command-thrust-heavy-aluminum-hero-v3.png',
     customerQuote:
       'Same horsepower on the plate, twice the hole shot under load.',
     recommendation:
@@ -743,7 +743,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     beforeMotor: 'Twin 115 HP FourStrokes (~25 years old)',
     afterMotor: 'Single Mercury 300 HP V8 Verado or Pro XS 4.6L',
     hpJump: 'Twin 115 → single 300',
-    heroImage: '/lovable-uploads/case-study-twin-to-single-big-block-hero-v2.png',
+    heroImage: '/lovable-uploads/case-study-twin-to-single-big-block-hero-v3.png',
     customerQuote:
       'Half the service hours, better fuel at cruise, and one throttle to dock with.',
     recommendation:
