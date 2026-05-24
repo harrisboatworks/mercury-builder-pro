@@ -3358,7 +3358,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-rice-lake-fishing-morning.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-09',
-    dateModified: '2026-05-04',
+    dateModified: '2026-05-23',
     publishDate: '2026-02-09',
     category: 'Buying Guide',
     readTime: '8 min read',
