@@ -3352,7 +3352,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'best-mercury-outboard-rice-lake-fishing',
     relatedSlugs: ['mercury-prokicker-rice-lake-fishing-guide', 'walleye-opener-boat-prep', 'rice-lake-boating-guide-2026'],
-    title: "Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)",
+    title: "Best Mercury Outboard for Rice Lake Fishing: A Local's Complete Guide (2026)",
     seoTitle: "Best Mercury Outboard for Rice Lake Fishing",
     description: "The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling. The lake is shallow, weedy in summer, and known for walleye, smallmouth bass, and muskie. Wind builds across Sugar Island in the afternoon. The right Mercury fits the lake, the boat, and the way you fish here. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/hero-rice-lake-fishing-morning.png',
