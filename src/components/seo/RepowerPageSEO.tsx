@@ -139,8 +139,8 @@ export function RepowerPageSEO() {
 
   return (
     <Helmet>
-      <title>Ontario's Mercury Repower Centre on Rice Lake | Harris Boat Works</title>
-      <meta name="description" content="Harris Boat Works is Ontario's Mercury Repower Centre, Mercury Marine Platinum Dealer, Mercury-only since 1965, family-owned since 1947. Transparent CAD pricing. Every install lake-tested on Rice Lake. Pickup at Gores Landing." />
+      <title>Mercury Repower Ontario 2026: Cost, Process, Financing | HBW</title>
+      <meta name="description" content="Mercury repowers in Ontario typically run $11,000-$40,000 CAD all-in. Live pricing, the full repower process, and 7.99% financing at Harris Boat Works." />
       <meta name="keywords" content="mercury repower ontario, boat repower rice lake, outboard motor replacement, mercury dealer kawarthas, repower cottage boat, mercury four stroke, boat motor upgrade" />
       <link rel="canonical" href="https://www.mercuryrepower.ca/repower" />
       
