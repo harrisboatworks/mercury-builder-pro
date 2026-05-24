@@ -57,6 +57,8 @@ interface SpecInput {
 
 function toLocation(s: SpecInput): LocationPageData {
   const visit = s.visitExtra ? `${VISIT}\n\n${s.visitExtra}` : VISIT;
+  const extras = LOCATION_LONGFORM_EXTRAS[s.slug];
+  const canonical = `https://www.mercuryrepower.ca/locations/${s.slug}`;
   return {
     slug: s.slug,
     title: s.title,
@@ -89,6 +91,13 @@ function toLocation(s: SpecInput): LocationPageData {
       related: s.related,
       lat: s.lat,
       lng: s.lng,
+      quickAnswer: extras?.quickAnswer,
+      lastReviewed: extras?.lastReviewed,
+      whatWeSeeAtHBW: extras?.whatWeSeeAtHBW,
+      heroImage: extras?.heroImage,
+      heroAlt: extras?.heroAlt,
+      metaDescription: s.metaDescription,
+      canonical,
     },
   };
 }
