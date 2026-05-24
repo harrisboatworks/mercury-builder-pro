@@ -655,12 +655,16 @@ const App = () => {
                   
                   <GlobalSEO />
                   <NotificationToast />
-                  
+
+                  <AnalyticsRouter />
+                  <GlobalCtaTracker />
                   <AnimatedRoutes />
                   <GlobalStickyQuoteBar />
-                  
+
                   <ComparisonDesktopButton />
                   <Canonical />
+                  <ConsentBanner />
+
 
                   <footer className="border-t border-repower-cream/10 bg-repower-navy-900">
                     <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-center gap-4 px-6 py-6 md:flex-row md:gap-8 md:px-14">
