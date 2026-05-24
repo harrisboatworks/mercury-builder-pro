@@ -1,4 +1,5 @@
 import { Helmet } from '@/lib/helmet';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { getAllFAQItems } from '@/data/faqData';
 
 // Select the key repower questions for this page's schema
