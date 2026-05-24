@@ -10141,7 +10141,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Repower Guides',
     readTime: '14 min read',
     keywords: ['Evinrude to Mercury repower', 'Evinrude to Mercury conversion', 'replace Evinrude outboard Ontario', 'Evinrude discontinued repower', 'Evinrude E-TEC repower'],
-    content: `> **Quick answer:** Evinrude stopped building outboards in 2020, and six years on, parts and service support keep thinning. For most Evinrude owners with a sound hull they plan to keep, switching to Mercury is the right move. The conversion costs a one-time rigging premium because the whole control system swaps, but you pay it once. Build a quote at mercuryrepower.ca.
+    content: `*Last reviewed: 2026-05-23*
+
+> **Quick answer:** Evinrude stopped building outboards in 2020, and six years on, parts and service support keep thinning. For most Evinrude owners with a sound hull they plan to keep, switching to Mercury is the right move. The conversion costs a one-time rigging premium because the whole control system swaps, but you pay it once. Build a quote at mercuryrepower.ca.
 
 Evinrude stopped making outboards in May 2020. It has been six years. Parts are getting harder to find, the technicians who know these motors are aging out, and resale value is sliding. The Evinrude owners who switched in 2022 and 2023 got ahead of the problem. The owners switching now are still making the right call. They are just doing it a little later.
 
