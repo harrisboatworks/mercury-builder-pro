@@ -3147,8 +3147,8 @@ const routes = [
   ...HUB_ROUTES,
   {
     path: '/faq',
-    title: 'Mercury Outboard Repower FAQ: Harris Boat Works | mercuryrepower.ca',
-    description: "Get expert answers to 24 Mercury outboard repower questions. Choosing the right HP, SmartCraft Connect, repower costs, financing, pontoon repowers, winterization, from Ontario's Mercury Marine Platinum Dealer since 1947.",
+    title: 'Mercury Outboard Repower FAQ | Harris Boat Works',
+    description: "24 answers on Mercury repower in Ontario: HP choice, SmartCraft Connect, CAD costs, financing, pontoon repowers, winterization. HBW, dealer since 1965.",
     h1: 'Mercury Outboard Repower FAQ',
     intro: 'Comprehensive answers to the most common Mercury outboard repower questions. Choosing, buying, financing, and installing, expert advice from Ontario\'s Mercury Marine Platinum Dealer since 1947.',
     schemas: [faqPageSchema()],
