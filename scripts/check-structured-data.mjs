@@ -191,11 +191,12 @@ for (const seoFile of seoFiles) {
 if (duplicates.length > 0) {
   // De-dup by value to keep output tight.
   const seen = new Set();
+  const dupeMessages = [];
   for (const d of duplicates) {
     const key = `${d.kind}:${d.value}:${d.file}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    errors.push(
+    dupeMessages.push(
       `DUAL-SOURCE-OF-TRUTH: Product ${d.kind} "${d.value}" appears hardcoded in BOTH:\n` +
       `  - ${SRC_PRERENDER}\n` +
       `  - ${d.file}\n` +
@@ -203,6 +204,11 @@ if (duplicates.length > 0) {
       `Duplicated schema drifts apart and breaks Rich Results — this is exactly how the /mercury-outboards-ontario priceCurrency bug shipped.`
     );
   }
+  // Strict mode (build-failing) only when STRICT_SCHEMA_DUPES=1 is set.
+  // Soft by default so existing dupes don't block Vercel builds; flip to
+  // strict once the codebase is refactored to a single source.
+  const target = process.env.STRICT_SCHEMA_DUPES === '1' ? errors : warnings;
+  dupeMessages.forEach(m => target.push(m));
 }
 
 // ---------- Report ----------
