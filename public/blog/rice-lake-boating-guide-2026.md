@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -63,7 +63,7 @@ Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice
 
 ## Fish You'll Find
 
-**Walleye.** The classic Rice Lake fishery. Trolling is the standard technique. Most consistent in spring and fall, harder in mid-summer when fish move deep or to night feeds. Ontario MNR's Fisheries Management Zone 17 (FMZ 17) regulations apply; check current size and bag limits before your trip. The slot limit on walleye in FMZ 17 changes occasionally — verify against the current Ontario Fishing Regulations Summary before you keep fish.
+**Walleye.** The classic Rice Lake fishery. Trolling is the standard technique. Most consistent in spring and fall, harder in mid-summer when fish move deep or to night feeds. Ontario MNR's Fisheries Management Zone 17 (FMZ 17) regulations apply; check current size and bag limits before your trip. The slot limit on walleye in FMZ 17 changes occasionally, verify against the current Ontario Fishing Regulations Summary before you keep fish.
 
 **Smallmouth Bass.** Strong fishery, especially in late spring and early summer. Rocky structure on the south shore, weed edges in protected bays. Tournament-quality water in places.
 

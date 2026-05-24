@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -45,7 +45,7 @@ If you've tried to price a Mercury outboard lately, you've likely hit the wall: 
 
 This isn't incompetence. It's a sales strategy. Getting you on the phone before you have a price lets the dealer control the comparison. Once you're talking, the assumption is that personal rapport and anchoring will do the work that transparency would short-circuit.
 
-We just put the price online. Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows real installed pricing in Canadian dollars, motor, rigging, and installation, before you've talked to anyone. You can compare, think it over, and call us when you've decided what you want.
+We just put the price online. Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows real installed pricing in Canadian dollars, motor, rigging, and installation, before you've talked to anyone. You can compare, think it over, and call us when you've decided what you want. For [Mercury outboard pricing, every model](/pricing-reference) on one page, see our price reference.
 
 If you use that and then buy from a closer dealer, fine. You'll buy with your eyes open.
 

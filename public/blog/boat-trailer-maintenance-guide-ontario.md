@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -161,11 +161,11 @@ Ontario's 100 km/h posted limit means most boaters trailer at 110+ km/h actual. 
 
 We service trailers we sell and most major brands. Common reasons customers bring trailers in:
 
-- **Annual bearing repack** — fastest service item, usually done while you wait
-- **Brake conversion or upgrade** — surge to electric, or rusted-out brake replacement
-- **Frame repair** — welding cracked cross members or replacing tongue extensions
-- **Bunk replacement** — full carpet and bracket refresh
-- **Pre-purchase inspection** — buying a used boat-and-trailer combo, get the trailer inspected before the deal closes
+- **Annual bearing repack**: fastest service item, usually done while you wait
+- **Brake conversion or upgrade**: surge to electric, or rusted-out brake replacement
+- **Frame repair**: welding cracked cross members or replacing tongue extensions
+- **Bunk replacement**: full carpet and bracket refresh
+- **Pre-purchase inspection**: buying a used boat-and-trailer combo, get the trailer inspected before the deal closes
 
 Book at [hbw.wiki/service](https://hbw.wiki/service) or call (905) 342-2153.
 

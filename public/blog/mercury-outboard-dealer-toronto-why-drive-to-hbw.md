@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -102,7 +102,7 @@ It's not "stop and shop", it's a destination day. Many of our GTA customers turn
 ---
 
 ::pull-quote
-quote: Drove past four Mercury dealers between Mississauga and Gores Landing. **Worth every kilometre** — first dealer in three years who answered my email with a real number instead of "come in and we'll talk."
+quote: Drove past four Mercury dealers between Mississauga and Gores Landing. **Worth every kilometre**: first dealer in three years who answered my email with a real number instead of "come in and we'll talk."
 attribution: Sandeep P.
 source: Mississauga
 ::

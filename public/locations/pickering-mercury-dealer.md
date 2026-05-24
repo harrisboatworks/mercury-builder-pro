@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/pickering-mercury-dealer
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false

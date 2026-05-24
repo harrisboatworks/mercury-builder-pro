@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -51,7 +51,7 @@ At 45 minutes, that's a realistic model. You're not driving 90 minutes each way 
 
 The call-for-quote model is standard across GTA marine dealers. You look up a motor online, find no price, call, and start a conversation you didn't fully want yet. The price emerges through the interaction, not before it.
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) works the other way. Installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes, before you talk to anyone. See the number. Decide if it makes sense. Engage us when you're ready.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) works the other way. Installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes, before you talk to anyone. See the number. Decide if it makes sense. Engage us when you're ready. For [Mercury pricing for every model](/pricing-reference) on one page, see our published price reference.
 
 Whitby customers who've used this tell us the thing they value most is making the trip knowing exactly what they're coming to spend, not hoping the price turns out to be reasonable.
 

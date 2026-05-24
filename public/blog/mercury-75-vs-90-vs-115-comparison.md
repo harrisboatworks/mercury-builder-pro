@@ -1,14 +1,14 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)"
-description: "For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot."
+title: "Mercury 75 vs 90 vs 115 HP: Which One We'd Pick (2026)"
+description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP FourStroke wins. Here's where 75 and 115 actually make sense."
 category: "Comparison"
 date_published: 2026-01-26
 date_modified: 2026-05-04
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)
+# Mercury 75 vs 90 vs 115 HP: Which One We'd Pick (2026)
 
-> For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot.
+> We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP FourStroke wins. Here's where 75 and 115 actually make sense.
 
 **Category:** Comparison  
 **Published:** 2026-01-26  

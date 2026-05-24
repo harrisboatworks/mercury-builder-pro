@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-ajax-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -56,7 +56,7 @@ That kind of relationship works when the drive is 45 minutes. It works well when
 
 Durham Region buyers tend to be experienced boaters. They've owned boats, dealt with dealers, and they know when they're being managed versus when someone's actually being helpful. The call-for-quote process frustrates this buyer the most, because they've already done the research, they just can't get a number.
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. No form, no callback, no process to get through. You see what it costs. You make a decision.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. No form, no callback, no process to get through. You see what it costs. You make a decision. For [the full Mercury price list](/pricing-reference) without building a quote, see our published price reference.
 
 ## Mercury Platinum, Rice Lake Since 1947
 

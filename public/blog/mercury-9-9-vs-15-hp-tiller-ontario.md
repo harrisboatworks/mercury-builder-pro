@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?"
-description: "Mercury 9.9 vs 15 HP tiller comparison for Ontario boaters: real differences in weight, fuel, capacity-plate limits, HP-restricted lakes, and kicker motor use."
+description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca."
 category: "Buying Guide"
 date_published: 2026-05-18
 date_modified: 2026-05-18
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?
 
-> Mercury 9.9 vs 15 HP tiller comparison for Ontario boaters: real differences in weight, fuel, capacity-plate limits, HP-restricted lakes, and kicker motor use.
+> Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-18  
@@ -164,7 +164,7 @@ The one thing we don't see often is a customer who buys the 9.9, runs it for a s
 
 Mercury's MSRP and Canadian dealer pricing both shift through the year, so the numbers below are a snapshot. Build a current quote for either motor in CAD at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) for the exact figure.
 
-As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 6-gallon portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required.
+As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 6-gallon portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
 
 ## Common Mistakes
 

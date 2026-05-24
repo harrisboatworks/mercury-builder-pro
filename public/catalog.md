@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -53,30 +53,51 @@ Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario 
 
 ## Motors
 
+- [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fs-2.5-mh.md)
+- [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mlh.md)
+- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mh.md)
+- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-elh.md)
+- [15 MH FourStroke](https://www.mercuryrepower.ca/motors/fs-15-mh.md)
+- [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elhpt.md)
+- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elh.md)
+- [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-eh.md)
+- [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-25-elpt.md)
+- [40 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-40-elpt-ct.md)
+- [40 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-40-elpt.md)
+- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-60-elpt-ct.md)
+- [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-efi-elpt.md)
+- [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-90-elpt.md)
+- [90 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-90-elpt-ct.md)
+- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-exlpt.md)
+- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-elpt.md)
+- [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-150-l.md)
+- [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-150-xl.md)
+- [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-200-l.md)
+- [200 EXLPT ProXS DTS](https://www.mercuryrepower.ca/motors/pxs-200-xl-dts.md)
+- [200 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/pxs-200-l-dts-tm.md)
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
-- [6MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke.md)
-- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
 - [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
 - [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
+- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
 - [15 MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke.md)
-- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
 - [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
+- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
 - [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke.md)
-- [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
 - [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
-- [40 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-fourstroke.md)
 - [40 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-command-thrust-fourstroke.md)
-- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
+- [40 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-fourstroke.md)
 - [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke.md)
+- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
 - [90 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke.md)
 - [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
-- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
 - [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
+- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
 - [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs.md)
 - [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
-- [200 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-exlpt-proxs.md)
 - [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs.md)
+- [200 EXLPT ProXS DTS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-exlpt-proxs-dts.md)
+- [200 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs-dts.md)
 
 ## Case studies
 
@@ -114,8 +135,8 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md)
 - [Evinrude to Mercury Repower in Ontario (2026 Guide)](https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md)
 - [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md)
-- [Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md)
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado.md)
+- [Best Mercury Outboard for Rice Lake Fishing: A Local's Complete Guide (2026)](https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md)
+- [FourStroke vs Pro XS vs Verado: Which Mercury You Need](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado.md)
 - [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md)
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)](https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md)
+- [Mercury 9.9 ProKicker for Rice Lake Walleye Fishing: The Complete 2026 Guide](https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md)
 

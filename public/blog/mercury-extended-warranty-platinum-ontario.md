@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -33,8 +33,8 @@ content_type: blog_article
 
 **Mercury Product Protection (Platinum) extends your factory warranty up to 8 years total, covering mechanical AND electrical failures, including the ECU, sensors, alternator, wiring, gauges, and controls. HBW sells Platinum exclusively because the electrical exclusion on Gold is where modern Mercury motors fail most expensively. Customers who purchased their motor from HBW get 10% off.**
 
-- **Covers what your factory warranty covers, for years longer** — up to 8 years total (3-year factory + 5-year extended)
-- **Includes electrical** (Gold does not) — alternator, ECU, sensors, harness, accessories
+- **Covers what your factory warranty covers, for years longer**: up to 8 years total (3-year factory + 5-year extended)
+- **Includes electrical** (Gold does not), alternator, ECU, sensors, harness, accessories
 - **Transferable** to next owner, adds resale value
 - **Honoured at 3,600+ Mercury dealers** across the US and Canada
 - **HBW exclusive**: 10% off Platinum for customers who purchased their motor from HBW

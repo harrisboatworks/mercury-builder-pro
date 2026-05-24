@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -47,7 +47,7 @@ You've been there. You find a motor online, you like what you see, and then ther
 
 That's not an accident. The call-for-quote system exists to put a salesperson in the conversation before you've decided what you want. Once you're talking, they can shape what you're considering.
 
-We don't do that. Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows you real installed pricing in Canadian dollars in about three minutes. No account required, no callback, no negotiation opener. You see the motor, the installation, the rigging, what it actually costs to have a Mercury running on your boat.
+We don't do that. Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows you real installed pricing in Canadian dollars in about three minutes. No account required, no callback, no negotiation opener. You see the motor, the installation, the rigging, what it actually costs to have a Mercury running on your boat. If you would rather skim [current Mercury prices in CAD](/pricing-reference) before building anything, the full motor price list is published too.
 
 If you build a quote and decide to buy somewhere else, that's fine. The point is that you made an informed decision, not one that was managed by a sales process.
 

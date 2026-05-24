@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-![DIY Mercury winterization risk checklist — 8 things that go wrong when boat owners winterize themselves](/lovable-uploads/diy-mercury-winterization-risk-checklist.png)
+![DIY Mercury winterization risk checklist, 8 things that go wrong when boat owners winterize themselves](/lovable-uploads/diy-mercury-winterization-risk-checklist.png)
 
 ## Quick Answer
 

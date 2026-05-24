@@ -1,14 +1,14 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Breaking In a New Mercury Motor (2026)"
-description: "The first 10 hours of a new Mercury are the most important hours of its service life. Mercury's break-in protocol calls for graduated load and RPM during this period..."
+title: "How to Break In a New Mercury Outboard (10-Hour Guide)"
+description: "The 10-hour Mercury break-in, step by step. RPM targets, what to avoid, and the first-service interval that protects your warranty."
 category: "New Owner"
 date_published: 2024-02-20
 date_modified: 2026-05-04
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Breaking In a New Mercury Motor (2026)
+# How to Break In a New Mercury Outboard (10-Hour Guide)
 
-> The first 10 hours of a new Mercury are the most important hours of its service life. Mercury's break-in protocol calls for graduated load and RPM during this period...
+> The 10-hour Mercury break-in, step by step. RPM targets, what to avoid, and the first-service interval that protects your warranty.
 
 **Category:** New Owner  
 **Published:** 2024-02-20  

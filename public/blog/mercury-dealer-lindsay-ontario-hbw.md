@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-lindsay-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -94,7 +94,7 @@ Outdoor with shrinkwrap. For Lindsay customers whose boat will launch on Rice La
 
 Lindsay-area boaters tend to be experienced. The Kawartha Lakes region has a higher concentration of multi-boat households and serious cottagers than most parts of southern Ontario. They've owned several boats, dealt with several dealers, and they know the call-for-quote pricing model when they see it.
 
-Our installed pricing online at mercuryrepower.ca is what informed Lindsay buyers respond to. Real Canadian dollars, full configuration, three minutes to a complete quote. The 45-minute drive becomes worth it when the dealer respects your time.
+Our installed pricing online at mercuryrepower.ca is what informed Lindsay buyers respond to. Real Canadian dollars, full configuration, three minutes to a complete quote. The 45-minute drive becomes worth it when the dealer respects your time. To [browse Mercury outboard prices](/pricing-reference) before you commit to building a quote, check our published price reference.
 
 ## What we see at HBW
 

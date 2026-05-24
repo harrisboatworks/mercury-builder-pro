@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -38,7 +38,7 @@ A Kawartha boat repower means replacing your outboard motor with a new Mercury w
 
 Three out of four boats that come to HBW for a repower assessment turn out to be better repower candidates than buy-new candidates. That ratio has been pretty consistent.
 
-The math is usually straightforward: a solid used hull plus a current Mercury costs significantly less than a new boat with comparable capability, and you skip the depreciation hit that hammers new-boat buyers in the first few years.
+The math is usually straightforward: a solid used hull plus a current Mercury costs significantly less than a new boat with comparable capability, and you skip the depreciation hit that hammers new-boat buyers in the first few years. See [our full Mercury outboard price list](/pricing-reference) for the CAD numbers behind that math.
 
 That said, a repower is not always the right answer.
 

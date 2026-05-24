@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-peterborough-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -57,7 +57,7 @@ Peterborough has marinas. Peterborough has general boat shops. What it has less 
 
 Platinum is Mercury's top dealer tier, it reflects parts inventory depth, technical training hours, warranty authorization, and SmartCraft diagnostic equipment. For routine work (oil changes, props, basic seasonal service) any qualified Mercury dealer is fine. For a full repower or a hard warranty case, Platinum-tier resolution paths matter.
 
-The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing, motor, rigging, controls, prop, install labour, HST, in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers.
+The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing, motor, rigging, controls, prop, install labour, HST, in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers. For [Mercury prices from 2.5 to 300 HP](/pricing-reference) on one page, see our published price reference.
 
 ## Getting to Harris Boat Works from Peterborough
 

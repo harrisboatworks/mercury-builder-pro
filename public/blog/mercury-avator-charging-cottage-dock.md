@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -37,9 +37,9 @@ Charging a Mercury Avator at a typical Ontario cottage works fine if you have re
 
 A Mercury Avator charging setup needs three things:
 
-1. **A reliable power source** — typically shore power at the dock or boathouse
-2. **The correct charger for your battery configuration** — Mercury's chargers come in different output ratings
-3. **A protected outdoor outlet** — GFCI-protected, rated for outdoor use, weatherproof
+1. **A reliable power source**: typically shore power at the dock or boathouse
+2. **The correct charger for your battery configuration**: Mercury's chargers come in different output ratings
+3. **A protected outdoor outlet**: GFCI-protected, rated for outdoor use, weatherproof
 
 For a cottage with existing dock or boathouse power, the setup is usually straightforward. For a cottage without dock power, you're either running an extension cord from the house (works for small Avator models, awkward for larger ones) or having a marine electrician install a dedicated dock outlet.
 
@@ -69,13 +69,13 @@ For Avator 75e or 110e, plan on installing 240V charging infrastructure at your 
 
 ## The cottage electrical reality
 
-Most Ontario cottages were built with electrical service designed for cottage loads — lights, basic appliances, water pump, maybe an air conditioner. Adding Avator charging on top of normal cottage use needs some planning:
+Most Ontario cottages were built with electrical service designed for cottage loads, lights, basic appliances, water pump, maybe an air conditioner. Adding Avator charging on top of normal cottage use needs some planning:
 
-**100A service cottage** — plenty of capacity for Avator charging on top of normal loads. Add a dedicated dock outlet, you're done.
+**100A service cottage**: plenty of capacity for Avator charging on top of normal loads. Add a dedicated dock outlet, you're done.
 
-**60A service cottage** — usually enough for Avator 7.5e or single-pack 20e/35e charging. Larger multi-pack setups may push the panel limits when running other loads simultaneously.
+**60A service cottage**: usually enough for Avator 7.5e or single-pack 20e/35e charging. Larger multi-pack setups may push the panel limits when running other loads simultaneously.
 
-**Off-grid or remote cottage** — Avator generally doesn't work without shore power. Solar charging is theoretically possible but the math rarely works out for serious use. Plan on a gas outboard for off-grid cottages.
+**Off-grid or remote cottage**: Avator generally doesn't work without shore power. Solar charging is theoretically possible but the math rarely works out for serious use. Plan on a gas outboard for off-grid cottages.
 
 A marine electrician can assess your cottage panel and tell you what your realistic Avator charging options are. Worth the $200-300 consultation before buying a large Avator setup.
 
@@ -83,10 +83,10 @@ A marine electrician can assess your cottage panel and tell you what your realis
 
 For a dedicated Avator charging outlet at the dock:
 
-- **GFCI-protected** — mandatory for outdoor outlets near water
-- **Weatherproof in-use cover** — the outlet stays sealed even with a plug inserted
-- **Properly grounded** — marine-grade grounding to prevent stray current corrosion
-- **Wire gauge rated for the load** — typically 12 AWG for 20A circuits, heavier for 240V
+- **GFCI-protected**: mandatory for outdoor outlets near water
+- **Weatherproof in-use cover**: the outlet stays sealed even with a plug inserted
+- **Properly grounded**: marine-grade grounding to prevent stray current corrosion
+- **Wire gauge rated for the load**: typically 12 AWG for 20A circuits, heavier for 240V
 
 Have a licensed electrician do the dock outlet install. Marine electrical near water is one of the few areas where a DIY approach creates real safety risk. Cost typically runs $400-800 for a 110V dedicated outlet, $800-1,500 for a 240V install, plus any cottage panel work required.
 
@@ -102,13 +102,13 @@ For weekend cottagers running Avator:
 
 **Sunday**: battery fully charged for Sunday running.
 
-This pattern works fine with overnight charging for most Avator models. The single-day "I'll run all day Saturday and Sunday" pattern is where charging becomes a constraint — you need 240V to turn the battery around fast enough.
+This pattern works fine with overnight charging for most Avator models. The single-day "I'll run all day Saturday and Sunday" pattern is where charging becomes a constraint, you need 240V to turn the battery around fast enough.
 
 ## Cold weather and off-season charging
 
 Avator batteries lose meaningful capacity in cold weather. Late-season operation (October-November on Ontario lakes) means reduced range and slower charging.
 
-For off-season storage (December-March), Mercury recommends storing battery packs at 50-80% charge in a heated space. Don't leave packs at the cottage through winter — battery degradation in cold storage is real.
+For off-season storage (December-March), Mercury recommends storing battery packs at 50-80% charge in a heated space. Don't leave packs at the cottage through winter, battery degradation in cold storage is real.
 
 This is one of the practical differences from gas: a gas outboard can sit at the cottage through winter (properly winterized). An Avator setup means battery packs come home to a heated garage every fall.
 
@@ -116,7 +116,7 @@ This is one of the practical differences from gas: a gas outboard can sit at the
 
 The most common cottage Avator setup question we get: "Can I just run an extension cord from the house?"
 
-For the Avator 7.5e, yes — a heavy-gauge outdoor extension cord (12 AWG or better, rated for the length) works for a small Avator's overnight charging. Not ideal but functional.
+For the Avator 7.5e, yes, a heavy-gauge outdoor extension cord (12 AWG or better, rated for the length) works for a small Avator's overnight charging. Not ideal but functional.
 
 For larger Avator setups (35e and up), an extension cord becomes impractical. Voltage drop over long runs reduces charge rate, and running heavy cords through cottage traffic patterns creates trip hazards. For these setups, a proper dock outlet install is the right answer.
 
@@ -132,13 +132,13 @@ The other common situation: cottagers who add Avator without consulting their co
 ## Frequently Asked Questions
 
 **Can I charge a Mercury Avator from a standard cottage outlet?**
-For the Avator 7.5e, yes — 110V standard outlet, 3-4 hour charge. For larger Avator models, 110V works for overnight charging but a 240V charger speeds it up significantly.
+For the Avator 7.5e, yes, 110V standard outlet, 3-4 hour charge. For larger Avator models, 110V works for overnight charging but a 240V charger speeds it up significantly.
 
 **Do I need a special charger?**
 The charger comes with the Avator. Mercury supplies the appropriate charger for each model. For 240V upgrades, the higher-output charger is an additional purchase but uses the same battery interface.
 
 **What does a dock outlet install cost?**
-$400-800 for a 110V GFCI dedicated outlet, $800-1,500 for a 240V install. Marine electrician required for the install — don't DIY near water.
+$400-800 for a 110V GFCI dedicated outlet, $800-1,500 for a 240V install. Marine electrician required for the install, don't DIY near water.
 
 **Can I charge with solar at a remote cottage?**
 Theoretically yes, practically no for serious use. The solar array required to charge a meaningful Avator battery bank is large and expensive. For remote cottages without shore power, gas outboards remain the practical answer.

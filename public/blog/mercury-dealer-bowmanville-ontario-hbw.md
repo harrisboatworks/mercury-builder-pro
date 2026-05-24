@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -53,7 +53,7 @@ That proximity changes the whole relationship with a dealer. It means:
 
 Bowmanville and the broader Clarington area has a genuine boating culture, Lake Ontario access, Rice Lake not far north, the Trent-Severn within reach. A lot of residents here are serious boat owners, not casual ones. They know what a good dealer relationship looks like, and they notice when they're not getting one.
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. That's the starting point. Real number, visible before any conversation, no process to navigate.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. That's the starting point. Real number, visible before any conversation, no process to navigate. To [see what you would pay for a Mercury](/pricing-reference) without building a quote, our motor price list is published.
 
 ## The Repower Capital of the Region
 

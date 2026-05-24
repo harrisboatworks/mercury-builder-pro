@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,7 +31,7 @@ content_type: blog_article
 
 ## Quick Answer
 
-A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model and battery configuration, not the marketing range numbers. For the typical cottage use case — short runs from the dock to a fishing spot or a neighbour's dock — the smaller Avator 7.5e on a 13-14 ft car-topper delivers about 5 miles at full throttle or up to 34 miles at quarter-throttle. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
+A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model and battery configuration, not the marketing range numbers. For the typical cottage use case, short runs from the dock to a fishing spot or a neighbour's dock, the smaller Avator 7.5e on a 13-14 ft car-topper delivers about 5 miles at full throttle or up to 34 miles at quarter-throttle. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
 
 ## What "range" actually means on an electric outboard
 
@@ -50,7 +50,7 @@ Mercury's published Avator range numbers are honest in the sense that they refle
 
 ### Avator 7.5e
 
-Built for small car-toppers and tenders — boats under 14 ft. Single integrated 1 kWh battery.
+Built for small car-toppers and tenders, boats under 14 ft. Single integrated 1 kWh battery.
 
 Real-world Rice Lake range:
 - Full throttle: ~3-4 miles practical
@@ -88,17 +88,17 @@ These are the only Avator models in serious consideration for primary outboard d
 
 Most Rice Lake cottagers run trips that fall into one of three patterns:
 
-**Short hop** — dock to neighbour's dock, dock to nearby fishing spot, dock to swimming bay. Often under 2 miles round trip. Even the smallest Avator handles this comfortably.
+**Short hop**: dock to neighbour's dock, dock to nearby fishing spot, dock to swimming bay. Often under 2 miles round trip. Even the smallest Avator handles this comfortably.
 
-**Half-day** — out for a morning fishing trip, lunch back at the dock, maybe an evening run. 5-10 miles total over a few hours. Most Avator models with 2+ battery packs handle this.
+**Half-day**: out for a morning fishing trip, lunch back at the dock, maybe an evening run. 5-10 miles total over a few hours. Most Avator models with 2+ battery packs handle this.
 
-**Full-day** — out for 6-8 hours, multiple fishing spots, crossing the lake, running back into wind. 15-25+ miles total. This is where Avator stops being practical for most setups.
+**Full-day**: out for 6-8 hours, multiple fishing spots, crossing the lake, running back into wind. 15-25+ miles total. This is where Avator stops being practical for most setups.
 
 For the first two patterns, Avator works. For the third, plan on running a gas outboard with a trolling motor as the better answer.
 
 ## Charging at the cottage
 
-Charging is half the Avator equation. The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger external 2,300 Wh packs take longer — plan on overnight per pack from 110V.
+Charging is half the Avator equation. The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger external 2,300 Wh packs take longer, plan on overnight per pack from 110V.
 
 What that means in practice:
 
@@ -120,7 +120,7 @@ For Rice Lake cottage applications, the Avator vs gas outboard decision usually 
 | Half-day light use | Good fit | Standard answer |
 | Full-day fishing crossing the lake | Range limited | Standard answer |
 | Multi-day trips without charging access | Doesn't work | Standard answer |
-| Quiet operation (early morning fishing) | Major advantage | — |
+| Quiet operation (early morning fishing) | Major advantage |, |
 | Low maintenance | Major advantage | More service required |
 | Cottage charging logistics | Required infrastructure | None |
 | Cold weather operation | Reduced capacity | Standard |
@@ -149,7 +149,7 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
 Yes for the 7.5e (110V, 3-4 hours). Larger Avator packs benefit from a 240V charger for faster turnaround. Standard cottage electrical generally works for overnight charging of 1-2 packs.
 
 **Is Avator practical as a primary motor on Rice Lake?**
-For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no — gas outboard is still the right answer.
+For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no, gas outboard is still the right answer.
 
 **Can I run a Mercury Avator on an HP-restricted Ontario lake?**
 Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying.

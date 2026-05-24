@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -91,7 +91,7 @@ All figures are CAD, before HST, before trade-in credit, before any Mercury prom
 
 The repower-vs-new gap is usually $20,000, $40,000. That's the difference between repowering and still having $25,000 in the bank, vs. financing a new boat.
 
-Repower costs include motor, rigging, controls, prop, install, and small accessories most jobs need, battery, fuel hoses, primer bulb, gauges if upgrading. They do not include winterization or storage, which run separately.
+Repower costs include motor, rigging, controls, prop, install, and small accessories most jobs need, battery, fuel hoses, primer bulb, gauges if upgrading. They do not include winterization or storage, which run separately. For [what a new Mercury costs](/pricing-reference) by HP tier on the motor side, see our full price reference.
 
 ---
 

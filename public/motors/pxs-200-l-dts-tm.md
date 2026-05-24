@@ -1,37 +1,37 @@
 ---
-canonical: https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke
-last_updated: 2026-05-20
+canonical: https://www.mercuryrepower.ca/motors/pxs-200-l-dts-tm
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-motor_id: daf945bb-4f71-44a9-aee4-00a3010ed255
-slug: fourstroke-6hp-6mh-fourstroke
-family: FourStroke
-horsepower: 6
-model_number: 1FX6201KK
+motor_id: 62a0ce53-7c17-4589-926a-c44ac4314412
+slug: pxs-200-l-dts-tm
+family: ProXS
+horsepower: 200
+model_number: 12000035A
 availability: in_stock
-price_cad: 2085
+price_cad: 29992
 ---
 
-# 6MH FourStroke
+# 200 ELPT ProXS DTS
 
-Mercury FourStroke 6 HP outboard motor (model 1FX6201KK).
+Mercury ProXS 200 HP outboard motor (model 12000035A).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 6MH FourStroke
-- **Family:** Mercury FourStroke
-- **Horsepower:** 6 HP
-- **Model number:** 1FX6201KK
+- **Model:** 200 ELPT ProXS DTS
+- **Family:** Mercury ProXS
+- **Horsepower:** 200 HP
+- **Model number:** 12000035A
 
 ## Pricing (CAD)
 
-- **Selling price:** $2,085
-- **MSRP:** $2,275
+- **Selling price:** $29,992
+- **MSRP:** $34,080
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
@@ -42,16 +42,16 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Best fit for
 
-Small tenders, canoes, sailboat kickers, and very light fishing setups.
+Larger pontoons, fiberglass runabouts, and walkaround/cuddy boats 20–24 ft.
 
 ## Not ideal for
 
-Boats 16 ft and over, loaded family boats, or anything that needs to plane with multiple passengers.
+Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
 
 ## Build a quote
 
-- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke
-- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=daf945bb-4f71-44a9-aee4-00a3010ed255
+- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/pxs-200-l-dts-tm
+- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=62a0ce53-7c17-4589-926a-c44ac4314412
 
 ## Public Quote API
 
@@ -60,7 +60,7 @@ Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1
 ```json
 {
   "action": "build_quote",
-  "motor_id": "daf945bb-4f71-44a9-aee4-00a3010ed255",
+  "motor_id": "62a0ce53-7c17-4589-926a-c44ac4314412",
   "trade_in": null,
   "contact": null
 }

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,7 @@ Both Mercury Avator and Torqeedo make legitimate electric outboards. The decidin
 
 ## Up front: we sell Mercury
 
-Harris Boat Works is a Mercury Marine Platinum Dealer. We do not sell Torqeedo. This comparison is intended to be honest, but you should know our bias before reading it. We've been a Mercury dealer since 1965 — three generations of selling, servicing, and supporting Mercury outboards on Rice Lake.
+Harris Boat Works is a Mercury Marine Platinum Dealer. We do not sell Torqeedo. This comparison is intended to be honest, but you should know our bias before reading it. We've been a Mercury dealer since 1965, three generations of selling, servicing, and supporting Mercury outboards on Rice Lake.
 
 If you want a truly neutral comparison, find a marine specialty shop that carries both brands. Those exist in some Ontario markets, mostly in Toronto and Ottawa.
 
@@ -61,7 +61,7 @@ The product gap is smaller than the marketing makes it seem. Both companies have
 
 ## The dealer network difference
 
-Mercury Avator inherits Mercury's broader Canadian dealer network — hundreds of Mercury dealers across the country, with Mercury Platinum dealers like HBW handling the most complex repower and service work. For Ontario buyers specifically, there's a Mercury dealer within an hour of nearly every populated area.
+Mercury Avator inherits Mercury's broader Canadian dealer network, hundreds of Mercury dealers across the country, with Mercury Platinum dealers like HBW handling the most complex repower and service work. For Ontario buyers specifically, there's a Mercury dealer within an hour of nearly every populated area.
 
 Torqeedo's Canadian dealer network is smaller and more concentrated in larger urban markets. For a Toronto, Ottawa, or Vancouver buyer, Torqeedo support is reasonable. For a Northumberland County, Kawartha Lakes, or remote-cottage buyer, the nearest Torqeedo authorized service may be several hours away.
 
@@ -126,8 +126,8 @@ For typical Ontario recreational boating:
 - Parts availability at local dealers
 - SmartCraft integration with existing Mercury rigging
 - Warranty support from the same dealer who installed the motor
-- Resale market — Mercury Avator follows Mercury's overall resale strength
-- Service continuity — Mercury Marine is a large company with sustained product investment
+- Resale market, Mercury Avator follows Mercury's overall resale strength
+- Service continuity, Mercury Marine is a large company with sustained product investment
 
 The Yamaha-Torqeedo acquisition is positive for Torqeedo's long-term stability, but the Canadian dealer network for Torqeedo remains thinner than Mercury's.
 
@@ -135,7 +135,7 @@ The Yamaha-Torqeedo acquisition is positive for Torqeedo's long-term stability, 
 
 We get more Mercury Avator inquiries than we did even a year ago. The customers who buy Avator successfully tend to be cottage owners running it as a secondary motor on a small dedicated quiet boat, while keeping their primary gas outboard on the main fishing boat.
 
-The customers who try to make Avator (or Torqeedo) their primary motor on a Rice Lake fishing boat consistently report range frustration. Both brands have the same physics constraint — lithium batteries don't yet match gas tanks for full-day Ontario freshwater use cases.
+The customers who try to make Avator (or Torqeedo) their primary motor on a Rice Lake fishing boat consistently report range frustration. Both brands have the same physics constraint, lithium batteries don't yet match gas tanks for full-day Ontario freshwater use cases.
 
 For pure side-by-side product comparison without the dealer factor: both brands make legitimate motors. Both will run reliably if installed and maintained properly. The deciding factor is almost always service infrastructure, which for Ontario freshwater buyers tends to favour Mercury Avator.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -163,7 +163,7 @@ All prices in CAD, before HST, before any trade-in credit.
 | 60 ELPT FourStroke | roughly $13,500, $15,000 |
 | 60 ELPT Command Thrust | roughly $14,000, $15,500 |
 
-Install and rigging in this class typically adds $1,500, $3,000 over the motor price, depending on what the boat needs: controls, gauges, fuel lines, prop, battery cabling.
+Install and rigging in this class typically adds $1,500, $3,000 over the motor price, depending on what the boat needs: controls, gauges, fuel lines, prop, battery cabling. For [current Mercury motor pricing](/pricing-reference) on every HP class, see our full reference.
 
 A working older motor typically adds $1,000, $3,000 in trade-in credit depending on age, hours, and condition. It's worth asking.
 

@@ -1,14 +1,14 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "What the 2026 Boating Market Means for Ontario Boat Buyers"
-description: "The North American boating market is stabilizing in 2026 with healthier inventory, improving financing, and Canada's luxury tax on boats repealed."
+title: "Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)"
+description: "Inventory is back, dealer discounts are easing, financing rates are dropping. What that means for Ontario buyers in 2026, from a dealer who'd rather you wait if you..."
 category: "Market Insight"
 date_published: 2026-02-06
 date_modified: 2026-02-06
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# What the 2026 Boating Market Means for Ontario Boat Buyers
+# Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)
 
-> The North American boating market is stabilizing in 2026 with healthier inventory, improving financing, and Canada's luxury tax on boats repealed.
+> Inventory is back, dealer discounts are easing, financing rates are dropping. What that means for Ontario buyers in 2026, from a dealer who'd rather you wait if you...
 
 **Category:** Market Insight  
 **Published:** 2026-02-06  

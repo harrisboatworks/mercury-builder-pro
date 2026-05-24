@@ -1,37 +1,37 @@
 ---
-canonical: https://www.mercuryrepower.ca/motors/proxs-200hp-200-exlpt-proxs
-last_updated: 2026-05-20
+canonical: https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs-dts
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-motor_id: 91fd550e-a590-47ab-8e9e-e6ffa653965d
-slug: proxs-200hp-200-exlpt-proxs
+motor_id: 62a0ce53-7c17-4589-926a-c44ac4314412
+slug: proxs-200hp-200-elpt-proxs-dts
 family: ProXS
 horsepower: 200
-model_number: 12000040A
+model_number: 12000035A
 availability: in_stock
-price_cad: 30399
+price_cad: 29992
 ---
 
-# 200 EXLPT ProXS
+# 200 ELPT ProXS DTS
 
-Mercury ProXS 200 HP outboard motor (model 12000040A).
+Mercury ProXS 200 HP outboard motor (model 12000035A).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 200 EXLPT ProXS
+- **Model:** 200 ELPT ProXS DTS
 - **Family:** Mercury ProXS
 - **Horsepower:** 200 HP
-- **Model number:** 12000040A
+- **Model number:** 12000035A
 
 ## Pricing (CAD)
 
-- **Selling price:** $30,399
-- **MSRP:** $34,545
+- **Selling price:** $29,992
+- **MSRP:** $34,080
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
@@ -50,8 +50,8 @@ Small tenders or boats rated under this HP, match HP to transom rating, never ex
 
 ## Build a quote
 
-- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/proxs-200hp-200-exlpt-proxs
-- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=91fd550e-a590-47ab-8e9e-e6ffa653965d
+- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs-dts
+- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=62a0ce53-7c17-4589-926a-c44ac4314412
 
 ## Public Quote API
 
@@ -60,7 +60,7 @@ Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1
 ```json
 {
   "action": "build_quote",
-  "motor_id": "91fd550e-a590-47ab-8e9e-e6ffa653965d",
+  "motor_id": "62a0ce53-7c17-4589-926a-c44ac4314412",
   "trade_in": null,
   "contact": null
 }
