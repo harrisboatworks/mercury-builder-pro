@@ -109,8 +109,10 @@ function validateHtmlFile(file) {
         }
       }
       if (type === 'Offer') {
-        // Service offers (price-on-request) are exempt.
-        if (isServiceOffer(node)) return;
+        // Service offers (price-on-request) are exempt — either the Offer's
+        // itemOffered is a Service, or the Offer is nested under a Service
+        // node (Service.offers shape).
+        if (isServiceOffer(node) || parentType === 'Service') return;
         for (const f of OFFER_REQUIRED) {
           if (!(f in node) || node[f] === '' || node[f] === null || node[f] === undefined) {
             errors.push(`${file} block[${i}]: Offer missing required field "${f}" (under ${parentType || 'root'})`);
