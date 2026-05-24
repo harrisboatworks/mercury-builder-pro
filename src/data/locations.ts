@@ -1,5 +1,6 @@
 import type { LocationLongForm } from './locationsLongForm';
 import { longFormLocations, longFormLocationSlugs } from './locationsLongForm';
+import { LOCATION_LONGFORM_UPGRADES } from './locationsLongFormUpgrades';
 
 export interface LocationLink {
   label: string;
