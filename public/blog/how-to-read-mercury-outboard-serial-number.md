@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -33,7 +33,7 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like `0T123456` or `1B234567`) is your motor's unique identifier — you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like `90ELPT` or `1F60413GZ`) is the spec code that you CAN decode — it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial. Send us a serial or model code through mercuryrepower.ca for a quick check.
+> **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like `0T123456` or `1B234567`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like `90ELPT` or `1F60413GZ`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial. Send us a serial or model code through mercuryrepower.ca for a quick check.
 
 Once you've decoded the serial, you'll likely want to look up [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026), check pricing in the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), or compare engine families in [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). Repower customers should also read [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad).
 
@@ -52,13 +52,13 @@ A real Mercury serial number is short, alphanumeric, and unique to your specific
 
 ![Mercury outboard transom bracket showing the ID plate where the serial number is stamped](/lovable-uploads/inline/inline-mercury-serial-tag-location.png)
 
-The serial is **stamped or laser-etched on a small plate** on the motor's transom bracket. You will NOT find date or horsepower hidden in the digits — Mercury does not embed the spec into the serial like a car VIN. You look the serial up in Mercury's catalog or any reputable parts site (Crowley Marine, PartsVu, MarineEngine) to get year, model variant, and parts compatibility.
+The serial is **stamped or laser-etched on a small plate** on the motor's transom bracket. You will NOT find date or horsepower hidden in the digits, Mercury does not embed the spec into the serial like a car VIN. You look the serial up in Mercury's catalog or any reputable parts site (Crowley Marine, PartsVu, MarineEngine) to get year, model variant, and parts compatibility.
 
 If you want a quick check, send us your serial number through mercuryrepower.ca and we'll run it through the Mercury dealer system.
 
 ## How to decode your Mercury Model Number
 
-The Mercury Model Number is the spec code — and unlike the serial, this one IS decodable. Newer Mercury motors carry a full SKU string like `1F60413GZ`. Older motors use a shorter human-readable code like `90ELPT` or `25EXLHGA`.
+The Mercury Model Number is the spec code, and unlike the serial, this one IS decodable. Newer Mercury motors carry a full SKU string like `1F60413GZ`. Older motors use a shorter human-readable code like `90ELPT` or `25EXLHGA`.
 
 ![Diagram decoding the Mercury outboard model number 1F60413GZ: country of origin (1 USA), family and HP (F60 FourStroke 60 HP), configuration code (413 remote electric power-trim), shaft variant (G), year code (Z 2023).](/lovable-uploads/diagram-mercury-model-number-decoder.png)
 
@@ -66,13 +66,13 @@ The Mercury Model Number is the spec code — and unlike the serial, this one IS
 
 For older Mercurys, the model code usually reads as horsepower + letter combination. Common letters and meanings:
 
-- **M** — Manual start
-- **E** — Electric start
-- **L / XL / CXL / XXL** — Long, extra-long, counter-rotation long, extra-extra-long shaft
-- **H** — Tiller handle
-- **RC** — Remote control steering
-- **PT** — Power trim/tilt
-- **O** — Oil injection (older two-strokes)
+- **M**: Manual start
+- **E**: Electric start
+- **L / XL / CXL / XXL**: Long, extra-long, counter-rotation long, extra-extra-long shaft
+- **H**: Tiller handle
+- **RC**: Remote control steering
+- **PT**: Power trim/tilt
+- **O**: Oil injection (older two-strokes)
 
 Example: `115ELPT` reads as 115 HP, Electric start, Long shaft, Power Trim.
 

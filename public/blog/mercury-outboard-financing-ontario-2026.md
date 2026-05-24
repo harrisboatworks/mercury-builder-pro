@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -33,11 +33,11 @@ content_type: blog_article
 
 ## Quick answer
 
-Most Ontario boaters finance a Mercury repower through Canadian marine lenders, not through Mercury Marine's branded financing programme. Mercury's official "Repower Financing" advertised on mercurymarine.com is administered through Medallion Bank and is available to **U.S. residents only** — sales and registrations outside the United States are explicitly excluded. The financing you can actually access in Ontario is through standard Canadian marine lending — typical terms run 24 to 84 months, secured by the engine package, with most approvals back inside 24 to 48 hours. Build a project quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and we'll walk through the financing options that are real here.
+Most Ontario boaters finance a Mercury repower through Canadian marine lenders, not through Mercury Marine's branded financing programme. Mercury's official "Repower Financing" advertised on mercurymarine.com is administered through Medallion Bank and is available to **U.S. residents only**: sales and registrations outside the United States are explicitly excluded. The financing you can actually access in Ontario is through standard Canadian marine lending, typical terms run 24 to 84 months, secured by the engine package, with most approvals back inside 24 to 48 hours. Build a project quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and we'll walk through the financing options that are real here.
 
 ## What Mercury's official Repower Financing actually covers
 
-Mercury Marine's branded Repower Financing programme — the one with the published "as low as" rate and the marketing on mercurymarine.com — is administered through Medallion Bank and Brunswick Financial Services Corporation. The fine print on Mercury's own page is explicit:
+Mercury Marine's branded Repower Financing programme, the one with the published "as low as" rate and the marketing on mercurymarine.com, is administered through Medallion Bank and Brunswick Financial Services Corporation. The fine print on Mercury's own page is explicit:
 
 > "Financing is available to residents residing in the United States, except in the states of Montana and West Virginia… Sales/registrations outside the United States are excluded."
 
@@ -139,13 +139,13 @@ If you have the cash and your other money is not earning more than the financing
 
 ## What we see at HBW
 
-Most boat financing in Ontario routes through a handful of marine lenders — the same names you see at every dealer. Approval depends on credit score and debt-to-income, and down payment varies by lender, project size, and borrower profile.
+Most boat financing in Ontario routes through a handful of marine lenders, the same names you see at every dealer. Approval depends on credit score and debt-to-income, and down payment varies by lender, project size, and borrower profile.
 
 The mistake we watch customers make: financing the motor and boat together at a 15-year term to keep monthly cost low. If you sell the boat in year 5, you're upside-down on the balance. Better path: shorter term, slightly higher monthly, no negative equity when the boat changes hands.
 
 ## Sources
 
-- Mercury Marine Canada — [Repower Financing programme terms](https://www.mercurymarine.com/ca/en/land/find-a-repower-center/financing) (administered through Medallion Bank; U.S. residents only)
+- Mercury Marine Canada, [Repower Financing programme terms](https://www.mercurymarine.com/ca/en/land/find-a-repower-center/financing) (administered through Medallion Bank; U.S. residents only)
 - Current Ontario financing options through HBW are shown on the [HBW quote builder](https://www.mercuryrepower.ca) at the end of your project build
 
 *Last reviewed: 2026-05-17.*
@@ -158,7 +158,7 @@ Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned o
 No. Mercury's branded Repower Financing programme (administered through Medallion Bank) is available only to U.S. residents. Sales and registrations outside the United States are explicitly excluded under the programme terms. Canadian buyers finance through Canadian marine lenders instead.
 
 **What financing options does HBW offer to Ontario buyers?**
-We work with Canadian marine lenders to structure financing on full repower packages — motor, rigging, controls, prop, install labour, and Ontario HST. Typical terms run 24 to 84 months. Apply through the quote builder once your project is specced.
+We work with Canadian marine lenders to structure financing on full repower packages, motor, rigging, controls, prop, install labour, and Ontario HST. Typical terms run 24 to 84 months. Apply through the quote builder once your project is specced.
 
 **What term lengths are available?**
 Typically 24, 36, 48, 60, 72, and 84 months, depending on lender. Most repower customers land at 60 or 72 months.

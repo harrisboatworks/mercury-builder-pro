@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-storage-kawartha-lakes.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-> **Quick answer:** Harris Boat Works offers winter boat storage, shrinkwrap, winterization, and spring commissioning from our Rice Lake marina in Gores Landing — accessible to boaters across the Kawartha Lakes (Rice, Pigeon, Sturgeon, Buckhorn, Stoney) and the GTA-east region. Storing where you boat means no spring scavenger hunt for the battery, cover, paperwork, or "who has the key?"
+> **Quick answer:** Harris Boat Works offers winter boat storage, shrinkwrap, winterization, and spring commissioning from our Rice Lake marina in Gores Landing, accessible to boaters across the Kawartha Lakes (Rice, Pigeon, Sturgeon, Buckhorn, Stoney) and the GTA-east region. Storing where you boat means no spring scavenger hunt for the battery, cover, paperwork, or "who has the key?"
 
 ---
 
@@ -41,7 +41,7 @@ Boat storage shouldn't create a spring scavenger hunt. A proper storage package 
 
 **Shrinkwrap that survives an Ontario winter.** Not a blue tarp that flaps itself to shreds by January. Professional shrinkwrap is heat-shrunk polyethylene over a fitted frame. It sheds snow, vents moisture, and removes cleanly in April without leaving tape residue or mystery tears.
 
-**Winterization done right.** Fuel stabilizer in the tank so your gas doesn't turn to varnish. Fogging oil in the cylinders so rust doesn't start. Lower unit drained and inspected. Battery pulled and trickle-charged, or at least tested. Water systems — livewells, freshwater tank, head — drained and protected with antifreeze. A boat that's just "put away" without winterization is a boat that won't start in May.
+**Winterization done right.** Fuel stabilizer in the tank so your gas doesn't turn to varnish. Fogging oil in the cylinders so rust doesn't start. Lower unit drained and inspected. Battery pulled and trickle-charged, or at least tested. Water systems, livewells, freshwater tank, head, drained and protected with antifreeze. A boat that's just "put away" without winterization is a boat that won't start in May.
 
 **Spring commissioning.** The reverse process: battery back in, systems flushed, fuel system checked, motor run on earmuffs, pre-launch safety inspection. You pick up the boat ready to launch, not ready to troubleshoot.
 
@@ -71,7 +71,7 @@ We bundle storage into straightforward tiers based on what your boat needs and h
 - Battery removal or trickle-charge setup
 - Water system drain and antifreeze protection
 
-**Full Season Package — Storage + Shrinkwrap + Winterization + Spring Commissioning**
+**Full Season Package, Storage + Shrinkwrap + Winterization + Spring Commissioning**
 - Everything above, plus:
 - Spring battery reinstall and test
 - Fuel system and water system flush
@@ -87,7 +87,7 @@ Most customers choose the middle or full package because it eliminates phone tag
 
 We've heard every reason boaters haul their boats home for winter. Some are valid. Most create more work than they save.
 
-**The trailering math:** Home storage means trailering the boat home in fall (fuel, time, wear on the trailer), storing it on your driveway or in your garage for six months, then trailering it back to the lake in spring. If you live 90 minutes from Rice Lake, that's six hours of towing per year — plus the risk of a lower-unit strike on a gravel driveway or the realization that your garage door is two inches too low.
+**The trailering math:** Home storage means trailering the boat home in fall (fuel, time, wear on the trailer), storing it on your driveway or in your garage for six months, then trailering it back to the lake in spring. If you live 90 minutes from Rice Lake, that's six hours of towing per year, plus the risk of a lower-unit strike on a gravel driveway or the realization that your garage door is two inches too low.
 
 **The spring delay:** If your boat is at home, you can't launch on the first nice Saturday in April. You have to tow it back, find the ramp, launch, and then discover what winter broke. If it's stored at HBW, you commission it on-site and launch the same morning.
 
@@ -109,7 +109,7 @@ HBW is based on Rice Lake in Gores Landing, but our storage customers come from 
 | Buckhorn Lake | 30–35 min | Part of the Trent-Severn; lots of cottagers |
 | Stoney Lake | 25–30 min | Clear water, great fishing, slightly longer haul |
 
-If you boat on any of these lakes, storing at HBW means your boat winters on a connected waterway in the same region. In spring, you commission it, launch on Rice Lake, and run the Trent-Severn to your home lake — or trailer it the short distance back to your usual ramp.
+If you boat on any of these lakes, storing at HBW means your boat winters on a connected waterway in the same region. In spring, you commission it, launch on Rice Lake, and run the Trent-Severn to your home lake, or trailer it the short distance back to your usual ramp.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -117,10 +117,10 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ![Rows of shrinkwrapped pleasure boats in a Canadian marina winter storage yard](/lovable-uploads/inline/inline-winter-storage-yard.png)
 
-## Store at HBW vs Haul Home — which is right for you?
+## Store at HBW vs Haul Home: which is right for you?
 
 ::decision-card
-heading: Store at HBW vs Haul Home — which is right for you?
+heading: Store at HBW vs Haul Home, which is right for you?
 subhead: There's no wrong answer, but there is a right answer for most Kawartha boaters.
 leftLabel: Store with HBW
 leftCriteria:
@@ -151,7 +151,7 @@ Not all storage is equal. Ask these questions before you hand over your keys:
 Outdoor with professional shrinkwrap is right for most aluminum and smaller fiberglass boats. Indoor heated storage is worth the premium for high-end cabin cruisers or boats with sensitive electronics. Ask honestly which category your boat falls into.
 
 **Is winterization included?**
-Some places store the boat and leave winterization to you. Others bundle it. Know what you're signing up for — a stored but unwinterized boat is a damaged boat by spring.
+Some places store the boat and leave winterization to you. Others bundle it. Know what you're signing up for, a stored but unwinterized boat is a damaged boat by spring.
 
 **Who does the work?**
 Ask whether the marina's own staff handles winterization or whether they subcontract. At HBW, our techs do the work. If something's wrong in spring, you talk to the person who did it.
@@ -186,9 +186,9 @@ If you're reading this in summer, book now. If you're reading this in late fall,
 
 ## More from HBW on winter care and spring launch
 
-- [Outdoor Boat Storage and Shrinkwrap on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) — our detailed guide to what's included, what's not, and how to prep
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist) — what happens when you pick the boat up in April
-- [Boat Winterization Cost Ontario: 2026 Price Guide](/blog/boat-winterization-cost-ontario-2026) — typical planning ranges for winterization across Ontario
+- [Outdoor Boat Storage and Shrinkwrap on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), our detailed guide to what's included, what's not, and how to prep
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), what happens when you pick the boat up in April
+- [Boat Winterization Cost Ontario: 2026 Price Guide](/blog/boat-winterization-cost-ontario-2026), typical planning ranges for winterization across Ontario
 
 For storage quotes, winterization bookings, and spring commissioning, the fastest path is [hbw.wiki/service](https://hbw.wiki/service). For our full marina and rental information, visit [harrisboatworks.ca](https://www.harrisboatworks.ca).
 
@@ -209,7 +209,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Do you offer indoor and outdoor boat storage on Rice Lake?
 
-Outdoor only. Our storage lot in Gores Landing is fenced, monitored, and staffed daily through the off-season. Boats are blocked, shrinkwrapped, and stored on our property from fall pickup through spring commissioning. We don't operate indoor heated storage. If your boat needs climate-controlled indoor space, we'll point you to a facility that does it without making a thing of it. For most aluminum fishing boats, pontoons, and smaller fiberglass boats, outdoor with professional shrinkwrap is the right answer — and it's what we've been doing since 1947.
+Outdoor only. Our storage lot in Gores Landing is fenced, monitored, and staffed daily through the off-season. Boats are blocked, shrinkwrapped, and stored on our property from fall pickup through spring commissioning. We don't operate indoor heated storage. If your boat needs climate-controlled indoor space, we'll point you to a facility that does it without making a thing of it. For most aluminum fishing boats, pontoons, and smaller fiberglass boats, outdoor with professional shrinkwrap is the right answer, and it's what we've been doing since 1947.
 
 ### What's included in your winterization package?
 
@@ -217,27 +217,27 @@ Our standard winterization covers the engine and systems that can't survive an O
 
 ### How much does boat storage cost in the Kawartha Lakes?
 
-Pricing depends on boat length, whether you bundle winterization and spring commissioning, and what cover option you choose. As a general planning range for the Kawartha Lakes area: outdoor storage with shrinkwrap typically runs from several hundred dollars for a small fishing boat up to roughly a thousand dollars or more for a larger pontoon or cabin boat. Winterization is usually an additional few hundred dollars. Spring commissioning — fuel system check, battery reinstall, water system flush, and launch-prep — is typically in the low-to-mid hundreds. The best way to get a real number for your boat is to request a storage quote through [hbw.wiki/service](https://hbw.wiki/service) with your boat model and length.
+Pricing depends on boat length, whether you bundle winterization and spring commissioning, and what cover option you choose. As a general planning range for the Kawartha Lakes area: outdoor storage with shrinkwrap typically runs from several hundred dollars for a small fishing boat up to roughly a thousand dollars or more for a larger pontoon or cabin boat. Winterization is usually an additional few hundred dollars. Spring commissioning, fuel system check, battery reinstall, water system flush, and launch-prep, is typically in the low-to-mid hundreds. The best way to get a real number for your boat is to request a storage quote through [hbw.wiki/service](https://hbw.wiki/service) with your boat model and length.
 
 ### Can I store my boat at HBW if I keep it on Pigeon / Sturgeon / Buckhorn?
 
-Yes. About half our storage customers don't keep their boats on Rice Lake during the season. They trailer from Pigeon Lake (15–20 min), Sturgeon Lake (20–25 min), Buckhorn Lake (30–35 min), or Stoney Lake (25–30 min) for winterization and storage because it simplifies spring launch — the boat is already winterized, wrapped, and sitting on a lake that connects to the Trent-Severn Waterway. You pick it up in April, commission it on-site, and launch the same day instead of hauling it home, finding the battery, and discovering the tarp didn't survive the winter.
+Yes. About half our storage customers don't keep their boats on Rice Lake during the season. They trailer from Pigeon Lake (15–20 min), Sturgeon Lake (20–25 min), Buckhorn Lake (30–35 min), or Stoney Lake (25–30 min) for winterization and storage because it simplifies spring launch, the boat is already winterized, wrapped, and sitting on a lake that connects to the Trent-Severn Waterway. You pick it up in April, commission it on-site, and launch the same day instead of hauling it home, finding the battery, and discovering the tarp didn't survive the winter.
 
 ### When should I book winter storage?
 
-Mid-September is the sweet spot. You get choice of slot, time to sort out any late-season repairs, and you avoid the October panic when the first frost warning hits and everyone calls at once. By the last week of October we're usually full and turning people away. If you're reading this in August, you're in good shape. If you're reading this in late October, call immediately — 905-342-2153 — and we'll tell you honestly what's left.
+Mid-September is the sweet spot. You get choice of slot, time to sort out any late-season repairs, and you avoid the October panic when the first frost warning hits and everyone calls at once. By the last week of October we're usually full and turning people away. If you're reading this in August, you're in good shape. If you're reading this in late October, call immediately, 905-342-2153, and we'll tell you honestly what's left.
 
 ### Do you do shrinkwrap separately from storage?
 
-We can, but most customers bundle it. Shrinkwrap alone is a legitimate service if you're storing at home and just need a proper winter cover. The wrap is heat-shrunk polyethylene over a frame, vents to prevent moisture buildup, and removes cleanly in spring. If you only need shrinkwrap (no storage, no winterization), contact us and we'll quote it. If you need the full package — winterization, storage, shrinkwrap, and spring commissioning — bundling saves you money and means one phone number for the whole off-season.
+We can, but most customers bundle it. Shrinkwrap alone is a legitimate service if you're storing at home and just need a proper winter cover. The wrap is heat-shrunk polyethylene over a frame, vents to prevent moisture buildup, and removes cleanly in spring. If you only need shrinkwrap (no storage, no winterization), contact us and we'll quote it. If you need the full package, winterization, storage, shrinkwrap, and spring commissioning, bundling saves you money and means one phone number for the whole off-season.
 
 ### Do you offer spring commissioning when I pick the boat up?
 
 Yes, and we recommend it. Spring commissioning is the reverse of winterization: reinstall the battery, flush and test the water systems, inspect the fuel system, check gearcase lube, run the motor on earmuffs, and do a pre-launch safety check. The boat goes from 'wrapped and stored' to 'ready to launch' in one appointment. You can pick up the boat on a Saturday morning and be on the water by noon instead of spending your first spring weekend troubleshooting a dead battery or figuring out why the livewell won't prime. Our [spring outboard commissioning checklist](/blog/spring-outboard-commissioning-checklist) walks through exactly what's included.
 
-### What if my boat isn't a Mercury — can I still store it?
+### What if my boat isn't a Mercury, can I still store it?
 
-Yes. We store and winterize all makes of outboard-powered boats. Our service shop specializes in Mercury and Mercruiser engine work, but storage and general winterization aren't brand-specific. If your boat has a Yamaha, Honda, Suzuki, or Evinrude outboard, we can still winterize it, store it, and commission it in spring. We just won't be the right shop for major engine repairs on non-Mercury motors — for that, we can recommend a qualified mechanic.
+Yes. We store and winterize all makes of outboard-powered boats. Our service shop specializes in Mercury and Mercruiser engine work, but storage and general winterization aren't brand-specific. If your boat has a Yamaha, Honda, Suzuki, or Evinrude outboard, we can still winterize it, store it, and commission it in spring. We just won't be the right shop for major engine repairs on non-Mercury motors, for that, we can recommend a qualified mechanic.
 
 ## Next steps
 

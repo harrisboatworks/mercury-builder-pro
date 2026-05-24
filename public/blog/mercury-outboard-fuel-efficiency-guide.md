@@ -1,14 +1,14 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Outboard Fuel Efficiency Guide (2026)"
-description: "The single biggest fuel-efficiency lever on a Mercury is prop selection. Right prop running at correct WOT RPM gives best economy."
+title: "Mercury Outboard Fuel Economy: How to Get Better MPG"
+description: "Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn, ranked by impact."
 category: "Tips"
 date_published: 2026-03-16
 date_modified: 2026-05-04
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Outboard Fuel Efficiency Guide (2026)
+# Mercury Outboard Fuel Economy: How to Get Better MPG
 
-> The single biggest fuel-efficiency lever on a Mercury is prop selection. Right prop running at correct WOT RPM gives best economy.
+> Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn, ranked by impact.
 
 **Category:** Tips  
 **Published:** 2026-03-16  

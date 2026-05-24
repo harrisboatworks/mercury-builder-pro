@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-port-hope-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -106,7 +106,7 @@ The other thing we see consistently: the Mercury 9.9 ProKicker installs are disp
 
 ## How to start
 
-Build your quote at mercuryrepower.ca. Real installed CAD pricing in three minutes.
+Build your quote at mercuryrepower.ca. Real installed CAD pricing in three minutes. For [real Mercury prices in Canadian dollars](/pricing-reference) on every model, see our published price list.
 
 If you have a service issue, submit a request at hbw.wiki/service.
 

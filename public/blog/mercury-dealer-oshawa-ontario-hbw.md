@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-oshawa-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -59,7 +59,7 @@ At 40 minutes, the whole service relationship becomes practical, not just the on
 
 ## The Pricing Conversation Starts Before You Arrive
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. Real numbers, no callback, no process to navigate.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. Real numbers, no callback, no process to navigate. For [Mercury MSRP and dealer prices](/pricing-reference) side by side, see our published price list.
 
 For Oshawa buyers who know what they want and just need a clean number, that's the difference. The pricing question is answered before you make the drive.
 

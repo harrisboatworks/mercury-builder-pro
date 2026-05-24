@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-oakville-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -49,7 +49,7 @@ If you've bought a motor before and the experience left you feeling like you wer
 
 ## Pricing That Doesn't Require a Conversation to Unlock
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. Before you talk to anyone. Before you're a "prospect."
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. Before you talk to anyone. Before you're a "prospect." For [Mercury outboard prices by horsepower](/pricing-reference) on one page, see our published price reference.
 
 If you build a quote, look at the number, and decide to buy from a closer Oakville-area dealer, good. You'll make that choice with real information. That's the point.
 

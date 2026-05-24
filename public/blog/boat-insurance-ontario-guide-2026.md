@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,7 @@ content_type: blog_article
 
 - **Liability**: $1M-$2M minimum (covers damage to other boats, docks, or injuries)
 - **Hull / agreed-value**: replacement cost minus depreciation, with motor and trailer riders
-- **Most home policies do NOT cover boats over 16 ft or over 25 HP** — above that, you need a marine policy
+- **Most home policies do NOT cover boats over 16 ft or over 25 HP**: above that, you need a marine policy
 - **Cost factors**: boat value, engine size, claim history, navigational area (Lake Ontario vs Rice Lake matters)
 
 ::cost-stack
@@ -81,22 +81,22 @@ A few Ontario fishing tournaments and most cottage docks also require proof of i
 
 A standard marine policy in Ontario covers:
 
-- **Liability** — Damage to other boats, docks, fuel docks, swimmers, water-skiers. Minimum recommended is $1M; $2M is more common.
-- **Hull (boat structure)** — Damage to the boat itself, including the trailer if listed as a rider. "Agreed value" policies pay what was agreed at policy start, regardless of depreciation. "Actual cash value" depreciates each year.
-- **Engine** — The outboard or sterndrive is usually covered, but high-HP repowers or motor upgrades may need to be reported and added.
-- **Personal effects** — Fishing gear, electronics, life jackets stored on the boat. Limited (usually $1,000-$5,000).
-- **Towing and on-water assistance** — Typically $500-$1,500 included; some policies include unlimited.
-- **Pollution liability** — Spilled fuel cleanup costs.
+- **Liability**: Damage to other boats, docks, fuel docks, swimmers, water-skiers. Minimum recommended is $1M; $2M is more common.
+- **Hull (boat structure)**: Damage to the boat itself, including the trailer if listed as a rider. "Agreed value" policies pay what was agreed at policy start, regardless of depreciation. "Actual cash value" depreciates each year.
+- **Engine**: The outboard or sterndrive is usually covered, but high-HP repowers or motor upgrades may need to be reported and added.
+- **Personal effects**: Fishing gear, electronics, life jackets stored on the boat. Limited (usually $1,000-$5,000).
+- **Towing and on-water assistance**: Typically $500-$1,500 included; some policies include unlimited.
+- **Pollution liability**: Spilled fuel cleanup costs.
 
 ## What is NOT Covered
 
 Common exclusions to read carefully before signing:
 
-- **Mechanical breakdown** — Engine seizing because of wear or skipped maintenance. (This is what extended warranty covers, see our [Mercury extended warranty guide](/blog/mercury-extended-warranty-platinum-ontario).)
-- **Manufacturer defects** — Covered by the factory warranty, not insurance.
-- **Racing or commercial use** — Standard pleasure-craft policies exclude tournament prize-money fishing, charters, and commercial work.
-- **Boats stored in unsafe conditions** — Outdoor storage during winter without cover voids some hull coverage.
-- **Boats older than 25-30 years** — Many insurers will not underwrite older fiberglass hulls without a marine survey.
+- **Mechanical breakdown**: Engine seizing because of wear or skipped maintenance. (This is what extended warranty covers, see our [Mercury extended warranty guide](/blog/mercury-extended-warranty-platinum-ontario).)
+- **Manufacturer defects**: Covered by the factory warranty, not insurance.
+- **Racing or commercial use**: Standard pleasure-craft policies exclude tournament prize-money fishing, charters, and commercial work.
+- **Boats stored in unsafe conditions**: Outdoor storage during winter without cover voids some hull coverage.
+- **Boats older than 25-30 years**: Many insurers will not underwrite older fiberglass hulls without a marine survey.
 
 ## What Does It Cost in Ontario?
 
@@ -113,12 +113,12 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Cost factors:
 
-- **Boat value** — bigger drives premium up
-- **Engine HP** — over 150 HP increases premium meaningfully
-- **Where you boat** — Lake Ontario (open water, weather risk) costs more than inland lakes like Rice Lake
-- **Claim history** — clean record gets best rates
-- **Operator experience** — [PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) alone is minimum; documented experience helps
-- **Storage location** — indoor storage discounts are real
+- **Boat value**: bigger drives premium up
+- **Engine HP**: over 150 HP increases premium meaningfully
+- **Where you boat**: Lake Ontario (open water, weather risk) costs more than inland lakes like Rice Lake
+- **Claim history**: clean record gets best rates
+- **Operator experience**: [PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) alone is minimum; documented experience helps
+- **Storage location**: indoor storage discounts are real
 
 ## Who Insures Boats in Ontario?
 
@@ -136,11 +136,11 @@ A licensed insurance broker who specifically handles marine coverage will get yo
 
 Re-rate your policy every time you:
 
-- Repower (change motor) — new motor value needs to be on the policy
-- Add a trailer — list as a separate rider
-- Move to a different launching lake or marina — risk zones change
-- Change moorage location — if your boat is now stored at a different marina, update
-- Add electronics over $1,000 — Garmin, Lowrance, Humminbird units depreciate fast but get stolen often
+- Repower (change motor), new motor value needs to be on the policy
+- Add a trailer, list as a separate rider
+- Move to a different launching lake or marina, risk zones change
+- Change moorage location, if your boat is now stored at a different marina, update
+- Add electronics over $1,000, Garmin, Lowrance, Humminbird units depreciate fast but get stolen often
 
 Repowers especially, many customers forget to update their policy after a $15,000+ motor swap. Do not.
 

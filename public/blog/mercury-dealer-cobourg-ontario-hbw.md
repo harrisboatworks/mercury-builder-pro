@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-cobourg-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -95,7 +95,7 @@ Cobourg customers whose boat lives on Lake Ontario can trailer up for major serv
 
 The most common Cobourg feedback we hear is about the call-for-quote frustration at other dealers. Cobourg has a high concentration of informed buyers, people who've researched the motor they want, know the specifications, and just need a real number to compare. The phone-call-required pricing model frustrates this group the most.
 
-Our quote builder at mercuryrepower.ca shows real installed CAD pricing in three minutes. Motor, rigging, controls, prop, install labour, HST, all on one line. The price you see is the price you pay. For an informed Cobourg buyer, that alone justifies the 25-minute drive.
+Our quote builder at mercuryrepower.ca shows real installed CAD pricing in three minutes. Motor, rigging, controls, prop, install labour, HST, all on one line. The price you see is the price you pay. For an informed Cobourg buyer, that alone justifies the 25-minute drive. For [current Mercury outboard prices](/pricing-reference) across the lineup, see our published price list.
 
 ## What we see at HBW
 

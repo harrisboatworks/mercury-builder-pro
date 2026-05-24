@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-burlington-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -43,7 +43,7 @@ We'll be straight about it.
 
 Most marine dealers in the greater Hamilton-Burlington corridor don't publish installed pricing online. They want you to call, and with good reason from their perspective. Once you're in a conversation, they can manage the comparison. They can anchor, pitch, and build rapport before you've made up your mind.
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. No call, no form, no process. You see the number, think it over, and engage us when you're ready.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. No call, no form, no process. You see the number, think it over, and engage us when you're ready. If you just want to see [every Mercury model priced in CAD](/pricing-reference), that list is published too.
 
 The customers who find this meaningful are the ones who've already done the research and just want a fair, transparent number. They're not looking to be sold. They're looking to buy.
 

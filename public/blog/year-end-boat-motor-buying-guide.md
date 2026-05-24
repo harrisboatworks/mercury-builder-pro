@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -115,7 +115,7 @@ A fair deal when you need it beats waiting indefinitely for a perfect deal. That
 
 **[Get Year-End Pricing](/quote)**
 
-Before you negotiate, anchor your expectations to real numbers, our [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) is the canonical CAD price reference for complete repowers at every HP tier.
+Before you negotiate, anchor your expectations to real numbers, our [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) is the canonical CAD price reference for complete repowers at every HP tier. For [current Mercury pricing in CAD](/pricing-reference) on individual motors, see our price reference.
 
 ## Related guides
 

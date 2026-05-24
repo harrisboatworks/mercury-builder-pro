@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Repower Cost in Mississauga"
+title: "Mercury Dealer for Mississauga: Where to Go When Closer Dealers Don't Cut It"
 description: "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Platinum dealer on Rice Lake. Build an installed total online."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-05-20
+date_modified: 2026-05-11
 keywords: ["mercury dealer mississauga","mercury repower mississauga","mercury outboard mississauga ontario","boat motor dealer mississauga","harris boat works mississauga customers"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Dealer for Mississauga: Where to Go When Closer Dealers Don't Cut It
 
-> Looking for a Mercury Platinum dealer for Mississauga? Harris Boat Works on Rice Lake - about 90 minutes northeast - handles Mercury repowers, sales, service, and...
+> What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Platinum dealer on Rice Lake. Build an installed total online.
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
@@ -45,7 +45,7 @@ Mississauga has marine dealers. Some carry Mercury. The experience at a lot of G
 
 By this point you've spent an hour or two on the phone and still don't know what the motor costs to actually put on your boat.
 
-Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows you installed pricing, motor plus rigging, in Canadian dollars, in about three minutes. No account, no callback, no opener for a negotiation. The number you see is real.
+Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows you installed pricing, motor plus rigging, in Canadian dollars, in about three minutes. No account, no callback, no opener for a negotiation. The number you see is real. To see [what a Mercury outboard costs](/pricing-reference) without building a quote, check our published price reference.
 
 If you price it here and decide a local dealer is the better call, that's fine. You're making an informed comparison now, not a managed one.
 

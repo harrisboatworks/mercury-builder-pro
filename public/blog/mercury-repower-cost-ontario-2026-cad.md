@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -97,7 +97,7 @@ A clean transom and good wiring takes a day to install. A rotten transom or mous
 
 ### Why We Don't Post Specific Motor Prices in Blog Posts
 
-Our actual prices are on the live configurator, always current, always in CAD, always for the specific configuration you're building. There's no point copying them into an article that goes stale the moment Mercury adjusts pricing.
+Our actual prices are on the live configurator, always current, always in CAD, always for the specific configuration you're building, with [Mercury MSRP and dealer pricing side by side](/pricing-reference) on every model in the lineup. There's no point copying them into an article that goes stale the moment Mercury adjusts pricing.
 
 Our whole position is that you shouldn't have to call us or read a blog post to find out what something costs. The configurator does that job better than any article can.
 

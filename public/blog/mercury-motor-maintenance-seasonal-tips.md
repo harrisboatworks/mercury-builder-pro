@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)"
-description: "Mercury motor maintenance in Ontario follows a seasonal cycle: spring commissioning, summer check, fall winterization, and winter storage. Done right at HBW."
+description: "Spring, summer, fall, and winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 winterization mistake."
 category: "Maintenance"
 date_published: 2024-05-20
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
 
-> Mercury motor maintenance in Ontario follows a seasonal cycle: spring commissioning, summer check, fall winterization, and winter storage. Done right at HBW.
+> Spring, summer, fall, and winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 winterization mistake.
 
 **Category:** Maintenance  
 **Published:** 2024-05-20  

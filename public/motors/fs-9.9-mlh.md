@@ -1,37 +1,37 @@
 ---
-canonical: https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke
-last_updated: 2026-05-20
+canonical: https://www.mercuryrepower.ca/motors/fs-9.9-mlh
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-motor_id: 71d56079-1b47-44e9-8447-969ec6ef416b
-slug: fourstroke-25hp-25-elhpt-fourstroke
+motor_id: a580f60c-a86d-4352-b77a-665f0b9e8208
+slug: fs-9.9-mlh
 family: FourStroke
-horsepower: 25
-model_number: 1A25411BK
+horsepower: 9.9
+model_number: 1A10211LK
 availability: in_stock
-price_cad: 6111
+price_cad: 2999
 ---
 
-# 25 ELHPT FourStroke
+# 9.9MLH FourStroke
 
-Mercury FourStroke 25 HP outboard motor (model 1A25411BK).
+Mercury FourStroke 9.9 HP outboard motor (model 1A10211LK).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 25 ELHPT FourStroke
+- **Model:** 9.9MLH FourStroke
 - **Family:** Mercury FourStroke
-- **Horsepower:** 25 HP
-- **Model number:** 1A25411BK
+- **Horsepower:** 9.9 HP
+- **Model number:** 1A10211LK
 
 ## Pricing (CAD)
 
-- **Selling price:** $6,111
-- **MSRP:** $6,665
+- **Selling price:** $2,999
+- **MSRP:** $3,925
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
@@ -42,16 +42,16 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Best fit for
 
-Small aluminum fishing boats, jon boats, and light tiller setups.
+Small tenders, canoes, sailboat kickers, and very light fishing setups.
 
 ## Not ideal for
 
-Pontoons, family runabouts, or any 18+ ft boat carrying more than two adults with gear.
+Boats 16 ft and over, loaded family boats, or anything that needs to plane with multiple passengers.
 
 ## Build a quote
 
-- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke
-- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=71d56079-1b47-44e9-8447-969ec6ef416b
+- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fs-9.9-mlh
+- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=a580f60c-a86d-4352-b77a-665f0b9e8208
 
 ## Public Quote API
 
@@ -60,7 +60,7 @@ Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1
 ```json
 {
   "action": "build_quote",
-  "motor_id": "71d56079-1b47-44e9-8447-969ec6ef416b",
+  "motor_id": "a580f60c-a86d-4352-b77a-665f0b9e8208",
   "trade_in": null,
   "contact": null
 }

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -96,7 +96,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 - Ideal for repower projects
 
 ::cost-stack
-heading: 2026 Mercury tier pricing — what you actually pay in CAD
+heading: 2026 Mercury tier pricing, what you actually pay in CAD
 eyebrow: All-in ballparks
 subhead: Motor MSRP is one line on the invoice. Here is the full picture across Mercury's tiers, before any trade-in or current promo.
 item1Label: FourStroke 9.9 (kicker / small tiller)

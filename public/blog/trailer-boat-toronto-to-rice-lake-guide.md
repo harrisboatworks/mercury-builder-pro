@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -81,15 +81,15 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 ## Toronto to Gores Landing: Drive Timeline
 
-**Toronto to Whitby (about 30 minutes)** — Highway 401 east. Watch for construction, the worst weekday morning rush hour stretch in Canada. Saturday mornings before 9 a.m. are reliably clear.
+**Toronto to Whitby (about 30 minutes)**: Highway 401 east. Watch for construction, the worst weekday morning rush hour stretch in Canada. Saturday mornings before 9 a.m. are reliably clear.
 
-**Whitby to Port Hope (about 20 minutes)** — Continuing east on 401. Lighter traffic, faster pace. Watch for OPP enforcement, this stretch has been known for speed checks.
+**Whitby to Port Hope (about 20 minutes)**: Continuing east on 401. Lighter traffic, faster pace. Watch for OPP enforcement, this stretch has been known for speed checks.
 
-**Port Hope to Highway 115 turnoff (about 5 minutes)** — Exit onto Highway 115 north.
+**Port Hope to Highway 115 turnoff (about 5 minutes)**: Exit onto Highway 115 north.
 
-**Highway 115 to County Road 28 (about 25 minutes)** — Mostly two-lane through farmland. Watch for left-turning traffic onto side roads, slower-moving local traffic, and seasonal farm equipment.
+**Highway 115 to County Road 28 (about 25 minutes)**: Mostly two-lane through farmland. Watch for left-turning traffic onto side roads, slower-moving local traffic, and seasonal farm equipment.
 
-**County Road 28 to Gores Landing (about 15 minutes)** — Rural road, well-paved but narrower. The last 5 minutes into Gores Landing is downhill toward the lake; watch your brakes if you're carrying a heavy load.
+**County Road 28 to Gores Landing (about 15 minutes)**: Rural road, well-paved but narrower. The last 5 minutes into Gores Landing is downhill toward the lake; watch your brakes if you're carrying a heavy load.
 
 **Total: 80–90 minutes** in normal conditions. Add 15–30 minutes on weekend afternoons during cottage season.
 

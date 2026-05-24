@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,7 +31,7 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Trade-in value depends on brand, horsepower, age, and condition. Mercury holds value best in Ontario; Yamaha takes a small penalty, Honda and Suzuki larger ones. We anchor against median selling prices and cap the credit at the motor subtotal. Get an instant trade estimate inside the configurator at mercuryrepower.ca.
+> **Quick answer:** Trade-in value depends on brand, horsepower, age, and condition. Mercury holds value best in Ontario; Yamaha takes a small penalty, Honda and Suzuki larger ones. We anchor against median selling prices and cap the credit at the motor subtotal. Get an instant trade estimate inside the configurator at mercuryrepower.ca, and compare it against [the Mercury price reference](/pricing-reference) for the new motor you would put in its place.
 
 ## Maximizing Your Motor Trade-In Value
 

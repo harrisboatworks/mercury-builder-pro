@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -105,7 +105,7 @@ For repower decisions specifically, the most common Northumberland scenario we s
 
 ## How to start
 
-Build your quote at mercuryrepower.ca. Real installed CAD pricing.
+Build your quote at mercuryrepower.ca. Real installed CAD pricing. For [Mercury pricing without a quote](/pricing-reference), see our published price list.
 
 If you have a service issue, submit a request at hbw.wiki/service.
 

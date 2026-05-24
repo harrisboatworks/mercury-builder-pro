@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-vaughan-ontario-hbw.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -43,7 +43,7 @@ We're not going to pretend that's nothing. Here's why some Vaughan customers mak
 
 The number one reason Vaughan customers tell us they drove up: they built a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and the pricing was cleaner than anything they'd gotten closer to home.
 
-Our quote builder shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. Not a "starting at" figure. Not a range. A number you can actually compare against.
+Our quote builder shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. Not a "starting at" figure. Not a range. A number you can actually compare against. To [see Mercury prices before you drive out](/pricing-reference), our full motor price list is published in CAD.
 
 For anyone who's played the call-for-quote game with a GTA dealer, having a real price visible before any conversation starts is a different experience. You come in with the information, not looking for it.
 

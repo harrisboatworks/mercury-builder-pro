@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-financing-guide-ontario.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -93,20 +93,20 @@ What to watch:
 heading: Monthly payment ranges by financing path
 eyebrow: $15K vs $25K scenarios
 subhead: Same motor, three financing paths. Numbers below are estimates at typical 2026 Ontario rates over 84 months.
-item1Label: Pay cash — $15,000 motor
+item1Label: Pay cash, $15,000 motor
 item1Value: $0/month
 item1Note: No interest, no DealerPlan fee, fastest paperwork. Best total cost if you have the cash.
-item2Label: Pay cash — $25,000 motor
+item2Label: Pay cash, $25,000 motor
 item2Value: $0/month
 item2Note: Same advantage at the larger ticket. Saves roughly $5,500 in interest over 7 years.
-item3Label: Bank loan at 9.5% — $15,000
+item3Label: Bank loan at 9.5%, $15,000
 item3Value: ~$245/month
 item3Note: Unsecured personal loan. Approval and rate depend on credit. Faster than dealer financing.
 item3Accent: true
-item4Label: Mercury Marine financing at 8.99% — $15,000
+item4Label: Mercury Marine financing at 8.99%, $15,000
 item4Value: ~$240/month
 item4Note: $299 DealerPlan fee added post-tax. Often the best rate for the under $10K range.
-item5Label: Mercury Marine financing at 7.99% — $25,000
+item5Label: Mercury Marine financing at 7.99%, $25,000
 item5Value: ~$390/month
 item5Note: Lower tier rate kicks in at $10K+. $299 DealerPlan fee still applies.
 totalLabel: Best path for most buyers

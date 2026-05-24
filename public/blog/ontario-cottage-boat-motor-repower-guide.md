@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -42,7 +42,7 @@ The customers we see at HBW in spring usually fit one of three patterns: the boa
 
 All three are repower candidates, if the hull is good.
 
-The part that trips people up is the math. A repower on a typical cottage aluminum boat or pontoon lands at a fraction of what a comparable new boat costs. The hull is the asset. The motor is the wear part.
+The part that trips people up is the math. A repower on a typical cottage aluminum boat or pontoon lands at a fraction of what a comparable new boat costs. The hull is the asset. The motor is the wear part. For [what every Mercury model costs](/pricing-reference) in CAD, see our full price reference.
 
 ## What actually changes the decision for cottage boats
 

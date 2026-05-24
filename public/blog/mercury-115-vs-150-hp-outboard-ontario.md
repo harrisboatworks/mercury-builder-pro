@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario.md
-last_updated: 2026-05-20
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -72,7 +72,7 @@ source: HBW Customer, Lakefield 2026
 
 ## Full Article
 
-The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L inline 4-cylinder. More displacement, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000, $6,000 CAD all-in.
+The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L inline 4-cylinder. More displacement, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000, $6,000 CAD all-in. For [Mercury outboard prices from 2.5 to 300 HP](/pricing-reference), see our full reference.
 
 Whether that difference is worth paying comes down to three questions: What hull are you putting it on? How do you use it? How do you load it?
 
