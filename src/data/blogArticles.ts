@@ -90,8 +90,8 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: 'mercury-9-9-vs-15-hp-tiller-ontario',
     title: "Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?",
-    seoTitle: "Why Mercury Leads the Outboard Market in 2026 | HBW",
-    description: "When is it time to repower? Honest Ontario cost ranges ("1K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW, est. 1947.",
+    seoTitle: "Mercury 9.9 vs 15 HP Tiller: Which One for Ontario?",
+    description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca.",
     image: '/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4.png',
     author: 'Jay Harris',
     datePublished: '2026-05-18',
