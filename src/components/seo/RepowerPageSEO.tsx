@@ -42,7 +42,8 @@ export function RepowerPageSEO() {
           "longitude": -78.2564
         },
         "foundingDate": "1947",
-        "priceRange": "$$"
+        "priceRange": "$$",
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "Service",
