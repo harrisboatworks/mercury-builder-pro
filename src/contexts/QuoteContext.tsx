@@ -240,15 +240,15 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       try {
         if (typeof window !== 'undefined' && !state.completedSteps.includes(action.payload)) {
           const stepNames = ['', 'motor_selection', 'boat_details', 'boat_details', 'customer_info', 'customer_info', 'review', 'review'];
-          // eslint-disable-next-line @typescript-eslint/no-var-requires
-          const a = require('@/lib/analytics');
           const startKey = `mr_step_start_${action.payload}`;
           const startTs = Number(sessionStorage.getItem(startKey) || 0);
           const nowMs = Date.now();
           const durationS = startTs ? Math.round((nowMs - startTs) / 1000) : 0;
           sessionStorage.setItem(`mr_step_start_${action.payload + 1}`, String(nowMs));
-          const qid = a.getQuoteId ? a.getQuoteId() : null;
-          a.trackEvent('quote_step_complete', {
+          const qid = sessionStorage.getItem('mr_quote_id');
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).dataLayer.push({
+            event: 'quote_step_complete',
             step_number: action.payload,
             step_name: stepNames[action.payload] || `step_${action.payload}`,
             step_duration_seconds: durationS,
