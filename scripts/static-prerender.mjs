@@ -2119,6 +2119,7 @@ function lineupLandingNoscriptHtml(cfg) {
       `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
     ).join('') +
     '</dl>' +
+    mercurySegmentCrossLinksHtml(cfg.path) +
     `<h2>${escapeHtml(cfg.finalCtaHeading)}</h2>` +
     '<p>Real price, in writing. Pickup at Gores Landing. <a href="/quote/motor-selection">Build Your Quote</a> or call <a href="tel:+19053422153">905-342-2153</a>.</p>'
   );
