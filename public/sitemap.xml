@@ -128,6 +128,30 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.mercuryrepower.ca/mercury/pro-xs-250</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/mercury/portable-9-20hp</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/mercury/mid-range-40-60hp</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/mercury/mid-power-90-115hp</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.mercuryrepower.ca/mercury-outboards-ontario</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -1507,6 +1531,26 @@
     <image:image>
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-avator-charging-cottage.png</image:loc>
       <image:title><![CDATA[Charging a Mercury Avator at Your Cottage Dock (2026)]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero.jpg</image:loc>
+      <image:title><![CDATA[2-Stroke vs 4-Stroke Repower: What to Know]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/avator-7-5e-hero-real.jpg</image:loc>
+      <image:title><![CDATA[Mercury Avator 7.5e Review: Electric Outboard]]></image:title>
     </image:image>
   </url>
   <url>
