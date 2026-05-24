@@ -31859,21 +31859,21 @@ Harris Boat Works, family-owned since 1947. A Mercury Platinum Dealer, selling M
 
 > **Quick answer:** The Mercury Avator 7.5e is a 750-watt electric outboard with roughly the thrust of a 3.5 HP gas portable. It shines as a silent trolling kicker, as a motor for small fishing boats and tenders, and as a clean sailboat auxiliary. It is not a main motor for anything bigger than a light 12-foot tinnie. Build a quote at mercuryrepower.ca.
 
-We sell gas outboards and we sell electric. We have no reason to oversell either one. So here is the straight version of the Mercury Avator 7.5e: it is very good at a narrow job, and a poor choice if you ask it to do something else.
+We sell gas outboards and we sell electric. We have no reason to oversell either one. So here is the straight version of the Mercury Avator 7.5e: it is very good at a narrow job, and a poor choice the moment you ask it to do something else.
 
-The Avator 7.5e is Mercury's smallest electric outboard. It puts 750 watts at the prop, charges from a regular wall outlet, and runs nearly silent. For a Rice Lake angler who wants to slip along a weed line without an engine droning in the water, that is close to ideal. For someone who needs to cross the lake all day on one boat, it is the wrong tool. This review walks the honest line between those two.
+The Avator 7.5e is Mercury's smallest electric outboard. It puts 750 watts at the prop, charges off a wall outlet, and runs nearly silent. For a Rice Lake angler easing along a weed line at first light, that silence is the whole point. For someone who needs to cover the lake all day on one boat, it is the wrong tool, and no amount of wanting will change that. This review stays on the honest line between those two.
 
 ## What is the Mercury Avator 7.5e and who is it for?
 
-The Avator 7.5e is the entry point in Mercury's Avator electric family. It is a brushless electric motor with a removable lithium-ion battery, a full-colour digital display on the tiller, and none of the gas, oil, fumes, or cord-pull starting of a small two or four-stroke. Push a button, twist the tiller or push the remote throttle, and go.
+The Avator 7.5e is the entry point in Mercury's electric Avator family. A brushless electric motor, a removable lithium-ion battery, a full-colour display on the tiller, and none of the gas, oil, fumes, or pull-start of a small two or four-stroke. Press a button, twist the grip, go.
 
-One framing note up front. Mercury rates the Avator line by output power in kilowatts and by equivalent thrust, not by a direct gas-engine horsepower number. For a working comparison, the 7.5e delivers roughly what a 3.5 HP gas portable would. We will use that comparison through this review because it is how most buyers think, but the spec that matters is the 750 watts at the prop.
+A note on the number. Mercury rates the Avator by output power, kilowatts at the prop, and by equivalent thrust, not by a gasoline horsepower figure. In plain terms, the 7.5e pushes a boat about like a 3.5 HP gas portable would. We lean on that comparison because it is how people shop, but the spec that matters is 750 watts at the prop.
 
-There are three customer profiles where the Avator is the right pick. The first is a Rice Lake fishing customer who wants a silent kicker. Trolling for walleye in 12 feet of water, you do not want a gas kicker pushing exhaust into the boat and noise into the water. The Avator slides the boat through productive water without spooking fish. The second is a sailboat owner who needs an auxiliary. Small daysailers and cruising sailboats need a motor to get out of the marina and back, and the Avator gives clean, low-vibration thrust with no two-stroke smell. The third is a tender or dinghy owner, or anyone running a car-topper under 14 feet. A 9 to 12-foot tender behind a cottage cruiser is well served by an Avator: light, clean, and easy to charge from cottage power.
+Three customers, and the Avator is the right call for all three. The Rice Lake angler who wants a silent kicker: trolling for walleye in 12 feet of water, you do not want exhaust in the boat or engine drone in the water, and the Avator lets the hull slide through good water without announcing itself. The sailboat owner who needs an auxiliary: clean, low-vibration thrust to get out of the slip and back, no two-stroke smell in the cockpit. And the tender or car-topper owner under 14 feet: a 9 to 12-foot tender behind a cottage cruiser is exactly its weight class, light and easy to charge off cottage power.
 
 ## How does the Avator 7.5e compare to a small gas portable?
 
-Side by side with Mercury's small FourStroke portables, the picture is clear.
+Lined up against Mercury's small FourStroke portables, the picture is honest.
 
 | Spec | Avator 7.5e | FourStroke 3.5 | FourStroke 5 |
 |---|---|---|---|
@@ -31888,44 +31888,44 @@ Side by side with Mercury's small FourStroke portables, the picture is clear.
 | Installed price (CAD) | $4,500 to $6,500 | $1,800 to $2,400 | $2,200 to $2,800 |
 | Best use | Silent kicker, tender | Dinghy, kicker | Light tinny |
 
-The Avator costs more up front than a comparable gas portable. It pays that back in three ways: zero fuel cost, zero annual oil change, and silent operation. It is still a niche pick. For most repower customers a gas portable is the right tool. For fishing and any use where silence matters, the Avator wins.
+The Avator costs more the day you buy it. It earns that back three ways: no fuel, no annual oil change, and silence. It is still a niche pick. For most repower customers a gas portable is the right tool and the smaller cheque. For fishing, and for anyone who values quiet water, the Avator is worth every dollar of the difference.
 
 ## What is the real range and battery life on Rice Lake?
 
-Range is the whole conversation with electric outboards. Published light-load numbers are useful, but they are not a guarantee. Wind, chop, boat weight, battery temperature, and throttle position all move the answer quickly.
+Range is the whole conversation with an electric outboard, and brochure numbers are a starting point, not a promise. Wind, chop, boat weight, water temperature, throttle position: every one of them moves the answer.
 
-We have run the Avator on customer boats around Rice Lake long enough to give honest numbers. At a slow troll of 1.5 to 2 mph, the speed that drags a worm harness for walleye, the 1 kWh battery delivers 3 to 5 hours. That covers a typical fishing evening or morning. At half throttle for transit, around 3 to 4 mph on a light boat, expect roughly 45 minutes. At wide-open against a headwind, runtime drops to under an hour.
+We have run the Avator on customer boats around Rice Lake long enough to give you numbers you can plan around. At a slow troll, 1.5 to 2 mph, the speed that drags a worm harness for walleye, the 1 kWh battery holds 3 to 5 hours. That is a full fishing morning or a full evening. Push to half throttle for transit, 3 to 4 mph on a light boat, and you are looking at roughly 45 minutes. Wide open into a headwind, under an hour.
 
-The motor's colour display shows battery percentage and estimated runtime based on your current throttle. Most customers who buy the Avator add a second 1 kWh battery, either as a spare swap or running dual batteries on the boat. Two batteries give you effectively a full day of trolling, and a swap takes under a minute because the packs latch in like a power-tool battery. Charging is straightforward: a standard 120V household outlet brings the 1 kWh battery from empty to full in about four hours, and most cottage and dock setups can charge overnight. Cold water in May drops capacity by 10 to 20 percent, so plan accordingly early in the season.
+The tiller display shows battery percentage and estimated runtime against your current throttle, so you are never guessing. Most Avator owners add a second 1 kWh pack, running dual or carrying a spare, and the swap takes under a minute because the batteries latch in like a cordless-drill pack. Two batteries is effectively a full day of trolling. One more thing for early season: cold water in May pulls 10 to 20 percent off capacity, so keep the first trips short.
 
 ## How does the Avator fit into a Mercury repower?
 
-The Avator is rarely a stand-alone repower. It is more often a paired motor: a main gas outboard plus an Avator as a silent kicker.
+The Avator is rarely the whole repower. More often it is half of one: a gas main motor plus the Avator as a silent kicker.
 
-A common pairing on Rice Lake is a Mercury 90 HP FourStroke as the main motor for travel between fishing spots, plus an Avator 7.5e on a kicker bracket for slow trolling. The two motors serve different jobs. The 90 HP gets you there. The Avator keeps you quiet when you are fishing, with no exhaust, no smell, and no engine vibration through the deck while you work a weed line. If you are weighing a main-plus-kicker setup, our [Mercury ProKicker and trolling guide](/blog/mercury-prokicker-rice-lake-fishing-guide) covers the options, and the Avator is one good kicker alongside Mercury's small gas portables.
+The pairing we rig most on Rice Lake is a Mercury 90 HP FourStroke for getting between spots and an Avator 7.5e on a kicker bracket for working them. Two motors, two jobs. The 90 gets you there. The Avator keeps the boat quiet while you fish, no exhaust, no smell, no engine buzz through the deck on a weed line. If you are weighing a main-plus-kicker setup, our [Mercury ProKicker and trolling guide](/blog/mercury-prokicker-rice-lake-fishing-guide) lays out the options, with the Avator as one strong kicker beside Mercury's small gas portables.
 
 ## What does the Mercury Avator 7.5e cost installed?
 
-Installed pricing at Harris Boat Works varies by battery configuration:
+Installed pricing at Harris Boat Works runs by battery configuration:
 
 - Avator 7.5e plus single 1 kWh battery plus mount: $4,500 to $5,200 CAD
 - Avator 7.5e plus dual 1 kWh batteries plus mount: $5,500 to $6,500 CAD
 
-Installation includes the kicker bracket if used, throttle wiring, charging setup, and a water test on Rice Lake. Pickup only at Gores Landing: no shipping, no delivery. The deposit is $200 for portable and small-HP motors, and financing is available on approved credit. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks down the full motor families, and we can also supply spare battery packs that swap in seconds on the water for anglers who want to double their runtime without heading back to the dock.
+Installation covers the kicker bracket if used, throttle wiring, charging setup, and a water test on Rice Lake. Pickup only at Gores Landing: no shipping, no delivery. The deposit is $200 for portable and small-HP motors, and financing is available on approved credit. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks down the full motor families, and we keep spare battery packs in stock for anglers who want to double their day on the water without a run back to the dock.
 
 ## What are the Avator's limitations?
 
-An honest review means honest limits. Three things to know.
+An honest review owes you the limits. Three of them.
 
-First, range. The Avator is not a long-range motor. If you plan to cross a broad lake all day on a single battery, you will run low. Plan for spares or dock charging. The honest Rice Lake figures are roughly 3 to 4 miles flat out, 8 to 12 miles at half throttle, and 20 to 25 miles when you use it as a slow trolling tool.
+Range. The Avator is not a distance motor. Plan a full day of open-water crossings on one battery and you will run it flat. Carry a spare or charge at the dock. The honest Rice Lake figures: 3 to 4 miles flat out, 8 to 12 at half throttle, 20 to 25 if you treat it as the slow trolling tool it is built to be.
 
-Second, weather. Electric motors do not mind cold the way a gas engine can, but battery capacity drops in cold water. Expect 10 to 20 percent less runtime on early-season Rice Lake in May.
+Cold. Electric motors shrug off cold better than gas does, but the battery does not. Expect 10 to 20 percent less runtime on early-season Rice Lake.
 
-Third, scope. The Avator 7.5e is small. Do not buy it as a wishful substitute for a gas main motor on a heavy 16 to 18-foot fishing boat that needs to cover distance all day. The 7.5e is good, but it is good at a clearly defined job: silent kicker, tender, sailboat auxiliary, or small light boat. Use it for that and you will be glad you bought it.
+Scope. The 7.5e is small, and it cannot be wished into something bigger. It will not replace a gas main motor on a heavy 16 to 18-foot boat that needs to run all day. Buy it for the job it is built for, silent kicker, tender, sailboat auxiliary, light boat, and it becomes one of your favourite things on the water. Buy it for the wrong job and you will be disappointed, and that is not the motor's fault.
 
 ## What we see at HBW
 
-The customers who love their Avator are the ones who bought it for the right reason. Almost every happy 7.5e owner we have rigged uses it as a kicker or on a light boat, and almost every disappointed electric-outboard owner we hear about, usually one who bought elsewhere, tried to make a small electric do a big gas motor's job. Match the motor to the task and the Avator is a quiet, low-maintenance pleasure. We rig it, water-test it on Rice Lake, and hand it back at Gores Landing.
+Every happy Avator owner we have rigged bought it for the right reason. They wanted a silent kicker, or a clean little motor for a tender, and that is exactly what they got. The disappointed electric-outboard stories we hear, almost always a motor bought somewhere else, are the same story every time: someone asked a small electric to do a big gas motor's day. Match it to the task and the Avator is quiet, simple, and close to maintenance-free. We rig it, water-test it on Rice Lake, and hand it back at Gores Landing.
 
 ## Frequently Asked Questions
 
