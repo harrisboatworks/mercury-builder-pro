@@ -264,3 +264,16 @@ export const ALL_LINEUP_LANDINGS: LandingConfig[] = [
   MID_RANGE_40_60HP,
   MID_POWER_90_115HP,
 ];
+
+export interface SegmentLink {
+  path: string;
+  name: string;
+  price: string;
+}
+
+export const ALL_SEGMENTS: SegmentLink[] = [
+  { path: '/mercury/pro-xs-250', name: 'Mercury Pro XS 250', price: '$34,502' },
+  { path: '/mercury/portable-9-20hp', name: 'Mercury 9.9 to 20 HP Portable', price: '$3,553' },
+  { path: '/mercury/mid-range-40-60hp', name: 'Mercury 40 to 60 HP Mid-Range', price: '$9,532' },
+  { path: '/mercury/mid-power-90-115hp', name: 'Mercury 90 to 115 HP', price: '$14,812' },
+];
