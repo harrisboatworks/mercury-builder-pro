@@ -2338,7 +2338,7 @@ const blogArticleRoutes = blogArticles.map(article => ({
 function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale, inLanguage) {
   return articles.map(article => ({
     path: `/blog/${langCode}/${article.slug}`,
-    title: `${article.seoTitle || article.title} | Harris Boat Works Blog`,
+    title: article.seoTitle || `${article.title} | Harris Boat Works Blog`,
     description: article.description,
     ogImage: article.image ? (article.image.startsWith('http') ? article.image : `${SITE_URL}${article.image}`) : undefined,
     ogType: 'article',
