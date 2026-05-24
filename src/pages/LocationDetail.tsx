@@ -105,9 +105,10 @@ export default function LocationDetail() {
   if (!location) return <Navigate to="/locations" replace />;
 
   const url = `${SITE_URL}/locations/${location.slug}`;
-  const h1 = `Mercury Outboards for ${location.region} Buyers`;
-  const contextBullets = location.localContext.slice(0, 3);
-  const faqs = location.faqs.slice(0, 4);
+  const lf = location.longForm;
+  const h1 = lf?.h1 ?? `Mercury Outboards for ${location.region} Buyers`;
+  const contextBullets = (lf?.keyFacts ?? location.localContext).slice(0, 6);
+  const faqs = (lf?.faqs ?? location.faqs).slice(0, lf ? 8 : 4);
   const useCases = USE_CASES_BY_SLUG[location.slug] ?? DEFAULT_USE_CASES;
   const telHref = `tel:${COMPANY_INFO.contact.phone.replace(/[^0-9+]/g, '')}`;
 
