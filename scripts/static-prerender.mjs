@@ -1094,7 +1094,8 @@ function repowerSchema() {
         },
         "geo": { "@type": "GeoCoordinates", "latitude": 44.1147, "longitude": -78.2564 },
         "foundingDate": "1947",
-        "priceRange": "$$"
+        "priceRange": "$$",
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "Service",
