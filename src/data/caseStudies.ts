@@ -1,3 +1,5 @@
+import type { CaseStudyLongForm } from './caseStudiesLongForm';
+
 export interface CaseStudy {
   id: string;
   slug: string;
@@ -16,9 +18,13 @@ export interface CaseStudy {
   whyItWorked: string[];
   isIllustrative: boolean;
   quoteUrl: string;
+  /** Optional long-form (Bucket 2 Batch 2, May 2026). */
+  longForm?: CaseStudyLongForm;
+  datePublished?: string;
+  dateModified?: string;
 }
 
-export const caseStudies: CaseStudy[] = [
+const BASE_CASE_STUDIES: CaseStudy[] = [
   {
     id: 'CS01',
     slug: 'aluminum-fishing-60-to-90-fourstroke',
@@ -133,6 +139,10 @@ export const caseStudies: CaseStudy[] = [
     quoteUrl: '/quote/motor-selection?caseStudy=CS05'
   }
 ];
+
+import { LONG_FORM_CASE_STUDIES } from './caseStudiesLongForm';
+
+export const caseStudies: CaseStudy[] = [...BASE_CASE_STUDIES, ...LONG_FORM_CASE_STUDIES];
 
 export function getCaseStudyBySlug(slug: string) {
   return caseStudies.find((caseStudy) => caseStudy.slug === slug);
