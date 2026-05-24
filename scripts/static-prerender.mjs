@@ -888,7 +888,8 @@ function homepageSchema() {
         ],
         "award": "Mercury Marine Platinum Dealer",
         "aggregateRating": LIVE_AGGREGATE_RATING,
-        "openingHoursSpecification": LIVE_OPENING_HOURS
+        "openingHoursSpecification": LIVE_OPENING_HOURS,
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "Service",
