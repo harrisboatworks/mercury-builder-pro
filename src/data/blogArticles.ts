@@ -31711,21 +31711,21 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
 
 > **Quick answer:** Mercury no longer builds recreational 2-stroke outboards, so a 2-stroke repower today means a modern Mercury FourStroke. You gain quieter running, a cleaner idle, and 25 to 40 percent better fuel economy at cruise. You also add 15 to 25 kg, so transom, trim, and rigging need a look. Expect $11,000 to $24,000 CAD installed for a typical repower. Build a quote at mercuryrepower.ca.
 
-If your boat still has a 2-stroke on the transom, you already know the trade-offs. It is light and it gets up fast. It also smokes at idle, drinks fuel, and needs the choke coaxing on a cool morning. The question is not whether a 4-stroke is better. It is what actually changes on your boat when you make the swap, and whether the numbers make sense.
+Your old 2-stroke still starts. That is exactly what makes this a hard call. It fires on the second pull, it gets the boat on plane, and a new FourStroke is real money out of pocket. So the honest question is not whether a 4-stroke is better. Everyone knows it is. The question is what changes on your boat the day you make the swap, and whether the math fits the way you actually use the water.
 
-We have done this exact repower hundreds of times on Rice Lake hulls. Here is the honest rundown: what improves, what compromises come with it, and what it costs in Canadian dollars.
+We have pulled tired 2-strokes off Rice Lake transoms for decades. Some of those repowers were overdue. A few should have waited a season. Here is the straight version: what gets better, what gets worse, and what it costs in Canadian dollars.
 
 ## What is the difference between a 2-stroke and 4-stroke outboard?
 
-A 2-stroke outboard fires the spark plug every revolution of the crankshaft, so it makes power on every stroke. It is lighter, mechanically simpler, and produces more power per pound. The catch is that it burns oil mixed with the fuel, so combustion is noisier, dirtier, and less efficient.
+A 2-stroke fires the spark plug on every turn of the crankshaft. Power on every stroke. That makes it light, simple, and strong for its weight. The price of that simplicity is that it burns oil right along with the fuel, so it runs louder, dirtier, and thirstier.
 
-A 4-stroke outboard fires the spark plug every other revolution. It uses separate lubrication, oil in a sump or oil injection, burns cleaner, idles smoother, and gets dramatically better fuel economy. The trade-off is added weight and a bit more mechanical complexity from valves, camshafts, and a timing chain.
+A 4-stroke fires every second turn. It keeps its oil separate, in a sump or oil-injected, so it burns clean, idles smooth, and sips fuel by comparison. The trade is weight and a few more moving parts: valves, a camshaft, a timing chain.
 
-For practical repower purposes, the 2-stroke era is over in the recreational Mercury lineup. Newer 2-stroke designs like the Mercury OptiMax existed for a stretch, but the current lineup is FourStroke and Pro XS, both four-stroke, plus the electric Avator. If you are repowering today, you are going FourStroke.
+For a repower today, Mercury has already settled most of the debate. The OptiMax had its run, but the current lineup is FourStroke and Pro XS, both four-stroke, plus the electric Avator. Repower now and you are going FourStroke. The real decisions are downstream: weight, rigging, and prop.
 
 ## How does a FourStroke compare to the 2-stroke I am replacing?
 
-Here is how a modern 90 HP FourStroke stacks up against the typical 90 HP 2-stroke many Ontario customers are replacing.
+Here is a modern 90 HP FourStroke against the 90 HP 2-stroke most Ontario customers are pulling off.
 
 | Spec | Older 90 HP 2-stroke | Mercury 90 HP FourStroke |
 |---|---|---|
@@ -31740,37 +31740,37 @@ Here is how a modern 90 HP FourStroke stacks up against the typical 90 HP 2-stro
 | Hole shot | Slightly quicker | Slightly slower, more low-end torque |
 | Maintenance | Annual service plus plugs | Annual service, longer intervals |
 
-The biggest wins are at idle, in fuel economy, and in noise. You will notice all three the first time you take the boat out. The biggest compromise is weight, which we will address next.
+Three wins land the first morning you run it: the idle, the fuel gauge, and the quiet. The one real compromise is weight, and that is the next section, because it is the part people skip.
 
 ## Does the weight difference cause any problems?
 
-It can, and pretending otherwise is how people end up with the wrong package. The added 15 to 25 kg at the transom changes how the boat sits at rest, how it trims at speed, and how it loads the transom structurally. A vintage 90 HP 2-stroke weighs roughly 140 kg, about 310 lb. A modern 90 HP FourStroke is closer to 163 kg, about 359 lb. On an 18-foot hull that extra 50 lb or so is rarely an issue. On a narrow 15-footer it can push the transom down enough that water creeps near the splash well.
+It can, and the boats that get this wrong are the ones where nobody asked the question. A FourStroke adds 15 to 25 kg at the very back of the boat. That changes how she sits at rest, how she trims at speed, and how hard the transom works. A vintage 90 HP 2-stroke runs about 140 kg, near 310 lb. A modern 90 HP FourStroke is closer to 163 kg, about 359 lb. On an 18-foot hull, that extra 50 pounds disappears. On a tight 15-footer, it can settle the stern far enough that water creeps toward the splash well.
 
-Three things to check before a 2-stroke to 4-stroke repower:
+Three things we check before any 2-stroke to 4-stroke repower:
 
-First, transom condition. If your boat is 25-plus years old, the transom may have soft spots from water intrusion. A heavier motor on a weak transom is asking for trouble. We inspect every transom before installing. If it needs repair we will tell you straight, and if it is beyond repair we will have the honest conversation about whether a new boat makes more sense.
+Transom first. A boat 25 years and up can hide soft, wet core behind a skin that still looks fine. A heavier motor on a punky transom is a problem you do not want to meet on the water. We sound every transom before we install. If it needs repair, you hear it straight. If it is past saving, we say that too, even when the honest answer is a different boat.
 
-Second, static waterline. With a heavier motor the stern sits a bit lower at rest. We check the waterline against the scuppers and splash well so the new motor does not change how the boat sheds water.
+Waterline second. A heavier motor drops the stern at rest. We check it against the scuppers and splash well so the new engine does not change how the boat sheds water.
 
-Third, prop selection. The torque curve of a FourStroke is different from a 2-stroke. A prop that worked well on the 2-stroke may not be the right prop on the FourStroke. We re-prop most repowers and water-test on Rice Lake to confirm the engine hits the right RPM band at wide-open throttle.
+Prop third. A FourStroke makes its torque differently than the 2-stroke did, so the prop that was right before is often wrong now. We re-prop most repowers and water-test on Rice Lake until the engine hits its rated RPM band wide open.
 
 ## What rigging changes when you repower from 2-stroke to 4-stroke?
 
-You cannot simply unbolt an old 2-stroke and plug a new FourStroke into the existing dashboard. The electrical architecture, throttle cables, and gauge protocols have all changed. Most 2-stroke repowers come in with old mechanical controls, single-lever shift and throttle that is often 20-plus years old, and you do not want to trust a new motor to that hardware.
+You cannot unbolt the old motor, hang the new one, and plug it into the same dashboard. The wiring, the throttle cables, the gauge protocols: all of it moved on. Most 2-stroke repowers roll in with mechanical controls two decades old, and a new motor deserves better than a worn shift box.
 
-What we typically replace or add:
+What we usually replace or add:
 
 - Control box and cables (mechanical): $500 to $900
 - Digital throttle and shift on 115-plus HP: $800 to $1,500
 - Fuel line and primer bulb: $50 to $120
-- Battery cables (modern motors draw more starting current): $80 to $200
+- Battery cables (modern motors pull more starting current): $80 to $200
 - Tach and gauge cluster if going digital: $300 to $1,200
 
-For most 2-stroke repowers we plan for $500 to $1,500 in rigging on top of the motor cost. That is already baked into the installed prices we quote, and our [what happens during a Mercury repower](/blog/what-happens-during-mercury-repower) guide walks through the full sequence from removal to water test.
+Budget $500 to $1,500 in rigging on top of the motor for a typical 2-stroke repower. That is already inside the installed prices we quote. Our [what happens during a Mercury repower](/blog/what-happens-during-mercury-repower) guide walks the full sequence, removal to water test.
 
 ## How much does it cost to repower a 2-stroke to a Mercury 4-stroke?
 
-Installed at Harris Boat Works on Rice Lake, here are ballpark CAD ranges by motor HP:
+Installed at Harris Boat Works on Rice Lake, ballpark CAD by motor HP:
 
 - 25 HP FourStroke: $4,800 to $6,000
 - 60 HP FourStroke: $9,500 to $12,000
@@ -31779,43 +31779,43 @@ Installed at Harris Boat Works on Rice Lake, here are ballpark CAD ranges by mot
 - 150 HP FourStroke: $18,000 to $21,000
 - 200 HP FourStroke or Pro XS: $21,000 to $28,000
 
-The 75 to 115 HP class is the most common repower window in Ontario, and most of those jobs land in the $13,000 to $19,000 range before HST. A full repower includes the motor, rigging, controls, propeller, fuel system inspection, old motor removal, and a water test on Rice Lake before pickup. Pickup only at Gores Landing: no shipping, no delivery.
+The 75 to 115 HP class is the busy lane in Ontario, and most of those land between $13,000 and $19,000 before HST. Every full repower covers the motor, rigging, controls, propeller, a fuel-system inspection, hauling the old motor away, and a water test on Rice Lake before you pick it up. Pickup only, at Gores Landing. We do not ship motors and we do not deliver.
 
-We take Mercury 2-stroke trade-ins and consider other-brand 2-strokes case by case. Fill out the form on our [trade-in value page](/blog/outboard-trade-in-value-ontario-hbw) and we will email a CAD figure within one business day. Financing is available on approved credit, and the full cost breakdown by motor class is in our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad).
+We take Mercury 2-stroke trade-ins, and we look at other brands case by case. Fill out the form on our [trade-in value page](/blog/outboard-trade-in-value-ontario-hbw) and you get a CAD figure back by email inside one business day. Financing is available on approved credit. The full breakdown by motor class lives in our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad).
 
 ## When should you repower instead of repairing the old 2-stroke again?
 
-Usually when one of three things happens. First, the repair number gets big enough that you know you are funding the past instead of the future. Second, the boat is still worth keeping even if the motor is not. Third, the way you use the boat has outgrown the engine you have, whether that is more passengers, longer runs, or fishing patterns that need a quieter ride.
+Three signals, usually. The repair quote crosses the line where you are paying to own the past instead of the future. The boat is still worth keeping even though the motor is not. Or the way you use the water has outgrown the engine: more people aboard, longer runs, fishing that wants a quieter ride.
 
-If the hull is solid and the boat still fits your life, repowering is the cleaner move. You keep the boat you know and upgrade the wear part. If the hull is tired, the transom is questionable, or the layout no longer matches how you use the water, the discussion may need to move toward the boat itself. January through April is the main planning window for spring repowers, so book the conversation before the service calendar fills up.
+Solid hull, boat still fits your life? Repower. You keep the boat you trust and replace the wear part. Tired hull, questionable transom, a layout that no longer matches your weekends? Then the honest conversation is about the boat, not just the motor. Either way, January through April is the planning window. Book the conversation before the spring calendar fills, because it does.
 
 ## What we see at HBW
 
-The owners happiest with a 2-stroke to 4-stroke swap are the ones who came in expecting the trade-offs, not just the upgrades. They wanted the quiet idle and the fuel savings, and they understood the boat would carry a little more weight on the transom. The repowers that disappoint are the ones where nobody checked the transom or re-propped the boat. That is why we inspect the transom on every job and water-test every motor on Rice Lake before you pick it up. Same crew writes the quote and rigs the motor.
+The happiest repower customers walked in expecting the trade, not just the upgrade. They wanted the quiet idle and the smaller fuel bill, and they already knew the transom would carry a little more weight. The repowers that disappoint are the ones where somebody skipped the transom check or never touched the prop, and a great motor ends up feeling wrong on a boat it should have transformed. That is why the transom inspection and the Rice Lake water test are not add-ons here. They are the job. The same crew that quotes your repower is the crew that rigs it and runs it off our dock.
 
 ## Frequently Asked Questions
 
 **Can I still buy a new 2-stroke Mercury outboard?**
-Not in the recreational market. Mercury has shifted entirely to FourStroke and electric for new outboards. Repowers replace your old 2-stroke with a modern FourStroke.
+Not in the recreational market. Mercury has shifted entirely to FourStroke and electric for new outboards. A repower replaces your old 2-stroke with a modern FourStroke.
 
 **Is a FourStroke heavier than the 2-stroke it replaces?**
-Yes. A 90 HP FourStroke weighs roughly 163 kg, about 359 lb, compared to about 140 to 145 kg for an older 90 HP 2-stroke. The 15 to 25 kg of added weight matters for transom strength and boat trim.
+Yes. A 90 HP FourStroke weighs roughly 163 kg, about 359 lb, against about 140 to 145 kg for an older 90 HP 2-stroke. That 15 to 25 kg matters for transom strength and how the boat trims.
 
 **Will my boat still perform well with a FourStroke?**
-Almost always, yes. FourStrokes deliver more low-end torque, cleaner planing, and far better fuel economy. On most hulls top speed is within 1 to 2 mph of the old 2-stroke, and cruise is meaningfully more efficient.
+Almost always, yes. FourStrokes bring more low-end torque, cleaner planing, and far better fuel economy. On most hulls top speed lands within 1 to 2 mph of the old 2-stroke, and cruise is meaningfully more efficient.
 
 **Do I need new rigging when I repower from 2-stroke to 4-stroke?**
-Usually yes. Old mechanical controls and cables often do not match the modern motor. Plan for new controls, possibly digital, plus a fresh fuel line and wiring harness. Add $500 to $1,500 CAD for rigging.
+Usually yes. Old mechanical controls and cables rarely match a modern motor. Plan for new controls, possibly digital, plus a fresh fuel line and wiring. Add $500 to $1,500 CAD for rigging.
 
 **Does Harris Boat Works take my old 2-stroke as trade-in?**
-We take Mercury 2-stroke trade-ins. We also evaluate other-brand 2-strokes case by case for resale or wholesale. Fill out the trade-in form and we will email a CAD figure within one business day.
+We take Mercury 2-stroke trade-ins and look at other brands case by case for resale or wholesale. Fill out the trade-in form and we will email a CAD figure inside one business day.
 
 **How much does a 2-stroke to 4-stroke repower cost?**
-Installed at Harris Boat Works, a full repower runs $11,000 to $24,000 CAD for most jobs, depending on horsepower. That includes the motor, rigging, controls, propeller, fuel system inspection, old motor removal, and a water test on Rice Lake before pickup at Gores Landing.
+Installed at Harris Boat Works, a full repower runs $11,000 to $24,000 CAD for most jobs, depending on horsepower. That covers the motor, rigging, controls, propeller, fuel-system inspection, old-motor removal, and a water test on Rice Lake before pickup at Gores Landing.
 
 ## Ready to plan your 2-stroke repower?
 
-If your 2-stroke is on borrowed time, the winter planning window is the place to start. Call us or build a quote and we will size the right FourStroke for your hull, including the transom and rigging check.
+If your 2-stroke is on borrowed time, the winter planning window is where to start. Call us or build a quote and we will size the right FourStroke for your hull, transom and rigging check included.
 
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
@@ -31859,21 +31859,21 @@ Harris Boat Works, family-owned since 1947. A Mercury Platinum Dealer, selling M
 
 > **Quick answer:** The Mercury Avator 7.5e is a 750-watt electric outboard with roughly the thrust of a 3.5 HP gas portable. It shines as a silent trolling kicker, as a motor for small fishing boats and tenders, and as a clean sailboat auxiliary. It is not a main motor for anything bigger than a light 12-foot tinnie. Build a quote at mercuryrepower.ca.
 
-We sell gas outboards and we sell electric. We have no reason to oversell either one. So here is the straight version of the Mercury Avator 7.5e: it is very good at a narrow job, and a poor choice if you ask it to do something else.
+We sell gas outboards and we sell electric. We have no reason to oversell either one. So here is the straight version of the Mercury Avator 7.5e: it is very good at a narrow job, and a poor choice the moment you ask it to do something else.
 
-The Avator 7.5e is Mercury's smallest electric outboard. It puts 750 watts at the prop, charges from a regular wall outlet, and runs nearly silent. For a Rice Lake angler who wants to slip along a weed line without an engine droning in the water, that is close to ideal. For someone who needs to cross the lake all day on one boat, it is the wrong tool. This review walks the honest line between those two.
+The Avator 7.5e is Mercury's smallest electric outboard. It puts 750 watts at the prop, charges off a wall outlet, and runs nearly silent. For a Rice Lake angler easing along a weed line at first light, that silence is the whole point. For someone who needs to cover the lake all day on one boat, it is the wrong tool, and no amount of wanting will change that. This review stays on the honest line between those two.
 
 ## What is the Mercury Avator 7.5e and who is it for?
 
-The Avator 7.5e is the entry point in Mercury's Avator electric family. It is a brushless electric motor with a removable lithium-ion battery, a full-colour digital display on the tiller, and none of the gas, oil, fumes, or cord-pull starting of a small two or four-stroke. Push a button, twist the tiller or push the remote throttle, and go.
+The Avator 7.5e is the entry point in Mercury's electric Avator family. A brushless electric motor, a removable lithium-ion battery, a full-colour display on the tiller, and none of the gas, oil, fumes, or pull-start of a small two or four-stroke. Press a button, twist the grip, go.
 
-One framing note up front. Mercury rates the Avator line by output power in kilowatts and by equivalent thrust, not by a direct gas-engine horsepower number. For a working comparison, the 7.5e delivers roughly what a 3.5 HP gas portable would. We will use that comparison through this review because it is how most buyers think, but the spec that matters is the 750 watts at the prop.
+A note on the number. Mercury rates the Avator by output power, kilowatts at the prop, and by equivalent thrust, not by a gasoline horsepower figure. In plain terms, the 7.5e pushes a boat about like a 3.5 HP gas portable would. We lean on that comparison because it is how people shop, but the spec that matters is 750 watts at the prop.
 
-There are three customer profiles where the Avator is the right pick. The first is a Rice Lake fishing customer who wants a silent kicker. Trolling for walleye in 12 feet of water, you do not want a gas kicker pushing exhaust into the boat and noise into the water. The Avator slides the boat through productive water without spooking fish. The second is a sailboat owner who needs an auxiliary. Small daysailers and cruising sailboats need a motor to get out of the marina and back, and the Avator gives clean, low-vibration thrust with no two-stroke smell. The third is a tender or dinghy owner, or anyone running a car-topper under 14 feet. A 9 to 12-foot tender behind a cottage cruiser is well served by an Avator: light, clean, and easy to charge from cottage power.
+Three customers, and the Avator is the right call for all three. The Rice Lake angler who wants a silent kicker: trolling for walleye in 12 feet of water, you do not want exhaust in the boat or engine drone in the water, and the Avator lets the hull slide through good water without announcing itself. The sailboat owner who needs an auxiliary: clean, low-vibration thrust to get out of the slip and back, no two-stroke smell in the cockpit. And the tender or car-topper owner under 14 feet: a 9 to 12-foot tender behind a cottage cruiser is exactly its weight class, light and easy to charge off cottage power.
 
 ## How does the Avator 7.5e compare to a small gas portable?
 
-Side by side with Mercury's small FourStroke portables, the picture is clear.
+Lined up against Mercury's small FourStroke portables, the picture is honest.
 
 | Spec | Avator 7.5e | FourStroke 3.5 | FourStroke 5 |
 |---|---|---|---|
@@ -31888,44 +31888,44 @@ Side by side with Mercury's small FourStroke portables, the picture is clear.
 | Installed price (CAD) | $4,500 to $6,500 | $1,800 to $2,400 | $2,200 to $2,800 |
 | Best use | Silent kicker, tender | Dinghy, kicker | Light tinny |
 
-The Avator costs more up front than a comparable gas portable. It pays that back in three ways: zero fuel cost, zero annual oil change, and silent operation. It is still a niche pick. For most repower customers a gas portable is the right tool. For fishing and any use where silence matters, the Avator wins.
+The Avator costs more the day you buy it. It earns that back three ways: no fuel, no annual oil change, and silence. It is still a niche pick. For most repower customers a gas portable is the right tool and the smaller cheque. For fishing, and for anyone who values quiet water, the Avator is worth every dollar of the difference.
 
 ## What is the real range and battery life on Rice Lake?
 
-Range is the whole conversation with electric outboards. Published light-load numbers are useful, but they are not a guarantee. Wind, chop, boat weight, battery temperature, and throttle position all move the answer quickly.
+Range is the whole conversation with an electric outboard, and brochure numbers are a starting point, not a promise. Wind, chop, boat weight, water temperature, throttle position: every one of them moves the answer.
 
-We have run the Avator on customer boats around Rice Lake long enough to give honest numbers. At a slow troll of 1.5 to 2 mph, the speed that drags a worm harness for walleye, the 1 kWh battery delivers 3 to 5 hours. That covers a typical fishing evening or morning. At half throttle for transit, around 3 to 4 mph on a light boat, expect roughly 45 minutes. At wide-open against a headwind, runtime drops to under an hour.
+We have run the Avator on customer boats around Rice Lake long enough to give you numbers you can plan around. At a slow troll, 1.5 to 2 mph, the speed that drags a worm harness for walleye, the 1 kWh battery holds 3 to 5 hours. That is a full fishing morning or a full evening. Push to half throttle for transit, 3 to 4 mph on a light boat, and you are looking at roughly 45 minutes. Wide open into a headwind, under an hour.
 
-The motor's colour display shows battery percentage and estimated runtime based on your current throttle. Most customers who buy the Avator add a second 1 kWh battery, either as a spare swap or running dual batteries on the boat. Two batteries give you effectively a full day of trolling, and a swap takes under a minute because the packs latch in like a power-tool battery. Charging is straightforward: a standard 120V household outlet brings the 1 kWh battery from empty to full in about four hours, and most cottage and dock setups can charge overnight. Cold water in May drops capacity by 10 to 20 percent, so plan accordingly early in the season.
+The tiller display shows battery percentage and estimated runtime against your current throttle, so you are never guessing. Most Avator owners add a second 1 kWh pack, running dual or carrying a spare, and the swap takes under a minute because the batteries latch in like a cordless-drill pack. Two batteries is effectively a full day of trolling. One more thing for early season: cold water in May pulls 10 to 20 percent off capacity, so keep the first trips short.
 
 ## How does the Avator fit into a Mercury repower?
 
-The Avator is rarely a stand-alone repower. It is more often a paired motor: a main gas outboard plus an Avator as a silent kicker.
+The Avator is rarely the whole repower. More often it is half of one: a gas main motor plus the Avator as a silent kicker.
 
-A common pairing on Rice Lake is a Mercury 90 HP FourStroke as the main motor for travel between fishing spots, plus an Avator 7.5e on a kicker bracket for slow trolling. The two motors serve different jobs. The 90 HP gets you there. The Avator keeps you quiet when you are fishing, with no exhaust, no smell, and no engine vibration through the deck while you work a weed line. If you are weighing a main-plus-kicker setup, our [Mercury ProKicker and trolling guide](/blog/mercury-prokicker-rice-lake-fishing-guide) covers the options, and the Avator is one good kicker alongside Mercury's small gas portables.
+The pairing we rig most on Rice Lake is a Mercury 90 HP FourStroke for getting between spots and an Avator 7.5e on a kicker bracket for working them. Two motors, two jobs. The 90 gets you there. The Avator keeps the boat quiet while you fish, no exhaust, no smell, no engine buzz through the deck on a weed line. If you are weighing a main-plus-kicker setup, our [Mercury ProKicker and trolling guide](/blog/mercury-prokicker-rice-lake-fishing-guide) lays out the options, with the Avator as one strong kicker beside Mercury's small gas portables.
 
 ## What does the Mercury Avator 7.5e cost installed?
 
-Installed pricing at Harris Boat Works varies by battery configuration:
+Installed pricing at Harris Boat Works runs by battery configuration:
 
 - Avator 7.5e plus single 1 kWh battery plus mount: $4,500 to $5,200 CAD
 - Avator 7.5e plus dual 1 kWh batteries plus mount: $5,500 to $6,500 CAD
 
-Installation includes the kicker bracket if used, throttle wiring, charging setup, and a water test on Rice Lake. Pickup only at Gores Landing: no shipping, no delivery. The deposit is $200 for portable and small-HP motors, and financing is available on approved credit. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks down the full motor families, and we can also supply spare battery packs that swap in seconds on the water for anglers who want to double their runtime without heading back to the dock.
+Installation covers the kicker bracket if used, throttle wiring, charging setup, and a water test on Rice Lake. Pickup only at Gores Landing: no shipping, no delivery. The deposit is $200 for portable and small-HP motors, and financing is available on approved credit. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks down the full motor families, and we keep spare battery packs in stock for anglers who want to double their day on the water without a run back to the dock.
 
 ## What are the Avator's limitations?
 
-An honest review means honest limits. Three things to know.
+An honest review owes you the limits. Three of them.
 
-First, range. The Avator is not a long-range motor. If you plan to cross a broad lake all day on a single battery, you will run low. Plan for spares or dock charging. The honest Rice Lake figures are roughly 3 to 4 miles flat out, 8 to 12 miles at half throttle, and 20 to 25 miles when you use it as a slow trolling tool.
+Range. The Avator is not a distance motor. Plan a full day of open-water crossings on one battery and you will run it flat. Carry a spare or charge at the dock. The honest Rice Lake figures: 3 to 4 miles flat out, 8 to 12 at half throttle, 20 to 25 if you treat it as the slow trolling tool it is built to be.
 
-Second, weather. Electric motors do not mind cold the way a gas engine can, but battery capacity drops in cold water. Expect 10 to 20 percent less runtime on early-season Rice Lake in May.
+Cold. Electric motors shrug off cold better than gas does, but the battery does not. Expect 10 to 20 percent less runtime on early-season Rice Lake.
 
-Third, scope. The Avator 7.5e is small. Do not buy it as a wishful substitute for a gas main motor on a heavy 16 to 18-foot fishing boat that needs to cover distance all day. The 7.5e is good, but it is good at a clearly defined job: silent kicker, tender, sailboat auxiliary, or small light boat. Use it for that and you will be glad you bought it.
+Scope. The 7.5e is small, and it cannot be wished into something bigger. It will not replace a gas main motor on a heavy 16 to 18-foot boat that needs to run all day. Buy it for the job it is built for, silent kicker, tender, sailboat auxiliary, light boat, and it becomes one of your favourite things on the water. Buy it for the wrong job and you will be disappointed, and that is not the motor's fault.
 
 ## What we see at HBW
 
-The customers who love their Avator are the ones who bought it for the right reason. Almost every happy 7.5e owner we have rigged uses it as a kicker or on a light boat, and almost every disappointed electric-outboard owner we hear about, usually one who bought elsewhere, tried to make a small electric do a big gas motor's job. Match the motor to the task and the Avator is a quiet, low-maintenance pleasure. We rig it, water-test it on Rice Lake, and hand it back at Gores Landing.
+Every happy Avator owner we have rigged bought it for the right reason. They wanted a silent kicker, or a clean little motor for a tender, and that is exactly what they got. The disappointed electric-outboard stories we hear, almost always a motor bought somewhere else, are the same story every time: someone asked a small electric to do a big gas motor's day. Match it to the task and the Avator is quiet, simple, and close to maintenance-free. We rig it, water-test it on Rice Lake, and hand it back at Gores Landing.
 
 ## Frequently Asked Questions
 
