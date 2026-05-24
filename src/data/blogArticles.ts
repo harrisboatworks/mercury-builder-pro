@@ -3728,15 +3728,15 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
     slug: 'complete-guide-boat-repower-kawarthas',
     title: "Complete Guide to Repowering Your Boat in the Kawarthas (2026)",
     seoTitle: "Boat Repower Guide for the Kawarthas (2026)",
-    description: "Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The process takes 2 to 4 weeks from order to delivery, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake. Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
+    description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves, and how HBW does it.",
     image: '/lovable-uploads/hero-complete-guide-repower-kawarthas.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-23',
-    dateModified: '2026-05-04',
+    dateModified: '2026-05-23',
     publishDate: '2026-02-23',
     category: 'Repowering',
     readTime: '12 min read',
-    keywords: ['boat repower kawarthas', 'repower cost ontario', 'mercury repower', 'outboard replacement', 'boat motor upgrade'],
+    keywords: ['boat repower Kawarthas', 'repower boat Ontario', 'Mercury repower process', 'repower vs buy new boat', 'Kawartha lakes repower', 'boat repower steps'],
     content: `*Last reviewed: 2026-05-23*
 
 > **Quick answer:** A repower means a new Mercury on your existing hull. For most Kawartha boats with a sound hull and transom, it is the smart move: you keep the boat you know and spend a fraction of the cost of new. A clean install runs one to two days of shop time, two to four weeks from order to pickup. Build your quote at mercuryrepower.ca.
