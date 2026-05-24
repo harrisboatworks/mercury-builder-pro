@@ -41,7 +41,7 @@ export default function QuoteSuccessPage() {
       price_cad: price,
       value: price,
       currency: 'CAD',
-      financing_selected: Boolean(quoteState?.financingConfig),
+      financing_selected: Boolean(quoteState?.financing?.term),
       trade_in: quoteState?.tradeInInfo?.hasTradeIn ? 'yes' : 'no',
       boat_make: b.make || '',
       boat_year: Number(b.year || 0) || 0,
