@@ -102,7 +102,8 @@ export function GlobalSEO() {
           { "@type": "Brand", "name": "Mercury Marine" },
           { "@type": "Brand", "name": "Legend Boats" }
         ],
-        "award": "Mercury Marine Platinum Dealer"
+        "award": "Mercury Marine Platinum Dealer",
+        "sameAs": BUSINESS_SAME_AS
       }
     ]
   };
