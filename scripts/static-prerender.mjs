@@ -1878,6 +1878,34 @@ function mercuryProXS250Schemas() {
   return [productSchema, faqSchema];
 }
 
+const MERCURY_SEGMENT_LINKS_PRERENDER = [
+  { path: '/mercury/pro-xs-250', name: 'Mercury Pro XS 250', price: '$34,502 CAD' },
+  { path: '/mercury/portable-9-20hp', name: 'Mercury 9.9 to 20 HP Portable', price: '$3,553 CAD' },
+  { path: '/mercury/mid-range-40-60hp', name: 'Mercury 40 to 60 HP Mid-Range', price: '$9,532 CAD' },
+  { path: '/mercury/mid-power-90-115hp', name: 'Mercury 90 to 115 HP', price: '$14,812 CAD' },
+];
+
+function mercurySegmentCrossLinksHtml(currentPath) {
+  const others = MERCURY_SEGMENT_LINKS_PRERENDER.filter(s => s.path !== currentPath);
+  return (
+    '<section><h2>Mercury motors by segment</h2><ul>' +
+    others.map(s =>
+      `<li><a href="${s.path}">${escapeHtml(s.name)}, from ${escapeHtml(s.price)}</a></li>`
+    ).join('') +
+    '</ul></section>'
+  );
+}
+
+function mercuryAllSegmentsLinksHtml() {
+  return (
+    '<section><h2>Mercury prices by segment</h2><p>Browse Mercury outboard prices by horsepower band:</p><ul>' +
+    MERCURY_SEGMENT_LINKS_PRERENDER.map(s =>
+      `<li><a href="${s.path}">${escapeHtml(s.name)}, from ${escapeHtml(s.price)}</a></li>`
+    ).join('') +
+    '</ul></section>'
+  );
+}
+
 function proXS250NoscriptHtml() {
   const fmt = n => '$' + n.toLocaleString('en-CA');
   const rows = PRO_XS_250_VARIANTS_PRERENDER.map(v =>
