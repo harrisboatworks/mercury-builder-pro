@@ -52,7 +52,7 @@ export function MercuryOutboardsOntarioSEO() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/mercury-outboards-ontario#webpage`,
         "url": `${SITE_URL}/mercury-outboards-ontario`,
-        "name": "Mercury Outboards Ontario, Full Lineup at Harris Boat Works | Platinum Dealer Since 1965",
+        "name": "Mercury Outboards Ontario, Full Lineup at Harris Boat Works | Mercury Dealer Since 1965",
         "description": "Mercury Marine outboards in Ontario, full lineup (portable, FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Platinum Dealer on Rice Lake, family-owned since 1947.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
@@ -134,7 +134,7 @@ export function MercuryOutboardsOntarioSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Outboards Ontario, Full Lineup at Harris Boat Works | Platinum Dealer Since 1965</title>
+      <title>Mercury Outboards Ontario, Full Lineup at Harris Boat Works | Mercury Dealer Since 1965</title>
       <meta
         name="description"
         content="Mercury Marine outboards in Ontario, full lineup (FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Platinum Dealer on Rice Lake, family-owned since 1947."

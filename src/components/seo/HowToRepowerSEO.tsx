@@ -131,7 +131,7 @@ export function HowToRepowerSEO() {
       <title>How to Repower a Boat, 7-Step Mercury Repower Process | Harris Boat Works</title>
       <meta
         name="description"
-        content="Complete 7-step guide to repowering your boat with a new Mercury outboard. Quote online, confirm fit, deposit, install, lake-test, pickup. Mercury Platinum Dealer on Rice Lake since 1965."
+        content="Complete 7-step guide to repowering your boat with a new Mercury outboard. Quote online, confirm fit, deposit, install, lake-test, pickup. Mercury Platinum Dealer on Rice Lake, Mercury dealer since 1965."
       />
       <meta
         name="keywords"

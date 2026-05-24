@@ -132,7 +132,7 @@ export function MercuryDealerCanadaSEO() {
       <title>Why Buy from Harris Boat Works, Mercury Dealer Canada FAQ | Family-Owned Since 1947</title>
       <meta
         name="description"
-        content="Mercury Marine Platinum Dealer on Rice Lake since 1965. Family-owned since 1947. Real CAD pricing, 7-year warranty, full Mercury lineup, financing available. 12 trust questions answered."
+        content="Mercury Marine Platinum Dealer on Rice Lake, Mercury dealer since 1965. Family-owned since 1947. Real CAD pricing, 7-year warranty, full Mercury lineup, financing available. 12 trust questions answered."
       />
       <meta
         name="keywords"

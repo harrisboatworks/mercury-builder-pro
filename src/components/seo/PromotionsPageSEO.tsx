@@ -86,7 +86,7 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
         "@id": `${SITE_URL}/promotions`,
         "url": `${SITE_URL}/promotions`,
         "name": `${mainPromo.name} | Harris Boat Works`,
-        "description": "Get 7 years of factory-backed warranty coverage on every new Mercury outboard from Harris Boat Works. Platinum Dealer since 1965.",
+        "description": "Get 7 years of factory-backed warranty coverage on every new Mercury outboard from Harris Boat Works. Platinum Dealer (Mercury dealer since 1965).",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -123,7 +123,7 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
       <link rel="canonical" href={`${SITE_URL}/promotions`} />
       
       <meta property="og:title" content="7-Year Factory-Backed Warranty | Harris Boat Works" />
-      <meta property="og:description" content="Get 7 years of zero-worry boating with a new Mercury outboard. Factory-backed coverage from a Platinum Dealer since 1965." />
+      <meta property="og:description" content="Get 7 years of zero-worry boating with a new Mercury outboard. Factory-backed coverage from a Platinum Dealer (Mercury dealer since 1965)." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${SITE_URL}/promotions`} />
       

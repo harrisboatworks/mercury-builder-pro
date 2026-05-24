@@ -31,7 +31,7 @@ export function GlobalSEO() {
         },
         "foundingDate": "1947",
         "founder": { "@type": "Person", "name": "Harris family" },
-        "description": "Third-generation family marina on Rice Lake, Ontario. Mercury Marine Platinum Dealer (since 1965) and Legend Boats dealer.",
+        "description": "Third-generation family marina on Rice Lake, Ontario. Mercury Marine Platinum Dealer (Mercury dealer since 1965) and Legend Boats dealer.",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "address": {
