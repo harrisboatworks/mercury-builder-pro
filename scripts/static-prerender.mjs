@@ -2095,7 +2095,7 @@ function lineupLandingNoscriptHtml(cfg) {
   );
 }
 
-
+function mercuryProXSSchema() {
   return {
     "@context": "https://schema.org",
     "@graph": [
