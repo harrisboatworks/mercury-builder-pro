@@ -1,3 +1,6 @@
+import type { LocationLongForm } from './locationsLongForm';
+import { longFormLocations, longFormLocationSlugs } from './locationsLongForm';
+
 export interface LocationLink {
   label: string;
   href: string;
@@ -32,6 +35,8 @@ export interface LocationPageData {
   pickupPolicy: string;
   /** Canonical "we don't travel to {city}" disclaimer. */
   serviceBoundary: string;
+  /** Optional rich body for long-form location pages (Bucket 2). */
+  longForm?: LocationLongForm;
 }
 
 const PICKUP_POLICY =
@@ -460,6 +465,9 @@ export const locations: LocationPageData[] = [
   },
 ];
 
+// Append long-form location pages (Bucket 2 Batch 1, May 2026).
+locations.push(...longFormLocations);
+
 export function getLocationBySlug(slug: string) {
   return locations.find((location) => location.slug === slug);
 }
@@ -470,6 +478,14 @@ export function getGroupedLocations() {
     {
       heading: 'Northumberland & the Kawarthas',
       slugs: ['rice-lake-mercury-repower', 'peterborough-mercury-dealer', 'kawartha-lakes-mercury-outboards', 'cobourg-northumberland-mercury'],
+    },
+    {
+      heading: 'Rice Lake towns & Northumberland County',
+      slugs: ['gores-landing', 'bewdley', 'roseneath', 'hastings', 'port-hope', 'northumberland-county'],
+    },
+    {
+      heading: 'Peterborough & the wider Kawarthas',
+      slugs: ['bridgenorth', 'lakefield', 'buckhorn', 'bobcaygeon', 'lindsay'],
     },
     {
       heading: 'Durham Region',
@@ -484,3 +500,5 @@ export function getGroupedLocations() {
     items: group.slugs.map((s) => locations.find((l) => l.slug === s)).filter(Boolean) as LocationPageData[],
   }));
 }
+
+export { longFormLocationSlugs };
