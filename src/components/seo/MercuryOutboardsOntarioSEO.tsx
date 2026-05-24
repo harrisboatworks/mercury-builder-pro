@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '@/data/mercuryOutboardsOffers.js';
 
 export const ONTARIO_HUB_FAQ = [
