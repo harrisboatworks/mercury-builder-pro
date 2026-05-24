@@ -468,6 +468,16 @@ export const locations: LocationPageData[] = [
 // Append long-form location pages (Bucket 2 Batch 1, May 2026).
 locations.push(...longFormLocations);
 
+// Attach long-form upgrades to 4 EXISTING location pages (Bucket 2 Batch 3, May 2026).
+// Slugs and URLs are unchanged; this only enriches the rendered content.
+import { LOCATION_LONGFORM_UPGRADES } from './locationsLongFormUpgrades';
+for (const loc of locations) {
+  const upgrade = LOCATION_LONGFORM_UPGRADES[loc.slug];
+  if (upgrade && !loc.longForm) {
+    loc.longForm = upgrade;
+  }
+}
+
 export function getLocationBySlug(slug: string) {
   return locations.find((location) => location.slug === slug);
 }
