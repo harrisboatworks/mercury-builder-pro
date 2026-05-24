@@ -27,6 +27,9 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SoundProvider } from "@/contexts/SoundContext";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { lazyWithRetry } from "@/lib/lazyWithRetry";
+import { ConsentBanner } from "@/components/analytics/ConsentBanner";
+import { AnalyticsRouter } from "@/components/analytics/AnalyticsRouter";
+import { GlobalCtaTracker } from "@/components/analytics/GlobalCtaTracker";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
