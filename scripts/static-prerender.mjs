@@ -1054,7 +1054,9 @@ function contactPageSchema() {
           "https://www.instagram.com/harrisboatworks",
           "https://www.youtube.com/@HarrisBoatWorks",
           "https://g.page/harrisboatworks"
-        ]
+        ],
+        "aggregateRating": LIVE_AGGREGATE_RATING,
+        "openingHoursSpecification": LIVE_OPENING_HOURS
       }
     ]
   };
