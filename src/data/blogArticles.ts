@@ -3362,7 +3362,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     publishDate: '2026-02-09',
     category: 'Buying Guide',
     readTime: '8 min read',
-    keywords: ['rice lake fishing boat motor', 'kawartha lakes outboard', 'best motor rice lake', 'walleye boat motor', 'mercury fishing motor ontario'],
+    keywords: ['rice lake fishing guide', 'rice lake walleye', 'rice lake fishing regulations 2026', 'rice lake muskie', 'mercury 9.9 prokicker walleye', 'best mercury outboard rice lake fishing'],
     content: `## Quick Answer
 
 For most Rice Lake fishing setups, the right combination is a Mercury 60–115 HP FourStroke as the main motor and a Mercury 9.9 ProKicker for trolling. Rice Lake's shallow, weedy structure rewards control and quiet running over top speed. Stay inside your hull's capacity plate. Build a full kicker-and-main package at [mercuryrepower.ca](https://www.mercuryrepower.ca).
