@@ -142,6 +142,7 @@ const MercuryDealerCobourg = lazy(() => import("./pages/landing/MercuryDealerCob
 const MercuryDealerGTA = lazy(() => import("./pages/landing/MercuryDealerGTA"));
 // Pilot SEO landing pages (Batch 3 — Product hub + lineup)
 const MercuryProXS = lazy(() => import("./pages/landing/MercuryProXS"));
+const MercuryProXS250 = lazy(() => import("./pages/landing/MercuryProXS250"));
 const MercuryOutboardsOntario = lazy(() => import("./pages/landing/MercuryOutboardsOntario"));
 // Pilot SEO landing pages (Batch 4 — Pontoon)
 const MercuryPontoonOutboards = lazy(() => import("./pages/landing/MercuryPontoonOutboards"));
