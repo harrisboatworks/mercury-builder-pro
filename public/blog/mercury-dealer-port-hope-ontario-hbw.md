@@ -31,7 +31,7 @@ content_type: blog_article
 
 ## Quick Answer
 
-Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury Platinum since 1965.
+Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
 
 ## Port Hope has the Ganaraska River and Lake Ontario, but most local boating happens inland
 
@@ -135,7 +135,7 @@ No. HBW does NOT offer pickup or delivery. Customers bring their boat to us. We 
 **Can I trade in my current boat or motor?**
 Yes. Trade-in valuations are done in person at HBW. The Trade-In Value Guide at mercuryrepower.ca gives a starting estimate; the actual valuation happens when we see the boat.
 
-Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-05-17.*
 

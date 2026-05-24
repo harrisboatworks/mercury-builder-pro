@@ -347,7 +347,7 @@ export default function KoreanBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="1965년부터 Mercury Platinum 딜러" />
+          <AuthorByline name="Jay Harris" title="1965년부터 Mercury 딜러" />
         </div>
 
         {/* Table of Contents */}

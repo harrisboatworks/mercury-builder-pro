@@ -33,7 +33,7 @@ export function HowToRepowerSEO() {
         "@id": `${SITE_URL}/how-to-repower-a-boat#webpage`,
         "url": `${SITE_URL}/how-to-repower-a-boat`,
         "name": "How to Repower a Boat, 7-Step Mercury Repower Process | Harris Boat Works",
-        "description": "Step-by-step guide to repowering a boat with a new Mercury outboard: quote, sizing, deposit, scheduling, install, lake-test, and pickup. Mercury Marine Platinum Dealer since 1965 on Rice Lake, Ontario.",
+        "description": "Step-by-step guide to repowering a boat with a new Mercury outboard: quote, sizing, deposit, scheduling, install, lake-test, and pickup. Mercury Marine Platinum Dealer · Mercury dealer since 1965 on Rice Lake, Ontario.",
         "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
         "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA",
@@ -131,7 +131,7 @@ export function HowToRepowerSEO() {
       <title>How to Repower a Boat, 7-Step Mercury Repower Process | Harris Boat Works</title>
       <meta
         name="description"
-        content="Complete 7-step guide to repowering your boat with a new Mercury outboard. Quote online, confirm fit, deposit, install, lake-test, pickup. Mercury Platinum Dealer on Rice Lake since 1965."
+        content="Complete 7-step guide to repowering your boat with a new Mercury outboard. Quote online, confirm fit, deposit, install, lake-test, pickup. Mercury Platinum Dealer on Rice Lake, Mercury dealer since 1965."
       />
       <meta
         name="keywords"

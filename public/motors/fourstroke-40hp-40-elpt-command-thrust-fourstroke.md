@@ -19,7 +19,7 @@ price_cad: 9900
 # 40 ELPT Command Thrust FourStroke
 
 Mercury FourStroke 40 HP outboard motor (model 1F41453GZ).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

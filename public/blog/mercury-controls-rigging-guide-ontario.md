@@ -261,7 +261,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 **See real CAD pricing on every rigging line item.** 
 Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), choose motor, controls, steering, gauges, wiring, prop, and see the configured total before calling anyone. 
 Questions? Call 905-342-2153. 
-Harris Boat Works, Mercury Platinum dealer since 1965. Gores Landing, ON.
+Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 ---
 
 If you're spec'ing a pontoon or heavy-load setup, our [Command Thrust vs standard gearcase guide](/blog/mercury-command-thrust-vs-standard-gearcase) covers when CT makes sense.

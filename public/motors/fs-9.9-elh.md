@@ -19,7 +19,7 @@ price_cad: 3399
 # 9.9ELH FourStroke
 
 Mercury FourStroke 9.9 HP outboard motor (model 1A10311LK).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

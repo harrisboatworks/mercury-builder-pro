@@ -39,7 +39,7 @@ content_type: blog_article
 
 Honest answer: you wouldn't, if the local option was equivalent. The story most GTA boaters don't realize is that **most local Mercury dealers in the GTA aren't actually equivalent.** What you save in drive time you pay back in dealer tier, pricing transparency, repower expertise, and post-sale service quality.
 
-This post is the version of that comparison we'd run through with a GTA buyer who's about to pick a dealer. We're a Mercury Platinum dealer in Ontario since 1965, third-generation family business since 1947, and we sell Mercury motors to GTA buyers every week. Here's why.
+This post is the version of that comparison we'd run through with a GTA buyer who's about to pick a dealer. We're a Mercury dealer in Ontario since 1965, third-generation family business since 1947, and we sell Mercury motors to GTA buyers every week. Here's why.
 
 ---
 

@@ -37,7 +37,7 @@ content_type: blog_article
 
 The short version: every new Mercury outboard sold in Canada comes with a **3-year limited warranty AND a 3-year corrosion warranty**, both starting the day you buy it, both ending the same day three years later. They're concurrent, not stacked. Anyone telling you you have "six years of coverage" is reading the brochure wrong.
 
-We're a Mercury Platinum dealer in Ontario since 1965. We do warranty work in our shop every week. This is the version of the warranty conversation we have with customers when they're buying a new motor or wondering if it's worth extending.
+We're a Mercury dealer in Ontario since 1965. We do warranty work in our shop every week. This is the version of the warranty conversation we have with customers when they're buying a new motor or wondering if it's worth extending.
 
 ---
 
@@ -187,7 +187,7 @@ The motor is the same. The warranty terms are the same. What's different is the 
 
 A Mercury Platinum dealer (the highest tier) has factory-trained technicians, full diagnostic equipment, and guaranteed parts availability. **Warranty claims processed by Platinum dealers go through faster**. Mercury's internal escalation system treats Platinum-flagged claims as higher priority.
 
-We've been a Mercury Platinum dealer in Ontario since 1965. Every new Mercury we sell gets registered at point of sale, documented in our service file, and supported by the same shop for the full warranty life. If something breaks, you don't have to explain who did the rigging or whether the break-in service was done, it's all in our records.
+We've been a Mercury dealer in Ontario since 1965. Every new Mercury we sell gets registered at point of sale, documented in our service file, and supported by the same shop for the full warranty life. If something breaks, you don't have to explain who did the rigging or whether the break-in service was done, it's all in our records.
 
 If you bought a Mercury elsewhere and want warranty work done in our shop, we can do that too, bring your purchase paperwork and we'll get the Mercury claim moving.
 

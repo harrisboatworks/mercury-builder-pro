@@ -150,7 +150,7 @@ The mistake we watch customers make: financing the motor and boat together at a 
 
 *Last reviewed: 2026-05-17.*
 
-Harris Boat Works · Mercury Marine Platinum Dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 ## Frequently Asked Questions
 

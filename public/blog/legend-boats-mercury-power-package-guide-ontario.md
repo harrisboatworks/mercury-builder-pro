@@ -53,7 +53,7 @@ A few facts that matter:
 - **6-Year WOWranty** on Legend boat components, **Leakproof for Life** hull warranty (transferable up to 10 years), and a **Lifetime Floor Warranty.**
 - **All-In Pricing** in Ontario includes freight, prep, and most essential equipment. The number on the page is close to the number that drives away.
 
-We've been a Mercury Platinum dealer since 1965 and a Legend dealer for years. The combination is genuinely the most popular new-boat package on Rice Lake and through the Kawarthas.
+We've been a Mercury dealer since 1965 and a Legend dealer for years. The combination is genuinely the most popular new-boat package on Rice Lake and through the Kawarthas.
 
 ---
 

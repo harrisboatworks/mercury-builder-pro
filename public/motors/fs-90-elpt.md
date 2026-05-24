@@ -19,7 +19,7 @@ price_cad: 14812
 # 90 ELPT FourStroke
 
 Mercury FourStroke 90 HP outboard motor (model 1F904132D).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

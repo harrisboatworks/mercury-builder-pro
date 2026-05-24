@@ -14,7 +14,7 @@ keyword: "mercury repower rice lake"
 
 # Mercury Repower on Rice Lake, Harris Boat Works, Gores Landing, Ontario
 
-Harris Boat Works has been Rice Lake’s Mercury repower specialist for three generations. Family-owned in Gores Landing since 1947, Mercury Platinum Dealer since 1965, with every installed repower lake-tested on Rice Lake before you take it home.
+Harris Boat Works has been Rice Lake’s Mercury repower specialist for three generations. Family-owned in Gores Landing since 1947, Mercury dealer since 1965, with every installed repower lake-tested on Rice Lake before you take it home.
 
 ## Factbox
 

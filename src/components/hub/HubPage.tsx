@@ -100,7 +100,7 @@ export function HubPage(props: HubPageProps) {
     subhead,
     primaryCTA,
     phoneNumber,
-    trustBadge = 'Mercury Platinum Dealer · Since 1965',
+    trustBadge = 'Mercury Mercury Dealer · Since 1965',
     directAnswer,
     table,
     coveredIntro,

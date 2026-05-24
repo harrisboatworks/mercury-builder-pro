@@ -124,7 +124,7 @@ export default function RepowerHub() {
       whyHbw={[
         {
           icon: <Award className="h-5 w-5" aria-hidden="true" />,
-          title: 'Mercury Platinum Dealer since 1965',
+          title: 'Mercury dealer since 1965',
           description: '60 years of Mercury exclusive expertise.',
         },
         {

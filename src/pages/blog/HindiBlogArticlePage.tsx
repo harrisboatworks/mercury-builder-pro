@@ -343,7 +343,7 @@ export default function HindiBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="1965 से Mercury Platinum डीलर" />
+          <AuthorByline name="Jay Harris" title="1965 से Mercury डीलर" />
         </div>
 
         {tocItems.length > 2 && (

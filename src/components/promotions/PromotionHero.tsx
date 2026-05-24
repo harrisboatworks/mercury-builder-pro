@@ -59,7 +59,7 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription }: Promoti
           className="font-sans text-[17px] md:text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto text-center leading-relaxed mb-12"
         >
           {bonusDescription ||
-            'Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance, straight Mercury protection from a Platinum Dealer since 1965.'}
+            'Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance, straight Mercury protection from a Platinum Dealer (Mercury dealer since 1965).'}
         </motion.p>
 
         {/* Promo image, framed */}
