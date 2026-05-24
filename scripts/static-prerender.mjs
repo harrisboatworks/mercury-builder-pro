@@ -23,6 +23,21 @@ import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
 
+// Verified external profiles for the Harris Boat Works LocalBusiness entity.
+// Mirrors BUSINESS_SAME_AS in src/lib/companyInfo.ts. HTTPS only, no duplicates.
+const BUSINESS_SAME_AS = [
+  "https://www.harrisboatworks.ca/",
+  "https://www.facebook.com/harrisboatworks",
+  "https://www.instagram.com/harrisboatworks",
+  "https://www.youtube.com/@HarrisBoatWorks",
+  "https://g.page/harrisboatworks",
+  "https://www.wikidata.org/wiki/Q139910292",
+  "https://x.com/HarrisBoatWorks",
+  "https://www.yelp.ca/biz/harris-boat-works-gores-landing",
+  "https://www.tripadvisor.ca/Attraction_Review-g670874-d15017131-Reviews-Harris_Boat_Works-Gores_Landing_Ontario.html",
+  "https://directory.northumberlandtourism.com/Home/View/harris-boat-works-ltd"
+];
+
 // Configure marked: GFM tables/strike, no auto line-break paragraphs.
 marked.setOptions({ gfm: true, breaks: false });
 
