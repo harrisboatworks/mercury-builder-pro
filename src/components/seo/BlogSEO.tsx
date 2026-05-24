@@ -229,7 +229,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
 
   return (
     <Helmet>
-      <title>{article.seoTitle ?? article.title}</title>
+      <title>{renderedTitle}</title>
       <meta name="description" content={cleanDescription} />
       <meta name="keywords" content={article.keywords.join(", ")} />
       <link rel="canonical" href={url} />
