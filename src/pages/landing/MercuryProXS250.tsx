@@ -16,6 +16,7 @@ import {
   PRO_XS_250_HERO_IMAGE,
 } from '@/components/seo/MercuryProXS250SEO';
 import { ChevronRight, Phone, ShieldCheck, Wrench, Award } from 'lucide-react';
+import { ALL_SEGMENTS } from '@/data/landing/mercuryLineupLandings';
 
 function formatCAD(n: number): string {
   return new Intl.NumberFormat('en-CA', {
@@ -213,6 +214,28 @@ export default function MercuryProXS250() {
               </AccordionItem>
             ))}
           </Accordion>
+        </section>
+
+        {/* Mercury motors by segment */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
+            Mercury motors by segment
+          </h2>
+          <p className="text-muted-foreground mb-6">
+            Browse Mercury outboard prices by horsepower band.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {ALL_SEGMENTS.filter((s) => s.path !== '/mercury/pro-xs-250').map((segment) => (
+              <Card key={segment.path} className="p-5 hover:bg-muted/30 transition-colors">
+                <Link to={segment.path} className="block group">
+                  <h3 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                    {segment.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">from {segment.price} CAD</p>
+                </Link>
+              </Card>
+            ))}
+          </div>
         </section>
 
         {/* Final CTA */}

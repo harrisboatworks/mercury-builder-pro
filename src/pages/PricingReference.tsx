@@ -87,6 +87,26 @@ export default function PricingReference() {
             or call (905) 342-2153.
           </p>
         )}
+        <section className="mt-12 mb-8">
+          <h2 className="text-2xl font-semibold text-foreground mb-4">
+            Mercury prices by segment
+          </h2>
+          <p className="text-muted-foreground mb-4">
+            Browse detailed pricing and availability for every Mercury horsepower band.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {ALL_SEGMENTS.map((segment) => (
+              <a
+                key={segment.path}
+                href={segment.path}
+                className="block p-4 rounded-lg border bg-card text-card-foreground shadow-sm hover:bg-muted/30 transition-colors"
+              >
+                <span className="font-medium">{segment.name}</span>
+                <span className="block text-sm text-muted-foreground">from {segment.price} CAD</span>
+              </a>
+            ))}
+          </div>
+        </section>
       </main>
     </>
   );
