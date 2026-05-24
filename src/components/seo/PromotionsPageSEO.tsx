@@ -117,8 +117,8 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
 
   return (
     <Helmet>
-      <title>7-Year Factory-Backed Warranty on Every New Mercury | Harris Boat Works</title>
-      <meta name="description" content="Get 7 years of factory-backed warranty coverage on every new Mercury outboard from Harris Boat Works. No third-party insurance, straight Mercury protection from a Platinum Dealer since 1965." />
+      <title>7-Year Mercury Warranty on Every New Outboard | HBW</title>
+      <meta name="description" content="7 years of factory-backed warranty on every new Mercury outboard at Harris Boat Works. Straight Mercury coverage, no third-party contract." />
       <meta name="keywords" content="Mercury 7 year warranty, Mercury outboard warranty, Harris Boat Works, Mercury dealer Ontario, boat motor warranty, Mercury Platinum Dealer, repower warranty" />
       <link rel="canonical" href={`${SITE_URL}/promotions`} />
       
