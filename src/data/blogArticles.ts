@@ -1677,7 +1677,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-prokicker-rice-lake-fishing-guide',
     title: "Mercury 9.9 ProKicker for Rice Lake Walleye Fishing: The Complete 2026 Guide",
     seoTitle: "Mercury 9.9 ProKicker: Rice Lake Fishing Guide (2026)",
-    description: "The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount or remote-control variant. It does what main motors cannot: idle down to true walleye trolling speed (1 to 2 mph) without spooking fish. We install ProKickers on most fishing boat repowers at HBW. Live pricing on every Mercury we sell, including ProKicker, is at [/quote/motor-selection](/quote/motor-selection).",
+    description: "Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips, and how to service it.",
     image: '/lovable-uploads/ProKicker_Rice_Lake_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
