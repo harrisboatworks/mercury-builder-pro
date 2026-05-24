@@ -3659,7 +3659,8 @@ const routes = [
         const html = marked.parse(noH1);
         return (
           '<p><a href="/quote/motor-selection">Build a quote in the configurator →</a></p>' +
-          html
+          html +
+          mercuryAllSegmentsLinksHtml()
         );
       } catch (err) {
         console.warn('[static-prerender] pricing-reference render failed:', err?.message);
