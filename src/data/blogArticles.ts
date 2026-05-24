@@ -1798,7 +1798,7 @@ The other thing we see: the kicker is not where people should economize. A corre
 
 ---
 
-## Common Mistakes We See on ProKicker Installs
+## Common Mistakes
 
 **The "I'll add the kicker later" plan.** Nobody adds it later cleanly. It costs more, takes longer, and disturbs wiring that is already in. Put it on at repower or rigging time.
 
@@ -3577,7 +3577,7 @@ A 16-18 ft aluminum console with a Mercury 90-115 HP FourStroke, [Command Thrust
 
 ---
 
-## Common Mistakes We See Every Season
+## Common Mistakes
 
 **The "I'll add the kicker later" plan.** Nobody adds the kicker later cleanly. They do add it, but it costs more, takes longer, and means undoing half the wiring we already ran. Put it on at repower time. Your future self, and your walleye numbers, will thank you.
 
@@ -3901,7 +3901,7 @@ So we lead with the walk-around, and we tell you what we find even when the find
 
 ---
 
-## Common Mistakes We See
+## Common Mistakes
 
 **Skipping the transom check.** The most expensive repower mistake there is. A new motor on a soft transom is money spent on a countdown timer.
 
@@ -10239,7 +10239,7 @@ So the framing we give every Evinrude owner is this. The motor itself may be fin
 
 ---
 
-## Common Mistakes We See on Evinrude Conversions
+## Common Mistakes
 
 **Waiting until it dies in July.** A motor failure in peak season means the longest waits of the year for parts and shop time. Owners who plan ahead in February or March get the easy appointment slots and first pick of motor inventory. The ones who call in July learn the hard truth about August availability.
 
@@ -14941,7 +14941,7 @@ The cost of walking away is a wasted Saturday. The cost of buying wrong is a rep
 
 ---
 
-## What HBW Does: Pre-Purchase Inspections
+## What HBW Checks Before You Buy a Used Outboard
 
 Found a motor that passes the walk-around but you want a professional second opinion before you hand over money? We do third-party pre-purchase inspections at the shop: compression test, gearcase pressure test, and computer diagnostics on anything 2010 or newer with SmartCraft.
 
