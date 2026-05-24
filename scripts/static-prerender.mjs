@@ -2803,22 +2803,54 @@ function locationDetailSchema(loc) {
 }
 
 
-const caseStudyDetailRoutes = caseStudies.map((s) => ({
-  path: `/case-studies/${s.slug}`,
-  title: `${s.title} | Mercury Repower Case Study | Harris Boat Works`,
-  description: `${s.excerpt} ${s.beforeMotor} to ${s.afterMotor}. Mercury repower case study from Harris Boat Works.`.slice(0, 320),
-  h1: s.title,
-  intro: `${s.excerpt} Scenario: ${s.scenario}. Boat type: ${s.boatType}. Region: ${s.region}. Repower path: ${s.beforeMotor} → ${s.afterMotor}.`,
-  schemas: [caseStudyDetailSchema(s)],
-  extraNoscript: () =>
-    `<section><h2>What changed</h2><p><strong>Before:</strong> ${escapeHtml(s.beforeMotor)}. <strong>After:</strong> ${escapeHtml(s.afterMotor)}. <strong>Region:</strong> ${escapeHtml(s.region)}.</p></section>` +
-    `<section><h2>Recommendation</h2><p>${escapeHtml(s.recommendation)}</p></section>` +
-    `<section><h2>Why it worked</h2><ul>${s.whyItWorked.map((w) => `<li>${escapeHtml(w)}</li>`).join('')}</ul></section>` +
-    `<blockquote><p>${escapeHtml(s.customerQuote)}</p></blockquote>` +
-    `<p><a href="${escapeHtml(s.quoteUrl)}">Build a Mercury quote based on this case study →</a></p>` +
-    `<p><a href="/case-studies">← All Mercury repower case studies</a></p>` +
-    (s.isIllustrative ? `<p><em>Note: imagery for this case study is illustrative pending real photography.</em></p>` : ''),
-}));
+const caseStudyDetailRoutes = caseStudies.map((s) => {
+  const lf = s.longForm;
+  const cleanTitle = lf
+    ? (lf.cleanTitle || s.title).replace(/\s*\|\s*Harris Boat Works\s*$/i, '')
+    : s.title;
+  const pageTitle = lf
+    ? `${cleanTitle} | Harris Boat Works`
+    : `${s.title} | Mercury Repower Case Study | Harris Boat Works`;
+  const description = lf?.metaDescription
+    ?? `${s.excerpt} ${s.beforeMotor} to ${s.afterMotor}. Mercury repower case study from Harris Boat Works.`.slice(0, 320);
+  const h1 = lf?.h1 ?? s.title;
+  const intro = lf?.intro
+    ?? `${s.excerpt} Scenario: ${s.scenario}. Boat type: ${s.boatType}. Region: ${s.region}. Repower path: ${s.beforeMotor} → ${s.afterMotor}.`;
+
+  return {
+    path: `/case-studies/${s.slug}`,
+    title: pageTitle,
+    description,
+    h1,
+    intro,
+    schemas: [caseStudyDetailSchema(s)],
+    extraNoscript: () => {
+      if (lf) {
+        return (
+          (s.heroImage ? `<p><img src="${escapeHtml(s.heroImage)}" alt="${escapeHtml(lf.heroAlt ?? lf.h1)}" /></p>` : '') +
+          `<p><em>Last reviewed: ${escapeHtml(lf.lastReviewed)}</em></p>` +
+          `<blockquote><strong>Quick answer:</strong> ${escapeHtml(lf.quickAnswer)}</blockquote>` +
+          `<p>${escapeHtml(lf.intro)}</p>` +
+          `<section><h2>Key facts</h2><ul>${lf.keyFacts.map((k) => `<li>${escapeHtml(k)}</li>`).join('')}</ul></section>` +
+          lf.sections.map((sec) => `<section><h2>${escapeHtml(sec.heading)}</h2>${sec.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join('')}</section>`).join('') +
+          `<section><h2>Frequently Asked Questions</h2><dl>${lf.faqs.map((f) => `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`).join('')}</dl></section>` +
+          `<section><h2>Visit Harris Boat Works</h2>${lf.visit.split('\n\n').map((p) => `<p>${escapeHtml(p)}</p>`).join('')}</section>` +
+          `<section><h2>Related</h2><ul>${lf.related.map((r) => `<li><a href="${escapeHtml(r.href)}">${escapeHtml(r.label)}</a></li>`).join('')}</ul></section>` +
+          `<p><a href="/case-studies">← All Mercury repower case studies</a></p>`
+        );
+      }
+      return (
+        `<section><h2>What changed</h2><p><strong>Before:</strong> ${escapeHtml(s.beforeMotor)}. <strong>After:</strong> ${escapeHtml(s.afterMotor)}. <strong>Region:</strong> ${escapeHtml(s.region)}.</p></section>` +
+        `<section><h2>Recommendation</h2><p>${escapeHtml(s.recommendation)}</p></section>` +
+        `<section><h2>Why it worked</h2><ul>${s.whyItWorked.map((w) => `<li>${escapeHtml(w)}</li>`).join('')}</ul></section>` +
+        `<blockquote><p>${escapeHtml(s.customerQuote)}</p></blockquote>` +
+        `<p><a href="${escapeHtml(s.quoteUrl)}">Build a Mercury quote based on this case study →</a></p>` +
+        `<p><a href="/case-studies">← All Mercury repower case studies</a></p>` +
+        (s.isIllustrative ? `<p><em>Note: imagery for this case study is illustrative pending real photography.</em></p>` : '')
+      );
+    },
+  };
+});
 
 const locationDetailRoutes = locations.map((loc) => {
   const lf = loc.longForm;
