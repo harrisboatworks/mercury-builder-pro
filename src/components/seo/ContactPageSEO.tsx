@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import googlePlaces from '@/data/google-places-cache.json';
 
 const LIVE_AGGREGATE_RATING = {
