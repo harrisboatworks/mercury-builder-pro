@@ -2903,7 +2903,7 @@ const HUB_DEFS = [
   {
     path: '/repower',
     metaTitle: 'Mercury Repower Ontario 2026: Cost, Process, Financing | HBW',
-    metaDescription: 'Mercury repowers in Ontario typically run $11,000 to $40,000 CAD all-in. Get live pricing, the full repower process, and 7.99% financing options at Harris Boat Works.',
+    metaDescription: 'Mercury repowers in Ontario typically run $11,000-$40,000 CAD all-in. Live pricing, the full repower process, and 7.99% financing at Harris Boat Works.',
     breadcrumbName: 'Mercury Repower',
     h1: 'Mercury Repower Guide for Ontario Boaters (2026)',
     intro: "A Mercury repower means replacing your existing outboard with a new Mercury on your current boat. For most Ontario freshwater customers in 2026, all-in costs land between $11,000 and $40,000 CAD depending on HP class, hull, and rigging. The hull is the asset; the motor is the wear part. A repower on a solid hull gives you 80% of the new-boat experience for half the money. Live pricing on every Mercury we sell is at /quote/motor-selection.",
