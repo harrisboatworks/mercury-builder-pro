@@ -18,6 +18,9 @@ export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
   const dealerCity = getDealerCityFromSlug(article.slug);
   const cleanDescription = getCleanDescription(article);
+  // Use seoTitle verbatim when set (sized to ≤60 chars incl. its own brand suffix).
+  // Only fall back to "{title} | Harris Boat Works Blog" when seoTitle is absent.
+  const renderedTitle = article.seoTitle || `${article.title} | Harris Boat Works Blog`;
 
   // Calculate word count from content
   const wordCount = article.content.trim().split(/\s+/).length;
@@ -226,7 +229,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
 
   return (
     <Helmet>
-      <title>{article.seoTitle ?? article.title}</title>
+      <title>{renderedTitle}</title>
       <meta name="description" content={cleanDescription} />
       <meta name="keywords" content={article.keywords.join(", ")} />
       <link rel="canonical" href={url} />
@@ -241,7 +244,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       )}
       
       {/* Open Graph */}
-      <meta property="og:title" content={article.seoTitle ?? article.title} />
+      <meta property="og:title" content={renderedTitle} />
       <meta property="og:description" content={cleanDescription} />
       <meta property="og:image" content={`${SITE_URL}${article.image}`} />
       <meta property="og:url" content={url} />
@@ -253,7 +256,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={article.seoTitle ?? article.title} />
+      <meta name="twitter:title" content={renderedTitle} />
       <meta name="twitter:description" content={cleanDescription} />
       <meta name="twitter:image" content={`${SITE_URL}${article.image}`} />
       

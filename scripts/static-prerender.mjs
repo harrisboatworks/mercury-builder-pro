@@ -2306,7 +2306,7 @@ function renderAuthorBylineHtml(authorName) {
 // Build blog article route configs.
 const blogArticleRoutes = blogArticles.map(article => ({
   path: `/blog/${article.slug}`,
-  title: `${article.seoTitle || article.title} | Harris Boat Works Blog`,
+  title: article.seoTitle || `${article.title} | Harris Boat Works Blog`,
   description: article.description,
   ogImage: `${SITE_URL}${article.image}`,
   ogType: 'article',
@@ -2338,7 +2338,7 @@ const blogArticleRoutes = blogArticles.map(article => ({
 function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale, inLanguage) {
   return articles.map(article => ({
     path: `/blog/${langCode}/${article.slug}`,
-    title: `${article.seoTitle || article.title} | Harris Boat Works Blog`,
+    title: article.seoTitle || `${article.title} | Harris Boat Works Blog`,
     description: article.description,
     ogImage: article.image ? (article.image.startsWith('http') ? article.image : `${SITE_URL}${article.image}`) : undefined,
     ogType: 'article',
@@ -2903,7 +2903,7 @@ const HUB_DEFS = [
   {
     path: '/repower',
     metaTitle: 'Mercury Repower Ontario 2026: Cost, Process, Financing | HBW',
-    metaDescription: 'Mercury repowers in Ontario typically run $11,000 to $40,000 CAD all-in. Get live pricing, the full repower process, and 7.99% financing options at Harris Boat Works.',
+    metaDescription: 'Mercury repowers in Ontario typically run $11,000-$40,000 CAD all-in. Live pricing, the full repower process, and 7.99% financing at Harris Boat Works.',
     breadcrumbName: 'Mercury Repower',
     h1: 'Mercury Repower Guide for Ontario Boaters (2026)',
     intro: "A Mercury repower means replacing your existing outboard with a new Mercury on your current boat. For most Ontario freshwater customers in 2026, all-in costs land between $11,000 and $40,000 CAD depending on HP class, hull, and rigging. The hull is the asset; the motor is the wear part. A repower on a solid hull gives you 80% of the new-boat experience for half the money. Live pricing on every Mercury we sell is at /quote/motor-selection.",
@@ -3139,7 +3139,7 @@ const routes = [
   {
     path: '/',
     title: 'Mercury Repower Ontario: Live CAD Quotes | Harris Boat Works',
-    description: 'Build a full Mercury outboard repower quote in CAD online: motor, install, financing, trade-in. Mercury Platinum Dealer since 1965. Pickup in Gores Landing.',
+    description: 'Build a Mercury outboard repower quote in CAD online: motor, install, financing, trade-in. Mercury dealer since 1965. Pickup in Gores Landing.',
     h1: 'Mercury Outboard Quotes: Real Prices, No Forms',
     intro: 'Build a real Mercury outboard quote online in three minutes. Live CAD pricing, financing options, and trade-in estimates. Family-owned Mercury Platinum Dealer on Rice Lake since 1947, selling Mercury since 1965.',
     schemas: [homepageSchema()]
@@ -3147,8 +3147,8 @@ const routes = [
   ...HUB_ROUTES,
   {
     path: '/faq',
-    title: 'Mercury Outboard Repower FAQ: Harris Boat Works | mercuryrepower.ca',
-    description: "Get expert answers to 24 Mercury outboard repower questions. Choosing the right HP, SmartCraft Connect, repower costs, financing, pontoon repowers, winterization, from Ontario's Mercury Marine Platinum Dealer since 1947.",
+    title: 'Mercury Outboard Repower FAQ | Harris Boat Works',
+    description: "24 answers on Mercury repower in Ontario: HP choice, SmartCraft Connect, CAD costs, financing, pontoon repowers, winterization. HBW, dealer since 1965.",
     h1: 'Mercury Outboard Repower FAQ',
     intro: 'Comprehensive answers to the most common Mercury outboard repower questions. Choosing, buying, financing, and installing, expert advice from Ontario\'s Mercury Marine Platinum Dealer since 1947.',
     schemas: [faqPageSchema()],
@@ -3523,8 +3523,8 @@ const routes = [
   },
   {
     path: '/promotions',
-    title: '7-Year Factory-Backed Warranty on Every New Mercury | Harris Boat Works',
-    description: 'Get 7 years of factory-backed warranty coverage on every new Mercury outboard from Harris Boat Works. No third-party insurance, straight Mercury protection from a Platinum Dealer since 1965.',
+    title: '7-Year Mercury Warranty on Every New Outboard | HBW',
+    description: '7 years of factory-backed warranty on every new Mercury outboard at Harris Boat Works. Straight Mercury coverage, no third-party contract.',
     h1: 'Mercury Outboard Promotions',
     intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works: Mercury Marine Platinum Dealer on Rice Lake since 1965. Factory-backed 7-year warranty on every new Mercury.',
     schemas: [promotionsPageSchema()]
