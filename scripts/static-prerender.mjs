@@ -21,6 +21,7 @@ import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
+import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
 
 // Configure marked: GFM tables/strike, no auto line-break paragraphs.
 marked.setOptions({ gfm: true, breaks: false });
