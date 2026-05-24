@@ -4,6 +4,7 @@
 // rewrite. No em dashes. En dashes only inside number ranges.
 
 import type { LocationPageData, LocationLink, LocationFAQ } from './locations';
+import { LOCATION_LONGFORM_EXTRAS } from './locationsLongFormExtras';
 
 export interface LocationSection {
   heading: string;
@@ -20,6 +21,14 @@ export interface LocationLongForm {
   related: LocationLink[];
   lat?: number;
   lng?: number;
+  /** Standards-upgrade fields (Bucket 2 Batch 1, May 2026). */
+  quickAnswer?: string;
+  lastReviewed?: string;
+  whatWeSeeAtHBW?: string;
+  heroImage?: string;
+  heroAlt?: string;
+  metaDescription?: string;
+  canonical?: string;
 }
 
 const PICKUP_POLICY =
