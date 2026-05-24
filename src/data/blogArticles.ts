@@ -15001,7 +15001,7 @@ A seller who refuses an on-water test is telling you something. Listen.
 
 ---
 
-## Deal-Breakers: When to Walk Away
+## Watch Out for These Deal-Breakers
 
 Walk away if you find any of these:
 
