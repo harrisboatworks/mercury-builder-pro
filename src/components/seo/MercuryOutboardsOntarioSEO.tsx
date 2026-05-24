@@ -113,7 +113,8 @@ export function MercuryOutboardsOntarioSEO() {
           "Mercury ProKicker trolling motors",
           "Marine repower"
         ],
-        "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS
+        "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS,
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "FAQPage",
