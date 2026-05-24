@@ -1953,15 +1953,8 @@ function mercuryOutboardsOntarioSchema() {
           "Mercury FourStroke V8",
           "Marine repower"
         ],
-        "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury Portable FourStroke 2.5–20 HP" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury Mid-Range FourStroke 25–115 HP" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury Pro XS 115–250 HP" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury Command Thrust 40–150 HP" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury SeaPro Commercial Outboards" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury ProKicker 9.9 / 15 HP" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury FourStroke V8 250–300 HP" } }
-        ]
+        // Sourced from src/data/mercuryOutboardsOffers.js — shared with MercuryOutboardsOntarioSEO.tsx
+        "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS
       },
       {
         "@type": "FAQPage",
