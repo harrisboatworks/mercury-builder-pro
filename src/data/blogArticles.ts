@@ -1681,7 +1681,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/ProKicker_Rice_Lake_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-05-04',
+    dateModified: '2026-05-23',
     category: 'Fishing',
     readTime: '10 min read',
     keywords: ['mercury prokicker', 'kicker motor rice lake', 'trolling motor ontario', 'prokicker installation', 'mercury 9.9 prokicker', 'kicker motor fishing boat', 'rice lake walleye trolling'],
