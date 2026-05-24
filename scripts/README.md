@@ -12,6 +12,7 @@ Build, validation, and content-maintenance utilities. Run with `node scripts/<na
 | `generate-sitemap.ts` | Builds `public/sitemap.xml` from blog, motor, location, and tool routes. Run via `tsx`. |
 | `indexnow-submit.mjs` | Pings Bing/IndexNow with a list of changed URLs after deploy. |
 | `static-prerender.mjs` | Vite post-build pass that prerenders blog and key marketing routes to static HTML for SEO. |
+| `check-structured-data.mjs` | Post-build guardrail. Validates every JSON-LD block in `dist/` (parse + required fields), strict on Product Offers (`priceCurrency`/`price`/`availability`) but exempts Service offers (price-on-request). Also enforces a dual-source-of-truth check between `static-prerender.mjs` and React SEO components — fails if the same Product name/`@id` is hardcoded in both. Wired between `static-prerender.mjs` and `indexnow-submit.mjs` in the build pipeline. |
 
 ## Adding a new script
 

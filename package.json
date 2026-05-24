@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-markdown-twins.mjs && node scripts/fetch-google-places-data.mjs && vite build && node scripts/static-prerender.mjs && node scripts/indexnow-submit.mjs",
+    "build": "node scripts/generate-markdown-twins.mjs && node scripts/fetch-google-places-data.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-structured-data.mjs && node scripts/indexnow-submit.mjs",
     "build:dev": "vite build --mode development",
     "check:blog-leaks": "node scripts/check-blog-leaks.mjs",
     "check:pricing-reference-copy": "node scripts/check-pricing-reference-copy.mjs",
     "check:responsive-images": "node scripts/check-responsive-images.mjs",
+    "check:structured-data": "node scripts/check-structured-data.mjs",
     "generate:responsive-variants": "node scripts/generate-responsive-variants.mjs",
     "prebuild": "npm run check:blog-leaks && npm run check:pricing-reference-copy && npm run generate:responsive-variants && npm run check:responsive-images",
     "verify:gta-sitemap": "node scripts/verify-gta-sitemap.mjs",
