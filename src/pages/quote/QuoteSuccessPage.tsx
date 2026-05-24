@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import { CheckCircle2, ArrowRight, Phone, Mail, MessageSquare } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -6,6 +6,8 @@ import { COMPANY_INFO } from '@/lib/companyInfo';
 import { SaveQuotePrompt } from '@/components/auth/SaveQuotePrompt';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
+import { useQuote } from '@/contexts/QuoteContext';
+import { clearQuoteId, getQuoteId, trackEvent } from '@/lib/analytics';
 
 export default function QuoteSuccessPage() {
   const navigate = useNavigate();
@@ -13,6 +15,8 @@ export default function QuoteSuccessPage() {
   const [searchParams] = useSearchParams();
   const [showConfetti, setShowConfetti] = useState(false);
   const { user } = useAuth();
+  const { state: quoteState } = useQuote();
+  const firedRef = useRef(false);
 
   const referenceNumber = searchParams.get('ref') || 'PENDING';
   const isOAuthCallback = searchParams.get('oauth') === 'google';
@@ -20,6 +24,33 @@ export default function QuoteSuccessPage() {
   // Get contact info from navigation state (passed from ScheduleConsultation)
   const contactInfo = location.state?.contactInfo as { name: string; email: string; phone: string } | undefined;
   const quoteId = location.state?.quoteId as string | undefined;
+
+  // Fire quote_complete once. Only fires if a quote_id exists (prevents bookmark re-fires).
+  useEffect(() => {
+    if (firedRef.current) return;
+    const qid = getQuoteId() || searchParams.get('quote_id') || quoteId;
+    if (!qid) return;
+    firedRef.current = true;
+    const m: any = quoteState?.motor || {};
+    const b: any = quoteState?.boatInfo || {};
+    const fsa = (b.postalCode || '').toString().replace(/\s+/g, '').slice(0, 3).toUpperCase();
+    const price = Number(m.price || 0);
+    trackEvent('quote_complete', {
+      motor_model: m.model || '',
+      motor_hp: Number(m.hp || 0),
+      price_cad: price,
+      value: price,
+      currency: 'CAD',
+      financing_selected: Boolean(quoteState?.financingConfig),
+      trade_in: quoteState?.tradeInInfo?.hasTradeIn ? 'yes' : 'no',
+      boat_make: b.make || '',
+      boat_year: Number(b.year || 0) || 0,
+      postal_code_fsa: fsa,
+      quote_id: qid,
+    });
+    clearQuoteId();
+  }, [quoteState, quoteId, searchParams]);
+
 
   // Handle OAuth callback - link quote to new user
   useEffect(() => {
