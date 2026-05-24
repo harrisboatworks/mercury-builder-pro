@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)"
-description: "Spring, summer, fall, and winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 winterization mistake."
+description: "Spring, summer, fall, winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 CAD winterization mistake to avoid."
 category: "Maintenance"
 date_published: 2024-05-20
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
 
-> Spring, summer, fall, and winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 winterization mistake.
+> Spring, summer, fall, winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 CAD winterization mistake to avoid.
 
 **Category:** Maintenance  
 **Published:** 2024-05-20  

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "How to Break In a New Mercury Outboard (10-Hour Guide)"
-description: "The 10-hour Mercury break-in, step by step. RPM targets, what to avoid, and the first-service interval that protects your warranty."
+description: "The Mercury 10-hour break-in, step by step: RPM targets by hour, what to avoid, and the 20-hour first service that protects your warranty. HBW guide."
 category: "New Owner"
 date_published: 2024-02-20
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # How to Break In a New Mercury Outboard (10-Hour Guide)
 
-> The 10-hour Mercury break-in, step by step. RPM targets, what to avoid, and the first-service interval that protects your warranty.
+> The Mercury 10-hour break-in, step by step: RPM targets by hour, what to avoid, and the 20-hour first service that protects your warranty. HBW guide.
 
 **Category:** New Owner  
 **Published:** 2024-02-20  

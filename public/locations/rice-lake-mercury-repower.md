@@ -41,6 +41,13 @@ Harris Boat Works has been Rice Lake’s Mercury repower specialist for three ge
 
 - [18-foot aluminum fishing boat: 60HP to 90HP FourStroke](https://www.mercuryrepower.ca/case-studies/aluminum-fishing-60-to-90-fourstroke.md)
 - [Walkaround cuddy: 90HP to 115HP EFI](https://www.mercuryrepower.ca/case-studies/walkaround-cuddy-90-to-115-efi.md)
+- [90 HP to 115 Pro XS Repower Case Study](https://www.mercuryrepower.ca/case-studies/90-to-115-pro-xs-fish-boat.md)
+- [Pontoon Boost Retrofit Case Study](https://www.mercuryrepower.ca/case-studies/pontoon-boost-retrofit.md)
+- [Two-Stroke to FourStroke Modernization](https://www.mercuryrepower.ca/case-studies/two-stroke-to-fourstroke-modernization.md)
+- [Verado V8 300 Special-Order Repower](https://www.mercuryrepower.ca/case-studies/verado-v8-special-order-repower.md)
+- [Avator 7.5e Electric Kicker on a Walleye Boat](https://www.mercuryrepower.ca/case-studies/avator-electric-kicker-trolling.md)
+- [Command Thrust 60 HP on Heavy Aluminum](https://www.mercuryrepower.ca/case-studies/command-thrust-heavy-aluminum.md)
+- [Twin 115 to Single 300 V8 Consolidation](https://www.mercuryrepower.ca/case-studies/twin-to-single-big-block.md)
 
 ## FAQs
 

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "How to Choose the Right Horsepower for Your Boat (2026 Guide)"
-description: "The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate."
+description: "Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario."
 category: "Buying Guide"
 date_published: 2024-06-15
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # How to Choose the Right Horsepower for Your Boat (2026 Guide)
 
-> The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate.
+> Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario.
 
 **Category:** Buying Guide  
 **Published:** 2024-06-15  

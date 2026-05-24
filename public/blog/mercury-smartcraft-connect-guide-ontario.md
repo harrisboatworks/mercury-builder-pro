@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)"
-description: "Mercury SmartCraft Connect compatibility (2004+ and 40 HP+), what the Mercury app shows, install options at HBW, and whether it's worth adding to your motor."
+description: "Mercury SmartCraft Connect compatibility (2004+ motors, 40 HP+), what the Mercury app shows, install options at HBW, and whether it's worth adding."
 category: "Mercury Outboards"
 date_published: 2026-05-09
 date_modified: 2026-05-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)
 
-> Mercury SmartCraft Connect compatibility (2004+ and 40 HP+), what the Mercury app shows, install options at HBW, and whether it's worth adding to your motor.
+> Mercury SmartCraft Connect compatibility (2004+ motors, 40 HP+), what the Mercury app shows, install options at HBW, and whether it's worth adding.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  

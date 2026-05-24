@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Fuel Economy: How to Get Better MPG"
-description: "Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn, ranked by impact."
+description: "Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn on Ontario boats, ranked by impact. HBW guide."
 category: "Tips"
 date_published: 2026-03-16
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Fuel Economy: How to Get Better MPG
 
-> Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn, ranked by impact.
+> Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn on Ontario boats, ranked by impact. HBW guide.
 
 **Category:** Tips  
 **Published:** 2026-03-16  
