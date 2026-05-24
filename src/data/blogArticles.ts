@@ -14683,260 +14683,246 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: "used-outboard-buying-guide-ontario",
     title: "Used Outboard Buying Guide for Ontario Boaters (What to Check Before You Pay)",
     seoTitle: 'Used Outboard Buying Guide for Ontario Boaters',
-    description: "A practical Ontario buyer's checklist for used outboards, tell-tale, gearcase oil, compression, what to walk away from. Written by a third-generation.",
+    description: "What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test, and when to walk away.",
     image: "/lovable-uploads/hero-used-outboard-buying-guide.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-07",
-    dateModified: "2026-05-07",
+    dateModified: "2026-05-23",
     publishDate: "2026-05-07",
     category: "Buying Guide",
     readTime: "8 min read",
-    keywords: ["used outboard buying guide Ontario", "how to buy a used outboard", "used Mercury outboard Ontario", "outboard motor inspection checklist", "Kijiji boat motor buying tips"],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario
+    keywords: ["used outboard buying guide Ontario", "how to inspect a used outboard", "used Mercury outboard checklist", "buying a used boat motor", "outboard compression test"],
+    content: `*Last reviewed: 2026-05-23*
+
+> **Quick answer:** Before you pay for any used outboard, do four things: compression-test every cylinder, check the gearcase oil colour, watch the tell-tale stream, and run it on the water. If the seller will not allow those, that is your answer. A dealer pre-purchase inspection is cheap insurance against a costly motor. Book one at hbw.wiki/service.
+
+Harris Boat Works has been a Mercury dealer and service shop on Rice Lake since 1947. My dad ran the service side for decades, and he spent a lot of those years pulling cowls off motors that people bought without asking the right questions first. He had a phrase for it: cheap at the dock, expensive in the shop.
+
+A used outboard can be a smart buy. Ontario is the right place to shop for one, too. The Kawarthas and Rice Lake run almost entirely freshwater motors, and freshwater is the best possible starting point. A single saltwater season leaves corrosion you cannot undo.
+
+But freshwater does not mean trouble-free. Neglect, ethanol pump gas, skipped service, and a winter frozen in an unheated garage all pull a motor out of its best years fast. This is the inspection my dad taught, in the order we still do it.
 
 ---
 
-## Quick Answer
+## Before You Drive Out to See It
 
-Before money changes hands on a used outboard: **compression test every cylinder**, check for milky gearcase oil, verify the tell-tale stream runs within 60 seconds, and run it under load on the water. A $200 dealer inspection can save you a $5,000 mistake. Book an inspection at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** or **[hbw.wiki/service](https://hbw.wiki/service)**.
+A few questions to ask by text before you spend a Saturday on a motor that was never worth the drive:
+
+1. **What year and model?** Ask for a photo of the data plate. It carries the year, horsepower, and serial number. On Mercury outboards the plate is usually on the transom bracket, and the serial is also stamped on the powerhead.
+2. **How many hours?** Modern Mercurys have an hour meter. A photo, not a guess.
+3. **Freshwater or salt?** Even one season in salt makes it a different motor.
+4. **Any recent work?** What, when, and who. Service records, or it did not happen.
+5. **Why are they selling?** Honest sellers have a real answer. "Long story" is an answer too, just not the one you want.
+6. **Any warranty left?** Mercury's standard limited warranty can transfer with documentation. If the motor is under three years old, ask for the original receipt and the dealer registration.
+
+If a seller cannot tell you the year, the hours, or the use history, you are buying a mystery. Price it like one, or walk away.
 
 ---
 
-## Full Article
+## At the Boat: The Inspection Order
 
-The short version: assume nothing, check everything, and get a compression test before money changes hands. A used outboard can be a real deal or a $4,000 paperweight, and the difference is almost always visible before you buy, if you know what to look at.
+### Step 1: Walk Around It Before Anyone Starts It
 
-We've been a Mercury dealer in Ontario since 1965 and we see used motors come through the shop every week. Some bought smart, some bought sight-unseen off Facebook Marketplace. This is the inspection we'd do, in the order we'd do it. Use it as your checklist.
+Before a key is touched, look at:
 
-### Why the Ontario Used Outboard Market Is Tricky
+- **The skeg**, the fin at the bottom of the lower unit. Bent, broken, welded, or missing means the motor hit something hard. One solid impact can warp the gearcase, bend the prop shaft, or knock the lower unit out of alignment.
+- **The prop.** Small dings are normal and cheap to fix at any prop shop. A blade that was bent and "straightened" by hand is a different problem. Aluminum bent twice is on its way out.
+- **The cowl.** Cracks, impact damage, paint that does not match. If the cowl was replaced, ask why.
+- **The powerhead.** Pull the cowl and look for corrosion, water staining, and oil leaks. White powdery corrosion on the block is a flag.
+- **The transom mount.** Cracks in the bracket or in the boat's transom. This is where years of deferred maintenance quietly park themselves.
 
-A used outboard has no odometer. Hours can be wrong, missing, or just estimated. Most sellers aren't lying, they genuinely don't know the true running hours.
+### Step 2: The Tell-Tale Stream
 
-Ontario buyers do have one structural advantage: most motors here are freshwater motors. A single saltwater season leaves corrosion you can't fully undo. So if you're shopping Rice Lake, the Kawarthas, or the Trent-Severn, that's your floor. Start there.
+The tell-tale is the small water stream out the back of the motor near the midsection. Within 30 to 60 seconds of starting, it should be steady, continuous, and not scalding hot to the touch.
 
-But "freshwater" doesn't mean "trouble-free." Neglect has its own patterns: corrosion from sitting outside without a cover, fuel system damage from ethanol pump gas, and skipped service schedules. Verify everything.
+A weak trickle or no stream at all means a worn impeller, a damaged housing, or a blockage. A failed water pump runs the engine hot, and a single overheat can warp a powerhead, blow a head gasket, or seize the motor outright.
 
-### Before You Drive Out to See It
+If the seller will not start it on muffs or in the water, that is your answer.
 
-Five questions to text the seller before you waste a Saturday:
+### Step 3: The Gearcase Oil Colour Test
 
-**1. What year and model is it?** Get a photo of the data plate (port side of the engine block, near the cowl). Year, HP, and serial number are all on it.
+The single most diagnostic check you can do at the boat, and it takes about 30 seconds.
 
-**2. How many hours?** Most modern Mercurys have an hour meter. Ask for a photo of it.
+Crack the lower drain plug on the side of the lower unit. A few drops will come out. Read the colour:
 
-**3. Freshwater or salt?** Even one season in salt is a different motor.
+| Colour | What it means |
+|---|---|
+| Clear amber or brown | Normal. Carry on. |
+| Milky or creamy white | Water past the gearcase seals. A lower unit rebuild is in your future. Walk. |
+| Black with a burnt smell | Long-overdue service, and possible clutch dog wear |
+| Metal flakes or shavings | Internal gear damage. Walk. |
 
-**4. Any work done in the last 2, 3 years?** What, when, and who.
+If the seller will not let you crack the plug, you already have your answer.
 
-**5. Why selling?** Honest sellers have a real answer. "I'm upgrading" or "I don't have time anymore" are fine. "Long story" is worth pressing on.
+### Step 4: The Compression Test
 
-If they can't tell you the year, hours, or use history, you're buying a mystery. Price it like one, or walk away.
-
-### At the Boat: The Inspection Order
-
-#### 1. Walk Around It Before They Start It
-
-Before anyone touches the key, look at:
-
-**The skeg**, the fin at the bottom of the lower unit. Bent, broken, welded, or missing? That motor hit something hard. One impact can warp the gearcase, bend the prop shaft, or knock the lower unit out of alignment.
-
-**The prop**, small dings are normal and inexpensive to fix at any prop shop. A blade that was bent and straightened by hand is a problem; aluminum bent twice is on its way to failing.
-
-**The cowl**, cracks, impact damage, paint that doesn't match. If the cowl was replaced, ask why.
-
-**Inside the cowl**, pull it. Look for corrosion, salt residue, water staining (the motor's been submerged), or oil leaks. White powdery corrosion on the block is a flag.
-
-**The transom mount**, cracks in the bracket or the transom. This is where deferred maintenance hides.
-
-#### 2. The Tell-Tale Stream
-
-The tell-tale is the small water stream out the back of the motor near the midsection. It confirms the water pump impeller is moving water through the engine.
-
-Within 30, 60 seconds of starting, the stream should be **steady, continuous, and not scalding hot to the touch**. A weak trickle or no stream means the impeller is shot, the housing is damaged, or something's blocked. A failed water pump runs the engine hot, and a single overheat can warp a powerhead, blow a head gasket, or seize the motor.
-
-If the seller refuses to start it on muffs or in the water, that's the answer. Don't buy an untested motor.
-
-#### 3. The Gearcase Oil Colour Test
-
-This is the single most diagnostic check on the boat. Takes 30 seconds.
-
-Crack the lower drain plug (small hex screw on the side of the lower unit). A few drops will come out. Look at the colour:
-
-- **Clear amber or brown**, normal
-- **Milky or creamy white**, water has gotten past the gearcase seals. This is a $1,200, $2,500 lower unit rebuild minimum. Don't buy it.
-- **Black with a burnt smell**, long-overdue service, possible clutch dog wear
-- **Metal flakes or shavings**, internal gear damage. Walk away.
-
-If the seller won't let you crack the plug, that's also the answer.
-
-#### 4. Compression Test
-
-Bring a compression gauge, about $40 at Princess Auto. Pull all the spark plugs, thread the gauge into each cylinder one at a time, hold the throttle wide open, and crank for 4, 6 revolutions.
+Bring a compression gauge. They are inexpensive at any auto-parts store. Pull all the spark plugs, thread the gauge into each cylinder, hold the throttle wide open, and crank four to six revolutions per cylinder.
 
 Two things matter:
 
-**Numbers in range**, most modern Mercury 4-strokes read 100, 150 PSI per cylinder. Check the service manual range for your specific model.
+- **Numbers in range.** Most modern Mercury four-strokes read roughly 100 to 150 PSI per cylinder. Check the service manual for your specific model.
+- **Variation between cylinders.** It should be under 10 percent. 145, 142, 138, 144 is a healthy motor. 145, 140, 85, 142 is a serious problem in cylinder three.
 
-**Variation between cylinders**, should be **less than 10%**. A motor reading 145/142/138/144 is healthy. A motor reading 145/140/85/142 has a serious problem in cylinder 3.
+Low or uneven compression points to worn rings, scored cylinders, or head gasket trouble. None of that gets fixed cheap.
 
-Low or uneven compression means worn rings, scored cylinders, or head gasket trouble. None of that gets fixed cheaply.
+### Step 5: Spark Plugs and Fuel System
 
-#### 5. Spark Plugs and Fuel System
+While the plugs are already out, read them:
 
-While the plugs are out, look at them:
+- **Tan or light grey** means it is running clean.
+- **Black, sooty, or oily** means it is running rich, with possible oil burn or carbon buildup.
+- **White or blistered** means it is running lean and hot, with possible head gasket trouble.
 
-- **Tan or light grey**, running clean
-- **Black, sooty, or oily**, running rich, possible oil burn, or carbon buildup
-- **White or blistered**, running lean and hot; head gasket trouble
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-While you're at it, smell the fuel in the line. Stale gas smells like varnish. Water in the filter looks like water in the filter.
+Then smell the fuel in the line. Stale gas smells like varnish. Water in the filter looks like exactly what it is.
 
 ::walkaround-lead-capture
 
-### The On-Water Test, Don't Skip This
+---
 
-If at all possible, run the motor on the water before you pay. We've seen motors that fired fine in the driveway and shut down at 3,500 RPM under load. Things to watch:
+## The On-Water Test: Do Not Skip This
 
-- **Cold start**, fires within a few seconds, no extended cranking
-- **Idle**, smooth, no stalling, no surging
-- **Acceleration**, clean through the RPM range, no hesitation or bog
-- **WOT**, reaches manufacturer's rated RPM for that motor with the right prop
-- **Shifting**, clean F-N-R, no grind, no clunk
-- **Trim and tilt**, full range, holds position
+Run the motor on the water before you pay. We have seen motors that fired fine in a driveway and died at 3,500 RPM under load. On the water, check:
 
-A seller who refuses an on-water test is telling you something.
+- **Cold start:** fires within a few seconds, no extended cranking
+- **Idle:** smooth, no stalling, no surging
+- **Acceleration:** clean through the RPM range, no hesitation
+- **Wide-open throttle:** reaches the manufacturer-rated max RPM for that motor with the right prop
+- **Shifting:** clean forward, neutral, and reverse, no grind, no clunk
+- **Trim and tilt:** full range, holds position
 
-### Ontario-Specific Things to Watch For
-
-**Ethanol damage.** Ontario pump gas contains up to 10% ethanol, which degrades fuel lines, dries out carb diaphragms, and absorbs water during storage. We sell ethanol-free 89 marine gas at the dock in Gores Landing for exactly this reason. A motor run on ethanol pump gas and stored with fuel in the system over multiple Ontario winters often has soft fuel lines and a gummed-up carb.
-
-**Freeze damage.** If it wasn't properly winterized in Ontario, the powerhead may have frozen. Cracked block, blown welch plug, hairline crack in a cylinder head, none of these always show on a casual inspection. A pressure test catches it; a cold-running test usually won't.
-
-**Outdoor storage, no cover.** UV damage on cowls, dried-out rubber, faded plastic, all tell you how the rest of the motor was treated. If the outside was neglected, assume the service schedule was too.
-
+A seller who refuses an on-water test is telling you something. Listen.
 
 ![Compression test gauge connected to a Mercury outboard powerhead during pre-purchase inspection](/lovable-uploads/inline/inline-compression-test.png)
 
-### Deal-Breakers: When to Walk
+---
 
-Walk away if you see any of these:
+## Ontario-Specific Problems to Know
+
+**Ethanol damage.** Ontario regular pump gas carries up to 10 percent ethanol, which degrades fuel lines, dries out carburettor diaphragms, and absorbs water during storage. HBW sells ethanol-free marine gas at Gores Landing for exactly this reason. A motor stored over several winters with ethanol pump gas in the system often has soft fuel lines and a gummed-up carb.
+
+**Winter freeze damage.** A motor that was not properly winterized in Ontario may have frozen. A cracked block, a blown welch plug, or a hairline crack in a cylinder head does not show up on a casual walk-around. A pressure test catches it. A cold-running test will not.
+
+**Stored outside without a cover.** UV-damaged cowls, faded plastic, dried-out rubber. These tell you how the rest of the motor was treated. If the outside was neglected, assume the service schedule was too.
+
+---
+
+## Deal-Breakers: When to Walk Away
+
+Walk away if you find any of these:
 
 - Milky gearcase oil
-- Compression more than 10% off between cylinders
-- No tell-tale stream after 60 seconds running
+- Compression more than 10 percent off between cylinders
+- No tell-tale stream after 60 seconds of running
 - Heavy corrosion on the powerhead
-- Seller won't start it, won't let you compression-test, won't do an on-water test
-- "Salvage" or "submerged" anywhere in the history
-- Hour meter that was disconnected or replaced
+- A seller who will not start it, will not allow a compression test, or will not do an on-water test
+- The words "salvage" or "submerged" anywhere in the history
+- An hour meter that has been disconnected or replaced
 
-The cost of walking away is one Saturday. The cost of buying wrong is $2,500, $8,000 in repairs you didn't budget for.
-
-### HBW Pre-Purchase Inspections
-
-If you've found a motor you're serious about and the seller's answers haven't scared you off, we do third-party pre-purchase inspections at the shop. Compression test, gearcase pressure test, and computer diagnostics on anything 2010 or newer with SmartCraft. You bring the motor or the boat in; we tell you what's actually going on.
-
-The smart move with any private-sale outboard over $3,000: make your offer **conditional on passing a dealer inspection.** Most honest sellers will agree. The ones who won't are telling you something.
-
-Book an inspection at **[hbw.wiki/service](https://hbw.wiki/service)**.
-
-If the inspection reveals that used doesn't make sense and you want to compare against new, current Mercury pricing is at [mercuryrepower.ca](https://www.mercuryrepower.ca). Sometimes a 10-year-old 90 HP at $4,500 is a great deal. Sometimes it absolutely isn't. Knowing which one you're looking at is the whole game.
+The cost of walking away is a wasted Saturday. The cost of buying wrong is a repair bill you did not budget for, often several thousand dollars. The math is not close.
 
 ---
 
-## FAQs
+## What HBW Does: Pre-Purchase Inspections
 
-**How many hours is too many on a used Mercury outboard?** 
-A well-maintained 4-stroke can run 1,500, 3,000+ hours. A motor with 800 hours and full service records is usually a better buy than one with 200 hours and no records. Hours alone don't tell the story, care does.
+Found a motor that passes the walk-around but you want a professional second opinion before you hand over money? We do third-party pre-purchase inspections at the shop: compression test, gearcase pressure test, and computer diagnostics on anything 2010 or newer with SmartCraft.
 
-**How much should I budget for service after buying used?** 
-Plan $500, $1,500 for the first year: water pump impeller, gearcase oil change, spark plugs, fuel filter, and fuel system clean-up. If the seller hasn't done it recently, you're going to.
+The smart play on any private-sale outboard worth real money is to make your offer conditional on passing a dealer inspection. Honest sellers agree to it without hesitation. The ones who refuse have just told you what you needed to know.
 
-**Is a 2-stroke worth buying in 2026?** 
-For a backup motor, light kicker duty, or a budget-level small hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel efficiency and reliability of a modern 4-stroke usually win the math. Note: older 2-stroke outboards run on TC-W3 marine oil (premix or injection). Modern 4-strokes use FC-W rated 4-stroke marine engine oil, not premix. Make sure you know which you're buying.
-
-**Should I trust the hour meter?** 
-Mostly yes on Mercurys made after about 2005, unless the meter has been replaced. Mercury's SmartCraft system also stores hours in the engine ECU, so a dealer with diagnostic equipment can verify true engine hours independently of the dashboard display. We do this as part of our inspection.
-
-**Does HBW service older outboards?** 
-We're a Mercury Platinum dealer and we service everything from current models back through older Mercury-family motors. If parts exist for your motor, we can get them. If they don't, we'll tell you that up front, we're not going to lead you on.
-
-**What's the advantage of buying a used motor from HBW vs. private sale?** 
-Every used motor we sell has been inspected. You know what you're getting. Private sale is sometimes cheaper, but you're carrying the inspection risk yourself. We also do pre-purchase inspections on motors you find privately, so you can get closer to the same confidence level before you commit.
-
-**Can I finance a used outboard?** 
-Yes. Mercury financing can cover used motors in some configurations. For specifics, call us at 905-342-2153.
-
-**What if I find a used motor on Facebook Marketplace in the Kawarthas, is that a reasonable source?** 
-The Kawarthas and Rice Lake region have a reasonable supply of freshwater-only used motors, which is a good starting point. Apply the full inspection checklist regardless of source. Our best pre-purchase inspection customers come from the local market, and even there, we find problems that saved buyers from expensive decisions.
+A pre-purchase inspection costs a small fraction of what a bad motor will cost you in the first season. Book one at **hbw.wiki/service**.
 
 ---
 
-## Internal Links
+## When Used Stops Making Sense
 
-- [Cheapest Mercury Outboard Canada 2026](/blog/cheapest-mercury-outboard-canada-2026)
+Sometimes the math on a used motor does not add up. A 10-year-old 90 HP with question marks on the compression, no service history, and a gearcase that needs attention can be a couple of thousand dollars in repairs away from what it should have cost in the first place. Sometimes a newer used motor is the right buy. Sometimes it is not.
+
+We will tell you which one you are looking at, even when the honest answer points you toward something new. New Mercury pricing is at **mercuryrepower.ca**, and the configurator gives you a real installed number in about 90 seconds. For how a new motor compares against an aging one, our [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) lays out the full picture.
+
+---
+
+## Frequently Asked Questions
+
+**How many hours is too many on a used Mercury?**
+A well-maintained four-stroke can run 1,500 to 3,000 hours and more. An 800-hour motor with full service records is usually a better buy than a 200-hour motor with none. Hours alone do not tell the story. Care does.
+
+**What should I budget for service after buying used?**
+Plan on a round of first-year work no matter what: water pump impeller, gearcase oil, spark plugs, fuel filter, and a fuel-system clean-up. If the seller did not do it, you will. Budget for it as part of the purchase.
+
+**Is a 2-stroke worth buying in 2026?**
+For a backup motor, kicker duty, or a light-use budget hull, sometimes yes, especially under 25 HP. As the primary motor on a serious fishing boat, a modern four-stroke usually wins on fuel economy and reliability. One oil note: 2-stroke outboards use TC-W3 rated marine oil, while modern four-strokes use FC-W rated four-stroke marine oil. Do not mix the two specs.
+
+**Can I trust the hour meter?**
+Mostly, on Mercurys built after about 2005, unless the meter itself was replaced. Mercury's SmartCraft system stores hours in the engine ECU independently, so a dealer with a diagnostic tool can verify true engine hours regardless of what the dashboard shows. We check this on every inspection.
+
+**Should I get a dealer inspection on a private-sale motor?**
+On any used outboard worth real money, yes. Make the offer conditional on it. The inspection cost is small next to the cost of a motor with a hidden problem, and a seller's willingness to allow it tells you a lot on its own.
+
+**Do you service older Mercury outboards?**
+Yes. We are a full-service Mercury Platinum dealer and we work on everything from current models back through the older Mercury fleet. If parts exist for your motor, we can get them. If they do not, we will tell you straight, rather than take your money on a motor that is beyond saving.
+
+---
+
+## Ready to Decide?
+
+If you have looked at the used market and the numbers do not work, or you just want to know what new actually costs, build a live quote at **mercuryrepower.ca**. Real Canadian pricing, configured for your hull, in about 90 seconds.
+
+Call **905-342-2153** with questions, or book a pre-purchase inspection at hbw.wiki/service before you commit to a private-sale motor.
+
+**Phone:** 905-342-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+---
+
+## Sources
+
+- Mercury Marine, owner's resources and maintenance schedules: mercurymarine.com/us/en/service-and-support/owners-resources
+- Mercury Marine, warranty coverage and transfer: mercurymarine.com/us/en/service-and-support/warranty-coverage-and-product-protection
+- Government of Ontario, ethanol in gasoline regulation: ontario.ca/page/cleaner-transportation-fuels
+
+*Inspection guidance and figures are current as of May 2026. Repair costs vary by motor and shop. Confirm your specific motor's specifications against its service manual.*
+
+---
+
+## About the Author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
+---
+
+**Related guides:**
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
-
----
-
-## CTA
-
-Found a used motor you're serious about? Book a pre-purchase inspection at **[hbw.wiki/service](https://hbw.wiki/service)**, compression test, gearcase pressure test, and SmartCraft diagnostics on 2010+ Mercurys.
-
-Comparing against new? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and see where the numbers actually land.
-
-Questions? Call **905-342-2153**. We answer the phone and we won't tell you what you want to hear if the motor isn't worth buying.
-
----
-
----
-
-*End of HBW Batch B, Repower & Buying Posts*
-
----
-
-## Document Index
-
-| # | Post Title | Slug |
-|---|---|---|
-| 1 | The Best Mercury Outboard for a Family Runabout | best-mercury-for-family-runabouts |
-| 2 | Replacing Your Evinrude with a Mercury, Ontario Repower Guide | evinrude-to-mercury-repower-ontario-guide |
-| 3 | How Much Does a Mercury Repower Cost in Ontario? | mercury-repower-cost-ontario-2026-cad |
-| 4 | Mercury vs. Yamaha Outboards in Ontario, An Honest 2026 Comparison | mercury-vs-yamaha-outboards-ontario |
-| 5 | Mercury 115 vs. 150 HP Outboard, Ontario Buyer's Guide | mercury-115-vs-150-hp-outboard-ontario |
-| 6 | Best Mercury Outboard for Lake Simcoe Walleye Fishing | best-mercury-outboard-lake-simcoe-walleye-fishing |
-| 7 | What's the Cheapest Mercury Outboard in Canada in 2026? | cheapest-mercury-outboard-canada-2026 |
-| 8 | Boat Hull Replacement vs. Repower, The Honest Decision | boat-hull-replacement-vs-repower-decision |
-| 9 | [Mercury Boost](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) Software Upgrade on a 150 HP Pontoon, Is It Worth It? | mercury-boost-upgrade-150hp-pontoon-analysis |
-| 10 | Mercury Outboard Rigging Costs Explained, Ontario 2026 | mercury-outboard-rigging-costs-ontario |
-| 11 | What Happens During a Mercury Repower, Step-by-Step Process | what-happens-during-mercury-repower |
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-| 12 | Used Outboard Buying Guide for Ontario Boaters | used-outboard-buying-guide-ontario |`,
+- [Outboard Trade-In Value in Ontario](/blog/outboard-trade-in-value-ontario-hbw)
+- [How to Read Your Boat Capacity Plate](/blog/how-to-read-boat-capacity-plate-ontario)
+- [How to Read a Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)`,
     faqs: [
-  {
-    "question": "How many hours is too many on a used Mercury outboard?",
-    "answer": "A well-maintained 4-stroke can run 1,500-3,000+ hours. A motor with 800 hours and full service records is usually a better buy than a motor with 200 hours and no records. Hours alone don't tell the story, care does."
-  },
-  {
-    "question": "How much should I budget for service after buying a used motor?",
-    "answer": "Plan on $500-$1,500 for the immediate first-year work: water pump impeller, gearcase oil change, spark plugs, fuel filter, fuel system clean-up. If the seller hasn't done it, you're going to."
-  },
-  {
-    "question": "Is a 2-stroke worth buying in 2026?",
-    "answer": "For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Oil tip: marine 2-stroke outboards use TC-W3-rated oil (TCW-3 is the marine-specific spec). Mercury 4-stroke outboards use Mercury Marine FC-W 25W-40 four-stroke oil. Don't substitute automotive 2-stroke oil for TC-W3, the additive packages are different."
-  },
-  {
-    "question": "Should I trust the hour meter?",
-    "answer": "Mostly yes on Mercurys made after about 2005, unless the meter was replaced. Mercury's SmartCraft system stores hours in the engine ECU as well, so a dealer with a diagnostic tool can verify true engine hours independent of the dashboard meter. We do that as part of our inspection."
-  },
-  {
-    "question": "Do you still service older outboards?",
-    "answer": "We're a full-service Mercury Platinum dealer and we work on everything from current models back through the older Mercury fleet. If parts exist for your motor, we can get them. If they don't, we'll tell you that too, we're not going to lead you on. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **New Mercury quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON"
-  }
-],
+      {
+        question: "How many hours is too many on a used Mercury?",
+        answer: "A well-maintained four-stroke can run 1,500 to 3,000 hours and more. An 800-hour motor with full service records is usually a better buy than a 200-hour motor with none. Hours alone do not tell the story. Care does."
+      },
+      {
+        question: "What should I budget for service after buying used?",
+        answer: "Plan on a round of first-year work no matter what: water pump impeller, gearcase oil, spark plugs, fuel filter, and a fuel-system clean-up. If the seller did not do it, you will. Budget for it as part of the purchase."
+      },
+      {
+        question: "Is a 2-stroke worth buying in 2026?",
+        answer: "For a backup motor, kicker duty, or a light-use budget hull, sometimes yes, especially under 25 HP. As the primary motor on a serious fishing boat, a modern four-stroke usually wins on fuel economy and reliability. One oil note: 2-stroke outboards use TC-W3 rated marine oil, while modern four-strokes use FC-W rated four-stroke marine oil. Do not mix the two specs."
+      },
+      {
+        question: "Can I trust the hour meter?",
+        answer: "Mostly, on Mercurys built after about 2005, unless the meter itself was replaced. Mercury's SmartCraft system stores hours in the engine ECU independently, so a dealer with a diagnostic tool can verify true engine hours regardless of what the dashboard shows. We check this on every inspection."
+      },
+      {
+        question: "Should I get a dealer inspection on a private-sale motor?",
+        answer: "On any used outboard worth real money, yes. Make the offer conditional on it. The inspection cost is small next to the cost of a motor with a hidden problem, and a seller's willingness to allow it tells you a lot on its own."
+      },
+      {
+        question: "Do you service older Mercury outboards?",
+        answer: "Yes. We are a full-service Mercury Platinum dealer and we work on everything from current models back through the older Mercury fleet. If parts exist for your motor, we can get them. If they do not, we will tell you straight, rather than take your money on a motor that is beyond saving."
+      }
+    ],
   },
   {
     slug: "trent-severn-waterway-boating-guide-2026",
