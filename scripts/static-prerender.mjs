@@ -1939,7 +1939,8 @@ function proXS250NoscriptHtml() {
     PRO_XS_250_FAQ_PRERENDER.map(i =>
       `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
     ).join('') +
-    '</dl>'
+    '</dl>' +
+    mercurySegmentCrossLinksHtml('/mercury/pro-xs-250')
   );
 }
 
