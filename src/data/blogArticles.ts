@@ -322,7 +322,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
     slug: 'how-to-choose-right-horsepower-boat',
     title: "How to Choose the Right Horsepower for Your Boat (2026 Guide)",
     seoTitle: "How to Choose the Right Boat Horsepower (2026)",
-    description: "The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. The shortcut: aim for 70 to 90% of your maximum rating for typical recreational use. Going lower leaves you underpowered, going to 100% maxes out fuel economy. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).",
+    description: "Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario.",
     image: '/lovable-uploads/hero-how-to-choose-horsepower.png',
     author: 'Harris Boat Works',
     datePublished: '2024-06-15',
@@ -580,8 +580,8 @@ Significantly. A fully loaded family boat behaves like a different machine than 
   {
     slug: 'mercury-motor-maintenance-seasonal-tips',
     title: "Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)",
-    seoTitle: "Mercury Motor Maintenance: Ontario Seasonal Care (2026)",
-    description: "Spring, summer, fall, and winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 winterization mistake.",
+    seoTitle: "Mercury Maintenance: Ontario Seasonal Care 2026 | HBW",
+    description: "Spring, summer, fall, winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 CAD winterization mistake to avoid.",
     image: '/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips.png',
     author: 'Harris Boat Works',
     datePublished: '2024-05-20',
@@ -880,8 +880,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
     title: 'FourStroke vs Pro XS vs Verado: Which Mercury You Need',
-    seoTitle: "FourStroke vs Pro XS vs Verado: Mercury Buyer's Guide",
-    description: 'Decide between Mercury FourStroke, Pro XS, and Verado. Real differences, common Ontario hull pairings, and live CAD quotes at mercuryrepower.ca.',
+    seoTitle: "Mercury FourStroke vs Pro XS vs Verado: Buyer Guide | HBW",
+    description: "Decide between Mercury FourStroke, Pro XS, and Verado. Real differences, common Ontario hull pairings, and live CAD quotes at mercuryrepower.ca.",
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2024-04-10',
@@ -1135,8 +1135,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'boat-repowering-guide-when-to-replace-motor',
     title: 'Boat Repowering Guide: When to Replace Your Motor (2026)',
-    seoTitle: 'Boat Repower Guide: When to Replace & Ontario Costs',
-    description: "When is it time to repower? Honest Ontario cost ranges, signs your motor is done, and a Mercury repower decision framework from Rice Lake's dealer since 1947.",
+    seoTitle: "Boat Repower Guide: When to Replace, Ontario Costs | HBW",
+    description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW, est. 1947.",
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
     datePublished: '2024-03-05',
@@ -1413,8 +1413,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   {
     slug: 'breaking-in-new-mercury-motor-guide',
     title: 'How to Break In a New Mercury Outboard (10-Hour Guide)',
-    seoTitle: 'How to Break In a New Mercury Outboard (10-Hour Guide)',
-    description: 'The 10-hour Mercury break-in, step by step. RPM targets, what to avoid, and the first-service interval that protects your warranty.',
+    seoTitle: "How to Break In a New Mercury Outboard: 10-Hour Guide | HBW",
+    description: "The Mercury 10-hour break-in, step by step: RPM targets by hour, what to avoid, and the 20-hour first service that protects your warranty. HBW guide.",
     image: '/lovable-uploads/Breaking_In_New_Mercury_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
@@ -2097,8 +2097,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'best-mercury-outboard-aluminum-fishing-boats',
     title: "Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)",
-    seoTitle: "Best Mercury Outboard for Aluminum Fishing Boats",
-    description: "The right Mercury for an aluminum fishing boat depends on hull length and use. Tiller motors 9.9 to 25 HP fit small boats (12 to 14 ft) for solo fishing. Remote-control 40 to 60 HP suits 14 to 16 ft consoles. The 90 to 115 HP class is the sweet spot for 16 to 19 ft fishing boats with two or three anglers and gear. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
+    seoTitle: "Best Mercury for Aluminum Fishing Boats (Ontario) | HBW",
+    description: "The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 40-60 HP fits 16-18 ft. HBW honest guide, Ontario.",
     image: '/lovable-uploads/aluminum-fishing-hero-real.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-12',
@@ -2321,8 +2321,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 3: January 19, 2026
   {
     slug: 'best-mercury-outboard-pontoon-boats',
+    seoTitle: "Best Mercury for a Pontoon: 90-150 HP CT (2026) | HBW",
     title: "Best Mercury for a Pontoon: 90 to 150 HP CT (2026)",
-    description: "For 18-22 ft pontoons in Ontario, it's a Mercury 90-150 HP FourStroke with Command Thrust. The gearcase matters more than the HP number. Here's why.",
+    description: "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-150 HP FourStroke with Command Thrust. The gearcase matters more than HP. HBW explains why.",
     image: '/lovable-uploads/hero-best-mercury-pontoon.png',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
@@ -2549,8 +2550,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: 'mercury-command-thrust-guide-pontoon-boats',
+    seoTitle: "Mercury Command Thrust on a Pontoon: Worth It? | HBW",
     title: "Mercury Command Thrust on a Pontoon: Worth the Money?",
-    description: "Command Thrust adds about $400-700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't.",
+    description: "Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't.",
     image: '/lovable-uploads/Mercury_Pontoon_Buyers_Guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
@@ -2923,8 +2925,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 4: January 26, 2026
   {
     slug: 'mercury-75-vs-90-vs-115-comparison',
+    seoTitle: "Mercury 75 vs 90 vs 115 HP: Which to Pick (2026) | HBW",
     title: 'Mercury 75 vs 90 vs 115 HP: Which One We\'d Pick (2026)',
-    description: 'We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP FourStroke wins. Here\'s where 75 and 115 actually make sense.',
+    description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP FourStroke wins. Here's where 75 and 115 actually make sense.",
     image: '/lovable-uploads/mercury-75-90-115-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-26',
@@ -4256,9 +4259,10 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 11: March 16, 2026
   {
     slug: 'mercury-outboard-fuel-efficiency-guide',
+    seoTitle: "Mercury Outboard Fuel Economy: Get Better MPG | HBW",
     relatedSlugs: ['mercury-propeller-selection-guide', 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado', 'breaking-in-new-mercury-motor-guide'],
     title: 'Mercury Outboard Fuel Economy: How to Get Better MPG',
-    description: 'Prop selection moves your Mercury\'s MPG more than HP class does. The 5 levers that actually change fuel burn, ranked by impact.',
+    description: "Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn on Ontario boats, ranked by impact. HBW guide.",
     image: '/lovable-uploads/Break_In_Infographic.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-16',
@@ -4495,8 +4499,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'center-console-mercury-motor-guide',
     title: 'Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)',
-    seoTitle: 'Mercury Power for Center Console Boats (2026)',
-    description: 'Find the ideal Mercury motors for your center console. From single 115HP to quad 450HP setups, we cover every option for offshore and inshore boats.',
+    seoTitle: "Mercury Power for Center Console Boats 2026 | HBW",
+    description: "The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length, from Harris Boat Works.",
     image: '/lovable-uploads/Best_Mercury_Outboards_Center_Console_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-23',
@@ -5936,8 +5940,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'electric-trolling-motor-kicker-guide',
     title: 'Trolling Motor vs Kicker Motor. Which Auxiliary Setup Wins on Rice Lake?',
-    seoTitle: 'Trolling Motor vs Kicker: Which Wins on Rice Lake?',
-    description: 'An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do.',
+    seoTitle: "Trolling Motor vs Kicker on Rice Lake: Which Wins | HBW",
+    description: "An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do.",
     image: '/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
@@ -8342,8 +8346,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-150-300hp-pro-xs-performance-guide',
     title: 'Mercury 150-300 HP Pro XS Compared for Ontario Boats',
-    seoTitle: 'Mercury 150-300 HP Pro XS Compared | Ontario Guide',
-    description: "HBW compares Mercury 150, 175, 200, 225, 250, and 300 HP Pro XS outboards for Ontario boats, with honest fit guidance.",
+    seoTitle: "Mercury Pro XS 150-300 HP Compared (Ontario) | HBW",
+    description: "HBW compares Mercury Pro XS 150, 175, 200, 225, 250, and 300 HP outboards for Ontario boats: hull pairings, real-world top speeds, and honest fit guidance.",
     image: '/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
@@ -9027,8 +9031,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: '2026-boating-market-ontario-boat-buyers',
+    seoTitle: "Is 2026 a Good Year to Buy a Boat in Ontario? | HBW",
     title: 'Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)',
-    description: 'Inventory is back, dealer discounts are easing, financing rates are dropping. What that means for Ontario buyers in 2026, from a dealer who\'d rather you wait if you should.',
+    description: "Inventory is back, dealer discounts are easing, financing rates are dropping. Honest 2026 advice for Ontario boat buyers from Harris Boat Works, est. 1947.",
     image: '/lovable-uploads/What_the_boating_market_means_blog_hero_image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
@@ -9250,8 +9255,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: 'why-mercury-dominates-outboard-market',
+    seoTitle: "Why Mercury Leads the Outboard Market in 2026 | HBW",
     title: "Why Mercury Dominates the Outboard Market in 2026",
-    description: "Mercury Marine is one of the strongest outboard brands in North America, with one of the strongest dealer networks in Canada and a wide model range from 2.5 HP portables to the flagship V12 Verado class. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for the 60 years we've been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
+    description: "Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario.",
     image: '/lovable-uploads/Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
@@ -9453,8 +9459,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: 'mercury-avator-electric-boating-ontario',
+    seoTitle: "Mercury Avator Electric Outboards in Ontario | HBW",
     title: 'Mercury Avator & the Future of Electric Boating in Ontario',
-    description: "Mercury's Avator electric outboards are quietly changing what small-boat and cottage boating can look like. Here's how Avator fits into the future of boating for Harris Boat Works customers.",
+    description: "Mercury Avator electric outboards (7.5e, 20e, 35e) for small boats and cottages in Ontario. How they work, range, charging, and who they actually fit.",
     image: '/lovable-uploads/Mercury_Avator_and_The_Future_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
@@ -9608,6 +9615,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: '2026-rice-lake-fishing-season-outlook',
+    seoTitle: "Rice Lake Fishing Guide 2026: Species, FMZ 17 | HBW",
     title: "Rice Lake Ontario Fishing Guide 2026",
     description: "An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the right boat setup, from Harris Boat Works.",
     image: '/lovable-uploads/2026_Rice_Lake_Fishing_Season_Blog_Post_Hero_Image.png',
@@ -10208,8 +10216,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'evinrude-to-mercury-repower-ontario-guide',
+    seoTitle: "Evinrude to Mercury Repower in Ontario 2026 | HBW",
     title: 'Evinrude to Mercury Repower: The Ontario Guide (2026)',
-    description: 'An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion involves, when to switch, and when to wait.',
+    description: "An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion involves, when to switch, and when to wait.",
     image: '/lovable-uploads/hero-replace-evinrude.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-16',
@@ -13742,8 +13751,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-boost-upgrade-150hp-pontoon-analysis',
     title: 'Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)',
-    seoTitle: 'Mercury Boost Upgrade: Worth It for a 150 HP Pontoon?',
-    description: 'For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. The performance gains are minimal in real-world pontoon use (where load and hull design cap top speed regardless of motor tweaks). The interesting part of Boost is what it signals about how Mercury will deliver future upgrades, not whether this specific upgrade pays off today. For your specific motor and use, see live pricing or contact us before committing.',
+    seoTitle: "Mercury Boost on a 150 HP Pontoon: Worth It? | HBW",
+    description: "For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. Real-world gains are small once load and hull drag enter the equation.",
     image: '/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_2.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-30',
@@ -22848,8 +22857,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-smartcraft-connect-guide-ontario',
     title: "Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)",
-    seoTitle: 'Mercury SmartCraft Connect: What It Does (2026 Guide)',
-    description: "Mercury SmartCraft Connect compatibility (2004+ and 40 HP+), what the Mercury app shows, install options at HBW, and whether it's worth adding to your motor.",
+    seoTitle: "Mercury SmartCraft Connect: What It Does 2026 | HBW",
+    description: "Mercury SmartCraft Connect compatibility (2004+ motors, 40 HP+), what the Mercury app shows, install options at HBW, and whether it's worth adding.",
     image: '/lovable-uploads/hero-smartcraft-connect-app.png',
     author: 'Jay Harris',
     datePublished: '2026-05-09',
@@ -23509,7 +23518,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: "mercury-9-9-efi-review-ontario",
     title: "Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About",
-    seoTitle: "Mercury 9.9 EFI Review: Small Outboard, Big Demand",
+    seoTitle: "Mercury 9.9 EFI Review: Small Motor, Big Demand | HBW",
     description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying.",
     image: "/lovable-uploads/mercury-9-9-efi-tiller.jpg",
     author: "Harris Boat Works",
@@ -26497,8 +26506,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-outboard-beeping-codes-guide',
     title: 'Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check',
-    seoTitle: 'Mercury Outboard Beeping Codes: What Each Pattern Means',
-    description: 'Mercury outboard beeping? Learn what common beep patterns can mean, why continuous alarms matter, and what information to send when booking Mercury service.',
+    seoTitle: "Mercury Outboard Beeping Codes: What They Mean | HBW",
+    description: "Mercury outboard beeping? What common beep patterns mean (overheat, oil, fuel), why continuous alarms matter, and what to send when booking HBW service.",
     image: '/lovable-uploads/hero-mercury-beeping-codes.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',

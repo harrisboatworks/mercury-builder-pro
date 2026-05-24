@@ -109,8 +109,8 @@ export function HomepageSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Repower Ontario, Trade-In, Financing & Online Quotes | Harris Boat Works</title>
-      <meta name="description" content="Ontario's Mercury Repower Centre on Rice Lake. Family-owned since 1947, Mercury Platinum Dealer since 1965. Trade-in valuations, financing, and live CAD quotes, pickup at Gores Landing." />
+      <title>Mercury Repower Ontario: Live CAD Quotes | Harris Boat Works</title>
+      <meta name="description" content="Build a Mercury outboard repower quote in CAD online: motor, install, financing, trade-in. Mercury dealer since 1965. Pickup in Gores Landing." />
       <meta name="keywords" content="Mercury repower Ontario, Mercury dealer Toronto, Harris Boat Works, Rice Lake Mercury dealer, Mercury trade-in, Mercury financing" />
       <link rel="canonical" href={SITE_URL} />
 
