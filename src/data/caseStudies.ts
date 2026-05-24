@@ -140,6 +140,10 @@ const BASE_CASE_STUDIES: CaseStudy[] = [
   }
 ];
 
+import { LONG_FORM_CASE_STUDIES } from './caseStudiesLongForm';
+
+export const caseStudies: CaseStudy[] = [...BASE_CASE_STUDIES, ...LONG_FORM_CASE_STUDIES];
+
 export function getCaseStudyBySlug(slug: string) {
   return caseStudies.find((caseStudy) => caseStudy.slug === slug);
 }
