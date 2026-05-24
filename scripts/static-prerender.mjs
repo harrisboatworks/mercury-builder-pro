@@ -877,12 +877,8 @@ function homepageSchema() {
           { "@type": "Brand", "name": "Legend Boats" }
         ],
         "award": "Mercury Marine Platinum Dealer",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.6",
-          "reviewCount": "180",
-          "bestRating": "5"
-        }
+        "aggregateRating": LIVE_AGGREGATE_RATING,
+        "openingHoursSpecification": LIVE_OPENING_HOURS
       },
       {
         "@type": "Service",
