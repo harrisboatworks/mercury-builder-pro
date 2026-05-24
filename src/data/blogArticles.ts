@@ -31838,7 +31838,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Platinum Dealer, selling M
     seoTitle: 'Mercury Avator 7.5e Review: Electric Outboard | Mercuryrepower.ca',
     title: 'Mercury Avator 7.5e Review: Electric Outboard',
     description: 'Honest Mercury Avator 7.5e electric outboard review. Battery life, range, mounting, and best uses on Rice Lake, from $4,500 CAD installed.',
-    image: '/lovable-uploads/blog-mercury-avator-7-5e-review-hero.png',
+    image: '/lovable-uploads/avator-7-5e-hero-real.jpg',
     author: 'Jay Harris',
     datePublished: '2026-05-24',
     dateModified: '2026-05-24',
