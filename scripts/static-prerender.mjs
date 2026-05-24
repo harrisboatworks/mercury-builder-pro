@@ -2763,6 +2763,7 @@ function locationDetailSchema(loc) {
           name: loc.region,
           description: "Sales catchment only, customers from this area travel to Gores Landing for pickup. No mobile service, no delivery.",
         },
+        sameAs: BUSINESS_SAME_AS,
       },
       {
         "@type": "Place",
