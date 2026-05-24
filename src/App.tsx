@@ -27,6 +27,9 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SoundProvider } from "@/contexts/SoundContext";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { lazyWithRetry } from "@/lib/lazyWithRetry";
+import { ConsentBanner } from "@/components/analytics/ConsentBanner";
+import { AnalyticsRouter } from "@/components/analytics/AnalyticsRouter";
+import { GlobalCtaTracker } from "@/components/analytics/GlobalCtaTracker";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
@@ -652,12 +655,16 @@ const App = () => {
                   
                   <GlobalSEO />
                   <NotificationToast />
-                  
+
+                  <AnalyticsRouter />
+                  <GlobalCtaTracker />
                   <AnimatedRoutes />
                   <GlobalStickyQuoteBar />
-                  
+
                   <ComparisonDesktopButton />
                   <Canonical />
+                  <ConsentBanner />
+
 
                   <footer className="border-t border-repower-cream/10 bg-repower-navy-900">
                     <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-center gap-4 px-6 py-6 md:flex-row md:gap-8 md:px-14">

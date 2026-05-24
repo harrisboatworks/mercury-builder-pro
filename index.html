@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- dataLayer init: MUST be the very first script so all later events queue correctly. -->
+    <script>window.dataLayer = window.dataLayer || [];</script>
+    <!-- GTM-PLACEHOLDER: GTM container snippet goes here once the GTM-XXXXXXX container ID is provided. Do not add GA4 gtag here. -->
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JNMHD89YJ"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-0JNMHD89YJ');
     </script>
+
     <meta charset="UTF-8" />
     <meta name="color-scheme" content="light only" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -17,6 +21,10 @@
     <title>Mercury Repower Ontario: Live CAD Quotes | Harris Boat Works</title>
     <meta name="description" content="Build a Mercury outboard repower quote in CAD online: motor, install, financing, trade-in. Mercury dealer since 1965. Pickup in Gores Landing.">
     <meta name="author" content="Harris Boat Works" />
+    <!-- Analytics page tagging (Helmet overrides per-route at runtime; prerender stamps per-route at build) -->
+    <meta name="page-id" content="OTHER" />
+    <meta name="page-category" content="other" />
+
     
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#c8102e" />
