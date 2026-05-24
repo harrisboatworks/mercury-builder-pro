@@ -143,6 +143,9 @@ const MercuryDealerGTA = lazy(() => import("./pages/landing/MercuryDealerGTA"));
 // Pilot SEO landing pages (Batch 3 — Product hub + lineup)
 const MercuryProXS = lazy(() => import("./pages/landing/MercuryProXS"));
 const MercuryProXS250 = lazy(() => import("./pages/landing/MercuryProXS250"));
+const MercuryPortable9to20HP = lazy(() => import("./pages/landing/MercuryPortable9to20HP"));
+const MercuryMidRange40to60HP = lazy(() => import("./pages/landing/MercuryMidRange40to60HP"));
+const MercuryMidPower90to115HP = lazy(() => import("./pages/landing/MercuryMidPower90to115HP"));
 const MercuryOutboardsOntario = lazy(() => import("./pages/landing/MercuryOutboardsOntario"));
 // Pilot SEO landing pages (Batch 4 — Pontoon)
 const MercuryPontoonOutboards = lazy(() => import("./pages/landing/MercuryPontoonOutboards"));
@@ -607,6 +610,9 @@ function AnimatedRoutes() {
         {/* Pilot SEO Landing Pages — Batch 3 (Product hub + lineup) */}
         <Route path="/mercury-pro-xs" element={<MercuryProXS />} />
         <Route path="/mercury/pro-xs-250" element={<MercuryProXS250 />} />
+        <Route path="/mercury/portable-9-20hp" element={<MercuryPortable9to20HP />} />
+        <Route path="/mercury/mid-range-40-60hp" element={<MercuryMidRange40to60HP />} />
+        <Route path="/mercury/mid-power-90-115hp" element={<MercuryMidPower90to115HP />} />
         <Route path="/mercury-outboards-ontario" element={<MercuryOutboardsOntario />} />
         {/* Pilot SEO Landing Pages — Batch 4 (Pontoon) */}
         <Route path="/mercury-pontoon-outboards" element={<MercuryPontoonOutboards />} />
