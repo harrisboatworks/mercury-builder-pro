@@ -3685,44 +3685,40 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
 - [Trailer Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide)`,
     faqs: [
       {
-        question: 'What HP do I really need for Rice Lake?',
-        answer: 'For a typical 16ft aluminum, 40-60HP handles most situations well. If you fish the open areas regularly or load up with gear and friends, consider 75HP or higher.'
+        question: 'What is the best Mercury outboard for Rice Lake fishing?',
+        answer: 'For the lake\'s walleye-and-troll style of fishing, a Mercury 60-90 HP FourStroke main paired with a 9.9 ProKicker is the proven setup. The FourStroke handles travel and afternoon wind; the ProKicker runs the slow trolling speed walleye demand. Bass, muskie, and tournament setups call for more horsepower.'
       },
       {
-        question: 'Tiller or remote for walleye fishing?',
-        answer: 'Many serious walleye anglers prefer tiller for the direct control and open transom. It\'s personal preference, but tiller is very popular on Rice Lake.'
+        question: 'Do I need a kicker motor for Rice Lake walleye?',
+        answer: 'For proper walleye trolling, yes. Main motors at idle run too fast and too loud for an effective walleye presentation here. The Mercury 9.9 ProKicker is the standard on Rice Lake fishing boats. It runs the right speed, quietly, for hours.'
       },
       {
-        question: 'Do I need a kicker motor?',
-        answer: 'For dedicated walleye trolling, a 9.9HP or 15HP kicker is worth considering. It saves fuel and gives precise speed control. Not essential, but nice to have.'
+        question: 'What is the walleye slot limit on Rice Lake?',
+        answer: 'Keep walleye between 35 cm and 50 cm only. Fish outside that range, too small or too big, must be released immediately. The sport licence limit is 4 fish per day within the slot.'
       },
       {
-        question: 'What prop works best on Rice Lake?',
-        answer: 'A 4-blade aluminum or stainless prop usually works well. We can recommend specific props based on your boat and motor combination. Bring it by for a test fit.'
+        question: 'When does walleye season open on Rice Lake in 2026?',
+        answer: 'May 9, 2026 (the second Saturday in May), running to November 15. Muskie opens June 6, bass opens June 20, and channel catfish opens April 25.'
       },
       {
-        question: 'Tiller or remote for walleye fishing on Rice Lake?',
-        answer: 'Tiller is the preferred setup for walleye fishing on Rice Lake. The Mercury Advanced Tiller system gives you throttle, shift, and trim control directly at the handle, essential for constant trolling speed adjustments. One person can fish and run the boat from the stern without needing a console. Tiller is available on Mercury FourStroke models from 2.5HP through 115HP. Remote makes more sense if you\'re running with family or non-fishing passengers who prefer to sit up front.'
+        question: 'When does bass season open on Rice Lake in 2026?',
+        answer: 'June 20, 2026. Catch-and-release is permitted before the opener; keeping fish is not. Bass season runs to December 15.'
       },
       {
-        question: 'Do I need a kicker motor for Rice Lake?',
-        answer: 'For dedicated walleye trolling on Rice Lake, a kicker motor is worth having. The standard setup is a Mercury 60-90HP primary motor paired with a Mercury 9.9HP or 15HP ProKicker for slow, controlled trolling. The kicker lets you troll at the precise 1.5-2.5 mph range that walleye prefer without loading up the main engine. The ProKicker Command Thrust handles Rice Lake\'s weeds well. For bass fishing or general boating, a kicker is optional, most anglers manage fine with just the main motor.'
+        question: 'What can I fish year-round on Rice Lake?',
+        answer: 'Crappie, yellow perch, sunfish, and northern pike are open all year with no closed season.'
       },
       {
-        question: 'What\'s the best motor for walleye trolling on Rice Lake?',
-        answer: 'The best walleye trolling setup for Rice Lake is a Mercury 75HP or 90HP FourStroke as the primary motor paired with a Mercury 9.9HP ProKicker (Command Thrust) as a dedicated troller. The FourStroke\'s smooth low-RPM operation provides clean throttle response, while the ProKicker gives precise 1.5-2.5 mph trolling control without straining the main engine. On a smaller 14-16ft boat, a Mercury 40HP Command Thrust FourStroke in tiller configuration is also used successfully for walleye trolling in Rice Lake\'s shallower weedy areas.'
+        question: 'What is the sunken railway on Rice Lake?',
+        answer: 'The 19th-century Cobourg and Peterborough Railway roadbed sits roughly 4 feet below the surface, crossing the lake through Tick Island. It is a real navigation hazard, so mark it on your chartplotter. It is also a premier smallmouth bass area.'
       },
       {
-        question: 'Do I need a kicker motor on Rice Lake specifically?',
-        answer: 'A kicker is most useful for walleye trollers who want precise slow-speed control without burning main engine fuel. It\'s less critical for bass or musky fishing. If walleye are your main target and you troll frequently, a kicker is a genuine upgrade, many dedicated Rice Lake walleye anglers consider it essential once they\'ve run with one. The Mercury 9.9HP ProKicker Command Thrust pairs well with most 60-90HP main motors without adding excessive weight or complexity.'
+        question: 'What horsepower do I need for a 16 ft aluminum boat on Rice Lake?',
+        answer: 'Typically 60-90 HP. Check the capacity plate first, because that is the ceiling. Your actual use sets the right point within the range. A solo walleye angler needs a different answer than a full family running into afternoon wind.'
       },
       {
-        question: 'How much does a complete Rice Lake fishing rig cost in 2026?',
-        answer: 'A typical Rice Lake fishing rig, 16ft aluminum boat, Mercury 60HP FourStroke Command Thrust tiller, and trailer, runs approximately $35,000-$45,000 CAD new. An 18ft package with a Mercury 90HP is typically $45,000-$58,000 new. Used rigs with a 3-5 year old Mercury FourStroke are available in the $18,000-$28,000 range. Adding a Mercury 9.9HP ProKicker runs approximately $4,500-$5,500 installed. Build a real quote at mercuryrepower.ca/quote/motor-selection or call 905-342-2153 for current inventory and pricing.'
-      },
-      {
-        question: 'What\'s the best boat size for fishing Rice Lake?',
-        answer: 'The most versatile boat size for Rice Lake fishing is 16-18 feet. A 16ft aluminum deep-V handles the open south-end water without being too large for shallow bay fishing. An 18ft boat gives more stability, deck space for gear, and better performance in rough conditions. Smaller 14ft boats work well for walleye and panfish in calmer inner bays with a 40HP tiller setup. For musky fishing and rough-water comfort, 19-20ft is preferred. When choosing between 16 and 18 feet, the 18ft is usually the right call, the extra space and stability are used more than expected.'
+        question: 'Is there a free fishing weekend in 2026?',
+        answer: 'Yes. Father\'s Day Weekend (June 20-21) and Family Fishing Week (June 27 to July 5). No licence required during either.'
       }
     ]
   },
