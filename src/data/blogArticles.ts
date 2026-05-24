@@ -10132,223 +10132,245 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'evinrude-to-mercury-repower-ontario-guide',
-    title: 'Evinrude to Mercury Repower in Ontario (2026 Guide)',
-    description: 'Switching from Evinrude to Mercury during a repower runs an extra $1,500 to $3,000 CAD in rigging costs because the entire control system has to swap. That sounds like a lot until you remember Evinrude stopped making outboards in 2020, and parts and service support is shrinking every year. The math usually favors the switch. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).',
+    title: 'Evinrude to Mercury Repower: The Ontario Guide (2026)',
+    description: 'An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion involves, when to switch, and when to wait.',
     image: '/lovable-uploads/hero-replace-evinrude.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-16',
-    dateModified: '2026-05-04',
+    dateModified: '2026-05-23',
     category: 'Repower Guides',
     readTime: '14 min read',
-    keywords: ['Evinrude to Mercury repower', 'replace Evinrude Ontario', 'Evinrude discontinued parts', 'E-TEC to Mercury', 'Evinrude G2 replacement'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide
+    keywords: ['Evinrude to Mercury repower', 'Evinrude to Mercury conversion', 'replace Evinrude outboard Ontario', 'Evinrude discontinued repower', 'Evinrude E-TEC repower'],
+    content: `> **Quick answer:** Evinrude stopped building outboards in 2020, and six years on, parts and service support keep thinning. For most Evinrude owners with a sound hull they plan to keep, switching to Mercury is the right move. The conversion costs a one-time rigging premium because the whole control system swaps, but you pay it once. Build a quote at mercuryrepower.ca.
+
+Evinrude stopped making outboards in May 2020. It has been six years. Parts are getting harder to find, the technicians who know these motors are aging out, and resale value is sliding. The Evinrude owners who switched in 2022 and 2023 got ahead of the problem. The owners switching now are still making the right call. They are just doing it a little later.
+
+This guide gives you the honest math: why the switch matters now, what the conversion actually involves, and, just as important, when you should not switch yet. Harris Boat Works does Evinrude-to-Mercury conversions every month, and some of our best conversations are the ones where we talk someone out of a repower they do not need this year.
+
+If you are already decided, build a quote at **mercuryrepower.ca**, configured for your hull in a few minutes.
 
 ---
 
-## Quick Answer
+## Why This Is Happening Now
 
-With Evinrude out of production since 2020, parts and service support are contracting every year. A Mercury FourStroke repower restores warranty coverage, parts availability, and resale footing. Most Evinrude-to-Mercury jobs need new gauges, harness, and controls, plan for $1,500, $3,000 CAD extra in rigging on top of the motor cost. Get a current installed quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+When BRP shut down Evinrude production in May 2020, the practical result for Ontario boaters was straightforward: no new motors, no new parts being manufactured, no new technicians being trained, and a support network that has been quietly contracting ever since.
 
+Six years in, here is what Evinrude owners actually run into.
+
+**Parts are getting harder to find.** Common service items, filters, plugs, anodes, are still around. But specialty parts, the proprietary electronics and fuel-injection components for E-TEC G1 and G2, are increasingly on long backorder or simply gone. The window for "we can fix that" is narrowing every season.
+
+**The technicians who know these motors are disappearing.** Evinrude expertise lives in the hands of people who have been turning wrenches on them for 20 years and more. Those technicians are retiring. New techs entering the marine trade learn Mercury, Yamaha, and Suzuki. Nobody is training on a motor that is no longer made, because there is no certification program for it.
+
+**Resale value is dropping faster than comparable motors.** A 2018 Evinrude on a 2018 hull is a harder sell in Ontario today than the same hull with a Mercury repower. Buyers know the parts story. Dealers know the parts story. The asking price reflects it.
+
+**Travelling boaters are the most exposed.** If you run the Trent-Severn, take trips to Muskoka, Georgian Bay, or Lake Ontario, you are leaning on a service network that gets thinner every year. Break down 200 km from home on an Evinrude in 2026 and your options are fewer than they were in 2021.
 
 ---
 
-## Full Article
+## Should You Switch? The Honest Decision
 
-Switching from Evinrude to Mercury during a repower adds roughly $1,500, $3,000 CAD in rigging costs because the entire control system has to swap. That sounds like a lot until you remember Evinrude stopped making outboards in May 2020. Parts availability is shrinking every year. The math usually favours the switch, but not always.
+Not everyone should switch this year. Here is the real framework.
 
-We're doing more Evinrude-to-Mercury repowers every year at HBW. The customers switching aren't chasing a brand. They're chasing parts availability, service speed, and resale support. Those are the practical things that determine real-world reliability.
+**Switch now if:**
 
-If your Evinrude is still running well and the boat is a short-term keeper, sometimes the right answer is "run it until it gives up." We'll tell you that too.
+- Your hull is sound and you plan to keep it eight or more years
+- Your Evinrude is showing symptoms: hard starting, fuel-system codes, warning lights
+- You travel with the boat, the Trent-Severn, multi-day trips, road trips to other lakes
+- You plan to sell within three years, a Mercury repower before listing usually pays back in a faster sale and a stronger price
+- You are a heavy user, parts shortages hit high-hour boats first
 
-### Why Evinrude Owners Are Switching
+**Run the Evinrude until it quits if:**
 
-BRP shut down Evinrude outboard production in May 2020. As of 2026, that's six years with no new motors and a parts supply contracting every year. The practical realities:
+- The hull is a short-term keeper you will replace within a couple of seasons
+- Your E-TEC G2 has low hours and runs perfectly
+- You are a light seasonal user, cottage-only, with little travel
+- Budget timing makes waiting one more season the sensible move
 
-**Parts availability is dropping.** Common service parts are still accessible. Specialty parts, specific electronics, certain fuel system components, are getting harder to source. Lead times are growing.
-
-**Service expertise is shrinking.** Marine technicians who specialize in Evinrude are aging out or retraining. New techs coming into the industry aren't learning Evinrude.
-
-**Resale is softer.** A 2018 Evinrude on a 2018 hull takes longer to sell in Ontario than the same hull with a Mercury. Buyers know the parts story.
-
-**Service network is thinning.** Some marinas have stopped accepting Evinrude warranty work because BRP's parts pipeline is unreliable.
-
-None of this means a running Evinrude is suddenly worthless. It means the long-term ownership math is shifting away from Evinrude every year.
-
-### What an Evinrude-to-Mercury Conversion Actually Costs
-
-A Mercury-to-Mercury repower has rigging costs in the $500, $1,500 range because most existing controls, harness, and gauges work with the new motor.
-
-An Evinrude-to-Mercury conversion adds $1,500, $3,000 on top of standard rigging because the entire control system has to swap:
-
-- **Throttle and shift control**, Swaps from Evinrude to Mercury (mechanical or DTS depending on motor)
-- **Wiring harness**, Replaced (Evinrude and Mercury harnesses are not compatible)
-- **Engine gauges or display**, Swaps to Mercury SmartCraft compatibility
-- **Steering**, Sometimes replaced, depending on age and type
-- **Battery and starting wiring**, Updated to Mercury spec
-
-Most of this is one-time cost. Once the boat is rigged for Mercury, future Mercury-to-Mercury repowers stay at the lower rigging tier. The conversion premium pays off if you plan to keep the hull for one more repower cycle.
-
-### What Changes the Answer
-
-Five things move whether the switch makes sense for your specific situation:
-
-1. **Hull condition and remaining life.** A solid 5, 15-year-old hull justifies the conversion. A hull you're replacing in two seasons doesn't.
-2. **Motor age and condition.** A 25-year-old Evinrude near end of life is a clear switch. A newer ETEC G2 with low hours is harder, the motor may still have real years left.
-3. **How heavily you use the boat.** A 200-hour-a-season user feels parts shortages much faster than a 30-hour cottage boater.
-4. **Where you launch and travel.** Boaters who travel the Trent-Severn, Lake Ontario, or road trips to Muskoka want a service network that's still showing up. Mercury wins this.
-5. **Resale plan.** If you're selling the boat in the next few years, switching to Mercury before listing typically pays back in faster sale and stronger price.
+We will tell you which column you are in. The relationship matters more to us than one motor sale, so if your Evinrude has good years left and your plans are short-term, we will say so.
 
 ::pull-quote
 quote: Loved my old Johnson 90 but Evinrude's gone and the parts kept getting harder. Jay walked me through the Mercury 90 FourStroke swap and three weeks later it was on the transom. **First start of the season I forgot what a quiet motor sounds like.**
 attribution: Dave M.
-source: Bewdley
+source: HBW Bewdley repower customer
 ::
 
 ---
 
+## What the Conversion Actually Involves
 
-### What HBW Checks Before Recommending the Switch
+A Mercury-to-Mercury repower keeps your existing controls, harness, and gauges, so the rigging is straightforward. An Evinrude-to-Mercury conversion is different: the entire control system has to swap, because Evinrude and Mercury systems do not speak the same language. That means a one-time rigging premium on top of a standard repower. It is real money, but you pay it once. Every repower after this one is Mercury-to-Mercury and the rigging cost drops back down.
 
-When Evinrude owners come in, we want to know:
+Here is what actually changes:
 
-- Year and HP of the existing Evinrude (ETEC G1, ETEC G2, and older direct-injection 2-strokes have different remaining-life profiles)
-- Hours on the motor
-- Current symptoms, cold-start issues, fuel system problems, or warning lights
-- Hull make, model, year, and condition
-- How long you plan to keep the boat
-- Existing rigging condition
-- Budget and financing tolerance
+| What changes | Why |
+|---|---|
+| Throttle and shift control box | Evinrude and Mercury control systems are not compatible |
+| Wiring harness | Different connectors and pin assignments, not interchangeable |
+| Engine gauges or SmartCraft display | Gauges need to speak Mercury's protocol |
+| Propeller | Rarely carries over: different hub design, different pitch matching |
+| Battery and starting wiring | Updated to Mercury spec |
+| Sometimes steering | If you are moving up in horsepower and still on cable, this is the moment to consider hydraulic |
 
-We won't push the switch on customers whose Evinrude has years of life left and a clear plan to use the boat short-term. We recommend the switch when the math actually favours it.
+The propeller point matters more than people expect. An Evinrude prop on a Mercury motor is a mismatch that quietly costs you speed and fuel economy. We test and confirm the right prop on the sea-trial of every conversion, so you leave with the correct prop, not the one that happened to be on the boat.
 
+For the actual cost in current dollars, the [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) has the full breakdown by horsepower class, and the configurator at mercuryrepower.ca builds a real number for your exact motor. If you plan to keep the hull through one more motor cycle, typically eight to fifteen years, the one-time conversion premium almost always works out in favour of switching now.
+
+---
+
+## What to Do With the Old Evinrude
+
+Once it comes off, the old motor still has options:
+
+**Trade it in at HBW.** We apply fair-market trade-in value against the new motor. The trade-in tool at mercuryrepower.ca gives an instant estimate, no email gate, no phone call required.
+
+**Sell it privately.** A newer, running E-TEC G2 sometimes carries more value to a small-boat owner looking for a cheap motor than it does as a trade-in. We will tell you honestly when private sale is the better play for your specific motor.
+
+**Use it as a parts donor.** Older Evinrudes have value to independent shops still servicing them. Marginal cash, but better than scrap.
+
+---
+
+## What We See at HBW
+
+Evinrude owners almost always arrive at the conversation later than the math says they should. That is human, the motor still starts, so the problem feels theoretical. What we see on the shop floor is the other side of it: the parts that used to take three days now take three weeks, and the proprietary electronic component that has no replacement at all.
+
+So the framing we give every Evinrude owner is this. The motor itself may be fine. The E-TEC was a well-engineered engine. The issue is not the engine, it is the ecosystem around it, and that ecosystem only goes one direction from here. If your hull is worth keeping and you plan to keep it, converting on your schedule, in the off-season, with the appointment you want, beats converting on the motor's schedule, in July, when it finally quits.
+
+---
+
+## Common Mistakes We See on Evinrude Conversions
+
+**Waiting until it dies in July.** A motor failure in peak season means the longest waits of the year for parts and shop time. Owners who plan ahead in February or March get the easy appointment slots and first pick of motor inventory. The ones who call in July learn the hard truth about August availability.
+
+**Trying to DIY the brand conversion.** A brand conversion is not a driveway job. A wrong harness route, an incorrect throttle calibration, or a missed ground can damage a new motor before it ever touches water. We do every conversion in-house with Mercury-certified technicians.
+
+**Skipping the steering upgrade when the dash is already open.** If you are stepping up in horsepower and still on cable steering, the conversion is the cheapest time to move to hydraulic, because the dash is already apart. Retrofitting it later means paying the labour twice.
+
+**Keeping the original horsepower on a boat that was always underpowered.** Some Evinrudes were installed undersized, and the owner just adapted over the years. The conversion is the right moment to step up to the horsepower the hull is actually rated for and that your real use calls for. Check the capacity plate, then check how you actually use the boat.
+
+**Chasing a US online motor price.** We quoted a customer last season who found a motor cheap at a US online retailer and called us for "just the install." Between import duty, customs paperwork, warranty complications, and the full rigging conversion, the savings vanished and then some. Canadian dealer pricing is real pricing for what you actually need on the water.
+
+---
+
+## The Installation
+
+An Evinrude-to-Mercury conversion takes longer than a Mercury-to-Mercury repower because of the full control-system replacement. Plan on a few days of shop time, and a few weeks from the day the motor is ordered to the day you pick it up. Off-season, October through March, gets the fastest availability. Spring and summer slots fill up, so if you are planning for this season, book early.
+
+Every HBW conversion includes:
+
+- A hull walk-around and transom inspection before anything is ordered
+- The full control-system swap: harness, controls, gauges
+- Prop selection and a sea-trial on Rice Lake before delivery
+- The Pleasure Craft Licence update, which Transport Canada requires when the motor changes, handled for every HBW customer at no extra charge
+- A fresh 3-year Mercury limited warranty on the new motor
 
 ![Old Evinrude removed beside new Mercury FourStroke ready for install](/lovable-uploads/inline/inline-evinrude-to-mercury-swap.png)
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-### Common Evinrude-to-Mercury Switch Mistakes
-
-**Waiting too long.** The customers who come in for "just a quick fuel system check" two years running often end up needing a full repower anyway. Once the Evinrude dies in July, you're stuck without a motor during the rush.
-
-**DIY rigging the conversion.** Brand conversions are not a DIY project. Wrong wiring or incorrect throttle calibration can damage a new motor. We do brand conversions in-house with Mercury-certified technicians.
-
-**Cheaping out on the prop.** A Mercury motor with an old Evinrude prop runs poorly and loses fuel economy. We test props on the water during every conversion's sea trial.
-
-**Skipping the hydraulic steering upgrade.** Older Evinrude installs often have cable steering. While the dash is open during conversion is the cheapest moment to upgrade.
-
-**Under-sizing HP.** Sometimes the original Evinrude was undersized and customers adapted by not loading the boat fully. The Mercury conversion is the right time to step up to the HP the boat actually wants.
-
-### What to Do With the Old Evinrude
-
-Once it comes off, options are:
-
-- **Trade in.** HBW takes Evinrude trades during a Mercury repower. We give fair-market value applied to the new motor purchase.
-- **Private sale.** Sometimes a small running Evinrude has more value to a small-boat owner who needs a cheap motor than as a trade-in. We can advise.
-- **Parts donor.** Older Evinrudes have some value as parts donors.
-
-The [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) needs to be updated when the motor changes. We handle the paperwork side for HBW customers.
+The boat does not leave until it passes the sea-trial. That is how a marina that has been on Rice Lake since 1947 protects its name.
 
 ---
 
+## Frequently Asked Questions
+
+**Why did Evinrude stop making outboards?**
+BRP ended Evinrude outboard production in May 2020. No new motors have been built since. Parts and service support continue through BRP's supply chain, but manufacturing has stopped permanently.
+
+**Can I still get parts for my Evinrude?**
+Common service parts like filters, plugs, and fluids are still available. Specialty parts, particularly the proprietary electronics and fuel-injection components for E-TEC G1 and G2, are getting harder to find, and lead times keep extending. The window is open, but it is narrowing.
+
+**How much does an Evinrude-to-Mercury conversion cost?**
+The new motor plus a one-time brand-conversion rigging premium on top of a standard install, because the whole control system swaps. The total depends on horsepower class. See the [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for planning ranges, and build your exact number at mercuryrepower.ca.
+
+**Do I have to replace all the controls?**
+Yes. Evinrude and Mercury controls, harnesses, and gauges are not compatible, so the whole control system swaps. Steering sometimes carries over depending on its age and type. We assess that during the hull walk-around.
+
+**Can I keep my Evinrude prop?**
+Rarely. Different hub design and different pitch matching mean an Evinrude prop on a Mercury motor is a mismatch. We test and fit the right prop for your Mercury on the sea-trial.
+
+**How long does the conversion take?**
+A few days of shop time, and a few weeks from order to pickup. Off-season, October through March, is fastest.
+
+**Should I trade in the old Evinrude or sell it privately?**
+It depends on the motor's age and condition. A newer, running E-TEC G2 sometimes has private-sale value. Older motors are usually best as a trade-in. The trade-in estimator at mercuryrepower.ca gives an instant number.
+
+**Will a Mercury Pro XS feel like my E-TEC?**
+The Pro XS is the closest match in character: strong acceleration, a high-RPM bias, tuned for performance over cruise economy. It will not feel identical, no engine is, but most E-TEC owners find it familiar within a short adjustment period. For most boats a standard FourStroke is the better all-round choice.
+
+**Is a Mercury actually more reliable than an Evinrude?**
+The E-TEC was a well-engineered engine, and a healthy late-model G2 is mechanically comparable to a Mercury FourStroke. The real difference in 2026 is support. A Mercury with a failed part gets fixed at any Mercury dealer in Canada with stocked parts and current diagnostic tools. An Evinrude with a failed proprietary electronic part may not be fixable at all.
 
 ---
 
-## Related at HBW
+## Ready to Switch?
 
-The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
+Build a live quote at **mercuryrepower.ca**: motor, rigging, install, an all-in Canadian number before you ever talk to us.
 
-Two related guides in the same cluster:
-- [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](/blog/complete-guide-boat-repower-kawarthas)
-- [Boat Repowering Guide: When to Replace Your Motor (2026)](/blog/boat-repowering-guide-when-to-replace-motor)
+Or call **905-342-2153**. We do Evinrude-to-Mercury conversions every month, and we will give you the honest answer on whether to switch now, wait a season, or run the Evinrude until it stops.
 
----
-
-## FAQs
-
-**Why did Evinrude stop making outboards?** 
-BRP shut down outboard production in May 2020 to focus on other product lines. As of 2026, no new Evinrude outboards have been built for six years.
-
-**Can I still get parts for my Evinrude?** 
-Yes, for most common parts, but availability is contracting every year. Common service parts (filters, plugs, anodes, fluids) are still accessible. Specialty electronics and fuel system components are getting harder to source.
-
-**How much does it cost to switch from Evinrude to Mercury?** 
-The Mercury motor cost plus an extra $1,500, $3,000 CAD in brand-conversion rigging on top of a standard install. Total all-in costs vary by HP class. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for your specific setup.
-
-**Do I have to replace all the controls and rigging?** 
-Yes. Evinrude and Mercury control systems and harnesses are not compatible. The control system has to swap. Steering can sometimes carry over depending on age and type.
-
-**Can I keep my old Evinrude prop on the new Mercury?** 
-Almost never. Evinrude and Mercury props have different hub designs and pitch match-ups. We test props during every repower sea trial.
-
-**How long does an Evinrude-to-Mercury conversion take?** 
-Typical conversions are 2, 4 days of shop time, longer than Mercury-to-Mercury because of the additional control system work.
-
-**Should I just run my Evinrude until it dies?** 
-For some customers, yes, if the hull is short-term and the Evinrude is running fine. If the hull is solid and you plan to keep it 8+ years, switching now is usually the better call. Honest answer depends on your situation. Call us.
-
-**What happens if my Evinrude dies mid-summer?** 
-Peak wait times for Mercury motors and installation slots run May through August. A motor failure in July typically means 2, 4 weeks without the boat during prime season. Customers who plan ahead in winter or early spring get the easier slots.
+**Phone:** 905-342-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 ---
 
-## Internal Links
+## Sources
 
+- BRP, announcement ending Evinrude outboard production (May 2020): brp.com
+- Mercury Marine, outboard engine range: mercurymarine.com/us/en/engines/outboard
+- Transport Canada, Pleasure Craft Licence: tc.canada.ca/en/marine-transportation/pleasure-craft-licensing
+
+*Details are current as of May 2026. Parts availability, pricing, and lead times change. Confirm the specifics for your boat with HBW.*
+
+---
+
+## About the Author
+
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+
+---
+
+**Related guides:**
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
-- [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
-- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
-
----
-
-## CTA
-
-Ready to talk through the switch? Build a Mercury quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live pricing in CAD, full configuration including brand-conversion rigging.
-
-Prefer to talk first? Call **905-342-2153**. We do these conversions every month and we'll give you the honest math on whether to switch now, switch later, or run the Evinrude until it gives up.
-
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
+- [Boat Hull Replacement vs Repower: The Honest Decision](/blog/boat-hull-replacement-vs-repower-decision)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [Mercury Outboard Financing in Ontario](/blog/mercury-outboard-financing-ontario-2026)
+`,
     faqs: [
       {
-        question: 'Can I keep my Evinrude fuel tank and use it with a Mercury?',
-        answer: 'Yes, assuming the tank is in good condition. The fuel connector at the motor end will change (different fittings), but the tank and fuel lines can typically be reused or adapted.'
+        question: 'Why did Evinrude stop making outboards?',
+        answer: 'BRP ended Evinrude outboard production in May 2020. No new motors have been built since. Parts and service support continue through BRP\'s supply chain, but manufacturing has stopped permanently.'
       },
       {
-        question: 'Will the Mercury Pro XS feel similar to my E-TEC?',
-        answer: 'The Pro XS is the closest match in performance character, high-RPM bias, strong top-end, built for performance over economy. It won\'t feel identical but it\'s the Mercury engine most E-TEC owners find closest to familiar.'
+        question: 'Can I still get parts for my Evinrude?',
+        answer: 'Common service parts like filters, plugs, and fluids are still available. Specialty parts, particularly the proprietary electronics and fuel-injection components for E-TEC G1 and G2, are getting harder to find, and lead times keep extending. The window is open, but it is narrowing.'
       },
       {
-        question: 'Does repowering to Mercury improve my boat\'s value?',
-        answer: 'Generally yes. A currently supported engine with an active dealer network and available parts is more attractive to buyers than a discontinued engine with shrinking support.'
+        question: 'How much does an Evinrude-to-Mercury conversion cost?',
+        answer: 'The new motor plus a one-time brand-conversion rigging premium on top of a standard install, because the whole control system swaps. The total depends on horsepower class. See the Mercury repower cost guide for planning ranges, and build your exact number at mercuryrepower.ca.'
       },
       {
-        question: 'Can Harris Boat Works do a full Evinrude-to-Mercury repower?',
-        answer: 'Yes. We handle the full job, motor selection, removal of the old engine, new controls and rigging, installation, lake test, and warranty registration.'
+        question: 'Do I have to replace all the controls?',
+        answer: 'Yes. Evinrude and Mercury controls, harnesses, and gauges are not compatible, so the whole control system swaps. Steering sometimes carries over depending on its age and type. We assess that during the hull walk-around.'
       },
       {
-        question: 'Will the Mercury Pro XS feel similar to my Evinrude E-TEC?',
-        answer: 'The Mercury Pro XS is the closest match to the E-TEC\'s driving character. Like the E-TEC, the Pro XS is tuned for strong acceleration and high RPM performance rather than cruise efficiency. The power delivery is sharper and more aggressive than a standard Mercury FourStroke. Most E-TEC owners switching to the Pro XS find the feel familiar within a short adjustment period, though no direct-injection two-stroke is exactly like an E-TEC, they are distinct engines.'
+        question: 'Can I keep my Evinrude prop?',
+        answer: 'Rarely. Different hub design and different pitch matching mean an Evinrude prop on a Mercury motor is a mismatch. We test and fit the right prop for your Mercury on the sea-trial.'
       },
       {
-        question: 'Does repowering an Evinrude to Mercury improve my boat\'s resale value?',
-        answer: 'Repowering to Mercury generally improves or protects resale value. A discontinued Evinrude creates friction at point of sale, buyers worry about future parts and service. A Mercury-powered boat has a large national dealer network and current factory support. In Ontario\'s cottage country market, where boats trade hands regularly, a Mercury repower removes the discount a knowledgeable buyer would apply to an Evinrude-powered hull. The repower cost may not be recovered dollar-for-dollar, but it removes a meaningful negative from the listing.'
+        question: 'How long does the conversion take?',
+        answer: 'A few days of shop time, and a few weeks from order to pickup. Off-season, October through March, is fastest.'
       },
       {
-        question: 'How much does it cost to repower an Evinrude to Mercury in Ontario?',
-        answer: '2026 repower ranges from Harris Boat Works: 9.9 to 25 HP tiller motors are usually motor-only at $3,000 to $5,500 before HST; 40 to 60 HP runs $11,000 to $15,000 all-in; 75 to 115 HP runs $17,000 to $22,000 all-in; 150 HP runs $23,000 to $30,000 all-in; and 200 to 300 HP runs $35,000 to $40,000 all-in. All-in means motor, rigging, prop, and installation. Because Evinrude controls and gauges are not compatible with Mercury, an Evinrude-to-Mercury repower may require new controls and gauges, factor this into the total. For a written quote, call 905-342-2153 or use mercuryrepower.ca/quote/motor-selection.'
+        question: 'Should I trade in the old Evinrude or sell it privately?',
+        answer: 'It depends on the motor\'s age and condition. A newer, running E-TEC G2 sometimes has private-sale value. Older motors are usually best as a trade-in. The trade-in estimator at mercuryrepower.ca gives an instant number.'
       },
       {
-        question: 'Are Evinrude G2 parts still available in Ontario in 2026?',
-        answer: 'Common consumable parts for the Evinrude G2 remain available from specialty suppliers. However, proprietary electronic components for the G2\'s digital management system are increasingly scarce. G2 diagnostic software requires tools that are harder to find as the Evinrude dealer network shrinks. For 2010-2018 E-TEC models in the 60-150 HP range, parts availability remains better, but the same long-term trajectory applies, the support ecosystem is contracting.'
+        question: 'Will a Mercury Pro XS feel like my E-TEC?',
+        answer: 'The Pro XS is the closest match in character: strong acceleration, a high-RPM bias, tuned for performance over cruise economy. It will not feel identical, no engine is, but most E-TEC owners find it familiar within a short adjustment period. For most boats a standard FourStroke is the better all-round choice.'
       },
       {
-        question: 'How long does an Evinrude-to-Mercury repower take?',
-        answer: 'At Harris Boat Works, a complete Evinrude-to-Mercury repower typically takes 3-5 weeks: 1-4 weeks for motor and parts ordering, plus 3-7 days for installation. In winter months, turnaround is generally faster due to lower shop demand. Booking in winter or fall avoids the summer rush. Request service at hbw.wiki/service or call 905-342-2153.'
-      },
-      {
-        question: 'Is a Mercury FourStroke more reliable than an Evinrude E-TEC long-term?',
-        answer: 'The E-TEC was a well-engineered engine, and reliability comparisons depend on maintenance history and age. The practical difference now is support availability. A Mercury FourStroke with a failed part can be fixed at any Mercury dealer across Canada with in-stock OEM parts and current diagnostic tools. An E-TEC with a failed proprietary electronic component may not be fixable at all. In 2026, the Mercury FourStroke\'s effective reliability advantage is primarily about ecosystem sustainability, not raw engine quality.'
+        question: 'Is a Mercury actually more reliable than an Evinrude?',
+        answer: 'The E-TEC was a well-engineered engine, and a healthy late-model G2 is mechanically comparable to a Mercury FourStroke. The real difference in 2026 is support. A Mercury with a failed part gets fixed at any Mercury dealer in Canada with stocked parts and current diagnostic tools. An Evinrude with a failed proprietary electronic part may not be fixable at all.'
       }
     ]
   },
