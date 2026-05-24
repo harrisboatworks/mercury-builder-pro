@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Avator & the Future of Electric Boating in Ontario"
-description: "Mercury's Avator electric outboards are quietly changing what small-boat and cottage boating can look like. Here's how Avator fits into the future of boating for..."
+description: "Mercury Avator electric outboards (7.5e, 20e, 35e) for small boats and cottages in Ontario. How they work, range, charging, and who they actually fit."
 category: "Buying Guide"
 date_published: 2026-02-06
 date_modified: 2026-02-06
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Avator & the Future of Electric Boating in Ontario
 
-> Mercury's Avator electric outboards are quietly changing what small-boat and cottage boating can look like. Here's how Avator fits into the future of boating for...
+> Mercury Avator electric outboards (7.5e, 20e, 35e) for small boats and cottages in Ontario. How they work, range, charging, and who they actually fit.
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  

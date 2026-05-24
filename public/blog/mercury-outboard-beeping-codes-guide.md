@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check"
-description: "Mercury outboard beeping? Learn what common beep patterns can mean, why continuous alarms matter, and what information to send when booking Mercury service."
+description: "Mercury outboard beeping? What common beep patterns mean (overheat, oil, fuel), why continuous alarms matter, and what to send when booking HBW service."
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
 date_modified: 2026-05-11
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check
 
-> Mercury outboard beeping? Learn what common beep patterns can mean, why continuous alarms matter, and what information to send when booking Mercury service.
+> Mercury outboard beeping? What common beep patterns mean (overheat, oil, fuel), why continuous alarms matter, and what to send when booking HBW service.
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  

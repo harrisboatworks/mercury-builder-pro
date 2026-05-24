@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury 150-300 HP Pro XS Compared for Ontario Boats"
-description: "HBW compares Mercury 150, 175, 200, 225, 250, and 300 HP Pro XS outboards for Ontario boats, with honest fit guidance."
+description: "HBW compares Mercury Pro XS 150, 175, 200, 225, 250, and 300 HP outboards for Ontario boats: hull pairings, real-world top speeds, and honest fit guidance."
 category: "Buying Guide"
 date_published: 2026-05-13
 date_modified: 2026-05-13
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury 150-300 HP Pro XS Compared for Ontario Boats
 
-> HBW compares Mercury 150, 175, 200, 225, 250, and 300 HP Pro XS outboards for Ontario boats, with honest fit guidance.
+> HBW compares Mercury Pro XS 150, 175, 200, 225, 250, and 300 HP outboards for Ontario boats: hull pairings, real-world top speeds, and honest fit guidance.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-13  

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Command Thrust on a Pontoon: Worth the Money?"
-description: "Command Thrust adds about $400-700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't."
+description: "Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't."
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Command Thrust on a Pontoon: Worth the Money?
 
-> Command Thrust adds about $400-700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't.
+> Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  

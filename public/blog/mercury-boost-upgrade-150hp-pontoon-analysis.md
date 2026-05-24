@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)"
-description: "For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. The performance gains are minimal in real-world pontoon use (where load and hull..."
+description: "For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. Real-world gains are small once load and hull drag enter the equation."
 category: "Performance"
 date_published: 2026-04-30
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)
 
-> For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. The performance gains are minimal in real-world pontoon use (where load and hull...
+> For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. Real-world gains are small once load and hull drag enter the equation.
 
 **Category:** Performance  
 **Published:** 2026-04-30  

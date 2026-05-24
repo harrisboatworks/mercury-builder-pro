@@ -142,7 +142,7 @@ The other thing we see: the kicker is not where people should economize. A corre
 
 ---
 
-## Common Mistakes We See on ProKicker Installs
+## Common Mistakes
 
 **The "I'll add the kicker later" plan.** Nobody adds it later cleanly. It costs more, takes longer, and disturbs wiring that is already in. Put it on at repower or rigging time.
 
@@ -239,57 +239,41 @@ Call **905-342-2153** to talk through bracket choice, shaft length, and installa
 
 ## FAQs
 
-### Do I need a kicker motor for Rice Lake fishing?
+### What is the difference between the 9.9 ProKicker and the standard 9.9 FourStroke?
 
-For serious walleye fishing, yes. Main motors do not idle slow enough for proper walleye trolling speeds (1 to 2 mph). The Mercury 9.9 ProKicker is the standard. For run-and-gun bass fishing, a kicker is optional. For muskie or mixed-use fishing, usually yes.
+The ProKicker is purpose-built for trolling. It has a high-thrust four-blade propeller, Mercury's Command Thrust gearcase as standard, and power tilt as standard. The standard 9.9 FourStroke is a primary motor for small boats, geared and propped for its own best speed. The ProKicker is engineered to troll slowly all day alongside a larger main motor.
 
-### What's the difference between a Mercury 9.9 and a 9.9 ProKicker?
+### Do I need a kicker for Rice Lake walleye?
 
-The ProKicker has a high-thrust gearcase, larger high-thrust prop, longer shaft for big transoms, and integrated tiller mount or remote-control variant. The standard 9.9 is for general-purpose use. The ProKicker is the purpose-built fishing kicker.
+For proper walleye trolling, yes. Main motors at idle run too fast and too loud for an effective presentation here. The Mercury 9.9 ProKicker is the standard kicker on Rice Lake fishing boats because it runs the right speed, quietly, for hours.
 
-### How much does a Mercury 9.9 ProKicker cost?
+### Does the EFI ProKicker need a battery to start?
 
-The ProKicker installed lands $4,000 to $6,000 CAD at HBW depending on shaft length, tiller vs remote-control configuration, and rigging requirements. For specific pricing, [build a quote](/quote/motor-selection).
+The manual-start version does not. Pulling the rope charges the ignition system on its own. The electric-start version does need a cranking battery, which most fishing boats already have.
 
-### Tiller or remote-control ProKicker for Rice Lake?
+### What shaft length do I need?
 
-Tiller is the classic and most common for fishing-focused boats. Remote-control is better for family-fishing where one person runs the boat while others fish. Choose based on how you fish.
+The ProKicker comes in 20 inch and 25 inch shafts. Most 16 to 18 ft aluminum fishing boats take the 20 inch. Taller-transom console and deeper-V boats need the 25 inch. Measure your transom and account for the offset bracket. Do not guess.
 
-### Can I add a ProKicker to my existing fishing boat without a repower?
+### Can I run the ProKicker off my main fuel tank?
 
-Yes. ProKicker installs as a standalone project. Cost is the kicker plus rigging (typically $4,000 to $6,000 CAD all-in). Most fishing boats have transom space and rigging compatibility for adding a kicker.
+Yes, and we recommend it for serious fishing. We plumb the ProKicker into the main tank at installation so you are not swapping a portable tank mid-day.
 
-### Will a ProKicker fit my pontoon?
+### How much fuel does a ProKicker use trolling?
 
-Yes for most pontoon configurations. Transom-mount or platform-mount options exist for pontoons. Useful for fishing pontoons on Kawartha lakes.
+Very little. At typical walleye trolling speeds it sips fuel, so a main tank running the kicker alone lasts for days of fishing. Exact consumption depends on boat, load, and conditions.
 
-### Should I run a kicker on a bass boat?
+### What is the top speed of a 9.9 ProKicker?
 
-For tournament bass fishing focused on running fast and using the bow trolling motor for fine positioning, no. For recreational bass fishing on Kawartha lakes, a kicker is a useful tool.
+Low, by design. The high-thrust prop and gearing trade top speed for slow-speed control. The ProKicker is not built to cover distance. To move between spots, tilt the kicker up and run on your main motor.
 
-### Can I troll for walleye with my main motor?
+### Does HBW service ProKickers it did not install?
 
-You can, but it's a compromise. Main motors do not idle low enough for true walleye trolling speeds (1 to 2 mph). They are also louder, which can spook fish in shallow water. A 9.9 ProKicker is the proper answer.
+Yes. We service any Mercury or MerCruiser regardless of where it was bought. Book at hbw.wiki/service.
 
-### Will the ProKicker charge my batteries while trolling?
+### Does the ProKicker work on the Trent-Severn?
 
-Most ProKicker variants include alternator output that can charge batteries while running. Useful for boats with heavy electronics loads. Specific charging integration varies by ProKicker model and rigging configuration.
-
-### How long does a Mercury 9.9 ProKicker last?
-
-Properly maintained, 1,500 to 2,000+ hours of life. ProKickers run at lower RPM and lower loads than main motors, so they often outlast the main motor. Annual winterization and gearcase lube changes are critical.
-
-### Can I use a kicker as my main motor on a small boat?
-
-On 12 to 14 ft tin boats, yes. A 9.9 (standard or ProKicker) can be the only motor on a small fishing boat. On 16 ft and bigger, you need a real main motor and the kicker is the auxiliary.
-
-### What's the most popular kicker setup at HBW?
-
-A 9.9 ProKicker tiller, long shaft, paired with a 60 to 115 HP main motor on a 16 to 18 ft aluminum console fishing boat. The classic Rice Lake walleye setup.
-
-### Do I need to register the kicker separately?
-
-The kicker is part of the boat's overall motor configuration on the Pleasure Craft Licence (PCL). Adding a kicker may require a PCL update. We handle this paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
+Yes. It is used for trolling on the connecting lakes and as a backup motor on cruising routes, and it gives precise low-speed control on lock approaches.
 
 ## Next steps
 

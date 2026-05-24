@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Why Mercury Dominates the Outboard Market in 2026"
-description: "Mercury Marine is one of the strongest outboard brands in North America, with one of the strongest dealer networks in Canada and a wide model range from 2.5 HP..."
+description: "Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario."
 category: "Buying Guide"
 date_published: 2026-02-06
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Why Mercury Dominates the Outboard Market in 2026
 
-> Mercury Marine is one of the strongest outboard brands in North America, with one of the strongest dealer networks in Canada and a wide model range from 2.5 HP...
+> Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario.
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  
