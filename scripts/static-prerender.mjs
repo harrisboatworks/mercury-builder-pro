@@ -3644,6 +3644,16 @@ const routes = [
       '</dl>'
   },
   {
+    path: '/mercury/pro-xs-250',
+    title: 'Mercury Pro XS 250 Price Canada | From $34,502 CAD | Harris Boat Works',
+    description: 'Mercury Pro XS 250 from $34,502 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, 7-year warranty coverage, in stock. Build your quote in 2 minutes.',
+    h1: 'Mercury Pro XS 250 Price in Canada: From $34,502 CAD',
+    intro: 'Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,502 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake. Four configurations, the same number our sales desk sees, and 7-year warranty coverage on every one.',
+    ogImage: PRO_XS_250_HERO_IMAGE_PRERENDER,
+    schemas: mercuryProXS250Schemas(),
+    extraNoscript: () => proXS250NoscriptHtml(),
+  },
+  {
     path: '/mercury-outboards-ontario',
     title: 'Mercury Outboards Ontario: Full Lineup at Harris Boat Works | Mercury Dealer Since 1965',
     description: 'Mercury Marine outboards in Ontario, full lineup (FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Platinum Dealer on Rice Lake, family-owned since 1947.',
