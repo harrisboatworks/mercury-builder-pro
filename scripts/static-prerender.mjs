@@ -2648,51 +2648,67 @@ function caseStudyDetailSchema(study) {
   const image = study.heroImage
     ? (study.heroImage.startsWith('/') ? `${SITE_URL}${study.heroImage}` : study.heroImage)
     : undefined;
-  // Stable publication date for case studies (not tied to build time so it doesn't churn).
-  // Phase 1 launch baseline; can be overridden per-study via study.datePublished later.
-  const datePublished = study.datePublished || '2026-04-01';
-  const dateModified = study.dateModified || datePublished;
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "@id": `${url}#article`,
-        headline: study.title,
-        description: study.excerpt,
-        image,
-        author: { "@id": `${SITE_URL}/#organization` },
-        publisher: { "@id": `${SITE_URL}/#organization` },
-        datePublished,
-        dateModified,
-        mainEntityOfPage: { "@id": `${url}#webpage` },
-        inLanguage: "en-CA",
-        about: {
-          "@type": "Thing",
-          name: `${study.boatType} repower - ${study.beforeMotor} to ${study.afterMotor}`,
-        },
-        articleSection: "Mercury repower case study",
-        keywords: [study.scenario, study.boatType, study.region, "Mercury", "repower", "Ontario"].join(", "),
+  const lf = study.longForm;
+  const datePublished = lf?.lastReviewed || study.datePublished || '2026-04-01';
+  const dateModified = lf?.lastReviewed || study.dateModified || datePublished;
+  const cleanTitle = lf
+    ? (lf.cleanTitle || study.title).replace(/\s*\|\s*Harris Boat Works\s*$/i, '')
+    : study.title;
+  const headline = lf?.h1 || study.title;
+  const description = lf?.metaDescription || study.excerpt;
+
+  const graph = [
+    {
+      "@type": "Article",
+      "@id": `${url}#article`,
+      headline,
+      description,
+      image,
+      author: { "@id": `${SITE_URL}/#organization` },
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      datePublished,
+      dateModified,
+      mainEntityOfPage: { "@id": `${url}#webpage` },
+      inLanguage: "en-CA",
+      about: {
+        "@type": "Thing",
+        name: `${study.boatType} repower - ${study.beforeMotor} to ${study.afterMotor}`,
       },
-      {
-        "@type": "WebPage",
-        "@id": `${url}#webpage`,
-        url,
-        name: study.title,
-        description: study.excerpt,
-        isPartOf: { "@id": `${SITE_URL}/#website` },
-        inLanguage: "en-CA",
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-          { "@type": "ListItem", position: 2, name: "Case Studies", item: `${SITE_URL}/case-studies` },
-          { "@type": "ListItem", position: 3, name: study.title, item: url },
-        ],
-      },
-    ],
-  };
+      articleSection: "Mercury repower case study",
+      keywords: [study.scenario, study.boatType, study.region, "Mercury", "repower", "Ontario"].join(", "),
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      url,
+      name: cleanTitle,
+      description,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      inLanguage: "en-CA",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: "Case Studies", item: `${SITE_URL}/case-studies` },
+        { "@type": "ListItem", position: 3, name: cleanTitle, item: url },
+      ],
+    },
+  ];
+
+  if (lf?.faqs?.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: lf.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    });
+  }
+
+  return { "@context": "https://schema.org", "@graph": graph };
 }
 
 function locationsIndexSchema() {
