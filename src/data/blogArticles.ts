@@ -9608,183 +9608,259 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: '2026-rice-lake-fishing-season-outlook',
-    title: "2026 Rice Lake Fishing Season Outlook",
-    description: "Rice Lake's 2026 fishing season looks strong across the typical species: walleye, smallmouth bass, muskie, and panfish. Water levels through the Trent-Severn are managed; ice-out timing and water temperatures will set the early-season pattern. The classic species mix and structure on Rice Lake have been consistent for decades. We are looking forward to another good season.",
+    title: "Rice Lake Ontario Fishing Guide 2026",
+    description: "An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the right boat setup, from Harris Boat Works.",
     image: '/lovable-uploads/2026_Rice_Lake_Fishing_Season_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-05-04',
+    dateModified: '2026-05-23',
     publishDate: '2026-02-06',
     category: 'Lifestyle',
     readTime: '10 min read',
-    keywords: ['rice lake fishing 2026', 'ontario fishing season', 'rice lake walleye', 'rice lake muskie', 'boating season preview', 'kawartha fishing', 'ontario boating trends', 'rice lake bass fishing'],
+    keywords: ["rice lake fishing", "rice lake fishing guide 2026", "rice lake walleye", "rice lake bass fishing", "rice lake muskie fishing", "FMZ 17 fishing regulations", "rice lake ontario fishing"],
     content: `
-# 2026 Rice Lake Fishing Season: What to Expect and How to Get Ready
 
-## Quick answer
-Rice Lake, Ontario is one of the stronger freshwater fisheries in the Kawarthas. Walleye opener falls on the second Saturday of May (FMZ 17). Bass season opens the third Saturday of June. Muskie opens the first Saturday of June. Regulations in Zone 17 include a walleye slot limit (keep only fish measuring 35 to 50 cm), a catch limit of one per day, and a sauger-plus-walleye combined daily possession limit of four. Get your boat ready before April or expect a wait at any marina in the region.
+*Last reviewed: 2026-05-23*
 
-A word on fishing conditions: we are a marina, not a fish biologist. We will not make claims about population health, water quality, or expected catch rates. What we will give you is the regulatory picture, practical setup advice, and the local knowledge that comes from three generations on Rice Lake.
+> **Quick answer:** Rice Lake still fishes well in 2026, but the smart move is to adjust your expectations. Smallmouth bass (season opens June 20), muskellunge (opens June 6) and crappie are the strong bets right now. Walleye (opens May 9) are still in the lake but harder to box, with many fish falling outside the 35 to 50 cm keeper slot. Always confirm current regulations at ontario.ca before you launch.
 
-## Fishing zones and why they matter
+Rice Lake earned its name as a walleye lake in an era most of today's anglers never fished. The 1970s reputation still pulls people in. The 2026 reality is more interesting, and more honest, than the brochure version.
 
-Rice Lake falls within Ontario's Fisheries Management Zone 17 (FMZ 17), which covers much of the Kawartha Lakes region. FMZ boundaries and rules differ from one zone to the next. Rules that apply at Balsam Lake are not necessarily the rules at Rice Lake.
+Here is the short version from the south shore. The lake is still very much worth your weekend. The species mix has shifted. Smallmouth, muskie and crappie are in good shape. Walleye are complicated. And there is a stretch of 1850s railway sitting just under the surface that will end your day early if you do not know it is there.
 
-Current FMZ 17 regulations are at [ontario.ca](http://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17). Make that your first stop before the season, not this article. Regulations are updated annually.
+Harris Boat Works has sat on the south shore of Rice Lake since 1947. That is a long time to stand on a dock and listen to anglers tell you what is biting, where, and on what. This guide is built from that: real spots, honest species talk, and regulations confirmed straight from the Ontario Ministry of Natural Resources.
 
-## Season dates for Rice Lake (FMZ 17)
+## What Rice Lake Actually Is
 
-The following reflects current Ontario FMZ 17 fishing regulations. Always verify directly before fishing.
+Rice Lake runs roughly 32 km from Bewdley at the west end to Hastings at the east, covering about 100 square kilometres. It is shallow, with a maximum depth of only about 8 metres (27 feet) and large areas far shallower than that. It is warm, weedy and fertile. That shallowness is not a weakness. It is exactly why the lake grows the fish it does. Heavy weed growth, warm summer water and a deep food chain all stack up in an angler's favour.
 
-| Species | Season opens | Season closes | Size/slot limit | Catch limit (daily) |
+The lake sits at the south end of the Kawartha chain and drains through the Trent-Severn Waterway. The Otonabee River feeds in from the north near Peterborough, and the Trent River flows out to the east at Hastings. Hiawatha First Nation occupies the north shore and Alderville First Nation the southeast shore. Both communities were here long before the anglers.
+
+Rice Lake takes its name from the wild rice that the Mississauga Anishinaabe harvested from these waters for generations. When the Trent-Severn Waterway raised water levels in the 1920s, most of that wild rice was lost. It was a permanent change to the lake's ecology, and as you will see in the walleye section, the same water management that drowned the rice still shapes the fishing today.
+
+## Rice Lake Fishing Regulations for 2026
+
+Rice Lake sits in Fisheries Management Zone 17 (FMZ 17). The seasons and limits below are confirmed against the Ontario Ministry of Natural Resources FMZ 17 summary. Regulations are the one part of this guide you should never take on trust from any blog, including ours. Confirm everything at ontario.ca/fishing before you go.
+
+| Species | 2026 Season | Sport Limit | Conservation Limit | Notes |
 |---|---|---|---|---|
-| Walleye and sauger (combined) | Second Saturday in May | November 15 | Must be 35 to 50 cm (slot) | 1 per day; 4 possession |
-| Largemouth and smallmouth bass (combined) | Third Saturday in June | December 15 | None stated zone-wide | 2 per day; 6 possession |
-| Muskellunge | First Saturday in June | December 15 | Must be greater than 112 cm | 0 per day (catch and release only) |
-| Northern pike | Open all year | Open all year | None stated zone-wide | 2 per day; 6 possession |
-| Crappie | Open all year | Open all year | None stated | 10 per day; 30 possession |
-| Yellow perch | Open all year | Open all year | None stated | 25 per day; 50 possession |
-| Sunfish | Open all year | Open all year | Only 30 per possession may exceed 18 cm | 15 per day; 300 possession |
-| Lake sturgeon | Closed all year | Closed all year | Not applicable | Not applicable |
+| Walleye and sauger | May 9 to Nov 15 | 4 | 1 | Keep only fish 35 to 50 cm |
+| Bass (largemouth and smallmouth) | June 20 to Dec 15 | 6 | 2 | Combined limit, both species |
+| Muskellunge | June 6 to Dec 15 | 1 | 0 | Must be over 112 cm (44 in) |
+| Northern pike | Open all year | 6 | 2 | - |
+| Yellow perch | Open all year | 50 | 25 | - |
+| Black crappie | Open all year | 30 | 10 | - |
+| Channel catfish | Apr 25 to Nov 15 | 12 | 6 | - |
 
-Important notes on walleye:
-- Rice Lake walleye falls under the slot limit: you can only keep fish between 35 and 50 cm. Fish outside that range must be released.
-- There are waterbody-specific exceptions within FMZ 17, including rules for Lake Scugog, the Trent River, and Crowe Lake.
-- Muskie on Rice Lake is catch and release only under current rules.
+A few things worth spelling out:
 
-## Walleye: the headline species
+**The walleye slot.** You may keep walleye only if they measure between 35 cm and 50 cm, roughly 14 to 20 inches. Anything under 35 cm goes back. Anything over 50 cm goes back. On a Sport licence the limit is 4 walleye. On a Conservation licence it is 1. If you find yourself releasing fish after fish over the 50 cm mark, that is the lake telling you something. More on that below.
 
-Walleye is what brings most anglers to Rice Lake. The lake has historically been productive for walleye across a long season.
+**Muskie is a big-fish-only fishery.** A muskellunge must be over 112 cm, about 44 inches, to keep, and the Conservation licence limit is zero. The honest expectation here is catch, photo and release. A Rice Lake muskie over the size limit is the fish of the season for most anglers.
 
-What we know confidently:
-- Walleye opener is the second Saturday in May for FMZ 17.
-- The slot limit (35 to 50 cm to keep) protects the larger fish population.
-- Catch limit is one walleye per day.
-- The season runs through November 15.
+**The Otonabee River sanctuary.** The stretch of the Otonabee from the Trent-Severn dam at Peterborough down to Bensfort Bridge is a fish sanctuary closed to all fishing through the spring. It reopens the Friday after the walleye opener, which makes it May 16, 2026. There is also sanctuary water around the dam at Hastings. Watch for posted signs.
 
-What changes the early-season pattern: spring weather and ice-out timing. A late winter pushes ice-out later and compresses the early warming period before the opener. An early winter means warmer water at opener and faster post-spawn dispersal. Both are normal in Ontario, the pattern varies year to year.
+**Licence-free weekends.** In 2026 you can fish Ontario without a licence on May 9 to 10, June 20 to 21, and June 27 to July 5. Conservation limits and all size and sanctuary rules still apply on those days.
 
-We will not tell you the fishing is going to be great. We will tell you the regulations are in place, the season is open when it opens, and the fish are in the lake.
+## Walleye: The Complicated One
 
-Classic Rice Lake walleye approaches:
-- Spring (opener): Shallow bays, post-spawn fish. Crawler harnesses on slow troll, jigs in 8 to 15 feet.
-- Early summer: Weed edges and structure. Trolling crankbaits, casting jerkbaits.
-- Mid-summer: Deeper weed lines and basin edges. Trolling with a kicker motor at 1.5 to 2 mph is the standard approach.
-- Fall: Pre-winter feeding, larger fish. Trolling and jigging.
+Rice Lake built its name on walleye, and that reputation was earned. The honest 2026 version is more nuanced.
 
-Bewdley, Sugar Island area, and the central basin are the zones most regulars focus on.
+What anglers actually report now is fewer fish overall, and a frustrating number of the fish that do come over the side measuring above the 50 cm slot. Large, healthy adults that look at you with complete indifference as you slide them back. Keeper-slot fish between 35 and 50 cm are there, but they take real effort.
 
-::pull-quote
-quote: Been fishing Rice Lake for 18 years. The walleye numbers came back stronger than I expected after the 2024 slot rule changes. **Spring 2026 has been the best opener I can remember.** Bass and crappie are right where they should be too.
-attribution: Marc D.
-source: Cobourg
-::
+Why? The Trent-Severn Waterway's water management has worked against walleye spawning for decades. Gates release cold, fast water during the spring spawn. Winter drawdowns lower the lake and can freeze shallow bays to the bottom. Hatched fry get swept into current they cannot fight. The walleye that are in the lake are there despite the system, not because of it.
 
-## Bass season on Rice Lake
+So the 2026 mindset is to fish walleye for the experience as much as the cooler. A 55 cm Rice Lake walleye is a legitimate trophy. Releasing the over-slot fish carefully is part of what keeps this fishery from sliding further. Treat every keeper-slot fish like the gift it is.
 
-Largemouth and smallmouth bass season opens the third Saturday in June in FMZ 17. The combined daily limit is two fish; possession limit is six.
+Where to find them:
 
-Rice Lake has solid smallmouth bass fishing on rocky structure and weed edges through the open-water season. Tournament bass anglers fish the lake regularly through summer.
+- **Spring opener (May 9):** Weed flats northwest of Bewdley in 5 to 8 feet. Cover water with silver lipless crankbaits at a medium retrieve. The mouth of the Otonabee where it meets the lake is the other early option, with jigs tipped with worms or minnows worked through the deeper holding water.
+- **Early summer:** Weed edges and transition zones. Troll crankbaits or cast jerkbaits along the weed lines as they fill in through June.
+- **Midsummer:** The channels on the south end, roughly 17 to 21 feet of water south of Gores Landing. A chartreuse worm harness on a slow troll behind a kicker is the classic move. When you catch one, anchor and switch to jigs with bait, because these are school fish.
+- **Fall:** Pre-winter feeding in the main channel east of Gores Landing, 15 to 22 feet. Bigger fish, trolling and jigging.
 
-No size limit is stated zone-wide for bass in FMZ 17, but always confirm at the source.
+## Smallmouth Bass: The Best Bet Right Now
 
-## Muskie
+Time for the honest 2026 ranking. If you want to go home having caught fish and enjoyed yourself, come for the smallmouth. Rice Lake smallmouth are in excellent shape. The population is healthy, 2 to 4 pound fish are routine, and 5 pound smallmouth turn up every season.
 
-Muskie season opens the first Saturday in June and runs through December 15. As of the current FMZ 17 regulations, muskie must be greater than 112 cm to possess, and the daily catch limit is zero (all muskie are catch and release).
+Bass season opens June 20, 2026, and runs to December 15.
 
-Rice Lake has muskie, though it is not the primary destination for most muskie anglers in the Kawarthas. The season runs long enough to produce fall fish for those targeting them seriously.
+Where and how:
 
-## Panfish, perch, and pike
+- **The railway drop-off near Tic Island:** The rubble of the old sunken railway is the most reliable smallmouth structure on the lake. The rock holds crayfish, and crayfish are exactly what Rice Lake smallmouth want. Tube jigs in natural colours and a drop-shot rig both produce here.
+- **Rocky points on the north shore:** Look for the spot where sand meets rock meets weed. That three-way transition is where Rice Lake smallmouth set up.
+- **Deep structure in summer:** As the water climbs into the low 20s Celsius, smallmouth slide out to 15 to 17 feet on rock and gravel. Finesse jigs, small tubes and a drop-shot worm get them when surface traffic pushes everything down.
 
-These are the bread-and-butter species for casual anglers, kids, and ice fishers:
-- Crappie, yellow perch, and sunfish: All open year-round on Rice Lake under FMZ 17 rules.
-- Northern pike: Open all year, two per day, six possession.
+Tournament anglers run events on Rice Lake regularly, and the programs that win are exactly this: jigs, drop-shots and small finesse baits over rock. If that is what the tournament crowd trusts, the rest of us should take the hint.
 
-These species also make Rice Lake accessible to people who are not chasing walleye or bass. A warm summer bay with decent weed structure is all you need.
+## Largemouth Bass: Buried in the Bewdley Weeds
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Largemouth are the other half of that combined bass limit, and in summer they are deep in the salad. The weed flats north of Bewdley get thick enough by July to choke the southwest bay. That is not a problem. That is a largemouth hotel.
 
-## The Trent-Severn Waterway: free lockage this summer
+How to fish it:
 
-If you fish Rice Lake and explore the broader Trent-Severn system, there is a practical piece of news for 2026.
+- **Texas-rigged worms and jigs in the holes and pockets:** Motor-oil and smoke colours. Run 14 pound test or heavier, because you are pulling fish out of vegetation, not playing them through it.
+- **Soft stick worms on a wacky or Neko rig:** Open pockets and shallow hard bottom near weeds in 6 to 8 feet. A slow fall keeps the bait in the strike zone.
+- **Topwater at dawn:** Early-morning surface feeds along the weed edges are some of the most fun fishing on the lake. Poppers, walking baits and frogs. Be quiet about it.
+- **The Otonabee stumps and Bensfort Bridge pads:** The stumpy water up the Otonabee holds good largemouth early in the season, and the lily pads near Bensfort Bridge are made for frogs.
 
-Parks Canada is offering free lockage on the Trent-Severn Waterway from June 19 to September 7, 2026, under the Canada Strong Pass. During that window, boaters are issued a free lockage sticker at their first lockstation. No advance registration, no online purchase required, show up and get your sticker.
+## Muskellunge: Why Serious Anglers Make the Drive
 
-A few things the free lockage does not cover: mooring fees, shore power, and services from third parties. Those still apply at normal rates.
+If you want a real shot at muskie in southern Ontario without a five-hour drive north, Rice Lake is the answer. The population runs the full length of the lake from Bewdley to Hastings. Fish in the 10 to 15 pound range are common, 20 to 25 pounds is not a surprise, and the lake has given up muskie around the 30 pound mark.
 
-Note also: Locks 42 to 45 (Couchiching to Port Severn) are currently closed to navigation. If your travel plans include that stretch, check current status with Parks Canada before you go.
+Muskie season opens June 6, 2026. The size limit is 112 cm, about 44 inches. Bring the proper gear before you start: a long-handled net, a release tool, and the willingness to finish every cast with a figure-8.
 
-## Getting your boat ready before the opener
+Where and how:
 
-The walleye opener is the one morning most Rice Lake anglers do not want to spend troubleshooting a motor. Every year, we see customers who skipped spring prep and end up missing the morning.
+- **The submerged railway near Tic Island:** The old railway rubble creates exactly the ambush cover muskie love, with hard-to-soft transitions and depth changes. It holds fish all year. It also holds props, so read the railway section below before you run it.
+- **Weed edges on a chop:** Cast large bucktails along the weed lines when there is wind on the water. Wind puts muskie on the feed. Glass-calm and 28 degrees is the time to lower your expectations.
+- **Deep-channel trolling in midsummer:** Pull 6 to 9 inch crankbaits in perch patterns along the deeper south channel. The troll covers water, and covering water is how you find muskie.
 
-Before opener, your boat needs:
-- Engine flushed, oil changed, water pump inspected
-- Battery fully charged and tested
-- Lower unit inspected, gear lube changed
-- All lights working (you are launching before sunrise)
-- Trailer wheel bearings checked
-- Registration, PCL, and PCOC current and on board
+## Crappie and Panfish: The Underrated Catch
 
-Book spring service before April if you want an easy timeline. The rush hits every marina in this region by early May.
+Ask a local where to take the kids, or where to get a steady bite when the walleye are sulking, and the answer is crappie. Rice Lake holds a large crappie population. The warm, fertile, weedy water is ideal habitat.
 
-Book service at [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
+Small jigs under a float in white or chartreuse, worked around submerged timber, dock edges and weed openings in 6 to 12 feet, is all it takes. Crappie school hard. When you find one, you have usually found fifty. Put a ten-year-old on a school like that and you have a fishing partner for life.
 
-## Standard Rice Lake fishing setup
+Yellow perch are available all year and spread through the lake. Sunfish and rock bass fill out the shallow weed zone and will eat almost anything small you throw. These fish do not get the respect they deserve.
 
-For most Rice Lake fishing, walleye-focused, aluminum console boat, the setup that works:
-- 16 to 18 ft aluminum console boat
-- Mercury 60 to 115 HP FourStroke main motor
-- Mercury 9.9 ProKicker for walleye trolling
-- Fish finder with GPS chartplotter and side imaging
+## Northern Pike and Catfish: The Overlooked Two
 
-The kicker is not optional if you are serious about walleye trolling. Speed control at 1.5 to 2 mph with a 60 to 115 HP main motor is not practical without it. The savings you think you are making by skipping the kicker disappear the first windy June morning when you are fighting your main motor's idle to hold 1.8 mph.
+Pike get ignored on Rice Lake because walleye and muskie take all the attention. Use that. The weedy north-shore bays hold pike through spring and fall, the season is open all year, and spring pike on spinnerbaits and jerkbaits in warming bays is good, simple fun that most anglers drive straight past.
 
-For specific pricing on Mercury motors, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Channel catfish are real here too, they grow large, and almost nobody targets them. The east end near Hastings, in the deeper Trent River channel, is the spot. Cut bait on the bottom after dark. Mind the sanctuary water around the Hastings dam and fish below it.
 
-## What you need legally to fish Rice Lake
+## The Submerged Railway: Know It Before You Run It
 
-- Ontario Outdoors Card and Fishing Licence Tag, required for residents aged 18 to 64. Non-residents need the equivalent.
-- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC), required for all motorized vessel operators.
-- [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL), required for any boat with a motor totalling at least 10 hp. PCLs are now valid for 5 years; renewals carry a $24 fee.
+The Cobourg and Peterborough Railway crossed Rice Lake in 1854, connecting Harwood on the south shore to the north side near Hiawatha. Ice damaged the crossing badly, and by the early 1860s the Rice Lake section was finished for good.
 
-Children under 18 may fish under certain conditions without a licence. Confirm current rules at ontario.ca.
+It left two structures you need to know about. The Harwood causeway runs from the south shore toward Tic Island as a solid fill, and parts of it sit above water where you can see the embankment. The deeper trestle sections north of Tic Island are the problem. They sit roughly 4 feet under the surface. The original berm was built about 4 feet above the old high-water mark, and when the Trent-Severn raised the lake in the 1920s, it went under.
+
+Local anglers know where it is. The fish know even better, because the rubble holds crayfish and baitfish, which means it holds smallmouth, walleye and muskie year round. It is some of the best structure on the lake. It is also one of the fastest ways to wreck a prop and end your day.
+
+The practical rule: the first time you fish that part of the lake, run it at idle until you have the structure marked on your chartplotter. Locals run it with confidence because they know it. After one careful pass, so will you.
+
+## Rice Lake Fishing Season by Season
+
+| Window | What Is Happening | Best Targets |
+|---|---|---|
+| May 9 to June 5 | Walleye opener, cold water, slow but catchable at dawn and dusk | Walleye, pike, crappie, perch |
+| June 6 to June 19 | Muskie opens, water warming, fish active | Muskie, walleye, panfish |
+| June 20 onward | Bass opens, full season, summer patterns set in | All species |
+| July to August | Heat pushes fish deep, fish early and late | Smallmouth, largemouth, walleye |
+| September to October | Muskie prime, cooling water, aggressive fish | Muskie, smallmouth, walleye |
+| Ice season | Hard-water perch, crappie and pike; no walleye after Nov 15 | Perch, crappie, pike |
+
+One seasonal warning worth its own line. Rice Lake runs east to west, so a west wind builds fetch across the entire 32 km length. A pleasant morning can turn into a rough afternoon in about 90 minutes on a hot summer day. Launch early, keep an eye on the sky, and make sure you have enough motor to get a full boat home against a chop. Our [Rice Lake boating guide](/blog/rice-lake-boating-guide-2026) covers navigation and conditions in more depth.
+
+## Rigging a Boat for Rice Lake
+
+Rice Lake does not ask for an exotic boat. It asks for a sensible one.
+
+### Best fit: 16 to 18 ft aluminum, 90 HP, plus a kicker
+
+The standard Rice Lake fishing rig is a 16 to 18 foot aluminum console boat, a Mercury 90 HP FourStroke as the main motor, and a Mercury 9.9 ProKicker for trolling. The 90 handles the open-water runs and the afternoon chop. The kicker handles the slow walleye trolls without running your main engine for hours at low RPM. Together they cover everything the lake throws at you.
+
+Most Rice Lake fishing boats are correctly powered at 90 HP. Step up to 115 HP if you regularly run with four or more people aboard. Your capacity plate sets the legal maximum horsepower, so check it before you shop. If you are weighing a [kicker against an electric trolling motor](/blog/electric-trolling-motor-kicker-guide), or thinking about [the right main motor for Rice Lake fishing](/blog/best-mercury-outboard-rice-lake-fishing), we have separate guides on both.
+
+## What We See at HBW
+
+The kicker question is the one we settle most often for Rice Lake anglers, so here is the shop-floor version.
+
+The walleye channels south of Gores Landing are 17 to 21 feet deep, and a productive troll over that weedy bottom can run four to six hours. A main outboard is not built to idle at trolling speed for that long, day after day. A dedicated [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) is built for exactly that job, it sips fuel doing it, and if your main motor quits at the Hastings end of the lake, the kicker is a 32 km tow you do not have to pay for. It tends to pay for itself the first time either of those things happens.
+
+The other thing we see is underpowered boats. Someone buys a hull, puts the smallest motor that will technically push it on the transom, and then meets a west wind with a full boat and a long way back to the ramp. Power the boat for the lake's worst afternoon, not its calmest morning. When in doubt, [build a live Mercury quote](https://mercuryrepower.ca) for your exact hull and we will talk it through.
+
+## Boat Launches on Rice Lake
+
+| Launch | Why Use It |
+|---|---|
+| Bewdley (west end) | Closest to the walleye weed flats and the Otonabee River mouth |
+| Harwood (south shore) | Mid-lake access, closest to the railway structure |
+| Gores Landing (south shore) | Mid-lake, near the south-channel walleye water, and home to HBW |
+| Hastings (east end) | East-end access for muskie and catfish water |
+| Hiawatha First Nation (north shore) | Check the current public access policy before you use it |
+
+For ramp details, parking and conditions, see our full [Rice Lake boat launch guide](/blog/rice-lake-boat-launch-guide).
+
+## Common Mistakes
+
+- **Running the railway blind.** The trestle north of Tic Island sits about 4 feet down and is invisible from the surface. First time through, idle until it is on your screen.
+- **Misreading the walleye slot.** The 35 to 50 cm window is a keep window. Fish under it and over it both go back. The big ones you are proud of are usually over-slot releases.
+- **Treating the Otonabee sanctuary as open on the walleye opener.** That stretch reopens the Friday after the opener, May 16 in 2026, not May 9. Watch for posted signs.
+- **Underpowering the boat.** Rice Lake's afternoon west wind is the real test. Rig for that, not for the calm launch.
+- **Skipping the kicker for trolling.** Hours of low-RPM idling is hard on a main outboard. A kicker does that work and doubles as your get-home motor.
+- **Trusting a blog for regulations.** Including this one. Confirm seasons and limits at ontario.ca/fishing every season.
+
+## A Note on the Lake's Future
+
+The walleye situation on Rice Lake is not a secret, and it is not fixing itself. The Trent-Severn Waterway's water management continues to compromise the spawn year after year, and the Trent-Severn is run by Parks Canada. A local Save the Walleye effort has spent years pushing for changes to how water is moved during the spawning window. It has drawn attention. It has not yet produced a change in practice.
+
+What is left in the meantime is anglers doing their part. Release the over-slot fish without a second thought. Handle every fish carefully. Fish with a bit of patience for what the lake can actually offer in 2026 rather than what it offered in 1975.
+
+And here is the thing worth remembering: the bass, the muskie, the crappie and the pike are all in good shape. The lake is still worth every trip. It is simply asking you to be a slightly different angler than the one who grew up on walleye stories. Learn the railway drop-offs. Find the crappie schools. Photograph a big muskie and let it swim. That is the 2026 Rice Lake experience, and it is a good one.
+
+## Frequently Asked Questions
+
+**When does walleye season open on Rice Lake in 2026?**
+Walleye season in Fisheries Management Zone 17 opens May 9, 2026 and closes November 15. Retained walleye must measure between 35 and 50 cm. The limit is 4 on a Sport licence and 1 on a Conservation licence. Always confirm at ontario.ca/fishing before you go.
+
+**When does bass season open on Rice Lake in 2026?**
+Bass season opens June 20, 2026, the third Saturday in June, and runs to December 15. Largemouth and smallmouth share a combined limit of 6 on a Sport licence and 2 on a Conservation licence.
+
+**Is Rice Lake still a good walleye lake?**
+Rice Lake still holds walleye, but 2026 anglers should expect fewer fish and a lot of them over the 50 cm slot. Keeper-slot fish take real effort. The lake's strongest fisheries right now are smallmouth bass, muskellunge and crappie.
+
+**What is the walleye slot size on Rice Lake?**
+You may keep walleye only if they measure between 35 and 50 cm, roughly 14 to 20 inches. Fish under 35 cm and over 50 cm must be released. The slot is a keep window, not a release window.
+
+**Where is the sunken railway on Rice Lake?**
+The old Cobourg and Peterborough Railway crossed near Tic Island. The deeper trestle sections north of the island sit about 4 feet underwater and are invisible from the surface. Run that area at idle until you have the structure marked on your chartplotter.
+
+**What size motor do I need for a Rice Lake fishing boat?**
+A 16 to 18 foot aluminum fishing boat is well matched to a Mercury 90 HP FourStroke, stepping up to 115 HP for heavier loads. A 9.9 ProKicker is worth adding for walleye trolling. Always stay within the maximum horsepower on your capacity plate.
+
+**Does Harris Boat Works sell fishing licences?**
+No. Ontario fishing licences and the Outdoors Card are sold through the province. Get yours at ontario.ca/fishing. We are happy to help with boats, motors and rigging.
+
+**Can I fish Rice Lake without a licence in 2026?**
+Ontario has licence-free fishing weekends on May 9 to 10, June 20 to 21, and June 27 to July 5, 2026. Conservation limits and all size and sanctuary rules still apply on those days.
 
 ## Sources
 
-- Ontario Ministry of Natural Resources, Fisheries Management Zone 17 regulations (walleye, sauger, bass, muskie, pike, crappie, perch, sunfish seasons and limits). [ontario.ca](http://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
-- Parks Canada, Trent-Severn Waterway Canada Strong Pass free lockage, June 19 to September 7, 2026. [parks.canada.ca](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass)
-- Transport Canada, Pleasure Craft Licence (5-year validity, 10 hp threshold). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+- Ontario Ministry of Natural Resources, Fisheries Management Zone 17 regulations summary: seasons, limits and sanctuaries (ontario.ca)
+- Ontario family fishing and licence-free fishing dates (ontario.ca)
+- Cobourg and District Historical Society: Cobourg and Peterborough Railway history
+- Save the Walleye committee: Rice Lake walleye spawning concerns
+- On-the-water spots and techniques: decades of Rice Lake angler reports through the Harris Boat Works dock
 
-*Last reviewed: 2026-05-11.*
+Always confirm current regulations at ontario.ca/fishing before you fish.
 
+## Plan Your Rice Lake Season
 
-If you're new to Rice Lake or comparing services, see our [full-service marina overview](/blog/best-marina-rice-lake-ontario) for slips, launch, storage, and service in one place.
+Whether you are rigging a new boat for the lake or repowering the one you have, we can help you match the motor to the water. Harris Boat Works has been on the south shore of Rice Lake since 1947, and a Mercury dealer since 1965.
 
+**Phone:** 905-342-2153
+**Build a quote:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
----
+**Related guides:**
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
+- [Mercury 9.9 ProKicker Guide for Rice Lake Anglers](/blog/mercury-prokicker-rice-lake-fishing-guide)
+- [Electric Trolling Motor vs Kicker Motor](/blog/electric-trolling-motor-kicker-guide)
+- [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide)
+- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
 
-## Related at HBW
-
-The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)](/blog/docking-boat-in-wind-rice-lake)
-- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use)
-
----
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
-      { question: 'When does walleye season open on Rice Lake?', answer: 'The second Saturday in May for FMZ 17. Confirm the exact calendar date for 2026 at ontario.ca.' },
-      { question: 'What is the walleye slot limit on Rice Lake?', answer: 'Under current FMZ 17 regulations, walleye must be between 35 and 50 cm to keep. Fish outside that range must be released. Daily catch limit is one walleye.' },
-      { question: 'When does bass season open?', answer: 'Third Saturday in June for largemouth and smallmouth bass (combined) in FMZ 17. Daily limit: two fish.' },
-      { question: 'Is muskie catch and release on Rice Lake?', answer: 'Under current FMZ 17 rules, muskie must exceed 112 cm to possess, and the daily catch limit is zero, so all muskie are catch and release.' },
-      { question: 'Do I need a kicker motor for Rice Lake walleye fishing?', answer: 'For serious walleye trolling, yes. The Mercury 9.9 ProKicker is the standard setup. It gives you precise speed control at 1.5 to 2 mph that you cannot get from a large main motor at idle.' },
-      { question: 'Where do most anglers launch on Rice Lake?', answer: 'Bewdley, Hastings, and Roseneath are the main public ramps.' },
-      { question: 'Is there free lockage on the Trent-Severn in 2026?', answer: 'Yes, free lockage runs June 19 to September 7, 2026 under Parks Canada Canada Strong Pass. Mooring fees still apply.' },
-      { question: 'How early should I book spring service?', answer: 'Before April, ideally. The pre-season rush hits every marina in the region by early May.' },
+      { question: "When does walleye season open on Rice Lake in 2026?", answer: "Walleye season in Fisheries Management Zone 17 opens May 9, 2026 and closes November 15. Retained walleye must measure between 35 and 50 cm. The limit is 4 on a Sport licence and 1 on a Conservation licence. Always confirm at ontario.ca/fishing before you go." },
+      { question: "When does bass season open on Rice Lake in 2026?", answer: "Bass season opens June 20, 2026, the third Saturday in June, and runs to December 15. Largemouth and smallmouth share a combined limit of 6 on a Sport licence and 2 on a Conservation licence." },
+      { question: "Is Rice Lake still a good walleye lake?", answer: "Rice Lake still holds walleye, but 2026 anglers should expect fewer fish and a lot of them over the 50 cm slot. Keeper-slot fish take real effort. The lake's strongest fisheries right now are smallmouth bass, muskellunge and crappie." },
+      { question: "What is the walleye slot size on Rice Lake?", answer: "You may keep walleye only if they measure between 35 and 50 cm, roughly 14 to 20 inches. Fish under 35 cm and over 50 cm must be released. The slot is a keep window, not a release window." },
+      { question: "Where is the sunken railway on Rice Lake?", answer: "The old Cobourg and Peterborough Railway crossed near Tic Island. The deeper trestle sections north of the island sit about 4 feet underwater and are invisible from the surface. Run that area at idle until you have the structure marked on your chartplotter." },
+      { question: "What size motor do I need for a Rice Lake fishing boat?", answer: "A 16 to 18 foot aluminum fishing boat is well matched to a Mercury 90 HP FourStroke, stepping up to 115 HP for heavier loads. A 9.9 ProKicker is worth adding for walleye trolling. Always stay within the maximum horsepower on your capacity plate." },
+      { question: "Does Harris Boat Works sell fishing licences?", answer: "No. Ontario fishing licences and the Outdoors Card are sold through the province. Get yours at ontario.ca/fishing. We are happy to help with boats, motors and rigging." },
+      { question: "Can I fish Rice Lake without a licence in 2026?", answer: "Ontario has licence-free fishing weekends on May 9 to 10, June 20 to 21, and June 27 to July 5, 2026. Conservation limits and all size and sanctuary rules still apply on those days." }
     ]
   },
 
