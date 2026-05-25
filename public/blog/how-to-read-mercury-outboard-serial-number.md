@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -175,7 +175,7 @@ To find the year:
 
 ---
 
-## What the Serial Number Unlocks
+## What the Serial Number Tells You
 
 Once you have the serial, here's what we (or any Mercury dealer) can pull up:
 

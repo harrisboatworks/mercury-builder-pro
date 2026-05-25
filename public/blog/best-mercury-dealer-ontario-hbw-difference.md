@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Dealer in Ontario: The HBW Difference (2026)"
 description: "A frank look at what \"best Mercury dealer in Ontario\" actually means, what to look for, and why Harris Boat Works has been the answer for many GTA and Ontari..."
 category: "Mercury Outboards"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-02-06
 keywords: ["best Mercury dealer Ontario","Mercury Platinum dealer Canada","Mercury outboard specialist Ontario","certified Mercury dealer GTA","top Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
+**Last updated:** 2026-02-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -119,7 +119,7 @@ To request service: [hbw.wiki/service](https://hbw.wiki/service)
 - **Saltwater servicing.** We are a freshwater shop.
 - **Personal watercraft.** Mercury makes outboards. We do not sell or service PWCs.
 - **Jet boats or jet drives.** Outboard-specific shop.
-- **Most non-Mercury brands for engine repair.** We can help with some non-Mercury service but our parts and tooling are Mercury-specific.
+- **Non-Mercury engine repair.** Our engine repair service is Mercury and Mercruiser only. We do not repair Yamaha, Honda, Suzuki, Evinrude, Johnson, Tohatsu, or other non-Mercury engines. We will still take other brands as trade-ins and we sell boats with mixed-brand history; engine repair work is what is Mercury/Mercruiser only.
 - **Sailboat outfitting beyond the motor.**
 
 If the work falls outside our core, we will tell you that and point you toward a shop that is better set up for it.
@@ -155,7 +155,7 @@ Gores Landing, Ontario, on the south shore of Rice Lake. Roughly 90 minutes east
 
 ### Can I bring a non-Mercury motor to HBW for service?
 
-Some non-Mercury service we can handle, but our parts and tooling are Mercury-focused. Non-Mercury work takes longer and may cost more. Call us at 905-342-2153 to discuss.
+No. Our engine repair service is Mercury and Mercruiser only. We do not repair Yamaha, Honda, Suzuki, Evinrude, Johnson, Tohatsu, or other non-Mercury engines. We will still take other brands in on trade and we sell boats with mixed-brand history, but engine repair work is Mercury/Mercruiser only.
 
 ### What if I bought my boat or motor somewhere else?
 

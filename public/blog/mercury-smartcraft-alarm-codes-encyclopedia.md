@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)"
 description: "Complete Mercury SmartCraft alarm code reference from an Ontario Platinum dealer: what each code means, severity, and exactly what to do next. No forum guesswork."
 category: "Troubleshooting"
-date_published: 2026-05-25
-date_modified: 2026-05-25
+date_published: 2026-02-06
+date_modified: 2026-02-06
 keywords: ["mercury smartcraft alarm codes","mercury smartcraft alarm codes list","mercury smartcraft alarm codes meanings","mercury alarm code list","smartcraft fault codes mercury","mercury outboard error codes","mercury smartcraft diagnostic","mercury outboard warning lights"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Complete Mercury SmartCraft alarm code reference from an Ontario Platinum dealer: what each code means, severity, and exactly what to do next. No forum guesswork.
 
 **Category:** Troubleshooting  
-**Published:** 2026-05-25  
-**Last updated:** 2026-05-25  
+**Published:** 2026-02-06  
+**Last updated:** 2026-02-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 

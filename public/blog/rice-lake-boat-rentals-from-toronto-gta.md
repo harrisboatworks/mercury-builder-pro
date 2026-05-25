@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide"
 description: "A Rice Lake boat rental day from the GTA, drive time, pricing, what's included, what to bring. From Harris Boat Works, the marina that's been on Rice Lake s..."
 category: "Boating Lifestyle"
 date_published: 2026-05-16
-date_modified: 2026-05-16
+date_modified: 2026-02-06
 keywords: ["Rice Lake boat rentals","boat rentals near Toronto","Kawarthas pontoon rentals","family boat rental Ontario","day trip boat rental GTA","pontoon rental Toronto"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-05-16  
-**Last updated:** 2026-05-16  
+**Last updated:** 2026-02-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta
 
@@ -87,7 +87,7 @@ Each rental includes:
 - **Pre-departure briefing**. Rice Lake hazards (the sunken railway, weed beds, shoals), how to handle the boat, where to fish or cruise
 - **VHF or cell coverage info**. Rice Lake has reasonable cell service on the south shore
 - **Detailed lake map**, depths, hazards, hot spots, shoreline amenities
-- **Free use of the launch area**, you're embarking from our marina, not the public ramp
+- **Free use of the launch area**, you're launching from our marina, not the public ramp
 - **Free parking on-site** for your vehicle while you're on the water
 - **Restroom + ice / snacks** at the marina before you leave
 
@@ -246,7 +246,7 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
-- [Rice Lake Boating Guide](/blog/rice-lake-boating-guide-2026), comprehensive lake info
+- [Rice Lake Boating Guide](/blog/rice-lake-boating-guide-2026), full lake info
 - [Trent-Severn 2026, free lockage](/blog/trent-severn-waterway-boating-guide-2026), explore beyond Rice Lake
 - [Why drive from Toronto to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), if a rental experience makes you consider ownership
 

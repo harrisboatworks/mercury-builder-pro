@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -38,7 +38,7 @@ content_type: blog_article
 
 ### Full Article
 
-Mercury announced Boost as part of its 2026 technology rollout and described it as the foundation for a broader portfolio of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
+Mercury announced Boost as part of its 2026 technology rollout and described it as the starting point for a broader set of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
 
 The result is a 5, 21% improvement in mid-range acceleration and zero-to-top-speed performance. The range is real, the specific gain depends on hull shape, load, prop selection, and the current factory calibration. Even 5% is noticeable on a loaded boat.
 
@@ -212,7 +212,7 @@ Your Mercury serial number is most commonly found on the transom bracket, look o
 
 ### Which FourStroke models are eligible for Mercury Boost?
 
-Based on Mercury's 2026 rollout information, the factory-installed Boost calibration is confirmed on Pro XS (175-300hp) and Verado models (250, 300, 350hp) built in Q2 2026 and later. The dealer-installed retrofit upgrade for existing outboards is currently confirmed on the 350hp Verado within a specific serial range. Mercury has indicated Boost is the foundation for a broader portfolio of software upgrades, additional eligible models may be announced as the program expands. If you own a FourStroke and want to know if your specific engine qualifies, the fastest answer is to call a certified dealer with your serial number.
+Based on Mercury's 2026 rollout information, the factory-installed Boost calibration is confirmed on Pro XS (175-300hp) and Verado models (250, 300, 350hp) built in Q2 2026 and later. The dealer-installed retrofit upgrade for existing outboards is currently confirmed on the 350hp Verado within a specific serial range. Mercury has indicated Boost is the starting point for a broader set of software upgrades, additional eligible models may be announced as the program expands. If you own a FourStroke and want to know if your specific engine qualifies, the fastest answer is to call a certified dealer with your serial number.
 
 ### Is Mercury Boost worth it for Rice Lake and Kawartha Lakes boating?
 
@@ -220,7 +220,7 @@ For most Rice Lake and Kawartha Lakes boaters, the answer depends on how you loa
 
 ### What should I do if my serial number isn't eligible for Mercury Boost?
 
-If your Mercury engine falls outside the current Boost eligibility criteria, the upgrade simply isn't available for your unit at this time, there's no workaround or aftermarket equivalent. Mercury has said Boost is part of a broader software upgrade portfolio, and additional models may become eligible as the program expands. In the meantime, the best performance improvements available to ineligible engines are mechanical: a properly spec'd propeller, a clean lower unit with fresh gear lube, fresh spark plugs, and a correctly calibrated ignition timing through a standard service. These won't match the Boost gain, but a poorly maintained engine with a wrong prop can lose more performance than Boost recovers.
+If your Mercury engine falls outside the current Boost eligibility criteria, the upgrade simply isn't available for your unit at this time, there's no workaround or aftermarket equivalent. Mercury has said Boost is part of a broader software upgrade lineup, and additional models may become eligible as the program expands. In the meantime, the best performance improvements available to ineligible engines are mechanical: a properly spec'd propeller, a clean lower unit with fresh gear lube, fresh spark plugs, and a correctly calibrated ignition timing through a standard service. These won't match the Boost gain, but a poorly maintained engine with a wrong prop can lose more performance than Boost recovers.
 
 ### Can Mercury Boost be reversed if I don't like the result?
 

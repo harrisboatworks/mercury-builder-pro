@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Year-End Boat Motor Buying: Best Time for Deals?"
 description: "Is year-end the best time to buy a boat motor? Analysis of seasonal pricing, promotions, and the best time to purchase a new Mercury outboard."
 category: "Buying Guide"
-date_published: 2026-12-28
-date_modified: 2026-12-28
+date_published: 2026-05-24
+date_modified: 2026-05-24
 keywords: ["best time buy boat motor","year end boat deals","boat motor sales","outboard discounts","when to buy outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Is year-end the best time to buy a boat motor? Analysis of seasonal pricing, promotions, and the best time to purchase a new Mercury outboard.
 
 **Category:** Buying Guide  
-**Published:** 2026-12-28  
-**Last updated:** 2026-12-28  
+**Published:** 2026-05-24  
+**Last updated:** 2026-05-24  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide
 

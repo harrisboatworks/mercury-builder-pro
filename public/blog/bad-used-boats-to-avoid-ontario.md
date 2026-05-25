@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)"
 description: "An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's actually worth buying on Kijiji, Facebook..."
 category: "Buying Guide"
-date_published: 2026-06-11
-date_modified: 2026-06-11
+date_published: 2026-02-17
+date_modified: 2026-02-17
 keywords: ["used boats","buying guide","ontario","red flags","marine inspection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's actually worth buying on Kijiji, Facebook...
 
 **Category:** Buying Guide  
-**Published:** 2026-06-11  
-**Last updated:** 2026-06-11  
+**Published:** 2026-02-17  
+**Last updated:** 2026-02-17  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario
 

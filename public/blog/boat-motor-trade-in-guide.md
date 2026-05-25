@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Trading In Your Boat Motor: How to Get the Best Value"
 description: "Learn how to maximize trade-in value when upgrading your outboard motor. Tips for preparation, timing, and negotiation from experienced dealers."
 category: "Tips"
-date_published: 2026-06-22
-date_modified: 2026-06-22
+date_published: 2026-03-10
+date_modified: 2026-03-10
 keywords: ["trade in boat motor","outboard trade in value","sell boat motor","upgrade outboard","boat motor value"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Learn how to maximize trade-in value when upgrading your outboard motor. Tips for preparation, timing, and negotiation from experienced dealers.
 
 **Category:** Tips  
-**Published:** 2026-06-22  
-**Last updated:** 2026-06-22  
+**Published:** 2026-03-10  
+**Last updated:** 2026-03-10  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide
 

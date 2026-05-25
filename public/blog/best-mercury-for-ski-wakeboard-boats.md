@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "The Best Mercury Outboard for Ski and Wakeboard Boats. Real-World Picks (2026)"
 description: "An HBW guide to the best Mercury outboards for ski and wakeboard boats, what hole shot really means, when Pro XS beats FourStroke, and how to spec the right HP for..."
 category: "Buying Guide"
-date_published: 2026-11-23
-date_modified: 2026-05-07
+date_published: 2026-05-03
+date_modified: 2026-05-03
 keywords: ["mercury ski boat motor","wakeboard boat outboard","mercury for watersports","best outboard for skiing","wakesurf outboard motor","best Mercury for ski wakeboard boats","Mercury Pro XS tow boat","Mercury V8 wakeboard","hole shot tow boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > An HBW guide to the best Mercury outboards for ski and wakeboard boats, what hole shot really means, when Pro XS beats FourStroke, and how to spec the right HP for...
 
 **Category:** Buying Guide  
-**Published:** 2026-11-23  
-**Last updated:** 2026-05-07  
+**Published:** 2026-05-03  
+**Last updated:** 2026-05-03  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats
 

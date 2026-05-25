@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)"
 description: "A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, without a bow thruster or a meltdown."
 category: "Boating Lifestyle"
-date_published: 2026-06-27
-date_modified: 2026-06-27
+date_published: 2026-03-21
+date_modified: 2026-03-21
 keywords: ["docking","wind","rice lake","boat handling","single outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, without a bow thruster or a meltdown.
 
 **Category:** Boating Lifestyle  
-**Published:** 2026-06-27  
-**Last updated:** 2026-06-27  
+**Published:** 2026-03-21  
+**Last updated:** 2026-03-21  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake
 

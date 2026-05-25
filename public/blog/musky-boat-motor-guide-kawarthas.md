@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/musky-boat-motor-guide-kawarthas.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide"
 description: "Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and setup tips from local musky anglers."
 category: "Buying Guide"
-date_published: 2026-07-06
-date_modified: 2026-07-06
+date_published: 2026-04-06
+date_modified: 2026-04-06
 keywords: ["musky boat motor","kawartha musky fishing","musky boat setup","mercury for musky","musky fishing boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and setup tips from local musky anglers.
 
 **Category:** Buying Guide  
-**Published:** 2026-07-06  
-**Last updated:** 2026-07-06  
+**Published:** 2026-04-06  
+**Last updated:** 2026-04-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/musky-boat-motor-guide-kawarthas
 
@@ -70,7 +70,7 @@ Chasing muskies demands a capable boat and the right motor. Here's what Kawartha
 Musky spots are scattered. Adequate power means:
 - Cover more water
 - Reach distant spots efficiently
-- Navigate river systems
+- Work through river systems
 
 **Rough Conditions**:
 Fall musky = rough water:

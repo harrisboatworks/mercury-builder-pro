@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)"
 description: "Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug, plus Ontario..."
 category: "Boating Lifestyle"
-date_published: 2026-06-17
-date_modified: 2026-06-17
+date_published: 2026-02-28
+date_modified: 2026-02-28
 keywords: ["trailering","boat trailer","ontario","tow safety","launch ramp"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug, plus Ontario...
 
 **Category:** Boating Lifestyle  
-**Published:** 2026-06-17  
-**Last updated:** 2026-06-17  
+**Published:** 2026-02-28  
+**Last updated:** 2026-02-28  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario
 

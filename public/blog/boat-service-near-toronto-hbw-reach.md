@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake
 description: "A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't, and the math on driv..."
 category: "Service"
 date_published: 2026-05-15
-date_modified: 2026-05-15
+date_modified: 2026-02-06
 keywords: ["boat service near Toronto","Mercury service Oakville","outboard repair Burlington","boat mechanic Hamilton","Mercury service GTA","certified marine mechanic Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Service  
 **Published:** 2026-05-15  
-**Last updated:** 2026-05-15  
+**Last updated:** 2026-02-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach
 

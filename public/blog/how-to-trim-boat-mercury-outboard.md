@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)"
 description: "Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained, and the..."
 category: "Mercury Outboards"
-date_published: 2026-06-14
-date_modified: 2026-06-14
+date_published: 2026-02-22
+date_modified: 2026-02-22
 keywords: ["boat trim","mercury outboard","active trim","rice lake","fuel economy"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained, and the...
 
 **Category:** Mercury Outboards  
-**Published:** 2026-06-14  
-**Last updated:** 2026-06-14  
+**Published:** 2026-02-22  
+**Last updated:** 2026-02-22  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard
 

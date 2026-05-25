@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "How to Trailer a Boat from Toronto to Rice Lake (Complete 2026 Guide)"
-description: "A complete guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive."
+description: "A guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive."
 category: "How To"
 date_published: 2026-04-26
 date_modified: 2026-04-26
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # How to Trailer a Boat from Toronto to Rice Lake (Complete 2026 Guide)
 
-> A complete guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive.
+> A guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive.
 
 **Category:** How To  
 **Published:** 2026-04-26  

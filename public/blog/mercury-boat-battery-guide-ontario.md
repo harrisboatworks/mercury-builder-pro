@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)"
 description: "Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and spring startup, so you're not stranded on May 24..."
 category: "Service"
-date_published: 2026-07-03
-date_modified: 2026-07-03
+date_published: 2026-04-01
+date_modified: 2026-04-01
 keywords: ["marine battery","mercury","winter storage","battery switch","agm"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and spring startup, so you're not stranded on May 24...
 
 **Category:** Service  
-**Published:** 2026-07-03  
-**Last updated:** 2026-07-03  
+**Published:** 2026-04-01  
+**Last updated:** 2026-04-01  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario
 

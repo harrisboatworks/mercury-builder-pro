@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fs-25-elpt
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
