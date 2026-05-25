@@ -12804,7 +12804,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'trailer-boat-toronto-to-rice-lake-guide',
     title: 'How to Trailer a Boat from Toronto to Rice Lake (Complete 2026 Guide)',
     seoTitle: 'Trailering a Boat from Toronto to Rice Lake (2026)',
-    description: 'A complete guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive.',
+    description: 'A guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive.',
     image: '/lovable-uploads/Repowering_Boat_Kawarthas_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-26',
