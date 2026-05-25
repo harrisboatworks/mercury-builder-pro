@@ -23896,9 +23896,6 @@ If you're already shopping the 90 and wondering about the 115: the step from 90 
 
 ---
 
-
-![Mercury 75 vs 90 vs 115 HP outboard comparison](/lovable-uploads/inline/75-90-115-hp.svg)
-
 ## What We'd Actually Recommend
 
 **For most 16, 18 ft aluminum fishing boats on Rice Lake and the Kawarthas:** 90 ELPT FourStroke, standard gearcase.
@@ -24099,9 +24096,6 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ---
 
-
-![Mercury 75 vs 90 vs 115 HP outboard comparison](/lovable-uploads/inline/75-90-115-hp.svg)
-
 ## What We'd Actually Recommend
 
 **17, 20 ft aluminum fishing boat, Ontario buyer wanting real headroom without going V6:** 115 ELPT FourStroke. Standard gearcase.
@@ -24239,9 +24233,6 @@ The 90 also holds better resale value and has more demand on the used market. If
 ---
 
 ::walkaround-lead-capture
-
-
-![Mercury 75 vs 90 vs 115 HP outboard comparison](/lovable-uploads/inline/75-90-115-hp.svg)
 
 ## Why HBW Doesn't Stock the Mercury 75
 
