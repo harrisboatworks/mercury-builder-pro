@@ -30,7 +30,7 @@ function renderEscalationBody(body: string) {
       {before}
       <a
         href={`tel:${tel}`}
-        className="font-display font-semibold text-base underline decoration-white/40 underline-offset-2 hover:decoration-white"
+        className="font-display font-semibold text-base !text-white underline decoration-white/60 underline-offset-2 hover:decoration-white"
       >
         {raw}
       </a>
