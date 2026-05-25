@@ -12,7 +12,9 @@ Build, validation, and content-maintenance utilities. Run with `node scripts/<na
 | `generate-sitemap.ts` | Builds `public/sitemap.xml` from blog, motor, location, and tool routes. Run via `tsx`. |
 | `indexnow-submit.mjs` | Pings Bing/IndexNow with a list of changed URLs after deploy. |
 | `static-prerender.mjs` | Vite post-build pass that prerenders blog and key marketing routes to static HTML for SEO. |
-| `check-structured-data.mjs` | Post-build guardrail. Validates every JSON-LD block in `dist/` (parse + required fields), strict on Product Offers (`priceCurrency`/`price`/`availability`) but exempts Service offers (price-on-request). Also enforces a dual-source-of-truth check between `static-prerender.mjs` and React SEO components — fails if the same Product name/`@id` is hardcoded in both. Wired between `static-prerender.mjs` and `indexnow-submit.mjs` in the build pipeline. |
+| `check-structured-data.mjs` | Post-build guardrail. Validates every JSON-LD block in `dist/` (parse + required fields), strict on Product Offers (`priceCurrency`/`price`/`availability`) but exempts Service offers (price-on-request). Also enforces a dual-source-of-truth check between `static-prerender.mjs` and React SEO components — fails if the same Product name/`@id` is hardcoded in both. Wired between `static-prerender.mjs` and `validate-schema-org.mjs` in the build pipeline. |
+| `validate-schema-org.mjs` | Posts every JSON-LD block in `dist/` to validator.schema.org and fails the build on error-severity issues. Warnings logged. Skippable via `SKIP_SCHEMA_ORG_VALIDATOR=1`. Sampling caps requests at `SCHEMA_VALIDATOR_MAX_FILES` (default 80) to stay within rate limits. Wired into `npm build` after `check-structured-data.mjs`. |
+| `post-deploy-rich-results.mjs` | After-deploy probe. Calls Google Search Console URL Inspection through the `google_search_console` connector for a curated list of canonical URLs and writes a per-URL rich-result verdict report to `/tmp/rich-results-report.json`. Non-blocking. Triggered by `.github/workflows/post-deploy-rich-results.yml` on Vercel production deployment success. |
 
 ## Adding a new script
 
