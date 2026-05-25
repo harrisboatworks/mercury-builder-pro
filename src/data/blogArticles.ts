@@ -33,6 +33,43 @@ export function parseLocalDate(dateString: string): Date {
   return new Date(y, (m || 1) - 1, d || 1);
 }
 
+// Seasonal posts — only surface on the blog index during their relevant
+// months (Ontario boating calendar). Months are 1-12. Posts not listed
+// here are treated as year-round. Sitemap eligibility is NOT affected —
+// these pages remain crawlable and indexable year-round (direct URLs
+// still work), we just hide them from the blog index out of season so
+// the feed feels timely instead of showing winterization in July.
+const SEASONAL_POSTS: Record<string, number[]> = {
+  // Winter / off-season buying & planning (Nov–Feb)
+  'winter-repower-planning-guide':        [11, 12, 1, 2],
+  'year-end-boat-motor-buying-guide':     [11, 12, 1, 2],
+  '2026-mercury-model-preview':           [10, 11, 12, 1, 2],
+  // Winterization (Sep–Dec)
+  'boat-winterization-cost-ontario-2026':                [9, 10, 11, 12],
+  'diy-mercury-outboard-winterization-guide':            [9, 10, 11, 12],
+  'mercury-outboard-winterization-service-cost-ontario': [9, 10, 11, 12],
+  // Winter storage (Sep–Mar)
+  'winter-boat-storage-shrinkwrap-vs-indoor-ontario': [9, 10, 11, 12, 1, 2, 3],
+  'outdoor-boat-storage-shrinkwrap-rice-lake':        [9, 10, 11, 12, 1, 2, 3],
+  'winter-storage-near-toronto-hbw':                  [9, 10, 11, 12, 1, 2, 3],
+  'boat-storage-kawartha-lakes':                      [9, 10, 11, 12, 1, 2, 3],
+  // Spring commissioning & opener (Mar–May)
+  'spring-outboard-commissioning-checklist': [3, 4, 5],
+  'walleye-opener-boat-prep':                [3, 4, 5],
+  // Late-season / cold-water safety (Sep–Nov)
+  'late-season-boating-safety':              [9, 10, 11],
+  // Active boating-season content (Apr–Oct)
+  'ontario-boating-season-tips':              [4, 5, 6, 7, 8, 9, 10],
+  'trent-severn-waterway-boating-guide-2026': [4, 5, 6, 7, 8, 9, 10],
+  'rice-lake-boat-rentals-from-toronto-gta':  [4, 5, 6, 7, 8, 9],
+};
+
+export function isArticleInSeason(slug: string, now: Date = new Date()): boolean {
+  const months = SEASONAL_POSTS[slug];
+  if (!months) return true;
+  return months.includes(now.getMonth() + 1);
+}
+
 // Helper to check if an article is published
 export function isArticlePublished(article: BlogArticle): boolean {
   const publishDate = article.publishDate || article.datePublished;
@@ -43,10 +80,12 @@ export function isArticlePublished(article: BlogArticle): boolean {
   return articleDate <= today;
 }
 
-// Get all published articles (filters out future-dated articles)
+// Get all published articles (filters out future-dated AND out-of-season articles)
 export function getPublishedArticles(): BlogArticle[] {
+  const now = new Date();
   return blogArticles
     .filter(isArticlePublished)
+    .filter(a => isArticleInSeason(a.slug, now))
     .sort((a, b) => {
       const da = new Date(a.publishDate || a.datePublished || 0).getTime();
       const db = new Date(b.publishDate || b.datePublished || 0).getTime();
