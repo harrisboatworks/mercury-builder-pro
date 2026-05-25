@@ -1242,7 +1242,7 @@ if (event.type === 'filter_motors') {
               "@type": "ItemList",
               "name": "Mercury Outboard Motors",
               "numberOfItems": finalFilteredMotors.length,
-              "itemListElement": finalFilteredMotors.slice(0, 20).map((motor, i) => ({
+              "itemListElement": finalFilteredMotors.map((motor, i) => ({
                 "@type": "ListItem",
                 "position": i + 1,
                 "item": buildMotorSelectionProductSchema(motor)
