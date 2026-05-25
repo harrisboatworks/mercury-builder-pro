@@ -985,7 +985,22 @@ export default function QuoteSummaryPage() {
 
   return (
     <>
-      <QuoteSummaryPageSEO />
+      <QuoteSummaryPageSEO
+        selectedMotor={
+          state.motor
+            ? {
+                name: (state.motor as any).model_display || state.motor.model || `Mercury ${hp}HP`,
+                hp: hp || null,
+                family: (state.motor as any).family || null,
+                shaft: (state.motor as any).shaft_code || (state.motor as any).shaft || null,
+                modelNumber: (state.motor as any).model_number || (state.motor as any).mercury_model_no || null,
+                image: (state.motor as any).hero_image_url || (state.motor as any).image_url || null,
+                priceCAD: motorSalePrice || null,
+                inStock: !!(state.motor as any).in_stock,
+              }
+            : null
+        }
+      />
       {/* Deposit Info Dialog */}
       <DepositInfoDialog
         open={showDepositDialog}

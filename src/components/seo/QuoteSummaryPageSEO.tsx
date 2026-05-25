@@ -1,11 +1,21 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { buildMotorProductSchema, type MotorSchemaInput } from '@/lib/seo/buildMotorProductSchema';
+
+interface QuoteSummaryPageSEOProps {
+  /**
+   * Live selected motor + total. When provided, a Product+Offer JSON-LD block
+   * is added so the shared/saved quote link is eligible for rich results.
+   * Omit on the prerendered version (no motor known at build time).
+   */
+  selectedMotor?: Omit<MotorSchemaInput, 'url'> | null;
+}
 
 /**
  * JSON-LD for /quote/summary (QuoteEstimate step).
  * Mirrors quoteSummaryPageSchema() in scripts/static-prerender.mjs.
  */
-export function QuoteSummaryPageSEO() {
+export function QuoteSummaryPageSEO({ selectedMotor }: QuoteSummaryPageSEOProps = {}) {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -52,6 +62,18 @@ export function QuoteSummaryPageSEO() {
     ],
   };
 
+  const motorProductSchema = selectedMotor
+    ? {
+        '@context': 'https://schema.org',
+        ...buildMotorProductSchema({
+          ...selectedMotor,
+          url: `${SITE_URL}/quote/summary`,
+          idSuffix: 'selected-motor',
+        }),
+      }
+    : null;
+
+
   return (
     <Helmet>
       <title>Your Mercury Outboard Quote Estimate | Harris Boat Works</title>
@@ -71,6 +93,9 @@ export function QuoteSummaryPageSEO() {
       <meta name="twitter:description" content="Itemized Mercury outboard quote with live CAD pricing and financing estimates." />
 
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      {motorProductSchema && (
+        <script type="application/ld+json">{JSON.stringify(motorProductSchema)}</script>
+      )}
     </Helmet>
   );
 }

@@ -14,6 +14,7 @@ import { getMotorImageByPriority } from '@/lib/motor-helpers';
 import { DealerTrustStrip } from '@/components/trust/DealerTrustStrip';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
+import { MotorPageSEO } from '@/components/seo/MotorPageSEO';
 
 /**
  * Public-facing motor detail page rendered at /motors/{slug}.
@@ -253,6 +254,19 @@ export default function MotorPage() {
         <meta name="description" content={description} />
         <link rel="canonical" href={`https://www.mercuryrepower.ca/motors/${slug}`} />
       </Helmet>
+      <MotorPageSEO
+        name={display}
+        hp={hp}
+        family={family}
+        shaft={shaft || null}
+        startType={motor.start_type}
+        controlType={motor.control_type}
+        modelNumber={modelNo || null}
+        image={image && image !== '/social-share.jpg' && !image.startsWith('/lovable-uploads') ? image : null}
+        priceCAD={price || null}
+        inStock={inStock}
+        url={`https://www.mercuryrepower.ca/motors/${slug}`}
+      />
 
       <article className="min-h-screen bg-repower-paper">
         <RepowerHeader />
