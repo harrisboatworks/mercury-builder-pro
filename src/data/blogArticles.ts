@@ -2878,7 +2878,7 @@ If tubing, skiing, and wakeboarding are a regular part of summer at the cottage,
 
 ## Why Mercury Command Thrust is not optional on a pontoon
 
-Command Thrust is the single biggest performance lever for pontoon Mercurys, and skipping it is the most common pontoon repower mistake we see.
+Command Thrust is the single biggest performance factor for pontoon Mercurys, and skipping it is the most common pontoon repower mistake we see.
 
 Pontoon hulls are heavy and blunt-fronted. They need pulling power to get up and move with any load aboard. Command Thrust delivers that pulling power through a larger-diameter prop and a lower-gear gearcase.
 
@@ -2942,7 +2942,7 @@ The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert
 
 Two related guides in the same cluster:
 - [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake)
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer\](/blog/best-boats-rice-lake-under-30000)
+- [Best Boats for Rice Lake Under $30,000 (2026 Buyer\\](/blog/best-boats-rice-lake-under-30000)
 
 ---
 
@@ -6459,7 +6459,7 @@ item1Note: No interest, no DealerPlan fee, fastest paperwork. Best total cost if
 item2Label: Pay cash, $25,000 motor
 item2Value: $0/month
 item2Note: Same advantage at the larger ticket. Saves roughly $5,500 in interest over 7 years.
-item3Label: Bank loan at 9.5%, $15,000
+item3Label: Bank loan at 9.5% (rates as of May 2026, for qualified buyers, subject to change), $15,000
 item3Value: ~$245/month
 item3Note: Unsecured personal loan. Approval and rate depend on credit. Faster than dealer financing.
 item3Accent: true
@@ -9084,7 +9084,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `# What the 2026 Boating Market Means for Ontario Boat Buyers
 
 ## Quick answer
-The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, used-boat values have corrected, and the federal luxury tax on boats over $250,000 has been repealed as of November 5, 2025 per CRA Luxury Tax Notice LTN5. If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, used-boat values have corrected, and the federal government has announced a proposed repeal of the luxury tax on boats over $250,000 (effective November 5, 2025 per the CRA Luxury Tax Notice LTN5 announcement, pending final confirmation). If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## The post-pandemic reset is complete
 
@@ -9131,13 +9131,13 @@ caveat: All CAD, pickup only at Gores Landing. Build a repower quote at mercuryr
 
 The categories most relevant to Rice Lake (aluminum fishing boats, pontoons, smaller trailerable rigs) are among the most resilient.
 
-## The luxury tax on boats is gone
+## The luxury tax on boats is being phased out
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-Canada federal luxury tax, introduced in the 2022 budget, applied to boats priced above $250,000. According to Canada Revenue Agency Luxury Tax Notice LTN5, the luxury tax on subject vessels is no longer payable as of November 5, 2025.
+Canada federal luxury tax, introduced in the 2022 budget, applied to boats priced above $250,000. According to Canada Revenue Agency Luxury Tax Notice LTN5, the luxury tax on subject vessels is no longer payable as of November 5, 2025 (per the announced change, pending final confirmation).
 
-If you were looking at a larger package (a loaded pontoon, a premium Legend configuration), that tax is gone.
+If you were looking at a larger package (a loaded pontoon, a premium Legend configuration), that tax is on its way out (pending final confirmation).
 
 ## Financing is getting more manageable
 
@@ -9152,7 +9152,7 @@ Pre-owned boats typically account for about 80% of all boat transactions in a gi
 - Inventory is back. You get to choose.
 - Pricing is rational.
 - Financing is improving.
-- Luxury tax is gone.
+- Luxury tax repeal is on its way (pending final confirmation).
 
 We have been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
@@ -13845,7 +13845,7 @@ Boost lands below most of those factors. If any of the upstream variables are wr
 ::decision-card
 eyebrow: Boost eligibility check
 heading: Is your setup actually a Boost candidate?
-subhead: Boost is a software unlock on specific late-model Mercury motors. The math only works on certain hulls and certain owners. Most pontoon owners do not feel it dramatically.
+subhead: Boost is a software upgrade on specific late-model Mercury motors. The math only works on certain hulls and certain owners. Most pontoon owners do not feel it dramatically.
 leftLabel: Boost is worth the conversation
 leftCriteria:
   - Mercury 150 FourStroke, 2024 or newer
@@ -16920,9 +16920,9 @@ Indoor unheated is the next tier up. Building keeps the boat out of the elements
 - **Condensation** without good air circulation in the building
 
 **Ontario pricing for indoor unheated:**
-- $37/ft (Timber Marine, 9-month contract)
-- $40-$60/ft including shrinkwrap (Crate Marine Belleville and others)
-- $55/ft (Muskoka Boat Gallery)
+- $37/ft (other regional marinas, 9-month contract)
+- $40-$60/ft including shrinkwrap (urban GTA marinas Belleville and others)
+- $55/ft (cottage-country marinas)
 
 For most aluminum fishing boats, pontoons, and modern fibreglass runabouts, **the protection delta over outdoor shrinkwrap doesn't justify the cost**. For older fibreglass, dark-coloured gelcoat, or a hull where you want to slow oxidation, it's worth considering.
 
