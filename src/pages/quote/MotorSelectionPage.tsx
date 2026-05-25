@@ -1245,21 +1245,7 @@ if (event.type === 'filter_motors') {
               "itemListElement": finalFilteredMotors.slice(0, 20).map((motor, i) => ({
                 "@type": "ListItem",
                 "position": i + 1,
-                "item": {
-                  "@type": "Product",
-                  "name": motor.model,
-                  "brand": { "@type": "Brand", "name": "Mercury Marine" },
-                  "category": "Outboard Motors",
-                  "sku": motor.id,
-                  ...(motor.price && {
-                    "offers": {
-                      "@type": "Offer",
-                      "priceCurrency": "CAD",
-                      "price": motor.price,
-                      "availability": motor.in_stock ? "https://schema.org/InStock" : "https://schema.org/PreOrder"
-                    }
-                  })
-                }
+                "item": buildMotorSelectionProductSchema(motor)
               }))
             }) }}
           />
