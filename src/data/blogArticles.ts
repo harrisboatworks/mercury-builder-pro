@@ -16414,7 +16414,7 @@ To find the year:
 
 ---
 
-## What the Serial Number Unlocks
+## What the Serial Number Tells You
 
 Once you have the serial, here's what we (or any Mercury dealer) can pull up:
 
