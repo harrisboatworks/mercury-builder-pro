@@ -90,7 +90,20 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
         applicableCountry: 'CA',
         returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
       },
-      seller: { '@type': 'BoatDealer', name: 'Harris Boat Works', url: 'https://harrisboatworks.ca' },
+      seller: {
+        '@type': 'BoatDealer',
+        name: 'Harris Boat Works',
+        url: 'https://harrisboatworks.ca',
+        telephone: '+1-905-342-2153',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '5369 Harris Boat Works Rd',
+          addressLocality: 'Gores Landing',
+          addressRegion: 'ON',
+          postalCode: 'K0K 2E0',
+          addressCountry: 'CA',
+        },
+      },
       areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
     };
   }
