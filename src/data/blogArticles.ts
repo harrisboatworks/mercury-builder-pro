@@ -24078,8 +24078,6 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ## How the 115 Compares to the 90 and the 150
 
-![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L block](/lovable-uploads/inline/75-90-115-hp.svg)
-
 
 | | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
 |---|---|---|---|
@@ -24211,8 +24209,6 @@ Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake 
 ## What the Mercury 75 HP Actually Is
 
 The Mercury 75 HP FourStroke is part of the same family as the 80, 90, 100, and 115. All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
-
-![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L block](/lovable-uploads/inline/75-90-115-hp.svg)
 
 | Specification | Mercury 75 ELPT | Mercury 90 ELPT |
 |---|---|---|
