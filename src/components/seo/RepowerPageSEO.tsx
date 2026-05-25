@@ -42,7 +42,6 @@ export function RepowerPageSEO() {
           "longitude": -78.2542
         },
         "foundingDate": "1947",
-        "priceRange": "$$",
         "sameAs": BUSINESS_SAME_AS
       },
       {

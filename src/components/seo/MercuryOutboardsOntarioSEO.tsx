@@ -79,7 +79,6 @@ export function MercuryOutboardsOntarioSEO() {
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "image": `${SITE_URL}/lovable-uploads/logo-dark.png`,
-        "priceRange": "$$$",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "5369 Harris Boat Works Rd",

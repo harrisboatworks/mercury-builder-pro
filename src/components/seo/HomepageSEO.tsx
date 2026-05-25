@@ -53,7 +53,6 @@ export function HomepageSEO() {
         "url": "https://www.harrisboatworks.ca/",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
-        "priceRange": "$$",
         "parentOrganization": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "address": {
           "@type": "PostalAddress",

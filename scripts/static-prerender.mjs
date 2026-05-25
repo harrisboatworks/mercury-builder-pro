@@ -853,7 +853,6 @@ function homepageSchema() {
         "url": "https://www.harrisboatworks.ca/",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
-        "priceRange": "$$",
         "parentOrganization": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "address": {
           "@type": "PostalAddress",
@@ -1013,7 +1012,6 @@ function contactPageSchema() {
         "name": "Harris Boat Works",
         "image": "https://www.harrisboatworks.ca/logo.png",
         "url": "https://www.harrisboatworks.ca/",
-        "priceRange": "$$",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "address": {
@@ -1094,7 +1092,6 @@ function repowerSchema() {
         },
         "geo": { "@type": "GeoCoordinates", "latitude": 44.1456, "longitude": -78.2542 },
         "foundingDate": "1947",
-        "priceRange": "$$",
         "sameAs": BUSINESS_SAME_AS
       },
       {
@@ -2235,7 +2232,6 @@ function mercuryOutboardsOntarioSchema() {
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "image": `${SITE_URL}/lovable-uploads/logo-dark.png`,
-        "priceRange": "$$$",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "5369 Harris Boat Works Rd",
@@ -2522,7 +2518,6 @@ function blogArticleSchema(article) {
       "telephone": "+1-905-342-2153",
       "url": SITE_URL,
       "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
-      "priceRange": "$$",
       "areaServed": [
         { "@type": "City", "name": `${dealerCity}, Ontario` },
         { "@type": "Place", "name": "Greater Toronto Area" }
@@ -3078,7 +3073,6 @@ function locationDetailSchema(loc) {
         url,
         telephone: "+1-905-342-2153",
         email: "info@harrisboatworks.ca",
-        priceRange: "$$",
         address,
         // Sales catchment / buyer catchment ONLY. NOT mobile service coverage.
         // All work happens on-site at Gores Landing.
@@ -4386,7 +4380,8 @@ function stamp(route) {
     `<noscript>` +
       `<header><h1>${escapeHtml(route.h1)}</h1></header>` +
       `<main><p>${escapeHtml(route.intro)}</p>${extra}</main>` +
-      `<footer><p>Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153</p></footer>` +
+      `<footer><p>Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153</p>` +
+      `<p>See all <a href="/pricing-reference">Mercury outboard prices (CAD)</a> · <a href="/repower">Repower guide</a> · <a href="/faq">FAQ</a></p></footer>` +
     `</noscript>`;
   html = html.replace(/<div id="root">\s*<\/div>/i, `<div id="root"></div>${noscript}`);
 

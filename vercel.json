@@ -53,6 +53,11 @@
       "statusCode": 301
     },
     {
+      "source": "/n",
+      "destination": "/pricing-reference",
+      "statusCode": 301
+    },
+    {
       "source": "/locations/peterborough",
       "destination": "/locations/peterborough-mercury-dealer",
       "statusCode": 301
