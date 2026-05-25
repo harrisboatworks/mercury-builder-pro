@@ -6696,7 +6696,7 @@ Chasing muskies demands a capable boat and the right motor. Here's what Kawartha
 Musky spots are scattered. Adequate power means:
 - Cover more water
 - Reach distant spots efficiently
-- Navigate river systems
+- Work through river systems
 
 **Rough Conditions**:
 Fall musky = rough water:
