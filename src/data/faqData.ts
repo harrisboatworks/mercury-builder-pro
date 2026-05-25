@@ -130,6 +130,10 @@ export const faqCategories: FAQCategory[] = [
         answer: 'We repower all boat brands, Lund, Tracker, Princecraft, Legend, Crestliner, Starcraft, Alumacraft, and any other manufacturer. Mercury outboard motors are designed to fit standard transom configurations, and we handle any custom mounting or rigging requirements as part of the repower package. It doesn\'t matter what brand of motor is currently on the boat, we convert from Yamaha, Honda, Suzuki, Johnson, Evinrude, or any other make to Mercury. Get a quote for the Mercury motor that fits your boat at <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
       },
       {
+        question: 'What are your hours and seasonal schedule?',
+        answer: 'Harris Boat Works operates seasonally at the marina. The shop is open approximately April through November for installations, rigging, and in-person service. The marina is closed approximately December 1 to April 1 each year, but we are available by phone, text, or email anytime during the closure. Call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a> or email us — we respond to quote requests and booking inquiries throughout the winter.'
+      },
+      {
         question: 'Do you offer winterization and storage?',
         answer: 'Yes, Harris Boat Works offers full winterization service to protect your motor and boat through Ontario winters. This includes fogging the engine, stabilizing fuel, changing gear lube, greasing fittings, and preparing the cooling system for freezing temperatures. Proper winterization prevents costly damage from water freezing inside the engine block and lower unit. We also offer outdoor seasonal storage with professional shrinkwrap at our Gores Landing facility — we do not offer indoor storage. Book your winterization service at <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a> or call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
       },

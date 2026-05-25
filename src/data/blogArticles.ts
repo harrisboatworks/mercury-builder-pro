@@ -7590,19 +7590,21 @@ Winter is the perfect time to plan and execute a repower. Your boat sits anyway 
 
 ### Planning Timeline
 
+> **Note:** The marina is closed approximately **December 1 to April 1** each year for in-person service. We are available by phone, text, and email throughout the winter to lock in pricing, order motors, and reserve spring install slots.
+
 **November**:
 - Assess current motor condition
 - Research motor options
 - Get quotes from dealers
 - Begin decision process
 
-**December-January**:
-- Finalize motor selection
-- Schedule installation
-- Order if not in stock
+**December-March (marina closed)**:
+- Finalize motor selection by phone/email
+- Reserve your spring installation slot
+- Order if not in stock (lead times are shortest in winter)
 - Arrange financing if needed
 
-**February-March**:
+**April-May (marina reopens)**:
 - Installation performed
 - Lake test when conditions allow
 - Adjustments and setup
