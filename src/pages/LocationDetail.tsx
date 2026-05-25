@@ -141,7 +141,7 @@ export default function LocationDetail() {
         url,
         telephone: COMPANY_INFO.contact.phone,
         email: COMPANY_INFO.contact.email,
-        priceRange: '$$',
+        
         address: {
           '@type': 'PostalAddress',
           streetAddress: COMPANY_INFO.address.street,
