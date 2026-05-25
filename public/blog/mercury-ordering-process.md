@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-ordering-process.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Ordering Your Mercury: What to Expect"
 description: "Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations, and what to prepare."
 category: "Buying Guide"
-date_published: 2026-12-14
-date_modified: 2026-12-14
+date_published: 2026-05-19
+date_modified: 2026-05-19
 keywords: ["mercury outboard ordering process","how to order mercury","mercury repower timeline","ordering outboard motor","mercury installation process"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations, and what to prepare.
 
 **Category:** Buying Guide  
-**Published:** 2026-12-14  
-**Last updated:** 2026-12-14  
+**Published:** 2026-05-19  
+**Last updated:** 2026-05-19  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-ordering-process
 

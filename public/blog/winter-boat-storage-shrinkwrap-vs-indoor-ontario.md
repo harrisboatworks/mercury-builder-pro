@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -146,9 +146,9 @@ Indoor unheated is the next tier up. Building keeps the boat out of the elements
 - **Condensation** without good air circulation in the building
 
 **Ontario pricing for indoor unheated:**
-- $37/ft (Timber Marine, 9-month contract)
-- $40-$60/ft including shrinkwrap (Crate Marine Belleville and others)
-- $55/ft (Muskoka Boat Gallery)
+- $37/ft (other regional marinas, 9-month contract)
+- $40-$60/ft including shrinkwrap (urban GTA marinas Belleville and others)
+- $55/ft (cottage-country marinas)
 
 For most aluminum fishing boats, pontoons, and modern fibreglass runabouts, **the protection delta over outdoor shrinkwrap doesn't justify the cost**. For older fibreglass, dark-coloured gelcoat, or a hull where you want to slow oxidation, it's worth considering.
 

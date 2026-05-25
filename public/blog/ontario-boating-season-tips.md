@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-boating-season-tips.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Making the Most of Ontario's Short Boating Season"
 description: "Maximize your time on Ontario waters. Tips for extending your season, shoulder-season boating, and getting the most from May to October."
 category: "Tips"
-date_published: 2026-08-10
-date_modified: 2026-08-10
+date_published: 2026-04-22
+date_modified: 2026-04-22
 keywords: ["ontario boating season","extend boat season","fall boating ontario","spring boating tips","shoulder season boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Maximize your time on Ontario waters. Tips for extending your season, shoulder-season boating, and getting the most from May to October.
 
 **Category:** Tips  
-**Published:** 2026-08-10  
-**Last updated:** 2026-08-10  
+**Published:** 2026-04-22  
+**Last updated:** 2026-04-22  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-boating-season-tips
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard"
 description: "Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends, and when..."
 category: "Mercury Outboards"
-date_published: 2026-06-20
-date_modified: 2026-06-20
+date_published: 2026-03-05
+date_modified: 2026-03-05
 keywords: ["outboard vs sterndrive","repower","mercruiser","ontario","mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends, and when...
 
 **Category:** Mercury Outboards  
-**Published:** 2026-06-20  
-**Last updated:** 2026-06-20  
+**Published:** 2026-03-05  
+**Last updated:** 2026-03-05  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)"
 description: "The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion, and how to prevent them..."
 category: "Boating Lifestyle"
-date_published: 2026-06-08
-date_modified: 2026-06-08
+date_published: 2026-02-12
+date_modified: 2026-02-12
 keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboard","pontoon hp"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion, and how to prevent them...
 
 **Category:** Boating Lifestyle  
-**Published:** 2026-06-08  
-**Last updated:** 2026-06-08  
+**Published:** 2026-02-12  
+**Last updated:** 2026-02-12  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake
 

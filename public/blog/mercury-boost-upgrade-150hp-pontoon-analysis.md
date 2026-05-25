@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -73,7 +73,7 @@ Boost lands below most of those factors. If any of the upstream variables are wr
 ::decision-card
 eyebrow: Boost eligibility check
 heading: Is your setup actually a Boost candidate?
-subhead: Boost is a software unlock on specific late-model Mercury motors. The math only works on certain hulls and certain owners. Most pontoon owners do not feel it dramatically.
+subhead: Boost is a software upgrade on specific late-model Mercury motors. The math only works on certain hulls and certain owners. Most pontoon owners do not feel it dramatically.
 leftLabel: Boost is worth the conversation
 leftCriteria:
   - Mercury 150 FourStroke, 2024 or newer
@@ -113,7 +113,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Software-defined performance is the direction the marine industry is heading. Mercury has already signaled interest in more granular performance tiers, use-case profiles, and connected services. Buying a current Mercury motor positions you to participate in future upgrade cycles.
 
-In a few years, we'll likely see more specific unlocks, perhaps a tow mode that emphasizes low-end torque for getting skiers up, separate from a cruise mode tuned for fuel efficiency. Boost is the first widely-deployed iteration of that roadmap.
+In a few years, we'll likely see more specific upgrades, perhaps a tow mode that emphasizes low-end torque for getting skiers up, separate from a cruise mode tuned for fuel efficiency. Boost is the first widely-deployed iteration of that roadmap.
 
 If you're buying a Mercury today with a 5, 10-year ownership window in mind, the platform you're buying into matters. That's a better reason to care about Boost than the current performance increment.
 

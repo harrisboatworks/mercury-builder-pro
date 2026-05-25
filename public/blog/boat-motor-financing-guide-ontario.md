@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-financing-guide-ontario.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Financing a New Boat Motor: What Ontario Boaters Need to Know"
 description: "Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a new Mercury outboard purchase."
 category: "Buying Guide"
-date_published: 2026-05-25
-date_modified: 2026-05-25
+date_published: 2026-02-01
+date_modified: 2026-02-01
 keywords: ["boat motor financing","outboard financing ontario","mercury financing","boat loan","marine financing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a new Mercury outboard purchase.
 
 **Category:** Buying Guide  
-**Published:** 2026-05-25  
-**Last updated:** 2026-05-25  
+**Published:** 2026-02-01  
+**Last updated:** 2026-02-01  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-financing-guide-ontario
 
@@ -99,7 +99,7 @@ item1Note: No interest, no DealerPlan fee, fastest paperwork. Best total cost if
 item2Label: Pay cash, $25,000 motor
 item2Value: $0/month
 item2Note: Same advantage at the larger ticket. Saves roughly $5,500 in interest over 7 years.
-item3Label: Bank loan at 9.5%, $15,000
+item3Label: Bank loan at 9.5% (rates as of May 2026, for qualified buyers, subject to change), $15,000
 item3Value: ~$245/month
 item3Note: Unsecured personal loan. Approval and rate depend on credit. Faster than dealer financing.
 item3Accent: true

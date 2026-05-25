@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide"
 description: "Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season."
 category: "Service"
-date_published: 2026-07-06
-date_modified: 2026-07-06
+date_published: 2026-04-11
+date_modified: 2026-04-11
 keywords: ["ethanol","octane","marine fuel","mercury outboard","ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season.
 
 **Category:** Service  
-**Published:** 2026-07-06  
-**Last updated:** 2026-07-06  
+**Published:** 2026-04-11  
+**Last updated:** 2026-04-11  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 

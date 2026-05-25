@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "2026 Mercury Buying: Pricing, Promotions and Smart Timing"
-description: "Navigate 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options."
+description: "Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options."
 category: "Buying Guide"
-date_published: 2026-12-07
-date_modified: 2026-12-07
+date_published: 2026-05-08
+date_modified: 2026-05-08
 keywords: ["mercury outboard price 2026","mercury promotions","mercury dealer pricing","best time buy outboard","mercury financing options"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,11 +19,11 @@ content_type: blog_article
 
 # 2026 Mercury Buying: Pricing, Promotions and Smart Timing
 
-> Navigate 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options.
+> Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options.
 
 **Category:** Buying Guide  
-**Published:** 2026-12-07  
-**Last updated:** 2026-12-07  
+**Published:** 2026-05-08  
+**Last updated:** 2026-05-08  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
 
@@ -33,9 +33,9 @@ content_type: blog_article
 
 > **Quick answer:** Mercury controls promotions; dealers can't invent discount. Real 2026 deals are Mercury rebates, bonus warranty extensions, and seasonal pricing windows, all baked into our configurator at mercuryrepower.ca. Bonus warranties revert to the 3-year standard once the promo ends, so timing matters.
 
-## Navigating Mercury Pricing in 2026
+## How Mercury Pricing Works in 2026
 
-Understanding how Mercury pricing works helps you make smarter buying decisions. Here is the complete guide to pricing, promotions, and timing.
+Understanding how Mercury pricing works helps you make smarter buying decisions. Here is the full guide to pricing, promotions, and timing.
 
 ### Understanding Mercury Pricing Structure
 
@@ -134,8 +134,8 @@ caveat: HST extra. Live pricing and current promos at mercuryrepower.ca.
 **What You Might Get**:
 - Better pricing flexibility
 - Priority spring installation
-- Time to research thoroughly
-- Potential for extras included
+- Time to do your homework
+- Extras sometimes included
 
 **The Trade-Off**:
 - Cannot water test immediately

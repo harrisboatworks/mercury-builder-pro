@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-mercury-model-preview.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "2027 Mercury Outboard Preview: What's New and What to Expect"
 description: "Preview of 2027 Mercury outboard lineup. Expected updates, new features, and recommendations for buyers considering a 2026 vs 2027 purchase."
 category: "New Products"
-date_published: 2026-12-14
-date_modified: 2026-12-14
+date_published: 2026-05-13
+date_modified: 2026-05-13
 keywords: ["2027 mercury outboard","new mercury motors","mercury model year","mercury updates","new outboard models"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Preview of 2027 Mercury outboard lineup. Expected updates, new features, and recommendations for buyers considering a 2026 vs 2027 purchase.
 
 **Category:** New Products  
-**Published:** 2026-12-14  
-**Last updated:** 2026-12-14  
+**Published:** 2026-05-13  
+**Last updated:** 2026-05-13  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-mercury-model-preview
 

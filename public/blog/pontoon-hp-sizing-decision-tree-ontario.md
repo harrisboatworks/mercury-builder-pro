@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -10,8 +10,8 @@ verado_status: special-order only, not in default inventory
 title: "Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use"
 description: "Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes."
 category: "Mercury Outboards"
-date_published: 2026-06-30
-date_modified: 2026-06-30
+date_published: 2026-03-26
+date_modified: 2026-03-26
 keywords: ["pontoon hp","horsepower sizing","mercury","command thrust","tritoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,8 +22,8 @@ content_type: blog_article
 > Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes.
 
 **Category:** Mercury Outboards  
-**Published:** 2026-06-30  
-**Last updated:** 2026-06-30  
+**Published:** 2026-03-26  
+**Last updated:** 2026-03-26  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario
 

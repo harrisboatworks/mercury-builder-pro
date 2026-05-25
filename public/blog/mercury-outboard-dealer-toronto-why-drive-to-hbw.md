@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)"
 description: "A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math, the price difference, and what you actually get fo..."
 category: "Mercury Outboards"
 date_published: 2026-05-12
-date_modified: 2026-05-12
+date_modified: 2026-02-06
 keywords: ["Mercury outboard dealer Toronto","Mercury dealer GTA","Mercury dealer Mississauga","Mercury dealer Brampton","Mercury Platinum dealer Toronto","drive to Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-12  
-**Last updated:** 2026-05-12  
+**Last updated:** 2026-02-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw
 
@@ -172,7 +172,7 @@ The trip makes sense for: **repowers**, **major motor purchases ($15K+)**, **boa
 
 Customers from the GTA who make the drive often combine it with:
 
-- **A Rice Lake fishing day**, we have a [comprehensive Rice Lake guide](/blog/rice-lake-boating-guide-2026) covering launches, hazards, fish species
+- **A Rice Lake fishing day**, we have a [full Rice Lake guide](/blog/rice-lake-boating-guide-2026) covering launches, hazards, fish species
 - **A [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) day**, we sit on the TSW; June-September lockage is free in 2026 (Canada Strong Pass). [Trent-Severn 2026 guide](/blog/trent-severn-waterway-boating-guide-2026)
 - **Boat rentals**, try a Mercury-powered rental for the day before committing to a purchase ([rental info](https://harrisboatworks.ca/rentals))
 - **Lunch in Bewdley**. Lakeview Restaurant, a 5-minute drive from us, is on the water

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers.md
-last_updated: 2026-05-24
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -32,7 +32,7 @@ content_type: blog_article
 # What the 2026 Boating Market Means for Ontario Boat Buyers
 
 ## Quick answer
-The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, used-boat values have corrected, and the federal luxury tax on boats over $250,000 has been repealed as of November 5, 2025 per CRA Luxury Tax Notice LTN5. If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, used-boat values have corrected, and the federal government has announced a proposed repeal of the luxury tax on boats over $250,000 (effective November 5, 2025 per the CRA Luxury Tax Notice LTN5 announcement, pending final confirmation). If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## The post-pandemic reset is complete
 
@@ -79,13 +79,13 @@ caveat: All CAD, pickup only at Gores Landing. Build a repower quote at mercuryr
 
 The categories most relevant to Rice Lake (aluminum fishing boats, pontoons, smaller trailerable rigs) are among the most resilient.
 
-## The luxury tax on boats is gone
+## The luxury tax on boats is being phased out
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-Canada federal luxury tax, introduced in the 2022 budget, applied to boats priced above $250,000. According to Canada Revenue Agency Luxury Tax Notice LTN5, the luxury tax on subject vessels is no longer payable as of November 5, 2025.
+Canada federal luxury tax, introduced in the 2022 budget, applied to boats priced above $250,000. According to Canada Revenue Agency Luxury Tax Notice LTN5, the luxury tax on subject vessels is no longer payable as of November 5, 2025 (per the announced change, pending final confirmation).
 
-If you were looking at a larger package (a loaded pontoon, a premium Legend configuration), that tax is gone.
+If you were looking at a larger package (a loaded pontoon, a premium Legend configuration), that tax is on its way out (pending final confirmation).
 
 ## Financing is getting more manageable
 
@@ -100,7 +100,7 @@ Pre-owned boats typically account for about 80% of all boat transactions in a gi
 - Inventory is back. You get to choose.
 - Pricing is rational.
 - Financing is improving.
-- Luxury tax is gone.
+- Luxury tax repeal is on its way (pending final confirmation).
 
 We have been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
