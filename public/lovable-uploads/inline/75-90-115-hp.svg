@@ -1,6 +1,6 @@
 <svg width="100%" viewBox="0 0 680 534" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Mercury 75 HP versus 90 HP versus 115 HP outboard comparison</title>
-<desc>Three-column comparison of the Mercury 75 ELPT FourStroke (dealer price $14,190, available to order), the 90 ELPT FourStroke (dealer price $14,812, in stock) and the 115 ELPT FourStroke (dealer price $16,913, in stock). All three share the same 2.1L inline-4 block and 359 lb dry weight. Harris Boat Works does not stock the 75 because the 90 is the smarter buy for most. Source mercuryrepower.ca, May 2026.</desc>
+<desc>Three-column comparison of the Mercury 75 ELPT FourStroke (dealer price $14,190, available to order), the 90 ELPT FourStroke (dealer price $14,812, in stock) and the 115 ELPT FourStroke (dealer price $16,913, in stock). All three share the same 2.1L inline-4 block. Source mercuryrepower.ca, May 2026.</desc>
 <defs><clipPath id="pc">
 <rect x="72" y="158" width="169" height="250" rx="12"/>
 <rect x="255" y="158" width="169" height="250" rx="12"/>
@@ -16,7 +16,7 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 .prl{font-size:10px;font-weight:400;fill:#8a94a0}
 .spec{font-size:11px;font-weight:400;fill:#3f5160}
 .bf{font-size:12px;font-weight:600;fill:#20384d}
-.bul{font-size:11.5px;font-weight:400;fill:#20384d}
+.bul{font-size:10.5px;font-weight:400;fill:#20384d}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
 .subl{font-size:12px;font-weight:400;fill:#3f5160}
 .src4{font-size:11px;font-weight:400;fill:#9aa4ad}
@@ -57,23 +57,23 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <text class="bf" x="275" y="325">Best for</text>
 <text class="bf" x="458" y="325">Best for</text>
 <circle cx="96" cy="343" r="2.6" fill="#20384d"/>
-<text class="bul" x="106" y="347">Plate caps you at 75 HP</text>
+<text class="bul" x="106" y="347">Plate caps at 75 HP</text>
 <circle cx="96" cy="365" r="2.6" fill="#20384d"/>
-<text class="bul" x="106" y="369">Lightest budget option</text>
+<text class="bul" x="106" y="369">Lowest-cost pick</text>
 <circle cx="96" cy="387" r="2.6" fill="#20384d"/>
-<text class="bul" x="106" y="391">We order it, not stock it</text>
+<text class="bul" x="106" y="391">We order, not stock</text>
 <circle cx="279" cy="343" r="2.6" fill="#c8102e"/>
-<text class="bul" x="289" y="347">16 to 18 ft aluminum boats</text>
+<text class="bul" x="289" y="347">16-18 ft aluminum</text>
 <circle cx="279" cy="365" r="2.6" fill="#c8102e"/>
-<text class="bul" x="289" y="369">Smart buy for most hulls</text>
+<text class="bul" x="289" y="369">Smart buy for most</text>
 <circle cx="279" cy="387" r="2.6" fill="#c8102e"/>
-<text class="bul" x="289" y="391">Best resale, in stock</text>
+<text class="bul" x="289" y="391">Strong resale value</text>
 <circle cx="462" cy="343" r="2.6" fill="#20384d"/>
-<text class="bul" x="472" y="347">17 to 20 ft, heavier loads</text>
+<text class="bul" x="472" y="347">17-20 ft, loaded</text>
 <circle cx="462" cy="365" r="2.6" fill="#20384d"/>
-<text class="bul" x="472" y="369">Mid to large pontoons, CT</text>
+<text class="bul" x="472" y="369">Bigger pontoons, CT</text>
 <circle cx="462" cy="387" r="2.6" fill="#20384d"/>
-<text class="bul" x="472" y="391">Headroom without a V6</text>
+<text class="bul" x="472" y="391">Headroom, no V6</text>
 <text class="pun" x="340" y="442" text-anchor="middle">It is the same motor. You are buying <tspan fill="#c8102e">headroom</tspan>.</text>
 <text class="subl" x="340" y="463" text-anchor="middle">No weight penalty stepping up. Most Ontario boats land on the 90.</text>
 <text class="src4" x="72" y="486">Bare motor dealer prices, mercuryrepower.ca, May 2026. Your capacity plate is the ceiling.</text>
