@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-markdown-twins.mjs && node scripts/fetch-google-places-data.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-structured-data.mjs && node scripts/indexnow-submit.mjs",
+    "build": "node scripts/generate-markdown-twins.mjs && node scripts/fetch-google-places-data.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-structured-data.mjs && node scripts/validate-schema-org.mjs && node scripts/indexnow-submit.mjs",
     "build:dev": "vite build --mode development",
     "check:blog-leaks": "node scripts/check-blog-leaks.mjs",
     "check:pricing-reference-copy": "node scripts/check-pricing-reference-copy.mjs",
