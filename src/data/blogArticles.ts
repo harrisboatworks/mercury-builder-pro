@@ -2064,7 +2064,7 @@ To request service: [hbw.wiki/service](https://hbw.wiki/service)
 - **Saltwater servicing.** We are a freshwater shop.
 - **Personal watercraft.** Mercury makes outboards. We do not sell or service PWCs.
 - **Jet boats or jet drives.** Outboard-specific shop.
-- **Most non-Mercury brands for engine repair.** We can help with some non-Mercury service but our parts and tooling are Mercury-specific.
+- **Non-Mercury engine repair.** Our engine repair service is Mercury and Mercruiser only. We do not repair Yamaha, Honda, Suzuki, Evinrude, Johnson, Tohatsu, or other non-Mercury engines. We will still take other brands as trade-ins and we sell boats with mixed-brand history; engine repair work is what is Mercury/Mercruiser only.
 - **Sailboat outfitting beyond the motor.**
 
 If the work falls outside our core, we will tell you that and point you toward a shop that is better set up for it.
