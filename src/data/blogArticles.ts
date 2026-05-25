@@ -19013,7 +19013,7 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
-- [Rice Lake Boating Guide](/blog/rice-lake-boating-guide-2026), comprehensive lake info
+- [Rice Lake Boating Guide](/blog/rice-lake-boating-guide-2026), full lake info
 - [Trent-Severn 2026, free lockage](/blog/trent-severn-waterway-boating-guide-2026), explore beyond Rice Lake
 - [Why drive from Toronto to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), if a rental experience makes you consider ownership
 
