@@ -66,7 +66,7 @@ export default function PromoSelectionPage() {
     const motorPrice = state.motor?.salePrice || state.motor?.price || 0;
     const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
     const taxMultiplier = 1.13; // HST
-    const dealerplanFee = 299;
+    const dealerplanFee = 349;
     return (motorPrice * taxMultiplier) + dealerplanFee - tradeInValue;
   }, [state.motor, state.tradeInInfo]);
 
