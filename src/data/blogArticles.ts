@@ -437,6 +437,8 @@ whenInDoubt: Underpowered boats are the #1 complaint we hear. Step up before you
 
 These are working guidelines for typical recreational use on Ontario and Kawartha freshwater. For your specific motor and real installed pricing, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
+![Mercury horsepower recommendations by boat type for Ontario freshwater](/lovable-uploads/inline/how-to-choose-horsepower.svg)
+
 ### Small aluminum fishing boats (12–14 ft)
 Solo fishing on sheltered water: **9.9 to 15 HP tiller.** Drop-in install, no rigging. Just the motor cost.
 
@@ -986,6 +988,9 @@ Avator (Mercury's electric line) is still maturing. We haven't seen a strong fre
 ---
 
 ## Family-by-family breakdown
+
+![Mercury outboard families: FourStroke, Pro XS and Verado compared](/lovable-uploads/inline/mercury-motor-families.svg)
+
 
 | Family | HP range | Best for | Availability at HBW |
 |--------|----------|----------|---------------------|
@@ -10747,6 +10752,9 @@ Before the differences, the things that do not actually separate these brands in
 
 ## Where Mercury and Yamaha Actually Differ
 
+![Mercury versus Yamaha outboard comparison from an Ontario dealer](/lovable-uploads/inline/mercury-vs-yamaha.svg)
+
+
 ### Horsepower Range and Lineup
 
 Mercury's lineup runs from 2.5 HP to 600 HP. The V12 600 HP Verado is currently the highest-horsepower production outboard made. Yamaha tops out around 450 HP with the XTO Offshore.
@@ -10992,6 +11000,9 @@ The 150's hole shot when loaded is meaningfully better than the 115. The differe
 Most 150 EXLPT repowers at HBW land in the $23,000, $36,000 CAD range all-in, before HST.
 
 ### Side-by-Side: Mercury 115 vs. 150 FourStroke
+
+![Mercury 115 HP versus 150 HP outboard side-by-side comparison](/lovable-uploads/inline/115-vs-150-hp.svg)
+
 
 | Factor | 115 EXLPT FourStroke | 150 EXLPT FourStroke |
 |---|---|---|
@@ -13644,6 +13655,8 @@ The hard part is honestly assessing the hull. Most Ontario aluminum hulls hold u
 ### The Honest Math
 
 For typical Ontario freshwater repowers on a solid hull vs. new boat options:
+
+![Repower or buy a new boat decision comparison](/lovable-uploads/inline/repower-vs-buy-new.svg)
 
 | Scenario | Cost (CAD, before HST) |
 |---|---|
@@ -21186,6 +21199,8 @@ Calm, protected bays have different demands than open lake conditions. Rice Lake
 
 This is where most buyers should start. Find your boat, your load, and your use, and you'll have a real answer.
 
+![Pontoon HP sizing reference table by length and use](/lovable-uploads/inline/pontoon-hp-sizing.svg)
+
 ---
 
 ### 16-18 ft, 2 tubes, 4-6 passengers. Calm water cruise
@@ -22540,6 +22555,9 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 
 ## Specs Side-by-Side
 
+![Mercury 40 HP versus 60 HP outboard comparison](/lovable-uploads/inline/40-vs-60-hp.svg)
+
+
 | | Mercury 40 ELPT FourStroke | Mercury 60 ELPT FourStroke |
 |---|---|---|
 | Powerhead | 3-cylinder, 747 cc | 4-cylinder, 995 cc |
@@ -23868,6 +23886,8 @@ Rule of thumb: aluminum fishing boats default to standard. Pontoons default to C
 
 The 75, 90, and 115 are the same block with different tuning. There is no weight penalty stepping up. The only real penalty going from 75 to 90 to 115 is price and fuel burn at full throttle.
 
+![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L block](/lovable-uploads/inline/75-90-115-hp.svg)
+
 Most boats want either the 90 or the 115. The 75 is right for smaller hulls or situations where the capacity plate forces it, we don't actually stock the 75 because the 90 is the same physical motor at a small additional cost and has better headroom and better resale value.
 
 If you're already shopping the 90 and wondering about the 115: the step from 90 to 115 is tuning, not a different motor. There's no weight change. For a 17, 18 ft aluminum fishing boat that will regularly carry four adults and full gear, the 115 is worth considering. For a 16 ft boat running two anglers, the 90 is the right call and the 115 is extra motor you won't use.
@@ -24058,6 +24078,9 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ## How the 115 Compares to the 90 and the 150
 
+![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L block](/lovable-uploads/inline/75-90-115-hp.svg)
+
+
 | | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
 |---|---|---|---|
 | Block | 2.1L inline-4 | 2.1L inline-4 | 3.0L V4 / different family |
@@ -24188,6 +24211,8 @@ Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake 
 ## What the Mercury 75 HP Actually Is
 
 The Mercury 75 HP FourStroke is part of the same family as the 80, 90, 100, and 115. All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
+
+![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L block](/lovable-uploads/inline/75-90-115-hp.svg)
 
 | Specification | Mercury 75 ELPT | Mercury 90 ELPT |
 |---|---|---|
