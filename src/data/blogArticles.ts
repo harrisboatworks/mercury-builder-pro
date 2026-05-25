@@ -9899,7 +9899,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
 
 ### Full Article
 
-Mercury announced Boost as part of its 2026 technology rollout and described it as the foundation for a broader portfolio of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
+Mercury announced Boost as part of its 2026 technology rollout and described it as the starting point for a broader set of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
 
 The result is a 5, 21% improvement in mid-range acceleration and zero-to-top-speed performance. The range is real, the specific gain depends on hull shape, load, prop selection, and the current factory calibration. Even 5% is noticeable on a loaded boat.
 
