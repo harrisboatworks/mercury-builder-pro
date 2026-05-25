@@ -55,6 +55,7 @@ import { setVisibleMotors, type VisibleMotor } from '@/lib/visibleMotorsStore';
 import type { MotorGroup } from '@/hooks/useGroupedMotors';
 import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
+import { SITE_URL } from '@/lib/site';
 
 // Refined navy promo strip, single-line on desktop, 2-line on mobile, dismissible
 const PROMO_DISMISS_KEY = 'repower_promo_dismissed_v1';
@@ -215,6 +216,79 @@ interface PromotionRule {
   horsepower_max: number | null;
   discount_percentage: number;
   discount_fixed_amount: number;
+}
+
+const HARRIS_BOAT_WORKS_SELLER_SCHEMA = {
+  "@type": "BoatDealer",
+  "name": "Harris Boat Works",
+  "url": "https://harrisboatworks.ca",
+  "telephone": "+1-905-342-2153",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "5369 Harris Boat Works Rd",
+    "addressLocality": "Gores Landing",
+    "addressRegion": "ON",
+    "postalCode": "K0K 2E0",
+    "addressCountry": "CA"
+  }
+};
+
+function toAbsoluteSchemaImage(image: unknown): string {
+  const raw = typeof image === 'string'
+    ? image
+    : image && typeof image === 'object' && 'url' in image
+      ? String((image as { url?: unknown }).url || '')
+      : '';
+  if (!raw) return `${SITE_URL}/social-share.jpg`;
+  if (raw.startsWith('https://') || raw.startsWith('http://')) return raw;
+  if (raw.startsWith('//')) return `https:${raw}`;
+  return `${SITE_URL}${raw.startsWith('/') ? raw : `/${raw}`}`;
+}
+
+function buildMotorSelectionProductSchema(motor: Motor) {
+  const motorUrl = `${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(motor.id)}`;
+  const family = motor.family || motor.type || 'FourStroke';
+  const modelNumber = motor.model_number || null;
+  const image = toAbsoluteSchemaImage(motor.image || motor.images?.[0]);
+  const description = motor.description ||
+    `Mercury ${family} ${motor.hp} HP outboard motor${modelNumber ? ` (model ${modelNumber})` : ''}. ` +
+    `Mercury outboard repower quote from Harris Boat Works in Gores Landing, Ontario. ` +
+    `Motors are sold for local pickup and/or professional installation only. We do not ship outboard motors. ` +
+    `Motor returns are not accepted. New Mercury motors include the applicable Mercury Marine factory warranty.`;
+
+  return {
+    "@type": "Product",
+    "@id": `${motorUrl}#product`,
+    "name": motor.model,
+    "description": description,
+    "image": image,
+    "brand": { "@type": "Brand", "name": "Mercury Marine" },
+    "manufacturer": { "@type": "Organization", "name": "Mercury Marine" },
+    "category": "Outboard Motor",
+    "url": motorUrl,
+    "sku": modelNumber || motor.id,
+    ...(modelNumber ? { "mpn": modelNumber } : {}),
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Horsepower", "value": `${motor.hp} HP` },
+      { "@type": "PropertyValue", "name": "Family", "value": `Mercury ${family}` },
+      ...(motor.shaft ? [{ "@type": "PropertyValue", "name": "Shaft", "value": motor.shaft }] : [])
+    ],
+    "offers": {
+      "@type": "Offer",
+      "@id": `${motorUrl}#offer`,
+      "url": motorUrl,
+      "priceCurrency": "CAD",
+      "price": String(Math.round(motor.price)),
+      "availability": "https://schema.org/InStoreOnly",
+      "itemCondition": "https://schema.org/NewCondition",
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "CA",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      },
+      "seller": HARRIS_BOAT_WORKS_SELLER_SCHEMA
+    }
+  };
 }
 
 
@@ -612,6 +686,7 @@ if (event.type === 'filter_motors') {
       const heroImage = dbMotor.hero_image_url || dbMotor.image_url || firstDbImage || '';
       // Use database images only, Mercury CDN URLs are unreliable (404 frequently)
       const galleryImages = dbImages;
+      const motorFamily = getMotorFamilyDisplay(classifyMotorFamily(dbMotor.horsepower, dbMotor.model_display || dbMotor.model, dbMotor.features));
 
       // Convert to Motor type (same as original)
       const convertedMotor: Motor = {
@@ -635,7 +710,7 @@ if (event.type === 'filter_motors') {
         category: dbMotor.horsepower <= 20 ? 'portable' :
                  dbMotor.horsepower <= 60 ? 'mid-range' : 
                  dbMotor.horsepower <= 150 ? 'high-performance' : 'v8-racing',
-        type: getMotorFamilyDisplay(classifyMotorFamily(dbMotor.horsepower, dbMotor.model_display || dbMotor.model, dbMotor.features)),
+        type: motorFamily,
         specs: `${dbMotor.horsepower}HP ${dbMotor.motor_type || 'FourStroke'}`,
         basePrice: basePrice,
         salePrice: salePrice,
@@ -662,6 +737,7 @@ if (event.type === 'filter_motors') {
         features: dbMotor.features,
         shaft: dbMotor.shaft,
         images: galleryImages,
+        family: motorFamily,
         model_key: dbMotor.model_key || null
       };
       
@@ -1166,24 +1242,10 @@ if (event.type === 'filter_motors') {
               "@type": "ItemList",
               "name": "Mercury Outboard Motors",
               "numberOfItems": finalFilteredMotors.length,
-              "itemListElement": finalFilteredMotors.slice(0, 20).map((motor, i) => ({
+              "itemListElement": finalFilteredMotors.map((motor, i) => ({
                 "@type": "ListItem",
                 "position": i + 1,
-                "item": {
-                  "@type": "Product",
-                  "name": motor.model,
-                  "brand": { "@type": "Brand", "name": "Mercury Marine" },
-                  "category": "Outboard Motors",
-                  "sku": motor.id,
-                  ...(motor.price && {
-                    "offers": {
-                      "@type": "Offer",
-                      "priceCurrency": "CAD",
-                      "price": motor.price,
-                      "availability": motor.in_stock ? "https://schema.org/InStock" : "https://schema.org/PreOrder"
-                    }
-                  })
-                }
+                "item": buildMotorSelectionProductSchema(motor)
               }))
             }) }}
           />
