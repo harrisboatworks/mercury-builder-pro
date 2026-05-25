@@ -21,7 +21,7 @@ export function FinancingCTACard({ data }: FinancingCTACardProps) {
   
   // Calculate total cost for display
   const totalWithTax = Math.round(price * 1.13);
-  const dealerplanFee = 299;
+  const dealerplanFee = 349;
   const totalFinanced = totalWithTax + dealerplanFee;
   
   // Build financing application URL with motor context
@@ -59,7 +59,7 @@ export function FinancingCTACard({ data }: FinancingCTACardProps) {
         </div>
         
         <div className="text-xs text-muted-foreground text-center border-t border-gray-100 pt-3 mb-4">
-          Based on ${price.toLocaleString()} + 13% HST + $299 fee
+          Based on ${price.toLocaleString()} + 13% HST + $349 fee
         </div>
         
         {/* Action Buttons */}
