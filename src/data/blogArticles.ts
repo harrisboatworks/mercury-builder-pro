@@ -939,13 +939,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 > **Quick answer**
 >
-> For most Ontario freshwater boaters, the right choice is FourStroke or Pro XS, not Verado. FourStroke covers fishing, family, and pontoon use from 2.5 HP up. Pro XS is the same powerhead tuned for performance, worth the premium when you actually run hard. Verado is Mercury's supercharged offshore line, it's special-order territory at HBW, and almost no Ontario freshwater application needs it. If you're researching Verado, this guide is honest about when it makes sense and (more often) when it doesn't. Configure FourStroke or Pro XS at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> For most Ontario freshwater boaters, the right choice is FourStroke or Pro XS, not Verado. FourStroke covers fishing, family, and pontoon use from 2.5 HP up. Pro XS is the same powerhead tuned for performance, worth the premium when you actually run hard. Verado is Mercury's premium V8/V10/V12 offshore line, it's special-order territory at HBW, and almost no Ontario freshwater application needs it. If you're researching Verado, this guide is honest about when it makes sense and (more often) when it doesn't. Configure FourStroke or Pro XS at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
 ## Why HBW recommends against Verado for most Ontario buyers
 
-Verado is a legitimate engineering achievement. Supercharged, smooth, quiet at cruise, and capable of impressive top-end performance on the right boat. But it was engineered for a use case that almost no Ontario freshwater boater actually has: serious offshore saltwater applications running large center consoles or twin-engine cruisers in open ocean.
+Verado is a legitimate engineering achievement. Smooth, quiet at cruise, and capable of impressive top-end performance on the right boat. But it was engineered for a use case that almost no Ontario freshwater boater actually has: serious offshore saltwater applications running large center consoles or twin-engine cruisers in open ocean.
 
 For Ontario freshwater, Rice Lake, the Kawarthas, Lake Simcoe, the Trent system, cottage country lakes, the Verado premium doesn't earn its money. The boats are wrong for it, the speeds don't require it, and the additional service complexity vs FourStroke or Pro XS adds cost without adding capability for the typical recreational use case.
 
@@ -954,7 +954,7 @@ Our honest position: when an Ontario freshwater customer asks about Verado, we u
 - **Most Ontario boats are under 22 feet.** Verado is engineered for 22+ foot offshore platforms. On a smaller hull, you're carrying motor weight and complexity you don't need.
 - **Ontario cruise speeds rarely exceed 35-40 MPH.** Both FourStroke and Pro XS deliver that range comfortably in their respective HP classes. Verado's top-end advantage shows up at 50+ MPH speeds that aren't practical on Ontario lakes.
 - **Mercury's product roadmap signals.** The Verado lineup is being narrowed, not expanded. Pro XS V6 and V8 are absorbing applications that used to default to Verado.
-- **Service complexity.** The supercharger system adds maintenance points and potential failure modes that the naturally-aspirated FourStroke and Pro XS don't have.
+- **Cost of ownership.** Verado is a premium V8/V10/V12 line, higher purchase price, higher parts pricing, and a bigger engine to service than an equivalent-HP Pro XS, without delivering capability a typical Ontario freshwater boat can use.
 
 If you're a Verado owner, we'll absolutely service your motor, we're a Mercury Platinum dealer and the warranty network is the same regardless of motor family. If you're researching a new repower in 2026 and Verado came up as an option, this guide will help you understand why FourStroke or Pro XS is almost certainly the better answer for your boat.
 
