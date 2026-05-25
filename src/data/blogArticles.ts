@@ -18027,7 +18027,7 @@ The trip makes sense for: **repowers**, **major motor purchases ($15K+)**, **boa
 
 Customers from the GTA who make the drive often combine it with:
 
-- **A Rice Lake fishing day**, we have a [comprehensive Rice Lake guide](/blog/rice-lake-boating-guide-2026) covering launches, hazards, fish species
+- **A Rice Lake fishing day**, we have a [full Rice Lake guide](/blog/rice-lake-boating-guide-2026) covering launches, hazards, fish species
 - **A [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) day**, we sit on the TSW; June-September lockage is free in 2026 (Canada Strong Pass). [Trent-Severn 2026 guide](/blog/trent-severn-waterway-boating-guide-2026)
 - **Boat rentals**, try a Mercury-powered rental for the day before committing to a purchase ([rental info](https://harrisboatworks.ca/rentals))
 - **Lunch in Bewdley**. Lakeview Restaurant, a 5-minute drive from us, is on the water
