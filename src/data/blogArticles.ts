@@ -2801,7 +2801,7 @@ whenInDoubt: Honest answer, 70% of our Rice Lake customers should be in a pontoo
 
 ## Why pontoons dominate Rice Lake cottages
 
-Pontoons are the most common cottage boat on Rice Lake, and it is not hard to see why. They are comfortable for passengers of all ages, versatile across cruising, fishing, and swimming, easy to board from a dock or swim platform, and well-matched to Rice Lake's character, generally sheltered, with enough room to cruise but not so rough that you need a performance hull.
+Pontoons are the most common cottage boat on Rice Lake, and the reasons are straightforward. They are comfortable for passengers of all ages, versatile across cruising, fishing, and swimming, easy to board from a dock or swim platform, and well-matched to Rice Lake's character, generally sheltered, with enough room to cruise but not so rough that you need a performance hull.
 
 The question is not usually "should I get a pontoon?" Most cottage families have already decided that. The question is which pontoon, what motor, and whether you are buying new or repowering what you have.
 
