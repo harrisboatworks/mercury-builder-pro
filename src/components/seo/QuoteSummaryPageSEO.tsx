@@ -43,7 +43,9 @@ export function QuoteSummaryPageSEO() {
         "offers": {
           "@type": "Offer",
           "priceCurrency": "CAD",
-          "availability": "https://schema.org/InStock",
+          "availability": "https://schema.org/InStoreOnly",
+          "itemCondition": "https://schema.org/NewCondition",
+          "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
           "seller": { "@id": "https://www.mercuryrepower.ca/#organization" },
         },
       },

@@ -117,7 +117,9 @@ export function MercuryProXS250SEO() {
       sku: v.sku,
       price: String(v.hbwPrice),
       priceCurrency: 'CAD',
-      availability: `https://schema.org/${v.availability}`,
+      availability: `https://schema.org/InStoreOnly`,
+      itemCondition: "https://schema.org/NewCondition",
+      hasMerchantReturnPolicy: { "@type": "MerchantReturnPolicy", applicableCountry: "CA", returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted" },
       url: CANONICAL,
       seller: {
         '@type': 'AutoDealer',

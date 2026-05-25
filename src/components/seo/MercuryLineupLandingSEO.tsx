@@ -20,7 +20,9 @@ export function MercuryLineupLandingSEO({ config }: { config: LandingConfig }) {
       ...(v.sku ? { sku: v.sku } : {}),
       price: String(v.hbwPrice),
       priceCurrency: 'CAD',
-      availability: `https://schema.org/${v.availability}`,
+      availability: `https://schema.org/InStoreOnly`,
+      itemCondition: "https://schema.org/NewCondition",
+      hasMerchantReturnPolicy: { "@type": "MerchantReturnPolicy", applicableCountry: "CA", returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted" },
       url: config.canonical,
       seller: {
         '@type': 'AutoDealer',
