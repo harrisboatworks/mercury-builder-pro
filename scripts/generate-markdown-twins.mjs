@@ -863,6 +863,8 @@ function pricingReferenceSchema(motorRecords) {
     ],
   };
 }
+
+function cleanMarkdownDir(relDir) {
   const dir = join(PUBLIC, relDir);
   if (!existsSync(dir)) return;
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
