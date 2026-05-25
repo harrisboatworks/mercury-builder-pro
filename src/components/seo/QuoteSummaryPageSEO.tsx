@@ -62,6 +62,18 @@ export function QuoteSummaryPageSEO({ selectedMotor }: QuoteSummaryPageSEOProps 
     ],
   };
 
+  const motorProductSchema = selectedMotor
+    ? {
+        '@context': 'https://schema.org',
+        ...buildMotorProductSchema({
+          ...selectedMotor,
+          url: `${SITE_URL}/quote/summary`,
+          idSuffix: 'selected-motor',
+        }),
+      }
+    : null;
+
+
   return (
     <Helmet>
       <title>Your Mercury Outboard Quote Estimate | Harris Boat Works</title>
