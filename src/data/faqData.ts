@@ -83,7 +83,7 @@ export const faqCategories: FAQCategory[] = [
     items: [
       {
         question: 'How much does a Mercury repower cost?',
-        answer: 'Mercury repower costs at Harris Boat Works range from approximately $1,895 for a 4hp kicker to $30,000 or more for a 250–300hp performance engine. The price depends on the specific motor model, shaft length, and any rigging or controls required. The most accurate way to get pricing is to use the live quote configurator at <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>, prices are current and updated in real time, including any active sale pricing.'
+        answer: 'Mercury repower costs at Harris Boat Works range from approximately $1,895 for a 4hp kicker to $30,000 or more for a 250–300hp performance engine. The price depends on the specific motor model, shaft length, and any rigging or controls required. The most accurate way to get pricing is to use the live quote configurator at <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>, prices are current and updated in real time, including any active sale pricing. For a full side-by-side list of MSRP vs dealer price on every Mercury we sell, see our <a href="/pricing-reference" class="text-primary hover:underline">Mercury outboard price reference</a>.'
       },
       {
         question: 'Can I finance a Mercury repower?',
