@@ -10079,7 +10079,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What should I do if my serial number isn\'t eligible for Mercury Boost?',
-        answer: 'If your Mercury engine falls outside the current Boost eligibility criteria, the upgrade simply isn\'t available for your unit at this time, there\'s no workaround or aftermarket equivalent. Mercury has said Boost is part of a broader software upgrade portfolio, and additional models may become eligible as the program expands. In the meantime, the best performance improvements available to ineligible engines are mechanical: a properly spec\'d propeller, a clean lower unit with fresh gear lube, fresh spark plugs, and a correctly calibrated ignition timing through a standard service. These won\'t match the Boost gain, but a poorly maintained engine with a wrong prop can lose more performance than Boost recovers.'
+        answer: 'If your Mercury engine falls outside the current Boost eligibility criteria, the upgrade simply isn\'t available for your unit at this time, there\'s no workaround or aftermarket equivalent. Mercury has said Boost is part of a broader software upgrade lineup, and additional models may become eligible as the program expands. In the meantime, the best performance improvements available to ineligible engines are mechanical: a properly spec\'d propeller, a clean lower unit with fresh gear lube, fresh spark plugs, and a correctly calibrated ignition timing through a standard service. These won\'t match the Boost gain, but a poorly maintained engine with a wrong prop can lose more performance than Boost recovers.'
       },
       {
         question: 'Can Mercury Boost be reversed if I don\'t like the result?',
