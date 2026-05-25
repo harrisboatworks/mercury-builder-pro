@@ -93,6 +93,9 @@ export function QuoteSummaryPageSEO({ selectedMotor }: QuoteSummaryPageSEOProps 
       <meta name="twitter:description" content="Itemized Mercury outboard quote with live CAD pricing and financing estimates." />
 
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      {motorProductSchema && (
+        <script type="application/ld+json">{JSON.stringify(motorProductSchema)}</script>
+      )}
     </Helmet>
   );
 }
