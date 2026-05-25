@@ -11,6 +11,8 @@
     "check:pricing-reference-copy": "node scripts/check-pricing-reference-copy.mjs",
     "check:responsive-images": "node scripts/check-responsive-images.mjs",
     "check:structured-data": "node scripts/check-structured-data.mjs",
+    "check:schema-org": "node scripts/validate-schema-org.mjs",
+    "post-deploy:rich-results": "node scripts/post-deploy-rich-results.mjs",
     "generate:responsive-variants": "node scripts/generate-responsive-variants.mjs",
     "prebuild": "npm run check:blog-leaks && npm run check:pricing-reference-copy && npm run generate:responsive-variants && npm run check:responsive-images",
     "verify:gta-sitemap": "node scripts/verify-gta-sitemap.mjs",
