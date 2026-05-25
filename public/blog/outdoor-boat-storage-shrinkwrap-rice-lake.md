@@ -123,7 +123,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **December:** Too late. Schedule for next year.
 
-The customers who call in early November every year asking if we have space, we appreciate them, but it's a tight call. Plan ahead. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months; the marina reopens early April for spring commissioning. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
+The customers who call in early November every year asking if we have space, we appreciate them, but it's a tight call. Plan ahead. The marina is closed during winter months, but we are available by phone, text, or email anytime; the marina reopens early April for spring commissioning. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 ---
 
