@@ -23566,7 +23566,7 @@ Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stay
 
 ---
 
-## Battery-Free EFI, The Feature Worth Noting
+## Battery-Free EFI: A Quiet Win on Manual-Start Models
 
 Manual-start outboards typically do not need a battery. The problem with older EFI systems on small outboards is that they sometimes required one. Mercury's manual-start 9.9 EFI does not. Pulling the starter rope charges the electrical system enough to support ignition.
 
