@@ -19,6 +19,7 @@ marked.setOptions({ gfm: true, breaks: false });
 export default function PricingReference() {
   const [html, setHtml] = useState<string>("");
   const [loading, setLoading] = useState(true);
+  const [schemaJson, setSchemaJson] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -34,6 +35,14 @@ export default function PricingReference() {
         if (!cancelled) setHtml("");
       })
       .finally(() => !cancelled && setLoading(false));
+    // Load Product+Offer JSON-LD generated at build time so SPA navigations
+    // (e.g. from /quote/motor-selection) also expose machine-readable pricing.
+    fetch("/pricing-reference.schema.json", { headers: { Accept: "application/json" } })
+      .then((r) => (r.ok ? r.text() : Promise.reject(new Error(`HTTP ${r.status}`))))
+      .then((text) => {
+        if (!cancelled) setSchemaJson(text);
+      })
+      .catch(() => {});
     return () => {
       cancelled = true;
     };
