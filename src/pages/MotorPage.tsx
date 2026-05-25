@@ -15,6 +15,7 @@ import { DealerTrustStrip } from '@/components/trust/DealerTrustStrip';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { MotorPageSEO } from '@/components/seo/MotorPageSEO';
+import { SITE_URL } from '@/lib/site';
 
 /**
  * Public-facing motor detail page rendered at /motors/{slug}.
@@ -103,6 +104,13 @@ function detectFamily(model: string | null, motorType: string | null, family: st
 function publicMotorSlug(motor: MotorRow): string {
   const family = detectFamily(motor.model_display || motor.model, motor.motor_type, motor.family);
   return slugify(`${family}-${motor.horsepower}hp-${motor.model_display || motor.model || ''}`);
+}
+
+function toAbsoluteImageUrl(image: string | null | undefined): string {
+  if (!image || image === '/social-share.jpg') return `${SITE_URL}/social-share.jpg`;
+  if (image.startsWith('https://') || image.startsWith('http://')) return image;
+  if (image.startsWith('//')) return `https:${image}`;
+  return `${SITE_URL}${image.startsWith('/') ? image : `/${image}`}`;
 }
 
 const MOTOR_SELECT =
@@ -284,6 +292,7 @@ export default function MotorPage() {
   const price = resolveSellingPrice(motor);
   const inStock = motor.in_stock || motor.availability === 'In Stock';
   const image = motorImageUrl || motor.hero_image_url || motor.image_url || '/lovable-uploads/speedboat-transparent.png';
+  const schemaImage = toAbsoluteImageUrl(image);
 
   const title = `${display}, Mercury Outboard | Harris Boat Works`;
   const description = `${display} (${hp} HP ${family}${shaft ? `, ${shaft} shaft` : ''}${
@@ -307,7 +316,7 @@ export default function MotorPage() {
         startType={motor.start_type}
         controlType={motor.control_type}
         modelNumber={modelNo || null}
-        image={image && image !== '/social-share.jpg' && !image.startsWith('/lovable-uploads') ? image : null}
+        image={schemaImage}
         priceCAD={price || null}
         inStock={inStock}
         url={`https://www.mercuryrepower.ca/motors/${slug}`}
