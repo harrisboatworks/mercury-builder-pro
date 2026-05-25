@@ -574,6 +574,8 @@ function AnimatedRoutes() {
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
         <Route path="/pricing-reference" element={<PricingReference />} />
+        {/* Short-link used in blog/case-study copy; redirect to canonical pricing reference. */}
+        <Route path="/n" element={<Navigate to="/pricing-reference" replace />} />
         <Route path="/blog/fr" element={<BlogIndexFr />} />
         <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
