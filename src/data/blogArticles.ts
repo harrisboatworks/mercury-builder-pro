@@ -10071,7 +10071,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Which FourStroke models are eligible for Mercury Boost?',
-        answer: 'Based on Mercury\'s 2026 rollout information, the factory-installed Boost calibration is confirmed on Pro XS (175-300hp) and Verado models (250, 300, 350hp) built in Q2 2026 and later. The dealer-installed retrofit upgrade for existing outboards is currently confirmed on the 350hp Verado within a specific serial range. Mercury has indicated Boost is the foundation for a broader portfolio of software upgrades, additional eligible models may be announced as the program expands. If you own a FourStroke and want to know if your specific engine qualifies, the fastest answer is to call a certified dealer with your serial number.'
+        answer: 'Based on Mercury\'s 2026 rollout information, the factory-installed Boost calibration is confirmed on Pro XS (175-300hp) and Verado models (250, 300, 350hp) built in Q2 2026 and later. The dealer-installed retrofit upgrade for existing outboards is currently confirmed on the 350hp Verado within a specific serial range. Mercury has indicated Boost is the starting point for a broader set of software upgrades, additional eligible models may be announced as the program expands. If you own a FourStroke and want to know if your specific engine qualifies, the fastest answer is to call a certified dealer with your serial number.'
       },
       {
         question: 'Is Mercury Boost worth it for Rice Lake and Kawartha Lakes boating?',
