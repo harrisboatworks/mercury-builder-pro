@@ -74,6 +74,9 @@ export default function PricingReference() {
           name="twitter:description"
           content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only."
         />
+        {schemaJson && (
+          <script type="application/ld+json">{schemaJson}</script>
+        )}
       </Helmet>
       <main className="container mx-auto max-w-5xl px-4 py-8">
         <h1 className="text-3xl font-bold mb-4">Mercury Outboard Prices in Ontario (CAD, 2026)</h1>
