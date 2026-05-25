@@ -10534,6 +10534,9 @@ Most repower cost guides give you a motor price and call it done. That's only ab
 
 ### 2026 Planning Ranges by HP Class (CAD, Before HST)
 
+![New Mercury outboard dealer prices in Canadian dollars by horsepower, 9.9 HP to 150 HP](/lovable-uploads/inline/cost-ladder-by-hp.svg)
+
+
 | Project Tier | HP Range | All-In Range | Common Boats |
 |---|---|---|---|
 | Tiller, motor-only | 9.9, 25 HP | $3,000, $5,500 | Tenders, kickers, small aluminum tillers |
@@ -10570,6 +10573,9 @@ A clean transom and good wiring takes a day to install. A rotten transom or mous
 
 ### What Goes Into the Bill, Line by Line
 
+![Breakdown of a real Harris Boat Works 115 Pro XS repower quote totalling $21,831.60](/lovable-uploads/inline/repower-quote-breakdown.svg)
+
+
 | Line Item | What It Covers | What Changes the Cost |
 |---|---|---|
 | Motor | The Mercury outboard itself | HP, family, shaft length, controls type |
@@ -10604,6 +10610,9 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 We won't quote a motor blind. If you build a quote through the configurator and the configuration seems wrong for your hull, we'll reach out before you proceed to install.
 
 ### When to Repower vs. Buy New
+
+![A $21,831.60 Mercury repower compared against an estimated $65,000 new boat](/lovable-uploads/inline/repower-vs-new-boat.svg)
+
 
 **Repower makes sense when:**
 - The hull is solid (aluminum lasts decades, good-condition fiberglass can go just as long)
