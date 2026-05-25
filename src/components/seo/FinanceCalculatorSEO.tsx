@@ -44,7 +44,7 @@ export function FinanceCalculatorSEO() {
           "name": "Harris Boat Works",
           "@id": `${SITE_URL}/#organization`
         },
-        "feesAndCommissionsSpecification": "No early payoff penalties. $299 finance administration fee included.",
+        "feesAndCommissionsSpecification": "No early payoff penalties. $349 finance administration fee included.",
         "interestRate": {
           "@type": "QuantitativeValue",
           "minValue": 7.99,

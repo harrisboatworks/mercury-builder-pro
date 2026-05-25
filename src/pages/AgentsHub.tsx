@@ -91,7 +91,7 @@ export default function AgentsHub() {
                 {
                   "@type": "Question",
                   "name": "What financing terms apply to Mercury outboard purchases?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Financing minimum is $5,000 CAD. Tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000+. Terms up to 144 months via LightStream / Financeit. A $299 DealerPlan fee is added post-tax for financed purchases. Do not show monthly payment estimates below $5,000." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "Financing minimum is $5,000 CAD. Tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000+. Terms up to 144 months via LightStream / Financeit. A $349 DealerPlan fee is added post-tax for financed purchases. Do not show monthly payment estimates below $5,000." }
                 },
                 {
                   "@type": "Question",

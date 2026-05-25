@@ -105,10 +105,10 @@ item3Note: Unsecured personal loan. Approval and rate depend on credit. Faster t
 item3Accent: true
 item4Label: Mercury Marine financing at 8.99%, $15,000
 item4Value: ~$240/month
-item4Note: $299 DealerPlan fee added post-tax. Often the best rate for the under $10K range.
+item4Note: $349 DealerPlan fee added post-tax. Often the best rate for the under $10K range.
 item5Label: Mercury Marine financing at 7.99%, $25,000
 item5Value: ~$390/month
-item5Note: Lower tier rate kicks in at $10K+. $299 DealerPlan fee still applies.
+item5Note: Lower tier rate kicks in at $10K+. $349 DealerPlan fee still applies.
 totalLabel: Best path for most buyers
 totalValue: Mercury financing at $25K+
 caveat: Financing not available under $5,000. Apply at mercuryrepower.ca/finance for real numbers on your purchase.

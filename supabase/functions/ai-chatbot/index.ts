@@ -504,7 +504,7 @@ DO NOT suggest alternatives like local transport, friends picking up, or any wor
 ## FINANCING DETAILS (Accurate Info - Through Dealerplan):
 
 ### Mandatory Fee:
-- $299 Dealerplan processing fee on ALL financed purchases
+- $349 Dealerplan processing fee on ALL financed purchases
 - This is standard across all financing applications
 - Included in the quote builder calculations
 

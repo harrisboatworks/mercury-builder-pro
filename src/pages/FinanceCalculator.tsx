@@ -36,7 +36,7 @@ const FAQ_ITEMS = [
   { q: 'How long does approval take?', a: 'Most applications receive a decision within 1–2 business days. Some are approved same-day.' },
   { q: "What's the minimum amount for financing?", a: 'Financing is available on purchases of $5,000 or more. For smaller purchases, we recommend our cash rebate options when available.' },
   { q: 'Can I pay off my loan early?', a: 'Absolutely. There are no prepayment penalties, pay off your balance anytime without extra fees.' },
-  { q: "What's included in the financed amount?", a: 'The financed total includes the motor price, 13% HST, and a $299 finance administration fee. Your down payment and any trade-in value are subtracted before calculating payments.' },
+  { q: "What's included in the financed amount?", a: 'The financed total includes the motor price, 13% HST, and a $349 finance administration fee. Your down payment and any trade-in value are subtracted before calculating payments.' },
 ];
 
 // ── Types ────────────────────────────────────────────────────
@@ -334,7 +334,7 @@ export default function FinanceCalculator() {
                       </div>
                       <div>
                         <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-repower-navy-900/55 mb-1">Finance Fee</div>
-                        <div className="text-repower-navy-900">$299</div>
+                        <div className="text-repower-navy-900">$349</div>
                       </div>
                       <div>
                         <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-repower-navy-900/55 mb-1">Total</div>
@@ -416,7 +416,7 @@ export default function FinanceCalculator() {
                     </div>
                   )}
 
-                  <p className="font-sans text-[12px] text-repower-navy-900/55">* Includes 13% HST and $299 finance fee</p>
+                  <p className="font-sans text-[12px] text-repower-navy-900/55">* Includes 13% HST and $349 finance fee</p>
                 </div>
               </div>
 
@@ -440,7 +440,7 @@ export default function FinanceCalculator() {
                   <div className="space-y-2.5 font-sans text-[13px] mb-6">
                     <div className="flex justify-between text-repower-navy-900/65"><span>Motor</span><span>${breakdown.motorPrice.toLocaleString()}</span></div>
                     <div className="flex justify-between text-repower-navy-900/65"><span>HST (13%)</span><span>${breakdown.hst.toLocaleString()}</span></div>
-                    <div className="flex justify-between text-repower-navy-900/65"><span>Finance Fee</span><span>$299</span></div>
+                    <div className="flex justify-between text-repower-navy-900/65"><span>Finance Fee</span><span>$349</span></div>
                     <div className="flex justify-between text-repower-navy-900 font-semibold pt-2 border-t border-repower-navy-900/10"><span>Total Financed</span><span>${totalFinanced.toLocaleString()}</span></div>
                     {down > 0 && (
                       <div className="flex justify-between text-repower-navy-900/65"><span>Less: Down Payment</span><span>-${down.toLocaleString()}</span></div>

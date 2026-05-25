@@ -319,7 +319,7 @@ export function PurchaseDetailsStep() {
         </div>
         <FormErrorMessage error={errors.motorPrice?.message} field="Total purchase price" />
         <p className="text-sm text-muted-foreground font-light">
-          {money(motorPrice)} (includes HST and $299 processing fee)
+          {money(motorPrice)} (includes HST and $349 processing fee)
         </p>
       </div>
 
@@ -398,7 +398,7 @@ export function PurchaseDetailsStep() {
           </span>
         </div>
         <p className="text-xs text-muted-foreground font-light">
-          Includes 13% HST and $299 Dealerplan processing fee
+          Includes 13% HST and $349 Dealerplan processing fee
         </p>
         {hasSpecialFinancing && isEligibleForSpecialFinancing && (
           <p className="text-xs text-green-600 font-medium">

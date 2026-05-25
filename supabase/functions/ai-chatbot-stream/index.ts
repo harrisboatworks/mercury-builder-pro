@@ -1740,7 +1740,7 @@ When someone asks about financing, monthly payments, interest rates, or getting 
 - If the motor or total is under $5,000, politely explain: "Financing is available for purchases $5,000 and up. For smaller motors, we'd recommend the cash rebate option or paying in full."
 - Rates: 7.99% for $10k+, 8.99% under $10k (for eligible purchases $5k+)
 - Terms: 36-60 months standard (up to 120 months for $50k+)
-- $299 Dealerplan fee applies to all financed purchases
+- $349 Dealerplan fee applies to all financed purchases
 
 **IMPORTANT: If you know the motor price (from context), CALCULATE and include the [FINANCING_CTA] block!**
 
@@ -1755,7 +1755,7 @@ Use these rates and terms based on price:
 | $50k+ | 7.99% | 120 months |
 
 Simple monthly calculation: ((price * 1.13 + 299) * (1 + rate/100 * term/12)) / term
-Example: $12,000 motor = ($12,000 * 1.13 + $299) = $13,859 financed at 7.99% for 60 months = ~$280/month
+Example: $12,000 motor = ($12,000 * 1.13 + $349) = $13,859 financed at 7.99% for 60 months = ~$280/month
 
 ### ALWAYS include this block when discussing financing for a specific motor:
 [FINANCING_CTA: {"price": MOTOR_PRICE, "monthly": CALCULATED_PAYMENT, "term": TERM_MONTHS, "rate": RATE, "motorModel": "MODEL_NAME"}]
