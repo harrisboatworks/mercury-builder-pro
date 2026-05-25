@@ -2910,7 +2910,7 @@ Two related guides in the same cluster:
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
         faqs: [
-      { question: 'What size pontoon is best for Rice Lake cottage use?', answer: 'For most cottage families, 20 to 22 ft is the sweet spot. Smaller (18 ft) for a quieter two-adult household. Larger (24 ft-plus) for very large groups or active water sports focus.' },
+      { question: 'What size pontoon is best for Rice Lake cottage use?', answer: 'For most cottage families, 20 to 22 ft is the size most families land on. Smaller (18 ft) for a quieter two-adult household. Larger (24 ft-plus) for very large groups or active water sports focus.' },
       { question: 'Two-tube or tritoon for Rice Lake?', answer: 'Two-tube is the right answer for cruising, fishing, and casual family use. Tritoon earns its cost if active water sports (tubing, skiing, wakeboarding) are a regular part of your summer.' },
       { question: 'What HP does a Rice Lake pontoon need?', answer: 'For an 18 to 20 ft two-tube with casual use: Mercury 90 HP Command Thrust. For a 20 to 22 ft family pontoon with light water sports: 115 to 150 HP CT. For a tritoon with active water sports: 150 to 200 HP CT.' },
       { question: 'Should I buy a Legend Boats pontoon at HBW?', answer: 'We are a Legend dealer, so yes, we sell them and stand behind them. Legend is a Canadian brand, factory Mercury-rigged, and well-suited to Ontario cottage lakes.' },
