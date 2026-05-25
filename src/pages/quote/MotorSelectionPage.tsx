@@ -686,6 +686,7 @@ if (event.type === 'filter_motors') {
       const heroImage = dbMotor.hero_image_url || dbMotor.image_url || firstDbImage || '';
       // Use database images only, Mercury CDN URLs are unreliable (404 frequently)
       const galleryImages = dbImages;
+      const motorFamily = getMotorFamilyDisplay(classifyMotorFamily(dbMotor.horsepower, dbMotor.model_display || dbMotor.model, dbMotor.features));
 
       // Convert to Motor type (same as original)
       const convertedMotor: Motor = {
@@ -709,7 +710,7 @@ if (event.type === 'filter_motors') {
         category: dbMotor.horsepower <= 20 ? 'portable' :
                  dbMotor.horsepower <= 60 ? 'mid-range' : 
                  dbMotor.horsepower <= 150 ? 'high-performance' : 'v8-racing',
-        type: getMotorFamilyDisplay(classifyMotorFamily(dbMotor.horsepower, dbMotor.model_display || dbMotor.model, dbMotor.features)),
+        type: motorFamily,
         specs: `${dbMotor.horsepower}HP ${dbMotor.motor_type || 'FourStroke'}`,
         basePrice: basePrice,
         salePrice: salePrice,
@@ -736,6 +737,7 @@ if (event.type === 'filter_motors') {
         features: dbMotor.features,
         shaft: dbMotor.shaft,
         images: galleryImages,
+        family: motorFamily,
         model_key: dbMotor.model_key || null
       };
       
