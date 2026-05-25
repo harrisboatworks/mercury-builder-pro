@@ -93,7 +93,9 @@ export function MercuryProXSSEO() {
             "@type": "Offer",
             "priceCurrency": "CAD",
             "price": v.startingAt,
-            "availability": "https://schema.org/InStock",
+            "availability": "https://schema.org/InStoreOnly",
+            "itemCondition": "https://schema.org/NewCondition",
+            "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
             "seller": { "@id": `${SITE_URL}/#organization` },
             "url": `${SITE_URL}/quote/motor-selection`
           }

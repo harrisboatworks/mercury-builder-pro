@@ -13,7 +13,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "priceCurrency": "CAD",
     "price": "1271",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/InStoreOnly",
+    "itemCondition": "https://schema.org/NewCondition",
+    "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/quote/motor-selection",
     "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
     "itemOffered": {
@@ -28,7 +30,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "priceCurrency": "CAD",
         "price": "1271",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/InStoreOnly",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/quote/motor-selection",
         "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
       }
@@ -39,7 +43,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "priceCurrency": "CAD",
     "price": "5995",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/InStoreOnly",
+    "itemCondition": "https://schema.org/NewCondition",
+    "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/quote/motor-selection",
     "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
     "itemOffered": {
@@ -54,7 +60,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "priceCurrency": "CAD",
         "price": "5995",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/InStoreOnly",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/quote/motor-selection",
         "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
       }
@@ -65,7 +73,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "priceCurrency": "CAD",
     "price": "17320",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/InStoreOnly",
+    "itemCondition": "https://schema.org/NewCondition",
+    "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/mercury-pro-xs",
     "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
     "itemOffered": {
@@ -80,7 +90,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "priceCurrency": "CAD",
         "price": "17320",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/InStoreOnly",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/mercury-pro-xs",
         "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
       }
@@ -91,7 +103,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "priceCurrency": "CAD",
     "price": "9900",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/InStoreOnly",
+    "itemCondition": "https://schema.org/NewCondition",
+    "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/quote/motor-selection",
     "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
     "itemOffered": {
@@ -106,7 +120,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "priceCurrency": "CAD",
         "price": "9900",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/InStoreOnly",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/quote/motor-selection",
         "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
       }
@@ -117,7 +133,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "priceCurrency": "CAD",
     "price": "4901",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/InStoreOnly",
+    "itemCondition": "https://schema.org/NewCondition",
+    "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/quote/motor-selection",
     "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
     "itemOffered": {
@@ -132,7 +150,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "priceCurrency": "CAD",
         "price": "4901",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/InStoreOnly",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/quote/motor-selection",
         "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
       }
@@ -143,7 +163,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "priceCurrency": "CAD",
     "price": "27044",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/InStoreOnly",
+    "itemCondition": "https://schema.org/NewCondition",
+    "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/quote/motor-selection",
     "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
     "itemOffered": {
@@ -158,7 +180,9 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "priceCurrency": "CAD",
         "price": "27044",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/InStoreOnly",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/quote/motor-selection",
         "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
       }

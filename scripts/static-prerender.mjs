@@ -1203,7 +1203,9 @@ function motorSelectionPageSchema() {
                 "lowPrice": 1500,
                 "highPrice": 45000,
                 "priceCurrency": "CAD",
-                "availability": "https://schema.org/InStock",
+                "availability": "https://schema.org/InStoreOnly",
+                "itemCondition": "https://schema.org/NewCondition",
+                "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
                 "seller": { "@id": "https://www.mercuryrepower.ca/#organization" }
               }
             }
@@ -1222,7 +1224,9 @@ function motorSelectionPageSchema() {
                 "lowPrice": 8000,
                 "highPrice": 35000,
                 "priceCurrency": "CAD",
-                "availability": "https://schema.org/InStock",
+                "availability": "https://schema.org/InStoreOnly",
+                "itemCondition": "https://schema.org/NewCondition",
+                "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
                 "seller": { "@id": "https://www.mercuryrepower.ca/#organization" }
               }
             }
@@ -1241,7 +1245,9 @@ function motorSelectionPageSchema() {
                 "lowPrice": 3500,
                 "highPrice": 30000,
                 "priceCurrency": "CAD",
-                "availability": "https://schema.org/InStock",
+                "availability": "https://schema.org/InStoreOnly",
+                "itemCondition": "https://schema.org/NewCondition",
+                "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
                 "seller": { "@id": "https://www.mercuryrepower.ca/#organization" }
               }
             }
@@ -1260,7 +1266,9 @@ function motorSelectionPageSchema() {
                 "lowPrice": 4500,
                 "highPrice": 6500,
                 "priceCurrency": "CAD",
-                "availability": "https://schema.org/InStock",
+                "availability": "https://schema.org/InStoreOnly",
+                "itemCondition": "https://schema.org/NewCondition",
+                "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
                 "seller": { "@id": "https://www.mercuryrepower.ca/#organization" }
               }
             }
@@ -1348,7 +1356,9 @@ function quoteSummaryPageSchema() {
         "offers": {
           "@type": "Offer",
           "priceCurrency": "CAD",
-          "availability": "https://schema.org/InStock",
+          "availability": "https://schema.org/InStoreOnly",
+          "itemCondition": "https://schema.org/NewCondition",
+          "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
           "seller": { "@id": "https://www.mercuryrepower.ca/#organization" }
         }
       }
@@ -1856,7 +1866,9 @@ function mercuryProXS250Schemas() {
       sku: v.sku,
       price: String(v.hbwPrice),
       priceCurrency: 'CAD',
-      availability: `https://schema.org/${v.availability}`,
+      availability: `https://schema.org/InStoreOnly`,
+      itemCondition: "https://schema.org/NewCondition",
+      hasMerchantReturnPolicy: { "@type": "MerchantReturnPolicy", applicableCountry: "CA", returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted" },
       url: canonical,
       seller: {
         '@type': 'AutoDealer',
@@ -2075,7 +2087,9 @@ function lineupLandingSchemas(cfg) {
       name: v.name,
       price: String(v.hbwPrice),
       priceCurrency: 'CAD',
-      availability: `https://schema.org/${v.availability}`,
+      availability: `https://schema.org/InStoreOnly`,
+      itemCondition: "https://schema.org/NewCondition",
+      hasMerchantReturnPolicy: { "@type": "MerchantReturnPolicy", applicableCountry: "CA", returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted" },
       url: canonical,
       seller: {
         '@type': 'AutoDealer',
@@ -2167,7 +2181,9 @@ function mercuryProXSSchema() {
             "@type": "Offer",
             "priceCurrency": "CAD",
             "price": v.startingAt,
-            "availability": "https://schema.org/InStock",
+            "availability": "https://schema.org/InStoreOnly",
+            "itemCondition": "https://schema.org/NewCondition",
+            "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
             "seller": { "@id": `${SITE_URL}/#organization` },
             "url": `${SITE_URL}/quote/motor-selection`
           }
@@ -2818,7 +2834,7 @@ function motorPageSchema(m, slug) {
       "priceCurrency": "CAD",
       "price": price,
       "priceValidUntil": validUntil,
-      "availability": inStock ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+      "availability": inStock ? "https://schema.org/InStoreOnly" : "https://schema.org/InStoreOnly",
       "itemCondition": "https://schema.org/NewCondition",
       "seller": { "@id": `${SITE_URL}/#organization` },
       "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
