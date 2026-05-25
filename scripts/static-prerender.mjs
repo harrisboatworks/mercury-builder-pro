@@ -865,8 +865,8 @@ function homepageSchema() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1147,
-          "longitude": -78.2564
+          "latitude": 44.1456,
+          "longitude": -78.2542
         },
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Rice Lake" },
@@ -1026,8 +1026,8 @@ function contactPageSchema() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1147,
-          "longitude": -78.2564
+          "latitude": 44.1456,
+          "longitude": -78.2542
         },
         "contactPoint": [
           {
@@ -1092,7 +1092,7 @@ function repowerSchema() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "geo": { "@type": "GeoCoordinates", "latitude": 44.1147, "longitude": -78.2564 },
+        "geo": { "@type": "GeoCoordinates", "latitude": 44.1456, "longitude": -78.2542 },
         "foundingDate": "1947",
         "priceRange": "$$",
         "sameAs": BUSINESS_SAME_AS
@@ -2244,7 +2244,7 @@ function mercuryOutboardsOntarioSchema() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "geo": { "@type": "GeoCoordinates", "latitude": 44.1147, "longitude": -78.2564 },
+        "geo": { "@type": "GeoCoordinates", "latitude": 44.1456, "longitude": -78.2542 },
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
           { "@type": "Place", "name": "Greater Toronto Area" },
@@ -3661,7 +3661,21 @@ const routes = [
     description: 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.',
     h1: 'Mercury Outboard Prices in Ontario (CAD, 2026)',
     intro: 'Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury\'s MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total, build a quote in the configurator. Pickup only at Gores Landing, Ontario.',
-    schemas: [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Ontario (CAD, 2026)', 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.')],
+    // Prefer the build-time-generated Product+Offer @graph from
+    // public/pricing-reference.schema.json (emitted by generate-markdown-twins.mjs).
+    // Falls back to a plain WebPage schema if the file is missing — e.g. an
+    // unusually scoped local rebuild where the twin step was skipped.
+    schemas: (() => {
+      try {
+        const schemaPath = join(__dirname, '..', 'public', 'pricing-reference.schema.json');
+        if (existsSync(schemaPath)) {
+          return [JSON.parse(readFileSync(schemaPath, 'utf8'))];
+        }
+      } catch (err) {
+        console.warn('[static-prerender] pricing-reference.schema.json read failed:', err?.message);
+      }
+      return [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Ontario (CAD, 2026)', 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.')];
+    })(),
     extraHead:
       '<link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />',
     extraNoscript: () => {

@@ -19,6 +19,7 @@ marked.setOptions({ gfm: true, breaks: false });
 export default function PricingReference() {
   const [html, setHtml] = useState<string>("");
   const [loading, setLoading] = useState(true);
+  const [schemaJson, setSchemaJson] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -34,6 +35,14 @@ export default function PricingReference() {
         if (!cancelled) setHtml("");
       })
       .finally(() => !cancelled && setLoading(false));
+    // Load Product+Offer JSON-LD generated at build time so SPA navigations
+    // (e.g. from /quote/motor-selection) also expose machine-readable pricing.
+    fetch("/pricing-reference.schema.json", { headers: { Accept: "application/json" } })
+      .then((r) => (r.ok ? r.text() : Promise.reject(new Error(`HTTP ${r.status}`))))
+      .then((text) => {
+        if (!cancelled) setSchemaJson(text);
+      })
+      .catch(() => {});
     return () => {
       cancelled = true;
     };
@@ -65,6 +74,9 @@ export default function PricingReference() {
           name="twitter:description"
           content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only."
         />
+        {schemaJson && (
+          <script type="application/ld+json">{schemaJson}</script>
+        )}
       </Helmet>
       <main className="container mx-auto max-w-5xl px-4 py-8">
         <h1 className="text-3xl font-bold mb-4">Mercury Outboard Prices in Ontario (CAD, 2026)</h1>

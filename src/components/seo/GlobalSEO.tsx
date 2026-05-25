@@ -65,8 +65,8 @@ export function GlobalSEO() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1147,
-          "longitude": -78.2564
+          "latitude": 44.1456,
+          "longitude": -78.2542
         },
         "areaServed": [
           {

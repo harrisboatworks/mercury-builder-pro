@@ -574,6 +574,8 @@ function AnimatedRoutes() {
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
         <Route path="/pricing-reference" element={<PricingReference />} />
+        {/* Short-link used in blog/case-study copy; redirect to canonical pricing reference. */}
+        <Route path="/n" element={<Navigate to="/pricing-reference" replace />} />
         <Route path="/blog/fr" element={<BlogIndexFr />} />
         <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
@@ -673,6 +675,12 @@ const App = () => {
                         <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 w-auto opacity-85 transition-opacity hover:opacity-100 md:h-16" />
                       </div>
                       <GoogleRatingBadge variant="compact" tone="dark" />
+                      <a
+                        href="/pricing-reference"
+                        className="text-sm text-repower-cream/80 underline-offset-4 hover:text-repower-cream hover:underline"
+                      >
+                        Mercury Outboard Prices (CAD)
+                      </a>
                     </div>
                   </footer>
                 </div>

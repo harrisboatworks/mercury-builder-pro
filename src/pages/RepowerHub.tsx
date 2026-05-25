@@ -30,7 +30,14 @@ export default function RepowerHub() {
           >
             /quote/motor-selection
           </Link>
-          .
+          , or see the{' '}
+          <Link
+            to="/pricing-reference"
+            className="font-semibold text-repower-gold underline-offset-4 hover:underline"
+          >
+            full Mercury price list
+          </Link>
+          {' '}for every model in CAD.
         </>
       }
       table={{

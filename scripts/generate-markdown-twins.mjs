@@ -720,6 +720,8 @@ function pricingReferenceMarkdown(motorRecords) {
     '',
     'Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury\'s MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total, build a quote in the configurator. Pickup only at Gores Landing, Ontario.',
     '',
+    '**Published by [Harris Boat Works](/)** — Mercury Marine Platinum Dealer on Rice Lake, Ontario, Canada. Family-owned since 1947, Mercury dealer since 1965. All prices below are HBW\'s actual dealer selling price in CAD, not generic MSRP estimates. Verified weekly. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.',
+    '',
     `_Last updated ${TWIN_DATE}._`,
     '',
     '## How to use this page',
@@ -752,6 +754,114 @@ function pricingReferenceMarkdown(motorRecords) {
     `- Public quote API: \`POST ${PUBLIC_QUOTE_API}\` with \`{ "action": "build_quote", "motor_id": "<id>" }\`.`,
     '',
   ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+}
+
+// Build schema.org @graph with WebPage + ItemList + per-motor Product/Offer.
+// Crawlers (Google, Perplexity, ChatGPT, Gemini) preferentially cite pages
+// with structured Product+Offer for price-intent queries. Linked back to the
+// sitewide HBW Organization entity (#organization) so prices are attributed
+// to Harris Boat Works as the seller.
+function pricingReferenceSchema(motorRecords) {
+  const rows = motorRecords
+    .filter(m => {
+      const s = (m.model_display || m.model || '').toLowerCase();
+      return !s.includes('verado');
+    })
+    .map(m => {
+      const familyRaw = detectMotorFamily(m);
+      const family = /pro\s*xs/i.test(familyRaw) ? 'Pro XS'
+        : /sea\s*pro/i.test(familyRaw) ? 'SeaPro'
+        : /racing/i.test(familyRaw) ? 'Racing'
+        : 'FourStroke';
+      const price = resolveMotorSellingPrice(m);
+      return {
+        id: m.id,
+        slug: motorSlug(m.model_key || m.id),
+        family,
+        hp: Number(m.horsepower) || 0,
+        display: m.model_display || m.model || `Mercury ${m.horsepower}HP`,
+        modelNo: m.model_number || m.mercury_model_no || '',
+        shaft: m.shaft_code || m.shaft || '',
+        control: m.control_type || '',
+        price,
+        msrp: m.msrp || null,
+        inStock: m.in_stock === true || m.availability === 'In Stock',
+      };
+    })
+    .filter(r => r.price && r.price > 0)
+    .sort((a, b) => a.hp - b.hp || a.display.localeCompare(b.display));
+
+  const itemListElement = rows.map((r, i) => {
+    const additionalProperty = [
+      { '@type': 'PropertyValue', name: 'Horsepower', value: String(r.hp), unitCode: 'BHP' },
+      { '@type': 'PropertyValue', name: 'Family', value: r.family },
+    ];
+    if (r.shaft) additionalProperty.push({ '@type': 'PropertyValue', name: 'Shaft', value: r.shaft });
+    if (r.control) additionalProperty.push({ '@type': 'PropertyValue', name: 'Control', value: r.control });
+    if (r.modelNo) additionalProperty.push({ '@type': 'PropertyValue', name: 'ModelNumber', value: r.modelNo });
+    const offer = {
+      '@type': 'Offer',
+      price: String(Math.round(r.price)),
+      priceCurrency: 'CAD',
+      availability: r.inStock ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder',
+      itemCondition: 'https://schema.org/NewCondition',
+      areaServed: { '@type': 'Country', name: 'Canada' },
+      seller: { '@id': 'https://www.mercuryrepower.ca/#organization' },
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+        applicableCountry: 'CA',
+      },
+    };
+    if (r.msrp && r.msrp > r.price) {
+      offer.priceSpecification = {
+        '@type': 'PriceSpecification',
+        price: String(Math.round(r.msrp)),
+        priceCurrency: 'CAD',
+        description: 'MSRP',
+      };
+    }
+    return {
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Product',
+        '@id': `https://www.mercuryrepower.ca/pricing-reference#${r.slug}`,
+        name: `Mercury ${r.display}`,
+        brand: { '@type': 'Brand', name: 'Mercury Marine' },
+        category: 'Outboard Motor',
+        model: r.display,
+        additionalProperty,
+        offers: offer,
+      },
+    };
+  });
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': 'https://www.mercuryrepower.ca/pricing-reference#webpage',
+        url: 'https://www.mercuryrepower.ca/pricing-reference',
+        name: 'Mercury Outboard Prices in Ontario (CAD, 2026)',
+        description: 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.',
+        isPartOf: { '@id': 'https://www.mercuryrepower.ca/#website' },
+        about: { '@id': 'https://www.mercuryrepower.ca/#organization' },
+        inLanguage: 'en-CA',
+        lastReviewed: TWIN_DATE,
+        mainEntity: { '@id': 'https://www.mercuryrepower.ca/pricing-reference#pricelist' },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': 'https://www.mercuryrepower.ca/pricing-reference#pricelist',
+        name: 'Mercury Outboard Motor Price List — Canada (CAD, 2026)',
+        itemListOrder: 'https://schema.org/ItemListOrderAscending',
+        numberOfItems: itemListElement.length,
+        itemListElement,
+      },
+    ],
+  };
 }
 
 function cleanMarkdownDir(relDir) {
@@ -830,8 +940,16 @@ console.log(`[markdown-twins] wrote ${blogTwinSummaries.length} blog twins`);
 writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, blogTwinSummaries));
 writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMotorRecords));
 
+// Emit machine-readable Product+Offer schema for AI-search citation parity.
+{
+  const schema = pricingReferenceSchema(quoteBuilderMotorRecords);
+  const schemaPath = join(PUBLIC, 'pricing-reference.schema.json');
+  writeFileSync(schemaPath, JSON.stringify(schema, null, 2));
+  console.log(`[markdown-twins] wrote pricing-reference.schema.json with ${schema['@graph'][1].numberOfItems} Product entries`);
+}
+
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md', "Ontario's Mercury Repower Centre"]);
-verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection']);
+verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection', 'Published by [Harris Boat Works]']);
 
 // Verify pricing-reference motor count matches the quote-builder selection
 // (NOT public-motors-api). Compare the count in frontmatter against the
