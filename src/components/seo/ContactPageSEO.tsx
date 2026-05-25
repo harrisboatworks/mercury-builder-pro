@@ -33,7 +33,6 @@ export function ContactPageSEO() {
         "name": "Harris Boat Works",
         "image": "https://www.harrisboatworks.ca/logo.png",
         "url": "https://www.harrisboatworks.ca/",
-        "priceRange": "$$",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "address": {
