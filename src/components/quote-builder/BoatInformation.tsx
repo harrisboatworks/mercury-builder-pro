@@ -840,7 +840,7 @@ export const BoatInformation = ({
                         </Select>
                       </div>}
 
-                    {!isSelectedTillerMotor && selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && <div className="controls-section rounded-lg border border-border bg-muted p-4">
+                    {!isSelectedTillerMotor && selectedMotor && <div className="controls-section rounded-lg border border-border bg-muted p-4">
                         <h4 className="font-light tracking-wide text-repower-navy-900  mb-3">Steering Controls Required</h4>
                         {isNonMercuryBrand && <Alert className="mb-3 border-repower-navy-900/200 bg-repower-cream ">
                             <div className="flex items-center gap-2">
