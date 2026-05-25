@@ -940,6 +940,14 @@ console.log(`[markdown-twins] wrote ${blogTwinSummaries.length} blog twins`);
 writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, blogTwinSummaries));
 writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMotorRecords));
 
+// Emit machine-readable Product+Offer schema for AI-search citation parity.
+{
+  const schema = pricingReferenceSchema(quoteBuilderMotorRecords);
+  const schemaPath = join(PUBLIC, 'pricing-reference.schema.json');
+  writeFileSync(schemaPath, JSON.stringify(schema, null, 2));
+  console.log(`[markdown-twins] wrote pricing-reference.schema.json with ${schema['@graph'][1].numberOfItems} Product entries`);
+}
+
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md', "Ontario's Mercury Repower Centre"]);
 verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection']);
 
