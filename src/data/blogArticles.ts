@@ -945,7 +945,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Why HBW recommends against Verado for most Ontario buyers
 
-Verado is a legitimate engineering achievement. Supercharged, smooth, quiet at cruise, and capable of impressive top-end performance on the right boat. But it was engineered for a use case that almost no Ontario freshwater boater actually has: serious offshore saltwater applications running large center consoles or twin-engine cruisers in open ocean.
+Verado is a legitimate engineering achievement. Smooth, quiet at cruise, and capable of impressive top-end performance on the right boat. But it was engineered for a use case that almost no Ontario freshwater boater actually has: serious offshore saltwater applications running large center consoles or twin-engine cruisers in open ocean.
 
 For Ontario freshwater, Rice Lake, the Kawarthas, Lake Simcoe, the Trent system, cottage country lakes, the Verado premium doesn't earn its money. The boats are wrong for it, the speeds don't require it, and the additional service complexity vs FourStroke or Pro XS adds cost without adding capability for the typical recreational use case.
 
