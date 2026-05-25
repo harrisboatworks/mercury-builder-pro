@@ -181,6 +181,51 @@ export default function MotorPage() {
         data = ((candidates || []) as MotorRow[]).find((candidate) => publicMotorSlug(candidate) === slug) || null;
       }
 
+      // Final fallback: public-motors-api edge function (works for anonymous
+      // users when RLS blocks direct SELECT on motor_models).
+      if (!data) {
+        try {
+          const res = await fetch(
+            'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api'
+          );
+          if (res.ok) {
+            const json = await res.json();
+            const match = (json?.motors || []).find((m: any) => m.slug === slug);
+            if (match) {
+              data = {
+                id: match.id,
+                model_key: null,
+                model_display: match.modelDisplay,
+                model: match.modelDisplay,
+                model_number: match.modelNumber,
+                mercury_model_no: match.modelNumber,
+                family: match.family,
+                motor_type: match.motorType,
+                horsepower: match.horsepower,
+                shaft: match.shaftLength,
+                shaft_code: match.shaftLength,
+                start_type: null,
+                control_type: match.controlType,
+                msrp: match.msrp,
+                sale_price: match.salePrice,
+                dealer_price: match.dealerPrice,
+                base_price: null,
+                manual_overrides: null,
+                availability: match.availability,
+                in_stock: match.inStock,
+                hero_media_id: null,
+                hero_image_url: match.imageUrl,
+                image_url: match.imageUrl,
+              } as MotorRow;
+            }
+          }
+        } catch (err) {
+          console.error('[MotorPage] public-motors-api fallback failed:', err);
+        }
+      }
+
+
+
       if (cancelled) return;
       if (!data) {
         setNotFound(true);
