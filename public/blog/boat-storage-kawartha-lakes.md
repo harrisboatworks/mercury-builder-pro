@@ -79,7 +79,7 @@ We bundle storage into straightforward tiers based on what your boat needs and h
 - Pre-launch safety check
 - Ready-to-launch handoff
 
-Most customers choose the middle or full package because it eliminates phone tag between fall and spring. You drop the boat off in October, pick it up in April, and it's ready to run. Harris Boat Works is closed December 1 to April 1 with no service performed during winter months, so all storage drop-offs and pickups happen on either side of that window. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service. For a detailed breakdown of what's included at each step, see our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
+Most customers choose the middle or full package because it eliminates phone tag between fall and spring. You drop the boat off in October, pick it up in April, and it's ready to run. The marina is closed during winter months, but we are available by phone, text, or email anytime, so all storage drop-offs and pickups happen on either side of that window. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service. For a detailed breakdown of what's included at each step, see our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
 
 ---
 
@@ -200,7 +200,7 @@ Mercury Marine Platinum Dealer. Established 1947.
 
 Storage season kicks off the second weekend of October. By mid-November, the outdoor lot is packed. Most of our storage customers are GTA-based (Toronto, Markham, Mississauga) and chose Rice Lake specifically because of the storage pricing and the proximity to highway 401.
 
-The pattern we see year over year: customers underbook in October, then panic-call in early November when winter hits. Our advice: book in September, drop off in mid-October. Cheaper that way, and you do not get stuck calling around at the last minute. Harris Boat Works is drop-off only and the marina is closed Dec 1 to April 1.
+The pattern we see year over year: customers underbook in October, then panic-call in early November when winter hits. Our advice: book in September, drop off in mid-October. Cheaper that way, and you do not get stuck calling around at the last minute. Harris Boat Works is drop-off only. The marina is closed during winter months, but we are available by phone, text, or email anytime.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---

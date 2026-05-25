@@ -181,7 +181,7 @@ Mistakes we see GTA boaters make:
 
 ## When to Start Planning Your Repower (Timing)
 
-The Ontario boating season is short, and so is our install window. The shop runs early April through November. The marina is closed December 1 to April 1, and no install work happens over the winter. That makes booking timing matter:
+The Ontario boating season is short, and so is our install window. The shop runs early April through November. The marina is closed during winter months, but we are available by phone, text, or email anytime. No install work happens over the winter. That makes booking timing matter:
 
 - **Winter (December-March)**: planning season. The shop is closed, but this is the time to run the configurator, lock your spec, and book a slot. Boats booked over the winter get first pick of the early-April calendar.
 - **Early spring (April)**: install season opens. The first slots fill fast, often by late April.
