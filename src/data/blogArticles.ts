@@ -24078,6 +24078,7 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ## How the 115 Compares to the 90 and the 150
 
+![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L inline-4 block](/lovable-uploads/inline/75-90-115-hp.svg)
 
 | | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
 |---|---|---|---|
