@@ -2064,7 +2064,7 @@ To request service: [hbw.wiki/service](https://hbw.wiki/service)
 - **Saltwater servicing.** We are a freshwater shop.
 - **Personal watercraft.** Mercury makes outboards. We do not sell or service PWCs.
 - **Jet boats or jet drives.** Outboard-specific shop.
-- **Most non-Mercury brands for engine repair.** We can help with some non-Mercury service but our parts and tooling are Mercury-specific.
+- **Non-Mercury engine repair.** Our engine repair service is Mercury and Mercruiser only. We do not repair Yamaha, Honda, Suzuki, Evinrude, Johnson, Tohatsu, or other non-Mercury engines. We will still take other brands as trade-ins and we sell boats with mixed-brand history; engine repair work is what is Mercury/Mercruiser only.
 - **Sailboat outfitting beyond the motor.**
 
 If the work falls outside our core, we will tell you that and point you toward a shop that is better set up for it.
@@ -2085,7 +2085,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'What does Mercury Platinum dealer status mean?', answer: 'Platinum is the highest tier in Mercury dealer rating system. It is based on volume, service quality, technician certification, customer satisfaction, and operational standards. It gives us priority parts access, higher-level technical support, and faster warranty processing.' },
       { question: 'Why does HBW only sell Mercury?', answer: 'Depth over breadth. Three generations of parts inventory, tooling, and technician training are Mercury-specific. Our customer base is overwhelmingly Mercury-rigged.' },
       { question: 'Where is HBW located?', answer: 'Gores Landing, Ontario, on the south shore of Rice Lake. Roughly 90 minutes east of Toronto, 30 minutes north of Cobourg. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.' },
-      { question: 'Can I bring a non-Mercury motor to HBW for service?', answer: 'Some non-Mercury service we can handle, but our parts and tooling are Mercury-focused. Non-Mercury work takes longer and may cost more. Call us at 905-342-2153 to discuss.' },
+      { question: 'Can I bring a non-Mercury motor to HBW for service?', answer: 'No. Our engine repair service is Mercury and Mercruiser only. We do not repair Yamaha, Honda, Suzuki, Evinrude, Johnson, Tohatsu, or other non-Mercury engines. We will still take other brands in on trade and we sell boats with mixed-brand history, but engine repair work is Mercury/Mercruiser only.' },
       { question: 'What if I bought my boat or motor somewhere else?', answer: 'We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and found us for service. Mercury warranty applies regardless of the original dealer.' },
       { question: 'Does HBW offer storage?', answer: 'Yes, outdoor winter storage with shrinkwrap. We do not offer indoor heated storage. Pricing varies by boat size. Contact us at hbw.wiki/service for specifics.' },
       { question: 'Who runs HBW now?', answer: 'Jay Harris, third-generation owner. The Harris family has operated continuously since 1947.' },
@@ -2769,7 +2769,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['rice lake pontoon', 'best pontoon rice lake', 'legend pontoon ontario', 'cottage pontoon boat', 'kawartha pontoon'],
-    content: `# Best Pontoon Boats for Rice Lake Cottage Use: A Practical Guide
+    content: `# Best Pontoon Boats for Rice Lake Cottage Use
 
 ## Quick answer
 For most Rice Lake cottage families, the right pontoon is 20 to 22 ft, two-tube, with a Mercury Command Thrust FourStroke in the 90 to 150 HP range. Tritoons are worth the premium only if active water sports are a regular part of your use. We sell Legend Boats pontoons and handle Mercury repowers on existing pontoons. Get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us at 905-342-2153.
@@ -2801,7 +2801,7 @@ whenInDoubt: Honest answer, 70% of our Rice Lake customers should be in a pontoo
 
 ## Why pontoons dominate Rice Lake cottages
 
-Pontoons are the most common cottage boat on Rice Lake, and it is not hard to see why. They are comfortable for passengers of all ages, versatile across cruising, fishing, and swimming, easy to board from a dock or swim platform, and well-matched to Rice Lake's character, generally sheltered, with enough room to cruise but not so rough that you need a performance hull.
+Pontoons are the most common cottage boat on Rice Lake, and the reasons are straightforward. They are comfortable for passengers of all ages, versatile across cruising, fishing, and swimming, easy to board from a dock or swim platform, and well-matched to Rice Lake's character, generally sheltered, with enough room to cruise but not so rough that you need a performance hull.
 
 The question is not usually "should I get a pontoon?" Most cottage families have already decided that. The question is which pontoon, what motor, and whether you are buying new or repowering what you have.
 
@@ -2910,7 +2910,7 @@ Two related guides in the same cluster:
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
         faqs: [
-      { question: 'What size pontoon is best for Rice Lake cottage use?', answer: 'For most cottage families, 20 to 22 ft is the sweet spot. Smaller (18 ft) for a quieter two-adult household. Larger (24 ft-plus) for very large groups or active water sports focus.' },
+      { question: 'What size pontoon is best for Rice Lake cottage use?', answer: 'For most cottage families, 20 to 22 ft is the size most families land on. Smaller (18 ft) for a quieter two-adult household. Larger (24 ft-plus) for very large groups or active water sports focus.' },
       { question: 'Two-tube or tritoon for Rice Lake?', answer: 'Two-tube is the right answer for cruising, fishing, and casual family use. Tritoon earns its cost if active water sports (tubing, skiing, wakeboarding) are a regular part of your summer.' },
       { question: 'What HP does a Rice Lake pontoon need?', answer: 'For an 18 to 20 ft two-tube with casual use: Mercury 90 HP Command Thrust. For a 20 to 22 ft family pontoon with light water sports: 115 to 150 HP CT. For a tritoon with active water sports: 150 to 200 HP CT.' },
       { question: 'Should I buy a Legend Boats pontoon at HBW?', answer: 'We are a Legend dealer, so yes, we sell them and stand behind them. Legend is a Canadian brand, factory Mercury-rigged, and well-suited to Ontario cottage lakes.' },
@@ -6696,7 +6696,7 @@ Chasing muskies demands a capable boat and the right motor. Here's what Kawartha
 Musky spots are scattered. Adequate power means:
 - Cover more water
 - Reach distant spots efficiently
-- Navigate river systems
+- Work through river systems
 
 **Rough Conditions**:
 Fall musky = rough water:
@@ -8547,7 +8547,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-pricing-promotions-2026',
     title: '2026 Mercury Buying: Pricing, Promotions and Smart Timing',
-    description: 'Navigate 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options.',
+    description: 'Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options.',
     image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-08',
@@ -8561,9 +8561,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 > **Quick answer:** Mercury controls promotions; dealers can't invent discount. Real 2026 deals are Mercury rebates, bonus warranty extensions, and seasonal pricing windows, all baked into our configurator at mercuryrepower.ca. Bonus warranties revert to the 3-year standard once the promo ends, so timing matters.
 
-## Navigating Mercury Pricing in 2026
+## How Mercury Pricing Works in 2026
 
-Understanding how Mercury pricing works helps you make smarter buying decisions. Here is the complete guide to pricing, promotions, and timing.
+Understanding how Mercury pricing works helps you make smarter buying decisions. Here is the full guide to pricing, promotions, and timing.
 
 ### Understanding Mercury Pricing Structure
 
@@ -8663,8 +8663,8 @@ caveat: HST extra. Live pricing and current promos at mercuryrepower.ca.
 **What You Might Get**:
 - Better pricing flexibility
 - Priority spring installation
-- Time to research thoroughly
-- Potential for extras included
+- Time to do your homework
+- Extras sometimes included
 
 **The Trade-Off**:
 - Cannot water test immediately
@@ -9899,7 +9899,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
 
 ### Full Article
 
-Mercury announced Boost as part of its 2026 technology rollout and described it as the foundation for a broader portfolio of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
+Mercury announced Boost as part of its 2026 technology rollout and described it as the starting point for a broader set of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
 
 The result is a 5, 21% improvement in mid-range acceleration and zero-to-top-speed performance. The range is real, the specific gain depends on hull shape, load, prop selection, and the current factory calibration. Even 5% is noticeable on a loaded boat.
 
@@ -10071,7 +10071,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Which FourStroke models are eligible for Mercury Boost?',
-        answer: 'Based on Mercury\'s 2026 rollout information, the factory-installed Boost calibration is confirmed on Pro XS (175-300hp) and Verado models (250, 300, 350hp) built in Q2 2026 and later. The dealer-installed retrofit upgrade for existing outboards is currently confirmed on the 350hp Verado within a specific serial range. Mercury has indicated Boost is the foundation for a broader portfolio of software upgrades, additional eligible models may be announced as the program expands. If you own a FourStroke and want to know if your specific engine qualifies, the fastest answer is to call a certified dealer with your serial number.'
+        answer: 'Based on Mercury\'s 2026 rollout information, the factory-installed Boost calibration is confirmed on Pro XS (175-300hp) and Verado models (250, 300, 350hp) built in Q2 2026 and later. The dealer-installed retrofit upgrade for existing outboards is currently confirmed on the 350hp Verado within a specific serial range. Mercury has indicated Boost is the starting point for a broader set of software upgrades, additional eligible models may be announced as the program expands. If you own a FourStroke and want to know if your specific engine qualifies, the fastest answer is to call a certified dealer with your serial number.'
       },
       {
         question: 'Is Mercury Boost worth it for Rice Lake and Kawartha Lakes boating?',
@@ -10079,7 +10079,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What should I do if my serial number isn\'t eligible for Mercury Boost?',
-        answer: 'If your Mercury engine falls outside the current Boost eligibility criteria, the upgrade simply isn\'t available for your unit at this time, there\'s no workaround or aftermarket equivalent. Mercury has said Boost is part of a broader software upgrade portfolio, and additional models may become eligible as the program expands. In the meantime, the best performance improvements available to ineligible engines are mechanical: a properly spec\'d propeller, a clean lower unit with fresh gear lube, fresh spark plugs, and a correctly calibrated ignition timing through a standard service. These won\'t match the Boost gain, but a poorly maintained engine with a wrong prop can lose more performance than Boost recovers.'
+        answer: 'If your Mercury engine falls outside the current Boost eligibility criteria, the upgrade simply isn\'t available for your unit at this time, there\'s no workaround or aftermarket equivalent. Mercury has said Boost is part of a broader software upgrade lineup, and additional models may become eligible as the program expands. In the meantime, the best performance improvements available to ineligible engines are mechanical: a properly spec\'d propeller, a clean lower unit with fresh gear lube, fresh spark plugs, and a correctly calibrated ignition timing through a standard service. These won\'t match the Boost gain, but a poorly maintained engine with a wrong prop can lose more performance than Boost recovers.'
       },
       {
         question: 'Can Mercury Boost be reversed if I don\'t like the result?',
@@ -12804,7 +12804,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'trailer-boat-toronto-to-rice-lake-guide',
     title: 'How to Trailer a Boat from Toronto to Rice Lake (Complete 2026 Guide)',
     seoTitle: 'Trailering a Boat from Toronto to Rice Lake (2026)',
-    description: 'A complete guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive.',
+    description: 'A guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive.',
     image: '/lovable-uploads/Repowering_Boat_Kawarthas_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-26',
@@ -13326,7 +13326,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Full Article
 
-Every January through April, we hear the same question: should I buy now, or wait? This year it comes with more weight than usual. Tariffs, an uncertain dollar, interest rates that moved fast in both directions, 2026 is a more variable market than anything most Ontario boaters have navigated in the last decade.
+Every January through April, we hear the same question: should I buy now, or wait? This year it comes with more weight than usual. Tariffs, an uncertain dollar, interest rates that moved fast in both directions, 2026 is a more variable market than anything most Ontario boaters have dealt with in the last decade.
 
 Here is an honest read on the market from a third-generation family marina that has been selling and servicing Mercury motors on Rice Lake since 1947. We are not going to tell you it is a great time to buy if we do not believe that.
 
@@ -13846,7 +13846,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Software-defined performance is the direction the marine industry is heading. Mercury has already signaled interest in more granular performance tiers, use-case profiles, and connected services. Buying a current Mercury motor positions you to participate in future upgrade cycles.
 
-In a few years, we'll likely see more specific unlocks, perhaps a tow mode that emphasizes low-end torque for getting skiers up, separate from a cruise mode tuned for fuel efficiency. Boost is the first widely-deployed iteration of that roadmap.
+In a few years, we'll likely see more specific upgrades, perhaps a tow mode that emphasizes low-end torque for getting skiers up, separate from a cruise mode tuned for fuel efficiency. Boost is the first widely-deployed iteration of that roadmap.
 
 If you're buying a Mercury today with a 5, 10-year ownership window in mind, the platform you're buying into matters. That's a better reason to care about Boost than the current performance increment.
 
@@ -16414,7 +16414,7 @@ To find the year:
 
 ---
 
-## What the Serial Number Unlocks
+## What the Serial Number Tells You
 
 Once you have the serial, here's what we (or any Mercury dealer) can pull up:
 
@@ -18027,7 +18027,7 @@ The trip makes sense for: **repowers**, **major motor purchases ($15K+)**, **boa
 
 Customers from the GTA who make the drive often combine it with:
 
-- **A Rice Lake fishing day**, we have a [comprehensive Rice Lake guide](/blog/rice-lake-boating-guide-2026) covering launches, hazards, fish species
+- **A Rice Lake fishing day**, we have a [full Rice Lake guide](/blog/rice-lake-boating-guide-2026) covering launches, hazards, fish species
 - **A [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) day**, we sit on the TSW; June-September lockage is free in 2026 (Canada Strong Pass). [Trent-Severn 2026 guide](/blog/trent-severn-waterway-boating-guide-2026)
 - **Boat rentals**, try a Mercury-powered rental for the day before committing to a purchase ([rental info](https://harrisboatworks.ca/rentals))
 - **Lunch in Bewdley**. Lakeview Restaurant, a 5-minute drive from us, is on the water
@@ -18854,7 +18854,7 @@ Each rental includes:
 - **Pre-departure briefing**. Rice Lake hazards (the sunken railway, weed beds, shoals), how to handle the boat, where to fish or cruise
 - **VHF or cell coverage info**. Rice Lake has reasonable cell service on the south shore
 - **Detailed lake map**, depths, hazards, hot spots, shoreline amenities
-- **Free use of the launch area**, you're embarking from our marina, not the public ramp
+- **Free use of the launch area**, you're launching from our marina, not the public ramp
 - **Free parking on-site** for your vehicle while you're on the water
 - **Restroom + ice / snacks** at the marina before you leave
 
@@ -19013,7 +19013,7 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
-- [Rice Lake Boating Guide](/blog/rice-lake-boating-guide-2026), comprehensive lake info
+- [Rice Lake Boating Guide](/blog/rice-lake-boating-guide-2026), full lake info
 - [Trent-Severn 2026, free lockage](/blog/trent-severn-waterway-boating-guide-2026), explore beyond Rice Lake
 - [Why drive from Toronto to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), if a rental experience makes you consider ownership
 
@@ -23566,7 +23566,7 @@ Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stay
 
 ---
 
-## Battery-Free EFI, The Feature Worth Noting
+## Battery-Free EFI: A Quiet Win on Manual-Start Models
 
 Manual-start outboards typically do not need a battery. The problem with older EFI systems on small outboards is that they sometimes required one. Mercury's manual-start 9.9 EFI does not. Pulling the starter rope charges the electrical system enough to support ignition.
 
