@@ -103,7 +103,7 @@ function swapContent(source, slug, newContent) {
 }
 
 function runCheck(cmd, args) {
-  const r = spawnSync(cmd, args, { encoding: 'utf8' });
+  const r = spawnSync(cmd, args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
   return { ok: r.status === 0, stdout: r.stdout || '', stderr: r.stderr || '', status: r.status };
 }
 
