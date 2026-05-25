@@ -6463,10 +6463,10 @@ item3Label: Bank loan at 9.5% (rates as of May 2026, for qualified buyers, subje
 item3Value: ~$245/month
 item3Note: Unsecured personal loan. Approval and rate depend on credit. Faster than dealer financing.
 item3Accent: true
-item4Label: Mercury Marine financing at 8.99%, $15,000
+item4Label: Mercury Marine financing at 8.99% (rates as of May 2026, for qualified buyers, subject to change), $15,000
 item4Value: ~$240/month
 item4Note: $299 DealerPlan fee added post-tax. Often the best rate for the under $10K range.
-item5Label: Mercury Marine financing at 7.99%, $25,000
+item5Label: Mercury Marine financing at 7.99% (rates as of May 2026, for qualified buyers, subject to change), $25,000
 item5Value: ~$390/month
 item5Note: Lower tier rate kicks in at $10K+. $299 DealerPlan fee still applies.
 totalLabel: Best path for most buyers
