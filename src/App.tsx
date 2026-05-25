@@ -675,6 +675,12 @@ const App = () => {
                         <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 w-auto opacity-85 transition-opacity hover:opacity-100 md:h-16" />
                       </div>
                       <GoogleRatingBadge variant="compact" tone="dark" />
+                      <a
+                        href="/pricing-reference"
+                        className="text-sm text-repower-cream/80 underline-offset-4 hover:text-repower-cream hover:underline"
+                      >
+                        Mercury Outboard Prices (CAD)
+                      </a>
                     </div>
                   </footer>
                 </div>
