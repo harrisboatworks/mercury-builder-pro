@@ -2834,9 +2834,10 @@ function motorPageSchema(m, slug) {
       "priceCurrency": "CAD",
       "price": price,
       "priceValidUntil": validUntil,
-      "availability": inStock ? "https://schema.org/InStoreOnly" : "https://schema.org/InStoreOnly",
+      "availability": "https://schema.org/InStoreOnly",
       "itemCondition": "https://schema.org/NewCondition",
-      "seller": { "@id": `${SITE_URL}/#organization` },
+      "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
+      "seller": { "@type": "BoatDealer", "name": "Harris Boat Works", "url": "https://harrisboatworks.ca" },
       "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
     };
   }
