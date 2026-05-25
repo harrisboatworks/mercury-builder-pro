@@ -8563,7 +8563,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## How Mercury Pricing Works in 2026
 
-Understanding how Mercury pricing works helps you make smarter buying decisions. Here is the complete guide to pricing, promotions, and timing.
+Understanding how Mercury pricing works helps you make smarter buying decisions. Here is the full guide to pricing, promotions, and timing.
 
 ### Understanding Mercury Pricing Structure
 
