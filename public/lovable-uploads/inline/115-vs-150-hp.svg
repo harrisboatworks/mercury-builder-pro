@@ -46,15 +46,15 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <circle cx="96" cy="343" r="2.6" fill="#20384d"/>
 <text class="bul" x="106" y="347">17 to 19 ft hulls rated for 115</text>
 <circle cx="96" cy="365" r="2.6" fill="#20384d"/>
-<text class="bul" x="106" y="369">Casual cruising, fishing, light tubing</text>
+<text class="bul" x="106" y="369">Cruising, fishing, light tubing</text>
 <circle cx="96" cy="387" r="2.6" fill="#20384d"/>
-<text class="bul" x="106" y="391">Lighter transom, better fuel economy</text>
+<text class="bul" x="106" y="391">Lighter transom, better economy</text>
 <circle cx="376" cy="343" r="2.6" fill="#c8102e"/>
 <text class="bul" x="386" y="347">19 to 22 ft hulls rated for 150</text>
 <circle cx="376" cy="365" r="2.6" fill="#c8102e"/>
-<text class="bul" x="386" y="369">Tubing, skiing, wakeboarding regularly</text>
+<text class="bul" x="386" y="369">Tubing, skiing and wakeboarding</text>
 <circle cx="376" cy="387" r="2.6" fill="#c8102e"/>
-<text class="bul" x="386" y="391">Heavy loads, stronger loaded hole shot</text>
+<text class="bul" x="386" y="391">Heavy loads, strong hole shot</text>
 <text class="pun" x="340" y="442" text-anchor="middle">The step from 115 to 150 is bigger than the <tspan fill="#c8102e">numbers</tspan>.</text>
 <text class="subl" x="340" y="463" text-anchor="middle">It comes down to your hull, how you use it, and how you load it.</text>
 <text class="src4" x="72" y="486">Bare motor dealer prices, mercuryrepower.ca, May 2026. Your capacity plate is the ceiling.</text>

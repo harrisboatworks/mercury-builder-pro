@@ -1,6 +1,6 @@
 <svg width="100%" viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Mercury outboard families: FourStroke, Pro XS and Verado compared</title>
-<desc>Positioning comparison of Mercury's three outboard families. FourStroke (2.5 to 300 HP) is Mercury's standard recreational line, best for cruising, family use, fishing and pontoons. Pro XS (115 to 300 HP) is the performance line, best for tournament fishing, bass boats and running hard. Verado (V8, V10 and V12) is the premium offshore line, best for 28-foot-plus centre consoles and twin or triple installs, special order only at HBW. For Ontario freshwater, FourStroke or Pro XS is almost always the right call. Source mercuryrepower.ca, May 2026.</desc>
+<desc>Positioning comparison of Mercury's three outboard families. FourStroke (2.5 to 300 HP) is the standard recreational line. Pro XS (115 to 300 HP) is the performance line. Verado (V8, V10 and V12) is the premium offshore line, special order only at HBW. For Ontario freshwater, FourStroke or Pro XS is almost always the right call. Source mercuryrepower.ca, May 2026.</desc>
 <defs><clipPath id="pc"><rect x="72" y="158" width="169" height="286" rx="12"/><rect x="255" y="158" width="169" height="286" rx="12"/><rect x="438" y="158" width="169" height="286" rx="12"/></clipPath></defs>
 <style>
 text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
@@ -55,21 +55,21 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <circle cx="94" cy="321" r="2.5" fill="#20384d"/>
 <text class="bul" x="104" y="325">Aluminum fishing boats</text>
 <circle cx="94" cy="344" r="2.5" fill="#20384d"/>
-<text class="bul" x="104" y="348">Pontoons and family runabouts</text>
+<text class="bul" x="104" y="348">Pontoons and runabouts</text>
 <circle cx="94" cy="367" r="2.5" fill="#20384d"/>
 <text class="bul" x="104" y="371">Cruising and trolling</text>
 <circle cx="277" cy="321" r="2.5" fill="#c8102e"/>
-<text class="bul" x="287" y="325">Tournament and bass boats</text>
+<text class="bul" x="287" y="325">Tournament bass boats</text>
 <circle cx="277" cy="344" r="2.5" fill="#c8102e"/>
-<text class="bul" x="287" y="348">Fast hole-shot and top end</text>
+<text class="bul" x="287" y="348">Hole-shot and top end</text>
 <circle cx="277" cy="367" r="2.5" fill="#c8102e"/>
-<text class="bul" x="287" y="371">When you run hard, often</text>
+<text class="bul" x="287" y="371">When you run hard</text>
 <circle cx="460" cy="321" r="2.5" fill="#20384d"/>
-<text class="bul" x="470" y="325">28 ft plus centre consoles</text>
+<text class="bul" x="470" y="325">28 ft-plus consoles</text>
 <circle cx="460" cy="344" r="2.5" fill="#20384d"/>
-<text class="bul" x="470" y="348">Twin and triple installs</text>
+<text class="bul" x="470" y="348">Twin and triple rigs</text>
 <circle cx="460" cy="367" r="2.5" fill="#20384d"/>
-<text class="bul" x="470" y="371">Special order only at HBW</text>
+<text class="bul" x="470" y="371">Special order at HBW</text>
 <line x1="90" y1="397" x2="223" y2="397" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <line x1="273" y1="397" x2="406" y2="397" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <line x1="456" y1="397" x2="589" y2="397" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>

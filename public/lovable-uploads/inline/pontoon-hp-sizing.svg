@@ -1,11 +1,11 @@
 <svg width="100%" viewBox="0 0 680 632" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Pontoon HP sizing reference table for Mercury outboards</title>
-<desc>A reference table for sizing a Mercury outboard to a pontoon by length and use. 16 to 18 ft calm cruise pontoons take 25 to 40 HP. 18 to 20 ft cruise and fishing pontoons take 40 to 60 HP. 20 to 22 ft family pontoons that pull tubes take 90 to 115 HP with Command Thrust recommended. 22 to 24 ft all-around family pontoons take 115 to 150 HP with Command Thrust recommended. 22 to 24 ft tritoons take 200 to 250 HP. 24 to 26 ft tritoons take 250 to 300 HP. Source mercuryrepower.ca, May 2026.</desc>
+<desc>A reference table for sizing a Mercury outboard to a pontoon by length and use, from 25 to 40 HP on a 16 to 18 ft cruise pontoon up to 250 to 300 HP on a 24 to 26 ft tritoon. Command Thrust matters once you pass 20 ft. Source mercuryrepower.ca, May 2026.</desc>
 <style>
 text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
-.th{font-size:11.5px;font-weight:700;fill:#ffffff;letter-spacing:0.3px}
+.th{font-size:11.5px;font-weight:700;fill:#ffffff}
 .rb{font-size:13px;font-weight:700;fill:#20384d}
 .rs{font-size:11px;font-weight:400;fill:#6f7c88}
 .hp{font-size:14.5px;font-weight:700;fill:#c8102e}
@@ -30,9 +30,9 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <rect x="72" y="448" width="536" height="50" fill="#f1f2f3"/>
 </g>
 <rect x="72" y="160" width="536" height="338" rx="12" fill="none" stroke="#20384d" stroke-opacity="0.13" stroke-width="1"/>
-<text class="th" x="88" y="183.0">PONTOON LENGTH AND USE</text>
-<text class="th" x="377" y="183.0" text-anchor="middle">RECOMMENDED MERCURY HP</text>
-<text class="th" x="537" y="183.0" text-anchor="middle">COMMAND THRUST</text>
+<text class="th" x="88" y="183.0">Pontoon length and use</text>
+<text class="th" x="377" y="183.0" text-anchor="middle">Recommended HP</text>
+<text class="th" x="537" y="183.0" text-anchor="middle">Command Thrust</text>
 <line x1="287" y1="198" x2="287" y2="498" stroke="#20384d" stroke-opacity="0.10" stroke-width="1"/>
 <line x1="467" y1="198" x2="467" y2="498" stroke="#20384d" stroke-opacity="0.10" stroke-width="1"/>
 <text class="rb" x="88" y="220.0">16 to 18 ft</text>

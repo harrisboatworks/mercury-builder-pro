@@ -1,13 +1,14 @@
 <svg width="100%" viewBox="0 0 680 613" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>How to choose the right horsepower for your boat</title>
-<desc>Mercury horsepower recommendations by boat type for Ontario and Kawartha freshwater: aluminum fishing boats 12 to 16 ft from 9.9 to 60 HP, console boats 16 to 18 ft at 90 to 115 HP, pontoons 18 to 24 ft at 90 to 150 HP Command Thrust, runabouts 18 to 22 ft at 150 to 200 HP. Underpowering is the more expensive mistake. Source mercuryrepower.ca, May 2026.</desc>
+<desc>Mercury horsepower recommendations by boat type for Kawartha freshwater: aluminum fishing 12 to 16 ft from 9.9 to 60 HP, console boats 16 to 18 ft at 90 to 115 HP, pontoons 18 to 24 ft at 90 to 150 HP Command Thrust, runabouts 18 to 22 ft at 150 to 200 HP. Underpowering is the more expensive mistake. Source mercuryrepower.ca, May 2026.</desc>
+<defs><clipPath id="htc"><rect x="72" y="165" width="536" height="310" rx="10"/></clipPath></defs>
 <style>
 text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
-.th{font-size:11.5px;font-weight:700;fill:#ffffff}
-.tb{font-size:12px;font-weight:600;fill:#20384d}
-.tu{font-size:11.5px;font-weight:400;fill:#3f5160}
+.thd{font-size:11.5px;font-weight:600;fill:#ffffff}
+.tb{font-size:11.5px;font-weight:600;fill:#20384d}
+.tu{font-size:11px;font-weight:400;fill:#3f5160}
 .hp{font-size:12.5px;font-weight:700;fill:#c8102e}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
 .subl{font-size:12px;font-weight:400;fill:#3f5160}
@@ -19,47 +20,43 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <text class="h4" x="72" y="96">How much <tspan fill="#c8102e">horsepower?</tspan></text>
 <text class="s4" x="73" y="121">Mercury sizing guidelines by boat type for Kawartha freshwater</text>
 <line x1="72" y1="141" x2="608" y2="141" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
-<defs><clipPath id="tbl"><rect x="72" y="165" width="536" height="310" rx="10"/></clipPath></defs>
-<g clip-path="url(#tbl)">
+<g clip-path="url(#htc)">
 <rect x="72" y="199" width="536" height="46" fill="#f5f6f7"/>
-<rect x="72" y="245" width="536" height="46" fill="#ffffff"/>
 <rect x="72" y="291" width="536" height="46" fill="#f5f6f7"/>
-<rect x="72" y="337" width="536" height="46" fill="#ffffff"/>
 <rect x="72" y="383" width="536" height="46" fill="#f5f6f7"/>
-<rect x="72" y="429" width="536" height="46" fill="#ffffff"/>
 <rect x="72" y="165" width="536" height="34" fill="#20384d"/>
 </g>
 <rect x="72" y="165" width="536" height="310" rx="10" fill="none" stroke="#20384d" stroke-opacity="0.13" stroke-width="1"/>
-<text class="th" x="88" y="186.0">BOAT TYPE</text>
-<text class="th" x="282" y="186.0">TYPICAL USE</text>
-<text class="th" x="547.0" y="186.0" text-anchor="middle">RECOMMENDED HP</text>
-<text class="tb" x="88" y="226.0">Aluminum fishing (12 to 14 ft)</text>
-<text class="tu" x="282" y="226.0">Solo fishing, sheltered water</text>
-<text class="hp" x="547.0" y="226.0" text-anchor="middle">9.9 to 15 HP</text>
+<text class="thd" x="88" y="186">Boat type</text>
+<text class="thd" x="316" y="186">Typical use</text>
+<text class="thd" x="539" y="186" text-anchor="middle">Recommended HP</text>
 <line x1="72" y1="245" x2="608" y2="245" stroke="#20384d" stroke-opacity="0.10" stroke-width="1"/>
-<text class="tb" x="88" y="272.0">Aluminum fishing (14 to 16 ft)</text>
-<text class="tu" x="282" y="272.0">Two to three people, planing</text>
-<text class="hp" x="547.0" y="272.0" text-anchor="middle">40 to 60 HP</text>
 <line x1="72" y1="291" x2="608" y2="291" stroke="#20384d" stroke-opacity="0.10" stroke-width="1"/>
-<text class="tb" x="88" y="318.0">Console boat (16 to 18 ft)</text>
-<text class="tu" x="282" y="318.0">Family use, moderate loading</text>
-<text class="hp" x="547.0" y="318.0" text-anchor="middle">90 to 115 HP</text>
 <line x1="72" y1="337" x2="608" y2="337" stroke="#20384d" stroke-opacity="0.10" stroke-width="1"/>
-<text class="tb" x="88" y="364.0">Pontoon (18 to 20 ft)</text>
-<text class="tu" x="282" y="364.0">Cruising and fishing, no sports</text>
-<text class="hp" x="547.0" y="364.0" text-anchor="middle">90 HP CT</text>
 <line x1="72" y1="383" x2="608" y2="383" stroke="#20384d" stroke-opacity="0.10" stroke-width="1"/>
-<text class="tb" x="88" y="410.0">Pontoon (20 to 24 ft)</text>
-<text class="tu" x="282" y="410.0">Family use with tubing or skiing</text>
-<text class="hp" x="547.0" y="410.0" text-anchor="middle">115 to 150 HP CT</text>
 <line x1="72" y1="429" x2="608" y2="429" stroke="#20384d" stroke-opacity="0.10" stroke-width="1"/>
-<text class="tb" x="88" y="456.0">Runabout or bowrider (18 to 22 ft)</text>
-<text class="tu" x="282" y="456.0">Recreational family use</text>
-<text class="hp" x="547.0" y="456.0" text-anchor="middle">150 to 200 HP</text>
-<line x1="268" y1="199" x2="268" y2="475" stroke="#20384d" stroke-opacity="0.10" stroke-width="1"/>
-<line x1="486" y1="199" x2="486" y2="475" stroke="#20384d" stroke-opacity="0.10" stroke-width="1"/>
-<line x1="72" y1="491" x2="608" y2="491" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
-<text class="pun" x="340" y="511" text-anchor="middle">Underpowering is the <tspan fill="#c8102e">expensive</tspan> mistake.</text>
-<text class="subl" x="340" y="533" text-anchor="middle">Power the boat for its worst afternoon, not its calmest morning.</text>
-<text class="src4" x="72" y="559">HP guidelines for typical recreational use, mercuryrepower.ca, May 2026. Your capacity plate is the legal ceiling.</text>
+<line x1="300" y1="199" x2="300" y2="475" stroke="#20384d" stroke-opacity="0.10" stroke-width="1"/>
+<line x1="470" y1="199" x2="470" y2="475" stroke="#20384d" stroke-opacity="0.10" stroke-width="1"/>
+<text class="tb" x="88" y="226">Aluminum fishing, 12-14 ft</text>
+<text class="tu" x="316" y="226">Solo fishing, calm water</text>
+<text class="hp" x="539" y="226" text-anchor="middle">9.9 to 15 HP</text>
+<text class="tb" x="88" y="272">Aluminum fishing, 14-16 ft</text>
+<text class="tu" x="316" y="272">Two to three people</text>
+<text class="hp" x="539" y="272" text-anchor="middle">40 to 60 HP</text>
+<text class="tb" x="88" y="318">Console boat, 16-18 ft</text>
+<text class="tu" x="316" y="318">Family use, moderate load</text>
+<text class="hp" x="539" y="318" text-anchor="middle">90 to 115 HP</text>
+<text class="tb" x="88" y="364">Pontoon, 18-20 ft</text>
+<text class="tu" x="316" y="364">Cruising and fishing</text>
+<text class="hp" x="539" y="364" text-anchor="middle">90 HP CT</text>
+<text class="tb" x="88" y="410">Pontoon, 20-24 ft</text>
+<text class="tu" x="316" y="410">Family use, tubing, skiing</text>
+<text class="hp" x="539" y="410" text-anchor="middle">115 to 150 HP CT</text>
+<text class="tb" x="88" y="456">Runabout / bowrider, 18-22 ft</text>
+<text class="tu" x="316" y="456">Recreational family use</text>
+<text class="hp" x="539" y="456" text-anchor="middle">150 to 200 HP</text>
+<line x1="72" y1="503" x2="608" y2="503" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
+<text class="pun" x="340" y="525" text-anchor="middle">Underpowering is the <tspan fill="#c8102e">expensive</tspan> mistake.</text>
+<text class="subl" x="340" y="547" text-anchor="middle">Power the boat for its worst afternoon, not its calmest morning.</text>
+<text class="src4" x="72" y="569">HP guidelines for recreational use, mercuryrepower.ca, May 2026. Plate HP is the legal ceiling.</text>
 </svg>
