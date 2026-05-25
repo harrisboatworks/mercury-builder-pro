@@ -14,6 +14,7 @@ import { getMotorImageByPriority } from '@/lib/motor-helpers';
 import { DealerTrustStrip } from '@/components/trust/DealerTrustStrip';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
+import { MotorPageSEO } from '@/components/seo/MotorPageSEO';
 
 /**
  * Public-facing motor detail page rendered at /motors/{slug}.
