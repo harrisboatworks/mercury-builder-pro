@@ -21,7 +21,7 @@ export function FinancingCTACard({ data }: FinancingCTACardProps) {
   
   // Calculate total cost for display
   const totalWithTax = Math.round(price * 1.13);
-  const dealerplanFee = 299;
+  const dealerplanFee = 349;
   const totalFinanced = totalWithTax + dealerplanFee;
   
   // Build financing application URL with motor context
