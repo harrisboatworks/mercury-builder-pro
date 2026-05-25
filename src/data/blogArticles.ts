@@ -8547,7 +8547,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-pricing-promotions-2026',
     title: '2026 Mercury Buying: Pricing, Promotions and Smart Timing',
-    description: 'Navigate 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options.',
+    description: 'Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options.',
     image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-08',
