@@ -88,7 +88,7 @@ export function MercuryOutboardsOntarioSEO() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "geo": { "@type": "GeoCoordinates", "latitude": 44.1147, "longitude": -78.2564 },
+        "geo": { "@type": "GeoCoordinates", "latitude": 44.1456, "longitude": -78.2542 },
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
           { "@type": "Place", "name": "Greater Toronto Area" },
