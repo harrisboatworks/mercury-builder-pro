@@ -440,8 +440,6 @@ whenInDoubt: Underpowered boats are the #1 complaint we hear. Step up before you
 
 These are working guidelines for typical recreational use on Ontario and Kawartha freshwater. For your specific motor and real installed pricing, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-![Mercury horsepower recommendations by boat type for Ontario freshwater](/lovable-uploads/inline/how-to-choose-horsepower.svg)
-
 ### Small aluminum fishing boats (12–14 ft)
 Solo fishing on sheltered water: **9.9 to 15 HP tiller.** Drop-in install, no rigging. Just the motor cost.
 
@@ -994,9 +992,6 @@ Avator (Mercury's electric line) is still maturing. We haven't seen a strong fre
 ---
 
 ## Family-by-family breakdown
-
-![Mercury outboard families: FourStroke, Pro XS and Verado compared](/lovable-uploads/inline/mercury-motor-families.svg)
-
 
 | Family | HP range | Best for | Availability at HBW |
 |--------|----------|----------|---------------------|
@@ -10810,9 +10805,6 @@ On resale, both Mercury and Yamaha four-strokes in good condition hold value wel
 
 ---
 
-
-![Mercury vs Yamaha outboard comparison](/lovable-uploads/inline/mercury-vs-yamaha.svg)
-
 ## What We See at HBW
 
 People expect a Mercury dealer to run Yamaha down. We are not going to, because it would not be true and you would see through it anyway.
@@ -11031,9 +11023,6 @@ For typical recreational use, family fishing, cruising, casual water sports, the
 
 
 ![Mercury 115 HP and 150 HP FourStroke side-by-side on identical transoms](/lovable-uploads/inline/inline-115-vs-150-comparison.png)
-
-
-![Mercury 115 vs 150 HP outboard comparison](/lovable-uploads/inline/115-vs-150-hp.svg)
 
 ### The Mistakes We See Every Season
 
@@ -21214,8 +21203,6 @@ Calm, protected bays have different demands than open lake conditions. Rice Lake
 
 This is where most buyers should start. Find your boat, your load, and your use, and you'll have a real answer.
 
-![Pontoon HP sizing reference table by length and use](/lovable-uploads/inline/pontoon-hp-sizing.svg)
-
 ---
 
 ### 16-18 ft, 2 tubes, 4-6 passengers. Calm water cruise
@@ -22590,9 +22577,6 @@ The 60 weighs 23 lbs more. On a light 15 ft aluminum with a transom already sitt
 ---
 
 ::walkaround-lead-capture
-
-
-![Mercury 40 vs 60 HP outboard comparison: price, weight, and best use](/lovable-uploads/inline/40-vs-60-hp.svg)
 
 ## Performance on Common Ontario Boats
 
