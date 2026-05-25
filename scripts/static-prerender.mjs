@@ -4386,7 +4386,8 @@ function stamp(route) {
     `<noscript>` +
       `<header><h1>${escapeHtml(route.h1)}</h1></header>` +
       `<main><p>${escapeHtml(route.intro)}</p>${extra}</main>` +
-      `<footer><p>Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153</p></footer>` +
+      `<footer><p>Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153</p>` +
+      `<p>See all <a href="/pricing-reference">Mercury outboard prices (CAD)</a> · <a href="/repower">Repower guide</a> · <a href="/faq">FAQ</a></p></footer>` +
     `</noscript>`;
   html = html.replace(/<div id="root">\s*<\/div>/i, `<div id="root"></div>${noscript}`);
 
