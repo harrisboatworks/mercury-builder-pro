@@ -4366,6 +4366,8 @@ Modern Mercury FourStrokes have a cruise efficiency sweet spot, typically somewh
 
 ---
 
+![Five levers that cut Mercury outboard fuel burn, ranked](/lovable-uploads/inline/fuel-efficiency-levers.svg)
+
 ## What Horsepower Actually Does to Fuel Economy
 
 Modern Mercury FourStrokes burn significantly less fuel than older two-strokes of equivalent power, Mercury's published figures show substantial efficiency gains for current FourStroke models compared to comparable two-stroke technology, though exact percentages vary by model and operating conditions.
@@ -5371,6 +5373,8 @@ For specific pricing, build a quote at [mercuryrepower.ca](https://www.mercuryre
 
 ---
 
+![How to pick the right Mercury propeller](/lovable-uploads/inline/propeller-selection-guide.svg)
+
 ## Pitch: the most important number
 
 Pitch is the theoretical forward distance the prop moves in one revolution. Lower pitch = faster acceleration, lower top speed, higher RPM. Higher pitch = slower acceleration, higher top speed, lower RPM.
@@ -6035,6 +6039,8 @@ Brands you will see: Minn Kota, Garmin Force, MotorGuide.
 A **gas kicker** is a small outboard mounted alongside your main motor. It runs on gasoline, gives you real propulsion at trolling speeds, and is rated in horsepower like any outboard. The Mercury 9.9 ProKicker is the king of this category, purpose-built for kicker duty with a low-RPM idle, sailboat-mode programming, and a gear ratio tuned for thrust at slow speed rather than top-end speed.
 
 These are not competing tools. They are complementary. But they cost real money, so most boaters pick one first.
+
+![Electric trolling motor versus gas kicker comparison](/lovable-uploads/inline/trolling-motor-vs-kicker.svg)
 
 ## Head-to-head: when each one wins
 
@@ -11895,6 +11901,8 @@ totalValue: $250 - $400 CAD
 caveat: Pricing varies by motor size, accessibility, and current shop rate. HST extra. Book a winterization slot at /service.
 ::
 
+![Boat winterization cost breakdown for Ontario](/lovable-uploads/inline/winterization-cost-breakdown.svg)
+
 ## Why the price varies (and why flat rates mislead you)
 
 A 9.9 HP tiller is a 90-minute job. A 250 HP V8 Verado is a 3-hour job with more oil capacity, more spark plugs, a more complex fuel system, and more lower unit to service. Same checklist, completely different amounts of time and parts.
@@ -12429,6 +12437,8 @@ caveat: Numbers are typical ranges, not quotes. Build your exact quote at mercur
 
 ---
 
+![Mercury outboard price ladder by horsepower, CAD](/lovable-uploads/inline/mercury-price-ladder.svg)
+
 ## Full Article
 
 The honest answer most boaters need isn't "what's the cheapest motor" but "what's the cheapest motor that actually works for my boat." Those are usually different motors, and confusing them is one of the most common expensive mistakes we see.
@@ -12616,6 +12626,8 @@ A motor is reliable if it starts when you turn the key, runs through the season 
 **Honda** makes mechanically sound motors. Honda outboard dealer network in Ontario is smaller than either Mercury or Yamaha. Honda also has fewer high-HP options at the upper end of the lineup.
 
 The point is not that Yamaha or Honda fail more. The point is that when any motor needs service, Mercury regional dealer depth in Ontario means faster resolution.
+
+![Mercury vs Yamaha vs Honda outboard reliability compared](/lovable-uploads/inline/mercury-yamaha-honda-reliability.svg)
 
 ## Where each brand has had issues (honest version)
 
@@ -15507,6 +15519,8 @@ If you're reading this from shore, good. The best time to learn what to do when 
 This is the on-water response guide and prevention overview we'd walk through with any customer at the shop. Mercury-specific, Ontario conditions, no filler.
 
 ---
+
+![Mercury overheating: what to do in the first 60 seconds](/lovable-uploads/inline/overheating-first-60-seconds.svg)
 
 ## On the Water Right Now: Do This in Order
 
@@ -22875,6 +22889,8 @@ In Ontario, when you trade a motor as part of a repower at HBW, **the trade cred
 In this example, the private sale wins by about $480, but only if you actually sell for $5,000, it does not take three weekends, and there is no cash dispute. If the private sale nets $4,500, trade wins. At $4,000, trade wins by a meaningful margin.
 
 Most customers find the private sale grind is not worth the modest delta once they price their own time. Talk to us before you list.
+
+![Outboard trade-in value by HP class, Ontario 2026](/lovable-uploads/inline/outboard-trade-in-value.svg)
 
 ## 2026 trade-in ranges (Ontario, CAD)
 
