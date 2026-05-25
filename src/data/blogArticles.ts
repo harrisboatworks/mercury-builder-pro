@@ -8663,8 +8663,8 @@ caveat: HST extra. Live pricing and current promos at mercuryrepower.ca.
 **What You Might Get**:
 - Better pricing flexibility
 - Priority spring installation
-- Time to research thoroughly
-- Potential for extras included
+- Time to do your homework
+- Extras sometimes included
 
 **The Trade-Off**:
 - Cannot water test immediately
