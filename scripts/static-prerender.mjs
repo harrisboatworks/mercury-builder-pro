@@ -2816,7 +2816,7 @@ function motorPageSchema(m, slug) {
     "@type": "Product",
     "@id": `${url}#product`,
     "name": display,
-    "description": `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. Sold and serviced by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.`,
+    "description": `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. Mercury outboard repower quote from Harris Boat Works in Gores Landing, Ontario. Motors are sold for local pickup and/or professional installation only. We do not ship outboard motors. Motor returns are not accepted. Installation work is guaranteed, and new Mercury motors include the applicable Mercury Marine factory warranty.`,
     "brand": { "@type": "Brand", "name": "Mercury Marine" },
     "manufacturer": { "@type": "Organization", "name": "Mercury Marine" },
     "category": "Outboard Motor",
