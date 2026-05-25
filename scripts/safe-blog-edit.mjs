@@ -109,7 +109,7 @@ function runCheck(cmd, args) {
 
 function verify(filePath) {
   // 1. esbuild parse check
-  const esb = runCheck('npx', ['--yes', 'esbuild', '--loader:.ts=ts', '--log-level=error', filePath]);
+  const esb = runCheck('npx', ['esbuild', '--loader:.ts=ts', '--log-level=error', filePath]);
   if (!esb.ok) {
     return { ok: false, reason: `esbuild failed: ${esb.stderr.trim() || 'non-zero exit'}` };
   }
