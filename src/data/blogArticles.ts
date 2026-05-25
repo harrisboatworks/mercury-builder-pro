@@ -18854,7 +18854,7 @@ Each rental includes:
 - **Pre-departure briefing**. Rice Lake hazards (the sunken railway, weed beds, shoals), how to handle the boat, where to fish or cruise
 - **VHF or cell coverage info**. Rice Lake has reasonable cell service on the south shore
 - **Detailed lake map**, depths, hazards, hot spots, shoreline amenities
-- **Free use of the launch area**, you're embarking from our marina, not the public ramp
+- **Free use of the launch area**, you're launching from our marina, not the public ramp
 - **Free parking on-site** for your vehicle while you're on the water
 - **Restroom + ice / snacks** at the marina before you leave
 
