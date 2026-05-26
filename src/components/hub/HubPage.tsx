@@ -130,7 +130,9 @@ export function HubPage(props: HubPageProps) {
         breadcrumbName={breadcrumbName}
         faqs={faqs}
         lastReviewedISO={lastReviewedISO}
+        extraSchemas={extraSchemas}
       />
+
 
       {/* Breadcrumb (visible) */}
       <nav
