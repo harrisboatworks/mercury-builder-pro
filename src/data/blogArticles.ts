@@ -920,262 +920,167 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ]
   },
   {
-    slug: 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
-    title: 'FourStroke vs Pro XS vs Verado: Which Mercury You Need',
-    seoTitle: "Mercury FourStroke vs Pro XS vs Verado: Buyer Guide | HBW",
-    description: "Decide between Mercury FourStroke, Pro XS, and Verado. Real differences, common Ontario hull pairings, and live CAD quotes at mercuryrepower.ca.",
+    slug: 'fourstroke-vs-pro-xs',
+    seoTitle: 'FourStroke vs Pro XS: When Pro XS Matters | mercuryrepower.ca',
+    title: 'FourStroke vs Pro XS: When Does Pro XS Actually Matter?',
+    description: 'Compare Mercury FourStroke vs Pro XS by hole shot, weight, top end, and price. Pick the right family for your repower from $16,000 CAD (2026).',
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
-    datePublished: '2024-04-10',
-    dateModified: '2026-05-04',
-    category: 'Comparison',
-    readTime: '12 min read',
-    keywords: ['mercury fourstroke vs verado', 'pro xs vs fourstroke', 'mercury motor comparison', 'best mercury outboard', 'verado vs pro xs'],
-    content: `**Last reviewed:** 2026-05-07
-
----
-
-> **Quick answer**
->
-> For most Ontario freshwater boaters, the right choice is FourStroke or Pro XS, not Verado. FourStroke covers fishing, family, and pontoon use from 2.5 HP up. Pro XS is the same powerhead tuned for performance, worth the premium when you actually run hard. Verado is Mercury's premium V8/V10/V12 offshore line, it's special-order territory at HBW, and almost no Ontario freshwater application needs it. If you're researching Verado, this guide is honest about when it makes sense and (more often) when it doesn't. Configure FourStroke or Pro XS at [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
----
-
-## Why HBW recommends against Verado for most Ontario buyers
-
-Verado is a legitimate engineering achievement. Smooth, quiet at cruise, and capable of impressive top-end performance on the right boat. But it was engineered for a use case that almost no Ontario freshwater boater actually has: serious offshore saltwater applications running large center consoles or twin-engine cruisers in open ocean.
-
-For Ontario freshwater, Rice Lake, the Kawarthas, Lake Simcoe, the Trent system, cottage country lakes, the Verado premium doesn't earn its money. The boats are wrong for it, the speeds don't require it, and the additional service complexity vs FourStroke or Pro XS adds cost without adding capability for the typical recreational use case.
-
-Our honest position: when an Ontario freshwater customer asks about Verado, we usually steer the conversation toward an equivalent-HP Pro XS or higher-HP FourStroke instead. Same Mercury reliability. Better fit for the actual boat. Lower long-term cost of ownership. The reasons:
-
-- **Most Ontario boats are under 22 feet.** Verado is engineered for 22+ foot offshore platforms. On a smaller hull, you're carrying motor weight and complexity you don't need.
-- **Ontario cruise speeds rarely exceed 35-40 MPH.** Both FourStroke and Pro XS deliver that range comfortably in their respective HP classes. Verado's top-end advantage shows up at 50+ MPH speeds that aren't practical on Ontario lakes.
-- **Mercury's product roadmap signals.** The Verado lineup is being narrowed, not expanded. Pro XS V6 and V8 are absorbing applications that used to default to Verado.
-- **Cost of ownership.** Verado is a premium V8/V10/V12 line, higher purchase price, higher parts pricing, and a bigger engine to service than an equivalent-HP Pro XS, without delivering capability a typical Ontario freshwater boat can use.
-
-If you're a Verado owner, we'll absolutely service your motor, we're a Mercury Platinum dealer and the warranty network is the same regardless of motor family. If you're researching a new repower in 2026 and Verado came up as an option, this guide will help you understand why FourStroke or Pro XS is almost certainly the better answer for your boat.
-
----
-
-![Mercury outboard families: FourStroke, Pro XS, Verado (HBW diagram)](/lovable-uploads/diagram-mercury-motor-families.png)
-
-## The short version
-
-If you're a Rice Lake or Kawartha boater reading this, the motor for you is almost certainly FourStroke. It's what most factory boats come rigged with, what we sell most of, and what fits the typical Ontario use case, cruising, family fishing, pontoons, mid-size runabouts.
-
-Pro XS is the right call when performance actually matters: tournament fishing, bass boats, fast morning runs to beat the wind, performance pontoons. It costs more than FourStroke at the same HP rating. It earns the difference if you use it.
-
-SeaPro is for commercial operators, guides, rental fleets, charter boats, anyone running a motor 500-plus hours a season under load.
-
-Verado is special order only at HBW, and almost no Ontario freshwater boater actually needs it.
-
-Avator (Mercury's electric line) is still maturing. We haven't seen a strong freshwater use case yet.
-
----
-
-
-![Mercury FourStroke vs Pro XS vs Verado family comparison](/lovable-uploads/inline/mercury-motor-families.svg)
-
-## What changes the answer
-
-**Boat type and weight.** A 17-foot bass boat wants different power delivery than a 22-foot pontoon. Pro XS suits the bass boat. FourStroke, with Command Thrust on bigger pontoons, suits the pontoon.
-
-**HP rating.** FourStroke covers the full range. Pro XS starts at 115 HP. Below 115 HP, FourStroke is your only recreational Mercury option in the standard lineup.
-
-**Use case.** Tournament fishing or active water sports favors Pro XS. Cruising, trolling, and family use favor FourStroke. Commercial use favors SeaPro.
-
-**Budget.** Pro XS costs more than FourStroke at the same HP. If you cruise at half-throttle and rarely push the boat hard, you're paying for performance you're not using.
-
-**Resale and dealer support.** FourStroke and Pro XS have the deepest dealer support in Ontario. Both hold resale well. Verado has thinner inland demand and resale reflects that.
-
----
-
-## Family-by-family breakdown
-
-| Family | HP range | Best for | Availability at HBW |
-|--------|----------|----------|---------------------|
-| FourStroke | 2.5–300 HP | Cruising, family, fishing, pontoons | In stock and on-order |
-| Pro XS | 115–300 HP | Tournament fishing, bass boats, performance applications | In stock and on-order |
-| SeaPro | Available in multiple HP classes | Commercial use, guides, charters, rental fleets | On-order |
-| Verado | Multiple HP classes in V8/V10/V12 | Offshore centre consoles, twin/triple installs | Special order only |
-| Avator | Electric, limited HP | Eco-conscious low-HP applications | On-order, evolving |
-
----
-
-## FourStroke: what it does well
-
-FourStroke is Mercury's standard recreational line, bread-and-butter for Ontario boating. It covers everything from a 2.5 HP portable tiller up through the V8 range.
-
-**Where it shines:** fuel efficiency, smooth running, reliability. Modern FourStrokes burn substantially less fuel than the 2-stroke generation they replaced. The 9.9 ProKicker (a FourStroke variant) is the standard kicker motor on Canadian fishing boats.
-
-**Best applications:** aluminum fishing boats, pontoons, runabouts, family use, trolling, cruising. Most repowers at HBW are FourStroke installs. The 90–115 HP range with Command Thrust is the most common pontoon repower we do on Rice Lake.
-
-**The honest trade-off:** It's not the fastest motor at a given HP rating. If you want to win tournaments or pull skiers behind a heavy boat at maximum speed, Pro XS is worth looking at.
-
----
-
-## Pro XS: when the premium pays off
-
-Pro XS is Mercury's performance line, built for fast acceleration, high top speed, and aggressive hole shot. Available from 115 HP up.
-
-**Where it shines:** tournament bass fishing, getting on plane quickly, holding speed against wind and load.
-
-**Best applications:** bass boats, performance fishing boats, anyone who actually runs the boat hard.
-
-**The honest trade-off:** It costs more than an equivalent-HP FourStroke. If you're mostly cruising at half-throttle, you're paying for performance you're not using. That money is better spent on FourStroke and a good prop.
-
-Most pontoons don't need Pro XS. Most aluminum fishing boats don't either. Pro XS earns its premium when you actually run hard.
-
----
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-## SeaPro: for commercial operators
-
-SeaPro is Mercury's commercial-duty line. Built heavier and tuned for daily use under load, think 300–1,000+ hours a season.
-
-**Where it shines:** charter operators, fishing guides, rental fleets, government boats. We've set up SeaPro motors for guides on the Trent-Severn and rental operators on Kawartha lakes.
-
-**The honest trade-off:** Costs more than recreational FourStroke. Overkill for typical recreational use. But if your motor is your livelihood, it's not overkill, it's the right tool.
-
----
-
-## Verado: why it's special order only at HBW
-
-Verado is Mercury's premium V8/V10/V12 line, engineered for high-HP applications, twin and triple installations on offshore centre consoles, large boats, premium applications.
-
-We don't stock Verado. The reason is simple: almost no Ontario freshwater boater has a use case that fits it. Our customers run aluminum fishing boats, pontoons, runabouts, bass boats, and small centre consoles. FourStroke or Pro XS covers all of those better on cost-per-capability for our market.
-
-If you genuinely have a Verado-appropriate application, a 28+ ft offshore centre console, twin or triple engines, contact us and we'll price a special order. Lead times are longer than recreational lines.
-
----
-
-![Mercury FourStroke, Pro XS, and Verado comparison graphic showing best fit, personality, boat type, and tradeoffs](/lovable-uploads/mercury-fourstroke-proxs-verado-comparison.png)
-
-## Decision rules
-
-Work through these in order:
-
-1. **What does your capacity plate say?** That's the ceiling. Below 115 HP, FourStroke is your only standard recreational Mercury option.
-2. **Recreational, performance, or commercial?** Recreational = FourStroke. Performance = Pro XS. Commercial = SeaPro.
-3. **Do you actually use the performance?** If yes, Pro XS earns the price. If no, FourStroke gives you better fuel economy and typically similar resale.
-4. **Twin or triple on a 28+ ft offshore boat?** That's the Verado conversation.
-5. **Still not sure?** Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us at **905-342-2153** and we'll work through it in five minutes.
-
----
-
-## Related guides
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario)
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario)
-- [Mercury Avator & the Future of Electric Boating in Ontario](/blog/mercury-avator-electric-boating-ontario)
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-- [Mercury SeaPro: Commercial Outboard Guide](/blog/mercury-seapro-commercial-outboard-guide)
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
-- [Bass Boat Mercury Motor Buying Guide](/blog/bass-boat-mercury-motor-buying-guide)
-
----
-
-## Ready to pick your family?
-
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing in CAD across FourStroke, Pro XS, SeaPro, and Avator. To [see real Mercury outboard prices](/pricing-reference) by HP without building a quote, check our price reference. Verado is special order; contact us for that conversation.
-
-Call **905-342-2153** if you want to talk through which family fits your boat. We'll give you the straight answer, including the answer that doesn't maximize the sale.
-
----
-
----
-
-## What we see at HBW
-
-Almost every motor that leaves our service bay is FourStroke or Pro XS. FourStroke 60-150 dominates the pontoon and family-runabout repower side. Pro XS 150-300 covers serious anglers and bass-boat repowers. Verado is the rare exception, a special-order conversation for the occasional 28+ foot offshore-style platform, and even then we'll usually walk through whether a Pro XS V8 is the smarter call.
-
-The decision usually comes down to how the boat actually gets used. FourStroke if comfort and quiet matter most. Pro XS if hole-shot and top-end matter most. Verado is rarely the right answer for an Ontario freshwater boat.
-
----
-
-
----
-
-## Related at HBW
-
-The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide)
-- [Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)](/blog/center-console-mercury-motor-guide)
-
----
-
-## FAQ
-
-**What's the difference between Mercury FourStroke and Pro XS?**
-FourStroke is tuned for fuel economy, smooth running, and reliability. Pro XS is tuned for fast acceleration, top speed, and hole shot. Same basic platform, different tune. Pro XS costs more. It earns the difference if you run hard; it doesn't if you mostly cruise.
-
-**Do I need Pro XS for fishing?**
-For tournament fishing or anyone trying to beat the morning wind to a spot, yes, Pro XS earns the price. For typical recreational fishing on Rice Lake (trolling, drifting, working structure at slow speed), FourStroke is plenty.
-
-**Is Verado available at HBW?**
-Special order only. Almost no Ontario freshwater boater needs it. If you have a 28+ ft offshore boat, twin or triple engine setup, or a large premium application, contact us and we'll price a Verado order. Lead times are longer.
-
-**What is Mercury SeaPro for?**
-Commercial-duty use: charter boats, fishing guides, rental fleets, government vessels, and anyone running 500-plus hours a season under load. More durable than recreational FourStroke; costs more. The right answer for commercial; overkill for recreational.
-
-**Which Mercury family is most fuel efficient?**
-FourStroke across the recreational range. Modern FourStrokes burn dramatically less fuel than the 2-stroke generation they replaced, and run cleaner and quieter. Pro XS is tuned for performance, which means slightly higher fuel use at the same HP.
-
-**Is FourStroke or Pro XS better for pontoons?**
-FourStroke, specifically with Command Thrust gearcase on 115 HP and up. Command Thrust is purpose-built for pontoon load profiles. Pro XS is unusual on pontoons and rarely the right call.
-
-**Is FourStroke or Pro XS better for bass boats?**
-Tournament-grade bass boats: Pro XS. The acceleration and hole shot match what tournament anglers need. Recreational bass fishing without tournament demands: FourStroke at the same HP also works and saves money.
-
-**Can I switch motor families during a repower?**
-Yes. The motor is the choice; the rigging adapts. Most existing Mercury controls, props, and harnesses can stay Mercury-to-Mercury. Build a quote to see exact pricing for the swap.
-
-For an angler-specific deep dive on Pro XS, see our [Rice Lake and Kawarthas Pro XS repower guide](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers).
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-`,
+    datePublished: '2026-05-26',
+    dateModified: '2026-05-26',
+    publishDate: '2026-05-26',
+    category: 'Mercury Motors',
+    readTime: '9 min',
+    keywords: ['mercury fourstroke vs pro xs', 'pro xs vs fourstroke', 'mercury motor family comparison', 'pro xs worth it', 'fourstroke or pro xs repower'],
+    relatedSlugs: ['mercury-75-vs-90-vs-115-comparison', 'mercury-command-thrust-guide-pontoon-boats', 'mercury-boost-upgrade-150hp-pontoon-analysis', 'best-pontoon-outboard-2026-mercury', 'mercury-repower-cost-ontario-2026-cad'],
     faqs: [
-      {
-        question: 'What\'s the main advantage of Pro XS over FourStroke?',
-        answer: 'Pro XS motors are lighter and tuned for higher RPM and faster acceleration. They\'re designed for performance-focused boaters, especially tournament anglers who need to reach fishing spots quickly.'
-      },
-      {
-        question: 'Can I use a SeaPro for recreational boating?',
-        answer: 'Absolutely. SeaPro motors are built tough for commercial use, but many recreational boaters choose them for their durability. They\'re an excellent choice if you boat frequently and want maximum reliability.'
-      },
-      {
-        question: 'Which Mercury motor is quietest?',
-        answer: 'FourStroke is the quietest Mercury family available to most Ontario buyers, modern FourStrokes run noticeably smoother and quieter than the 2-stroke generation they replaced, and on the small lakes where Ontario does most of its boating that matters. Verado is also quiet at cruise but is special-order only at HBW and rarely the right fit for freshwater applications. Pro XS prioritizes performance over noise.'
-      },
-      {
-        question: 'What\'s the main advantage of Mercury Pro XS over FourStroke?',
-        answer: 'The Pro XS is lighter and faster off the line. Pro XS motors use a high-performance powerhead tuned for a higher RPM range and faster acceleration, giving quicker hole-shots and faster runs to fishing spots. Tournament anglers value every second. The trade-off is modest: Pro XS burns slightly more fuel than an equivalent FourStroke at cruise and is priced above FourStroke for the same horsepower. If you don\'t race to spots or fish tournaments, the FourStroke\'s lower cost and better fuel economy make more sense.'
-      },
-      {
-        question: 'Can I use a Mercury SeaPro for recreational boating?',
-        answer: 'Yes, you can use a SeaPro for recreational boating. SeaPro motors are quiet, reliable, and well-built. The main difference is that you\'re paying for commercial-duty components and a commercial warranty that you may not need for seasonal cottage use. For recreational boaters running 100-200 hours per season, the FourStroke is a better value, lower price, simpler maintenance, and doesn\'t require the overengineering of the SeaPro. SeaPro makes sense for recreational owners who also run charter or guide operations, or those putting 400+ hours per year on their motor.'
-      },
-      {
-        question: 'Which Mercury motor is best for walleye and bass fishing on Ontario lakes?',
-        answer: 'For walleye fishing on Ontario lakes like Rice Lake, where precision trolling is the primary technique, the FourStroke ProKicker as a kicker motor paired with a mid-range FourStroke main engine is the most popular setup. For bass fishing from a bass boat where speed matters, the Pro XS 115-175HP is the preferred choice, lighter, faster, and built for quick transitions. For muskie fishing on the Kawarthas, a FourStroke 115-150HP gives you the reliability and fuel range for long days on the water.'
-      },
-      {
-        question: 'How do Mercury motor family prices compare in Canada in 2026?',
-        answer: 'In rough CAD ranges for a complete installed repower before HST: 75 to 115 HP projects typically run $17,000 to $22,000 all-in, 150 HP projects typically run $23,000 to $30,000 all-in, and 200 to 300 HP projects typically run $35,000 to $40,000 all-in. All-in means engine, rigging, controls, prop, and installation labour. Motor-family premiums vary by model, so use the live quote builder at mercuryrepower.ca for current pricing.'
-      },
-      {
-        question: 'What is the best Mercury motor for a pontoon boat on Rice Lake?',
-        answer: 'For a pontoon boat on Rice Lake, the Mercury FourStroke is the right choice in almost every case. For a 20- to 22-foot pontoon with normal passenger loads, a 60-115HP FourStroke covers most applications. For a larger tri-toon or performance pontoon over 24 feet, a 150-200HP FourStroke provides the power to get on plane and cruise comfortably. The Verado is overkill for most pontoons on Rice Lake, and the Pro XS isn\'t designed for pontoon use. The FourStroke\'s torque characteristics and fuel efficiency are ideal for the way pontoons are used.'
-      },
-      {
-        question: 'Is there a best time to buy a Mercury outboard in Ontario?',
-        answer: 'Late fall and winter are generally the best times to purchase a Mercury outboard in Ontario. Dealer lots have more inventory from the fall delivery cycle, and some dealers offer winter storage packages or early-order pricing. Spring, particularly March and April, is when demand spikes, which can mean tighter inventory on popular models and less room to negotiate. If you\'re planning a repower for next season, building your quote in October or November gives you the best shot at getting the exact configuration you want without waiting.'
-      }
-    ]
+      { question: 'Is a Mercury Pro XS faster than a FourStroke?', answer: 'Yes. At matching horsepower the Pro XS is tuned for higher RPM, sharper hole shot, and a few extra mph at top end. The gap is biggest at 150 HP and up. At 115 HP and below the difference is smaller and the FourStroke is usually the better repower pick.' },
+      { question: 'Does a Pro XS use more fuel than a FourStroke?', answer: 'At cruise the two are close. Run wide open and the Pro XS will burn more because it spins higher RPM and is tuned to deliver. If most of your time is at 4,000 RPM cruise, the fuel difference is small.' },
+      { question: 'Is Pro XS worth it on a pontoon?', answer: 'Sometimes. A Pro XS V8 with Boost on a tritoon is a strong combination if you tube or ski. On a standard two-tube pontoon, a FourStroke 115 or 150, often with Command Thrust, is usually the smarter spend.' },
+      { question: 'Does the Pro XS require premium fuel?', answer: 'No. Both the modern FourStroke and Pro XS models are designed to run on standard 87-octane fuel, though ethanol-free marine gas is always preferred when available.' },
+      { question: 'Is there a warranty difference between FourStroke and Pro XS?', answer: 'No. Both carry the same Mercury Canadian warranty: 3 years limited plus 3 years corrosion coverage running concurrently. Mercury periodically runs promotional extensions on top of the base coverage. Confirm current promo terms when we quote you.' },
+      { question: 'Can I finance a Pro XS upgrade?', answer: 'Yes. Financing is available OAC. Build a current quote at mercuryrepower.ca to see live rates and your estimated monthly payment.' }
+    ],
+    content: `# FourStroke vs Pro XS: When Does Pro XS Actually Matter?
+
+*Last reviewed: 2026-05-26*
+
+> **Quick answer:** Mercury FourStroke is the workhorse: quiet, fuel-efficient, built for cruising, family time, and most aluminum and pontoon repowers. Pro XS is the lighter, more aggressive sibling tuned for hole shot, top end, and tournament fishing. For most Ontario repower customers the FourStroke is the right pick. Pro XS earns its premium when weight, acceleration, or top-end speed actually matter. Expect a $1,500 to $4,000 CAD price step depending on HP (2026).
+
+## Who this is for
+
+Boaters in Ontario looking to repower a fishing boat, pontoon, or fibreglass cruiser who are stuck between Mercury's two most common motor families. We rig both at Harris Boat Works. We will tell you the truth about which one your boat actually needs.
+
+## Key facts
+
+- FourStroke HP range: 2.5 to 300 HP
+- Pro XS HP range: 115 to 300 HP
+- FourStroke 115 HP installed: $16,000 to $19,000 CAD (2026)
+- Pro XS 115 HP installed: $17,500 to $21,000 CAD (2026)
+- Pro XS 250 HP installed: $25,000 to $30,000 CAD (2026)
+- Pro XS V8 4.6L available with Boost (25 HP for 4 to 6 seconds on demand)
+- Both run on standard 87-octane fuel
+- Mercury dealer since 1965, current Platinum tier
+
+## What is the difference between Mercury FourStroke and Pro XS?
+
+Both families are four-strokes and, at matching horsepower, often share the same engine block. The differences are tuning, trim, and a few hardware details aimed at a different driver. Pro XS gets a sport-tuned ECU map, a higher rev limit, stiffer motor mounts for sharper steering at speed, and a deeper exhaust note. FourStroke is set up for smooth idle, steady cruise, and balanced fuel economy.
+
+Side by side, the practical differences come down to a handful of things:
+
+| Spec | FourStroke | Pro XS |
+|---|---|---|
+| HP range | 2.5 to 300 HP | 115 to 300 HP |
+| Tuning bias | Cruise plus economy | Hole shot plus top end |
+| Sound profile | Whisper quiet at idle | Throaty performance exhaust |
+| Motor mounts | Soft, for low vibration | Stiff, for sharper steering at speed |
+| Wide open RPM | 5,800 to 6,400 | 5,800 to 6,800 |
+| Weight (V8 4.6L) | ~232 kg | ~229 kg |
+| Boost option | Not available | Available on V8 175/200/225 |
+| Typical price step | Base | Plus $1,500 to $4,000 (2026) |
+| Best for | Pontoon, cruiser, aluminum | Bass, fish-and-ski, fast hulls |
+| Fuel | 87 octane | 87 octane |
+
+Both motors use the same SmartCraft electronics and digital throttle. Both carry the same Mercury Canadian warranty. The Pro XS is not a more fragile motor or a thirstier motor at cruise. It is a different tune for a different driver.
+
+## When does a Mercury Pro XS actually matter?
+
+Pro XS earns its money in three real-world cases.
+
+First, tournament bass and walleye fishing. Anglers who launch ramps in a hurry, run 80 km between spots, and need to plane fast off the back of a wave will feel the Pro XS hole shot. On a 19 to 21 foot fibreglass bass boat with a Pro XS 200 or 250, you are looking at top ends well past 95 km/h and the kind of acceleration that matters when you are trying to beat weather.
+
+Second, fish-and-ski crossovers. A boat that has to pull a tube clean, hold a cruise for the family, and still run hard the next weekend is the natural Pro XS habitat. The throttle response is more immediate, especially in the mid-range.
+
+Third, big boats that want Boost. The Pro XS V8 4.6L at 175, 200, or 225 HP is the only Mercury you can spec with Boost. Boost gives you 25 extra horsepower on demand for four to six seconds at the press of a button. On a heavy pontoon or a loaded tritoon trying to plane with six adults, that one feature is the whole reason to step up. We cover that decision in detail in our [Mercury Boost upgrade analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis).
+
+If none of those three apply, the FourStroke is the smarter spend.
+
+## When is FourStroke the better buy even if you can afford Pro XS?
+
+Most of the time. That is the answer people sometimes need to hear more clearly. FourStroke is the bread-and-butter recreational line for a reason. It covers everything from small tillers to serious mid-range family repowers. It is the right answer when comfort, economy, versatility, and long-term value matter more than the last bit of performance.
+
+On Rice Lake, the Kawarthas, and similar Ontario freshwater, that describes a lot of boats. Family aluminums. Console fishing boats used recreationally, not competitively. Cottage pontoons. Mid-size runabouts. Boats that need to be easy to own and easy to trust. For those jobs, FourStroke is not the budget answer. It is the proper answer. Quiet idle, soft engine mounts, low vibration in the hull, and a fuel curve that rewards 3,500 to 4,500 RPM cruising.
+
+If your question is about pontoon lift and loaded acceleration, the [Command Thrust gearcase](/blog/mercury-command-thrust-guide-pontoon-boats) often changes the result more meaningfully than jumping straight to Pro XS.
+
+## Which family is better for a pontoon repower?
+
+On a single-tube pontoon up to 22 feet, the FourStroke 115 or 150 is the right call. Smooth cruise, quiet idle, low fuel burn. Pontoon owners spend most of their time at 3,500 to 4,500 RPM where the FourStroke is happiest. Add Command Thrust if the hull is loaded heavy or you want better lift.
+
+The conversation changes on a tritoon or a pontoon used for tubing. A Pro XS V8 200 with Boost on a tritoon transforms the boat. Plane time drops, mid-range acceleration jumps, and you have reserve power for the day someone shows up with three extra adults and a cooler. The price step is real, typically $3,000 to $5,000 more installed than a FourStroke 150 (2026), but for the right customer the upgrade pays off every weekend.
+
+For most pontoon customers we still recommend the FourStroke. The Pro XS pontoon owner is usually the one who is already thinking about it before we sit down.
+
+## How much more does a Pro XS cost installed?
+
+The step varies by HP. At 115 HP, expect about $1,500 to $2,000 more for the Pro XS over the FourStroke installed. At 175 HP and up, the gap widens to $2,500 to $4,000 because the Pro XS V8 platform also unlocks Boost as an add-on (~$1,200 to $1,800 more).
+
+Here is the ballpark installed range at Harris Boat Works in CAD (2026):
+
+| HP class | FourStroke installed | Pro XS installed |
+|---|---|---|
+| 115 HP | $16,000 to $19,000 | $17,500 to $21,000 |
+| 150 HP | $18,000 to $21,000 | $20,000 to $23,500 |
+| 175 HP | $20,000 to $23,000 | $22,000 to $26,000 |
+| 200 HP | $21,000 to $24,000 | $23,500 to $28,000 |
+| 250 HP | $24,000 to $28,000 | $25,000 to $30,000 |
+
+Full repower includes the motor, rigging, controls, propeller, fuel system inspection, old motor removal, and a water test on Rice Lake before pickup. Pickup only at Gores Landing, no shipping, no delivery. Our [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks each line down. Build a current quote at [mercuryrepower.ca](https://mercuryrepower.ca) for live pricing with options.
+
+## What HBW checks before quoting FourStroke vs Pro XS
+
+When you call us or build a quote online, we ask four things before we recommend a family:
+
+1. **How you actually use the boat.** Cruise, fish casually, or run a pontoon for sunset rides? FourStroke. Race off the ramp, fish tournaments, or care about every mph? Pro XS.
+2. **How heavy your typical load is.** Six or more adults on a pontoon or tritoon regularly? A Pro XS V8 with Boost solves a planing problem the FourStroke cannot.
+3. **Your transom and rigging.** Some older boats have rigging that does not match modern digital throttle. Pro XS is digital-only. FourStroke offers both digital and mechanical at most HP classes.
+4. **Your budget tolerance.** The Pro XS premium is real money. If the extra $1,500 to $4,000 (2026) makes you wince, that is your answer. Spend it on a better prop, a better cover, or fuel.
+
+Whichever family you pick, the rigging, water test, and warranty are identical at Harris Boat Works. We have been a Mercury dealer since 1965 and we will be honest with you about which family fits your boat. If you are still deciding horsepower before family, read our [75 vs 90 vs 115 HP Mercury comparison](/blog/mercury-75-vs-90-vs-115-comparison) first.
+
+## Common mistakes
+
+- **Buying Pro XS on a boat that does not need it.** A 16 foot aluminum with two anglers does not benefit from Pro XS tuning. You will spend extra and gain nothing.
+- **Assuming Pro XS uses way more fuel.** At cruise RPM, the families are close. The fuel gap shows up at wide-open throttle, which most repower customers rarely run.
+- **Confusing Boost with horsepower.** Boost is a 4-to-6-second power injection, not a sustained HP rating. It plants the boat on plane. It does not give you more top speed.
+- **Skipping the Command Thrust conversation.** On heavy pontoons, the Command Thrust gearcase often delivers what people think they need Pro XS for, at lower cost.
+
+## Frequently Asked Questions
+
+**Is a Mercury Pro XS faster than a FourStroke?**
+Yes. At matching horsepower the Pro XS is tuned for higher RPM, sharper hole shot, and a few extra mph at top end. The gap is biggest at 150 HP and up. At 115 HP and below the difference is smaller and the FourStroke is usually the better repower pick.
+
+**Does a Pro XS use more fuel than a FourStroke?**
+At cruise the two are close. Run wide open and the Pro XS will burn more because it spins higher RPM and is tuned to deliver. If most of your time is at 4,000 RPM cruise, the fuel difference is small.
+
+**Is Pro XS worth it on a pontoon?**
+Sometimes. A Pro XS V8 with Boost on a tritoon is a strong combination if you tube or ski. On a standard two-tube pontoon, a FourStroke 115 or 150, often with Command Thrust, is usually the smarter spend.
+
+**Does the Pro XS require premium fuel?**
+No. Both the modern FourStroke and Pro XS models are designed to run on standard 87-octane fuel, though ethanol-free marine gas is always preferred when available.
+
+**Is there a warranty difference between FourStroke and Pro XS?**
+No. Both carry the same Mercury Canadian warranty: 3 years limited plus 3 years corrosion coverage running concurrently. Mercury periodically runs promotional extensions on top of the base coverage. Confirm current promo terms when we quote you.
+
+**Can I finance a Pro XS upgrade?**
+Yes. Financing is available OAC. Build a current quote at mercuryrepower.ca to see live rates and your estimated monthly payment.
+
+## Ready to repower?
+
+Both families have a home at Harris Boat Works. We rig both, we water-test both on Rice Lake, and we will tell you which one your boat actually needs.
+
+**Phone:** 905-342-2153
+**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+**Related guides:**
+- [75 vs 90 vs 115 HP Mercury Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
+- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
+- [Mercury Boost Upgrade Analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis)
+- [Best Pontoon Outboard 2026](/blog/best-pontoon-outboard-2026-mercury)
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)`
   },
   {
     slug: 'boat-repowering-guide-when-to-replace-motor',
