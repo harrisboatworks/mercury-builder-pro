@@ -6,8 +6,8 @@ export default function RepowerHub() {
   return (
     <HubPage
       path="/repower"
-      metaTitle="Mercury Repower Ontario 2026: Cost, Process, Financing | HBW"
-      metaDescription="Mercury repowers in Ontario typically run $11,000 to $40,000 CAD all-in. Get live pricing, the full repower process, and 7.99% financing options at Harris Boat Works."
+      metaTitle="Mercury Repower Ontario | Mercuryrepower.ca"
+      metaDescription="Repower with a new Mercury at Harris Boat Works on Rice Lake. Full job typically $11,000 to $40,000 CAD (2026). Build your quote, pickup at Gores Landing."
       breadcrumbName="Mercury Repower"
       lastReviewedISO="2026-05-05"
       lastReviewedLabel="May 2026"
