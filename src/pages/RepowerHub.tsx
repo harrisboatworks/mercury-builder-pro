@@ -197,6 +197,107 @@ export default function RepowerHub() {
         body: <>Try the financing calculator, or call to talk through your specific repower.</>,
         button: { label: 'Try the financing calculator', to: '/financing' },
       }}
+      extraSchemas={[
+        {
+          '@type': 'Service',
+          '@id': 'https://www.mercuryrepower.ca/repower#service',
+          name: 'Mercury Outboard Repower Service',
+          serviceType: 'Boat Motor Replacement',
+          provider: {
+            '@type': 'LocalBusiness',
+            name: 'Harris Boat Works',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: '5369 Harris Boat Works Rd',
+              addressLocality: 'Gores Landing',
+              addressRegion: 'ON',
+              postalCode: 'K0K 2E0',
+              addressCountry: 'CA',
+            },
+            telephone: '(905) 342-2153',
+          },
+          areaServed: ['Rice Lake', 'Kawarthas', 'Peterborough', 'Northumberland County', 'GTA', 'Toronto', 'Ontario'],
+          description:
+            'Full Mercury outboard repower service: removal, rigging, controls, prop, fuel connection, and water test on Rice Lake. Pickup only at Gores Landing, Ontario.',
+          offers: {
+            '@type': 'Offer',
+            priceCurrency: 'CAD',
+            priceRange: '$11,000 - $40,000',
+            availableDeliveryMethod: 'http://purl.org/goodrelations/v1#DeliveryModePickUp',
+          },
+        },
+      ]}
+      enrichedContent={
+        <>
+          <h2>Mercury Repower Ontario</h2>
+          <blockquote>
+            <strong>Quick answer:</strong> A Mercury repower is the job of pulling your old outboard off the transom and rigging a new Mercury in its place: motor, controls, cables, prop, fuel connection, water test, the whole package. At Harris Boat Works in Gores Landing, ON, a full repower typically runs $11,000 to $40,000 CAD (2026) depending on horsepower and rigging. We have been a Mercury dealer since 1965, family-owned since 1947, and we water-test every motor on Rice Lake before pickup. Pickup-only, no shipping, no delivery.
+          </blockquote>
+
+          <h3>Key facts</h3>
+          <ul>
+            <li>Full repower job: typically $11,000 to $40,000 CAD (2026) depending on horsepower</li>
+            <li>Family-owned since 1947, Mercury dealer since 1965, current Platinum tier</li>
+            <li>Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0</li>
+            <li>Timeline: 3 to 8 weeks from deposit to pickup, depending on Mercury lead time</li>
+            <li>Deposit: $200 (portable), $500 (mid-range), $1,000 (big-block / Pro XS / Verado)</li>
+            <li>Distance from Toronto: about 110 km, roughly 90 minutes door-to-door</li>
+            <li>Warranty: Mercury Canadian warranty (3 years limited plus 3 years corrosion, running concurrently), with promotional extensions stacked on top of the base coverage when active</li>
+            <li>Pickup-only at Gores Landing. Every motor water-tested on Rice Lake before you take it home</li>
+          </ul>
+
+          <h3>How much does a Mercury repower cost in Ontario?</h3>
+          <p>The honest range for a full Mercury repower at Harris Boat Works is $11,000 to $40,000 CAD (2026). That covers the whole job: motor, rigging, controls and cables, propeller, fuel connection, old motor removal, and the water test on Rice Lake.</p>
+          <p>Where you land in that range depends on three things: horsepower, the Mercury family you pick, and what your boat needs to accept the new motor. A mid-range FourStroke 40 to 90 HP repower usually lands $11,000 to $18,000. A Pro XS 200 with the Boost upgrade and digital controls runs closer to $19,000 to $25,000. A 300 HP Pro XS on a fishing rig with new gauges and a new prop can push $30,000 to $40,000. Verado V8/V10 is special-order and starts north of $25,000 for the motor alone before rigging.</p>
+          <p>For a real CAD quote on your specific boat, <Link to="/quote/motor-selection">build a quote</Link> or read our <Link to="/blog/mercury-repower-cost-ontario-2026-cad">repower cost guide</Link> for the line-item breakdown.</p>
+
+          <h3>What's included in a Mercury repower</h3>
+          <ul>
+            <li>The new Mercury outboard, factory-fresh with warranty registered to you</li>
+            <li>Removal and disposal of your old motor, or trade-in valuation if you want credit toward the new one</li>
+            <li>Mechanical or digital controls and cables, sized for your boat</li>
+            <li>Propeller selection based on your hull, expected load, and how you actually run the boat</li>
+            <li>Fuel system inspection (tanks, lines, primer bulb, water-separating filter) and connection to the new motor</li>
+            <li>New battery cables and connections if the old ones are not up to spec</li>
+            <li>Gauges or SmartCraft display where the motor calls for it</li>
+            <li>A full water test on Rice Lake before pickup, including WOT run, trim check, and prop verification</li>
+            <li>Walk-through at pickup so you know what every button does</li>
+          </ul>
+          <p>What's not in the price: trailer work, hull repair, gel-coat or aluminum patching at the transom, fuel tank replacement if your old tank is shot. We will flag any of that during the inspection and quote it separately, never bake it into the motor price as a surprise.</p>
+
+          <h3>How long does a Mercury repower take?</h3>
+          <p>Most repowers take 3 to 8 weeks from deposit to pickup. The variable is Mercury's lead time, not our bench. FourStrokes ship out of the factory in 2 to 4 weeks. Pro XS runs 3 to 6 weeks. Verado is the slow lane at 6 to 12 weeks because it's special-order.</p>
+          <p>Once the motor lands at Gores Landing, the rigging and water test sit on the bench for roughly 3 to 5 working days. We'll call you the morning the water test passes and set a pickup time.</p>
+          <p>Most Ontario boaters book their repower between January and April for a May long weekend launch. If you call in March hoping to be on the water by Victoria Day, we'll be honest with you about whether the motor can get here in time. The <Link to="/blog/what-happens-during-mercury-repower">repower process walkthrough</Link> covers the full 7-step timeline.</p>
+
+          <h3>Where do I pick up my repowered boat?</h3>
+          <p>You pick up at the shop: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. We're on the south shore of Rice Lake, about 110 km east of Toronto on the 401, 30 km south of Peterborough, and an easy run from Northumberland County, the Kawarthas, and the GTA.</p>
+          <p>Pickup-only, every time. We don't ship motors and we don't deliver finished repowers. Two reasons. First, every motor we rig gets a real water test on Rice Lake before it leaves. That's not something a freight company can replicate. Second, the walk-through at pickup is part of the job. You meet the tech who rigged it. You see the throttle, the gauges, the kill switch, the trim. Nothing about your new motor should be a surprise the first time you push the boat away from the dock.</p>
+
+          <h3>What Mercury motors can I repower with?</h3>
+          <p>Anything in the current Mercury lineup, from a 2.5 HP portable to a 400 HP Verado. The most common repowers we see fall in three buckets:</p>
+          <ul>
+            <li><strong>Mid-range FourStroke (40 to 90 HP).</strong> The workhorse for 16 to 18 foot aluminum boats and small fibreglass runabouts. Quiet, fuel-stingy, low-maintenance.</li>
+            <li><strong>Big-block FourStroke and Pro XS (115 to 300 HP).</strong> The repower of choice for pontoons, larger runabouts, and bass boats. Pro XS V8 4.6L (175 / 200 / 225 HP) supports the Mercury Boost upgrade, 25 extra HP on demand for 4 to 6 seconds at the press of a button. Most popular Boost customer: pontoon owner who wants holeshot without going up a full motor size.</li>
+            <li><strong>Verado V8/V10 (250 to 400 HP).</strong> Special-order, current models naturally aspirated, starts north of $25,000 for the motor (2026). We rig these, but we don't promote them as a standard option. Most repowers don't need that much motor.</li>
+          </ul>
+          <p>Not sure what your hull can handle? Our <Link to="/blog/best-mercury-outboard-rice-lake-fishing">Rice Lake outboard guide</Link> covers the typical setups we see on local boats, and we'll match the right motor to your hull when you call.</p>
+
+          <h3>Why pick Harris Boat Works for a Mercury repower?</h3>
+          <p>We've been on this land since 1947 and we've been a Mercury dealer since 1965. Three generations. One brand. The reason that matters: when you hand us your boat, the same techs who priced the quote are the ones rigging the motor and running the water test on Rice Lake the next week. No subcontracted install, no parts farmed out, no handoff between sales and service.</p>
+          <p>We sell Mercury only. We don't rig new outboards from other brands. The benefit to you is depth. Our service team has rigged thousands of Mercury motors across every family from FourStroke to Pro XS to Verado. Mercury Canadian warranty (3 years limited plus 3 years corrosion, concurrent), with promotional extensions stacked on top when active, applies to every motor we rig.</p>
+          <p>The shop is on the south shore of Rice Lake, which means the water test is not a token spin around a marina basin. It's a real run on real water. By the time you back the trailer up to load, the motor has already proved it can do its job.</p>
+
+          <h3>Related guides</h3>
+          <ul>
+            <li><Link to="/blog/mercury-repower-cost-ontario-2026-cad">Mercury Repower Cost Ontario 2026</Link></li>
+            <li><Link to="/blog/what-happens-during-mercury-repower">What Happens During a Mercury Repower</Link></li>
+            <li><Link to="/blog/mercury-outboard-financing-ontario-2026">Mercury Outboard Financing Ontario 2026</Link></li>
+            <li><Link to="/blog/outboard-trade-in-value-ontario-hbw">Outboard Trade-In Value Ontario</Link></li>
+            <li><Link to="/blog/best-mercury-outboard-rice-lake-fishing">Best Mercury Outboard for Rice Lake</Link></li>
+          </ul>
+        </>
+      }
     />
   );
 }
