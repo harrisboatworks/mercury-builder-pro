@@ -626,6 +626,14 @@ function MotorCardPreviewInner({
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </button>
 
+            <a
+              href="tel:9053422153"
+              onClick={(e) => e.stopPropagation()}
+              className="block text-center text-xs text-repower-navy-900/55 hover:text-repower-navy-900 mt-3 underline-offset-2 hover:underline"
+            >
+              Not sure? Call (905) 342-2153 and we'll match it.
+            </a>
+
             {/* Monthly payment estimate (kept, secondary) */}
             {monthlyPayment && (
               <p className="mt-3 text-[12px] font-light text-repower-navy-900/55 text-center">
