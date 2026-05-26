@@ -86,7 +86,7 @@ export default function BoatInfoPage() {
         <QuotePageShell
           eyebrow="Step 3 · Your Boat"
           title="Tell us about your boat"
-          subhead="A few details help us match the right shaft length, controls, and rigging."
+          subhead="We use this to sanity-check fit before we send your quote. No auto-pricing games."
           className="!py-6 md:!py-8"
         >
           <BoatInformation
