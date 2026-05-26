@@ -86,6 +86,7 @@ export function HubPageSEO({
             },
           ]
         : []),
+      ...(extraSchemas && extraSchemas.length > 0 ? extraSchemas : []),
     ],
   };
 
