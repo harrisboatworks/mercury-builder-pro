@@ -17,6 +17,7 @@ export interface HubPageSEOProps {
   faqs: HubFAQ[];
   lastReviewedISO: string; // YYYY-MM-DD
   image?: string; // absolute or root-relative
+  extraSchemas?: any[];
 }
 
 export function HubPageSEO({
@@ -29,6 +30,7 @@ export function HubPageSEO({
   faqs,
   lastReviewedISO,
   image,
+  extraSchemas,
 }: HubPageSEOProps) {
   const url = `${SITE_URL}${path}`;
   const ogImage = image
@@ -84,6 +86,7 @@ export function HubPageSEO({
             },
           ]
         : []),
+      ...(extraSchemas && extraSchemas.length > 0 ? extraSchemas : []),
     ],
   };
 

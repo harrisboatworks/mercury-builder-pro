@@ -84,6 +84,12 @@ export interface HubPageProps {
     body: ReactNode;
     button?: HubCTA;
   };
+
+  // Optional: extra long-form AEO content rendered after the direct answer
+  enrichedContent?: ReactNode;
+
+  // Optional: additional JSON-LD graph items (e.g. Service schema)
+  extraSchemas?: any[];
 }
 
 const phoneToTel = (s: string) => 'tel:+1' + s.replace(/\D/g, '');
@@ -109,6 +115,8 @@ export function HubPage(props: HubPageProps) {
     whyHbw,
     faqs,
     secondaryCTA,
+    enrichedContent,
+    extraSchemas,
   } = props;
 
   return (
@@ -122,7 +130,9 @@ export function HubPage(props: HubPageProps) {
         breadcrumbName={breadcrumbName}
         faqs={faqs}
         lastReviewedISO={lastReviewedISO}
+        extraSchemas={extraSchemas}
       />
+
 
       {/* Breadcrumb (visible) */}
       <nav
@@ -186,6 +196,17 @@ export function HubPage(props: HubPageProps) {
           </div>
         </div>
       </section>
+
+      {/* Enriched long-form AEO content (optional) */}
+      {enrichedContent && (
+        <section className="bg-[#050E1C] py-10 md:py-14">
+          <div className="mx-auto max-w-4xl px-4">
+            <div className="prose prose-invert max-w-none prose-headings:font-display prose-headings:text-repower-cream prose-h2:text-3xl prose-h3:text-xl prose-h3:text-repower-gold prose-p:text-repower-cream/85 prose-strong:text-repower-cream prose-a:text-repower-gold prose-a:no-underline hover:prose-a:underline prose-li:text-repower-cream/85 prose-blockquote:border-l-repower-gold prose-blockquote:text-repower-cream/90">
+              {enrichedContent}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Primary visual table */}
       <section className="bg-[#050E1C] py-10 md:py-14">
