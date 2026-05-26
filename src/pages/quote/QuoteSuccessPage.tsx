@@ -134,17 +134,20 @@ export default function QuoteSuccessPage() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="h-px w-8 bg-repower-mercury-red" />
             <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
-              Confirmed
+              Received
             </p>
             <span className="h-px w-8 bg-repower-mercury-red" />
           </div>
 
           <h1 className="font-display font-bold text-repower-navy-900 mb-4" style={{ fontSize: 'clamp(32px, 4vw, 44px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}>
-            Quote Submitted!
+            Quote request received
           </h1>
 
-          <p className="font-sans text-[16px] text-repower-navy-900/65 mb-8 max-w-[52ch] mx-auto">
-            Thank you for requesting a quote. We've received your information and will be in touch shortly.
+          <p className="font-sans text-[16px] font-semibold text-repower-navy-900 mb-3 max-w-[52ch] mx-auto">
+            We respond within 1 business day.
+          </p>
+          <p className="font-sans text-[15px] text-repower-navy-900/65 mb-8 max-w-[52ch] mx-auto">
+            Thanks for sending your details to Harris Boat Works. A real person reviews every quote.
           </p>
 
           {/* Reference Number */}
