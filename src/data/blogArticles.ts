@@ -32163,7 +32163,7 @@ Three things.
 
 ## What we check at quote time
 
-Confirm three things before relying on the promo at quote time. First, that the promotion is active when your quote is written. Second, that the specific motor and application qualify. Third, that you understand any registration and service steps needed to keep coverage clean. Six years is reassuring, but only when the details are right.
+Confirm three things before relying on the promo at quote time. First, that the promotion is active when your quote is written. Second, that the specific motor and application qualify. Third, that you understand any registration and service steps needed to keep coverage clean. Six years is reassuring, but only when the details are right. Without an active promo, your coverage is the 3-year contractual base, which is still strong for the marine industry but worth knowing in advance.
 
 ## Where can I get warranty service?
 
