@@ -17,6 +17,7 @@ export interface HubPageSEOProps {
   faqs: HubFAQ[];
   lastReviewedISO: string; // YYYY-MM-DD
   image?: string; // absolute or root-relative
+  extraSchemas?: any[];
 }
 
 export function HubPageSEO({
