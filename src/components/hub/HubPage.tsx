@@ -115,6 +115,8 @@ export function HubPage(props: HubPageProps) {
     whyHbw,
     faqs,
     secondaryCTA,
+    enrichedContent,
+    extraSchemas,
   } = props;
 
   return (
