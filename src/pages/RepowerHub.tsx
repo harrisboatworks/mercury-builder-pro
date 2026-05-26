@@ -126,6 +126,31 @@ export default function RepowerHub() {
             },
           ],
         },
+        {
+          heading: 'Repower deep dives',
+          cards: [
+            {
+              title: 'Mercury Repower Cost (CAD, 2026)',
+              description: 'Full job typically $11,000 to $40,000 CAD. See where the dollars go.',
+              to: '/repower/cost',
+            },
+            {
+              title: 'Mercury Repower Process: 7 Steps',
+              description: 'Quote to pickup in 3 to 8 weeks. Water-tested on Rice Lake.',
+              to: '/repower/process',
+            },
+            {
+              title: 'Mercury Repower Financing',
+              description: 'OAC. Live rates on the quote builder. Deposit tiers explained.',
+              to: '/repower/financing',
+            },
+            {
+              title: 'Outboard Motor Trade-In',
+              description: 'CAD valuation in 1 business day. Reduces what you finance.',
+              to: '/repower/trade-in',
+            },
+          ],
+        },
       ]}
       whyHbwIntro="Sixty years of Mercury-only focus and three generations of family ownership in Gores Landing, Ontario."
       whyHbw={[

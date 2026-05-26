@@ -108,6 +108,10 @@ const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 const Promotions = lazy(() => import("./pages/Promotions"));
 const Repower = lazy(() => import("./pages/Repower"));
 const RepowerHub = lazy(() => import("./pages/RepowerHub"));
+const RepowerCost = lazy(() => import("./pages/RepowerCost"));
+const RepowerProcess = lazy(() => import("./pages/RepowerProcess"));
+const RepowerFinancing = lazy(() => import("./pages/RepowerFinancing"));
+const RepowerTradeIn = lazy(() => import("./pages/RepowerTradeIn"));
 const MotorSelectionHub = lazy(() => import("./pages/MotorSelectionHub"));
 const MaintenanceHub = lazy(() => import("./pages/MaintenanceHub"));
 const LakesHub = lazy(() => import("./pages/LakesHub"));
@@ -539,6 +543,10 @@ function AnimatedRoutes() {
         
         {/* Hub pages (top-level resource pages) */}
         <Route path="/repower" element={<RepowerHub />} />
+        <Route path="/repower/cost" element={<RepowerCost />} />
+        <Route path="/repower/process" element={<RepowerProcess />} />
+        <Route path="/repower/financing" element={<RepowerFinancing />} />
+        <Route path="/repower/trade-in" element={<RepowerTradeIn />} />
         <Route path="/repower-legacy" element={<Repower />} />
         <Route path="/motor-selection" element={<MotorSelectionHub />} />
         <Route path="/maintenance" element={<MaintenanceHub />} />
