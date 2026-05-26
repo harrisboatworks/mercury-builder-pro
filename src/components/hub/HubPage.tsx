@@ -84,6 +84,12 @@ export interface HubPageProps {
     body: ReactNode;
     button?: HubCTA;
   };
+
+  // Optional: extra long-form AEO content rendered after the direct answer
+  enrichedContent?: ReactNode;
+
+  // Optional: additional JSON-LD graph items (e.g. Service schema)
+  extraSchemas?: any[];
 }
 
 const phoneToTel = (s: string) => 'tel:+1' + s.replace(/\D/g, '');
