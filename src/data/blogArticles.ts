@@ -32107,7 +32107,7 @@ The covered systems include:
 - **Cooling system** - water pump housing, thermostat, sensors
 - **Starting and charging** - starter motor, alternator, regulator
 
-Mercury authorizes warranty work at all authorized dealers in Canada, including Harris Boat Works. When a warranty claim is approved, Mercury covers parts and labour at the dealer's rate. The 5-year baseline has been the Mercury standard for several years. The current 1-year promotional extension brings the total to 6 years. Mercury reviews promotional terms regularly, so the promo may change in future model years. We confirm exact terms when we quote.
+Mercury authorizes warranty work at all authorized dealers in Canada, including Harris Boat Works. When a warranty claim is approved, Mercury covers parts and labour at the dealer's rate. Mercury's contractual baseline is 3 years limited (plus the concurrent 3-year corrosion warranty). Mercury has run promotional extensions for multiple model years that have brought effective limited coverage to 5, 6, or 7 years depending on the offer in market. The current promotional stack runs about 6 years from purchase. Promos change. We confirm the exact contractual base and current promo terms when we quote, so you know what reverts when the promo ends.
 
 ## What is not covered under the Mercury warranty?
 
