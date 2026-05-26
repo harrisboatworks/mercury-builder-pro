@@ -30,6 +30,7 @@ export function HubPageSEO({
   faqs,
   lastReviewedISO,
   image,
+  extraSchemas,
 }: HubPageSEOProps) {
   const url = `${SITE_URL}${path}`;
   const ogImage = image
