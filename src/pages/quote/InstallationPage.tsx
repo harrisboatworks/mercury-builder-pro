@@ -125,6 +125,14 @@ export default function InstallationPage() {
           subhead="Tell us how you'd like the motor rigged. We handle controls, steering, and dispose of your old one."
           className="!py-6 md:!py-8"
         >
+          <div className="mx-auto w-full max-w-[880px] mb-6 bg-repower-cream border border-repower-navy-900/10 p-5 rounded-sm">
+            <p className="font-display font-semibold text-[16px] text-repower-navy-900 mb-1">
+              Pickup only at Gores Landing
+            </p>
+            <p className="font-sans text-[14px] text-repower-navy-900/70 leading-relaxed">
+              Every motor is rigged, water-tested on Rice Lake, and ready when you arrive. Pickup is at our shop in Gores Landing, about 90 minutes from downtown Toronto.
+            </p>
+          </div>
           <InstallationConfig
             selectedMotor={state.motor}
             boatInfo={state.boatInfo}
