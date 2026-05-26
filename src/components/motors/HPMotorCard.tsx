@@ -186,6 +186,14 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
         >
           Configure Your Motor
         </button>
+
+        <a
+          href="tel:9053422153"
+          onClick={(e) => e.stopPropagation()}
+          className="block text-center text-xs text-gray-500 hover:text-gray-900 mt-3 underline-offset-2 hover:underline"
+        >
+          Not sure? Call (905) 342-2153 and we'll match it.
+        </a>
       </div>
     </div>
   );

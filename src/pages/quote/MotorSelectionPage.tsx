@@ -1144,9 +1144,15 @@ if (event.type === 'filter_motors') {
             >
               Choose your power.
             </h1>
-            <p className="text-[18px] font-normal text-[#050E1C]/65 text-balance mb-0">
+            <p className="text-[18px] font-normal text-[#050E1C]/65 text-balance mb-4">
               Live pricing. Real quotes. Three minutes.
             </p>
+            <p className="text-[15px] font-normal text-[#050E1C]/70 text-balance max-w-[60ch] mb-4">
+              Build your Mercury repower quote in about 3 minutes. A real person at HBW reviews every quote and emails you back within 1 business day.
+            </p>
+            <div className="text-[12px] font-medium text-[#050E1C]/65 border-t border-[#050E1C]/10 pt-3">
+              Harris Boat Works · Mercury dealer since 1965, current Platinum tier · Family-owned since 1947 · Gores Landing, ON
+            </div>
           </div>
         </div>
 

@@ -78,7 +78,7 @@ export default function PromoSelectionPage() {
       id: 'no_payments',
       title: '6 Months No Payments',
       subtitle: 'Buy Now, Pay Later',
-      description: 'Take delivery of your new motor today and make no payments for 6 full months. Perfect for getting on the water now.',
+      description: 'Take ownership of your new motor today and make no payments for 6 full months. Perfect for getting on the water now.',
       highlight: 'Deferred',
       icon: CalendarOff,
     },

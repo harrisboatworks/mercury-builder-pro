@@ -106,7 +106,7 @@ export default function PurchasePathPage() {
         <QuotePageShell
           eyebrow="Step 2 · Installation"
           title="Loose motor or professional install?"
-          subhead="Pick how you'd like to take delivery. You can change this later."
+          subhead="Pick how you'd like to take your motor. You can change this later."
           className="!py-6 md:!py-8"
         >
           <PurchasePath

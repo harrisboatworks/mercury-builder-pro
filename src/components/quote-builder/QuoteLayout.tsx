@@ -51,6 +51,13 @@ export const QuoteLayout = ({
       {/* Spacer to offset fixed header */}
       <div className="h-[64px] lg:h-[72px]" aria-hidden />
 
+      {/* Persistent trust strip */}
+      <div className="bg-repower-cream border-b border-repower-navy-900/10">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-14 py-2 text-[12px] font-medium text-repower-navy-900/70 text-center">
+          Harris Boat Works · Mercury dealer since 1965, current Platinum tier · Family-owned since 1947 · Gores Landing, ON
+        </div>
+      </div>
+
       {/* Quote Progress Stepper */}
       {showProgress && <QuoteProgressStepper />}
 
