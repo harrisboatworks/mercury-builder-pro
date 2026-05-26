@@ -32062,6 +32062,162 @@ Harris Boat Works, family-owned since 1947. A Mercury Platinum Dealer, selling M
 - [Mercury Repower Cost in Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 `,
   },
+  {
+    slug: 'mercury-6-year-warranty-explained',
+    seoTitle: 'Mercury 6-Year Warranty Explained (Current Promo) | Mercuryrepower.ca',
+    title: 'Mercury 6-Year Warranty Explained (Current Promo)',
+    description: "Current Mercury 6-year limited warranty (5+1 promo) explained for Ontario repower buyers. What's covered, what's not, why it matters.",
+    image: '/lovable-uploads/blog-mercury-warranty-canada-2026-hero.jpg',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-25',
+    dateModified: '2026-05-25',
+    publishDate: '2026-05-25',
+    category: 'Buying Guide',
+    readTime: '9 min read',
+    keywords: ['mercury 6 year warranty', 'mercury warranty promo', 'mercury 5+1 warranty', 'mercury warranty ontario', 'mercury limited warranty canada', 'mercury warranty explained'],
+    relatedSlugs: ['mercury-outboard-warranty-canada-2026', 'mercury-extended-warranty-platinum-ontario', 'mercury-repower-cost-ontario-2026-cad'],
+    faqs: [
+      { question: 'How long is the Mercury warranty currently?', answer: 'Currently 5 years of factory limited warranty plus a 1-year promotional extension, totaling 6 years from the registration date. The promotional portion is reviewed by Mercury periodically, so confirm current terms when we quote you.' },
+      { question: 'What does the Mercury warranty cover?', answer: 'Manufacturing defects in the powerhead, lower unit, electronics, and major components, including both parts and labour at authorized Mercury dealers like Harris Boat Works. The coverage is non-declining, meaning day one equals day six.' },
+      { question: 'What is not covered?', answer: 'Routine maintenance (oil, filters, plugs), wear items (impellers, anodes, props), damage from misuse, neglect, improper fuel, freeze damage from skipped winterization, or running aground. Damage from non-Mercury parts or unauthorized modifications is also excluded.' },
+      { question: 'Do I need to service the motor at Harris Boat Works to keep the warranty?', answer: 'No. You can service the motor at any authorized Mercury dealer in Canada. Keep service records to support any warranty claims. We service many customers who bought elsewhere and we welcome it.' },
+      { question: 'Does the warranty transfer if I sell the boat?', answer: 'The Mercury Limited Warranty includes provisions for transfer to a second owner. Specific transfer terms depend on the motor and the promo at time of purchase. We cover transfer with you when we quote.' },
+      { question: 'Is there an extended warranty option beyond 6 years?', answer: 'Mercury offers Product Protection extended service plans through dealers. These add coverage beyond the factory plus promotional period. We quote extended coverage at the time of purchase if you want it.' },
+    ],
+    content: `*Last reviewed: 2026-05-25*
+
+> **Quick answer:** The current Mercury Limited Warranty is 5 years of factory coverage plus a 1-year promotional extension, effectively 6 years from the date of purchase. It is non-declining, meaning year-one coverage equals year-six coverage. It covers manufacturing defects on the powerhead, lower unit, and electronics, including parts and labour. Routine maintenance, wear items, and damage from misuse are not covered. Confirm the exact promo terms when we quote you, because Mercury updates the promotional component periodically. At Harris Boat Works we register every motor at delivery and handle warranty claims in-house. Pickup at Gores Landing.
+
+When customers ask about Mercury's warranty, the question they usually mean is: "If something goes wrong, am I going to pay for it?" The current Mercury 5+1 promo gives the cleanest possible answer to that question. Six years of factory-backed coverage on a major purchase, with no declining schedule and full parts plus labour at any authorized Mercury dealer in Canada.
+
+This post explains what the 6-year coverage actually means, what it does and does not cover, and why it matters for a repower decision. We update it when Mercury updates the promo.
+
+## What does the Mercury 6-year warranty actually cover?
+
+The Mercury Limited Warranty covers manufacturing defects in materials and workmanship on new outboards purchased through authorized Mercury dealers. It is a factory warranty, not a service contract, and it kicks in from the date of delivery to the original purchaser.
+
+Unlike some automotive warranties that scale down over time, **Mercury coverage is non-declining.** If a fuel injector fails in year five from a manufacturing defect, the part and the labour are completely covered, just as they would be in month one.
+
+The covered systems include:
+
+- **The powerhead** - block, head, internal components, fuel injection
+- **The lower unit** - gearcase, shaft, prop bearings
+- **The mid-section** - driveshaft, exhaust housing
+- **Electronics** - ECU, charging system, ignition, sensors
+- **Cooling system** - water pump housing, thermostat, sensors
+- **Starting and charging** - starter motor, alternator, regulator
+
+Mercury authorizes warranty work at all authorized dealers in Canada, including Harris Boat Works. When a warranty claim is approved, Mercury covers parts and labour at the dealer's rate. The 5-year baseline has been the Mercury standard for several years. The current 1-year promotional extension brings the total to 6 years. Mercury reviews promotional terms regularly, so the promo may change in future model years. We confirm exact terms when we quote.
+
+## What is not covered under the Mercury warranty?
+
+The exclusions matter, so we explain them plainly to every customer.
+
+| Category | Covered? | Notes |
+|---|---|---|
+| Manufacturing defects | Yes | Core of the warranty |
+| Powerhead failure (non-abuse) | Yes | Block, head, internals |
+| Lower unit failure (non-impact) | Yes | Gearcase, shafts, seals |
+| Electronics defects | Yes | ECU, sensors, harnesses |
+| Parts and labour at authorized dealer | Yes | Both covered |
+| Routine maintenance (oil, filters, plugs) | No | Owner responsibility |
+| Water pump impeller | No | Wear item, replace annually |
+| Anodes (zincs) | No | Wear item, inspect each season |
+| Propeller damage | No | Impact or wear |
+| Damage from running aground | No | Misuse |
+| Damage from wrong fuel or oil | No | Misuse |
+| Damage from non-Mercury parts | No | Unauthorized modification |
+| Freeze damage from skipped winterization | No | Owner responsibility |
+| Saltwater corrosion (if unprotected) | Limited | Depends on care |
+| Storage neglect | No | Owner responsibility |
+
+The pattern is clear. Mercury covers the engine itself against defects in how it was built. Mercury does not cover the consequences of how you use or maintain the engine. If you hit a rock and shear the propeller shaft, that is an insurance claim, not a warranty claim. If you fail to winterize and the block cracks from freezing, the warranty does not cover the repair.
+
+## Why does the 6-year warranty matter for a repower decision?
+
+Three real reasons.
+
+**First, peace of mind on a $15,000 to $30,000 CAD purchase.** A new motor is a major investment. Six years of factory coverage means that if something goes wrong with the powerhead, lower unit, or electronics, you are not paying for it. That is substantial on a big-block or Pro XS where parts and labour for a major repair can run thousands.
+
+**Second, the way Ontario seasons compress the calendar.** Six years on paper is not six year-round use cycles the way the warranty might sound in a generic advertisement. It is roughly six boating seasons of about five months each, May long weekend to Canadian Thanksgiving. That makes the coverage feel more tangible because the calendar time lines up with the actual moments you care about being on the water.
+
+**Third, resale value.** A boat with significant warranty time remaining is worth more on the used market. If you sell the boat in year three, the buyer inherits the remaining warranty (subject to Mercury's transfer terms) and that adds value to the sale.
+
+Combined, these reasons help close the gap between "repair the old motor again" and "repower now." Our [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) covers the full math on that decision.
+
+## How does the warranty compare across Mercury families?
+
+The same Mercury Limited Warranty applies across FourStroke, Pro XS, Verado, and Avator. There is no warranty difference by family. A 9.9 HP portable, a 90 HP FourStroke, a Pro XS V8 200, and an Avator 7.5e all carry the same 5-year plus 1-year promo coverage.
+
+What does vary is the cost of a major repair if you ever had one outside warranty. A FourStroke 90 HP powerhead replacement is a few thousand dollars in parts and labour. A Pro XS V8 250 or a Verado V10 powerhead replacement is many thousands more. The warranty value scales with the motor's price, which is part of why the same coverage gets relatively more meaningful as you go up in HP.
+
+## What do I need to do to keep the warranty valid?
+
+Three things.
+
+**First, follow the maintenance schedule.** Mercury specifies oil change intervals, plug intervals, and annual service requirements in the owner's manual. Skipping required maintenance can void warranty claims related to neglected systems.
+
+**Second, keep records.** Save your service invoices, including the work we do at Harris Boat Works each year. If you need a warranty claim, the records show the motor was properly maintained.
+
+**Third, use authorized dealers for service.** You do not need to service exclusively at Harris Boat Works (though we would appreciate it), but service should happen at an authorized Mercury dealer in Canada. Unauthorized work, especially anything touching the powerhead or ECU, can void coverage.
+
+## What we check at quote time
+
+Confirm three things before relying on the promo at quote time. First, that the promotion is active when your quote is written. Second, that the specific motor and application qualify. Third, that you understand any registration and service steps needed to keep coverage clean. Six years is reassuring, but only when the details are right.
+
+## Where can I get warranty service?
+
+Any authorized Mercury dealer in Canada can perform warranty work. Mercury's authorized dealer network is extensive across Ontario and the rest of the country.
+
+We have been a Mercury Platinum Dealer since 1965. Because we are a Platinum dealer, we handle the entire warranty process in-house: diagnose the issue, order parts directly from Mercury, perform the repair, and submit the claim. You do not pay out of pocket and wait for reimbursement.
+
+The Harris Boat Works service team handles warranty work for customers who bought from us and for customers who bought elsewhere. We do not ask where you bought the boat, if the motor is a Mercury under warranty, we can work on it.
+
+## Should the warranty change which Mercury I buy?
+
+Not by itself. The 6-year promo can help close the gap between "repair again" and "repower now," but it should not talk you into the wrong horsepower or the wrong family. The right way to use warranty is as a tiebreaker or a confidence factor, not as the main engine-selection tool.
+
+Pick the right motor for your boat first. Then let the warranty be the reason you can sleep at night with the purchase. Our [repower vs new boat post](/blog/repair-repower-or-sell-boat-ontario-decision-guide) covers how to think about the bigger decision.
+
+## Frequently Asked Questions
+
+**How long is the Mercury warranty currently?**
+Currently 5 years of factory limited warranty plus a 1-year promotional extension, totaling 6 years from the registration date. The promotional portion is reviewed by Mercury periodically, so confirm current terms when we quote you.
+
+**What does the Mercury warranty cover?**
+Manufacturing defects in the powerhead, lower unit, electronics, and major components, including both parts and labour at authorized Mercury dealers like Harris Boat Works. The coverage is non-declining, meaning day one equals day six.
+
+**What is not covered?**
+Routine maintenance (oil, filters, plugs), wear items (impellers, anodes, props), damage from misuse, neglect, improper fuel, freeze damage from skipped winterization, or running aground. Damage from non-Mercury parts or unauthorized modifications is also excluded.
+
+**Do I need to service the motor at Harris Boat Works to keep the warranty?**
+No. You can service the motor at any authorized Mercury dealer in Canada. Keep service records to support any warranty claims. We service many customers who bought elsewhere and we welcome it.
+
+**Does the warranty transfer if I sell the boat?**
+The Mercury Limited Warranty includes provisions for transfer to a second owner. Specific transfer terms depend on the motor and the promo at time of purchase. We cover transfer with you when we quote.
+
+**Is there an extended warranty option beyond 6 years?**
+Mercury offers Product Protection extended service plans through dealers. These add coverage beyond the factory plus promotional period. We quote extended coverage at the time of purchase if you want it.
+
+---
+
+## Ready to talk warranty on your repower?
+
+Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right motor for your boat. We are the repower side of the Harris Boat Works service team on Rice Lake. Same techs, same shop, since 1947.
+
+**Phone:** 905-342-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+---
+
+**Related guides:**
+
+- [Mercury Outboard Warranty Canada 2026](/blog/mercury-outboard-warranty-canada-2026)
+- [Mercury Extended Warranty (Platinum) Ontario](/blog/mercury-extended-warranty-platinum-ontario)
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Repair, Repower, or Sell? The Honest Decision](/blog/repair-repower-or-sell-boat-ontario-decision-guide)`,
+  },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
