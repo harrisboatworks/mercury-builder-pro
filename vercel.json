@@ -53,6 +53,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/mercury-command-thrust-vs-standard-gearcase",
+      "destination": "/blog/mercury-command-thrust-guide-pontoon-boats",
+      "statusCode": 301
+    },
+    {
       "source": "/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke",
       "destination": "/motors/fourstroke-60hp-60-elpt-fourstroke",
       "statusCode": 301
