@@ -1761,7 +1761,7 @@ The standard 9.9 is not that motor. It can push a small boat. It cannot troll a 
 
 ---
 
-## Why a Kicker Matters on Rice Lake Specifically
+![Mercury 9.9 ProKicker versus standard 9.9 FourStroke](/lovable-uploads/inline/prokicker-vs-standard-99.svg)\n\n## Why a Kicker Matters on Rice Lake Specifically
 
 Rice Lake is a trolling lake. That is just the truth of it.
 
@@ -3445,7 +3445,7 @@ No licence is required during **Father's Day Weekend (June 20-21)** and **Family
 
 ---
 
-## What's Actually in Rice Lake
+![Mercury setup for Rice Lake fishing, by species](/lovable-uploads/inline/rice-lake-fishing-setup.svg)\n\n## What's Actually in Rice Lake
 
 More than 10 sport fish species in the same body of water. Here is what you are targeting.
 
@@ -3819,7 +3819,7 @@ The boaters who regret a repower are almost always the ones who put a new motor 
 
 ---
 
-## Step 1: Is Your Hull Worth Repowering?
+![Mercury repower process timeline at HBW](/lovable-uploads/inline/repower-process-timeline.svg)\n\n## Step 1: Is Your Hull Worth Repowering?
 
 Honest answer before anything else. Not every hull should get a new motor.
 
@@ -9528,7 +9528,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 ## Quick answer
 Mercury Avator electric outboards are purpose-built for short-range, quiet, low-maintenance boating. They are a genuinely good fit for small boats on electric-only or HP-restricted lakes, cottage tenders, and dedicated quiet runabouts. They are not a replacement for a gas outboard on a full-size fishing boat running a full day on Rice Lake. Understand the use case before you buy.
 
-## The honest take
+![Mercury Avator electric outboard lineup, 7.5e 20e 35e](/lovable-uploads/inline/mercury-avator-lineup.svg)\n\n## The honest take
 
 Electric outboards have arrived. Not as a concept, as actual products you can buy, rig, and put on a boat. Mercury's Avator line is one of the more credible entries in that space because it comes from a manufacturer with real dealer infrastructure, real service support, and a track record we are familiar with.
 
@@ -11645,7 +11645,7 @@ Lake Ontario salmon and trout trolling typically calls for a Mercury 200–300 H
 
 ---
 
-## Lake Ontario is Different Fishing Water
+![Mercury setup for Lake Ontario salmon and trout, by boat](/lovable-uploads/inline/lake-ontario-hp-setup.svg)\n\n## Lake Ontario is Different Fishing Water
 
 Most of our customers who fish Rice Lake have been at it for years. They know the railway hazard, they know the weed beds, they know what happens when the wind builds from the west at 2 p.m.
 
@@ -12110,7 +12110,7 @@ source: HBW Customer, Peterborough 2026
 
 ---
 
-## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
+![DIY Mercury outboard winterization, six steps in order](/lovable-uploads/inline/diy-winterization-steps.svg)\n\n## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
 
 Ontario's boating season has a hard stop. Unlike some parts of the country where an outboard can sit in the water year-round, here it comes out in October and faces five or six months of temperatures that will crack an unprotected powerhead if you leave water in it.
 
@@ -14999,7 +14999,7 @@ If a seller cannot tell you the year, the hours, or the use history, you are buy
 
 ---
 
-## At the Boat: The Inspection Order
+![Used outboard inspection: green flags vs red flags](/lovable-uploads/inline/used-outboard-green-red-flags.svg)\n\n## At the Boat: The Inspection Order
 
 ### Step 1: Walk Around It Before Anyone Starts It
 
@@ -23200,7 +23200,7 @@ Harris Boat Works offers outdoor winter storage with shrinkwrap on-site at our G
 
 ---
 
-## What HBW Storage Actually Looks Like
+![Outdoor shrinkwrap versus indoor heated boat storage](/lovable-uploads/inline/outdoor-vs-indoor-storage.svg)\n\n## What HBW Storage Actually Looks Like
 
 We've stored boats for Rice Lake and [Kawartha-area customers](/blog/boat-storage-kawartha-lakes) for decades. The setup is straightforward:
 
