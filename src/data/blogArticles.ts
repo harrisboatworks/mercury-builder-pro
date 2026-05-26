@@ -32147,7 +32147,7 @@ Combined, these reasons help close the gap between "repair the old motor again" 
 
 ## How does the warranty compare across Mercury families?
 
-The same Mercury Limited Warranty applies across FourStroke, Pro XS, Verado, and Avator. There is no warranty difference by family. A 9.9 HP portable, a 90 HP FourStroke, a Pro XS V8 200, and an Avator 7.5e all carry the same 5-year plus 1-year promo coverage.
+The same Mercury Limited Warranty applies across FourStroke, Pro XS, Verado, and Avator. There is no warranty difference by family. A 9.9 HP portable, a 90 HP FourStroke, a Pro XS V8 200, and an Avator 7.5e all carry the same 3-year contractual base plus whatever current promotional extension Mercury is offering.
 
 What does vary is the cost of a major repair if you ever had one outside warranty. A FourStroke 90 HP powerhead replacement is a few thousand dollars in parts and labour. A Pro XS V8 250 or a Verado V10 powerhead replacement is many thousands more. The warranty value scales with the motor's price, which is part of why the same coverage gets relatively more meaningful as you go up in HP.
 
