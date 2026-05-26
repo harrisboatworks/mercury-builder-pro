@@ -425,6 +425,22 @@
       "destination": "/repower/index.html"
     },
     {
+      "source": "/repower/cost",
+      "destination": "/repower/cost/index.html"
+    },
+    {
+      "source": "/repower/process",
+      "destination": "/repower/process/index.html"
+    },
+    {
+      "source": "/repower/financing",
+      "destination": "/repower/financing/index.html"
+    },
+    {
+      "source": "/repower/trade-in",
+      "destination": "/repower/trade-in/index.html"
+    },
+    {
       "source": "/faq",
       "destination": "/faq/index.html"
     },
