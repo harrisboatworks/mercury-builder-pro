@@ -32182,7 +32182,7 @@ Pick the right motor for your boat first. Then let the warranty be the reason yo
 ## Frequently Asked Questions
 
 **How long is the Mercury warranty currently?**
-Currently 5 years of factory limited warranty plus a 1-year promotional extension, totaling 6 years from the registration date. The promotional portion is reviewed by Mercury periodically, so confirm current terms when we quote you.
+Mercury's contractual base is 3 years limited + 3 years corrosion (concurrent, not stacked). The current promotional stack extends factory limited coverage to roughly 6 years from the registration date, subject to specific motor and offer terms. Promos change periodically, so confirm current terms when we quote. If no promo is active, coverage falls back to the 3-year contractual base.
 
 **What does the Mercury warranty cover?**
 Manufacturing defects in the powerhead, lower unit, electronics, and major components, including both parts and labour at authorized Mercury dealers like Harris Boat Works. The coverage is non-declining, meaning day one equals day six.
