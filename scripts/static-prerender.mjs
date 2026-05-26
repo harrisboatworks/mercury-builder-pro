@@ -3537,6 +3537,38 @@ const routes = [
   },
   ...HUB_ROUTES,
   {
+    path: '/repower/cost',
+    title: 'Mercury Repower Cost in Ontario (2026 CAD) | Mercuryrepower.ca',
+    description: 'Mercury repower cost by HP class in Ontario for 2026: portable to 300 HP. Live CAD pricing, install, rigging, trade-in, and financing from Harris Boat Works.',
+    h1: 'Mercury Repower Cost in Ontario (2026 CAD)',
+    intro: 'Mercury repowers in Ontario typically run $11,000 to $40,000 CAD all-in depending on HP class, hull, and rigging. Harris Boat Works publishes live CAD pricing on every Mercury we sell.',
+    schemas: [genericPageSchema('/repower/cost', 'Mercury Repower Cost in Ontario (2026 CAD)', 'Mercury repower cost by HP class in Ontario for 2026 with live CAD pricing from Harris Boat Works.')]
+  },
+  {
+    path: '/repower/process',
+    title: 'Mercury Repower Process: 7 Steps from Quote to Splash (2026)',
+    description: 'The 7-step Mercury repower process at Harris Boat Works: quote, deposit, order, rig, install, lake test, pickup. Mercury dealer since 1965 in Gores Landing, Ontario.',
+    h1: 'Mercury Repower Process: From Quote to Splash',
+    intro: 'A Mercury repower at Harris Boat Works follows a 7-step process from quote to splash. Same shop quotes, rigs, installs, and lake-tests every motor on Rice Lake.',
+    schemas: [genericPageSchema('/repower/process', 'Mercury Repower Process', 'The 7-step Mercury repower process from quote to splash at Harris Boat Works.')]
+  },
+  {
+    path: '/repower/financing',
+    title: 'Mercury Outboard Financing in Ontario (2026) | Mercuryrepower.ca',
+    description: 'Finance a Mercury repower OAC at Harris Boat Works. Current rates and your monthly payment on the live quote builder. Apply by phone at Gores Landing.',
+    h1: 'Mercury Outboard Financing in Ontario (2026)',
+    intro: 'Harris Boat Works arranges Mercury repower financing OAC through Mercury and partner lenders. Current rates and your estimated monthly payment are posted live on the quote builder.',
+    schemas: [genericPageSchema('/repower/financing', 'Mercury Outboard Financing in Ontario (2026)', 'Finance a Mercury repower OAC at Harris Boat Works with live rates on the quote builder.')]
+  },
+  {
+    path: '/repower/trade-in',
+    title: 'Outboard Trade-In Value in Ontario (2026 CAD) | Mercuryrepower.ca',
+    description: 'Get a Mercury outboard trade-in value at Harris Boat Works. Brand-adjusted valuations, instant estimate online, real CAD credit toward your repower in Gores Landing.',
+    h1: 'Outboard Trade-In Value in Ontario (2026 CAD)',
+    intro: 'Trade-in credit at Harris Boat Works comes off your repower total before financing. Brand-adjusted valuations with instant online estimates and live CAD numbers.',
+    schemas: [genericPageSchema('/repower/trade-in', 'Outboard Trade-In Value in Ontario (2026 CAD)', 'Mercury and competitor outboard trade-in valuations from Harris Boat Works in Ontario.')]
+  },
+  {
     path: '/faq',
     title: 'Mercury Outboard Repower FAQ | Harris Boat Works',
     description: "24 answers on Mercury repower in Ontario: HP choice, SmartCraft Connect, CAD costs, financing, pontoon repowers, winterization. HBW, dealer since 1965.",
