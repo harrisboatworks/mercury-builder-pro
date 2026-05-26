@@ -679,7 +679,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
             <div className="mt-6 space-y-4">
               <h4 className="text-center font-semibold text-foreground">Choose Your Deposit Amount</h4>
               <p className="text-center text-sm text-muted-foreground">
-                Secure your motor with a deposit • Balance due on delivery
+                Secure your motor with a deposit • Balance due on pickup
               </p>
               
               <div className="flex justify-center gap-3 flex-wrap">
