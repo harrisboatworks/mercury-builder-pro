@@ -2499,20 +2499,6 @@ function blogArticleSchema(article) {
     });
   }
 
-  if (article.youtubeVideoId) {
-    graph.push({
-      "@type": "VideoObject",
-      "@id": `${url}#video`,
-      "name": article.youtubeVideoTitle || 'Mercury Marine video',
-      "description": `Mercury Marine official video referenced in this post for ${article.title}`,
-      "thumbnailUrl": `https://i.ytimg.com/vi/${article.youtubeVideoId}/hqdefault.jpg`,
-      "uploadDate": article.datePublished,
-      "contentUrl": `https://www.youtube.com/watch?v=${article.youtubeVideoId}`,
-      "embedUrl": `https://www.youtube.com/embed/${article.youtubeVideoId}`,
-      "publisher": { "@type": "Organization", "name": "Mercury Marine" }
-    });
-  }
-
   // LocalBusiness node for dealer landing blog posts: mercury-dealer-{city}(-ontario)?-hbw
   const dealerMatch = article.slug.match(/^mercury-dealer-(.+?)(?:-ontario)?-hbw$/);
   if (dealerMatch) {
