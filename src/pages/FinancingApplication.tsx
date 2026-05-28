@@ -12,6 +12,7 @@ import { AccessibleFormWrapper } from '@/components/financing/AccessibleFormWrap
 import { useToast } from '@/hooks/use-toast';
 import { Mail, ArrowLeft } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
+import { TDAlwaysOnBanner } from '@/components/promotions/TDAlwaysOnOffer';
 import '@/styles/financing-mobile.css';
 
 // Lazy load step components (~180KB total)
@@ -454,6 +455,9 @@ export default function FinancingApplication() {
       </div>
       
       <div className="max-w-2xl mx-auto pb-24 md:pb-8">
+        {/* Mercury TD "Always On" financing offer banner */}
+        <TDAlwaysOnBanner />
+
         {/* Progress Header */}
         <FormProgressIndicator
           currentStep={financingState.currentStep}
