@@ -23,6 +23,7 @@ import { BlogTable } from '@/components/blog/BlogTable';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
+import { MercuryVideo } from '@/components/blog/MercuryVideo';
 
 
 import { 
