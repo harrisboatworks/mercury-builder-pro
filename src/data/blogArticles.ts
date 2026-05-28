@@ -25768,7 +25768,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-overheating-at-idle.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: '2026-05-27',
     publishDate: '2026-05-11',
     category: 'Troubleshooting',
     readTime: '7 min',
