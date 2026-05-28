@@ -33608,6 +33608,45 @@ Repowers are the highest-risk install in our shop. At HBW we water-test every re
 | **Direct bank marine loan** | Prime + spread | 10-20% typical |
 | **LBC Capital / Newcoast / BoatLoansCanada** | 6.45%+ secured; 9.75%+ unsecured | Varies |
 
+## The current Mercury financing rate (as of 2026-05-28)
+
+Through December 31, 2026, Mercury Marine Canada's TD "Always On" program offers the canonical Canadian rate:
+
+- **5.48% APR (OAC)**
+- **Term up to 60 months** (customer's choice)
+- **Amortization up to 240 months** (20-year payment basis)
+- **Eligible: new Mercury outboards only** (not used, not non-Mercury)
+
+This is funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Live program details and the application live at [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions).
+
+### What the 240-month amortization actually means
+
+The amortization is the basis used to CALCULATE your monthly payment. It is not how long you will be paying. Your contract term is up to 60 months (5 years maximum). At maturity, the remaining principal is due as a balloon payment.
+
+You have three real options at month 60: pay the balloon, refinance the balance, or trade in toward a new motor. Most repower customers we work with plan for the trade-in path.
+
+### Worked example: Mercury 115 Pro XS at $17,320
+
+At 5.48% APR, 240-month amortization, $17,320 financed:
+
+- Monthly payment: approximately **$119/month**
+- Total paid over the 60-month term: approximately $7,140
+- Principal remaining at month 60 (the balloon): approximately $13,800
+
+### Worked example: Mercury 150 Pro XS at $24,107
+
+At 5.48% APR, 240-month amortization, $24,107 financed:
+
+- Monthly payment: approximately **$166/month**
+- Total paid over the 60-month term: approximately $9,960
+- Principal remaining at month 60 (the balloon): approximately $19,200
+
+### The honest version
+
+A 240-month amortization with a 60-month term keeps monthly payments low but leaves a meaningful balloon balance at term-end. If a $13,000 to $19,000 balloon at year 5 would be uncomfortable, ask about a shorter amortization basis (the program supports 120-month and 60-month amortization too) for a higher monthly payment but cleaner end-of-term position.
+
+The right answer depends on your cash flow, your trade-up cycle, and how long you plan to keep the motor. We walk through both versions on a quote.
+
 ## Ready to build a real quote?
 
 Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). If you want to talk through the math or start a pre-approval through Dealerplan Peterborough, call HBW direct.
