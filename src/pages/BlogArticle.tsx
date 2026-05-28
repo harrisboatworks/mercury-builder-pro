@@ -345,6 +345,14 @@ export default function BlogArticle() {
             <TableOfContents items={tocItems} />
           )}
 
+          {/* Optional Mercury Marine YouTube video reference */}
+          {article.youtubeVideoId && (
+            <MercuryVideo
+              videoId={article.youtubeVideoId}
+              title={article.youtubeVideoTitle || 'Mercury Marine video'}
+            />
+          )}
+
           {/* Content */}
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 blog-article-prose">
             <MarkdownSectionCards
