@@ -14431,226 +14431,144 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
     category: 'Troubleshooting',
     readTime: '12 min read',
     keywords: ['mercury outboard wont start', 'outboard troubleshooting', 'mercury starting problems'],
-    content: `**Language:** English 
+    content: `*Last reviewed: 2026-05-28*
 
----
+> **Quick answer:** Most Mercury no-start calls in Ontario come down to one of three families: battery and power (weak battery, switch off, bad ground), fuel system (stale or phase-separated gas, clogged 10-micron filter, VST issues), or ignition (fouled plugs after winter storage). Before calling, check the kill switch is fully snapped on, the shifter is truly in neutral, and the battery switch is in the right position. If those three are clean and the motor still cranks but won't fire, you're into fuel or ignition. Call HBW at 905-342-2153.
 
-## Quick Answer
+It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 
-Most Mercury outboards that won't start trace to one of three causes: a dead or weak battery, stale or contaminated fuel, or a skipped (or incomplete) winterization. Walk these in order. If the motor still won't start after the basics, bring it in, running a troubled motor to try to force it to start can turn a diagnostic problem into a parts problem.
+This guide walks you through what we actually see in our service bay at HBW. We do hundreds of these every spring. Most have one of three or four causes. A handful of them you can fix at the dock in 30 seconds. The rest need our shop.
 
-To book a diagnostic: [hbw.wiki/service](https://hbw.wiki/service).
+## The three "stupid easy" things to check first
 
----
+Before you call anybody, check these three. We're not joking. A meaningful percentage of "won't start" walk-ins at HBW are one of these.
 
-::diagnostic-flow
-heading: Won't start? Run this checklist before you call us
-eyebrow: Diagnostic flow
-subhead: Most spring no-starts trace back to one of these five checks
-step1Label: Battery
-step1Question: Are the terminals clean and tight, and does the battery rest above 12.4V?
-step1Tip: A weak or corroded battery is the most common spring no-start. Charge or clean before going further.
-step2Label: Safety lanyard
-step2Question: Is the lanyard clipped to the kill switch?
-step2Tip: Almost every spring lanyard call is the lanyard sitting on the dash, not clipped in. Easy first check.
-step3Label: Fuel
-step3Question: Is there fresh fuel in the tank, and does the primer bulb firm up when squeezed?
-step3Tip: Fuel older than one season can phase-separate, especially with E10. If the bulb stays soft after squeezing, suspect an air leak or empty tank.
-step4Label: Shifter position
-step4Question: Is the shifter fully in neutral?
-step4Tip: The neutral-start interlock prevents cranking unless the shifter is dead-centre neutral. Wiggle it.
-step5Label: Spark and engine cutoff
-step5Question: Have you pulled the cowling and checked the engine cutoff for moisture or a loose connector?
-step5Tip: After winter storage, condensation under the cowling can short the cutoff switch. Dry, reseat, retry.
-escalationLabel: Still no go?
-escalationBody: Call us at (905) 342-2153 or book a slot at /service. We will diagnose it on the trailer or in our shop, whichever is faster for you.
-::
+**1. Kill switch slightly off.** The clip or magnet looks like it's on, but it's not fully engaged. Pop it off, snap it back on firmly until you feel it seat. Try again.
 
-::pull-quote
-quote: First spring start, motor wouldn't go. Called HBW. They walked me through the lanyard, the fuel bulb, the battery. **It was the lanyard.** Five minutes on the phone, I was on the water. No charge.
-attribution: Dave P.
-source: HBW Customer, Roseneath 2026
-::
+**2. Gear not truly in neutral.** The handle looks centered, but the neutral safety switch is still reading "in gear." Especially on controls that are a bit worn or got bumped while docking. Click the shifter into neutral with a positive feel. Try again.
 
----
+**3. Battery switch off or on the wrong bank.** Third place is the battery switch left on "off" or pointing at a dead bank. Flick it to "on" or "both," wait two seconds, try again.
 
-![Mercury outboard won't start diagnostic flowchart showing no crank, cranks but no start, starts then dies, and warning alarm paths](/lovable-uploads/mercury-outboard-wont-start-diagnostic-flowchart.png)
+If you turned the key and got nothing at all, the kill switch and battery switch are the first two suspects. If it cranks but won't fire, gear-not-in-neutral is rare but possible. After these three, move into the real diagnostic ladder below.
 
-## Mercury Outboard Won't Start: Troubleshooting in Order
+## The HBW diagnostic ladder (what we check, in order)
 
-A Mercury that cranked fine last fall and refuses to start in spring is one of the most common calls we get from May through early June. It almost always comes down to one of a short list of causes, but identifying which one matters before you start replacing parts.
+When a no-start ticket lands at our service desk, we work this ladder. You can work the top half yourself. The bottom half needs our shop.
 
-This guide walks the diagnostic sequence we'd recommend to any owner with basic tools and reasonable mechanical confidence. It's the same sequence we'd start with at the shop, battery first, fuel second, ignition third, then the less common causes.
+### Step 1: Battery voltage at rest
 
-**Before you do anything:** Safety reminders that are easy to skip when you're frustrated:
-- Don't crank an outboard without water for more than a few seconds, it will overheat the water pump impeller.
-- Don't use starting fluid (ether) on Mercury outboards. It can damage rings on 2-strokes and is a fire risk.
-- Have a fire extinguisher nearby if you're checking fuel systems.
+Get a multimeter on the battery terminals (not at the motor, at the battery itself).
 
----
+- **12.6 to 12.8 V at rest:** healthy, charged battery. Move to Step 2.
+- **12.0 to 12.5 V:** low, may still crank but probably won't start a cold EFI motor. Charge before troubleshooting further.
+- **11.5 V or lower at rest after a proper surface-charge burn-off:** replace, don't recharge. At this voltage, a typical 12 V lead-acid cranking battery is past its useful service life.
 
-## Step 1: Check the Safety Lanyard and Neutral Switch
+A weak battery is the #1 cause of EFI motors that crank slowly but won't fire. Modern Mercury EFI needs at least 10.5 V during the cranking cycle to fire the fuel injectors. If the battery drops below that under load, you get the classic "cranks but won't catch" symptom that masquerades as a fuel problem.
 
-This is embarrassing when it's the cause, and it's the cause often enough to always check first.
+### Step 2: Fuel quality and quantity
 
-The red safety lanyard (kill switch tether) must be physically clipped to the switch for the motor to crank. If someone removed it for storage or it got pulled out during handling, the motor is electronically disabled. It won't crank, won't do anything, and won't give you any indication that this is why.
+If you stored the boat with E10 gasoline and no stabilizer, your tank is probably the problem. **Phase separation** is what happens when water condenses out of humid air, mixes with the ethanol in E10 fuel, and sinks to the bottom of the tank as a low-octane, non-combustible layer.
 
-Check:
-- Lanyard clip is attached to the kill switch on the dash or tiller handle
-- The motor is in neutral (most motors won't crank out of neutral)
-- Throttle is at idle, not advanced
+Lab estimates say phase separation takes 60-90 days in a sealed tank from atmospheric moisture alone. In real Ontario boats with leaky caps and some existing water in the tank, we routinely see bad, phase-separated fuel in as little as **three weeks**. That's why we're strict about fresh, treated fuel and proper storage.
 
-If any of these is off, correct it before doing anything else.
+**What to check:**
 
----
+- Pump a sample from the bottom of the tank into a clear glass jar
+- If you see two distinct layers (gasoline floating on cloudy water-ethanol), the fuel is gone. Drain and refill
+- If the fuel smells stale, sour, or like varnish, replace it
+- Use marine stabilizer (STA-BIL Marine, Star-Tron, K-100) at every storage event
 
-## Step 2: Check the Battery
+**HBW sells Ethanol-Free 89 fuel at the dock.** For boats that sit in storage for months, ethanol-free is the cleanest path to avoiding phase separation entirely. We're one of the few Rice Lake / Kawarthas options for non-ethanol marine fuel.
 
-After the lanyard, a weak or dead battery is the most common cause of spring no-start.
+### Step 3: Fuel filter and primer bulb
 
-Modern Mercury FourStrokes are voltage-sensitive. The engine management system needs solid voltage to even attempt a start. A battery that looks like it has some charge may still be insufficient.
+Two physical checks. Both are 5-minute jobs at the dock.
 
-Check:
-- **Resting voltage:** Should be 12.4V or higher. Under 12.0V is a weak battery that needs charging before further diagnosis.
-- **Cranking voltage:** Should stay above 9.5, 10V during cranking. If it drops lower, the battery can't support the starter draw, replace it.
-- **Terminal condition:** Corrosion (green or white powder on the terminals) creates resistance. Clean the terminals before drawing any conclusions from a voltage test.
-- **Cable connections:** Loose or corroded cables cause intermittent symptoms. Tighten and clean.
-- **Battery age:** Lead-acid marine batteries typically last 4, 6 years. If yours is older, it's suspect regardless of how it tests under no-load conditions.
+- **Primer bulb:** Squeeze it firm until it's hard. If it stays hard, the check valves are doing their job. If it goes soft or never gets firm, the bulb or check valves need replacement.
+- **10-micron water-separating fuel filter:** This is the canister filter mounted between the tank and the motor. If it's full of water, you'll see a layer at the bottom of the bowl through the clear inspection port. Drain or replace. If you can't remember the last time you changed it, replace it now.
 
-If the battery is weak, charge it fully or replace it before continuing. A weak battery creates false readings on every other part of the diagnostic, it's impossible to get clean results on anything else when the battery is marginal.
+### Step 4: Spark plugs
 
-**Tender note:** If you stored the battery over winter without a tender (trickle charger), it may have discharged enough to sulfate, which causes permanent capacity loss. A battery that "was fine" going into storage may not be fine coming out.
+If you've ruled out battery and fuel, the next check is ignition. Pull a plug, look at it.
 
----
+- **Wet with fuel:** flooded condition, the motor is getting fuel but not firing. Dry the plug, check spark
+- **Dry and white:** lean condition or no fuel reaching the cylinder, work backward to fuel system
+- **Black and oily:** rich condition or oil consumption issue
+- **Black and dry (carbon fouled):** plug needs replacement, probably long overdue
 
-## Step 3: Check the Fuel System
+Spark test: ground the plug body against the block, crank the motor, look for a bright blue spark. Yellow or weak spark = ignition coil, stator, or trigger issue. No spark at all = same family, dig deeper.
 
-Fuel is the second most common cause of spring no-start, and it has several sub-causes.
+Mercury uses primarily NGK spark plugs across the FourStroke and Pro XS lineup, with some Champions on older models. The Mercury part number is the right call for any replacement. We stock the common ones on the shelf.
 
-**Fuel age:** Gasoline with ethanol (the standard E10 pump gas) starts to degrade in 30, 60 days. Gas that sat in the tank from last fall without stabilizer is suspect. Stale gas can gum up injectors, fuel lines, and carburettors on older motors.
+### Step 5: EFI fault code scan (this is us)
 
-- Smell the fuel, a sour or lacquer-like smell means it's gone off
-- Look at the colour, fresh fuel is clear to pale yellow; cloudy, amber, or dark fuel is a problem
-- If in doubt, pump out the old fuel and refill with fresh gas
+On EFI motors 40-115 HP, the diagnostic complexity jumps. Many "cranks but won't fire" tickets come back with **clean fault memory** with no code stored. The motor's computer didn't see anything obviously wrong, but the motor still won't run. The actual cause is typically:
 
-**Water in fuel:** Water settles to the bottom of the fuel tank. Common on boats stored outside with older or loose-fitting fuel caps, or boats that sat through a wet fall.
+- Low system voltage (below 10.5 V during crank, no injector fire)
+- Poor grounds or corroded battery cables
+- Low-pressure fuel pump weak or failed
+- VST (Vapour Separator Tank) contaminated with water or debris
+- Crankshaft position sensor intermittent
 
-- Drain the water-separating fuel filter (there's one at the engine on most Mercury FourStrokes) and inspect the drain cup for water droplets
-- A dedicated water separator with a see-through bowl makes this easy
+This is where we plug in Mercury CDS (Computer Diagnostic System) at the dealer level and run live data. CDS shows us injector pulse, fuel pressure, ignition timing, sensor inputs in real time. It catches the things a static code scan misses. HBW is a Mercury CDS-equipped Platinum dealer.
 
-**Fuel filter:** A clogged fuel filter restricts flow. Replace it at the annual service interval if it hasn't been done.
+### Step 6: Compression check (also us)
 
-**Fuel lines:** Old rubber fuel lines harden and crack. Inspect for cracking, brittleness, or soft spots that could indicate internal deterioration. A cracked line allows air into the fuel system, causing lean running or no-start.
+If the motor has hours on it (200+) and you've ruled out the easy stuff, a compression check tells you whether the bottom end is healthy.
 
-**Primer bulb:** Squeeze it. It should pump up firm within 6, 8 squeezes and stay firm. If it stays soft or deflates, there's an air leak somewhere in the fuel system upstream of the bulb, check line connections.
+- **Above 170 psi per cylinder with under 10% spread:** healthy, look elsewhere for the no-start cause
+- **150-170 psi with reasonable spread:** age-appropriate wear, motor is fine
+- **Below 150 psi or spread over 15%:** worn, needs further investigation (rings, valves, head gasket)
 
-**Fuel tank vent:** Ensure the fuel tank vent is open. A closed or clogged vent creates vacuum in the tank as fuel is drawn out, starving the engine.
+Compression tests are quick at our dock. If the numbers are bad, we know whether you're looking at a service item or an end-of-life motor.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+## What we see at HBW
 
----
+Spring tickets are the volume work. Most fall into a predictable distribution.
 
-## Step 4: Check the Ignition, Spark Plugs
+**The walk-in fixes** (30 seconds at the desk): kill switch off, shifter not in neutral, battery switch wrong. Free to fix. You don't even have to drop the boat.
 
-If battery and fuel are good, spark is next.
+**The 30-minute fixes:** battery replacement, fuel filter replacement, primer bulb replacement, spark plugs. These are inventory we stock heavily.
 
-**Spark plug inspection:**
-1. Remove the plugs (check your motor's service manual for the correct socket size)
-2. Inspect for fouling: black, oily deposits indicate rich running or oil fouling; white or chalky deposits indicate lean running or overheating; wet plugs indicate fuel flooding
-3. Check the gap against your motor's specification
-4. Replace any plugs that look questionable
+**The half-day fixes:** EFI diagnosis with CDS, VST cleaning, low-pressure fuel pump replacement, crank position sensor replacement, ignition coil. These need our shop and our tools.
 
-**Flooding:** If the motor has been cranked repeatedly without starting, the cylinders may be flooded. With plugs removed, crank the motor briefly to clear the cylinders, then reinstall fresh plugs.
+**The full-day or longer:** compression-related, internal mechanical, supercharger-related on the older I6 Verado, or "needs a new motor."
 
-Don't keep cranking a flooded motor with plugs installed, it makes flooding worse and can push fuel into the oil.
+HBW has the largest Mercury and Mercruiser parts inventory in Ontario. If your motor needs a part, we either have it or can get it on the truck next day. Most no-start customers are running again the same day they bring the boat in.
 
----
+## Common mistakes (the things we push back on)
 
-## Step 5: Check the Starting Circuit
+- **"I'll just buy a new battery, that has to be it."** Sometimes it is. Often the issue is the battery cable, the ground point, or the battery switch. A new battery doesn't fix a corroded ground.
+- **"I sprayed starting fluid in it, can you check?"** Starting fluid (ether) can damage EFI fuel rails and damage 2-stroke seals. Don't use it on outboards. Tell us if you did, we need to know.
+- **"It ran fine last fall."** Most no-start tickets we see ran fine last fall. The motor sat for 6 months. Fuel went stale, battery sulphated, condensation entered the tank, plugs corroded. "Ran fine in fall" doesn't help us diagnose "won't start in May."
+- **"I changed the spark plug myself and it's still not running."** Plug is one piece. If you changed plugs and it didn't fix the issue, the problem is somewhere else (fuel, battery, ignition coil, ECU). Don't keep throwing parts at it. Bring it to us.
 
-If the motor cranks but won't start, and battery, fuel, and spark are checked, the next areas are:
+## Customer language we hear
 
-- **Choke or cold-start enrichment:** On carbureted motors, the choke may not be engaging. On FourStrokes, the ECM manages cold start enrichment automatically, but this can point to a sensor issue.
-- **Throttle position:** Some motors require throttle to be closed at start. Check your operator's manual.
+We translate so you don't have to. These are the phrases we hear at the desk every spring. They all map to the same underlying diagnostic path.
 
-If the motor doesn't crank at all (not a slow crank, no crank):
-- Check the main fuse or fuse block
-- Check the starter solenoid (clicking sound when you try to start = solenoid working, possible starter or connection issue; no sound = solenoid or connection)
+- "She sat all winter and won't fire": battery + fuel + plugs
+- "Just clicks": battery or starter solenoid
+- "I think I've got bad gas": phase separation or stale fuel
+- "Cranks but won't catch": fuel delivery or ignition
+- "The pee stream looks weak": impeller or telltale tube (different problem)
+- "When can you get me in?": call us at 905-342-2153
 
----
+## Ready for HBW to look at it?
 
-## Step 6: Check for ECM Fault Codes or Alarms
+**Phone:** 905-342-2153  
+**Email:** info@harrisboatworks.ca  
+**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
 
-If battery, fuel, spark, and the starting circuit all check out and the motor still won't start, the next layer is the ECM. If you have a SmartCraft display, VesselView, or any Mercury gauge on the helm, check it before and during cranking. Mercury's engine management system stores fault codes and displays active alarms that point to exactly where the ECM thinks the problem is.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.
 
-Take a photo of any displayed code or message. If you can't decipher it, include the photo when you book the service appointment. Beyond this point you're into ECM, sensor, fuel pump, or compression territory, which needs a Mercury-certified diagnostic with dealer tools (Mercury G3) that owners don't have access to.
+## Sources
 
----
-
-## When to Stop and Bring It In
-
-Stop troubleshooting and book a professional diagnostic if:
-- You've worked through all of the above and can't identify the problem
-- You're not confident about any of the steps
-- The motor cranks but runs and immediately dies, repeatedly
-- There are error codes on a SmartCraft or VesselView display
-- There's an unusual smell, smoke, or noise during cranking
-
-For engine repairs, we only service Mercury and Mercruiser.
-
-If you've tried the simple stuff and it still won't start, stop guessing and call us. Forcing it usually turns a small fix into a big one. Phone (905) 342-2153 or book at [hbw.wiki/service](https://hbw.wiki/service).
-
----
-
-
----
-
-## Related at HBW
-
-The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
-- [Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check](/blog/mercury-outboard-beeping-codes-guide)
-
----
-
-## Frequently Asked Questions
-
-**How long does it take to diagnose a Mercury no-start?** 
-A technician with the right tools can usually identify the cause in 30, 90 minutes. Owner troubleshooting at home can take longer without specialized test equipment. We don't estimate specific timelines for remote diagnostics.
-
-**Can I damage the motor by repeatedly cranking it?** 
-Yes, in a few ways: running dry (without cooling water) damages the water pump impeller within seconds; flooding the cylinders can push fuel past the rings into the oil; and repeatedly overloading a marginal battery can accelerate its failure. Troubleshoot systematically rather than cranking repeatedly hoping it clears.
-
-**The motor starts but immediately dies. What does that mean?** 
-Usually a fuel delivery problem, the motor starts on the fuel already in the system but can't maintain fuel flow. Check the primer bulb, fuel filter, and fuel line connections. Could also be idle mixture on a carbureted motor.
-
-**Should I use a fuel additive to clean the injectors?** 
-Mild fuel system cleaners used correctly on a running motor can help with light varnish deposits, but they won't fix a gummed-up injector that needs physical cleaning or replacement. If the fuel system has been sitting with old fuel for a season, professional cleaning is more reliable.
-
-**My motor started fine last week and now won't start. What changed?** 
-Intermittent no-start is often a connection problem, a battery terminal that's partially corroded, a kill switch that's failing internally, or a fuel system that's marginal. It can also be the beginning of a fuel pump issue. Start with the battery and lanyard/kill switch even if it started recently.
-
----
-
-## Internal Links
-
-- [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
-- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
-
----
-
-## CTA
-
-**Can't find the problem?** 
-Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
-
-Phone: 905-342-2153
-
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+- Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
+- CDI Electronics Troubleshooting Guide (7th Edition): widely-referenced Mercury ignition diagnostics
+- Transport Canada E10 fuel regulations: ethanol-free gasoline largely prohibited Canada-wide since Dec 2022 (marine/race carve-out applies)
+- HBW shop-floor data: 2026 spring service-ticket distribution
+`,
     howToSteps: [
       { name: 'Check the battery', text: 'Voltage at rest should be 12.4V or higher; voltage under crank load should stay above 10.5V. Clean and tighten terminals. Marine batteries last 4 to 6 years; a 7-year-old battery is at end of life regardless of how it tests. A weak battery causes false positives on every other test, so replace it before continuing.' },
       { name: 'Check the fuel system', text: 'Gas over 6 months old is suspect. Check for water at the bottom of the tank. Replace the fuel filter if at service interval. Inspect fuel lines for cracks or brittleness. The primer bulb should pump up firm; if it stays soft, there is an air leak.' },
@@ -19167,106 +19085,94 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Troubleshooting',
     readTime: '12 min read',
     keywords: ['mercury smartcraft alarm codes', 'mercury smartcraft alarm codes list', 'mercury smartcraft alarm codes meanings', 'mercury alarm code list', 'smartcraft fault codes mercury', 'mercury outboard error codes', 'mercury smartcraft diagnostic', 'mercury outboard warning lights'],
-    content: `# Mercury SmartCraft Alarm Codes: What the Beeps Mean and What to Do Next
+    content: `*Last reviewed: 2026-05-28*
 
-## Quick answer
-Mercury SmartCraft alarms are warnings, not decorations. A single beep at key-on is normally a system test, while continuous or repeated beeps can indicate issues such as overheat, low oil, water in fuel, overspeed, sensor faults, or Engine Guardian protection. If the alarm continues or power is reduced, reduce throttle, get the boat to a safe place, and have the fault diagnosed.
+> **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then call HBW at 905-342-2153.
 
-Mercury's own documentation describes the warning horn as emitting either a continuous beep or intermittent short beeps. The Engine Guardian system may reduce power to protect the engine when a problem is detected.
+A Mercury alarm fires and most owners do one of two things. Either they keep running the boat (bad idea, that's what Guardian mode is trying to prevent) or they shut it down at the dock and Google the code (better idea, but most code lists online are out of date or apply to engine families you don't own).
 
-## First: do not ignore the beep
-A Mercury alarm is trying to tell you something. It may be minor. It may be serious. But it is not background music.
+This page is the version we use ourselves at HBW. Top 10 codes by service frequency, the patterns we see at spring first-start, what Guardian mode actually does, and the customer-side calls that turn out to be misdiagnoses every time. We have Mercury CDS (Computer Diagnostic System) at our dock and SmartCraft Connect Mobile on our phones. When you call HBW with an alarm code, we already know what 80% of them mean.
 
-Some boaters hear a beep and keep running because the engine "still seems fine." That is how a warning becomes a repair bill with a personality.
+## What HBW asks first when you call
 
-## Common Mercury warning patterns
+When a customer calls with a Guardian alarm active or a code on the screen, the first thing we ask is one question:
 
-| Alarm pattern | What it may indicate | What to do |
+**"What exactly does the screen say, and what beeps are you hearing? Is it a solid tone or a pattern? How many beeps and how often?"**
+
+That single question routes the call. The display text tells us the system involved (fuel, charging, oil, temperature, communication). The beep pattern tells us severity and the specific subsystem. A continuous tone is different from 4 beeps every 2 minutes is different from 6 beeps once.
+
+If you can give us both pieces of information, we can often diagnose over the phone whether to keep running carefully back to the dock, shut down immediately, or bring it in for service.
+
+## Mercury beep code patterns (what the horn is telling you)
+
+Mercury's warning horn uses repeated patterns to communicate without a display. Even if your VesselView screen is off, the horn alone can tell you what's happening.
+
+| Beep pattern | What it means | What to do |
 |---|---|---|
-| One beep at key-on | Normal system test on many setups | Usually normal if it stops |
-| Four beeps every 2 minutes | Can indicate low oil reserve or water in fuel on applicable systems | Check display/manual and book diagnosis if unsure |
-| Continuous beep | Can indicate overheat, overspeed, sensor issue, or Guardian condition | Reduce throttle, check water flow, stop if needed |
-| Beeping plus reduced power | Engine Guardian may be limiting power | Do not force it; get diagnosed |
-| SmartCraft text warning | Specific fault or system warning | Record exact message before cycling power |
+| **1 continuous tone** | Engine in Guardian mode, severe fault | Reduce throttle to idle, return to dock, do not continue running |
+| **4 beeps every 2 minutes** | Water in fuel | Stop, check fuel filter, drain water, refill |
+| **6 beeps over 6 seconds, then silence** | Overheating warning | Shut down immediately, do not run |
+| **3 short beeps every 2 minutes** | Low oil pressure (4-stroke) | Stop, check oil level, do not run |
+| **1 beep, repeating** | Low oil reservoir (2-stroke Optimax / DFI) | Add 2-stroke oil to remote tank |
+| **2 short beeps** | Engine has entered limit/Guardian mode | Reduce throttle, motor will let you idle home |
 
-This table is a starting point, not a replacement for the correct Mercury manual for your serial number. Mercury systems vary by year, horsepower, rigging, display, and engine family.
+Patterns vary slightly by engine family and model year. The patterns above are the most common across the FourStroke, Pro XS, Verado V8/V10/V12, and Optimax lineup we service most often. For exact pattern decoding on your specific motor, the owner's manual is the source of truth.
 
-## What SmartCraft is actually doing
-SmartCraft is Mercury's engine information and monitoring system. Depending on your setup, it may display RPM, coolant temperature, battery voltage, fuel data, engine hours, alarms, and diagnostic information. The warning horn gets your attention. The display, if equipped, gives more context.
+## Top 10 alarm codes we see at HBW (by service frequency)
 
-If your boat has a SmartCraft display, take a photo of the exact warning before turning everything off. That photo can save a lot of guessing later.
+This is our actual order based on service tickets, not a generic Mercury list. Different engine families generate different code priorities. We service primarily Mercury FourStroke, Pro XS, Verado V8/V10/V12, and some Optimax DFI on Rice Lake and the Kawarthas.
 
-## HBW dealer note
-"It was beeping" is useful. "It beeped four times every couple minutes, then the SmartCraft screen said water in fuel" is much more useful. Your future service writer will silently thank you. Maybe not out loud. We are still marina people.
+1. **Low battery voltage.** By far the most common alarm. Battery weak after winter, alternator output dropping, voltage regulator marginal. Especially common on V8 FourStroke and Verado post-winterization.
+2. **High battery voltage.** Voltage regulator stuck high, alternator overcharging. Less common but real, especially on older motors with worn regulators.
+3. **Water in fuel.** The 4-beeps-every-2-minutes alarm. Phase separation from stored E10 fuel, condensation in the tank, or a clogged 10-micron water-separating fuel filter. #1 spring first-start alarm we see.
+4. **Engine over-temperature.** Impeller worn or stuck, raw water intake clogged (anchor mud, zebra mussels, weeds), thermostat stuck closed, or low coolant on closed-cooling systems. Trips Guardian mode immediately.
+5. **Low oil level (2-stroke).** For Optimax DFI owners, the remote oil tank reading low or sensor reading low. Often a float-magnet separation issue, not actual low oil.
+6. **Low oil pressure (4-stroke).** Actual low oil, bypass valve issue, or sensor fault. On a 4-stroke this is serious. Shut down.
+7. **Engine overspeed / RPM limit.** Typically a prop slip event (broken prop, lost a blade, came out of the water on a wave), or shift-shaft issue. Motor cuts power to protect itself.
+8. **Throttle position sensor fault.** DTS or mechanical TPS sensor failing or wiring issue. Motor goes to limp mode.
+9. **MAP / air / temp sensor fault.** Manifold absolute pressure, intake air temp, or coolant temp sensor failing. EFI runs rich or lean, motor may stall.
+10. **Guardian / generic fault active.** Catch-all. Something tripped Guardian mode but the specific subsystem isn't displayed. Needs CDS to scan and identify.
 
-## What to do when the alarm sounds
+## Spring first-start: the patterns we see every May
 
-### Reduce throttle
-If the alarm sounds while running, reduce throttle. If the engine is in Guardian mode, do not try to power through it.
+April and May are our highest-volume service months. The alarms cluster predictably.
 
-### Check the obvious water-flow signs
-If it may be overheating, look for water flow from the tell-tale and check whether weeds, mud, or debris are blocking the water intakes. Do not put hands near moving parts. Do not run the engine dry.
+**#1 most common spring code: Water in Fuel (4 beeps every 2 minutes).** Phase separation from E10 fuel that sat for 5-6 months. Owner stored the boat in November, fueled it, didn't treat it, didn't run it. Tank has condensed atmospheric moisture, ethanol pulled the water out of solution, settled to the bottom, filter caught some of it. Customer's first run of the season fires this alarm. Fix: drain the water-separating filter, replace if heavy, refill tank with fresh fuel (ideally HBW's ethanol-free 89), restart.
 
-### Watch the temperature and voltage
-If your display shows temperature or voltage, note the numbers. High temperature and low voltage can both trigger warnings depending on the system.
+**#2 most common: Low battery voltage / battery alarm.** Battery sat all winter, sulphated, voltage looks marginal but the motor won't crank fast enough to fire EFI. Customer first thinks fuel, calls in. We diagnose battery. Fix: load test, replace if below 11.5 V at rest, charge if marginal.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+**#3 most common: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter (rubber takes a set), or the raw water intake has wasp nest, mud, or zebra mussel debris. Motor heats up fast at idle, alarm trips. Fix: impeller replacement and intake cleaning. We do dozens of these every spring.
 
-### Record the alarm
-Write down:
-- Beep pattern
-- Display message
-- RPM when it happened
-- Speed/load
-- Water conditions
-- Whether power was reduced
-- Whether the engine restarted normally
+## SmartCraft Connect Mobile (formerly VesselView Mobile)
 
-## What not to do
-- Do not keep running at speed with an active alarm.
-- Do not assume all beeps mean the same thing.
-- Do not clear codes and pretend nothing happened.
-- Do not replace random parts based on a forum post from 2009.
-- Do not unplug warning systems because the sound is annoying. The sound is annoying on purpose.
+A note on terminology. Mercury rebranded VesselView Mobile as **SmartCraft Connect Mobile**. Same product, same functionality, new name as of 2026.
 
-## Why this matters on Rice Lake and the Kawarthas
-Ontario boating seasons are short. If your boat throws an alarm in July, losing a weekend hurts. If it throws an alarm before a long weekend, it hurts in bold.
+If you have the older app installed, it still works. If you're searching the App Store today, search for "SmartCraft Connect Mobile" (or both). The app pairs with the SmartCraft network on your motor and shows live engine data, alarms, and fault history on your phone.
 
-That is why fault information matters. A proper description can help the shop decide whether this is likely a quick check, a fuel issue, a cooling issue, a sensor fault, or something that needs deeper diagnostics.
+HBW uses SmartCraft Connect Mobile internally for customer-side diagnostics.
 
-## When to request service
-Request service if:
-- The alarm repeats.
-- The engine goes into Guardian mode.
-- Temperature rises.
-- The tell-tale is weak or inconsistent.
-- The alarm appears after winter storage.
-- You see "water in fuel," "overheat," or sensor warnings.
-- You are not sure what the alarm means.
+## Common mistakes (the things we push back on)
 
-For engine repairs, we only service Mercury and Mercruiser. Submit requests at [hbw.wiki/service](https://hbw.wiki/service).
+- **"I cleared the code and it went away, so it's fixed."** No. A code clears when you turn off the key, but if the cause isn't addressed, it fires again the next time the condition exists. Don't ignore recurring codes.
+- **"My buddy's Mercury had the same code and it was X."** Maybe. Or your buddy had a different engine family that displays the same code number for a different fault. Verify before parts shop.
+- **"I shut off the alarm by holding the horn button."** Some operations silence the audible alarm but the underlying fault is still active. Silence is not resolution.
+- **"Are Verado V8 and V10 supercharged?"** No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
 
-## Bottom line
-SmartCraft alarms are there to protect the engine and the day. A one-beep key-on test may be normal. Repeated or continuous alarms deserve attention.
+## Ready for HBW to look at it?
 
-If your Mercury is beeping, record the pattern, take a photo of the display, reduce throttle, and get it checked before the small warning becomes the expensive version.
+**Phone:** 905-342-2153  
+**Email:** info@harrisboatworks.ca  
+**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Need Mercury alarm diagnosis near Rice Lake, Peterborough, or the Kawarthas? Submit a service request at [hbw.wiki/service](https://hbw.wiki/service).
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario. Mercury CDS equipped.
 
-## Reviewed by
+## Sources
 
-Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
-
-
-> Related guide: [How Ontario boat owners accidentally increase service bills](/blog/accidentally-increase-boat-service-bills-ontario).
-
-## Related guides
-- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
-- [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
-- [Mercury Outboard Won't Start Troubleshooting (Ontario)](/blog/mercury-outboard-wont-start-troubleshooting)
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-- [Mercury Outboard Overheating at Idle](/blog/mercury-outboard-overheating-at-idle-fix-ontario)`,
+- Mercury Marine Universal Fault Code reference (publicly available subset, Codes 1-247)
+- Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
+- CDI Electronics Troubleshooting Guide (7th Edition): Mercury ignition and fault decoding
+- HBW shop-floor data: 2026 spring service-ticket distribution at our Mercury CDS workstation
+`,
     faqs: [
       { question: 'What does one beep mean on a Mercury outboard?', answer: 'On many Mercury setups, one beep at key-on is a normal system test. If the beeping continues or changes pattern, check the display/manual and get it diagnosed.' },
       { question: 'What does a continuous Mercury alarm mean?', answer: 'A continuous alarm can indicate a serious condition such as overheating, overspeed, sensor issues, or Engine Guardian activation. Reduce throttle and investigate safely.' },
