@@ -173,6 +173,9 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 
 If your boat doesn't slot neatly into one of these, email a photo of your motor cowl plate plus your boat year and make to info@harrisboatworks.ca. We'll respond same-day with eligibility and an estimate.
 
+![Side-by-side comparison of a traditional Mercury mechanical binnacle control with visible push-pull cables and a modern Mercury DTS (Digital Throttle & Shift) binnacle control with a sealed wiring harness, both mounted on a boat dashboard](/lovable-uploads/dts-vs-mechanical-control-inline.png)
+*Mechanical Mercury control (left) with two visible push-pull cables vs Mercury DTS control (right) with a sealed wiring harness, no cables. The five-second visual check at the helm.*
+
 ## What DTS actually is (and isn't)
 
 DTS is Mercury's drive-by-wire system. Digital Throttle & Shift. Instead of mechanical cables running from the helm control to the motor, DTS uses electrical signals over a SmartCraft network. The throttle and shift commands travel as data, not as cable pulls.
@@ -284,6 +287,33 @@ The second pattern: customers wanting DTS for the "smoother throttle" alone usua
 The third pattern, specific to Ontario boating: late-season dock approaches in fall winds at Rice Lake or in tight cottage dock spaces in the Kawarthas. Joystick piloting earns its keep in those moments. Customers who switch from twin mechanical to twin DTS with joystick almost never go back. The ability to crab sideways into a dock in a cross-wind without a second person on the bow is the kind of thing you don't appreciate until you have it.
 
 Fourth pattern: the worst DTS install we ever rescued was a customer who had bought a "DTS retrofit" kit online for an old Mercury 225 that wasn't DTS-capable. Three months of helm wiring trying to make it work before he called us. We sold him a new 250 Pro XS DTS, took the old one in trade, finished the install in a week, and he was back on the water. Not every retrofit story has a happy ending. Sometimes the honest answer is "this isn't the path."
+
+::pull-quote
+quote: Asked about adding DTS to my 2022 Pro XS 300. Turned out I had it the whole time. Five-minute conversation saved me four grand.
+attribution: Most common DTS retrofit conversation at HBW
+::
+
+::decision-card
+eyebrow: DTS retrofit decision
+heading: Retrofit DTS or repower?
+leftLabel: Repower territory
+leftCriteria:
+  - Mechanical motor 5+ years old
+  - High hours on the existing engine
+  - You want joystick (requires DTS-equipped twins or more)
+  - Retrofit cost is close to a new motor
+leftOutcome: New DTS-equipped motor is the right answer
+leftVariant: alternative
+rightLabel: Retrofit makes sense
+rightCriteria:
+  - Your motor is already DTS-capable (some older Verado I6 models)
+  - You currently have mechanical controls at the helm
+  - The helm-side upgrade unlocks DTS without engine work
+  - Single-engine and you're not chasing joystick
+rightOutcome: Helm-side retrofit is the real upgrade
+rightVariant: recommended
+whenInDoubt: Quote both paths if your mechanical motor is under 5 years old, low hours, and otherwise excellent. Get the retrofit and a full repower quoted side by side before committing.
+::
 
 ## Why this matters for Ontario boaters
 
