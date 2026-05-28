@@ -170,6 +170,12 @@ A Command Thrust gearcase has three engineered changes vs the standard gearcase:
 
 The three changes work together. You cannot get the benefit by swapping just the prop on a standard gearcase. You cannot get the benefit by swapping just the lower unit without the matched prop. Mercury sells Command Thrust as a complete factory configuration, and that is how the engineering works.
 
+Mercury Marine's own gearcase comparison demo shows the size difference clearly. Worth a minute if you want to see the parts side by side before reading further:
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin:24px 0;">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/pZFDAetHRIQ" title="Mercury Marine: Command Thrust vs Standard Gearcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 ## What Command Thrust does (and does not do)
 
 **What it DOES do:**
