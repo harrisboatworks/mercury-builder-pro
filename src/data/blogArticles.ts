@@ -170,6 +170,12 @@ A Command Thrust gearcase has three engineered changes vs the standard gearcase:
 
 The three changes work together. You cannot get the benefit by swapping just the prop on a standard gearcase. You cannot get the benefit by swapping just the lower unit without the matched prop. Mercury sells Command Thrust as a complete factory configuration, and that is how the engineering works.
 
+Mercury Marine's own gearcase comparison demo shows the size difference clearly. Worth a minute if you want to see the parts side by side before reading further:
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin:24px 0;">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/pZFDAetHRIQ" title="Mercury Marine: Command Thrust vs Standard Gearcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 ## What Command Thrust does (and does not do)
 
 **What it DOES do:**
@@ -749,7 +755,12 @@ A few things that make Command Thrust hit different in Ontario than in other mar
 **Email:** info@harrisboatworks.ca (send pontoon length, tube count, and current motor cowl plate photo for a same-day yes/no)
 **Quote a repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Platinum Dealer.`
+Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Platinum Dealer.
+
+## Sources
+
+- Mercury Marine official Command Thrust gearcase demo (YouTube): [Watch the Mercury demo](https://www.youtube.com/watch?v=pZFDAetHRIQ)
+`
   },
 
   {
@@ -4036,6 +4047,10 @@ No. SeaPro is a Mercury motor family built for commercial-duty cycles. Command T
 With proper maintenance, same as the motor itself. Annual gearcase lube replacement during winterization is critical for longevity.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Sources
+
+- Mercury Marine official Command Thrust gearcase demo (YouTube): [Watch the Mercury demo](https://www.youtube.com/watch?v=pZFDAetHRIQ)
 `,
     faqs: [
       {
