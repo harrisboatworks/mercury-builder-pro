@@ -14450,109 +14450,91 @@ Before you call anybody, check these three. We're not joking. A meaningful perce
 
 **3. Battery switch off or on the wrong bank.** Third place is the battery switch left on "off" or pointing at a dead bank. Flick it to "on" or "both," wait two seconds, try again.
 
-If you turned the key and got nothing at all, the kill switch and battery switch are the first two suspects. If it cranks but won't fire, gear-not-in-neutral is rare but possible. After these three, move into the real diagnostic ladder below.
+After these three, move into the real diagnostic ladder below.
 
 ## The HBW diagnostic ladder (what we check, in order)
 
-When a no-start ticket lands at our service desk, we work this ladder. You can work the top half yourself. The bottom half needs our shop.
-
 ### Step 1: Battery voltage at rest
 
-Get a multimeter on the battery terminals (not at the motor, at the battery itself).
+Get a multimeter on the battery terminals.
 
-- **12.6 to 12.8 V at rest:** healthy, charged battery. Move to Step 2.
-- **12.0 to 12.5 V:** low, may still crank but probably won't start a cold EFI motor. Charge before troubleshooting further.
-- **11.5 V or lower at rest after a proper surface-charge burn-off:** replace, don't recharge. At this voltage, a typical 12 V lead-acid cranking battery is past its useful service life.
+- **12.6 to 12.8 V at rest:** healthy. Move to Step 2.
+- **12.0 to 12.5 V:** low, may crank but probably won't start a cold EFI motor. Charge before troubleshooting further.
+- **11.5 V or lower at rest after a proper surface-charge burn-off:** replace, don't recharge.
 
-A weak battery is the #1 cause of EFI motors that crank slowly but won't fire. Modern Mercury EFI needs at least 10.5 V during the cranking cycle to fire the fuel injectors. If the battery drops below that under load, you get the classic "cranks but won't catch" symptom that masquerades as a fuel problem.
+A weak battery is the #1 cause of EFI motors that crank slowly but won't fire. Modern Mercury EFI needs at least 10.5 V during the cranking cycle to fire the fuel injectors.
 
 ### Step 2: Fuel quality and quantity
 
 If you stored the boat with E10 gasoline and no stabilizer, your tank is probably the problem. **Phase separation** is what happens when water condenses out of humid air, mixes with the ethanol in E10 fuel, and sinks to the bottom of the tank as a low-octane, non-combustible layer.
 
-Lab estimates say phase separation takes 60-90 days in a sealed tank from atmospheric moisture alone. In real Ontario boats with leaky caps and some existing water in the tank, we routinely see bad, phase-separated fuel in as little as **three weeks**. That's why we're strict about fresh, treated fuel and proper storage.
+Lab estimates say phase separation takes 60-90 days in a sealed tank. In real Ontario boats with leaky caps and some existing water, we routinely see bad, phase-separated fuel in as little as **three weeks**.
 
 **What to check:**
-
 - Pump a sample from the bottom of the tank into a clear glass jar
 - If you see two distinct layers (gasoline floating on cloudy water-ethanol), the fuel is gone. Drain and refill
-- If the fuel smells stale, sour, or like varnish, replace it
-- Use marine stabilizer (STA-BIL Marine, Star-Tron, K-100) at every storage event
+- Use marine stabilizer at every storage event
 
 **HBW sells Ethanol-Free 89 fuel at the dock.** For boats that sit in storage for months, ethanol-free is the cleanest path to avoiding phase separation entirely. We're one of the few Rice Lake / Kawarthas options for non-ethanol marine fuel.
 
 ### Step 3: Fuel filter and primer bulb
 
-Two physical checks. Both are 5-minute jobs at the dock.
-
-- **Primer bulb:** Squeeze it firm until it's hard. If it stays hard, the check valves are doing their job. If it goes soft or never gets firm, the bulb or check valves need replacement.
-- **10-micron water-separating fuel filter:** This is the canister filter mounted between the tank and the motor. If it's full of water, you'll see a layer at the bottom of the bowl through the clear inspection port. Drain or replace. If you can't remember the last time you changed it, replace it now.
+- **Primer bulb:** Squeeze it firm. If it stays hard, the check valves are doing their job. If it goes soft, replace the bulb.
+- **10-micron water-separating fuel filter:** If it's full of water, you'll see a layer at the bottom of the bowl. Drain or replace.
 
 ### Step 4: Spark plugs
 
 If you've ruled out battery and fuel, the next check is ignition. Pull a plug, look at it.
 
-- **Wet with fuel:** flooded condition, the motor is getting fuel but not firing. Dry the plug, check spark
-- **Dry and white:** lean condition or no fuel reaching the cylinder, work backward to fuel system
-- **Black and oily:** rich condition or oil consumption issue
-- **Black and dry (carbon fouled):** plug needs replacement, probably long overdue
+- **Wet with fuel:** flooded condition. Dry the plug, check spark
+- **Dry and white:** lean condition, work backward to fuel
+- **Black and oily:** rich condition or oil consumption
+- **Black and dry (carbon fouled):** plug needs replacement
 
-Spark test: ground the plug body against the block, crank the motor, look for a bright blue spark. Yellow or weak spark = ignition coil, stator, or trigger issue. No spark at all = same family, dig deeper.
-
-Mercury uses primarily NGK spark plugs across the FourStroke and Pro XS lineup, with some Champions on older models. The Mercury part number is the right call for any replacement. We stock the common ones on the shelf.
+Mercury uses primarily NGK spark plugs across the FourStroke and Pro XS lineup. We stock the common ones on the shelf.
 
 ### Step 5: EFI fault code scan (this is us)
 
-On EFI motors 40-115 HP, the diagnostic complexity jumps. Many "cranks but won't fire" tickets come back with **clean fault memory** with no code stored. The motor's computer didn't see anything obviously wrong, but the motor still won't run. The actual cause is typically:
-
+On EFI motors 40-115 HP, many "cranks but won't fire" tickets come back with **clean fault memory** with no code stored. The actual cause is typically:
 - Low system voltage (below 10.5 V during crank, no injector fire)
 - Poor grounds or corroded battery cables
 - Low-pressure fuel pump weak or failed
 - VST (Vapour Separator Tank) contaminated with water or debris
 - Crankshaft position sensor intermittent
 
-This is where we plug in Mercury CDS (Computer Diagnostic System) at the dealer level and run live data. CDS shows us injector pulse, fuel pressure, ignition timing, sensor inputs in real time. It catches the things a static code scan misses. HBW is a Mercury CDS-equipped Platinum dealer.
+This is where we plug in Mercury CDS (Computer Diagnostic System) and run live data. HBW is a Mercury CDS-equipped Platinum dealer.
 
 ### Step 6: Compression check (also us)
 
-If the motor has hours on it (200+) and you've ruled out the easy stuff, a compression check tells you whether the bottom end is healthy.
+If the motor has 200+ hours and you've ruled out the easy stuff, a compression check tells you whether the bottom end is healthy.
 
-- **Above 170 psi per cylinder with under 10% spread:** healthy, look elsewhere for the no-start cause
-- **150-170 psi with reasonable spread:** age-appropriate wear, motor is fine
-- **Below 150 psi or spread over 15%:** worn, needs further investigation (rings, valves, head gasket)
-
-Compression tests are quick at our dock. If the numbers are bad, we know whether you're looking at a service item or an end-of-life motor.
+- **Above 170 psi per cylinder with under 10% spread:** healthy
+- **150-170 psi with reasonable spread:** age-appropriate wear
+- **Below 150 psi or spread over 15%:** worn, needs further investigation
 
 ## What we see at HBW
 
-Spring tickets are the volume work. Most fall into a predictable distribution.
+**The walk-in fixes** (30 seconds at the desk): kill switch off, shifter not in neutral, battery switch wrong. Free to fix.
 
-**The walk-in fixes** (30 seconds at the desk): kill switch off, shifter not in neutral, battery switch wrong. Free to fix. You don't even have to drop the boat.
+**The 30-minute fixes:** battery replacement, fuel filter, primer bulb, spark plugs.
 
-**The 30-minute fixes:** battery replacement, fuel filter replacement, primer bulb replacement, spark plugs. These are inventory we stock heavily.
+**The half-day fixes:** EFI diagnosis with CDS, VST cleaning, low-pressure fuel pump, crank position sensor, ignition coil.
 
-**The half-day fixes:** EFI diagnosis with CDS, VST cleaning, low-pressure fuel pump replacement, crank position sensor replacement, ignition coil. These need our shop and our tools.
-
-**The full-day or longer:** compression-related, internal mechanical, supercharger-related on the older I6 Verado, or "needs a new motor."
-
-HBW has the largest Mercury and Mercruiser parts inventory in Ontario. If your motor needs a part, we either have it or can get it on the truck next day. Most no-start customers are running again the same day they bring the boat in.
+HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
 
 ## Common mistakes (the things we push back on)
 
-- **"I'll just buy a new battery, that has to be it."** Sometimes it is. Often the issue is the battery cable, the ground point, or the battery switch. A new battery doesn't fix a corroded ground.
-- **"I sprayed starting fluid in it, can you check?"** Starting fluid (ether) can damage EFI fuel rails and damage 2-stroke seals. Don't use it on outboards. Tell us if you did, we need to know.
-- **"It ran fine last fall."** Most no-start tickets we see ran fine last fall. The motor sat for 6 months. Fuel went stale, battery sulphated, condensation entered the tank, plugs corroded. "Ran fine in fall" doesn't help us diagnose "won't start in May."
-- **"I changed the spark plug myself and it's still not running."** Plug is one piece. If you changed plugs and it didn't fix the issue, the problem is somewhere else (fuel, battery, ignition coil, ECU). Don't keep throwing parts at it. Bring it to us.
+- **"I'll just buy a new battery, that has to be it."** Often the issue is the battery cable, the ground point, or the battery switch. A new battery doesn't fix a corroded ground.
+- **"I sprayed starting fluid in it."** Starting fluid can damage EFI fuel rails. Don't use it on outboards. Tell us if you did.
+- **"It ran fine last fall."** Most no-start tickets ran fine last fall. The motor sat for 6 months. "Ran fine in fall" doesn't help us diagnose "won't start in May."
 
 ## Customer language we hear
-
-We translate so you don't have to. These are the phrases we hear at the desk every spring. They all map to the same underlying diagnostic path.
 
 - "She sat all winter and won't fire": battery + fuel + plugs
 - "Just clicks": battery or starter solenoid
 - "I think I've got bad gas": phase separation or stale fuel
 - "Cranks but won't catch": fuel delivery or ignition
-- "The pee stream looks weak": impeller or telltale tube (different problem)
+- "The pee stream looks weak": impeller (different problem)
 - "When can you get me in?": call us at 905-342-2153
 
 ## Ready for HBW to look at it?
@@ -14566,8 +14548,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 ## Sources
 
 - Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
-- CDI Electronics Troubleshooting Guide (7th Edition): widely-referenced Mercury ignition diagnostics
-- Transport Canada E10 fuel regulations: ethanol-free gasoline largely prohibited Canada-wide since Dec 2022 (marine/race carve-out applies)
+- CDI Electronics Troubleshooting Guide (7th Edition)
+- Transport Canada E10 fuel regulations (Dec 2022 marine/race carve-out)
 - HBW shop-floor data: 2026 spring service-ticket distribution
 `,
     howToSteps: [
