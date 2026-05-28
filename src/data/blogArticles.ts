@@ -4036,6 +4036,10 @@ No. SeaPro is a Mercury motor family built for commercial-duty cycles. Command T
 With proper maintenance, same as the motor itself. Annual gearcase lube replacement during winterization is critical for longevity.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Sources
+
+- Mercury Marine official Command Thrust gearcase demo (YouTube): [Watch the Mercury demo](https://www.youtube.com/watch?v=pZFDAetHRIQ)
 `,
     faqs: [
       {
