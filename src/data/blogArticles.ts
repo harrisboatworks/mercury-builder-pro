@@ -173,8 +173,8 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 
 If your boat doesn't slot neatly into one of these, email a photo of your motor cowl plate plus your boat year and make to info@harrisboatworks.ca. We'll respond same-day with eligibility and an estimate.
 
-![Side-by-side comparison of a traditional Mercury mechanical binnacle control with visible push-pull cables and a modern Mercury DTS (Digital Throttle & Shift) binnacle control with a sealed wiring harness, both mounted on a boat dashboard](/lovable-uploads/dts-vs-mechanical-control-inline.png)
-*Mechanical Mercury control (left) with two visible push-pull cables vs Mercury DTS control (right) with a sealed wiring harness, no cables. The five-second visual check at the helm.*
+![Side-by-side comparison: Mercury mechanical binnacle control with visible cables vs Mercury DTS control with sealed harness](/lovable-uploads/dts-vs-mechanical-control-inline.png)
+*Mechanical Mercury control (left) with two visible push-pull cables vs Mercury DTS control (right) with a sealed wiring harness. The five-second visual check at the helm.*
 
 ## What DTS actually is (and isn't)
 
@@ -385,8 +385,8 @@ The fastest path: email a photo of your pontoon plus current motor specs to info
 
 If your boat doesn't fit one of these neatly, send us details and we'll work through it.
 
-![Side-by-side comparison of Mercury standard FourStroke gearcase and Mercury Command Thrust gearcase on a workshop bench at Harris Boat Works, showing the visible size difference in housing and prop diameter](/lovable-uploads/command-thrust-gearcase-comparison-inline.png)
-*Standard gearcase (left) vs Mercury Command Thrust gearcase (right). The bigger housing and larger prop diameter is what converts horsepower into pushing force instead of top-end speed.*
+![Side-by-side comparison: Mercury standard gearcase vs Command Thrust gearcase on a workshop bench](/lovable-uploads/command-thrust-gearcase-comparison-inline.png)
+*Standard gearcase (left) vs Mercury Command Thrust (right). The bigger housing and larger prop diameter converts horsepower into pushing force instead of top-end speed.*
 
 ## What Command Thrust actually does (and what it doesn't)
 
@@ -601,8 +601,8 @@ The fastest way to confirm: find your Mercury serial number, email it to info@ha
 
 If your motor isn't on this table, send the serial number and we'll check.
 
-![Mercury SmartCraft Connect gateway module installed in a boat's electronics bay, showing the small black Mercury-branded module with wiring harness connectors](/lovable-uploads/smartcraft-connect-gateway-inline.png)
-*The SmartCraft Connect gateway module, about the size of a deck of cards, mounts in your electronics bay. This is the part the dealer installs to enable the Mercury Marine app.*
+![Mercury SmartCraft Connect gateway module installed in a boat electronics bay](/lovable-uploads/smartcraft-connect-gateway-inline.png)
+*The SmartCraft Connect gateway module. About the size of a deck of cards, mounts in your electronics bay. The part the dealer installs to enable the Mercury Marine app.*
 
 ## What SmartCraft Connect actually does
 
