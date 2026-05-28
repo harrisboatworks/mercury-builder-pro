@@ -383,6 +383,9 @@ export default function Promotions() {
         <ChooseOneSection options={chooseOneOptions} />
       )}
 
+      {/* Mercury TD "Always On" Financing - sibling to the 7-year warranty promo */}
+      <TDAlwaysOnCard />
+
       {/* Full Rebate Matrix Table with Interactive Calculator */}
       {rebateMatrix.length > 0 && (
         <section className="bg-repower-cream py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">
