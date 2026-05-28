@@ -34494,7 +34494,7 @@ A few notes specific to where we do business.
 **Build a Mercury quote:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marine dealer since 1965, current Platinum Dealer.`,
-    image: '/lovable-uploads/Boat_Repowering_101_Hero.png',
+    image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
     dateModified: '2026-05-28',
