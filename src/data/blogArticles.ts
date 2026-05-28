@@ -19042,7 +19042,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-smartcraft-alarm-codes-encyclopedia',
     title: "Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)",
-    seoTitle: "Mercury SmartCraft Alarm Codes | Complete Reference 2026",
+    seoTitle: "Mercury SmartCraft Alarm Codes | HBW Reference 2026",
     description: "Mercury SmartCraft alarm code reference from an Ontario Platinum dealer. Top 10 codes by service frequency, spring first-start patterns, Guardian alert decode, when to call HBW.",
     image: '/lovable-uploads/hero-mercury-smartcraft-alarm-codes.png',
     author: 'Harris Boat Works',
@@ -19068,8 +19068,6 @@ When a customer calls with a Guardian alarm active or a code on the screen, the 
 
 That single question routes the call. The display text tells us the system involved (fuel, charging, oil, temperature, communication). The beep pattern tells us severity and the specific subsystem. A continuous tone is different from 4 beeps every 2 minutes is different from 6 beeps once.
 
-If you can give us both pieces of information, we can often diagnose over the phone whether to keep running carefully back to the dock, shut down immediately, or bring it in for service.
-
 ## Mercury beep code patterns (what the horn is telling you)
 
 Mercury's warning horn uses repeated patterns to communicate without a display. Even if your VesselView screen is off, the horn alone can tell you what's happening.
@@ -19083,47 +19081,69 @@ Mercury's warning horn uses repeated patterns to communicate without a display. 
 | **1 beep, repeating** | Low oil reservoir (2-stroke Optimax / DFI) | Add 2-stroke oil to remote tank |
 | **2 short beeps** | Engine has entered limit/Guardian mode | Reduce throttle, motor will let you idle home |
 
-Patterns vary slightly by engine family and model year. The patterns above are the most common across the FourStroke, Pro XS, Verado V8/V10/V12, and Optimax lineup we service most often. For exact pattern decoding on your specific motor, the owner's manual is the source of truth.
+Patterns vary slightly by engine family and model year. For exact pattern decoding on your specific motor, the owner's manual is the source of truth.
 
 ## Top 10 alarm codes we see at HBW (by service frequency)
 
-This is our actual order based on service tickets, not a generic Mercury list. Different engine families generate different code priorities. We service primarily Mercury FourStroke, Pro XS, Verado V8/V10/V12, and some Optimax DFI on Rice Lake and the Kawarthas.
+This is our actual order based on service tickets, not a generic Mercury list. We service primarily Mercury FourStroke, Pro XS, Verado V8/V10/V12, and some Optimax DFI on Rice Lake and the Kawarthas.
 
 1. **Low battery voltage.** By far the most common alarm. Battery weak after winter, alternator output dropping, voltage regulator marginal. Especially common on V8 FourStroke and Verado post-winterization.
 2. **High battery voltage.** Voltage regulator stuck high, alternator overcharging. Less common but real, especially on older motors with worn regulators.
 3. **Water in fuel.** The 4-beeps-every-2-minutes alarm. Phase separation from stored E10 fuel, condensation in the tank, or a clogged 10-micron water-separating fuel filter. #1 spring first-start alarm we see.
-4. **Engine over-temperature.** Impeller worn or stuck, raw water intake clogged (anchor mud, zebra mussels, weeds), thermostat stuck closed, or low coolant on closed-cooling systems. Trips Guardian mode immediately.
+4. **Engine over-temperature.** Impeller worn or stuck, raw water intake clogged (anchor mud, zebra mussels, weeds), thermostat stuck closed. Trips Guardian mode immediately.
 5. **Low oil level (2-stroke).** For Optimax DFI owners, the remote oil tank reading low or sensor reading low. Often a float-magnet separation issue, not actual low oil.
 6. **Low oil pressure (4-stroke).** Actual low oil, bypass valve issue, or sensor fault. On a 4-stroke this is serious. Shut down.
-7. **Engine overspeed / RPM limit.** Typically a prop slip event (broken prop, lost a blade, came out of the water on a wave), or shift-shaft issue. Motor cuts power to protect itself.
+7. **Engine overspeed / RPM limit.** Typically a prop slip event (broken prop, lost a blade, came out of the water on a wave). Motor cuts power to protect itself.
 8. **Throttle position sensor fault.** DTS or mechanical TPS sensor failing or wiring issue. Motor goes to limp mode.
-9. **MAP / air / temp sensor fault.** Manifold absolute pressure, intake air temp, or coolant temp sensor failing. EFI runs rich or lean, motor may stall.
+9. **MAP / air / temp sensor fault.** EFI runs rich or lean, motor may stall.
 10. **Guardian / generic fault active.** Catch-all. Something tripped Guardian mode but the specific subsystem isn't displayed. Needs CDS to scan and identify.
 
-## Spring first-start: the patterns we see every May
+## Spring first-start patterns every May
 
 April and May are our highest-volume service months. The alarms cluster predictably.
 
-**#1 most common spring code: Water in Fuel (4 beeps every 2 minutes).** Phase separation from E10 fuel that sat for 5-6 months. Owner stored the boat in November, fueled it, didn't treat it, didn't run it. Tank has condensed atmospheric moisture, ethanol pulled the water out of solution, settled to the bottom, filter caught some of it. Customer's first run of the season fires this alarm. Fix: drain the water-separating filter, replace if heavy, refill tank with fresh fuel (ideally HBW's ethanol-free 89), restart.
+**#1: Water in Fuel (4 beeps every 2 minutes).** Phase separation from E10 fuel that sat for 5-6 months. Fix: drain the water-separating filter, refill with fresh fuel (ideally HBW's ethanol-free 89), restart.
 
-**#2 most common: Low battery voltage / battery alarm.** Battery sat all winter, sulphated, voltage looks marginal but the motor won't crank fast enough to fire EFI. Customer first thinks fuel, calls in. We diagnose battery. Fix: load test, replace if below 11.5 V at rest, charge if marginal.
+**#2: Low battery voltage / battery alarm.** Battery sat all winter, sulphated. Fix: load test, replace if below 11.5 V at rest.
 
-**#3 most common: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter (rubber takes a set), or the raw water intake has wasp nest, mud, or zebra mussel debris. Motor heats up fast at idle, alarm trips. Fix: impeller replacement and intake cleaning. We do dozens of these every spring.
+**#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning.
+
+## Optimax DFI Code 13 / 14: the float-magnet problem
+
+Mercury Optimax DFI engines have a 2-stroke oil reservoir with a float that has an embedded magnet. When the magnet separates from the float body (known issue on older Optimax), the sensor reads "low oil" even though the reservoir is full.
+
+**Cause priority order:**
+1. Float magnet separation (most common, especially on older Optimax)
+2. Actual low oil supply
+3. Sensor wiring or connector fault (least common)
+
+Fix: replace the float assembly. We have the parts on the shelf.
+
+## Verado and V8 FourStroke post-winterization codes
+
+- **Low battery voltage / undervoltage codes:** Verado V8/V10/V12 and current V8 FourStroke draw significant power. Battery that survived storage on a smaller motor may not have enough cranking reserve for a Verado.
+- **Water in fuel / fuel quality alarms:** same E10 phase-separation, but Verado's higher fuel-system pressure is more sensitive to contamination.
+- **Fuel-pressure / fuel-system Guardian faults:** low-pressure or high-pressure fuel pump weakness, fuel rail pressure sensor drift, or fuel filter restriction.
+
+Note: any older Verado content referencing "supercharger codes" is out of date.
+
+## Ontario boater alarm patterns
+
+- **Water-in-fuel alarms are disproportionately common in Ontario.** Long winter storage pulls more atmospheric moisture into tanks than the southern US sees.
+- **Low-battery alarms are disproportionately common in Ontario.** Cold storage at -10C to -20C is hard on batteries.
+- **Rice Lake-specific:** anchor mud and zebra mussel buildup on raw water intakes trigger the same over-temperature alarms the engine uses for any cooling restriction. Diagnosis at HBW includes intake cleaning before assuming impeller failure.
 
 ## SmartCraft Connect Mobile (formerly VesselView Mobile)
 
-A note on terminology. Mercury rebranded VesselView Mobile as **SmartCraft Connect Mobile**. Same product, same functionality, new name as of 2026.
-
-If you have the older app installed, it still works. If you're searching the App Store today, search for "SmartCraft Connect Mobile" (or both). The app pairs with the SmartCraft network on your motor and shows live engine data, alarms, and fault history on your phone.
+Mercury rebranded VesselView Mobile as **SmartCraft Connect Mobile** in 2026. Same product, same functionality. If you have the older app installed, it still works. New downloads should search for "SmartCraft Connect Mobile."
 
 HBW uses SmartCraft Connect Mobile internally for customer-side diagnostics.
 
 ## Common mistakes (the things we push back on)
 
-- **"I cleared the code and it went away, so it's fixed."** No. A code clears when you turn off the key, but if the cause isn't addressed, it fires again the next time the condition exists. Don't ignore recurring codes.
-- **"My buddy's Mercury had the same code and it was X."** Maybe. Or your buddy had a different engine family that displays the same code number for a different fault. Verify before parts shop.
-- **"I shut off the alarm by holding the horn button."** Some operations silence the audible alarm but the underlying fault is still active. Silence is not resolution.
-- **"Are Verado V8 and V10 supercharged?"** No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+- **"I cleared the code and it went away, so it's fixed."** A code clears when you turn off the key, but if the cause isn't addressed, it fires again.
+- **"My buddy's Mercury had the same code and it was X."** Different engine families display the same code number for different faults. Verify before parts shop.
+- **"I shut off the alarm by holding the horn button."** Silencing is not resolution.
 
 ## Ready for HBW to look at it?
 
@@ -19137,17 +19157,16 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 - Mercury Marine Universal Fault Code reference (publicly available subset, Codes 1-247)
 - Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
-- CDI Electronics Troubleshooting Guide (7th Edition): Mercury ignition and fault decoding
-- HBW shop-floor data: 2026 spring service-ticket distribution at our Mercury CDS workstation
+- CDI Electronics Troubleshooting Guide (7th Edition)
+- HBW shop-floor data: 2026 spring service-ticket distribution
 `,
     faqs: [
-      { question: 'What is the most common Mercury alarm code at spring first-start?', answer: 'Water in Fuel (the 4-beeps-every-2-minutes Guardian alert) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with fresh fuel (ideally ethanol-free).' },
-      { question: 'Does HBW have Mercury CDS dealer software?', answer: 'Yes. HBW is a Mercury Platinum Dealer with Mercury CDS (Computer Diagnostic System). CDS plugs into the SmartCraft network and provides live engine data, fault code reading, fault clearing, and parameter adjustment that the owner-side SmartCraft Connect Mobile app cannot. We use CDS on most service tickets where an alarm is involved.' },
-      { question: 'Is VesselView Mobile still available?', answer: 'Yes, but Mercury rebranded it as SmartCraft Connect Mobile in 2026. Same product, same functionality. The older app still works if you have it installed. New downloads should search for "SmartCraft Connect Mobile" in the App Store.' },
-      { question: 'My Optimax keeps firing a Code 13 or 14 oil alarm but the tank is full. What\'s wrong?', answer: 'The most likely cause is float-magnet separation in the engine-mounted 2-stroke oil reservoir. The float still functions, but the magnet that triggers the sensor has detached from the float body. The sensor reads "low oil" even though the reservoir is full. Fix is float assembly replacement, not adding more oil. We stock the parts.' },
-      { question: 'Can a clogged raw water intake on Rice Lake trigger an over-temperature alarm?', answer: 'Yes. Anchor mud, zebra mussel buildup, weed debris, or a wasp nest in the telltale tube can restrict raw water flow enough to trip the over-temperature alarm. The motor doesn\'t distinguish between intake blockage and a worn impeller. Diagnosis at HBW includes intake cleaning before assuming impeller failure on the spring service ticket.' },
-      { question: 'Are current Mercury Verado V8 and V10 outboards supercharged?', answer: 'No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production. Any current Verado content referencing "supercharger codes" is out of date.' },
-      { question: 'How do I read a code if I don\'t have VesselView?', answer: 'The warning horn beep pattern alone tells you most of what you need to know. If you have SmartCraft Connect Mobile on your phone, you can pair it with the SmartCraft network and read codes directly. If you have neither, count the beeps and call HBW with the count.' },
+      { question: "What is the most common Mercury alarm code at spring first-start?", answer: "Water in Fuel (the 4-beeps-every-2-minutes Guardian alert) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with fresh fuel (ideally ethanol-free)." },
+      { question: "Does HBW have Mercury CDS dealer software?", answer: "Yes. HBW is a Mercury Platinum Dealer with Mercury CDS (Computer Diagnostic System). CDS plugs into the SmartCraft network and provides live engine data, fault code reading, fault clearing, and parameter adjustment that the owner-side SmartCraft Connect Mobile app cannot." },
+      { question: "Is VesselView Mobile still available?", answer: "Yes, but Mercury rebranded it as SmartCraft Connect Mobile in 2026. Same product, same functionality. The older app still works if you have it installed." },
+      { question: "My Optimax keeps firing a Code 13 or 14 oil alarm but the tank is full. What's wrong?", answer: "The most likely cause is float-magnet separation in the engine-mounted 2-stroke oil reservoir. The float still functions, but the magnet that triggers the sensor has detached from the float body. The sensor reads 'low oil' even though the reservoir is full. Fix is float assembly replacement." },
+      { question: "Can a clogged raw water intake on Rice Lake trigger an over-temperature alarm?", answer: "Yes. Anchor mud, zebra mussel buildup, weed debris, or a wasp nest in the telltale tube can restrict raw water flow enough to trip the over-temperature alarm. Diagnosis at HBW includes intake cleaning before assuming impeller failure." },
+      { question: "Are current Mercury Verado V8 and V10 outboards supercharged?", answer: "No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production." }
     ],
   },
   {
