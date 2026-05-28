@@ -173,6 +173,9 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 
 If your boat doesn't slot neatly into one of these, email a photo of your motor cowl plate plus your boat year and make to info@harrisboatworks.ca. We'll respond same-day with eligibility and an estimate.
 
+![Side-by-side comparison of a traditional Mercury mechanical binnacle control with visible push-pull cables and a modern Mercury DTS (Digital Throttle & Shift) binnacle control with a sealed wiring harness, both mounted on a boat dashboard](/lovable-uploads/dts-vs-mechanical-control-inline.png)
+*Mechanical Mercury control (left) with two visible push-pull cables vs Mercury DTS control (right) with a sealed wiring harness, no cables. The five-second visual check at the helm.*
+
 ## What DTS actually is (and isn't)
 
 DTS is Mercury's drive-by-wire system. Digital Throttle & Shift. Instead of mechanical cables running from the helm control to the motor, DTS uses electrical signals over a SmartCraft network. The throttle and shift commands travel as data, not as cable pulls.
@@ -285,6 +288,33 @@ The third pattern, specific to Ontario boating: late-season dock approaches in f
 
 Fourth pattern: the worst DTS install we ever rescued was a customer who had bought a "DTS retrofit" kit online for an old Mercury 225 that wasn't DTS-capable. Three months of helm wiring trying to make it work before he called us. We sold him a new 250 Pro XS DTS, took the old one in trade, finished the install in a week, and he was back on the water. Not every retrofit story has a happy ending. Sometimes the honest answer is "this isn't the path."
 
+::pull-quote
+quote: Asked about adding DTS to my 2022 Pro XS 300. Turned out I had it the whole time. Five-minute conversation saved me four grand.
+attribution: Most common DTS retrofit conversation at HBW
+::
+
+::decision-card
+eyebrow: DTS retrofit decision
+heading: Retrofit DTS or repower?
+leftLabel: Repower territory
+leftCriteria:
+  - Mechanical motor 5+ years old
+  - High hours on the existing engine
+  - You want joystick (requires DTS-equipped twins or more)
+  - Retrofit cost is close to a new motor
+leftOutcome: New DTS-equipped motor is the right answer
+leftVariant: alternative
+rightLabel: Retrofit makes sense
+rightCriteria:
+  - Your motor is already DTS-capable (some older Verado I6 models)
+  - You currently have mechanical controls at the helm
+  - The helm-side upgrade unlocks DTS without engine work
+  - Single-engine and you're not chasing joystick
+rightOutcome: Helm-side retrofit is the real upgrade
+rightVariant: recommended
+whenInDoubt: Quote both paths if your mechanical motor is under 5 years old, low hours, and otherwise excellent. Get the retrofit and a full repower quoted side by side before committing.
+::
+
 ## Why this matters for Ontario boaters
 
 A few Ontario-specific notes that make DTS hit different here.
@@ -354,6 +384,9 @@ The fastest path: email a photo of your pontoon plus current motor specs to info
 | Aluminum V-hull boat | **N/A** | Command Thrust is a pontoon gearcase decision |
 
 If your boat doesn't fit one of these neatly, send us details and we'll work through it.
+
+![Side-by-side comparison of Mercury standard FourStroke gearcase and Mercury Command Thrust gearcase on a workshop bench at Harris Boat Works, showing the visible size difference in housing and prop diameter](/lovable-uploads/command-thrust-gearcase-comparison-inline.png)
+*Standard gearcase (left) vs Mercury Command Thrust gearcase (right). The bigger housing and larger prop diameter is what converts horsepower into pushing force instead of top-end speed.*
 
 ## What Command Thrust actually does (and what it doesn't)
 
@@ -469,6 +502,33 @@ Third pattern, specific to Rice Lake and the Kawarthas: water levels can drop in
 
 Fourth pattern: tritoons with standard gearcase almost always disappoint. The third tube is the dead giveaway that the boat is going to want more thrust. If somebody calls us about a tritoon that "feels underpowered," 9 times out of 10 they're on a standard gearcase. Repowering with CT solves it without bumping HP.
 
+::pull-quote
+quote: Hole shot was night and day. We were running 6 adults plus gear on a 22-footer with the old standard gearcase, took forever to plane. New CT motor, on plane in seconds. Should have done it three years ago.
+attribution: Common shop-floor pattern after a Command Thrust repower at HBW
+::
+
+::decision-card
+eyebrow: Command Thrust decision
+heading: Is Command Thrust right for your pontoon?
+leftLabel: Skip it
+leftCriteria:
+  - 16 to 18 ft light cruising pontoon
+  - Trolling-only fishing use
+  - Light loads (2 to 4 people)
+  - Already at capacity-plate maximum HP
+leftOutcome: Standard gearcase is the right call
+leftVariant: alternative
+rightLabel: Yes, strong fit
+rightCriteria:
+  - Tritoon of any size
+  - 20+ ft twin tube pontoon
+  - Heavy loads (8+ people) or water sports
+  - Cottage hauling or regular full-load use
+rightOutcome: Order Command Thrust with the repower
+rightVariant: recommended
+whenInDoubt: Probably yes if you have an 18 to 20 ft twin tube with moderate loads, occasional water sports, or mixed use. The middle case is where the load decides.
+::
+
 ## Why this matters for Ontario pontoon boaters
 
 A few things that make Command Thrust hit different in Ontario than in other markets.
@@ -540,6 +600,9 @@ The fastest way to confirm: find your Mercury serial number, email it to info@ha
 | Mercury Optimax (any year) | **No** | Different protocol, no Connect path |
 
 If your motor isn't on this table, send the serial number and we'll check.
+
+![Mercury SmartCraft Connect gateway module installed in a boat's electronics bay, showing the small black Mercury-branded module with wiring harness connectors](/lovable-uploads/smartcraft-connect-gateway-inline.png)
+*The SmartCraft Connect gateway module, about the size of a deck of cards, mounts in your electronics bay. This is the part the dealer installs to enable the Mercury Marine app.*
 
 ## What SmartCraft Connect actually does
 
@@ -657,6 +720,33 @@ The second pattern: customers with an older boat that has a current Mercury (so 
 Third pattern: the trip log feature changes how people use the boat. We've had a few customers swap from "I think I have 40 hours on this motor" to "I have exactly 42.3 hours and my 20-hour service is overdue" within a week of installing the module. That data is gold for resale value down the road too, because it documents real run hours rather than guessing.
 
 Fourth pattern, and this one surprised us at the shop. Customers who add Connect end up running their motors better. Knowing the actual fuel flow at cruise, the actual operating temp, the actual RPM at full trim, gives them feedback they didn't have before. We see Rice Lake customers tune their trim and prop pitch with the data, and most of them pick up 2 to 4 MPH at cruise without changing anything mechanical. Just better information.
+
+::pull-quote
+quote: I had Connect for almost a year before I knew what the icon on my phone meant. Turned it on, and now I check engine hours from my truck before I leave for the lake.
+attribution: What we hear most at HBW after Connect setup
+::
+
+::decision-card
+eyebrow: SmartCraft Connect decision
+heading: Do I need SmartCraft Connect?
+leftLabel: Skip it
+leftCriteria:
+  - You boat 5 times a year or less
+  - You don't care about engine diagnostics
+  - Simple rig with no current SmartCraft integration
+  - The data wouldn't change how you use the boat
+leftOutcome: Save the money
+leftVariant: alternative
+rightLabel: Worth it
+rightCriteria:
+  - You repower often or track engine hours closely
+  - You value live diagnostics
+  - You want service alerts pushed before they're overdue
+  - You boat 20+ days a year
+rightOutcome: Install it on the next service visit
+rightVariant: recommended
+whenInDoubt: Nice to have if you're a casual boater who'd check trip logs occasionally, run a single-engine setup, or you're already upgrading the boat and want the modern feature included.
+::
 
 ## Why this matters for Ontario boaters
 
