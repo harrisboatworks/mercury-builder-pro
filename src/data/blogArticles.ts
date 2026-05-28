@@ -541,6 +541,9 @@ The fastest way to confirm: find your Mercury serial number, email it to info@ha
 
 If your motor isn't on this table, send the serial number and we'll check.
 
+![Mercury SmartCraft Connect gateway module installed in a boat's electronics bay, showing the small black Mercury-branded module with wiring harness connectors](/lovable-uploads/smartcraft-connect-gateway-inline.png)
+*The SmartCraft Connect gateway module, about the size of a deck of cards, mounts in your electronics bay. This is the part the dealer installs to enable the Mercury Marine app.*
+
 ## What SmartCraft Connect actually does
 
 Before checking eligibility it helps to know what you'd be getting. SmartCraft Connect is Mercury's mobile and cloud connectivity layer (Mercury's official overview is at [mercurymarine.com/en/us/products/technology/smartcraft-connect](https://www.mercurymarine.com/en/us/products/technology/smartcraft-connect)). Once installed, you get:
@@ -657,6 +660,33 @@ The second pattern: customers with an older boat that has a current Mercury (so 
 Third pattern: the trip log feature changes how people use the boat. We've had a few customers swap from "I think I have 40 hours on this motor" to "I have exactly 42.3 hours and my 20-hour service is overdue" within a week of installing the module. That data is gold for resale value down the road too, because it documents real run hours rather than guessing.
 
 Fourth pattern, and this one surprised us at the shop. Customers who add Connect end up running their motors better. Knowing the actual fuel flow at cruise, the actual operating temp, the actual RPM at full trim, gives them feedback they didn't have before. We see Rice Lake customers tune their trim and prop pitch with the data, and most of them pick up 2 to 4 MPH at cruise without changing anything mechanical. Just better information.
+
+::pull-quote
+quote: I had Connect for almost a year before I knew what the icon on my phone meant. Turned it on, and now I check engine hours from my truck before I leave for the lake.
+attribution: What we hear most at HBW after Connect setup
+::
+
+::decision-card
+eyebrow: SmartCraft Connect decision
+heading: Do I need SmartCraft Connect?
+leftLabel: Skip it
+leftCriteria:
+  - You boat 5 times a year or less
+  - You don't care about engine diagnostics
+  - Simple rig with no current SmartCraft integration
+  - The data wouldn't change how you use the boat
+leftOutcome: Save the money
+leftVariant: alternative
+rightLabel: Worth it
+rightCriteria:
+  - You repower often or track engine hours closely
+  - You value live diagnostics
+  - You want service alerts pushed before they're overdue
+  - You boat 20+ days a year
+rightOutcome: Install it on the next service visit
+rightVariant: recommended
+whenInDoubt: Nice to have if you're a casual boater who'd check trip logs occasionally, run a single-engine setup, or you're already upgrading the boat and want the modern feature included.
+::
 
 ## Why this matters for Ontario boaters
 
