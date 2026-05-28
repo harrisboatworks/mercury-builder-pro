@@ -23,6 +23,7 @@ import { BlogTable } from '@/components/blog/BlogTable';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
+import { MercuryVideo } from '@/components/blog/MercuryVideo';
 
 
 import { 
@@ -342,6 +343,14 @@ export default function BlogArticle() {
           {/* Table of Contents */}
           {tocItems.length > 0 && (
             <TableOfContents items={tocItems} />
+          )}
+
+          {/* Optional Mercury Marine YouTube video reference */}
+          {article.youtubeVideoId && (
+            <MercuryVideo
+              videoId={article.youtubeVideoId}
+              title={article.youtubeVideoTitle || 'Mercury Marine video'}
+            />
           )}
 
           {/* Content */}
