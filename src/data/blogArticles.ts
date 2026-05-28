@@ -14566,15 +14566,15 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     faqs: [
       {
         question: 'What is the first thing to check if my Mercury outboard won\'t start in spring?',
-        answer: 'Check the kill switch is fully engaged, the shifter is in neutral, and the battery switch is in the right position. These three "stupid easy" issues account for a meaningful percentage of spring no-start walk-ins at HBW. If those are clean, check battery voltage at rest (should be 12.6-12.8 V) and look for stale or phase-separated fuel.'
+        answer: 'Check the kill switch is fully engaged, the shifter is in neutral, and the battery switch is in the right position. These three issues account for a meaningful percentage of spring no-start walk-ins at HBW. If those are clean, check battery voltage at rest (should be 12.6 to 12.8 V) and look for stale or phase-separated fuel.'
       },
       {
         question: 'At what battery voltage should I replace instead of recharge?',
-        answer: 'For a typical 12 V lead-acid cranking battery, 11.5 V or lower at rest after a proper surface-charge burn-off is usually replace, not recharge. The battery may still take a charge but will not reliably deliver the cranking current an EFI Mercury needs. Modern EFI requires at least 10.5 V during crank to fire injectors.'
+        answer: 'For a typical 12 V lead-acid cranking battery, 11.5 V or lower at rest after a proper surface-charge burn-off is usually replace, not recharge. Modern EFI requires at least 10.5 V during crank to fire injectors.'
       },
       {
         question: 'How fast does E10 fuel go bad in storage?',
-        answer: 'Lab estimates say phase separation from atmospheric moisture alone takes 60-90 days in a sealed tank. In real Ontario boats with leaky caps and some existing water, we routinely see bad, phase-separated fuel in as little as three weeks. The remedy is fresh treated fuel at every storage event, or use HBW\'s ethanol-free 89 fuel which avoids the issue entirely.'
+        answer: 'Lab estimates say phase separation from atmospheric moisture alone takes 60-90 days in a sealed tank. In real Ontario boats with leaky caps and some existing water, we routinely see bad, phase-separated fuel in as little as three weeks. Use HBW\'s ethanol-free 89 fuel to avoid the issue entirely.'
       },
       {
         question: 'Does HBW sell ethanol-free fuel at the dock?',
@@ -14582,11 +14582,11 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       },
       {
         question: 'Does HBW offer a flat-rate no-start diagnostic?',
-        answer: 'No. Diagnostic time is billed at our standard service rate. Most no-start tickets are resolved within 30 minutes to half a day depending on which step of the ladder the cause is on. If you want a price before authorizing work, we tell you what the most likely fix is and what it costs.'
+        answer: 'No. Diagnostic time is billed at our standard service rate. Most no-start tickets are resolved within 30 minutes to half a day depending on which step of the ladder the cause is on.'
       },
       {
         question: 'What\'s the most common EFI fault code on no-start tickets?',
-        answer: 'On Mercury EFI 75-115 HP, most "cranks but won\'t fire" tickets come back with clean fault memory. No code stored. The actual causes are low system voltage, weak battery, poor grounds, or low-pressure fuel pump issues that don\'t trigger a stored EFI code. This is why we plug in Mercury CDS for live diagnostic data on these motors.'
+        answer: 'On Mercury EFI 75-115 HP, most cranks-but-won\'t-fire tickets come back with clean fault memory. No code stored. The actual causes are low system voltage, weak battery, poor grounds, or low-pressure fuel pump issues that don\'t trigger a stored EFI code. This is why we plug in Mercury CDS for live diagnostic data.'
       }
     ]
   },
