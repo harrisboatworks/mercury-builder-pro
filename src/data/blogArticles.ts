@@ -23645,21 +23645,14 @@ The module lives under the cowl on a single-engine boat, or under the helm on a 
 
 ---
 
-## Compatibility
+## Compatibility (quick check)
 
-| Motor Class | Compatible? | Notes |
-|---|---|---|
-| Mercury FourStroke 40 HP+ (2004 onward) | Yes | Most common installation |
-| Mercury Pro XS 115 HP+ (2004 onward) | Yes | |
-| Mercury Verado (any current year) | Yes | |
-| Mercury SeaPro 40 HP+ (2004 onward) | Yes | |
-| Mercury 25 HP and 30 HP | Yes, 2022+ only | Earlier years do not have the SmartCraft network |
-| Mercury Avator electric | Yes, different module; ask | |
-| Mercury 9.9, 20 HP small portables | **No** | Not SmartCraft-equipped by design |
-| Pre-2004 Mercury 4-strokes | **No** | |
-| Mercury 2-strokes and Optimax | **No** | Different protocol |
+Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, 2-strokes, and Optimax engines are NOT compatible. Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. Mercury Avator electric uses a different gateway module.
 
-**Practical note:** If you have a 9.9 MH kicker, it does not support the app. There is no SmartCraft network on those motors. If you are unsure about your motor, email the serial number to info@harrisboatworks.ca, HBW can confirm compatibility in one reply.
+For a full eligibility table with every motor class, every year cutoff, and what to do if your motor isn't compatible, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026).
+
+To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll reply same-day.
+
 
 ---
 
@@ -23760,15 +23753,6 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 
 ---
 
-## Boost Upgrade Eligibility
-
-[Mercury Boost](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) is a paid software upgrade that improves mid-range acceleration on compatible motors. SmartCraft Connect lets you check eligibility directly from the app. As of 2026, Boost is available on select Mercury FourStroke and Pro XS models, eligibility is motor-by-motor by serial number. The app gives a definitive answer in seconds.
-
-You do not need SmartCraft Connect to buy Boost, HBW can also check eligibility using diagnostic tools. SmartCraft Connect makes it self-serve.
-
-For engine repairs, we only service Mercury and Mercruiser.
-
----
 
 ## FAQs
 
