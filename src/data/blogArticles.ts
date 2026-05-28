@@ -24,6 +24,8 @@ export interface BlogArticle {
   howToTotalTime?: string; // ISO 8601 duration like "PT60M"
   howToSupplies?: string[]; // List of supplies / materials
   howToTools?: string[]; // List of tools needed
+  youtubeVideoId?: string; // Optional Mercury Marine YouTube video reference
+  youtubeVideoTitle?: string; // Title used for facade button + VideoObject schema
 }
 
 // Parses "YYYY-MM-DD" as local midnight (America/Toronto for our content),
