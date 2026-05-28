@@ -749,7 +749,12 @@ A few things that make Command Thrust hit different in Ontario than in other mar
 **Email:** info@harrisboatworks.ca (send pontoon length, tube count, and current motor cowl plate photo for a same-day yes/no)
 **Quote a repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Platinum Dealer.`
+Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Platinum Dealer.
+
+## Sources
+
+- Mercury Marine official Command Thrust gearcase demo (YouTube): [Watch the Mercury demo](https://www.youtube.com/watch?v=pZFDAetHRIQ)
+`
   },
 
   {
