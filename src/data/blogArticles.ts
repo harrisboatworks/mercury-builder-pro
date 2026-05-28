@@ -14583,44 +14583,28 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     howToTools: ['Multimeter', 'Spark plug socket', 'Spare spark plugs', 'Battery load tester', 'Compression gauge (optional)'],
     faqs: [
       {
-        question: 'Why won\'t my Mercury outboard start after sitting all winter?',
-        answer: 'The most common reasons a Mercury outboard won\'t start after winter storage are stale or phase-separated fuel, a drained battery, and fouled spark plugs. Ethanol-blended gasoline (the standard in Ontario) begins to degrade after 30 days and absorbs moisture over a winter, creating a water-ethanol separation layer that won\'t burn. Start your diagnosis with fresh fuel, a charged battery, and new spark plugs. If all three check out and the motor still won\'t fire, check the kill switch lanyard and neutral safety switch before escalating to a dealer diagnostic. At Harris Boat Works, a "Won\'t Start" diagnostic averages around $540 based on our repair order history, knowing that number upfront helps you decide when DIY has run its course.'
+        question: 'What is the first thing to check if my Mercury outboard won\'t start in spring?',
+        answer: 'Check the kill switch is fully engaged, the shifter is in neutral, and the battery switch is in the right position. These three "stupid easy" issues account for a meaningful percentage of spring no-start walk-ins at HBW. If those are clean, check battery voltage at rest (should be 12.6-12.8 V) and look for stale or phase-separated fuel.'
       },
       {
-        question: 'What does it mean when my outboard cranks but won\'t start?',
-        answer: 'When an outboard cranks normally but won\'t fire, the most common causes are fuel-related: stale fuel, a clogged fuel filter, a primer bulb that won\'t hold pressure, or a flooded engine. If fuel delivery checks out, move to spark, pull the plugs and inspect for fouling, damage, or incorrect gap. If the plugs are good and fuel is fresh, an EFI-equipped Mercury may have a sensor fault that\'s preventing ignition. This requires a dealer with Mercury diagnostic scanning equipment to read fault codes from the Engine Control Module.'
+        question: 'At what battery voltage should I replace instead of recharge?',
+        answer: 'For a typical 12 V lead-acid cranking battery, 11.5 V or lower at rest after a proper surface-charge burn-off is usually replace, not recharge. The battery may still take a charge but will not reliably deliver the cranking current an EFI Mercury needs. Modern EFI requires at least 10.5 V during crank to fire injectors.'
       },
       {
-        question: 'What does it mean when my outboard starts then immediately dies?',
-        answer: 'An outboard that starts and immediately shuts down typically indicates one of three things: a safety interlock tripping (kill switch lanyard not fully seated, or a warning system detecting a fault), a fuel delivery problem starving the engine at startup, or an ECM fault code causing a protective shutdown. Check the lanyard first, it\'s the most common cause. If the motor shuts down with a warning horn, note whether it\'s one beep or a pattern, as Mercury\'s alarm codes indicate specific fault categories. Repeated starts and immediate shutdowns will eventually flood the engine, so stop attempting to start and diagnose first.'
+        question: 'How fast does E10 fuel go bad in storage?',
+        answer: 'Lab estimates say phase separation from atmospheric moisture alone takes 60-90 days in a sealed tank. In real Ontario boats with leaky caps and some existing water, we routinely see bad, phase-separated fuel in as little as three weeks. The remedy is fresh treated fuel at every storage event, or use HBW\'s ethanol-free 89 fuel which avoids the issue entirely.'
       },
       {
-        question: 'Can I use starting fluid on a Mercury FourStroke?',
-        answer: 'Starting fluid (ether-based aerosol) is generally not recommended for Mercury FourStroke outboards. Four-stroke engines rely on engine oil for lubrication of the cylinder walls, and ether can strip that oil film, potentially causing cylinder scoring. It can also cause backfires that damage air intake components. If a Mercury FourStroke won\'t start with fresh fuel and a good battery, the right move is proper diagnosis rather than starting fluid. There are Mercury-approved fogging oil products that serve a different purpose (winterization), but ether starting aids are a risk on modern four-strokes.'
+        question: 'Does HBW sell ethanol-free fuel at the dock?',
+        answer: 'Yes. HBW offers Ethanol-Free 89 fuel at our dock. For Rice Lake and Kawarthas boaters who store for months, ethanol-free fuel is the cleanest way to avoid phase separation problems on spring first-start.'
       },
       {
-        question: 'How do I know if my outboard battery is strong enough to start the motor?',
-        answer: 'A boat battery that reads 12.4-12.6V at rest may still fail under the cranking load of an EFI outboard. The reliable test is a load test, not a resting voltage reading. Most automotive parts stores (Canadian Tire, Napa) will load test a battery for free. A healthy marine battery should maintain at least 9.6V under full cranking load for 15 seconds. If yours drops below that, it won\'t reliably fire a Mercury FourStroke, especially in cold weather. A battery that\'s more than 4-5 years old and failing load tests should be replaced, not charged and hoped for.'
+        question: 'Does HBW offer a flat-rate no-start diagnostic?',
+        answer: 'No. Diagnostic time is billed at our standard service rate. Most no-start tickets are resolved within 30 minutes to half a day depending on which step of the ladder the cause is on. If you want a price before authorizing work, we tell you what the most likely fix is and what it costs.'
       },
       {
-        question: 'Why does my Mercury outboard start fine but run roughly?',
-        answer: 'Rough running after a start often points to partial fuel delivery issues, a partially clogged fuel filter, a primer bulb with a weak check valve, water in the fuel, or a fouled injector. On carbureted motors, varnish deposits in the carb jets are common after winter storage. On EFI motors, a failing fuel pump pressure reading or a bad injector can cause rough idle and stumble. Another possibility: a cylinder misfiring due to a fouled spark plug. Pull the plugs and inspect; replace any that look questionable. Running rough can also indicate an overheating condition, check that the tell-tale is flowing water. From our repair order data, overheating jobs at HBW average around $370 to resolve.'
-      },
-      {
-        question: 'How do I reset a Mercury outboard that shut down on the water?',
-        answer: 'If a Mercury outboard triggered a shutdown on the water due to an overheating, oil pressure, or sensor fault, don\'t simply restart and run it. The fault that triggered the shutdown is still present. Turn the key off, wait 5 minutes, and attempt one restart. If it starts and the warning horn stops, monitor carefully for the rest of the trip. If the horn sounds again, shut down immediately and call for help. Continuing to run a motor that\'s actively warning about a fault condition risks serious engine damage. Have the fault codes read by a dealer before your next trip.'
-      },
-      {
-        question: 'Is it bad to crank a boat motor that won\'t start repeatedly?',
-        answer: 'Yes. Repeatedly cranking a motor that won\'t start causes several problems: it drains the battery faster, making each subsequent cranking attempt weaker; if the engine is flooding, it pushes more fuel into the cylinders with each crank; and if there\'s water in the engine, repeated cranking can cause catastrophic hydraulic damage to connecting rods. A better approach is to work through the diagnosis systematically, fixing one potential cause at a time, rather than grinding the starter. If after 3-4 thorough cranking attempts the motor doesn\'t fire, stop cranking and diagnose.'
-      },
-      {
-        question: 'What\'s the Mercury kill switch lanyard, and where does it attach?',
-        answer: 'The Mercury engine cut-off lanyard (also called the kill switch cord) is a coiled safety cable with a clip on one end that attaches to the driver. The other end plugs into the emergency stop switch on the side of the engine control panel or tiller handle. If the clip is removed, either deliberately or because the driver fell overboard, the circuit breaks and the motor stops. It also prevents the motor from starting if the clip isn\'t seated. The clip must be fully inserted into the switch housing, not just loosely resting in it. It\'s one of the most overlooked causes of a "won\'t start" situation.'
-      },
-      {
-        question: 'When should I call a Mercury dealer instead of troubleshooting myself?',
-        answer: 'Call a dealer when: the motor won\'t start after working through all common causes (fuel, battery, kill switch, plugs, fuel line); a warning horn is sounding and the motor shuts down protectively; you suspect water entered the engine; the motor is running but showing fault codes; or the motor is under warranty and you want to protect coverage. At Harris Boat Works, we use Mercury\'s diagnostic software to read fault codes directly from the ECM, something that can\'t be done without the right equipment. A standard "Won\'t Start" diagnostic averages around $540 from our repair history. Book service at hbw.wiki/service or call 905-342-2153.'
+        question: 'What\'s the most common EFI fault code on no-start tickets?',
+        answer: 'On Mercury EFI 75-115 HP, most "cranks but won\'t fire" tickets come back with clean fault memory. No code stored. The actual causes are low system voltage, weak battery, poor grounds, or low-pressure fuel pump issues that don\'t trigger a stored EFI code. This is why we plug in Mercury CDS for live diagnostic data on these motors.'
       }
     ]
   },
