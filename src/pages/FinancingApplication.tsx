@@ -455,6 +455,9 @@ export default function FinancingApplication() {
       </div>
       
       <div className="max-w-2xl mx-auto pb-24 md:pb-8">
+        {/* Mercury TD "Always On" financing offer banner */}
+        <TDAlwaysOnBanner />
+
         {/* Progress Header */}
         <FormProgressIndicator
           currentStep={financingState.currentStep}
