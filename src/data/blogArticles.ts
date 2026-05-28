@@ -34655,6 +34655,178 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
       { question: "What is the trade-in value of a clean Honda BF90?", answer: "Depends on year, hours, condition, and market. We take Honda in trade against Mercury repowers when the math works. Send us serial number, hour count, and condition photos and we will quote a trade value within one business day. Honda holds value reasonably well in Ontario but has a smaller used market than Mercury, so trade quotes can run slightly below comparable Mercury." }
     ]
   },
+  {
+    slug: 'hbw-on-water-load-test-mercury-repower-advantage-2026',
+    title: 'The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)',
+    seoTitle: 'HBW On-Water Mercury Repower Load Test 2026 | Harris Boat Works',
+    description: 'Why every Mercury repower at HBW gets a real-water load test before delivery. 80 feet from rigging bay to water-test dock. What we catch that other dealers can\'t. The structural moat behind the work.',
+    content: `*Last reviewed: 2026-05-28*
+
+> **Quick answer:** Every Mercury repower at HBW gets an on-water load test before the customer takes delivery. It\'s not a marketing claim. HBW is 80 feet from the rigging bay to the water-test dock on Rice Lake. We start the motor cold, run it through idle, low-speed, on-plane, and WOT under realistic load. We verify charging system voltage, prop selection, trim behaviour, and any SmartCraft alarm conditions. Most Mercury dealers in Ontario are inland or land-locked and cannot match this. The on-water test catches problems at our dock instead of yours.
+
+There\'s a specific question a Mercury repower customer should ask every dealer they talk to: do you water-test every repower under load before delivery? At HBW, the answer is yes, and the geography makes it routine, not exceptional. This page explains what the test actually is, what it catches, why our dock-to-shop distance matters, and what the real-world implications are for a customer choosing where to buy a repower.
+
+If you\'ve read other HBW posts and seen the line "every repower gets a water test under load at our dock" repeated, this is the canonical explanation behind that claim.
+
+## What the on-water load test actually is
+
+The test is a structured run from cold start through full operating envelope, performed on Rice Lake at our dock, with the new motor on your boat. It\'s not a quick "fire it up and listen" check. It\'s a documented protocol that takes 30 to 60 minutes per motor depending on HP class.
+
+**Standard test sequence:**
+
+1. **Cold start.** Verify clean start from rest. Check for any startup smoke (normal first-time stays brief), abnormal cranking time, or fault codes flagged at startup.
+2. **Idle quality.** Run at idle for 5 to 10 minutes. Verify steady RPM, no hunting, no stall risk. Check telltale water flow for healthy cooling. Verify gauge data is reading cleanly.
+3. **Low-speed handling.** Engage gear at idle, low-speed forward and reverse. Check shifting feel, throttle response, and steering load.
+4. **On-plane transition.** Accelerate from idle through plane-up. Verify time-to-plane is in expected range for the boat type. Check trim behaviour and bow rise.
+5. **Cruise at multiple RPM bands.** Run at 3000, 4000, 5000 RPM. Verify smooth operation, no vibration, no engine alarms.
+6. **WOT (Wide Open Throttle) RPM check.** Push to full throttle and verify the motor reaches Mercury\'s recommended WOT range (typically 5,500 to 6,000 RPM for FourStroke, 6,000 to 6,400 for Pro XS). Under-revving means wrong prop pitch. Over-revving means wrong prop pitch the other direction. Either way, we re-prop before delivery.
+7. **Charging system under load.** With everything running (electronics, lights, livewell if equipped), verify alternator voltage holds at cruise. Catch any charging system bugs before the customer is on Lake Ontario at 6 AM with batteries draining.
+8. **SmartCraft alarm and fault code check.** Connect Mercury CDS (Computer Diagnostic System) at the dock. Pull any stored fault codes. Verify no alarms during the run. Clear codes and confirm clean state.
+
+Every step gets logged. If anything fails, we fix it at our dock and re-run before the customer takes delivery.
+
+## Why HBW\'s geography makes this routine, not exceptional
+
+The reason most Mercury dealers don\'t water-test every repower is simple: they can\'t easily. They\'re inland, or their dock isn\'t set up for it, or the launch ramp is a separate trip away from the rigging bay.
+
+**HBW is 80 feet from the rigging bay to the water-test dock.** That\'s not a marketing flourish. That\'s the actual measurement. We can roll a repower off the rigging stand, splash it directly at our dock, and start the cold-start sequence within 15 minutes of finishing the install.
+
+Compare that to an inland Mercury dealer. They might rig a beautiful repower in their shop, but to water-test it they have to:
+
+- Pull the boat onto a trailer
+- Drive to a public boat launch (often 20 to 45 minutes away)
+- Pay for launch fees or scout for parking
+- Splash the boat in unfamiliar water with unknown weed/debris conditions
+- Run the test in someone else\'s marina basin
+- Trailer back to the shop afterward
+
+For one motor, that\'s a half-day commitment. For 50 to 100 repowers per season, it\'s economically impossible. So inland dealers don\'t water-test every repower. They water-test some, and trust the others to "run fine when the customer takes delivery."
+
+We water-test all of them. Not because we\'re more thorough than other Mercury dealers in principle, but because our dock is right there. The geography makes it routine.
+
+## What we actually catch at the water test
+
+Years of running this protocol surfaces a specific pattern of issues that water-testing finds and shop-only testing misses.
+
+**Wrong prop pitch.** The single most common catch. A new motor with a "looks right" prop will sometimes under-rev at WOT (prop too aggressive) or over-rev at WOT (prop too soft). Either condition is hard on the motor and hurts performance. At the water test we measure actual WOT RPM under realistic load. If it\'s outside Mercury\'s recommended range, we swap the prop before delivery.
+
+**Trim system not behaving correctly.** New trim pumps and switches sometimes have setup issues that don\'t show up at the bench. Bow rises too far, trim hangs at a certain angle, trim gauge reads wrong. On the water, we see these immediately.
+
+**Charging system voltage sag.** A new motor will start fine on a fresh battery, but under load (electronics running, livewell pump cycling, navigation lights on, downriggers retrieving) the alternator may not hold voltage. This is the most-common cause of "my new motor won\'t start after a day of fishing" complaints we get from customers who didn\'t buy from us. We catch it at the dock.
+
+**SmartCraft alarm conditions that only fire under realistic operating temps.** Some fault codes only set when the motor reaches normal operating temperature, when oil pressure is fully established, or when the cooling system has cycled enough to flag a sensor. Shop-bench runs don\'t reach this state. Water testing does.
+
+**Steering load issues.** Hydraulic steering bleeding or cable steering binding is sometimes invisible at the shop but obvious at planing speed. We catch it at the test.
+
+**Cooling system flow issues.** A telltale stream can look fine at idle but go intermittent at WOT if there\'s a partial blockage or impeller issue. We verify under load.
+
+**Vibration patterns.** New motor on old boat sometimes surfaces transom flex, motor mount issues, or prop balance problems that only show at specific RPM bands. The water test reveals them.
+
+**Gauge calibration.** Tach, speed, fuel flow, and trim gauges sometimes need calibration after a new motor install. Easier to verify and correct with the boat actually running at the conditions the gauges should read.
+
+## What the customer actually gets
+
+A customer who picks up a Mercury repower from HBW takes delivery of a boat that has already been verified to run correctly. Not theoretically. Operationally.
+
+The practical implications:
+
+- **No "shakedown cruise" surprises.** Most repower customers know to expect a "first trip out" where they discover what\'s wrong. With HBW\'s water-tested deliveries, that trip is just a trip. We\'ve already shaken it down.
+- **Warranty issues caught early.** If a manufacturing defect is going to surface in the first hour of operation, it surfaces at our dock, not yours. We handle the warranty work before delivery.
+- **Right prop the first time.** The prop on your boat at delivery is the prop that\'s actually correct for your hull, load, and use case. Not an educated guess.
+- **Charging system verified for your actual electrical load.** If you\'ve got 4 downriggers, a sonar, and a livewell, we ran them simultaneously to verify the alternator holds.
+- **Documentation.** The water test gets logged. If there\'s ever a question about how the motor ran at delivery, the record exists.
+
+## Why most Mercury dealers can\'t match this
+
+We get this question often: "Are you saying other Mercury Platinum dealers don\'t water-test?" The honest answer is some do, some don\'t, and the difference comes down to physical geography more than dealer competence.
+
+**Inland dealers:** Can\'t water-test routinely. May test selectively for high-end customers or twin-engine installs. Most single-engine repowers ship with shop-bench testing only.
+
+**Coastal/harbour dealers:** Often have water access but in saltwater conditions that don\'t simulate freshwater Ontario use cases. The test runs but the conditions differ.
+
+**Lakefront dealers with dock-to-shop walkability:** Rare in Ontario. We\'re one of the few Mercury Platinum dealers in the province with a dedicated water-test dock 80 feet from the rigging bay. Others exist but are less common than customers assume.
+
+**Lakefront dealers without water-test dock setup:** Lake access doesn\'t automatically mean water-test capability. A dealer can be on a lake but not have a dock set up for under-load testing.
+
+The HBW configuration (Platinum credential + 80-foot dock walk + Rice Lake direct access + dedicated water-test slip) is structurally rare. That\'s the moat.
+
+## The implications for cross-shopping
+
+If you\'re cross-shopping HBW against other Mercury Platinum dealers, the water-test question is worth asking each one directly. The right question isn\'t "do you test motors?" (every dealer will say yes). The right question is "do you water-test every single repower under load before delivery, or only some of them?"
+
+The honest dealer answer is usually "only some of them." That\'s not a knock on the dealer, that\'s the operational reality of inland Mercury dealerships in Ontario.
+
+If you boat in saltwater or commercial use, water-testing matters less because the use case is more uniform and the failure modes are different. For freshwater Ontario recreational repowers, where prop selection and charging system load are the dominant variables, water-testing is genuinely valuable.
+
+## What HBW checks before delivery (the canonical checklist)
+
+This is the standard pre-delivery water-test checklist we run on every Mercury repower. Customers can ask to see the completed test log at pickup.
+
+1. Cold start from rest, no fault codes at startup
+2. Idle quality at 600 to 800 RPM, 5 to 10 minutes
+3. Telltale water flow steady and clean at idle
+4. Forward and reverse gear engagement at idle, no clunk or hesitation
+5. Throttle response off idle, no flat spot
+6. Time-to-plane within expected range for boat type
+7. Trim system full range of motion, no hang or skip
+8. Cruise at 3000, 4000, 5000 RPM, steady and smooth
+9. WOT RPM within Mercury\'s recommended range (5,500 to 6,000 for FourStroke; 6,000 to 6,400 for Pro XS)
+10. Charging system voltage steady at cruise with electronics under load
+11. Fault code scan with Mercury CDS, clean or documented
+12. Final shutdown, hot restart, verify warm-start performance
+
+If any step fails, we fix and re-test before the customer takes the boat.
+
+## Common mistakes (the things we push back on)
+
+- **"My dealer said the motor was tested in the shop, that\'s the same thing."** It\'s not. Shop-bench testing verifies the motor starts and idles. It doesn\'t verify performance under load, charging system under realistic electrical demand, or WOT RPM with the prop that\'s actually on the boat.
+- **"Water testing is just for high-end customers."** No. The HBW water test is run on every repower regardless of motor size or boat value. A 9.9 ProKicker gets the same protocol as a Verado 300.
+- **"If the motor\'s new, what could possibly go wrong?"** Several things. Prop pitch, charging system load, trim setup, steering bleed, sensor calibration. New motors are not problem-free. Verification matters.
+- **"I\'ll test it myself on my first trip."** You can, but if something\'s wrong, you\'re now 30 km from the dealer with a problem boat. HBW catches it at our dock so your first trip is a trip, not a tow.
+
+## Why this matters for the repower decision
+
+The water-test capability is one of the structural reasons HBW closes repower deals against dealers closer to the customer\'s home. For a Toronto-area boater, HBW is 90 minutes east. The drive is real. The reason customers make it is that the work we deliver has been verified to run correctly before they take it home. They drive once. The boat then runs right.
+
+For a customer who plans to use the boat hard (Lake Ontario salmon trolling, Trent-Severn transit, tournament fishing), the cost of a wrong-running repower discovered on the water is far higher than the cost of the drive to HBW. The water-test value is asymmetric.
+
+For a customer who plans to use the boat lightly (occasional cottage cruise, idle around the cove), the value is smaller but still real, because the worst-case scenario (alternator can\'t hold voltage, motor won\'t start after a day) ruins a trip you only get a few of per season.
+
+## Customer language we hear
+
+- "How do I know the motor is set up right?" - water test answer
+- "My buddy had a new motor and the prop was wrong" - water test catches this
+- "I don\'t want any first-trip surprises" - water-tested delivery
+- "Are you Mercury Platinum?" - yes, plus the 80-foot dock walk
+- "When can you get me in?" - 905-342-2153
+
+## Ready to talk about a Mercury repower at HBW?
+
+Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) for your specific boat. When you take delivery, the motor will have been water-tested under load before you drive home. Drive once, run right.
+
+**Phone:** 905-342-2153
+**Email:** info@harrisboatworks.ca
+**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. 80 feet from rigging bay to water-test dock. Largest Mercury and Mercruiser parts inventory in Ontario.`,
+    image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
+    author: 'Jay Harris, Harris Boat Works',
+    datePublished: '2026-05-28',
+    dateModified: '2026-05-28',
+    category: 'HBW Process',
+    readTime: '10 min read',
+    keywords: ["Mercury repower water test", "Mercury outboard sea trial", "on-water dealer test", "Mercury repower quality check", "HBW Rice Lake water test", "Mercury dealer verification process", "Mercury Platinum dealer Rice Lake", "Mercury prop selection WOT RPM"],
+    relatedSlugs: ["mercury-outboard-repower-cost-ontario-2026-cad", "mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026", "mercury-smartcraft-alarm-codes-complete-list-and-meanings-ontario-dealer-guide", "mercury-propeller-selection-guide", "mercury-outboard-wont-start-ontario-dealer-guide-2026"],
+    faqs: [
+      { question: "Does HBW really water-test every Mercury repower before delivery?", answer: "Yes. Every Mercury repower at HBW gets the standard water-test protocol run on Rice Lake at our dock before the customer takes delivery. The protocol covers cold start, idle, low-speed handling, on-plane, multiple cruise RPM bands, WOT RPM check, charging system under load, and SmartCraft fault code scan. The test is logged." },
+      { question: "How long does the water test take?", answer: "Typically 30 to 60 minutes per motor depending on HP class and what we find. Larger motors with more electronics take longer. Single-prop tests are faster than dual-engine setups. The test is included in the repower price, not billed separately." },
+      { question: "What if something fails the water test?", answer: "We fix it before the customer takes delivery. If a prop is wrong, we re-prop and re-test. If a charging system has voltage sag, we diagnose and correct. If a SmartCraft fault is logged, we resolve it. The customer takes delivery of a boat that passes the protocol clean." },
+      { question: "Do other Mercury dealers in Ontario water-test every repower?", answer: "Some do, some don\'t, and it depends primarily on dealer geography. Inland Mercury dealers (the majority in Ontario) generally cannot water-test routinely because their shop isn\'t on the water. Lakefront dealers with a dedicated water-test dock can. Ask the question of any dealer you cross-shop." },
+      { question: "Why is HBW able to do this when most can\'t?", answer: "Geography. HBW is 80 feet from the rigging bay to the water-test dock on Rice Lake. The dock-to-shop walkability makes water-testing routine, not exceptional. Most Mercury dealers in Ontario don\'t have this configuration." },
+      { question: "Is the water test the same for all motor sizes?", answer: "The protocol is the same in structure. The specific RPM ranges and load tests scale with the motor. A 9.9 ProKicker gets the same cold-start, idle, on-plane, WOT RPM, and charging-system verification as a Verado 300. The check items are the same; the numbers differ." },
+      { question: "Can I see the water-test log at delivery?", answer: "Yes. We keep the test log on file for every repower. Customers can ask to see it at delivery and we\'ll walk through the documented run." }
+    ]
+  },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
