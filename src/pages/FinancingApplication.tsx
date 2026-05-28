@@ -12,6 +12,7 @@ import { AccessibleFormWrapper } from '@/components/financing/AccessibleFormWrap
 import { useToast } from '@/hooks/use-toast';
 import { Mail, ArrowLeft } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
+import { TDAlwaysOnBanner } from '@/components/promotions/TDAlwaysOnOffer';
 import '@/styles/financing-mobile.css';
 
 // Lazy load step components (~180KB total)
