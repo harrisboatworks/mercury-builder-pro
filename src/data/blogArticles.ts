@@ -131,7 +131,7 @@ export const blogArticles: BlogArticle[] = [
     title: 'Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)',
     seoTitle: 'Mercury Outboard Overheat Alarm Decoder | What Each Pattern Means | HBW',
     description: 'Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. real heat, on-water emergency protocol, and what HBW techs need to diagnose it. Ontario dealer guide.',
-    image: '/lovable-uploads/hero-mercury-overheat-alarm-decoder.png',
+    image: '/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder.png',
     author: 'Jay Harris',
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',
@@ -190,6 +190,15 @@ Work through this in order. Most alarms fall into one of these patterns:
 | Alarm at idle only | Idle in shallow / weedy water | Cooling intake restriction | Medium | Lift motor, clear intake, restart |
 
 Important: alarm patterns and what they indicate vary by motor model, year, rigging, and whether the boat is SmartCraft-equipped. The patterns above describe what HBW techs see most often on Ontario Mercury motors from the EFI FourStroke and Verado families. Always confirm against your specific motor's operator's manual and any SmartCraft or VesselView display message.
+
+:::image-placeholder
+slug: overheat-alarm-pattern-decoder
+type: diagram
+aspect: 4:5
+description: Mercury overheat alarm decoder: decision flow showing tell-tale check, Guardian mode, and three colour-coded actions
+prompt: HBW-designed SVG decision flow. 1080x1350. [STYLE ANCHOR]
+image: /lovable-uploads/overheat-alarm-pattern-decoder.svg
+:::
 
 ## The On-Water Emergency Protocol
 
@@ -373,6 +382,15 @@ The big-picture matching table. Specific pitch depends on horsepower and how the
 | Heavy work boat / charter / commercial | Standard or Command Thrust | 4-blade or 3-blade | Stainless | Enertia, Vensura, application-specific |
 
 This table is a starting point, not a final answer. Final prop selection depends on the WOT RPM test described below. A boat that is loaded heavier (full fuel, passengers, gear) than the dealer demo run will need a different pitch than the manufacturer-default prop ships with.
+
+:::image-placeholder
+slug: prop-selection-by-hull-matrix
+type: infographic
+aspect: 16:9
+description: Mercury prop by hull type matrix: 7 Ontario hull types matched to gearcase, blade count, material, and Mercury prop family
+prompt: HBW-designed SVG matrix. 1600x900. [STYLE ANCHOR]
+image: /lovable-uploads/prop-selection-by-hull-matrix.svg
+:::
 
 ## How to Confirm Prop Selection: The WOT RPM Test
 
@@ -581,6 +599,15 @@ After working through the five checks, drop your results into this table:
 | **5. Cost** | All-in repower well under new-boat-package cost | Repower cost approaches 60 to 70% of new-boat-package cost | Repower cost approaches or exceeds new-boat-package cost |
 
 **How to read the table:** All five Strong = clear eligible. Most Strong with one or two Borderline = eligible with HBW review of the borderline check before commit. Two or more Disqualifying = the conversation shifts away from repower toward hull repair, professional inspection, or new boat purchase.
+
+:::image-placeholder
+slug: repower-eligibility-five-check
+type: diagram
+aspect: 1:1
+description: Mercury repower eligibility: the 5-check process with three colour-coded outcomes (Eligible, Review with HBW, Not a Repower)
+prompt: HBW-designed SVG 5-check. 1080x1080. [STYLE ANCHOR]
+image: /lovable-uploads/repower-eligibility-five-check.svg
+:::
 
 ## What Disqualifies a Hull from Repower
 

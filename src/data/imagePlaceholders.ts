@@ -136,6 +136,39 @@ export const imagePlaceholders: ImagePlaceholderEntry[] = [
     image: '/lovable-uploads/annual-mercury-service-cycle.png',
     status: 'swapped',
   },
+  {
+    slug: 'overheat-alarm-pattern-decoder',
+    articleSlug: 'mercury-outboard-overheat-alarm-decoder',
+    type: 'diagram',
+    aspect: '4:5',
+    description:
+      'Mercury overheat alarm decoder: decision flow showing tell-tale check, Guardian mode, and three colour-coded actions',
+    prompt: 'HBW-designed SVG decision flow. 1080x1350. [STYLE ANCHOR]',
+    image: '/lovable-uploads/overheat-alarm-pattern-decoder.svg',
+    status: 'swapped',
+  },
+  {
+    slug: 'prop-selection-by-hull-matrix',
+    articleSlug: 'mercury-propeller-selection-guide',
+    type: 'infographic',
+    aspect: '16:9',
+    description:
+      'Mercury prop by hull type matrix: 7 Ontario hull types matched to gearcase, blade count, material, and Mercury prop family',
+    prompt: 'HBW-designed SVG matrix. 1600x900. [STYLE ANCHOR]',
+    image: '/lovable-uploads/prop-selection-by-hull-matrix.svg',
+    status: 'swapped',
+  },
+  {
+    slug: 'repower-eligibility-five-check',
+    articleSlug: 'mercury-repower-eligibility-guide',
+    type: 'diagram',
+    aspect: '1:1',
+    description:
+      'Mercury repower eligibility: the 5-check process with three colour-coded outcomes (Eligible, Review with HBW, Not a Repower)',
+    prompt: 'HBW-designed SVG 5-check. 1080x1080. [STYLE ANCHOR]',
+    image: '/lovable-uploads/repower-eligibility-five-check.svg',
+    status: 'swapped',
+  },
 ];
 
 export function getPlaceholdersForArticle(articleSlug: string): ImagePlaceholderEntry[] {
