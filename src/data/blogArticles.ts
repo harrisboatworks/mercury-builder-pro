@@ -3416,6 +3416,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Buying Guide',
     readTime: '11 min read',
     keywords: ['mercury command thrust', 'command thrust pontoon', 'mercury gearcase', 'pontoon repower', 'mercury fourstroke pontoon'],
+    relatedSlugs: ['mercury-command-thrust-pontoon-eligibility-2026', 'best-mercury-outboard-pontoon-boats', 'mercury-propeller-selection-guide', 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado', 'how-to-choose-right-horsepower-boat'],
     content: `**Last reviewed:** 2026-05-10
 
 ---
@@ -3514,7 +3515,11 @@ For pontoons, 4-blade aluminum is the most common Command Thrust prop. We test p
 
 ## Can you retrofit Command Thrust to an existing motor?
 
-Sometimes. A Command Thrust conversion depends on the specific motor, existing gearcase, shaft length, and controls. In most cases it's cleaner and more cost-effective to choose the right gearcase during a planned repower. If you're not already planning a repower and want to explore a standalone conversion, contact us and we'll walk through whether it makes sense for your specific setup.
+Technically yes, practically rarely worth it. The gearcase, driveshaft, water pump, and prop are all different parts. By the time you add it all up, you're usually within striking distance of a trade-in toward a new Command Thrust motor.
+
+For the full retrofit decision framework, including which scenarios make sense and which don't, see our dedicated eligibility post: [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026).
+
+We quote both paths (retrofit vs new motor) at HBW. Call 905-342-2153 if you want to compare.
 
 ---
 
