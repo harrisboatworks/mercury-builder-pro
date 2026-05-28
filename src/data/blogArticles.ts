@@ -33671,7 +33671,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       { question: "How long does the approval take?", answer: "Pre-approval typically returns in under 24 hours from application submission. Credit decisions are available 7 days a week." },
       { question: "Is Sheffield Financial available to Canadian buyers?", answer: "No. Sheffield Financial is Mercury Marine's USA partner only. Canadian buyers cannot use Sheffield. The HBW Canadian equivalent is TD Auto Finance through Dealerplan Peterborough." },
       { question: "Is there a minimum loan amount?", answer: "Yes. The minimum loan through HBW is $5,000." },
-      { question: "Is HST financed or paid separately?", answer: "Both options are available. Most customers roll the 13% HST into the financed amount. You can also pay the HST at closing and finance only the engine, which lowers your monthly payment." }
+      { question: "Is HST financed or paid separately?", answer: "Both options are available. Most customers roll the 13% HST into the financed amount. You can also pay the HST at closing and finance only the engine, which lowers your monthly payment." },
+      { question: "What's the current Mercury financing rate at HBW?", answer: "As of 2026-05-28, Mercury Marine Canada's TD \"Always On\" program offers 5.48% APR (OAC) with terms up to 60 months and amortization up to 240 months on new eligible Mercury outboards. The program runs through December 31, 2026. Rates change with each program cycle. Check mercuryrepower.ca/promotions for the live offer." }
     ]
   },
   {
