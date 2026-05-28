@@ -1368,11 +1368,11 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     image: '/lovable-uploads/Breaking_In_New_Mercury_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2026-05-04',
+    dateModified: '2026-05-27',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
-    content: `**Last reviewed:** 2026-05-07
+    content: `_Last updated: May 27, 2026_
 
 ---
 
@@ -1382,9 +1382,16 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 ## Why break-in actually matters
 
-The customers who shortcut the break-in are the same ones who come back complaining about reduced fuel economy, premature wear, and shorter motor life. Modern Mercury FourStrokes are precision machines, the rings need to seat properly against the cylinder walls, and that only happens with the right conditions in the first hours of operation.
+The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. The hour-by-hour breakdown is below.
 
-It is not complicated. Follow the graduated RPM protocol. Change the oil at 20 hours. After that, normal operation for the life of the motor.
+| Time | RPM / behavior | Do | Avoid |
+|---|---|---|---|
+| First 5 to 10 min | Idle | Warm motor, check tell-tale flow, watch for warning lights | Putting motor in gear before warmed |
+| Hour 1 | No-wake for first 10 to 15 min, then moderate cruise | Vary throttle continuously | Holding one fixed RPM |
+| Hours 1 to 2 | Wider RPM range; brief bursts toward higher RPM OK | Keep varying throttle | Sustained wide-open throttle |
+| Hours 2 to 10 | Full RPM range | Mix of speeds; short WOT bursts (1 to 2 min) acceptable | Steady-state cruise at one RPM |
+| After 10 hours | Normal operation | WOT acceptable within Mercury's rated band | Skipping the 20-hour service |
+| At 20 hours | First service | **Change oil and filter**, removes break-in particles | Skipping; break-in metal stays in oil if you do |
 
 ---
 
@@ -9843,11 +9850,13 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     image: '/lovable-uploads/hero-boost-software-upgrade.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-14',
-    dateModified: '2026-04-14',
+    dateModified: '2026-05-27',
     category: 'Mercury Technology',
     readTime: '10 min read',
     keywords: ['Mercury Boost software upgrade', 'Mercury Boost eligible engines', 'Mercury software calibration', 'Mercury acceleration upgrade', 'Mercury dealer upgrade Ontario'],
-    content: `### Quick Answer
+    content: `_Last updated: May 27, 2026_
+
+### Quick Answer
 
 [Mercury Boost](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) is a software-based engine calibration update, not a hardware kit, that improves mid-range acceleration by 5, 21% on eligible motors. Eligibility is determined by serial number, not model year. The dealer-installed version covers FourStroke 175, 300 HP, Pro XS 175, 300 HP, and Verado 250, 350 HP from specific serial numbers (see table below). The factory-installed version comes pre-loaded on new Pro XS and Verado models built in Q2 2026 and later. Boost does not void Mercury's warranty.
 
@@ -12497,16 +12506,35 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-vs-yamaha-honda.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-24',
-    dateModified: '2026-05-04',
+    dateModified: '2026-05-27',
     publishDate: '2026-04-24',
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['mercury vs yamaha vs honda', 'most reliable outboard 2026', 'outboard reliability comparison'],
-    content: `
+    content: `_Last updated: May 27, 2026_
+
 # Mercury vs Yamaha vs Honda Outboard Reliability in 2026: An Honest Comparison
 
 ## Quick answer
 Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None has a clear mechanical defect rate that rules it out. For Ontario boaters, the practical reliability difference comes from dealer network, parts availability, and how fast you can get a motor fixed when something goes wrong. On those metrics, Mercury wins in this region. Full disclosure: we have sold Mercury exclusively since 1965. Build a live CAD quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+
+## Three-brand quick comparison (2026, Ontario lens)
+
+| Factor | Mercury | Yamaha | Honda |
+|---|---|---|---|
+| Mechanical reliability (2026) | Strong | Strong | Strong |
+| Useful life (properly maintained) | 15 to 25 years | 15 to 25 years | 15 to 25 years |
+| Ontario dealer density (Kawarthas + GTA) | High | Moderate | Lower |
+| Freshwater reputation | Excellent | Excellent | Excellent |
+| Standard warranty | 3 years | 3 years | 3 years |
+| Extended warranty program | Mercury Product Protection (Gold / Platinum) | Yamaha YES | Honda Protection Plan |
+| SmartCraft / digital integration | Yes (current/full lineup) | Yes (proprietary) | Yes (proprietary) |
+| Software upgrade roadmap (Boost-style retrofits) | Yes | Limited | Limited |
+| Parts shelf availability (Ontario) | Strong | Strong | Moderate |
+| Rigging cost if switching brand | n/a (already on brand) | $2,000 to $3,000 CAD | $2,000 to $3,000 CAD |
+| Resale in Ontario | Strong | Strong | Strong, smaller buyer pool |
+
+**Conflict-of-interest reminder:** HBW is a Mercury Platinum dealer. We don't sell Yamaha or Honda and we don't service them. This table reflects our honest read of the Ontario market, but the Mercury column is the brand we know best by a wide margin.
 
 ## Let us be honest about who is writing this
 
@@ -14693,16 +14721,17 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-shaft-length-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-05-05',
+    dateModified: '2026-05-27',
     publishDate: '2026-05-05',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['outboard shaft length', 'mercury shaft length guide', '20 inch shaft outboard', '25 inch shaft outboard', 'transom height measurement'],
-    content: `
+    content: `_Last updated: May 27, 2026_
+
 # Outboard Shaft Length Guide: Short, Long, and Extra Long, How to Get It Right
 
 ## Quick answer
-Measure your transom height from the bottom of the cutout to the top of the transom. A 15-inch transom needs a short shaft, 20-inch needs a long shaft, 25-inch needs an extra long. Wrong shaft length means cavitation, lost performance, or a submerged powerhead. We confirm shaft length on every quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Most Ontario aluminum fishing boats need a 20-inch (long) shaft. Most pontoons over 22 feet need a 25-inch (extra long) shaft. Small tiller boats with low transoms typically take a 15-inch (short) shaft. The only correct way to confirm is to measure transom height, the distance from the top of the transom down to where the hull contacts the water. Mercury's shaft code on the motor (S, L, XL, XXL) tells you the rest. The full decoder and a measurement guide are below.
 
 ## Why shaft length matters more than most people think
 
@@ -26511,12 +26540,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-beeping-codes.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: '2026-05-27',
     publishDate: '2026-05-11',
     category: 'Service & Troubleshooting',
     readTime: '6 min',
     keywords: ['mercury outboard beeping codes', 'mercury warning horn beeps', 'mercury continuous beep', 'mercury four beeps every two minutes', 'mercury alarm ontario'],
-    content: `**Language:** English 
+    content: `_Last updated: May 27, 2026_
+
+**Language:** English 
 
 ---
 
@@ -26551,7 +26582,19 @@ escalationBody: Continuous beeps that do not clear after stopping, checking wate
 
 ## Mercury Outboard Beeping Codes: What Each Pattern Means and What to Check
 
-"My motor is beeping" is the beginning of a conversation, not the end of one. What matters is the pattern: how many beeps, how often, whether it correlates with throttle position or speed, and whether there's any accompanying display message or loss of power.
+A Mercury outboard beep is the motor talking to you. Sometimes routine (a normal self-check at key-on), sometimes a warning (low oil, water in fuel, overheating, Guardian mode). The pattern, when it happens, and what else the boat is doing tells you which one you're dealing with. Most patterns fall into a handful of categories, and the right response depends on whether the engine is also losing power or showing a SmartCraft message. Below: every common Mercury beep pattern, what it can mean, and what to do next.
+
+| Pattern | When it happens | What it can mean | What to do |
+|---|---|---|---|
+| Single beep at key-on | Startup | Normal system self-check, alarm system is working | None |
+| Continuous alarm at cruise | Underway | Real heat (overheat), overspeed, or engine protection | Reduce throttle, check tell-tale stream, check display, shut down if it persists |
+| Continuous alarm + power reduction | Underway | Guardian mode, ECM is protecting the engine | Do not override. Reduce load. Investigate the trigger on shore. |
+| Four-beep pattern (repeating) | Varies by motor + year | Advisory-level alert: low oil, water in fuel, or other | Check display/SmartCraft message; confirm against the owner's manual for your specific motor |
+| Intermittent beeping | Varies | Sensor or wiring fault, alarm may be lying | Diagnostic needed. Note what RPM/condition triggers it before service. |
+| Alarm at WOT only | At wide-open throttle | Poppet valve or cooling restriction at high pressure | Check water pressure at speed; possible service issue |
+| Alarm briefly after shutdown | Heat-soak | Normal if motor ran hard, heat trapped in head before water-jacket cools | Usually clears on its own as motor cools |
+
+The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or call (905) 342-2153.
 
 Different Mercury motors use different beep patterns, and what four beeps means on a 2010 EFI FourStroke is not necessarily what four beeps means on a current Verado. This guide covers the common patterns you'll encounter, what they typically indicate, and how to gather the information a technician needs to help you.
 
@@ -26704,6 +26747,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'What does a continuous beep mean on a Mercury outboard?', answer: 'A continuous beep can indicate a serious warning such as overheating, overspeed, Guardian activation, or a sensor-related issue. Reduce throttle and diagnose safely.' },
       { question: 'What do four beeps mean on a Mercury outboard?', answer: 'On some Mercury systems, four beeps every two minutes can relate to conditions such as low oil reserve or water in fuel. Always confirm with the correct manual/display for your engine.' },
       { question: 'Can I keep boating if the beeping stops?', answer: 'If it was a single key-on test, that may be normal. If it was a repeated or continuous alarm, do not ignore it just because it stopped.' },
+      { question: 'Is a single beep at key-on normal?', answer: 'Yes. Most Mercury motors produce a single beep at key-on as a confirmation that the alarm system is working. If it does not recur during operation, no action is needed.' },
+      { question: 'What is Guardian mode and how do I know if I am in it?', answer: 'Guardian is Mercury\'s engine protection system. The ECM deliberately reduces RPM or power when it detects a condition that could damage the engine. You will notice a continuous alarm plus power loss; on SmartCraft-equipped boats a Guardian message appears on the display. Do not override it, reduce load and investigate on shore.' },
+      { question: 'What information should I bring to the dealer for a beeping diagnosis?', answer: 'Bring the exact beep pattern (count, frequency, duration), whether power was reduced, a photo of any SmartCraft or VesselView display message, the conditions when it happened (idle, cruise, cold start, under load), any recent service, and the motor model, year, and serial number. That information cuts diagnostic time significantly.' },
     ],
   },
   {
