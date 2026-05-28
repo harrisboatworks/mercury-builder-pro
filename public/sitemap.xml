@@ -409,8 +409,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/bolt-on-motor-installation.png</image:loc>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-propeller-selection-guide.png</image:loc>
       <image:title><![CDATA[Mercury Propeller Selection Guide (2026 Ontario)]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder.png</image:loc>
+      <image:title><![CDATA[Mercury Outboard Overheat Alarm Decoder (2026 Ontario)]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-repower-eligibility-guide.png</image:loc>
+      <image:title><![CDATA[Mercury Repower Eligibility Guide (2026 Ontario)]]></image:title>
     </image:image>
   </url>
   <url>
