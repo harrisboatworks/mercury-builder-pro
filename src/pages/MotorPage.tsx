@@ -16,6 +16,7 @@ import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { MotorPageSEO } from '@/components/seo/MotorPageSEO';
 import { SITE_URL } from '@/lib/site';
+import speedboatFallback from '@/assets/speedboat-transparent.png';
 
 /**
  * Public-facing motor detail page rendered at /motors/{slug}.
@@ -291,7 +292,7 @@ export default function MotorPage() {
   const modelNo = motor.model_number || motor.mercury_model_no || '';
   const price = resolveSellingPrice(motor);
   const inStock = motor.in_stock || motor.availability === 'In Stock';
-  const image = motorImageUrl || motor.hero_image_url || motor.image_url || '/lovable-uploads/speedboat-transparent.png';
+  const image = motorImageUrl || motor.hero_image_url || motor.image_url || speedboatFallback;
   const schemaImage = toAbsoluteImageUrl(image);
 
   const title = `${display}, Mercury Outboard | Harris Boat Works`;
