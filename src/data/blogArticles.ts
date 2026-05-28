@@ -19075,9 +19075,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'mercury-smartcraft-alarm-codes-encyclopedia',
-    title: "Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)",
-    seoTitle: "Mercury SmartCraft Alarm Codes: Complete Guide",
-    description: "Complete Mercury SmartCraft alarm code reference from an Ontario Platinum dealer: what each code means, severity, and exactly what to do next. No forum guesswork.",
+    title: "Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)",
+    seoTitle: "Mercury SmartCraft Alarm Codes | Complete Reference 2026",
+    description: "Mercury SmartCraft alarm code reference from an Ontario Platinum dealer. Top 10 codes by service frequency, spring first-start patterns, Guardian alert decode, when to call HBW.",
     image: '/lovable-uploads/hero-mercury-smartcraft-alarm-codes.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
