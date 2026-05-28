@@ -23601,6 +23601,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Mercury Outboards',
     readTime: '~11 min read',
     keywords: ["Mercury SmartCraft Connect", "Mercury Marine app setup", "SmartCraft Connect compatibility", "VesselView Mobile vs SmartCraft Connect", "SmartCraft Connect Mobile install"],
+    relatedSlugs: ["mercury-smartcraft-connect-eligibility-2026", "mercury-boost-software-upgrade-eligibility-2026", "how-to-read-mercury-outboard-serial-number", "mercury-outboard-beeping-codes-guide"],
     faqs: [
       { question: "Does my new Mercury come with SmartCraft Connect Mobile?", answer: "No. New Mercury motors are SmartCraft-network-equipped (on most 40 HP and larger models from 2004 onward, and on 25-30 HP from 2022 onward), but the SmartCraft Connect module that talks to your phone is sold separately. It's part number 8M0173128 (single-engine) or 8M0173129 (1-4 engines). Plan to buy and install it if you want app data." },
       { question: "My Mercury is 9.9 HP. Can I add SmartCraft Connect?", answer: "No. Mercury outboards under 25 HP are not SmartCraft-equipped. There's no internal data network for the module to plug into. Sub-25 HP motors are mechanical and analog by design." },
