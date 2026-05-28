@@ -355,6 +355,9 @@ The fastest path: email a photo of your pontoon plus current motor specs to info
 
 If your boat doesn't fit one of these neatly, send us details and we'll work through it.
 
+![Side-by-side comparison of Mercury standard FourStroke gearcase and Mercury Command Thrust gearcase on a workshop bench at Harris Boat Works, showing the visible size difference in housing and prop diameter](/lovable-uploads/command-thrust-gearcase-comparison-inline.png)
+*Standard gearcase (left) vs Mercury Command Thrust gearcase (right). The bigger housing and larger prop diameter is what converts horsepower into pushing force instead of top-end speed.*
+
 ## What Command Thrust actually does (and what it doesn't)
 
 Before checking eligibility it helps to know what you're buying. Command Thrust is a Mercury gearcase option, not a separate motor. The same Mercury FourStroke powerhead bolts on top, but the lower unit is taller, the gears are heavier, and the prop diameter is roughly one inch bigger.
@@ -468,6 +471,33 @@ The second pattern: the customers who regret Command Thrust are almost always on
 Third pattern, specific to Rice Lake and the Kawarthas: water levels can drop in late summer, especially in the back bays of Rice Lake and around Bobcaygeon. Pontoons that float fine in June can be touching bottom in September. Command Thrust's stronger reverse thrust pays off here. Customers who learned the hard way (after dragging tubes through soft mud) are some of our most loyal CT advocates.
 
 Fourth pattern: tritoons with standard gearcase almost always disappoint. The third tube is the dead giveaway that the boat is going to want more thrust. If somebody calls us about a tritoon that "feels underpowered," 9 times out of 10 they're on a standard gearcase. Repowering with CT solves it without bumping HP.
+
+::pull-quote
+quote: Hole shot was night and day. We were running 6 adults plus gear on a 22-footer with the old standard gearcase, took forever to plane. New CT motor, on plane in seconds. Should have done it three years ago.
+attribution: Common shop-floor pattern after a Command Thrust repower at HBW
+::
+
+::decision-card
+eyebrow: Command Thrust decision
+heading: Is Command Thrust right for your pontoon?
+leftLabel: Skip it
+leftCriteria:
+  - 16 to 18 ft light cruising pontoon
+  - Trolling-only fishing use
+  - Light loads (2 to 4 people)
+  - Already at capacity-plate maximum HP
+leftOutcome: Standard gearcase is the right call
+leftVariant: alternative
+rightLabel: Yes, strong fit
+rightCriteria:
+  - Tritoon of any size
+  - 20+ ft twin tube pontoon
+  - Heavy loads (8+ people) or water sports
+  - Cottage hauling or regular full-load use
+rightOutcome: Order Command Thrust with the repower
+rightVariant: recommended
+whenInDoubt: Probably yes if you have an 18 to 20 ft twin tube with moderate loads, occasional water sports, or mixed use. The middle case is where the load decides.
+::
 
 ## Why this matters for Ontario pontoon boaters
 
