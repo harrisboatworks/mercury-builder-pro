@@ -33872,6 +33872,112 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       { question: "Is the boost noticeable on the water?", answer: "Yes if you run aggressive throttle profiles. The peak HP gain is most noticeable in hole-shot, getting on plane with a heavy load, and top-end sprint runs. Cruise speed and trolling behaviour are unchanged." }
     ]
   },
+  {
+    slug: 'mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026',
+    title: 'Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)',
+    seoTitle: 'Mercury vs Honda Outboards | HBW 2026',
+    description: 'Mercury vs Honda outboards from an Ontario Mercury Platinum dealer. Where Honda actually wins, where Mercury wins, and the local service reality on Rice Lake.',
+    image: '/lovable-uploads/hero-mercury-vs-yamaha-honda.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-28',
+    dateModified: '2026-05-28',
+    publishDate: '2026-05-28',
+    category: 'Buying Guide',
+    readTime: '9 min read',
+    keywords: ["Mercury vs Honda", "Mercury vs Honda outboards", "Honda BF vs Mercury", "Honda Marine dealer Ontario", "Mercury Honda comparison"],
+    relatedSlugs: ["honda-to-mercury-repower-ontario-guide", "mercury-vs-yamaha-outboards-an-honest-ontario-dealer-comparison-2026", "mercury-vs-yamaha-vs-honda-which-outboard-is-most-reliable-in-2026", "mercury-outboard-repower-cost-ontario-2026-cad", "mercury-extended-warranty-platinum-ontario"],
+    content: `*Last reviewed: 2026-05-28*
+
+> **Quick answer:** Honda clearly leads in refinement, noise/vibration, and long-term operating cost at mid-horsepower. Mercury leads in service network, parts availability in Ontario, lineup breadth (Honda tops out at 250 HP, Mercury runs to 600 HP), and Pro XS performance. On Rice Lake specifically: HBW is the only Mercury dealer AND the only brand-name outboard service of any kind. Honda owners drive 30-45 minutes to Dewildt Marine (Peterborough) or Dunfords (Havelock). The brand choice is real, but the service-network reality matters more than the spec sheet.
+
+A Mercury or Honda buyer walks into our shop with the same two questions: which motor is actually better, and what does my service look like over the next 10 years? We sell Mercury. We don't sell or service Honda. So this isn't a balanced review. But we have a strong opinion on what's actually true vs what's brand marketing.
+
+## Where Honda actually wins
+
+Honda makes good motors. In specific use cases, Honda is the right call.
+
+**Refinement, noise, and vibration.** Honda BF motors run quieter and smoother than equivalent Mercury motors in the 9.9 to 90 HP range. Honda's automotive engineering background shows.
+
+**Long-term operating cost at mid-horsepower.** Honda BF motors have a deserved reputation for low maintenance cost over 10+ year ownership.
+
+**Cottage kicker and small-engine use case.** Honda BF2.3, BF5, BF8, BF9.9, BF15, BF20 are excellent small motors.
+
+## Where Mercury wins
+
+**Service network density.** Mercury has the largest Canadian outboard dealer footprint by a significant margin.
+
+**Lineup breadth.** Honda BF tops out at 250 HP. Mercury runs from 2.5 HP portables through 600 HP Verado V12. If you want anything above 250 HP, Honda doesn't have an answer.
+
+**Pro XS performance.** Honda has no direct counterpart to Mercury Pro XS.
+
+**Parts availability.** Mercury parts ship from Canadian distribution centres. Honda Marine parts often route through US distribution.
+
+## The Rice Lake local-service reality
+
+**HBW is the only Mercury dealer on Rice Lake.** We are also the only brand-name outboard service of any kind on Rice Lake. There is no Honda dealer on Rice Lake.
+
+**Honda Marine certified dealers within 75km of HBW:**
+- Dewildt Marine and Powersports (Peterborough, ON) - approximately 30 km
+- Dunfords of Havelock (Havelock, ON) - approximately 45 km
+
+For Mercury owners on Rice Lake: drop the boat at HBW's dock, walk home, pick it up when it's done.
+
+## What HBW has on the shelf
+
+**HBW has the largest Mercury and Mercruiser parts inventory in Ontario.** For Mercury owners, common spring service parts and most warranty parts are on our shelf in stock.
+
+## The 8-year warranty conversation
+
+In 2026, both Mercury and Honda offer extended warranty programs that can reach 8 years total coverage.
+
+**Honda warranty stack (2026):** 5 years standard + 3 years HondaCare = 8 years maximum.
+
+**Mercury warranty stack (2026):** 3 years standard + 5 years Mercury Platinum Plus = 8 years maximum.
+
+The maximum coverage period is now equal. The bigger practical question is where you take the motor in year 5.
+
+## Mercury PGM-FI vs Honda PGM-FI cold-start
+
+Both Mercury EFI and Honda PGM-FI handle cold starts well at 4°C (typical early May cottage opening). We don't have field data showing a meaningful cold-start advantage for either brand at modern model years.
+
+## Small-engine weight: a marginal concern
+
+Mercury 9.9 FourStroke is typically 6 to 14 lbs lighter than equivalent Honda BF9.9. We rarely hear customers raise weight as a concern at the desk.
+
+## The HBW on-water test
+
+Every Mercury we sell or service gets a water test under load at our dock before delivery. Rice Lake is 80 feet from our rigging bay.
+
+## Common mistakes (the things we push back on)
+
+- **"Honda is more reliable than Mercury."** Both brands build reliable motors in 2026.
+- **"Mercury Verado is supercharged so it has more issues."** No. Current Verado V8, V10, and V12 are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+- **"I'll save money buying Honda and getting it serviced wherever."** Honda parts and service availability is genuinely thinner in our region.
+
+## Ready to talk Mercury vs Honda?
+
+**Phone:** 905-342-2153
+**Email:** info@harrisboatworks.ca
+**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.
+
+## Sources
+
+- Mercury Marine Canada lineup: [mercurymarine.com](https://www.mercurymarine.com/)
+- Honda Marine Canada lineup: [marine.honda.ca](https://marine.honda.ca/)
+- HBW shop-floor service data 2026
+- Dealer location data verified at Honda Marine Canada and Mercury Canada dealer locators (May 2026)
+`,
+    faqs: [
+      { question: "Does HBW service Honda outboards?", answer: "No. HBW services Mercury outboards exclusively. We do not stock Honda parts or have Honda Marine service tools. Honda owners in the area typically take their motors to Dewildt Marine and Powersports in Peterborough (approximately 30 km) or Dunfords of Havelock (approximately 45 km)." },
+      { question: "Is Mercury more reliable than Honda?", answer: "Both brands build reliable modern outboards. The real-world reliability difference is small. The bigger reliability factor for Ontario owners is local service network access." },
+      { question: "Where can I get a Honda Marine outboard serviced near Rice Lake?", answer: "Two Honda Marine certified dealers within 75 km of HBW: Dewildt Marine and Powersports in Peterborough (about 30 km) and Dunfords of Havelock (about 45 km)." },
+      { question: "Is Honda's warranty longer than Mercury's?", answer: "No, not in 2026. Honda offers 5 years standard plus 3 years HondaCare = 8 years maximum. Mercury offers 3 years standard plus 5 years Mercury Platinum Plus = 8 years maximum. Equal." },
+      { question: "Does Mercury have a Honda BF250 equivalent?", answer: "Yes. Mercury 250 V8 FourStroke is the direct equivalent. Mercury 250 Pro XS is the performance variant. Mercury also offers 300, 350, 400, 450, and 600 HP options that Honda does not match." },
+      { question: "Can I switch from Honda to Mercury on my existing boat?", answer: "Yes. We do brand-swap repowers regularly. Brand-swap premium typically runs $1,800 to $3,500 above a same-brand repower. See our Honda to Mercury Repower Ontario Guide for the full math." }
+    ]
+  },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
