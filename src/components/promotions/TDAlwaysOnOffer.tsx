@@ -84,7 +84,7 @@ export function TDAlwaysOnCard() {
                 </span>
               </div>
               <Link
-                to="/financing/application"
+                to="/financing-application"
                 className="group inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-6 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors self-start"
               >
                 Apply for Financing
