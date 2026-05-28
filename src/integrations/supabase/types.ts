@@ -5082,6 +5082,43 @@ export type Database = {
           vin: string
         }[]
       }
+      customer_spend_summary: {
+        Args: {
+          p_candidate_limit?: number
+          p_customer_queries?: string[]
+          p_customer_query?: string
+          p_end_date?: string
+          p_highlight_limit?: number
+          p_include_quotes?: boolean
+          p_start_date?: string
+        }
+        Returns: {
+          candidate_count: number
+          candidate_customers: Json
+          city: string
+          company_name: string
+          customer_id: number
+          customer_name: string
+          deal_count: number
+          deal_total: number
+          highlights: Json
+          match_rank: number
+          match_score: number
+          match_status: string
+          parts_invoice_count: number
+          parts_line_count: number
+          parts_total: number
+          period_end: string
+          period_start: string
+          province: string
+          query_text: string
+          row_type: string
+          service_ro_count: number
+          service_total: number
+          source_breakdown: Json
+          total_amount: number
+        }[]
+      }
       customer_units_summary: {
         Args: { p_limit?: number; p_query: string }
         Returns: {
