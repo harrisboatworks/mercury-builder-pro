@@ -46,47 +46,27 @@ export function TDAlwaysOnCard() {
             <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
             Financing Program
           </p>
-          <h2
-            className="font-display font-bold text-repower-navy-900 mb-4"
-            style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', letterSpacing: '-0.025em', lineHeight: 1.1 }}
-          >
-            Mercury 5.48% Financing on New Outboards
-          </h2>
-          <p className="font-sans text-[16px] md:text-[17px] text-repower-navy-900/65 leading-relaxed">
-            OAC. Through TD Auto Finance via our Dealerplan partner. Up to 240-month amortization keeps payments low.
-          </p>
         </div>
 
         <div className="bg-repower-cream border border-repower-navy-900/10 rounded-lg p-6 md:p-10">
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            <div>
-              <div className="flex items-center gap-3 mb-5">
-                <Percent className="w-6 h-6 text-repower-mercury-red" strokeWidth={1.5} />
-                <span className="font-display text-2xl font-bold text-repower-navy-900">5.48% APR</span>
-              </div>
-              <ul className="space-y-3">
-                {BULLETS.map((b) => (
-                  <li key={b} className="flex items-start gap-3 font-sans text-[15px] text-repower-navy-900">
-                    <span className="mt-2 inline-block w-1.5 h-1.5 rounded-full bg-repower-gold flex-shrink-0" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+            <div className="order-1">
+              <img
+                src={RATE_CARD_IMAGE}
+                alt={RATE_CARD_ALT}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-auto rounded-md shadow-sm"
+              />
             </div>
 
-            <div className="flex flex-col gap-5">
-              <div className="flex items-start gap-3 text-repower-navy-900/75 font-sans text-[14px] leading-relaxed">
-                <Shield className="w-5 h-5 text-repower-navy-900/60 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                <span>
-                  Stacks with the 7-year factory warranty promotion. This is financing, not coverage, so both programs apply.
-                </span>
-              </div>
-              <div className="flex items-start gap-3 text-repower-navy-900/75 font-sans text-[14px] leading-relaxed">
-                <Calendar className="w-5 h-5 text-repower-navy-900/60 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                <span>
-                  Not all customers will qualify. Approval depends on TD's credit review. Rate and terms above are the program standard; your specific approval may differ.
-                </span>
-              </div>
+            <div className="order-2 flex flex-col gap-5">
+              <p className="font-sans text-[16px] md:text-[17px] text-repower-navy-900 leading-relaxed">
+                Special finance offer. Stacks with the 7-year factory warranty.
+              </p>
+              <p className="font-sans text-[14px] text-repower-navy-900/70 leading-relaxed">
+                Not all customers will qualify. Approval depends on TD's credit review.
+              </p>
               <Link
                 to="/financing-application"
                 className="group inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-6 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors self-start"
