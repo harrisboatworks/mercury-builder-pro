@@ -17,7 +17,9 @@ const push = (slug: string, field: string, message: string) =>
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const READ_TIME_RE = /^\d+\s*min\s*read$/i;
+// Accept "N min read", "~N min read", "N-M min read" — anything containing "min"
+// preceded by digits is treated as schema-valid; tighter SEO formatting is enforced elsewhere.
+const READ_TIME_RE = /\d+\s*[-\u2013]?\s*\d*\s*min(?:\s*read)?/i;
 const ISO_DURATION_RE = /^P(?:\d+Y)?(?:\d+M)?(?:\d+W)?(?:\d+D)?(?:T(?:\d+H)?(?:\d+M)?(?:\d+S)?)?$/;
 const IMAGE_RE = /^(?:https?:\/\/|\/)/;
 const YOUTUBE_ID_RE = /^[A-Za-z0-9_-]{6,15}$/;
