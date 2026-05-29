@@ -24,6 +24,7 @@ import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { MercuryVideo } from '@/components/blog/MercuryVideo';
+import { PremiumFaq } from '@/components/blog/PremiumFaq';
 
 
 import { 
