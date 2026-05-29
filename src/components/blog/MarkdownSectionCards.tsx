@@ -661,6 +661,16 @@ function splitDirectives(md: string): RenderChunk[] {
         }
       }
       chunks.push({ kind: 'mercury-price-table', content: '', mercuryPriceTableProps: props });
+    } else if (name === 'youtube-embed') {
+      const idMatch = /^\s*id\s*:\s*([A-Za-z0-9_-]{6,})\s*$/m.exec(body);
+      const titleMatch = /^\s*title\s*:\s*(.+)$/m.exec(body);
+      if (idMatch) {
+        chunks.push({
+          kind: 'youtube-embed',
+          content: '',
+          youtubeProps: { id: idMatch[1], title: titleMatch?.[1]?.trim() },
+        });
+      }
     }
     last = m.index + m[0].length;
   }
