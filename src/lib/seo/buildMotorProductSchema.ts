@@ -61,6 +61,18 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
     `We do not ship outboard motors. Motor returns are not accepted. Installation work is guaranteed, ` +
     `and new Mercury motors include the applicable Mercury Marine factory warranty.`;
 
+  // Map MotorFamily → stable productGroupID used on /quote/motor-selection.
+  const familyGroupId = family
+    ? (() => {
+        const f = family.toLowerCase();
+        if (f.includes('pro xs') || f.includes('proxs')) return 'mercury-pro-xs-outboards';
+        if (f.includes('seapro') || f.includes('sea pro')) return 'mercury-seapro-outboards';
+        if (f.includes('prokicker') || f.includes('pro kicker')) return 'mercury-prokicker-outboards';
+        if (f.includes('fourstroke') || f.includes('four stroke')) return 'mercury-fourstroke-outboards';
+        return null;
+      })()
+    : null;
+
   const product: Record<string, unknown> = {
     '@type': 'Product',
     '@id': `${url}#${idSuffix}`,
@@ -72,6 +84,9 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
     url,
     ...(image ? { image } : {}),
     ...(modelNumber ? { mpn: modelNumber, sku: modelNumber } : {}),
+    ...(familyGroupId
+      ? { isVariantOf: { '@type': 'ProductGroup', productGroupID: familyGroupId } }
+      : {}),
     ...(additionalProperty.length ? { additionalProperty } : {}),
   };
 
