@@ -592,7 +592,61 @@ function parsePullQuoteBody(body: string): PullQuoteProps | null {
       flat[lastKey] = (flat[lastKey] ? flat[lastKey] + ' ' : '') + line.trim();
     } else {
       lastKey = null;
+}
+
+/**
+ * Parse a :::customer-voice body. Supports YAML-ish list items:
+ *   - quote: "..."
+ *     response: "..."
+ *     isCTA: true
+ * Also accepts unquoted values. Optional top-level `heading: ...`.
+ */
+function parseCustomerVoiceBody(body: string): CustomerVoiceProps | null {
+  const lines = body.split('\n');
+  const items: CustomerVoiceItem[] = [];
+  let heading: string | undefined;
+  let current: Partial<CustomerVoiceItem> | null = null;
+  const flush = () => {
+    if (current && current.quote && current.response) {
+      items.push({
+        quote: String(current.quote),
+        response: String(current.response),
+        isCTA: current.isCTA === true,
+      });
     }
+    current = null;
+  };
+  const stripQuotes = (v: string) => v.trim().replace(/^["'](.*)["']$/, '$1');
+  for (const raw of lines) {
+    if (!raw.trim()) continue;
+    const itemStart = /^-\s*([a-zA-Z]+)\s*:\s*(.*)$/.exec(raw);
+    if (itemStart) {
+      flush();
+      current = {};
+      const key = itemStart[1];
+      const val = stripQuotes(itemStart[2]);
+      if (key === 'quote' || key === 'response') (current as any)[key] = val;
+      else if (key === 'isCTA') (current as any).isCTA = /^true$/i.test(val);
+      continue;
+    }
+    const cont = /^\s+([a-zA-Z]+)\s*:\s*(.*)$/.exec(raw);
+    if (cont && current) {
+      const key = cont[1];
+      const val = stripQuotes(cont[2]);
+      if (key === 'quote' || key === 'response') (current as any)[key] = val;
+      else if (key === 'isCTA') (current as any).isCTA = /^true$/i.test(val);
+      continue;
+    }
+    const top = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(raw);
+    if (top && !current) {
+      if (top[1] === 'heading') heading = stripQuotes(top[2]);
+    }
+  }
+  flush();
+  if (!items.length) return null;
+  return { items, heading };
+}
+
   }
   if (!flat.quote) return null;
   return {
