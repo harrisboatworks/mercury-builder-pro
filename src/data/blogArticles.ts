@@ -34881,11 +34881,19 @@ For a customer who plans to use the boat lightly (occasional cottage cruise, idl
 
 ## Customer language we hear
 
-- "How do I know the motor is set up right?" - water test answer
-- "My buddy had a new motor and the prop was wrong" - water test catches this
-- "I don\'t want any first-trip surprises" - water-tested delivery
-- "Are you Mercury Platinum?" - yes, plus the 80-foot dock walk
-- "When can you get me in?" - 905-342-2153
+:::customer-voice
+- quote: How do I know the motor is set up right?
+  response: water test answer
+- quote: My buddy had a new motor and the prop was wrong
+  response: water test catches this
+- quote: I don\'t want any first-trip surprises
+  response: water-tested delivery
+- quote: Are you Mercury Platinum?
+  response: yes, plus the 80-foot dock walk
+- quote: When can you get me in?
+  response: 905-342-2153
+  isCTA: true
+:::
 
 ## Ready to talk about a Mercury repower at HBW?
 
