@@ -861,6 +861,9 @@ function renderMarkdownWithDirectives(
     if (chunk.kind === 'customer-voice' && chunk.customerVoiceProps) {
       return <CustomerVoice key={`${keyPrefix}-cv-${i}`} {...chunk.customerVoiceProps} />;
     }
+    if (chunk.kind === 'mythbuster' && chunk.mythbusterProps) {
+      return <Mythbuster key={`${keyPrefix}-mb-${i}`} {...chunk.mythbusterProps} />;
+    }
     if (!chunk.content.trim()) return null;
     return (
       <ReactMarkdown
