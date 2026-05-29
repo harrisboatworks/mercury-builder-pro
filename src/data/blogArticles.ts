@@ -7819,6 +7819,19 @@ A payment estimate based on a motor price and an assumed rate is only useful if 
 
 *Last reviewed: 2026-05-11.*
 
+## The current Mercury financing rate (as of 2026-05-28)
+
+If you're cross-shopping dealer financing vs your bank or credit union, the active Canadian Mercury subvention is worth pricing against:
+
+- **5.48% APR (OAC)** through December 31, 2026
+- Term up to 60 months
+- Amortization up to 240 months
+- New eligible Mercury outboards only
+
+This is Mercury Marine Canada's TD "Always On" program, funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Compare against your own bank or credit union offer; if your personal rate is lower, take it. If not, the subvention is genuinely competitive.
+
+After December 31, 2026, the program ends and standard tiered Mercury financing resumes (from 7.99% APR OAC). Build a current quote at [mercuryrepower.ca](https://mercuryrepower.ca) for the rate that applies today.
+
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
@@ -7829,6 +7842,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Is HST included in the financing?', answer: 'Through the Mercury Repower program at HBW, yes. Ontario HST at 13% is included in the financed amount.' },
       { question: 'When should I use a HELOC instead of dealer financing?', answer: 'If your HELOC rate is meaningfully lower than the dealer rate and you are comfortable using your home as collateral, the total interest savings over a longer term can be real. Worth discussing with your bank or financial advisor.' },
       { question: 'Where do I start?', answer: 'Build a full installed quote at mercuryrepower.ca. That gives you the real loan amount, not just the motor price.' },
+      { question: "Is the dealer's financing rate competitive with my bank?", answer: 'As of 2026-05-28, Mercury Marine Canada\'s active TD "Always On" program offers 5.48% APR (OAC) on new eligible Mercury outboards through December 31, 2026, with amortization up to 240 months. That\'s competitive with most bank or credit union personal loans for a marine purchase. If your personal credit profile gets you a lower rate at your bank, take it. If not, the dealer program is meaningfully better than standard tiered Mercury financing (which resumes after Dec 31, 2026 at rates from 7.99% APR).' },
     ]
   },
 
@@ -12489,6 +12503,19 @@ The mistake we watch customers make: financing the motor and boat together at a 
 
 Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
+## The current Canadian Mercury financing rate (as of 2026-05-28)
+
+Through December 31, 2026, Mercury Marine Canada's TD "Always On" program is the active rate to plan around:
+
+- **5.48% APR (OAC)**
+- Term up to 60 months (customer's choice)
+- Amortization up to 240 months (20-year payment basis)
+- New eligible Mercury outboards only
+
+Funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Live program card at [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions).
+
+After December 31, 2026, the program ends and standard tiered Canadian Mercury financing resumes (tiered rates from 7.99% APR OAC, subject to amount financed and credit profile). Build a current quote at mercuryrepower.ca for the rate that applies today.
+
 ## Frequently Asked Questions
 
 **Can I qualify for Mercury Marine's official Repower Financing as an Ontario buyer?**
@@ -12527,6 +12554,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Can I pay it off early?', answer: 'Confirm prepayment terms before you sign. Most arrangements allow early payoff without penalty, but verify this on your specific agreement.' },
       { question: 'Is Ontario HST included in the financed amount?', answer: 'Yes. HST at 13% is added to the project total and included in the financed amount. You do not pay tax separately upfront.' },
       { question: 'How do I get started?', answer: 'Build a quote at mercuryrepower.ca. You will see the full installed cost, then live payment options at current rates and terms.' },
+      { question: 'What is the current Mercury financing rate in Canada?', answer: 'As of 2026-05-28, the active program is Mercury TD "Always On" at 5.48% APR (OAC) with terms up to 60 months and amortization up to 240 months on new eligible Mercury outboards. It runs through December 31, 2026. Funded through TD Auto Finance via HBW\'s Dealerplan Peterborough relationship. After the program ends, standard tiered Canadian Mercury financing resumes. Check mercuryrepower.ca/promotions for the live offer.' },
     ]
   },
   {
