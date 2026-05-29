@@ -262,14 +262,57 @@ function rewriteMercuryPriceTable(md: string): string {
   return out;
 }
 
+/**
+ * Convert raw YouTube iframe HTML (with or without the responsive wrapper div)
+ * into a sanitized `:::youtube-embed` directive. Non-YouTube iframes and any
+ * leftover wrapper divs are stripped so raw HTML never reaches the renderer.
+ *
+ * Accepts iframes whose `src` begins with:
+ *   - https://www.youtube.com/embed/
+ *   - https://www.youtube-nocookie.com/embed/
+ *   - https://youtube.com/embed/
+ * Any other iframe is removed (security: no arbitrary embeds).
+ */
+function rewriteYouTubeEmbeds(md: string): string {
+  let out = md;
+  // 1. Wrapped form: <div ...><iframe ...></iframe></div>
+  out = out.replace(
+    /<div[^>]*>\s*<iframe\b([^>]*)>\s*<\/iframe>\s*<\/div>/gi,
+    (_m, attrs) => buildYouTubeDirective(attrs) ?? '',
+  );
+  // 2. Bare iframe
+  out = out.replace(
+    /<iframe\b([^>]*)>\s*<\/iframe>/gi,
+    (_m, attrs) => buildYouTubeDirective(attrs) ?? '',
+  );
+  return out;
+}
+
+function buildYouTubeDirective(attrs: string): string | null {
+  const srcMatch = /\bsrc\s*=\s*["']([^"']+)["']/i.exec(attrs);
+  if (!srcMatch) return '';
+  const src = srcMatch[1];
+  const ytMatch =
+    /^https:\/\/(?:www\.)?(?:youtube\.com|youtube-nocookie\.com)\/embed\/([A-Za-z0-9_-]{6,})/.exec(
+      src,
+    );
+  if (!ytMatch) return ''; // strip non-YouTube iframes
+  const id = ytMatch[1];
+  const titleMatch = /\btitle\s*=\s*["']([^"']+)["']/i.exec(attrs);
+  const title = titleMatch ? titleMatch[1].replace(/\n/g, ' ') : '';
+  return `\n\n:::youtube-embed\nid: ${id}${title ? `\ntitle: ${title}` : ''}\n:::\n\n`;
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteMercuryPriceTable(
-    rewriteWalkaroundLeadCapture(
-      rewritePullQuote(
-        rewriteBilingualTrust(
-          rewriteCostStack(
-            rewriteDiagnosticFlow(
-              rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+  return rewriteYouTubeEmbeds(
+    rewriteMercuryPriceTable(
+      rewriteWalkaroundLeadCapture(
+        rewritePullQuote(
+          rewriteBilingualTrust(
+            rewriteCostStack(
+              rewriteDiagnosticFlow(
+                rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+              ),
             ),
           ),
         ),
