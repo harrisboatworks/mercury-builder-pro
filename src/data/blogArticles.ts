@@ -34078,11 +34078,19 @@ Repowers are the highest-risk install in our shop. New motor, old hull, unknown 
 
 ## Common mistakes (the things we push back on)
 
-- **"More HP is always better."** No. Overpowering a boat creates capacity-plate compliance issues, insurance complications, and shortens hull life. Stay within the capacity-plate maximum HP rating. If you want more boat, get more boat.
-- **"I'll get the 150 because resale is better."** Marginal. A 115 in good condition resells well. A 150 in good condition resells well. The delta isn't enough to justify the up-front price difference for most owners.
-- **"Command Thrust gives me more low-end on my V-hull."** Slightly, at the cost of top end. For an aluminum V-hull, the standard gearcase is the engineering-correct choice. Don't let a dealer talk you into CT unless your hull legitimately needs it.
-- **"I'll prop it for top speed."** Most customers prop wrong. Prop pitch should be set so the motor reaches WOT RPM within Mercury's recommended range (typically 5,500-6,000 RPM for FourStroke, 6,000-6,400 for Pro XS) under typical load. We dial this in at our dock.
-- **"My buddy has a 150 on the same boat and it's faster."** Maybe. Or your buddy's boat is set up differently, has a different prop, runs at different load, or you're comparing perceived speed vs measured speed. Don't make a $6,800 decision on one anecdote.
+:::mythbuster
+- claim: More HP is always better.
+  rebuttal: No. Overpowering a boat creates capacity-plate compliance issues, insurance complications, and shortens hull life. Stay within the capacity-plate maximum HP rating. If you want more boat, get more boat.
+- claim: I\'ll get the 150 because resale is better.
+  rebuttal: Marginal. A 115 in good condition resells well. A 150 in good condition resells well. The delta isn\'t enough to justify the up-front price difference for most owners.
+- claim: Command Thrust gives me more low-end on my V-hull.
+  rebuttal: Slightly, at the cost of top end. For an aluminum V-hull, the standard gearcase is the engineering-correct choice. Don\'t let a dealer talk you into CT unless your hull legitimately needs it.
+- claim: I\'ll prop it for top speed.
+  rebuttal: Most customers prop wrong. Prop pitch should be set so the motor reaches WOT RPM within Mercury\'s recommended range (typically 5,500 to 6,000 RPM for FourStroke, 6,000 to 6,400 for Pro XS) under typical load. We dial this in at our dock.
+- claim: My buddy has a 150 on the same boat and it\'s faster.
+  rebuttal: Maybe. Or your buddy\'s boat is set up differently, has a different prop, runs at different load, or you\'re comparing perceived speed vs measured speed. Don\'t make a $6,800 decision on one anecdote.
+:::
+
 
 ## Customer language we hear
 

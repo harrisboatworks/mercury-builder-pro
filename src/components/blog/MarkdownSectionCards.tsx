@@ -22,6 +22,7 @@ import { MercuryPriceTable, type MercuryPriceTableProps } from './MercuryPriceTa
 import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 import { MercuryVideo } from './MercuryVideo';
 import { CustomerVoice, type CustomerVoiceProps, type CustomerVoiceItem } from './CustomerVoice';
+import { Mythbuster, type MythbusterProps, type MythbusterItem } from './Mythbuster';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -245,6 +246,11 @@ function rewriteCustomerVoice(md: string): string {
   return md.replace(re, (_m, body) => `:::customer-voice\n${body}\n:::`);
 }
 
+function rewriteMythbuster(md: string): string {
+  const re = /^::mythbuster\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::mythbuster\n${body}\n:::`);
+}
+
 
 function rewriteWalkaroundLeadCapture(md: string): string {
   // Bodiless directive: a single line `::walkaround-lead-capture` becomes
@@ -311,7 +317,7 @@ function buildYouTubeDirective(attrs: string): string | null {
 }
 
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteCustomerVoice(rewriteYouTubeEmbeds(
+  return rewriteMythbuster(rewriteCustomerVoice(rewriteYouTubeEmbeds(
     rewriteMercuryPriceTable(
       rewriteWalkaroundLeadCapture(
         rewritePullQuote(
@@ -325,7 +331,7 @@ function preprocessSpecialBlocks(md: string): string {
         ),
       ),
     ),
-  ));
+  )));
 }
 
 /**
@@ -359,7 +365,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table' | 'youtube-embed' | 'customer-voice';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table' | 'youtube-embed' | 'customer-voice' | 'mythbuster';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -372,10 +378,11 @@ interface RenderChunk {
   mercuryPriceTableProps?: MercuryPriceTableProps;
   youtubeProps?: { id: string; title?: string };
   customerVoiceProps?: CustomerVoiceProps;
+  mythbusterProps?: MythbusterProps;
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table|youtube-embed|customer-voice)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table|youtube-embed|customer-voice|mythbuster)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -655,6 +662,56 @@ function parseCustomerVoiceBody(body: string): CustomerVoiceProps | null {
   return { items, heading };
 }
 
+function parseMythbusterBody(body: string): MythbusterProps | null {
+  const lines = body.split('\n');
+  const items: MythbusterItem[] = [];
+  let heading: string | undefined;
+  let current: Partial<MythbusterItem> | null = null;
+  let lastKey: 'claim' | 'rebuttal' | null = null;
+  const stripQuotes = (v: string) => v.trim().replace(/^["'](.*)["']$/, '$1');
+  const flush = () => {
+    if (current && current.claim && current.rebuttal) {
+      items.push({ claim: String(current.claim), rebuttal: String(current.rebuttal) });
+    }
+    current = null;
+    lastKey = null;
+  };
+  for (const raw of lines) {
+    if (!raw.trim()) continue;
+    const itemStart = /^-\s*([a-zA-Z]+)\s*:\s*(.*)$/.exec(raw);
+    if (itemStart) {
+      flush();
+      current = {};
+      const key = itemStart[1];
+      const val = stripQuotes(itemStart[2]);
+      if (key === 'claim' || key === 'rebuttal') {
+        (current as any)[key] = val;
+        lastKey = key;
+      }
+      continue;
+    }
+    const cont = /^\s+([a-zA-Z]+)\s*:\s*(.*)$/.exec(raw);
+    if (cont && current) {
+      const key = cont[1];
+      const val = stripQuotes(cont[2]);
+      if (key === 'claim' || key === 'rebuttal') {
+        (current as any)[key] = val;
+        lastKey = key as 'claim' | 'rebuttal';
+      }
+      continue;
+    }
+    const top = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(raw);
+    if (top && !current) {
+      if (top[1] === 'heading') heading = stripQuotes(top[2]);
+    }
+  }
+  flush();
+  if (!items.length) return null;
+  return { items, heading };
+}
+
+
+
 function splitDirectives(md: string): RenderChunk[] {
   const chunks: RenderChunk[] = [];
   let last = 0;
@@ -735,6 +792,9 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'customer-voice') {
       const props = parseCustomerVoiceBody(body);
       if (props) chunks.push({ kind: 'customer-voice', content: '', customerVoiceProps: props });
+    } else if (name === 'mythbuster') {
+      const props = parseMythbusterBody(body);
+      if (props) chunks.push({ kind: 'mythbuster', content: '', mythbusterProps: props });
     }
     last = m.index + m[0].length;
   }
@@ -800,6 +860,9 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'customer-voice' && chunk.customerVoiceProps) {
       return <CustomerVoice key={`${keyPrefix}-cv-${i}`} {...chunk.customerVoiceProps} />;
+    }
+    if (chunk.kind === 'mythbuster' && chunk.mythbusterProps) {
+      return <Mythbuster key={`${keyPrefix}-mb-${i}`} {...chunk.mythbusterProps} />;
     }
     if (!chunk.content.trim()) return null;
     return (
