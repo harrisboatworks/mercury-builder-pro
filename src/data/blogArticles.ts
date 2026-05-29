@@ -34267,11 +34267,18 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 
 ## Customer language we hear
 
-- "I'm doing the Trent-Severn this year" → preventive service conversation
-- "I broke down on Rice Lake, can you help?" → on-water towing question
-- "I think I hit the railroad" → confirmed, lower unit inspection priority
-- "My motor is overheating coming into the lock" → impeller, intake, or thermostat
-- "When can you get me in?" → priority for transit boats; we work them in as best we can
+:::customer-voice
+- quote: I'm doing the Trent-Severn this year
+  response: preventive service conversation
+- quote: I broke down on Rice Lake, can you help?
+  response: on-water towing question
+- quote: I think I hit the railroad
+  response: confirmed, lower unit inspection priority
+- quote: My motor is overheating coming into the lock
+  response: impeller, intake, or thermostat
+- quote: When can you get me in?
+  response: priority for transit boats; we work them in as best we can
+:::
 
 ## Ready for HBW to look at it before, during, or after your transit?
 
