@@ -72,15 +72,8 @@ export function TDAlwaysOnCard() {
   return (
     <section className="bg-white py-16 md:py-20 px-6 md:px-14 border-t border-repower-navy-900/10">
       <div className="max-w-[1100px] mx-auto">
-        <div className="text-center mb-10 max-w-3xl mx-auto">
-          <p className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-mercury-red mb-5 inline-flex items-center gap-3">
-            <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
-            Financing Program
-          </p>
-        </div>
-
-        <div className="bg-repower-cream border border-repower-navy-900/10 rounded-lg p-6 md:p-10">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+        <div className="bg-repower-cream border border-repower-navy-900/10 rounded-lg p-6 md:p-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-stretch">
             <div className="order-1">
               <img
                 src={RATE_CARD_IMAGE}
@@ -91,16 +84,19 @@ export function TDAlwaysOnCard() {
               />
             </div>
 
-            <div className="order-2 flex flex-col gap-5">
-              <p className="font-sans text-[16px] md:text-[17px] text-repower-navy-900 leading-relaxed">
-                Special finance offer. Stacks with the 7-year factory warranty.
+            <div className="order-2 flex flex-col gap-5 justify-center">
+              <h3 className="font-display text-2xl md:text-[30px] font-bold text-repower-navy-900 leading-tight">
+                Two promotions. Both apply.
+              </h3>
+              <p className="font-sans text-[16px] md:text-[17px] text-repower-navy-900/70 leading-relaxed">
+                Special finance offer that stacks with our 7-year factory warranty. Get both on a new Mercury repower.
               </p>
-              <p className="font-sans text-[14px] text-repower-navy-900/70 leading-relaxed">
+              <p className="font-sans text-[14px] text-repower-navy-900/65 leading-relaxed">
                 Not all customers will qualify. Approval depends on TD's credit review.
               </p>
               <Link
                 to="/financing-application"
-                className="group inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-6 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors self-start"
+                className="group inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-6 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors self-start mt-2"
               >
                 Apply for Financing
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={1.75} />
