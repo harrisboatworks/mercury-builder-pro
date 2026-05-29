@@ -20,6 +20,7 @@ import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustIt
 import { PullQuote, type PullQuoteProps } from './PullQuote';
 import { MercuryPriceTable, type MercuryPriceTableProps } from './MercuryPriceTable';
 import WalkaroundLeadCapture from './WalkaroundLeadCapture';
+import { MercuryVideo } from './MercuryVideo';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
