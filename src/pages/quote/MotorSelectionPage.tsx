@@ -1130,7 +1130,7 @@ if (event.type === 'filter_motors') {
               counts.proKicker += 1;
               continue;
             }
-            const fam = classifyMotorFamily(m.hp ?? 0, m.model_display || m.model || '', []);
+            const fam = classifyMotorFamily(m.horsepower ?? 0, m.model_display || m.model || '', []);
             if (fam === 'Pro XS') counts.proXS += 1;
             else if (fam === 'SeaPro') counts.seaPro += 1;
             else if (fam === 'ProKicker') counts.proKicker += 1;
