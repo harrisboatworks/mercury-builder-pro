@@ -1,61 +1,72 @@
-## Evaluation of the brief
+## Goal
 
-The brief is **accurate and well-scoped**. I verified the key claims against the codebase:
+Resolve the three GSC schema/indexing flags for mercuryrepower.ca:
+1. Merchant listings missing `productGroupID`
+2. Product snippets missing `offerCount` on `AggregateOffer`
+3. Indexing — 404s and redirects in sitemap
 
-- Confirmed: `/pricing-reference` exists, uses `genericPageSchema` only (generic WebPage), no Product/Offer/ItemList. Brief is right.
-- Confirmed: `GlobalSEO.tsx` line 68 has `latitude: 44.1147` and renders `priceRange: "$"` on the sitewide LocalBusiness — both wrong as the brief states.
-- Confirmed: `motor_models` data is server-accessible at prerender time (`scripts/generate-markdown-twins.mjs` already builds the .md table from it). Patch 2 can be generated statically — answers the brief's open question.
-- Confirmed: zero real internal links to `/pricing-reference`. However, I found a **related bug** the brief missed: ~10+ blog articles and case-study/location data files link to `/n` (e.g. `mercuryrepower.ca/n`) as a shortlink for the pricing reference, and `/n` is not a route — those are silent 404s. Worth fixing as part of Patch 1.
+## Scope
 
-One concern with **Patch 3 (microdata)**: the page client-renders markdown via `marked.parse()` into `dangerouslySetInnerHTML`, so injecting per-row `itemscope/itemprop` requires either post-processing the HTML string client-side or emitting microdata in the static prerender's noscript fallback. Brief itself flags Patch 3 as deprioritizable. I recommend skipping unless you want it.
+Only schema/JSON-LD and sitemap. No visual changes.
 
-Overall: **do Patches 1, 2, 4, 5. Skip Patch 3.** Estimated 4–5 hrs of work. No risk to existing functionality — all additive schema + a few links.
+### 1. `productGroupID` on family Product nodes
 
-## Plan
+Two places emit family-level Products (FourStroke / Pro XS / SeaPro / ProKicker):
 
-### Patch 1 — Internal links (incl. `/n` shortlink fix)
-- Add an `<a href="/pricing-reference">` link in:
-  - Homepage hero/trust area (locate Index/home component)
-  - `RepowerHub.tsx` near the price range copy
-  - `FAQ.tsx` answer that mentions price ranges
-  - Site footer "Resources" section
-  - Blog post layout's "related" area
-- Fix dangling `/n` references: either add a redirect route `/n` → `/pricing-reference` in `App.tsx` (lowest-effort, preserves blog copy), or sweep `src/data/blogArticles.ts`, `caseStudiesLongForm.ts`, `locationsLongFormUpgrades.ts` to replace `/n` with `/pricing-reference`. Recommend the redirect route — single line, no content churn.
+- `src/components/seo/MotorSelectionSEO.tsx` (React-hydrated, 4 Product entries, lines ~61–140)
+- `scripts/static-prerender.mjs` `motorSelectionSchema()` (prerendered HTML, 4 Product entries, lines ~1183–1273)
 
-### Patch 2 — Product/Offer/ItemList JSON-LD
-- In `scripts/static-prerender.mjs`, replace the `/pricing-reference` `schemas:` array with a custom `@graph` containing:
-  - WebPage (linked to `#website`, `#organization`, with `mainEntity` → `#pricelist`)
-  - ItemList `#pricelist` with one ListItem per motor pulled from the same `motor_models` query the markdown twin already runs
-  - Each item: Product with brand=Mercury Marine, additionalProperty (HP, Family), and Offer (price, CAD, availability based on stock status, seller `@id`=`#organization`)
-- Group by motor row (matches the .md table — HP variants in `additionalProperty`). One ListItem per row, not per shaft variant.
-- Re-emit the same `@graph` in a Helmet `<script type="application/ld+json">` inside `PricingReference.tsx` so SPA navigations also expose it. (Will need to fetch a small `/pricing-schema.json` artifact built at the same time, OR inline a build-time generated TS module — simpler: generate `src/data/pricingReferenceSchema.ts` from the same script and import it.)
+Add to each family Product node:
+- `"@type": ["Product", "ProductGroup"]`
+- `"productGroupID": "<stable-id>"` using the IDs the user supplied:
+  - `mercury-fourstroke-outboards`
+  - `mercury-pro-xs-outboards`
+  - `mercury-seapro-outboards`
+  - `mercury-prokicker-outboards`
+- `"variesBy": ["horsepower", "shaftLength", "startType"]`
 
-### Patch 4 — "About this dealer" paragraph
-- Add the dealer attribution paragraph to `public/pricing-reference.md` (between intro and "How to use this page"), so it flows through both the .md alternate and the rendered HTML (PricingReference.tsx renders the .md body).
-- Wrap "Harris Boat Works" as a markdown link to `/`.
+Per-motor `/motors/{slug}` schema (built in `src/lib/seo/buildMotorProductSchema.ts`) gets an optional `isVariantOf` reference back to the matching family group when `family` is known:
+```
+isVariantOf: { "@type": "ProductGroup", "productGroupID": "mercury-<family-slug>-outboards" }
+```
+Family-slug mapping derived from `MotorFamily` (lowercase, spaces → dashes; e.g. `Pro XS` → `pro-xs`). Skip when family is missing.
 
-### Patch 5 — LocalBusiness fixes (sitewide)
-- In `src/components/seo/GlobalSEO.tsx` and `HomepageSEO.tsx`: change `latitude: 44.1147` → `44.1456` and `longitude: -78.2564` → `-78.2542`.
-- Remove the `priceRange: "$"` field (cleaner than guessing `$$$`; the repower Service AggregateOffer already conveys range).
-- Audit any other SEO components that duplicate these coords (`rg -n "44.1147"`) and update consistently.
+### 2. `offerCount` on AggregateOffer
+
+For each family Product's `AggregateOffer` in both `MotorSelectionSEO.tsx` and `static-prerender.mjs`, add `offerCount` equal to the live variant count.
+
+Source of truth: query `motor_models` grouped by family classification (reusing `classifyMotorFamily` from `src/lib/motor-family-classifier.ts`). For the React component this is a runtime count from the already-fetched motor list (pass `familyCounts` prop alongside existing `motorCount`/price props). For the prerender script, compute counts at build time from the same Supabase fetch that already powers `motorSelectionSchema` and pass into the schema function. No hardcoded inflation — actual counts only. When a count is 0, omit that family Product entirely rather than emit `offerCount: 0`.
+
+Also audit lineup landing pages (`MercuryLineupLandingSEO.tsx`): the schema there uses an `offers` array (per-variant Offers), not `AggregateOffer`, so no change needed.
+
+### 3. Sitemap cleanup (404s + redirects)
+
+`src/utils/generateSitemap.ts` `getMotorSitemapEntries()` currently emits `/motors/{slug}` for every row in `motor_models` with a non-empty `model_key`. Two filters to add:
+
+- Only include rows that will render a 200 page: require `model_display` non-null AND `is_active`/visible flag (mirror whatever the `/motors/:slug` loader uses to 404). Will read `MotorPage.tsx` to confirm the exact gate before coding so the sitemap matches what the page actually serves.
+- Drop any model_key whose slug doesn't match the canonical slug the page itself emits (prevents redirect entries).
+
+`/motors/:slug` pages stay in sitemap (they render full Product+Offer schema via `MotorPageSEO` and have self-canonical), so we keep the "rank individually" path the user described.
+
+Static-page list in `getStaticPages()` will be spot-checked for any URL that now 404s or redirects (e.g. removed landing pages). Any found will be removed.
 
 ### Verification
-- `bun run build` (prerender will fail loudly if schema generation breaks)
-- `curl -sL` checks from the brief's acceptance criteria
-- Spot-check view-source on `dist/pricing-reference/index.html` for the new `@graph` block
 
-### Technical notes
-- Use the existing Supabase service-role data fetch the markdown-twin script uses; do not introduce a new data path.
-- Availability mapping: in-stock → `InStock`, available-to-order → `PreOrder`.
-- Slug for Product `@id` should reuse the motor's existing `model_display`-derived slug (already used in `/motors/{slug}`).
+- `npx tsc -p tsconfig.app.json --noEmit`
+- `node scripts/check-structured-data.mjs` (runs after build; checks new ProductGroup/offerCount shape doesn't trip required-field validation)
+- Manual schema validator paste of one rendered `/quote/motor-selection` and one `/motors/{slug}` block
 
-### Out of scope (per brief)
-- No Verado entries
-- No microdata on table rows (Patch 3)
-- No fake reviews/ratings
-- No changes to title/H1/meta/canonical
+### Files to edit
 
-## Open questions
-1. OK to add the `/n` → `/pricing-reference` redirect route instead of rewriting blog copy?
-2. OK to skip Patch 3 (microdata) per brief's own deprioritization?
-3. Where exactly on the homepage do you want the "See all Mercury outboard prices" link — hero trust bar, or the existing pricing ribbon, or both?
+- `src/components/seo/MotorSelectionSEO.tsx` — add ProductGroup type, productGroupID, offerCount; accept `familyCounts` prop
+- The caller of `MotorSelectionSEO` (will locate via grep) — pass familyCounts derived from the existing motor list
+- `scripts/static-prerender.mjs` — same ProductGroup/offerCount additions in `motorSelectionSchema()`; compute counts from existing Supabase fetch
+- `src/lib/seo/buildMotorProductSchema.ts` — add optional `isVariantOf` ProductGroup ref keyed off `family`
+- `src/utils/generateSitemap.ts` — tighten `getMotorSitemapEntries()` filter to indexable, canonical, 200-returning slugs only
+
+### Out of scope
+
+- TD financing card / 7-year warranty promo (untouched)
+- Any visual or copy changes
+- Blog/article schema
+- Lineup landing pages (already use per-variant Offer arrays, no AggregateOffer)
