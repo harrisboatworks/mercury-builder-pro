@@ -592,6 +592,14 @@ function parsePullQuoteBody(body: string): PullQuoteProps | null {
       flat[lastKey] = (flat[lastKey] ? flat[lastKey] + ' ' : '') + line.trim();
     } else {
       lastKey = null;
+    }
+  }
+  if (!flat.quote) return null;
+  return {
+    quote: flat.quote,
+    attribution: flat.attribution || undefined,
+    source: flat.source || undefined,
+  };
 }
 
 /**
@@ -645,15 +653,6 @@ function parseCustomerVoiceBody(body: string): CustomerVoiceProps | null {
   flush();
   if (!items.length) return null;
   return { items, heading };
-}
-
-  }
-  if (!flat.quote) return null;
-  return {
-    quote: flat.quote,
-    attribution: flat.attribution || undefined,
-    source: flat.source || undefined,
-  };
 }
 
 function splitDirectives(md: string): RenderChunk[] {
