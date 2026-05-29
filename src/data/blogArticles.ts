@@ -34905,6 +34905,11 @@ What bench testing does not tell you:
 
 These are the kinds of failures that show up as warranty calls in the first 30 days when they aren't caught before delivery. Every one of them can be caught at the dock, but only if the dock is close enough to make routine water testing economically feasible.
 
+:::mythbuster
+**Myth:** A motor that starts, idles, and revs on the shop bench is ready for delivery.
+**Reality:** Bench testing covers cold start, neutral idle, and neutral rev. It cannot see WOT under load, charging holding voltage with real electronics drawing, hydraulic steering bleed under load, or SmartCraft faults that only appear at operating temperature. Every one of those is a 30-day warranty call waiting to happen if you skip the water test.
+:::
+
 ---
 
 ## The 80-foot moat
