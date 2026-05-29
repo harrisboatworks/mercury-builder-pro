@@ -1,7 +1,9 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { getCurrentMercuryFinancingRate, getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
 
 export function FinancingSEO() {
+  const CURRENT_RATE = getCurrentMercuryFinancingRate();
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
