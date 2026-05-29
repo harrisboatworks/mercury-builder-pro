@@ -12489,6 +12489,19 @@ The mistake we watch customers make: financing the motor and boat together at a 
 
 Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
+## The current Canadian Mercury financing rate (as of 2026-05-28)
+
+Through December 31, 2026, Mercury Marine Canada's TD "Always On" program is the active rate to plan around:
+
+- **5.48% APR (OAC)**
+- Term up to 60 months (customer's choice)
+- Amortization up to 240 months (20-year payment basis)
+- New eligible Mercury outboards only
+
+Funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Live program card at [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions).
+
+After December 31, 2026, the program ends and standard tiered Canadian Mercury financing resumes (tiered rates from 7.99% APR OAC, subject to amount financed and credit profile). Build a current quote at mercuryrepower.ca for the rate that applies today.
+
 ## Frequently Asked Questions
 
 **Can I qualify for Mercury Marine's official Repower Financing as an Ontario buyer?**
