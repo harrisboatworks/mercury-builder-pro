@@ -2429,10 +2429,16 @@ Whichever family you pick, the rigging, water test, and warranty are identical a
 
 ## Common mistakes
 
-- **Buying Pro XS on a boat that does not need it.** A 16 foot aluminum with two anglers does not benefit from Pro XS tuning. You will spend extra and gain nothing.
-- **Assuming Pro XS uses way more fuel.** At cruise RPM, the families are close. The fuel gap shows up at wide-open throttle, which most repower customers rarely run.
-- **Confusing Boost with horsepower.** Boost is a 4-to-6-second power injection, not a sustained HP rating. It plants the boat on plane. It does not give you more top speed.
-- **Skipping the Command Thrust conversation.** On heavy pontoons, the Command Thrust gearcase often delivers what people think they need Pro XS for, at lower cost.
+:::mythbuster
+- claim: Buying Pro XS on a boat that does not need it.
+  rebuttal: A 16 foot aluminum with two anglers does not benefit from Pro XS tuning. You will spend extra and gain nothing.
+- claim: Assuming Pro XS uses way more fuel.
+  rebuttal: At cruise RPM, the families are close. The fuel gap shows up at wide-open throttle, which most repower customers rarely run.
+- claim: Confusing Boost with horsepower.
+  rebuttal: Boost is a 4-to-6-second power injection, not a sustained HP rating. It plants the boat on plane. It does not give you more top speed.
+- claim: Skipping the Command Thrust conversation.
+  rebuttal: On heavy pontoons, the Command Thrust gearcase often delivers what people think they need Pro XS for, at lower cost.
+:::
 
 ## Frequently Asked Questions
 
