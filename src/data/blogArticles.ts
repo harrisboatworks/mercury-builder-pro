@@ -12540,6 +12540,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Can I pay it off early?', answer: 'Confirm prepayment terms before you sign. Most arrangements allow early payoff without penalty, but verify this on your specific agreement.' },
       { question: 'Is Ontario HST included in the financed amount?', answer: 'Yes. HST at 13% is added to the project total and included in the financed amount. You do not pay tax separately upfront.' },
       { question: 'How do I get started?', answer: 'Build a quote at mercuryrepower.ca. You will see the full installed cost, then live payment options at current rates and terms.' },
+      { question: 'What is the current Mercury financing rate in Canada?', answer: 'As of 2026-05-28, the active program is Mercury TD "Always On" at 5.48% APR (OAC) with terms up to 60 months and amortization up to 240 months on new eligible Mercury outboards. It runs through December 31, 2026. Funded through TD Auto Finance via HBW\'s Dealerplan Peterborough relationship. After the program ends, standard tiered Canadian Mercury financing resumes. Check mercuryrepower.ca/promotions for the live offer.' },
     ]
   },
   {
