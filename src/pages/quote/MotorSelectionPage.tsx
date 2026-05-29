@@ -1120,7 +1120,26 @@ if (event.type === 'filter_motors') {
 
   return (
     <PageTransition>
-      <MotorSelectionSEO motorCount={motors.length > 0 ? motors.length : undefined} />
+      <MotorSelectionSEO
+        motorCount={motors.length > 0 ? motors.length : undefined}
+        familyCounts={(() => {
+          const counts = { fourStroke: 0, proXS: 0, seaPro: 0, proKicker: 0 };
+          for (const m of motors) {
+            const display = (m.model_display || m.model || '').toLowerCase();
+            if (display.includes('prokicker') || display.includes('pro kicker') || display.includes('pro-kicker')) {
+              counts.proKicker += 1;
+              continue;
+            }
+            const fam = classifyMotorFamily(m.hp ?? 0, m.model_display || m.model || '', []);
+            if (fam === 'Pro XS') counts.proXS += 1;
+            else if (fam === 'SeaPro') counts.seaPro += 1;
+            else if (fam === 'ProKicker') counts.proKicker += 1;
+            else if (fam === 'Verado') continue;
+            else counts.fourStroke += 1;
+          }
+          return counts;
+        })()}
+      />
       <FinancingProvider>
         <RepowerLayout>
           <div className="bg-repower-paper pt-[64px] lg:pt-[72px]">
