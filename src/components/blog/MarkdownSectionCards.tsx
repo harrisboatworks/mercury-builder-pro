@@ -21,6 +21,7 @@ import { PullQuote, type PullQuoteProps } from './PullQuote';
 import { MercuryPriceTable, type MercuryPriceTableProps } from './MercuryPriceTable';
 import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 import { MercuryVideo } from './MercuryVideo';
+import { CustomerVoice, type CustomerVoiceProps, type CustomerVoiceItem } from './CustomerVoice';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
