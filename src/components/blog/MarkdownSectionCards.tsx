@@ -20,6 +20,7 @@ import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustIt
 import { PullQuote, type PullQuoteProps } from './PullQuote';
 import { MercuryPriceTable, type MercuryPriceTableProps } from './MercuryPriceTable';
 import WalkaroundLeadCapture from './WalkaroundLeadCapture';
+import { MercuryVideo } from './MercuryVideo';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -261,14 +262,57 @@ function rewriteMercuryPriceTable(md: string): string {
   return out;
 }
 
+/**
+ * Convert raw YouTube iframe HTML (with or without the responsive wrapper div)
+ * into a sanitized `:::youtube-embed` directive. Non-YouTube iframes and any
+ * leftover wrapper divs are stripped so raw HTML never reaches the renderer.
+ *
+ * Accepts iframes whose `src` begins with:
+ *   - https://www.youtube.com/embed/
+ *   - https://www.youtube-nocookie.com/embed/
+ *   - https://youtube.com/embed/
+ * Any other iframe is removed (security: no arbitrary embeds).
+ */
+function rewriteYouTubeEmbeds(md: string): string {
+  let out = md;
+  // 1. Wrapped form: <div ...><iframe ...></iframe></div>
+  out = out.replace(
+    /<div[^>]*>\s*<iframe\b([^>]*)>\s*<\/iframe>\s*<\/div>/gi,
+    (_m, attrs) => buildYouTubeDirective(attrs) ?? '',
+  );
+  // 2. Bare iframe
+  out = out.replace(
+    /<iframe\b([^>]*)>\s*<\/iframe>/gi,
+    (_m, attrs) => buildYouTubeDirective(attrs) ?? '',
+  );
+  return out;
+}
+
+function buildYouTubeDirective(attrs: string): string | null {
+  const srcMatch = /\bsrc\s*=\s*["']([^"']+)["']/i.exec(attrs);
+  if (!srcMatch) return '';
+  const src = srcMatch[1];
+  const ytMatch =
+    /^https:\/\/(?:www\.)?(?:youtube\.com|youtube-nocookie\.com)\/embed\/([A-Za-z0-9_-]{6,})/.exec(
+      src,
+    );
+  if (!ytMatch) return ''; // strip non-YouTube iframes
+  const id = ytMatch[1];
+  const titleMatch = /\btitle\s*=\s*["']([^"']+)["']/i.exec(attrs);
+  const title = titleMatch ? titleMatch[1].replace(/\n/g, ' ') : '';
+  return `\n\n:::youtube-embed\nid: ${id}${title ? `\ntitle: ${title}` : ''}\n:::\n\n`;
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteMercuryPriceTable(
-    rewriteWalkaroundLeadCapture(
-      rewritePullQuote(
-        rewriteBilingualTrust(
-          rewriteCostStack(
-            rewriteDiagnosticFlow(
-              rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+  return rewriteYouTubeEmbeds(
+    rewriteMercuryPriceTable(
+      rewriteWalkaroundLeadCapture(
+        rewritePullQuote(
+          rewriteBilingualTrust(
+            rewriteCostStack(
+              rewriteDiagnosticFlow(
+                rewriteDecisionCards(rewriteRelatedGuides(rewritePricingTables(md))),
+              ),
             ),
           ),
         ),
@@ -308,7 +352,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table' | 'youtube-embed';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -319,10 +363,11 @@ interface RenderChunk {
   bilingualTrustProps?: BilingualTrustCardProps;
   pullQuoteProps?: PullQuoteProps;
   mercuryPriceTableProps?: MercuryPriceTableProps;
+  youtubeProps?: { id: string; title?: string };
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table|youtube-embed)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -616,6 +661,16 @@ function splitDirectives(md: string): RenderChunk[] {
         }
       }
       chunks.push({ kind: 'mercury-price-table', content: '', mercuryPriceTableProps: props });
+    } else if (name === 'youtube-embed') {
+      const idMatch = /^\s*id\s*:\s*([A-Za-z0-9_-]{6,})\s*$/m.exec(body);
+      const titleMatch = /^\s*title\s*:\s*(.+)$/m.exec(body);
+      if (idMatch) {
+        chunks.push({
+          kind: 'youtube-embed',
+          content: '',
+          youtubeProps: { id: idMatch[1], title: titleMatch?.[1]?.trim() },
+        });
+      }
     }
     last = m.index + m[0].length;
   }
@@ -669,6 +724,15 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'mercury-price-table') {
       return <MercuryPriceTable key={`${keyPrefix}-mpt-${i}`} {...(chunk.mercuryPriceTableProps || {})} />;
+    }
+    if (chunk.kind === 'youtube-embed' && chunk.youtubeProps) {
+      return (
+        <MercuryVideo
+          key={`${keyPrefix}-yt-${i}`}
+          videoId={chunk.youtubeProps.id}
+          title={chunk.youtubeProps.title || 'Mercury Marine video'}
+        />
+      );
     }
     if (!chunk.content.trim()) return null;
     return (
