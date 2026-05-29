@@ -1,7 +1,9 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { getCurrentMercuryFinancingRate, getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
 
 export function FinanceCalculatorSEO() {
+  const CURRENT_RATE = getCurrentMercuryFinancingRate();
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -47,7 +49,7 @@ export function FinanceCalculatorSEO() {
         "feesAndCommissionsSpecification": "No early payoff penalties. $349 finance administration fee included.",
         "interestRate": {
           "@type": "QuantitativeValue",
-          "minValue": 7.99,
+          "minValue": CURRENT_RATE.ratePercent,
           "unitText": "% APR"
         },
         "amount": {
@@ -64,7 +66,7 @@ export function FinanceCalculatorSEO() {
             "name": "What are the current financing rates for Mercury outboards?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Standard rates start at 7.99% APR for purchases $10,000 and up, and 8.99% APR for purchases under $10,000. Promotional rates may be available, check the calculator for current offers."
+              "text": getMercuryFinancingFaqAnswer()
             }
           },
           {
@@ -91,7 +93,7 @@ export function FinanceCalculatorSEO() {
   return (
     <Helmet>
       <title>Mercury Repower Financing Calculator | Monthly Payment Estimator | Harris Boat Works</title>
-      <meta name="description" content="Estimate monthly payments on a Mercury outboard repower. Flexible financing from 7.99% APR, terms from 36–180 months. No early payoff penalties. Harris Boat Works, Ontario Mercury dealer since 1947." />
+      <meta name="description" content={`Estimate monthly payments on a Mercury outboard repower. ${CURRENT_RATE.programLabel}. Terms from 36-180 months. No early payoff penalties. Harris Boat Works, Ontario Mercury dealer since 1947.`} />
       <meta name="keywords" content="Mercury financing calculator, outboard motor financing, boat motor payment estimator, Mercury repower financing, marine financing Ontario" />
       <link rel="canonical" href={`${SITE_URL}/finance-calculator`} />
 
