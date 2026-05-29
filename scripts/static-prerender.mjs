@@ -2776,6 +2776,14 @@ function motorPageSchema(m, slug) {
   if (m.start_type) additionalProperty.push({ "@type": "PropertyValue", "name": "Start", "value": m.start_type });
   if (m.control_type) additionalProperty.push({ "@type": "PropertyValue", "name": "Control", "value": m.control_type });
 
+  const display2 = (m.model_display || m.model || '').toLowerCase();
+  const familyGroupId =
+    display2.includes('prokicker') || display2.includes('pro kicker') ? 'mercury-prokicker-outboards'
+    : family === 'Pro XS' ? 'mercury-pro-xs-outboards'
+    : family === 'SeaPro' ? 'mercury-seapro-outboards'
+    : family === 'FourStroke' ? 'mercury-fourstroke-outboards'
+    : null;
+
   const product = {
     "@type": "Product",
     "@id": `${url}#product`,
@@ -2787,6 +2795,7 @@ function motorPageSchema(m, slug) {
     "url": url,
     ...(image ? { image } : {}),
     ...(modelNo ? { "mpn": modelNo, "sku": modelNo } : {}),
+    ...(familyGroupId ? { "isVariantOf": { "@type": "ProductGroup", "productGroupID": familyGroupId } } : {}),
     "additionalProperty": additionalProperty,
   };
 
