@@ -679,6 +679,9 @@ function splitDirectives(md: string): RenderChunk[] {
           youtubeProps: { id: idMatch[1], title: titleMatch?.[1]?.trim() },
         });
       }
+    } else if (name === 'customer-voice') {
+      const props = parseCustomerVoiceBody(body);
+      if (props) chunks.push({ kind: 'customer-voice', content: '', customerVoiceProps: props });
     }
     last = m.index + m[0].length;
   }
