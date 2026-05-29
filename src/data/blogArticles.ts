@@ -323,10 +323,16 @@ Fifth pattern: tritoons with standard gearcase almost always disappoint. The thi
 
 The CT conversation goes wrong in predictable ways. The four we see most often:
 
-- **"I'll just swap the gearcase later if I don't like it."** Retrofitting CT means new gearcase, driveshaft, water pump, prop. The total is usually within striking distance of a new motor. Decide CT vs standard at purchase, not later.
-- **"More thrust means more horsepower."** No. Same powerhead, same peak HP. CT changes how that power gets delivered to the water, not how much there is.
-- **"CT will fix my underpowered boat."** Only if the issue is hole shot or low-speed control. If you are underpowered at WOT, CT actually makes top speed worse. You need more HP, not a different gearcase.
-- **"All Mercury motors come with the CT option."** Wrong. Under 40 HP, only the ProKicker variants (9.9, 15, 25) have CT. Over 200 HP, you are into V8 territory where the gearcase options are different. The 40-115 HP FourStroke + 115-150 Pro XS range is the sweet spot.
+:::mythbuster
+- claim: I'll just swap the gearcase later if I don't like it.
+  rebuttal: Retrofitting CT means new gearcase, driveshaft, water pump, prop. The total is usually within striking distance of a new motor. Decide CT vs standard at purchase, not later.
+- claim: More thrust means more horsepower.
+  rebuttal: No. Same powerhead, same peak HP. CT changes how that power gets delivered to the water, not how much there is.
+- claim: CT will fix my underpowered boat.
+  rebuttal: Only if the issue is hole shot or low-speed control. If you are underpowered at WOT, CT actually makes top speed worse. You need more HP, not a different gearcase.
+- claim: All Mercury motors come with the CT option.
+  rebuttal: Wrong. Under 40 HP, only the ProKicker variants (9.9, 15, 25) have CT. Over 200 HP, you are into V8 territory where the gearcase options are different. The 40-115 HP FourStroke + 115-150 Pro XS range is the sweet spot.
+:::
 
 ## Ready to talk Command Thrust for your boat?
 
@@ -12108,10 +12114,16 @@ The brand-swap cost above a same-brand repower runs roughly $1,800 to $3,500 dep
 
 ## Common mistakes (the things we push back on)
 
-- **"Yamaha is more reliable than Mercury."** Both brands build reliable modern outboards. Real-world reliability difference is small.
-- **"Current Verado is supercharged."** No. Current Mercury Verado V8 (250-400 HP), V10 (350-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
-- **"The 2025 Mercury recall is a big deal."** For freshwater Ontario boats, the 2025 shift-shaft recall doesn't apply.
-- **"I'll get Yamaha because the warranty is longer."** Both brands offer extended warranty programs in the 8-year range. The practical difference is where you can get warranty service done.
+:::mythbuster
+- claim: Yamaha is more reliable than Mercury.
+  rebuttal: Both brands build reliable modern outboards. Real-world reliability difference is small.
+- claim: Current Verado is supercharged.
+  rebuttal: No. Current Mercury Verado V8 (250-400 HP), V10 (350-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+- claim: The 2025 Mercury recall is a big deal.
+  rebuttal: For freshwater Ontario boats, the 2025 shift-shaft recall doesn't apply.
+- claim: I'll get Yamaha because the warranty is longer.
+  rebuttal: Both brands offer extended warranty programs in the 8-year range. The practical difference is where you can get warranty service done.
+:::
 
 ## Ready to talk Mercury vs Yamaha?
 
@@ -14451,9 +14463,14 @@ HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-s
 
 ## Common mistakes (the things we push back on)
 
-- **"I'll just buy a new battery, that has to be it."** Often the issue is the battery cable, the ground point, or the battery switch. A new battery doesn't fix a corroded ground.
-- **"I sprayed starting fluid in it."** Starting fluid can damage EFI fuel rails. Don't use it on outboards. Tell us if you did.
-- **"It ran fine last fall."** Most no-start tickets ran fine last fall. The motor sat for 6 months. "Ran fine in fall" doesn't help us diagnose "won't start in May."
+:::mythbuster
+- claim: I'll just buy a new battery, that has to be it.
+  rebuttal: Often the issue is the battery cable, the ground point, or the battery switch. A new battery doesn't fix a corroded ground.
+- claim: I sprayed starting fluid in it.
+  rebuttal: Starting fluid can damage EFI fuel rails. Don't use it on outboards. Tell us if you did.
+- claim: It ran fine last fall.
+  rebuttal: Most no-start tickets ran fine last fall. The motor sat for 6 months. "Ran fine in fall" doesn't help us diagnose "won't start in May."
+:::
 
 ## Customer language we hear
 
@@ -19077,9 +19094,14 @@ HBW uses SmartCraft Connect Mobile internally for customer-side diagnostics.
 
 ## Common mistakes (the things we push back on)
 
-- **"I cleared the code and it went away, so it's fixed."** A code clears when you turn off the key, but if the cause isn't addressed, it fires again.
-- **"My buddy's Mercury had the same code and it was X."** Different engine families display the same code number for different faults. Verify before parts shop.
-- **"I shut off the alarm by holding the horn button."** Silencing is not resolution.
+:::mythbuster
+- claim: I cleared the code and it went away, so it's fixed.
+  rebuttal: A code clears when you turn off the key, but if the cause isn't addressed, it fires again.
+- claim: My buddy's Mercury had the same code and it was X.
+  rebuttal: Different engine families display the same code number for different faults. Verify before parts shop.
+- claim: I shut off the alarm by holding the horn button.
+  rebuttal: Silencing is not resolution.
+:::
 
 ## Ready for HBW to look at it?
 
@@ -33630,10 +33652,16 @@ Repowers are the highest-risk install in our shop. At HBW we water-test every re
 
 ## Common mistakes (the things we push back on)
 
-- **"I will use Sheffield Financial like I saw on Mercury's US website."** Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough.
-- **"I'll pull from my line of credit instead."** HELOC at prime + 2-3% means same monthly cost plus variable-rate risk. A fixed 7.99% loan with no prepayment penalty is usually cleaner.
-- **"I want zero interest financing."** Mercury Canada promotional rates (2.99%, 4.9%) require strong credit and are time-limited. Outside promo windows, 7.99% is the standard rate.
-- **"I'll finance through my own bank to get a lower rate."** Possible. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
+:::mythbuster
+- claim: I will use Sheffield Financial like I saw on Mercury's US website.
+  rebuttal: Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough.
+- claim: I'll pull from my line of credit instead.
+  rebuttal: HELOC at prime + 2-3% means same monthly cost plus variable-rate risk. A fixed 7.99% loan with no prepayment penalty is usually cleaner.
+- claim: I want zero interest financing.
+  rebuttal: Mercury Canada promotional rates (2.99%, 4.9%) require strong credit and are time-limited. Outside promo windows, 7.99% is the standard rate.
+- claim: I'll finance through my own bank to get a lower rate.
+  rebuttal: Possible. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
+:::
 
 ## Other Canadian financing options
 
@@ -33804,10 +33832,16 @@ Every Boost activation we do gets verified on the water at our Rice Lake dock be
 
 ## Common mistakes (the things we push back on)
 
-- **"I'll just buy the cheaper motor and Boost it to match the bigger one."** Math rarely works for new builds. The factory price difference to step up a tier is usually a better investment than Boost on the lower tier.
-- **"Boost will turn my 250 into a 350."** No. Boost peaks add roughly 10-20% over the rated HP, not 40%.
-- **"I can find an aftermarket version cheaper."** Aftermarket tunes void Mercury warranty AND can damage the engine internals. Mercury Boost is the only factory-authorized path.
-- **"Boost runs continuously."** It doesn't. Boost mode activates on demand under specific throttle/RPM conditions for short cycles.
+:::mythbuster
+- claim: I'll just buy the cheaper motor and Boost it to match the bigger one.
+  rebuttal: Math rarely works for new builds. The factory price difference to step up a tier is usually a better investment than Boost on the lower tier.
+- claim: Boost will turn my 250 into a 350.
+  rebuttal: No. Boost peaks add roughly 10-20% over the rated HP, not 40%.
+- claim: I can find an aftermarket version cheaper.
+  rebuttal: Aftermarket tunes void Mercury warranty AND can damage the engine internals. Mercury Boost is the only factory-authorized path.
+- claim: Boost runs continuously.
+  rebuttal: It doesn't. Boost mode activates on demand under specific throttle/RPM conditions for short cycles.
+:::
 
 ## Ready to talk Mercury Boost?
 
@@ -33913,9 +33947,14 @@ Every Mercury we sell or service gets a water test under load at our dock before
 
 ## Common mistakes (the things we push back on)
 
-- **"Honda is more reliable than Mercury."** Both brands build reliable motors in 2026.
-- **"Mercury Verado is supercharged so it has more issues."** No. Current Verado V8, V10, and V12 are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
-- **"I'll save money buying Honda and getting it serviced wherever."** Honda parts and service availability is genuinely thinner in our region.
+:::mythbuster
+- claim: Honda is more reliable than Mercury.
+  rebuttal: Both brands build reliable motors in 2026.
+- claim: Mercury Verado is supercharged so it has more issues.
+  rebuttal: No. Current Verado V8, V10, and V12 are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+- claim: I'll save money buying Honda and getting it serviced wherever.
+  rebuttal: Honda parts and service availability is genuinely thinner in our region.
+:::
 
 ## Ready to talk Mercury vs Honda?
 
@@ -34268,10 +34307,16 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 
 ## Common mistakes (the things we push back on)
 
-- **"I'll just buy the impeller in the next town."** Not every town on the TSW has a Mercury or Mercruiser dealer with parts on the shelf. Bring spares (impeller, fuel filter, plugs) or know who has them.
-- **"It ran fine in the driveway."** Most transit boats started the transit running fine. The transit itself produces conditions (long-duration use, varied fuel, lock idling, weed exposure) that surface latent issues.
-- **"I don't need a kicker, I'll just call for a tow."** Tow service on the TSW outside of major hubs can be slow or unavailable. A kicker is cheap insurance and we install them year-round.
-- **"I'll do my service in the spring, the TSW is the test."** A 386 km transit is not the time to discover whether your impeller survived winter. Test before the trip.
+:::mythbuster
+- claim: I'll just buy the impeller in the next town.
+  rebuttal: Not every town on the TSW has a Mercury or Mercruiser dealer with parts on the shelf. Bring spares (impeller, fuel filter, plugs) or know who has them.
+- claim: It ran fine in the driveway.
+  rebuttal: Most transit boats started the transit running fine. The transit itself produces conditions (long-duration use, varied fuel, lock idling, weed exposure) that surface latent issues.
+- claim: I don't need a kicker, I'll just call for a tow.
+  rebuttal: Tow service on the TSW outside of major hubs can be slow or unavailable. A kicker is cheap insurance and we install them year-round.
+- claim: I'll do my service in the spring, the TSW is the test.
+  rebuttal: A 386 km transit is not the time to discover whether your impeller survived winter. Test before the trip.
+:::
 
 ## Customer language we hear
 
@@ -34406,11 +34451,18 @@ Lake Ontario fishing falls under MNRF Zone 18 (with FMZ 19 along the eastern Lak
 
 ## Common mistakes (the things we push back on)
 
-- **"I'll just use the main motor for trolling."** Possible on some setups but hard on the main motor over a full season, noisy at trolling speed, and gives up trolling-speed precision. The kicker is the right answer for most Lake Ontario work.
-- **"30 amp alternator is enough."** For a single-fish boat with basic electronics, sometimes. For a 4-downrigger setup, you'll see voltage sag during long retrieval cycles. Plan for the larger alternator if you're running heavy.
-- **"One battery is enough if it's big."** A single battery shared between cranking and house loads will eventually fail to crank the main when you've drained it running electronics. Dual-battery is the standard.
-- **"I'll install the kicker myself."** Kicker installation involves transom integrity, tie-bar setup for steering integration, electrical connection to the main battery system, fuel routing, and (sometimes) remote-control integration. We see DIY installations come in for repair routinely. Worth doing right the first time.
-- **"Verado is supercharged."** Current Mercury Verado V8 (250-400 HP), V10 (350-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production. Any current Verado content claiming "supercharger" is out of date.
+:::mythbuster
+- claim: I'll just use the main motor for trolling.
+  rebuttal: Possible on some setups but hard on the main motor over a full season, noisy at trolling speed, and gives up trolling-speed precision. The kicker is the right answer for most Lake Ontario work.
+- claim: 30 amp alternator is enough.
+  rebuttal: For a single-fish boat with basic electronics, sometimes. For a 4-downrigger setup, you'll see voltage sag during long retrieval cycles. Plan for the larger alternator if you're running heavy.
+- claim: One battery is enough if it's big.
+  rebuttal: A single battery shared between cranking and house loads will eventually fail to crank the main when you've drained it running electronics. Dual-battery is the standard.
+- claim: I'll install the kicker myself.
+  rebuttal: Kicker installation involves transom integrity, tie-bar setup for steering integration, electrical connection to the main battery system, fuel routing, and (sometimes) remote-control integration. We see DIY installations come in for repair routinely. Worth doing right the first time.
+- claim: Verado is supercharged.
+  rebuttal: Current Mercury Verado V8 (250-400 HP), V10 (350-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production. Any current Verado content claiming "supercharger" is out of date.
+:::
 
 ## What HBW checks before delivery
 
@@ -34565,10 +34617,16 @@ This isn't a one-to-one performance guarantee. Specific prop selection and boat-
 
 The brand-swap conversation goes wrong in predictable ways.
 
-- **"Mercury will fix my underpowered boat."** Underpowered is a boat-and-prop problem, not a brand problem. A Mercury 90 on the same hull with the same prop as your Yamaha 90 makes nearly the same usable thrust. If you're truly underpowered, you need more HP, not a different brand.
-- **"My Yamaha was unreliable, so Mercury must be better."** Brand reliability is a real metric, but individual motor reliability is usually about maintenance and operating conditions. A poorly maintained Mercury fails just like a poorly maintained Yamaha. Buy from a dealer you trust and follow the maintenance schedule. That matters more than which logo is on the cowl.
-- **"I'll switch and skip the rigging upgrade to save money."** The control head, cables, harness, gauges, and prop are not optional. Switching brands without switching rigging means a non-functional rig. Build the brand-swap cost into your decision honestly.
-- **"Mercury Verado is supercharged so it's faster."** No. The CURRENT Mercury Verado V8/V10/V12 (250-600 HP) is naturally aspirated, NOT supercharged. The older inline-6 Verado was supercharged but that architecture is no longer in production. Current Verado is naturally aspirated and competes with Yamaha F-series on naturally aspirated four-stroke terms.
+:::mythbuster
+- claim: Mercury will fix my underpowered boat.
+  rebuttal: Underpowered is a boat-and-prop problem, not a brand problem. A Mercury 90 on the same hull with the same prop as your Yamaha 90 makes nearly the same usable thrust. If you're truly underpowered, you need more HP, not a different brand.
+- claim: My Yamaha was unreliable, so Mercury must be better.
+  rebuttal: Brand reliability is a real metric, but individual motor reliability is usually about maintenance and operating conditions. A poorly maintained Mercury fails just like a poorly maintained Yamaha. Buy from a dealer you trust and follow the maintenance schedule. That matters more than which logo is on the cowl.
+- claim: I'll switch and skip the rigging upgrade to save money.
+  rebuttal: The control head, cables, harness, gauges, and prop are not optional. Switching brands without switching rigging means a non-functional rig. Build the brand-swap cost into your decision honestly.
+- claim: Mercury Verado is supercharged so it's faster.
+  rebuttal: No. The CURRENT Mercury Verado V8/V10/V12 (250-600 HP) is naturally aspirated, NOT supercharged. The older inline-6 Verado was supercharged but that architecture is no longer in production. Current Verado is naturally aspirated and competes with Yamaha F-series on naturally aspirated four-stroke terms.
+:::
 
 ## Why this matters for Ontario boaters
 
@@ -34713,10 +34771,16 @@ Not a one-to-one performance guarantee. Prop and load conditions affect ranking.
 
 ## Common mistakes (the things we push back on)
 
-- **"Mercury Verado is supercharged and faster than Honda."** Wrong on the supercharged part for current Verado. CURRENT Mercury Verado V8/V10/V12 (250-600 HP) is naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production. Don't make the brand switch based on a marketing claim that doesn't match the current product.
-- **"My Honda is old and Honda is unreliable now."** Honda's reliability reputation is intact. If your specific motor is old and tired, the issue is age, not brand. A new Mercury will be more reliable than your old Honda, but a new Honda would also be more reliable than your old Honda. Brand isn't doing the work here.
-- **"I'll skip the new gauges to save money."** Honda gauges don't read Mercury data. Skipping new gauges leaves you with non-functional instruments. Build the gauge cost into your decision.
-- **"Honda has a 5-year warranty so Mercury must have a worse warranty."** Mercury Canada offers 3 years limited + 3 years corrosion CONCURRENT (not additive: both run for the same 3-year period). Honda's specific warranty terms in Canada vary by model and year. Verify both before assuming. Don't pivot brands on warranty math without checking the actual current numbers.
+:::mythbuster
+- claim: Mercury Verado is supercharged and faster than Honda.
+  rebuttal: Wrong on the supercharged part for current Verado. CURRENT Mercury Verado V8/V10/V12 (250-600 HP) is naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production. Don't make the brand switch based on a marketing claim that doesn't match the current product.
+- claim: My Honda is old and Honda is unreliable now.
+  rebuttal: Honda's reliability reputation is intact. If your specific motor is old and tired, the issue is age, not brand. A new Mercury will be more reliable than your old Honda, but a new Honda would also be more reliable than your old Honda. Brand isn't doing the work here.
+- claim: I'll skip the new gauges to save money.
+  rebuttal: Honda gauges don't read Mercury data. Skipping new gauges leaves you with non-functional instruments. Build the gauge cost into your decision.
+- claim: Honda has a 5-year warranty so Mercury must have a worse warranty.
+  rebuttal: Mercury Canada offers 3 years limited + 3 years corrosion CONCURRENT (not additive: both run for the same 3-year period). Honda's specific warranty terms in Canada vary by model and year. Verify both before assuming. Don't pivot brands on warranty math without checking the actual current numbers.
+:::
 
 ## When to switch + how to start
 
@@ -34874,10 +34938,16 @@ If any step fails, we fix and re-test before the customer takes the boat.
 
 ## Common mistakes (the things we push back on)
 
-- **"My dealer said the motor was tested in the shop, that\'s the same thing."** It\'s not. Shop-bench testing verifies the motor starts and idles. It doesn\'t verify performance under load, charging system under realistic electrical demand, or WOT RPM with the prop that\'s actually on the boat.
-- **"Water testing is just for high-end customers."** No. The HBW water test is run on every repower regardless of motor size or boat value. A 9.9 ProKicker gets the same protocol as a Verado 300.
-- **"If the motor\'s new, what could possibly go wrong?"** Several things. Prop pitch, charging system load, trim setup, steering bleed, sensor calibration. New motors are not problem-free. Verification matters.
-- **"I\'ll test it myself on my first trip."** You can, but if something\'s wrong, you\'re now 30 km from the dealer with a problem boat. HBW catches it at our dock so your first trip is a trip, not a tow.
+:::mythbuster
+- claim: My dealer said the motor was tested in the shop, that\'s the same thing.
+  rebuttal: It\'s not. Shop-bench testing verifies the motor starts and idles. It doesn\'t verify performance under load, charging system under realistic electrical demand, or WOT RPM with the prop that\'s actually on the boat.
+- claim: Water testing is just for high-end customers.
+  rebuttal: No. The HBW water test is run on every repower regardless of motor size or boat value. A 9.9 ProKicker gets the same protocol as a Verado 300.
+- claim: If the motor\'s new, what could possibly go wrong?
+  rebuttal: Several things. Prop pitch, charging system load, trim setup, steering bleed, sensor calibration. New motors are not problem-free. Verification matters.
+- claim: I\'ll test it myself on my first trip.
+  rebuttal: You can, but if something\'s wrong, you\'re now 30 km from the dealer with a problem boat. HBW catches it at our dock so your first trip is a trip, not a tow.
+:::
 
 ## Why this matters for the repower decision
 
