@@ -239,6 +239,10 @@ function rewritePullQuote(md: string): string {
   return md.replace(re, (_m, body) => `:::pull-quote\n${body}\n:::`);
 }
 
+function rewriteCustomerVoice(md: string): string {
+  const re = /^::customer-voice\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::customer-voice\n${body}\n:::`);
+
 function rewriteWalkaroundLeadCapture(md: string): string {
   // Bodiless directive: a single line `::walkaround-lead-capture` becomes
   // `:::walkaround-lead-capture\n\n:::` so the standard splitter matches it.
