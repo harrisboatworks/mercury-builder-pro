@@ -87,7 +87,7 @@ function CustomerVoiceCard({ item }: { item: CustomerVoiceItem }) {
           >
             &ldquo;
           </span>
-          <p className="relative font-serif italic text-repower-navy-900/85 text-[17px] md:text-[18px] leading-snug pt-6 md:pt-4 m-0">
+          <p className="relative font-playfair italic text-repower-navy-900/85 text-[17px] md:text-[18px] leading-snug pt-6 md:pt-4 m-0">
             {item.quote}
           </p>
         </div>
