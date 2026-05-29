@@ -6525,13 +6525,16 @@ We rig both at HBW. Specific recommendations depend on motor HP and how you use 
 
 ## Common mistakes
 
-**1. Buying tiller on a console boat.** Customer has a console boat but picks tiller to save money. The console becomes useless and the tiller is awkward to reach from it. Remote was the right answer.
-
-**2. Buying remote on a small tin boat.** Adding console and remote rigging to a 12-foot tin boat. The cost is disproportionate to the motor price and the functionality is worse than tiller.
-
-**3. Underestimating the physical demand of a high-HP tiller.** A 60 HP tiller can be physically demanding to operate, especially at higher speeds. Some customers underestimate this and regret the choice.
-
-**4. Forgetting the steering type decision.** Cable vs hydraulic affects feel and comfort. Worth thinking through during the repower, not after.
+:::mythbuster
+- claim: Buying tiller on a console boat.
+  rebuttal: Customer has a console boat but picks tiller to save money. The console becomes useless and the tiller is awkward to reach from it. Remote was the right answer.
+- claim: Buying remote on a small tin boat.
+  rebuttal: Adding console and remote rigging to a 12-foot tin boat. The cost is disproportionate to the motor price and the functionality is worse than tiller.
+- claim: Underestimating the physical demand of a high-HP tiller.
+  rebuttal: A 60 HP tiller can be physically demanding to operate, especially at higher speeds. Some customers underestimate this and regret the choice.
+- claim: Forgetting the steering type decision.
+  rebuttal: Cable vs hydraulic affects feel and comfort. Worth thinking through during the repower, not after.
+:::
 
 ---
 
