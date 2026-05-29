@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Percent, ArrowRight } from 'lucide-react';
 
-const RATE_CARD_IMAGE = '/lovable-uploads/td-financing-2026-rate-card.webp';
+const RATE_CARD_IMAGE = '/lovable-uploads/td-financing-2026-rate-card.jpg';
 const RATE_CARD_ALT =
   'Mercury TD Always On financing offer: 5.48% APR up to 240-month amortization through December 31, 2026';
 
