@@ -1,6 +1,9 @@
 import { Helmet } from '@/lib/helmet';
 import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { getAllFAQItems } from '@/data/faqData';
+import { getCurrentMercuryFinancingRate } from '@/components/promotions/TDAlwaysOnOffer';
+
+const CURRENT_RATE = getCurrentMercuryFinancingRate();
 
 // Select the key repower questions for this page's schema
 const REPOWER_SCHEMA_QUESTIONS = [
