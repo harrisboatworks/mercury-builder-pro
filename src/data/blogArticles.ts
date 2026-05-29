@@ -33553,7 +33553,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we w
     relatedSlugs: ['mercury-outboard-repower-cost-ontario-2026-cad', 'should-i-repower-or-buy-a-new-boat-an-honest-cost-comparison-ontario-2026', 'mercury-outboard-trade-in-value-guide', 'mercury-outboard-rigging-costs-ontario', 'mercury-extended-warranty-platinum-ontario', "hbw-on-water-load-test-mercury-repower-advantage-2026"],
     title: 'Mercury Outboard Monthly Payment Math (Ontario, 2026)',
     seoTitle: 'Mercury Outboard Monthly Payment | Ontario 2026',
-    description: 'What does a Mercury outboard repower cost per month in Ontario? Verified amortization tables at 7.99% APR through TD Auto Finance via Dealerplan Peterborough. Honest dealer math.',
+    description: 'What does a Mercury outboard repower cost per month in Ontario? Verified amortization tables. Current Mercury TD program: 5.48% APR through Dec 31, 2026 (OAC). Standard tiered rates resume afterward.',
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-28',
