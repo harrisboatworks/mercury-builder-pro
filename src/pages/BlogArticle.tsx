@@ -24,14 +24,9 @@ import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { MercuryVideo } from '@/components/blog/MercuryVideo';
+import { PremiumFaq } from '@/components/blog/PremiumFaq';
 
 
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from '@/components/ui/accordion';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -421,25 +416,7 @@ export default function BlogArticle() {
 
           {/* FAQ Section */}
           {article.faqs && article.faqs.length > 0 && (
-            <section aria-labelledby="faq-heading" className="mt-14 pt-10 border-t border-repower-navy-900/10">
-              <h2 id="faq-heading" className="font-display font-bold text-2xl md:text-[28px] text-repower-navy-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
-                Frequently Asked Questions
-              </h2>
-              <Accordion type="single" collapsible className="border-t border-repower-navy-900/10">
-                {article.faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`faq-${index}`} className="border-b border-repower-navy-900/10 group">
-                    <AccordionTrigger className="text-left font-sans font-semibold text-[16px] md:text-[17px] text-repower-navy-900 hover:no-underline py-5 px-2 hover:bg-repower-navy-900/[0.04] rounded-sm transition-colors [&>svg]:text-repower-navy-900">
-                      <span className="relative inline-block group-data-[state=open]:after:content-[''] group-data-[state=open]:after:absolute group-data-[state=open]:after:left-0 group-data-[state=open]:after:-bottom-1 group-data-[state=open]:after:h-[2px] group-data-[state=open]:after:w-10 group-data-[state=open]:after:bg-repower-gold">
-                        {faq.question}
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent className="font-sans text-[15px] text-repower-navy-900/75 pb-5 px-2 leading-relaxed faq-answer">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </section>
+            <PremiumFaq faqs={article.faqs} />
           )}
 
           {/* Share Section */}

@@ -14457,12 +14457,21 @@ HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-s
 
 ## Customer language we hear
 
-- "She sat all winter and won't fire": battery + fuel + plugs
-- "Just clicks": battery or starter solenoid
-- "I think I've got bad gas": phase separation or stale fuel
-- "Cranks but won't catch": fuel delivery or ignition
-- "The pee stream looks weak": impeller (different problem)
-- "When can you get me in?": call us at 905-342-2153
+:::customer-voice
+- quote: She sat all winter and won't fire
+  response: battery + fuel + plugs
+- quote: Just clicks
+  response: battery or starter solenoid
+- quote: I think I've got bad gas
+  response: phase separation or stale fuel
+- quote: Cranks but won't catch
+  response: fuel delivery or ignition
+- quote: The pee stream looks weak
+  response: impeller (different problem)
+- quote: When can you get me in?
+  response: call us at 905-342-2153
+  isCTA: true
+:::
 
 ## Ready for HBW to look at it?
 
@@ -34258,11 +34267,18 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 
 ## Customer language we hear
 
-- "I'm doing the Trent-Severn this year" → preventive service conversation
-- "I broke down on Rice Lake, can you help?" → on-water towing question
-- "I think I hit the railroad" → confirmed, lower unit inspection priority
-- "My motor is overheating coming into the lock" → impeller, intake, or thermostat
-- "When can you get me in?" → priority for transit boats; we work them in as best we can
+:::customer-voice
+- quote: I'm doing the Trent-Severn this year
+  response: preventive service conversation
+- quote: I broke down on Rice Lake, can you help?
+  response: on-water towing question
+- quote: I think I hit the railroad
+  response: confirmed, lower unit inspection priority
+- quote: My motor is overheating coming into the lock
+  response: impeller, intake, or thermostat
+- quote: When can you get me in?
+  response: priority for transit boats; we work them in as best we can
+:::
 
 ## Ready for HBW to look at it before, during, or after your transit?
 
@@ -34394,11 +34410,19 @@ Every kicker install, repower, or dual-battery rigging job at HBW gets a water t
 
 ## Customer language we hear
 
-- "I lost a fish because the rigger was slow" → alternator capacity or battery voltage sag
-- "My boat won't start after a day of fishing" → cranking battery drained by house loads, isolator issue
-- "I want quieter trolling" → kicker upgrade conversation
-- "I have a 9.9 but I want auto-trolling speed" → SmartCraft Troll Control candidate
-- "When can you get me in?" → 905-342-2153
+:::customer-voice
+- quote: I lost a fish because the rigger was slow
+  response: alternator capacity or battery voltage sag
+- quote: My boat won't start after a day of fishing
+  response: cranking battery drained by house loads, isolator issue
+- quote: I want quieter trolling
+  response: kicker upgrade conversation
+- quote: I have a 9.9 but I want auto-trolling speed
+  response: SmartCraft Troll Control candidate
+- quote: When can you get me in?
+  response: 905-342-2153
+  isCTA: true
+:::
 
 ## Ready to talk Lake Ontario salmon setup?
 
@@ -34857,11 +34881,19 @@ For a customer who plans to use the boat lightly (occasional cottage cruise, idl
 
 ## Customer language we hear
 
-- "How do I know the motor is set up right?" - water test answer
-- "My buddy had a new motor and the prop was wrong" - water test catches this
-- "I don\'t want any first-trip surprises" - water-tested delivery
-- "Are you Mercury Platinum?" - yes, plus the 80-foot dock walk
-- "When can you get me in?" - 905-342-2153
+:::customer-voice
+- quote: How do I know the motor is set up right?
+  response: water test answer
+- quote: My buddy had a new motor and the prop was wrong
+  response: water test catches this
+- quote: I don\'t want any first-trip surprises
+  response: water-tested delivery
+- quote: Are you Mercury Platinum?
+  response: yes, plus the 80-foot dock walk
+- quote: When can you get me in?
+  response: 905-342-2153
+  isCTA: true
+:::
 
 ## Ready to talk about a Mercury repower at HBW?
 
