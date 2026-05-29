@@ -2429,10 +2429,16 @@ Whichever family you pick, the rigging, water test, and warranty are identical a
 
 ## Common mistakes
 
-- **Buying Pro XS on a boat that does not need it.** A 16 foot aluminum with two anglers does not benefit from Pro XS tuning. You will spend extra and gain nothing.
-- **Assuming Pro XS uses way more fuel.** At cruise RPM, the families are close. The fuel gap shows up at wide-open throttle, which most repower customers rarely run.
-- **Confusing Boost with horsepower.** Boost is a 4-to-6-second power injection, not a sustained HP rating. It plants the boat on plane. It does not give you more top speed.
-- **Skipping the Command Thrust conversation.** On heavy pontoons, the Command Thrust gearcase often delivers what people think they need Pro XS for, at lower cost.
+:::mythbuster
+- claim: Buying Pro XS on a boat that does not need it.
+  rebuttal: A 16 foot aluminum with two anglers does not benefit from Pro XS tuning. You will spend extra and gain nothing.
+- claim: Assuming Pro XS uses way more fuel.
+  rebuttal: At cruise RPM, the families are close. The fuel gap shows up at wide-open throttle, which most repower customers rarely run.
+- claim: Confusing Boost with horsepower.
+  rebuttal: Boost is a 4-to-6-second power injection, not a sustained HP rating. It plants the boat on plane. It does not give you more top speed.
+- claim: Skipping the Command Thrust conversation.
+  rebuttal: On heavy pontoons, the Command Thrust gearcase often delivers what people think they need Pro XS for, at lower cost.
+:::
 
 ## Frequently Asked Questions
 
@@ -3554,15 +3560,19 @@ The customers who skip the kicker to save money almost always wish they hadn't. 
 
 ## Common mistakes on aluminum fishing boat repowers
 
-**1. Underbuying HP.** A 25 HP on a 16-foot aluminum that needs 60 HP leaves you fighting wind and current every day.
-
-**2. Skipping the kicker.** Two seasons later, they wish they'd bought it. Buy it once.
-
-**3. Wrong prop.** A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. We test props on the water during the sea trial of every repower.
-
-**4. Skipping Command Thrust on heavier hulls.** On 18–20 ft deep-V aluminum, Command Thrust gives meaningful hole-shot improvement at full load.
-
-**5. Buying Pro XS when FourStroke would do.** Pro XS earns the cost on tournament hulls and for anglers who run hard every morning. On typical recreational fishing boats, FourStroke is the better value.
+:::mythbuster
+heading: Common mistakes on aluminum fishing boat repowers
+- claim: Underbuying HP.
+  rebuttal: A 25 HP on a 16-foot aluminum that needs 60 HP leaves you fighting wind and current every day.
+- claim: Skipping the kicker.
+  rebuttal: Two seasons later, they wish they'd bought it. Buy it once.
+- claim: Wrong prop.
+  rebuttal: A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. We test props on the water during the sea trial of every repower.
+- claim: Skipping Command Thrust on heavier hulls.
+  rebuttal: On 18-20 ft deep-V aluminum, Command Thrust gives meaningful hole-shot improvement at full load.
+- claim: Buying Pro XS when FourStroke would do.
+  rebuttal: Pro XS earns the cost on tournament hulls and for anglers who run hard every morning. On typical recreational fishing boats, FourStroke is the better value.
+:::
 
 ---
 
@@ -6515,13 +6525,16 @@ We rig both at HBW. Specific recommendations depend on motor HP and how you use 
 
 ## Common mistakes
 
-**1. Buying tiller on a console boat.** Customer has a console boat but picks tiller to save money. The console becomes useless and the tiller is awkward to reach from it. Remote was the right answer.
-
-**2. Buying remote on a small tin boat.** Adding console and remote rigging to a 12-foot tin boat. The cost is disproportionate to the motor price and the functionality is worse than tiller.
-
-**3. Underestimating the physical demand of a high-HP tiller.** A 60 HP tiller can be physically demanding to operate, especially at higher speeds. Some customers underestimate this and regret the choice.
-
-**4. Forgetting the steering type decision.** Cable vs hydraulic affects feel and comfort. Worth thinking through during the repower, not after.
+:::mythbuster
+- claim: Buying tiller on a console boat.
+  rebuttal: Customer has a console boat but picks tiller to save money. The console becomes useless and the tiller is awkward to reach from it. Remote was the right answer.
+- claim: Buying remote on a small tin boat.
+  rebuttal: Adding console and remote rigging to a 12-foot tin boat. The cost is disproportionate to the motor price and the functionality is worse than tiller.
+- claim: Underestimating the physical demand of a high-HP tiller.
+  rebuttal: A 60 HP tiller can be physically demanding to operate, especially at higher speeds. Some customers underestimate this and regret the choice.
+- claim: Forgetting the steering type decision.
+  rebuttal: Cable vs hydraulic affects feel and comfort. Worth thinking through during the repower, not after.
+:::
 
 ---
 
