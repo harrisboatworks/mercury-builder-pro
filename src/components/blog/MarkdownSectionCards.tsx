@@ -22,6 +22,7 @@ import { MercuryPriceTable, type MercuryPriceTableProps } from './MercuryPriceTa
 import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 import { MercuryVideo } from './MercuryVideo';
 import { CustomerVoice, type CustomerVoiceProps, type CustomerVoiceItem } from './CustomerVoice';
+import { Mythbuster, type MythbusterProps, type MythbusterItem } from './Mythbuster';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -243,6 +244,11 @@ function rewritePullQuote(md: string): string {
 function rewriteCustomerVoice(md: string): string {
   const re = /^::customer-voice\s*\n([\s\S]*?)\n::\s*$/gm;
   return md.replace(re, (_m, body) => `:::customer-voice\n${body}\n:::`);
+}
+
+function rewriteMythbuster(md: string): string {
+  const re = /^::mythbuster\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::mythbuster\n${body}\n:::`);
 }
 
 
