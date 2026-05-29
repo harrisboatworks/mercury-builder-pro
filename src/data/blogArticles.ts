@@ -7842,6 +7842,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Is HST included in the financing?', answer: 'Through the Mercury Repower program at HBW, yes. Ontario HST at 13% is included in the financed amount.' },
       { question: 'When should I use a HELOC instead of dealer financing?', answer: 'If your HELOC rate is meaningfully lower than the dealer rate and you are comfortable using your home as collateral, the total interest savings over a longer term can be real. Worth discussing with your bank or financial advisor.' },
       { question: 'Where do I start?', answer: 'Build a full installed quote at mercuryrepower.ca. That gives you the real loan amount, not just the motor price.' },
+      { question: "Is the dealer's financing rate competitive with my bank?", answer: 'As of 2026-05-28, Mercury Marine Canada\'s active TD "Always On" program offers 5.48% APR (OAC) on new eligible Mercury outboards through December 31, 2026, with amortization up to 240 months. That\'s competitive with most bank or credit union personal loans for a marine purchase. If your personal credit profile gets you a lower rate at your bank, take it. If not, the dealer program is meaningfully better than standard tiered Mercury financing (which resumes after Dec 31, 2026 at rates from 7.99% APR).' },
     ]
   },
 
