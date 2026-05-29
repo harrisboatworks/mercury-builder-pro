@@ -14457,12 +14457,21 @@ HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-s
 
 ## Customer language we hear
 
-- "She sat all winter and won't fire": battery + fuel + plugs
-- "Just clicks": battery or starter solenoid
-- "I think I've got bad gas": phase separation or stale fuel
-- "Cranks but won't catch": fuel delivery or ignition
-- "The pee stream looks weak": impeller (different problem)
-- "When can you get me in?": call us at 905-342-2153
+:::customer-voice
+- quote: She sat all winter and won't fire
+  response: battery + fuel + plugs
+- quote: Just clicks
+  response: battery or starter solenoid
+- quote: I think I've got bad gas
+  response: phase separation or stale fuel
+- quote: Cranks but won't catch
+  response: fuel delivery or ignition
+- quote: The pee stream looks weak
+  response: impeller (different problem)
+- quote: When can you get me in?
+  response: call us at 905-342-2153
+  isCTA: true
+:::
 
 ## Ready for HBW to look at it?
 
