@@ -34410,11 +34410,19 @@ Every kicker install, repower, or dual-battery rigging job at HBW gets a water t
 
 ## Customer language we hear
 
-- "I lost a fish because the rigger was slow" → alternator capacity or battery voltage sag
-- "My boat won't start after a day of fishing" → cranking battery drained by house loads, isolator issue
-- "I want quieter trolling" → kicker upgrade conversation
-- "I have a 9.9 but I want auto-trolling speed" → SmartCraft Troll Control candidate
-- "When can you get me in?" → 905-342-2153
+:::customer-voice
+- quote: I lost a fish because the rigger was slow
+  response: alternator capacity or battery voltage sag
+- quote: My boat won't start after a day of fishing
+  response: cranking battery drained by house loads, isolator issue
+- quote: I want quieter trolling
+  response: kicker upgrade conversation
+- quote: I have a 9.9 but I want auto-trolling speed
+  response: SmartCraft Troll Control candidate
+- quote: When can you get me in?
+  response: 905-342-2153
+  isCTA: true
+:::
 
 ## Ready to talk Lake Ontario salmon setup?
 
