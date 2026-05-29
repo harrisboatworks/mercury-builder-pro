@@ -33744,7 +33744,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     slug: 'mercury-boost-is-it-worth-2000-dollars-2026',
     title: 'Mercury Boost: Is It Worth $2,000? Honest Dealer Math (2026)',
     seoTitle: 'Mercury Boost Worth It | HBW 2026',
-    description: 'Is the $2,000 Mercury Boost software activation worth it? Honest dealer math on eligible motors, real HP gain, and when buying a bigger motor is the smarter call.',
+    description: `Mercury Boost is a software upgrade, not a peak-horsepower add-on. The honest Ontario dealer breakdown: who's eligible (per Mercury's Feb 2026 serial list), what it actually does (5-21% mid-range acceleration), and what it really costs.`,
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
