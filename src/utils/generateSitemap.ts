@@ -219,14 +219,19 @@ function buildSlug(source: string): string {
     .replace(/^-|-$/g, '');
 }
 
-// Fetch motor slugs from Supabase for sitemap generation
+// Fetch motor slugs from Supabase for sitemap generation.
+// Mirrors the gate used by /motors/:slug (MotorPage.tsx): rows with
+// availability='Exclude' return 404, so they must NOT appear in the sitemap.
+// Also requires model_display so the rendered page has something to show
+// (avoids redirect/empty pages).
 export async function getMotorSitemapEntries(): Promise<SitemapEntry[]> {
   try {
     const { supabase } = await import('../integrations/supabase/client');
     const { data: motors, error } = await supabase
       .from('motor_models')
-      .select('model_key, model, model_display, updated_at, horsepower')
+      .select('model_key, model, model_display, updated_at, horsepower, availability')
       .not('model_key', 'is', null)
+      .neq('availability', 'Exclude')
       .order('horsepower', { ascending: true });
 
     if (error || !motors) {
@@ -237,7 +242,7 @@ export async function getMotorSitemapEntries(): Promise<SitemapEntry[]> {
     const today = new Date().toISOString().split('T')[0];
 
     return motors
-      .filter(m => m.model_key && m.model_key.trim() !== '')
+      .filter(m => m.model_key && m.model_key.trim() !== '' && (m.model_display || m.model))
       .map(m => ({
         loc: `/motors/${buildSlug(m.model_key!)}`,
         lastmod: m.updated_at ? m.updated_at.split('T')[0] : today,
