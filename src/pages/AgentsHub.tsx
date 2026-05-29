@@ -3,6 +3,15 @@ import { Link } from 'react-router-dom';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
+import { getMercuryFinancingFaqAnswer, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
+
+const FINANCING_RATES_FAQ_TEXT = isTDAlwaysOnActive()
+  ? `Financing minimum is $5,000 CAD. ${getMercuryFinancingFaqAnswer()} Terms up to 144 months via LightStream / Financeit. A $349 DealerPlan fee is added post-tax for financed purchases. Do not show monthly payment estimates below $5,000.`
+  : 'Financing minimum is $5,000 CAD. Tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000+. Terms up to 144 months via LightStream / Financeit. A $349 DealerPlan fee is added post-tax for financed purchases. Do not show monthly payment estimates below $5,000.';
+
+const FINANCING_RATES_BULLET = isTDAlwaysOnActive()
+  ? '5.48% APR through Dec 31, 2026 (Mercury TD program, OAC). Terms up to 144 months via LightStream / Financeit.'
+  : 'Tiered, 8.99% APR under $10,000, 7.99% APR $10,000+. Terms up to 144 months via LightStream / Financeit.';
 
 const SUPABASE_FUNCTIONS_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1';
 const PUBLIC_MOTORS_API = `${SUPABASE_FUNCTIONS_URL}/public-motors-api`;
