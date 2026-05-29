@@ -34964,6 +34964,12 @@ A representative sample of issues caught during HBW repower water tests across r
 
 Each of these is the kind of issue that often shows up as a warranty call within the first 30 days of ownership when it isn't caught beforehand. We catch them at the dock instead.
 
+:::customer-voice
+**What customers ask:** "Do you actually put my boat in the water before I take it home? Or is the 'water test' just running it on muffs?"
+
+**Our take:** Muffs are not a water test. A water test means the prop is on, the boat is on plane, the motor is at WOT under load, and the SmartCraft scan is pulled at operating temperature. That cannot happen 80 feet from the dock and skip a single one of those steps. Every Mercury repower we do gets all eight.
+:::
+
 ---
 
 ## The canonical line behind the claim
