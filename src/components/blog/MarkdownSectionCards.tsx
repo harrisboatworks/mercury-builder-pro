@@ -798,6 +798,9 @@ function renderMarkdownWithDirectives(
         />
       );
     }
+    if (chunk.kind === 'customer-voice' && chunk.customerVoiceProps) {
+      return <CustomerVoice key={`${keyPrefix}-cv-${i}`} {...chunk.customerVoiceProps} />;
+    }
     if (!chunk.content.trim()) return null;
     return (
       <ReactMarkdown
