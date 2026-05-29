@@ -34144,7 +34144,7 @@ For a customer fishing solo or with one partner, running the boat at idle or low
 
 This deserves its own section because we see it routinely on customer boats that come to us for service.
 
-**Mercury Command Thrust should ONLY be used on pontoon boats or very specific work boat applications.**
+**Mercury Command Thrust should ONLY be used on pontoon boats or very specific work boat applications.** Note: Mercury Command Thrust tops out at 115 HP. There is no 150 CT. If a 21+ ft pontoon needs more thrust than a 115 CT delivers, the upgrade path is the standard 150 L Pro XS, not a larger CT.
 
 Command Thrust (CT) uses a larger gearcase, larger propeller diameter, lower gear ratio (typically 2.33:1 instead of 2.07:1), and is engineered for low-speed thrust at the expense of top-end speed. It's the right call for:
 
