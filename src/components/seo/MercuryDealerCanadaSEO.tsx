@@ -1,6 +1,7 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
+import { getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
 
 const TRUST_FAQ = [
   {
@@ -33,7 +34,7 @@ const TRUST_FAQ = [
   },
   {
     question: "Do you offer Mercury financing?",
-    answer: "Yes, financing is available on Mercury motor purchases through DealerPlan and other lenders. The configurator at mercuryrepower.ca shows monthly payment estimates (8.99% under $10K total / 7.99% over $10K total) alongside the purchase price. Minimum financed amount is $5,000."
+    answer: `Yes, financing is available on Mercury motor purchases through DealerPlan and other lenders. The configurator at mercuryrepower.ca shows monthly payment estimates alongside the purchase price. ${getMercuryFinancingFaqAnswer()} Minimum financed amount is $5,000.`
   },
   {
     question: "What warranty comes with a new Mercury outboard?",

@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
 
 // Static "starting at" CAD prices for JSON-LD Offer (rich-result safe).
 // Source: motor_models.base_price (snapshot from inventory at build time).
@@ -39,7 +40,7 @@ export const PRO_XS_FAQ = [
   },
   {
     question: "Can I finance a Pro XS purchase?",
-    answer: "Yes, financing is available through DealerPlan and other lenders. Estimated monthly payments are shown alongside each motor at mercuryrepower.ca (8.99% under $10K total / 7.99% over $10K total). Minimum financed amount is $5,000."
+    answer: `Yes, financing is available through DealerPlan and other lenders. Estimated monthly payments are shown alongside each motor at mercuryrepower.ca. ${getMercuryFinancingFaqAnswer()} Minimum financed amount is $5,000.`
   },
   {
     question: "How do I take delivery of a Pro XS from Harris Boat Works?",
