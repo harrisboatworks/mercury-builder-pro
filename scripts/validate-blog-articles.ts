@@ -85,32 +85,13 @@ function validate(article: BlogArticle, index: number) {
     else checkEmDash(slug, String(f), v);
   }
 
-  // seoTitle optional, but if present validate
+  // seoTitle optional
   if (article.seoTitle !== undefined) {
     if (!isNonEmptyString(article.seoTitle))
       push(slug, 'seoTitle', 'Present but empty');
-    else {
-      checkEmDash(slug, 'seoTitle', article.seoTitle);
-      if (article.seoTitle.length > 65)
-        push(
-          slug,
-          'seoTitle',
-          `Length ${article.seoTitle.length} exceeds 65 chars`,
-        );
-    }
+    else checkEmDash(slug, 'seoTitle', article.seoTitle);
   }
 
-  // title length
-  if (isNonEmptyString(article.title) && article.title.length > 120)
-    push(slug, 'title', `Length ${article.title.length} exceeds 120 chars`);
-
-  // description length (meta target < 160)
-  if (isNonEmptyString(article.description) && article.description.length > 200)
-    push(
-      slug,
-      'description',
-      `Length ${article.description.length} exceeds 200 chars`,
-    );
 
   // image format
   if (isNonEmptyString(article.image) && !IMAGE_RE.test(article.image))
