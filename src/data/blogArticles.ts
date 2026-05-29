@@ -34207,7 +34207,16 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) and we'll show y
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.`,
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.
+
+---
+
+**Related guides:**
+- [Mercury 115 HP FourStroke Review, Ontario](/blog/mercury-115-hp-fourstroke-review-ontario)
+- [Best Pontoon Outboard 2026: Mercury](/blog/best-pontoon-outboard-2026-mercury)
+- [Mercury Command Thrust Pontoon Eligibility 2026](/blog/mercury-command-thrust-pontoon-eligibility-2026)
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
+- [Mercury Outboard Monthly Payment Math, Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)`,
     image: '/lovable-uploads/How_to_Choose_HP.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
