@@ -26,13 +26,8 @@ export function isTDAlwaysOnActive(now: Date = new Date()): boolean {
   return now.getTime() <= new Date(OFFER_END_ISO).getTime();
 }
 
-const BULLETS = [
-  '5.48% APR (OAC)',
-  'Term up to 60 months',
-  'Amortization up to 240 months',
-  'New eligible Mercury outboards only',
-  'Ends Dec 31, 2026',
-];
+
+
 
 export function TDAlwaysOnCard() {
   // Auto-hide after expiry. See OFFER_END_ISO above.
