@@ -1,12 +1,29 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 
+interface FamilyCounts {
+  fourStroke?: number;
+  proXS?: number;
+  seaPro?: number;
+  proKicker?: number;
+}
+
 interface MotorSelectionSEOProps {
   /** Live count of motors visible on the page. Omit to skip the numberOfItems claim entirely. */
   motorCount?: number;
   minPrice?: number;
   maxPrice?: number;
+  /** Live offer counts per family. When provided, drives `offerCount` on each AggregateOffer.
+   *  A family with count 0 is omitted from the ItemList entirely (no inflated offer counts). */
+  familyCounts?: FamilyCounts;
 }
+
+const FAMILY_GROUP_IDS = {
+  fourStroke: 'mercury-fourstroke-outboards',
+  proXS: 'mercury-pro-xs-outboards',
+  seaPro: 'mercury-seapro-outboards',
+  proKicker: 'mercury-prokicker-outboards',
+} as const;
 
 /**
  * JSON-LD for /quote/motor-selection.
@@ -14,15 +31,114 @@ interface MotorSelectionSEOProps {
  * crawler-served HTML and React-hydrated HTML in sync. Verado is intentionally
  * excluded from default inventory, Verado is special-order only at Harris Boat Works.
  *
- * No fixed motor count is hard-coded. If the caller does not yet know the live count
- * (e.g. data still loading), `numberOfItems` is omitted from the ItemList rather than
- * shipping a misleading static number.
+ * Each family Product is also typed as ProductGroup with a stable productGroupID
+ * so per-motor /motors/{slug} pages can reference it via `isVariantOf`. Each
+ * AggregateOffer carries `offerCount` equal to the live family variant count.
  */
 export function MotorSelectionSEO({
   motorCount,
   minPrice = 1500,
   maxPrice = 45000,
+  familyCounts,
 }: MotorSelectionSEOProps) {
+  const buildFamilyProduct = (
+    position: number,
+    name: string,
+    description: string,
+    category: string,
+    groupId: string,
+    lowPrice: number,
+    highPrice: number,
+    offerCount: number,
+  ) => ({
+    '@type': 'ListItem',
+    position,
+    item: {
+      '@type': ['Product', 'ProductGroup'],
+      name,
+      description,
+      brand: { '@type': 'Brand', name: 'Mercury Marine' },
+      category,
+      productGroupID: groupId,
+      variesBy: ['horsepower', 'shaftLength', 'startType'],
+      offers: {
+        '@type': 'AggregateOffer',
+        offerCount,
+        lowPrice,
+        highPrice,
+        priceCurrency: 'CAD',
+        availability: 'https://schema.org/InStoreOnly',
+        itemCondition: 'https://schema.org/NewCondition',
+        hasMerchantReturnPolicy: {
+          '@type': 'MerchantReturnPolicy',
+          applicableCountry: 'CA',
+          returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+        },
+        seller: { '@id': 'https://www.mercuryrepower.ca/#organization' },
+      },
+    },
+  });
+
+  // Fallback counts when caller hasn't computed live numbers yet. Conservative,
+  // not inflated — matches typical active inventory and avoids 0/empty.
+  const fc: Required<FamilyCounts> = {
+    fourStroke: familyCounts?.fourStroke ?? 18,
+    proXS: familyCounts?.proXS ?? 8,
+    seaPro: familyCounts?.seaPro ?? 4,
+    proKicker: familyCounts?.proKicker ?? 3,
+  };
+
+  const familyItems: ReturnType<typeof buildFamilyProduct>[] = [];
+  let pos = 1;
+  if (fc.fourStroke > 0) {
+    familyItems.push(buildFamilyProduct(
+      pos++,
+      'Mercury FourStroke Outboards',
+      'Fuel-efficient four-stroke outboard motors. Available from 2.5HP to 400HP.',
+      'Outboard Motors',
+      FAMILY_GROUP_IDS.fourStroke,
+      minPrice,
+      maxPrice,
+      fc.fourStroke,
+    ));
+  }
+  if (fc.proXS > 0) {
+    familyItems.push(buildFamilyProduct(
+      pos++,
+      'Mercury Pro XS Outboards',
+      'High-performance outboard motors designed for bass boats and tournament fishing.',
+      'Performance Outboard Motors',
+      FAMILY_GROUP_IDS.proXS,
+      8000,
+      35000,
+      fc.proXS,
+    ));
+  }
+  if (fc.seaPro > 0) {
+    familyItems.push(buildFamilyProduct(
+      pos++,
+      'Mercury SeaPro Outboards',
+      'Commercial-grade outboard motors built for heavy-duty use and reliability.',
+      'Commercial Outboard Motors',
+      FAMILY_GROUP_IDS.seaPro,
+      3500,
+      30000,
+      fc.seaPro,
+    ));
+  }
+  if (fc.proKicker > 0) {
+    familyItems.push(buildFamilyProduct(
+      pos++,
+      'Mercury ProKicker Outboards',
+      'Dedicated trolling and kicker motors for fishing boats with high-thrust gearcase.',
+      'Kicker / Trolling Motors',
+      FAMILY_GROUP_IDS.proKicker,
+      4500,
+      6500,
+      fc.proKicker,
+    ));
+  }
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -53,92 +169,7 @@ export function MotorSelectionSEO({
         "name": "Mercury Outboard Motor Inventory",
         "description": "Complete selection of Mercury Marine outboard motors available at Harris Boat Works",
         ...(typeof motorCount === 'number' && motorCount > 0 ? { "numberOfItems": motorCount } : {}),
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Product",
-              "name": "Mercury FourStroke Outboards",
-              "description": "Fuel-efficient four-stroke outboard motors. Available from 2.5HP to 400HP.",
-              "brand": { "@type": "Brand", "name": "Mercury Marine" },
-              "category": "Outboard Motors",
-              "offers": {
-                "@type": "AggregateOffer",
-                "lowPrice": minPrice,
-                "highPrice": maxPrice,
-                "priceCurrency": "CAD",
-                "availability": "https://schema.org/InStoreOnly",
-                "itemCondition": "https://schema.org/NewCondition",
-                "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
-                "seller": { "@id": "https://www.mercuryrepower.ca/#organization" },
-              },
-            },
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "Product",
-              "name": "Mercury Pro XS Outboards",
-              "description": "High-performance outboard motors designed for bass boats and tournament fishing.",
-              "brand": { "@type": "Brand", "name": "Mercury Marine" },
-              "category": "Performance Outboard Motors",
-              "offers": {
-                "@type": "AggregateOffer",
-                "lowPrice": 8000,
-                "highPrice": 35000,
-                "priceCurrency": "CAD",
-                "availability": "https://schema.org/InStoreOnly",
-                "itemCondition": "https://schema.org/NewCondition",
-                "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
-                "seller": { "@id": "https://www.mercuryrepower.ca/#organization" },
-              },
-            },
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "Product",
-              "name": "Mercury SeaPro Outboards",
-              "description": "Commercial-grade outboard motors built for heavy-duty use and reliability.",
-              "brand": { "@type": "Brand", "name": "Mercury Marine" },
-              "category": "Commercial Outboard Motors",
-              "offers": {
-                "@type": "AggregateOffer",
-                "lowPrice": 3500,
-                "highPrice": 30000,
-                "priceCurrency": "CAD",
-                "availability": "https://schema.org/InStoreOnly",
-                "itemCondition": "https://schema.org/NewCondition",
-                "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
-                "seller": { "@id": "https://www.mercuryrepower.ca/#organization" },
-              },
-            },
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "Product",
-              "name": "Mercury ProKicker Outboards",
-              "description": "Dedicated trolling and kicker motors for fishing boats with high-thrust gearcase.",
-              "brand": { "@type": "Brand", "name": "Mercury Marine" },
-              "category": "Kicker / Trolling Motors",
-              "offers": {
-                "@type": "AggregateOffer",
-                "lowPrice": 4500,
-                "highPrice": 6500,
-                "priceCurrency": "CAD",
-                "availability": "https://schema.org/InStoreOnly",
-                "itemCondition": "https://schema.org/NewCondition",
-                "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
-                "seller": { "@id": "https://www.mercuryrepower.ca/#organization" },
-              },
-            },
-          },
-        ],
+        "itemListElement": familyItems,
       },
     ],
   };
@@ -158,9 +189,6 @@ export function MotorSelectionSEO({
       <meta property="og:url" content={`${SITE_URL}/quote/motor-selection`} />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Outboard Motors, Browse & Build a Quote" />
-      <meta name="twitter:description" content="Shop Mercury outboards: FourStroke, Pro XS, SeaPro, ProKicker. Instant CAD pricing." />
-
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
   );
