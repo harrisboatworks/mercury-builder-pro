@@ -12,7 +12,7 @@ export function FinancingSEO() {
         "@id": `${SITE_URL}/financing-application`,
         "url": `${SITE_URL}/financing-application`,
         "name": "Mercury Outboard Motor Financing | Apply Online | Harris Boat Works",
-        "description": "Apply for boat motor financing online. Competitive rates from 6.99% APR. Quick approval process. Finance your Mercury outboard purchase with flexible terms.",
+        "description": `Apply for boat motor financing online. ${CURRENT_RATE.programLabel}. Quick approval process. Finance your Mercury outboard purchase with flexible terms.`,
         "isPartOf": {
           "@id": `${SITE_URL}/#website`
         },
