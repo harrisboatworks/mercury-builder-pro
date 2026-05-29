@@ -792,6 +792,9 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'customer-voice') {
       const props = parseCustomerVoiceBody(body);
       if (props) chunks.push({ kind: 'customer-voice', content: '', customerVoiceProps: props });
+    } else if (name === 'mythbuster') {
+      const props = parseMythbusterBody(body);
+      if (props) chunks.push({ kind: 'mythbuster', content: '', mythbusterProps: props });
     }
     last = m.index + m[0].length;
   }
