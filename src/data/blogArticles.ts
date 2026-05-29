@@ -33744,142 +33744,181 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     slug: 'mercury-boost-is-it-worth-2000-dollars-2026',
     title: 'Mercury Boost: Is It Worth $2,000? Honest Dealer Math (2026)',
     seoTitle: 'Mercury Boost Worth It | HBW 2026',
-    description: 'Is the $2,000 Mercury Boost software activation worth it? Honest dealer math on eligible motors, real HP gain, and when buying a bigger motor is the smarter call.',
+    description: `Mercury Boost is a software upgrade, not a peak-horsepower add-on. The honest Ontario dealer breakdown: who's eligible (per Mercury's Feb 2026 serial list), what it actually does (5-21% mid-range acceleration), and what it really costs.`,
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-05-28',
+    dateModified: '2026-05-29',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '8 min read',
     keywords: ["Mercury Boost", "Mercury Boost worth it", "Mercury Boost cost", "Pro XS Boost", "Verado Boost", "Mercury Boost software"],
     relatedSlugs: ["mercury-boost-eligibility-checker-2026", "mercury-pro-xs-buyer-guide-ontario", "mercury-300-vs-400-pro-xs-comparison", "mercury-outboard-monthly-payment-ontario-2026", "mercury-outboard-repower-cost-ontario-2026-cad", "hbw-on-water-load-test-mercury-repower-advantage-2026"],
-    content: `*Last reviewed: 2026-05-28*
+    content: `# Mercury Boost: Is It Worth It? An Honest Ontario Dealer Breakdown (2026)
 
-> **Quick answer:** Mercury Boost is a software activation (not a hardware module) that unlocks additional peak horsepower on eligible Mercury motors. It costs roughly $2,000 installed at the dealer. For owners running compatible Pro XS or V10 motors who'd otherwise need to swap to a bigger motor, Boost is usually the right call. For new boat purchases or repowers, buying the larger HP tier outright is often the better math. Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+**Published:** 2026-05-28 | **Updated:** 2026-05-29 (factual corrections)
+**Author:** Jay Harris, Harris Boat Works
+**Reading time:** 10 minutes
 
-A Mercury customer walks into the shop with a clean Mercury motor and asks one of two questions: "Can I make this faster without buying a new motor?" or "Should I upgrade to the next HP tier instead?" Mercury Boost is the answer to the first question. Whether it's the right answer depends on which motor you have and what you're trying to do.
+> **MERCURY PLATINUM DEALER | FAMILY OWNED SINCE 1947 | MERCURY DEALER SINCE 1965**
 
-This page is the honest version. We sell Boost activations. We also sell new motors. We have no reason to push you toward one if the other is the better deal for your boat.
+---
 
-## What Mercury Boost actually is
+## TL;DR
 
-Mercury Boost is a **software activation**. There is no hardware module, no kit, no piping or wiring change. Your motor's existing computer accepts a new power map that unlocks additional peak horsepower for short-duration boost cycles. The cowl stays closed. Nothing changes externally.
+Mercury Boost is a software upgrade Mercury announced at the 2026 Miami International Boat Show. It is **not** a peak-horsepower add-on. It does **not** make your motor a bigger motor. What it actually does is improve **mid-range acceleration response**, the punch you feel between roughly 40 and 80 km/h when you push the throttle.
 
-The activation happens at a Mercury dealer using Mercury's CDS (Computer Diagnostic System) software. A dealer technician connects the diagnostic tool to your motor, flashes the new power map, and verifies the activation through VesselView (now rebranded SmartCraft Connect Mobile).
+If you've seen the "$2,000 for 50 more horsepower" headlines floating around, those are wrong. The real picture is more interesting, and probably more useful, than the rumour. Here's the honest dealer breakdown.
 
-**What Boost is NOT:**
-- It is not a turbocharger or supercharger
-- It is not a piggyback ECU
-- It is not an aftermarket tune
-- It is not a hardware modification
+> **Editor's note (2026-05-29):** An earlier version of this post repeated several inaccurate claims circulating online: wrong eligible motor list, wrong price, and a "peak HP gain" mechanism. This version corrects all of them against Mercury Marine's official Feb 2026 specification.
 
-**What Boost IS:**
-- A factory-authorized software flash from Mercury
-- A peak-HP increase available on eligible motor families
-- A non-permanent change (Mercury dealers can flash back to stock if needed)
-- Warranty-compatible when activated at an authorized Mercury dealer
+---
 
-For a visual walkthrough of how Boost actually appears in use, see [Mercury Marine's official Boost overview video](https://youtu.be/bbo46ZEw8Oo) and the [Australian dealer's plain-English explanation of Boost on a Pro XS](https://www.youtube.com/watch?v=9OcvxB-rprA).
+## What Mercury Boost actually does
 
-## Which motors are eligible
+Mercury Boost is a calibration upgrade, new ECU mapping that changes how the motor responds during throttle-up. According to Mercury's official spec and independent testing reported at the 2026 Miami show:
 
-Mercury Boost is currently available on specific Mercury Pro XS and Verado motor families. The motors most commonly flashed at HBW are:
-- Mercury 300R / 400R V8 Pro XS
-- Mercury V10 350 / 400 / 450R
-- Mercury Verado V8/V10/V12 (specific configurations)
+- **5% to 21% improvement in mid-range acceleration** (depending on motor and hull)
+- **Faster 0-to-top-speed time**
+- **No change to peak rated horsepower**
+- **No change to wide-open-throttle top speed in most cases**
+- Activates during throttle-up, primarily in the **~40-80 km/h** punch-out zone
 
-The eligible-engine list updates as Mercury releases new firmware. We verify eligibility against your motor's serial number and engine family before quoting. If you have a Mercury FourStroke 9.9 to 250 HP, Boost is not available for your motor.
+In a real-world test reported by [BoatBlurb](https://www.boatblurb.com/post/mercury-reveals-2026-tech-including-boost-software-upgrade) and corroborated by independent reviews, a BassCat 19 running a 200 HP V8 Pro XS gained roughly **17% faster mid-range acceleration** from 40 to 80 km/h. The boat did not become faster at WOT. It became faster *getting* to WOT and snappier *out of corners.*
 
-## What does the activation actually cost?
+**Mercury Boost won the 2026 Miami Innovation Award** for advancing outboard engine performance. The award was for software-based response improvement, not for peak HP.
 
-Mercury Boost activation pricing at HBW in 2026 is **roughly $2,000 CAD installed**. This includes Mercury's software activation fee, dealer technician time, VesselView setup and verification, and our on-water test under boost mode.
+---
 
-## Real-world HP gain
+## Which motors are actually eligible
 
-The HP gain from Boost varies by motor family:
-- 300R V8 Pro XS at Boost mode: peaks at approximately 320 HP
-- 400R V10 at Boost mode: peaks at approximately 420-450 HP depending on configuration
-- 250 V8 Pro XS (where eligible): adds usable HP at the top of the RPM range
+This is where the early online rumour mill got it most wrong. Per Mercury Marine's published Feb 2026 list, eligible motors are:
 
-Boost mode is not continuous full-time. It activates on demand under specific RPM and throttle conditions for short cycles (typically 60-90 seconds). The intended use case is bursts of peak power for hole-shot, getting on plane with a heavy load, or sprint speed runs.
+### Dealer-installed Boost upgrade (existing motors)
+- **175, 200, 250, 300 HP FourStroke**, serial 2B529482 or later
+- **175, 200, 225, 250, 300 HP Pro XS**, serial 2B529482 or later
+- **250, 300 HP Verado**, serial 2B529482 or later
+- **350 HP Verado**, serial range 3B266064 to 3B578266
+- **Mercury Racing 150R**, serial 3B547096 or later
 
-## The $2,000 question: is it worth it?
+### Factory-installed Boost (new motors)
+- All of the above models manufactured in **Q2 2026 and later**
 
-Three honest scenarios where Boost makes sense, and two where it doesn't.
+### NOT eligible (despite what you may have read)
+- **300R V8 Pro XS**, not on the eligible list
+- **400R V8 Pro XS**, not on the eligible list
+- **V10 350, 400, 450R**, not on the eligible list
+- Anything below 150 HP (with the single exception of the Mercury Racing 150R)
+- Older serial-number motors below the 2B529482 cutoff
 
-### When Boost pays off
+If anyone tells you Boost is available for your 300R, 400R, or V10, ask them to show you the serial-number range in Mercury's published eligibility list. If they can't produce it, walk. The list above is the official one as of Feb 2026.
 
-**Scenario A: You already own an eligible motor and want more peak power.**
-A 300R Pro XS owner who pays $2,000 to unlock approximately 20 extra HP at the top end is paying about $100 per HP for software-only activation. Compare that to the trade-in delta to step up to a 400R Pro XS, which is typically $15,000 to $20,000 difference. The math heavily favours Boost.
+**The single most common Ontario motor that IS eligible:** the **200 HP and 250 HP V8 Pro XS** on a modern bass or multi-species rig built from late 2024 onward. That serial-number window matters.
 
-**Scenario B: You hit the capacity-plate limit but want more punch.**
-If your boat's capacity plate maxes you at 300 HP and you own a 300R Pro XS, you cannot legally rig a bigger motor. Boost unlocks more peak HP without changing the certified nameplate.
+---
 
-**Scenario C: You're 1-2 seasons from selling the boat and want to maximize resale.**
-A Mercury Pro XS with Boost activated has stronger appeal in the used market. For a $2,000 flash on a $25,000+ motor, the resale lift can offset most of the activation cost.
+## What it actually costs
 
-### When buying the bigger motor is the better call
+Here's the second piece the rumour mill got wrong. Boost is **not** $2,000 CAD.
 
-**Scenario D: You're buying new or repowering anyway.**
-If you're looking at a 300R Pro XS for a new build or repower, the smarter math is usually to spec the 400R from the factory instead. The 400R gives you a higher base AND can also be Boosted further. You also get fresh warranty.
+Published pricing from initial dealer rollouts:
 
-**Scenario E: You'd never actually use the extra HP.**
-If your boat is a pontoon, a cruiser, or a fishing boat that lives at trolling speed, Boost mode rarely activates because it requires high-throttle conditions. Owners who don't run aggressive throttle profiles spend $2,000 and barely notice the difference.
+- **$250 USD** at one US Mercury dealer (Waypoint Marine launch announcement)
+- **$395 AUD** at Australian Mercury dealers ([Hi Tech Marine](https://www.hitechmarine.com.au/mercury-boost-upgrade-perth-wa/))
 
-## The HBW on-water Boost test
+Converting and adding Canadian markup for dealer-installed labor and warranty handling, the realistic Canadian retail is likely in the **$300-$500 CAD** range, plus install if the motor needs to be at the dealer for the flash.
 
-Every Boost activation we do gets verified on the water at our Rice Lake dock before the customer takes the boat home. Cold start, idle, warm-up, on-plane behaviour, top-end RPM with and without Boost mode active. We confirm the VesselView display shows the new HP rating and the BOOST indicator triggers correctly. If anything is off in the flash, we catch it at our dock.
+> **Confirm with HBW before booking.** Mercury Canada has not published an official Canadian MAP at the time of writing (May 2026). When we have firm Canadian pricing in writing, we'll update this post. Verify any pricing you're quoted against Mercury Canada's official MAP once it's published. Don't pay based on speculation.
 
-## Boost vs. upgrading the motor: side by side
+---
 
-| Factor | Mercury Boost (software) | Upgrading to next HP tier |
-|---|---|---|
-| Cost | ~$2,000 installed | $5,000 to $20,000+ |
-| Peak HP gain | ~15-50 HP depending on motor | Significant; matches new motor rating |
-| Permanent change | Yes (until flashed back) | Yes |
-| Affects warranty | No (factory-authorized) | New motor gets fresh warranty |
-| Resale impact | Modest lift | Significant lift |
-| Capacity-plate compliance | Verify nameplate doesn't change | Limited by capacity plate |
-| Best for | Existing eligible motor owners | New buyers / repowers |
+## Is Boost actually worth it?
 
-## Common mistakes (the things we push back on)
+Now the honest question. Three scenarios.
 
-:::mythbuster
-- claim: I'll just buy the cheaper motor and Boost it to match the bigger one.
-  rebuttal: Math rarely works for new builds. The factory price difference to step up a tier is usually a better investment than Boost on the lower tier.
-- claim: Boost will turn my 250 into a 350.
-  rebuttal: No. Boost peaks add roughly 10-20% over the rated HP, not 40%.
-- claim: I can find an aftermarket version cheaper.
-  rebuttal: Aftermarket tunes void Mercury warranty AND can damage the engine internals. Mercury Boost is the only factory-authorized path.
-- claim: Boost runs continuously.
-  rebuttal: It doesn't. Boost mode activates on demand under specific throttle/RPM conditions for short cycles.
-:::
+### Scenario 1: You run a tournament rig and care about hole-shot
+**Verdict: Probably yes.** If you have a 200-250 HP V8 Pro XS on a bass rig and you spend the day pulling out of holes, running tournament starts, and punching through chop, faster mid-range response is a real upgrade. Seventeen percent faster 40 to 80 km/h is a noticeable difference when you do it 30 times in a day.
 
-## Ready to talk Mercury Boost?
+### Scenario 2: You cruise, fish casually, and run a 19-21 ft family boat
+**Verdict: Probably no.** Boost doesn't make you faster at cruise. It doesn't add top-end. If you spend most of your time at a steady 40-50 km/h holding the throttle constant, Boost is invisible. Save the money.
 
-If you have an eligible Mercury motor and you want to know if Boost makes sense for your specific boat, we'll run through the math honestly. If the better answer is "step up to the next motor at next repower" instead, we'll tell you that too.
+### Scenario 3: You're shopping for a new motor and Boost is factory-installed
+**Verdict: It depends on the price delta.** If a Q2 2026+ motor with factory Boost is priced within $300-$500 of the same motor without it, take the Boost version. If you're seeing a $1,500+ premium attributed to Boost, ask for the line-item Mercury MAP before you commit. The official Boost upgrade pricing doesn't justify a premium that large on its own.
 
-**Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Eligibility checker:** [mercuryrepower.ca/tools](https://mercuryrepower.ca/tools)
+---
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake.
+## Boost vs upgrading to a bigger motor (the honest framing)
+
+This is the question we hear most. **"Is Boost a way to skip buying a bigger motor?"**
+
+**No.** Here is why:
+
+- Boost does not change peak HP. A 200 HP V8 Pro XS with Boost is still a 200 HP motor at WOT.
+- Boost does not change top speed (in most rigs).
+- Boost does not let you plane a heavier boat at lower RPM.
+- Boost improves **how quickly you reach WOT**, not what WOT actually is.
+
+If your boat is underpowered (won't hold plane with passengers, runs out of breath up-current, can't push the load you need), Boost won't fix that. You need more cubic inches.
+
+If your boat has enough motor but you wish the punch out of corners was sharper, Boost might be the better spend than a re-prop.
+
+The honest framing: **Boost is a response tuning upgrade, not a power upgrade.** Two different problems.
+
+---
+
+## When Boost makes sense (checklist)
+
+- Your motor is on the official Mercury eligible list (check serial number)
+- You run a tournament, ski, or wakeboard-style boat where hole-shot matters
+- Canadian price lands in line with the official Mercury Canada MAP when published
+- You already have enough peak HP for your hull and load
+
+## When Boost does NOT make sense (checklist)
+
+- Your motor isn't on the eligible list (300R, 400R, V10. Sorry, no)
+- You spend 80% of your time at steady cruise
+- The pricing quoted is far above the published MAP once available
+- Your real problem is that the motor is undersized for your boat
+
+---
+
+## What HBW is doing about Boost
+
+We are actively waiting on:
+1. **Official Mercury Canada retail pricing.** Not yet published as of May 2026.
+2. **The dealer flash procedure.** Mercury has confirmed it's a software flash through the standard Mercury diagnostic tool, similar to any other ECU calibration update.
+3. **A first wave of eligible customers in our service database.** We're identifying motors with qualifying serial numbers and reaching out as we go.
+
+When pricing lands, we will publish a Boost service page on mercuryrepower.ca with transparent CAD pricing, lead time, and the install-vs-bring-the-boat workflow. No hype. No "$2,000 surprise" pricing.
+
+If you're interested and want to be on the early-access list, send us your motor serial and we'll tell you straight whether yours is eligible.
+
+---
+
+## Build your Mercury repower quote (Boost-aware)
+
+We'll quote your motor honestly, check your serial against Mercury's official Boost eligibility list, and price everything against the published Mercury Canada MAP once it lands.
+
+**[Build your Mercury repower quote](https://mercuryrepower.ca)**
+
+---
 
 ## Sources
 
-- Mercury Marine official Boost overview: [youtu.be/bbo46ZEw8Oo](https://youtu.be/bbo46ZEw8Oo)
-- Australian Mercury dealer Boost walkthrough: [youtube.com/watch?v=9OcvxB-rprA](https://www.youtube.com/watch?v=9OcvxB-rprA)
-- Mercury Marine product portal: [mercurymarine.com](https://www.mercurymarine.com/)
+- Mercury Marine official 2026 announcement (eligible motor list and serial numbers)
+- BoatBlurb: [Mercury Reveals 2026 Tech Including Boost Software Upgrade](https://www.boatblurb.com/post/mercury-reveals-2026-tech-including-boost-software-upgrade)
+- Boating Industry Canada: [Mercury Marine's Boost Wins 2026 Miami Innovation Award](https://boatingindustry.ca/current-news/mercury-marines-boost-wins-2026-miami-innovation-award-for-advancing-outboard-engine-performance/)
+- Hi Tech Marine (Australia, dealer pricing reference): [Mercury Boost Upgrade Perth WA](https://www.hitechmarine.com.au/mercury-boost-upgrade-perth-wa/)
+- YouTube: Does Mercury BOOST Actually Work (Australian independent test) [youtube.com/watch?v=9OcvxB-rprA](https://www.youtube.com/watch?v=9OcvxB-rprA)
+- Waypoint Marine US dealer launch announcement (pricing reference)
 `,
     faqs: [
-      { question: "Is Mercury Boost a hardware modification?", answer: "No. Boost is a software activation only. There is no hardware module, kit, or external change. Your motor's existing computer accepts a new power map that unlocks additional peak HP for boost-mode cycles. The cowl stays closed throughout the activation." },
-      { question: "Does Mercury Boost void my warranty?", answer: "No. When the activation is done by an authorized Mercury dealer through Mercury CDS, it's a factory-backed flash and does not void warranty. Aftermarket tunes from third parties DO void warranty and can damage internals." },
-      { question: "Can the Boost flash be reversed?", answer: "Yes. A Mercury dealer can flash your motor back to the stock power map at any time. The change is reversible. The activation fee is not refundable." },
-      { question: "How long does the activation take at the dealer?", answer: "Typically a same-day appointment. The flash itself takes 30-60 minutes, plus setup, VesselView verification, and our standard on-water load test." },
-      { question: "Will my insurance company need to know about the Boost activation?", answer: "Marine insurers in Canada typically don't require notification for factory-authorized Boost activations because the motor's certified HP rating doesn't change. Always confirm with your insurer if unsure." },
-      { question: "Is the boost noticeable on the water?", answer: "Yes if you run aggressive throttle profiles. The peak HP gain is most noticeable in hole-shot, getting on plane with a heavy load, and top-end sprint runs. Cruise speed and trolling behaviour are unchanged." }
+      { question: "Is Mercury Boost a horsepower increase?", answer: "No. It is a calibration software upgrade that improves mid-range acceleration response by 5-21%. Peak horsepower at WOT is unchanged." },
+      { question: "Does Boost work on my 300R or 400R?", answer: "No. Mercury's official eligibility list does not include 300R, 400R, or V10 (350/400/450R). It covers 175-300 HP FourStroke, 175-300 HP Pro XS, 250-300 HP Verado, 350 HP Verado (within a serial range), and the Mercury Racing 150R." },
+      { question: "How much does Boost cost in Canada?", answer: "HBW does not yet have official Mercury Canada MAP pricing. Realistic Canadian retail based on US ($250) and Australian ($395) pricing is in the $300-$500 CAD range, plus install if needed. It is not $2,000." },
+      { question: "Did Mercury Boost win an award?", answer: "Yes, the 2026 Miami Innovation Award for advancing outboard engine performance. Specifically for software-based response improvement." },
+      { question: "Will Boost void my warranty?", answer: "When installed by a Mercury Platinum dealer per Mercury's authorized procedure, Boost is covered under standard Mercury warranty terms. Always verify warranty details against your specific motor and Mercury's published warranty policy." },
+      { question: "Should I wait to buy a new motor until Boost ships factory-installed?", answer: "If your boat has been running fine, there is no reason to delay a needed repower for Boost. If you're already buying a motor in summer 2026, ask whether the unit you're being quoted is Q2 2026+ build. That's when factory Boost installs start showing up." }
     ]
   },
   {
