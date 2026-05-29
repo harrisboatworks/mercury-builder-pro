@@ -13,6 +13,9 @@ import { SiteFooter } from '@/components/ui/site-footer';
 import { FinanceCalculatorSEO } from '@/components/seo/FinanceCalculatorSEO';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Search, Calculator, FileText, Anchor, Calendar, Percent, CreditCard, ShieldCheck, ArrowRight, Phone, Sparkles } from 'lucide-react';
+import { getCurrentMercuryFinancingRate } from '@/components/promotions/TDAlwaysOnOffer';
+
+const CURRENT_RATE = getCurrentMercuryFinancingRate();
 
 // ── Static data ──────────────────────────────────────────────
 
@@ -25,7 +28,7 @@ const STEPS = [
 
 const BENEFITS = [
   { icon: Calendar, title: 'Flexible Terms', desc: '36 to 180 months, find the payment that fits your budget.' },
-  { icon: Percent, title: 'Competitive Rates', desc: 'Tiered rates starting at 7.99% APR, with promotional rates when available.' },
+  { icon: Percent, title: 'Competitive Rates', desc: `${CURRENT_RATE.programLabel}. Promotional rates may apply.` },
   { icon: CreditCard, title: 'Payment Options', desc: 'Choose weekly, bi-weekly, or monthly payments.' },
   { icon: ShieldCheck, title: 'No Early Payoff Penalty', desc: 'Pay off your motor anytime with zero extra fees.' },
 ];
@@ -104,12 +107,12 @@ export default function FinanceCalculator() {
   const heroPillText = useMemo(() => {
     if (financingPromoData.lowestRate) return `Promo rates from ${financingPromoData.lowestRate}% APR`;
     if (financingPromoData.noPaymentsOption) return financingPromoData.noPaymentsOption.title;
-    return 'Rates from 7.99% APR';
+    return `Rates ${CURRENT_RATE.rate}`;
   }, [financingPromoData]);
 
   // ── SEO ──
   useEffect(() => {
-    setSeo('Finance Your Mercury Outboard | Harris Boats', 'Estimate payments and apply for flexible Mercury outboard financing. Rates from 7.99% APR, terms up to 180 months.');
+    setSeo('Finance Your Mercury Outboard | Harris Boats', `Estimate payments and apply for flexible Mercury outboard financing. Rates ${CURRENT_RATE.rate}, terms up to 180 months.`);
   }, []);
 
   // ── Motor loading (unchanged logic) ──
