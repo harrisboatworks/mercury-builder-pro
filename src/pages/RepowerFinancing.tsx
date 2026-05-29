@@ -12,7 +12,7 @@ export default function RepowerFinancing() {
       lastReviewedISO="2026-05-26"
       lastReviewedLabel="May 2026"
       h1="Mercury Outboard Financing in Ontario (2026)"
-      subhead="OAC. Current rates and monthly payments posted live on the quote builder."
+      subhead="Current Mercury TD program: 5.48% APR through Dec 31, 2026 (OAC). Monthly payments posted live on the quote builder."
       primaryCTA={{ label: 'See Live Rates on Your Quote', to: '/quote/motor-selection' }}
       phoneNumber="(905) 342-2153"
       directAnswer={
