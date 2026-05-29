@@ -725,6 +725,15 @@ function renderMarkdownWithDirectives(
     if (chunk.kind === 'mercury-price-table') {
       return <MercuryPriceTable key={`${keyPrefix}-mpt-${i}`} {...(chunk.mercuryPriceTableProps || {})} />;
     }
+    if (chunk.kind === 'youtube-embed' && chunk.youtubeProps) {
+      return (
+        <MercuryVideo
+          key={`${keyPrefix}-yt-${i}`}
+          videoId={chunk.youtubeProps.id}
+          title={chunk.youtubeProps.title || 'Mercury Marine video'}
+        />
+      );
+    }
     if (!chunk.content.trim()) return null;
     return (
       <ReactMarkdown
