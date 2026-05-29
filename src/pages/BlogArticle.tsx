@@ -27,12 +27,6 @@ import { MercuryVideo } from '@/components/blog/MercuryVideo';
 import { PremiumFaq } from '@/components/blog/PremiumFaq';
 
 
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from '@/components/ui/accordion';
 import {
   Breadcrumb,
   BreadcrumbList,
