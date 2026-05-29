@@ -33860,7 +33860,7 @@ Honda makes good motors. In specific use cases, Honda is the right call.
 
 **Service network density.** Mercury has the largest Canadian outboard dealer footprint by a significant margin.
 
-**Lineup breadth.** Honda BF tops out at 250 HP. Mercury runs from 2.5 HP portables through 600 HP Verado V12. If you want anything above 250 HP, Honda doesn't have an answer.
+**Lineup breadth.** Honda BF tops out at 250 HP. Mercury runs from 2.5 HP portables through 600 HP Verado V12. If you want anything above 250 HP, Honda doesn't have an answer. At HBW, FourStroke and Pro XS are our standard stock; Verado and the Racing line are available by special order, not off the shelf.
 
 **Pro XS performance.** Honda has no direct counterpart to Mercury Pro XS.
 
@@ -33928,7 +33928,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       { question: "Is Mercury more reliable than Honda?", answer: "Both brands build reliable modern outboards. The real-world reliability difference is small. The bigger reliability factor for Ontario owners is local service network access." },
       { question: "Where can I get a Honda Marine outboard serviced near Rice Lake?", answer: "Two Honda Marine certified dealers within 75 km of HBW: Dewildt Marine and Powersports in Peterborough (about 30 km) and Dunfords of Havelock (about 45 km)." },
       { question: "Is Honda's warranty longer than Mercury's?", answer: "No, not in 2026. Honda offers 5 years standard plus 3 years HondaCare = 8 years maximum. Mercury offers 3 years standard plus 5 years Mercury Platinum Plus = 8 years maximum. Equal." },
-      { question: "Does Mercury have a Honda BF250 equivalent?", answer: "Yes. Mercury 250 V8 FourStroke is the direct equivalent. Mercury 250 Pro XS is the performance variant. Mercury also offers 300, 350, 400, 450, and 600 HP options that Honda does not match." },
+      { question: "Does Mercury have a Honda BF250 equivalent?", answer: "Yes. Mercury 250 V8 FourStroke is the direct equivalent. Mercury 250 Pro XS is the performance variant. Mercury also offers 300, 350, 400, 450, and 600 HP options that Honda does not match (above the Pro XS range, the Verado and Racing classes are special-order at HBW, not standard stock)." },
       { question: "Can I switch from Honda to Mercury on my existing boat?", answer: "Yes. We do brand-swap repowers regularly. Brand-swap premium typically runs $1,800 to $3,500 above a same-brand repower. See our Honda to Mercury Repower Ontario Guide for the full math." }
     ]
   },
