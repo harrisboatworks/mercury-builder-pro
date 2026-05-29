@@ -34994,7 +34994,16 @@ If you are weighing a Mercury repower for spring 2026, the next step is a no-obl
 - Mercury Marine. SmartCraft Diagnostic System reference: [mercurymarine.com](https://www.mercurymarine.com/)
 - Harris Boat Works pricing reference: [mercuryrepower.ca/pricing-reference](https://www.mercuryrepower.ca/pricing-reference)
 - HBW dock-test protocol, internal operations standard, 2026
-- Mercury Outboard Service Manual sections on WOT verification and propeller selection`,
+- Mercury Outboard Service Manual sections on WOT verification and propeller selection
+
+---
+
+**Related guides:**
+- [Mercury Outboard Monthly Payment Math, Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
+- [Mercury Outboard Rigging Costs, Ontario](/blog/mercury-outboard-rigging-costs-ontario)
+- [Mercury Extended Warranty Platinum, Ontario](/blog/mercury-extended-warranty-platinum-ontario)
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)`,
     image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
