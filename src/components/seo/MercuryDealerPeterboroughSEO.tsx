@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
 
 const PETERBOROUGH_FAQ = [
   {
@@ -16,7 +17,7 @@ const PETERBOROUGH_FAQ = [
   },
   {
     question: "Can I get Mercury financing as a Peterborough customer?",
-    answer: "Yes, Mercury financing through DealerPlan is available to all Ontario residents. Build a quote at mercuryrepower.ca to see live monthly payment estimates (8.99% under $10K total / 7.99% over $10K), then complete the financing application online. Minimum financed amount $5,000."
+    answer: `Yes, Mercury financing through DealerPlan is available to all Ontario residents. Build a quote at mercuryrepower.ca to see live monthly payment estimates, then complete the financing application online. ${getMercuryFinancingFaqAnswer()} Minimum financed amount $5,000.`
   },
   {
     question: "What Mercury motors do you stock for Peterborough-area boaters?",

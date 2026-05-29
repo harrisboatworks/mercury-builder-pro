@@ -26,6 +26,42 @@ export function isTDAlwaysOnActive(now: Date = new Date()): boolean {
   return now.getTime() <= new Date(OFFER_END_ISO).getTime();
 }
 
+// Legacy tiered rates that apply when no manufacturer subvention is active.
+export const LEGACY_RATE_UNDER_10K = '8.99% APR';
+export const LEGACY_RATE_OVER_10K = '7.99% APR';
+
+export function getCurrentMercuryFinancingRate(): {
+  rate: string;
+  ratePercent: number;
+  programLabel: string;
+  isPromo: boolean;
+} {
+  if (isTDAlwaysOnActive()) {
+    return {
+      rate: '5.48% APR',
+      ratePercent: 5.48,
+      programLabel: 'Mercury TD program: 5.48% APR through Dec 31, 2026 (OAC)',
+      isPromo: true,
+    };
+  }
+  return {
+    rate: 'from 7.99% APR',
+    ratePercent: 7.99,
+    programLabel: 'Mercury financing: tiered rates from 7.99% APR (OAC)',
+    isPromo: false,
+  };
+}
+
+export const TD_ACTIVE_FAQ_ANSWER =
+  "Through December 31, 2026, Mercury Marine Canada's TD 'Always On' program offers 5.48% APR (OAC) on new eligible Mercury outboards. Standard tiered rates resume after the program ends.";
+
+export const LEGACY_TIERED_FAQ_ANSWER =
+  'Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms vary by lender.';
+
+export function getMercuryFinancingFaqAnswer(): string {
+  return isTDAlwaysOnActive() ? TD_ACTIVE_FAQ_ANSWER : LEGACY_TIERED_FAQ_ANSWER;
+}
+
 
 
 

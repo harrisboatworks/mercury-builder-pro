@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Award, Users, MapPin, Wrench } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
+import { getCurrentMercuryFinancingRate } from '@/components/promotions/TDAlwaysOnOffer';
+
+const CURRENT_RATE = getCurrentMercuryFinancingRate();
 
 export default function RepowerHub() {
   return (
@@ -194,7 +197,7 @@ export default function RepowerHub() {
         {
           question: 'Can I finance a Mercury repower?',
           answer:
-            'Yes. Mercury Repower Financing offers 7.99% APR for qualified buyers. We process applications in-shop. See our financing guide for details.',
+            `Yes. ${CURRENT_RATE.programLabel}. We process applications in-shop. See our financing guide for details.`,
         },
         {
           question: 'Should I switch from Evinrude to Mercury?',

@@ -2,6 +2,7 @@ import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '@/data/mercuryOutboardsOffers.js';
+import { getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
 
 export const ONTARIO_HUB_FAQ = [
   {
@@ -26,7 +27,7 @@ export const ONTARIO_HUB_FAQ = [
   },
   {
     question: "Can I finance a Mercury outboard purchase?",
-    answer: "Yes. Financing is available through DealerPlan and other lenders on purchases of $5,000 or more. Monthly payment estimates appear next to every qualifying motor (8.99% under $10K total / 7.99% over $10K total). Apply online at mercuryrepower.ca/financing-application."
+    answer: `Yes. Financing is available through DealerPlan and other lenders on purchases of $5,000 or more. Monthly payment estimates appear next to every qualifying motor. ${getMercuryFinancingFaqAnswer()} Apply online at mercuryrepower.ca/financing-application.`
   },
   {
     question: "What warranty comes with a new Mercury motor?",
