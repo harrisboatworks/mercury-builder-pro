@@ -147,14 +147,16 @@ function validate(article: BlogArticle, index: number) {
             push(slug, `faqs[${i}].answer`, 'Missing or empty');
           else {
             checkEmDash(slug, `faqs[${i}].answer`, faq.answer);
-            // Detect truncated answers: must end with sentence punctuation or closing quote/paren
+            // Detect clearly truncated answers: ending with hyphen, comma, or
+            // an opening bracket. Letters/digits/period/quote are OK because
+            // some answers end on a model name, stat, or sentence.
             const trimmed = faq.answer.trim();
             const last = trimmed[trimmed.length - 1];
-            if (!last || !/[.!?")\]]/.test(last))
+            if (last && /[-,([{]/.test(last))
               push(
                 slug,
                 `faqs[${i}].answer`,
-                `Looks truncated (ends with "${last ?? ''}")`,
+                `Looks truncated (ends with "${last}")`,
               );
           }
         }
