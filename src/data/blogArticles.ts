@@ -34077,11 +34077,19 @@ Repowers are the highest-risk install in our shop. New motor, old hull, unknown 
 
 ## Customer language we hear
 
-- "I want to do some tubing this summer" → if 18ft V-hull or smaller, 115 is fine; if 19+ V-hull or 22+ pontoon, jump to 150
-- "Can we waterski with this?" → 115 will waterski an adult on an 18ft V-hull; 150 has comfortable margin
-- "I'm planning to fish tournaments" → bass tournament use case usually points at 150 ProXS or 175 ProXS for the headroom
-- "Just for cruising the cottage" → if 18ft V-hull, 115 is the smart spend; if pontoon 18-20ft, 60 CT is the right answer
-- "When can you get me in?" → 905-342-2153
+:::customer-voice
+- quote: I want to do some tubing this summer
+  response: If 18ft V-hull or smaller, 115 is fine. If 19+ V-hull or 22+ pontoon, jump to 150.
+- quote: Can we waterski with this?
+  response: 115 will waterski an adult on an 18ft V-hull. 150 has comfortable margin.
+- quote: I'm planning to fish tournaments
+  response: Bass tournament use case usually points at 150 ProXS or 175 ProXS for the headroom.
+- quote: Just for cruising the cottage
+  response: If 18ft V-hull, 115 is the smart spend. If pontoon 18-20ft, 60 CT is the right answer.
+- quote: When can you get me in?
+  response: 905-342-2153
+  isCTA: true
+:::
 
 ## Ready to talk repower?
 

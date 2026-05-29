@@ -21,6 +21,7 @@ import { PullQuote, type PullQuoteProps } from './PullQuote';
 import { MercuryPriceTable, type MercuryPriceTableProps } from './MercuryPriceTable';
 import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 import { MercuryVideo } from './MercuryVideo';
+import { CustomerVoice, type CustomerVoiceProps, type CustomerVoiceItem } from './CustomerVoice';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -239,6 +240,12 @@ function rewritePullQuote(md: string): string {
   return md.replace(re, (_m, body) => `:::pull-quote\n${body}\n:::`);
 }
 
+function rewriteCustomerVoice(md: string): string {
+  const re = /^::customer-voice\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::customer-voice\n${body}\n:::`);
+}
+
+
 function rewriteWalkaroundLeadCapture(md: string): string {
   // Bodiless directive: a single line `::walkaround-lead-capture` becomes
   // `:::walkaround-lead-capture\n\n:::` so the standard splitter matches it.
@@ -304,7 +311,7 @@ function buildYouTubeDirective(attrs: string): string | null {
 }
 
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteYouTubeEmbeds(
+  return rewriteCustomerVoice(rewriteYouTubeEmbeds(
     rewriteMercuryPriceTable(
       rewriteWalkaroundLeadCapture(
         rewritePullQuote(
@@ -318,7 +325,7 @@ function preprocessSpecialBlocks(md: string): string {
         ),
       ),
     ),
-  );
+  ));
 }
 
 /**
@@ -352,7 +359,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table' | 'youtube-embed';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table' | 'youtube-embed' | 'customer-voice';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -364,10 +371,11 @@ interface RenderChunk {
   pullQuoteProps?: PullQuoteProps;
   mercuryPriceTableProps?: MercuryPriceTableProps;
   youtubeProps?: { id: string; title?: string };
+  customerVoiceProps?: CustomerVoiceProps;
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table|youtube-embed)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table|youtube-embed|customer-voice)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -594,6 +602,59 @@ function parsePullQuoteBody(body: string): PullQuoteProps | null {
   };
 }
 
+/**
+ * Parse a :::customer-voice body. Supports YAML-ish list items:
+ *   - quote: "..."
+ *     response: "..."
+ *     isCTA: true
+ * Also accepts unquoted values. Optional top-level `heading: ...`.
+ */
+function parseCustomerVoiceBody(body: string): CustomerVoiceProps | null {
+  const lines = body.split('\n');
+  const items: CustomerVoiceItem[] = [];
+  let heading: string | undefined;
+  let current: Partial<CustomerVoiceItem> | null = null;
+  const flush = () => {
+    if (current && current.quote && current.response) {
+      items.push({
+        quote: String(current.quote),
+        response: String(current.response),
+        isCTA: current.isCTA === true,
+      });
+    }
+    current = null;
+  };
+  const stripQuotes = (v: string) => v.trim().replace(/^["'](.*)["']$/, '$1');
+  for (const raw of lines) {
+    if (!raw.trim()) continue;
+    const itemStart = /^-\s*([a-zA-Z]+)\s*:\s*(.*)$/.exec(raw);
+    if (itemStart) {
+      flush();
+      current = {};
+      const key = itemStart[1];
+      const val = stripQuotes(itemStart[2]);
+      if (key === 'quote' || key === 'response') (current as any)[key] = val;
+      else if (key === 'isCTA') (current as any).isCTA = /^true$/i.test(val);
+      continue;
+    }
+    const cont = /^\s+([a-zA-Z]+)\s*:\s*(.*)$/.exec(raw);
+    if (cont && current) {
+      const key = cont[1];
+      const val = stripQuotes(cont[2]);
+      if (key === 'quote' || key === 'response') (current as any)[key] = val;
+      else if (key === 'isCTA') (current as any).isCTA = /^true$/i.test(val);
+      continue;
+    }
+    const top = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(raw);
+    if (top && !current) {
+      if (top[1] === 'heading') heading = stripQuotes(top[2]);
+    }
+  }
+  flush();
+  if (!items.length) return null;
+  return { items, heading };
+}
+
 function splitDirectives(md: string): RenderChunk[] {
   const chunks: RenderChunk[] = [];
   let last = 0;
@@ -671,6 +732,9 @@ function splitDirectives(md: string): RenderChunk[] {
           youtubeProps: { id: idMatch[1], title: titleMatch?.[1]?.trim() },
         });
       }
+    } else if (name === 'customer-voice') {
+      const props = parseCustomerVoiceBody(body);
+      if (props) chunks.push({ kind: 'customer-voice', content: '', customerVoiceProps: props });
     }
     last = m.index + m[0].length;
   }
@@ -733,6 +797,9 @@ function renderMarkdownWithDirectives(
           title={chunk.youtubeProps.title || 'Mercury Marine video'}
         />
       );
+    }
+    if (chunk.kind === 'customer-voice' && chunk.customerVoiceProps) {
+      return <CustomerVoice key={`${keyPrefix}-cv-${i}`} {...chunk.customerVoiceProps} />;
     }
     if (!chunk.content.trim()) return null;
     return (
