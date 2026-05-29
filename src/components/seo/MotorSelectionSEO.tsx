@@ -189,6 +189,8 @@ export function MotorSelectionSEO({
       <meta property="og:url" content={`${SITE_URL}/quote/motor-selection`} />
 
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Mercury Outboard Motors, Browse & Build a Quote" />
+      <meta name="twitter:description" content="Shop the full Mercury outboard lineup. Configure online and get instant CAD pricing." />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
   );
