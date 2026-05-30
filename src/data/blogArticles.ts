@@ -12062,7 +12062,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-vs-yamaha-outboards-ontario',
     title: 'Mercury vs Yamaha Outboards (Honest Ontario Dealer Comparison, 2026)',
     seoTitle: 'Mercury vs Yamaha Outboards | HBW 2026',
-    description: 'Mercury vs Yamaha outboards from an Ontario Mercury Platinum dealer. The service-network reality matters more than the spec sheet. What HBW actually thinks.',
+    description: 'Mercury vs Yamaha for Ontario boaters: an honest take from a Mercury Platinum dealer on service, parts, resale, and what actually matters on the water.',
     image: '/lovable-uploads/hero-mercury-vs-yamaha.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
