@@ -12158,14 +12158,14 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - Mercury Marine Canada lineup: [mercurymarine.com](https://www.mercurymarine.com/)
 - Yamaha Marine Canada lineup: [yamaha-motor.ca](https://www.yamaha-motor.ca/)
 - HBW shop-floor service data 2026
-- Mercury 2025 shift-shaft recall: applies to saltwater-environment specific configurations only`,
+- Mercury 2025 shift-shaft recall: applies to saltwater-environment specific configurations only
 
 ## Related guides
 
 - [Mercury Outboard Warranty in Canada (2026)](/blog/mercury-outboard-warranty-canada-2026)
 - [Mercury Pro XS Buyer Guide (Ontario)](/blog/mercury-pro-xs-buyer-guide-ontario)
 - [Should I Repower or Buy a New Boat? (Ontario)](/blog/should-i-repower-or-buy-new-boat-ontario)
-- [Mercury FourStroke Buyer Guide (Ontario)](/blog/mercury-fourstroke-buyer-guide-ontario)
+- [Mercury FourStroke Buyer Guide (Ontario)](/blog/mercury-fourstroke-buyer-guide-ontario)`,
     faqs: [
       { question: "Is Mercury better than Yamaha?", answer: "Neither is clearly better on raw quality. For Ontario boaters the deciding factor is usually local service and parts support, and that is where Mercury has the edge in this region." },
       { question: "Can I switch from Yamaha to Mercury?", answer: "Yes. We handle the full Yamaha-to-Mercury conversion in-house, including controls, rigging, and gauges. Most switches are straightforward." },
