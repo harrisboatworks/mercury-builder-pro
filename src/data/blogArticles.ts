@@ -2465,7 +2465,7 @@ We test repowers on Rice Lake, on the water, not just on a stand. Build a quote 
 
 ## Ready to repower?
 
-Both families have a home at Harris Boat Works. We rig both, we water-test both on Rice Lake, and we will tell you which one your boat actually needs.
+We rig both at Harris Boat Works. Every repower gets an on-water test on Rice Lake before pickup. No exceptions. That is how we catch obvious prop, trim, and rigging issues before you leave with the boat. We will tell you the truth about which one your boat actually needs.
 
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
