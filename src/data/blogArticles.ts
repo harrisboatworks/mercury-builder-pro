@@ -12120,7 +12120,7 @@ Mercury issued a shift-shaft recall in 2025 that received significant attention 
 
 ## The HBW on-water test
 
-Every Mercury we sell or service gets a water test under load at our dock before delivery. Rice Lake is 80 feet from our rigging bay.
+Every repower gets an on-water test on Rice Lake before pickup. No exceptions. That is how we catch obvious prop, trim, and rigging issues before you leave with the boat.
 
 ## Brand-switching from Yamaha to Mercury
 
