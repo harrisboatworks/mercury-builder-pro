@@ -2461,6 +2461,8 @@ No. Both carry the same Mercury Canadian warranty: 3 years limited plus 3 years 
 **Can I finance a Pro XS upgrade?**
 Yes. Financing is available OAC. Build a current quote at mercuryrepower.ca to see live rates and your estimated monthly payment.
 
+We test repowers on Rice Lake, on the water, not just on a stand. Build a quote and we will tell you honestly whether the Pro XS premium is worth it for your boat.
+
 ## Ready to repower?
 
 Both families have a home at Harris Boat Works. We rig both, we water-test both on Rice Lake, and we will tell you which one your boat actually needs.
