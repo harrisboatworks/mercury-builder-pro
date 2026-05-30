@@ -12092,7 +12092,7 @@ If you removed the brand badges and asked owners to compare a 2026 Mercury 150 F
 
 ## Where Mercury wins
 
-**Service network density.** Mercury has the largest Canadian outboard dealer footprint by a significant margin.
+**Service network density.** Mercury has one of the deepest dealer and service networks in Ontario, which means parts and warranty work are rarely far away.
 
 **Lineup breadth.** Yamaha tops out at 425 HP (XTO Offshore). Mercury runs from 2.5 HP portables through 600 HP Verado V12. For the 250 to 600 HP range, Mercury's lineup is broader.
 
