@@ -2379,7 +2379,7 @@ First, tournament bass and walleye fishing. Anglers who launch ramps in a hurry,
 
 Second, fish-and-ski crossovers. A boat that has to pull a tube clean, hold a cruise for the family, and still run hard the next weekend is the natural Pro XS habitat. The throttle response is more immediate, especially in the mid-range.
 
-Third, big boats that want Boost. The Pro XS V8 4.6L at 175, 200, or 225 HP is the only Mercury you can spec with Boost. Boost gives you 25 extra horsepower on demand for four to six seconds at the press of a button. On a heavy pontoon or a loaded tritoon trying to plane with six adults, that one feature is the whole reason to step up. We cover that decision in detail in our [Mercury Boost upgrade analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis).
+Third, big boats that want Boost. Some of the bigger Pro XS V8 motors (the 4.6L block) can run Mercury Boost, a factory calibration that adds about 25 HP through software, not hardware. It is available on specific V8 Pro XS models, not the whole lineup. We cover that decision in detail in our [Mercury Boost upgrade analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis).
 
 If none of those three apply, the FourStroke is the smarter spend.
 
