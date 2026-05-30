@@ -2323,12 +2323,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ['mercury fourstroke vs pro xs', 'pro xs vs fourstroke', 'mercury motor family comparison', 'pro xs worth it', 'fourstroke or pro xs repower'],
     relatedSlugs: ['mercury-75-vs-90-vs-115-comparison', 'mercury-command-thrust-guide-pontoon-boats', 'mercury-boost-upgrade-150hp-pontoon-analysis', 'best-pontoon-outboard-2026-mercury', 'mercury-repower-cost-ontario-2026-cad'],
     faqs: [
-      { question: 'Is a Mercury Pro XS faster than a FourStroke?', answer: 'Yes. At matching horsepower the Pro XS is tuned for higher RPM, sharper hole shot, and a few extra mph at top end. The gap is biggest at 150 HP and up. At 115 HP and below the difference is smaller and the FourStroke is usually the better repower pick.' },
-      { question: 'Does a Pro XS use more fuel than a FourStroke?', answer: 'At cruise the two are close. Run wide open and the Pro XS will burn more because it spins higher RPM and is tuned to deliver. If most of your time is at 4,000 RPM cruise, the fuel difference is small.' },
-      { question: 'Is Pro XS worth it on a pontoon?', answer: 'Sometimes. A Pro XS V8 with Boost on a tritoon is a strong combination if you tube or ski. On a standard two-tube pontoon, a FourStroke 115 or 150, often with Command Thrust, is usually the smarter spend.' },
-      { question: 'Does the Pro XS require premium fuel?', answer: 'No. Both the modern FourStroke and Pro XS models are designed to run on standard 87-octane fuel, though ethanol-free marine gas is always preferred when available.' },
-      { question: 'Is there a warranty difference between FourStroke and Pro XS?', answer: 'No. Both carry the same Mercury Canadian warranty: 3 years limited plus 3 years corrosion coverage running concurrently. Mercury periodically runs promotional extensions on top of the base coverage. Confirm current promo terms when we quote you.' },
-      { question: 'Can I finance a Pro XS upgrade?', answer: 'Yes. Financing is available OAC. Build a current quote at mercuryrepower.ca to see live rates and your estimated monthly payment.' }
+      { question: 'Is a Mercury Pro XS faster than a FourStroke?', answer: 'Usually, especially at 150 HP and up. At the same horsepower the Pro XS is tuned for quicker hole shot and higher top end. On smaller motors the difference is smaller and most boaters will not notice it in normal use.' },
+      { question: 'How much more does a Pro XS cost installed in Ontario?', answer: 'The Pro XS commands a premium over the comparable FourStroke. Pricing depends on horsepower, rigging, and your boat, so we quote it per build. Build a quote and we will give you the exact installed number.' },
+      { question: 'Do I need a Pro XS for a pontoon?', answer: 'Usually not. For most pontoons a FourStroke is the better match. The Pro XS makes sense on a performance tritoon where top speed matters to the owner.' }
     ],
     content: `# FourStroke vs Pro XS: When Does Pro XS Actually Matter?
 
