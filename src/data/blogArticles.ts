@@ -12062,11 +12062,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-vs-yamaha-outboards-ontario',
     title: 'Mercury vs Yamaha Outboards (Honest Ontario Dealer Comparison, 2026)',
     seoTitle: 'Mercury vs Yamaha Outboards | HBW 2026',
-    description: 'Mercury vs Yamaha outboards from an Ontario Mercury Platinum dealer. The service-network reality matters more than the spec sheet. What HBW actually thinks.',
+    description: 'Mercury vs Yamaha for Ontario boaters: an honest take from a Mercury Platinum dealer on service, parts, resale, and what actually matters on the water.',
     image: '/lovable-uploads/hero-mercury-vs-yamaha.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
-    dateModified: '2026-05-28',
+    dateModified: '2026-05-30',
     category: 'Buying Guide',
     readTime: '13 min read',
     keywords: ['Mercury vs Yamaha outboard', 'Mercury vs Yamaha Ontario', 'Mercury or Yamaha which is better', 'Yamaha to Mercury repower', 'best outboard motor Ontario'],
@@ -12092,7 +12092,7 @@ If you removed the brand badges and asked owners to compare a 2026 Mercury 150 F
 
 ## Where Mercury wins
 
-**Service network density.** Mercury has the largest Canadian outboard dealer footprint by a significant margin.
+**Service network density.** Mercury has one of the deepest dealer and service networks in Ontario, which means parts and warranty work are rarely far away.
 
 **Lineup breadth.** Yamaha tops out at 425 HP (XTO Offshore). Mercury runs from 2.5 HP portables through 600 HP Verado V12. For the 250 to 600 HP range, Mercury's lineup is broader.
 
@@ -12141,6 +12141,10 @@ The brand-swap cost above a same-brand repower runs roughly $1,800 to $3,500 dep
   rebuttal: Both brands offer extended warranty programs in the 8-year range. The practical difference is where you can get warranty service done.
 :::
 
+:::
+
+Thinking about switching from Yamaha to Mercury? We handle the full conversion in-house. Build a quote and we will map it out for your boat.
+
 ## Ready to talk Mercury vs Yamaha?
 
 **Phone:** 905-342-2153
@@ -12154,15 +12158,18 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - Mercury Marine Canada lineup: [mercurymarine.com](https://www.mercurymarine.com/)
 - Yamaha Marine Canada lineup: [yamaha-motor.ca](https://www.yamaha-motor.ca/)
 - HBW shop-floor service data 2026
-- Mercury 2025 shift-shaft recall: applies to saltwater-environment specific configurations only`,
+- Mercury 2025 shift-shaft recall: applies to saltwater-environment specific configurations only
+
+## Related guides
+
+- [Mercury Outboard Warranty in Canada (2026)](/blog/mercury-outboard-warranty-canada-2026)
+- [Mercury Pro XS Buyer Guide (Ontario)](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [Should I Repower or Buy a New Boat? (Ontario)](/blog/should-i-repower-or-buy-new-boat-ontario)
+- [Mercury FourStroke Buyer Guide (Ontario)](/blog/mercury-fourstroke-buyer-guide-ontario)`,
     faqs: [
-      { question: "Does HBW service Yamaha outboards?", answer: "No. HBW services Mercury outboards exclusively. We are a Mercury Marine Platinum dealer." },
-      { question: "Where can I get a Yamaha outboard serviced near Rice Lake?", answer: "There is no Yamaha dealer on Rice Lake. Yamaha owners in the area typically drive to Yamaha dealers in Peterborough, the GTA, or other Kawarthas locations. Drive time is generally 30 to 90 minutes." },
-      { question: "Does Mercury's 2025 shift-shaft recall apply to my Ontario boat?", answer: "For freshwater Ontario use, the 2025 Mercury shift-shaft recall does not apply. The recall addresses a saltwater-environment specific condition." },
-      { question: "Is Mercury more reliable than Yamaha?", answer: "The real-world reliability difference between equivalent modern Mercury and Yamaha 4-stroke outboards is small. Both brands build excellent motors. The more meaningful reliability factor for Ontario owners is local service network access." },
-      { question: "What's the Mercury equivalent to the Yamaha F150?", answer: "Mercury 150 L FourStroke is the direct equivalent. Mercury 150 L Pro XS is the performance variant." },
-      { question: "Does Mercury have a Yamaha SHO equivalent?", answer: "Yes. Mercury Pro XS is the performance equivalent and arguably the segment-defining product line." },
-      { question: "Can I switch from Yamaha to Mercury on my existing boat?", answer: "Yes. We do Yamaha-to-Mercury brand-swap repowers regularly. Brand-swap premium typically runs $1,800 to $3,500 above a same-brand repower." }
+      { question: "Is Mercury better than Yamaha?", answer: "Neither is clearly better on raw quality. For Ontario boaters the deciding factor is usually local service and parts support, and that is where Mercury has the edge in this region." },
+      { question: "Can I switch from Yamaha to Mercury?", answer: "Yes. We handle the full Yamaha-to-Mercury conversion in-house, including controls, rigging, and gauges. Most switches are straightforward." },
+      { question: "Does Mercury hold resale value in Ontario?", answer: "Yes. Strong local dealer support helps Mercury hold resale value well in Ontario, especially repowered boats with documented service history." }
     ]
   },
   {
