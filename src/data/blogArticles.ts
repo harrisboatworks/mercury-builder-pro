@@ -12160,13 +12160,9 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - HBW shop-floor service data 2026
 - Mercury 2025 shift-shaft recall: applies to saltwater-environment specific configurations only`,
     faqs: [
-      { question: "Does HBW service Yamaha outboards?", answer: "No. HBW services Mercury outboards exclusively. We are a Mercury Marine Platinum dealer." },
-      { question: "Where can I get a Yamaha outboard serviced near Rice Lake?", answer: "There is no Yamaha dealer on Rice Lake. Yamaha owners in the area typically drive to Yamaha dealers in Peterborough, the GTA, or other Kawarthas locations. Drive time is generally 30 to 90 minutes." },
-      { question: "Does Mercury's 2025 shift-shaft recall apply to my Ontario boat?", answer: "For freshwater Ontario use, the 2025 Mercury shift-shaft recall does not apply. The recall addresses a saltwater-environment specific condition." },
-      { question: "Is Mercury more reliable than Yamaha?", answer: "The real-world reliability difference between equivalent modern Mercury and Yamaha 4-stroke outboards is small. Both brands build excellent motors. The more meaningful reliability factor for Ontario owners is local service network access." },
-      { question: "What's the Mercury equivalent to the Yamaha F150?", answer: "Mercury 150 L FourStroke is the direct equivalent. Mercury 150 L Pro XS is the performance variant." },
-      { question: "Does Mercury have a Yamaha SHO equivalent?", answer: "Yes. Mercury Pro XS is the performance equivalent and arguably the segment-defining product line." },
-      { question: "Can I switch from Yamaha to Mercury on my existing boat?", answer: "Yes. We do Yamaha-to-Mercury brand-swap repowers regularly. Brand-swap premium typically runs $1,800 to $3,500 above a same-brand repower." }
+      { question: "Is Mercury better than Yamaha?", answer: "Neither is clearly better on raw quality. For Ontario boaters the deciding factor is usually local service and parts support, and that is where Mercury has the edge in this region." },
+      { question: "Can I switch from Yamaha to Mercury?", answer: "Yes. We handle the full Yamaha-to-Mercury conversion in-house, including controls, rigging, and gauges. Most switches are straightforward." },
+      { question: "Does Mercury hold resale value in Ontario?", answer: "Yes. Strong local dealer support helps Mercury hold resale value well in Ontario, especially repowered boats with documented service history." }
     ]
   },
   {
