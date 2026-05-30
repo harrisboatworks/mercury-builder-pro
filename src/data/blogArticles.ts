@@ -12141,6 +12141,10 @@ The brand-swap cost above a same-brand repower runs roughly $1,800 to $3,500 dep
   rebuttal: Both brands offer extended warranty programs in the 8-year range. The practical difference is where you can get warranty service done.
 :::
 
+:::
+
+Thinking about switching from Yamaha to Mercury? We handle the full conversion in-house. Build a quote and we will map it out for your boat.
+
 ## Ready to talk Mercury vs Yamaha?
 
 **Phone:** 905-342-2153
