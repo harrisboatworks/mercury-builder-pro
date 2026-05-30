@@ -2337,6 +2337,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 Boaters in Ontario looking to repower a fishing boat, pontoon, or fibreglass cruiser who are stuck between Mercury's two most common motor families. We rig both at Harris Boat Works. We will tell you the truth about which one your boat actually needs.
 
+Most boaters here run a FourStroke and never wish they had more. This guide is for the boater deciding whether the Pro XS premium is worth it for how they actually use the boat.
+
 ## Key facts
 
 - FourStroke HP range: 2.5 to 300 HP
