@@ -2437,6 +2437,8 @@ Whichever family you pick, the rigging, water test, and warranty are identical a
   rebuttal: Boost is a 4-to-6-second power injection, not a sustained HP rating. It plants the boat on plane. It does not give you more top speed.
 - claim: Skipping the Command Thrust conversation.
   rebuttal: On heavy pontoons, the Command Thrust gearcase often delivers what people think they need Pro XS for, at lower cost.
+- claim: Buyers chase top-end numbers they will never use.
+  rebuttal: On a 16-to-19-foot aluminum boat, the FourStroke gets you on plane fine and sips less fuel doing it.
 :::
 
 ## Frequently Asked Questions
