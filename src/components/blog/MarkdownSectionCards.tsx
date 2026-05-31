@@ -1300,10 +1300,13 @@ export function MarkdownSectionCards({ content, markdownComponents }: Props) {
     const isPhoneCard = section.kind === 'when-to-call';
     const isDealerNote = section.kind === 'dealer-note';
     const isLocalContext = section.kind === 'local-context';
-    // For dealer-note and local-context, the eyebrow (and icon+heading)
-    // replaces the H2, so render only the body markdown.
-    const bodyMd =
-      isDealerNote || isLocalContext ? section.body : headingMd;
+    const isCommonMistakes = section.kind === 'common-mistakes';
+    // For cards whose eyebrow/auto-title already names the section,
+    // suppress the original markdown H2 inside the body to avoid a
+    // duplicate heading stacking under the card title.
+    const suppressInnerHeading =
+      isDealerNote || isLocalContext || isCommonMistakes;
+    const bodyMd = suppressInnerHeading ? section.body : headingMd;
     return (
       <aside
         key={idx}

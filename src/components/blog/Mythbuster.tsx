@@ -82,9 +82,7 @@ export function Mythbuster({ items, heading = 'Common mistakes' }: MythbusterPro
                     ) : null}
                   </p>
 
-                  <p className="mt-5 pt-4 border-t border-repower-navy-900/10 font-sans italic text-[12px] text-repower-navy-900/55 m-0">
-                    Jay Harris, Mercury dealer since 1965
-                  </p>
+                  <div aria-hidden="true" className="mt-5 pt-4 border-t border-repower-navy-900/10" />
                 </div>
               </div>
             </li>
