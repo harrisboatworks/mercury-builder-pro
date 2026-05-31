@@ -34306,7 +34306,7 @@ This guide is the dealer-side perspective on how to prepare for, and recover fro
 
 We're at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. Rice Lake is one of the TSW's larger lake segments, sitting between Peterborough (north) and Hastings (east). For boaters running west-to-east or east-to-west on the TSW, Rice Lake is usually a partial-day or overnight stop.
 
-HBW is roughly an 80-foot walk from the rigging bay to the water-test dock. We have:
+HBW is set up to keep Mercury boaters moving on the TSW. We have:
 
 - **The largest Mercury and Mercruiser parts inventory in Ontario.** This is genuinely a competitive claim. For Mercury outboards and Mercruiser sterndrives, most spring service parts and a deep selection of legacy parts are on our shelf.
 - **Full Mercury service capability.** Mercury CDS (Computer Diagnostic System) at our workstation. Mercury Platinum dealer credential. Mercury authorized warranty service. Most mid-season repairs handled same-day.
