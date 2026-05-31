@@ -23027,43 +23027,10 @@ Most buyers finance through TD Auto Finance via Dealerplan in Peterborough. The 
     readTime: '~14 min read',
     keywords: ['mercury outboard prices', 'ontario', 'cad pricing', 'repower', 'buying guide'],
     faqs: [
-      {
-        question: 'How much does a Mercury 9.9 HP outboard cost in Ontario?',
-        answer: 'A standard Mercury 9.9 MH FourStroke is $2,999 CAD dealer price ($3,875 MSRP). A 9.9 Command Thrust ProKicker (the popular trolling kicker) is around $4,900 CAD. Add HST, controls (if remote), and any rigging or installation.',
-      },
-      {
-        question: 'How much is a Mercury 150 HP outboard in Canada?',
-        answer: 'A Mercury 150 L FourStroke is $22,022 CAD dealer price. A 150 ELPT Pro XS is $24,107. Both are before HST, install, controls, prop, and trade-in. All-in installed cost on a typical 19-21 ft bowrider repower is generally $25,000-$28,000 CAD.',
-      },
-      {
-        question: 'What\'s the difference between Mercury MSRP and dealer price?',
-        answer: 'MSRP is Manufacturer\'s Suggested Retail Price, set by Mercury Canada. Dealer price is what the dealer actually sells the motor for, which is at or below MSRP. The difference is the discount the dealer is offering. Harris Boat Works publishes both numbers next to every motor.',
-      },
-      {
-        question: 'Why don\'t most Ontario Mercury dealers show prices online?',
-        answer: 'Some haven\'t built the systems to do it. Some prefer the leverage of negotiating in private. A few are concerned about price-matching by other dealers. We\'ve decided that publishing every price is better for the customer and easier on our staff. Full piece on this: [why Mercury dealers hide prices online](https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online).',
-      },
-      {
-        question: 'Does the Mercury price include installation?',
-        answer: 'No. The dealer price is the motor on a pallet at the shop. Installation, rigging, controls, prop, and sea trial are quoted separately. For a typical mid-range repower (60-115 HP), expect $1,500-$3,500 in install/rigging on top of the motor price. For a V6 repower (150-225 HP), expect $3,500-$6,000.',
-      },
-      {
-        question: 'Can I buy a Mercury outboard cheaper in the US?',
-        answer: 'Sometimes the headline price is lower, but the math usually doesn\'t work out. Cross-border duty, brokerage, shipping, currency conversion, and Mercury Canada warranty restrictions on grey-market motors typically erase any savings. Mercury\'s Canadian warranty applies only to motors purchased through Canadian dealers. We strongly recommend buying domestic.',
-      },
-      {
-        question: 'How long is the Mercury warranty?',
-        answer: 'Mercury\'s standard warranty in Canada is **3 years, concurrent** (not 3-years-plus-3-years stacked). Mercury runs promotions periodically that add 2-3 bonus years for a total of 5- or 6-year coverage during the promo window. When you see longer warranty terms advertised, those are promotional, not standard. Full breakdown: [Mercury warranty guide for Ontario buyers](https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026).',
-      },
-      {
-        question: 'Can I order any Mercury motor, or only what\'s in stock?',
-        answer: 'Both. Our [pricing reference](https://www.mercuryrepower.ca/pricing-reference) shows status for every motor: "In stock" means we have it physically at the shop, "Available to order" means we can order it from Mercury Canada with a typical 1-4 week lead time. Both are real, fully warrantied options. The quote builder lets you build either one.',
-      },
-      {
-        question: 'Are these prices final?',
-        answer: 'The dealer selling price shown is the motor price. Final out-the-door price depends on which controls, prop, rigging, and accessories you choose, plus any trade-in credit. The quote builder at mercuryrepower.ca/quote/motor-selection generates a complete quote with all of those line items included. That number is final, before HST.',
-      },
-    ],
+      { question: 'How much does a Mercury outboard cost in Ontario in 2026?', answer: 'Portable motors (2.5 to 20 HP) run 1,200 to 4,500 CAD. Mid-range FourStroke motors (25 to 90 HP) land between 5,500 and 16,000 CAD. Larger FourStroke and Pro XS motors (115 HP and up) start around 16,500 CAD. These are motor-only figures before rigging and install.' },
+      { question: 'Why do Mercury dealers hide their prices?', answer: 'Because final price moves with rigging, controls, and install, and many dealers prefer to get you on the phone. We would rather give you a real starting point and quote the rigged, installed, water-tested number.' },
+      { question: 'Does the price include rigging and installation?', answer: 'When you buy from Harris Boat Works, the quoted price includes rigging, controls if needed, and an on-water test on Rice Lake before pickup. Every motor gets that test.' }
+    ]
   },
   {
     slug: 'mercury-controls-rigging-guide-ontario',
