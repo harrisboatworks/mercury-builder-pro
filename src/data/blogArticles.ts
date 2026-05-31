@@ -34219,7 +34219,7 @@ If you're being quoted a Command Thrust motor on a V-hull, ask the dealer specif
 
 ## What HBW checks before delivery
 
-Repowers are the highest-risk install in our shop. New motor, old hull, unknown how the combination will run until it's in the water. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong, the trim is wrong, or the rigging has a problem, we catch it at our dock. The customer drives home with a known-good combination, not a hopeful one. HBW is 80 feet from rigging bay to water-test dock. Most Mercury dealers cannot match this in real water conditions.
+Repowers are the highest-risk install in our shop. New motor, old hull, unknown how the combination will run until it's in the water. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong, the trim is wrong, or the rigging has a problem, we catch it at our dock. The customer drives home with a known-good combination, not a hopeful one. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 ## Common mistakes (the things we push back on)
 
