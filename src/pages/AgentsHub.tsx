@@ -182,14 +182,11 @@ export default function AgentsHub() {
             minutes. Prices are valid for 24 hours from <code>lastUpdated</code>; treat anything older as stale and
             re-fetch.
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-sm overflow-x-auto">
-            <code>GET {PUBLIC_MOTORS_API}</code>
-          </pre>
+          <CodeBlock language="http">{`GET ${PUBLIC_MOTORS_API}`}</CodeBlock>
           <p className="text-protected text-sm">
             Response shape:
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
-{`{
+          <CodeBlock language="json" size="xs">{`{
   "site": "mercuryrepower.ca",
   "currency": "CAD",
   "lastUpdated": "ISO-8601",
@@ -213,8 +210,7 @@ export default function AgentsHub() {
       "url": "https://www.mercuryrepower.ca/motors/..."
     }
   ]
-}`}
-          </pre>
+}`}</CodeBlock>
         </section>
 
         <section className="mb-10">
