@@ -61,20 +61,28 @@ export function TDRateCardImage({ src, alt, className }: TDRateCardImageProps) {
   }
 
   return (
-    <img
-      key={`${token}-${attempt}`}
-      src={withBuster(src, attempt === 0 ? token : `${token}-r${attempt}-${Date.now()}`)}
-      alt={alt}
-      loading="lazy"
-      decoding="async"
-      className={className}
-      onError={() => {
-        if (attempt < 2) {
-          setAttempt((a) => a + 1);
-        } else {
-          setFailed(true);
-        }
-      }}
-    />
+    <a
+      href={src}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Open full rate card: ${alt}`}
+      className="block cursor-zoom-in"
+    >
+      <img
+        key={`${token}-${attempt}`}
+        src={withBuster(src, attempt === 0 ? token : `${token}-r${attempt}-${Date.now()}`)}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        className={className}
+        onError={() => {
+          if (attempt < 2) {
+            setAttempt((a) => a + 1);
+          } else {
+            setFailed(true);
+          }
+        }}
+      />
+    </a>
   );
 }
