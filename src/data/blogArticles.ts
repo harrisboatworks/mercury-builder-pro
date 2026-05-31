@@ -35,9 +35,9 @@ export function parseLocalDate(dateString: string): Date {
   return new Date(y, (m || 1) - 1, d || 1);
 }
 
-// Seasonal posts — only surface on the blog index during their relevant
+// Seasonal posts - only surface on the blog index during their relevant
 // months (Ontario boating calendar). Months are 1-12. Posts not listed
-// here are treated as year-round. Sitemap eligibility is NOT affected —
+// here are treated as year-round. Sitemap eligibility is NOT affected -
 // these pages remain crawlable and indexable year-round (direct URLs
 // still work), we just hide them from the blog index out of season so
 // the feed feels timely instead of showing winterization in July.
