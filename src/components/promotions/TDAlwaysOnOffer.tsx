@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Percent, ArrowRight } from 'lucide-react';
+import { TDRateCardImage } from './TDRateCardImage';
 
 const RATE_CARD_IMAGE = '/lovable-uploads/td-financing-2026-rate-card.jpg';
 const RATE_CARD_ALT =
@@ -75,13 +76,12 @@ export function TDAlwaysOnCard() {
         <div className="bg-repower-cream border border-repower-navy-900/10 rounded-lg p-6 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-stretch">
             <div className="order-1">
-              <img
+              <TDRateCardImage
                 src={RATE_CARD_IMAGE}
                 alt={RATE_CARD_ALT}
-                loading="lazy"
-                decoding="async"
                 className="w-full h-auto rounded-md shadow-sm"
               />
+
             </div>
 
             <div className="order-2 flex flex-col gap-5 justify-center">
