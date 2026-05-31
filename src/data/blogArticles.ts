@@ -12062,7 +12062,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-vs-yamaha-outboards-ontario',
     title: 'Mercury vs Yamaha Outboards (Honest Ontario Dealer Comparison, 2026)',
     seoTitle: 'Mercury vs Yamaha Outboards | HBW 2026',
-    description: 'Mercury vs Yamaha for Ontario boaters: an honest take from a Mercury Platinum dealer on service, parts, resale, and what actually matters on the water.',
+    description: 'Mercury vs Yamaha outboards for Ontario freshwater (2026). Dealer density, parts speed, factory-rigging, resale - honest comparison from a Mercury dealer since 1965 and current Platinum dealer, with one of the deepest Mercury and Mercruiser parts inventories in Ontario.',
     image: '/lovable-uploads/hero-mercury-vs-yamaha.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
@@ -12116,7 +12116,7 @@ Mercury issued a shift-shaft recall in 2025 that received significant attention 
 
 ## What HBW has on the shelf
 
-**HBW has the largest Mercury and Mercruiser parts inventory in Ontario.** For Mercury owners, common spring service parts and most warranty parts are on our shelf in stock.
+**HBW has one of the deepest Mercury and Mercruiser parts inventories in Ontario.** For Mercury owners, common spring service parts and most warranty parts are on our shelf in stock.
 
 ## The HBW on-water test
 
@@ -12149,7 +12149,7 @@ Thinking about switching from Yamaha to Mercury? We handle the full conversion i
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. One of the deepest Mercury and Mercruiser parts inventories in Ontario.
 
 ## Sources
 
@@ -12165,9 +12165,14 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - [Should I Repower or Buy a New Boat? (Ontario)](/blog/should-i-repower-or-buy-new-boat-ontario)
 - [Mercury FourStroke Buyer Guide (Ontario)](/blog/mercury-fourstroke-buyer-guide-ontario)`,
     faqs: [
-      { question: "Is Mercury better than Yamaha?", answer: "Neither is clearly better on raw quality. For Ontario boaters the deciding factor is usually local service and parts support, and that is where Mercury has the edge in this region." },
-      { question: "Can I switch from Yamaha to Mercury?", answer: "Yes. We handle the full Yamaha-to-Mercury conversion in-house, including controls, rigging, and gauges. Most switches are straightforward." },
-      { question: "Does Mercury hold resale value in Ontario?", answer: "Yes. Strong local dealer support helps Mercury hold resale value well in Ontario, especially repowered boats with documented service history." }
+      { question: "Is Mercury better than Yamaha?", answer: "Mechanically, both brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, factory-OEM relationships with Canadian aluminum boat builders, and resale demand. The practical reliability picture favors Mercury for typical Ontario customers." },
+      { question: "Should I switch from Yamaha to Mercury during a repower?", answer: "Depends on local dealer access, hull condition, and ownership plan. If your Yamaha dealer access is good and your motor is fine, no need to switch. If you're repowering anyway and Mercury support is stronger in your area, switching makes sense." },
+      { question: "How much does it cost to switch from Yamaha to Mercury?", answer: "The Mercury motor cost plus an extra $1,500 to $3,000 CAD in brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca." },
+      { question: "Is Yamaha more reliable than Mercury?", answer: "Mechanically, similar. Both brands have demonstrated long service life with proper maintenance. Reliability in real life is mechanical durability plus service availability. The service availability favors Mercury in Ontario." },
+      { question: "Why do most aluminum boats sold in Ontario come Mercury-rigged?", answer: "Decades of supply-chain integration between Mercury and the major North American aluminum boat builders that dominate the Ontario market - Lund and Crestliner (Minnesota), Lowe (Missouri), and Princecraft (Quebec). Customers ask for Mercury, factories rig with Mercury, and the Ontario dealer service network is built around Mercury." },
+      { question: "Is Mercury more expensive than Yamaha?", answer: "Comparable HP at comparable trim. Pricing varies by model, current promotions, and market conditions. The total cost of ownership math (including service, parts, and resale) tends to favor Mercury in Ontario." },
+      { question: "Which has better fuel economy, Mercury or Yamaha?", answer: "Comparable across HP classes. Both brands' modern FourStrokes are fuel-efficient. Prop selection and operating discipline matter much more than brand for fuel economy." },
+      { question: "What is the most popular outboard in Ontario, Mercury or Yamaha?", answer: "Mercury, by a significant margin. Mercury is the dominant brand on Ontario freshwater. Yamaha is well-represented but has a smaller market share than Mercury locally." }
     ]
   },
   {
