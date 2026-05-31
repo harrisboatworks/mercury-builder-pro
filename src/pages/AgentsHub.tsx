@@ -220,13 +220,10 @@ export default function AgentsHub() {
             Returns a deep-link URL the customer can open to finish in our configurator. Optional <code>contact</code> block
             captures a lead in our CRM so a human can follow up.
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-sm overflow-x-auto">
-            <code>POST {PUBLIC_QUOTE_API}</code>
-          </pre>
+          <CodeBlock language="http">{`POST ${PUBLIC_QUOTE_API}`}</CodeBlock>
           <p className="text-protected text-sm mt-2">Three actions: <code>list_motors</code>, <code>estimate_trade_in</code>, <code>build_quote</code>. GET the URL for the full schema.</p>
           <p className="text-protected text-sm mt-4 font-medium">Example, build a quote for a 90 HP FourStroke with a trade-in:</p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
-{`curl -X POST ${PUBLIC_QUOTE_API} \\
+          <CodeBlock language="bash" size="xs">{`curl -X POST ${PUBLIC_QUOTE_API} \\
   -H "Content-Type: application/json" \\
   -d '{
     "action": "build_quote",
@@ -242,8 +239,7 @@ export default function AgentsHub() {
       "name": "Jane Doe", "email": "jane@example.com",
       "referrer": "ChatGPT"
     }
-  }'`}
-          </pre>
+  }'`}</CodeBlock>
           <p className="text-protected text-sm mt-2">
             Returns <code>line_items</code>, <code>pricing</code>, <code>financing</code>, <code>deep_link</code>, and <code>priceValidUntil</code>.
             Final out-the-door price always requires human confirmation.
