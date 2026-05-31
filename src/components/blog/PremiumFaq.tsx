@@ -76,9 +76,7 @@ export function PremiumFaq({ faqs, heading = 'Frequently Asked Questions' }: Pre
                 {faq.answer}
               </p>
 
-              <p className="mt-5 pt-4 border-t border-repower-navy-900/10 font-sans italic text-[12px] text-repower-navy-900/55 m-0">
-                Jay Harris, Mercury dealer since 1965
-              </p>
+              <div aria-hidden="true" className="mt-5 pt-4 border-t border-repower-navy-900/10" />
             </li>
           );
         })}
