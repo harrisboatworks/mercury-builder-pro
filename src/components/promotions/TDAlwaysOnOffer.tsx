@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Percent, ArrowRight } from 'lucide-react';
+import { TDRateCardImage } from './TDRateCardImage';
 
 const RATE_CARD_IMAGE = '/lovable-uploads/td-financing-2026-rate-card.jpg';
 const RATE_CARD_ALT =
