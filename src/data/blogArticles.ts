@@ -33550,20 +33550,20 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     ]
   },
   {
-    slug: 'mercury-boost-is-it-worth-2000-dollars-2026',
-    title: 'Mercury Boost: Is It Worth $2,000? Honest Dealer Math (2026)',
-    seoTitle: 'Mercury Boost Worth It | HBW 2026',
-    description: `Mercury Boost is a software upgrade, not a peak-horsepower add-on. The honest Ontario dealer breakdown: who's eligible (per Mercury's Feb 2026 serial list), what it actually does (5-21% mid-range acceleration), and what it really costs.`,
+    slug: 'mercury-boost-cost-canada-2026',
+    title: 'Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)',
+    seoTitle: 'Mercury Boost Cost in Canada (2026): Real Price + Is It Worth It | HBW',
+    description: `What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb 2026 software upgrade: eligible motors, real CAD pricing, and whether it's worth it.`,
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-05-29',
+    dateModified: '2026-05-31',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '8 min read',
     keywords: ["Mercury Boost", "Mercury Boost worth it", "Mercury Boost cost", "Pro XS Boost", "Verado Boost", "Mercury Boost software"],
     relatedSlugs: ["mercury-boost-eligibility-checker-2026", "mercury-pro-xs-buyer-guide-ontario", "mercury-300-vs-400-pro-xs-comparison", "mercury-outboard-monthly-payment-ontario-2026", "mercury-outboard-repower-cost-ontario-2026-cad", "hbw-on-water-load-test-mercury-repower-advantage-2026"],
-    content: `# Mercury Boost: Is It Worth It? An Honest Ontario Dealer Breakdown (2026)
+    content: `# Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)
 
 **Published:** 2026-05-28 | **Updated:** 2026-05-29 (factual corrections)
 **Author:** Jay Harris, Harris Boat Works
