@@ -34049,7 +34049,7 @@ Mercury 9.9 FourStroke is typically 6 to 14 lbs lighter than equivalent Honda BF
 
 ## The HBW on-water test
 
-Every Mercury we sell or service gets a water test under load at our dock before delivery. Rice Lake is 80 feet from our rigging bay.
+Every Mercury we sell or service gets a water test under load at our dock before delivery. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 ## Common mistakes (the things we push back on)
 
