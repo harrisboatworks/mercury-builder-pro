@@ -288,20 +288,14 @@ export default function AgentsHub() {
         </section>
 
         <section className="mb-10">
-          <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Markdown catalog twins</h2>
-          <p className="text-protected">
-            LLM-cheap plain-text representation of the catalog. Use these instead of HTML when ingesting into a context window.
-          </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
-{`# Catalog index (markdown table of every motor + price + quote URL)
+          <CodeBlock language="bash" size="xs">{`# Catalog index (markdown table of every motor + price + quote URL)
 GET ${MOTORS_MD}
 
 # One motor by id
 GET ${MOTORS_MD}?id={MOTOR_ID}
 
 # One motor by slug
-GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}
-          </pre>
+GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
         </section>
 
         <section className="mb-10">
@@ -310,15 +304,13 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}
             Send a customer directly to a fully-prefilled quote configurator with a single URL. Any combination of these
             params is supported:
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
-{`${SITE_URL}/quote/motor-selection
+          <CodeBlock language="url" size="xs">{`${SITE_URL}/quote/motor-selection
   ?motor={MOTOR_ID}            // from list_motors response
   &boat_make=Lund
   &boat_model=Pro-V
   &trade_brand=Mercury
   &trade_year=2010
-  &trade_hp=75`}
-          </pre>
+  &trade_hp=75`}</CodeBlock>
         </section>
 
         <section className="mb-10">
