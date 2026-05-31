@@ -33691,7 +33691,7 @@ Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1], r = 7.99% / 12.
 
 ## The HBW on-water repower test
 
-Repowers are the highest-risk install in our shop. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong or the rigging has a problem, we catch it at our dock. HBW is 80 feet from rigging bay to water-test dock.
+Repowers are the highest-risk install in our shop. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong or the rigging has a problem, we catch it at our dock. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 ## Common mistakes (the things we push back on)
 
@@ -34049,7 +34049,7 @@ Mercury 9.9 FourStroke is typically 6 to 14 lbs lighter than equivalent Honda BF
 
 ## The HBW on-water test
 
-Every Mercury we sell or service gets a water test under load at our dock before delivery. Rice Lake is 80 feet from our rigging bay.
+Every Mercury we sell or service gets a water test under load at our dock before delivery. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 ## Common mistakes (the things we push back on)
 
@@ -34219,7 +34219,7 @@ If you're being quoted a Command Thrust motor on a V-hull, ask the dealer specif
 
 ## What HBW checks before delivery
 
-Repowers are the highest-risk install in our shop. New motor, old hull, unknown how the combination will run until it's in the water. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong, the trim is wrong, or the rigging has a problem, we catch it at our dock. The customer drives home with a known-good combination, not a hopeful one. HBW is 80 feet from rigging bay to water-test dock. Most Mercury dealers cannot match this in real water conditions.
+Repowers are the highest-risk install in our shop. New motor, old hull, unknown how the combination will run until it's in the water. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong, the trim is wrong, or the rigging has a problem, we catch it at our dock. The customer drives home with a known-good combination, not a hopeful one. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 ## Common mistakes (the things we push back on)
 
@@ -34306,7 +34306,7 @@ This guide is the dealer-side perspective on how to prepare for, and recover fro
 
 We're at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. Rice Lake is one of the TSW's larger lake segments, sitting between Peterborough (north) and Hastings (east). For boaters running west-to-east or east-to-west on the TSW, Rice Lake is usually a partial-day or overnight stop.
 
-HBW is roughly an 80-foot walk from the rigging bay to the water-test dock. We have:
+HBW is set up to keep Mercury boaters moving on the TSW. We have:
 
 - **The largest Mercury and Mercruiser parts inventory in Ontario.** This is genuinely a competitive claim. For Mercury outboards and Mercruiser sterndrives, most spring service parts and a deep selection of legacy parts are on our shelf.
 - **Full Mercury service capability.** Mercury CDS (Computer Diagnostic System) at our workstation. Mercury Platinum dealer credential. Mercury authorized warranty service. Most mid-season repairs handled same-day.
