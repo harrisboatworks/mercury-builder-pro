@@ -181,13 +181,13 @@ export default function AgentsHub() {
             minutes. Prices are valid for 24 hours from <code>lastUpdated</code>; treat anything older as stale and
             re-fetch.
           </p>
-          <pre className="bg-muted p-4 rounded text-sm overflow-x-auto">
+          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-sm overflow-x-auto">
             <code>GET {PUBLIC_MOTORS_API}</code>
           </pre>
           <p className="text-protected text-sm">
             Response shape:
           </p>
-          <pre className="bg-muted p-4 rounded text-xs overflow-x-auto">
+          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
 {`{
   "site": "mercuryrepower.ca",
   "currency": "CAD",
@@ -223,12 +223,12 @@ export default function AgentsHub() {
             Returns a deep-link URL the customer can open to finish in our configurator. Optional <code>contact</code> block
             captures a lead in our CRM so a human can follow up.
           </p>
-          <pre className="bg-muted p-4 rounded text-sm overflow-x-auto">
+          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-sm overflow-x-auto">
             <code>POST {PUBLIC_QUOTE_API}</code>
           </pre>
           <p className="text-protected text-sm mt-2">Three actions: <code>list_motors</code>, <code>estimate_trade_in</code>, <code>build_quote</code>. GET the URL for the full schema.</p>
           <p className="text-protected text-sm mt-4 font-medium">Example, build a quote for a 90 HP FourStroke with a trade-in:</p>
-          <pre className="bg-muted p-4 rounded text-xs overflow-x-auto">
+          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
 {`curl -X POST ${PUBLIC_QUOTE_API} \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -275,7 +275,7 @@ export default function AgentsHub() {
             Register Harris Boat Works as a tool inside Claude Desktop, Cursor, custom GPTs, or any MCP-compatible client.
             JSON-RPC 2.0 over HTTP. Public, no-auth.
           </p>
-          <pre className="bg-muted p-4 rounded text-sm overflow-x-auto">
+          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-sm overflow-x-auto">
             <code>POST {MCP_SERVER}</code>
           </pre>
           <p className="text-protected text-sm mt-2">
@@ -283,7 +283,7 @@ export default function AgentsHub() {
             Tools: <code>search_motors</code>, <code>get_motor</code>, <code>estimate_trade_in</code>, <code>build_quote</code>, <code>get_brand_rules</code>.
             GET the URL for the live tool catalog.
           </p>
-          <pre className="bg-muted p-4 rounded text-xs overflow-x-auto mt-3">
+          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto mt-3">
 {`curl -X POST ${MCP_SERVER} \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -303,7 +303,7 @@ export default function AgentsHub() {
           <p className="text-protected">
             LLM-cheap plain-text representation of the catalog. Use these instead of HTML when ingesting into a context window.
           </p>
-          <pre className="bg-muted p-4 rounded text-xs overflow-x-auto">
+          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
 {`# Catalog index (markdown table of every motor + price + quote URL)
 GET ${MOTORS_MD}
 
@@ -321,7 +321,7 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}
             Send a customer directly to a fully-prefilled quote configurator with a single URL. Any combination of these
             params is supported:
           </p>
-          <pre className="bg-muted p-4 rounded text-xs overflow-x-auto">
+          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
 {`${SITE_URL}/quote/motor-selection
   ?motor={MOTOR_ID}            // from list_motors response
   &boat_make=Lund
