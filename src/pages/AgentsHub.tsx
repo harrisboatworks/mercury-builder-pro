@@ -288,6 +288,10 @@ export default function AgentsHub() {
         </section>
 
         <section className="mb-10">
+          <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Markdown catalog twins</h2>
+          <p className="text-protected">
+            LLM-cheap plain-text representation of the catalog. Use these instead of HTML when ingesting into a context window.
+          </p>
           <CodeBlock language="bash" size="xs">{`# Catalog index (markdown table of every motor + price + quote URL)
 GET ${MOTORS_MD}
 
