@@ -2312,7 +2312,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'fourstroke-vs-pro-xs',
     seoTitle: 'FourStroke vs Pro XS: When Pro XS Matters | mercuryrepower.ca',
     title: 'FourStroke vs Pro XS: When Does Pro XS Actually Matter?',
-    description: 'Mercury FourStroke vs Pro XS: when the Pro XS premium is worth it and when a FourStroke is the smarter buy. Honest advice from an Ontario Mercury dealer.',
+    description: 'Mercury FourStroke vs Pro XS for Ontario repowers: hole shot, weight, top end, and real 2026 CAD installed-price ranges from $16,000. Advice from a Mercury dealer since 1965 and current Platinum dealer.',
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-26',
@@ -2323,9 +2323,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ['mercury fourstroke vs pro xs', 'pro xs vs fourstroke', 'mercury motor family comparison', 'pro xs worth it', 'fourstroke or pro xs repower'],
     relatedSlugs: ['mercury-75-vs-90-vs-115-comparison', 'mercury-command-thrust-guide-pontoon-boats', 'mercury-boost-upgrade-150hp-pontoon-analysis', 'best-pontoon-outboard-2026-mercury', 'mercury-repower-cost-ontario-2026-cad'],
     faqs: [
-      { question: 'Is a Mercury Pro XS faster than a FourStroke?', answer: 'Usually, especially at 150 HP and up. At the same horsepower the Pro XS is tuned for quicker hole shot and higher top end. On smaller motors the difference is smaller and most boaters will not notice it in normal use.' },
-      { question: 'How much more does a Pro XS cost installed in Ontario?', answer: 'The Pro XS commands a premium over the comparable FourStroke. Pricing depends on horsepower, rigging, and your boat, so we quote it per build. Build a quote and we will give you the exact installed number.' },
-      { question: 'Do I need a Pro XS for a pontoon?', answer: 'Usually not. For most pontoons a FourStroke is the better match. The Pro XS makes sense on a performance tritoon where top speed matters to the owner.' }
+      { question: 'Is a Mercury Pro XS faster than a FourStroke?', answer: 'Usually, especially at 150 HP and up. At matching horsepower, Pro XS is tuned for higher RPM, sharper hole shot, and a few extra mph at top end. At 115 HP and below, the difference is smaller and the FourStroke is usually the better repower pick.' },
+      { question: 'Does a Pro XS use more fuel than a FourStroke?', answer: 'At cruise the two are close. Run wide open and the Pro XS will burn more because it spins higher RPM and is tuned to deliver. If most of your time is at 4,000 RPM cruise, the fuel difference is small.' },
+      { question: 'Is Pro XS worth it on a pontoon?', answer: 'Sometimes. A Pro XS V8 with Boost on a tritoon is a strong combination if you tube or ski. On a standard two-tube pontoon, a FourStroke 115 or 150, often with Command Thrust, is usually the smarter spend.' },
+      { question: 'Does the Pro XS require premium fuel?', answer: 'No. Both the modern FourStroke and Pro XS models are designed to run on standard 87-octane fuel, though ethanol-free marine gas is always preferred when available.' },
+      { question: 'Is there a warranty difference between FourStroke and Pro XS?', answer: 'No. Both carry the same Mercury Canadian warranty: 3 years limited plus 3 years corrosion coverage running concurrently. Mercury periodically runs promotional extensions on top of the base coverage. Confirm current promo terms when we quote you.' },
+      { question: 'How much more does a Pro XS cost installed in Ontario?', answer: 'At 115 HP, expect about $1,500 to $2,000 more for the Pro XS over the FourStroke installed. At higher horsepower, the gap can widen depending on rigging, controls, prop choice, and whether Boost applies to the motor you are quoting. Build a current quote at mercuryrepower.ca.' }
     ],
     content: `# FourStroke vs Pro XS: When Does Pro XS Actually Matter?
 
@@ -2335,7 +2338,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Who this is for
 
-Boaters in Ontario looking to repower a fishing boat, pontoon, or fibreglass cruiser who are stuck between Mercury's two most common motor families. We rig both at Harris Boat Works. We will tell you the truth about which one your boat actually needs.
+Boaters in Ontario looking to repower a fishing boat, pontoon, or fibreglass cruiser who are stuck between Mercury's two most common motor families. We rig both at Harris Boat Works. Every repower gets an on-water test on Rice Lake before pickup. No exceptions. That's how we catch obvious prop, trim, and rigging issues before you leave with the boat. Most regret stories start the same way: "I just wanted a bit more speed." We will tell you the truth about which one your boat actually needs.
+
+Want the math for your boat? Build a Mercury quote at mercuryrepower.ca or call us at 905-342-2153.
 
 Most boaters here run a FourStroke and never wish they had more. This guide is for the boater deciding whether the Pro XS premium is worth it for how they actually use the boat.
 
@@ -2379,7 +2384,7 @@ First, tournament bass and walleye fishing. Anglers who launch ramps in a hurry,
 
 Second, fish-and-ski crossovers. A boat that has to pull a tube clean, hold a cruise for the family, and still run hard the next weekend is the natural Pro XS habitat. The throttle response is more immediate, especially in the mid-range.
 
-Third, big boats that want Boost. Some of the bigger Pro XS V8 motors (the 4.6L block) can run Mercury Boost, a factory calibration that adds about 25 HP through software, not hardware. It is available on specific V8 Pro XS models, not the whole lineup. We cover that decision in detail in our [Mercury Boost upgrade analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis).
+Third, big boats that want Boost. Some of the bigger Pro XS V8 motors (the 4.6L block) can run Mercury Boost, a factory calibration that adds about 25 HP through software, not hardware. It is available on specific V8 Pro XS models, not the whole lineup. We cover that decision in detail in our [Mercury Boost upgrade analysis](/blog/mercury-boost-software-upgrade-eligibility-2026).
 
 If none of those three apply, the FourStroke is the smarter spend.
 
@@ -2439,6 +2444,8 @@ Whichever family you pick, the rigging, water test, and warranty are identical a
   rebuttal: On heavy pontoons, the Command Thrust gearcase often delivers what people think they need Pro XS for, at lower cost.
 - claim: Buyers chase top-end numbers they will never use.
   rebuttal: On a 16-to-19-foot aluminum boat, the FourStroke gets you on plane fine and sips less fuel doing it.
+- claim: Forgetting the water test matters.
+  rebuttal: A motor that checks out at the dealer still needs to push your actual boat in real water. Our Rice Lake on-water test helps catch obvious prop, trim, and rigging issues before pickup. A motor that runs perfect on the test stand and bad on your transom is not a Mercury problem. It is a rigging problem.
 :::
 
 ## Frequently Asked Questions
@@ -2476,7 +2483,7 @@ We rig both at Harris Boat Works. Every repower gets an on-water test on Rice La
 **Related guides:**
 - [75 vs 90 vs 115 HP Mercury Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
 - [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
-- [Mercury Boost Upgrade Analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis)
+- [Mercury Boost Upgrade Analysis](/blog/mercury-boost-software-upgrade-eligibility-2026)
 - [Best Pontoon Outboard 2026](/blog/best-pontoon-outboard-2026-mercury)
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)`
   },
