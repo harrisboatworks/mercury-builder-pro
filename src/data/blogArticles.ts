@@ -33691,7 +33691,7 @@ Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1], r = 7.99% / 12.
 
 ## The HBW on-water repower test
 
-Repowers are the highest-risk install in our shop. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong or the rigging has a problem, we catch it at our dock. HBW is 80 feet from rigging bay to water-test dock.
+Repowers are the highest-risk install in our shop. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong or the rigging has a problem, we catch it at our dock. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 ## Common mistakes (the things we push back on)
 
