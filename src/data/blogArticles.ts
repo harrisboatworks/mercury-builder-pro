@@ -12264,7 +12264,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-outboard-financing-ontario-2026',
     title: "Boat Repower Financing in Ontario (2026 Guide)",
     seoTitle: 'Mercury Outboard Financing in Ontario (2026): Real Rates & Terms | Harris Boat Works',
-    description: "How Ontario boaters finance a Mercury repower. Canadian marine lenders, terms, what you can bundle, and what the Mercury USA financing programme does and doesn't cover north of the border.",
+    description: 'How Mercury outboard financing works in Ontario for 2026. Real APR, terms, and how to apply through a Platinum dealer on Rice Lake.',
     image: '/lovable-uploads/hero-mercury-financing-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
