@@ -268,16 +268,13 @@ export default function AgentsHub() {
             Register Harris Boat Works as a tool inside Claude Desktop, Cursor, custom GPTs, or any MCP-compatible client.
             JSON-RPC 2.0 over HTTP. Public, no-auth.
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-sm overflow-x-auto">
-            <code>POST {MCP_SERVER}</code>
-          </pre>
+          <CodeBlock language="http">{`POST ${MCP_SERVER}`}</CodeBlock>
           <p className="text-protected text-sm mt-2">
             Methods: <code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>.
             Tools: <code>search_motors</code>, <code>get_motor</code>, <code>estimate_trade_in</code>, <code>build_quote</code>, <code>get_brand_rules</code>.
             GET the URL for the live tool catalog.
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto mt-3">
-{`curl -X POST ${MCP_SERVER} \\
+          <CodeBlock language="bash" size="xs">{`curl -X POST ${MCP_SERVER} \\
   -H "Content-Type: application/json" \\
   -d '{
     "jsonrpc": "2.0",
@@ -287,8 +284,7 @@ export default function AgentsHub() {
       "name": "search_motors",
       "arguments": { "horsepower": 90, "in_stock_only": true }
     }
-  }'`}
-          </pre>
+  }'`}</CodeBlock>
         </section>
 
         <section className="mb-10">
