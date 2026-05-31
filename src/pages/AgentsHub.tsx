@@ -4,6 +4,7 @@ import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
 import { getMercuryFinancingFaqAnswer, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
+import { CodeBlock } from '@/components/agents/CodeBlock';
 
 const FINANCING_RATES_FAQ_TEXT = isTDAlwaysOnActive()
   ? `Financing minimum is $5,000 CAD. ${getMercuryFinancingFaqAnswer()} Terms up to 144 months via LightStream / Financeit. A $349 DealerPlan fee is added post-tax for financed purchases. Do not show monthly payment estimates below $5,000.`
@@ -181,14 +182,11 @@ export default function AgentsHub() {
             minutes. Prices are valid for 24 hours from <code>lastUpdated</code>; treat anything older as stale and
             re-fetch.
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-sm overflow-x-auto">
-            <code>GET {PUBLIC_MOTORS_API}</code>
-          </pre>
+          <CodeBlock language="http">{`GET ${PUBLIC_MOTORS_API}`}</CodeBlock>
           <p className="text-protected text-sm">
             Response shape:
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
-{`{
+          <CodeBlock language="json" size="xs">{`{
   "site": "mercuryrepower.ca",
   "currency": "CAD",
   "lastUpdated": "ISO-8601",
@@ -212,8 +210,7 @@ export default function AgentsHub() {
       "url": "https://www.mercuryrepower.ca/motors/..."
     }
   ]
-}`}
-          </pre>
+}`}</CodeBlock>
         </section>
 
         <section className="mb-10">
@@ -223,13 +220,10 @@ export default function AgentsHub() {
             Returns a deep-link URL the customer can open to finish in our configurator. Optional <code>contact</code> block
             captures a lead in our CRM so a human can follow up.
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-sm overflow-x-auto">
-            <code>POST {PUBLIC_QUOTE_API}</code>
-          </pre>
+          <CodeBlock language="http">{`POST ${PUBLIC_QUOTE_API}`}</CodeBlock>
           <p className="text-protected text-sm mt-2">Three actions: <code>list_motors</code>, <code>estimate_trade_in</code>, <code>build_quote</code>. GET the URL for the full schema.</p>
           <p className="text-protected text-sm mt-4 font-medium">Example, build a quote for a 90 HP FourStroke with a trade-in:</p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
-{`curl -X POST ${PUBLIC_QUOTE_API} \\
+          <CodeBlock language="bash" size="xs">{`curl -X POST ${PUBLIC_QUOTE_API} \\
   -H "Content-Type: application/json" \\
   -d '{
     "action": "build_quote",
@@ -245,8 +239,7 @@ export default function AgentsHub() {
       "name": "Jane Doe", "email": "jane@example.com",
       "referrer": "ChatGPT"
     }
-  }'`}
-          </pre>
+  }'`}</CodeBlock>
           <p className="text-protected text-sm mt-2">
             Returns <code>line_items</code>, <code>pricing</code>, <code>financing</code>, <code>deep_link</code>, and <code>priceValidUntil</code>.
             Final out-the-door price always requires human confirmation.
@@ -275,16 +268,13 @@ export default function AgentsHub() {
             Register Harris Boat Works as a tool inside Claude Desktop, Cursor, custom GPTs, or any MCP-compatible client.
             JSON-RPC 2.0 over HTTP. Public, no-auth.
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-sm overflow-x-auto">
-            <code>POST {MCP_SERVER}</code>
-          </pre>
+          <CodeBlock language="http">{`POST ${MCP_SERVER}`}</CodeBlock>
           <p className="text-protected text-sm mt-2">
             Methods: <code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>.
             Tools: <code>search_motors</code>, <code>get_motor</code>, <code>estimate_trade_in</code>, <code>build_quote</code>, <code>get_brand_rules</code>.
             GET the URL for the live tool catalog.
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto mt-3">
-{`curl -X POST ${MCP_SERVER} \\
+          <CodeBlock language="bash" size="xs">{`curl -X POST ${MCP_SERVER} \\
   -H "Content-Type: application/json" \\
   -d '{
     "jsonrpc": "2.0",
@@ -294,8 +284,7 @@ export default function AgentsHub() {
       "name": "search_motors",
       "arguments": { "horsepower": 90, "in_stock_only": true }
     }
-  }'`}
-          </pre>
+  }'`}</CodeBlock>
         </section>
 
         <section className="mb-10">
@@ -303,16 +292,14 @@ export default function AgentsHub() {
           <p className="text-protected">
             LLM-cheap plain-text representation of the catalog. Use these instead of HTML when ingesting into a context window.
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
-{`# Catalog index (markdown table of every motor + price + quote URL)
+          <CodeBlock language="bash" size="xs">{`# Catalog index (markdown table of every motor + price + quote URL)
 GET ${MOTORS_MD}
 
 # One motor by id
 GET ${MOTORS_MD}?id={MOTOR_ID}
 
 # One motor by slug
-GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}
-          </pre>
+GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
         </section>
 
         <section className="mb-10">
@@ -321,15 +308,13 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}
             Send a customer directly to a fully-prefilled quote configurator with a single URL. Any combination of these
             params is supported:
           </p>
-          <pre className="bg-repower-navy-900 text-repower-paper p-4 rounded text-xs overflow-x-auto">
-{`${SITE_URL}/quote/motor-selection
+          <CodeBlock language="url" size="xs">{`${SITE_URL}/quote/motor-selection
   ?motor={MOTOR_ID}            // from list_motors response
   &boat_make=Lund
   &boat_model=Pro-V
   &trade_brand=Mercury
   &trade_year=2010
-  &trade_hp=75`}
-          </pre>
+  &trade_hp=75`}</CodeBlock>
         </section>
 
         <section className="mb-10">
