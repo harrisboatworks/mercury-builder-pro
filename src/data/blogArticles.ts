@@ -12296,16 +12296,10 @@ If you have seen Mercury financing offers mentioning Sheffield Financial, note t
 - ontario-mercury-outboard-price-guide
 - boat-motor-financing-guide-ontario`,
     faqs: [
-      { question: 'Can I finance a Mercury repower in Ontario?', answer: 'Yes. Mercury Repower Financing through HBW covers the full project: motor, rigging, controls, prop, install labour, and Ontario HST. Terms run from 24 to 84 months. Current rates and live payment options are at mercuryrepower.ca.' },
-      { question: 'What is the current Mercury financing rate?', answer: 'Rates change with market conditions and Mercury seasonal promotional calendar. Treat any rate published in an article as a planning-level estimate. The current confirmed rate is at mercuryrepower.ca.' },
-      { question: 'What can I bundle into the financing?', answer: 'Motor, rigging, prop, install labour, hydraulic steering conversion (if required), battery and harness refresh, and Ontario HST. Your old motor becomes trade-in credit instead.' },
-      { question: 'What term lengths are available?', answer: 'Typically 24, 36, 48, 60, 72, and 84 months. Most repower customers land at 60 or 72 months.' },
-      { question: 'Do I need a down payment?', answer: 'No required minimum. Some customers finance 100% of the project. Trade-in credit on your old motor counts toward the total the same way a down payment does.' },
-      { question: 'How fast is approval?', answer: 'Most approvals come back within 24 to 48 hours after you submit the application.' },
-      { question: 'Can I pay it off early?', answer: 'Confirm prepayment terms before you sign. Most arrangements allow early payoff without penalty, but verify this on your specific agreement.' },
-      { question: 'Is Ontario HST included in the financed amount?', answer: 'Yes. HST at 13% is added to the project total and included in the financed amount. You do not pay tax separately upfront.' },
-      { question: 'How do I get started?', answer: 'Build a quote at mercuryrepower.ca. You will see the full installed cost, then live payment options at current rates and terms.' },
-      { question: 'What is the current Mercury financing rate in Canada?', answer: 'As of 2026-05-28, the active program is Mercury TD "Always On" at 5.48% APR (OAC) with terms up to 60 months and amortization up to 240 months on new eligible Mercury outboards. It runs through December 31, 2026. Funded through TD Auto Finance via HBW\'s Dealerplan Peterborough relationship. After the program ends, standard tiered Canadian Mercury financing resumes. Check mercuryrepower.ca/promotions for the live offer.' },
+      { question: 'How does Mercury outboard financing work in Ontario in 2026?', answer: 'In Canada, Mercury financing runs through TD Auto Finance via Dealerplan in Peterborough. The current TD "Always On" rate is 5.48% APR, active through December 31, 2026, for qualified buyers on new motors and repower packages.' },
+      { question: 'What can I finance?', answer: 'The whole package - motor, rigging, controls, and install. On a 15,000 CAD repower over 60 months at 5.48% APR, that is roughly 287 CAD a month.' },
+      { question: 'Is Sheffield Financial available in Canada?', answer: 'No. Sheffield Financial is a USA-only program. In Canada, Mercury financing runs through TD Auto Finance. Ask us for real Canadian rates rather than assuming a US offer applies.' },
+      { question: 'How do I apply for financing?', answer: 'We handle the TD Auto Finance application in-house through Dealerplan. Bring proof of income and a void cheque, and we can usually get an answer the same day.' }
     ]
   },
   {
