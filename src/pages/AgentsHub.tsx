@@ -4,6 +4,7 @@ import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
 import { getMercuryFinancingFaqAnswer, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
+import { CodeBlock } from '@/components/agents/CodeBlock';
 
 const FINANCING_RATES_FAQ_TEXT = isTDAlwaysOnActive()
   ? `Financing minimum is $5,000 CAD. ${getMercuryFinancingFaqAnswer()} Terms up to 144 months via LightStream / Financeit. A $349 DealerPlan fee is added post-tax for financed purchases. Do not show monthly payment estimates below $5,000.`
