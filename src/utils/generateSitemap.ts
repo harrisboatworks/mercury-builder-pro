@@ -155,7 +155,7 @@ export function generateSitemapXML(): string {
   const today = new Date().toISOString().split('T')[0];
   const multilingualEntries = buildMultilingualBlogEntries(today);
 
-  const allEntries = [...getStaticPages(), ...blogEntries, ...multilingualEntries];
+  const allEntries = [...getStaticPages(), ...blogEntries, ...multilingualEntries].filter(notRedirected);
   
   const urlEntries = allEntries.map(entry => {
     let xml = `  <url>
