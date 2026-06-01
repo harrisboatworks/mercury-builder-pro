@@ -30594,6 +30594,23 @@ For a full eligibility table with every motor class, year cutoff, joystick prere
 
 To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll reply same-day.
 
+### Mercury DTS compatibility by family and HP range
+
+| Mercury family | HP range | DTS support | Notes |
+|---|---|---|---|
+| FourStroke | 9.9-115 HP | Mechanical only | DTS not offered. Standard controls and cables. |
+| FourStroke | 150 HP | Mechanical only | DTS not offered on the inline 4. Use standard binnacle. |
+| FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
+| Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
+| Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
+| Verado V8 (250-400 HP) | 250-400 HP | DTS standard | Verado has been DTS-only for the current generation. |
+| Verado V10 / V12 (400-600 HP) | 400-600 HP | DTS standard | Joystick Piloting requires DTS. |
+| Avator (electric) | 7.5e-110e | Drive-by-wire native | Throttle is electronic by design, separate platform from DTS. |
+| SeaPro | varies | Mechanical or DTS | Commercial-rated. Match to existing helm setup; HBW will verify. |
+
+**Note:** DTS retrofit on motors built for mechanical only is rarely worth it. New rigging cost runs $4,000-$8,000+ depending on helm. The decision usually only makes sense on a new repower or a multi-engine setup where Joystick Piloting is the goal.
+
+
 ## Cost: mechanical wins by $400-$800
 
 Mechanical controls installed: typically $250-$450 in parts (control head, cables, hardware) plus 1-2 hours of rigging labour at $135-$165/hour.
