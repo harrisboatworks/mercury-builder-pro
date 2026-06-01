@@ -3830,7 +3830,28 @@ Customers sometimes ask whether to upgrade their two-tube pontoon to a tritoon d
 
 If your needs have shifted toward active water sports and your two-tube isn't keeping up, the conversation is really about whether to sell and buy a tritoon. We sell new Legend Boats and are happy to work through that decision with you.
 
+## Mercury Boost on a pontoon: when it actually helps
+
+Mercury Boost is a software calibration that improves mid-range acceleration response by 5-21 percent on eligible motors. It does NOT add peak horsepower at WOT. On a pontoon, that distinction matters more than on most other hull types.
+
+**When Boost helps on a pontoon:**
+
+- You run a tritoon with a 200-300 HP V8 Pro XS and tow tubes or skiers regularly. Faster mid-range punch out of the hole is real, repeatable, and noticeable.
+- Your existing motor is on Mercury's eligible serial range (2B529482 or later for the relevant V8 families).
+- You already have enough peak HP for the boat loaded. Boost sharpens response, not top speed.
+
+**When Boost does NOT help on a pontoon:**
+
+- You run a standard two-tube pontoon with a 90 or 115 Command Thrust. CT is the right answer here. The 115 CT is not on the Boost eligibility list, and the gearcase plus prop pairing is already optimized for hole-shot on a standard pontoon.
+- You spend 80 percent of your time at steady cruise. Boost is invisible at constant throttle.
+- The underlying motor is undersized for the hull. Boost will not fix that. You need a bigger motor, not a calibration upgrade.
+
+**The honest pontoon-specific framing:** For a typical two-tube pontoon in the Kawarthas, the right answer is a 90 or 115 Command Thrust FourStroke. For a tritoon or a pontoon used for serious watersports, a 200-300 HP V8 Pro XS with factory Boost (or the dealer-installed Boost calibration on an eligible serial) is the upgrade path. Boost is not a substitute for the right base motor.
+
+For full Boost eligibility detail by motor family and serial range, see our [Mercury Boost software upgrade eligibility guide](/blog/mercury-boost-software-upgrade-eligibility-2026).
+
 ---
+
 
 ## Related posts
 - [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
@@ -30593,6 +30614,23 @@ DTS is standard on all current Mercury Verado V8/V10/V12 (250-600 HP, naturally 
 For a full eligibility table with every motor class, year cutoff, joystick prerequisites, and what to do if your motor isn't DTS-capable, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for DTS Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026).
 
 To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll reply same-day.
+
+### Mercury DTS compatibility by family and HP range
+
+| Mercury family | HP range | DTS support | Notes |
+|---|---|---|---|
+| FourStroke | 9.9-115 HP | Mechanical only | DTS not offered. Standard controls and cables. |
+| FourStroke | 150 HP | Mechanical only | DTS not offered on the inline 4. Use standard binnacle. |
+| FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
+| Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
+| Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
+| Verado V8 (250-400 HP) | 250-400 HP | DTS standard | Verado has been DTS-only for the current generation. |
+| Verado V10 / V12 (400-600 HP) | 400-600 HP | DTS standard | Joystick Piloting requires DTS. |
+| Avator (electric) | 7.5e-110e | Drive-by-wire native | Throttle is electronic by design, separate platform from DTS. |
+| SeaPro | varies | Mechanical or DTS | Commercial-rated. Match to existing helm setup; HBW will verify. |
+
+**Note:** DTS retrofit on motors built for mechanical only is rarely worth it. New rigging cost runs $4,000-$8,000+ depending on helm. The decision usually only makes sense on a new repower or a multi-engine setup where Joystick Piloting is the goal.
+
 
 ## Cost: mechanical wins by $400-$800
 
