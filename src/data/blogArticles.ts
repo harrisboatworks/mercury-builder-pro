@@ -3441,7 +3441,17 @@ Build a complete installed quote at [mercuryrepower.ca](https://www.mercuryrepow
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-*Last reviewed: 2026-05-11.*`,
+*Last reviewed: 2026-05-11.*
+
+---
+
+**Related guides:**
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
+- [Mercury vs Honda Outboards: Honest Ontario Dealer Comparison 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+`,
     faqs: [
       { question: 'How long has Harris Boat Works been a Mercury dealer?', answer: 'Since 1965. The marina itself was founded in 1947. Three generations of continuous family ownership in Gores Landing on Rice Lake.' },
       { question: 'What does Mercury Platinum dealer status mean?', answer: 'Platinum is the highest tier in Mercury dealer rating system. It is based on volume, service quality, technician certification, customer satisfaction, and operational standards. It gives us priority parts access, higher-level technical support, and faster warranty processing.' },
@@ -4687,6 +4697,15 @@ We do cottage repowers every season. We will give you the honest answer for your
 *Last reviewed: 2026-05-11.*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
+- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
 `,
     faqs: [
       { question: 'Should I repower my cottage boat or buy new?', answer: 'For most cottage boats with hulls less than 25 years old in reasonable condition, repowering wins on the math. A new comparable boat package costs significantly more. The hull is the asset; the motor is the wear part.' },
@@ -7478,6 +7497,15 @@ Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new P
 *Last reviewed: 2026-05-11.*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
+- [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 `,
     faqs: [
       { question: 'What is the difference between a trolling motor and a kicker motor?', answer: 'A trolling motor is electric, battery-powered, and rated in pounds of thrust. A kicker motor is a small gas outboard rated in horsepower that runs on the same fuel as your main motor. Electric trolling motors offer silence and GPS spot-lock. Gas kickers offer range, real thrust in wind, and backup propulsion.' },
@@ -7862,6 +7890,15 @@ This is Mercury Marine Canada's TD "Always On" program, funded through TD Auto F
 After December 31, 2026, the program ends and standard tiered Mercury financing resumes (from 7.99% APR OAC). Build a current quote at [mercuryrepower.ca](https://mercuryrepower.ca) for the rate that applies today.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
 `,
     faqs: [
       { question: 'What is the typical term for boat motor financing in Ontario?', answer: 'Most repower customers finance over 48 to 84 months. 60 and 72 months are the most common.' },
@@ -8757,7 +8794,17 @@ For local Rice Lake and Kawartha customers, yes. Contact us at [hbw.wiki/service
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+---
+
+---
+
+**Related guides:**
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
+- [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+- [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
+`,
     faqs: [
       {
         question: 'When should I stop boating in Ontario for the season?',
@@ -10720,7 +10767,17 @@ Harris Boat Works. Mercury dealer since 1965, Mercury Platinum dealer today.
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-*Last reviewed: 2026-05-11.*`,
+*Last reviewed: 2026-05-11.*
+
+---
+
+**Related guides:**
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
+- [Mercury vs Honda Outboards: Honest Ontario Dealer Comparison 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+`,
     faqs: [
       { question: 'Is Mercury actually better than Yamaha or Honda?', answer: 'Mechanically, all three brands make reliable modern four-stroke outboards. The practical difference for Ontario boaters is dealer network, parts availability, and resale. On those metrics, Mercury wins in this region.' },
       { question: 'Why does HBW sell only Mercury?', answer: 'We have been a Mercury dealer since 1965. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Platinum dealer relationship today.' },
@@ -10846,6 +10903,15 @@ If you are comparing FourStroke vs Pro XS for a specific hull, or you need help 
 *Last reviewed: 2026-05-11.*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
+- [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 `,
     faqs: [
     { question: 'What is the best Mercury motor for a fishing boat on Rice Lake?', answer: 'For most 14 to 18 ft fishing boats on Rice Lake, a Mercury FourStroke in the 40 to 115 HP range is the right fit. Adding a 9.9 HP ProKicker for dedicated trolling is a popular setup.' },
@@ -11002,7 +11068,17 @@ If a short-range quiet runabout is genuinely what your cottage situation calls f
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-*Last reviewed: 2026-05-11.*`,
+*Last reviewed: 2026-05-11.*
+
+---
+
+**Related guides:**
+- [Mercury Boost Software Upgrade Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026)
+- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+`,
         faqs: [
       { question: 'How far can a Mercury Avator go on a single charge?', answer: 'It depends on the model and battery configuration. On a 13-foot boat with the Avator 7.5e and its single 1 kWh integrated battery: approximately 5 miles at full throttle or up to 34 miles at 25% throttle. Higher-power models with multiple battery packs extend range significantly.' },
       { question: 'Is Mercury Avator practical for Rice Lake in Ontario?', answer: 'It depends on what you are using it for. An Avator on a small car-topper or cottage tender making short trips from the dock: yes, very practical. An Avator as the primary motor on a 17-foot fishing boat running a full day across Rice Lake: no, not practical with current battery range.' },
@@ -11441,7 +11517,16 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 Mercury Platinum dealer. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+---
+
+---
+
+**Related guides:**
+- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+`,
     faqs: [
       {
         question: 'Which Mercury engines are eligible for the Boost software upgrade?',
@@ -11606,6 +11691,15 @@ The update is free and takes 15 minutes. There is no reason not to do it.
 *Last reviewed: 2026-05-11.*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
+- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
 `,
     faqs: [
       { question: 'Do I need to update my PCL when I change motors?', answer: 'Yes, in most cases. When motor HP, brand, or model changes, you must update the PCL within 30 days. Updates are free.' },
@@ -11978,7 +12072,16 @@ The third is the "I want a Pro XS" angler swap. Existing controls usually carry 
 
 Ready to price it? Build your repower quote at mercuryrepower.ca. Takes three minutes. You see the motor cost, rigging, installation, and total before you ever talk to us. No phone tag, no "call for price."
 
-Rather talk first? Call 905-342-2153. We answer the phone.`,
+Rather talk first? Call 905-342-2153. We answer the phone.
+
+---
+
+**Related guides:**
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
+- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+`,
     faqs: [
       { question: 'How much does a Mercury repower cost in Ontario in 2026?', answer: 'Planning ranges before HST: small remote (40-60 HP) $11,000-$15,000; mid (75-115 HP) $17,000-$22,000; 150 HP $23,000-$30,000; high-HP (200-300 HP) $35,000-$40,000. Build a quote at mercuryrepower.ca for your specific setup.' },
       { question: "What's included in a Mercury repower quote?", answer: 'Motor, rigging (controls, cables, gauges), prop, install labour, and on-water test. We list every line item. No hidden fees.' },
@@ -12449,7 +12552,16 @@ Build a repower quote on the motor selection page at mercuryrepower.ca in three 
 
 If you would rather talk it through, call **(905) 342-2153** or send us an email. We answer the phone.
 
-*Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The 5.48% TD "Always On" APR is current as of May 2026 and runs through December 31, 2026. Standard tiered rates apply after the promo retires. The actual price and live payment options for your specific configuration are at mercuryrepower.ca. Mercury model years change every July 1, and we refresh ranges in articles annually.*`,
+*Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The 5.48% TD "Always On" APR is current as of May 2026 and runs through December 31, 2026. Standard tiered rates apply after the promo retires. The actual price and live payment options for your specific configuration are at mercuryrepower.ca. Mercury model years change every July 1, and we refresh ranges in articles annually.*
+
+---
+
+**Related guides:**
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
+`,
     faqs: [
       { question: 'Can I finance a Mercury repower in Ontario?', answer: 'Yes. The current standard path is TD "Always On" at 5.48% APR through December 31, 2026 (OAC / subject to lender approval), placed through Dealerplan Peterborough. Covers the full project: motor, rigging, controls, prop, install labour, on-water test on Rice Lake before pickup, hydraulic steering conversion if required, and HST. Terms 24 to 84 months. Build a real quote and see live payment options at mercuryrepower.ca.' },
       { question: 'What\'s the Mercury financing rate in 2026?', answer: '5.48% APR through TD "Always On", current through December 31, 2026. After that, standard tiered rates apply (typically starting around 7.99% APR for good credit, varying by lender and credit profile). Current promotion details are on the promotions page.' },
@@ -13888,6 +14000,15 @@ The bigger reliability swing is who installed and rigged the motor, and whether 
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
+- [Mercury vs Honda Outboards: Honest Ontario Dealer Comparison 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
 `,
     faqs: [
     { question: 'Which outboard brand is most reliable in 2026: Mercury, Yamaha, or Honda?', answer: 'All three produce reliable four-stroke outboards. The practical reliability difference in Ontario (how fast you can get a motor fixed when something goes wrong) favors Mercury, because of dealer network density and parts availability in this region.' },
@@ -14401,6 +14522,14 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - CDI Electronics Troubleshooting Guide (7th Edition)
 - Transport Canada E10 fuel regulations (Dec 2022 marine/race carve-out)
 - HBW shop-floor data: 2026 spring service-ticket distribution
+
+---
+
+**Related guides:**
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
+- [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 `,
     howToSteps: [
       { name: 'Check the battery', text: 'Voltage at rest should be 12.4V or higher; voltage under crank load should stay above 10.5V. Clean and tighten terminals. Marine batteries last 4 to 6 years; a 7-year-old battery is at end of life regardless of how it tests. A weak battery causes false positives on every other test, so replace it before continuing.' },
@@ -14610,7 +14739,17 @@ Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepow
 Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+---
+
+---
+
+**Related guides:**
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
+`,
     faqs: [
       {
         question: 'Is 2026 a good year to buy a boat in Canada?',
@@ -15238,7 +15377,17 @@ Questions after you see it? Call 905-342-2153.
 Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+---
+
+---
+
+**Related guides:**
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
+`,
     faqs: [
       {
         question: 'Why don\'t most marine dealers list prices online?',
@@ -15998,6 +16147,15 @@ Always measure the transom from the top edge to the cavitation plate centerline 
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
+- [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 `,
     howToSteps: [
       { name: 'Find the lowest point of the hull at the transom', text: 'Locate the point where water meets hull when running on plane, at the centre of the transom where the motor will mount. This is the bottom reference for the measurement.' },
@@ -16501,7 +16659,16 @@ Mercury repower quotes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+---
+
+---
+
+**Related guides:**
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+- [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
+`,
     faqs: [
   {
     "question": "Do I need a special licence to lock through the Trent-Severn?",
@@ -19014,6 +19181,14 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
 - CDI Electronics Troubleshooting Guide (7th Edition)
 - HBW shop-floor data: 2026 spring service-ticket distribution
+
+---
+
+**Related guides:**
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
+- [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 `,
     faqs: [
       { question: "What is the most common Mercury alarm code at spring first-start?", answer: "Water in Fuel (the 4-beeps-every-2-minutes Guardian alert) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with fresh fuel (ideally ethanol-free)." },
@@ -23132,7 +23307,16 @@ Three ways to get a real price:
 
 We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we don't ship outboards, and we don't deliver. But we rig every motor in our shop, and every install includes an on-water test on Rice Lake before pickup. No exceptions.
 
-*Related guides: Mercury 40 vs 60 HP for Ontario boats | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Should I repower or buy a new boat? | Mercury Outboard Financing in Ontario (2026)*`,
+*Related guides: Mercury 40 vs 60 HP for Ontario boats | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Should I repower or buy a new boat? | Mercury Outboard Financing in Ontario (2026)*
+
+---
+
+**Related guides:**
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
+- [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
+`,
     image: '/lovable-uploads/hero-mercury-price-guide-counter.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
@@ -23928,7 +24112,16 @@ We also publish all our Mercury pricing live at [mercuryrepower.ca](https://www.
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-*Last reviewed: 2026-05-11.*`,
+*Last reviewed: 2026-05-11.*
+
+---
+
+**Related guides:**
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+`,
   },
   {
     slug: 'mercury-smartcraft-connect-guide-ontario',
@@ -24775,7 +24968,17 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 Mercury Platinum dealer. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+---
+
+---
+
+**Related guides:**
+- [Mercury 115 vs 150 HP: Honest Ontario Dealer Guide 2026](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
+- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
+- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+`,
   },
   {
     slug: "mercury-90-hp-fourstroke-review-ontario",
@@ -24946,7 +25149,17 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 *Related guides: Mercury 75 HP FourStroke, why we don't stock it | Mercury 115 HP FourStroke review | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+---
+
+---
+
+**Related guides:**
+- [Mercury 115 vs 150 HP: Honest Ontario Dealer Guide 2026](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
+- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
+- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+`,
   },
 
   {
@@ -25144,7 +25357,17 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 *Related guides: Mercury 90 HP FourStroke review | Mercury 75 HP FourStroke, why we don't stock it | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+---
+
+---
+
+**Related guides:**
+- [Mercury 115 vs 150 HP: Honest Ontario Dealer Guide 2026](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
+- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
+- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+`,
   },
 
   {
@@ -25311,7 +25534,17 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 *Related guides: Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+---
+
+---
+
+**Related guides:**
+- [Mercury 115 vs 150 HP: Honest Ontario Dealer Guide 2026](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
+- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
+- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+`,
   },
 
   {
@@ -25914,6 +26147,15 @@ Why Richmond Hill boaters drive to HBW vs Simcoe-area dealers:
 - **One-stop service + storage.** Many Richmond Hill customers store at HBW over winter, get spring commissioning, and trailer back to Simcoe or Rice Lake for the season.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
       { question: 'Is there a Mercury Platinum dealer near Richmond Hill?', answer: 'Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Richmond Hill - about 75 minutes north via Highway 404 and County Road 28.' },
@@ -26072,6 +26314,15 @@ Why Mississauga boaters trailer to HBW:
 - **Mercury Platinum depth.** A clean 115-150 HP repower install needs the rigging hours we put in daily, not every closer dealer has that bench.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
       { question: 'Is there a Mercury dealer near Mississauga?', answer: 'Mississauga has several Mercury dealers in the broader GTA. Harris Boat Works on Rice Lake is the closest Platinum-tier dealer for west-GTA customers willing to make the 90-minute drive northeast.' },
@@ -26215,6 +26466,15 @@ Why Vaughan boaters drive to HBW for repower:
 - **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before the trip, the configurator works without a phone call and shows real pricing.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
       { question: 'How far is HBW from Vaughan?', answer: 'About 80 minutes via Highway 400 / 404 and Highway 115. Roughly 120 km depending on your part of Vaughan.' },
@@ -26358,6 +26618,15 @@ Why Brampton boaters still trailer to HBW:
 - **Mercury Platinum-level work.** Closer dealers may lack the rigging depth for a clean install.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
       { question: 'How far is HBW from Brampton?', answer: 'About 95 minutes via Highway 410 / 401 and Highway 115. Roughly 140 km depending on your part of Brampton.' },
@@ -26505,6 +26774,15 @@ Why Oakville boaters drive to HBW for repower:
 - **Transparent CAD pricing.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding, the configurator works without a phone call and shows real dealer pricing, not MSRP.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
       { question: 'How far is HBW from Oakville?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Oakville.' },
@@ -26650,6 +26928,15 @@ Why Burlington boaters still drive to HBW:
 - **Mercury Platinum-level depth.** For a multi-thousand-dollar repower investment, the drive is justified when local dealers can't match the rigging expertise.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
       { question: 'How far is HBW from Burlington?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Burlington.' },
@@ -26994,6 +27281,15 @@ Why Pickering boaters choose HBW for repower:
 - **One-trip annual service.** Trailer up midweek, leave the boat for winterization or repower, pick up when ready. No 401 stress between Pickering and downtown.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
       { question: 'How far is HBW from Pickering?', answer: 'About 50 minutes via Highway 401 east and Highway 115 north. Roughly 75 km. Closer than most of the GTA - almost a non-decision drive for repower service.' },
@@ -27133,6 +27429,15 @@ Why Whitby boaters are a strong repower market:
 - **Mercury Platinum-level depth.** A clean install at HBW vs a rushed install elsewhere is the difference between 10 trouble-free years and a recurring warranty problem.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
       { question: 'How far is HBW from Whitby?', answer: 'About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.' },
@@ -27276,6 +27581,15 @@ Why Ajax boaters choose HBW for repower:
 - **One-trip storage + service.** Many Ajax customers store at HBW over winter, get spring commissioning, and trailer back to Lake Ontario for the season. One drive, one trusted shop, no May scheduling friction.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
       { question: 'How far is HBW from Ajax?', answer: 'About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.' },
@@ -27426,6 +27740,15 @@ Why Oshawa is a particularly strong repower market:
 - **Mercury Platinum-level depth.** A repower done well lasts the rest of the boat's life. Done poorly, it gets brought back for warranty work.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
       { question: 'How far is HBW from Oshawa?', answer: 'About 40 minutes via Highway 401 east and Highway 115 north. Roughly 65 km. One of the closest GTA cities to Rice Lake.' },
@@ -27576,6 +27899,15 @@ Why Bowmanville boaters choose HBW:
 - **Mercury Platinum depth.** A proper repower or rigging job at HBW takes the time it takes, we don't shortcut the controls and prop matching.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
       { question: 'How far is HBW from Bowmanville?', answer: 'About 35 minutes via Highway 401 east and Highway 115 north. Roughly 55 km. The closest major GTA-edge city to Rice Lake.' },
@@ -31352,6 +31684,15 @@ Yes. The Mercury Canada warranty network honours coverage at any authorized Merc
 Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-05-17.*
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
   },
   {
@@ -31476,6 +31817,15 @@ Yes. Trade-in valuations are done in person at HBW. The Trade-In Value Guide at 
 Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-05-17.*
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
   },
   {
@@ -31598,6 +31948,15 @@ No. HBW does NOT offer pickup or delivery. Customers bring the boat to us. We ha
 Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-05-17.*
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
   },
   {
@@ -33537,6 +33896,14 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - Ontario HST treatment on marine purchases
 - Amortization math verified with Python using standard formula M = P x [r(1+r)^n] / [(1+r)^n - 1]
 - HBW current Mercury Pro XS pricing: 115 ProXS $17,320, 150 ProXS $24,107 (as of 2026)
+
+---
+
+**Related guides:**
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
 `,
     faqs: [
       { question: "What is the typical APR for a Mercury repower in Ontario?", answer: "HBW's standard rate is 7.99% APR for qualified buyers in 2026, arranged through Dealerplan Peterborough and routed primarily to TD Auto Finance, also National Bank and RBC. Promotional rates of 2.99% to 4.9% are sometimes available through Mercury Canada's partner-lender program." },
@@ -33855,6 +34222,14 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - Honda Marine Canada lineup: [marine.honda.ca](https://marine.honda.ca/)
 - HBW shop-floor service data 2026
 - Dealer location data verified at Honda Marine Canada and Mercury Canada dealer locators (May 2026)
+
+---
+
+**Related guides:**
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
 `,
     faqs: [
       { question: "Does HBW service Honda outboards?", answer: "No. HBW services Mercury outboards exclusively. We do not stock Honda parts or have Honda Marine service tools. Honda owners in the area typically take their motors to Dewildt Marine and Powersports in Peterborough (approximately 30 km) or Dunfords of Havelock (approximately 45 km)." },
@@ -34233,7 +34608,17 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 **Email:** info@harrisboatworks.ca
 **Fuel dock + service:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario. On-water towing assistance for Rice Lake breakdowns.`,
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario. On-water towing assistance for Rice Lake breakdowns.
+
+---
+
+**Related guides:**
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
+- [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+- [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
+`,
     image: '/lovable-uploads/hero-rice-lake-boating-guide.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
@@ -34386,7 +34771,17 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 **Email:** info@harrisboatworks.ca
 **Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. 15-20 minutes from Port Hope and Cobourg. Largest Mercury and Mercruiser parts inventory in Ontario.`,
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. 15-20 minutes from Port Hope and Cobourg. Largest Mercury and Mercruiser parts inventory in Ontario.
+
+---
+
+**Related guides:**
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
+- [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+- [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
+`,
     image: '/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
@@ -34540,7 +34935,17 @@ A few notes specific to where we do business.
 **Email:** info@harrisboatworks.ca (send cowl plate photos of your Yamaha + photos of helm controls/gauges for a same-day side-by-side quote)
 **Build a Mercury quote:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marine dealer since 1965, current Platinum Dealer.`,
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marine dealer since 1965, current Platinum Dealer.
+
+---
+
+**Related guides:**
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
+- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+`,
     image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
@@ -34691,7 +35096,17 @@ To start a quote at HBW: email cowl plate photos of your Honda + photos of your 
 **Email:** info@harrisboatworks.ca (send Honda cowl plate + helm photos for same-day quote)
 **Build a Mercury quote:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marine dealer since 1965, current Platinum Dealer.`,
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marine dealer since 1965, current Platinum Dealer.
+
+---
+
+**Related guides:**
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Mercury vs Honda Outboards: Honest Ontario Dealer Comparison 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026)
+- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+`,
     image: '/lovable-uploads/Repowering_Boat_Kawarthas_Hero.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
