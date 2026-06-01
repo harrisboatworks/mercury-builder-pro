@@ -59,6 +59,38 @@ interface SitemapEntry {
   };
 }
 
+// Read vercel.json redirect-source pathnames so the sitemap can exclude any
+// URL that immediately 301s. GSC flags those as "Sitemap URLs that redirect".
+// Only runs at build/dev time (Node context). Wildcards / host-scoped entries
+// are skipped since they don't represent concrete page paths.
+let _redirectSources: Set<string> | null = null;
+function getRedirectSourcePaths(): Set<string> {
+  if (_redirectSources) return _redirectSources;
+  const set = new Set<string>();
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const fs = require('fs') as typeof import('fs');
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const path = require('path') as typeof import('path');
+    const raw = fs.readFileSync(path.resolve(process.cwd(), 'vercel.json'), 'utf8');
+    const cfg = JSON.parse(raw) as { redirects?: Array<{ source: string; has?: unknown }> };
+    for (const r of cfg.redirects ?? []) {
+      if (!r.source || r.has) continue; // skip host-scoped rules
+      if (r.source.includes(':') || r.source.includes('*')) continue; // skip patterns
+      set.add(r.source);
+    }
+  } catch {
+    // running outside Node (shouldn't happen) — return empty set, no filtering
+  }
+  _redirectSources = set;
+  return set;
+}
+
+function notRedirected(entry: SitemapEntry): boolean {
+  return !getRedirectSourcePaths().has(entry.loc);
+}
+
+
 // Static pages with their metadata
 const getStaticPages = (): SitemapEntry[] => {
   const today = new Date().toISOString().split('T')[0];
