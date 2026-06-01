@@ -334,7 +334,7 @@ export async function generateFullSitemapXML(): Promise<string> {
 
   const multilingualEntries = buildMultilingualBlogEntries(today);
 
-  const allEntries = [...getStaticPages(), ...blogEntries, ...multilingualEntries, ...motorEntries, ...caseStudyEntries, ...locationEntries];
+  const allEntries = [...getStaticPages(), ...blogEntries, ...multilingualEntries, ...motorEntries, ...caseStudyEntries, ...locationEntries].filter(notRedirected);
   
   const urlEntries = allEntries.map(entry => {
     let xml = `  <url>
