@@ -79,6 +79,7 @@ export function MercuryProXSSEO() {
       {
         "@type": "ProductGroup",
         "@id": `${SITE_URL}/mercury-pro-xs#productgroup`,
+        "productGroupID": "mercury-pro-xs-outboard-series",
         "name": "Mercury Pro XS Outboard Series",
         "description": "Mercury Pro XS high-performance FourStroke outboard motors, 115–250 HP, available at Harris Boat Works (Mercury Platinum Dealer, Ontario).",
         "brand": { "@type": "Brand", "name": "Mercury Marine" },
@@ -90,10 +91,12 @@ export function MercuryProXSSEO() {
           "image": v.image,
           "brand": { "@type": "Brand", "name": "Mercury Marine" },
           "category": "Outboard Motor",
+          "inProductGroupWithID": "mercury-pro-xs-outboard-series",
           "offers": {
             "@type": "Offer",
             "priceCurrency": "CAD",
             "price": v.startingAt,
+            "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/InStoreOnly",
             "itemCondition": "https://schema.org/NewCondition",
             "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
