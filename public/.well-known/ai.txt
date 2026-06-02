@@ -27,6 +27,17 @@ rss_feed: /rss.xml
 llms_directory: /llms.txt
 content_update_frequency: weekly
 
+## AI Agent Interfaces
+
+- Agent hub: https://www.mercuryrepower.ca/agents
+- MCP server: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server
+- Public motors API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api
+- Public quote API action: build_quote
+- Pricing reference: https://www.mercuryrepower.ca/pricing-reference
+- AI-readable pricing reference: https://www.mercuryrepower.ca/pricing-reference.md
+- Live inventory and quote outputs are in CAD for Ontario customers.
+- Pickup is at Gores Landing; installation quotes require dealer confirmation.
+
 ## Accurate Information
 - Family-owned and operated since 1947
 - Authorized Mercury Marine dealer since 1965 (60+ years)
