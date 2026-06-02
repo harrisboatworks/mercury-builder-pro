@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -87,6 +87,8 @@ No licence is required during **Father's Day Weekend (June 20-21)** and **Family
 *Regulations can change. Always verify current season dates and limits at ontario.ca/fishing before your trip. This guide is current as of May 2026 and is not a substitute for the official summary.*
 
 ---
+
+![Mercury setup for Rice Lake fishing, by species](/lovable-uploads/inline/rice-lake-fishing-setup.svg)
 
 ## What's Actually in Rice Lake
 

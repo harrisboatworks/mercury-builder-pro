@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -78,6 +78,8 @@ Every unnecessary 100 lbs on the boat costs fuel. The cumulative effect of a ful
 Modern Mercury FourStrokes have a cruise efficiency sweet spot, typically somewhere in the 3,500, 4,500 RPM range, but this varies by motor and hull. Running above or below that band costs efficiency. The right approach is to identify your motor's best cruise RPM (your dealer or owner's manual can help), and aim for it.
 
 ---
+
+![Five levers that cut Mercury outboard fuel burn, ranked](/lovable-uploads/inline/fuel-efficiency-levers.svg)
 
 ## What Horsepower Actually Does to Fuel Economy
 

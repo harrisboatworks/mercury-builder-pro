@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -33,6 +33,8 @@ content_type: blog_article
 
 ## Quick answer
 Mercury Avator electric outboards are purpose-built for short-range, quiet, low-maintenance boating. They are a genuinely good fit for small boats on electric-only or HP-restricted lakes, cottage tenders, and dedicated quiet runabouts. They are not a replacement for a gas outboard on a full-size fishing boat running a full day on Rice Lake. Understand the use case before you buy.
+
+![Mercury Avator electric outboard lineup, 7.5e 20e 35e](/lovable-uploads/inline/mercury-avator-lineup.svg)
 
 ## The honest take
 
@@ -160,6 +162,15 @@ If a short-range quiet runabout is genuinely what your cottage situation calls f
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Last reviewed: 2026-05-11.*
+
+---
+
+**Related guides:**
+- [Mercury Boost Software Upgrade Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026)
+- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -149,6 +149,15 @@ Why Whitby boaters are a strong repower market:
 - **Mercury Platinum-level depth.** A clean install at HBW vs a rushed install elsewhere is the difference between 10 trouble-free years and a recurring warranty problem.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 
 ## FAQs
 

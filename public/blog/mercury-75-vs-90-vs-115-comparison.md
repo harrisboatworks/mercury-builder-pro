@@ -1,29 +1,29 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 75 vs 90 vs 115 HP: Which One We'd Pick (2026)"
-description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP FourStroke wins. Here's where 75 and 115 actually make sense."
+title: "90 HP Mercury Motor vs 75 and 115 HP: Which One We'd Pick (2026)"
+description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's where 75 and 115 actually make sense."
 category: "Comparison"
 date_published: 2026-01-26
-date_modified: 2026-05-04
-keywords: ["mercury 75 vs 90","mercury 90 vs 115","best mercury hp","mercury 75hp review","mercury 115 fourstroke"]
+date_modified: 2026-06-02
+keywords: ["90 hp mercury motor","mercury 75 vs 90","mercury 90 vs 115","best mercury hp","mercury 75hp review","mercury 115 fourstroke"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury 75 vs 90 vs 115 HP: Which One We'd Pick (2026)
+# 90 HP Mercury Motor vs 75 and 115 HP: Which One We'd Pick (2026)
 
-> We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP FourStroke wins. Here's where 75 and 115 actually make sense.
+> We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's where 75 and 115 actually make sense.
 
 **Category:** Comparison  
 **Published:** 2026-01-26  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 
@@ -231,6 +231,10 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
 ## FAQs
+
+### How much does a new 90 HP Mercury motor cost installed in Ontario?
+
+Expect roughly $14,000 to $17,000 CAD installed at Harris Boat Works in 2026, including the motor, controls, propeller, rigging, and water test on Rice Lake. Final cost depends on your boat, existing rigging, and any trade-in. Live pricing at mercuryrepower.ca.
 
 ### Is the 90HP worth the upgrade from 75HP?
 

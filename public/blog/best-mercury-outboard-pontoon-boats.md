@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -150,6 +150,26 @@ The result: noticeably stronger hole shot when loaded, faster plane time, better
 Customers sometimes ask whether to upgrade their two-tube pontoon to a tritoon during a repower. The honest answer: switching from two-tube to tritoon is a new pontoon purchase, not a repower project. The hull is the asset, you can't cost-effectively retrofit a third tube to most existing two-tube pontoons.
 
 If your needs have shifted toward active water sports and your two-tube isn't keeping up, the conversation is really about whether to sell and buy a tritoon. We sell new Legend Boats and are happy to work through that decision with you.
+
+## Mercury Boost on a pontoon: when it actually helps
+
+Mercury Boost is a software calibration that improves mid-range acceleration response by 5-21 percent on eligible motors. It does NOT add peak horsepower at WOT. On a pontoon, that distinction matters more than on most other hull types.
+
+**When Boost helps on a pontoon:**
+
+- You run a tritoon with a 200-300 HP V8 Pro XS and tow tubes or skiers regularly. Faster mid-range punch out of the hole is real, repeatable, and noticeable.
+- Your existing motor is on Mercury's eligible serial range (2B529482 or later for the relevant V8 families).
+- You already have enough peak HP for the boat loaded. Boost sharpens response, not top speed.
+
+**When Boost does NOT help on a pontoon:**
+
+- You run a standard two-tube pontoon with a 90 or 115 Command Thrust. CT is the right answer here. The 115 CT is not on the Boost eligibility list, and the gearcase plus prop pairing is already optimized for hole-shot on a standard pontoon.
+- You spend 80 percent of your time at steady cruise. Boost is invisible at constant throttle.
+- The underlying motor is undersized for the hull. Boost will not fix that. You need a bigger motor, not a calibration upgrade.
+
+**The honest pontoon-specific framing:** For a typical two-tube pontoon in the Kawarthas, the right answer is a 90 or 115 Command Thrust FourStroke. For a tritoon or a pontoon used for serious watersports, a 200-300 HP V8 Pro XS with factory Boost (or the dealer-installed Boost calibration on an eligible serial) is the upgrade path. Boost is not a substitute for the right base motor.
+
+For full Boost eligibility detail by motor family and serial range, see our [Mercury Boost software upgrade eligibility guide](/blog/mercury-boost-software-upgrade-eligibility-2026).
 
 ---
 

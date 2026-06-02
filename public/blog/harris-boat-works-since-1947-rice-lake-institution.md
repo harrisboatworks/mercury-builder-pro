@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Harris Boat Works Since 1947: The Rice Lake Institution Built on Three G
 description: "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on the same dock means for the customers who've trusted the..."
 category: "About HBW"
 date_published: 2026-05-18
-date_modified: 2026-02-06
+date_modified: 2026-06-02
 keywords: ["Harris Boat Works since 1947","third generation marina Ontario","historic Rice Lake marina","trusted boat dealer Ontario","family marina since 1947","Mercury dealer history Canada"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** About HBW  
 **Published:** 2026-05-18  
-**Last updated:** 2026-02-06  
+**Last updated:** 2026-06-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution
 
@@ -103,7 +103,7 @@ These aren't things a new dealer can fake. They take time. We have time on Rice 
 ---
 
 ::pull-quote
-quote: My grandfather bought his first boat from Don Harris in the 50s. I bought my last three motors from Jay. **Some things on this lake don't change, and that's a good thing.**
+quote: My grandfather bought his first boat from George Harris in the 50s. I bought my last three motors from Jay. **Some things on this lake don't change, and that's a good thing.**
 attribution: Mike S.
 source: Third-generation Rice Lake cottager
 ::

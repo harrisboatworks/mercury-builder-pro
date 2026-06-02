@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -34,6 +34,8 @@ content_type: blog_article
 Harris Boat Works offers outdoor winter storage with shrinkwrap on-site at our Gores Landing marina. Boats are blocked, fully wrapped, and stored on our property from October pickup to spring commissioning. We don't operate indoor storage, this is outdoor only. Pricing is by boat length and what services you bundle (winterize + storage + commissioning is the most common package). Submit a storage request at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
+
+![Outdoor shrinkwrap versus indoor heated boat storage](/lovable-uploads/inline/outdoor-vs-indoor-storage.svg)
 
 ## What HBW Storage Actually Looks Like
 

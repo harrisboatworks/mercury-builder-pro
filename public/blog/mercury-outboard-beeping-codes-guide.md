@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to
 description: "Mercury outboard beeping? What common beep patterns mean (overheat, oil, fuel), why continuous alarms matter, and what to send when booking HBW service."
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-05-27
 keywords: ["mercury outboard beeping codes","mercury warning horn beeps","mercury continuous beep","mercury four beeps every two minutes","mercury alarm ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,11 +23,13 @@ content_type: blog_article
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-05-27  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 
 ## Article
+
+_Last updated: May 27, 2026_
 
 **Language:** English 
 
@@ -64,7 +66,19 @@ escalationBody: Continuous beeps that do not clear after stopping, checking wate
 
 ## Mercury Outboard Beeping Codes: What Each Pattern Means and What to Check
 
-"My motor is beeping" is the beginning of a conversation, not the end of one. What matters is the pattern: how many beeps, how often, whether it correlates with throttle position or speed, and whether there's any accompanying display message or loss of power.
+A Mercury outboard beep is the motor talking to you. Sometimes routine (a normal self-check at key-on), sometimes a warning (low oil, water in fuel, overheating, Guardian mode). The pattern, when it happens, and what else the boat is doing tells you which one you're dealing with. Most patterns fall into a handful of categories, and the right response depends on whether the engine is also losing power or showing a SmartCraft message. Below: every common Mercury beep pattern, what it can mean, and what to do next.
+
+| Pattern | When it happens | What it can mean | What to do |
+|---|---|---|---|
+| Single beep at key-on | Startup | Normal system self-check, alarm system is working | None |
+| Continuous alarm at cruise | Underway | Real heat (overheat), overspeed, or engine protection | Reduce throttle, check tell-tale stream, check display, shut down if it persists |
+| Continuous alarm + power reduction | Underway | Guardian mode, ECM is protecting the engine | Do not override. Reduce load. Investigate the trigger on shore. |
+| Four-beep pattern (repeating) | Varies by motor + year | Advisory-level alert: low oil, water in fuel, or other | Check display/SmartCraft message; confirm against the owner's manual for your specific motor |
+| Intermittent beeping | Varies | Sensor or wiring fault, alarm may be lying | Diagnostic needed. Note what RPM/condition triggers it before service. |
+| Alarm at WOT only | At wide-open throttle | Poppet valve or cooling restriction at high pressure | Check water pressure at speed; possible service issue |
+| Alarm briefly after shutdown | Heat-soak | Normal if motor ran hard, heat trapped in head before water-jacket cools | Usually clears on its own as motor cools |
+
+The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or call (905) 342-2153.
 
 Different Mercury motors use different beep patterns, and what four beeps means on a 2010 EFI FourStroke is not necessarily what four beeps means on a current Verado. This guide covers the common patterns you'll encounter, what they typically indicate, and how to gather the information a technician needs to help you.
 
@@ -167,7 +181,7 @@ This information cuts diagnostic time significantly.
 
 ## Related at HBW
 
-The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
+The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
 - [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips)
@@ -225,6 +239,18 @@ On some Mercury systems, four beeps every two minutes can relate to conditions s
 ### Can I keep boating if the beeping stops?
 
 If it was a single key-on test, that may be normal. If it was a repeated or continuous alarm, do not ignore it just because it stopped.
+
+### Is a single beep at key-on normal?
+
+Yes. Most Mercury motors produce a single beep at key-on as a confirmation that the alarm system is working. If it does not recur during operation, no action is needed.
+
+### What is Guardian mode and how do I know if I am in it?
+
+Guardian is Mercury's engine protection system. The ECM deliberately reduces RPM or power when it detects a condition that could damage the engine. You will notice a continuous alarm plus power loss; on SmartCraft-equipped boats a Guardian message appears on the display. Do not override it, reduce load and investigate on shore.
+
+### What information should I bring to the dealer for a beeping diagnosis?
+
+Bring the exact beep pattern (count, frequency, duration), whether power was reduced, a photo of any SmartCraft or VesselView display message, the conditions when it happened (idle, cruise, cold start, under load), any recent service, and the motor model, year, and serial number. That information cuts diagnostic time significantly.
 
 ## Next steps
 

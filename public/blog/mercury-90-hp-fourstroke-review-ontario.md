@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -117,6 +117,8 @@ Rule of thumb: aluminum fishing boats default to standard. Pontoons default to C
 
 The 75, 90, and 115 are the same block with different tuning. There is no weight penalty stepping up. The only real penalty going from 75 to 90 to 115 is price and fuel burn at full throttle.
 
+![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L block](/lovable-uploads/inline/75-90-115-hp.svg)
+
 Most boats want either the 90 or the 115. The 75 is right for smaller hulls or situations where the capacity plate forces it, we don't actually stock the 75 because the 90 is the same physical motor at a small additional cost and has better headroom and better resale value.
 
 If you're already shopping the 90 and wondering about the 115: the step from 90 to 115 is tuning, not a different motor. There's no weight change. For a 17, 18 ft aluminum fishing boat that will regularly carry four adults and full gear, the 115 is worth considering. For a 16 ft boat running two anglers, the 90 is the right call and the 115 is extra motor you won't use.
@@ -173,6 +175,15 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+
+---
+
+**Related guides:**
+- [Mercury 115 vs 150 HP: Honest Ontario Dealer Guide 2026](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
+- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
+- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 
 ## FAQs
 

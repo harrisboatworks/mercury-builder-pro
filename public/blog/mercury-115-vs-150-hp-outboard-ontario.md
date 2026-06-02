@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -105,6 +105,8 @@ The 150's hole shot when loaded is meaningfully better than the 115. The differe
 Most 150 EXLPT repowers at HBW land in the $23,000, $36,000 CAD range all-in, before HST.
 
 ### Side-by-Side: Mercury 115 vs. 150 FourStroke
+
+![Mercury 115 HP versus 150 HP outboard side-by-side comparison](/lovable-uploads/inline/115-vs-150-hp.svg)
 
 | Factor | 115 EXLPT FourStroke | 150 EXLPT FourStroke |
 |---|---|---|

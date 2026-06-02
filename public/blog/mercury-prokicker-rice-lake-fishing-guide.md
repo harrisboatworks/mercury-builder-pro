@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -59,6 +59,8 @@ The EFI ProKicker also comes with **power tilt as standard**, so you raise and l
 The standard 9.9 is not that motor. It can push a small boat. It cannot troll a fishing boat the way Rice Lake walleye demand.
 
 ---
+
+![Mercury 9.9 ProKicker versus standard 9.9 FourStroke](/lovable-uploads/inline/prokicker-vs-standard-99.svg)
 
 ## Why a Kicker Matters on Rice Lake Specifically
 

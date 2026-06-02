@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -64,6 +64,8 @@ caveat: Numbers are typical ranges, not quotes. Build your exact quote at mercur
 ::
 
 ---
+
+![Mercury outboard price ladder by horsepower, CAD](/lovable-uploads/inline/mercury-price-ladder.svg)
 
 ## Full Article
 

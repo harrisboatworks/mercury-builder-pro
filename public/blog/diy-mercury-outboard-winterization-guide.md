@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -73,6 +73,8 @@ source: HBW Customer, Peterborough 2026
 ::
 
 ---
+
+![DIY Mercury outboard winterization, six steps in order](/lovable-uploads/inline/diy-winterization-steps.svg)
 
 ## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
 

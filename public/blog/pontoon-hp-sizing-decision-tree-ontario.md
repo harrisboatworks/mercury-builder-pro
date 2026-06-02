@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -106,6 +106,8 @@ Each step up the list needs meaningfully more HP. Be honest about what you actua
 Calm, protected bays have different demands than open lake conditions. Rice Lake builds real chop on a windy afternoon, 2-foot rollers with short frequency. A pontoon running into that chop needs enough power to maintain speed and control, not just enough to move in flat water. If you're regularly on open water, size up.
 
 ---
+
+![Pontoon HP sizing decision guide](/lovable-uploads/inline/pontoon-hp-sizing.svg)
 
 ## The Decision Tree: HP by Boat Length and Use Case
 

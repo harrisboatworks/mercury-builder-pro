@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust"
 description: "Discover why Harris Boat Works has been Ontario's trusted Mercury dealer since 1965. Learn about our expertise, inventory, service, and commitment to boaters."
 category: "About Us"
 date_published: 2026-05-04
-date_modified: 2026-05-04
+date_modified: 2026-06-02
 keywords: ["mercury dealer ontario","harris boat works","mercury outboard dealer","mercury sales peterborough","trusted boat dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** About Us  
 **Published:** 2026-05-04  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-02  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer
 
@@ -58,7 +58,7 @@ Most multi-brand dealers do not reach Platinum because it is hard to maintain th
 
 ## Three generations. One brand.
 
-My grandfather founded Harris Boat Works in 1947. He added the Mercury dealership in 1965. My father ran the business through the 70s, 80s, and 90s. I am running it now.
+My grandfather George founded Harris Boat Works in 1947. He added the Mercury dealership in 1965. My father Jim ran the business from 1978 until his passing in 2015. I took over in 2015 and run it now.
 
 That is not a sales line. It means our technicians have been learning Mercury, and only Mercury, for decades. The institutional knowledge does not reset with staff turnover the way it does at bigger, busier shops. Some of our service customers have brought their boats to three generations of Harrises. We know their motors the way a family doctor knows a patient history.
 
@@ -134,6 +134,15 @@ Build a complete installed quote at [mercuryrepower.ca](https://www.mercuryrepow
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Last reviewed: 2026-05-11.*
+
+---
+
+**Related guides:**
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
+- [Mercury vs Honda Outboards: Honest Ontario Dealer Comparison 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide"
 description: "When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum dealer's honest framework for choosing between repair..."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-02
 keywords: ["repair repower or sell boat ontario decision guide","repair repower or sell boat ontario decision guide ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide
 
@@ -126,7 +126,7 @@ For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guid
 
 **Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/boat-motor-trade-in-guide) covers what to expect.
 
-![Aging aluminum boat transom with surface oxidation around motor mount](/lovable-uploads/inline/inline-aging-boat-transom.png)
+![Aging aluminum boat transom with surface oxidation around motor mount](/lovable-uploads/inline/inline-aging-boat-transom.webp)
 
 ## Common scenarios we see
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -62,6 +62,8 @@ source: HBW Bewdley repower customer, 2025
 The boaters who regret a repower are almost always the ones who put a new motor on a hull with a soft transom. That is why the transom check comes first, and why we do one before quoting anything.
 
 ---
+
+![Mercury repower process timeline at HBW](/lovable-uploads/inline/repower-process-timeline.svg)
 
 ## Step 1: Is Your Hull Worth Repowering?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Break In a New Mercury Outboard (10-Hour Guide)"
 description: "The Mercury 10-hour break-in, step by step: RPM targets by hour, what to avoid, and the 20-hour first service that protects your warranty. HBW guide."
 category: "New Owner"
 date_published: 2024-02-20
-date_modified: 2026-05-04
+date_modified: 2026-05-27
 keywords: ["mercury motor break in","new outboard break in procedure","mercury break in period","outboard motor break in","new boat motor care"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,13 +23,13 @@ content_type: blog_article
 
 **Category:** New Owner  
 **Published:** 2024-02-20  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-05-27  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 
 ## Article
 
-**Last reviewed:** 2026-05-07
+_Last updated: May 27, 2026_
 
 ---
 
@@ -39,9 +39,16 @@ content_type: blog_article
 
 ## Why break-in actually matters
 
-The customers who shortcut the break-in are the same ones who come back complaining about reduced fuel economy, premature wear, and shorter motor life. Modern Mercury FourStrokes are precision machines, the rings need to seat properly against the cylinder walls, and that only happens with the right conditions in the first hours of operation.
+The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. The hour-by-hour breakdown is below.
 
-It is not complicated. Follow the graduated RPM protocol. Change the oil at 20 hours. After that, normal operation for the life of the motor.
+| Time | RPM / behavior | Do | Avoid |
+|---|---|---|---|
+| First 5 to 10 min | Idle | Warm motor, check tell-tale flow, watch for warning lights | Putting motor in gear before warmed |
+| Hour 1 | No-wake for first 10 to 15 min, then moderate cruise | Vary throttle continuously | Holding one fixed RPM |
+| Hours 1 to 2 | Wider RPM range; brief bursts toward higher RPM OK | Keep varying throttle | Sustained wide-open throttle |
+| Hours 2 to 10 | Full RPM range | Mix of speeds; short WOT bursts (1 to 2 min) acceptable | Steady-state cruise at one RPM |
+| After 10 hours | Normal operation | WOT acceptable within Mercury's rated band | Skipping the 20-hour service |
+| At 20 hours | First service | **Change oil and filter**, removes break-in particles | Skipping; break-in metal stays in oil if you do |
 
 ---
 
@@ -167,7 +174,7 @@ Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2
 
 ## Related at HBW
 
-The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
+The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
 - [Mercury Outboard Won](/blog/mercury-outboard-wont-start-troubleshooting)

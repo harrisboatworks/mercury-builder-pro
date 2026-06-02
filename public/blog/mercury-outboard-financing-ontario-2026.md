@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Repower Financing in Ontario (2026 Guide)"
-description: "How Ontario boaters finance a Mercury repower. Canadian marine lenders, terms, what you can bundle, and what the Mercury USA financing programme does and doesn't..."
+description: "Mercury outboard financing in Ontario through HBW - current 5.48% APR TD Always On rate through Dec 31 2026, what you can finance, terms, and how the application works."
 category: "Financing & Value"
 date_published: 2026-04-20
-date_modified: 2026-05-04
+date_modified: 2026-05-31
 keywords: ["mercury outboard financing Ontario","finance boat motor Ontario","mercury repower financing Canada","marine loan Ontario 2026","mercury outboard payment plan"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,204 +19,175 @@ content_type: blog_article
 
 # Boat Repower Financing in Ontario (2026 Guide)
 
-> How Ontario boaters finance a Mercury repower. Canadian marine lenders, terms, what you can bundle, and what the Mercury USA financing programme does and doesn't...
+> Mercury outboard financing in Ontario through HBW - current 5.48% APR TD Always On rate through Dec 31 2026, what you can finance, terms, and how the application works.
 
 **Category:** Financing & Value  
 **Published:** 2026-04-20  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-05-31  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
 
 ## Article
 
-# Boat Repower Financing in Ontario (2026 Guide)
-
 ## Quick answer
 
-Most Ontario boaters finance a Mercury repower through Canadian marine lenders, not through Mercury Marine's branded financing programme. Mercury's official "Repower Financing" advertised on mercurymarine.com is administered through Medallion Bank and is available to **U.S. residents only**: sales and registrations outside the United States are explicitly excluded. The financing you can actually access in Ontario is through standard Canadian marine lending, typical terms run 24 to 84 months, secured by the engine package, with most approvals back inside 24 to 48 hours. Build a project quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and we'll walk through the financing options that are real here.
+Mercury outboard financing in Ontario through Harris Boat Works runs at **5.48% APR through TD's "Always On" program** (OAC / subject to lender approval), available now through **December 31, 2026**. Standard tiered rates apply after that (typically starting around 7.99% APR depending on lender and credit profile). You can finance the motor, rigging, install labour, prop, and HST in one package, terms 24 to 84 months, online application, decisions typically come back in 24 to 48 hours. Build a real quote and run live payment numbers at mercuryrepower.ca.
 
-## What Mercury's official Repower Financing actually covers
+Heads-up: the **Mercury Repower Financing program through Medallion Bank is US-residents only**. The Mercury Canada page says so in the fine print: *"Financing is available to residents residing in the United States..."* If you've seen that program advertised, it doesn't apply in Ontario.
 
-Mercury Marine's branded Repower Financing programme, the one with the published "as low as" rate and the marketing on mercurymarine.com, is administered through Medallion Bank and Brunswick Financial Services Corporation. The fine print on Mercury's own page is explicit:
+## What's actually available to Canadian buyers
 
-> "Financing is available to residents residing in the United States, except in the states of Montana and West Virginia… Sales/registrations outside the United States are excluded."
+There are three paths to financing a Mercury outboard or repower in Ontario:
 
-That is not a hidden footnote on an obscure page. It is on Mercury Canada's own Repower Financing page. So when you see "Mercury Repower Financing" advertised on the Canadian-domain Mercury site, the offer itself is structured for U.S. buyers. Canadian buyers do not qualify under that programme.
+1. **Marine-specialist financing through HBW (the standard path).** We work with Dealerplan Peterborough, which places loans with TD Auto Finance and other Canadian marine lenders. The TD "Always On" promotional rate is **5.48% APR**, available now through **December 31, 2026**. Online application, 24 to 48 hour approval. The rate stacks with Mercury's current 7-year warranty promotion.
+2. **Your own bank.** Some boaters prefer financing through their existing chartered bank, RBC, TD retail, BMO, Scotia, CIBC. Rates vary; check your bank's secured personal loan or boat-loan product. We'll happily build the quote and let you take it to your bank.
+3. **Cash plus trade-in credit.** If you have cash and a tradeable old motor, we'll value the trade and net it against the install total. Even a non-running motor has aluminum and parts value.
 
-This matters because some dealers (not us, but it happens) still present Mercury's branded financing as if it's the obvious path for Canadian customers. It is not. The financing path that works for Ontario buyers is structured differently.
+We do not require you to finance through us. Quote built first; credit pulled only when you're serious.
 
-## What Canadian boaters actually use
+## What changes your monthly payment
 
-Ontario boat repower financing typically routes through one of three lanes:
+Five things move the number:
 
-1. **Canadian marine lenders.** The same handful of names that finance most boat purchases across the country. Approval based on credit, debt-to-income, and the engine/package as security. Rates and terms vary by lender and credit profile. This is the most common path for repower projects in the $10,000 to $50,000 range.
+- **Total amount financed.** Bigger motor and rigging package = bigger monthly payment. The all-in cost of your repower (motor + rigging + install + prop + HST) is what gets financed, not just the motor itself.
+- **Down payment.** Larger down payment shrinks the financed total. We do not require a specific percentage. Some customers put 0% down. Some put 30%. The math gets better the more you put down.
+- **Trade-in credit on your old motor.** A working old motor is worth real trade-in credit. Even a dead motor has aluminum and parts value. Our trade-in valuation tool gives you an instant credit estimate. Trade-in works the same as a down payment, it reduces the financed amount.
+- **Term length.** 24 months has the highest monthly payment but the lowest total interest. 84 months has the lowest monthly payment but the most total interest. Most repower customers land at 60 or 72 months as the sweet spot.
+- **Promotional vs. standard rate.** The 5.48% TD "Always On" rate is the current promotional rate through Dec 31, 2026. After it auto-retires on Jan 1, 2027, the standard tiered rate environment applies (commonly starting around 7.99% APR for good credit). Check the promotions page for the current state of the offer.
 
-2. **Your own bank or credit union.** A line of credit, secured loan, or HELOC against an existing property. Cheaper in many cases, but the dealer doesn't structure these for you. You arrange directly with your bank.
+## What you can finance in a Mercury repower
 
-3. **Cash with trade-in credit.** If you have the cash and your money isn't working harder somewhere else, paying outright (after applying trade-in credit on the old motor) is often the cleanest path.
+Some financing programs only cover the motor itself. The HBW path covers the full project:
 
-Through HBW, we work with Canadian marine lenders to structure financing on the engine package, similar to how the U.S. Mercury programme works in concept but through entirely different lenders and terms. The application is online, and most approvals come back within 24 to 48 hours.
-
-## Why finance a repower at all
-
-Most of our customers do not pay cash for a repower. That is not a knock on anyone, it is just the reality of a $10,000 to $25,000 project in most HP classes.
-
-Financing a repower makes sense when:
-
-- The total installed cost is more than you want to pull from savings in one shot
-- Your savings are deployed somewhere earning more than the financing rate
-- You want to get on the water this season and the budget will not support a lump sum right now
-- The monthly payment on a repower compares favourably to what you were spending on fuel and repairs for an aging 2-stroke
-
-That last point comes up more than people expect. A newer, more fuel-efficient 4-stroke often brings down operating costs enough to partially offset the financing cost.
-
-## Five things that move your monthly payment
-
-### 1. Total amount financed
-
-The whole project cost: motor, rigging, controls, prop, install labour, and Ontario HST at 13%. Not just the motor sticker price. Build a full quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) to get the real number.
-
-### 2. Down payment
-
-Down payment requirements vary by lender. More down means a smaller financed amount and a lower monthly payment.
-
-### 3. Trade-in credit
-
-Your old motor has trade-in value, even if it is dead. Trade-in credit reduces the financed total the same way a down payment does.
-
-### 4. Term length
-
-Shorter terms cost less in total interest but have higher monthly payments. Most repower customers land at 60 or 72 months as a reasonable middle ground.
-
-### 5. Rate environment
-
-Marine financing rates move with the broader interest rate environment in Canada. Rates change. The rate you see in any article is a planning-level reference, not a quote. Confirm the current rate when you build your actual project at [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
-## What you can finance
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-| What is included | Notes |
-| --- | --- |
-| The motor | The Mercury outboard you are buying |
+| What's included | Notes |
+|---|---|
+| Motor itself | The Mercury outboard you are buying |
 | Rigging | Controls, cables, gauges, harness work |
-| Prop | Aluminum or stainless steel, sized to your boat |
+| Prop | Aluminum or stainless steel, sized to motor |
 | Install labour | Shop time to mount, wire, and rig the motor |
-| Hydraulic steering conversion | Required at higher HP, can be bundled |
-| Battery and harness refresh | If needed as part of the install |
-| Ontario HST (13%) | Tax is included in the financed amount |
+| Hydraulic steering conversion | If required; commonly reviewed on higher-horsepower repowers |
+| Battery and harness refresh | New battery, connectors, fuse panel |
+| On-water test | Every repower gets an on-water test on Rice Lake before pickup. No exceptions. |
+| HST (13% Ontario) | Yes, the tax is bundled into the financed amount |
 
-Bundling everything into one financed amount including tax means one payment, one interest rate, and no surprises.
+Build a real quote on the motor selection page and the financing calculator pulls the total directly. You see your actual monthly payment options before you commit to anything.
 
-## How approval works
+## How TD "Always On" works
 
-The approval process is generally faster than a car loan, but the same factors apply:
+This is the current standard path for HBW repower financing in Canada.
 
-- Credit profile
-- Income relative to the payment
-- Down payment and trade-in
-- Existing debt
+- **Rate:** 5.48% APR
+- **Lender:** TD Auto Finance, placed through Dealerplan Peterborough
+- **Window:** Through December 31, 2026 (auto-retires Jan 1, 2027, standard tiered rates apply after)
+- **Eligibility:** A range of credit profiles may qualify, subject to lender approval. Excellent credit unlocks the best terms. Fair credit may still qualify, sometimes at a higher tier.
+- **Term length:** 24 to 84 months. Most repower customers land at 60 or 72 months.
+- **HST:** Bundled into the financed amount. You don't pay tax upfront separately.
+- **Approval:** Online application. Most decisions come back in 24 to 48 hours after the application is submitted.
+- **Prepayment:** No prepayment penalty. Pay it off early without extra fees.
 
-We do not pull your credit until you have built a quote you are serious about. The application itself is online. Most approvals come back within 24 to 48 hours.
+The rate stacks with Mercury's current 7-year warranty promotion (3-year standard + 4-year promotional bonus through the current window). Confirm both are active at time of quote.
 
-## Three patterns we see regularly
+## What HBW checks before financing approval
 
-### "I just need to get on the water this season"
+The lender wants to see a few things:
 
-Old motor gave out in the fall. Needs the boat running by the long weekend. Typically goes with a mid-range HP repower, puts 10 to 20% down, and finances over 60 months. Monthly payment often comes in close to what they were spending on fuel and maintenance for the old 2-stroke.
+- **Credit score.** Most marine financing programs want fair-to-good credit. Excellent credit unlocks the best tier. Lower credit can still get approved, often at a higher tier rate.
+- **Income vs. payment ratio.** The lender wants to see that the monthly payment fits your existing budget without stretching it.
+- **Down payment.** A higher down payment helps a marginal application get approved.
+- **Trade-in credit.** Same effect as down payment for approval purposes.
+- **Existing debt load.** Auto loans, credit cards, and other monthly obligations factor into the approval math.
 
-### "I'm planning ahead for next spring"
+We do not pull your credit until you have built a quote you are serious about and you have asked us to start the application.
 
-Comes in during the fall or winter. Wants to lock in a motor early for spring launch, gets first pick of inventory, and often catches a seasonal lender promo in the off-season.
+## Common scenarios
 
-### "I'm stretching to make the upgrade work"
+Three patterns we see most often. Your situation is somewhere in here.
 
-Wants to step up in HP class but needs every dollar of trade-in credit and a longer term to make the monthly payment fit. Sometimes the right answer is to wait a season and save a larger down payment. We would rather tell you that than put you in a payment that is going to hurt.
+**Scenario 1: "I just want to get on the water."** Old 2-stroke died last fall. Customer needs the boat running by Victoria Day weekend. Goes with a 90 to 115 HP FourStroke repower (mid tier), 10 to 20% down, 60-month term, TD 5.48%. Monthly payment lands somewhere around what they were spending on premium fuel and oil mix for the old 2-stroke. They're on the water in three weeks.
 
-## Cash vs financing: the honest version
+**Scenario 2: "I'm thinking about it for next season."** Comes in November or December. Plans the repower with the install scheduled for the week we reopen in April. Locks in the TD 5.48% rate before the December 31, 2026 retirement. Often finances for 84 months to keep the monthly low. Boat is ready to launch the day the ice comes off Rice Lake.
 
-If you have the cash and your other money is not earning more than the financing rate, paying cash makes mathematical sense. If your money is working somewhere earning more, or paying cash would hollow out your emergency fund, financing is the right call. What does not make sense: financing a repower while keeping a large chunk of cash in a savings account earning 1.5%. Run the actual numbers before you decide.
+**Scenario 3: "I'm stretching the budget."** Wants to upgrade to bigger HP than they currently run. Needs every dollar of trade-in credit and a longer term to make the monthly fit. We run multiple quote configurations on the motor selection page and the financing calculator to show what changes when they pick a 90 vs a 115 vs a 150. Honest math wins this one. Sometimes the right answer is to wait a season and save more down payment.
 
-## What we see at HBW
+## When to repower with cash vs financing
 
-Most boat financing in Ontario routes through a handful of marine lenders, the same names you see at every dealer. Approval depends on credit score and debt-to-income, and down payment varies by lender, project size, and borrower profile.
+If you have the cash to do the repower outright, and your other money is not earning more than the financing rate, paying cash usually makes the cleaner math. You skip the interest and you own the motor outright.
 
-The mistake we watch customers make: financing the motor and boat together at a 15-year term to keep monthly cost low. If you sell the boat in year 5, you're upside-down on the balance. Better path: shorter term, slightly higher monthly, no negative equity when the boat changes hands.
+If your money is in something earning above the financing rate, or your emergency fund would get depleted by paying cash, financing the repower at 5.48% (while the promo lasts) often makes sense. You keep your liquidity, and the math is roughly a wash or favours financing.
 
-## Sources
+We will not push you either way. Choose the option that fits your budget, cash flow, and comfort level.
 
-- Mercury Marine Canada, [Repower Financing programme terms](https://www.mercurymarine.com/ca/en/land/find-a-repower-center/financing) (administered through Medallion Bank; U.S. residents only)
-- Current Ontario financing options through HBW are shown on the [HBW quote builder](https://www.mercuryrepower.ca) at the end of your project build
+What doesn't usually help the math: financing a repower at 5.48% AND keeping a big chunk of cash in a low-interest savings account earning 1.5%. Run the numbers before deciding. This is general guidance, not financial advice.
 
-*Last reviewed: 2026-05-17.*
+## Ready to run real numbers?
 
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
+Build a repower quote on the motor selection page at mercuryrepower.ca in three minutes. You see the motor, rigging, install, total, and live financing payment options before you ever talk to us. Then run the financing calculator to see how down payment, term length, and trade-in credit change your monthly number.
 
-## Frequently Asked Questions
+If you would rather talk it through, call **(905) 342-2153** or send us an email. We answer the phone.
 
-**Can I qualify for Mercury Marine's official Repower Financing as an Ontario buyer?**
-No. Mercury's branded Repower Financing programme (administered through Medallion Bank) is available only to U.S. residents. Sales and registrations outside the United States are explicitly excluded under the programme terms. Canadian buyers finance through Canadian marine lenders instead.
+*Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The 5.48% TD "Always On" APR is current as of May 2026 and runs through December 31, 2026. Standard tiered rates apply after the promo retires. The actual price and live payment options for your specific configuration are at mercuryrepower.ca. Mercury model years change every July 1, and we refresh ranges in articles annually.*
 
-**What financing options does HBW offer to Ontario buyers?**
-We work with Canadian marine lenders to structure financing on full repower packages, motor, rigging, controls, prop, install labour, and Ontario HST. Typical terms run 24 to 84 months. Apply through the quote builder once your project is specced.
+---
 
-**What term lengths are available?**
-Typically 24, 36, 48, 60, 72, and 84 months, depending on lender. Most repower customers land at 60 or 72 months.
-
-**Do I need a down payment?**
-Down payment requirements vary by lender. Trade-in credit on your old motor counts toward the total the same way a down payment does.
-
-**How fast is approval?**
-Most approvals come back within 24 to 48 hours after you submit the application.
-
-**Can I pay it off early?**
-Confirm prepayment terms before you sign. Most marine financing allows early payoff without penalty, but verify this on your specific agreement.
-
-**Is Ontario HST included in the financed amount?**
-Yes. HST at 13% is added to the project total and included in the financed amount. You do not pay tax separately upfront.
-
-**How do I get started?**
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). You will see the full installed cost, then live payment options at current rates and terms.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+**Related guides:**
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
 
 ## FAQs
 
 ### Can I finance a Mercury repower in Ontario?
 
-Yes. Mercury Repower Financing through HBW covers the full project: motor, rigging, controls, prop, install labour, and Ontario HST. Terms run from 24 to 84 months. Current rates and live payment options are at mercuryrepower.ca.
+Yes. The current standard path is TD "Always On" at 5.48% APR through December 31, 2026 (OAC / subject to lender approval), placed through Dealerplan Peterborough. Covers the full project: motor, rigging, controls, prop, install labour, on-water test on Rice Lake before pickup, hydraulic steering conversion if required, and HST. Terms 24 to 84 months. Build a real quote and see live payment options at mercuryrepower.ca.
 
-### What is the current Mercury financing rate?
+### What's the Mercury financing rate in 2026?
 
-Rates change with market conditions and Mercury seasonal promotional calendar. Treat any rate published in an article as a planning-level estimate. The current confirmed rate is at mercuryrepower.ca.
+5.48% APR through TD "Always On", current through December 31, 2026. After that, standard tiered rates apply (typically starting around 7.99% APR for good credit, varying by lender and credit profile). Current promotion details are on the promotions page.
 
-### What can I bundle into the financing?
+### Is Mercury Repower Financing through Medallion Bank available in Canada?
 
-Motor, rigging, prop, install labour, hydraulic steering conversion (if required), battery and harness refresh, and Ontario HST. Your old motor becomes trade-in credit instead.
+No. Per Mercury Canada's fine print: "Financing is available to residents residing in the United States..." The Medallion Bank program is US-residents only. Canadian buyers use the TD path through HBW instead.
+
+### What can I finance in a Mercury repower?
+
+Motor, rigging (controls, cables, gauges), new prop, install labour, on-water test on Rice Lake before pickup, hydraulic steering conversion (if required), battery and harness refresh, and HST. Everything except your old motor, which becomes trade-in credit instead.
 
 ### What term lengths are available?
 
-Typically 24, 36, 48, 60, 72, and 84 months. Most repower customers land at 60 or 72 months.
+24, 36, 48, 60, 72, and 84 months are common options. Most repower customers land at 60 or 72 months as the sweet spot between manageable monthly payment and reasonable total interest. The financing calculator shows the math on each term.
 
 ### Do I need a down payment?
 
-No required minimum. Some customers finance 100% of the project. Trade-in credit on your old motor counts toward the total the same way a down payment does.
+We do not require a specific down payment percentage. Some customers put 0% down. Some put 30%. The math gets better with more down. Trade-in credit on your old motor counts as down payment for approval and total-financed purposes.
 
-### How fast is approval?
+### How does the trade-in credit work?
 
-Most approvals come back within 24 to 48 hours after you submit the application.
+Your old motor has trade-in value, even if it's dead. Our trade-in valuation tool gives you an instant credit estimate. The credit reduces the financed total, which reduces your monthly payment.
 
-### Can I pay it off early?
+### What credit score do I need?
 
-Confirm prepayment terms before you sign. Most arrangements allow early payoff without penalty, but verify this on your specific agreement.
+The TD path can work for a range of credit profiles, subject to lender approval. Excellent credit unlocks the best terms and rates. Fair credit may still qualify, sometimes at a higher tier. We do not pull your credit until you have built a serious quote and asked us to start the application.
 
-### Is Ontario HST included in the financed amount?
+### How long does financing approval take?
 
-Yes. HST at 13% is added to the project total and included in the financed amount. You do not pay tax separately upfront.
+Most decisions come back in 24 to 48 hours after you submit the online application.
 
-### How do I get started?
+### Can I pay off my financing early?
 
-Build a quote at mercuryrepower.ca. You will see the full installed cost, then live payment options at current rates and terms.
+Yes. No prepayment penalty on the TD program. If you sell the boat, get a bonus, or just decide to pay it off in full, you can do that without extra fees.
+
+### Should I pay cash or finance my repower?
+
+If you have the cash and your other money is not earning more than the financing rate, paying cash usually wins mathematically. If your savings is earning more than the rate, or paying cash would deplete your emergency fund, financing is the right call. We will not push you either way.
+
+### Is HST included in the financing?
+
+Yes. HST gets added to the project total and gets included in the financed amount. You do not have to pay tax up front separately.
+
+### How do I get started with Mercury financing?
+
+Build a quote at mercuryrepower.ca. Three minutes. Then click through to the financing page to see your live payment options at the current TD rate. When you are ready, the application is online and approval comes back in 24 to 48 hours.
 
 ## Next steps
 

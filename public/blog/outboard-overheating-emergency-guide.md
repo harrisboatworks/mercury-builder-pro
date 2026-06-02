@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -71,6 +71,8 @@ If you're reading this from shore, good. The best time to learn what to do when 
 This is the on-water response guide and prevention overview we'd walk through with any customer at the shop. Mercury-specific, Ontario conditions, no filler.
 
 ---
+
+![Mercury overheating: what to do in the first 60 seconds](/lovable-uploads/inline/overheating-first-60-seconds.svg)
 
 ## On the Water Right Now: Do This in Order
 

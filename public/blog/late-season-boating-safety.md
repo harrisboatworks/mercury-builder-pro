@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -188,6 +188,15 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+
+---
+
+**Related guides:**
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
+- [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+- [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
 
 ## FAQs
 
