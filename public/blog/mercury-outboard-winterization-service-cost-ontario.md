@@ -1,14 +1,14 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-winterization-service-cost-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Platinum Dealer"
-description: "What does Mercury outboard winterization actually cost in Ontario? An honest 2026 price breakdown from Harris Boat Works on Rice Lake - winterization, shrinkwrap, and..."
+title: "Mercury Outboard Winterization Cost in Ontario (2026 CAD) | HBW"
+description: "Boat winterization cost in Ontario (2026): typical pricing for Mercury outboard fogging, fluid change, lower-unit oil, lake-tested service at Harris Boat Works."
 category: "Service & Pricing"
 date_published: 2026-05-11
 date_modified: 2026-05-11
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Platinum Dealer
+# Mercury Outboard Winterization Cost in Ontario (2026 CAD) | HBW
 
-> What does Mercury outboard winterization actually cost in Ontario? An honest 2026 price breakdown from Harris Boat Works on Rice Lake - winterization, shrinkwrap, and...
+> Boat winterization cost in Ontario (2026): typical pricing for Mercury outboard fogging, fluid change, lower-unit oil, lake-tested service at Harris Boat Works.
 
 **Category:** Service & Pricing  
 **Published:** 2026-05-11  

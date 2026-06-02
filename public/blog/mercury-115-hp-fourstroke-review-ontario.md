@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -136,6 +136,8 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ## How the 115 Compares to the 90 and the 150
 
+![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L inline-4 block](/lovable-uploads/inline/75-90-115-hp.svg)
+
 | | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
 |---|---|---|---|
 | Block | 2.1L inline-4 | 2.1L inline-4 | 3.0L V4 / different family |
@@ -198,6 +200,15 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+
+---
+
+**Related guides:**
+- [Mercury 115 vs 150 HP: Honest Ontario Dealer Guide 2026](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
+- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
+- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -68,6 +68,8 @@ Brands you will see: Minn Kota, Garmin Force, MotorGuide.
 A **gas kicker** is a small outboard mounted alongside your main motor. It runs on gasoline, gives you real propulsion at trolling speeds, and is rated in horsepower like any outboard. The Mercury 9.9 ProKicker is the king of this category, purpose-built for kicker duty with a low-RPM idle, sailboat-mode programming, and a gear ratio tuned for thrust at slow speed rather than top-end speed.
 
 These are not competing tools. They are complementary. But they cost real money, so most boaters pick one first.
+
+![Electric trolling motor versus gas kicker comparison](/lovable-uploads/inline/trolling-motor-vs-kicker.svg)
 
 ## Head-to-head: when each one wins
 
@@ -172,6 +174,15 @@ Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new P
 *Last reviewed: 2026-05-11.*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
+- [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 
 ## FAQs
 

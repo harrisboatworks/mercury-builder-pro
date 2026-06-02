@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platin
 description: "Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum dealer - water pump impeller, intake debris, thermostat..."
 category: "Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-05-27
 keywords: ["mercury outboard overheating","mercury overheating at idle","mercury water pump impeller","mercury tell-tale not pissing","mercury cooling system fix ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-05-27  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 
@@ -164,7 +164,7 @@ The actual fix at the shop, after the impeller test, is usually a five-minute ho
 
 ## Related at HBW
 
-The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
+The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
 - [Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check](/blog/mercury-outboard-beeping-codes-guide)

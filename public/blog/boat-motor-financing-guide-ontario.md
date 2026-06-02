@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-financing-guide-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -103,10 +103,10 @@ item3Label: Bank loan at 9.5% (rates as of May 2026, for qualified buyers, subje
 item3Value: ~$245/month
 item3Note: Unsecured personal loan. Approval and rate depend on credit. Faster than dealer financing.
 item3Accent: true
-item4Label: Mercury Marine financing at 8.99%, $15,000
+item4Label: Mercury Marine financing at 8.99% (rates as of May 2026, for qualified buyers, subject to change), $15,000
 item4Value: ~$240/month
 item4Note: $349 DealerPlan fee added post-tax. Often the best rate for the under $10K range.
-item5Label: Mercury Marine financing at 7.99%, $25,000
+item5Label: Mercury Marine financing at 7.99% (rates as of May 2026, for qualified buyers, subject to change), $25,000
 item5Value: ~$390/month
 item5Note: Lower tier rate kicks in at $10K+. $349 DealerPlan fee still applies.
 totalLabel: Best path for most buyers
@@ -142,7 +142,29 @@ A payment estimate based on a motor price and an assumed rate is only useful if 
 
 *Last reviewed: 2026-05-11.*
 
+## The current Mercury financing rate (as of 2026-05-28)
+
+If you're cross-shopping dealer financing vs your bank or credit union, the active Canadian Mercury subvention is worth pricing against:
+
+- **5.48% APR (OAC)** through December 31, 2026
+- Term up to 60 months
+- Amortization up to 240 months
+- New eligible Mercury outboards only
+
+This is Mercury Marine Canada's TD "Always On" program, funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Compare against your own bank or credit union offer; if your personal rate is lower, take it. If not, the subvention is genuinely competitive.
+
+After December 31, 2026, the program ends and standard tiered Mercury financing resumes (from 7.99% APR OAC). Build a current quote at [mercuryrepower.ca](https://mercuryrepower.ca) for the rate that applies today.
+
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
 
 ## FAQs
 
@@ -173,6 +195,10 @@ If your HELOC rate is meaningfully lower than the dealer rate and you are comfor
 ### Where do I start?
 
 Build a full installed quote at mercuryrepower.ca. That gives you the real loan amount, not just the motor price.
+
+### Is the dealer's financing rate competitive with my bank?
+
+As of 2026-05-28, Mercury Marine Canada's active TD "Always On" program offers 5.48% APR (OAC) on new eligible Mercury outboards through December 31, 2026, with amortization up to 240 months. That's competitive with most bank or credit union personal loans for a marine purchase. If your personal credit profile gets you a lower rate at your bank, take it. If not, the dealer program is meaningfully better than standard tiered Mercury financing (which resumes after Dec 31, 2026 at rates from 7.99% APR).
 
 ## Next steps
 

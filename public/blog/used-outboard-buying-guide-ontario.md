@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -55,6 +55,8 @@ A few questions to ask by text before you spend a Saturday on a motor that was n
 If a seller cannot tell you the year, the hours, or the use history, you are buying a mystery. Price it like one, or walk away.
 
 ---
+
+![Used outboard inspection: green flags vs red flags](/lovable-uploads/inline/used-outboard-green-red-flags.svg)
 
 ## At the Boat: The Inspection Order
 

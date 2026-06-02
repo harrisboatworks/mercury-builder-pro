@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -84,6 +84,15 @@ Harris Boat Works. Mercury dealer since 1965, Mercury Platinum dealer today.
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Last reviewed: 2026-05-11.*
 
+---
+
+**Related guides:**
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
+- [Mercury vs Honda Outboards: Honest Ontario Dealer Comparison 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+
 ## FAQs
 
 ### Is Mercury actually better than Yamaha or Honda?
@@ -94,9 +103,9 @@ Mechanically, all three brands make reliable modern four-stroke outboards. The p
 
 We have been a Mercury dealer since 1965. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Platinum dealer relationship today.
 
-### Why do most Canadian boats come Mercury-rigged?
+### Why do most aluminum boats sold in Ontario come Mercury-rigged?
 
-Decades of supply chain integration between Mercury and Canadian boat builders (Lund, Crestliner, Princecraft, Lowe). Customers ask for Mercury, factories rig with Mercury.
+Decades of supply-chain integration between Mercury and the major North American aluminum boat builders that dominate the Ontario market: Lund and Crestliner (Minnesota), Lowe (Missouri), and Princecraft (Quebec). Customers ask for Mercury, factories rig with Mercury, and the Ontario dealer service network is built around Mercury.
 
 ### Is Mercury more expensive than Yamaha or Honda?
 

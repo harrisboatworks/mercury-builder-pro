@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -126,6 +126,15 @@ If you are comparing FourStroke vs Pro XS for a specific hull, or you need help 
 *Last reviewed: 2026-05-11.*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
+- [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -85,6 +85,8 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 ---
 
 ## Specs Side-by-Side
+
+![Mercury 40 HP versus 60 HP outboard comparison](/lovable-uploads/inline/40-vs-60-hp.svg)
 
 | | Mercury 40 ELPT FourStroke | Mercury 60 ELPT FourStroke |
 |---|---|---|

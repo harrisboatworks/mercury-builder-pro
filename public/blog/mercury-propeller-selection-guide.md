@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -74,6 +74,8 @@ The right prop costs the same as the wrong prop. It's worth the conversation.
 For specific pricing, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with prop included.
 
 ---
+
+![How to pick the right Mercury propeller](/lovable-uploads/inline/propeller-selection-guide.svg)
 
 ## Pitch: the most important number
 

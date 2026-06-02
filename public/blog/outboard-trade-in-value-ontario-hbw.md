@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)"
-description: "What's your outboard worth on trade? How HBW evaluates outboard trades, what helps and hurts value, 2026 ranges by HP class, and how trade credit saves you HST on a..."
+description: "Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST on a repower."
 category: "Buying Guide"
 date_published: 2026-05-09
 date_modified: 2026-05-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)
 
-> What's your outboard worth on trade? How HBW evaluates outboard trades, what helps and hurts value, 2026 ranges by HP class, and how trade credit saves you HST on a...
+> Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST on a repower.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-09  
@@ -191,6 +191,8 @@ In this example, the private sale wins by about $480, but only if you actually s
 
 Most customers find the private sale grind is not worth the modest delta once they price their own time. Talk to us before you list.
 
+![Outboard trade-in value by HP class, Ontario 2026](/lovable-uploads/inline/outboard-trade-in-value.svg)
+
 ## 2026 trade-in ranges (Ontario, CAD)
 
 Working ranges for freshwater, documented Mercury or Yamaha 4-strokes in working condition. Starting points, final number confirmed in person.
@@ -237,6 +239,14 @@ We also publish all our Mercury pricing live at [mercuryrepower.ca](https://www.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Last reviewed: 2026-05-11.*
+
+---
+
+**Related guides:**
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
 
 ## FAQs
 

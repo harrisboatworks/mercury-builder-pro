@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-lindsay-ontario-hbw.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -136,6 +136,15 @@ No. HBW does NOT offer pickup or delivery. Customers bring the boat to us. We ha
 Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
 *Last reviewed: 2026-05-17.*
+
+---
+
+**Related guides:**
+- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 
 ## FAQs
 

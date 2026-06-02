@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -34,6 +34,8 @@ content_type: blog_article
 Lake Ontario salmon and trout trolling typically calls for a Mercury 200–300 HP V8 FourStroke on a 21–26 ft deep-V hull, often paired with a 15 HP ProKicker for the slow downrigger trolling speeds. Lake Ontario is not Rice Lake, it's open, cold, and capable of serious swells. Pick the bigger end of your hull's power range. Quote installed at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
+
+![Mercury setup for Lake Ontario salmon and trout, by boat](/lovable-uploads/inline/lake-ontario-hp-setup.svg)
 
 ## Lake Ontario is Different Fishing Water
 

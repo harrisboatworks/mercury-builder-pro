@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -187,6 +187,15 @@ Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+
+---
+
+**Related guides:**
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
 
 ## FAQs
 

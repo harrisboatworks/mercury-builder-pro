@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)"
 description: "Outboard shaft length is the distance from the motor's mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20..."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-05-05
+date_modified: 2026-05-27
 keywords: ["outboard shaft length","mercury shaft length guide","20 inch shaft outboard","25 inch shaft outboard","transom height measurement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,16 +23,18 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last updated:** 2026-05-05  
+**Last updated:** 2026-05-27  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
 
 ## Article
 
+_Last updated: May 27, 2026_
+
 # Outboard Shaft Length Guide: Short, Long, and Extra Long, How to Get It Right
 
 ## Quick answer
-Measure your transom height from the bottom of the cutout to the top of the transom. A 15-inch transom needs a short shaft, 20-inch needs a long shaft, 25-inch needs an extra long. Wrong shaft length means cavitation, lost performance, or a submerged powerhead. We confirm shaft length on every quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Most Ontario aluminum fishing boats need a 20-inch (long) shaft. Most pontoons over 22 feet need a 25-inch (extra long) shaft. Small tiller boats with low transoms typically take a 15-inch (short) shaft. The only correct way to confirm is to measure transom height, the distance from the top of the transom down to where the hull contacts the water. Mercury's shaft code on the motor (S, L, XL, XXL) tells you the rest. The full decoder and a measurement guide are below.
 
 ## Why shaft length matters more than most people think
 
@@ -171,6 +173,15 @@ Always measure the transom from the top edge to the cavitation plate centerline 
 ---
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+---
+
+**Related guides:**
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
+- [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 
 ## FAQs
 

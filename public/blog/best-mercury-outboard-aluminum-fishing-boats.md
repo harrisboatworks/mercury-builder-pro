@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -130,15 +130,19 @@ The customers who skip the kicker to save money almost always wish they hadn't. 
 
 ## Common mistakes on aluminum fishing boat repowers
 
-**1. Underbuying HP.** A 25 HP on a 16-foot aluminum that needs 60 HP leaves you fighting wind and current every day.
-
-**2. Skipping the kicker.** Two seasons later, they wish they'd bought it. Buy it once.
-
-**3. Wrong prop.** A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. We test props on the water during the sea trial of every repower.
-
-**4. Skipping Command Thrust on heavier hulls.** On 18–20 ft deep-V aluminum, Command Thrust gives meaningful hole-shot improvement at full load.
-
-**5. Buying Pro XS when FourStroke would do.** Pro XS earns the cost on tournament hulls and for anglers who run hard every morning. On typical recreational fishing boats, FourStroke is the better value.
+:::mythbuster
+heading: Common mistakes on aluminum fishing boat repowers
+- claim: Underbuying HP.
+  rebuttal: A 25 HP on a 16-foot aluminum that needs 60 HP leaves you fighting wind and current every day.
+- claim: Skipping the kicker.
+  rebuttal: Two seasons later, they wish they'd bought it. Buy it once.
+- claim: Wrong prop.
+  rebuttal: A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. We test props on the water during the sea trial of every repower.
+- claim: Skipping Command Thrust on heavier hulls.
+  rebuttal: On 18-20 ft deep-V aluminum, Command Thrust gives meaningful hole-shot improvement at full load.
+- claim: Buying Pro XS when FourStroke would do.
+  rebuttal: Pro XS earns the cost on tournament hulls and for anglers who run hard every morning. On typical recreational fishing boats, FourStroke is the better value.
+:::
 
 ---
 

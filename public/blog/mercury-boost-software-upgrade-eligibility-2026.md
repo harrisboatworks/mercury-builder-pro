@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?"
 description: "Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5-21% on select FourStroke, Pro XS, and Verado engines."
 category: "Mercury Technology"
 date_published: 2026-04-14
-date_modified: 2026-04-14
+date_modified: 2026-05-27
 keywords: ["Mercury Boost software upgrade","Mercury Boost eligible engines","Mercury software calibration","Mercury acceleration upgrade","Mercury dealer upgrade Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,11 +23,13 @@ content_type: blog_article
 
 **Category:** Mercury Technology  
 **Published:** 2026-04-14  
-**Last updated:** 2026-04-14  
+**Last updated:** 2026-05-27  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026
 
 ## Article
+
+_Last updated: May 27, 2026_
 
 ### Quick Answer
 
@@ -179,6 +181,14 @@ Mercury Platinum dealer. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+
+---
+
+**Related guides:**
+- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
+- [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
+- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -43,22 +43,29 @@ Mercury Digital Throttle & Shift (DTS) replaces the old mechanical cable-and-lev
 
 The chemistry difference creates real consequences in compatibility, cost, ride, and serviceability.
 
-## Compatibility, the part most buyers miss
+## Compatibility (quick check)
 
-This is the part of the conversation that decides the choice before anything else does.
+DTS is standard on all current Mercury Verado V8/V10/V12 (250-600 HP, naturally aspirated), most current Pro XS 150 HP and up, and most current FourStroke 200 HP and up. Smaller motors (under 75 HP) use mechanical controls. Older mechanical motors generally cannot be retrofitted to DTS without replacing major engine components.
 
-**Mechanical controls are compatible with:**
-- All Mercury FourStroke outboards 9.9 HP through 115 HP
-- Most Mercury FourStroke 150 HP (depending on rigging configuration)
-- Mercury Pro XS 115-175 HP in most configurations
+For a full eligibility table with every motor class, year cutoff, joystick prerequisites, and what to do if your motor isn't DTS-capable, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for DTS Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026).
 
-**DTS is required on:**
-- All Mercury Verado outboards
-- Most Mercury V8 and V10 4.6L FourStroke outboards (175 HP through 600 HP depending on family)
-- Mercury Pro XS V8/V10 platforms (250 HP and up)
-- Any twin or triple application using Mercury SmartCraft joystick piloting
+To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll reply same-day.
 
-If your repower is into a 90 HP FourStroke on a small fishing boat, mechanical is straightforward and the right call. If you're repowering into a Mercury 250 Pro XS V8, you're getting DTS whether you want it or not. The middle range (150-175 HP) is where the buyer actually has to choose.
+### Mercury DTS compatibility by family and HP range
+
+| Mercury family | HP range | DTS support | Notes |
+|---|---|---|---|
+| FourStroke | 9.9-115 HP | Mechanical only | DTS not offered. Standard controls and cables. |
+| FourStroke | 150 HP | Mechanical only | DTS not offered on the inline 4. Use standard binnacle. |
+| FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
+| Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
+| Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
+| Verado V8 (250-400 HP) | 250-400 HP | DTS standard | Verado has been DTS-only for the current generation. |
+| Verado V10 / V12 (400-600 HP) | 400-600 HP | DTS standard | Joystick Piloting requires DTS. |
+| Avator (electric) | 7.5e-110e | Drive-by-wire native | Throttle is electronic by design, separate platform from DTS. |
+| SeaPro | varies | Mechanical or DTS | Commercial-rated. Match to existing helm setup; HBW will verify. |
+
+**Note:** DTS retrofit on motors built for mechanical only is rarely worth it. New rigging cost runs $4,000-$8,000+ depending on helm. The decision usually only makes sense on a new repower or a multi-engine setup where Joystick Piloting is the goal.
 
 ## Cost: mechanical wins by $400-$800
 

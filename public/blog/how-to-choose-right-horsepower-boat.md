@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -91,6 +91,8 @@ whenInDoubt: Underpowered boats are the #1 complaint we hear. Step up before you
 ::
 
 ---
+
+![How to choose the right horsepower for your boat](/lovable-uploads/inline/how-to-choose-horsepower.svg)
 
 ## HP recommendations by boat type
 

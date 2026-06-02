@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -85,6 +85,8 @@ The hard part is honestly assessing the hull. Most Ontario aluminum hulls hold u
 ### The Honest Math
 
 For typical Ontario freshwater repowers on a solid hull vs. new boat options:
+
+![Repower or buy a new boat decision comparison](/lovable-uploads/inline/repower-vs-buy-new.svg)
 
 | Scenario | Cost (CAD, before HST) |
 |---|---|

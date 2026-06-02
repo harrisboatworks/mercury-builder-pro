@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -196,6 +196,15 @@ Mercury Platinum dealer. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+
+---
+
+**Related guides:**
+- [Mercury 115 vs 150 HP: Honest Ontario Dealer Guide 2026](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
+- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
+- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
+- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 
 ## FAQs
 

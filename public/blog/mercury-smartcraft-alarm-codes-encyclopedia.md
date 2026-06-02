@@ -1,14 +1,14 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia.md
-last_updated: 2026-05-25
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)"
-description: "Complete Mercury SmartCraft alarm code reference from an Ontario Platinum dealer: what each code means, severity, and exactly what to do next. No forum guesswork."
+title: "Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)"
+description: "Mercury SmartCraft alarm code reference from an Ontario Platinum dealer. Top 10 codes by service frequency, spring first-start patterns, Guardian alert decode, when..."
 category: "Troubleshooting"
 date_published: 2026-02-06
 date_modified: 2026-02-06
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)
+# Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)
 
-> Complete Mercury SmartCraft alarm code reference from an Ontario Platinum dealer: what each code means, severity, and exactly what to do next. No forum guesswork.
+> Mercury SmartCraft alarm code reference from an Ontario Platinum dealer. Top 10 codes by service frequency, spring first-start patterns, Guardian alert decode, when...
 
 **Category:** Troubleshooting  
 **Published:** 2026-02-06  
@@ -29,127 +29,152 @@ content_type: blog_article
 
 ## Article
 
-# Mercury SmartCraft Alarm Codes: What the Beeps Mean and What to Do Next
+*Last reviewed: 2026-05-28*
 
-## Quick answer
-Mercury SmartCraft alarms are warnings, not decorations. A single beep at key-on is normally a system test, while continuous or repeated beeps can indicate issues such as overheat, low oil, water in fuel, overspeed, sensor faults, or Engine Guardian protection. If the alarm continues or power is reduced, reduce throttle, get the boat to a safe place, and have the fault diagnosed.
+> **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then call HBW at 905-342-2153.
 
-Mercury's own documentation describes the warning horn as emitting either a continuous beep or intermittent short beeps. The Engine Guardian system may reduce power to protect the engine when a problem is detected.
+A Mercury alarm fires and most owners do one of two things. Either they keep running the boat (bad idea, that's what Guardian mode is trying to prevent) or they shut it down at the dock and Google the code (better idea, but most code lists online are out of date or apply to engine families you don't own).
 
-## First: do not ignore the beep
-A Mercury alarm is trying to tell you something. It may be minor. It may be serious. But it is not background music.
+This page is the version we use ourselves at HBW. Top 10 codes by service frequency, the patterns we see at spring first-start, what Guardian mode actually does, and the customer-side calls that turn out to be misdiagnoses every time. We have Mercury CDS (Computer Diagnostic System) at our dock and SmartCraft Connect Mobile on our phones. When you call HBW with an alarm code, we already know what 80% of them mean.
 
-Some boaters hear a beep and keep running because the engine "still seems fine." That is how a warning becomes a repair bill with a personality.
+## What HBW asks first when you call
 
-## Common Mercury warning patterns
+When a customer calls with a Guardian alarm active or a code on the screen, the first thing we ask is one question:
 
-| Alarm pattern | What it may indicate | What to do |
+**"What exactly does the screen say, and what beeps are you hearing? Is it a solid tone or a pattern? How many beeps and how often?"**
+
+That single question routes the call. The display text tells us the system involved (fuel, charging, oil, temperature, communication). The beep pattern tells us severity and the specific subsystem. A continuous tone is different from 4 beeps every 2 minutes is different from 6 beeps once.
+
+## Mercury beep code patterns (what the horn is telling you)
+
+Mercury's warning horn uses repeated patterns to communicate without a display. Even if your VesselView screen is off, the horn alone can tell you what's happening.
+
+| Beep pattern | What it means | What to do |
 |---|---|---|
-| One beep at key-on | Normal system test on many setups | Usually normal if it stops |
-| Four beeps every 2 minutes | Can indicate low oil reserve or water in fuel on applicable systems | Check display/manual and book diagnosis if unsure |
-| Continuous beep | Can indicate overheat, overspeed, sensor issue, or Guardian condition | Reduce throttle, check water flow, stop if needed |
-| Beeping plus reduced power | Engine Guardian may be limiting power | Do not force it; get diagnosed |
-| SmartCraft text warning | Specific fault or system warning | Record exact message before cycling power |
+| **1 continuous tone** | Engine in Guardian mode, severe fault | Reduce throttle to idle, return to dock, do not continue running |
+| **4 beeps every 2 minutes** | Water in fuel | Stop, check fuel filter, drain water, refill |
+| **6 beeps over 6 seconds, then silence** | Overheating warning | Shut down immediately, do not run |
+| **3 short beeps every 2 minutes** | Low oil pressure (4-stroke) | Stop, check oil level, do not run |
+| **1 beep, repeating** | Low oil reservoir (2-stroke Optimax / DFI) | Add 2-stroke oil to remote tank |
+| **2 short beeps** | Engine has entered limit/Guardian mode | Reduce throttle, motor will let you idle home |
 
-This table is a starting point, not a replacement for the correct Mercury manual for your serial number. Mercury systems vary by year, horsepower, rigging, display, and engine family.
+Patterns vary slightly by engine family and model year. For exact pattern decoding on your specific motor, the owner's manual is the source of truth.
 
-## What SmartCraft is actually doing
-SmartCraft is Mercury's engine information and monitoring system. Depending on your setup, it may display RPM, coolant temperature, battery voltage, fuel data, engine hours, alarms, and diagnostic information. The warning horn gets your attention. The display, if equipped, gives more context.
+## Top 10 alarm codes we see at HBW (by service frequency)
 
-If your boat has a SmartCraft display, take a photo of the exact warning before turning everything off. That photo can save a lot of guessing later.
+This is our actual order based on service tickets, not a generic Mercury list. We service primarily Mercury FourStroke, Pro XS, Verado V8/V10/V12, and some Optimax DFI on Rice Lake and the Kawarthas.
 
-## HBW dealer note
-"It was beeping" is useful. "It beeped four times every couple minutes, then the SmartCraft screen said water in fuel" is much more useful. Your future service writer will silently thank you. Maybe not out loud. We are still marina people.
+1. **Low battery voltage.** By far the most common alarm. Battery weak after winter, alternator output dropping, voltage regulator marginal. Especially common on V8 FourStroke and Verado post-winterization.
+2. **High battery voltage.** Voltage regulator stuck high, alternator overcharging. Less common but real, especially on older motors with worn regulators.
+3. **Water in fuel.** The 4-beeps-every-2-minutes alarm. Phase separation from stored E10 fuel, condensation in the tank, or a clogged 10-micron water-separating fuel filter. #1 spring first-start alarm we see.
+4. **Engine over-temperature.** Impeller worn or stuck, raw water intake clogged (anchor mud, zebra mussels, weeds), thermostat stuck closed. Trips Guardian mode immediately.
+5. **Low oil level (2-stroke).** For Optimax DFI owners, the remote oil tank reading low or sensor reading low. Often a float-magnet separation issue, not actual low oil.
+6. **Low oil pressure (4-stroke).** Actual low oil, bypass valve issue, or sensor fault. On a 4-stroke this is serious. Shut down.
+7. **Engine overspeed / RPM limit.** Typically a prop slip event (broken prop, lost a blade, came out of the water on a wave). Motor cuts power to protect itself.
+8. **Throttle position sensor fault.** DTS or mechanical TPS sensor failing or wiring issue. Motor goes to limp mode.
+9. **MAP / air / temp sensor fault.** EFI runs rich or lean, motor may stall.
+10. **Guardian / generic fault active.** Catch-all. Something tripped Guardian mode but the specific subsystem isn't displayed. Needs CDS to scan and identify.
 
-## What to do when the alarm sounds
+## Spring first-start patterns every May
 
-### Reduce throttle
-If the alarm sounds while running, reduce throttle. If the engine is in Guardian mode, do not try to power through it.
+April and May are our highest-volume service months. The alarms cluster predictably.
 
-### Check the obvious water-flow signs
-If it may be overheating, look for water flow from the tell-tale and check whether weeds, mud, or debris are blocking the water intakes. Do not put hands near moving parts. Do not run the engine dry.
+**#1: Water in Fuel (4 beeps every 2 minutes).** Phase separation from E10 fuel that sat for 5-6 months. Fix: drain the water-separating filter, refill with fresh fuel (ideally HBW's ethanol-free 89), restart.
 
-### Watch the temperature and voltage
-If your display shows temperature or voltage, note the numbers. High temperature and low voltage can both trigger warnings depending on the system.
+**#2: Low battery voltage / battery alarm.** Battery sat all winter, sulphated. Fix: load test, replace if below 11.5 V at rest.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+**#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning.
 
-### Record the alarm
-Write down:
-- Beep pattern
-- Display message
-- RPM when it happened
-- Speed/load
-- Water conditions
-- Whether power was reduced
-- Whether the engine restarted normally
+## Optimax DFI Code 13 / 14: the float-magnet problem
 
-## What not to do
-- Do not keep running at speed with an active alarm.
-- Do not assume all beeps mean the same thing.
-- Do not clear codes and pretend nothing happened.
-- Do not replace random parts based on a forum post from 2009.
-- Do not unplug warning systems because the sound is annoying. The sound is annoying on purpose.
+Mercury Optimax DFI engines have a 2-stroke oil reservoir with a float that has an embedded magnet. When the magnet separates from the float body (known issue on older Optimax), the sensor reads "low oil" even though the reservoir is full.
 
-## Why this matters on Rice Lake and the Kawarthas
-Ontario boating seasons are short. If your boat throws an alarm in July, losing a weekend hurts. If it throws an alarm before a long weekend, it hurts in bold.
+**Cause priority order:**
+1. Float magnet separation (most common, especially on older Optimax)
+2. Actual low oil supply
+3. Sensor wiring or connector fault (least common)
 
-That is why fault information matters. A proper description can help the shop decide whether this is likely a quick check, a fuel issue, a cooling issue, a sensor fault, or something that needs deeper diagnostics.
+Fix: replace the float assembly. We have the parts on the shelf.
 
-## When to request service
-Request service if:
-- The alarm repeats.
-- The engine goes into Guardian mode.
-- Temperature rises.
-- The tell-tale is weak or inconsistent.
-- The alarm appears after winter storage.
-- You see "water in fuel," "overheat," or sensor warnings.
-- You are not sure what the alarm means.
+## Verado and V8 FourStroke post-winterization codes
 
-For engine repairs, we only service Mercury and Mercruiser. Submit requests at [hbw.wiki/service](https://hbw.wiki/service).
+- **Low battery voltage / undervoltage codes:** Verado V8/V10/V12 and current V8 FourStroke draw significant power. Battery that survived storage on a smaller motor may not have enough cranking reserve for a Verado.
+- **Water in fuel / fuel quality alarms:** same E10 phase-separation, but Verado's higher fuel-system pressure is more sensitive to contamination.
+- **Fuel-pressure / fuel-system Guardian faults:** low-pressure or high-pressure fuel pump weakness, fuel rail pressure sensor drift, or fuel filter restriction.
 
-## Bottom line
-SmartCraft alarms are there to protect the engine and the day. A one-beep key-on test may be normal. Repeated or continuous alarms deserve attention.
+Note: any older Verado content referencing "supercharger codes" is out of date.
 
-If your Mercury is beeping, record the pattern, take a photo of the display, reduce throttle, and get it checked before the small warning becomes the expensive version.
+## Ontario boater alarm patterns
 
-Need Mercury alarm diagnosis near Rice Lake, Peterborough, or the Kawarthas? Submit a service request at [hbw.wiki/service](https://hbw.wiki/service).
+- **Water-in-fuel alarms are disproportionately common in Ontario.** Long winter storage pulls more atmospheric moisture into tanks than the southern US sees.
+- **Low-battery alarms are disproportionately common in Ontario.** Cold storage at -10C to -20C is hard on batteries.
+- **Rice Lake-specific:** anchor mud and zebra mussel buildup on raw water intakes trigger the same over-temperature alarms the engine uses for any cooling restriction. Diagnosis at HBW includes intake cleaning before assuming impeller failure.
 
-## Reviewed by
+## SmartCraft Connect Mobile (formerly VesselView Mobile)
 
-Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+Mercury rebranded VesselView Mobile as **SmartCraft Connect Mobile** in 2026. Same product, same functionality. If you have the older app installed, it still works. New downloads should search for "SmartCraft Connect Mobile."
 
-> Related guide: [How Ontario boat owners accidentally increase service bills](/blog/accidentally-increase-boat-service-bills-ontario).
+HBW uses SmartCraft Connect Mobile internally for customer-side diagnostics.
 
-## Related guides
-- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
-- [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
-- [Mercury Outboard Won't Start Troubleshooting (Ontario)](/blog/mercury-outboard-wont-start-troubleshooting)
+## Common mistakes (the things we push back on)
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-- [Mercury Outboard Overheating at Idle](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
+:::mythbuster
+- claim: I cleared the code and it went away, so it's fixed.
+  rebuttal: A code clears when you turn off the key, but if the cause isn't addressed, it fires again.
+- claim: My buddy's Mercury had the same code and it was X.
+  rebuttal: Different engine families display the same code number for different faults. Verify before parts shop.
+- claim: I shut off the alarm by holding the horn button.
+  rebuttal: Silencing is not resolution.
+:::
+
+## Ready for HBW to look at it?
+
+**Phone:** 905-342-2153  
+**Email:** info@harrisboatworks.ca  
+**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
+
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario. Mercury CDS equipped.
+
+## Sources
+
+- Mercury Marine Universal Fault Code reference (publicly available subset, Codes 1-247)
+- Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
+- CDI Electronics Troubleshooting Guide (7th Edition)
+- HBW shop-floor data: 2026 spring service-ticket distribution
+
+---
+
+**Related guides:**
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
+- [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 
 ## FAQs
 
-### What does one beep mean on a Mercury outboard?
+### What is the most common Mercury alarm code at spring first-start?
 
-On many Mercury setups, one beep at key-on is a normal system test. If the beeping continues or changes pattern, check the display/manual and get it diagnosed.
+Water in Fuel (the 4-beeps-every-2-minutes Guardian alert) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with fresh fuel (ideally ethanol-free).
 
-### What does a continuous Mercury alarm mean?
+### Does HBW have Mercury CDS dealer software?
 
-A continuous alarm can indicate a serious condition such as overheating, overspeed, sensor issues, or Engine Guardian activation. Reduce throttle and investigate safely.
+Yes. HBW is a Mercury Platinum Dealer with Mercury CDS (Computer Diagnostic System). CDS plugs into the SmartCraft network and provides live engine data, fault code reading, fault clearing, and parameter adjustment that the owner-side SmartCraft Connect Mobile app cannot.
 
-### What is Mercury Engine Guardian?
+### Is VesselView Mobile still available?
 
-Engine Guardian monitors critical engine sensors and can reduce power when it detects a problem to help protect the engine.
+Yes, but Mercury rebranded it as SmartCraft Connect Mobile in 2026. Same product, same functionality. The older app still works if you have it installed.
 
-### Should I keep driving if the alarm is on?
+### My Optimax keeps firing a Code 13 or 14 oil alarm but the tank is full. What's wrong?
 
-Do not keep running hard with an active alarm. Reduce throttle, get to a safe place, and have the issue diagnosed.
+The most likely cause is float-magnet separation in the engine-mounted 2-stroke oil reservoir. The float still functions, but the magnet that triggers the sensor has detached from the float body. The sensor reads 'low oil' even though the reservoir is full. Fix is float assembly replacement.
 
-### What should I send HBW?
+### Can a clogged raw water intake on Rice Lake trigger an over-temperature alarm?
 
-Send the engine serial number, exact alarm pattern, display photo, RPM/speed when it happened, and whether the engine reduced power.
+Yes. Anchor mud, zebra mussel buildup, weed debris, or a wasp nest in the telltale tube can restrict raw water flow enough to trip the over-temperature alarm. Diagnosis at HBW includes intake cleaning before assuming impeller failure.
+
+### Are current Mercury Verado V8 and V10 outboards supercharged?
+
+No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
 
 ## Next steps
 
