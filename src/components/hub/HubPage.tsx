@@ -120,6 +120,7 @@ export function HubPage(props: HubPageProps) {
     secondaryCTA,
     enrichedContent,
     extraSchemas,
+    canonicalPath,
   } = props;
 
   return (
@@ -134,6 +135,7 @@ export function HubPage(props: HubPageProps) {
         faqs={faqs}
         lastReviewedISO={lastReviewedISO}
         extraSchemas={extraSchemas}
+        canonicalPath={canonicalPath}
       />
 
 
