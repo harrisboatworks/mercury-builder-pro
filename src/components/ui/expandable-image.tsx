@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { X, Expand } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import imageVariantsManifest from '@/data/imageVariantsManifest.json';
+
+// Build-time manifest of image paths (without extension) that have all three
+// responsive WebP variants generated (-640.webp, -1024.webp, .webp). When a
+// PNG/JPG src is NOT in this manifest, we render a plain <img> instead of a
+// <picture> with a broken <source>. This avoids iOS Safari rendering the
+// broken-image icon when it fetches a non-existent webp variant.
+const variantBaseSet = new Set<string>(
+  (imageVariantsManifest as { bases: string[] }).bases ?? [],
+);
 
 interface ExpandableImageProps {
   src: string;
