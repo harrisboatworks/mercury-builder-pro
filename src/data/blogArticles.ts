@@ -31146,7 +31146,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-repair-repower-sell-decision.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-02',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '9 min read',
