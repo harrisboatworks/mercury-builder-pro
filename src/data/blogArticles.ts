@@ -3364,7 +3364,7 @@ Most multi-brand dealers do not reach Platinum because it is hard to maintain th
 
 ## Three generations. One brand.
 
-My grandfather founded Harris Boat Works in 1947. He added the Mercury dealership in 1965. My father ran the business through the 70s, 80s, and 90s. I am running it now.
+My grandfather George founded Harris Boat Works in 1947. He added the Mercury dealership in 1965. My father Jim ran the business from 1978 until his passing in 2015. I took over in 2015 and run it now.
 
 That is not a sales line. It means our technicians have been learning Mercury, and only Mercury, for decades. The institutional knowledge does not reset with staff turnover the way it does at bigger, busier shops. Some of our service customers have brought their boats to three generations of Harrises. We know their motors the way a family doctor knows a patient history.
 
@@ -20712,7 +20712,7 @@ These aren't things a new dealer can fake. They take time. We have time on Rice 
 ---
 
 ::pull-quote
-quote: My grandfather bought his first boat from Don Harris in the 50s. I bought my last three motors from Jay. **Some things on this lake don't change, and that's a good thing.**
+quote: My grandfather bought his first boat from George Harris in the 50s. I bought my last three motors from Jay. **Some things on this lake don't change, and that's a good thing.**
 attribution: Mike S.
 source: Third-generation Rice Lake cottager
 ::
