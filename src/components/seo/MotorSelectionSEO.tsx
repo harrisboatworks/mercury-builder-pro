@@ -176,21 +176,21 @@ export function MotorSelectionSEO({
 
   return (
     <Helmet>
-      <title>Mercury Outboard Motors, Browse 2.5HP, 600HP & Build a Quote | Harris Boat Works</title>
+      <title>Mercury Boats Canada: Mercury Outboards 2.5 to 600 HP, Build a Quote | HBW</title>
       <meta
         name="description"
-        content={`Shop Mercury FourStroke, Pro XS, SeaPro and ProKicker outboards from $${minPrice.toLocaleString()}–$${maxPrice.toLocaleString()} CAD. Configure your motor and get instant CAD pricing online, Harris Boat Works, Mercury dealer since 1965.`}
+        content={`Browse Mercury boats and outboards in Canada: FourStroke, Pro XS, SeaPro, ProKicker from $${minPrice.toLocaleString()} to $${maxPrice.toLocaleString()} CAD. Configure your motor and get instant CAD pricing, Harris Boat Works, Mercury dealer since 1965.`}
       />
       <link rel="canonical" href={`${SITE_URL}/quote/motor-selection`} />
 
-      <meta property="og:title" content="Mercury Outboard Motors, Browse & Build a Quote" />
-      <meta property="og:description" content="Shop the full Mercury outboard lineup: FourStroke, Pro XS, SeaPro, ProKicker. Configure online and get instant CAD pricing." />
+      <meta property="og:title" content="Mercury Boats Canada: Mercury Outboards & Build a Quote" />
+      <meta property="og:description" content="Browse the full Mercury outboard lineup in Canada: FourStroke, Pro XS, SeaPro, ProKicker. Configure online and get instant CAD pricing." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${SITE_URL}/quote/motor-selection`} />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Outboard Motors, Browse & Build a Quote" />
-      <meta name="twitter:description" content="Shop the full Mercury outboard lineup. Configure online and get instant CAD pricing." />
+      <meta name="twitter:title" content="Mercury Boats Canada: Mercury Outboards & Build a Quote" />
+      <meta name="twitter:description" content="Browse the full Mercury outboard lineup in Canada. Configure online and get instant CAD pricing." />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
   );
