@@ -92,6 +92,7 @@ export const locations: LocationPageData[] = [
     ],
     relatedCaseStudySlugs: ['bass-boat-150-to-150-pro-xs', 'walkaround-cuddy-90-to-115-efi', 'aluminum-fishing-60-to-90-fourstroke'],
     faqs: [
+      { question: 'Where is Harris Boat Works located?', answer: 'Harris Boat Works is at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, on the south shore of Rice Lake. We are a Mercury Marine Platinum Dealer, family-owned since 1947 and an authorized Mercury dealer since 1965. Pickup only, no shipping.' },
       { question: 'Is Harris Boat Works on Rice Lake?', answer: 'Yes. We are at 5369 Harris Boat Works Rd, Gores Landing, ON, on the south shore of Rice Lake, the closest Mercury Marine Platinum Dealer to the lake, family-owned since 1947 and an authorized Mercury dealer since 1965.' },
       { question: 'Can I get a Mercury repower quote in CAD before driving here?', answer: 'Yes. Build a complete itemized Mercury repower quote at /quote/motor-selection, motor, controls, propeller, install, financing, and trade-in credit. The price you see is the price you pay.' },
       { question: 'Do you ship or deliver outboards?', answer: 'No. Pickup only at Gores Landing with photo ID. We do not ship motors and we do not deliver, strict industry-wide fraud-prevention policy.' },
