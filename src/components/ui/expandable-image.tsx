@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { X, Expand } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import imageVariantsManifest from '@/data/imageVariantsManifest.json';
+
+// Build-time manifest of image paths (without extension) that have all three
+// responsive WebP variants generated (-640.webp, -1024.webp, .webp). When a
+// PNG/JPG src is NOT in this manifest, we render a plain <img> instead of a
+// <picture> with a broken <source>. This avoids iOS Safari rendering the
+// broken-image icon when it fetches a non-existent webp variant.
+const variantBaseSet = new Set<string>(
+  (imageVariantsManifest as { bases: string[] }).bases ?? [],
+);
 
 interface ExpandableImageProps {
   src: string;
@@ -57,29 +67,33 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
       {/* Main Image */}
       <figure className={cn("relative", containerClassName)}>
         <div className="relative group cursor-pointer">
-          <picture>
-            {/* Prefer pre-generated responsive WebP variants when src is a same-origin PNG/JPG asset */}
-            {(() => {
-              if (!/^\/.+\.(png|jpe?g)$/i.test(src)) return null;
-              const base = src.replace(/\.(png|jpe?g)$/i, '');
-              const srcSet = `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`;
-              return (
+          {(() => {
+            const pngJpgMatch = /^(\/.+)\.(png|jpe?g)$/i.exec(src);
+            const base = pngJpgMatch?.[1];
+            const hasVariants = !!base && variantBaseSet.has(base);
+            const imgEl = (
+              <img
+                src={src}
+                alt={alt}
+                className={cn("w-full h-auto rounded-lg shadow-sm transition-all duration-200 group-hover:shadow-md", className)}
+                loading="lazy"
+                onClick={handleImageClick}
+                onLoad={() => setImageLoaded(true)}
+              />
+            );
+            if (!hasVariants) return imgEl;
+            const srcSet = `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`;
+            return (
+              <picture>
                 <source
                   srcSet={srcSet}
                   sizes="(min-width: 1024px) 800px, (min-width: 640px) 90vw, 100vw"
                   type="image/webp"
                 />
-              );
-            })()}
-            <img
-              src={src}
-              alt={alt}
-              className={cn("w-full h-auto rounded-lg shadow-sm transition-all duration-200 group-hover:shadow-md", className)}
-              loading="lazy"
-              onClick={handleImageClick}
-              onLoad={() => setImageLoaded(true)}
-            />
-          </picture>
+                {imgEl}
+              </picture>
+            );
+          })()}
           
           {/* Expand Hint */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-all duration-200 rounded-lg" onClick={handleImageClick}>

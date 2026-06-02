@@ -103,7 +103,7 @@ export const HERO_VARIATIONS: HeroVariation[] = [
       </>
     ),
     subheading:
-      "Jim Harris started rigging Mercurys on Rice Lake in 1965. We've never stopped. Same family. Same handshake.",
+      "George Harris started rigging Mercurys on Rice Lake in 1965. Three generations later, we've never stopped. Same family. Same handshake.",
     stats: [
       { n: '1947', l: 'family-owned since' },
       { n: 'Mercury', l: 'certified' },
