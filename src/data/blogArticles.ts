@@ -4343,6 +4343,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Comparison',
     readTime: '9 min read',
     keywords: ['90 hp mercury motor', 'mercury 75 vs 90', 'mercury 90 vs 115', 'best mercury hp', 'mercury 75hp review', 'mercury 115 fourstroke'],
+    faqs: [
+      { question: 'Is a 90 HP Mercury motor enough for a 17 ft aluminum boat?', answer: 'Yes. For most 16 to 18 ft aluminum console boats on Ontario lakes, a 90 HP Mercury FourStroke is the practical sweet spot, enough power for two to three adults plus gear, planing cleanly without working the engine. Underpowered only when fully loaded in rough water.' },
+      { question: 'How much does a new 90 HP Mercury motor cost installed in Ontario?', answer: 'Expect roughly $14,000 to $17,000 CAD installed at Harris Boat Works in 2026, including the motor, controls, propeller, rigging, and water test on Rice Lake. Final cost depends on your boat, existing rigging, and any trade-in. Live pricing at mercuryrepower.ca.' },
+      { question: 'What is the difference between a 90 HP and a 115 HP Mercury?', answer: 'Same powerhead, different tuning. The 115 makes about 25 more horsepower from the same block, which translates to noticeably better acceleration with a heavy load and 3 to 5 mph more at top end. The 115 costs about $1,500 to $2,500 CAD more installed.' }
+    ],
     content: `# Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)
 
 *Last reviewed: 2026-05-07*
