@@ -4546,6 +4546,10 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 `,
     faqs: [
       {
+        question: 'How much does a new 90 HP Mercury motor cost installed in Ontario?',
+        answer: 'Expect roughly $14,000 to $17,000 CAD installed at Harris Boat Works in 2026, including the motor, controls, propeller, rigging, and water test on Rice Lake. Final cost depends on your boat, existing rigging, and any trade-in. Live pricing at mercuryrepower.ca.'
+      },
+      {
         question: 'Is the 90HP worth the upgrade from 75HP?',
         answer: 'For most boaters, the jump from 75 to 90HP provides modest improvement. We often recommend either the 75HP (for efficiency/tiller) or jumping to 115HP (for meaningful performance gain).'
       },
