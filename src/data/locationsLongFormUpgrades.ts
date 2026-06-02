@@ -11,8 +11,8 @@ const VISIT =
 
 export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
   'rice-lake-mercury-repower': {
-    h1: 'Mercury Repower on Rice Lake, Ontario',
-    lastReviewed: '2026-05-24',
+    h1: 'Harris Boat Works - Mercury Repower Centre',
+    lastReviewed: '2026-06-02',
     quickAnswer:
       "Harris Boat Works is the Mercury repower shop on Rice Lake, in Gores Landing on the south shore. We're a Mercury Platinum Dealer, family-owned since 1947. Every motor we rig is water-tested on Rice Lake itself before pickup. No shipping. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
     intro:
