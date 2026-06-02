@@ -31248,7 +31248,7 @@ For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guid
 
 **Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/boat-motor-trade-in-guide) covers what to expect.
 
-![Aging aluminum boat transom with surface oxidation around motor mount](/lovable-uploads/inline/inline-aging-boat-transom.png)
+![Aging aluminum boat transom with surface oxidation around motor mount](/lovable-uploads/inline/inline-aging-boat-transom.webp)
 
 ## Common scenarios we see
 
