@@ -43,7 +43,12 @@ export function HomepageSEO() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "sameAs": BUSINESS_SAME_AS
+        "sameAs": BUSINESS_SAME_AS,
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Harris Boat Works",
+          "url": "https://www.harrisboatworks.ca/"
+        }
       },
       {
         "@type": ["LocalBusiness", "Store", "AutoRepair"],
