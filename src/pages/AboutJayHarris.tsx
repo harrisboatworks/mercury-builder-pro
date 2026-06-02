@@ -68,11 +68,11 @@ export default function AboutJayHarris() {
 
             <h2>Background</h2>
             <p>
-              Jay grew up around outboards. His grandfather Floyd opened Harris Boat Works in 1947 as a
-              small marine service operation on the south shore of Rice Lake. His father Jim built the
-              Mercury relationship in 1965 and ran the business through the 1970s, 80s, and 90s. Jay
-              took over operations as the third generation, representing the same family running the
-              same dock on the same lake.
+              Jay grew up around outboards. His grandfather George opened Harris Boat Works in 1947 as a
+              small marine service operation on the south shore of Rice Lake, and added the Mercury
+              dealership in 1965. His father Jim ran the business from 1978 until his passing in 2015.
+              Jay took over operations in 2015 as the third generation, representing the same family
+              running the same dock on the same lake.
             </p>
             <p>
               The marina has serviced Mercury outboards continuously for 60+ years. That kind of
