@@ -66,9 +66,9 @@ export const locations: LocationPageData[] = [
   // ============ NORTHUMBERLAND / KAWARTHAS ============
   {
     slug: 'rice-lake-mercury-repower',
-    title: 'Mercury Repower on Rice Lake, Harris Boat Works, Gores Landing, Ontario',
+    title: 'Harris Boat Works: Mercury Repower on Rice Lake, Gores Landing ON',
     metaDescription:
-      'Rice Lake Mercury repower specialist. Mercury dealer since 1965, family-owned in Gores Landing since 1947. Live CAD pricing, pickup only, lake-tested.',
+      'Harris Boat Works on Rice Lake: Mercury Platinum Dealer in Gores Landing, family-owned since 1947, Mercury dealer since 1965. Live CAD pricing, pickup only, lake-tested.',
     region: 'Rice Lake',
     regionType: 'region',
     keyword: 'mercury repower rice lake',
