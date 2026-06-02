@@ -6,11 +6,12 @@ export default function MotorSelectionHub() {
   return (
     <HubPage
       path="/motor-selection"
-      metaTitle="Choose the Right Mercury Outboard 2026: HP, Family, Prop | HBW"
-      metaDescription="Mercury outboard selection by boat type, HP class, and use case. FourStroke vs Pro XS, prop selection, Command Thrust, and live CAD pricing from Harris Boat Works."
+      canonicalPath="/quote/motor-selection"
+      metaTitle="Mercury Boats Canada: Browse Mercury Outboards 2.5 to 600 HP | HBW"
+      metaDescription="Mercury boats and outboards in Canada: browse the full Mercury lineup by HP class, family, and boat type. Live CAD pricing from Harris Boat Works, Mercury Platinum dealer."
       breadcrumbName="Mercury Motor Selection"
-      lastReviewedISO="2026-05-05"
-      lastReviewedLabel="May 2026"
+      lastReviewedISO="2026-06-02"
+      lastReviewedLabel="June 2026"
       h1="How to Choose the Right Mercury Outboard for Your Boat (2026)"
       subhead="Hull-by-hull, use-by-use Mercury sizing from a Mercury Platinum dealer."
       primaryCTA={{ label: 'Build Your Mercury Quote', to: '/quote/motor-selection' }}
