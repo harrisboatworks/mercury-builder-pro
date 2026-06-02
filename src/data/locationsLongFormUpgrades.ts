@@ -11,8 +11,8 @@ const VISIT =
 
 export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
   'rice-lake-mercury-repower': {
-    h1: 'Mercury Repower on Rice Lake, Ontario',
-    lastReviewed: '2026-05-24',
+    h1: 'Harris Boat Works - Mercury Repower Centre',
+    lastReviewed: '2026-06-02',
     quickAnswer:
       "Harris Boat Works is the Mercury repower shop on Rice Lake, in Gores Landing on the south shore. We're a Mercury Platinum Dealer, family-owned since 1947. Every motor we rig is water-tested on Rice Lake itself before pickup. No shipping. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
     intro:
@@ -36,8 +36,8 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'What HP Mercury is most common on Rice Lake?',
         paragraphs: [
-          'Rice Lake is shallow and weedy in summer, so mid-range FourStroke 60–115 HP and Pro XS 115–175 HP are the most common repowers we quote. Prop selection matters more than raw horsepower here. A Pro XS V8 4.6L 175 HP with the Boost button is the upgrade pontoon owners ask about the most, that 25 extra HP for 4–6 seconds is the difference between getting up cleanly with six adults onboard and not.',
-          'For aluminum tinnies and 16-footers running Bewdley to Roseneath, a tiller FourStroke 9.9–25 HP is the usual repower in the $2,800–$5,500 CAD range. For bass boats and bigger fiberglass rigs, we\'re usually quoting big-block FourStroke 115–200 HP in the $14,000–$24,000 CAD range.',
+          'Rice Lake is shallow and weedy in summer, so mid-range FourStroke 60-115 HP and Pro XS 115-175 HP are the most common repowers we quote. For an honest head-to-head on the most-requested mid-range, see our [90 HP Mercury motor vs 75 and 115](/blog/mercury-75-vs-90-vs-115-comparison) comparison. Prop selection matters more than raw horsepower here. A Pro XS V8 4.6L 175 HP with the Boost button is the upgrade pontoon owners ask about the most, that 25 extra HP for 4-6 seconds is the difference between getting up cleanly with six adults onboard and not.',
+          'For aluminum tinnies and 16-footers running Bewdley to Roseneath, a tiller FourStroke 9.9-25 HP is the usual repower in the $2,800-$5,500 CAD range. For bass boats and bigger fiberglass rigs, we are usually quoting big-block FourStroke 115-200 HP in the $14,000-$24,000 CAD range. If you are weighing Verado against the FourStroke or Pro XS families, the [Mercury Verado vs FourStroke vs Pro XS comparison](/blog/fourstroke-vs-pro-xs) lays out where each one earns its price. Looking at the small electric end of the lineup? Read the [Mercury Avator 7.5e review and price](/blog/mercury-avator-7-5e-review). Francophone visitors: [version française](/fr).',
         ],
       },
       {

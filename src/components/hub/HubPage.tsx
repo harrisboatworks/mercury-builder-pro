@@ -90,6 +90,9 @@ export interface HubPageProps {
 
   // Optional: additional JSON-LD graph items (e.g. Service schema)
   extraSchemas?: any[];
+
+  // Optional canonical override (resolves keyword cannibalization to a sibling page)
+  canonicalPath?: string;
 }
 
 const phoneToTel = (s: string) => 'tel:+1' + s.replace(/\D/g, '');
@@ -117,6 +120,7 @@ export function HubPage(props: HubPageProps) {
     secondaryCTA,
     enrichedContent,
     extraSchemas,
+    canonicalPath,
   } = props;
 
   return (
@@ -131,6 +135,7 @@ export function HubPage(props: HubPageProps) {
         faqs={faqs}
         lastReviewedISO={lastReviewedISO}
         extraSchemas={extraSchemas}
+        canonicalPath={canonicalPath}
       />
 
 

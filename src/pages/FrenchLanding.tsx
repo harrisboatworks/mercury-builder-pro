@@ -32,6 +32,14 @@ export default function FrenchLanding() {
         "mainEntity": [
           {
             "@type": "Question",
+            "name": "Êtes-vous un concessionnaire Mercury au Canada?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Harris Boat Works est un concessionnaire Mercury Marine Platinum au Canada, basé à Gores Landing en Ontario, sur le lac Rice. Concessionnaire Mercury depuis 1965, marina familiale depuis 1947. On vend la gamme complète Mercury de 2,5 HP à 600 HP avec prix transparents en dollars canadiens à mercuryrepower.ca."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "Parlez-vous français?",
             "acceptedAnswer": {
               "@type": "Answer",

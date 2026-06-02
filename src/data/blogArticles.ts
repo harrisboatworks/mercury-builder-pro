@@ -2310,19 +2310,20 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'fourstroke-vs-pro-xs',
-    seoTitle: 'FourStroke vs Pro XS: When Pro XS Matters | mercuryrepower.ca',
-    title: 'FourStroke vs Pro XS: When Does Pro XS Actually Matter?',
-    description: 'Mercury FourStroke vs Pro XS for Ontario repowers: hole shot, weight, top end, and real 2026 CAD installed-price ranges from $16,000. Advice from a Mercury dealer since 1965 and current Platinum dealer.',
+    seoTitle: 'Mercury Verado vs FourStroke vs Pro XS: Family Comparison (2026) | HBW',
+    title: 'Mercury Verado vs FourStroke vs Pro XS: Mercury Family Comparison',
+    description: 'Mercury Verado vs FourStroke vs Pro XS for Ontario repowers: hole shot, weight, top end, and real 2026 CAD installed-price ranges from $16,000. Advice from a Mercury dealer since 1965 and current Platinum dealer.',
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-26',
-    dateModified: '2026-05-30',
+    dateModified: '2026-06-02',
     publishDate: '2026-05-26',
     category: 'Mercury Motors',
     readTime: '9 min',
-    keywords: ['mercury fourstroke vs pro xs', 'pro xs vs fourstroke', 'mercury motor family comparison', 'pro xs worth it', 'fourstroke or pro xs repower'],
+    keywords: ['mercury fourstroke vs pro xs', 'mercury verado vs fourstroke', 'mercury verado', 'pro xs vs fourstroke', 'mercury motor family comparison', 'pro xs worth it', 'fourstroke or pro xs repower'],
     relatedSlugs: ['mercury-75-vs-90-vs-115-comparison', 'mercury-command-thrust-guide-pontoon-boats', 'mercury-boost-upgrade-150hp-pontoon-analysis', 'best-pontoon-outboard-2026-mercury', 'mercury-repower-cost-ontario-2026-cad'],
     faqs: [
+      { question: 'What is the Mercury Verado and how does it compare to FourStroke and Pro XS?', answer: 'Mercury Verado is the supercharged, premium V8 / V10 / V12 outboard family above 250 HP, built for big offshore boats and large pontoons that need quiet refinement and big power. FourStroke is the everyday workhorse (2.5 to 300 HP), Pro XS is the lighter performance variant (115 to 300 HP). Verado is special-order at Harris Boat Works, not stocked. Most Ontario freshwater repowers land in FourStroke or Pro XS.' },
       { question: 'Is a Mercury Pro XS faster than a FourStroke?', answer: 'Usually, especially at 150 HP and up. At matching horsepower, Pro XS is tuned for higher RPM, sharper hole shot, and a few extra mph at top end. At 115 HP and below, the difference is smaller and the FourStroke is usually the better repower pick.' },
       { question: 'Does a Pro XS use more fuel than a FourStroke?', answer: 'At cruise the two are close. Run wide open and the Pro XS will burn more because it spins higher RPM and is tuned to deliver. If most of your time is at 4,000 RPM cruise, the fuel difference is small.' },
       { question: 'Is Pro XS worth it on a pontoon?', answer: 'Sometimes. A Pro XS V8 with Boost on a tritoon is a strong combination if you tube or ski. On a standard two-tube pontoon, a FourStroke 115 or 150, often with Command Thrust, is usually the smarter spend.' },
@@ -4331,17 +4332,17 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 4: January 26, 2026
   {
     slug: 'mercury-75-vs-90-vs-115-comparison',
-    seoTitle: "Mercury 75 vs 90 vs 115 HP: Which to Pick (2026) | HBW",
-    title: 'Mercury 75 vs 90 vs 115 HP: Which One We\'d Pick (2026)',
-    description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP FourStroke wins. Here's where 75 and 115 actually make sense.",
+    seoTitle: "90 HP Mercury Motor vs 75 and 115 HP: Which to Pick (2026) | HBW",
+    title: '90 HP Mercury Motor vs 75 and 115 HP: Which One We\'d Pick (2026)',
+    description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's where 75 and 115 actually make sense.",
     image: '/lovable-uploads/mercury-75-90-115-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-26',
-    dateModified: '2026-05-04',
+    dateModified: '2026-06-02',
     publishDate: '2026-01-26',
     category: 'Comparison',
     readTime: '9 min read',
-    keywords: ['mercury 75 vs 90', 'mercury 90 vs 115', 'best mercury hp', 'mercury 75hp review', 'mercury 115 fourstroke'],
+    keywords: ['90 hp mercury motor', 'mercury 75 vs 90', 'mercury 90 vs 115', 'best mercury hp', 'mercury 75hp review', 'mercury 115 fourstroke'],
     content: `# Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)
 
 *Last reviewed: 2026-05-07*
@@ -4544,6 +4545,10 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 `,
     faqs: [
+      {
+        question: 'How much does a new 90 HP Mercury motor cost installed in Ontario?',
+        answer: 'Expect roughly $14,000 to $17,000 CAD installed at Harris Boat Works in 2026, including the motor, controls, propeller, rigging, and water test on Rice Lake. Final cost depends on your boat, existing rigging, and any trade-in. Live pricing at mercuryrepower.ca.'
+      },
       {
         question: 'Is the 90HP worth the upgrade from 75HP?',
         answer: 'For most boaters, the jump from 75 to 90HP provides modest improvement. We often recommend either the 75HP (for efficiency/tiller) or jumping to 115HP (for meaningful performance gain).'
@@ -33093,13 +33098,13 @@ Harris Boat Works, family-owned since 1947. A Mercury Platinum Dealer, selling M
   },
   {
     slug: 'mercury-avator-7-5e-review',
-    seoTitle: 'Mercury Avator 7.5e Review: Electric Outboard | Mercuryrepower.ca',
-    title: 'Mercury Avator 7.5e Review: Electric Outboard',
-    description: 'Honest Mercury Avator 7.5e electric outboard review. Battery life, range, mounting, and best uses on Rice Lake, from $4,500 CAD installed.',
+    seoTitle: 'Mercury Avator 7.5e: Prix CAD, Review & Range (2026) | Mercuryrepower.ca',
+    title: 'Mercury Avator 7.5e: Review, Price CAD, and Range (2026)',
+    description: 'Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on Rice Lake. From $4,500 CAD installed at Harris Boat Works.',
     image: '/lovable-uploads/avator-7-5e-hero-real.jpg',
     author: 'Jay Harris',
     datePublished: '2026-05-24',
-    dateModified: '2026-05-24',
+    dateModified: '2026-06-02',
     publishDate: '2026-05-24',
     category: 'Buying Guide',
     readTime: '10 min read',
