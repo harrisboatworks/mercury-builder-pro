@@ -958,7 +958,7 @@ writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMoto
 }
 
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md', "Ontario's Mercury Repower Centre"]);
-verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection', 'Published by [Harris Boat Works]']);
+verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection', 'Published by [Harris Boat Works]', '## AI Agent Interfaces', 'agent-mcp-server']);
 
 // Verify pricing-reference motor count matches the quote-builder selection
 // (NOT public-motors-api). Compare the count in frontmatter against the
