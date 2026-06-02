@@ -18,6 +18,12 @@ export interface HubPageSEOProps {
   lastReviewedISO: string; // YYYY-MM-DD
   image?: string; // absolute or root-relative
   extraSchemas?: any[];
+  /**
+   * Optional canonical override. When set, <link rel="canonical"> points to
+   * this path instead of `path`. Used to resolve keyword cannibalization
+   * between near-duplicate hub pages and their builder counterpart.
+   */
+  canonicalPath?: string;
 }
 
 export function HubPageSEO({
@@ -31,8 +37,10 @@ export function HubPageSEO({
   lastReviewedISO,
   image,
   extraSchemas,
+  canonicalPath,
 }: HubPageSEOProps) {
   const url = `${SITE_URL}${path}`;
+  const canonicalUrl = canonicalPath ? `${SITE_URL}${canonicalPath}` : url;
   const ogImage = image
     ? (image.startsWith('http') ? image : `${SITE_URL}${image}`)
     : `${SITE_URL}/social-share.jpg`;
