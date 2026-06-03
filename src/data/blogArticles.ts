@@ -33938,7 +33938,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - Mercury Canada promotional financing examples (2025-2026)
 - Ontario HST treatment on marine purchases
 - Amortization math verified with Python using standard formula M = P x [r(1+r)^n] / [(1+r)^n - 1]
-- HBW current Mercury Pro XS pricing: 115 ProXS $17,320, 150 ProXS $24,107 (as of 2026)
+- HBW current Mercury Pro XS pricing: 115 ProXS $17,490, 150 ProXS $24,349 (as of 2026)
 
 ---
 
