@@ -1,0 +1,33 @@
+name: Blog pricing drift check
+
+on:
+  pull_request:
+    paths:
+      - 'src/data/blogArticles.ts'
+      - 'src/data/*BlogArticles.ts'
+      - 'public/pricing-reference.md'
+      - 'scripts/check-blog-pricing-drift.mjs'
+      - 'scripts/reconcile-blog-pricing.mjs'
+      - 'scripts/lib/canonical-pricing.mjs'
+      - 'scripts/generate-canonical-pricing.mjs'
+  push:
+    branches: [main]
+    paths:
+      - 'src/data/blogArticles.ts'
+      - 'src/data/*BlogArticles.ts'
+      - 'public/pricing-reference.md'
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Regenerate canonical pricing
+        run: npm run generate:canonical-pricing
+      - name: Check blog pricing drift
+        run: npm run check:pricing-drift
