@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs
-last_updated: 2026-06-02
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -13,7 +13,7 @@ family: ProXS
 horsepower: 150
 model_number: 1152F231D
 availability: in_stock
-price_cad: 24233
+price_cad: 24475
 ---
 
 # 150 EXLPT ProXS
@@ -30,8 +30,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Pricing (CAD)
 
-- **Selling price:** $24,233
-- **MSRP:** $27,540
+- **Selling price:** $24,475
+- **MSRP:** $27,265
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 

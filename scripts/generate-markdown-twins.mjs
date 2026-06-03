@@ -687,13 +687,23 @@ function pricingReferenceMarkdown(motorRecords) {
     throw new Error('[markdown-twins] FATAL: pricing-reference.md would be empty (no priced motors).');
   }
 
+  // Display-only formatter: collapse the stray space between an HP number and
+  // its rigging code (e.g. "15 MH" → "15MH", "115 ELPT Pro XS" → "115ELPT Pro XS")
+  // so all rows render in a consistent no-space style. Does NOT mutate DB values.
+  const normalizeDisplay = (s) => String(s || '').replace(/(\d+(?:\.\d+)?)\s+([A-Z]{1,6})\b/g, '$1$2');
+
   const families = ['FourStroke', 'Pro XS', 'SeaPro', 'Racing'];
   const sections = [];
   for (const fam of families) {
-    // In-stock first, then by HP ascending, mirrors MotorSelectionPage default order.
+    // Sort by HP ascending, then model number / display as a stable tiebreaker
+    // for same-HP rigging variants. Stock status no longer drives row order.
     const famRows = rows
       .filter(r => r.family === fam)
-      .sort((a, b) => (Number(b.inStock) - Number(a.inStock)) || (a.hp - b.hp));
+      .sort((a, b) =>
+        (a.hp - b.hp) ||
+        String(a.modelNo || '').localeCompare(String(b.modelNo || '')) ||
+        String(a.display || '').localeCompare(String(b.display || ''))
+      );
     if (famRows.length === 0) continue;
     sections.push(`## ${fam}`);
     sections.push('');
@@ -703,7 +713,7 @@ function pricingReferenceMarkdown(motorRecords) {
       const priceStr = fmtCAD(r.price) + (r.msrp && r.msrp > r.price ? ` _(MSRP ${fmtCAD(r.msrp)})_` : '');
       const status = r.inStock ? 'In stock' : 'Available to order';
       const quote = `[build](${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(r.id)})`;
-      sections.push(`| ${r.hp} | ${r.display} | ${r.modelNo || ' - '} | ${r.shaft || ' - '} | ${r.control || ' - '} | ${priceStr} | ${status} | ${quote} |`);
+      sections.push(`| ${r.hp} | ${normalizeDisplay(r.display)} | ${r.modelNo || ' - '} | ${r.shaft || ' - '} | ${r.control || ' - '} | ${priceStr} | ${status} | ${quote} |`);
     }
     sections.push('');
   }

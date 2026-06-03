@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs
-last_updated: 2026-06-02
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -13,7 +13,7 @@ family: ProXS
 horsepower: 115
 model_number: 1117F231D
 availability: in_stock
-price_cad: 17666
+price_cad: 17842
 ---
 
 # 115 EXLPT ProXS
@@ -30,8 +30,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Pricing (CAD)
 
-- **Selling price:** $17,666
-- **MSRP:** $20,075
+- **Selling price:** $17,842
+- **MSRP:** $19,875
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 

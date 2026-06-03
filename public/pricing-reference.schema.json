@@ -14,7 +14,7 @@
         "@id": "https://www.mercuryrepower.ca/#organization"
       },
       "inLanguage": "en-CA",
-      "lastReviewed": "2026-06-02",
+      "lastReviewed": "2026-06-03",
       "mainEntity": {
         "@id": "https://www.mercuryrepower.ca/pricing-reference#pricelist"
       }
@@ -59,7 +59,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "1271",
+              "price": "1298",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -117,7 +117,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "1524",
+              "price": "1557",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -175,7 +175,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "1557",
+              "price": "1590",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -193,7 +193,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "1700",
+                "price": "1695",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -233,7 +233,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "1815",
+              "price": "1854",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -251,7 +251,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "1980",
+                "price": "1975",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -291,7 +291,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "1854",
+              "price": "1892",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -309,7 +309,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "2020",
+                "price": "2015",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -349,7 +349,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "2019",
+              "price": "2057",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -367,7 +367,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "2200",
+                "price": "2190",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -407,7 +407,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "2057",
+              "price": "2096",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -425,7 +425,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "2245",
+                "price": "2235",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -465,7 +465,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "2090",
+              "price": "2134",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -483,7 +483,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "2280",
+                "price": "2275",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -523,7 +523,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "2085",
+              "price": "2129",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -541,7 +541,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "2275",
+                "price": "2270",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -581,7 +581,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "2118",
+              "price": "2162",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -599,7 +599,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "2310",
+                "price": "2305",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -639,7 +639,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "3344",
+              "price": "3410",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -657,7 +657,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "3650",
+                "price": "3635",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -697,7 +697,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "3383",
+              "price": "3449",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -715,7 +715,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "3690",
+                "price": "3675",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -755,7 +755,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "3036",
+              "price": "3097",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -773,7 +773,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "3310",
+                "price": "3300",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -813,7 +813,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "3075",
+              "price": "3135",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -831,7 +831,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "3355",
+                "price": "3340",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -889,7 +889,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "4230",
+                "price": "4215",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -929,7 +929,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "4389",
+              "price": "4477",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -947,7 +947,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "4790",
+                "price": "4770",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1005,7 +1005,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "4435",
+                "price": "4420",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1045,7 +1045,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "5000",
+              "price": "5099",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1063,7 +1063,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "5455",
+                "price": "5430",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1103,7 +1103,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "4901",
+              "price": "5000",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1121,7 +1121,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "5345",
+                "price": "5325",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1161,7 +1161,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "4466",
+              "price": "4554",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1179,7 +1179,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "4870",
+                "price": "4850",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1219,7 +1219,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "5093",
+              "price": "5198",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1237,7 +1237,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "5555",
+                "price": "5540",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1277,7 +1277,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "4983",
+              "price": "5082",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1295,7 +1295,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "5435",
+                "price": "5415",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1353,7 +1353,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "3875",
+                "price": "3860",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1393,7 +1393,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "3894",
+              "price": "3971",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1411,7 +1411,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "4250",
+                "price": "4230",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1469,7 +1469,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "3925",
+                "price": "3910",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1509,7 +1509,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "4219",
+              "price": "4323",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1527,7 +1527,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "4600",
+                "price": "4605",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1567,7 +1567,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "4274",
+              "price": "4378",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1585,7 +1585,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "4660",
+                "price": "4665",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1625,7 +1625,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "3872",
+              "price": "3971",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1643,7 +1643,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "4225",
+                "price": "4230",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1683,7 +1683,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "3922",
+              "price": "4021",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1701,7 +1701,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "4280",
+                "price": "4285",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1741,7 +1741,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "5462",
+              "price": "5599",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1759,7 +1759,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "5960",
+                "price": "5965",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1799,7 +1799,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "5368",
+              "price": "5500",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1817,7 +1817,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "5855",
+                "price": "5860",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1857,7 +1857,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "5572",
+              "price": "5709",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1875,7 +1875,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "6080",
+                "price": "6085",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1915,7 +1915,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "5456",
+              "price": "5594",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1933,7 +1933,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "5950",
+                "price": "5960",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -1973,7 +1973,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "4686",
+              "price": "4802",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -1991,7 +1991,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "5110",
+                "price": "5115",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2031,7 +2031,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "4752",
+              "price": "4873",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2049,7 +2049,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "5185",
+                "price": "5190",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2089,7 +2089,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "5390",
+              "price": "5528",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2107,7 +2107,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "5880",
+                "price": "5890",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2147,7 +2147,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "4230",
+              "price": "4334",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2165,7 +2165,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "4615",
+                "price": "4620",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2205,7 +2205,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "4268",
+              "price": "4373",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2223,7 +2223,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "4655",
+                "price": "4660",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2263,7 +2263,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "6111",
+              "price": "6265",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2281,7 +2281,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "6665",
+                "price": "6675",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2321,7 +2321,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "5995",
+              "price": "6144",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2339,7 +2339,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "6540",
+                "price": "6545",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2379,7 +2379,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "4967",
+              "price": "5093",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2397,7 +2397,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "5420",
+                "price": "5425",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2455,7 +2455,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "8645",
+                "price": "8445",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2513,7 +2513,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "8515",
+                "price": "8315",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2553,7 +2553,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "10054",
+              "price": "9955",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2571,7 +2571,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "11425",
+                "price": "11090",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2611,7 +2611,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "9900",
+              "price": "9801",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2629,7 +2629,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "11250",
+                "price": "10920",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2669,7 +2669,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "9532",
+              "price": "9438",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2687,7 +2687,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "10830",
+                "price": "10515",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2727,7 +2727,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "11600",
+              "price": "11484",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2745,7 +2745,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "13180",
+                "price": "12795",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2785,7 +2785,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "11127",
+              "price": "11017",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2803,7 +2803,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "12645",
+                "price": "12275",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2843,7 +2843,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "10703",
+              "price": "10599",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2861,7 +2861,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "12165",
+                "price": "11805",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2901,7 +2901,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "13189",
+              "price": "13057",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2919,7 +2919,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "14990",
+                "price": "14545",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -2959,7 +2959,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "12826",
+              "price": "12700",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -2977,7 +2977,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "14575",
+                "price": "14150",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3017,7 +3017,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "12469",
+              "price": "12342",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3035,7 +3035,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "14170",
+                "price": "13750",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3075,7 +3075,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "12161",
+              "price": "12040",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3093,7 +3093,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "13820",
+                "price": "13415",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3133,7 +3133,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "12815",
+              "price": "12689",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3151,7 +3151,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "14565",
+                "price": "14135",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3191,7 +3191,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "14190",
+              "price": "14476",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3249,7 +3249,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "15274",
+              "price": "15428",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3267,7 +3267,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "17355",
+                "price": "17185",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3307,7 +3307,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "14812",
+              "price": "14960",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3325,7 +3325,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "16830",
+                "price": "16665",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3365,7 +3365,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "15323",
+              "price": "15477",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3383,7 +3383,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "17415",
+                "price": "17240",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3423,7 +3423,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "17765",
+              "price": "17941",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3441,7 +3441,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "20190",
+                "price": "19985",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3481,7 +3481,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "17320",
+              "price": "17490",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3499,7 +3499,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "19680",
+                "price": "19485",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3539,7 +3539,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "18117",
+              "price": "18299",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3557,7 +3557,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "20590",
+                "price": "20385",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3597,7 +3597,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "17666",
+              "price": "17842",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3615,7 +3615,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "20075",
+                "price": "19875",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3655,7 +3655,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "17364",
+              "price": "17540",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3673,7 +3673,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "19730",
+                "price": "19540",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3713,7 +3713,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "16913",
+              "price": "17083",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3731,7 +3731,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "19220",
+                "price": "19030",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3771,7 +3771,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "17716",
+              "price": "17892",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3789,7 +3789,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "20130",
+                "price": "19930",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3829,7 +3829,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "17270",
+              "price": "17441",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3847,7 +3847,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "19625",
+                "price": "19430",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3887,7 +3887,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "24107",
+              "price": "24349",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3905,7 +3905,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "27395",
+                "price": "27125",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -3945,7 +3945,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "24233",
+              "price": "24475",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -3963,7 +3963,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "27540",
+                "price": "27265",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4003,7 +4003,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "22022",
+              "price": "22242",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4021,7 +4021,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "25025",
+                "price": "24780",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4061,7 +4061,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "22143",
+              "price": "22363",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4079,7 +4079,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "25165",
+                "price": "24915",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4119,7 +4119,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "27616",
+              "price": "27891",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4137,7 +4137,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "31380",
+                "price": "31070",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4177,7 +4177,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "28006",
+              "price": "28287",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4195,7 +4195,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "31825",
+                "price": "31510",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4235,7 +4235,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "27269",
+              "price": "27544",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4253,7 +4253,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "30990",
+                "price": "30685",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4293,7 +4293,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "27401",
+              "price": "27676",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4311,7 +4311,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "31140",
+                "price": "30830",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4369,7 +4369,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "31955",
+                "price": "31330",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4427,7 +4427,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "34080",
+                "price": "33410",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4485,7 +4485,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "34545",
+                "price": "33865",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4525,7 +4525,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "28760",
+              "price": "29623",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4543,7 +4543,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "32680",
+                "price": "33000",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4583,7 +4583,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "27044",
+              "price": "27858",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4601,7 +4601,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "30730",
+                "price": "31035",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4641,7 +4641,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "33039",
+              "price": "34029",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4659,7 +4659,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "37545",
+                "price": "37910",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4699,7 +4699,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "35244",
+              "price": "36300",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4717,7 +4717,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "40050",
+                "price": "40440",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4757,7 +4757,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "32307",
+              "price": "33275",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4775,7 +4775,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "36715",
+                "price": "37070",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4815,7 +4815,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "34315",
+              "price": "35343",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4833,7 +4833,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "38995",
+                "price": "39375",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4873,7 +4873,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "35002",
+              "price": "36053",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4891,7 +4891,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "39775",
+                "price": "40165",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4931,7 +4931,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "35728",
+              "price": "36801",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -4949,7 +4949,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "40600",
+                "price": "40995",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -4989,7 +4989,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "34502",
+              "price": "34848",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5007,7 +5007,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "39205",
+                "price": "38820",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5047,7 +5047,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "36542",
+              "price": "36905",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5065,7 +5065,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "41525",
+                "price": "41115",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5105,7 +5105,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "35294",
+              "price": "35646",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5123,7 +5123,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "40105",
+                "price": "39710",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5163,7 +5163,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "37367",
+              "price": "37741",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5181,7 +5181,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "42465",
+                "price": "42045",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5221,7 +5221,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "36130",
+              "price": "37213",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5239,7 +5239,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "41055",
+                "price": "41455",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5279,7 +5279,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "36256",
+              "price": "36619",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5297,7 +5297,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "41200",
+                "price": "40795",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5337,7 +5337,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "37098",
+              "price": "37466",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5355,7 +5355,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "42155",
+                "price": "41740",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5395,7 +5395,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "35723",
+              "price": "36080",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5413,7 +5413,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "40595",
+                "price": "40195",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5453,7 +5453,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "38170",
+              "price": "38550",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5471,7 +5471,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "43375",
+                "price": "42945",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5511,7 +5511,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "36179",
+              "price": "36542",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5529,7 +5529,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "41115",
+                "price": "40710",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5569,7 +5569,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "36988",
+              "price": "37356",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5587,7 +5587,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "42030",
+                "price": "41615",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5627,7 +5627,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "39012",
+              "price": "39402",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5645,7 +5645,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "44330",
+                "price": "43895",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5685,7 +5685,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "36058",
+              "price": "36421",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5703,7 +5703,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "40975",
+                "price": "40575",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5743,7 +5743,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "38033",
+              "price": "38412",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5761,7 +5761,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "43220",
+                "price": "42795",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5801,7 +5801,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "36168",
+              "price": "36531",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5819,7 +5819,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "41100",
+                "price": "40695",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }
@@ -5859,7 +5859,7 @@
             ],
             "offers": {
               "@type": "Offer",
-              "price": "38159",
+              "price": "38539",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
@@ -5877,7 +5877,7 @@
               },
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "43365",
+                "price": "42935",
                 "priceCurrency": "CAD",
                 "description": "MSRP"
               }

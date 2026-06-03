@@ -2037,6 +2037,45 @@ export type Database = {
           },
         ]
       }
+      motor_models_price_backup_20260603: {
+        Row: {
+          backed_up_at: string | null
+          dealer_price: number | null
+          dealer_price_live: number | null
+          family: string | null
+          id: string | null
+          in_stock: boolean | null
+          mercury_model_no: string | null
+          model_number: string | null
+          msrp: number | null
+          sale_price: number | null
+        }
+        Insert: {
+          backed_up_at?: string | null
+          dealer_price?: number | null
+          dealer_price_live?: number | null
+          family?: string | null
+          id?: string | null
+          in_stock?: boolean | null
+          mercury_model_no?: string | null
+          model_number?: string | null
+          msrp?: number | null
+          sale_price?: number | null
+        }
+        Update: {
+          backed_up_at?: string | null
+          dealer_price?: number | null
+          dealer_price_live?: number | null
+          family?: string | null
+          id?: string | null
+          in_stock?: boolean | null
+          mercury_model_no?: string | null
+          model_number?: string | null
+          msrp?: number | null
+          sale_price?: number | null
+        }
+        Relationships: []
+      }
       motor_option_assignments: {
         Row: {
           assignment_type: string

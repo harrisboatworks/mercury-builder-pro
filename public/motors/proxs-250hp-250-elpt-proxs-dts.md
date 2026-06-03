@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs-dts
-last_updated: 2026-06-02
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -13,7 +13,7 @@ family: ProXS
 horsepower: 250
 model_number: 12500094A
 availability: in_stock
-price_cad: 36542
+price_cad: 36905
 ---
 
 # 250 ELPT ProXS DTS
@@ -30,8 +30,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Pricing (CAD)
 
-- **Selling price:** $36,542
-- **MSRP:** $41,525
+- **Selling price:** $36,905
+- **MSRP:** $41,115
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
