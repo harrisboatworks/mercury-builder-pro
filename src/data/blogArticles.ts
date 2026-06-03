@@ -34327,9 +34327,9 @@ Our most popular models in these two HP classes:
 | Model | HBW Sell Price (CAD, pre-HST) | Notes |
 |---|---|---|
 | Mercury 115 ELPT FourStroke | starts around $14,500 | Standard 115, good for most 18ft V-hulls |
-| Mercury 115 ELPT Pro XS FourStroke | **$17,320** | Our most popular 115, performance variant |
+| Mercury 115 ELPT Pro XS FourStroke | **$17,490** | Our most popular 115, performance variant |
 | Mercury 150 L FourStroke | starts around $20,500 | Standard 150 |
-| Mercury 150 L Pro XS FourStroke | **$24,107** | Our most popular 150, performance variant |
+| Mercury 150 L Pro XS FourStroke | **$24,349** | Our most popular 150, performance variant |
 
 Pricing as of 2026. Install costs vary by what's on the boat now. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) for your specific situation.
 
