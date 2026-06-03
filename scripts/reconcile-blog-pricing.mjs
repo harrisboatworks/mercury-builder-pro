@@ -17,8 +17,7 @@
 //
 // Run via `npm run reconcile:blog-pricing`.
 
-import { readFileSync, writeFileSync } from 'node:fs';
-import { glob } from 'glob';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import {
   loadCanonicalPricing,
   monthlyPayment,
@@ -67,10 +66,10 @@ export function computeCanonicalValue(kind, key, arg) {
 }
 
 async function main() {
-  const files = [
-    ...(await glob('src/data/blogArticles.ts')),
-    ...(await glob('src/data/{mandarin,korean,french,spanish}BlogArticles.ts')),
-  ];
+  const BLOG_LANG_RX = /^(mandarin|korean|french|spanish)BlogArticles\.ts$/;
+  const files = readdirSync('src/data')
+    .filter((f) => f === 'blogArticles.ts' || BLOG_LANG_RX.test(f))
+    .map((f) => `src/data/${f}`);
   let totalRewrites = 0;
   let totalUnknown = 0;
 

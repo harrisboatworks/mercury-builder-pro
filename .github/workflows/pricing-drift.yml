@@ -3,16 +3,21 @@ name: Blog pricing drift check
 on:
   pull_request:
     paths:
+      - 'package.json'
+      - 'package-lock.json'
       - 'src/data/blogArticles.ts'
       - 'src/data/*BlogArticles.ts'
       - 'public/pricing-reference.md'
       - 'scripts/check-blog-pricing-drift.mjs'
+      - 'scripts/check-lockfile-sync.mjs'
       - 'scripts/reconcile-blog-pricing.mjs'
       - 'scripts/lib/canonical-pricing.mjs'
       - 'scripts/generate-canonical-pricing.mjs'
   push:
     branches: [main]
     paths:
+      - 'package.json'
+      - 'package-lock.json'
       - 'src/data/blogArticles.ts'
       - 'src/data/*BlogArticles.ts'
       - 'public/pricing-reference.md'
@@ -26,7 +31,11 @@ jobs:
         with:
           node-version: '20'
       # No npm install needed — scripts use only Node built-ins.
+      - name: Check lockfile sync
+        run: node scripts/check-lockfile-sync.mjs
       - name: Regenerate canonical pricing
         run: node scripts/generate-canonical-pricing.mjs
       - name: Check blog pricing drift
         run: node scripts/check-blog-pricing-drift.mjs
+      - name: Check blog leaks
+        run: node scripts/check-blog-leaks.mjs

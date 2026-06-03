@@ -5,14 +5,14 @@
 // Sentinel format documented in scripts/reconcile-blog-pricing.mjs.
 // Run via `npm run check:pricing-drift`.
 
-import { readFileSync } from 'node:fs';
-import { glob } from 'glob';
+import { readFileSync, readdirSync } from 'node:fs';
 import { computeCanonicalValue, SENTINEL_RX } from './reconcile-blog-pricing.mjs';
 
-const files = [
-  ...(await glob('src/data/blogArticles.ts')),
-  ...(await glob('src/data/{mandarin,korean,french,spanish}BlogArticles.ts')),
-];
+const BLOG_LANG_RX = /^(mandarin|korean|french|spanish)BlogArticles\.ts$/;
+const files = readdirSync('src/data')
+  .filter((f) => f === 'blogArticles.ts' || BLOG_LANG_RX.test(f))
+  .map((f) => `src/data/${f}`);
+
 
 const errors = [];
 let scanned = 0;
