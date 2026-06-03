@@ -23914,7 +23914,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-trade-in-value-service-bay.png',
     author: 'Jay Harris',
     datePublished: '2026-05-09',
-    dateModified: '2026-05-09',
+    dateModified: '2026-06-02',
     publishDate: '2026-05-09',
     category: 'Buying Guide',
     readTime: '~10 min read',
