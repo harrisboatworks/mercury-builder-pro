@@ -10060,15 +10060,17 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 
 ### Current 2026 MSRP Ranges
 
-| Motor Category | MSRP Range |
+| Motor Category | MSRP Range (CAD) |
 |----------------|------------|
-| 75-115hp FourStroke | $8,500-14,000 |
-| 150hp FourStroke | $14,000-17,000 |
-| 175-225hp V6 | $17,000-24,000 |
-| 200-300hp Verado | $24,000-35,000 |
-| 250-400hp Verado | $35,000-50,000+ |
+| 2.5-20hp portable / tiller | $1,385-$6,085 |
+| 25-60hp FourStroke | $5,860-$14,545 |
+| 75-115hp FourStroke | $16,125-$19,930 |
+| 115hp Pro XS | $19,485-$20,385 |
+| 150hp FourStroke / Pro XS | $24,780-$27,265 |
+| 175-250hp FourStroke / Pro XS | $30,685-$41,740 |
+| 300hp FourStroke | $40,575-$42,935 |
 
-*Prices are motor only; rigging adds $1,500-3,000+*
+*Prices are motor MSRP only (canonical 2026-06-03); rigging adds $1,500-$3,000+. Mercury Verado is special-order only — call (905) 342-2153 for Verado pricing.*
 
 ### Seasonal Pricing Patterns
 
