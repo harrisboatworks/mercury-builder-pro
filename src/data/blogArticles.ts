@@ -33848,9 +33848,9 @@ In Ontario, every new outboard purchase is subject to **13% HST**. The HST is co
 |---|---|---|---|
 | Mercury 9.9 ProKicker + install | $5,000 | $650 | $5,650 |
 | Mercury 60 FourStroke EFI | $9,500 | $1,235 | $10,735 |
-| Mercury 90 FourStroke | $14,500 | $1,885 | $16,385 |
-| Mercury 115 Pro XS | $17,320 | $2,252 | $19,572 |
-| Mercury 150 Pro XS | $24,107 | $3,134 | $27,241 |
+| Mercury 90 FourStroke | $14,960 | $1,945 | $16,905 |
+| Mercury 115 Pro XS | $17,490 | $2,274 | $19,764 |
+| Mercury 150 Pro XS | $24,349 | $3,165 | $27,514 |
 | Mercury 250 V8 Pro XS | $42,000 | $5,460 | $47,460 |
 
 The tables below show principal-only monthly payments (HST paid separately at closing).
