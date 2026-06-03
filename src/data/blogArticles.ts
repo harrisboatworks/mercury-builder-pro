@@ -23291,7 +23291,7 @@ The full current Mercury outboard lineup we sell, grouped by HP class. The prici
 
 **Pro XS vs. standard FourStroke at 115 HP.** Both run on the same 2.1L inline-4 platform. The FourStroke is tuned for smooth cruising and fuel economy. The Pro XS is tuned for hole-shot and a higher RPM ceiling.
 
-Price difference between the two at 115 HP is small, roughly **$400** ($16,913 dealer price for 115ELPT FourStroke vs $17,320 for 115ELPT Pro XS, before HST). For a family bowrider or pontoon, take the FourStroke. For a bass boat or anyone who wants snappier acceleration, take the Pro XS.
+Price difference between the two at 115 HP is small, roughly **$400** ($17,083 dealer price for 115ELPT FourStroke vs $17,490 for 115ELPT Pro XS, before HST). For a family bowrider or pontoon, take the FourStroke. For a bass boat or anyone who wants snappier acceleration, take the Pro XS.
 
 ### Things to know about the V6 and V8 tier
 
@@ -23346,15 +23346,15 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
     image: '/lovable-uploads/hero-mercury-price-guide-counter.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-05-31',
+    dateModified: '2026-06-02',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~14 min read',
     keywords: ['mercury outboard prices', 'ontario', 'cad pricing', 'repower', 'buying guide'],
     faqs: [
-      { question: 'How much does a Mercury 9.9 HP cost in Ontario?', answer: 'A standard 9.9 MH FourStroke is around $3,553 CAD dealer price. The 9.9 ELPT Command Thrust ProKicker EFI, the popular trolling kicker, is around $4,901. Add HST, controls if going remote, and any rigging or installation. See the live pricing table for the full 9.9 lineup with shaft, start, and feature variants.' },
-      { question: 'How much is a Mercury 150 HP in Canada?', answer: 'A 150L FourStroke is $22,022 CAD dealer price. A 150L Pro XS is $24,107. Both are before HST, install, controls, and prop. All-in installed cost on a typical 19-21 ft bowrider repower generally lands at $25,000-$28,000 CAD.' },
-      { question: 'How much is a Mercury 115 Pro XS?', answer: 'The 115ELPT Pro XS is $17,320 CAD dealer price (vs $16,913 for the 115ELPT FourStroke, about a $400 difference). The 115ELPT Pro XS Command Thrust is $17,765. All before HST, install, controls, and prop.' },
+      { question: 'How much does a Mercury 9.9 HP cost in Ontario?', answer: 'A standard 9.9 MH FourStroke is around $2,999 CAD dealer price. The 9.9 ELPT Command Thrust ProKicker EFI, the popular trolling kicker, is around $5,000. Add HST, controls if going remote, and any rigging or installation. See the live pricing table for the full 9.9 lineup with shaft, start, and feature variants.' },
+      { question: 'How much is a Mercury 150 HP in Canada?', answer: 'A 150L FourStroke is $22,242 CAD dealer price. A 150 ELPT Pro XS is $24,349. Both are before HST, install, controls, and prop. All-in installed cost on a typical 19-21 ft bowrider repower generally lands at $25,000-$28,000 CAD.' },
+      { question: 'How much is a Mercury 115 Pro XS?', answer: 'The 115ELPT Pro XS is $17,490 CAD dealer price (vs $17,083 for the 115ELPT FourStroke, about a $400 difference). The 115ELPT Pro XS Command Thrust is $17,941. All before HST, install, controls, and prop.' },
       { question: 'What\'s the difference between MSRP and dealer price?', answer: 'MSRP is Mercury Canada\'s suggested retail. Dealer price is what we actually sell for, at or below MSRP. Harris Boat Works publishes both numbers next to every motor so you can see exactly what the difference is.' },
       { question: 'Does the motor price include installation?', answer: 'No. The motor price is the motor, sitting on a pallet at the shop. Installation, rigging, controls, prop, and sea trial are quoted separately. For a 60-115 HP repower, expect $1,500-$3,500 in install and rigging on top of the motor price.' },
       { question: 'Can I buy Mercury cheaper in the US?', answer: 'Sometimes the headline price looks lower. But cross-border duty, brokerage, shipping, currency conversion, and Mercury Canada warranty restrictions on grey-market motors typically erase any savings, and then some. Mercury\'s Canadian warranty applies only to motors purchased through Canadian dealers.' },
@@ -23914,7 +23914,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-trade-in-value-service-bay.png',
     author: 'Jay Harris',
     datePublished: '2026-05-09',
-    dateModified: '2026-05-09',
+    dateModified: '2026-06-02',
     publishDate: '2026-05-09',
     category: 'Buying Guide',
     readTime: '~10 min read',
@@ -24074,17 +24074,17 @@ The math case for trade: Trade is certain. Private sale has a higher gross numbe
 
 In Ontario, when you trade a motor as part of a repower at HBW, **the trade credit reduces the taxable amount of the new motor**. That is a 13% HST saving on whatever the trade is worth.
 
-**Worked example.** Say you are repowering with a Mercury 90 ELPT FourStroke at $14,812, and we credit $4,000 for your old motor:
+**Worked example.** Say you are repowering with a Mercury 90 ELPT FourStroke at $14,960, and we credit $4,000 for your old motor:
 
 | Line | Trade Scenario | Private Sale Scenario |
 |---|---|---|
-| New motor price | $14,812 | $14,812 |
+| New motor price | $14,960 | $14,960 |
 | Trade credit | -$4,000 | $0 |
-| Subtotal | $10,812 | $14,812 |
-| HST (13%) | $1,406 | $1,926 |
-| Total to HBW | $12,218 | $16,738 |
+| Subtotal | $10,960 | $14,960 |
+| HST (13%) | $1,425 | $1,945 |
+| Total to HBW | $12,385 | $16,905 |
 | Cash from private sale | -- | $5,000 (assumed) |
-| **Net cost** | **$12,218** | **$11,738** |
+| **Net cost** | **$12,385** | **$11,905** |
 
 In this example, the private sale wins by about $480, but only if you actually sell for $5,000, it does not take three weekends, and there is no cash dispute. If the private sale nets $4,500, trade wins. At $4,000, trade wins by a meaningful margin.
 
@@ -33812,7 +33812,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we w
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-05-28',
+    dateModified: '2026-06-02',
     category: 'Repower Cost & Pricing',
     readTime: '10 min read',
     keywords: ['mercury', 'repower', 'financing', 'ontario', 'monthly payment', 'Mercury outboard monthly payment', 'TD Auto Finance', 'Dealerplan Peterborough'],
@@ -33848,9 +33848,9 @@ In Ontario, every new outboard purchase is subject to **13% HST**. The HST is co
 |---|---|---|---|
 | Mercury 9.9 ProKicker + install | $5,000 | $650 | $5,650 |
 | Mercury 60 FourStroke EFI | $9,500 | $1,235 | $10,735 |
-| Mercury 90 FourStroke | $14,500 | $1,885 | $16,385 |
-| Mercury 115 Pro XS | $17,320 | $2,252 | $19,572 |
-| Mercury 150 Pro XS | $24,107 | $3,134 | $27,241 |
+| Mercury 90 FourStroke | $14,960 | $1,945 | $16,905 |
+| Mercury 115 Pro XS | $17,490 | $2,274 | $19,764 |
+| Mercury 150 Pro XS | $24,349 | $3,165 | $27,514 |
 | Mercury 250 V8 Pro XS | $42,000 | $5,460 | $47,460 |
 
 The tables below show principal-only monthly payments (HST paid separately at closing).
@@ -33863,9 +33863,9 @@ Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1], r = 7.99% / 12.
 |---|---|---|---|---|---|
 | Mercury 9.9 ProKicker | $5,000 | 60 mo | **$101.36** | $1,082 | $6,082 |
 | Mercury 60 FourStroke EFI | $9,500 | 60 mo | **$192.58** | $2,055 | $11,555 |
-| Mercury 90 FourStroke | $14,500 | 84 mo | **$225.93** | $4,478 | $18,978 |
-| Mercury 115 Pro XS | $17,320 | 84 mo | **$269.85** | $5,348 | $22,668 |
-| Mercury 150 Pro XS | $24,107 | 120 mo | **$292.42** | $10,983 | $35,090 |
+| Mercury 90 FourStroke | $14,960 | 84 mo | **$233.10** | $4,620 | $19,580 |
+| Mercury 115 Pro XS | $17,490 | 84 mo | **$272.52** | $5,401 | $22,891 |
+| Mercury 150 Pro XS | $24,349 | 120 mo | **$295.29** | $11,086 | $35,435 |
 | Mercury 250 V8 Pro XS | $42,000 | 120 mo | **$509.35** | $19,122 | $61,122 |
 
 *All amounts in CAD. HST not included in principal. 7.99% APR current standard rate through TD Auto Finance via Dealerplan Peterborough.*
@@ -33916,8 +33916,8 @@ The amortization is the basis used to CALCULATE your monthly payment. It is NOT 
 
 | Motor | Financed | Monthly (240-mo amort) | Principal at month 60 |
 |---|---|---|---|
-| Mercury 115 ELPT Pro XS | $17,320 | ~$119 | ~$13,800 balloon |
-| Mercury 150 L Pro XS | $24,107 | ~$166 | ~$19,200 balloon |
+| Mercury 115 ELPT Pro XS | $17,490 | ~$120 | ~$14,700 balloon |
+| Mercury 150 L Pro XS | $24,349 | ~$167 | ~$20,500 balloon |
 
 Three real options at month 60: pay the balloon, refinance the balance, or trade in toward a new motor. Most repower customers plan for the trade-in path.
 
@@ -33938,7 +33938,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - Mercury Canada promotional financing examples (2025-2026)
 - Ontario HST treatment on marine purchases
 - Amortization math verified with Python using standard formula M = P x [r(1+r)^n] / [(1+r)^n - 1]
-- HBW current Mercury Pro XS pricing: 115 ProXS $17,320, 150 ProXS $24,107 (as of 2026)
+- HBW current Mercury Pro XS pricing: 115 ProXS $17,490, 150 ProXS $24,349 (as of 2026)
 
 ---
 
@@ -34290,7 +34290,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     description: 'Mercury 115 vs 150 HP from an Ontario Platinum dealer. Real dividing lines by hull type. 18ft V-hull, 21ft tritoon, 22ft pontoon. Honest pricing math. When NOT to use Command Thrust.',
     content: `*Last reviewed: 2026-05-28*
 
-> **Quick answer:** For 18ft aluminum V-hull boats, Mercury 115 HP is the right call. For 19 to 20ft aluminum V-hull boats, step up to 150 HP. For pontoons 18 to 20ft, the Mercury 60 Command Thrust is actually the right answer, not 115 or 150. For pontoons 22 to 24ft (especially tritoons), 150 HP. HBW current sell prices: 115 Pro XS $17,320, 150 Pro XS $24,107 (CAD, pre-HST). Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** For 18ft aluminum V-hull boats, Mercury 115 HP is the right call. For 19 to 20ft aluminum V-hull boats, step up to 150 HP. For pontoons 18 to 20ft, the Mercury 60 Command Thrust is actually the right answer, not 115 or 150. For pontoons 22 to 24ft (especially tritoons), 150 HP. HBW current sell prices: 115 Pro XS $17,490, 150 Pro XS $24,349 (CAD, pre-HST). Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 The 115 vs 150 question is the most common repower decision we see at HBW. Customer has an aluminum V-hull, an aging 115 or 90, and is trying to figure out whether the next motor should match what they have or jump up a tier. Most online answers fall back on "depends on the boat" without giving you actual dividing lines.
 
@@ -34327,9 +34327,9 @@ Our most popular models in these two HP classes:
 | Model | HBW Sell Price (CAD, pre-HST) | Notes |
 |---|---|---|
 | Mercury 115 ELPT FourStroke | starts around $14,500 | Standard 115, good for most 18ft V-hulls |
-| Mercury 115 ELPT Pro XS FourStroke | **$17,320** | Our most popular 115, performance variant |
+| Mercury 115 ELPT Pro XS FourStroke | **$17,490** | Our most popular 115, performance variant |
 | Mercury 150 L FourStroke | starts around $20,500 | Standard 150 |
-| Mercury 150 L Pro XS FourStroke | **$24,107** | Our most popular 150, performance variant |
+| Mercury 150 L Pro XS FourStroke | **$24,349** | Our most popular 150, performance variant |
 
 Pricing as of 2026. Install costs vary by what's on the boat now. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) for your specific situation.
 
@@ -34383,13 +34383,13 @@ For most Rice Lake cottage users at 20 hours/year, fuel cost is not the deciding
 
 ## Motor price delta over the ownership period
 
-Mercury 150 ProXS at HBW: $24,107. Mercury 115 ProXS at HBW: $17,320. **Delta: $6,787 plus 13% HST.**
+Mercury 150 ProXS at HBW: $24,349. Mercury 115 ProXS at HBW: $17,490. **Delta: $6,859 plus 13% HST.**
 
-If you keep the motor 10 years at 20 hr/year average use, the $6,787 motor price delta is $678 per year of ownership. At 100 hr/year heavy use, it's still $678 per year of ownership. Motor price doesn't change with use.
+If you keep the motor 10 years at 20 hr/year average use, the $6,859 motor price delta is $686 per year of ownership. At 100 hr/year heavy use, it's still $686 per year of ownership. Motor price doesn't change with use.
 
 For a customer who'll genuinely use the extra HP (full crew, heavy load, regularly cruising at 30+ MPH), the 150 is worth it.
 
-For a customer fishing solo or with one partner, running the boat at idle or low speed most of the time, $678/year over 10 years is real money to give up for HP you won't use.
+For a customer fishing solo or with one partner, running the boat at idle or low speed most of the time, $686/year over 10 years is real money to give up for HP you won't use.
 
 ## The Command Thrust correction (a common dealer mistake)
 
@@ -34430,7 +34430,7 @@ Repowers are the highest-risk install in our shop. New motor, old hull, unknown 
 - claim: I\'ll prop it for top speed.
   rebuttal: Most customers prop wrong. Prop pitch should be set so the motor reaches WOT RPM within Mercury\'s recommended range (typically 5,500 to 6,000 RPM for FourStroke, 6,000 to 6,400 for Pro XS) under typical load. We dial this in at our dock.
 - claim: My buddy has a 150 on the same boat and it\'s faster.
-  rebuttal: Maybe. Or your buddy\'s boat is set up differently, has a different prop, runs at different load, or you\'re comparing perceived speed vs measured speed. Don\'t make a $6,800 decision on one anecdote.
+  rebuttal: Maybe. Or your buddy\'s boat is set up differently, has a different prop, runs at different load, or you\'re comparing perceived speed vs measured speed. Don\'t make a $6,900 decision on one anecdote.
 :::
 
 
@@ -34471,18 +34471,18 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
     image: '/lovable-uploads/How_to_Choose_HP.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-05-29',
+    dateModified: '2026-06-02',
     category: 'Repower Guide',
     readTime: '9 min read',
     keywords: ["Mercury 115 vs 150 HP", "Mercury 115 Pro XS price", "Mercury 150 Pro XS price", "Mercury 115 vs 150 pontoon", "Mercury Command Thrust V-hull", "Mercury 115 CT", "Mercury outboard Ontario", "Mercury Platinum dealer Rice Lake"],
     relatedSlugs: ["mercury-outboard-repower-cost-ontario-2026-cad", "mercury-command-thrust-complete-guide-2026", "mercury-command-thrust-pontoon-eligibility-2026", "mercury-40-vs-60-hp-comparison", "mercury-75-vs-90-vs-115-hp-buyer-guide", "hbw-on-water-load-test-mercury-repower-advantage-2026"],
     faqs: [
       { question: "What boat size does the 115 vs 150 decision actually apply to?", answer: "For aluminum V-hull boats, the realistic decision range is 18 to 20 feet. For pontoons, the decision is more nuanced: 18 to 20 ft pontoons are usually better served by the Mercury 60 Command Thrust (not 115 or 150), while 22 to 24 ft pontoons and tritoons benefit from the 150." },
-      { question: "What's the HBW current sell price for the Mercury 115 and 150 Pro XS?", answer: "HBW's most popular 115 HP model is the Mercury 115 ELPT Pro XS FourStroke at $17,320 CAD (pre-HST). Our most popular 150 is the Mercury 150 L Pro XS FourStroke at $24,107 CAD (pre-HST). Standard ELPT and L variants run slightly lower. Build a quote at mercuryrepower.ca for current pricing on your specific boat." },
+      { question: "What's the HBW current sell price for the Mercury 115 and 150 Pro XS?", answer: "HBW's most popular 115 HP model is the Mercury 115 ELPT Pro XS FourStroke at $17,490 CAD (pre-HST). Our most popular 150 is the Mercury 150 L Pro XS FourStroke at $24,349 CAD (pre-HST). Standard ELPT and L variants run slightly lower. Build a quote at mercuryrepower.ca for current pricing on your specific boat." },
       { question: "Should I get a 115 Command Thrust for my aluminum V-hull?", answer: "Almost certainly not. Command Thrust is engineered for pontoons and specific work-boat applications. For a V-hull, the standard 115 ELPT or 115 Pro XS is the correct gearcase choice. We see other dealers rig V-hulls with Command Thrust based on a \"more thrust is better\" pitch. For a V-hull, the standard gearcase gives you better top-end speed and equivalent low-end performance for typical use." },
       { question: "Will a 115 plane my 19ft aluminum V-hull with 4 people?", answer: "Yes, but it works hard. A 19ft V-hull with 4 adults and gear is right at the edge of the 115's comfortable envelope. It will plane but with longer time-to-plane and the motor running at higher cruise RPM. A 150 cruises easier on the same load. If you'll regularly run with 4+ people, the 150 is the smarter call." },
       { question: "How much faster is the 150 than the 115?", answer: "On a 19ft aluminum V-hull with 3 adults plus gear, top speed difference is typically 4-6 MPH (38-42 for the 115 ProXS, 44-48 for the 150 ProXS). The bigger practical difference is cruise behaviour: the 115 cruises at higher RPM and works harder above 30 MPH, while the 150 cruises easily through 35 MPH." },
-      { question: "What's the fuel cost difference between 115 and 150?", answer: "At realistic Ontario cottage use of 20 hours per season, fuel cost delta is roughly $140 per year. At heavy use of 100 hours per season, the delta is roughly $700 per year. For most Rice Lake cottage owners, fuel cost is not the deciding factor between 115 and 150. The motor price delta of about $6,800 is more significant." },
+      { question: "What's the fuel cost difference between 115 and 150?", answer: "At realistic Ontario cottage use of 20 hours per season, fuel cost delta is roughly $140 per year. At heavy use of 100 hours per season, the delta is roughly $700 per year. For most Rice Lake cottage owners, fuel cost is not the deciding factor between 115 and 150. The motor price delta of about $6,900 is more significant." },
       { question: "What's the right pontoon answer if I'm not sure between 115 and 150?", answer: "For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust, not 115 or 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust and capacity-plate-appropriate HP for a single-tube pontoon. For tritoons 22 to 24 ft, jump to 150. The 115 is rarely the right pontoon answer." }
     ]
   },
