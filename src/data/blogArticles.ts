@@ -10103,14 +10103,14 @@ heading: 2026 Mercury tier pricing, what you actually pay in CAD
 eyebrow: All-in ballparks
 subhead: Motor MSRP is one line on the invoice. Here is the full picture across Mercury's tiers, before any trade-in or current promo.
 item1Label: FourStroke 9.9 (kicker / small tiller)
-item1Value: $4,200 - $5,800
-item1Note: Motor only. Add ~$400 for ProKicker remote conversion.
+item1Value: $2,999 - $5,200
+item1Note: Motor only. ProKicker remote variants land at the top of the range.
 item2Label: FourStroke 60 to 115 (mid-range main)
-item2Value: $11,500 - $17,800
+item2Value: $12,000 - $18,000
 item2Note: Most common Rice Lake / Kawarthas repower range. Includes Command Thrust where applicable.
 item2Accent: true
 item3Label: FourStroke / Pro XS 150 to 250 (V6)
-item3Value: $18,500 - $32,000
+item3Value: $22,000 - $37,500
 item3Note: Bass boats, performance hulls, offshore Lake Ontario rigs
 item4Label: Install and rigging (any tier)
 item4Value: $1,500 - $4,500
