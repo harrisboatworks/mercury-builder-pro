@@ -33916,8 +33916,8 @@ The amortization is the basis used to CALCULATE your monthly payment. It is NOT 
 
 | Motor | Financed | Monthly (240-mo amort) | Principal at month 60 |
 |---|---|---|---|
-| Mercury 115 ELPT Pro XS | $17,320 | ~$119 | ~$13,800 balloon |
-| Mercury 150 L Pro XS | $24,107 | ~$166 | ~$19,200 balloon |
+| Mercury 115 ELPT Pro XS | $17,490 | ~$120 | ~$14,700 balloon |
+| Mercury 150 L Pro XS | $24,349 | ~$167 | ~$20,500 balloon |
 
 Three real options at month 60: pay the balloon, refinance the balance, or trade in toward a new motor. Most repower customers plan for the trade-in path.
 
