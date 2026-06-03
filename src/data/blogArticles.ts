@@ -34385,11 +34385,11 @@ For most Rice Lake cottage users at 20 hours/year, fuel cost is not the deciding
 
 Mercury 150 ProXS at HBW: $24,349. Mercury 115 ProXS at HBW: $17,490. **Delta: $6,859 plus 13% HST.**
 
-If you keep the motor 10 years at 20 hr/year average use, the $6,787 motor price delta is $678 per year of ownership. At 100 hr/year heavy use, it's still $678 per year of ownership. Motor price doesn't change with use.
+If you keep the motor 10 years at 20 hr/year average use, the $6,859 motor price delta is $686 per year of ownership. At 100 hr/year heavy use, it's still $686 per year of ownership. Motor price doesn't change with use.
 
 For a customer who'll genuinely use the extra HP (full crew, heavy load, regularly cruising at 30+ MPH), the 150 is worth it.
 
-For a customer fishing solo or with one partner, running the boat at idle or low speed most of the time, $678/year over 10 years is real money to give up for HP you won't use.
+For a customer fishing solo or with one partner, running the boat at idle or low speed most of the time, $686/year over 10 years is real money to give up for HP you won't use.
 
 ## The Command Thrust correction (a common dealer mistake)
 
