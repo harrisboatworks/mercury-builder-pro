@@ -34383,7 +34383,7 @@ For most Rice Lake cottage users at 20 hours/year, fuel cost is not the deciding
 
 ## Motor price delta over the ownership period
 
-Mercury 150 ProXS at HBW: $24,107. Mercury 115 ProXS at HBW: $17,320. **Delta: $6,787 plus 13% HST.**
+Mercury 150 ProXS at HBW: $24,349. Mercury 115 ProXS at HBW: $17,490. **Delta: $6,859 plus 13% HST.**
 
 If you keep the motor 10 years at 20 hr/year average use, the $6,787 motor price delta is $678 per year of ownership. At 100 hr/year heavy use, it's still $678 per year of ownership. Motor price doesn't change with use.
 
