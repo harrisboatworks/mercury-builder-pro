@@ -23291,7 +23291,7 @@ The full current Mercury outboard lineup we sell, grouped by HP class. The prici
 
 **Pro XS vs. standard FourStroke at 115 HP.** Both run on the same 2.1L inline-4 platform. The FourStroke is tuned for smooth cruising and fuel economy. The Pro XS is tuned for hole-shot and a higher RPM ceiling.
 
-Price difference between the two at 115 HP is small, roughly **$400** ($16,913 dealer price for 115ELPT FourStroke vs $17,320 for 115ELPT Pro XS, before HST). For a family bowrider or pontoon, take the FourStroke. For a bass boat or anyone who wants snappier acceleration, take the Pro XS.
+Price difference between the two at 115 HP is small, roughly **$400** ($17,083 dealer price for 115ELPT FourStroke vs $17,490 for 115ELPT Pro XS, before HST). For a family bowrider or pontoon, take the FourStroke. For a bass boat or anyone who wants snappier acceleration, take the Pro XS.
 
 ### Things to know about the V6 and V8 tier
 
