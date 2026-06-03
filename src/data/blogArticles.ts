@@ -5667,7 +5667,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does a Mercury Pro XS cost in Canada in 2026?',
-        answer: 'Planning-level CAD ranges as of May 2026: 150 Pro XS around $17,000-$18,000 dealer, 200 Pro XS V6 around $24,000-$26,000, 250 Pro XS V8 around $30,000-$33,000. Final pricing depends on configuration and live quote.'
+        answer: 'Planning-level CAD ranges as of June 2026 (HBW dealer selling price): 150 Pro XS around $24,000-$24,500, 200 Pro XS V6 around $28,000-$30,500, 250 Pro XS V8 around $33,500-$34,500. Final pricing depends on configuration and live quote.'
       },
       {
         question: 'What warranty does a Mercury outboard come with in Canada?',
