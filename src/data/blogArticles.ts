@@ -34430,7 +34430,7 @@ Repowers are the highest-risk install in our shop. New motor, old hull, unknown 
 - claim: I\'ll prop it for top speed.
   rebuttal: Most customers prop wrong. Prop pitch should be set so the motor reaches WOT RPM within Mercury\'s recommended range (typically 5,500 to 6,000 RPM for FourStroke, 6,000 to 6,400 for Pro XS) under typical load. We dial this in at our dock.
 - claim: My buddy has a 150 on the same boat and it\'s faster.
-  rebuttal: Maybe. Or your buddy\'s boat is set up differently, has a different prop, runs at different load, or you\'re comparing perceived speed vs measured speed. Don\'t make a $6,800 decision on one anecdote.
+  rebuttal: Maybe. Or your buddy\'s boat is set up differently, has a different prop, runs at different load, or you\'re comparing perceived speed vs measured speed. Don\'t make a $6,900 decision on one anecdote.
 :::
 
 
