@@ -25,9 +25,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-      - run: npm ci
+      # No npm install needed — scripts use only Node built-ins.
       - name: Regenerate canonical pricing
-        run: npm run generate:canonical-pricing
+        run: node scripts/generate-canonical-pricing.mjs
       - name: Check blog pricing drift
-        run: npm run check:pricing-drift
+        run: node scripts/check-blog-pricing-drift.mjs
