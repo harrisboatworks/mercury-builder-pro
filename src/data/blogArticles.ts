@@ -5452,7 +5452,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     image: '/lovable-uploads/bass-boat-150-proxs-hero-real.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-09',
-    dateModified: '2026-03-09',
+    dateModified: '2026-06-03',
     publishDate: '2026-03-09',
     category: 'Buying Guide',
     readTime: '10 min read',
