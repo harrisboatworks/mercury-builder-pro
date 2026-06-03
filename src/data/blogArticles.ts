@@ -13677,7 +13677,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-cheapest-mercury-canada-lineup.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-23',
-    dateModified: '2026-05-04',
+    dateModified: '2026-06-03',
     publishDate: '2026-04-23',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -13697,8 +13697,8 @@ heading: What changes the real out-the-door price?
 eyebrow: Where the money goes
 subhead: A Mercury repower is more than the motor sticker price. Here is where every dollar actually goes.
 item1Label: Motor (the big number)
-item1Value: $12,000 - $35,000 CAD
-item1Note: Mercury MSRP plus any current rebates applied
+item1Value: $1,298 - $38,539 CAD
+item1Note: HBW dealer selling price, 2.5MH FourStroke to 300XL FourStroke DTS (canonical 2026-06-03).
 item1Accent: true
 item2Label: Rigging (steering, controls, gauges)
 item2Value: $1,500 - $4,500
