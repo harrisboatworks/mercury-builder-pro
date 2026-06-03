@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw.md
-last_updated: 2026-06-02
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false

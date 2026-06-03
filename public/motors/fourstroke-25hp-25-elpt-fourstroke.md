@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke
-last_updated: 2026-06-02
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -13,7 +13,7 @@ family: FourStroke
 horsepower: 25
 model_number: 1A25413BK
 availability: in_stock
-price_cad: 5995
+price_cad: 6144
 ---
 
 # 25 ELPT FourStroke
@@ -30,8 +30,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Pricing (CAD)
 
-- **Selling price:** $5,995
-- **MSRP:** $6,540
+- **Selling price:** $6,144
+- **MSRP:** $6,545
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 

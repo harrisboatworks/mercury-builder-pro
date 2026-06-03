@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke
-last_updated: 2026-06-02
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -13,7 +13,7 @@ family: FourStroke
 horsepower: 2.5
 model_number: 1F02201KK
 availability: in_stock
-price_cad: 1271
+price_cad: 1298
 ---
 
 # 2.5MH FourStroke
@@ -30,7 +30,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Pricing (CAD)
 
-- **Selling price:** $1,271
+- **Selling price:** $1,298
 - **MSRP:** $1,385
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.

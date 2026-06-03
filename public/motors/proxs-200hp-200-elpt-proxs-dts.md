@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs-dts
-last_updated: 2026-06-02
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,7 +31,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 ## Pricing (CAD)
 
 - **Selling price:** $29,992
-- **MSRP:** $34,080
+- **MSRP:** $33,410
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 

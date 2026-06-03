@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke
-last_updated: 2026-06-02
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -13,7 +13,7 @@ family: FourStroke
 horsepower: 20
 model_number: 1A20311LK
 availability: in_stock
-price_cad: 4752
+price_cad: 4873
 ---
 
 # 20 ELH FourStroke
@@ -30,8 +30,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Pricing (CAD)
 
-- **Selling price:** $4,752
-- **MSRP:** $5,185
+- **Selling price:** $4,873
+- **MSRP:** $5,190
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 

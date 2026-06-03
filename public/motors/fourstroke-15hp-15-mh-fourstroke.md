@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke
-last_updated: 2026-06-02
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -13,7 +13,7 @@ family: FourStroke
 horsepower: 15
 model_number: 1A15201LK
 availability: in_stock
-price_cad: 3872
+price_cad: 3971
 ---
 
 # 15 MH FourStroke
@@ -30,8 +30,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Pricing (CAD)
 
-- **Selling price:** $3,872
-- **MSRP:** $4,225
+- **Selling price:** $3,971
+- **MSRP:** $4,230
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke
-last_updated: 2026-06-02
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -13,7 +13,7 @@ family: FourStroke
 horsepower: 60
 model_number: 1F60453GZ
 availability: in_stock
-price_cad: 12469
+price_cad: 12342
 ---
 
 # 60 ELPT Command Thrust FourStroke
@@ -30,8 +30,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Pricing (CAD)
 
-- **Selling price:** $12,469
-- **MSRP:** $14,170
+- **Selling price:** $12,342
+- **MSRP:** $13,750
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
