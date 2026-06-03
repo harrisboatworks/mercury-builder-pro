@@ -51,7 +51,7 @@ export default function PricingReference() {
   return (
     <>
       <Helmet>
-        <title>Mercury Outboard Prices in Ontario (CAD, 2026) | Harris Boat Works</title>
+        <title>Mercury Outboard Prices in Ontario (CAD, 2027) | Harris Boat Works</title>
         <meta
           name="description"
           content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only."
@@ -62,14 +62,14 @@ export default function PricingReference() {
         <meta property="og:site_name" content="Harris Boat Works" />
         <meta property="og:locale" content="en_CA" />
         <meta property="og:url" content="https://www.mercuryrepower.ca/pricing-reference" />
-        <meta property="og:title" content="Mercury Outboard Prices in Ontario (CAD, 2026) | Harris Boat Works" />
+        <meta property="og:title" content="Mercury Outboard Prices in Ontario (CAD, 2027) | Harris Boat Works" />
         <meta
           property="og:description"
           content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only."
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.mercuryrepower.ca/pricing-reference" />
-        <meta name="twitter:title" content="Mercury Outboard Prices in Ontario (CAD, 2026) | Harris Boat Works" />
+        <meta name="twitter:title" content="Mercury Outboard Prices in Ontario (CAD, 2027) | Harris Boat Works" />
         <meta
           name="twitter:description"
           content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only."
@@ -79,7 +79,7 @@ export default function PricingReference() {
         )}
       </Helmet>
       <main className="container mx-auto max-w-5xl px-4 py-8">
-        <h1 className="text-3xl font-bold mb-4">Mercury Outboard Prices in Ontario (CAD, 2026)</h1>
+        <h1 className="text-3xl font-bold mb-4">Mercury Outboard Prices in Ontario (CAD, 2027)</h1>
         <p className="mb-6">
           Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury's MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total,{' '}
           <a className="text-primary underline" href="/quote/motor-selection">build a quote in the configurator</a>. Pickup only at Gores Landing, Ontario.

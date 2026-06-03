@@ -2536,7 +2536,7 @@ const BLOG_TABLE_FALLBACKS = {
     '<tr><th scope="row">High-HP</th><td>200 - 300 HP</td><td>$35,000 - $40,000</td><td>Performance bass, large pontoons, center consoles</td></tr>' +
     '</tbody></table>',
   'cheapest-mercury-outboard-canada-2026':
-    '<table><caption>Cheapest New Mercury Outboards in Canada (CAD, 2026)</caption>' +
+    '<table><caption>Cheapest New Mercury Outboards in Canada (CAD, 2027)</caption>' +
     '<thead><tr><th scope="col">Model</th><th scope="col">HP</th><th scope="col">MSRP (CAD)</th><th scope="col">Sale price (CAD)</th></tr></thead>' +
     '<tbody>' +
     '<tr><th scope="row">2.5MH FourStroke</th><td>2.5</td><td>$1,385</td><td>$1,271</td></tr>' +
@@ -3661,9 +3661,9 @@ const routes = [
   // ============================================================
   {
     path: '/pricing-reference',
-    title: 'Mercury Outboard Prices in Ontario (CAD, 2026) | Harris Boat Works',
+    title: 'Mercury Outboard Prices in Ontario (CAD, 2027) | Harris Boat Works',
     description: 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.',
-    h1: 'Mercury Outboard Prices in Ontario (CAD, 2026)',
+    h1: 'Mercury Outboard Prices in Ontario (CAD, 2027)',
     intro: 'Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury\'s MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total, build a quote in the configurator. Pickup only at Gores Landing, Ontario.',
     // Prefer the build-time-generated Product+Offer @graph from
     // public/pricing-reference.schema.json (emitted by generate-markdown-twins.mjs).
@@ -3678,7 +3678,7 @@ const routes = [
       } catch (err) {
         console.warn('[static-prerender] pricing-reference.schema.json read failed:', err?.message);
       }
-      return [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Ontario (CAD, 2026)', 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.')];
+      return [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Ontario (CAD, 2027)', 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.')];
     })(),
     extraHead:
       '<link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />',

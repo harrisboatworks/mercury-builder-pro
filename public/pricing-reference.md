@@ -12,7 +12,7 @@ data_source: motor_models (same selection rules as /quote/motor-selection)
 motor_count: 101
 ---
 
-# Mercury Outboard Prices in Canada (CAD, 2026)
+# Mercury Outboard Prices in Canada (CAD, 2027)
 
 Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury's MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total, build a quote in the configurator. Pickup only at Gores Landing, Ontario.
 
