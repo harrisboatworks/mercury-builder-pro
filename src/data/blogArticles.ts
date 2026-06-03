@@ -5452,7 +5452,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     image: '/lovable-uploads/bass-boat-150-proxs-hero-real.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-09',
-    dateModified: '2026-03-09',
+    dateModified: '2026-06-03',
     publishDate: '2026-03-09',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -5667,7 +5667,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does a Mercury Pro XS cost in Canada in 2026?',
-        answer: 'Planning-level CAD ranges as of May 2026: 150 Pro XS around $17,000-$18,000 dealer, 200 Pro XS V6 around $24,000-$26,000, 250 Pro XS V8 around $30,000-$33,000. Final pricing depends on configuration and live quote.'
+        answer: 'Planning-level CAD ranges as of June 2026 (HBW dealer selling price): 150 Pro XS around $24,000-$24,500, 200 Pro XS V6 around $28,000-$30,500, 250 Pro XS V8 around $33,500-$34,500. Final pricing depends on configuration and live quote.'
       },
       {
         question: 'What warranty does a Mercury outboard come with in Canada?',
@@ -10024,13 +10024,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-08',
-    dateModified: '2026-05-08',
+    dateModified: '2026-06-03',
     publishDate: '2026-05-08',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury outboard price 2026', 'mercury promotions', 'mercury dealer pricing', 'best time buy outboard', 'mercury financing options'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-06-03*
 
 > **Quick answer:** Mercury controls promotions; dealers can't invent discount. Real 2026 deals are Mercury rebates, bonus warranty extensions, and seasonal pricing windows, all baked into our configurator at mercuryrepower.ca. Bonus warranties revert to the 3-year standard once the promo ends, so timing matters.
 
@@ -10060,15 +10060,17 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 
 ### Current 2026 MSRP Ranges
 
-| Motor Category | MSRP Range |
+| Motor Category | MSRP Range (CAD) |
 |----------------|------------|
-| 75-115hp FourStroke | $8,500-14,000 |
-| 150hp FourStroke | $14,000-17,000 |
-| 175-225hp V6 | $17,000-24,000 |
-| 200-300hp Verado | $24,000-35,000 |
-| 250-400hp Verado | $35,000-50,000+ |
+| 2.5-20hp portable / tiller | $1,385-$6,085 |
+| 25-60hp FourStroke | $5,860-$14,545 |
+| 75-115hp FourStroke | $16,125-$19,930 |
+| 115hp Pro XS | $19,485-$20,385 |
+| 150hp FourStroke / Pro XS | $24,780-$27,265 |
+| 175-250hp FourStroke / Pro XS | $30,685-$41,740 |
+| 300hp FourStroke | $40,575-$42,935 |
 
-*Prices are motor only; rigging adds $1,500-3,000+*
+*Prices are motor MSRP only (canonical 2026-06-03); rigging adds $1,500-$3,000+. Mercury Verado is special-order only — call (905) 342-2153 for Verado pricing.*
 
 ### Seasonal Pricing Patterns
 
@@ -10101,14 +10103,14 @@ heading: 2026 Mercury tier pricing, what you actually pay in CAD
 eyebrow: All-in ballparks
 subhead: Motor MSRP is one line on the invoice. Here is the full picture across Mercury's tiers, before any trade-in or current promo.
 item1Label: FourStroke 9.9 (kicker / small tiller)
-item1Value: $4,200 - $5,800
-item1Note: Motor only. Add ~$400 for ProKicker remote conversion.
+item1Value: $2,999 - $5,200
+item1Note: Motor only. ProKicker remote variants land at the top of the range.
 item2Label: FourStroke 60 to 115 (mid-range main)
-item2Value: $11,500 - $17,800
+item2Value: $12,000 - $18,000
 item2Note: Most common Rice Lake / Kawarthas repower range. Includes Command Thrust where applicable.
 item2Accent: true
 item3Label: FourStroke / Pro XS 150 to 250 (V6)
-item3Value: $18,500 - $32,000
+item3Value: $22,000 - $37,500
 item3Note: Bass boats, performance hulls, offshore Lake Ontario rigs
 item4Label: Install and rigging (any tier)
 item4Value: $1,500 - $4,500
@@ -13675,7 +13677,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-cheapest-mercury-canada-lineup.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-23',
-    dateModified: '2026-05-04',
+    dateModified: '2026-06-03',
     publishDate: '2026-04-23',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -13695,8 +13697,8 @@ heading: What changes the real out-the-door price?
 eyebrow: Where the money goes
 subhead: A Mercury repower is more than the motor sticker price. Here is where every dollar actually goes.
 item1Label: Motor (the big number)
-item1Value: $12,000 - $35,000 CAD
-item1Note: Mercury MSRP plus any current rebates applied
+item1Value: $1,298 - $38,539 CAD
+item1Note: HBW dealer selling price, 2.5MH FourStroke to 300XL FourStroke DTS (canonical 2026-06-03).
 item1Accent: true
 item2Label: Rigging (steering, controls, gauges)
 item2Value: $1,500 - $4,500
