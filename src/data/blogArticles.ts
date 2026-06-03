@@ -33863,9 +33863,9 @@ Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1], r = 7.99% / 12.
 |---|---|---|---|---|---|
 | Mercury 9.9 ProKicker | $5,000 | 60 mo | **$101.36** | $1,082 | $6,082 |
 | Mercury 60 FourStroke EFI | $9,500 | 60 mo | **$192.58** | $2,055 | $11,555 |
-| Mercury 90 FourStroke | $14,500 | 84 mo | **$225.93** | $4,478 | $18,978 |
-| Mercury 115 Pro XS | $17,320 | 84 mo | **$269.85** | $5,348 | $22,668 |
-| Mercury 150 Pro XS | $24,107 | 120 mo | **$292.42** | $10,983 | $35,090 |
+| Mercury 90 FourStroke | $14,960 | 84 mo | **$233.10** | $4,620 | $19,580 |
+| Mercury 115 Pro XS | $17,490 | 84 mo | **$272.52** | $5,401 | $22,891 |
+| Mercury 150 Pro XS | $24,349 | 120 mo | **$295.29** | $11,086 | $35,435 |
 | Mercury 250 V8 Pro XS | $42,000 | 120 mo | **$509.35** | $19,122 | $61,122 |
 
 *All amounts in CAD. HST not included in principal. 7.99% APR current standard rate through TD Auto Finance via Dealerplan Peterborough.*
