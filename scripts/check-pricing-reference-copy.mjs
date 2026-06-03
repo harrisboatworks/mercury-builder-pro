@@ -20,8 +20,8 @@ const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
 const EXPECTED = {
-  title: 'Mercury Outboard Prices in Ontario (CAD, 2026) | Harris Boat Works',
-  h1: 'Mercury Outboard Prices in Ontario (CAD, 2026)',
+  title: 'Mercury Outboard Prices in Ontario (CAD, 2027) | Harris Boat Works',
+  h1: 'Mercury Outboard Prices in Ontario (CAD, 2027)',
   description:
     "Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.",
 };
