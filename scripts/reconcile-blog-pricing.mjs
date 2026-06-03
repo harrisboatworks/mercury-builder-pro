@@ -1,15 +1,19 @@
 #!/usr/bin/env node
-// Recomputes every sentinel-tagged price/derived-figure in blog content from
-// canonical pricing-reference.md. Sentinel format:
+// Recomputes every annotated price/derived figure in blog content from
+// canonical pricing-reference.md.
 //
-//   <!--canonical:KIND:KEY[:ARG]-->VALUE<!--/canonical-->
+// Sentinel format (placed in TS source, never leaks into rendered HTML):
+//
+//   '$24,349' /* @canonical:dealer:150elpt-pro-xs */
+//   '$295' /* @canonical:monthly:150elpt-pro-xs:120 */
+//   '$12,040–$17,892' /* @canonical:dealer-range:midrange_60_to_115 */
 //
 // Supported KIND:
-//   dealer   — KEY = SKU slug or part#, VALUE = "$24,349"
-//   msrp     — KEY = SKU slug or part#, VALUE = "$27,125"
-//   monthly  — KEY = SKU slug, ARG = "termMonths" (default 120), VALUE = "$295"
-//   dealer-range — KEY = range name (see CANONICAL_RANGES), VALUE = "$12,040–$17,892"
-//   ownership-10yr — KEY = SKU slug, VALUE = "$XX,XXX"
+//   dealer          — KEY = SKU slug or part#
+//   msrp            — KEY = SKU slug or part#
+//   monthly         — KEY = SKU slug, ARG = termMonths (default 120)
+//   dealer-range    — KEY = range name (see CANONICAL_RANGES)
+//   ownership-10yr  — KEY = SKU slug
 //
 // Run via `npm run reconcile:blog-pricing`.
 
@@ -24,18 +28,14 @@ import {
 
 const { bySlug, byPartNo, ranges } = loadCanonicalPricing();
 
-function fmt(n) {
-  return `$${Math.round(n).toLocaleString('en-CA')}`;
-}
-function rangeFmt(r) {
-  return `${fmt(r.dealerMin)}–${fmt(r.dealerMax)}`;
-}
-function lookupSku(key) {
-  return bySlug.get(key) ?? byPartNo.get(key);
-}
+const fmt = (n) => `$${Math.round(n).toLocaleString('en-CA')}`;
+const rangeFmt = (r) => `${fmt(r.dealerMin)}–${fmt(r.dealerMax)}`;
+const lookupSku = (key) => bySlug.get(key) ?? byPartNo.get(key);
 
-const SENTINEL =
-  /<!--canonical:([a-z0-9-]+):([a-z0-9.\-_]+)(?::([a-z0-9.\-_]+))?-->([^<]*)<!--\/canonical-->/gi;
+// Matches a quoted dollar literal followed immediately by an @canonical annotation.
+// Captures: 1=quote char, 2=value (inside quotes), 3=kind, 4=key, 5=arg (optional)
+export const SENTINEL_RX =
+  /(['"`])(\$[^'"`]+?)\1(\s*\/\*\s*@canonical:([a-z0-9-]+):([a-z0-9.\-_]+)(?::([a-z0-9.\-_]+))?\s*\*\/)/g;
 
 export function computeCanonicalValue(kind, key, arg) {
   switch (kind) {
@@ -51,8 +51,7 @@ export function computeCanonicalValue(kind, key, arg) {
       const s = lookupSku(key);
       if (!s) return null;
       const term = Number(arg ?? 120);
-      const pmt = monthlyPayment(s.dealer, defaultRate(s.dealer), term);
-      return fmt(pmt);
+      return fmt(monthlyPayment(s.dealer, defaultRate(s.dealer), term));
     }
     case 'dealer-range': {
       const r = ranges[key];
@@ -78,17 +77,16 @@ async function main() {
   for (const file of files) {
     const src = readFileSync(file, 'utf8');
     let fileRewrites = 0;
-    const next = src.replace(SENTINEL, (match, kind, key, arg, oldValue) => {
+    const next = src.replace(SENTINEL_RX, (match, q, value, tail, kind, key, arg) => {
       const expected = computeCanonicalValue(kind, key, arg);
       if (expected == null) {
         totalUnknown++;
         console.warn(`  ! unknown canonical key ${kind}:${key}${arg ? ':' + arg : ''} in ${file}`);
         return match;
       }
-      if (oldValue.trim() === expected) return match;
+      if (value === expected) return match;
       fileRewrites++;
-      const argPart = arg ? `:${arg}` : '';
-      return `<!--canonical:${kind}:${key}${argPart}-->${expected}<!--/canonical-->`;
+      return `${q}${expected}${q}${tail}`;
     });
     if (fileRewrites > 0) {
       writeFileSync(file, next);

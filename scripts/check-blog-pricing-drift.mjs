@@ -1,17 +1,13 @@
 #!/usr/bin/env node
-// CI guard: fails the build if any sentinel-tagged price in blog content
-// drifts from canonical pricing-reference.md. Exact SKU prices only — wide
-// installed/all-in ranges are out of scope by design.
+// CI guard: fails the build if any @canonical-annotated price in blog content
+// drifts from canonical pricing-reference.md. Exact SKU prices only.
 //
 // Sentinel format documented in scripts/reconcile-blog-pricing.mjs.
 // Run via `npm run check:pricing-drift`.
 
 import { readFileSync } from 'node:fs';
 import { glob } from 'glob';
-import { computeCanonicalValue } from './reconcile-blog-pricing.mjs';
-
-const SENTINEL =
-  /<!--canonical:([a-z0-9-]+):([a-z0-9.\-_]+)(?::([a-z0-9.\-_]+))?-->([^<]*)<!--\/canonical-->/gi;
+import { computeCanonicalValue, SENTINEL_RX } from './reconcile-blog-pricing.mjs';
 
 const files = [
   ...(await glob('src/data/blogArticles.ts')),
@@ -26,10 +22,10 @@ for (const file of files) {
   const lines = src.split('\n');
   for (let i = 0; i < lines.length; i++) {
     let m;
-    SENTINEL.lastIndex = 0;
-    while ((m = SENTINEL.exec(lines[i])) !== null) {
+    const rx = new RegExp(SENTINEL_RX.source, 'g');
+    while ((m = rx.exec(lines[i])) !== null) {
       scanned++;
-      const [, kind, key, arg, value] = m;
+      const [, , value, , kind, key, arg] = m;
       const expected = computeCanonicalValue(kind, key, arg);
       if (expected == null) {
         errors.push({
@@ -41,7 +37,7 @@ for (const file of files) {
           actual: value,
           expected: '(unknown canonical key)',
         });
-      } else if (value.trim() !== expected) {
+      } else if (value !== expected) {
         errors.push({ file, line: i + 1, kind, key, arg, actual: value, expected });
       }
     }
@@ -53,9 +49,9 @@ if (errors.length) {
   for (const e of errors) {
     const argPart = e.arg ? `:${e.arg}` : '';
     console.error(
-      `  ${e.file}:${e.line}  canonical:${e.kind}:${e.key}${argPart}` +
-        `\n      actual:   "${e.actual}"` +
-        `\n      expected: "${e.expected}"`,
+      `  ${e.file}:${e.line}  @canonical:${e.kind}:${e.key}${argPart}` +
+        `\n      actual:   ${e.actual}` +
+        `\n      expected: ${e.expected}`,
     );
   }
   console.error(
