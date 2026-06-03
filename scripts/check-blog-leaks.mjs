@@ -3,8 +3,7 @@
 // editor production notes that should never be public.
 // Run via `npm run check:blog-leaks` or automatically via prebuild hook.
 
-import { readFileSync } from 'node:fs';
-import { glob } from 'glob';
+import { readFileSync, readdirSync } from 'node:fs';
 
 const LEAK_PATTERNS = [
   { pattern: /\*\*(?:EDITOR\s+NOTE|English\s+Editor\s+Note|English\s+editor\s+note|Editor\s+Note|Nota\s+del\s+editor)/i, name: 'Editor note bold marker' },
@@ -19,10 +18,10 @@ const LEAK_PATTERNS = [
   { pattern: /\bTODO:/i, name: 'TODO leak' },
 ];
 
-const FILES = [
-  ...(await glob('src/data/blogArticles.ts')),
-  ...(await glob('src/data/{mandarin,korean,french,spanish}BlogArticles.ts')),
-];
+const BLOG_LANG_RX = /^(mandarin|korean|french|spanish)BlogArticles\.ts$/;
+const FILES = readdirSync('src/data')
+  .filter((f) => f === 'blogArticles.ts' || BLOG_LANG_RX.test(f))
+  .map((f) => `src/data/${f}`);
 
 const errors = [];
 for (const file of FILES) {
