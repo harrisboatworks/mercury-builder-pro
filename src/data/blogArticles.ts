@@ -24074,17 +24074,17 @@ The math case for trade: Trade is certain. Private sale has a higher gross numbe
 
 In Ontario, when you trade a motor as part of a repower at HBW, **the trade credit reduces the taxable amount of the new motor**. That is a 13% HST saving on whatever the trade is worth.
 
-**Worked example.** Say you are repowering with a Mercury 90 ELPT FourStroke at $14,812, and we credit $4,000 for your old motor:
+**Worked example.** Say you are repowering with a Mercury 90 ELPT FourStroke at $14,960, and we credit $4,000 for your old motor:
 
 | Line | Trade Scenario | Private Sale Scenario |
 |---|---|---|
-| New motor price | $14,812 | $14,812 |
+| New motor price | $14,960 | $14,960 |
 | Trade credit | -$4,000 | $0 |
-| Subtotal | $10,812 | $14,812 |
-| HST (13%) | $1,406 | $1,926 |
-| Total to HBW | $12,218 | $16,738 |
+| Subtotal | $10,960 | $14,960 |
+| HST (13%) | $1,425 | $1,945 |
+| Total to HBW | $12,385 | $16,905 |
 | Cash from private sale | -- | $5,000 (assumed) |
-| **Net cost** | **$12,218** | **$11,738** |
+| **Net cost** | **$12,385** | **$11,905** |
 
 In this example, the private sale wins by about $480, but only if you actually sell for $5,000, it does not take three weekends, and there is no cash dispute. If the private sale nets $4,500, trade wins. At $4,000, trade wins by a meaningful margin.
 
