@@ -12967,7 +12967,7 @@ Tournament use rewards the Pro XS for faster acceleration and more water covered
 
 ### Charter Fishing Operations
 
-**Recommended:** 26–30+ ft deep-V + Mercury 300–400 HP Verado V8 or SeaPro commercial-duty variant + 15 HP ProKicker.
+**Recommended:** 26–30+ ft deep-V + Mercury 300–400 HP 300-350 HP Pro XS V8 or SeaPro commercial-duty variant + 15 HP ProKicker.
 
 Charter operations push motors through hard daily cycles. Mercury SeaPro variants are built specifically for commercial-duty use. For engine repairs on a charter operation, we only service Mercury and Mercruiser.
 
@@ -27050,7 +27050,7 @@ The impeller is a rubber vane wheel inside the lower unit that drives cooling wa
 - Overheat alarm that sounds when trolling or in no-wake zones but goes quiet when you bring RPM up
 - Tell-tale that sputters but doesn't disappear entirely (a fully-failed impeller often produces no tell-tale at any RPM)
 
-**Service interval:** Mercury recommends replacing the impeller every 2, 3 years or 200 hours, whichever comes first. Many owners are well past this when they first notice idle overheating symptoms. A tell-tale that was "a bit weak last year" is a warning the motor gave you that it's time.
+**Service interval:** Mercury recommends replacing the impeller every 2, 3 years or 300 hours, whichever comes first. Many owners are well past this when they first notice idle overheating symptoms. A tell-tale that was "a bit weak last year" is a warning the motor gave you that it's time.
 
 **Replacement:** The lower unit needs to come off to access the water pump. This is a job with straightforward procedure but it involves torquing the lower unit back on correctly and ensuring the shift shaft aligns. If you're mechanically confident, it's a DIY-possible job. If not, have it done by a technician.
 
@@ -27169,7 +27169,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 ---`,
     faqs: [
       { question: 'Why is my Mercury overheating only at idle?', answer: 'Almost always a partially-blocked or worn water pump impeller. At cruise RPM, enough water gets through to keep temps OK; at idle, there isn\'t enough flow. Standard fix is impeller replacement (1-2 hour service job).' },
-      { question: 'How often should I replace the impeller?', answer: 'Every 2-3 years or every 200 hours, whichever comes first. Mercury recommends inspection annually. If you boat in weedy water (like Rice Lake), lean toward 2 years.' },
+      { question: 'How often should I replace the impeller?', answer: 'Every 3 years or 300 hours, whichever comes first (Mercury official interval). Mercury recommends inspection annually. If you boat in weedy water (like Rice Lake), lean toward 2 years.' },
       { question: 'My tell-tale is weak, can I still run it?', answer: 'Briefly at idle to limp back to dock, yes. Anything more risks the powerhead. The tell-tale stream is your real-time water-flow indicator - if it\'s weak, the engine is undercooled.' },
       { question: 'Can I just delete the thermostat to fix overheating?', answer: 'No. Engines need to reach operating temp to combust properly. A deleted thermostat means lifelong rich-running, fouled plugs, worse fuel economy, more emissions. Fix the actual problem.' },
       { question: 'Did I damage the powerhead by overheating?', answer: 'Depends on duration and how you responded. If you got the alarm, throttled to idle, and shut down within a few minutes - usually fine. If you kept running through the alarm, you may have damaged head gasket, rings, or valves. We can pressure-test to confirm.' },
@@ -34773,9 +34773,9 @@ This is rigging work we do regularly. Bring your boat, we'll spec and install.
 
 ## Fishing regulations: zone awareness
 
-Lake Ontario fishing falls under MNRF Zone 18 (with FMZ 19 along the eastern Lake Ontario region). Confirm current regulations at the [Ontario Fishing Regulations page](https://www.ontario.ca/page/get-fishing-licence) before each season.
+Lake Ontario fishing falls under Fisheries Management Zone (FMZ) 20. Confirm current regulations at the [Ontario Fishing Regulations page](https://www.ontario.ca/page/get-fishing-licence) before each season.
 
-**Note on zone-specific 2026 changes:** Rice Lake (where HBW is located) is in FMZ 17, not Zone 18. We don't track Zone 18 regulation changes day-to-day because they don't apply to our home water. Before your Lake Ontario season, verify current Zone 18 (or applicable zone) regulations directly with MNRF rather than relying on dealer summary content.
+**Note on zone-specific 2026 changes:** Rice Lake (where HBW is located) is in FMZ 17, not Zone 18. We don't track FMZ 20 regulation changes day-to-day because they don't apply to our home water. Before your Lake Ontario season, verify current FMZ 20 regulations directly with MNRF rather than relying on dealer summary content.
 
 ## Common mistakes (the things we push back on)
 
@@ -34863,6 +34863,8 @@ We do Yamaha-to-Mercury repowers every spring at HBW. The customer is almost alw
 ## Why people switch from Yamaha to Mercury
 
 The brand swap is not a casual decision. It costs more than a same-brand repower because the controls and rigging do not carry over. The customers who pull the trigger usually have one of four reasons.
+
+HBW is the only Mercury dealer on Rice Lake. There is no other brand-name outboard service of any kind on the lake. If you live on Rice Lake or boat here regularly, a Yamaha to Mercury swap is also a swap to local service for the life of the motor. That changes the math.
 
 **Local service.** The closest Yamaha dealer is too far to be practical. This is the single biggest driver we see in the GTA, Kawarthas, and around Rice Lake. A motor you can't get serviced quickly is a motor that fails when you need it most. If the nearest Mercury Platinum dealer is 20 minutes away and the nearest Yamaha dealer is 90 minutes away, the math eventually swings.
 
