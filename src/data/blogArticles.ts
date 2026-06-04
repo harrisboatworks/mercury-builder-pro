@@ -33882,50 +33882,52 @@ Repowers are the highest-risk install in our shop. At HBW we water-test every re
 
 :::mythbuster
 - claim: I will use Sheffield Financial like I saw on Mercury's US website.
-  rebuttal: Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough.
+  rebuttal: Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough, currently at 5.48% APR under the TD Always On program through Dec 31, 2026.
 - claim: I'll pull from my line of credit instead.
-  rebuttal: HELOC at prime + 2-3% means same monthly cost plus variable-rate risk. A fixed 7.99% loan with no prepayment penalty is usually cleaner.
+  rebuttal: HELOC at prime + 2-3% is materially higher than the active TD 5.48% APR program, plus variable-rate risk. A fixed 5.48% loan with no prepayment penalty is usually cleaner.
 - claim: I want zero interest financing.
-  rebuttal: Mercury Canada promotional rates (2.99%, 4.9%) require strong credit and are time-limited. Outside promo windows, 7.99% is the standard rate.
+  rebuttal: The active TD Always On 5.48% APR (OAC) is the headline rate through Dec 31, 2026. Mercury Canada also runs occasional 2.99% / 4.9% campaigns that require strong credit. Outside those windows and after Jan 1, 2027, tiered rates resume from 7.99% APR.
 - claim: I'll finance through my own bank to get a lower rate.
-  rebuttal: Possible. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
+  rebuttal: Possible, but TD 5.48% APR via Dealerplan is hard to beat right now. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
 :::
 
 ## Other Canadian financing options
 
 | Lender / Path | Rate context | Down required |
 |---|---|---|
-| **TD Auto Finance via Dealerplan (HBW)** | 7.99% APR standard; promos as low as 2.99-4.9% | $0 |
-| **National Bank via Dealerplan (HBW)** | Similar to TD | $0 |
+| **TD Auto Finance via Dealerplan (HBW) - active program** | **5.48% APR (TD Always On, OAC) through Dec 31, 2026** | $0 |
+| TD Auto Finance via Dealerplan (HBW) - post-promo from Jan 1, 2027 | Tiered legacy rates from 7.99% APR | $0 |
+| **National Bank via Dealerplan (HBW)** | Similar to TD; eligible for active 5.48% program | $0 |
 | **RBC via Dealerplan (HBW)** | Similar profile | $0 |
 | **Direct bank marine loan** | Prime + spread | 10-20% typical |
 | **LBC Capital / Newcoast / BoatLoansCanada** | 6.45%+ secured; 9.75%+ unsecured | Varies |
 
 ## The current Mercury financing rate (as of 2026-05-28)
 
-Through December 31, 2026, Mercury Marine Canada's TD "Always On" program offers the canonical Canadian rate:
+Through December 31, 2026, Mercury Marine Canada's TD "Always On" program is the active canonical Canadian rate:
 
 - **5.48% APR (OAC)**
 - **Term up to 60 months** (customer's choice)
 - **Amortization up to 240 months** (20-year payment basis)
 - **Eligible: new Mercury outboards only**
 
-Funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Live program card at [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions).
+Funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Live program card at [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions). On Jan 1, 2027, tiered rates auto-revert to 7.99% APR legacy.
 
 ### What the 240-month amortization actually means
 
 The amortization is the basis used to CALCULATE your monthly payment. It is NOT how long you will be paying. Your contract term is up to 60 months. At maturity, the remaining principal is due as a balloon payment.
 
-### Worked examples at HBW pricing
+### Worked examples at HBW pricing (active TD 5.48% program)
 
 | Motor | Financed | Monthly (240-mo amort) | Principal at month 60 |
 |---|---|---|---|
-| Mercury 115 ELPT Pro XS | $17,490 | ~$120 | ~$14,700 balloon |
+| Mercury 90 ELPT FourStroke | $14,960 | ~$103 | ~$12,600 balloon |
+| Mercury 115 ELPT Pro XS | $17,490 | ~$120 | ~$14,720 balloon |
 | Mercury 150 L Pro XS | $24,349 | ~$167 | ~$20,500 balloon |
 
 Three real options at month 60: pay the balloon, refinance the balance, or trade in toward a new motor. Most repower customers plan for the trade-in path.
 
-If a $13,000 to $19,000 balloon at year 5 would be uncomfortable, ask about a shorter amortization basis. Higher monthly payment, cleaner end-of-term position. We walk through both versions on a quote.
+If a $12,000 to $20,000 balloon at year 5 would be uncomfortable, ask about a shorter amortization basis. Higher monthly payment, cleaner end-of-term position. We walk through both versions on a quote.
 
 ## Ready to build a real quote?
 
