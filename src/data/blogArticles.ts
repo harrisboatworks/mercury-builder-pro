@@ -33810,7 +33810,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we w
     relatedSlugs: ['mercury-outboard-repower-cost-ontario-2026-cad', 'should-i-repower-or-buy-a-new-boat-an-honest-cost-comparison-ontario-2026', 'mercury-outboard-trade-in-value-guide', 'mercury-outboard-rigging-costs-ontario', 'mercury-extended-warranty-platinum-ontario', "hbw-on-water-load-test-mercury-repower-advantage-2026"],
     title: 'Mercury Outboard Monthly Payment Math (Ontario, 2026)',
     seoTitle: 'Mercury Outboard Monthly Payment | Ontario 2026',
-    description: 'What does a Mercury outboard repower cost per month in Ontario? Verified amortization tables. Current Mercury TD program: 5.48% APR through Dec 31, 2026 (OAC). Standard tiered rates resume afterward.',
+    description: 'What does a Mercury outboard repower cost per month in Ontario? Verified amortization tables. Active Mercury TD Always On program: 5.48% APR through Dec 31, 2026 (OAC). Tiered rates from 7.99% APR resume Jan 1, 2027.',
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-28',
@@ -33820,7 +33820,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we w
     keywords: ['mercury', 'repower', 'financing', 'ontario', 'monthly payment', 'Mercury outboard monthly payment', 'TD Auto Finance', 'Dealerplan Peterborough'],
     content: `*Last reviewed: 2026-05-28*
 
-> **Quick answer:** A Mercury repower in Ontario typically finances at 7.99% APR through TD Auto Finance arranged by Dealerplan Peterborough, HBW's broker. A $5,000 minimum loan applies. A $17,320 Mercury 115 Pro XS runs about $270/month over 7 years. A $24,107 Mercury 150 Pro XS runs about $292/month over 10 years. A $42,000 V8 Pro XS runs about $509/month over 10 years. No down payment required for qualified buyers. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** A Mercury repower in Ontario currently finances through the active **TD "Always On" 5.48% APR program** (OAC), funded by TD Auto Finance via HBW's Dealerplan Peterborough relationship. A $5,000 minimum loan applies. A $17,490 Mercury 115 ELPT Pro XS runs about **$120/month at 5.48% APR** (TD Always On program, 240-month amortization basis). A $24,349 Mercury 150 L Pro XS runs about **$167/month at 5.48% APR** (240-month amortization basis). These figures use the active TD Always On 5.48% APR program. Standard tiered rates from 7.99% APR resume after Dec 31, 2026 when the TD program ends. OAC. No down payment required for qualified buyers. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 Every repower customer asks the same question before they ask for a quote: what would this actually cost per month?
 
@@ -33832,7 +33832,7 @@ HBW arranges Mercury repower financing through **Dealerplan Peterborough**, our 
 
 A common misconception: Sheffield Financial is a Mercury Marine financing partner in the United States. Sheffield is NOT available in Canada. The HBW Canadian equivalent is TD Auto Finance through Dealerplan Peterborough.
 
-**HBW's current standard rate is 7.99% APR.** Mercury Canada also runs limited-time promotional rates (2.99%, 4.9%) through partner lenders during specific campaign windows.
+**HBW's current standard rate is 5.48% APR through the Mercury TD "Always On" program, available through Dec 31, 2026 (OAC).** After the program ends on Jan 1, 2027, tiered rates resume from 7.99% APR. Mercury Canada also runs additional limited-time promotional rates (2.99%, 4.9%) through partner lenders during specific campaign windows.
 
 **What this financing path gives you:**
 - Fixed APR (no rate changes during the term)
@@ -33857,20 +33857,22 @@ In Ontario, every new outboard purchase is subject to **13% HST**. The HST is co
 
 The tables below show principal-only monthly payments (HST paid separately at closing).
 
-## Amortization scenarios at 7.99% APR
+## Amortization scenarios: active TD 5.48% program vs. post-promo 7.99% legacy
 
-Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1], r = 7.99% / 12.
+The primary column below is the **active TD "Always On" 5.48% APR program** (240-month amortization basis, 60-month contract with balloon). The secondary column shows the **post-Dec 31, 2026 legacy 7.99% APR** scenario for context: what payments will look like once the TD program ends and tiered rates resume.
 
-| Engine | Installed (CAD, pre-HST) | Term | Monthly | Total Interest | Total Paid |
-|---|---|---|---|---|---|
-| Mercury 9.9 ProKicker | $5,000 | 60 mo | **$101.36** | $1,082 | $6,082 |
-| Mercury 60 FourStroke EFI | $9,500 | 60 mo | **$192.58** | $2,055 | $11,555 |
-| Mercury 90 FourStroke | $14,960 | 84 mo | **$233.10** | $4,620 | $19,580 |
-| Mercury 115 Pro XS | $17,490 | 84 mo | **$272.52** | $5,401 | $22,891 |
-| Mercury 150 Pro XS | $24,349 | 120 mo | **$295.29** | $11,086 | $35,435 |
-| Mercury 250 V8 Pro XS | $42,000 | 120 mo | **$509.35** | $19,122 | $61,122 |
+Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1].
 
-*All amounts in CAD. HST not included in principal. 7.99% APR current standard rate through TD Auto Finance via Dealerplan Peterborough.*
+| Engine | Installed (CAD, pre-HST) | TD 5.48% APR (240-mo amort) | Legacy 7.99% APR (term) |
+|---|---|---|---|
+| Mercury 9.9 ProKicker | $5,000 | **$34/mo** | $101.36/mo (60 mo) |
+| Mercury 60 FourStroke EFI | $9,500 | **$65/mo** | $192.58/mo (60 mo) |
+| Mercury 90 FourStroke | $14,960 | **$103/mo** | $233.10/mo (84 mo) |
+| Mercury 115 Pro XS | $17,490 | **$120/mo** | $272.52/mo (84 mo) |
+| Mercury 150 Pro XS | $24,349 | **$167/mo** | $295.29/mo (120 mo) |
+| Mercury 250 V8 Pro XS | $42,000 | **$288/mo** | $509.35/mo (120 mo) |
+
+*All amounts in CAD. HST not included in principal. Primary rate: 5.48% APR (TD Always On program through Dec 31, 2026, 240-month amortization basis, 60-month contract with balloon). Secondary rate: 7.99% APR tiered legacy, resumes Jan 1, 2027.*
 
 ## The HBW on-water repower test
 
@@ -33880,50 +33882,52 @@ Repowers are the highest-risk install in our shop. At HBW we water-test every re
 
 :::mythbuster
 - claim: I will use Sheffield Financial like I saw on Mercury's US website.
-  rebuttal: Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough.
+  rebuttal: Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough, currently at 5.48% APR under the TD Always On program through Dec 31, 2026.
 - claim: I'll pull from my line of credit instead.
-  rebuttal: HELOC at prime + 2-3% means same monthly cost plus variable-rate risk. A fixed 7.99% loan with no prepayment penalty is usually cleaner.
+  rebuttal: HELOC at prime + 2-3% is materially higher than the active TD 5.48% APR program, plus variable-rate risk. A fixed 5.48% loan with no prepayment penalty is usually cleaner.
 - claim: I want zero interest financing.
-  rebuttal: Mercury Canada promotional rates (2.99%, 4.9%) require strong credit and are time-limited. Outside promo windows, 7.99% is the standard rate.
+  rebuttal: The active TD Always On 5.48% APR (OAC) is the headline rate through Dec 31, 2026. Mercury Canada also runs occasional 2.99% / 4.9% campaigns that require strong credit. Outside those windows and after Jan 1, 2027, tiered rates resume from 7.99% APR.
 - claim: I'll finance through my own bank to get a lower rate.
-  rebuttal: Possible. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
+  rebuttal: Possible, but TD 5.48% APR via Dealerplan is hard to beat right now. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
 :::
 
 ## Other Canadian financing options
 
 | Lender / Path | Rate context | Down required |
 |---|---|---|
-| **TD Auto Finance via Dealerplan (HBW)** | 7.99% APR standard; promos as low as 2.99-4.9% | $0 |
-| **National Bank via Dealerplan (HBW)** | Similar to TD | $0 |
+| **TD Auto Finance via Dealerplan (HBW) - active program** | **5.48% APR (TD Always On, OAC) through Dec 31, 2026** | $0 |
+| TD Auto Finance via Dealerplan (HBW) - post-promo from Jan 1, 2027 | Tiered legacy rates from 7.99% APR | $0 |
+| **National Bank via Dealerplan (HBW)** | Similar to TD; eligible for active 5.48% program | $0 |
 | **RBC via Dealerplan (HBW)** | Similar profile | $0 |
 | **Direct bank marine loan** | Prime + spread | 10-20% typical |
 | **LBC Capital / Newcoast / BoatLoansCanada** | 6.45%+ secured; 9.75%+ unsecured | Varies |
 
 ## The current Mercury financing rate (as of 2026-05-28)
 
-Through December 31, 2026, Mercury Marine Canada's TD "Always On" program offers the canonical Canadian rate:
+Through December 31, 2026, Mercury Marine Canada's TD "Always On" program is the active canonical Canadian rate:
 
 - **5.48% APR (OAC)**
 - **Term up to 60 months** (customer's choice)
 - **Amortization up to 240 months** (20-year payment basis)
 - **Eligible: new Mercury outboards only**
 
-Funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Live program card at [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions).
+Funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Live program card at [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions). On Jan 1, 2027, tiered rates auto-revert to 7.99% APR legacy.
 
 ### What the 240-month amortization actually means
 
 The amortization is the basis used to CALCULATE your monthly payment. It is NOT how long you will be paying. Your contract term is up to 60 months. At maturity, the remaining principal is due as a balloon payment.
 
-### Worked examples at HBW pricing
+### Worked examples at HBW pricing (active TD 5.48% program)
 
 | Motor | Financed | Monthly (240-mo amort) | Principal at month 60 |
 |---|---|---|---|
-| Mercury 115 ELPT Pro XS | $17,490 | ~$120 | ~$14,700 balloon |
+| Mercury 90 ELPT FourStroke | $14,960 | ~$103 | ~$12,600 balloon |
+| Mercury 115 ELPT Pro XS | $17,490 | ~$120 | ~$14,720 balloon |
 | Mercury 150 L Pro XS | $24,349 | ~$167 | ~$20,500 balloon |
 
 Three real options at month 60: pay the balloon, refinance the balance, or trade in toward a new motor. Most repower customers plan for the trade-in path.
 
-If a $13,000 to $19,000 balloon at year 5 would be uncomfortable, ask about a shorter amortization basis. Higher monthly payment, cleaner end-of-term position. We walk through both versions on a quote.
+If a $12,000 to $20,000 balloon at year 5 would be uncomfortable, ask about a shorter amortization basis. Higher monthly payment, cleaner end-of-term position. We walk through both versions on a quote.
 
 ## Ready to build a real quote?
 
@@ -33951,7 +33955,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
 `,
     faqs: [
-      { question: "What is the typical APR for a Mercury repower in Ontario?", answer: "HBW's standard rate is 7.99% APR for qualified buyers in 2026, arranged through Dealerplan Peterborough and routed primarily to TD Auto Finance, also National Bank and RBC. Promotional rates of 2.99% to 4.9% are sometimes available through Mercury Canada's partner-lender program." },
+      { question: "What is the typical APR for a Mercury repower in Ontario?", answer: "HBW's current standard rate is 5.48% APR (OAC) through the Mercury TD \"Always On\" program, active through Dec 31, 2026 and arranged through Dealerplan Peterborough on TD Auto Finance (also National Bank and RBC). After Jan 1, 2027, tiered rates resume from 7.99% APR. Additional promotional rates of 2.99% to 4.9% are sometimes available through Mercury Canada's partner-lender program." },
       { question: "Does HBW require a down payment to finance a Mercury repower?", answer: "No. Through Dealerplan Peterborough, financing is available with $0 down for qualified buyers." },
       { question: "Can I pay off the loan early without a penalty?", answer: "Yes. The TD Auto Finance and National Bank marine loan products arranged through Dealerplan Peterborough have no prepayment penalty." },
       { question: "How long does the approval take?", answer: "Pre-approval typically returns in under 24 hours from application submission. Credit decisions are available 7 days a week." },
