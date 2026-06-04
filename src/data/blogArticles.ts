@@ -20783,7 +20783,7 @@ The **technology side has changed dramatically; the human side has not.** Our jo
 
 In 2026, HBW operates:
 
-- **Mercury Marine Platinum Dealer**, selling and servicing the full Mercury lineup (FourStroke, Pro XS, Verado, SeaPro, Avator)
+- **Mercury Marine Platinum Dealer**, with Mercury FourStroke and Pro XS in stock; Verado, SeaPro, and Avator available by special order
 - **Mercury Certified Repower Centre**, full-service repower facility for boat owners across Ontario
 - **Legend Boats Dealer**, selling Canadian-designed aluminum and pontoon boats (designed in Whitefish, Ontario)
 - **Marina Slips**, 49 seasonal slip rentals on Rice Lake
