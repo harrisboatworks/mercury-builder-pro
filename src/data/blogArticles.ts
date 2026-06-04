@@ -33955,7 +33955,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
 `,
     faqs: [
-      { question: "What is the typical APR for a Mercury repower in Ontario?", answer: "HBW's standard rate is 7.99% APR for qualified buyers in 2026, arranged through Dealerplan Peterborough and routed primarily to TD Auto Finance, also National Bank and RBC. Promotional rates of 2.99% to 4.9% are sometimes available through Mercury Canada's partner-lender program." },
+      { question: "What is the typical APR for a Mercury repower in Ontario?", answer: "HBW's current standard rate is 5.48% APR (OAC) through the Mercury TD \"Always On\" program, active through Dec 31, 2026 and arranged through Dealerplan Peterborough on TD Auto Finance (also National Bank and RBC). After Jan 1, 2027, tiered rates resume from 7.99% APR. Additional promotional rates of 2.99% to 4.9% are sometimes available through Mercury Canada's partner-lender program." },
       { question: "Does HBW require a down payment to finance a Mercury repower?", answer: "No. Through Dealerplan Peterborough, financing is available with $0 down for qualified buyers." },
       { question: "Can I pay off the loan early without a penalty?", answer: "Yes. The TD Auto Finance and National Bank marine loan products arranged through Dealerplan Peterborough have no prepayment penalty." },
       { question: "How long does the approval take?", answer: "Pre-approval typically returns in under 24 hours from application submission. Credit decisions are available 7 days a week." },
