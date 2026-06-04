@@ -34891,7 +34891,7 @@ Engine, controls, gauges, prop. Of those four, the engine and prop are mandatory
 | Trim tabs, electronics, radio | Yes | All carry over. |
 | Capacity plate max HP | Yes | Federal/manufacturer maximum is unchanged. |
 
-The takeaway: motor, controls, cables/harness, gauges, prop are the "must replace" list. Everything else depends on condition and HP class.
+The takeaway: motor, controls, cables/harness, gauges, prop are the "must replace" list. Everything else depends on condition and HP class. HBW carries one of the largest Mercury and Mercruiser parts inventories in Ontario, so most rigging components and repower-stage parts are on the shelf, not on order.
 
 ## What does a Yamaha-to-Mercury swap actually cost in Ontario?
 
