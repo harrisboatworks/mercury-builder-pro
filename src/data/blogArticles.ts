@@ -12608,7 +12608,7 @@ If you would rather talk it through, call **(905) 342-2153** or send us an email
   },
   {
     slug: 'best-mercury-outboard-lake-simcoe-walleye-fishing',
-    title: "Best Mercury Outboard for Lake Simcoe Fishing (2026)",
+    title: "Recommended Mercury Outboard Setup for Lake Simcoe Walleye Fishing (2026)",
     description: "A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the right Mercury outboard for every Simcoe setup.",
     image: '/lovable-uploads/Walleye_Opener_Catch.png',
     author: 'Harris Boat Works',
