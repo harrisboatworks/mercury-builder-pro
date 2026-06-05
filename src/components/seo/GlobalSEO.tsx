@@ -27,7 +27,7 @@ export function GlobalSEO() {
         "logo": {
           "@type": "ImageObject",
           "@id": "https://www.mercuryrepower.ca/#logo",
-          "url": "https://www.harrisboatworks.ca/logo.png",
+          "url": "https://www.mercuryrepower.ca/pwa-512x512.png",
           "caption": "Harris Boat Works"
         },
         "foundingDate": "1947",
