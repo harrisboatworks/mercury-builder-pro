@@ -289,6 +289,66 @@ export type Database = {
         }
         Relationships: []
       }
+      customer_contact_overrides: {
+        Row: {
+          active: boolean
+          cell_phone: string | null
+          city: string | null
+          company_name: string | null
+          created_at: string
+          customer_name: string
+          customer_type: string
+          email: string | null
+          home_phone: string | null
+          loyalty_customer: boolean
+          override_id: number
+          phone: string | null
+          province: string | null
+          source: string
+          source_id: string | null
+          source_note: string | null
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          cell_phone?: string | null
+          city?: string | null
+          company_name?: string | null
+          created_at?: string
+          customer_name: string
+          customer_type?: string
+          email?: string | null
+          home_phone?: string | null
+          loyalty_customer?: boolean
+          override_id?: number
+          phone?: string | null
+          province?: string | null
+          source?: string
+          source_id?: string | null
+          source_note?: string | null
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          cell_phone?: string | null
+          city?: string | null
+          company_name?: string | null
+          created_at?: string
+          customer_name?: string
+          customer_type?: string
+          email?: string | null
+          home_phone?: string | null
+          loyalty_customer?: boolean
+          override_id?: number
+          phone?: string | null
+          province?: string | null
+          source?: string
+          source_id?: string | null
+          source_note?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       customer_memory: {
         Row: {
           archived_at: string | null
@@ -5344,6 +5404,10 @@ export type Database = {
           metadata: Json
           rpc: string
         }[]
+      }
+      hbw_phone_digits_match: {
+        Args: { p_phone: string; p_query_digits: string }
+        Returns: boolean
       }
       is_admin: { Args: never; Returns: boolean }
       last_service_summary: {
