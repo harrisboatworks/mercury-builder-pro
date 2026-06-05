@@ -34887,7 +34887,7 @@ The Honda-to-Mercury swap is less common than Yamaha-to-Mercury in Ontario becau
 
 **Service network density.** Honda has roughly one-third the Ontario dealer footprint of Mercury. In the GTA proper this isn't a big deal, but in the Kawarthas, Trent-Severn corridor, Bay of Quinte, and rural cottage country, the nearest Honda dealer can be 90+ minutes away. Mercury Platinum dealers are typically 30-45 minutes away in the same areas. For mid-season service emergencies, the difference matters.
 
-**HP class match for repowers above 60 HP.** Honda's BF lineup tops out at 250 HP (BF250). Mercury offers everything from 9.9 portable to 600 HP Verado V12. If your next repower is in the 250-600 HP range or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
+**HP class match for repowers above 60 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury offers everything from 9.9 portable to 600 HP Verado V12, including the 400 HP Verado V8/V10, the 450R, and the 600 HP V12. If your next repower is above 350 HP or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
 
 **Dealer service experience.** This is subjective, but we hear it: customers who've had a hard time getting Honda service slots in Ontario sometimes switch to Mercury because HBW (and other Platinum dealers) have invested in service capacity. Hours-on-the-water lost to service queue is a real cost.
 
