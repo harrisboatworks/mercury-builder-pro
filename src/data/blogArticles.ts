@@ -34939,7 +34939,7 @@ We don't sell Honda. We DO try to give honest advice. Here's where Honda is the 
 
 **You need 60+ HP and your nearest Honda dealer is far.** Once you're above 60 HP, the service-network argument starts mattering more because the motor is doing more work and parts inventories at smaller dealers thin out. Mercury Platinum dealers are typically better-stocked.
 
-**You're going above 250 HP.** Honda tops out at BF250. If you want 300 HP, 400 HP, or 600 HP, Mercury Pro XS / Verado is the only path.
+**You're going above 350 HP.** Honda tops out at the BF350 V8 (350 HP, launched in Canada in 2024). If you want 400 HP, 450 HP, or 600 HP, Mercury (400 HP Verado V8/V10, 450R, 600 HP Verado V12) is the only path.
 
 **You want Joystick Piloting on a multi-engine setup.** Honda's iST joystick exists but Mercury's joystick integration is more mature and works with a broader range of multi-engine configurations.
 
