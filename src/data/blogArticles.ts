@@ -2486,7 +2486,9 @@ We rig both at Harris Boat Works. Every repower gets an on-water test on Rice La
 - [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
 - [Mercury Boost Upgrade Analysis](/blog/mercury-boost-software-upgrade-eligibility-2026)
 - [Best Pontoon Outboard 2026](/blog/best-pontoon-outboard-2026-mercury)
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)`
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).`
   },
   {
     slug: 'boat-repowering-guide-when-to-replace-motor',
@@ -12109,7 +12111,9 @@ Rather talk first? Call 905-342-2153. We answer the phone.
 - [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 - [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 - [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
-`,
+
+
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).`,
     faqs: [
       { question: 'How much does a Mercury repower cost in Ontario in 2026?', answer: 'Planning ranges before HST: small remote (40-60 HP) $11,000-$15,000; mid (75-115 HP) $17,000-$22,000; 150 HP $23,000-$30,000; high-HP (200-300 HP) $35,000-$40,000. Build a quote at mercuryrepower.ca for your specific setup.' },
       { question: "What's included in a Mercury repower quote?", answer: 'Motor, rigging (controls, cables, gauges), prop, install labour, and on-water test. We list every line item. No hidden fees.' },
@@ -12589,7 +12593,9 @@ If you would rather talk it through, call **(905) 342-2153** or send us an email
 - [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
 - [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
-`,
+
+
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).`,
     faqs: [
       { question: 'Can I finance a Mercury repower in Ontario?', answer: 'Yes. The current standard path is TD "Always On" at 5.48% APR through December 31, 2026 (OAC / subject to lender approval), placed through Dealerplan Peterborough. Covers the full project: motor, rigging, controls, prop, install labour, on-water test on Rice Lake before pickup, hydraulic steering conversion if required, and HST. Terms 24 to 84 months. Build a real quote and see live payment options at mercuryrepower.ca.' },
       { question: 'What\'s the Mercury financing rate in 2026?', answer: '5.48% APR through TD "Always On", current through December 31, 2026. After that, standard tiered rates apply (typically starting around 7.99% APR for good credit, varying by lender and credit profile). Current promotion details are on the promotions page.' },
@@ -34320,7 +34326,9 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
 - [Best Pontoon Outboard 2026: Mercury](/blog/best-pontoon-outboard-2026-mercury)
 - [Mercury Command Thrust Pontoon Eligibility 2026](/blog/mercury-command-thrust-pontoon-eligibility-2026)
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-- [Mercury Outboard Monthly Payment Math, Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)`,
+- [Mercury Outboard Monthly Payment Math, Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).`,
     image: '/lovable-uploads/How_to_Choose_HP.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
