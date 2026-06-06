@@ -13886,9 +13886,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Outboard Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026) post.
+
 **Related guides:**
 - [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 - [Mercury vs Honda Outboards: Honest Ontario Dealer Comparison 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026)
+- [Mercury vs Suzuki Outboard Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026)
 - [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
 - [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
