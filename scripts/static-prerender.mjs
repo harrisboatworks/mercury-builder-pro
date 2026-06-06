@@ -3881,7 +3881,8 @@ const routes = [
     description: 'Contact Harris Boat Works in Gores Landing on Rice Lake. Phone (905) 342-2153. Mercury repower quotes, service, and parts. Pickup only, no shipping.',
     h1: 'Contact Harris Boat Works',
     intro: 'Reach Harris Boat Works at 5369 Harris Boat Works Rd, Gores Landing, Ontario. Phone (905) 342-2153. Email info@harrisboatworks.ca. Pickup only at Gores Landing, no shipping.',
-    schemas: [contactPageSchema()]
+    schemas: [contactPageSchema()],
+    extraNoscript: CONTACT_EXTRA
   },
   {
     path: '/blog',
