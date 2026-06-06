@@ -33,18 +33,22 @@ const HOW_IT_WORKS = [
   {
     icon: Wrench,
     image: stepPickImage,
+    imageBase: 'landing-step-pick',
+    priority: true, // confirmed mobile LCP element
     title: 'Pick your Mercury',
     body: 'Browse the full lineup from 2.5 to 300 HP with live CAD pricing. No "call for quote."',
   },
   {
     icon: RotateCcw,
     image: stepConfigureImage,
+    imageBase: 'landing-step-configure',
     title: 'Configure trade-in & financing',
     body: 'Get an instant trade-in estimate, choose financing or pay-in-full, and see your real monthly payment.',
   },
   {
     icon: Shield,
     image: stepPickupImage,
+    imageBase: 'landing-step-pickup',
     title: 'Water-tested on Rice Lake before pickup',
     body: 'Every Mercury we install gets a real water test on Rice Lake before you pick it up. You drive home with a motor that has been run, tuned, and verified, not a dyno number on a spec sheet.',
   },
