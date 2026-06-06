@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.mercuryrepower.ca/</loc>
     <lastmod>2026-06-06</lastmod>
@@ -326,6 +327,9 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-motor-families.png</image:loc>
       <image:title><![CDATA[Mercury Verado vs FourStroke vs Pro XS: Mercury Family Comparison]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs" />
+    <xhtml:link rel="alternate" hreflang="zh-CA" href="https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-vs-pro-xs-chinese" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor</loc>
@@ -336,6 +340,9 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png</image:loc>
       <image:title><![CDATA[Boat Repowering Guide: When to Replace Your Motor (2026)]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/remotorisation-vs-bateau-neuf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide</loc>
@@ -736,6 +743,9 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png</image:loc>
       <image:title><![CDATA[Mercury 2026 Outboard Lineup for Ontario Boaters]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario</loc>
@@ -796,6 +806,9 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-repower-cost-ontario.png</image:loc>
       <image:title><![CDATA[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario</loc>
@@ -816,6 +829,10 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-115-vs-150-comparison.png</image:loc>
       <image:title><![CDATA[Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison" />
+    <xhtml:link rel="alternate" hreflang="zh-CA" href="https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026</loc>
@@ -866,6 +883,10 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/Late_Season_Boating_Safety_Fall.png</image:loc>
       <image:title><![CDATA[Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario" />
+    <xhtml:link rel="alternate" hreflang="zh-CA" href="https://www.mercuryrepower.ca/blog/zh/winterization-mercury-guide-zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026</loc>
@@ -916,6 +937,9 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-wont-start-dockside.png</image:loc>
       <image:title><![CDATA[Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada</loc>
@@ -1496,6 +1520,9 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-overheating-at-idle.png</image:loc>
       <image:title><![CDATA[Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-dealer-pickering-ontario-hbw</loc>
@@ -1576,6 +1603,9 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-boat-trailer-maintenance-guide-ontario.png</image:loc>
       <image:title><![CDATA[Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026</loc>
@@ -1586,6 +1616,9 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-boat-insurance-ontario-guide-2026.png</image:loc>
       <image:title><![CDATA[Boat Insurance in Ontario: What You Actually Need (2026)]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario</loc>
@@ -1596,6 +1629,9 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-extended-warranty-platinum-ontario.png</image:loc>
       <image:title><![CDATA[Mercury Extended Warranty (Platinum): What It Covers and Why Ontario Boaters Buy It]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario</loc>
@@ -1886,6 +1922,9 @@
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-repower-vs-new-boat.png</image:loc>
       <image:title><![CDATA[Repower vs Buy New Boat: The Honest Math]]></image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/repower-vs-new-boat" />
+    <xhtml:link rel="alternate" hreflang="zh-CA" href="https://www.mercuryrepower.ca/blog/zh/repower-vs-new-boat-zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/repower-vs-new-boat" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor</loc>
@@ -1992,24 +2031,38 @@
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison" />
+    <xhtml:link rel="alternate" hreflang="zh-CA" href="https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario" />
+    <xhtml:link rel="alternate" hreflang="zh-CA" href="https://www.mercuryrepower.ca/blog/zh/winterization-mercury-guide-zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/remotorisation-vs-bateau-neuf</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/remotorisation-vs-bateau-neuf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers</loc>
@@ -2028,6 +2081,9 @@
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto</loc>
@@ -2058,30 +2114,45 @@
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/ko/ontario-boat-buying-guide</loc>
@@ -2142,18 +2213,29 @@
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario" />
+    <xhtml:link rel="alternate" hreflang="zh-CA" href="https://www.mercuryrepower.ca/blog/zh/winterization-mercury-guide-zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison" />
+    <xhtml:link rel="alternate" hreflang="zh-CA" href="https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/zh/repower-vs-new-boat-zh</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/repower-vs-new-boat" />
+    <xhtml:link rel="alternate" hreflang="zh-CA" href="https://www.mercuryrepower.ca/blog/zh/repower-vs-new-boat-zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/repower-vs-new-boat" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh</loc>
@@ -2370,6 +2452,9 @@
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs" />
+    <xhtml:link rel="alternate" hreflang="zh-CA" href="https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-vs-pro-xs-chinese" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/zh/fishing-boat-vs-pontoon-chinese-ontario</loc>
