@@ -4166,7 +4166,7 @@ const routes = [
   },
   {
     path: '/mercury-pro-xs',
-    title: 'Mercury Pro XS Outboards in Ontario | 115–250 HP, Real CAD Pricing | Harris Boat Works',
+    title: 'Mercury Pro XS Outboards - 115 to 300 HP Ontario | HBW',
     description: 'Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.',
     h1: 'Mercury Pro XS Outboards in Ontario',
     intro: 'Tournament-grade performance from 115 to 250 HP. Real CAD pricing, in stock at Harris Boat Works: Mercury Marine Platinum Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.',
