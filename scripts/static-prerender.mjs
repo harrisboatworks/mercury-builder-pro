@@ -4299,7 +4299,8 @@ const routes = [
           "offers": { "@type": "Offer", "priceCurrency": "CAD", "price": "0" },
         },
       ],
-    }],
+    }, faqPageSchemaFromList('/trade-in-value', TRADE_FAQS)],
+    extraNoscript: TRADE_EXTRA,
   },
   {
     path: '/accessories',
