@@ -36332,7 +36332,15 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 ---
 
 **Ready to see what your old motor is worth and what a new Mercury will cost you?**
-Build your repower quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call us at 905-342-2153.`
+Build your repower quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call us at 905-342-2153.
+## Related guides
+
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
+- [How to Pick the Right Horsepower When You Repower (Reading Your Capacity Plate)](/blog/repower-horsepower-capacity-plate-guide): Don't guess on horsepower. Your boat's capacity plate is the legal ceiling, and it's not optional. How to.
+- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
+- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
+
+`
   },
   {
     slug: "repower-financing-ontario-rates-monthly-payments",
@@ -36417,7 +36425,15 @@ If your hull needs transom work, steering replacement, or electrical upgrades as
 ---
 
 **Build your quote first, then call us about financing.**
-Start at [mercuryrepower.ca](https://mercuryrepower.ca) or reach us at 905-342-2153.`
+Start at [mercuryrepower.ca](https://mercuryrepower.ca) or reach us at 905-342-2153.
+## Related guides
+
+- [Boat Repower Financing in Ontario (2026 Guide)](/blog/mercury-outboard-financing-ontario-2026): Mercury outboard financing in Ontario through HBW - current 5.48% APR TD Always On rate through Dec 31 2026.
+- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026): What does a Mercury outboard repower cost per month in Ontario? Verified amortization tables. Active Mercury.
+- [The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from.
+- [The Best Mercury Outboard for Ski and Wakeboard Boats. Real-World Picks (2026)](/blog/best-mercury-for-ski-wakeboard-boats): An HBW guide to the best Mercury outboards for ski and wakeboard boats, what hole shot really means, when Pro.
+
+`
   },
   {
     slug: "repower-horsepower-capacity-plate-guide",
@@ -36517,7 +36533,15 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 ---
 
 **Ready to figure out the right motor for your hull?**
-Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.`
+Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
+## Related guides
+
+- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-johnson-to-mercury-repower-conversion): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
+- [What Happens to Your Old Motor When You Repower (Trade-In, HST Credit, Disposal)](/blog/repower-old-motor-trade-in-hst-disposal-ontario): Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and.
+- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
+- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
+
+`
   },
   {
     slug: "repower-pontoon-aluminum-v-hull-differences",
@@ -36607,7 +36631,15 @@ We're not putting a motor on a boat, handing you the keys, and finding out there
 ---
 
 **Tell us what you've got and we'll tell you what fits.**
-Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.`
+Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
+## Related guides
+
+- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
+- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-johnson-to-mercury-repower-conversion): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
+- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring.
+- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
+
+`
   },
   {
     slug: "evinrude-johnson-to-mercury-repower-conversion",
@@ -36701,7 +36733,15 @@ When you pick up your boat, the motor has already run. Any rigging or setup issu
 ---
 
 **Running an orphan motor? Let's see what a Mercury repower looks like for your boat.**
-Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.`
+Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
+## Related guides
+
+- [How to Pick the Right Horsepower When You Repower (Reading Your Capacity Plate)](/blog/repower-horsepower-capacity-plate-guide): Don't guess on horsepower. Your boat's capacity plate is the legal ceiling, and it's not optional. How to.
+- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
+- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring.
+- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
+
+`
   },
   {
     slug: "boat-repower-process-step-by-step",
@@ -36805,7 +36845,15 @@ When you pick up the boat, we walk you through the new motor, break-in procedure
 ---
 
 **Ready to book your repower?**
-Start with a quote at [mercuryrepower.ca](https://mercuryrepower.ca), then request service at [hbw.wiki/service](https://hbw.wiki/service). Questions first? Call 905-342-2153.`
+Start with a quote at [mercuryrepower.ca](https://mercuryrepower.ca), then request service at [hbw.wiki/service](https://hbw.wiki/service). Questions first? Call 905-342-2153.
+## Related guides
+
+- [The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from.
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
+- [What Happens to Your Old Motor When You Repower (Trade-In, HST Credit, Disposal)](/blog/repower-old-motor-trade-in-hst-disposal-ontario): Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and.
+- [Boat Insurance in Ontario: What You Actually Need (2026)](/blog/boat-insurance-ontario-guide-2026): Ontario boat insurance basics. Liability vs hull coverage, what is covered vs not, real annual premium ranges.
+
+`
   },
   {
     slug: "mercury-warranty-after-repower-ontario",
@@ -36909,7 +36957,15 @@ Mercury warranty is tied to the motor's serial number, not to the dealership whe
 ---
 
 **Questions about warranty coverage on a specific motor?**
-Call us at 905-342-2153 or build your repower quote, warranty terms are listed with each motor, at [mercuryrepower.ca](https://mercuryrepower.ca).`
+Call us at 905-342-2153 or build your repower quote, warranty terms are listed with each motor, at [mercuryrepower.ca](https://mercuryrepower.ca).
+## Related guides
+
+- [Mercury Extended Warranty (Platinum): What It Covers and Why Ontario Boaters Buy It](/blog/mercury-extended-warranty-platinum-ontario): Mercury Product Protection Platinum extends factory warranty up to 8 years total, covering mechanical AND.
+- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad): All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and.
+- [Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)](/blog/mercury-repower-gta-toronto-destination): A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline.
+
+`
   },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
