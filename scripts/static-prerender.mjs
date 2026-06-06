@@ -2617,6 +2617,11 @@ const FR_TO_EN_SLUG = {
   'guide-assurance-bateau-ontario-2026': 'boat-insurance-ontario-guide-2026',
   'garantie-prolongee-mercury-platinum-ontario': 'mercury-extended-warranty-platinum-ontario',
   'gamme-mercury-hors-bord-2026-ontario': 'mercury-2026-outboard-lineup-ontario',
+  'peche-lac-rice-ontario-guide-plaisanciers': 'rice-lake-boating-guide-2026',
+  'permis-bateau-ontario-carte-conducteur-embarcation': 'pleasure-craft-licence-update-repower-ontario',
+  'remotorisation-mercury-gta-toronto': 'mercury-repower-gta-toronto-destination',
+  'revue-mercury-75-hp-fourstroke-ontario': 'mercury-75-hp-fourstroke-review-ontario',
+  'revue-mercury-90-hp-fourstroke-ontario': 'mercury-90-hp-fourstroke-review-ontario',
 };
 const ZH_TO_EN_SLUG = {
   'mercury-115-vs-150-comparison-zh': 'mercury-115-vs-150-hp-outboard-ontario',
@@ -2638,6 +2643,16 @@ function blogHreflangTags(enSlug) {
   if (zhSlug) tags.push(`<link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
   tags.push(`<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/${enSlug}" />`);
   return tags.join('\n  ');
+}
+
+// ZH-only fallback: for Chinese-targeted posts with no English twin, point
+// zh-CA to self and x-default to the Chinese blog hub (content is locale-
+// specific, so a non-Chinese landing page would be a worse default).
+function zhOnlyHreflangTags(zhSlug) {
+  return [
+    `<link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${zhSlug}" />`,
+    `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/zh" />`,
+  ].join('\n  ');
 }
 
 // Build blog article route configs.
@@ -2715,7 +2730,9 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       const enSlug = langCode === 'fr' ? FR_TO_EN_SLUG[article.slug]
                    : langCode === 'zh' ? ZH_TO_EN_SLUG[article.slug]
                    : undefined;
-      return enSlug ? blogHreflangTags(enSlug) : '';
+      if (enSlug) return blogHreflangTags(enSlug);
+      if (langCode === 'zh') return zhOnlyHreflangTags(article.slug);
+      return '';
     })(),
     extraNoscript: () => {
       const heroHtml = renderHeroPictureHtml(article.image, article.title);
@@ -4940,7 +4957,17 @@ function sitemapHreflangBlock(loc) {
   if (mFr) enSlug = FR_TO_EN_SLUG[mFr[1]];
   else if (mZh) enSlug = ZH_TO_EN_SLUG[mZh[1]];
   else if (mEn) enSlug = mEn[1];
-  if (!enSlug) return '';
+  if (!enSlug) {
+    // ZH-only fallback: emit zh-CA self + x-default pointing at the ZH hub
+    // so Google clusters Chinese-targeted posts without faking an EN twin.
+    if (mZh) {
+      return '\n' + [
+        `    <xhtml:link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${mZh[1]}" />`,
+        `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/zh" />`,
+      ].join('\n');
+    }
+    return '';
+  }
   const frSlug = EN_TO_FR_SLUG[enSlug];
   const zhSlug = EN_TO_ZH_SLUG[enSlug];
   if (!frSlug && !zhSlug) return '';
