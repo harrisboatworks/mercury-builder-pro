@@ -4416,7 +4416,8 @@ const routes = [
           "areaServed": { "@type": "AdministrativeArea", "name": "Canada" },
         },
       ],
-    }],
+    }, faqPageSchemaFromList('/finance-calculator', FINANCE_FAQS)],
+    extraNoscript: FINANCE_EXTRA,
   },
   {
     path: '/financing-application',
