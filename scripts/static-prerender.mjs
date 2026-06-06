@@ -3856,7 +3856,8 @@ const routes = [
     description: 'Family-owned Mercury Marine Platinum Dealer on Rice Lake, Ontario. Founded in 1947, selling Mercury outboards since 1965. Repower specialists serving Ontario boaters.',
     h1: 'About Harris Boat Works',
     intro: 'Harris Boat Works is a family-owned Mercury Marine Platinum Dealer on Rice Lake, Ontario. Founded in 1947 and selling Mercury since 1965, we are repower and outboard specialists serving Ontario boaters.',
-    schemas: [aboutPageSchema()]
+    schemas: [aboutPageSchema()],
+    extraNoscript: ABOUT_EXTRA
   },
   {
     path: '/about/jay-harris',
