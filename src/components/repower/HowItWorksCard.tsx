@@ -56,7 +56,7 @@ export function HowItWorksCard({
             <source type="image/webp" srcSet={buildSet('webp')} sizes={sizes} />
             <img
               src={image}
-              alt={title}
+              alt={alt ?? title}
               loading={priority ? 'eager' : 'lazy'}
               fetchPriority={priority ? 'high' : 'auto'}
               decoding="async"
@@ -68,7 +68,7 @@ export function HowItWorksCard({
         ) : (
           <img
             src={image}
-            alt={title}
+            alt={alt ?? title}
             loading={priority ? 'eager' : 'lazy'}
             fetchPriority={priority ? 'high' : 'auto'}
             decoding="async"
