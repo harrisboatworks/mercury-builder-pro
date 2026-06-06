@@ -145,10 +145,12 @@ export function HeroRepower() {
         draggable={false}
       />
       {/* Background hero video loop — mounted after first paint / LCP. Skipped
-          entirely on prefers-reduced-motion or Save-Data. */}
+          entirely on prefers-reduced-motion or Save-Data, and HIDDEN on mobile
+          viewports (≤768px) where a 3.6 MB autoplay video kills LCP and burns
+          mobile data. Mobile sees only the optimized static poster above. */}
       {showVideo && (
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover"
           autoPlay
           loop
           muted
