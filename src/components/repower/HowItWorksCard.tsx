@@ -10,6 +10,8 @@ export interface HowItWorksCardProps {
    * <picture> with AVIF + WebP at 400/800/1600w.
    */
   imageBase?: string;
+  /** Accessible alt text for the image (defaults to title). */
+  alt?: string;
   /** Above-the-fold LCP candidate: eager-load with high fetchpriority. */
   priority?: boolean;
   title: string;
@@ -26,6 +28,7 @@ export function HowItWorksCard({
   icon: Icon,
   image,
   imageBase,
+  alt,
   priority = false,
   title,
   body,

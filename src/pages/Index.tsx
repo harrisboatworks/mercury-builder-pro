@@ -195,7 +195,7 @@ export default function Index() {
                   key={step.title}
                   icon={step.icon}
                   image={step.image}
-                  imageBase={step.imageBase}
+                  alt={step.alt}
                   priority={step.priority}
                   title={step.title}
                   body={step.body}
