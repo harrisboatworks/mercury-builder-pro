@@ -361,7 +361,7 @@ function preprocessSpecialBlocks(md: string): string {
         ),
       ),
     ),
-  )));
+  ))));
 }
 
 /**
