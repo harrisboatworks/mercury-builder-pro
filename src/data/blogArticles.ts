@@ -36276,6 +36276,8 @@ If you are weighing a Mercury repower for spring 2026, the next step is a no-obl
     ],
     content: `*Last reviewed: 2026-06-06*
 
+> **Quick answer:** Your old outboard can be traded in toward the new motor, used to reduce the taxable amount of the transaction (which affects your HST), or disposed of properly if it's beyond any trade value. Most customers do a combination of all three. We inspect every trade-in and give you a number upfront, before you commit.
+
 ## Your old motor doesn't have to be your problem
 
 Here's the short answer: when you repower at Harris Boat Works, your old outboard can be traded in toward the new motor, used to reduce the taxable amount of the transaction (which affects your HST), or disposed of properly if it's beyond any trade value. Most customers do a combination of all three.
@@ -36362,6 +36364,8 @@ Build your repower quote at [mercuryrepower.ca](https://mercuryrepower.ca) or ca
       { question: "Do I have to apply for financing before getting a quote?", answer: "No. There's no obligation to apply before getting a quote. Many customers build the quote at mercuryrepower.ca first, then decide whether to finance or pay cash." }
     ],
     content: `*Last reviewed: 2026-06-06*
+
+> **Quick answer:** Yes, you can finance a Mercury repower in Ontario. The amount financed is the installed cost of the repower (motor, rigging, controls, labour) minus any trade-in credit and down payment. Build your installed-price quote at mercuryrepower.ca first, then decide whether to finance or pay cash.
 
 ## Can you finance a repower? Yes. Here's what it actually costs.
 
@@ -36454,6 +36458,8 @@ Start at [mercuryrepower.ca](https://mercuryrepower.ca) or reach us at 905-342-2
       { question: "Should I always repower to the maximum rated horsepower?", answer: "Not necessarily. Maximum rated horsepower means the hull was engineered to handle that power, not that it's the right choice for your use, fuel costs, or your hull's actual condition. Transom condition, how you use the boat, and the heavier weight of modern four-strokes all matter. Harris Boat Works matches the motor to the hull and the use, and inspects the transom before every repower." }
     ],
     content: `*Last reviewed: 2026-06-06*
+
+> **Quick answer:** Your boat's capacity plate is the legal ceiling for outboard horsepower in Canada, not a suggestion. Read the maximum horsepower, weight, and persons capacity printed on the plate, then match the motor to how you actually use the boat and the real condition of the transom.
 
 ## The capacity plate tells you the ceiling. You still have to pick the right floor.
 
@@ -36564,6 +36570,8 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
     ],
     content: `*Last reviewed: 2026-06-06*
 
+> **Quick answer:** A repower isn't just swapping one motor for another. The hull type, pontoon, aluminum fishing boat, or fibreglass V-hull, determines which motors fit, how the new engine loads the transom, which shaft length you need, and what else might need to be addressed while you're at it.
+
 ## The hull you own changes the repower conversation
 
 A repower isn't just swapping one motor for another. The hull type determines which motors fit, how the new engine loads the transom, which shaft length you need, and what else might need to be addressed while you're at it.
@@ -36661,6 +36669,8 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
       { question: "Is my old Evinrude or Johnson worth anything as a trade-in?", answer: "Maybe, running condition, vintage, and model all matter. Harris Boat Works inspects and assesses every trade-in before quoting. Orphan motors in marginal condition have limited trade value, but the real value comes from the fuel savings, simpler maintenance, and reliability of the new motor over the next ten seasons." }
     ],
     content: `*Last reviewed: 2026-06-06*
+
+> **Quick answer:** BRP stopped producing Evinrude outboards in 2020 and Johnson outboards haven't been built under that name since the early 2000s. Parts and qualified service are shrinking every year. When keeping an orphan motor alive stops being practical, a Mercury repower is the cleanest path back to reliable time on the water.
 
 ## Your Evinrude isn't coming back. Here's what happens next.
 
@@ -36763,6 +36773,8 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
       { question: "When should I book a repower for a spring launch?", answer: "Motor lead times vary by model and season, and spring is busy. If you're planning a spring launch, the time to book is well before ice-out, not the week before. Start with a quote at mercuryrepower.ca and contact Harris Boat Works to confirm availability." }
     ],
     content: `*Last reviewed: 2026-06-06*
+
+> **Quick answer:** A repower at Harris Boat Works runs eight steps: building an installed-price quote at mercuryrepower.ca, booking the job, drop-off and full assessment, old motor removal, rigging and installation to Mercury spec, a pre-water rigging check, an on-water test on Rice Lake, and pickup with a break-in walk-through.
 
 ## Most people don't know what they're agreeing to until it's done. Here's the whole process.
 
@@ -36876,6 +36888,8 @@ Start with a quote at [mercuryrepower.ca](https://mercuryrepower.ca), then reque
       { question: "How do I make a Mercury warranty claim?", answer: "Contact Harris Boat Works at 905-342-2153 or submit a service request at hbw.wiki/service. They assess whether the issue falls under warranty, submit the claim to Mercury on your behalf, and perform the work. You pay nothing for covered warranty repairs. Don't attempt repairs or modifications first, unauthorized work can complicate a claim." }
     ],
     content: `*Last reviewed: 2026-06-06*
+
+> **Quick answer:** Your Mercury warranty starts the day the motor is rigged and registered. Current FourStroke outboards carry a 3-year factory limited warranty for recreational use, and until June 14, 2026 every new Mercury at Harris Boat Works ships with 7 years of factory-backed coverage as an HBW Exclusive. We're a Mercury Platinum dealer, so the warranty is registered correctly and claims are handled in-house.
 
 ## Your Mercury warranty starts the day the motor is rigged and registered, here's what it covers.
 
