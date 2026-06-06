@@ -8,6 +8,7 @@
     "build": "node scripts/generate-markdown-twins.mjs && node scripts/fetch-google-places-data.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-structured-data.mjs && node scripts/validate-schema-org.mjs && node scripts/indexnow-submit.mjs",
     "build:dev": "vite build --mode development",
     "check:blog-leaks": "node scripts/check-blog-leaks.mjs",
+    "check:blog-assets": "node scripts/check-blog-asset-existence.mjs",
     "check:blog-articles": "tsx scripts/validate-blog-articles.ts",
     "check:pricing-reference-copy": "node scripts/check-pricing-reference-copy.mjs",
     "check:pricing-drift": "node scripts/check-blog-pricing-drift.mjs",
