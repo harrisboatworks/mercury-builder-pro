@@ -2711,6 +2711,12 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
         }))
       }] : [])
     ],
+    extraHead: (() => {
+      const enSlug = langCode === 'fr' ? FR_TO_EN_SLUG[article.slug]
+                   : langCode === 'zh' ? ZH_TO_EN_SLUG[article.slug]
+                   : undefined;
+      return enSlug ? blogHreflangTags(enSlug) : '';
+    })(),
     extraNoscript: () => {
       const heroHtml = renderHeroPictureHtml(article.image, article.title);
       const bylineHtml = renderAuthorBylineHtml(article.author);
