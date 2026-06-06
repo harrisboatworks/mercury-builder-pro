@@ -3503,6 +3503,294 @@ const HUB_ROUTES = HUB_DEFS.map(def => ({
     hubFaqHtml(def.faqs),
 }));
 
+// -----------------------------------------------------------------------------
+// Commercial-page noscript enrichment helpers.
+// Used by /repower/cost, /repower/process, /quote/motor-selection,
+// /finance-calculator, /trade-in-value, /about, /contact to ship 1500-3000
+// chars of crawlable body content + matching FAQPage JSON-LD.
+// HBW Tier 3.5 voice. No em-dashes. No fake urgency.
+// -----------------------------------------------------------------------------
+function commercialBodyHtml({ sections = [], table = null, faqs = [], related = [], anchor = true }) {
+  const sectionsHtml = sections.map(s => {
+    const paras = s.paragraphs ? s.paragraphs.map(p => `<p>${escapeHtml(p)}</p>`).join('') : '';
+    const bullets = s.bullets && s.bullets.length
+      ? `<ul>${s.bullets.map(b => `<li>${escapeHtml(b)}</li>`).join('')}</ul>`
+      : '';
+    return `<section><h2>${escapeHtml(s.h2)}</h2>${paras}${bullets}</section>`;
+  }).join('');
+  const tableHtml = table
+    ? `<section><h2>${escapeHtml(table.caption)}</h2><table><thead><tr>${
+        table.columns.map(c => `<th>${escapeHtml(c)}</th>`).join('')
+      }</tr></thead><tbody>${
+        table.rows.map(r => `<tr>${r.map(c => `<td>${escapeHtml(c)}</td>`).join('')}</tr>`).join('')
+      }</tbody></table></section>`
+    : '';
+  const faqHtml = faqs.length
+    ? `<section><h2>Frequently asked questions</h2><dl>${
+        faqs.map(f => `<dt><strong>${escapeHtml(f.q)}</strong></dt><dd>${escapeHtml(f.a)}</dd>`).join('')
+      }</dl></section>`
+    : '';
+  const relatedHtml = related.length
+    ? `<section><h2>Related pages</h2><ul>${
+        related.map(r => `<li><a href="${escapeHtml(r.href)}">${escapeHtml(r.label)}</a></li>`).join('')
+      }</ul></section>`
+    : '';
+  const anchorHtml = anchor
+    ? `<p><strong>Family-owned since 1947, Mercury dealer since 1965, Mercury Platinum Dealer.</strong></p>`
+    : '';
+  return sectionsHtml + tableHtml + faqHtml + relatedHtml + anchorHtml;
+}
+
+function faqPageSchemaFromList(path, faqs) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${SITE_URL}${path}#faqpage`,
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a },
+    })),
+  };
+}
+
+const REPOWER_COST_FAQS = [
+  { q: 'What does a Mercury repower cost in Ontario in 2026?', a: 'A Mercury repower at Harris Boat Works typically runs from about $11,000 CAD for a small portable swap on an aluminum tiller boat up to roughly $40,000 CAD for a 250 to 300 HP Pro XS on a bass or walleye rig with full rigging. The number depends on HP class, control type, gauges, and whether the existing rigging can be reused.' },
+  { q: 'What does the price include?', a: 'Our quote includes the Mercury outboard in CAD, install labour, standard rigging components for that HP class, a Mercury OEM propeller allowance, a lake test on Rice Lake, and pre-delivery inspection. Trade-in credit and financing are added after.' },
+  { q: 'Are install and rigging separate?', a: 'They are itemized on the quote. The motor is one line. Install labour is one line. Rigging components such as controls, harness, gauges, and steering adapters are itemized so you can see exactly what you are paying for.' },
+  { q: 'Do you charge for delivery?', a: 'No. HBW is pickup only at Gores Landing on Rice Lake. We do not arrange long-haul delivery. Most customers pick up after the lake test or trailer the boat home directly.' },
+  { q: 'Why are some HP classes the same price?', a: 'Mercury prices the 90 ELPT and 90 ELPT Command Thrust the same in CAD. The 115 EFI and 115 Pro XS run very close. Choice of model inside a class is about gearcase, weight, and use, not always price.' },
+  { q: 'Do you finance the repower?', a: 'Yes, through DealerPlan. Current promotional Mercury financing is 5.48% APR through December 31, 2026 OAC. Standard rates are 8.99% APR under $10,000 CAD and 7.99% APR over $10,000 CAD. Minimum financed amount is $5,000.' },
+];
+const REPOWER_COST_EXTRA = () => commercialBodyHtml({
+  sections: [
+    { h2: 'Short answer', paragraphs: ['A Mercury repower in Ontario in 2026 runs about $11,000 to $40,000 CAD all-in depending on HP class, hull, and how much existing rigging can be reused. Harris Boat Works publishes live CAD pricing on every Mercury outboard we sell.'] },
+    { h2: 'What drives the price', bullets: ['HP class and motor family (FourStroke vs Pro XS vs Command Thrust)', 'Shaft length, 15 inch, 20 inch, or 25 inch', 'Control type (tiller, side mount, or binnacle)', 'Gauges, SmartCraft Connect, or VesselView', 'Steering style, mechanical cable or hydraulic', 'Whether existing rigging can be reused', 'Trade-in credit applied against the motor subtotal'], paragraphs: ['Installation in the marina runs from April through November. Marina is closed December 1 to April 1. Planning happens over winter, install starts in April.'] },
+  ],
+  table: {
+    caption: 'Typical Mercury repower price ranges by HP class (CAD, all-in)',
+    columns: ['HP class', 'Family', 'Typical all-in range'],
+    rows: [
+      ['9.9 to 20 HP', 'Portable FourStroke', '$3,500 to $6,500'],
+      ['25 to 30 HP', 'Mid portable', '$6,500 to $9,500'],
+      ['40 to 60 HP', 'FourStroke mid-range', '$9,500 to $14,500'],
+      ['90 to 115 HP', 'FourStroke / Command Thrust', '$14,500 to $19,500'],
+      ['115 to 150 HP', 'FourStroke or Pro XS', '$17,500 to $24,000'],
+      ['150 to 200 HP', 'Pro XS V6', '$22,000 to $30,000'],
+      ['200 to 250 HP', 'Pro XS V8', '$27,000 to $35,000'],
+      ['250 to 300 HP', 'Pro XS V8', '$30,000 to $40,000'],
+    ],
+  },
+  faqs: REPOWER_COST_FAQS,
+  related: [
+    { href: '/quote/motor-selection', label: 'Build a Mercury quote' },
+    { href: '/pricing-reference', label: 'Mercury pricing reference (CAD)' },
+    { href: '/finance-calculator', label: 'Finance calculator' },
+    { href: '/trade-in-value', label: 'Trade-in value estimator' },
+    { href: '/repower/process', label: 'Mercury repower process' },
+    { href: '/faq', label: 'Repower FAQ' },
+  ],
+});
+
+const REPOWER_PROCESS_FAQS = [
+  { q: 'How long does a Mercury repower take?', a: 'Typical shop time is two to four weeks from deposit to splash for a standard repower. Booking lead time depends on the season. Winter and early spring are the quietest, mid-summer is the busiest.' },
+  { q: 'Do I need to bring my boat to Rice Lake?', a: 'Yes. HBW is pickup and drop-off only at 5369 Harris Boat Works Rd, Gores Landing. We do not pick up or deliver. Most customers within two hours trailer the boat themselves.' },
+  { q: 'When does install actually start?', a: 'The marina is closed December 1 to April 1. Quotes and ordering happen all winter, install work starts in April once water is open.' },
+  { q: 'Will you test the motor before pickup?', a: 'Yes. Every install gets a real lake test on Rice Lake before pickup, including WOT RPM check and trim function. If a prop needs to change to hit the right WOT range, we swap it.' },
+  { q: 'How much deposit do you need?', a: 'For in-stock motors the deposit is fully refundable until install begins. Special-order motors require a non-refundable deposit because the motor is built to your spec.' },
+  { q: 'Do you handle the warranty paperwork?', a: 'Yes. We register the Mercury warranty in your name at install, including any active promotional bonus years, and you get the registration confirmation with your pickup paperwork.' },
+];
+const REPOWER_PROCESS_EXTRA = () => commercialBodyHtml({
+  sections: [
+    { h2: 'Short answer', paragraphs: ['A Mercury repower at HBW follows seven steps from first quote to splash: consult, written quote, deposit, motor order, schedule, install and rigging, water test, pickup. The whole cycle is two to four shop weeks once the motor is in hand.'] },
+    { h2: 'The seven steps', bullets: [
+      'Consult: phone or email walkthrough of boat, current motor, and goals',
+      'Quote: live CAD quote built online or by phone with itemized parts and labour',
+      'Order: deposit secured, motor ordered through Mercury (or pulled from in-stock)',
+      'Schedule: install slot booked, you choose drop-off date',
+      'Install and rigging: motor mounted, controls and harness fitted, fluids and prop set',
+      'Water test: real lake test on Rice Lake, WOT RPM verified, prop adjusted if needed',
+      'Pickup: walkthrough, warranty registered, paperwork handed over',
+    ] },
+    { h2: 'Seasonality', paragraphs: ['Marina is closed December 1 to April 1. Most planning happens over winter. April through June is peak install season. Booking early in the season gets the best install slots.'] },
+  ],
+  faqs: REPOWER_PROCESS_FAQS,
+  related: [
+    { href: '/repower/cost', label: 'Mercury repower cost' },
+    { href: '/quote/motor-selection', label: 'Build a Mercury quote' },
+    { href: '/finance-calculator', label: 'Finance calculator' },
+    { href: '/trade-in-value', label: 'Trade-in value estimator' },
+    { href: '/contact', label: 'Contact HBW' },
+    { href: '/faq', label: 'Repower FAQ' },
+  ],
+});
+
+const MOTOR_SELECTION_FAQS = [
+  { q: 'What Mercury families do you stock?', a: 'FourStroke and Pro XS are our standard stock from 2.5 HP portables to 300 HP V8s. Verado, SeaPro, and Avator are special-order through Mercury. Command Thrust is available on selected 25 HP through 115 HP FourStroke models.' },
+  { q: 'How do I know which HP I need?', a: 'Start with the boat capacity plate, never exceed the rated maximum HP. From there it is hull type, weight, and how many people you run with. Our quote builder asks the right questions and narrows the picks for your boat.' },
+  { q: 'What is Command Thrust?', a: 'A larger gearcase and lower gear ratio that turns a bigger prop. Best for heavy pontoons and loaded aluminum boats up to 115 HP. There is no 150 HP Command Thrust.' },
+  { q: 'Pro XS vs FourStroke?', a: 'Pro XS is the performance line, lighter and faster, ideal for bass, walleye, and runabouts that chase top speed. FourStroke is quieter and smoother, ideal for pontoons, family runabouts, and trolling-heavy use.' },
+  { q: 'Do prices include install?', a: 'The quote builder shows motor price first, then lets you add install, rigging, controls, gauges, and accessories. Everything is itemized in CAD before you commit.' },
+];
+const MOTOR_SELECTION_EXTRA = () => commercialBodyHtml({
+  sections: [
+    { h2: 'Short answer', paragraphs: ['Pick a Mercury family and HP class to build a real CAD quote. We carry FourStroke and Pro XS in standard stock from 2.5 to 300 HP. Verado, SeaPro, and Avator are special-order. Every quote is itemized: motor, install, rigging, accessories, trade-in, financing.'] },
+    { h2: 'Browse by HP class', bullets: [
+      'Portable, 2.5 to 20 HP, tiller and short shaft, tender and small aluminum',
+      'Mid-range, 25 to 60 HP, FourStroke for aluminum fishing and small pontoons',
+      'Mid-power, 75 to 115 HP, FourStroke and Command Thrust, pontoons and family boats',
+      'High-power, 150 to 200 HP, FourStroke and Pro XS V6, runabouts and bass boats',
+      'Top-end, 225 to 300 HP, Pro XS V8, performance fishing and offshore',
+    ] },
+    { h2: 'Browse by family', bullets: [
+      'Mercury FourStroke, the quiet workhorse, full range to 300 HP',
+      'Mercury Pro XS, the performance line, 115 to 300 HP',
+      'Mercury Command Thrust, heavy-thrust gearcase up to 115 HP',
+      'Mercury ProKicker, dedicated trolling and kicker, 9.9 and 15 HP',
+      'Mercury SeaPro, commercial-rated, special order',
+      'Mercury Avator, electric, special order',
+    ] },
+  ],
+  faqs: MOTOR_SELECTION_FAQS,
+  related: [
+    { href: '/pricing-reference', label: 'Mercury pricing reference (CAD)' },
+    { href: '/repower/cost', label: 'Repower cost guide' },
+    { href: '/mercury-pro-xs', label: 'Mercury Pro XS lineup' },
+    { href: '/mercury-pontoon-outboards', label: 'Mercury pontoon outboards' },
+    { href: '/finance-calculator', label: 'Finance calculator' },
+    { href: '/faq', label: 'Repower FAQ' },
+  ],
+});
+
+const FINANCE_FAQS = [
+  { q: 'What is the current Mercury financing rate?', a: 'The headline Always-On rate is 5.48% APR through December 31, 2026 OAC, available on qualifying Mercury outboard purchases through DealerPlan. After December 31, 2026 the rate reverts to the standard tier of 8.99% APR under $10,000 and 7.99% APR over $10,000.' },
+  { q: 'What is the minimum financed amount?', a: '$5,000 CAD. Anything under that has to be paid by debit, credit card, or e-transfer.' },
+  { q: 'What is the longest term?', a: 'Up to 144 months on qualifying Mercury outboard repowers OAC. Most customers pick 60 to 120 months depending on payment comfort.' },
+  { q: 'Are there fees?', a: 'A $349 DealerPlan administration fee applies and is added after tax. It is shown on the quote before you sign.' },
+  { q: 'Can I pay it off early?', a: 'Yes. DealerPlan loans are open, no prepayment penalty. Most customers prepay extra in tax-refund season or after a bonus.' },
+  { q: 'Does the trade-in reduce what I finance?', a: 'Yes. Trade-in credit is applied to the motor subtotal before financing. The amount financed equals motor and rigging total, plus tax and the $349 fee, minus down payment and trade-in credit.' },
+];
+const FINANCE_EXTRA = () => commercialBodyHtml({
+  sections: [
+    { h2: 'Short answer', paragraphs: ['Estimate your Mercury outboard payment in CAD. The current Always-On promotional rate is 5.48% APR through December 31, 2026 OAC through DealerPlan. After the promo, rates revert to 8.99% under $10,000 and 7.99% over $10,000. Minimum financed is $5,000, terms up to 144 months.'] },
+    { h2: 'How the math works', paragraphs: ['Amount financed equals motor and rigging total, plus tax, plus the $349 DealerPlan fee, minus down payment, minus trade-in credit. Monthly payment is the standard amortization at the rate and term you pick.'] },
+  ],
+  table: {
+    caption: 'Example monthly payments at 5.48% APR (Always-On promo)',
+    columns: ['Amount financed', '60 months', '84 months', '120 months', '144 months'],
+    rows: [
+      ['$10,000', '$191', '$144', '$108', '$95'],
+      ['$15,000', '$286', '$216', '$162', '$143'],
+      ['$20,000', '$381', '$288', '$216', '$190'],
+      ['$25,000', '$477', '$359', '$270', '$238'],
+      ['$30,000', '$572', '$431', '$324', '$285'],
+      ['$35,000', '$667', '$503', '$378', '$333'],
+    ],
+  },
+  faqs: FINANCE_FAQS,
+  related: [
+    { href: '/financing-application', label: 'Start a financing application' },
+    { href: '/quote/motor-selection', label: 'Build a Mercury quote' },
+    { href: '/repower/cost', label: 'Repower cost guide' },
+    { href: '/trade-in-value', label: 'Trade-in value estimator' },
+    { href: '/pricing-reference', label: 'Mercury pricing reference' },
+    { href: '/faq', label: 'Repower FAQ' },
+  ],
+});
+
+const TRADE_FAQS = [
+  { q: 'How is the trade-in value calculated?', a: 'We anchor to the median actual selling price for the same HP, year, and family in our local market, then apply brand-specific adjustments. Mercury and Yamaha hold value strongest. Honda, Suzuki, Tohatsu, and Evinrude are accepted with applied penalties.' },
+  { q: 'Do I need to bring the motor in for inspection?', a: 'Not for the online estimate. The instant estimate is binding within reasonable condition variance. A short visual inspection at drop-off confirms condition grade and finalizes the credit.' },
+  { q: 'What condition grades do you use?', a: 'A 1 to 5 scale. 5 is showroom, 1 is scrap. Most running motors fall between 2 (rough, runs) and 4 (well kept, full service history).' },
+  { q: 'What brands do you accept?', a: 'Mercury, Yamaha, Honda, Suzuki, Tohatsu, Evinrude, and Johnson. Each brand carries a value adjustment based on Ontario resale demand.' },
+  { q: 'Can the trade exceed my new motor price?', a: 'No. Trade-in credit is capped at the motor subtotal so the quote never goes negative.' },
+  { q: 'What if my motor does not run?', a: 'Non-runners get a salvage value, typically $200 to $800 depending on HP. Bring photos and we will quote it.' },
+];
+const TRADE_EXTRA = () => commercialBodyHtml({
+  sections: [
+    { h2: 'Short answer', paragraphs: ['Get an instant CAD trade-in estimate anchored to our actual selling prices, not stale blue-book figures. Credit applies directly to your Mercury repower quote, capped at the motor subtotal.'] },
+    { h2: 'How we value your motor', bullets: [
+      'Brand and family (Mercury and Yamaha hold value best)',
+      'HP class and year',
+      'Condition grade on a 1 to 5 scale',
+      'Hours on the powerhead if known',
+      'Tiller vs remote, shaft length, electric vs manual start',
+      'Service history and prior winterization',
+    ] },
+  ],
+  table: {
+    caption: 'Example trade values for clean, running outboards (CAD, 5 to 10 year age range)',
+    columns: ['HP class', 'Mercury / Yamaha', 'Honda / Suzuki', 'Other brands'],
+    rows: [
+      ['9.9 to 20 HP', '$1,200 to $2,200', '$800 to $1,600', '$500 to $1,100'],
+      ['25 to 40 HP', '$2,000 to $3,800', '$1,400 to $2,700', '$1,000 to $1,900'],
+      ['50 to 75 HP', '$3,500 to $6,000', '$2,500 to $4,200', '$1,800 to $3,000'],
+      ['90 to 115 HP', '$5,000 to $8,500', '$3,500 to $6,000', '$2,500 to $4,300'],
+      ['150 to 200 HP', '$7,500 to $13,000', '$5,200 to $9,100', '$3,800 to $6,500'],
+      ['225 to 300 HP', '$11,000 to $18,000', '$7,700 to $12,600', '$5,500 to $9,000'],
+    ],
+  },
+  faqs: TRADE_FAQS,
+  related: [
+    { href: '/quote/motor-selection', label: 'Build a Mercury quote' },
+    { href: '/repower/cost', label: 'Repower cost guide' },
+    { href: '/finance-calculator', label: 'Finance calculator' },
+    { href: '/pricing-reference', label: 'Mercury pricing reference' },
+    { href: '/contact', label: 'Contact HBW' },
+    { href: '/faq', label: 'Repower FAQ' },
+  ],
+});
+
+const ABOUT_EXTRA = () => commercialBodyHtml({
+  sections: [
+    { h2: 'Short answer', paragraphs: ['Harris Boat Works is a family-owned Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario. Founded in 1947 by George Harris, a Mercury dealer continuously since 1965, run by Jay Harris as the third generation since 2015.'] },
+    { h2: 'History', paragraphs: [
+      'George Harris opened Harris Boat Works in 1947 as a small marine service operation on the south shore of Rice Lake.',
+      'Mercury became our outboard brand in 1965 and has been the only outboard line we sell ever since.',
+      'Jim Harris ran the business from 1978 until his passing in 2015.',
+      'Jay Harris took over in 2015 as the third generation, representing the same family running the same dock on the same lake.',
+    ] },
+    { h2: 'Credentials', bullets: [
+      'Mercury Marine Platinum Dealer (highest tier in the Mercury dealer recognition program)',
+      'Family-owned and operated since 1947',
+      'Mercury dealer continuously since 1965 (60+ years)',
+      'Service technicians certified on the full Mercury lineup',
+      'Authorized Legend Boats and Uttern Boats dealer',
+    ] },
+    { h2: 'Location and service area', paragraphs: ['5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, on the south shore of Rice Lake. We serve Mercury repower customers across Northumberland County, Kawartha Lakes, Peterborough, the GTA, and Durham Region. Pickup at Gores Landing, no delivery.'] },
+  ],
+  related: [
+    { href: '/about/jay-harris', label: 'Jay Harris, owner profile' },
+    { href: '/contact', label: 'Contact HBW' },
+    { href: '/quote/motor-selection', label: 'Build a Mercury quote' },
+    { href: '/repower/cost', label: 'Mercury repower cost guide' },
+    { href: '/faq', label: 'Repower FAQ' },
+  ],
+});
+
+const CONTACT_EXTRA = () => commercialBodyHtml({
+  sections: [
+    { h2: 'Short answer', paragraphs: ['Reach Harris Boat Works at (905) 342-2153 or info@harrisboatworks.ca. We are at 5369 Harris Boat Works Rd, Gores Landing, Ontario, on the south shore of Rice Lake. Pickup only, no delivery.'] },
+    { h2: 'Contact methods', bullets: [
+      'Phone (sales and service): (905) 342-2153',
+      'Text (SMS): (647) 952-2153',
+      'Email: info@harrisboatworks.ca',
+      'Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0',
+      'In person: drop in any open day, no appointment needed for browsing',
+    ] },
+    { h2: 'Hours', paragraphs: ['Marina open April through November. Closed December 1 to April 1. Off-season quotes and email are answered, install work resumes when the lake opens in April.'] },
+    { h2: 'Service area', paragraphs: ['Mercury repower customers from across southern Ontario pick up at our Gores Landing dock. Common drive-time zones include Rice Lake, the Kawarthas (Peterborough, Lakefield, Bobcaygeon, Lindsay), Northumberland County (Cobourg, Port Hope, Hastings), and the GTA and Durham Region (Toronto, Pickering, Ajax, Whitby, Oshawa, Bowmanville).'] },
+  ],
+  related: [
+    { href: '/about', label: 'About Harris Boat Works' },
+    { href: '/quote/motor-selection', label: 'Build a Mercury quote' },
+    { href: '/repower/cost', label: 'Repower cost guide' },
+    { href: '/locations/gta-mercury-outboards', label: 'GTA Mercury dealer info' },
+    { href: '/locations/peterborough-mercury-dealer', label: 'Peterborough Mercury dealer' },
+    { href: '/faq', label: 'Repower FAQ' },
+  ],
+});
+
 const routes = [
 
   {
