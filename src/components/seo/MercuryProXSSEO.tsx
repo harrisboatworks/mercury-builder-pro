@@ -119,7 +119,7 @@ export function MercuryProXSSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Pro XS Outboards in Ontario | 115–250 HP, Real CAD Pricing | Harris Boat Works</title>
+      <title>Mercury Pro XS Outboards - 115 to 300 HP Ontario | HBW</title>
       <meta
         name="description"
         content="Mercury Pro XS performance outboards 115–250 HP in stock. Real CAD pricing, 7-year warranty, financing. Mercury Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965."
