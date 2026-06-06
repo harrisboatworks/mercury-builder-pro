@@ -24,31 +24,28 @@ import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 import heroImage from '@/assets/hero-proxs-sunset.jpg';
 import shopImage from '@/assets/landing-repower-shop.jpg';
 import jimHarrisHeritage from '@/assets/heritage/jim-harris-mercury-1960s.jpg';
-import stepPickImage from '@/assets/landing-step-pick.png';
-import stepConfigureImage from '@/assets/landing-step-configure.jpg';
-import stepPickupImage from '@/assets/landing-step-pickup.jpg';
 import ctaLakeImage from '@/assets/landing-cta-lake.jpg';
 
 const HOW_IT_WORKS = [
   {
     icon: Wrench,
-    image: stepPickImage,
-    imageBase: 'landing-step-pick',
+    image: '/lovable-uploads/home-step1-mercury-proxs-lineup.jpg',
+    alt: 'Row of new Mercury Pro XS outboards on display',
     priority: true, // confirmed mobile LCP element
     title: 'Pick your Mercury',
     body: 'Browse the full lineup from 2.5 to 300 HP with live CAD pricing. No "call for quote."',
   },
   {
     icon: RotateCcw,
-    image: stepConfigureImage,
-    imageBase: 'landing-step-configure',
+    image: '/lovable-uploads/home-step2-real-quote-builder.jpg',
+    alt: 'The mercuryrepower.ca quote builder showing live Mercury prices in CAD',
     title: 'Configure trade-in & financing',
     body: 'Get an instant trade-in estimate, choose financing or pay-in-full, and see your real monthly payment.',
   },
   {
     icon: Shield,
-    image: stepPickupImage,
-    imageBase: 'landing-step-pickup',
+    image: '/lovable-uploads/home-step3-rice-lake-water-test.jpg',
+    alt: 'Aluminum fishing boat with Mercury outboard on a water test at sunset on Rice Lake',
     title: 'Water-tested on Rice Lake before pickup',
     body: 'Every Mercury we install gets a real water test on Rice Lake before you pick it up. You drive home with a motor that has been run, tuned, and verified, not a dyno number on a spec sheet.',
   },
