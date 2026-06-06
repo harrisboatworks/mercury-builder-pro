@@ -176,7 +176,7 @@ export function MotorSelectionSEO({
 
   return (
     <Helmet>
-      <title>Mercury Boats Canada: Mercury Outboards 2.5 to 600 HP, Build a Quote | HBW</title>
+      <title>Build a Mercury Outboard Quote - 2.5 to 600 HP | HBW</title>
       <meta
         name="description"
         content={`Browse Mercury boats and outboards in Canada: FourStroke, Pro XS, SeaPro, ProKicker from $${minPrice.toLocaleString()} to $${maxPrice.toLocaleString()} CAD. Configure your motor and get instant CAD pricing, Harris Boat Works, Mercury dealer since 1965.`}
