@@ -13914,7 +13914,7 @@ For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Ou
     title: 'Mercury vs. Suzuki Outboard: Which Is More Reliable in Ontario? (2026)',
     seoTitle: 'Mercury vs Suzuki Outboards: Ontario Reliability Guide 2026 | HBW',
     description: 'Mercury vs Suzuki outboard reliability in 2026, Ontario dealer perspective. Both are mechanically reliable. Service network, rigging switch cost, and what actually drives the decision.',
-    image: '/lovable-uploads/hero-mercury-vs-suzuki-outboards-2026.png',
+    image: '/lovable-uploads/hero-mercury-vs-suzuki-reliability-2026.png',
     author: 'Jay Harris',
     datePublished: '2026-06-06',
     dateModified: '2026-06-06',
