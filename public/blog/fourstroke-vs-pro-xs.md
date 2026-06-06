@@ -186,6 +186,8 @@ We rig both at Harris Boat Works. Every repower gets an on-water test on Rice La
 - [Best Pontoon Outboard 2026](/blog/best-pontoon-outboard-2026-mercury)
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).
+
 ## FAQs
 
 ### What is the Mercury Verado and how does it compare to FourStroke and Pro XS?

@@ -135,6 +135,8 @@ If you would rather talk it through, call **(905) 342-2153** or send us an email
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
 - [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
 
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).
+
 ## FAQs
 
 ### Can I finance a Mercury repower in Ontario?

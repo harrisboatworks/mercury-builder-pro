@@ -141,6 +141,8 @@ Rather talk first? Call 905-342-2153. We answer the phone.
 - [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 - [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
 
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).
+
 ## FAQs
 
 ### How much does a Mercury repower cost in Ontario in 2026?

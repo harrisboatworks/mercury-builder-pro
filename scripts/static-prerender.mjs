@@ -2601,6 +2601,45 @@ function renderAuthorBylineHtml(authorName) {
   );
 }
 
+// ============================================================
+// Cross-language hreflang slug maps (mirror src/data/frenchEnglishSlugMap.ts).
+// Only includes pairs where an alternate actually exists. Fabricating a
+// hreflang to a slug that doesn't exist gets the cluster ignored by Google.
+// ============================================================
+const FR_TO_EN_SLUG = {
+  'prix-remotorisation-mercury-ontario': 'mercury-repower-cost-ontario-2026-cad',
+  'mercury-115-vs-150-hp-comparaison': 'mercury-115-vs-150-hp-outboard-ontario',
+  'hivernisation-moteur-mercury-ontario': 'diy-mercury-outboard-winterization-guide',
+  'remotorisation-vs-bateau-neuf': 'boat-repowering-guide-when-to-replace-motor',
+  'mercury-hors-bord-ne-demarre-pas-depannage': 'mercury-outboard-wont-start-troubleshooting',
+  'surchauffe-moteur-mercury-guide-urgence': 'mercury-outboard-overheating-at-idle-fix-ontario',
+  'entretien-remorque-bateau-ontario': 'boat-trailer-maintenance-guide-ontario',
+  'guide-assurance-bateau-ontario-2026': 'boat-insurance-ontario-guide-2026',
+  'garantie-prolongee-mercury-platinum-ontario': 'mercury-extended-warranty-platinum-ontario',
+  'gamme-mercury-hors-bord-2026-ontario': 'mercury-2026-outboard-lineup-ontario',
+};
+const ZH_TO_EN_SLUG = {
+  'mercury-115-vs-150-comparison-zh': 'mercury-115-vs-150-hp-outboard-ontario',
+  'winterization-mercury-guide-zh': 'diy-mercury-outboard-winterization-guide',
+  'repower-vs-new-boat-zh': 'repower-vs-new-boat',
+  'mercury-fourstroke-vs-pro-xs-chinese': 'fourstroke-vs-pro-xs',
+};
+const EN_TO_FR_SLUG = Object.fromEntries(Object.entries(FR_TO_EN_SLUG).map(([fr, en]) => [en, fr]));
+const EN_TO_ZH_SLUG = Object.fromEntries(Object.entries(ZH_TO_EN_SLUG).map(([zh, en]) => [en, zh]));
+
+function blogHreflangTags(enSlug) {
+  const frSlug = EN_TO_FR_SLUG[enSlug];
+  const zhSlug = EN_TO_ZH_SLUG[enSlug];
+  if (!frSlug && !zhSlug) return '';
+  const tags = [
+    `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/blog/${enSlug}" />`,
+  ];
+  if (frSlug) tags.push(`<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/blog/fr/${frSlug}" />`);
+  if (zhSlug) tags.push(`<link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
+  tags.push(`<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/${enSlug}" />`);
+  return tags.join('\n  ');
+}
+
 // Build blog article route configs.
 const blogArticleRoutes = blogArticles.map(article => ({
   path: `/blog/${article.slug}`,
@@ -2611,6 +2650,7 @@ const blogArticleRoutes = blogArticles.map(article => ({
   h1: article.title,
   intro: firstParagraph(article.content, article.description),
   schemas: [blogArticleSchema(article)],
+  extraHead: blogHreflangTags(article.slug),
   extraNoscript: () => {
     const heroHtml = renderHeroPictureHtml(article.image, article.title);
     const bylineHtml = renderAuthorBylineHtml(article.author);
@@ -2671,6 +2711,12 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
         }))
       }] : [])
     ],
+    extraHead: (() => {
+      const enSlug = langCode === 'fr' ? FR_TO_EN_SLUG[article.slug]
+                   : langCode === 'zh' ? ZH_TO_EN_SLUG[article.slug]
+                   : undefined;
+      return enSlug ? blogHreflangTags(enSlug) : '';
+    })(),
     extraNoscript: () => {
       const heroHtml = renderHeroPictureHtml(article.image, article.title);
       const bylineHtml = renderAuthorBylineHtml(article.author);
@@ -4057,7 +4103,7 @@ const routes = [
   },
   {
     path: '/quote/motor-selection',
-    title: 'Mercury Outboard Motors: Browse 2.5HP–600HP & Build a Quote | Harris Boat Works',
+    title: 'Build a Mercury Outboard Quote - 2.5 to 600 HP | HBW',
     description: 'Shop Mercury FourStroke, Pro XS, SeaPro and ProKicker outboards. Configure your motor and get instant CAD pricing online: Harris Boat Works, Mercury dealer since 1965.',
     h1: 'Build Your Mercury Outboard Quote',
     intro: 'Select a Mercury outboard motor to build a real quote with live CAD pricing, financing, and trade-in. No forms, no waiting. Harris Boat Works: Mercury dealer since 1965.',
@@ -4166,7 +4212,7 @@ const routes = [
   },
   {
     path: '/mercury-pro-xs',
-    title: 'Mercury Pro XS Outboards in Ontario | 115–250 HP, Real CAD Pricing | Harris Boat Works',
+    title: 'Mercury Pro XS Outboards - 115 to 300 HP Ontario | HBW',
     description: 'Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.',
     h1: 'Mercury Pro XS Outboards in Ontario',
     intro: 'Tournament-grade performance from 115 to 250 HP. Real CAD pricing, in stock at Harris Boat Works: Mercury Marine Platinum Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.',
@@ -4348,7 +4394,7 @@ const routes = [
   },
   {
     path: '/compare',
-    title: 'Compare Mercury Outboards Side-by-Side: HP, Weight & CAD Price | Harris Boat Works',
+    title: 'Compare Mercury Outboards - Side-by-Side Specs | HBW',
     description: 'Compare Mercury outboard motors side-by-side: horsepower, dry weight, shaft length, family, real CAD pricing, and availability. Mercury dealer since 1965 on Rice Lake, Ontario.',
     h1: 'Compare Mercury Outboards',
     intro: 'Compare any two or three Mercury outboards side-by-side, horsepower, weight, shaft length, family, CAD price, and availability. Pull from our live inventory and decide between the FourStroke, Pro XS, Command Thrust, SeaPro, or ProKicker that fits your boat.',
@@ -4379,7 +4425,7 @@ const routes = [
   },
   {
     path: '/finance-calculator',
-    title: 'Mercury Outboard Finance Calculator (CAD): Monthly Payment Estimate | Harris Boat Works',
+    title: 'Mercury Outboard Financing Calculator - Ontario | HBW',
     description: 'Estimate your Mercury outboard monthly payment in CAD. 8.99% under $10K, 7.99% over $10K. Terms up to 144 months through DealerPlan. Mercury dealer since 1965.',
     h1: 'Mercury Outboard Finance Calculator',
     intro: 'Estimate your monthly payment for any Mercury outboard in Canadian dollars. Tiered rates of 8.99% APR under $10,000 and 7.99% APR over $10,000, with terms up to 144 months through DealerPlan. Minimum financed amount $5,000.',
@@ -4884,9 +4930,33 @@ const allSitemapEntries = [
   ...locationSitemapEntries,
 ];
 
+function sitemapHreflangBlock(loc) {
+  // loc looks like /blog/{slug}, /blog/fr/{slug}, or /blog/zh/{slug}.
+  // Emit xhtml:link alternates only when an EN counterpart exists in the slug maps.
+  let enSlug;
+  const mFr = loc.match(/^\/blog\/fr\/(.+)$/);
+  const mZh = loc.match(/^\/blog\/zh\/(.+)$/);
+  const mEn = loc.match(/^\/blog\/([^/]+)$/);
+  if (mFr) enSlug = FR_TO_EN_SLUG[mFr[1]];
+  else if (mZh) enSlug = ZH_TO_EN_SLUG[mZh[1]];
+  else if (mEn) enSlug = mEn[1];
+  if (!enSlug) return '';
+  const frSlug = EN_TO_FR_SLUG[enSlug];
+  const zhSlug = EN_TO_ZH_SLUG[enSlug];
+  if (!frSlug && !zhSlug) return '';
+  const links = [
+    `    <xhtml:link rel="alternate" hreflang="en-CA" href="${SITE_URL}/blog/${enSlug}" />`,
+  ];
+  if (frSlug) links.push(`    <xhtml:link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/blog/fr/${frSlug}" />`);
+  if (zhSlug) links.push(`    <xhtml:link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
+  links.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/${enSlug}" />`);
+  return '\n' + links.join('\n');
+}
+
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${allSitemapEntries.map(e => {
   let block = `  <url>
     <loc>${SITE_URL}${e.loc}</loc>
@@ -4900,6 +4970,7 @@ ${allSitemapEntries.map(e => {
       <image:title><![CDATA[${e.imageTitle}]]></image:title>
     </image:image>`;
   }
+  block += sitemapHreflangBlock(e.loc);
   block += `
   </url>`;
   return block;

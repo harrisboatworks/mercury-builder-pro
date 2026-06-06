@@ -2486,7 +2486,9 @@ We rig both at Harris Boat Works. Every repower gets an on-water test on Rice La
 - [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
 - [Mercury Boost Upgrade Analysis](/blog/mercury-boost-software-upgrade-eligibility-2026)
 - [Best Pontoon Outboard 2026](/blog/best-pontoon-outboard-2026-mercury)
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)`
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).`
   },
   {
     slug: 'boat-repowering-guide-when-to-replace-motor',
@@ -4349,7 +4351,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 > **Quick answer:** Same powerhead, different tuning and gearcase. The 90 is the sweet spot for most 17-19 ft aluminum and fibreglass hulls, best balance of price, fuel use, and performance. The 115 makes sense on heavier or wider transoms, especially Command Thrust on pontoons. The 75 is rare in Ontario. Compare installed pricing at mercuryrepower.ca.
 
-For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection).
+For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
 
@@ -7834,7 +7836,7 @@ What works well:
 - Typically the lowest rate of the three options
 - Flexible draw-down and repayment terms
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 What to watch:
 - Your home is the collateral, that is a real risk to understand clearly before using this route
@@ -10887,7 +10889,7 @@ whenInDoubt: Buyers who pick Pro XS for the badge usually find a FourStroke woul
 
 Who it is for: bass anglers, walleye tournament competitors, anyone who wants to get to the other end of the lake as fast as possible.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 Pro XS is tuned for performance. Faster hole shot, higher top-end RPM, stronger acceleration than the equivalent FourStroke HP. In the Ontario tournament fishing world, Pro XS is the standard.
 
@@ -12109,7 +12111,9 @@ Rather talk first? Call 905-342-2153. We answer the phone.
 - [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 - [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 - [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
-`,
+
+
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).`,
     faqs: [
       { question: 'How much does a Mercury repower cost in Ontario in 2026?', answer: 'Planning ranges before HST: small remote (40-60 HP) $11,000-$15,000; mid (75-115 HP) $17,000-$22,000; 150 HP $23,000-$30,000; high-HP (200-300 HP) $35,000-$40,000. Build a quote at mercuryrepower.ca for your specific setup.' },
       { question: "What's included in a Mercury repower quote?", answer: 'Motor, rigging (controls, cables, gauges), prop, install labour, and on-water test. We list every line item. No hidden fees.' },
@@ -12589,7 +12593,9 @@ If you would rather talk it through, call **(905) 342-2153** or send us an email
 - [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
 - [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
-`,
+
+
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).`,
     faqs: [
       { question: 'Can I finance a Mercury repower in Ontario?', answer: 'Yes. The current standard path is TD "Always On" at 5.48% APR through December 31, 2026 (OAC / subject to lender approval), placed through Dealerplan Peterborough. Covers the full project: motor, rigging, controls, prop, install labour, on-water test on Rice Lake before pickup, hydraulic steering conversion if required, and HST. Terms 24 to 84 months. Build a real quote and see live payment options at mercuryrepower.ca.' },
       { question: 'What\'s the Mercury financing rate in 2026?', answer: '5.48% APR through TD "Always On", current through December 31, 2026. After that, standard tiered rates apply (typically starting around 7.99% APR for good credit, varying by lender and credit profile). Current promotion details are on the promotions page.' },
@@ -14994,7 +15000,7 @@ For a 22-foot tritoon hauling four adults and full gear, none of those scenarios
 
 The reason Boost matters beyond its 2026 performance gains is what it signals.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 Software-defined performance is the direction the marine industry is heading. Mercury has already signaled interest in more granular performance tiers, use-case profiles, and connected services. Buying a current Mercury motor positions you to participate in future upgrade cycles.
 
@@ -27913,7 +27919,7 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 ## What to Do When the Alarm Sounds
 
@@ -34320,7 +34326,9 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
 - [Best Pontoon Outboard 2026: Mercury](/blog/best-pontoon-outboard-2026-mercury)
 - [Mercury Command Thrust Pontoon Eligibility 2026](/blog/mercury-command-thrust-pontoon-eligibility-2026)
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-- [Mercury Outboard Monthly Payment Math, Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)`,
+- [Mercury Outboard Monthly Payment Math, Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).`,
     image: '/lovable-uploads/How_to_Choose_HP.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',

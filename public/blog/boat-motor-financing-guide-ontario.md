@@ -75,7 +75,7 @@ What works well:
 - Typically the lowest rate of the three options
 - Flexible draw-down and repayment terms
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 What to watch:
 - Your home is the collateral, that is a real risk to understand clearly before using this route

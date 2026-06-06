@@ -209,6 +209,8 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
 - [Mercury Outboard Monthly Payment Math, Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
 
+See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).
+
 ## FAQs
 
 ### What boat size does the 115 vs 150 decision actually apply to?
