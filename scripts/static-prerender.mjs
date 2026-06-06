@@ -3817,7 +3817,8 @@ const routes = [
     description: 'The 7-step Mercury repower process at Harris Boat Works: quote, deposit, order, rig, install, lake test, pickup. Mercury dealer since 1965 in Gores Landing, Ontario.',
     h1: 'Mercury Repower Process: From Quote to Splash',
     intro: 'A Mercury repower at Harris Boat Works follows a 7-step process from quote to splash. Same shop quotes, rigs, installs, and lake-tests every motor on Rice Lake.',
-    schemas: [genericPageSchema('/repower/process', 'Mercury Repower Process', 'The 7-step Mercury repower process from quote to splash at Harris Boat Works.')]
+    schemas: [genericPageSchema('/repower/process', 'Mercury Repower Process', 'The 7-step Mercury repower process from quote to splash at Harris Boat Works.'), faqPageSchemaFromList('/repower/process', REPOWER_PROCESS_FAQS)],
+    extraNoscript: REPOWER_PROCESS_EXTRA
   },
   {
     path: '/repower/financing',
