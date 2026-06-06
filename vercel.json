@@ -226,6 +226,11 @@
       "source": "/api/motors-md",
       "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md",
       "statusCode": 308
+    },
+    {
+      "source": "/mercury-repower-faq",
+      "destination": "/faq",
+      "statusCode": 301
     }
   ],
   "rewrites": [
