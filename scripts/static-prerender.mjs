@@ -2617,6 +2617,11 @@ const FR_TO_EN_SLUG = {
   'guide-assurance-bateau-ontario-2026': 'boat-insurance-ontario-guide-2026',
   'garantie-prolongee-mercury-platinum-ontario': 'mercury-extended-warranty-platinum-ontario',
   'gamme-mercury-hors-bord-2026-ontario': 'mercury-2026-outboard-lineup-ontario',
+  'peche-lac-rice-ontario-guide-plaisanciers': 'rice-lake-boating-guide-2026',
+  'permis-bateau-ontario-carte-conducteur-embarcation': 'pleasure-craft-licence-update-repower-ontario',
+  'remotorisation-mercury-gta-toronto': 'mercury-repower-gta-toronto-destination',
+  'revue-mercury-75-hp-fourstroke-ontario': 'mercury-75-hp-fourstroke-review-ontario',
+  'revue-mercury-90-hp-fourstroke-ontario': 'mercury-90-hp-fourstroke-review-ontario',
 };
 const ZH_TO_EN_SLUG = {
   'mercury-115-vs-150-comparison-zh': 'mercury-115-vs-150-hp-outboard-ontario',
