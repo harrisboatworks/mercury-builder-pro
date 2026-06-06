@@ -580,6 +580,10 @@
     {
       "source": "/terms",
       "destination": "/terms/index.html"
+    },
+    {
+      "source": "/((?!api/|_next/|_static/|assets/|.*\\..*).*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
