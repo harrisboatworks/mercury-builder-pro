@@ -17,7 +17,8 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { daysUntil } from '@/lib/finance';
 import { Clock } from 'lucide-react';
 import { X } from 'lucide-react';
-import harris7YearWarranty from '@/assets/harris-7-year-warranty.png';
+// Optimized warranty badge: 15KB WebP @ 400w (was 3MB PNG).
+const harris7YearWarranty = '/assets/optimized/harris-7-year-warranty-400w.webp';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview, { type SharedCardData } from '@/components/motors/MotorCardPreview';
