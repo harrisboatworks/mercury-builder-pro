@@ -347,7 +347,7 @@ function buildYouTubeDirective(attrs: string): string | null {
 }
 
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteMythbuster(rewriteCustomerVoice(rewriteYouTubeEmbeds(
+  return rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeEmbeds(
     rewriteMercuryPriceTable(
       rewriteWalkaroundLeadCapture(
         rewritePullQuote(
