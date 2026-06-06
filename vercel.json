@@ -231,6 +231,126 @@
       "source": "/mercury-repower-faq",
       "destination": "/faq",
       "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/boat-repower-vs-new-boat-chinese-ontario",
+      "destination": "/blog/zh/mercury-repower-guide-gta",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/chinese-boat-repower-vs-new-boat-ontario",
+      "destination": "/blog/zh/mercury-repower-guide-gta",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/repower-vs-new-boat-zh",
+      "destination": "/blog/zh/mercury-repower-guide-gta",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/rice-lake-fish-species-seasons-zh",
+      "destination": "/blog/zh/rice-lake-fishing-guide-toronto-chinese",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/rice-lake-fishing-season-guide-chinese",
+      "destination": "/blog/zh/rice-lake-fishing-guide-toronto-chinese",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/chinese-anglers-rice-lake-kawarthas-outboard",
+      "destination": "/blog/zh/rice-lake-fishing-guide-toronto-chinese",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/ontario-free-family-fishing-rice-lake-chinese-guide",
+      "destination": "/blog/zh/rice-lake-fishing-guide-toronto-chinese",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/rice-lake-boat-rental-fishing-day-trip-toronto",
+      "destination": "/blog/zh/gta-chinese-rice-lake-day-trip-plan",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/toronto-chinese-rice-lake-fishing-rental-guide",
+      "destination": "/blog/zh/gta-chinese-rice-lake-day-trip-plan",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/toronto-rice-lake-one-day-fishing-trip-zh",
+      "destination": "/blog/zh/gta-chinese-rice-lake-day-trip-plan",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/first-time-renter-walkthrough-zh",
+      "destination": "/blog/zh/gta-chinese-rice-lake-day-trip-plan",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/ontario-boating-guide-toronto-chinese",
+      "destination": "/blog/zh/gta-chinese-buy-boat-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/chinese-mercury-outboard-guide-toronto",
+      "destination": "/blog/zh/gta-chinese-buy-boat-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/toronto-chinese-boat-buying-guide-ontario",
+      "destination": "/blog/zh/gta-chinese-buy-boat-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/new-immigrant-ontario-boat-buying-guide",
+      "destination": "/blog/zh/gta-chinese-buy-boat-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/toronto-chinese-buying-first-boat-rent-or-buy",
+      "destination": "/blog/zh/gta-chinese-rent-to-buy-boat-roadmap",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/ontario-boat-winterization-chinese-guide",
+      "destination": "/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/winterization-mercury-guide-zh",
+      "destination": "/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/mercury-fourstroke-vs-pro-xs-chinese",
+      "destination": "/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/mercury-outboard-service-repair-toronto-ontario",
+      "destination": "/blog/zh/gta-chinese-mercury-service-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/fishing-boat-vs-pontoon-chinese-ontario",
+      "destination": "/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/pontoon-boat-buying-guide-toronto-chinese-rice-lake",
+      "destination": "/blog/zh/chinese-family-pontoon-mercury-outboard",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/ontario-chinese-boating-license-fishing-guide",
+      "destination": "/blog/zh/gta-chinese-pcl-fishing-licence-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/ontario-first-time-boat-rental-safety-checklist",
+      "destination": "/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh",
+      "statusCode": 301
     }
   ],
   "rewrites": [
