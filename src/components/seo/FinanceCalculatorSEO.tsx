@@ -92,7 +92,7 @@ export function FinanceCalculatorSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Repower Financing Calculator | Monthly Payment Estimator | Harris Boat Works</title>
+      <title>Mercury Outboard Financing Calculator - Ontario | HBW</title>
       <meta name="description" content={`Estimate monthly payments on a Mercury outboard repower. ${CURRENT_RATE.programLabel}. Terms from 36-180 months. No early payoff penalties. Harris Boat Works, Ontario Mercury dealer since 1947.`} />
       <meta name="keywords" content="Mercury financing calculator, outboard motor financing, boat motor payment estimator, Mercury repower financing, marine financing Ontario" />
       <link rel="canonical" href={`${SITE_URL}/finance-calculator`} />
