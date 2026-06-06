@@ -65,32 +65,4 @@ export default defineConfig(({ mode }) => ({
       'hsl-to-hex': path.resolve(__dirname, './src/lib/vendor/hsl-to-hex-compat.ts'),
     },
   },
-  build: {
-    rollupOptions: {
-      output: {
-        // Manual chunking to keep first-paint payload lean. Heavy vendors
-        // (radix, pdf, markdown) are split off so the initial bundle only
-        // contains React + router + the landing route.
-        manualChunks(id) {
-          if (!id.includes('node_modules')) return undefined;
-          // Keep React + everything that touches React internals at module top
-          // (radix forwardRef, react-router, lucide icons, react-is, use-sync-external-store)
-          // in a single vendor chunk to guarantee React is initialized before any
-          // consumer evaluates. Splitting these caused a production white-screen:
-          // "Cannot read properties of undefined (reading 'forwardRef')" when the
-          // ui-radix chunk loaded before react-vendor.
-          if (id.match(/node_modules\/(react|react-dom|react-is|scheduler|use-sync-external-store)\//)) return 'react-vendor';
-          if (id.includes('react-router')) return 'react-vendor';
-          if (id.includes('@radix-ui')) return 'react-vendor';
-          if (id.includes('lucide-react')) return 'react-vendor';
-          if (id.includes('@react-pdf') || id.includes('pdfkit') || id.includes('fontkit')) return 'pdf-vendor';
-          if (id.includes('react-markdown') || id.includes('remark') || id.includes('rehype') || id.includes('micromark') || id.includes('mdast') || id.includes('hast')) return 'blog-vendor';
-          if (id.includes('framer-motion')) return 'motion-vendor';
-          if (id.includes('@supabase')) return 'supabase-vendor';
-          if (id.includes('recharts') || id.includes('d3-')) return 'charts-vendor';
-          return 'vendor';
-        },
-      },
-    },
-  },
 }));
