@@ -3808,7 +3808,8 @@ const routes = [
     description: 'Mercury repower cost by HP class in Ontario for 2026: portable to 300 HP. Live CAD pricing, install, rigging, trade-in, and financing from Harris Boat Works.',
     h1: 'Mercury Repower Cost in Ontario (2026 CAD)',
     intro: 'Mercury repowers in Ontario typically run $11,000 to $40,000 CAD all-in depending on HP class, hull, and rigging. Harris Boat Works publishes live CAD pricing on every Mercury we sell.',
-    schemas: [genericPageSchema('/repower/cost', 'Mercury Repower Cost in Ontario (2026 CAD)', 'Mercury repower cost by HP class in Ontario for 2026 with live CAD pricing from Harris Boat Works.')]
+    schemas: [genericPageSchema('/repower/cost', 'Mercury Repower Cost in Ontario (2026 CAD)', 'Mercury repower cost by HP class in Ontario for 2026 with live CAD pricing from Harris Boat Works.'), faqPageSchemaFromList('/repower/cost', REPOWER_COST_FAQS)],
+    extraNoscript: REPOWER_COST_EXTRA
   },
   {
     path: '/repower/process',
