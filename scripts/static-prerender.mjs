@@ -4057,7 +4057,7 @@ const routes = [
   },
   {
     path: '/quote/motor-selection',
-    title: 'Mercury Outboard Motors: Browse 2.5HP–600HP & Build a Quote | Harris Boat Works',
+    title: 'Build a Mercury Outboard Quote - 2.5 to 600 HP | HBW',
     description: 'Shop Mercury FourStroke, Pro XS, SeaPro and ProKicker outboards. Configure your motor and get instant CAD pricing online: Harris Boat Works, Mercury dealer since 1965.',
     h1: 'Build Your Mercury Outboard Quote',
     intro: 'Select a Mercury outboard motor to build a real quote with live CAD pricing, financing, and trade-in. No forms, no waiting. Harris Boat Works: Mercury dealer since 1965.',
