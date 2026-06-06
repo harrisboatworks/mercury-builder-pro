@@ -4930,9 +4930,33 @@ const allSitemapEntries = [
   ...locationSitemapEntries,
 ];
 
+function sitemapHreflangBlock(loc) {
+  // loc looks like /blog/{slug}, /blog/fr/{slug}, or /blog/zh/{slug}.
+  // Emit xhtml:link alternates only when an EN counterpart exists in the slug maps.
+  let enSlug;
+  const mFr = loc.match(/^\/blog\/fr\/(.+)$/);
+  const mZh = loc.match(/^\/blog\/zh\/(.+)$/);
+  const mEn = loc.match(/^\/blog\/([^/]+)$/);
+  if (mFr) enSlug = FR_TO_EN_SLUG[mFr[1]];
+  else if (mZh) enSlug = ZH_TO_EN_SLUG[mZh[1]];
+  else if (mEn) enSlug = mEn[1];
+  if (!enSlug) return '';
+  const frSlug = EN_TO_FR_SLUG[enSlug];
+  const zhSlug = EN_TO_ZH_SLUG[enSlug];
+  if (!frSlug && !zhSlug) return '';
+  const links = [
+    `    <xhtml:link rel="alternate" hreflang="en-CA" href="${SITE_URL}/blog/${enSlug}" />`,
+  ];
+  if (frSlug) links.push(`    <xhtml:link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/blog/fr/${frSlug}" />`);
+  if (zhSlug) links.push(`    <xhtml:link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
+  links.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/${enSlug}" />`);
+  return '\n' + links.join('\n');
+}
+
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${allSitemapEntries.map(e => {
   let block = `  <url>
     <loc>${SITE_URL}${e.loc}</loc>
@@ -4946,6 +4970,7 @@ ${allSitemapEntries.map(e => {
       <image:title><![CDATA[${e.imageTitle}]]></image:title>
     </image:image>`;
   }
+  block += sitemapHreflangBlock(e.loc);
   block += `
   </url>`;
   return block;
