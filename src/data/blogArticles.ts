@@ -4349,7 +4349,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 > **Quick answer:** Same powerhead, different tuning and gearcase. The 90 is the sweet spot for most 17-19 ft aluminum and fibreglass hulls, best balance of price, fuel use, and performance. The 115 makes sense on heavier or wider transoms, especially Command Thrust on pontoons. The 75 is rare in Ontario. Compare installed pricing at mercuryrepower.ca.
 
-For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection).
+For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
 
@@ -7834,7 +7834,7 @@ What works well:
 - Typically the lowest rate of the three options
 - Flexible draw-down and repayment terms
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 What to watch:
 - Your home is the collateral, that is a real risk to understand clearly before using this route
@@ -10887,7 +10887,7 @@ whenInDoubt: Buyers who pick Pro XS for the badge usually find a FourStroke woul
 
 Who it is for: bass anglers, walleye tournament competitors, anyone who wants to get to the other end of the lake as fast as possible.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 Pro XS is tuned for performance. Faster hole shot, higher top-end RPM, stronger acceleration than the equivalent FourStroke HP. In the Ontario tournament fishing world, Pro XS is the standard.
 
@@ -14994,7 +14994,7 @@ For a 22-foot tritoon hauling four adults and full gear, none of those scenarios
 
 The reason Boost matters beyond its 2026 performance gains is what it signals.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 Software-defined performance is the direction the marine industry is heading. Mercury has already signaled interest in more granular performance tiers, use-case profiles, and connected services. Buying a current Mercury motor positions you to participate in future upgrade cycles.
 
@@ -27913,7 +27913,7 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 ## What to Do When the Alarm Sounds
 
