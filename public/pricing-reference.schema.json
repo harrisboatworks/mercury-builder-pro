@@ -5,7 +5,7 @@
       "@type": "WebPage",
       "@id": "https://www.mercuryrepower.ca/pricing-reference#webpage",
       "url": "https://www.mercuryrepower.ca/pricing-reference",
-      "name": "Mercury Outboard Prices in Ontario (CAD, 2026)",
+      "name": "Mercury Outboard Prices in Ontario (CAD, 2027)",
       "description": "Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.",
       "isPartOf": {
         "@id": "https://www.mercuryrepower.ca/#website"
@@ -14,7 +14,7 @@
         "@id": "https://www.mercuryrepower.ca/#organization"
       },
       "inLanguage": "en-CA",
-      "lastReviewed": "2026-06-03",
+      "lastReviewed": "2026-06-06",
       "mainEntity": {
         "@id": "https://www.mercuryrepower.ca/pricing-reference#pricelist"
       }
@@ -22,7 +22,7 @@
     {
       "@type": "ItemList",
       "@id": "https://www.mercuryrepower.ca/pricing-reference#pricelist",
-      "name": "Mercury Outboard Motor Price List — Canada (CAD, 2026)",
+      "name": "Mercury Outboard Motor Price List — Canada (CAD, 2027)",
       "itemListOrder": "https://schema.org/ItemListOrderAscending",
       "numberOfItems": 101,
       "itemListElement": [
@@ -4469,7 +4469,7 @@
               "@type": "Offer",
               "price": "30399",
               "priceCurrency": "CAD",
-              "availability": "https://schema.org/InStock",
+              "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
               "areaServed": {
                 "@type": "Country",

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide.md
-last_updated: 2026-06-03
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)"
 description: "Honda to Mercury repower from an Ontario Mercury Platinum dealer. Honest framework on when the swap is worth it (60+ HP, service network), when to stay with Honda..."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-05-28
+date_modified: 2026-06-05
 keywords: ["Honda to Mercury repower","Honda to Mercury Ontario","Honda BF250 Mercury","brand swap outboard repower","Mercury repower cost Ontario","Honda BF dealer Ontario","Honda vs Mercury Ontario","Mercury Platinum dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-05-28  
+**Last updated:** 2026-06-05  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide
 
@@ -41,7 +41,7 @@ The Honda-to-Mercury swap is less common than Yamaha-to-Mercury in Ontario becau
 
 **Service network density.** Honda has roughly one-third the Ontario dealer footprint of Mercury. In the GTA proper this isn't a big deal, but in the Kawarthas, Trent-Severn corridor, Bay of Quinte, and rural cottage country, the nearest Honda dealer can be 90+ minutes away. Mercury Platinum dealers are typically 30-45 minutes away in the same areas. For mid-season service emergencies, the difference matters.
 
-**HP class match for repowers above 60 HP.** Honda's BF lineup tops out at 250 HP (BF250). Mercury offers everything from 9.9 portable to 600 HP Verado V12. If your next repower is in the 250-600 HP range or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
+**HP class match for repowers above 60 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury offers everything from 9.9 portable to 600 HP Verado V12, including the 400 HP Verado V8/V10, the 450R, and the 600 HP V12. If your next repower is above 350 HP or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
 
 **Dealer service experience.** This is subjective, but we hear it: customers who've had a hard time getting Honda service slots in Ontario sometimes switch to Mercury because HBW (and other Platinum dealers) have invested in service capacity. Hours-on-the-water lost to service queue is a real cost.
 
@@ -93,7 +93,7 @@ We don't sell Honda. We DO try to give honest advice. Here's where Honda is the 
 
 **You need 60+ HP and your nearest Honda dealer is far.** Once you're above 60 HP, the service-network argument starts mattering more because the motor is doing more work and parts inventories at smaller dealers thin out. Mercury Platinum dealers are typically better-stocked.
 
-**You're going above 250 HP.** Honda tops out at BF250. If you want 300 HP, 400 HP, or 600 HP, Mercury Pro XS / Verado is the only path.
+**You're going above 350 HP.** Honda tops out at the BF350 V8 (350 HP, launched in Canada in 2024). If you want 400 HP, 450 HP, or 600 HP, Mercury (400 HP Verado V8/V10, 450R, 600 HP Verado V12) is the only path.
 
 **You want Joystick Piloting on a multi-engine setup.** Honda's iST joystick exists but Mercury's joystick integration is more mature and works with a broader range of multi-engine configurations.
 

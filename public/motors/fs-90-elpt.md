@@ -1,37 +1,37 @@
 ---
-canonical: https://www.mercuryrepower.ca/motors/proxs-200hp-200-exlpt-proxs-dts
-last_updated: 2026-06-03
+canonical: https://www.mercuryrepower.ca/motors/fs-90-elpt
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-motor_id: 91fd550e-a590-47ab-8e9e-e6ffa653965d
-slug: proxs-200hp-200-exlpt-proxs-dts
-family: ProXS
-horsepower: 200
-model_number: 12000040A
+motor_id: b16ac296-e506-4357-ad69-18a0aa347cbf
+slug: fs-90-elpt
+family: FourStroke
+horsepower: 90
+model_number: 1F904132D
 availability: in_stock
-price_cad: 30399
+price_cad: 14960
 ---
 
-# 200 EXLPT ProXS DTS
+# 90 ELPT FourStroke
 
-Mercury ProXS 200 HP outboard motor (model 12000040A).
+Mercury FourStroke 90 HP outboard motor (model 1F904132D).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 200 EXLPT ProXS DTS
-- **Family:** Mercury ProXS
-- **Horsepower:** 200 HP
-- **Model number:** 12000040A
+- **Model:** 90 ELPT FourStroke
+- **Family:** Mercury FourStroke
+- **Horsepower:** 90 HP
+- **Model number:** 1F904132D
 
 ## Pricing (CAD)
 
-- **Selling price:** $30,399
-- **MSRP:** $33,865
+- **Selling price:** $14,960
+- **MSRP:** $16,665
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
@@ -42,16 +42,16 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Best fit for
 
-Larger pontoons, fiberglass runabouts, and walkaround/cuddy boats 20–24 ft.
+Aluminum fishing boats 16–20 ft, pontoons up to ~22 ft, and family runabouts.
 
 ## Not ideal for
 
-Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
+Tournament bass setups (see Pro XS) and large 24+ ft pontoons with watersports loads.
 
 ## Build a quote
 
-- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/proxs-200hp-200-exlpt-proxs-dts
-- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=91fd550e-a590-47ab-8e9e-e6ffa653965d
+- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fs-90-elpt
+- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=b16ac296-e506-4357-ad69-18a0aa347cbf
 
 ## Public Quote API
 
@@ -60,7 +60,7 @@ Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1
 ```json
 {
   "action": "build_quote",
-  "motor_id": "91fd550e-a590-47ab-8e9e-e6ffa653965d",
+  "motor_id": "b16ac296-e506-4357-ad69-18a0aa347cbf",
   "trade_in": null,
   "contact": null
 }

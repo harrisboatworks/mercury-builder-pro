@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md
-last_updated: 2026-06-03
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-06-03
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -77,7 +77,7 @@ Tournament use rewards the Pro XS for faster acceleration and more water covered
 
 ### Charter Fishing Operations
 
-**Recommended:** 26–30+ ft deep-V + Mercury 300–400 HP Verado V8 or SeaPro commercial-duty variant + 15 HP ProKicker.
+**Recommended:** 26–30+ ft deep-V + Mercury 300–400 HP 300-350 HP Pro XS V8 or SeaPro commercial-duty variant + 15 HP ProKicker.
 
 Charter operations push motors through hard daily cycles. Mercury SeaPro variants are built specifically for commercial-duty use. For engine repairs on a charter operation, we only service Mercury and Mercruiser.
 

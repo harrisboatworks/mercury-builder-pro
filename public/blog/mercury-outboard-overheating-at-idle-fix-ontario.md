@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-06-03
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -93,7 +93,7 @@ The impeller is a rubber vane wheel inside the lower unit that drives cooling wa
 - Overheat alarm that sounds when trolling or in no-wake zones but goes quiet when you bring RPM up
 - Tell-tale that sputters but doesn't disappear entirely (a fully-failed impeller often produces no tell-tale at any RPM)
 
-**Service interval:** Mercury recommends replacing the impeller every 2, 3 years or 200 hours, whichever comes first. Many owners are well past this when they first notice idle overheating symptoms. A tell-tale that was "a bit weak last year" is a warning the motor gave you that it's time.
+**Service interval:** Mercury recommends replacing the impeller every 2, 3 years or 300 hours, whichever comes first. Many owners are well past this when they first notice idle overheating symptoms. A tell-tale that was "a bit weak last year" is a warning the motor gave you that it's time.
 
 **Replacement:** The lower unit needs to come off to access the water pump. This is a job with straightforward procedure but it involves torquing the lower unit back on correctly and ensuring the shift shaft aligns. If you're mechanically confident, it's a DIY-possible job. If not, have it done by a technician.
 
@@ -217,7 +217,7 @@ Almost always a partially-blocked or worn water pump impeller. At cruise RPM, en
 
 ### How often should I replace the impeller?
 
-Every 2-3 years or every 200 hours, whichever comes first. Mercury recommends inspection annually. If you boat in weedy water (like Rice Lake), lean toward 2 years.
+Every 3 years or 300 hours, whichever comes first (Mercury official interval). Mercury recommends inspection annually. If you boat in weedy water (like Rice Lake), lean toward 2 years.
 
 ### My tell-tale is weak, can I still run it?
 
