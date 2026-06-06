@@ -4379,7 +4379,7 @@ const routes = [
   },
   {
     path: '/finance-calculator',
-    title: 'Mercury Outboard Finance Calculator (CAD): Monthly Payment Estimate | Harris Boat Works',
+    title: 'Mercury Outboard Financing Calculator - Ontario | HBW',
     description: 'Estimate your Mercury outboard monthly payment in CAD. 8.99% under $10K, 7.99% over $10K. Terms up to 144 months through DealerPlan. Mercury dealer since 1965.',
     h1: 'Mercury Outboard Finance Calculator',
     intro: 'Estimate your monthly payment for any Mercury outboard in Canadian dollars. Tiered rates of 8.99% APR under $10,000 and 7.99% APR over $10,000, with terms up to 144 months through DealerPlan. Minimum financed amount $5,000.',
