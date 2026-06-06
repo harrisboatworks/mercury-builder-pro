@@ -27,7 +27,7 @@ export function HomepageSEO() {
         "logo": {
           "@type": "ImageObject",
           "@id": "https://www.mercuryrepower.ca/#logo",
-          "url": "https://www.harrisboatworks.ca/logo.png",
+          "url": "https://www.mercuryrepower.ca/pwa-512x512.png",
           "caption": "Harris Boat Works"
         },
         "foundingDate": "1947",
@@ -54,7 +54,7 @@ export function HomepageSEO() {
         "@type": ["LocalBusiness", "Store", "AutoRepair"],
         "@id": "https://www.mercuryrepower.ca/#localbusiness",
         "name": "Harris Boat Works",
-        "image": "https://www.harrisboatworks.ca/logo.png",
+        "image": "https://www.mercuryrepower.ca/pwa-512x512.png",
         "url": "https://www.harrisboatworks.ca/",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
