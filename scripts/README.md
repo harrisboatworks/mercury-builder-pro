@@ -6,6 +6,7 @@ Build, validation, and content-maintenance utilities. Run with `node scripts/<na
 |--------|---------|
 | `safe-blog-edit.mjs` | Canonical body-swap utility for `src/data/*BlogArticles.ts`. Backup, write, esbuild + leaks verify, rollback on failure. All bulk blog body edits MUST route through this. |
 | `check-blog-leaks.mjs` | Pre-publish leak scan. Fails if any blog `.ts` file contains editor notes, TODOs, or `[INSERT ...]` placeholders. Wired to prebuild. |
+| `check-blog-asset-existence.mjs` | Pre-build asset guard. Walks every blog data file (`blogArticles.ts` + localized siblings), verifies each hero `image` and inline markdown/HTML `<img>` reference resolves to a file under `public/` (with `lovable-uploads/` and `assets/optimized/` fallback), and fails if any hero uses a path listed in `STUB_FALLBACK_HEROES`. External `http(s)://` URLs are skipped. Wired to prebuild. |
 | `check-pricing-reference-copy.mjs` | Locks the `/pricing-reference` page title, H1, and meta description to the Ontario CAD 2026 copy in both `src/pages/PricingReference.tsx` and `scripts/static-prerender.mjs`, and fails on any em-dash/en-dash. Wired to prebuild. |
 | `check-design-tokens.mjs` | Lints components for raw color classes (`text-white`, `bg-black`, etc.) instead of semantic design tokens from `index.css` / `tailwind.config.ts`. |
 | `generate-markdown-twins.mjs` | Mirrors each blog post in `src/data/blogArticles.ts` to a `.md` file under `public/blog/` for AI-agent crawlability. |
