@@ -73,10 +73,16 @@ export default defineConfig(({ mode }) => ({
         // contains React + router + the landing route.
         manualChunks(id) {
           if (!id.includes('node_modules')) return undefined;
+          // Keep React + everything that touches React internals at module top
+          // (radix forwardRef, react-router, lucide icons, react-is, use-sync-external-store)
+          // in a single vendor chunk to guarantee React is initialized before any
+          // consumer evaluates. Splitting these caused a production white-screen:
+          // "Cannot read properties of undefined (reading 'forwardRef')" when the
+          // ui-radix chunk loaded before react-vendor.
+          if (id.match(/node_modules\/(react|react-dom|react-is|scheduler|use-sync-external-store)\//)) return 'react-vendor';
           if (id.includes('react-router')) return 'react-vendor';
-          if (id.match(/node_modules\/(react|react-dom|scheduler)\//)) return 'react-vendor';
-          if (id.includes('@radix-ui')) return 'ui-radix';
-          if (id.includes('lucide-react')) return 'ui-icons';
+          if (id.includes('@radix-ui')) return 'react-vendor';
+          if (id.includes('lucide-react')) return 'react-vendor';
           if (id.includes('@react-pdf') || id.includes('pdfkit') || id.includes('fontkit')) return 'pdf-vendor';
           if (id.includes('react-markdown') || id.includes('remark') || id.includes('rehype') || id.includes('micromark') || id.includes('mdast') || id.includes('hast')) return 'blog-vendor';
           if (id.includes('framer-motion')) return 'motion-vendor';
