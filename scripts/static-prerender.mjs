@@ -2601,6 +2601,45 @@ function renderAuthorBylineHtml(authorName) {
   );
 }
 
+// ============================================================
+// Cross-language hreflang slug maps (mirror src/data/frenchEnglishSlugMap.ts).
+// Only includes pairs where an alternate actually exists. Fabricating a
+// hreflang to a slug that doesn't exist gets the cluster ignored by Google.
+// ============================================================
+const FR_TO_EN_SLUG = {
+  'prix-remotorisation-mercury-ontario': 'mercury-repower-cost-ontario-2026-cad',
+  'mercury-115-vs-150-hp-comparaison': 'mercury-115-vs-150-hp-outboard-ontario',
+  'hivernisation-moteur-mercury-ontario': 'diy-mercury-outboard-winterization-guide',
+  'remotorisation-vs-bateau-neuf': 'boat-repowering-guide-when-to-replace-motor',
+  'mercury-hors-bord-ne-demarre-pas-depannage': 'mercury-outboard-wont-start-troubleshooting',
+  'surchauffe-moteur-mercury-guide-urgence': 'mercury-outboard-overheating-at-idle-fix-ontario',
+  'entretien-remorque-bateau-ontario': 'boat-trailer-maintenance-guide-ontario',
+  'guide-assurance-bateau-ontario-2026': 'boat-insurance-ontario-guide-2026',
+  'garantie-prolongee-mercury-platinum-ontario': 'mercury-extended-warranty-platinum-ontario',
+  'gamme-mercury-hors-bord-2026-ontario': 'mercury-2026-outboard-lineup-ontario',
+};
+const ZH_TO_EN_SLUG = {
+  'mercury-115-vs-150-comparison-zh': 'mercury-115-vs-150-hp-outboard-ontario',
+  'winterization-mercury-guide-zh': 'diy-mercury-outboard-winterization-guide',
+  'repower-vs-new-boat-zh': 'repower-vs-new-boat',
+  'mercury-fourstroke-vs-pro-xs-chinese': 'fourstroke-vs-pro-xs',
+};
+const EN_TO_FR_SLUG = Object.fromEntries(Object.entries(FR_TO_EN_SLUG).map(([fr, en]) => [en, fr]));
+const EN_TO_ZH_SLUG = Object.fromEntries(Object.entries(ZH_TO_EN_SLUG).map(([zh, en]) => [en, zh]));
+
+function blogHreflangTags(enSlug) {
+  const frSlug = EN_TO_FR_SLUG[enSlug];
+  const zhSlug = EN_TO_ZH_SLUG[enSlug];
+  if (!frSlug && !zhSlug) return '';
+  const tags = [
+    `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/blog/${enSlug}" />`,
+  ];
+  if (frSlug) tags.push(`<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/blog/fr/${frSlug}" />`);
+  if (zhSlug) tags.push(`<link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
+  tags.push(`<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/${enSlug}" />`);
+  return tags.join('\n  ');
+}
+
 // Build blog article route configs.
 const blogArticleRoutes = blogArticles.map(article => ({
   path: `/blog/${article.slug}`,
@@ -2611,6 +2650,7 @@ const blogArticleRoutes = blogArticles.map(article => ({
   h1: article.title,
   intro: firstParagraph(article.content, article.description),
   schemas: [blogArticleSchema(article)],
+  extraHead: blogHreflangTags(article.slug),
   extraNoscript: () => {
     const heroHtml = renderHeroPictureHtml(article.image, article.title);
     const bylineHtml = renderAuthorBylineHtml(article.author);
