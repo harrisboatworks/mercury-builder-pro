@@ -4348,7 +4348,7 @@ const routes = [
   },
   {
     path: '/compare',
-    title: 'Compare Mercury Outboards Side-by-Side: HP, Weight & CAD Price | Harris Boat Works',
+    title: 'Compare Mercury Outboards - Side-by-Side Specs | HBW',
     description: 'Compare Mercury outboard motors side-by-side: horsepower, dry weight, shaft length, family, real CAD pricing, and availability. Mercury dealer since 1965 on Rice Lake, Ontario.',
     h1: 'Compare Mercury Outboards',
     intro: 'Compare any two or three Mercury outboards side-by-side, horsepower, weight, shaft length, family, CAD price, and availability. Pull from our live inventory and decide between the FourStroke, Pro XS, Command Thrust, SeaPro, or ProKicker that fits your boat.',
