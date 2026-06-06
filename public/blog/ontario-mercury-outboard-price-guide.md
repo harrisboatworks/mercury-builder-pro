@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-06-03
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier"
 description: "Real Mercury outboard prices in Ontario for 2026 - CAD pricing by HP tier, model code decoder, what is included vs not, and how MSRP and dealer pricing work at a..."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-05-31
+date_modified: 2026-06-02
 keywords: ["mercury outboard prices","ontario","cad pricing","repower","buying guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last updated:** 2026-05-31  
+**Last updated:** 2026-06-02  
 **Read time:** ~14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 
@@ -108,7 +108,7 @@ The full current Mercury outboard lineup we sell, grouped by HP class. The prici
 
 **Pro XS vs. standard FourStroke at 115 HP.** Both run on the same 2.1L inline-4 platform. The FourStroke is tuned for smooth cruising and fuel economy. The Pro XS is tuned for hole-shot and a higher RPM ceiling.
 
-Price difference between the two at 115 HP is small, roughly **$400** ($16,913 dealer price for 115ELPT FourStroke vs $17,320 for 115ELPT Pro XS, before HST). For a family bowrider or pontoon, take the FourStroke. For a bass boat or anyone who wants snappier acceleration, take the Pro XS.
+Price difference between the two at 115 HP is small, roughly **$400** ($17,083 dealer price for 115ELPT FourStroke vs $17,490 for 115ELPT Pro XS, before HST). For a family bowrider or pontoon, take the FourStroke. For a bass boat or anyone who wants snappier acceleration, take the Pro XS.
 
 ### Things to know about the V6 and V8 tier
 
@@ -164,15 +164,15 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
 
 ### How much does a Mercury 9.9 HP cost in Ontario?
 
-A standard 9.9 MH FourStroke is around $3,553 CAD dealer price. The 9.9 ELPT Command Thrust ProKicker EFI, the popular trolling kicker, is around $4,901. Add HST, controls if going remote, and any rigging or installation. See the live pricing table for the full 9.9 lineup with shaft, start, and feature variants.
+A standard 9.9 MH FourStroke is around $2,999 CAD dealer price. The 9.9 ELPT Command Thrust ProKicker EFI, the popular trolling kicker, is around $5,000. Add HST, controls if going remote, and any rigging or installation. See the live pricing table for the full 9.9 lineup with shaft, start, and feature variants.
 
 ### How much is a Mercury 150 HP in Canada?
 
-A 150L FourStroke is $22,022 CAD dealer price. A 150L Pro XS is $24,107. Both are before HST, install, controls, and prop. All-in installed cost on a typical 19-21 ft bowrider repower generally lands at $25,000-$28,000 CAD.
+A 150L FourStroke is $22,242 CAD dealer price. A 150 ELPT Pro XS is $24,349. Both are before HST, install, controls, and prop. All-in installed cost on a typical 19-21 ft bowrider repower generally lands at $25,000-$28,000 CAD.
 
 ### How much is a Mercury 115 Pro XS?
 
-The 115ELPT Pro XS is $17,320 CAD dealer price (vs $16,913 for the 115ELPT FourStroke, about a $400 difference). The 115ELPT Pro XS Command Thrust is $17,765. All before HST, install, controls, and prop.
+The 115ELPT Pro XS is $17,490 CAD dealer price (vs $17,083 for the 115ELPT FourStroke, about a $400 difference). The 115ELPT Pro XS Command Thrust is $17,941. All before HST, install, controls, and prop.
 
 ### What's the difference between MSRP and dealer price?
 

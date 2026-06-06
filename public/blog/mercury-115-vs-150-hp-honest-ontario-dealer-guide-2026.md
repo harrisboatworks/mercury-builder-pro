@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026.md
-last_updated: 2026-06-03
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)"
 description: "Mercury 115 vs 150 HP from an Ontario Platinum dealer. Real dividing lines by hull type. 18ft V-hull, 21ft tritoon, 22ft pontoon. Honest pricing math."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-05-29
+date_modified: 2026-06-02
 keywords: ["Mercury 115 vs 150 HP","Mercury 115 Pro XS price","Mercury 150 Pro XS price","Mercury 115 vs 150 pontoon","Mercury Command Thrust V-hull","Mercury 115 CT","Mercury outboard Ontario","Mercury Platinum dealer Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-05-29  
+**Last updated:** 2026-06-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026
 
@@ -31,7 +31,7 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-28*
 
-> **Quick answer:** For 18ft aluminum V-hull boats, Mercury 115 HP is the right call. For 19 to 20ft aluminum V-hull boats, step up to 150 HP. For pontoons 18 to 20ft, the Mercury 60 Command Thrust is actually the right answer, not 115 or 150. For pontoons 22 to 24ft (especially tritoons), 150 HP. HBW current sell prices: 115 Pro XS $17,320, 150 Pro XS $24,107 (CAD, pre-HST). Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** For 18ft aluminum V-hull boats, Mercury 115 HP is the right call. For 19 to 20ft aluminum V-hull boats, step up to 150 HP. For pontoons 18 to 20ft, the Mercury 60 Command Thrust is actually the right answer, not 115 or 150. For pontoons 22 to 24ft (especially tritoons), 150 HP. HBW current sell prices: 115 Pro XS $17,490, 150 Pro XS $24,349 (CAD, pre-HST). Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 The 115 vs 150 question is the most common repower decision we see at HBW. Customer has an aluminum V-hull, an aging 115 or 90, and is trying to figure out whether the next motor should match what they have or jump up a tier. Most online answers fall back on "depends on the boat" without giving you actual dividing lines.
 
@@ -68,9 +68,9 @@ Our most popular models in these two HP classes:
 | Model | HBW Sell Price (CAD, pre-HST) | Notes |
 |---|---|---|
 | Mercury 115 ELPT FourStroke | starts around $14,500 | Standard 115, good for most 18ft V-hulls |
-| Mercury 115 ELPT Pro XS FourStroke | **$17,320** | Our most popular 115, performance variant |
+| Mercury 115 ELPT Pro XS FourStroke | **$17,490** | Our most popular 115, performance variant |
 | Mercury 150 L FourStroke | starts around $20,500 | Standard 150 |
-| Mercury 150 L Pro XS FourStroke | **$24,107** | Our most popular 150, performance variant |
+| Mercury 150 L Pro XS FourStroke | **$24,349** | Our most popular 150, performance variant |
 
 Pricing as of 2026. Install costs vary by what's on the boat now. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) for your specific situation.
 
@@ -124,13 +124,13 @@ For most Rice Lake cottage users at 20 hours/year, fuel cost is not the deciding
 
 ## Motor price delta over the ownership period
 
-Mercury 150 ProXS at HBW: $24,107. Mercury 115 ProXS at HBW: $17,320. **Delta: $6,787 plus 13% HST.**
+Mercury 150 ProXS at HBW: $24,349. Mercury 115 ProXS at HBW: $17,490. **Delta: $6,859 plus 13% HST.**
 
-If you keep the motor 10 years at 20 hr/year average use, the $6,787 motor price delta is $678 per year of ownership. At 100 hr/year heavy use, it's still $678 per year of ownership. Motor price doesn't change with use.
+If you keep the motor 10 years at 20 hr/year average use, the $6,859 motor price delta is $686 per year of ownership. At 100 hr/year heavy use, it's still $686 per year of ownership. Motor price doesn't change with use.
 
 For a customer who'll genuinely use the extra HP (full crew, heavy load, regularly cruising at 30+ MPH), the 150 is worth it.
 
-For a customer fishing solo or with one partner, running the boat at idle or low speed most of the time, $678/year over 10 years is real money to give up for HP you won't use.
+For a customer fishing solo or with one partner, running the boat at idle or low speed most of the time, $686/year over 10 years is real money to give up for HP you won't use.
 
 ## The Command Thrust correction (a common dealer mistake)
 
@@ -171,7 +171,7 @@ Repowers are the highest-risk install in our shop. New motor, old hull, unknown 
 - claim: I'll prop it for top speed.
   rebuttal: Most customers prop wrong. Prop pitch should be set so the motor reaches WOT RPM within Mercury's recommended range (typically 5,500 to 6,000 RPM for FourStroke, 6,000 to 6,400 for Pro XS) under typical load. We dial this in at our dock.
 - claim: My buddy has a 150 on the same boat and it's faster.
-  rebuttal: Maybe. Or your buddy's boat is set up differently, has a different prop, runs at different load, or you're comparing perceived speed vs measured speed. Don't make a $6,800 decision on one anecdote.
+  rebuttal: Maybe. Or your buddy's boat is set up differently, has a different prop, runs at different load, or you're comparing perceived speed vs measured speed. Don't make a $6,900 decision on one anecdote.
 :::
 
 ## Customer language we hear
@@ -217,7 +217,7 @@ For aluminum V-hull boats, the realistic decision range is 18 to 20 feet. For po
 
 ### What's the HBW current sell price for the Mercury 115 and 150 Pro XS?
 
-HBW's most popular 115 HP model is the Mercury 115 ELPT Pro XS FourStroke at $17,320 CAD (pre-HST). Our most popular 150 is the Mercury 150 L Pro XS FourStroke at $24,107 CAD (pre-HST). Standard ELPT and L variants run slightly lower. Build a quote at mercuryrepower.ca for current pricing on your specific boat.
+HBW's most popular 115 HP model is the Mercury 115 ELPT Pro XS FourStroke at $17,490 CAD (pre-HST). Our most popular 150 is the Mercury 150 L Pro XS FourStroke at $24,349 CAD (pre-HST). Standard ELPT and L variants run slightly lower. Build a quote at mercuryrepower.ca for current pricing on your specific boat.
 
 ### Should I get a 115 Command Thrust for my aluminum V-hull?
 
@@ -233,7 +233,7 @@ On a 19ft aluminum V-hull with 3 adults plus gear, top speed difference is typic
 
 ### What's the fuel cost difference between 115 and 150?
 
-At realistic Ontario cottage use of 20 hours per season, fuel cost delta is roughly $140 per year. At heavy use of 100 hours per season, the delta is roughly $700 per year. For most Rice Lake cottage owners, fuel cost is not the deciding factor between 115 and 150. The motor price delta of about $6,800 is more significant.
+At realistic Ontario cottage use of 20 hours per season, fuel cost delta is roughly $140 per year. At heavy use of 100 hours per season, the delta is roughly $700 per year. For most Rice Lake cottage owners, fuel cost is not the deciding factor between 115 and 150. The motor price delta of about $6,900 is more significant.
 
 ### What's the right pontoon answer if I'm not sure between 115 and 150?
 

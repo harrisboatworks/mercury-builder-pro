@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/pricing-reference.md
-last_updated: 2026-06-03
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -18,7 +18,7 @@ Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. Four
 
 **Published by [Harris Boat Works](/)** — Mercury Marine Platinum Dealer on Rice Lake, Ontario, Canada. Family-owned since 1947, Mercury dealer since 1965. All prices below are HBW's actual dealer selling price in CAD, not generic MSRP estimates. Verified weekly. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
-_Last updated 2026-06-03._
+_Last updated 2026-06-06._
 
 ## How to use this page
 
@@ -148,7 +148,7 @@ _Last updated 2026-06-03._
 | 175 | 175EXLPT ProXS | 11750002A |  -  |  -  | $28,287 _(MSRP $31,510)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=06c0da2c-c54d-4bfe-bbc1-c6af3534cd19) |
 | 200 | 200ELPT ProXS DTS | 12000035A |  -  |  -  | $29,992 _(MSRP $33,410)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=62a0ce53-7c17-4589-926a-c44ac4314412) |
 | 200 | 200ELPT ProXS | 12000039A |  -  |  -  | $28,122 _(MSRP $31,330)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=9e7a8b58-bc3f-401e-b24e-25b2b102d0fd) |
-| 200 | 200EXLPT ProXS DTS | 12000040A |  -  |  -  | $30,399 _(MSRP $33,865)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=91fd550e-a590-47ab-8e9e-e6ffa653965d) |
+| 200 | 200EXLPT ProXS DTS | 12000040A |  -  |  -  | $30,399 _(MSRP $33,865)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=91fd550e-a590-47ab-8e9e-e6ffa653965d) |
 | 225 | 225ELPT ProXS | 12250033A |  -  |  -  | $34,029 _(MSRP $37,910)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=37f35f6f-d8fe-4ab1-9df2-b5ac5f81fe09) |
 | 225 | 225EXLPT ProXS | 12250055A |  -  |  -  | $36,300 _(MSRP $40,440)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=4a768800-5e84-448c-b166-eb1230377717) |
 | 250 | 250ELPT ProXS | 12500033A |  -  |  -  | $34,848 _(MSRP $38,820)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=44687a28-0f23-438b-ae1d-152d611a658a) |

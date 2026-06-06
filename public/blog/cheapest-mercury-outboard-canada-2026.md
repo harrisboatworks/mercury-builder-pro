@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md
-last_updated: 2026-06-03
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guid
 description: "The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats."
 category: "Buying Guide"
 date_published: 2026-04-23
-date_modified: 2026-05-04
+date_modified: 2026-06-03
 keywords: ["cheapest mercury outboard canada","mercury 2.5hp price","small mercury outboard cad"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-04-23  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-03  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 
@@ -43,8 +43,8 @@ heading: What changes the real out-the-door price?
 eyebrow: Where the money goes
 subhead: A Mercury repower is more than the motor sticker price. Here is where every dollar actually goes.
 item1Label: Motor (the big number)
-item1Value: $12,000 - $35,000 CAD
-item1Note: Mercury MSRP plus any current rebates applied
+item1Value: $1,298 - $38,539 CAD
+item1Note: HBW dealer selling price, 2.5MH FourStroke to 300XL FourStroke DTS (canonical 2026-06-03).
 item1Accent: true
 item2Label: Rigging (steering, controls, gauges)
 item2Value: $1,500 - $4,500
