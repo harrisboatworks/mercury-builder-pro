@@ -2,7 +2,16 @@ import type { LucideIcon } from 'lucide-react';
 
 export interface HowItWorksCardProps {
   icon: LucideIcon;
+  /** PNG/JPG fallback (kept for non-AVIF/WebP UAs). */
   image: string;
+  /**
+   * Optional basename of the optimized variants in /assets/optimized/
+   * (e.g. "landing-step-pick"). When set, the card renders a responsive
+   * <picture> with AVIF + WebP at 400/800/1600w.
+   */
+  imageBase?: string;
+  /** Above-the-fold LCP candidate: eager-load with high fetchpriority. */
+  priority?: boolean;
   title: string;
   body: string;
   stepNumber: number;
@@ -16,10 +25,17 @@ export interface HowItWorksCardProps {
 export function HowItWorksCard({
   icon: Icon,
   image,
+  imageBase,
+  priority = false,
   title,
   body,
   stepNumber,
 }: HowItWorksCardProps) {
+  const sizes = '(min-width: 768px) 33vw, 100vw';
+  const widths = [400, 800, 1600];
+  const buildSet = (ext: 'avif' | 'webp') =>
+    widths.map((w) => `/assets/optimized/${imageBase}-${w}w.${ext} ${w}w`).join(', ');
+
   return (
     <li
       className="relative bg-[#0A1828] flex flex-col group overflow-hidden transition-all duration-500 ring-1 ring-[#F5F1EA]/10 md:ring-transparent rounded md:rounded-none hover:ring-[#C9A24A]/40 hover:shadow-[0_0_40px_-8px_rgba(201,162,74,0.35)] hover:z-10 active:ring-[#C9A24A]/50 active:shadow-[0_0_30px_-8px_rgba(201,162,74,0.4)]"
@@ -31,14 +47,33 @@ export function HowItWorksCard({
       />
 
       <div className="aspect-[16/10] md:aspect-[4/3] overflow-hidden border-b border-[#F5F1EA]/10 relative">
-        <img
-          src={image}
-          alt={title}
-          loading="lazy"
-          width={800}
-          height={600}
-          className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110 group-active:scale-105"
-        />
+        {imageBase ? (
+          <picture>
+            <source type="image/avif" srcSet={buildSet('avif')} sizes={sizes} />
+            <source type="image/webp" srcSet={buildSet('webp')} sizes={sizes} />
+            <img
+              src={image}
+              alt={title}
+              loading={priority ? 'eager' : 'lazy'}
+              fetchPriority={priority ? 'high' : 'auto'}
+              decoding="async"
+              width={800}
+              height={600}
+              className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110 group-active:scale-105"
+            />
+          </picture>
+        ) : (
+          <img
+            src={image}
+            alt={title}
+            loading={priority ? 'eager' : 'lazy'}
+            fetchPriority={priority ? 'high' : 'auto'}
+            decoding="async"
+            width={800}
+            height={600}
+            className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110 group-active:scale-105"
+          />
+        )}
         <span
           aria-hidden
           className="absolute inset-0 bg-gradient-to-t from-[#0A1828]/60 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500"

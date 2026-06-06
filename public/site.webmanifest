@@ -1,0 +1,15 @@
+{
+  "name": "Harris Boat Works",
+  "short_name": "HBW",
+  "description": "Mercury Marine Platinum Dealer on Rice Lake, Ontario. Repower, financing, parts, and service since 1947.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#20384d",
+  "icons": [
+    { "src": "/pwa-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/pwa-512x512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/pwa-maskable-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,6 +1,7 @@
 import { Award, BadgeCheck } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import warranty7 from '@/assets/harris-7-year-warranty.png';
+// Optimized warranty badge: 5KB WebP (was 3MB PNG, displayed at ~40px).
+const warranty7 = '/assets/optimized/harris-7-year-warranty-200w.webp';
 import hbwLogo from '@/assets/harris-logo-white.png';
 
 const mercuryRepowerLogo = '/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png';
