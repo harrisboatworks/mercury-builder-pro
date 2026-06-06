@@ -251,6 +251,36 @@ function rewriteMythbuster(md: string): string {
   return md.replace(re, (_m, body) => `:::mythbuster\n${body}\n:::`);
 }
 
+/**
+ * Convert an `## Mythbuster` H2 (followed by bulleted myth/what-we-tell pairs)
+ * into a `:::mythbuster` directive so it routes through the premium component
+ * instead of plain markdown. The legacy "Common mistakes" H2 path is untouched
+ * and continues to render via the orange Watch Out card.
+ *
+ * Recognized bullet shape (markdown the council ships):
+ *   - **Myth:** "claim text"
+ *     **What we tell customers:** rebuttal text
+ */
+function rewriteMythbusterH2(md: string): string {
+  const re = /^##\s+Mythbuster\b[^\n]*\n([\s\S]*?)(?=^##\s|\Z)/gm;
+  return md.replace(re, (_m, body: string) => {
+    const items: Array<{ claim: string; rebuttal: string }> = [];
+    const pairRe =
+      /-\s*\*\*(?:Myth|Claim)\s*:\*\*\s*"?([^"\n][^\n]*?)"?\s*\n\s+\*\*(?:What we tell customers|Truth|Reality|Rebuttal)\s*:\*\*\s*([^\n]+(?:\n(?!\s*-\s*\*\*)[^\n]+)*)/gi;
+    let pm: RegExpExecArray | null;
+    while ((pm = pairRe.exec(body)) !== null) {
+      const claim = pm[1].trim().replace(/^["']|["']$/g, '');
+      const rebuttal = pm[2].replace(/\s+/g, ' ').trim();
+      if (claim && rebuttal) items.push({ claim, rebuttal });
+    }
+    if (!items.length) return _m;
+    const yaml = items
+      .map((it) => `- claim: ${it.claim}\n  rebuttal: ${it.rebuttal}`)
+      .join('\n');
+    return `\n:::mythbuster\n${yaml}\n:::\n\n`;
+  });
+}
+
 
 function rewriteWalkaroundLeadCapture(md: string): string {
   // Bodiless directive: a single line `::walkaround-lead-capture` becomes
@@ -317,7 +347,7 @@ function buildYouTubeDirective(attrs: string): string | null {
 }
 
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteMythbuster(rewriteCustomerVoice(rewriteYouTubeEmbeds(
+  return rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeEmbeds(
     rewriteMercuryPriceTable(
       rewriteWalkaroundLeadCapture(
         rewritePullQuote(
@@ -331,7 +361,7 @@ function preprocessSpecialBlocks(md: string): string {
         ),
       ),
     ),
-  )));
+  ))));
 }
 
 /**
