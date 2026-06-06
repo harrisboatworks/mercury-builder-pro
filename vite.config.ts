@@ -65,4 +65,26 @@ export default defineConfig(({ mode }) => ({
       'hsl-to-hex': path.resolve(__dirname, './src/lib/vendor/hsl-to-hex-compat.ts'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Manual chunking to keep first-paint payload lean. Heavy vendors
+        // (radix, pdf, markdown) are split off so the initial bundle only
+        // contains React + router + the landing route.
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return undefined;
+          if (id.includes('react-router')) return 'react-vendor';
+          if (id.match(/node_modules\/(react|react-dom|scheduler)\//)) return 'react-vendor';
+          if (id.includes('@radix-ui')) return 'ui-radix';
+          if (id.includes('lucide-react')) return 'ui-icons';
+          if (id.includes('@react-pdf') || id.includes('pdfkit') || id.includes('fontkit')) return 'pdf-vendor';
+          if (id.includes('react-markdown') || id.includes('remark') || id.includes('rehype') || id.includes('micromark') || id.includes('mdast') || id.includes('hast')) return 'blog-vendor';
+          if (id.includes('framer-motion')) return 'motion-vendor';
+          if (id.includes('@supabase')) return 'supabase-vendor';
+          if (id.includes('recharts') || id.includes('d3-')) return 'charts-vendor';
+          return 'vendor';
+        },
+      },
+    },
+  },
 }));
