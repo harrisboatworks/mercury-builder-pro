@@ -4957,7 +4957,17 @@ function sitemapHreflangBlock(loc) {
   if (mFr) enSlug = FR_TO_EN_SLUG[mFr[1]];
   else if (mZh) enSlug = ZH_TO_EN_SLUG[mZh[1]];
   else if (mEn) enSlug = mEn[1];
-  if (!enSlug) return '';
+  if (!enSlug) {
+    // ZH-only fallback: emit zh-CA self + x-default pointing at the ZH hub
+    // so Google clusters Chinese-targeted posts without faking an EN twin.
+    if (mZh) {
+      return '\n' + [
+        `    <xhtml:link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${mZh[1]}" />`,
+        `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/zh" />`,
+      ].join('\n');
+    }
+    return '';
+  }
   const frSlug = EN_TO_FR_SLUG[enSlug];
   const zhSlug = EN_TO_ZH_SLUG[enSlug];
   if (!frSlug && !zhSlug) return '';
