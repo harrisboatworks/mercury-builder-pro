@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { Shield, Calendar } from 'lucide-react';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import harris7YearWarranty from '@/assets/harris-7-year-warranty.png';
+// Optimized warranty badge: 15KB WebP @ 400w (was 3MB PNG).
+const harris7YearWarranty = '/assets/optimized/harris-7-year-warranty-400w.webp';
 
 interface PromotionHeroProps {
   endDate?: string | null;
