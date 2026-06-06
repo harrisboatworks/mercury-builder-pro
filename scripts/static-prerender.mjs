@@ -2645,6 +2645,16 @@ function blogHreflangTags(enSlug) {
   return tags.join('\n  ');
 }
 
+// ZH-only fallback: for Chinese-targeted posts with no English twin, point
+// zh-CA to self and x-default to the Chinese blog hub (content is locale-
+// specific, so a non-Chinese landing page would be a worse default).
+function zhOnlyHreflangTags(zhSlug) {
+  return [
+    `<link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${zhSlug}" />`,
+    `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/zh" />`,
+  ].join('\n  ');
+}
+
 // Build blog article route configs.
 const blogArticleRoutes = blogArticles.map(article => ({
   path: `/blog/${article.slug}`,
@@ -2720,7 +2730,9 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       const enSlug = langCode === 'fr' ? FR_TO_EN_SLUG[article.slug]
                    : langCode === 'zh' ? ZH_TO_EN_SLUG[article.slug]
                    : undefined;
-      return enSlug ? blogHreflangTags(enSlug) : '';
+      if (enSlug) return blogHreflangTags(enSlug);
+      if (langCode === 'zh') return zhOnlyHreflangTags(article.slug);
+      return '';
     })(),
     extraNoscript: () => {
       const heroHtml = renderHeroPictureHtml(article.image, article.title);
