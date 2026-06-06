@@ -34240,19 +34240,18 @@ Mercury 9.9 FourStroke is typically a few pounds lighter than equivalent Honda B
 
 Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
-## Common mistakes (the things we push back on)
+## Mythbuster
 
-- **Myth:** "Honda is more reliable than Mercury."
-  **What we tell customers:** Both brands build reliable motors in 2026. The real-world reliability difference at modern model years is small. The bigger reliability factor is local service network access.
-
-- **Myth:** "Mercury Verado is supercharged so it has more issues."
-  **What we tell customers:** No. Current Verado V8, V10, and V12 are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
-
-- **Myth:** "Honda tops out at 250 HP."
-  **What we tell customers:** Honda BF350 V8 launched in Canada in early 2024 and is in market. Mercury still has more lineup above 350 HP - 400 HP Verado, 450R, 600 HP V12, but the 250 HP cap line is out of date.
-
-- **Myth:** "I'll save money buying Honda and getting it serviced wherever."
-  **What we tell customers:** Honda parts and service availability is genuinely thinner in our region. Plan for it before you buy.
+:::mythbuster
+- claim: Honda is more reliable than Mercury.
+  rebuttal: Both brands build reliable motors in 2026. The real-world reliability difference at modern model years is small. The bigger reliability factor is local service network access.
+- claim: Mercury Verado is supercharged so it has more issues.
+  rebuttal: No. Current Verado V8, V10, and V12 are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+- claim: Honda tops out at 250 HP.
+  rebuttal: Honda BF350 V8 launched in Canada in early 2024 and is in market. Mercury still has more lineup above 350 HP, including 400 HP Verado, 450R, and 600 HP V12, but the 250 HP cap line is out of date.
+- claim: I'll save money buying Honda and getting it serviced wherever.
+  rebuttal: Honda parts and service availability is genuinely thinner in our region. Plan for it before you buy.
+:::
 
 ## Related guides
 
