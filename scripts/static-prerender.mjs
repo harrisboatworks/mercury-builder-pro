@@ -4061,7 +4061,8 @@ const routes = [
     description: 'Shop Mercury FourStroke, Pro XS, SeaPro and ProKicker outboards. Configure your motor and get instant CAD pricing online: Harris Boat Works, Mercury dealer since 1965.',
     h1: 'Build Your Mercury Outboard Quote',
     intro: 'Select a Mercury outboard motor to build a real quote with live CAD pricing, financing, and trade-in. No forms, no waiting. Harris Boat Works: Mercury dealer since 1965.',
-    schemas: [motorSelectionPageSchema()]
+    schemas: [motorSelectionPageSchema(), faqPageSchemaFromList('/quote/motor-selection', MOTOR_SELECTION_FAQS)],
+    extraNoscript: MOTOR_SELECTION_EXTRA
   },
   {
     path: '/quote/boat-info',
