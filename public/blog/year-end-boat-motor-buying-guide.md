@@ -142,7 +142,7 @@ Price has some flexibility, especially on in-stock units. Bundling installation,
 
 ### When is the best time to buy?
 
-Winter months often offer good value through reduced demand, dealer flexibility, and no missed boating time. Currently, Harris Boat Works includes 7 years of factory-backed warranty with every new Mercury - a significant value.
+Winter months often offer good value through reduced demand, dealer flexibility, and no missed boating time. Every new Mercury includes a 3-year factory limited warranty, and current promotions can extend coverage further. See /promotions for what is active right now.
 
 ## Next steps
 

@@ -134,7 +134,7 @@ Mercury Canada runs promotions through the season: spring repower season (March-
 
 Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at 5.48% APR through December 31, 2026**, see the financing guide for terms.
 
-Mercury's standard warranty in Canada is 3 years, concurrent. "Up to 7 years" is a promotional claim combining the standard 3 years with promotional bonus years that change each season. It's real, but it's not the standard. Check current active promotions at mercuryrepower.ca or call us.
+Mercury's standard warranty in Canada is 3 years, concurrent. Promotional bonus warranty years may be stacked on top of the base during active promo windows. Check current active promotions at mercuryrepower.ca/promotions or call us.
 
 ## About the author
 
