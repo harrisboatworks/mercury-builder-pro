@@ -30770,7 +30770,7 @@ A new Mercury outboard costs more upfront but comes with a 3-year factory limite
 
 ## What "new" actually buys you
 
-The headline difference is warranty. A new Mercury FourStroke or Pro XS purchased through an authorized dealer comes with a 5-year limited factory warranty as of 2026, and Mercury Product Protection (the factory extended program) takes that to 8 years if you opt in during the warranty period. That window covers the engine, the powerhead, and most of the components that fail catastrophically.
+The headline difference is warranty. A new Mercury FourStroke or Pro XS purchased through an authorized dealer comes with a 3-year factory limited warranty, and as a current HBW Exclusive promotion (through June 14, 2026) every new Mercury we sell carries 7 years total factory-backed coverage. Mercury Product Protection (the factory extended program) is available beyond that and is quoted at time of sale. That window covers the engine, the powerhead, and most of the components that fail catastrophically.
 
 The less obvious benefit is **known maintenance horizon**. With a new motor you know:
 - First 20-hour service is on the dealer's calendar
