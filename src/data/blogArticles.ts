@@ -34089,39 +34089,42 @@ Harris Boat Works, family-owned since 1947. A Mercury Platinum Dealer, selling M
     keywords: ['mercury 7 year warranty', 'mercury warranty promo', 'hbw exclusive warranty', 'mercury warranty ontario', 'mercury limited warranty canada', 'mercury warranty explained'],
     relatedSlugs: ['mercury-outboard-warranty-canada-2026', 'mercury-extended-warranty-platinum-ontario', 'mercury-repower-cost-ontario-2026-cad'],
     faqs: [
-      { question: 'How long is the Mercury warranty at HBW right now?', answer: 'Every new Mercury outboard purchased from Harris Boat Works through June 14, 2026 carries 7 years of factory-backed coverage: Mercury\'s 3-year limited warranty (with 3 years corrosion concurrent) plus 4 promotional bonus years run as an HBW Exclusive offer. After June 14, 2026, the bonus years revert and coverage falls back to the 3-year standard. Confirm current terms at mercuryrepower.ca/promotions when we quote.' },
-      { question: 'Is the 7 years from Mercury or from HBW?', answer: 'The coverage is factory-backed Mercury warranty work, handled by Mercury and its authorized dealer network. The 4 bonus years are a promotion HBW runs on every new Mercury we sell, not a third-party service contract and not an aftermarket add-on. Mercury\'s own consumer "Get 7" program has ended; this is our offer.' },
-      { question: 'What does the warranty cover?', answer: 'Manufacturing defects in the powerhead, lower unit, mid-section, electronics, cooling, and starting and charging systems. Parts and labour are both covered at any authorized Mercury dealer in Canada, including HBW. Coverage is non-declining for the full term.' },
+      { question: 'When does the 7-year HBW Exclusive promotion end?', answer: 'The promotion ends June 14, 2026. To lock in 7 years of factory-backed coverage, the Mercury outboard must be purchased from Harris Boat Works by that date. New Mercury outboards purchased June 15, 2026 or later fall back to the 3-year factory standard unless a new promotion is announced.' },
+      { question: 'How long is the Mercury warranty at HBW right now?', answer: 'Every new Mercury outboard purchased from Harris Boat Works by June 14, 2026 carries 7 years of factory-backed coverage: Mercury\'s 3-year limited warranty (with 3 years corrosion concurrent) plus 4 promotional bonus years run as an HBW Exclusive offer. Confirm current terms at mercuryrepower.ca/promotions when we quote.' },
+      { question: 'Is the 7 years from Mercury or from HBW?', answer: 'The coverage is factory-backed Mercury warranty work, handled by Mercury and its authorized dealer network. The 4 bonus years are a promotion HBW runs on every new Mercury we sell through June 14, 2026, not a third-party service contract and not an aftermarket add-on. Mercury\'s own consumer "Get 7" program has ended; this is our offer.' },
+      { question: 'What does the Mercury factory warranty cover?', answer: 'Manufacturing defects in the powerhead, lower unit, mid-section, electronics, cooling, and starting and charging systems. Parts and labour are both covered at any authorized Mercury dealer in Canada, including HBW. Coverage is non-declining.' },
       { question: 'What is not covered?', answer: 'Routine maintenance (oil, filters, plugs), wear items (impellers, anodes, props), damage from misuse, neglect, improper fuel, freeze damage from skipped winterization, running aground, non-Mercury parts, or unauthorized modifications.' },
       { question: 'Do I need to service the motor at HBW to keep it valid?', answer: 'No. You can service the motor at any authorized Mercury dealer in Canada. Keep service records to support any warranty claim. We service customers who bought elsewhere too.' },
       { question: 'Does the warranty transfer if I sell the boat?', answer: 'The Mercury Limited Warranty has provisions for transfer to a second owner. Promotional bonus-year transfer terms depend on the specific motor and offer at purchase. We confirm transfer terms at quote.' },
-      { question: 'How is this different from Mercury Product Protection (MPP)?', answer: 'MPP is Mercury\'s separate paid extended service program, sold through dealers and quoted at time of sale. It picks up after factory coverage ends. The 7-year HBW Exclusive promo is included in the purchase price of every new Mercury we sell through June 14, 2026; MPP is an optional add-on you buy on top.' },
-      { question: 'Does it stack with TD financing at 5.48%?', answer: 'Yes. The 7-year warranty promotion and TD financing at 5.48% are separate program categories and apply together on qualifying Mercury outboards purchased through HBW during the promotional window.' },
+      { question: 'How is this different from Mercury Product Protection (MPP)?', answer: 'MPP is Mercury\'s separate paid extended service program, sold through dealers and quoted at time of sale. It picks up after factory coverage ends. The 7-year HBW Exclusive promotion is included in the purchase price of every new Mercury we sell through June 14, 2026; MPP is an optional add-on you buy on top.' },
+      { question: 'Does the promotion stack with TD financing at 5.48%?', answer: 'Yes. The 7-year warranty promotion and TD financing at 5.48% are separate program categories and apply together on qualifying Mercury outboards purchased through HBW during the promotional window.' },
     ],
-    content: `*Last reviewed: 2026-06-07*
+    content: `<!-- PROMO-EXPIRY: HBW Exclusive 7-yr ends 2026-06-14. Post-expiry sweep required: Quick answer, 'current promotion' section, FAQs, title/SEO title. -->
 
-> **Quick answer:** Every new Mercury outboard purchased from Harris Boat Works through June 14, 2026 carries 7 years of factory-backed coverage: Mercury's 3-year limited warranty (with 3 years corrosion running concurrent, not stacked) plus 4 promotional bonus years run as an HBW Exclusive offer. Coverage is non-declining for the full term. After June 14, 2026, the bonus years revert and coverage falls back to the 3-year standard. We register every motor at delivery and handle warranty claims in-house. Pickup at Gores Landing. Confirm current promo status at [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).
+*Last reviewed: 2026-06-07*
 
-When customers ask about Mercury's warranty, the question they usually mean is: "If something goes wrong, am I going to pay for it?" The honest answer at HBW right now is: not for the next 7 years on any new Mercury we sell, provided you follow the maintenance schedule and the failure is a defect rather than misuse. This post explains the contractual base, the HBW Exclusive promotion, and exactly what happens after June 14, 2026.
+> **Quick answer:** The 7-year HBW Exclusive promotion ends **June 14, 2026 (one week from publication).** Every new Mercury outboard purchased from Harris Boat Works by that date carries 7 years of factory-backed coverage: Mercury's 3-year limited warranty (with 3 years corrosion concurrent, not stacked) plus 4 promotional bonus years run as an HBW Exclusive offer. **If you buy on June 15, coverage is the standard 3 years. Same motor, four fewer years of coverage.** Build the quote now at [mercuryrepower.ca](https://www.mercuryrepower.ca). Source of truth for promo status: [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).
 
-## The structure: 3 base + 4 promotional bonus = 7 total
+When customers ask about Mercury's warranty, the question they usually mean is: "If something goes wrong, am I going to pay for it?" The honest answer has two parts: what Mercury covers contractually (the base), and what HBW is offering on top of that this week (the promotion). This post separates the two so you know what is locked in for the life of the motor versus what is tied to the June 14, 2026 deadline.
 
-Mercury's contractual Canadian warranty is **3 years limited + 3 years corrosion running concurrently** (not stacked, not additive). That is the floor. It applies on every new Mercury sold by any authorized dealer in Canada, with or without a promo.
+## The current promotion (HBW Exclusive, ends June 14, 2026)
 
-On top of that, Harris Boat Works is running a 4-year promotional bonus on every new Mercury outboard we sell through **June 14, 2026**. The total: **7 years of factory-backed coverage**.
+Harris Boat Works is running a 4-year promotional bonus on every new Mercury outboard we sell, on top of the 3-year factory base. **Total: 7 years of factory-backed coverage**, included in the purchase price.
 
-A few things to know about the structure:
+- **Eligibility:** every new Mercury outboard purchased from HBW by **June 14, 2026**.
+- **Structure:** Mercury 3-year factory limited warranty + 4 promotional bonus years = 7 years total.
+- **Same factory coverage.** The bonus years apply to the same Mercury Limited Warranty terms covered below: same parts and systems, same authorized-dealer network, parts and labour both covered, non-declining.
+- **Not MPP.** This is not Mercury Product Protection. MPP is a separate paid extended program; this promotion is included in the purchase price.
+- **Stacks with TD financing at 5.48%.** Separate program categories, applied together on qualifying motors. OAC.
+- **The math at the deadline:** purchase on June 14, 2026 = 7 years of coverage. Purchase on June 15 = 3 years. Same motor, four fewer years of coverage, unless a new promotion is announced.
 
-- The coverage is **factory-backed Mercury warranty work**, handled by Mercury and its authorized dealer network. It is not a third-party service contract.
-- The 4 bonus years are **HBW's promotion**. Mercury's own consumer "Get 7" program has ended. This is our offer, on top of the 3-year factory base.
-- Coverage is **non-declining**. A covered failure in year 6 is treated the same as a covered failure in month 1: parts and labour, no deductible.
-- After June 14, 2026, the bonus years **revert**. New Mercury outboards purchased after that date fall back to the 3-year standard, unless a new promotion is announced.
+Source of truth: [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions). Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call **(905) 342-2153**.
 
-For the source of truth on what's currently active, check [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions). We update that page whenever the promo changes.
+Everything below is the evergreen Mercury factory warranty content: what's covered, what voids it, how registration, claims, transfer, and MPP work. It applies whether you buy during the promotion or after.
 
-## What the 7-year coverage actually covers
+## What Mercury's factory warranty covers
 
-The Mercury Limited Warranty covers manufacturing defects in materials and workmanship on new outboards purchased through authorized Mercury dealers. The promotional bonus years extend the same coverage on the same terms.
+Mercury's contractual Canadian warranty is **3 years limited + 3 years corrosion running concurrently** (not stacked, not additive). It covers manufacturing defects in materials and workmanship on new outboards purchased through authorized Mercury dealers, from the date of delivery to the original purchaser. Coverage is non-declining: a covered failure in year three is treated the same as month one. Parts and labour are both covered, no deductible.
 
 Covered systems:
 
@@ -34158,21 +34161,21 @@ The exclusions matter, so we explain them plainly to every customer.
 
 The pattern is clear. Mercury covers the engine itself against defects in how it was built. Mercury does not cover the consequences of how you use or maintain the engine.
 
-## Why 7 years matters for a repower decision
+## Why factory warranty matters for a repower decision
 
 Three real reasons.
 
-**First, peace of mind on a $15,000 to $30,000 CAD purchase.** A new motor is a major investment. Seven years of factory-backed coverage means that if something goes wrong with the powerhead, lower unit, or electronics, you are not paying for it. That is substantial on a big-block or Pro XS where parts and labour for a major repair can run thousands.
+**First, peace of mind on a $15,000 to $30,000 CAD purchase.** A new motor is a major investment. Factory coverage means that if something goes wrong with the powerhead, lower unit, or electronics, you are not paying for it. That is substantial on a big-block or Pro XS where parts and labour for a major repair can run thousands.
 
-**Second, the way Ontario seasons compress the calendar.** Seven years on paper is roughly seven boating seasons of about five months each, May long weekend to Canadian Thanksgiving. The calendar time lines up with the moments you actually care about being on the water.
+**Second, the way Ontario seasons compress the calendar.** A factory warranty year is one boating season of about five months, May long weekend to Canadian Thanksgiving. The calendar time lines up with the moments you actually care about being on the water.
 
-**Third, resale value.** A boat with significant warranty time remaining is worth more on the used market. If you sell the boat in year three, the buyer inherits the remaining warranty (subject to Mercury's transfer terms) and that adds value.
+**Third, resale value.** A boat with significant warranty time remaining is worth more on the used market. If you sell the boat partway through coverage, the buyer inherits the remaining warranty (subject to Mercury's transfer terms) and that adds value.
 
 Combined, these reasons help close the gap between "repair the old motor again" and "repower now." Our [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) covers the math.
 
 ## How the warranty compares across Mercury families
 
-The same Mercury Limited Warranty applies across FourStroke, Pro XS, Verado, and Avator. There is no warranty difference by family. A 9.9 HP portable, a 90 HP FourStroke, a Pro XS V8 200, and an Avator 7.5e all carry the same 3-year contractual base, and the 4-year HBW Exclusive bonus applies on every new Mercury we sell through the promotional window.
+The same Mercury Limited Warranty applies across FourStroke, Pro XS, Verado, and Avator. There is no warranty difference by family. A 9.9 HP portable, a 90 HP FourStroke, a Pro XS V8 200, and an Avator 7.5e all carry the same 3-year contractual base.
 
 What does vary is the cost of a major repair if you ever had one outside warranty. A FourStroke 90 HP powerhead replacement is a few thousand dollars in parts and labour. A Pro XS V8 250 powerhead replacement is many thousands more. The warranty value scales with the motor's price, which is part of why the same coverage gets relatively more meaningful as you go up in HP.
 
@@ -34196,25 +34199,15 @@ We register every Mercury at delivery, on the spot. You do not need to file anyt
 
 ## How does it transfer if I sell the boat?
 
-The Mercury Limited Warranty includes transfer provisions for second owners. Promotional bonus-year transfer terms depend on the specific motor and offer at purchase, so we confirm transfer rules at quote time. Keep your bill of sale and Mercury registration receipt with the boat; both help the new owner activate transferred coverage cleanly.
+The Mercury Limited Warranty includes transfer provisions for second owners. Transfer terms depend on the specific motor and any promotion at time of purchase, so we confirm transfer rules at quote time. Keep your bill of sale and Mercury registration receipt with the boat; both help the new owner activate transferred coverage cleanly.
 
 ## What about Mercury Product Protection (MPP)?
 
-MPP is Mercury's separate paid extended service program. It is the factory-backed extended contract that picks up after factory coverage ends. We quote MPP at time of sale if you want coverage beyond year 7. It is administered 100% by Mercury Marine, using genuine Mercury and Quicksilver parts, performed by authorized Mercury dealers, same factory standards as your original warranty. See our [Mercury extended warranty guide](/blog/mercury-extended-warranty-platinum-ontario) for tier and pricing detail.
-
-The 7-year HBW Exclusive promo is **included** in the purchase price of every new Mercury we sell through June 14, 2026. MPP is **optional** and quoted separately.
-
-## Does it stack with TD financing?
-
-Yes. The 7-year warranty promotion and **TD financing at 5.48%** are separate program categories and apply together on qualifying Mercury outboards purchased through HBW during the promotional window. Financing is OAC. Confirm rate and term at quote.
-
-## After June 14, 2026
-
-When the promotion ends, the bonus years revert. New Mercury outboards purchased after that date fall back to the 3-year standard contractual base, unless a new promotion is announced. If you are sitting on the fence about a repower, the window matters: purchases registered by June 14, 2026 lock in the full 7 years.
+MPP is Mercury's separate paid extended service program. It is the factory-backed extended contract that picks up after factory coverage ends. We quote MPP at time of sale if you want coverage beyond the factory period. It is administered 100% by Mercury Marine, using genuine Mercury and Quicksilver parts, performed by authorized Mercury dealers, same factory standards as your original warranty. See our [Mercury extended warranty guide](/blog/mercury-extended-warranty-platinum-ontario) for tier and pricing detail.
 
 ## Should the warranty change which Mercury I buy?
 
-Not by itself. The 7-year promo can close the gap between "repair again" and "repower now," but it should not talk you into the wrong horsepower or the wrong family. Pick the right motor for your boat first. Then let the warranty be the reason you can sleep at night with the purchase. Our [repower vs new boat post](/blog/repair-repower-or-sell-boat-ontario-decision-guide) covers how to think about the bigger decision.
+Not by itself. A promotional bonus can close the gap between "repair again" and "repower now," but it should not talk you into the wrong horsepower or the wrong family. Pick the right motor for your boat first. Then let the warranty be the reason you can sleep at night with the purchase. Our [repower vs new boat post](/blog/repair-repower-or-sell-boat-ontario-decision-guide) covers how to think about the bigger decision.
 
 ## Related guides
 
@@ -34225,29 +34218,32 @@ Not by itself. The 7-year promo can close the gap between "repair again" and "re
 
 ## Frequently Asked Questions
 
+**When does the 7-year HBW Exclusive promotion end?**
+The promotion ends June 14, 2026. To lock in 7 years of factory-backed coverage, the Mercury outboard must be purchased from Harris Boat Works by that date. New Mercury outboards purchased June 15, 2026 or later fall back to the 3-year factory standard unless a new promotion is announced.
+
 **How long is the Mercury warranty at HBW right now?**
-Every new Mercury outboard purchased from Harris Boat Works through June 14, 2026 carries 7 years of factory-backed coverage: Mercury's 3-year limited warranty (with 3 years corrosion concurrent) plus 4 promotional bonus years run as an HBW Exclusive offer. After June 14, 2026, the bonus years revert and coverage falls back to the 3-year standard.
+Every new Mercury outboard purchased from HBW by June 14, 2026 carries 7 years of factory-backed coverage: Mercury's 3-year limited warranty (with 3 years corrosion concurrent) plus 4 promotional bonus years run as an HBW Exclusive offer.
 
 **Is the 7 years from Mercury or from HBW?**
-The coverage is factory-backed Mercury warranty work, handled by Mercury and its authorized dealer network. The 4 bonus years are a promotion HBW runs on every new Mercury we sell, not a third-party service contract. Mercury's own consumer "Get 7" program has ended; this is our offer.
+The coverage is factory-backed Mercury warranty work, handled by Mercury and its authorized dealer network. The 4 bonus years are a promotion HBW runs on every new Mercury we sell through June 14, 2026. Mercury's own consumer "Get 7" program has ended; this is our offer.
 
-**What does the warranty cover?**
-Manufacturing defects in the powerhead, lower unit, electronics, and major components, including both parts and labour at authorized Mercury dealers like HBW. Coverage is non-declining for the full term.
+**What does the Mercury factory warranty cover?**
+Manufacturing defects in the powerhead, lower unit, electronics, and major components, including both parts and labour at authorized Mercury dealers like HBW. Coverage is non-declining.
 
 **What is not covered?**
 Routine maintenance (oil, filters, plugs), wear items (impellers, anodes, props), damage from misuse, neglect, improper fuel, freeze damage from skipped winterization, running aground, non-Mercury parts, or unauthorized modifications.
 
 **How is this different from MPP?**
-MPP is Mercury's separate paid extended service program, sold through dealers and quoted at time of sale. The 7-year HBW Exclusive promo is included in the purchase price; MPP is optional.
+MPP is Mercury's separate paid extended service program, sold through dealers and quoted at time of sale. The 7-year HBW Exclusive promotion is included in the purchase price; MPP is optional.
 
-**Does it stack with TD financing at 5.48%?**
+**Does the promotion stack with TD financing at 5.48%?**
 Yes. The 7-year warranty promotion and TD financing at 5.48% are separate program categories and apply together on qualifying Mercury outboards purchased through HBW during the promotional window.
 
 ---
 
 ## Ready to lock in the 7-year coverage?
 
-Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right motor for your boat. Purchases registered through June 14, 2026 lock in the full 7 years.
+The deadline is **June 14, 2026 (one week from publication).** Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** now and we will match you with the right motor for your boat. Purchases registered by June 14 lock in the full 7 years.
 
 **Phone:** (905) 342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
