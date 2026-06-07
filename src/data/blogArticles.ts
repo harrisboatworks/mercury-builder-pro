@@ -26312,7 +26312,7 @@ Soft transom. Soft floor. Stringers showing rot. Hull blisters that have eaten i
 Family went from two people to four. You want to fish bigger water. You're done with tiller motors and want a console. You moved from a cottage slip to a launch ramp property and your current boat is too big to trailer comfortably. If the boat itself is wrong, the motor is irrelevant.
 
 **You're already planning to sell.** 
-If "I'd sell this boat tomorrow if the right one came along" is already true, repowering is putting $15,000 of polish on a sale. You typically recoup 50, 70% of the motor investment in resale, not 100%.
+If "I'd sell this boat tomorrow if the right one came along" is already true, repowering is putting $15,000 of polish on a sale. You recoup only part of that investment when you sell.
 
 **You want a feature the old boat physically can't have.** 
 Joystick docking on a single-engine 18-footer. Integrated trim tabs on a hull not designed for them. Some things don't transplant. If the feature you want is tied to hull architecture, no repower gets you there.
