@@ -47,7 +47,7 @@ Harris Boat Works has been a Mercury dealer since 1965, third-generation family 
 
 ## Near Peterborough or the Kawarthas?
 
-A lot of this search traffic is really asking "who should I trust near Peterborough?" Fair question. Harris Boat Works is about 25 to 30 minutes southeast of Peterborough on Rice Lake's south shore, and the case for making the drive is simple: Mercury Platinum Dealer status, around 1,700 work orders a year through the service department, real prices published online before you ever talk to anyone, and a water test on Rice Lake before you take delivery. Family-owned since 1947, Mercury dealer since 1965. If a closer dealer gives you a straight answer and a real number, good for them. If they won't, you know where we are.
+A lot of this search traffic is really asking "who should I trust near Peterborough?" Fair question. Harris Boat Works is about 35 minutes south of Peterborough via Highway 28 on Rice Lake's south shore, and the case for making the drive is simple: Mercury Platinum Dealer status, around 1,700 work orders a year through the service department, real prices published online before you ever talk to anyone, and a water test on Rice Lake before you take delivery. Family-owned since 1947, Mercury dealer since 1965. If a closer dealer gives you a straight answer and a real number, good for them. If they won't, you know where we are.
 
 ---
 
@@ -269,7 +269,7 @@ Technically yes. In practice, Platinum dealers do most repowers because the work
 
 ### What is the best Mercury dealer near Peterborough?
 
-It depends what you value, but Harris Boat Works, about 25 to 30 minutes southeast of Peterborough in Gores Landing, is a Mercury Platinum Dealer with transparent online pricing at mercuryrepower.ca, Rice Lake water testing on every repower, and a family that has owned the business since 1947 and sold Mercury since 1965.
+It depends what you value, but Harris Boat Works, about 35 minutes south of Peterborough via Highway 28 in Gores Landing, is a Mercury Platinum Dealer with transparent online pricing at mercuryrepower.ca, Rice Lake water testing on every repower, and a family that has owned the business since 1947 and sold Mercury since 1965.
 
 ### What does Mercury Platinum Dealer status mean?
 
