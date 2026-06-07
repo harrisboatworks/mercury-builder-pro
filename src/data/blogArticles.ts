@@ -26422,8 +26422,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review*
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---`,
     faqs: [
       { question: 'Is repowering cheaper than buying a new boat?', answer: "Almost always, yes. Typical repower for a 40-115 HP boat lands $11,000 to $22,000 all-in. An equivalent new boat package is $40,000 to $70,000+. Even a 3-5 year-old used boat sits at $25,000 to $50,000. The cost gap is usually $20K-$40K in repower's favour, assuming the hull is sound." },
