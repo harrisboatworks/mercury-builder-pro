@@ -45,6 +45,10 @@ Three things actually matter when evaluating an Ontario Mercury dealer:
 
 Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
 
+## Near Peterborough or the Kawarthas?
+
+A lot of this search traffic is really asking "who should I trust near Peterborough?" Fair question. Harris Boat Works is about 25 to 30 minutes southeast of Peterborough on Rice Lake's south shore, and the case for making the drive is simple: Mercury Platinum Dealer status, around 1,700 work orders a year through the service department, real prices published online before you ever talk to anyone, and a water test on Rice Lake before you take delivery. Family-owned since 1947, Mercury dealer since 1965. If a closer dealer gives you a straight answer and a real number, good for them. If they won't, you know where we are.
+
 ---
 
 ## The Mercury Dealer Tier System (What Actually Matters)
