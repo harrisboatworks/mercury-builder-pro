@@ -64,6 +64,10 @@ Work through this in order. Most alarms fall into one of these patterns:
 
 Important: alarm patterns and what they indicate vary by motor model, year, rigging, and whether the boat is SmartCraft-equipped. The patterns above describe what HBW techs see most often on Ontario Mercury motors from the EFI FourStroke and Verado families. Always confirm against your specific motor's operator's manual and any SmartCraft or VesselView display message.
 
+![Mercury outboard alarm and beep code quick reference card: pattern, meaning, and immediate action](/lovable-uploads/mercury-alarm-beep-codes-quick-reference-card.png)
+
+*Quick-reference card summarising the Mercury alarm patterns above: single beep at key-on (normal self-check), continuous alarm at cruise (overheat or overspeed), continuous alarm with power reduction (Guardian mode), repeating four-beep advisory (low oil, water in fuel, or other), intermittent beeping (sensor or wiring fault), alarm at wide-open throttle only (poppet valve or cooling restriction), and a brief alarm after shutdown (heat soak). Each row lists the likely meaning and the immediate action.*
+
 :::image-placeholder
 slug: overheat-alarm-pattern-decoder
 type: diagram

@@ -82,6 +82,10 @@ The exact meaning of the four-beep pattern varies by motor year and rigging, alw
 
 Different Mercury motors use different beep patterns, and what four beeps means on a 2010 EFI FourStroke is not necessarily what four beeps means on a current Verado. This guide covers the common patterns you'll encounter, what they typically indicate, and how to gather the information a technician needs to help you.
 
+![Mercury outboard alarm and beep code quick reference card: pattern, meaning, and immediate action](/lovable-uploads/mercury-alarm-beep-codes-quick-reference-card.png)
+
+*Quick-reference card: each row pairs a Mercury alarm pattern (single beep at key-on, continuous alarm at cruise, continuous alarm plus power reduction / Guardian mode, repeating four-beep advisory, intermittent beeping, alarm at WOT only, and brief alarm after shutdown / heat soak) with its likely meaning and the immediate action to take. Always cross-reference your specific motor's operator manual.*
+
 ---
 
 ## Why the Exact Pattern Matters
