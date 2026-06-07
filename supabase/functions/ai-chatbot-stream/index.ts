@@ -327,6 +327,33 @@ async function getActivePromotions() {
   return promotions || [];
 }
 
+// Pull the currently-active financing promo (single source of truth).
+// Mirrors the frontend `useActiveFinancingPromo` hook so the AI never quotes
+// a stale rate. Falls back to a clearly-flagged "contact dealer" state if no
+// promo row is active.
+async function getActiveFinancingPromo() {
+  try {
+    const today = new Date().toISOString().split('T')[0];
+    const { data, error } = await supabase
+      .from('financing_options')
+      .select('id, name, rate, term_months, promo_text, promo_end_date, min_amount, is_active, is_promo')
+      .eq('is_active', true)
+      .eq('is_promo', true)
+      .or(`promo_end_date.is.null,promo_end_date.gte.${today}`)
+      .order('display_order', { ascending: true })
+      .order('rate', { ascending: true })
+      .limit(1);
+    if (error) {
+      console.error('getActiveFinancingPromo error:', error);
+      return null;
+    }
+    return (data && data[0]) || null;
+  } catch (e) {
+    console.error('getActiveFinancingPromo exception:', e);
+    return null;
+  }
+}
+
 // Query categories for intelligent Perplexity routing
 type QueryCategory = 'mercury' | 'harris' | 'local' | 'boating' | 'licensing' | 
                      'towing' | 'seasonal' | 'promotions' | 'accessories' | 
