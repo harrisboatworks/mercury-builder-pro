@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Send, RefreshCw, ChevronDown, Sparkles, Check } from 'lucide-react';
-import { parseMessageText, ParsedSegment } from '@/lib/textParser';
+import { MarkdownChatBody } from './MarkdownChatBody';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { useLocation } from 'react-router-dom';
