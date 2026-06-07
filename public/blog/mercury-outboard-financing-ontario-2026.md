@@ -39,7 +39,7 @@ Heads-up: the **Mercury Repower Financing program through Medallion Bank is US-r
 
 There are three paths to financing a Mercury outboard or repower in Ontario:
 
-1. **Marine-specialist financing through HBW (the standard path).** We work with Dealerplan Peterborough, which places loans with TD Auto Finance and other Canadian marine lenders. The TD "Always On" promotional rate is **5.48% APR**, available now through **December 31, 2026**. Online application, 24 to 48 hour approval. The rate stacks with Mercury's current 7-year warranty promotion.
+1. **Marine-specialist financing through HBW (the standard path).** We work with Dealerplan Peterborough, which places loans with TD Auto Finance and other Canadian marine lenders. The TD "Always On" promotional rate is **5.48% APR**, available now through **December 31, 2026**. Online application, 24 to 48 hour approval. The rate stacks with any current Mercury warranty promotions; see [current offers](/promotions).
 2. **Your own bank.** Some boaters prefer financing through their existing chartered bank, RBC, TD retail, BMO, Scotia, CIBC. Rates vary; check your bank's secured personal loan or boat-loan product. We'll happily build the quote and let you take it to your bank.
 3. **Cash plus trade-in credit.** If you have cash and a tradeable old motor, we'll value the trade and net it against the install total. Even a non-running motor has aluminum and parts value.
 
@@ -85,7 +85,7 @@ This is the current standard path for HBW repower financing in Canada.
 - **Approval:** Online application. Most decisions come back in 24 to 48 hours after the application is submitted.
 - **Prepayment:** No prepayment penalty. Pay it off early without extra fees.
 
-The rate stacks with Mercury's current 7-year warranty promotion (3-year standard + 4-year promotional bonus through the current window). Confirm both are active at time of quote.
+The rate stacks with current Mercury warranty promotions on top of the 3-year factory base; see [current offers](/promotions). Confirm both are active at time of quote.
 
 ## What HBW checks before financing approval
 
