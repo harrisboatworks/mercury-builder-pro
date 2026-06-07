@@ -26224,9 +26224,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 If your hull is sound and the motor is the problem, repower. A 75, 115 HP repower typically costs $17,000, $22,000 all-in. An equivalent new boat package runs $40,000, $70,000+. That gap is real. If the hull is going, or the boat no longer fits how you use it, buying new or used makes more sense. Neither option is always right.
 
-![The 5-Check Repower Eligibility Test: if all five are true, repowering wins](/lovable-uploads/repower-eligibility-5-check-card.png)
-
-*The 5-Check Repower Eligibility Test, the same five questions HBW walks customers through before quoting a repower: (1) the hull is sound, no soft spots in the transom or floor, no major gel coat cracks, no water in foam; (2) the boat still fits how you use it, length, layout, capacity, storage; (3) you would keep it five or more years, so a new-motor investment has time to compound; (4) you already know the boat after owning it three or more years; (5) the current motor is the actual problem, hard starting, dropping cylinders, no parts available. Pass all five and repowering is almost certainly the right call. The next step is HBW's hull walk-around at Gores Landing.*
 
 
 > **Run the numbers:** Use our [Repower Cost Estimator](/tools#repower-cost) to get a CAD ballpark for the repower side of this decision. Free, instant.
