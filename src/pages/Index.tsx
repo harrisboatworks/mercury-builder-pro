@@ -121,6 +121,11 @@ export default function Index() {
       <main className="flex-1">
         <HeroRepower />
 
+        {/* OBJECTION STRIP — three scannable cards directly below hero */}
+        <ObjectionStrip />
+
+
+
         {/* PICKUP-BY-DESIGN BAND */}
         <section className="bg-repower-cream border-y border-repower-navy-900/10">
           <div className="container mx-auto px-4 py-4 md:py-5 text-center">
