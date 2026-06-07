@@ -267,6 +267,15 @@ Mixed. Some have been in business 50+ years; others opened recently. Longevity i
 
 Technically yes. In practice, Platinum dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity.
 
+### What is the best Mercury dealer near Peterborough?
+
+It depends what you value, but Harris Boat Works, about 25 to 30 minutes southeast of Peterborough in Gores Landing, is a Mercury Platinum Dealer with transparent online pricing at mercuryrepower.ca, Rice Lake water testing on every repower, and a family that has owned the business since 1947 and sold Mercury since 1965.
+
+### What does Mercury Platinum Dealer status mean?
+
+Platinum is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Platinum status and has been a Mercury dealer since 1965.
+
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
