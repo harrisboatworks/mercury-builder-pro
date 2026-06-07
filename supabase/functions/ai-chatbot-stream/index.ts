@@ -1710,8 +1710,17 @@ NEVER state a promo end date that isn't in the PROMO DATA block above.
 ## REPOWER BENEFITS (If relevant)
 ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.message}`).join(' | ')}
 
-## FINANCING
-7.99% for $10k+, 8.99% under $10k. Terms: 36-60 months.
+## FINANCING (CANONICAL — pulled from financing_options table)
+${financingPromo
+  ? `**${financingPromo.name}: ${Number(financingPromo.rate).toFixed(2)}% APR OAC** (arranged through TD Auto Finance via Dealerplan Peterborough).
+- Minimum financed amount: $${(financingPromo.min_amount || 5000).toLocaleString()}
+- Default term: ${financingPromo.term_months || 60} months (longer terms available on larger purchases — route to /financing-application for exact options)
+- ${financingPromo.promo_text || ''}
+- Promo runs through: ${financingPromo.promo_end_date || 'see /financing'}
+- After the promo ends, the standard fallback rate is 7.99% (≥$10k) / 8.99% (<$10k).` 
+  : `No active financing promo found in the database — direct customers to /financing-application or have them call ${HARRIS_CONTACT.phone} for the current rate. Do NOT quote a rate from memory.`}
+- Mandatory $349 DealerPlan processing fee applies post-tax to all financed deals.
+- Financing is ONLY available for purchases of $5,000 or more (before tax).
 
 ## BOAT LICENSE / PCOC - ALWAYS MENTION DISCOUNT!
 If anyone asks about boat licenses, PCOC, or operator cards:
