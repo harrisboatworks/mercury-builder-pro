@@ -70,7 +70,7 @@ source: HBW Repower Customer, Cobourg 2026
 
 This is the question we get more than almost any other. And we're going to give you the same answer we'd give a neighbour: it depends on the hull.
 
-Harris Boat Works sells both Mercury motors and Legend Boats. We also tell people not to repower when the hull isn't worth it, because putting a $12,000 new engine on a $3,000 hull is not the play. We'd rather lose a motor sale than have you regret it.
+Harris Boat Works sells both Mercury motors and Legend Boats. We also tell people not to repower when the hull isn't worth it, because putting a $12,000 new engine on a $3,000 hull is not the play.
 
 Here's the honest breakdown.
 
