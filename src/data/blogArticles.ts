@@ -19661,7 +19661,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
     author: 'Jay Harris',
     datePublished: "2026-05-13",
-    dateModified: '2026-02-06',
+    dateModified: '2026-06-07',
     publishDate: "2026-05-13",
     category: "Mercury Outboards",
     readTime: '12 min read',
