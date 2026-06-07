@@ -226,8 +226,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review*
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
