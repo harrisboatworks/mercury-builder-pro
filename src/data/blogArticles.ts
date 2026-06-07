@@ -19661,7 +19661,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
     author: 'Jay Harris',
     datePublished: "2026-05-13",
-    dateModified: '2026-02-06',
+    dateModified: '2026-06-07',
     publishDate: "2026-05-13",
     category: "Mercury Outboards",
     readTime: '12 min read',
@@ -19681,6 +19681,10 @@ Three things actually matter when evaluating an Ontario Mercury dealer:
 3. **Pricing transparency and post-sale service relationship**
 
 Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
+
+## Near Peterborough or the Kawarthas?
+
+A lot of this search traffic is really asking "who should I trust near Peterborough?" Fair question. Harris Boat Works is about 25 to 30 minutes southeast of Peterborough on Rice Lake's south shore, and the case for making the drive is simple: Mercury Platinum Dealer status, around 1,700 work orders a year through the service department, real prices published online before you ever talk to anyone, and a water test on Rice Lake before you take delivery. Family-owned since 1947, Mercury dealer since 1965. If a closer dealer gives you a straight answer and a real number, good for them. If they won't, you know where we are.
 
 ---
 
@@ -19885,6 +19889,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Should I drive farther for a better dealer?", answer: "For one-time large purchases (repowers, MPP-eligible motors, complex installs): yes, the drive time pays off. For routine work on simple motors: no, local-distance is fine. The decision frame is \"how often will I visit this dealer over the next 10 years?\"" },
       { question: "What's the average age of Mercury dealers in Ontario?", answer: "Mixed. Some have been in business 50+ years; others opened recently. Longevity isn't everything but it correlates with Mercury-knowledge depth and post-sale service quality." },
       { question: "Can I get a Mercury repower at any authorized dealer?", answer: "Technically yes. In practice, Platinum dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity." },
+      { question: "What is the best Mercury dealer near Peterborough?", answer: "It depends what you value, but Harris Boat Works, about 25 to 30 minutes southeast of Peterborough in Gores Landing, is a Mercury Platinum Dealer with transparent online pricing at mercuryrepower.ca, Rice Lake water testing on every repower, and a family that has owned the business since 1947 and sold Mercury since 1965." },
+      { question: "What does Mercury Platinum Dealer status mean?", answer: "Platinum is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Platinum status and has been a Mercury dealer since 1965." },
     ],
   },
   {
@@ -32089,7 +32095,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-dealer-peterborough.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-07',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
@@ -32097,6 +32103,10 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `## Quick Answer
 
 Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 35 minutes south of Peterborough via Highway 28 South to County Road 9, then County Road 18 into Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote at the kitchen table before you make the drive. Family-owned since 1947, Mercury dealer since 1965.
+
+## The short answer for Peterborough boaters
+
+If you're searching for the best Mercury dealer near Peterborough, here's the honest version: there are several dealers in the area, and "best" depends on what you need. What Harris Boat Works offers that's hard to find elsewhere: Mercury Platinum Dealer status, real prices published online in our quote configurator (no "call for price"), water testing on Rice Lake before you take delivery, and a family that has run the place since 1947 and sold Mercury since 1965. We're about 25 to 30 minutes southeast of Peterborough in Gores Landing, on Rice Lake's south shore. Plenty of Peterborough boaters drive past closer options for those four things.
 
 ## Peterborough boaters don't need to commute to the GTA for a Mercury dealer
 
@@ -32203,6 +32213,11 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
 
 *Last reviewed: 2026-05-17.*
 `,
+    faqs: [
+      { question: "Who is the best Mercury dealer near Peterborough, Ontario?", answer: "Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works in Gores Landing, about 25 to 30 minutes southeast of Peterborough, is a Mercury Platinum Dealer that publishes real motor prices online, water tests repowers on Rice Lake, and has been family-owned since 1947 and a Mercury dealer since 1965." },
+      { question: "How far is Harris Boat Works from Peterborough?", answer: "About 25 to 30 minutes by car, roughly 30 km southeast of Peterborough, at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake's south shore." },
+      { question: "Is Harris Boat Works a Mercury Platinum dealer?", answer: "Yes. Harris Boat Works holds Mercury's Platinum dealer status and has been a Mercury dealer since 1965. The business itself has been family-owned on Rice Lake since 1947." },
+    ],
   },
   {
     slug: 'mercury-dealer-cobourg-ontario-hbw',

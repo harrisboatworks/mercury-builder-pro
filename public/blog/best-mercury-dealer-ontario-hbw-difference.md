@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference.md
-last_updated: 2026-06-06
+last_updated: 2026-06-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Dealer in Ontario: The HBW Difference (2026)"
 description: "A frank look at what \"best Mercury dealer in Ontario\" actually means, what to look for, and why Harris Boat Works has been the answer for many GTA and Ontari..."
 category: "Mercury Outboards"
 date_published: 2026-05-13
-date_modified: 2026-02-06
+date_modified: 2026-06-07
 keywords: ["best Mercury dealer Ontario","Mercury Platinum dealer Canada","Mercury outboard specialist Ontario","certified Mercury dealer GTA","top Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -44,6 +44,10 @@ Three things actually matter when evaluating an Ontario Mercury dealer:
 3. **Pricing transparency and post-sale service relationship**
 
 Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
+
+## Near Peterborough or the Kawarthas?
+
+A lot of this search traffic is really asking "who should I trust near Peterborough?" Fair question. Harris Boat Works is about 25 to 30 minutes southeast of Peterborough on Rice Lake's south shore, and the case for making the drive is simple: Mercury Platinum Dealer status, around 1,700 work orders a year through the service department, real prices published online before you ever talk to anyone, and a water test on Rice Lake before you take delivery. Family-owned since 1947, Mercury dealer since 1965. If a closer dealer gives you a straight answer and a real number, good for them. If they won't, you know where we are.
 
 ---
 
@@ -262,6 +266,15 @@ Mixed. Some have been in business 50+ years; others opened recently. Longevity i
 ### Can I get a Mercury repower at any authorized dealer?
 
 Technically yes. In practice, Platinum dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity.
+
+### What is the best Mercury dealer near Peterborough?
+
+It depends what you value, but Harris Boat Works, about 25 to 30 minutes southeast of Peterborough in Gores Landing, is a Mercury Platinum Dealer with transparent online pricing at mercuryrepower.ca, Rice Lake water testing on every repower, and a family that has owned the business since 1947 and sold Mercury since 1965.
+
+### What does Mercury Platinum Dealer status mean?
+
+Platinum is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Platinum status and has been a Mercury dealer since 1965.
+
 
 ## Next steps
 
