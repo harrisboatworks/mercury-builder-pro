@@ -34103,7 +34103,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Platinum Dealer, selling M
 
 *Last reviewed: 2026-06-07*
 
-> **Quick answer:** The 7-year HBW Exclusive promotion ends **June 14, 2026 — one week from publication.** Every new Mercury outboard purchased from Harris Boat Works by that date carries 7 years of factory-backed coverage: Mercury's 3-year limited warranty (with 3 years corrosion concurrent, not stacked) plus 4 promotional bonus years run as an HBW Exclusive offer. **If you buy on June 15, coverage is the standard 3 years. Same motor, four fewer years of coverage.** Build the quote now at [mercuryrepower.ca](https://www.mercuryrepower.ca). Source of truth for promo status: [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).
+> **Quick answer:** The 7-year HBW Exclusive promotion ends **June 14, 2026 , one week from publication.** Every new Mercury outboard purchased from Harris Boat Works by that date carries 7 years of factory-backed coverage: Mercury's 3-year limited warranty (with 3 years corrosion concurrent, not stacked) plus 4 promotional bonus years run as an HBW Exclusive offer. **If you buy on June 15, coverage is the standard 3 years. Same motor, four fewer years of coverage.** Build the quote now at [mercuryrepower.ca](https://www.mercuryrepower.ca). Source of truth for promo status: [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).
 
 When customers ask about Mercury's warranty, the question they usually mean is: "If something goes wrong, am I going to pay for it?" The honest answer has two parts: what Mercury covers contractually (the base), and what HBW is offering on top of that this week (the promotion). This post separates the two so you know what is locked in for the life of the motor versus what is tied to the June 14, 2026 deadline.
 
@@ -34116,15 +34116,15 @@ Harris Boat Works is running a 4-year promotional bonus on every new Mercury out
 - **Same factory coverage.** The bonus years apply to the same Mercury Limited Warranty terms covered below: same parts and systems, same authorized-dealer network, parts and labour both covered, non-declining.
 - **Not MPP.** This is not Mercury Product Protection. MPP is a separate paid extended program; this promotion is included in the purchase price.
 - **Stacks with TD financing at 5.48%.** Separate program categories, applied together on qualifying motors. OAC.
-- **The math at the deadline:** purchase on June 14, 2026 — 7 years of coverage. Purchase on June 15 — 3 years. Same motor, four fewer years of coverage, unless a new promotion is announced.
+- **The math at the deadline:** purchase on June 14, 2026 , 7 years of coverage. Purchase on June 15 , 3 years. Same motor, four fewer years of coverage, unless a new promotion is announced.
 
 Source of truth: [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions). Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call **(905) 342-2153**.
 
-Everything below is the evergreen Mercury factory warranty content — what's covered, what voids it, how registration, claims, transfer, and MPP work. It applies whether you buy during the promotion or after.
+Everything below is the evergreen Mercury factory warranty content , what's covered, what voids it, how registration, claims, transfer, and MPP work. It applies whether you buy during the promotion or after.
 
 ## What Mercury's factory warranty covers
 
-Mercury's contractual Canadian warranty is **3 years limited + 3 years corrosion running concurrently** (not stacked, not additive). It covers manufacturing defects in materials and workmanship on new outboards purchased through authorized Mercury dealers, from the date of delivery to the original purchaser. Coverage is non-declining: a covered failure in year three is treated the same as month one — parts and labour, no deductible.
+Mercury's contractual Canadian warranty is **3 years limited + 3 years corrosion running concurrently** (not stacked, not additive). It covers manufacturing defects in materials and workmanship on new outboards purchased through authorized Mercury dealers, from the date of delivery to the original purchaser. Coverage is non-declining: a covered failure in year three is treated the same as month one , parts and labour, no deductible.
 
 Covered systems:
 
@@ -34243,7 +34243,7 @@ Yes. The 7-year warranty promotion and TD financing at 5.48% are separate progra
 
 ## Ready to lock in the 7-year coverage?
 
-The deadline is **June 14, 2026 — one week from publication.** Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** now and we will match you with the right motor for your boat. Purchases registered by June 14 lock in the full 7 years.
+The deadline is **June 14, 2026 , one week from publication.** Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** now and we will match you with the right motor for your boat. Purchases registered by June 14 lock in the full 7 years.
 
 **Phone:** (905) 342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
