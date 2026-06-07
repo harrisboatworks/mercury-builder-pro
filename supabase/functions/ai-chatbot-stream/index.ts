@@ -1710,6 +1710,13 @@ NEVER state a promo end date that isn't in the PROMO DATA block above.
 ## REPOWER BENEFITS (If relevant)
 ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.message}`).join(' | ')}
 
+## WARRANTY (CANONICAL — driven by promotions data above)
+- Mercury's BASE factory warranty is 3 years on every new outboard. Never state a final warranty length without checking the PROMOTIONS data above first.
+- If a warranty bonus is listed in the PROMOTIONS block ("+N years extended warranty FREE"), the active total is **3 + N years**. Always present that total, name the promo, and quote its end date verbatim from the promo data.
+- Currently we run the "HBW Exclusive 7-Year Mercury Warranty" until **June 14, 2026** — that's 3 years standard + 4 bonus years, factory-backed Mercury coverage (NOT third-party).
+- After the active bonus promo ends, the warranty reverts to the 3-year standard. NEVER claim a longer warranty than what the promotions data supports.
+- For warranty *extensions/upgrades* beyond the active promo, route customers to https://www.mercuryrepower.ca/warranty.
+
 ## FINANCING (CANONICAL — pulled from financing_options table)
 ${financingPromo
   ? `**${financingPromo.name}: ${Number(financingPromo.rate).toFixed(2)}% APR OAC** (arranged through TD Auto Finance via Dealerplan Peterborough).
