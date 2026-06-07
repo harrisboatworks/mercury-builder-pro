@@ -32089,7 +32089,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-dealer-peterborough.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-07',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
