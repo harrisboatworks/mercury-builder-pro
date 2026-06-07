@@ -468,6 +468,7 @@ ${currentMotorContext}
 ${MODEL_SUFFIX_GUIDE}
 ${SHAFT_LENGTH_CRITICAL}
 ${promotionData}
+${financingCanon}
 ${quoteContextPrompt}
 ${returningCustomerPrompt}
 
