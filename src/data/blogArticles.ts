@@ -12207,9 +12207,9 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
   {
     slug: 'mercury-repower-cost-ontario-2026-cad',
     relatedSlugs: ['ontario-mercury-outboard-price-guide', 'mercury-outboard-rigging-costs-ontario', 'what-happens-during-mercury-repower'],
-    title: 'How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)',
-    seoTitle: 'Mercury Repower Cost in Ontario (2026): Real CAD Pricing | Harris Boat Works',
-    description: 'All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and honest off-season timing for Rice Lake repowers.',
+    title: "Mercury Repower Guide: Cost, Timeline & When It's Worth It",
+    seoTitle: "Mercury Repower Guide: Cost, Timeline & When It's Worth It",
+    description: 'What a Mercury repower actually costs, how long it takes, and when it beats buying new. Straight answers from a Mercury Platinum dealer on Rice Lake.',
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-17',

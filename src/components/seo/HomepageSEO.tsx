@@ -10,8 +10,8 @@ export function HomepageSEO() {
         "@type": "WebPage",
         "@id": "https://www.mercuryrepower.ca/#webpage",
         "url": "https://www.mercuryrepower.ca/",
-        "name": "Mercury Repower Ontario (2026) | Harris Boat Works Rice Lake",
-        "description": "Mercury repower in Ontario (2026). Live CAD quotes for 2.5-300 HP, family-owned since 1947 on Rice Lake. Pickup at Gores Landing, 90 min from Toronto.",
+        "name": "Mercury Repower Cost Ontario: Real Prices in 2 Minutes",
+        "description": "Repowering with a Mercury outboard? Build a real quote in 2 minutes: motor, rigging, install, out-the-door price. No phone tag. Since 1947.",
         "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
         "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "primaryImageOfPage": { "@id": "https://www.mercuryrepower.ca/#logo" },
@@ -109,14 +109,14 @@ export function HomepageSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Repower Ontario (2026) | Harris Boat Works Rice Lake</title>
-      <meta name="description" content="Mercury repower in Ontario (2026). Live CAD quotes for 2.5-300 HP, family-owned since 1947 on Rice Lake. Pickup at Gores Landing, 90 min from Toronto." />
+      <title>Mercury Repower Cost Ontario: Real Prices in 2 Minutes</title>
+      <meta name="description" content="Repowering with a Mercury outboard? Build a real quote in 2 minutes: motor, rigging, install, out-the-door price. No phone tag. Since 1947." />
       <meta name="keywords" content="Mercury repower Ontario, Mercury dealer Toronto, Harris Boat Works, Rice Lake Mercury dealer, Mercury trade-in, Mercury financing" />
       <link rel="canonical" href={SITE_URL} />
 
       {/* Open Graph */}
-      <meta property="og:title" content="Mercury Repower Ontario (2026) | Harris Boat Works Rice Lake" />
-      <meta property="og:description" content="Mercury repower in Ontario (2026). Live CAD quotes for 2.5-300 HP, family-owned since 1947 on Rice Lake. Pickup at Gores Landing, 90 min from Toronto." />
+      <meta property="og:title" content="Mercury Repower Cost Ontario: Real Prices in 2 Minutes" />
+      <meta property="og:description" content="Repowering with a Mercury outboard? Build a real quote in 2 minutes: motor, rigging, install, out-the-door price. No phone tag. Since 1947." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={SITE_URL} />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
@@ -125,8 +125,8 @@ export function HomepageSEO() {
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Repower Ontario (2026) | Harris Boat Works Rice Lake" />
-      <meta name="twitter:description" content="Mercury repower in Ontario (2026). Live CAD quotes for 2.5-300 HP, family-owned since 1947 on Rice Lake. Pickup at Gores Landing, 90 min from Toronto." />
+      <meta name="twitter:title" content="Mercury Repower Cost Ontario: Real Prices in 2 Minutes" />
+      <meta name="twitter:description" content="Repowering with a Mercury outboard? Build a real quote in 2 minutes: motor, rigging, install, out-the-door price. No phone tag. Since 1947." />
       <meta name="twitter:image" content={`${SITE_URL}/social-share.jpg`} />
 
       <script type="application/ld+json">
