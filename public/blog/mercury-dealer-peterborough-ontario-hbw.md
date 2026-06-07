@@ -35,7 +35,7 @@ Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice L
 
 ## The short answer for Peterborough boaters
 
-If you're searching for the best Mercury dealer near Peterborough, here's the honest version: there are several dealers in the area, and "best" depends on what you need. What Harris Boat Works offers that's hard to find elsewhere: Mercury Platinum Dealer status, real prices published online in our quote configurator (no "call for price"), water testing on Rice Lake before you take delivery, and a family that has run the place since 1947 and sold Mercury since 1965. We're about 25 to 30 minutes southeast of Peterborough in Gores Landing, on Rice Lake's south shore. Plenty of Peterborough boaters drive past closer options for those four things.
+If you're searching for the best Mercury dealer near Peterborough, here's the honest version: there are several dealers in the area, and "best" depends on what you need. What Harris Boat Works offers that's hard to find elsewhere: Mercury Platinum Dealer status, real prices published online in our quote configurator (no "call for price"), water testing on Rice Lake before you take delivery, and a family that has run the place since 1947 and sold Mercury since 1965. We're about 35 minutes south of Peterborough via Highway 28 in Gores Landing, on Rice Lake's south shore. Plenty of Peterborough boaters drive past closer options for those four things.
 
 ## Peterborough boaters don't need to commute to the GTA for a Mercury dealer
 
@@ -139,11 +139,11 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
 
 ### Who is the best Mercury dealer near Peterborough, Ontario?
 
-Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works in Gores Landing, about 25 to 30 minutes southeast of Peterborough, is a Mercury Platinum Dealer that publishes real motor prices online, water tests repowers on Rice Lake, and has been family-owned since 1947 and a Mercury dealer since 1965.
+Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works in Gores Landing, about 35 minutes south of Peterborough via Highway 28, is a Mercury Platinum Dealer that publishes real motor prices online, water tests repowers on Rice Lake, and has been family-owned since 1947 and a Mercury dealer since 1965.
 
 ### How far is Harris Boat Works from Peterborough?
 
-About 25 to 30 minutes by car, roughly 30 km southeast of Peterborough, at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake's south shore.
+About 35 minutes by car, roughly 30 km south of Peterborough via Highway 28, at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake's south shore.
 
 ### Is Harris Boat Works a Mercury Platinum dealer?
 
