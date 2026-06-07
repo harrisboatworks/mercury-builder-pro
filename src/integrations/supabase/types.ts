@@ -1431,6 +1431,93 @@ export type Database = {
         }
         Relationships: []
       }
+      hbw_call_transcriptions: {
+        Row: {
+          archived_at: string | null
+          call_started_at: string | null
+          conversation_id: string | null
+          direction: string | null
+          external_message_id: string
+          extracted_phones: string[]
+          folder_name: string
+          from_address: string | null
+          id: string
+          ingested_at: string
+          internet_message_id: string | null
+          match_candidates: Json
+          match_method: string | null
+          match_status: string
+          matched_customer_id: string | null
+          matched_customer_name: string | null
+          normalized_phones: string[]
+          raw_payload: Json
+          received_at: string | null
+          recording_url: string | null
+          search_vector: unknown
+          source: string
+          subject: string | null
+          summary: string | null
+          transcript: string | null
+          updated_at: string
+        }
+        Insert: {
+          archived_at?: string | null
+          call_started_at?: string | null
+          conversation_id?: string | null
+          direction?: string | null
+          external_message_id: string
+          extracted_phones?: string[]
+          folder_name?: string
+          from_address?: string | null
+          id?: string
+          ingested_at?: string
+          internet_message_id?: string | null
+          match_candidates?: Json
+          match_method?: string | null
+          match_status?: string
+          matched_customer_id?: string | null
+          matched_customer_name?: string | null
+          normalized_phones?: string[]
+          raw_payload?: Json
+          received_at?: string | null
+          recording_url?: string | null
+          search_vector?: unknown
+          source?: string
+          subject?: string | null
+          summary?: string | null
+          transcript?: string | null
+          updated_at?: string
+        }
+        Update: {
+          archived_at?: string | null
+          call_started_at?: string | null
+          conversation_id?: string | null
+          direction?: string | null
+          external_message_id?: string
+          extracted_phones?: string[]
+          folder_name?: string
+          from_address?: string | null
+          id?: string
+          ingested_at?: string
+          internet_message_id?: string | null
+          match_candidates?: Json
+          match_method?: string | null
+          match_status?: string
+          matched_customer_id?: string | null
+          matched_customer_name?: string | null
+          normalized_phones?: string[]
+          raw_payload?: Json
+          received_at?: string | null
+          recording_url?: string | null
+          search_vector?: unknown
+          source?: string
+          subject?: string | null
+          summary?: string | null
+          transcript?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       hbw_knowledge: {
         Row: {
           active: boolean | null
@@ -4833,6 +4920,31 @@ export type Database = {
       bulk_upsert_deals: { Args: { payload: Json }; Returns: number }
       bulk_upsert_open_ros: { Args: { payload: Json }; Returns: number }
       bulk_upsert_parts_invoices: { Args: { payload: Json }; Returns: number }
+      call_transcription_context: {
+        Args: {
+          p_customer_query?: string
+          p_issue_query?: string
+          p_limit?: number
+          p_phone?: string
+        }
+        Returns: {
+          call_started_at: string
+          direction: string
+          id: string
+          issue_match: boolean
+          match_candidates: Json
+          match_method: string
+          match_status: string
+          matched_customer_id: string
+          matched_customer_name: string
+          normalized_phones: string[]
+          received_at: string
+          recording_url: string
+          subject: string
+          summary: string
+          transcript_excerpt: string
+        }[]
+      }
       check_rate_limit: {
         Args: {
           _action: string
@@ -5405,6 +5517,19 @@ export type Database = {
           rpc: string
         }[]
       }
+      hbw_call_transcription_phone_candidates: {
+        Args: { p_phones: string[] }
+        Returns: {
+          city: string
+          customer_id: string
+          customer_name: string
+          match_rank: number
+          matched_phone: string
+          phone_last4: string
+          province: string
+        }[]
+      }
+      hbw_normalize_phone_e164: { Args: { p_phone: string }; Returns: string }
       hbw_phone_digits_match: {
         Args: { p_phone: string; p_query_digits: string }
         Returns: boolean
@@ -5609,6 +5734,18 @@ export type Database = {
           total_qty: number
         }[]
       }
+      reconcile_hbw_call_transcription_links: {
+        Args: { p_gateway_secret: string; p_limit?: number }
+        Returns: {
+          candidate_count: number
+          external_message_id: string
+          id: string
+          match_status: string
+          matched_customer_id: string
+          matched_customer_name: string
+          previous_status: string
+        }[]
+      }
       record_hbw_bot_brief_receipt: {
         Args: {
           p_brief_type?: string
@@ -5768,6 +5905,38 @@ export type Database = {
       update_brochure_models_bulk_v2: {
         Args: { p_rows: Json }
         Returns: number
+      }
+      upsert_hbw_call_transcription: {
+        Args: {
+          p_call_started_at?: string
+          p_conversation_id?: string
+          p_direction?: string
+          p_external_message_id: string
+          p_extracted_phones?: string[]
+          p_folder_name: string
+          p_from_address?: string
+          p_gateway_secret: string
+          p_internet_message_id?: string
+          p_raw_payload?: Json
+          p_received_at?: string
+          p_recording_url?: string
+          p_source: string
+          p_subject?: string
+          p_summary?: string
+          p_transcript?: string
+        }
+        Returns: {
+          external_message_id: string
+          id: string
+          inserted: boolean
+          match_candidates: Json
+          match_method: string
+          match_status: string
+          matched_customer_id: string
+          matched_customer_name: string
+          normalized_phones: string[]
+          received_at: string
+        }[]
       }
       validate_customer_data_ownership: {
         Args: { record_user_id: string; table_name: string }
