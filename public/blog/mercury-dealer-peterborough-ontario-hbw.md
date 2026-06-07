@@ -11,7 +11,7 @@ title: "Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive t
 description: "Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28. Live online repower quotes, Otonabee + Kawartha service..."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-07
 keywords: ["mercury dealer peterborough","peterborough mercury outboard","mercury platinum dealer ontario","kawartha mercury repower"]
 author: Harris Boat Works
 content_type: blog_article
