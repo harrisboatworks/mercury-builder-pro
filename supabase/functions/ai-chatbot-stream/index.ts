@@ -1700,11 +1700,12 @@ ${promoSummary || 'Ask about current offers'}
 - Mention the end date to create urgency
 - If they're viewing a motor, tell them the EXACT rebate amount for that HP
 
-**Example responses:**
-- "The Get 7 deal gets you 7 years warranty PLUS your choice of a rebate, special financing, or 6 months no payments. Ends March 31st. [Check out all the options](/promotions)"
-- "That 60HP qualifies for a $300 factory rebate with the Get 7 promo! Or you can choose 2.99% financing instead. [See the details](/promotions)"
+**Example responses (use the PROMO DATA above for names, end dates, and bonus amounts — never invent dates):**
+- "Right now there's a 7-year factory-backed warranty promo running, plus your choice of a rebate, special financing, or 6 months no payments. [Check out all the options](/promotions)"
+- "That 60HP qualifies for the current factory rebate — exact amount is on /promotions. Or you can take the special financing offer instead. [See the details](/promotions)"
 
 DO NOT hedge or add disclaimers about contacting Mercury. Our /promotions page is the source of truth for this dealership.
+NEVER state a promo end date that isn't in the PROMO DATA block above.
 
 ## REPOWER BENEFITS (If relevant)
 ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.message}`).join(' | ')}
