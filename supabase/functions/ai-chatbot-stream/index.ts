@@ -783,7 +783,8 @@ function buildSystemPrompt(
   promotions: any[], 
   context: any,
   detectedTopics: string[],
-  isWhyBuyQuestion: boolean = false
+  isWhyBuyQuestion: boolean = false,
+  financingPromo: any = null
 ) {
   const season = getCurrentSeason();
   const seasonInfo = SEASONAL_CONTEXT[season];
