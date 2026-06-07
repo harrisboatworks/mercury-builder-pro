@@ -17673,7 +17673,7 @@ $20,000-$35,000+ depending on hull and HP. Cuts out the drive and transom assemb
 - **Simpler maintenance**, no bellows, no gimbal bearing, no manifolds
 - **Better fuel economy** on modern 4-stroke outboards
 - **Stronger resale**, outboard boats sell faster in Ontario
-- **5-year warranty** on a new Mercury outboard
+- **3-year factory warranty** on a new Mercury outboard (currently 7 years total with the HBW Exclusive promo through June 14, 2026)
 - **More cockpit space**, engine goes from inside to outside
 
 The trade-offs: higher upfront cost than a remanufactured drop-in, swim platform gets reduced (the outboard takes up part of it), and the boat looks different. For some hulls, especially classic '80s and '90s designs, that last point matters; for others it's a clean improvement.
