@@ -33,11 +33,11 @@ content_type: blog_article
 
 ## Quick answer
 
-A new Mercury outboard costs more upfront but comes with a 5-year factory warranty (extendable to 8 years through Mercury Product Protection), current technology, and predictable maintenance for the first decade. A well-kept used Mercury saves you 30-50% on the purchase price but starts the warranty clock at zero, often needs $500-1,500 in catch-up service in year one, and puts the rebuild decision back on your timeline rather than the manufacturer's. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
+A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty, currently extended to 7 years total as an HBW Exclusive promotion through June 14, 2026 (Mercury Product Protection is available beyond that, quoted at time of sale), current technology, and predictable maintenance for the first decade. A well-kept used Mercury saves you 30-50% on the purchase price but starts the warranty clock at zero, often needs $500-1,500 in catch-up service in year one, and puts the rebuild decision back on your timeline rather than the manufacturer's. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
 
 ## What "new" actually buys you
 
-The headline difference is warranty. A new Mercury FourStroke or Pro XS purchased through an authorized dealer comes with a 5-year limited factory warranty as of 2026, and Mercury Product Protection (the factory extended program) takes that to 8 years if you opt in during the warranty period. That window covers the engine, the powerhead, and most of the components that fail catastrophically.
+The headline difference is warranty. A new Mercury FourStroke or Pro XS purchased through an authorized dealer comes with a 3-year factory limited warranty, and as a current HBW Exclusive promotion (through June 14, 2026) every new Mercury we sell carries 7 years total factory-backed coverage. Mercury Product Protection (the factory extended program) is available beyond that and is quoted at time of sale. That window covers the engine, the powerhead, and most of the components that fail catastrophically.
 
 The less obvious benefit is **known maintenance horizon**. With a new motor you know:
 - First 20-hour service is on the dealer's calendar
@@ -74,7 +74,7 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 | Motor purchase | $11,500 | $6,500 |
 | Install and rigging | $2,500 | $1,500 (controls usually transfer) |
 | Year-one service (catch-up) | $250 (20-hour) | $800-1,200 (impeller, plugs, gear lube, full diagnostic) |
-| Warranty | 5 years (8 with MPP) | None |
+| Warranty | 3 years factory (7 total with current HBW promo) | None |
 | Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500 (no warranty cushion) |
 | **5-year all-in estimate** | **$15,500-$16,000** | **$10,300-$12,000** |
 
