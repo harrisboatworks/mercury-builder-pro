@@ -146,6 +146,10 @@ In addition to all 100-hour items:
 
 Exact scope of the 300-hour service varies by motor model and family. Your dealer will follow the Mercury factory-published service manual for your specific motor.
 
+![Mercury 20/100/300 service interval timeline: break-in, routine, and major service items](/lovable-uploads/mercury-20-100-300-service-interval-timeline.png)
+
+*Mercury's three service milestones at a glance. The 20-hour break-in service is one-time and covers oil and filter change on FourStrokes, gear lube drain and refill, inspecting and retorquing fasteners, inspecting the fuel system, inspecting the cooling system and tell-tale, and checking and adjusting the throttle and shift linkage. The 100-hour or annual routine service (whichever comes first) adds spark plug inspection or replacement, fuel filter replacement, water pump impeller inspection, thermostat test, drive belt inspection on applicable models, lubricating all grease points, inspecting the propeller and shaft, checking the battery and charging system, and inspecting all hoses and connections. The 300-hour major service adds water pump impeller replacement, thermostat replacement, drive belt replacement on applicable models, timing belt inspection or replacement on applicable models, a full cooling system inspection, fuel system inspection and cleaning, and anode inspection. Exact 300-hour scope varies by motor.*
+
 ---
 
 ## Does Maintenance Interval Affect Warranty?

@@ -33,6 +33,10 @@ content_type: blog_article
 
 > **Quick answer:** Repower wins when your hull is sound, the boat fits your family, and the math works. A typical Mercury repower runs $11,000 to $40,000 CAD installed (2026 ranges), versus $40,000 to $100,000-plus for a comparable new boat. Buying new wins when your transom is rotting, the hull is dated for how you use the water now, or you simply wanted a different boat anyway. There are also hidden costs of new: trailer, taxes on the whole package, insurance, storage fit, dock fit. We have been a Mercury Platinum Dealer since 1965 and we will tell you straight which side of the line your boat falls on. Pickup at Gores Landing after a water test on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
 
+![The 5-Check Repower Eligibility Test: if all five are true, repowering wins](/lovable-uploads/repower-eligibility-5-check-card.png)
+
+*Before the cost math even matters, the boat has to clear five eligibility checks: (1) the hull is sound, no soft transom or floor, no major gel coat cracks, no water in foam; (2) the boat still fits how you use it; (3) you would keep it five or more years so the repower value compounds; (4) you already know the boat after three or more years of ownership; (5) the current motor is the actual problem, hard starting, dropping cylinders, no parts available. Pass all five and repowering is almost certainly the right call. HBW does a hull walk-around at Gores Landing before quoting, and tells you straight if the hull does not pass, even when that costs the motor sale.*
+
 There's a moment most boat owners eventually meet. The motor that has started every spring for fifteen years turns over, coughs, and goes quiet. You drift for a second, and you start doing math.
 
 The math usually frames itself as one question: new boat, or new motor? That is the wrong question, or at least an incomplete one. The real question is whether the hull under you is still good. If it is, you do not need a new boat. You need a repower. This post walks through the honest math.
