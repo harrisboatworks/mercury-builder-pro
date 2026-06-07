@@ -26295,20 +26295,9 @@ Repower costs include motor, rigging, controls, prop, install, and small accesso
 
 If all five of these are true, repowering is almost certainly the right call:
 
-**1. The hull is sound.** 
-No soft spots in the transom or floor. No major gel coat cracks or stress fractures. No water in foam. Run through the hull walk-around below before deciding.
+![The 5-Check Repower Eligibility Test: if all five are true, repowering wins](/lovable-uploads/repower-eligibility-5-check-card.png)
 
-**2. The boat still fits how you use it.** 
-Length, layout, capacity, and storage still work for your family or fishing setup. If your family grew and the boat shrank, that's a different problem, a new engine won't solve it.
-
-**3. You'd keep it 5+ more years.** 
-A repower's value compounds over time. If you're repowering and planning to sell next season, the math gets ugly fast. A new motor typically returns 50, 70% of its cost in resale value, not 100%.
-
-**4. You already know the boat.** 
-You've owned it 3+ years. You know how it handles, where the wires are, what quirks it has. That familiarity is worth more than most owners realize, and it doesn't transfer to a new hull.
-
-**5. The current motor is the actual problem.** 
-Hard starting. Dropping cylinders. No parts available. Getting more expensive every season. If the motor is the problem and the rest of the boat is fine, replace the motor.
+*The five eligibility checks HBW walks through before quoting any repower: sound hull, the boat still fits your life, keeping it five or more years, you know the boat, and the motor is the actual problem. Pass all five and the next step is a hull walk-around at Gores Landing.*
 
 ---
 
