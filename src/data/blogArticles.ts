@@ -2353,192 +2353,78 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'fourstroke-vs-pro-xs',
-    seoTitle: 'Mercury Verado vs FourStroke vs Pro XS: Family Comparison (2026) | HBW',
-    title: 'Mercury Verado vs FourStroke vs Pro XS: Mercury Family Comparison',
-    description: 'Mercury Verado vs FourStroke vs Pro XS for Ontario repowers: hole shot, weight, top end, and real 2026 CAD installed-price ranges from $16,000. Advice from a Mercury dealer since 1965 and current Platinum dealer.',
+    seoTitle: 'Mercury Pro XS vs FourStroke vs Verado: Which Do You Need?',
+    title: 'Mercury Pro XS vs FourStroke vs Verado: Which Do You Need?',
+    description: "Pro XS, FourStroke, or Verado? What separates Mercury's three outboard families, and which fits your boat. Straight answers from a Mercury dealer.",
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-26',
-    dateModified: '2026-06-02',
+    dateModified: '2026-06-07',
     publishDate: '2026-05-26',
     category: 'Mercury Motors',
     readTime: '9 min',
-    keywords: ['mercury fourstroke vs pro xs', 'mercury verado vs fourstroke', 'mercury verado', 'pro xs vs fourstroke', 'mercury motor family comparison', 'pro xs worth it', 'fourstroke or pro xs repower'],
-    relatedSlugs: ['mercury-75-vs-90-vs-115-comparison', 'mercury-command-thrust-guide-pontoon-boats', 'mercury-boost-upgrade-150hp-pontoon-analysis', 'best-pontoon-outboard-2026-mercury', 'mercury-repower-cost-ontario-2026-cad'],
+    keywords: ['mercury fourstroke vs pro xs', 'mercury verado vs fourstroke', 'mercury verado', 'pro xs vs fourstroke', 'mercury motor family comparison', 'pro xs worth it', 'fourstroke or pro xs repower', 'mercury 115 vs 115 pro xs'],
+    relatedSlugs: ['mercury-fourstroke-buyer-guide-ontario', 'mercury-pro-xs-buyer-guide-ontario', 'mercury-75-vs-90-vs-115-comparison', 'mercury-command-thrust-guide-pontoon-boats', 'mercury-repower-cost-ontario-2026-cad'],
     faqs: [
-      { question: 'What is the Mercury Verado and how does it compare to FourStroke and Pro XS?', answer: 'Mercury Verado is the supercharged, premium V8 / V10 / V12 outboard family above 250 HP, built for big offshore boats and large pontoons that need quiet refinement and big power. FourStroke is the everyday workhorse (2.5 to 300 HP), Pro XS is the lighter performance variant (115 to 300 HP). Verado is special-order at Harris Boat Works, not stocked. Most Ontario freshwater repowers land in FourStroke or Pro XS.' },
-      { question: 'Is a Mercury Pro XS faster than a FourStroke?', answer: 'Usually, especially at 150 HP and up. At matching horsepower, Pro XS is tuned for higher RPM, sharper hole shot, and a few extra mph at top end. At 115 HP and below, the difference is smaller and the FourStroke is usually the better repower pick.' },
-      { question: 'Does a Pro XS use more fuel than a FourStroke?', answer: 'At cruise the two are close. Run wide open and the Pro XS will burn more because it spins higher RPM and is tuned to deliver. If most of your time is at 4,000 RPM cruise, the fuel difference is small.' },
-      { question: 'Is Pro XS worth it on a pontoon?', answer: 'Sometimes. A Pro XS V8 with Boost on a tritoon is a strong combination if you tube or ski. On a standard two-tube pontoon, a FourStroke 115 or 150, often with Command Thrust, is usually the smarter spend.' },
-      { question: 'Does the Pro XS require premium fuel?', answer: 'No. Both the modern FourStroke and Pro XS models are designed to run on standard 87-octane fuel, though ethanol-free marine gas is always preferred when available.' },
-      { question: 'Is there a warranty difference between FourStroke and Pro XS?', answer: 'No. Both carry the same Mercury Canadian warranty: 3 years limited plus 3 years corrosion coverage running concurrently. Mercury periodically runs promotional extensions on top of the base coverage. Confirm current promo terms when we quote you.' },
-      { question: 'How much more does a Pro XS cost installed in Ontario?', answer: 'At 115 HP, expect about $1,500 to $2,000 more for the Pro XS over the FourStroke installed. At higher horsepower, the gap can widen depending on rigging, controls, prop choice, and whether Boost applies to the motor you are quoting. Build a current quote at mercuryrepower.ca.' }
+      { question: 'Is the Mercury Pro XS a four-stroke?', answer: 'Yes. The current Mercury Pro XS lineup is all four-stroke, as are the FourStroke and Verado families. Older Pro XS models were two-stroke OptiMax, which is where the confusion comes from, but the Pro XS you can buy today is a four-stroke tuned for hole-shot and top speed.' },
+      { question: "What's the difference between the Mercury 115 and the 115 Pro XS?", answer: "Both share the same 2.1L four-stroke base, and Mercury lists the same lightest dry weight for both: 359 lb. The Pro XS runs a performance-tuned calibration for sharper acceleration and more top end, with performance gearcase options. For a pontoon or fishing boat the standard 115 FourStroke is usually the smarter buy; for a lighter performance hull where hole-shot matters, the Pro XS is worth the difference." },
+      { question: "What's the difference between Mercury Pro XS, FourStroke, and Verado?", answer: 'All three are four-strokes tuned for different jobs. FourStroke is the efficient, reliable all-rounder for most pontoons, fishing boats, and family runabouts. Pro XS is the performance-tuned version for anglers and performance boats that want acceleration and top speed. Verado is the refined option, smoothest and quietest with digital throttle, built for larger boats where comfort matters. At Harris Boat Works, Verado is special order.' }
     ],
-    content: `# FourStroke vs Pro XS: When Does Pro XS Actually Matter?
+    content: `## Mercury Pro XS vs FourStroke vs Verado: Which One Do You Actually Need?
 
-*Last reviewed: 2026-05-26*
+Three Mercury families, a lot of overlapping horsepower numbers, and a pile of forum arguments. Here's the part that matters: the current models are all four-strokes. The difference is what each one is tuned for.
 
-> **Quick answer:** Mercury FourStroke is the workhorse: quiet, fuel-efficient, built for cruising, family time, and most aluminum and pontoon repowers. Pro XS is the lighter, more aggressive sibling tuned for hole shot, top end, and tournament fishing. For most Ontario repower customers the FourStroke is the right pick. Pro XS earns its premium when weight, acceleration, or top-end speed actually matter. Expect a $1,500 to $4,000 CAD price step depending on HP (2026).
+### The 30-second version
 
-## Who this is for
+- **FourStroke**: the all-rounder. Quiet, efficient, reliable. The right answer for most pontoons, fishing boats, and family runabouts.
+- **Pro XS**: Mercury's performance-tuned four-stroke family. Same four-stroke base, tuned for hole-shot and top speed. Built for anglers and performance boats that want every bit of acceleration.
+- **Verado**: the refined one. Smoothest, quietest, most features (digital throttle, available power steering on bigger models). Built for bigger boats where comfort and refinement matter. One thing to know up front: Verado is a special-order motor at Harris Boat Works. We don't stock it, and it's not in our online quote tool. If a Verado is the right fit, call us and we'll spec and order it for your boat.
 
-Boaters in Ontario looking to repower a fishing boat, pontoon, or fibreglass cruiser who are stuck between Mercury's two most common motor families. We rig both at Harris Boat Works. Every repower gets an on-water test on Rice Lake before pickup. No exceptions. That's how we catch obvious prop, trim, and rigging issues before you leave with the boat. Most regret stories start the same way: "I just wanted a bit more speed." We will tell you the truth about which one your boat actually needs.
+### "Is the Pro XS a four-stroke?"
 
-Want the math for your boat? Build a Mercury quote at mercuryrepower.ca or call us at 905-342-2153.
+Yes. So is the Verado. So is the FourStroke (it's in the name). Older Pro XS models were two-stroke OptiMax, which is where the confusion comes from, but the current Pro XS lineup is all four-stroke. If someone tells you the Pro XS is a two-stroke, they're remembering the old one.
 
-Most boaters here run a FourStroke and never wish they had more. This guide is for the boater deciding whether the Pro XS premium is worth it for how they actually use the boat.
+### Side by side
 
-## Key facts
+| | FourStroke | Pro XS | Verado |
+|---|---|---|---|
+| Tuned for | Efficiency & reliability | Acceleration & top speed | Smoothness & refinement |
+| Typical buyer | Pontoon, fishing, family boat | Bass/performance angler | Larger boats, offshore, luxury |
+| Sound | Quiet | Slightly more aggressive | Quietest |
+| Throttle | Mechanical or digital | Mechanical or digital | Digital controls common; confirm by HP/config |
+| Availability at HBW | In the quote tool | In the quote tool | Special order: call us |
+| Price | $ | $$ | $$$ |
 
-- FourStroke HP range: 2.5 to 300 HP
-- Pro XS HP range: 115 to 300 HP
-- FourStroke 115 HP installed: $16,000 to $19,000 CAD (2026)
-- Pro XS 115 HP installed: $17,500 to $21,000 CAD (2026)
-- Pro XS 250 HP installed: $25,000 to $30,000 CAD (2026)
-- Pro XS V8 4.6L available with Boost (25 HP for 4 to 6 seconds on demand)
-- Both run on standard 87-octane fuel
-- Mercury dealer since 1965, current Platinum tier
+(Exact weights and prices depend on the specific HP and config. The quote tool has real numbers for FourStroke and Pro XS.)
 
-## What is the difference between Mercury FourStroke and Pro XS?
+### How to actually choose
 
-Both families are four-strokes and, at matching horsepower, often share the same engine block. The differences are tuning, trim, and a few hardware details aimed at a different driver. Pro XS gets a sport-tuned ECU map, a higher rev limit, stiffer motor mounts for sharper steering at speed, and a deeper exhaust note. FourStroke is set up for smooth idle, steady cruise, and balanced fuel economy.
+Forget the brand-loyalty arguments. Ask three questions:
 
-Side by side, the practical differences come down to a handful of things:
+**1. What's your boat rated for?** The capacity plate is the ceiling, not a suggestion. Start there.
 
-| Spec | FourStroke | Pro XS |
-|---|---|---|
-| HP range | 2.5 to 300 HP | 115 to 300 HP |
-| Tuning bias | Cruise plus economy | Hole shot plus top end |
-| Sound profile | Whisper quiet at idle | Throaty performance exhaust |
-| Motor mounts | Soft, for low vibration | Stiff, for sharper steering at speed |
-| Wide open RPM | 5,800 to 6,400 | 5,800 to 6,800 |
-| Weight (V8 4.6L) | ~232 kg | ~229 kg |
-| Boost option | Not available | Available on V8 175/200/225 |
-| Typical price step | Base | Plus $1,500 to $4,000 (2026) |
-| Best for | Pontoon, cruiser, aluminum | Bass, fish-and-ski, fast hulls |
-| Fuel | 87 octane | 87 octane |
+**2. How do you use it?** Cruising a pontoon and fishing on weekends? FourStroke, and you probably won't miss the premium model. Running a bass boat and you care about hole-shot? Pro XS earns its premium. Big boat, lots of water, want it quiet and effortless? Verado.
 
-Both motors use the same SmartCraft electronics and digital throttle. Both carry the same Mercury Canadian warranty. The Pro XS is not a more fragile motor or a thirstier motor at cruise. It is a different tune for a different driver.
+**3. What can you get serviced where you trust the shop?** This one matters more than people admit. A motor is a multi-year relationship with a service department, not a one-time purchase.
 
-## When does a Mercury Pro XS actually matter?
+### The 115 question (the most-searched one)
 
-Pro XS earns its money in three real-world cases.
+"What's the difference between the Mercury 115 and the 115 Pro XS?" Same 2.1L four-stroke base, and despite what the forums say, Mercury's spec sheets list the same lightest dry weight for both: 359 lb. The difference isn't weight. The Pro XS runs a performance-tuned calibration for sharper acceleration and more top end, with gearcase options aimed at performance hulls. For a pontoon or a typical fishing boat, the standard 115 FourStroke is the smarter buy. For a lighter performance hull where hole-shot matters, the Pro XS is worth the difference.
 
-First, tournament bass and walleye fishing. Anglers who launch ramps in a hurry, run 80 km between spots, and need to plane fast off the back of a wave will feel the Pro XS hole shot. On a 19 to 21 foot fibreglass bass boat with a Pro XS 200 or 250, you are looking at top ends well past 95 km/h and the kind of acceleration that matters when you are trying to beat weather.
+### Bottom line
 
-Second, fish-and-ski crossovers. A boat that has to pull a tube clean, hold a cruise for the family, and still run hard the next weekend is the natural Pro XS habitat. The throttle response is more immediate, especially in the mid-range.
+We sell Mercury. The Mercury section was not written by Switzerland. The comparisons still need to be fair, so here it is: most people on Rice Lake are best served by a FourStroke. Pro XS if you chase performance. Verado if you've got a bigger boat and want refinement (and a phone call, since we special-order those). Match it to your hull and how you actually use the boat, not to the loudest opinion at the ramp.
 
-Third, big boats that want Boost. Some of the bigger Pro XS V8 motors (the 4.6L block) can run Mercury Boost, a factory calibration that adds about 25 HP through software, not hardware. It is available on specific V8 Pro XS models, not the whole lineup. We cover that decision in detail in our [Mercury Boost upgrade analysis](/blog/mercury-boost-software-upgrade-eligibility-2026).
+**Want the real price on a FourStroke or Pro XS? [Build a quote in 2 minutes](https://www.mercuryrepower.ca)**, or call 905-342-2153 and we'll spec it to your boat, Verado included.
 
-If none of those three apply, the FourStroke is the smarter spend.
+---
 
-## When is FourStroke the better buy even if you can afford Pro XS?
+**Related buyer guides:**
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario)
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario)
 
-Most of the time. That is the answer people sometimes need to hear more clearly. FourStroke is the bread-and-butter recreational line for a reason. It covers everything from small tillers to serious mid-range family repowers. It is the right answer when comfort, economy, versatility, and long-term value matter more than the last bit of performance.
-
-On Rice Lake, the Kawarthas, and similar Ontario freshwater, that describes a lot of boats. Family aluminums. Console fishing boats used recreationally, not competitively. Cottage pontoons. Mid-size runabouts. Boats that need to be easy to own and easy to trust. For those jobs, FourStroke is not the budget answer. It is the proper answer. Quiet idle, soft engine mounts, low vibration in the hull, and a fuel curve that rewards 3,500 to 4,500 RPM cruising.
-
-If your question is about pontoon lift and loaded acceleration, the [Command Thrust gearcase](/blog/mercury-command-thrust-guide-pontoon-boats) often changes the result more meaningfully than jumping straight to Pro XS.
-
-## Which family is better for a pontoon repower?
-
-On a single-tube pontoon up to 22 feet, the FourStroke 115 or 150 is the right call. Smooth cruise, quiet idle, low fuel burn. Pontoon owners spend most of their time at 3,500 to 4,500 RPM where the FourStroke is happiest. Add Command Thrust if the hull is loaded heavy or you want better lift.
-
-The conversation changes on a tritoon or a pontoon used for tubing. A Pro XS V8 200 with Boost on a tritoon transforms the boat. Plane time drops, mid-range acceleration jumps, and you have reserve power for the day someone shows up with three extra adults and a cooler. The price step is real, typically $3,000 to $5,000 more installed than a FourStroke 150 (2026), but for the right customer the upgrade pays off every weekend.
-
-For most pontoon customers we still recommend the FourStroke. The Pro XS pontoon owner is usually the one who is already thinking about it before we sit down.
-
-## How much more does a Pro XS cost installed?
-
-The step varies by HP. At 115 HP, expect about $1,500 to $2,000 more for the Pro XS over the FourStroke installed. At 175 HP and up, the gap widens to $2,500 to $4,000 because the Pro XS V8 platform also unlocks Boost as an add-on (~$1,200 to $1,800 more).
-
-Here is the ballpark installed range at Harris Boat Works in CAD (2026):
-
-| HP class | FourStroke installed | Pro XS installed |
-|---|---|---|
-| 115 HP | $16,000 to $19,000 | $17,500 to $21,000 |
-| 150 HP | $18,000 to $21,000 | $20,000 to $23,500 |
-| 175 HP | $20,000 to $23,000 | $22,000 to $26,000 |
-| 200 HP | $21,000 to $24,000 | $23,500 to $28,000 |
-| 250 HP | $24,000 to $28,000 | $25,000 to $30,000 |
-
-Full repower includes the motor, rigging, controls, propeller, fuel system inspection, old motor removal, and a water test on Rice Lake before pickup. Pickup only at Gores Landing, no shipping, no delivery. Our [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks each line down. Build a current quote at [mercuryrepower.ca](https://mercuryrepower.ca) for live pricing with options.
-
-## What HBW checks before quoting FourStroke vs Pro XS
-
-When you call us or build a quote online, we ask four things before we recommend a family:
-
-1. **How you actually use the boat.** Cruise, fish casually, or run a pontoon for sunset rides? FourStroke. Race off the ramp, fish tournaments, or care about every mph? Pro XS.
-2. **How heavy your typical load is.** Six or more adults on a pontoon or tritoon regularly? A Pro XS V8 with Boost solves a planing problem the FourStroke cannot.
-3. **Your transom and rigging.** Some older boats have rigging that does not match modern digital throttle. Pro XS is digital-only. FourStroke offers both digital and mechanical at most HP classes.
-4. **Your budget tolerance.** The Pro XS premium is real money. If the extra $1,500 to $4,000 (2026) makes you wince, that is your answer. Spend it on a better prop, a better cover, or fuel.
-
-Whichever family you pick, the rigging, water test, and warranty are identical at Harris Boat Works. We have been a Mercury dealer since 1965 and we will be honest with you about which family fits your boat. If you are still deciding horsepower before family, read our [75 vs 90 vs 115 HP Mercury comparison](/blog/mercury-75-vs-90-vs-115-comparison) first.
-
-## Common mistakes
-
-:::mythbuster
-- claim: Buying Pro XS on a boat that does not need it.
-  rebuttal: A 16 foot aluminum with two anglers does not benefit from Pro XS tuning. You will spend extra and gain nothing.
-- claim: Assuming Pro XS uses way more fuel.
-  rebuttal: At cruise RPM, the families are close. The fuel gap shows up at wide-open throttle, which most repower customers rarely run.
-- claim: Confusing Boost with horsepower.
-  rebuttal: Boost is a 4-to-6-second power injection, not a sustained HP rating. It plants the boat on plane. It does not give you more top speed.
-- claim: Skipping the Command Thrust conversation.
-  rebuttal: On heavy pontoons, the Command Thrust gearcase often delivers what people think they need Pro XS for, at lower cost.
-- claim: Buyers chase top-end numbers they will never use.
-  rebuttal: On a 16-to-19-foot aluminum boat, the FourStroke gets you on plane fine and sips less fuel doing it.
-- claim: Forgetting the water test matters.
-  rebuttal: A motor that checks out at the dealer still needs to push your actual boat in real water. Our Rice Lake on-water test helps catch obvious prop, trim, and rigging issues before pickup. A motor that runs perfect on the test stand and bad on your transom is not a Mercury problem. It is a rigging problem.
-:::
-
-## Related guides
-
-- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-outboard-ontario): The step from 115 to 150 HP is bigger than it looks on paper. The 115 is a 4-cylinder engine; most 150 HP.
-- [The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)](/blog/best-mercury-for-family-runabouts): A Mercury Platinum dealer's straight answer on the right Mercury for a family runabout, by boat length, by.
-- [Mercury 115 HP FourStroke Review: The Lightest 115 HP Available, and Why That Matters](/blog/mercury-115-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 115 HP FourStroke. Mercury's headline mid-range motor with the.
-- [Mercury 150-300 HP Pro XS Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide): HBW compares Mercury Pro XS 150, 175, 200, 225, 250, and 300 HP outboards for Ontario boats: hull pairings.
-
-## Frequently Asked Questions
-
-**Is a Mercury Pro XS faster than a FourStroke?**
-Yes. At matching horsepower the Pro XS is tuned for higher RPM, sharper hole shot, and a few extra mph at top end. The gap is biggest at 150 HP and up. At 115 HP and below the difference is smaller and the FourStroke is usually the better repower pick.
-
-**Does a Pro XS use more fuel than a FourStroke?**
-At cruise the two are close. Run wide open and the Pro XS will burn more because it spins higher RPM and is tuned to deliver. If most of your time is at 4,000 RPM cruise, the fuel difference is small.
-
-**Is Pro XS worth it on a pontoon?**
-Sometimes. A Pro XS V8 with Boost on a tritoon is a strong combination if you tube or ski. On a standard two-tube pontoon, a FourStroke 115 or 150, often with Command Thrust, is usually the smarter spend.
-
-**Does the Pro XS require premium fuel?**
-No. Both the modern FourStroke and Pro XS models are designed to run on standard 87-octane fuel, though ethanol-free marine gas is always preferred when available.
-
-**Is there a warranty difference between FourStroke and Pro XS?**
-No. Both carry the same Mercury Canadian warranty: 3 years limited plus 3 years corrosion coverage running concurrently. Mercury periodically runs promotional extensions on top of the base coverage. Confirm current promo terms when we quote you.
-
-**Can I finance a Pro XS upgrade?**
-Yes. Financing is available OAC. Build a current quote at mercuryrepower.ca to see live rates and your estimated monthly payment.
-
-We test repowers on Rice Lake, on the water, not just on a stand. Build a quote and we will tell you honestly whether the Pro XS premium is worth it for your boat.
-
-## Ready to repower?
-
-We rig both at Harris Boat Works. Every repower gets an on-water test on Rice Lake before pickup. No exceptions. That is how we catch obvious prop, trim, and rigging issues before you leave with the boat. We will tell you the truth about which one your boat actually needs.
-
-**Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
-
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [75 vs 90 vs 115 HP Mercury Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
-- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
-- [Mercury Boost Upgrade Analysis](/blog/mercury-boost-software-upgrade-eligibility-2026)
-- [Best Pontoon Outboard 2026](/blog/best-pontoon-outboard-2026-mercury)
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-
-See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).`
+Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 1965, and a Mercury Platinum dealer today.
+`
   },
   {
     slug: 'boat-repowering-guide-when-to-replace-motor',
@@ -11133,177 +11019,84 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: 'mercury-avator-electric-boating-ontario',
-    seoTitle: "Mercury Avator Electric Outboards in Ontario | HBW",
-    title: 'Mercury Avator & the Future of Electric Boating in Ontario',
-    description: "Mercury Avator electric outboards (7.5e, 20e, 35e) for small boats and cottages in Ontario. How they work, range, charging, and who they actually fit.",
+    seoTitle: 'Mercury Avator Electric Outboards: Cost & Range (Canada)',
+    title: 'Mercury Avator Electric Outboards: Cost & Range (Canada)',
+    description: 'Mercury Avator electric outboards: what they cost, how far they go, and whether one fits Rice Lake. Honest take from a Mercury Platinum dealer.',
     image: '/lovable-uploads/Mercury_Avator_and_The_Future_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-02-06',
+    dateModified: '2026-06-07',
     publishDate: '2026-02-06',
     category: 'Buying Guide',
     readTime: '10 min read',
-    keywords: ['mercury avator', 'electric outboard motor', 'avator electric boat', 'electric boating ontario', 'mercury electric motor', 'cottage boat electric', 'rice lake electric outboard', 'avator range runtime'],
-    content: `# Mercury Avator Electric Outboards: Honest Advice for Ontario Cottage Boaters
+    keywords: ['mercury avator', 'electric outboard motor', 'avator electric boat', 'electric boating ontario', 'mercury electric motor', 'cottage boat electric', 'rice lake electric outboard', 'avator range runtime', 'avator cost canada'],
+    relatedSlugs: ['mercury-avator-7-5e-review', 'mercury-avator-range-rice-lake-cottage', 'mercury-avator-charging-cottage-dock', 'mercury-avator-vs-torqeedo'],
+    content: `## Mercury Avator Electric Outboards: What They Are, What They Cost, and Who They're Actually For
 
-## Quick answer
-Mercury Avator electric outboards are purpose-built for short-range, quiet, low-maintenance boating. They are a genuinely good fit for small boats on electric-only or HP-restricted lakes, cottage tenders, and dedicated quiet runabouts. They are not a replacement for a gas outboard on a full-size fishing boat running a full day on Rice Lake. Understand the use case before you buy.
+Electric outboards aren't a someday thing. Mercury's Avator line is here, we're a Mercury dealer, and we get asked about it enough that it's worth laying out straight: what these motors do, what they don't, and whether one belongs on the back of your boat. No hype. Just what we know.
 
-![Mercury Avator electric outboard lineup, 7.5e 20e 35e](/lovable-uploads/inline/mercury-avator-lineup.svg)
+### The Avator lineup, in plain terms
 
-## The honest take
+Mercury names the Avator models by power output in watts, which trips people up. Here's the translation:
 
-Electric outboards have arrived. Not as a concept, as actual products you can buy, rig, and put on a boat. Mercury's Avator line is one of the more credible entries in that space because it comes from a manufacturer with real dealer infrastructure, real service support, and a track record we are familiar with.
-
-I want to give you an honest take on Avator for Ontario boating, not the trade-show version where everything is "the future of boating," but the real version: where it fits, where it does not, what you need to make it work at a cottage, and what we would tell you if you walked into our shop asking about it.
-
-## What Mercury Avator actually is
-
-Avator is Mercury's electric outboard family. Think of it the same way you would think of Mercury's Verado as a brand within the Mercury lineup. Avator is Mercury's electric offering, designed as a complete system: motor, battery, charger, controls, and displays built to work together.
-
-It is not a trolling motor. It is designed to function as a primary outboard on the right size of boat.
-
-Current Avator models (as of 2026):
-
-| Model | Output | Battery system | Best-fit boat |
+| Model | Power at prop | Feels like (gas) | Best for |
 |---|---|---|---|
-| Avator 7.5e | 750W | Integrated 1 kWh pack | Very small (<14 ft) car-toppers, tenders |
-| Avator 20e | 2,000W | External 2,300Wh packs (up to 3) | Small runabouts (14 to 16 ft) |
-| Avator 35e | 3,500W | External 2,300Wh packs (up to 4) | Small to mid-size (14 to 18 ft) |
-| Avator 75e | 7,500W | 5,400Wh Power Center (up to 4 packs) | Mid-size (16 to 20 ft) on restricted lakes |
-| Avator 110e | 11,000W | 5,400Wh Power Center (up to 4 packs) | Larger (18 to 22 ft) on restricted lakes |
+| Avator 7.5e | 750W | ~3.5 hp | Canoes, dinghies, small tenders, trolling |
+| Avator 20e | 2.2 kW | ~5 hp | Small fishing boats, inflatables |
+| Avator 35e | 3.7 kW | ~9.9 hp | Small fishing boats, light tenders |
+| Avator 75e | 7.5 kW | 10 hp (prop-shaft rating) | Small pontoons, larger tenders |
+| Avator 110e | 11 kW | 15 hp (prop-shaft rating) | Pontoons, day boats |
 
-Mercury rates Avator by output power in watts and kilowatts, not by gas-engine HP equivalency. Focus on matching the power output to your hull weight and use case, not on translating to "X hp."
+One quirk worth knowing: the first three figures are Mercury's gas-equivalent comparisons, while the 75e and 110e numbers are Mercury's literal prop-shaft conversions (7,500 watts converts to 10 hp). Electric motors deliver all their torque instantly, so a 75e pulls a bigger boat off the line far harder than "10 hp" suggests. Treat the column as a guide, not a spec.
 
-## Where Avator makes sense for Ontario boaters
+A few things worth knowing: the 7.5e battery (1 kWh, about 17 lb) slides in under the cowl with no cables, and you can carry a spare and swap it in seconds. The bigger 75e and 110e use a Power Center hub that connects up to four larger 5,400 Wh batteries, so range scales with how many packs you buy.
 
-### Electric-only or HP-restricted lakes
-This is the strongest argument for Avator in Ontario. There are lakes in the Kawarthas, Algonquin, and across cottage country where motorboats are restricted, either to electric-only operation or to low HP limits. On those lakes, Avator is not competing with a gas outboard. It is competing with not having any meaningful propulsion at all.
+### The honest part: range
 
-The Avator 35e, 75e, and 110e fit squarely into restricted-use scenarios where an electric motor of meaningful power is genuinely needed.
+This is the question that matters, and the answer is "less than a tank of gas, and it depends." In Mercury's published 7.5e testing on a 13-foot, 382-lb boat with one 1 kWh battery, it ran about 60 minutes / 5 miles at full throttle, or up to 19 hours / 34 miles at 25% throttle.
 
-One important note on regulations: HP restrictions and electric-only restrictions are not the same thing, and they vary by specific water body. Some "electric only" lakes technically permit electric motors up to 7.5 kW aggregate power under the federal Vessel Operation Restriction Regulations, which covers the larger Avator models. Confirm your specific lake rules before you buy anything.
+Read that carefully. Wide open, you get an hour. Putting along slow, you get most of a day. Real range on your boat, with your load, in Rice Lake chop and wind, will land somewhere in between. That's not a knock on the motor. It's physics. Plan your day around it and carry a spare battery if you're going far.
 
-::decision-card
-eyebrow: Electric vs gas decision
-heading: Is the Avator the right call for how you actually boat?
-subhead: Electric outboards have a real place in Ontario, but the range and recharge math is honest. Match the motor to the use case, not the headline.
-leftLabel: Avator electric makes sense
-leftCriteria:
-  - Small calm lake, mostly under 3 hours per outing
-  - Electric-only or strict HP-restricted water
-  - Quiet morning fishing or noise-sensitive cottage neighbours
-  - Second boat alongside a gas-powered main rig
-leftOutcome: Avator 7.5e or 20e fits the job
-leftVariant: recommended
-rightLabel: Stick with gas FourStroke
-rightCriteria:
-  - Bigger water, longer days, or open lake crossings
-  - You want range and quick refuel, not a recharge wait
-  - Towing tubes or pulling a skier
-  - One boat doing every job
-rightOutcome: Mercury 9.9 to 25 FourStroke
-rightVariant: alternative
-whenInDoubt: The Avator is not a one-for-one swap for a gas kicker. It's a different tool. If you're not sure your typical outing fits inside the runtime envelope, the FourStroke is still the safer call.
-::
+### Charging
 
-### Small boats making short runs from a cottage dock
-A 14-foot aluminum boat or a small fibreglass tender making short trips, across the bay, to a nearby island, up a quiet river, is a good Avator candidate. The range is enough, the charging setup at most cottages (standard 110V outlet) is workable overnight, and you get genuine benefits: no fumes, minimal noise, very low maintenance.
+Charge time depends on the model and which charger you have. The small 7.5e ships with a 110W charger that refills its 1 kWh battery in roughly 9 hours; an optional 520W charger cuts that to about 2 hours. The bigger 75e and 110e use much larger 5,400 Wh battery packs: the portable 520W charger takes roughly 20 hours to refill two of them, and the 1050W charger cuts that by more than half but needs a proper AC inlet and breaker. For a cottage with a dock outlet, overnight charging is fine. For anyone without shore power, it's a real consideration.
 
-The Avator 7.5e on a light car-topper can run about 5 miles at full throttle on a single 1 kWh battery, or up to 34 miles at quarter-throttle.
+### What's genuinely good about it
 
-### Noise-sensitive situations
-Early morning fishing, evening cruises, areas where exhaust smell is genuinely objectionable. Avator near-silent operation is a real advantage.
+- **No fumes, no pull-start, no oil changes, no winterizing the fuel system.** For a small kicker or tender motor, that's a real quality-of-life upgrade.
+- **Quiet.** On a calm morning you'll hear the loons, not the motor. Anglers like this more than they expect to.
+- **Instant torque.** The transverse-flux motor pulls hard off the line for its size.
+- **The display and app** show real-time range in distance or time remaining, so you're not guessing how far home is.
 
+### Who it's actually for
 
-![Mercury Avator electric outboard mounted on aluminum boat at cottage dock](/lovable-uploads/inline/inline-avator-electric-dock.png)
+Be honest with yourself about how you boat.
 
-### A second, dedicated quiet boat alongside a gas-powered main boat
-This is how a lot of cottage families would realistically use Avator in Ontario. Your main boat is a gas-powered fishing rig that handles the full-day, long-range work. The Avator-powered small boat is what you take out in the morning for fishing close to the dock.
+**An Avator makes sense if** you run a small boat, canoe, or dinghy short distances; you want a clean, quiet trolling or tender motor; you've got a dock outlet to charge at; and the no-maintenance angle appeals to you more than maximum range.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+**Stick with gas if** you cover real distance, run a heavier boat, fish all day far from shore, or don't have reliable charging. A 9.9 or 15 hp Mercury FourStroke still does more, goes farther, and refuels in two minutes at the pump. There's no shame in that being the right answer: for most Rice Lake boats today, it still is.
 
-## Where Avator does not make sense right now
+### What about price?
 
-**Avator is not a replacement for a gas outboard on a full-size fishing boat doing full-day work in 2026.**
+Avator pricing moves around a lot by model, battery count, and configuration, and the battery is often where the real money is, not the motor head. We don't stock Avator on the floor: it's a build-to-order product, and the right battery count depends entirely on your boat and how you use it. So this is the one Mercury line we price by conversation instead of the configurator. Call us at 905-342-2153, tell us the boat and how far you actually run, and we'll give you the real, current number for the exact setup. Same straight answer, just on the phone.
 
-If you are running a 17-foot aluminum boat around Rice Lake for 6 to 8 hours, trolling for walleye across multiple spots, running back into a headwind in the afternoon, a gas FourStroke is still the right answer. Battery capacity and charging logistics are not there yet for that use case.
-
-Similarly, if your cottage does not have reliable shore power or you are camping-style remote, charging logistics become complicated. Avator needs a place to plug in overnight, and that needs to be a real plan before you buy.
-
-To be fair to the technology: the Avator lineup launched the 75e and 110e in 2024, and Mercury is clearly committed to expanding the line. The medium-term trajectory is real. But buying what exists today for a job it is not quite ready for is still a mistake.
-
-## What charging looks like at an Ontario cottage
-
-The Avator 7.5e integrated 1 kWh battery charges from a standard 110V outlet in roughly 3 to 4 hours. For the larger external 2,300Wh packs, plan on overnight charging from a 110V outlet per pack. If you have multiple packs, you either need multiple outlets running simultaneously or a 240V charger to speed things up.
-
-At a typical Ontario cottage with standard electrical service, overnight charging works for most uses. What does not work is rolling in at 4pm after a long day, expecting to go back out that evening on a flat battery. Plan your charging like you would plan fuelling.
-
-## Avator vs a small gas FourStroke vs a trolling motor
-
-**Traditional 12V/24V trolling motor:**
-- Cheapest option
-- Very low speeds, mainly for controlled fishing positioning
-- Not a primary outboard
-- No useful thrust for getting somewhere
-
-**Mercury FourStroke 2.5 to 9.9 HP:**
-- Proven, reliable, easy to service anywhere
-- Works on any lake with any restriction up to 10 HP
-- Has to be winterized and fuelled
-- Makes noise and exhaust
-
-**Mercury Avator:**
-- Real outboard-style thrust and steering
-- Near-silent operation, no fumes
-- Significant upfront cost when battery packs are included
-- Charging dependent on shore power access
-- Right for specific use cases, not all use cases
-
-For most Rice Lake fishing boats running a full day with multiple people, a gas FourStroke plus a trolling motor is still the most practical combination. If your situation involves an HP-restricted lake, a dedicated quiet boat, or a small tender application, Avator enters the conversation seriously.
-
-## Pricing and how to get a quote
-
-Avator pricing changes as the line evolves, and battery pack costs are separate from motor costs. The relevant comparison is the all-in system cost: motor plus the battery packs you would actually need.
-
-Contact us with your boat type, size, and how you plan to use it. We will put together a realistic quote and tell you which Avator model, if any, actually fits your situation. If a gas motor is the better answer, we will tell you that too.
-
-## Our honest take
-
-We like Avator for what it is. Mercury built it as a real product backed by a real dealer network, and that matters in a space full of startups making promises they cannot service. We can support these motors because we are a Mercury Platinum dealer.
-
-But we are also a shop that has been on Rice Lake since 1947, and we have watched a lot of technology trends come through the marine industry. The customers who fare best are the ones who match the technology to their actual use case, not the marketing version.
-
-If a short-range quiet runabout is genuinely what your cottage situation calls for, Avator is worth serious consideration. If you are looking for a full-day fishing motor that handles Rice Lake top-to-bottom in a 17-foot aluminum boat, a gas FourStroke is still the right answer today.
-
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-*Last reviewed: 2026-05-11.*
+For gas outboards, the configurator does what it always does: **[build a real Mercury quote in 2 minutes at mercuryrepower.ca](https://www.mercuryrepower.ca)**. We sell both. We'll tell you straight which one fits your boat.
 
 ---
 
-**Related guides:**
-- [Mercury Boost Software Upgrade Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026)
-- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
-- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
-- [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
-- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+**Related Avator reading:**
+- [Mercury Avator 7.5e: Review, Price CAD, and Range (2026)](/blog/mercury-avator-7-5e-review)
+- [Mercury Avator Electric Outboard Range on Rice Lake (2026)](/blog/mercury-avator-range-rice-lake-cottage)
+- [Charging a Mercury Avator at Your Cottage Dock (2026)](/blog/mercury-avator-charging-cottage-dock)
+- [Mercury Avator vs Torqeedo: Honest Comparison for Ontario Boaters (2026)](/blog/mercury-avator-vs-torqeedo)
 
-## Related guides
-
-- [Mercury Avator 7.5e: Review, Price CAD, and Range (2026)](/blog/mercury-avator-7-5e-review): Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on.
-- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament.
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
-
+Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 1965, and a Mercury Platinum dealer today.
 `,
-        faqs: [
-      { question: 'How far can a Mercury Avator go on a single charge?', answer: 'It depends on the model and battery configuration. On a 13-foot boat with the Avator 7.5e and its single 1 kWh integrated battery: approximately 5 miles at full throttle or up to 34 miles at 25% throttle. Higher-power models with multiple battery packs extend range significantly.' },
-      { question: 'Is Mercury Avator practical for Rice Lake in Ontario?', answer: 'It depends on what you are using it for. An Avator on a small car-topper or cottage tender making short trips from the dock: yes, very practical. An Avator as the primary motor on a 17-foot fishing boat running a full day across Rice Lake: no, not practical with current battery range.' },
-      { question: 'Can I use a Mercury Avator on an HP-restricted lake in Ontario?', answer: 'Yes, for most HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power, which covers the smaller Avator models. For larger models or for lakes with specific restrictions, confirm your lake rules before buying.' },
-      { question: 'What maintenance does a Mercury Avator require?', answer: 'Much less than a gas engine. No oil changes, fuel filters, spark plugs, or fuel stabilizer. Rinse with fresh water after use, inspect and grease the tilt mechanism and prop shaft seal annually, check the propeller for damage, and store battery packs at 50 to 80% charge over winter.' },
-      { question: 'How do I charge a Mercury Avator at a cottage?', answer: 'The Avator 7.5e charges from a standard 110V outlet in approximately 3 to 4 hours. Larger external 2,300Wh packs take longer, plan on overnight from 110V. At most Ontario cottages with standard electrical service, overnight charging is the practical approach.' },
-      { question: 'How does Avator compare to a trolling motor?', answer: 'Avator is a primary outboard, not a trolling motor. It steers like an outboard, delivers real thrust for getting somewhere on the water, and includes full outboard-style controls and displays. For slow-speed fish positioning on a large fishing boat, a traditional trolling motor is still simpler and cheaper.' },
+    faqs: [
+      { question: 'How far can a Mercury Avator electric outboard go on one charge?', answer: "In Mercury's published test of the Avator 7.5e on a 13-foot, 382-lb boat with one 1 kWh battery, it ran about 60 minutes or 5 miles at full throttle, and up to 19 hours or 34 miles at 25% throttle. Real-world range depends on your boat, load, and conditions." },
+      { question: 'What gas horsepower is each Mercury Avator equivalent to?', answer: 'Mercury compares the 7.5e to about 3.5 hp, the 20e to about 5 hp, and the 35e to about 9.9 hp. For the 75e and 110e, Mercury rates prop-shaft output: 7,500 watts converts to 10 hp and 11,000 watts to 15 hp. Instant electric torque means they feel stronger off the line than those numbers suggest.' },
+      { question: 'How long does it take to charge a Mercury Avator battery?', answer: "The 7.5e's 1 kWh battery takes roughly 9 hours on the included 110W charger or about 2 hours on the optional 520W charger. The larger 5,400 Wh packs used by the 75e and 110e take roughly 20 hours for two batteries on the portable 520W charger; the 1050W charger cuts that by more than half." },
+      { question: 'How much does a Mercury Avator cost in Canada?', answer: 'It depends on the model, battery count, and charger, and batteries are often the biggest part of the price. Avator is a build-to-order product at Harris Boat Works, so call 905-342-2153 for a current, exact price on the setup that fits your boat. Gas Mercury outboards have live pricing in the quote tool at mercuryrepower.ca.' }
     ],
   },
 
@@ -12207,9 +12000,9 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
   {
     slug: 'mercury-repower-cost-ontario-2026-cad',
     relatedSlugs: ['ontario-mercury-outboard-price-guide', 'mercury-outboard-rigging-costs-ontario', 'what-happens-during-mercury-repower'],
-    title: 'How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)',
-    seoTitle: 'Mercury Repower Cost in Ontario (2026): Real CAD Pricing | Harris Boat Works',
-    description: 'All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and honest off-season timing for Rice Lake repowers.',
+    title: "Mercury Repower Guide: Cost, Timeline & When It's Worth It",
+    seoTitle: "Mercury Repower Guide: Cost, Timeline & When It's Worth It",
+    description: 'What a Mercury repower actually costs, how long it takes, and when it beats buying new. Straight answers from a Mercury Platinum dealer on Rice Lake.',
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-17',
