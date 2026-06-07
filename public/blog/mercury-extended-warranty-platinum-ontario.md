@@ -74,7 +74,7 @@ source: HBW Customer, Bewdley 2026
 
 ## What Mercury Product Protection Is
 
-Your new Mercury comes with a 3-year factory limited warranty against defects in materials and workmanship. That covers you for the first 3 years. Mercury Product Protection is the factory-backed extended service contract that picks up when the limited warranty ends. For a breakdown of how Mercury's current promotional stack extends the factory limited coverage to roughly 6 years, see our [Mercury 6-Year Warranty Explained (Current Promo)](/blog/mercury-6-year-warranty-explained).
+Your new Mercury comes with a 3-year factory limited warranty against defects in materials and workmanship. That covers you for the first 3 years. Mercury Product Protection is the factory-backed extended service contract that picks up when the limited warranty ends. On top of the 3-year base, the current HBW Exclusive promotion brings total factory-backed coverage to 7 years on every new Mercury outboard purchased through June 14, 2026, after which the bonus years revert to the 3-year standard. See our [current promo explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) for what that promo covers and when it reverts.
 
 It is not a third-party insurance policy. It is not an aftermarket add-on. It is administered 100% by Mercury Marine, using genuine Mercury and Quicksilver parts, performed by authorized Mercury dealers, same factory standards as your original warranty.
 
