@@ -30807,7 +30807,7 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 | Motor purchase | $11,500 | $6,500 |
 | Install and rigging | $2,500 | $1,500 (controls usually transfer) |
 | Year-one service (catch-up) | $250 (20-hour) | $800-1,200 (impeller, plugs, gear lube, full diagnostic) |
-| Warranty | 5 years (8 with MPP) | None |
+| Warranty | 3 years factory (7 total with current HBW promo) | None |
 | Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500 (no warranty cushion) |
 | **5-year all-in estimate** | **$15,500-$16,000** | **$10,300-$12,000** |
 
