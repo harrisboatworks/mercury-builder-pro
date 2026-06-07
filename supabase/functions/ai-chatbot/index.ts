@@ -723,7 +723,7 @@ Gores Landing, ON K0K 2E0
 - **Worth repowering if**: Hull solid, transom firm, interior functional
 - **Can increase HP**: Often yes, up to max rating - modern motors lighter
 - **Controls compatibility**: 2004+ Mercury controls usually work
-- **Warranty**: Full 3-year factory, extendable to 8 years regardless of boat age
+- **Warranty**: 3-year factory standard, currently extended to 7 years via the active HBW Exclusive promo (through June 14, 2026), extendable up to 8 years total regardless of boat age — always check the live promotions data before stating a length
 - **Timeline**: Typically 3-5 days, faster in winter
 
 ### Repower Costs:
