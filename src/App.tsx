@@ -588,7 +588,7 @@ function AnimatedRoutes() {
         <Route path="/blog/fr" element={<BlogIndexFr />} />
         <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
-        <Route path="/blog/zh/mercury-repower-guide-gta" element={<MandarinBlogArticle />} />
+        {/* /blog/zh/mercury-repower-guide-gta now served by MandarinBlogArticlePage (legacy override retired 2026-06-07) */}
         <Route path="/blog/zh/:slug" element={<MandarinBlogArticlePage />} />
         <Route path="/blog/ko/:slug" element={<KoreanBlogArticlePage />} />
         <Route path="/blog/es/:slug" element={<SpanishBlogArticlePage />} />
