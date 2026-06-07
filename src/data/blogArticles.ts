@@ -1084,6 +1084,10 @@ Work through this in order. Most alarms fall into one of these patterns:
 
 Important: alarm patterns and what they indicate vary by motor model, year, rigging, and whether the boat is SmartCraft-equipped. The patterns above describe what HBW techs see most often on Ontario Mercury motors from the EFI FourStroke and Verado families. Always confirm against your specific motor's operator's manual and any SmartCraft or VesselView display message.
 
+![Mercury outboard alarm and beep code quick reference card: pattern, meaning, and immediate action](/lovable-uploads/mercury-alarm-beep-codes-quick-reference-card.png)
+
+*Quick-reference card summarising the Mercury alarm patterns above: single beep at key-on (normal self-check), continuous alarm at cruise (overheat or overspeed), continuous alarm with power reduction (Guardian mode), repeating four-beep advisory (low oil, water in fuel, or other), intermittent beeping (sensor or wiring fault), alarm at wide-open throttle only (poppet valve or cooling restriction), and a brief alarm after shutdown (heat soak). Each row lists the likely meaning and the immediate action.*
+
 :::image-placeholder
 slug: overheat-alarm-pattern-decoder
 type: diagram
@@ -18338,6 +18342,10 @@ In addition to all 100-hour items:
 
 Exact scope of the 300-hour service varies by motor model and family. Your dealer will follow the Mercury factory-published service manual for your specific motor.
 
+![Mercury 20/100/300 service interval timeline: break-in, routine, and major service items](/lovable-uploads/mercury-20-100-300-service-interval-timeline.png)
+
+*Mercury's three service milestones at a glance. The 20-hour break-in service is one-time and covers oil and filter change on FourStrokes, gear lube drain and refill, inspecting and retorquing fasteners, inspecting the fuel system, inspecting the cooling system and tell-tale, and checking and adjusting the throttle and shift linkage. The 100-hour or annual routine service (whichever comes first) adds spark plug inspection or replacement, fuel filter replacement, water pump impeller inspection, thermostat test, drive belt inspection on applicable models, lubricating all grease points, inspecting the propeller and shaft, checking the battery and charging system, and inspecting all hoses and connections. The 300-hour major service adds water pump impeller replacement, thermostat replacement, drive belt replacement on applicable models, timing belt inspection or replacement on applicable models, a full cooling system inspection, fuel system inspection and cleaning, and anode inspection. Exact 300-hour scope varies by motor.*
+
 ---
 
 ## Does Maintenance Interval Affect Warranty?
@@ -26216,6 +26224,10 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 If your hull is sound and the motor is the problem, repower. A 75, 115 HP repower typically costs $17,000, $22,000 all-in. An equivalent new boat package runs $40,000, $70,000+. That gap is real. If the hull is going, or the boat no longer fits how you use it, buying new or used makes more sense. Neither option is always right.
 
+![The 5-Check Repower Eligibility Test: if all five are true, repowering wins](/lovable-uploads/repower-eligibility-5-check-card.png)
+
+*The 5-Check Repower Eligibility Test, the same five questions HBW walks customers through before quoting a repower: (1) the hull is sound, no soft spots in the transom or floor, no major gel coat cracks, no water in foam; (2) the boat still fits how you use it, length, layout, capacity, storage; (3) you would keep it five or more years, so a new-motor investment has time to compound; (4) you already know the boat after owning it three or more years; (5) the current motor is the actual problem, hard starting, dropping cylinders, no parts available. Pass all five and repowering is almost certainly the right call. The next step is HBW's hull walk-around at Gores Landing.*
+
 
 > **Run the numbers:** Use our [Repower Cost Estimator](/tools#repower-cost) to get a CAD ballpark for the repower side of this decision. Free, instant.
 ::decision-card
@@ -28668,6 +28680,10 @@ A Mercury outboard beep is the motor talking to you. Sometimes routine (a normal
 The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or call (905) 342-2153.
 
 Different Mercury motors use different beep patterns, and what four beeps means on a 2010 EFI FourStroke is not necessarily what four beeps means on a current Verado. This guide covers the common patterns you'll encounter, what they typically indicate, and how to gather the information a technician needs to help you.
+
+![Mercury outboard alarm and beep code quick reference card: pattern, meaning, and immediate action](/lovable-uploads/mercury-alarm-beep-codes-quick-reference-card.png)
+
+*Quick-reference card: each row pairs a Mercury alarm pattern (single beep at key-on, continuous alarm at cruise, continuous alarm plus power reduction / Guardian mode, repeating four-beep advisory, intermittent beeping, alarm at WOT only, and brief alarm after shutdown / heat soak) with its likely meaning and the immediate action to take. Always cross-reference your specific motor's operator manual.*
 
 ---
 
@@ -34414,6 +34430,10 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
     content: `*Last reviewed: 2026-05-25*
 
 > **Quick answer:** Repower wins when your hull is sound, the boat fits your family, and the math works. A typical Mercury repower runs $11,000 to $40,000 CAD installed (2026 ranges), versus $40,000 to $100,000-plus for a comparable new boat. Buying new wins when your transom is rotting, the hull is dated for how you use the water now, or you simply wanted a different boat anyway. There are also hidden costs of new: trailer, taxes on the whole package, insurance, storage fit, dock fit. We have been a Mercury Platinum Dealer since 1965 and we will tell you straight which side of the line your boat falls on. Pickup at Gores Landing after a water test on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
+
+![The 5-Check Repower Eligibility Test: if all five are true, repowering wins](/lovable-uploads/repower-eligibility-5-check-card.png)
+
+*Before the cost math even matters, the boat has to clear five eligibility checks: (1) the hull is sound, no soft transom or floor, no major gel coat cracks, no water in foam; (2) the boat still fits how you use it; (3) you would keep it five or more years so the repower value compounds; (4) you already know the boat after three or more years of ownership; (5) the current motor is the actual problem, hard starting, dropping cylinders, no parts available. Pass all five and repowering is almost certainly the right call. HBW does a hull walk-around at Gores Landing before quoting, and tells you straight if the hull does not pass, even when that costs the motor sale.*
 
 There's a moment most boat owners eventually meet. The motor that has started every spring for fifteen years turns over, coughs, and goes quiet. You drift for a second, and you start doing math.
 
