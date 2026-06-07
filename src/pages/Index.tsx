@@ -9,6 +9,7 @@ import { HomepageSEO } from '@/components/seo/HomepageSEO';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { RepowerLayout } from '@/components/repower/RepowerLayout';
 import { HeroRepower } from '@/components/repower/HeroRepower';
+import { ObjectionStrip } from '@/components/repower/ObjectionStrip';
 import { RepowerCta } from '@/components/repower/RepowerCta';
 import { TrustStrip } from '@/components/repower/TrustStrip';
 
@@ -119,6 +120,11 @@ export default function Index() {
 
       <main className="flex-1">
         <HeroRepower />
+
+        {/* OBJECTION STRIP: three scannable cards directly below hero */}
+        <ObjectionStrip />
+
+
 
         {/* PICKUP-BY-DESIGN BAND */}
         <section className="bg-repower-cream border-y border-repower-navy-900/10">
