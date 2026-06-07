@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle, useMemo, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { X, Send, MessageCircle, RefreshCw, Sparkles } from 'lucide-react';
-import { parseMessageText, ParsedSegment } from '@/lib/textParser';
+import { MarkdownChatBody } from './MarkdownChatBody';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useMotorViewSafe } from '@/contexts/MotorViewContext';
