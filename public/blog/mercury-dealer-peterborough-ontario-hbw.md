@@ -33,6 +33,10 @@ content_type: blog_article
 
 Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 35 minutes south of Peterborough via Highway 28 South to County Road 9, then County Road 18 into Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote at the kitchen table before you make the drive. Family-owned since 1947, Mercury dealer since 1965.
 
+## The short answer for Peterborough boaters
+
+If you're searching for the best Mercury dealer near Peterborough, here's the honest version: there are several dealers in the area, and "best" depends on what you need. What Harris Boat Works offers that's hard to find elsewhere: Mercury Platinum Dealer status, real prices published online in our quote configurator (no "call for price"), water testing on Rice Lake before you take delivery, and a family that has run the place since 1947 and sold Mercury since 1965. We're about 25 to 30 minutes southeast of Peterborough in Gores Landing, on Rice Lake's south shore. Plenty of Peterborough boaters drive past closer options for those four things.
+
 ## Peterborough boaters don't need to commute to the GTA for a Mercury dealer
 
 Most Peterborough boating questions get answered with a drive south through Lakefield or a drive west into the Kawarthas. The Mercury dealer math is a third option that a lot of Peterborough customers don't think about until they need a real conversation about a repower: HBW is 35 minutes south on Highway 28, and the route avoids any of the GTA congestion that makes a Mississauga or Burlington dealer a four-hour round trip.
