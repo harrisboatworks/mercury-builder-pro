@@ -266,7 +266,7 @@ Not always. If your controls are 2004 or newer Mercury controls, they're likely 
 
 ### What warranty comes with a repower?
 
-New Mercury motors come with a 3-year factory warranty. At Harris Boat Works, we currently include 7 years of total factory-backed warranty coverage (3 standard + 4 bonus years of Gold coverage) with every new motor purchase. The warranty covers the new motor regardless of boat age.
+New Mercury motors come with a 3-year factory limited warranty. Current promotions may extend total factory-backed coverage on top of that base; see /promotions for what is active right now. The warranty covers the new motor regardless of boat age.
 
 ### What warranty comes with a Mercury repower?
 
