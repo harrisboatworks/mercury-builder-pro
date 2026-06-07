@@ -121,7 +121,7 @@ export default function Index() {
       <main className="flex-1">
         <HeroRepower />
 
-        {/* OBJECTION STRIP — three scannable cards directly below hero */}
+        {/* OBJECTION STRIP: three scannable cards directly below hero */}
         <ObjectionStrip />
 
 
