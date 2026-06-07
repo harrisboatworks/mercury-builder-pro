@@ -237,7 +237,7 @@ When a customer asks about a specific motor's features (electric start, tiller, 
 - Water contamination signs: Creamy/white gear lube indicates water presence - requires dealer inspection
 
 ### Warranty & Product Protection:
-- Standard Mercury warranty: Up to 3 years limited, non-declining coverage
+- Mercury BASE factory warranty: 3 years, non-declining, on every new outboard. ALWAYS check the active promotions data before stating a final warranty length — the current "HBW Exclusive 7-Year Mercury Warranty" promo (active through June 14, 2026) extends total coverage to 7 years (3 standard + 4 bonus). After that promo ends, coverage reverts to the 3-year standard.
 - Mercury Product Protection Plans: Extend coverage up to 8 years total
 - Platinum Extended Warranty available through Harris Boat Works: Factory-backed parts & labor
 - Warranty registration required - engines must be registered with Mercury Marine
