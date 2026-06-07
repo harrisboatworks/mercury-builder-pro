@@ -2095,14 +2095,15 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       }
     }
 
-    // Get inventory and promotions
-    const [motors, promotions] = await Promise.all([
+    // Get inventory, promotions, and current financing canon
+    const [motors, promotions, financingPromo] = await Promise.all([
       getCurrentMotorInventory(), 
-      getActivePromotions()
+      getActivePromotions(),
+      getActiveFinancingPromo(),
     ]);
     
     // Build the rich system prompt
-    let systemPrompt = buildSystemPrompt(motors, promotions, context, detectedTopics, isWhyBuyQuestion);
+    let systemPrompt = buildSystemPrompt(motors, promotions, context, detectedTopics, isWhyBuyQuestion, financingPromo);
     if (comparisonContext) systemPrompt += comparisonContext;
     if (hpSpecificContext) systemPrompt += hpSpecificContext;
     if (perplexityContext) systemPrompt += perplexityContext;
