@@ -10300,11 +10300,11 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
 
-**Harris Boat Works Current Offer**:
-- 7-Year Factory-Backed Warranty included with every new Mercury
-- That's 3 years standard + 4 bonus years of Gold coverage
-- No extra cost, automatically applied
-- Significant value vs. purchasing extended warranty separately
+**Harris Boat Works Current Offer (HBW Exclusive, ends June 14, 2026)**:
+- 7 years total factory-backed warranty on every new Mercury outboard purchased by June 14, 2026
+- Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years
+- Included in the purchase price; reverts to the 3-year factory standard after the deadline unless a new promotion is announced
+- See the [7-year HBW Exclusive explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current offers](/promotions)
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
 - Competitive rates from third-party lenders
@@ -10394,7 +10394,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'Are there current promotions available?',
-        answer: 'Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. Currently, every new Mercury purchase includes 7 years of factory-backed warranty (3 standard + 4 Gold). Contact us for the latest offers.'
+        answer: 'Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. The current HBW Exclusive brings every new Mercury to 7 years of total factory-backed warranty (Mercury\'s 3-year factory base + 4 promotional bonus years), available through June 14, 2026. See /promotions for the latest.'
       },
       {
         question: 'Can I negotiate below advertised price?',
