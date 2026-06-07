@@ -474,7 +474,7 @@ DO NOT suggest alternatives like local transport, friends picking up, or any wor
 **Essential Package (Best Value Entry Point):**
 - Mercury motor included
 - Standard controls & rigging (or tiller operation for portables)
-- Base Mercury warranty coverage (typically 3 years)
+- Base Mercury factory warranty (3 years standard; the active "HBW Exclusive 7-Year Mercury Warranty" promo extends this to 7 years until June 14, 2026 — always check the live promotions data before stating a length)
 - Basic professional installation
 - Customer supplies battery if needed
 - Great for: Budget-conscious buyers, DIY enthusiasts, tiller motors
@@ -501,17 +501,17 @@ DO NOT suggest alternatives like local transport, friends picking up, or any wor
 - "Most customers choose Complete - it's the sweet spot for value"
 - "Premium is perfect if you want everything included from day one"
 
-## FINANCING DETAILS (Accurate Info - Through Dealerplan):
+## FINANCING DETAILS (Accurate Info - Through Dealerplan Peterborough):
 
 ### Mandatory Fee:
 - $349 Dealerplan processing fee on ALL financed purchases
 - This is standard across all financing applications
 - Included in the quote builder calculations
 
-### Interest Rates (Tiered by Loan Amount):
-- Under $10,000: 8.99% APR
-- $10,000 and up: 7.99% APR
-- Rates are competitive for marine financing
+### Interest Rate (CANONICAL — check the financing_options table for live data):
+- **Current promo: TD Auto Finance "Always On" at 5.48% APR OAC, through Dealerplan Peterborough, available through Dec 31, 2026.**
+- Standard fallback after that promo ends: 7.99% APR ($10k+) / 8.99% APR (<$10k).
+- Never improvise a rate — quote the current canonical promo rate and route customers to /financing-application for the live calculator.
 
 ### Smart Term Selection (Based on Amount):
 - Under $10k: 48 months (4 years)
