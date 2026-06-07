@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ChevronRight, Phone, ChevronDown } from 'lucide-react';
 import { RepowerCta } from './RepowerCta';
 import { HERO_VARIATIONS } from './heroVariations';
@@ -11,129 +12,89 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.9, delay, ease },
 });
 
-// Hero stat row styling, tweak here to adjust all three stats together
-// Mobile (<700px): vertical stacked list with gold left-border on each item.
-// >=sm: horizontal row with hairline top/bottom border.
 const statRowClass =
   'flex flex-col sm:flex-row sm:flex-nowrap items-stretch sm:items-baseline gap-3 sm:gap-10 md:gap-14 max-w-2xl mb-8 sm:border-y sm:border-[#F5F1EA]/15 sm:py-4 hidden min-[380px]:flex';
 const statItemClass =
   'min-w-0 flex-1 pl-3 sm:pl-0 border-l-2 sm:border-l-0 border-[#C9A24A]';
 const statNumberClass =
   'font-display font-bold text-[clamp(22px,3.6vw,42px)] text-[#F5F1EA] tabular-nums';
-const statNumberStyle = {
-  letterSpacing: '-0.035em',
-  lineHeight: 1,
-} as const;
+const statNumberStyle = { letterSpacing: '-0.035em', lineHeight: 1 } as const;
 const statLabelClass =
   'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/55 mt-1 sm:mt-2 leading-tight whitespace-nowrap overflow-hidden text-ellipsis';
-const statLabelStyle = {
-  letterSpacing: '0.16em',
-} as const;
+const statLabelStyle = { letterSpacing: '0.16em' } as const;
 
-const STORAGE_KEY = 'hero-variant';
 const DEFAULT_EYEBROW = 'Mercury Repower · Rice Lake · Since 1947';
+const ACCENT = 'text-[#C8102E]';
 
-/**
- * Pick a hero variation index, with priority:
- *  1. ?v=N query string (clamped to valid range, persisted)
- *  2. sessionStorage (stable per tab)
- *  3. Random (uniform), then persisted
- * Returns 0 (baseline) on the server / before hydration to avoid mismatch.
- */
-function pickVariationIndex(): number {
-  if (typeof window === 'undefined') return 0;
-  const max = HERO_VARIATIONS.length;
-  try {
-    const params = new URLSearchParams(window.location.search);
-    const qv = params.get('v');
-    if (qv !== null) {
-      const idx = parseInt(qv, 10);
-      if (Number.isInteger(idx) && idx >= 0 && idx < max) {
-        sessionStorage.setItem(STORAGE_KEY, String(idx));
-        return idx;
-      }
-    }
-    const stored = sessionStorage.getItem(STORAGE_KEY);
-    if (stored !== null) {
-      const idx = parseInt(stored, 10);
-      if (Number.isInteger(idx) && idx >= 0 && idx < max) return idx;
-    }
-    const idx = Math.floor(Math.random() * max);
-    sessionStorage.setItem(STORAGE_KEY, String(idx));
-    return idx;
-  } catch {
-    return 0;
-  }
-}
+// Static anchor + rotating endings. Index 0 = default rendered SSR for stable SEO H1.
+const HEADLINE_ENDINGS = [
+  'Get your weekends back.',
+  'Stop losing Saturdays.',
+  'Turn the key without holding your breath.',
+  'It already fits your life.',
+  'Pay a third of new.',
+  "The lake's waiting.",
+];
+
+const ROTATE_INTERVAL_MS = 7000;
 
 export function HeroRepower() {
-  // SSR/prerender renders baseline (0); hydration picks the real variation.
-  const [variantIndex, setVariantIndex] = useState(0);
-  // Defer mounting the <video> until after first paint / LCP. Until then the
-  // <img> poster is the LCP element — it's preloaded in index.html with
-  // fetchpriority=high so it can paint without competing with video metadata.
+  // Lock to baseline variation (stable subhead/stats/CTAs per brief).
+  const variation = HERO_VARIATIONS[0];
+
+  // Ending index: 0 for SSR/prerender (stable H1). Hydration picks a random one.
+  const [endingIndex, setEndingIndex] = useState(0);
+  const [reduceMotion, setReduceMotion] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
 
-  useEffect(() => {
-    const idx = pickVariationIndex();
-    setVariantIndex(idx);
-
-    // Fire a single hero_impression event per session, GA4 via window.gtag.
-    // Deduped by sessionStorage so a route-back / re-mount doesn't double-count.
-    try {
-      const variant = HERO_VARIATIONS[idx] ?? HERO_VARIATIONS[0];
-      const dedupeKey = `hero-impression-${variant.id}`;
-      if (sessionStorage.getItem(dedupeKey) !== '1') {
-        sessionStorage.setItem(dedupeKey, '1');
-        const gtag = (window as any).gtag;
-        if (typeof gtag === 'function') {
-          gtag('event', 'hero_impression', {
-            hero_variant_id: variant.id,
-            hero_variant_index: idx,
-            page_path: window.location.pathname,
-          });
-        }
-      }
-    } catch {
-      // Swallow analytics errors - never break the hero on telemetry failure.
-    }
-  }, []);
-
-  // Defer video to after LCP. Skip entirely on reduced-motion or Save-Data.
+  // Pick random ending on mount; set up gentle crossfade if motion allowed.
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    const saveData = (navigator as any)?.connection?.saveData === true;
-    if (reduceMotion || saveData) return;
+    const prefersReduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    setReduceMotion(prefersReduce);
 
+    // Random pick on every page load.
+    const initial = Math.floor(Math.random() * HEADLINE_ENDINGS.length);
+    setEndingIndex(initial);
+
+    if (prefersReduce) return; // static pick only
+
+    const interval = window.setInterval(() => {
+      setEndingIndex((prev) => {
+        let next = prev;
+        while (next === prev) next = Math.floor(Math.random() * HEADLINE_ENDINGS.length);
+        return next;
+      });
+    }, ROTATE_INTERVAL_MS);
+    return () => window.clearInterval(interval);
+  }, []);
+
+  // Defer video to after LCP. Skip on reduced-motion / Save-Data.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const rm = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const saveData = (navigator as any)?.connection?.saveData === true;
+    if (rm || saveData) return;
     const idle = (window as any).requestIdleCallback as
       | ((cb: () => void, opts?: { timeout: number }) => number)
       | undefined;
     let handle: number | undefined;
     let timer: number | undefined;
-    if (idle) {
-      handle = idle(() => setShowVideo(true), { timeout: 2500 });
-    } else {
-      timer = window.setTimeout(() => setShowVideo(true), 1500);
-    }
+    if (idle) handle = idle(() => setShowVideo(true), { timeout: 2500 });
+    else timer = window.setTimeout(() => setShowVideo(true), 1500);
     return () => {
-      if (handle && (window as any).cancelIdleCallback) {
-        (window as any).cancelIdleCallback(handle);
-      }
+      if (handle && (window as any).cancelIdleCallback) (window as any).cancelIdleCallback(handle);
       if (timer) window.clearTimeout(timer);
     };
   }, []);
 
-  const variation = HERO_VARIATIONS[variantIndex] ?? HERO_VARIATIONS[0];
+  const ending = HEADLINE_ENDINGS[endingIndex];
 
   return (
     <section
       data-hero-variant={variation.id}
       className="relative min-h-screen w-full overflow-hidden bg-[#050E1C] text-[#F5F1EA] flex items-center"
     >
-      {/* LCP element: static poster image. Preloaded in index.html with
-          fetchpriority=high; rendered eagerly so it paints before any video
-          bytes arrive. */}
       <img
         src="/hero/hero-poster.jpg"
         alt=""
@@ -144,10 +105,6 @@ export function HeroRepower() {
         loading="eager"
         draggable={false}
       />
-      {/* Background hero video loop — mounted after first paint / LCP. Skipped
-          entirely on prefers-reduced-motion or Save-Data, and HIDDEN on mobile
-          viewports (≤768px) where a 3.6 MB autoplay video kills LCP and burns
-          mobile data. Mobile sees only the optimized static poster above. */}
       {showVideo && (
         <video
           className="hidden md:block absolute inset-0 w-full h-full object-cover"
@@ -163,7 +120,6 @@ export function HeroRepower() {
           <source src="/hero/hero-loop.mp4" type="video/mp4" />
         </video>
       )}
-      {/* Gradient overlay, softened so the video reads more clearly while keeping bottom legible */}
       <div
         className="absolute inset-0"
         style={{
@@ -194,7 +150,29 @@ export function HeroRepower() {
             textWrap: 'balance',
           }}
         >
-          {variation.heading}
+          <span className="block">Keep your boat.</span>
+          {reduceMotion ? (
+            <span className={`block ${ACCENT}`}>{ending}</span>
+          ) : (
+            <span className="block relative">
+              {/* Invisible sizer keeps layout stable across endings */}
+              <span aria-hidden="true" className="invisible block">
+                {HEADLINE_ENDINGS.reduce((a, b) => (a.length >= b.length ? a : b))}
+              </span>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={endingIndex}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.6, ease }}
+                  className={`absolute inset-0 ${ACCENT}`}
+                >
+                  {ending}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+          )}
         </motion.h1>
 
         <motion.p
@@ -204,7 +182,6 @@ export function HeroRepower() {
           {variation.subheading}
         </motion.p>
 
-        {/* Stat row */}
         <motion.div {...fadeUp(0.6)} className={statRowClass}>
           {variation.stats.map((s) => (
             <div key={s.l} className={statItemClass}>
@@ -216,7 +193,6 @@ export function HeroRepower() {
           ))}
         </motion.div>
 
-        {/* CTAs */}
         <motion.div {...fadeUp(0.8)} className="flex flex-col sm:flex-row gap-4">
           <RepowerCta to="/quote/motor-selection" variant="primary" size="lg">
             {variation.ctaLabel}
@@ -227,9 +203,27 @@ export function HeroRepower() {
             (905) 342-2153
           </RepowerCta>
         </motion.div>
+
+        {/* Quiet secondary text-link CTA */}
+        <motion.div {...fadeUp(0.95)} className="mt-5">
+          <Link
+            to="/blog/repair-repower-or-sell-boat-ontario-decision-guide"
+            className="inline-flex items-center gap-1.5 font-sans text-sm text-[#F5F1EA]/75 underline underline-offset-4 decoration-[#F5F1EA]/30 hover:text-[#F5F1EA] hover:decoration-[#C9A24A] transition-colors"
+          >
+            Check if my boat is worth repowering
+            <ChevronRight className="w-3.5 h-3.5" />
+          </Link>
+        </motion.div>
+
+        {/* Persistent trust line */}
+        <motion.p
+          {...fadeUp(1.05)}
+          className="mt-4 font-sans text-[12px] md:text-[13px] text-[#F5F1EA]/65 max-w-2xl leading-relaxed"
+        >
+          We'll tell you no if a repower isn't right. Mercury dealer since 1965, and we plan to keep it that way.
+        </motion.p>
       </div>
 
-      {/* Scroll cue */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.6, y: [0, 8, 0] }}
