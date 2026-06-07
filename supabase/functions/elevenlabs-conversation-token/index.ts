@@ -51,6 +51,30 @@ async function getActivePromotions() {
   }
 }
 
+// Pull canonical financing promo from financing_options (single source of truth).
+async function getActiveFinancingPromo() {
+  try {
+    const today = new Date().toISOString().split('T')[0];
+    const { data, error } = await supabase
+      .from('financing_options')
+      .select('id, name, rate, term_months, promo_text, promo_end_date, min_amount')
+      .eq('is_active', true)
+      .eq('is_promo', true)
+      .or(`promo_end_date.is.null,promo_end_date.gte.${today}`)
+      .order('display_order', { ascending: true })
+      .order('rate', { ascending: true })
+      .limit(1);
+    if (error) {
+      console.error('Error fetching financing promo:', error);
+      return null;
+    }
+    return (data && data[0]) || null;
+  } catch (e) {
+    console.error('Error in getActiveFinancingPromo:', e);
+    return null;
+  }
+}
+
 // Model suffix decoder - kept compact for quick reference
 const MODEL_SUFFIX_GUIDE = `
 ## HIGHEST PRIORITY RULE — SPEC QUESTIONS ABOUT CURRENT MOTOR (OVERRIDES EVERYTHING BELOW):
