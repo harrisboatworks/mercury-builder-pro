@@ -33,9 +33,6 @@ content_type: blog_article
 
 If your hull is sound and the motor is the problem, repower. A 75, 115 HP repower typically costs $17,000, $22,000 all-in. An equivalent new boat package runs $40,000, $70,000+. That gap is real. If the hull is going, or the boat no longer fits how you use it, buying new or used makes more sense. Neither option is always right.
 
-![The 5-Check Repower Eligibility Test: if all five are true, repowering wins](/lovable-uploads/repower-eligibility-5-check-card.png)
-
-*The 5-Check Repower Eligibility Test, the same five questions HBW walks customers through before quoting a repower: (1) the hull is sound, no soft spots in the transom or floor, no major gel coat cracks, no water in foam; (2) the boat still fits how you use it, length, layout, capacity, storage; (3) you would keep it five or more years, so a new-motor investment has time to compound; (4) you already know the boat after owning it three or more years; (5) the current motor is the actual problem, hard starting, dropping cylinders, no parts available. Pass all five and repowering is almost certainly the right call. The next step is HBW's hull walk-around at Gores Landing.*
 
 > **Run the numbers:** Use our [Repower Cost Estimator](/tools#repower-cost) to get a CAD ballpark for the repower side of this decision. Free, instant.
 ::decision-card
@@ -73,7 +70,7 @@ source: HBW Repower Customer, Cobourg 2026
 
 This is the question we get more than almost any other. And we're going to give you the same answer we'd give a neighbour: it depends on the hull.
 
-Harris Boat Works sells both Mercury motors and Legend Boats. We also tell people not to repower when the hull isn't worth it, because putting a $12,000 new engine on a $3,000 hull is not the play. We'd rather lose a motor sale than have you regret it.
+Harris Boat Works sells both Mercury motors and Legend Boats. We also tell people not to repower when the hull isn't worth it, because putting a $12,000 new engine on a $3,000 hull is not the play.
 
 Here's the honest breakdown.
 
@@ -105,20 +102,9 @@ Repower costs include motor, rigging, controls, prop, install, and small accesso
 
 If all five of these are true, repowering is almost certainly the right call:
 
-**1. The hull is sound.** 
-No soft spots in the transom or floor. No major gel coat cracks or stress fractures. No water in foam. Run through the hull walk-around below before deciding.
+![The 5-Check Repower Eligibility Test: if all five are true, repowering wins](/lovable-uploads/repower-eligibility-5-check-card.png)
 
-**2. The boat still fits how you use it.** 
-Length, layout, capacity, and storage still work for your family or fishing setup. If your family grew and the boat shrank, that's a different problem, a new engine won't solve it.
-
-**3. You'd keep it 5+ more years.** 
-A repower's value compounds over time. If you're repowering and planning to sell next season, the math gets ugly fast. A new motor typically returns 50, 70% of its cost in resale value, not 100%.
-
-**4. You already know the boat.** 
-You've owned it 3+ years. You know how it handles, where the wires are, what quirks it has. That familiarity is worth more than most owners realize, and it doesn't transfer to a new hull.
-
-**5. The current motor is the actual problem.** 
-Hard starting. Dropping cylinders. No parts available. Getting more expensive every season. If the motor is the problem and the rest of the boat is fine, replace the motor.
+*The five eligibility checks HBW walks through before quoting any repower: sound hull, the boat still fits your life, keeping it five or more years, you know the boat, and the motor is the actual problem. Pass all five and the next step is a hull walk-around at Gores Landing.*
 
 ---
 
@@ -133,7 +119,7 @@ Soft transom. Soft floor. Stringers showing rot. Hull blisters that have eaten i
 Family went from two people to four. You want to fish bigger water. You're done with tiller motors and want a console. You moved from a cottage slip to a launch ramp property and your current boat is too big to trailer comfortably. If the boat itself is wrong, the motor is irrelevant.
 
 **You're already planning to sell.** 
-If "I'd sell this boat tomorrow if the right one came along" is already true, repowering is putting $15,000 of polish on a sale. You typically recoup 50, 70% of the motor investment in resale, not 100%.
+If "I'd sell this boat tomorrow if the right one came along" is already true, repowering is putting $15,000 of polish on a sale. You recoup only part of that investment when you sell.
 
 **You want a feature the old boat physically can't have.** 
 Joystick docking on a single-engine 18-footer. Integrated trim tabs on a hull not designed for them. Some things don't transplant. If the feature you want is tied to hull architecture, no repower gets you there.
@@ -240,8 +226,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 ---
 
 *Related guides: Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review*
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs
