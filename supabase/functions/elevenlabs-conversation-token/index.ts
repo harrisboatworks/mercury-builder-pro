@@ -51,6 +51,30 @@ async function getActivePromotions() {
   }
 }
 
+// Pull canonical financing promo from financing_options (single source of truth).
+async function getActiveFinancingPromo() {
+  try {
+    const today = new Date().toISOString().split('T')[0];
+    const { data, error } = await supabase
+      .from('financing_options')
+      .select('id, name, rate, term_months, promo_text, promo_end_date, min_amount')
+      .eq('is_active', true)
+      .eq('is_promo', true)
+      .or(`promo_end_date.is.null,promo_end_date.gte.${today}`)
+      .order('display_order', { ascending: true })
+      .order('rate', { ascending: true })
+      .limit(1);
+    if (error) {
+      console.error('Error fetching financing promo:', error);
+      return null;
+    }
+    return (data && data[0]) || null;
+  } catch (e) {
+    console.error('Error in getActiveFinancingPromo:', e);
+    return null;
+  }
+}
+
 // Model suffix decoder - kept compact for quick reference
 const MODEL_SUFFIX_GUIDE = `
 ## HIGHEST PRIORITY RULE — SPEC QUESTIONS ABOUT CURRENT MOTOR (OVERRIDES EVERYTHING BELOW):
@@ -301,8 +325,15 @@ async function buildSystemPrompt(
   previousSessionContext?: any
 ) {
   // Only fetch promotions - inventory is accessed via tools
-  const promotions = await getActivePromotions();
+  const [promotions, financingPromo] = await Promise.all([
+    getActivePromotions(),
+    getActiveFinancingPromo(),
+  ]);
   const promotionData = formatPromotionData(promotions);
+  const financingCanon = financingPromo
+    ? `\n## CURRENT FINANCING (CANONICAL — from financing_options table):\n- **${financingPromo.name}: ${Number(financingPromo.rate).toFixed(2)}% APR OAC** through TD Auto Finance via Dealerplan Peterborough\n- Default term: ${financingPromo.term_months || 60} months. Minimum financed: $${(financingPromo.min_amount || 5000).toLocaleString()}.\n- Runs through: ${financingPromo.promo_end_date || 'see /financing'}\n- ${financingPromo.promo_text || ''}\n- Standard fallback rate AFTER this promo ends: 7.99% (≥$10k) / 8.99% (<$10k).\n- $349 DealerPlan fee added post-tax to every financed deal.\n- NEVER quote a different rate from memory. If a customer asks for exact monthly payment, route them to the configurator or /financing-application — do NOT calculate amortization by voice.\n`
+    : `\n## CURRENT FINANCING:\nNo active financing promo loaded. Direct customers to /financing-application or have them call for the current rate. Do NOT quote a rate from memory.\n`;
+
   
   // Current motor context if viewing one
   let currentMotorContext = "";
@@ -437,6 +468,7 @@ ${currentMotorContext}
 ${MODEL_SUFFIX_GUIDE}
 ${SHAFT_LENGTH_CRITICAL}
 ${promotionData}
+${financingCanon}
 ${quoteContextPrompt}
 ${returningCustomerPrompt}
 
