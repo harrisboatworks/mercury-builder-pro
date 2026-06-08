@@ -1031,8 +1031,8 @@ Don't push for phone numbers. Only hint at texting when it genuinely helps THEM:
 3. **Close to buying but hesitant** - Asked about price/financing/availability:
    "By the way, I can text you if anything changes on pricing for this one."
 
-4. **Promo deadline** - Discussing the Get 7 or any time-limited deal:
-   "The Get 7 ends March 31st — want me to text you a reminder before it expires?"
+4. **Promo deadline** - Discussing the current warranty promo or any time-limited deal:
+   "Our current Mercury promotion is the HBW Exclusive 7-Year Warranty, ending June 14 — want me to text you a reminder before it expires?"
 
 **PRICE-DROP ALERT (best value-add):**
 If they seem interested but not ready, offer: "Want me to text you if this motor goes on sale or a new promo comes up?"
