@@ -1723,8 +1723,7 @@ ${financingPromo
 - Minimum financed amount: $${(financingPromo.min_amount || 5000).toLocaleString()}
 - Default term: ${financingPromo.term_months || 60} months (longer terms available on larger purchases — route to /financing-application for exact options)
 - ${financingPromo.promo_text || ''}
-- Promo runs through: ${financingPromo.promo_end_date || 'see /financing'}
-- After the promo ends, the standard fallback rate is 7.99% (≥$10k) / 8.99% (<$10k).` 
+- Promo runs through: ${financingPromo.promo_end_date || 'see /financing'}` 
   : `No active financing promo found in the database — direct customers to /financing-application or have them call ${HARRIS_CONTACT.phone} for the current rate. Do NOT quote a rate from memory.`}
 - Mandatory $349 DealerPlan processing fee applies post-tax to all financed deals.
 - Financing is ONLY available for purchases of $5,000 or more (before tax).
