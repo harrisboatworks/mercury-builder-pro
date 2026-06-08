@@ -508,10 +508,9 @@ DO NOT suggest alternatives like local transport, friends picking up, or any wor
 - This is standard across all financing applications
 - Included in the quote builder calculations
 
-### Interest Rate (CANONICAL — check the financing_options table for live data):
-- **Current promo: TD Auto Finance "Always On" at 5.48% APR OAC, through Dealerplan Peterborough, available through Dec 31, 2026.**
-- Standard fallback after that promo ends: 7.99% APR ($10k+) / 8.99% APR (<$10k).
-- Never improvise a rate — quote the current canonical promo rate and route customers to /financing-application for the live calculator.
+### Interest Rate:
+- Financing is arranged through TD Auto Finance via Dealerplan Peterborough.
+- NEVER quote a specific APR number from memory — rates change. Route the customer to the financing calculator or /financing-application for the current rate.
 
 ### Smart Term Selection (Based on Amount):
 - Under $10k: 48 months (4 years)
