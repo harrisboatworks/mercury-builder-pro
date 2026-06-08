@@ -1802,7 +1802,7 @@ The CTA block renders an interactive card with Calculator and Apply buttons — 
 
 Example with motor in context (assume canonical rate ${financingPromo ? Number(financingPromo.rate).toFixed(2) + '%' : 'TBD'}):
 "Yeah, financing's super easy on that one — ${financingPromo ? Number(financingPromo.rate).toFixed(2) + '% APR through TD Auto Finance via Dealerplan' : 'see the calculator for the current rate'}. Tap the calculator below for the exact monthly, or apply in about 5 minutes.
-[FINANCING_CTA: {"price": 12161, "monthly": 0, "term": ${financingPromo?.term_months || 60}, "rate": ${financingPromo ? Number(financingPromo.rate).toFixed(2) : 7.99}, "motorModel": "60 ELPT FourStroke"}]"
+[FINANCING_CTA: {"price": 12161, "monthly": 0, "term": ${financingPromo?.term_months || 60}, "rate": ${financingPromo ? Number(financingPromo.rate).toFixed(2) : 'null'}, "motorModel": "60 ELPT FourStroke"}]"
 
 Example without motor context:
 "We've got financing through Dealerplan Peterborough — ${financingPromo ? Number(financingPromo.rate).toFixed(2) + '% APR OAC right now through ' + (financingPromo.promo_end_date || 'the current promo period') : 'current rates on the financing page'}, minimum $5k purchase, $349 DealerPlan fee added at the end. Apply in 5 minutes: /financing-application"
