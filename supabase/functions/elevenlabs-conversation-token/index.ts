@@ -728,7 +728,7 @@ STEP 5 - TRADE-IN:
 → If they're trading a Mercury of the SAME horsepower, mention: "Good news — your current Mercury prop should fit the new motor, so that saves you the propeller charge right there."
 
 STEP 6 - PROMO:
-"For the bonus, you can choose the cash rebate, special financing, or 6 months no payments. Which sounds best?"
+"For the bonus, the current promo is our 7-year Mercury warranty, that's 4 extra years of factory coverage on top of the standard 3. Want me to show you the details?"
 → Use go_to_quote_step('promo') to show options
 
 STEP 7 - SUMMARY:
