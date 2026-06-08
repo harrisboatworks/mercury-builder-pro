@@ -12561,6 +12561,8 @@ This is the current standard path for HBW repower financing in Canada.
 - **HST:** Bundled into the financed amount. You don't pay tax upfront separately.
 - **Approval:** Online application. Most decisions come back in 24 to 48 hours after the application is submitted.
 - **Prepayment:** No prepayment penalty. Pay it off early without extra fees.
+- **Minimum financed amount: $5,000 (before tax).** For motors or projects under $5,000, the cash-plus-trade path usually makes more sense than financing; we will tell you straight which fits.
+- **DealerPlan fee: a $349 administration fee is added (post-tax) on financed deals.** It is part of the all-in number you see before you commit, no surprises.
 
 The rate stacks with current Mercury warranty promotions on top of the 3-year factory base; see [current offers](/promotions). Confirm both are active at time of quote.
 
@@ -12635,7 +12637,9 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
       { question: 'Can I pay off my financing early?', answer: 'Yes. No prepayment penalty on the TD program. If you sell the boat, get a bonus, or just decide to pay it off in full, you can do that without extra fees.' },
       { question: 'Should I pay cash or finance my repower?', answer: 'If you have the cash and your other money is not earning more than the financing rate, paying cash usually wins mathematically. If your savings is earning more than the rate, or paying cash would deplete your emergency fund, financing is the right call. We will not push you either way.' },
       { question: 'Is HST included in the financing?', answer: 'Yes. HST gets added to the project total and gets included in the financed amount. You do not have to pay tax up front separately.' },
-      { question: 'How do I get started with Mercury financing?', answer: 'Build a quote at mercuryrepower.ca. Three minutes. Then click through to the financing page to see your live payment options at the current TD rate. When you are ready, the application is online and approval comes back in 24 to 48 hours.' }
+      { question: 'How do I get started with Mercury financing?', answer: 'Build a quote at mercuryrepower.ca. Three minutes. Then click through to the financing page to see your live payment options at the current TD rate. When you are ready, the application is online and approval comes back in 24 to 48 hours.' },
+      { question: 'Is there a minimum amount to finance a Mercury outboard?', answer: 'Yes. Financing through the TD path starts at $5,000 before tax. For smaller motors or projects under $5,000, paying cash (often with trade-in credit on your old motor) usually makes more sense than financing, and we will tell you straight which fits your situation.' },
+      { question: 'Are there any fees on top of the financing rate?', answer: 'Yes, one: a $349 DealerPlan administration fee is added post-tax on financed deals. It is included in the all-in number you see when you build your quote, so there are no surprises at signing. There is no prepayment penalty.' }
     ]
   },
   {
