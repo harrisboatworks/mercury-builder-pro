@@ -1,19 +1,33 @@
 ---
-slug: mercury-outboard-weight-chart
+canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart.md
+last_updated: 2026-06-08
+currency: CAD
+pickup_only: true
+delivery_offered: false
+location: Gores Landing, ON, Canada
+final_quote_requires_dealer_confirmation: true
+verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Weight Chart (2.5 to 300 HP)"
 description: "How much does a Mercury outboard weigh? Official dry weights from 2.5 to 300 HP, why weight matters for your transom, and how to match a motor to your boat."
-category: Buying Guide
-author: Jay Harris
+category: "Buying Guide"
 date_published: 2026-06-07
 date_modified: 2026-06-07
-image: /lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero.png
-keywords:
-  - mercury outboard weight
-  - mercury outboard weight chart
-  - how much does a mercury 115 weigh
-  - outboard motor weight
-  - transom weight capacity
+keywords: ["mercury outboard weight","mercury outboard weight chart","how much does a mercury 115 weigh","outboard motor weight","transom weight capacity"]
+author: Harris Boat Works
+content_type: blog_article
 ---
+
+# Mercury Outboard Weight Chart (2.5 to 300 HP)
+
+> How much does a Mercury outboard weigh? Official dry weights from 2.5 to 300 HP, why weight matters for your transom, and how to match a motor to your boat.
+
+**Category:** Buying Guide  
+**Published:** 2026-06-07  
+**Last updated:** 2026-06-07  
+**Read time:** 5 min read  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
+
+## Article
 
 *Last reviewed: 2026-06-07*
 
@@ -70,3 +84,41 @@ If you're repowering and not sure your transom can carry the modern equivalent o
 **Get a real repower quote, motor, weight, rigging and all, at [mercuryrepower.ca](https://www.mercuryrepower.ca)**, or call 905-342-2153.
 
 Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 1965, and a Mercury Platinum dealer today.
+
+## FAQs
+
+### How much does a Mercury 115 four-stroke weigh?
+
+Mercury lists the 115 FourStroke at 359 lb (163 kg) dry for the lightest model; the Command Thrust version is 363 lb. The 115 Pro XS is also 359 lb. Longer shaft lengths add weight.
+
+### How much does a 90 hp Mercury outboard weigh?
+
+359 lb (163 kg) dry for the lightest model, or 363 lb with the Command Thrust gearcase. The 75, 90, and 115 share the same 2.1L block, which is why their weights match.
+
+### What is the lightest 115 hp outboard?
+
+Mercury's 115 Pro XS at 359 lb, which Mercury says is the lightest performance 115 in its class by roughly 20 pounds. The standard 115 FourStroke is the same 359 lb in its lightest configuration.
+
+### How much does a Mercury 250 weigh?
+
+Depends on the family: the 250 Pro XS V8 is 505 lb (229 kg) dry, while the 250 FourStroke V8 is 527 lb (239 kg), both in their lightest configurations.
+
+### Why does outboard weight matter when repowering?
+
+Your capacity plate lists a maximum motor weight as well as horsepower. A heavier motor changes how the boat sits and planes, and modern four-strokes often weigh more than the old two-strokes they replace, so check transom capacity before you buy.
+
+## Next steps
+
+- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
+- Repower information: https://www.mercuryrepower.ca/repower
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+

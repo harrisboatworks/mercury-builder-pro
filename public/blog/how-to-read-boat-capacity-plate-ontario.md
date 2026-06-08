@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -109,6 +109,13 @@ When customers come to us at Harris Boat Works for a repower, the capacity plate
 1. **Existing motor at or under the rated max.** Easy. Replace like for like, or step down if fuel economy matters more than top speed.
 2. **Existing motor exceeds the rated max** (often a private-sale boat with a "previous owner upgraded"). This is a problem we have to solve before the repower. Sometimes the plate was correct and the previous owner ignored it. Sometimes the plate was replaced with a higher-rated one (legitimate but rare). We will not install a new motor that pushes the hull over its rated capacity, full stop, because that is an insurance, warranty, and safety problem for the customer.
 3. **No plate, hull is older.** We use the Transport Canada formula above as a baseline and have an honest conversation with the owner about realistic HP. Sometimes that means a smaller motor than the customer wanted. Sometimes it means we recommend a different boat.
+
+## Related guides
+
+- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum.
+- [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Platinum dealer's straight take on which hull material fits which kind of.
+- [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take.
+- [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario): New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Platinum dealer who sells.
 
 ## FAQ
 

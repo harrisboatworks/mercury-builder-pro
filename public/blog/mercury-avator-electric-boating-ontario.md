@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario.md
-last_updated: 2026-06-07
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -92,14 +92,34 @@ Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 19
 
 ## FAQs
 
-**How far can a Mercury Avator electric outboard go on one charge?**  
+### How far can a Mercury Avator electric outboard go on one charge?
+
 In Mercury's published test of the Avator 7.5e on a 13-foot, 382-lb boat with one 1 kWh battery, it ran about 60 minutes or 5 miles at full throttle, and up to 19 hours or 34 miles at 25% throttle. Real-world range depends on your boat, load, and conditions.
 
-**What gas horsepower is each Mercury Avator equivalent to?**  
+### What gas horsepower is each Mercury Avator equivalent to?
+
 Mercury compares the 7.5e to about 3.5 hp, the 20e to about 5 hp, and the 35e to about 9.9 hp. For the 75e and 110e, Mercury rates prop-shaft output: 7,500 watts converts to 10 hp and 11,000 watts to 15 hp. Instant electric torque means they feel stronger off the line than those numbers suggest.
 
-**How long does it take to charge a Mercury Avator battery?**  
+### How long does it take to charge a Mercury Avator battery?
+
 The 7.5e's 1 kWh battery takes roughly 9 hours on the included 110W charger or about 2 hours on the optional 520W charger. The larger 5,400 Wh packs used by the 75e and 110e take roughly 20 hours for two batteries on the portable 520W charger; the 1050W charger cuts that by more than half.
 
-**How much does a Mercury Avator cost in Canada?**  
+### How much does a Mercury Avator cost in Canada?
+
 It depends on the model, battery count, and charger, and batteries are often the biggest part of the price. Avator is a build-to-order product at Harris Boat Works, so call 905-342-2153 for a current, exact price on the setup that fits your boat. Gas Mercury outboards have live pricing in the quote tool at mercuryrepower.ca.
+
+## Next steps
+
+- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
+- Repower information: https://www.mercuryrepower.ca/repower
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+

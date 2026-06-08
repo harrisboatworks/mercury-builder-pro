@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -114,6 +114,13 @@ Solid hull, boat still fits your life? Repower. You keep the boat you trust and 
 ## What we see at HBW
 
 The happiest repower customers walked in expecting the trade, not just the upgrade. They wanted the quiet idle and the smaller fuel bill, and they already knew the transom would carry a little more weight. The repowers that disappoint are the ones where somebody skipped the transom check or never touched the prop, and a great motor ends up feeling wrong on a boat it should have transformed. That is why the transom inspection and the Rice Lake water test are not add-ons here. They are the job. The same crew that quotes your repower is the crew that rigs it and runs it off our dock.
+
+## Related guides
+
+- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide): An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion.
+- [Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)](/blog/honda-to-mercury-repower-ontario-guide): Honda to Mercury repower from an Ontario Mercury Platinum dealer. Honest framework on when the swap is worth.
+- [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take.
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad): All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and.
 
 ## Frequently Asked Questions
 

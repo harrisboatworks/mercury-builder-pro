@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -176,6 +176,12 @@ What sets us apart is not fancy amenities. It is the depth on the service side: 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+## Related guides
+
+- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
+- [Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations](/blog/harris-boat-works-since-1947-rice-lake-institution): The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on.
+- [Where to Launch a Boat on Rice Lake: A Practical Guide for Anglers, Cottagers, and Day Visitors](/blog/rice-lake-boat-launch-guide): A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours.
+- [Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes](/blog/rice-lake-boating-guide-2026): A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches.
 
 ## FAQs
 
