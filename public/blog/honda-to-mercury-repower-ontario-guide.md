@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -168,6 +168,13 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
 - [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 - [Mercury vs Honda Outboards: Honest Ontario Dealer Comparison 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026)
 - [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+
+## Related guides
+
+- [Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Platinum Dealer (2026)](/blog/yamaha-to-mercury-repower-ontario-guide): Yamaha to Mercury repower from an Ontario Mercury Platinum dealer. What changes, what stays, brand-swap.
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026): Mercury 115 vs 150 HP from an Ontario Platinum dealer. Real dividing lines by hull type. 18ft V-hull, 21ft.
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad): All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and.
+- [Is My Boat Eligible for a Mercury Repower? The 5-Check Eligibility Guide (2026)](/blog/mercury-repower-eligibility-guide): Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull.
 
 ## FAQs
 

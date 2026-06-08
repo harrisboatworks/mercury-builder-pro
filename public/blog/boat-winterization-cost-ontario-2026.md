@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -208,6 +208,13 @@ Or call 905-342-2153.
 For broader context on storage options across the Kawarthas, see our [Kawartha Lakes boat storage guide](/blog/boat-storage-kawartha-lakes).
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Related guides
+
+- [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
+- [Boat Electrical Safety Checklist for Ontario Freshwater Boats](/blog/boat-electrical-safety-checklist-ontario-freshwater): Marine electrical work goes wrong slowly. An Ontario marina's plain-English checklist for boat owners.
+- [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](/blog/boat-trailer-maintenance-guide-ontario): Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks.
+- [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide): Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies.
 
 ## FAQs
 

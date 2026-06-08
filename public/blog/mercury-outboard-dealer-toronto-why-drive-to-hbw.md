@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -180,6 +180,13 @@ Customers from the GTA who make the drive often combine it with:
 We've had customers turn a 90-minute "go pick up your motor" drive into a full-day family outing. That's the pattern that works.
 
 ---
+
+## Related guides
+
+- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
+- [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
+- [Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)](/blog/mercury-40-vs-60-hp-outboard-ontario): Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability.
+- [Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)](/blog/mercury-repower-gta-toronto-destination): A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline.
 
 ## Frequently Asked Questions
 

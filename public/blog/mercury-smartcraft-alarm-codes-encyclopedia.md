@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -149,6 +149,13 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
 - [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
+
+## Related guides
+
+- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario): Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum.
+- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting): Mercury outboard won't start? Ontario Platinum dealer's honest diagnostic ladder: battery, fuel, ignition.
+- [Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)](/blog/outboard-overheating-emergency-guide): A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating: what to do in 60.
+- [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide): Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies.
 
 ## FAQs
 

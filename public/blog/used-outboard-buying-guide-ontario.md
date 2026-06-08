@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -178,6 +178,13 @@ Sometimes the math on a used motor does not add up. A 10-year-old 90 HP with que
 We will tell you which one you are looking at, even when the honest answer points you toward something new. New Mercury pricing is at **mercuryrepower.ca**, and the configurator gives you a real installed number in about 90 seconds. For how a new motor compares against an aging one, our [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) lays out the full picture.
 
 ---
+
+## Related guides
+
+- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
+- [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Platinum dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
+- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026): The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders.
 
 ## Frequently Asked Questions
 

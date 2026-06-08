@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -161,6 +161,12 @@ Mercury Marine Platinum Dealer. Established 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+## Related guides
+
+- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Platinum dealer. Shrinkwrap.
+- [Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included.
+- [The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower](/blog/mercruiser-sterndrive-guide-ontario): Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris.
+- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule): A Mercury Platinum dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone.
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs.md
-last_updated: 2026-06-07
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -86,11 +86,30 @@ Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 19
 
 ## FAQs
 
-**Is the Mercury Pro XS a four-stroke?**  
+### Is the Mercury Pro XS a four-stroke?
+
 Yes. The current Mercury Pro XS lineup is all four-stroke, as are the FourStroke and Verado families. Older Pro XS models were two-stroke OptiMax, which is where the confusion comes from, but the Pro XS you can buy today is a four-stroke tuned for hole-shot and top speed.
 
-**What's the difference between the Mercury 115 and the 115 Pro XS?**  
+### What's the difference between the Mercury 115 and the 115 Pro XS?
+
 Both share the same 2.1L four-stroke base, and Mercury lists the same lightest dry weight for both: 359 lb. The Pro XS runs a performance-tuned calibration for sharper acceleration and more top end, with performance gearcase options. For a pontoon or fishing boat the standard 115 FourStroke is usually the smarter buy; for a lighter performance hull where hole-shot matters, the Pro XS is worth the difference.
 
-**What's the difference between Mercury Pro XS, FourStroke, and Verado?**  
+### What's the difference between Mercury Pro XS, FourStroke, and Verado?
+
 All three are four-strokes tuned for different jobs. FourStroke is the efficient, reliable all-rounder for most pontoons, fishing boats, and family runabouts. Pro XS is the performance-tuned version for anglers and performance boats that want acceleration and top speed. Verado is the refined option, smoothest and quietest with digital throttle, built for larger boats where comfort matters. At Harris Boat Works, Verado is special order.
+
+## Next steps
+
+- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
+- Repower information: https://www.mercuryrepower.ca/repower
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
+- Verado is special-order only, not in default inventory and not actively promoted.
+- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+

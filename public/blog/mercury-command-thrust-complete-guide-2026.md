@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -218,6 +218,12 @@ The CT conversation goes wrong in predictable ways. The four we see most often:
 **Quote a CT repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Platinum Dealer.
+## Related guides
+
+- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026): Find out if your pontoon needs Mercury Command Thrust. Hull weight, transom height, tube count, prop.
+- [Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)](/blog/mercury-boost-cost-canada-2026): What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb.
+- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026): Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5-21% on.
+- [Is Your Mercury Outboard Eligible for DTS (Digital Throttle & Shift) Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026): Find out if your Mercury outboard supports DTS (Digital Throttle & Shift) retrofit. Covers Verado, Pro XS.
 
 ## FAQs
 

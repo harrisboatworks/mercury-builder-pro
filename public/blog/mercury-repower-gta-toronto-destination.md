@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -202,6 +202,13 @@ GTA boaters drive past three or four Toronto-area Mercury dealers to reach us. T
 The drive is about an hour from Markham, 90 minutes from Mississauga. Most repower customers drop off Friday afternoon, pick up Tuesday or Wednesday of the following week. We do not offer pickup or delivery -- drop-off only.
 
 ---
+
+## Related guides
+
+- [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
+- [Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)](/blog/mercury-smartcraft-connect-guide-ontario): Mercury SmartCraft Connect Mobile (formerly VesselView Mobile) for Ontario boaters: compatibility for.
+- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
+- [Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class](/blog/mercury-controls-rigging-guide-ontario): What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in.
 
 ## Frequently Asked Questions
 

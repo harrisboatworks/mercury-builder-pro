@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference.md
-last_updated: 2026-06-07
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-13  
-**Last updated:** 2026-02-06  
+**Last updated:** 2026-06-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference
 
@@ -201,6 +201,13 @@ A dealer that gives a clear, specific answer to all 5 in under 10 minutes is a r
 
 ---
 
+## Related guides
+
+- [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw): A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math.
+- [Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)](/blog/mercury-repower-gta-toronto-destination): A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline.
+- [Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)](/blog/mercury-smartcraft-connect-guide-ontario): Mercury SmartCraft Connect Mobile (formerly VesselView Mobile) for Ontario boaters: compatibility for.
+- [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
+
 ## Frequently Asked Questions
 
 **What makes a Mercury Platinum dealer different from a regular dealer?**
@@ -274,7 +281,6 @@ It depends what you value, but Harris Boat Works, about 35 minutes south of Pete
 ### What does Mercury Platinum Dealer status mean?
 
 Platinum is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Platinum status and has been a Mercury dealer since 1965.
-
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -51,7 +51,7 @@ Every new Mercury outboard sold in Canada includes:
 
 This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **You get three years total**, with two different things being covered during those three years.
 
-That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Mercury's the floor of the category, not the ceiling. Current promotions can extend total factory-backed coverage on top of the 3-year base; see our [current promo explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current offers](/promotions).
+That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Mercury's the floor of the category, not the ceiling. On top of the 3-year factory base, the current HBW Exclusive promotion brings total factory-backed coverage to 7 years on every new Mercury outboard purchased through June 14, 2026, after which the bonus years revert to the 3-year standard. See our [current promo explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) for what that promo actually covers and when it reverts.
 
 ---
 
@@ -212,6 +212,13 @@ We push customers toward Platinum dealer service because the install + first ser
 ---
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Related guides
+
+- [The 7-Year Mercury Warranty at HBW, Explained (Ends June 14, 2026)](/blog/mercury-7-year-warranty-hbw-exclusive-explained): Current promo explainer. Every new Mercury at HBW carries 7 years of factory-backed coverage through June 14, 2026.
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026): The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders.
+- [What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)](/blog/outboard-trade-in-value-ontario-hbw): Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by.
+- [Used Outboard Buying Guide for Ontario Boaters (What to Check Before You Pay)](/blog/used-outboard-buying-guide-ontario): What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the.
 
 ## FAQs
 

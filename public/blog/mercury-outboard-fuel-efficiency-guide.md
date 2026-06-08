@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -173,6 +173,13 @@ Fuel economy on a Mercury depends on three things: prop, RPM, and load. A correc
 The most common fuel-economy callback at our shop is a 4-blade prop running the motor under its RPM band. Drop pitch by one or switch to a 3-blade and the WOT comes up to spec; fuel burn drops by 15-25%.
 
 ---
+
+## Related guides
+
+- [Trading In Your Boat Motor: How to Get the Best Value](/blog/boat-motor-trade-in-guide): Learn how to maximize trade-in value when upgrading your outboard motor. Tips for preparation, timing, and.
+- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety): Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency.
+- [Mercury Propeller Selection Guide (2026 Ontario)](/blog/mercury-propeller-selection-guide): A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its.
+- [Making the Most of Ontario's Short Boating Season](/blog/ontario-boating-season-tips): Maximize your time on Ontario waters. Tips for extending your season, shoulder-season boating, and getting.
 
 ## Frequently Asked Questions
 

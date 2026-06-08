@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -163,6 +163,13 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 If you buy from us, we service it. For engine repairs, we only work on Mercury and Mercruiser.
 
 ---
+
+## Related guides
+
+- [Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)](/blog/mercury-75-hp-fourstroke-review-ontario): An honest answer from an Ontario Mercury dealer. We don't sell the 75 HP FourStroke. Here's why, what it.
+- [Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup](/blog/mercury-90-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's.
+- [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
+- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
 
 ## Frequently Asked Questions
 

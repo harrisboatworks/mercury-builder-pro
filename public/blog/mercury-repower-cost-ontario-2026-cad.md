@@ -1,14 +1,14 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)"
-description: "All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and honest off-season timing for Rice Lake repowers."
+title: "Mercury Repower Guide: Cost, Timeline & When It's Worth It"
+description: "What a Mercury repower actually costs, how long it takes, and when it beats buying new. Straight answers from a Mercury Platinum dealer on Rice Lake."
 category: "Repower Cost & Pricing"
 date_published: 2026-04-17
 date_modified: 2026-05-31
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)
+# Mercury Repower Guide: Cost, Timeline & When It's Worth It
 
-> All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and honest off-season timing for Rice Lake repowers.
+> What a Mercury repower actually costs, how long it takes, and when it beats buying new. Straight answers from a Mercury Platinum dealer on Rice Lake.
 
 **Category:** Repower Cost & Pricing  
 **Published:** 2026-04-17  
@@ -142,6 +142,12 @@ Rather talk first? Call 905-342-2153. We answer the phone.
 - [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
 
 See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).
+## Related guides
+
+- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026): What does a Mercury outboard repower cost per month in Ontario? Verified amortization tables. Active Mercury.
+- [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026): Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD.
+- [Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)](/blog/honda-to-mercury-repower-ontario-guide): Honda to Mercury repower from an Ontario Mercury Platinum dealer. Honest framework on when the swap is worth.
+- [Is My Boat Eligible for a Mercury Repower? The 5-Check Eligibility Guide (2026)](/blog/mercury-repower-eligibility-guide): Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull.
 
 ## FAQs
 

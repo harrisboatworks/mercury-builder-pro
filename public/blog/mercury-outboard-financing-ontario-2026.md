@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -136,6 +136,12 @@ If you would rather talk it through, call **(905) 342-2153** or send us an email
 - [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
 
 See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).
+## Related guides
+
+- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
+- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
+- [Is My Boat Eligible for a Mercury Repower? The 5-Check Eligibility Guide (2026)](/blog/mercury-repower-eligibility-guide): Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull.
+- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide): For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually.
 
 ## FAQs
 

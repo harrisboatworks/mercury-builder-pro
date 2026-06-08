@@ -4067,7 +4067,7 @@ const routes = [
     title: 'For AI Agents & Assistants | Harris Boat Works',
     description: 'Harris Boat Works for AI agents, MCP server, REST quote APIs, and deep-link quote URLs. Ontario Mercury dealer, family marina since 1947.',
     h1: 'For AI Agents & Assistants',
-    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW\'s MCP server uses the same Streamable HTTP transport that Shopify\'s Universal Commerce Protocol (UCP) standardized in April 2026 for agentic commerce.',
+    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW\'s MCP server uses the same Streamable HTTP transport that Shopify\'s Universal Commerce Protocol (UCP) standardized in April 2026 for agentic commerce. Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase.',
     schemas: [agentsPageSchema()],
     extraNoscript: () =>
       '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Platinum Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +
@@ -5325,7 +5325,10 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '',
     '## Public quote API',
     '',
-    `\`POST ${PUBLIC_QUOTE_API}\`, public programmatic quote builder. See any motor twin for an example body.`,
+    `- \`POST ${PUBLIC_QUOTE_API}\` with \`{ "action": "build_quote", "motor_id": "<id>" }\` builds an itemized CAD quote (public-quote-api).`,
+    `- \`GET https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api\` returns the live Mercury inventory feed (public-motors-api).`,
+    '',
+    'See any motor twin for an example body.',
     '',
     '## Pricing reference',
     '',

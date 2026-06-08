@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -205,6 +205,13 @@ A few things that aren't on the Legend website:
 ---
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Related guides
+
+- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
+- [Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)](/blog/center-console-mercury-motor-guide): The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest.
+- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
+- [The Best Mercury Outboard for Ski and Wakeboard Boats. Real-World Picks (2026)](/blog/best-mercury-for-ski-wakeboard-boats): An HBW guide to the best Mercury outboards for ski and wakeboard boats, what hole shot really means, when Pro.
 
 ## FAQs
 

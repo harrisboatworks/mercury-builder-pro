@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -210,6 +210,13 @@ We'll quote your motor honestly, check your serial against Mercury's official Bo
 - [Mercury FourStroke Buyer Guide, Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
 - [FourStroke vs Pro XS: Which Motor Family Fits](/blog/fourstroke-vs-pro-xs)
 - [Mercury Outboard Monthly Payment Math, Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+
+## Related guides
+
+- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026): Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5-21% on.
+- [Mercury Command Thrust: Complete Guide to the 9.9 to 115 HP Lineup (2026)](/blog/mercury-command-thrust-complete-guide-2026): Mercury Command Thrust complete guide for 2026. All HP classes from 9.9 ProKicker to 115 FourStroke plus Pro.
+- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026): Find out if your pontoon needs Mercury Command Thrust. Hull weight, transom height, tube count, prop.
+- [Is Your Mercury Outboard Eligible for DTS (Digital Throttle & Shift) Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026): Find out if your Mercury outboard supports DTS (Digital Throttle & Shift) retrofit. Covers Verado, Pro XS.
 
 ## FAQs
 

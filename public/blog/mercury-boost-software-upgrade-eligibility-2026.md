@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -142,6 +142,13 @@ Boost is Mercury's software-only HP upgrade for select FourStroke and Pro XS mod
 Eligibility depends on year, model code, and powerhead serial number. We can check eligibility in our portal in a few minutes. Flash time at the shop is roughly 90 minutes plus the customer-portal activation. Not every motor is a candidate -- carbureted and pre-2018 EFI are typically out.
 
 ---
+
+## Related guides
+
+- [Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)](/blog/mercury-boost-cost-canada-2026): What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb.
+- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026): Find out if your pontoon needs Mercury Command Thrust. Hull weight, transom height, tube count, prop.
+- [Is Your Mercury Outboard Eligible for DTS (Digital Throttle & Shift) Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026): Find out if your Mercury outboard supports DTS (Digital Throttle & Shift) retrofit. Covers Verado, Pro XS.
+- [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026): Find out if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro.
 
 ## FAQs
 

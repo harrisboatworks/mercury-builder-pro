@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -181,6 +181,13 @@ V6 sales and repowers are our most common high-end work. Specifically:
 If you're considering a V6 repower, the 90-second configurator quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) gets you a real number. For more nuanced discussions, twin vs single, V6 vs V8, Pro XS vs FourStroke, call **905-342-2153**.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Related guides
+
+- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-outboard-ontario): The step from 115 to 150 HP is bigger than it looks on paper. The 115 is a 4-cylinder engine; most 150 HP.
+- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
+- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
+- [The Best Mercury Outboard for Ski and Wakeboard Boats. Real-World Picks (2026)](/blog/best-mercury-for-ski-wakeboard-boats): An HBW guide to the best Mercury outboards for ski and wakeboard boats, what hole shot really means, when Pro.
 
 ## FAQs
 

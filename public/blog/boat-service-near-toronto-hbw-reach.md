@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -195,6 +195,13 @@ For boats that **store with us through winter**, this collapses entirely. Octobe
 **Worst time to walk in unannounced:** mid-May Saturday during peak prep season. Everyone is busy. Schedule properly.
 
 ---
+
+## Related guides
+
+- [The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)](/blog/mercury-boat-battery-guide-ontario): Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and.
+- [Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario): Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how.
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process): Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service.
+- [Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)](/blog/winter-storage-near-toronto-hbw): An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake, pricing, what's included.
 
 ## Frequently Asked Questions
 

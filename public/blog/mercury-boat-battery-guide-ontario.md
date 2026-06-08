@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -288,6 +288,13 @@ Harris Boat Works. Gores Landing, ON. Est. 1947.
 [hbw.wiki/service](https://hbw.wiki/service) · 905-342-2153
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Related guides
+
+- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that.
+- [Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario): Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how.
+- [Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)](/blog/winter-storage-near-toronto-hbw): An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake, pricing, what's included.
+- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Platinum dealer. Shrinkwrap.
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -228,6 +228,13 @@ Not every repower guide is written for this water. A few things specific to wher
 Mercury offers competitive repower financing for qualified buyers, and HBW processes applications right in the shop. Trade-in credit on your old motor, even a dead one, reduces the amount you finance. Off-season Mercury Canada promotions sometimes improve the terms further. For the current rate and any active promotion, check the promotions page or call us.
 
 ---
+
+## Related guides
+
+- [Boat Repowering Guide: When to Replace Your Motor (2026)](/blog/boat-repowering-guide-when-to-replace-motor): When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a.
+- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide): For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually.
+- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide): Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of.
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
 
 ## Frequently Asked Questions
 

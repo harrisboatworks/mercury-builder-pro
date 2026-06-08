@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -113,6 +113,13 @@ We are a Mercury Platinum dealer, which means new motor sales and Mercury Produc
 If you are weighing this decision and want a second set of eyes, drop us an email at info@harrisboatworks.ca with the boat's specs, the used motor's documented history (if you have it), and a rough budget. We will tell you what we would do in your situation.
 
 If you are looking at a used boat package and want a structured inspection before you buy, our printable [Used Boat Walkaround Guide](/blog/used-boat-walkaround-inspection-ontario) covers the 13-page checklist we use ourselves.
+
+## Related guides
+
+- [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Platinum dealer's straight take on which hull material fits which kind of.
+- [How to Read Your Boat's Capacity Plate (Ontario Guide)](/blog/how-to-read-boat-capacity-plate-ontario): What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three.
+- [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take.
+- [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario): Pontoon or V-hull? A Mercury Platinum dealer's honest take on which hull fits which Ontario boater. Family.
 
 ## FAQ
 

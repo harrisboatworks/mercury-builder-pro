@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-ajax-ontario-hbw.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -106,6 +106,13 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 4. **Call or text us:** 905-342-2153. We'll make sure the right conversation is ready.
 
 ---
+
+## Related guides
+
+- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw): Mercury Platinum dealer for Bowmanville customers - Harris Boat Works on Rice Lake is about 35 minutes via.
+- [Mercury Dealer for Oshawa: 40 Minutes to Rice Lake](/blog/mercury-dealer-oshawa-ontario-hbw): Mercury Platinum dealer for Oshawa customers - Harris Boat Works on Rice Lake is about 40 minutes via the 401.
+- [Mercury Dealer for Pickering: 50 Minutes from Rice Lake](/blog/mercury-dealer-pickering-ontario-hbw): Mercury Platinum dealer for Pickering customers - Harris Boat Works on Rice Lake is about 50 minutes.
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw): Mercury Platinum dealer for Whitby customers - Harris Boat Works on Rice Lake is about 45 minutes north via.
 
 ## Frequently Asked Questions, Ajax
 

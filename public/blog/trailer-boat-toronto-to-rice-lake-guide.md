@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -144,6 +144,13 @@ The return trip can be busier than the trip out. Weekend afternoons on 401 west 
 - Friday afternoons (cottage traffic going north meets Toronto rush hour)
 
 ---
+
+## Related guides
+
+- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that.
+- [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake): The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and.
+- [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
+- [Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide](/blog/rice-lake-boat-rentals-from-toronto-gta): A Rice Lake boat rental day from the GTA, drive time, pricing, what's included, what to bring. From Harris.
 
 ## FAQs
 

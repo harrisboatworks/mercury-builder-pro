@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -315,6 +315,13 @@ The capacity plate sets the ceiling. Real-world use sets the target. Three gener
 The HBW ramp at Gores Landing is the only 24/7 full-service launch on the lake. Daily parking, overflow space for large trailers, marine gas, and a dock. Whether you are launching at 5 AM for the walleye bite or coming off the water after dark, the lights are on.
 
 ---
+
+## Related guides
+
+- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
+- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use): For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90.
+- [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas): Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and.
+- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats): The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 40-60.
 
 ## Frequently Asked Questions
 

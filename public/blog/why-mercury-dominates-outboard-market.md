@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -92,6 +92,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 - [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
 - [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+
+## Related guides
+
+- [Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online): Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price.
+- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament.
+- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-storage-kawartha-lakes.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -204,6 +204,12 @@ The pattern we see year over year: customers underbook in October, then panic-ca
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+## Related guides
+
+- [Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included.
+- [Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario): A Mercury Platinum dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario, what each.
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process): Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service.
+- [The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower](/blog/mercruiser-sterndrive-guide-ontario): Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris.
 
 ## FAQs
 

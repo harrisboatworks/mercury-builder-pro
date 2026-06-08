@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -254,6 +254,13 @@ We have ethanol-free at the dock and we diagnose fuel system issues every day.
 Harris Boat Works. Gores Landing, ON, est. 1947
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Related guides
+
+- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that.
+- [The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)](/blog/mercury-boat-battery-guide-ontario): Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and.
+- [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
+- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
 
 ## FAQs
 

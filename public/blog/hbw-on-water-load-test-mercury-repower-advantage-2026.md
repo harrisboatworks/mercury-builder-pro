@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/hbw-on-water-load-test-mercury-repower-advantage-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -162,6 +162,12 @@ If you are weighing a Mercury repower for spring 2026, the next step is a no-obl
 - [Mercury Outboard Rigging Costs, Ontario](/blog/mercury-outboard-rigging-costs-ontario)
 - [Mercury Extended Warranty Platinum, Ontario](/blog/mercury-extended-warranty-platinum-ontario)
 - [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+## Related guides
+
+- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
+- [Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower): Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026.
+- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that.
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026): Mercury 115 vs 150 HP from an Ontario Platinum dealer. Real dividing lines by hull type. 18ft V-hull, 21ft.
 
 ## FAQs
 

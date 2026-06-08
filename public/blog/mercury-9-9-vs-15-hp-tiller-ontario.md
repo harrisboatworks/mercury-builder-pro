@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -179,6 +179,13 @@ As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short
 HBW has been on Rice Lake since 1947 and a Mercury dealer since 1965. We sell both the 9.9 and the 15 every season, install them, water-test them on Rice Lake before you pick up the boat, and service them long after the sale. We're a Mercury Marine Platinum Dealer, which means our service techs are factory-certified on every motor we sell.
 
 We're not in Toronto. We're in Gores Landing, about 90 minutes east of downtown Toronto, on the south shore of Rice Lake. We pickup-only, by design: every motor we install gets a real water test before you drive home with it. That's why customers from the GTA, Peterborough, Cobourg, and the Kawarthas drive to us instead of buying elsewhere.
+
+## Related guides
+
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament.
+- [Boat Motor Size Guide: How to Calculate the Right HP for Your Boat](/blog/boat-motor-size-calculator-guide): Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and.
+- [How to Choose the Right Horsepower for Your Boat (2026 Guide)](/blog/how-to-choose-right-horsepower-boat): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
+- [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide): Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want.
 
 ## Frequently Asked Questions
 

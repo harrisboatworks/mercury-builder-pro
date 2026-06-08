@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -143,6 +143,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 - [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
 - [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+
+## Related guides
+
+- [Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations](/blog/harris-boat-works-since-1947-rice-lake-institution): The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on.
+- [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw): A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math.
+- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
+- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
 
 ## FAQs
 

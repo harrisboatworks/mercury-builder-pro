@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-burlington-ontario-hbw.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -108,6 +108,13 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 5. **Come when you're decided.** This is not a browsing trip. Make the time count.
 
 ---
+
+## Related guides
+
+- [Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-oakville-ontario-hbw): Mercury Platinum dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
+- [Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-richmond-hill-ontario-hbw): Looking for a Mercury dealer near Richmond Hill? Harris Boat Works on Rice Lake - about 75 minutes north -.
+- [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Platinum dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
+- [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
 
 ## Frequently Asked Questions, Burlington
 

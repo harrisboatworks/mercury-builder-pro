@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -183,6 +183,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 - [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
 - [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
+
+## Related guides
+
+- [90 HP Mercury Motor vs 75 and 115 HP: Which One We'd Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison): We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's.
+- [Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)](/blog/lake-ontario-salmon-mercury-setup-guide-2026): Lake Ontario salmon trolling setup from an Ontario Mercury Platinum dealer. Real numbers on alternator.
+- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor): Pair a Mercury main with a 9.9 ProKicker or Avator 7.5e electric kicker, or a bow electric trolling motor.
+- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook): An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the.
 
 ## FAQs
 

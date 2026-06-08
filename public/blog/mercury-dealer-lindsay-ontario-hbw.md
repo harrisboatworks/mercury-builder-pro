@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-lindsay-ontario-hbw.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -109,6 +109,13 @@ Build your quote at mercuryrepower.ca. Real installed CAD pricing in three minut
 If you have a service issue, submit a request at hbw.wiki/service.
 
 For a motor purchase or repower conversation, call: 905-342-2153.
+
+## Related guides
+
+- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Cobourg, ~25 minutes north via County Road 18.
+- [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](/blog/mercury-dealer-port-hope-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Port Hope, ~30 minutes north via County Road 18.
+- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28.
+- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Platinum dealer serving Northumberland County since 1947. Rice Lake.
 
 ## Frequently Asked Questions, Lindsay
 

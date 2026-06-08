@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -111,6 +111,13 @@ At 35 minutes, you don't need to front-load every visit with hours of research. 
 4. **Come up when you're ready.** At 35 minutes, "ready" is a lower bar than it is for someone driving from Mississauga.
 
 ---
+
+## Related guides
+
+- [Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake](/blog/mercury-dealer-ajax-ontario-hbw): Mercury Platinum dealer for Ajax customers - Harris Boat Works on Rice Lake is about 45 minutes via the 401.
+- [Mercury Dealer for Oshawa: 40 Minutes to Rice Lake](/blog/mercury-dealer-oshawa-ontario-hbw): Mercury Platinum dealer for Oshawa customers - Harris Boat Works on Rice Lake is about 40 minutes via the 401.
+- [Mercury Dealer for Pickering: 50 Minutes from Rice Lake](/blog/mercury-dealer-pickering-ontario-hbw): Mercury Platinum dealer for Pickering customers - Harris Boat Works on Rice Lake is about 50 minutes.
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw): Mercury Platinum dealer for Whitby customers - Harris Boat Works on Rice Lake is about 45 minutes north via.
 
 ## Frequently Asked Questions, Bowmanville
 

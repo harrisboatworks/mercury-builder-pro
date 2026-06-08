@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -210,6 +210,12 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
 - [Mercury Outboard Monthly Payment Math, Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
 
 See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).
+## Related guides
+
+- [Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Platinum Dealer (2026)](/blog/yamaha-to-mercury-repower-ontario-guide): Yamaha to Mercury repower from an Ontario Mercury Platinum dealer. What changes, what stays, brand-swap.
+- [Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)](/blog/honda-to-mercury-repower-ontario-guide): Honda to Mercury repower from an Ontario Mercury Platinum dealer. Honest framework on when the swap is worth.
+- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-outboard-ontario): The step from 115 to 150 HP is bigger than it looks on paper. The 115 is a 4-cylinder engine; most 150 HP.
+- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
 
 ## FAQs
 

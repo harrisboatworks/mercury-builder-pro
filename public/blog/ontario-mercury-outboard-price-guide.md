@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -160,6 +160,13 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
 - [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
 - [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
 
+## Related guides
+
+- [Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower): Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026.
+- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
+- [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
+- [Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)](/blog/mercury-40-vs-60-hp-outboard-ontario): Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability.
+
 ## FAQs
 
 ### How much does a Mercury 9.9 HP cost in Ontario?
@@ -188,7 +195,7 @@ Sometimes the headline price looks lower. But cross-border duty, brokerage, ship
 
 ### How long is the Mercury warranty?
 
-Standard is 3 years, concurrent, in Canada. Mercury runs seasonal promotions that add 2-3 bonus years for a total of 5- or 6-year coverage during the promo window (and 7 years has appeared in recent stack-ups). Current promotions are reflected in pricing at mercuryrepower.ca.
+Standard is 3 years, concurrent, in Canada. Mercury and dealer promotions may stack bonus warranty years on top of the base during active promo windows. Current promotions are reflected in pricing at mercuryrepower.ca and listed at /promotions.
 
 ### Can I order any model, or only what's in stock?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -111,6 +111,13 @@ The 115 HP Command Thrust on a 22-foot two-tube pontoon is our most common ponto
 The single biggest mistake we see is owners stretching too hard on a two-tube pontoon. A 200 HP Pro XS on a basic two-tube pontoon will not transform it. The hull design caps performance regardless of horsepower. If you want significantly faster, the question is "should I go tritoon?" not "can I add 50 HP?"
 
 The Command Thrust upgrade pays for itself in customer satisfaction. We have never had a pontoon customer regret choosing CT. We have had multiple wish they'd added it the first time.
+
+## Related guides
+
+- [Best Mercury for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats): For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-150 HP FourStroke with Command Thrust. The.
+- [Mercury Command Thrust on a Pontoon: Worth the Money?](/blog/mercury-command-thrust-guide-pontoon-boats): Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load.
+- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
+- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use): For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90.
 
 ## Frequently Asked Questions
 

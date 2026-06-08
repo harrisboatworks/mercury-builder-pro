@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -138,6 +138,13 @@ If you're already shopping the 90 and wondering about the 115: the step from 90 
 If you buy from us, we're also the ones servicing it. For engine repairs, we only service Mercury and Mercruiser, no farmed-out repairs, no strangers touching your motor.
 
 ---
+
+## Related guides
+
+- [Mercury 115 HP FourStroke Review: The Lightest 115 HP Available, and Why That Matters](/blog/mercury-115-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 115 HP FourStroke. Mercury's headline mid-range motor with the.
+- [Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)](/blog/mercury-75-hp-fourstroke-review-ontario): An honest answer from an Ontario Mercury dealer. We don't sell the 75 HP FourStroke. Here's why, what it.
+- [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
+- [Mercury Avator 7.5e: Review, Price CAD, and Range (2026)](/blog/mercury-avator-7-5e-review): Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on.
 
 ## Frequently Asked Questions
 

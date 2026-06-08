@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -181,6 +181,12 @@ A new mid-size aluminum trailer for a 16-18 ft boat runs $3,000-$5,000 CAD in On
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.
+## Related guides
+
+- [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
+- [Boat Electrical Safety Checklist for Ontario Freshwater Boats](/blog/boat-electrical-safety-checklist-ontario-freshwater): Marine electrical work goes wrong slowly. An Ontario marina's plain-English checklist for boat owners.
+- [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026): Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD.
+- [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips): Spring, summer, fall, winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the.
 
 ## FAQs
 

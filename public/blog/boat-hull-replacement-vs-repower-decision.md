@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -154,6 +154,13 @@ We give an honest recommendation. Sometimes the right answer is "your motor stil
 **Ignoring the trailer.** A 20-year-old trailer with seized bearings is a separate decision from the boat. Sometimes the trailer is the limiting asset.
 
 ---
+
+## Related guides
+
+- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
+- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring.
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat): Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from.
 
 ## FAQs
 

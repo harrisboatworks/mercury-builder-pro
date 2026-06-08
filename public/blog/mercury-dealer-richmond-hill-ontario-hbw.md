@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -113,6 +113,13 @@ Most Richmond Hill customers who drive up have done the homework first:
 4. **Drive up when you're decided.** 75 minutes each way is a real investment. Come when you're ready to close the conversation, not to browse.
 
 ---
+
+## Related guides
+
+- [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Platinum dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
+- [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
+- [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
+- [Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-oakville-ontario-hbw): Mercury Platinum dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
 
 ## Frequently Asked Questions, Richmond Hill
 

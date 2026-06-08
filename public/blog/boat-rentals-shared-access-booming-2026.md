@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -120,6 +120,13 @@ We have been [renting and selling boats on Rice Lake since 1947](/blog/best-mari
 *Last reviewed: 2026-05-11.*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Related guides
+
+- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook): An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the.
+- [Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes](/blog/rice-lake-boating-guide-2026): A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches.
+- [Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan](/blog/trent-severn-waterway-boating-guide-2026): 2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a.
+- [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw): A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math.
 
 ## FAQs
 

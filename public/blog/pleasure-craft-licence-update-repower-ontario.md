@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -143,6 +143,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 - [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 - [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 - [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+
+## Related guides
+
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
+- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
+- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide): An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion.
+- [The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from.
 
 ## FAQs
 

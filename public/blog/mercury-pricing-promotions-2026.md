@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -244,7 +244,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Are there current promotions available?
 
-Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. The current HBW Exclusive brings every new Mercury to 7 years of total factory-backed warranty (Mercury's 3-year factory base + 4 promotional bonus years), available through June 14, 2026. See [current offers](/promotions) for the latest.
+Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. The current HBW Exclusive brings every new Mercury to 7 years of total factory-backed warranty (Mercury's 3-year factory base + 4 promotional bonus years), available through June 14, 2026. See /promotions for the latest.
 
 ### Can I negotiate below advertised price?
 

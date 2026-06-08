@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -225,6 +225,13 @@ We do Mercury repowers and full electrical service at Harris Boat Works. If your
 *905-342-2153 | mercuryrepower.ca*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Related guides
+
+- [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake): The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and.
+- [Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)](/blog/docking-boat-in-wind-rice-lake): A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy.
+- [Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide](/blog/rice-lake-boat-rentals-from-toronto-gta): A Rice Lake boat rental day from the GTA, drive time, pricing, what's included, what to bring. From Harris.
+- [The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide](/blog/used-boat-walkaround-inspection-ontario): A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to.
 
 ## FAQs
 

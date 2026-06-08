@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -112,6 +112,13 @@ We sell Legend aluminum (V-hulls and pontoons) as our primary new-boat lineup. W
 For a Rice Lake / Kawarthas primary boater, the aluminum recommendation wins most of the time. For someone who keeps the boat at a Lake Ontario marina or trailers to bigger water frequently, the fiberglass recommendation is honest more often.
 
 Email info@harrisboatworks.ca with what you are trying to do on the water and we will tell you which side of the line you fall on.
+
+## Related guides
+
+- [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario): Pontoon or V-hull? A Mercury Platinum dealer's honest take on which hull fits which Ontario boater. Family.
+- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum.
+- [How to Read Your Boat's Capacity Plate (Ontario Guide)](/blog/how-to-read-boat-capacity-plate-ontario): What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three.
+- [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take.
 
 ## FAQ
 

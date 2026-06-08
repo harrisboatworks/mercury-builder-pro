@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -148,6 +148,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 - [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 - [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 - [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+
+## Related guides
+
+- [Boat Repowering Guide: When to Replace Your Motor (2026)](/blog/boat-repowering-guide-when-to-replace-motor): When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a.
+- [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](/blog/complete-guide-boat-repower-kawarthas): A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what.
+- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide): Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of.
+- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
 
 ## FAQs
 

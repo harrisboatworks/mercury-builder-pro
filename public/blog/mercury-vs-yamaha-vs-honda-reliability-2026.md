@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -179,12 +179,22 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Outboard Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026) post.
+
 **Related guides:**
 - [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 - [Mercury vs Honda Outboards: Honest Ontario Dealer Comparison 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026)
+- [Mercury vs Suzuki Outboard Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026)
 - [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
 - [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
+
+## Related guides
+
+- [Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?](/blog/mercury-9-9-vs-15-hp-tiller-ontario): Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote.
+- [Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026): Mercury vs Honda outboards from an Ontario Mercury Platinum dealer. Where Honda actually wins, where Mercury.
+- [Mercury vs Yamaha Outboards (Honest Ontario Dealer Comparison, 2026)](/blog/mercury-vs-yamaha-outboards-ontario): Mercury vs Yamaha outboards for Ontario freshwater (2026). Dealer density, parts speed, factory-rigging.
+- [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide): Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want.
 
 ## FAQs
 

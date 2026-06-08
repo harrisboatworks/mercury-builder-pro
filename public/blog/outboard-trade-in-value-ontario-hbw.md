@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -247,6 +247,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 - [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+
+## Related guides
+
+- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
+- [Boat Motor Size Guide: How to Calculate the Right HP for Your Boat](/blog/boat-motor-size-calculator-guide): Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and.
+- [How to Choose the Right Horsepower for Your Boat (2026 Guide)](/blog/how-to-choose-right-horsepower-boat): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
+- [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Platinum dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
 
 ## FAQs
 

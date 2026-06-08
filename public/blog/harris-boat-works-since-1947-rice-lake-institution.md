@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -187,6 +187,13 @@ The fourth generation is in early-career. Our kids work the docks summers; we'll
 If the fourth generation takes over, HBW continues. If they don't, we'll find a path that keeps the relationship with our customers intact. **Either way, we're not going anywhere soon.** A dealer choice today is a 10-15 year commitment to a service relationship; we want to be the dealer worth choosing for that long.
 
 ---
+
+## Related guides
+
+- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer): Discover why Harris Boat Works has been Ontario's trusted Mercury dealer since 1965. Learn about our.
+- [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario): The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury.
+- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
+- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that.
 
 ## Frequently Asked Questions
 

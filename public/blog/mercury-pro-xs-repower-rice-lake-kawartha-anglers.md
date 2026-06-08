@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -199,6 +199,12 @@ Mercury Marine Platinum Dealer. Established 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+## Related guides
+
+- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
+- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring.
+- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28.
 
 ## FAQs
 

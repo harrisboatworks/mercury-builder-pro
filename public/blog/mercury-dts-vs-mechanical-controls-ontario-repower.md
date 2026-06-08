@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -122,6 +122,13 @@ Customers we steer toward DTS: V8 and V10 repowers, premium pontoon packages wit
 We install both systems regularly. When a customer comes in for a repower, the first thing we check is the motor model they're putting on, because that often makes the choice for them. The second thing we check is the existing helm: if the boat already has mechanical and the cables are in good shape, keeping mechanical is the cheap, clean answer. If the cables are tired or the helm wiring is a mess, DTS sometimes makes more sense even on a smaller motor because we're rebuilding the helm anyway.
 
 For an honest cost-benefit conversation on your specific boat, email info@harrisboatworks.ca with your hull details, current control setup, and target Mercury model. We'll tell you what we'd do in your situation.
+
+## Related guides
+
+- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum.
+- [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
+- [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Platinum dealer's straight take on which hull material fits which kind of.
+- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
 
 ## FAQ
 

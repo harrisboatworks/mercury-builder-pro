@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -32,7 +32,6 @@ content_type: blog_article
 ### Quick Answer
 
 If your hull is sound and the motor is the problem, repower. A 75, 115 HP repower typically costs $17,000, $22,000 all-in. An equivalent new boat package runs $40,000, $70,000+. That gap is real. If the hull is going, or the boat no longer fits how you use it, buying new or used makes more sense. Neither option is always right.
-
 
 > **Run the numbers:** Use our [Repower Cost Estimator](/tools#repower-cost) to get a CAD ballpark for the repower side of this decision. Free, instant.
 ::decision-card

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -209,6 +209,13 @@ HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from
 Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. Mercury repower quotes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
+
+## Related guides
+
+- [Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes](/blog/rice-lake-boating-guide-2026): A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches.
+- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook): An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the.
+- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
+- [Trent-Severn Mercury Dealer Survival Guide (HBW Rice Lake, 2026)](/blog/trent-severn-mercury-dealer-survival-guide-2026): Doing the Trent-Severn? HBW on Rice Lake has the largest Mercury and Mercruiser parts inventory in Ontario.
 
 ## FAQs
 

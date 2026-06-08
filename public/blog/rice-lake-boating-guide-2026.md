@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -148,6 +148,13 @@ Rice Lake has its own quirks. Stumps in the central basin, weed mats in late Jul
 The good news: the lake is small enough that you can learn the hazards in a season. Slow down in the west end shallows, stay in the marked channel between islands, and pull your prop up at the Hastings end of the lock chamber. Walleye and largemouth fishing are best at sunrise and sunset.
 
 ---
+
+## Related guides
+
+- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook): An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the.
+- [Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan](/blog/trent-severn-waterway-boating-guide-2026): 2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a.
+- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
+- [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario): The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury.
 
 ## FAQs
 

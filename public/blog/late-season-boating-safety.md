@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -151,6 +151,13 @@ When you call it a season, do it right. Proper winterization protects your motor
 Schedule winterization at [hbw.wiki/service](https://hbw.wiki/service) before the fall rush. Harris Boat Works completed 584 winterizations last season, it is one of our core services.
 
 ---
+
+## Related guides
+
+- [Making the Most of Ontario's Short Boating Season](/blog/ontario-boating-season-tips): Maximize your time on Ontario waters. Tips for extending your season, shoulder-season boating, and getting.
+- [Trading In Your Boat Motor: How to Get the Best Value](/blog/boat-motor-trade-in-guide): Learn how to maximize trade-in value when upgrading your outboard motor. Tips for preparation, timing, and.
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide): Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn.
+- [Mercury Propeller Selection Guide (2026 Ontario)](/blog/mercury-propeller-selection-guide): A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its.
 
 ## FAQs
 

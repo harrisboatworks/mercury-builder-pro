@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -158,6 +158,13 @@ Every HBW conversion includes:
 The boat does not leave until it passes the sea-trial. That is how a marina that has been on Rice Lake since 1947 protects its name.
 
 ---
+
+## Related guides
+
+- [2-Stroke vs 4-Stroke Repower: What to Know](/blog/two-stroke-vs-four-stroke-repower): Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and Ontario costs from $11,000 CAD.
+- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
+- [The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from.
+- [Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)](/blog/honda-to-mercury-repower-ontario-guide): Honda to Mercury repower from an Ontario Mercury Platinum dealer. Honest framework on when the swap is worth.
 
 ## Frequently Asked Questions
 

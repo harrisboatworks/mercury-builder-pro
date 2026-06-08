@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -208,6 +208,13 @@ The walleye situation on Rice Lake is not a secret, and it is not fixing itself.
 What is left in the meantime is anglers doing their part. Release the over-slot fish without a second thought. Handle every fish carefully. Fish with a bit of patience for what the lake can actually offer in 2026 rather than what it offered in 1975.
 
 And here is the thing worth remembering: the bass, the muskie, the crappie and the pike are all in good shape. The lake is still worth every trip. It is simply asking you to be a slightly different angler than the one who grew up on walleye stories. Learn the railway drop-offs. Find the crappie schools. Photograph a big muskie and let it swim. That is the 2026 Rice Lake experience, and it is a good one.
+
+## Related guides
+
+- [Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes](/blog/rice-lake-boating-guide-2026): A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches.
+- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
+- [Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan](/blog/trent-severn-waterway-boating-guide-2026): 2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a.
+- [Best Mercury Outboard for Rice Lake Fishing: A Local's Complete Guide (2026)](/blog/best-mercury-outboard-rice-lake-fishing): A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken.
 
 ## Frequently Asked Questions
 

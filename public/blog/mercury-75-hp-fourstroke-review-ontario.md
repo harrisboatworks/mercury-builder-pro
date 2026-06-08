@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -134,6 +134,13 @@ If your hull is rated for 60 HP maximum, you're in the Mercury 60 ELPT FourStrok
 If your hull is rated for 90 HP or higher, skip directly to the 90 review or go build a quote.
 
 ---
+
+## Related guides
+
+- [Mercury 115 HP FourStroke Review: The Lightest 115 HP Available, and Why That Matters](/blog/mercury-115-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 115 HP FourStroke. Mercury's headline mid-range motor with the.
+- [Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup](/blog/mercury-90-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's.
+- [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
+- [Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online): Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price.
 
 ## Frequently Asked Questions
 

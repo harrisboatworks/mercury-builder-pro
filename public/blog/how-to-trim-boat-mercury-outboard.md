@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -197,6 +197,13 @@ Trim is one of those skills that feels obvious once it clicks. Ten minutes on th
 Questions about Active Trim or whether your boat is rigged for it? Build a quote on [mercuryrepower.ca](https://www.mercuryrepower.ca) or request service at [hbw.wiki/service](https://hbw.wiki/service).
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Related guides
+
+- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
+- [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake): The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and.
+- [Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)](/blog/mercury-repower-gta-toronto-destination): A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline.
+- [Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)](/blog/mercury-40-vs-60-hp-outboard-ontario): Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability.
 
 ## FAQs
 

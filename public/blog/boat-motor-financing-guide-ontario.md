@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-financing-guide-ontario.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -165,6 +165,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 - [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
 - [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
+
+## Related guides
+
+- [Boat Motor Size Guide: How to Calculate the Right HP for Your Boat](/blog/boat-motor-size-calculator-guide): Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and.
+- [What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)](/blog/outboard-trade-in-value-ontario-hbw): Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by.
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat): Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from.
+- [What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)](/blog/total-cost-of-owning-a-boat-ontario-2026): A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage.
 
 ## FAQs
 

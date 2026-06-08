@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers.md
-last_updated: 2026-06-06
+last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -114,6 +114,12 @@ Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 *Last reviewed: 2026-05-11.*
+## Related guides
+
+- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada): Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and.
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat): Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from.
+- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/should-i-repower-or-buy-new-boat-ontario): Repower vs buy new boat: a Mercury Platinum dealer's honest decision guide. Real costs, hull-condition.
+- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
 
 ## FAQs
 
