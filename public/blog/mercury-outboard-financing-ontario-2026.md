@@ -199,6 +199,15 @@ Yes. HST gets added to the project total and gets included in the financed amoun
 
 Build a quote at mercuryrepower.ca. Three minutes. Then click through to the financing page to see your live payment options at the current TD rate. When you are ready, the application is online and approval comes back in 24 to 48 hours.
 
+### Is there a minimum amount to finance a Mercury outboard?
+
+Yes. Financing through the TD path starts at $5,000 before tax. For smaller motors or projects under $5,000, paying cash (often with trade-in credit on your old motor) usually makes more sense than financing, and we will tell you straight which fits your situation.
+
+### Are there any fees on top of the financing rate?
+
+Yes, one: a $349 DealerPlan administration fee is added post-tax on financed deals. It is included in the all-in number you see when you build your quote, so there are no surprises at signing. There is no prepayment penalty.
+
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
