@@ -504,7 +504,7 @@ Do NOT offer financing for sub-$5k motors, suggest they call us about the best o
 - **go_to_quote_step** - Navigate to a quote step. Use when customer says "show me my quote", "go to summary", "back to motor selection".
 
 **WHEN CUSTOMER ASKS ABOUT DEALS:**
-1. Briefly explain the current promo verbally (7 year warranty + Choose One)
+1. Briefly describe ONLY the promotion shown in the CURRENT PROMOTIONS block above. Do not invent bonus options or name an expired promo. The current promo is the HBW Exclusive 7-Year Mercury Warranty (3 years standard plus 4 bonus years, factory-backed), ending June 14.
 2. Call navigate_to_promotions to SHOW them the page
 3. "Check out the details on your screen - you can see all three bonus options there"
 
