@@ -633,13 +633,12 @@ Gores Landing, ON K0K 2E0
 - ALWAYS check the "CURRENT PROMOTIONS & SPECIAL OFFERS" section above — it contains LIVE data from the database
 - If a rebate matrix is listed, look up the customer's HP range to give the exact rebate amount
 - NEVER say "no rebates available" if the promotion data above shows an active promotion with a rebate matrix
-- The current "Get 7" promotion applies to ALL Mercury outboards — every HP range has a rebate tier
+- The current active Mercury promotion applies to ALL Mercury outboards — check the live promotions data above for details and any rebate matrix.
 
-### When Discussing the Get 7 Promotion:
-- 7-year factory warranty (3 standard + 4 bonus years) on ALL qualifying Mercury outboards
-- Customer chooses ONE bonus: No Payments for 6 Months, Special Financing, OR Factory Cash Rebate
-- Rebate amounts vary by HP — check the matrix above for exact dollar amounts
-- Direct to /promotions for full details or the quote builder to see it applied
+### When Discussing the Current Mercury Promotion:
+- Use ONLY the active promotion data shown above (name, dates, bonus details). Do NOT reference retired promos by name.
+- If a rebate matrix is present, match the customer's HP to the exact amount listed.
+- Direct to /promotions for full details or the quote builder to see it applied.
 
 ### Rebate Questions:
 - Look up the HP in the rebate matrix from the promotion data above
