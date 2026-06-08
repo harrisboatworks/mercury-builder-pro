@@ -5326,7 +5326,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '## Public quote API',
     '',
     `- \`POST ${PUBLIC_QUOTE_API}\` with \`{ "action": "build_quote", "motor_id": "<id>" }\` builds an itemized CAD quote (public-quote-api).`,
-    `- \`GET ${SITE_URL.replace('https://www.mercuryrepower.ca','https://eutsoqdpjurknjsshxes.supabase.co')}/functions/v1/public-motors-api\` returns the live Mercury inventory feed (public-motors-api).`,
+    `- \`GET https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api\` returns the live Mercury inventory feed (public-motors-api).`,
     '',
     'See any motor twin for an example body.',
     '',
