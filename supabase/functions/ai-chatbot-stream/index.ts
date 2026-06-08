@@ -1791,7 +1791,7 @@ When someone asks about financing, monthly payments, interest rates, or getting 
 - The configurator + /financing-application use the canonical rate + DealerPlan fee + tax and will return the real number.
 
 **ALWAYS include the CTA block when discussing financing for a specific motor — leave the "monthly" field at 0 and let the card compute the real payment:**
-[FINANCING_CTA: {"price": MOTOR_PRICE, "monthly": 0, "term": ${financingPromo?.term_months || 60}, "rate": ${financingPromo ? Number(financingPromo.rate).toFixed(2) : 7.99}, "motorModel": "MODEL_NAME"}]
+[FINANCING_CTA: {"price": MOTOR_PRICE, "monthly": 0, "term": ${financingPromo?.term_months || 60}, "rate": ${financingPromo ? Number(financingPromo.rate).toFixed(2) : 'null'}, "motorModel": "MODEL_NAME"}]
 
 The CTA block renders an interactive card with Calculator and Apply buttons — much better than a typed-out estimate.
 
