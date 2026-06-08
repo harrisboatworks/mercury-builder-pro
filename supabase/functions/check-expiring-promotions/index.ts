@@ -105,7 +105,8 @@ serve(async (req: Request): Promise<Response> => {
 
     const html = createBrandedEmailTemplate(
       content,
-      `${fresh.length} promotion${fresh.length === 1 ? '' : 's'} expiring within ${WARN_WITHIN_DAYS} days`
+      `${fresh.length} promotion${fresh.length === 1 ? '' : 's'} expiring within ${WARN_WITHIN_DAYS} days`,
+      'Internal notification for Harris Boat Works staff.'
     );
 
     const emailResp = await resend.emails.send({
