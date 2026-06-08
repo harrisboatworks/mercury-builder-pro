@@ -33,7 +33,7 @@ content_type: blog_article
 
 ---
 
-> **Quick answer:** Mercury Command Thrust uses a larger gearcase and larger prop than the standard FourStroke at the same horsepower. On a loaded pontoon, that translates to faster planing, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See real pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Mercury Command Thrust uses a larger gearcase and larger prop than the standard FourStroke at the same horsepower. On a loaded pontoon, that translates to faster lift to cruise, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See real pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -65,9 +65,9 @@ Pontoons are different from runabouts. They are:
 - **Blunt-fronted**, the tube noses push water instead of slicing it
 - **Heavy**, aluminum tubes, fibreglass decking, full hardware
 - **Wide**, significantly more drag than a similar-length runabout
-- **Slow to plane**, the hull geometry resists the transition from displacement to planing
+- **Slow to come up on cruise**, the hull geometry resists the transition from displacement to cruise
 
-Standard gearcases are built around runabout physics. Command Thrust matches pontoon physics. The result on a pontoon: faster plane time, stronger hole shot when loaded, more comfortable cruising at lower RPM, better load-handling for water sports. None of this comes from extra horsepower. It comes from the gearcase.
+Standard gearcases are built around runabout physics. Command Thrust matches pontoon physics. The result on a pontoon: faster lift to cruise, stronger hole shot when loaded, more comfortable cruising at lower RPM, better load-handling for water sports. None of this comes from extra horsepower. It comes from the gearcase.
 
 Customers switch from standard-gearcase pontoon setups to Command Thrust and notice the difference immediately, especially with a full load aboard.
 
@@ -164,7 +164,7 @@ No. Command Thrust gearcases require Command Thrust props, the larger diameter a
 Slightly, the torque-tuned ratio trades some top end for hole shot and pulling power. Typically 2–5 mph difference compared to standard gearcase. On pontoons, this trade is the right one.
 
 **Will Command Thrust improve fuel economy?**
-On heavy boats running at lower planing speeds, yes. The lower planing speed lets the motor cruise at more efficient RPM. On lighter, faster boats the effect is less clear.
+On heavy boats running at lower cruise speeds, yes. The lower cruise speed lets the motor run at more efficient RPM. On lighter, faster boats the effect is less clear.
 
 **Should I get Command Thrust on a fishing boat?**
 On aluminum console fishing boats under 18 ft, standard gearcase is usually fine. For 18+ ft deep-V aluminum or heavy fishing rigs with full gear, Command Thrust gives meaningful improvement. We assess per boat.
@@ -209,7 +209,7 @@ Slightly, yes. The torque-tuned ratio trades some top end for hole shot and pull
 
 ### Will Command Thrust improve fuel economy?
 
-On heavy boats running at lower planing speeds (typical pontoon use), yes. The lower planing speed lets the motor cruise at more efficient RPM. On lighter boats running at higher speeds, fuel economy is similar or slightly worse than standard gearcase.
+On heavy boats running at lower cruise speeds (typical pontoon use), yes. The lower cruise speed lets the motor run at more efficient RPM. On lighter boats running at higher speeds, fuel economy is similar or slightly worse than standard gearcase.
 
 ### Should I get Command Thrust on a fishing boat?
 

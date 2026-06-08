@@ -35,7 +35,7 @@ content_type: blog_article
 
 Most pontoon owners ask the same question every spring: do I really need Command Thrust, or is the standard gearcase fine. The short version is above. The full version, including the cases where it makes a huge difference and the cases where it's wasted money, is below. We do Command Thrust repowers at HBW every spring on Rice Lake and the Kawarthas, and the eligibility patterns are clearer than most online forums make it sound.
 
-If your pontoon turns out to be a good fit, you're looking at noticeably better hole shot, the ability to plane with the load you actually carry, and stronger reverse for getting off shallow shorelines. If your pontoon isn't a fit, you're paying for a heavier gearcase and a bigger prop that you won't use. Both answers matter, and we cover both honestly.
+If your pontoon turns out to be a good fit, you're looking at noticeably better hole shot, the ability to get up on cruise with the load you actually carry, and stronger reverse for getting off shallow shorelines. If your pontoon isn't a fit, you're paying for a heavier gearcase and a bigger prop that you won't use. Both answers matter, and we cover both honestly.
 
 ## Quick eligibility check
 
@@ -63,7 +63,7 @@ Before checking eligibility it helps to know what you're buying. Command Thrust 
 
 The bigger prop and lower gear ratio convert horsepower into pushing force rather than top-end speed. On a heavy pontoon, this means:
 
-- Better hole shot (faster to plane with a full load)
+- Better hole shot (faster to come up on cruise with a full load)
 - Stronger reverse and slow-speed control
 - Less prop slip in turns and at low RPMs
 - More confident performance with the family, coolers, and water toys on board
@@ -91,11 +91,11 @@ If you have or are buying a tritoon, plan for Command Thrust unless your dealer 
 
 ### 20-foot and larger twin tube pontoons
 
-Once a twin tube pontoon hits 20 feet, the loaded weight is typically 2,500 lbs or more. At those weights, Command Thrust noticeably reduces time-to-plane and lets you carry a full load without feeling underpowered. The 20-22 foot twin tube pontoon is the classic Command Thrust application.
+Once a twin tube pontoon hits 20 feet, the loaded weight is typically 2,500 lbs or more. At those weights, Command Thrust noticeably reduces time-to-cruise and lets you carry a full load without feeling underpowered. The 20-22 foot twin tube pontoon is the classic Command Thrust application.
 
 ### Pontoons used for water sports
 
-Water sports (tubing, light skiing, wakeboarding on bigger pontoons) demand torque at low speeds, exactly what Command Thrust delivers. A pontoon that struggles to plane with a tube behind it is almost always a hole-shot problem, not a horsepower problem. CT fixes hole shot directly.
+Water sports (tubing, light skiing, wakeboarding on bigger pontoons) demand torque at low speeds, exactly what Command Thrust delivers. A pontoon that struggles to come up on cruise with a tube behind it is almost always a hole-shot problem, not a horsepower problem. CT fixes hole shot directly.
 
 ### Cottage-country work pontoons
 
@@ -107,7 +107,7 @@ Just as important: when standard gearcase is the right answer.
 
 ### 16 to 18 foot light cruising pontoons
 
-A two-tube 16 or 18 footer used for casual cruising at moderate loads doesn't gain much from Command Thrust. The standard gearcase will plane easily, give you 2 to 4 MPH more top speed, and burn slightly less fuel. Unless you're hauling 8 people regularly on a small pontoon, save the money.
+A two-tube 16 or 18 footer used for casual cruising at moderate loads doesn't gain much from Command Thrust. The standard gearcase will come up on cruise easily, give you 2 to 4 MPH more top speed, and burn slightly less fuel. Unless you're hauling 8 people regularly on a small pontoon, save the money.
 
 ### Trolling-only fishing pontoons
 
@@ -172,7 +172,7 @@ Third pattern, specific to Rice Lake and the Kawarthas: water levels can drop in
 Fourth pattern: tritoons with standard gearcase almost always disappoint. The third tube is the dead giveaway that the boat is going to want more thrust. If somebody calls us about a tritoon that "feels underpowered," 9 times out of 10 they're on a standard gearcase. Repowering with CT solves it without bumping HP.
 
 ::pull-quote
-quote: Hole shot was night and day. We were running 6 adults plus gear on a 22-footer with the old standard gearcase, took forever to plane. New CT motor, on plane in seconds. Should have done it three years ago.
+quote: Hole shot was night and day. We were running 6 adults plus gear on a 22-footer with the old standard gearcase, took forever to lift the nose and come up to cruise. New CT motor, on cruise in seconds. Should have done it three years ago.
 attribution: Common shop-floor pattern after a Command Thrust repower at HBW
 ::
 
@@ -237,7 +237,7 @@ For a 22 ft pontoon, almost always yes, especially if you regularly carry 6+ peo
 
 ### Will Command Thrust make my pontoon faster?
 
-No, usually slightly slower at top end. You typically lose 2 to 4 MPH off top speed because the bigger prop is geared for thrust, not speed. What you gain is faster acceleration, faster time-to-plane, stronger reverse, and the ability to perform under load. If top speed is your priority, standard gearcase is the right call.
+No, usually slightly slower at top end. You typically lose 2 to 4 MPH off top speed because the bigger prop is geared for thrust, not speed. What you gain is faster acceleration, faster time-to-cruise, stronger reverse, and the ability to perform under load. If top speed is your priority, standard gearcase is the right call.
 
 ### Can I add Command Thrust to my existing standard gearcase motor?
 
@@ -245,7 +245,7 @@ Technically yes, practically rarely worth it. The cost of swapping the lower uni
 
 ### Does Command Thrust burn more fuel?
 
-At cruising RPM, fuel burn is comparable to standard gearcase, sometimes slightly higher because the bigger prop is moving more water. At trolling speeds, CT can burn slightly more. At full load planing acceleration, CT can actually burn less because you get to plane faster and spend less time at the high-fuel-burn pre-plane RPM.
+At cruising RPM, fuel burn is comparable to standard gearcase, sometimes slightly higher because the bigger prop is moving more water. At trolling speeds, CT can burn slightly more. At full load coming up to cruise, CT can actually burn less because you get up on cruise faster and spend less time at the high-fuel-burn pre-cruise RPM.
 
 ### Will Command Thrust work on my older pontoon?
 

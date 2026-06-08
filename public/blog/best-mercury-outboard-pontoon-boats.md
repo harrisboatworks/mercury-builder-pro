@@ -64,7 +64,7 @@ whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in thi
 
 Customers shopping for a pontoon motor focus on the HP number. The gearcase is an afterthought, and that's the wrong order of priorities.
 
-A 90 HP Command Thrust and a standard 90 HP look almost identical on a spec sheet. Same horsepower. Same motor family. But Command Thrust uses a larger gearcase, a larger prop, and a torque-tuned gear ratio that's built for heavy boats. On a pontoon, that means faster planing when you have six people aboard, better load-carrying, and a boat that feels like it has more motor than the number would suggest.
+A 90 HP Command Thrust and a standard 90 HP look almost identical on a spec sheet. Same horsepower. Same motor family. But Command Thrust uses a larger gearcase, a larger prop, and a torque-tuned gear ratio that's built for heavy boats. On a pontoon, that means faster lift to cruise when you have six people aboard, better load-carrying, and a boat that feels like it has more motor than the number would suggest.
 
 We default to Command Thrust on most pontoon repowers at HBW. Customers who push back on the small price difference, and then see the boat run with the right gearcase, get it immediately.
 
@@ -119,15 +119,15 @@ Pontoons are unique among recreational hulls:
 - Blunt-fronted, the noses push water rather than slice it
 - Heavy, aluminum tubes, fibreglass furniture, full hardware add up fast
 - Wide, more drag than a similar-length runabout
-- Slow to plane, the hull design fights the transition from displacement to plane
+- Slow to come up on cruise, the hull design fights the transition from displacement to cruise
 
 Standard gearcases are built around runabout hydrodynamics. Command Thrust matches pontoon physics:
 - The bigger gearcase nose handles heavier load without cavitation
 - The larger prop pushes more water per revolution for better hole shot
-- The torque-tuned ratio gets the boat on plane sooner at lower speeds
-- The lower planing speed lets pontoons cruise efficiently
+- The torque-tuned ratio gets the boat up on cruise sooner at lower speeds
+- The lower cruise speed lets pontoons run efficiently
 
-The result: noticeably stronger hole shot when loaded, faster plane time, better load-handling for water sports. None of these come from extra HP, they come from the gearcase.
+The result: noticeably stronger hole shot when loaded, faster time to cruise, better load-handling for water sports. None of these come from extra HP, they come from the gearcase.
 
 ---
 
