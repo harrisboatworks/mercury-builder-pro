@@ -321,7 +321,8 @@ const handler = async (req: Request): Promise<Response> => {
 
       const adminHtml = createBrandedEmailTemplate(
         adminContent,
-        `New application from ${applicantName} - $${amountToFinance.toLocaleString()}`
+        `New application from ${applicantName} - $${amountToFinance.toLocaleString()}`,
+        'You received this email because you started a financing application with Harris Boat Works.'
       );
 
       adminEmailResponse = await resend.emails.send({
