@@ -257,7 +257,8 @@ const handler = async (req: Request): Promise<Response> => {
 
     const applicantHtml = createBrandedEmailTemplate(
       applicantContent,
-      `Application #${referenceNumber} received`
+      `Application #${referenceNumber} received`,
+      'You received this email because you started a financing application with Harris Boat Works.'
     );
 
     console.log('Sending confirmation email to:', applicantEmail);
