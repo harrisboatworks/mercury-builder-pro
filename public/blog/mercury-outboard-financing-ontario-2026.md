@@ -84,6 +84,8 @@ This is the current standard path for HBW repower financing in Canada.
 - **HST:** Bundled into the financed amount. You don't pay tax upfront separately.
 - **Approval:** Online application. Most decisions come back in 24 to 48 hours after the application is submitted.
 - **Prepayment:** No prepayment penalty. Pay it off early without extra fees.
+- **Minimum financed amount: $5,000 (before tax).** For motors or projects under $5,000, the cash-plus-trade path usually makes more sense than financing; we will tell you straight which fits.
+- **DealerPlan fee: a $349 administration fee is added (post-tax) on financed deals.** It is part of the all-in number you see before you commit, no surprises.
 
 The rate stacks with current Mercury warranty promotions on top of the 3-year factory base; see [current offers](/promotions). Confirm both are active at time of quote.
 
