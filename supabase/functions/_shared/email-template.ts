@@ -177,8 +177,8 @@ export function createBrandedEmailTemplate(content: string, previewText?: string
   <div class="email-container">
     <div class="header">
       <div class="logo-container">
-        <img src="${appUrl}/email-assets/harris-logo.png" alt="Harris Boat Works" class="logo" />
-        <img src="${appUrl}/email-assets/mercury-logo.png" alt="Mercury Marine" class="logo" />
+        <img src="${appUrl}/email-assets/harris-logo-white.png" alt="Harris Boat Works" class="logo" />
+        <img src="${appUrl}/email-assets/mercury-logo-white.png" alt="Mercury Marine" class="logo" />
       </div>
       <div class="tagline">Authorized Mercury Marine Dealer • Go Boldly</div>
     </div>
