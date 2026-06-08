@@ -2622,12 +2622,16 @@ const FR_TO_EN_SLUG = {
   'remotorisation-mercury-gta-toronto': 'mercury-repower-gta-toronto-destination',
   'revue-mercury-75-hp-fourstroke-ontario': 'mercury-75-hp-fourstroke-review-ontario',
   'revue-mercury-90-hp-fourstroke-ontario': 'mercury-90-hp-fourstroke-review-ontario',
+  'moteur-hors-bord-electrique-mercury-avator': 'mercury-avator-electric-boating-ontario',
+  'mercury-pro-xs-fourstroke-verado': 'fourstroke-vs-pro-xs',
+  'poids-moteur-hors-bord-mercury': 'mercury-outboard-weight-chart',
 };
 const ZH_TO_EN_SLUG = {
   'mercury-115-vs-150-comparison-zh': 'mercury-115-vs-150-hp-outboard-ontario',
-  'winterization-mercury-guide-zh': 'diy-mercury-outboard-winterization-guide',
-  'repower-vs-new-boat-zh': 'repower-vs-new-boat',
-  'mercury-fourstroke-vs-pro-xs-chinese': 'fourstroke-vs-pro-xs',
+  // Retired slugs (per vercel.json 301s) remapped to canonical zh targets:
+  'gta-chinese-rice-lake-winter-storage-complete-guide': 'diy-mercury-outboard-winterization-guide',
+  'mercury-repower-guide-gta': 'repower-vs-new-boat',
+  'mercury-fourstroke-pro-xs-verado-chinese-comparison': 'fourstroke-vs-pro-xs',
 };
 const EN_TO_FR_SLUG = Object.fromEntries(Object.entries(FR_TO_EN_SLUG).map(([fr, en]) => [en, fr]));
 const EN_TO_ZH_SLUG = Object.fromEntries(Object.entries(ZH_TO_EN_SLUG).map(([zh, en]) => [en, zh]));
