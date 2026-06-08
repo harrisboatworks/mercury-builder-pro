@@ -20,6 +20,9 @@ export const FR_TO_EN_SLUG: Record<string, string> = {
   'remotorisation-mercury-gta-toronto': 'mercury-repower-gta-toronto-destination',
   'revue-mercury-75-hp-fourstroke-ontario': 'mercury-75-hp-fourstroke-review-ontario',
   'revue-mercury-90-hp-fourstroke-ontario': 'mercury-90-hp-fourstroke-review-ontario',
+  'moteur-hors-bord-electrique-mercury-avator': 'mercury-avator-electric-boating-ontario',
+  'mercury-pro-xs-fourstroke-verado': 'fourstroke-vs-pro-xs',
+  'poids-moteur-hors-bord-mercury': 'mercury-outboard-weight-chart',
 };
 
 export const EN_TO_FR_SLUG: Record<string, string> = Object.fromEntries(

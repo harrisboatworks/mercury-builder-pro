@@ -2717,6 +2717,216 @@ Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous ave
       { question: "Comment choisir le bon Mercury pour mon bateau ontarien?", answer: "Commencez avec le HP maximum de la plaque de capacité de votre coque. Puis considérez votre usage principal. Pour la plupart des bateaux de pêche et familiaux ontariens, la réponse se trouve dans la plage FourStroke 60 à 115 HP." },
     ],
   },
+  {
+    slug: 'moteur-hors-bord-electrique-mercury-avator',
+    title: 'Mercury Avator électrique : prix et autonomie',
+    description: 'Moteurs électriques Mercury Avator : prix, autonomie réelle, et s\'ils conviennent au lac Rice. Avis honnête d\'un concessionnaire Platine Mercury.',
+    image: '/lovable-uploads/hero-avator-range-rice-lake.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-06-08',
+    dateModified: '2026-06-08',
+    publishDate: '2026-06-08',
+    category: 'Guide d\'achat',
+    readTime: '8 min',
+    keywords: ['Mercury Avator', 'moteur électrique hors-bord', 'Avator prix Canada', 'Avator autonomie'],
+    content: `## Moteurs hors-bord électriques Mercury Avator : ce qu'ils sont, ce qu'ils coûtent, et à qui ils conviennent
+
+Les moteurs électriques, ce n'est plus de la musique d'avenir : c'est déjà là. La gamme Avator de Mercury est sur le marché, on est concessionnaire Mercury, et on se fait poser assez de questions pour valoir la peine d'expliquer ça simplement : ce que ces moteurs font, ce qu'ils ne font pas, et si l'un d'eux a sa place à l'arrière de votre bateau. Pas de battage. Juste ce qu'on sait.
+
+### La gamme Avator, en clair
+
+Mercury nomme les modèles Avator par leur puissance en watts, ce qui mêle bien du monde. Voici la traduction :
+
+| Modèle | Puissance à l'hélice | Équivaut à (essence) | Pour quel bateau |
+|---|---|---|---|
+| Avator 7.5e | 750 W | ~3,5 ch | Annexes, canots, petites chaloupes, pêche à la traîne |
+| Avator 20e | 2,2 kW | ~5 ch | Chaloupes, petites embarcations |
+| Avator 35e | 3,7 kW | ~9,9 ch | Petites chaloupes de pêche, annexes |
+| Avator 75e | 7,5 kW | 10 ch (conversion à l'arbre d'hélice) | Petits pontons, embarcations plus grandes |
+| Avator 110e | 11 kW | 15 ch (conversion à l'arbre d'hélice) | Pontons, bateaux de promenade |
+
+Une particularité à connaître : les trois premiers chiffres sont les équivalences essence publiées par Mercury, tandis que les chiffres des 75e et 110e sont des conversions directes de la puissance à l'arbre d'hélice (7 500 watts donnent 10 ch). Un moteur électrique livre tout son couple instantanément, alors un 75e tire un bateau bien plus fort que « 10 ch » le laisse croire. Voyez la colonne comme un repère, pas une spécification.
+
+Quelques points à savoir : la batterie du 7.5e (1 kWh, environ 7,7 kg / 17 lb) se glisse sous le capot sans câbles, et vous pouvez en transporter une de rechange et la changer en quelques secondes. Les 75e et 110e utilisent un centre d'alimentation (Power Center) qui relie jusqu'à quatre batteries de 5 400 Wh, donc l'autonomie augmente selon le nombre de batteries achetées.
+
+### La partie honnête : l'autonomie
+
+C'est la vraie question, et la réponse est « moins qu'un plein d'essence, et ça dépend ». Dans l'essai publié par Mercury du 7.5e sur un bateau de 13 pieds (382 lb) avec une seule batterie de 1 kWh, on obtient environ 60 minutes / 5 milles à plein régime, ou jusqu'à 19 heures / 34 milles à 25 % des gaz.
+
+Lisez bien. Plein gaz, vous avez une heure. À petite vitesse, vous avez presque une journée. L'autonomie réelle sur votre bateau, avec votre charge, dans le clapot et le vent du lac Rice, se situera quelque part entre les deux. Ce n'est pas un reproche au moteur. C'est de la physique. Planifiez votre journée en conséquence et apportez une batterie de rechange si vous allez loin.
+
+### La recharge
+
+Le temps de recharge dépend du modèle et du chargeur. Le petit 7.5e est livré avec un chargeur de 110 W qui remplit sa batterie de 1 kWh en environ 9 heures; un chargeur optionnel de 520 W ramène ça à environ 2 heures. Les 75e et 110e utilisent des blocs-batteries de 5 400 Wh beaucoup plus gros : le chargeur portatif de 520 W prend environ 20 heures pour en remplir deux, et le chargeur de 1 050 W réduit ce temps de plus de moitié mais exige une prise CA et un disjoncteur appropriés. Pour un chalet avec une prise au quai, recharger la nuit, c'est correct. Pour quelqu'un sans alimentation à quai, c'est un vrai facteur.
+
+### Ce qui est vraiment bon
+
+- **Pas de fumée, pas de lanceur à corde, pas de changement d'huile, pas d'hivernisation du système de carburant.** Pour un petit moteur d'appoint ou d'annexe, c'est une vraie amélioration de qualité de vie.
+- **Silencieux.** Sur un lac calme au petit matin, vous entendrez les huards, pas le moteur.
+- **Couple instantané.** Le moteur à flux transversal pousse fort dès le départ pour sa taille.
+- **L'écran et l'application** affichent l'autonomie restante en temps réel, en distance ou en temps : pas de calcul mental pour rentrer au quai.
+
+### Pour qui c'est, honnêtement
+
+Soyez franc avec vous-même sur votre façon de naviguer.
+
+**Un Avator a du sens si** vous faites de courtes distances en petit bateau, canot ou annexe; vous voulez un moteur de traîne ou d'annexe propre et silencieux; vous avez une prise au quai pour recharger; et l'absence d'entretien vous attire plus que l'autonomie maximale.
+
+**Restez à l'essence si** vous couvrez de vraies distances, menez un bateau plus lourd, pêchez toute la journée loin du bord, ou n'avez pas de recharge fiable. Un Mercury FourStroke de 9,9 ou 15 ch en fait encore plus, va plus loin, et fait le plein en deux minutes. Il n'y a aucune honte à ce que ce soit la bonne réponse : pour la plupart des bateaux du lac Rice aujourd'hui, ça l'est encore.
+
+### Et le prix ?
+
+Le prix de l'Avator varie beaucoup selon le modèle, le nombre de batteries et le chargeur, et c'est souvent la batterie qui coûte cher, pas la tête motrice. On ne garde pas l'Avator en inventaire : c'est un produit monté sur commande, et le bon nombre de batteries dépend entièrement de votre bateau et de votre usage. C'est donc la seule gamme Mercury qu'on chiffre par conversation plutôt que par le configurateur. Appelez-nous au 905-342-2153, décrivez le bateau et vos distances réelles, et on vous donnera le vrai prix actuel pour la configuration exacte. La même réponse franche, juste au téléphone.
+
+Pour les moteurs à essence, le configurateur fait ce qu'il fait toujours : **[obtenez une vraie soumission Mercury en 2 minutes sur mercuryrepower.ca](https://www.mercuryrepower.ca)**. On vend les deux. On vous dira franchement lequel convient à votre bateau.
+
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.`,
+    faqs: [
+      { question: 'Quelle est l\'autonomie d\'un moteur électrique Mercury Avator ?', answer: 'Dans l\'essai publié par Mercury du Avator 7.5e sur un bateau de 13 pieds (382 lb) avec une batterie de 1 kWh, le moteur a tenu environ 60 minutes ou 5 milles à plein régime, et jusqu\'à 19 heures ou 34 milles à 25 % des gaz. L\'autonomie réelle dépend de votre bateau, de la charge et des conditions.' },
+      { question: 'À quelle puissance essence chaque Mercury Avator correspond-il ?', answer: 'Mercury compare le 7.5e à environ 3,5 ch, le 20e à environ 5 ch et le 35e à environ 9,9 ch. Pour les 75e et 110e, Mercury publie la conversion directe de la puissance à l\'arbre d\'hélice : 7 500 watts donnent 10 ch et 11 000 watts donnent 15 ch. Le couple instantané fait qu\'ils semblent plus forts au départ que ces chiffres le suggèrent.' },
+      { question: 'Combien de temps faut-il pour recharger une batterie Mercury Avator ?', answer: 'La batterie de 1 kWh du 7.5e prend environ 9 heures sur le chargeur de 110 W inclus, ou environ 2 heures sur le chargeur optionnel de 520 W. Les blocs de 5 400 Wh des 75e et 110e prennent environ 20 heures pour deux batteries sur le chargeur portatif de 520 W; le chargeur de 1 050 W réduit ce temps de plus de moitié.' },
+      { question: 'Combien coûte un Mercury Avator au Canada ?', answer: 'Ça dépend du modèle, du nombre de batteries et du chargeur, et les batteries représentent souvent la plus grosse part du prix. L\'Avator est un produit sur commande chez Harris Boat Works : appelez le 905-342-2153 pour un prix exact et à jour selon votre bateau. Les Mercury à essence ont leurs prix en direct dans le configurateur sur mercuryrepower.ca.' }
+    ]
+  },
+  {
+    slug: 'mercury-pro-xs-fourstroke-verado',
+    title: 'Mercury Pro XS, FourStroke ou Verado : lequel choisir ?',
+    description: 'Pro XS, FourStroke ou Verado ? Ce qui distingue les trois familles Mercury, et lequel convient à votre bateau. Réponses franches d\'un concessionnaire Mercury.',
+    image: '/lovable-uploads/hero-mercury-motor-families.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-06-08',
+    dateModified: '2026-06-08',
+    publishDate: '2026-06-08',
+    category: 'Guide d\'achat',
+    readTime: '7 min',
+    keywords: ['Mercury Pro XS', 'Mercury FourStroke', 'Mercury Verado', 'comparaison moteur Mercury'],
+    content: `## Mercury Pro XS, FourStroke ou Verado : lequel vous faut-il vraiment ?
+
+Trois familles Mercury, plein de chiffres de puissance qui se chevauchent, et une pile de débats de forum. Voici ce qui compte : les modèles actuels sont tous des quatre-temps. La différence, c'est ce pour quoi chacun est réglé.
+
+### La version 30 secondes
+
+- **FourStroke** : le polyvalent. Silencieux, économe, fiable. La bonne réponse pour la plupart des pontons, chaloupes de pêche et bateaux familiaux.
+- **Pro XS** : la famille quatre-temps haute performance de Mercury. Même base quatre-temps, réglée pour l'accélération au départ et la vitesse de pointe. Conçue pour les pêcheurs et les bateaux de performance.
+- **Verado** : le raffiné. Le plus doux, le plus silencieux, le plus équipé (commande numérique des gaz, direction assistée offerte sur les plus gros). Conçu pour les plus gros bateaux où le confort compte. À savoir d'emblée : chez Harris Boat Works, le Verado est un moteur sur commande spéciale. On ne le garde pas en inventaire et il n'est pas dans notre configurateur en ligne. Si c'est le bon choix pour vous, appelez-nous et on le commandera pour votre bateau.
+
+### « Est-ce que le Pro XS est un quatre-temps ? »
+
+Oui. Le Verado aussi. Le FourStroke aussi (c'est dans le nom). Les anciens Pro XS étaient des deux-temps OptiMax, d'où la confusion, mais la gamme Pro XS actuelle est entièrement quatre-temps. Si quelqu'un vous dit que le Pro XS est un deux-temps, il pense à l'ancien.
+
+### Comparaison côte à côte
+
+| | FourStroke | Pro XS | Verado |
+|---|---|---|---|
+| Réglé pour | Économie et fiabilité | Accélération et vitesse de pointe | Douceur et raffinement |
+| Acheteur type | Ponton, pêche, bateau familial | Pêcheur de performance (bass) | Plus gros bateaux, grands plans d'eau, luxe |
+| Sonorité | Silencieux | Un peu plus mordant | Le plus silencieux |
+| Commande des gaz | Mécanique ou numérique | Mécanique ou numérique | Numérique courante; à confirmer selon ch/config |
+| Disponibilité chez HBW | Dans le configurateur | Dans le configurateur | Commande spéciale : appelez-nous |
+| Prix | $ | $$ | $$$ |
+
+(Les poids et prix exacts dépendent de la puissance et de la configuration. Le configurateur a les vrais chiffres pour FourStroke et Pro XS.)
+
+### Comment choisir (sans la guerre de marques)
+
+Oubliez les débats de fidélité de marque. Posez trois questions :
+
+**1. Pour quoi votre bateau est-il homologué ?** La plaque de capacité, c'est le plafond, pas une suggestion. Partez de là.
+
+**2. Comment l'utilisez-vous ?** Vous croisez en ponton et pêchez la fin de semaine ? FourStroke, et le modèle haut de gamme ne vous manquera probablement pas. Vous menez un bass boat et l'accélération vous importe ? Le Pro XS mérite son supplément. Gros bateau, beaucoup d'eau, vous le voulez silencieux et sans effort ? Verado.
+
+**3. Où pouvez-vous le faire entretenir par un atelier de confiance ?** Celle-là compte plus que les gens l'admettent. Un moteur, c'est une relation de plusieurs années avec un atelier de service, pas un achat ponctuel.
+
+### La question du 115 (la plus cherchée)
+
+« Quelle est la différence entre le Mercury 115 et le 115 Pro XS ? » Même base quatre-temps de 2,1 L, et malgré ce que disent les forums, les fiches techniques de Mercury publient le même poids sec le plus léger pour les deux : 163 kg (359 lb). La différence n'est pas le poids. Le Pro XS a une calibration de performance pour une accélération plus vive et plus de vitesse de pointe, avec des options de boîtier d'engrenage pour les coques de performance. Pour un ponton ou une chaloupe de pêche typique, le 115 FourStroke standard est l'achat le plus intelligent. Pour une coque de performance plus légère où l'accélération au départ compte, le Pro XS vaut la différence.
+
+### En résumé
+
+On vend du Mercury. La section sur Mercury n'a pas été écrite par la Suisse. La comparaison doit quand même rester honnête, alors la voici : la plupart des gens sur le lac Rice sont bien servis par un FourStroke. Le Pro XS si vous chassez la performance. Le Verado si vous avez un plus gros bateau et voulez du raffinement (et un coup de téléphone, puisqu'on le commande spécialement). Adaptez le moteur à votre coque et à votre usage réel, pas à l'opinion la plus forte à la rampe de mise à l'eau.
+
+**Vous voulez le vrai prix d'un FourStroke ou d'un Pro XS ? [Obtenez une soumission en 2 minutes](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153 et on l'adaptera à votre bateau, Verado compris.
+
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.`,
+    faqs: [
+      { question: 'Est-ce que le Mercury Pro XS est un quatre-temps ?', answer: 'Oui. La gamme Mercury Pro XS actuelle est entièrement quatre-temps, tout comme les familles FourStroke et Verado. Les anciens Pro XS étaient des deux-temps OptiMax, d\'où la confusion, mais le Pro XS qu\'on peut acheter aujourd\'hui est un quatre-temps réglé pour l\'accélération au départ et la vitesse de pointe.' },
+      { question: 'Quelle est la différence entre le Mercury 115 et le 115 Pro XS ?', answer: 'Les deux partagent la même base quatre-temps de 2,1 L, et Mercury publie le même poids sec le plus léger pour les deux : 163 kg (359 lb). Le Pro XS a une calibration de performance pour une accélération plus vive et plus de vitesse de pointe, avec des options de boîtier d\'engrenage de performance. Pour un ponton ou une chaloupe de pêche, le 115 FourStroke standard est habituellement le choix le plus intelligent; pour une coque de performance plus légère, le Pro XS vaut la différence.' },
+      { question: 'Quelle est la différence entre Pro XS, FourStroke et Verado ?', answer: 'Les trois sont des quatre-temps réglés pour des usages différents. Le FourStroke est le polyvalent économe et fiable pour la plupart des pontons, chaloupes de pêche et bateaux familiaux. Le Pro XS est la version haute performance pour ceux qui veulent de l\'accélération et de la vitesse de pointe. Le Verado est l\'option raffinée, la plus douce et la plus silencieuse, conçue pour les plus gros bateaux où le confort compte. Chez Harris Boat Works, le Verado est sur commande spéciale.' }
+    ]
+  },
+  {
+    slug: 'poids-moteur-hors-bord-mercury',
+    title: 'Poids des hors-bord Mercury (2,5 à 300 ch)',
+    description: 'Combien pèse un hors-bord Mercury ? Poids secs officiels de 2,5 à 300 ch, pourquoi le poids compte pour votre tableau arrière, et comment l\'adapter à votre bateau.',
+    image: '/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-06-08',
+    dateModified: '2026-06-08',
+    publishDate: '2026-06-08',
+    category: 'Guide d\'achat',
+    readTime: '6 min',
+    keywords: ['poids moteur Mercury', 'tableau poids hors-bord', 'Mercury 115 poids', 'capacité tableau arrière'],
+    content: `## Poids des moteurs hors-bord Mercury : de 2,5 à 300 ch
+
+Le poids d'un moteur, ce n'est pas un détail. Il décide si votre tableau arrière peut le porter, comment votre bateau flotte à l'arrêt, et comment il déjauge. Voici ce que pèsent les hors-bord Mercury selon les spécifications officielles de Mercury, pourquoi ça compte, et comment utiliser le chiffre.
+
+### Poids secs FourStroke
+
+| Puissance | Poids sec (modèle le plus léger) | Notes |
+|---|---|---|
+| 2,5 / 3,5 ch | 18 kg (41 lb) | Portatifs à barre franche |
+| 4 / 5 / 6 ch | 26 kg (57 lb) | Plateforme monocylindre commune |
+| 9,9 ch EFI | 38,5 kg (85 lb) | Command Thrust : 45,5 kg (100 lb); versions ProKicker de 55 à 57 kg (121 à 126 lb) |
+| 15 ch EFI | 45 kg (99 lb) | |
+| 20 ch EFI | 45 kg (99 lb) | |
+| 25 ch EFI | 60 kg (132 lb) | |
+| 30 ch EFI | 66 kg (145 lb) | |
+| 40 ch EFI | 98 kg (216 lb) | 3 cylindres; le 40 à 4 cylindres pèse 118 kg (260 lb) |
+| 50 ch EFI | 112 kg (247 lb) | |
+| 60 ch EFI | 112 kg (247 lb) | Command Thrust un peu plus lourd |
+| 75 ch | 163 kg (359 lb) | Partage le bloc 2,1 L avec les 90/115 |
+| 90 ch | 163 kg (359 lb) | Command Thrust : 165 kg (363 lb) |
+| 115 ch | 163 kg (359 lb) | Command Thrust : 165 kg (363 lb) |
+| 135 / 150 ch | 206 kg (455 lb) | 3,0 L 4 cylindres |
+| 175 / 200 / 225 ch | 216 kg (475 lb) | V6 3,4 L |
+| 250 / 300 ch | 239 kg (527 lb) | V8 4,6 L |
+
+### Poids secs Pro XS
+
+| Puissance | Poids sec (modèle le plus léger) | Notes |
+|---|---|---|
+| 115 ch | 163 kg (359 lb) | Identique au 115 standard; Mercury le présente comme le 115 de performance le plus léger de sa catégorie |
+| 150 ch | 207 kg (456 lb) | 3,0 L |
+| 175 ch | 213 kg (470 lb) | V6 3,4 L |
+| 200 / 225 / 250 / 300 ch | 229 kg (505 lb) | V8 4,6 L; oui, les V8 Pro XS sont plus légers que les V8 FourStroke |
+
+Tous les chiffres sont les poids secs publiés par Mercury pour la configuration la plus légère offerte. Les arbres plus longs, les boîtiers Command Thrust et le gréage ajoutent du poids, donc une même puissance peut avoir plus d'un poids publié. Source : [spécifications officielles Mercury Marine](https://www.mercurymarine.com/ca/en/engines/outboard).
+
+### Pourquoi le poids compte plus qu'on le pense
+
+**Votre tableau arrière a une limite.** La plaque de capacité indique un poids de moteur maximal en plus de la puissance. Les deux comptent. Un moteur dans la limite de puissance mais au-dessus de la limite de poids repose quand même mal.
+
+**Le poids change l'assiette.** Trop lourd à l'arrière et la poupe s'enfonce : la proue se relève, le bateau marsouine, et vous brûlez du carburant à vous battre contre ça. C'est l'un des problèmes qu'on voit le plus souvent quand quelqu'un remotorise plus lourd que l'ancien moteur.
+
+**Le poids compte pour la remotorisation.** Si vous remplacez un vieux deux-temps par un quatre-temps moderne, le neuf est souvent plus lourd. En général ça va, mais sur une coque légère ou plus vieille, ça vaut la peine de vérifier avant d'acheter, pas après.
+
+### L'angle remotorisation
+
+La plupart des regrets de remotorisation viennent de deux choses : trop de puissance, ou trop de poids sur une coque qui n'a pas été conçue pour. Un moteur plus gros et plus lourd ne réparera pas une coque fatiguée ni une mauvaise assiette. Adaptez d'abord le moteur au bateau, ensuite parlez de puissance.
+
+Si vous remotorisez et que vous n'êtes pas certain que votre tableau arrière peut porter l'équivalent moderne de votre ancien moteur, c'est exactement le genre de chose qu'on vérifie avant de faire une soumission.
+
+**Obtenez une vraie soumission de remotorisation, moteur, poids, gréage et tout, sur [mercuryrepower.ca](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153.
+
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.`,
+    faqs: [
+      { question: 'Combien pèse un Mercury 115 quatre-temps ?', answer: 'Mercury publie 163 kg (359 lb) de poids sec pour le modèle le plus léger du 115 FourStroke; la version Command Thrust fait 165 kg (363 lb). Le 115 Pro XS pèse aussi 163 kg. Les arbres plus longs ajoutent du poids.' },
+      { question: 'Combien pèse un hors-bord Mercury de 90 ch ?', answer: '163 kg (359 lb) de poids sec pour le modèle le plus léger, ou 165 kg (363 lb) avec le boîtier Command Thrust. Les 75, 90 et 115 partagent le même bloc de 2,1 L, c\'est pourquoi leurs poids sont identiques.' },
+      { question: 'Quel est le 115 ch le plus léger sur le marché ?', answer: 'Le Mercury 115 Pro XS à 163 kg (359 lb), que Mercury présente comme le 115 de performance le plus léger de sa catégorie par environ 9 kg (20 lb). Le 115 FourStroke standard fait le même 163 kg dans sa configuration la plus légère.' },
+      { question: 'Combien pèse un Mercury 250 ?', answer: 'Ça dépend de la famille : le 250 Pro XS V8 fait 229 kg (505 lb) de poids sec, et le 250 FourStroke V8 fait 239 kg (527 lb), tous deux dans leur configuration la plus légère.' },
+      { question: 'Pourquoi le poids compte-t-il pour une remotorisation ?', answer: 'Votre plaque de capacité indique un poids de moteur maximal en plus de la puissance. Un moteur plus lourd change l\'assiette et le déjaugeage, et les quatre-temps modernes pèsent souvent plus que les vieux deux-temps qu\'ils remplacent. Vérifiez la capacité du tableau arrière avant d\'acheter.' }
+    ]
+  },
 ];
 
 export function getFrenchArticleBySlug(slug: string): BlogArticle | undefined {
