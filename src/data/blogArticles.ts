@@ -584,9 +584,9 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     relatedSlugs: ["mercury-command-thrust-guide-pontoon-boats", "best-pontoon-outboard-2026", "mercury-boost-software-upgrade-eligibility-2026", "how-to-read-mercury-outboard-serial-number"],
     faqs: [
       { question: "Is Command Thrust worth it on a 22-foot pontoon?", answer: "For a 22 ft pontoon, almost always yes, especially if you regularly carry 6+ people, do water sports, or use the boat at full load. On a tritoon of any size, Command Thrust is recommended unless you have a specific reason to skip it. We see the strongest customer satisfaction in the 20-24 ft tritoon range." },
-      { question: "Will Command Thrust make my pontoon faster?", answer: "No, usually slightly slower at top end. You typically lose 2 to 4 MPH off top speed because the bigger prop is geared for thrust, not speed. What you gain is faster acceleration, faster time-to-plane, stronger reverse, and the ability to perform under load. If top speed is your priority, standard gearcase is the right call." },
+      { question: "Will Command Thrust make my pontoon faster?", answer: "No, usually slightly slower at top end. You typically lose 2 to 4 MPH off top speed because the bigger prop is geared for thrust, not speed. What you gain is faster acceleration, faster time-to-cruise, stronger reverse, and the ability to perform under load. If top speed is your priority, standard gearcase is the right call." },
       { question: "Can I add Command Thrust to my existing standard gearcase motor?", answer: "Technically yes, practically rarely worth it. The cost of swapping the lower unit (parts plus labor) is usually within striking distance of the trade-in toward a new Command Thrust motor. Get both quoted before committing. We do both at HBW depending on the customer's situation." },
-      { question: "Does Command Thrust burn more fuel?", answer: "At cruising RPM, fuel burn is comparable to standard gearcase, sometimes slightly higher because the bigger prop is moving more water. At trolling speeds, CT can burn slightly more. At full load planing acceleration, CT can actually burn less because you get to plane faster and spend less time at the high-fuel-burn pre-plane RPM." },
+      { question: "Does Command Thrust burn more fuel?", answer: "At cruising RPM, fuel burn is comparable to standard gearcase, sometimes slightly higher because the bigger prop is moving more water. At trolling speeds, CT can burn slightly more. At full load coming up to cruise, CT can actually burn less because you get up on cruise faster and spend less time at the high-fuel-burn pre-cruise RPM." },
       { question: "Will Command Thrust work on my older pontoon?", answer: "The motor side is straightforward: Mercury offers CT on a range of FourStroke HP classes. The boat side: most pontoons built in the last 15 years handle a CT gearcase without trouble. Older or unusual transom configurations should be checked first. Email us a photo of the transom and we'll confirm." },
       { question: "Is Command Thrust the same as Pro XS?", answer: "No. Pro XS is a separate Mercury performance motor family (different powerhead, different tuning, marketed toward bass boats and aggressive runabouts). Command Thrust is a gearcase option on the FourStroke and Pro XS lines, not a separate motor. You can have a Pro XS with Command Thrust, a FourStroke with Command Thrust, or either without it." },
       { question: "Does Command Thrust affect my motor warranty?", answer: "No. CT is a Mercury factory option installed at build time. Mercury's standard warranty applies to CT motors the same way as standard motors. Repower into a new CT motor at HBW and the standard Mercury Marine factory warranty applies." },
@@ -598,7 +598,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
 
 Most pontoon owners ask the same question every spring: do I really need Command Thrust, or is the standard gearcase fine. The short version is above. The full version, including the cases where it makes a huge difference and the cases where it's wasted money, is below. We do Command Thrust repowers at HBW every spring on Rice Lake and the Kawarthas, and the eligibility patterns are clearer than most online forums make it sound.
 
-If your pontoon turns out to be a good fit, you're looking at noticeably better hole shot, the ability to plane with the load you actually carry, and stronger reverse for getting off shallow shorelines. If your pontoon isn't a fit, you're paying for a heavier gearcase and a bigger prop that you won't use. Both answers matter, and we cover both honestly.
+If your pontoon turns out to be a good fit, you're looking at noticeably better hole shot, the ability to get up on cruise with the load you actually carry, and stronger reverse for getting off shallow shorelines. If your pontoon isn't a fit, you're paying for a heavier gearcase and a bigger prop that you won't use. Both answers matter, and we cover both honestly.
 
 ## Quick eligibility check
 
@@ -626,7 +626,7 @@ Before checking eligibility it helps to know what you're buying. Command Thrust 
 
 The bigger prop and lower gear ratio convert horsepower into pushing force rather than top-end speed. On a heavy pontoon, this means:
 
-- Better hole shot (faster to plane with a full load)
+- Better hole shot (faster to come up on cruise with a full load)
 - Stronger reverse and slow-speed control
 - Less prop slip in turns and at low RPMs
 - More confident performance with the family, coolers, and water toys on board
@@ -654,11 +654,11 @@ If you have or are buying a tritoon, plan for Command Thrust unless your dealer 
 
 ### 20-foot and larger twin tube pontoons
 
-Once a twin tube pontoon hits 20 feet, the loaded weight is typically 2,500 lbs or more. At those weights, Command Thrust noticeably reduces time-to-plane and lets you carry a full load without feeling underpowered. The 20-22 foot twin tube pontoon is the classic Command Thrust application.
+Once a twin tube pontoon hits 20 feet, the loaded weight is typically 2,500 lbs or more. At those weights, Command Thrust noticeably reduces time-to-cruise and lets you carry a full load without feeling underpowered. The 20-22 foot twin tube pontoon is the classic Command Thrust application.
 
 ### Pontoons used for water sports
 
-Water sports (tubing, light skiing, wakeboarding on bigger pontoons) demand torque at low speeds, exactly what Command Thrust delivers. A pontoon that struggles to plane with a tube behind it is almost always a hole-shot problem, not a horsepower problem. CT fixes hole shot directly.
+Water sports (tubing, light skiing, wakeboarding on bigger pontoons) demand torque at low speeds, exactly what Command Thrust delivers. A pontoon that struggles to come up on cruise with a tube behind it is almost always a hole-shot problem, not a horsepower problem. CT fixes hole shot directly.
 
 ### Cottage-country work pontoons
 
@@ -670,7 +670,7 @@ Just as important: when standard gearcase is the right answer.
 
 ### 16 to 18 foot light cruising pontoons
 
-A two-tube 16 or 18 footer used for casual cruising at moderate loads doesn't gain much from Command Thrust. The standard gearcase will plane easily, give you 2 to 4 MPH more top speed, and burn slightly less fuel. Unless you're hauling 8 people regularly on a small pontoon, save the money.
+A two-tube 16 or 18 footer used for casual cruising at moderate loads doesn't gain much from Command Thrust. The standard gearcase will come up on cruise easily, give you 2 to 4 MPH more top speed, and burn slightly less fuel. Unless you're hauling 8 people regularly on a small pontoon, save the money.
 
 ### Trolling-only fishing pontoons
 
@@ -735,7 +735,7 @@ Third pattern, specific to Rice Lake and the Kawarthas: water levels can drop in
 Fourth pattern: tritoons with standard gearcase almost always disappoint. The third tube is the dead giveaway that the boat is going to want more thrust. If somebody calls us about a tritoon that "feels underpowered," 9 times out of 10 they're on a standard gearcase. Repowering with CT solves it without bumping HP.
 
 ::pull-quote
-quote: Hole shot was night and day. We were running 6 adults plus gear on a 22-footer with the old standard gearcase, took forever to plane. New CT motor, on plane in seconds. Should have done it three years ago.
+quote: Hole shot was night and day. We were running 6 adults plus gear on a 22-footer with the old standard gearcase, took forever to lift the nose and come up to cruise. New CT motor, on cruise in seconds. Should have done it three years ago.
 attribution: Common shop-floor pattern after a Command Thrust repower at HBW
 ::
 
@@ -3699,7 +3699,7 @@ whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in thi
 
 Customers shopping for a pontoon motor focus on the HP number. The gearcase is an afterthought, and that's the wrong order of priorities.
 
-A 90 HP Command Thrust and a standard 90 HP look almost identical on a spec sheet. Same horsepower. Same motor family. But Command Thrust uses a larger gearcase, a larger prop, and a torque-tuned gear ratio that's built for heavy boats. On a pontoon, that means faster planing when you have six people aboard, better load-carrying, and a boat that feels like it has more motor than the number would suggest.
+A 90 HP Command Thrust and a standard 90 HP look almost identical on a spec sheet. Same horsepower. Same motor family. But Command Thrust uses a larger gearcase, a larger prop, and a torque-tuned gear ratio that's built for heavy boats. On a pontoon, that means faster lift to cruise when you have six people aboard, better load-carrying, and a boat that feels like it has more motor than the number would suggest.
 
 We default to Command Thrust on most pontoon repowers at HBW. Customers who push back on the small price difference, and then see the boat run with the right gearcase, get it immediately.
 
@@ -3754,15 +3754,15 @@ Pontoons are unique among recreational hulls:
 - Blunt-fronted, the noses push water rather than slice it
 - Heavy, aluminum tubes, fibreglass furniture, full hardware add up fast
 - Wide, more drag than a similar-length runabout
-- Slow to plane, the hull design fights the transition from displacement to plane
+- Slow to come up on cruise, the hull design fights the transition from displacement to cruise
 
 Standard gearcases are built around runabout hydrodynamics. Command Thrust matches pontoon physics:
 - The bigger gearcase nose handles heavier load without cavitation
 - The larger prop pushes more water per revolution for better hole shot
-- The torque-tuned ratio gets the boat on plane sooner at lower speeds
-- The lower planing speed lets pontoons cruise efficiently
+- The torque-tuned ratio gets the boat up on cruise sooner at lower speeds
+- The lower cruise speed lets pontoons run efficiently
 
-The result: noticeably stronger hole shot when loaded, faster plane time, better load-handling for water sports. None of these come from extra HP, they come from the gearcase.
+The result: noticeably stronger hole shot when loaded, faster time to cruise, better load-handling for water sports. None of these come from extra HP, they come from the gearcase.
 
 ---
 
@@ -3919,7 +3919,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-> **Quick answer:** Mercury Command Thrust uses a larger gearcase and larger prop than the standard FourStroke at the same horsepower. On a loaded pontoon, that translates to faster planing, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See real pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Mercury Command Thrust uses a larger gearcase and larger prop than the standard FourStroke at the same horsepower. On a loaded pontoon, that translates to faster lift to cruise, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See real pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -3951,9 +3951,9 @@ Pontoons are different from runabouts. They are:
 - **Blunt-fronted**, the tube noses push water instead of slicing it
 - **Heavy**, aluminum tubes, fibreglass decking, full hardware
 - **Wide**, significantly more drag than a similar-length runabout
-- **Slow to plane**, the hull geometry resists the transition from displacement to planing
+- **Slow to come up on cruise**, the hull geometry resists the transition from displacement to cruise
 
-Standard gearcases are built around runabout physics. Command Thrust matches pontoon physics. The result on a pontoon: faster plane time, stronger hole shot when loaded, more comfortable cruising at lower RPM, better load-handling for water sports. None of this comes from extra horsepower. It comes from the gearcase.
+Standard gearcases are built around runabout physics. Command Thrust matches pontoon physics. The result on a pontoon: faster lift to cruise, stronger hole shot when loaded, more comfortable cruising at lower RPM, better load-handling for water sports. None of this comes from extra horsepower. It comes from the gearcase.
 
 Customers switch from standard-gearcase pontoon setups to Command Thrust and notice the difference immediately, especially with a full load aboard.
 
@@ -4050,7 +4050,7 @@ No. Command Thrust gearcases require Command Thrust props, the larger diameter a
 Slightly, the torque-tuned ratio trades some top end for hole shot and pulling power. Typically 2–5 mph difference compared to standard gearcase. On pontoons, this trade is the right one.
 
 **Will Command Thrust improve fuel economy?**
-On heavy boats running at lower planing speeds, yes. The lower planing speed lets the motor cruise at more efficient RPM. On lighter, faster boats the effect is less clear.
+On heavy boats running at lower cruise speeds, yes. The lower cruise speed lets the motor run at more efficient RPM. On lighter, faster boats the effect is less clear.
 
 **Should I get Command Thrust on a fishing boat?**
 On aluminum console fishing boats under 18 ft, standard gearcase is usually fine. For 18+ ft deep-V aluminum or heavy fishing rigs with full gear, Command Thrust gives meaningful improvement. We assess per boat.
@@ -4094,7 +4094,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Will Command Thrust improve fuel economy?',
-        answer: 'On heavy boats running at lower planing speeds (typical pontoon use), yes. The lower planing speed lets the motor cruise at more efficient RPM. On lighter boats running at higher speeds, fuel economy is similar or slightly worse than standard gearcase.'
+        answer: 'On heavy boats running at lower cruise speeds (typical pontoon use), yes. The lower cruise speed lets the motor run at more efficient RPM. On lighter boats running at higher speeds, fuel economy is similar or slightly worse than standard gearcase.'
       },
       {
         question: 'Should I get Command Thrust on a fishing boat?',
@@ -15180,7 +15180,7 @@ Here's the honest context: a pontoon's top speed is governed primarily by hull d
 
 The hierarchy of what actually drives pontoon performance:
 
-1. **Pontoon tube design.** A tritoon with three logs planes faster, runs smoother, and carries more weight than a two-log pontoon, regardless of motor.
+1. **Pontoon tube design.** A tritoon with three logs comes up to cruise faster, runs smoother, and carries more weight than a two-log pontoon, regardless of motor.
 2. **Pontoon size and weight.** A 20 ft pontoon is faster than a 24 ft pontoon at the same HP.
 3. **Loading.** Four adults plus gear vs. two passengers is a meaningful speed difference, often more difference than Boost adds.
 4. **Motor HP class.** Going from 90 to 115 Command Thrust is a clearly felt difference. Going from 115 to 150 is felt.
@@ -15205,7 +15205,7 @@ rightLabel: Boost is not the right lever
 rightCriteria:
   - Pre-2024 Mercury 150 (Boost is not available)
   - Light dual-tube pontoon with 2 to 4 people typical
-  - You're already getting plane and cruise on spec
+  - You're already getting up on cruise on spec
   - You'd be better served by a prop change first
 rightOutcome: Skip Boost, check the prop
 rightVariant: alternative
@@ -15309,7 +15309,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'Is Mercury Boost worth it for a pontoon boat?',
-        answer: 'Mercury Boost is worth it for pontoon owners who regularly run with heavy loads, four or more adults, gear, and accessories. The upgrade improves low-end and mid-range torque delivery, which shortens the hole shot and makes the planing transition more confident on high-drag hull forms like pontoons. For lightly-loaded pontoon use (two to three people, minimal gear), the benefit is less pronounced and the cost-benefit ratio weakens. Check your propeller setup first: an over-propped motor causes the same symptoms Boost addresses, and a prop change, which averages about $819 at HBW based on our repair order history, is sometimes the better and cheaper fix.'
+        answer: 'Mercury Boost is worth it for pontoon owners who regularly run with heavy loads, four or more adults, gear, and accessories. The upgrade improves low-end and mid-range torque delivery, which shortens the hole shot and makes the lift to cruise more confident on high-drag hull forms like pontoons. For lightly-loaded pontoon use (two to three people, minimal gear), the benefit is less pronounced and the cost-benefit ratio weakens. Check your propeller setup first: an over-propped motor causes the same symptoms Boost addresses, and a prop change, which averages about $819 at HBW based on our repair order history, is sometimes the better and cheaper fix.'
       },
       {
         question: 'What does Mercury Boost actually do to the motor?',
@@ -15337,7 +15337,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Will Mercury Boost make my pontoon go faster?',
-        answer: 'Not at top speed. Mercury Boost improves low-end and mid-range torque, which translates to a faster hole shot (getting on plane sooner) and better mid-throttle response. Once the pontoon is on plane and approaching wide-open throttle, Boost has minimal effect on the maximum speed the motor and hull combination will achieve. If faster top-end speed is your goal, the variables that matter are propeller pitch, motor horsepower, and hull form, not a calibration upgrade. For that use case, a 2026 Mercury 200 L Pro XS ($31,955 MSRP) or 250 L Pro XS ($41,525 MSRP) is the more direct path.'
+        answer: 'Not at top speed. Mercury Boost improves low-end and mid-range torque, which translates to a faster hole shot (coming up on cruise sooner) and better mid-throttle response. Once the pontoon is up on cruise and approaching wide-open throttle, Boost has minimal effect on the maximum speed the motor and hull combination will achieve. If faster top-end speed is your goal, the variables that matter are propeller pitch, motor horsepower, and hull form, not a calibration upgrade. For that use case, a 2026 Mercury 200 L Pro XS ($31,955 MSRP) or 250 L Pro XS ($41,525 MSRP) is the more direct path.'
       },
       {
         question: 'Is Mercury Boost a one-time upgrade or a subscription?',
@@ -15345,7 +15345,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Should I get Boost before or after a prop change?',
-        answer: 'After. Confirm your propeller is correctly sized and pitched for your load before adding Boost. An over-propped motor, one that can\'t reach its optimal RPM range under full load, causes poor hole shot and laboured planing. A prop change costs less than Boost in many cases and may solve the problem entirely. If you change to the correct propeller and hole shot is still unsatisfactory, adding Boost is the logical next step. Doing both together without knowing the contribution of each makes it harder to evaluate what\'s actually working.'
+        answer: 'After. Confirm your propeller is correctly sized and pitched for your load before adding Boost. An over-propped motor, one that can\'t reach its optimal RPM range under full load, causes poor hole shot and laboured time to cruise. A prop change costs less than Boost in many cases and may solve the problem entirely. If you change to the correct propeller and hole shot is still unsatisfactory, adding Boost is the logical next step. Doing both together without knowing the contribution of each makes it harder to evaluate what\'s actually working.'
       },
       {
         question: 'Is Mercury Boost available in Ontario?',
@@ -18939,7 +18939,7 @@ The Halo is Legend's most distinctive pontoon, **PolyForm construction**, **360�
 ---
 
 ::pull-quote
-quote: Test-drove three pontoons. **The Legend with the Mercury 115 Command Thrust was the only one that planed clean with seven adults on it.** That was the test that ended my shopping.
+quote: Test-drove three pontoons. **The Legend with the Mercury 115 Command Thrust was the only one that came up on cruise clean with seven adults on it.** That was the test that ended my shopping.
 attribution: Karen L.
 source: Kawarthas cottage
 ::
@@ -21161,7 +21161,7 @@ Before we get into the full list, this one deserves its own section because it c
 
 Pontoons are heavy. A 22-foot pontoon fully loaded with a cooler, canopy, six adults, and gear can easily top 3,000 lbs. Add water drag from two or three aluminum tubes, and you've got a boat that needs serious power to perform well.
 
-The mistake we see constantly: someone buys a 22- or 24-foot pontoon and puts a 60HP motor on it because the dealer said it would "work." Technically, yes. It will move the boat. But it won't plane properly under load, it'll lug when you push it, and that engine will work twice as hard as it should for its entire life.
+The mistake we see constantly: someone buys a 22- or 24-foot pontoon and puts a 60HP motor on it because the dealer said it would "work." Technically, yes. It will move the boat. But it won't come up to cruise properly under load, it'll lug when you push it, and that engine will work twice as hard as it should for its entire life.
 
 On Rice Lake, you want to get places. You want to pull a tube. You want to get home before the storm hits. A properly sized motor (90HP to 115HP for most 20-24 ft boats, more for tritoons) does that without working itself to death.
 
@@ -22719,7 +22719,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake, Ontario afternoon chop, or get 10 people up to plane before dark, the motor gives up.
+There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake, Ontario afternoon chop, or get 10 people up to cruise before dark, the motor gives up.
 
 This post is the answer to the question every pontoon buyer eventually asks: *What HP do I actually need?* Not the minimum the boat can run. Not what the previous owner had. The HP that makes your boat do what you bought it to do.
 
@@ -22736,7 +22736,7 @@ You buy a used 22-footer. It has a 90 HP four-stroke on it. You think: *previous
 
 Here's the problem: the previous owner probably undersized it too. Dealers push the minimum-rated motor because it's the cheapest option that gets a boat out the door. Buyers accept it because the number sounds reasonable. And the cycle of underpowered pontoons keeps going.
 
-The capacity plate on your pontoon tells you the **maximum** HP the transom is rated for, not the recommended HP. There's a significant gap between what a boat *can* run and what it *should* run. Most buyers never learn that until they're embarrassed trying to get on plane with a full load.
+The capacity plate on your pontoon tells you the **maximum** HP the transom is rated for, not the recommended HP. There's a significant gap between what a boat *can* run and what it *should* run. Most buyers never learn that until they're embarrassed trying to get up on cruise with a full load.
 
 If you're buying used and the motor is at the low end of that manufacturer's HP range, budget for a repower. It's not optional if you want the boat to actually perform. You can read more about the [common issues that come with underpowered used pontoons on Rice Lake, Ontario (in the Kawarthas)](https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake). HP is behind a lot of them.
 
@@ -22748,11 +22748,11 @@ Pontoon buyers coming from fishing boats or runabouts always underestimate how m
 
 **Weight.** A typical pontoon sits between 1,800 and 3,500 lbs dry before you add people, gear, and fuel. A 22-footer with 10 passengers and a full cooler can easily clear 5,000 lbs. You're pushing a lot of mass.
 
-**Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat planing.
+**Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat up on cruise.
 
 **Passenger load.** A 22-foot pontoon can legally carry 10-12 people. That's 1,500-2,000 lbs of live load added to an already heavy boat. The horsepower you calculated for 4 people doesn't apply when you have 10.
 
-**Windage.** Pontoons have enormous freeboard and surface area. A side wind on Rice Lake or the Kawarthas can push your boat around hard. You need power in reserve to hold a line and handle unexpected conditions, not just to get on plane on a flat morning.
+**Windage.** Pontoons have enormous freeboard and surface area. A side wind on Rice Lake or the Kawarthas can push your boat around hard. You need power in reserve to hold a line and handle unexpected conditions, not just to get up on cruise on a flat morning.
 
 The bottom line: a pontoon needs more HP than an equivalent-length runabout. Full stop.
 
@@ -22800,7 +22800,7 @@ This is where most buyers should start. Find your boat, your load, and your use,
 
 These smaller pontoons are weekend cruisers, cottage dock boats, and fishing platforms. They're not performance machines, and they don't need to be. A Mercury 25 or 30 four-stroke handles calm water cruise duty comfortably. Step up to a 40 if you're regularly at capacity or want better performance in any wind.
 
-Don't try to save money with a 15 HP on a boat this size. It'll move, but it won't plane properly with a full load. It's not safe in any chop.
+Don't try to save money with a 15 HP on a boat this size. It'll move, but it won't come up to cruise properly with a full load. It's not safe in any chop.
 
 ---
 
@@ -22820,7 +22820,7 @@ For anything in this category, the [Mercury 60 FourStroke is the right call](htt
 
 This is the most common pontoon size on Ontario lakes, and it's where the underpowering problem is worst. Dealers push 60 HP on 20-footers. It's not enough.
 
-If you're running 6-8 people and occasionally pulling a tube, you want a **Mercury 90 or 115 HP four-stroke, in Command Thrust configuration.** The Command Thrust gearcase runs a larger-diameter prop, which gives you a dramatically better hole shot on a heavy pontoon. Getting 8 people on plane is a completely different experience with Command Thrust vs. a standard 115.
+If you're running 6-8 people and occasionally pulling a tube, you want a **Mercury 90 or 115 HP four-stroke, in Command Thrust configuration.** The Command Thrust gearcase runs a larger-diameter prop, which gives you a dramatically better hole shot on a heavy pontoon. Getting 8 people up on cruise is a completely different experience with Command Thrust vs. a standard 115.
 
 See the full breakdown in the [Mercury Command Thrust guide for pontoon boats](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats), if your boat is over 20 feet and you're running a four-stroke under 150 HP, Command Thrust is not optional.
 
@@ -22881,7 +22881,7 @@ Every pontoon has a manufacturer-rated HP range, something like "60-115 HP." Mos
 
 The minimum HP keeps the boat legal and functional. The ideal HP is what makes the boat enjoyable. That gap is typically **30-50% more horsepower** than the bare minimum.
 
-A boat rated for 60-115 HP performs completely differently at 60 than it does at 115. At 60, you're nursing the motor to get on plane. At 115, the boat does what pontoons are supposed to do.
+A boat rated for 60-115 HP performs completely differently at 60 than it does at 115. At 60, you're nursing the motor to come up on cruise. At 115, the boat does what pontoons are supposed to do.
 
 Don't buy the minimum. Buy for the experience you want, not the number that gets the boat off the lot.
 
@@ -22889,9 +22889,9 @@ Don't buy the minimum. Buy for the experience you want, not the number that gets
 
 ## When Command Thrust Matters
 
-The short version: **Command Thrust** is Mercury's designation for a larger gearcase with a bigger-diameter prop. On a heavy pontoon, this changes everything about hole shot, the ability to get from 0 to on-plane with a full load.
+The short version: **Command Thrust** is Mercury's designation for a larger gearcase with a bigger-diameter prop. On a heavy pontoon, this changes everything about hole shot, the ability to get from 0 to cruise with a full load.
 
-Standard gearcase motors on heavy pontoons can feel sluggish getting up to speed, especially with 8+ people. The same HP in a Command Thrust configuration planes faster, transitions more smoothly, and puts less stress on the motor.
+Standard gearcase motors on heavy pontoons can feel sluggish getting up to speed, especially with 8+ people. The same HP in a Command Thrust configuration comes up on cruise faster, transitions more smoothly, and puts less stress on the motor.
 
 **Recommendation:** Any pontoon over 20 feet running a Mercury four-stroke in the 75-150 HP range should be in Command Thrust. Full details in the [Mercury Command Thrust guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats).
 
@@ -22928,10 +22928,10 @@ Sizing right isn't just about performance. It saves you money at the pump and at
 These scenarios come up constantly. If you recognize your situation here, take it seriously.
 
 **1. 60 HP on a 22-foot tritoon.**
-A tritoon at this length weighs more, has more drag, and is rated for 10+ passengers. 60 HP will idle it around the bay. It will not get it on plane with real people on board. This is one of the worst mismatches in Ontario pontoon ownership.
+A tritoon at this length weighs more, has more drag, and is rated for 10+ passengers. 60 HP will idle it around the bay. It will not get it up on cruise with real people on board. This is one of the worst mismatches in Ontario pontoon ownership.
 
 **2. 90 HP on a 24-foot two-tube loaded with family.**
-The boat will technically move. Getting 10 people on plane will take forever, the motor will be at full throttle, and the first headwind will make you wish you'd bought more motor. Not a question of if you'll want to repower, when.
+The boat will technically move. Getting 10 people up on cruise will take forever, the motor will be at full throttle, and the first headwind will make you wish you'd bought more motor. Not a question of if you'll want to repower, when.
 
 **3. Matching the old motor on a used boat.**
 The previous owner's choices don't have to be yours. If you're repowering, use the boat's HP range, your actual load, and your actual use, not whatever was on it when you bought it.
@@ -34088,10 +34088,10 @@ Family-owned since 1947. Mercury dealer since 1965.
     relatedSlugs: ['mercury-command-thrust-vs-standard-gearcase', 'mercury-command-thrust-guide-pontoon-boats', 'mercury-boost-upgrade-150hp-pontoon-analysis', 'best-pontoon-boats-rice-lake-cottage-use', 'mercury-repower-cost-ontario-2026-cad'],
     faqs: [
       { question: 'What size Mercury motor do I need for a 22 foot pontoon?', answer: 'A 115 HP or 150 HP FourStroke covers most 22 foot single-tube pontoons. Command Thrust is worth the upgrade if you carry six or more adults. Step up to a Pro XS V8 with Boost on tritoons of that length.' },
-      { question: 'Is a 90 HP enough for a pontoon?', answer: 'Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourStroke cruises well at 18 to 22 mph and planes cleanly. Add a third tube or routinely carry six people and you will want more horsepower.' },
+      { question: 'Is a 90 HP enough for a pontoon?', answer: 'Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourStroke cruises well at 18 to 22 mph and comes up on cruise cleanly. Add a third tube or routinely carry six people and you will want more horsepower.' },
       { question: 'Should I get Command Thrust on a pontoon?', answer: 'On pontoons 22 feet and up, almost always yes. Command Thrust gives a 15-inch propeller and larger gearcase that meaningfully improves hole shot and reverse on heavy pontoons. The upgrade adds roughly $800 to $1,500 CAD as of 2026.' },
       { question: 'How much does a pontoon repower cost in Ontario?', answer: 'A pontoon repower at Harris Boat Works typically runs $13,000 to $30,000 CAD installed in 2026, depending on horsepower. It includes motor, rigging, controls, propeller, fuel system inspection, old motor removal, and water test on Rice Lake. Build a current quote at mercuryrepower.ca.' },
-      { question: 'Is the Boost upgrade worth it for pontoons?', answer: 'On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat on plane quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.' },
+      { question: 'Is the Boost upgrade worth it for pontoons?', answer: 'On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat up on cruise quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.' },
       { question: 'Can a Mercury Avator electric work on a pontoon?', answer: 'The Avator 7.5e is too small to be a main motor on a pontoon. It works as a quiet kicker for fishing finesse on small pontoons. For main propulsion on a pontoon you want gasoline 60 HP and up.' },
     ],
     content: `*Last reviewed: 2026-05-25*
@@ -34116,11 +34116,11 @@ Here is the grid we use when a customer brings in a pontoon for repower. **Prici
 | 24 ft | 3 (tritoon) | 8+ adults | Pro XS V8 225 plus Boost | $26,000 to $30,500 |
 | 26 ft | 3 | 10+ adults | Pro XS V8 250 or 300 | $28,000 to $34,000 |
 
-Single-tube pontoons are happy with mid-range FourStroke power. Tritoons benefit from Pro XS and Boost because their planing dynamics are different. More wetted surface, more drag at low speed, but a third tube that can actually use bigger horsepower.
+Single-tube pontoons are happy with mid-range FourStroke power. Tritoons benefit from Pro XS and Boost because their lift-to-cruise dynamics are different. More wetted surface, more drag at low speed, but a third tube that can actually use bigger horsepower.
 
 ## How do boat length and tube count change the answer?
 
-Length matters, but tube count may matter even more. A two-tube 20 footer and a 22 foot tritoon are both pontoons, but they do not ask for power the same way. The tritoon can turn more horsepower into a better-running boat because the centre log acts like a shallow V. It lets the boat plane and corner like a bigger vessel. A traditional two-tube pontoon hits diminishing returns earlier.
+Length matters, but tube count may matter even more. A two-tube 20 footer and a 22 foot tritoon are both pontoons, but they do not ask for power the same way. The tritoon can turn more horsepower into a better-running boat because the centre log acts like a shallow V. It lets the boat lift cleanly and corner like a bigger vessel. A traditional two-tube pontoon hits diminishing returns earlier.
 
 If you own a classic two-tube pontoon used for sunset cruises and casual fishing, there is rarely a reason to chase 200 HP. If you own a 22 to 24 foot tritoon that carries a full crew and pulls on weekends, the bigger number finally makes sense.
 
@@ -34130,7 +34130,7 @@ Load changes everything. A 20 foot pontoon with two adults and a cooler is not t
 
 Command Thrust is the most common upgrade we sell on pontoon repowers. The bigger gearcase and 15-inch propeller give a pontoon meaningfully better hole shot and stronger reverse, both things pontoon owners actually feel.
 
-The difference shows up when you load the boat. A standard 115 HP gearcase on a 22 foot pontoon with five adults aboard takes longer to plane and labours through the climb. A Command Thrust 115 plants the prop and gets the boat up in noticeably less time. In reverse, the bigger gearcase lets you back away from a dock with authority instead of slipping the prop.
+The difference shows up when you load the boat. A standard 115 HP gearcase on a 22 foot pontoon with five adults aboard takes longer to come up on cruise and labours through the climb. A Command Thrust 115 plants the prop and gets the boat up in noticeably less time. In reverse, the bigger gearcase lets you back away from a dock with authority instead of slipping the prop.
 
 The upgrade typically adds $800 to $1,500 CAD over the standard motor at the same horsepower (2026 ranges). On any pontoon 22 feet and up, that is the easiest "yes" upgrade we recommend. On many pontoons, the right horsepower with the wrong gearcase still does a worse job than the right Command Thrust package. That's why we almost never separate horsepower from gearcase when talking pontoons.
 
@@ -34190,7 +34190,7 @@ The Command Thrust upgrade pays for itself in customer satisfaction. We have nev
 A 115 HP or 150 HP FourStroke covers most 22 foot single-tube pontoons. Command Thrust is worth the upgrade if you carry six or more adults. Step up to a Pro XS V8 with Boost on tritoons of that length.
 
 **Is a 90 HP enough for a pontoon?**
-Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourStroke cruises well at 18 to 22 mph and planes cleanly. Add a third tube or routinely carry six people and you will want more horsepower.
+Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourStroke cruises well at 18 to 22 mph and comes up on cruise cleanly. Add a third tube or routinely carry six people and you will want more horsepower.
 
 **Should I get Command Thrust on a pontoon?**
 On pontoons 22 feet and up, almost always yes. Command Thrust gives a 15-inch propeller and larger gearcase that meaningfully improves hole shot and reverse on heavy pontoons. The upgrade adds roughly $800 to $1,500 CAD as of 2026.
@@ -34199,7 +34199,7 @@ On pontoons 22 feet and up, almost always yes. Command Thrust gives a 15-inch pr
 A pontoon repower at Harris Boat Works typically runs $13,000 to $30,000 CAD installed in 2026, depending on horsepower. It includes motor, rigging, controls, propeller, fuel system inspection, old motor removal, and water test on Rice Lake. Build a current quote at mercuryrepower.ca.
 
 **Is the Boost upgrade worth it for pontoons?**
-On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat on plane quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.
+On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat up on cruise quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.
 
 **Can a Mercury Avator electric work on a pontoon?**
 The Avator 7.5e is too small to be a main motor on a pontoon. It works as a quiet kicker for fishing finesse on small pontoons. For main propulsion on a pontoon you want gasoline 60 HP and up.

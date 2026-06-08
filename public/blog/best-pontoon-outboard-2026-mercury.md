@@ -51,11 +51,11 @@ Here is the grid we use when a customer brings in a pontoon for repower. **Prici
 | 24 ft | 3 (tritoon) | 8+ adults | Pro XS V8 225 plus Boost | $26,000 to $30,500 |
 | 26 ft | 3 | 10+ adults | Pro XS V8 250 or 300 | $28,000 to $34,000 |
 
-Single-tube pontoons are happy with mid-range FourStroke power. Tritoons benefit from Pro XS and Boost because their planing dynamics are different. More wetted surface, more drag at low speed, but a third tube that can actually use bigger horsepower.
+Single-tube pontoons are happy with mid-range FourStroke power. Tritoons benefit from Pro XS and Boost because their lift-to-cruise dynamics are different. More wetted surface, more drag at low speed, but a third tube that can actually use bigger horsepower.
 
 ## How do boat length and tube count change the answer?
 
-Length matters, but tube count may matter even more. A two-tube 20 footer and a 22 foot tritoon are both pontoons, but they do not ask for power the same way. The tritoon can turn more horsepower into a better-running boat because the centre log acts like a shallow V. It lets the boat plane and corner like a bigger vessel. A traditional two-tube pontoon hits diminishing returns earlier.
+Length matters, but tube count may matter even more. A two-tube 20 footer and a 22 foot tritoon are both pontoons, but they do not ask for power the same way. The tritoon can turn more horsepower into a better-running boat because the centre log acts like a shallow V. It lets the boat lift cleanly and corner like a bigger vessel. A traditional two-tube pontoon hits diminishing returns earlier.
 
 If you own a classic two-tube pontoon used for sunset cruises and casual fishing, there is rarely a reason to chase 200 HP. If you own a 22 to 24 foot tritoon that carries a full crew and pulls on weekends, the bigger number finally makes sense.
 
@@ -65,7 +65,7 @@ Load changes everything. A 20 foot pontoon with two adults and a cooler is not t
 
 Command Thrust is the most common upgrade we sell on pontoon repowers. The bigger gearcase and 15-inch propeller give a pontoon meaningfully better hole shot and stronger reverse, both things pontoon owners actually feel.
 
-The difference shows up when you load the boat. A standard 115 HP gearcase on a 22 foot pontoon with five adults aboard takes longer to plane and labours through the climb. A Command Thrust 115 plants the prop and gets the boat up in noticeably less time. In reverse, the bigger gearcase lets you back away from a dock with authority instead of slipping the prop.
+The difference shows up when you load the boat. A standard 115 HP gearcase on a 22 foot pontoon with five adults aboard takes longer to come up on cruise and labours through the climb. A Command Thrust 115 plants the prop and gets the boat up in noticeably less time. In reverse, the bigger gearcase lets you back away from a dock with authority instead of slipping the prop.
 
 The upgrade typically adds $800 to $1,500 CAD over the standard motor at the same horsepower (2026 ranges). On any pontoon 22 feet and up, that is the easiest "yes" upgrade we recommend. On many pontoons, the right horsepower with the wrong gearcase still does a worse job than the right Command Thrust package. That's why we almost never separate horsepower from gearcase when talking pontoons.
 
@@ -125,7 +125,7 @@ The Command Thrust upgrade pays for itself in customer satisfaction. We have nev
 A 115 HP or 150 HP FourStroke covers most 22 foot single-tube pontoons. Command Thrust is worth the upgrade if you carry six or more adults. Step up to a Pro XS V8 with Boost on tritoons of that length.
 
 **Is a 90 HP enough for a pontoon?**
-Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourStroke cruises well at 18 to 22 mph and planes cleanly. Add a third tube or routinely carry six people and you will want more horsepower.
+Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourStroke cruises well at 18 to 22 mph and comes up on cruise cleanly. Add a third tube or routinely carry six people and you will want more horsepower.
 
 **Should I get Command Thrust on a pontoon?**
 On pontoons 22 feet and up, almost always yes. Command Thrust gives a 15-inch propeller and larger gearcase that meaningfully improves hole shot and reverse on heavy pontoons. The upgrade adds roughly $800 to $1,500 CAD as of 2026.
@@ -134,7 +134,7 @@ On pontoons 22 feet and up, almost always yes. Command Thrust gives a 15-inch pr
 A pontoon repower at Harris Boat Works typically runs $13,000 to $30,000 CAD installed in 2026, depending on horsepower. It includes motor, rigging, controls, propeller, fuel system inspection, old motor removal, and water test on Rice Lake. Build a current quote at mercuryrepower.ca.
 
 **Is the Boost upgrade worth it for pontoons?**
-On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat on plane quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.
+On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat up on cruise quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.
 
 **Can a Mercury Avator electric work on a pontoon?**
 The Avator 7.5e is too small to be a main motor on a pontoon. It works as a quiet kicker for fishing finesse on small pontoons. For main propulsion on a pontoon you want gasoline 60 HP and up.
@@ -167,7 +167,7 @@ A 115 HP or 150 HP FourStroke covers most 22 foot single-tube pontoons. Command 
 
 ### Is a 90 HP enough for a pontoon?
 
-Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourStroke cruises well at 18 to 22 mph and planes cleanly. Add a third tube or routinely carry six people and you will want more horsepower.
+Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourStroke cruises well at 18 to 22 mph and comes up on cruise cleanly. Add a third tube or routinely carry six people and you will want more horsepower.
 
 ### Should I get Command Thrust on a pontoon?
 
@@ -179,7 +179,7 @@ A pontoon repower at Harris Boat Works typically runs $13,000 to $30,000 CAD ins
 
 ### Is the Boost upgrade worth it for pontoons?
 
-On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat on plane quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.
+On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat up on cruise quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.
 
 ### Can a Mercury Avator electric work on a pontoon?
 

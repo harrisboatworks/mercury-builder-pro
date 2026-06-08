@@ -61,7 +61,7 @@ Here's the honest context: a pontoon's top speed is governed primarily by hull d
 
 The hierarchy of what actually drives pontoon performance:
 
-1. **Pontoon tube design.** A tritoon with three logs planes faster, runs smoother, and carries more weight than a two-log pontoon, regardless of motor.
+1. **Pontoon tube design.** A tritoon with three logs comes up to cruise faster, runs smoother, and carries more weight than a two-log pontoon, regardless of motor.
 2. **Pontoon size and weight.** A 20 ft pontoon is faster than a 24 ft pontoon at the same HP.
 3. **Loading.** Four adults plus gear vs. two passengers is a meaningful speed difference, often more difference than Boost adds.
 4. **Motor HP class.** Going from 90 to 115 Command Thrust is a clearly felt difference. Going from 115 to 150 is felt.
@@ -86,7 +86,7 @@ rightLabel: Boost is not the right lever
 rightCriteria:
   - Pre-2024 Mercury 150 (Boost is not available)
   - Light dual-tube pontoon with 2 to 4 people typical
-  - You're already getting plane and cruise on spec
+  - You're already getting up on cruise on spec
   - You'd be better served by a prop change first
 rightOutcome: Skip Boost, check the prop
 rightVariant: alternative
@@ -191,7 +191,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Is Mercury Boost worth it for a pontoon boat?
 
-Mercury Boost is worth it for pontoon owners who regularly run with heavy loads, four or more adults, gear, and accessories. The upgrade improves low-end and mid-range torque delivery, which shortens the hole shot and makes the planing transition more confident on high-drag hull forms like pontoons. For lightly-loaded pontoon use (two to three people, minimal gear), the benefit is less pronounced and the cost-benefit ratio weakens. Check your propeller setup first: an over-propped motor causes the same symptoms Boost addresses, and a prop change, which averages about $819 at HBW based on our repair order history, is sometimes the better and cheaper fix.
+Mercury Boost is worth it for pontoon owners who regularly run with heavy loads, four or more adults, gear, and accessories. The upgrade improves low-end and mid-range torque delivery, which shortens the hole shot and makes the lift to cruise more confident on high-drag hull forms like pontoons. For lightly-loaded pontoon use (two to three people, minimal gear), the benefit is less pronounced and the cost-benefit ratio weakens. Check your propeller setup first: an over-propped motor causes the same symptoms Boost addresses, and a prop change, which averages about $819 at HBW based on our repair order history, is sometimes the better and cheaper fix.
 
 ### What does Mercury Boost actually do to the motor?
 
@@ -219,7 +219,7 @@ Mercury Boost eligibility is specific to certain FourStroke and Verado model yea
 
 ### Will Mercury Boost make my pontoon go faster?
 
-Not at top speed. Mercury Boost improves low-end and mid-range torque, which translates to a faster hole shot (getting on plane sooner) and better mid-throttle response. Once the pontoon is on plane and approaching wide-open throttle, Boost has minimal effect on the maximum speed the motor and hull combination will achieve. If faster top-end speed is your goal, the variables that matter are propeller pitch, motor horsepower, and hull form, not a calibration upgrade. For that use case, a 2026 Mercury 200 L Pro XS ($31,955 MSRP) or 250 L Pro XS ($41,525 MSRP) is the more direct path.
+Not at top speed. Mercury Boost improves low-end and mid-range torque, which translates to a faster hole shot (coming up on cruise sooner) and better mid-throttle response. Once the pontoon is up on cruise and approaching wide-open throttle, Boost has minimal effect on the maximum speed the motor and hull combination will achieve. If faster top-end speed is your goal, the variables that matter are propeller pitch, motor horsepower, and hull form, not a calibration upgrade. For that use case, a 2026 Mercury 200 L Pro XS ($31,955 MSRP) or 250 L Pro XS ($41,525 MSRP) is the more direct path.
 
 ### Is Mercury Boost a one-time upgrade or a subscription?
 
@@ -227,7 +227,7 @@ Mercury Boost is a one-time upgrade, not a subscription service. Once the calibr
 
 ### Should I get Boost before or after a prop change?
 
-After. Confirm your propeller is correctly sized and pitched for your load before adding Boost. An over-propped motor, one that can't reach its optimal RPM range under full load, causes poor hole shot and laboured planing. A prop change costs less than Boost in many cases and may solve the problem entirely. If you change to the correct propeller and hole shot is still unsatisfactory, adding Boost is the logical next step. Doing both together without knowing the contribution of each makes it harder to evaluate what's actually working.
+After. Confirm your propeller is correctly sized and pitched for your load before adding Boost. An over-propped motor, one that can't reach its optimal RPM range under full load, causes poor hole shot and laboured time to cruise. A prop change costs less than Boost in many cases and may solve the problem entirely. If you change to the correct propeller and hole shot is still unsatisfactory, adding Boost is the logical next step. Doing both together without knowing the contribution of each makes it harder to evaluate what's actually working.
 
 ### Is Mercury Boost available in Ontario?
 

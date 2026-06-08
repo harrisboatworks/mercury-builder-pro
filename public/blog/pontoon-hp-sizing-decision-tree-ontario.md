@@ -41,7 +41,7 @@ content_type: blog_article
 
 ---
 
-There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake, Ontario afternoon chop, or get 10 people up to plane before dark, the motor gives up.
+There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake, Ontario afternoon chop, or get 10 people up to cruise before dark, the motor gives up.
 
 This post is the answer to the question every pontoon buyer eventually asks: *What HP do I actually need?* Not the minimum the boat can run. Not what the previous owner had. The HP that makes your boat do what you bought it to do.
 
@@ -58,7 +58,7 @@ You buy a used 22-footer. It has a 90 HP four-stroke on it. You think: *previous
 
 Here's the problem: the previous owner probably undersized it too. Dealers push the minimum-rated motor because it's the cheapest option that gets a boat out the door. Buyers accept it because the number sounds reasonable. And the cycle of underpowered pontoons keeps going.
 
-The capacity plate on your pontoon tells you the **maximum** HP the transom is rated for, not the recommended HP. There's a significant gap between what a boat *can* run and what it *should* run. Most buyers never learn that until they're embarrassed trying to get on plane with a full load.
+The capacity plate on your pontoon tells you the **maximum** HP the transom is rated for, not the recommended HP. There's a significant gap between what a boat *can* run and what it *should* run. Most buyers never learn that until they're embarrassed trying to get up on cruise with a full load.
 
 If you're buying used and the motor is at the low end of that manufacturer's HP range, budget for a repower. It's not optional if you want the boat to actually perform. You can read more about the [common issues that come with underpowered used pontoons on Rice Lake, Ontario (in the Kawarthas)](https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake). HP is behind a lot of them.
 
@@ -70,11 +70,11 @@ Pontoon buyers coming from fishing boats or runabouts always underestimate how m
 
 **Weight.** A typical pontoon sits between 1,800 and 3,500 lbs dry before you add people, gear, and fuel. A 22-footer with 10 passengers and a full cooler can easily clear 5,000 lbs. You're pushing a lot of mass.
 
-**Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat planing.
+**Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat up on cruise.
 
 **Passenger load.** A 22-foot pontoon can legally carry 10-12 people. That's 1,500-2,000 lbs of live load added to an already heavy boat. The horsepower you calculated for 4 people doesn't apply when you have 10.
 
-**Windage.** Pontoons have enormous freeboard and surface area. A side wind on Rice Lake or the Kawarthas can push your boat around hard. You need power in reserve to hold a line and handle unexpected conditions, not just to get on plane on a flat morning.
+**Windage.** Pontoons have enormous freeboard and surface area. A side wind on Rice Lake or the Kawarthas can push your boat around hard. You need power in reserve to hold a line and handle unexpected conditions, not just to get up on cruise on a flat morning.
 
 The bottom line: a pontoon needs more HP than an equivalent-length runabout. Full stop.
 
@@ -121,7 +121,7 @@ This is where most buyers should start. Find your boat, your load, and your use,
 
 These smaller pontoons are weekend cruisers, cottage dock boats, and fishing platforms. They're not performance machines, and they don't need to be. A Mercury 25 or 30 four-stroke handles calm water cruise duty comfortably. Step up to a 40 if you're regularly at capacity or want better performance in any wind.
 
-Don't try to save money with a 15 HP on a boat this size. It'll move, but it won't plane properly with a full load. It's not safe in any chop.
+Don't try to save money with a 15 HP on a boat this size. It'll move, but it won't come up to cruise properly with a full load. It's not safe in any chop.
 
 ---
 
@@ -141,7 +141,7 @@ For anything in this category, the [Mercury 60 FourStroke is the right call](htt
 
 This is the most common pontoon size on Ontario lakes, and it's where the underpowering problem is worst. Dealers push 60 HP on 20-footers. It's not enough.
 
-If you're running 6-8 people and occasionally pulling a tube, you want a **Mercury 90 or 115 HP four-stroke, in Command Thrust configuration.** The Command Thrust gearcase runs a larger-diameter prop, which gives you a dramatically better hole shot on a heavy pontoon. Getting 8 people on plane is a completely different experience with Command Thrust vs. a standard 115.
+If you're running 6-8 people and occasionally pulling a tube, you want a **Mercury 90 or 115 HP four-stroke, in Command Thrust configuration.** The Command Thrust gearcase runs a larger-diameter prop, which gives you a dramatically better hole shot on a heavy pontoon. Getting 8 people up on cruise is a completely different experience with Command Thrust vs. a standard 115.
 
 See the full breakdown in the [Mercury Command Thrust guide for pontoon boats](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats), if your boat is over 20 feet and you're running a four-stroke under 150 HP, Command Thrust is not optional.
 
@@ -202,7 +202,7 @@ Every pontoon has a manufacturer-rated HP range, something like "60-115 HP." Mos
 
 The minimum HP keeps the boat legal and functional. The ideal HP is what makes the boat enjoyable. That gap is typically **30-50% more horsepower** than the bare minimum.
 
-A boat rated for 60-115 HP performs completely differently at 60 than it does at 115. At 60, you're nursing the motor to get on plane. At 115, the boat does what pontoons are supposed to do.
+A boat rated for 60-115 HP performs completely differently at 60 than it does at 115. At 60, you're nursing the motor to come up on cruise. At 115, the boat does what pontoons are supposed to do.
 
 Don't buy the minimum. Buy for the experience you want, not the number that gets the boat off the lot.
 
@@ -210,9 +210,9 @@ Don't buy the minimum. Buy for the experience you want, not the number that gets
 
 ## When Command Thrust Matters
 
-The short version: **Command Thrust** is Mercury's designation for a larger gearcase with a bigger-diameter prop. On a heavy pontoon, this changes everything about hole shot, the ability to get from 0 to on-plane with a full load.
+The short version: **Command Thrust** is Mercury's designation for a larger gearcase with a bigger-diameter prop. On a heavy pontoon, this changes everything about hole shot, the ability to get from 0 to cruise with a full load.
 
-Standard gearcase motors on heavy pontoons can feel sluggish getting up to speed, especially with 8+ people. The same HP in a Command Thrust configuration planes faster, transitions more smoothly, and puts less stress on the motor.
+Standard gearcase motors on heavy pontoons can feel sluggish getting up to speed, especially with 8+ people. The same HP in a Command Thrust configuration comes up on cruise faster, transitions more smoothly, and puts less stress on the motor.
 
 **Recommendation:** Any pontoon over 20 feet running a Mercury four-stroke in the 75-150 HP range should be in Command Thrust. Full details in the [Mercury Command Thrust guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats).
 
@@ -249,10 +249,10 @@ Sizing right isn't just about performance. It saves you money at the pump and at
 These scenarios come up constantly. If you recognize your situation here, take it seriously.
 
 **1. 60 HP on a 22-foot tritoon.**
-A tritoon at this length weighs more, has more drag, and is rated for 10+ passengers. 60 HP will idle it around the bay. It will not get it on plane with real people on board. This is one of the worst mismatches in Ontario pontoon ownership.
+A tritoon at this length weighs more, has more drag, and is rated for 10+ passengers. 60 HP will idle it around the bay. It will not get it up on cruise with real people on board. This is one of the worst mismatches in Ontario pontoon ownership.
 
 **2. 90 HP on a 24-foot two-tube loaded with family.**
-The boat will technically move. Getting 10 people on plane will take forever, the motor will be at full throttle, and the first headwind will make you wish you'd bought more motor. Not a question of if you'll want to repower, when.
+The boat will technically move. Getting 10 people up on cruise will take forever, the motor will be at full throttle, and the first headwind will make you wish you'd bought more motor. Not a question of if you'll want to repower, when.
 
 **3. Matching the old motor on a used boat.**
 The previous owner's choices don't have to be yours. If you're repowering, use the boat's HP range, your actual load, and your actual use, not whatever was on it when you bought it.

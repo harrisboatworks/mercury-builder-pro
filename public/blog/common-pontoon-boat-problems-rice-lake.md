@@ -49,7 +49,7 @@ Before we get into the full list, this one deserves its own section because it c
 
 Pontoons are heavy. A 22-foot pontoon fully loaded with a cooler, canopy, six adults, and gear can easily top 3,000 lbs. Add water drag from two or three aluminum tubes, and you've got a boat that needs serious power to perform well.
 
-The mistake we see constantly: someone buys a 22- or 24-foot pontoon and puts a 60HP motor on it because the dealer said it would "work." Technically, yes. It will move the boat. But it won't plane properly under load, it'll lug when you push it, and that engine will work twice as hard as it should for its entire life.
+The mistake we see constantly: someone buys a 22- or 24-foot pontoon and puts a 60HP motor on it because the dealer said it would "work." Technically, yes. It will move the boat. But it won't come up to cruise properly under load, it'll lug when you push it, and that engine will work twice as hard as it should for its entire life.
 
 On Rice Lake, you want to get places. You want to pull a tube. You want to get home before the storm hits. A properly sized motor (90HP to 115HP for most 20-24 ft boats, more for tritoons) does that without working itself to death.
 
