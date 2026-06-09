@@ -17976,7 +17976,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-![Mercury maintenance interval timeline: 20, 100-300 hours (HBW diagram)](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
+![Mercury maintenance interval timeline: 20/100/300 hours (HBW diagram)](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
 
 ## Quick Answer
 
