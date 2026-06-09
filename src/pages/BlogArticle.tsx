@@ -366,7 +366,7 @@ export default function BlogArticle() {
                 );
                 // Strip standalone "Language: English" lines.
                 c = c.replace(
-                  /^[*_\s]*\**\s*Language\**\s*[:：]\s*English[*_\s]*$/gim,
+                  /^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim,
                   '',
                 );
                 // Drop a literal "## CTA" heading line; keep its body content.
