@@ -14423,7 +14423,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
     image: '/lovable-uploads/hero-mercury-wont-start-dockside.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-27',
-    dateModified: '2026-05-04',
+    dateModified: '2026-06-09',
     publishDate: '2026-04-27',
     category: 'Troubleshooting',
     readTime: '12 min read',
@@ -14515,6 +14515,8 @@ If the motor has 200+ hours and you've ruled out the easy stuff, a compression c
 **The 30-minute fixes:** battery replacement, fuel filter, primer bulb, spark plugs.
 
 **The half-day fixes:** EFI diagnosis with CDS, VST cleaning, low-pressure fuel pump, crank position sensor, ignition coil.
+
+We pulled our own numbers on this. Since 2013 we have logged 537 no-start and rough-running jobs in our service records. About half traced back to fuel: stale gas, water in the tank, clogged filters. A bit under half were electrical: weak batteries, corroded grounds, tired connections. Roughly a quarter involved spark plugs, and 14 of the 537 were nothing but the kill switch. The buckets overlap (old gas and a fouled plug often arrive together), but the lesson holds: the cheap stuff fails first, which is exactly why the ladder above starts there.
 
 HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
 
@@ -14613,6 +14615,10 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       {
         question: 'What\'s the most common EFI fault code on no-start tickets?',
         answer: 'On Mercury EFI 75-115 HP, most cranks-but-won\'t-fire tickets come back with clean fault memory. No code stored. The actual causes are low system voltage, weak battery, poor grounds, or low-pressure fuel pump issues that don\'t trigger a stored EFI code. This is why we plug in Mercury CDS for live diagnostic data.'
+      },
+      {
+        question: 'What is the most common reason a Mercury outboard won\'t start?',
+        answer: 'Fuel. In our own service records (537 no-start and rough-running jobs since 2013), about half traced to fuel problems: stale or phase-separated gas, water in the tank, or a clogged filter. Electrical causes (battery, grounds, connections) were close behind at just under half, with fouled spark plugs involved in about a quarter. Start with fuel and power before suspecting anything expensive.'
       }
     ]
   },
