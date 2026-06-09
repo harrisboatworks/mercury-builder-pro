@@ -5750,7 +5750,7 @@ A sudden change in fuel economy is worth investigating. Don't assume it's "just 
 
 ## Getting Your Prop Right at HBW
 
-We test prop pitch on every Mercury repower and new motor install at HBW. If you bought your motor elsewhere, or if your prop was selected years ago for a different boat or load, it's worth having it checked. A proper sea trial takes 30, 45 minutes and tells you more about your setup than any spec sheet.
+We test prop pitch on every Mercury repower and new motor install at HBW. If you bought your motor elsewhere, or if your prop was selected years ago for a different boat or load, it's worth having it checked. A proper sea trial takes 30-45 minutes and tells you more about your setup than any spec sheet.
 
 For engine repairs, we only service Mercury and Mercruiser.
 
@@ -8647,9 +8647,9 @@ Below 15°C, cold-water shock sets in immediately on immersion, the involuntary 
 
 | Water Temperature | Time to Exhaustion | Estimated Survival Time |
 |---|---|---|
-| 15°C (59°F) | 30, 40 minutes | 1, 2 hours |
-| 10°C (50°F) | 15, 20 minutes | 30, 40 minutes |
-| 5°C (41°F) | 5, 10 minutes | 15, 20 minutes |
+| 15°C (59°F) | 30-40 minutes | 1-2 hours |
+| 10°C (50°F) | 15-20 minutes | 30-40 minutes |
+| 5°C (41°F) | 5-10 minutes | 15-20 minutes |
 
 The takeaway: at 10°C, you may have 30 minutes of survival time, and that assumes you can hold on. Verify current guidance at Transport Canada's official boating safety resources.
 
@@ -11419,7 +11419,7 @@ Boost is dealer-installed. You cannot download or apply it yourself, Mercury's d
 3. Boost calibration is applied via Mercury's software interface
 4. A short test run confirms the update
 
-Most dealers can complete it in a single service visit. **Mercury has not published a standard retail price for the Boost upgrade.** Dealers set their own service rates. At most Mercury dealers in Ontario, shop rates run in the $120, $175 per hour range, and installation is primarily technician time, roughly 1, 2 hours. If you are already bringing the engine in for spring commissioning or annual service, ask to have Boost done at the same visit to minimize total labor cost.
+Most dealers can complete it in a single service visit. **Mercury has not published a standard retail price for the Boost upgrade.** Dealers set their own service rates. At most Mercury dealers in Ontario, shop rates run in the $120, $175 per hour range, and installation is primarily technician time, roughly 1-2 hours. If you are already bringing the engine in for spring commissioning or annual service, ask to have Boost done at the same visit to minimize total labor cost.
 
 ---
 
@@ -15815,7 +15815,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Quick Answer
 
-A typical Mercury repower at HBW: configurator quote, phone call if needed, deposit, drop-off in Gores Landing, motor mount and rigging, sea trial on Rice Lake, pickup with break-in coaching. Most jobs are **7, 14 days** at the shop once scheduled. Spring rush adds 2, 4 weeks of lead time. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+A typical Mercury repower at HBW: configurator quote, phone call if needed, deposit, drop-off in Gores Landing, motor mount and rigging, sea trial on Rice Lake, pickup with break-in coaching. Most jobs are **7-14 days** at the shop once scheduled. Spring rush adds 2-4 weeks of lead time. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -15827,19 +15827,19 @@ A repower isn't just bolting a new motor to your boat. It's a full integration p
 
 ### What Changes the Timeline
 
-**Mercury-to-Mercury vs. brand conversion.** Mercury-to-Mercury: 2, 4 days of shop time. Brand conversion (Evinrude, Yamaha, Honda to Mercury): 4, 6 days, because of the additional rigging work.
+**Mercury-to-Mercury vs. brand conversion.** Mercury-to-Mercury: 2-4 days of shop time. Brand conversion (Evinrude, Yamaha, Honda to Mercury): 4-6 days, because of the additional rigging work.
 
 **Hull condition.** A solid hull is fast. A transom with soft spots needs additional work or won't pass our inspection until it's addressed.
 
 **Motor availability.** Common HP classes and configurations are typically in stock or on quick order. Less common configurations may have factory wait times.
 
-**Time of year.** Off-season (October, April): fast shop turnaround and good booking availability. Spring rush (March, May): waits of 2, 6 weeks before the shop can start.
+**Time of year.** Off-season (October, April): fast shop turnaround and good booking availability. Spring rush (March, May): waits of 2-6 weeks before the shop can start.
 
 **Customer responsiveness.** Quote, deposit, drop-off, and pickup all need customer involvement. The faster you respond at each step, the faster the timeline.
 
 ### The Full Process: Step by Step
 
-#### Step 1: Hull Walk-Around, Free, 30, 60 Minutes
+#### Step 1: Hull Walk-Around, Free, 30-60 Minutes
 
 Customer brings the boat to HBW in Gores Landing, or sends detailed photos and we visit the boat where it's stored. We assess:
 
@@ -15883,7 +15883,7 @@ Removal exposes:
 - Existing rigging connections in full
 - Fuel system connections and hose condition
 
-#### Step 6: Transom and Rigging Inspection, 1, 2 Hours
+#### Step 6: Transom and Rigging Inspection, 1-2 Hours
 
 This is the step some shops skip. We don't.
 
@@ -15896,7 +15896,7 @@ With the motor off, we check:
 
 If the transom is solid, we proceed to install. If there are soft spots, the customer gets the options picture before any money is spent on the new motor installation.
 
-#### Step 7: Install New Motor and Rigging, Typically 1, 2 Days
+#### Step 7: Install New Motor and Rigging, Typically 1-2 Days
 
 Mercury-certified technician installs:
 
@@ -15935,7 +15935,7 @@ Back at the shop:
 - Update [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) paperwork, required by Transport Canada when the motor changes, often forgotten elsewhere
 - Print final documentation for customer
 
-#### Step 10: Pickup and Break-In Coaching, 30, 60 Minutes
+#### Step 10: Pickup and Break-In Coaching, 30-60 Minutes
 
 Customer picks up the boat. We walk through:
 - The new motor's controls and features
@@ -15974,7 +15974,7 @@ Two related guides in the same cluster:
 ## FAQs
 
 **How long does a Mercury repower take?** 
-Shop time is typically 2, 4 days for Mercury-to-Mercury, 4, 6 days for brand conversions. Total time from drop-off to pickup including motor arrival is usually 7, 14 days. Spring rush extends this to 2, 6 weeks of lead time before the shop can start.
+Shop time is typically 2-4 days for Mercury-to-Mercury, 4-6 days for brand conversions. Total time from drop-off to pickup including motor arrival is usually 7-14 days. Spring rush extends this to 2-6 weeks of lead time before the shop can start.
 
 **When is the fastest time to book a repower?** 
 November through March. Shortest wait times, first pick of motors, and sometimes promotional financing rates. By late March, spring booking is in full swing.
@@ -16881,7 +16881,7 @@ Clear the intake by hand. A boat hook or a screwdriver helps with stubborn debri
 
 ### Step 4: Wait before restarting
 
-Let the powerhead cool for 10, 15 minutes before attempting a restart. When you start it again, watch the tell-tale immediately. If the stream is strong and the alarm doesn't return at idle, you may be clear to head home, at low RPM.
+Let the powerhead cool for 10-15 minutes before attempting a restart. When you start it again, watch the tell-tale immediately. If the stream is strong and the alarm doesn't return at idle, you may be clear to head home, at low RPM.
 
 ### Step 5: If the alarm returns, stop
 
@@ -17976,7 +17976,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-![Mercury maintenance interval timeline: 20, 100, 300 hours (HBW diagram)](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
+![Mercury maintenance interval timeline: 20, 100-300 hours (HBW diagram)](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
 
 ## Quick Answer
 
@@ -18019,9 +18019,9 @@ Mercury builds its service schedule around three milestones that correspond to d
 
 ## Why Three Milestones
 
-### Break-in phase (0, 20 hours)
+### Break-in phase (0-20 hours)
 
-A new engine is not fully "seated" when it leaves manufacturing. In the first 10, 20 hours of operation:
+A new engine is not fully "seated" when it leaves manufacturing. In the first 10-20 hours of operation:
 - Piston rings seat against cylinder walls
 - Gears mesh and find their final wear pattern
 - Metal particles shed from these break-in processes end up in the oil
@@ -18030,7 +18030,7 @@ The 20-hour service exists specifically to capture and remove those particles be
 
 Skipping the 20-hour service leaves metal contamination in the oil and misses the first opportunity to catch any assembly-related issues while the motor is still new.
 
-### Routine operation phase (20, 300 hours)
+### Routine operation phase (20-300 hours)
 
 After break-in, the motor enters years of normal use. The 100-hour service interval is Mercury's standard for routine preventive maintenance during this phase. It covers the items that wear and accumulate through normal operation: oil, filters, spark plugs, gear lube, and inspection of critical systems.
 
@@ -18109,7 +18109,7 @@ If you want warranty-compliant documentation, having a certified Mercury dealer 
 
 ## Ontario Seasonal Reality
 
-Most Ontario recreational boaters put the motor in around May and take it out in October, roughly five or six months of use. In an average season on Rice Lake or the Kawarthas, a recreational boater might put on 40, 80 hours depending on use pattern.
+Most Ontario recreational boaters put the motor in around May and take it out in October, roughly five or six months of use. In an average season on Rice Lake or the Kawarthas, a recreational boater might put on 40-80 hours depending on use pattern.
 
 This means:
 - **Most owners never reach 100 hours in a season**, the annual trigger is what matters, not the hour trigger
@@ -23857,7 +23857,7 @@ No. Mechanical controls work fine on a single-engine 150, 225 HP motor and save 
 Usually not on a typical fishing boat. Cable steering at 90 HP is fine. Exception: fast bowrider or anyone who finds cable tiring. For 115 HP and up, hydraulic is almost always worth the upgrade.
 
 **How long does a full rigging install take?** 
-Mid-range single-engine (60, 115 HP): typically 1, 2 shop days once the motor is in. V6 with full electronics: 2, 4 days.
+Mid-range single-engine (60, 115 HP): typically 1, 2 shop days once the motor is in. V6 with full electronics: 2-4 days.
 
 **Does HBW handle trade-ins on the old motor?** 
 Yes. Old Mercury motors in workable condition are valued at trade-in. Non-Mercury motors evaluated case-by-case.
@@ -28653,7 +28653,7 @@ The lanyard is the single most common cause of "won't crank" calls. It takes fiv
 
 This is where most Ontario spring no-starts start and end.
 
-An Ontario winter is genuinely hard on lead-acid marine batteries. The combination of cold temperatures, self-discharge over 5, 6 months, and lack of maintenance charging means a battery that was at 100% in October may be at 50% or less in May, and a deeply discharged battery sulfates, which permanently reduces its capacity. It may show voltage on a basic multimeter but collapse under cranking load.
+An Ontario winter is genuinely hard on lead-acid marine batteries. The combination of cold temperatures, self-discharge over 5-6 months, and lack of maintenance charging means a battery that was at 100% in October may be at 50% or less in May, and a deeply discharged battery sulfates, which permanently reduces its capacity. It may show voltage on a basic multimeter but collapse under cranking load.
 
 What to check:
 - **Resting voltage:** 12.6V = fully charged. 12.4V = acceptable, charge before using. Below 12.2V = seriously compromised.
@@ -28669,7 +28669,7 @@ What to check:
 
 ## Step 2: Fuel, Old Gas Is Genuinely a Problem
 
-E10 fuel (standard Ontario pump gas with 10% ethanol) starts degrading in 30, 60 days. Fuel that's been sitting in the tank from last October without stabilizer, or with incorrectly applied stabilizer, may be the issue.
+E10 fuel (standard Ontario pump gas with 10% ethanol) starts degrading in 30-60 days. Fuel that's been sitting in the tank from last October without stabilizer, or with incorrectly applied stabilizer, may be the issue.
 
 Stale ethanol-blend fuel can:
 - Develop sour-smelling, lacquer-like oxidation byproducts that gum up injectors and carburettors
@@ -28700,7 +28700,7 @@ After sitting, spark plugs can be fouled (oil or carbon deposits from the last s
 - Confirm the electrode gap matches your motor's spec (in the owner's manual)
 - Replace any that look doubtful
 
-**Flooding:** If you cranked the motor multiple times trying to start it before reading this, the cylinders may be flooded with fuel. Remove the plugs, crank briefly to clear the cylinders, let it sit 15, 20 minutes with plugs out, then reinstall fresh plugs and try again.
+**Flooding:** If you cranked the motor multiple times trying to start it before reading this, the cylinders may be flooded with fuel. Remove the plugs, crank briefly to clear the cylinders, let it sit 15-20 minutes with plugs out, then reinstall fresh plugs and try again.
 
 ---
 
@@ -28750,7 +28750,7 @@ Book at [hbw.wiki/service](https://hbw.wiki/service). Our shop handles a consist
 ## Frequently Asked Questions
 
 **How long can a Mercury sit before fuel becomes a problem?** 
-With E10 pump gas and no stabilizer, 30, 60 days is where degradation begins to cause problems. Over an Ontario winter (5, 6 months), unstabilized fuel is almost certainly degraded. With proper stabilizer applied and circulated through the full system, protection extends significantly, but fuel quality always degrades over time.
+With E10 pump gas and no stabilizer, 30-60 days is where degradation begins to cause problems. Over an Ontario winter (5-6 months), unstabilized fuel is almost certainly degraded. With proper stabilizer applied and circulated through the full system, protection extends significantly, but fuel quality always degrades over time.
 
 **I added stabilizer last fall but didn't run the motor afterward. Did it help?** 
 Partially. If the stabilizer was added to the tank but not circulated through the injectors or carburettor by running the motor, those components may still have seen degraded fuel at the end of the season. Running the motor for 10+ minutes after adding stabilizer is necessary for full protection.
