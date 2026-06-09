@@ -4454,44 +4454,6 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
-## FAQ
-
-**Is a Mercury 75 enough for a 16-foot aluminum boat?**
-For solo or two-person use on sheltered water, yes. For family use with three or more passengers and gear, the 90 is a better fit. The 75 will plane the boat solo but feels underpowered when loaded.
-
-**Should I get the 90 or 115 for my 17-foot fishing boat?**
-For typical fishing use with two anglers and gear, the 90 is plenty. For family use with four or five people, or fishing on bigger water (Lake Simcoe, Lake Ontario), step up to the 115. The price difference is small relative to the all-in repower cost.
-
-**Is the Mercury 115 worth the extra money over the 90?**
-For 17 to 19 ft hulls, family use, or bigger-water boating, yes. The 115 gives meaningful headroom and better hole shot when loaded. For 16 to 18 ft aluminum used for two-person fishing, the 90 is plenty and the savings are better spent on a kicker or electronics.
-
-**What is the most popular Mercury for 16 to 18 ft aluminum console boats?**
-The Mercury 90 EXLPT FourStroke. It is the most-installed mid-range Mercury at HBW because it fits the most common boat and use case. Reliable, fuel-efficient, and well within most boat capacity ratings.
-
-**Can I run a Mercury 115 on a boat rated for 90 HP maximum?**
-No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty if we install a motor above the rated maximum. The Coast Guard plate is set by the manufacturer based on hull testing. Going above is illegal and unsafe.
-
-**What's the fuel economy difference between 75, 90, and 115?**
-At cruise speed, the 75 is most efficient. The 90 is very close. The 115 is slightly less efficient than the 90 but still very good. The differences are small in real terms (often less than 10% between 75 and 115). Loading and prop selection move fuel economy more than HP class within this range.
-
-**Should I get FourStroke or Pro XS in this HP range?**
-For most recreational use, FourStroke is the better value. Pro XS earns its price on tournament hulls and performance applications. The Pro XS price premium is $1,000 to $1,500 CAD over the FourStroke at the same HP.
-
-**What about Mercury Command Thrust on a 90 or 115?**
-Command Thrust is the gearcase option built for heavy boats (pontoons, work boats, heavy fishing rigs). On 16 to 18 ft aluminum console boats, the standard gearcase is fine. On 18+ ft pontoons, Command Thrust is usually the right call. We assess this per boat.
-
-**Can I keep my existing controls and rigging when going from a 75 to a 90 or 115?**
-Mercury-to-Mercury repowers in this HP range usually keep existing controls if they are post-2010 and in good condition. Wiring harness and rigging are usually compatible across the 75/90/115 range. Older or non-Mercury rigging may need replacement.
-
-**What's the typical prop for a Mercury 90 on a 16 to 18 ft aluminum?**
-Aluminum 3-blade in the 13 to 15 inch pitch range, depending on hull weight and intended use. We test props during sea-trial of every repower. The right prop pitch is the one that lets the motor reach rated WOT RPM with typical loading. See our [propeller selection guide](/blog/mercury-propeller-selection-guide).
-
-**How long does a Mercury 90 last with proper maintenance?**
-Modern FourStrokes properly maintained last 1,500 to 2,000+ engine hours. For a typical recreational boater (50 to 150 hours per season), that translates to 10 to 30 years of useful life. Skipped maintenance cuts that in half easily. See our [Mercury maintenance guide](/blog/mercury-motor-maintenance-seasonal-tips) for the seasonal cycle.
-
-**What's the all-in cost of a Mercury 90 repower in Ontario?**
-For a typical 16 to 18 ft aluminum console with rigging, prop, and install, $17,000 to $22,000 CAD before HST at HBW. The 75 is about $1,000 to $2,000 less, the 115 about $1,500 to $2,500 more. [Live pricing here.](/quote/motor-selection)
-
 ---
 
 **By Jay Harris**
