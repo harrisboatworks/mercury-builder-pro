@@ -4427,7 +4427,7 @@ For typical Ontario use on 16 to 18 ft aluminum console boats:
 
 | Factor | 75 EXLPT FourStroke | 90 EXLPT FourStroke | 115 EXLPT FourStroke |
 |---|---|---|---|
-| Engine type | Inline 4-cyl, 1.7L | Inline 4-cyl, 2.1L | Inline 4-cyl, 2.1L |
+| Engine type | Inline 4-cyl, 2.1L | Inline 4-cyl, 2.1L | Inline 4-cyl, 2.1L |
 | Weight (XL shaft) | ~163 kg / 359 lb | ~163 kg / 359 lb | ~163 kg / 359 lb |
 | Top speed (16 ft aluminum) | ~30 to 35 mph | ~35 to 40 mph | ~40 to 45 mph |
 | Top speed (18 ft aluminum) | ~25 to 30 mph | ~30 to 35 mph | ~35 to 40 mph |
