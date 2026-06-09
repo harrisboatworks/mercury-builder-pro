@@ -17,13 +17,13 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check
+# Mercury Outboard Beep & Alarm Codes: What Each Means
 
-> Mercury outboard beeping? What common beep patterns mean (overheat, oil, fuel), why continuous alarms matter, and what to send when booking HBW service.
+> Continuous beep, 4 beeps every 2 minutes, or a key-on alarm on your Mercury outboard: what each pattern means, what to check first, and when to stop the motor.
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-27  
+**Last updated:** 2026-06-09  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 
