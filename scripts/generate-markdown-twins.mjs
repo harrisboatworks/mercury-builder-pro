@@ -636,22 +636,22 @@ function blogMarkdown(article) {
   const faqMd = faqs.length
     ? faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n')
     : '_(no FAQs)_';
+  const cleanedContent = cleanBlogContent(article.content, faqs.length > 0);
+  const lastUpdated = article.dateModified || article.datePublished || TWIN_DATE;
 
   return [
-    mdFrontmatter(`/blog/${article.slug}.md`, extra),
+    mdFrontmatter(`/blog/${article.slug}.md`, extra, lastUpdated),
     `# ${article.title}`,
     '',
     `> ${article.description}`,
     '',
     `**Category:** ${article.category || 'Guide'}  `,
     `**Published:** ${article.datePublished}  `,
-    `**Last updated:** ${article.dateModified}  `,
+    `**Last updated:** ${lastUpdated}  `,
     `**Read time:** ${article.readTime || ''}  `,
     `**Canonical (HTML for humans):** ${url}`,
     '',
-    '## Article',
-    '',
-    (article.content || '').trim(),
+    cleanedContent,
     '',
     '## FAQs',
     '',
