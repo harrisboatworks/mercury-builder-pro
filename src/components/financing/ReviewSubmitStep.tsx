@@ -80,6 +80,9 @@ export function ReviewSubmitStep() {
       // Get current user
       const { data: { user } } = await supabase.auth.getUser();
       const userId = user?.id ?? null;
+      outerUserId = userId;
+
+
 
       // Encrypt SINs first so we can surface specific errors before the DB upsert
       let applicantSinEncrypted: string;
