@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist
-
-## Article
 
 ## Quick Answer
 
@@ -218,30 +216,7 @@ Two related guides in the same cluster:
 
 ---
 
-## FAQs
-
-**How long does spring commissioning take at a shop?**
-Most straightforward Mercury FourStroke commissioning jobs are a 2–4 hour shop visit. If we find issues, impeller replacement, fuel system work, battery swap, add time. Books faster if you've brought us the full service history.
-
-**Can I do spring commissioning myself?**
-Most of this checklist is accessible to a competent DIY boater with basic tools. The exceptions are anything involving computer diagnostics on SmartCraft systems, and seal work if the gearcase shows contamination.
-
-**What if I skipped fall winterization?**
-It depends on your winter. If the motor was stored indoors and Ontario had a mild winter, you may be fine. If it was outdoors in a hard freeze without fogging or water purging, you need a diagnostic before you run it. Come in and let us look at it.
-
-**How much does spring commissioning cost at HBW?**
-Current pricing is at [hbw.wiki/service](https://hbw.wiki/service). Rates are based on engine type and the scope of work. There's no flat number because the job varies.
-
-**Should I replace the impeller every spring?**
-Mercury recommends every 200 hours or 3 years. If you don't know the last replacement date, replace it. The impeller is a small part. An overheated motor is a much larger problem.
-
-**You mentioned ethanol-free fuel, where can I get it near Rice Lake?**
-We sell ethanol-free marine gas on-site at Harris Boat Works in Gores Landing. It's at the pump when you launch.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury 9.9 ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
 - [Outdoor Boat Storage and Shrinkwrap Guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
 - [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide)

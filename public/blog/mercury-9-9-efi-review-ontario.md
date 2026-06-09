@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-10  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
-
-## Article
 
 ### Quick Answer
 
@@ -161,29 +159,7 @@ The 5-amp alternator option is the one upgrade we always recommend -- charges th
 - [Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)](/blog/mercury-75-hp-fourstroke-review-ontario): An honest answer from an Ontario Mercury dealer. We don't sell the 75 HP FourStroke. Here's why, what it.
 - [Best Outboard Motors for Ontario's Small Lakes and Cottage Country](/blog/best-motor-small-lakes-ontario): Find the perfect motor for small lake boating. Recommendations for horsepower-restricted waters and cottage.
 
-## FAQs
-
-**Does the Mercury 9.9 MH EFI require a battery?** 
-No. The manual-start version is designed to operate without a cranking battery. Pulling the starter rope charges the electrical system enough to run the EFI. This is one of the motor's most practical features for small-boat and tender applications.
-
-**Will the 9.9 MH EFI get my 14-foot aluminum on plane?** 
-It depends on the boat's total weight. A basic 14-foot aluminum with one person and minimal gear, yes. A heavily loaded 1448-style boat with added decking, batteries, gear, and multiple passengers, not reliably. Check your boat's capacity plate and be honest about your typical load.
-
-**Is the 9.9 MH EFI the right kicker for walleye trolling?** 
-For trolling on a larger boat, the Mercury 9.9 EFI ProKicker (Command Thrust gearcase, high-thrust prop) is the more purpose-built option. The standard MH EFI works as a kicker but is optimized for small-boat primary power, not slow-speed trolling on a big rig.
-
-**What is the shaft length?** 
-15 inches, short shaft. Measure your transom height before buying. If your transom is 20" or taller, you need a long-shaft version.
-
-**Does HBW service the 9.9 EFI?** 
-Yes. For engine repairs, we only service Mercury and Mercruiser. All HBW technicians are Mercury-certified.
-
-**Can I use regular pump gas?** 
-The motor recommends 87 octane with up to 10% ethanol. Ethanol-free fuel will run cleaner over storage, HBW sells ethanol-free 89-octane marine gas at the dock in Gores Landing.
-
----
-
-## Internal Links
+## Related reading
 - Mercury SmartCraft Connect Guide Ontario
 - Mercury Controls & Rigging Guide Ontario
 - Walleye Opener Boat Prep Checklist
@@ -192,8 +168,6 @@ The motor recommends 87 octane with up to 10% ethanol. Ethanol-free fuel will ru
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
-
-## CTA
 
 **See the current price on the Mercury 9.9 MH EFI.** 
 [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration. 

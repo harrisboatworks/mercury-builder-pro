@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-10  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario
-
-## Article
 
 ### Quick Answer
 
@@ -145,28 +143,6 @@ If you buy from us, we're also the ones servicing it. For engine repairs, we onl
 - [Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)](/blog/mercury-75-hp-fourstroke-review-ontario): An honest answer from an Ontario Mercury dealer. We don't sell the 75 HP FourStroke. Here's why, what it.
 - [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
 - [Mercury Avator 7.5e: Review, Price CAD, and Range (2026)](/blog/mercury-avator-7-5e-review): Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on.
-
-## Frequently Asked Questions
-
-**Is the 90 HP good for a 22 ft pontoon?** 
-Yes, with the Command Thrust gearcase. Standard gearcase on a 22 ft pontoon is undersized for typical cottage loads. If the pontoon is a tritoon or you're carrying six people regularly, consider the 115 CT.
-
-**Is the 90 HP FourStroke a Pro XS?** 
-No. The Pro XS is a different tuning, higher RPM ceiling, sport gearcase, more aggressive hole-shot. The standard 90 ELPT FourStroke is tuned for smooth cruising and fuel economy.
-
-**Does shaft length matter?** 
-Yes, it's not optional. A short shaft on a 20" transom puts the prop too shallow to cool the motor properly. We measure every transom that comes through the shop.
-
-**How much does the 90 HP save on fuel vs. an old two-stroke?** 
-Typically 20, 30% less fuel for the same day on the water. The exact number depends on the old motor's condition and how you use the boat.
-
-**Is the 90 CT the same motor as the 90 standard?** 
-Same powerhead. Different gearcase. Different SKU, different price, different prop size, and often a different recommendation depending on your hull.
-
-**Can I order a 75 if my capacity plate requires it?** 
-Yes. We'll order whatever the plate allows and not try to talk you into something you can't legally put on your boat.
-
----
 
 ## Build a Quote
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-oakville-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-oakville-ontario-hbw
-
-## Article
 
 **Quick Answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Oakville via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
@@ -117,25 +115,6 @@ This is the trip that most rewards preparation:
 - [Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-richmond-hill-ontario-hbw): Looking for a Mercury dealer near Richmond Hill? Harris Boat Works on Rice Lake - about 75 minutes north -.
 - [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Platinum dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
 - [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
-
-## Frequently Asked Questions, Oakville
-
-**Is it really worth driving 110 minutes for a motor?**
-For a standard over-the-counter motor purchase, probably not, do more of that work by phone and online first. For a complex repower or a purchase where the rigging conversation matters, some Oakville customers say the trip is worth it specifically because they left with answers, not more questions.
-
-**Can I see real pricing before driving up?**
-Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing, no login, no callback.
-
-**Do you service non-Mercury motors?**
-No. For engine repairs, we only service Mercury and Mercruiser. Yamaha, Honda, and Suzuki are outside our scope.
-
-**My boat is on Lake Ontario. Can you handle repowers for bigger lake boats?**
-Yes. Larger HP motors, twin-engine setups, more complex rigging, these are jobs we take on. The conversation gets more detailed, but that's appropriate given what's involved.
-
-**What if I want to talk through the decision before committing to the drive?**
-Call us at 905-342-2153 or text. We can have a real conversation about whether the trip makes sense for your situation. If it doesn't, we'll tell you.
-
----
 
 ## The HBW Promise
 

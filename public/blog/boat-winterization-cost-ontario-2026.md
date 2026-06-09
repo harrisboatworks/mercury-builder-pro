@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
-
-## Article
 
 # How Much Does Boat Winterization Cost in Ontario? (2026)
 
@@ -202,8 +200,6 @@ We would rather you call us in September than call us in May about a cracked blo
 Request winterization, shrinkwrap, storage, or the full package at [hbw.wiki/service](https://hbw.wiki/service). We start scheduling in late September. Booking early gets you the better slot.
 
 Or call 905-342-2153.
-
-*Last reviewed: 2026-05-11.*
 
 For broader context on storage options across the Kawarthas, see our [Kawartha Lakes boat storage guide](/blog/boat-storage-kawartha-lakes).
 

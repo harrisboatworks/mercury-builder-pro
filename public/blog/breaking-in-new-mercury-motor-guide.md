@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-27  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
-
-## Article
-
-_Last updated: May 27, 2026_
 
 ---
 
@@ -181,34 +177,6 @@ Two related guides in the same cluster:
 - [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
 
 ---
-
-## FAQ
-
-**How long is the Mercury break-in period?**
-Roughly 10 hours of graduated operation. Followed by a 20-hour oil and filter change on FourStrokes. Specific procedures vary by motor, check the owner's manual.
-
-**Can I run my new Mercury at full throttle during break-in?**
-Brief bursts after the first hour or two are acceptable. Sustained wide-open throttle in the first 10 hours is not recommended. Vary throttle throughout.
-
-**Why does Mercury require a 20-hour oil change?**
-Break-in produces metal particles as engine components seat. Those particles end up in the oil. The 20-hour change flushes them before they can cause wear. Skipping it is a false economy.
-
-**Can I tube or ski behind a new Mercury during break-in?**
-Light water sports are okay after the first hour. Sustained heavy load, multiple skiers, full crew tubing, should wait until break-in is complete.
-
-**Will my new Mercury feel different after break-in?**
-Yes, slightly. Properly broken-in motors typically run smoother, reach full power, and achieve their fuel economy potential. The differences are real but subtle.
-
-**Does improper break-in affect the Mercury warranty?**
-Yes. Damage from not following the break-in protocol may not be covered. We document break-in compliance at HBW deliveries specifically for this reason.
-
-**Should I use a special break-in oil or fuel?**
-For modern Mercury FourStrokes, no. Use Mercury-approved four-stroke oil from day one. For 2-strokes, Mercury TC-W3 oil per manufacturer spec. No special break-in formulations needed.
-
-**Can I tow my new Mercury home from HBW and break it in on my own lake?**
-Yes. Many customers do this. Start at idle and no-wake speed, then graduate over the first hour. The break-in protocol works on any lake.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

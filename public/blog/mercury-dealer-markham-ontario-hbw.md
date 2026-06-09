@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw
-
-## Article
 
 **Quick Answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 70 minutes north of Markham via Highway 404 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is available in minutes at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
@@ -126,28 +124,6 @@ Markham has one of the largest Chinese-Canadian communities in the country, and 
 - [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
 - [Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-oakville-ontario-hbw): Mercury Platinum dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
 - [Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-richmond-hill-ontario-hbw): Looking for a Mercury dealer near Richmond Hill? Harris Boat Works on Rice Lake - about 75 minutes north -.
-
-## Frequently Asked Questions, Markham
-
-**Do you need to make an appointment to come in?**
-For service and repowers, yes, submit a request at [hbw.wiki/service](https://hbw.wiki/service) before showing up. For a motor purchase conversation, call ahead so we know you're coming and we can give you the full attention the trip deserves.
-
-**Can I get a price without calling?**
-Yes. That's the whole point of the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). Real installed pricing, no phone call required.
-
-**Do you service non-Mercury motors?**
-No. For engine repairs, we only service Mercury and Mercruiser. If you have a Yamaha, Honda, or Suzuki motor, we're not your shop for service, but if you're considering a repower to Mercury, that's a conversation we can have.
-
-**What's included in a repower?**
-The full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, and sea trial. Not just the motor dropped on the transom.
-
-**Do you have winter storage for boats coming from Markham?**
-Yes. Outdoor storage with shrinkwrap. No indoor. Some Markham customers store with us and make one trip in fall and one in spring.
-
-**What if I'm not sure whether to repower or buy new?**
-That's a real conversation. Build a quote for the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca), then call us. We'll tell you honestly if repowering makes sense for your hull and what you'd spend on a comparable new setup.
-
----
 
 ## The HBW Promise
 

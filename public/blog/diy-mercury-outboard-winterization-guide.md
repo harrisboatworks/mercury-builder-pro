@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
-
-## Article
-
-**Language:** English 
 
 ---
 
@@ -252,30 +248,7 @@ Two related guides in the same cluster:
 
 ---
 
-## Frequently Asked Questions
-
-**Can I winterize a Mercury FourStroke the same way as an older 2-stroke?** 
-The core steps are the same, but the procedure for fogging and fuel stabilization differs. FourStrokes have fuel injection systems rather than carburettors, and the fogging process is different. Always follow the procedure in your model's Mercury operator's manual, not a generic guide.
-
-**Do I need to change the spark plugs as part of winterization?** 
-It's a good time to inspect them, but it's not required at every winterization. If the plugs are at or near their service interval, change them in fall so the motor starts fresh in spring. Mercury's service schedule has plug replacement intervals, check your manual.
-
-**What if I pull the boat out of the water in November but can't get to it until December?** 
-The deadline is before it freezes hard enough to crack the block. In Ontario, that usually means before sustained temperatures below -5°C to -10°C. Don't cut it close, once it's frozen, the damage is done.
-
-**Is it okay to run the motor without water to fog it?** 
-No. Dry-cranking an outboard even briefly can damage the water pump impeller. Always have the cooling system supplied with water when running the motor, including during fogging.
-
-**Should I drain the fuel tank completely for winter?** 
-Not recommended for modern FourStrokes. Leaving stabilized fuel in the system is better than an empty system, which allows seals and gaskets to dry out. The stabilizer should be run through the full fuel system. Ask your dealer if you're unsure about your specific motor.
-
-**My gear lube came out milky. Is that a big problem?** 
-Yes. Milky gear lube means water in the gearcase, which means a seal is leaking. Fresh gear lube will go milky again by spring if the seal isn't addressed. This is worth having looked at before or during winterization.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
 - [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
@@ -285,8 +258,6 @@ Yes. Milky gear lube means water in the gearcase, which means a seal is leaking.
 ## Reviewed by
 
 Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
-
-## CTA
 
 **Want it done right without the Saturday morning?** 
 Request professional winterization at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.

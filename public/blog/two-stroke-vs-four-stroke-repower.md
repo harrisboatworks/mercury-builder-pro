@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower.md
-last_updated: 2026-06-08
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-24  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower
-
-## Article
-
-*Last reviewed: 2026-05-24*
 
 > **Quick answer:** Mercury no longer builds recreational 2-stroke outboards, so a 2-stroke repower today means a modern Mercury FourStroke. You gain quieter running, a cleaner idle, and 25 to 40 percent better fuel economy at cruise. You also add 15 to 25 kg, so transom, trim, and rigging need a look. Expect $11,000 to $24,000 CAD installed for a typical repower. Build a quote at mercuryrepower.ca.
 
@@ -121,26 +117,6 @@ The happiest repower customers walked in expecting the trade, not just the upgra
 - [Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)](/blog/honda-to-mercury-repower-ontario-guide): Honda to Mercury repower from an Ontario Mercury Platinum dealer. Honest framework on when the swap is worth.
 - [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take.
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad): All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and.
-
-## Frequently Asked Questions
-
-**Can I still buy a new 2-stroke Mercury outboard?**
-Not in the recreational market. Mercury has shifted entirely to FourStroke and electric for new outboards. A repower replaces your old 2-stroke with a modern FourStroke.
-
-**Is a FourStroke heavier than the 2-stroke it replaces?**
-Yes. A 90 HP FourStroke weighs roughly 163 kg, about 359 lb, against about 140 to 145 kg for an older 90 HP 2-stroke. That 15 to 25 kg matters for transom strength and how the boat trims.
-
-**Will my boat still perform well with a FourStroke?**
-Almost always, yes. FourStrokes bring more low-end torque, cleaner planing, and far better fuel economy. On most hulls top speed lands within 1 to 2 mph of the old 2-stroke, and cruise is meaningfully more efficient.
-
-**Do I need new rigging when I repower from 2-stroke to 4-stroke?**
-Usually yes. Old mechanical controls and cables rarely match a modern motor. Plan for new controls, possibly digital, plus a fresh fuel line and wiring. Add $500 to $1,500 CAD for rigging.
-
-**Does Harris Boat Works take my old 2-stroke as trade-in?**
-We take Mercury 2-stroke trade-ins and look at other brands case by case for resale or wholesale. Fill out the trade-in form and we will email a CAD figure inside one business day.
-
-**How much does a 2-stroke to 4-stroke repower cost?**
-Installed at Harris Boat Works, a full repower runs $11,000 to $24,000 CAD for most jobs, depending on horsepower. That covers the motor, rigging, controls, propeller, fuel-system inspection, old-motor removal, and a water test on Rice Lake before pickup at Gores Landing.
 
 ## Ready to plan your 2-stroke repower?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-ajax-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-ajax-ontario-hbw
-
-## Article
 
 **Quick Answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 45 minutes northeast of Ajax via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
@@ -113,25 +111,6 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 - [Mercury Dealer for Oshawa: 40 Minutes to Rice Lake](/blog/mercury-dealer-oshawa-ontario-hbw): Mercury Platinum dealer for Oshawa customers - Harris Boat Works on Rice Lake is about 40 minutes via the 401.
 - [Mercury Dealer for Pickering: 50 Minutes from Rice Lake](/blog/mercury-dealer-pickering-ontario-hbw): Mercury Platinum dealer for Pickering customers - Harris Boat Works on Rice Lake is about 50 minutes.
 - [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw): Mercury Platinum dealer for Whitby customers - Harris Boat Works on Rice Lake is about 45 minutes north via.
-
-## Frequently Asked Questions, Ajax
-
-**Can I use you as a regular service dealer, not just for purchases?**
-Yes. Ajax is close enough that commissioning, seasonal service, and winterization all work. A lot of our Durham Region regulars have made this their annual routine.
-
-**Can I see pricing without calling?**
-Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. No process to go through.
-
-**Do you service non-Mercury motors?**
-No. For engine repairs, we only service Mercury and Mercruiser. We can't help with Yamaha, Honda, or Suzuki service.
-
-**I have a service issue right now, what do I do?**
-Submit a request at [hbw.wiki/service](https://hbw.wiki/service). That's how 90% of our service intake works. Faster than calling, and it means the right person sees the details right away.
-
-**What if I'm not sure whether to repower or buy new?**
-Build a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and call us: 905-342-2153. We'll talk through the decision honestly, including cases where repowering doesn't make sense.
-
----
 
 ## The HBW Promise
 

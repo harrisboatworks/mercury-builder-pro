@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-06-08
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -58,13 +58,13 @@ See any motor twin for an example body.
 
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
 - [6MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke.md)
-- [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
 - [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
 - [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
+- [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
 - [15 MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke.md)
 - [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke.md)
-- [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
 - [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
+- [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
 - [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
 - [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
 - [40 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-command-thrust-fourstroke.md)
@@ -72,15 +72,15 @@ See any motor twin for an example body.
 - [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke.md)
 - [90 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke.md)
+- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
 - [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
 - [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
-- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
-- [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
 - [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs.md)
+- [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
 - [200 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs-dts.md)
 - [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs.md)
-- [250 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs-dts.md)
 - [250 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs.md)
+- [250 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs-dts.md)
 
 ## Case studies
 
@@ -145,7 +145,7 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Best Mercury for a Pontoon: 90 to 150 HP CT (2026)](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md)
 - [Mercury Command Thrust on a Pontoon: Worth the Money?](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats.md)
 - [Best Pontoon Boats for Rice Lake Cottage Use (2026)](https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md)
-- [90 HP Mercury Motor vs 75 and 115 HP: Which One We'd Pick (2026)](https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md)
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md)
 - [Ontario Cottage Boat Motor Repower Guide (2026)](https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide.md)
 - [Best Mercury Outboard for Rice Lake Fishing: A Local's Complete Guide (2026)](https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md)
 - [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md)
@@ -260,7 +260,7 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake](https://www.mercuryrepower.ca/blog/mercury-dealer-ajax-ontario-hbw.md)
 - [Mercury Dealer for Oshawa: 40 Minutes to Rice Lake](https://www.mercuryrepower.ca/blog/mercury-dealer-oshawa-ontario-hbw.md)
 - [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw.md)
-- [Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check](https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide.md)
+- [Mercury Outboard Beep & Alarm Codes: What Each Means](https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide.md)
 - [Mercury Outboard Won't Start After Sitting? Here's the Ontario Boater's Checklist](https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting.md)
 - [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario.md)
 - [Boat Insurance in Ontario: What You Actually Need (2026)](https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026.md)

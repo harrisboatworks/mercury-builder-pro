@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-10  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
-
-## Article
 
 ### Quick Answer
 
@@ -170,28 +168,6 @@ If you buy from us, we service it. For engine repairs, we only work on Mercury a
 - [Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup](/blog/mercury-90-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's.
 - [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
 - [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
-
-## Frequently Asked Questions
-
-**Is the 115 FourStroke really the lightest 115 HP available?** 
-Yes, at 359 lbs, it's lighter than equivalent outboards in the same horsepower class. The older Mercury 115 OptiMax it commonly replaces weighed around 425 lbs.
-
-**Is the 115 FourStroke the same motor as the 90?** 
-Same 2.1L block. Different tuning, different RPM ceiling. No weight difference. The step from 90 to 115 is software and tuning, not a different motor.
-
-**Is the 150 comparable to the 115?** 
-No. Different family, different block, different cylinder architecture, different weight class (~100 lbs heavier), different price point. Don't compare them as if they're close relatives.
-
-**When does the 115 CT make sense over the 90 CT?** 
-When the pontoon is 20, 24 ft, when you regularly carry 5, 6 people, when it's a tritoon, or when you tow tubes. If the pontoon is 18, 20 ft and loads are light, the 90 CT is fine.
-
-**What fuel savings can I expect repowering from an old two-stroke?** 
-Typically 25, 35% less fuel for the same day on the water. The exact number depends on the old motor's condition and how hard you used it.
-
-**Does the 115 Pro XS come in Command Thrust?** 
-No, the Pro XS uses a sport gearcase designed for performance applications, not the CT gearcase. If you're shopping between Pro XS and standard FourStroke, use the quote builder to compare both.
-
----
 
 ## Build a Quote
 

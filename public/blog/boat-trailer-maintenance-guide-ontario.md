@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-14
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-14  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario
-
-## Article
 
 ## Quick Answer
 
@@ -176,8 +174,6 @@ Trailer frames are weldable. Bunks, rollers, lights, and brakes are all replacea
 A new mid-size aluminum trailer for a 16-18 ft boat runs $3,000-$5,000 CAD in Ontario. A full refurbishment (bunks, bearings, brakes, lights, tires) on a sound frame is usually $800-$1,500. Math the lifespan honestly.
 
 ---
-
-*Last reviewed: 2026-05-13*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.

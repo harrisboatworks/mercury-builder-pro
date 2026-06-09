@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting
-
-## Article
-
-*Last reviewed: 2026-05-28*
 
 > **Quick answer:** Most Mercury no-start calls in Ontario come down to one of three families: battery and power (weak battery, switch off, bad ground), fuel system (stale or phase-separated gas, clogged 10-micron filter, VST issues), or ignition (fouled plugs after winter storage). Before calling, check the kill switch is fully snapped on, the shifter is truly in neutral, and the battery switch is in the right position. If those three are clean and the motor still cranks but won't fire, you're into fuel or ignition. Call HBW at 905-342-2153.
 

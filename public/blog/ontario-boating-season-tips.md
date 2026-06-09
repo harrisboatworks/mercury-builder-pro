@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-boating-season-tips.md
-last_updated: 2026-06-08
+last_updated: 2026-04-22
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-04-22  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-boating-season-tips
-
-## Article
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Ontario's hard boating season runs May to October, five months. The boaters who get the most out of it commission early, winterize on time, and keep the motor on a Mercury maintenance schedule. Don't waste opening weekend on a no-start. Schedule spring and fall service at mercuryrepower.ca.
 

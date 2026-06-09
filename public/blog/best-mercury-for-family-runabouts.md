@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts.md
-last_updated: 2026-06-08
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-07  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
-
-## Article
 
 **Canonical URL:** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
 
@@ -179,37 +177,12 @@ Two related guides in the same cluster:
 
 ---
 
-## FAQs
-
-**What's the best Mercury for a 17-foot runabout?** 
-For most 17-foot hulls, the Mercury 115 HP FourStroke. It handles full crew and gear comfortably, planes easily, and is efficient at cruise. The 90 HP works on lighter hulls with lighter loading.
-
-**Can I tow a wakeboarder with a Mercury 115?** 
-Light tubing and one or two beginner skiers, yes. Consistent wakeboarding with a full crew requires the 150 HP or higher. The 115 is marginal for active water sports with heavy loading.
-
-**Should I get FourStroke or Pro XS for a family boat?** 
-FourStroke, for almost every family application. Quieter, better fuel economy at cruise, and smoother in the mid-range where family boating actually happens. Pro XS is for performance and tournament applications.
-
-**What's the capacity plate and why does it matter?** 
-The capacity plate is a Coast Guard-mandated rating on your boat that specifies the maximum HP, maximum persons, and maximum weight. Going above the HP rating creates compliance, insurance, and warranty problems. We won't quote a motor above your capacity plate.
-
-**Is it worth repowering vs. buying a new boat?** 
-For most solid hulls, yes. A repower costs a fraction of a comparable new boat and puts new Mercury performance on a hull you already know. See our [hull replacement vs. repower guide](/blog/boat-hull-replacement-vs-repower-decision) for the full breakdown.
-
-**What does "all-in" pricing mean?** 
-Motor, rigging (controls, harness, gauges), prop, and installation. We quote all-in because that's the only number that matters when you're budgeting. Motor-only prices are interesting trivia.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
 
 ---
-
-## CTA
 
 Ready to find the right Mercury for your family runabout? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, real CAD pricing, no phone tag, no "call for price."
 

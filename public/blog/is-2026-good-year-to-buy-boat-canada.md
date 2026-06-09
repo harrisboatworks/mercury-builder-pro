@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada.md
-last_updated: 2026-06-08
+last_updated: 2026-04-28
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-04-28  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada
-
-## Article
 
 ### Quick Answer
 
@@ -161,32 +159,11 @@ The fourth most common: corroded battery terminals from a boat that sat outside 
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament.
 - [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
 
-## FAQs
-
-**Is 2026 a good year to buy a boat in Canada?** 
-It is a functional but not exceptional year. Inventory is normalized. Prices are higher than 2019 and are unlikely to drop meaningfully. For ready buyers with clear goals and financing in place, 2026 offers reasonable selection. For those hoping for a price correction, limited evidence one is coming.
-
-**Are boat prices going down in Canada in 2026?** 
-Prices are largely holding or seeing minor softening at the new-end compared to the 2021, 2022 peak. They have not returned to pre-pandemic levels.
-
-**Is it better to buy a new boat or repower in 2026?** 
-For many Ontario boaters with a sound hull, repowering is better value. A Mercury repower delivers upgraded technology, warranty coverage, and improved fuel economy at a fraction of a new-boat cost. Use [mercuryrepower.ca](https://www.mercuryrepower.ca) to compare.
-
-**What is the best time of year to buy a boat in Canada?** 
-Fall (September, November) for new boats, dealers are clearing model-year inventory. Winter boat shows (January, February) for promotional financing programs. Spring offers the widest selection but also peak demand and less dealer motivation to negotiate.
-
-**Should I buy or rent in 2026?** 
-At 10 to 15 days of use per year, the math generally favors renting. At 30+ days of use per year, ownership starts to make sense. A season of renting before purchasing typically leads to a better buying decision.
-
----
-
-## Internal Links
+## Related reading
 - Mercury Repower Cost Ontario (CAD)
 - Best Mercury Outboard for Aluminum Fishing Boats
 - Mercury Outboard Financing Ontario
 - Boat Rentals on Rice Lake
-
-## CTA
 
 **See real prices. No games.** 
 Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required. 

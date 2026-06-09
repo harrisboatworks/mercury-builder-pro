@@ -186,11 +186,11 @@ function detectMotorFamily(m) {
   return 'FourStroke';
 }
 
-function mdFrontmatter(canonicalPath, extraLines = []) {
+function mdFrontmatter(canonicalPath, extraLines = [], lastUpdated = TWIN_DATE) {
   return [
     '---',
     `canonical: ${SITE_URL}${canonicalPath}`,
-    `last_updated: ${TWIN_DATE}`,
+    `last_updated: ${lastUpdated}`,
     'currency: CAD',
     'pickup_only: true',
     'delivery_offered: false',
@@ -201,6 +201,25 @@ function mdFrontmatter(canonicalPath, extraLines = []) {
     '---',
     '',
   ].join('\n');
+}
+
+// Strip authoring scaffold (standalone date lines, Language line) and any
+// legacy inline FAQ section when the article has a faqs[] array. Mirrors
+// the runtime renderer in src/pages/BlogArticle.tsx so .md twins match
+// what readers see.
+function cleanBlogContent(content, hasFaqs) {
+  let c = String(content || '');
+  c = c.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
+  c = c.replace(/^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim, '');
+  c = c.replace(/^##\s+CTA\s*$/gim, '');
+  c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
+  if (hasFaqs) {
+    c = c.replace(
+      /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
+      '\n',
+    );
+  }
+  return c.replace(/\n{3,}/g, '\n\n').trim();
 }
 
 function motorBestFit(family, hp) {
@@ -617,22 +636,22 @@ function blogMarkdown(article) {
   const faqMd = faqs.length
     ? faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n')
     : '_(no FAQs)_';
+  const cleanedContent = cleanBlogContent(article.content, faqs.length > 0);
+  const lastUpdated = article.dateModified || article.datePublished || TWIN_DATE;
 
   return [
-    mdFrontmatter(`/blog/${article.slug}.md`, extra),
+    mdFrontmatter(`/blog/${article.slug}.md`, extra, lastUpdated),
     `# ${article.title}`,
     '',
     `> ${article.description}`,
     '',
     `**Category:** ${article.category || 'Guide'}  `,
     `**Published:** ${article.datePublished}  `,
-    `**Last updated:** ${article.dateModified}  `,
+    `**Last updated:** ${lastUpdated}  `,
     `**Read time:** ${article.readTime || ''}  `,
     `**Canonical (HTML for humans):** ${url}`,
     '',
-    '## Article',
-    '',
-    (article.content || '').trim(),
+    cleanedContent,
     '',
     '## FAQs',
     '',
@@ -996,7 +1015,7 @@ verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD'
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
-if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Article', '## FAQs', '## Next steps']);
+if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## FAQs', '## Next steps']);
 
 
 if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0 || blogTwinSummaries.length === 0) {

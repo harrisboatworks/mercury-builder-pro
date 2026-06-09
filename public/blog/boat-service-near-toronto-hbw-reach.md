@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach.md
-last_updated: 2026-06-08
+last_updated: 2026-02-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach
 
-## Article
-
 # Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** HBW serves boats from across Ontario. GTA, Kawarthas, Northumberland, and beyond, because there aren't many dealers with our service depth and parts inventory. Most customers drop off in Gores Landing, but we'll talk through any service question first. Book at mercuryrepower.ca.
 
@@ -202,45 +198,6 @@ For boats that **store with us through winter**, this collapses entirely. Octobe
 - [Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario): Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how.
 - [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process): Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service.
 - [Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)](/blog/winter-storage-near-toronto-hbw): An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake, pricing, what's included.
-
-## Frequently Asked Questions
-
-**How long does a Mercury annual service take at HBW?**
-1-3 days at the shop is typical. Drop off → service → pickup. We'll text/email when ready.
-
-**Will my Mercury warranty be honored if I get service at HBW even though I bought it elsewhere?**
-Yes. Mercury's Canadian warranty network is dealer-network-wide. Bring purchase paperwork and any prior service records. We process Mercury claims through their central system regardless of where you bought.
-
-**Do you do mobile / on-site service in the GTA?**
-No. All work happens at our shop in Gores Landing. We don't run service trucks to GTA addresses.
-
-**What's a fair price for a Mercury 150 HP annual service in the GTA?**
-$500-$700 all-in (parts + labour + diagnostic) is typical at a Mercury Platinum dealer. We quote at the lower end of this range. Some shops charge more, some less; the value diff is in the diagnostic depth and tech training.
-
-**Can I bring a non-Mercury (Yamaha, Honda) for service?**
-No. We're a Mercury-only dealer. We refer non-Mercury work to brand-appropriate dealers. Same logic: Yamaha customers should use Yamaha-trained shops.
-
-**Do you offer pickup/delivery or transport for GTA boats needing service?**
-We don't operate transport. We can refer you to commercial boat transport services that work the GTA-Kawartha route ($300-$600 each way for typical 18-22 ft boats).
-
-**What if I need emergency service mid-summer?**
-Phone us. We'll prioritize active failures over routine work when we can. Mid-summer peak schedule means a 1-2 week wait is common, but a true on-water emergency (won't start, overheating preventing use) usually moves to the front of the queue.
-
-**Can I drop off a boat for "annual service plus winter storage" in one trip?**
-Yes, that's a common combo. October drop-off, complete annual service + winterize + shrinkwrap + store, May pickup with spring commissioning included. Single trip in fall, single trip in spring.
-
----
-
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Phone:** 905-342-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [Why drive from Toronto to HBW?](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [GTA Repower walkthrough](/blog/mercury-repower-gta-toronto-destination)
-- [Winter Storage near Toronto](/blog/winter-storage-near-toronto-hbw)
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

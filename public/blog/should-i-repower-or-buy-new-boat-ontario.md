@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 9 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario
-
-## Article
 
 ### Quick Answer
 
@@ -187,30 +185,6 @@ Two related guides in the same cluster:
 - [Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower)
 
 ---
-
-## Frequently Asked Questions
-
-**How much does a typical repower cost in Ontario?** 
-A 75, 115 HP repower all-in typically costs $17,000, $22,000 CAD before HST, before trade-in credit. A 150 HP repower typically runs $23,000, $30,000. These figures cover motor, rigging, controls, prop, and installation.
-
-**How do I know if my hull is worth repowering?** 
-Check for soft spots in the transom and floor, tap-test the hull, and look for stress cracks in the gel coat or aluminum. If the hull passes that check, and the boat still fits how you use it, a repower is likely worth it. When in doubt, bring the boat in, we'll look at it and tell you honestly.
-
-**Will a new motor add value if I sell the boat?** 
-Typically 50, 70% of the motor cost comes back in resale value, not 100%. If you're planning to sell soon, crunch that number before committing to a repower.
-
-**Does HBW buy or take trade-ins?** 
-Yes, on both whole boats and motors. Trade-in value on a working older motor typically runs $1,000, $3,000 depending on age, hours, and condition.
-
-**What if my hull has a soft transom?** 
-A soft transom means the hull needs structural repair before any motor goes on it, or it's time for a new boat. We won't recommend mounting a new motor on a compromised transom.
-
-**How long does a repower take?** 
-Depends on motor availability and shop schedule. A well-planned repower with a motor in stock can often be completed in a week or two. Plan ahead, Ontario's season is short.
-
----
-
-> Related guide: [Repair, repower, or sell: the 3-way decision](/blog/repair-repower-or-sell-boat-ontario-decision-guide).
 
 ## Ready to Price It Out?
 

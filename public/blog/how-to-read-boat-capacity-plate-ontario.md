@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-16  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario
-
-## Article
 
 # How to Read Your Boat's Capacity Plate (Ontario Guide)
 
@@ -116,26 +114,6 @@ When customers come to us at Harris Boat Works for a repower, the capacity plate
 - [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Platinum dealer's straight take on which hull material fits which kind of.
 - [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take.
 - [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario): New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Platinum dealer who sells.
-
-## FAQ
-
-**Is it legal to exceed the maximum horsepower on the capacity plate?**
-On commercial vessels, no. On a personal pleasure craft in Ontario, technically there is no specific federal regulation criminalizing over-powering, but exceeding the rated max can void boat insurance, void motor warranty, and create civil liability if something goes wrong. Practically, no responsible dealer or installer will mount a motor that exceeds the plate rating.
-
-**What if my plate is illegible or missing?**
-For a missing plate, Transport Canada accepts a manufacturer-issued replacement (if the boat builder is still in business) or a marine surveyor's written assessment. For an illegible plate, contact the manufacturer with the HIN and ask for a replacement.
-
-**Does the plate cover the trailer too?**
-No. The plate is for the boat only. Trailer capacity is a separate rating, marked on the trailer itself (typically on the tongue near the coupler). Trailer overload is a common cause of bearing and tire failure on Ontario highways. Worth checking both.
-
-**Are pontoons rated differently than V-hulls?**
-The Compliance Notice format is the same, but pontoon ratings tend to be more generous on person count because of the wider, more stable platform. A 22-foot tritoon may be rated for 12-14 adults where a 22-foot V-hull cruiser is rated for 8-10. Always check the actual plate; do not assume.
-
-**My boat was built in 1978 and has no plate. Am I doing something wrong?**
-No, you are within Transport Canada's rules for boats of that era. The compliance plate requirement applies to boats built after 1981 (in most categories). Safe loading is still your responsibility, but a missing plate on a 1970s hull is not a regulatory issue.
-
-**What's the difference between "maximum persons" and "maximum load" on the plate?**
-Maximum persons is the headcount limit. Maximum load is the total weight limit (people + motor + fuel + gear). You can hit max persons without hitting max load if everyone is small and there is no extra gear. You can hit max load with fewer people if the motor and fuel are heavy. Both numbers are independent limits and either one is binding.
 
 ## About the author
 

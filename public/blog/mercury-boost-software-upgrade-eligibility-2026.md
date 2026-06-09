@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-05-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-27  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026
-
-## Article
-
-_Last updated: May 27, 2026_
 
 ### Quick Answer
 
@@ -114,7 +110,7 @@ Boost is dealer-installed. You cannot download or apply it yourself, Mercury's d
 3. Boost calibration is applied via Mercury's software interface
 4. A short test run confirms the update
 
-Most dealers can complete it in a single service visit. **Mercury has not published a standard retail price for the Boost upgrade.** Dealers set their own service rates. At most Mercury dealers in Ontario, shop rates run in the $120, $175 per hour range, and installation is primarily technician time, roughly 1, 2 hours. If you are already bringing the engine in for spring commissioning or annual service, ask to have Boost done at the same visit to minimize total labor cost.
+Most dealers can complete it in a single service visit. **Mercury has not published a standard retail price for the Boost upgrade.** Dealers set their own service rates. At most Mercury dealers in Ontario, shop rates run in the $120, $175 per hour range, and installation is primarily technician time, roughly 1-2 hours. If you are already bringing the engine in for spring commissioning or annual service, ask to have Boost done at the same visit to minimize total labor cost.
 
 ---
 
@@ -150,35 +146,11 @@ Eligibility depends on year, model code, and powerhead serial number. We can che
 - [Is Your Mercury Outboard Eligible for DTS (Digital Throttle & Shift) Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026): Find out if your Mercury outboard supports DTS (Digital Throttle & Shift) retrofit. Covers Verado, Pro XS.
 - [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026): Find out if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro.
 
-## FAQs
-
-**Does Boost void my warranty?** 
-No. Boost is an official Mercury program and factory-backed calibration. It does not void Mercury factory warranty or any Mercury Protection Plan coverage.
-
-**Does Boost work on twin-engine setups?** 
-Yes, if both engines are eligible. Each engine is updated individually. If your twins have different serial numbers, eligibility is assessed per engine.
-
-**What if my serial number isn't eligible?** 
-If your motor falls outside current eligibility criteria, the upgrade is not available at this time, there is no aftermarket equivalent. Mercury has indicated Boost will expand to additional models. In the meantime, the best performance improvements for ineligible engines are mechanical: correct prop specification, fresh spark plugs, clean lower unit with fresh gear lube, and a properly maintained ignition system.
-
-**Can Boost be reversed?** 
-In theory, yes, it is a software calibration and Mercury has the tools to modify software-based updates. Mercury has not published a standard reversal procedure. In practice, the improvement is consistently viewed as positive, it changes only the mid-range band, not cruise or wide-open-throttle behavior.
-
-**How do I know if my FourStroke qualifies?** 
-FourStroke models in the 175, 300 HP range from serial number 2B529482 are eligible for the dealer-installed retrofit. For factory-installed Boost on new motors, it applies to Pro XS and Verado models built in Q2 2026 and later. The fastest answer: call HBW at 905-342-2153 with your serial number.
-
-**Is Boost worth it on Rice Lake?** 
-If your eligible engine already feels responsive with a light load, the improvement will be subtler. If you routinely run heavy, full pontoon, loaded family bowrider, anything where the hole-shot feels sluggish, Boost is one of the most cost-effective upgrades available. It costs a fraction of a new motor and requires no hardware.
-
----
-
-## Internal Links
+## Related reading
 - Mercury SmartCraft Connect Guide Ontario
 - Mercury Controls & Rigging Guide Ontario
 - Mercury 115 vs 150 Comparison
 - Mercury Outboard Motor Families Guide
-
-## CTA
 
 **Check if your Mercury qualifies for Boost.** 
 Call 905-342-2153 with your serial number, or email info@harrisboatworks.ca. 

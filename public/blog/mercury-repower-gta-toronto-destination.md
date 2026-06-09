@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination.md
-last_updated: 2026-06-08
+last_updated: 2026-02-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination
 
-## Article
-
 # Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** GTA boaters repower at HBW because we quote installed packages online, stock Mercury inventory, and turn most repowers in 7-14 days at the shop. Drop the boat in Gores Landing, pick it up commissioned and sea-trialled. Start the configurator at mercuryrepower.ca.
 
@@ -209,49 +205,6 @@ The drive is about an hour from Markham, 90 minutes from Mississauga. Most repow
 - [Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)](/blog/mercury-smartcraft-connect-guide-ontario): Mercury SmartCraft Connect Mobile (formerly VesselView Mobile) for Ontario boaters: compatibility for.
 - [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
 - [Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class](/blog/mercury-controls-rigging-guide-ontario): What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in.
-
-## Frequently Asked Questions
-
-**How much does a Mercury repower cost in the GTA?**
-Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,500; 150 HP install $23,000-$30,000; 200 HP V6 install $28,000-$35,000. The [mercuryrepower.ca configurator](https://www.mercuryrepower.ca) gives your specific number in 90 seconds.
-
-**How long does a repower take at HBW?**
-Typical install + sea trial + prop tuning: 7-14 days at the shop. Booking lead time is 2-4 weeks during peak season. Plan total project as 4-6 weeks from configurator-quote to motor-on-water.
-
-**Can I trailer my boat from Toronto to HBW myself?**
-Yes, 401 east to Cobourg, north on County Rd 18 to Gores Landing. About 90 minutes from central Toronto. We have trailer parking on-site.
-
-**Do you arrange boat transport from the GTA?**
-We don't operate transport, but we work with several Ontario marine transport services. Typical cost $300-$600 each way for an 18-22 ft boat. We can refer.
-
-**Will my Mercury be eligible for warranty if I bought it elsewhere and want it serviced at HBW?**
-Yes. Mercury's Canadian warranty network honours coverage at any authorized dealer regardless of where the motor was purchased. Bring purchase paperwork; we register the work in Mercury's central system.
-
-**Can I pick a Pro XS over a FourStroke for repower?**
-Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-300hp-pro-xs-performance-guide) for the specific decision matrix.
-
-**What if my boat needs more than just a motor?**
-Common scenario. Repowers often surface adjacent work, rigging upgrades (hydraulic steering, gauges, controls), transom reinforcement, fuel system replacement, electrical updates. We'll spec it all in the quote and you decide what to include or defer.
-
-**Do you do twin-engine repowers?**
-Yes, twin V6 or V8 setups on bigger boats (offshore, bass boats, deck boats). Same configurator, same workflow, longer install time (typically 14-21 days for twins). Twin Pro XS V6 installations are common in our shop.
-
-**What's the trade-in value on my current motor?**
-Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 12-year-old 90 HP with high hours trades for $1,500-$2,500. The configurator estimates based on your motor's specs.
-
----
-
-**Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [Why drive to HBW from Toronto?](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [Boat service near Toronto: HBW's Ontario reach](/blog/boat-service-near-toronto-hbw-reach)
-- [Mercury Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026)
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

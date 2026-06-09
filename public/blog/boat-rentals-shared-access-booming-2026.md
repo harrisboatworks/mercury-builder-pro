@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-02-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-02-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026
-
-## Article
 
 # Why People Rent Before They Buy (And What Our Numbers Actually Show)
 
@@ -116,8 +114,6 @@ If you have rented enough that the math now points to ownership, build a quote a
 If you want to talk through which boat fits your use case before you build, call us at 905-342-2153 or visit HBW at 5369 Harris Boat Works Rd, Gores Landing.
 
 We have been [renting and selling boats on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). We will give you the honest answer for your situation, including whether ownership makes sense yet.
-
-*Last reviewed: 2026-05-11.*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

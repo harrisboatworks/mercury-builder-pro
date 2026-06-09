@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md
-last_updated: 2026-06-08
+last_updated: 2026-05-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-05  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online
-
-## Article
 
 ### Quick Answer
 
@@ -133,31 +131,10 @@ For about 95% of recreational customers, the motor selection page is the source 
 - [What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)](/blog/total-cost-of-owning-a-boat-ontario-2026): A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage.
 - [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
 
-## FAQs
-
-**Does Mercury Marine prohibit dealers from publishing prices?** 
-No. Mercury sets MSRP. Dealers set their own pricing and choose whether to publish it. Any dealer who claims Mercury requires them to hide prices is not being straight with you.
-
-**How do I know HBW's published price is the actual price?** 
-The quote you build at [mercuryrepower.ca](https://www.mercuryrepower.ca) reflects the current live pricing. When you engage with HBW, that is the number the team works from. No negotiation theater.
-
-**What does an all-in Mercury repower cost in 2026?** 
-Ranges vary by HP class. The configured quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you the full number, motor, controls, steering, gauges, wiring, prop, and install labor, in a single place. Build one and see.
-
-**Do I have to come to Gores Landing to get the quote?** 
-No. Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) from anywhere. The physical installation happens at HBW in Gores Landing. HBW does not ship outboards or deliver installs.
-
-**What if I have a non-standard setup?** 
-For twin-engine setups, brand conversions, or commercial applications, call 905-342-2153 after building the basic quote online. Those cases benefit from a real conversation.
-
----
-
-## Internal Links
+## Related reading
 - Mercury Repower Cost Ontario 2026
 - Mercury Controls & Rigging Guide Ontario
 - Mercury Outboard Financing Ontario 2026
-
-## CTA
 
 **See the number before you call.** 
 Build your configured Mercury quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 

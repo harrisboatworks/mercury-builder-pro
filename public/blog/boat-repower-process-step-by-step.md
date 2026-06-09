@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-repower-process-step-by-step.md
-last_updated: 2026-06-08
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-repower-process-step-by-step
-
-## Article
-
-*Last reviewed: 2026-06-06*
 
 > **Quick answer:** A repower at Harris Boat Works runs eight steps: building an installed-price quote at mercuryrepower.ca, booking the job, drop-off and full assessment, old motor removal, rigging and installation to Mercury spec, a pre-water rigging check, an on-water test on Rice Lake, and pickup with a break-in walk-through.
 

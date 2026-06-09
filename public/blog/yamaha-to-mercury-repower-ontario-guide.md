@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-06-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,15 +27,11 @@ content_type: blog_article
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide
 
-## Article
-
 - Mercury Platinum Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON
 - Quote builder available
-
-*Last reviewed: 2026-06-05*
 
 We do Yamaha-to-Mercury repowers every spring at HBW. The customer is almost always a long-time Yamaha owner whose motor is either tired, costly to repair, or no longer making the local Yamaha dealer easy to reach. This guide walks through exactly what changes, exactly what it costs, what stays the same, and what you give up vs what you gain. We try to be honest about both. We sell Mercury, but we also know Yamaha makes good motors. The right answer depends on your boat and your local service network.
 

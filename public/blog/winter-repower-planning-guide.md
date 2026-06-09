@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-repower-planning-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-04-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-04-27  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-repower-planning-guide
-
-## Article
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Winter is the best time to plan a spring repower. Inventory is open, build slots are unbooked, and we can lock in pricing before the spring rush. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
 

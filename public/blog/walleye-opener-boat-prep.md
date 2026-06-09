@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
-
-## Article
 
 ### Quick Answer
 
@@ -174,41 +172,11 @@ Dead battery accounts for roughly 40% of opener-morning failures. The battery sa
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide): Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn.
 - [Mercury Propeller Selection Guide (2026 Ontario)](/blog/mercury-propeller-selection-guide): A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its.
 
-## FAQs
-
-**When is the Ontario walleye opener for Zone 17?** 
-Typically the Saturday closest to May 15. Confirm the exact date each year from the OMNR Fishing Regulations Summary. Do not assume it is the same date as last year.
-
-**What should I do two weeks before walleye opener?** 
-Confirm spring commissioning is done, schedule any final service, and check your fishing licence and PCL. Two weeks gives you time to fix anything that comes up.
-
-**My kicker hasn't run since last fall. What do I do?** 
-Start it before opener day. Run it for five to ten minutes at minimum. Stale fuel and gummed carburetors are the top failures. If it does not start or runs rough, bring it in.
-
-**Should I bring a backup motor for opener?** 
-For most Kawartha lake fishing, no. The kicker functions as backup propulsion. For Lake Simcoe or Lake Ontario, a working kicker matters more.
-
-**What safety gear is required on Ontario boats?** 
-A Transport Canada-approved PFD for each person, a throwable flotation device, anchor and rope, paddle or oar, bailer, sound signaling device, navigation lights (if on the water after dark), and a fire extinguisher depending on boat type. Confirm current requirements at Transport Canada's boating safety site.
-
-**What is the legal walleye fishing start time on opener day?** 
-Usually sunrise for Zone 17. Confirm current year regulations, some lakes have special early-season restrictions.
-
-**Should I replace my battery before opener?** 
-If it is over four to five years old, yes. A weak battery causes hard starts, stresses the starter motor, and fails on the worst possible morning. The cost of a new battery is nothing compared to a lost opener.
-
-**Can HBW pick up my boat for opener prep?** 
-For Rice Lake and local Kawartha customers, yes. Contact us to arrange hauling and service: [hbw.wiki/service](https://hbw.wiki/service) or 905-342-2153.
-
----
-
-## Internal Links
+## Related reading
 - Spring Outboard Commissioning Checklist
 - Mercury 9.9 EFI Review, kicker options
 - Mercury Outboard Won't Start Troubleshooting
 - [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
-
-## CTA
 
 **Book opener prep now.** Service slots fill in May, and there is no such thing as a last-minute walleye opener fix. 
 [Book service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 

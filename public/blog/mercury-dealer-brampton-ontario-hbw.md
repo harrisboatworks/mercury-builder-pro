@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-brampton-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-brampton-ontario-hbw
-
-## Article
 
 **Quick Answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 95 minutes northeast of Brampton via Highway 410 to Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
@@ -113,25 +111,6 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 - [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Platinum dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
 - [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
 - [Mercury Dealer for Markham: Why GTA Customers Drive to Rice Lake for Their Repower](/blog/mercury-dealer-markham-ontario-hbw): Looking for a Mercury Platinum dealer near Markham? Harris Boat Works on Rice Lake - 70 minutes north -.
-
-## Frequently Asked Questions, Brampton
-
-**Can I see real pricing without calling or driving up?**
-Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing in about three minutes.
-
-**Do you service non-Mercury motors?**
-No. For engine repairs, we only service Mercury and Mercruiser. If you're running a Yamaha, Honda, or Suzuki, we can't help on the service side.
-
-**Is 95 minutes worth it for a motor purchase?**
-Depends on what you're getting out of the trip. If you've already priced it online and want to talk through the full rigging conversation before committing, yes. If you're still deciding what motor to get, do that research first from home, then decide if the drive makes sense.
-
-**What's the rigging conversation you keep mentioning?**
-It's the part of the repower that most dealers skip. What throttle and shift setup makes sense for your hull? How does the motor height need to be set? What prop works for your load and use case? These decisions affect performance significantly. We have this conversation before we order anything.
-
-**Do you have boats to look at if we make the trip?**
-We carry Legend Boats and have used inventory. But if your primary purpose is a motor purchase or repower, focus on that, don't make the trip longer trying to accomplish too many things at once.
-
----
 
 ## The HBW Promise
 

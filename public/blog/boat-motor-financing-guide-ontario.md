@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-financing-guide-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-02-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-02-01  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-financing-guide-ontario
-
-## Article
 
 # Financing a Boat Motor in Ontario: What to Know Before You Sign Anything
 
@@ -139,8 +137,6 @@ A payment estimate based on a motor price and an assumed rate is only useful if 
 ## Sources
 
 - Current financing options shown on the [financing page](/financing) and confirmed with your quote. As of May 2026, qualified buyers, subject to change.
-
-*Last reviewed: 2026-05-11.*
 
 ## The current Mercury financing rate (as of 2026-05-28)
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-06-08
+last_updated: 2026-05-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-23  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
-
-## Article
-
-*Last reviewed: 2026-05-23*
 
 > **Quick answer:** A repower means a new Mercury on your existing hull. For most Kawartha boats with a sound hull and transom, it is the smart move: you keep the boat you know and spend a fraction of the cost of new. A clean install runs one to two days of shop time, two to four weeks from order to pickup. Build your quote at mercuryrepower.ca.
 
@@ -235,40 +231,6 @@ Mercury offers competitive repower financing for qualified buyers, and HBW proce
 - [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide): For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually.
 - [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide): Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of.
 - [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
-
-## Frequently Asked Questions
-
-**What is a boat repower?**
-Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a sea-trial. What it costs depends on horsepower class, motor family, and the condition of your existing rigging.
-
-**Is repowering worth it on an older boat?**
-It depends entirely on the hull. Aluminum hulls with solid transoms can run for decades more, and sound fiberglass is similar. The motor is the wear part. We do a proper hull walk-around before recommending anything, because a new motor only makes sense on a hull worth keeping.
-
-**Repower or buy new?**
-For a hull in solid structural condition, a repower almost always wins on the math. You keep a boat you know and spend a fraction of the cost of a comparable new package. The exception is a hull with a soft transom or multiple failing systems, where the numbers can favour a clean used boat instead.
-
-**How long does a Kawartha repower take?**
-One to two days of shop time for a clean Mercury-to-Mercury install. From signed order to pickup is typically two to four weeks, depending on motor availability. Off-season repowers move fastest.
-
-**Do I need new controls?**
-A Mercury-to-Mercury repower can often keep recent, good-condition controls. Older equipment, or a conversion from another brand, needs new controls and harness throughout. The walk-around tells us which case you are in.
-
-**Do I need hydraulic steering?**
-At 150 HP and above, yes. Hydraulic steering at that power is about safe, comfortable control, and it is standard practice on higher-HP rigs. From 40 to 115 HP, cable steering is fine.
-
-**Do I need to update my Pleasure Craft Licence?**
-Yes, whenever motor horsepower, brand, or model changes. The update is free, takes about fifteen minutes online, and HBW handles it for every customer as part of the job.
-
-**What happens to my old motor?**
-Trade-in credit. Even a dead motor carries aluminum and parts value, and that credit reduces the amount you finance.
-
-**Should I switch from Evinrude to Mercury?**
-With Evinrude out of production since 2020, parts and service availability shrinks every year. The brand conversion adds a one-time rigging cost, but it restores full parts access, factory warranty, and resale value. For any Evinrude owner planning to keep the hull more than a season or two, the switch makes sense. See our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide).
-
-**When is the best time to book?**
-October through March. Off-season ordering gets the best motor availability and shop time. Spring slots fill by March.
-
----
 
 ## Ready to Repower?
 

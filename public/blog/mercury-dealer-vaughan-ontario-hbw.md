@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-vaughan-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-vaughan-ontario-hbw
-
-## Article
 
 **Quick Answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 80 minutes north of Vaughan via Highway 400 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
@@ -110,25 +108,6 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 - [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
 - [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
 - [Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-oakville-ontario-hbw): Mercury Platinum dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
-
-## Frequently Asked Questions, Vaughan
-
-**Is there a way to get a real price without driving up or calling?**
-Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca), installed pricing in about three minutes. No login, no callback.
-
-**Do you service non-Mercury motors?**
-No. For engine repairs, we only service Mercury and Mercruiser. We can't help with Yamaha, Honda, or Suzuki service.
-
-**My boat is at a marina near Rice Lake already. Can you do service there?**
-We're a fixed shop, work happens here. The boat needs to come to us. If you're already storing near Rice Lake, that's actually a convenient arrangement.
-
-**What if I want to repower but I'm not sure it's worth it?**
-Build a quote for the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca), then call us. We'll have an honest conversation about whether it pencils out for your hull and situation.
-
-**What's the best time to drive up from Vaughan?**
-Early Saturday morning tends to work well, traffic on 400 south and then east is lighter before 9 a.m., and you can be here before noon. Weekday afternoons can be rough on the way back.
-
----
 
 ## The HBW Promise
 

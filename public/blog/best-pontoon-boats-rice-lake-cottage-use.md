@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use
-
-## Article
 
 # Best Pontoon Boats for Rice Lake Cottage Use
 
@@ -152,8 +150,6 @@ For HBW winter storage, we offer outdoor storage with shrinkwrap (no indoor heat
 For the motor side of a new or existing pontoon, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 For new Legend Boats pontoon packages, call us at 905-342-2153 or visit HBW at 5369 Harris Boat Works Rd, Gores Landing.
-
-*Last reviewed: 2026-05-11.*
 
 ---
 

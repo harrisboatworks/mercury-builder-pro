@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-03-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,13 +27,9 @@ content_type: blog_article
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario
 
-## Article
-
 ::walkaround-lead-capture
 
 # The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** A 30-minute walkaround inspection catches most of the issues that turn cheap used boats into expensive lessons. Check transom flex with foot pressure, lower-unit oil colour with a flashlight, deck softness with a stomp test, fuel-system age and ethanol exposure, electrical for corrosion, and outboard compression numbers if you can. Most private-sale used boats hide one or two of these. Walking away costs nothing.
 

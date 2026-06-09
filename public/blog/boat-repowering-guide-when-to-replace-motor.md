@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor
-
-## Article
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Repower when annual repair bills approach 25-30 percent of a new motor's price, when parts for your old powerhead are scarce, or when the hull is sound but the motor is tired. A modern Mercury FourStroke pays back in fuel, reliability, and resale. [Start your Mercury repower](/repower), motor, rigging, and labour priced in CAD at mercuryrepower.ca.
 
@@ -204,51 +200,6 @@ Two related guides in the same cluster:
 - [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower)
 
 ---
-
-## FAQ
-
-**How long does a Mercury outboard last?**
-Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours. For a typical recreational boater (50 to 150 hours per season), that translates to 10 to 30 years of useful life. Skipped maintenance cuts that in half easily.
-
-**What are the signs my motor needs replacement?**
-Harder starts, fuel system problems, declining performance, rising repair bills, or starting to worry about reliability mid-season. These show up in stages. Early signs mean plan ahead; late signs mean repower this off-season.
-
-**How many hours is too many on an outboard?**
-Modern FourStrokes can hit 2,000+ hours with proper maintenance. Older 2-strokes were typically end-of-life at 1,000 to 1,500 hours. Hours alone are not the answer; maintenance history matters more than hours.
-
-**Should I repower a 20-year-old motor that's still running?**
-If it's been well-maintained and still performs reasonably, you can run it longer. But plan the repower budget over the next 2 to 3 seasons. 20+ year old motors have limited remaining life regardless of how they sound today.
-
-**How much does a Mercury repower cost?**
-Depends on HP. A 25 to 60 HP repower lands $11,000 to $15,000 CAD all-in. A 90 to 115 HP repower lands $17,000 to $22,000 CAD. A 150 to 200 HP repower lands $23,000 to $36,000 CAD. See our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for full ranges.
-
-**Is it cheaper to repair or repower an old motor?**
-Depends on motor age and repair cost. Older motors (15+ years) where repair costs more than 30% of replacement: repower is usually cheaper long-term. Mid-age motors with smaller repairs: repair often makes sense. We do this math case by case.
-
-**When is the best time to repower?**
-Off-season (October through April). Mercury inventory is best, shop time is available, and the boat is ready for the next season. Spring rush (March through May) is busy and slots fill up.
-
-**Should I switch brands during a repower?**
-For Evinrude owners (since BRP shut down outboard production in 2020), switching to Mercury usually makes sense. For Yamaha or Honda owners with reliable motors, there's less urgency. See our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide).
-
-**Can I repower a hull that's older than the motor?**
-Yes if the hull is structurally solid. Many cottage aluminum hulls 25 to 40 years old are running their second or third Mercury repower. Hull condition matters more than calendar age.
-
-**Do I need a new prop with a Mercury repower?**
-Often yes, especially during brand conversions. Mercury-to-Mercury repowers sometimes keep existing props. We test props during sea-trial of every repower.
-
-**What about my [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)?**
-The PCL must be updated when motor HP, brand, or model changes. We handle the paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
-
-**How long does a typical repower take?**
-Mercury-to-Mercury repowers: 2 to 4 days shop time. Brand conversions: longer. Spring rush adds wait time before the shop starts. Off-season is faster.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
 
 ## FAQs
 

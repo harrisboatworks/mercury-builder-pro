@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting
-
-## Article
-
-**Language:** English 
 
 ---
 
@@ -91,7 +87,7 @@ The lanyard is the single most common cause of "won't crank" calls. It takes fiv
 
 This is where most Ontario spring no-starts start and end.
 
-An Ontario winter is genuinely hard on lead-acid marine batteries. The combination of cold temperatures, self-discharge over 5, 6 months, and lack of maintenance charging means a battery that was at 100% in October may be at 50% or less in May, and a deeply discharged battery sulfates, which permanently reduces its capacity. It may show voltage on a basic multimeter but collapse under cranking load.
+An Ontario winter is genuinely hard on lead-acid marine batteries. The combination of cold temperatures, self-discharge over 5-6 months, and lack of maintenance charging means a battery that was at 100% in October may be at 50% or less in May, and a deeply discharged battery sulfates, which permanently reduces its capacity. It may show voltage on a basic multimeter but collapse under cranking load.
 
 What to check:
 - **Resting voltage:** 12.6V = fully charged. 12.4V = acceptable, charge before using. Below 12.2V = seriously compromised.
@@ -107,7 +103,7 @@ What to check:
 
 ## Step 2: Fuel, Old Gas Is Genuinely a Problem
 
-E10 fuel (standard Ontario pump gas with 10% ethanol) starts degrading in 30, 60 days. Fuel that's been sitting in the tank from last October without stabilizer, or with incorrectly applied stabilizer, may be the issue.
+E10 fuel (standard Ontario pump gas with 10% ethanol) starts degrading in 30-60 days. Fuel that's been sitting in the tank from last October without stabilizer, or with incorrectly applied stabilizer, may be the issue.
 
 Stale ethanol-blend fuel can:
 - Develop sour-smelling, lacquer-like oxidation byproducts that gum up injectors and carburettors
@@ -138,7 +134,7 @@ After sitting, spark plugs can be fouled (oil or carbon deposits from the last s
 - Confirm the electrode gap matches your motor's spec (in the owner's manual)
 - Replace any that look doubtful
 
-**Flooding:** If you cranked the motor multiple times trying to start it before reading this, the cylinders may be flooded with fuel. Remove the plugs, crank briefly to clear the cylinders, let it sit 15, 20 minutes with plugs out, then reinstall fresh plugs and try again.
+**Flooding:** If you cranked the motor multiple times trying to start it before reading this, the cylinders may be flooded with fuel. Remove the plugs, crank briefly to clear the cylinders, let it sit 15-20 minutes with plugs out, then reinstall fresh plugs and try again.
 
 ---
 
@@ -185,34 +181,12 @@ Book at [hbw.wiki/service](https://hbw.wiki/service). Our shop handles a consist
 - [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting): Mercury outboard won't start? Ontario Platinum dealer's honest diagnostic ladder: battery, fuel, ignition.
 - [Boat Electrical Safety Checklist for Ontario Freshwater Boats](/blog/boat-electrical-safety-checklist-ontario-freshwater): Marine electrical work goes wrong slowly. An Ontario marina's plain-English checklist for boat owners.
 
-## Frequently Asked Questions
-
-**How long can a Mercury sit before fuel becomes a problem?** 
-With E10 pump gas and no stabilizer, 30, 60 days is where degradation begins to cause problems. Over an Ontario winter (5, 6 months), unstabilized fuel is almost certainly degraded. With proper stabilizer applied and circulated through the full system, protection extends significantly, but fuel quality always degrades over time.
-
-**I added stabilizer last fall but didn't run the motor afterward. Did it help?** 
-Partially. If the stabilizer was added to the tank but not circulated through the injectors or carburettor by running the motor, those components may still have seen degraded fuel at the end of the season. Running the motor for 10+ minutes after adding stabilizer is necessary for full protection.
-
-**The motor starts but dies as soon as I put it in gear. What does that mean?** 
-Often a fuel delivery issue, the motor can idle on whatever fuel is in the system but can't maintain flow under load. Could also be a clutch or shift linkage issue. This is a dealer diagnostic.
-
-**Should I be concerned about damage from the cold if the motor wasn't properly stored?** 
-If water was left in the cooling system and temperatures were cold enough for it to freeze, cracking is possible. Inspect for cracked housings before running, look at the lower unit and powerhead for any hairline cracks. If in doubt, have a dealer inspect before running.
-
-**My motor ran fine briefly and then died. Is that a fuel issue?** 
-Often yes, the motor started on fuel already in the system but couldn't maintain supply. A partially clogged filter, a weak primer bulb, or a tank that's struggling to deliver fuel under demand. Start with the primer bulb and fuel filter.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
 - [Mercury Outboard Won't Start, Ontario Diagnostic Flow](/blog/mercury-outboard-wont-start-troubleshooting)
 - [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
-
-## CTA
 
 **Can't find the problem?** 
 Book a spring diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.

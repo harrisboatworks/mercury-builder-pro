@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips
 
-## Article
-
 # Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Mercury outboards in Ontario need three predictable touchpoints a year: spring commissioning, mid-season checks, and fall winterization with fogging and lower-unit oil. Skip winterization and you risk a cracked block from frozen water in the powerhead, a $4,000-plus mistake. Book early; spring rush adds weeks. Service scheduling and pricing live at mercuryrepower.ca.
 
@@ -208,53 +204,6 @@ Two related guides in the same cluster:
 - [Breaking In a New Mercury Motor (2026)](/blog/breaking-in-new-mercury-motor-guide)
 
 ---
-
-## FAQ
-
-**How often should I service my Mercury outboard?**
-Annually at minimum. Spring commissioning to bring the motor back from winter storage, and fall winterization to put it away. Boaters running heavy hours (200+ per season) should add a mid-season check in July. Most service intervals are tied to hours, not just calendar time, so heavy-use boaters need more frequent attention.
-
-**What is the most important Mercury maintenance task?**
-Winterization. Skipping winterization is the single most common cause of major motor failure we see at HBW. Done right, winterization protects against freeze damage, fuel system gum-up, and corrosion over the storage period. Skipped or done wrong, it can destroy a motor in one winter.
-
-**How much does annual Mercury maintenance cost?**
-Cost varies by motor size, boat type, and what's included. A basic spring commissioning plus fall winterization is the smallest bill. Bundles that include water-pump impeller replacement, anode replacement, and other wear items run more. For your specific quote, [contact HBW](/contact).
-
-**Can I do my own Mercury motor maintenance?**
-Some of it. DIY makes sense for confident owners on smaller motors for tasks like fluid checks, oil changes, prop inspection, and basic visual maintenance. Tasks like water-pump impeller replacement, fuel system service on EFI motors, and anything involving lower-unit disassembly should be left to a Mercury dealer. The [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) covers winterization specifically.
-
-**How long does a Mercury outboard last with proper maintenance?**
-Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours before major service is required. For a recreational boater running 50 to 150 hours a season, that translates to 10 to 30 years of useful life. Skipped maintenance cuts that in half easily.
-
-**What kind of oil does my Mercury motor use?**
-Modern Mercury FourStrokes use full-synthetic Mercury 25W-50 four-stroke oil. Older motors and 2-strokes use different oil specifications. Check your owner's manual or [contact HBW](/contact) for the specific oil for your motor.
-
-**Should I winterize even if my boat is stored indoors?**
-Yes. Even in heated indoor storage, fuel breaks down and corrosion accumulates without the protective layer fogging oil provides. The cooling system drain step is less critical with heated storage but the other winterization steps still apply.
-
-**When should I replace my water-pump impeller?**
-Every 200 hours of operation or every 3 years, whichever comes first. We inspect impellers during fall winterization. A failed impeller can overheat the motor and damage the cylinder head, which is much more expensive than the preventive impeller replacement.
-
-**How often should I replace anodes?**
-Inspect annually. Replace when 30% or more depleted. A fully-depleted anode means the motor's metal becomes the next sacrifice, which leads to corrosion damage that is far more expensive to fix than a $50 anode.
-
-**Does Mercury warranty cover service work?**
-Mercury warranty covers manufacturing defects and material failures, not normal wear-item replacement (oil changes, plugs, anodes, impellers). Some service work needed to address a warranty issue is covered. Check with HBW or Mercury directly for your specific warranty coverage.
-
-**What is the cost of skipping maintenance?**
-Highly variable. Skipped winterization can cost a destroyed motor (multiple thousands). Skipped impeller replacement can cost a damaged cylinder head ($1,000 to $3,000 repair). Skipped fuel system service can cost spring start-up problems ($200 to $800). Skipped anode replacement can cost corrosion damage ($500 to $2,000). The math always favors regular service.
-
-**Can I bring a non-Mercury motor to HBW for service?**
-Yes, but our parts inventory and tooling are Mercury-focused. Non-Mercury service may take longer and require part-sourcing. For Mercury motors we are the most efficient. [Contact us](/contact) for non-Mercury service quotes.
-
----
-
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-[About Jay and Harris Boat Works →](/about)
 
 ## FAQs
 

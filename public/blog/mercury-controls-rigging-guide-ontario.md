@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-08  
 **Read time:** ~16 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario
-
-## Article
 
 ### Quick Answer
 
@@ -232,26 +230,7 @@ The exception: identical replacement (e.g., 60 EFI for a 60 EFI). Carbon-copy sw
 - [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
 - [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
 
-## FAQs
-
-**How much does Mercury rigging cost in Ontario?** 
-For a typical mid-range repower (60, 115 HP), expect CAD $2,000, $4,000 in rigging above the motor price. For a V6 repower (150, 225 HP), expect CAD $3,500, $7,500. These ranges include controls, steering, gauges, wiring, and prop.
-
-**Do I need DTS on a single-engine V6?** 
-No. Mechanical controls work fine on a single-engine 150, 225 HP motor and save CAD $1,500, $2,500. DTS is the right call for twin-engine setups, V8+ motors, or when you want seamless VesselView integration.
-
-**Is hydraulic steering worth it at 90 HP?** 
-Usually not on a typical fishing boat. Cable steering at 90 HP is fine. Exception: fast bowrider or anyone who finds cable tiring. For 115 HP and up, hydraulic is almost always worth the upgrade.
-
-**How long does a full rigging install take?** 
-Mid-range single-engine (60, 115 HP): typically 1, 2 shop days once the motor is in. V6 with full electronics: 2, 4 days.
-
-**Does HBW handle trade-ins on the old motor?** 
-Yes. Old Mercury motors in workable condition are valued at trade-in. Non-Mercury motors evaluated case-by-case.
-
----
-
-## Internal Links
+## Related reading
 - Mercury SmartCraft Connect Guide Ontario
 - Mercury Outboard Financing Ontario
 - Mercury Repower Cost Ontario 2026
@@ -262,8 +241,6 @@ Yes. Old Mercury motors in workable condition are valued at trade-in. Non-Mercur
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 > Related guide: [Mercury DTS vs mechanical controls for Ontario repowers](/blog/mercury-dts-vs-mechanical-controls-ontario-repower).
-
-## CTA
 
 **See real CAD pricing on every rigging line item.** 
 Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), choose motor, controls, steering, gauges, wiring, prop, and see the configured total before calling anyone. 

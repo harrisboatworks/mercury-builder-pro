@@ -27,12 +27,6 @@ content_type: blog_article
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 
-## Article
-
-_Last updated: May 27, 2026_
-
-**Language:** English 
-
 ---
 
 ## Quick Answer
@@ -115,7 +109,7 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 **What to do:** If it's a single beep that stops and doesn't recur during operation, this is typically normal.
 
-### Four Beeps, Repeated (Every 1, 3 Minutes)
+### Four Beeps, Repeated (Every 1-3 Minutes)
 
 **Possible meanings:** Varies by motor and rigging. On some systems, a repeating four-beep pattern can indicate low oil reserve (applicable to oil-injected motors), water-in-fuel condition, or another advisory-level alert.
 
@@ -193,34 +187,12 @@ Two related guides in the same cluster:
 
 ---
 
-## Frequently Asked Questions
-
-**Does every Mercury motor use the same beep patterns?** 
-No. Patterns vary by model, year, and whether the boat is rigged with SmartCraft displays. The alarm pattern table in your operator's manual is the authoritative reference for your specific motor.
-
-**My motor beeped once and hasn't done it since. Should I be worried?** 
-A single event at key-on is typically normal. A single event during operation that hasn't recurred could be a transient sensor reading or an intermittent condition. Note when it happened and under what conditions. If it recurs, take it seriously.
-
-**Can I reset the alarm without knowing what caused it?** 
-Cycling the key (off and back on) clears most active alarms, but it doesn't clear the underlying condition. The alarm will return if the condition is still present. Don't use alarm reset as a management strategy for a recurring alarm.
-
-**What is Guardian mode and how do I know if I'm in it?** 
-Guardian mode is Mercury's engine protection system that reduces power when the ECM detects a condition that could cause damage. You'll know you're in it because power is noticeably reduced and the motor won't respond normally to throttle. On boats with SmartCraft displays, a Guardian message appears. On boats without displays, the pattern is reduced power plus an alarm.
-
-**Can a false alarm cause unnecessary engine shutdown?** 
-A sensor fault can trigger a false alarm, yes. But the correct response to a false alarm looks the same as the response to a real one, assess, reduce throttle, check the tell-tale. It's better to respond to a false alarm than to dismiss a real one.
-
----
-
-## Internal Links
-
+## Related reading
 - [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
 - [Mercury Outboard Overheating at Idle, Ontario Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
 
 ---
-
-## CTA
 
 **Alarm that came back, or one you can't explain?** 
 Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.

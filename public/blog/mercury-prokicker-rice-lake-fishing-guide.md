@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-23  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
-
-## Article
-
-*Last reviewed: 2026-05-23*
 
 > **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca.
 
@@ -184,37 +180,6 @@ HBW services Mercury and MerCruiser. Book kicker service at hbw.wiki/service. Th
 - [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook): An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the.
 - [Recommended Mercury Outboard Setup for Lake Simcoe Walleye Fishing (2026)](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing): A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the.
 - [How to Trailer a Boat from Toronto to Rice Lake (Complete 2026 Guide)](/blog/trailer-boat-toronto-to-rice-lake-guide): A guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what.
-
-## Frequently Asked Questions
-
-**What is the difference between the 9.9 ProKicker and the standard 9.9 FourStroke?**
-The ProKicker is purpose-built for trolling. It has a high-thrust four-blade propeller, Mercury's Command Thrust gearcase as standard, and power tilt as standard. The standard 9.9 FourStroke is a primary motor for small boats, geared and propped for its own best speed. The ProKicker is engineered to troll slowly all day alongside a larger main motor.
-
-**Do I need a kicker for Rice Lake walleye?**
-For proper walleye trolling, yes. Main motors at idle run too fast and too loud for an effective presentation here. The Mercury 9.9 ProKicker is the standard kicker on Rice Lake fishing boats because it runs the right speed, quietly, for hours.
-
-**Does the EFI ProKicker need a battery to start?**
-The manual-start version does not. Pulling the rope charges the ignition system on its own. The electric-start version does need a cranking battery, which most fishing boats already have.
-
-**What shaft length do I need?**
-The ProKicker comes in 20 inch and 25 inch shafts. Most 16 to 18 ft aluminum fishing boats take the 20 inch. Taller-transom console and deeper-V boats need the 25 inch. Measure your transom and account for the offset bracket. Do not guess.
-
-**Can I run the ProKicker off my main fuel tank?**
-Yes, and we recommend it for serious fishing. We plumb the ProKicker into the main tank at installation so you are not swapping a portable tank mid-day.
-
-**How much fuel does a ProKicker use trolling?**
-Very little. At typical walleye trolling speeds it sips fuel, so a main tank running the kicker alone lasts for days of fishing. Exact consumption depends on boat, load, and conditions.
-
-**What is the top speed of a 9.9 ProKicker?**
-Low, by design. The high-thrust prop and gearing trade top speed for slow-speed control. The ProKicker is not built to cover distance. To move between spots, tilt the kicker up and run on your main motor.
-
-**Does HBW service ProKickers it did not install?**
-Yes. We service any Mercury or MerCruiser regardless of where it was bought. Book at hbw.wiki/service.
-
-**Does the ProKicker work on the Trent-Severn?**
-Yes. It is used for trolling on the connecting lakes and as a backup motor on cruising routes, and it gives precise low-speed control on lock approaches.
-
----
 
 ## Ready to Add a ProKicker?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-09  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide
-
-## Article
-
-**Language:** English 
 
 ---
 
@@ -99,7 +95,7 @@ Clear the intake by hand. A boat hook or a screwdriver helps with stubborn debri
 
 ### Step 4: Wait before restarting
 
-Let the powerhead cool for 10, 15 minutes before attempting a restart. When you start it again, watch the tell-tale immediately. If the stream is strong and the alarm doesn't return at idle, you may be clear to head home, at low RPM.
+Let the powerhead cool for 10-15 minutes before attempting a restart. When you start it again, watch the tell-tale immediately. If the stream is strong and the alarm doesn't return at idle, you may be clear to head home, at low RPM.
 
 ### Step 5: If the alarm returns, stop
 
@@ -178,34 +174,12 @@ If you suspect a cooling system problem, book before your next run: [hbw.wiki/se
 - [Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)](/blog/mercury-smartcraft-alarm-codes-encyclopedia): Mercury SmartCraft alarm code reference from an Ontario Platinum dealer. Top 10 codes by service frequency.
 - [Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)](/blog/mercury-outboard-overheat-alarm-decoder): Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. real heat, on-water emergency.
 
-## Frequently Asked Questions
-
-**The alarm went off once but the motor seems fine now. Do I need to bring it in?** 
-Yes. A single overheat event that resolved itself should still be diagnosed. It means something happened, whether a debris blockage that cleared, a beginning impeller failure, or a sensor issue. The cause needs to be identified before the next run.
-
-**What does the tell-tale look like when it's normal?** 
-A continuous, steady stream of water, not sputtering or intermittent, and noticeable at all RPMs including idle. The stream should be warm (not ice cold, which would indicate the thermostat is stuck open) but not steaming (which would indicate overheating).
-
-**Can I replace the water pump impeller myself?** 
-On smaller motors, it's a manageable DIY task for someone comfortable with mechanical work, it requires removing the lower unit. On larger or more complex motors, it's worth having a technician do it. The impeller kit itself is not expensive; most of the cost is labour for lower-unit removal.
-
-**How do I know if the impeller is worn without taking the lower unit apart?** 
-The tell-tale behaviour is the best indicator. A strong stream at cruise that weakens or sputters at idle is the classic worn impeller pattern. If your tell-tale has changed from what it used to be, that's a signal.
-
-**Does overheating damage the motor even if I shut it down quickly?** 
-It can. Heat cycles can damage head gaskets and warp components even in brief overheating events. The faster you shut down, the less likely serious damage is, but an overheating event is still worth having inspected.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Mercury Outboard Overheating at Idle, Ontario Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
 - [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
 
 ---
-
-## CTA
 
 **After any overheating event, get it checked before the next run.** 
 Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.

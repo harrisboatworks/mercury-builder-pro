@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-10  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide
-
-## Article
 
 ## Quick Answer
 
@@ -190,30 +188,7 @@ Rice Lake is in Ontario MNR's Fisheries Management Zone 17 (FMZ 17). FMZ 17 rule
 - [Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes](/blog/rice-lake-boating-guide-2026): A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches.
 - [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that.
 
-## FAQs
-
-**Are the public launches on Rice Lake free?**
-Some have day-use fees (Gores Landing). Bewdley, Roseneath, and Hastings vary, check at the launch.
-
-**Can I launch a 24 ft boat at any of these ramps?**
-Most ramps can handle up to about 20 ft easily. For 22+ ft, Gores Landing and Hastings are typically the most accommodating. Roseneath and Bewdley are tighter for larger boats.
-
-**Where can I park my trailer for the day?**
-Designated lots at each ramp. Gores Landing has the largest and most reliable parking, but it fills up fast on summer weekends.
-
-**Do I need a PCOC to launch?**
-You need a PCOC to operate the boat, yes. Launching the boat (driving the trailer) doesn't require a PCOC, but the moment you have the motor running on the water, you do.
-
-**Can I leave my trailer overnight at a public launch?**
-Most public launches don't allow overnight parking. Check signage. HBW customers may have trailer storage options, contact us at [hbw.wiki/service](https://hbw.wiki/service).
-
-**What if my boat is bigger than the public ramps can handle?**
-HBW's 2-lane concrete ramp at Gores Landing handles most recreational boats up to about 26 ft. For anything bigger, call us first: 905-342-2153.
-
----
-
-## Internal Links
-
+## Related reading
 - [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
 - [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
 - [Trailer Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide)

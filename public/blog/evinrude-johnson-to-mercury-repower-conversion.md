@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/evinrude-johnson-to-mercury-repower-conversion.md
-last_updated: 2026-06-08
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/evinrude-johnson-to-mercury-repower-conversion
-
-## Article
-
-*Last reviewed: 2026-06-06*
 
 > **Quick answer:** BRP stopped producing Evinrude outboards in 2020 and Johnson outboards haven't been built under that name since the early 2000s. Parts and qualified service are shrinking every year. When keeping an orphan motor alive stops being practical, a Mercury repower is the cleanest path back to reliable time on the water.
 

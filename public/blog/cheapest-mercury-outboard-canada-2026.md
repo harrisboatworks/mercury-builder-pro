@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-03  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
-
-## Article
 
 **Canonical URL:** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 
@@ -158,43 +156,12 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 - [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada): Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and.
 - [Mercury Avator 7.5e: Review, Price CAD, and Range (2026)](/blog/mercury-avator-7-5e-review): Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on.
 
-## FAQs
-
-**What's the cheapest Mercury outboard in Canada in 2026?** 
-The cheapest Mercury is the 2.5 HP FourStroke portable, built for tenders, dinghies, and small inflatables. For current 2026 CAD pricing, see the motor selection page at [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
-**What's the cheapest Mercury with electric start?** 
-Mercury offers electric start on motors as small as the 9.9 EH. For specific pricing, see the motor selection page.
-
-**Should I buy the cheapest motor I can afford?** 
-Only if it actually fits your boat and use. Buying too small is the most common expensive mistake we see. The cheapest motor that genuinely fits your hull and use is what you want.
-
-**Can I finance a small Mercury outboard?** 
-Yes. Mercury financing covers motors of any size. For current terms, see the financing page on [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
-**Are small Mercury portable motors reliable?** 
-Yes. Mercury has dominated the small-portable category in Canada for decades. Parts availability is strong. We have customers running 9.9s that are 20+ years old and still going.
-
-**Is it cheaper to buy used?** 
-Sometimes. A well-maintained 5-year-old 9.9 at half the price of new is real savings. A 20-year-old 9.9 with unknown service history at a quarter price is usually a problem waiting. We sell inspected used motors and will inspect private-sale motors for you.
-
-**What's the cheapest Mercury that can pull a tube?** 
-You need at least 60 HP for a single rider reliably, and 90 HP or more for two riders. The cheapest tube-capable Mercury is the 60 EFI FourStroke.
-
-**Do I need rigging when I buy a small tiller Mercury?** 
-No. Tiller motors 20 HP and under are drop-in installs. Hang it on the transom, connect the fuel, and go.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
 
 ---
-
-## CTA
 
 Ready to find the right motor for your boat? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, every model from the 2.5 portable through the 300 V8, live CAD pricing, no "call for price."
 

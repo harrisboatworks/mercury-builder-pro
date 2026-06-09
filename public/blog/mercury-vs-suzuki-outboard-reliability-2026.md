@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-06  
 **Read time:** 8 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026
-
-## Article
-
-*Last reviewed: 2026-06-06*
 
 > **Quick answer:** Both brands make mechanically reliable four-stroke outboards in 2026. Maintain either one properly, oil on schedule, impeller every couple of seasons, correct winterization, and you should see 15 to 25 years of useful life. Important context: we are a Mercury dealer and have been since 1965. We don't sell or service the other brand on this page. That's a conflict of interest worth stating up front. In Ontario freshwater, the real deciding factor between these two brands usually isn't the motor. It's who services it when something goes wrong, and how close they are.
 

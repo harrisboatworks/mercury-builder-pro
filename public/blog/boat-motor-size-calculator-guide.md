@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide
-
-## Article
-
-**Last reviewed:** 2026-05-07
 
 ---
 
@@ -191,36 +187,6 @@ Bring us your boat info, make, model, year, length, and how you actually use it,
 Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing across every Mercury HP class. Or call **905-342-2153** and we'll work through your specific boat.
 
 ---
-
-## FAQ
-
-**How do I know what size motor my boat needs?**  
-Start with the capacity plate, your legal ceiling. Then factor in hull weight and design, typical passenger and gear load, where you run, and what you do on the water. The capacity plate sets the maximum; use case and loading determine the best fit within that range.
-
-**Can I put a bigger motor than the capacity plate allows?**  
-No. The capacity plate is the legal ceiling set by the manufacturer. Going over it voids Mercury warranty, creates insurance exposure, and compromises hull safety. We won't rig above the rated maximum.
-
-**What's the most common motor sizing mistake?**  
-Buying too small. Customers optimize for price at the low end of the range, then fight their underpowered boat for two seasons and trade up at full cost. The right motor is almost never the bottom of the acceptable range.
-
-**How does loading affect the HP I need?**  
-Significantly. A fully loaded family boat behaves like a different machine than an empty one. Plan for your real typical load, not the ideal solo-run scenario.
-
-**What does "lbs per HP" mean in motor sizing?**  
-It's a ratio of total loaded boat weight to horsepower. Lower ratio (more HP per pound of boat) = better performance. 10–15 lbs/HP is optimal; 25–30 lbs/HP is the functional minimum for getting moving.
-
-**How does Mercury Command Thrust factor into sizing?**  
-Command Thrust is a gearcase option (not extra HP) that matters for pontoons and heavy hulls. On a pontoon, the right HP choice with Command Thrust will outperform a higher HP choice with a standard gearcase in real-world use. See the [Command Thrust guide](/blog/mercury-command-thrust-guide-pontoon-boats).
-
-**Should I get the same HP my old motor was?**  
-Not necessarily. If you were happy with the old motor, matching HP is a reasonable starting point, but it's worth reviewing whether that HP was actually right for your current use or just what came with the boat originally.
-
----
-
-*Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 | harrisboatworks.ca | 905-342-2153*  
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-*Mercury dealer since 1965, family marina on Rice Lake since 1947*
 
 ## FAQs
 

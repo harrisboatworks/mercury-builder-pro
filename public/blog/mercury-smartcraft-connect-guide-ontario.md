@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-30  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
-
-## Article
 
 ### Quick Answer
 
@@ -173,28 +171,6 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 
 ---
 
-## FAQs
-
-**Does my new Mercury come with SmartCraft Connect Mobile?** 
-No. New Mercury motors are SmartCraft-network-equipped (on compatible models), but the module is sold separately.
-
-**My Mercury is 9.9 HP. Can I add SmartCraft Connect?** 
-No. Mercury outboards under 25 HP are not SmartCraft-equipped. There is no internal network for the module to connect to.
-
-**My Mercury is a 30 HP from 2018. Is it compatible?** 
-No. The 25 HP and 30 HP class only became SmartCraft-compatible from model year 2022. A 2018 30 HP does not have the network.
-
-**Does the Mercury Marine app cost anything?** 
-The app is free on iOS and Android. The module is the paid component. No subscription.
-
-**Will it work with my Garmin chartplotter?** 
-The module talks to your phone over Bluetooth/Wi-Fi, not directly to a chartplotter. For chartplotter integration, a separate NMEA 2000 gateway is needed.
-
-**How do I check Boost eligibility?** 
-The app shows eligibility once SmartCraft Connect is paired. HBW can also check with diagnostic tools using your serial number.
-
----
-
 ## Two Paths Forward
 
 **If you are repowering:** Add the module to your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). HBW installs it during rigging and you leave with the app already paired.
@@ -203,7 +179,7 @@ The app shows eligibility once SmartCraft Connect is paired. HBW can also check 
 
 ---
 
-## Internal Links
+## Related reading
 - Mercury Controls & Rigging Guide Ontario
 - Mercury Boost Software Upgrade Eligibility 2026
 - Mercury 9.9 EFI Review Ontario
@@ -212,8 +188,6 @@ The app shows eligibility once SmartCraft Connect is paired. HBW can also check 
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
-
-## CTA
 
 **Add SmartCraft Connect to your repower quote.** 
 [mercuryrepower.ca](https://www.mercuryrepower.ca), or call 905-342-2153 with your motor's serial number. 

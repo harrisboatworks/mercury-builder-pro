@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard.md
-last_updated: 2026-06-08
+last_updated: 2026-02-22
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard
 
-## Article
-
 # How to Trim Your Boat With a Mercury Outboard (Rice Lake, Ontario Boater's Guide)
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Trim controls the angle of your outboard relative to the transom. Trim down for hole-shot, trim up for cruise efficiency. Wrong trim costs you fuel, comfort, and speed. Mercury's Active Trim feature on supported motors automates the optimal angle. For most Rice Lake conditions, trim out gradually as you reach plane, then back off if the bow porpoises or the prop ventilates.
 

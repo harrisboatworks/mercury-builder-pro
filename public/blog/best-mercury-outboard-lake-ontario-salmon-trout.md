@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 15 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
-
-## Article
 
 ## Quick Answer
 
@@ -151,30 +149,7 @@ If your boat is slip-stored in a Lake Ontario marina and you need engine service
 - [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook): An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the.
 - [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
 
-## FAQs
-
-**What HP do I need for Lake Ontario salmon fishing?**
-For most 22–26 ft hulls, 250–300 HP is the range. The right number depends on hull weight, use case, and whether you're running tournaments or recreational. Never exceed your capacity plate.
-
-**Why a 15 HP kicker instead of a 9.9 for Lake Ontario?**
-The drag from full downrigger spreads, planer boards, and dipsy divers is more than a 9.9 can hold speed against cleanly. The 15 HP ProKicker is the standard for Lake Ontario salmon trolling.
-
-**Can I use the same boat for Rice Lake and Lake Ontario?**
-It depends on the hull. A 22+ ft deep-V rigged for Lake Ontario is over-gunned and over-sized for Rice Lake's shallow structure. A 18 ft aluminum console rigged for Rice Lake is genuinely undersized for Lake Ontario conditions. Most serious Lake Ontario anglers have a Lake Ontario-specific boat.
-
-**FourStroke or Pro XS for recreational salmon fishing?**
-FourStroke. The Pro XS earns its premium for tournament use. For recreational fishing, the FourStroke is quieter and the fuel economy is comparable.
-
-**Do you service Lake Ontario boats?**
-For engine repairs, we only service Mercury and Mercruiser. Schedule at [hbw.wiki/service](https://hbw.wiki/service).
-
-**How do I get a Lake Ontario repower quote?**
-[mercuryrepower.ca](https://www.mercuryrepower.ca), configure your motor, get a real number.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury 9.9 ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
 - [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
 - [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)

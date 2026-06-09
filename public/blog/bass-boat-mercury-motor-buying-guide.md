@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-06-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-03  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide
-
-## Article
-
-**Last reviewed:** 2026-05-07
 
 ---
 
@@ -184,31 +180,6 @@ Two related guides in the same cluster:
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
-
-## FAQ
-
-**Is Pro XS really faster than FourStroke?**
-Yes, noticeably so at comparable HP. Pro XS motors are lighter and tuned for higher RPM, with faster hole shot and higher top speed. The difference is real and matters in tournament fishing. For recreational use, the gap still exists but may not justify the price difference depending on your use case.
-
-**What shaft length for a bass boat?**
-Most bass boats use 20-inch shaft with a jack plate. Some deeper hulls or higher transom mounts need 25-inch. Check your boat specs or bring it by for measurement.
-
-**Is 200 HP enough for a 21-foot bass boat?**
-For recreational use, yes. For tournament fishing where every minute to a spot counts, 225–250 HP is preferred on 21-foot boats. Match power to your competitive needs, and always stay within the capacity plate.
-
-**Should I repower or buy a new bass boat?**
-If your hull is solid and you like your boat, repower. A new Pro XS transforms an older hull. If the boat itself is the problem, new makes more sense. We'll help you think through the specific math.
-
-**What's the best Mercury for Ontario bass tournaments?**
-For Ontario tournament fishing at the semi-competitive to competitive level, Mercury Pro XS 200–225 HP is the most common choice. At elite level on 21+ ft boats, 250–300 HP Pro XS. For budget-focused entrants on local circuits, FourStroke 150 HP is a solid option.
-
-**What warranty does a Mercury outboard come with in Canada?**
-Standard 3-year limited warranty covering defects in materials and workmanship. Annual service by an authorized Mercury dealer is required to maintain warranty validity. As a Mercury Platinum Dealer, we handle warranty claims directly, you don't deal with the manufacturer independently.
-
-**Can I use a kicker motor on a bass boat?**
-Most bass boats don't use a kicker for typical bass fishing. A bow-mount trolling motor is standard for positioning. A transom-mounted kicker is possible on some hulls; bring the boat in and we'll assess whether it makes sense for your specific setup.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

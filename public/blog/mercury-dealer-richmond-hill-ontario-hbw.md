@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw
-
-## Article
 
 **Quick Answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 75 minutes north of Richmond Hill via Highway 404 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
@@ -120,28 +118,6 @@ Most Richmond Hill customers who drive up have done the homework first:
 - [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
 - [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
 - [Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-oakville-ontario-hbw): Mercury Platinum dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
-
-## Frequently Asked Questions, Richmond Hill
-
-**Is there a way to get pricing without coming in or calling?**
-Yes, that's the whole point of [mercuryrepower.ca](https://www.mercuryrepower.ca). Real installed pricing, no form submission, no callback required.
-
-**What motors do you carry?**
-Full Mercury lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro, whatever makes sense for your application.
-
-**Do you service non-Mercury motors?**
-No. For engine repairs, we only service Mercury and Mercruiser. We won't touch a Yamaha, Honda, or Suzuki for service work.
-
-**What does a repower include?**
-Full installation: motor, rigging, controls, throttle and shift cables, prop selection, sea trial. We don't just bolt a motor on and call it done.
-
-**Can I store my boat with you even if I'm buying the motor elsewhere?**
-Storage is available for existing HBW service customers. If you're a first-time customer, start with a service request at [hbw.wiki/service](https://hbw.wiki/service) so we can understand what you need.
-
-**What if the closer dealers have the same motor in stock?**
-Genuine answer: if a local dealer has it in stock, is a Platinum dealer, and will give you an honest installed price, go there. We're not going to tell you we're worth driving 75 minutes to when the answer is genuinely that straightforward. Call us if you're not sure.
-
----
 
 ## The HBW Promise
 

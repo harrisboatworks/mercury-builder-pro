@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-13
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-13  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario
-
-## Article
 
 ## Quick Answer
 
@@ -213,8 +211,6 @@ Visit [harrisboatworks.ca/warranty](https://www.harrisboatworks.ca/warranty), fi
 HBW customers (motor purchased from us), mention this in the notes field and we apply the 10% discount automatically.
 
 ---
-
-*Last reviewed: 2026-05-13*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.

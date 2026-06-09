@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats
-
-## Article
-
-**Last reviewed:** 2026-05-07
 
 ---
 
@@ -170,31 +166,6 @@ The sweet spot for aluminum fishing boats 14-17 feet is the Mercury 25-60 HP Fou
 Anything over 75 HP on a sub-17-foot aluminum hull usually exceeds the boat's max HP plate. Always check the capacity plate before quoting the repower -- the most common rejection at the shop is "owner wants a 90 on a hull rated for 60."
 
 ---
-
-## FAQ
-
-**What's the best Mercury for a 16-foot aluminum fishing boat?**
-For two or three people, a 60 to 90 HP FourStroke is the typical sweet spot. The 60 EFI handles solo and two-person fishing well. The 90 EXLPT FourStroke gives you headroom for a full family with gear. Both are popular Kawartha repower choices.
-
-**What's the best Mercury for a 14-foot aluminum tiller boat?**
-A 15 to 25 HP tiller motor. Mercury 15 MH, 15 EH (electric start), or 25 EFI. All are drop-in tiller installs with no rigging. Choose based on whether you want manual or electric start and how heavily loaded your boat typically is.
-
-**Should I get FourStroke or Pro XS for fishing?**
-For tournament fishing or anyone who wants the fastest acceleration to beat wind to a spot, Pro XS earns its price. For recreational fishing, trolling, drifting, working structure, FourStroke at the same HP is the better value.
-
-**Do I need a kicker motor for fishing?**
-For serious fishing on Rice Lake or Kawartha lakes, yes, it's the standard setup. The 9.9 ProKicker gives you trolling speed control, backup propulsion, fuel-efficient slow-speed running, and stealth in shallow water.
-
-**What HP for a 19-foot aluminum console fishing boat?**
-For typical recreational use, 90 to 115 HP FourStroke. For bigger-water use or tournament-level performance, 115 to 150 Pro XS. Pair with a 9.9 ProKicker for trolling.
-
-**Should I get Command Thrust on a fishing boat?**
-On heavier deep-V aluminum hulls 18 feet and up, Command Thrust gives meaningful hole-shot and load-carrying improvement. On lighter standard-V hulls under 18 feet, the standard gearcase is fine. We assess this per boat.
-
-**Can I use a kicker as my main motor?**
-On small aluminum boats (12–14 ft), yes, a 9.9 or 15 HP can be the only motor. On 16 ft and bigger, you need a proper main motor; the kicker is the auxiliary.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

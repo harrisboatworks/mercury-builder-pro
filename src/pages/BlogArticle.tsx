@@ -298,14 +298,18 @@ export default function BlogArticle() {
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
                 <AuthorByline name="Jay Harris" title="Mercury dealer since 1965" />
-                <span className="flex items-center gap-1.5">
-                  <Calendar className="h-4 w-4" />
-                  {parseLocalDate(article.datePublished).toLocaleDateString('en-US', {
-                    month: 'long',
-                    day: 'numeric',
-                    year: 'numeric'
-                  })}
-                </span>
+                {(() => {
+                  const published = parseLocalDate(article.datePublished);
+                  const modified = article.dateModified ? parseLocalDate(article.dateModified) : null;
+                  const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                  const showUpdated = modified && modified.getTime() > published.getTime();
+                  return (
+                    <span className="flex items-center gap-1.5">
+                      <Calendar className="h-4 w-4" />
+                      {showUpdated ? `Updated ${fmt(modified!)}` : fmt(published)}
+                    </span>
+                  );
+                })()}
                 <span className="flex items-center gap-1.5">
                   <Clock className="h-4 w-4" />
                   {article.readTime}
@@ -353,6 +357,22 @@ export default function BlogArticle() {
             <MarkdownSectionCards
               content={(() => {
                 let c = article.content.replace(/^\s*#\s+.+\n+/, '');
+                // Strip standalone scaffold lines: "*Last updated: ...*",
+                // "_Last updated: ..._", "**Last updated:** ...", "*Last reviewed: ...*".
+                // These conflict with the dateModified field shown in the byline.
+                c = c.replace(
+                  /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim,
+                  '',
+                );
+                // Strip standalone "Language: English" lines.
+                c = c.replace(
+                  /^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim,
+                  '',
+                );
+                // Drop a literal "## CTA" heading line; keep its body content.
+                c = c.replace(/^##\s+CTA\s*$/gim, '');
+                // Rename "## Internal Links" → "## Related reading" (keep list).
+                c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
                 // Suppress inline `## Frequently Asked Questions` (or FAQ/FAQs)
                 // section when faqs[] is populated — accordion below replaces it.
                 if (article.faqs && article.faqs.length > 0) {
@@ -361,6 +381,8 @@ export default function BlogArticle() {
                     '\n',
                   );
                 }
+                // Collapse 3+ blank lines left by the strips above.
+                c = c.replace(/\n{3,}/g, '\n\n');
                 return c;
               })()}
               markdownComponents={{

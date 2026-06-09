@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-02-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw
 
-## Article
-
 # Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)
-
-*Last reviewed: 2026-05-10*
 
 > **Quick answer:** GTA boaters store at HBW for the same reason they service here: capacity, straight pricing, and a proper Mercury winterization before the boat sits. HBW storage is outdoor shrinkwrap storage, not on-site indoor storage. Book by September or you may be waiting.
 
@@ -213,48 +209,6 @@ Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruis
 - [The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)](/blog/mercury-boat-battery-guide-ontario): Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and.
 - [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw): A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math.
 - [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
-
-## Frequently Asked Questions
-
-**How much does winter boat storage cost in the GTA?**
-Outdoor shrinkwrap at urban GTA marinas: $700-$1,200 for 21-ft boat (storage only). Indoor unheated: $1,200-$2,000. Indoor heated: $1,800-$3,500. **Note: most GTA pricing doesn't include winterization**, that's $300-$600 extra. HBW's all-in pricing for outdoor + shrinkwrap + full winterization is $1,000-$1,400 for typical 21-ft boat.
-
-**How do I get my boat from the GTA to HBW for storage?**
-Most owners trailer it themselves (90 minutes from central Toronto). Alternative: hire commercial boat transport ($300-$600 each way). Cheapest alternative: rent a summer slip at HBW so the boat is already there in the fall.
-
-**What's the difference between outdoor and indoor storage?**
-Outdoor + professional shrinkwrap is the cost-effective standard, protects from snow, ice, UV, wind. Indoor unheated adds protection from environmental cycling but doesn't eliminate the need for winterization (interior temps drop below freezing). Indoor heated is the premium tier, boat stays above 5°C all winter, no winterization needed, but availability is rare and expensive.
-
-**Do I need to do anything if my boat is shrinkwrapped + winterized?**
-No active maintenance during winter. The boat is documented as winterized; we periodically inspect storage areas. You're free of any boat-related tasks until April-May when we de-winterize.
-
-**Can I access my boat during winter for any reason?**
-Yes, we can let you in for inspection, maintenance approvals, gear retrieval, etc. Just call ahead. The shrinkwrap has access doors for re-entry.
-
-**What if I want to upgrade or repair the boat during winter?**
-Off-season is the ideal time. We have shop bandwidth November-March that we don't have May-August. Most repowers, major service, and upgrades happen during the storage period. If you want this option, the boat is already on-site, just approve the work.
-
-**When should I book winter storage?**
-**Mid-September** is best. Pricing is firm. By **early November** capacity fills up; we may not be able to take new bookings. Don't wait until October, you'll lose options.
-
-**What's the difference between HBW shrinkwrap and a tarp?**
-Massive. Professional shrinkwrap uses 7-12 mil polyethylene film, custom-fitted with a structural frame and vents, heat-shrunk for tightness. A tarp flaps in wind (chafes gelcoat), pools water in the middle (snowmelt + re-freezing), and traps moisture (mold). Tarps are emergency cover; shrinkwrap is real winter storage.
-
-**Is the boat insured during winter storage?**
-Your existing boat insurance typically covers winter storage; some policies require notification. Check with your insurer. We don't insure stored boats, that's owner responsibility. We document storage location, shrinkwrap quality, and winterization completion for any insurance documentation needs.
-
----
-
-**Booking:** [harrisboatworks.ca/winter-storage](https://harrisboatworks.ca/winter-storage)
-**Phone:** 905-342-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [Winter Storage Decision Guide (shrinkwrap vs indoor)](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario)
-- [Mercury Maintenance Intervals 20/100/300](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [GTA Repower walkthrough](/blog/mercury-repower-gta-toronto-destination), if storage time becomes repower time
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 
