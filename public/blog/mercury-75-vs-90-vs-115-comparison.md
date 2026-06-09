@@ -284,6 +284,30 @@ For a 20 ft pontoon on Kawartha Lakes, the Mercury 90 or 115 HP FourStroke is th
 
 No, neither the Mercury 90 HP nor the Mercury 115 HP FourStroke is available in a tiller configuration. Of these three horsepower classes, only the 75 HP offers a tiller option. If tiller control is important, working from the back of a small aluminum boat, setting up drifts, or solo fishing, the 75 HP tiller is the model designed for that use case. If you need more than 75 HP and want remote steering, the choice between 90 and 115 becomes about power and future-proofing.
 
+### What's the difference between the Mercury 90 and 115 HP?
+
+They share the same 2.1L FourStroke powerhead and Mercury lists the same lightest dry weight for both, about 163 kg (359 lb). The 115 is tuned for more power and offers a Command Thrust gearcase for heavier or pontoon hulls; the 90 is the value sweet spot for most 16 to 18 ft aluminum boats. On a hull that takes either, the 115 buys headroom; the 90 saves money and fuel.
+
+### How much does a 90 HP Mercury outboard weigh?
+
+About 163 kg (359 lb) dry for the lightest model. The 75, 90, and 115 FourStroke all share the same 2.1L block, so their weights are essentially identical; Command Thrust versions run a few pounds more.
+
+### Can I put a 115 on a boat rated for 90 HP?
+
+No. The capacity plate maximum is a legal and safety ceiling, not a suggestion. If your plate says 90 HP, 90 is the most you can rig. If you want 115, the boat itself has to be rated for it. We check the plate before we quote.
+
+### Is the 90 HP Mercury a four-stroke?
+
+Yes. The current Mercury 75, 90, and 115 are all FourStroke (four-stroke) EFI motors on the 2.1L block. The old two-strokes are long gone from the lineup.
+
+### How much does a 90 HP Mercury cost in Ontario?
+
+Pricing moves with rigging and install, so we publish real installed CAD numbers in the quote tool rather than a stale figure. A 90 typically runs roughly $1,500 to $2,500 less than a comparable 115 and $1,000 to $2,000 more than a 75. Build your exact number at mercuryrepower.ca.
+
+### How fast will a 75 HP push a 17-foot boat?
+
+On a typical 17 ft aluminum boat with a normal load, a 75 HP Mercury will cruise comfortably and top out in the low-to-mid 30s mph depending on hull, prop, and load. A 90 gets you there quicker and holds speed better when loaded, which is why we usually steer 17 ft owners to the 90.
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
