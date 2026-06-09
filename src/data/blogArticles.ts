@@ -4500,7 +4500,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'What is the best Mercury outboard for a 17 ft aluminum fishing boat on Rice Lake?',
-        answer: 'For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. For solo or two-person fishing with tiller control, the 75 HP tiller is efficient and well-suited to Rice Lake\'s shoreline work. For two or three regular passengers or more open-water conditions, the 90 HP provides better loaded performance at the same weight. The 115 HP is worth considering if the hull is heavier or you want long-term headroom. Harris Boat Works. Mercury dealer since 1965 in Gores Landing on Rice Lake, can assess your specific hull and recommend the right choice.'
+        answer: 'For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. For solo or two-person fishing with tiller control, the 75 HP tiller is efficient and well-suited to Rice Lake\'s shoreline work. For two or three regular passengers or more open-water conditions, the 90 HP provides better loaded performance at the same weight. The 115 HP is worth considering if the hull is heavier or you want long-term headroom. Harris Boat Works, Mercury dealer since 1965 in Gores Landing on Rice Lake, can assess your specific hull and recommend the right choice.'
       }
     ]
   },
