@@ -8,6 +8,7 @@ import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getKoreanArticleBySlug } from '@/data/koreanBlogArticles';
+import { KO_TO_EN_SLUG } from '@/data/koreanEnglishSlugMap';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
@@ -295,7 +296,12 @@ export default function KoreanBlogArticlePage() {
         <meta name="description" content={article.description} />
         <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="ko" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
+        {KO_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog/${KO_TO_EN_SLUG[article.slug]}`} />
+        )}
+        {KO_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog/${KO_TO_EN_SLUG[article.slug]}`} />
+        )}
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:url" content={url} />
