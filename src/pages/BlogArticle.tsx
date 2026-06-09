@@ -353,6 +353,22 @@ export default function BlogArticle() {
             <MarkdownSectionCards
               content={(() => {
                 let c = article.content.replace(/^\s*#\s+.+\n+/, '');
+                // Strip standalone scaffold lines: "*Last updated: ...*",
+                // "_Last updated: ..._", "**Last updated:** ...", "*Last reviewed: ...*".
+                // These conflict with the dateModified field shown in the byline.
+                c = c.replace(
+                  /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim,
+                  '',
+                );
+                // Strip standalone "Language: English" lines.
+                c = c.replace(
+                  /^[*_\s]*\**\s*Language\**\s*[:：]\s*English[*_\s]*$/gim,
+                  '',
+                );
+                // Drop a literal "## CTA" heading line; keep its body content.
+                c = c.replace(/^##\s+CTA\s*$/gim, '');
+                // Rename "## Internal Links" → "## Related reading" (keep list).
+                c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
                 // Suppress inline `## Frequently Asked Questions` (or FAQ/FAQs)
                 // section when faqs[] is populated — accordion below replaces it.
                 if (article.faqs && article.faqs.length > 0) {
@@ -361,6 +377,8 @@ export default function BlogArticle() {
                     '\n',
                   );
                 }
+                // Collapse 3+ blank lines left by the strips above.
+                c = c.replace(/\n{3,}/g, '\n\n');
                 return c;
               })()}
               markdownComponents={{
