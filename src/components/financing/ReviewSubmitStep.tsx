@@ -54,7 +54,11 @@ export function ReviewSubmitStep() {
   const onSubmit = async (data: Consent) => {
     setIsSubmitting(true);
     const correlationId = generateSubmissionCorrelationId();
+    // Hoisted so the outer catch can attribute logs to the current user and
+    // satisfy the financing_submission_logs RLS policy (user_id = auth.uid()).
+    let outerUserId: string | null = null;
     try {
+
       // Set consent data
       dispatch({ type: 'SET_CONSENT', payload: data });
       dispatch({ type: 'COMPLETE_STEP', payload: 7 });
@@ -76,6 +80,9 @@ export function ReviewSubmitStep() {
       // Get current user
       const { data: { user } } = await supabase.auth.getUser();
       const userId = user?.id ?? null;
+      outerUserId = userId;
+
+
 
       // Encrypt SINs first so we can surface specific errors before the DB upsert
       let applicantSinEncrypted: string;
@@ -279,9 +286,11 @@ export function ReviewSubmitStep() {
         outcome: 'failure',
         correlationId,
         applicationId: state.applicationId,
+        userId: outerUserId,
         errorCode: err?.code || 'unexpected',
         errorMessage: err?.message || String(error),
       });
+
       toast({
         title: "Submission Failed",
         description: `Please check your information and try again. Reference: ${correlationId}.`,
