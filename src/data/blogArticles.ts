@@ -10054,7 +10054,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 | 175-250hp FourStroke / Pro XS | $30,685-$41,740 |
 | 300hp FourStroke | $40,575-$42,935 |
 
-*Prices are motor MSRP only (canonical 2026-06-03); rigging adds $1,500-$3,000+. Mercury Verado is special-order only — call (905) 342-2153 for Verado pricing.*
+*Prices are motor MSRP only (canonical 2026-06-03); rigging adds $1,500-$3,000+. Mercury Verado is special-order only; call (905) 342-2153 for Verado pricing.*
 
 ### Seasonal Pricing Patterns
 
