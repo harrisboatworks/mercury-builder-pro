@@ -4463,58 +4463,6 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 `,
     faqs: [
       {
-        question: 'How much does a new 90 HP Mercury motor cost installed in Ontario?',
-        answer: 'Expect roughly $14,000 to $17,000 CAD installed at Harris Boat Works in 2026, including the motor, controls, propeller, rigging, and water test on Rice Lake. Final cost depends on your boat, existing rigging, and any trade-in. Live pricing at mercuryrepower.ca.'
-      },
-      {
-        question: 'Is the 90HP worth the upgrade from 75HP?',
-        answer: 'For most boaters, the jump from 75 to 90HP provides modest improvement. We often recommend either the 75HP (for efficiency/tiller) or jumping to 115HP (for meaningful performance gain).'
-      },
-      {
-        question: 'What\'s the fuel economy difference?',
-        answer: 'At cruise speeds, the difference is minimal (0.5-1 GPH). The 115HP has a larger displacement engine that\'s more efficient under load. All three are excellent on fuel.'
-      },
-      {
-        question: 'Can I upgrade later?',
-        answer: 'Going from 75/90 to 115 is possible but means buying a new motor. It\'s almost always better to buy the right HP initially. Rigging costs add up with motor swaps.'
-      },
-      {
-        question: 'Which has better resale value?',
-        answer: 'The 115HP consistently commands the best resale prices. It\'s the most popular horsepower in this range, and buyers often seek it specifically.'
-      },
-      {
-        question: 'Is the Mercury 90 HP worth the upgrade from 75 HP?',
-        answer: 'The 90 HP is worth the upgrade from 75 HP if you regularly carry three or more people, deal with wind on open water, or want more than light fishing use. The 90 HP shares the same block and physical weight as the 75 HP, more power without added transom weight. The key tradeoff is that the 90 HP has no tiller option, whereas the 75 HP does. If tiller steering matters, stay with the 75. If you want remote steering and more power, the 90 is a solid step at typically a modest price difference.'
-      },
-      {
-        question: 'What is the fuel economy difference between Mercury 75, 90, and 115 HP?',
-        answer: 'At typical cruising speeds, fuel economy differences between these three EFI FourStrokes are smaller than most people expect. Day-to-day on a 17 ft fishing boat, the difference in a full day\'s fuel cost between a 75 and 115 HP is approximately $5-$15 depending on how hard you run. The 115\'s efficiency advantage is that it\'s not being pushed as hard to maintain cruising speed, which offsets some of its larger displacement. Biggest differences appear at the extremes, low-speed and wide-open-throttle.'
-      },
-      {
-        question: 'Can I upgrade my outboard to a higher HP later?',
-        answer: 'Upgrading to a higher HP is possible up to your boat\'s capacity plate maximum. If your hull is rated for 115 HP and you currently have a 75 HP, upgrading later is straightforward, just motor cost plus installation. If your hull is only rated for 75 HP, you cannot legally put a 115 HP on it. The practical implication: if your hull allows 115 HP, starting there now is often a better financial decision than buying 75 HP and replacing it in 3-5 years.'
-      },
-      {
-        question: 'Which has better resale value. Mercury 75, 90, or 115 HP?',
-        answer: 'The Mercury 115 HP FourStroke consistently holds the best resale value of the three because it covers more use cases and appeals to more buyers. The 90 HP falls in between. Motors with broader use-case appeal and stronger original MSRP hold value better. The 115 HP\'s Command Thrust option, strong torque, and versatility make it the most sought-after of the three on Ontario\'s used boat market.'
-      },
-      {
-        question: 'What is the best Mercury outboard for a 17 ft aluminum fishing boat on Rice Lake?',
-        answer: 'For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. For solo or two-person fishing with tiller control, the 75 HP tiller is efficient and well-suited to Rice Lake\'s shoreline work. For two or three regular passengers or more open-water conditions, the 90 HP provides better loaded performance at the same weight. The 115 HP is worth considering if the hull is heavier or you want long-term headroom. Harris Boat Works. Mercury dealer since 1965 in Gores Landing on Rice Lake, can assess your specific hull and recommend the right choice.'
-      },
-      {
-        question: 'Is the Mercury 115 HP Command Thrust worth it?',
-        answer: 'The Mercury 115 HP Command Thrust is worth considering for heavy pontoon boats, larger aluminum fishing boats, and any boat that trolls at slow speeds or pushes significant load regularly. Command Thrust uses a larger lower unit designed for a larger diameter, lower-pitch prop, producing more thrust at low speeds. For a typical 17-18 ft aluminum fishing boat, standard shaft 115 HP is sufficient. For a 20-22 ft pontoon or deep-v that carries full loads, Command Thrust is a meaningful upgrade.'
-      },
-      {
-        question: 'What Mercury outboard should I choose for a 20 ft pontoon on the Kawarthas?',
-        answer: 'For a 20 ft pontoon on Kawartha Lakes, the Mercury 90 or 115 HP FourStroke is the right choice. A 20 ft pontoon with 60 HP struggles with a full passenger load and headwinds. The 90 HP handles typical pontoon loads well. The 115 HP is the better long-term choice, extra torque at low speeds and the Command Thrust option suit pontoon use well. For six or more passengers or a heavier tritoon, go straight to 115 HP.'
-      },
-      {
-        question: 'Does Mercury offer a tiller option on the 90 or 115 HP FourStroke?',
-        answer: 'No, neither the Mercury 90 HP nor the Mercury 115 HP FourStroke is available in a tiller configuration. Of these three horsepower classes, only the 75 HP offers a tiller option. If tiller control is important, working from the back of a small aluminum boat, setting up drifts, or solo fishing, the 75 HP tiller is the model designed for that use case. If you need more than 75 HP and want remote steering, the choice between 90 and 115 becomes about power and future-proofing.'
-      },
-      {
         question: "What's the difference between the Mercury 90 and 115 HP?",
         answer: 'They share the same 2.1L FourStroke powerhead and Mercury lists the same lightest dry weight for both, about 163 kg (359 lb). The 115 is tuned for more power and offers a Command Thrust gearcase for heavier or pontoon hulls; the 90 is the value sweet spot for most 16 to 18 ft aluminum boats. On a hull that takes either, the 115 buys headroom; the 90 saves money and fuel.'
       },
@@ -4531,12 +4479,28 @@ Mercury Platinum Dealer · Rice Lake, Ontario
         answer: 'Yes. The current Mercury 75, 90, and 115 are all FourStroke (four-stroke) EFI motors on the 2.1L block. The old two-strokes are long gone from the lineup.'
       },
       {
-        question: 'How much does a 90 HP Mercury cost in Ontario?',
-        answer: 'Pricing moves with rigging and install, so we publish real installed CAD numbers in the quote tool rather than a stale figure. A 90 typically runs roughly $1,500 to $2,500 less than a comparable 115 and $1,000 to $2,000 more than a 75. Build your exact number at mercuryrepower.ca.'
+        question: 'How much does a new 90 HP Mercury motor cost installed in Ontario?',
+        answer: 'Expect roughly $14,000 to $17,000 CAD installed at Harris Boat Works in 2026, including the motor, controls, propeller, rigging, and water test on Rice Lake. Final cost depends on your boat, existing rigging, and any trade-in. Live pricing at mercuryrepower.ca.'
       },
       {
         question: 'How fast will a 75 HP push a 17-foot boat?',
         answer: 'On a typical 17 ft aluminum boat with a normal load, a 75 HP Mercury will cruise comfortably and top out in the low-to-mid 30s mph depending on hull, prop, and load. A 90 gets you there quicker and holds speed better when loaded, which is why we usually steer 17 ft owners to the 90.'
+      },
+      {
+        question: 'Is the Mercury 90 HP worth the upgrade from 75 HP?',
+        answer: 'The 90 HP is worth the upgrade from 75 HP if you regularly carry three or more people, deal with wind on open water, or want more than light fishing use. The 90 HP shares the same block and physical weight as the 75 HP, more power without added transom weight. The key tradeoff is that the 90 HP has no tiller option, whereas the 75 HP does. If tiller steering matters, stay with the 75. If you want remote steering and more power, the 90 is a solid step at typically a modest price difference.'
+      },
+      {
+        question: 'What is the fuel economy difference between Mercury 75, 90, and 115 HP?',
+        answer: 'At typical cruising speeds, fuel economy differences between these three EFI FourStrokes are smaller than most people expect. Day-to-day on a 17 ft fishing boat, the difference in a full day\'s fuel cost between a 75 and 115 HP is approximately $5-$15 depending on how hard you run. The 115\'s efficiency advantage is that it\'s not being pushed as hard to maintain cruising speed, which offsets some of its larger displacement. Biggest differences appear at the extremes, low-speed and wide-open-throttle.'
+      },
+      {
+        question: 'Which has better resale value: Mercury 75, 90, or 115 HP?',
+        answer: 'The Mercury 115 HP FourStroke consistently holds the best resale value of the three because it covers more use cases and appeals to more buyers. The 90 HP falls in between. Motors with broader use-case appeal and stronger original MSRP hold value better. The 115 HP\'s Command Thrust option, strong torque, and versatility make it the most sought-after of the three on Ontario\'s used boat market.'
+      },
+      {
+        question: 'What is the best Mercury outboard for a 17 ft aluminum fishing boat on Rice Lake?',
+        answer: 'For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. For solo or two-person fishing with tiller control, the 75 HP tiller is efficient and well-suited to Rice Lake\'s shoreline work. For two or three regular passengers or more open-water conditions, the 90 HP provides better loaded performance at the same weight. The 115 HP is worth considering if the hull is heavier or you want long-term headroom. Harris Boat Works. Mercury dealer since 1965 in Gores Landing on Rice Lake, can assess your specific hull and recommend the right choice.'
       }
     ]
   },
