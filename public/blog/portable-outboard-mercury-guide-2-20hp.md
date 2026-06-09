@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp
-
-## Article
-
-**Last reviewed:** 2026-05-07
 
 ---
 
@@ -176,38 +172,6 @@ Portable motors are designed for easy transport, but they need proper care:
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD on the full portable range. Or call **905-342-2153**. We sell portable Mercurys every season and can match the right motor to your specific application.
 
----
-
-## FAQ
-
-**What's the most popular Mercury portable outboard in Canada?**  
-The Mercury 9.9 MH. Workhorse of cottage fishing, kicker motors, and small-boat applications across the Kawarthas. Reliable, manageable weight, and easy to transport.
-
-**Do I need rigging for a Mercury portable motor?**  
-No. Portables are drop-in installs with transom clamps and a separate fuel tank. No control rigging required for tiller variants.
-
-**Can I use a 9.9 as my main motor on a small boat?**  
-Yes, for 12 to 14-foot tin boats with one or two passengers on sheltered water. The 9.9 is plenty for solo or two-person fishing on smaller Kawartha lakes.
-
-**Manual or electric start?**  
-Manual start (MH) is lighter, cheaper, and simpler. Electric start (EH) is more convenient. Both are reliable; choose based on your preference and budget.
-
-**What shaft length do I need?**  
-Most small boats need short shaft (15 inches). Sailboats and deeper transoms need long shaft (20 inches). Measure transom depth before purchase, cavitation plate should be roughly level with the bottom of the hull.
-
-**How do I store a portable Mercury?**  
-Motor stand or wall mount. Stabilize fuel if storing more than a month. Check the owner's manual for correct orientation.
-
-**Is the 9.9 MH the same as the 9.9 ProKicker?**  
-No, the 9.9 MH is a general-purpose portable motor. The 9.9 ProKicker is purpose-built for fishing kicker applications, with a high-thrust gearcase, larger prop, and longer shaft for big-boat transoms.
-
-**Can I use a portable Mercury on a sailboat?**  
-Yes. Long-shaft (20-inch) variants are typically required for sailboat transom depths.
-
-**Do portable Mercurys need annual maintenance?**  
-Yes. Annual fluid changes, fuel system service, and inspection are recommended. The cost is small relative to motor replacement. We service portables at HBW.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ## FAQs

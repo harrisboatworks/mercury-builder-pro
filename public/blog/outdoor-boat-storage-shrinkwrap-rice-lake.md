@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md
-last_updated: 2026-06-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-10  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake
-
-## Article
 
 ## Quick Answer
 
@@ -169,36 +167,7 @@ Full spring commissioning checklist is at [/blog/spring-outboard-commissioning-c
 - [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process): Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service.
 - [The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower](/blog/mercruiser-sterndrive-guide-ontario): Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris.
 
-## FAQs
-
-**Do you offer indoor storage?**
-No. We're outdoor with shrinkwrap only. For indoor or climate-controlled storage, you'd need a different facility.
-
-**Can I store on my own trailer?**
-Yes. Most customers do. The trailer needs to be in roadworthy condition (tires, lights, bearings) since we'll need to move it at minimum twice (storage spot and spring launch).
-
-**Do you cover boats stored outdoors all winter?**
-Yes. That's what the shrinkwrap is for. Snow sheds off, the cover stays tight, the boat stays protected from precipitation and UV.
-
-**How much does shrinkwrap cost?**
-By boat length. Contact us for current pricing or visit [hbw.wiki/service](https://hbw.wiki/service) to get a quote.
-
-**Can I take items out of the boat after it's wrapped?**
-Yes, but it means cutting and re-wrapping a section. We charge for the re-wrap. Better to clear everything out before we wrap it.
-
-**What if my boat has a sensitive engine or fuel system?**
-Anything 2010 or newer with SmartCraft, EFI, or computerized engine management, we can handle that with proper winterization. The shrinkwrap and outdoor storage are appropriate for almost all modern recreational boats.
-
-**Do you do storage for inboard cruisers or large pontoons?**
-Yes, within size limits. Anything over 28 ft, call us first to confirm we can fit it in.
-
-**What if my boat doesn't need shrinkwrap because it's stored indoors at my own location?**
-Then you just need winterization at HBW. Submit a service request and let us know your storage situation. We'll handle the motor work without the wrap.
-
----
-
-## Internal Links
-
+## Related reading
 - [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 - [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
 - [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-10  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario
-
-## Article
 
 ### Quick Answer
 
@@ -141,28 +139,6 @@ If your hull is rated for 90 HP or higher, skip directly to the 90 review or go 
 - [Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup](/blog/mercury-90-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's.
 - [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
 - [Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online): Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price.
-
-## Frequently Asked Questions
-
-**Is the Mercury 75 HP a bad motor?** 
-No. It's not a bad motor, it's the same motor as the 90 with less headroom in the RPM range. If you need a 75 because the capacity plate requires it, it's the right motor. It's just not the right choice when the 90 is available at minimal additional cost.
-
-**Why doesn't HBW stock the 75?** 
-Because it's the same physical motor as the 90, same weight, minimal price difference, and the 90 has more headroom and better resale value. Stocking the 75 would mean offering customers a worse long-term buy at nearly the same price.
-
-**Can I get the 75 in a Command Thrust version?** 
-Yes, it's available. But if you need Command Thrust for a pontoon, the 90 CT is a better investment for the same reasons the 90 is better than the 75 on a fishing boat.
-
-**What if my hull falls between 60 and 75 HP on the capacity plate?** 
-Call us at 905-342-2153. Some hulls have specific configurations that matter, year, model, trim level. Five minutes of conversation usually sorts it out.
-
-**Does the 75 HP have a Command Thrust version?** 
-Yes. Same logic applies: if Command Thrust makes sense for your hull, the 90 CT is the better long-term value.
-
-**Is the 75 HP significantly cheaper than the 90?** 
-Not significantly. The exact figures vary with [Mercury Canada](https://www.mercurymarine.com/canada/en/) pricing, but it's not the kind of gap that should drive the decision for most buyers.
-
----
 
 ## Build a Quote, on the 90
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw
-
-## Article
 
 **Quick Answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 90 minutes northeast of Mississauga via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
@@ -119,28 +117,6 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 - [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw): Mercury Platinum dealer for Bowmanville customers - Harris Boat Works on Rice Lake is about 35 minutes via.
 - [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
 - [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
-
-## Frequently Asked Questions, Mississauga
-
-**Is 90 minutes actually worth the drive?**
-For a quick question, probably not, call or text us instead. For a serious repower or a motor purchase where you want to talk through rigging, installation, and the full job: yes. Come when you're ready to make a decision.
-
-**Can I see pricing without calling?**
-Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca) has real installed pricing. No form, no callback, no opener.
-
-**Do you service boats at our location or do we have to come to you?**
-We're a fixed shop. The boat comes to us. For major work like repowers, customers typically haul or trailer the boat up to Gores Landing.
-
-**Do you service non-Mercury motors?**
-No. For engine repairs, we only service Mercury and Mercruiser. Yamaha, Honda, and Suzuki are outside our scope.
-
-**What if I just need a part?**
-Parts can be ordered through [marinecatalogue.ca](https://www.marinecatalogue.ca) or by calling us. You don't need to drive up for a part.
-
-**My boat is on Lake Ontario / Niagara. Does a repower still make sense?**
-Totally depends on the motor and hull. Call us: 905-342-2153. We'll give you a straight answer.
-
----
 
 ## The HBW Promise
 

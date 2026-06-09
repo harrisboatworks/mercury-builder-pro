@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-02-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario
 
-## Article
-
 # Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Some used boats are worth buying; many will drain your bank account. The worst offenders we see in Ontario: hulls with structural rot, sterndrives facing imminent rebuild, brand-orphaned motors with no parts pipeline, and wet-floor pontoons hiding deck damage. Inspect transom flex, lower-unit oil colour, and fuel system condition before any private-sale used purchase. The cheap boat is rarely the cheap boat.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-vs-v-hull-comparison-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-16  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-vs-v-hull-comparison-ontario
-
-## Article
 
 # Pontoon vs V-Hull, Honestly Compared for Ontario Boaters
 
@@ -114,26 +112,6 @@ If you are weighing this decision and want a structured conversation, email info
 - [How to Read Your Boat's Capacity Plate (Ontario Guide)](/blog/how-to-read-boat-capacity-plate-ontario): What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three.
 - [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take.
 - [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario): New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Platinum dealer who sells.
-
-## FAQ
-
-**Can a pontoon handle Lake Ontario?**
-On a calm summer day, yes, a modern tritoon with the right power can handle Lake Ontario near shore. On a typical windy afternoon, no, the chop will be uncomfortable at best and dangerous at worst. For consistent Lake Ontario use, V-hull is the right call.
-
-**What's the fastest pontoon a 90 HP Mercury can push?**
-A 90 ELPT with [Command Thrust](/blog/mercury-command-thrust-vs-standard-gearcase) on a 20-foot pontoon will hit 25-28 mph on a calm day with light load. A 22-foot tritoon with the same motor lands closer to 22-25 mph. Going faster requires more horsepower (115-150 HP) and usually a tritoon configuration.
-
-**Are pontoons safe in waves?**
-Pontoons are stable but not seaworthy in the same sense as V-hulls. They handle small chop fine (under 1 foot) but get bounced around in 2-foot waves and can take water over the front deck in larger conditions. Stay on calmer water and watch the wind forecast.
-
-**Can I trailer a pontoon as easily as a V-hull?**
-Pontoons require a wider trailer and a special bunk arrangement. Towing is similar in weight (often lighter than a comparable fiberglass V-hull) but the width and wind load make highway driving less forgiving. Most pontoon owners keep the boat at a slip rather than trailer regularly.
-
-**Are aluminum V-hulls or fiberglass V-hulls better for Ontario?**
-Both work. Aluminum is lighter, cheaper, and more forgiving of trailer dings; fiberglass is smoother riding and quieter. We cover the trade-offs in detail in our [Aluminum vs Fiberglass guide](/blog/aluminum-vs-fiberglass-hull-ontario).
-
-**What's the cheapest way to get on the water with a pontoon?**
-The smaller LE-series Legend pontoons with a Mercury 60 ELPT come in well under $30,000 new in 2026, fully rigged. Used pontoons in good condition from a marina or careful private seller can land in the $15,000-$25,000 range. For a structured used-boat inspection before you buy, our [Used Boat Walkaround Guide](/blog/used-boat-walkaround-inspection-ontario) covers the relevant checks.
 
 ## About the author
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-14
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario
 
-## Article
-
 # The Ontario Boater's Guide to Mercruiser Sterndrives. Maintenance, Repairs, and Repower
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Mercruiser sterndrives are still serviceable and parts are available, but the market has shifted toward outboards for Ontario freshwater use. Repowering a sterndrive boat to outboard is a significant project, we quote both paths honestly. Get a real number at mercuryrepower.ca.
 

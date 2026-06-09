@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw
-
-## Article
 
 **Quick Answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 45 minutes north of Whitby via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
@@ -110,25 +108,6 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 - [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw): Mercury Platinum dealer for Bowmanville customers - Harris Boat Works on Rice Lake is about 35 minutes via.
 - [Mercury Dealer for Oshawa: 40 Minutes to Rice Lake](/blog/mercury-dealer-oshawa-ontario-hbw): Mercury Platinum dealer for Oshawa customers - Harris Boat Works on Rice Lake is about 40 minutes via the 401.
 - [Mercury Dealer for Pickering: 50 Minutes from Rice Lake](/blog/mercury-dealer-pickering-ontario-hbw): Mercury Platinum dealer for Pickering customers - Harris Boat Works on Rice Lake is about 50 minutes.
-
-## Frequently Asked Questions, Whitby
-
-**Can you be my regular dealer for service, not just for buying a motor?**
-Absolutely. At 45 minutes, a lot of Whitby customers use us for spring commissioning, in-season service, and fall winterization. It becomes a routine, not a special trip.
-
-**Can I see pricing without calling?**
-Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. No callback required.
-
-**Do you service non-Mercury motors?**
-No. For engine repairs, we only service Mercury and Mercruiser. We can't help with Yamaha, Honda, or Suzuki.
-
-**Can I store my boat with you year-round?**
-Outdoor storage with shrinkwrap, yes. It makes logistical sense for Whitby customers who are boating on Rice Lake or the Kawarthas, since the boat stays close to the water.
-
-**What's the best time to drive up?**
-Weekend mornings before 10 a.m. are reliably smooth from Whitby. Weekday mornings work too. Avoid driving back Saturday or Sunday afternoon during peak summer if you can, the 401 west can back up even from Bowmanville and Oshawa.
-
----
 
 ## The HBW Promise
 

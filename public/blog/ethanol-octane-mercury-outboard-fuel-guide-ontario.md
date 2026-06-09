@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-04-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 
-## Article
-
 # Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Mercury's current 4-stroke outboards run on 87 octane regular gasoline. Premium isn't required and doesn't help. The bigger fuel issue is ethanol: E10 pump gas absorbs water, phase-separates in storage, and gums fuel systems. Use ethanol-free 89 marine gas where available (HBW sells it at the dock), or run fuel stabilizer in every tank if you cannot avoid E10. Older supercharged inline-6 Verados require 91 octane premium.
 

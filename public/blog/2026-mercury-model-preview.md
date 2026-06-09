@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-mercury-model-preview.md
-last_updated: 2026-06-08
+last_updated: 2026-05-13
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-13  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-mercury-model-preview
-
-## Article
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Mercury's 2027 lineup carries the current FourStroke and Pro XS architecture forward with software refinements, expanded Avator electric options, and continued V12 Verado availability for the offshore tier. Stocked Ontario models stay focused on 2.5-300 HP. Watch the configurator at mercuryrepower.ca for live 2027 pricing as it lands.
 

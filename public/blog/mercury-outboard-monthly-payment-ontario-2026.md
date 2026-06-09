@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026
-
-## Article
-
-*Last reviewed: 2026-05-28*
 
 > **Quick answer:** A Mercury repower in Ontario currently finances through the active **TD "Always On" 5.48% APR program** (OAC), funded by TD Auto Finance via HBW's Dealerplan Peterborough relationship. A $5,000 minimum loan applies. A $17,490 Mercury 115 ELPT Pro XS runs about **$120/month at 5.48% APR** (TD Always On program, 240-month amortization basis). A $24,349 Mercury 150 L Pro XS runs about **$167/month at 5.48% APR** (240-month amortization basis). These figures use the active TD Always On 5.48% APR program. Standard tiered rates from 7.99% APR resume after Dec 31, 2026 when the TD program ends. OAC. No down payment required for qualified buyers. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 

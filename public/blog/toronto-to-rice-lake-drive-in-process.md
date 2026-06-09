@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process.md
-last_updated: 2026-06-08
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-15  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process
-
-## Article
 
 > **Quick answer:** Most GTA boaters trailer to Harris Boat Works in 60-90 minutes via Highway 401 east to the Port Hope exit, then 15 minutes north to Gores Landing. Book the service slot first, drop the boat with us, and head home the same day for routine work. For larger jobs (repower, full diagnostics, winter storage) we plan a single drive, drop-off and pickup, so you're not making the trip twice. Quote and service requests at [hbw.wiki/service](https://hbw.wiki/service).
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market
-
-## Article
 
 # Why Mercury Outboards Make Practical Sense for Ontario Boaters (And Where We Are Biased)
 
@@ -82,7 +80,6 @@ Harris Boat Works. Mercury dealer since 1965, Mercury Platinum dealer today.
 5369 Harris Boat Works Rd, Gores Landing, ON.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-*Last reviewed: 2026-05-11.*
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook.md
-last_updated: 2026-06-08
+last_updated: 2026-05-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-23  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook
-
-## Article
-
-*Last reviewed: 2026-05-23*
 
 > **Quick answer:** Rice Lake still fishes well in 2026, but the smart move is to adjust your expectations. Smallmouth bass (season opens June 20), muskellunge (opens June 6) and crappie are the strong bets right now. Walleye (opens May 9) are still in the lake but harder to box, with many fish falling outside the 35 to 50 cm keeper slot. Always confirm current regulations at ontario.ca before you launch.
 
@@ -215,32 +211,6 @@ And here is the thing worth remembering: the bass, the muskie, the crappie and t
 - [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
 - [Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan](/blog/trent-severn-waterway-boating-guide-2026): 2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a.
 - [Best Mercury Outboard for Rice Lake Fishing: A Local's Complete Guide (2026)](/blog/best-mercury-outboard-rice-lake-fishing): A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken.
-
-## Frequently Asked Questions
-
-**When does walleye season open on Rice Lake in 2026?**
-Walleye season in Fisheries Management Zone 17 opens May 9, 2026 and closes November 15. Retained walleye must measure between 35 and 50 cm. The limit is 4 on a Sport licence and 1 on a Conservation licence. Always confirm at ontario.ca/fishing before you go.
-
-**When does bass season open on Rice Lake in 2026?**
-Bass season opens June 20, 2026, the third Saturday in June, and runs to December 15. Largemouth and smallmouth share a combined limit of 6 on a Sport licence and 2 on a Conservation licence.
-
-**Is Rice Lake still a good walleye lake?**
-Rice Lake still holds walleye, but 2026 anglers should expect fewer fish and a lot of them over the 50 cm slot. Keeper-slot fish take real effort. The lake's strongest fisheries right now are smallmouth bass, muskellunge and crappie.
-
-**What is the walleye slot size on Rice Lake?**
-You may keep walleye only if they measure between 35 and 50 cm, roughly 14 to 20 inches. Fish under 35 cm and over 50 cm must be released. The slot is a keep window, not a release window.
-
-**Where is the sunken railway on Rice Lake?**
-The old Cobourg and Peterborough Railway crossed near Tic Island. The deeper trestle sections north of the island sit about 4 feet underwater and are invisible from the surface. Run that area at idle until you have the structure marked on your chartplotter.
-
-**What size motor do I need for a Rice Lake fishing boat?**
-A 16 to 18 foot aluminum fishing boat is well matched to a Mercury 90 HP FourStroke, stepping up to 115 HP for heavier loads. A 9.9 ProKicker is worth adding for walleye trolling. Always stay within the maximum horsepower on your capacity plate.
-
-**Does Harris Boat Works sell fishing licences?**
-No. Ontario fishing licences and the Outdoors Card are sold through the province. Get yours at ontario.ca/fishing. We are happy to help with boats, motors and rigging.
-
-**Can I fish Rice Lake without a licence in 2026?**
-Ontario has licence-free fishing weekends on May 9 to 10, June 20 to 21, and June 27 to July 5, 2026. Conservation limits and all size and sanctuary rules still apply on those days.
 
 ## Sources
 

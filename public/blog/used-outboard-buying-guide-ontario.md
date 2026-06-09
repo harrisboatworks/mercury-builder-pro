@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-23  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario
-
-## Article
-
-*Last reviewed: 2026-05-23*
 
 > **Quick answer:** Before you pay for any used outboard, do four things: compression-test every cylinder, check the gearcase oil colour, watch the tell-tale stream, and run it on the water. If the seller will not allow those, that is your answer. A dealer pre-purchase inspection is cheap insurance against a costly motor. Book one at hbw.wiki/service.
 
@@ -185,28 +181,6 @@ We will tell you which one you are looking at, even when the honest answer point
 - [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Platinum dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
 - [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
 - [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026): The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders.
-
-## Frequently Asked Questions
-
-**How many hours is too many on a used Mercury?**
-A well-maintained four-stroke can run 1,500 to 3,000 hours and more. An 800-hour motor with full service records is usually a better buy than a 200-hour motor with none. Hours alone do not tell the story. Care does.
-
-**What should I budget for service after buying used?**
-Plan on a round of first-year work no matter what: water pump impeller, gearcase oil, spark plugs, fuel filter, and a fuel-system clean-up. If the seller did not do it, you will. Budget for it as part of the purchase.
-
-**Is a 2-stroke worth buying in 2026?**
-For a backup motor, kicker duty, or a light-use budget hull, sometimes yes, especially under 25 HP. As the primary motor on a serious fishing boat, a modern four-stroke usually wins on fuel economy and reliability. One oil note: 2-stroke outboards use TC-W3 rated marine oil, while modern four-strokes use FC-W rated four-stroke marine oil. Do not mix the two specs.
-
-**Can I trust the hour meter?**
-Mostly, on Mercurys built after about 2005, unless the meter itself was replaced. Mercury's SmartCraft system stores hours in the engine ECU independently, so a dealer with a diagnostic tool can verify true engine hours regardless of what the dashboard shows. We check this on every inspection.
-
-**Should I get a dealer inspection on a private-sale motor?**
-On any used outboard worth real money, yes. Make the offer conditional on it. The inspection cost is small next to the cost of a motor with a hidden problem, and a seller's willingness to allow it tells you a lot on its own.
-
-**Do you service older Mercury outboards?**
-Yes. We are a full-service Mercury Platinum dealer and we work on everything from current models back through the older Mercury fleet. If parts exist for your motor, we can get them. If they do not, we will tell you straight, rather than take your money on a motor that is beyond saving.
-
----
 
 ## Ready to Decide?
 

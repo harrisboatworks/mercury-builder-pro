@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-06-08
+last_updated: 2026-05-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,8 +27,6 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
-## Article
-
 **Canonical URL:** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
 ---
@@ -37,7 +35,7 @@ content_type: blog_article
 
 ## Quick Answer
 
-A typical Mercury repower at HBW: configurator quote, phone call if needed, deposit, drop-off in Gores Landing, motor mount and rigging, sea trial on Rice Lake, pickup with break-in coaching. Most jobs are **7, 14 days** at the shop once scheduled. Spring rush adds 2, 4 weeks of lead time. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+A typical Mercury repower at HBW: configurator quote, phone call if needed, deposit, drop-off in Gores Landing, motor mount and rigging, sea trial on Rice Lake, pickup with break-in coaching. Most jobs are **7-14 days** at the shop once scheduled. Spring rush adds 2-4 weeks of lead time. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -49,19 +47,19 @@ A repower isn't just bolting a new motor to your boat. It's a full integration p
 
 ### What Changes the Timeline
 
-**Mercury-to-Mercury vs. brand conversion.** Mercury-to-Mercury: 2, 4 days of shop time. Brand conversion (Evinrude, Yamaha, Honda to Mercury): 4, 6 days, because of the additional rigging work.
+**Mercury-to-Mercury vs. brand conversion.** Mercury-to-Mercury: 2-4 days of shop time. Brand conversion (Evinrude, Yamaha, Honda to Mercury): 4-6 days, because of the additional rigging work.
 
 **Hull condition.** A solid hull is fast. A transom with soft spots needs additional work or won't pass our inspection until it's addressed.
 
 **Motor availability.** Common HP classes and configurations are typically in stock or on quick order. Less common configurations may have factory wait times.
 
-**Time of year.** Off-season (October, April): fast shop turnaround and good booking availability. Spring rush (March, May): waits of 2, 6 weeks before the shop can start.
+**Time of year.** Off-season (October, April): fast shop turnaround and good booking availability. Spring rush (March, May): waits of 2-6 weeks before the shop can start.
 
 **Customer responsiveness.** Quote, deposit, drop-off, and pickup all need customer involvement. The faster you respond at each step, the faster the timeline.
 
 ### The Full Process: Step by Step
 
-#### Step 1: Hull Walk-Around, Free, 30, 60 Minutes
+#### Step 1: Hull Walk-Around, Free, 30-60 Minutes
 
 Customer brings the boat to HBW in Gores Landing, or sends detailed photos and we visit the boat where it's stored. We assess:
 
@@ -105,7 +103,7 @@ Removal exposes:
 - Existing rigging connections in full
 - Fuel system connections and hose condition
 
-#### Step 6: Transom and Rigging Inspection, 1, 2 Hours
+#### Step 6: Transom and Rigging Inspection, 1-2 Hours
 
 This is the step some shops skip. We don't.
 
@@ -118,7 +116,7 @@ With the motor off, we check:
 
 If the transom is solid, we proceed to install. If there are soft spots, the customer gets the options picture before any money is spent on the new motor installation.
 
-#### Step 7: Install New Motor and Rigging, Typically 1, 2 Days
+#### Step 7: Install New Motor and Rigging, Typically 1-2 Days
 
 Mercury-certified technician installs:
 
@@ -157,7 +155,7 @@ Back at the shop:
 - Update [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) paperwork, required by Transport Canada when the motor changes, often forgotten elsewhere
 - Print final documentation for customer
 
-#### Step 10: Pickup and Break-In Coaching, 30, 60 Minutes
+#### Step 10: Pickup and Break-In Coaching, 30-60 Minutes
 
 Customer picks up the boat. We walk through:
 - The new motor's controls and features
@@ -192,44 +190,13 @@ Two related guides in the same cluster:
 
 ---
 
-## FAQs
-
-**How long does a Mercury repower take?** 
-Shop time is typically 2, 4 days for Mercury-to-Mercury, 4, 6 days for brand conversions. Total time from drop-off to pickup including motor arrival is usually 7, 14 days. Spring rush extends this to 2, 6 weeks of lead time before the shop can start.
-
-**When is the fastest time to book a repower?** 
-November through March. Shortest wait times, first pick of motors, and sometimes promotional financing rates. By late March, spring booking is in full swing.
-
-**Do I need to be there for the sea trial?** 
-Not required, but we recommend it. Riding along lets you confirm the boat feels right and gives us a chance to walk you through the new motor's controls before you're on your own.
-
-**What happens if the transom has a soft spot?** 
-We contact you before proceeding. You get options: repair the transom now and continue with the repower, repair the transom first (which adds time and cost), or reconsider whether the hull is worth repowering. We don't install a new motor on a transom we'd have concerns about.
-
-**What's the break-in protocol for a new Mercury?** 
-Mercury's new motor break-in involves graduated throttle use over the first 10 hours, followed by a first oil change at 20 hours. We walk through this at pickup. Breaking it in correctly protects the motor for the long term.
-
-**Does HBW handle the Pleasure Craft Licence update?** 
-Yes. We handle the Transport Canada PCL paperwork for HBW customers. The PCL must be updated when the motor changes, motor specs are recorded on it.
-
-**What happens to my old motor?** 
-Trade-in credit applied to the new motor purchase, customer take-home, private sale (we can advise on value), or scrap. Even dead motors have parts and aluminum value. We give fair-market trade-in credit.
-
-**Can I drop off the boat on a trailer?** 
-Yes. HBW in Gores Landing can handle boats on trailers. Let us know when you book.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
 - [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
 
 ---
-
-## CTA
 
 Ready to schedule your repower? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration, rigging and installation included.
 

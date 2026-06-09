@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-05-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-09  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
-
-## Article
 
 ### Quick Answer
 
@@ -217,38 +215,11 @@ Call 905-342-2153 before heading out if you need a slip or want to confirm fuel 
 - [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
 - [Trent-Severn Mercury Dealer Survival Guide (HBW Rice Lake, 2026)](/blog/trent-severn-mercury-dealer-survival-guide-2026): Doing the Trent-Severn? HBW on Rice Lake has the largest Mercury and Mercruiser parts inventory in Ontario.
 
-## FAQs
-
-**Do I need a special licence to lock through the Trent-Severn?** 
-No. You need a [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) and a valid [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL), the same requirements as any Ontario boating. No special lockage licence.
-
-**What changed for PCLs in 2026?** 
-Lifetime licences were converted to 5-year renewals at $24. If your PCL was previously lifetime and has not been renewed, check its status before the trip.
-
-**How long does a standard lock take?** 
-8 to 15 minutes from entry to exit. Plan 20 minutes per lock for travel calculations. The Peterborough Lift Lock is faster; Big Chute is slower at about 25 minutes.
-
-**Can I anchor inside a lock chamber overnight?** 
-No. You can tie up at the lockstation walls above or below the lock at $1.50 per foot per night.
-
-**Are water and shore power available at lockstations?** 
-Most lockstations have both. Shore power is $12 per night outside the free-lockage program window.
-
-**Parks Canada doesn't sell fuel at lockstations?** 
-Correct. Fuel comes from commercial marinas along the route. Most marinas accept cards.
-
-**What is the best single-day section of the Trent-Severn?** 
-The Peterborough Lift Lock (Lock 21) and the surrounding Lakefield-Trent canal stretch. The Lift Lock alone is worth the trip.
-
----
-
-## Internal Links
+## Related reading
 - Walleye Opener Boat Prep Checklist
 - Mercury SmartCraft Connect Guide Ontario
 - Rice Lake Fishing Guide
 - Boat Rentals on Rice Lake
-
-## CTA
 
 **Starting from Rice Lake? HBW is between Locks 18 and 19.** 
 Call 905-342-2153 before you head out, slip availability, fuel confirmation, or anything else. 

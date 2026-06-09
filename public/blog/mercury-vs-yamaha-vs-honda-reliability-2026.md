@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-05-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-27  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026
-
-## Article
-
-_Last updated: May 27, 2026_
 
 # Mercury vs Yamaha vs Honda Outboard Reliability in 2026: An Honest Comparison
 
@@ -164,7 +160,6 @@ A well-maintained Yamaha or Honda will outlast a neglected Mercury. We see this 
 
 For most Ontario boaters switching to Mercury, the timing is a full repower, when the old motor is going anyway and the rigging is getting replaced regardless.
 
-*Last reviewed: 2026-05-11.*
 ---
 
 ## What we see at HBW

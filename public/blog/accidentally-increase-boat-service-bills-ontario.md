@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-17  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario
-
-## Article
 
 # How Ontario Boat Owners Accidentally Make Their Service Bills Bigger
 

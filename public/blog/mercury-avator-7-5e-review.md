@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review.md
-last_updated: 2026-06-08
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review
-
-## Article
-
-*Last reviewed: 2026-05-24*
 
 > **Quick answer:** The Mercury Avator 7.5e is a 750-watt electric outboard with roughly the thrust of a 3.5 HP gas portable. It shines as a silent trolling kicker, as a motor for small fishing boats and tenders, and as a clean sailboat auxiliary. It is not a main motor for anything bigger than a light 12-foot tinnie. Build a quote at mercuryrepower.ca.
 
@@ -107,26 +103,6 @@ Every happy Avator owner we have rigged bought it for the right reason. They wan
 - [Mercury Avator & the Future of Electric Boating in Ontario](/blog/mercury-avator-electric-boating-ontario): Mercury Avator electric outboards (7.5e, 20e, 35e) for small boats and cottages in Ontario. How they work.
 - [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament.
-
-## Frequently Asked Questions
-
-**Is the Mercury Avator 7.5e powerful enough as a main motor?**
-Only on very small boats: tenders, dinghies, small sailboats, and 12-foot tinnies with light loads. For most fishing boats and any pontoon it works as a kicker, not a main motor.
-
-**How long does the Mercury Avator 7.5e battery last?**
-About 45 minutes at half throttle on the standard 1 kWh pack, and 3 to 5 hours at a slow trolling speed of 1.5 to 2 mph. Dual-battery setups roughly double that runtime. At wide-open throttle, expect under an hour.
-
-**Can I use the Avator for bass and walleye fishing on Rice Lake?**
-Yes, and that is one of its best uses. Silent thrust at slow speed makes it ideal for finesse fishing in shallow weed lines. Pair it with a gas main motor for travel between spots.
-
-**How much does the Avator 7.5e cost installed?**
-Including the motor, battery, and mounting, expect roughly $4,500 to $6,500 CAD installed at Harris Boat Works, depending on battery configuration. Pickup only at Gores Landing.
-
-**What charges the Avator battery?**
-A standard 120V household outlet charges the 1 kWh battery in roughly four hours. Faster chargers are available. Many customers charge overnight at the cottage.
-
-**Is the Avator covered under Mercury's warranty?**
-Yes. The Avator carries Mercury's Limited Warranty, and a promotional coverage extension is usually running. We confirm the exact current terms when we quote you.
 
 ## Ready to rig an Avator?
 

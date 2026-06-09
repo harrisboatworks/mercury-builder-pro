@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
-
-## Article
 
 **Language:** English 
 
@@ -156,7 +154,7 @@ A sudden change in fuel economy is worth investigating. Don't assume it's "just 
 
 ## Getting Your Prop Right at HBW
 
-We test prop pitch on every Mercury repower and new motor install at HBW. If you bought your motor elsewhere, or if your prop was selected years ago for a different boat or load, it's worth having it checked. A proper sea trial takes 30, 45 minutes and tells you more about your setup than any spec sheet.
+We test prop pitch on every Mercury repower and new motor install at HBW. If you bought your motor elsewhere, or if your prop was selected years ago for a different boat or load, it's worth having it checked. A proper sea trial takes 30-45 minutes and tells you more about your setup than any spec sheet.
 
 For engine repairs, we only service Mercury and Mercruiser.
 
@@ -181,37 +179,12 @@ The most common fuel-economy callback at our shop is a 4-blade prop running the 
 - [Mercury Propeller Selection Guide (2026 Ontario)](/blog/mercury-propeller-selection-guide): A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its.
 - [Making the Most of Ontario's Short Boating Season](/blog/ontario-boating-season-tips): Maximize your time on Ontario waters. Tips for extending your season, shoulder-season boating, and getting.
 
-## Frequently Asked Questions
-
-**Does a bigger motor always burn more fuel?** 
-Not necessarily at cruise. A larger motor running at lower RPM to maintain the same speed can burn similar amounts of fuel to a smaller motor working harder. The bigger factor is whether either motor is correctly matched to the hull with the right prop.
-
-**How much does the right prop actually matter?** 
-Significantly. A mismatched prop can reduce fuel economy by 15, 25% compared to a correctly pitched one on the same motor and hull. It also affects performance, acceleration, and engine longevity.
-
-**Should I run higher octane fuel for better economy?** 
-Mercury FourStrokes are designed to run on regular octane fuel (87 AKI). Unless your owner's manual specifies otherwise, higher octane doesn't improve fuel economy.
-
-**Does trim really make a meaningful difference?** 
-Yes. The difference between a boat running flat and a boat trimmed for cruise can be 10, 20% in fuel economy. It's one of the cheapest efficiency gains available, since it costs nothing.
-
-**What's the best cruise RPM for fuel economy?** 
-It varies by motor and hull. Most Mercury FourStrokes have a cruise efficiency range that your dealer or owner's manual can identify. The goal is to find the RPM where you're making acceptable speed without the motor working unnecessarily hard.
-
-**Can I improve fuel economy on an older motor?** 
-Often yes, prop tuning, fresh plugs, cleaned injectors or carburettor, and fresh fuel all help. At some point, an aging motor with worn rings and seals will burn more fuel regardless of tuning. That's when a repower conversation makes sense.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
 - [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
-
-## CTA
 
 **Ready to dial in your Mercury?** 
 Whether you want a prop check, a full service, or a quote on a new motor package: [hbw.wiki/service](https://hbw.wiki/service) is where to start. Or build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).

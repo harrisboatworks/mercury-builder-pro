@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta.md
-last_updated: 2026-06-08
+last_updated: 2026-02-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta
 
-## Article
-
 # Rice Lake, Ontario Boat Rentals from Toronto and the GTA: A Day Trip Guide
-
-*Last reviewed: 2026-05-10*
 
 > **Quick answer:** A Toronto-to-Rice Lake rental day trip works: 90 minutes up the 401 and 28, launch at Bewdley or Gores Landing, fish or cruise, drive home. Rentals book out fast in summer. When you're ready to own, build a real installed Mercury quote at mercuryrepower.ca.
 
@@ -216,48 +212,6 @@ The rental experience is a useful gut-check on what kind of boat owner you'd be.
 - [Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)](/blog/docking-boat-in-wind-rice-lake): A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy.
 - [10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)](/blog/boat-trailering-mistakes-ontario): Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires.
 - [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that.
-
-## Frequently Asked Questions
-
-**How long does it take to drive from Toronto to Rice Lake?**
-Roughly 90 minutes to Gores Landing in light traffic. From central Toronto: 401 east, exit at Cobourg, follow County Rd 18 north. From the western GTA (Mississauga, Brampton, Oakville): plan 75-105 minutes.
-
-**Do I need a boating licence to rent at HBW?**
-Yes, a Pleasure Craft Operator Card (PCOC) is required to operate any motorized boat in Ontario. If you don't have one, the marina can sometimes issue a temporary "rental boat safety checklist", but most full-day rentals require the PCOC. Easier to get the actual card before you come (3-hour online course, $50, lifetime good).
-
-**What does a half-day rental cost?**
-Pricing varies by boat type and season. As of 2026: small fishing boat half-day from $200, mid-size pontoon half-day from $350, large pontoon half-day from $450. Full-day roughly 1.7-2× half-day. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for current pricing.
-
-**Can we fish from rental boats?**
-Yes. The 16-ft ProSport boats are designed for fishing and include a fishfinder. Pontoons can fish too, but they are set up more for cruising and comfort. You need a valid Ontario fishing licence if you are fishing. Fees depend on licence type and residency, so check ontario.ca before you come. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST.
-
-**What if it rains the day of our rental?**
-Light rain, boats still go out, you're fine. Severe weather (lightning, sustained high winds, severe weather warning), we'll cancel and refund or rebook. Drizzle is not a refund condition; sustained downpour might be.
-
-**Are kids and pets allowed on rentals?**
-Kids absolutely yes, pontoons are kid-magnets, life jackets provided, the lake is shallow and forgiving. Pets case-by-case; ask when booking. Most pontoons accommodate well-behaved dogs.
-
-**Where do we eat during a rental day?**
-On the boat (bring a picnic) or at lakeshore restaurants. Lakeview Restaurant in Bewdley (west end of Rice Lake, 5 min from HBW) is the local pick. Many anchorages near restaurants.
-
-**Can we swim from the rental boats?**
-Yes. Pontoons typically have swim ladders. The 16-ft fishing boats don't, but you can swim alongside if you anchor in calm water.
-
-**Do you offer multi-day rentals?**
-Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day rentals for cottagers staying in the area without their own boat.
-
----
-
-**Booking:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Phone:** 905-342-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [Rice Lake Boating Guide](/blog/rice-lake-boating-guide-2026), full lake info
-- [Trent-Severn 2026, free lockage](/blog/trent-severn-waterway-boating-guide-2026), explore beyond Rice Lake
-- [Why drive from Toronto to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), if a rental experience makes you consider ownership
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

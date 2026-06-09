@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-04-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-04-26  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide
-
-## Article
 
 ## Quick Answer
 
@@ -152,27 +150,7 @@ The return trip can be busier than the trip out. Weekend afternoons on 401 west 
 - [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
 - [Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide](/blog/rice-lake-boat-rentals-from-toronto-gta): A Rice Lake boat rental day from the GTA, drive time, pricing, what's included, what to bring. From Harris.
 
-## FAQs
-
-**How long is the drive from Toronto to Rice Lake?**
-About 80–90 minutes in normal conditions. Saturday and Sunday afternoons during cottage season can add 30 minutes or more.
-
-**Do I need trailer brakes for a boat under 1,400 kg?**
-Not legally required in Ontario, but check your tow vehicle's rating. For trailers over 1,400 kg combined, brakes are required.
-
-**What's the speed limit for towing a trailer in Ontario?**
-Same as the posted limit, but never above 110 km/h on most highways. Some trailers have lower speed-rated tires; check yours.
-
-**Is there a closer launch than Gores Landing?**
-Bewdley is about the same drive from Toronto (slightly less on the 401, slightly more on rural roads). Hastings is east, longer. Roseneath is closer for east-Toronto residents.
-
-**Can you receive my boat at HBW for service or repower?**
-Yes. Trailer it to 5369 Harris Boat Works Rd, Gores Landing. We have space to receive boats on trailers. Submit a service request first at [hbw.wiki/service](https://hbw.wiki/service) so we know you're coming.
-
----
-
-## Internal Links
-
+## Related reading
 - [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide), where to launch on Rice Lake
 - [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), conditions and hazards
 - [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), pre-trip motor prep

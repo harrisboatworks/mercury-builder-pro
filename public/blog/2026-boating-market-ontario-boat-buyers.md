@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers.md
-last_updated: 2026-06-08
+last_updated: 2026-02-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-02-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers
-
-## Article
 
 # What the 2026 Boating Market Means for Ontario Boat Buyers
 
@@ -113,7 +111,7 @@ Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca
 - Bank of Canada, policy rate (2025 series of cuts).
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-*Last reviewed: 2026-05-11.*
+
 ## Related guides
 
 - [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada): Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and.

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-10  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
-
-## Article
 
 ![Rice Lake practical boating map - Gores Landing perspective with fishing zones, hazards, and key towns](/lovable-uploads/rice-lake-practical-boating-map.png)
 
@@ -156,30 +154,7 @@ The good news: the lake is small enough that you can learn the hazards in a seas
 - [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
 - [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario): The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury.
 
-## FAQs
-
-**How deep is Rice Lake?**
-Most of the lake is 6–10 ft deep. The deepest spots are around 18 ft.
-
-**Is Rice Lake safe for swimming?**
-Yes, with the standard cautions, watch for boat traffic, watch for weeds, avoid the area near the sunken railway. Water quality is generally good but check local advisories before swimming in mid-summer when weed and algae growth peaks.
-
-**Can I take a small boat from Rice Lake to Peterborough?**
-Yes, via the Otonabee River north out of Rice Lake into the Trent-Severn system. The Peterborough Lift Lock is one of the highlights of the trip.
-
-**What's the closest restaurant or pub to HBW?**
-The Captain's Table at the Gores Landing wharf is a 2-minute walk. Other options in nearby Cobourg and Bewdley.
-
-**When does Rice Lake freeze in winter?**
-Usually mid-to-late December, though increasingly unpredictable. Ice fishing is popular when the lake freezes safely. Always check ice conditions independently, don't rely on tradition.
-
-**Where can I get a Mercury motor serviced near Rice Lake?**
-Harris Boat Works in Gores Landing. Mercury Marine Platinum Dealer · Mercury dealer since 1965. For engine repairs, we only service Mercury and Mercruiser.
-
----
-
-## Internal Links
-
+## Related reading
 - [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
 - [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
 - [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-09  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
-
-## Article
 
 ### Quick Answer
 
@@ -187,28 +185,6 @@ And for anyone locking through the Trent-Severn, a 16 ft aluminum with a 60 HP i
 - [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw): A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math.
 - [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
 - [Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class](/blog/mercury-controls-rigging-guide-ontario): What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in.
-
-## Frequently Asked Questions
-
-**Is the 40 HP enough for a 16 ft aluminum fishing boat?** 
-Yes, with two adults and standard gear. With three or more people and a full cooler, the 60 gives you meaningfully more headroom.
-
-**Which motor is right for a 20 ft pontoon?** 
-The 60 ELPT Command Thrust at minimum. If the pontoon is a tritoon, or you regularly carry six people and tow tubes, consider the 90 CT.
-
-**Do I need Command Thrust on an aluminum fishing boat?** 
-Rarely. CT is designed for flat-bottom, heavy-hull applications like pontoons. An aluminum fishing boat that runs at speed benefits more from the standard gearcase's lower drag.
-
-**How much more does the 60 cost than the 40?** 
-About $2,600 CAD difference in dealer selling price. The 60 CT over the 40 is about $2,940. Install and rigging run $1,500, $3,000 on top of either.
-
-**Can I check what my capacity plate says online?** 
-The capacity plate is physical, on the inner transom of your boat. If you're unsure what it says, pull the boat out and look. The HP limit on that plate is not negotiable.
-
-**Does HBW rig motors in the shop or at the launch?** 
-In the shop. Every install is done by our techs at our facility in Gores Landing. Sea trial is included before the boat leaves.
-
----
 
 ## Ready to Spec Your 40 or 60 Repower?
 

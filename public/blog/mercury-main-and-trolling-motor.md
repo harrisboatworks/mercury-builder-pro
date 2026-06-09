@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor.md
-last_updated: 2026-06-08
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-25  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor
-
-## Article
-
-*Last reviewed: 2026-05-25*
 
 > **Quick answer:** Pairing a Mercury main outboard with a kicker or bow electric trolling motor gives you the best of both worlds: speed and range from the main motor, plus silent fishing finesse from the second motor. Common pairings: a Mercury 90 or 115 HP main with a 9.9 HP ProKicker, or a 150 HP main with an Avator 7.5e for silent trolling. Expect $1,500 to $7,500 CAD (2026 ranges) for the kicker plus bracket, tie-bar steering, and dual fuel routing, added to your main repower. Many serious anglers eventually want a bow electric plus a kicker. At Harris Boat Works we rig the combination on Rice Lake fishing boats. Pickup at Gores Landing.
 
@@ -105,28 +101,6 @@ Three patterns from rigging fishing boats every spring on Rice Lake.
 - [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
 - [How to Choose the Right Horsepower for Your Boat (2026 Guide)](/blog/how-to-choose-right-horsepower-boat): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
 - [How to Read a Mercury Outboard Serial Number: Year, Specs, and Service History](/blog/how-to-read-mercury-outboard-serial-number): A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft.
-
-## Frequently Asked Questions
-
-**Do I need both a main motor and a trolling motor?**
-If you fish seriously you will want both. The main motor travels between fishing spots. The trolling motor (gasoline kicker or electric) lets you fish quietly without burning the main motor at idle for hours and without putting unnecessary hours on the big powerhead.
-
-**Should I pair my Mercury main with a bow electric trolling motor or a kicker?**
-Choose a bow electric for shallow-water precision and spot-locking. Choose a kicker for long trolling days, bigger water, heavy chop, and true get-home backup. Many anglers eventually want both.
-
-**Can the Mercury Avator 7.5e be used as a kicker?**
-Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolling speed. Great for walleye and bass on Rice Lake where noise spooks fish. Battery dependent: typically several hours at troll on a 1 kWh pack.
-
-**How much does it cost to add a kicker to my repower?**
-Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker runs roughly $4,500 to $6,500 installed depending on battery setup.
-
-**Does the kicker need its own fuel tank?**
-Not usually. We plumb the kicker into the boat's main fuel supply through a water-separating filter with dual outputs: one line feeding the main, one feeding the kicker. No portable red tanks tripping you up in the cockpit. A small portable tank is also an option.
-
-**Will Harris Boat Works rig both motors together?**
-Yes. We install main and kicker, wire the tie-bar linkage for synchronized steering, integrate the fuel system, and water test the combination on Rice Lake before pickup at Gores Landing.
-
----
 
 ## Ready to rig your fishing boat?
 

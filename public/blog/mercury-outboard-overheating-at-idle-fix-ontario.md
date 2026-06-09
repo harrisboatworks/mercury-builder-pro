@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-27  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
-
-## Article
 
 **Language:** English 
 
@@ -172,34 +170,12 @@ Two related guides in the same cluster:
 
 ---
 
-## Frequently Asked Questions
-
-**Why does the alarm only go off when I'm in a no-wake zone?** 
-Because pump flow is lowest at low RPM. A worn impeller can keep up at cruise RPM but can't generate adequate flow at idle. The no-wake zone is the first time you demand low-RPM cooling for an extended period, so it's when the symptom surfaces.
-
-**Can I keep running if I just stay at cruise speed?** 
-Not a safe long-term answer. A worn impeller can fail completely at any time, and then you have no cooling at any RPM. Arrange service rather than managing around the symptom.
-
-**How much does impeller replacement cost?** 
-We don't publish service pricing remotely. Contact us through [hbw.wiki/service](https://hbw.wiki/service) for current service rates. What we can tell you is that impeller replacement is substantially less expensive than powerhead repair.
-
-**Can I test the impeller without removing the lower unit?** 
-Not definitively. The tell-tale behaviour is the best external indicator. If the tell-tale is weak at idle and the intake is clear, the impeller needs to come out for inspection or replacement.
-
-**Is overheating at idle a warranty issue?** 
-Impeller wear is a maintenance item, not a defect, unless the impeller fails very early in the motor's life. Keep your service records current, a motor with documented maintenance history is in a better position for any warranty consideration.
-
----
-
-## Internal Links
-
+## Related reading
 - [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
 - [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
 
 ---
-
-## CTA
 
 **Overheating at idle needs to be looked at before your next run.** 
 Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.

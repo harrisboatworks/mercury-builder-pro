@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-05-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-31  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
-
-## Article
 
 ## Quick answer
 
@@ -206,7 +204,6 @@ Yes. Financing through the TD path starts at $5,000 before tax. For smaller moto
 ### Are there any fees on top of the financing rate?
 
 Yes, one: a $349 DealerPlan administration fee is added post-tax on financed deals. It is included in the all-in number you see when you build your quote, so there are no surprises at signing. There is no prepayment penalty.
-
 
 ## Next steps
 

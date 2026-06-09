@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-storage-kawartha-lakes.md
-last_updated: 2026-06-08
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-15  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-storage-kawartha-lakes
-
-## Article
 
 > **Quick answer:** Harris Boat Works offers winter boat storage, shrinkwrap, winterization, and spring commissioning from our Rice Lake marina in Gores Landing, accessible to boaters across the Kawartha Lakes (Rice, Pigeon, Sturgeon, Buckhorn, Stoney) and the GTA-east region. Storing where you boat means no spring scavenger hunt for the battery, cover, paperwork, or "who has the key?"
 

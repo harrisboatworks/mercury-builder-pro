@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats
-
-## Article
-
-**Last reviewed:** 2026-05-10
 
 ---
 
@@ -148,34 +144,6 @@ We quote both paths (retrofit vs new motor) at HBW. Call 905-342-2153 if you wan
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). Or call **905-342-2153**, we rig Command Thrust setups every week and can give you the honest answer for your hull.
 
 ---
-
-## FAQ
-
-**What is Mercury Command Thrust?**
-A gearcase option available on select Mercury FourStroke models. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for heavy boats. Not a separate motor family, same powerhead, different gearcase.
-
-**Do I need Command Thrust on a pontoon?**
-For most pontoons 18 ft and up, yes. Command Thrust gives hole-shot, load-handling, and pulling power the standard gearcase can't match on a pontoon hull. The cost premium is worth it.
-
-**Will my standard prop fit on a Command Thrust gearcase?**
-No. Command Thrust gearcases require Command Thrust props, the larger diameter and different hub design aren't compatible with standard props.
-
-**Does Command Thrust hurt top speed?**
-Slightly, the torque-tuned ratio trades some top end for hole shot and pulling power. Typically 2–5 mph difference compared to standard gearcase. On pontoons, this trade is the right one.
-
-**Will Command Thrust improve fuel economy?**
-On heavy boats running at lower cruise speeds, yes. The lower cruise speed lets the motor run at more efficient RPM. On lighter, faster boats the effect is less clear.
-
-**Should I get Command Thrust on a fishing boat?**
-On aluminum console fishing boats under 18 ft, standard gearcase is usually fine. For 18+ ft deep-V aluminum or heavy fishing rigs with full gear, Command Thrust gives meaningful improvement. We assess per boat.
-
-**Is Command Thrust the same as SeaPro?**
-No. SeaPro is a Mercury motor family built for commercial-duty cycles. Command Thrust is a gearcase option available on recreational FourStroke motors.
-
-**How long does a Command Thrust gearcase last?**
-With proper maintenance, same as the motor itself. Annual gearcase lube replacement during winterization is critical for longevity.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Sources
 

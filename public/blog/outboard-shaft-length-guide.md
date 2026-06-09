@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-27  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
-
-## Article
-
-_Last updated: May 27, 2026_
 
 # Outboard Shaft Length Guide: Short, Long, and Extra Long, How to Get It Right
 
@@ -161,7 +157,6 @@ Not sure about your transom height? Call us at 905-342-2153 or send a side-profi
 
 > **Need a quick shaft-length check?** Try our [Shaft Length Picker](/tools#shaft-length). Punch in your transom height and we will tell you if you want a 15", 20", 25", or 30" shaft. Or call us at [(905) 342-2153](tel:+19053422153) and we will measure with you on the phone.
 
-*Last reviewed: 2026-05-11.*
 ---
 
 ## What we see at HBW

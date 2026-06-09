@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-13
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-13  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide
-
-## Article
-
-*Last reviewed: 2026-05-10*
 
 > **Quick answer:** The current Mercury 150 Pro XS is an inline-4. The Pro XS V6 range starts at 175 HP, while the 300 Pro XS is a V8. For many Ontario runabouts and fishing boats, the 200-225 HP range is the sweet spot, but the right answer depends on your hull rating, load, use, and budget.
 

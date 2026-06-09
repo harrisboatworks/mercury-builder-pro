@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-27  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide
-
-## Article
 
 ## Quick Answer
 
@@ -180,8 +178,6 @@ Content in the same repower-decision cluster:
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), CAD pricing by HP class
 - [How to Read a Boat Capacity Plate (Ontario)](/blog/how-to-read-boat-capacity-plate-ontario), Check 3 detail
 - [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide), matching motor to transom height
-
-## CTA
 
 Most repower conversations start with the eligibility check. If your boat passes the five checks above, the next step is a live CAD quote at [mercuryrepower.ca](https://mercuryrepower.ca). The configurator handles hull matching, HP class, prop selection, and a real CAD all-in number in under 5 minutes.
 

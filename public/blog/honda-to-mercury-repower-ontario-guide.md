@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-06-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-05  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide
-
-## Article
-
-*Last reviewed: 2026-05-28*
 
 > **Quick answer:** Honda outboards are excellent in the 9.9-50 HP class. Switching to Mercury makes sense for two reasons: Ontario dealer-network access (Mercury has 3x more service points) and HP-class match above 60 HP. Brand swap costs $1,800-$3,500 extra in rigging (controls, gauges, harness, prop). Email info@harrisboatworks.ca with your Honda specs for a same-day side-by-side quote.
 

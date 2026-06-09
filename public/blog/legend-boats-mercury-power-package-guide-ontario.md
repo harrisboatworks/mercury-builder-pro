@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-21
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario
 
-## Article
-
 # Legend Boats + Mercury Power Packages. Ontario Buyer's Guide (2026)
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Legend Boats are built in Whitefish, Ontario, and pair naturally with Mercury power. Most Legend hulls 17-21 ft are happy on a Mercury 90-150 FourStroke, often Command Thrust on the heavier models. Stay inside the capacity plate. Quote a complete Legend-and-Mercury package at mercuryrepower.ca.
 
@@ -133,7 +129,7 @@ The Halo is Legend's most distinctive pontoon, **PolyForm construction**, **360Â
 ---
 
 ::pull-quote
-quote: Test-drove three pontoons. **The Legend with the Mercury 115 Command Thrust was the only one that planed clean with seven adults on it.** That was the test that ended my shopping.
+quote: Test-drove three pontoons. **The Legend with the Mercury 115 Command Thrust was the only one that came up on cruise clean with seven adults on it.** That was the test that ended my shopping.
 attribution: Karen L.
 source: Kawarthas cottage
 ::

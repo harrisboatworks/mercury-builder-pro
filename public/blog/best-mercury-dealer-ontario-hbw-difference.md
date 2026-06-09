@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference.md
-last_updated: 2026-06-08
+last_updated: 2026-06-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference
 
-## Article
-
 # Best Mercury Dealer in Ontario: The HBW Difference (2026)
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** What makes HBW different in Ontario: transparent installed pricing online, three generations of Mercury experience since 1947, and a configurator that quotes a complete package without a phone call. We'd rather earn the sale on value than on pressure. Try it at mercuryrepower.ca.
 
@@ -207,42 +203,6 @@ A dealer that gives a clear, specific answer to all 5 in under 10 minutes is a r
 - [Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)](/blog/mercury-repower-gta-toronto-destination): A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline.
 - [Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)](/blog/mercury-smartcraft-connect-guide-ontario): Mercury SmartCraft Connect Mobile (formerly VesselView Mobile) for Ontario boaters: compatibility for.
 - [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
-
-## Frequently Asked Questions
-
-**What makes a Mercury Platinum dealer different from a regular dealer?**
-Platinum status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Platinum dealers in Ontario.
-
-**Is Mercury motor pricing the same at all Ontario dealers?**
-Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request.
-
-**How do I find out if a dealer is Mercury Platinum?**
-Mercury's online dealer locator doesn't display tier. You have to ask. A real Platinum dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum.
-
-**Why does dealer tier matter for me as a recreational boater?**
-For routine service (oil change, prop replacement), tier matters less. For complex diagnostic work, electronic system issues, warranty-eligible repairs, and repower-level installations, Platinum tier is meaningfully better. The G3 diagnostic software alone catches problems that consumer-tool diagnostic systems can't.
-
-**Should I drive farther for a better dealer?**
-For one-time large purchases (repowers, MPP-eligible motors, complex installs): yes, the drive time pays off. For routine work on simple motors: no, local-distance is fine. The decision frame is "how often will I visit this dealer over the next 10 years?"
-
-**What's the average age of Mercury dealers in Ontario?**
-Mixed. Some have been in business 50+ years; others opened recently. Longevity isn't everything but it correlates with Mercury-knowledge depth and post-sale service quality.
-
-**Can I get a Mercury repower at any authorized dealer?**
-Technically yes. In practice, Platinum dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity.
-
----
-**Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [Why drive from Toronto to HBW?](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [GTA Repower walkthrough](/blog/mercury-repower-gta-toronto-destination)
-- [Mercury Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026)
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

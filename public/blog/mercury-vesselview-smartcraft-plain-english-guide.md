@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide
 
-## Article
-
 # Mercury VesselView, SmartCraft, and the New [Mercury Marine](https://www.mercurymarine.com/canada/en/) App. A Plain-English Guide
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** VesselView is Mercury's gauge display; SmartCraft is the data network behind it; the Mercury Marine app pulls both into your phone. Together they show fuel use, engine hours, alarm codes, and service intervals in real time. Compatibility depends on motor year. Quote a current setup at mercuryrepower.ca.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-financing-ontario-rates-monthly-payments.md
-last_updated: 2026-06-08
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-financing-ontario-rates-monthly-payments
-
-## Article
-
-*Last reviewed: 2026-06-06*
 
 > **Quick answer:** Yes, you can finance a Mercury repower in Ontario. The amount financed is the installed cost of the repower (motor, rigging, controls, labour) minus any trade-in credit and down payment. Build your installed-price quote at mercuryrepower.ca first, then decide whether to finance or pay cash.
 

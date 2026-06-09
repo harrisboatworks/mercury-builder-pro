@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-07  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide
-
-## Article
-
-**Last reviewed:** 2026-05-07
 
 ---
 
@@ -157,31 +153,6 @@ If you run a commercial boat operation in the Kawarthas or anywhere within tow d
 SeaPro is special order at HBW. Contact us through [mercuryrepower.ca](https://www.mercuryrepower.ca) or call **905-342-2153**.
 
 ---
-
-## FAQ
-
-**What is Mercury SeaPro?**
-SeaPro is Mercury's commercial-duty outboard line, built for guides, charter operators, rental fleets, and commercial applications running hundreds to thousands of hours per season. Same basic powerhead architecture as standard FourStroke, but with reinforced components, enhanced cooling, and longer service intervals.
-
-**How is SeaPro different from FourStroke?**
-SeaPro has a reinforced lower unit, enhanced cooling system, 200-hour oil change interval (vs. 100 hours for standard FourStroke), stainless steel hardware, and commercial warranty eligibility. Costs roughly 10–15% more than comparable FourStroke, depending on configuration.
-
-**Who actually needs SeaPro?**
-Commercial operators running 300+ hours per season: fishing guides, rental fleets, charter operators, government boats. For typical recreational use under 100 hours/year, standard FourStroke is the right call at lower cost.
-
-**Is SeaPro available in stock at HBW?**
-SeaPro is special order at HBW. Contact us for a commercial quote.
-
-**Does Mercury offer a commercial warranty on SeaPro?**
-Yes, Mercury offers commercial warranty eligibility for SeaPro motors used in actual commercial applications. The terms differ from recreational warranty. We handle the registration correctly at point of sale; get in touch before purchase so we set it up right from day one.
-
-**Can a recreational boater buy SeaPro?**
-Yes. It's overkill for most recreational use, but some high-hour recreational boaters (200+ hours/season) find the 200-hour service interval and durability margin worth the price premium.
-
-**What HP is SeaPro available in?**
-SeaPro is available in multiple HP classes covering a wide range from smaller single-engine configurations to large V8 options. Available HP options vary by model year. Contact us for current availability.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

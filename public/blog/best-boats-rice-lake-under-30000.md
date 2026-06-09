@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000
-
-## Article
 
 # Best Boats for Rice Lake Under $30,000: Three Paths That Actually Work
 
@@ -124,8 +122,6 @@ Most $30,000 budgets do better with the repower path.
 Whether you are buying a project hull, a used pontoon, or a new aluminum fishing boat, the motor is the part we handle. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 If you have a specific hull in mind and want to know if a repower makes sense before you commit to buying it, call us at 905-342-2153. We can often give you a useful answer in a single conversation.
-
-*Last reviewed: 2026-05-11.*
 
 ---
 

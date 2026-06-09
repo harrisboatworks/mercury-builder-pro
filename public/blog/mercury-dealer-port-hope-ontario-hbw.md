@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-port-hope-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-05-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-17  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-port-hope-ontario-hbw
-
-## Article
 
 ## Quick Answer
 
@@ -143,8 +141,6 @@ No. HBW does NOT offer pickup or delivery. Customers bring their boat to us. We 
 Yes. Trade-in valuations are done in person at HBW. The Trade-In Value Guide at mercuryrepower.ca gives a starting estimate; the actual valuation happens when we see the boat.
 
 Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
-*Last reviewed: 2026-05-17.*
 
 ---
 

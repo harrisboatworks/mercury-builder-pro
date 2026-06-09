@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
-
-## Article
-
-**Last reviewed:** 2026-05-07
 
 ---
 
@@ -187,34 +183,6 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with prop in
 The other common one: pitch is wrong for the load. A 4-blade Enertia that ran great on a clean boat at 2,000 lbs feels sluggish once you add 600 lbs of gear, fuel, and passengers. Drop one pitch and the same prop runs perfect. Easier to test pitches than guess.
 
 ---
-
-## FAQ
-
-**Why does prop selection matter so much?**
-A wrong prop can cost you real top speed and fuel economy, and puts the motor outside its rated WOT RPM band. Two identical motors with different props perform very differently. It's not optional.
-
-**Aluminum or stainless prop?**
-Aluminum for lower-HP recreational use. Stainless for higher-HP applications, performance use, and tournament fishing. The HP and use case decide.
-
-**What is the right pitch for my Mercury?**
-The pitch that lets your motor reach mid-band of its rated WOT RPM with your typical loading. Mercury publishes WOT RPM ranges for every motor. We test pitch during sea trial.
-
-**3-blade or 4-blade?**
-3-blade for most recreational use, best top speed and fuel economy. 4-blade for pontoons, water sports, and heavy boats where hole shot and stability matter more than top end.
-
-**How do I know if my prop is wrong?**
-WOT RPM below or above the rated band. Slow hole shot. Hard to get on plane. Lower top speed than expected. We diagnose during sea trial.
-
-**Do I need a new prop during a Mercury repower?**
-Often yes, especially when switching brands (old prop won't fit) or switching from standard to Command Thrust gearcase. Mercury-to-Mercury repowers sometimes keep the existing prop, but we test it and replace if performance is off.
-
-**Can I damage my prop on a Kawartha lake?**
-Yes. Rocks, logs, sand, and submerged debris are all real hazards. Aluminum props bend more easily but can often be straightened. Stainless props are more damage-resistant but more expensive to repair.
-
-**Should I keep a spare prop?**
-For most recreational boaters on Kawartha lakes, no, tow back to the dock and replace. For boaters running far from home or on bigger water, a spare prop and basic tools are smart insurance.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

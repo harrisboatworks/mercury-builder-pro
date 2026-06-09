@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-16  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario
-
-## Article
 
 # New vs Used Mercury Outboard in Ontario, by the Numbers
 
@@ -120,26 +118,6 @@ If you are looking at a used boat package and want a structured inspection befor
 - [How to Read Your Boat's Capacity Plate (Ontario Guide)](/blog/how-to-read-boat-capacity-plate-ontario): What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three.
 - [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take.
 - [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario): Pontoon or V-hull? A Mercury Platinum dealer's honest take on which hull fits which Ontario boater. Family.
-
-## FAQ
-
-**Is a 5-year-old Mercury outboard still considered "new enough"?**
-A Mercury from 2020-2021 with under 300 hours and documented service is functionally a current-generation motor. The EFI, SmartCraft, and cowling design have not changed significantly since then. Mechanically you are in good shape. The only real difference is the remaining warranty (zero on a private sale, possibly transferable if the original owner enrolled MPP).
-
-**How many hours is "too many" on a used Mercury?**
-For a four-stroke kept in fresh water with documented service, 800-1,200 hours is mid-life. Past 1,500 hours we start asking harder questions about the powerhead, the gearcase, and how the boat was stored. Two-strokes (rare on the dock now) have shorter useful lives.
-
-**Can a Mercury dealer transfer factory warranty to a second owner?**
-Standard Mercury limited warranty is non-transferable. Mercury Product Protection (the extended program) IS transferable for a small fee through an authorized dealer if the program is still in force. If you are buying a used Mercury with under 5 years on the original purchase date, ask whether MPP was enrolled and whether the transfer paperwork is available.
-
-**What is the financing difference between new and used?**
-New Mercury sales through HBW qualify for current Mercury Marine financing programs (rates and terms updated regularly through the dealer portal). Used motor purchases are typically cash or personal-loan financed, with no manufacturer financing program available. The financing math sometimes tips the decision toward new even when the sticker price favours used.
-
-**Should I get a pre-purchase inspection on a used Mercury?**
-Yes, always, if you are spending more than a few thousand dollars. A compression test, a quick scan of the SmartCraft data (hours, fault codes), and a 20-minute test run is a $150-$250 service that has saved Ontario buyers tens of thousands of dollars in our experience. We do this for customers regularly, and we will do it for boats they have not bought yet.
-
-**Is buying new from a US dealer cheaper than buying from a Canadian dealer?**
-Once you factor in cross-border duties, exchange rates, and the loss of Canadian warranty support (Mercury's warranty network is region-specific), the answer is almost always no. Plus a Mercury Platinum dealer in Canada is who you will need for service, parts, and warranty work for the next decade. Buying from outside the region creates problems that the price difference does not solve.
 
 ## About the author
 

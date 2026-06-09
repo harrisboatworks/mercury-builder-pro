@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide
-
-## Article
 
 # Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide
 

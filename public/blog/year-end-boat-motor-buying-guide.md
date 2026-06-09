@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-24  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide
-
-## Article
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Year-end deals exist but the math is more nuanced than most assume. Mercury controls promotions and dealers can't manufacture extra discount. The real win at year-end is build-slot priority for spring install. Configure with current promotions baked in at mercuryrepower.ca.
 

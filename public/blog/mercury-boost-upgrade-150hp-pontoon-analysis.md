@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
-
-## Article
 
 **Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
@@ -140,43 +138,12 @@ Most pontoon customers walk out without Boost. We point them toward prop and tri
 - [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026): Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5-21% on.
 - [Mercury Command Thrust on a Pontoon: Worth the Money?](/blog/mercury-command-thrust-guide-pontoon-boats): Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load.
 
-## FAQs
-
-**Is the [Mercury Boost upgrade](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) worth it for a 150 HP pontoon?** 
-For most 150 HP pontoon owners, the gains are real but modest, pontoon performance is constrained more by hull design, loading, and prop than by peak motor output. Boost makes more sense on lighter performance boats where small power changes are felt. On heavy family tritoons, most customers don't notice a meaningful difference.
-
-**What is Mercury Boost?** 
-A software-only upgrade that increases maximum output on eligible Mercury FourStroke and Pro XS motors without hardware changes. Installation takes about an hour using Mercury's authorized tooling at a certified dealer.
-
-**Which Mercury motors are eligible for Boost?** 
-Specific FourStroke and Pro XS models, typically 115 HP and up. For eligibility on your specific motor, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us.
-
-**Does Boost void my Mercury warranty?** 
-No. Boost is a Mercury-authorized upgrade. Warranty stays in effect. Unauthorized non-Mercury ECU modifications will void warranty, important distinction.
-
-**Can I install Boost myself?** 
-No. Boost requires Mercury's authorized tooling and authentication. It's a dealer-installed upgrade only.
-
-**What gives bigger pontoon performance gains than Boost?** 
-In rough order of impact: correct prop selection, proper trim adjustment, lighter loading, and, if you haven't done it, stepping up to a three-log tritoon hull. All of those typically give more performance per dollar on a pontoon than software Boost.
-
-**Will Mercury offer more software upgrades like Boost?** 
-Probably. Software-defined upgrades are the direction the industry is heading. Boost is the first widely-deployed example from Mercury, not the last.
-
-**If I buy Boost now, can I add more software upgrades later?** 
-Mercury's roadmap points toward more upgrades. Whether future upgrades stack with or supersede current Boost depends on Mercury's product decisions. We'd expect compatibility on current platforms, but specifics aren't confirmed.
-
----
-
-## Internal Links
-
+## Related reading
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-for-family-runabouts)
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
 - [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
 
 ---
-
-## CTA
 
 Wondering if Boost makes sense for your specific pontoon? We'll tell you straight. Call **905-342-2153** or build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, the system will flag whether your motor is Boost-eligible.
 

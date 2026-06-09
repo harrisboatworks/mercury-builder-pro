@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/bobcaygeon
-last_updated: 2026-06-08
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false

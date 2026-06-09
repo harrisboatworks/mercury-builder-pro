@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake.md
-last_updated: 2026-06-08
+last_updated: 2026-02-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake
 
-## Article
-
 # Common Pontoon Boat Problems on Rice Lake in the Kawarthas (Ontario) (And How to Avoid Them)
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Most pontoon problems we see are preventable. The biggest one: undersized motors that lug under load. Other recurring issues include tube leaks, deck rot, wiring corrosion, ethanol fuel damage, and shallow-shoreline bottom strikes. Match the motor to your hull's max HP rating, inspect tubes and deck annually, run ethanol-free fuel, and most pontoons stay reliable for decades.
 

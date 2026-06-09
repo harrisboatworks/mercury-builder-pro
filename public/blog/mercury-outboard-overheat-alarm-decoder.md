@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder.md
-last_updated: 2026-06-08
+last_updated: 2026-05-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder
 
-## Article
-
 # Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)
-
-*Last updated: May 27, 2026*
 
 > A Mercury outboard overheat alarm means one of two things: the cylinder head temperature sensor hit its protection threshold, or Guardian mode detected a condition the ECM wants to shut down before it costs you a powerhead. They sound the same. They need different responses. A continuous alarm at cruise usually means real heat. Check the tell-tale stream, drop throttle, head for shore. A continuous alarm at key-on after a hot shutdown is often heat soak and harmless. Alarm plus power reduction is Guardian mode: do not override it. The pattern tells you where to look.
 
@@ -155,8 +151,6 @@ This page is the SmartCraft Alarm Codes hub. Companion pages in the same diagnos
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), diagnostic flow when the motor doesn't fire
 - [Mercury Outboard Overheating at Idle (Ontario Fix)](/blog/mercury-outboard-overheating-at-idle-fix-ontario), specific to idle-only overheat
 - [Breaking-In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), break-in protocol that prevents some sensor faults
-
-## CTA
 
 Alarm that came back, or one you can't explain on the water? Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Mercury Platinum dealer in Gores Landing on Rice Lake. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and Mercruiser.
 

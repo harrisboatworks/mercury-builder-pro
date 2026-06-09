@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario
-
-## Article
-
-*Last reviewed: 2026-06-06*
 
 > **Quick answer:** Your old outboard can be traded in toward the new motor, used to reduce the taxable amount of the transaction (which affects your HST), or disposed of properly if it's beyond any trade value. Most customers do a combination of all three. We inspect every trade-in and give you a number upfront, before you commit.
 

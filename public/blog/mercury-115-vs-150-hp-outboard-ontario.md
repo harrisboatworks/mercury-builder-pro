@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario
-
-## Article
 
 **Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario
 
@@ -162,33 +160,7 @@ Two related guides in the same cluster:
 
 ---
 
-## FAQs
-
-**Is the Mercury 150 worth the extra money over the 115?** 
-For 18, 22 ft hulls, water sports, or heavy loading: yes. For 17, 19 ft hulls used for family fishing without active water sports: the 115 is plenty, and the savings are well-spent on accessories.
-
-**What HP do I need for a 19, 20 ft pontoon?** 
-For cruising and fishing without water sports, 115 HP Command Thrust is plenty. For active water sports or heavy family loading, 150 HP is the better fit.
-
-**Can I tube and ski with a Mercury 115?** 
-Light tubing and one to two beginners, yes. Consistent wakeboarding with a full boat requires the 150 or higher. The 115 is marginal for active water sports with heavy loading.
-
-**What's the fuel economy difference between 115 and 150?** 
-At cruise, the 115 is more efficient. The 150 is slightly less efficient but very good. At full load on a heavy hull, the 150 is sometimes more efficient than the 115 because it's working less hard.
-
-**Can I run a Mercury 150 on a boat rated up to 115 HP?** 
-No. The capacity plate sets the legal and warranty-backed ceiling. Exceeding it creates compliance, insurance, and liability problems. We won't quote a motor above your capacity plate.
-
-**How long does a Mercury 150 last with proper maintenance?** 
-Modern Mercury 150 FourStrokes properly maintained are typically good for 1,500, 2,000+ hours of running time. For a recreational boater, that often translates to well over a decade of useful life.
-
-**Will my 115 controls and rigging work with a 150?** 
-Mercury-to-Mercury repowers from 115 to 150 often keep existing post-2010 controls. Heavier-gauge wiring and updated steering may be needed for the 150. We assess this during the hull walk-around.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Best Mercury Outboard for Family Runabouts](/blog/best-mercury-for-family-runabouts)
 - [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
@@ -198,8 +170,6 @@ Mercury-to-Mercury repowers from 115 to 150 often keep existing post-2010 contro
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
-
-## CTA
 
 Ready to pick your motor? Build a quote for the 115 or 150 at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration including rigging and prop.
 

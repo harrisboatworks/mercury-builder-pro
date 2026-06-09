@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats.md
-last_updated: 2026-06-08
+last_updated: 2026-05-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-03  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats
-
-## Article
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Outboard ski and wakeboard boats want torque and hole-shot. A Mercury 200-300 V8 FourStroke with the right prop pitch is the right call for most 19-22 ft hulls. Pro XS gains a bit of top end at the expense of mid-range. Stay inside the capacity plate. Quote installed at mercuryrepower.ca.
 

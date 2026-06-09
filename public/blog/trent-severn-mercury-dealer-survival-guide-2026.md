@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-05-28
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-28  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026
-
-## Article
-
-*Last reviewed: 2026-05-28*
 
 > **Quick answer:** If you're transiting the Trent-Severn Waterway (TSW) in 2026, the practical service question is: where do you get parts or mechanical help if something goes wrong en route? HBW is the answer on Rice Lake. We have the largest Mercury and Mercruiser parts inventory in Ontario, full mechanical service, an on-water towing capability for breakdowns or railroad-track incidents, and we're directly on the TSW. The 2026 transit is also supported by the Canada Strong Pass free lockage program (June 19 to September 7).
 

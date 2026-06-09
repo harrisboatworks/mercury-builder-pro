@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences.md
-last_updated: 2026-06-08
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences
-
-## Article
-
-*Last reviewed: 2026-06-06*
 
 > **Quick answer:** A repower isn't just swapping one motor for another. The hull type, pontoon, aluminum fishing boat, or fibreglass V-hull, determines which motors fit, how the new engine loads the transom, which shaft length you need, and what else might need to be addressed while you're at it.
 

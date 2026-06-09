@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
-
-## Article
-
-*Last reviewed: 2026-06-06*
 
 > **Quick answer:** Your boat's capacity plate is the legal ceiling for outboard horsepower in Canada, not a suggestion. Read the maximum horsepower, weight, and persons capacity printed on the plate, then match the motor to how you actually use the boat and the real condition of the transom.
 

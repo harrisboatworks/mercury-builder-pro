@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-16  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario
-
-## Article
 
 # Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters
 
@@ -119,26 +117,6 @@ Email info@harrisboatworks.ca with what you are trying to do on the water and we
 - [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum.
 - [How to Read Your Boat's Capacity Plate (Ontario Guide)](/blog/how-to-read-boat-capacity-plate-ontario): What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three.
 - [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take.
-
-## FAQ
-
-**Are aluminum hulls noisier than fiberglass?**
-Yes, marginally. Aluminum transmits more wake-slap and rivet noise. Modern welded hulls with foam-injection are quieter than older riveted designs. Most owners stop noticing within a season.
-
-**Does aluminum corrode in fresh water?**
-Marine-grade aluminum (5052 or 5086 alloy) resists fresh-water corrosion well for decades. The exception is galvanic corrosion at fittings where dissimilar metals contact aluminum without proper isolation. A boat kept in the water year-round needs sacrificial zincs and proper fitting installation. A trailered boat that comes home dry has almost no corrosion risk.
-
-**Can fiberglass survive Ontario winters in outdoor storage?**
-Yes, with proper preparation. Drain all water, cover with shrinkwrap or a quality cover, keep the cockpit drains clear so meltwater drains out. Cracked gelcoat and water intrusion from a winter of standing water is the most common avoidable fiberglass damage we see.
-
-**Are aluminum boats colder to fish from in shoulder seasons?**
-Aluminum decks transmit cold more than fiberglass decks. A carpeted aluminum boat is a non-issue; a bare-aluminum-deck boat in October is genuinely cold. Most modern aluminum fishing boats have carpet or rubber matting that solves this.
-
-**What's the right Mercury for an aluminum vs a fiberglass boat?**
-Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust on heavier loads or pontoons. Our [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario) and the broader [Ontario Mercury price guide](/blog/ontario-mercury-outboard-price-guide) cover the matching logic.
-
-**Is buying a used aluminum boat safer than buying a used fiberglass boat?**
-Marginally yes, because aluminum hides fewer structural problems and the failure modes are more visible. Fiberglass transom rot, stringer rot, and core delamination can hide for years and then surface during a survey. Either way, a structured inspection before purchase is worth the time. Our printable [Used Boat Walkaround Guide](/blog/used-boat-walkaround-inspection-ontario) walks through the 13-page checklist we use ourselves.
 
 ## About the author
 

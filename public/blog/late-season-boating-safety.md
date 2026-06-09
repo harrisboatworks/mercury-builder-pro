@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-06-08
+last_updated: 2026-05-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,8 +27,6 @@ content_type: blog_article
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/late-season-boating-safety
 
-## Article
-
 ### Quick Answer
 
 In Ontario shoulder seasons, spring and fall, the biggest boating risk is the water temperature, not the air temperature. Dress for water temperature, not air temperature. Wear your PFD. File a float plan. Carry a charged VHF radio on Channel 16. Cold-water immersion below 15°C can cause incapacitation within minutes. See [Transport Canada](https://tc.canada.ca/en)'s cold-water survival guidance (TP 13822) for full detail.
@@ -53,9 +51,9 @@ Below 15°C, cold-water shock sets in immediately on immersion, the involuntary 
 
 | Water Temperature | Time to Exhaustion | Estimated Survival Time |
 |---|---|---|
-| 15°C (59°F) | 30, 40 minutes | 1, 2 hours |
-| 10°C (50°F) | 15, 20 minutes | 30, 40 minutes |
-| 5°C (41°F) | 5, 10 minutes | 15, 20 minutes |
+| 15°C (59°F) | 30-40 minutes | 1-2 hours |
+| 10°C (50°F) | 15-20 minutes | 30-40 minutes |
+| 5°C (41°F) | 5-10 minutes | 15-20 minutes |
 
 The takeaway: at 10°C, you may have 30 minutes of survival time, and that assumes you can hold on. Verify current guidance at Transport Canada's official boating safety resources.
 
@@ -159,35 +157,11 @@ Schedule winterization at [hbw.wiki/service](https://hbw.wiki/service) before th
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide): Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn.
 - [Mercury Propeller Selection Guide (2026 Ontario)](/blog/mercury-propeller-selection-guide): A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its.
 
-## FAQs
-
-**Why does fall boating feel safe but isn't?** 
-Air temperature is comfortable. The boat feels stable. The risk is the water temperature, not the air temperature. If you go in, the water temperature determines the outcome, not how warm the day feels from the helm.
-
-**How cold is Rice Lake in spring and fall?** 
-Rice Lake warms faster than Lake Ontario, but September and October surface temperatures drop quickly. In spring, the lake can still be well below 15°C in May. Check a live weather station for current conditions.
-
-**Should I wear a PFD all the time in shoulder seasons?** 
-Yes. The time to put on a PFD is before you need it. In cold water, there is no time to find it after an unexpected situation.
-
-**What VHF channel should I monitor?** 
-Channel 16. This is the distress and calling channel. [Parks Canada](https://parks.canada.ca/lhn-nhs/on/trentsevern) and Coast Guard monitor it. Murray Canal swing bridges use Channel 14 specifically.
-
-**When should I book fall winterization?** 
-As early as possible. Service slots fill in October. If you wait until the first cold night, you may be waiting for a slot that does not exist.
-
-**Does HBW pick up boats for winterization?** 
-For local Rice Lake and Kawartha customers, yes. Contact us at [hbw.wiki/service](https://hbw.wiki/service) or 905-342-2153.
-
----
-
-## Internal Links
+## Related reading
 - Mercury Outboard Service Schedule
 - Walleye Opener Boat Prep Checklist
 - Mercury Motor Winterization Guide
 - Spring Outboard Commissioning Checklist
-
-## CTA
 
 **End the season right.** Proper winterization in October means a ready boat in May. 
 [Book fall service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 

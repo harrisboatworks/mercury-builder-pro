@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-03-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-03-23  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide
-
-## Article
 
 # Choosing a Mercury Motor for Your Center Console: An Ontario-First Guide
 
@@ -183,8 +181,6 @@ We have been a Mercury dealer on Rice Lake for decades. Center-console repowers 
 We do not oversell Verado to fishing-focused buyers. Pro XS is the right motor for most Ontario fishing-focused center consoles. We recommend Verado when the premium is actually justified by how the boat is being used.
 
 Pickup is at Gores Landing. That is not a downside, it means your motor was rigged by a tech who has put a lot of Lake Ontario and Bay of Quinte center consoles in the water.
-
-*Last reviewed: 2026-05-11.*
 
 ---
 

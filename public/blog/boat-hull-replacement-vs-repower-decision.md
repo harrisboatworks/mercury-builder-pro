@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
-
-## Article
 
 **Canonical URL:** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
 
@@ -162,37 +160,12 @@ We give an honest recommendation. Sometimes the right answer is "your motor stil
 - [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring.
 - [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat): Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from.
 
-## FAQs
-
-**Should I repower or buy a new boat?** 
-Depends on hull condition and use case. For most boaters with a 5, 20-year-old hull that's been stored properly and is structurally solid, repowering saves $25,000, $50,000 CAD and gives you most of the new-boat experience. For hulls with structural issues or use mismatch, replacement makes more sense.
-
-**How long does a typical aluminum hull last?** 
-Properly maintained aluminum hulls regularly last 30, 50+ years. Indoor storage and proper winterization are the biggest factors. Most Kawartha aluminum hulls from the 1990s and 2000s are still on the water.
-
-**What are the signs a hull is at end of life?** 
-Soft floor or transom, hairline cracks at stress points, visible repair patches that didn't hold, water inside the hull foam, or structural damage from impact. Cosmetic issues (faded gel-coat, worn vinyl) are not structural end-of-life signs.
-
-**Does a repower add value to my boat?** 
-A new Mercury motor on a solid hull adds meaningful resale value, typically recovering a significant portion of the repower cost, and makes the boat sell faster.
-
-**Can you assess my boat to help with the decision?** 
-Yes. We do free hull walk-arounds at HBW. Bring the boat to Gores Landing or send photos for a preliminary assessment. The full decision needs eyes on the boat. Call **905-342-2153** to schedule.
-
-**Should I repower a boat I plan to sell soon?** 
-Usually not. The repower premium pays back over multiple seasons of ownership. If you're selling within 12 months, selling as-is and letting the next owner decide usually makes more financial sense.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
 - [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
 
 ---
-
-## CTA
 
 Think you might be repowering? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration.
 

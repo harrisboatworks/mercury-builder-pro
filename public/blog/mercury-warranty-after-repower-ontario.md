@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario
-
-## Article
-
-*Last reviewed: 2026-06-06*
 
 > **Quick answer:** Your Mercury warranty starts the day the motor is rigged and registered. Current FourStroke outboards carry a 3-year factory limited warranty for recreational use. Current promotions can extend total coverage; see [current offers](/promotions). We're a Mercury Platinum dealer, so the warranty is registered correctly and claims are handled in-house.
 

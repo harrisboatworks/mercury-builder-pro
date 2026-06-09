@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-cobourg-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-05-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-17  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-cobourg-ontario-hbw
-
-## Article
 
 ## Quick Answer
 
@@ -139,8 +137,6 @@ Yes. Outdoor storage with shrinkwrap. For Cobourg customers whose boat already l
 Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork; we register the work in Mercury's central system.
 
 Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
-*Last reviewed: 2026-05-17.*
 
 ---
 

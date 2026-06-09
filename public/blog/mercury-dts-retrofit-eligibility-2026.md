@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-05-28
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-28  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026
-
-## Article
-
-*Last reviewed: 2026-05-28*
 
 > **Quick answer:** Most current Mercury motors built with DTS already have it (all Verado, Pro XS 150 HP and up, FourStroke 200 HP and up since the model was DTS-equipped). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor. Email your motor serial number to info@harrisboatworks.ca for a same-day yes or no.
 

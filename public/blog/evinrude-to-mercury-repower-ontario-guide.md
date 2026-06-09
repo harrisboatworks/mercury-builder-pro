@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-23  
 **Read time:** 14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide
-
-## Article
-
-*Last reviewed: 2026-05-23*
 
 > **Quick answer:** Evinrude stopped building outboards in 2020, and six years on, parts and service support keep thinning. For most Evinrude owners with a sound hull they plan to keep, switching to Mercury is the right move. The conversion costs a one-time rigging premium because the whole control system swaps, but you pay it once. Build a quote at mercuryrepower.ca.
 
@@ -165,37 +161,6 @@ The boat does not leave until it passes the sea-trial. That is how a marina that
 - [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
 - [The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from.
 - [Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)](/blog/honda-to-mercury-repower-ontario-guide): Honda to Mercury repower from an Ontario Mercury Platinum dealer. Honest framework on when the swap is worth.
-
-## Frequently Asked Questions
-
-**Why did Evinrude stop making outboards?**
-BRP ended Evinrude outboard production in May 2020. No new motors have been built since. Parts and service support continue through BRP's supply chain, but manufacturing has stopped permanently.
-
-**Can I still get parts for my Evinrude?**
-Common service parts like filters, plugs, and fluids are still available. Specialty parts, particularly the proprietary electronics and fuel-injection components for E-TEC G1 and G2, are getting harder to find, and lead times keep extending. The window is open, but it is narrowing.
-
-**How much does an Evinrude-to-Mercury conversion cost?**
-The new motor plus a one-time brand-conversion rigging premium on top of a standard install, because the whole control system swaps. The total depends on horsepower class. See the [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for planning ranges, and build your exact number at mercuryrepower.ca.
-
-**Do I have to replace all the controls?**
-Yes. Evinrude and Mercury controls, harnesses, and gauges are not compatible, so the whole control system swaps. Steering sometimes carries over depending on its age and type. We assess that during the hull walk-around.
-
-**Can I keep my Evinrude prop?**
-Rarely. Different hub design and different pitch matching mean an Evinrude prop on a Mercury motor is a mismatch. We test and fit the right prop for your Mercury on the sea-trial.
-
-**How long does the conversion take?**
-A few days of shop time, and a few weeks from order to pickup. Off-season, October through March, is fastest.
-
-**Should I trade in the old Evinrude or sell it privately?**
-It depends on the motor's age and condition. A newer, running E-TEC G2 sometimes has private-sale value. Older motors are usually best as a trade-in. The trade-in estimator at mercuryrepower.ca gives an instant number.
-
-**Will a Mercury Pro XS feel like my E-TEC?**
-The Pro XS is the closest match in character: strong acceleration, a high-RPM bias, tuned for performance over cruise economy. It will not feel identical, no engine is, but most E-TEC owners find it familiar within a short adjustment period. For most boats a standard FourStroke is the better all-round choice.
-
-**Is a Mercury actually more reliable than an Evinrude?**
-The E-TEC was a well-engineered engine, and a healthy late-model G2 is mechanically comparable to a Mercury FourStroke. The real difference in 2026 is support. A Mercury with a failed part gets fixed at any Mercury dealer in Canada with stocked parts and current diagnostic tools. An Evinrude with a failed proprietary electronic part may not be fixable at all.
-
----
 
 ## Ready to Switch?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-02  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw
-
-## Article
 
 # What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works
 
@@ -238,7 +236,6 @@ We also publish all our Mercury pricing live at [mercuryrepower.ca](https://www.
 > **Want a number right now?** Try our [Trade-In Value Estimator](/trade-in-value). Same fields, instant CAD ballpark. Or call us at [(905) 342-2153](tel:+19053422153) and we'll walk it through with you.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-*Last reviewed: 2026-05-11.*
 
 ---
 

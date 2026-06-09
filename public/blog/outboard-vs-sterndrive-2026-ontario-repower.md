@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower.md
-last_updated: 2026-06-08
+last_updated: 2026-03-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower
 
-## Article
-
 # Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** In 2026, almost every Ontario sterndrive repower goes outboard. The market has moved: outboards are over 80% of new recreational marine engines, sterndrive parts pipelines are tightening, and modern 4-stroke outboards have closed the noise and ride-comfort gap. We sell and service both. The honest answer for bowriders, deck boats, runabouts, and pontoons: an outboard repower wins on reliability, fuel economy, and resale.
 

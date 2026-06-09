@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-06-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,15 +27,11 @@ content_type: blog_article
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026
 
-## Article
-
 - Mercury Platinum Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON
 - Quote builder available
-
-*Last reviewed: 2026-06-05*
 
 A Mercury or Honda buyer walks into our shop with the same two questions: which motor is actually better, and what does my service look like over the next 10 years? We sell Mercury. We don't sell or service Honda. So this isn't a balanced review, the Mercury section was not written by Switzerland. But we still try to keep the comparisons fair.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-06-08
+last_updated: 2026-05-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number
 
-## Article
-
 # How to Read a Mercury Outboard Serial Number. Year, Specs, and Service History
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like `0T123456` or `1B234567`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like `90ELPT` or `1F60413GZ`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial. Send us a serial or model code through mercuryrepower.ca for a quick check.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-02-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw
 
-## Article
-
 # Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)
-
-*Last reviewed: 2026-05-07*
 
 > **Quick answer:** Toronto-area boaters drive to HBW because we post real installed prices online, stock 2026 Mercury inventory you can see in person, and have one of Ontario's deepest service benches. The 90-minute drive saves thousands on most repowers. Build a quote first at mercuryrepower.ca.
 
@@ -187,43 +183,6 @@ We've had customers turn a 90-minute "go pick up your motor" drive into a full-d
 - [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
 - [Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)](/blog/mercury-40-vs-60-hp-outboard-ontario): Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability.
 - [Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)](/blog/mercury-repower-gta-toronto-destination): A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline.
-
-## Frequently Asked Questions
-
-**How long does it take to drive from Toronto to Harris Boat Works?**
-Roughly 90 minutes from central Toronto in light traffic. From western GTA (Mississauga, Brampton): 75-105 minutes. From north (Markham, Richmond Hill): 75-90 minutes. Take the 401 east, exit at Cobourg, follow County Rd 18 north to Gores Landing.
-
-**Is Mercury motor pricing the same at HBW as my local Toronto dealer?**
-Motor MAP pricing is the same. Rigging, install, prop, and trade-in pricing varies dealer to dealer, sometimes by thousands of dollars. Our configurator shows our all-in pricing transparently; many GTA dealers don't.
-
-**Why drive to HBW vs a closer Mercury dealer?**
-Three things: Mercury Platinum dealer tier (factory-trained techs, full diagnostic equipment), transparent configurator pricing (no "call for quote"), and a service relationship that follows your motor for the next 10-15 years. If those don't matter to you, your local dealer is fine.
-
-**Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?**
-Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer, service history, parts familiarity, and faster warranty claim processing through Platinum dealers.
-
-**Do you offer pickup or delivery for GTA buyers?**
-We don't ship or deliver Mercury motors. Pickup only at Gores Landing. For repowers, customers trailer the boat to us; service and parts pickup is in person. Some customers use commercial boat transport services for one-way trips.
-
-**What's the savings vs. a Toronto dealer for a typical repower?**
-Highly variable, but for a 150 HP FourStroke repower with rigging + prop + sea trial, all-in pricing at HBW typically runs $1,500-$3,000 less than a comparable rigged repower at an opaque-pricing GTA dealer. The configurator gives the exact number.
-
-**Can I rent a boat at HBW before committing to buy?**
-Yes. We have a 9-boat rental fleet (Mercury-powered) on Rice Lake, half-day or full-day rentals. Many GTA customers rent before buying. Booking at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
-
-**Is HBW open weekends?**
-Yes. Saturday + Sunday hours during boating season (May-October), plus weekday business hours. Off-season weekend hours are reduced, call ahead.
-
-**Do you do warranty work for motors purchased at other dealers?**
-Yes. Mercury's warranty network extends across Canada. Bring your purchase paperwork; we process the claim through Mercury. If your selling dealer is closed, weak, or out of state, this is a common scenario.
-
----
-**Phone:** 905-342-2153
-**Configurator (transparent pricing):** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

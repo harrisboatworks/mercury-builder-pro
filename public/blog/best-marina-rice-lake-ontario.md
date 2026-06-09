@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-16  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario
-
-## Article
 
 ![Harris Boat Works full-service marina wheel - 8 services from a Mercury Platinum dealer on Rice Lake](/lovable-uploads/hbw-full-service-marina-wheel.png)
 

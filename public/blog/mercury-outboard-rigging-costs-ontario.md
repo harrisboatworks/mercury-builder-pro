@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-05  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
-
-## Article
 
 **Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 
@@ -192,43 +190,12 @@ The hidden cost: SmartCraft display. Most repower customers want the data screen
 - [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
 - [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
 
-## FAQs
-
-**What is included in Mercury outboard rigging?** 
-Throttle and shift controls, steering, wiring harness, gauges or display, battery cables and switches, fuel hose and filter, and propeller. Everything connecting the motor to the boat's systems.
-
-**How much does Mercury rigging cost in Ontario?** 
-Mercury-to-Mercury on post-2010 controls in good condition: $500, $1,500 CAD. Brand conversion or full re-rig: $2,500, $5,000 CAD. Hydraulic steering upgrade adds $1,650, $3,500 CAD. All before HST.
-
-**Is rigging included in the quote from mercuryrepower.ca?** 
-Yes. The configurator builds the rigging cost into the all-in installed price.
-
-**Can I keep my existing controls if I'm upgrading to a newer Mercury?** 
-Mercury-to-Mercury repowers with post-2010 controls in good condition usually carry over. We assess during the hull walk-around.
-
-**Why does a brand conversion cost more to rig?** 
-Evinrude, Yamaha, and Honda controls, harnesses, and wiring are not compatible with Mercury. The entire control system needs to swap, adding $1,500, $3,000 CAD to the rigging bill.
-
-**When should I upgrade from cable to hydraulic steering?** 
-Hydraulic steering is standard at 90 HP and up. If your existing cable steering is worn or you're stepping up in HP, the repower is the least expensive time to upgrade, the dash is already open.
-
-**Does rigging include the propeller?** 
-Yes. We size the prop to the motor and hull during sea trial. If a prop swap is needed to hit the motor's rated WOT RPM range, we do it before delivery.
-
-**Is the rigging quote fixed before the job starts?** 
-We quote rigging based on the walk-around assessment. Occasionally, hidden issues (corroded connections, cracked hose behind a panel) surface during the install that require additional work. We contact the customer before proceeding with anything beyond the agreed scope.
-
----
-
-## Internal Links
-
+## Related reading
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
 - [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
 
 ---
-
-## CTA
 
 Ready for an honest rigging quote? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, rigging is included in the all-in number, line by line.
 

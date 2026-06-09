@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario.md
-last_updated: 2026-06-08
+last_updated: 2026-05-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,11 +27,7 @@ content_type: blog_article
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
 
-## Article
-
 # Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?
-
-*Last reviewed: 2026-05-18*
 
 > **Quick answer:** Mercury's 9.9 HP and 15 HP FourStroke tillers share the same block, gearcase, and footprint. The 15 HP gives you about 50 percent more power for a 10 to 15 lb weight penalty and a small fuel-burn bump. Pick the 15 unless your lake has a horsepower restriction, your capacity plate caps you at 9.9, or you specifically want a 9.9-rated kicker for trolling. Most Rice Lake and Kawartha customers walk out with the 15.
 
@@ -186,40 +182,6 @@ We're not in Toronto. We're in Gores Landing, about 90 minutes east of downtown 
 - [Boat Motor Size Guide: How to Calculate the Right HP for Your Boat](/blog/boat-motor-size-calculator-guide): Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and.
 - [How to Choose the Right Horsepower for Your Boat (2026 Guide)](/blog/how-to-choose-right-horsepower-boat): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
 - [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide): Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want.
-
-## Frequently Asked Questions
-
-**Can I convert a 15 HP Mercury into a 9.9 with a flash?**
-
-Yes. Mercury has historically offered a calibration that re-rates the 15 down to 9.9 HP for HP-restricted lake compliance. The motor is physically a 15 wearing a 9.9 sticker and registered as a 9.9. Some lake authorities accept this, others go by what's stamped on the cowl. Confirm with your specific lake authority before relying on the flash.
-
-**Is the 9.9 EFI FourStroke a tournament-legal kicker for bass and walleye?**
-
-Yes. The 9.9 EFI FourStroke is the standard pick for tournament-class kicker use. Most Ontario bass and walleye tournament series cap kicker HP at 9.9. Always check the specific tournament rules before competing.
-
-**What shaft length do I need for a sailboat auxiliary?**
-
-Most sailboats need a 20 inch (long) shaft. Larger displacement hulls (28 foot plus) sometimes need 25 inch (extra long). Measure from the top of the transom to the centre of the prop shaft on your old motor, or measure transom height plus 5 to 8 inches. We measure for free if you bring the boat or a photo of the transom.
-
-**Will the 9.9 push a loaded 14 foot aluminum jon boat?**
-
-It depends on the load. Empty with one adult, yes. Loaded with two adults, fishing gear, full fuel tank, and live well, the 9.9 will struggle to get the boat onto plane. The 15 handles the same hull and load with margin to spare. Most customers who go 9.9 here end up wishing they'd picked the 15.
-
-**Do the 9.9 and 15 share parts?**
-
-Largely yes. Same block, gearcase, cooling system, prop hub, and most consumables (impellers, plugs, oil filter, gear lube). Some calibration-specific parts differ (ECM mapping, throttle stop), but the consumables are interchangeable.
-
-**What's the fuel burn for an average season?**
-
-About 25 to 50 gallons of regular 87-octane for a typical recreational user (50 hours running, mostly cruising RPM). At Ontario marina pump prices, that's roughly 150 to 300 CAD per season for fuel. The delta between 9.9 and 15 is roughly 25 to 50 CAD per season at most, well under the price difference between the motors.
-
-**Can I rig either as a remote-throttle setup later?**
-
-Yes. Both motors have remote-control conversion kits. You can start with a tiller and add remote later if your boat use changes. Bring the motor and your console setup to HBW and we'll quote the conversion.
-
-**What warranty comes with a new Mercury 9.9 or 15?**
-
-3 years limited + 3 years corrosion, running concurrently for the same 3-year period. Extended coverage through Mercury Platinum Protection is available at purchase. See our [Mercury extended warranty guide](https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario) for details.
 
 ## Ready to Pick One?
 

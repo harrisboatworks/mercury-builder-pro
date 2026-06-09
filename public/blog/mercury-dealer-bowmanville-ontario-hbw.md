@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw.md
-last_updated: 2026-06-08
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-11  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
-
-## Article
 
 **Quick Answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 35 minutes north of Bowmanville via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
@@ -118,28 +116,6 @@ At 35 minutes, you don't need to front-load every visit with hours of research. 
 - [Mercury Dealer for Oshawa: 40 Minutes to Rice Lake](/blog/mercury-dealer-oshawa-ontario-hbw): Mercury Platinum dealer for Oshawa customers - Harris Boat Works on Rice Lake is about 40 minutes via the 401.
 - [Mercury Dealer for Pickering: 50 Minutes from Rice Lake](/blog/mercury-dealer-pickering-ontario-hbw): Mercury Platinum dealer for Pickering customers - Harris Boat Works on Rice Lake is about 50 minutes.
 - [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw): Mercury Platinum dealer for Whitby customers - Harris Boat Works on Rice Lake is about 45 minutes north via.
-
-## Frequently Asked Questions, Bowmanville
-
-**At 35 minutes, should I just use you as my primary dealer for everything?**
-If you're running Mercury, yes. Commissioning, service, winterization, storage, motor purchases, the distance makes it practical to have one shop handle all of it. That's how a lot of our Clarington-area customers operate.
-
-**Can I see pricing without calling or coming in?**
-Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. Three minutes. No friction.
-
-**Do you service non-Mercury motors?**
-No. For engine repairs, we only service Mercury and Mercruiser. Yamaha, Honda, and Suzuki are outside our scope. If you're running something else and want to discuss switching to Mercury on a repower, that's a conversation we're happy to have.
-
-**I want to winterize and store here, what's the process?**
-Submit a request at [hbw.wiki/service](https://hbw.wiki/service) in September or early October. We'll get you scheduled for winterization and storage. Outdoor with shrinkwrap, no indoor option.
-
-**What if I just need a part?**
-For parts, start at [marinecatalogue.ca](https://www.marinecatalogue.ca) or call us at 905-342-2153. If we have it in stock, you could be here and back in under an hour.
-
-**Is there a reason to buy from a GTA dealer instead of you?**
-Honestly? If a GTA dealer is a Platinum dealer, has the same pricing, and is closer to where your boat is, use them. We're not going to tell someone to drive 35 minutes when 15 minutes is just as good. Call us first and we'll tell you straight.
-
----
 
 ## The HBW Promise
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
-
-## Article
-
-**Last reviewed:** 2026-05-07
 
 ---
 
@@ -191,34 +187,6 @@ We rig both at HBW. Specific recommendations depend on motor HP and how you use 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD with full configuration options for both tiller and remote. Or call **905-342-2153** and we'll walk through what's right for your boat.
 
 ---
-
-## FAQ
-
-**Should I get a tiller or remote-control Mercury?**
-Boats under 14 ft and small fishing applications: tiller. Console boats over 16 ft and family use: remote. The 14–16 ft crossover zone depends on use case, solo fishing often stays tiller; family use goes remote.
-
-**What's the biggest tiller Mercury available?**
-Mercury makes tiller variants up to about 60 HP in select models. Above 60 HP, remote control is the standard. Tiller at high HP is physically demanding and uncommon.
-
-**Is tiller cheaper than remote control?**
-Yes, typically by the cost of rigging cables, helm controls, and console hardware. The savings are meaningful on small to mid-HP motors.
-
-**Can I convert from tiller to remote control later?**
-Yes, but it's a significant project, new helm controls, new rigging cables, possibly a new console structure. Most cost-effective to make this decision at the time of a planned repower.
-
-**Can I troll with a tiller motor?**
-Yes, easily. Tiller is actually preferred for trolling because direct speed and direction control is highly responsive. The 9.9 ProKicker tiller is the classic Ontario walleye fishing setup.
-
-**What's Digital Throttle and Shift?**
-DTS is Mercury's electronic throttle and shift system, replaces cable controls with electronic actuation. Smoother operation, no cable wear. Available on higher-HP Mercury motors, generally 150 HP and up.
-
-**Does a tiller motor have throttle and shift integrated?**
-Yes. The tiller arm includes throttle (rotating handle) and shift (forward, neutral, reverse selector), integrated into the arm.
-
-**Can I add a tiller kicker to a remote-control main motor boat?**
-Common configuration. The main motor uses remote control from the helm; the kicker is a separate tiller motor for trolling speed control. Works well for fishing boats.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs.md
-last_updated: 2026-06-08
+last_updated: 2026-06-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,8 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-07  
 **Read time:** 9 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
-
-## Article
 
 ## Mercury Pro XS vs FourStroke vs Verado: Which One Do You Actually Need?
 

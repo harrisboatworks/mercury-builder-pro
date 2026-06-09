@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat
-
-## Article
-
-**Last reviewed:** 2026-05-07
 
 ---
 
@@ -196,40 +192,6 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real installed pricing across every Mercury HP class, no games. Or call us at **905-342-2153** and we'll talk through your specific boat. Sometimes the honest answer is "you already have the right motor." We'll say that too.
 
 ---
-
-## FAQ
-
-**How do I choose the right horsepower for my boat?**
-Start with the capacity plate on your boat, that's the legal ceiling. Then match HP to your actual use: number of passengers, what you do on the water, and where you run. For most recreational boaters, 70–90% of rated maximum is the target. We're happy to help match a motor to your specific boat.
-
-**What HP do I need for a 16-foot aluminum fishing boat?**
-For solo or two-person trolling, 25 to 40 HP. For three or more people who want to plane and run between spots, 40 to 60 HP. The 60 HP FourStroke is the most common choice for 16-foot aluminum console boats on Kawartha lakes.
-
-**What HP do I need for an 18-foot pontoon?**
-For cruising and fishing without water sports, 90 HP Command Thrust is plenty. For family use with tubing or skiing, step up to 115 HP Command Thrust. The Command Thrust gearcase matters, it's built for the load profile of pontoons.
-
-**What HP do I need for a 20-foot pontoon?**
-Cruising and fishing: 115 HP Command Thrust. Active water sports with multiple passengers: 150 HP Command Thrust. Above 150 HP on a two-tube pontoon starts to deliver diminishing returns.
-
-**What HP for a bass boat?**
-Tournament fishing: 200 to 250 HP Pro XS. Recreational bass fishing: 150 to 200 HP FourStroke or Pro XS. The Pro XS line is the standard in tournament fishing.
-
-**Can I put a bigger motor than the capacity plate allows?**
-No. The capacity plate is the legal and warranty-backed ceiling. Going over voids the Mercury warranty and creates insurance and safety problems. We won't rig it.
-
-**Does prop selection affect how much HP I need?**
-Yes. A wrong prop can cost you real top speed and fuel economy even on a perfectly-sized motor. Sometimes the fix isn't a bigger motor, it's the right prop on the motor you have. We test props on the water during every repower sea trial.
-
-**What is Mercury Command Thrust and when do I need it?**
-Command Thrust is a gearcase option (not a separate motor family) available on select FourStroke models. It uses a larger gearcase, larger prop, and torque-tuned gear ratios built for heavy boats. On pontoons, Command Thrust is almost always the right call.
-
-**Should I get the 90 HP or the 115 HP for my pontoon?**
-For an 18–20 ft two-tube pontoon doing cruising and fishing, 90 HP Command Thrust is enough. For a 20–22 ft pontoon with active water sports in mind, jump to 115 HP Command Thrust. The price difference is real; so is the capability difference.
-
-**Does loading affect how much HP I need?**
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-Significantly. A fully loaded family boat behaves like a different machine than an empty one. Plan your HP for your real load, not the number on paper.
 
 ## FAQs
 

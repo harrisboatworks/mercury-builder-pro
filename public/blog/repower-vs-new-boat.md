@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-vs-new-boat.md
-last_updated: 2026-06-08
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-25  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-vs-new-boat
-
-## Article
-
-*Last reviewed: 2026-05-25*
 
 > **Quick answer:** Repower wins when your hull is sound, the boat fits your family, and the math works. A typical Mercury repower runs $11,000 to $40,000 CAD installed (2026 ranges), versus $40,000 to $100,000-plus for a comparable new boat. Buying new wins when your transom is rotting, the hull is dated for how you use the water now, or you simply wanted a different boat anyway. There are also hidden costs of new: trailer, taxes on the whole package, insurance, storage fit, dock fit. We have been a Mercury Platinum Dealer since 1965 and we will tell you straight which side of the line your boat falls on. Pickup at Gores Landing after a water test on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
 
@@ -117,28 +113,6 @@ Three patterns from three generations of repowering boats on these lakes.
 - [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada): Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and.
 - [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament.
-
-## Frequently Asked Questions
-
-**When does repowering save money compared to buying new?**
-Almost always, if the hull is sound. A Mercury repower at $11,000 to $40,000 CAD installed (2026 ranges) is typically a third to a quarter of the cost of a comparable new boat with a new motor. A comparable new package often adds another $25,000 to $50,000 over that. Repower keeps you in the boat you already know.
-
-**When does buying a new boat make more sense?**
-When the transom is rotted beyond reasonable repair, when the hull has structural cracks or rotted stringers, when the boat design is too dated for your current use, or when you simply want change. Honest assessment matters.
-
-**Will Harris Boat Works tell me if my boat is not worth repowering?**
-Yes. We inspect every boat before quoting a repower. If the transom is gone or the hull has structural issues, we will tell you straight and walk you through what new looks like. We are also a Legend Boats dealer if new is the right answer.
-
-**How long does a Mercury motor last?**
-A well-maintained Mercury FourStroke can run 1,500 to 2,500-plus hours of recreational use, which on Ontario seasonal boating means 15 to 25 years for many owners. That is why repower math is so favourable.
-
-**What does it cost to fix a soft transom vs buy new?**
-A full transom rebuild on an aluminum or fibreglass boat typically runs $3,000 to $8,000 CAD depending on size and complexity (2026 ranges). That is usually still cheaper than new, but it is a real decision point that can tip the math.
-
-**Will a new motor increase the resale value of my boat?**
-Yes, a new Mercury outboard significantly increases resale value on a sound hull, though rarely dollar-for-dollar what you paid for the repower. The bigger return is years of enjoyment on a boat you already know.
-
----
 
 ## Ready to do the math on your boat?
 

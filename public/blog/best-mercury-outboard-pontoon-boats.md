@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md
-last_updated: 2026-06-08
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-04  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats
-
-## Article
-
-**Last reviewed:** 2026-05-10
 
 ---
 
@@ -190,28 +186,6 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The system 
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
-
-## FAQ
-
-**What's the best Mercury for an 18-foot pontoon?**
-For cruising and fishing without water sports, 90 HP Command Thrust FourStroke. For occasional water sports with the family, step up to 115 HP Command Thrust.
-
-**What's the best Mercury for a 20-foot pontoon?**
-Cruising and fishing: 115 HP Command Thrust. Active family use with tubing or skiing: 150 HP Command Thrust. Above 150 HP on a two-tube pontoon starts to hit diminishing returns.
-
-**Do I need Mercury Command Thrust on a pontoon?**
-For pontoons 18 ft and up, yes in most cases. Command Thrust gives meaningful hole shot, load-handling, and pulling power that the standard gearcase can't match on pontoons. The cost premium is worth it.
-
-**Can I use my pontoon for water sports?**
-Yes, with the right HP. Tubing: 115 HP CT or higher. Skiing: 115–150 HP CT minimum. Wakeboarding: 150 HP CT or higher. Pontoons purpose-built for water sports (some tritoons) handle this best.
-
-**Should I get FourStroke or Pro XS for a pontoon?**
-FourStroke is almost always the right answer for pontoons. Pro XS is built for tournament fishing and performance applications, not the load-handling and cruising emphasis pontoons need.
-
-**What's the most popular Mercury for pontoons in Ontario?**
-The 115 ELPT Command Thrust FourStroke. Fits the most common pontoon (20 ft two-tube), the most common use case (family cruising with occasional water sports), and the most common capacity rating.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
 

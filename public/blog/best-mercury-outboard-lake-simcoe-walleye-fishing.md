@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing.md
-last_updated: 2026-06-08
+last_updated: 2026-06-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,15 +27,11 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing
 
-## Article
-
 - Mercury Platinum Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON
 - Quote builder available
-
-*Last reviewed: 2026-06-05*
 
 **Quick answer:** For Lake Simcoe walleye, most anglers want a 90 to 150 HP Mercury FourStroke main paired with a Mercury 9.9 ProKicker for slow trolling. Pick a hull rated for Simcoe chop - 17 to 19 ft deep-V or modified-V aluminum is our usual recommendation. Build a main-and-kicker package at [mercuryrepower.ca](https://mercuryrepower.ca).
 

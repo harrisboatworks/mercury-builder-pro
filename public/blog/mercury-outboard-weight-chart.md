@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart.md
-last_updated: 2026-06-08
+last_updated: 2026-06-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-06-07  
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
-
-## Article
-
-*Last reviewed: 2026-06-07*
 
 ## Mercury Outboard Weight Chart: 2.5 to 300 HP
 

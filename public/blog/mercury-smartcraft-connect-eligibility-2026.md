@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026.md
-last_updated: 2026-06-08
+last_updated: 2026-05-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-27  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026
-
-## Article
-
-*Last reviewed: 2026-05-27*
 
 > **Quick answer:** SmartCraft Connect works on most Mercury motors from 2004 onward: FourStroke 40 HP+, Pro XS 115 HP+, Verado, SeaPro 40 HP+, and Avator electric. It does NOT work on 9.9 to 20 HP portables, pre-2004 4-strokes, or any 2-stroke or Optimax engine. Mercury 25 and 30 HP got SmartCraft in 2022. Email your serial number to info@harrisboatworks.ca for a same-day yes or no.
 

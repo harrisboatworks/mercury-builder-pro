@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury.md
-last_updated: 2026-06-08
+last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -26,10 +26,6 @@ content_type: blog_article
 **Last updated:** 2026-05-25  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury
-
-## Article
-
-*Last reviewed: 2026-05-25*
 
 > **Quick answer:** The best Mercury outboard for a pontoon in 2026 depends on tube count, length, and passenger load. For a 20 foot single-tube pontoon, a Mercury 90 HP FourStroke is the value pick at around $13,000 CAD installed. For a 22 foot pontoon, step up to 115 HP or 150 HP with Command Thrust strongly recommended. For a tritoon used for tubing or skiing, a Pro XS V8 200 with Boost transforms the boat. Command Thrust is the right upgrade on most pontoons 22 feet and up. At Harris Boat Works we rig pontoons every spring and water test each one on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
 
@@ -118,28 +114,6 @@ The Command Thrust upgrade pays for itself in customer satisfaction. We have nev
 - [Mercury Command Thrust on a Pontoon: Worth the Money?](/blog/mercury-command-thrust-guide-pontoon-boats): Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load.
 - [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
 - [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use): For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90.
-
-## Frequently Asked Questions
-
-**What size Mercury motor do I need for a 22 foot pontoon?**
-A 115 HP or 150 HP FourStroke covers most 22 foot single-tube pontoons. Command Thrust is worth the upgrade if you carry six or more adults. Step up to a Pro XS V8 with Boost on tritoons of that length.
-
-**Is a 90 HP enough for a pontoon?**
-Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourStroke cruises well at 18 to 22 mph and comes up on cruise cleanly. Add a third tube or routinely carry six people and you will want more horsepower.
-
-**Should I get Command Thrust on a pontoon?**
-On pontoons 22 feet and up, almost always yes. Command Thrust gives a 15-inch propeller and larger gearcase that meaningfully improves hole shot and reverse on heavy pontoons. The upgrade adds roughly $800 to $1,500 CAD as of 2026.
-
-**How much does a pontoon repower cost in Ontario?**
-A pontoon repower at Harris Boat Works typically runs $13,000 to $30,000 CAD installed in 2026, depending on horsepower. It includes motor, rigging, controls, propeller, fuel system inspection, old motor removal, and water test on Rice Lake. Build a current quote at mercuryrepower.ca.
-
-**Is the Boost upgrade worth it for pontoons?**
-On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat up on cruise quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.
-
-**Can a Mercury Avator electric work on a pontoon?**
-The Avator 7.5e is too small to be a main motor on a pontoon. It works as a quiet kicker for fishing finesse on small pontoons. For main propulsion on a pontoon you want gasoline 60 HP and up.
-
----
 
 ## Ready to repower your pontoon?
 

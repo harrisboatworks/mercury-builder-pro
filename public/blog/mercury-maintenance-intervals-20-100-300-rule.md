@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md
-last_updated: 2026-06-08
+last_updated: 2026-05-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,13 +27,11 @@ content_type: blog_article
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule
 
-## Article
-
 **Language:** English 
 
 ---
 
-![Mercury maintenance interval timeline: 20, 100, 300 hours (HBW diagram)](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
+![Mercury maintenance interval timeline: 20/100/300 hours (HBW diagram)](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
 
 ## Quick Answer
 
@@ -76,9 +74,9 @@ Mercury builds its service schedule around three milestones that correspond to d
 
 ## Why Three Milestones
 
-### Break-in phase (0, 20 hours)
+### Break-in phase (0-20 hours)
 
-A new engine is not fully "seated" when it leaves manufacturing. In the first 10, 20 hours of operation:
+A new engine is not fully "seated" when it leaves manufacturing. In the first 10-20 hours of operation:
 - Piston rings seat against cylinder walls
 - Gears mesh and find their final wear pattern
 - Metal particles shed from these break-in processes end up in the oil
@@ -87,7 +85,7 @@ The 20-hour service exists specifically to capture and remove those particles be
 
 Skipping the 20-hour service leaves metal contamination in the oil and misses the first opportunity to catch any assembly-related issues while the motor is still new.
 
-### Routine operation phase (20, 300 hours)
+### Routine operation phase (20-300 hours)
 
 After break-in, the motor enters years of normal use. The 100-hour service interval is Mercury's standard for routine preventive maintenance during this phase. It covers the items that wear and accumulate through normal operation: oil, filters, spark plugs, gear lube, and inspection of critical systems.
 
@@ -166,7 +164,7 @@ If you want warranty-compliant documentation, having a certified Mercury dealer 
 
 ## Ontario Seasonal Reality
 
-Most Ontario recreational boaters put the motor in around May and take it out in October, roughly five or six months of use. In an average season on Rice Lake or the Kawarthas, a recreational boater might put on 40, 80 hours depending on use pattern.
+Most Ontario recreational boaters put the motor in around May and take it out in October, roughly five or six months of use. In an average season on Rice Lake or the Kawarthas, a recreational boater might put on 40-80 hours depending on use pattern.
 
 This means:
 - **Most owners never reach 100 hours in a season**, the annual trigger is what matters, not the hour trigger
@@ -198,34 +196,12 @@ Two related guides in the same cluster:
 
 ---
 
-## Frequently Asked Questions
-
-**Do I need to service a motor I barely ran this year?** 
-Yes. The "one year" trigger applies regardless of hours. Oil degrades over time even in storage, gear lube absorbs moisture, and grease points need annual lubrication. Low-hour seasons don't extend the service interval.
-
-**Can I do my own 100-hour service?** 
-Yes, with the right supplies and mechanical confidence. Oil change, gear lube, spark plug replacement, and lubrication are all DIY-accessible for most owners. Water pump inspection and fuel system checks are more involved. Keep records of what you do and when.
-
-**How do I know what's been done on a used motor I bought?** 
-Ask for service records. If there are none, assume nothing has been done and schedule a full inspection. A used motor with no service history is a motor of unknown condition regardless of what it looks like or how it runs.
-
-**Is the 20-hour service really necessary on a brand new motor?** 
-Yes. Mercury requires it for warranty compliance on new motors, and it exists for a real mechanical reason, break-in metal contamination in the oil. Don't skip it.
-
-**What happens if I skip the 100-hour service for a year?** 
-Skipping one service rarely causes immediate failure. The risk accumulates: degraded oil, water-contaminated gear lube, worn spark plugs, and an impeller that goes another year without inspection. The more services skipped, the higher the probability of a preventable failure.
-
----
-
-## Internal Links
-
+## Related reading
 - [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
 - [Mercury Outboard Overheating at Idle, Ontario Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
 - [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
-
-## CTA
 
 **Due for service?** 
 Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
