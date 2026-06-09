@@ -24568,7 +24568,7 @@ Most modern chartplotters from Garmin and Humminbird can read Mercury engine dat
 
 **Path B, SmartCraft Connect alone:** No chartplotter, no NMEA 2000. Phone is the display. The cleanest setup for small fishing boats, kicker-rigged hulls, and budget-conscious customers who do not need a Garmin yet.
 
-For most Ontario freshwater boaters with a Mercury 60, 115 HP and a basic fishfinder, Path A is overkill. SmartCraft Connect alone is the right answer.
+For most Ontario freshwater boaters with a Mercury 60-115 HP and a basic fishfinder, Path A is overkill. SmartCraft Connect alone is the right answer.
 
 ---
 
