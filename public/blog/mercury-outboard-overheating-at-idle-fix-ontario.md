@@ -27,8 +27,6 @@ content_type: blog_article
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 
-**Language:** English 
-
 ---
 
 ![Mercury overheating troubleshooting flowchart (HBW diagram)](/lovable-uploads/diagram-overheating-troubleshooting.png)

@@ -27,8 +27,6 @@ content_type: blog_article
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
 
-**Language:** English 
-
 ---
 
 ## Quick Answer

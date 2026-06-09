@@ -27,8 +27,6 @@ content_type: blog_article
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting
 
-**Language:** English 
-
 ---
 
 ## Quick Answer

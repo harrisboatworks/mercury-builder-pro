@@ -27,8 +27,6 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
 
-**Language:** English 
-
 ---
 
 ![DIY Mercury winterization risk checklist, 8 things that go wrong when boat owners winterize themselves](/lovable-uploads/diy-mercury-winterization-risk-checklist.png)

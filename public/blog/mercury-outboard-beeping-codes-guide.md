@@ -27,8 +27,6 @@ content_type: blog_article
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 
-**Language:** English 
-
 ---
 
 ## Quick Answer

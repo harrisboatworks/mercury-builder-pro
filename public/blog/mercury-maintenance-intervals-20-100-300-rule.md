@@ -27,8 +27,6 @@ content_type: blog_article
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule
 
-**Language:** English 
-
 ---
 
 ![Mercury maintenance interval timeline: 20/100/300 hours (HBW diagram)](/lovable-uploads/diagram-mercury-maintenance-timeline.png)

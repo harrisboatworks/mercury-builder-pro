@@ -27,8 +27,6 @@ content_type: blog_article
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide
 
-**Language:** English 
-
 ---
 
 ## Quick Answer
