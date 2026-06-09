@@ -286,9 +286,11 @@ export function ReviewSubmitStep() {
         outcome: 'failure',
         correlationId,
         applicationId: state.applicationId,
+        userId: outerUserId,
         errorCode: err?.code || 'unexpected',
         errorMessage: err?.message || String(error),
       });
+
       toast({
         title: "Submission Failed",
         description: `Please check your information and try again. Reference: ${correlationId}.`,
