@@ -4293,7 +4293,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/mercury-75-90-115-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-26',
-    dateModified: '2026-06-02',
+    dateModified: '2026-06-09',
     publishDate: '2026-01-26',
     category: 'Comparison',
     readTime: '9 min read',
