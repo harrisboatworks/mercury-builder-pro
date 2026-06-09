@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "90 HP Mercury Motor vs 75 and 115 HP: Which One We'd Pick (2026)"
+title: "Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)"
 description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's where 75 and 115 actually make sense."
 category: "Comparison"
 date_published: 2026-01-26
