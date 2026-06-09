@@ -11419,7 +11419,7 @@ Boost is dealer-installed. You cannot download or apply it yourself, Mercury's d
 3. Boost calibration is applied via Mercury's software interface
 4. A short test run confirms the update
 
-Most dealers can complete it in a single service visit. **Mercury has not published a standard retail price for the Boost upgrade.** Dealers set their own service rates. At most Mercury dealers in Ontario, shop rates run in the $120, $175 per hour range, and installation is primarily technician time, roughly 1-2 hours. If you are already bringing the engine in for spring commissioning or annual service, ask to have Boost done at the same visit to minimize total labor cost.
+Most dealers can complete it in a single service visit. **Mercury has not published a standard retail price for the Boost upgrade.** Dealers set their own service rates. At most Mercury dealers in Ontario, shop rates run in the $120-$175 per hour range, and installation is primarily technician time, roughly 1-2 hours. If you are already bringing the engine in for spring commissioning or annual service, ask to have Boost done at the same visit to minimize total labor cost.
 
 ---
 
@@ -15833,7 +15833,7 @@ A repower isn't just bolting a new motor to your boat. It's a full integration p
 
 **Motor availability.** Common HP classes and configurations are typically in stock or on quick order. Less common configurations may have factory wait times.
 
-**Time of year.** Off-season (October, April): fast shop turnaround and good booking availability. Spring rush (March, May): waits of 2-6 weeks before the shop can start.
+**Time of year.** Off-season (October-April): fast shop turnaround and good booking availability. Spring rush (March-May): waits of 2-6 weeks before the shop can start.
 
 **Customer responsiveness.** Quote, deposit, drop-off, and pickup all need customer involvement. The faster you respond at each step, the faster the timeline.
 
@@ -23857,7 +23857,7 @@ No. Mechanical controls work fine on a single-engine 150, 225 HP motor and save 
 Usually not on a typical fishing boat. Cable steering at 90 HP is fine. Exception: fast bowrider or anyone who finds cable tiring. For 115 HP and up, hydraulic is almost always worth the upgrade.
 
 **How long does a full rigging install take?** 
-Mid-range single-engine (60, 115 HP): typically 1, 2 shop days once the motor is in. V6 with full electronics: 2-4 days.
+Mid-range single-engine (60-115 HP): typically 1, 2 shop days once the motor is in. V6 with full electronics: 2-4 days.
 
 **Does HBW handle trade-ins on the old motor?** 
 Yes. Old Mercury motors in workable condition are valued at trade-in. Non-Mercury motors evaluated case-by-case.
