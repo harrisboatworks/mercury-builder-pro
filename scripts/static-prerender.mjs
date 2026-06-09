@@ -2633,18 +2633,26 @@ const ZH_TO_EN_SLUG = {
   'mercury-repower-guide-gta': 'repower-vs-new-boat',
   'mercury-fourstroke-pro-xs-verado-chinese-comparison': 'fourstroke-vs-pro-xs',
 };
+const KO_TO_EN_SLUG = {
+  'mercury-avator-jeondong-seonoegi': 'mercury-avator-electric-boating-ontario',
+  'mercury-pro-xs-fourstroke-verado': 'fourstroke-vs-pro-xs',
+  'mercury-seonoegi-muge': 'mercury-outboard-weight-chart',
+};
 const EN_TO_FR_SLUG = Object.fromEntries(Object.entries(FR_TO_EN_SLUG).map(([fr, en]) => [en, fr]));
 const EN_TO_ZH_SLUG = Object.fromEntries(Object.entries(ZH_TO_EN_SLUG).map(([zh, en]) => [en, zh]));
+const EN_TO_KO_SLUG = Object.fromEntries(Object.entries(KO_TO_EN_SLUG).map(([ko, en]) => [en, ko]));
 
 function blogHreflangTags(enSlug) {
   const frSlug = EN_TO_FR_SLUG[enSlug];
   const zhSlug = EN_TO_ZH_SLUG[enSlug];
-  if (!frSlug && !zhSlug) return '';
+  const koSlug = EN_TO_KO_SLUG[enSlug];
+  if (!frSlug && !zhSlug && !koSlug) return '';
   const tags = [
     `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/blog/${enSlug}" />`,
   ];
   if (frSlug) tags.push(`<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/blog/fr/${frSlug}" />`);
   if (zhSlug) tags.push(`<link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
+  if (koSlug) tags.push(`<link rel="alternate" hreflang="ko" href="${SITE_URL}/blog/ko/${koSlug}" />`);
   tags.push(`<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/${enSlug}" />`);
   return tags.join('\n  ');
 }
