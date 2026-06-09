@@ -110,7 +110,7 @@ Boost is dealer-installed. You cannot download or apply it yourself, Mercury's d
 3. Boost calibration is applied via Mercury's software interface
 4. A short test run confirms the update
 
-Most dealers can complete it in a single service visit. **Mercury has not published a standard retail price for the Boost upgrade.** Dealers set their own service rates. At most Mercury dealers in Ontario, shop rates run in the $120, $175 per hour range, and installation is primarily technician time, roughly 1-2 hours. If you are already bringing the engine in for spring commissioning or annual service, ask to have Boost done at the same visit to minimize total labor cost.
+Most dealers can complete it in a single service visit. **Mercury has not published a standard retail price for the Boost upgrade.** Dealers set their own service rates. At most Mercury dealers in Ontario, shop rates run in the $120-$175 per hour range, and installation is primarily technician time, roughly 1-2 hours. If you are already bringing the engine in for spring commissioning or annual service, ask to have Boost done at the same visit to minimize total labor cost.
 
 ---
 
