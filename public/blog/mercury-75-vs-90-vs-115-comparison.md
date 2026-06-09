@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# 90 HP Mercury Motor vs 75 and 115 HP: Which One We'd Pick (2026)
+# Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)
 
 > We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's where 75 and 115 actually make sense.
 
