@@ -210,7 +210,7 @@ function mdFrontmatter(canonicalPath, extraLines = [], lastUpdated = TWIN_DATE) 
 function cleanBlogContent(content, hasFaqs) {
   let c = String(content || '');
   c = c.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
-  c = c.replace(/^[*_\s]*\**\s*Language\**\s*[:：]\s*English[*_\s]*$/gim, '');
+  c = c.replace(/^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim, '');
   c = c.replace(/^##\s+CTA\s*$/gim, '');
   c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
   if (hasFaqs) {
