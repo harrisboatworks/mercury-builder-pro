@@ -296,7 +296,12 @@ export default function KoreanBlogArticlePage() {
         <meta name="description" content={article.description} />
         <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="ko" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
+        {KO_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog/${KO_TO_EN_SLUG[article.slug]}`} />
+        )}
+        {KO_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog/${KO_TO_EN_SLUG[article.slug]}`} />
+        )}
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:url" content={url} />
