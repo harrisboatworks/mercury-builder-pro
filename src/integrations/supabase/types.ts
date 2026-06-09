@@ -1212,6 +1212,30 @@ export type Database = {
           },
         ]
       }
+      gsc_oauth: {
+        Row: {
+          client_secret: string | null
+          id: string
+          refresh_token: string | null
+          state: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          client_secret?: string | null
+          id?: string
+          refresh_token?: string | null
+          state?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          client_secret?: string | null
+          id?: string
+          refresh_token?: string | null
+          state?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       hbw_bot_brief_receipts: {
         Row: {
           brief_type: string
