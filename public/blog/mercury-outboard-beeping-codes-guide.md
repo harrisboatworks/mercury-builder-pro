@@ -256,6 +256,14 @@ Guardian is Mercury's engine protection system. The ECM deliberately reduces RPM
 
 Bring the exact beep pattern (count, frequency, duration), whether power was reduced, a photo of any SmartCraft or VesselView display message, the conditions when it happened (idle, cruise, cold start, under load), any recent service, and the motor model, year, and serial number. That information cuts diagnostic time significantly.
 
+### How do I read Mercury outboard alarm codes without a SmartCraft display?
+
+Without SmartCraft you read the alarm by its beep pattern: count the beeps, note how often they repeat, and whether the motor lost power. A continuous beep means overheat or low oil pressure, a beep pattern every two minutes points to oil level or water in fuel. A dealer can pull the exact fault codes from the engine computer at the shop.
+
+### Are beep codes different on a Mercury 4-stroke?
+
+Modern Mercury FourStrokes use the same warning logic: one key-on test beep, interval beeps for conditions like low oil or water in fuel, and a continuous alarm for serious problems like overheat. Exact patterns vary by model and year, so confirm against the manual for your motor.
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
