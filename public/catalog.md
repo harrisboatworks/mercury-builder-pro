@@ -126,6 +126,7 @@ See any motor twin for an example body.
 
 Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
+- [When to Replace Your Mercury Impeller: What 766 Jobs Show](https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail.md)
 - [Mercury Command Thrust: Complete Guide to the 9.9 to 115 HP Lineup (2026)](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026.md)
 - [Is Your Mercury Outboard Eligible for DTS (Digital Throttle & Shift) Retrofit? (2026)](https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026.md)
 - [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](https://www.mercuryrepower.ca/blog/mercury-command-thrust-pontoon-eligibility-2026.md)
