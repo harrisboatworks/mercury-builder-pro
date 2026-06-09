@@ -4287,8 +4287,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 4: January 26, 2026
   {
     slug: 'mercury-75-vs-90-vs-115-comparison',
-    seoTitle: "90 HP Mercury Motor vs 75 and 115 HP: Which to Pick (2026) | HBW",
-    title: '90 HP Mercury Motor vs 75 and 115 HP: Which One We\'d Pick (2026)',
+    seoTitle: "Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)",
+    title: 'Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)',
     description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's where 75 and 115 actually make sense.",
     image: '/lovable-uploads/mercury-75-90-115-hero.png',
     author: 'Harris Boat Works',
@@ -4551,6 +4551,30 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       {
         question: 'Does Mercury offer a tiller option on the 90 or 115 HP FourStroke?',
         answer: 'No, neither the Mercury 90 HP nor the Mercury 115 HP FourStroke is available in a tiller configuration. Of these three horsepower classes, only the 75 HP offers a tiller option. If tiller control is important, working from the back of a small aluminum boat, setting up drifts, or solo fishing, the 75 HP tiller is the model designed for that use case. If you need more than 75 HP and want remote steering, the choice between 90 and 115 becomes about power and future-proofing.'
+      },
+      {
+        question: "What's the difference between the Mercury 90 and 115 HP?",
+        answer: 'They share the same 2.1L FourStroke powerhead and Mercury lists the same lightest dry weight for both, about 163 kg (359 lb). The 115 is tuned for more power and offers a Command Thrust gearcase for heavier or pontoon hulls; the 90 is the value sweet spot for most 16 to 18 ft aluminum boats. On a hull that takes either, the 115 buys headroom; the 90 saves money and fuel.'
+      },
+      {
+        question: 'How much does a 90 HP Mercury outboard weigh?',
+        answer: 'About 163 kg (359 lb) dry for the lightest model. The 75, 90, and 115 FourStroke all share the same 2.1L block, so their weights are essentially identical; Command Thrust versions run a few pounds more.'
+      },
+      {
+        question: 'Can I put a 115 on a boat rated for 90 HP?',
+        answer: 'No. The capacity plate maximum is a legal and safety ceiling, not a suggestion. If your plate says 90 HP, 90 is the most you can rig. If you want 115, the boat itself has to be rated for it. We check the plate before we quote.'
+      },
+      {
+        question: 'Is the 90 HP Mercury a four-stroke?',
+        answer: 'Yes. The current Mercury 75, 90, and 115 are all FourStroke (four-stroke) EFI motors on the 2.1L block. The old two-strokes are long gone from the lineup.'
+      },
+      {
+        question: 'How much does a 90 HP Mercury cost in Ontario?',
+        answer: 'Pricing moves with rigging and install, so we publish real installed CAD numbers in the quote tool rather than a stale figure. A 90 typically runs roughly $1,500 to $2,500 less than a comparable 115 and $1,000 to $2,000 more than a 75. Build your exact number at mercuryrepower.ca.'
+      },
+      {
+        question: 'How fast will a 75 HP push a 17-foot boat?',
+        answer: 'On a typical 17 ft aluminum boat with a normal load, a 75 HP Mercury will cruise comfortably and top out in the low-to-mid 30s mph depending on hull, prop, and load. A 90 gets you there quicker and holds speed better when loaded, which is why we usually steer 17 ft owners to the 90.'
       }
     ]
   },
