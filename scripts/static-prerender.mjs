@@ -2741,6 +2741,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
     extraHead: (() => {
       const enSlug = langCode === 'fr' ? FR_TO_EN_SLUG[article.slug]
                    : langCode === 'zh' ? ZH_TO_EN_SLUG[article.slug]
+                   : langCode === 'ko' ? KO_TO_EN_SLUG[article.slug]
                    : undefined;
       if (enSlug) return blogHreflangTags(enSlug);
       if (langCode === 'zh') return zhOnlyHreflangTags(article.slug);
