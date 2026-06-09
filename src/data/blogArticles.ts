@@ -4287,8 +4287,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 4: January 26, 2026
   {
     slug: 'mercury-75-vs-90-vs-115-comparison',
-    seoTitle: "90 HP Mercury Motor vs 75 and 115 HP: Which to Pick (2026) | HBW",
-    title: '90 HP Mercury Motor vs 75 and 115 HP: Which One We\'d Pick (2026)',
+    seoTitle: "Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)",
+    title: 'Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)',
     description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's where 75 and 115 actually make sense.",
     image: '/lovable-uploads/mercury-75-90-115-hero.png',
     author: 'Harris Boat Works',
