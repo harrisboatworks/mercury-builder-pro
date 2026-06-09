@@ -28451,7 +28451,7 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 **What to do:** If it's a single beep that stops and doesn't recur during operation, this is typically normal.
 
-### Four Beeps, Repeated (Every 1, 3 Minutes)
+### Four Beeps, Repeated (Every 1-3 Minutes)
 
 **Possible meanings:** Varies by motor and rigging. On some systems, a repeating four-beep pattern can indicate low oil reserve (applicable to oil-injected motors), water-in-fuel condition, or another advisory-level alert.
 
