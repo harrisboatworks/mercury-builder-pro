@@ -186,11 +186,11 @@ function detectMotorFamily(m) {
   return 'FourStroke';
 }
 
-function mdFrontmatter(canonicalPath, extraLines = []) {
+function mdFrontmatter(canonicalPath, extraLines = [], lastUpdated = TWIN_DATE) {
   return [
     '---',
     `canonical: ${SITE_URL}${canonicalPath}`,
-    `last_updated: ${TWIN_DATE}`,
+    `last_updated: ${lastUpdated}`,
     'currency: CAD',
     'pickup_only: true',
     'delivery_offered: false',
@@ -201,6 +201,25 @@ function mdFrontmatter(canonicalPath, extraLines = []) {
     '---',
     '',
   ].join('\n');
+}
+
+// Strip authoring scaffold (standalone date lines, Language line) and any
+// legacy inline FAQ section when the article has a faqs[] array. Mirrors
+// the runtime renderer in src/pages/BlogArticle.tsx so .md twins match
+// what readers see.
+function cleanBlogContent(content, hasFaqs) {
+  let c = String(content || '');
+  c = c.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
+  c = c.replace(/^[*_\s]*\**\s*Language\**\s*[:：]\s*English[*_\s]*$/gim, '');
+  c = c.replace(/^##\s+CTA\s*$/gim, '');
+  c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
+  if (hasFaqs) {
+    c = c.replace(
+      /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
+      '\n',
+    );
+  }
+  return c.replace(/\n{3,}/g, '\n\n').trim();
 }
 
 function motorBestFit(family, hp) {
