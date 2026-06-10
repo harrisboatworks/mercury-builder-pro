@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor.md
-last_updated: 2026-05-04
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Repowering Guide: When to Replace Your Motor (2026)"
 description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW, est. 1947."
 category: "Repowering"
 date_published: 2024-03-05
-date_modified: 2026-05-04
+date_modified: 2026-06-10
 keywords: ["boat repowering","when to replace outboard","repower cost","new boat vs repower","outboard motor replacement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Repowering  
 **Published:** 2024-03-05  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-10  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor
 
@@ -241,7 +241,7 @@ You should not attempt a DIY repower if you want to maintain your Mercury warran
 
 ### What's the repower vs. repair decision framework I should use?
 
-The clearest framework: if a single repair estimate exceeds 50% of the motor's current market value, a repower is almost always the better choice. Apply this logic iteratively, if significant repair spending has already occurred in the past two seasons and another major expense is looming, the total repair spending matters. A powerhead replacement on an older 90HP two-stroke costing $3,000-$5,000 for a motor worth $1,500-$2,500 on the used market is the clearest repower signal. Parts availability issues and extending lead times are also strong signals. Harris Boat Works can give an honest assessment of where any motor sits on this spectrum.
+The clearest framework compares the repair estimate to the motor's current market value: under 30 percent of the motor's value leans repair, 30-60 percent depends on the health of the rest of the motor, and over 60 percent leans repower in almost all cases. Apply this logic iteratively, if significant repair spending has already occurred in the past two seasons and another major expense is looming, the total repair spending matters. A powerhead replacement on an older 90HP two-stroke costing $3,000-$5,000 for a motor worth $1,500-$2,500 on the used market is the clearest repower signal. Parts availability issues and extending lead times are also strong signals. For the full framework, see our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide). Harris Boat Works can give an honest assessment of where any motor sits on this spectrum.
 
 ## Next steps
 
