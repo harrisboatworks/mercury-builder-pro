@@ -331,7 +331,7 @@ export default function BlogArticle() {
           </header>
 
           {/* Featured Image — shared <picture> component (see BlogHeroPicture) */}
-          <BlogHeroPicture image={article.image} alt={article.title} />
+          <BlogHeroPicture image={article.image} alt={article.title} photoSlot={article.photoSlot} />
 
           {/* Language switcher */}
           <LanguageSwitcher currentLang="en" currentSlug={article.slug} />
