@@ -1146,7 +1146,9 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
       { question: 'How often should the impeller be replaced to prevent overheating?', answer: 'Mercury recommends impeller replacement every two seasons of normal use, or annually for motors that see high hours or commercial use. An impeller that has hardened or lost blades will cause overheating at higher RPMs first, then at all RPMs as it deteriorates. The 20-hour first service on a new motor does not include impeller replacement; that comes later.' },
       { question: 'Do overheat alarm patterns mean the same thing on every Mercury motor?', answer: 'No. Alarm behaviour varies by motor model, year, and whether the boat is SmartCraft-equipped. A 2005 carbureted 2-stroke does not produce alarms the same way as a current EFI FourStroke or Verado. The patterns described on this page reflect what HBW techs see most often on Ontario Mercury motors. Always cross-reference with your operator manual and any display message.' },
     ],
-    content: `# Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)
+    content: `> **Quick answer:** A Mercury overheat alarm means one of four things: real heat, Guardian mode, heat soak after a hot shutdown, or a sensor or wiring fault. Drop throttle, check the tell-tale stream, and note the pattern. Strong flow with alarm leans toward a sensor fault; weak or no flow means shut down before more damage.
+
+# Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)
 
 *Last updated: May 27, 2026*
 
