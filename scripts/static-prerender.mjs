@@ -1371,7 +1371,7 @@ function agentsPageSchema() {
     },
     {
       q: "Are there rate limits or required headers for agent traffic?",
-      a: "No rate limits currently. Please identify your agent in the User-Agent header. All major LLM crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot) are allowed in /robots.txt."
+      a: "No hard rate limits currently, but please be a good citizen: cache responses where possible, keep request volume reasonable, and identify your agent in the User-Agent header. We reserve the right to throttle abusive traffic. All major LLM crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot) are allowed in /robots.txt."
     }
   ];
 
@@ -4128,8 +4128,17 @@ const routes = [
         '</ul>' +
       '</section>' +
       '<section><h2>Allowed crawlers</h2>' +
-        '<p>All major LLM and AI-agent user-agents are allowed (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot). See <a href="/robots.txt">/robots.txt</a>. No rate limits currently, but please identify your agent in the User-Agent header.</p>' +
-      '</section>'
+        '<p>All major LLM and AI-agent user-agents are allowed (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot). See <a href="/robots.txt">/robots.txt</a>. No hard rate limits currently, but please be a good citizen: cache responses where possible, keep request volume reasonable, and identify your agent in the User-Agent header. We reserve the right to throttle abusive traffic.</p>' +
+      '</section>' +
+      '<section><h2>More machine-readable resources</h2>' +
+        '<ul>' +
+          '<li><a href="/llms.txt">/llms.txt</a>: site map for LLMs.</li>' +
+          '<li><a href="/catalog.md">/catalog.md</a>: markdown index of motors, case studies, locations, and guides.</li>' +
+          '<li><a href="/pricing-reference.md">/pricing-reference.md</a>: full Mercury price list in CAD (machine-readable).</li>' +
+          '<li><a href="/pricing-reference">/pricing-reference</a>: human-readable HTML twin of the price list.</li>' +
+        '</ul>' +
+      '</section>' +
+      `<p>Page last updated ${new Date().toISOString().split('T')[0]}.</p>`
   },
   {
     path: '/quote/motor-selection',
