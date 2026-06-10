@@ -34,18 +34,25 @@ const navItems = [
   { label: "SMS Alerts", to: "/admin/sms" },
 ];
 export default function AdminNav() {
-  // Query for pending financing applications count
+  // Query for pending financing applications count.
+  // Fails silently to 0 (hidden badge) — this is a non-critical badge and the
+  // HEAD count request can intermittently return 503.
   const { data: pendingCount = 0, refetch } = useQuery({
     queryKey: ['pending-financing-count'],
     queryFn: async () => {
-      const { count, error } = await supabase
-        .from('financing_applications')
-        .select('*', { count: 'exact', head: true })
-        .eq('status', 'pending');
-      
-      if (error) throw error;
-      return count || 0;
+      try {
+        const { count, error } = await supabase
+          .from('financing_applications')
+          .select('*', { count: 'exact', head: true })
+          .eq('status', 'pending');
+
+        if (error) return 0;
+        return count || 0;
+      } catch {
+        return 0;
+      }
     },
+    retry: false,
     refetchInterval: 30000, // Refetch every 30 seconds
   });
 
