@@ -41,6 +41,9 @@ The 90 HP FourStroke is the most-installed mid-range Mercury at HBW. There is a 
 
 When customers ask "75, 90, or 115?" we usually walk through three things: hull length, typical loading, and use case. The right answer comes out of those three. For most Ontario freshwater customers, the answer is 90. For lighter use on shorter hulls, the 75 is enough. For heavier loading or bigger water, the 115 earns the price difference.
 
+![Comparison card: Mercury 75, 90, and 115 HP share the same 2.1L block and 359 lb dry weight. 75 HP for lighter use with the only tiller option; 90 HP the sweet spot for 16-18 ft aluminum boats; 115 HP for heavier loads with Command Thrust option for pontoons.](/lovable-uploads/mercury-75-90-115-decision-card-hbw.png)
+*Same block, three fits. The capacity plate sets the ceiling.*
+
 ## What changes the answer
 
 Five things move whether 75, 90, or 115 is right for your boat:
