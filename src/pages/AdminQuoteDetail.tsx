@@ -50,6 +50,7 @@ interface QuoteDetail {
   lead_status?: string;
   lead_source?: string;
   follow_up_date?: string | null;
+  _source?: 'customer_quotes' | 'saved_quotes';
 }
 
 const AdminQuoteDetail = () => {
@@ -61,6 +62,7 @@ const AdminQuoteDetail = () => {
   const [changeLogKey, setChangeLogKey] = useState(0);
   
   const [q, setQ] = useState<QuoteDetail | null>(null);
+  const [loadState, setLoadState] = useState<'loading' | 'loaded' | 'notfound'>('loading');
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
@@ -81,20 +83,75 @@ const AdminQuoteDetail = () => {
 
   useEffect(() => {
     document.title = 'Quote Detail | Admin';
+    const initTradeInOverride = (ti: any) => {
+      if (ti?.overrideValue) {
+        setTradeInOverride(String(ti.overrideValue));
+      } else if (ti?.estimatedValue) {
+        setTradeInOverride(String(ti.estimatedValue));
+      }
+    };
     const fetchOne = async () => {
-      const { data, error } = await supabase.from('customer_quotes').select('*').eq('id', id).single();
-      if (!error && data) {
-        setQ(data as any);
-        setAdminDiscount(data.admin_discount || 0);
-        setAdminNotes(data.admin_notes || '');
-        setCustomerNotes(data.customer_notes || '');
-        // Initialize trade-in override from existing data
-        const ti = (data as any).quote_data?.tradeInInfo;
-        if (ti?.overrideValue) {
-          setTradeInOverride(String(ti.overrideValue));
-        } else if (ti?.estimatedValue) {
-          setTradeInOverride(String(ti.estimatedValue));
+      setLoadState('loading');
+      try {
+        // Try customer_quotes first (primary lead table)
+        const { data, error } = await supabase.from('customer_quotes').select('*').eq('id', id).maybeSingle();
+        if (!error && data) {
+          setQ({ ...(data as any), _source: 'customer_quotes' });
+          setAdminDiscount(data.admin_discount || 0);
+          setAdminNotes(data.admin_notes || '');
+          setCustomerNotes(data.customer_notes || '');
+          initTradeInOverride((data as any).quote_data?.tradeInInfo);
+          setLoadState('loaded');
+          return;
         }
+
+        // Fall back to saved_quotes (anonymous browsing leads, saved/deposit quotes)
+        const { data: sq, error: sqError } = await (supabase as any)
+          .from('saved_quotes')
+          .select('*')
+          .eq('id', id)
+          .maybeSingle();
+        if (!sqError && sq) {
+          const qs = sq.quote_state || {};
+          const motor = qs.motor || {};
+          const isAnonymous = sq.email === 'anonymous@soft-lead.local' || sq.email === 'pdf-download@placeholder.com';
+          const isSoftLead = sq.is_soft_lead === true;
+          const finalPrice = qs.finalPrice || qs.frozenPricing?.total || 0;
+          const mapped: QuoteDetail = {
+            id: sq.id,
+            created_at: sq.created_at,
+            customer_name: qs.customerName || (isAnonymous ? 'Anonymous Visitor' : sq.email?.split('@')[0] || 'Unknown'),
+            customer_email: isAnonymous ? '' : (sq.email || ''),
+            customer_phone: qs.customerPhone || null,
+            base_price: qs.basePrice || motor.price || 0,
+            final_price: finalPrice,
+            deposit_amount: sq.deposit_amount || 0,
+            loan_amount: 0,
+            monthly_payment: 0,
+            term_months: 0,
+            total_cost: finalPrice,
+            tradein_value_pre_penalty: qs.tradeInInfo?.estimatedValue || null,
+            tradein_value_final: qs.tradeInInfo?.finalValue || null,
+            penalty_applied: false,
+            customer_notes: qs.customerNotes || null,
+            is_admin_quote: qs.isAdminQuote || false,
+            quote_data: qs,
+            lead_status: sq.deposit_status === 'paid' ? 'deposit_paid' : (isSoftLead || isAnonymous ? 'browsing' : 'saved'),
+            lead_source: sq.email === 'pdf-download@placeholder.com' ? 'pdf_download' : 'website',
+            follow_up_date: null,
+            _source: 'saved_quotes',
+          };
+          setQ(mapped);
+          setCustomerNotes(qs.customerNotes || '');
+          initTradeInOverride(qs.tradeInInfo);
+          setLoadState('loaded');
+          return;
+        }
+
+        // Not found in either table
+        setLoadState('notfound');
+      } catch {
+        setLoadState('notfound');
       }
     };
     fetchOne();
@@ -325,6 +382,9 @@ const AdminQuoteDetail = () => {
       case 'scheduled': return <Badge variant="default">Scheduled</Badge>;
       case 'contacted': return <Badge variant="outline">Contacted</Badge>;
       case 'closed': return <Badge variant="destructive">Closed</Badge>;
+      case 'deposit_paid': return <Badge variant="default">Deposit Paid</Badge>;
+      case 'browsing': return <Badge variant="secondary">Browsing</Badge>;
+      case 'saved': return <Badge variant="outline">Saved</Badge>;
       default: return <Badge variant="secondary">Unknown</Badge>;
     }
   };
@@ -536,6 +596,9 @@ const AdminQuoteDetail = () => {
               Admin Created
             </Badge>
           )}
+          {q?._source === 'saved_quotes' && (
+            <Badge variant="outline">Saved Quote</Badge>
+          )}
         </div>
         <div className="flex gap-2">
           <Button variant="outline" onClick={() => {
@@ -567,9 +630,16 @@ const AdminQuoteDetail = () => {
         </div>
       </div>
       
-      {!q ? (
+      {loadState === 'loading' ? (
         <div className="flex items-center justify-center h-64">
           <div className="animate-pulse text-muted-foreground">Loading...</div>
+        </div>
+      ) : !q ? (
+        <div className="flex flex-col items-center justify-center h-64 gap-3 text-center">
+          <AlertTriangle className="w-8 h-8 text-muted-foreground" />
+          <p className="font-medium">Quote not found</p>
+          <p className="text-sm text-muted-foreground">This quote does not exist in customer quotes or saved quotes. It may have been deleted.</p>
+          <Button variant="secondary" onClick={() => navigate('/admin/quotes')}>Back to quotes</Button>
         </div>
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
