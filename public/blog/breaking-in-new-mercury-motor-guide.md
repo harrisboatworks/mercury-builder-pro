@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-05-27
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Break In a New Mercury Outboard (10-Hour Guide)"
 description: "The Mercury 10-hour break-in, step by step: RPM targets by hour, what to avoid, and the 20-hour first service that protects your warranty. HBW guide."
 category: "New Owner"
 date_published: 2024-02-20
-date_modified: 2026-05-27
+date_modified: 2026-06-09
 keywords: ["mercury motor break in","new outboard break in procedure","mercury break in period","outboard motor break in","new boat motor care"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** New Owner  
 **Published:** 2024-02-20  
-**Last updated:** 2026-05-27  
+**Last updated:** 2026-06-09  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 
@@ -180,21 +180,9 @@ Two related guides in the same cluster:
 
 ## FAQs
 
-### What happens if I don't break in my motor properly?
+### When is the first oil change on a new Mercury outboard?
 
-Improper break-in can cause glazed cylinder walls, poor ring seating, and increased oil consumption. In severe cases, it can lead to premature engine wear and reduced power output.
-
-### Can I go fishing during break-in?
-
-Absolutely! Just vary your speed regularly - don't troll at the same RPM for extended periods. Plan routes that let you change speed every few minutes.
-
-### Is the break-in procedure different for 2-stroke vs 4-stroke?
-
-Yes. 2-stroke motors have specific fuel/oil mixture requirements during break-in. Follow your owner's manual closely, and note that modern Mercury 2-strokes use oil injection that adjusts automatically.
-
-### Do I need to use Mercury oil during break-in?
-
-The motor comes from the factory with standard Mercury FourStroke 10W-30 oil, there is no special break-in formulation. For all oil changes, we recommend Mercury 4-Stroke Marine Oil, but any quality marine-rated oil meeting Mercury specifications is acceptable.
+At 20 hours. The break-in period is the first 10 hours, and the 20-hour first service (oil and filter change) is the one that matters most for the motor's long-term health and warranty record. Book it at hbw.wiki/service; HBW is at Gores Landing on Rice Lake.
 
 ### What happens if I don't break in my Mercury motor properly?
 
