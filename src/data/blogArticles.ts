@@ -2461,7 +2461,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "What's the difference between the Mercury 115 and the 115 Pro XS?", answer: "Both share the same 2.1L four-stroke base, and Mercury lists the same lightest dry weight for both: 359 lb. The Pro XS runs a performance-tuned calibration for sharper acceleration and more top end, with performance gearcase options. For a pontoon or fishing boat the standard 115 FourStroke is usually the smarter buy; for a lighter performance hull where hole-shot matters, the Pro XS is worth the difference." },
       { question: "What's the difference between Mercury Pro XS, FourStroke, and Verado?", answer: 'All three are four-strokes tuned for different jobs. FourStroke is the efficient, reliable all-rounder for most pontoons, fishing boats, and family runabouts. Pro XS is the performance-tuned version for anglers and performance boats that want acceleration and top speed. Verado is the refined option, smoothest and quietest with digital throttle, built for larger boats where comfort matters. At Harris Boat Works, Verado is special order.' }
     ],
-    content: `## Mercury Pro XS vs FourStroke vs Verado: Which One Do You Actually Need?
+    content: `> **Quick answer:** FourStroke is the efficient all-rounder for most pontoons, fishing boats, and family runabouts. Pro XS is the same four-stroke base tuned for hole-shot and top speed. Verado is the refined, quietest option for larger boats and is special-order only at HBW. All three families today are four-strokes, despite the old Pro XS two-stroke reputation.
+
+## Mercury Pro XS vs FourStroke vs Verado: Which One Do You Actually Need?
 
 Three Mercury families, a lot of overlapping horsepower numbers, and a pile of forum arguments. Here's the part that matters: the current models are all four-strokes. The difference is what each one is tuned for.
 
