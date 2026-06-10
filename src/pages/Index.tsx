@@ -1,3 +1,4 @@
+// build-sync 2026-06-10: re-push after GitHub reconnect
 import { useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
