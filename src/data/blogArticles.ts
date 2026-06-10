@@ -35674,7 +35674,9 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
     title: 'The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)',
     seoTitle: 'HBW On-Water Mercury Repower Load Test 2026 | Harris Boat Works',
     description: 'Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from rigging bay to water-test dock. The 8-step protocol and what it catches.',
-    content: `# The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)
+    content: `> **Quick answer:** Every Mercury repower at Harris Boat Works gets a full on-water load test before delivery. The rigging bay sits 80 feet from the water-test dock, so an 8-step protocol covering cold start through WOT under load, charging at real electrical demand, and a SmartCraft scan at operating temperature happens on every job, not just on request.
+
+# The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)
 
 **Published:** 2026-05-28 | **Updated:** 2026-05-29
 **Author:** Jay Harris, Harris Boat Works
