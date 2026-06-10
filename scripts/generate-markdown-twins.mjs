@@ -213,6 +213,10 @@ function cleanBlogContent(content, hasFaqs) {
   c = c.replace(/^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim, '');
   c = c.replace(/^##\s+CTA\s*$/gim, '');
   c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
+  // Twins-only: strip directive fence lines (e.g. ":::mythbuster", ":::customer-voice", bare ":::").
+  // The inner block content is kept verbatim as plain markdown so AI agents
+  // reading the twin don't see raw fence markup as junk.
+  c = c.replace(/^:::[a-z-]*\s*$/gim, '');
   if (hasFaqs) {
     c = c.replace(
       /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,

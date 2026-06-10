@@ -153,7 +153,6 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 
 ## Common mistakes (the things we push back on)
 
-:::mythbuster
 - claim: I'll just buy the impeller in the next town.
   rebuttal: Not every town on the TSW has a Mercury or Mercruiser dealer with parts on the shelf. Bring spares (impeller, fuel filter, plugs) or know who has them.
 - claim: It ran fine in the driveway.
@@ -162,11 +161,9 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
   rebuttal: Tow service on the TSW outside of major hubs can be slow or unavailable. A kicker is cheap insurance and we install them year-round.
 - claim: I'll do my service in the spring, the TSW is the test.
   rebuttal: A 386 km transit is not the time to discover whether your impeller survived winter. Test before the trip.
-:::
 
 ## Customer language we hear
 
-:::customer-voice
 - quote: I'm doing the Trent-Severn this year
   response: preventive service conversation
 - quote: I broke down on Rice Lake, can you help?
@@ -177,7 +174,6 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
   response: impeller, intake, or thermostat
 - quote: When can you get me in?
   response: priority for transit boats; we work them in as best we can
-:::
 
 ## Ready for HBW to look at it before, during, or after your transit?
 

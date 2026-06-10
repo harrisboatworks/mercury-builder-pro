@@ -61,10 +61,8 @@ What bench testing does not tell you:
 
 These are the kinds of failures that show up as warranty calls in the first 30 days when they aren't caught before delivery. Every one of them can be caught at the dock, but only if the dock is close enough to make routine water testing economically feasible.
 
-:::mythbuster
 **Myth:** A motor that starts, idles, and revs on the shop bench is ready for delivery.
 **Reality:** Bench testing covers cold start, neutral idle, and neutral rev. It cannot see WOT under load, charging holding voltage with real electronics drawing, hydraulic steering bleed under load, or SmartCraft faults that only appear at operating temperature. Every one of those is a 30-day warranty call waiting to happen if you skip the water test.
-:::
 
 ---
 
@@ -120,11 +118,9 @@ A representative sample of issues caught during HBW repower water tests across r
 
 Each of these is the kind of issue that often shows up as a warranty call within the first 30 days of ownership when it isn't caught beforehand. We catch them at the dock instead.
 
-:::customer-voice
 **What customers ask:** "Do you actually put my boat in the water before I take it home? Or is the 'water test' just running it on muffs?"
 
 **Our take:** Muffs are not a water test. A water test means the prop is on, the boat is on plane, the motor is at WOT under load, and the SmartCraft scan is pulled at operating temperature. That cannot happen 80 feet from the dock and skip a single one of those steps. Every Mercury repower we do gets all eight.
-:::
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/hastings
-last_updated: 2026-06-09
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false

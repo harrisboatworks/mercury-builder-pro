@@ -85,7 +85,6 @@ The brand-swap cost above a same-brand repower runs roughly $1,800 to $3,500 dep
 
 ## Common mistakes (the things we push back on)
 
-:::mythbuster
 - claim: Yamaha is more reliable than Mercury.
   rebuttal: Both brands build reliable modern outboards. Real-world reliability difference is small.
 - claim: Current Verado is supercharged.
@@ -94,7 +93,6 @@ The brand-swap cost above a same-brand repower runs roughly $1,800 to $3,500 dep
   rebuttal: For freshwater Ontario boats, the 2025 shift-shaft recall doesn't apply.
 - claim: I'll get Yamaha because the warranty is longer.
   rebuttal: Both brands offer extended warranty programs in the 8-year range. The practical difference is where you can get warranty service done.
-:::
 
 Thinking about switching from Yamaha to Mercury? We handle the full conversion in-house. Build a quote and we will map it out for your boat.
 

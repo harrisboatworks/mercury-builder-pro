@@ -33028,7 +33028,7 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
     image: '/lovable-uploads/hero-mercury-pro-xs-buyer-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -33039,7 +33039,7 @@ Mercury Pro XS is the performance-tuned outboard line in the Mercury lineup. Sam
 
 ## Where Pro XS fits in the Mercury lineup
 
-Mercury makes three main outboard families: FourStroke (the default, broadest range, fuel-efficient), Pro XS (performance-tuned), and Verado (large supercharged offerings, special-order territory). SeaPro is the commercial-grade variant.
+Mercury makes three main outboard families: FourStroke (the default, broadest range, fuel-efficient), Pro XS (performance-tuned), and Verado (the flagship V8/V10/V12 line, naturally aspirated, special-order territory). SeaPro is the commercial-grade variant.
 
 Pro XS shares core architecture with FourStroke, same engineering teams, same dealer network, same parts catalogue overlap. The differences are calibration, prop pitch, throttle mapping, and in some models the powerhead itself (the 175-250 Pro XS uses Mercury's 3.4L V6 not available in the same HP class FourStroke).
 

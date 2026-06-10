@@ -122,7 +122,6 @@ right-criteria:
 - Comfortable trailering or shipping out for any work needed
 right-outcome: A nearby cottage-area marina
 when-in-doubt: If your motor is a Mercury and you want one phone number from May to April, the answer is the marina with the service shop attached.
-:::
 
 ---
 

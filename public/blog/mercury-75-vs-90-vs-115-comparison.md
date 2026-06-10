@@ -66,14 +66,13 @@ For typical Ontario use on 16 to 18 ft aluminum console boats:
 | Best fit | 14 to 16 ft light aluminum | 16 to 18 ft aluminum console | 17 to 19 ft aluminum or light fiberglass |
 | Use case | Solo or two-person | Family of three or four | Family of four or five with gear |
 | Tournament use | No | Marginal | Yes (FourStroke) or step to Pro XS |
-:::image-placeholder
+
 slug: mercury-75-90-115-best-fit-matrix
 type: infographic
 aspect: 16:9
 description: Visual matrix showing which Mercury (75/90/115) fits which boat type and use case
 prompt: Photorealistic editorial infographic. 3x3 visual grid: rows = Mercury 75, 90, 115 HP. Columns = Boat Type, Best Use Case, Avoid If. Each cell has a small motor silhouette icon and 2-line description. Mercury black cowls, red accents. Clean white background. No people. 1600x900. [STYLE ANCHOR]
 image: /lovable-uploads/mercury-75-90-115-best-fit-matrix.png
-:::
 
 Note: top-speed numbers vary by hull design, prop selection, and loading. These are typical Kawartha-area sea-trial results for representative aluminum console hulls. For your specific boat, sea-trial numbers from HBW will be more accurate.
 

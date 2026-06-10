@@ -87,7 +87,6 @@ Repowers are the highest-risk install in our shop. At HBW we water-test every re
 
 ## Common mistakes (the things we push back on)
 
-:::mythbuster
 - claim: I will use Sheffield Financial like I saw on Mercury's US website.
   rebuttal: Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough, currently at 5.48% APR under the TD Always On program through Dec 31, 2026.
 - claim: I'll pull from my line of credit instead.
@@ -96,7 +95,6 @@ Repowers are the highest-risk install in our shop. At HBW we water-test every re
   rebuttal: The active TD Always On 5.48% APR (OAC) is the headline rate through Dec 31, 2026. Mercury Canada also runs occasional 2.99% / 4.9% campaigns that require strong credit. Outside those windows and after Jan 1, 2027, tiered rates resume from 7.99% APR.
 - claim: I'll finance through my own bank to get a lower rate.
   rebuttal: Possible, but TD 5.48% APR via Dealerplan is hard to beat right now. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
-:::
 
 ## Other Canadian financing options
 

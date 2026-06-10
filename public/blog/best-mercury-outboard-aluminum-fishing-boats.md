@@ -126,7 +126,6 @@ The customers who skip the kicker to save money almost always wish they hadn't. 
 
 ## Common mistakes on aluminum fishing boat repowers
 
-:::mythbuster
 heading: Common mistakes on aluminum fishing boat repowers
 - claim: Underbuying HP.
   rebuttal: A 25 HP on a 16-foot aluminum that needs 60 HP leaves you fighting wind and current every day.
@@ -138,7 +137,6 @@ heading: Common mistakes on aluminum fishing boat repowers
   rebuttal: On 18-20 ft deep-V aluminum, Command Thrust gives meaningful hole-shot improvement at full load.
 - claim: Buying Pro XS when FourStroke would do.
   rebuttal: Pro XS earns the cost on tournament hulls and for anglers who run hard every morning. On typical recreational fishing boats, FourStroke is the better value.
-:::
 
 ---
 

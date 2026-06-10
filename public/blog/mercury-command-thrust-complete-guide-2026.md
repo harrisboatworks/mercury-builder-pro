@@ -196,7 +196,6 @@ Fifth pattern: tritoons with standard gearcase almost always disappoint. The thi
 
 The CT conversation goes wrong in predictable ways. The four we see most often:
 
-:::mythbuster
 - claim: I'll just swap the gearcase later if I don't like it.
   rebuttal: Retrofitting CT means new gearcase, driveshaft, water pump, prop. The total is usually within striking distance of a new motor. Decide CT vs standard at purchase, not later.
 - claim: More thrust means more horsepower.
@@ -205,7 +204,6 @@ The CT conversation goes wrong in predictable ways. The four we see most often:
   rebuttal: Only if the issue is hole shot or low-speed control. If you are underpowered at WOT, CT actually makes top speed worse. You need more HP, not a different gearcase.
 - claim: All Mercury motors come with the CT option.
   rebuttal: Wrong. Under 40 HP, only the ProKicker variants (9.9, 15, 25) have CT. Over 200 HP, you are into V8 territory where the gearcase options are different. The 40-115 HP FourStroke + 115-150 Pro XS range is the sweet spot.
-:::
 
 ## Ready to talk Command Thrust for your boat?
 
