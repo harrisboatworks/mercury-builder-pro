@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How Ontario Boat Owners Accidentally Make Their Service Bills Bigger"
 description: "The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's honest list of the avoidable habits that cost owners thousands."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["accidentally increase boat service bills ontario","accidentally increase boat service bills ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario
 
@@ -144,26 +144,6 @@ If you want a structured pre-season inspection on your specific boat, our servic
 - [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026): Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD.
 - [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](/blog/boat-trailer-maintenance-guide-ontario): Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks.
 
-## FAQ
-
-**My motor has an alarm that comes and goes. Is it safe to ignore?**
-No. Intermittent alarms usually point to either a degrading sensor or a real intermittent problem. Either way, the diagnostic is cheaper now than the repair later. Get it checked at a Mercury Platinum dealer.
-
-**How much does proper winterization cost?**
-$350-$550 for a typical Mercury 25-150 HP. More for larger V8/V10 motors. The cost varies by service shop and what's included (some shops include lower unit oil change, others charge separately).
-
-**Is ethanol-free fuel really worth the extra cost?**
-For boats used regularly through the season, marginal benefit. For boats stored long periods or used infrequently, definitely worth it. Stabilizer is a cheaper alternative if ethanol-free isn't available locally.
-
-**How can I tell if my battery is failing before it dies?**
-Load test at a dealer ($20-$40 or free at most marinas). Or watch for slow cranking, dim lights when starting, or any electrical fault codes that come and go.
-
-**Is DIY winterization safe to do myself?**
-It can be, if you follow Mercury's published procedure carefully and have the right tools. The most common DIY failure modes are not running long enough to fully fog the cylinders, skipping the lower unit oil change, and not draining cooling water properly. A $400 dealer winterization is cheap insurance.
-
-**What's the most common "small problem becomes big problem" we see at HBW?**
-Tied between ignored alarms (most expensive when it happens) and skipped impeller replacement (most common). Both are 100 percent preventable.
-
 ## Sources
 
 - Mercury Marine seasonal maintenance procedures (dealer technical reference, 2026)
@@ -181,7 +161,29 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### My motor has an alarm that comes and goes. Is it safe to ignore?
+
+No. Intermittent alarms usually point to either a degrading sensor or a real intermittent problem. Either way, the diagnostic is cheaper now than the repair later. Get it checked at a Mercury Platinum dealer.
+
+### How much does proper winterization cost?
+
+$350-$550 for a typical Mercury 25-150 HP. More for larger V8/V10 motors. The cost varies by service shop and what's included (some shops include lower unit oil change, others charge separately).
+
+### Is ethanol-free fuel really worth the extra cost?
+
+For boats used regularly through the season, marginal benefit. For boats stored long periods or used infrequently, definitely worth it. Stabilizer is a cheaper alternative if ethanol-free isn't available locally.
+
+### How can I tell if my battery is failing before it dies?
+
+Load test at a dealer ($20-$40 or free at most marinas). Or watch for slow cranking, dim lights when starting, or any electrical fault codes that come and go.
+
+### Is DIY winterization safe to do myself?
+
+It can be, if you follow Mercury's published procedure carefully and have the right tools. The most common DIY failure modes are not running long enough to fully fog the cylinders, skipping the lower unit oil change, and not draining cooling water properly. A $400 dealer winterization is cheap insurance.
+
+### What's the most common "small problem becomes big problem" we see at HBW?
+
+Tied between ignored alarms (most expensive when it happens) and skipped impeller replacement (most common). Both are 100 percent preventable.
 
 ## Next steps
 

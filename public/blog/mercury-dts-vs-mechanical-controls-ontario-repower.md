@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should K
 description: "Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take on which fits which Ontario repower project."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["mercury dts vs mechanical controls ontario repower","mercury dts vs mechanical controls ontario repower ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower
 
@@ -128,26 +128,6 @@ For an honest cost-benefit conversation on your specific boat, email info@harris
 - [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Platinum dealer's straight take on which hull material fits which kind of.
 - [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
 
-## FAQ
-
-**Can I retrofit DTS onto a boat that currently has mechanical controls?**
-Yes, but it isn't usually a smart spend. The retrofit involves new control head, new harness, possibly new helm wiring, and SmartCraft integration. Cost runs $1,500-$3,000 above what the mechanical system would have cost. Unless you're already rebuilding the helm or upgrading to a motor that requires DTS, keep what works.
-
-**Does DTS need a separate battery or charging system?**
-No. DTS draws power from the standard outboard charging system and the boat's main starting battery. It does require clean 12V power, so if your battery setup is borderline, fix that first. Our [Mercury Boat Battery Guide](/blog/mercury-boat-battery-guide-ontario) covers the basics.
-
-**What happens if the DTS digital display fails on the water?**
-Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it has never stranded a customer.
-
-**Are mechanical cables really 50-year-old technology?**
-Functionally, yes. Modern cables have better materials and seals, but the principle has not changed. They wear out predictably (most cables are good for 10-15 years of average use), they're cheap, and they're easy to replace.
-
-**Do mechanical and DTS controls work with the same Mercury props?**
-Yes. The control system is independent of propeller choice. Whatever prop is correctly matched to your hull and motor will work with either control system. Our [Mercury Controls & Rigging Compatibility Matrix](/blog/mercury-controls-rigging-guide-ontario) covers prop selection in detail.
-
-**Is there a fuel economy difference?**
-Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a gallon at cruise. Nobody we have ever serviced has measured a meaningful difference. The motor model, the prop, and the hull matter far more than the control system.
-
 ## Sources
 
 - Mercury Marine SmartCraft and DTS technical documentation ([mercurymarine.com/ca/en/owner-resources](https://www.mercurymarine.com/ca/en/owner-resources/))
@@ -163,7 +143,29 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### Can I retrofit DTS onto a boat that currently has mechanical controls?
+
+Yes, but it isn't usually a smart spend. The retrofit involves new control head, new harness, possibly new helm wiring, and SmartCraft integration. Cost runs $1,500-$3,000 above what the mechanical system would have cost. Unless you're already rebuilding the helm or upgrading to a motor that requires DTS, keep what works.
+
+### Does DTS need a separate battery or charging system?
+
+No. DTS draws power from the standard outboard charging system and the boat's main starting battery. It does require clean 12V power, so if your battery setup is borderline, fix that first. Our [Mercury Boat Battery Guide](/blog/mercury-boat-battery-guide-ontario) covers the basics.
+
+### What happens if the DTS digital display fails on the water?
+
+Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it has never stranded a customer.
+
+### Are mechanical cables really 50-year-old technology?
+
+Functionally, yes. Modern cables have better materials and seals, but the principle has not changed. They wear out predictably (most cables are good for 10-15 years of average use), they're cheap, and they're easy to replace.
+
+### Do mechanical and DTS controls work with the same Mercury props?
+
+Yes. The control system is independent of propeller choice. Whatever prop is correctly matched to your hull and motor will work with either control system. Our [Mercury Controls & Rigging Compatibility Matrix](/blog/mercury-controls-rigging-guide-ontario) covers prop selection in detail.
+
+### Is there a fuel economy difference?
+
+Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a gallon at cruise. Nobody we have ever serviced has measured a meaningful difference. The motor model, the prop, and the hull matter far more than the control system.
 
 ## Next steps
 

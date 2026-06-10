@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario"
 description: "Boring spring checks prevent expensive May surprises. A Mercury Platinum dealer's step-by-step run-up checklist for Ontario boaters opening up their boat for the season."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["mercury outboard spring run up checklist ontario","mercury outboard spring run up checklist ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario
 
@@ -114,26 +114,6 @@ For engine repairs, we only service Mercury and Mercruiser.
 - [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist): Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling.
 - [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](/blog/boat-trailer-maintenance-guide-ontario): Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks.
 
-## FAQ
-
-**My motor sat unused for two seasons. Do I need anything beyond this checklist?**
-Probably yes. Two-year storage usually means stale fuel (definitely drain), possibly damaged fuel lines, and a higher chance of impeller failure. A full pre-launch service is worth the few hundred dollars. We've seen multiple cases where the owner skipped this and the first start did $3,000-$5,000 of damage.
-
-**Is it ok to run my Mercury on a hose with earmuffs for the first start?**
-Yes, with a properly-fitted flush attachment that delivers enough water flow. This is how dealers do first-starts for new motors. It's also how careful owners verify the cooling system before the boat goes in the water. Just confirm strong water flow at the muffs and the telltale before running.
-
-**My battery reads 11.8 volts. Can I jump-start it and go boating?**
-You can, but you shouldn't expect the battery to recover under boat use. Jumping a deeply-discharged battery to start the motor is a one-way trip: the alternator output isn't enough to fully recharge a deeply-discharged marine battery under typical use. Replace the battery, then go boating.
-
-**Does ethanol-free premium fuel solve all my fuel problems?**
-No, but it helps. Ethanol-free fuel doesn't phase-separate in storage and doesn't attract water. It's worth the extra cost if available, especially for boats that get used infrequently or stored for long periods. Stabil or Sta-Bil 360 also helps for any fuel.
-
-**Should I always change the impeller in spring?**
-Mercury's recommendation is every 3 years or 300 hours of use. In Ontario freshwater, many impellers last 4-5 years. If you have any doubt, $200-$400 to replace it is cheap insurance compared to overheating and seizing the powerhead.
-
-**What's the worst spring issue you've ever seen?**
-A customer who didn't check anything, didn't watch for telltale water, and ran for 10 minutes at cruise with a failed impeller. The motor overheated, the head warped, the powerhead seized. Total damage estimated at $7,500. The whole disaster was preventable with a 30-second look at the pee-hole.
-
 ## Sources
 
 - Mercury Marine seasonal maintenance procedures (dealer technical reference, 2026)
@@ -148,7 +128,29 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### My motor sat unused for two seasons. Do I need anything beyond this checklist?
+
+Probably yes. Two-year storage usually means stale fuel (definitely drain), possibly damaged fuel lines, and a higher chance of impeller failure. A full pre-launch service is worth the few hundred dollars. We've seen multiple cases where the owner skipped this and the first start did $3,000-$5,000 of damage.
+
+### Is it ok to run my Mercury on a hose with earmuffs for the first start?
+
+Yes, with a properly-fitted flush attachment that delivers enough water flow. This is how dealers do first-starts for new motors. It's also how careful owners verify the cooling system before the boat goes in the water. Just confirm strong water flow at the muffs and the telltale before running.
+
+### My battery reads 11.8 volts. Can I jump-start it and go boating?
+
+You can, but you shouldn't expect the battery to recover under boat use. Jumping a deeply-discharged battery to start the motor is a one-way trip: the alternator output isn't enough to fully recharge a deeply-discharged marine battery under typical use. Replace the battery, then go boating.
+
+### Does ethanol-free premium fuel solve all my fuel problems?
+
+No, but it helps. Ethanol-free fuel doesn't phase-separate in storage and doesn't attract water. It's worth the extra cost if available, especially for boats that get used infrequently or stored for long periods. Stabil or Sta-Bil 360 also helps for any fuel.
+
+### Should I always change the impeller in spring?
+
+Mercury's recommendation is every 3 years or 300 hours of use. In Ontario freshwater, many impellers last 4-5 years. If you have any doubt, $200-$400 to replace it is cheap insurance compared to overheating and seizing the powerhead.
+
+### What's the worst spring issue you've ever seen?
+
+A customer who didn't check anything, didn't watch for telltale water, and ran for 10 minutes at cruise with a failed impeller. The motor overheated, the head warped, the powerhead seized. Total damage estimated at $7,500. The whole disaster was preventable with a 30-second look at the pee-hole.
 
 ## Next steps
 

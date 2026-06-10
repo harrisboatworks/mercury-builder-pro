@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury FourStroke Buyer Guide for Ontario (2026)"
 description: "The canonical Mercury FourStroke buyer guide for Ontario. 2.5-300 HP coverage, which HP for which boat, prices, options, install considerations."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["mercury fourstroke buyer guide","mercury fourstroke ontario","mercury fourstroke pricing","mercury outboard buyer guide ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario
 
@@ -178,37 +178,39 @@ Build your real installed FourStroke quote at [mercuryrepower.ca](https://www.me
 
 For complex repowers (twin-engine setups, brand conversions, or unusual configurations), call 905-342-2153 after building the basic quote.
 
-## Frequently Asked Questions
-
-**What's the most popular Mercury FourStroke in Ontario?**
-The 90 HP and 115 HP are the most-installed FourStroke motors on Ontario boats. They cover the 16-19 ft aluminum + small pontoon market, which is the largest segment of recreational boating in the province.
-
-**Is FourStroke better than Pro XS?**
-Neither is "better", they're tuned for different use cases. FourStroke prioritizes fuel efficiency, quiet operation, and longevity. Pro XS prioritizes acceleration, top-end speed, and tournament-grade performance. For most Ontario freshwater boating, FourStroke is the right tool.
-
-**How long does a Mercury FourStroke last?**
-Properly maintained, 15-25 years of useful service is realistic. The motor that fails early is almost always one that missed oil changes, skipped impeller replacements, or got winterized improperly. Brand matters less than service habits.
-
-**Do I need Command Thrust?**
-For pontoons running 90 or 115 HP, almost always yes. For aluminum fishing boats at the same HP, usually no unless you're consistently running heavy loads.
-
-**What's the price difference between a 75 and a 90 FourStroke?**
-Typically $800-$1,500 at MSRP. Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases.
-
-**Can I tow water-ski with a FourStroke?**
-Yes, the larger FourStrokes (150+ HP V8) handle ski and wake boats fine. For tournament-grade ski performance, the Pro XS variants offer more aggressive throttle response, but a 200 HP FourStroke pulls skiers without any drama.
-
-**How do I match the prop to a new FourStroke?**
-Prop matching is part of the install. The right prop depends on hull, weight, intended use, and target RPM range at cruise. We sea-trial every install at HBW and adjust prop pitch as needed.
-
-**Does Mercury warranty come with a new FourStroke?**
-Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Platinum) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-warranty-what-you-need-to-know) for details.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
 ## FAQs
 
-_(no FAQs)_
+### What's the most popular Mercury FourStroke in Ontario?
+
+The 90 HP and 115 HP are the most-installed FourStroke motors on Ontario boats. They cover the 16-19 ft aluminum + small pontoon market, which is the largest segment of recreational boating in the province.
+
+### Is FourStroke better than Pro XS?
+
+Neither is "better", they're tuned for different use cases. FourStroke prioritizes fuel efficiency, quiet operation, and longevity. Pro XS prioritizes acceleration, top-end speed, and tournament-grade performance. For most Ontario freshwater boating, FourStroke is the right tool.
+
+### How long does a Mercury FourStroke last?
+
+Properly maintained, 15-25 years of useful service is realistic. The motor that fails early is almost always one that missed oil changes, skipped impeller replacements, or got winterized improperly. Brand matters less than service habits.
+
+### Do I need Command Thrust?
+
+For pontoons running 90 or 115 HP, almost always yes. For aluminum fishing boats at the same HP, usually no unless you're consistently running heavy loads.
+
+### What's the price difference between a 75 and a 90 FourStroke?
+
+Typically $800-$1,500 at MSRP. Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases.
+
+### Can I tow water-ski with a FourStroke?
+
+Yes, the larger FourStrokes (150+ HP V8) handle ski and wake boats fine. For tournament-grade ski performance, the Pro XS variants offer more aggressive throttle response, but a 200 HP FourStroke pulls skiers without any drama.
+
+### How do I match the prop to a new FourStroke?
+
+Prop matching is part of the install. The right prop depends on hull, weight, intended use, and target RPM range at cruise. We sea-trial every install at HBW and adjust prop pitch as needed.
+
+### Does Mercury warranty come with a new FourStroke?
+
+Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Platinum) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-warranty-what-you-need-to-know) for details.
 
 ## Next steps
 

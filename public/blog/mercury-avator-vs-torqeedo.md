@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator vs Torqeedo: Honest Comparison for Ontario Boaters (2026)
 description: "An Ontario Mercury Platinum dealer's honest comparison of Mercury Avator vs Torqeedo electric outboards. Dealer network, service support, models, and which one to..."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["mercury avator vs torqeedo","electric outboard comparison ontario","avator torqeedo","electric outboard dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo
 
@@ -143,34 +143,35 @@ For pure side-by-side product comparison without the dealer factor: both brands 
 - [Mercury Avator Range on Rice Lake](/blog/mercury-avator-range-rice-lake-cottage)
 - [Charging a Mercury Avator at Your Cottage](/blog/mercury-avator-charging-cottage-dock)
 
-## Frequently Asked Questions
-
-**Which has better range, Avator or Torqeedo?**
-At comparable battery capacities, the brands are similar. Range is more about boat hull, weight, and throttle setting than brand. Both publish range numbers that hold up at quarter-throttle and fall off at full throttle.
-
-**Is Torqeedo cheaper than Avator?**
-Pricing depends on the specific model and battery configuration. Entry-level Torqeedo Travel models can be cheaper than Avator 7.5e setups. Mid-size and larger setups are roughly comparable. Always compare full installed cost including batteries and charger, not motor-only sticker prices.
-
-**Can I service a Torqeedo at HBW?**
-No. HBW is a Mercury Marine Platinum Dealer. For engine repairs, we only service Mercury and Mercruiser. For Torqeedo service in Ontario, you'll need an authorized Torqeedo dealer.
-
-**Does Mercury Avator come with a warranty?**
-Yes. Mercury's standard limited warranty applies. Coverage details depend on model and use case. Mercury Product Protection extension is available for the larger Avator models.
-
-**Will Yamaha discontinue Torqeedo now that they own it?**
-No public indication of that. Yamaha acquired Torqeedo to expand their electric propulsion portfolio. The German operations and product line continue. Whether Yamaha-branded electric outboards appear in the future is unclear.
-
-**Should I wait for the next generation of either brand?**
-Probably not. The current product lines from both brands are mature, reliable products. The next generation may improve battery capacity or charge speed, but the core use case (short-range quiet electric boating) is well-served by current products.
-
-**Which is better for an HP-restricted lake?**
-Either brand qualifies for most HP-restricted lakes. Federal regulations allow electric motors up to 7.5 kW aggregate power on electric-only lakes. Both Avator and Torqeedo offer models in that range.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
 ## FAQs
 
-_(no FAQs)_
+### Which has better range, Avator or Torqeedo?
+
+At comparable battery capacities, the brands are similar. Range is more about boat hull, weight, and throttle setting than brand. Both publish range numbers that hold up at quarter-throttle and fall off at full throttle.
+
+### Is Torqeedo cheaper than Avator?
+
+Pricing depends on the specific model and battery configuration. Entry-level Torqeedo Travel models can be cheaper than Avator 7.5e setups. Mid-size and larger setups are roughly comparable. Always compare full installed cost including batteries and charger, not motor-only sticker prices.
+
+### Can I service a Torqeedo at HBW?
+
+No. HBW is a Mercury Marine Platinum Dealer. For engine repairs, we only service Mercury and Mercruiser. For Torqeedo service in Ontario, you'll need an authorized Torqeedo dealer.
+
+### Does Mercury Avator come with a warranty?
+
+Yes. Mercury's standard limited warranty applies. Coverage details depend on model and use case. Mercury Product Protection extension is available for the larger Avator models.
+
+### Will Yamaha discontinue Torqeedo now that they own it?
+
+No public indication of that. Yamaha acquired Torqeedo to expand their electric propulsion portfolio. The German operations and product line continue. Whether Yamaha-branded electric outboards appear in the future is unclear.
+
+### Should I wait for the next generation of either brand?
+
+Probably not. The current product lines from both brands are mature, reliable products. The next generation may improve battery capacity or charge speed, but the core use case (short-range quiet electric boating) is well-served by current products.
+
+### Which is better for an HP-restricted lake?
+
+Either brand qualifies for most HP-restricted lakes. Federal regulations allow electric motors up to 7.5 kW aggregate power on electric-only lakes. Both Avator and Torqeedo offer models in that range.
 
 ## Next steps
 

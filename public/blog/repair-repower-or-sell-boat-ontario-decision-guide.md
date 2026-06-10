@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide.md
-last_updated: 2026-06-02
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide"
 description: "When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum dealer's honest framework for choosing between repair..."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-06-02
+date_modified: 2026-06-09
 keywords: ["repair repower or sell boat ontario decision guide","repair repower or sell boat ontario decision guide ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-02  
+**Last updated:** 2026-06-09  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide
 
@@ -153,26 +153,6 @@ For a structured conversation on your specific boat, motor, and budget, email in
 - [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Platinum dealer's straight take on which hull material fits which kind of.
 - [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
 
-## FAQ
-
-**Is it ever worth repowering a boat with a damaged hull?**
-Rarely. A new motor on a tired hull is the worst dollar-per-year boat anyone owns. If the hull needs significant work, sell or scrap and start with a sound boat.
-
-**Can I finance just a repower without buying the whole boat?**
-Yes. Mercury Marine financing programs (current rates available through your Mercury Platinum dealer) handle motor-only purchases. Many marine lenders also finance just the motor. Talk to a dealer for current rates.
-
-**What's the resale impact of doing a repower right before selling?**
-Usually you don't recover the full cost. A boat with a new motor sells for more than the same boat with a tired motor, but typically you'll recover 60-80% of the repower cost in higher sale price. Repowering to sell only makes sense if the boat is otherwise excellent and the motor was the only issue.
-
-**How do I get an honest repair estimate?**
-Get two estimates from Mercury Platinum dealers. Ask each one to write out specifically what parts are being replaced and why. Avoid open-ended "we'll see what we find" estimates that have no upper bound.
-
-**Does the season matter for selling?**
-Yes, significantly. Spring (March-May) is the best time to sell a boat in Ontario. Late fall (October-November) is the worst. If you can time your decision, sell in spring.
-
-**Will Harris Boat Works tell me the truth if repair is the better answer?**
-Yes. We are not a parts-volume shop. We make our long-term business by being honest about what makes sense, even when "honest" means we're not the ones doing the work.
-
 ## Sources
 
 - Mercury Marine Canada warranty policy ([mercurymarine.com/ca/en/owner-resources/warranty-information](https://www.mercurymarine.com/ca/en/owner-resources/warranty-information/))
@@ -188,7 +168,29 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### Is it ever worth repowering a boat with a damaged hull?
+
+Rarely. A new motor on a tired hull is the worst dollar-per-year boat anyone owns. If the hull needs significant work, sell or scrap and start with a sound boat.
+
+### Can I finance just a repower without buying the whole boat?
+
+Yes. Mercury Marine financing programs (current rates available through your Mercury Platinum dealer) handle motor-only purchases. Many marine lenders also finance just the motor. Talk to a dealer for current rates.
+
+### What's the resale impact of doing a repower right before selling?
+
+Usually you don't recover the full cost. A boat with a new motor sells for more than the same boat with a tired motor, but typically you'll recover 60-80% of the repower cost in higher sale price. Repowering to sell only makes sense if the boat is otherwise excellent and the motor was the only issue.
+
+### How do I get an honest repair estimate?
+
+Get two estimates from Mercury Platinum dealers. Ask each one to write out specifically what parts are being replaced and why. Avoid open-ended "we'll see what we find" estimates that have no upper bound.
+
+### Does the season matter for selling?
+
+Yes, significantly. Spring (March-May) is the best time to sell a boat in Ontario. Late fall (October-November) is the worst. If you can time your decision, sell in spring.
+
+### Will Harris Boat Works tell me the truth if repair is the better answer?
+
+Yes. We are not a parts-volume shop. We make our long-term business by being honest about what makes sense, even when "honest" means we're not the ones doing the work.
 
 ## Next steps
 

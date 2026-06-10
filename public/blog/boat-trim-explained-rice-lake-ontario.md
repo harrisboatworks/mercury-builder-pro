@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trim-explained-rice-lake-ontario.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Trim Explained for Rice Lake Boaters, Without the Jargon"
 description: "How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Platinum dealer."
 category: "How-To"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["boat trim explained rice lake ontario","boat trim explained rice lake ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** How-To  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trim-explained-rice-lake-ontario
 
@@ -119,26 +119,6 @@ If you'd like a structured run-through of trim on your specific boat, email info
 - [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake): The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and.
 - [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum.
 
-## FAQ
-
-**How do I know if my trim is broken?**
-Press the trim up and down buttons with the motor in the water at idle. The motor should pivot smoothly through its full range. If you hear the motor straining but the trim doesn't move, the hydraulic ram or trim relay is the likely culprit. We diagnose this regularly, usually a $300-$600 repair.
-
-**Can I use trim in reverse?**
-Sort of. Most modern Mercury outboards have a "shallow water" position that's trim partially out, intended for very low-speed maneuvering in shallow areas. You should not run at speed in reverse with significant trim out.
-
-**Does trim affect steering response?**
-Yes, modestly. More trim out generally makes the boat feel looser at speed. Less trim makes the boat feel more stable but slower.
-
-**What's the trim limit switch?**
-A small switch in the trim system that prevents you from trimming the motor too far out at speed (where the prop would ventilate and the boat could become unstable). It's a safety feature, not a malfunction.
-
-**How does trim interact with hydrofoils or trim tabs?**
-A hydrofoil (the wing-shaped attachment some owners bolt to the cavitation plate) helps the boat get on plane faster and stay on plane at lower speeds. Trim tabs (separate hydraulic plates on the transom) give you fine control over bow attitude independent of the motor. Both can be useful, but they add cost and complexity. We can advise if either is worth it for your specific setup.
-
-**Can the wrong trim damage my motor?**
-Sustained running with the prop ventilating (trim too far out) can be hard on the gearcase and lower unit. Running with trim full in at high speed for long periods stresses the motor mount and the transom. Both are unusual, but neither does the boat any favours.
-
 ## Sources
 
 - Mercury Marine outboard operation guide (dealer technical reference, 2026)
@@ -153,7 +133,29 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### How do I know if my trim is broken?
+
+Press the trim up and down buttons with the motor in the water at idle. The motor should pivot smoothly through its full range. If you hear the motor straining but the trim doesn't move, the hydraulic ram or trim relay is the likely culprit. We diagnose this regularly, usually a $300-$600 repair.
+
+### Can I use trim in reverse?
+
+Sort of. Most modern Mercury outboards have a "shallow water" position that's trim partially out, intended for very low-speed maneuvering in shallow areas. You should not run at speed in reverse with significant trim out.
+
+### Does trim affect steering response?
+
+Yes, modestly. More trim out generally makes the boat feel looser at speed. Less trim makes the boat feel more stable but slower.
+
+### What's the trim limit switch?
+
+A small switch in the trim system that prevents you from trimming the motor too far out at speed (where the prop would ventilate and the boat could become unstable). It's a safety feature, not a malfunction.
+
+### How does trim interact with hydrofoils or trim tabs?
+
+A hydrofoil (the wing-shaped attachment some owners bolt to the cavitation plate) helps the boat get on plane faster and stay on plane at lower speeds. Trim tabs (separate hydraulic plates on the transom) give you fine control over bow attitude independent of the motor. Both can be useful, but they add cost and complexity. We can advise if either is worth it for your specific setup.
+
+### Can the wrong trim damage my motor?
+
+Sustained running with the prop ventilating (trim too far out) can be hard on the gearcase and lower unit. Running with trim full in at high speed for long periods stresses the motor mount and the transom. Both are unusual, but neither does the boat any favours.
 
 ## Next steps
 

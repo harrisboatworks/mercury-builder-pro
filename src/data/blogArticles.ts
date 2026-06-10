@@ -31203,12 +31203,20 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-dts-vs-mechanical-controls.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '7 min read',
     keywords: ['mercury dts vs mechanical controls ontario repower', 'mercury dts vs mechanical controls ontario repower ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
     relatedSlugs: ['mercury-dts-retrofit-eligibility-2026'],
+    faqs: [
+      { question: "Can I retrofit DTS onto a boat that currently has mechanical controls?", answer: "Yes, but it isn't usually a smart spend. The retrofit involves new control head, new harness, possibly new helm wiring, and SmartCraft integration. Cost runs $1,500-$3,000 above what the mechanical system would have cost. Unless you're already rebuilding the helm or upgrading to a motor that requires DTS, keep what works." },
+      { question: "Does DTS need a separate battery or charging system?", answer: "No. DTS draws power from the standard outboard charging system and the boat's main starting battery. It does require clean 12V power, so if your battery setup is borderline, fix that first. Our [Mercury Boat Battery Guide](/blog/mercury-boat-battery-guide-ontario) covers the basics." },
+      { question: "What happens if the DTS digital display fails on the water?", answer: "Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it has never stranded a customer." },
+      { question: "Are mechanical cables really 50-year-old technology?", answer: "Functionally, yes. Modern cables have better materials and seals, but the principle has not changed. They wear out predictably (most cables are good for 10-15 years of average use), they're cheap, and they're easy to replace." },
+      { question: "Do mechanical and DTS controls work with the same Mercury props?", answer: "Yes. The control system is independent of propeller choice. Whatever prop is correctly matched to your hull and motor will work with either control system. Our [Mercury Controls & Rigging Compatibility Matrix](/blog/mercury-controls-rigging-guide-ontario) covers prop selection in detail." },
+      { question: "Is there a fuel economy difference?", answer: "Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a gallon at cruise. Nobody we have ever serviced has measured a meaningful difference. The motor model, the prop, and the hull matter far more than the control system." },
+    ],
     content: `# Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know
 
 ## Quick answer
@@ -31311,26 +31319,6 @@ For an honest cost-benefit conversation on your specific boat, email info@harris
 - [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Platinum dealer's straight take on which hull material fits which kind of.
 - [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
 
-## FAQ
-
-**Can I retrofit DTS onto a boat that currently has mechanical controls?**
-Yes, but it isn't usually a smart spend. The retrofit involves new control head, new harness, possibly new helm wiring, and SmartCraft integration. Cost runs $1,500-$3,000 above what the mechanical system would have cost. Unless you're already rebuilding the helm or upgrading to a motor that requires DTS, keep what works.
-
-**Does DTS need a separate battery or charging system?**
-No. DTS draws power from the standard outboard charging system and the boat's main starting battery. It does require clean 12V power, so if your battery setup is borderline, fix that first. Our [Mercury Boat Battery Guide](/blog/mercury-boat-battery-guide-ontario) covers the basics.
-
-**What happens if the DTS digital display fails on the water?**
-Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it has never stranded a customer.
-
-**Are mechanical cables really 50-year-old technology?**
-Functionally, yes. Modern cables have better materials and seals, but the principle has not changed. They wear out predictably (most cables are good for 10-15 years of average use), they're cheap, and they're easy to replace.
-
-**Do mechanical and DTS controls work with the same Mercury props?**
-Yes. The control system is independent of propeller choice. Whatever prop is correctly matched to your hull and motor will work with either control system. Our [Mercury Controls & Rigging Compatibility Matrix](/blog/mercury-controls-rigging-guide-ontario) covers prop selection in detail.
-
-**Is there a fuel economy difference?**
-Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a gallon at cruise. Nobody we have ever serviced has measured a meaningful difference. The motor model, the prop, and the hull matter far more than the control system.
-
 ## Sources
 
 - Mercury Marine SmartCraft and DTS technical documentation ([mercurymarine.com/ca/en/owner-resources](https://www.mercurymarine.com/ca/en/owner-resources/))
@@ -31353,11 +31341,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-boat-trim-rice-lake.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'How-To',
     readTime: '7 min read',
     keywords: ['boat trim explained rice lake ontario', 'boat trim explained rice lake ontario ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
+    faqs: [
+      { question: "How do I know if my trim is broken?", answer: "Press the trim up and down buttons with the motor in the water at idle. The motor should pivot smoothly through its full range. If you hear the motor straining but the trim doesn't move, the hydraulic ram or trim relay is the likely culprit. We diagnose this regularly, usually a $300-$600 repair." },
+      { question: "Can I use trim in reverse?", answer: "Sort of. Most modern Mercury outboards have a \"shallow water\" position that's trim partially out, intended for very low-speed maneuvering in shallow areas. You should not run at speed in reverse with significant trim out." },
+      { question: "Does trim affect steering response?", answer: "Yes, modestly. More trim out generally makes the boat feel looser at speed. Less trim makes the boat feel more stable but slower." },
+      { question: "What's the trim limit switch?", answer: "A small switch in the trim system that prevents you from trimming the motor too far out at speed (where the prop would ventilate and the boat could become unstable). It's a safety feature, not a malfunction." },
+      { question: "How does trim interact with hydrofoils or trim tabs?", answer: "A hydrofoil (the wing-shaped attachment some owners bolt to the cavitation plate) helps the boat get on plane faster and stay on plane at lower speeds. Trim tabs (separate hydraulic plates on the transom) give you fine control over bow attitude independent of the motor. Both can be useful, but they add cost and complexity. We can advise if either is worth it for your specific setup." },
+      { question: "Can the wrong trim damage my motor?", answer: "Sustained running with the prop ventilating (trim too far out) can be hard on the gearcase and lower unit. Running with trim full in at high speed for long periods stresses the motor mount and the transom. Both are unusual, but neither does the boat any favours." },
+    ],
     content: `# Boat Trim Explained for Rice Lake Boaters, Without the Jargon
 
 ## Quick answer
@@ -31450,26 +31446,6 @@ If you'd like a structured run-through of trim on your specific boat, email info
 - [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake): The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and.
 - [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum.
 
-## FAQ
-
-**How do I know if my trim is broken?**
-Press the trim up and down buttons with the motor in the water at idle. The motor should pivot smoothly through its full range. If you hear the motor straining but the trim doesn't move, the hydraulic ram or trim relay is the likely culprit. We diagnose this regularly, usually a $300-$600 repair.
-
-**Can I use trim in reverse?**
-Sort of. Most modern Mercury outboards have a "shallow water" position that's trim partially out, intended for very low-speed maneuvering in shallow areas. You should not run at speed in reverse with significant trim out.
-
-**Does trim affect steering response?**
-Yes, modestly. More trim out generally makes the boat feel looser at speed. Less trim makes the boat feel more stable but slower.
-
-**What's the trim limit switch?**
-A small switch in the trim system that prevents you from trimming the motor too far out at speed (where the prop would ventilate and the boat could become unstable). It's a safety feature, not a malfunction.
-
-**How does trim interact with hydrofoils or trim tabs?**
-A hydrofoil (the wing-shaped attachment some owners bolt to the cavitation plate) helps the boat get on plane faster and stay on plane at lower speeds. Trim tabs (separate hydraulic plates on the transom) give you fine control over bow attitude independent of the motor. Both can be useful, but they add cost and complexity. We can advise if either is worth it for your specific setup.
-
-**Can the wrong trim damage my motor?**
-Sustained running with the prop ventilating (trim too far out) can be hard on the gearcase and lower unit. Running with trim full in at high speed for long periods stresses the motor mount and the transom. Both are unusual, but neither does the boat any favours.
-
 ## Sources
 
 - Mercury Marine outboard operation guide (dealer technical reference, 2026)
@@ -31491,11 +31467,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-spring-run-up-checklist.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Maintenance',
     readTime: '8 min read',
     keywords: ['mercury outboard spring run up checklist ontario', 'mercury outboard spring run up checklist ontario ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
+    faqs: [
+      { question: "My motor sat unused for two seasons. Do I need anything beyond this checklist?", answer: "Probably yes. Two-year storage usually means stale fuel (definitely drain), possibly damaged fuel lines, and a higher chance of impeller failure. A full pre-launch service is worth the few hundred dollars. We've seen multiple cases where the owner skipped this and the first start did $3,000-$5,000 of damage." },
+      { question: "Is it ok to run my Mercury on a hose with earmuffs for the first start?", answer: "Yes, with a properly-fitted flush attachment that delivers enough water flow. This is how dealers do first-starts for new motors. It's also how careful owners verify the cooling system before the boat goes in the water. Just confirm strong water flow at the muffs and the telltale before running." },
+      { question: "My battery reads 11.8 volts. Can I jump-start it and go boating?", answer: "You can, but you shouldn't expect the battery to recover under boat use. Jumping a deeply-discharged battery to start the motor is a one-way trip: the alternator output isn't enough to fully recharge a deeply-discharged marine battery under typical use. Replace the battery, then go boating." },
+      { question: "Does ethanol-free premium fuel solve all my fuel problems?", answer: "No, but it helps. Ethanol-free fuel doesn't phase-separate in storage and doesn't attract water. It's worth the extra cost if available, especially for boats that get used infrequently or stored for long periods. Stabil or Sta-Bil 360 also helps for any fuel." },
+      { question: "Should I always change the impeller in spring?", answer: "Mercury's recommendation is every 3 years or 300 hours of use. In Ontario freshwater, many impellers last 4-5 years. If you have any doubt, $200-$400 to replace it is cheap insurance compared to overheating and seizing the powerhead." },
+      { question: "What's the worst spring issue you've ever seen?", answer: "A customer who didn't check anything, didn't watch for telltale water, and ran for 10 minutes at cruise with a failed impeller. The motor overheated, the head warped, the powerhead seized. Total damage estimated at $7,500. The whole disaster was preventable with a 30-second look at the pee-hole." },
+    ],
     content: `# Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario
 
 ## Quick answer
@@ -31583,26 +31567,6 @@ For engine repairs, we only service Mercury and Mercruiser.
 - [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist): Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling.
 - [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](/blog/boat-trailer-maintenance-guide-ontario): Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks.
 
-## FAQ
-
-**My motor sat unused for two seasons. Do I need anything beyond this checklist?**
-Probably yes. Two-year storage usually means stale fuel (definitely drain), possibly damaged fuel lines, and a higher chance of impeller failure. A full pre-launch service is worth the few hundred dollars. We've seen multiple cases where the owner skipped this and the first start did $3,000-$5,000 of damage.
-
-**Is it ok to run my Mercury on a hose with earmuffs for the first start?**
-Yes, with a properly-fitted flush attachment that delivers enough water flow. This is how dealers do first-starts for new motors. It's also how careful owners verify the cooling system before the boat goes in the water. Just confirm strong water flow at the muffs and the telltale before running.
-
-**My battery reads 11.8 volts. Can I jump-start it and go boating?**
-You can, but you shouldn't expect the battery to recover under boat use. Jumping a deeply-discharged battery to start the motor is a one-way trip: the alternator output isn't enough to fully recharge a deeply-discharged marine battery under typical use. Replace the battery, then go boating.
-
-**Does ethanol-free premium fuel solve all my fuel problems?**
-No, but it helps. Ethanol-free fuel doesn't phase-separate in storage and doesn't attract water. It's worth the extra cost if available, especially for boats that get used infrequently or stored for long periods. Stabil or Sta-Bil 360 also helps for any fuel.
-
-**Should I always change the impeller in spring?**
-Mercury's recommendation is every 3 years or 300 hours of use. In Ontario freshwater, many impellers last 4-5 years. If you have any doubt, $200-$400 to replace it is cheap insurance compared to overheating and seizing the powerhead.
-
-**What's the worst spring issue you've ever seen?**
-A customer who didn't check anything, didn't watch for telltale water, and ran for 10 minutes at cruise with a failed impeller. The motor overheated, the head warped, the powerhead seized. Total damage estimated at $7,500. The whole disaster was preventable with a 30-second look at the pee-hole.
-
 ## Sources
 
 - Mercury Marine seasonal maintenance procedures (dealer technical reference, 2026)
@@ -31624,11 +31588,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-service-bills-prevention.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Maintenance',
     readTime: '8 min read',
     keywords: ['accidentally increase boat service bills ontario', 'accidentally increase boat service bills ontario ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
+    faqs: [
+      { question: "My motor has an alarm that comes and goes. Is it safe to ignore?", answer: "No. Intermittent alarms usually point to either a degrading sensor or a real intermittent problem. Either way, the diagnostic is cheaper now than the repair later. Get it checked at a Mercury Platinum dealer." },
+      { question: "How much does proper winterization cost?", answer: "$350-$550 for a typical Mercury 25-150 HP. More for larger V8/V10 motors. The cost varies by service shop and what's included (some shops include lower unit oil change, others charge separately)." },
+      { question: "Is ethanol-free fuel really worth the extra cost?", answer: "For boats used regularly through the season, marginal benefit. For boats stored long periods or used infrequently, definitely worth it. Stabilizer is a cheaper alternative if ethanol-free isn't available locally." },
+      { question: "How can I tell if my battery is failing before it dies?", answer: "Load test at a dealer ($20-$40 or free at most marinas). Or watch for slow cranking, dim lights when starting, or any electrical fault codes that come and go." },
+      { question: "Is DIY winterization safe to do myself?", answer: "It can be, if you follow Mercury's published procedure carefully and have the right tools. The most common DIY failure modes are not running long enough to fully fog the cylinders, skipping the lower unit oil change, and not draining cooling water properly. A $400 dealer winterization is cheap insurance." },
+      { question: "What's the most common \"small problem becomes big problem\" we see at HBW?", answer: "Tied between ignored alarms (most expensive when it happens) and skipped impeller replacement (most common). Both are 100 percent preventable." },
+    ],
     content: `# How Ontario Boat Owners Accidentally Make Their Service Bills Bigger
 
 ## Quick answer
@@ -31746,26 +31718,6 @@ If you want a structured pre-season inspection on your specific boat, our servic
 - [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026): Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD.
 - [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](/blog/boat-trailer-maintenance-guide-ontario): Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks.
 
-## FAQ
-
-**My motor has an alarm that comes and goes. Is it safe to ignore?**
-No. Intermittent alarms usually point to either a degrading sensor or a real intermittent problem. Either way, the diagnostic is cheaper now than the repair later. Get it checked at a Mercury Platinum dealer.
-
-**How much does proper winterization cost?**
-$350-$550 for a typical Mercury 25-150 HP. More for larger V8/V10 motors. The cost varies by service shop and what's included (some shops include lower unit oil change, others charge separately).
-
-**Is ethanol-free fuel really worth the extra cost?**
-For boats used regularly through the season, marginal benefit. For boats stored long periods or used infrequently, definitely worth it. Stabilizer is a cheaper alternative if ethanol-free isn't available locally.
-
-**How can I tell if my battery is failing before it dies?**
-Load test at a dealer ($20-$40 or free at most marinas). Or watch for slow cranking, dim lights when starting, or any electrical fault codes that come and go.
-
-**Is DIY winterization safe to do myself?**
-It can be, if you follow Mercury's published procedure carefully and have the right tools. The most common DIY failure modes are not running long enough to fully fog the cylinders, skipping the lower unit oil change, and not draining cooling water properly. A $400 dealer winterization is cheap insurance.
-
-**What's the most common "small problem becomes big problem" we see at HBW?**
-Tied between ignored alarms (most expensive when it happens) and skipped impeller replacement (most common). Both are 100 percent preventable.
-
 ## Sources
 
 - Mercury Marine seasonal maintenance procedures (dealer technical reference, 2026)
@@ -31790,11 +31742,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-repair-repower-sell-decision.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-06-02',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '9 min read',
     keywords: ['repair repower or sell boat ontario decision guide', 'repair repower or sell boat ontario decision guide ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
+    faqs: [
+      { question: "Is it ever worth repowering a boat with a damaged hull?", answer: "Rarely. A new motor on a tired hull is the worst dollar-per-year boat anyone owns. If the hull needs significant work, sell or scrap and start with a sound boat." },
+      { question: "Can I finance just a repower without buying the whole boat?", answer: "Yes. Mercury Marine financing programs (current rates available through your Mercury Platinum dealer) handle motor-only purchases. Many marine lenders also finance just the motor. Talk to a dealer for current rates." },
+      { question: "What's the resale impact of doing a repower right before selling?", answer: "Usually you don't recover the full cost. A boat with a new motor sells for more than the same boat with a tired motor, but typically you'll recover 60-80% of the repower cost in higher sale price. Repowering to sell only makes sense if the boat is otherwise excellent and the motor was the only issue." },
+      { question: "How do I get an honest repair estimate?", answer: "Get two estimates from Mercury Platinum dealers. Ask each one to write out specifically what parts are being replaced and why. Avoid open-ended \"we'll see what we find\" estimates that have no upper bound." },
+      { question: "Does the season matter for selling?", answer: "Yes, significantly. Spring (March-May) is the best time to sell a boat in Ontario. Late fall (October-November) is the worst. If you can time your decision, sell in spring." },
+      { question: "Will Harris Boat Works tell me the truth if repair is the better answer?", answer: "Yes. We are not a parts-volume shop. We make our long-term business by being honest about what makes sense, even when \"honest\" means we're not the ones doing the work." },
+    ],
     content: `# Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide
 
 ## Quick answer
@@ -31921,26 +31881,6 @@ For a structured conversation on your specific boat, motor, and budget, email in
 - [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Platinum dealer's straight take on which hull material fits which kind of.
 - [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
 
-## FAQ
-
-**Is it ever worth repowering a boat with a damaged hull?**
-Rarely. A new motor on a tired hull is the worst dollar-per-year boat anyone owns. If the hull needs significant work, sell or scrap and start with a sound boat.
-
-**Can I finance just a repower without buying the whole boat?**
-Yes. Mercury Marine financing programs (current rates available through your Mercury Platinum dealer) handle motor-only purchases. Many marine lenders also finance just the motor. Talk to a dealer for current rates.
-
-**What's the resale impact of doing a repower right before selling?**
-Usually you don't recover the full cost. A boat with a new motor sells for more than the same boat with a tired motor, but typically you'll recover 60-80% of the repower cost in higher sale price. Repowering to sell only makes sense if the boat is otherwise excellent and the motor was the only issue.
-
-**How do I get an honest repair estimate?**
-Get two estimates from Mercury Platinum dealers. Ask each one to write out specifically what parts are being replaced and why. Avoid open-ended "we'll see what we find" estimates that have no upper bound.
-
-**Does the season matter for selling?**
-Yes, significantly. Spring (March-May) is the best time to sell a boat in Ontario. Late fall (October-November) is the worst. If you can time your decision, sell in spring.
-
-**Will Harris Boat Works tell me the truth if repair is the better answer?**
-Yes. We are not a parts-volume shop. We make our long-term business by being honest about what makes sense, even when "honest" means we're not the ones doing the work.
-
 ## Sources
 
 - Mercury Marine Canada warranty policy ([mercurymarine.com/ca/en/owner-resources/warranty-information](https://www.mercurymarine.com/ca/en/owner-resources/warranty-information/))
@@ -31963,11 +31903,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-boat-electrical-safety-checklist.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Maintenance',
     readTime: '8 min read',
     keywords: ['boat electrical safety checklist', 'marine electrical ontario', 'boat wiring inspection', 'bilge pump check', 'harris boat works'],
+    faqs: [
+      { question: "Is it safe to add a trolling motor or fishfinder myself?", answer: "Yes, if you use marine-grade wire, marine-grade terminals, and a properly-sized fuse on the positive lead at the battery. The wrong installation is a fire risk and an electrical-fault generator. If you're not sure, have a marine electrician do it." },
+      { question: "My bilge pump runs every few minutes even when the boat is dry. What's wrong?", answer: "Usually a stuck float switch or a leaking through-hull fitting that's letting water in. Inspect both. A pump that cycles constantly will wear out fast and drain the battery." },
+      { question: "Can I use household electrical tape for marine connections?", answer: "Not as a permanent solution. Electrical tape degrades from UV, humidity, and heat. For permanent connections use adhesive-lined heat-shrink. Tape is fine for a one-trip emergency fix only." },
+      { question: "Why does my electrical system seem fine in summer but fail in spring?", answer: "Winter storage creates the perfect conditions for corrosion: temperature swings cause condensation cycles, the boat sits dormant so any moisture trapped in connections can't dry, and rodents sometimes chew through wiring undetected. Spring is when the accumulated damage shows up." },
+      { question: "What's a \"stray current\" and should I worry about it?", answer: "Stray current is small amounts of DC current leaking from your electrical system into the surrounding water through metal hull components. In saltwater this causes rapid galvanic corrosion. In freshwater the effect is milder but still real. Properly grounded and isolated systems eliminate the risk." },
+      { question: "Should I disconnect the battery for winter storage?", answer: "At minimum, turn the battery switch to OFF. Better is to remove the battery entirely and store it in a heated space, on a trickle charger. A battery left in an unheated boat through an Ontario winter is more likely to fail next spring than one stored in a warm garage." },
+    ],
     content: `# Boat Electrical Safety Checklist for Ontario Freshwater Boats
 
 ## Quick answer
@@ -32107,26 +32055,6 @@ For engine repairs, we only service Mercury and Mercruiser.
 - [Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario](/blog/mercury-outboard-spring-run-up-checklist-ontario): Boring spring checks prevent expensive May surprises. A Mercury Platinum dealer's step-by-step run-up.
 - [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](/blog/boat-trailer-maintenance-guide-ontario): Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks.
 - [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026): Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD.
-
-## FAQ
-
-**Is it safe to add a trolling motor or fishfinder myself?**
-Yes, if you use marine-grade wire, marine-grade terminals, and a properly-sized fuse on the positive lead at the battery. The wrong installation is a fire risk and an electrical-fault generator. If you're not sure, have a marine electrician do it.
-
-**My bilge pump runs every few minutes even when the boat is dry. What's wrong?**
-Usually a stuck float switch or a leaking through-hull fitting that's letting water in. Inspect both. A pump that cycles constantly will wear out fast and drain the battery.
-
-**Can I use household electrical tape for marine connections?**
-Not as a permanent solution. Electrical tape degrades from UV, humidity, and heat. For permanent connections use adhesive-lined heat-shrink. Tape is fine for a one-trip emergency fix only.
-
-**Why does my electrical system seem fine in summer but fail in spring?**
-Winter storage creates the perfect conditions for corrosion: temperature swings cause condensation cycles, the boat sits dormant so any moisture trapped in connections can't dry, and rodents sometimes chew through wiring undetected. Spring is when the accumulated damage shows up.
-
-**What's a "stray current" and should I worry about it?**
-Stray current is small amounts of DC current leaking from your electrical system into the surrounding water through metal hull components. In saltwater this causes rapid galvanic corrosion. In freshwater the effect is milder but still real. Properly grounded and isolated systems eliminate the risk.
-
-**Should I disconnect the battery for winter storage?**
-At minimum, turn the battery switch to OFF. Better is to remove the battery entirely and store it in a heated space, on a trickle charger. A battery left in an unheated boat through an Ontario winter is more likely to fail next spring than one stored in a warm garage.
 
 ## Sources
 
@@ -32833,11 +32761,21 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
     image: '/lovable-uploads/hero-mercury-fourstroke-buyer-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Buying Guide',
     readTime: '9 min read',
     keywords: ['mercury fourstroke buyer guide', 'mercury fourstroke ontario', 'mercury fourstroke pricing', 'mercury outboard buyer guide ontario'],
+    faqs: [
+      { question: "What's the most popular Mercury FourStroke in Ontario?", answer: "The 90 HP and 115 HP are the most-installed FourStroke motors on Ontario boats. They cover the 16-19 ft aluminum + small pontoon market, which is the largest segment of recreational boating in the province." },
+      { question: "Is FourStroke better than Pro XS?", answer: "Neither is \"better\", they're tuned for different use cases. FourStroke prioritizes fuel efficiency, quiet operation, and longevity. Pro XS prioritizes acceleration, top-end speed, and tournament-grade performance. For most Ontario freshwater boating, FourStroke is the right tool." },
+      { question: "How long does a Mercury FourStroke last?", answer: "Properly maintained, 15-25 years of useful service is realistic. The motor that fails early is almost always one that missed oil changes, skipped impeller replacements, or got winterized improperly. Brand matters less than service habits." },
+      { question: "Do I need Command Thrust?", answer: "For pontoons running 90 or 115 HP, almost always yes. For aluminum fishing boats at the same HP, usually no unless you're consistently running heavy loads." },
+      { question: "What's the price difference between a 75 and a 90 FourStroke?", answer: "Typically $800-$1,500 at MSRP. Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases." },
+      { question: "Can I tow water-ski with a FourStroke?", answer: "Yes, the larger FourStrokes (150+ HP V8) handle ski and wake boats fine. For tournament-grade ski performance, the Pro XS variants offer more aggressive throttle response, but a 200 HP FourStroke pulls skiers without any drama." },
+      { question: "How do I match the prop to a new FourStroke?", answer: "Prop matching is part of the install. The right prop depends on hull, weight, intended use, and target RPM range at cruise. We sea-trial every install at HBW and adjust prop pitch as needed." },
+      { question: "Does Mercury warranty come with a new FourStroke?", answer: "Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Platinum) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-warranty-what-you-need-to-know) for details." },
+    ],
     content: `## Quick Answer
 
 Mercury FourStroke is the default Mercury outboard for Ontario freshwater boating. The family covers 2.5 HP portables through 300 HP V8s, and for the vast majority of Ontario boats, aluminum fishing rigs, pontoons, cottage runabouts, family fishing boats, FourStroke is the right answer. Mercury Pro XS is the performance-tuned alternative if you actually run hard; Verado is special-order territory and rarely the right call on a freshwater boat. This guide is the starting point for any FourStroke buying decision in Ontario. Build a real installed quote at mercuryrepower.ca.
@@ -32989,35 +32927,6 @@ Build your real installed FourStroke quote at [mercuryrepower.ca](https://www.me
 
 For complex repowers (twin-engine setups, brand conversions, or unusual configurations), call 905-342-2153 after building the basic quote.
 
-## Frequently Asked Questions
-
-**What's the most popular Mercury FourStroke in Ontario?**
-The 90 HP and 115 HP are the most-installed FourStroke motors on Ontario boats. They cover the 16-19 ft aluminum + small pontoon market, which is the largest segment of recreational boating in the province.
-
-**Is FourStroke better than Pro XS?**
-Neither is "better", they're tuned for different use cases. FourStroke prioritizes fuel efficiency, quiet operation, and longevity. Pro XS prioritizes acceleration, top-end speed, and tournament-grade performance. For most Ontario freshwater boating, FourStroke is the right tool.
-
-**How long does a Mercury FourStroke last?**
-Properly maintained, 15-25 years of useful service is realistic. The motor that fails early is almost always one that missed oil changes, skipped impeller replacements, or got winterized improperly. Brand matters less than service habits.
-
-**Do I need Command Thrust?**
-For pontoons running 90 or 115 HP, almost always yes. For aluminum fishing boats at the same HP, usually no unless you're consistently running heavy loads.
-
-**What's the price difference between a 75 and a 90 FourStroke?**
-Typically $800-$1,500 at MSRP. Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases.
-
-**Can I tow water-ski with a FourStroke?**
-Yes, the larger FourStrokes (150+ HP V8) handle ski and wake boats fine. For tournament-grade ski performance, the Pro XS variants offer more aggressive throttle response, but a 200 HP FourStroke pulls skiers without any drama.
-
-**How do I match the prop to a new FourStroke?**
-Prop matching is part of the install. The right prop depends on hull, weight, intended use, and target RPM range at cruise. We sea-trial every install at HBW and adjust prop pitch as needed.
-
-**Does Mercury warranty come with a new FourStroke?**
-Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Platinum) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-warranty-what-you-need-to-know) for details.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
-*Last reviewed: 2026-05-17.*
 `,
   },
   {
@@ -33033,6 +32942,16 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['mercury pro xs buyer guide', 'mercury pro xs ontario', 'mercury pro xs pricing', 'mercury performance outboard'],
+    faqs: [
+      { question: "Is Pro XS worth the premium over FourStroke?", answer: "For tournament fishing, performance pontoons, water sports applications, and big-water running, yes. For cruising, family use, casual fishing, no. FourStroke is the better tool for most Ontario boaters." },
+      { question: "What's the most popular Pro XS in Ontario?", answer: "The 200 Pro XS V6 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is the walleye sweet spot for mid-size aluminum on big water." },
+      { question: "Does Pro XS use the same powerhead as FourStroke?", answer: "The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175-225 Pro XS uses the 3.4L V6 (Pro XS exclusive). The 250-300 Pro XS uses the 4.6L V8." },
+      { question: "Can I get Command Thrust on a Pro XS?", answer: "Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Higher HP Pro XS V6 and V8 motors use different gearcase options designed for their performance ranges." },
+      { question: "Does Pro XS warranty match FourStroke?", answer: "Yes, same Mercury limited warranty (3 years standard). Mercury Product Protection (Platinum) extension applies the same way." },
+      { question: "Can I repower from a FourStroke to a Pro XS?", answer: "Yes, but the rigging context matters. Pro XS performance often benefits from SmartCraft upgrades, hydraulic steering, performance throttle controls. The motor swap itself is straightforward; the full rigging context is where the Pro XS value shows up." },
+      { question: "Is Pro XS louder than FourStroke?", answer: "Slightly. Pro XS tuning produces a more \"sport\" exhaust character. Most owners describe it as a feature, not a problem. For small Ontario lakes where quiet matters, FourStroke is the quieter option." },
+      { question: "Should I buy Pro XS new or used?", answer: "Pro XS resale stays strong. A used Pro XS in good condition from a known service history is reasonable. A used Pro XS from unknown history is a higher-risk bet than the same-aged FourStroke because Pro XS owners tend to run them harder." },
+    ],
     content: `## Quick Answer
 
 Mercury Pro XS is the performance-tuned outboard line in the Mercury lineup. Same Mercury reliability and dealer network as FourStroke, with aggressive throttle response, higher RPM ceilings, and prop matching tuned for top-end speed and acceleration. For Ontario boaters, Pro XS makes sense when you actually run hard, bass tournaments, walleye anglers needing to outrun weather, performance pontoons, fast-running fibreglass. For cruising and family fishing, FourStroke is the smarter spend. Build a real installed Pro XS quote at mercuryrepower.ca.
@@ -33164,35 +33083,6 @@ Build your real installed Pro XS quote at [mercuryrepower.ca](https://www.mercur
 
 For tournament or competitive setups, call 905-342-2153 after building the basic quote, we'll walk through prop options and SmartCraft configuration in detail.
 
-## Frequently Asked Questions
-
-**Is Pro XS worth the premium over FourStroke?**
-For tournament fishing, performance pontoons, water sports applications, and big-water running, yes. For cruising, family use, casual fishing, no. FourStroke is the better tool for most Ontario boaters.
-
-**What's the most popular Pro XS in Ontario?**
-The 200 Pro XS V6 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is the walleye sweet spot for mid-size aluminum on big water.
-
-**Does Pro XS use the same powerhead as FourStroke?**
-The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175-225 Pro XS uses the 3.4L V6 (Pro XS exclusive). The 250-300 Pro XS uses the 4.6L V8.
-
-**Can I get Command Thrust on a Pro XS?**
-Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Higher HP Pro XS V6 and V8 motors use different gearcase options designed for their performance ranges.
-
-**Does Pro XS warranty match FourStroke?**
-Yes, same Mercury limited warranty (3 years standard). Mercury Product Protection (Platinum) extension applies the same way.
-
-**Can I repower from a FourStroke to a Pro XS?**
-Yes, but the rigging context matters. Pro XS performance often benefits from SmartCraft upgrades, hydraulic steering, performance throttle controls. The motor swap itself is straightforward; the full rigging context is where the Pro XS value shows up.
-
-**Is Pro XS louder than FourStroke?**
-Slightly. Pro XS tuning produces a more "sport" exhaust character. Most owners describe it as a feature, not a problem. For small Ontario lakes where quiet matters, FourStroke is the quieter option.
-
-**Should I buy Pro XS new or used?**
-Pro XS resale stays strong. A used Pro XS in good condition from a known service history is reasonable. A used Pro XS from unknown history is a higher-risk bet than the same-aged FourStroke because Pro XS owners tend to run them harder.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
-*Last reviewed: 2026-05-17.*
 `,
   },
   {
@@ -33203,11 +33093,19 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
     image: '/lovable-uploads/hero-avator-range-rice-lake.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '6 min read',
     keywords: ['mercury avator range', 'avator electric outboard rice lake', 'mercury electric outboard ontario', 'avator cottage range'],
+    faqs: [
+      { question: "How far can a Mercury Avator 7.5e really go on Rice Lake?", answer: "3-4 miles at full throttle, 8-12 miles at half, 20-25 miles at quarter (trolling) speeds. Reduce 20-30% for wind, chop, and cold-water conditions." },
+      { question: "Can I charge an Avator at the dock with regular cottage power?", answer: "Yes for the 7.5e (110V, 3-4 hours). Larger Avator packs benefit from a 240V charger for faster turnaround. Standard cottage electrical generally works for overnight charging of 1-2 packs." },
+      { question: "Is Avator practical as a primary motor on Rice Lake?", answer: "For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no, gas outboard is still the right answer." },
+      { question: "Can I run a Mercury Avator on an HP-restricted Ontario lake?", answer: "Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying." },
+      { question: "Does Avator work in cold weather?", answer: "Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions." },
+      { question: "What does an Avator setup cost installed?", answer: "Pricing depends heavily on model and battery configuration. Build a quote at mercuryrepower.ca for real Canadian pricing on a specific Avator setup. The smallest 7.5e setups start under $5,000 installed; larger 75e/110e setups with multiple packs run $15,000-$25,000+." },
+    ],
     content: `## Quick Answer
 
 A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model and battery configuration, not the marketing range numbers. For the typical cottage use case, short runs from the dock to a fishing spot or a neighbour's dock, the smaller Avator 7.5e on a 13-14 ft car-topper delivers about 5 miles at full throttle or up to 34 miles at quarter-throttle. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
@@ -33319,29 +33217,6 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
 - [Charging a Mercury Avator at Your Cottage](/blog/mercury-avator-charging-cottage-dock)
 - [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
 
-## Frequently Asked Questions
-
-**How far can a Mercury Avator 7.5e really go on Rice Lake?**
-3-4 miles at full throttle, 8-12 miles at half, 20-25 miles at quarter (trolling) speeds. Reduce 20-30% for wind, chop, and cold-water conditions.
-
-**Can I charge an Avator at the dock with regular cottage power?**
-Yes for the 7.5e (110V, 3-4 hours). Larger Avator packs benefit from a 240V charger for faster turnaround. Standard cottage electrical generally works for overnight charging of 1-2 packs.
-
-**Is Avator practical as a primary motor on Rice Lake?**
-For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no, gas outboard is still the right answer.
-
-**Can I run a Mercury Avator on an HP-restricted Ontario lake?**
-Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying.
-
-**Does Avator work in cold weather?**
-Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions.
-
-**What does an Avator setup cost installed?**
-Pricing depends heavily on model and battery configuration. Build a quote at mercuryrepower.ca for real Canadian pricing on a specific Avator setup. The smallest 7.5e setups start under $5,000 installed; larger 75e/110e setups with multiple packs run $15,000-$25,000+.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
-*Last reviewed: 2026-05-17.*
 `,
   },
   {
@@ -33352,11 +33227,20 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
     image: '/lovable-uploads/hero-avator-vs-torqeedo.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '7 min read',
     keywords: ['mercury avator vs torqeedo', 'electric outboard comparison ontario', 'avator torqeedo', 'electric outboard dealer ontario'],
+    faqs: [
+      { question: "Which has better range, Avator or Torqeedo?", answer: "At comparable battery capacities, the brands are similar. Range is more about boat hull, weight, and throttle setting than brand. Both publish range numbers that hold up at quarter-throttle and fall off at full throttle." },
+      { question: "Is Torqeedo cheaper than Avator?", answer: "Pricing depends on the specific model and battery configuration. Entry-level Torqeedo Travel models can be cheaper than Avator 7.5e setups. Mid-size and larger setups are roughly comparable. Always compare full installed cost including batteries and charger, not motor-only sticker prices." },
+      { question: "Can I service a Torqeedo at HBW?", answer: "No. HBW is a Mercury Marine Platinum Dealer. For engine repairs, we only service Mercury and Mercruiser. For Torqeedo service in Ontario, you'll need an authorized Torqeedo dealer." },
+      { question: "Does Mercury Avator come with a warranty?", answer: "Yes. Mercury's standard limited warranty applies. Coverage details depend on model and use case. Mercury Product Protection extension is available for the larger Avator models." },
+      { question: "Will Yamaha discontinue Torqeedo now that they own it?", answer: "No public indication of that. Yamaha acquired Torqeedo to expand their electric propulsion portfolio. The German operations and product line continue. Whether Yamaha-branded electric outboards appear in the future is unclear." },
+      { question: "Should I wait for the next generation of either brand?", answer: "Probably not. The current product lines from both brands are mature, reliable products. The next generation may improve battery capacity or charge speed, but the core use case (short-range quiet electric boating) is well-served by current products." },
+      { question: "Which is better for an HP-restricted lake?", answer: "Either brand qualifies for most HP-restricted lakes. Federal regulations allow electric motors up to 7.5 kW aggregate power on electric-only lakes. Both Avator and Torqeedo offer models in that range." },
+    ],
     content: `## Quick Answer
 
 Both Mercury Avator and Torqeedo make legitimate electric outboards. The deciding factor for most Ontario buyers is not the motor itself but the dealer network and service support. Mercury Avator has the deepest Mercury Platinum dealer network in Canada, which means parts, service, and warranty work happen at any Mercury dealer across the country. Torqeedo has a smaller but specialized dealer network, often through marine electronics shops rather than traditional outboard dealers. For most Ontario boaters who want long-term service support, Mercury Avator wins on infrastructure. Torqeedo may win on specific technical features for niche applications.
@@ -33473,32 +33357,6 @@ For pure side-by-side product comparison without the dealer factor: both brands 
 - [Mercury Avator Range on Rice Lake](/blog/mercury-avator-range-rice-lake-cottage)
 - [Charging a Mercury Avator at Your Cottage](/blog/mercury-avator-charging-cottage-dock)
 
-## Frequently Asked Questions
-
-**Which has better range, Avator or Torqeedo?**
-At comparable battery capacities, the brands are similar. Range is more about boat hull, weight, and throttle setting than brand. Both publish range numbers that hold up at quarter-throttle and fall off at full throttle.
-
-**Is Torqeedo cheaper than Avator?**
-Pricing depends on the specific model and battery configuration. Entry-level Torqeedo Travel models can be cheaper than Avator 7.5e setups. Mid-size and larger setups are roughly comparable. Always compare full installed cost including batteries and charger, not motor-only sticker prices.
-
-**Can I service a Torqeedo at HBW?**
-No. HBW is a Mercury Marine Platinum Dealer. For engine repairs, we only service Mercury and Mercruiser. For Torqeedo service in Ontario, you'll need an authorized Torqeedo dealer.
-
-**Does Mercury Avator come with a warranty?**
-Yes. Mercury's standard limited warranty applies. Coverage details depend on model and use case. Mercury Product Protection extension is available for the larger Avator models.
-
-**Will Yamaha discontinue Torqeedo now that they own it?**
-No public indication of that. Yamaha acquired Torqeedo to expand their electric propulsion portfolio. The German operations and product line continue. Whether Yamaha-branded electric outboards appear in the future is unclear.
-
-**Should I wait for the next generation of either brand?**
-Probably not. The current product lines from both brands are mature, reliable products. The next generation may improve battery capacity or charge speed, but the core use case (short-range quiet electric boating) is well-served by current products.
-
-**Which is better for an HP-restricted lake?**
-Either brand qualifies for most HP-restricted lakes. Federal regulations allow electric motors up to 7.5 kW aggregate power on electric-only lakes. Both Avator and Torqeedo offer models in that range.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
-*Last reviewed: 2026-05-17.*
 `,
   },
   {
@@ -33509,11 +33367,21 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
     image: '/lovable-uploads/hero-avator-charging-cottage.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '6 min read',
     keywords: ['mercury avator charging', 'electric outboard cottage charging', 'avator dock charging', 'ontario electric boat charging'],
+    faqs: [
+      { question: "Can I charge a Mercury Avator from a standard cottage outlet?", answer: "For the Avator 7.5e, yes, 110V standard outlet, 3-4 hour charge. For larger Avator models, 110V works for overnight charging but a 240V charger speeds it up significantly." },
+      { question: "Do I need a special charger?", answer: "The charger comes with the Avator. Mercury supplies the appropriate charger for each model. For 240V upgrades, the higher-output charger is an additional purchase but uses the same battery interface." },
+      { question: "What does a dock outlet install cost?", answer: "$400-800 for a 110V GFCI dedicated outlet, $800-1,500 for a 240V install. Marine electrician required for the install, don't DIY near water." },
+      { question: "Can I charge with solar at a remote cottage?", answer: "Theoretically yes, practically no for serious use. The solar array required to charge a meaningful Avator battery bank is large and expensive. For remote cottages without shore power, gas outboards remain the practical answer." },
+      { question: "Should I leave battery packs at the cottage over winter?", answer: "No. Mercury recommends bringing battery packs to a heated space at 50-80% charge for winter storage. Cold storage degrades lithium batteries." },
+      { question: "How long do Avator batteries last (lifecycle)?", answer: "Mercury rates the battery packs for hundreds of full charge cycles before noticeable capacity loss. For typical cottage use (weekend running through summer), a properly cared-for battery pack lasts 8-12 years before reaching meaningful degradation." },
+      { question: "Does fast charging shorten battery life?", answer: "Slightly. Frequent 240V fast charging reduces battery lifecycle compared to slower 110V charging. For cottage use where overnight charging works, 110V is gentler on the battery." },
+      { question: "What happens if the cottage loses power overnight while charging?", answer: "Charging stops, the battery stays at whatever level it reached. When power returns, the charger picks back up. No damage to the battery from power interruption." },
+    ],
     content: `## Quick Answer
 
 Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger Avator models with external 2,300 Wh or 5,400 Wh battery packs benefit from a 240V charger for faster turnaround, but 110V overnight charging is workable for most cottage applications. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.
@@ -33614,35 +33482,6 @@ The other common situation: cottagers who add Avator without consulting their co
 - [Mercury Avator vs Torqeedo Comparison](/blog/mercury-avator-vs-torqeedo)
 - [Boat Electrical Safety Checklist](/blog/boat-electrical-safety-checklist-ontario-freshwater)
 
-## Frequently Asked Questions
-
-**Can I charge a Mercury Avator from a standard cottage outlet?**
-For the Avator 7.5e, yes, 110V standard outlet, 3-4 hour charge. For larger Avator models, 110V works for overnight charging but a 240V charger speeds it up significantly.
-
-**Do I need a special charger?**
-The charger comes with the Avator. Mercury supplies the appropriate charger for each model. For 240V upgrades, the higher-output charger is an additional purchase but uses the same battery interface.
-
-**What does a dock outlet install cost?**
-$400-800 for a 110V GFCI dedicated outlet, $800-1,500 for a 240V install. Marine electrician required for the install, don't DIY near water.
-
-**Can I charge with solar at a remote cottage?**
-Theoretically yes, practically no for serious use. The solar array required to charge a meaningful Avator battery bank is large and expensive. For remote cottages without shore power, gas outboards remain the practical answer.
-
-**Should I leave battery packs at the cottage over winter?**
-No. Mercury recommends bringing battery packs to a heated space at 50-80% charge for winter storage. Cold storage degrades lithium batteries.
-
-**How long do Avator batteries last (lifecycle)?**
-Mercury rates the battery packs for hundreds of full charge cycles before noticeable capacity loss. For typical cottage use (weekend running through summer), a properly cared-for battery pack lasts 8-12 years before reaching meaningful degradation.
-
-**Does fast charging shorten battery life?**
-Slightly. Frequent 240V fast charging reduces battery lifecycle compared to slower 110V charging. For cottage use where overnight charging works, 110V is gentler on the battery.
-
-**What happens if the cottage loses power overnight while charging?**
-Charging stops, the battery stays at whatever level it reached. When power returns, the charger picks back up. No damage to the battery from power interruption.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
-*Last reviewed: 2026-05-17.*
 `,
   },
   {
