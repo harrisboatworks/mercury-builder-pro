@@ -92,7 +92,7 @@ export default function PricingReference() {
           <p>Loading current pricing…</p>
         ) : html ? (
           <article
-            className="prose prose-sm md:prose-base max-w-none [&_table]:w-full [&_th]:text-left [&_th]:p-2 [&_td]:p-2 [&_th]:border-b [&_td]:border-b [&_table]:my-4"
+            className="prose prose-sm md:prose-base max-w-none [&_table]:w-full [&_th]:text-left [&_th]:p-2 [&_td]:p-2 [&_th]:border-b [&_td]:border-b [&_table]:my-4 [&_tbody_td:nth-child(2)]:font-semibold [&_tbody_td:nth-child(2)]:text-[1.1em]"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         ) : (
