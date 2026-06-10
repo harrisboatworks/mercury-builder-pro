@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard.md
-last_updated: 2026-02-22
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)
 description: "Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained, and the..."
 category: "Mercury Outboards"
 date_published: 2026-02-22
-date_modified: 2026-02-22
+date_modified: 2026-06-09
 keywords: ["boat trim","mercury outboard","active trim","rice lake","fuel economy"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Mercury Outboards  
 **Published:** 2026-02-22  
-**Last updated:** 2026-02-22  
+**Last updated:** 2026-06-09  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard
 
@@ -203,7 +203,25 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### What does trim do on a Mercury outboard?
+
+Trim controls the angle of the outboard relative to the transom. Pressing trim in tilts the engine toward the boat and pushes thrust slightly upward, which drives the bow down. Pressing trim out tilts the engine away from the boat, shifting thrust angle downward and lifting the bow. Just a few degrees of tilt changes where the hull sits in the water, drag, time to plane, and ride comfort.
+
+### When should I trim in versus trim out?
+
+Trim fully in for the holeshot, choppy conditions, heavy load forward, and slow-speed running. Trim out gradually for cruising on flat water, top-speed runs, light loads, and pulling a tube. Setting it once and forgetting it is a mistake: load changes, conditions change, speed changes. Touch the trim button throughout a run.
+
+### What is prop ventilation and why does it happen?
+
+Ventilation is the prop pulling air instead of water, usually heard as a high-pitched whine while the engine revs sky-high and the boat goes nowhere. It happens when you hit the throttle with the engine trimmed out and the bow launches skyward. The fix is simple: trim fully in before you punch it, and drop trim in immediately if you hear ventilation at speed.
+
+### What does Mercury Active Trim do?
+
+Active Trim automates trim adjustment based on engine RPM along a programmed trim curve: as you accelerate it trims out in sync with boat speed, then trims in as you back off. It is available on many current Mercury FourStroke and Verado models and integrates with VesselView displays. You can still override it manually for specific depths, unusual loads, or conditions that call for a specific angle.
+
+### What is the difference between engine trim and trim tabs?
+
+Engine trim adjusts the angle of the outboard itself, changing thrust direction and bow angle. Trim tabs are small hydraulic fins on the transom, one each side, that push water down to lift the stern and let you correct side-to-side lean independently of the engine. They work together: engine trim plus trim tabs gives you full control of hull attitude in any condition.
 
 ## Next steps
 

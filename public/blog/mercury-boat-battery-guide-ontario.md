@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario.md
-last_updated: 2026-04-01
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenan
 description: "Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and spring startup, so you're not stranded on May 24..."
 category: "Service"
 date_published: 2026-04-01
-date_modified: 2026-04-01
+date_modified: 2026-06-09
 keywords: ["marine battery","mercury","winter storage","battery switch","agm"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Service  
 **Published:** 2026-04-01  
-**Last updated:** 2026-04-01  
+**Last updated:** 2026-06-09  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario
 
@@ -294,7 +294,29 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### What size battery does a Mercury outboard need?
+
+For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least 800 Marine Cranking Amps (MCA) measured at 32 degrees F. Always check your engine's owner's manual for the exact requirement for your model. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise on smaller boats with light loads.
+
+### AGM vs flooded lead-acid vs lithium: which marine battery should I buy?
+
+AGM is the sweet spot for most Ontario boat owners: sealed and maintenance-free, better vibration tolerance, slower self-discharge in storage, and more forgiving of partial discharge. Flooded lead-acid is cheaper if you are willing to check water levels. Lithium (LiFePO4) is excellent but 3 to 5 times the cost of an equivalent AGM and requires a lithium-compatible charger. A standard marine charger can damage a lithium battery.
+
+### Why does my boat battery die over the winter?
+
+Parasitic drain. A modern boat with a GPS, stereo, alarm, or automatic bilge pump can draw 10 to 30 milliamps continuously. At 20 mA a 100 Ah battery is fully dead in around 200 days, right inside Ontario's winter storage window. Turn the master switch to OFF, never leave it on Both, and use a smart maintainer if you have power access in storage.
+
+### Should I leave my battery switch on "Both" for storage?
+
+Never. With the switch on Both, any parasitic draw pulls from both banks simultaneously, doubling your drain exposure. Turn it to OFF for storage. Also never switch directly from 1 to 2 while the engine is running: switch to Both first, then to the other bank. Going directly from 1 to 2 with the alternator running can spike voltage and damage electronics.
+
+### When should I replace my marine battery?
+
+Most marine batteries last 4 to 7 years. Replace when resting voltage is below 12.2V after a full charge, the battery fails a load test, you see swelling, cracking, or electrolyte leakage, or it is more than 7 years old and spring no-starts are getting more frequent. Voltage alone lies: a battery can read 12.6V at rest and collapse to 8V under starter load.
+
+### What is the right way to store a marine battery for winter?
+
+Bring the battery to a full charge before storage, never store at 50 percent. Turn the master switch OFF. If you have power access, connect a smart battery maintainer, not a regular trickle charger which will overcharge over 5 months. Check voltage monthly and recharge below 12.4V. If you don't have power access, remove the battery and store it indoors on a wood shelf or mat, above freezing.
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario.md
-last_updated: 2026-02-28
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)"
 description: "Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug, plus Ontario..."
 category: "Boating Lifestyle"
 date_published: 2026-02-28
-date_modified: 2026-02-28
+date_modified: 2026-06-09
 keywords: ["trailering","boat trailer","ontario","tow safety","launch ramp"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-02-28  
-**Last updated:** 2026-02-28  
+**Last updated:** 2026-06-09  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario
 
@@ -231,7 +231,29 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### What is the right tongue weight for a boat trailer?
+
+Tongue weight, the downward force the trailer puts on the hitch ball, should sit at 10 to 15 percent of your total loaded trailer weight. Too light and the trailer rear lifts and the rig sways at highway speed. Too heavy and the tow vehicle's front wheels lift, wrecking steering and loading the trailer axle unevenly. Keep heavier gear forward in the boat and check with a bathroom scale.
+
+### How often should boat trailer tires be replaced?
+
+Replace trailer tires every 5 to 6 years regardless of tread, and check sidewalls for cracking every spring. Trailer tires often look fine because they don't log enough highway kilometres to wear down, but UV and ozone oxidize the rubber even while the trailer sits in a driveway. A blowout on the 401 is not the place to find out yours are from 2018.
+
+### When does Ontario require trailer brakes on a boat trailer?
+
+Ontario's Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lbs) or more, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit that threshold. If you are unsure, weigh it loaded. Confirm current requirements with MTO before relying on this summary.
+
+### Do I need a separate licence plate for my boat trailer in Ontario?
+
+Yes. All trailers on Ontario public roads must be registered and plated separately from the tow vehicle. Ontario treats trailers as separate vehicles. Registration is a one-time fee, around $72 for the original plate and permit. Equipment violations like missing or broken trailer lights are actively ticketed.
+
+### Why use a transom saver when trailering an outboard?
+
+An outboard hanging freely on the transom is not built to absorb highway vibration. Without a transom saver, the motor's weight swings on the tilt/trim system and steering cable over every bump. Over one season that wears steering arms, transom brackets, and trim ram seals, expensive repairs on a Mercury FourStroke in the 60 to 200 HP range. A transom saver costs next to nothing.
+
+### What should I do at the launch ramp before launching?
+
+Back in slowly until the bunks are just below the surface and the boat floats. Trailer wheel bearings and surge brakes are not meant to be dunked, especially hot from a highway drive, so keep hubs and brakes above the waterline. Install the drain plug before the boat comes off the trailer, never at the ramp. Then ignore any lineup behind you and take your time.
 
 ## Next steps
 

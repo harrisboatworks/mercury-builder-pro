@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower.md
-last_updated: 2026-03-05
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Ou
 description: "Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends, and when..."
 category: "Mercury Outboards"
 date_published: 2026-03-05
-date_modified: 2026-03-05
+date_modified: 2026-06-09
 keywords: ["outboard vs sterndrive","repower","mercruiser","ontario","mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-05  
-**Last updated:** 2026-03-05  
+**Last updated:** 2026-06-09  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower
 
@@ -257,7 +257,25 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### Should I repower my sterndrive with an outboard or another sterndrive?
+
+In 2026 in Ontario, almost every sterndrive repower goes outboard. Outboards are now over 80 percent of new recreational marine engines, sterndrive R&D has slowed, and modern 4-stroke outboards have closed the noise and ride-comfort gap. For bowriders, deck boats, runabouts, and pontoons, an outboard repower wins on reliability, fuel economy, and resale. Big high-deadrise cruisers and dedicated tow boats are the exception.
+
+### When does it still make sense to keep a sterndrive?
+
+Dedicated watersports inboards where wake shape is the whole point, big 22+ ft cabin cruisers where cockpit quiet at cruise matters, boats where the clean transom and unobstructed swim platform are central to the use case, and owners who plan to keep the boat 10+ years and accept the service intervals. For everything else the math favours outboards.
+
+### How much does a sterndrive-to-outboard conversion cost?
+
+We don't publish a flat price because it would not be honest. The scope typically includes an outboard bracket, motor and outdrive removal, new Mercury Digital Throttle and Shift controls, wiring harness, gauges, VesselView integration, fuel system updates, exhaust decommissioning, transom work if needed, and a proper sea trial. The number changes case by case; the right question is whether the total cost makes sense for your hull over the years you plan to keep it.
+
+### Does HBW still service Mercruiser sterndrives?
+
+Yes. If you have a sterndrive and you want to keep it, we support that decision. Harris Boat Works continues to maintain and service Mercruiser sterndrives, and our team is Mercury-trained. One scope note: for engine repairs, we only service Mercury and Mercruiser. If you have a Volvo Penta or other brand we will point you to the right specialist.
+
+### Why are outboards better for Ontario freshwater than sterndrives?
+
+Modern 4-stroke outboards trim up in seconds, which lets you pick through shallow Kawartha bays and rocky shoals that put an outdrive at risk. They tilt fully out of the water for cleaner storage, have no bellows or gimbal bearing to fail, run on extended service intervals, and Mercury's V6 and V8 FourStrokes are measurably more fuel-efficient than most carbureted or early EFI sterndrives at cruise.
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-cobourg-ontario-hbw.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake"
 description: "Harris Boat Works is the closest Mercury Platinum dealer for Cobourg, ~25 minutes north via County Road 18. Live online repower quotes, Lake Ontario + Rice Lake..."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["mercury dealer cobourg","cobourg mercury outboard","northumberland mercury dealer","rice lake mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-cobourg-ontario-hbw
 
@@ -116,40 +116,27 @@ For a motor purchase conversation, call: 905-342-2153.
 - [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Platinum dealer serving Northumberland County since 1947. Rice Lake.
 - [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28.
 
-## Frequently Asked Questions, Cobourg
-
-**Is HBW the closest Mercury dealer to Cobourg?**
-For most Cobourg addresses, yes, we're 25 minutes north via County Road 18. Closer dealers may exist for specific motor brands or general boat service, but for Mercury Platinum-tier work, HBW is the nearest option.
-
-**Do you service boats that live on Lake Ontario, not Rice Lake?**
-Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer-in for service all season. For engine repairs, we only service Mercury and Mercruiser.
-
-**Can I get the boat picked up and dropped off?**
-HBW does NOT offer pickup or delivery, customers bring the boat to us. We have trailer parking on site for drop-offs.
-
-**What's the typical repower cost from a Cobourg perspective?**
-Depends on horsepower and current rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in the typical Cobourg boat range ($10,000-$25,000 hull value) land in the $13,000-$22,000 installed range.
-
-**Can I store my boat with you year-round?**
-Yes. Outdoor storage with shrinkwrap. For Cobourg customers whose boat already lives on Rice Lake or in the Kawarthas during the season, year-round storage at HBW is logistically clean.
-
-**Do you do warranty work on a Mercury I bought elsewhere?**
-Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork; we register the work in Mercury's central system.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
----
-
-**Related guides:**
-- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
-- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
-
 ## FAQs
 
-_(no FAQs)_
+### Is there a Mercury dealer in Cobourg?
+
+Not within town limits at the Platinum tier. Harris Boat Works in Gores Landing is the Mercury Platinum Dealer for Cobourg, approximately 25 minutes north via County Road 18. For most Cobourg addresses we are the nearest Mercury Platinum dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.
+
+### How long is the drive from Cobourg to HBW?
+
+About 25 minutes outside rush hour, straight up County Road 18 into Gores Landing. From the Cobourg harbour or downtown, allow 25 to 30 minutes. From north Cobourg it is closer to 20 minutes. About as simple a route as gets, one road for most of the trip.
+
+### Does HBW service boats that live on Lake Ontario, not Rice Lake?
+
+Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer in for service all season. The 25-minute drive each way is short enough that a same-day visit works for routine jobs. For engine repairs we only service Mercury and Mercruiser.
+
+### Does HBW offer pickup or delivery for Cobourg customers?
+
+No. HBW does not offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site for drop-offs.
+
+### Will HBW honour my Mercury warranty if I bought the motor elsewhere?
+
+Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork and we register the work in Mercury's central system.
 
 ## Next steps
 

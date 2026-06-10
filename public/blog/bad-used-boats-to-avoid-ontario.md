@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario.md
-last_updated: 2026-02-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)"
 description: "An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's actually worth buying on Kijiji, Facebook..."
 category: "Buying Guide"
 date_published: 2026-02-17
-date_modified: 2026-02-17
+date_modified: 2026-06-09
 keywords: ["used boats","buying guide","ontario","red flags","marine inspection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-02-17  
-**Last updated:** 2026-02-17  
+**Last updated:** 2026-06-09  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario
 
@@ -242,7 +242,25 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### What used boats should I avoid in Ontario?
+
+The worst offenders we see are pre-2005 carbureted 2-stroke outboards, mid-90s to mid-2000s sterndrives with original unserviced outdrives, Evinrude E-TEC G1 motors (BRP exited the outboard market in 2020), older Force, Chrysler, or off-brand outboards with no parts pipeline, and any hull with stringer rot, soft floors, or transom mush.
+
+### How do I check a used boat transom for rot?
+
+Walk the floor and bounce on it, especially near the transom. Soft spots are structural, not cosmetic. Then push and pull on the motor mount. Any flex means the transom core has rotted. A transom replacement is a four-to-five-figure job, often more than the boat is worth. Walk away.
+
+### Are Evinrude E-TEC motors still a safe used buy?
+
+They were good engineering, but BRP exited the outboard market in 2020. That left a large installed base without a manufacturer-supported parts pipeline. Aftermarket support exists but is shrinking, and dealers who specialize in Evinrude service are fewer every year. The risk profile is different than it was five years ago, and that needs to be priced into any offer you make.
+
+### Why is fresh paint on an outboard lower unit a red flag?
+
+A freshly painted lower unit on an older motor is one of the oldest tricks for hiding corrosion, impact damage, or prop strikes that have never been properly assessed. A well-maintained motor has a lower unit that looks its age, with honest wear and the original finish. If you see fresh paint, ask why, and factor a full lower unit inspection into the deal.
+
+### What used boats are actually worth buying in Ontario?
+
+Mercury 4-stroke outboards from 2010 onward with documented service, well-maintained aluminum fishing boats (aluminum does not rot and dents are cosmetic), boats sold through a reputable dealer with visibility into the service history, and any boat where the story is verifiable: one owner, local use, freshwater only, receipts from a recognizable marine shop, and a motor that starts and runs cleanly.
 
 ## Next steps
 
