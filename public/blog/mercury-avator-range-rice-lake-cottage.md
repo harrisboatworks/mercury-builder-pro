@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator Electric Outboard Range on Rice Lake (2026)"
 description: "How far a Mercury Avator electric outboard actually goes on Rice Lake. Real-world range by model, battery configuration, charging logistics for cottage applications."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["mercury avator range","avator electric outboard rice lake","mercury electric outboard ontario","avator cottage range"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage
 
@@ -138,31 +138,31 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
 - [Charging a Mercury Avator at Your Cottage](/blog/mercury-avator-charging-cottage-dock)
 - [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
 
-## Frequently Asked Questions
-
-**How far can a Mercury Avator 7.5e really go on Rice Lake?**
-3-4 miles at full throttle, 8-12 miles at half, 20-25 miles at quarter (trolling) speeds. Reduce 20-30% for wind, chop, and cold-water conditions.
-
-**Can I charge an Avator at the dock with regular cottage power?**
-Yes for the 7.5e (110V, 3-4 hours). Larger Avator packs benefit from a 240V charger for faster turnaround. Standard cottage electrical generally works for overnight charging of 1-2 packs.
-
-**Is Avator practical as a primary motor on Rice Lake?**
-For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no, gas outboard is still the right answer.
-
-**Can I run a Mercury Avator on an HP-restricted Ontario lake?**
-Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying.
-
-**Does Avator work in cold weather?**
-Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions.
-
-**What does an Avator setup cost installed?**
-Pricing depends heavily on model and battery configuration. Build a quote at mercuryrepower.ca for real Canadian pricing on a specific Avator setup. The smallest 7.5e setups start under $5,000 installed; larger 75e/110e setups with multiple packs run $15,000-$25,000+.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
 ## FAQs
 
-_(no FAQs)_
+### How far can a Mercury Avator 7.5e really go on Rice Lake?
+
+3-4 miles at full throttle, 8-12 miles at half, 20-25 miles at quarter (trolling) speeds. Reduce 20-30% for wind, chop, and cold-water conditions.
+
+### Can I charge an Avator at the dock with regular cottage power?
+
+Yes for the 7.5e (110V, 3-4 hours). Larger Avator packs benefit from a 240V charger for faster turnaround. Standard cottage electrical generally works for overnight charging of 1-2 packs.
+
+### Is Avator practical as a primary motor on Rice Lake?
+
+For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no, gas outboard is still the right answer.
+
+### Can I run a Mercury Avator on an HP-restricted Ontario lake?
+
+Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying.
+
+### Does Avator work in cold weather?
+
+Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions.
+
+### What does an Avator setup cost installed?
+
+Pricing depends heavily on model and battery configuration. Build a quote at mercuryrepower.ca for real Canadian pricing on a specific Avator setup. The smallest 7.5e setups start under $5,000 installed; larger 75e/110e setups with multiple packs run $15,000-$25,000+.
 
 ## Next steps
 

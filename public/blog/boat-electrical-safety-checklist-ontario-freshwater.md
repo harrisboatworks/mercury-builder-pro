@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Electrical Safety Checklist for Ontario Freshwater Boats"
 description: "Marine electrical work goes wrong slowly. An Ontario marina's plain-English checklist for boat owners: corrosion, fuses, bilge pump, battery switch, amateur wiring..."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["boat electrical safety checklist","marine electrical ontario","boat wiring inspection","bilge pump check","harris boat works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater
 
@@ -167,26 +167,6 @@ For engine repairs, we only service Mercury and Mercruiser.
 - [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](/blog/boat-trailer-maintenance-guide-ontario): Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks.
 - [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026): Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD.
 
-## FAQ
-
-**Is it safe to add a trolling motor or fishfinder myself?**
-Yes, if you use marine-grade wire, marine-grade terminals, and a properly-sized fuse on the positive lead at the battery. The wrong installation is a fire risk and an electrical-fault generator. If you're not sure, have a marine electrician do it.
-
-**My bilge pump runs every few minutes even when the boat is dry. What's wrong?**
-Usually a stuck float switch or a leaking through-hull fitting that's letting water in. Inspect both. A pump that cycles constantly will wear out fast and drain the battery.
-
-**Can I use household electrical tape for marine connections?**
-Not as a permanent solution. Electrical tape degrades from UV, humidity, and heat. For permanent connections use adhesive-lined heat-shrink. Tape is fine for a one-trip emergency fix only.
-
-**Why does my electrical system seem fine in summer but fail in spring?**
-Winter storage creates the perfect conditions for corrosion: temperature swings cause condensation cycles, the boat sits dormant so any moisture trapped in connections can't dry, and rodents sometimes chew through wiring undetected. Spring is when the accumulated damage shows up.
-
-**What's a "stray current" and should I worry about it?**
-Stray current is small amounts of DC current leaking from your electrical system into the surrounding water through metal hull components. In saltwater this causes rapid galvanic corrosion. In freshwater the effect is milder but still real. Properly grounded and isolated systems eliminate the risk.
-
-**Should I disconnect the battery for winter storage?**
-At minimum, turn the battery switch to OFF. Better is to remove the battery entirely and store it in a heated space, on a trickle charger. A battery left in an unheated boat through an Ontario winter is more likely to fail next spring than one stored in a warm garage.
-
 ## Sources
 
 - ABYC E-11 marine electrical standards
@@ -202,7 +182,29 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### Is it safe to add a trolling motor or fishfinder myself?
+
+Yes, if you use marine-grade wire, marine-grade terminals, and a properly-sized fuse on the positive lead at the battery. The wrong installation is a fire risk and an electrical-fault generator. If you're not sure, have a marine electrician do it.
+
+### My bilge pump runs every few minutes even when the boat is dry. What's wrong?
+
+Usually a stuck float switch or a leaking through-hull fitting that's letting water in. Inspect both. A pump that cycles constantly will wear out fast and drain the battery.
+
+### Can I use household electrical tape for marine connections?
+
+Not as a permanent solution. Electrical tape degrades from UV, humidity, and heat. For permanent connections use adhesive-lined heat-shrink. Tape is fine for a one-trip emergency fix only.
+
+### Why does my electrical system seem fine in summer but fail in spring?
+
+Winter storage creates the perfect conditions for corrosion: temperature swings cause condensation cycles, the boat sits dormant so any moisture trapped in connections can't dry, and rodents sometimes chew through wiring undetected. Spring is when the accumulated damage shows up.
+
+### What's a "stray current" and should I worry about it?
+
+Stray current is small amounts of DC current leaking from your electrical system into the surrounding water through metal hull components. In saltwater this causes rapid galvanic corrosion. In freshwater the effect is milder but still real. Properly grounded and isolated systems eliminate the risk.
+
+### Should I disconnect the battery for winter storage?
+
+At minimum, turn the battery switch to OFF. Better is to remove the battery entirely and store it in a heated space, on a trickle charger. A battery left in an unheated boat through an Ontario winter is more likely to fail next spring than one stored in a warm garage.
 
 ## Next steps
 

@@ -158,37 +158,39 @@ Build your real installed Pro XS quote at [mercuryrepower.ca](https://www.mercur
 
 For tournament or competitive setups, call 905-342-2153 after building the basic quote, we'll walk through prop options and SmartCraft configuration in detail.
 
-## Frequently Asked Questions
-
-**Is Pro XS worth the premium over FourStroke?**
-For tournament fishing, performance pontoons, water sports applications, and big-water running, yes. For cruising, family use, casual fishing, no. FourStroke is the better tool for most Ontario boaters.
-
-**What's the most popular Pro XS in Ontario?**
-The 200 Pro XS V6 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is the walleye sweet spot for mid-size aluminum on big water.
-
-**Does Pro XS use the same powerhead as FourStroke?**
-The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175-225 Pro XS uses the 3.4L V6 (Pro XS exclusive). The 250-300 Pro XS uses the 4.6L V8.
-
-**Can I get Command Thrust on a Pro XS?**
-Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Higher HP Pro XS V6 and V8 motors use different gearcase options designed for their performance ranges.
-
-**Does Pro XS warranty match FourStroke?**
-Yes, same Mercury limited warranty (3 years standard). Mercury Product Protection (Platinum) extension applies the same way.
-
-**Can I repower from a FourStroke to a Pro XS?**
-Yes, but the rigging context matters. Pro XS performance often benefits from SmartCraft upgrades, hydraulic steering, performance throttle controls. The motor swap itself is straightforward; the full rigging context is where the Pro XS value shows up.
-
-**Is Pro XS louder than FourStroke?**
-Slightly. Pro XS tuning produces a more "sport" exhaust character. Most owners describe it as a feature, not a problem. For small Ontario lakes where quiet matters, FourStroke is the quieter option.
-
-**Should I buy Pro XS new or used?**
-Pro XS resale stays strong. A used Pro XS in good condition from a known service history is reasonable. A used Pro XS from unknown history is a higher-risk bet than the same-aged FourStroke because Pro XS owners tend to run them harder.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
 ## FAQs
 
-_(no FAQs)_
+### Is Pro XS worth the premium over FourStroke?
+
+For tournament fishing, performance pontoons, water sports applications, and big-water running, yes. For cruising, family use, casual fishing, no. FourStroke is the better tool for most Ontario boaters.
+
+### What's the most popular Pro XS in Ontario?
+
+The 200 Pro XS V6 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is the walleye sweet spot for mid-size aluminum on big water.
+
+### Does Pro XS use the same powerhead as FourStroke?
+
+The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175-225 Pro XS uses the 3.4L V6 (Pro XS exclusive). The 250-300 Pro XS uses the 4.6L V8.
+
+### Can I get Command Thrust on a Pro XS?
+
+Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Higher HP Pro XS V6 and V8 motors use different gearcase options designed for their performance ranges.
+
+### Does Pro XS warranty match FourStroke?
+
+Yes, same Mercury limited warranty (3 years standard). Mercury Product Protection (Platinum) extension applies the same way.
+
+### Can I repower from a FourStroke to a Pro XS?
+
+Yes, but the rigging context matters. Pro XS performance often benefits from SmartCraft upgrades, hydraulic steering, performance throttle controls. The motor swap itself is straightforward; the full rigging context is where the Pro XS value shows up.
+
+### Is Pro XS louder than FourStroke?
+
+Slightly. Pro XS tuning produces a more "sport" exhaust character. Most owners describe it as a feature, not a problem. For small Ontario lakes where quiet matters, FourStroke is the quieter option.
+
+### Should I buy Pro XS new or used?
+
+Pro XS resale stays strong. A used Pro XS in good condition from a known service history is reasonable. A used Pro XS from unknown history is a higher-risk bet than the same-aged FourStroke because Pro XS owners tend to run them harder.
 
 ## Next steps
 
