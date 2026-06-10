@@ -20,3 +20,6 @@ declare module '*.webp' {
   const src: string;
   export default src;
 }
+
+// Injected at build time via vite.config.ts `define` (YYYY-MM-DD).
+declare const __BUILD_DATE__: string;

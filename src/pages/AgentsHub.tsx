@@ -305,6 +305,28 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
         </section>
 
         <section className="mb-10">
+          <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">More machine-readable resources</h2>
+          <ul className="text-protected space-y-2">
+            <li>
+              <code>/llms.txt</code>, site map for LLMs:{' '}
+              <a href="/llms.txt" className="text-primary underline">{SITE_URL}/llms.txt</a>
+            </li>
+            <li>
+              <code>/catalog.md</code>, markdown index of motors, case studies, locations, and guides:{' '}
+              <a href="/catalog.md" className="text-primary underline">{SITE_URL}/catalog.md</a>
+            </li>
+            <li>
+              <code>/pricing-reference.md</code>, full Mercury price list in CAD (machine-readable):{' '}
+              <a href="/pricing-reference.md" className="text-primary underline">{SITE_URL}/pricing-reference.md</a>
+            </li>
+            <li>
+              <Link to="/pricing-reference" className="text-primary underline">/pricing-reference</Link>, the
+              human-readable HTML twin of the same price list
+            </li>
+          </ul>
+        </section>
+
+        <section className="mb-10">
           <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Deep-link prefilled quote URLs</h2>
           <p className="text-protected">
             Send a customer directly to a fully-prefilled quote configurator with a single URL. Any combination of these
@@ -420,7 +442,16 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
             CCBot. See <a href="/robots.txt" className="text-primary underline">/robots.txt</a> for the
             authoritative list and <a href="/.well-known/ai.txt" className="text-primary underline">/.well-known/ai.txt</a> for our AI training and usage policy.
           </p>
+          <p className="text-protected">
+            No hard rate limits currently, but please be a good citizen: cache responses where possible,
+            keep request volume reasonable, and identify your agent in the User-Agent header. We reserve
+            the right to throttle abusive traffic.
+          </p>
         </section>
+
+        <p className="text-protected text-sm text-muted-foreground">
+          Page last updated {__BUILD_DATE__}.
+        </p>
       </main>
 
       <SiteFooter />
