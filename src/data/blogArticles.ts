@@ -15,6 +15,7 @@ export interface BlogArticle {
   datePublished: string;
   dateModified: string;
   publishDate?: string; // ISO date for scheduled publishing (defaults to datePublished if not set)
+  photoSlot?: string; // Optional data-photo-slot attribute on the hero, marking it for a future real-photo swap
   category: string;
   readTime: string;
   faqs?: { question: string; answer: string }[];
@@ -129,10 +130,11 @@ export const blogArticles: BlogArticle[] = [
     slug: 'mercury-impeller-replacement-when-they-fail',
     title: 'When to Replace Your Mercury Impeller: What 766 Jobs Show',
     description: 'More impellers die in July than April at our Rice Lake shop. 766 replacements since 2014, charted: failure timing, warning signs, and when to replace yours.',
-    image: '/lovable-uploads/impeller-failures-by-month-hbw.png',
+    image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    photoSlot: 'hbw-impeller-photo',
     author: 'Jay Harris',
     datePublished: '2026-06-09',
-    dateModified: '2026-06-09',
+    dateModified: '2026-06-10',
     publishDate: '2026-06-09',
     category: 'Service & Troubleshooting',
     readTime: '7 min read',
@@ -159,6 +161,7 @@ This post shows the curve, explains why midsummer is the killer on Rice Lake spe
 
 | Month | Impeller / water pump jobs (2014-2026) |
 |---|---|
+| March | 1 |
 | April | 84 |
 | May | 123 |
 | June | **144** |
@@ -170,7 +173,7 @@ This post shows the curve, explains why midsummer is the killer on Rice Lake spe
 
 Two things stand out. First, June and July together (287 jobs) beat April and May (207) by about 40 percent. Second, roughly two-thirds of a year's impeller work lands between May and August, when boats are working hardest. The jobs that bring them in are not labelled "routine check" either: the midsummer tickets read "overheating", "alarm sounding", and "not pumping water".
 
-One honest note on the data: these are part lines from our repair orders, so they include both impellers replaced because they failed and impellers replaced during other work. The shape of the curve is the point: if spring stiffness were the main killer, April would be the peak. It isn't.
+One honest note on the data: these are part lines from our repair orders, so they include both impellers replaced because they failed and impellers replaced during other work. The shape of the curve is the point: if spring stiffness were the main killer, April would be the peak. It isn't. Counts are part lines from completed repair orders, January 2014 through the first week of June 2026. The 2026 season is still in progress, so this summer's months are still adding to their totals. Fall counts are small enough that month-to-month wiggle (November edging October, for example) is noise, not signal.
 
 ## Why Midsummer Finishes Impellers
 
@@ -184,7 +187,7 @@ Rice Lake is shallow, warm, and famously weedy. That's why the fishing is good, 
 
 Weeds wrap the lower unit and starve the water intake. A choked intake means the impeller runs partially dry, and a rubber impeller running dry destroys itself in seconds, not minutes. By midsummer the weed beds are at full height, exactly when the June-July spike hits. Late summer adds a second hazard: lower water means more sand and silt through the pump, which works like grinding paste on the housing and wear plate.
 
-If you boat the Kawarthas, your impeller lives a harder life than the same part on a deep, cold, clear lake. Treat the maintenance schedule as a ceiling, not a target.
+If you boat the Kawarthas, your impeller lives a harder life than the same part on a deep, cold, clear lake. Treat the [maintenance schedule](/blog/mercury-maintenance-intervals-20-100-300-rule) as a ceiling, not a target. Mercury's schedule treats the 100-hour or annual service as the impeller inspection point and the 300-hour major service as mandatory impeller replacement; on Rice Lake, treat those as outer limits.
 
 ## The Warning Signs, in the Order We See Them
 
@@ -193,6 +196,14 @@ If you boat the Kawarthas, your impeller lives a harder life than the same part 
 3. **The alarm sounds at idle, or the stream stops.** The pump is done. Shut down, tilt the motor, check the intake for weeds, and call before running it again. If the motor has overheated badly, see the [overheating emergency guide](/blog/outboard-overheating-emergency-guide).
 
 A weed-wrapped intake mimics a dead impeller. On Rice Lake, always clear the lower unit and re-check the stream before assuming the worst.
+
+## If the Alarm Sounds on the Water
+
+1. Throttle back to idle immediately.
+2. Check the telltale stream.
+3. Tilt the motor and clear weeds or debris from the water intake.
+4. Re-check the stream. If it is strong again, weeds were likely the problem; head in at low rpm and monitor.
+5. If the stream is still weak or absent, or the alarm continues, shut down and do not keep running it. Call 905-342-2153.
 
 ## What We See at HBW
 
@@ -214,6 +225,8 @@ If your telltale has gone lazy, or you can't remember which season the impeller 
 **Phone:** 905-342-2153
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+[Book service at hbw.wiki/service](https://hbw.wiki/service "cta")
 
 **Related guides:**
 - [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
