@@ -36580,7 +36580,9 @@ Call us at 905-342-2153 or build your repower quote, warranty terms are listed w
       { question: "How much does a Mercury 250 weigh?", answer: "Depends on the family: the 250 Pro XS V8 is 505 lb (229 kg) dry, while the 250 FourStroke V8 is 527 lb (239 kg), both in their lightest configurations." },
       { question: "Why does outboard weight matter when repowering?", answer: "Your capacity plate lists a maximum motor weight as well as horsepower. A heavier motor changes how the boat sits and planes, and modern four-strokes often weigh more than the old two-strokes they replace, so check transom capacity before you buy." }
     ],
-    content: `*Last reviewed: 2026-06-07*
+    content: `> **Quick answer:** Mercury outboards range from 41 lb for the 2.5 and 3.5 HP portables to 527 lb for the 250 and 300 HP V8 FourStroke, with the 75, 90, and 115 sharing the same 2.1L block at 359 lb. All figures are Mercury's published dry weight for the lightest configuration; longer shafts, Command Thrust gearcases, and rigging add weight.
+
+*Last reviewed: 2026-06-07*
 
 ## Mercury Outboard Weight Chart: 2.5 to 300 HP
 
