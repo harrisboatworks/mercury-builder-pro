@@ -4097,9 +4097,9 @@ const routes = [
       '<section><h2>REST APIs (any agent)</h2>' +
         '<p>For agents that do not support MCP, three public REST endpoints:</p>' +
         '<ul>' +
-          '<li><code>GET https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api</code>: Current Mercury inventory as JSON.</li>' +
-          '<li><code>POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api</code>: Submit a structured quote request.</li>' +
-          '<li><code>GET https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md</code>: Markdown-formatted motor catalog for easy LLM ingestion.</li>' +
+          '<li><code>GET</code> <a href="https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api">https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api</a>: Current Mercury inventory as JSON.</li>' +
+          '<li><code>POST</code> <a href="https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api">https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api</a>: Submit a structured quote request (action: build_quote).</li>' +
+          '<li><code>GET</code> <a href="https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md">https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md</a>: Markdown-formatted motor catalog for easy LLM ingestion.</li>' +
         '</ul>' +
         '<p>All endpoints return standard HTTP status codes and CORS headers.</p>' +
       '</section>' +

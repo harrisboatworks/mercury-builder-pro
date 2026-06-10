@@ -160,7 +160,10 @@ export default function AgentsHub() {
               </a>
             </li>
             <li>
-              <code>/.well-known/ai.txt</code>, AI training/usage policy
+              <code>/.well-known/ai.txt</code>, AI training/usage policy:{' '}
+              <a href="/.well-known/ai.txt" className="text-primary underline">
+                {SITE_URL}/.well-known/ai.txt
+              </a>
             </li>
             <li>
               <code>/.well-known/brand.json</code>, brand identity, voice, colors, geography:{' '}
@@ -169,10 +172,16 @@ export default function AgentsHub() {
               </a>
             </li>
             <li>
-              <code>/sitemap.xml</code>, full URL inventory
+              <code>/sitemap.xml</code>, full URL inventory:{' '}
+              <a href="/sitemap.xml" className="text-primary underline">
+                {SITE_URL}/sitemap.xml
+              </a>
             </li>
             <li>
-              <code>/rss.xml</code>, blog feed
+              <code>/rss.xml</code>, blog feed:{' '}
+              <a href="/rss.xml" className="text-primary underline">
+                {SITE_URL}/rss.xml
+              </a>
             </li>
           </ul>
         </section>

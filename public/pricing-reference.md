@@ -42,11 +42,11 @@ _Last updated 2026-06-10._
 
 ## AI Agent Interfaces
 
-- Agent hub: https://www.mercuryrepower.ca/agents
-- MCP server: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server
-- Public motors API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api
-- Public quote API action: build_quote
-- Machine-readable pricing: this file (/pricing-reference.md)
+- Agent hub: [https://www.mercuryrepower.ca/agents](https://www.mercuryrepower.ca/agents)
+- MCP server: [https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server](https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server)
+- Public motors API: [https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api](https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api)
+- Public quote API: [https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api](https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api), POST with action `build_quote`
+- Machine-readable pricing: this file, [/pricing-reference.md](https://www.mercuryrepower.ca/pricing-reference.md)
 - Live inventory updates dynamically. Prices in CAD, Ontario customers.
 
 ## FourStroke
