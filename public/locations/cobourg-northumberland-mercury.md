@@ -25,7 +25,7 @@ Cobourg, Port Hope, and Northumberland buyers use Harris Boat Works as their Mer
 - **Region:** Cobourg & Northumberland
 - **Drive time:** about 20–25 minutes north of Cobourg
 - **Route:** Hwy 401 → County Rd 18 North → Gores Landing
-- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.
+- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - **Service model:** Shop-based only. No mobile service, no on-site installs, no driveway or marina visits.
 - **Currency:** CAD only.
 ## Local boating context

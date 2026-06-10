@@ -24,7 +24,7 @@ Harris Boat Works is 25–30 minutes from Hastings, around the Rice Lake shoreli
 ## Factbox
 - **Region:** Hastings
 - **Drive time:** about 25–30 minutes around Rice Lake from Hastings
-- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.
+- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - **Service model:** Shop-based only. No mobile service, no on-site installs, no driveway or marina visits.
 - **Currency:** CAD only.
 ## Local boating context

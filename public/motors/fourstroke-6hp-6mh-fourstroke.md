@@ -38,7 +38,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 ## Availability
 
 - **Status:** In stock at Gores Landing
-- **Pickup:** Required at Gores Landing, ON. We do not ship and we do not deliver.
+- **Pickup:** Required at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship, we do not deliver, and we do not release motors to couriers or third parties.
 
 ## Best fit for
 

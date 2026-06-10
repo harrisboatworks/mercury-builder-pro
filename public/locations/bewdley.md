@@ -24,7 +24,7 @@ Harris Boat Works is 15 minutes east of Bewdley along the south shore of Rice La
 ## Factbox
 - **Region:** Bewdley
 - **Drive time:** about 15 minutes east of Bewdley along Rice Lake
-- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.
+- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - **Service model:** Shop-based only. No mobile service, no on-site installs, no driveway or marina visits.
 - **Currency:** CAD only.
 ## Local boating context

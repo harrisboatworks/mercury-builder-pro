@@ -25,7 +25,7 @@ Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough,
 - **Region:** Peterborough
 - **Drive time:** about 35 minutes south of Peterborough
 - **Route:** County Rd 28 South → Bewdley → Gores Landing
-- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.
+- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - **Service model:** Shop-based only. No mobile service, no on-site installs, no driveway or marina visits.
 - **Currency:** CAD only.
 ## Local boating context
