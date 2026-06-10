@@ -2450,7 +2450,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-26',
-    dateModified: '2026-06-07',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-26',
     category: 'Mercury Motors',
     readTime: '9 min',
