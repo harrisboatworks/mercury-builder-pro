@@ -47,8 +47,8 @@ export const PromoDetailsModal: React.FC<PromoDetailsModalProps> = ({ promo, ope
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold mb-2 text-foreground">{title}</h2>
           {(amount || details.amount) && (
-            <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full">
-              <span className="text-2xl">✨</span>
+            <div className="inline-flex items-center gap-2 bg-repower-cream text-repower-navy-900 border border-repower-gold/30 px-4 py-2 rounded-full">
+              <span className="text-2xl text-repower-gold">✨</span>
               <span className="font-bold text-xl">Save {amount}</span>
             </div>
           )}
@@ -58,13 +58,13 @@ export const PromoDetailsModal: React.FC<PromoDetailsModalProps> = ({ promo, ope
         <div className="space-y-5 mb-6">
           {eligibility.length > 0 && (
             <div className="flex items-start gap-3">
-              <CheckCircle className="text-green-500 mt-1" size={20} />
+              <CheckCircle className="text-repower-gold0 mt-1" size={20} />
               <div>
                 <h3 className="font-semibold mb-2 text-foreground">Eligibility Requirements</h3>
                 <ul className="space-y-2">
                   {eligibility.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-foreground">
-                      <span className="text-green-500">✓</span>
+                      <span className="text-repower-gold0">✓</span>
                       <span className="text-muted-foreground">{item}</span>
                     </li>
                   ))}
@@ -91,7 +91,7 @@ export const PromoDetailsModal: React.FC<PromoDetailsModalProps> = ({ promo, ope
 
           {(terms.length > 0 || processingTime || finePrint || promo?.terms_url) && (
             <div className="flex items-start gap-3">
-              <Info className="text-amber-500 mt-1" size={20} />
+              <Info className="text-repower-gold0 mt-1" size={20} />
               <div>
                 <h3 className="font-semibold mb-2 text-foreground">Additional Terms</h3>
                 {terms.length > 0 && (

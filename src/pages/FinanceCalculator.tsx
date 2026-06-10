@@ -1,10 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams, useLocation, useNavigate, Link } from 'react-router-dom';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { supabase } from '@/integrations/supabase/client';
 import { formatMotorTitle } from '@/lib/card-title';
@@ -12,11 +8,14 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { findMotorSpecs } from '@/lib/data/mercury-motors';
 import { calculatePaymentWithFrequency, getDefaultFinancingRate, getFinancingTerm, type PaymentFrequency } from '@/lib/finance';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { FinanceCalculatorSEO } from '@/components/seo/FinanceCalculatorSEO';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Search, Calculator, FileText, Anchor, Calendar, Percent, CreditCard, ShieldCheck, ArrowRight, Phone, Sparkles } from 'lucide-react';
+import { getCurrentMercuryFinancingRate } from '@/components/promotions/TDAlwaysOnOffer';
+
+const CURRENT_RATE = getCurrentMercuryFinancingRate();
 
 // ── Static data ──────────────────────────────────────────────
 
@@ -28,8 +27,8 @@ const STEPS = [
 ];
 
 const BENEFITS = [
-  { icon: Calendar, title: 'Flexible Terms', desc: '36 to 180 months — find the payment that fits your budget.' },
-  { icon: Percent, title: 'Competitive Rates', desc: 'Tiered rates starting at 7.99% APR, with promotional rates when available.' },
+  { icon: Calendar, title: 'Flexible Terms', desc: '36 to 180 months, find the payment that fits your budget.' },
+  { icon: Percent, title: 'Competitive Rates', desc: `${CURRENT_RATE.programLabel}. Promotional rates may apply.` },
   { icon: CreditCard, title: 'Payment Options', desc: 'Choose weekly, bi-weekly, or monthly payments.' },
   { icon: ShieldCheck, title: 'No Early Payoff Penalty', desc: 'Pay off your motor anytime with zero extra fees.' },
 ];
@@ -39,8 +38,8 @@ const FAQ_ITEMS = [
   { q: 'What documents do I need to apply?', a: 'A valid government-issued ID, proof of income (recent pay stubs or tax returns), and proof of address. The application itself takes about 5 minutes.' },
   { q: 'How long does approval take?', a: 'Most applications receive a decision within 1–2 business days. Some are approved same-day.' },
   { q: "What's the minimum amount for financing?", a: 'Financing is available on purchases of $5,000 or more. For smaller purchases, we recommend our cash rebate options when available.' },
-  { q: 'Can I pay off my loan early?', a: 'Absolutely. There are no prepayment penalties — pay off your balance anytime without extra fees.' },
-  { q: "What's included in the financed amount?", a: 'The financed total includes the motor price, 13% HST, and a $299 finance administration fee. Your down payment and any trade-in value are subtracted before calculating payments.' },
+  { q: 'Can I pay off my loan early?', a: 'Absolutely. There are no prepayment penalties, pay off your balance anytime without extra fees.' },
+  { q: "What's included in the financed amount?", a: 'The financed total includes the motor price, 13% HST, and a $349 finance administration fee. Your down payment and any trade-in value are subtracted before calculating payments.' },
 ];
 
 // ── Types ────────────────────────────────────────────────────
@@ -108,12 +107,12 @@ export default function FinanceCalculator() {
   const heroPillText = useMemo(() => {
     if (financingPromoData.lowestRate) return `Promo rates from ${financingPromoData.lowestRate}% APR`;
     if (financingPromoData.noPaymentsOption) return financingPromoData.noPaymentsOption.title;
-    return 'Rates from 7.99% APR';
+    return `Rates ${CURRENT_RATE.rate}`;
   }, [financingPromoData]);
 
   // ── SEO ──
   useEffect(() => {
-    setSeo('Finance Your Mercury Outboard | Harris Boats', 'Estimate payments and apply for flexible Mercury outboard financing. Rates from 7.99% APR, terms up to 180 months.');
+    setSeo('Finance Your Mercury Outboard | Harris Boats', `Estimate payments and apply for flexible Mercury outboard financing. Rates ${CURRENT_RATE.rate}, terms up to 180 months.`);
   }, []);
 
   // ── Motor loading (unchanged logic) ──
@@ -194,224 +193,326 @@ export default function FinanceCalculator() {
   // ── Render ─────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-repower-paper">
       <FinanceCalculatorSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
 
-      {/* ─── 1. Hero ─── */}
-      <section className="bg-gradient-to-b from-stone-100 to-white py-16 md:py-24 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Promo pill */}
-          <div className="inline-flex items-center gap-2 mb-6 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-            <Sparkles className="h-4 w-4" />
-            {heroPillText}
-          </div>
-
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
-            Finance Your Mercury Outboard
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Low payments. Flexible terms. On the water sooner.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Button size="lg" asChild>
-              <Link to="/">Build Your Quote</Link>
-            </Button>
-            <Button size="lg" variant="outline" onClick={handleApplyForFinancing}>
-              Apply Now <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-
-          <button onClick={scrollToCalc} className="mt-6 text-sm text-muted-foreground hover:text-primary transition-colors underline underline-offset-4">
-            or estimate your payment ↓
-          </button>
-        </div>
-      </section>
-
-      {/* ─── 2. How It Works ─── */}
-      <section className="py-14 px-4 bg-background">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-center text-2xl font-semibold text-foreground mb-10">How It Works</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {STEPS.map((step, i) => (
-              <div key={i} className="flex flex-col items-center text-center gap-3">
-                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary">
-                  <step.icon className="h-6 w-6" />
-                </div>
-                <div className="text-xs font-medium text-muted-foreground">Step {i + 1}</div>
-                <h3 className="text-sm font-semibold text-foreground">{step.title}</h3>
-                <p className="text-xs text-muted-foreground">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 3. Benefits ─── */}
-      <section className="py-14 px-4 bg-gradient-to-b from-stone-50 to-white">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-center text-2xl font-semibold text-foreground mb-10">Why Finance With Us</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {BENEFITS.map((b, i) => (
-              <Card key={i} className="border-0 shadow-sm">
-                <CardContent className="pt-6 flex flex-col items-center text-center gap-3">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary">
-                    <b.icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">{b.title}</h3>
-                  <p className="text-sm text-muted-foreground">{b.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 4. Active Promotion Banner (conditional) ─── */}
-      {financingPromoData.hasFinancingOption && financingPromoData.parentPromo && (
-        <section className="py-10 px-4">
-          <div className="max-w-4xl mx-auto rounded-xl border border-primary/20 bg-primary/5 p-6 md:p-8 text-center">
-            <div className="inline-flex items-center gap-2 mb-3 text-primary font-semibold text-lg">
-              <Sparkles className="h-5 w-5" />
-              {financingPromoData.parentPromo.name}
+      <main className="pt-[64px] lg:pt-[72px]">
+        {/* ─── 1. Heading zone ─── */}
+        <section className="px-6 md:px-14 py-14 md:py-20">
+          <div className="max-w-[1100px] mx-auto text-center">
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <span className="h-px w-8 bg-repower-mercury-red" />
+              <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
+                {heroPillText}
+              </p>
+              <span className="h-px w-8 bg-repower-mercury-red" />
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground mb-4">
-              {financingPromoData.lowestRate && (
-                <span className="bg-background px-3 py-1 rounded-full border">Rates from {financingPromoData.lowestRate}% APR</span>
-              )}
-              {financingPromoData.noPaymentsOption && (
-                <span className="bg-background px-3 py-1 rounded-full border">{financingPromoData.noPaymentsOption.title}</span>
-              )}
-              {financingPromoData.parentPromo.end_date && (
-                <span>Ends {new Date(financingPromoData.parentPromo.end_date).toLocaleDateString()}</span>
-              )}
+            <h1
+              className="font-display font-bold text-repower-navy-900 mb-5"
+              style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}
+            >
+              Finance Your Mercury Outboard
+            </h1>
+            <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto mb-8">
+              Low payments. Flexible terms. On the water sooner.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link
+                to="/"
+                className="inline-flex items-center justify-center border border-repower-navy-900/20 bg-white text-repower-navy-900 px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:border-repower-navy-900 transition-colors"
+              >
+                Build Your Quote
+              </Link>
+              <button
+                onClick={handleApplyForFinancing}
+                className="group inline-flex items-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
+              >
+                Apply Now
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </button>
             </div>
-            <Button variant="outline" size="sm" asChild>
-              <Link to="/promotions">View Full Promotion Details <ArrowRight className="ml-1 h-3 w-3" /></Link>
-            </Button>
+
+            <button
+              onClick={scrollToCalc}
+              className="mt-6 font-sans text-[13px] text-repower-navy-900/55 hover:text-repower-mercury-red transition-colors underline underline-offset-4"
+            >
+              or estimate your payment ↓
+            </button>
+            <div className="h-px bg-repower-navy-900/10 mt-12 max-w-[200px] mx-auto" />
           </div>
         </section>
-      )}
 
-      {/* ─── 5. Calculator ─── */}
-      <section ref={calcRef} id="calculator" className="py-14 px-4 bg-background scroll-mt-20">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-semibold text-foreground mb-2 text-center">Estimate Your Payment</h2>
-          <p className="text-sm text-muted-foreground mb-8 text-center">Values are estimates only and do not represent a credit offer.</p>
-
-          {/* Prefilled motor info */}
-          {motor && (
-            <Card className="mb-6">
-              <CardContent className="pt-5 pb-4">
-                <div className="font-semibold text-foreground mb-2">{formatMotorTitle(motor.year, motor.model)}</div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-                  <div><span className="text-muted-foreground">Motor</span><br />${breakdown.motorPrice.toLocaleString()}</div>
-                  <div><span className="text-muted-foreground">HST (13%)</span><br />${breakdown.hst.toLocaleString()}</div>
-                  <div><span className="text-muted-foreground">Finance Fee</span><br />$299</div>
-                  <div><span className="text-muted-foreground">Total</span><br /><span className="font-semibold">${totalFinanced.toLocaleString()}</span></div>
+        {/* ─── 2. How It Works ─── */}
+        <section className="py-14 px-6 md:px-14 bg-white">
+          <div className="max-w-[1100px] mx-auto">
+            <h2 className="text-center font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 mb-10" style={{ letterSpacing: '-0.025em' }}>
+              How It Works
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {STEPS.map((step, i) => (
+                <div key={i} className="flex flex-col items-center text-center gap-3">
+                  <step.icon className="h-7 w-7 text-repower-mercury-red" strokeWidth={1.5} />
+                  <div className="font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/55">Step {i + 1}</div>
+                  <h3 className="font-display font-semibold text-[16px] text-repower-navy-900">{step.title}</h3>
+                  <p className="font-sans text-[13px] text-repower-navy-900/65">{step.desc}</p>
                 </div>
-              </CardContent>
-            </Card>
-          )}
-
-          <Card>
-            <CardContent className="pt-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="totalFinanced">Total Financed</Label>
-                  <Input id="totalFinanced" type="text" inputMode="numeric" pattern="[0-9]*" value={totalFinanced} onChange={(e) => setTotalFinanced(Number(e.target.value.replace(/[^0-9]/g, '') || 0))} />
-                </div>
-                <div>
-                  <Label htmlFor="down">Down Payment</Label>
-                  <Input id="down" type="text" inputMode="numeric" pattern="[0-9]*" value={down} onChange={(e) => setDown(Number(e.target.value.replace(/[^0-9]/g, '') || 0))} />
-                </div>
-                <div>
-                  <Label htmlFor="apr">APR (%)</Label>
-                  <Input id="apr" type="number" step="0.01" inputMode="decimal" value={apr} onChange={(e) => setApr(Number(e.target.value || 0))} />
-                </div>
-                <div>
-                  <Label htmlFor="term">Term (months)</Label>
-                  <Input id="term" type="number" inputMode="numeric" value={term} onChange={(e) => setTerm(Number(e.target.value || 0))} />
-                </div>
-              </div>
-
-              <div className="mt-4">
-                <Label>Payment Frequency</Label>
-                <RadioGroup value={frequency} onValueChange={(v: PaymentFrequency) => setFrequency(v)} className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-2">
-                  <div className="flex items-center space-x-2"><RadioGroupItem value="monthly" id="monthly" /><Label htmlFor="monthly" className="cursor-pointer">Monthly</Label></div>
-                  <div className="flex items-center space-x-2"><RadioGroupItem value="bi-weekly" id="bi-weekly" /><Label htmlFor="bi-weekly" className="cursor-pointer">Bi-weekly</Label></div>
-                  <div className="flex items-center space-x-2"><RadioGroupItem value="weekly" id="weekly" /><Label htmlFor="weekly" className="cursor-pointer">Weekly</Label></div>
-                </RadioGroup>
-              </div>
-
-              {promo && (
-                <div className="mt-4 text-sm text-foreground">
-                  <span className="font-medium">Promo APR applied:</span> {promo.rate}%{' '}
-                  {promo.promo_text && <span>— {promo.promo_text}</span>}{' '}
-                  {promo.promo_end_date && <span>(ends {new Date(promo.promo_end_date).toLocaleDateString()})</span>}
-                </div>
-              )}
-
-              <div className="mt-3 text-xs text-muted-foreground">* Includes 13% HST and $299 finance fee</div>
-
-              {/* Result */}
-              <div className="mt-6 flex items-baseline gap-3">
-                <span className="text-muted-foreground">Estimated {frequency === 'bi-weekly' ? 'Bi-weekly' : frequency === 'weekly' ? 'Weekly' : 'Monthly'}:</span>
-                <span className="text-3xl font-bold text-foreground">${paymentCalculation.amount.toLocaleString()}</span>
-              </div>
-              {paymentCalculation.termPeriods && (
-                <div className="mt-1 text-sm text-muted-foreground">
-                  {paymentCalculation.termPeriods} {frequency === 'bi-weekly' ? 'bi-weekly' : frequency === 'weekly' ? 'weekly' : 'monthly'} payments
-                </div>
-              )}
-
-              {/* CTAs */}
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <Button size="lg" className="flex-1" onClick={handleApplyForFinancing}>
-                  Apply for Financing <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button size="lg" variant="outline" className="flex-1" asChild>
-                  <Link to="/">Build a Full Quote</Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* ─── 6. FAQ ─── */}
-      <section className="py-14 px-4 bg-gradient-to-b from-stone-50 to-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Frequently Asked Questions</h2>
-          <Accordion type="single" collapsible className="space-y-2">
-            {FAQ_ITEMS.map((item, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border rounded-lg px-4">
-                <AccordionTrigger className="text-left font-medium">{item.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">{item.a}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-      {/* ─── 7. Final CTA Bar ─── */}
-      <section className="py-12 px-4 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div>
-            <h2 className="text-2xl font-bold mb-1">Ready to Get Started?</h2>
-            <p className="text-primary-foreground/80">Apply online or give us a call — we're here to help.</p>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-col sm:flex-row items-center gap-3">
-            <Button size="lg" variant="secondary" onClick={handleApplyForFinancing}>
-              Apply Now <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <a href="tel:+19053422153" className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground transition-colors">
-              <Phone className="h-4 w-4" /> (905) 342-2153
-            </a>
+        </section>
+
+        {/* ─── 3. Benefits ─── */}
+        <section className="py-14 px-6 md:px-14 bg-repower-paper">
+          <div className="max-w-[1100px] mx-auto">
+            <h2 className="text-center font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 mb-10" style={{ letterSpacing: '-0.025em' }}>
+              Why Finance With Us
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {BENEFITS.map((b, i) => (
+                <div key={i} className="bg-white border border-repower-navy-900/10 p-6 transition-shadow hover:shadow-md">
+                  <b.icon className="h-7 w-7 text-repower-mercury-red mb-4" strokeWidth={1.5} />
+                  <h3 className="font-display font-semibold text-[17px] text-repower-navy-900 mb-2">{b.title}</h3>
+                  <p className="font-sans text-[14px] text-repower-navy-900/65">{b.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* ─── 4. Active Promotion Banner (conditional) ─── */}
+        {financingPromoData.hasFinancingOption && financingPromoData.parentPromo && (
+          <section className="py-10 px-6 md:px-14 bg-white">
+            <div className="max-w-[1100px] mx-auto border border-repower-gold/40 bg-repower-cream p-8 text-center">
+              <div className="inline-flex items-center gap-2 mb-3 font-display font-semibold text-[18px] text-repower-navy-900">
+                <Sparkles className="h-5 w-5 text-repower-gold" />
+                {financingPromoData.parentPromo.name}
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-3 font-sans text-[13px] text-repower-navy-900/65 mb-5">
+                {financingPromoData.lowestRate && (
+                  <span className="bg-white px-3 py-1 border border-repower-navy-900/10">Rates from {financingPromoData.lowestRate}% APR</span>
+                )}
+                {financingPromoData.noPaymentsOption && (
+                  <span className="bg-white px-3 py-1 border border-repower-navy-900/10">{financingPromoData.noPaymentsOption.title}</span>
+                )}
+                {financingPromoData.parentPromo.end_date && (
+                  <span>Ends {new Date(financingPromoData.parentPromo.end_date).toLocaleDateString()}</span>
+                )}
+              </div>
+              <Link
+                to="/promotions"
+                className="inline-flex items-center gap-2 border border-repower-navy-900/20 bg-white text-repower-navy-900 px-5 py-2.5 font-sans font-bold text-[12px] uppercase tracking-[0.14em] hover:border-repower-navy-900 transition-colors"
+              >
+                View Full Promotion Details <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+          </section>
+        )}
+
+        {/* ─── 5. Calculator ─── */}
+        <section ref={calcRef} id="calculator" className="py-14 md:py-20 px-6 md:px-14 bg-repower-paper scroll-mt-20">
+          <div className="max-w-[1100px] mx-auto">
+            <h2 className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 text-center mb-2" style={{ letterSpacing: '-0.025em' }}>
+              Estimate Your Payment
+            </h2>
+            <p className="font-sans text-[13px] text-repower-navy-900/55 text-center mb-10">
+              Values are estimates only and do not represent a credit offer.
+            </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+              {/* Inputs (60%) */}
+              <div className="lg:col-span-3 space-y-6">
+                {motor && (
+                  <div className="bg-white border border-repower-navy-900/10 p-6">
+                    <div className="font-display font-semibold text-[17px] text-repower-navy-900 mb-4">{formatMotorTitle(motor.year, motor.model)}</div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 font-sans text-[13px]">
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-repower-navy-900/55 mb-1">Motor</div>
+                        <div className="text-repower-navy-900">${breakdown.motorPrice.toLocaleString()}</div>
+                      </div>
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-repower-navy-900/55 mb-1">HST (13%)</div>
+                        <div className="text-repower-navy-900">${breakdown.hst.toLocaleString()}</div>
+                      </div>
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-repower-navy-900/55 mb-1">Finance Fee</div>
+                        <div className="text-repower-navy-900">$349</div>
+                      </div>
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-repower-navy-900/55 mb-1">Total</div>
+                        <div className="text-repower-navy-900 font-semibold">${totalFinanced.toLocaleString()}</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                <div className="bg-white border border-repower-navy-900/10 p-6 space-y-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    {[
+                      { id: 'totalFinanced', label: 'Total Financed', value: totalFinanced, set: (v: number) => setTotalFinanced(v), num: true },
+                      { id: 'down', label: 'Down Payment', value: down, set: (v: number) => setDown(v), num: true },
+                    ].map((f) => (
+                      <div key={f.id}>
+                        <label htmlFor={f.id} className="block mb-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">{f.label}</label>
+                        <input
+                          id={f.id}
+                          type="text"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
+                          value={f.value}
+                          onChange={(e) => f.set(Number(e.target.value.replace(/[^0-9]/g, '') || 0))}
+                          className="w-full rounded bg-white border border-repower-navy-900/10 px-4 py-[14px] font-sans text-[15px] text-repower-navy-900 focus:outline-none focus:border-repower-gold focus:ring-[3px] focus:ring-repower-gold/15"
+                        />
+                      </div>
+                    ))}
+                    <div>
+                      <label htmlFor="apr" className="block mb-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">APR (%)</label>
+                      <input
+                        id="apr"
+                        type="number"
+                        step="0.01"
+                        inputMode="decimal"
+                        value={apr}
+                        onChange={(e) => setApr(Number(e.target.value || 0))}
+                        className="w-full rounded bg-white border border-repower-navy-900/10 px-4 py-[14px] font-sans text-[15px] text-repower-navy-900 focus:outline-none focus:border-repower-gold focus:ring-[3px] focus:ring-repower-gold/15"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="term" className="block mb-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">Term (months)</label>
+                      <input
+                        id="term"
+                        type="number"
+                        inputMode="numeric"
+                        value={term}
+                        onChange={(e) => setTerm(Number(e.target.value || 0))}
+                        className="w-full rounded bg-white border border-repower-navy-900/10 px-4 py-[14px] font-sans text-[15px] text-repower-navy-900 focus:outline-none focus:border-repower-gold focus:ring-[3px] focus:ring-repower-gold/15"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block mb-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">Payment Frequency</label>
+                    <div className="grid grid-cols-3 gap-3">
+                      {(['monthly', 'bi-weekly', 'weekly'] as PaymentFrequency[]).map((f) => {
+                        const labels: Record<PaymentFrequency, string> = { monthly: 'Monthly', 'bi-weekly': 'Bi-weekly', weekly: 'Weekly' };
+                        const active = frequency === f;
+                        return (
+                          <button
+                            key={f}
+                            type="button"
+                            onClick={() => setFrequency(f)}
+                            className={`rounded bg-white px-4 py-3 font-sans text-[14px] text-repower-navy-900 border transition-colors ${active ? 'border-repower-navy-900' : 'border-repower-navy-900/10 hover:border-repower-navy-900/30'}`}
+                          >
+                            {labels[f]}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {promo && (
+                    <div className="bg-repower-cream border border-repower-gold/40 p-4 font-sans text-[13px] text-repower-navy-900">
+                      <span className="font-semibold">Promo APR applied:</span> {promo.rate}%{' '}
+                      {promo.promo_text && <span>· {promo.promo_text}</span>}{' '}
+                      {promo.promo_end_date && <span>(ends {new Date(promo.promo_end_date).toLocaleDateString()})</span>}
+                    </div>
+                  )}
+
+                  <p className="font-sans text-[12px] text-repower-navy-900/55">* Includes 13% HST and $349 finance fee</p>
+                </div>
+              </div>
+
+              {/* Sticky payment summary (40%) */}
+              <div className="lg:col-span-2">
+                <div className="lg:sticky lg:top-24 bg-repower-cream border border-repower-navy-900/10 p-8">
+                  <div className="font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/55 mb-3">
+                    Estimated {frequency === 'bi-weekly' ? 'Bi-weekly' : frequency === 'weekly' ? 'Weekly' : 'Monthly'} Payment
+                  </div>
+                  <div className="font-display font-bold text-repower-navy-900 mb-2" style={{ fontSize: 'clamp(36px, 5vw, 48px)', letterSpacing: '-0.025em', lineHeight: 1 }}>
+                    ${paymentCalculation.amount.toLocaleString()}
+                  </div>
+                  {paymentCalculation.termPeriods && (
+                    <div className="font-sans text-[13px] text-repower-navy-900/65 mb-6">
+                      {paymentCalculation.termPeriods} {frequency === 'bi-weekly' ? 'bi-weekly' : frequency === 'weekly' ? 'weekly' : 'monthly'} payments
+                    </div>
+                  )}
+
+                  <div className="h-px bg-repower-navy-900/10 my-6" />
+
+                  <div className="space-y-2.5 font-sans text-[13px] mb-6">
+                    <div className="flex justify-between text-repower-navy-900/65"><span>Motor</span><span>${breakdown.motorPrice.toLocaleString()}</span></div>
+                    <div className="flex justify-between text-repower-navy-900/65"><span>HST (13%)</span><span>${breakdown.hst.toLocaleString()}</span></div>
+                    <div className="flex justify-between text-repower-navy-900/65"><span>Finance Fee</span><span>$349</span></div>
+                    <div className="flex justify-between text-repower-navy-900 font-semibold pt-2 border-t border-repower-navy-900/10"><span>Total Financed</span><span>${totalFinanced.toLocaleString()}</span></div>
+                    {down > 0 && (
+                      <div className="flex justify-between text-repower-navy-900/65"><span>Less: Down Payment</span><span>-${down.toLocaleString()}</span></div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3">
+                    <button
+                      onClick={handleApplyForFinancing}
+                      className="group w-full inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
+                    >
+                      Apply for Financing
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                    <Link
+                      to="/"
+                      className="w-full inline-flex items-center justify-center border border-repower-navy-900/20 bg-white text-repower-navy-900 px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:border-repower-navy-900 transition-colors"
+                    >
+                      Build a Full Quote
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 6. FAQ ─── */}
+        <section className="py-14 md:py-20 px-6 md:px-14 bg-white">
+          <div className="max-w-[800px] mx-auto">
+            <h2 className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 text-center mb-10" style={{ letterSpacing: '-0.025em' }}>
+              Frequently Asked Questions
+            </h2>
+            <Accordion type="single" collapsible className="border-t border-repower-navy-900/10">
+              {FAQ_ITEMS.map((item, i) => (
+                <AccordionItem key={i} value={`faq-${i}`} className="border-b border-repower-navy-900/10">
+                  <AccordionTrigger className="text-left font-sans font-semibold text-[16px] text-repower-navy-900 hover:no-underline py-5 hover:bg-repower-navy-900/[0.04] px-2 -mx-2">
+                    {item.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="font-sans text-[15px] text-repower-navy-900/75 pb-5 pt-1 border-t border-repower-gold">
+                    {item.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+
+        {/* ─── 7. Final CTA Bar ─── */}
+        <section className="py-14 px-6 md:px-14 bg-repower-navy-900">
+          <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+              <h2 className="font-display font-bold text-[28px] text-repower-cream mb-1" style={{ letterSpacing: '-0.025em' }}>Ready to Get Started?</h2>
+              <p className="font-sans text-[15px] text-repower-cream/70">Apply online or give us a call, we're here to help.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <button
+                onClick={handleApplyForFinancing}
+                className="group inline-flex items-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
+              >
+                Apply Now <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </button>
+              <a href="tel:+19053422153" className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-cream/90 hover:text-repower-cream transition-colors">
+                <Phone className="h-4 w-4" /> (905) 342-2153
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <SiteFooter />
     </div>

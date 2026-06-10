@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
 import { PageTransition } from '@/components/ui/page-transition';
 import FuelTankOptions from '@/components/quote-builder/FuelTankOptions';
 import { useQuote } from '@/contexts/QuoteContext';
-import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
 export default function FuelTankPage() {
@@ -47,20 +47,27 @@ export default function FuelTankPage() {
   return (
     <PageTransition>
       <QuoteLayout>
-          <div className="space-y-6">
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" onClick={handleBack} className="border-gray-300 hover:border-gray-900 font-light">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Purchase Path
-            </Button>
-          </div>
-          
-          <FuelTankOptions 
+        <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
+          <button
+            onClick={handleBack}
+            className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back
+          </button>
+        </div>
+        <QuotePageShell
+          eyebrow="Step 3 · Fuel Tank"
+          title="Choose your fuel tank"
+          subhead="Portable Mercury motors run on an external tank. Pick the setup that fits your boat."
+          className="!py-6 md:!py-8"
+        >
+          <FuelTankOptions
             selectedMotor={state.motor!}
             onComplete={handleStepComplete}
             onBack={handleBack}
           />
-        </div>
+        </QuotePageShell>
       </QuoteLayout>
     </PageTransition>
   );

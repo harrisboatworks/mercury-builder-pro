@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/pontoon-family-40-to-115-command-thrust
-last_updated: 2026-05-01
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 case_study_id: CS02
 slug: pontoon-family-40-to-115-command-thrust
 boat_type: "Pontoon boat"

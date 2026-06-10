@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFinancing } from '@/contexts/FinancingContext';
@@ -11,7 +12,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { encryptSIN } from '@/lib/sinEncryption';
+import { encryptSIN, getFriendlySinErrorMessage, generateSubmissionCorrelationId, type SinEncryptionError } from '@/lib/sinEncryption';
+import { logFinancingSubmission } from '@/lib/financingSubmissionLog';
 import { useNavigate } from 'react-router-dom';
 import { Loader2, Check, Edit, ShieldCheck, FileText, CalendarCheck } from 'lucide-react';
 import { useState } from 'react';
@@ -51,7 +53,12 @@ export function ReviewSubmitStep() {
 
   const onSubmit = async (data: Consent) => {
     setIsSubmitting(true);
+    const correlationId = generateSubmissionCorrelationId();
+    // Hoisted so the outer catch can attribute logs to the current user and
+    // satisfy the financing_submission_logs RLS policy (user_id = auth.uid()).
+    let outerUserId: string | null = null;
     try {
+
       // Set consent data
       dispatch({ type: 'SET_CONSENT', payload: data });
       dispatch({ type: 'COMPLETE_STEP', payload: 7 });
@@ -72,36 +79,153 @@ export function ReviewSubmitStep() {
 
       // Get current user
       const { data: { user } } = await supabase.auth.getUser();
+      const userId = user?.id ?? null;
+      outerUserId = userId;
 
-      // Save to database
-      const { data: application, error } = await supabase
-        .from('financing_applications')
-        .upsert({
-          id: state.applicationId || undefined,
-          user_id: user?.id,
-          quote_id: state.quoteId,
-          purchase_data: validated.purchaseDetails,
-          applicant_data: validated.applicant,
-          employment_data: validated.employment,
-          financial_data: validated.financial,
-          co_applicant_data: validated.coApplicant,
-          references_data: validated.references,
-          status: 'pending',
-          current_step: 7,
-          completed_steps: [1, 2, 3, 4, 5, 6, 7],
-          applicant_sin_encrypted: await encryptSIN(validated.applicant.sin),
-          co_applicant_sin_encrypted: validated.coApplicant?.sin 
-            ? await encryptSIN(validated.coApplicant.sin)
-            : null,
-        })
-        .select()
-        .single();
+
+
+      // Encrypt SINs first so we can surface specific errors before the DB upsert
+      let applicantSinEncrypted: string;
+      try {
+        applicantSinEncrypted = await encryptSIN(validated.applicant.sin);
+        await logFinancingSubmission({
+          stage: 'encrypt_applicant_sin',
+          outcome: 'success',
+          correlationId,
+          applicationId: state.applicationId,
+          userId,
+        });
+      } catch (e) {
+        const sinErr = e as SinEncryptionError;
+        await logFinancingSubmission({
+          stage: 'encrypt_applicant_sin',
+          outcome: 'failure',
+          correlationId,
+          applicationId: state.applicationId,
+          userId,
+          errorCode: sinErr.code || 'unknown',
+          errorMessage: sinErr.message,
+          metadata: { pgCode: sinErr.pgCode, hint: sinErr.hint },
+        });
+        const friendly = getFriendlySinErrorMessage(sinErr.code, correlationId);
+        toast({ title: friendly.title, description: friendly.description, variant: 'destructive' });
+        setIsSubmitting(false);
+        return;
+      }
+
+      let coApplicantSinEncrypted: string | null = null;
+      if (validated.coApplicant?.sin) {
+        try {
+          coApplicantSinEncrypted = await encryptSIN(validated.coApplicant.sin);
+          await logFinancingSubmission({
+            stage: 'encrypt_co_applicant_sin',
+            outcome: 'success',
+            correlationId,
+            applicationId: state.applicationId,
+            userId,
+          });
+        } catch (e) {
+          const sinErr = e as SinEncryptionError;
+          await logFinancingSubmission({
+            stage: 'encrypt_co_applicant_sin',
+            outcome: 'failure',
+            correlationId,
+            applicationId: state.applicationId,
+            userId,
+            errorCode: sinErr.code || 'unknown',
+            errorMessage: sinErr.message,
+            metadata: { pgCode: sinErr.pgCode, hint: sinErr.hint },
+          });
+          const friendly = getFriendlySinErrorMessage(sinErr.code, correlationId);
+          toast({
+            title: `Co-applicant: ${friendly.title}`,
+            description: friendly.description,
+            variant: 'destructive',
+          });
+          setIsSubmitting(false);
+          return;
+        }
+      }
+
+      // Save to database.
+      // We generate the row id client-side so that anonymous (not signed in)
+      // submitters do not need a SELECT policy to read the row back after insert.
+      // For signed in users with an existing draft, we keep their applicationId.
+      const applicationRowId = state.applicationId || (typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : undefined);
+      const upsertPayload = {
+        id: applicationRowId,
+        user_id: user?.id ?? null,
+        quote_id: state.quoteId,
+        purchase_data: validated.purchaseDetails,
+        applicant_data: validated.applicant,
+        employment_data: validated.employment,
+        financial_data: validated.financial,
+        co_applicant_data: validated.coApplicant,
+        references_data: validated.references,
+        status: 'pending' as const,
+        current_step: 7,
+        completed_steps: [1, 2, 3, 4, 5, 6, 7],
+        applicant_sin_encrypted: applicantSinEncrypted,
+        co_applicant_sin_encrypted: coApplicantSinEncrypted,
+      };
+
+      // Anon submitters use plain insert (no UPDATE/SELECT policy on this
+      // table for the anon role). Signed in users use upsert so they can
+      // resume an existing draft, and we read the row back via .select().
+      let applicationId: string | undefined = applicationRowId;
+      let error: any = null;
+      if (user?.id) {
+        const res = await supabase
+          .from('financing_applications')
+          .upsert(upsertPayload)
+          .select()
+          .single();
+        error = res.error;
+        applicationId = res.data?.id ?? applicationRowId;
+      } else {
+        const res = await supabase
+          .from('financing_applications')
+          .insert(upsertPayload);
+        error = res.error;
+      }
+      const application = applicationId ? { id: applicationId } : null;
 
       // CRITICAL: Check DB error before continuing
       if (error || !application) {
         console.error('Financing application DB write failed:', error);
-        throw new Error(error?.message || 'Failed to save application');
+        await logFinancingSubmission({
+          stage: 'db_upsert',
+          outcome: 'failure',
+          correlationId,
+          applicationId: state.applicationId,
+          userId,
+          errorCode: (error as any)?.code || 'unknown',
+          errorMessage: error?.message || 'No application returned',
+          metadata: { details: (error as any)?.details, hint: (error as any)?.hint },
+        });
+        const isPermission =
+          (error as any)?.code === '42501' ||
+          (error?.message || '').toLowerCase().includes('permission denied') ||
+          (error?.message || '').toLowerCase().includes('row-level security');
+        toast({
+          title: isPermission ? 'Permission error saving application' : 'Could not save application',
+          description: (isPermission
+            ? 'Your account does not have permission to submit this application. Please sign in and try again, or call us at (905) 342-2153.'
+            : 'We could not save your application. Please try again, or call us at (905) 342-2153.')
+            + ` Reference: ${correlationId}.`,
+          variant: 'destructive',
+        });
+        setIsSubmitting(false);
+        return;
       }
+
+      await logFinancingSubmission({
+        stage: 'db_upsert',
+        outcome: 'success',
+        correlationId,
+        applicationId: application.id,
+        userId,
+      });
 
       // Send confirmation emails (non-blocking - don't fail submission if email fails)
       // Field names MUST match the Zod schema in supabase/functions/send-financing-confirmation-email/index.ts
@@ -138,7 +262,15 @@ export function ReviewSubmitStep() {
       // Show success message
       toast({
         title: "Application Submitted!",
-        description: "Your financing application has been submitted successfully.",
+        description: `Your financing application has been submitted successfully. Reference: ${correlationId}.`,
+      });
+
+      await logFinancingSubmission({
+        stage: 'submission',
+        outcome: 'success',
+        correlationId,
+        applicationId: application.id,
+        userId,
       });
 
       // Redirect to success page after a brief delay to show confetti
@@ -148,9 +280,20 @@ export function ReviewSubmitStep() {
 
     } catch (error) {
       console.error('Submission error:', error);
+      const err = error as any;
+      await logFinancingSubmission({
+        stage: 'submission',
+        outcome: 'failure',
+        correlationId,
+        applicationId: state.applicationId,
+        userId: outerUserId,
+        errorCode: err?.code || 'unexpected',
+        errorMessage: err?.message || String(error),
+      });
+
       toast({
         title: "Submission Failed",
-        description: "Please check your information and try again.",
+        description: `Please check your information and try again. Reference: ${correlationId}.`,
         variant: "destructive",
       });
     } finally {
@@ -481,7 +624,7 @@ export function ReviewSubmitStep() {
             </Alert>
 
             <div className="space-y-2">
-              <Label htmlFor="signature">Full Name (as signature) *</Label>
+              <Label htmlFor="signature">Full Name (as signature) <RequiredMark /></Label>
               <div className="relative">
                 <Input
                   id="signature"

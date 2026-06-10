@@ -228,17 +228,17 @@ export default function MotorCardPremium({
   return (
     <>
       <div 
-        className="group bg-white shadow-sm rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2 cursor-pointer"
+        className="group bg-white shadow-sm rounded-lg overflow-hidden card-hover cursor-pointer"
         onClick={handleCardClick}
       >
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
-            <div className="relative bg-white p-4 overflow-hidden">
+            <div className="relative p-4 overflow-hidden" style={{ background: 'var(--gradient-image-bg)' }}>
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className="h-32 md:h-48 w-full object-contain aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
+                className="h-32 md:h-48 w-full object-contain aspect-[4/3] mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   if (!target.src.includes('speedboat-transparent.png')) {

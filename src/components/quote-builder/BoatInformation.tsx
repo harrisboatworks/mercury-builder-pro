@@ -491,7 +491,7 @@ export const BoatInformation = ({
                     </Select>
                   </div>
 
-                  <Alert className="border-blue-500 bg-blue-50 bg-protected">
+                  <Alert className="border-repower-navy-900/200 bg-repower-cream bg-protected">
                     <Info className="w-4 h-4" />
                     <AlertDescription className="text-protected-subtle">
                       We'll verify exact rigging and cables during your appointment.
@@ -551,7 +551,7 @@ export const BoatInformation = ({
                        .map(type => <button type="button" key={type.id} onClick={() => setBoatInfo(prev => ({
                    ...prev,
                    type: type.id
-                 }))} className={`group relative rounded-2xl border-2 p-4 bg-protected text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-50' : 'border-gray-300'}`} aria-pressed={boatInfo.type === type.id}>
+                 }))} className={`group relative rounded-2xl border-2 p-4 bg-protected text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-repower-mercury-red/30 bg-repower-mercury-red/5' : 'border-repower-navy-900/20'}`} aria-pressed={boatInfo.type === type.id}>
                           <div className="mb-3 h-32 md:h-40 overflow-hidden rounded-md flex items-center justify-center bg-protected-white">
                              <img 
                                src={type.image} 
@@ -593,7 +593,7 @@ export const BoatInformation = ({
                            <img src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png" alt="Skip boat type selection" className="h-20 w-full h-auto object-contain" loading="lazy" />
                       </div>
                       <h3 className="font-light tracking-wide heading-protected">Not Sure?</h3>
-                      <p className="text-sm font-light text-protected">Skip — we'll confirm later</p>
+                      <p className="text-sm font-light text-protected">Skip, we'll confirm later</p>
                      </button>
                    </div>
 
@@ -618,7 +618,7 @@ export const BoatInformation = ({
                       {(() => {
                   // Special case for pontoons with very low HP
                   if (boatInfo.type === 'pontoon' && hp < 25) {
-                    return <Alert className="border-orange-500 bg-orange-50">
+                    return <Alert className="border-repower-gold/300 bg-repower-cream">
                               <AlertDescription className="text-protected-subtle">⚠️ Pontoons typically need 25HP+ for adequate performance</AlertDescription>
                             </Alert>;
                   }
@@ -627,18 +627,18 @@ export const BoatInformation = ({
                   const compatibility = getMotorBoatCompatibility();
                   if (compatibility) {
                     if (compatibility.type === 'perfect') {
-                      return <Alert className="border-green-500/30 bg-green-500/10">
+                      return <Alert className="border-repower-gold/300/30 bg-repower-cream0/10">
                                 <AlertDescription className="text-protected-subtle">{compatibility.message}</AlertDescription>
                               </Alert>;
                     } else {
-                      return <Alert className="border-orange-500 bg-orange-50">
+                      return <Alert className="border-repower-gold/300 bg-repower-cream">
                                 <AlertDescription className="text-protected-subtle">{compatibility.message}</AlertDescription>
                               </Alert>;
                     }
                   }
 
                   // Fallback for cases where no specific range is defined
-                  return <Alert className="border-green-500/30 bg-green-500/10">
+                  return <Alert className="border-repower-gold/300/30 bg-repower-cream0/10">
                             <AlertDescription className="text-protected-subtle">✓ Good match for your {hp}HP motor</AlertDescription>
                           </Alert>;
                 })()}
@@ -725,7 +725,7 @@ export const BoatInformation = ({
                     </Button>
                   </div>
 
-                  {selectedMotor && chosenShaft && <Alert className={shaftMatch ? 'border-in-stock bg-in-stock/10' : 'border-orange-500 bg-orange-50'}>
+                  {selectedMotor && chosenShaft && <Alert className={shaftMatch ? 'border-in-stock bg-in-stock/10' : 'border-repower-gold/300 bg-repower-cream'}>
                       <AlertDescription className="text-protected-subtle">
                         {shaftMatch ? <>
                             Selected motor: {selectedMotor.model} • Matches your {shaftLabel(chosenShaft)} transom.
@@ -733,7 +733,7 @@ export const BoatInformation = ({
                             <p>
                               Heads up: your selected motor ({selectedMotor.model}) is {shaftLabel(motorShaft)}, but you chose {shaftLabel(chosenShaft)}. Mercury model must match the boat's transom height.
                             </p>
-                            {onShowCompatibleMotors && <Button variant="outline" size="sm" onClick={onShowCompatibleMotors} className="text-blue-700 border-blue-300 hover:border-blue-400 hover:opacity-90">
+                            {onShowCompatibleMotors && <Button variant="outline" size="sm" onClick={onShowCompatibleMotors} className="text-repower-navy-900 border-repower-navy-900/20 hover:border-repower-navy-900/20 hover:opacity-90">
                                 Show compatible motors
                               </Button>}
                           </div>}
@@ -807,7 +807,7 @@ export const BoatInformation = ({
                       </>}
 
 
-                    {compatibility && !isSelectedTillerMotor && <Alert className={compatibility.type === 'warning' ? 'border-orange-500 bg-orange-50' : 'border-blue-500 bg-blue-50'}>
+                    {compatibility && !isSelectedTillerMotor && <Alert className={compatibility.type === 'warning' ? 'border-repower-gold/300 bg-repower-cream' : 'border-repower-navy-900/200 bg-repower-cream'}>
                         <div className="flex items-center gap-2">
                           {compatibility.icon}
                           <AlertDescription className="text-protected-subtle">
@@ -816,7 +816,7 @@ export const BoatInformation = ({
                         </div>
                       </Alert>}
 
-                    {isSelectedTillerMotor ? <Alert className="border-blue-500 bg-blue-50">
+                    {isSelectedTillerMotor ? <Alert className="border-repower-navy-900/200 bg-repower-cream">
                         <Info className="w-4 h-4" />
                         <AlertDescription className="text-protected-subtle">
                           <strong className="heading-protected">Tiller Motor Selected:</strong> Your {selectedMotor?.model} is a tiller motor that's steered by hand. No remote controls are needed or applicable.
@@ -840,9 +840,9 @@ export const BoatInformation = ({
                         </Select>
                       </div>}
 
-                    {!isSelectedTillerMotor && selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && <div className="controls-section rounded-lg border border-border bg-muted p-4">
-                        <h4 className="font-light tracking-wide text-gray-900 dark:text-gray-100 mb-3">Steering Controls Required</h4>
-                        {isNonMercuryBrand && <Alert className="mb-3 border-blue-500 bg-blue-50 dark:bg-blue-950/20">
+                    {!isSelectedTillerMotor && selectedMotor && <div className="controls-section rounded-lg border border-border bg-muted p-4">
+                        <h4 className="font-light tracking-wide text-repower-navy-900  mb-3">Steering Controls Required</h4>
+                        {isNonMercuryBrand && <Alert className="mb-3 border-repower-navy-900/200 bg-repower-cream ">
                             <div className="flex items-center gap-2">
                               <Info className="w-4 h-4" />
                               <AlertDescription>
@@ -887,7 +887,7 @@ export const BoatInformation = ({
                             </>}
                         </div>
 
-                        {boatInfo.controlsOption === 'adapter' && <div className="adapter-info rounded-lg mt-3 p-3 bg-green-500/10">
+                        {boatInfo.controlsOption === 'adapter' && <div className="adapter-info rounded-lg mt-3 p-3 bg-repower-cream0/10">
                             <h5 className="font-bold heading-protected">💰 Smart Choice!</h5>
                             <p className="text-sm text-protected-subtle">
                               Your existing Mercury controls can work with your new motor using our control harness adapter. This saves you over $1,000!
@@ -921,7 +921,7 @@ export const BoatInformation = ({
                   return <div className="accessories-check rounded-lg border border-border bg-protected p-4 space-y-4">
                           <h3 className="text-xl font-light tracking-wide heading-protected">What do you already have?</h3>
                           {hp >= 40 && <div className="accessory-item">
-                              <div className="text-sm text-gray-600 dark:text-gray-300 mb-1">Controls</div>
+                              <div className="text-sm text-repower-navy-900/65  mb-1">Controls</div>
                               {/* Control radio options already shown above */}
                               <div className="text-xs text-muted-foreground">We’ll confirm compatibility during installation.</div>
                             </div>}
@@ -985,7 +985,7 @@ export const BoatInformation = ({
                   {/* Gamification */}
                   <div className="progress-rewards text-sm">
                     {boatInfo.type && boatInfo.shaftLength && boatInfo.controlType && <div className="rounded-md border border-primary/30 bg-primary/5 p-3">🏆 Detail Detective - You're thorough!</div>}
-                    {selectedMotor && computeCompatibilityScore() > 80 && <div className="mt-2 rounded-md border border-green-500/30 bg-green-500/10 p-3">⭐ Excellent match - Great motor/boat combo!</div>}
+                    {selectedMotor && computeCompatibilityScore() > 80 && <div className="mt-2 rounded-md border border-repower-gold/300/30 bg-repower-cream0/10 p-3">⭐ Excellent match - Great motor/boat combo!</div>}
                   </div>
                 </div>
               </Card>}
@@ -997,9 +997,9 @@ export const BoatInformation = ({
           
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 order-1 sm:order-2">
             
-            {currentStep === totalSteps - 1 ? <Button type="submit" className="border-2 border-gray-900 bg-gray-900 text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-gray-900 transition-all duration-500" disabled={!canNext()}>
+            {currentStep === totalSteps - 1 ? <Button type="submit" className="border-2 border-repower-navy-900/30 bg-repower-navy-900 text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-repower-navy-900 transition-all duration-500" disabled={!canNext()}>
                 Continue to Quote
-              </Button> : <Button type="button" onClick={handleNext} disabled={!canNext()} className="border-2 border-gray-900 bg-gray-900 text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-gray-900 transition-all duration-500">
+              </Button> : <Button type="button" onClick={handleNext} disabled={!canNext()} className="border-2 border-repower-navy-900/30 bg-repower-navy-900 text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-repower-navy-900 transition-all duration-500">
                 Next: {nextStepLabel}
               </Button>}
           </div>

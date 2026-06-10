@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -15,8 +16,9 @@ import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { COMPANY_INFO } from '@/lib/companyInfo';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { ContactPageSEO } from '@/components/seo/ContactPageSEO';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { 
   Mail, 
   Phone, 
@@ -110,23 +112,23 @@ export default function Contact() {
   if (submitted) {
     return (
       <>
-        <LuxuryHeader />
-        <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-        <div className="container mx-auto px-4 py-16">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle2 className="w-8 h-8 text-primary" />
+        <RepowerHeader />
+        <div className="min-h-screen bg-repower-paper pt-[64px] lg:pt-[72px]">
+          <div className="container mx-auto px-6 md:px-14 py-16">
+            <div className="max-w-2xl mx-auto text-center">
+              <CheckCircle2 className="w-12 h-12 text-repower-mercury-red mx-auto mb-6" strokeWidth={1.5} />
+              <h1 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-repower-navy-900 mb-4" style={{ letterSpacing: '-0.025em' }}>
+                Thank You!
+              </h1>
+              <p className="font-sans text-repower-navy-900/70 text-lg mb-8">
+                Your inquiry has been submitted successfully. We'll get back to you soon!
+              </p>
+              <Button onClick={() => setSubmitted(false)} variant="outline" className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5">
+                Submit Another Inquiry
+              </Button>
             </div>
-            <h1 className="text-3xl font-bold text-foreground mb-4">Thank You!</h1>
-            <p className="text-muted-foreground text-lg mb-8">
-              Your inquiry has been submitted successfully. We'll get back to you soon!
-            </p>
-            <Button onClick={() => setSubmitted(false)} variant="outline">
-              Submit Another Inquiry
-            </Button>
           </div>
         </div>
-      </div>
       </>
     );
   }
@@ -134,39 +136,48 @@ export default function Contact() {
   return (
     <>
       <ContactPageSEO />
-      <LuxuryHeader />
-      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Get In Touch</h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Have questions about our motors, need a custom quote, or require service support? 
-            We're here to help you get back on the water.
-          </p>
-        </div>
+      <RepowerHeader />
+      <div className="min-h-screen bg-repower-paper pt-[64px] lg:pt-[72px]">
+        <div className="container mx-auto px-6 md:px-14 py-14 md:py-20">
+          {/* Header */}
+          <div className="text-center mb-14 max-w-[880px] mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <span className="h-px w-8 bg-repower-mercury-red" />
+              <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
+                Get in Touch
+              </p>
+            </div>
+            <h1 className="font-display font-bold text-repower-navy-900 mb-5" style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}>
+              Get In Touch
+            </h1>
+            <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto leading-relaxed">
+              Have questions about our motors, need a custom quote, or require service support?
+              We're here to help you get back on the water.
+            </p>
+            <div className="mt-10 h-px w-16 bg-repower-navy-900/15 mx-auto" />
+          </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MessageSquare className="w-5 h-5" />
-                  Contact Form
-                </CardTitle>
-                <CardDescription>
-                  Fill out the form below and we'll get back to you as soon as possible.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <div className="grid lg:grid-cols-3 gap-8 max-w-[1100px] mx-auto">
+            {/* Contact Form */}
+            <div className="lg:col-span-2">
+              <Card className="border-repower-navy-900/10 bg-white shadow-none">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 font-display text-repower-navy-900">
+                    <MessageSquare className="w-5 h-5 text-repower-mercury-red" strokeWidth={1.5} />
+                    Contact Form
+                  </CardTitle>
+                  <CardDescription className="text-repower-navy-900/60">
+                    Fill out the form below and we'll get back to you as soon as possible.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   {/* Step 1: Basic Info */}
                   {step === 1 && (
                     <div className="space-y-6">
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <Label htmlFor="name">Full Name *</Label>
+                          <Label htmlFor="name">Full Name <RequiredMark /></Label>
                           <Input
                             id="name"
                             placeholder="Your full name"
@@ -178,7 +189,7 @@ export default function Contact() {
                           )}
                         </div>
                         <div>
-                          <Label htmlFor="email">Email Address *</Label>
+                          <Label htmlFor="email">Email Address <RequiredMark /></Label>
                           <Input
                             id="email"
                             type="email"
@@ -203,25 +214,25 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <Label>What can we help you with? *</Label>
+                        <Label>What can we help you with? <RequiredMark /></Label>
                         <div className="grid md:grid-cols-2 gap-3 mt-3">
                           {inquiryTypes.map((type) => {
                             const Icon = type.icon;
+                            const active = watchedValues.inquiry_type === type.value;
                             return (
-                              <Card
+                              <button
                                 key={type.value}
-                                className={`cursor-pointer transition-all hover:ring-2 hover:ring-primary/20 ${
-                                  watchedValues.inquiry_type === type.value
-                                    ? 'ring-2 ring-primary bg-primary/5'
-                                    : 'hover:bg-muted/50'
-                                }`}
+                                type="button"
                                 onClick={() => setValue('inquiry_type', type.value)}
+                                className={`text-left rounded-lg border bg-white p-4 flex items-center gap-3 transition-colors ${
+                                  active
+                                    ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red'
+                                    : 'border-repower-navy-900/10 hover:border-repower-navy-900/30'
+                                }`}
                               >
-                                <CardContent className="p-4 flex items-center gap-3">
-                                  <Icon className="w-5 h-5 text-primary" />
-                                  <span className="text-sm font-medium">{type.label}</span>
-                                </CardContent>
-                              </Card>
+                                <Icon className="w-5 h-5 text-repower-mercury-red" strokeWidth={1.5} />
+                                <span className="text-sm font-medium text-repower-navy-900">{type.label}</span>
+                              </button>
                             );
                           })}
                         </div>
@@ -234,7 +245,7 @@ export default function Contact() {
                         type="button"
                         onClick={() => setStep(2)}
                         disabled={!watchedValues.name || !watchedValues.email || !watchedValues.inquiry_type}
-                        className="w-full"
+                        className="w-full bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep"
                       >
                         Continue
                       </Button>
@@ -250,7 +261,7 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <Label htmlFor="message">Your Message *</Label>
+                        <Label htmlFor="message">Your Message <RequiredMark /></Label>
                         <Textarea
                           id="message"
                           placeholder="Please provide details about your inquiry..."
@@ -310,8 +321,8 @@ export default function Contact() {
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="urgent" id="urgent-urgency" />
                             <Label htmlFor="urgent-urgency" className="flex items-center gap-2">
-                              <Zap className="w-4 h-4 text-orange-500" />
-                              Urgent <span className="text-muted-foreground text-sm">(2-4 hour response)</span>
+                              <Zap className="w-4 h-4 text-repower-mercury-red" strokeWidth={1.5} />
+                              Urgent <span className="text-repower-navy-900/60 text-sm">(2-4 hour response)</span>
                             </Label>
                           </div>
                         </RadioGroup>
@@ -322,14 +333,14 @@ export default function Contact() {
                           type="button"
                           variant="outline"
                           onClick={() => setStep(1)}
-                          className="flex-1"
+                          className="flex-1 border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5"
                         >
                           Back
                         </Button>
                         <Button
                           type="submit"
                           disabled={isSubmitting}
-                          className="flex-1 flex items-center gap-2"
+                          className="flex-1 flex items-center gap-2 bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep"
                         >
                           {isSubmitting ? (
                             <>
@@ -353,87 +364,87 @@ export default function Contact() {
 
           {/* Contact Information */}
           <div className="space-y-6">
-            <Card>
+            <Card className="border-repower-navy-900/10 bg-white shadow-none">
               <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
+                <CardTitle className="font-display text-repower-navy-900">Contact Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-primary mt-0.5" />
+                  <Phone className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <p className="font-medium">{COMPANY_INFO.contact.phone}</p>
-                    <p className="text-sm text-muted-foreground">Monday - Saturday, 8 AM - 5 PM</p>
+                    <p className="font-medium text-repower-navy-900">{COMPANY_INFO.contact.phone}</p>
+                    <p className="text-sm text-repower-navy-900/60">Monday - Saturday, 8 AM - 5 PM</p>
                   </div>
                 </div>
-                
-                <Separator />
-                
+
+                <Separator className="bg-repower-navy-900/10" />
+
                 <div className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-primary mt-0.5" />
+                  <Mail className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <p className="font-medium">{COMPANY_INFO.contact.email}</p>
-                    <p className="text-sm text-muted-foreground">We respond within 24 hours</p>
+                    <p className="font-medium text-repower-navy-900">{COMPANY_INFO.contact.email}</p>
+                    <p className="text-sm text-repower-navy-900/60">We respond within 24 hours</p>
                   </div>
                 </div>
-                
-                <Separator />
-                
-                <a 
+
+                <Separator className="bg-repower-navy-900/10" />
+
+                <a
                   href="https://www.google.com/maps/dir/?api=1&destination=Harris+Boat+Works,+Gores+Landing,+ON"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 hover:bg-muted/50 rounded-lg p-2 -m-2 transition-colors cursor-pointer group"
+                  className="flex items-start gap-3 hover:bg-repower-navy-900/[0.04] rounded-lg p-2 -m-2 transition-colors cursor-pointer group"
                 >
-                  <MapPin className="w-5 h-5 text-primary mt-0.5 group-hover:scale-110 transition-transform" />
+                  <MapPin className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <p className="font-medium group-hover:text-primary transition-colors">Visit Our Location</p>
-                    <p className="text-sm text-muted-foreground">{COMPANY_INFO.address.full}</p>
-                    <p className="text-xs text-primary mt-1">Get Directions →</p>
+                    <p className="font-medium text-repower-navy-900 group-hover:text-repower-mercury-red transition-colors">Visit Our Location</p>
+                    <p className="text-sm text-repower-navy-900/60">{COMPANY_INFO.address.full}</p>
+                    <p className="text-xs text-repower-mercury-red mt-1">Get Directions →</p>
                   </div>
                 </a>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border-repower-navy-900/10 bg-white shadow-none">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Clock className="w-5 h-5" />
+                <CardTitle className="flex items-center gap-2 font-display text-repower-navy-900">
+                  <Clock className="w-5 h-5 text-repower-mercury-red" strokeWidth={1.5} />
                   Response Times
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm">Normal Inquiries</span>
-                  <Badge variant="secondary">24 hours</Badge>
+                  <span className="text-sm text-repower-navy-900">Normal Inquiries</span>
+                  <Badge variant="secondary" className="bg-repower-navy-900/10 text-repower-navy-900 hover:bg-repower-navy-900/15">24 hours</Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm">Urgent Requests</span>
-                  <Badge variant="destructive">2-4 hours</Badge>
+                  <span className="text-sm text-repower-navy-900">Urgent Requests</span>
+                  <Badge className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">2-4 hours</Badge>
                 </div>
-                
-                <Separator className="my-4" />
-                
-                <a 
-                  href="https://calendly.com/harrisboatworks/sales-consultation-clone" 
-                  target="_blank" 
+
+                <Separator className="my-4 bg-repower-navy-900/10" />
+
+                <a
+                  href="https://calendly.com/harrisboatworks/sales-consultation-clone"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <Button className="w-full" variant="default">
+                  <Button className="w-full bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
                     Book an Appointment
                   </Button>
                 </a>
               </CardContent>
             </Card>
 
-            <Card className="bg-primary/5 border-primary/20">
+            <Card className="bg-repower-cream border-l-2 border-repower-gold border-y border-r border-y-repower-navy-900/10 border-r-repower-navy-900/10 shadow-none">
               <CardContent className="p-4">
                 <div className="flex items-start gap-3">
-                  <Zap className="w-5 h-5 text-primary mt-0.5" />
+                  <Zap className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <p className="font-medium text-primary">Prefer to talk?</p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Give us a call at {COMPANY_INFO.contact.phone} — we're happy to help with questions or quotes.
+                    <p className="font-medium text-repower-navy-900">Prefer to talk?</p>
+                    <p className="text-sm text-repower-navy-900/70 mt-1">
+                      Give us a call at {COMPANY_INFO.contact.phone}, we're happy to help with questions or quotes.
                     </p>
                   </div>
                 </div>
@@ -443,6 +454,7 @@ export default function Contact() {
         </div>
       </div>
     </div>
+    <SiteFooter />
     </>
   );
 }

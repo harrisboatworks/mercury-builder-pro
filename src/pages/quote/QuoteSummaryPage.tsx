@@ -38,7 +38,6 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
-import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import QRCode from 'qrcode';
 import { SITE_URL } from '@/lib/site';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
@@ -83,7 +82,7 @@ export default function QuoteSummaryPage() {
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [warrantyCostsLoaded, setWarrantyCostsLoaded] = useState(false);
-  const isMounted = true; // Render immediately — no artificial delay
+  const isMounted = true; // Render immediately, no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   const [showAuthSaveDialog, setShowAuthSaveDialog] = useState(false);
   const [showPhoneCapture, setShowPhoneCapture] = useState(false);
@@ -92,7 +91,7 @@ export default function QuoteSummaryPage() {
   // Auto-save quote when returning from Google OAuth
   useAutoSaveQuoteOnAuth();
 
-  // Silent soft-lead save — auto-persist quote snapshot for anonymous visitors
+  // Silent soft-lead save, auto-persist quote snapshot for anonymous visitors
   const softLeadSavedRef = useRef(false);
   useEffect(() => {
     if (softLeadSavedRef.current || state.isLoading || !state.motor) return;
@@ -138,7 +137,7 @@ export default function QuoteSummaryPage() {
             } as any);
         }
       } catch {
-        // Silently fail — analytics should never break the app
+        // Silently fail, analytics should never break the app
       }
     })();
   }, [state.isLoading, state.motor]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -160,6 +159,7 @@ export default function QuoteSummaryPage() {
   
   // Cinematic reveal - show for fresh quotes coming from package selection
   const [showCinematic, setShowCinematic] = useState(false);
+  const [subtotalStable, setSubtotalStable] = useState(false);
   const cinematicTriggeredRef = useRef(false);
   
   // Extract stable motor ID outside the effect to prevent re-triggers on object reference changes
@@ -208,7 +208,7 @@ export default function QuoteSummaryPage() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // isMounted gate removed — content renders immediately from context
+  // isMounted gate removed, content renders immediately from context
 
   // Set document title
   useEffect(() => {
@@ -325,7 +325,7 @@ export default function QuoteSummaryPage() {
     : 0;
   const warrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
   
-  // Calculate pricing — use frozen snapshot if available (shared/QR links),
+  // Calculate pricing, use frozen snapshot if available (shared/QR links),
   // otherwise calculate live from current promo data
   const motorMSRP = state.frozenPricing?.motorMSRP ?? (quoteData.motor?.msrp || quoteData.motor?.basePrice || 0);
   const motorSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || motorMSRP;
@@ -425,6 +425,17 @@ export default function QuoteSummaryPage() {
     return packageSpecificTotals;
   }, [packageSpecificTotals, state.frozenPricing]);
 
+  // Wait for displayPricing.subtotal to settle before triggering the cinematic.
+  // accessoryBreakdown (which adds prop allowance, package extras, etc.) computes
+  // after first paint, so without this gate the cinematic counter can finish on
+  // the motor-only price ($28,122) instead of the true subtotal ($29,322).
+  useEffect(() => {
+    if (subtotalStable) return;
+    if (displayPricing.subtotal <= 0) return;
+    const t = setTimeout(() => setSubtotalStable(true), 150);
+    return () => clearTimeout(t);
+  }, [displayPricing.subtotal, subtotalStable]);
+
   // Live total for stale-quote comparison (always calculated from current data, ignoring frozen)
   const liveTotalForComparison = useMemo(() => {
     if (!state.frozenPricing) return 0;
@@ -447,7 +458,7 @@ export default function QuoteSummaryPage() {
 
 
   // Note: calculateRunningTotal doesn't model promotion-level discounts (discount_fixed_amount,
-  // discount_percentage) — those are only applied in the summary page via getTotalPromotionalSavings.
+  // discount_percentage), those are only applied in the summary page via getTotalPromotionalSavings.
   // We subtract basePromoSavings from the effective price to align the two systems, then compare.
   useEffect(() => {
     if (import.meta.env.DEV && motor) {
@@ -531,7 +542,7 @@ export default function QuoteSummaryPage() {
       const packageTax = displayPricing.subtotal * 0.13;
       const packageTotal = displayPricing.subtotal + packageTax;
       
-      // Generate QR code — always generate for all quotes (cash & financing)
+      // Generate QR code, always generate for all quotes (cash & financing)
       // Points to financing app with prefilled params for financing-eligible quotes,
       // or to the main site for sub-threshold quotes
       const tradeInForQr = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo.estimatedValue || 0) : 0;
@@ -664,6 +675,7 @@ export default function QuoteSummaryPage() {
         console.error('Failed to save lead:', leadError);
       }
       
+      const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
       const pdfUrl = await generateQuotePDF(pdfData);
       await downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
       
@@ -675,7 +687,7 @@ export default function QuoteSummaryPage() {
           : '';
         const promoNote = state.selectedPromoOption ? ` | Promo: ${state.selectedPromoOption}` : '';
         const refNote = savedQuoteRefForSms ? `\nRef: ${savedQuoteRefForSms}` : '';
-        const quoteLink = savedQuoteIdForSms ? `\nView: https://mercuryrepower.ca/quote/saved/${savedQuoteIdForSms}` : '';
+        const quoteLink = savedQuoteIdForSms ? `\nView: https://www.mercuryrepower.ca/quote/saved/${savedQuoteIdForSms}` : '';
         const smsMessage = `👀 Quote Downloaded!${refNote}\n${customerLabel}\n${hp}HP ${motorName}\nTotal: $${packageTotal.toLocaleString('en-CA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}${tradeInNote}${promoNote}\nPkg: ${selectedPackageLabel}${quoteLink}`;
         
         await supabase.functions.invoke('send-sms', {
@@ -687,9 +699,10 @@ export default function QuoteSummaryPage() {
       
     } catch (error) {
       console.error('PDF generation error:', error);
+      const detail = error instanceof Error ? error.message : String(error);
       toast({
-        title: "Error", 
-        description: "Failed to generate PDF. Please try again.",
+        title: "PDF generation failed",
+        description: `Please try again. If this keeps happening, share this with support: ${detail}`,
         variant: "destructive"
       });
     } finally {
@@ -972,7 +985,22 @@ export default function QuoteSummaryPage() {
 
   return (
     <>
-      <QuoteSummaryPageSEO />
+      <QuoteSummaryPageSEO
+        selectedMotor={
+          state.motor
+            ? {
+                name: (state.motor as any).model_display || state.motor.model || `Mercury ${hp}HP`,
+                hp: hp || null,
+                family: (state.motor as any).family || null,
+                shaft: (state.motor as any).shaft_code || (state.motor as any).shaft || null,
+                modelNumber: (state.motor as any).model_number || (state.motor as any).mercury_model_no || null,
+                image: (state.motor as any).hero_image_url || (state.motor as any).image_url || null,
+                priceCAD: motorSalePrice || null,
+                inStock: !!(state.motor as any).in_stock,
+              }
+            : null
+        }
+      />
       {/* Deposit Info Dialog */}
       <DepositInfoDialog
         open={showDepositDialog}
@@ -988,7 +1016,7 @@ export default function QuoteSummaryPage() {
       />
       {/* Cinematic Quote Reveal */}
       <QuoteRevealCinematic
-        isVisible={showCinematic && isMounted && !promoLoading && warrantyCostsLoaded}
+        isVisible={showCinematic && isMounted && !promoLoading && warrantyCostsLoaded && subtotalStable}
         onComplete={handleCinematicComplete}
         motorName={motorName}
         finalPrice={displayPricing.subtotal}
@@ -1010,19 +1038,20 @@ export default function QuoteSummaryPage() {
           livePromoSavings={livePromoSavings}
           liveTotal={liveTotalForComparison}
           promoEndDate={promotions?.[0]?.end_date ?? null}
-          onKeepOriginal={() => {/* keep frozen — do nothing */}}
+          onKeepOriginal={() => {/* keep frozen, do nothing */}}
           onUpdatePricing={() => dispatch({ type: 'SET_FROZEN_PRICING', payload: undefined })}
         />
       )}
 
       <ScrollToTop />
       <PageTransition>
-        <QuoteLayout showProgress={false}>
+        <QuoteLayout>
           {!isMounted ? (
             <QuoteSummarySkeleton />
           ) : (
-          <div className="max-w-7xl mx-auto space-y-8">
-            <div className="grid lg:grid-cols-[1fr_360px] gap-8">
+          <div className="bg-repower-paper">
+          <div className="mx-auto w-full max-w-[1100px] py-12 px-6 md:py-16 md:px-0">
+            <div className="grid lg:grid-cols-[1fr_440px] gap-12">
               {/* Main Content - Left Column */}
               <div className="space-y-6">
                 {/* Package Header with Change Link */}
@@ -1111,49 +1140,49 @@ export default function QuoteSummaryPage() {
                 )}
 
                 {/* Mobile CTA Section */}
-                <div className="lg:hidden space-y-4">
-                  <div className="grid grid-cols-2 gap-3">
-                    <Button 
-                      onClick={() => user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)}
-                      variant="outline"
-                      className="w-full"
-                      size="lg"
-                      disabled={noMotorSelected}
-                      title={noMotorSelected ? 'Select a motor first' : undefined}
-                    >
-                      <Download className="w-4 h-4 mr-2" />
-                      Save for Later
-                    </Button>
-                    <Button 
-                      onClick={handleDownloadPDF}
-                      variant="outline"
-                      className="w-full"
-                      size="lg"
-                      disabled={isGeneratingPDF || noMotorSelected}
-                      title={noMotorSelected ? 'Select a motor first' : undefined}
-                    >
-                      <Download className="w-4 h-4 mr-2" />
-                      {isGeneratingPDF ? 'PDF' : 'Download PDF'}
-                    </Button>
-                  </div>
-                  {displayPricing.total >= FINANCING_MINIMUM && (
-                    <Button 
-                      onClick={handleApplyForFinancing}
-                      variant="default"
-                      className="w-full"
-                      size="lg"
-                    >
-                      <CreditCard className="w-4 h-4 mr-2" />
-                      Apply for Financing
-                    </Button>
-                  )}
-                  <Button 
-                    onClick={handleStepComplete}
-                    className="w-full bg-primary hover:opacity-90 text-primary-foreground premium-pulse"
-                    size="lg"
+                <div className="lg:hidden space-y-3">
+                  <button
+                    onClick={() => user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)}
+                    disabled={noMotorSelected}
+                    title={noMotorSelected ? 'Select a motor first' : undefined}
+                    className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 disabled:opacity-50"
                   >
-                    Continue to Schedule
-                  </Button>
+                    <span className="inline-flex items-center justify-center gap-2">
+                      <Download className="w-4 h-4" />
+                      Save for Later
+                    </span>
+                  </button>
+                  <button
+                    onClick={handleDownloadPDF}
+                    disabled={isGeneratingPDF || noMotorSelected}
+                    title={noMotorSelected ? 'Select a motor first' : undefined}
+                    className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 disabled:opacity-50"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      <Download className="w-4 h-4" />
+                      {isGeneratingPDF ? 'PDF' : 'Download PDF'}
+                    </span>
+                  </button>
+                  <button
+                    onClick={handleStepComplete}
+                    className="group w-full rounded bg-repower-mercury-red px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 hover:-translate-y-px hover:shadow-md"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      Continue to Schedule
+                      <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </span>
+                  </button>
+                  {displayPricing.total >= FINANCING_MINIMUM && (
+                    <button
+                      onClick={handleApplyForFinancing}
+                      className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40"
+                    >
+                      <span className="inline-flex items-center justify-center gap-2">
+                        <CreditCard className="w-4 h-4" />
+                        Apply for Financing
+                      </span>
+                    </button>
+                  )}
                 </div>
               </div>
 
@@ -1191,6 +1220,7 @@ export default function QuoteSummaryPage() {
                 />
               </div>
             </div>
+          </div>
           </div>
           )}
           

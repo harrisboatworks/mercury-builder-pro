@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke
-last_updated: 2026-05-01
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 motor_id: e920cfdf-223a-408a-850b-6f112e15c4d7
 slug: fourstroke-9-9hp-9-9mh-fourstroke
 family: FourStroke
@@ -19,7 +19,7 @@ price_cad: 2999
 # 9.9MH FourStroke
 
 Mercury FourStroke 9.9 HP outboard motor (model 1A10201LK).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
@@ -31,8 +31,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 ## Pricing (CAD)
 
 - **Selling price:** $2,999
-- **MSRP:** $3,875
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **MSRP:** $3,860
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability

@@ -1,5 +1,9 @@
 import { Helmet } from '@/lib/helmet';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { getAllFAQItems } from '@/data/faqData';
+import { getCurrentMercuryFinancingRate } from '@/components/promotions/TDAlwaysOnOffer';
+
+const CURRENT_RATE = getCurrentMercuryFinancingRate();
 
 // Select the key repower questions for this page's schema
 const REPOWER_SCHEMA_QUESTIONS = [
@@ -21,10 +25,10 @@ export function RepowerPageSEO() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://mercuryrepower.ca/#business",
+        "@id": "https://www.mercuryrepower.ca/#business",
         "name": "Harris Boat Works",
-        "description": "Mercury Certified Repower Center serving Ontario boaters since 1947. Expert outboard motor repowering on Rice Lake. Pickup only at Gores Landing — no shipping. Valid government-issued photo ID required at pickup.",
-        "url": "https://mercuryrepower.ca",
+        "description": "Mercury Certified Repower Center serving Ontario boaters since 1947. Expert outboard motor repowering on Rice Lake. Pickup only at Gores Landing, no shipping. Valid government-issued photo ID required at pickup.",
+        "url": "https://www.mercuryrepower.ca",
         "telephone": "(905) 342-2153",
         "email": "info@harrisboatworks.ca",
         "address": {
@@ -37,20 +41,20 @@ export function RepowerPageSEO() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1147,
-          "longitude": -78.2564
+          "latitude": 44.1456,
+          "longitude": -78.2542
         },
         "foundingDate": "1947",
-        "priceRange": "$$"
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": "Service",
-        "@id": "https://mercuryrepower.ca/repower#service",
+        "@id": "https://www.mercuryrepower.ca/repower#service",
         "name": "Mercury Outboard Repower Service",
         "serviceType": "Boat Motor Replacement",
-        "provider": { "@id": "https://mercuryrepower.ca/#business" },
+        "provider": { "@id": "https://www.mercuryrepower.ca/#business" },
         "areaServed": ["Rice Lake", "Kawarthas", "Peterborough", "GTA", "Toronto", "Ontario"],
-        "description": "Professional Mercury outboard motor repower service. Get 70% of the benefit of a new boat for 30% of the cost. Includes professional installation and lake testing. Pickup only at Gores Landing — no shipping. Valid government-issued photo ID required.",
+        "description": "Professional Mercury outboard motor repower service. Get 70% of the benefit of a new boat for 30% of the cost. Includes professional installation and lake testing. Pickup only at Gores Landing, no shipping. Valid government-issued photo ID required.",
         "offers": {
           "@type": "Offer",
           "priceRange": "$8,000 - $18,000",
@@ -112,10 +116,10 @@ export function RepowerPageSEO() {
       },
       {
         "@type": "WebPage",
-        "@id": "https://mercuryrepower.ca/repower#webpage",
-        "url": "https://mercuryrepower.ca/repower",
+        "@id": "https://www.mercuryrepower.ca/repower#webpage",
+        "url": "https://www.mercuryrepower.ca/repower",
         "name": "Mercury Outboard Repower Ontario | Harris Boat Works",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
@@ -123,13 +127,13 @@ export function RepowerPageSEO() {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://mercuryrepower.ca/"
+              "item": "https://www.mercuryrepower.ca/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Repower",
-              "item": "https://mercuryrepower.ca/repower"
+              "item": "https://www.mercuryrepower.ca/repower"
             }
           ]
         }
@@ -139,17 +143,17 @@ export function RepowerPageSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Outboard Repower Ontario | 70% of the Benefit for 30% of the Cost | Harris Boat Works</title>
-      <meta name="description" content="Expert Mercury repower in Ontario. Get 70% of a new boat experience for 30% of the cost. 30-40% better fuel economy. Lake tested on Rice Lake. Mercury dealer since 1965. $8,000-$18,000 typical." />
+      <title>Mercury Repower Ontario 2026: Cost, Process, Financing | HBW</title>
+      <meta name="description" content={`Mercury repowers in Ontario typically run $11,000-$40,000 CAD all-in. Live pricing, the full repower process, and ${CURRENT_RATE.rate} financing at Harris Boat Works.`} />
       <meta name="keywords" content="mercury repower ontario, boat repower rice lake, outboard motor replacement, mercury dealer kawarthas, repower cottage boat, mercury four stroke, boat motor upgrade" />
-      <link rel="canonical" href="https://mercuryrepower.ca/repower" />
+      <link rel="canonical" href="https://www.mercuryrepower.ca/repower" />
       
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Outboard Repower Ontario | Harris Boat Works" />
       <meta property="og:description" content="70% of the benefit for 30% of the cost. Expert Mercury repowers on Rice Lake since 1965." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://mercuryrepower.ca/repower" />
-      <meta property="og:image" content="https://mercuryrepower.ca/social-share.jpg" />
+      <meta property="og:url" content="https://www.mercuryrepower.ca/repower" />
+      <meta property="og:image" content="https://www.mercuryrepower.ca/social-share.jpg" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

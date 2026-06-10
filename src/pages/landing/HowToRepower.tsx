@@ -6,7 +6,8 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { HowToRepowerSEO, HOWTO_FAQ } from '@/components/seo/HowToRepowerSEO';
 import { ChevronRight, FileText, Ruler, CreditCard, CalendarDays, Wrench, Waves, Key } from 'lucide-react';
 
@@ -14,7 +15,7 @@ const steps = [
   {
     icon: FileText,
     title: 'Build Your Quote Online',
-    body: "Use the configurator at mercuryrepower.ca to choose your Mercury motor (FourStroke, Pro XS, SeaPro, or ProKicker), shaft length, and controls. You'll see live CAD pricing, financing estimates, and any active promotions instantly — no forms, no waiting.",
+    body: "Use the configurator at mercuryrepower.ca to choose your Mercury motor (FourStroke, Pro XS, SeaPro, or ProKicker), shaft length, and controls. You'll see live CAD pricing, financing estimates, and any active promotions instantly, no forms, no waiting.",
     cta: { label: 'Open the quote builder', to: '/quote/motor-selection' }
   },
   {
@@ -35,7 +36,7 @@ const steps = [
   {
     icon: Wrench,
     title: 'Professional Install & Rigging',
-    body: 'Our Mercury-certified technicians remove your old motor, install the new Mercury, and replace throttle, shift, steering, fuel lines, and gauges as needed. Full rigging is included in every repower package — no surprise add-ons.'
+    body: 'Our Mercury-certified technicians remove your old motor, install the new Mercury, and replace throttle, shift, steering, fuel lines, and gauges as needed. Full rigging is included in every repower package, no surprise add-ons.'
   },
   {
     icon: Waves,
@@ -45,15 +46,16 @@ const steps = [
   {
     icon: Key,
     title: 'Pickup & Walk-Through',
-    body: 'Pickup is by appointment at Gores Landing — about 20–30 minutes. Bring photo ID and your purchase order. We register the warranty, walk you through controls and break-in, and you\'re on the water. Pickup only — no shipping.'
+    body: 'Pickup is by appointment at Gores Landing, about 20–30 minutes. Bring photo ID and your purchase order. We register the warranty, walk you through controls and break-in, and you\'re on the water. Pickup only, no shipping.'
   }
 ];
 
 export default function HowToRepower() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <HowToRepowerSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Breadcrumb */}
@@ -71,11 +73,11 @@ export default function HowToRepower() {
             How to Repower a Boat
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            The seven-step Mercury repower process at Harris Boat Works — from online quote to lake-tested pickup at Gores Landing on Rice Lake. Family-owned since 1947, Mercury Platinum Dealer since 1965.
+            The seven-step Mercury repower process at Harris Boat Works, from online quote to lake-tested pickup at Gores Landing on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
           </p>
           <div className="mt-8">
             <Button asChild size="lg">
-              <Link to="/quote/motor-selection">Start at Step 1 — Build Your Quote</Link>
+              <Link to="/quote/motor-selection">Start at Step 1, Build Your Quote</Link>
             </Button>
           </div>
         </header>
@@ -150,6 +152,7 @@ export default function HowToRepower() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }

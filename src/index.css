@@ -387,6 +387,24 @@ a, button, [role="button"], .cursor-pointer {
 
     --radius: 0.5rem;
 
+    /* Repower palette (HSL) — single source of truth for page surfaces */
+    --repower-paper: 39 50% 97%;          /* #FAF8F4 — page background */
+    --repower-cream: 36 38% 94%;          /* #F5F1EA — card / elevated surface */
+    --repower-cream-deep: 36 38% 88%;     /* #ECE4D2 — gradient stop */
+    --repower-navy-900: 217 75% 7%;       /* #050E1C */
+    --repower-navy-800: 217 60% 10%;      /* #0A1628 */
+    --repower-navy-700: 217 52% 15%;      /* #122039 */
+    --repower-gold: 41 53% 54%;           /* #C9A24A */
+    --repower-mercury-red: 351 86% 42%;   /* #C8102E */
+    --repower-mercury-red-deep: 351 86% 33%;
+
+    /* Semantic surface tokens — use these instead of raw color names */
+    --surface-page: var(--repower-paper);     /* matches motor-selection page */
+    --surface-card: var(--repower-cream);     /* matches motor card body */
+    --surface-image: var(--repower-paper);    /* background behind motor images — matches page */
+    --gradient-image-bg: linear-gradient(135deg, hsl(var(--repower-paper)) 0%, hsl(var(--repower-cream)) 100%);
+
+
     /* Motor Category Colors */
     --portable: 207 85% 35%;
     --portable-foreground: 0 0% 100%;
@@ -771,14 +789,30 @@ html {
   transition: filter 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* Premium Card Hover Effects */
+/* ===== Shared Card Hover (locked spec) =====
+ * Flat at rest, lifts subtly with brand-easing on hover.
+ * Use on any card surface for consistent interaction feel.
+ */
+.card-hover {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -12px rgba(11, 31, 58, 0.18);
+}
+
+/* Premium Card Hover Effects (legacy — used by hero/marketing cards) */
 .premium-card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .premium-card-hover:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(11, 31, 58, 0.12), 0 10px 10px -5px rgba(11, 31, 58, 0.05);
+  transform: translateY(-6px);
 }
 
 .premium-card-hover:hover .card-image {
@@ -1877,4 +1911,81 @@ html {
   animation: loading-bar 1.5s ease-in-out infinite;
 }
 
+
+
+/* Blog directive component utilities (mercury-red helpers) */
+@layer utilities {
+  .text-mercury-red { color: hsl(var(--mercury-red)); }
+  .bg-mercury-red { background-color: hsl(var(--mercury-red)); }
+  .bg-mercury-red\/5 { background-color: hsl(var(--mercury-red) / 0.05); }
+  .border-l-mercury-red { border-left-color: hsl(var(--mercury-red)); }
+  .border-mercury-red { border-color: hsl(var(--mercury-red)); }
+}
+
+/* Blog article table polish.
+   Applies to both react-markdown output (when BlogTable override is bypassed,
+   e.g. in directive-rendered nested markdown) and to the raw <table> HTML
+   emitted by the static prerender pipeline (marked -> HTML, served with this
+   same CSS bundle). The React BlogTable component layers richer behavior on
+   top (numeric column detection, total-row emphasis); this CSS provides the
+   editorial frame, header accent, and zebra/hover treatment everywhere. */
+.blog-article-prose table,
+article .blog-article-prose table {
+  display: table;
+  width: 100%;
+  table-layout: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border) / 0.3);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px hsl(var(--repower-navy-900) / 0.04),
+              0 0 0 0.75rem hsl(var(--repower-paper));
+  margin: 2rem 0.75rem;
+}
+.blog-article-prose table thead {
+  background: hsl(var(--repower-navy-900) / 0.05);
+}
+.blog-article-prose table thead th {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: hsl(var(--repower-navy-900));
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid hsl(var(--mercury-red));
+  text-align: left;
+}
+.blog-article-prose table tbody td {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid hsl(var(--border) / 0.3);
+  font-size: 0.9rem;
+  color: hsl(var(--repower-navy-900) / 0.85);
+  vertical-align: top;
+}
+.blog-article-prose table tbody tr:first-child td { border-top: 0; }
+.blog-article-prose table tbody tr:nth-child(even) {
+  background: hsl(var(--repower-paper) / 0.3);
+}
+.blog-article-prose table tbody tr:hover {
+  background: hsl(var(--mercury-red) / 0.05);
+  transition: background-color 150ms ease;
+}
+/* Total-row emphasis (mirrors BlogTable.tsx data attributes for prerender path) */
+.blog-article-prose table tr[data-blog-row-type="total"] {
+  background: hsl(var(--repower-navy-900) / 0.05) !important;
+  border-top: 2px solid hsl(var(--repower-navy-900) / 0.3);
+}
+.blog-article-prose table tr[data-blog-row-type="total"] td {
+  font-weight: 600;
+  color: hsl(var(--repower-navy-900));
+}
+.blog-article-prose table td[data-blog-cell-type="total-value"],
+.blog-article-prose table tr[data-blog-row-type="total"] td[data-blog-cell-type="total-value"] {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: hsl(var(--mercury-red));
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
 

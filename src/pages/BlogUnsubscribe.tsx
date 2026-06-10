@@ -53,9 +53,7 @@ const BlogUnsubscribe = () => {
 
         {status === 'success' && (
           <div className="flex flex-col items-center gap-4">
-            <div className="rounded-full bg-green-100 p-4">
-              <CheckCircle className="h-12 w-12 text-green-600" />
-            </div>
+            <CheckCircle className="h-14 w-14 text-repower-gold" strokeWidth={1.5} />
             <h1 className="text-2xl font-semibold text-foreground">Unsubscribed</h1>
             <p className="text-muted-foreground">{message}</p>
             <p className="text-sm text-muted-foreground mt-4">
@@ -74,9 +72,7 @@ const BlogUnsubscribe = () => {
 
         {status === 'error' && (
           <div className="flex flex-col items-center gap-4">
-            <div className="rounded-full bg-red-100 p-4">
-              <XCircle className="h-12 w-12 text-red-600" />
-            </div>
+            <XCircle className="h-14 w-14 text-repower-mercury-red" strokeWidth={1.5} />
             <h1 className="text-2xl font-semibold text-foreground">Something Went Wrong</h1>
             <p className="text-muted-foreground">{message}</p>
             <div className="flex gap-3 mt-6">

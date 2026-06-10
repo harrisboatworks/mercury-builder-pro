@@ -1,25 +1,25 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs
-last_updated: 2026-05-01
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 motor_id: ffb1f5fd-fc8a-4a0a-bd21-5a1ac1af917b
 slug: proxs-150hp-150-exlpt-proxs
 family: ProXS
 horsepower: 150
 model_number: 1152F231D
 availability: in_stock
-price_cad: 24233
+price_cad: 24475
 ---
 
 # 150 EXLPT ProXS
 
 Mercury ProXS 150 HP outboard motor (model 1152F231D).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
@@ -30,9 +30,9 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 
 ## Pricing (CAD)
 
-- **Selling price:** $24,233
-- **MSRP:** $27,540
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **Selling price:** $24,475
+- **MSRP:** $27,265
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability
@@ -46,7 +46,7 @@ Larger pontoons, fiberglass runabouts, and walkaround/cuddy boats 20–24 ft.
 
 ## Not ideal for
 
-Small tenders or boats rated under this HP — match HP to transom rating, never exceed it.
+Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
 
 ## Build a quote
 

@@ -1,5 +1,17 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
+import googlePlaces from '@/data/google-places-cache.json';
+
+const LIVE_AGGREGATE_RATING = {
+  "@type": "AggregateRating",
+  ratingValue: googlePlaces.ratingValue,
+  reviewCount: googlePlaces.reviewCount,
+  bestRating: "5",
+};
+const LIVE_OPENING_HOURS = Array.isArray(googlePlaces.openingHoursSpecification)
+  ? googlePlaces.openingHoursSpecification
+  : [];
 
 export function ContactPageSEO() {
   const structuredData = {
@@ -7,21 +19,20 @@ export function ContactPageSEO() {
     "@graph": [
       {
         "@type": "ContactPage",
-        "@id": "https://mercuryrepower.ca/contact#webpage",
-        "url": "https://mercuryrepower.ca/contact",
+        "@id": "https://www.mercuryrepower.ca/contact#webpage",
+        "url": "https://www.mercuryrepower.ca/contact",
         "name": "Contact Harris Boat Works",
-        "description": "Mercury dealer on Rice Lake — phone (905) 342-2153, text (647) 952-2153, email info@harrisboatworks.ca.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#localbusiness" },
+        "description": "Mercury dealer on Rice Lake, phone (905) 342-2153, text (647) 952-2153, email info@harrisboatworks.ca.",
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#localbusiness" },
         "inLanguage": "en-CA"
       },
       {
         "@type": ["LocalBusiness", "Store", "AutoRepair"],
-        "@id": "https://mercuryrepower.ca/#localbusiness",
+        "@id": "https://www.mercuryrepower.ca/#localbusiness",
         "name": "Harris Boat Works",
-        "image": "https://www.harrisboatworks.ca/logo.png",
+        "image": "https://www.mercuryrepower.ca/pwa-512x512.png",
         "url": "https://www.harrisboatworks.ca/",
-        "priceRange": "$$",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "address": {
@@ -34,8 +45,8 @@ export function ContactPageSEO() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1147,
-          "longitude": -78.2564
+          "latitude": 44.1456,
+          "longitude": -78.2542
         },
         "contactPoint": [
           {
@@ -61,13 +72,9 @@ export function ContactPageSEO() {
           { "@type": "State", "name": "Ontario" },
           { "@type": "Country", "name": "Canada" }
         ],
-        "sameAs": [
-          "https://www.harrisboatworks.ca/",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks",
-          "https://www.youtube.com/@HarrisBoatWorks",
-          "https://g.page/harrisboatworks"
-        ]
+        "sameAs": BUSINESS_SAME_AS,
+        "aggregateRating": LIVE_AGGREGATE_RATING,
+        "openingHoursSpecification": LIVE_OPENING_HOURS
       }
     ]
   };

@@ -250,7 +250,7 @@ export function getContextualPrompts(
     return [
       `Is ${hp}HP enough for me?`,
       "What warranty comes with it?",
-      `${hp} vs ${hp + 25}HP — which one?`,
+      `${hp} vs ${hp + 25}HP, which one?`,
       "Good for pontoons?"
     ];
   }
@@ -385,7 +385,7 @@ export function getPageWelcomeMessage(
 
   // Motor selection with motor context
   if ((currentPage === '/' || currentPage.includes('/quote/motor')) && motor && hp > 0) {
-    return `Hey! Checking out the ${hp}HP ${family}? Solid choice — what do you want to know about it?`;
+    return `Hey! Checking out the ${hp}HP ${family}? Solid choice, what do you want to know about it?`;
   }
 
   // ============== OTHER PAGES ==============
@@ -402,7 +402,7 @@ export function getPageWelcomeMessage(
   }
   
   if (currentPage.includes('/repower')) {
-    return "Thinking about repowering? Tell me about your boat — I'll help you figure out if it makes sense.";
+    return "Thinking about repowering? Tell me about your boat, I'll help you figure out if it makes sense.";
   }
   
   if (currentPage.includes('/contact')) {

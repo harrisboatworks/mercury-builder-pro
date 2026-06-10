@@ -31,9 +31,9 @@ export const getCustomerHighlight = (hp: number) => {
 };
 
 export const harrisTestimonials = [
-  '"Harris treats customers like family. Been going there for 20 years." — Linda Davies, Bowmanville',
-  '"Best marine service in the Kawarthas. They know their stuff." — Mike Chen, Peterborough',
-  '"Harris got me the right motor and the best price." — Sarah Williams, Port Hope',
-  '"Professional service, honest advice, fair pricing." — Tom Mitchell, Cobourg',
-  '"They service what they sell - that matters." — Jennifer Park, Rice Lake'
+  '"Harris treats customers like family. Been going there for 20 years." Linda Davies, Bowmanville',
+  '"Best marine service in the Kawarthas. They know their stuff." Mike Chen, Peterborough',
+  '"Harris got me the right motor and the best price." Sarah Williams, Port Hope',
+  '"Professional service, honest advice, fair pricing." Tom Mitchell, Cobourg',
+  '"They service what they sell - that matters." Jennifer Park, Rice Lake'
 ];

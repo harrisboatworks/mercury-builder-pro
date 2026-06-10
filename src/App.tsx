@@ -19,7 +19,7 @@ import { GlobalStickyQuoteBar } from "@/components/quote/GlobalStickyQuoteBar";
 import { PricingRibbon } from "@/components/marketing/PricingRibbon";
 import { RouteLoader } from "@/components/ui/RouteLoader";
 import { GlobalAIChat } from "@/components/chat/GlobalAIChat";
-import { UnifiedMobileBar } from "@/components/quote-builder/UnifiedMobileBar";
+
 import { ComparisonDesktopButton } from "@/components/motors/ComparisonDesktopButton";
 import { usePageViewTracker } from "@/hooks/usePageViewTracker";
 import { GoogleRatingBadge } from "@/components/business/GoogleRatingBadge";
@@ -27,6 +27,9 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SoundProvider } from "@/contexts/SoundContext";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { lazyWithRetry } from "@/lib/lazyWithRetry";
+import { ConsentBanner } from "@/components/analytics/ConsentBanner";
+import { AnalyticsRouter } from "@/components/analytics/AnalyticsRouter";
+import { GlobalCtaTracker } from "@/components/analytics/GlobalCtaTracker";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
@@ -37,6 +40,7 @@ const Login = lazy(() => import("./pages/Login"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Settings = lazy(() => import("./pages/Settings"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const PricingReference = lazy(() => import("./pages/PricingReference"));
 
 // Quote builder pages
 const MotorSelectionPage = lazy(() => import("@/pages/quote/MotorSelectionPage"));
@@ -61,6 +65,7 @@ const AdminQuoteDetail = lazy(() => import("./pages/AdminQuoteDetail"));
 const AdminQuoteBuilder = lazy(() => import("./pages/admin/AdminQuoteBuilder"));
 const FinancingAdmin = lazy(() => import("./components/admin/FinancingAdmin"));
 const AdminFinancingApplications = lazy(() => import("./pages/AdminFinancingApplications"));
+const AdminFinancingSubmissionLogs = lazy(() => import("./pages/AdminFinancingSubmissionLogs"));
 const AdminSecurity = lazy(() => import("./pages/AdminSecurity"));
 const AdminSINEncryptionTest = lazy(() => import("./pages/AdminSINEncryptionTest"));
 const AdminZapier = lazy(() => import("./pages/AdminZapier"));
@@ -73,7 +78,9 @@ const AdminInventory = lazy(() => import("./pages/AdminInventory"));
 const AdminAgentFunnel = lazy(() => import("./pages/admin/AgentFunnel"));
 const AdminStockSync = lazy(() => import("./pages/AdminStockSync"));
 const AdminConnectors = lazy(() => import("./pages/AdminConnectors"));
+const AdminGrowthAgent = lazy(() => import("./pages/AdminGrowthAgent"));
 const AdminSources = lazy(() => import("./pages/AdminSources"));
+const AdminSEOHealth = lazy(() => import("./pages/AdminSEOHealth"));
 const AdminPricingImport = lazy(() => import("./pages/AdminPricingImport"));
 const MotorOptionsCatalog = lazy(() => import("./components/admin/options/MotorOptionsCatalog"));
 const MotorOptionsManager = lazy(() => import("./components/admin/options/MotorOptionsManager"));
@@ -100,7 +107,16 @@ const NewQuote = lazy(() => import("./pages/NewQuote"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 const Promotions = lazy(() => import("./pages/Promotions"));
 const Repower = lazy(() => import("./pages/Repower"));
+const RepowerHub = lazy(() => import("./pages/RepowerHub"));
+const RepowerCost = lazy(() => import("./pages/RepowerCost"));
+const RepowerProcess = lazy(() => import("./pages/RepowerProcess"));
+const RepowerFinancing = lazy(() => import("./pages/RepowerFinancing"));
+const RepowerTradeIn = lazy(() => import("./pages/RepowerTradeIn"));
+const MotorSelectionHub = lazy(() => import("./pages/MotorSelectionHub"));
+const MaintenanceHub = lazy(() => import("./pages/MaintenanceHub"));
+const LakesHub = lazy(() => import("./pages/LakesHub"));
 const About = lazy(() => import("./pages/About"));
+const AboutJayHarris = lazy(() => import("./pages/AboutJayHarris"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const AdminBlog = lazy(() => import("./pages/AdminBlog"));
@@ -111,12 +127,12 @@ const FAQ = lazy(() => import("./pages/FAQ"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const TikTokCallback = lazy(() => import("./pages/TikTokCallback"));
-const MotorRedirect = lazy(() => import("./pages/MotorRedirect"));
 const MotorPage = lazy(() => import("./pages/MotorPage"));
 const TradeInValuePage = lazyWithRetry(
   () => import("./pages/TradeInValuePage"),
   "TradeInValuePage"
 );
+const ToolsIndex = lazy(() => import("./pages/ToolsIndex"));
 const FrenchLanding = lazy(() => import("./pages/FrenchLanding"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
@@ -133,16 +149,24 @@ const MercuryDealerCobourg = lazy(() => import("./pages/landing/MercuryDealerCob
 const MercuryDealerGTA = lazy(() => import("./pages/landing/MercuryDealerGTA"));
 // Pilot SEO landing pages (Batch 3 — Product hub + lineup)
 const MercuryProXS = lazy(() => import("./pages/landing/MercuryProXS"));
+const MercuryProXS250 = lazy(() => import("./pages/landing/MercuryProXS250"));
+const MercuryPortable9to20HP = lazy(() => import("./pages/landing/MercuryPortable9to20HP"));
+const MercuryMidRange40to60HP = lazy(() => import("./pages/landing/MercuryMidRange40to60HP"));
+const MercuryMidPower90to115HP = lazy(() => import("./pages/landing/MercuryMidPower90to115HP"));
 const MercuryOutboardsOntario = lazy(() => import("./pages/landing/MercuryOutboardsOntario"));
 // Pilot SEO landing pages (Batch 4 — Pontoon)
 const MercuryPontoonOutboards = lazy(() => import("./pages/landing/MercuryPontoonOutboards"));
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
 const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
-const MandarinBlogArticle = lazy(() => import("./pages/blog/MandarinBlogArticle"));
+const BlogIndexFr = lazy(() => import("./pages/blog/BlogIndexFr"));
+// MandarinBlogArticle (legacy hand-authored page) retired 2026-06-07 — the
+// data-driven MandarinBlogArticlePage now serves /blog/zh/mercury-repower-guide-gta.
 const MandarinBlogArticlePage = lazy(() => import("./pages/blog/MandarinBlogArticlePage"));
 const KoreanBlogArticlePage = lazy(() => import("./pages/blog/KoreanBlogArticlePage"));
 const SpanishBlogArticlePage = lazy(() => import("./pages/blog/SpanishBlogArticlePage"));
+const HindiBlogArticlePage = lazy(() => import("./pages/blog/HindiBlogArticlePage"));
+const PunjabiBlogArticlePage = lazy(() => import("./pages/blog/PunjabiBlogArticlePage"));
 
 // Test/Dev pages (low priority)
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
@@ -303,6 +327,14 @@ function AnimatedRoutes() {
           }
         />
         <Route
+          path="/admin/financing-submission-logs"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminFinancingSubmissionLogs />
+            </SecureRoute>
+          }
+        />
+        <Route
           path="/admin/security"
           element={
             <SecureRoute requireAdmin={true}>
@@ -391,6 +423,14 @@ function AnimatedRoutes() {
           }
         />
         <Route
+          path="/admin/growth-agent"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminGrowthAgent />
+            </SecureRoute>
+          }
+        />
+        <Route
           path="/admin/sms"
           element={
             <SecureRoute requireAdmin={true}>
@@ -403,6 +443,14 @@ function AnimatedRoutes() {
           element={
             <SecureRoute requireAdmin={true}>
               <AdminSources />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/seo-health"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminSEOHealth />
             </SecureRoute>
           }
         />
@@ -449,15 +497,18 @@ function AnimatedRoutes() {
         <Route path="/finance-calculator" element={<FinanceCalculator />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/agents" element={<AgentsHub />} />
-        <Route path="/dev" element={<Dev />} />
-        <Route path="/voice-test" element={<VoiceTest />} />
-        {/* Removed obsolete test routes */}
-        <Route path="/quotes/new" element={<NewQuote />} />
-        <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
-        <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
-        <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
-        <Route path="/test-email" element={<TestEmail />} />
-        <Route path="/test-financing-emails" element={<TestFinancingEmails />} />
+        {import.meta.env.DEV && (
+          <>
+            <Route path="/dev" element={<Dev />} />
+            <Route path="/voice-test" element={<VoiceTest />} />
+            <Route path="/quotes/new" element={<NewQuote />} />
+            <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
+            <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
+            <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
+            <Route path="/test-email" element={<SecureRoute requireAdmin={true}><TestEmail /></SecureRoute>} />
+            <Route path="/test-financing-emails" element={<SecureRoute requireAdmin={true}><TestFinancingEmails /></SecureRoute>} />
+          </>
+        )}
         {/* Removed obsolete test pricing routes */}
         
         {/* Admin Import Routes */}
@@ -491,17 +542,29 @@ function AnimatedRoutes() {
         {/* Promotions Page */}
         <Route path="/promotions" element={<Promotions />} />
         
-        {/* Repower Page */}
-        <Route path="/repower" element={<Repower />} />
+        {/* Hub pages (top-level resource pages) */}
+        <Route path="/repower" element={<RepowerHub />} />
+        <Route path="/repower/cost" element={<RepowerCost />} />
+        <Route path="/repower/process" element={<RepowerProcess />} />
+        <Route path="/repower/financing" element={<RepowerFinancing />} />
+        <Route path="/repower/trade-in" element={<RepowerTradeIn />} />
+        <Route path="/repower-legacy" element={<Repower />} />
+        <Route path="/motor-selection" element={<MotorSelectionHub />} />
+        <Route path="/maintenance" element={<MaintenanceHub />} />
+        <Route path="/lakes" element={<LakesHub />} />
         
         {/* Compare Page */}
         <Route path="/compare" element={<Compare />} />
         
         {/* Trade-In Value Estimator */}
         <Route path="/trade-in-value" element={<TradeInValuePage />} />
+
+        {/* Tools Hub */}
+        <Route path="/tools" element={<ToolsIndex />} />
         
         {/* About Page */}
         <Route path="/about" element={<About />} />
+        <Route path="/about/jay-harris" element={<AboutJayHarris />} />
         
         {/* FAQ Page */}
         <Route path="/faq" element={<FAQ />} />
@@ -519,12 +582,18 @@ function AnimatedRoutes() {
         
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
+        <Route path="/pricing-reference" element={<PricingReference />} />
+        {/* Short-link used in blog/case-study copy; redirect to canonical pricing reference. */}
+        <Route path="/n" element={<Navigate to="/pricing-reference" replace />} />
+        <Route path="/blog/fr" element={<BlogIndexFr />} />
         <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
-        <Route path="/blog/zh/mercury-repower-guide-gta" element={<MandarinBlogArticle />} />
+        {/* /blog/zh/mercury-repower-guide-gta now served by MandarinBlogArticlePage (legacy override retired 2026-06-07) */}
         <Route path="/blog/zh/:slug" element={<MandarinBlogArticlePage />} />
         <Route path="/blog/ko/:slug" element={<KoreanBlogArticlePage />} />
         <Route path="/blog/es/:slug" element={<SpanishBlogArticlePage />} />
+        <Route path="/blog/hi/:slug" element={<HindiBlogArticlePage />} />
+        <Route path="/blog/pa/:slug" element={<PunjabiBlogArticlePage />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />
@@ -543,12 +612,21 @@ function AnimatedRoutes() {
         <Route path="/mercury-repower-faq" element={<MercuryRepowerFAQ />} />
         <Route path="/how-to-repower-a-boat" element={<HowToRepower />} />
         <Route path="/mercury-dealer-canada-faq" element={<MercuryDealerCanadaFAQ />} />
-        {/* Pilot SEO Landing Pages — Batch 2 (Geo) */}
-        <Route path="/mercury-dealer-peterborough" element={<MercuryDealerPeterborough />} />
-        <Route path="/mercury-dealer-cobourg" element={<MercuryDealerCobourg />} />
-        <Route path="/mercury-dealer-gta" element={<MercuryDealerGTA />} />
+        {/* Geo landing pages — canonicalized to /locations/:slug. Old URLs redirect for backlink/AI-citation continuity. */}
+        <Route path="/mercury-dealer-peterborough" element={<Navigate to="/locations/peterborough-mercury-dealer" replace />} />
+        <Route path="/mercury-dealer-cobourg" element={<Navigate to="/locations/cobourg-northumberland-mercury" replace />} />
+        <Route path="/mercury-dealer-gta" element={<Navigate to="/locations/gta-mercury-outboards" replace />} />
+        <Route path="/mercury-outboards-whitby" element={<Navigate to="/locations/whitby-mercury-dealer" replace />} />
+        <Route path="/mercury-outboards-ajax" element={<Navigate to="/locations/ajax-mercury-dealer" replace />} />
+        <Route path="/mercury-outboards-pickering" element={<Navigate to="/locations/pickering-mercury-dealer" replace />} />
+        <Route path="/mercury-outboards-oshawa" element={<Navigate to="/locations/oshawa-mercury-dealer" replace />} />
+        <Route path="/mercury-outboards-bowmanville" element={<Navigate to="/locations/bowmanville-courtice-mercury-dealer" replace />} />
         {/* Pilot SEO Landing Pages — Batch 3 (Product hub + lineup) */}
         <Route path="/mercury-pro-xs" element={<MercuryProXS />} />
+        <Route path="/mercury/pro-xs-250" element={<MercuryProXS250 />} />
+        <Route path="/mercury/portable-9-20hp" element={<MercuryPortable9to20HP />} />
+        <Route path="/mercury/mid-range-40-60hp" element={<MercuryMidRange40to60HP />} />
+        <Route path="/mercury/mid-power-90-115hp" element={<MercuryMidPower90to115HP />} />
         <Route path="/mercury-outboards-ontario" element={<MercuryOutboardsOntario />} />
         {/* Pilot SEO Landing Pages — Batch 4 (Pontoon) */}
         <Route path="/mercury-pontoon-outboards" element={<MercuryPontoonOutboards />} />
@@ -585,23 +663,33 @@ const App = () => {
               <GlobalAIChat>
                 <div data-vaul-drawer-wrapper className="min-h-screen bg-background">
                   <ScrollToTop />
-                  <PricingRibbon />
+                  
                   <GlobalSEO />
                   <NotificationToast />
-                  
+
+                  <AnalyticsRouter />
+                  <GlobalCtaTracker />
                   <AnimatedRoutes />
                   <GlobalStickyQuoteBar />
-                  <UnifiedMobileBar />
+
                   <ComparisonDesktopButton />
                   <Canonical />
+                  <ConsentBanner />
 
-                  <footer className="mt-12 border-t border-border bg-muted/30">
-                    <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+
+                  <footer className="border-t border-repower-cream/10 bg-repower-navy-900">
+                    <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-center gap-4 px-6 py-6 md:flex-row md:gap-8 md:px-14">
                       <div className="flex items-center gap-4 md:gap-8">
-                        <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-12 md:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                        <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                        <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-12 w-auto opacity-85 transition-opacity hover:opacity-100 md:h-16" />
+                        <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 w-auto opacity-85 transition-opacity hover:opacity-100 md:h-16" />
                       </div>
-                      <GoogleRatingBadge variant="compact" />
+                      <GoogleRatingBadge variant="compact" tone="dark" />
+                      <a
+                        href="/pricing-reference"
+                        className="text-sm text-repower-cream/80 underline-offset-4 hover:text-repower-cream hover:underline"
+                      >
+                        Mercury Outboard Prices (CAD)
+                      </a>
                     </div>
                   </footer>
                 </div>

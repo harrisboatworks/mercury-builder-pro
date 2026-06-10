@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
-import { Search, Sparkles, X, MessageCircle, Mic, History } from 'lucide-react';
+import { Search, Sparkles, X, MessageCircle, History } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
@@ -13,56 +13,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { getContextualPrompts } from '@/components/chat/getContextualPrompts';
 import type { Motor } from '@/components/QuoteBuilder';
 
-// Web Speech API types
-interface SpeechRecognitionEvent extends Event {
-  results: SpeechRecognitionResultList;
-}
-
-interface SpeechRecognitionResultList {
-  length: number;
-  item(index: number): SpeechRecognitionResult;
-  [index: number]: SpeechRecognitionResult;
-}
-
-interface SpeechRecognitionResult {
-  length: number;
-  item(index: number): SpeechRecognitionAlternative;
-  [index: number]: SpeechRecognitionAlternative;
-  isFinal: boolean;
-}
-
-interface SpeechRecognitionAlternative {
-  transcript: string;
-  confidence: number;
-}
-
-interface SpeechRecognitionErrorEvent extends Event {
-  error: string;
-  message: string;
-}
-
-interface SpeechRecognitionInstance extends EventTarget {
-  continuous: boolean;
-  interimResults: boolean;
-  lang: string;
-  onresult: ((event: SpeechRecognitionEvent) => void) | null;
-  onend: (() => void) | null;
-  onerror: ((event: SpeechRecognitionErrorEvent) => void) | null;
-  start(): void;
-  stop(): void;
-  abort(): void;
-}
-
-interface SpeechRecognitionConstructor {
-  new(): SpeechRecognitionInstance;
-}
-
-declare global {
-  interface Window {
-    SpeechRecognition: SpeechRecognitionConstructor;
-    webkitSpeechRecognition: SpeechRecognitionConstructor;
-  }
-}
+// Voice search removed
 
 interface HybridMotorSearchProps {
   query: string;
@@ -71,6 +22,7 @@ interface HybridMotorSearchProps {
   onHpSelect: (hp: number) => void;
   className?: string;
   filterSlot?: React.ReactNode;
+  variant?: 'light' | 'dark';
 }
 
 const RECENT_SEARCHES_KEY = 'motor-search-recent';
@@ -120,8 +72,10 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   motors,
   onHpSelect,
   className = '',
-  filterSlot
+  filterSlot,
+  variant = 'light',
 }) => {
+  const isDark = variant === 'dark';
   const [isFocused, setIsFocused] = useState(false);
   const [showHpSuggestions, setShowHpSuggestions] = useState(false);
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);
@@ -132,10 +86,8 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const [iconPulse, setIconPulse] = useState(false);
   
-  // Voice search state
-  const [isListening, setIsListening] = useState(false);
-  const [speechSupported, setSpeechSupported] = useState(false);
-  const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
+  // Voice search removed
+  const isListening = false;
   
   // Recent searches state
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
@@ -226,42 +178,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
     }
   }, []);
 
-  // Check for Speech Recognition support
-  useEffect(() => {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    setSpeechSupported(!!SpeechRecognition);
-    
-    if (SpeechRecognition) {
-      const recognition = new SpeechRecognition();
-      recognition.continuous = false;
-      recognition.interimResults = true;
-      recognition.lang = 'en-US';
-      
-      recognition.onresult = (event) => {
-        const transcript = Array.from(event.results)
-          .map(result => result[0].transcript)
-          .join('');
-        onQueryChange(transcript);
-      };
-      
-      recognition.onend = () => {
-        setIsListening(false);
-      };
-      
-      recognition.onerror = (event) => {
-        console.error('Speech recognition error:', event.error);
-        setIsListening(false);
-      };
-      
-      recognitionRef.current = recognition;
-    }
-    
-    return () => {
-      if (recognitionRef.current) {
-        recognitionRef.current.abort();
-      }
-    };
-  }, [onQueryChange]);
+  // Voice search removed
 
   // Save search to recent searches
   const saveRecentSearch = useCallback((searchQuery: string) => {
@@ -293,19 +210,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
     triggerHaptic('light');
   }, [triggerHaptic]);
 
-  // Toggle voice search
-  const toggleVoiceSearch = useCallback(() => {
-    if (!recognitionRef.current) return;
-    
-    if (isListening) {
-      recognitionRef.current.stop();
-      setIsListening(false);
-    } else {
-      triggerHaptic('medium');
-      recognitionRef.current.start();
-      setIsListening(true);
-    }
-  }, [isListening, triggerHaptic]);
+  // Voice search removed
 
   // Handle recent search click
   const handleRecentSearchClick = useCallback((search: string) => {
@@ -473,10 +378,6 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
     onQueryChange('');
     setShowHpSuggestions(false);
     setAiResponse(null);
-    if (isListening && recognitionRef.current) {
-      recognitionRef.current.stop();
-      setIsListening(false);
-    }
     inputRef.current?.focus();
   };
 
@@ -530,13 +431,14 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   );
 
   return (
-    <div className={`relative ${className}`}>
-      {/* Search Input */}
-      <div 
-        className="relative"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+    <div className={`relative ${!isDark ? 'max-w-[640px] mx-auto' : ''} ${className}`}>
+      {/* Search Input + Filter row */}
+      <div className="relative">
+        <div
+          className="relative w-full"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
         {/* Animated Search Icon with Pulse */}
         <motion.div
           animate={iconPulse ? { 
@@ -545,57 +447,27 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           } : {}}
           transition={{ duration: 0.4, ease: "easeOut" }}
           className={`
-            absolute left-5 top-1/2 -translate-y-1/2 transition-colors duration-300
-            ${isListening ? 'text-red-500' : isAIQuery ? 'text-amber-500' : 'text-gray-400'}
+            absolute ${isDark ? 'left-5' : 'left-4'} top-1/2 -translate-y-1/2 transition-colors duration-300
+            ${isAIQuery
+              ? 'text-amber-500'
+              : isDark
+                ? (isFocused ? 'text-[#F5F1EA]' : 'text-[#F5F1EA]/50')
+                : 'text-muted-foreground'}
           `}
         >
-          {isListening ? (
-            <motion.div
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 0.5, repeat: Infinity }}
-            >
-              <Mic className="w-5 h-5" />
-            </motion.div>
-          ) : isAIQuery ? (
+          {isAIQuery ? (
             <Sparkles className="w-5 h-5" />
           ) : (
             <Search className="w-5 h-5" />
           )}
         </motion.div>
         
-        {/* Animated Placeholder Overlay with Typing Cursor */}
-        {!query && !isListening && (
-          <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none overflow-hidden flex items-center">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={placeholderIndex}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="text-gray-400 font-light text-base"
-              >
-                {PLACEHOLDER_PHRASES[placeholderIndex]}
-              </motion.span>
-            </AnimatePresence>
-            {/* Blinking Typing Cursor */}
-            <motion.span
-              animate={{ opacity: [1, 0] }}
-              transition={{ 
-                duration: 0.7, 
-                repeat: Infinity, 
-                repeatType: "reverse",
-                ease: "easeInOut"
-              }}
-              className="inline-block w-0.5 h-5 bg-gray-400 ml-0.5"
-            />
-          </div>
-        )}
-
-        {/* Listening indicator */}
-        {isListening && !query && (
-          <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none">
-            <span className="text-red-500 font-light text-base">Listening...</span>
+        {/* Static placeholder */}
+        {!query && (
+          <div className={`absolute ${isDark ? 'left-14' : 'left-12'} top-1/2 -translate-y-1/2 pointer-events-none`}>
+            <span className={`${isDark ? 'text-[15px]' : 'text-[14px]'} font-normal ${isDark ? 'text-[#F5F1EA]/40' : 'text-repower-navy-900/40'}`}>
+              {isDark ? 'Search motors by HP, model, or feature…' : 'Find a motor'}
+            </span>
           </div>
         )}
         
@@ -618,85 +490,41 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           onBlur={handleBlur}
           onKeyDown={handleKeyDownWithSave}
           className={`
-            w-full h-16 pl-14 pr-12 text-base font-light tracking-wide rounded-sm
-            bg-white text-gray-900
+            w-full ${isDark ? 'h-11 md:h-16 pl-14' : 'h-11 md:h-12 pl-12'} ${filterSlot ? 'pr-16' : 'pr-12'} text-[14px] ${isDark ? 'md:text-[15px]' : ''} font-light tracking-wide rounded-md
             focus:outline-none transition-all duration-300
-            ${isListening
-              ? 'border-2 border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]'
-              : isAIQuery 
-                ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]' 
-                : isFocused
-                  ? 'border border-gray-400 shadow-[0_0_20px_rgba(0,0,0,0.08),0_0_0_3px_rgba(0,0,0,0.03)]'
-                  : 'border border-gray-200 hover:border-gray-300'
+            ${isDark
+              ? `bg-[#0A1628] text-[#F5F1EA] caret-[#C9A24A] ${
+                  isAIQuery
+                    ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.15)]'
+                    : isFocused
+                      ? 'border border-[#C9A24A] bg-[#122039] shadow-[0_0_0_3px_rgba(201,162,74,0.20)]'
+                      : 'border border-[rgba(201,162,74,0.20)] hover:border-[rgba(201,162,74,0.40)]'
+                }`
+              : `bg-white text-gray-900 ${
+                  isAIQuery
+                    ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]'
+                    : isFocused
+                      ? 'border border-gray-400 shadow-[0_0_20px_rgba(0,0,0,0.08),0_0_0_3px_rgba(0,0,0,0.03)]'
+                      : 'border border-gray-200 hover:border-gray-300'
+                }`
             }
           `}
         />
-        
-        {/* Filter Slot - Integrated inside search bar */}
-        {filterSlot && (
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10">
-            {filterSlot}
-          </div>
-        )}
 
-        {/* Keyboard Shortcut Hint & Voice Search */}
+        {/* Keyboard Shortcut Hint */}
         <AnimatePresence>
-          {!isFocused && !query && !isListening && (
+          {!isFocused && !query && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className={cn(
-                "absolute top-1/2 -translate-y-1/2 flex items-center gap-2",
-                filterSlot ? "right-14" : "right-4"
-              )}
+              className={`absolute top-1/2 -translate-y-1/2 ${isDark && filterSlot ? 'right-14' : 'right-4'} hidden md:flex items-center gap-1.5`}
             >
-              {/* Voice Search Button - Mobile Only */}
-              {speechSupported && (
-                <button
-                  onClick={toggleVoiceSearch}
-                  className="md:hidden p-2 text-gray-400 hover:text-gray-600 transition-colors"
-                  aria-label="Voice search"
-                >
-                  <Mic className="w-5 h-5" />
-                </button>
-              )}
-              
-              {/* Keyboard Shortcut - Desktop Only */}
-              <div className="hidden md:flex items-center gap-1.5">
-                <kbd className="px-2 py-1 text-xs font-mono bg-gray-100 border border-gray-200 rounded text-gray-500 shadow-sm">
-                  /
-                </kbd>
-                <span className="text-xs text-gray-400 font-light">to search</span>
-              </div>
+              <kbd className={`px-2 py-1 text-xs font-mono rounded shadow-sm ${isDark ? 'bg-[#F5F1EA]/5 border border-[#F5F1EA]/15 text-[#F5F1EA]/60' : 'bg-gray-100 border border-gray-200 text-gray-500'}`}>
+                /
+              </kbd>
+              <span className={`text-xs font-light ${isDark ? 'text-[#F5F1EA]/50' : 'text-muted-foreground'}`}>to search</span>
             </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Voice Search Active Indicator */}
-        <AnimatePresence>
-          {isListening && (
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              onClick={toggleVoiceSearch}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-2"
-              aria-label="Stop listening"
-            >
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="relative"
-              >
-                <Mic className="w-5 h-5 text-red-500" />
-                <motion.div
-                  className="absolute inset-0 rounded-full bg-red-500/20"
-                  animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-                  transition={{ duration: 1, repeat: Infinity }}
-                />
-              </motion.div>
-            </motion.button>
           )}
         </AnimatePresence>
 
@@ -716,14 +544,21 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           )}
         </AnimatePresence>
 
-        {query && !isListening && (
+        {query && (
           <button
             onClick={handleClear}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 transition-colors"
+            className={`absolute ${filterSlot ? 'right-14' : 'right-4'} top-1/2 -translate-y-1/2 p-1 text-muted-foreground hover:text-gray-600 transition-colors`}
           >
             <X className="w-5 h-5" />
           </button>
         )}
+        {/* Filter Slot - integrated inside input on right */}
+        {filterSlot && (
+          <div className="absolute right-2 top-1/2 -translate-y-1/2 z-10">
+            {filterSlot}
+          </div>
+        )}
+        </div>
       </div>
 
       {/* HP Suggestions Dropdown (for numeric queries) */}
@@ -828,7 +663,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                               className="w-full h-full object-cover" 
                             />
                           ) : (
-                            <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                            <div className="w-full h-full flex items-center justify-center text-muted-foreground text-xs">
                               {motor.hp}HP
                             </div>
                           )}
@@ -868,7 +703,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     onClick={clearRecentSearches}
-                    className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                    className="text-xs text-muted-foreground hover:text-gray-600 transition-colors"
                   >
                     Clear
                   </motion.button>
@@ -883,7 +718,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                       onClick={() => handleRecentSearchClick(search)}
                       className="w-full text-left px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md transition-colors flex items-center gap-2"
                     >
-                      <History className="w-4 h-4 text-gray-400" />
+                      <History className="w-4 h-4 text-muted-foreground" />
                       <span className="truncate">{search}</span>
                     </motion.button>
                   ))}

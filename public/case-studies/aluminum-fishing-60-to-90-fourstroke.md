@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/aluminum-fishing-60-to-90-fourstroke
-last_updated: 2026-05-01
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 case_study_id: CS01
 slug: aluminum-fishing-60-to-90-fourstroke
 boat_type: "Aluminum fishing boat"

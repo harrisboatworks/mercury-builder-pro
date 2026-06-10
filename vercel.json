@@ -25,98 +25,703 @@
       "destination": "https://www.mercuryrepower.ca/:path*",
       "statusCode": 301
     },
-    { "source": "/locations/peterborough", "destination": "/locations/peterborough-mercury-dealer", "statusCode": 301 },
-    { "source": "/locations/rice-lake", "destination": "/locations/rice-lake-mercury-repower", "statusCode": 301 },
-    { "source": "/locations/kawartha-lakes", "destination": "/locations/kawartha-lakes-mercury-outboards", "statusCode": 301 },
-    { "source": "/locations/cobourg", "destination": "/locations/cobourg-northumberland-mercury", "statusCode": 301 },
-    { "source": "/locations/durham-gta", "destination": "/locations/durham-gta-mercury-pickup", "statusCode": 301 },
-    { "source": "/locations/gta", "destination": "/locations/durham-gta-mercury-pickup", "statusCode": 301 },
-    { "source": "/repower-quote", "destination": "/quote/motor-selection", "statusCode": 301 },
-    { "source": "/api/public-motors-api", "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api", "statusCode": 308 },
-    { "source": "/api/public-quote-api", "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api", "statusCode": 308 },
-    { "source": "/api/motors-md", "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md", "statusCode": 308 }
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "mercuryrepower.ca"
+        }
+      ],
+      "destination": "https://www.mercuryrepower.ca/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mercuryrepower.ca"
+        }
+      ],
+      "destination": "https://www.mercuryrepower.ca/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado",
+      "destination": "/blog/fourstroke-vs-pro-xs",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-command-thrust-vs-standard-gearcase",
+      "destination": "/blog/mercury-command-thrust-guide-pontoon-boats",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-boost-is-it-worth-2000-dollars-2026",
+      "destination": "/blog/mercury-boost-cost-canada-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/diy-mercury-outboard-winterization",
+      "destination": "/blog/diy-mercury-outboard-winterization-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-6-year-warranty-explained",
+      "destination": "/blog/mercury-7-year-warranty-hbw-exclusive-explained",
+      "statusCode": 301
+    },
+    {
+      "source": "/warranty",
+      "destination": "/blog/mercury-outboard-warranty-canada-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/tariffs-trade-canadian-boating-2026",
+      "destination": "/blog/is-2026-good-year-to-buy-boat-canada",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/outboard-motor-storage-tips",
+      "destination": "/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario",
+      "statusCode": 301
+    },
+    {
+      "source": "/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke",
+      "destination": "/motors/fourstroke-60hp-60-elpt-fourstroke",
+      "statusCode": 301
+    },
+    {
+      "source": "/n",
+      "destination": "/pricing-reference",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/peterborough",
+      "destination": "/locations/peterborough-mercury-dealer",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/rice-lake",
+      "destination": "/locations/rice-lake-mercury-repower",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/kawartha-lakes",
+      "destination": "/locations/kawartha-lakes-mercury-outboards",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/cobourg",
+      "destination": "/locations/cobourg-northumberland-mercury",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/durham-gta",
+      "destination": "/locations/durham-gta-mercury-pickup",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/gta",
+      "destination": "/locations/durham-gta-mercury-pickup",
+      "statusCode": 301
+    },
+    {
+      "source": "/mercury-dealer-peterborough",
+      "destination": "/locations/peterborough-mercury-dealer",
+      "statusCode": 301
+    },
+    {
+      "source": "/mercury-dealer-cobourg",
+      "destination": "/locations/cobourg-northumberland-mercury",
+      "statusCode": 301
+    },
+    {
+      "source": "/mercury-dealer-gta",
+      "destination": "/locations/gta-mercury-outboards",
+      "statusCode": 301
+    },
+    {
+      "source": "/mercury-outboards-whitby",
+      "destination": "/locations/whitby-mercury-dealer",
+      "statusCode": 301
+    },
+    {
+      "source": "/mercury-outboards-ajax",
+      "destination": "/locations/ajax-mercury-dealer",
+      "statusCode": 301
+    },
+    {
+      "source": "/mercury-outboards-pickering",
+      "destination": "/locations/pickering-mercury-dealer",
+      "statusCode": 301
+    },
+    {
+      "source": "/mercury-outboards-oshawa",
+      "destination": "/locations/oshawa-mercury-dealer",
+      "statusCode": 301
+    },
+    {
+      "source": "/mercury-outboards-bowmanville",
+      "destination": "/locations/bowmanville-courtice-mercury-dealer",
+      "statusCode": 301
+    },
+    {
+      "source": "/repower-quote",
+      "destination": "/quote/motor-selection",
+      "statusCode": 301
+    },
+    {
+      "source": "/mercurypricelist",
+      "destination": "/pricing-reference",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-outboard-wont-start-troubleshooting-ontario",
+      "destination": "/blog/mercury-outboard-wont-start-troubleshooting",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-warranty-what-you-need-to-know",
+      "destination": "/blog/mercury-outboard-warranty-canada-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-150-200hp-v6-performance",
+      "destination": "/blog/mercury-150-300hp-pro-xs-performance-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-fourstroke-vs-verado-comparison",
+      "destination": "/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/troubleshooting-outboard-overheating",
+      "destination": "/blog/outboard-overheating-emergency-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/pre-owned-mercury-what-to-check",
+      "destination": "/blog/used-outboard-buying-guide-ontario",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-service-schedule-complete-guide",
+      "destination": "/blog/mercury-maintenance-intervals-20-100-300-rule",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/understanding-mercury-model-numbers",
+      "destination": "/blog/how-to-read-mercury-outboard-serial-number",
+      "statusCode": 301
+    },
+    {
+      "source": "/api/public-motors-api",
+      "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api",
+      "statusCode": 308
+    },
+    {
+      "source": "/api/public-quote-api",
+      "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api",
+      "statusCode": 308
+    },
+    {
+      "source": "/api/motors-md",
+      "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md",
+      "statusCode": 308
+    },
+    {
+      "source": "/mercury-repower-faq",
+      "destination": "/faq",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/boat-repower-vs-new-boat-chinese-ontario",
+      "destination": "/blog/zh/mercury-repower-guide-gta",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/chinese-boat-repower-vs-new-boat-ontario",
+      "destination": "/blog/zh/mercury-repower-guide-gta",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/repower-vs-new-boat-zh",
+      "destination": "/blog/zh/mercury-repower-guide-gta",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/rice-lake-fish-species-seasons-zh",
+      "destination": "/blog/zh/rice-lake-fishing-guide-toronto-chinese",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/rice-lake-fishing-season-guide-chinese",
+      "destination": "/blog/zh/rice-lake-fishing-guide-toronto-chinese",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/chinese-anglers-rice-lake-kawarthas-outboard",
+      "destination": "/blog/zh/rice-lake-fishing-guide-toronto-chinese",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/ontario-free-family-fishing-rice-lake-chinese-guide",
+      "destination": "/blog/zh/rice-lake-fishing-guide-toronto-chinese",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/rice-lake-boat-rental-fishing-day-trip-toronto",
+      "destination": "/blog/zh/gta-chinese-rice-lake-day-trip-plan",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/toronto-chinese-rice-lake-fishing-rental-guide",
+      "destination": "/blog/zh/gta-chinese-rice-lake-day-trip-plan",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/toronto-rice-lake-one-day-fishing-trip-zh",
+      "destination": "/blog/zh/gta-chinese-rice-lake-day-trip-plan",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/first-time-renter-walkthrough-zh",
+      "destination": "/blog/zh/gta-chinese-rice-lake-day-trip-plan",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/ontario-boating-guide-toronto-chinese",
+      "destination": "/blog/zh/gta-chinese-buy-boat-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/chinese-mercury-outboard-guide-toronto",
+      "destination": "/blog/zh/gta-chinese-buy-boat-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/toronto-chinese-boat-buying-guide-ontario",
+      "destination": "/blog/zh/gta-chinese-buy-boat-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/new-immigrant-ontario-boat-buying-guide",
+      "destination": "/blog/zh/gta-chinese-buy-boat-rice-lake-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/toronto-chinese-buying-first-boat-rent-or-buy",
+      "destination": "/blog/zh/gta-chinese-rent-to-buy-boat-roadmap",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/ontario-boat-winterization-chinese-guide",
+      "destination": "/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/winterization-mercury-guide-zh",
+      "destination": "/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/mercury-fourstroke-vs-pro-xs-chinese",
+      "destination": "/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/mercury-outboard-service-repair-toronto-ontario",
+      "destination": "/blog/zh/gta-chinese-mercury-service-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/fishing-boat-vs-pontoon-chinese-ontario",
+      "destination": "/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/pontoon-boat-buying-guide-toronto-chinese-rice-lake",
+      "destination": "/blog/zh/chinese-family-pontoon-mercury-outboard",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/ontario-chinese-boating-license-fishing-guide",
+      "destination": "/blog/zh/gta-chinese-pcl-fishing-licence-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/ontario-first-time-boat-rental-safety-checklist",
+      "destination": "/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh",
+      "statusCode": 301
+    }
   ],
   "rewrites": [
-    { "source": "/googlebdeec341596163e7.html", "destination": "/googlebdeec341596163e7.html" },
-    { "source": "/auth", "destination": "/index.html" },
-    { "source": "/login", "destination": "/index.html" },
-    { "source": "/dashboard", "destination": "/index.html" },
-    { "source": "/settings", "destination": "/index.html" },
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/rss.xml", "destination": "/rss.xml" },
-    { "source": "/robots.txt", "destination": "/robots.txt" },
-    { "source": "/llms.txt", "destination": "/llms.txt" },
-    { "source": "/catalog.md", "destination": "/catalog.md" },
-    { "source": "/motors/:slug.md", "destination": "/motors/:slug.md" },
-    { "source": "/case-studies/:slug.md", "destination": "/case-studies/:slug.md" },
-    { "source": "/locations/:slug.md", "destination": "/locations/:slug.md" },
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/index", "destination": "/index.html" },
-    { "source": "/quote", "destination": "/index.html" },
-    { "source": "/quote/options", "destination": "/index.html" },
-    { "source": "/quote/purchase-path", "destination": "/index.html" },
-    { "source": "/quote/boat-info", "destination": "/index.html" },
-    { "source": "/quote/fuel-tank", "destination": "/index.html" },
-    { "source": "/quote/trade-in", "destination": "/index.html" },
-    { "source": "/quote/installation", "destination": "/index.html" },
-    { "source": "/quote/promo-selection", "destination": "/index.html" },
-    { "source": "/quote/package-selection", "destination": "/index.html" },
-    { "source": "/quote/summary", "destination": "/index.html" },
-    { "source": "/quote/schedule", "destination": "/index.html" },
-    { "source": "/quote/success", "destination": "/index.html" },
-    { "source": "/quote/saved/:quoteId", "destination": "/index.html" },
-    { "source": "/my-quotes", "destination": "/index.html" },
-    { "source": "/admin", "destination": "/index.html" },
-    { "source": "/admin/:path*", "destination": "/index.html" },
-    { "source": "/deposits", "destination": "/index.html" },
-    { "source": "/payment-success", "destination": "/index.html" },
-    { "source": "/payment-canceled", "destination": "/index.html" },
-    { "source": "/financing", "destination": "/index.html" },
-    { "source": "/financing-application/from-quote", "destination": "/index.html" },
-    { "source": "/financing/apply", "destination": "/index.html" },
-    { "source": "/financing/resume", "destination": "/index.html" },
-    { "source": "/financing/success", "destination": "/index.html" },
-    { "source": "/auth/tiktok/callback", "destination": "/index.html" },
-    { "source": "/fr", "destination": "/index.html" },
-    { "source": "/zh", "destination": "/index.html" },
-    { "source": "/blog/fr/:slug", "destination": "/index.html" },
-    { "source": "/blog/zh/:slug", "destination": "/index.html" },
-    { "source": "/blog/ko/:slug", "destination": "/index.html" },
-    { "source": "/blog/es/:slug", "destination": "/index.html" },
-    { "source": "/blog/unsubscribe", "destination": "/index.html" },
-    { "source": "/unsubscribe/:token", "destination": "/index.html" },
-    { "source": "/repower", "destination": "/repower/index.html" },
-    { "source": "/faq", "destination": "/faq/index.html" },
-    { "source": "/about", "destination": "/about/index.html" },
-    { "source": "/contact", "destination": "/contact/index.html" },
-    { "source": "/blog", "destination": "/blog/index.html" },
-    { "source": "/blog/:slug", "destination": "/blog/:slug/index.html" },
-    { "source": "/agents", "destination": "/agents/index.html" },
-    { "source": "/motors/:slug", "destination": "/motors/:slug/index.html" },
-    { "source": "/quote/motor-selection", "destination": "/quote/motor-selection/index.html" },
-    { "source": "/trade-in-value", "destination": "/trade-in-value/index.html" },
-    { "source": "/accessories", "destination": "/accessories/index.html" },
-    { "source": "/compare", "destination": "/compare/index.html" },
-    { "source": "/promotions", "destination": "/promotions/index.html" },
-    { "source": "/finance-calculator", "destination": "/finance-calculator/index.html" },
-    { "source": "/financing-application", "destination": "/financing-application/index.html" },
-    { "source": "/mercury-repower-faq", "destination": "/mercury-repower-faq/index.html" },
-    { "source": "/how-to-repower-a-boat", "destination": "/how-to-repower-a-boat/index.html" },
-    { "source": "/mercury-dealer-canada-faq", "destination": "/mercury-dealer-canada-faq/index.html" },
-    { "source": "/mercury-dealer-peterborough", "destination": "/mercury-dealer-peterborough/index.html" },
-    { "source": "/mercury-dealer-cobourg", "destination": "/mercury-dealer-cobourg/index.html" },
-    { "source": "/mercury-dealer-gta", "destination": "/mercury-dealer-gta/index.html" },
-    { "source": "/mercury-pro-xs", "destination": "/mercury-pro-xs/index.html" },
-    { "source": "/mercury-outboards-ontario", "destination": "/mercury-outboards-ontario/index.html" },
-    { "source": "/mercury-pontoon-outboards", "destination": "/mercury-pontoon-outboards/index.html" },
-    { "source": "/case-studies", "destination": "/case-studies/index.html" },
-    { "source": "/case-studies/:slug", "destination": "/case-studies/:slug/index.html" },
-    { "source": "/locations", "destination": "/locations/index.html" },
-    { "source": "/locations/:slug", "destination": "/locations/:slug/index.html" },
-    { "source": "/privacy", "destination": "/privacy/index.html" },
-    { "source": "/terms", "destination": "/terms/index.html" }
+    {
+      "source": "/googlebdeec341596163e7.html",
+      "destination": "/googlebdeec341596163e7.html"
+    },
+    {
+      "source": "/auth",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/settings",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/rss.xml",
+      "destination": "/rss.xml"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/robots.txt"
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/llms.txt"
+    },
+    {
+      "source": "/catalog.md",
+      "destination": "/catalog.md"
+    },
+    {
+      "source": "/motors/:slug.md",
+      "destination": "/motors/:slug.md"
+    },
+    {
+      "source": "/case-studies/:slug.md",
+      "destination": "/case-studies/:slug.md"
+    },
+    {
+      "source": "/locations/:slug.md",
+      "destination": "/locations/:slug.md"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/index",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/options",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/purchase-path",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/boat-info",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/fuel-tank",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/trade-in",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/installation",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/promo-selection",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/package-selection",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/summary",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/schedule",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/success",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/saved/:quoteId",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/my-quotes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/deposits",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/payment-success",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/payment-canceled",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/financing",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/financing-application/from-quote",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/financing/apply",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/financing/resume",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/financing/success",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/auth/tiktok/callback",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fr",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/zh",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/fr",
+      "destination": "/blog/fr/index.html"
+    },
+    {
+      "source": "/blog/zh",
+      "destination": "/blog/zh/index.html"
+    },
+    {
+      "source": "/blog/ko",
+      "destination": "/blog/ko/index.html"
+    },
+    {
+      "source": "/blog/es",
+      "destination": "/blog/es/index.html"
+    },
+    {
+      "source": "/blog/hi",
+      "destination": "/blog/hi/index.html"
+    },
+    {
+      "source": "/blog/pa",
+      "destination": "/blog/pa/index.html"
+    },
+    {
+      "source": "/blog/fr/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/zh/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/ko/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/es/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/unsubscribe",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/unsubscribe/:token",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/repower",
+      "destination": "/repower/index.html"
+    },
+    {
+      "source": "/repower/cost",
+      "destination": "/repower/cost/index.html"
+    },
+    {
+      "source": "/repower/process",
+      "destination": "/repower/process/index.html"
+    },
+    {
+      "source": "/repower/financing",
+      "destination": "/repower/financing/index.html"
+    },
+    {
+      "source": "/repower/trade-in",
+      "destination": "/repower/trade-in/index.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/:slug.md",
+      "destination": "/blog/:slug.md"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/blog/:slug/index.html"
+    },
+    {
+      "source": "/agents",
+      "destination": "/agents/index.html"
+    },
+    {
+      "source": "/pricing-reference",
+      "destination": "/pricing-reference/index.html"
+    },
+    {
+      "source": "/pricing-reference.md",
+      "destination": "/pricing-reference.md"
+    },
+    {
+      "source": "/motors/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quote/motor-selection",
+      "destination": "/quote/motor-selection/index.html"
+    },
+    {
+      "source": "/trade-in-value",
+      "destination": "/trade-in-value/index.html"
+    },
+    {
+      "source": "/accessories",
+      "destination": "/accessories/index.html"
+    },
+    {
+      "source": "/compare",
+      "destination": "/compare/index.html"
+    },
+    {
+      "source": "/promotions",
+      "destination": "/promotions/index.html"
+    },
+    {
+      "source": "/finance-calculator",
+      "destination": "/finance-calculator/index.html"
+    },
+    {
+      "source": "/financing-application",
+      "destination": "/financing-application/index.html"
+    },
+    {
+      "source": "/how-to-repower-a-boat",
+      "destination": "/how-to-repower-a-boat/index.html"
+    },
+    {
+      "source": "/mercury-dealer-canada-faq",
+      "destination": "/mercury-dealer-canada-faq/index.html"
+    },
+    {
+      "source": "/mercury-pro-xs",
+      "destination": "/mercury-pro-xs/index.html"
+    },
+    {
+      "source": "/mercury-outboards-ontario",
+      "destination": "/mercury-outboards-ontario/index.html"
+    },
+    {
+      "source": "/mercury-pontoon-outboards",
+      "destination": "/mercury-pontoon-outboards/index.html"
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/case-studies/index.html"
+    },
+    {
+      "source": "/case-studies/:slug",
+      "destination": "/case-studies/:slug/index.html"
+    },
+    {
+      "source": "/locations",
+      "destination": "/locations/index.html"
+    },
+    {
+      "source": "/locations/:slug",
+      "destination": "/locations/:slug/index.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy/index.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms/index.html"
+    },
+    {
+      "source": "/((?!api/|_next/|_static/|assets/|.*\\..*).*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=1, stale-while-revalidate=59"
+        }
+      ]
+    },
     {
       "source": "/assets/(.*)",
       "headers": [
@@ -156,49 +761,124 @@
     {
       "source": "/catalog.md",
       "headers": [
-        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
-        { "key": "X-Robots-Tag", "value": "noindex, follow" },
-        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/pricing-reference.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
       ]
     },
     {
       "source": "/motors/:slug.md",
       "headers": [
-        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
-        { "key": "X-Robots-Tag", "value": "noindex, follow" },
-        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
       ]
     },
     {
       "source": "/case-studies/:slug.md",
       "headers": [
-        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
-        { "key": "X-Robots-Tag", "value": "noindex, follow" },
-        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
       ]
     },
     {
       "source": "/locations/:slug.md",
       "headers": [
-        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
-        { "key": "X-Robots-Tag", "value": "noindex, follow" },
-        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        },
         {
           "key": "Cache-Control",
-          "value": "s-maxage=1, stale-while-revalidate=59"
+          "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
     }
   ],
+  "images": {
+    "sizes": [
+      320,
+      640,
+      768,
+      1024,
+      1280,
+      1920
+    ],
+    "minimumCacheTTL": 31536000,
+    "formats": [
+      "image/avif",
+      "image/webp"
+    ]
+  },
   "crons": [
     {
       "path": "/api/cron/google-sheets-sync",

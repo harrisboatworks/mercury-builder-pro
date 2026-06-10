@@ -16,8 +16,9 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { daysUntil } from '@/lib/finance';
 import { Clock } from 'lucide-react';
-import { DismissibleBanner } from '@/components/ui/dismissible-banner';
-import harris7YearWarranty from '@/assets/harris-7-year-warranty.png';
+import { X } from 'lucide-react';
+// Optimized warranty badge: 15KB WebP @ 400w (was 3MB PNG).
+const harris7YearWarranty = '/assets/optimized/harris-7-year-warranty-400w.webp';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview, { type SharedCardData } from '@/components/motors/MotorCardPreview';
@@ -30,16 +31,17 @@ import { ConfigFilterSheet, type ConfigFiltersState } from '@/components/motors/
 
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
+import { ComparisonFloatingBar } from '@/components/motors/ComparisonFloatingBar';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
 // ComparisonFloatingPill removed - comparison now integrated into UnifiedMobileBar
 import { Button } from '@/components/ui/button';
-import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { RepowerLayout } from '@/components/repower/RepowerLayout';
 import { MotorSelectionSEO } from '@/components/seo/MotorSelectionSEO';
 import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
 import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModal';
 import { VoiceStatusBanner } from '@/components/voice/VoiceStatusBanner';
-import { MobileQuoteCTA } from '@/components/motors/MobileQuoteCTA';
+
 import { EmailCaptureInline } from '@/components/motors/EmailCaptureInline';
 import { MotorSelectionFAQ } from '@/components/quote-builder/MotorSelectionFAQ';
 
@@ -54,32 +56,95 @@ import { setVisibleMotors, type VisibleMotor } from '@/lib/visibleMotorsStore';
 import type { MotorGroup } from '@/hooks/useGroupedMotors';
 import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
+import { SITE_URL } from '@/lib/site';
 
-// Extracted component to safely call useActivePromotions hook
+// Refined navy promo strip, single-line on desktop, 2-line on mobile, dismissible
+const PROMO_DISMISS_KEY = 'repower_promo_dismissed_v1';
 function PromoBannerConditional() {
   const { promotions: activePromos } = useActivePromotions();
+  const [dismissed, setDismissed] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return localStorage.getItem(PROMO_DISMISS_KEY) === 'true';
+  });
   const promo = activePromos?.[0];
-  if (!promo) return null;
+  if (!promo || dismissed) return null;
   const endLabel = promo.end_date
     ? `Ends ${new Date(promo.end_date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}`
-    : '';
+    : 'Ends May 17, 2026';
+  const title = promo.bonus_title || promo.name || 'Get 7 Years of Zero-Worry Boating';
+  const handleDismiss = () => {
+    localStorage.setItem(PROMO_DISMISS_KEY, 'true');
+    setDismissed(true);
+  };
   return (
-    <DismissibleBanner
-      storageKey="promo_banner_dismissed"
-      variant="promotional"
-      className="max-w-4xl mx-auto px-4 mb-4"
-      actionLabel="Learn More"
-      actionHref="/promotions"
-      imageUrl={harris7YearWarranty}
-      imageAlt={promo.name}
-    >
-      <div>
-        <p className="font-semibold text-sm">{promo.bonus_title || promo.name}</p>
-        {endLabel && <p className="text-xs opacity-80">{endLabel}</p>}
+    <div className="relative w-full bg-repower-navy-900 border-b border-repower-gold/20">
+      <div className="flex flex-wrap md:flex-nowrap items-center md:h-14 md:max-h-14 py-2 md:py-0 px-4 md:px-14 md:pr-14 gap-y-1 md:gap-y-0 md:overflow-hidden pr-10 md:pr-14">
+        {/* Badge */}
+        <img
+          src={harris7YearWarranty}
+          alt=""
+          className="shrink-0"
+          style={{ height: 32, width: 'auto' }}
+        />
+        {/* Title */}
+        <span
+          className="text-repower-cream font-semibold whitespace-nowrap ml-4 shrink-0"
+          style={{ fontSize: 14 }}
+        >
+          {title}
+        </span>
+        {/* Middot */}
+        <span
+          className="hidden md:inline text-repower-gold shrink-0"
+          style={{ margin: '0 10px', fontSize: 14 }}
+        >
+          ·
+        </span>
+        {/* Mobile row 2 / desktop inline: date + learn more */}
+        <div className="flex items-center basis-full md:basis-auto md:flex-1 md:contents">
+          {/* Date, hidden on the smallest viewports to keep the strip to one line */}
+          <span
+            className="hidden min-[480px]:inline text-repower-cream/60 font-normal whitespace-nowrap truncate md:min-w-0 md:flex-shrink ml-12 md:ml-0"
+            style={{ fontSize: 13 }}
+          >
+            {endLabel}
+          </span>
+
+          {/* Action group, anchored right */}
+          <div className="flex items-center ml-auto shrink-0 gap-6 pl-6">
+            <a
+              href="/promotions"
+              className="group inline-flex items-center gap-1.5 text-repower-gold hover:text-repower-gold/80 transition-colors font-semibold uppercase whitespace-nowrap"
+              style={{ fontSize: 13, letterSpacing: '0.12em' }}
+            >
+              Learn More
+              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
+            </a>
+            <button
+              onClick={handleDismiss}
+              aria-label="Dismiss promotion"
+              className="hidden md:inline-flex items-center justify-center text-repower-cream/50 hover:text-repower-cream transition-colors"
+              style={{ width: 24, height: 24 }}
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
       </div>
-    </DismissibleBanner>
+
+      {/* Close X, mobile only top-right */}
+      <button
+        onClick={handleDismiss}
+        aria-label="Dismiss promotion"
+        className="md:hidden absolute top-2 right-3 inline-flex items-center justify-center text-repower-cream/50 hover:text-repower-cream transition-colors"
+        style={{ width: 24, height: 24 }}
+      >
+        <X className="w-4 h-4" />
+      </button>
+    </div>
   );
 }
+
 
 // Database types
 interface DbMotor {
@@ -154,6 +219,79 @@ interface PromotionRule {
   discount_fixed_amount: number;
 }
 
+const HARRIS_BOAT_WORKS_SELLER_SCHEMA = {
+  "@type": "BoatDealer",
+  "name": "Harris Boat Works",
+  "url": "https://harrisboatworks.ca",
+  "telephone": "+1-905-342-2153",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "5369 Harris Boat Works Rd",
+    "addressLocality": "Gores Landing",
+    "addressRegion": "ON",
+    "postalCode": "K0K 2E0",
+    "addressCountry": "CA"
+  }
+};
+
+function toAbsoluteSchemaImage(image: unknown): string {
+  const raw = typeof image === 'string'
+    ? image
+    : image && typeof image === 'object' && 'url' in image
+      ? String((image as { url?: unknown }).url || '')
+      : '';
+  if (!raw) return `${SITE_URL}/social-share.jpg`;
+  if (raw.startsWith('https://') || raw.startsWith('http://')) return raw;
+  if (raw.startsWith('//')) return `https:${raw}`;
+  return `${SITE_URL}${raw.startsWith('/') ? raw : `/${raw}`}`;
+}
+
+function buildMotorSelectionProductSchema(motor: Motor) {
+  const motorUrl = `${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(motor.id)}`;
+  const family = motor.family || motor.type || 'FourStroke';
+  const modelNumber = motor.model_number || null;
+  const image = toAbsoluteSchemaImage(motor.image || motor.images?.[0]);
+  const description = motor.description ||
+    `Mercury ${family} ${motor.hp} HP outboard motor${modelNumber ? ` (model ${modelNumber})` : ''}. ` +
+    `Mercury outboard repower quote from Harris Boat Works in Gores Landing, Ontario. ` +
+    `Motors are sold for local pickup and/or professional installation only. We do not ship outboard motors. ` +
+    `Motor returns are not accepted. New Mercury motors include the applicable Mercury Marine factory warranty.`;
+
+  return {
+    "@type": "Product",
+    "@id": `${motorUrl}#product`,
+    "name": motor.model,
+    "description": description,
+    "image": image,
+    "brand": { "@type": "Brand", "name": "Mercury Marine" },
+    "manufacturer": { "@type": "Organization", "name": "Mercury Marine" },
+    "category": "Outboard Motor",
+    "url": motorUrl,
+    "sku": modelNumber || motor.id,
+    ...(modelNumber ? { "mpn": modelNumber } : {}),
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Horsepower", "value": `${motor.hp} HP` },
+      { "@type": "PropertyValue", "name": "Family", "value": `Mercury ${family}` },
+      ...(motor.shaft ? [{ "@type": "PropertyValue", "name": "Shaft", "value": motor.shaft }] : [])
+    ],
+    "offers": {
+      "@type": "Offer",
+      "@id": `${motorUrl}#offer`,
+      "url": motorUrl,
+      "priceCurrency": "CAD",
+      "price": String(Math.round(motor.price)),
+      "availability": "https://schema.org/InStoreOnly",
+      "itemCondition": "https://schema.org/NewCondition",
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "CA",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      },
+      "seller": HARRIS_BOAT_WORKS_SELLER_SCHEMA
+    }
+  };
+}
+
 
 function MotorSelectionContent() {
   const navigate = useNavigate();
@@ -178,7 +316,7 @@ function MotorSelectionContent() {
   const { promotions: activePromotionsForCards } = useActivePromotions();
   const [showComparison, setShowComparison] = useState(false);
 
-  // Shared data object for motor cards — avoids per-card hook instantiation
+  // Shared data object for motor cards, avoids per-card hook instantiation
   const sharedCardData: SharedCardData = useMemo(() => ({
     promotions: activePromotionsForCards,
     toggleComparison,
@@ -192,6 +330,38 @@ function MotorSelectionContent() {
   
   // Search overlay state - triggered from header search icon
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
+
+  // Sentinel-based sticky detection for search bar (light at rest, dark glass when stuck)
+  const searchSentinelRef = useRef<HTMLDivElement | null>(null);
+  const [isSearchStuck, setIsSearchStuck] = useState(false);
+  useEffect(() => {
+    const el = searchSentinelRef.current;
+    if (!el) return;
+    const headerOffset = window.innerWidth >= 1024 ? 72 : 64;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsSearchStuck(!entry.isIntersecting),
+      { rootMargin: `-${headerOffset}px 0px 0px 0px`, threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Track grid columns based on viewport so animation stagger reflects actual rows.
+  // Matches Tailwind: grid-cols-1 / sm:2 / lg:3 / 2xl:4
+  const getGridColumns = () => {
+    if (typeof window === 'undefined') return 3;
+    const w = window.innerWidth;
+    if (w >= 1536) return 4;
+    if (w >= 1024) return 3;
+    if (w >= 640) return 2;
+    return 1;
+  };
+  const [gridColumns, setGridColumns] = useState(getGridColumns);
+  useEffect(() => {
+    const onResize = () => setGridColumns(getGridColumns());
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
   
   const [motors, setMotors] = useState<DbMotor[]>([]);
   const [promotions, setPromotions] = useState<Promotion[]>([]);
@@ -515,8 +685,9 @@ if (event.type === 'filter_motors') {
         : [];
       const firstDbImage = dbImages.length > 0 ? dbImages[0] : null;
       const heroImage = dbMotor.hero_image_url || dbMotor.image_url || firstDbImage || '';
-      // Use database images only — Mercury CDN URLs are unreliable (404 frequently)
+      // Use database images only, Mercury CDN URLs are unreliable (404 frequently)
       const galleryImages = dbImages;
+      const motorFamily = getMotorFamilyDisplay(classifyMotorFamily(dbMotor.horsepower, dbMotor.model_display || dbMotor.model, dbMotor.features));
 
       // Convert to Motor type (same as original)
       const convertedMotor: Motor = {
@@ -540,7 +711,7 @@ if (event.type === 'filter_motors') {
         category: dbMotor.horsepower <= 20 ? 'portable' :
                  dbMotor.horsepower <= 60 ? 'mid-range' : 
                  dbMotor.horsepower <= 150 ? 'high-performance' : 'v8-racing',
-        type: getMotorFamilyDisplay(classifyMotorFamily(dbMotor.horsepower, dbMotor.model_display || dbMotor.model, dbMotor.features)),
+        type: motorFamily,
         specs: `${dbMotor.horsepower}HP ${dbMotor.motor_type || 'FourStroke'}`,
         basePrice: basePrice,
         salePrice: salePrice,
@@ -567,6 +738,7 @@ if (event.type === 'filter_motors') {
         features: dbMotor.features,
         shaft: dbMotor.shaft,
         images: galleryImages,
+        family: motorFamily,
         model_key: dbMotor.model_key || null
       };
       
@@ -930,42 +1102,99 @@ if (event.type === 'filter_motors') {
   if (loading) {
     return (
       <PageTransition>
-        <QuoteLayout>
-          <div className="bg-stone-50 py-12">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
-              <div className="grid gap-6 sm:gap-8 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <MotorCardSkeleton key={i} index={i} />
-                ))}
+        <RepowerLayout>
+          <div className="bg-repower-paper pt-20">
+            <div className="bg-repower-paper py-12">
+              <div className="max-w-[1400px] mx-auto px-6 md:px-14">
+                <div className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+                  {Array.from({ length: 8 }).map((_, i) => (
+                    <MotorCardSkeleton key={i} index={i} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </QuoteLayout>
+        </RepowerLayout>
       </PageTransition>
     );
   }
 
   return (
     <PageTransition>
-      <MotorSelectionSEO motorCount={motors.length || 128} />
+      <MotorSelectionSEO
+        motorCount={motors.length > 0 ? motors.length : undefined}
+        familyCounts={(() => {
+          const counts = { fourStroke: 0, proXS: 0, seaPro: 0, proKicker: 0 };
+          for (const m of motors) {
+            const display = (m.model_display || m.model || '').toLowerCase();
+            if (display.includes('prokicker') || display.includes('pro kicker') || display.includes('pro-kicker')) {
+              counts.proKicker += 1;
+              continue;
+            }
+            const fam = classifyMotorFamily(m.horsepower ?? 0, m.model_display || m.model || '', []);
+            if (fam === 'Pro XS') counts.proXS += 1;
+            else if (fam === 'SeaPro') counts.seaPro += 1;
+            else if (fam === 'ProKicker') counts.proKicker += 1;
+            else if (fam === 'Verado') continue;
+            else counts.fourStroke += 1;
+          }
+          return counts;
+        })()}
+      />
       <FinancingProvider>
-        <QuoteLayout 
-          showProgress={false}
-          onSearchClick={() => setShowSearchOverlay(true)}
-          showSearchIcon={true}
-        >
+        <RepowerLayout>
+          <div className="bg-repower-paper pt-[64px] lg:pt-[72px]">
+            <PromoBannerConditional />
+            <main>
 
         <VoiceStatusBanner />
         
-{/* Search Bar - Scrolls naturally with content */}
-        <div className="bg-stone-50 border-b border-gray-200">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
+        {/* Page header */}
+        <div className="bg-repower-paper">
+          <div className="max-w-[1400px] mx-auto px-5 md:px-14 py-8 md:pt-16 md:pb-8">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="block h-px w-6 bg-[#C8102E]" />
+              <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-[#C8102E]">
+                In-Stock Mercury Outboards
+              </span>
+            </div>
+            <h1
+              className="font-display font-bold leading-[1.05] text-[#050E1C] mb-5 text-balance"
+              style={{ letterSpacing: '-0.035em', fontSize: 'clamp(40px, 5vw, 72px)' }}
+            >
+              Choose your power.
+            </h1>
+            <p className="text-[18px] font-normal text-[#050E1C]/65 text-balance mb-4">
+              Live pricing. Real quotes. Three minutes.
+            </p>
+            <p className="text-[15px] font-normal text-[#050E1C]/70 text-balance max-w-[60ch] mb-4">
+              Browse Mercury boats and outboards in Canada and build your repower quote in about 3 minutes. A real person at HBW reviews every quote and emails you back within 1 business day.
+            </p>
+            <div className="text-[12px] font-medium text-[#050E1C]/65 border-t border-[#050E1C]/10 pt-3">
+              Harris Boat Works · Mercury dealer since 1965, current Platinum tier · Family-owned since 1947 · Gores Landing, ON
+            </div>
+          </div>
+        </div>
+
+        {/* Sentinel, detects when search bar pins to top */}
+        <div ref={searchSentinelRef} aria-hidden className="h-px w-full" />
+
+        {/* Search Bar, light at rest, dark glass when sticky */}
+        <div
+          className={`sticky top-[64px] lg:top-[72px] z-40 transition-all duration-200 ease-out ${
+            isSearchStuck
+              ? 'bg-[rgba(10,22,40,0.85)] supports-[backdrop-filter]:backdrop-blur-xl border-b border-[rgba(201,162,74,0.12)]'
+              : 'bg-transparent'
+          }`}
+        >
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-0 pb-3 md:pb-4">
             <HybridMotorSearch
               query={searchQuery}
               onQueryChange={handleSearchChange}
               motors={processedMotors}
               onHpSelect={handleHpSuggestionSelect}
               className="w-full"
+              variant={isSearchStuck ? 'dark' : 'light'}
               filterSlot={
                 <ConfigFilterSheet
                   motors={processedMotors}
@@ -973,39 +1202,42 @@ if (event.type === 'filter_motors') {
                   onHpFilterChange={handleHpFilterChange}
                   filters={configFilters}
                   onFilterChange={setConfigFilters}
+                  className={
+                    isSearchStuck
+                      ? 'bg-[#0A1628] border border-[rgba(201,162,74,0.20)] text-[#F5F1EA]/70 hover:text-[#F5F1EA] hover:border-[#C9A24A] hover:bg-[#122039] transition-colors duration-200'
+                      : 'bg-white border border-[rgba(10,22,40,0.10)] text-[#050E1C]/70 hover:text-[#050E1C] hover:border-[#C9A24A] transition-colors duration-200'
+                  }
                 />
               }
             />
-            
-            <div className="flex items-center justify-between mt-3">
-              {(searchQuery || configFilters) && (
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span
-                    className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium tabular-nums ${
-                      finalFilteredMotors.length > 0
-                        ? 'bg-primary/10 text-primary border border-primary/20'
-                        : 'bg-destructive/10 text-destructive border border-destructive/20'
-                    }`}
-                    aria-live="polite"
-                    role="status"
-                  >
-                    {finalFilteredMotors.length > 0
-                      ? `${finalFilteredMotors.length} ${finalFilteredMotors.length === 1 ? 'motor matches' : 'motors match'}`
-                      : 'No motors match'}
+
+            {(searchQuery || configFilters) && (
+              <div className="flex items-center gap-2 flex-wrap mt-3">
+                <span
+                  className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium tabular-nums ${
+                    finalFilteredMotors.length > 0
+                      ? 'bg-repower-cream/10 text-[#F5F1EA] border border-[rgba(201,162,74,0.20)]'
+                      : 'bg-[#C8102E]/15 text-[#F5F1EA] border border-[#C8102E]/40'
+                  }`}
+                  aria-live="polite"
+                  role="status"
+                >
+                  {finalFilteredMotors.length > 0
+                    ? `${finalFilteredMotors.length} ${finalFilteredMotors.length === 1 ? 'motor matches' : 'motors match'}`
+                    : 'No motors match'}
+                </span>
+                {configFilters && (
+                  <span className="text-xs text-[#F5F1EA]/60">
+                    Filtered by: {[
+                      configFilters.inStock && 'in stock',
+                      configFilters.startType,
+                      configFilters.controlType,
+                      configFilters.shaftLength && `${configFilters.shaftLength} shaft`
+                    ].filter(Boolean).join(', ')}
                   </span>
-                  {configFilters && (
-                    <span className="text-xs text-luxury-gray">
-                      Filtered by: {[
-                        configFilters.inStock && 'in stock',
-                        configFilters.startType,
-                        configFilters.controlType,
-                        configFilters.shaftLength && `${configFilters.shaftLength} shaft`
-                      ].filter(Boolean).join(', ')}
-                    </span>
-                  )}
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
         
@@ -1019,8 +1251,6 @@ if (event.type === 'filter_motors') {
           onHpSelect={handleHpSuggestionSelect}
         />
         
-        {/* Promotional Banner — only when active promos exist */}
-        <PromoBannerConditional />
         
         {/* Recently Viewed Bar */}
         <RecentlyViewedBar 
@@ -1029,7 +1259,7 @@ if (event.type === 'filter_motors') {
           onClear={clearRecentlyViewed}
         />
 
-        {/* Batched Product Schema — single ItemList instead of per-card scripts */}
+        {/* Batched Product Schema, single ItemList instead of per-card scripts */}
         {finalFilteredMotors.length > 0 && (
           <script
             type="application/ld+json"
@@ -1038,50 +1268,25 @@ if (event.type === 'filter_motors') {
               "@type": "ItemList",
               "name": "Mercury Outboard Motors",
               "numberOfItems": finalFilteredMotors.length,
-              "itemListElement": finalFilteredMotors.slice(0, 20).map((motor, i) => ({
+              "itemListElement": finalFilteredMotors.map((motor, i) => ({
                 "@type": "ListItem",
                 "position": i + 1,
-                "item": {
-                  "@type": "Product",
-                  "name": motor.model,
-                  "brand": { "@type": "Brand", "name": "Mercury Marine" },
-                  "category": "Outboard Motors",
-                  "sku": motor.id,
-                  ...(motor.price && {
-                    "offers": {
-                      "@type": "Offer",
-                      "priceCurrency": "CAD",
-                      "price": motor.price,
-                      "availability": motor.in_stock ? "https://schema.org/InStock" : "https://schema.org/PreOrder"
-                    }
-                  })
-                }
+                "item": buildMotorSelectionProductSchema(motor)
               }))
             }) }}
           />
         )}
 
-        <div className="bg-gradient-to-b from-stone-50 to-white py-16 motor-grid-section">
+        <div className="bg-repower-paper py-10 md:py-14 motor-grid-section">
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Motors Grid - Expert View Only */}
+        <div className="max-w-[1400px] mx-auto px-6 md:px-14">
+          {/* Motors Grid */}
           {finalFilteredMotors.length > 0 ? (
-            <motion.div 
-              className="grid gap-8 sm:gap-10 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
-              initial={hasInitiallyLoaded ? false : "hidden"}
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.06,
-                    delayChildren: 0.08
-                  }
-                }
-              }}
+            <div
+              className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
             >
-              {finalFilteredMotors.map(motor => {
+              {finalFilteredMotors.map((motor, index) => {
+                const colIndex = index % gridColumns;
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
                 const specs = dbMotor?.specifications || {};
@@ -1105,18 +1310,14 @@ if (event.type === 'filter_motors') {
                  return (
                    <motion.div data-motor-card
                      key={motor.id}
-                      variants={{
-                        hidden: { opacity: 0, y: 16, scale: 0.97 },
-                        visible: {
-                          opacity: 1,
-                          y: 0,
-                          scale: 1,
-                          transition: {
-                            duration: 0.4,
-                            ease: [0.25, 0.1, 0.25, 1]
-                          }
-                        }
-                      }}
+                     initial={{ opacity: 0, y: 12 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+                     transition={{
+                       duration: 0.6,
+                       delay: colIndex * 0.08,
+                       ease: [0.2, 0.8, 0.2, 1],
+                     }}
                    >
                    <MotorCardPreview
                    img={heroImageUrl}
@@ -1142,31 +1343,32 @@ if (event.type === 'filter_motors') {
                    </motion.div>
                );
              })}
-           </motion.div>
+           </div>
           ) : (
-            <div className="bg-white rounded-2xl border border-gray-100 p-8 text-center">
-              <p className="text-gray-500 font-light mb-4">
-                No motors match your current filters.
+            <div className="bg-repower-cream/40 border border-[rgba(10,22,40,0.10)] rounded-lg p-12 text-center max-w-2xl mx-auto">
+              <h3 className="font-display font-bold text-[24px] tracking-[-0.02em] text-repower-navy-900 mb-2">
+                No motors match those filters.
+              </h3>
+              <p className="text-[14px] text-repower-navy-900/60 mb-6">
+                Try widening your HP range or removing filters.
               </p>
-              <Button
-                variant="outline"
-                size="sm"
-                className="rounded-full border-gray-200 text-gray-600 hover:bg-gray-50"
-                onClick={() => setSearchQuery('')}
+              <button
+                className="inline-flex items-center gap-2 bg-repower-mercury-red hover:bg-repower-mercury-red-deep text-white px-6 py-3 rounded-[4px] text-[12px] font-bold uppercase tracking-[0.12em] transition-colors"
+                onClick={() => { setSearchQuery(''); setConfigFilters(null); }}
               >
-                Clear search
-              </Button>
+                Clear Filters
+              </button>
             </div>
           )}
           
           {/* Financing Disclaimer */}
           {finalFilteredMotors.length > 0 && (
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <p className="text-xs font-light text-gray-500 text-center max-w-3xl mx-auto">
+            <div className="mt-12 pt-8 border-t border-repower-navy-900/10">
+              <p className="text-xs font-light text-repower-navy-900/400 text-center max-w-3xl mx-auto">
                 * Monthly payment estimates based on recommended financing term at {currentFinancingRate}% APR with $0 down, 
                 including HST and finance fee. Terms vary by purchase amount. Subject to credit approval.
                 {financingPromo?.promo_end_date && (
-                  <span className="ml-2 inline-flex items-center gap-1 text-emerald-600 font-medium">
+                  <span className="ml-2 inline-flex items-center gap-1 text-repower-gold font-medium">
                     <Clock className="h-3 w-3" />
                     Promo rate ends in {daysUntil(financingPromo.promo_end_date)} days
                   </span>
@@ -1175,21 +1377,16 @@ if (event.type === 'filter_motors') {
             </div>
           )}
 
-          {/* Email Capture — after motor grid */}
+          {/* Email Capture, after motor grid */}
           <EmailCaptureInline />
 
-          {/* AI-answer FAQ — targets "Can I build a Mercury outboard quote online in Ontario?" */}
+          {/* AI-answer FAQ, targets "Can I build a Mercury outboard quote online in Ontario?" */}
           <MotorSelectionFAQ />
         </div>
           </div>
-        </QuoteLayout>
-        
-        {/* Floating mobile CTA — nudge browsers to tap a motor */}
-        <MobileQuoteCTA onStartQuote={() => {
-          // Scroll to the top of the motor grid so first card is visible
-          const grid = document.querySelector('.motor-grid-section');
-          grid?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }} />
+            </main>
+          </div>
+        </RepowerLayout>
         
         {/* Motor Recommendation Quiz Modal */}
         <MotorRecommendationQuiz
@@ -1229,6 +1426,15 @@ if (event.type === 'filter_motors') {
         
         {/* Comparison Floating Pill removed - now integrated into UnifiedMobileBar */}
         
+        {/* Persistent floating bar, appears as soon as a motor is added so users
+            know what to do next ("Compare X/3 →"). */}
+        <ComparisonFloatingBar
+          motors={comparisonList}
+          onOpen={() => setShowComparison(true)}
+          onRemove={removeFromComparison}
+          onClear={clearComparison}
+        />
+
         {/* Comparison Drawer */}
         <ComparisonDrawer 
           isOpen={showComparison}
@@ -1238,6 +1444,7 @@ if (event.type === 'filter_motors') {
           onClear={clearComparison}
           onSelectMotor={handleComparisonSelect}
         />
+
       </FinancingProvider>
     </PageTransition>
   );

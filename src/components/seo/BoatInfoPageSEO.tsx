@@ -13,10 +13,10 @@ export function BoatInfoPageSEO() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/quote/boat-info#webpage`,
         "url": `${SITE_URL}/quote/boat-info`,
-        "name": "Boat Information — Mercury Quote Builder | Harris Boat Works",
+        "name": "Boat Information, Mercury Quote Builder | Harris Boat Works",
         "description": "Tell us about your boat so we can confirm motor compatibility, shaft length, controls, and rigging requirements for your Mercury outboard quote.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#localbusiness" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#localbusiness" },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/quote/boat-info#breadcrumb` },
       },
@@ -63,20 +63,20 @@ export function BoatInfoPageSEO() {
 
   return (
     <Helmet>
-      <title>Boat Information — Mercury Quote Builder | Harris Boat Works</title>
+      <title>Boat Information, Mercury Quote Builder | Harris Boat Works</title>
       <meta
         name="description"
         content="Tell us about your boat to confirm motor compatibility, shaft length, controls, and rigging for your Mercury outboard quote. Step 2 of the Harris Boat Works quote builder."
       />
       <link rel="canonical" href={`${SITE_URL}/quote/boat-info`} />
 
-      <meta property="og:title" content="Boat Information — Mercury Quote Builder" />
-      <meta property="og:description" content="Confirm Mercury motor compatibility for your boat — shaft length, controls, and rigging." />
+      <meta property="og:title" content="Boat Information, Mercury Quote Builder" />
+      <meta property="og:description" content="Confirm Mercury motor compatibility for your boat, shaft length, controls, and rigging." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${SITE_URL}/quote/boat-info`} />
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content="Boat Information — Mercury Quote Builder" />
+      <meta name="twitter:title" content="Boat Information, Mercury Quote Builder" />
       <meta name="twitter:description" content="Confirm Mercury motor compatibility for your boat in the Harris Boat Works quote builder." />
 
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>

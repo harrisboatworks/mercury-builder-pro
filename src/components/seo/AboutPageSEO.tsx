@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 
 export function AboutPageSEO() {
   const structuredData = {
@@ -7,21 +8,21 @@ export function AboutPageSEO() {
     "@graph": [
       {
         "@type": "AboutPage",
-        "@id": "https://mercuryrepower.ca/about#webpage",
-        "url": "https://mercuryrepower.ca/about",
+        "@id": "https://www.mercuryrepower.ca/about#webpage",
+        "url": "https://www.mercuryrepower.ca/about",
         "name": "About Harris Boat Works",
         "description": "Family-owned Mercury dealer on Rice Lake, Ontario since 1947.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#organization" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA"
       },
       {
         "@type": "Organization",
-        "@id": "https://mercuryrepower.ca/#organization",
+        "@id": "https://www.mercuryrepower.ca/#organization",
         "name": "Harris Boat Works",
         "alternateName": "HBW",
         "url": "https://www.harrisboatworks.ca/",
-        "logo": "https://www.harrisboatworks.ca/logo.png",
+        "logo": "https://www.mercuryrepower.ca/pwa-512x512.png",
         "foundingDate": "1947",
         "founder": { "@type": "Person", "name": "Harris family" },
         "description": "Third-generation family marina established in 1947 on Rice Lake in Gores Landing, Ontario. Mercury Marine dealer since 1965 and current Mercury Marine Platinum Dealer. Authorized Legend Boats dealer.",
@@ -48,13 +49,7 @@ export function AboutPageSEO() {
           "Boat storage",
           "Legend Boats"
         ],
-        "sameAs": [
-          "https://www.harrisboatworks.ca/",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks",
-          "https://www.youtube.com/@HarrisBoatWorks",
-          "https://g.page/harrisboatworks"
-        ]
+        "sameAs": BUSINESS_SAME_AS
       }
     ]
   };

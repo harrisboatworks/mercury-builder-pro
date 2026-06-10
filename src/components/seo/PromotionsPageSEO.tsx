@@ -35,7 +35,7 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
   const faqData = hasChooseOne ? [
     {
       question: "What is the Harris Boat Works 7-Year Warranty promotion?",
-      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage — that's 3 years standard plus 4 bonus years. Plus, you choose one additional bonus."
+      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage, that's 3 years standard plus 4 bonus years. Plus, you choose one additional bonus."
     },
     {
       question: "Does this apply to repower installations?",
@@ -44,11 +44,11 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
   ] : [
     {
       question: "What is the 7-Year Warranty promotion?",
-      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage — that's 3 years standard plus 4 bonus years of Gold coverage. No third-party insurance, just straight Mercury protection."
+      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage, that's 3 years standard plus 4 bonus years of Gold coverage. No third-party insurance, just straight Mercury protection."
     },
     {
       question: "Which motors are eligible?",
-      answer: "Every new Mercury outboard we sell qualifies — from a 2.5hp portable all the way up to a 300hp Verado. If it's new and it's Mercury, you're covered for 7 years."
+      answer: "Every new Mercury outboard we sell qualifies, from a 2.5hp portable all the way up to a 300hp Verado. If it's new and it's Mercury, you're covered for 7 years."
     },
     {
       question: "Is this a third-party warranty?",
@@ -86,7 +86,7 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
         "@id": `${SITE_URL}/promotions`,
         "url": `${SITE_URL}/promotions`,
         "name": `${mainPromo.name} | Harris Boat Works`,
-        "description": "Get 7 years of factory-backed warranty coverage on every new Mercury outboard from Harris Boat Works. Platinum Dealer since 1965.",
+        "description": "Get 7 years of factory-backed warranty coverage on every new Mercury outboard from Harris Boat Works. Platinum Dealer (Mercury dealer since 1965).",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -117,13 +117,13 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
 
   return (
     <Helmet>
-      <title>7-Year Factory-Backed Warranty on Every New Mercury | Harris Boat Works</title>
-      <meta name="description" content="Get 7 years of factory-backed warranty coverage on every new Mercury outboard from Harris Boat Works. No third-party insurance — straight Mercury protection from a Platinum Dealer since 1965." />
+      <title>7-Year Mercury Warranty on Every New Outboard | HBW</title>
+      <meta name="description" content="7 years of factory-backed warranty on every new Mercury outboard at Harris Boat Works. Straight Mercury coverage, no third-party contract." />
       <meta name="keywords" content="Mercury 7 year warranty, Mercury outboard warranty, Harris Boat Works, Mercury dealer Ontario, boat motor warranty, Mercury Platinum Dealer, repower warranty" />
       <link rel="canonical" href={`${SITE_URL}/promotions`} />
       
       <meta property="og:title" content="7-Year Factory-Backed Warranty | Harris Boat Works" />
-      <meta property="og:description" content="Get 7 years of zero-worry boating with a new Mercury outboard. Factory-backed coverage from a Platinum Dealer since 1965." />
+      <meta property="og:description" content="Get 7 years of zero-worry boating with a new Mercury outboard. Factory-backed coverage from a Platinum Dealer (Mercury dealer since 1965)." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${SITE_URL}/promotions`} />
       

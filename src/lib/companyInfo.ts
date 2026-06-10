@@ -26,3 +26,22 @@ export const COMPANY_INFO = {
 } as const;
 
 export type CompanyInfo = typeof COMPANY_INFO;
+
+/**
+ * Verified external profiles for the Harris Boat Works LocalBusiness entity.
+ * Used in every LocalBusiness JSON-LD sameAs block across the site so search
+ * engines can reconcile the business identity. Keep HTTPS, no trailing commas,
+ * no duplicates.
+ */
+export const BUSINESS_SAME_AS = [
+  "https://www.harrisboatworks.ca/",
+  "https://www.facebook.com/harrisboatworks",
+  "https://www.instagram.com/harrisboatworks",
+  "https://www.youtube.com/@HarrisBoatWorks",
+  "https://g.page/harrisboatworks",
+  "https://www.wikidata.org/wiki/Q139910292",
+  "https://x.com/HarrisBoatWorks",
+  "https://www.yelp.ca/biz/harris-boat-works-gores-landing",
+  "https://www.tripadvisor.ca/Attraction_Review-g670874-d15017131-Reviews-Harris_Boat_Works-Gores_Landing_Ontario.html",
+  "https://directory.northumberlandtourism.com/Home/View/harris-boat-works-ltd"
+] as const;

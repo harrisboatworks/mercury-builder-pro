@@ -918,7 +918,7 @@ export const MotorSelection = ({
     setCelebrationParticles(particles);
     toast({
       title: pick(canadianEncouragement.motorSelected),
-      description: `${motor.model} selected — let's continue, eh!`,
+      description: `${motor.model} selected, let's continue, eh!`,
       duration: 2200
     });
 
@@ -1019,7 +1019,7 @@ export const MotorSelection = ({
                 className="w-full pl-8 pr-3 py-2 border rounded-lg text-[16px] focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                 style={{ fontSize: '16px' }} // iOS zoom prevention
               />
-              <Search className="absolute left-2.5 top-2.5 w-4 h-4 text-gray-400" />
+              <Search className="absolute left-2.5 top-2.5 w-4 h-4 text-repower-navy-900/55" />
             </div>
             
             {/* Compact Icon Buttons */}
@@ -1028,8 +1028,8 @@ export const MotorSelection = ({
               <button
                 className={`p-2 rounded-lg border transition-colors flex items-center justify-center min-w-[44px] h-[44px] ${
                   inStockOnly 
-                    ? 'bg-green-50 border-green-200 text-green-700' 
-                    : 'bg-white border-gray-200 text-gray-600'
+                    ? 'bg-repower-cream border-repower-gold/30 text-repower-gold' 
+                    : 'bg-white border-repower-navy-900/10 text-repower-navy-900/65'
                 }`}
                 onClick={() => {
                   setInStockOnly(!inStockOnly);
@@ -1142,7 +1142,7 @@ export const MotorSelection = ({
       </div>
 
       {/* Results Count - Outside and Below Search Bar */}
-      <div className="px-4 py-2 bg-gray-50/50 border-b lg:hidden">
+      <div className="px-4 py-2 bg-repower-paper/50 border-b lg:hidden">
         <p className="text-sm text-muted-foreground">
           Showing {filteredMotors.length} motor{filteredMotors.length !== 1 ? 's' : ''}
         </p>
@@ -1238,7 +1238,7 @@ export const MotorSelection = ({
             {/* In Stock Only Toggle */}
             <label className={`flex items-center gap-2 px-3 py-2 rounded-full cursor-pointer transition-colors ${
               inStockOnly 
-                ? 'bg-green-100 text-green-700 border border-green-200' 
+                ? 'bg-repower-cream text-repower-gold border border-repower-gold/30' 
                 : 'bg-muted text-muted-foreground border border-border'
             }`}>
               <input 
@@ -1289,7 +1289,7 @@ export const MotorSelection = ({
               {/* Customer Reviews Section */}
               <div className="mt-6">
                 <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <Star className="w-4 h-4 text-yellow-500" />
+                  <Star className="w-4 h-4 text-repower-gold0" />
                   Customer Reviews (4.6/5 ⭐)
                 </h4>
                 <TestimonialCarousel />
@@ -1354,12 +1354,12 @@ export const MotorSelection = ({
             {/* Divider */}
             <div className="hidden md:block h-10 w-px bg-border" />
 
-            {/* Repower Center */}
+            {/* Mercury Certified Repower Center (official badge) + Ontario positioning */}
             <div className="credential-group flex items-center gap-3">
               <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto" />
               <div className="text-left">
-                <p className="font-semibold text-foreground">Certified Repower Center</p>
-                <p className="text-sm text-muted-foreground">Expert Repower Consultation</p>
+                <p className="font-semibold text-foreground">Mercury Certified Repower Center</p>
+                <p className="text-sm text-muted-foreground">Ontario's Mercury Repower Centre · Lake-tested on Rice Lake</p>
               </div>
             </div>
 
@@ -1420,7 +1420,7 @@ export const MotorSelection = ({
           });
           const stockCount = (motor as any)?.stockCount as number | undefined;
           const recentSales = (motor as any)?.recentSales as number | undefined;
-           return <Card key={motor.id} className={`motor-card relative bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
+           return <Card key={motor.id} className={`motor-card relative bg-white rounded-xl shadow-md border border-repower-navy-900/10 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-2 ring-repower-gold/30 shadow-xl scale-[1.02] motor-selected border-repower-gold/40' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
 
                    {/* Image Section - Moved to top for better layout consistency */}
                    {motor.image && motor.image !== '/placeholder.svg' && (
@@ -1434,35 +1434,12 @@ export const MotorSelection = ({
 
                        {/* HP Badge - Top left */}
                        <div className="absolute top-3 left-3 z-20">
-                         <div className="px-2 py-1 rounded-md bg-gray-900/90 text-white text-xs font-medium">
+                         <div className="px-2 py-1 rounded-md bg-repower-navy-900/90 text-white text-xs font-medium">
                            {motor.hp} HP
                          </div>
                        </div>
 
-                       {/* Stock Badge - Top right, aligned with HP badge */}
-                       <div className="absolute top-3 right-3 z-20">
-                         {motor.stockStatus === 'In Stock' && (
-                           <span className="in-stock-badge px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
-                             IN STOCK
-                           </span>
-                         )}
-                         {motor.stockStatus === 'Order Now' && (
-                           <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full">
-                             ORDER NOW
-                           </span>
-                         )}
-                         {motor.stockStatus === 'On Order' && (
-                           <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">
-                             ON ORDER
-                           </span>
-                         )}
-                         {motor.stockStatus === 'Sold' && (
-                           <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-full">
-                             SOLD
-                           </span>
-                         )}
-                       </div>
-
+                       {/* Stock badges removed from browse cards, real stock surfaces later in the flow */}
                       {/* Urgency: low stock */}
                       {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && (
                         <div className="absolute top-3 left-3 z-20 animate-fade-in" style={{ marginTop: '2.5rem' }}>
@@ -1501,7 +1478,7 @@ export const MotorSelection = ({
                       {/* Selection overlay */}
                       {selectedMotor?.id === motor.id && (
                         <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
-                          <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
+                          <Check className="w-20 h-20 text-repower-gold drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
                         </div>
                       )}
                     </div>
@@ -1510,7 +1487,7 @@ export const MotorSelection = ({
                   {/* Card Info Section */}
                   <div className="p-3 space-y-2 flex-1">
                     {/* Model Name - Clamped to 2 lines for consistency */}
-                    <div className="motor-model text-xl font-bold text-gray-900 leading-tight line-clamp-2">
+                    <div className="motor-model text-xl font-bold text-repower-navy-900 leading-tight line-clamp-2">
                       {(() => {
                         // Display in harrisboatworks.ca format: "2025 FourStroke 25HP EFI ELHPT"
                         // Remove any "Mercury" prefix and use clean title
@@ -1523,7 +1500,7 @@ export const MotorSelection = ({
                     {/* HP-based descriptor and popularity indicators */}
                     <div className="mt-1 space-y-1">
                       {/* HP-based descriptor - always show */}
-                      <p className="text-xs text-gray-600">
+                      <p className="text-xs text-repower-navy-900/65">
                         {getHPDescriptor(motor.hp)}
                       </p>
                       
@@ -1548,11 +1525,11 @@ export const MotorSelection = ({
                           <div className="text-sm text-muted-foreground line-through">
                             MSRP ${displayMSRP?.toLocaleString()}
                           </div>
-                          <div className="text-lg font-bold text-red-600">
+                          <div className="text-lg font-bold text-repower-mercury-red">
                             Our Price ${displaySalePrice?.toLocaleString()}
                           </div>
                           {hasSaleDisplay && (
-                            <div className="inline-flex items-center px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-medium">
+                            <div className="inline-flex items-center px-2 py-1 rounded-md bg-repower-cream  text-repower-gold  text-xs font-medium">
                               SAVE ${savingsAmount.toLocaleString()}
                             </div>
                           )}
@@ -1567,17 +1544,17 @@ export const MotorSelection = ({
                     {/* Badges */}
                     <div className="flex gap-1 flex-wrap">
                       {showWarrantyBadge && (
-                        <span className="px-2 py-0.5 bg-red-100 text-red-700 text-xs font-medium rounded">
+                        <span className="px-2 py-0.5 bg-repower-mercury-red/5 text-repower-mercury-red text-xs font-medium rounded">
                           {warrantyBonus?.shortBadge || '5 Year Warranty'}
                         </span>
                       )}
                       {hasRepower && (
-                        <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-medium rounded">
+                        <span className="px-2 py-0.5 bg-repower-cream text-repower-navy-900 text-xs font-medium rounded">
                           Repower Rebate
                         </span>
                       )}
                       {otherPromoNames.slice(0, 1).map((name, idx) => (
-                        <span key={idx} className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded">
+                        <span key={idx} className="px-2 py-0.5 bg-repower-cream text-repower-navy-900 text-xs font-medium rounded">
                           {name}
                         </span>
                       ))}
@@ -1590,7 +1567,7 @@ export const MotorSelection = ({
           </Card>;
         })}
         </div>}
-                                <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
+                                <p>Mercury’s Repower Rebate Program, trade in or repower for potential savings. See details.</p>
 
 
         {selectedMotor && !showStickyBar && (selectedMotor as any).stockStatus !== 'Sold' && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
@@ -1602,12 +1579,12 @@ export const MotorSelection = ({
       </div>
 
       {showStickyBar && selectedMotor && (selectedMotor as any).stockStatus !== 'Sold' && <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
-          <div className="checkout-banner bg-background/95 backdrop-blur-lg border-t-4 border-green-500 shadow-2xl">
+          <div className="checkout-banner bg-background/95 backdrop-blur-lg border-t-4 border-repower-gold/300 shadow-2xl">
             <div className="container mx-auto px-4 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="bg-green-100 dark:bg-green-900 p-2 rounded-full">
-                    <Check className="w-5 h-5 text-green-600 dark:text-green-400" />
+                  <div className="bg-repower-cream  p-2 rounded-full">
+                    <Check className="w-5 h-5 text-repower-gold " />
                   </div>
                   <div>
                     <p className="font-bold text-lg">
@@ -1634,7 +1611,7 @@ export const MotorSelection = ({
                   </Button>
                   <Button onClick={() => onStepComplete(selectedMotor)} 
                     disabled={(selectedMotor as any).stockStatus === 'Sold'}
-                    className={`btn-primary px-6 shadow-lg ${(selectedMotor as any).stockStatus === 'Sold' ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700 animate-pulse-green'}`}>
+                    className={`btn-primary px-6 shadow-lg ${(selectedMotor as any).stockStatus === 'Sold' ? 'bg-repower-cream cursor-not-allowed' : 'bg-repower-gold hover:bg-repower-gold animate-pulse-green'}`}>
                     {(selectedMotor as any).stockStatus === 'Sold' ? 'Motor Sold' : 'Continue to Boat Info'}
                     <Zap className="w-5 h-5 ml-2" />
                   </Button>
@@ -1645,7 +1622,7 @@ export const MotorSelection = ({
         </div>}
 
       {showStickyBar && selectedMotor && isMobile && (selectedMotor as any).stockStatus !== 'Sold' && <div className="fixed bottom-20 right-4 z-40 animate-in zoom-in-50 duration-500">
-          <Button onClick={() => onStepComplete(selectedMotor)} className="rounded-full w-14 h-14 shadow-2xl bg-green-600 hover:bg-green-700 animate-bounce">
+          <Button onClick={() => onStepComplete(selectedMotor)} className="rounded-full w-14 h-14 shadow-2xl bg-repower-gold hover:bg-repower-gold animate-bounce">
             <Check className="w-6 h-6" />
           </Button>
         </div>}
@@ -1659,7 +1636,7 @@ export const MotorSelection = ({
         </div>)}
 
       {showCelebration && selectedMotor && <div className="fixed top-4 right-4 z-40 animate-in slide-in-from-right-5 duration-500">
-          <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
+          <div className="bg-gradient-to-r from-repower-cream0 to-repower-cream text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
             <Sparkles className="w-5 h-5" />
             <span className="font-bold">Great Choice!</span>
             <Star className="w-5 h-5" />
@@ -1889,7 +1866,7 @@ export const MotorSelection = ({
                             <h4 className="font-semibold mb-2">Key Features:</h4>
                             <ul className="text-sm space-y-1">
                               {displayFeatures.map((feature, i) => <li key={`${feature}-${i}`} className="flex items-start">
-                                  <span className="text-green-500 mr-2">✓</span>
+                                  <span className="text-repower-gold0 mr-2">✓</span>
                                   {feature}
                                 </li>)}
                             </ul>
@@ -1925,7 +1902,7 @@ export const MotorSelection = ({
                     <strong>Tiller Handle:</strong> Perfect if you sit at the back of the boat. Great for fishing where precise control matters.
                   </div>}
                 {!quickViewMotor.model.includes('E') && quickViewMotor.model.includes('M') && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
-                    <strong>Manual Start:</strong> No battery needed — ideal for occasional use or as a backup motor. Very reliable.
+                    <strong>Manual Start:</strong> No battery needed, ideal for occasional use or as a backup motor. Very reliable.
                   </div>}
               </div>
 
@@ -2056,7 +2033,7 @@ export const MotorSelection = ({
         </DialogContent>
       </Dialog>
 
-      {/* NOTE: MobileStickyCTA removed on this page — it collided with the
+      {/* NOTE: MobileStickyCTA removed on this page, it collided with the
           global chat bubble and the contextual price bar below. Each motor
           card already exposes its own quote action, and the bottom price bar
           appears the moment a motor is selected. */}
@@ -2095,7 +2072,7 @@ export const MotorSelection = ({
         </div>
       )}
 
-      {/* Mobile spacer — only reserves space when the bottom price bar is shown */}
+      {/* Mobile spacer, only reserves space when the bottom price bar is shown */}
       {selectedMotor && <div className="mobile-cta-spacer lg:hidden" />}
 
     </div>

@@ -28,12 +28,12 @@ export default function WarrantyAddOnUI({
   const chips = targets.filter(t => t.targetYears > currentCoverageYears && t.targetYears <= maxCoverageYears);
 
   return (
-    <section aria-label="Extended Warranty" className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
-      <div className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
+    <section aria-label="Extended Warranty" className="rounded-2xl border border-repower-navy-900/10 bg-white p-5 shadow-sm  ">
+      <div className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-repower-navy-900/400 ">
         Extended Warranty
       </div>
 
-      <div className="mb-4 text-sm text-slate-700 dark:text-slate-300">
+      <div className="mb-4 text-sm text-repower-navy-900 ">
         Current coverage: <span className="font-medium">{currentCoverageYears} years</span> (base + promo)
       </div>
 
@@ -42,8 +42,8 @@ export default function WarrantyAddOnUI({
           onClick={() => onSelectWarranty(null)}
           className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${
             selectedTargetYears === null 
-              ? "border-primary bg-primary/10 text-primary dark:border-primary dark:text-primary" 
-              : "border-slate-300 text-slate-700 hover:border-slate-400 dark:border-slate-600 dark:text-slate-300 dark:hover:border-slate-500"
+              ? "border-primary bg-primary/10 text-primary  " 
+              : "border-repower-navy-900/20 text-repower-navy-900 hover:border-repower-navy-900/20   0"
           }`}
         >
           No additional coverage
@@ -55,8 +55,8 @@ export default function WarrantyAddOnUI({
             onClick={() => onSelectWarranty(t.targetYears)}
             className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${
               selectedTargetYears === t.targetYears 
-                ? "border-primary bg-primary/10 text-primary dark:border-primary dark:text-primary" 
-                : "border-slate-300 text-slate-700 hover:border-slate-400 dark:border-slate-600 dark:text-slate-300 dark:hover:border-slate-500"
+                ? "border-primary bg-primary/10 text-primary  " 
+                : "border-repower-navy-900/20 text-repower-navy-900 hover:border-repower-navy-900/20   0"
             }`}
             aria-pressed={selectedTargetYears === t.targetYears}
             title={`Extend to ${t.targetYears} years total`}
@@ -66,7 +66,7 @@ export default function WarrantyAddOnUI({
         ))}
       </div>
 
-      <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">{note}</p>
+      <p className="mt-3 text-xs text-repower-navy-900/400 ">{note}</p>
     </section>
   );
 }

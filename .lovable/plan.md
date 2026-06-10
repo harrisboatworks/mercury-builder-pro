@@ -1,67 +1,57 @@
 ## Goal
 
-Make the global `UnifiedMobileBar` less intrusive on mobile by being route-aware. No new desktop bars, no compare drawer, no spec provenance toggle, no backend/inventory/spec changes.
+Repair two production agent-discovery surfaces so they contain the keywords required by the validation rules. No price, promo, or strategy changes.
 
-## Current state (verified)
+## What I found
 
-- `UnifiedMobileBar` is mounted globally in `src/App.tsx` and gates show/hide via two arrays inside `src/components/quote-builder/UnifiedMobileBar.tsx`:
-  - `SHOW_ON_PAGES = ['/', '/motors', '/quote', '/financing', '/accessories', '/repower']`
-  - `HIDE_ON_PAGES = ['/quote/success', '/login', '/auth', '/dashboard', '/settings', '/admin', '/test', '/staging', '/my-quotes', '/deposits', '/contact']`
-- On `/` (homepage) the bar currently renders with the fallback config (label "Continue", target `/quote/summary`) — irrelevant and confusing. There is no `'/' ` entry in `PAGE_CONFIG`.
-- On `/motors/:slug` (motor detail) the bar renders immediately on page load, overlapping the new price/trust card.
-- On `/quote/motor-selection` the bar already shows; it currently renders even when no motor is selected and no preview is open (label "Configure"), creating a second visible CTA stack near the top picker.
-- Chat/Voice on mobile is **integrated into** the UnifiedMobileBar itself (the standalone `AIChatButton` is desktop-only via `useIsMobileOrTablet`), so the only collision risk is the bar's own height vs sticky page content. Need to ensure spacing.
+- `scripts/static-prerender.mjs` is the last writer for `public/catalog.md` and for the prerendered `/agents` HTML (it overwrites both at the end of `npm run build`).
+- `scripts/generate-markdown-twins.mjs` writes `public/catalog.md` earlier in the build and produces the in-repo committed copy; for consistency it should mirror the same change.
+- Current `public/catalog.md` contains `pickup` (7x) but contains **0** occurrences of `public-motors-api` or `build_quote`. The "Public quote API" section only renders the URL via a template literal that resolves to `.../public-quote-api`, never the literal strings the validator looks for.
+- Current `/agents` prerender intro + noscript mentions MCP, REST APIs, deep-link quote URLs, but the literal words `pickup` and `install`/`installation` are not present anywhere in the prerendered text content for that route.
 
-## Changes (single file: `src/components/quote-builder/UnifiedMobileBar.tsx`)
+## Edits
 
-All edits are scoped to the visibility gate and the motor-detail/motor-selection branches. No styling overhaul.
+### 1. `scripts/static-prerender.mjs` — `/agents` route entry (around line 4066)
 
-### 1. Homepage (`/`) — hide the bar entirely
+Extend the `intro` string (or add one small `<section>` to `extraNoscript`) so the prerendered HTML for `/agents` contains the literal words `pickup` and `installation`. Concretely, append one sentence to the intro:
 
-Add `'/'` handling that returns `false` from `shouldShow`. The homepage already has its own prominent "Build Your Quote" hero CTA + trust chips above the fold (just polished in the prior pass). A second floating CTA competes with it and shows an irrelevant "Continue → /quote/summary" fallback.
+> "Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase."
 
-Implementation: in the `shouldShow` `useMemo`, special-case `location.pathname === '/'` to return `false`. Leave other `SHOW_ON_PAGES` behavior intact.
+No change to schemas, no change to existing sections.
 
-### 2. Motor detail (`/motors/:slug`) — scroll-gated, compact, contextual
+### 2. `scripts/static-prerender.mjs` — `catalogMarkdown()` (around line 5290)
 
-Show the bar only after the user scrolls past the in-page price/CTA card so it never overlaps the trust block. When shown, render a compact variant: motor price + "Build Quote" only (no nudge row, no progress chip).
+In the existing "Public quote API" section, replace the single line with a short block that names both endpoints by their literal slugs so the validator's regex hits:
 
-Implementation:
-- Detect motor-detail route: `location.pathname.startsWith('/motors/')`.
-- Add a local `useState` + `useEffect` that listens to `window.scrollY > 600` (approx height of hero + price card on 390-wide viewport) to flip a `revealed` flag with a small debounce.
-- Until `revealed`, return `null` from the bar's render (or render an empty fragment) for this route.
-- When revealed: render an existing compact branch — title = motor model from a lightweight URL-derived fallback or skip if no `state.motor`; label = "Build Quote"; nextPath = `/quote/motor-selection`. Suppress the nudge row and comparison strip on this route to keep it small and reviewable.
-- Bottom padding: keep `pb-[env(safe-area-inset-bottom)]` (already set on inner sticky containers) so it sits above iOS home indicator. Chat is in-bar on mobile so no collision.
+```
+## Public quote API
 
-### 3. Motor selection (`/quote/motor-selection`) — only show after a motor is chosen
+- `POST https://.../public-quote-api` with `action: "build_quote"` builds an itemized CAD quote.
+- `GET  https://.../public-motors-api` returns the live Mercury inventory feed.
 
-The selected-motor price bar should only appear once the user has a motor (selected or previewing in the configurator). Right now it renders the "Configure" CTA at all times, which acts as a second CTA bar over the selection grid.
+See any motor twin for an example body.
+```
 
-Implementation:
-- In `shouldShow`, add: if `pathname === '/quote/motor-selection'` and neither `state.motor` nor `state.previewMotor` is set, return `false`.
-- Leave existing logic for the preview/selected states untouched (Configure/Select This Motor/Continue labels still work).
-- Confirm no other duplicate bar exists on this page: `MotorSelection.tsx` already had its `MobileStickyCTA` removed in the prior pass; `GlobalStickyQuoteBar` is desktop-only and already excludes all `/quote/*` routes. Verified — no duplicates.
+No change to "Business rules", "What we do NOT offer", motor/case-study/location/blog sections, positioning paragraph, pricing reference link, or MCP discovery block.
 
-### 4. Chat/Voice non-collision
+### 3. `scripts/generate-markdown-twins.mjs` — `catalogMarkdown()` (around line 759-770)
 
-- Mobile: `AIChatButton` is hidden via `useIsMobileOrTablet`, so the only "chat" affordance on mobile lives inside `UnifiedMobileBar` itself — no overlay collision possible.
-- Voice button (`useVoiceSafe`) is also rendered inside the bar; no separate floating element on these routes.
-- Action item: when the bar is hidden (homepage, pre-selection on motor-selection, pre-scroll on motor detail), no chat affordance disappears on mobile because the in-bar chat goes with it. To preserve access on those routes, render a **minimal** mobile chat-only pill (just the existing AI button, no nudges, no price) in those states. Reuse the existing `<motion.button>` chat trigger inside the bar by extracting it into a tiny `<MobileChatOnlyPill />` sub-render at the bottom of `UnifiedMobileBar.tsx`. Position: `fixed bottom-4 right-4 z-40`, same look as desktop chat button, mobile-only.
+Apply the same "Public quote API" rewrite so the pre-Vite-built `public/catalog.md` matches the prerender output. No other edits.
 
-This guarantees: Chat/Voice always reachable on mobile, but never stacked on top of a full bar.
+### 4. Rebuild + publish
 
-## Files touched
+- Run `node scripts/generate-markdown-twins.mjs` and `node scripts/static-prerender.mjs` locally as a smoke check is not needed; the production build runs both. Just publish via the publish tool.
+- After publish, fetch each URL and report:
+  - `/agents` — confirm `pickup` and `install`/`installation` are present.
+  - `/catalog.md` — confirm `public-motors-api` and `build_quote` are present.
+  - `/.well-known/ai.txt` — confirm 200 and unchanged.
+  - `/.well-known/mcp.json` — confirm 200 and unchanged.
+  - `/pricing-reference` — confirm 200.
+  - `/pricing-reference.md` — confirm 200.
+  - `/mercurypricelist` — confirm 301 to `/pricing-reference` (this is a Vercel redirect; will not be touched by this change).
+- Report sitemap URL count from `/sitemap.xml`.
 
-- `src/components/quote-builder/UnifiedMobileBar.tsx` — visibility gate updates + scroll listener for motor-detail + extract a small mobile chat-only pill for hidden-bar states.
+## Out of scope
 
-No other files modified. No CSS files, no routes, no contexts, no backend, no specs.
-
-## Verification (post-implementation)
-
-Use `browser--navigate_to_sandbox` at 390×844 and `browser--screenshot` for:
-
-1. `/` — confirm no bottom bar; floating chat-only pill bottom-right; hero CTA unobstructed.
-2. `/quote/motor-selection` — bar hidden until a motor is tapped/previewed; chat-only pill visible; after selecting, full bar appears with price + Continue.
-3. One motor detail page (e.g., `/motors/proxs-150hp-150-elpt-proxs`) — on first paint no bar over the price card; chat-only pill visible; after scrolling ~600px down, compact bar appears with price + "Build Quote".
-
-Report back with the three screenshots and a one-line summary per route.
+- No edits to prices, promotions, financing rules, pricing-reference content, route strategy, or UI components.
+- No changes to redirects, `vercel.json`, ai.txt, mcp.json, or pricing-reference markdown.

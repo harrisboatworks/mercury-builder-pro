@@ -13,8 +13,8 @@ export default function MandarinLanding() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/zh#webpage`,
         "url": `${SITE_URL}/zh`,
-        "name": "欢迎来到Harris Boat Works — 安大略省Mercury白金级授权经销商",
-        "description": "Harris Boat Works — 安大略省Mercury Marine白金级授权经销商。在线透明报价，无需电话谈价。服务GTA华人船主。",
+        "name": "欢迎来到Harris Boat Works, 安大略省Mercury白金级授权经销商",
+        "description": "Harris Boat Works, 安大略省Mercury Marine白金级授权经销商。在线透明报价，无需电话谈价。服务GTA华人船主。",
         "inLanguage": "zh-Hans",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
@@ -79,12 +79,12 @@ export default function MandarinLanding() {
     <div className="min-h-screen bg-background" lang="zh-Hans">
       <Helmet>
         <title>Mercury水星舷外机经销商 | Harris Boat Works 安大略省</title>
-        <meta name="description" content="Harris Boat Works — 安大略省Mercury Marine白金级授权经销商。在线透明报价，无需电话谈价。服务大多伦多地区（GTA）华人船主。" />
+        <meta name="description" content="Harris Boat Works, 安大略省Mercury Marine白金级授权经销商。在线透明报价，无需电话谈价。服务大多伦多地区（GTA）华人船主。" />
         <link rel="canonical" href={`${SITE_URL}/zh`} />
         <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
         <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
         <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
-        <meta property="og:title" content="欢迎来到Harris Boat Works — Mercury白金级授权经销商" />
+        <meta property="og:title" content="欢迎来到Harris Boat Works, Mercury白金级授权经销商" />
         <meta property="og:description" content="安大略省Mercury Marine白金级授权经销商。在线透明报价。" />
         <meta property="og:url" content={`${SITE_URL}/zh`} />
         <meta property="og:locale" content="zh_CN" />
@@ -165,7 +165,7 @@ export default function MandarinLanding() {
               许多顾客在购买船用发动机时，最担心的一件事就是：价格不透明，需要打电话"谈价格"，而且全程要用英语进行。
             </p>
             <p>
-              我们建立了 <a href="https://mercuryrepower.ca" className="text-primary hover:underline font-medium">mercuryrepower.ca</a> ——一个完全透明、在线自助的报价配置工具：
+              我们建立了 <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline font-medium">mercuryrepower.ca</a> ——一个完全透明、在线自助的报价配置工具：
             </p>
             <ul className="list-disc list-inside space-y-1 text-muted-foreground">
               <li>自行选择发动机型号、功率和配置</li>
@@ -194,7 +194,7 @@ export default function MandarinLanding() {
               <div>
                 <h3 className="font-medium text-foreground">🌐 在线报价工具</h3>
                 <p className="text-muted-foreground text-sm">
-                  <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 的配置工具不需要语言交流——您直接选择规格，系统自动生成报价。
+                  <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 的配置工具不需要语言交流——您直接选择规格，系统自动生成报价。
                 </p>
               </div>
             </div>
@@ -212,7 +212,7 @@ export default function MandarinLanding() {
               <div>
                 <h3 className="font-medium text-foreground">📞 电话</h3>
                 <p className="text-muted-foreground text-sm">
-                  905-342-2153 — 我们会尽量放慢语速，耐心沟通。
+                  905-342-2153, 我们会尽量放慢语速，耐心沟通。
                 </p>
               </div>
             </div>
@@ -305,6 +305,12 @@ export default function MandarinLanding() {
         {/* Blog links */}
         <nav className="mt-4 space-y-2 text-center">
           <p className="text-sm font-medium text-foreground mb-3">📖 中文文章</p>
+          <Link
+            to="/blog/zh/ontario-boating-guide-toronto-chinese"
+            className="block text-primary hover:underline text-sm font-semibold"
+          >
+            ⭐ 多伦多华人安省 boating 完整指南（中心页）→
+          </Link>
           <Link to="/blog/zh/mercury-repower-guide-gta" className="block text-primary hover:underline text-sm">
             舷外机换新指南 →
           </Link>

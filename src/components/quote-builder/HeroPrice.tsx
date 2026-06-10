@@ -41,7 +41,7 @@ export default function HeroPrice({
             duration={0.8}
           />
           {totalWithTax != null && (
-            <div className="text-sm text-slate-500">
+            <div className="text-sm text-repower-navy-900/400">
               inc. tax: <span className="font-medium">{money(totalWithTax)}</span>
             </div>
           )}
@@ -54,15 +54,15 @@ export default function HeroPrice({
         <div className="mt-3 flex flex-wrap items-center gap-3">
           <span
             aria-live="polite"
-            className="inline-flex items-center rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 text-sm font-semibold text-emerald-700 dark:text-emerald-400 ring-1 ring-inset ring-emerald-200 dark:ring-emerald-800 premium-pulse"
+            className="inline-flex items-center rounded-full bg-repower-cream  px-3 py-1 text-sm font-semibold text-repower-gold  ring-1 ring-inset ring-repower-gold/30  premium-pulse"
           >
             You save <AnimatedPrice value={savings} className="ml-1" duration={0.6} />
           </span>
 
           {showMonthly && (
-            <span className="text-sm text-slate-700">
+            <span className="text-sm text-repower-navy-900">
               {getFinancingDisplay(yourPriceBeforeTax, rate !== 7.99 ? rate : null)}
-              <span className="text-slate-500"> • OAC</span>
+              <span className="text-repower-navy-900/400"> • OAC</span>
             </span>
           )}
         </div>

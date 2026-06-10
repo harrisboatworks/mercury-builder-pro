@@ -1,14 +1,19 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
+import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
+import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
 import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getKoreanArticleBySlug } from '@/data/koreanBlogArticles';
+import { KO_TO_EN_SLUG } from '@/data/koreanEnglishSlugMap';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
+import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
+import { AuthorByline } from '@/components/blog/AuthorByline';
 import {
   Accordion,
   AccordionContent,
@@ -245,7 +250,7 @@ export default function KoreanBlogArticlePage() {
       {
         "@type": "Article",
         "@id": `${url}#article`,
-        "headline": article.title,
+        "headline": article.seoTitle ?? article.title,
         "description": article.description,
         "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
         "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
@@ -287,12 +292,17 @@ export default function KoreanBlogArticlePage() {
   return (
     <div className="min-h-screen bg-background" lang="ko">
       <Helmet>
-        <title>{article.title} | Harris Boat Works</title>
+        <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
         <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="ko" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
-        <meta property="og:title" content={article.title} />
+        {KO_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog/${KO_TO_EN_SLUG[article.slug]}`} />
+        )}
+        {KO_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog/${KO_TO_EN_SLUG[article.slug]}`} />
+        )}
+        <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:url" content={url} />
         <meta property="og:locale" content="ko_KR" />
@@ -312,17 +322,17 @@ export default function KoreanBlogArticlePage() {
           </Link>
         </nav>
 
-        {/* Hero image */}
-        {article.image && !heroImgError && (
-          <div className="mb-8 rounded-xl overflow-hidden">
-            <img
-              src={article.image}
-              alt={article.title}
-              className="w-full h-64 md:h-80 object-cover"
-              onError={() => setHeroImgError(true)}
-            />
-          </div>
+        {/* Hero image — shared <picture> component */}
+        {article.image && (
+          <BlogHeroPicture
+            image={article.image}
+            alt={article.title}
+            wrapperClassName="mb-8 rounded-xl overflow-hidden"
+            className="w-full h-64 md:h-80 object-cover"
+          />
         )}
+
+        <LanguageSwitcher currentLang="ko" currentSlug={article.slug} />
 
         {/* Meta */}
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
@@ -342,6 +352,9 @@ export default function KoreanBlogArticlePage() {
         <h1 className="text-3xl md:text-4xl font-light text-foreground mb-8">
           {article.title}
         </h1>
+        <div className="mb-8 pb-4 border-b border-border">
+          <AuthorByline name="Jay Harris" title="1965년부터 Mercury 딜러" />
+        </div>
 
         {/* Table of Contents */}
         {tocItems.length > 2 && (

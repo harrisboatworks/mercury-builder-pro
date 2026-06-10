@@ -7,7 +7,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { HamburgerMenu } from '@/components/ui/hamburger-menu';
 import { useState } from 'react';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { QuoteProgressStepper } from './QuoteProgressStepper';
 import { useQuoteActivityTracker } from '@/hooks/useQuoteActivityTracker';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -37,26 +37,26 @@ export const QuoteLayout = ({
   // Track anonymous quote-building activity in the background
   useQuoteActivityTracker();
   
-  return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
-      {/* Ambient gradient orbs for glassmorphism effect - Desktop only */}
-      <div className="hidden md:block fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl" />
-        <div className="absolute bottom-40 right-1/4 w-80 h-80 bg-purple-100/30 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-72 h-72 bg-emerald-100/20 rounded-full blur-3xl" />
-      </div>
-
+  return <div className="min-h-screen bg-repower-paper relative">
       {/* Admin Mode Banner */}
       {state.isAdminQuote && isAdmin && (
-        <div className="bg-yellow-500 text-yellow-950 text-center text-sm py-1 font-medium z-50 relative">
-          Admin Mode — Quote controls will appear on summary page
+        <div className="bg-repower-cream0 text-repower-gold text-center text-sm py-1 font-medium z-50 relative">
+          Admin Mode, Quote controls will appear on summary page
         </div>
       )}
 
-      {/* Luxury Header System */}
-      <LuxuryHeader 
-        onSearchClick={onSearchClick}
-        showSearchIcon={showSearchIcon}
-      />
+      {/* Site-wide solid navy header */}
+      <RepowerHeader solid />
+
+      {/* Spacer to offset fixed header */}
+      <div className="h-[64px] lg:h-[72px]" aria-hidden />
+
+      {/* Persistent trust strip */}
+      <div className="bg-repower-cream border-b border-repower-navy-900/10">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-14 py-2 text-[12px] font-medium text-repower-navy-900/70 text-center">
+          Harris Boat Works · Mercury dealer since 1965, current Platinum tier · Family-owned since 1947 · Gores Landing, ON
+        </div>
+      </div>
 
       {/* Quote Progress Stepper */}
       {showProgress && <QuoteProgressStepper />}

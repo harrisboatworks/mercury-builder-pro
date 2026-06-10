@@ -187,7 +187,7 @@ export function MediaUploadHub({ motorId, onUploadComplete }: MediaUploadHubProp
           }
 
           // Save to database
-          const { error } = await supabase
+          const { data: insertedMedia, error } = await supabase
             .from('motor_media')
             .insert({
               motor_id: motorId || undefined, // Auto-assign to motor if provided
@@ -201,9 +201,54 @@ export function MediaUploadHub({ motorId, onUploadComplete }: MediaUploadHubProp
               description: mediaFile.description,
               alt_text: mediaFile.altText,
               assignment_type: 'individual', // Will be assigned later
-            });
+              is_active: true,
+            })
+            .select('id, media_url')
+            .single();
 
           if (error) throw error;
+
+          // Auto-promote: when an admin uploads a hero image for a specific motor,
+          // wire it into motor_models so it appears in the public catalog. Only
+          // promotes when the motor currently has no hero image (no silent
+          // overwrites). Failures here do not fail the overall upload.
+          if (
+            motorId &&
+            insertedMedia &&
+            mediaFile.category === 'hero' &&
+            mediaFile.type === 'image'
+          ) {
+            try {
+              const { data: existing } = await supabase
+                .from('motor_models')
+                .select('id, hero_image_url, hero_media_id')
+                .eq('id', motorId)
+                .single();
+
+              if (existing && !existing.hero_image_url && !existing.hero_media_id) {
+                const { error: promoteErr } = await supabase
+                  .from('motor_models')
+                  .update({
+                    hero_image_url: insertedMedia.media_url,
+                    hero_media_id: insertedMedia.id,
+                    media_last_updated: new Date().toISOString(),
+                  })
+                  .eq('id', motorId);
+                if (promoteErr) {
+                  console.warn('Hero auto-promote failed:', promoteErr.message);
+                } else {
+                  console.info('Hero auto-promoted for motor', motorId);
+                }
+              } else if (existing?.hero_image_url) {
+                console.info(
+                  'Skipped hero auto-promote: motor already has hero_image_url. Use Motor Manager to replace.'
+                );
+              }
+            } catch (e) {
+              console.warn('Hero auto-promote check failed:', e);
+            }
+          }
+
           successCount++;
         } catch (error) {
           console.error(`Failed to upload ${mediaFile.title}:`, error);

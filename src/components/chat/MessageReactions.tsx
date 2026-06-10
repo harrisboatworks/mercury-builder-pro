@@ -26,14 +26,14 @@ export const MessageReactions: React.FC<MessageReactionsProps> = ({
       transition={{ delay: 0.3 }}
       className="flex items-center gap-1 mt-1.5"
     >
-      <span className="text-[10px] text-gray-400 mr-1">Was this helpful?</span>
+      <span className="text-[10px] text-muted-foreground mr-1">Was this helpful?</span>
       
       <button
         onClick={() => handleReaction('thumbs_up')}
         className={`p-1.5 rounded-full transition-all duration-200 ${
           currentReaction === 'thumbs_up'
             ? 'bg-emerald-100 text-emerald-600'
-            : 'text-gray-400 hover:text-emerald-500 hover:bg-emerald-50'
+            : 'text-muted-foreground hover:text-emerald-500 hover:bg-emerald-50'
         }`}
         aria-label="Helpful"
       >
@@ -58,7 +58,7 @@ export const MessageReactions: React.FC<MessageReactionsProps> = ({
         className={`p-1.5 rounded-full transition-all duration-200 ${
           currentReaction === 'thumbs_down'
             ? 'bg-red-100 text-red-500'
-            : 'text-gray-400 hover:text-red-400 hover:bg-red-50'
+            : 'text-muted-foreground hover:text-red-400 hover:bg-red-50'
         }`}
         aria-label="Not helpful"
       >

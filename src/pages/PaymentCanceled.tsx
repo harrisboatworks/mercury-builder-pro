@@ -14,8 +14,8 @@ export default function PaymentCanceled() {
     <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20 flex items-center justify-center p-4">
       <Card className="w-full max-w-lg">
         <CardHeader className="text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-red-100">
-            <XCircle className="h-10 w-10 text-red-600" />
+          <div className="mx-auto mb-4 flex items-center justify-center">
+            <XCircle className="h-12 w-12 text-repower-mercury-red" strokeWidth={1.5} />
           </div>
           <CardTitle className="text-2xl text-red-600">Payment Canceled</CardTitle>
           <p className="text-muted-foreground">

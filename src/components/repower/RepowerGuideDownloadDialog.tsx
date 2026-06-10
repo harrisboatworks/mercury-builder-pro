@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import {
@@ -115,8 +116,8 @@ export function RepowerGuideDownloadDialog({ open, onOpenChange }: RepowerGuideD
       <p className="text-sm font-medium mb-2">This 15-page guide covers:</p>
       <ul className="space-y-1.5">
         {guideHighlights.map((item) => (
-          <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+          <li key={item} className="flex flex-row items-start gap-2 text-sm text-muted-foreground">
+            <Check className="w-4 h-4 text-repower-gold flex-shrink-0" />
             {item}
           </li>
         ))}
@@ -128,7 +129,7 @@ export function RepowerGuideDownloadDialog({ open, onOpenChange }: RepowerGuideD
   const formContent = (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="email">Email *</Label>
+        <Label htmlFor="email">Email <RequiredMark /></Label>
         <Input
           id="email"
           type="email"
@@ -206,8 +207,8 @@ export function RepowerGuideDownloadDialog({ open, onOpenChange }: RepowerGuideD
   // Shared success content
   const successContent = (
     <div className="text-center py-6">
-      <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-        <Check className="w-8 h-8 text-green-600" />
+      <div className="mx-auto mb-4 flex items-center justify-center">
+        <Check className="w-10 h-10 text-repower-gold" strokeWidth={2} />
       </div>
       <div className="text-xl font-semibold mb-2">Check Your Email!</div>
       <p className="text-muted-foreground mb-6">

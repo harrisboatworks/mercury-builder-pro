@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/bass-boat-150-to-150-pro-xs
-last_updated: 2026-05-01
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 case_study_id: CS03
 slug: bass-boat-150-to-150-pro-xs
 boat_type: "Bass boat"
@@ -41,7 +41,7 @@ Best for bass-boat owners who already know they want Mercury Pro XS character an
 
 ## Customer quote
 
-> The right bass-boat repower is not just about peak speed — it is about repeatable performance, setup confidence, and running hard all day.
+> The right bass-boat repower is not just about peak speed, it is about repeatable performance, setup confidence, and running hard all day.
 
 ## Quote a similar repower
 

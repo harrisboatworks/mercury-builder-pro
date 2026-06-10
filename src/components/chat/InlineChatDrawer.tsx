@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Send, RefreshCw, ChevronDown, Sparkles, Check } from 'lucide-react';
-import { parseMessageText, ParsedSegment } from '@/lib/textParser';
+import { MarkdownChatBody } from './MarkdownChatBody';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { useLocation } from 'react-router-dom';
@@ -811,7 +811,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                   variant="ghost"
                   size="sm"
                   onClick={onClose}
-                  className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0 rounded-full transition-colors"
+                  className="text-muted-foreground hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0 rounded-full transition-colors"
                 >
                   <ChevronDown className="w-5 h-5" />
                 </Button>
@@ -829,7 +829,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                   </p>
                   <button
                     onClick={handleStartFresh}
-                    className="flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                    className="flex items-center gap-1 text-xs text-muted-foreground hover:text-gray-600 transition-colors"
                   >
                     <RefreshCw className="w-3 h-3" />
                     Start fresh
@@ -887,31 +887,19 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                             {message.isStreaming && message.text === '' ? (
                               <TypingIndicator />
                             ) : (
-                              <p className="whitespace-pre-wrap leading-relaxed font-light break-words" style={{ overflowWrap: 'anywhere' }}>
-                                {parseMessageText(message.text).map((segment, idx) => {
-                                  if (segment.type === 'text') {
-                                    return <span key={idx}>{segment.content}</span>;
-                                  }
-                                  return (
-                                    <a
-                                      key={idx}
-                                      href={segment.href}
-                                      className="underline text-blue-600 hover:text-blue-800 transition-colors"
-                                      target={segment.type === 'url' ? '_blank' : undefined}
-                                      rel={segment.type === 'url' ? 'noopener noreferrer' : undefined}
-                                    >
-                                      {segment.content}
-                                    </a>
-                                  );
-                                })}
+                              <div className="leading-relaxed font-light break-words" style={{ overflowWrap: 'anywhere' }}>
+                                <MarkdownChatBody
+                                  text={message.text}
+                                  isUser={message.isUser}
+                                />
                                 {message.isStreaming && (
-                                  <motion.span 
+                                  <motion.span
                                     className="inline-block w-0.5 h-4 bg-current ml-0.5"
                                     animate={{ opacity: [1, 0] }}
                                     transition={{ duration: 0.5, repeat: Infinity }}
                                   />
                                 )}
-                              </p>
+                              </div>
                             )}
                           </div>
 
@@ -952,7 +940,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                     transition={{ duration: 0.25, ease: 'easeOut' }}
                     className="px-3 py-1.5 border-t border-gray-100 bg-white shrink-0"
                   >
-                    <p className="text-[9px] text-gray-400 mb-1 uppercase tracking-wide">
+                    <p className="text-[9px] text-muted-foreground mb-1 uppercase tracking-wide">
                       {currentMotorLabel ? 'Quick Questions' : 'Suggested'}
                     </p>
                     <div className="flex gap-1.5 overflow-x-auto scrollbar-hide -mx-1 px-1 pb-0.5">
@@ -1014,7 +1002,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                     placeholder={voice.isConnected ? "Voice chat active..." : "Ask anything..."}
                     disabled={voice.isConnected}
                     className="flex-1 min-w-0 bg-transparent border-none focus:outline-none 
-                      text-sm text-gray-900 placeholder:text-gray-400 font-light h-8"
+                      text-sm text-gray-900 placeholder:text-muted-foreground font-light h-8"
                   />
                   <motion.div
                     animate={{ 

@@ -6,7 +6,8 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { MercuryDealerGTASEO, GTA_FAQ } from '@/components/seo/MercuryDealerGTASEO';
 import { ChevronRight, MapPin, Clock, Award, Phone } from 'lucide-react';
 
@@ -19,9 +20,10 @@ const facts = [
 
 export default function MercuryDealerGTA() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <MercuryDealerGTASEO />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
@@ -37,7 +39,7 @@ export default function MercuryDealerGTA() {
             Mercury Dealer for the Greater Toronto Area
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Harris Boat Works on Rice Lake serves GTA, Lake Simcoe, and Lake Scugog Mercury buyers — about 90 minutes east of Toronto on the 401. Family-owned since 1947, Mercury dealer since 1965.
+            Harris Boat Works on Rice Lake serves GTA, Lake Simcoe, and Lake Scugog Mercury buyers, about 90 minutes east of Toronto on the 401. Family-owned since 1947, Mercury dealer since 1965.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
@@ -62,7 +64,7 @@ export default function MercuryDealerGTA() {
         <section className="mb-12 prose prose-neutral max-w-none dark:prose-invert">
           <h2 className="text-2xl font-semibold text-foreground mb-4">Why GTA Boaters Drive to Rice Lake</h2>
           <p className="text-muted-foreground leading-relaxed">
-            GTA Mercury buyers have a real choice. We're 90 minutes east of Toronto on the 401 — closer than most assume — and we publish live CAD pricing on every Mercury motor. No "call for price" runaround, no high-pressure showroom. Build a quote online, then bring your boat down for installation, or pick up a loose motor for self-install.
+            GTA Mercury buyers have a real choice. We're 90 minutes east of Toronto on the 401, closer than most assume, and we publish live CAD pricing on every Mercury motor. No "call for price" runaround, no high-pressure showroom. Build a quote online, then bring your boat down for installation, or pick up a loose motor for self-install.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-4">
             We regularly handle Lake Simcoe (Barrie, Orillia, Innisfil), Lake Scugog (Port Perry), Trent-Severn Waterway, and Lake Ontario Mercury repowers. Common GTA configurations: Pro XS 150–250 for performance hulls, FourStroke 90–150 with Command Thrust for pontoons, FourStroke V8 250–300 for larger boats. Pickup only at Gores Landing.
@@ -92,7 +94,7 @@ export default function MercuryDealerGTA() {
             Ready to repower from the GTA?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            Build a Mercury quote with real CAD pricing in 3 minutes — or call us at (905) 342-2153.
+            Build a Mercury quote with real CAD pricing in 3 minutes, or call us at (905) 342-2153.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg">
@@ -107,6 +109,7 @@ export default function MercuryDealerGTA() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }

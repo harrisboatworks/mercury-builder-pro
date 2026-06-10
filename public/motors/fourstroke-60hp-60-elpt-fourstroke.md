@@ -1,25 +1,25 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke
-last_updated: 2026-05-01
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 motor_id: 5744e979-5c77-4550-a955-d9e83ecdb26c
 slug: fourstroke-60hp-60-elpt-fourstroke
 family: FourStroke
 horsepower: 60
 model_number: 1F60413GZ
 availability: in_stock
-price_cad: 12161
+price_cad: 12040
 ---
 
 # 60 ELPT FourStroke
 
 Mercury FourStroke 60 HP outboard motor (model 1F60413GZ).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
@@ -30,9 +30,9 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 
 ## Pricing (CAD)
 
-- **Selling price:** $12,161
-- **MSRP:** $13,820
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **Selling price:** $12,040
+- **MSRP:** $13,415
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability
@@ -46,7 +46,7 @@ Mid-size aluminum fishing boats 14–18 ft and small pontoons.
 
 ## Not ideal for
 
-Heavy pontoons over 22 ft or fiberglass family boats — consider 90–115 HP.
+Heavy pontoons over 22 ft or fiberglass family boats, consider 90–115 HP.
 
 ## Build a quote
 

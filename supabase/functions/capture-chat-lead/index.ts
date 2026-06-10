@@ -140,10 +140,34 @@ serve(async (req) => {
 
     console.log('[capture-chat-lead] Lead saved successfully:', savedLead.id);
 
+    // HTML escape helper for email bodies
+    const escHtml = (s: unknown): string =>
+      String(s ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+
+    // Sanitize free-text for SMS bodies (strip URLs, phone numbers, restrict chars)
+    const sanitizeForSms = (val: unknown, max = 200): string => {
+      const s = typeof val === 'string' ? val : '';
+      return s
+        .replace(/https?:\/\/\S+/gi, '')
+        .replace(/\b\d[\d\s().-]{6,}\d\b/g, '')
+        .replace(/[^A-Za-z0-9 ,.\-']/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, max);
+    };
+
     // Send SMS notification to admin
     const ADMIN_PHONE = Deno.env.get('ADMIN_PHONE');
     if (ADMIN_PHONE) {
-      const smsMessage = `💬 CHAT LEAD!\n\nName: ${leadData.name}\nPhone: ${leadData.phone}${leadData.email ? `\nEmail: ${leadData.email}` : ''}\n\nContext: ${leadData.conversationContext || 'Requested callback'}${leadData.motorContext?.model ? `\nMotor: ${leadData.motorContext.model}` : ''}\n\nLead Score: ${leadScore}/100\n\nAction: Call within 24hrs!\n\n- Harris Boat Works AI`;
+      const safeName = sanitizeForSms(leadData.name, 60);
+      const safeContext = sanitizeForSms(leadData.conversationContext || 'Requested callback', 200);
+      const safeMotor = sanitizeForSms(leadData.motorContext?.model, 60);
+      const smsMessage = `💬 CHAT LEAD!\n\nName: ${safeName}\nPhone: ${leadData.phone}${leadData.email ? `\nEmail: ${leadData.email}` : ''}\n\nContext: ${safeContext}${safeMotor ? `\nMotor: ${safeMotor}` : ''}\n\nLead Score: ${leadScore}/100\n\nAction: Call within 24hrs!\n\n- Harris Boat Works AI`;
 
       try {
         const { error: smsError } = await supabase.functions.invoke('send-sms', {
@@ -174,14 +198,14 @@ serve(async (req) => {
           <h2>💬 New Chat Lead!</h2>
           <p>A customer requested a callback from the AI chat.</p>
           <hr>
-          <p><strong>Name:</strong> ${leadData.name}</p>
-          <p><strong>Phone:</strong> ${leadData.phone}</p>
-          ${leadData.email ? `<p><strong>Email:</strong> ${leadData.email}</p>` : ''}
+          <p><strong>Name:</strong> ${escHtml(leadData.name)}</p>
+          <p><strong>Phone:</strong> ${escHtml(leadData.phone)}</p>
+          ${leadData.email ? `<p><strong>Email:</strong> ${escHtml(leadData.email)}</p>` : ''}
           <p><strong>Lead Score:</strong> ${leadScore}/100</p>
           <hr>
-          <p><strong>Context:</strong> ${leadData.conversationContext || 'Requested callback'}</p>
-          ${leadData.motorContext?.model ? `<p><strong>Motor Interest:</strong> ${leadData.motorContext.model} (${leadData.motorContext.hp}HP)</p>` : ''}
-          ${leadData.currentPage ? `<p><strong>Page:</strong> ${leadData.currentPage}</p>` : ''}
+          <p><strong>Context:</strong> ${escHtml(leadData.conversationContext || 'Requested callback')}</p>
+          ${leadData.motorContext?.model ? `<p><strong>Motor Interest:</strong> ${escHtml(leadData.motorContext.model)} (${escHtml(String(leadData.motorContext.hp ?? ''))}HP)</p>` : ''}
+          ${leadData.currentPage ? `<p><strong>Page:</strong> ${escHtml(leadData.currentPage)}</p>` : ''}
           <hr>
           <p><em>Action: Call within 24 hours</em></p>
         `;
@@ -193,7 +217,7 @@ serve(async (req) => {
           from: 'Harris Boat Works <system@hbwsales.ca>',
           to: ['info@harrisboatworks.ca'],
           reply_to: 'info@harrisboatworks.ca',
-          subject: `💬 New Chat Lead: ${leadData.name}`,
+          subject: `💬 New Chat Lead: ${leadData.name}`.slice(0, 200),
           html: emailHtml
         });
 

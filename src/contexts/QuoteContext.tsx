@@ -235,11 +235,33 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
         selectedPromoTerm: action.payload.term ?? null,
         selectedPromoValue: action.payload.value ?? null,
       };
-    case 'COMPLETE_STEP':
+    case 'COMPLETE_STEP': {
+      // Analytics: fire quote_step_complete on advance (not back-nav). Each step fires once per session.
+      try {
+        if (typeof window !== 'undefined' && !state.completedSteps.includes(action.payload)) {
+          const stepNames = ['', 'motor_selection', 'boat_details', 'boat_details', 'customer_info', 'customer_info', 'review', 'review'];
+          const startKey = `mr_step_start_${action.payload}`;
+          const startTs = Number(sessionStorage.getItem(startKey) || 0);
+          const nowMs = Date.now();
+          const durationS = startTs ? Math.round((nowMs - startTs) / 1000) : 0;
+          sessionStorage.setItem(`mr_step_start_${action.payload + 1}`, String(nowMs));
+          const qid = sessionStorage.getItem('mr_quote_id');
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).dataLayer.push({
+            event: 'quote_step_complete',
+            step_number: action.payload,
+            step_name: stepNames[action.payload] || `step_${action.payload}`,
+            step_duration_seconds: durationS,
+            motor_model: state.motor?.model || '',
+            quote_id: qid,
+          });
+        }
+      } catch { /* analytics must never break the reducer */ }
       return { 
         ...state, 
         completedSteps: [...state.completedSteps.filter(s => s !== action.payload), action.payload]
       };
+    }
     case 'SET_CURRENT_STEP':
       return { ...state, currentStep: action.payload };
     case 'LOAD_FROM_STORAGE':

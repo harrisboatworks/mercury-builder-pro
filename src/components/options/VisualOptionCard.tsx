@@ -45,12 +45,12 @@ export function VisualOptionCard({
       whileTap={{ scale: 0.98 }}
       onClick={handleSelect}
       className={`
-        relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300
-        ${isSelected 
-          ? 'ring-2 ring-primary ring-offset-2 shadow-lg' 
-          : 'border border-border hover:border-primary/30 hover:shadow-md'
+        relative rounded-lg overflow-hidden cursor-pointer transition-colors duration-200 bg-white
+        ${isSelected
+          ? 'border-2 border-repower-navy-900 -m-px'
+          : 'border border-repower-navy-900/10 hover:bg-repower-cream'
         }
-        ${disabled ? 'opacity-60 cursor-not-allowed' : ''}
+        ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
       `}
     >
       {/* Image Container */}
@@ -86,16 +86,9 @@ export function VisualOptionCard({
           {option.is_included ? 'Included' : `$${effectivePrice.toFixed(0)}`}
         </div>
         
-        {/* Selection Checkmark */}
+        {/* Selection dot (mercury-red) */}
         {isSelected && (
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-            className="absolute bottom-2 right-2 z-10 bg-primary text-primary-foreground rounded-full p-2 shadow-lg"
-          >
-            <Check className="w-4 h-4" />
-          </motion.div>
+          <span className="absolute top-2 right-2 z-20 h-2.5 w-2.5 rounded-full bg-repower-mercury-red ring-2 ring-white" aria-hidden />
         )}
 
         {/* Info Button */}

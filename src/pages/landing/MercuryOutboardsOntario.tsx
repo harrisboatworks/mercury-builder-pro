@@ -7,7 +7,8 @@ import {
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import {
   MercuryOutboardsOntarioSEO,
   ONTARIO_HUB_FAQ,
@@ -30,28 +31,28 @@ const LINEUP = [
   {
     icon: Anchor,
     name: 'Portable FourStroke',
-    range: '2.5 – 20 HP',
+    range: '2.5, 20 HP',
     body: 'Tenders, dinghies, small tillers, cottage runabouts. Lightweight, pull-start or electric, easy to carry.',
     href: '/quote/motor-selection',
   },
   {
     icon: Fish,
     name: 'Mid-Range FourStroke',
-    range: '25 – 115 HP',
+    range: '25, 115 HP',
     body: 'Fishing boats, aluminum hulls, light pontoon, daycruisers. Mercury\'s workhorse line.',
     href: '/quote/motor-selection',
   },
   {
     icon: Zap,
     name: 'Pro XS',
-    range: '115 – 250 HP',
-    body: 'Performance and tournament use — bass, ski, wake, fast bowriders. Real CAD pricing live.',
+    range: '115, 250 HP',
+    body: 'Performance and tournament use, bass, ski, wake, fast bowriders. Real CAD pricing live.',
     href: '/mercury-pro-xs',
   },
   {
     icon: Sailboat,
     name: 'Command Thrust',
-    range: '40 – 150 HP',
+    range: '40, 150 HP',
     body: 'Pontoons and heavy hulls. Larger gearcase + prop for more push at slower speeds.',
     href: '/quote/motor-selection',
   },
@@ -72,7 +73,7 @@ const LINEUP = [
   {
     icon: Waves,
     name: 'FourStroke V8',
-    range: '250 – 300 HP',
+    range: '250, 300 HP',
     body: 'Naturally aspirated V8 for offshore, big bowriders, and large pontoons. Premium tier.',
     href: '/quote/motor-selection',
   },
@@ -98,9 +99,10 @@ const SERVICE_AREAS = [
 
 export default function MercuryOutboardsOntario() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <MercuryOutboardsOntarioSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-12 max-w-5xl">
         {/* Breadcrumb */}
@@ -118,7 +120,7 @@ export default function MercuryOutboardsOntario() {
             Mercury Outboards in Ontario
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            The full Mercury Marine outboard lineup at Harris Boat Works — Platinum Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965.
+            The full Mercury Marine outboard lineup at Harris Boat Works, Platinum Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
@@ -244,7 +246,7 @@ export default function MercuryOutboardsOntario() {
         {/* FAQ */}
         <section className="mb-16">
           <h2 className="text-2xl font-semibold text-foreground mb-6 text-center">
-            Mercury in Ontario — FAQ
+            Mercury in Ontario, FAQ
           </h2>
           <Accordion type="single" collapsible className="w-full space-y-2">
             {ONTARIO_HUB_FAQ.map((item, i) => (
@@ -270,7 +272,7 @@ export default function MercuryOutboardsOntario() {
             Ready to spec your Mercury?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            Build a real CAD quote in 3 minutes — live pricing, financing estimates, trade-in. Or call (905) 342-2153.
+            Build a real CAD quote in 3 minutes, live pricing, financing estimates, trade-in. Or call (905) 342-2153.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg">
@@ -282,6 +284,7 @@ export default function MercuryOutboardsOntario() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }

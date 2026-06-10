@@ -6,7 +6,7 @@ export const FINANCING_MINIMUM = 5000;
 /**
  * Dealerplan processing fee (mandatory for all financed purchases)
  */
-export const DEALERPLAN_FEE = 299;
+export const DEALERPLAN_FEE = 349;
 
 /**
  * Get default financing rate based on price tier

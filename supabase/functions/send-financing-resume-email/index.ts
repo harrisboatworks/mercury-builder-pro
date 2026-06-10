@@ -163,7 +163,7 @@ const handler = async (req: Request): Promise<Response> => {
       </p>
     `;
 
-    const html = createBrandedEmailTemplate(emailContent, 'Resume your financing application');
+    const html = createBrandedEmailTemplate(emailContent, 'Resume your financing application', 'You received this email because you started a financing application with Harris Boat Works.');
 
     console.log('Sending resume email to:', email);
 

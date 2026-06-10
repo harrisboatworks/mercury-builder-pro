@@ -11,6 +11,7 @@ const navItems = [
   { label: "Promotions", to: "/admin/promotions" },
   { label: "Financing", to: "/admin/financing" },
   { label: "Financing Apps", to: "/admin/financing-applications" },
+  { label: "Submission Logs", to: "/admin/financing-submission-logs" },
   
   { label: "Inventory", to: "/admin/inventory" },
   { label: "Stock Sync", to: "/admin/stock-sync" },
@@ -20,7 +21,9 @@ const navItems = [
   { label: "Option Rules", to: "/admin/option-rules" },
   { label: "Sources", to: "/admin/sources" },
   { label: "Connectors", to: "/admin/connectors" },
+  { label: "Growth Agent", to: "/admin/growth-agent" },
   { label: "Security", to: "/admin/security" },
+  { label: "SEO Health", to: "/admin/seo-health" },
   { label: "SIN Encryption", to: "/admin/sin-encryption-test" },
   { label: "Zapier Integration", to: "/admin/zapier" },
   { label: "Email Management", to: "/admin/email" },

@@ -63,6 +63,43 @@ const AdminQuotes = () => {
   const [leadSourceFilter, setLeadSourceFilter] = useState<string>('all');
   const [quoteSourceFilter, setQuoteSourceFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [hpFilter, setHpFilter] = useState<string>('all');
+  const [modelFilter, setModelFilter] = useState('');
+  const [dateRangeFilter, setDateRangeFilter] = useState<string>('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  const PAGE_SIZE = 50;
+
+  // Parse HP from "40HP 40 ELPT Command Thrust FourStroke"
+  const parseHp = (motorInfo: string): number | null => {
+    if (!motorInfo) return null;
+    const m = motorInfo.match(/^(\d+(?:\.\d+)?)\s*HP/i);
+    return m ? parseFloat(m[1]) : null;
+  };
+  const hpInBucket = (hp: number | null, bucket: string): boolean => {
+    if (bucket === 'all') return true;
+    if (hp == null) return false;
+    switch (bucket) {
+      case '2.5-9.9': return hp >= 2.5 && hp <= 9.9;
+      case '15-25': return hp >= 15 && hp <= 25;
+      case '30-60': return hp >= 30 && hp <= 60;
+      case '75-115': return hp >= 75 && hp <= 115;
+      case '150+': return hp >= 150;
+      default: return true;
+    }
+  };
+  const dateInRange = (created: string | null, range: string): boolean => {
+    if (range === 'all' || !created) return true;
+    const d = new Date(created).getTime();
+    const now = Date.now();
+    const day = 24 * 60 * 60 * 1000;
+    if (range === 'today') {
+      const start = new Date(); start.setHours(0,0,0,0);
+      return d >= start.getTime();
+    }
+    if (range === '7d') return d >= now - 7 * day;
+    if (range === '30d') return d >= now - 30 * day;
+    return true;
+  };
 
   useEffect(() => {
     document.title = 'Quotes | Admin';
@@ -195,19 +232,67 @@ const AdminQuotes = () => {
       return db - da;
     });
 
-    // Text search
+    // Text search (with HBW- ref prioritization)
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase().trim();
-      merged = merged.filter(r =>
-        (r.customer_name || '').toLowerCase().includes(q) ||
-        (r.customer_email || '').toLowerCase().includes(q) ||
-        (r._motor_info || '').toLowerCase().includes(q) ||
-        (r._reference_number || '').toLowerCase().includes(q)
-      );
+      const isRef = /^hbw-?\d+/i.test(q);
+      if (isRef) {
+        const normalized = q.replace(/^hbw-?/i, 'hbw-');
+        merged = merged.filter(r => (r._reference_number || '').toLowerCase().includes(normalized));
+      } else {
+        merged = merged.filter(r =>
+          (r.customer_name || '').toLowerCase().includes(q) ||
+          (r.customer_email || '').toLowerCase().includes(q) ||
+          (r._motor_info || '').toLowerCase().includes(q) ||
+          (r._reference_number || '').toLowerCase().includes(q)
+        );
+      }
+    }
+
+    // HP filter
+    if (hpFilter !== 'all') {
+      merged = merged.filter(r => hpInBucket(parseHp(r._motor_info || ''), hpFilter));
+    }
+
+    // Model contains filter
+    if (modelFilter.trim()) {
+      const mf = modelFilter.toLowerCase().trim();
+      merged = merged.filter(r => (r._motor_info || '').toLowerCase().includes(mf));
+    }
+
+    // Date range filter
+    if (dateRangeFilter !== 'all') {
+      merged = merged.filter(r => dateInRange(r.created_at, dateRangeFilter));
     }
 
     return merged;
-  }, [customerQuoteRows, savedQuoteRows, quoteSourceFilter, searchQuery]);
+  }, [customerQuoteRows, savedQuoteRows, quoteSourceFilter, searchQuery, hpFilter, modelFilter, dateRangeFilter]);
+
+  // Reset page on filter change
+  useEffect(() => { setCurrentPage(1); }, [searchQuery, hpFilter, modelFilter, dateRangeFilter, quoteSourceFilter]);
+
+  // Paginate
+  const totalPages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+  const pageStart = (currentPage - 1) * PAGE_SIZE;
+  const pagedRows = rows.slice(pageStart, pageStart + PAGE_SIZE);
+
+  // Recent anonymous quotes grouped by motor (last 24h)
+  const recentAnonGroups = useMemo(() => {
+    const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+    const anon = savedQuoteRows.filter(r =>
+      r._is_soft_lead && r.created_at && new Date(r.created_at).getTime() >= cutoff
+    );
+    const groups = new Map<string, UnifiedQuoteRow[]>();
+    anon.forEach(r => {
+      const key = r._motor_info || 'Unknown motor';
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key)!.push(r);
+    });
+    return Array.from(groups.entries())
+      .map(([motor, items]) => ({ motor, items }))
+      .sort((a, b) => b.items.length - a.items.length);
+  }, [savedQuoteRows]);
+  const [showAnonPanel, setShowAnonPanel] = useState(true);
 
   const fmt = (n: number | null | undefined) => (n == null ? '-' : `$${Math.round(Number(n)).toLocaleString()}`);
 
@@ -289,7 +374,7 @@ const AdminQuotes = () => {
           <div className="relative flex-1 min-w-[200px] max-w-sm">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search name, email, motor..."
+              placeholder="Search name, email, motor, ref # (e.g. HBW-00827)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-9 h-9"
@@ -350,12 +435,121 @@ const AdminQuotes = () => {
             <Badge variant="secondary" className="text-xs">{showPenalizedOnly ? customerQuoteRows.length : penalizedTotal}</Badge>
           </div>
         </div>
+
+        {/* Secondary filter row: HP / Model / Date */}
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-1.5">
+            <Label className="text-sm">HP:</Label>
+            <select
+              value={hpFilter}
+              onChange={(e) => setHpFilter(e.target.value)}
+              className="text-sm border rounded px-2 py-1"
+            >
+              <option value="all">All HP</option>
+              <option value="2.5-9.9">2.5 to 9.9</option>
+              <option value="15-25">15 to 25</option>
+              <option value="30-60">30 to 60</option>
+              <option value="75-115">75 to 115</option>
+              <option value="150+">150+</option>
+            </select>
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <Label className="text-sm whitespace-nowrap">Model contains:</Label>
+            <Input
+              value={modelFilter}
+              onChange={(e) => setModelFilter(e.target.value)}
+              placeholder="e.g. Command Thrust"
+              className="h-8 w-48 text-sm"
+            />
+          </div>
+
+          <div className="flex items-center gap-1">
+            <Label className="text-sm mr-1">Date:</Label>
+            {[
+              { v: 'today', l: 'Today' },
+              { v: '7d', l: 'Last 7d' },
+              { v: '30d', l: 'Last 30d' },
+              { v: 'all', l: 'All' },
+            ].map(opt => (
+              <Button
+                key={opt.v}
+                variant={dateRangeFilter === opt.v ? 'default' : 'outline'}
+                size="sm"
+                className="h-7 px-2 text-xs"
+                onClick={() => setDateRangeFilter(opt.v)}
+              >
+                {opt.l}
+              </Button>
+            ))}
+          </div>
+
+          <div className="text-xs text-muted-foreground ml-auto">
+            Showing {rows.length === 0 ? 0 : pageStart + 1}{rows.length > 0 ? `-${Math.min(pageStart + PAGE_SIZE, rows.length)}` : ''} of {rows.length}
+          </div>
+        </div>
       </div>
 
+      {/* Recent anonymous quotes panel (last 24h) */}
+      {recentAnonGroups.length > 0 && (
+        <Card className="p-3 mb-4 border-yellow-300 bg-yellow-50 dark:bg-yellow-950/20">
+          <button
+            type="button"
+            onClick={() => setShowAnonPanel(v => !v)}
+            className="flex items-center justify-between w-full text-left"
+          >
+            <div className="flex items-center gap-2">
+              <Badge variant="outline" className="text-[10px]">👤 Anonymous, last 24h</Badge>
+              <span className="text-sm font-medium">
+                {recentAnonGroups.reduce((s, g) => s + g.items.length, 0)} quotes across {recentAnonGroups.length} models
+              </span>
+              <span className="text-xs text-muted-foreground">Useful when a caller can't find their quote</span>
+            </div>
+            <span className="text-xs text-muted-foreground">{showAnonPanel ? 'Hide' : 'Show'}</span>
+          </button>
+          {showAnonPanel && (
+            <div className="mt-3 space-y-2">
+              {recentAnonGroups.map(g => {
+                const refs = g.items
+                  .map(i => i._reference_number)
+                  .filter(Boolean) as string[];
+                const refRange = refs.length === 0
+                  ? '-'
+                  : refs.length === 1
+                    ? refs[0]
+                    : `${refs[refs.length - 1]} to ${refs[0]}`;
+                return (
+                  <div key={g.motor} className="flex items-center justify-between gap-3 text-sm bg-background/60 rounded px-3 py-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <Badge variant="secondary" className="text-[10px]">{g.items.length}x</Badge>
+                      <span className="font-medium truncate">{g.motor}</span>
+                      <span className="text-xs text-muted-foreground whitespace-nowrap">{refRange}</span>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="h-7 text-xs"
+                      onClick={() => {
+                        setModelFilter(g.motor.replace(/^\d+(\.\d+)?HP\s*/i, ''));
+                        setDateRangeFilter('today');
+                        setQuoteSourceFilter('anonymous');
+                      }}
+                    >
+                      View configurations
+                    </Button>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </Card>
+      )}
+
       <Card className="p-4">
-        <div className="overflow-x-auto">
+
+        <div className="overflow-x-auto max-h-[70vh] overflow-y-auto">
           <Table>
-            <TableHeader>
+            <TableHeader className="sticky top-0 bg-background z-10">
               <TableRow>
                 <TableHead>Ref #</TableHead>
                 <TableHead>Date</TableHead>
@@ -378,7 +572,7 @@ const AdminQuotes = () => {
                   <TableCell colSpan={11}>{searchQuery ? 'No results matching search.' : 'No quotes found.'}</TableCell>
                 </TableRow>
               ) : (
-                rows.map((r) => {
+                pagedRows.map((r) => {
                   const penalty = !!r.penalty_applied;
                   const percent = r.penalty_factor != null ? Math.round((1 - Number(r.penalty_factor)) * 100) : null;
                   return (
@@ -427,7 +621,7 @@ const AdminQuotes = () => {
                               </TooltipTrigger>
                               <TooltipContent>
                                 <div className="max-w-[260px]">
-                                  Penalty applied: -{percent}% — {r.penalty_reason}
+                                  Penalty applied: -{percent}%. {r.penalty_reason}
                                 </div>
                               </TooltipContent>
                             </Tooltip>
@@ -482,6 +676,32 @@ const AdminQuotes = () => {
             </TableBody>
           </Table>
         </div>
+        {rows.length > PAGE_SIZE && (
+          <div className="flex items-center justify-between mt-3 pt-3 border-t">
+            <div className="text-xs text-muted-foreground">
+              Showing {pageStart + 1}-{Math.min(pageStart + PAGE_SIZE, rows.length)} of {rows.length}
+            </div>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                disabled={currentPage === 1}
+                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              >
+                Previous
+              </Button>
+              <span className="text-xs">Page {currentPage} of {totalPages}</span>
+              <Button
+                variant="outline"
+                size="sm"
+                disabled={currentPage >= totalPages}
+                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+              >
+                Next
+              </Button>
+            </div>
+          </div>
+        )}
       </Card>
     </main>
   );

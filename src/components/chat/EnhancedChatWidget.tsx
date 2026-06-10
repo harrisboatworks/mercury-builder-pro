@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle, useMemo, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { X, Send, MessageCircle, RefreshCw, Sparkles } from 'lucide-react';
-import { parseMessageText, ParsedSegment } from '@/lib/textParser';
+import { MarkdownChatBody } from './MarkdownChatBody';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useMotorViewSafe } from '@/contexts/MotorViewContext';
@@ -801,7 +801,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                   variant="ghost"
                   size="sm"
                   onClick={onClose}
-                  className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 h-9 w-9 p-0 rounded-full transition-colors"
+                  className="text-muted-foreground hover:text-gray-600 hover:bg-gray-100 h-9 w-9 p-0 rounded-full transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </Button>
@@ -823,7 +823,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                     </p>
                     <button
                       onClick={handleStartFresh}
-                      className="flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                      className="flex items-center gap-1 text-xs text-muted-foreground hover:text-gray-600 transition-colors"
                     >
                       <RefreshCw className="w-3 h-3" />
                       Start fresh
@@ -857,31 +857,19 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                               <TypingIndicator />
                             ) : (
                               <>
-                                <p className="text-[14px] whitespace-pre-wrap leading-relaxed font-light">
-                                  {parseMessageText(message.text).map((segment, idx) => {
-                                    if (segment.type === 'text') {
-                                      return <span key={idx}>{segment.content}</span>;
-                                    }
-                                    return (
-                                      <a
-                                        key={idx}
-                                        href={segment.href}
-                                        className="underline text-blue-600 hover:text-blue-800 transition-colors"
-                                        target={segment.type === 'url' ? '_blank' : undefined}
-                                        rel={segment.type === 'url' ? 'noopener noreferrer' : undefined}
-                                      >
-                                        {segment.content}
-                                      </a>
-                                    );
-                                  })}
+                                <div className="text-[14px] leading-relaxed font-light">
+                                  <MarkdownChatBody
+                                    text={message.text}
+                                    isUser={message.isUser}
+                                  />
                                   {message.isStreaming && (
-                                    <motion.span 
+                                    <motion.span
                                       className="inline-block w-0.5 h-4 bg-current ml-0.5"
                                       animate={{ opacity: [1, 0] }}
                                       transition={{ duration: 0.5, repeat: Infinity }}
                                     />
                                   )}
-                                </p>
+                                </div>
                                 {message.comparisonData && (
                                   <MotorComparisonCard
                                     motor1={message.comparisonData.motor1}
@@ -925,7 +913,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                     transition={{ delay: 0.3 }}
                     className="px-5 pb-3"
                   >
-                    <p className="text-[11px] text-gray-400 mb-2 uppercase tracking-wide">
+                    <p className="text-[11px] text-muted-foreground mb-2 uppercase tracking-wide">
                       {motorContext ? 'Common Questions' : 'Suggested'}
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -971,7 +959,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                       onChange={(e) => setInputText(e.target.value)}
                       onKeyPress={handleKeyPress}
                       placeholder={voice.isConnected ? "Voice chat active..." : "Ask anything..."}
-                      className="flex-1 px-1 py-0 h-full bg-transparent border-0 focus:outline-none text-[14px] text-gray-800 placeholder:text-gray-400 font-light"
+                      className="flex-1 px-1 py-0 h-full bg-transparent border-0 focus:outline-none text-[14px] text-gray-800 placeholder:text-muted-foreground font-light"
                       disabled={isLoading || voice.isConnected}
                     />
                     <Button

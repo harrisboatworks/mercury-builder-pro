@@ -1,4 +1,5 @@
 // src/components/admin/FinancingAdmin.tsx
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -249,7 +250,7 @@ onClick={() => {
           
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Name *</label>
+              <label className="block text-sm font-medium mb-1">Name <RequiredMark /></label>
               <input
                 type="text"
                 value={formData.name}
@@ -260,7 +261,7 @@ onClick={() => {
             </div>
             
             <div>
-              <label className="block text-sm font-medium mb-1">Rate (%) *</label>
+              <label className="block text-sm font-medium mb-1">Rate (%) <RequiredMark /></label>
               <input
                 type="number"
                 step="0.01"
@@ -272,7 +273,7 @@ onClick={() => {
             </div>
             
             <div>
-              <label className="block text-sm font-medium mb-1">Term (months) *</label>
+              <label className="block text-sm font-medium mb-1">Term (months) <RequiredMark /></label>
               <select
                 value={formData.term_months}
                 onChange={(e) => setFormData({ ...formData, term_months: parseInt(e.target.value) })}
@@ -289,7 +290,7 @@ onClick={() => {
             </div>
             
             <div>
-              <label className="block text-sm font-medium mb-1">Minimum Amount *</label>
+              <label className="block text-sm font-medium mb-1">Minimum Amount <RequiredMark /></label>
               <input
                 type="number"
                 step="100"
@@ -362,7 +363,7 @@ onClick={() => {
                       </div>
                     ) : (
                       <label className="flex flex-col items-center justify-center h-32 cursor-pointer hover:bg-gray-50">
-                        <Upload className="w-8 h-8 text-gray-400 mb-2" />
+                        <Upload className="w-8 h-8 text-muted-foreground mb-2" />
                         <span className="text-sm text-gray-600">Click to upload promo image</span>
                         <span className="text-xs text-gray-500 mt-1">Recommended: 1200x400px</span>
                         <input

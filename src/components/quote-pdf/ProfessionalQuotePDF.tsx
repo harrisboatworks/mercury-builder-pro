@@ -15,6 +15,13 @@ const View = _View as unknown as ComponentType<any>;
 const Image = _Image as unknown as ComponentType<any>;
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
+// Safe money formatter — never throws on null/undefined/NaN
+const safeMoney = (val: unknown, fallback = '0.00'): string => {
+  const n = typeof val === 'number' ? val : Number(val);
+  if (!Number.isFinite(n)) return fallback;
+  return n.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+};
+
 function formatTradeInDescription(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
   if (!tradeInInfo) return "";
   const { brand, year, horsepower, model } = tradeInInfo;
@@ -493,7 +500,7 @@ export interface QuotePDFProps {
 }
 
 export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => {
-  // Calculate valid until date — use promoEndDate if earlier than 30 days
+  // Calculate valid until date, use promoEndDate if earlier than 30 days
   const thirtyDaysOut = new Date();
   thirtyDaysOut.setDate(thirtyDaysOut.getDate() + 30);
   const promoEnd = quoteData.promoEndDate ? new Date(quoteData.promoEndDate) : null;
@@ -644,7 +651,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <View style={styles.pricingRow}>
                   <Text style={styles.pricingLabel}>Special Discount</Text>
                   <Text style={[styles.pricingValue, styles.discountValue]}>
-                    -${quoteData.pricing.adminDiscount.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    -${safeMoney(quoteData.pricing.adminDiscount)}
                   </Text>
                 </View>
               )}
@@ -694,7 +701,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                         )}
                       </View>
                       <Text style={styles.pricingValue}>
-                        ${item.price.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                        ${safeMoney(item.price)}
                       </Text>
                     </View>
                   ))}
@@ -723,7 +730,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                     </Text>
                   </View>
                   <Text style={[styles.pricingValue, styles.discountValue]}>
-                    -${quoteData.tradeInValue.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    -${safeMoney(quoteData.tradeInValue)}
                   </Text>
                 </View>
               )}
@@ -742,7 +749,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                     </Text>
                   </View>
                   <Text style={[styles.pricingValue, styles.discountValue, { fontWeight: 'bold' }]}>
-                    You save ${(quoteData.tradeInValue * 0.13).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    You save ${safeMoney((Number(quoteData.tradeInValue) || 0) * 0.13)}
                   </Text>
                 </View>
               )}
@@ -967,7 +974,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 ✓ DEPOSIT PAYMENT CONFIRMED
               </Text>
               <Text style={{ fontSize: 14, fontWeight: 'bold', color: colors.discount }}>
-                ${quoteData.depositInfo.amount.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
+                ${safeMoney(quoteData.depositInfo.amount)} CAD
               </Text>
             </View>
             <View style={{ flexDirection: 'row', gap: 20 }}>
@@ -1003,7 +1010,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <View style={styles.infoRow}>
                   <Text style={[styles.infoLabel, { width: 90 }]}>Balance Due:</Text>
                   <Text style={[styles.infoValue, { fontWeight: 'bold' }]}>
-                    ${((quoteData.pricing?.totalCashPrice || parseFloat(quoteData.total.replace(/,/g, ''))) - quoteData.depositInfo.amount).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
+                    ${safeMoney((quoteData.pricing?.totalCashPrice ?? Number(String(quoteData.total ?? '0').replace(/,/g, ''))) - (Number(quoteData.depositInfo.amount) || 0))} CAD
                   </Text>
                 </View>
               </View>
@@ -1014,7 +1021,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           </View>
         )}
 
-        {/* Terms — wrapped with CTA to prevent page break */}
+        {/* Terms, wrapped with CTA to prevent page break */}
         <View wrap={false}>
           {/* Terms */}
           <View style={styles.termsSection}>

@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
 
 export function GlobalSEO() {
   // Site-wide JSON-LD only. Page-level nodes (WebPage, Service, FAQPage, etc.)
@@ -10,28 +11,28 @@ export function GlobalSEO() {
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://mercuryrepower.ca/#website",
-        "url": "https://mercuryrepower.ca/",
+        "@id": "https://www.mercuryrepower.ca/#website",
+        "url": "https://www.mercuryrepower.ca/",
         "name": "Mercury Repower Quote Builder",
-        "publisher": { "@id": "https://mercuryrepower.ca/#organization" },
+        "publisher": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA"
       },
       {
         "@type": "Organization",
-        "@id": "https://mercuryrepower.ca/#organization",
+        "@id": "https://www.mercuryrepower.ca/#organization",
         "name": "Harris Boat Works",
         "alternateName": "HBW",
         "legalName": "Harris Boat Works",
         "url": "https://www.harrisboatworks.ca/",
         "logo": {
           "@type": "ImageObject",
-          "@id": "https://mercuryrepower.ca/#logo",
-          "url": "https://www.harrisboatworks.ca/logo.png",
+          "@id": "https://www.mercuryrepower.ca/#logo",
+          "url": "https://www.mercuryrepower.ca/pwa-512x512.png",
           "caption": "Harris Boat Works"
         },
         "foundingDate": "1947",
         "founder": { "@type": "Person", "name": "Harris family" },
-        "description": "Third-generation family marina on Rice Lake, Ontario. Mercury Marine Platinum Dealer (since 1965) and Legend Boats dealer.",
+        "description": "Third-generation family marina on Rice Lake, Ontario. Mercury Marine Platinum Dealer (Mercury dealer since 1965) and Legend Boats dealer.",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "address": {
@@ -42,24 +43,17 @@ export function GlobalSEO() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "sameAs": [
-          "https://www.harrisboatworks.ca/",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks",
-          "https://www.youtube.com/@HarrisBoatWorks",
-          "https://g.page/harrisboatworks"
-        ]
+        "sameAs": BUSINESS_SAME_AS
       },
       {
         "@type": ["LocalBusiness", "Store", "AutoRepair"],
-        "@id": "https://mercuryrepower.ca/#localbusiness",
+        "@id": "https://www.mercuryrepower.ca/#localbusiness",
         "name": "Harris Boat Works",
-        "image": "https://www.harrisboatworks.ca/logo.png",
+        "image": "https://www.mercuryrepower.ca/pwa-512x512.png",
         "url": "https://www.harrisboatworks.ca/",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
-        "priceRange": "$$",
-        "parentOrganization": { "@id": "https://mercuryrepower.ca/#organization" },
+        "parentOrganization": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "5369 Harris Boat Works Rd",
@@ -70,11 +64,27 @@ export function GlobalSEO() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1147,
-          "longitude": -78.2564
+          "latitude": 44.1456,
+          "longitude": -78.2542
         },
         "areaServed": [
-          { "@type": "AdministrativeArea", "name": "Rice Lake" },
+          {
+            "@type": "Place",
+            "@id": "https://www.mercuryrepower.ca/#rice-lake-ontario",
+            "name": "Rice Lake, Ontario",
+            "alternateName": ["Rice Lake (Ontario)", "Rice Lake, Kawartha Lakes"],
+            "description": "Freshwater lake in the Kawartha Lakes region, southern Ontario, Canada. Approximately 90 minutes east of Toronto. Distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota.",
+            "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
+            "containedInPlace": [
+              { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
+              { "@type": "AdministrativeArea", "name": "Ontario" },
+              { "@type": "Country", "name": "Canada" }
+            ],
+            "sameAs": [
+              "https://en.wikipedia.org/wiki/Rice_Lake_(Ontario)",
+              "https://www.wikidata.org/wiki/Q1543290"
+            ]
+          },
           { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
           { "@type": "State", "name": "Ontario" },
           { "@type": "Country", "name": "Canada" }
@@ -83,7 +93,7 @@ export function GlobalSEO() {
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mercury outboard repower" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mercury & MerCruiser marine repair" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Winterization and spring launch" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Indoor and outdoor boat storage" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outdoor boat storage with professional shrinkwrap" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Legend boat sales" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Boat rentals" } }
         ],
@@ -91,7 +101,8 @@ export function GlobalSEO() {
           { "@type": "Brand", "name": "Mercury Marine" },
           { "@type": "Brand", "name": "Legend Boats" }
         ],
-        "award": "Mercury Marine Platinum Dealer"
+        "award": "Mercury Marine Platinum Dealer",
+        "sameAs": BUSINESS_SAME_AS
       }
     ]
   };
@@ -107,6 +118,10 @@ export function GlobalSEO() {
       <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
       <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
       <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
+      <link rel="alternate" hrefLang="ko" href={`${SITE_URL}/blog/ko`} />
+      <link rel="alternate" hrefLang="es" href={`${SITE_URL}/blog/es`} />
+      <link rel="alternate" hrefLang="hi" href={`${SITE_URL}/blog/hi`} />
+      <link rel="alternate" hrefLang="pa" href={`${SITE_URL}/blog/pa`} />
       <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
     </Helmet>
   );

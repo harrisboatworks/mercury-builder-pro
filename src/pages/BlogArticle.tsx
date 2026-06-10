@@ -1,23 +1,32 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { SITE_URL } from '@/lib/site';
 import { ExpandableImage } from '@/components/ui/expandable-image';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogSEO } from '@/components/seo/BlogSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
+import { AuthorByline } from '@/components/blog/AuthorByline';
 import { FloatingShareBar } from '@/components/blog/FloatingShareBar';
 import { TableOfContents } from '@/components/blog/TableOfContents';
-import { getArticleBySlug, getRelatedArticles } from '@/data/blogArticles';
+import { getArticleBySlug, getRelatedArticles, parseLocalDate } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from '@/components/ui/accordion';
+import { getCleanDescription } from '@/lib/strip-markdown';
+import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
+import { BlogCTA } from '@/components/blog/BlogCTA';
+import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
+import { BlogTable } from '@/components/blog/BlogTable';
+import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
+import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
+import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
+import { MercuryVideo } from '@/components/blog/MercuryVideo';
+import { PremiumFaq } from '@/components/blog/PremiumFaq';
+
+
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -38,6 +47,7 @@ export default function BlogArticle() {
 
   const relatedArticles = getRelatedArticles(article.slug, 3);
   const tocItems = extractHeaders(article.content);
+  const cleanDescription = getCleanDescription(article);
 
   // Process inline markdown formatting (bold, italic, links, code)
   const processInlineFormatting = (text: string): React.ReactNode[] => {
@@ -222,45 +232,46 @@ export default function BlogArticle() {
   const articleUrl = `${SITE_URL}/blog/${article.slug}`;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <BlogSEO article={article} />
-      <LuxuryHeader />
-      
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
+
       {/* Floating Share Bar */}
       <FloatingShareBar
         url={articleUrl}
-        title={article.title}
-        description={article.description}
+        title={article.seoTitle ?? article.title}
+        description={cleanDescription}
         articleSlug={article.slug}
       />
-      
-      <main className="container mx-auto px-4 py-8 md:py-12">
+
+      <main className="container mx-auto px-6 md:px-14 py-10 md:py-14">
         {/* Breadcrumb */}
-        <Breadcrumb className="mb-8">
+        <Breadcrumb className="mb-8 max-w-[880px] mx-auto">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/">Home</Link>
+                <Link to="/" className="text-repower-navy-900/60 hover:text-repower-mercury-red">Home</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator />
+            <BreadcrumbSeparator className="text-repower-navy-900/40" />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/blog">Blog</Link>
+                <Link to="/blog" className="text-repower-navy-900/60 hover:text-repower-mercury-red">Blog</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator />
+            <BreadcrumbSeparator className="text-repower-navy-900/40" />
             <BreadcrumbItem>
-              <BreadcrumbPage className="truncate max-w-[200px]">{article.title}</BreadcrumbPage>
+              <BreadcrumbPage className="truncate max-w-[200px] text-repower-navy-900">{article.title}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
 
-        <article className="max-w-3xl mx-auto" aria-labelledby="article-title">
+        <article className="max-w-[880px] mx-auto" aria-labelledby="article-title">
           {/* Back Link */}
-          <Link 
-            to="/blog" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-sm text-repower-navy-900/60 hover:text-repower-mercury-red transition-colors mb-6"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Blog
@@ -268,25 +279,37 @@ export default function BlogArticle() {
 
           {/* Header */}
           <header className="mb-8">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">
-              {article.category}
-            </span>
-            <h1 id="article-title" className="text-3xl md:text-4xl font-light text-foreground mt-2 mb-4">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-8 bg-repower-mercury-red" />
+              <span className="font-sans text-[11px] font-semibold text-repower-mercury-red uppercase tracking-[0.24em]">
+                {article.category}
+              </span>
+            </div>
+            <h1
+              id="article-title"
+              className="font-display font-bold text-repower-navy-900 mb-5"
+              style={{ fontSize: 'clamp(32px, 4.5vw, 56px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}
+            >
               {article.title}
             </h1>
-            <p className="text-lg text-muted-foreground font-light mb-4">
-              {article.description}
+            <p className="font-sans text-[18px] text-repower-navy-900/65 mb-6 leading-relaxed">
+              {cleanDescription}
             </p>
-            <div className="flex items-center justify-between flex-wrap gap-4">
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1.5">
-                  <Calendar className="h-4 w-4" />
-                  {new Date(article.datePublished).toLocaleDateString('en-US', { 
-                    month: 'long', 
-                    day: 'numeric', 
-                    year: 'numeric' 
-                  })}
-                </span>
+            <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
+              <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
+                <AuthorByline name="Jay Harris" title="Mercury dealer since 1965" />
+                {(() => {
+                  const published = parseLocalDate(article.datePublished);
+                  const modified = article.dateModified ? parseLocalDate(article.dateModified) : null;
+                  const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                  const showUpdated = modified && modified.getTime() > published.getTime();
+                  return (
+                    <span className="flex items-center gap-1.5">
+                      <Calendar className="h-4 w-4" />
+                      {showUpdated ? `Updated ${fmt(modified!)}` : fmt(published)}
+                    </span>
+                  );
+                })()}
                 <span className="flex items-center gap-1.5">
                   <Clock className="h-4 w-4" />
                   {article.readTime}
@@ -294,8 +317,8 @@ export default function BlogArticle() {
               </div>
               <BlogShareButtons
                 url={articleUrl}
-                title={article.title}
-                description={article.description}
+                title={article.seoTitle ?? article.title}
+                description={cleanDescription}
                 image={article.image}
                 variant="inline"
                 articleSlug={article.slug}
@@ -304,62 +327,129 @@ export default function BlogArticle() {
             </div>
           </header>
 
-          {/* Featured Image */}
-          <div className="aspect-[16/9] overflow-hidden rounded-xl bg-muted mb-8">
-            {heroImgError ? (
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#c8102e] to-[#8b0000] text-white">
-                <div className="text-center px-4">
-                  <span className="block text-3xl font-bold tracking-tight">Harris Boat Works</span>
-                  <span className="block text-sm mt-1 opacity-80 uppercase tracking-widest">Mercury Authorized Dealer</span>
-                </div>
-              </div>
-            ) : (
-              <img 
-                src={article.image} 
-                alt={article.title}
-                className="w-full h-full object-contain"
-                onError={() => setHeroImgError(true)}
-              />
-            )}
-          </div>
+          {/* Featured Image — shared <picture> component (see BlogHeroPicture) */}
+          <BlogHeroPicture image={article.image} alt={article.title} />
+
+          {/* Language switcher */}
+          <LanguageSwitcher currentLang="en" currentSlug={article.slug} />
+
+          {/* Dealer credentials strip */}
+          <DealerConfidenceStrip />
+
+          {/* Top contextual CTA */}
+          <BlogCTA category={article.category} slug={article.slug} variant="inline" />
 
           {/* Table of Contents */}
           {tocItems.length > 0 && (
             <TableOfContents items={tocItems} />
           )}
 
+          {/* Optional Mercury Marine YouTube video reference */}
+          {article.youtubeVideoId && (
+            <MercuryVideo
+              videoId={article.youtubeVideoId}
+              title={article.youtubeVideoTitle || 'Mercury Marine video'}
+            />
+          )}
+
           {/* Content */}
-          <div className="prose prose-gray max-w-none">
-            {renderContent(article.content)}
+          <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 blog-article-prose">
+            <MarkdownSectionCards
+              content={(() => {
+                let c = article.content.replace(/^\s*#\s+.+\n+/, '');
+                // Strip standalone scaffold lines: "*Last updated: ...*",
+                // "_Last updated: ..._", "**Last updated:** ...", "*Last reviewed: ...*".
+                // These conflict with the dateModified field shown in the byline.
+                c = c.replace(
+                  /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim,
+                  '',
+                );
+                // Strip standalone "Language: English" lines.
+                c = c.replace(
+                  /^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim,
+                  '',
+                );
+                // Drop a literal "## CTA" heading line; keep its body content.
+                c = c.replace(/^##\s+CTA\s*$/gim, '');
+                // Rename "## Internal Links" → "## Related reading" (keep list).
+                c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
+                // Suppress inline `## Frequently Asked Questions` (or FAQ/FAQs)
+                // section when faqs[] is populated — accordion below replaces it.
+                if (article.faqs && article.faqs.length > 0) {
+                  c = c.replace(
+                    /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
+                    '\n',
+                  );
+                }
+                // Collapse 3+ blank lines left by the strips above.
+                c = c.replace(/\n{3,}/g, '\n\n');
+                return c;
+              })()}
+              markdownComponents={{
+                h2: ({ node, children, ...props }) => {
+                  const text = String(children);
+                  return <h2 id={slugify(text)} {...props}>{children}</h2>;
+                },
+                h3: ({ node, children, ...props }) => {
+                  const text = String(children);
+                  return <h3 id={slugify(text)} {...props}>{children}</h3>;
+                },
+                a: ({ node, href, children, title, ...props }) => {
+                  if (!href) return <a {...props}>{children}</a>;
+                  const stripped = href.replace(/^https?:\/\/[^/]+/, '');
+                  const isInternal = href.startsWith('/') || href.includes('harrisboatworks') || href.includes('mercuryquote') || href.includes('mercuryrepower');
+                  const isCta = title === 'cta';
+                  const ctaClass = 'inline-block bg-repower-mercury-red text-white font-semibold px-6 py-3 rounded-lg hover:bg-repower-mercury-red-deep transition no-underline my-4';
+                  const linkClass = isCta ? ctaClass : 'text-primary hover:underline';
+                  if (isInternal && (stripped.startsWith('/') || href.startsWith('/'))) {
+                    return <Link to={stripped.startsWith('/') ? stripped : href} className={linkClass}>{children}</Link>;
+                  }
+                  return <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass} {...props}>{children}</a>;
+                },
+                img: ({ node, src, alt, title }) => (
+                  <ExpandableImage
+                    src={src || ''}
+                    alt={alt || ''}
+                    caption={title}
+                    className="w-full rounded-lg"
+                    containerClassName="my-6"
+                  />
+                ),
+                table: ({ node, children }) => <BlogTable>{children}</BlogTable>,
+                hr: () => <hr className="my-8 border-t border-repower-navy-900/15" />,
+                ul: ({ node, children, ...props }) => (
+                  <ul className="list-disc pl-6 my-4 space-y-2 text-repower-navy-900/85" {...props}>{children}</ul>
+                ),
+                ol: ({ node, children, start, ...props }) => (
+                  // Drop `start` — directive splitting can leave list halves with stale start values (e.g. "13.").
+                  <ol className="list-decimal pl-6 my-4 space-y-2 text-repower-navy-900/85" {...props}>{children}</ol>
+                ),
+                li: ({ node, children, ...props }) => (
+                  <li className="leading-relaxed" {...props}>{children}</li>
+                ),
+              }}
+            />
+          </div>
+
+
+
+
+          {/* Author Byline (bottom) */}
+          <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
+            <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Platinum Dealer · Rice Lake, Ontario" />
           </div>
 
           {/* FAQ Section */}
           {article.faqs && article.faqs.length > 0 && (
-            <section aria-labelledby="faq-heading" className="mt-12 pt-8 border-t border-border">
-              <h2 id="faq-heading" className="text-2xl font-semibold text-foreground mb-6">
-                Frequently Asked Questions
-              </h2>
-              <Accordion type="single" collapsible className="w-full">
-                {article.faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`faq-${index}`}>
-                    <AccordionTrigger className="text-left font-medium">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground faq-answer">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </section>
+            <PremiumFaq faqs={article.faqs} />
           )}
 
           {/* Share Section */}
-          <div className="mt-12 pt-8 border-t border-border">
+          <div className="mt-14 pt-10 border-t border-repower-navy-900/10">
             <BlogShareButtons
               url={articleUrl}
-              title={article.title}
-              description={article.description}
+              title={article.seoTitle ?? article.title}
+              description={cleanDescription}
               image={article.image}
               variant="full"
               articleSlug={article.slug}
@@ -367,35 +457,14 @@ export default function BlogArticle() {
             />
           </div>
 
-          {/* CTA */}
-          <div className="mt-12 p-6 md:p-8 bg-muted/30 rounded-xl text-center">
-            <h3 className="text-xl font-medium text-foreground mb-2">
-              Need Help Choosing?
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Our team has been a Mercury dealer since 1965. Get personalized recommendations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link 
-                to="/quote/motor-selection"
-                className="inline-flex items-center justify-center px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
-              >
-                Browse Motors
-              </Link>
-              <Link 
-                to="/contact"
-                className="inline-flex items-center justify-center px-5 py-2.5 border border-border text-foreground rounded-lg font-medium hover:bg-muted transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
+          {/* Bottom contextual CTA */}
+          <BlogCTA category={article.category} slug={article.slug} variant="banner" />
         </article>
 
         {/* Related Articles */}
         {relatedArticles.length > 0 && (
-          <nav aria-label="Related Articles" className="mt-16">
-            <h2 className="text-2xl font-light text-foreground mb-6 text-center">
+          <nav aria-label="Related Articles" className="mt-20 max-w-[1100px] mx-auto">
+            <h2 className="font-display font-bold text-2xl md:text-[28px] text-repower-navy-900 mb-8 text-center" style={{ letterSpacing: '-0.02em' }}>
               Related Articles
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -408,7 +477,7 @@ export default function BlogArticle() {
           </nav>
         )}
       </main>
-      
+
       <SiteFooter />
     </div>
   );

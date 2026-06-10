@@ -1,0 +1,61 @@
+import { Award, BadgeCheck } from 'lucide-react';
+import mercuryLogo from '@/assets/mercury-logo.png';
+// Optimized warranty badge: 5KB WebP (was 3MB PNG, displayed at ~40px).
+const warranty7 = '/assets/optimized/harris-7-year-warranty-200w.webp';
+import hbwLogo from '@/assets/harris-logo-white.png';
+
+const mercuryRepowerLogo = '/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png';
+
+interface TrustItem {
+  label: string;
+  img?: string;
+  imgAlt?: string;
+  icon?: typeof Award;
+}
+
+const items: TrustItem[] = [
+  { label: 'Family-Owned Since 1947', img: hbwLogo, imgAlt: 'Harris Boat Works' },
+  { label: 'Mercury Certified Dealer', icon: Award },
+  { label: 'Mercury Repower Centre', img: mercuryRepowerLogo, imgAlt: 'Mercury Repower Center' },
+  { label: '7-Year Warranty Available', img: warranty7, imgAlt: '7-Year Warranty' },
+  { label: 'CSI Award Winner', icon: BadgeCheck },
+];
+
+export function TrustStrip() {
+  return (
+    <section className="bg-[#050E1C] border-y border-[#F5F1EA]/10">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-14 py-6 md:py-12">
+        {/* Mobile: horizontal scroll-snap row. sm+: grid with dividers. */}
+        <ul
+          className="flex sm:grid sm:grid-cols-3 md:grid-cols-5 gap-x-3 gap-y-7 md:gap-y-0 md:divide-x md:divide-[#F5F1EA]/10 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"
+        >
+          {items.map((item) => {
+            const Icon = item.icon;
+            return (
+              <li
+                key={item.label}
+                className="group flex flex-col items-center justify-start gap-2.5 md:gap-3 px-2 md:px-4 md:first:pl-0 md:last:pr-0 snap-center shrink-0 basis-[40%] sm:basis-auto"
+              >
+                <div className="h-9 md:h-10 flex items-center justify-center">
+                  {item.img ? (
+                    <img
+                      src={item.img}
+                      alt={item.imgAlt ?? item.label}
+                      className="h-9 md:h-10 w-auto object-contain opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition duration-500"
+                    />
+                  ) : Icon ? (
+                    <Icon className="h-7 w-7 md:h-8 md:w-8 text-[#C9A24A]" strokeWidth={1.5} />
+                  ) : null}
+                </div>
+                <span className="font-sans text-[10px] md:text-[11px] uppercase tracking-[0.12em] md:tracking-[0.18em] text-[#C9A24A] text-center leading-snug whitespace-nowrap sm:whitespace-normal">
+                  {item.label}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
+  );
+}
+

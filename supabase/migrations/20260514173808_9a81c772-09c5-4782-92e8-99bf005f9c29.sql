@@ -1,0 +1,1 @@
+DELETE FROM public.financing_applications WHERE id = 'b2ce3d8f-bdee-47e5-9821-ef9384d1b778' AND applicant_data->>'email' IS NULL AND status = 'draft';

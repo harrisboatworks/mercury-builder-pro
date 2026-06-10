@@ -32,7 +32,7 @@ export const EXPERT_NUDGES = {
   boatInfo: {
     initial: [
       "Good start. This tells us how to match the engine to your hull.",
-      "Rough hp is fine — HBW will double-check details later.",
+      "Rough hp is fine. HBW will double-check details later.",
       "This helps us ensure a perfect fit for your boat.",
     ],
     // Dynamic message based on boat length
@@ -58,7 +58,7 @@ export const EXPERT_NUDGES = {
       "Push-button start is a crowd favorite with families.",
     ],
     watersports: [
-      "Tubing and skiing need quick hole-shot — we'll prioritize that.",
+      "Tubing and skiing need quick hole-shot, we'll prioritize that.",
       "For watersports, prop selection makes a big difference.",
       "Power trim makes getting skiers up easier.",
     ],
@@ -72,14 +72,14 @@ export const EXPERT_NUDGES = {
     general: [
       "More hp = quicker hole shot; less hp = better fuel use at cruise.",
       "This hp range suits your boat and crew.",
-      "20\" shaft fits most boats — 15\" for small tenders.",
+      "20\" shaft fits most boats. 15\" for small tenders.",
       "Electric start = push-button convenience.",
     ],
     underpowered: (boatLength: number, selectedHP: number): string => {
       const range = getRecommendedHPRange(boatLength);
       return `This looks a bit light for ${boatLength}ft. Want to see ${range.label}HP options?`;
     },
-    overpowered: "Plenty of power here — you'll have extra headroom for heavy loads.",
+    overpowered: "Plenty of power here. You'll have extra headroom for heavy loads.",
     encouragement: "Excellent choice! Let's customize it.",
     contextHint: "Great specs for your boat type.",
   },
@@ -96,14 +96,14 @@ export const EXPERT_NUDGES = {
 
   promoSelection: [
     "These offers are the same ones Mercury runs for their dealer fleet.",
-    "The 7-year warranty covers parts AND labour — real coverage.",
-    "Choose rebate, financing, or deferred payments — all include warranty.",
+    "The 7-year warranty covers parts AND labour. Real coverage.",
+    "Choose rebate, financing, or deferred payments. All include warranty.",
     "All options include the same 7-year factory warranty.",
   ],
 
   packageSelection: [
     "Most repower customers go Complete for peace of mind.",
-    "Premium includes fuel system — worth it on older boats.",
+    "Premium includes fuel system, worth it on older boats.",
     "Complete is our most popular package.",
     "Premium extends warranty to 8 years total.",
     "All packages include professional rigging.",
@@ -111,10 +111,10 @@ export const EXPERT_NUDGES = {
 
   summary: {
     initial: [
-      "This is a planning estimate — HBW will finalize labour and rigging with you.",
+      "This is a planning estimate. HBW will finalize labour and rigging with you.",
       "Sending this just starts a no-pressure HBW conversation.",
-      "Your price is locked — take your time.",
-      "Quote valid for 30 days — no rush.",
+      "Your price is locked. Take your time.",
+      "Quote valid for 30 days. No rush.",
     ],
     reassurance: [
       "You can still change hp, options, and budget after you submit.",
@@ -170,7 +170,7 @@ export const PROMO_AWARENESS_NUDGES = {
   getWarrantyNudges: (totalYears: number): Array<{ message: string; icon: string }> => [
     { message: `Mercury Get ${totalYears}: ${totalYears} years factory warranty`, icon: 'shield' },
     { message: `Every motor includes ${totalYears} years parts + labour`, icon: 'check' },
-    { message: `${totalYears} years of worry-free boating — that's real coverage`, icon: 'heart' },
+    { message: `${totalYears} years of worry-free boating, that's real coverage`, icon: 'heart' },
     { message: `All 3 bonus options include the same ${totalYears}-year protection`, icon: 'award' },
   ],
   

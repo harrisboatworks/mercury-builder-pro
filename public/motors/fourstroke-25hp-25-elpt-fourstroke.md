@@ -1,25 +1,25 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke
-last_updated: 2026-05-01
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 motor_id: 70870b08-2d14-42d2-93db-974b93c6557f
 slug: fourstroke-25hp-25-elpt-fourstroke
 family: FourStroke
 horsepower: 25
 model_number: 1A25413BK
 availability: in_stock
-price_cad: 5995
+price_cad: 6144
 ---
 
 # 25 ELPT FourStroke
 
 Mercury FourStroke 25 HP outboard motor (model 1A25413BK).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
@@ -30,9 +30,9 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 
 ## Pricing (CAD)
 
-- **Selling price:** $5,995
-- **MSRP:** $6,540
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **Selling price:** $6,144
+- **MSRP:** $6,545
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability

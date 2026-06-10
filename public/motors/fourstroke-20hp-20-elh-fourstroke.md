@@ -1,25 +1,25 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke
-last_updated: 2026-05-01
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 motor_id: 4fab2935-c80e-4cd3-95ec-f201a3fd59f2
 slug: fourstroke-20hp-20-elh-fourstroke
 family: FourStroke
 horsepower: 20
 model_number: 1A20311LK
 availability: in_stock
-price_cad: 4752
+price_cad: 4873
 ---
 
 # 20 ELH FourStroke
 
 Mercury FourStroke 20 HP outboard motor (model 1A20311LK).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
@@ -30,9 +30,9 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 
 ## Pricing (CAD)
 
-- **Selling price:** $4,752
-- **MSRP:** $5,185
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **Selling price:** $4,873
+- **MSRP:** $5,190
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability

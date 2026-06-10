@@ -2,11 +2,8 @@ import { useEffect, useState, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useMotorOptions, type MotorOption } from '@/hooks/useMotorOptions';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Checkbox } from '@/components/ui/checkbox';
-import { ChevronLeft, ChevronRight, CheckCircle2, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { toast } from 'sonner';
 import { BatteryOptionPrompt, BATTERY_COST } from '@/components/quote-builder/BatteryOptionPrompt';
@@ -14,6 +11,10 @@ import { hasElectricStart } from '@/lib/motor-config-utils';
 import { VisualOptionCard } from '@/components/options/VisualOptionCard';
 import { OptionDetailsModal } from '@/components/options/OptionDetailsModal';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
+import { QuoteStepNav } from '@/components/quote-builder/redesign/QuoteStepNav';
+import { QuoteRadioTile } from '@/components/quote-builder/redesign/QuoteRadioTile';
+import { QuoteCheckbox } from '@/components/quote-builder/redesign/QuoteCheckbox';
 
 // Categories that should display as visual cards when they have images
 const VISUAL_CATEGORIES = ['electronics', 'accessory', 'maintenance'];
@@ -29,30 +30,25 @@ export default function OptionsPage() {
   const hasNavigatedRef = useRef(false);
   const initializedRef = useRef(false);
   const { triggerHaptic } = useHapticFeedback();
-  
-  // Modal state for viewing option details
+
   const [detailsModalOption, setDetailsModalOption] = useState<MotorOption | null>(null);
-  
-  // Battery choice for electric start motors
+
   const isElectricStart = hasElectricStart(state.motor?.model || '');
   const [batteryChoice, setBatteryChoice] = useState<boolean | null>(
     state.looseMotorBattery?.wantsBattery ?? null
   );
-  
+
   const { data: categorizedOptions, isLoading } = useMotorOptions(
     state.motor?.id,
     state.motor
   );
 
-  // Split options into visual and list categories
   const splitOptions = useMemo(() => {
     if (!categorizedOptions) return null;
-    
     const split = (options: MotorOption[]) => ({
       visual: options.filter(isVisualOption),
-      list: options.filter(opt => !isVisualOption(opt)),
+      list: options.filter((opt) => !isVisualOption(opt)),
     });
-    
     return {
       required: split(categorizedOptions.required),
       recommended: split(categorizedOptions.recommended),
@@ -60,46 +56,29 @@ export default function OptionsPage() {
     };
   }, [categorizedOptions]);
 
-  // Initialize with required options and previously selected options (run once only)
   useEffect(() => {
     if (categorizedOptions && !initializedRef.current) {
       initializedRef.current = true;
-      
       const initialIds = new Set<string>();
-      
-      // Always include required options
-      categorizedOptions.required.forEach(opt => initialIds.add(opt.id));
-      
-      // Include previously selected options
-      state.selectedOptions?.forEach(opt => initialIds.add(opt.optionId));
-      
-      // ONLY pre-select recommended items that are INCLUDED in price (e.g., fuel tanks)
-      categorizedOptions.recommended.forEach(opt => {
-        if (opt.is_included) {
-          initialIds.add(opt.id);
-        }
+      categorizedOptions.required.forEach((opt) => initialIds.add(opt.id));
+      state.selectedOptions?.forEach((opt) => initialIds.add(opt.optionId));
+      categorizedOptions.recommended.forEach((opt) => {
+        if (opt.is_included) initialIds.add(opt.id);
       });
-      
       setLocalSelectedIds(initialIds);
     }
   }, [categorizedOptions]);
 
-  // Redirect if no motor selected
   useEffect(() => {
-    if (!state.motor) {
-      navigate('/quote/motor-selection');
-    }
+    if (!state.motor) navigate('/quote/motor-selection');
   }, [state.motor, navigate]);
 
-  // Auto-skip to purchase path if no options available AND no battery choice needed
   useEffect(() => {
     if (!isLoading && categorizedOptions && !hasNavigatedRef.current) {
-      const hasOptions = 
+      const hasOptions =
         categorizedOptions.required.length > 0 ||
         categorizedOptions.recommended.length > 0 ||
         categorizedOptions.available.length > 0;
-      
-      // Only auto-skip if no options AND motor doesn't need battery question
       if (!hasOptions && !isElectricStart) {
         hasNavigatedRef.current = true;
         dispatch({ type: 'SET_SELECTED_OPTIONS', payload: [] });
@@ -108,19 +87,16 @@ export default function OptionsPage() {
     }
   }, [isLoading, categorizedOptions, dispatch, navigate, isElectricStart]);
 
-  // Sync local selections to QuoteContext for real-time bar updates
   useEffect(() => {
     if (!categorizedOptions) return;
-    
     const allOptions = [
       ...categorizedOptions.required,
       ...categorizedOptions.recommended,
       ...categorizedOptions.available,
     ];
-
     const selectedOptions = allOptions
-      .filter(opt => localSelectedIds.has(opt.id))
-      .map(opt => ({
+      .filter((opt) => localSelectedIds.has(opt.id))
+      .map((opt) => ({
         optionId: opt.id,
         name: opt.name,
         price: opt.is_included ? 0 : (opt.price_override ?? opt.base_price),
@@ -128,61 +104,48 @@ export default function OptionsPage() {
         assignmentType: opt.assignment_type,
         isIncluded: opt.is_included,
       }));
-
     dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
   }, [localSelectedIds, categorizedOptions, dispatch]);
 
-  // Sync battery choice to context for real-time bar updates
   useEffect(() => {
     if (isElectricStart && batteryChoice !== null) {
-      dispatch({ 
-        type: 'SET_LOOSE_MOTOR_BATTERY', 
-        payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
+      dispatch({
+        type: 'SET_LOOSE_MOTOR_BATTERY',
+        payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST },
       });
     }
   }, [batteryChoice, isElectricStart, dispatch]);
 
   const toggleOption = (option: MotorOption) => {
-    // Cannot deselect required options
     if (option.assignment_type === 'required' && localSelectedIds.has(option.id)) {
       toast.error('This option is required and cannot be removed');
       return;
     }
-
     triggerHaptic('addedToQuote');
-    setLocalSelectedIds(prev => {
+    setLocalSelectedIds((prev) => {
       const newSet = new Set(prev);
-      if (newSet.has(option.id)) {
-        newSet.delete(option.id);
-      } else {
-        newSet.add(option.id);
-      }
+      if (newSet.has(option.id)) newSet.delete(option.id);
+      else newSet.add(option.id);
       return newSet;
     });
   };
 
-  // Block continue if electric start motor and no battery choice
   const canContinue = !isElectricStart || batteryChoice !== null;
 
   const handleContinue = () => {
     if (!categorizedOptions) return;
-    
-    // Block if battery choice required but not made
     if (isElectricStart && batteryChoice === null) {
       toast.error('Please select a battery option before continuing');
       return;
     }
-
-    // Build selected options from all categories
     const allOptions = [
       ...categorizedOptions.required,
       ...categorizedOptions.recommended,
       ...categorizedOptions.available,
     ];
-
     const selectedOptions = allOptions
-      .filter(opt => localSelectedIds.has(opt.id))
-      .map(opt => ({
+      .filter((opt) => localSelectedIds.has(opt.id))
+      .map((opt) => ({
         optionId: opt.id,
         name: opt.name,
         price: opt.is_included ? 0 : (opt.price_override ?? opt.base_price),
@@ -190,24 +153,17 @@ export default function OptionsPage() {
         assignmentType: opt.assignment_type,
         isIncluded: opt.is_included,
       }));
-
     dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
-    
-    // Save battery choice for electric start motors
-    const batteryPayload = isElectricStart && batteryChoice !== null 
+    const batteryPayload = isElectricStart && batteryChoice !== null
       ? { wantsBattery: batteryChoice, batteryCost: BATTERY_COST }
       : state.looseMotorBattery;
-      
     if (isElectricStart && batteryChoice !== null) {
-      dispatch({ 
-        type: 'SET_LOOSE_MOTOR_BATTERY', 
-        payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
+      dispatch({
+        type: 'SET_LOOSE_MOTOR_BATTERY',
+        payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST },
       });
     }
-    
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
-    
-    // CRITICAL: Force immediate save before navigation to prevent data loss
     try {
       const currentData = localStorage.getItem('quoteBuilder');
       if (currentData) {
@@ -216,52 +172,42 @@ export default function OptionsPage() {
           ...parsed.state,
           selectedOptions,
           looseMotorBattery: batteryPayload,
-          completedSteps: [...new Set([...(parsed.state.completedSteps || []), 2])]
+          completedSteps: [...new Set([...(parsed.state.completedSteps || []), 2])],
         };
         localStorage.setItem('quoteBuilder', JSON.stringify({
           state: updatedState,
           timestamp: Date.now(),
-          lastActivity: Date.now()
+          lastActivity: Date.now(),
         }));
       }
     } catch (error) {
       console.error('Failed to force-save options:', error);
     }
-    
     navigate('/quote/purchase-path');
   };
 
-  const handleBack = () => {
-    navigate('/quote/motor-selection');
-  };
+  const handleBack = () => navigate('/quote/motor-selection');
 
   const calculateTotal = () => {
     if (!categorizedOptions) return 0;
-    
     const allOptions = [
       ...categorizedOptions.required,
       ...categorizedOptions.recommended,
       ...categorizedOptions.available,
     ];
-
     return allOptions
-      .filter(opt => localSelectedIds.has(opt.id))
-      .reduce((sum, opt) => {
-        const price = opt.is_included ? 0 : (opt.price_override ?? opt.base_price);
-        return sum + price;
-      }, 0);
+      .filter((opt) => localSelectedIds.has(opt.id))
+      .reduce((sum, opt) => sum + (opt.is_included ? 0 : (opt.price_override ?? opt.base_price)), 0);
   };
 
-  if (!state.motor) {
-    return null;
-  }
+  if (!state.motor) return null;
 
   if (isLoading) {
     return (
       <QuoteLayout>
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center py-12">Loading motor options...</div>
-        </div>
+        <QuotePageShell eyebrow="STEP 2 · OPTIONS">
+          <div className="text-center py-12 text-repower-navy-900/60">Loading motor options...</div>
+        </QuotePageShell>
       </QuoteLayout>
     );
   }
@@ -273,32 +219,25 @@ export default function OptionsPage() {
   );
 
   const shouldShowPage = hasOptions || isElectricStart;
-
-  if (!shouldShowPage) {
-    return null;
-  }
+  if (!shouldShowPage) return null;
 
   const optionsTotal = calculateTotal();
 
+  const totalReadout = (
+    <div className="text-center md:text-right">
+      <p className="font-sans text-[11px] uppercase tracking-[0.14em] text-repower-navy-900/55">Options Total</p>
+      <p className="font-display font-bold text-repower-navy-900 text-[22px] leading-tight">
+        {optionsTotal === 0 ? 'Included' : `+$${optionsTotal.toFixed(2)}`}
+      </p>
+    </div>
+  );
+
   return (
     <QuoteLayout>
-      <div className="container mx-auto px-4 py-8 max-w-5xl pb-32">
-        {/* Compact Header with Mobile Back */}
-        <div className="mb-4">
-          {/* Mobile Back Button - Premium Style */}
-          <button 
-            onClick={handleBack}
-            className="md:hidden flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px] mb-2"
-            aria-label="Back to motor selection"
-          >
-            <ChevronLeft className="h-5 w-5" />
-            <span className="text-sm font-medium">Back</span>
-          </button>
-          <p className="text-muted-foreground">
-            Options for your {state.motor?.model || 'motor'}
-          </p>
-        </div>
-
+      <QuotePageShell
+        eyebrow="STEP 2 · OPTIONS"
+        title={`Options for your ${state.motor?.model || 'motor'}`}
+      >
         {/* Required Options */}
         {splitOptions && splitOptions.required.list.length > 0 && (
           <OptionsSection
@@ -306,8 +245,8 @@ export default function OptionsPage() {
             badge={<Badge variant="destructive">Must Include</Badge>}
           >
             <div className="space-y-3">
-              {splitOptions.required.list.map(option => (
-                <OptionCard
+              {splitOptions.required.list.map((option) => (
+                <OptionTile
                   key={option.id}
                   option={option}
                   isSelected={true}
@@ -320,39 +259,38 @@ export default function OptionsPage() {
           </OptionsSection>
         )}
 
-        {/* Battery Requirement for Electric Start Motors */}
+        {/* Battery */}
         {isElectricStart && (
           <OptionsSection
             title="Starting Battery"
             badge={<Badge variant="destructive">Required Answer</Badge>}
           >
-            <BatteryOptionPrompt 
+            <BatteryOptionPrompt
               onSelect={setBatteryChoice}
               selectedOption={batteryChoice}
               batteryCost={BATTERY_COST}
             />
             {batteryChoice === null && (
-              <p className="text-sm text-destructive mt-2">
+              <p className="text-sm text-repower-mercury-red mt-2">
                 Please select an option before continuing
               </p>
             )}
           </OptionsSection>
         )}
 
-        {/* Recommended Options */}
+        {/* Recommended */}
         {splitOptions && (splitOptions.recommended.visual.length > 0 || splitOptions.recommended.list.length > 0) && (
           <OptionsSection
             title="Recommended Add-Ons"
             badge={
-              [...categorizedOptions!.recommended].some(opt => opt.is_included)
+              [...categorizedOptions!.recommended].some((opt) => opt.is_included)
                 ? <Badge>Pre-selected</Badge>
                 : <Badge variant="secondary">Suggested</Badge>
             }
           >
-            {/* Visual Grid */}
             {splitOptions.recommended.visual.length > 0 && (
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-4">
-                {splitOptions.recommended.visual.map(option => (
+                {splitOptions.recommended.visual.map((option) => (
                   <VisualOptionCard
                     key={option.id}
                     option={option}
@@ -364,12 +302,10 @@ export default function OptionsPage() {
                 ))}
               </div>
             )}
-            
-            {/* List */}
             {splitOptions.recommended.list.length > 0 && (
               <div className="space-y-3">
-                {splitOptions.recommended.list.map(option => (
-                  <OptionCard
+                {splitOptions.recommended.list.map((option) => (
+                  <OptionTile
                     key={option.id}
                     option={option}
                     isSelected={localSelectedIds.has(option.id)}
@@ -382,13 +318,12 @@ export default function OptionsPage() {
           </OptionsSection>
         )}
 
-        {/* Available Options */}
+        {/* Available */}
         {splitOptions && (splitOptions.available.visual.length > 0 || splitOptions.available.list.length > 0) && (
           <OptionsSection title="Available Options">
-            {/* Visual Grid */}
             {splitOptions.available.visual.length > 0 && (
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-4">
-                {splitOptions.available.visual.map(option => (
+                {splitOptions.available.visual.map((option) => (
                   <VisualOptionCard
                     key={option.id}
                     option={option}
@@ -399,12 +334,10 @@ export default function OptionsPage() {
                 ))}
               </div>
             )}
-            
-            {/* List */}
             {splitOptions.available.list.length > 0 && (
               <div className="space-y-3">
-                {splitOptions.available.list.map(option => (
-                  <OptionCard
+                {splitOptions.available.list.map((option) => (
+                  <OptionTile
                     key={option.id}
                     option={option}
                     isSelected={localSelectedIds.has(option.id)}
@@ -417,31 +350,13 @@ export default function OptionsPage() {
           </OptionsSection>
         )}
 
-        {/* Sticky Footer */}
-        <div className="hidden md:block fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur border-t py-4 z-50">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="flex items-center justify-between">
-              <Button variant="outline" onClick={handleBack}>
-                <ChevronLeft className="h-4 w-4 mr-2" />
-                Back
-              </Button>
+        <QuoteStepNav
+          onBack={handleBack}
+          onContinue={handleContinue}
+          continueDisabled={!canContinue}
+          rightSlot={totalReadout}
+        />
 
-              <div className="text-center">
-                <p className="text-sm text-muted-foreground">Options Total</p>
-                <p className="text-2xl font-bold">
-                  {optionsTotal === 0 ? 'Included' : `+$${optionsTotal.toFixed(2)}`}
-                </p>
-              </div>
-
-              <Button onClick={handleContinue} disabled={!canContinue}>
-                Continue
-                <ChevronRight className="h-4 w-4 ml-2" />
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Details Modal */}
         <OptionDetailsModal
           option={detailsModalOption}
           isOpen={!!detailsModalOption}
@@ -450,12 +365,11 @@ export default function OptionsPage() {
           onToggle={() => detailsModalOption && toggleOption(detailsModalOption)}
           disabled={detailsModalOption?.assignment_type === 'required'}
         />
-      </div>
+      </QuotePageShell>
     </QuoteLayout>
   );
 }
 
-// Section wrapper component
 interface OptionsSectionProps {
   title: string;
   badge?: React.ReactNode;
@@ -464,18 +378,20 @@ interface OptionsSectionProps {
 
 function OptionsSection({ title, badge, children }: OptionsSectionProps) {
   return (
-    <div className="mb-8">
-      <div className="flex items-center gap-2 mb-4">
-        <h2 className="text-xl font-semibold">{title}</h2>
+    <section>
+      <div className="flex items-center gap-3 mb-4">
+        <h2 className="font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/70">
+          {title}
+        </h2>
         {badge}
+        <div className="flex-1 h-px bg-repower-navy-900/10" aria-hidden />
       </div>
       {children}
-    </div>
+    </section>
   );
 }
 
-// Option Card Component (compact list style)
-interface OptionCardProps {
+interface OptionTileProps {
   option: MotorOption;
   isSelected: boolean;
   onToggle: () => void;
@@ -483,87 +399,68 @@ interface OptionCardProps {
   disabled?: boolean;
 }
 
-function OptionCard({ option, isSelected, onToggle, onViewDetails, disabled }: OptionCardProps) {
+function OptionTile({ option, isSelected, onToggle, onViewDetails, disabled }: OptionTileProps) {
   const effectivePrice = option.is_included ? 0 : (option.price_override ?? option.base_price);
 
-  const handleDetailsClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    onViewDetails();
-  };
+  const priceTag = option.is_included ? (
+    <span className="font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-repower-navy-900/60">Included</span>
+  ) : (
+    <span>${effectivePrice.toFixed(2)}</span>
+  );
 
   return (
-    <Card 
-      className={`cursor-pointer transition-all ${
-        isSelected ? 'border-primary bg-primary/5' : 'hover:border-muted-foreground/50'
-      } ${disabled ? 'opacity-60 cursor-not-allowed' : ''}`}
+    <QuoteRadioTile
+      multi
+      selected={isSelected}
       onClick={disabled ? undefined : onToggle}
-    >
-      <CardContent className="p-4">
-        <div className="flex items-start gap-4">
-          {!disabled && (
-            <div className="pt-1">
-              <Checkbox
-                checked={isSelected}
-                onCheckedChange={() => onToggle()}
-                onClick={(e) => e.stopPropagation()}
-              />
+      disabled={disabled}
+      icon={
+        <QuoteCheckbox
+          checked={isSelected}
+          onCheckedChange={() => !disabled && onToggle()}
+          onClick={(e) => e.stopPropagation()}
+          disabled={disabled}
+        />
+      }
+      label={option.name}
+      description={
+        <>
+          {option.short_description && <span className="block">{option.short_description}</span>}
+          {option.part_number && (
+            <span className="block text-[12px] text-repower-navy-900/45 mt-0.5">Part: {option.part_number}</span>
+          )}
+        </>
+      }
+      priceTag={
+        <div className="flex flex-col items-end gap-1">
+          <div className="font-display font-bold text-[18px]">{priceTag}</div>
+          {option.msrp && !option.is_included && option.msrp > effectivePrice && (
+            <div className="font-sans text-[11px] text-repower-navy-900/45 line-through">
+              ${option.msrp.toFixed(2)}
             </div>
           )}
-          {disabled && (
-            <div className="pt-1">
-              <CheckCircle2 className="h-5 w-5 text-primary" />
-            </div>
-          )}
-
-          <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between gap-2">
-              <div className="min-w-0 flex-1">
-                <h3 className="font-semibold">{option.name}</h3>
-                {option.short_description && (
-                  <p className="text-sm text-muted-foreground mt-1 line-clamp-1">{option.short_description}</p>
-                )}
-                {option.part_number && (
-                  <p className="text-xs text-muted-foreground mt-1">Part: {option.part_number}</p>
-                )}
-              </div>
-              
-              <div className="text-right shrink-0">
-                {option.is_included ? (
-                  <Badge variant="secondary">Included</Badge>
-                ) : (
-                  <p className="text-lg font-bold">
-                    ${effectivePrice.toFixed(2)}
-                  </p>
-                )}
-                {option.msrp && !option.is_included && option.msrp > effectivePrice && (
-                  <p className="text-xs text-muted-foreground line-through">
-                    ${option.msrp.toFixed(2)}
-                  </p>
-                )}
-              </div>
-            </div>
-
-            {/* Features preview and View Details button */}
-            <div className="flex items-center justify-between mt-2">
-              {option.features && option.features.length > 0 ? (
-                <p className="text-xs text-muted-foreground line-clamp-1 flex-1">
-                  {option.features.slice(0, 3).join(' • ')}
-                </p>
-              ) : (
-                <div />
-              )}
-              
-              <button
-                onClick={handleDetailsClick}
-                className="text-xs text-primary hover:underline flex items-center gap-1 ml-2 shrink-0 min-h-[44px] px-2 -mr-2"
-              >
-                <Info className="w-3 h-3" />
-                Details
-              </button>
-            </div>
-          </div>
         </div>
-      </CardContent>
-    </Card>
+      }
+    >
+      <div className="flex items-center justify-between mt-3 gap-2">
+        {option.features && option.features.length > 0 ? (
+          <p className="text-xs text-repower-navy-900/55 line-clamp-1 flex-1 font-sans">
+            {option.features.slice(0, 3).join(' • ')}
+          </p>
+        ) : (
+          <div />
+        )}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onViewDetails();
+          }}
+          className="text-xs text-repower-mercury-red hover:underline flex items-center gap-1 ml-2 shrink-0 font-sans font-semibold uppercase tracking-[0.1em]"
+        >
+          <Info className="w-3 h-3" />
+          Details
+        </button>
+      </div>
+    </QuoteRadioTile>
   );
 }

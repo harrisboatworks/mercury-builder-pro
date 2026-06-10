@@ -95,7 +95,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
               <DrawerTitle className="text-base font-semibold">Your Configuration</DrawerTitle>
               <button
                 onClick={onClose}
-                className="absolute right-4 top-1/2 -translate-y-1/2 h-10 w-10 flex items-center justify-center rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 h-10 w-10 flex items-center justify-center rounded-full hover:bg-repower-paper active:bg-repower-cream transition-colors"
                 aria-label="Close drawer"
               >
                 <X className="h-5 w-5 text-muted-foreground" />
@@ -109,7 +109,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                   <span className="font-medium">{displayMotor.model}</span>
                   <div className="flex items-center gap-2">
                     {isPreview && (
-                      <Badge variant="outline" className="text-xs bg-blue-50 text-blue-600 border-blue-200">
+                      <Badge variant="outline" className="text-xs bg-repower-cream text-repower-navy-900 border-repower-navy-900/20">
                         Previewing
                       </Badge>
                     )}
@@ -134,10 +134,10 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                 
                 {pricing.lineItems.map((item, idx) => (
                   <div key={idx} className="flex justify-between text-sm">
-                    <span className={item.isCredit ? 'text-green-600' : 'text-muted-foreground'}>
+                    <span className={item.isCredit ? 'text-repower-gold' : 'text-muted-foreground'}>
                       {item.label}
                     </span>
-                    <span className={item.isCredit ? 'text-green-600 font-medium' : ''}>
+                    <span className={item.isCredit ? 'text-repower-gold font-medium' : ''}>
                       {item.isCredit ? '-' : ''}{money(item.value)}
                     </span>
                   </div>
@@ -168,7 +168,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                   <Separator />
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <Gift className="h-4 w-4 text-green-600" />
+                      <Gift className="h-4 w-4 text-repower-gold" />
                       <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                         Active Promotions
                       </h4>
@@ -176,13 +176,13 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                     {activePromos.slice(0, 2).map((promo) => (
                       <div 
                         key={promo.id} 
-                        className="bg-green-50 border border-green-100 rounded-lg p-2.5"
+                        className="bg-repower-cream border border-repower-gold/30 rounded-lg p-2.5"
                       >
-                        <p className="text-sm font-medium text-green-800">
+                        <p className="text-sm font-medium text-repower-gold">
                           {promo.bonus_title || promo.name}
                         </p>
                         {promo.end_date && (
-                          <p className="text-xs text-green-600 mt-0.5">
+                          <p className="text-xs text-repower-gold mt-0.5">
                             Ends {new Date(promo.end_date).toLocaleDateString()}
                           </p>
                         )}

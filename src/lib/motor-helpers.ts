@@ -150,12 +150,12 @@ export const decodeModelName = (modelName: string, actualHP?: number) => {
     add('L', 'Long Shaft (20")', 'For 20" transom boats');
   }
   if (upper.includes('MLH')) {
-    add('M', 'Manual Start', 'Pull cord — simple & reliable');
+    add('M', 'Manual Start', 'Pull cord, simple and reliable');
     add('L', 'Long Shaft (20")', 'For 20" transom boats');
     add('H', 'Tiller Handle', 'Steer directly from motor');
   }
   if (upper.includes('MH')) {
-    add('M', 'Manual Start', 'Pull cord — simple & reliable');
+    add('M', 'Manual Start', 'Pull cord, simple and reliable');
     add('H', 'Tiller Handle', 'Steer directly from motor');
   }
   if (upper.includes('EH')) {
@@ -200,7 +200,7 @@ export const decodeModelName = (modelName: string, actualHP?: number) => {
 
   // Single flags
   if (hasWord('E') && !added.has('E')) add('E', 'Electric Start', 'Push-button convenience');
-  if (hasWord('M') && !added.has('M')) add('M', 'Manual Start', 'Pull cord — simple & reliable');
+  if (hasWord('M') && !added.has('M')) add('M', 'Manual Start', 'Pull cord, simple and reliable');
   if (hp <= 30 && hasWord('H') && !added.has('H')) add('H', 'Tiller Handle', 'Steer directly from motor');
   
   // Cache the result before returning

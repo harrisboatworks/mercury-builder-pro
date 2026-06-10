@@ -1,9 +1,10 @@
 import { Helmet } from '@/lib/helmet';
 import { Link } from 'react-router-dom';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
-import { ArrowLeft, Phone, MapPin, Navigation } from 'lucide-react';
+import { ArrowLeft, Navigation } from 'lucide-react';
+import { BlogCTA } from '@/components/blog/BlogCTA';
 
 export default function MandarinBlogArticle() {
   const url = `${SITE_URL}/blog/zh/mercury-repower-guide-gta`;
@@ -80,7 +81,7 @@ export default function MandarinBlogArticle() {
   };
 
   return (
-    <div className="min-h-screen bg-background" lang="zh-Hans">
+    <div className="min-h-screen bg-repower-paper" lang="zh-Hans">
       <Helmet>
         <title>Mercury水星舷外机换新指南 GTA华人船主 | Harris Boat Works</title>
         <meta name="description" content="安大略省Mercury水星舷外机换新（Repower）完整指南。Harris Boat Works白金级经销商，在线透明报价，无需电话谈价。GTA华人船主必读。" />
@@ -96,7 +97,7 @@ export default function MandarinBlogArticle() {
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
-      <LuxuryHeader />
+      <RepowerHeader />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-3xl">
         {/* Back nav */}
@@ -108,7 +109,10 @@ export default function MandarinBlogArticle() {
         </nav>
 
         <article className="prose prose-lg max-w-none text-foreground">
-          <h1 className="text-3xl md:text-4xl font-light text-foreground mb-2">
+          <h1
+            className="font-display font-bold text-repower-navy-900 mb-5"
+            style={{ fontSize: 'clamp(32px, 4.5vw, 56px)', letterSpacing: '-0.025em', lineHeight: 1.1 }}
+          >
             安大略省Mercury水星舷外机换新指南：GTA华人船主必读
           </h1>
           <p className="text-muted-foreground text-sm mb-8">Harris Boat Works | harrisboatworks.ca</p>
@@ -117,7 +121,7 @@ export default function MandarinBlogArticle() {
           <div className="bg-primary/5 rounded-xl p-6 mb-8 not-prose">
             <h2 className="text-lg font-medium text-foreground mb-2">快速答案</h2>
             <p className="text-foreground text-sm">
-              如果您在安大略省拥有一艘船，但发动机已经老旧、故障频繁，换新发动机（Repower）通常比换一艘新船划算得多。Harris Boat Works 是 Mercury Marine 白金级授权经销商，提供全透明在线报价——在 <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 即可查看真实加元价格。
+              如果您在安大略省拥有一艘船，但发动机已经老旧、故障频繁，换新发动机（Repower）通常比换一艘新船划算得多。Harris Boat Works 是 Mercury Marine 白金级授权经销商，提供全透明在线报价——在 <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 即可查看真实加元价格。
             </p>
           </div>
 
@@ -136,11 +140,11 @@ export default function MandarinBlogArticle() {
 
           <h2>为什么选择 Mercury Marine？</h2>
           <ul>
-            <li><strong>全系列产品线</strong> — 从2.5马力到600马力V12发动机</li>
-            <li><strong>燃油效率</strong> — 最新一代Mercury发动机在同级别中领先</li>
-            <li><strong>可靠性</strong> — Mercury发动机以耐用著称，许多船主使用十五年以上</li>
-            <li><strong>完善的零件网络</strong> — 正品零件，快速获取</li>
-            <li><strong>厂家保修</strong> — 完整厂家保修，白金级经销商确保保修全额有效</li>
+            <li><strong>全系列产品线</strong>, 从2.5马力到600马力V12发动机</li>
+            <li><strong>燃油效率</strong>, 最新一代Mercury发动机在同级别中领先</li>
+            <li><strong>可靠性</strong>, Mercury发动机以耐用著称，许多船主使用十五年以上</li>
+            <li><strong>完善的零件网络</strong>, 正品零件，快速获取</li>
+            <li><strong>厂家保修</strong>, 完整厂家保修，白金级经销商确保保修全额有效</li>
           </ul>
 
           <h2>透明定价：不需要"谈价格"</h2>
@@ -148,7 +152,7 @@ export default function MandarinBlogArticle() {
             许多经销商的网站上只写着"致电询价"。我们不这么做。
           </p>
           <p>
-            <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 是一个完全公开、实时更新的在线报价工具：
+            <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 是一个完全公开、实时更新的在线报价工具：
           </p>
           <ol>
             <li>选择发动机类型和马力</li>
@@ -159,20 +163,20 @@ export default function MandarinBlogArticle() {
           <p>全程不需要打电话，不需要讨价还价。所有顾客看到的是同一份价格。</p>
 
           <h2>换新发动机的完整流程</h2>
-          <p><strong>第一步：在线获取报价</strong> — 访问 mercuryrepower.ca，选择适合您船只的发动机型号。</p>
-          <p><strong>第二步：联系我们确认</strong> — 通过电话或电子邮件告知您的船只型号和现有发动机情况。</p>
-          <p><strong>第三步：预约送船</strong> — 将船送到我们位于Gores Landing的船坞。</p>
-          <p><strong>第四步：安装与调试</strong> — 技师完成安装并进行Rice Lake海试。</p>
-          <p><strong>第五步：交付与说明</strong> — 说明操作要点、保养周期和保修条款。</p>
+          <p><strong>第一步：在线获取报价</strong>, 访问 mercuryrepower.ca，选择适合您船只的发动机型号。</p>
+          <p><strong>第二步：联系我们确认</strong>, 通过电话或电子邮件告知您的船只型号和现有发动机情况。</p>
+          <p><strong>第三步：预约送船</strong>, 将船送到我们位于Gores Landing的船坞。</p>
+          <p><strong>第四步：安装与调试</strong>, 技师完成安装并进行Rice Lake海试。</p>
+          <p><strong>第五步：交付与说明</strong>, 说明操作要点、保养周期和保修条款。</p>
 
           <h2>大致费用参考</h2>
           <ul>
-            <li><strong>小型发动机（9.9–20马力）</strong> — 适合钓鱼船和小型铝合金船</li>
-            <li><strong>中型发动机（40–60马力）</strong> — 适合家庭日常游船</li>
-            <li><strong>大型发动机（90–115马力）</strong> — 适合较大的家庭游船</li>
-            <li><strong>高性能发动机（150马力以上）</strong> — 适合大型快艇和双发配置</li>
+            <li><strong>小型发动机（9.9–20马力）</strong>, 适合钓鱼船和小型铝合金船</li>
+            <li><strong>中型发动机（40–60马力）</strong>, 适合家庭日常游船</li>
+            <li><strong>大型发动机（90–115马力）</strong>, 适合较大的家庭游船</li>
+            <li><strong>高性能发动机（150马力以上）</strong>, 适合大型快艇和双发配置</li>
           </ul>
-          <p>精确报价请访问 <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a></p>
+          <p>精确报价请访问 <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a></p>
         </article>
 
         {/* Driving directions */}
@@ -213,32 +217,10 @@ export default function MandarinBlogArticle() {
         </section>
 
         {/* CTA */}
-        <section className="text-center bg-primary/5 rounded-2xl p-8 mb-12">
-          <h2 className="text-xl font-light text-foreground mb-3">现在就行动</h2>
-          <p className="text-muted-foreground text-sm mb-6">花五分钟在线配置您的报价</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/quote/motor-selection"
-              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
-            >
-              在线获取报价
-            </Link>
-            <a
-              href="tel:905-342-2153"
-              className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition-colors"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              905-342-2153
-            </a>
-          </div>
-          <p className="text-sm text-muted-foreground mt-4 flex items-center justify-center gap-1">
-            <MapPin className="w-3 h-3" />
-            5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-          </p>
-        </section>
+        <BlogCTA category="Repower" slug="mercury-repower-guide-gta" variant="banner" />
 
         <footer className="text-center text-xs text-muted-foreground">
-          <p>Harris Boat Works — 1947年至今，三代家族经营，安大略省Rice Lake。Mercury Marine 白金级授权经销商。</p>
+          <p>Harris Boat Works, 1947年至今，三代家族经营，安大略省Rice Lake。Mercury Marine 白金级授权经销商。</p>
         </footer>
       </main>
 

@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -11,7 +12,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { contactInfoSchema, sanitizeInput, formatPhoneNumber } from '@/lib/validation';
-import { ArrowLeft, Calendar, Download, Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Download, Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
@@ -744,29 +745,29 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
-        <h2 className="text-4xl md:text-5xl font-light tracking-wide text-slate-900">Submit Your Quote</h2>
-        <p className="text-lg text-slate-700 font-normal">
+        <h2 className="text-4xl md:text-5xl font-light tracking-wide text-repower-navy-900">Submit Your Quote</h2>
+        <p className="text-lg text-repower-navy-900/75 font-normal">
           Complete your contact information and we'll reach out to finalize the details
         </p>
       </div>
 
       <div className="max-w-2xl mx-auto">
         {/* Contact Form */}
-        <Card className="p-6 border-gray-200 rounded-sm hover:border-gray-300 transition-colors duration-300">
+        <Card className="p-6 border-repower-navy-900/10 rounded-sm hover:border-repower-navy-900/20 transition-colors duration-300">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <h3 className="text-xl font-light tracking-wide">Contact Information</h3>
-              <p className="text-slate-700 font-normal mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
+              <p className="text-repower-navy-900/75 font-normal mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="name" className="font-light">Full Name *</Label>
+              <Label htmlFor="name" className="font-light">Full Name <RequiredMark /></Label>
               <Input
                 id="name"
                 value={contactInfo.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 placeholder="Enter your full name"
-                className={`border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300 ${errors.name ? 'border-destructive' : ''}`}
+                className={`border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300 ${errors.name ? 'border-destructive' : ''}`}
               />
               {errors.name && (
                 <p className="text-sm text-destructive font-light">{errors.name}</p>
@@ -774,14 +775,14 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="font-light">Email Address *</Label>
+              <Label htmlFor="email" className="font-light">Email Address <RequiredMark /></Label>
               <Input
                 id="email"
                 type="email"
                 value={contactInfo.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
                 placeholder="Enter your email"
-                className={`border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300 ${errors.email ? 'border-destructive' : ''}`}
+                className={`border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300 ${errors.email ? 'border-destructive' : ''}`}
               />
               {errors.email && (
                 <p className="text-sm text-destructive font-light">{errors.email}</p>
@@ -789,26 +790,26 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone" className="font-light">Phone Number *</Label>
+              <Label htmlFor="phone" className="font-light">Phone Number <RequiredMark /></Label>
               <Input
                 id="phone"
                 type="tel"
                 value={contactInfo.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
                 placeholder="(705) 555-1234"
-                className={`border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300 ${errors.phone ? 'border-destructive' : ''}`}
+                className={`border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300 ${errors.phone ? 'border-destructive' : ''}`}
                 maxLength={14}
               />
               {errors.phone && (
                 <p className="text-sm text-destructive font-light">{errors.phone}</p>
               )}
-              <p className="text-xs text-muted-foreground dark:text-gray-400 font-light">Enter 10 digits (with or without formatting)</p>
+              <p className="text-xs text-muted-foreground  font-light">Enter 10 digits (with or without formatting)</p>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="contactMethod" className="font-light">Preferred Contact Method *</Label>
+              <Label htmlFor="contactMethod" className="font-light">Preferred Contact Method <RequiredMark /></Label>
               <Select value={contactInfo.contactMethod} onValueChange={(value) => handleInputChange('contactMethod', value)}>
-                <SelectTrigger className="border-gray-200 rounded-sm">
+                <SelectTrigger className="border-repower-navy-900/10 rounded-sm">
                   <SelectValue placeholder="How would you like us to contact you?" />
                 </SelectTrigger>
                 <SelectContent className="rounded-sm">
@@ -828,59 +829,67 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 placeholder="Any additional information about your boat or installation requirements"
                 rows={3}
                 maxLength={500}
-                className="border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300"
+                className="border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300"
               />
-              <p className="text-xs text-muted-foreground dark:text-gray-400 font-light">{contactInfo.notes.length}/500 characters</p>
+              <p className="text-xs text-muted-foreground  font-light">{contactInfo.notes.length}/500 characters</p>
             </div>
 
             {/* Send Quote Options */}
             <div className="space-y-3">
-              <h4 className="text-sm font-light text-muted-foreground">Send Quote To:</h4>
-              
+              <h4 className="font-sans font-semibold text-[11px] uppercase tracking-[0.14em] text-repower-navy-900/55">Send Quote To:</h4>
+
               {/* Send via Email */}
-              <Button 
+              <button
+                type="button"
                 onClick={handleSendByEmail}
                 disabled={!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email) || isSendingEmail}
-                variant="outline" 
-                className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide disabled:opacity-50"
+                className="group w-full inline-flex items-center justify-center gap-2 bg-white border border-repower-navy-900/15 text-repower-navy-900 px-5 py-3.5 font-sans font-semibold text-[14px] transition-colors hover:border-repower-navy-900 hover:bg-repower-navy-900/[0.04] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-repower-navy-900/15 disabled:hover:bg-white"
               >
-                <Mail className="w-4 h-4 mr-2" />
+                <Mail className="w-4 h-4" />
                 {isSendingEmail ? 'Sending...' : 'Send to Email'}
-              </Button>
-              
+              </button>
+
               {/* Send via Text */}
-              <Button 
+              <button
+                type="button"
                 onClick={handleSendByText}
                 disabled={!contactInfo.phone || contactInfo.phone.replace(/\D/g, '').length !== 10 || isSendingText}
-                variant="outline" 
-                className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide disabled:opacity-50"
+                className="group w-full inline-flex items-center justify-center gap-2 bg-white border border-repower-navy-900/15 text-repower-navy-900 px-5 py-3.5 font-sans font-semibold text-[14px] transition-colors hover:border-repower-navy-900 hover:bg-repower-navy-900/[0.04] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-repower-navy-900/15 disabled:hover:bg-white"
               >
-                <MessageSquare className="w-4 h-4 mr-2" />
+                <MessageSquare className="w-4 h-4" />
                 {isSendingText ? 'Sending...' : 'Send by Text'}
-              </Button>
-              
+              </button>
+
               {/* Download as tertiary option */}
-              <Button 
+              <button
+                type="button"
                 onClick={generatePDF}
-                variant="ghost" 
-                className="w-full text-muted-foreground hover:text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 font-sans text-[13px] text-repower-navy-900/65 hover:text-repower-navy-900 transition-colors"
               >
-                <Download className="w-4 h-4 mr-2" />
+                <Download className="w-4 h-4" />
                 Download PDF
-              </Button>
+              </button>
             </div>
 
-            <Button type="submit" className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-sm border border-gray-900 font-light tracking-wide" disabled={isSubmitting}>
-              <Calendar className="w-4 h-4 mr-2" />
+            <div className="mt-2 mb-4 bg-repower-cream border border-repower-navy-900/10 p-4 rounded-sm text-[13px] text-repower-navy-900/80 leading-relaxed">
+              Your quote is reviewed by a real person at Harris Boat Works. No auto-pricing games. We confirm everything within 1 business day.
+            </div>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="group w-full inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Calendar className="w-4 h-4" />
               {isSubmitting ? 'Submitting...' : 'Submit Quote'}
-            </Button>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
           </form>
         </Card>
       </div>
 
 
       {/* Contact Information */}
-      <Card className="p-6 border-gray-200 rounded-sm">
+      <Card className="p-6 border-repower-navy-900/10 rounded-sm">
         <h3 className="text-xl font-light tracking-wide mb-4">Harris Boat Works</h3>
         <div className="w-full grid grid-cols-3 gap-2 md:gap-6">
           <a href="tel:9053422153" className="flex flex-col items-center gap-1 p-2 hover:text-primary transition-colors">
@@ -897,12 +906,12 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           </a>
         </div>
         
-        <div className="mt-6 p-4 bg-stone-50 rounded-sm border border-gray-200">
+        <div className="mt-6 p-4 bg-repower-cream rounded-sm border border-repower-navy-900/10">
           <div className="flex items-start gap-3">
-            <Clock className="w-5 h-5 text-gray-700 mt-0.5" />
+            <Clock className="w-5 h-5 text-repower-navy-900/75 mt-0.5" />
             <div>
               <p className="font-light tracking-wide mb-2">What happens next?</p>
-              <ul className="text-sm text-muted-foreground dark:text-gray-400 font-light space-y-1">
+              <ul className="text-sm text-muted-foreground  font-light space-y-1">
                 <li>• We'll contact you within 24 hours to schedule your consultation</li>
                 <li>• Our technician will inspect your boat and verify all specifications</li>
                 <li>• You'll receive a final quote including installation costs</li>
@@ -915,7 +924,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
       {/* Navigation */}
       <div className="flex justify-between">
-        <Button variant="outline" onClick={onBack} className="border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide">
+        <Button variant="outline" onClick={onBack} className="border-repower-navy-900 text-repower-navy-900 hover:bg-repower-navy-900/[0.04] rounded-sm font-light tracking-wide">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Quote Review
         </Button>

@@ -1,11 +1,21 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { buildMotorProductSchema, type MotorSchemaInput } from '@/lib/seo/buildMotorProductSchema';
+
+interface QuoteSummaryPageSEOProps {
+  /**
+   * Live selected motor + total. When provided, a Product+Offer JSON-LD block
+   * is added so the shared/saved quote link is eligible for rich results.
+   * Omit on the prerendered version (no motor known at build time).
+   */
+  selectedMotor?: Omit<MotorSchemaInput, 'url'> | null;
+}
 
 /**
  * JSON-LD for /quote/summary (QuoteEstimate step).
  * Mirrors quoteSummaryPageSchema() in scripts/static-prerender.mjs.
  */
-export function QuoteSummaryPageSEO() {
+export function QuoteSummaryPageSEO({ selectedMotor }: QuoteSummaryPageSEOProps = {}) {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -15,8 +25,8 @@ export function QuoteSummaryPageSEO() {
         "url": `${SITE_URL}/quote/summary`,
         "name": "Your Mercury Outboard Quote Estimate | Harris Boat Works",
         "description": "Itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and current promotional savings.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#localbusiness" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#localbusiness" },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/quote/summary#breadcrumb` },
       },
@@ -35,7 +45,7 @@ export function QuoteSummaryPageSEO() {
         "@id": `${SITE_URL}/quote/summary#estimate-service`,
         "name": "Mercury Outboard Quote Estimate",
         "serviceType": "Online Motor Quote Estimate",
-        "provider": { "@id": "https://mercuryrepower.ca/#organization" },
+        "provider": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "areaServed": [
           { "@type": "State", "name": "Ontario" },
           { "@type": "Country", "name": "Canada" },
@@ -43,24 +53,38 @@ export function QuoteSummaryPageSEO() {
         "offers": {
           "@type": "Offer",
           "priceCurrency": "CAD",
-          "availability": "https://schema.org/InStock",
-          "seller": { "@id": "https://mercuryrepower.ca/#organization" },
+          "availability": "https://schema.org/InStoreOnly",
+          "itemCondition": "https://schema.org/NewCondition",
+          "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
+          "seller": { "@id": "https://www.mercuryrepower.ca/#organization" },
         },
       },
     ],
   };
+
+  const motorProductSchema = selectedMotor
+    ? {
+        '@context': 'https://schema.org',
+        ...buildMotorProductSchema({
+          ...selectedMotor,
+          url: `${SITE_URL}/quote/summary`,
+          idSuffix: 'selected-motor',
+        }),
+      }
+    : null;
+
 
   return (
     <Helmet>
       <title>Your Mercury Outboard Quote Estimate | Harris Boat Works</title>
       <meta
         name="description"
-        content="Review your itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and current promotions. Harris Boat Works — Mercury dealer since 1965."
+        content="Review your itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and current promotions. Harris Boat Works, Mercury dealer since 1965."
       />
       <link rel="canonical" href={`${SITE_URL}/quote/summary`} />
 
       <meta property="og:title" content="Your Mercury Outboard Quote Estimate" />
-      <meta property="og:description" content="Itemized Mercury outboard quote — live CAD pricing, financing, trade-in, and current promotions." />
+      <meta property="og:description" content="Itemized Mercury outboard quote, live CAD pricing, financing, trade-in, and current promotions." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${SITE_URL}/quote/summary`} />
 
@@ -69,6 +93,9 @@ export function QuoteSummaryPageSEO() {
       <meta name="twitter:description" content="Itemized Mercury outboard quote with live CAD pricing and financing estimates." />
 
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      {motorProductSchema && (
+        <script type="application/ld+json">{JSON.stringify(motorProductSchema)}</script>
+      )}
     </Helmet>
   );
 }

@@ -11,7 +11,7 @@ const TestPDFButton: React.FC = () => {
   const [qrCodeDataUrl, setQrCodeDataUrl] = useState<string | undefined>();
 
   useEffect(() => {
-    QRCode.toDataURL('https://mercuryrepower.ca/quote/test-123', {
+    QRCode.toDataURL('https://www.mercuryrepower.ca/quote/test-123', {
       width: 150,
       margin: 1,
       color: { dark: '#000000', light: '#ffffff' },

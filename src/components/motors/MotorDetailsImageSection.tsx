@@ -99,7 +99,7 @@ export function MotorDetailsImageSection({ motor, gallery, img, title }: MotorDe
     return (
       <div className="space-y-3">
         {/* Main image skeleton with shimmer */}
-        <div className="relative h-96 w-full rounded-xl bg-white overflow-hidden border border-stone-100 shadow-sm">
+        <div className="relative h-96 w-full rounded-xl overflow-hidden border border-stone-100 shadow-sm" style={{ background: 'var(--gradient-image-bg)' }}>
           <div className="absolute inset-0 animate-shimmer" />
           <div className="absolute inset-0 flex items-center justify-center">
             <ImageIcon className="h-12 w-12 text-stone-200" />

@@ -71,7 +71,7 @@ export default function FrenchBlogArticle() {
             "name": "Vos prix sont-ils compétitifs par rapport aux concessionnaires québécois?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Nos prix sont transparents et sans frais cachés. Le configurateur à mercuryrepower.ca vous donne nos prix réels en CAD — comparez par vous-même."
+              "text": "Nos prix sont transparents et sans frais cachés. Le configurateur à mercuryrepower.ca vous donne nos prix réels en CAD, comparez par vous-même."
             }
           },
           {
@@ -91,7 +91,7 @@ export default function FrenchBlogArticle() {
     <div className="min-h-screen bg-background" lang="fr">
       <Helmet>
         <title>Concessionnaire Mercury Platinum Ontario | Harris Boat Works</title>
-        <meta name="description" content="Harris Boat Works — concessionnaire Mercury Platinum à Gores Landing, Ontario. Prix transparents en ligne, remotorisation Mercury, service pour plaisanciers francophones." />
+        <meta name="description" content="Harris Boat Works, concessionnaire Mercury Platinum à Gores Landing, Ontario. Prix transparents en ligne, remotorisation Mercury, service pour plaisanciers francophones." />
         <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="fr-CA" href={url} />
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
@@ -125,7 +125,7 @@ export default function FrenchBlogArticle() {
           <div className="bg-primary/5 rounded-xl p-6 mb-8 not-prose">
             <h2 className="text-lg font-medium text-foreground mb-2">Réponse rapide</h2>
             <p className="text-foreground text-sm">
-              Harris Boat Works est concessionnaire <strong>Mercury Marine Platinum</strong> à Gores Landing, en Ontario — le niveau le plus élevé du réseau Mercury. On sert les plaisanciers de l'Ontario et du Québec depuis 1947, avec des prix transparents en ligne et une approche franche. Bâtissez votre soumission en temps réel à <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>.
+              Harris Boat Works est concessionnaire <strong>Mercury Marine Platinum</strong> à Gores Landing, en Ontario, le niveau le plus élevé du réseau Mercury. On sert les plaisanciers de l'Ontario et du Québec depuis 1947, avec des prix transparents en ligne et une approche franche. Bâtissez votre soumission en temps réel à <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>.
             </p>
           </div>
 
@@ -142,7 +142,7 @@ export default function FrenchBlogArticle() {
           </p>
           <p>Nous, on a choisi de faire autrement.</p>
           <p>
-            <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> est un configurateur de soumission en temps réel. Vous choisissez votre moteur, vos options — et vous voyez le prix réel, en dollars canadiens, immédiatement. Le prix que vous voyez, c'est le prix. Tout le monde voit le même chiffre.
+            <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> est un configurateur de soumission en temps réel. Vous choisissez votre moteur, vos options, et vous voyez le prix réel, en dollars canadiens, immédiatement. Le prix que vous voyez, c'est le prix. Tout le monde voit le même chiffre.
           </p>
 
           <h2>Qu'est-ce qu'une remotorisation (repower)?</h2>
@@ -157,7 +157,7 @@ export default function FrenchBlogArticle() {
 
           <h2>Une marina de famille depuis 1947</h2>
           <p>
-            Harris Boat Works est une entreprise familiale de troisième génération, fondée en 1947 à Gores Landing, sur le lac Rice. Ça fait 78 ans qu'on sert les mêmes familles — et leurs enfants et petits-enfants.
+            Harris Boat Works est une entreprise familiale de troisième génération, fondée en 1947 à Gores Landing, sur le lac Rice. Ça fait 78 ans qu'on sert les mêmes familles, et leurs enfants et petits-enfants.
           </p>
           <p>
             Le lac Rice et les Kawarthas sont à moins de trois heures de Montréal. Pour un plaisancier du Québec ou de l'est de l'Ontario, on est bien situés.
@@ -165,10 +165,10 @@ export default function FrenchBlogArticle() {
 
           <h2>Comment travailler avec nous en français</h2>
           <ol>
-            <li><strong>Bâtissez votre soumission en ligne</strong> — <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>, aucun échange verbal requis.</li>
-            <li><strong>Envoyez une demande par formulaire</strong> — <a href="https://hbw.wiki/service" className="text-primary hover:underline">hbw.wiki/service</a>, vous pouvez écrire en français.</li>
-            <li><strong>Appelez si vous préférez</strong> — 905-342-2153, on va prendre le temps qu'il faut.</li>
-            <li><strong>Venez nous voir</strong> — une conversation en personne règle bien des choses.</li>
+            <li><strong>Bâtissez votre soumission en ligne</strong>, <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>, aucun échange verbal requis.</li>
+            <li><strong>Envoyez une demande par formulaire</strong>, <a href="https://hbw.wiki/service" className="text-primary hover:underline">hbw.wiki/service</a>, vous pouvez écrire en français.</li>
+            <li><strong>Appelez si vous préférez</strong>, 905-342-2153, on va prendre le temps qu'il faut.</li>
+            <li><strong>Venez nous voir</strong>, une conversation en personne règle bien des choses.</li>
           </ol>
         </article>
 
@@ -177,10 +177,10 @@ export default function FrenchBlogArticle() {
           <h2 className="text-2xl font-light text-foreground mb-6">Questions fréquentes des plaisanciers francophones</h2>
           <div className="space-y-6">
             {[
-              { q: "Parlez-vous français chez Harris Boat Works?", a: "Non — on préfère être honnêtes. Mais le configurateur en ligne n'a pas de barrière linguistique, et le courriel nous permet de gérer les échanges écrits avec soin." },
+              { q: "Parlez-vous français chez Harris Boat Works?", a: "Non, on préfère être honnêtes. Mais le configurateur en ligne n'a pas de barrière linguistique, et le courriel nous permet de gérer les échanges écrits avec soin." },
               { q: "Est-ce que Mercury Canada vous recommande?", a: "Oui. Quand des clients contactent Mercury Canada dans notre secteur, ils nous sont souvent dirigés directement." },
               { q: "Puis-je faire entretenir mon moteur Mercury chez vous si je viens du Québec?", a: "Oui. Notre atelier prend en charge les moteurs Mercury et Mercruiser. Soumettez votre demande via hbw.wiki/service." },
-              { q: "Vos prix sont-ils compétitifs?", a: "Nos prix sont transparents et sans frais cachés. Le configurateur à mercuryrepower.ca vous donne nos prix réels en CAD — comparez par vous-même." },
+              { q: "Vos prix sont-ils compétitifs?", a: "Nos prix sont transparents et sans frais cachés. Le configurateur à mercuryrepower.ca vous donne nos prix réels en CAD, comparez par vous-même." },
               { q: "Comment fonctionne la garantie si je retourne au Québec?", a: "La garantie Mercury est honorée par n'importe quel concessionnaire agréé Mercury en Amérique du Nord." },
             ].map(({ q, a }) => (
               <div key={q} className="border-b border-border pb-4">

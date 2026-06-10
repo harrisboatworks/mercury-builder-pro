@@ -150,7 +150,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
                   </div>
                   <div>
                     <div className="text-muted-foreground">Finance Fee</div>
-                    <div className="font-medium">$299</div>
+                    <div className="font-medium">$349</div>
                   </div>
                   <div>
                     <div className="text-muted-foreground">Total Financed</div>
@@ -290,7 +290,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
                   </div>
                 )}
                 <div className="mt-3 text-xs text-muted-foreground">
-                  * Includes 13% HST and $299 finance fee. Estimates only, not a credit offer.
+                  * Includes 13% HST and $349 finance fee. Estimates only, not a credit offer.
                 </div>
               </CardContent>
             </Card>

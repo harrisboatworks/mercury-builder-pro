@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -325,7 +326,7 @@ export const SourceManagement: React.FC = () => {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <Label htmlFor="source-name">Source Name *</Label>
+              <Label htmlFor="source-name">Source Name <RequiredMark /></Label>
               <Input
                 id="source-name"
                 value={newSource.name}
@@ -343,7 +344,7 @@ export const SourceManagement: React.FC = () => {
               )}
             </div>
             <div>
-              <Label htmlFor="source-url">Base URL *</Label>
+              <Label htmlFor="source-url">Base URL <RequiredMark /></Label>
               <Input
                 id="source-url"
                 value={newSource.base_url}

@@ -4,23 +4,23 @@ import { SITE_URL } from '@/lib/site';
 const GTA_FAQ = [
   {
     question: "Is there a Mercury dealer that serves the GTA?",
-    answer: "Harris Boat Works on Rice Lake serves GTA boaters from across the Greater Toronto Area. We're 90 minutes east of Toronto via Highway 401 — closer than most GTA boaters realize for a Mercury Marine Platinum Dealer. Family-owned since 1947, Mercury dealer since 1965."
+    answer: "Harris Boat Works on Rice Lake serves GTA boaters from across the Greater Toronto Area. We're 90 minutes east of Toronto via Highway 401, closer than most GTA boaters realize for a Mercury Marine Platinum Dealer. Family-owned since 1947, Mercury dealer since 1965."
   },
   {
     question: "How do GTA customers handle pickup?",
-    answer: "Two ways: bring your boat down to Gores Landing for full installation, or pick up a loose Mercury motor and install it yourself (or with your local mechanic). We do not ship motors and we do not deliver — pickup only at our Rice Lake location, which keeps pricing transparent and warranty registration clean."
+    answer: "Two ways: bring your boat down to Gores Landing for full installation, or pick up a loose Mercury motor and install it yourself (or with your local mechanic). We do not ship motors and we do not deliver, pickup only at our Rice Lake location, which keeps pricing transparent and warranty registration clean."
   },
   {
     question: "Is it worth driving from Toronto for a Mercury outboard?",
-    answer: "GTA boaters tell us yes — for three reasons. (1) Real CAD pricing online with no \"call for price\" runaround. (2) Mercury Platinum Dealer status (top tier in North America). (3) Family-owned, so the same people quote, install, and service the motor. Combined with a one-hour easy run on the 401, the math usually works out better than buying in the GTA."
+    answer: "GTA boaters tell us yes, for three reasons. (1) Real CAD pricing online with no \"call for price\" runaround. (2) Mercury Platinum Dealer status (top tier in North America). (3) Family-owned, so the same people quote, install, and service the motor. Combined with a one-hour easy run on the 401, the math usually works out better than buying in the GTA."
   },
   {
     question: "Do you handle Lake Simcoe and Lake Scugog Mercury repowers?",
-    answer: "Yes — Lake Simcoe (Barrie, Orillia, Innisfil), Lake Scugog (Port Perry), and the Trent-Severn Waterway are core Mercury repower markets for us. Common configurations: Pro XS 150–250 for performance hulls, FourStroke 90–150 with Command Thrust for pontoons, FourStroke V8 250–300 for larger Lake Simcoe boats."
+    answer: "Yes, Lake Simcoe (Barrie, Orillia, Innisfil), Lake Scugog (Port Perry), and the Trent-Severn Waterway are core Mercury repower markets for us. Common configurations: Pro XS 150–250 for performance hulls, FourStroke 90–150 with Command Thrust for pontoons, FourStroke V8 250–300 for larger Lake Simcoe boats."
   },
   {
     question: "How long does a GTA Mercury repower take?",
-    answer: "Typical timeline once you've picked the motor: 1–3 weeks for in-stock motors (longer for special orders), about 1 day in the shop for the install, then a lake-test before pickup. Plan one trip down for drop-off and one for pickup — or one trip total if you're picking up a loose motor for self-install."
+    answer: "Typical timeline once you've picked the motor: 1–3 weeks for in-stock motors (longer for special orders), about 1 day in the shop for the install, then a lake-test before pickup. Plan one trip down for drop-off and one for pickup, or one trip total if you're picking up a loose motor for self-install."
   }
 ];
 
@@ -32,10 +32,10 @@ export function MercuryDealerGTASEO() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/mercury-dealer-gta#webpage`,
         "url": `${SITE_URL}/mercury-dealer-gta`,
-        "name": "Mercury Dealer for the GTA | Harris Boat Works — 90 Min East of Toronto",
+        "name": "Mercury Dealer for the GTA | Harris Boat Works, 90 Min East of Toronto",
         "description": "Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#organization" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/mercury-dealer-gta#breadcrumb` },
         "mainEntity": { "@id": `${SITE_URL}/mercury-dealer-gta#faqpage` }
@@ -51,9 +51,9 @@ export function MercuryDealerGTASEO() {
       {
         "@type": "Service",
         "@id": `${SITE_URL}/mercury-dealer-gta#service`,
-        "name": "Mercury Outboard Sales & Repower — GTA",
+        "name": "Mercury Outboard Sales & Repower, GTA",
         "description": "Mercury outboard sales, repower, and service for the Greater Toronto Area, Lake Simcoe, Lake Scugog, and the Trent-Severn Waterway. Bring boat for install or pick up loose motor for self-install. Pickup only at Gores Landing.",
-        "provider": { "@id": "https://mercuryrepower.ca/#organization" },
+        "provider": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "areaServed": [
           {
             "@type": "Place",
@@ -88,7 +88,7 @@ export function MercuryDealerGTASEO() {
 
   return (
     <Helmet>
-      <title>Mercury Dealer for the GTA | Harris Boat Works — 90 Min East of Toronto</title>
+      <title>Mercury Dealer for the GTA | Harris Boat Works, 90 Min East of Toronto</title>
       <meta
         name="description"
         content="Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers."

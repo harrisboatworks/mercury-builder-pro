@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs
-last_updated: 2026-05-01
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 motor_id: 9e7a8b58-bc3f-401e-b24e-25b2b102d0fd
 slug: proxs-200hp-200-elpt-proxs
 family: ProXS
@@ -19,7 +19,7 @@ price_cad: 28122
 # 200 ELPT ProXS
 
 Mercury ProXS 200 HP outboard motor (model 12000039A).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
@@ -31,8 +31,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 ## Pricing (CAD)
 
 - **Selling price:** $28,122
-- **MSRP:** $31,955
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **MSRP:** $31,330
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability
@@ -46,7 +46,7 @@ Larger pontoons, fiberglass runabouts, and walkaround/cuddy boats 20–24 ft.
 
 ## Not ideal for
 
-Small tenders or boats rated under this HP — match HP to transom rating, never exceed it.
+Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
 
 ## Build a quote
 

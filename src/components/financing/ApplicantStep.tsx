@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { applicantSchema, type Applicant } from '@/lib/financingValidation';
@@ -283,7 +284,7 @@ export function ApplicantStep() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="province">Province *</Label>
+            <Label htmlFor="province">Province <RequiredMark /></Label>
             <Select onValueChange={(value) => setValue('currentAddress.province', value, { shouldValidate: true })}>
               <SelectTrigger>
                 <SelectValue placeholder="Select province" />
@@ -324,7 +325,7 @@ export function ApplicantStep() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="timeAtAddress">Time at Address *</Label>
+          <Label htmlFor="timeAtAddress">Time at Address <RequiredMark /></Label>
           <Select onValueChange={(value) => setValue('currentAddress.timeAtAddress', value as any, { shouldValidate: true })}>
             <SelectTrigger>
               <SelectValue placeholder="Select duration" />
@@ -342,7 +343,7 @@ export function ApplicantStep() {
 
       {/* Housing Status */}
       <div className="space-y-3 pt-4">
-        <Label>Housing Status *</Label>
+        <Label>Housing Status <RequiredMark /></Label>
         <RadioGroup onValueChange={(value) => setValue('housingStatus', value as any, { shouldValidate: true })}>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="own" id="own" />

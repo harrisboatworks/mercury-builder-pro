@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import DOMPurify from 'dompurify';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { FAQPageSEO } from '@/components/seo/FAQPageSEO';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -57,46 +57,54 @@ export default function FAQ() {
   }, [activeSection]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <FAQPageSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
 
-      <main>
+      <main className="pt-[64px] lg:pt-[72px]">
         {/* Breadcrumb */}
-        <div className="container mx-auto px-4 pt-6">
+        <div className="container mx-auto px-6 md:px-14 pt-6 max-w-[880px]">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/">Home</Link>
+                  <Link to="/" className="text-repower-navy-900/60 hover:text-repower-mercury-red">Home</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator />
+              <BreadcrumbSeparator className="text-repower-navy-900/40" />
               <BreadcrumbItem>
-                <BreadcrumbPage>FAQ</BreadcrumbPage>
+                <BreadcrumbPage className="text-repower-navy-900">FAQ</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
         </div>
 
         {/* Hero Section */}
-        <section aria-labelledby="faq-hero-title" className="py-12 md:py-16 text-center">
-          <div className="container mx-auto px-4 max-w-3xl">
+        <section aria-labelledby="faq-hero-title" className="py-14 md:py-20 text-center">
+          <div className="container mx-auto px-6 md:px-14 max-w-[880px]">
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <span className="h-px w-8 bg-repower-mercury-red" />
+              <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
+                Frequently Asked Questions
+              </p>
+            </div>
             <h1
               id="faq-hero-title"
-              className="text-3xl md:text-5xl font-light text-foreground mb-4"
+              className="font-display font-bold text-repower-navy-900 mb-5"
+              style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}
             >
-              Mercury Outboard Repower <span className="font-medium">FAQ</span>
+              Mercury Outboard Repower <span className="italic text-repower-mercury-red">FAQ</span>
             </h1>
             <p
               id="faq-hero-description"
-              className="text-lg text-muted-foreground font-light"
+              className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto leading-relaxed"
             >
               Repowering means replacing your boat's existing outboard motor with a new one.
-              At Harris Boat Works, we specialize in Mercury outboard repowers — from 2.5hp kickers
+              At Harris Boat Works, we specialize in Mercury outboard repowers, from 2.5hp kickers
               to 300hp performance engines. We handle the full process: motor selection, rigging,
               controls, gauges, and installation.
             </p>
+            <div className="mt-10 h-px w-16 bg-repower-navy-900/15 mx-auto" />
           </div>
         </section>
 
@@ -104,9 +112,9 @@ export default function FAQ() {
         <nav
           ref={navRef}
           aria-label="FAQ categories"
-          className="sticky top-16 z-30 bg-background/95 backdrop-blur-sm border-b border-border"
+          className="sticky top-16 z-30 bg-repower-paper/95 backdrop-blur-sm border-y border-repower-navy-900/10"
         >
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-14">
             <div className="flex flex-nowrap gap-1.5 md:gap-2 py-2 md:py-3 overflow-x-auto scrollbar-hide min-w-0">
               {faqCategories.map(cat => {
                 const Icon = cat.icon;
@@ -119,8 +127,8 @@ export default function FAQ() {
                     className={cn(
                       'flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium whitespace-nowrap transition-colors shrink-0',
                       isActive
-                        ? 'bg-primary text-primary-foreground shadow-sm'
-                        : 'bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground'
+                        ? 'bg-repower-navy-900 text-white'
+                        : 'bg-white text-repower-navy-900/70 border border-repower-navy-900/10 hover:text-repower-navy-900 hover:border-repower-navy-900/30'
                     )}
                   >
                     <Icon className="h-3.5 w-3.5 md:h-4 md:w-4" />
@@ -133,8 +141,8 @@ export default function FAQ() {
         </nav>
 
         {/* FAQ Sections */}
-        <div className="container mx-auto px-4 py-10 md:py-14">
-          <div className="max-w-3xl mx-auto space-y-14">
+        <div className="container mx-auto px-6 md:px-14 py-14 md:py-20">
+          <div className="max-w-[880px] mx-auto space-y-16">
             {faqCategories.map(cat => {
               const Icon = cat.icon;
               return (
@@ -145,33 +153,32 @@ export default function FAQ() {
                   aria-labelledby={`heading-${cat.id}`}
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <Icon className="h-5 w-5 text-primary" />
-                    </div>
+                    <Icon className="h-6 w-6 text-repower-mercury-red shrink-0" strokeWidth={1.5} />
                     <h2
                       id={`heading-${cat.id}`}
-                      className="text-xl md:text-2xl font-medium text-foreground"
+                      className="font-display font-bold text-2xl md:text-[28px] text-repower-navy-900"
+                      style={{ letterSpacing: '-0.02em' }}
                     >
                       {cat.title}
                     </h2>
                   </div>
-                  <p className="text-muted-foreground text-sm mb-5 ml-12">
+                  <p className="font-sans text-repower-navy-900/65 text-sm mb-5 ml-9">
                     {cat.description}
                   </p>
 
-                  <Accordion type="single" collapsible className="space-y-3">
+                  <Accordion type="single" collapsible className="border-t border-repower-navy-900/10">
                     {cat.items.map((item, idx) => (
                       <AccordionItem
                         key={idx}
                         value={`${cat.id}-${idx}`}
-                        className="bg-background rounded-lg border shadow-sm px-6 data-[state=open]:bg-muted/30"
+                        className="border-b border-repower-navy-900/10 group"
                       >
-                        <AccordionTrigger className="text-left hover:no-underline py-4">
-                          <span className="font-medium text-foreground pr-4">
+                        <AccordionTrigger className="text-left hover:no-underline py-5 px-2 hover:bg-repower-navy-900/[0.04] rounded-sm transition-colors [&>svg]:text-repower-navy-900">
+                          <span className="font-sans font-semibold text-[16px] md:text-[17px] text-repower-navy-900 pr-4 relative inline-block group-data-[state=open]:after:content-[''] group-data-[state=open]:after:absolute group-data-[state=open]:after:left-0 group-data-[state=open]:after:-bottom-1 group-data-[state=open]:after:h-[2px] group-data-[state=open]:after:w-10 group-data-[state=open]:after:bg-repower-gold">
                             {item.question}
                           </span>
                         </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                        <AccordionContent className="font-sans text-[15px] text-repower-navy-900/75 pb-5 px-2 leading-relaxed">
                           <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.answer, { ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'a', 'ul', 'ol', 'li', 'span'], ALLOWED_ATTR: ['href', 'target', 'rel'] }) }} />
                         </AccordionContent>
                       </AccordionItem>
@@ -186,27 +193,29 @@ export default function FAQ() {
         {/* CTA Section */}
         <section
           aria-labelledby="faq-cta"
-          className="py-16 md:py-20 bg-muted/30"
+          className="py-20 md:py-24 bg-repower-cream border-t border-repower-navy-900/10"
         >
-          <div className="max-w-4xl mx-auto px-4 text-center">
+          <div className="max-w-[880px] mx-auto px-6 md:px-14 text-center">
+            <div className="h-px w-12 bg-repower-gold mx-auto mb-8" />
             <h2
               id="faq-cta"
-              className="text-2xl md:text-3xl font-light mb-4"
+              className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 mb-4"
+              style={{ letterSpacing: '-0.025em' }}
             >
-              Ready to Get a <span className="font-medium">Quote</span>?
+              Ready to Get a <span className="italic text-repower-mercury-red">Quote</span>?
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Build your Mercury repower quote online — live pricing, sale prices, and monthly payment
+            <p className="font-sans text-repower-navy-900/70 mb-8 max-w-2xl mx-auto">
+              Build your Mercury repower quote online, live pricing, sale prices, and monthly payment
               estimates on every motor from 2.5hp to 300hp. No phone call required.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" asChild>
-                <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" asChild className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
+                <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer">
                   Build Your Quote
                   <ChevronRight className="h-4 w-4 ml-1" />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" asChild className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5">
                 <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer">
                   Book Service
                 </a>

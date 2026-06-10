@@ -11,31 +11,31 @@ export function StockStatusIndicator({ motor }: StockStatusIndicatorProps) {
   
   const availability = motor?.availability || '';
 
-  // Harris physical stock - Green
+  // Harris physical stock
   if (isInStock) {
     return (
-      <div className="inline-flex items-center gap-2 text-sm font-light text-gray-600 mt-2.5">
-        <span className="inline-block w-2 h-2 bg-green-500 rounded-full" />
+      <div className="inline-flex items-center gap-2 text-sm font-light text-[#050E1C]/70 mt-2.5">
+        <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: '#C9A24A' }} />
         <span>In Stock - Available Today</span>
       </div>
     );
   }
 
-  // Mercury Warehouse stock - Amber
+  // Mercury Warehouse stock
   if (availability.includes('Mercury Warehouse')) {
     return (
-      <div className="inline-flex items-center gap-2 text-sm font-light text-gray-600 mt-2.5">
-        <span className="inline-block w-2 h-2 bg-amber-500 rounded-full" />
+      <div className="inline-flex items-center gap-2 text-sm font-light text-[#050E1C]/70 mt-2.5">
+        <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: '#C9A24A' }} />
         <span>In Stock at Mercury</span>
       </div>
     );
   }
 
-  // Estimated availability date - Gray
+  // Estimated availability date
   if (availability.startsWith('Est.')) {
     return (
-      <div className="inline-flex items-center gap-2 text-sm font-light text-gray-600 mt-2.5">
-        <span className="inline-block w-2 h-2 bg-gray-400 rounded-full" />
+      <div className="inline-flex items-center gap-2 text-sm font-light text-[#050E1C]/70 mt-2.5">
+        <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: 'rgba(10, 22, 40, 0.35)' }} />
         <span>{availability}</span>
       </div>
     );
@@ -43,8 +43,8 @@ export function StockStatusIndicator({ motor }: StockStatusIndicatorProps) {
 
   // Brochure / factory order
   return (
-    <div className="inline-flex items-center gap-2 text-sm font-light text-gray-600 mt-2.5">
-      <span className="inline-block w-2 h-2 bg-gray-400 rounded-full" />
+    <div className="inline-flex items-center gap-2 text-sm font-light text-[#050E1C]/70 mt-2.5">
+      <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: 'rgba(10, 22, 40, 0.35)' }} />
       <span>Available to Order</span>
     </div>
   );

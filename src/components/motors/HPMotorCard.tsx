@@ -91,19 +91,19 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   
   return (
     <div 
-      className="group bg-white shadow-sm rounded-lg border border-gray-100 overflow-hidden transition-all duration-200 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer active:scale-[0.98] active:opacity-95"
+      className="group bg-white shadow-sm rounded-lg border border-repower-navy-900/10 overflow-hidden card-hover cursor-pointer active:scale-[0.98] active:opacity-95"
       onClick={handleCardClick}
     >
       {/* Image Section */}
-      <div className="relative bg-white p-6 overflow-hidden">
+      <div className="relative p-6 overflow-hidden" style={{ background: 'var(--gradient-image-bg)' }}>
         {/* Shimmer loading overlay */}
         {!imageLoaded && (
-          <div className="absolute inset-0 bg-white animate-shimmer z-10" />
+          <div className="absolute inset-0 animate-shimmer z-10" style={{ background: 'var(--gradient-image-bg)' }} />
         )}
         <img 
           src={heroImage} 
           alt={`${hp} HP Mercury Outboard`}
-          className={`h-48 md:h-72 w-full object-contain transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`h-48 md:h-72 w-full object-contain mix-blend-multiply transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           loading="lazy"
           onLoad={onImageLoad}
           style={{ transform: `scale(${imageScale})` }}
@@ -164,27 +164,20 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
         
         {/* Price Range */}
         <div className="mt-6">
-          <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-medium">
+          <p className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium">
             from
           </p>
           <p className="text-2xl font-bold tracking-tight text-gray-900 mt-1">
             ${priceRange.min.toLocaleString()}
             {priceRange.max > priceRange.min && (
-              <span className="text-base font-normal text-gray-400">
+              <span className="text-base font-normal text-muted-foreground">
                 {' '}– ${priceRange.max.toLocaleString()}
               </span>
             )}
           </p>
         </div>
         
-        {/* Stock Status */}
-        <p className="text-sm font-normal text-gray-600 mt-2">
-          {inStockCount > 0 ? (
-            <>🟢 {inStockCount} in stock today</>
-          ) : (
-            <>○ Available to order</>
-          )}
-        </p>
+        {/* Stock status removed from browse cards */}
         
         {/* CTA Button */}
         <button 
@@ -193,6 +186,14 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
         >
           Configure Your Motor
         </button>
+
+        <a
+          href="tel:9053422153"
+          onClick={(e) => e.stopPropagation()}
+          className="block text-center text-xs text-gray-500 hover:text-gray-900 mt-3 underline-offset-2 hover:underline"
+        >
+          Not sure? Call (905) 342-2153 and we'll match it.
+        </a>
       </div>
     </div>
   );

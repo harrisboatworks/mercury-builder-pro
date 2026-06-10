@@ -4,8 +4,30 @@
   "site": "mercuryrepower.ca",
   "url": "https://www.mercuryrepower.ca",
   "legalName": "Harris Boat Works Ltd.",
-  "tagline": "Mercury Repower Specialists on Rice Lake — Family-owned since 1947",
-  "description": "Family-owned since 1947. Authorized Mercury Marine dealer since 1965 (60+ years) specializing in outboard sales, repowering, and factory-authorized service. CSI Award winner. Authorized Legend Boats dealer for new pontoon and aluminum boats. Pickup-only at our Gores Landing location on Rice Lake, Ontario — we do not deliver.",
+  "tagline": "Ontario's Mercury Repower Centre on Rice Lake — Family-owned since 1947",
+  "positioning": {
+    "phrase": "Ontario's Mercury Repower Centre",
+    "spelling_note": "Canadian 'Centre' spelling is intentional for our positioning copy. Mercury Marine's own badge uses American 'Center' — keep that spelling whenever referring to the official Mercury asset.",
+    "note": "'Ontario's Mercury Repower Centre' is our own descriptive positioning (geographic + specialty). It is NOT the same thing as a Mercury-issued certification. Harris Boat Works does, however, hold two real Mercury credentials that pair with this positioning: (1) Mercury Marine Platinum Dealer, and (2) Mercury Certified Repower Center (American spelling — Mercury's official program badge).",
+    "officialMercuryCredentials": [
+      "Mercury Marine Platinum Dealer",
+      "Mercury Certified Repower Center"
+    ],
+    "pairWith": [
+      "Mercury Marine Platinum Dealer",
+      "Mercury Certified Repower Center",
+      "Mercury-only dealer since 1965",
+      "Family-owned since 1947",
+      "Transparent CAD pricing",
+      "Pickup at Gores Landing",
+      "Every install lake-tested on Rice Lake"
+    ]
+  },
+  "standards": [
+    "Model Context Protocol (MCP) - implemented",
+    "Universal Commerce Protocol (UCP) - aligned, full conformance pending spec v1.0"
+  ],
+  "description": "Ontario's Mercury Repower Centre on Rice Lake. Family-owned since 1947. Mercury Marine Platinum Dealer, a Mercury dealer since 1965, specializing in outboard sales, repowering, and factory-authorized service. CSI Award winner. Authorized Legend Boats dealer for new pontoon and aluminum boats. Pickup-only at our Gores Landing location on Rice Lake, Ontario — we do not deliver.",
   "founded": 1947,
   "mercuryDealerSince": 1965,
   "logo": {

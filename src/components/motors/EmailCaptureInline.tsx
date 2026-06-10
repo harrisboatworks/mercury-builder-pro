@@ -5,7 +5,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 /**
- * Lightweight inline email capture — shows after the motor grid.
+ * Lightweight inline email capture, shows after the motor grid.
  * Writes to email_sequence_queue with sequence_type = 'pricing_updates'.
  */
 export function EmailCaptureInline() {
@@ -138,7 +138,7 @@ export function EmailCaptureInline() {
       {status !== 'success' && (
         <button
           onClick={() => setDismissed(true)}
-          className="absolute top-2 right-6 text-gray-300 hover:text-gray-500 text-xs p-1"
+          className="absolute top-2 right-6 text-muted-foreground hover:text-gray-500 text-xs p-1"
           aria-label="Dismiss"
         >
           ✕

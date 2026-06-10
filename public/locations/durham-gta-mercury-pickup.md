@@ -1,60 +1,77 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/durham-gta-mercury-pickup
-last_updated: 2026-05-01
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 slug: durham-gta-mercury-pickup
-region: "Durham & GTA"
+region: "Durham Region"
+region_type: region
 keyword: "mercury outboard durham"
+service_area_type: sales-catchment
+mobile_service_offered: false
+on_site_install_offered: false
+delivery_offered: false
+pickup_only: true
+currency: CAD
 ---
 
-# Mercury Outboard Pickup for Durham & GTA
-
-For Durham and GTA buyers, the value is straightforward: real CAD pricing, Mercury-focused advice, and a clear pickup process instead of vague dealer pages.
-
+# Mercury Outboard Pickup for Durham Region, Harris Boat Works
+Durham Region boaters, Whitby, Ajax, Pickering, Oshawa, Bowmanville, Courtice, use Harris Boat Works as their Mercury Platinum Dealer. Real CAD pricing online, pickup at Gores Landing, no mobile service or delivery.
 ## Factbox
-
-- **Region:** Durham & GTA
-- **Drive time:** a manageable day-trip pickup from the east GTA
-- **Pickup policy:** Pickup only at Gores Landing, ON. We do not deliver.
+- **Region:** Durham Region
+- **Drive time:** about 50–80 minutes east of Durham communities via Hwy 401
+- **Route:** Hwy 401 East → Cobourg → County Rd 18 North → Gores Landing
+- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.
+- **Service model:** Shop-based only. No mobile service, no on-site installs, no driveway or marina visits.
 - **Currency:** CAD only.
-
-## Common boat types
-
-- Family runabouts
+## Local boating context
+- Customers boat on Lake Ontario, Lake Scugog, Rice Lake, and the Kawarthas
+- Closest Durham community is Bowmanville (~50 min); furthest is Pickering (~80 min)
+- Common path: build CAD quote online, confirm by phone, drive up for pickup or install
+## Common local boats
+- Aluminum and fibreglass fishing boats
 - Pontoons
-- Fishing rigs
-
+- Family runabouts
+## Popular Mercury HP ranges
+- 9.9–25 HP kicker
+- 60–115 HP fishing and pontoon
+- 150–200 HP Pro XS
+## Why customers choose Harris Boat Works
+- Family-owned in Gores Landing since 1947
+- Mercury Marine Platinum Dealer (top customer-satisfaction tier)
+- Authorized Mercury dealer since 1965, Mercury is our only outboard brand
+- Live CAD pricing online, no "call for price"
+- Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links
-
-- [Compare 115 vs 150 HP](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario)
-- [Start quote builder](https://www.mercuryrepower.ca/quote/motor-selection)
-
+- [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
+- [Whitby](https://www.mercuryrepower.ca/locations/whitby-mercury-dealer)
+- [Ajax](https://www.mercuryrepower.ca/locations/ajax-mercury-dealer)
+- [Pickering](https://www.mercuryrepower.ca/locations/pickering-mercury-dealer)
+- [Oshawa](https://www.mercuryrepower.ca/locations/oshawa-mercury-dealer)
+- [Bowmanville & Courtice](https://www.mercuryrepower.ca/locations/bowmanville-courtice-mercury-dealer)
 ## Related case studies
-
-_No matching case studies recorded for this region yet._
-
+- [18-foot aluminum fishing boat: 60HP to 90HP FourStroke](https://www.mercuryrepower.ca/case-studies/aluminum-fishing-60-to-90-fourstroke.md)
+- [Bass boat refresh: older 150 to Mercury 150 Pro XS](https://www.mercuryrepower.ca/case-studies/bass-boat-150-to-150-pro-xs.md)
 ## FAQs
+### Do you offer Durham delivery?
 
-### Do you offer GTA delivery?
+No. Pickup only at Gores Landing on Rice Lake.
 
-No. Pickup only at Gores Landing.
+### Do you do mobile service in Durham?
 
-### Why would GTA buyers use your site?
+No. Harris Boat Works is shop-based at Gores Landing, no on-site installs, no driveway service, no marina visits.
 
-Because the site is built around transparent Mercury quoting and repower guidance.
+### Can Durham customers finalize a Mercury order online?
 
-### Can I finalize by phone?
+You build the quote online and we confirm the build by phone before pickup.
 
-You can start online and finish with a human confirmation call.
-
+## Service boundary
+Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in Durham Region. Customers from Durham Region bring their boat to our Gores Landing shop, or pick up a loose Mercury motor for self-install.
 ## Notes
-
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
-- Verado is special-order only — not in default inventory.
+- Verado is special-order only, not in default inventory.
 - HTML page (canonical for humans): https://www.mercuryrepower.ca/locations/durham-gta-mercury-pickup
-

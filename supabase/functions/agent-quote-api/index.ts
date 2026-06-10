@@ -1,7 +1,7 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { corsHeaders } from "../_shared/cors.ts";
 
-const DEALERPLAN_FEE = 299;
+const DEALERPLAN_FEE = 349;
 const HST_RATE = 0.13;
 const FINANCING_MINIMUM = 5000;
 const SITE_URL = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";

@@ -10,6 +10,8 @@ import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { cn } from '@/lib/utils';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { PageTransition } from '@/components/ui/page-transition';
+import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
 import { calculateMonthly, FINANCING_MINIMUM } from '@/lib/finance';
 
 type PromoOptionId = 'no_payments' | 'special_financing' | 'cash_rebate';
@@ -64,7 +66,7 @@ export default function PromoSelectionPage() {
     const motorPrice = state.motor?.salePrice || state.motor?.price || 0;
     const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
     const taxMultiplier = 1.13; // HST
-    const dealerplanFee = 299;
+    const dealerplanFee = 349;
     return (motorPrice * taxMultiplier) + dealerplanFee - tradeInValue;
   }, [state.motor, state.tradeInInfo]);
 
@@ -76,7 +78,7 @@ export default function PromoSelectionPage() {
       id: 'no_payments',
       title: '6 Months No Payments',
       subtitle: 'Buy Now, Pay Later',
-      description: 'Take delivery of your new motor today and make no payments for 6 full months. Perfect for getting on the water now.',
+      description: 'Take ownership of your new motor today and make no payments for 6 full months. Perfect for getting on the water now.',
       highlight: 'Deferred',
       icon: CalendarOff,
     },
@@ -222,28 +224,25 @@ export default function PromoSelectionPage() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-b from-background via-secondary/30 to-accent/50">
-        {/* Header */}
-        <div className="container mx-auto px-4 py-6">
-          <Button
-            variant="ghost"
+      <QuoteLayout>
+        <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
+          <button
             onClick={handleBack}
-            className="text-foreground hover:bg-accent"
+            className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
+            <ArrowLeft className="w-4 h-4" />
             Back
-          </Button>
+          </button>
         </div>
-
-        {/* Main Content */}
-        <div className="container mx-auto px-4 pb-12">
-          <div className="max-w-4xl mx-auto text-center">
+        <QuotePageShell className="!py-6 md:!py-8">
+          <div className="text-center">
             {/* Mercury Logo */}
             <img
               src={mercuryLogo}
               alt="Mercury Marine"
-              className="h-12 mx-auto mb-6 brightness-0 dark:invert"
+              className="h-12 mx-auto mb-6 brightness-0"
             />
+
 
             {/* Main Headline */}
             <motion.h1
@@ -258,19 +257,19 @@ export default function PromoSelectionPage() {
 
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
               Every new Mercury outboard from Harris Boat Works comes with 7 years of factory warranty.
-              Mercury stopped running promos — so we're running our own.
+              Mercury stopped running promos, so we're running our own.
             </p>
 
-            {/* Warranty Badge - Included with Shimmer Effect — no opacity animation */}
-            <div className="relative inline-flex items-center gap-4 bg-green-50 dark:bg-green-950/30 backdrop-blur-sm border border-green-200 dark:border-green-800 rounded-xl px-6 py-4 mb-10 overflow-hidden">
+            {/* Warranty Badge - Included with Shimmer Effect, no opacity animation */}
+            <div className="relative inline-flex items-center gap-4 bg-repower-cream backdrop-blur-sm border border-repower-gold/30 rounded-xl px-6 py-4 mb-10 overflow-hidden">
               {/* Shimmer overlay */}
               <div 
-                className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-green-200/30 to-transparent pointer-events-none" 
+                className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-repower-gold/20 to-transparent pointer-events-none" 
               />
               
               {/* Floating Shield Icon */}
               <motion.div 
-                className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center"
+                className="w-12 h-12 rounded-full bg-repower-gold/20 flex items-center justify-center"
                 animate={{ y: [0, -6, 0] }}
                 transition={{ 
                   duration: 3, 
@@ -278,7 +277,7 @@ export default function PromoSelectionPage() {
                   repeat: Infinity 
                 }}
               >
-                <Shield className="w-6 h-6 text-green-400" />
+                <Shield className="w-6 h-6 text-repower-navy-900" />
               </motion.div>
               <div className="text-left">
                 <div className="text-foreground font-bold text-lg">7 Years Factory Warranty</div>
@@ -286,7 +285,7 @@ export default function PromoSelectionPage() {
               </div>
               {/* Pulsing INCLUDED Badge */}
               <motion.div 
-                className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full ml-2"
+                className="bg-repower-mercury-red text-white text-xs font-bold px-3 py-1 rounded-full ml-2"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               >
@@ -301,7 +300,7 @@ export default function PromoSelectionPage() {
               <div className="flex-1 h-px bg-border"></div>
             </div>
 
-            {/* Option Cards — transform-only entrance, no opacity */}
+            {/* Option Cards, transform-only entrance, no opacity */}
             <div className={cn(
               "grid gap-6 mb-6",
               eligibleOptions.length === 2 ? "md:grid-cols-2 max-w-2xl mx-auto" : "md:grid-cols-3"
@@ -357,7 +356,7 @@ export default function PromoSelectionPage() {
                     <h3 className="text-xl font-semibold text-foreground mb-1">{option.title}</h3>
 
                     {/* Highlight Badge */}
-                    <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-3 bg-green-100 text-green-800">
+                    <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-3 bg-repower-cream text-repower-navy-900 border border-repower-gold/30">
                       {option.highlight}
                     </span>
 
@@ -434,7 +433,7 @@ export default function PromoSelectionPage() {
               </div>
             )}
 
-            {/* Continue Button — static */}
+            {/* Continue Button, static */}
             <div>
               <Button
                 size="lg"
@@ -449,12 +448,12 @@ export default function PromoSelectionPage() {
                 <p className="text-muted-foreground text-sm mt-2">Select one of the options above</p>
               )}
               {selectedOption === 'special_financing' && !selectedRate && (
-                <p className="text-amber-600 dark:text-amber-400 text-sm mt-2">Please select a rate and term above</p>
+                <p className="text-repower-gold text-sm mt-2">Please select a rate and term above</p>
               )}
             </div>
           </div>
-        </div>
-      </div>
+        </QuotePageShell>
+      </QuoteLayout>
     </PageTransition>
   );
 }

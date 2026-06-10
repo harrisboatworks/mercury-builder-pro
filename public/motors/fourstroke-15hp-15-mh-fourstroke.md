@@ -1,25 +1,25 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke
-last_updated: 2026-05-01
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 motor_id: 54c38ffc-923e-4a88-b0ad-3338f8d0eeab
 slug: fourstroke-15hp-15-mh-fourstroke
 family: FourStroke
 horsepower: 15
 model_number: 1A15201LK
 availability: in_stock
-price_cad: 3872
+price_cad: 3971
 ---
 
 # 15 MH FourStroke
 
 Mercury FourStroke 15 HP outboard motor (model 1A15201LK).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
@@ -30,9 +30,9 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 
 ## Pricing (CAD)
 
-- **Selling price:** $3,872
-- **MSRP:** $4,225
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **Selling price:** $3,971
+- **MSRP:** $4,230
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability

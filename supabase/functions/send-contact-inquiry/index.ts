@@ -72,6 +72,27 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const inquiryData = validationResult.data;
+
+    // HTML-escape user-supplied strings before embedding in email bodies
+    const escHtml = (s: unknown): string =>
+      String(s ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+
+    // Sanitize free-text for SMS bodies (strip URLs, phone numbers, restrict chars)
+    const sanitizeForSms = (val: unknown, max = 200): string => {
+      const s = typeof val === 'string' ? val : '';
+      return s
+        .replace(/https?:\/\/\S+/gi, '')
+        .replace(/\b\d[\d\s().-]{6,}\d\b/g, '')
+        .replace(/[^A-Za-z0-9 ,.\-']/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, max);
+    };
     
     console.log('Processing contact inquiry:', { 
       name: inquiryData.name, 
@@ -118,7 +139,7 @@ const handler = async (req: Request): Promise<Response> => {
           
           <div style="padding: 30px; background: #f8fafc;">
             <p style="font-size: 16px; color: #334155; margin: 0 0 20px 0;">
-              Hi ${inquiryData.name},
+              Hi ${escHtml(inquiryData.name)},
             </p>
             
             <p style="font-size: 16px; color: #334155; line-height: 1.6;">
@@ -129,9 +150,9 @@ const handler = async (req: Request): Promise<Response> => {
               <h3 style="color: #007DC5; margin: 0 0 15px 0;">Your Inquiry Details:</h3>
               <p style="margin: 5px 0; color: #64748b;"><strong>Type:</strong> ${inquiryData.inquiry_type}</p>
               <p style="margin: 5px 0; color: #64748b;"><strong>Priority:</strong> ${inquiryData.urgency_level}</p>
-              <p style="margin: 5px 0; color: #64748b;"><strong>Preferred Contact:</strong> ${inquiryData.preferred_contact_method}</p>
+              <p style="margin: 5px 0; color: #64748b;"><strong>Preferred Contact:</strong> ${escHtml(inquiryData.preferred_contact_method)}</p>
               <p style="margin: 15px 0 5px 0; color: #64748b;"><strong>Message:</strong></p>
-              <p style="margin: 0; color: #475569; font-style: italic;">"${inquiryData.message}"</p>
+              <p style="margin: 0; color: #475569; font-style: italic;">"${escHtml(inquiryData.message)}"</p>
             </div>
             
             <div style="background: #007DC5; color: white; border-radius: 8px; padding: 20px; margin: 20px 0;">
@@ -179,17 +200,17 @@ const handler = async (req: Request): Promise<Response> => {
           
           <div style="padding: 20px; background: #f8fafc;">
             <h2 style="color: #334155; margin: 0 0 15px 0;">Customer Details</h2>
-            <p><strong>Name:</strong> ${inquiryData.name}</p>
-            <p><strong>Email:</strong> ${inquiryData.email}</p>
-            <p><strong>Phone:</strong> ${inquiryData.phone || 'Not provided'}</p>
-            <p><strong>Preferred Contact:</strong> ${inquiryData.preferred_contact_method}</p>
+            <p><strong>Name:</strong> ${escHtml(inquiryData.name)}</p>
+            <p><strong>Email:</strong> ${escHtml(inquiryData.email)}</p>
+            <p><strong>Phone:</strong> ${escHtml(inquiryData.phone || 'Not provided')}</p>
+            <p><strong>Preferred Contact:</strong> ${escHtml(inquiryData.preferred_contact_method)}</p>
             
             <h2 style="color: #334155; margin: 20px 0 15px 0;">Inquiry Details</h2>
-            <p><strong>Type:</strong> ${inquiryData.inquiry_type}</p>
-            <p><strong>Priority:</strong> ${inquiryData.urgency_level}</p>
+            <p><strong>Type:</strong> ${escHtml(inquiryData.inquiry_type)}</p>
+            <p><strong>Priority:</strong> ${escHtml(inquiryData.urgency_level)}</p>
             <p><strong>Message:</strong></p>
-            <div style="background: white; border-left: 4px solid #007DC5; padding: 15px; margin: 10px 0;">
-              ${inquiryData.message}
+            <div style="background: white; border-left: 4px solid #007DC5; padding: 15px; margin: 10px 0; white-space: pre-wrap;">
+              ${escHtml(inquiryData.message)}
             </div>
             
             <p style="margin-top: 20px; color: #64748b; font-size: 14px;">
@@ -204,7 +225,9 @@ const handler = async (req: Request): Promise<Response> => {
     // Send SMS notification for urgent inquiries or if preferred contact method is SMS
     if (inquiryData.urgency_level === 'urgent' || inquiryData.preferred_contact_method === 'sms') {
       try {
-        const smsMessage = `New ${inquiryData.urgency_level === 'urgent' ? 'URGENT ' : ''}inquiry from ${inquiryData.name} (${inquiryData.email}). Type: ${inquiryData.inquiry_type}. Message: ${inquiryData.message.substring(0, 200)}${inquiryData.message.length > 200 ? '...' : ''}`;
+        const safeName = sanitizeForSms(inquiryData.name, 60);
+        const safeMessage = sanitizeForSms(inquiryData.message, 200);
+        const smsMessage = `New ${inquiryData.urgency_level === 'urgent' ? 'URGENT ' : ''}inquiry from ${safeName}. Type: ${inquiryData.inquiry_type}. Message: ${safeMessage}`;
         
         const smsResponse = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${twilioAccountSid}/Messages.json`, {
           method: 'POST',

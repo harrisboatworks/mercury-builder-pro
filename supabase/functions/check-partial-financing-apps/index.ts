@@ -144,7 +144,8 @@ serve(async (req: Request): Promise<Response> => {
 
     const html = createBrandedEmailTemplate(
       adminContent,
-      `${fresh.length} stalled financing application${fresh.length === 1 ? '' : 's'} need follow-up`
+      `${fresh.length} stalled financing application${fresh.length === 1 ? '' : 's'} need follow-up`,
+      'You received this email because you started a financing application with Harris Boat Works.'
     );
 
     const emailResp = await resend.emails.send({

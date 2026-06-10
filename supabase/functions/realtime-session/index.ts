@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "npm:zod@3.22.4";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -81,10 +82,16 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // Cap realtime session creations: 15 / 10 minutes per IP
+  // Block requests from non-allowed origins (curl, scripts, IP-rotating bots)
+  if (!isAllowedOrigin(req)) {
+    console.log('[realtime-session] Forbidden origin:', req.headers.get('origin'), req.headers.get('referer'));
+    return forbiddenOriginResponse(corsHeaders);
+  }
+
+  // Cap realtime session creations: 5 / 10 minutes per IP (GPT-4o Realtime is expensive)
   const allowed = await checkRateLimit(req, {
     action: 'realtime_session',
-    maxAttempts: 15,
+    maxAttempts: 5,
     windowMinutes: 10,
   });
   if (!allowed) return rateLimitedResponse(corsHeaders, 60);

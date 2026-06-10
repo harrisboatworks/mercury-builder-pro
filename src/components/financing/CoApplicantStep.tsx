@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFinancing } from '@/contexts/FinancingContext';
@@ -131,7 +132,7 @@ export function CoApplicantStep() {
               
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="firstName">First Name *</Label>
+                  <Label htmlFor="firstName">First Name <RequiredMark /></Label>
                   <Input
                     id="firstName"
                     {...register('firstName')}
@@ -144,7 +145,7 @@ export function CoApplicantStep() {
                   <Input id="middleName" {...register('middleName')} />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="lastName">Last Name *</Label>
+                  <Label htmlFor="lastName">Last Name <RequiredMark /></Label>
                   <Input
                     id="lastName"
                     {...register('lastName')}
@@ -156,7 +157,7 @@ export function CoApplicantStep() {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="dateOfBirth">Date of Birth *</Label>
+                  <Label htmlFor="dateOfBirth">Date of Birth <RequiredMark /></Label>
                   <Input
                     id="dateOfBirth"
                     type="date"
@@ -167,7 +168,7 @@ export function CoApplicantStep() {
                   {errors.dateOfBirth && <p className="text-sm text-destructive">{errors.dateOfBirth.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="sin">Social Insurance Number *</Label>
+                  <Label htmlFor="sin">Social Insurance Number <RequiredMark /></Label>
                   <div className="relative">
                     <MaskedInput
                       id="sin"
@@ -190,7 +191,7 @@ export function CoApplicantStep() {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email *</Label>
+                  <Label htmlFor="email">Email <RequiredMark /></Label>
                   <Input
                     id="email"
                     type="email"
@@ -200,7 +201,7 @@ export function CoApplicantStep() {
                   {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="primaryPhone">Phone *</Label>
+                  <Label htmlFor="primaryPhone">Phone <RequiredMark /></Label>
                   <div className="relative">
                     <MaskedInput
                       id="primaryPhone"
@@ -239,7 +240,7 @@ export function CoApplicantStep() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="currentAddress.street">Street Address *</Label>
+                <Label htmlFor="currentAddress.street">Street Address <RequiredMark /></Label>
                 <Input
                   id="currentAddress.street"
                   {...register('currentAddress.street')}
@@ -251,7 +252,7 @@ export function CoApplicantStep() {
 
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="currentAddress.city">City *</Label>
+                  <Label htmlFor="currentAddress.city">City <RequiredMark /></Label>
                   <Input
                     id="currentAddress.city"
                     {...register('currentAddress.city')}
@@ -261,7 +262,7 @@ export function CoApplicantStep() {
                   {errors.currentAddress?.city && <p className="text-sm text-destructive">{errors.currentAddress.city.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="currentAddress.province">Province *</Label>
+                  <Label htmlFor="currentAddress.province">Province <RequiredMark /></Label>
                   <Select
                     {...register('currentAddress.province')}
                     onValueChange={(value) => setValue('currentAddress.province', value)}
@@ -286,7 +287,7 @@ export function CoApplicantStep() {
                   {errors.currentAddress?.province && <p className="text-sm text-destructive">{errors.currentAddress.province.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="currentAddress.postalCode">Postal Code *</Label>
+                  <Label htmlFor="currentAddress.postalCode">Postal Code <RequiredMark /></Label>
                   <div className="relative">
                     <MaskedInput
                       id="currentAddress.postalCode"
@@ -309,7 +310,7 @@ export function CoApplicantStep() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="currentAddress.timeAtAddress">Time at Address *</Label>
+                <Label htmlFor="currentAddress.timeAtAddress">Time at Address <RequiredMark /></Label>
                 <Select {...register('currentAddress.timeAtAddress')} onValueChange={(value) => setValue('currentAddress.timeAtAddress', value as any)} disabled={sameAddress}>
                   <SelectTrigger className={errors.currentAddress?.timeAtAddress ? 'border-destructive' : ''}>
                     <SelectValue placeholder="Select" />
@@ -336,7 +337,7 @@ export function CoApplicantStep() {
               </h3>
 
               <div className="space-y-2">
-                <Label>Employment Status *</Label>
+                <Label>Employment Status <RequiredMark /></Label>
                 <RadioGroup {...register('status')} onValueChange={(value) => setValue('status', value as any)}>
                   <div className="grid md:grid-cols-2 gap-3">
                     {[
@@ -361,7 +362,7 @@ export function CoApplicantStep() {
                 <div className="space-y-4 animate-in fade-in-50 duration-300">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="employerName">Employer Name *</Label>
+                      <Label htmlFor="employerName">Employer Name <RequiredMark /></Label>
                       <div className="relative">
                         <Building2 className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                         <Input
@@ -373,7 +374,7 @@ export function CoApplicantStep() {
                       {errors.employerName && <p className="text-sm text-destructive font-light">{errors.employerName.message}</p>}
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="employerPhone">Employer Phone *</Label>
+                      <Label htmlFor="employerPhone">Employer Phone <RequiredMark /></Label>
                       <Input
                         id="employerPhone"
                         type="tel"
@@ -387,7 +388,7 @@ export function CoApplicantStep() {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="jobTitle">Job Title *</Label>
+                      <Label htmlFor="jobTitle">Job Title <RequiredMark /></Label>
                       <Input
                         id="jobTitle"
                         {...register('jobTitle')}
@@ -396,7 +397,7 @@ export function CoApplicantStep() {
                       {errors.jobTitle && <p className="text-sm text-destructive font-light">{errors.jobTitle.message}</p>}
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="timeAtJob">Time at Job *</Label>
+                      <Label htmlFor="timeAtJob">Time at Job <RequiredMark /></Label>
                       <Select {...register('timeAtJob')} onValueChange={(value) => setValue('timeAtJob', value as any)}>
                         <SelectTrigger className={errors.timeAtJob ? 'border-destructive' : ''}>
                           <SelectValue placeholder="Select" />
@@ -417,7 +418,7 @@ export function CoApplicantStep() {
 
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <Label htmlFor="annualIncome">Gross Annual Income *</Label>
+                  <Label htmlFor="annualIncome">Gross Annual Income <RequiredMark /></Label>
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger>
@@ -496,7 +497,7 @@ export function CoApplicantStep() {
               </h3>
 
               <div className="space-y-2">
-                <Label>Credit Score Estimate *</Label>
+                <Label>Credit Score Estimate <RequiredMark /></Label>
                 <RadioGroup {...register('creditScoreEstimate')} onValueChange={(value) => setValue('creditScoreEstimate', value as any)}>
                   <div className="grid md:grid-cols-2 gap-3">
                     {[
@@ -560,7 +561,7 @@ export function CoApplicantStep() {
                 </h4>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="bankName">Bank Name *</Label>
+                    <Label htmlFor="bankName">Bank Name <RequiredMark /></Label>
                     <Input
                       id="bankName"
                       {...register('bankName')}
@@ -569,7 +570,7 @@ export function CoApplicantStep() {
                     {errors.bankName && <p className="text-sm text-destructive font-light">{errors.bankName.message}</p>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="accountType">Account Type *</Label>
+                    <Label htmlFor="accountType">Account Type <RequiredMark /></Label>
                     <Select {...register('accountType')} onValueChange={(value) => setValue('accountType', value as any)}>
                       <SelectTrigger className={errors.accountType ? 'border-destructive' : ''}>
                         <SelectValue placeholder="Select" />
@@ -582,7 +583,7 @@ export function CoApplicantStep() {
                     {errors.accountType && <p className="text-sm text-destructive font-light">{errors.accountType.message}</p>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="timeWithBank">Time with Bank *</Label>
+                    <Label htmlFor="timeWithBank">Time with Bank <RequiredMark /></Label>
                     <Select {...register('timeWithBank')} onValueChange={(value) => setValue('timeWithBank', value as any)}>
                       <SelectTrigger className={errors.timeWithBank ? 'border-destructive' : ''}>
                         <SelectValue placeholder="Select" />
@@ -601,7 +602,7 @@ export function CoApplicantStep() {
 
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <Label>Bankruptcy or Consumer Proposal History *</Label>
+                  <Label>Bankruptcy or Consumer Proposal History <RequiredMark /></Label>
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger>
