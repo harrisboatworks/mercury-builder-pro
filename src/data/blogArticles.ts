@@ -3730,13 +3730,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 3: January 19, 2026
   {
     slug: 'best-mercury-outboard-pontoon-boats',
-    seoTitle: "Best Mercury for a Pontoon: 90-150 HP CT (2026) | HBW",
-    title: "Best Mercury for a Pontoon: 90 to 150 HP CT (2026)",
+    seoTitle: "Best Mercury Outboard for a Pontoon: 90-150 HP CT (2026) | HBW",
+    title: "Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)",
     description: "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-150 HP FourStroke with Command Thrust. The gearcase matters more than HP. HBW explains why.",
     image: '/lovable-uploads/hero-best-mercury-pontoon.png',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
-    dateModified: '2026-05-04',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-04',
     category: 'Buying Guide',
     readTime: '12 min read',
