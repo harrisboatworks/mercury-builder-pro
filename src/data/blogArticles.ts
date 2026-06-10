@@ -35328,7 +35328,9 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     title: 'Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Platinum Dealer (2026)',
     seoTitle: 'Yamaha to Mercury Repower Ontario Guide 2026 | Harris Boat Works',
     description: 'Yamaha to Mercury repower from an Ontario Mercury Platinum dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table, when the swap is worth it.',
-    content: `- Mercury Platinum Dealer
+    content: `> **Quick answer:** A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, harness, gauges, and propeller; the fuel tank, steering, and most electronics usually carry over. The brand-swap rigging premium runs roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The math swings when a Mercury dealer is closer than the nearest Yamaha service.
+
+- Mercury Platinum Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON
