@@ -34419,7 +34419,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-05-31',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '8 min read',
