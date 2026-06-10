@@ -12,6 +12,8 @@ interface BlogHeroPictureProps {
   fallback?: React.ReactNode;
   /** Wrapper classes (defaults to aspect-[16/9] rounded card). */
   wrapperClassName?: string;
+  /** Emits data-photo-slot on the hero <img> so a real photo can be swapped in later. */
+  photoSlot?: string;
 }
 
 const DEFAULT_SIZES = '(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw';
@@ -31,6 +33,7 @@ export function BlogHeroPicture({
   sizes = DEFAULT_SIZES,
   fallback,
   wrapperClassName = 'aspect-[16/9] overflow-hidden rounded-lg bg-repower-paper border border-repower-navy-900/10 mb-10',
+  photoSlot,
 }: BlogHeroPictureProps) {
   const [errored, setErrored] = useState(false);
 
@@ -50,7 +53,7 @@ export function BlogHeroPicture({
     : null;
 
   return (
-    <div className={wrapperClassName}>
+    <div className={wrapperClassName} {...(photoSlot ? { 'data-photo-slot': photoSlot } : {})}>
       {errored ? (
         fallback ?? defaultFallback
       ) : (
