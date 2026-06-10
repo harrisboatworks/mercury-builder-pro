@@ -1124,7 +1124,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     image: '/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder.png',
     author: 'Jay Harris',
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-27',
     category: 'Service & Troubleshooting',
     readTime: '~9 min read',
