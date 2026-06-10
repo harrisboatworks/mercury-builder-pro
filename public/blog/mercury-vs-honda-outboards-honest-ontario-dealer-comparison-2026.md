@@ -91,7 +91,6 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 ## Mythbuster
 
-:::mythbuster
 - claim: Honda is more reliable than Mercury.
   rebuttal: Both brands build reliable motors in 2026. The real-world reliability difference at modern model years is small. The bigger reliability factor is local service network access.
 - claim: Mercury Verado is supercharged so it has more issues.
@@ -100,7 +99,6 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
   rebuttal: Honda BF350 V8 launched in Canada in early 2024 and is in market. Mercury still has more lineup above 350 HP, including 400 HP Verado, 450R, and 600 HP V12, but the 250 HP cap line is out of date.
 - claim: I'll save money buying Honda and getting it serviced wherever.
   rebuttal: Honda parts and service availability is genuinely thinner in our region. Plan for it before you buy.
-:::
 
 ## Related guides
 

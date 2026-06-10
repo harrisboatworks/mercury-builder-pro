@@ -119,18 +119,15 @@ HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-s
 
 ## Common mistakes (the things we push back on)
 
-:::mythbuster
 - claim: I'll just buy a new battery, that has to be it.
   rebuttal: Often the issue is the battery cable, the ground point, or the battery switch. A new battery doesn't fix a corroded ground.
 - claim: I sprayed starting fluid in it.
   rebuttal: Starting fluid can damage EFI fuel rails. Don't use it on outboards. Tell us if you did.
 - claim: It ran fine last fall.
   rebuttal: Most no-start tickets ran fine last fall. The motor sat for 6 months. "Ran fine in fall" doesn't help us diagnose "won't start in May."
-:::
 
 ## Customer language we hear
 
-:::customer-voice
 - quote: She sat all winter and won't fire
   response: battery + fuel + plugs
 - quote: Just clicks
@@ -144,7 +141,6 @@ HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-s
 - quote: When can you get me in?
   response: call us at 905-342-2153
   isCTA: true
-:::
 
 ## Ready for HBW to look at it?
 

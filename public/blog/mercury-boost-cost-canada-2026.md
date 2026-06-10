@@ -84,10 +84,8 @@ This is where the early online rumour mill got it most wrong. Per Mercury Marine
 - Anything below 150 HP (with the single exception of the Mercury Racing 150R)
 - Older serial-number motors below the 2B529482 cutoff
 
-:::mythbuster
 **Myth:** Boost will eventually be available for 300R, 400R, and V10 motors.
 **Reality:** Per Mercury Marine's published Feb 2026 eligibility list, the 300R, 400R, and V10 (350/400/450R) are not on the eligible list. If a dealer offers to install Boost on a 300R or V10, ask them to show you the serial-number range in Mercury's official document. The list is specific: 175-300 HP FourStroke, 175-300 HP Pro XS, 250-300 HP Verado, 350 HP Verado within a serial range, and Mercury Racing 150R.
-:::
 
 If anyone tells you Boost is available for your 300R, 400R, or V10, ask them to show you the serial-number range in Mercury's published eligibility list. If they can't produce it, walk. The list above is the official one as of Feb 2026.
 
@@ -108,10 +106,8 @@ Converting and adding Canadian markup for dealer-installed labor and warranty ha
 
 > **Confirm with HBW before booking.** Mercury Canada has not published an official Canadian MAP at the time of writing (May 2026). When we have firm Canadian pricing in writing, we'll update this post. Verify any pricing you're quoted against Mercury Canada's official MAP once it's published. Don't pay based on speculation.
 
-:::mythbuster
 **Myth:** Mercury Boost is a $2,000 upgrade that adds 50 horsepower.
 **Reality:** Both numbers are wrong. Real published Mercury dealer pricing is $250 USD and $395 AUD. Realistic Canadian retail is in the $300-$500 CAD range plus install. And Boost does not add peak horsepower at WOT. It improves mid-range acceleration response by 5 to 21 percent. Peak HP is unchanged. Top speed is unchanged in most rigs.
-:::
 
 ---
 
@@ -119,21 +115,17 @@ Converting and adding Canadian markup for dealer-installed labor and warranty ha
 
 Now the honest question. Three scenarios.
 
-:::decision-card
 **Tournament rig (200-250 HP V8 Pro XS on a bass boat):** Probably yes. You pull out of holes 30 times a day. 17% faster mid-range acceleration is a noticeable, repeatable upgrade.
 
 **Family 19-21 ft cruiser (steady-throttle use):** Probably no. Boost is invisible at steady cruise. It doesn't add top-end. Save the money.
 
 **Shopping for a new motor with factory Boost:** Depends on the price delta. Within $300-$500 of the non-Boost equivalent, take it. $1,500+ premium attributed to Boost, ask for the line-item MAP before signing.
-:::
 
 ---
 
-:::customer-voice
 **What customers ask:** "If Boost gives me a 17 percent improvement, does that mean my 200 Pro XS will run faster at WOT?"
 
 **Our take:** No. The 17 percent number is mid-range acceleration. That's the punch you feel between 40 and 80 km/h. Wide-open-throttle top speed does not change in most rigs. Boost makes you faster getting to top speed and snappier coming out of corners. It does not raise the top speed itself.
-:::
 
 ## Boost vs upgrading to a bigger motor (the honest framing)
 

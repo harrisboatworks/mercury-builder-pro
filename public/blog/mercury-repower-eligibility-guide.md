@@ -136,14 +136,12 @@ After working through the five checks, drop your results into this table:
 
 **How to read the table:** All five Strong = clear eligible. Most Strong with one or two Borderline = eligible with HBW review of the borderline check before commit. Two or more Disqualifying = the conversation shifts away from repower toward hull repair, professional inspection, or new boat purchase.
 
-:::image-placeholder
 slug: repower-eligibility-five-check
 type: diagram
 aspect: 1:1
 description: Mercury repower eligibility: the 5-check process with three colour-coded outcomes (Eligible, Review with HBW, Not a Repower)
 prompt: HBW-designed SVG 5-check. 1080x1080. [STYLE ANCHOR]
 image: /lovable-uploads/repower-eligibility-five-check.svg
-:::
 
 ## What Disqualifies a Hull from Repower
 

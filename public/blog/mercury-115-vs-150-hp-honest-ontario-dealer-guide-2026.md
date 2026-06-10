@@ -157,7 +157,6 @@ Repowers are the highest-risk install in our shop. New motor, old hull, unknown 
 
 ## Common mistakes (the things we push back on)
 
-:::mythbuster
 - claim: More HP is always better.
   rebuttal: No. Overpowering a boat creates capacity-plate compliance issues, insurance complications, and shortens hull life. Stay within the capacity-plate maximum HP rating. If you want more boat, get more boat.
 - claim: I'll get the 150 because resale is better.
@@ -168,11 +167,9 @@ Repowers are the highest-risk install in our shop. New motor, old hull, unknown 
   rebuttal: Most customers prop wrong. Prop pitch should be set so the motor reaches WOT RPM within Mercury's recommended range (typically 5,500 to 6,000 RPM for FourStroke, 6,000 to 6,400 for Pro XS) under typical load. We dial this in at our dock.
 - claim: My buddy has a 150 on the same boat and it's faster.
   rebuttal: Maybe. Or your buddy's boat is set up differently, has a different prop, runs at different load, or you're comparing perceived speed vs measured speed. Don't make a $6,900 decision on one anecdote.
-:::
 
 ## Customer language we hear
 
-:::customer-voice
 - quote: I want to do some tubing this summer
   response: If 18ft V-hull or smaller, 115 is fine. If 19+ V-hull or 22+ pontoon, jump to 150.
 - quote: Can we waterski with this?
@@ -184,7 +181,6 @@ Repowers are the highest-risk install in our shop. New motor, old hull, unknown 
 - quote: When can you get me in?
   response: 905-342-2153
   isCTA: true
-:::
 
 ## Ready to talk repower?
 
