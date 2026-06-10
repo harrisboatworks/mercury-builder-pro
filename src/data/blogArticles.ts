@@ -2821,6 +2821,9 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. The hour-by-hour breakdown is below.
 
+![Timeline of the Mercury 10-hour break-in: hour 1 no-wake then moderate cruise with varied throttle, hours 1-2 wider RPM range with no sustained wide-open throttle, hours 2-10 full RPM range with short WOT bursts, after 10 hours normal operation, then the 20-hour first service oil and filter change.](/lovable-uploads/mercury-break-in-timeline-hbw.png)
+*The whole procedure on one card. Details below.*
+
 | Time | RPM / behavior | Do | Avoid |
 |---|---|---|---|
 | First 5 to 10 min | Idle | Warm motor, check tell-tale flow, watch for warning lights | Putting motor in gear before warmed |
@@ -3768,6 +3771,9 @@ whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in thi
 
 Customers shopping for a pontoon motor focus on the HP number. The gearcase is an afterthought, and that's the wrong order of priorities.
 
+![Pontoon motor sizing card: 18 ft pontoon takes a Mercury 90 HP Command Thrust, 20 ft takes 115 HP Command Thrust, 22 ft takes 115 to 150 HP Command Thrust. Towing with a full crew, step up one size.](/lovable-uploads/pontoon-motor-sizing-card-hbw.png)
+*The short version. Your boat's capacity plate and loading decide the final call.*
+
 A 90 HP Command Thrust and a standard 90 HP look almost identical on a spec sheet. Same horsepower. Same motor family. But Command Thrust uses a larger gearcase, a larger prop, and a torque-tuned gear ratio that's built for heavy boats. On a pontoon, that means faster lift to cruise when you have six people aboard, better load-carrying, and a boat that feels like it has more motor than the number would suggest.
 
 We default to Command Thrust on most pontoon repowers at HBW. Customers who push back on the small price difference, and then see the boat run with the right gearcase, get it immediately.
@@ -4366,6 +4372,9 @@ Real-world performance varies with hull, load, prop, mounting height, water cond
 The 90 HP FourStroke is the most-installed mid-range Mercury at HBW. There is a reason: it fits the most common boat (16 to 18 ft aluminum console), the most common use (family fishing, mixed recreational), and the most common hull rating (75 to 115 HP capacity plate). It hits the price-performance sweet spot that the 75 misses on power and the 115 misses on value for lighter use. It is also the motor class that crosses our service bench most often: 526 winterize-and-service jobs on 75 to 115 HP FourStrokes in the last five years, more than any other HP band in the shop.
 
 When customers ask "75, 90, or 115?" we usually walk through three things: hull length, typical loading, and use case. The right answer comes out of those three. For most Ontario freshwater customers, the answer is 90. For lighter use on shorter hulls, the 75 is enough. For heavier loading or bigger water, the 115 earns the price difference.
+
+![Comparison card: Mercury 75, 90, and 115 HP share the same 2.1L block and 359 lb dry weight. 75 HP for lighter use with the only tiller option; 90 HP the sweet spot for 16-18 ft aluminum boats; 115 HP for heavier loads with Command Thrust option for pontoons.](/lovable-uploads/mercury-75-90-115-decision-card-hbw.png)
+*Same block, three fits. The capacity plate sets the ceiling.*
 
 ## What changes the answer
 
@@ -14497,6 +14506,9 @@ If the motor has 200+ hours and you've ruled out the easy stuff, a compression c
 **The half-day fixes:** EFI diagnosis with CDS, VST cleaning, low-pressure fuel pump, crank position sensor, ignition coil.
 
 We pulled our own numbers on this. Since 2013 we have logged 537 no-start and rough-running jobs in our service records. About half traced back to fuel: stale gas, water in the tank, clogged filters. A bit under half were electrical: weak batteries, corroded grounds, tired connections. Roughly a quarter involved spark plugs, and 14 of the 537 were nothing but the kill switch. The buckets overlap (old gas and a fouled plug often arrive together), but the lesson holds: the cheap stuff fails first, which is exactly why the ladder above starts there.
+
+![Bar chart: causes of 537 Mercury no-start and rough-running jobs at Harris Boat Works since 2013. Fuel 47 percent, electrical 43 percent, spark plugs 28 percent, kill switch 3 percent. Categories overlap.](/lovable-uploads/wont-start-causes-hbw.png)
+*Causes across 537 no-start and rough-running jobs in our service records, 2013-2026. Categories overlap; one motor can have old gas and a fouled plug.*
 
 HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
 
