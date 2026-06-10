@@ -21024,11 +21024,18 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-pontoon-problems-rice-lake.png',
     author: 'Jay Harris',
     datePublished: '2026-02-12',
-    dateModified: '2026-02-12',
+    dateModified: '2026-06-09',
     publishDate: '2026-02-12',
     category: "Boating Lifestyle",
     readTime: '~9 min read',
     keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboard","pontoon hp"],
+    faqs: [
+      { question: 'What is the most common problem with pontoon boats on Rice Lake?', answer: 'Underpowered motors. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should for its entire life. Match the motor to the hull\'s max HP rating, not the minimum. For most 20 to 24 ft pontoons that means 90 to 115 HP, more for tritoons.' },
+      { question: 'How can I tell if my pontoon tubes are leaking?', answer: 'Watch for uneven trim at the dock when the boat is sitting level, visible weeping or staining on a tube exterior, and unexplained sluggishness after rough water. Welding cracks typically develop at baffles, the nose of the tube, and crossmember attachment points. Caught early, tube repairs are manageable; full replacement is a much bigger job. Annual inspection matters.' },
+      { question: 'How do I prevent deck rot on a pontoon?', answer: 'Pontoon decks sit over a wood subfloor under carpet or vinyl, materials that trap moisture instead of draining it. Inspect carpet seams and vinyl edges annually for lifting or gaps, reseal around deck fittings showing wear, and never leave pooled water on the deck after rain. A soft spot underfoot near the bow, stern, cleats, or fittings means rot has already started.' },
+      { question: 'What causes wiring problems on aluminum pontoons?', answer: 'Aluminum, moisture, dissimilar metals, and marine electrical current are an ideal corrosion environment. Symptoms include gauges reading wrong or not at all, intermittent starting with an otherwise healthy motor, navigation lights that work sometimes, and accessories that quit mid-season. Clean and protect connections with dielectric grease and replace corroded terminal ends before they fail. A full console rewire is much more expensive than upkeep.' },
+      { question: 'Do I need ethanol-free fuel in a pontoon outboard?', answer: 'For any outboard that sits more than a few weeks, yes. Ethanol absorbs moisture, phase-separates from the gasoline, and leaves gum and varnish in carburettors and fuel injectors. Harris Boat Works sells ethanol-free fuel for this reason. Use fresh fuel at the start of every season and run stabilizer through the system before any storage period longer than 30 days.' },
+    ],
     content: `# Common Pontoon Boat Problems on Rice Lake in the Kawarthas (Ontario) (And How to Avoid Them)
 
 *Last reviewed: 2026-05-07*
@@ -21247,11 +21254,18 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-bad-used-boats-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-02-17',
-    dateModified: '2026-02-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-02-17',
     category: "Buying Guide",
     readTime: '~12 min read',
     keywords: ["used boats","buying guide","ontario","red flags","marine inspection"],
+    faqs: [
+      { question: 'What used boats should I avoid in Ontario?', answer: 'The worst offenders we see are pre-2005 carbureted 2-stroke outboards, mid-90s to mid-2000s sterndrives with original unserviced outdrives, Evinrude E-TEC G1 motors (BRP exited the outboard market in 2020), older Force, Chrysler, or off-brand outboards with no parts pipeline, and any hull with stringer rot, soft floors, or transom mush.' },
+      { question: 'How do I check a used boat transom for rot?', answer: 'Walk the floor and bounce on it, especially near the transom. Soft spots are structural, not cosmetic. Then push and pull on the motor mount. Any flex means the transom core has rotted. A transom replacement is a four-to-five-figure job, often more than the boat is worth. Walk away.' },
+      { question: 'Are Evinrude E-TEC motors still a safe used buy?', answer: 'They were good engineering, but BRP exited the outboard market in 2020. That left a large installed base without a manufacturer-supported parts pipeline. Aftermarket support exists but is shrinking, and dealers who specialize in Evinrude service are fewer every year. The risk profile is different than it was five years ago, and that needs to be priced into any offer you make.' },
+      { question: 'Why is fresh paint on an outboard lower unit a red flag?', answer: 'A freshly painted lower unit on an older motor is one of the oldest tricks for hiding corrosion, impact damage, or prop strikes that have never been properly assessed. A well-maintained motor has a lower unit that looks its age, with honest wear and the original finish. If you see fresh paint, ask why, and factor a full lower unit inspection into the deal.' },
+      { question: 'What used boats are actually worth buying in Ontario?', answer: 'Mercury 4-stroke outboards from 2010 onward with documented service, well-maintained aluminum fishing boats (aluminum does not rot and dents are cosmetic), boats sold through a reputable dealer with visibility into the service history, and any boat where the story is verifiable: one owner, local use, freshwater only, receipts from a recognizable marine shop, and a motor that starts and runs cleanly.' },
+    ],
     content: `# Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)
 
 *Last reviewed: 2026-05-07*
@@ -21477,11 +21491,18 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-how-to-trim-mercury.png',
     author: 'Jay Harris',
     datePublished: '2026-02-22',
-    dateModified: '2026-02-22',
+    dateModified: '2026-06-09',
     publishDate: '2026-02-22',
     category: "Mercury Outboards",
     readTime: '~12 min read',
     keywords: ["boat trim","mercury outboard","active trim","rice lake","fuel economy"],
+    faqs: [
+      { question: 'What does trim do on a Mercury outboard?', answer: 'Trim controls the angle of the outboard relative to the transom. Pressing trim in tilts the engine toward the boat and pushes thrust slightly upward, which drives the bow down. Pressing trim out tilts the engine away from the boat, shifting thrust angle downward and lifting the bow. Just a few degrees of tilt changes where the hull sits in the water, drag, time to plane, and ride comfort.' },
+      { question: 'When should I trim in versus trim out?', answer: 'Trim fully in for the holeshot, choppy conditions, heavy load forward, and slow-speed running. Trim out gradually for cruising on flat water, top-speed runs, light loads, and pulling a tube. Setting it once and forgetting it is a mistake: load changes, conditions change, speed changes. Touch the trim button throughout a run.' },
+      { question: 'What is prop ventilation and why does it happen?', answer: 'Ventilation is the prop pulling air instead of water, usually heard as a high-pitched whine while the engine revs sky-high and the boat goes nowhere. It happens when you hit the throttle with the engine trimmed out and the bow launches skyward. The fix is simple: trim fully in before you punch it, and drop trim in immediately if you hear ventilation at speed.' },
+      { question: 'What does Mercury Active Trim do?', answer: 'Active Trim automates trim adjustment based on engine RPM along a programmed trim curve: as you accelerate it trims out in sync with boat speed, then trims in as you back off. It is available on many current Mercury FourStroke and Verado models and integrates with VesselView displays. You can still override it manually for specific depths, unusual loads, or conditions that call for a specific angle.' },
+      { question: 'What is the difference between engine trim and trim tabs?', answer: 'Engine trim adjusts the angle of the outboard itself, changing thrust direction and bow angle. Trim tabs are small hydraulic fins on the transom, one each side, that push water down to lift the stern and let you correct side-to-side lean independently of the engine. They work together: engine trim plus trim tabs gives you full control of hull attitude in any condition.' },
+    ],
     content: `# How to Trim Your Boat With a Mercury Outboard (Rice Lake, Ontario Boater's Guide)
 
 *Last reviewed: 2026-05-07*
@@ -21668,11 +21689,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-trailering-mistakes-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-02-28',
-    dateModified: '2026-02-28',
+    dateModified: '2026-06-09',
     publishDate: '2026-02-28',
     category: "Boating Lifestyle",
     readTime: '~9 min read',
     keywords: ["trailering","boat trailer","ontario","tow safety","launch ramp"],
+    faqs: [
+      { question: 'What is the right tongue weight for a boat trailer?', answer: 'Tongue weight, the downward force the trailer puts on the hitch ball, should sit at 10 to 15 percent of your total loaded trailer weight. Too light and the trailer rear lifts and the rig sways at highway speed. Too heavy and the tow vehicle\'s front wheels lift, wrecking steering and loading the trailer axle unevenly. Keep heavier gear forward in the boat and check with a bathroom scale.' },
+      { question: 'How often should boat trailer tires be replaced?', answer: 'Replace trailer tires every 5 to 6 years regardless of tread, and check sidewalls for cracking every spring. Trailer tires often look fine because they don\'t log enough highway kilometres to wear down, but UV and ozone oxidize the rubber even while the trailer sits in a driveway. A blowout on the 401 is not the place to find out yours are from 2018.' },
+      { question: 'When does Ontario require trailer brakes on a boat trailer?', answer: 'Ontario\'s Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lbs) or more, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit that threshold. If you are unsure, weigh it loaded. Confirm current requirements with MTO before relying on this summary.' },
+      { question: 'Do I need a separate licence plate for my boat trailer in Ontario?', answer: 'Yes. All trailers on Ontario public roads must be registered and plated separately from the tow vehicle. Ontario treats trailers as separate vehicles. Registration is a one-time fee, around $72 for the original plate and permit. Equipment violations like missing or broken trailer lights are actively ticketed.' },
+      { question: 'Why use a transom saver when trailering an outboard?', answer: 'An outboard hanging freely on the transom is not built to absorb highway vibration. Without a transom saver, the motor\'s weight swings on the tilt/trim system and steering cable over every bump. Over one season that wears steering arms, transom brackets, and trim ram seals, expensive repairs on a Mercury FourStroke in the 60 to 200 HP range. A transom saver costs next to nothing.' },
+      { question: 'What should I do at the launch ramp before launching?', answer: 'Back in slowly until the bunks are just below the surface and the boat floats. Trailer wheel bearings and surge brakes are not meant to be dunked, especially hot from a highway drive, so keep hubs and brakes above the waterline. Install the drain plug before the boat comes off the trailer, never at the ramp. Then ignore any lineup behind you and take your time.' },
+    ],
     content: `# 10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)
 
 *Last reviewed: 2026-05-07*
@@ -21887,11 +21916,18 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-outboard-vs-sterndrive.png',
     author: 'Jay Harris',
     datePublished: '2026-03-05',
-    dateModified: '2026-03-05',
+    dateModified: '2026-06-09',
     publishDate: '2026-03-05',
     category: "Mercury Outboards",
     readTime: '~12 min read',
     keywords: ["outboard vs sterndrive","repower","mercruiser","ontario","mercury"],
+    faqs: [
+      { question: 'Should I repower my sterndrive with an outboard or another sterndrive?', answer: 'In 2026 in Ontario, almost every sterndrive repower goes outboard. Outboards are now over 80 percent of new recreational marine engines, sterndrive R&D has slowed, and modern 4-stroke outboards have closed the noise and ride-comfort gap. For bowriders, deck boats, runabouts, and pontoons, an outboard repower wins on reliability, fuel economy, and resale. Big high-deadrise cruisers and dedicated tow boats are the exception.' },
+      { question: 'When does it still make sense to keep a sterndrive?', answer: 'Dedicated watersports inboards where wake shape is the whole point, big 22+ ft cabin cruisers where cockpit quiet at cruise matters, boats where the clean transom and unobstructed swim platform are central to the use case, and owners who plan to keep the boat 10+ years and accept the service intervals. For everything else the math favours outboards.' },
+      { question: 'How much does a sterndrive-to-outboard conversion cost?', answer: 'We don\'t publish a flat price because it would not be honest. The scope typically includes an outboard bracket, motor and outdrive removal, new Mercury Digital Throttle and Shift controls, wiring harness, gauges, VesselView integration, fuel system updates, exhaust decommissioning, transom work if needed, and a proper sea trial. The number changes case by case; the right question is whether the total cost makes sense for your hull over the years you plan to keep it.' },
+      { question: 'Does HBW still service Mercruiser sterndrives?', answer: 'Yes. If you have a sterndrive and you want to keep it, we support that decision. Harris Boat Works continues to maintain and service Mercruiser sterndrives, and our team is Mercury-trained. One scope note: for engine repairs, we only service Mercury and Mercruiser. If you have a Volvo Penta or other brand we will point you to the right specialist.' },
+      { question: 'Why are outboards better for Ontario freshwater than sterndrives?', answer: 'Modern 4-stroke outboards trim up in seconds, which lets you pick through shallow Kawartha bays and rocky shoals that put an outdrive at risk. They tilt fully out of the water for cleaner storage, have no bellows or gimbal bearing to fail, run on extended service intervals, and Mercury\'s V6 and V8 FourStrokes are measurably more fuel-efficient than most carbureted or early EFI sterndrives at cruise.' },
+    ],
     content: `# Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard
 
 *Last reviewed: 2026-05-07*
@@ -22365,11 +22401,18 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-docking-in-wind-rice-lake.png',
     author: 'Jay Harris',
     datePublished: '2026-03-21',
-    dateModified: '2026-03-21',
+    dateModified: '2026-06-09',
     publishDate: '2026-03-21',
     category: "Boating Lifestyle",
     readTime: '~9 min read',
     keywords: ["docking","wind","rice lake","boat handling","single outboard"],
+    faqs: [
+      { question: 'How do I dock a boat in the wind with a single outboard?', answer: 'Approach into the wind at slow controlled speed, use short bursts of forward and reverse to steer, never fight the wind with throttle, and let momentum carry you the last few feet. Tie the bow first if the wind is pushing you off the dock; tie the stern first if it is pushing you onto it. The wind is not attacking you, it is just doing what wind does. Use it.' },
+      { question: 'Why are pontoons harder to dock in the wind?', answer: 'Pontoons have enormous lateral surface area: tubes, decking, furniture, and bimini all act like a billboard in a crosswind. A 24-foot pontoon can drift sideways at a surprising rate in a modest 10-knot breeze. Counterintuitively, pontoons need more throttle into the wind than people expect because all that windage kills momentum, so carry a bit more speed, hold steerage, then cut to neutral and use a short reverse burst just before the dock.' },
+      { question: 'What is a spring line and when should I use it?', answer: 'A spring line is a mid-ship line running forward to a dock cleat. In a side-tie docking with wind off the dock, getting a spring line on as fast as possible gives you control that throttle cannot replicate. One mid-ship line forward to a dock cleat gives you more control than everything else combined. Practise using it.' },
+      { question: 'At what wind speed should I think twice about docking?', answer: '5 knots is barely a factor. 10 knots is noticeable and pontoons need active steerage. 15 knots separates confident from stressed, and approach angle becomes critical. At 20+ knots, think carefully: if you have a protected slip this may be a "leave it and walk" day. If you are coming in, use the most sheltered approach and slow down before you think you need to.' },
+      { question: 'When should I abort a docking attempt?', answer: 'If your approach is off by more than 4 feet at 8 feet out, abort. The geometry is not fixing itself, and throttling through a bad approach is how damage happens. Back out, circle wide, and come in again, 90 seconds total. The most experienced boaters on Rice Lake abort regularly. It is a tool, not a failure.' },
+    ],
     content: `# Docking a Boat in Wind on Rice Lake in the Kawarthas (Ontario) (No Bow Thruster, No Drama)
 
 *Last reviewed: 2026-05-07*
@@ -22590,11 +22633,18 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-pontoon-hp-sizing.png',
     author: 'Jay Harris',
     datePublished: '2026-03-26',
-    dateModified: '2026-03-26',
+    dateModified: '2026-06-09',
     publishDate: '2026-03-26',
     category: "Mercury Outboards",
     readTime: '~12 min read',
     keywords: ["pontoon hp","horsepower sizing","mercury","command thrust","tritoon"],
+    faqs: [
+      { question: 'What HP do I need for a pontoon boat?', answer: 'It depends on tube count, hull length, load, and use case. As a starting framework: 25 to 40 HP for 16 to 18 ft small toons, 60 to 90 HP for 20 to 22 ft cruisers, 115 to 150 HP for 22 to 24 ft loaded family pontoons, and 200+ HP for tritoons and watersports. When in doubt, size closer to the hull\'s max HP rating, not the minimum.' },
+      { question: 'Is 90 HP enough for a 22 ft pontoon?', answer: 'Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people occasionally pulling a tube wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. The Command Thrust gearcase swings a larger prop, which dramatically improves hole-shot on a heavy pontoon.' },
+      { question: 'Why do pontoons need more HP than runabouts?', answer: 'A typical pontoon sits 1,800 to 3,500 lbs dry before people, gear, and fuel; a 22-footer with 10 passengers and a full cooler easily clears 5,000 lbs. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.' },
+      { question: 'When does Command Thrust matter on a pontoon?', answer: 'Any pontoon over 20 feet running a Mercury four-stroke in the 75 to 150 HP range should be in Command Thrust. The larger-diameter prop transforms hole-shot on a heavy boat, getting 8+ people up to cruise faster, with smoother transition, and less stress on the motor. Standard gearcase motors on heavy pontoons can feel sluggish at the same horsepower.' },
+      { question: 'How much horsepower do I need to pull a tube or wakeboard from a pontoon?', answer: 'For tube pulling with 4 to 6 people on deck, plan on a minimum 150 HP on a 22-foot two-tube, or 200 HP on a tritoon. For wakeboarding or wakesurfing you need a tritoon and 250+ HP: the third tube adds stability and wake shape, and the horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding.' },
+    ],
     content: `# Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use
 
 *Last reviewed: 2026-05-07*
@@ -22884,11 +22934,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-battery-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-04-01',
-    dateModified: '2026-04-01',
+    dateModified: '2026-06-09',
     publishDate: '2026-04-01',
     category: "Service",
     readTime: '~12 min read',
     keywords: ["marine battery","mercury","winter storage","battery switch","agm"],
+    faqs: [
+      { question: 'What size battery does a Mercury outboard need?', answer: 'For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least 800 Marine Cranking Amps (MCA) measured at 32 degrees F. Always check your engine\'s owner\'s manual for the exact requirement for your model. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise on smaller boats with light loads.' },
+      { question: 'AGM vs flooded lead-acid vs lithium: which marine battery should I buy?', answer: 'AGM is the sweet spot for most Ontario boat owners: sealed and maintenance-free, better vibration tolerance, slower self-discharge in storage, and more forgiving of partial discharge. Flooded lead-acid is cheaper if you are willing to check water levels. Lithium (LiFePO4) is excellent but 3 to 5 times the cost of an equivalent AGM and requires a lithium-compatible charger. A standard marine charger can damage a lithium battery.' },
+      { question: 'Why does my boat battery die over the winter?', answer: 'Parasitic drain. A modern boat with a GPS, stereo, alarm, or automatic bilge pump can draw 10 to 30 milliamps continuously. At 20 mA a 100 Ah battery is fully dead in around 200 days, right inside Ontario\'s winter storage window. Turn the master switch to OFF, never leave it on Both, and use a smart maintainer if you have power access in storage.' },
+      { question: 'Should I leave my battery switch on "Both" for storage?', answer: 'Never. With the switch on Both, any parasitic draw pulls from both banks simultaneously, doubling your drain exposure. Turn it to OFF for storage. Also never switch directly from 1 to 2 while the engine is running: switch to Both first, then to the other bank. Going directly from 1 to 2 with the alternator running can spike voltage and damage electronics.' },
+      { question: 'When should I replace my marine battery?', answer: 'Most marine batteries last 4 to 7 years. Replace when resting voltage is below 12.2V after a full charge, the battery fails a load test, you see swelling, cracking, or electrolyte leakage, or it is more than 7 years old and spring no-starts are getting more frequent. Voltage alone lies: a battery can read 12.6V at rest and collapse to 8V under starter load.' },
+      { question: 'What is the right way to store a marine battery for winter?', answer: 'Bring the battery to a full charge before storage, never store at 50 percent. Turn the master switch OFF. If you have power access, connect a smart battery maintainer, not a regular trickle charger which will overcharge over 5 months. Check voltage monthly and recharge below 12.4V. If you don\'t have power access, remove the battery and store it indoors on a wood shelf or mat, above freezing.' },
+    ],
     content: `# The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)
 
 *Last reviewed: 2026-05-07*
@@ -23168,11 +23226,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-fuel-octane-ethanol.png',
     author: 'Jay Harris',
     datePublished: '2026-04-11',
-    dateModified: '2026-04-11',
+    dateModified: '2026-06-09',
     publishDate: '2026-04-11',
     category: "Service",
     readTime: '~12 min read',
     keywords: ["ethanol","octane","marine fuel","mercury outboard","ontario"],
+    faqs: [
+      { question: 'What octane does a Mercury outboard need?', answer: 'The vast majority of modern Mercury 4-stroke outboards under 250 HP are engineered for 87 octane minimum, the standard pump Regular. Running 91 doesn\'t help them. Mercury\'s Verado line and certain high-output Pro XS V8 engines are higher-compression and require a minimum of 89 or 91 octane. Check the sticker on your motor or your owner\'s manual, don\'t guess.' },
+      { question: 'Can I run ethanol gas (E10) in my Mercury outboard?', answer: 'You can, but for any boat that sits more than a few weeks it causes problems. Ethanol absorbs moisture from the air, eventually phase-separates from the gasoline, and the water-ethanol mix sinks to the bottom of the tank right where the fuel pickup sits. That leads to hard starting, rough running, internal corrosion, gummed carburettors, and unbudgeted service bills.' },
+      { question: 'Is premium gas ethanol-free in Ontario?', answer: 'Not automatically. Premium pump gas in Ontario is typically still E10 unless the pump label specifically says otherwise. Premium refers to octane only. If you are buying premium at a regular gas station, read the label: if it does not explicitly say "ethanol-free," "no ethanol," or "non-ethanol blend," assume it contains ethanol.' },
+      { question: 'Does Harris Boat Works sell ethanol-free fuel?', answer: 'Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. You can fill up on-site right before you launch or while you are tied up, no trailer required. Call 905-342-2153 for current fuel hours before coming in.' },
+      { question: 'When should I use a fuel stabilizer?', answer: 'Use a marine fuel stabilizer for any storage over 30 days. With E10, 30 days is the real threshold before fuel quality starts dropping. Add stabilizer to the tank, top off with fuel so it mixes in, then run the motor for 10 to 15 minutes to circulate treated fuel through the carb and fuel lines. Skipping the run step leaves untreated fuel in the carb bowls.' },
+      { question: 'What are the signs of a fuel system problem on a Mercury outboard?', answer: 'Hard starting after storage when it ran fine when put away, bogging at wide-open throttle, a primer bulb that won\'t pump firm, yellow or orange varnish in the carb bowl, water in the fuel-water separator, and inconsistent fuel gauge readings that can point to internal tank corrosion. Catching these early is cheaper than a mid-season breakdown.' },
+    ],
     content: `# Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide
 
 *Last reviewed: 2026-05-07*
@@ -32049,11 +32115,18 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
     image: '/lovable-uploads/hero-mercury-dealer-cobourg.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
     keywords: ['mercury dealer cobourg', 'cobourg mercury outboard', 'northumberland mercury dealer', 'rice lake mercury dealer'],
+    faqs: [
+      { question: 'Is there a Mercury dealer in Cobourg?', answer: 'Not within town limits at the Platinum tier. Harris Boat Works in Gores Landing is the Mercury Platinum Dealer for Cobourg, approximately 25 minutes north via County Road 18. For most Cobourg addresses we are the nearest Mercury Platinum dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.' },
+      { question: 'How long is the drive from Cobourg to HBW?', answer: 'About 25 minutes outside rush hour, straight up County Road 18 into Gores Landing. From the Cobourg harbour or downtown, allow 25 to 30 minutes. From north Cobourg it is closer to 20 minutes. About as simple a route as gets, one road for most of the trip.' },
+      { question: 'Does HBW service boats that live on Lake Ontario, not Rice Lake?', answer: 'Yes. The boat doesn\'t need to live on Rice Lake for us to service it. Cobourg customers trailer in for service all season. The 25-minute drive each way is short enough that a same-day visit works for routine jobs. For engine repairs we only service Mercury and Mercruiser.' },
+      { question: 'Does HBW offer pickup or delivery for Cobourg customers?', answer: 'No. HBW does not offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site for drop-offs.' },
+      { question: 'Will HBW honour my Mercury warranty if I bought the motor elsewhere?', answer: 'Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork and we register the work in Mercury\'s central system.' },
+    ],
     content: `## Quick Answer
 
 Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 25 minutes north of Cobourg via County Road 18. We handle Mercury outboard sales, repowers, parts, and service. Cobourg is one of the closer markets to HBW, for many Cobourg addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
@@ -32185,11 +32258,18 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
     image: '/lovable-uploads/hero-mercury-dealer-port-hope.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
     keywords: ['mercury dealer port hope', 'port hope mercury outboard', 'ganaraska mercury dealer', 'northumberland mercury platinum'],
+    faqs: [
+      { question: 'Is there a Mercury Platinum dealer in Port Hope?', answer: 'Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Platinum Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Platinum dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.' },
+      { question: 'How long is the drive from Port Hope to HBW?', answer: 'About 30 minutes outside rush hour. County Road 28 north from Port Hope through Garden Hill, then County Road 18 east into Gores Landing. Mostly rural county road, with the last 15 minutes through Rice Lake country. From the Port Hope waterfront, allow the full 30 minutes; from the Highway 401 area, slightly shorter.' },
+      { question: 'Does HBW install Mercury 9.9 ProKickers for Port Hope salmon boats?', answer: 'Yes, we install a lot of them, especially for Port Hope and Cobourg anglers running a primary motor with a ProKicker for trolling control. A full install includes mounting, linkage to the primary throttle, electrical, and a steering tie-bar setup.' },
+      { question: 'Will HBW service my Lake Ontario boat without me storing it on Rice Lake?', answer: 'Yes. The boat doesn\'t need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs we only service Mercury and Mercruiser.' },
+      { question: 'Does HBW offer pickup or delivery for Port Hope boats?', answer: 'No. HBW does not offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site for drop-offs.' },
+    ],
     content: `## Quick Answer
 
 Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
@@ -32325,11 +32405,18 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
     image: '/lovable-uploads/hero-mercury-dealer-lindsay.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
     keywords: ['mercury dealer lindsay', 'kawartha lakes mercury', 'lindsay mercury platinum', 'sturgeon lake mercury dealer'],
+    faqs: [
+      { question: 'Is there a Mercury Platinum dealer in Lindsay?', answer: 'Not at full repower capacity within town. Harris Boat Works is a Mercury Marine Platinum Dealer approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south to Gores Landing on Rice Lake. For Kawartha Lakes boaters wanting Platinum-tier service, HBW is the closest option. Family-owned since 1947, Mercury dealer since 1965.' },
+      { question: 'Is HBW worth the 45-minute drive for routine service?', answer: 'For routine oil changes and basic seasonal work, maybe not. For a major repower, a complex warranty case, or full SmartCraft Platinum-tier diagnostics, the dealer tier matters more than the drive time. Many Lindsay customers also drop the boat off before a Trent-Severn cruise so it starts the trip in known-good condition.' },
+      { question: 'Does HBW service MerCruiser sterndrives on Trent-Severn cruisers?', answer: 'Yes. We handle Mercury outboards and MerCruiser sterndrives, including full service, repair, and repower. For engine repairs we only service Mercury and Mercruiser; for other brands we will point you to the right specialist.' },
+      { question: 'Can I store my boat at HBW year-round if I am based in Lindsay?', answer: 'Yes. Outdoor storage with shrinkwrap. For Kawartha cottagers who want to skip the tight Kawartha-region storage market and pick the boat up already at Rice Lake in spring, this routine tends to work. Many Lindsay customers run it for 5 to 10 years.' },
+      { question: 'Does HBW install ProKickers on Sturgeon Lake fishing boats?', answer: 'Yes, the Mercury 9.9 ProKicker is common spec on Kawartha-area aluminum fishing boats. A full install includes mounting, throttle linkage, electrical, and tie-bar steering setup.' },
+    ],
     content: `## Quick Answer
 
 Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south. We handle Mercury outboard sales, repowers, parts, and service. For Kawartha Lakes boaters, Lindsay is the regional hub, and HBW is the closest Mercury Platinum dealer with full repower capacity. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
@@ -32463,11 +32550,18 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
     image: '/lovable-uploads/hero-mercury-dealer-northumberland.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '5 min read',
     keywords: ['mercury dealer northumberland county', 'northumberland mercury platinum', 'rice lake mercury dealer', 'trent system mercury'],
+    faqs: [
+      { question: 'Who is the Mercury dealer for Northumberland County?', answer: 'Harris Boat Works in Gores Landing is the Mercury Marine Platinum Dealer serving Northumberland County. Family-owned since 1947, Mercury dealer since 1965. We are located on Rice Lake within the county itself, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we are not the closer option, we are the local Mercury dealer.' },
+      { question: 'How far is HBW from each Northumberland community?', answer: 'Cobourg is about 25 minutes via County Road 18 south. Port Hope is 30 minutes via County Roads 18 and 28. Hastings is 25 minutes via County Road 9 east across the Trent. Campbellford is 35 minutes. Colborne is 35 minutes via Highway 401. Trent Hills is 30 minutes. Brighton is the furthest at about 50 minutes via the 401 east to County Road 64.' },
+      { question: 'Does HBW service Bay of Quinte boats from Brighton?', answer: 'Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it is worth, and that is an honest call to make. For engine repairs we only service Mercury and Mercruiser.' },
+      { question: 'Does HBW sell new boats in addition to Mercury motors?', answer: 'Yes. We are also a Legend Boats dealer, aluminum fishing boats and pontoons, all Mercury-rigged. Worth a conversation if you are in the new-boat market.' },
+      { question: 'Will HBW handle warranty work on a Mercury bought elsewhere?', answer: 'Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork.' },
+    ],
     content: `## Quick Answer
 
 Harris Boat Works in Gores Landing is the Mercury Marine Platinum Dealer serving Northumberland County. Family-owned since 1947, Mercury dealer since 1965. We're located on Rice Lake within Northumberland County, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we're not "the closer option", we ARE the local Mercury dealer. Installed pricing is published online at mercuryrepower.ca.

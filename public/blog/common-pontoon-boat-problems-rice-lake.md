@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake.md
-last_updated: 2026-02-12
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)"
 description: "The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion, and how to prevent them..."
 category: "Boating Lifestyle"
 date_published: 2026-02-12
-date_modified: 2026-02-12
+date_modified: 2026-06-09
 keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboard","pontoon hp"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-02-12  
-**Last updated:** 2026-02-12  
+**Last updated:** 2026-06-09  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake
 
@@ -234,7 +234,25 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### What is the most common problem with pontoon boats on Rice Lake?
+
+Underpowered motors. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should for its entire life. Match the motor to the hull's max HP rating, not the minimum. For most 20 to 24 ft pontoons that means 90 to 115 HP, more for tritoons.
+
+### How can I tell if my pontoon tubes are leaking?
+
+Watch for uneven trim at the dock when the boat is sitting level, visible weeping or staining on a tube exterior, and unexplained sluggishness after rough water. Welding cracks typically develop at baffles, the nose of the tube, and crossmember attachment points. Caught early, tube repairs are manageable; full replacement is a much bigger job. Annual inspection matters.
+
+### How do I prevent deck rot on a pontoon?
+
+Pontoon decks sit over a wood subfloor under carpet or vinyl, materials that trap moisture instead of draining it. Inspect carpet seams and vinyl edges annually for lifting or gaps, reseal around deck fittings showing wear, and never leave pooled water on the deck after rain. A soft spot underfoot near the bow, stern, cleats, or fittings means rot has already started.
+
+### What causes wiring problems on aluminum pontoons?
+
+Aluminum, moisture, dissimilar metals, and marine electrical current are an ideal corrosion environment. Symptoms include gauges reading wrong or not at all, intermittent starting with an otherwise healthy motor, navigation lights that work sometimes, and accessories that quit mid-season. Clean and protect connections with dielectric grease and replace corroded terminal ends before they fail. A full console rewire is much more expensive than upkeep.
+
+### Do I need ethanol-free fuel in a pontoon outboard?
+
+For any outboard that sits more than a few weeks, yes. Ethanol absorbs moisture, phase-separates from the gasoline, and leaves gum and varnish in carburettors and fuel injectors. Harris Boat Works sells ethanol-free fuel for this reason. Use fresh fuel at the start of every season and run stabilizer through the system before any storage period longer than 30 days.
 
 ## Next steps
 

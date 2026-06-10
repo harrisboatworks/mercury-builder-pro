@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake.md
-last_updated: 2026-03-21
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)"
 description: "A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, without a bow thruster or a meltdown."
 category: "Boating Lifestyle"
 date_published: 2026-03-21
-date_modified: 2026-03-21
+date_modified: 2026-06-09
 keywords: ["docking","wind","rice lake","boat handling","single outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-03-21  
-**Last updated:** 2026-03-21  
+**Last updated:** 2026-06-09  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake
 
@@ -236,7 +236,25 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### How do I dock a boat in the wind with a single outboard?
+
+Approach into the wind at slow controlled speed, use short bursts of forward and reverse to steer, never fight the wind with throttle, and let momentum carry you the last few feet. Tie the bow first if the wind is pushing you off the dock; tie the stern first if it is pushing you onto it. The wind is not attacking you, it is just doing what wind does. Use it.
+
+### Why are pontoons harder to dock in the wind?
+
+Pontoons have enormous lateral surface area: tubes, decking, furniture, and bimini all act like a billboard in a crosswind. A 24-foot pontoon can drift sideways at a surprising rate in a modest 10-knot breeze. Counterintuitively, pontoons need more throttle into the wind than people expect because all that windage kills momentum, so carry a bit more speed, hold steerage, then cut to neutral and use a short reverse burst just before the dock.
+
+### What is a spring line and when should I use it?
+
+A spring line is a mid-ship line running forward to a dock cleat. In a side-tie docking with wind off the dock, getting a spring line on as fast as possible gives you control that throttle cannot replicate. One mid-ship line forward to a dock cleat gives you more control than everything else combined. Practise using it.
+
+### At what wind speed should I think twice about docking?
+
+5 knots is barely a factor. 10 knots is noticeable and pontoons need active steerage. 15 knots separates confident from stressed, and approach angle becomes critical. At 20+ knots, think carefully: if you have a protected slip this may be a "leave it and walk" day. If you are coming in, use the most sheltered approach and slow down before you think you need to.
+
+### When should I abort a docking attempt?
+
+If your approach is off by more than 4 feet at 8 feet out, abort. The geometry is not fixing itself, and throttling through a bad approach is how damage happens. Back out, circle wide, and come in again, 90 seconds total. The most experienced boaters on Rice Lake abort regularly. It is a tool, not a failure.
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-lindsay-ontario-hbw.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake"
 description: "Harris Boat Works is a Mercury Platinum dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake + Kawartha Lakes boaters service routine, online repower..."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["mercury dealer lindsay","kawartha lakes mercury","lindsay mercury platinum","sturgeon lake mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-lindsay-ontario-hbw
 
@@ -115,43 +115,27 @@ For a motor purchase or repower conversation, call: 905-342-2153.
 - [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28.
 - [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Platinum dealer serving Northumberland County since 1947. Rice Lake.
 
-## Frequently Asked Questions, Lindsay
-
-**Is HBW worth the 45-minute drive vs a closer Lindsay-area shop?**
-For routine service (oil change, basic seasonal work), maybe not. For a major repower, complex warranty issue, or Platinum-tier diagnostics, the dealer tier matters more than the drive time. The drive is also part of a nicer day out than most service trips.
-
-**Do you service Trent-Severn cruisers and MerCruiser sterndrives?**
-Yes. We service Mercury outboards and MerCruiser sterndrives. For engine repairs, we only service Mercury and Mercruiser.
-
-**Do you install ProKickers on Sturgeon Lake fishing boats?**
-Yes, common spec on Kawartha-area aluminum fishing boats. Full install includes mounting, throttle linkage, electrical, and tie-bar steering setup.
-
-**What's a typical Kawartha-area repower cost?**
-Depends on horsepower. Most repowers on 16-20 foot aluminum or pontoon hulls land in the $13,000-$25,000 installed range including HST. The quote builder at mercuryrepower.ca gives a real CAD number based on your boat.
-
-**Can I drop off at HBW before a Trent-Severn cruise?**
-Yes, many Lindsay customers do exactly that. Spring service before the cruising season, motor in known-good condition before a long trip, network coverage if anything comes up mid-trip.
-
-**Can I store my boat with you year-round?**
-Yes. Outdoor with shrinkwrap. For Lindsay cottagers who want to skip the Kawartha storage market and pick up the boat already at Rice Lake in spring, this works well.
-
-**Do you offer pickup/delivery?**
-No. HBW does NOT offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
----
-
-**Related guides:**
-- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
-- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
-
 ## FAQs
 
-_(no FAQs)_
+### Is there a Mercury Platinum dealer in Lindsay?
+
+Not at full repower capacity within town. Harris Boat Works is a Mercury Marine Platinum Dealer approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south to Gores Landing on Rice Lake. For Kawartha Lakes boaters wanting Platinum-tier service, HBW is the closest option. Family-owned since 1947, Mercury dealer since 1965.
+
+### Is HBW worth the 45-minute drive for routine service?
+
+For routine oil changes and basic seasonal work, maybe not. For a major repower, a complex warranty case, or full SmartCraft Platinum-tier diagnostics, the dealer tier matters more than the drive time. Many Lindsay customers also drop the boat off before a Trent-Severn cruise so it starts the trip in known-good condition.
+
+### Does HBW service MerCruiser sterndrives on Trent-Severn cruisers?
+
+Yes. We handle Mercury outboards and MerCruiser sterndrives, including full service, repair, and repower. For engine repairs we only service Mercury and Mercruiser; for other brands we will point you to the right specialist.
+
+### Can I store my boat at HBW year-round if I am based in Lindsay?
+
+Yes. Outdoor storage with shrinkwrap. For Kawartha cottagers who want to skip the tight Kawartha-region storage market and pick the boat up already at Rice Lake in spring, this routine tends to work. Many Lindsay customers run it for 5 to 10 years.
+
+### Does HBW install ProKickers on Sturgeon Lake fishing boats?
+
+Yes, the Mercury 9.9 ProKicker is common spec on Kawartha-area aluminum fishing boats. A full install includes mounting, throttle linkage, electrical, and tie-bar steering setup.
 
 ## Next steps
 

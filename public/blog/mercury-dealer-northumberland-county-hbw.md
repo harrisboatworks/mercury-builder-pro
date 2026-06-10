@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Plat
 description: "Harris Boat Works is the Mercury Platinum dealer serving Northumberland County since 1947. Rice Lake, Cobourg, Port Hope, Hastings, Brighton, Trent system."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["mercury dealer northumberland county","northumberland mercury platinum","rice lake mercury dealer","trent system mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw
 
@@ -116,37 +116,27 @@ For a motor purchase or repower conversation, call: 905-342-2153.
 - [Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake](/blog/mercury-dealer-lindsay-ontario-hbw): Harris Boat Works is a Mercury Platinum dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake.
 - [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28.
 
-## Frequently Asked Questions, Northumberland County
-
-**Is HBW the only Mercury Platinum dealer in Northumberland County?**
-Yes. For Mercury Platinum-tier service within Northumberland County, HBW is the option. There may be lower-tier Mercury dealers or non-Mercury shops closer to specific addresses; for Platinum-tier work, HBW is the local choice.
-
-**Do you handle warranty work on a Mercury bought elsewhere?**
-Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork.
-
-**Do you service Bay of Quinte fishing boats from Brighton?**
-Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it's worth, that's an honest call.
-
-**Do you service Trent River cruisers in the Campbellford / Trent Hills area?**
-Yes. We handle both Mercury outboards and MerCruiser sterndrives. For engine repairs, we only service Mercury and Mercruiser.
-
-**What's the typical repower cost in Northumberland?**
-Depends on horsepower and current rigging. The quote builder at mercuryrepower.ca gives a real CAD number. Most repowers in the typical Northumberland boat range land in the $13,000-$25,000 installed range including HST.
-
-**Can I store my boat with you year-round?**
-Yes. Outdoor storage with shrinkwrap. For Northumberland boaters whose boat already lives on Rice Lake during the season, year-round storage at HBW puts the spring launch already at the water.
-
-**Do you offer pickup/delivery?**
-No. HBW does NOT offer pickup or delivery. Customers bring their boat to us.
-
-**Do you sell new boats?**
-Yes. We're also a Legend Boats dealer, aluminum fishing boats and pontoons, all Mercury-rigged.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
 ## FAQs
 
-_(no FAQs)_
+### Who is the Mercury dealer for Northumberland County?
+
+Harris Boat Works in Gores Landing is the Mercury Marine Platinum Dealer serving Northumberland County. Family-owned since 1947, Mercury dealer since 1965. We are located on Rice Lake within the county itself, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we are not the closer option, we are the local Mercury dealer.
+
+### How far is HBW from each Northumberland community?
+
+Cobourg is about 25 minutes via County Road 18 south. Port Hope is 30 minutes via County Roads 18 and 28. Hastings is 25 minutes via County Road 9 east across the Trent. Campbellford is 35 minutes. Colborne is 35 minutes via Highway 401. Trent Hills is 30 minutes. Brighton is the furthest at about 50 minutes via the 401 east to County Road 64.
+
+### Does HBW service Bay of Quinte boats from Brighton?
+
+Yes. The 50-minute drive from Brighton works for major service and repowers. For routine work, the trip may be more than it is worth, and that is an honest call to make. For engine repairs we only service Mercury and Mercruiser.
+
+### Does HBW sell new boats in addition to Mercury motors?
+
+Yes. We are also a Legend Boats dealer, aluminum fishing boats and pontoons, all Mercury-rigged. Worth a conversation if you are in the new-boat market.
+
+### Will HBW handle warranty work on a Mercury bought elsewhere?
+
+Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork.
 
 ## Next steps
 

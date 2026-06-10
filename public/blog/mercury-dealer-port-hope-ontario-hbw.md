@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-port-hope-ontario-hbw.md
-last_updated: 2026-05-17
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake"
 description: "Harris Boat Works is the closest Mercury Platinum dealer for Port Hope, ~30 minutes north via County Road 18. Live online repower quotes, Ganaraska + Rice Lake..."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-05-17
+date_modified: 2026-06-09
 keywords: ["mercury dealer port hope","port hope mercury outboard","ganaraska mercury dealer","northumberland mercury platinum"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-05-17  
+**Last updated:** 2026-06-09  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-port-hope-ontario-hbw
 
@@ -117,43 +117,27 @@ For a motor purchase conversation, call: 905-342-2153.
 - [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Platinum dealer serving Northumberland County since 1947. Rice Lake.
 - [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28.
 
-## Frequently Asked Questions, Port Hope
-
-**Is HBW the closest Mercury Platinum dealer to Port Hope?**
-For most Port Hope addresses, yes. We're 30 minutes north via County Road 28 and County Road 18. Closer non-Platinum Mercury shops may exist; for Platinum-tier service, HBW is the nearest option.
-
-**Do you service Lake Ontario salmon boats, not just inland?**
-Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs, we only service Mercury and Mercruiser.
-
-**Do you install Mercury 9.9 ProKickers?**
-Yes, we install a lot of them, especially for Port Hope and Cobourg anglers running primary motors with a ProKicker for trolling control. Full install includes mounting, linkage to the primary throttle, electrical, and steering tie-bar setup.
-
-**What's the typical Port Hope repower cost?**
-Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number. Most repowers in our region land in the $13,000-$25,000 installed range including HST.
-
-**Can I store my boat with you year-round?**
-Yes. Outdoor with shrinkwrap. For Port Hope customers whose boat lives on Rice Lake or in the Kawarthas during the season, year-round storage at HBW makes the launch logistics simpler.
-
-**Do you offer pickup/delivery?**
-No. HBW does NOT offer pickup or delivery. Customers bring their boat to us. We have trailer parking on site for drop-offs.
-
-**Can I trade in my current boat or motor?**
-Yes. Trade-in valuations are done in person at HBW. The Trade-In Value Guide at mercuryrepower.ca gives a starting estimate; the actual valuation happens when we see the boat.
-
-Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
----
-
-**Related guides:**
-- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
-- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
-
 ## FAQs
 
-_(no FAQs)_
+### Is there a Mercury Platinum dealer in Port Hope?
+
+Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Platinum Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Platinum dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.
+
+### How long is the drive from Port Hope to HBW?
+
+About 30 minutes outside rush hour. County Road 28 north from Port Hope through Garden Hill, then County Road 18 east into Gores Landing. Mostly rural county road, with the last 15 minutes through Rice Lake country. From the Port Hope waterfront, allow the full 30 minutes; from the Highway 401 area, slightly shorter.
+
+### Does HBW install Mercury 9.9 ProKickers for Port Hope salmon boats?
+
+Yes, we install a lot of them, especially for Port Hope and Cobourg anglers running a primary motor with a ProKicker for trolling control. A full install includes mounting, linkage to the primary throttle, electrical, and a steering tie-bar setup.
+
+### Will HBW service my Lake Ontario boat without me storing it on Rice Lake?
+
+Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs we only service Mercury and Mercruiser.
+
+### Does HBW offer pickup or delivery for Port Hope boats?
+
+No. HBW does not offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site for drop-offs.
 
 ## Next steps
 

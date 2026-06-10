@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md
-last_updated: 2026-04-11
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guid
 description: "Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season."
 category: "Service"
 date_published: 2026-04-11
-date_modified: 2026-04-11
+date_modified: 2026-06-09
 keywords: ["ethanol","octane","marine fuel","mercury outboard","ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Service  
 **Published:** 2026-04-11  
-**Last updated:** 2026-04-11  
+**Last updated:** 2026-06-09  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 
@@ -260,7 +260,29 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-_(no FAQs)_
+### What octane does a Mercury outboard need?
+
+The vast majority of modern Mercury 4-stroke outboards under 250 HP are engineered for 87 octane minimum, the standard pump Regular. Running 91 doesn't help them. Mercury's Verado line and certain high-output Pro XS V8 engines are higher-compression and require a minimum of 89 or 91 octane. Check the sticker on your motor or your owner's manual, don't guess.
+
+### Can I run ethanol gas (E10) in my Mercury outboard?
+
+You can, but for any boat that sits more than a few weeks it causes problems. Ethanol absorbs moisture from the air, eventually phase-separates from the gasoline, and the water-ethanol mix sinks to the bottom of the tank right where the fuel pickup sits. That leads to hard starting, rough running, internal corrosion, gummed carburettors, and unbudgeted service bills.
+
+### Is premium gas ethanol-free in Ontario?
+
+Not automatically. Premium pump gas in Ontario is typically still E10 unless the pump label specifically says otherwise. Premium refers to octane only. If you are buying premium at a regular gas station, read the label: if it does not explicitly say "ethanol-free," "no ethanol," or "non-ethanol blend," assume it contains ethanol.
+
+### Does Harris Boat Works sell ethanol-free fuel?
+
+Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. You can fill up on-site right before you launch or while you are tied up, no trailer required. Call 905-342-2153 for current fuel hours before coming in.
+
+### When should I use a fuel stabilizer?
+
+Use a marine fuel stabilizer for any storage over 30 days. With E10, 30 days is the real threshold before fuel quality starts dropping. Add stabilizer to the tank, top off with fuel so it mixes in, then run the motor for 10 to 15 minutes to circulate treated fuel through the carb and fuel lines. Skipping the run step leaves untreated fuel in the carb bowls.
+
+### What are the signs of a fuel system problem on a Mercury outboard?
+
+Hard starting after storage when it ran fine when put away, bogging at wide-open throttle, a primer bulb that won't pump firm, yellow or orange varnish in the carb bowl, water in the fuel-water separator, and inconsistent fuel gauge readings that can point to internal tank corrosion. Catching these early is cheaper than a mid-season breakdown.
 
 ## Next steps
 
