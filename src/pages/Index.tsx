@@ -24,9 +24,9 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 
 import heroImage from '@/assets/hero-proxs-sunset.jpg';
-import shopImage from '@/assets/landing-repower-shop.jpg';
 import jimHarrisHeritage from '@/assets/heritage/jim-harris-mercury-1960s.jpg';
 import ctaLakeImage from '@/assets/landing-cta-lake.jpg';
+import { useGooglePlaceData, type GoogleReview } from '@/hooks/useGooglePlaceData';
 
 const HOW_IT_WORKS = [
   {
@@ -41,6 +41,7 @@ const HOW_IT_WORKS = [
     icon: RotateCcw,
     image: '/lovable-uploads/home-step2-real-quote-builder.jpg',
     alt: 'The mercuryrepower.ca quote builder showing live Mercury prices in CAD',
+    framed: true, // raw screenshot, render inside a browser-window frame
     title: 'Configure trade-in & financing',
     body: 'Get an instant trade-in estimate, choose financing or pay-in-full, and see your real monthly payment.',
   },
@@ -53,28 +54,37 @@ const HOW_IT_WORKS = [
   },
 ];
 
-const TESTIMONIALS = [
-  {
-    name: 'Mike R.',
-    location: 'Peterborough, ON',
-    quote: 'Quoted my repower online in 5 minutes. The price I saw was the price I paid, exactly. Repower was done in two days.',
-  },
-  {
-    name: 'Sandra L.',
-    location: 'Toronto, ON',
-    quote: 'I had been calling dealers for weeks. Harris was the only one who showed me real prices upfront. Easy decision.',
-  },
-  {
-    name: 'Dave K.',
-    location: 'Cobourg, ON',
-    quote: 'Family-run, fair prices, and they actually know Mercury motors. Best repower experience I\'ve had in 30 years of boating.',
-  },
-];
+// Live Google review selection: 5-star only, substantial text, prefer repower/Mercury/motor/service mentions.
+const REVIEW_KEYWORDS = /repower|mercury|motor|service/i;
+
+function formatReviewerName(fullName: string): string {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return 'Google user';
+  if (parts.length === 1) return parts[0];
+  return `${parts[0]} ${parts[parts.length - 1].charAt(0).toUpperCase()}.`;
+}
+
+function selectFeaturedReviews(reviews: GoogleReview[] | undefined): GoogleReview[] {
+  if (!reviews || reviews.length === 0) return [];
+  const eligible = reviews.filter(
+    r => r.rating === 5 && (r.text?.trim().length ?? 0) >= 100
+  );
+  const preferred = eligible.filter(r => REVIEW_KEYWORDS.test(r.text));
+  const rest = eligible.filter(r => !REVIEW_KEYWORDS.test(r.text));
+  return [...preferred, ...rest].slice(0, 3);
+}
 
 export default function Index() {
   const navigate = useNavigate();
   const { state, getQuoteCompletionStatus } = useQuote();
   const { user } = useAuth();
+
+  // Live Google reviews (24h-cached via the google-places edge function).
+  const { data: placeData } = useGooglePlaceData();
+  const liveReviews = useMemo(
+    () => selectFeaturedReviews(placeData?.reviews),
+    [placeData?.reviews]
+  );
 
   const hasInProgressQuote = useMemo(() => {
     if (!state?.motor) return false;
@@ -187,7 +197,7 @@ export default function Index() {
               </p>
               <h2
                 className="font-display font-bold text-[clamp(28px,8vw,64px)] tracking-tight leading-[1.1] md:leading-[1.05] mb-4 md:mb-6"
-                style={{ letterSpacing: '-0.03em' }}
+                style={{ letterSpacing: '-0.03em', textWrap: 'balance' }}
               >
                 See your real price. <em className="not-italic italic text-[#C8102E]">Lock it.</em> Pick it up.
               </h2>
@@ -204,6 +214,7 @@ export default function Index() {
                   image={step.image}
                   alt={step.alt}
                   priority={step.priority}
+                  framed={step.framed}
                   title={step.title}
                   body={step.body}
                   stepNumber={i + 1}
@@ -227,7 +238,7 @@ export default function Index() {
                 <p className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-gold mb-2 md:mb-4">
                   Why repower
                 </p>
-                <h2 className="font-display font-bold tracking-tight text-2xl md:text-5xl text-repower-cream mb-3 md:mb-5 leading-[1.1]" style={{ letterSpacing: '-0.02em' }}>
+                <h2 className="font-display font-bold tracking-tight text-2xl md:text-5xl text-repower-cream mb-3 md:mb-5 leading-[1.1]" style={{ letterSpacing: '-0.02em', textWrap: 'balance' }}>
                   Why repower beats buying a new boat
                 </h2>
                 <p className="font-sans font-light text-repower-cream/75 text-sm md:text-lg mb-4 md:mb-7 leading-relaxed">
@@ -263,8 +274,9 @@ export default function Index() {
 
               <div className="rounded-xl overflow-hidden border border-repower-cream/10 bg-repower-navy-900/40 shadow-2xl">
                 <img
-                  src={shopImage}
-                  alt="Mercury-Certified technician installing a new outboard at the Harris Boat Works repower shop"
+                  src="/lovable-uploads/hero-mercury-90-shop-shot.png"
+                  data-photo-slot="hbw-real-shop-photo"
+                  alt="A new Mercury 90 FourStroke on the floor of the Harris Boat Works repower shop in Gores Landing"
                   loading="lazy"
                   width={1600}
                   height={1200}
@@ -275,47 +287,49 @@ export default function Index() {
           </div>
         </section>
 
-        {/* TESTIMONIALS */}
-        <section className="py-12 md:py-20 bg-repower-navy-800 border-t border-repower-cream/10">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-              <p className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-gold mb-2 md:mb-4">
-                Customers
-              </p>
-              <h2
-                className="font-display font-bold tracking-tight text-3xl md:text-5xl text-repower-cream mb-4 leading-[1.1]"
-                style={{ letterSpacing: '-0.02em' }}
-              >
-                What customers say
-              </h2>
-              <div className="flex items-center justify-center">
-                <GoogleRatingBadge variant="full" tone="dark" />
+        {/* TESTIMONIALS, live Google reviews. Hidden entirely if the API has no usable reviews. */}
+        {liveReviews.length > 0 && (
+          <section className="py-12 md:py-20 bg-repower-navy-800 border-t border-repower-cream/10">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-10">
+                <p className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-gold mb-2 md:mb-4">
+                  Customers
+                </p>
+                <h2
+                  className="font-display font-bold tracking-tight text-3xl md:text-5xl text-repower-cream mb-4 leading-[1.1]"
+                  style={{ letterSpacing: '-0.02em', textWrap: 'balance' }}
+                >
+                  What customers say
+                </h2>
+                <div className="flex items-center justify-center">
+                  <GoogleRatingBadge variant="full" tone="dark" />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                {liveReviews.map(review => (
+                  <div
+                    key={`${review.authorName}-${review.time}`}
+                    className="rounded-xl bg-repower-navy-900/60 border border-repower-cream/10 backdrop-blur-sm p-6 flex flex-col"
+                  >
+                    <div className="flex gap-0.5 text-repower-gold mb-3" aria-label="5 stars">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <span key={i}>★</span>
+                      ))}
+                    </div>
+                    <p className="text-repower-cream/90 leading-relaxed mb-4 italic line-clamp-6">
+                      &ldquo;{review.text.trim()}&rdquo;
+                    </p>
+                    <div className="text-sm mt-auto">
+                      <div className="font-medium text-repower-cream">{formatReviewerName(review.authorName)}</div>
+                      <div className="text-repower-cream/60">{review.relativeTime} · Google review</div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-
-            <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-              {TESTIMONIALS.map(t => (
-                <div
-                  key={t.name}
-                  className="rounded-xl bg-repower-navy-900/60 border border-repower-cream/10 backdrop-blur-sm p-6"
-                >
-                  <div className="flex gap-0.5 text-repower-gold mb-3" aria-label="5 stars">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <span key={i}>★</span>
-                    ))}
-                  </div>
-                  <p className="text-repower-cream/90 leading-relaxed mb-4 italic">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div className="text-sm">
-                    <div className="font-medium text-repower-cream">{t.name}</div>
-                    <div className="text-repower-cream/60">{t.location}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* FINAL CTA BAND */}
         <section className="relative py-14 md:py-24 text-primary-foreground overflow-hidden">

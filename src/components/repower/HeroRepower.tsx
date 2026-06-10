@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Phone, ChevronDown } from 'lucide-react';
 import { RepowerCta } from './RepowerCta';
@@ -46,6 +46,10 @@ export function HeroRepower() {
   const [endingIndex, setEndingIndex] = useState(0);
   const [reduceMotion, setReduceMotion] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+
+  // Fade the trust line out early on scroll so it never visually collides with the sticky nav.
+  const { scrollY } = useScroll();
+  const trustLineOpacity = useTransform(scrollY, [120, 380], [1, 0]);
 
   // Pick random ending on mount; set up gentle crossfade if motion allowed.
   useEffect(() => {
@@ -128,6 +132,15 @@ export function HeroRepower() {
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#050E1C]/70 via-transparent to-transparent" />
+      {/* Top scrim: keeps the gold eyebrow legible over bright sky frames and separates the hero from the sticky nav */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-40 md:h-48"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(5,14,28,0.72) 0%, rgba(5,14,28,0.38) 55%, rgba(5,14,28,0) 100%)',
+        }}
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-5 sm:px-6 md:px-14 py-24 sm:py-20 md:py-28">
         <motion.p
@@ -215,13 +228,15 @@ export function HeroRepower() {
           </Link>
         </motion.div>
 
-        {/* Persistent trust line */}
-        <motion.p
-          {...fadeUp(1.05)}
-          className="mt-4 font-sans text-[12px] md:text-[13px] text-[#F5F1EA]/65 max-w-2xl leading-relaxed"
-        >
-          We'll tell you no if a repower isn't right. Mercury dealer since 1965, and we plan to keep it that way.
-        </motion.p>
+        {/* Persistent trust line, fades out on scroll before it can collide with the sticky nav */}
+        <motion.div style={{ opacity: trustLineOpacity }}>
+          <motion.p
+            {...fadeUp(1.05)}
+            className="mt-4 font-sans text-[12px] md:text-[13px] text-[#F5F1EA]/65 max-w-2xl leading-relaxed"
+          >
+            We'll tell you no if a repower isn't right. Mercury dealer since 1965, and we plan to keep it that way.
+          </motion.p>
+        </motion.div>
       </div>
 
       <motion.div

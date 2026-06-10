@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo, useCallback, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+
 import { useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
 import { FinancingProvider } from '@/contexts/FinancingContext';
@@ -346,22 +346,6 @@ function MotorSelectionContent() {
     return () => observer.disconnect();
   }, []);
 
-  // Track grid columns based on viewport so animation stagger reflects actual rows.
-  // Matches Tailwind: grid-cols-1 / sm:2 / lg:3 / 2xl:4
-  const getGridColumns = () => {
-    if (typeof window === 'undefined') return 3;
-    const w = window.innerWidth;
-    if (w >= 1536) return 4;
-    if (w >= 1024) return 3;
-    if (w >= 640) return 2;
-    return 1;
-  };
-  const [gridColumns, setGridColumns] = useState(getGridColumns);
-  useEffect(() => {
-    const onResize = () => setGridColumns(getGridColumns());
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
   
   const [motors, setMotors] = useState<DbMotor[]>([]);
   const [promotions, setPromotions] = useState<Promotion[]>([]);
@@ -1108,7 +1092,7 @@ if (event.type === 'filter_motors') {
               <div className="max-w-[1400px] mx-auto px-6 md:px-14">
                 <div className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
                   {Array.from({ length: 8 }).map((_, i) => (
-                    <MotorCardSkeleton key={i} index={i} />
+                    <MotorCardSkeleton key={i} />
                   ))}
                 </div>
               </div>
@@ -1183,7 +1167,7 @@ if (event.type === 'filter_motors') {
         <div
           className={`sticky top-[64px] lg:top-[72px] z-40 transition-all duration-200 ease-out ${
             isSearchStuck
-              ? 'bg-[rgba(10,22,40,0.85)] supports-[backdrop-filter]:backdrop-blur-xl border-b border-[rgba(201,162,74,0.12)]'
+              ? 'bg-[rgba(10,22,40,0.92)] supports-[backdrop-filter]:backdrop-blur-xl border-b border-[rgba(201,162,74,0.12)] shadow-[0_8px_24px_-12px_rgba(5,14,28,0.65)]'
               : 'bg-transparent'
           }`}
         >
@@ -1285,8 +1269,7 @@ if (event.type === 'filter_motors') {
             <div
               className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
             >
-              {finalFilteredMotors.map((motor, index) => {
-                const colIndex = index % gridColumns;
+              {finalFilteredMotors.map((motor) => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
                 const specs = dbMotor?.specifications || {};
@@ -1308,17 +1291,7 @@ if (event.type === 'filter_motors') {
                  const heroImageUrl = (dbMotor as any)?.hero_media?.media_url || dbMotor?.image_url || motor.image || motor.images?.[0] || '';
                  
                  return (
-                   <motion.div data-motor-card
-                     key={motor.id}
-                     initial={{ opacity: 0, y: 12 }}
-                     whileInView={{ opacity: 1, y: 0 }}
-                     viewport={{ once: true, margin: '0px 0px -10% 0px' }}
-                     transition={{
-                       duration: 0.6,
-                       delay: colIndex * 0.08,
-                       ease: [0.2, 0.8, 0.2, 1],
-                     }}
-                   >
+                   <div data-motor-card key={motor.id}>
                    <MotorCardPreview
                    img={heroImageUrl}
                    title={motor.model}
@@ -1340,7 +1313,7 @@ if (event.type === 'filter_motors') {
                    motor={motor as any}
                    sharedData={sharedCardData}
                    />
-                   </motion.div>
+                   </div>
                );
              })}
            </div>
