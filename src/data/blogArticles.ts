@@ -13939,7 +13939,7 @@ For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Ou
     image: '/lovable-uploads/hero-mercury-suzuki-ontario-2026.png',
     author: 'Jay Harris',
     datePublished: '2026-06-06',
-    dateModified: '2026-06-06',
+    dateModified: '2026-06-10',
     category: 'Brand Comparison',
     readTime: '8 min',
     keywords: ['mercury vs suzuki', 'suzuki outboard reliability', 'ontario outboard comparison', 'mercury suzuki repower'],
@@ -13953,6 +13953,10 @@ For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Ou
 Harris Boat Works is a Mercury Marine Platinum dealer in Gores Landing, Ontario. We have been a Mercury dealer since 1965. We do not sell Suzuki and we do not service Suzuki. For engine repairs, we only service Mercury and Mercruiser.
 
 This page reflects our honest read of the Ontario market from a Mercury dealer's perspective. The Suzuki content below comes from public information, customer-side reports we hear when prospective customers describe what they were quoted elsewhere, and observed market behaviour in the Kawartha and Rice Lake region. If you want a Suzuki dealer's view of Suzuki, ask a Suzuki dealer.
+
+## The bottom line for Ontario freshwater
+
+Both Mercury and Suzuki build mechanically reliable four-stroke outboards in 2026, and a well-maintained example of either will outlast most hulls. The decision in Ontario rarely turns on the motor. It turns on service access: how far you are from an authorized dealer with parts on the shelf when something goes wrong in late June. In the Kawarthas and Rice Lake region that factor favours Mercury heavily; in a region with strong Suzuki dealer coverage, it may not. Match the brand to your service map, not to the spec sheet.
 
 ## Mechanical reliability in 2026
 
@@ -13992,7 +13996,7 @@ Equally honest. Mercury's real advantages in Ontario specifically:
 
 **SmartCraft integration.** Mercury's current SmartCraft and VesselView ecosystem, integrated gauges, integrated alarm diagnostics, on-water fault codes, is generally regarded as the most mature of the major outboard makers in the consumer space. Suzuki C-10 multifunction gauges exist but the ecosystem is narrower.
 
-**Software upgrade roadmap.** Mercury Boost is the current example. A dealer-installed software calibration that adds mid-range responsiveness on eligible motors without changing hardware. This kind of upgrade path is, so far, more developed at Mercury than at Suzuki. It also means that an existing Mercury fleet has a path to improved performance without a new motor purchase.
+**Software upgrade roadmap.** [Mercury Boost](/blog/mercury-boost-cost-canada-2026) is the current example. A dealer-installed software calibration that adds mid-range responsiveness on eligible motors without changing hardware. This kind of upgrade path is, so far, more developed at Mercury than at Suzuki. It also means that an existing Mercury fleet has a path to improved performance without a new motor purchase.
 
 **Parts shelf depth.** Mercury's parts availability in Ontario is consistently strong. Common service items are on dealer shelves. Less common items are usually one day away.
 
@@ -14017,9 +14021,25 @@ Equally honest. Mercury's real advantages in Ontario specifically:
 | Resale in Ontario (recreational) | Strong, deep buyer pool | Strong, smaller buyer pool |
 | Rigging cost if switching brand | n/a if staying Mercury | $2,000 to $3,000 CAD |
 
+## Common matchups people cross-shop
+
+These are the head-to-head classes we hear about most often from Ontario shoppers, and the factors that actually settle them.
+
+**90 to 115 HP class.** This is the aluminum fishing boat and small pontoon heartland, and the decision usually comes down to service access and resale. In the Kawarthas and Rice Lake region the Mercury service map is much denser, and the resale pool for Mercury-powered boats in this class is the deepest in Ontario. If you are switching brands on a repower, add the rigging conversion cost to the comparison before you decide.
+
+**150 HP class.** Bigger pontoons, bass boats, and family runabouts. Digital integration starts to matter here: if you want SmartCraft gauges and the software upgrade pathway, that points to Mercury; if your local Suzuki dealer is strong and close, that is a legitimate counterweight. Intended use and dealer proximity decide this class more often than anything on a brochure.
+
+**200 HP and up.** At this level the boat is a serious investment and downtime is expensive. Service access during the season, parts shelf depth, and the resale pool dominate the decision. Rigging conversion cost on a brand switch is proportionally smaller at this price point but still real; get it quoted as its own line item.
+
+We won't stage a spec battle here; both brands publish their numbers and they are close. The deciding factors are the ones above.
+
+## Weight and the transom reality on repowers
+
+Outboard weight varies more by model and configuration (shaft length, steering, gearcase) than by brand. On a repower, the hard limit is your boat's capacity plate: the maximum motor weight printed there is not a suggestion. For Mercury figures, see [our Mercury outboard weight chart](/blog/mercury-outboard-weight-chart), and remember that dry weight is not installed weight; controls, propeller, and fluids add to what the transom actually carries. For Suzuki weights, go to Suzuki's own published spec pages rather than third-party numbers.
+
 ## What a brand switch costs in Ontario
 
-If you currently run Mercury and you are considering Suzuki (or vice versa), the cost of switching is not just the motor. The full repower cost typically includes the motor itself, replacement rigging, controls, gauges, harnesses where they are brand-specific, adapter or replacement steering link where required, and labour for the rigging conversion.
+If you currently run Mercury and you are considering Suzuki (or vice versa), the cost of switching is not just the motor. The [full repower cost](/blog/mercury-repower-cost-ontario-2026-cad) typically includes the motor itself, replacement rigging, controls, gauges, harnesses where they are brand-specific, adapter or replacement steering link where required, and labour for the rigging conversion.
 
 The rigging conversion alone on an Ontario repower typically runs $2,000 to $3,000 CAD on top of the new motor purchase. That number is consistent across Ontario dealers and matches what we quote on Mercury-to-other-brand and other-brand-to-Mercury switches. It does not always show up on a comparison shopper's spreadsheet, but it should.
 
@@ -14029,7 +14049,7 @@ If you are coming from a Mercury and you are happy with the current motor's runn
 
 If you are choosing between Mercury and Suzuki on a new boat or repower, work through these five questions before you sign:
 
-1. **How far is the nearest authorized service dealer for each brand?** Driving 30 minutes vs. 90 minutes for warranty service is the most undercounted factor in long-term ownership cost.
+1. **How far is the nearest authorized service dealer for each brand?** Driving 30 minutes vs. 90 minutes for warranty service is the most undercounted factor in long-term ownership cost. Check both networks yourself: Mercury's dealer locator at [mercurymarine.com](https://www.mercurymarine.com) and Suzuki's at [suzuki.ca](https://www.suzuki.ca) both list authorized marine dealers; map the drive from where the boat actually lives.
 2. **What does the nearest dealer's parts shelf look like?** Common service items on the shelf is good. Common service items always backordered is bad. Either dealer will tell you the honest answer if you ask plainly.
 3. **What is the rigging conversion cost if you are switching brands?** Budget $2,000 to $3,000 CAD on top of the motor purchase if you are leaving your current brand. Confirm with the receiving dealer.
 4. **What is your motor going to do for the next 15 years?** Recreational weekend use, charter or rental, commercial work, high-hour repeat use. Different brands have different sweet spots in different categories.
@@ -14039,7 +14059,7 @@ The motor matters. The support behind it matters more.
 
 ## When it makes sense to switch to Mercury
 
-We will be plain about our bias here. From a Mercury dealer's perspective, a switch from Suzuki (or any other brand) to Mercury usually makes sense when the current brand's nearest service dealer is far enough away that mid-season warranty work is impractical, when the boat is being repowered and the rigging is going to be touched anyway (lowering the marginal cost of the brand switch), when the owner values SmartCraft integration and the software upgrade pathway, when the owner plans to keep the boat for 10+ years and dealer continuity matters, or when the customer values local dealer relationships and Mercury has a closer dealer.
+We will be plain about our bias here. From a Mercury dealer's perspective, a switch from Suzuki (or any other brand) to Mercury usually makes sense when the current brand's nearest service dealer is far enough away that mid-season warranty work is impractical, when the boat is being [repowered](/blog/repair-repower-or-sell-boat-ontario-decision-guide) and the rigging is going to be touched anyway (lowering the marginal cost of the brand switch), when the owner values SmartCraft integration and the software upgrade pathway, when the owner plans to keep the boat for 10+ years and dealer continuity matters, or when the customer values local dealer relationships and Mercury has a closer dealer.
 
 Conversely, staying with the current brand usually makes sense when the current motor is running well and the dealer relationship is solid, when the rigging investment is significant and would have to be redone, when the current brand's local dealer is closer than the nearest Mercury dealer, or when the owner has specific preference for a feature unique to the current brand.
 
@@ -14052,7 +14072,7 @@ Either decision can be the right one depending on the customer's situation. We a
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide): CAD pricing by HP.
 - [Mercury Extended Warranty Platinum (Ontario)](/blog/mercury-extended-warranty-platinum-ontario): warranty detail on the Mercury side.
 
-Family-owned since 1947, Mercury dealer since 1965, Mercury Platinum Dealer.`,
+Family-owned on Rice Lake since 1947.`,
     faqs: [
       { question: "Is Mercury more reliable than Suzuki in 2026?", answer: "Both brands make mechanically reliable four-stroke outboards in 2026. There is no meaningful defect-rate difference that should rule either one out on reliability alone. The bigger factor in long-term ownership is the maintenance habits of the owner and the service network behind the motor." },
       { question: "How long should a Mercury or Suzuki outboard last?", answer: "A properly maintained Mercury or Suzuki four-stroke outboard run 50 to 150 hours per season should provide 15 to 25 years of useful life. Oil changes on schedule, impeller replacement every couple of seasons, correct winterization, and avoiding running the motor hard before it is warmed up are the maintenance habits that drive that range." },
