@@ -2801,7 +2801,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     image: '/lovable-uploads/Breaking_In_New_Mercury_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2026-05-27',
+    dateModified: '2026-06-09',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
@@ -3009,20 +3009,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     howToTools: ['Mercury 4-stroke engine oil (10W-30)', 'Oil filter', 'Tachometer or SmartCraft gauge'],
     faqs: [
       {
-        question: 'What happens if I don\'t break in my motor properly?',
-        answer: 'Improper break-in can cause glazed cylinder walls, poor ring seating, and increased oil consumption. In severe cases, it can lead to premature engine wear and reduced power output.'
-      },
-      {
-        question: 'Can I go fishing during break-in?',
-        answer: 'Absolutely! Just vary your speed regularly - don\'t troll at the same RPM for extended periods. Plan routes that let you change speed every few minutes.'
-      },
-      {
-        question: 'Is the break-in procedure different for 2-stroke vs 4-stroke?',
-        answer: 'Yes. 2-stroke motors have specific fuel/oil mixture requirements during break-in. Follow your owner\'s manual closely, and note that modern Mercury 2-strokes use oil injection that adjusts automatically.'
-      },
-      {
-        question: 'Do I need to use Mercury oil during break-in?',
-        answer: 'The motor comes from the factory with standard Mercury FourStroke 10W-30 oil, there is no special break-in formulation. For all oil changes, we recommend Mercury 4-Stroke Marine Oil, but any quality marine-rated oil meeting Mercury specifications is acceptable.'
+        question: 'When is the first oil change on a new Mercury outboard?',
+        answer: 'At 20 hours. The break-in period is the first 10 hours, and the 20-hour first service (oil and filter change) is the one that matters most for the motor\'s long-term health and warranty record. Book it at hbw.wiki/service; HBW is at Gores Landing on Rice Lake.'
       },
       {
         question: 'What happens if I don\'t break in my Mercury motor properly?',
