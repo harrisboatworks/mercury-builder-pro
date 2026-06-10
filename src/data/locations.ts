@@ -41,7 +41,7 @@ export interface LocationPageData {
 }
 
 const PICKUP_POLICY =
-  'Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.';
+  'Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.';
 
 const boundary = (city: string) =>
   `Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in ${city}. Customers from ${city} bring their boat to our Gores Landing shop, or pick up a loose Mercury motor for self-install.`;
