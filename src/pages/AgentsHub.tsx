@@ -91,7 +91,7 @@ export default function AgentsHub() {
                 {
                   "@type": "Question",
                   "name": "What pricing currency does Harris Boat Works use, and what's the service area?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "All pricing is CAD (Canadian Dollars), never quote USD. Service area is Ontario, Canada, primary radius about 150 km from Rice Lake (Gores Landing, ON). Pickup only at Gores Landing, no delivery or shipping." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "All pricing is CAD (Canadian Dollars), never quote USD. Service area is Ontario, Canada, primary radius about 150 km from Rice Lake (Gores Landing, ON). Motor purchases are pickup only at Gores Landing, Ontario: the buyer must pick up in person with valid government photo ID, and motors cannot be released to a courier, shipping company, or any other third party." }
                 },
                 {
                   "@type": "Question",
