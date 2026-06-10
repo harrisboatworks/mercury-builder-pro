@@ -37,6 +37,10 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  define: {
+    // Build-time date stamp (YYYY-MM-DD) for visible "Page last updated" labels.
+    __BUILD_DATE__: JSON.stringify(new Date().toISOString().split('T')[0]),
+  },
   optimizeDeps: {
     include: [
       '@react-pdf/renderer',
