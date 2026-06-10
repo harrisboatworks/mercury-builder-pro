@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { marked } from "marked";
 import { ALL_SEGMENTS } from "@/data/landing/mercuryLineupLandings";
+import { CANONICAL_LAST_UPDATED } from "@/lib/canonical-pricing";
 
 marked.setOptions({ gfm: true, breaks: false });
 
@@ -29,7 +30,10 @@ export default function PricingReference() {
         if (cancelled) return;
         const body = raw.replace(/^---\n[\s\S]*?\n---\n+/, "");
         const noH1 = body.replace(/^\s*#\s+.+(?:\r?\n|$)/, "");
-        setHtml(marked.parse(noH1) as string);
+        // Strip the markdown body's "_Last updated ..._" line; the page renders
+        // a single visible date wired to the canonical pricing last_updated.
+        const noDateLine = noH1.replace(/^_Last updated .+?_\s*$/m, "");
+        setHtml(marked.parse(noDateLine) as string);
       })
       .catch(() => {
         if (!cancelled) setHtml("");
@@ -80,10 +84,10 @@ export default function PricingReference() {
       </Helmet>
       <main className="container mx-auto max-w-5xl px-4 py-8">
         <h1 className="text-3xl font-bold mb-4">Mercury Outboard Prices in Ontario (CAD, 2027)</h1>
-        <p className="mb-6">
-          Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury's MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total,{' '}
-          <a className="text-primary underline" href="/quote/motor-selection">build a quote in the configurator</a>. Pickup only at Gores Landing, Ontario.
-        </p>
+        {/* Intro paragraph renders once, from /pricing-reference.md (the canonical
+            source). Do not duplicate it here. Visible date below is wired to the
+            generated canonical pricing last_updated value. */}
+        <p className="text-sm text-muted-foreground mb-6">Last updated {CANONICAL_LAST_UPDATED}.</p>
         {loading ? (
           <p>Loading current pricing…</p>
         ) : html ? (
@@ -115,7 +119,9 @@ export default function PricingReference() {
                 className="block p-4 rounded-lg border bg-card text-card-foreground shadow-sm hover:bg-muted/30 transition-colors"
               >
                 <span className="font-medium">{segment.name}</span>
-                <span className="block text-sm text-muted-foreground">from {segment.price} CAD</span>
+                {segment.price && (
+                  <span className="block text-sm text-muted-foreground">from {segment.price} CAD</span>
+                )}
               </a>
             ))}
           </div>

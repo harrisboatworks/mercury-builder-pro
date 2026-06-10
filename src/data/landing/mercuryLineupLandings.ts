@@ -2,6 +2,8 @@
 // Each config drives both the React page (src/pages/landing/MercuryLineupLanding.tsx)
 // and the static-prerender noscript/JSON-LD output (scripts/static-prerender.mjs).
 
+import { CANONICAL_SKUS } from '../canonical-pricing.generated';
+
 export interface LandingVariant {
   name: string;
   hp: string;
@@ -271,9 +273,19 @@ export interface SegmentLink {
   price: string;
 }
 
+// Segment "from" prices derive from the same canonical pricing data as the
+// /pricing-reference tables (src/data/canonical-pricing.generated.ts, itself
+// regenerated from public/pricing-reference.md each build) so they can never
+// drift from the table prices.
+function segmentFromPrice(pred: (sku: { hp: number; family: string; dealer: number }) => boolean): string {
+  const prices = CANONICAL_SKUS.filter(pred).map((s) => s.dealer);
+  if (!prices.length) return '';
+  return '$' + Math.min(...prices).toLocaleString('en-CA', { maximumFractionDigits: 0 });
+}
+
 export const ALL_SEGMENTS: SegmentLink[] = [
-  { path: '/mercury/pro-xs-250', name: 'Mercury Pro XS 250', price: '$34,502' },
-  { path: '/mercury/portable-9-20hp', name: 'Mercury 9.9 to 20 HP Portable', price: '$3,553' },
-  { path: '/mercury/mid-range-40-60hp', name: 'Mercury 40 to 60 HP Mid-Range', price: '$9,532' },
-  { path: '/mercury/mid-power-90-115hp', name: 'Mercury 90 to 115 HP', price: '$14,812' },
+  { path: '/mercury/pro-xs-250', name: 'Mercury Pro XS 250', price: segmentFromPrice((s) => s.family === 'ProXS' && s.hp === 250) },
+  { path: '/mercury/portable-9-20hp', name: 'Mercury 9.9 to 20 HP Portable', price: segmentFromPrice((s) => s.hp >= 9.9 && s.hp <= 20) },
+  { path: '/mercury/mid-range-40-60hp', name: 'Mercury 40 to 60 HP Mid-Range', price: segmentFromPrice((s) => s.hp >= 40 && s.hp <= 60) },
+  { path: '/mercury/mid-power-90-115hp', name: 'Mercury 90 to 115 HP', price: segmentFromPrice((s) => s.hp >= 90 && s.hp <= 115) },
 ];
