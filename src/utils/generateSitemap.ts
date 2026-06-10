@@ -27,7 +27,6 @@ function buildMultilingualBlogEntries(today: string): SitemapEntry[] {
     articles.map((a) => ({
       loc: `/blog/${lang}/${a.slug}`,
       lastmod:
-        a.publishDate ||
         a.dateModified ||
         a.datePublished ||
         today,
@@ -143,7 +142,7 @@ export function generateSitemapXML(): string {
 
   const blogEntries: SitemapEntry[] = allArticles.map(article => ({
     loc: `/blog/${article.slug}`,
-    lastmod: article.publishDate || article.dateModified || article.datePublished,
+    lastmod: article.dateModified || article.datePublished,
     changefreq: 'monthly' as const,
     priority: 0.7,
     image: article.image ? {
@@ -294,7 +293,7 @@ export async function generateFullSitemapXML(): Promise<string> {
 
   const blogEntries: SitemapEntry[] = allArticles.map(article => ({
     loc: `/blog/${article.slug}`,
-    lastmod: article.publishDate || article.dateModified || article.datePublished,
+    lastmod: article.dateModified || article.datePublished,
     changefreq: 'monthly' as const,
     priority: 0.7,
     image: article.image ? {

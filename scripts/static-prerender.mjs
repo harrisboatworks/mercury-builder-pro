@@ -4904,7 +4904,7 @@ const blogSitemapEntries = visibleEnglishArticles.map(a => ({
   loc: `/blog/${a.slug}`,
   priority: 0.7,
   changefreq: 'monthly',
-  lastmod: (a.publishDate || a.dateModified || a.datePublished || today).split('T')[0],
+  lastmod: (a.dateModified || a.datePublished || today).split('T')[0],
   imageUrl: a.image ? (a.image.startsWith('/') ? `${SITE_URL}${a.image}` : a.image) : null,
   imageTitle: a.title,
 }));
