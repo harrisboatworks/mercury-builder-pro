@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing.md
-last_updated: 2026-06-05
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Recommended Mercury Outboard Setup for Lake Simcoe Walleye Fishing (2026
 description: "A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the right Mercury outboard for every Simcoe setup."
 category: "Fishing & Local"
 date_published: 2026-04-21
-date_modified: 2026-06-05
+date_modified: 2026-06-09
 keywords: ["best Mercury outboard for Lake Simcoe fishing","Lake Simcoe fishing guide 2026","Lake Simcoe walleye fishing","Lake Simcoe lake trout fishing","Lake Simcoe fishing regulations 2026"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-21  
-**Last updated:** 2026-06-05  
+**Last updated:** 2026-06-09  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing
 
@@ -189,21 +189,9 @@ For a 17 to 19 ft setup with 115 to 150 HP main and 9.9 ProKicker, $20,000 to $3
 
 For pure cruising and family use, yes for some operators. For walleye fishing, deep-V hulls handle Simcoe better than tritoons. Tritoons are great for sheltered Cook's Bay; less ideal for open Simcoe in chop.
 
-### Where do I launch on Lake Simcoe?
-
-Multiple public ramps: Lefroy, Beaverton, Barrie, Keswick, Sutton. Each has different wind exposure and fishing access characteristics. Local knowledge matters.
-
 ### What electronics do I need for Simcoe walleye fishing?
 
 GPS chartplotter, sonar capable of 80+ ft depths, side imaging useful for structure. Garmin, Lowrance, Humminbird, and Raymarine all make units that work. Modern Mercury motors integrate with all four.
-
-### When is the best time to fish Simcoe walleye?
-
-Walleye opener on Lake Simcoe is the Saturday closest to May 15 (per Ontario MNRF FMZ 16 rules - confirm annually). Fall (September to October) is also strong. Ice fishing season produces bigger fish but is a different sport.
-
-### What Fisheries Management Zone is Lake Simcoe in?
-
-FMZ 16. Confirm current regulations with the Ontario MNRF Fishing Regulations Summary each season.
 
 ## Next steps
 

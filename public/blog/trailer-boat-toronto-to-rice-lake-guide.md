@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md
-last_updated: 2026-04-26
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Trailer a Boat from Toronto to Rice Lake (Complete 2026 Guide)"
 description: "A guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive."
 category: "How To"
 date_published: 2026-04-26
-date_modified: 2026-04-26
+date_modified: 2026-06-09
 keywords: ["trailer boat toronto rice lake","ontario trailer rules","boat launch rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** How To  
 **Published:** 2026-04-26  
-**Last updated:** 2026-04-26  
+**Last updated:** 2026-06-09  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide
 
@@ -203,10 +203,6 @@ A good rule of thumb for towing a boat trailer is 100-105 km/h on Ontario highwa
 
 Backing a trailer requires moving the steering wheel in the opposite direction from where you want the trailer to go. A common technique: put your hand at the bottom of the steering wheel and move it in the direction you want the trailer to go. Go slowly, small corrections are easier than large recovery moves. Walk the ramp first so you know what's at the bottom. Have a spotter if possible. If you're new to backing trailers, practice in an empty parking lot before heading to a busy ramp. Most rookies take 3-5 attempts; most experienced towers have a bad day eventually.
 
-### Are there gas stations or rest stops between Toronto and Rice Lake?
-
-Yes. There are fuel stops along the Highway 115/35 corridor, and gas stations in Peterborough on the way through. County Road 2 between Peterborough and the Rice Lake area has fuel options at larger intersections near Bewdley. It's a short enough drive that most trucks won't need to stop, but towing significantly reduces fuel economy, if your gauge is below half a tank leaving Toronto, stop before Peterborough rather than gambling on county road options. There are Tim Hortons and fast food at the major Peterborough exits.
-
 ### Can I leave my trailer at the boat launch overnight?
 
 It depends on the launch. County-run ramps in Northumberland (Bewdley, Harwood) typically allow vehicles and trailers to park overnight, but confirm with local signage, rules change seasonally and overflow parking during peak weekends can mean unofficial lots. Serpent Mounds Provincial Park has day-use fees with limited overnight trailer parking. At Gores Landing, customers using Harris Boat Works for storage or service can arrange secure trailer parking, call us at 905-342-2153 to confirm availability before your trip.
@@ -214,10 +210,6 @@ It depends on the launch. County-run ramps in Northumberland (Bewdley, Harwood) 
 ### What should I check on my outboard before trailering?
 
 Before trailering, ensure the outboard is tilted fully up and the tilt lock engaged to prevent motor bounce on the road. Reinstall the engine flush plug if you flushed the motor. Make sure the motor support bracket or transom saver is in place for trips over an hour, road vibration transmits through the transom, and a transom saver distributes that load across the trailer rather than the transom. If the motor hasn't run yet this season, check our [spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) before the first launch. Our spring startup service averages about $511 based on 232 jobs completed last season, it's worth having it done before the first long haul.
-
-### Is Rice Lake suitable for all boat sizes?
-
-Rice Lake is a shallow, fertile lake, average depth under 20 feet, with a maximum around 27 feet. It's well-suited for aluminum fishing boats, pontoons, small bowriders, and bass boats. It's not the right water for large deep-V hulls or offshore-style boats. The shallow, weedy character means a prop that can handle aquatic vegetation is useful, and draft matters at certain access points. For most cottage and fishing rigs in the 14-22 foot range, Rice Lake is excellent year-round boating water.
 
 ## Next steps
 

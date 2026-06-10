@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-05-05
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What Happens During a Mercury Repower (Step-by-Step Process)"
 description: "A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking..."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-05-05
+date_modified: 2026-06-09
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last updated:** 2026-05-05  
+**Last updated:** 2026-06-09  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
@@ -215,14 +215,6 @@ Mercury-to-Mercury repowers: 2 to 4 days of shop time after drop-off. Brand conv
 
 For Rice Lake and Kawartha-area customers, we can do walk-arounds at your dock or storage location. For longer-distance customers, photos and a phone call work for initial assessment, then bring the boat to HBW for the actual quote and repower.
 
-### Is the walk-around free?
-
-Yes for HBW customers. No commitment required. We do these all year.
-
-### Can I be present during the repower?
-
-You can be at HBW for drop-off and pickup, but the repower itself is shop work. We don't typically allow customers in the shop during install for safety and workflow reasons. We send progress updates if you want them.
-
 ### What happens if my transom has soft spots?
 
 We contact you with options: fix transom now and proceed with repower, fix transom and delay repower until done, or step back and reconsider whether the hull is worth keeping. Most transoms are solid; this is a small percentage of cases.
@@ -250,10 +242,6 @@ Right away, with the 10-hour break-in protocol. The first hour at no-wake speed 
 ### Can I trade in my old motor during the repower?
 
 Yes. We give fair-market trade-in value applied to the new motor purchase. Specific value depends on motor age, condition, and demand. Some old motors have significant trade-in value; some are essentially scrap.
-
-### Do I need to do anything for warranty?
-
-We complete Mercury warranty registration during the install. You should keep service records for warranty claims (we provide service log copies). The warranty starts on delivery date.
 
 ### What if something's wrong after pickup?
 

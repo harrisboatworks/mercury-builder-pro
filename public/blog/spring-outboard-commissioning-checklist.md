@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist.md
-last_updated: 2026-05-04
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Spring Outboard Commissioning Checklist (2026 Ontario)"
 description: "Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical, and hull. Book early at HBW Ontario."
 category: "Maintenance"
 date_published: 2026-03-30
-date_modified: 2026-05-04
+date_modified: 2026-06-09
 keywords: ["spring boat commissioning","outboard commissioning","spring boat startup","mercury spring maintenance","boat season prep"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Maintenance  
 **Published:** 2026-03-30  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-09  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist
 
@@ -236,22 +236,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 Harris Boat Works | Since 1947 | Mercury Marine Platinum Dealer | Gores Landing, ON
 
 ## FAQs
-
-### How long should I flush the motor before first start?
-
-Start with water flowing and continue flushing throughout the warm-up period (5-10 minutes total). This clears any debris and ensures cooling system works properly.
-
-### My motor was properly winterized - can I skip commissioning?
-
-Never skip commissioning. Even properly winterized motors need battery checks, propeller inspection, and test running before the first trip. Things happen over winter.
-
-### When should I change the gear oil?
-
-Gear oil should be changed annually. If it was changed during fall winterization, you're good. If not, spring commissioning is the time.
-
-### How do I know if water got in the lower unit?
-
-Check the gear oil. Milky, gray, or chocolate-colored oil indicates water intrusion. This requires immediate attention - don't run the motor.
 
 ### How long should I flush the motor before the first start of the season?
 

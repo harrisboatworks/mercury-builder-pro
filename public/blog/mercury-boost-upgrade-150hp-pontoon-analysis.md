@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-05-04
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-
 description: "For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. Real-world gains are small once load and hull drag enter the equation."
 category: "Performance"
 date_published: 2026-04-30
-date_modified: 2026-05-04
+date_modified: 2026-06-09
 keywords: ["mercury boost upgrade pontoon","mercury boost 150hp","mercury software upgrade"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Performance  
 **Published:** 2026-04-30  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-09  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
@@ -187,10 +187,6 @@ Mercury Boost eligibility is specific to certain FourStroke and Verado model yea
 ### Will Mercury Boost make my pontoon go faster?
 
 Not at top speed. Mercury Boost improves low-end and mid-range torque, which translates to a faster hole shot (coming up on cruise sooner) and better mid-throttle response. Once the pontoon is up on cruise and approaching wide-open throttle, Boost has minimal effect on the maximum speed the motor and hull combination will achieve. If faster top-end speed is your goal, the variables that matter are propeller pitch, motor horsepower, and hull form, not a calibration upgrade. For that use case, a 2026 Mercury 200 L Pro XS ($31,955 MSRP) or 250 L Pro XS ($41,525 MSRP) is the more direct path.
-
-### Is Mercury Boost a one-time upgrade or a subscription?
-
-Mercury Boost is a one-time upgrade, not a subscription service. Once the calibration is applied to your motor's ECM by a certified dealer, it remains in effect. There are no recurring fees. The upgrade is tied to the motor, if you sell the boat with the motor, the Boost calibration transfers with it. Confirm the one-time nature of the pricing with your specific dealer, as program structures can occasionally change.
 
 ### Should I get Boost before or after a prop change?
 

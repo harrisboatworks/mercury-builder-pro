@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario.md
-last_updated: 2026-05-05
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Rigging Costs Explained (Ontario 2026)"
 description: "Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-05-05
+date_modified: 2026-06-09
 keywords: ["mercury rigging cost","outboard rigging ontario","boat repower rigging","hydraulic steering upgrade","mercury install cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last updated:** 2026-05-05  
+**Last updated:** 2026-06-09  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 
@@ -238,21 +238,9 @@ Aluminum 3-blade: typically $450 CAD for motors up to 115 HP. Stainless 3 or 4-b
 
 Some service yes (oil changes, prop swaps, gauge cleaning). Throttle/shift integration, harness routing, brand conversions, and any wiring should be done by a Mercury-certified technician. DIY rigging mistakes can damage the new motor or void warranty.
 
-### What if my current fuel hose is fine?
-
-We replace fuel hoses on most repowers because old fuel hoses can degrade and contaminate the new motor's fuel system. If your fuel hose is genuinely new (under 5 years and in great shape), we'll keep it. Most aren't.
-
-### Do I need new battery cables?
-
-Heavier-gauge cables are needed for higher-HP motors. If your existing cables are properly sized and in good condition, often kept. We inspect and replace as needed.
-
 ### How long does the rigging install take?
 
 For Mercury-to-Mercury repowers, rigging is part of the 2 to 4 day shop time. Brand conversions take longer (typically 4 to 6 days) because of the additional rigging work. Spring rush adds wait time before the shop starts.
-
-### Can I get rigging without a new motor?
-
-Yes for some applications. We do rigging refresh projects (new controls, new harness, new prop) without motor replacement on customers who want to extend the life of their existing rigging. [Contact us](/contact) for quotes.
 
 ### What rigging components fail most often?
 

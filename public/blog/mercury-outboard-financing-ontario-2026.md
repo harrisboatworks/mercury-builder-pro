@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md
-last_updated: 2026-05-31
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Repower Financing in Ontario (2026 Guide)"
 description: "Mercury outboard financing in Ontario through HBW - current 5.48% APR TD Always On rate through Dec 31 2026, what you can finance, terms, and how the application works."
 category: "Financing & Value"
 date_published: 2026-04-20
-date_modified: 2026-05-31
+date_modified: 2026-06-09
 keywords: ["mercury outboard financing Ontario","finance boat motor Ontario","mercury repower financing Canada","marine loan Ontario 2026","mercury outboard payment plan"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Financing & Value  
 **Published:** 2026-04-20  
-**Last updated:** 2026-05-31  
+**Last updated:** 2026-06-09  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
 
@@ -173,29 +173,9 @@ We do not require a specific down payment percentage. Some customers put 0% down
 
 Your old motor has trade-in value, even if it's dead. Our trade-in valuation tool gives you an instant credit estimate. The credit reduces the financed total, which reduces your monthly payment.
 
-### What credit score do I need?
-
-The TD path can work for a range of credit profiles, subject to lender approval. Excellent credit unlocks the best terms and rates. Fair credit may still qualify, sometimes at a higher tier. We do not pull your credit until you have built a serious quote and asked us to start the application.
-
-### How long does financing approval take?
-
-Most decisions come back in 24 to 48 hours after you submit the online application.
-
-### Can I pay off my financing early?
-
-Yes. No prepayment penalty on the TD program. If you sell the boat, get a bonus, or just decide to pay it off in full, you can do that without extra fees.
-
 ### Should I pay cash or finance my repower?
 
 If you have the cash and your other money is not earning more than the financing rate, paying cash usually wins mathematically. If your savings is earning more than the rate, or paying cash would deplete your emergency fund, financing is the right call. We will not push you either way.
-
-### Is HST included in the financing?
-
-Yes. HST gets added to the project total and gets included in the financed amount. You do not have to pay tax up front separately.
-
-### How do I get started with Mercury financing?
-
-Build a quote at mercuryrepower.ca. Three minutes. Then click through to the financing page to see your live payment options at the current TD rate. When you are ready, the application is online and approval comes back in 24 to 48 hours.
 
 ### Is there a minimum amount to finance a Mercury outboard?
 

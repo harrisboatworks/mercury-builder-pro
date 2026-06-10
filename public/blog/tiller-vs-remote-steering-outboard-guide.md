@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md
-last_updated: 2026-05-04
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Tiller vs Remote Steering Outboard: Which to Choose (2026)"
 description: "Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want direct hands-on control."
 category: "Buying Guide"
 date_published: 2026-04-06
-date_modified: 2026-05-04
+date_modified: 2026-06-09
 keywords: ["tiller vs remote outboard","tiller steering boat","outboard remote steering","boat steering options","mercury tiller motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-04-06  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
 
@@ -187,22 +187,6 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricin
 ---
 
 ## FAQs
-
-### Can I convert from tiller to remote later?
-
-On some motors, yes. Mercury offers remote conversion kits for certain models. However, it's usually more cost-effective to buy the right configuration initially.
-
-### Is tiller harder to learn?
-
-It's different, not harder. Most people adapt quickly. Steering is reversed from what car-drivers expect, but it becomes intuitive with practice.
-
-### What's the biggest motor available in tiller?
-
-Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used.
-
-### Can I have both tiller and remote?
-
-Not simultaneously. Some boats with kicker motors have remote main motor and tiller kicker, giving the benefits of both in different situations.
 
 ### Can I convert my Mercury outboard from tiller to remote steering later?
 

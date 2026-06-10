@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats.md
-last_updated: 2026-05-04
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Command Thrust on a Pontoon: Worth the Money?"
 description: "Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-05-04
+date_modified: 2026-06-09
 keywords: ["mercury command thrust","command thrust pontoon","mercury gearcase","pontoon repower","mercury fourstroke pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-09  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats
 
@@ -179,17 +179,9 @@ Slightly, yes. The torque-tuned ratio trades some top end for hole shot and pull
 
 On heavy boats running at lower cruise speeds (typical pontoon use), yes. The lower cruise speed lets the motor run at more efficient RPM. On lighter boats running at higher speeds, fuel economy is similar or slightly worse than standard gearcase.
 
-### Should I get Command Thrust on a fishing boat?
-
-For aluminum console fishing boats under 18 ft, standard gearcase is fine. For 18+ ft deep-V aluminum or heavy fishing rigs with full gear, Command Thrust gives meaningful improvement. We assess per boat.
-
 ### Can I retrofit Command Thrust to my existing Mercury motor?
 
 Sometimes. A Command Thrust conversion depends on the exact motor, gearcase, shaft length, controls, prop, and whether the swap makes financial sense. In most cases, it is cleaner and more cost-effective to choose the right gearcase during a planned repower. The cost includes the new gearcase, new prop, and labor. Sometimes worth doing as a separate project; usually most cost-effective during a planned repower.
-
-### Will Command Thrust work with my existing rigging?
-
-Yes in most cases. The motor mounting, throttle, shift, and steering systems are the same. The gearcase is below the powerhead and does not affect rigging compatibility.
 
 ### Is Command Thrust the same as SeaPro?
 
