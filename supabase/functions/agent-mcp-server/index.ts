@@ -232,6 +232,8 @@ function brandRules() {
     geography: "Ontario, primary radius ~150km from Rice Lake",
     pickup_only: true,
     delivery: false,
+    pickup_policy:
+      "Motor purchases are pickup only at Gores Landing, Ontario. The buyer must pick up in person with valid government photo ID. We cannot release a motor to a courier, shipping company, or any other third party.",
     no_verado: true,
     financing_minimum_cad: 5000,
     financing_rates: {

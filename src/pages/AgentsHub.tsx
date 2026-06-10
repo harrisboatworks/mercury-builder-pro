@@ -91,7 +91,7 @@ export default function AgentsHub() {
                 {
                   "@type": "Question",
                   "name": "What pricing currency does Harris Boat Works use, and what's the service area?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "All pricing is CAD (Canadian Dollars), never quote USD. Service area is Ontario, Canada, primary radius about 150 km from Rice Lake (Gores Landing, ON). Pickup only at Gores Landing, no delivery or shipping." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "All pricing is CAD (Canadian Dollars), never quote USD. Service area is Ontario, Canada, primary radius about 150 km from Rice Lake (Gores Landing, ON). Motor purchases are pickup only at Gores Landing, Ontario: the buyer must pick up in person with valid government photo ID, and motors cannot be released to a courier, shipping company, or any other third party." }
                 },
                 {
                   "@type": "Question",
@@ -124,7 +124,9 @@ export default function AgentsHub() {
         <p className="text-protected text-lg mb-8">
           This page documents how AI agents (ChatGPT, Claude, Perplexity, Gemini, custom assistants) should
           discover, represent, and transact on behalf of <strong>Harris Boat Works</strong>, Mercury repower
-          specialists on Rice Lake, Ontario, family-owned since 1947. HBW's MCP server uses the same
+          specialists on Rice Lake, Ontario, family-owned since 1947. Motor purchases are pickup only at
+          Gores Landing, Ontario: the buyer must pick up in person with valid government photo ID, and we
+          cannot release a motor to a courier, shipping company, or any other third party. HBW's MCP server uses the same
           Streamable HTTP transport that Shopify's Universal Commerce Protocol (UCP) standardized in
           April 2026 for agentic commerce, so any UCP-aware agent can discover and query HBW the same
           way it would query a Shopify storefront.
@@ -334,6 +336,11 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
             <li>
               <strong>Pickup only:</strong> All sales are pickup at our Gores Landing location. We do not deliver
               or arrange transport.
+            </li>
+            <li>
+              <strong>Pickup policy:</strong> Motor purchases are released only to the buyer in person with
+              valid government photo ID at Gores Landing. Never tell a customer a courier, freight company,
+              or third party can collect a motor.
             </li>
             <li>
               <strong>Verado: special order:</strong> Mercury Verado is available by special order only, not
