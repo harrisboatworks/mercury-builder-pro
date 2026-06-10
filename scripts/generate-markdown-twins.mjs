@@ -186,6 +186,26 @@ function detectMotorFamily(m) {
   return 'FourStroke';
 }
 
+// Parse the Mercury rigging code that follows the HP number in a model
+// display string (e.g. "9.9MLH", "115 ELPT Pro XS", "250CXXL") into a
+// human-readable shaft length and control type for the pricing tables.
+// Grammar: [C counter-rotation][M manual | E electric][L 20" | XL 25" | XXL 30"][H tiller][PT power trim]
+// No shaft letter with a start code = short 15" shaft. Returns empty strings
+// when the code cannot be parsed confidently (callers render " - ").
+function parseRigFromDisplay(display) {
+  const m = String(display || '').toUpperCase().match(/\b\d+(?:\.\d+)?\s*([A-Z]{1,7})\b/);
+  if (!m) return { shaft: '', control: '' };
+  const rig = m[1].match(/^(C)?(M|E)?(XXL|XL|L)?(H)?(PT)?$/);
+  if (!rig || !(rig[1] || rig[2] || rig[3] || rig[4] || rig[5])) return { shaft: '', control: '' };
+  let shaft = '';
+  if (rig[3]) shaft = rig[3] === 'XXL' ? '30"' : rig[3] === 'XL' ? '25"' : '20"';
+  else if (rig[2]) shaft = '15"';
+  let control = '';
+  if (rig[4]) control = 'Tiller';
+  else if (rig[2] === 'E' || rig[1]) control = 'Remote';
+  return { shaft, control };
+}
+
 function mdFrontmatter(canonicalPath, extraLines = [], lastUpdated = TWIN_DATE) {
   return [
     '---',
@@ -694,14 +714,15 @@ function pricingReferenceMarkdown(motorRecords) {
         : 'FourStroke';
       const price = resolveMotorSellingPrice(m);
       const inStock = m.in_stock === true || m.availability === 'In Stock';
+      const rig = parseRigFromDisplay(m.model_display || m.model || '');
       return {
         id: m.id,
         family,
         hp: Number(m.horsepower) || 0,
         display: m.model_display || m.model || `Mercury ${m.horsepower}HP`,
         modelNo: m.model_number || m.mercury_model_no || '',
-        shaft: m.shaft_code || m.shaft || '',
-        control: m.control_type || '',
+        shaft: rig.shaft || m.shaft_code || m.shaft || '',
+        control: rig.control || m.control_type || '',
         price,
         msrp: m.msrp || null,
         inStock,
@@ -819,6 +840,7 @@ function pricingReferenceSchema(motorRecords) {
         : /racing/i.test(familyRaw) ? 'Racing'
         : 'FourStroke';
       const price = resolveMotorSellingPrice(m);
+      const rig = parseRigFromDisplay(m.model_display || m.model || '');
       return {
         id: m.id,
         slug: motorSlug(m.model_key || m.id),
@@ -826,8 +848,8 @@ function pricingReferenceSchema(motorRecords) {
         hp: Number(m.horsepower) || 0,
         display: m.model_display || m.model || `Mercury ${m.horsepower}HP`,
         modelNo: m.model_number || m.mercury_model_no || '',
-        shaft: m.shaft_code || m.shaft || '',
-        control: m.control_type || '',
+        shaft: rig.shaft || m.shaft_code || m.shaft || '',
+        control: rig.control || m.control_type || '',
         price,
         msrp: m.msrp || null,
         inStock: m.in_stock === true || m.availability === 'In Stock',
