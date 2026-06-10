@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario.md
-last_updated: 2026-06-07
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator Electric Outboards: Cost & Range (Canada)"
 description: "Mercury Avator electric outboards: what they cost, how far they go, and whether one fits Rice Lake. Honest take from a Mercury Platinum dealer."
 category: "Buying Guide"
 date_published: 2026-02-06
-date_modified: 2026-06-07
+date_modified: 2026-06-09
 keywords: ["mercury avator","electric outboard motor","avator electric boat","electric boating ontario","mercury electric motor","cottage boat electric","rice lake electric outboard","avator range runtime","avator cost canada"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  
-**Last updated:** 2026-06-07  
+**Last updated:** 2026-06-09  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario
+
+> **Quick answer:** Mercury's Avator electric line runs from the 7.5e (rated 750 W) up to the 110e (rated 11 kW), suited to canoes, tenders, small fishing boats, and pontoons. Range trades against throttle: Mercury's 7.5e test on a 13-foot boat ran about 60 minutes at full throttle or up to 19 hours at 25%. Avator is build-to-order; call 905-342-2153.
 
 ## Mercury Avator Electric Outboards: What They Are, What They Cost, and Who They're Actually For
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026.md
-last_updated: 2026-06-05
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)"
 description: "Mercury vs Honda outboards from an Ontario Mercury Platinum dealer. Where Honda actually wins, where Mercury wins, and the local service reality on Rice Lake."
 category: "Buying Guide"
 date_published: 2026-05-28
-date_modified: 2026-06-05
+date_modified: 2026-06-09
 keywords: ["Mercury vs Honda","Mercury vs Honda outboards","Honda BF vs Mercury","Honda Marine dealer Ontario","Mercury Honda comparison"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-06-05  
+**Last updated:** 2026-06-09  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026
+
+> **Quick answer:** Both Mercury and Honda build reliable outboards in 2026. Honda often gets the nod for refinement and quiet running in the 9.9 to 90 HP range; Mercury wins on Ontario service network density, Pro XS performance, and lineup breadth above 350 HP. On Rice Lake, HBW is the only Mercury dealer, which usually settles the math.
 
 - Mercury Platinum Dealer
 - Family-owned since 1947

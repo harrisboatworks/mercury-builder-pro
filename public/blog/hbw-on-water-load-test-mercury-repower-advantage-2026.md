@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/hbw-on-water-load-test-mercury-repower-advantage-2026.md
-last_updated: 2026-05-29
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Ve
 description: "Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from rigging bay to water-test dock."
 category: "HBW Process"
 date_published: 2026-05-28
-date_modified: 2026-05-29
+date_modified: 2026-06-09
 keywords: ["Mercury repower water test","Mercury outboard sea trial","on-water dealer test","Mercury repower quality check","HBW Rice Lake water test","Mercury dealer verification process","Mercury Platinum dealer Rice Lake","Mercury prop selection WOT RPM"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** HBW Process  
 **Published:** 2026-05-28  
-**Last updated:** 2026-05-29  
+**Last updated:** 2026-06-09  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hbw-on-water-load-test-mercury-repower-advantage-2026
+
+> **Quick answer:** Every Mercury repower at Harris Boat Works gets a full on-water load test before delivery. The rigging bay sits 80 feet from the water-test dock, so an 8-step protocol covering cold start through WOT under load, charging at real electrical demand, and a SmartCraft scan at operating temperature happens on every job, not just on request.
 
 # The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)
 

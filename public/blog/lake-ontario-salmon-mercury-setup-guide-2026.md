@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026.md
-last_updated: 2026-06-05
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)"
 description: "Lake Ontario salmon trolling setup from an Ontario Mercury Platinum dealer. Real numbers on alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, and..."
 category: "Fishing / Rigging"
 date_published: 2026-05-28
-date_modified: 2026-06-05
+date_modified: 2026-06-09
 keywords: ["Lake Ontario salmon Mercury setup","Mercury salmon trolling setup","Lake Ontario kicker install","Mercury 9.9 ProKicker","dual battery boat wiring Lake Ontario","Mercury SmartCraft Troll Control","Port Hope Mercury dealer","Cobourg Mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Fishing / Rigging  
 **Published:** 2026-05-28  
-**Last updated:** 2026-06-05  
+**Last updated:** 2026-06-09  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026
+
+> **Quick answer:** Lake Ontario salmon setups match the main motor to hull length (150 to 200 HP for 19 to 20 ft V-hulls, 200 to 250 HP for 21 to 22 ft), add a Mercury 9.9 ProKicker for hours of slow trolling, and need a 40 to 60 amp alternator floor for a four-downrigger electrical load. Port Hope is about 20 minutes from HBW; Cobourg about 15.
 
 - Mercury Platinum Dealer
 - Family-owned since 1947

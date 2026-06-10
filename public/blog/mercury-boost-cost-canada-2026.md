@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026.md
-last_updated: 2026-05-31
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)"
 description: "What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb 2026 software upgrade: eligible motors, real CAD pricing..."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-05-31
+date_modified: 2026-06-09
 keywords: ["Mercury Boost","Mercury Boost worth it","Mercury Boost cost","Pro XS Boost","Verado Boost","Mercury Boost software"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last updated:** 2026-05-31  
+**Last updated:** 2026-06-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026
+
+> **Quick answer:** Mercury Boost is a software calibration upgrade, not a horsepower add-on. It improves mid-range acceleration by 5 to 21 percent depending on motor and hull, without changing peak rated horsepower. Realistic Canadian retail is roughly $300 to $500 CAD, plus install. Eligibility is limited to specific 175 to 300 HP FourStroke, Pro XS, and Verado serial ranges.
 
 # Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)
 
