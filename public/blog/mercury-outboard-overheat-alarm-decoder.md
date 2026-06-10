@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder.md
-last_updated: 2026-05-27
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What 
 description: "Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. real heat, on-water emergency protocol, and what HBW techs need to diagnose it."
 category: "Service & Troubleshooting"
 date_published: 2026-05-27
-date_modified: 2026-05-27
+date_modified: 2026-06-09
 keywords: ["mercury overheat alarm","mercury outboard overheating","mercury guardian mode","smartcraft alarm codes","mercury alarm patterns","mercury tell-tale stream","ontario mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-27  
-**Last updated:** 2026-05-27  
+**Last updated:** 2026-06-09  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder
+
+> **Quick answer:** A Mercury overheat alarm means one of four things: real heat, Guardian mode, heat soak after a hot shutdown, or a sensor or wiring fault. Drop throttle, check the tell-tale stream, and note the pattern. Strong flow with alarm leans toward a sensor fault; weak or no flow means shut down before more damage.
 
 # Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)
 

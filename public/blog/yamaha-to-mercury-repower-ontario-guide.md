@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide.md
-last_updated: 2026-06-05
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Platin
 description: "Yamaha to Mercury repower from an Ontario Mercury Platinum dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table, when the swap is worth it."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-06-05
+date_modified: 2026-06-09
 keywords: ["Yamaha to Mercury repower","Yamaha to Mercury Ontario","brand swap outboard repower","Mercury repower cost Ontario","Yamaha Command Link Mercury","Yamaha F150 to Mercury 150","Mercury Platinum dealer Ontario","Yamaha trade-in Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-06-05  
+**Last updated:** 2026-06-09  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide
+
+> **Quick answer:** A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, harness, gauges, and propeller; the fuel tank, steering, and most electronics usually carry over. The brand-swap rigging premium runs roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The math swings when a Mercury dealer is closer than the nearest Yamaha service.
 
 - Mercury Platinum Dealer
 - Family-owned since 1947

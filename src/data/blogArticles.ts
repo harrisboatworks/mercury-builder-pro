@@ -1124,7 +1124,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     image: '/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder.png',
     author: 'Jay Harris',
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-27',
     category: 'Service & Troubleshooting',
     readTime: '~9 min read',
@@ -1146,7 +1146,9 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
       { question: 'How often should the impeller be replaced to prevent overheating?', answer: 'Mercury recommends impeller replacement every two seasons of normal use, or annually for motors that see high hours or commercial use. An impeller that has hardened or lost blades will cause overheating at higher RPMs first, then at all RPMs as it deteriorates. The 20-hour first service on a new motor does not include impeller replacement; that comes later.' },
       { question: 'Do overheat alarm patterns mean the same thing on every Mercury motor?', answer: 'No. Alarm behaviour varies by motor model, year, and whether the boat is SmartCraft-equipped. A 2005 carbureted 2-stroke does not produce alarms the same way as a current EFI FourStroke or Verado. The patterns described on this page reflect what HBW techs see most often on Ontario Mercury motors. Always cross-reference with your operator manual and any display message.' },
     ],
-    content: `# Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)
+    content: `> **Quick answer:** A Mercury overheat alarm means one of four things: real heat, Guardian mode, heat soak after a hot shutdown, or a sensor or wiring fault. Drop throttle, check the tell-tale stream, and note the pattern. Strong flow with alarm leans toward a sensor fault; weak or no flow means shut down before more damage.
+
+# Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)
 
 *Last updated: May 27, 2026*
 
@@ -2448,7 +2450,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-26',
-    dateModified: '2026-06-07',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-26',
     category: 'Mercury Motors',
     readTime: '9 min',
@@ -2459,7 +2461,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "What's the difference between the Mercury 115 and the 115 Pro XS?", answer: "Both share the same 2.1L four-stroke base, and Mercury lists the same lightest dry weight for both: 359 lb. The Pro XS runs a performance-tuned calibration for sharper acceleration and more top end, with performance gearcase options. For a pontoon or fishing boat the standard 115 FourStroke is usually the smarter buy; for a lighter performance hull where hole-shot matters, the Pro XS is worth the difference." },
       { question: "What's the difference between Mercury Pro XS, FourStroke, and Verado?", answer: 'All three are four-strokes tuned for different jobs. FourStroke is the efficient, reliable all-rounder for most pontoons, fishing boats, and family runabouts. Pro XS is the performance-tuned version for anglers and performance boats that want acceleration and top speed. Verado is the refined option, smoothest and quietest with digital throttle, built for larger boats where comfort matters. At Harris Boat Works, Verado is special order.' }
     ],
-    content: `## Mercury Pro XS vs FourStroke vs Verado: Which One Do You Actually Need?
+    content: `> **Quick answer:** FourStroke is the efficient all-rounder for most pontoons, fishing boats, and family runabouts. Pro XS is the same four-stroke base tuned for hole-shot and top speed. Verado is the refined, quietest option for larger boats and is special-order only at HBW. All three families today are four-strokes, despite the old Pro XS two-stroke reputation.
+
+## Mercury Pro XS vs FourStroke vs Verado: Which One Do You Actually Need?
 
 Three Mercury families, a lot of overlapping horsepower numbers, and a pile of forum arguments. Here's the part that matters: the current models are all four-strokes. The difference is what each one is tuned for.
 
@@ -10984,13 +10988,15 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/Mercury_Avator_and_The_Future_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-06-07',
+    dateModified: '2026-06-09',
     publishDate: '2026-02-06',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury avator', 'electric outboard motor', 'avator electric boat', 'electric boating ontario', 'mercury electric motor', 'cottage boat electric', 'rice lake electric outboard', 'avator range runtime', 'avator cost canada'],
     relatedSlugs: ['mercury-avator-7-5e-review', 'mercury-avator-range-rice-lake-cottage', 'mercury-avator-charging-cottage-dock', 'mercury-avator-vs-torqeedo'],
-    content: `## Mercury Avator Electric Outboards: What They Are, What They Cost, and Who They're Actually For
+    content: `> **Quick answer:** Mercury's Avator electric line runs from the 7.5e (rated 750 W) up to the 110e (rated 11 kW), suited to canoes, tenders, small fishing boats, and pontoons. Range trades against throttle: Mercury's 7.5e test on a 13-foot boat ran about 60 minutes at full throttle or up to 19 hours at 25%. Avator is build-to-order; call 905-342-2153.
+
+## Mercury Avator Electric Outboards: What They Are, What They Cost, and Who They're Actually For
 
 Electric outboards aren't a someday thing. Mercury's Avator line is here, we're a Mercury dealer, and we get asked about it enough that it's worth laying out straight: what these motors do, what they don't, and whether one belongs on the back of your boat. No hype. Just what we know.
 
@@ -34413,13 +34419,15 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-05-31',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '8 min read',
     keywords: ["Mercury Boost", "Mercury Boost worth it", "Mercury Boost cost", "Pro XS Boost", "Verado Boost", "Mercury Boost software"],
     relatedSlugs: ["mercury-boost-eligibility-checker-2026", "mercury-pro-xs-buyer-guide-ontario", "mercury-300-vs-400-pro-xs-comparison", "mercury-outboard-monthly-payment-ontario-2026", "mercury-outboard-repower-cost-ontario-2026-cad", "hbw-on-water-load-test-mercury-repower-advantage-2026"],
-    content: `# Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)
+    content: `> **Quick answer:** Mercury Boost is a software calibration upgrade, not a horsepower add-on. It improves mid-range acceleration by 5 to 21 percent depending on motor and hull, without changing peak rated horsepower. Realistic Canadian retail is roughly $300 to $500 CAD, plus install. Eligibility is limited to specific 175 to 300 HP FourStroke, Pro XS, and Verado serial ranges.
+
+# Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)
 
 **Published:** 2026-05-28 | **Updated:** 2026-05-29 (factual corrections)
 **Author:** Jay Harris, Harris Boat Works
@@ -34626,13 +34634,15 @@ We'll quote your motor honestly, check your serial against Mercury's official Bo
     image: '/lovable-uploads/hero-mercury-vs-yamaha-honda.png',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-06-05',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-28',
     category: 'Buying Guide',
     readTime: '9 min read',
     keywords: ["Mercury vs Honda", "Mercury vs Honda outboards", "Honda BF vs Mercury", "Honda Marine dealer Ontario", "Mercury Honda comparison"],
     relatedSlugs: ["honda-to-mercury-repower-ontario-guide", "mercury-vs-yamaha-outboards-an-honest-ontario-dealer-comparison-2026", "mercury-vs-yamaha-vs-honda-which-outboard-is-most-reliable-in-2026", "mercury-outboard-repower-cost-ontario-2026-cad", "mercury-extended-warranty-platinum-ontario", "hbw-on-water-load-test-mercury-repower-advantage-2026"],
-    content: `- Mercury Platinum Dealer
+    content: `> **Quick answer:** Both Mercury and Honda build reliable outboards in 2026. Honda often gets the nod for refinement and quiet running in the 9.9 to 90 HP range; Mercury wins on Ontario service network density, Pro XS performance, and lineup breadth above 350 HP. On Rice Lake, HBW is the only Mercury dealer, which usually settles the math.
+
+- Mercury Platinum Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON
@@ -35154,7 +35164,9 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
     title: 'Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)',
     seoTitle: 'Lake Ontario Salmon Mercury Setup Guide 2026 | Harris Boat Works',
     description: 'Lake Ontario salmon trolling setup from an Ontario Mercury Platinum dealer. Real numbers on alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, and SmartCraft Troll Control. FMZ 20.',
-    content: `- Mercury Platinum Dealer
+    content: `> **Quick answer:** Lake Ontario salmon setups match the main motor to hull length (150 to 200 HP for 19 to 20 ft V-hulls, 200 to 250 HP for 21 to 22 ft), add a Mercury 9.9 ProKicker for hours of slow trolling, and need a 40 to 60 amp alternator floor for a four-downrigger electrical load. Port Hope is about 20 minutes from HBW; Cobourg about 15.
+
+- Mercury Platinum Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON
@@ -35295,7 +35307,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     image: '/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-06-05',
+    dateModified: '2026-06-09',
     category: 'Fishing / Rigging',
     readTime: '10 min read',
     keywords: ["Lake Ontario salmon Mercury setup", "Mercury salmon trolling setup", "Lake Ontario kicker install", "Mercury 9.9 ProKicker", "dual battery boat wiring Lake Ontario", "Mercury SmartCraft Troll Control", "Port Hope Mercury dealer", "Cobourg Mercury dealer"],
@@ -35316,7 +35328,9 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     title: 'Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Platinum Dealer (2026)',
     seoTitle: 'Yamaha to Mercury Repower Ontario Guide 2026 | Harris Boat Works',
     description: 'Yamaha to Mercury repower from an Ontario Mercury Platinum dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table, when the swap is worth it.',
-    content: `- Mercury Platinum Dealer
+    content: `> **Quick answer:** A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, harness, gauges, and propeller; the fuel tank, steering, and most electronics usually carry over. The brand-swap rigging premium runs roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The math swings when a Mercury dealer is closer than the nearest Yamaha service.
+
+- Mercury Platinum Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON
@@ -35473,7 +35487,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-06-05',
+    dateModified: '2026-06-09',
     category: 'Repower Guide',
     readTime: '11 min read',
     keywords: ["Yamaha to Mercury repower", "Yamaha to Mercury Ontario", "brand swap outboard repower", "Mercury repower cost Ontario", "Yamaha Command Link Mercury", "Yamaha F150 to Mercury 150", "Mercury Platinum dealer Ontario", "Yamaha trade-in Mercury"],
@@ -35660,7 +35674,9 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
     title: 'The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)',
     seoTitle: 'HBW On-Water Mercury Repower Load Test 2026 | Harris Boat Works',
     description: 'Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from rigging bay to water-test dock. The 8-step protocol and what it catches.',
-    content: `# The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)
+    content: `> **Quick answer:** Every Mercury repower at Harris Boat Works gets a full on-water load test before delivery. The rigging bay sits 80 feet from the water-test dock, so an 8-step protocol covering cold start through WOT under load, charging at real electrical demand, and a SmartCraft scan at operating temperature happens on every job, not just on request.
+
+# The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)
 
 **Published:** 2026-05-28 | **Updated:** 2026-05-29
 **Author:** Jay Harris, Harris Boat Works
@@ -35804,7 +35820,7 @@ If you are weighing a Mercury repower for spring 2026, the next step is a no-obl
     image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-05-29',
+    dateModified: '2026-06-09',
     category: 'HBW Process',
     readTime: '10 min read',
     keywords: ["Mercury repower water test", "Mercury outboard sea trial", "on-water dealer test", "Mercury repower quality check", "HBW Rice Lake water test", "Mercury dealer verification process", "Mercury Platinum dealer Rice Lake", "Mercury prop selection WOT RPM"],
@@ -36551,7 +36567,7 @@ Call us at 905-342-2153 or build your repower quote, warranty terms are listed w
     image: "/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero.png",
     author: "Jay Harris",
     datePublished: "2026-06-07",
-    dateModified: "2026-06-07",
+    dateModified: "2026-06-09",
     publishDate: "2026-06-07",
     category: "Buying Guide",
     readTime: "5 min read",
@@ -36564,7 +36580,9 @@ Call us at 905-342-2153 or build your repower quote, warranty terms are listed w
       { question: "How much does a Mercury 250 weigh?", answer: "Depends on the family: the 250 Pro XS V8 is 505 lb (229 kg) dry, while the 250 FourStroke V8 is 527 lb (239 kg), both in their lightest configurations." },
       { question: "Why does outboard weight matter when repowering?", answer: "Your capacity plate lists a maximum motor weight as well as horsepower. A heavier motor changes how the boat sits and planes, and modern four-strokes often weigh more than the old two-strokes they replace, so check transom capacity before you buy." }
     ],
-    content: `*Last reviewed: 2026-06-07*
+    content: `> **Quick answer:** Mercury outboards range from 41 lb for the 2.5 and 3.5 HP portables to 527 lb for the 250 and 300 HP V8 FourStroke, with the 75, 90, and 115 sharing the same 2.1L block at 359 lb. All figures are Mercury's published dry weight for the lightest configuration; longer shafts, Command Thrust gearcases, and rigging add weight.
+
+*Last reviewed: 2026-06-07*
 
 ## Mercury Outboard Weight Chart: 2.5 to 300 HP
 

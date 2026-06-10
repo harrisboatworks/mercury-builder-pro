@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs.md
-last_updated: 2026-06-07
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS vs FourStroke vs Verado: Which Do You Need?"
 description: "Pro XS, FourStroke, or Verado? What separates Mercury's three outboard families, and which fits your boat. Straight answers from a Mercury dealer."
 category: "Mercury Motors"
 date_published: 2026-05-26
-date_modified: 2026-06-07
+date_modified: 2026-06-09
 keywords: ["mercury fourstroke vs pro xs","mercury verado vs fourstroke","mercury verado","pro xs vs fourstroke","mercury motor family comparison","pro xs worth it","fourstroke or pro xs repower","mercury 115 vs 115 pro xs"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Mercury Motors  
 **Published:** 2026-05-26  
-**Last updated:** 2026-06-07  
+**Last updated:** 2026-06-09  
 **Read time:** 9 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
+
+> **Quick answer:** FourStroke is the efficient all-rounder for most pontoons, fishing boats, and family runabouts. Pro XS is the same four-stroke base tuned for hole-shot and top speed. Verado is the refined, quietest option for larger boats and is special-order only at HBW. All three families today are four-strokes, despite the old Pro XS two-stroke reputation.
 
 ## Mercury Pro XS vs FourStroke vs Verado: Which One Do You Actually Need?
 
