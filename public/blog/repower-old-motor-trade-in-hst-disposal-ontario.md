@@ -100,7 +100,7 @@ Some motors aren't worth trading. If you're replacing a 1998 two-stroke Evinrude
 
 If your old motor has no trade value, leave it with us when you repower. No charge. We route dead outboards through certified recycling channels so the oil, fuel, and metals are handled properly.
 
-Old marine two-strokes contain oil, fuel, and metals that shouldn't go in a dumpster. Disposal done right is better for Rice Lake. That's not a slogan, the lake is 200 metres from our shop.
+Old marine two-strokes contain oil, fuel, and metals that shouldn't go in a dumpster. Disposal done right is better for Rice Lake. That's not a slogan, the lake is about 80 feet from our shop.
 
 ---
 
