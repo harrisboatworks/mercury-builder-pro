@@ -37,6 +37,9 @@ content_type: blog_article
 
 The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. The hour-by-hour breakdown is below.
 
+![Timeline of the Mercury 10-hour break-in: hour 1 no-wake then moderate cruise with varied throttle, hours 1-2 wider RPM range with no sustained wide-open throttle, hours 2-10 full RPM range with short WOT bursts, after 10 hours normal operation, then the 20-hour first service oil and filter change.](/lovable-uploads/mercury-break-in-timeline-hbw.png)
+*The whole procedure on one card. Details below.*
+
 | Time | RPM / behavior | Do | Avoid |
 |---|---|---|---|
 | First 5 to 10 min | Idle | Warm motor, check tell-tale flow, watch for warning lights | Putting motor in gear before warmed |

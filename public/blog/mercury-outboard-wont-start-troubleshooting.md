@@ -115,6 +115,9 @@ If the motor has 200+ hours and you've ruled out the easy stuff, a compression c
 
 We pulled our own numbers on this. Since 2013 we have logged 537 no-start and rough-running jobs in our service records. About half traced back to fuel: stale gas, water in the tank, clogged filters. A bit under half were electrical: weak batteries, corroded grounds, tired connections. Roughly a quarter involved spark plugs, and 14 of the 537 were nothing but the kill switch. The buckets overlap (old gas and a fouled plug often arrive together), but the lesson holds: the cheap stuff fails first, which is exactly why the ladder above starts there.
 
+![Bar chart: causes of 537 Mercury no-start and rough-running jobs at Harris Boat Works since 2013. Fuel 47 percent, electrical 43 percent, spark plugs 28 percent, kill switch 3 percent. Categories overlap.](/lovable-uploads/wont-start-causes-hbw.png)
+*Causes across 537 no-start and rough-running jobs in our service records, 2013-2026. Categories overlap; one motor can have old gas and a fouled plug.*
+
 HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
 
 ## Common mistakes (the things we push back on)
