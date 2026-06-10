@@ -58,7 +58,8 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
     `Mercury ${family || 'outboard'}${hp != null ? ` ${hp} HP` : ''} outboard motor` +
     `${modelNumber ? ` (model ${modelNumber})` : ''}. Mercury outboard repower quote from Harris Boat Works ` +
     `in Gores Landing, Ontario. Motors are sold for local pickup and/or professional installation only. ` +
-    `We do not ship outboard motors. Motor returns are not accepted. Installation work is guaranteed, ` +
+    `We do not ship outboard motors. Pickup must be by the buyer in person with valid government photo ID; ` +
+    `we do not release motors to couriers or third parties. Motor returns are not accepted. Installation work is guaranteed, ` +
     `and new Mercury motors include the applicable Mercury Marine factory warranty.`;
 
   // Map MotorFamily → stable productGroupID used on /quote/motor-selection.

@@ -25,7 +25,7 @@ Kawartha Lakes boaters use Harris Boat Works for practical Mercury recommendatio
 - **Region:** Kawartha Lakes
 - **Drive time:** within practical pickup range of Gores Landing (45–75 min)
 - **Route:** Hwy 7 / County Rd 28 to the south end of Rice Lake
-- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.
+- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - **Service model:** Shop-based only. No mobile service, no on-site installs, no driveway or marina visits.
 - **Currency:** CAD only.
 ## Local boating context

@@ -50,7 +50,7 @@ Best for small cuddy and walkaround owners wanting a stronger all-around match f
 
 ## Notes
 
-- All pricing in CAD. Pickup only at Gores Landing, ON.
+- All pricing in CAD. Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. No couriers or third parties.
 - Final motor recommendation confirmed by Harris Boat Works staff.
 - Verado not used in default repower recommendations (special-order only).
 

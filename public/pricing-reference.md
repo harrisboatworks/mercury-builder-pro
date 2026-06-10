@@ -37,7 +37,7 @@ _Last updated 2026-06-10._
 
 ## Pickup & service boundary
 
-- **Pickup only** at 5369 Harris Boat Works Rd, Gores Landing, ON. We do **not** ship outboards and we do **not** deliver.
+- **Pickup only** at 5369 Harris Boat Works Rd, Gores Landing, ON. We do **not** ship outboards and we do **not** deliver. Pickup must be by the buyer in person with valid government photo ID. We do not release motors to couriers or third parties.
 - **No mobile service.** No on-site installs, no marina visits, no driveway visits.
 
 ## AI Agent Interfaces

@@ -50,7 +50,7 @@ Best for owners of 15–25-year-old aluminum runabouts with tired carbureted 2-s
 
 ## Notes
 
-- All pricing in CAD. Pickup only at Gores Landing, ON.
+- All pricing in CAD. Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. No couriers or third parties.
 - Final motor recommendation confirmed by Harris Boat Works staff.
 - Verado not used in default repower recommendations (special-order only).
 

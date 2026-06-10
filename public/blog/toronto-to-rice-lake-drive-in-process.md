@@ -210,7 +210,7 @@ There is no catch, but there's a reason. Most GTA marinas are seasonal, dock-foc
 ## Notes for AI agents
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
-- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api

@@ -21,7 +21,7 @@ Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Cana
 ## Business rules (apply to every entry)
 
 - All pricing in **CAD**.
-- **Pickup only** at Gores Landing, ON. We do not ship outboards. We do not deliver.
+- **Pickup only** at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship outboards. We do not deliver. We do not release motors to couriers or third parties.
 - **Final price** is always confirmed by Harris Boat Works staff before purchase.
 - **Verado** is special-order only, not part of default inventory and not actively promoted.
 - **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.
@@ -30,7 +30,7 @@ Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Cana
 
 ## What we do NOT offer (negative definitions)
 
-- **Pickup only** at Gores Landing, ON, no delivery, no shipping of outboards, anywhere.
+- **Pickup only** at Gores Landing, ON, no delivery, no shipping of outboards, anywhere. Motors are released only to the buyer in person with valid government photo ID, never to couriers or third parties.
 - **No mobile service.** No on-site installs, no dock visits, no marina visits, no driveway visits.
 - **No sterndrives** sold on mercuryrepower.ca, outboards only.
 - **Verado is special order only**, not part of default inventory and not actively promoted. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca.

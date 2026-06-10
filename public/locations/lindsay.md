@@ -24,7 +24,7 @@ Harris Boat Works is roughly 60 minutes east of Lindsay in Gores Landing, ON, on
 ## Factbox
 - **Region:** Lindsay
 - **Drive time:** about 60 minutes east of Lindsay
-- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.
+- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - **Service model:** Shop-based only. No mobile service, no on-site installs, no driveway or marina visits.
 - **Currency:** CAD only.
 ## Local boating context
