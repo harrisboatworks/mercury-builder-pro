@@ -394,14 +394,17 @@ export default function BlogArticle() {
                   const text = String(children);
                   return <h3 id={slugify(text)} {...props}>{children}</h3>;
                 },
-                a: ({ node, href, children, ...props }) => {
+                a: ({ node, href, children, title, ...props }) => {
                   if (!href) return <a {...props}>{children}</a>;
                   const stripped = href.replace(/^https?:\/\/[^/]+/, '');
                   const isInternal = href.startsWith('/') || href.includes('harrisboatworks') || href.includes('mercuryquote') || href.includes('mercuryrepower');
+                  const isCta = title === 'cta';
+                  const ctaClass = 'inline-block bg-repower-mercury-red text-white font-semibold px-6 py-3 rounded-lg hover:bg-repower-mercury-red-deep transition no-underline my-4';
+                  const linkClass = isCta ? ctaClass : 'text-primary hover:underline';
                   if (isInternal && (stripped.startsWith('/') || href.startsWith('/'))) {
-                    return <Link to={stripped.startsWith('/') ? stripped : href} className="text-primary hover:underline">{children}</Link>;
+                    return <Link to={stripped.startsWith('/') ? stripped : href} className={linkClass}>{children}</Link>;
                   }
-                  return <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" {...props}>{children}</a>;
+                  return <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass} {...props}>{children}</a>;
                 },
                 img: ({ node, src, alt, title }) => (
                   <ExpandableImage

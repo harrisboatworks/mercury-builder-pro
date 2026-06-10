@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario.md
-last_updated: 2026-05-16
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "New vs Used Mercury Outboard in Ontario, by the Numbers"
 description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Platinum dealer who sells both. Warranty, financing, maintenance, what we actually..."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-05-16
+date_modified: 2026-06-10
 keywords: ["new vs used mercury outboard","used mercury outboard ontario","new mercury outboard ontario","mercury outboard buying guide","mercury platinum dealer ontario","mercury product protection","used outboard inspection ontario","mercury repower vs used"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last updated:** 2026-05-16  
+**Last updated:** 2026-06-10  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario
 
@@ -31,7 +31,7 @@ content_type: blog_article
 
 ## Quick answer
 
-A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and predictable maintenance for the first decade. A well-kept used Mercury saves you 30-50% on the purchase price but starts the warranty clock at zero, often needs $500-1,500 in catch-up service in year one, and puts the rebuild decision back on your timeline rather than the manufacturer's. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
+A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and predictable maintenance for the first decade. A well-kept used Mercury saves you 40-50% on the purchase price but starts the warranty clock at zero, often needs $500-1,500 in catch-up service in year one, and puts the rebuild decision back on your timeline rather than the manufacturer's. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
 
 ## What "new" actually buys you
 
@@ -49,7 +49,7 @@ The downside is the price. A new Mercury 90 FourStroke ELPT installed and rigged
 
 ## What "used" actually buys you
 
-A clean, well-documented used Mercury from a known dealer or a careful private seller will run 40-60% of the new price for the same horsepower class. A 2018 Mercury 90 FourStroke with under 400 hours and a service history might sell for $6,000-$8,000 in southern Ontario. That is real money you keep in your account.
+A clean, well-documented used Mercury from a known dealer or a careful private seller will run 50-60% of the new price for the same horsepower class. A 2018 Mercury 90 FourStroke with under 400 hours and a service history might sell for $6,000-$8,000 in southern Ontario. That is real money you keep in your account.
 
 The catch is what you do not get:
 - **Warranty.** Once the factory window has expired, you own every repair.
@@ -79,6 +79,10 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 The used motor saves you roughly $3,500-$6,000 over five years. But the new motor saves you the **uncertainty premium**, which is hard to put a dollar value on until the day a $4,000 powerhead repair lands in your driveway.
 
 ::walkaround-lead-capture
+
+## The trade-in wrinkle: HST only on the difference
+
+One more piece of math most buyers miss. In Ontario, when you trade your old motor (or boat) in to a dealer, HST is charged on the difference between the new purchase and your trade-in allowance, not the full sticker. A $3,500 trade against a $13,000 repower means you pay tax on $9,500, which keeps roughly $455 in your pocket on top of the trade value itself. A private sale has no equivalent lever. It narrows the new-vs-used gap more than most people expect, and it is worth running before you decide. Curious what your current motor is worth? Our [outboard trade-in guide](/blog/outboard-trade-in-value-ontario-hbw) covers how we value trades.
 
 ## When new is the right answer
 
@@ -129,10 +133,9 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 - Mercury Marine Canada warranty policy ([mercurymarine.com/ca/en](https://www.mercurymarine.com/ca/en/owner-resources/warranty-information/))
 - Mercury Product Protection extended warranty program details (Mercury Dealer Portal, reviewed 2026)
-- Transport Canada Pleasure Craft Operator Card requirements ([tc.canada.ca](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card))
 - HBW internal repower pricing data, 2024-2026 service records
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+[Ready to price it out? Build your live CAD quote](/quote/motor-selection "cta")
 
 ## FAQs
 
