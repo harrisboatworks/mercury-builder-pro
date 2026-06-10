@@ -10988,7 +10988,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/Mercury_Avator_and_The_Future_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-06-07',
+    dateModified: '2026-06-09',
     publishDate: '2026-02-06',
     category: 'Buying Guide',
     readTime: '10 min read',
