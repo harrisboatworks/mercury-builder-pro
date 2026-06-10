@@ -30505,7 +30505,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-05-16",
+    dateModified: "2026-06-10",
     publishDate: "2026-05-16",
     category: "Buying Guides",
     readTime: "9 min read",
@@ -30535,9 +30535,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
     content: `# New vs Used Mercury Outboard in Ontario, by the Numbers
 
+**Last reviewed:** June 2026
+
 ## Quick answer
 
-A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and predictable maintenance for the first decade. A well-kept used Mercury saves you 30-50% on the purchase price but starts the warranty clock at zero, often needs $500-1,500 in catch-up service in year one, and puts the rebuild decision back on your timeline rather than the manufacturer's. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
+A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and predictable maintenance for the first decade. A well-kept used Mercury saves you 40-50% on the purchase price but starts the warranty clock at zero, often needs $500-1,500 in catch-up service in year one, and puts the rebuild decision back on your timeline rather than the manufacturer's. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
 
 ## What "new" actually buys you
 
@@ -30555,7 +30557,7 @@ The downside is the price. A new Mercury 90 FourStroke ELPT installed and rigged
 
 ## What "used" actually buys you
 
-A clean, well-documented used Mercury from a known dealer or a careful private seller will run 40-60% of the new price for the same horsepower class. A 2018 Mercury 90 FourStroke with under 400 hours and a service history might sell for $6,000-$8,000 in southern Ontario. That is real money you keep in your account.
+A clean, well-documented used Mercury from a known dealer or a careful private seller will run 50-60% of the new price for the same horsepower class. A 2018 Mercury 90 FourStroke with under 400 hours and a service history might sell for $6,000-$8,000 in southern Ontario. That is real money you keep in your account.
 
 The catch is what you do not get:
 - **Warranty.** Once the factory window has expired, you own every repair.
@@ -30585,6 +30587,10 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 The used motor saves you roughly $3,500-$6,000 over five years. But the new motor saves you the **uncertainty premium**, which is hard to put a dollar value on until the day a $4,000 powerhead repair lands in your driveway.
 
 ::walkaround-lead-capture
+
+## The trade-in wrinkle: HST only on the difference
+
+One more piece of math most buyers miss. In Ontario, when you trade your old motor (or boat) in to a dealer, HST is charged on the difference between the new purchase and your trade-in allowance, not the full sticker. A $3,500 trade against a $13,000 repower means you pay tax on $9,500, which keeps roughly $455 in your pocket on top of the trade value itself. A private sale has no equivalent lever. It narrows the new-vs-used gap more than most people expect, and it is worth running before you decide. Curious what your current motor is worth? Our [outboard trade-in guide](/blog/outboard-trade-in-value-ontario-hbw) covers how we value trades.
 
 ## When new is the right answer
 
@@ -30625,26 +30631,6 @@ If you are looking at a used boat package and want a structured inspection befor
 - [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take.
 - [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario): Pontoon or V-hull? A Mercury Platinum dealer's honest take on which hull fits which Ontario boater. Family.
 
-## FAQ
-
-**Is a 5-year-old Mercury outboard still considered "new enough"?**
-A Mercury from 2020-2021 with under 300 hours and documented service is functionally a current-generation motor. The EFI, SmartCraft, and cowling design have not changed significantly since then. Mechanically you are in good shape. The only real difference is the remaining warranty (zero on a private sale, possibly transferable if the original owner enrolled MPP).
-
-**How many hours is "too many" on a used Mercury?**
-For a four-stroke kept in fresh water with documented service, 800-1,200 hours is mid-life. Past 1,500 hours we start asking harder questions about the powerhead, the gearcase, and how the boat was stored. Two-strokes (rare on the dock now) have shorter useful lives.
-
-**Can a Mercury dealer transfer factory warranty to a second owner?**
-Standard Mercury limited warranty is non-transferable. Mercury Product Protection (the extended program) IS transferable for a small fee through an authorized dealer if the program is still in force. If you are buying a used Mercury with under 5 years on the original purchase date, ask whether MPP was enrolled and whether the transfer paperwork is available.
-
-**What is the financing difference between new and used?**
-New Mercury sales through HBW qualify for current Mercury Marine financing programs (rates and terms updated regularly through the dealer portal). Used motor purchases are typically cash or personal-loan financed, with no manufacturer financing program available. The financing math sometimes tips the decision toward new even when the sticker price favours used.
-
-**Should I get a pre-purchase inspection on a used Mercury?**
-Yes, always, if you are spending more than a few thousand dollars. A compression test, a quick scan of the SmartCraft data (hours, fault codes), and a 20-minute test run is a $150-$250 service that has saved Ontario buyers tens of thousands of dollars in our experience. We do this for customers regularly, and we will do it for boats they have not bought yet.
-
-**Is buying new from a US dealer cheaper than buying from a Canadian dealer?**
-Once you factor in cross-border duties, exchange rates, and the loss of Canadian warranty support (Mercury's warranty network is region-specific), the answer is almost always no. Plus a Mercury Platinum dealer in Canada is who you will need for service, parts, and warranty work for the next decade. Buying from outside the region creates problems that the price difference does not solve.
-
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
@@ -30656,10 +30642,9 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 - Mercury Marine Canada warranty policy ([mercurymarine.com/ca/en](https://www.mercurymarine.com/ca/en/owner-resources/warranty-information/))
 - Mercury Product Protection extended warranty program details (Mercury Dealer Portal, reviewed 2026)
-- Transport Canada Pleasure Craft Operator Card requirements ([tc.canada.ca](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card))
 - HBW internal repower pricing data, 2024-2026 service records
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+[Ready to price it out? Build your live CAD quote](/quote/motor-selection "cta")
 `,
   },
 
