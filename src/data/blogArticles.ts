@@ -35820,7 +35820,7 @@ If you are weighing a Mercury repower for spring 2026, the next step is a no-obl
     image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-05-29',
+    dateModified: '2026-06-09',
     category: 'HBW Process',
     readTime: '10 min read',
     keywords: ["Mercury repower water test", "Mercury outboard sea trial", "on-water dealer test", "Mercury repower quality check", "HBW Rice Lake water test", "Mercury dealer verification process", "Mercury Platinum dealer Rice Lake", "Mercury prop selection WOT RPM"],
