@@ -35164,7 +35164,9 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
     title: 'Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)',
     seoTitle: 'Lake Ontario Salmon Mercury Setup Guide 2026 | Harris Boat Works',
     description: 'Lake Ontario salmon trolling setup from an Ontario Mercury Platinum dealer. Real numbers on alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, and SmartCraft Troll Control. FMZ 20.',
-    content: `- Mercury Platinum Dealer
+    content: `> **Quick answer:** Lake Ontario salmon setups match the main motor to hull length (150 to 200 HP for 19 to 20 ft V-hulls, 200 to 250 HP for 21 to 22 ft), add a Mercury 9.9 ProKicker for hours of slow trolling, and need a 40 to 60 amp alternator floor for a four-downrigger electrical load. Port Hope is about 20 minutes from HBW; Cobourg about 15.
+
+- Mercury Platinum Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON
