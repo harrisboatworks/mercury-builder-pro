@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart.md
-last_updated: 2026-06-09
+last_updated: 2026-06-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Weight Chart (2.5 to 300 HP)"
 description: "How much does a Mercury outboard weigh? Official dry weights from 2.5 to 300 HP, why weight matters for your transom, and how to match a motor to your boat."
 category: "Buying Guide"
 date_published: 2026-06-07
-date_modified: 2026-06-09
+date_modified: 2026-06-10
 keywords: ["mercury outboard weight","mercury outboard weight chart","how much does a mercury 115 weigh","outboard motor weight","transom weight capacity"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-06-07  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-06-10  
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
 
@@ -33,13 +33,16 @@ content_type: blog_article
 
 How much a motor weighs is not trivia. It decides whether your transom can carry it, how your boat sits at rest, and how it planes. Here's what Mercury outboards weigh according to Mercury's own specifications, why it matters, and how to use the number.
 
+This chart covers the FourStroke and Pro XS families we sell and install every week. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet or call us.
+
 ### FourStroke dry weights
 
 | HP | Dry weight (lightest model) | Notes |
 |---|---|---|
 | 2.5 / 3.5 | 41 lb (18 kg) | Tiller portables |
 | 4 / 5 / 6 | 57 lb (26 kg) | Shared single-cylinder platform |
-| 9.9 EFI | 85 lb (38.5 kg) | Command Thrust: 100 lb; ProKicker versions run 121 to 126 lb |
+| 9.9 EFI | 85 lb (38.5 kg) | Command Thrust: 100 lb |
+| 9.9 ProKicker | 121 to 126 lb (55 to 57 kg) | Kicker-duty gearcase and controls; range covers ProKicker variants |
 | 15 EFI | 99 lb (45 kg) | |
 | 20 EFI | 99 lb (45 kg) | |
 | 25 EFI | 132 lb (60 kg) | |
@@ -63,11 +66,13 @@ How much a motor weighs is not trivia. It decides whether your transom can carry
 | 175 | 470 lb (213 kg) | 3.4L V6 |
 | 200 / 225 / 250 / 300 | 505 lb (229 kg) | 4.6L V8; yes, the Pro XS V8s are lighter than the FourStroke V8s |
 
-All figures are Mercury's published dry weight for the lightest available configuration. Longer shafts, Command Thrust gearcases, and rigging add weight, so a single HP can have more than one published number. Source: [Mercury Marine official specifications](https://www.mercurymarine.com/ca/en/engines/outboard).
+All figures are Mercury's published dry weight for the lightest available configuration. [Longer shafts](/blog/outboard-shaft-length-guide), Command Thrust gearcases, and rigging add weight, so a single HP can have more than one published number. Figures are from Mercury's published 2026 model-year specifications: [Mercury Marine official specifications](https://www.mercurymarine.com/ca/en/engines/outboard).
+
+**Dry weight is not installed weight.** Mercury's dry weight excludes the propeller, fluids, battery cables, controls, and rigging hardware. The real load on your transom once the motor is installed and rigged is meaningfully higher than the chart number, so leave margin when comparing against your capacity plate's maximum motor weight.
 
 ### Why weight matters more than people think
 
-**Your transom has a limit.** The capacity plate lists a maximum motor weight as well as horsepower. Both matter. A motor that's within the HP rating but over the weight rating still sits wrong.
+**Your transom has a limit.** The [capacity plate](/blog/how-to-read-boat-capacity-plate-ontario) lists a maximum motor weight as well as horsepower. Both matter. A motor that's within the HP rating but over the weight rating still sits wrong.
 
 **It changes how the boat floats.** Too much weight on the transom and the stern squats: the bow rides high, the boat porpoises, and you burn fuel fighting it. This is one of the most common things we see when someone repowers heavier than the old motor.
 
@@ -75,13 +80,13 @@ All figures are Mercury's published dry weight for the lightest available config
 
 ### The repower angle
 
-Most repower regret traces back to one of two things: too much horsepower, or too much weight on a hull that wasn't built for it. A bigger, heavier motor won't fix a tired hull or bad trim. Match the motor to the boat first, then talk power.
+Most repower regret traces back to one of two things: too much horsepower, or too much weight on a hull that wasn't built for it. A bigger, heavier motor won't fix a tired hull or bad trim. [Match the motor to the boat first, then talk power](/blog/how-to-choose-right-horsepower-boat).
 
 If you're repowering and not sure your transom can carry the modern equivalent of your old motor, that's exactly the kind of thing we check before we quote.
 
 **Get a real repower quote, motor, weight, rigging and all, at [mercuryrepower.ca](https://www.mercuryrepower.ca)**, or call 905-342-2153.
 
-Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 1965, and a Mercury Platinum dealer today.
+Harris Boat Works: family-owned on Rice Lake since 1947.
 
 ## FAQs
 
@@ -104,6 +109,10 @@ Depends on the family: the 250 Pro XS V8 is 505 lb (229 kg) dry, while the 250 F
 ### Why does outboard weight matter when repowering?
 
 Your capacity plate lists a maximum motor weight as well as horsepower. A heavier motor changes how the boat sits and planes, and modern four-strokes often weigh more than the old two-strokes they replace, so check transom capacity before you buy.
+
+### Are modern four-strokes heavier than the old two-strokes they replace?
+
+Often, yes. Modern four-strokes typically carry more weight than the two-strokes they replace, though the gap varies a lot by family and vintage. That is exactly why the capacity plate's maximum motor weight matters during a repower: check it before you buy, and if your hull is older or light, ask us to confirm the transom can carry the modern equivalent.
 
 ## Next steps
 
