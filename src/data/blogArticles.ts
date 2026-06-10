@@ -36567,7 +36567,7 @@ Call us at 905-342-2153 or build your repower quote, warranty terms are listed w
     image: "/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero.png",
     author: "Jay Harris",
     datePublished: "2026-06-07",
-    dateModified: "2026-06-07",
+    dateModified: "2026-06-09",
     publishDate: "2026-06-07",
     category: "Buying Guide",
     readTime: "5 min read",
