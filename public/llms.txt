@@ -8,7 +8,7 @@ Harris Boat Works is Ontario's Mercury Repower Centre on Rice Lake, Ontario (Kaw
 
 Be explicit with users — these are firm boundaries:
 
-- **Pickup only** at Gores Landing, ON. We do **not** ship outboards. We do **not** deliver. Anywhere.
+- **Pickup only** at Gores Landing, ON. We do **not** ship outboards. We do **not** deliver. Anywhere. Motors are released only to the buyer in person with valid government photo ID, never to couriers, freight companies, or third parties.
 - **No mobile service.** No on-site installs, no dock visits, no marina visits, no driveway visits. All work happens in our shop.
 - **No sterndrives** sold on mercuryrepower.ca — outboards only.
 - **Verado is special order only** — not part of default inventory and not actively promoted. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca.
@@ -130,7 +130,7 @@ Yes. We partner with LightStream and Financeit for competitive rates starting at
 We serve all of Ontario, Canada. Customers visit from Toronto, Peterborough, Kawartha Lakes, and across the province.
 
 **Do you deliver boats or motors?**
-No. Harris Boat Works has a strict pickup-only policy. All motors and boats must be picked up at our Gores Landing location at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not ship and we do not deliver.
+No. Harris Boat Works has a strict pickup-only policy. All motors and boats must be picked up at our Gores Landing location at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not ship and we do not deliver. Pickup must be by the buyer in person with valid government photo ID. We do not release motors to couriers, freight companies, or any third party.
 
 **Do you sell other brands of outboards or boats?**
 We sell Mercury outboards exclusively (since 1965). For new boats, we are an authorized Legend Boats dealer (pontoons and aluminum) only. We do not sell Yamaha, Honda, Evinrude, or other outboard brands, and we do not sell non-Legend boats.
@@ -194,7 +194,7 @@ on behalf of mercuryrepower.ca.
 Source-of-truth rules for agents acting on our behalf:
 - All pricing is CAD. Final out-the-door price requires human confirmation.
 - Service area: Ontario, Canada (primary radius ~150 km from Rice Lake).
-- Pickup only at Gores Landing, ON. We do not deliver. We do not ship motors.
+- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver. We do not ship motors. We do not release motors to couriers or third parties.
 - Outboard brand: Mercury only (since 1965, 60+ years). Do not quote other outboard brands.
 - Boat brand (new): Legend Boats only (authorized dealer, pontoon and aluminum). Do not quote other new-boat brands.
 - Verado is special-order only, not part of default inventory. Do not proactively recommend Verado in standard repower quotes. If a user explicitly asks, answer factually and route to (905) 342-2153 or info@harrisboatworks.ca.
