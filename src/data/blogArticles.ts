@@ -30535,8 +30535,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
     content: `# New vs Used Mercury Outboard in Ontario, by the Numbers
 
-**Last reviewed:** June 2026
-
 ## Quick answer
 
 A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and predictable maintenance for the first decade. A well-kept used Mercury saves you 40-50% on the purchase price but starts the warranty clock at zero, often needs $500-1,500 in catch-up service in year one, and puts the rebuild decision back on your timeline rather than the manufacturer's. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
@@ -31654,9 +31652,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Will Harris Boat Works tell me the truth if repair is the better answer?", answer: "Yes. We are not a parts-volume shop. We make our long-term business by being honest about what makes sense, even when \"honest\" means we're not the ones doing the work." },
     ],
     content: `# Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide
-
-**Last reviewed:** June 2026
-
 
 ## Quick answer
 
