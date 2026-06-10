@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md
-last_updated: 2026-05-05
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)"
 description: "Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-05-05
+date_modified: 2026-06-09
 keywords: ["mercury outboard pricing","mercury dealer transparency","boat motor prices ontario","mercury price online","harris boat works pricing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last updated:** 2026-05-05  
+**Last updated:** 2026-06-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online
 
@@ -183,17 +183,9 @@ For HBW, yes. Pricing is verified annually after Mercury's July 1 model year cha
 
 Pricing on the configurator is in CAD before HST. HST (13%) is added at quote completion. Trade-in valuation is handled separately at [/trade-in-value](/trade-in-value). Delivery is pickup at HBW in Gores Landing for most customers.
 
-### Why do some dealers list prices but only for some motors?
-
-Often it's a compromise. They list the cheap entry-point motors to attract clicks, but require a phone call for the higher-margin motors where they have more pricing flexibility. Selective transparency.
-
 ### Should I demand pricing from a dealer who hides it?
 
 You can ask. Many will give it over the phone. The cost is your time. Knowing what we know about how the industry works, we'd say: skip the dealers who insist on phone gatekeeping and shop the dealers who publish.
-
-### Is HBW the only Mercury dealer publishing prices?
-
-We're not the only one, but we're one of a small number. The list of Mercury dealers with full live online pricing in Ontario is short. The list with live CAD pricing including all rigging and install is shorter.
 
 ### What if HBW's online price is higher than another dealer's verbal quote?
 
@@ -202,10 +194,6 @@ Tell us. We'll match or explain the difference. Our pricing is in line with the 
 ### How do I tell if a dealer's quote is fair without published prices?
 
 Build a quote at HBW first. Use that as your reference. Then go look at other dealers. The dealers who can't beat or match a transparent quote are the ones who depend on you not knowing.
-
-### Will published pricing become the industry norm?
-
-Eventually, yes. Customer expectations are moving that way and the next generation of marine dealers won't have a choice. The current generation is still catching up. We're doing it now because that's how we'd want to be treated as customers. ---
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep.md
-last_updated: 2026-05-04
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Walleye Opener Boat Prep Checklist (2026)"
 description: "The Ontario walleye opener (typically the second Saturday of May for Zone 17 Kawartha lakes) is the highest-stakes morning of the fishing season."
 category: "Tips"
 date_published: 2026-05-01
-date_modified: 2026-05-04
+date_modified: 2026-06-09
 keywords: ["walleye opener","ontario walleye season","boat prep checklist","fishing opener prep","walleye opener checklist"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Tips  
 **Published:** 2026-05-01  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
 
@@ -208,10 +208,6 @@ For most Kawartha lake fishing, no, but the kicker functions as backup propulsio
 
 PFD for each person on board (Transport Canada-approved), throwable cushion, anchor and rope, paddle or oar, bailer, sound signaling device, lights for navigation after sunset, fire extinguisher (depending on boat type), watertight flashlight.
 
-### What's the legal walleye fishing start time on opener day?
-
-Usually sunrise. Confirm current year regulations. Some lakes have special early-season slot limits or possession restrictions.
-
 ### How do I prevent stale fuel from ruining my opener?
 
 Treat fuel with stabilizer in fall (Mercury Quickstor or equivalent). Run motor with stabilized fuel before storage. In spring, top off with fresh fuel before opener.
@@ -231,10 +227,6 @@ For Rice Lake and local Kawartha customers, yes, we can arrange hauling and serv
 ### What's the most common opener morning failure?
 
 Dead battery (about 40% of failures), followed by stale fuel and kicker problems. Almost all preventable with prep 1 to 2 weeks before opener.
-
-### Where do most Kawartha anglers launch on opener?
-
-Bewdley, Hastings, and Roseneath are the main public ramps on Rice Lake. Each has different ramp characteristics and gets crowded on opener morning. Arrive early.
 
 ## Next steps
 

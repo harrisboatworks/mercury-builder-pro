@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md
-last_updated: 2026-05-04
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Hull Replacement vs Repower: The Honest Decision (2026)"
 description: "For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury delivers 80% of the new-boat experience for half the money."
 category: "Repower"
 date_published: 2026-04-29
-date_modified: 2026-05-04
+date_modified: 2026-06-09
 keywords: ["repower vs new boat","boat hull replacement","when to repower outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Repower  
 **Published:** 2026-04-29  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-09  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
 
@@ -207,10 +207,6 @@ Stringers are the longitudinal structural members running the length of a boat's
 ### Can I put a bigger motor on my boat than the current one?
 
 Only up to the maximum HP rating shown on the boat's capacity plate. The capacity plate (required by Transport Canada on most recreational boats under 6 metres) specifies the maximum horsepower, maximum persons, and maximum weight the hull was designed to handle. Installing a motor that exceeds the rated maximum HP is illegal in Canada and voids your insurance. You can install a motor equal to or less than the rated maximum. If you want more power than your current max HP rating allows, the answer is a different hull, not a different motor.
-
-### Do I need to update my boat registration after a repower?
-
-Yes. When you replace a motor on a registered or licensed pleasure craft in Canada, you're required to update the pleasure craft licence to reflect the new motor information, including horsepower, serial number, and fuel type. The licence update is straightforward but mandatory. Operating with outdated licence information can create issues with boating enforcement and insurance claims. Our [Kawarthas repower guide](https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas) covers the administrative steps involved in a repower in Ontario.
 
 ### What are the hidden costs of keeping an older boat hull?
 

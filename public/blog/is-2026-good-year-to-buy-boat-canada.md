@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada.md
-last_updated: 2026-04-28
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is 2026 a Good Year to Buy a Boat in Canada?"
 description: "Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and the repower alternative."
 category: "Buying Guide"
 date_published: 2026-04-28
-date_modified: 2026-04-28
+date_modified: 2026-06-09
 keywords: ["buy boat canada 2026","boat market canada","best time to buy boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-04-28  
-**Last updated:** 2026-04-28  
+**Last updated:** 2026-06-09  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada
 
@@ -214,10 +214,6 @@ Boat financing rates in Canada have improved from the peak of 2023 as the Bank o
 ### What's the best time of year to buy a boat in Canada?
 
 Fall (September-November) typically offers the best new boat purchase opportunities in Canada. Dealers are clearing model-year inventory and are more willing to negotiate on leftover stock. Winter boat shows (January-February) can offer promotional pricing with manufacturer incentive programs. Spring (March-May) offers the widest selection but also peak demand, dealers are less motivated to discount. If you're buying used, fall sellers are motivated (they don't want to pay for winter storage. HBW's published storage rates start at $33/ft for a trailered boat up to 21 ft) but selection is higher in spring when people list before the season starts.
-
-### What should I know about boat depreciation in Canada?
-
-New boats depreciate 15-25% in the first year off the lot, similar to vehicles. The pandemic distorted depreciation curves significantly, boats bought at peak in 2021-22 held value unusually well due to high used demand. In 2026, with normalized inventory, standard depreciation patterns are returning for lower price-point boats. Premium and specialty boats depreciate more slowly. A well-maintained 5-year-old aluminum fishing boat with a low-hour Mercury motor holds value well in the Ontario used market. For buyers who care about resale, Mercury-powered boats in popular sizes have strong secondary market demand.
 
 ### Does it make sense to buy a boat if I only use it 10-15 days per year?
 

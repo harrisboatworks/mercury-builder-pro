@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-05-04
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Outboard for Lake Ontario Salmon and Trout (2026)"
 description: "Lake Ontario is the biggest water most Ontario boaters will fish. Big swells, long runs to fishing zones, downriggers and planer boards trolling spreads."
 category: "Fishing & Local"
 date_published: 2026-04-22
-date_modified: 2026-05-04
+date_modified: 2026-06-09
 keywords: ["Lake Ontario salmon fishing motor","best outboard Lake Ontario","Mercury outboard salmon trolling","Lake Ontario chinook king salmon","salmon fishing boat Ontario","Mercury 150 200 salmon","Lake Ontario fishing charter motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-22  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-09  
 **Read time:** 15 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
 
@@ -203,14 +203,6 @@ For specific applications (charter, tournament, very high HP single setups), yes
 ### What's the cost of a typical Lake Ontario salmon repower?
 
 For a 22 to 25 ft setup with 250 to 300 HP V8 FourStroke + 15 HP ProKicker, $35,000 to $50,000+ CAD all-in at HBW. Includes rigging, prop, and install. [Live pricing here.](/quote/motor-selection)
-
-### Where do most Lake Ontario salmon anglers launch?
-
-Major ports: Cobourg, Whitby, Newcastle, Port Credit, Toronto. Each has trailer-launch ramps and slip-storage marinas. Local knowledge varies by port.
-
-### When is the best time for Lake Ontario salmon fishing?
-
-Spring through fall. Coho and chinook salmon peak in summer. Lake trout peak in spring and fall. Brown trout and rainbow trout are caught throughout the season.
 
 ### Should I consider a sport fisher hull for Lake Ontario?
 

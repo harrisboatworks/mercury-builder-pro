@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md
-last_updated: 2026-06-03
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guid
 description: "The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats."
 category: "Buying Guide"
 date_published: 2026-04-23
-date_modified: 2026-06-03
+date_modified: 2026-06-09
 keywords: ["cheapest mercury outboard canada","mercury 2.5hp price","small mercury outboard cad"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-04-23  
-**Last updated:** 2026-06-03  
+**Last updated:** 2026-06-09  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 
@@ -196,14 +196,6 @@ Only if it actually fits your boat and your use. Buying too small is the most co
 
 Yes. Mercury Repower Financing covers motors of any size, including small portable tillers. Terms run 24 to 84 months at current Mercury Repower Financing rates (lower if a promotional rate is active). Full details on the [financing page](/financing).
 
-### Are Mercury portable motors reliable?
-
-Yes. Mercury has dominated the small-portable outboard category in Canada for decades. Parts availability is excellent. Service network is wide. We have customers running 9.9s and 15s that are 25 years old and still going. The current generation of FourStrokes is even more reliable than the 2-stroke generation it replaced.
-
-### Is it cheaper to buy a used Mercury?
-
-Sometimes. A 5-year-old 9.9 in good condition at half the price of new is a real savings. A 20-year-old 9.9 with unknown service history at a quarter of the price is usually a problem waiting to happen. We sell inspected used motors and will inspect a private-sale motor for you for a fair fee before you commit.
-
 ### How long does a small Mercury outboard last?
 
 Properly maintained, a modern Mercury small motor (post-2000s) lasts 1,500 to 2,000 hours of running time before major service. For a recreational boater using a 9.9 for 30 to 60 hours a season, that translates to 25 to 60 years of useful life. Practical limit is usually parts availability over time, not the motor itself wearing out.
@@ -219,10 +211,6 @@ No. Tiller motors 20 HP and under are drop-in installs. You hang it on the trans
 ### What is the cheapest Mercury repower I can do on a 16-foot aluminum?
 
 A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15,000 CAD all-in for the 25 to 60 HP class). Going Mercury-to-Mercury keeps the rigging at the low end since most existing controls can stay. For a real number on your specific boat, [build a quote](/quote/motor-selection).
-
-### By Jay Harris
-
-3rd-Generation Owner, Harris Boat Works Mercury Platinum Dealer · Rice Lake, Ontario [About Jay and Harris Boat Works →](/about)
 
 ## Next steps
 

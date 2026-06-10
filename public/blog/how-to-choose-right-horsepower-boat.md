@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat.md
-last_updated: 2026-05-04
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose the Right Horsepower for Your Boat (2026 Guide)"
 description: "Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario."
 category: "Buying Guide"
 date_published: 2024-06-15
-date_modified: 2026-05-04
+date_modified: 2026-06-09
 keywords: ["boat motor horsepower","how to choose outboard motor","mercury motor sizing","boat hp guide","outboard motor selection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2024-06-15  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat
 
@@ -194,14 +194,6 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real instal
 ---
 
 ## FAQs
-
-### What happens if I choose too little horsepower?
-
-Underpowering your boat leads to poor performance, difficulty handling rough conditions, excessive engine strain, and higher fuel consumption as the motor works harder to move the boat.
-
-### Can I exceed my boat's maximum HP rating?
-
-No. The capacity plate is a federal compliance label: Transport Canada sets the standards under the Small Vessel Regulations, and the boat manufacturer or importer applies the maximum horsepower rating in accordance with those standards. Either way, the number on the plate is the legal ceiling. Exceeding it can void insurance, create handling problems, and put you and passengers at risk.
 
 ### Does higher horsepower always mean faster speed?
 

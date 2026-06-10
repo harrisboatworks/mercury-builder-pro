@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026.md
-last_updated: 2026-05-27
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?"
 description: "Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5-21% on select FourStroke, Pro XS, and Verado engines."
 category: "Mercury Technology"
 date_published: 2026-04-14
-date_modified: 2026-05-27
+date_modified: 2026-06-09
 keywords: ["Mercury Boost software upgrade","Mercury Boost eligible engines","Mercury software calibration","Mercury acceleration upgrade","Mercury dealer upgrade Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Mercury Technology  
 **Published:** 2026-04-14  
-**Last updated:** 2026-05-27  
+**Last updated:** 2026-06-09  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026
 
@@ -175,10 +175,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 Eligibility depends on serial number, not model year. FourStroke 175-300hp, Pro XS 175-300hp, Verado 250-350hp, and Racing 150R models with serial numbers from 2B529482 onward are eligible for the dealer-installed upgrade. The 350hp Verado has a specific serial range (3B266064 to 3B578266).
 
-### How much does Mercury Boost cost to install?
-
-Mercury has not published a standard retail price for the Boost upgrade. Dealers set their own service rates. Expect to pay a labor charge, likely in the 1-2 hour range, since the software itself is the product. Call your dealer for current pricing.
-
 ### Does Mercury Boost void my warranty?
 
 No. Boost is an official Mercury program and a factory-backed software calibration. It does not void your Mercury factory warranty or any Mercury Protection Plan coverage.
@@ -186,10 +182,6 @@ No. Boost is an official Mercury program and a factory-backed software calibrati
 ### Does Boost work on twin-engine setups?
 
 Yes, if both engines are eligible, both can be updated. Each engine is updated individually. If your twins have different serial numbers, eligibility is assessed per engine.
-
-### How do I find my Mercury serial number?
-
-Check the transom bracket (port side), the engine block, or under the cowling. The serial number is on a metal plate or sticker. Take a photo and store it on your phone for easy reference.
 
 ### How much does Mercury Boost cost to install in Canada?
 

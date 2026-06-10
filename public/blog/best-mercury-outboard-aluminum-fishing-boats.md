@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md
-last_updated: 2026-05-04
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)"
 description: "The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 40-60 HP fits 16-18 ft. HBW honest guide, Ontario."
 category: "Buying Guide"
 date_published: 2026-01-12
-date_modified: 2026-05-04
+date_modified: 2026-06-09
 keywords: ["mercury for aluminum boat","best outboard aluminum fishing boat","mercury 60hp fishing","lund boat motor","tracker boat outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-01-12  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-09  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats
 
@@ -170,18 +170,6 @@ Anything over 75 HP on a sub-17-foot aluminum hull usually exceeds the boat's ma
 ### What's the minimum HP I should get for my aluminum boat?
 
 We recommend at least 25HP for a 14ft boat and 40HP for a 16ft boat. Underpowering leads to frustration in wind and when the boat is fully loaded. Check your capacity plate for maximum HP.
-
-### Is a tiller or remote better for fishing?
-
-Tiller gives direct control and keeps the transom clear for fishing. Remote is better for larger boats, rough water, and if you prefer fishing from the bow. Personal preference matters most.
-
-### Should I get Command Thrust?
-
-If you fish shallow waters or frequently beach your boat, yes. Command Thrust's larger gearcase provides better thrust and runs shallower than standard lower units.
-
-### What shaft length do I need?
-
-Most aluminum fishing boats use 20" (short shaft) or 25" (long shaft). Measure from the top of the transom to the waterline, then add 15-16" for the proper shaft length.
 
 ### Is a tiller or remote better for fishing an aluminum boat?
 
