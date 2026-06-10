@@ -3730,13 +3730,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 3: January 19, 2026
   {
     slug: 'best-mercury-outboard-pontoon-boats',
-    seoTitle: "Best Mercury for a Pontoon: 90-150 HP CT (2026) | HBW",
-    title: "Best Mercury for a Pontoon: 90 to 150 HP CT (2026)",
+    seoTitle: "Best Mercury Outboard for a Pontoon: 90-150 HP CT (2026) | HBW",
+    title: "Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)",
     description: "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-150 HP FourStroke with Command Thrust. The gearcase matters more than HP. HBW explains why.",
     image: '/lovable-uploads/hero-best-mercury-pontoon.png',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
-    dateModified: '2026-05-04',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-04',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -3928,6 +3928,10 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       {
+        question: 'Is a 90 HP Mercury enough for a pontoon boat?',
+        answer: 'For an 18 to 20 ft pontoon with a typical family load, a Mercury 90 HP with Command Thrust is a solid match: the CT gearcase swings a bigger prop, which is what gets a pontoon out of the hole. Past 20 ft, or if you tow tubes with a full crew, step to the 115 or 150 CT. The gearcase matters as much as the horsepower number.'
+      },
+      {
         question: 'What is the best Mercury outboard for an 18-foot pontoon?',
         answer: 'For cruising and fishing without water sports, the 90 HP Command Thrust FourStroke is plenty. For occasional water sports with kids, step up to 115 HP Command Thrust. The all-in repower for 90 to 115 HP CT lands $17,000 to $22,000 CAD at HBW.'
       },
@@ -3942,14 +3946,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       {
         question: 'Do I need Mercury Command Thrust on a pontoon?',
         answer: 'Yes for most pontoons 18 ft and up. Command Thrust gives meaningful hole shot, load-handling, and pulling power that the standard gearcase cannot match on pontoons. The cost premium over standard is worth it. See our [Command Thrust guide](/blog/mercury-command-thrust-guide-pontoon-boats).'
-      },
-      {
-        question: 'Can I use my pontoon for water sports?',
-        answer: 'Yes, with the right HP. Tubing is feasible on 115 HP CT or higher. Skiing requires 115 to 150 HP CT minimum. Wakeboarding requires 150 HP CT or higher with proper ballast and tower setup. Pontoons designed for water sports (some tritoons) handle this best.'
-      },
-      {
-        question: 'Should I get a tritoon or stick with my two-tube pontoon?',
-        answer: 'Two-tube pontoons handle cruising, fishing, and lighter family use well. Tritoons are the better choice for active water sports, higher speeds, more passengers, and rougher water. The hull decision is separate from the motor decision.'
       },
       {
         question: 'What\'s the cost of a typical pontoon repower in Ontario?',
@@ -3970,10 +3966,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       {
         question: 'Should I get FourStroke or Pro XS for a pontoon?',
         answer: 'FourStroke is almost always the right answer for pontoons. Pro XS is built for tournament fishing and performance applications, not for the load-handling and cruising emphasis of pontoons. Stick with FourStroke for pontoon repowers.'
-      },
-      {
-        question: 'What\'s the typical fuel economy of a pontoon Mercury?',
-        answer: 'At cruise speed, a 90 HP CT pontoon runs 4 to 5 mph per US gallon, or roughly 1.5 to 2 km per liter. The 115 CT and 150 CT are slightly less efficient at cruise but still very good. Loading and water conditions move fuel economy more than HP class within this range.'
       },
     ]
   },

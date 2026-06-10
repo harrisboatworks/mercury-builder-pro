@@ -1,29 +1,29 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md
-last_updated: 2026-05-04
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Best Mercury for a Pontoon: 90 to 150 HP CT (2026)"
+title: "Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)"
 description: "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-150 HP FourStroke with Command Thrust. The gearcase matters more than HP. HBW explains why."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-05-04
+date_modified: 2026-06-09
 keywords: ["mercury for pontoon boat","best pontoon outboard","pontoon motor hp","command thrust pontoon","mercury 115 pontoon","mercury 150 pontoon","rice lake pontoon"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Best Mercury for a Pontoon: 90 to 150 HP CT (2026)
+# Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)
 
 > For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-150 HP FourStroke with Command Thrust. The gearcase matters more than HP. HBW explains why.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-09  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats
 
@@ -189,6 +189,10 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## FAQs
 
+### Is a 90 HP Mercury enough for a pontoon boat?
+
+For an 18 to 20 ft pontoon with a typical family load, a Mercury 90 HP with Command Thrust is a solid match: the CT gearcase swings a bigger prop, which is what gets a pontoon out of the hole. Past 20 ft, or if you tow tubes with a full crew, step to the 115 or 150 CT. The gearcase matters as much as the horsepower number.
+
 ### What is the best Mercury outboard for an 18-foot pontoon?
 
 For cruising and fishing without water sports, the 90 HP Command Thrust FourStroke is plenty. For occasional water sports with kids, step up to 115 HP Command Thrust. The all-in repower for 90 to 115 HP CT lands $17,000 to $22,000 CAD at HBW.
@@ -204,14 +208,6 @@ For cruising, 115 to 150 HP Command Thrust. For active water sports with full fa
 ### Do I need Mercury Command Thrust on a pontoon?
 
 Yes for most pontoons 18 ft and up. Command Thrust gives meaningful hole shot, load-handling, and pulling power that the standard gearcase cannot match on pontoons. The cost premium over standard is worth it. See our [Command Thrust guide](/blog/mercury-command-thrust-guide-pontoon-boats).
-
-### Can I use my pontoon for water sports?
-
-Yes, with the right HP. Tubing is feasible on 115 HP CT or higher. Skiing requires 115 to 150 HP CT minimum. Wakeboarding requires 150 HP CT or higher with proper ballast and tower setup. Pontoons designed for water sports (some tritoons) handle this best.
-
-### Should I get a tritoon or stick with my two-tube pontoon?
-
-Two-tube pontoons handle cruising, fishing, and lighter family use well. Tritoons are the better choice for active water sports, higher speeds, more passengers, and rougher water. The hull decision is separate from the motor decision.
 
 ### What's the cost of a typical pontoon repower in Ontario?
 
@@ -232,10 +228,6 @@ Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours
 ### Should I get FourStroke or Pro XS for a pontoon?
 
 FourStroke is almost always the right answer for pontoons. Pro XS is built for tournament fishing and performance applications, not for the load-handling and cruising emphasis of pontoons. Stick with FourStroke for pontoon repowers.
-
-### What's the typical fuel economy of a pontoon Mercury?
-
-At cruise speed, a 90 HP CT pontoon runs 4 to 5 mph per US gallon, or roughly 1.5 to 2 km per liter. The 115 CT and 150 CT are slightly less efficient at cruise but still very good. Loading and water conditions move fuel economy more than HP class within this range.
 
 ## Next steps
 
