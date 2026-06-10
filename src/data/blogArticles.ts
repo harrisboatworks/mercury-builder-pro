@@ -36088,7 +36088,7 @@ Build your repower quote at [mercuryrepower.ca](https://mercuryrepower.ca) or ca
     image: "/lovable-uploads/Financing_A_New_Boat_Motor_Hero.png",
     author: "Jay Harris",
     datePublished: "2026-06-06",
-    dateModified: "2026-06-06",
+    dateModified: "2026-06-10",
     publishDate: "2026-06-06",
     category: "Financing & Value",
     readTime: "4 min read",
@@ -36097,15 +36097,16 @@ Build your repower quote at [mercuryrepower.ca](https://mercuryrepower.ca) or ca
       { question: "Can you finance a boat motor repower in Ontario?", answer: "Yes. Financing a repower works like most marine purchases in Ontario, you apply, get approved, and the amount financed is the installed cost of the repower (motor, rigging, controls, and labour) minus any trade-in credit and down payment. You can build your installed-price quote first at mercuryrepower.ca, then decide whether to finance." },
       { question: "What does 'OAC' mean on a repower financing rate?", answer: "OAC means 'on approved credit.' Your actual rate depends on your credit score, loan term, and the amount financed. Harris Boat Works does not set the lending criteria, the lender does, and the rate you're quoted at application is the rate that matters." },
       { question: "What does repower financing cover?", answer: "Financing covers the installed repower: the motor, all required rigging, controls, throttle and shift cables, the steering connection, and typically the first service. Transom work, steering replacement, or electrical upgrades are quoted separately and can usually be added to the financed amount if included before submission." },
-      { question: "Do I have to apply for financing before getting a quote?", answer: "No. There's no obligation to apply before getting a quote. Many customers build the quote at mercuryrepower.ca first, then decide whether to finance or pay cash." }
+      { question: "Do I have to apply for financing before getting a quote?", answer: "No. There's no obligation to apply before getting a quote. Many customers build the quote at mercuryrepower.ca first, then decide whether to finance or pay cash." },
+      { question: "Is the $103/month example a normal 5-year loan?", answer: "No. That payment uses a 240-month amortization basis with a 60-month contract, which keeps the monthly number low but leaves a balloon of roughly $12,600 due at month 60. You can pay it out, refinance the balance, or trade in toward a new motor at that point. If a balloon doesn't suit you, ask about a shorter amortization basis: higher monthly payment, cleaner end of term." }
     ],
-    content: `*Last reviewed: 2026-06-06*
+    content: `*Last reviewed: 2026-06-10*
 
 > **Quick answer:** Yes, you can finance a Mercury repower in Ontario. The amount financed is the installed cost of the repower (motor, rigging, controls, labour) minus any trade-in credit and down payment. Build your installed-price quote at mercuryrepower.ca first, then decide whether to finance or pay cash.
 
 ## Can you finance a repower? Yes. Here's what it actually costs.
 
-Financing a motor repower works the same way as financing most marine purchases in Ontario. You apply, get approved, and the amount financed is the installed cost of the repower, new motor, rigging, controls, and labour, minus any trade-in credit and down payment.
+Financing a motor repower works the same way as financing most marine purchases in Ontario. You apply, get approved, and the amount financed is the installed cost of the repower, new motor, rigging, controls, and labour, minus any [trade-in credit](/blog/repower-old-motor-trade-in-hst-disposal-ontario) and down payment.
 
 This page gives you real numbers, not a "call for details" brushoff.
 
@@ -36117,6 +36118,8 @@ Financing runs through our broker, Dealerplan Peterborough, on TD Auto Finance's
 
 OAC means "on approved credit." Your actual rate depends on your credit score, loan term, and the amount financed. We do not control the lending criteria, the lender does.
 
+**The fine print, in plain words:** rates, terms, and approvals are set by the lender, not by us, and they change. OAC means the lender decides. Every number on this page is an illustration; the financing agreement you sign is the only document that matters.
+
 ---
 
 ## What monthly payments actually look like
@@ -36127,7 +36130,9 @@ Let's use real math.
 - Motor price: $14,960 (our current selling price, listed at [mercuryrepower.ca/pricing-reference](https://www.mercuryrepower.ca/pricing-reference))
 - Rigging, controls, and install: quoted per boat in the configurator, so your installed number is exact, not estimated
 - Less any trade-in credit on your old motor
-- At 5.48% APR, that 90hp motor works out to roughly $103/month on the same payment basis as our [monthly payment guide](https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026)
+- At 5.48% APR, that 90hp motor works out to roughly $103/month. Important: that figure uses a 240-month amortization basis with a 60-month contract, so at month 60 the remaining principal (roughly $12,600) comes due as a balloon you can pay out, refinance, or roll into a trade. The full math, including every HP tier, is in our [monthly payment guide](/blog/mercury-outboard-monthly-payment-ontario-2026).
+
+**Payment assumptions:** motor price only (installed cost is quoted per boat), HST not included in the financed example, 5.48% APR under the TD Always On program (OAC, through December 31, 2026), 240-month amortization basis with 60-month contract. Your quoted rate and payment at application are what count.
 
 A trade-in or down payment drops the financed amount and the payment with it.
 
