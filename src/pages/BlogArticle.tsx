@@ -325,6 +325,9 @@ export default function BlogArticle() {
                 location="header"
               />
             </div>
+            <p className="mt-3 text-xs text-repower-navy-900/50">
+              Last updated: {parseLocalDate(article.dateModified || article.datePublished).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+            </p>
           </header>
 
           {/* Featured Image — shared <picture> component (see BlogHeroPicture) */}
