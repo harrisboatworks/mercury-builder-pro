@@ -33028,7 +33028,7 @@ Harris Boat Works · Mercury Marine Platinum Dealer · Mercury dealer since 1965
     image: '/lovable-uploads/hero-mercury-pro-xs-buyer-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Buying Guide',
     readTime: '8 min read',
