@@ -34634,7 +34634,7 @@ We'll quote your motor honestly, check your serial against Mercury's official Bo
     image: '/lovable-uploads/hero-mercury-vs-yamaha-honda.png',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-06-05',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-28',
     category: 'Buying Guide',
     readTime: '9 min read',
