@@ -35963,7 +35963,7 @@ If you are weighing a Mercury repower for spring 2026, the next step is a no-obl
     image: "/lovable-uploads/Tariffs_and_Trade_Blog_Hero_Image.png",
     author: "Jay Harris",
     datePublished: "2026-06-06",
-    dateModified: "2026-06-06",
+    dateModified: "2026-06-10",
     publishDate: "2026-06-06",
     category: "Repower",
     readTime: "4 min read",
@@ -35971,7 +35971,8 @@ If you are weighing a Mercury repower for spring 2026, the next step is a no-obl
     faqs: [
       { question: "Can I trade in my old outboard when I repower?", answer: "Yes. At Harris Boat Works your old outboard can be traded in toward the new motor, used to reduce the taxable amount of the transaction, or disposed of properly if it is beyond trade value. We inspect every trade-in and give you a number upfront before you commit." },
       { question: "How does the HST credit work on a boat motor trade-in in Ontario?", answer: "When you trade in a motor as part of a repower in Ontario, you generally pay HST only on the difference between the new motor price and the trade-in value, not the full purchase price. We apply this correctly on every repower. For your specific tax situation, your accountant or the CRA is the right call." },
-      { question: "What if my old motor isn't worth anything?", answer: "Some motors aren't worth trading, an old two-stroke that hasn't run in years may have little or no trade value. In that case Harris Boat Works helps you dispose of it properly through a certified recycler. Old marine two-strokes contain oil, fuel, and metals that shouldn't go in a dumpster." },
+      { question: "What if my old motor isn't worth anything?", answer: "Some motors aren't worth trading, an old two-stroke that hasn't run in years may have little or no trade value. In that case you can leave it with us when you repower, at no charge, and we route it through certified recycling channels so the oil, fuel, and metals are handled properly." },
+      { question: "Does Harris Boat Works buy used outboards outright?", answer: "No. We take used motors as trade-ins against a repower or new motor purchase, but we don't buy outboards outright. If you're not buying a motor from us, a private sale or a certified recycler is the better route." },
       { question: "Does a repower include an on-water test?", answer: "Yes. Every repower at Harris Boat Works gets an on-water test on Rice Lake before pickup. No exceptions." }
     ],
     content: `*Last reviewed: 2026-06-06*
@@ -35983,6 +35984,8 @@ If you are weighing a Mercury repower for spring 2026, the next step is a no-obl
 Here's the short answer: when you repower at Harris Boat Works, your old outboard can be traded in toward the new motor, used to reduce the taxable amount of the transaction (which affects your HST), or disposed of properly if it's beyond any trade value. Most customers do a combination of all three.
 
 Nobody in Ontario explains this clearly. We're going to.
+
+Still deciding whether a repower makes sense at all? Start with our guide on [whether to repair, repower, or sell your boat](/blog/repair-repower-or-sell-boat-ontario-decision-guide), then come back here for the old-motor logistics.
 
 ---
 
@@ -36000,7 +36003,7 @@ Not sure what yours is worth? Run it through our trade value tool at [harrisboat
 
 ## The HST credit: how it works in Ontario
 
-When you trade in a motor as part of a repower transaction in Ontario, you may only pay HST on the **difference** between the new motor price and the trade-in value, not the full purchase price.
+When you trade in a motor to an HST-registered dealer as part of the same repower transaction in Ontario, HST is generally calculated on the difference between the new motor price and the trade-in value, not the full purchase price. This is the federal trade-in rule (Excise Tax Act, subsection 153(4)) and it applies in the typical case where a private owner trades in to a dealer. How your transaction is structured matters, so the numbers below are an illustration, not tax advice.
 
 That can be a real number. On a $14,960 motor (a Mercury 90 ELPT FourStroke at our current price) with a $3,000 trade-in credit, you pay HST on $11,960 instead of the full price. At 13%, that keeps about $390 in your pocket. We're not tax advisors and your situation may vary, but this is how the transaction generally works in Ontario, and we apply it correctly on every repower.
 
@@ -36008,11 +36011,44 @@ If you have questions about how this applies to your specific situation, your ac
 
 ---
 
+## Trade it in, sell it privately, or recycle it?
+
+You've got three ways out for the old motor, and the right one depends on what it's worth and how much of your time you want to spend.
+
+| Option | What you get | Effort | The catch |
+|--------|--------------|--------|-----------|
+| Trade-in | Instant credit toward the new motor, plus the HST reduction | None, we handle it at repower time | The credit may be below a private-sale sticker price |
+| Private sale | Potentially a higher sticker price | Weeks of listings, no-shows, and lowball offers | You lose the HST offset, and your time isn't free |
+| Recycling | A clean, responsible end for the motor | Minimal | No money back, this is for motors with no remaining value |
+
+The HST math changes the comparison more than people expect. A $3,000 trade-in credit reduces your taxable amount, which at 13% HST means it is effectively worth about $3,390 against a private sale price. A private buyer would have to pay you more than that before selling it yourself comes out ahead, before counting your time.
+
+One thing to know upfront: we take motors on trade against a repower or new motor purchase. We don't buy used outboards outright.
+
+---
+
+## What we look at when we assess a trade-in
+
+No mystery checklist here. When we put a number on your old motor, this is what we're looking at:
+
+- Brand and horsepower
+- Model year and hours
+- Whether it runs (a motor we can hear is worth more than a promise)
+- Compression and diagnostics
+- Lower unit condition
+- Corrosion and overall cosmetics
+- Shaft length (affects who can use it next)
+- Whether controls, harness, and propeller are included
+
+It's the same assessment behind our trade value tool at [harrisboatworks.ca/tradevalue](https://harrisboatworks.ca/tradevalue), so the number you see online holds up in the shop.
+
+---
+
 ## What if the old motor isn't worth anything?
 
 Some motors aren't worth trading. If you're replacing a 1998 two-stroke Evinrude that hasn't run in four years, the trade value may be zero or close to it. That's honest, not a negotiating position.
 
-In that case, we help you get the motor disposed of properly. We can advise on proper disposal through a certified recycler. Ask us at the time of your repower.
+If your old motor has no trade value, leave it with us when you repower. No charge. We route dead outboards through certified recycling channels so the oil, fuel, and metals are handled properly.
 
 Old marine two-strokes contain oil, fuel, and metals that shouldn't go in a dumpster. Disposal done right is better for Rice Lake. That's not a slogan, the lake is 200 metres from our shop.
 
@@ -36023,7 +36059,7 @@ Old marine two-strokes contain oil, fuel, and metals that shouldn't go in a dump
 When you repower with us, we give you:
 
 - A trade-in assessment on your current motor before you commit
-- An installed price that includes rigging, controls, and anything else the job needs
+- An [installed price](/blog/mercury-repower-cost-ontario-2026-cad) that includes rigging, controls, and anything else the job needs
 - HST calculated correctly on the net amount after trade-in
 - A proper plan for the old motor, trade credit, disposal, or both
 
