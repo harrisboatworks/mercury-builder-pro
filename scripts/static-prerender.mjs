@@ -2567,18 +2567,19 @@ const BLOG_TABLE_FALLBACKS = {
 // so crawlers + LLMs see the responsive WebP srcset and credentials
 // without executing JS. Keep in sync if those components change.
 // ============================================================
-function renderHeroPictureHtml(image, alt) {
+function renderHeroPictureHtml(image, alt, photoSlot) {
   if (!image) return '';
   const safeAlt = escapeHtml(alt || '');
+  const slotAttr = photoSlot ? ` data-photo-slot="${escapeHtml(photoSlot)}"` : '';
   const isLocalRaster = /^\/.+\.(png|jpe?g)$/i.test(image);
   if (!isLocalRaster) {
-    return `<figure class="blog-hero"><img src="${escapeHtml(image)}" alt="${safeAlt}" loading="eager" fetchpriority="high" /></figure>`;
+    return `<figure class="blog-hero"${slotAttr}><img src="${escapeHtml(image)}" alt="${safeAlt}" loading="eager" fetchpriority="high" /></figure>`;
   }
   const base = image.replace(/\.(png|jpe?g)$/i, '');
   const srcSet = `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`;
   const sizes = '(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw';
   return (
-    `<figure class="blog-hero">` +
+    `<figure class="blog-hero"${slotAttr}>` +
       `<picture>` +
         `<source srcset="${srcSet}" sizes="${sizes}" type="image/webp" />` +
         `<img src="${escapeHtml(image)}" alt="${safeAlt}" loading="eager" fetchpriority="high" />` +
@@ -2679,7 +2680,7 @@ const blogArticleRoutes = blogArticles.map(article => ({
   schemas: [blogArticleSchema(article)],
   extraHead: blogHreflangTags(article.slug),
   extraNoscript: () => {
-    const heroHtml = renderHeroPictureHtml(article.image, article.title);
+    const heroHtml = renderHeroPictureHtml(article.image, article.title, article.photoSlot);
     const bylineHtml = renderAuthorBylineHtml(article.author);
     const bodyHtml = renderArticleBodyHtml(article.content);
     const faqHtml = (article.faqs && article.faqs.length > 0)
@@ -2748,7 +2749,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       return '';
     })(),
     extraNoscript: () => {
-      const heroHtml = renderHeroPictureHtml(article.image, article.title);
+      const heroHtml = renderHeroPictureHtml(article.image, article.title, article.photoSlot);
       const bylineHtml = renderAuthorBylineHtml(article.author);
       const bodyHtml = renderArticleBodyHtml(article.content);
       const faqHtml = (article.faqs && article.faqs.length > 0)
