@@ -399,7 +399,7 @@ export default function BlogArticle() {
                   const stripped = href.replace(/^https?:\/\/[^/]+/, '');
                   const isInternal = href.startsWith('/') || href.includes('harrisboatworks') || href.includes('mercuryquote') || href.includes('mercuryrepower');
                   const isCta = title === 'cta';
-                  const ctaClass = 'inline-block bg-[hsl(var(--brand-red))] text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition no-underline my-4';
+                  const ctaClass = 'inline-block bg-repower-mercury-red text-white font-semibold px-6 py-3 rounded-lg hover:bg-repower-mercury-red-deep transition no-underline my-4';
                   const linkClass = isCta ? ctaClass : 'text-primary hover:underline';
                   if (isInternal && (stripped.startsWith('/') || href.startsWith('/'))) {
                     return <Link to={stripped.startsWith('/') ? stripped : href} className={linkClass}>{children}</Link>;
