@@ -51,6 +51,7 @@ import {
   generateAlternator,
 } from "../../lib/motor-spec-generators";
 import { findMotorSpecs } from "../../lib/data/mercury-motors";
+import { formatMotorDisplayName } from "@/lib/motor-display-formatter";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -113,6 +114,8 @@ export default function MotorDetailsPremiumModal({
   const smartReview = useSmartReviewRotation(hpValue, title);
   const motorSpecs = motor ? findMotorSpecs(hpValue, title) : undefined;
   const decoded = decodeModelName(motor?.model || title, hpValue);
+  // Display-only: guarantees proper spacing, e.g. "9.9 MLH FourStroke" never "9.9MLH FourStroke"
+  const displayTitle = formatMotorDisplayName(title);
 
 
   // Generate fallback description if missing or suspicious
@@ -383,7 +386,7 @@ export default function MotorDetailsPremiumModal({
                 {/* Stock Status and Title */}
                 <div className="px-4 py-3 border-b border-gray-200">
                   <div className="flex items-center gap-2 mb-1">
-                    <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
+                    <h2 className="text-lg font-semibold text-gray-900">{displayTitle}</h2>
                   </div>
                   {motor?.model_number && (
                     <p className="text-xs font-mono text-muted-foreground mb-1">{motor.model_number}</p>
@@ -450,7 +453,7 @@ export default function MotorDetailsPremiumModal({
                     
                     {/* H1, motor name */}
                     <h2 className="font-display font-bold text-[32px] tracking-[-0.025em] leading-tight text-[#050E1C]">
-                      {title}
+                      {displayTitle}
                     </h2>
                     {motor?.model_number && (
                       <p className="text-[13px] font-mono text-[#050E1C]/45 mt-2">{motor.model_number}</p>
@@ -922,7 +925,7 @@ export default function MotorDetailsPremiumModal({
                   {/* Motor Name & Thumbnail */}
                   <div>
                     <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C]">
-                      {title}
+                      {displayTitle}
                     </h3>
                   </div>
                   

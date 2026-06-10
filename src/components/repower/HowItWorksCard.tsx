@@ -14,6 +14,8 @@ export interface HowItWorksCardProps {
   alt?: string;
   /** Above-the-fold LCP candidate: eager-load with high fetchpriority. */
   priority?: boolean;
+  /** Wrap the image in a macOS-style browser-window frame (for raw screenshots). */
+  framed?: boolean;
   title: string;
   body: string;
   stepNumber: number;
@@ -30,6 +32,7 @@ export function HowItWorksCard({
   imageBase,
   alt,
   priority = false,
+  framed = false,
   title,
   body,
   stepNumber,
@@ -38,6 +41,34 @@ export function HowItWorksCard({
   const widths = [400, 800, 1600];
   const buildSet = (ext: 'avif' | 'webp') =>
     widths.map((w) => `/assets/optimized/${imageBase}-${w}w.${ext} ${w}w`).join(', ');
+
+  const imgEl = imageBase ? (
+    <picture>
+      <source type="image/avif" srcSet={buildSet('avif')} sizes={sizes} />
+      <source type="image/webp" srcSet={buildSet('webp')} sizes={sizes} />
+      <img
+        src={image}
+        alt={alt ?? title}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : 'auto'}
+        decoding="async"
+        width={800}
+        height={600}
+        className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110 group-active:scale-105"
+      />
+    </picture>
+  ) : (
+    <img
+      src={image}
+      alt={alt ?? title}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchPriority={priority ? 'high' : 'auto'}
+      decoding="async"
+      width={800}
+      height={600}
+      className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110 group-active:scale-105"
+    />
+  );
 
   return (
     <li
@@ -50,37 +81,30 @@ export function HowItWorksCard({
       />
 
       <div className="aspect-[16/10] md:aspect-[4/3] overflow-hidden border-b border-[#F5F1EA]/10 relative">
-        {imageBase ? (
-          <picture>
-            <source type="image/avif" srcSet={buildSet('avif')} sizes={sizes} />
-            <source type="image/webp" srcSet={buildSet('webp')} sizes={sizes} />
-            <img
-              src={image}
-              alt={alt ?? title}
-              loading={priority ? 'eager' : 'lazy'}
-              fetchPriority={priority ? 'high' : 'auto'}
-              decoding="async"
-              width={800}
-              height={600}
-              className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110 group-active:scale-105"
-            />
-          </picture>
+        {framed ? (
+          /* Browser-window frame so raw screenshots read as intentional product shots */
+          <div className="absolute inset-0 p-4 sm:p-5 md:p-6 flex items-center justify-center bg-[#081322]">
+            <div className="relative w-full h-full rounded-lg overflow-hidden border border-[#F5F1EA]/15 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.6)] bg-[#0D1F33] flex flex-col">
+              <div className="flex items-center gap-1.5 px-3 py-2 bg-[#101F33] border-b border-[#F5F1EA]/10 shrink-0">
+                <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
+                <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
+                <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
+                <span className="ml-3 flex-1 max-w-[240px] truncate rounded bg-[#F5F1EA]/10 px-2.5 py-0.5 font-sans text-[10px] text-[#F5F1EA]/55">
+                  mercuryrepower.ca/quote
+                </span>
+              </div>
+              <div className="flex-1 min-h-0 overflow-hidden">{imgEl}</div>
+            </div>
+          </div>
         ) : (
-          <img
-            src={image}
-            alt={alt ?? title}
-            loading={priority ? 'eager' : 'lazy'}
-            fetchPriority={priority ? 'high' : 'auto'}
-            decoding="async"
-            width={800}
-            height={600}
-            className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110 group-active:scale-105"
+          imgEl
+        )}
+        {!framed && (
+          <span
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-t from-[#0A1828]/60 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500"
           />
         )}
-        <span
-          aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-[#0A1828]/60 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500"
-        />
       </div>
 
       <div className="p-6 sm:p-8 md:p-10 flex-1 flex flex-col relative">
@@ -92,7 +116,10 @@ export function HowItWorksCard({
             Step {stepNumber}
           </span>
         </div>
-        <h3 className="font-display font-semibold text-lg sm:text-xl md:text-2xl text-[#F5F1EA] mb-2 md:mb-3 tracking-tight transition-colors duration-500 group-hover:text-white">
+        <h3
+          className="font-display font-semibold text-lg sm:text-xl md:text-2xl text-[#F5F1EA] mb-2 md:mb-3 tracking-tight transition-colors duration-500 group-hover:text-white"
+          style={{ textWrap: 'balance' }}
+        >
           {title}
         </h3>
         <p className="font-sans font-light text-sm md:text-base text-[#F5F1EA]/70 md:text-[#F5F1EA]/65 leading-relaxed">
