@@ -12,10 +12,9 @@ import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { decodeTradeInModel, type Confidence, type DecodeResult } from './tradeInModelDecoder';
-import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type TradeValuationConfig, type HBWValuationResult } from '@/lib/trade-valuation';
+import { medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type HBWValuationResult } from '@/lib/trade-valuation';
 import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
-import { useTradeValuationData } from '@/hooks/useTradeValuationData';
 
 
 
@@ -37,6 +36,7 @@ interface TradeInValuationProps {
 export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear, customerName, standalone = false, selectedMotorPrice }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
+  const [apiUnavailable, setApiUnavailable] = useState(false);
   const [showValidation, setShowValidation] = useState(false);
   const [moreDetailsOpen, setMoreDetailsOpen] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
@@ -52,7 +52,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const [hpOverrideInput, setHpOverrideInput] = useState<string>('');
 
   // Fetch trade valuation data from Supabase (with fallback to hardcoded values)
-  const { data: valuationData } = useTradeValuationData();
 
   // Shared writer for the model input + suggestion clicks.
   const applyModelText = (raw: string) => {
@@ -175,6 +174,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     }
 
     setIsLoading(true);
+    setApiUnavailable(false);
 
     // Stroke is always inferred by the HBW API from the model code.
     const hbwResult = await fetchHBWValuation({
@@ -192,32 +192,15 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       console.log('✅ HBW API returned valuation:', hbwResult);
       tradeEstimate = hbwResult;
     } else {
-      console.log('⚠️ HBW API unavailable, using local fallback');
-      // Simulate brief delay for local calc
-      await new Promise(resolve => setTimeout(resolve, 800));
-      
-      // Build config from database data
-      const config: TradeValuationConfig | undefined = valuationData?.config ? {
-        BRAND_PENALTY_JOHNSON: valuationData.config.BRAND_PENALTY_JOHNSON as { factor: number } | undefined,
-        BRAND_PENALTY_EVINRUDE: valuationData.config.BRAND_PENALTY_EVINRUDE as { factor: number } | undefined,
-        BRAND_PENALTY_OMC: valuationData.config.BRAND_PENALTY_OMC as { factor: number } | undefined,
-        MERCURY_BONUS_YEARS: valuationData.config.MERCURY_BONUS_YEARS as { max_age: number; factor: number } | undefined,
-        MIN_TRADE_VALUE: valuationData.config.MIN_TRADE_VALUE as { value: number } | undefined,
-        HP_CLASS_FLOORS: valuationData.config.HP_CLASS_FLOORS as Record<string, number> | undefined,
-        TWO_STROKE_PENALTY: valuationData.config.TWO_STROKE_PENALTY as { factor: number } | undefined,
-        HOURS_ADJUSTMENT: valuationData.config.HOURS_ADJUSTMENT as TradeValuationConfig['HOURS_ADJUSTMENT'] | undefined,
-        MSRP_TRADE_PERCENTAGES: valuationData.config.MSRP_TRADE_PERCENTAGES as unknown as Record<string, Record<string, number>> | undefined,
-      } : undefined;
-      
-      tradeEstimate = {
-        ...estimateTradeValue(tradeInInfo, {
-          brackets: valuationData?.brackets,
-          config,
-          referenceMsrps: valuationData?.referenceMsrps,
-          referenceMsrpsMax: valuationData?.referenceMsrpsMax,
-        }),
-        fromHBW: false,
-      };
+      // Live valuation API unreachable. We deliberately do NOT fall back to the
+      // local table — it drifts out of sync with the canonical HBW engine
+      // (hbw-valuation on Vercel) and quietly shows customers numbers we never
+      // quoted. Fail honestly: offer retry + a direct line instead.
+      console.warn('⚠️ HBW valuation API unavailable — showing retry/contact message (no local fallback)');
+      setApiUnavailable(true);
+      setEstimate(null);
+      setIsLoading(false);
+      return;
     }
 
     setEstimate(tradeEstimate);
@@ -872,6 +855,32 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   <Loader2 className="w-5 h-5 animate-spin" />
                   <span className="text-lg font-light">Calculating your estimate...</span>
                 </div>
+              )}
+
+              {/* Valuation service unavailable — honest failure, no stale fallback numbers */}
+              {apiUnavailable && !isLoading && !estimate && (
+                <Card className="p-6 bg-amber-50 border-amber-200 space-y-4">
+                  <div className="flex items-start gap-3">
+                    <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-light text-gray-900">Live estimate temporarily unavailable</h3>
+                      <p className="text-sm font-light text-gray-700 leading-relaxed">
+                        We couldn't reach our valuation service just now. Try again in a minute — or send us your motor details and we'll reply with a real number within one business day.
+                      </p>
+                      <p className="text-sm font-light text-gray-700">
+                        Call <a href="tel:9053422153" className="underline font-medium">(905) 342-2153</a> or text <a href="sms:6479522153" className="underline font-medium">(647) 952-2153</a>
+                      </p>
+                    </div>
+                  </div>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={handleGetEstimate}
+                    className="w-full min-h-[44px] font-light"
+                  >
+                    Try again
+                  </Button>
+                </Card>
               )}
 
               {/* Database Estimate Result */}
