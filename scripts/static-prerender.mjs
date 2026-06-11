@@ -4817,6 +4817,11 @@ console.log(`[static-prerender] ✓ ${routes.length} routes prerendered`);
 // by Vercel) and public/sitemap.xml (kept in sync for repo).
 // ============================================================
 const today = new Date().toISOString().split('T')[0];
+// NOTE: THIS list is the one that ships to production. This script runs after
+// vite build and overwrites both dist/sitemap.xml and public/sitemap.xml, so
+// any URL missing here is missing from the live sitemap regardless of what
+// src/utils/generateSitemap.ts emits. Keep the static routes below in sync
+// with getStaticEntries() in src/utils/generateSitemap.ts.
 const staticSitemapEntries = [
   { loc: '/', priority: 1.0, changefreq: 'daily' },
   { loc: '/quote/motor-selection', priority: 0.9, changefreq: 'daily' },
@@ -4850,6 +4855,10 @@ const staticSitemapEntries = [
   { loc: '/mercury-outboards-ontario', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury-pontoon-outboards', priority: 0.8, changefreq: 'monthly' },
   { loc: '/agents', priority: 0.8, changefreq: 'monthly' },
+  // Language hub pages (only /zh and /fr exist as routes; Korean and
+  // Spanish articles live under /blog/ko and /blog/es without a hub).
+  { loc: '/zh', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/fr', priority: 0.7, changefreq: 'monthly' },
   { loc: '/pricing-reference', priority: 0.9, changefreq: 'weekly' },
   { loc: '/pricing-reference.md', priority: 0.85, changefreq: 'weekly' },
   { loc: '/privacy', priority: 0.3, changefreq: 'yearly' },
