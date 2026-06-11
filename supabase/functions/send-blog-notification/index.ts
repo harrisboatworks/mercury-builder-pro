@@ -92,7 +92,7 @@ const handler = async (req: Request): Promise<Response> => {
             const unsubscribeUrl = `${appUrl}/blog/unsubscribe?token=${subscriber.unsubscribe_token}`;
             
             await resend.emails.send({
-              from: "Harris Boat Works <updates@hbwsales.ca>",
+              from: "Harris Boat Works <updates@mercuryrepower.ca>",
               to: [subscriber.email],
               subject: `New Post: ${articleTitle}`,
               html: `

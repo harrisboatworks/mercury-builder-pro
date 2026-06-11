@@ -110,7 +110,7 @@ serve(async (req: Request): Promise<Response> => {
     );
 
     const emailResp = await resend.emails.send({
-      from: 'Harris Boat Works System <noreply@hbwsales.ca>',
+      from: 'Harris Boat Works System <noreply@mercuryrepower.ca>',
       reply_to: ['info@harrisboatworks.ca'],
       to: [adminEmail],
       subject: `⏰ ${fresh.length} promo${fresh.length === 1 ? '' : 's'} expiring soon — extend before they end`,

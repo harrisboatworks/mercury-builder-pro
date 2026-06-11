@@ -241,7 +241,7 @@ serve(async (req) => {
       if (finalPdf) customerAttachments.push(finalPdf);
 
       const emailResponse = await resend.emails.send({
-        from: "Harris Boat Works <deposits@hbwsales.ca>",
+        from: "Harris Boat Works <deposits@mercuryrepower.ca>",
         to: [customerEmail],
         subject: customerSubject,
         html: emailHtml,
@@ -266,7 +266,7 @@ serve(async (req) => {
         : `NEW DEPOSIT $${depositAmount} - ${customerName}`;
 
       const adminResponse = await resend.emails.send({
-        from: "Harris Boat Works System <deposits@hbwsales.ca>",
+        from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
         to: ADMIN_EMAILS,
         subject: adminSubject,
         html: adminHtml,

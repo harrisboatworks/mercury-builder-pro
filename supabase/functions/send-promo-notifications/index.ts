@@ -122,7 +122,7 @@ serve(async (req) => {
             (subscription.preferred_channel === 'email' || subscription.preferred_channel === 'both')) {
           try {
             await resend.emails.send({
-              from: "Harris Boat Works <noreply@hbwsales.ca>",
+              from: "Harris Boat Works <noreply@mercuryrepower.ca>",
               to: [subscription.customer_email],
               reply_to: "info@harrisboatworks.ca",
               subject: `🎉 New Promotion: ${newestPromo.name}!`,

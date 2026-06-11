@@ -712,7 +712,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         const resend = new Resend(RESEND_API_KEY);
         
         await resend.emails.send({
-          from: "Harris Boat Works <quotes@hbwsales.ca>",
+          from: "Harris Boat Works <quotes@mercuryrepower.ca>",
           to: [customerEmail],
           reply_to: "info@harrisboatworks.ca",
           subject: `Mercury ${motor.model_display || motor.model} - Motor Details`,
