@@ -32,7 +32,8 @@
           "extends": "dev.ucp.shopping.checkout"
         }
       ]
-    }
+    },
+    "payment_handlers": {}
   },
   "signing_keys": [
     {
