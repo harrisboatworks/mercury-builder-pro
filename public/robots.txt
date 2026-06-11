@@ -1,6 +1,6 @@
 # Harris Boat Works - Mercury Outboard Repower
 # https://www.mercuryrepower.ca
-# Last updated: 2026-05-24
+# Last updated: 2026-06-11
 
 # Default: open access for everyone, including AI crawlers we want
 User-agent: *
@@ -95,6 +95,22 @@ User-agent: PhindBot
 Allow: /
 
 User-agent: MistralAI-User
+Allow: /
+
+# Chinese search and AI ecosystem - explicitly welcome (Bytespider above covers ByteDance/Doubao)
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: YisouSpider
+Allow: /
+
+User-agent: PetalBot
 Allow: /
 
 # Sitemap

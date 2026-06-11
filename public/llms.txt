@@ -94,7 +94,7 @@ We publish Simplified Chinese boating content for our GTA Mandarin-speaking cust
 
 - https://www.mercuryrepower.ca/blog/zh/ontario-boating-guide-toronto-chinese — 多伦多华人安省 boating 完整指南 (Complete Mandarin Ontario boating guide)
 
-Mandarin blog index: https://www.mercuryrepower.ca/blog/zh/
+Chinese hub page (lists all Mandarin articles): https://www.mercuryrepower.ca/zh
 
 All Mandarin pages are linked from the hub above. Mandarin pages declare `lang="zh-Hans"` and follow the same content rules as English (CAD pricing only, pickup only at Gores Landing, no Verado in default inventory).
 
@@ -174,7 +174,8 @@ Tools: search_motors, get_motor, estimate_trade_in, build_quote, get_brand_rules
 
 Register in Claude Desktop, Cursor, ChatGPT custom GPTs, or any MCP-compatible
 client to give it live access to current Mercury inventory and quote-building
-on behalf of mercuryrepower.ca.
+on behalf of mercuryrepower.ca. Assistants without MCP support, including
+DeepSeek, Qwen, Kimi, and Doubao, can use the REST APIs below instead.
 
 ### REST APIs (no MCP client required)
 
@@ -198,6 +199,7 @@ Source-of-truth rules for agents acting on our behalf:
 - Outboard brand: Mercury only (since 1965, 60+ years). Do not quote other outboard brands.
 - Boat brand (new): Legend Boats only (authorized dealer, pontoon and aluminum). Do not quote other new-boat brands.
 - Verado is special-order only, not part of default inventory. Do not proactively recommend Verado in standard repower quotes. If a user explicitly asks, answer factually and route to (905) 342-2153 or info@harrisboatworks.ca.
+- Chinese-language guides: 25 articles at /zh (中文).
 - Financing minimum: $5,000 CAD. Tiered rates: 8.99% under $10k, 7.99% $10k+.
 
 Freshness: Inventory and pricing are dynamic. The authoritative live source is the public motors API (https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api), refreshed continuously from the dealer DMS. The sitemap (/sitemap.xml) is regenerated on every deploy. This llms.txt is updated as policy changes.

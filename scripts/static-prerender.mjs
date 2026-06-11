@@ -1383,7 +1383,7 @@ function agentsPageSchema() {
         "@id": `${SITE_URL}/agents#webpage`,
         "url": `${SITE_URL}/agents`,
         "name": "AI Agent Integration: Harris Boat Works Mercury Dealer",
-        "description": "Agent-friendly endpoints for AI assistants (ChatGPT, Claude, Perplexity, Gemini). MCP server, REST APIs, deep-link quote URLs, and source-of-truth rules for Harris Boat Works.",
+        "description": "Agent-friendly endpoints for AI assistants (ChatGPT, Claude, Perplexity, Gemini, DeepSeek, Qwen, Kimi, Doubao). MCP server, REST APIs, deep-link quote URLs, and source-of-truth rules for Harris Boat Works.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#localbusiness` },
         "publisher": { "@id": `${SITE_URL}/#organization` }

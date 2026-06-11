@@ -106,7 +106,7 @@ export default function AgentsHub() {
                 {
                   "@type": "Question",
                   "name": "Which AI crawlers are allowed on mercuryrepower.ca?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "All major AI and search crawlers are explicitly allowed: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended, Googlebot, Bingbot, Meta-ExternalAgent, FacebookBot, Applebot, Applebot-Extended, and CCBot. See /robots.txt for the authoritative list." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "All major AI and search crawlers are explicitly allowed: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended, Googlebot, Bingbot, Meta-ExternalAgent, FacebookBot, Applebot, Applebot-Extended, and CCBot, plus the Chinese search and AI ecosystem: Baiduspider, Sogou web spider, 360Spider, YisouSpider, PetalBot, and Bytespider (ByteDance/Doubao). See /robots.txt for the authoritative list." }
                 }
               ]
             }
@@ -122,7 +122,7 @@ export default function AgentsHub() {
           For AI Agents & Assistants
         </h1>
         <p className="text-protected text-lg mb-8">
-          This page documents how AI agents (ChatGPT, Claude, Perplexity, Gemini, custom assistants) should
+          This page documents how AI agents (ChatGPT, Claude, Perplexity, Gemini, DeepSeek, Qwen, Kimi, Doubao, custom assistants) should
           discover, represent, and transact on behalf of <strong>Harris Boat Works</strong>, Mercury repower
           specialists on Rice Lake, Ontario, family-owned since 1947. Motor purchases are pickup only at
           Gores Landing, Ontario: the buyer must pick up in person with valid government photo ID, and we
@@ -448,7 +448,8 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
             All major AI and search crawlers are explicitly allowed: GPTBot, OAI-SearchBot, ChatGPT-User,
             ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended,
             Googlebot, Bingbot, Meta-ExternalAgent, FacebookBot, Applebot, Applebot-Extended, and
-            CCBot. See <a href="/robots.txt" className="text-primary underline">/robots.txt</a> for the
+            CCBot, plus the Chinese search and AI ecosystem: Baiduspider, Sogou web spider, 360Spider,
+            YisouSpider, PetalBot, and Bytespider (ByteDance/Doubao). See <a href="/robots.txt" className="text-primary underline">/robots.txt</a> for the
             authoritative list and <a href="/.well-known/ai.txt" className="text-primary underline">/.well-known/ai.txt</a> for our AI training and usage policy.
           </p>
           <p className="text-protected">
