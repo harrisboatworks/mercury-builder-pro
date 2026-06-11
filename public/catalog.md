@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-06-10
+last_updated: 2026-06-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -58,29 +58,28 @@ See any motor twin for an example body.
 
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
 - [6MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke.md)
-- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
-- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
 - [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
+- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
+- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
 - [15 MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke.md)
 - [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
 - [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke.md)
 - [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
 - [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
 - [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
-- [40 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-command-thrust-fourstroke.md)
 - [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
 - [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke.md)
 - [90 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke.md)
-- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
-- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
 - [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
-- [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
+- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
+- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
 - [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs.md)
-- [200 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs-dts.md)
+- [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
 - [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs.md)
-- [250 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs.md)
+- [200 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs-dts.md)
 - [250 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs-dts.md)
+- [250 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs.md)
 
 ## Case studies
 
@@ -126,6 +125,7 @@ See any motor twin for an example body.
 
 Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
+- [Your AI Assistant Can Now Build a Mercury Quote at Harris Boat Works (UCP)](https://www.mercuryrepower.ca/blog/first-marine-dealer-ucp-agentic-commerce.md)
 - [When to Replace Your Mercury Impeller: What 766 Jobs Show](https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail.md)
 - [Mercury Command Thrust: Complete Guide to the 9.9 to 115 HP Lineup (2026)](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026.md)
 - [Is Your Mercury Outboard Eligible for DTS (Digital Throttle & Shift) Retrofit? (2026)](https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026.md)

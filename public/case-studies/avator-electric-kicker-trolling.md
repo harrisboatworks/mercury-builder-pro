@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/avator-electric-kicker-trolling
-last_updated: 2026-06-10
+last_updated: 2026-06-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
