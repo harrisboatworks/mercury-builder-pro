@@ -113,91 +113,40 @@ serve(async (req: Request): Promise<Response> => {
       console.error("[send-repower-guide-email] Error creating sequence:", sequenceError);
     }
 
-    // Send the welcome email with PDF
-    const emailHtml = `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f8fafc;">
-  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
-    <!-- Header -->
-    <div style="text-align: center; margin-bottom: 32px;">
-      <h1 style="color: #0f172a; font-size: 24px; font-weight: 600; margin: 0;">
-        Harris Boat Works
-      </h1>
-      <p style="color: #64748b; font-size: 14px; margin-top: 4px;">Mercury Dealer Since 1965</p>
-    </div>
-    
-    <!-- Main Card -->
-    <div style="background: white; border-radius: 16px; padding: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-      <h2 style="color: #0f172a; font-size: 22px; margin: 0 0 16px 0;">
-        Your Repower Guide is Ready! 📘
-      </h2>
-      
-      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 24px 0;">
-        ${name ? `Hi ${name},` : 'Hi there,'}<br><br>
-        Thanks for your interest in repowering. Here's your complete guide to making an informed decision about your boat's future.
-      </p>
-      
-      <!-- Download Button -->
-      <div style="text-align: center; margin: 32px 0;">
-        <a href="${trackClick(PDF_DOWNLOAD_URL, unsubscribeToken, 1)}" style="display: inline-block; background: #1e40af; color: white; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 16px;">
-          Download Your Guide
-        </a>
-      </div>
-      
-      <!-- What's Inside -->
-      <div style="background: #f1f5f9; border-radius: 12px; padding: 20px; margin: 24px 0;">
-        <p style="color: #0f172a; font-weight: 600; margin: 0 0 12px 0;">Inside the guide you'll find:</p>
-        <ul style="color: #475569; margin: 0; padding-left: 20px; line-height: 1.8;">
-          <li>When repowering makes financial sense (the 70/30 rule)</li>
-          <li>Transparent pricing breakdown by horsepower</li>
-          <li>The 4-step Harris repower process</li>
-          <li>Warning signs your motor needs replacing</li>
-          <li>Winter repower advantages</li>
-        </ul>
-      </div>
-      
-      ${hasBoatToRepower ? `
-      <!-- Hot Lead CTA -->
-      <div style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); border-radius: 12px; padding: 24px; margin: 24px 0; text-align: center;">
-        <p style="color: white; font-size: 16px; margin: 0 0 16px 0;">
-          Ready to discuss your boat's repower options?
-        </p>
-        <a href="${trackClick(`${APP_URL}/quote/motor-selection`, unsubscribeToken, 1)}" style="display: inline-block; background: white; color: #1e40af; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600;">
-          Build Your Quote
-        </a>
-      </div>
-      ` : ''}
-      
-      <!-- Contact Info -->
-      <div style="border-top: 1px solid #e2e8f0; padding-top: 24px; margin-top: 24px;">
-        <p style="color: #475569; font-size: 14px; margin: 0;">
-          Questions? We're here to help:<br>
-          📞 <a href="tel:9053422153" style="color: #1e40af;">(905) 342-2153</a><br>
-          ✉️ <a href="mailto:info@harrisboatworks.ca" style="color: #1e40af;">info@harrisboatworks.ca</a>
-        </p>
-      </div>
-    </div>
-    
-    <!-- Footer -->
-    <div style="text-align: center; margin-top: 32px;">
-      <p style="color: #94a3b8; font-size: 12px;">
-        Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON<br>
-        Family-owned since 1947 • Mercury Dealer since 1965
-      </p>
-      <p style="color: #94a3b8; font-size: 11px; margin-top: 16px;">
-        <a href="${APP_URL}/unsubscribe?token=${unsubscribeToken}" style="color: #94a3b8;">Unsubscribe</a>
-      </p>
-    </div>
-  </div>
-  ${trackingPixel(unsubscribeToken, 1)}
-</body>
-</html>
-    `;
+    // Build email using shared layout. Tracking pixel and unsubscribe preserved.
+    const { buildEmail } = await import("../_shared/email-layout.ts");
+    const unsubscribeUrl = `${APP_URL}/unsubscribe?token=${unsubscribeToken}`;
+    const downloadUrl = trackClick(PDF_DOWNLOAD_URL, unsubscribeToken, 1);
+    const quoteCtaUrl = trackClick(`${APP_URL}/quote/motor-selection`, unsubscribeToken, 1);
+
+    const greeting = name ? `Hi ${name},` : "Hi there,";
+    const hotLeadBlock = hasBoatToRepower
+      ? `<p style="margin:22px 0 0 0;font-size:14px;">Ready to start sizing options for your boat? <a href="${quoteCtaUrl}" style="color:#0f2a43;font-weight:600;">Build a quote</a> in a few minutes.</p>`
+      : "";
+
+    const body = `
+      <p style="margin:0 0 14px 0;">${greeting}</p>
+      <p style="margin:0 0 14px 0;">Thanks for your interest in repowering. Your guide is ready to download below.</p>
+      <p style="margin:18px 0 8px 0;font-weight:600;color:#1f2430;">Inside the guide:</p>
+      <ul style="margin:0;padding-left:20px;color:#1f2430;">
+        <li style="margin:0 0 6px 0;">When repowering makes financial sense (the 70/30 rule)</li>
+        <li style="margin:0 0 6px 0;">Transparent pricing by horsepower</li>
+        <li style="margin:0 0 6px 0;">The 4-step Harris repower process</li>
+        <li style="margin:0 0 6px 0;">Signs your motor is ready to be replaced</li>
+        <li style="margin:0 0 6px 0;">Why winter is the best time to repower</li>
+      </ul>
+      ${hotLeadBlock}
+      <p style="margin:22px 0 0 0;">Questions? Reply to this email or call <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
+    ` + trackingPixel(unsubscribeToken, 1);
+
+    const emailHtml = buildEmail({
+      preheader: "Your Repower Guide is ready to download.",
+      heading: "Your Repower Guide is ready",
+      bodyHtml: body,
+      ctaText: "Download your guide",
+      ctaUrl: downloadUrl,
+      unsubscribeUrl,
+    });
 
     const emailResponse = await resend.emails.send({
       from: "Harris Boat Works <noreply@mercuryrepower.ca>",
