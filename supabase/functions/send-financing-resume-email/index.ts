@@ -2,7 +2,7 @@ import { serve } from 'https://deno.land/std@0.190.0/http/server.ts';
 import { Resend } from 'npm:resend@2.0.0';
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "npm:zod@3.22.4";
-import { createBrandedEmailTemplate, createButtonHtml } from '../_shared/email-template.ts';
+import { buildEmail, detailsCard, esc } from '../_shared/email-layout.ts';
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
@@ -130,49 +130,30 @@ const handler = async (req: Request): Promise<Response> => {
     const totalSteps = 7;
     const progressPercentage = Math.round((completedSteps / totalSteps) * 100);
 
-    // Create email content
-    const emailContent = `
-      <h1>Resume Your Financing Application</h1>
-      <p>Hi${applicantName ? ` ${applicantName}` : ''},</p>
-      <p>Your financing application has been saved! You can continue where you left off at any time.</p>
-      
-      <div class="info-box">
-        <strong>Progress:</strong> ${completedSteps} of ${totalSteps} steps complete (${progressPercentage}%)
-      </div>
-      
-      <div style="text-align: center;">
-        ${createButtonHtml(resumeUrl, 'Continue Your Application')}
-      </div>
-      
-      <p style="font-size: 14px; color: #6b7280;">
-        Or copy and paste this link into your browser:<br>
-        <a href="${resumeUrl}" style="color: #3b82f6; word-break: break-all;">${resumeUrl}</a>
-      </p>
-      
-      <div class="divider"></div>
-      
-      <p style="font-size: 14px; color: #6b7280;">
-        <strong>Important:</strong> This link will remain active for 30 days. After that, you'll need to start a new application.
-      </p>
-      
-      <p>Need help? Contact us at <a href="tel:905-342-2153">(905) 342-2153</a> or reply to this email.</p>
-      
-      <p>
-        Best regards,<br>
-        <strong>The Harris Boat Works Team</strong>
-      </p>
+    const body = `
+      <p style="margin:0 0 14px 0;">Hi${applicantName ? ` ${esc(applicantName)}` : ''},</p>
+      <p style="margin:0 0 14px 0;">Your financing application is saved. You can pick it up where you left off whenever you have a few minutes.</p>
+      ${detailsCard([
+        { label: "Progress", value: `${completedSteps} of ${totalSteps} steps (${progressPercentage}%)` },
+        { label: "Saved for", value: "30 days" },
+      ])}
+      <p style="margin:18px 0 0 0;">Need a hand? Reply to this email or call <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
     `;
 
-    const html = createBrandedEmailTemplate(emailContent, 'Resume your financing application', 'You received this email because you started a financing application with Harris Boat Works.');
+    const html = buildEmail({
+      preheader: "Pick up your financing application where you left off.",
+      heading: "Resume your financing application",
+      bodyHtml: body,
+      ctaText: "Continue application",
+      ctaUrl: resumeUrl,
+      footerNote: "This resume link is good for 30 days.",
+    });
 
-    console.log('Sending resume email to:', email);
-
-    // Send email
     const emailResponse = await resend.emails.send({
       from: 'Harris Boat Works <noreply@mercuryrepower.ca>',
-      reply_to: ['info@harrisboatworks.ca'],
+      replyTo: 'info@harrisboatworks.ca',
       to: [email],
-      subject: 'Resume Your Financing Application',
+      subject: 'Resume your financing application | Harris Boat Works',
       html,
     });
 

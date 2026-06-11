@@ -2,7 +2,7 @@ import { serve } from 'https://deno.land/std@0.190.0/http/server.ts';
 import { Resend } from 'npm:resend@2.0.0';
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "npm:zod@3.22.4";
-import { createBrandedEmailTemplate, createButtonHtml } from '../_shared/email-template.ts';
+import { buildEmail, buildAdminEmail, detailsCard, esc } from '../_shared/email-layout.ts';
 
 // Input validation schema. Body values are trusted only as hints; the canonical
 // applicant data is re-read from the financing_applications row server-side so
@@ -220,54 +220,38 @@ const handler = async (req: Request): Promise<Response> => {
       minute: '2-digit',
     });
 
-    // --- Send Applicant Confirmation Email ---
-    const applicantContent = `
-      <h1>Application Received!</h1>
-      <p>Hi ${applicantName},</p>
-      <p>Thank you for submitting your financing application. We have received your information and our team will review it shortly.</p>
-
-      <div class="reference-number">
-        #${referenceNumber}
-      </div>
-
-      <div class="info-box">
-        <strong>Application Details:</strong><br>
-        Motor: ${motorModel}<br>
-        Amount to Finance: $${amountToFinance.toLocaleString()}<br>
-        Submitted: ${submittedDate}
-      </div>
-
-      <h2>What Happens Next?</h2>
-      <ol style="padding-left: 20px;">
-        <li style="margin-bottom: 8px;">Our financing team will review your application within 1-2 business days</li>
-        <li style="margin-bottom: 8px;">We may contact you if we need additional information</li>
-        <li style="margin-bottom: 8px;">You will receive a decision via email and phone</li>
-        <li style="margin-bottom: 8px;">If approved, we will guide you through the final steps to complete your purchase</li>
+    // --- Applicant email ---
+    const applicantRows = [
+      { label: "Reference", value: esc(referenceNumber) },
+      { label: "Motor", value: esc(motorModel) },
+      { label: "Amount", value: `$${amountToFinance.toLocaleString()} CAD` },
+      { label: "Submitted", value: esc(submittedDate) },
+    ];
+    const applicantBody = `
+      <p style="margin:0 0 14px 0;">Hi ${esc(applicantName)},</p>
+      <p style="margin:0 0 14px 0;">We received your financing application. You are all set on our end.</p>
+      ${detailsCard(applicantRows)}
+      <h2 style="margin:28px 0 12px 0;font-size:16px;font-weight:700;color:#1f2430;">What happens next</h2>
+      <ol style="margin:0;padding-left:20px;color:#1f2430;">
+        <li style="margin:0 0 8px 0;">DealerPlan, our financing partner, will contact you to complete the application. Most applicants hear back in under 24 hours during business days.</li>
+        <li style="margin:0 0 8px 0;">If they need anything else, they will reach out by phone or email.</li>
+        <li style="margin:0 0 8px 0;">Once approved, we coordinate the final paperwork and your pickup at our Gores Landing shop.</li>
       </ol>
-
-      <div class="divider"></div>
-
-      <p><strong>Questions?</strong> Reply to this email or call us at <a href="tel:905-342-2153">(905) 342-2153</a></p>
-
-      <p>
-        Best regards,<br>
-        <strong>The Harris Boat Works Financing Team</strong>
-      </p>
+      <p style="margin:22px 0 0 0;">Questions in the meantime? Reply to this email or call us at <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
     `;
 
-    const applicantHtml = createBrandedEmailTemplate(
-      applicantContent,
-      `Application #${referenceNumber} received`,
-      'You received this email because you started a financing application with Harris Boat Works.'
-    );
-
-    console.log('Sending confirmation email to:', applicantEmail);
+    const applicantHtml = buildEmail({
+      preheader: `Application ${referenceNumber} received. DealerPlan will be in touch.`,
+      heading: "Your financing application is in",
+      bodyHtml: applicantBody,
+      footerNote: "Financing is provided by DealerPlan. Harris Boat Works does not approve credit directly.",
+    });
 
     const applicantEmailResponse = await resend.emails.send({
       from: 'Harris Boat Works Financing <financing@mercuryrepower.ca>',
       replyTo: ['info@harrisboatworks.ca'],
       to: [applicantEmail],
-      subject: `Financing Application Received - Ref #${referenceNumber}`,
+      subject: `Financing application received, ref ${referenceNumber} | Harris Boat Works`,
       html: applicantHtml,
     });
 
@@ -293,43 +277,29 @@ const handler = async (req: Request): Promise<Response> => {
       const siteUrl = Deno.env.get('APP_URL') || 'https://mercuryrepower.ca';
       const reviewUrl = `${siteUrl}/admin/financing-applications?id=${applicationId}`;
 
-      const adminContent = `
-        <h1>New Financing Application</h1>
-        <p>A new financing application has been submitted and is ready for review.</p>
-
-        <div class="reference-number">
-          #${referenceNumber}
-        </div>
-
-        <div class="info-box">
-          <strong>Applicant:</strong> ${applicantName}<br>
-          <strong>Email:</strong> ${applicantEmail}<br>
-          <strong>Motor:</strong> ${motorModel}<br>
-          <strong>Amount:</strong> $${amountToFinance.toLocaleString()}<br>
-          <strong>Submitted:</strong> ${submittedDate}
-        </div>
-
-        <div style="text-align: center;">
-          ${createButtonHtml(reviewUrl, 'Review Application in Admin Dashboard')}
-        </div>
-
-        <p style="font-size: 14px; color: #6b7280;">
-          Or copy and paste this link:<br>
-          <a href="${reviewUrl}" style="color: #3b82f6; word-break: break-all;">${reviewUrl}</a>
-        </p>
+      const adminBody = `
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px;">
+          <tr><td style="padding:6px 0;color:#6b7280;width:120px;">Applicant</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(applicantName)}</td></tr>
+          <tr><td style="padding:6px 0;color:#6b7280;">Email</td><td style="padding:6px 0;"><a href="mailto:${esc(applicantEmail)}" style="color:#0f2a43;">${esc(applicantEmail)}</a></td></tr>
+          <tr><td style="padding:6px 0;color:#6b7280;">Motor</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(motorModel)}</td></tr>
+          <tr><td style="padding:6px 0;color:#6b7280;">Amount</td><td style="padding:6px 0;color:#1f2430;font-weight:700;">$${amountToFinance.toLocaleString()} CAD</td></tr>
+          <tr><td style="padding:6px 0;color:#6b7280;">Reference</td><td style="padding:6px 0;color:#1f2430;">${esc(referenceNumber)}</td></tr>
+          <tr><td style="padding:6px 0;color:#6b7280;">Submitted</td><td style="padding:6px 0;color:#1f2430;">${esc(submittedDate)}</td></tr>
+        </table>
+        <p style="margin:12px 0 0 0;font-size:13px;">Review: <a href="${reviewUrl}" style="color:#0f2a43;">${reviewUrl}</a></p>
       `;
-
-      const adminHtml = createBrandedEmailTemplate(
-        adminContent,
-        `New application from ${applicantName} - $${amountToFinance.toLocaleString()}`,
-        'You received this email because you started a financing application with Harris Boat Works.'
-      );
+      const adminHtml = buildAdminEmail({
+        preheader: `${applicantName} - ${motorModel} - $${amountToFinance.toLocaleString()}`,
+        heading: `${applicantName} - $${amountToFinance.toLocaleString()}`,
+        bodyHtml: adminBody,
+        tag: "Financing",
+      });
 
       adminEmailResponse = await resend.emails.send({
         from: 'Harris Boat Works System <noreply@mercuryrepower.ca>',
         replyTo: ['info@harrisboatworks.ca'],
         to: [adminEmail],
-        subject: `New Financing Application - ${applicantName} - $${amountToFinance.toLocaleString()}`,
+        subject: `[FINANCING] ${applicantName} - ${motorModel} - $${amountToFinance.toLocaleString()}`,
         html: adminHtml,
       });
 

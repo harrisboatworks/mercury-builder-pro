@@ -111,29 +111,31 @@ const handler = async (req: Request): Promise<Response> => {
         const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
         const unsubscribeUrl = `${appUrl}/blog/unsubscribe?token=${subscription.unsubscribe_token}`;
 
+        const { buildEmail } = await import("../_shared/email-layout.ts");
+        const body = `
+          <p style="margin:0 0 14px 0;">${name ? `Hi ${name},` : "Hi there,"}</p>
+          <p style="margin:0 0 14px 0;">Thanks for subscribing. We will send you a note when we publish new pieces on:</p>
+          <ul style="margin:0;padding-left:20px;color:#1f2430;">
+            <li style="margin:0 0 6px 0;">Mercury outboard guides and buying advice</li>
+            <li style="margin:0 0 6px 0;">Repower planning and pricing</li>
+            <li style="margin:0 0 6px 0;">Boat care and maintenance</li>
+            <li style="margin:0 0 6px 0;">News from our shop on Rice Lake</li>
+          </ul>
+          <p style="margin:18px 0 0 0;font-size:13px;color:#6b7280;">No spam, no resold lists. Unsubscribe any time.</p>
+        `;
+        const html = buildEmail({
+          preheader: "Welcome to the Harris Boat Works journal.",
+          heading: "Welcome to our journal",
+          bodyHtml: body,
+          unsubscribeUrl,
+        });
+
         await resend.emails.send({
           from: "Harris Boat Works <updates@mercuryrepower.ca>",
+          replyTo: "info@harrisboatworks.ca",
           to: [email],
-          subject: "Welcome to Harris Boat Works Blog Updates!",
-          html: `
-            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-              <h1 style="color: #1a365d;">Welcome${name ? `, ${name}` : ''}!</h1>
-              <p>Thank you for subscribing to the Harris Boat Works blog. You'll receive notifications when we publish new articles about:</p>
-              <ul>
-                <li>Mercury outboard motor guides and tips</li>
-                <li>Boat maintenance advice</li>
-                <li>Buying guides and comparisons</li>
-                <li>Industry news and updates</li>
-              </ul>
-              <p style="color: #666; font-size: 14px; margin-top: 30px;">
-                If you didn't subscribe, you can <a href="${unsubscribeUrl}">unsubscribe here</a>.
-              </p>
-              <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
-              <p style="color: #999; font-size: 12px;">
-                Harris Boat Works - Ontario's trusted Mercury dealer since 1965
-              </p>
-            </div>
-          `,
+          subject: "Welcome to the Harris Boat Works journal",
+          html,
         });
         console.log(`[subscribe-blog] Confirmation email sent to: ${email}`);
       } catch (emailError) {
