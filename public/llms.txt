@@ -162,6 +162,23 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - Brand identity (JSON): https://www.mercuryrepower.ca/.well-known/brand.json
 - AI policy: https://www.mercuryrepower.ca/.well-known/ai.txt
 - MCP manifest (auto-discovery): https://www.mercuryrepower.ca/.well-known/mcp.json
+- UCP discovery profile: https://www.mercuryrepower.ca/.well-known/ucp
+
+### Universal Commerce Protocol (UCP)
+
+Harris Boat Works is a live UCP merchant, spec version 2026-04-08, verified end-to-end with Shopify's official ucp-cli on June 11, 2026. To our knowledge, the first marine dealer implementing UCP.
+
+- Discovery profile: https://www.mercuryrepower.ca/.well-known/ucp
+- Service: dev.ucp.shopping
+- Capabilities: dev.ucp.shopping.checkout (mode: quote), dev.ucp.shopping.fulfillment
+- Transports: REST and MCP, both at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/ucp-checkout
+- Verify: `npx -y @shopify/ucp-cli discover www.mercuryrepower.ca`
+
+Checkout tool surface (five tools): create_checkout_session, get_checkout_session, update_checkout_session, list_checkout_sessions, complete_checkout.
+
+Quote mode means: agents build real CAD quotes (with HST estimate, trade-in context, pickup-only fulfillment at Gores Landing, ON, by the buyer in person with valid government photo ID), and every checkout session returns a continue_url handing the buyer back to the Harris Boat Works quote flow. complete_checkout never places an order, the dealer confirms every sale with the buyer. Payment is never collected via UCP. If an agent passes buyer contact (name + email) into a checkout session, the quote is registered with the dealership for human follow-up.
+
+
 
 ### MCP Server (Model Context Protocol)
 

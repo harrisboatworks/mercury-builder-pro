@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/two-stroke-to-fourstroke-modernization
-last_updated: 2026-06-10
+last_updated: 2026-06-11
 currency: CAD
 pickup_only: true
 delivery_offered: false

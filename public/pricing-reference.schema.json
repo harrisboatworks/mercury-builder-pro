@@ -14,7 +14,7 @@
         "@id": "https://www.mercuryrepower.ca/#organization"
       },
       "inLanguage": "en-CA",
-      "lastReviewed": "2026-06-10",
+      "lastReviewed": "2026-06-11",
       "mainEntity": {
         "@id": "https://www.mercuryrepower.ca/pricing-reference#pricelist"
       }
@@ -3053,7 +3053,7 @@
               "@type": "Offer",
               "price": "9801",
               "priceCurrency": "CAD",
-              "availability": "https://schema.org/InStock",
+              "availability": "https://schema.org/PreOrder",
               "itemCondition": "https://schema.org/NewCondition",
               "areaServed": {
                 "@type": "Country",

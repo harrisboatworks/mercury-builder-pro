@@ -126,21 +126,33 @@ export default function AgentsHub() {
           discover, represent, and transact on behalf of <strong>Harris Boat Works</strong>, Mercury repower
           specialists on Rice Lake, Ontario, family-owned since 1947. Motor purchases are pickup only at
           Gores Landing, Ontario: the buyer must pick up in person with valid government photo ID, and we
-          cannot release a motor to a courier, shipping company, or any other third party. HBW's MCP server uses the same
-          Streamable HTTP transport that Shopify's Universal Commerce Protocol (UCP) standardized in
-          April 2026 for agentic commerce, so any UCP-aware agent can discover and query HBW the same
-          way it would query a Shopify storefront.
+          cannot release a motor to a courier, shipping company, or any other third party. HBW is a live
+          Universal Commerce Protocol merchant (UCP 2026-04-08, verified with Shopify's <code>ucp-cli</code>{' '}
+          on June 11, 2026) with checkout in quote mode and fulfillment capabilities, served over both REST
+          and MCP transports.
         </p>
+
 
         <aside className="text-protected mb-10 rounded-lg border border-repower-navy-900/10 bg-repower-cream p-5 text-base">
           <p className="m-0">
-            <strong>Standards alignment:</strong> Built for the same agentic-commerce future Shopify
-            just announced with UCP (Universal Commerce Protocol, April 2026). HBW's MCP server,
-            <code>/.well-known</code> discovery files, and CAD-priced quote API already implement
-            the pattern UCP standardizes. We're tracking the spec as it stabilizes and will publish
-            full UCP conformance once v1.0 lands.
+            <strong>UCP live and verified.</strong> Harris Boat Works is a live Universal Commerce
+            Protocol merchant (spec 2026-04-08), end-to-end verified with Shopify's official{' '}
+            <code>ucp-cli</code> on June 11, 2026. To our knowledge, the first marine dealer
+            implementing UCP. Discovery profile:{' '}
+            <a href="/.well-known/ucp" className="text-primary underline">
+              /.well-known/ucp
+            </a>
+            . Test it yourself:
+          </p>
+          <CodeBlock language="bash" size="xs">{`npx -y @shopify/ucp-cli discover www.mercuryrepower.ca`}</CodeBlock>
+          <p className="m-0 mt-2">
+            Quote mode: agents can build a real CAD quote (with HST estimate and trade-in context),
+            but the dealer completes every sale with the buyer in person at Gores Landing with valid
+            government photo ID. If an agent includes buyer contact (name + email) in a checkout
+            session, that quote is registered with the dealership for human follow-up.
           </p>
         </aside>
+
 
 
 
@@ -148,11 +160,18 @@ export default function AgentsHub() {
           <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Discovery endpoints</h2>
           <ul className="text-protected space-y-2">
             <li>
+              <code>/.well-known/ucp</code>, UCP discovery profile (spec 2026-04-08, REST + MCP, checkout in quote mode + fulfillment):{' '}
+              <a href="/.well-known/ucp" className="text-primary underline">
+                {SITE_URL}/.well-known/ucp
+              </a>
+            </li>
+            <li>
               <code>/.well-known/mcp.json</code>, MCP server manifest (auto-discovery for Claude / Cursor / custom GPTs):{' '}
               <a href="/.well-known/mcp.json" className="text-primary underline">
                 {SITE_URL}/.well-known/mcp.json
               </a>
             </li>
+
             <li>
               <code>/llms.txt</code>, site map for LLMs:{' '}
               <a href="/llms.txt" className="text-primary underline">
@@ -260,18 +279,41 @@ export default function AgentsHub() {
         <section className="mb-10">
           <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Built on the agentic commerce standard</h2>
           <p className="text-protected">
-            UCP (Universal Commerce Protocol) is the open standard Shopify launched in April 2026 for
-            AI agents to discover merchants, search catalogs, build carts, and hand off to humans.
-            Harris Boat Works implements the same primitives via the Model Context Protocol, so any
-            UCP-aware or MCP-aware agent can transact against HBW with no custom integration.
+            Universal Commerce Protocol (UCP) is the open standard for AI assistants to discover
+            merchants, build carts, and hand off to humans. It's co-developed by Google, Shopify,
+            Etsy, Target, and Walmart, with Amazon, Microsoft, Meta, Salesforce, and Stripe on the
+            Tech Council. Harris Boat Works implements UCP <strong>2026-04-08</strong> with two
+            capabilities, <code>dev.ucp.shopping.checkout</code> (quote mode) and{' '}
+            <code>dev.ucp.shopping.fulfillment</code>, served over both REST and MCP transports at
+            the same <code>ucp-checkout</code> endpoint. Verified with Shopify's official{' '}
+            <code>ucp-cli</code> on June 11, 2026. To our knowledge, the first marine dealer
+            implementing UCP.
           </p>
           <p className="text-protected">
-            UCP-aligned capabilities at HBW: catalog search via <code>search_motors</code>, product
-            retrieval via <code>get_motor</code>, cart and quote building via <code>build_quote</code>,
-            human handoff via phone and email at Gores Landing, and brand rules via{' '}
-            <code>get_brand_rules</code> plus <code>/.well-known/brand.json</code>.
+            Discovery profile:{' '}
+            <a href="/.well-known/ucp" className="text-primary underline">
+              {SITE_URL}/.well-known/ucp
+            </a>
+            . Reproduce the verification yourself:
+          </p>
+          <CodeBlock language="bash" size="xs">{`npx -y @shopify/ucp-cli discover www.mercuryrepower.ca`}</CodeBlock>
+          <p className="text-protected">
+            <strong>Quote mode means:</strong> agents build a real CAD quote with HST estimate and
+            trade-in context, and the dealer completes every sale with the buyer in person at Gores
+            Landing with valid government photo ID. Payment is never collected over UCP. This is the
+            spec-sanctioned quote-generation use case. If an agent passes buyer contact (name +
+            email) into a checkout session, that quote is registered with the dealership for
+            follow-up.
+          </p>
+          <p className="text-protected">
+            UCP-aligned capabilities at HBW also surface via MCP: catalog search via{' '}
+            <code>search_motors</code>, product retrieval via <code>get_motor</code>, cart and quote
+            building via <code>build_quote</code>, human handoff via phone and email at Gores
+            Landing, and brand rules via <code>get_brand_rules</code> plus{' '}
+            <code>/.well-known/brand.json</code>.
           </p>
         </section>
+
 
         <section className="mb-10">
           <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">MCP server (Model Context Protocol)</h2>
