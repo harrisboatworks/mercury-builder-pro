@@ -192,8 +192,7 @@ export function buildAdminEmail(opts: AdminEmailOptions): string {
 </body></html>`;
 }
 
-export { esc, NAVY, RED, GOLD, TEXT, MUTED, FONT_SANS, FONT_SERIF };
-// Backwards-compatible exports
-const FONT_SANS = SANS;
-const FONT_SERIF = SERIF;
-export const FONT = SANS;
+export const FONT_SANS = SANS;
+export const FONT_SERIF = SERIF;
+export const FONT = SANS; // backwards-compatible alias
+export { esc, NAVY, RED, GOLD, TEXT, MUTED };
