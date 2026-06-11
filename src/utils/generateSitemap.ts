@@ -130,8 +130,10 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/mercury-pontoon-outboards', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     // AI agent integration landing page
     { loc: '/agents', lastmod: today, changefreq: 'monthly', priority: 0.8 },
-    // Chinese-language hub page (lists the 25 Mandarin articles)
+    // Language hub pages (only /zh and /fr exist as routes; Korean and
+    // Spanish articles are served under /blog/ko and /blog/es without a hub)
     { loc: '/zh', lastmod: today, changefreq: 'monthly', priority: 0.7 },
+    { loc: '/fr', lastmod: today, changefreq: 'monthly', priority: 0.7 },
     { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: 0.3 },
     { loc: '/terms', lastmod: today, changefreq: 'yearly', priority: 0.3 },
   ];
