@@ -121,47 +121,40 @@ serve(async (req) => {
         if (subscription.customer_email && 
             (subscription.preferred_channel === 'email' || subscription.preferred_channel === 'both')) {
           try {
+            const { buildEmail, esc } = await import("../_shared/email-layout.ts");
+            const bonusBlock = newestPromo.bonus_description
+              ? `<p style="margin:10px 0 0 0;font-size:14px;color:#1f2430;">${esc(String(newestPromo.bonus_description))}</p>`
+              : "";
+            const expiresBlock = expiresText
+              ? `<p style="margin:10px 0 0 0;font-size:13px;color:#c8102e;font-weight:600;">${esc(expiresText.trim())}</p>`
+              : "";
+            const body = `
+              <p style="margin:0 0 14px 0;">Hi${subscription.customer_name ? ` ${esc(String(subscription.customer_name))}` : ""},</p>
+              <p style="margin:0 0 14px 0;">A new Mercury promotion is live that applies to ${esc(String(motorModel))}.</p>
+              <div style="background:#f8fafb;border:1px solid #e5e7eb;border-left:3px solid #c8102e;border-radius:4px;padding:16px 18px;margin:18px 0;">
+                <p style="margin:0;font-size:13px;color:#6b7280;text-transform:uppercase;letter-spacing:1.5px;">Promotion</p>
+                <p style="margin:6px 0 0 0;font-size:18px;font-weight:700;color:#1f2430;">${esc(String(newestPromo.name))}</p>
+                <p style="margin:6px 0 0 0;font-size:16px;color:#0f2a43;font-weight:600;">${esc(String(discountText))}</p>
+                ${bonusBlock}
+                ${expiresBlock}
+              </div>
+              <p style="margin:18px 0 0 0;">Want us to apply it to your quote? Reply to this email or call <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
+            `;
+            const html = buildEmail({
+              preheader: `${newestPromo.name}: ${discountText}${expiresText}`,
+              heading: "A new Mercury promotion just landed",
+              bodyHtml: body,
+              ctaText: "Open your quote",
+              ctaUrl: appUrl,
+              unsubscribeUrl,
+            });
+
             await resend.emails.send({
               from: "Harris Boat Works <noreply@mercuryrepower.ca>",
+              replyTo: "info@harrisboatworks.ca",
               to: [subscription.customer_email],
-              reply_to: "info@harrisboatworks.ca",
-              subject: `🎉 New Promotion: ${newestPromo.name}!`,
-              html: `
-                <!DOCTYPE html>
-                <html>
-                <head>
-                  <meta charset="utf-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                </head>
-                <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-                  <div style="text-align: center; margin-bottom: 30px;">
-                    <h1 style="color: #1a1a1a; margin-bottom: 10px;">New Promotion Alert${subscription.customer_name ? `, ${subscription.customer_name}` : ''}!</h1>
-                    <p style="color: #666; font-size: 18px;">We have a new sale that applies to ${motorModel}.</p>
-                  </div>
-                  
-                  <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 12px; padding: 24px; margin-bottom: 24px; border: 1px solid #bbf7d0;">
-                    <h2 style="margin: 0 0 8px 0; font-size: 20px; color: #166534;">${newestPromo.name}</h2>
-                    <p style="margin: 0; font-size: 24px; color: #15803d; font-weight: bold;">${discountText}${expiresText}</p>
-                    ${newestPromo.bonus_description ? `<p style="margin: 8px 0 0 0; font-size: 14px; color: #166534;">${newestPromo.bonus_description}</p>` : ''}
-                  </div>
-                  
-                  <div style="text-align: center; margin: 30px 0;">
-                    <a href="${appUrl}" style="display: inline-block; background: #1a1a1a; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 16px;">View Your Quote</a>
-                  </div>
-                  
-                  <p style="color: #666; font-size: 14px; text-align: center;">
-                    Questions? Call us at (905) 342-2153 or reply to this email.
-                  </p>
-                  
-                  <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
-                  
-                  <p style="color: #999; font-size: 12px; text-align: center;">
-                    Harris Boat Works | (905) 342-2153 | info@harrisboatworks.ca<br>
-                    <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe from promotional emails</a>
-                  </p>
-                </body>
-                </html>
-              `
+              subject: `New promotion: ${newestPromo.name} | Harris Boat Works`,
+              html,
             });
             console.log(`[send-promo-notifications] Email sent to ${subscription.customer_email}`);
           } catch (emailErr) {
