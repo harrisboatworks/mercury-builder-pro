@@ -1383,7 +1383,7 @@ function agentsPageSchema() {
         "@id": `${SITE_URL}/agents#webpage`,
         "url": `${SITE_URL}/agents`,
         "name": "AI Agent Integration: Harris Boat Works Mercury Dealer",
-        "description": "Agent-friendly endpoints for AI assistants (ChatGPT, Claude, Perplexity, Gemini). MCP server, REST APIs, deep-link quote URLs, and source-of-truth rules for Harris Boat Works.",
+        "description": "Agent-friendly endpoints for AI assistants (ChatGPT, Claude, Perplexity, Gemini, DeepSeek, Qwen, Kimi, Doubao). MCP server, REST APIs, deep-link quote URLs, and source-of-truth rules for Harris Boat Works.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#localbusiness` },
         "publisher": { "@id": `${SITE_URL}/#organization` }
@@ -4077,7 +4077,7 @@ const routes = [
     title: 'For AI Agents & Assistants | Harris Boat Works',
     description: 'Harris Boat Works for AI agents, MCP server, REST quote APIs, and deep-link quote URLs. Ontario Mercury dealer, family marina since 1947.',
     h1: 'For AI Agents & Assistants',
-    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW\'s MCP server uses the same Streamable HTTP transport that Shopify\'s Universal Commerce Protocol (UCP) standardized in April 2026 for agentic commerce. Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase.',
+    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, DeepSeek, Qwen, Kimi, Doubao, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW\'s MCP server uses the same Streamable HTTP transport that Shopify\'s Universal Commerce Protocol (UCP) standardized in April 2026 for agentic commerce. Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase.',
     schemas: [agentsPageSchema()],
     extraNoscript: () =>
       '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Platinum Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +

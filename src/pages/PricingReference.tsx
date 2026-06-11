@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { marked } from "marked";
+import { RepowerHeader } from "@/components/repower/RepowerHeader";
+import { SiteFooter } from "@/components/ui/site-footer";
 import { ALL_SEGMENTS } from "@/data/landing/mercuryLineupLandings";
 import { CANONICAL_LAST_UPDATED } from "@/lib/canonical-pricing";
 
@@ -53,7 +55,7 @@ export default function PricingReference() {
   }, []);
 
   return (
-    <>
+    <div className="min-h-screen bg-repower-paper">
       <Helmet>
         <title>Mercury Outboard Prices in Ontario (CAD, 2027) | Harris Boat Works</title>
         <meta
@@ -82,6 +84,8 @@ export default function PricingReference() {
           <script type="application/ld+json">{schemaJson}</script>
         )}
       </Helmet>
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" aria-hidden />
       <main className="container mx-auto max-w-5xl px-4 py-8">
         <h1 className="text-3xl font-bold mb-4">Mercury Outboard Prices in Ontario (CAD, 2027)</h1>
         {/* Intro paragraph renders once, from /pricing-reference.md (the canonical
@@ -127,6 +131,7 @@ export default function PricingReference() {
           </div>
         </section>
       </main>
-    </>
+      <SiteFooter />
+    </div>
   );
 }
