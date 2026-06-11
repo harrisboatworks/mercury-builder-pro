@@ -134,13 +134,24 @@ export default function AgentsHub() {
 
         <aside className="text-protected mb-10 rounded-lg border border-repower-navy-900/10 bg-repower-cream p-5 text-base">
           <p className="m-0">
-            <strong>Standards alignment:</strong> Built for the same agentic-commerce future Shopify
-            just announced with UCP (Universal Commerce Protocol, April 2026). HBW's MCP server,
-            <code>/.well-known</code> discovery files, and CAD-priced quote API already implement
-            the pattern UCP standardizes. We're tracking the spec as it stabilizes and will publish
-            full UCP conformance once v1.0 lands.
+            <strong>UCP live and verified.</strong> Harris Boat Works is a live Universal Commerce
+            Protocol merchant (spec 2026-04-08), end-to-end verified with Shopify's official{' '}
+            <code>ucp-cli</code> on June 11, 2026. To our knowledge, the first marine dealer
+            implementing UCP. Discovery profile:{' '}
+            <a href="/.well-known/ucp" className="text-primary underline">
+              /.well-known/ucp
+            </a>
+            . Test it yourself:
+          </p>
+          <CodeBlock language="bash" size="xs">{`npx -y @shopify/ucp-cli discover www.mercuryrepower.ca`}</CodeBlock>
+          <p className="m-0 mt-2">
+            Quote mode: agents can build a real CAD quote (with HST estimate and trade-in context),
+            but the dealer completes every sale with the buyer in person at Gores Landing with valid
+            government photo ID. If an agent includes buyer contact (name + email) in a checkout
+            session, that quote is registered with the dealership for human follow-up.
           </p>
         </aside>
+
 
 
 
