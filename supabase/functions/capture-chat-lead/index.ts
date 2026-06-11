@@ -194,32 +194,39 @@ serve(async (req) => {
     const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
     if (RESEND_API_KEY) {
       try {
-        const emailHtml = `
-          <h2>💬 New Chat Lead!</h2>
-          <p>A customer requested a callback from the AI chat.</p>
-          <hr>
-          <p><strong>Name:</strong> ${escHtml(leadData.name)}</p>
-          <p><strong>Phone:</strong> ${escHtml(leadData.phone)}</p>
-          ${leadData.email ? `<p><strong>Email:</strong> ${escHtml(leadData.email)}</p>` : ''}
-          <p><strong>Lead Score:</strong> ${leadScore}/100</p>
-          <hr>
-          <p><strong>Context:</strong> ${escHtml(leadData.conversationContext || 'Requested callback')}</p>
-          ${leadData.motorContext?.model ? `<p><strong>Motor Interest:</strong> ${escHtml(leadData.motorContext.model)} (${escHtml(String(leadData.motorContext.hp ?? ''))}HP)</p>` : ''}
-          ${leadData.currentPage ? `<p><strong>Page:</strong> ${escHtml(leadData.currentPage)}</p>` : ''}
-          <hr>
-          <p><em>Action: Call within 24 hours</em></p>
-        `;
+        const { buildAdminEmail } = await import("../_shared/email-layout.ts");
+        const rows: string[] = [
+          `<tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;width:130px;">Name</td><td style="padding:6px 0;">${escHtml(leadData.name)}</td></tr>`,
+          `<tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;">Phone</td><td style="padding:6px 0;"><a href="tel:${escHtml(leadData.phone)}" style="color:#0f2a43;">${escHtml(leadData.phone)}</a></td></tr>`,
+        ];
+        if (leadData.email) rows.push(`<tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;">Email</td><td style="padding:6px 0;"><a href="mailto:${escHtml(leadData.email)}" style="color:#0f2a43;">${escHtml(leadData.email)}</a></td></tr>`);
+        rows.push(`<tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;">Lead score</td><td style="padding:6px 0;">${leadScore}/100</td></tr>`);
+        if (leadData.motorContext?.model) rows.push(`<tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;">Motor interest</td><td style="padding:6px 0;">${escHtml(leadData.motorContext.model)} (${escHtml(String(leadData.motorContext.hp ?? ""))}HP)</td></tr>`);
+        if (leadData.currentPage) rows.push(`<tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;">Page</td><td style="padding:6px 0;">${escHtml(leadData.currentPage)}</td></tr>`);
 
-        const { Resend } = await import('npm:resend@2.0.0');
+        const emailHtml = buildAdminEmail({
+          preheader: `New chat lead: ${leadData.name}`,
+          tag: "Chat lead",
+          heading: leadData.name,
+          bodyHtml: `
+            <p style="margin:0 0 12px 0;">A customer requested a callback from the AI chat.</p>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:8px 0 14px 0;">${rows.join("")}</table>
+            <p style="margin:0 0 6px 0;"><strong>Context:</strong> ${escHtml(leadData.conversationContext || "Requested callback")}</p>
+            <p style="margin:14px 0 0 0;font-weight:600;color:#c8102e;">Action: call within 24 hours.</p>
+          `,
+        });
+
+        const { Resend } = await import("npm:resend@2.0.0");
         const resend = new Resend(RESEND_API_KEY);
 
         await resend.emails.send({
-          from: 'Harris Boat Works <system@mercuryrepower.ca>',
-          to: ['info@harrisboatworks.ca'],
-          reply_to: 'info@harrisboatworks.ca',
-          subject: `💬 New Chat Lead: ${leadData.name}`.slice(0, 200),
-          html: emailHtml
+          from: "Harris Boat Works <system@mercuryrepower.ca>",
+          to: ["info@harrisboatworks.ca"],
+          replyTo: "info@harrisboatworks.ca",
+          subject: `Chat lead: ${leadData.name}`.slice(0, 200),
+          html: emailHtml,
         });
+
 
         console.log('[capture-chat-lead] Email notification sent');
       } catch (emailErr) {
