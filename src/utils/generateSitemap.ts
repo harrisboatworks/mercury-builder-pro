@@ -132,6 +132,10 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/agents', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     // Language hub pages (only /zh and /fr exist as routes; Korean and
     // Spanish articles are served under /blog/ko and /blog/es without a hub)
+    // WARNING: scripts/static-prerender.mjs regenerates sitemap.xml AFTER the
+    // build and overwrites this generator's output in dist/ and public/. Any
+    // static route added here must ALSO be added to staticSitemapEntries in
+    // scripts/static-prerender.mjs, or it will never reach production.
     { loc: '/zh', lastmod: today, changefreq: 'monthly', priority: 0.7 },
     { loc: '/fr', lastmod: today, changefreq: 'monthly', priority: 0.7 },
     { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: 0.3 },
