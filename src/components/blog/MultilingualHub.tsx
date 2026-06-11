@@ -83,43 +83,7 @@ export function MultilingualHub() {
     );
   }
 
-  // English visitor: compact one-line strip (default)
-  return (
-    <section aria-label="Available in other languages" className="mb-8">
-      <div className="flex items-baseline gap-3 flex-wrap">
-        <span className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red whitespace-nowrap">
-          Also in
-        </span>
-        <p className="font-sans text-sm text-repower-navy-900/70">
-          <Link
-            to="/blog/zh/mercury-repower-guide-gta"
-            className="hover:text-repower-mercury-red transition-colors"
-          >
-            中文 ({mandarinBlogArticles.length})
-          </Link>
-          <span className="mx-2 text-repower-navy-900/30">·</span>
-          <Link
-            to="/blog/ko/ontario-boat-buying-guide"
-            className="hover:text-repower-mercury-red transition-colors"
-          >
-            한국어 ({koreanBlogArticles.length})
-          </Link>
-          <span className="mx-2 text-repower-navy-900/30">·</span>
-          <Link
-            to="/blog/fr"
-            className="hover:text-repower-mercury-red transition-colors"
-          >
-            Français ({frenchBlogArticles.length})
-          </Link>
-          <span className="mx-2 text-repower-navy-900/30">·</span>
-          <Link
-            to="/blog/es/guia-comprar-bote-ontario"
-            className="hover:text-repower-mercury-red transition-colors"
-          >
-            Español ({spanishBlogArticles.length})
-          </Link>
-        </p>
-      </div>
-    </section>
-  );
+  // English visitor: language editions are surfaced as quiet links in the
+  // masthead (BlogMasthead), so render nothing here.
+  return null;
 }
