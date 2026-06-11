@@ -2,7 +2,7 @@ import { serve } from 'https://deno.land/std@0.190.0/http/server.ts';
 import { Resend } from 'npm:resend@2.0.0';
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "npm:zod@3.22.4";
-import { createBrandedEmailTemplate, createButtonHtml } from '../_shared/email-template.ts';
+import { buildEmail, detailsCard, esc } from '../_shared/email-layout.ts';
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
