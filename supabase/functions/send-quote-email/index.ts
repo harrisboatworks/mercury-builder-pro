@@ -35,6 +35,8 @@ const quoteEmailSchema = z.object({
 
 type QuoteEmailRequest = z.infer<typeof quoteEmailSchema>;
 
+import { buildEmail, buildAdminEmail, detailsCard, esc } from "../_shared/email-layout.ts";
+
 // Replace template variables with actual data
 function replaceTemplateVariables(template: string, data: QuoteEmailRequest): string {
   return template
@@ -44,234 +46,84 @@ function replaceTemplateVariables(template: string, data: QuoteEmailRequest): st
     .replace(/{{totalPrice}}/g, data.totalPrice.toLocaleString());
 }
 
-// Generate email content based on type (fallback for when templates aren't found)
 function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
-  return `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Your Mercury Motor Quote</title>
-        <style>
-          body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
-          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: linear-gradient(135deg, #1e40af, #3b82f6); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
-          .content { background: white; padding: 30px; border: 1px solid #e5e7eb; }
-          .quote-details { background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; }
-          .price { font-size: 24px; font-weight: bold; color: #1e40af; }
-          .btn { display: inline-block; background: #1e40af; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin: 10px 0; }
-          .footer { text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <div class="header">
-            <h1>Your Mercury Motor Quote is Ready!</h1>
-            <p>Quote #${data.quoteNumber}</p>
-          </div>
-          
-          <div class="content">
-            <p>Hi ${data.customerName},</p>
-            
-            <p>Thank you for your interest in Mercury motors! We've prepared a personalized quote for you.</p>
-            
-            <div class="quote-details">
-              <h3>Quote Details</h3>
-              <p><strong>Motor Model:</strong> ${data.motorModel}</p>
-              <p><strong>Total Price:</strong> <span class="price">$${data.totalPrice.toLocaleString()}</span></p>
-              <p><strong>Quote Number:</strong> ${data.quoteNumber}</p>
-            </div>
-            
-            ${data.pdfUrl ? `
-              <p style="margin: 20px 0;">Your detailed quote is attached to this email as a PDF. You can also view it online:</p>
-              <p style="text-align: center; margin: 24px 0;">
-                <a href="${data.pdfUrl}" class="btn" style="background: #1e40af; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: 600;">Download Quote PDF</a>
-              </p>
-            ` : ''}
-            
-            <p><strong>What's Next?</strong></p>
-            <ul>
-              <li>Review your personalized quote</li>
-              <li>Schedule a consultation to discuss options</li>
-              <li>Ask about current promotions and financing</li>
-            </ul>
-            
-            <p>This quote is valid for 30 days. Contact us to lock in this pricing or discuss any modifications.</p>
-            
-            <p>Ready to move forward? Reply to this email or call us at <strong>(905) 342-2153</strong></p>
-            
-            <p>Best regards,<br>
-            The Harris Boat Works Team</p>
-          </div>
-          
-          <div class="footer">
-            <p>Have questions? Simply reply to this email and we'll get back to you!</p>
-            <p>Or call us directly at <strong>(905) 342-2153</strong></p>
-          </div>
-        </div>
-      </body>
-    </html>
+  const rows = [
+    { label: "Quote #", value: esc(data.quoteNumber) },
+    { label: "Motor", value: esc(data.motorModel) },
+    { label: "Total", value: `$${data.totalPrice.toLocaleString()} CAD` },
+  ];
+  const body = `
+    <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>
+    <p style="margin:0 0 14px 0;">Thanks for your interest. Here is the quote we prepared for you.</p>
+    ${detailsCard(rows)}
+    ${data.pdfUrl ? `<p style="margin:18px 0 0 0;color:#6b7280;font-size:14px;">A PDF copy of your full quote is attached.</p>` : ""}
+    <h2 style="margin:28px 0 12px 0;font-size:16px;font-weight:700;color:#1f2430;">What is next</h2>
+    <ul style="margin:0;padding-left:20px;color:#1f2430;">
+      <li style="margin:0 0 8px 0;">Review the details at your own pace.</li>
+      <li style="margin:0 0 8px 0;">Reply with any questions about rigging, install, or financing.</li>
+      <li style="margin:0 0 8px 0;">When you are ready, we can lock in the price and schedule pickup at our Gores Landing shop.</li>
+    </ul>
+    <p style="margin:22px 0 0 0;">This quote is valid for 30 days.</p>
+    <p style="margin:16px 0 0 0;">Reply to this email or call <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
   `;
+  return buildEmail({
+    preheader: `Your Mercury ${data.motorModel} quote, ref ${data.quoteNumber}`,
+    heading: `Your Mercury ${esc(data.motorModel)} quote`,
+    bodyHtml: body,
+    ctaText: data.pdfUrl ? "Open quote PDF" : undefined,
+    ctaUrl: data.pdfUrl,
+    footerNote: "Pickup is in person at our Gores Landing shop. Please bring valid photo ID.",
+  });
 }
 
 function generateFollowUpEmail(data: QuoteEmailRequest): string {
-  return `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Following Up on Your Mercury Motor Quote</title>
-        <style>
-          body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
-          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: linear-gradient(135deg, #059669, #10b981); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
-          .content { background: white; padding: 30px; border: 1px solid #e5e7eb; }
-          .highlight { background: #ecfdf5; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #10b981; }
-          .btn { display: inline-block; background: #059669; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin: 10px 0; }
-          .footer { text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <div class="header">
-            <h1>Still Interested in Your Mercury Motor?</h1>
-            <p>Quote #${data.quoteNumber}</p>
-          </div>
-          
-          <div class="content">
-            <p>Hi ${data.customerName},</p>
-            
-            <p>I wanted to follow up on the Mercury motor quote we prepared for you a few days ago.</p>
-            
-            <div class="highlight">
-              <h3>Your Quote Summary</h3>
-              <p><strong>Motor:</strong> ${data.motorModel}</p>
-              <p><strong>Price:</strong> $${data.totalPrice.toLocaleString()}</p>
-            </div>
-            
-            <p><strong>Have questions about:</strong></p>
-            <ul>
-              <li>Financing options and monthly payments?</li>
-              <li>Installation and setup services?</li>
-              <li>Warranty coverage and protection plans?</li>
-              <li>Current promotions or seasonal discounts?</li>
-            </ul>
-            
-            <p>I'm here to help! As your Mercury specialist, I can answer any questions and even schedule a time to see the motor in person.</p>
-            
-            <p><strong>Ready to take the next step?</strong><br>
-            Simply reply to this email or give us a call at <strong>(905) 342-2153</strong></p>
-            
-            <p>Don't forget - your quote is valid for another few weeks, so there's no rush. But if you're ready to move forward, we'd love to help make it happen!</p>
-            
-            <p>Best regards,<br>
-            The Harris Boat Works Team</p>
-          </div>
-          
-           <div class="footer">
-             <p>Questions? Simply reply to this email or call us at <strong>(905) 342-2153</strong></p>
-           </div>
-        </div>
-      </body>
-    </html>
+  const rows = [
+    { label: "Quote #", value: esc(data.quoteNumber) },
+    { label: "Motor", value: esc(data.motorModel) },
+    { label: "Total", value: `$${data.totalPrice.toLocaleString()} CAD` },
+  ];
+  const body = `
+    <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>
+    <p style="margin:0 0 14px 0;">Following up on the quote we sent you. Wanted to make sure it landed and answer any questions.</p>
+    ${detailsCard(rows)}
+    <p style="margin:18px 0 14px 0;">Happy to walk through:</p>
+    <ul style="margin:0;padding-left:20px;color:#1f2430;">
+      <li style="margin:0 0 6px 0;">Financing and monthly payment options</li>
+      <li style="margin:0 0 6px 0;">Install timing and rigging fit</li>
+      <li style="margin:0 0 6px 0;">Current promotions and warranty</li>
+    </ul>
+    <p style="margin:22px 0 0 0;">No rush. Reply when it suits you, or call <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
   `;
+  return buildEmail({
+    preheader: `Following up on your Mercury ${data.motorModel} quote`,
+    heading: "Following up on your quote",
+    bodyHtml: body,
+    ctaText: data.pdfUrl ? "Open quote PDF" : undefined,
+    ctaUrl: data.pdfUrl,
+  });
 }
 
 function generateAdminNotificationEmail(data: QuoteEmailRequest): string {
-  return `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>New Quote Submitted</title>
-        <style>
-          body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; padding: 30px 20px; border-radius: 8px 8px 0 0; text-align: center; }
-          .content { background: #f8fafc; padding: 30px 20px; border-radius: 0 0 8px 8px; }
-          .info-box { background: white; border-left: 4px solid #3b82f6; padding: 15px; margin: 15px 0; border-radius: 4px; }
-          .label { font-weight: 600; color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
-          .value { color: #1e293b; font-size: 16px; margin-top: 5px; }
-          .btn { background: #1e40af; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px 0; }
-          .priority { background: #dc2626; color: white; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: bold; display: inline-block; }
-        </style>
-      </head>
-      <body>
-        <div class="header">
-          <h1 style="margin: 0; font-size: 24px;">🔔 New Quote Submitted</h1>
-          <p style="margin: 10px 0 0 0; opacity: 0.9;">Immediate Action Required</p>
-        </div>
-        
-        <div class="content">
-          <div class="priority">HIGH PRIORITY LEAD</div>
-          
-          <h2 style="color: #1e40af; margin-top: 20px;">Quote Details</h2>
-          
-          <div class="info-box">
-            <div class="label">Quote Number</div>
-            <div class="value">${data.quoteNumber}</div>
-          </div>
-          
-          <div class="info-box">
-            <div class="label">Motor Model</div>
-            <div class="value">${data.motorModel}</div>
-          </div>
-          
-          <div class="info-box">
-            <div class="label">Total Quote Amount</div>
-            <div class="value">$${data.totalPrice?.toLocaleString()}</div>
-          </div>
-          
-          <h2 style="color: #1e40af; margin-top: 30px;">Customer Information</h2>
-          
-          <div class="info-box">
-            <div class="label">Name</div>
-            <div class="value">${data.leadData?.customerName || 'Not provided'}</div>
-          </div>
-          
-          <div class="info-box">
-            <div class="label">Email</div>
-            <div class="value"><a href="mailto:${data.leadData?.customerEmail}">${data.leadData?.customerEmail}</a></div>
-          </div>
-          
-          <div class="info-box">
-            <div class="label">Phone</div>
-            <div class="value"><a href="tel:${data.leadData?.customerPhone}">${data.leadData?.customerPhone || 'Not provided'}</a></div>
-          </div>
-          
-          <div class="info-box">
-            <div class="label">Preferred Contact Method</div>
-            <div class="value">${data.leadData?.contactMethod || 'email'}</div>
-          </div>
-          
-          <div class="info-box">
-            <div class="label">Lead Score</div>
-            <div class="value">${data.leadData?.leadScore || 0}/100</div>
-          </div>
-          
-          <div style="text-align: center; margin-top: 30px;">
-            <a href="https://mercuryrepower.ca/admin/quotes/${data.leadData?.quoteId}" class="btn">View Full Quote in Admin Dashboard</a>
-          </div>
-          
-          ${data.pdfUrl ? `
-            <div style="text-align: center; margin-top: 10px;">
-              <a href="${data.pdfUrl}" class="btn" style="background: #059669;">Download Quote PDF</a>
-            </div>
-          ` : ''}
-          
-          <p style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #64748b; font-size: 14px;">
-            <strong>Next Steps:</strong><br>
-            1. Review the quote details in the admin dashboard<br>
-            2. Contact the customer via their preferred method within 24 hours<br>
-            3. Follow up on any special requests or questions<br>
-            4. Update the quote status in the admin panel
-          </p>
-        </div>
-      </body>
-    </html>
+  const body = `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px;">
+      <tr><td style="padding:6px 0;color:#6b7280;width:120px;">Customer</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(data.leadData?.customerName || "Not provided")}</td></tr>
+      <tr><td style="padding:6px 0;color:#6b7280;">Email</td><td style="padding:6px 0;"><a href="mailto:${esc(data.leadData?.customerEmail || "")}" style="color:#0f2a43;">${esc(data.leadData?.customerEmail || "Not provided")}</a></td></tr>
+      <tr><td style="padding:6px 0;color:#6b7280;">Phone</td><td style="padding:6px 0;"><a href="tel:${esc(data.leadData?.customerPhone || "")}" style="color:#0f2a43;">${esc(data.leadData?.customerPhone || "Not provided")}</a></td></tr>
+      <tr><td style="padding:6px 0;color:#6b7280;">Contact pref</td><td style="padding:6px 0;color:#1f2430;">${esc(data.leadData?.contactMethod || "email")}</td></tr>
+      <tr><td style="padding:6px 0;color:#6b7280;">Lead score</td><td style="padding:6px 0;color:#1f2430;">${data.leadData?.leadScore ?? 0}/100</td></tr>
+      <tr><td style="padding:6px 0;color:#6b7280;">Quote #</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(data.quoteNumber)}</td></tr>
+      <tr><td style="padding:6px 0;color:#6b7280;">Motor</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(data.motorModel)}</td></tr>
+      <tr><td style="padding:6px 0;color:#6b7280;">Total</td><td style="padding:6px 0;color:#1f2430;font-weight:700;">$${data.totalPrice?.toLocaleString()} CAD</td></tr>
+    </table>
+    <p style="margin:12px 0 0 0;font-size:13px;">Open in admin: <a href="https://mercuryrepower.ca/admin/quotes/${esc(data.leadData?.quoteId || "")}" style="color:#0f2a43;">view quote</a>${data.pdfUrl ? ` &nbsp;|&nbsp; <a href="${esc(data.pdfUrl)}" style="color:#0f2a43;">PDF</a>` : ""}</p>
+    <p style="margin:8px 0 0 0;font-size:12px;color:#6b7280;">Contact within 24 hours via preferred channel.</p>
   `;
+  return buildAdminEmail({
+    preheader: `${data.leadData?.customerName || "Lead"} - ${data.motorModel} - $${data.totalPrice?.toLocaleString()}`,
+    heading: `${esc(data.leadData?.customerName || "Lead")} - ${esc(data.motorModel)} - $${data.totalPrice?.toLocaleString()}`,
+    bodyHtml: body,
+    tag: "Quote",
+  });
 }
 
 serve(async (req) => {
