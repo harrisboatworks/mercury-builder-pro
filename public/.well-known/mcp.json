@@ -100,6 +100,7 @@
     "llmsTxt": "https://www.mercuryrepower.ca/llms.txt",
     "aiTxt": "https://www.mercuryrepower.ca/.well-known/ai.txt",
     "brandJson": "https://www.mercuryrepower.ca/.well-known/brand.json",
+    "ucp": "https://www.mercuryrepower.ca/.well-known/ucp",
     "agentsHub": "https://www.mercuryrepower.ca/agents",
     "sitemap": "https://www.mercuryrepower.ca/sitemap.xml"
   },
@@ -113,5 +114,5 @@
     },
     "frontmatter": ["canonical", "last_updated", "currency", "pickup_only", "delivery_offered", "location", "final_quote_requires_dealer_confirmation", "verado_status"]
   },
-  "lastUpdated": "2026-04-25"
+  "lastUpdated": "2026-06-11"
 }
