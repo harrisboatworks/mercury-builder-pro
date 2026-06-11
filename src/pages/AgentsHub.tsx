@@ -126,11 +126,12 @@ export default function AgentsHub() {
           discover, represent, and transact on behalf of <strong>Harris Boat Works</strong>, Mercury repower
           specialists on Rice Lake, Ontario, family-owned since 1947. Motor purchases are pickup only at
           Gores Landing, Ontario: the buyer must pick up in person with valid government photo ID, and we
-          cannot release a motor to a courier, shipping company, or any other third party. HBW's MCP server uses the same
-          Streamable HTTP transport that Shopify's Universal Commerce Protocol (UCP) standardized in
-          April 2026 for agentic commerce, so any UCP-aware agent can discover and query HBW the same
-          way it would query a Shopify storefront.
+          cannot release a motor to a courier, shipping company, or any other third party. HBW is a live
+          Universal Commerce Protocol merchant (UCP 2026-04-08, verified with Shopify's <code>ucp-cli</code>{' '}
+          on June 11, 2026) with checkout in quote mode and fulfillment capabilities, served over both REST
+          and MCP transports.
         </p>
+
 
         <aside className="text-protected mb-10 rounded-lg border border-repower-navy-900/10 bg-repower-cream p-5 text-base">
           <p className="m-0">
