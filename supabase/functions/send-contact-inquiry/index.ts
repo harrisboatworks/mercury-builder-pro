@@ -3,6 +3,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { corsHeaders } from "../_shared/cors.ts";
 import { z } from "npm:zod@3.22.4";
+import { buildEmail, buildAdminEmail, detailsCard, esc as escLayout } from "../_shared/email-layout.ts";
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
