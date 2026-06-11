@@ -306,28 +306,28 @@ export default function MandarinLanding() {
         <nav className="mt-4 space-y-2 text-center">
           <p className="text-sm font-medium text-foreground mb-3">📖 中文文章</p>
           <Link
-            to="/blog/zh/ontario-boating-guide-toronto-chinese"
+            to="/blog/zh/gta-chinese-buy-boat-rice-lake-guide"
             className="block text-primary hover:underline text-sm font-semibold"
           >
-            ⭐ 多伦多华人安省 boating 完整指南（中心页）→
+            ⭐ 多伦多华人 Rice Lake 买船完整指南 →
           </Link>
           <Link to="/blog/zh/mercury-repower-guide-gta" className="block text-primary hover:underline text-sm">
             舷外机换新指南 →
           </Link>
-          <Link to="/blog/zh/new-immigrant-ontario-boat-buying-guide" className="block text-primary hover:underline text-sm">
-            新移民购船指南 →
+          <Link to="/blog/zh/used-boat-buying-checklist-toronto-chinese" className="block text-primary hover:underline text-sm">
+            二手船购买检查清单 →
           </Link>
           <Link to="/blog/zh/rice-lake-fishing-guide-toronto-chinese" className="block text-primary hover:underline text-sm">
             Rice Lake钓鱼攻略 →
           </Link>
-          <Link to="/blog/zh/winterization-mercury-guide-zh" className="block text-primary hover:underline text-sm">
-            冬季保养指南 →
+          <Link to="/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide" className="block text-primary hover:underline text-sm">
+            冬储完整指南 →
           </Link>
           <Link to="/blog/zh/mercury-115-vs-150-comparison-zh" className="block text-primary hover:underline text-sm">
             Mercury 115 vs 150马力对比 →
           </Link>
-          <Link to="/blog/zh/repower-vs-new-boat-zh" className="block text-primary hover:underline text-sm">
-            换发动机还是买新船？ →
+          <Link to="/blog/zh/boat-ownership-cost-ontario-chinese" className="block text-primary hover:underline text-sm">
+            安省养船成本指南 →
           </Link>
           <Link to="/blog/zh/ontario-boating-regulations-zh" className="block text-primary hover:underline text-sm">
             安大略省船只法规 →

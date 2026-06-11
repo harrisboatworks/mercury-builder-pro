@@ -90,9 +90,7 @@ Expert guides for Ontario boaters (selected — full list at /blog):
 
 ## Mandarin / Chinese (Simplified) content
 
-We publish Simplified Chinese boating content for our GTA Mandarin-speaking customers (Toronto, Markham, Richmond Hill, Scarborough, North York, Mississauga). The canonical hub organizes 40+ Mandarin pages into 8 sections (first-time Rice Lake rentals, PCOC/PCL licensing, safety, Mercury outboard selection, buying, repower, service, and winterization/storage):
-
-- https://www.mercuryrepower.ca/blog/zh/ontario-boating-guide-toronto-chinese — 多伦多华人安省 boating 完整指南 (Complete Mandarin Ontario boating guide)
+We publish Simplified Chinese boating content for our GTA Mandarin-speaking customers (Toronto, Markham, Richmond Hill, Scarborough, North York, Mississauga). The canonical hub is the Chinese landing page below, which links every Mandarin article (Rice Lake trips, PCOC/PCL licensing, safety, Mercury outboard selection, buying, repower, service, and winterization/storage):
 
 Chinese hub page (lists all Mandarin articles): https://www.mercuryrepower.ca/zh
 
