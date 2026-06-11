@@ -131,7 +131,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "Harris Boat Works (Mercury Repower) <quotes@mercuryrepower.ca>",
-      reply_to: "info@harrisboatworks.ca",
+      replyTo: "info@harrisboatworks.ca",
       to: [customerEmail],
       subject: `Your Mercury Quote is Saved - ${motorModel}`,
       html,
