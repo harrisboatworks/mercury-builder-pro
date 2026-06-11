@@ -126,46 +126,32 @@ serve(async (req) => {
     if (customerEmail && (preferredChannel === 'email' || preferredChannel === 'both')) {
       try {
         const motorName = motorDetails?.model || 'the motor you configured';
-        const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
+        const appUrl = Deno.env.get("APP_URL") || "https://www.mercuryrepower.ca";
         const unsubscribeUrl = `${appUrl}/unsubscribe/${subscription.unsubscribe_token}`;
+
+        const { buildEmail, detailsCard, esc } = await import("../_shared/email-layout.ts");
+
+        const body = `
+          <p style="margin:0 0 14px 0;">${customerName ? `Hi ${esc(customerName)},` : "Hi there,"}</p>
+          <p style="margin:0 0 14px 0;">You are on the list. When this motor goes on sale or a Mercury promotion becomes available, we will send you a note right away.</p>
+          ${detailsCard([{ label: "Watching", value: esc(motorName) }])}
+          <p style="margin:18px 0 0 0;font-size:13px;color:#6b7280;">No spam, no resold lists. Unsubscribe any time.</p>
+        `;
+
+        const html = buildEmail({
+          preheader: `You are subscribed to ${motorName} promotion alerts.`,
+          eyebrow: "Promotion alerts",
+          heading: "You are on the list",
+          bodyHtml: body,
+          unsubscribeUrl,
+        });
 
         await resend.emails.send({
           from: "Harris Boat Works <noreply@mercuryrepower.ca>",
           to: [customerEmail],
-          reply_to: "info@harrisboatworks.ca",
-          subject: `You're subscribed to ${motorName} promotions`,
-          html: `
-            <!DOCTYPE html>
-            <html>
-            <head>
-              <meta charset="utf-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            </head>
-            <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-              <div style="text-align: center; margin-bottom: 30px;">
-                <h1 style="color: #1a1a1a; margin-bottom: 10px;">You're All Set!</h1>
-                <p style="color: #666; font-size: 16px;">We'll notify you when promotions are available.</p>
-              </div>
-              
-              <div style="background: #f9fafb; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
-                <h2 style="margin: 0 0 12px 0; font-size: 18px; color: #1a1a1a;">Motor You're Watching:</h2>
-                <p style="margin: 0; font-size: 16px; color: #333; font-weight: 500;">${motorName}</p>
-              </div>
-              
-              <p style="color: #666; font-size: 14px;">
-                When this motor goes on sale or a special promotion becomes available, 
-                we'll send you an email right away so you don't miss out.
-              </p>
-              
-              <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
-              
-              <p style="color: #999; font-size: 12px; text-align: center;">
-                Harris Boat Works | (905) 342-2153 | info@harrisboatworks.ca<br>
-                <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a>
-              </p>
-            </body>
-            </html>
-          `
+          replyTo: "info@harrisboatworks.ca",
+          subject: `You are subscribed to ${motorName} promotions`,
+          html,
         });
         console.log("[subscribe-promo-reminder] Confirmation email sent");
       } catch (emailError) {
