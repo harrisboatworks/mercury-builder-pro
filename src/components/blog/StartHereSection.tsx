@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { getArticleBySlug, parseLocalDate } from '@/data/blogArticles';
 import { getCleanDescription } from '@/lib/strip-markdown';
+import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 
 const LEAD_SLUG = 'repair-repower-or-sell-boat-ontario-decision-guide';
 
