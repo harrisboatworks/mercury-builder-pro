@@ -1,5 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { buildEmail, detailsCard, esc } from "../_shared/email-layout.ts";
+
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
