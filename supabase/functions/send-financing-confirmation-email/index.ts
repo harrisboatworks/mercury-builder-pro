@@ -2,7 +2,7 @@ import { serve } from 'https://deno.land/std@0.190.0/http/server.ts';
 import { Resend } from 'npm:resend@2.0.0';
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "npm:zod@3.22.4";
-import { createBrandedEmailTemplate, createButtonHtml } from '../_shared/email-template.ts';
+import { buildEmail, buildAdminEmail, detailsCard, esc } from '../_shared/email-layout.ts';
 
 // Input validation schema. Body values are trusted only as hints; the canonical
 // applicant data is re-read from the financing_applications row server-side so
