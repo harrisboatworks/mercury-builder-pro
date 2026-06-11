@@ -66,25 +66,36 @@ export function StartHereSection() {
               to={`/blog/${lead.slug}`}
               className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/60 rounded-sm"
             >
-              <p className="font-sans font-semibold text-[10px] uppercase tracking-[0.22em] text-repower-mercury-red mb-3">
-                {lead.category}
-              </p>
-              <h3
-                className="font-display font-bold text-repower-navy-900 group-hover:text-repower-mercury-red transition-colors duration-200"
-                style={{ fontSize: 'clamp(26px, 3.2vw, 38px)', letterSpacing: '-0.025em', lineHeight: 1.12 }}
-              >
-                <span className="bg-[linear-gradient(currentColor,currentColor)] bg-no-repeat bg-[length:0%_1px] bg-left-bottom group-hover:bg-[length:100%_1px] transition-[background-size] duration-300">
-                  {lead.title}
-                </span>
-              </h3>
-              <p className="mt-4 font-sans text-[15px] text-repower-navy-900/60 leading-relaxed line-clamp-2 max-w-[62ch]">
-                {getCleanDescription(lead)}
-              </p>
-              <p className="mt-4 font-sans text-xs text-repower-navy-900/45">
-                {formatDate(lead.datePublished)}
-                <span aria-hidden="true" className="mx-2 text-repower-navy-900/25">·</span>
-                {lead.readTime}
-              </p>
+              <div className="grid md:grid-cols-[minmax(0,300px)_1fr] gap-5 md:gap-7 items-start">
+                <BlogHeroPicture
+                  image={lead.image}
+                  alt={lead.title}
+                  wrapperClassName="aspect-[4/3] overflow-hidden rounded-sm border border-repower-navy-900/10 bg-repower-paper"
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                  sizes="(min-width: 1024px) 300px, (min-width: 768px) 40vw, 100vw"
+                />
+                <div>
+                  <p className="font-sans font-semibold text-[10px] uppercase tracking-[0.22em] text-repower-mercury-red mb-3">
+                    {lead.category}
+                  </p>
+                  <h3
+                    className="font-display font-bold text-repower-navy-900 group-hover:text-repower-mercury-red transition-colors duration-200"
+                    style={{ fontSize: 'clamp(24px, 2.6vw, 32px)', letterSpacing: '-0.025em', lineHeight: 1.12 }}
+                  >
+                    <span className="bg-[linear-gradient(currentColor,currentColor)] bg-no-repeat bg-[length:0%_1px] bg-left-bottom group-hover:bg-[length:100%_1px] transition-[background-size] duration-300">
+                      {lead.title}
+                    </span>
+                  </h3>
+                  <p className="mt-4 font-sans text-[15px] text-repower-navy-900/60 leading-relaxed line-clamp-2 max-w-[62ch]">
+                    {getCleanDescription(lead)}
+                  </p>
+                  <p className="mt-4 font-sans text-xs text-repower-navy-900/45">
+                    {formatDate(lead.datePublished)}
+                    <span aria-hidden="true" className="mx-2 text-repower-navy-900/25">·</span>
+                    {lead.readTime}
+                  </p>
+                </div>
+              </div>
             </Link>
           </article>
         )}
