@@ -3881,6 +3881,36 @@ export type Database = {
         }
         Relationships: []
       }
+      ucp_checkout_sessions: {
+        Row: {
+          agent_profile_url: string | null
+          created_at: string
+          expires_at: string
+          id: string
+          payload: Json
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          agent_profile_url?: string | null
+          created_at?: string
+          expires_at?: string
+          id: string
+          payload: Json
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          agent_profile_url?: string | null
+          created_at?: string
+          expires_at?: string
+          id?: string
+          payload?: Json
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       unit_site_content: {
         Row: {
           created_at: string | null
