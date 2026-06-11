@@ -546,7 +546,7 @@ serve(async (req: Request): Promise<Response> => {
 
         // Send email
         const emailResponse = await resend.emails.send({
-          from: "Harris Boat Works <noreply@hbwsales.ca>",
+          from: "Harris Boat Works <noreply@mercuryrepower.ca>",
           to: [sequence.email],
           reply_to: "info@harrisboatworks.ca",
           subject,

@@ -130,8 +130,8 @@ const handler = async (req: Request): Promise<Response> => {
     const html = createBrandedEmailTemplate(emailContent, `Your Mercury ${motorModel} quote has been saved`);
 
     const emailResponse = await resend.emails.send({
-      from: "Harris Boat Works (Mercury Repower) <quotes@hbwsales.ca>",
-      reply_to: "info@harrisboatworks.ca",
+      from: "Harris Boat Works (Mercury Repower) <quotes@mercuryrepower.ca>",
+      replyTo: "info@harrisboatworks.ca",
       to: [customerEmail],
       subject: `Your Mercury Quote is Saved - ${motorModel}`,
       html,

@@ -169,7 +169,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email
     const emailResponse = await resend.emails.send({
-      from: 'Harris Boat Works <noreply@hbwsales.ca>',
+      from: 'Harris Boat Works <noreply@mercuryrepower.ca>',
       reply_to: ['info@harrisboatworks.ca'],
       to: [email],
       subject: 'Resume Your Financing Application',

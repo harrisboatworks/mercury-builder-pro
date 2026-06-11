@@ -406,7 +406,7 @@ Deno.serve(async (req) => {
         `;
 
         await resend.emails.send({
-          from: 'system@hbwsales.ca',
+          from: 'system@mercuryrepower.ca',
           to: ['info@harrisboatworks.ca'],
           reply_to: 'info@harrisboatworks.ca',
           subject: `🔄 Price List Sync: ${changesApplied.length} updates, ${motorsInserted.length} new motors`,

@@ -383,7 +383,7 @@ serve(async (req) => {
       html: string;
       attachments?: Array<{ filename: string; content: string }>;
     } = {
-      from: 'Harris Boat Works - Mercury Marine <noreply@hbwsales.ca>',
+      from: 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
       to: [emailData.customerEmail],
       replyTo: 'info@harrisboatworks.ca',
       subject: subject,

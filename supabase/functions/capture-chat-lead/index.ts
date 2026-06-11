@@ -214,7 +214,7 @@ serve(async (req) => {
         const resend = new Resend(RESEND_API_KEY);
 
         await resend.emails.send({
-          from: 'Harris Boat Works <system@hbwsales.ca>',
+          from: 'Harris Boat Works <system@mercuryrepower.ca>',
           to: ['info@harrisboatworks.ca'],
           reply_to: 'info@harrisboatworks.ca',
           subject: `💬 New Chat Lead: ${leadData.name}`.slice(0, 200),

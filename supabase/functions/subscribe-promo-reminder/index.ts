@@ -130,7 +130,7 @@ serve(async (req) => {
         const unsubscribeUrl = `${appUrl}/unsubscribe/${subscription.unsubscribe_token}`;
 
         await resend.emails.send({
-          from: "Harris Boat Works <noreply@hbwsales.ca>",
+          from: "Harris Boat Works <noreply@mercuryrepower.ca>",
           to: [customerEmail],
           reply_to: "info@harrisboatworks.ca",
           subject: `You're subscribed to ${motorName} promotions`,
