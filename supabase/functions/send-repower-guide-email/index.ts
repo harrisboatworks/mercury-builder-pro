@@ -152,7 +152,7 @@ serve(async (req: Request): Promise<Response> => {
       from: "Harris Boat Works <noreply@mercuryrepower.ca>",
       to: [email],
       reply_to: "info@harrisboatworks.ca",
-      subject: "Your Repower Guide is Ready 📘",
+      subject: "Your Repower Guide is ready | Harris Boat Works",
       html: emailHtml,
     });
 
