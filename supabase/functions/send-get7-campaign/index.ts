@@ -185,7 +185,7 @@ const handler = async (req: Request): Promise<Response> => {
           expiryDate,
           promoUrl,
         });
-        results.email = await sendEmail(testEmail, "🎉 Mercury Get 7 + Choose One — Limited Time!", html);
+        results.email = await sendEmail(testEmail, "Mercury Get 7 plus Choose One: limited time", html);
       }
       
       if (testPhone && shouldSendSms) {
@@ -269,7 +269,7 @@ Reply STOP to unsubscribe`;
         
         const emailResult = await sendEmail(
           customer.customer_email,
-          "🎉 Mercury Get 7 + Choose One — 7-Year Warranty + Your Choice of Bonus!",
+          "Mercury Get 7 plus Choose One: 7-year warranty plus your pick of bonus",
           html
         );
         
