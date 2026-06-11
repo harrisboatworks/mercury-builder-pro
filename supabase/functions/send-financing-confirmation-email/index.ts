@@ -277,43 +277,29 @@ const handler = async (req: Request): Promise<Response> => {
       const siteUrl = Deno.env.get('APP_URL') || 'https://mercuryrepower.ca';
       const reviewUrl = `${siteUrl}/admin/financing-applications?id=${applicationId}`;
 
-      const adminContent = `
-        <h1>New Financing Application</h1>
-        <p>A new financing application has been submitted and is ready for review.</p>
-
-        <div class="reference-number">
-          #${referenceNumber}
-        </div>
-
-        <div class="info-box">
-          <strong>Applicant:</strong> ${applicantName}<br>
-          <strong>Email:</strong> ${applicantEmail}<br>
-          <strong>Motor:</strong> ${motorModel}<br>
-          <strong>Amount:</strong> $${amountToFinance.toLocaleString()}<br>
-          <strong>Submitted:</strong> ${submittedDate}
-        </div>
-
-        <div style="text-align: center;">
-          ${createButtonHtml(reviewUrl, 'Review Application in Admin Dashboard')}
-        </div>
-
-        <p style="font-size: 14px; color: #6b7280;">
-          Or copy and paste this link:<br>
-          <a href="${reviewUrl}" style="color: #3b82f6; word-break: break-all;">${reviewUrl}</a>
-        </p>
+      const adminBody = `
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px;">
+          <tr><td style="padding:6px 0;color:#6b7280;width:120px;">Applicant</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(applicantName)}</td></tr>
+          <tr><td style="padding:6px 0;color:#6b7280;">Email</td><td style="padding:6px 0;"><a href="mailto:${esc(applicantEmail)}" style="color:#0f2a43;">${esc(applicantEmail)}</a></td></tr>
+          <tr><td style="padding:6px 0;color:#6b7280;">Motor</td><td style="padding:6px 0;color:#1f2430;font-weight:600;">${esc(motorModel)}</td></tr>
+          <tr><td style="padding:6px 0;color:#6b7280;">Amount</td><td style="padding:6px 0;color:#1f2430;font-weight:700;">$${amountToFinance.toLocaleString()} CAD</td></tr>
+          <tr><td style="padding:6px 0;color:#6b7280;">Reference</td><td style="padding:6px 0;color:#1f2430;">${esc(referenceNumber)}</td></tr>
+          <tr><td style="padding:6px 0;color:#6b7280;">Submitted</td><td style="padding:6px 0;color:#1f2430;">${esc(submittedDate)}</td></tr>
+        </table>
+        <p style="margin:12px 0 0 0;font-size:13px;">Review: <a href="${reviewUrl}" style="color:#0f2a43;">${reviewUrl}</a></p>
       `;
-
-      const adminHtml = createBrandedEmailTemplate(
-        adminContent,
-        `New application from ${applicantName} - $${amountToFinance.toLocaleString()}`,
-        'You received this email because you started a financing application with Harris Boat Works.'
-      );
+      const adminHtml = buildAdminEmail({
+        preheader: `${applicantName} - ${motorModel} - $${amountToFinance.toLocaleString()}`,
+        heading: `${applicantName} - $${amountToFinance.toLocaleString()}`,
+        bodyHtml: adminBody,
+        tag: "Financing",
+      });
 
       adminEmailResponse = await resend.emails.send({
         from: 'Harris Boat Works System <noreply@mercuryrepower.ca>',
         replyTo: ['info@harrisboatworks.ca'],
         to: [adminEmail],
-        subject: `New Financing Application - ${applicantName} - $${amountToFinance.toLocaleString()}`,
+        subject: `[FINANCING] ${applicantName} - ${motorModel} - $${amountToFinance.toLocaleString()}`,
         html: adminHtml,
       });
 
