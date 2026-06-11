@@ -654,87 +654,69 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         };
       }
       
-      // Build email HTML with motor details
+      // Build email using the shared layout
       const emailPrice = getSellingPrice(motor);
-      const priceSection = includePricing && emailPrice 
-        ? `<p><strong>Price:</strong> $${emailPrice.toLocaleString()} CAD</p>` 
-        : '';
-      
-      const emailHtml = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: #1e3a5f; color: white; padding: 20px; text-align: center; }
-            .content { padding: 20px; }
-            .motor-card { background: #f8fafc; border-radius: 8px; padding: 20px; margin: 20px 0; }
-            .cta { background: #dc2626; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; }
-          </style>
-        </head>
-        <body>
-          <div class="container">
-            <div class="header">
-              <h1>Mercury ${motor.model_display || motor.model}</h1>
-              <p>Harris Boat Works</p>
-            </div>
-            <div class="content">
-              <p>Hi ${customerName},</p>
-              <p>Here's the motor info you asked about!</p>
-              
-              <div class="motor-card">
-                <h2>${motor.model_display || motor.model}</h2>
-                <p><strong>Horsepower:</strong> ${motor.horsepower} HP</p>
-                <p><strong>Family:</strong> ${motor.family || 'FourStroke'}</p>
-                <p><strong>Shaft Length:</strong> ${motor.shaft || 'Standard'}</p>
-                <p><strong>Availability:</strong> ${motor.in_stock ? 'In Stock' : 'Available to Order (7-14 days)'}</p>
-                ${priceSection}
-              </div>
-              
-              <p>Want a detailed quote with options and promotions?</p>
-              <p style="text-align: center; margin: 24px 0;">
-                <a href="https://mercuryrepower.ca/quote?motor=${motor.id}" class="cta">View Full Details</a>
-              </p>
-              
-              <p>Questions? Just reply to this email or call us at (905) 342-2153.</p>
-              
-              <p>Thanks,<br>Harris Boat Works</p>
-            </div>
-          </div>
-        </body>
-        </html>
+      const priceLine = includePricing && emailPrice
+        ? `$${emailPrice.toLocaleString()} CAD`
+        : null;
+
+      const { buildEmail, detailsCard, esc } = await import("../_shared/email-layout.ts");
+      const modelLabel = motor.model_display || motor.model;
+
+      const rows = [
+        { label: "Motor", value: esc(modelLabel) },
+        { label: "Horsepower", value: `${motor.horsepower} HP` },
+        { label: "Family", value: esc(motor.family || "FourStroke") },
+        { label: "Shaft length", value: esc(motor.shaft || "Standard") },
+        { label: "Availability", value: motor.in_stock ? "In stock" : "Available to order (7 to 14 days)" },
+      ];
+      if (priceLine) rows.push({ label: "Price", value: priceLine });
+
+      const body = `
+        <p style="margin:0 0 14px 0;">Hi ${esc(customerName)},</p>
+        <p style="margin:0 0 14px 0;">Here is the motor info you asked about on the call.</p>
+        ${detailsCard(rows)}
+        <p style="margin:22px 0 0 0;">Want a full quote with options, promotions, and trade-in? Use the link below or reply to this email.</p>
       `;
-      
+
+      const emailHtml = buildEmail({
+        preheader: `Details on the Mercury ${modelLabel}.`,
+        eyebrow: "From your call",
+        heading: `Mercury ${modelLabel}`,
+        bodyHtml: body,
+        ctaText: "Build your full quote",
+        ctaUrl: `https://www.mercuryrepower.ca/quote?motor=${motor.id}`,
+      });
+
       try {
         const { Resend } = await import("npm:resend@2.0.0");
         const resend = new Resend(RESEND_API_KEY);
-        
+
         await resend.emails.send({
           from: "Harris Boat Works <quotes@mercuryrepower.ca>",
           to: [customerEmail],
-          reply_to: "info@harrisboatworks.ca",
-          subject: `Mercury ${motor.model_display || motor.model} - Motor Details`,
-          html: emailHtml
+          replyTo: "info@harrisboatworks.ca",
+          subject: `Mercury ${modelLabel} details`,
+          html: emailHtml,
         });
-        
-        return { 
-          content: [{ 
-            type: "text", 
-            text: `Done! I've sent the ${motor.model_display || motor.model} details to ${customerEmail}. It'll be in your inbox in just a minute. Anything else you'd like to know?` 
-          }] 
+
+        return {
+          content: [{
+            type: "text",
+            text: `Done! I've sent the ${modelLabel} details to ${customerEmail}. It'll be in your inbox in just a minute. Anything else you'd like to know?`,
+          }],
         };
       } catch (error) {
         console.error("[MCP] Email send error:", error);
-        return { 
-          content: [{ 
-            type: "text", 
-            text: `I had trouble sending that email. Could you double-check your email address, or I can have someone from our team follow up with you?` 
-          }] 
+        return {
+          content: [{
+            type: "text",
+            text: `I had trouble sending that email. Could you double-check your email address, or I can have someone from our team follow up with you?`,
+          }],
         };
       }
     }
+
     
     case "check_current_deals": {
       const { data: promos } = await supabase

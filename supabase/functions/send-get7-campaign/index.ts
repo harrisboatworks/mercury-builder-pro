@@ -1,5 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { buildEmail, detailsCard, esc } from "../_shared/email-layout.ts";
+
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -24,7 +26,7 @@ const getRebateAmount = (hp: number): number => {
   return 0;
 };
 
-// Generate Get 7 email HTML
+// Generate Get 7 email HTML using shared layout
 const generateGet7EmailHtml = (data: {
   customerName?: string;
   motorModel?: string;
@@ -34,99 +36,39 @@ const generateGet7EmailHtml = (data: {
   promoUrl: string;
 }) => {
   const { customerName, motorModel, motorHp, rebateAmount, expiryDate, promoUrl } = data;
-  
-  const personalizedRebate = rebateAmount && motorHp 
-    ? `<div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; margin: 20px 0;">
-        <p style="margin: 0; font-size: 14px; opacity: 0.9;">Your ${motorHp}HP motor qualifies for</p>
-        <p style="margin: 8px 0; font-size: 32px; font-weight: bold;">$${rebateAmount} Cash Back!</p>
-      </div>`
-    : '';
 
-  return `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mercury Get 7 + Choose One</title>
-</head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f5f5f5;">
-  <div style="max-width: 600px; margin: 0 auto; background: white;">
-    <!-- Header -->
-    <div style="background: linear-gradient(135deg, #1e3a5f 0%, #0c1929 100%); padding: 30px; text-align: center;">
-      <img src="https://mercuryrepower.ca/mercury-logo-white.png" alt="Mercury Marine" style="height: 40px; margin-bottom: 15px;">
-      <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">GET 7 + CHOOSE ONE</h1>
-      <p style="color: #94a3b8; margin: 10px 0 0 0; font-size: 14px;">Limited Time Offer • Ends ${expiryDate}</p>
-    </div>
-    
-    <!-- Hero Banner -->
-    <div style="background: url('https://mercuryrepower.ca/assets/mercury-get-7-choose-one.jpg') center/cover; height: 200px; position: relative;">
-      <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);"></div>
-    </div>
-    
-    <!-- Content -->
-    <div style="padding: 30px;">
-      <p style="font-size: 18px; color: #1f2937; margin: 0 0 20px 0;">
-        ${customerName ? `Hi ${customerName},` : 'Hi there,'}
-      </p>
-      
-      <p style="color: #4b5563; line-height: 1.6; margin: 0 0 25px 0;">
-        Great news! Mercury Marine's <strong>Get 7 + Choose One</strong> promotion is now available. 
-        Get a <strong>7-Year Factory Warranty</strong> on qualifying outboards, PLUS choose one bonus:
-      </p>
-      
-      <!-- Three Options Grid -->
-      <div style="display: flex; gap: 15px; margin: 25px 0;">
-        <div style="flex: 1; background: #f0f9ff; border: 2px solid #3b82f6; border-radius: 12px; padding: 20px; text-align: center;">
-          <div style="font-size: 24px; margin-bottom: 8px;">📅</div>
-          <div style="font-weight: bold; color: #1e40af; font-size: 14px;">6 MONTHS</div>
-          <div style="font-size: 12px; color: #64748b;">No Payments</div>
-        </div>
-        <div style="flex: 1; background: #f0fdf4; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; text-align: center;">
-          <div style="font-size: 24px; margin-bottom: 8px;">💰</div>
-          <div style="font-weight: bold; color: #166534; font-size: 14px;">FROM 2.99%</div>
-          <div style="font-size: 12px; color: #64748b;">Special Financing</div>
-        </div>
-        <div style="flex: 1; background: #fefce8; border: 2px solid #eab308; border-radius: 12px; padding: 20px; text-align: center;">
-          <div style="font-size: 24px; margin-bottom: 8px;">🎁</div>
-          <div style="font-weight: bold; color: #a16207; font-size: 14px;">UP TO $1,500</div>
-          <div style="font-size: 12px; color: #64748b;">Cash Rebate</div>
-        </div>
-      </div>
-      
-      ${personalizedRebate}
-      
-      ${motorModel ? `<p style="color: #6b7280; font-size: 14px; text-align: center; margin: 15px 0;">Based on your interest in: <strong>${motorModel}</strong></p>` : ''}
-      
-      <!-- CTA Button -->
-      <div style="text-align: center; margin: 30px 0;">
-        <a href="${promoUrl}" style="display: inline-block; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px;">
-          Build Your Quote →
-        </a>
-      </div>
-      
-      <!-- Urgency Banner -->
-      <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 15px; text-align: center; margin: 25px 0;">
-        <p style="margin: 0; color: #dc2626; font-weight: bold;">
-          ⏰ Offer ends ${expiryDate} — Don't miss out!
-        </p>
-      </div>
-    </div>
-    
-    <!-- Footer -->
-    <div style="background: #1f2937; color: #9ca3af; padding: 25px; text-align: center; font-size: 12px;">
-      <p style="margin: 0 0 10px 0;">Harris Boat Works • Your Trusted Mercury Dealer Since 1947</p>
-      <p style="margin: 0 0 10px 0;">📍 1234 Marina Drive, Orillia, ON • 📞 (705) 555-0123</p>
-      <p style="margin: 15px 0 0 0; font-size: 11px; color: #6b7280;">
-        You're receiving this because you've shown interest in Mercury outboards.
-        <a href="${promoUrl}/unsubscribe" style="color: #9ca3af;">Unsubscribe</a>
-      </p>
-    </div>
-  </div>
-</body>
-</html>
-`;
+  const rows: Array<{ label: string; value: string }> = [
+    { label: "Warranty", value: "7-Year Factory Warranty (3 + 4 bonus years)" },
+    { label: "Choose one", value: "6 months no payments, special financing from 2.99%, or up to $1,500 cash back" },
+  ];
+  if (motorModel) rows.push({ label: "Your motor", value: esc(motorModel) });
+  if (rebateAmount && motorHp) {
+    rows.push({ label: "Your rebate", value: `$${rebateAmount.toLocaleString()} on your ${motorHp}HP` });
+  }
+  rows.push({ label: "Offer ends", value: esc(expiryDate) });
+
+  const body = `
+    <p style="margin:0 0 14px 0;">${customerName ? `Hi ${esc(customerName)},` : "Hi there,"}</p>
+    <p style="margin:0 0 14px 0;">Mercury's <strong>Get 7 plus Choose One</strong> is live. A 7-year factory warranty on qualifying outboards, plus your pick of one bonus offer.</p>
+
+    <h2 style="font-family:Georgia,'Times New Roman',Times,serif;font-size:20px;color:#0f2a43;margin:28px 0 12px 0;font-weight:400;">What is included</h2>
+    <div style="height:1px;background:#d9d3c7;line-height:1px;font-size:1px;margin:0 0 6px 0;">&nbsp;</div>
+    ${detailsCard(rows)}
+    <p style="margin:18px 0 0 0;color:#c8102e;font-weight:600;text-align:center;">Offer ends ${esc(expiryDate)}.</p>
+    <p style="margin:22px 0 0 0;">Reply to this email or call <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a> if you want help applying it to your motor.</p>
+  `;
+
+  return buildEmail({
+    preheader: `Mercury Get 7 plus your choice of bonus. Ends ${expiryDate}.`,
+    eyebrow: "Mercury Get 7",
+    heading: "Get 7 plus choose one bonus",
+    bodyHtml: body,
+    ctaText: "Build your quote",
+    ctaUrl: promoUrl,
+    unsubscribeUrl: `${promoUrl}/unsubscribe`,
+  });
 };
+
 
 // Send email via Resend
 const sendEmail = async (to: string, subject: string, html: string) => {
@@ -243,7 +185,7 @@ const handler = async (req: Request): Promise<Response> => {
           expiryDate,
           promoUrl,
         });
-        results.email = await sendEmail(testEmail, "🎉 Mercury Get 7 + Choose One — Limited Time!", html);
+        results.email = await sendEmail(testEmail, "Mercury Get 7 plus Choose One: limited time", html);
       }
       
       if (testPhone && shouldSendSms) {
@@ -327,7 +269,7 @@ Reply STOP to unsubscribe`;
         
         const emailResult = await sendEmail(
           customer.customer_email,
-          "🎉 Mercury Get 7 + Choose One — 7-Year Warranty + Your Choice of Bonus!",
+          "Mercury Get 7 plus Choose One: 7-year warranty plus your pick of bonus",
           html
         );
         

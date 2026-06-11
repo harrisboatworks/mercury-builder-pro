@@ -1,6 +1,8 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.53.1'
 import { Resend } from "npm:resend@2.0.0";
+import { buildAdminEmail } from "../_shared/email-layout.ts";
+
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -47,46 +49,47 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email notification for failures or significant issues
     if (notificationData.error_message || (notificationData.motors_found === 0)) {
       const isError = !!notificationData.error_message;
-      const subject = isError 
-        ? `🚨 Mercury Inventory Sync Failed - ${new Date().toLocaleDateString()}`
-        : `⚠️ Mercury Inventory Sync Warning - No Motors Found`;
+      const subject = isError
+        ? `Mercury inventory sync failed: ${new Date().toLocaleDateString()}`
+        : `Mercury inventory sync warning: no motors found`;
+
+      const esc = (s: string) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+      const rows = [
+        `<tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;width:130px;">Job</td><td style="padding:6px 0;">${esc(notificationData.job_name)}</td></tr>`,
+        `<tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;">Started</td><td style="padding:6px 0;">${esc(new Date(notificationData.started_at).toLocaleString())}</td></tr>`,
+        `<tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;">Motors found</td><td style="padding:6px 0;">${notificationData.motors_found || 0}</td></tr>`,
+        `<tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;">Motors updated</td><td style="padding:6px 0;">${notificationData.motors_updated || 0}</td></tr>`,
+      ].join("");
+
+      const errBlock = notificationData.error_message
+        ? `<h3 style="margin:18px 0 6px 0;font-size:14px;color:#c8102e;">Error</h3><pre style="background:#f4f5f7;padding:12px;border-radius:4px;overflow-x:auto;font-size:12px;white-space:pre-wrap;">${esc(notificationData.error_message)}</pre>`
+        : "";
 
       const emailBody = `
-        <h2>${isError ? 'Inventory Sync Failure' : 'Inventory Sync Warning'}</h2>
-        
-        <div style="background: ${isError ? '#fee2e2' : '#fef3c7'}; padding: 16px; border-radius: 8px; margin: 16px 0;">
-          <h3>Job Details:</h3>
-          <ul>
-            <li><strong>Job Name:</strong> ${notificationData.job_name}</li>
-            <li><strong>Started At:</strong> ${new Date(notificationData.started_at).toLocaleString()}</li>
-            <li><strong>Motors Found:</strong> ${notificationData.motors_found || 0}</li>
-            <li><strong>Motors Updated:</strong> ${notificationData.motors_updated || 0}</li>
-          </ul>
-          
-          ${notificationData.error_message ? `
-            <h3>Error Message:</h3>
-            <pre style="background: #f3f4f6; padding: 12px; border-radius: 4px; overflow-x: auto;">
-${notificationData.error_message}
-            </pre>
-          ` : ''}
-        </div>
-
-        <h3>Next Steps:</h3>
-        <ul>
-          <li>Check the admin dashboard for detailed logs</li>
-          <li>Verify the Harris Boatworks website is accessible</li>
-          <li>Run a manual test to diagnose the issue</li>
-          ${isError ? '<li>Review the error message above for specific guidance</li>' : ''}
+        <p style="margin:0 0 12px 0;">${isError ? "Inventory sync failure." : "Inventory sync completed with zero motors found."}</p>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:6px 0 12px 0;">${rows}</table>
+        ${errBlock}
+        <h3 style="margin:18px 0 6px 0;font-size:14px;color:#0f2a43;">Next steps</h3>
+        <ul style="margin:0;padding-left:20px;line-height:1.7;">
+          <li>Check the admin dashboard for detailed logs.</li>
+          <li>Verify the Harris Boatworks website is accessible.</li>
+          <li>Run a manual sync to diagnose the issue.</li>
         </ul>
-
-        <p><em>This is an automated notification from your Mercury inventory sync system.</em></p>
       `;
+
+      const html = buildAdminEmail({
+        preheader: subject,
+        tag: isError ? "Sync failed" : "Sync warning",
+        heading: notificationData.job_name,
+        bodyHtml: emailBody,
+      });
 
       const emailResponse = await resend.emails.send({
         from: "Mercury Sync <noreply@mercuryrepower.ca>",
         to: ["info@harrisboatworks.ca"],
-        subject: subject,
-        html: emailBody,
+        subject,
+        html,
       });
 
       console.log('[CRON-NOTIFICATION] Email sent:', emailResponse);
@@ -94,30 +97,30 @@ ${notificationData.error_message}
 
     // Send daily summary even for successful runs
     if (!notificationData.error_message && (notificationData.motors_found ?? 0) > 0) {
+      const summaryBody = `
+        <p style="margin:0 0 12px 0;">Today's inventory sync completed successfully.</p>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:6px 0 12px 0;">
+          <tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;width:130px;">Motors found</td><td style="padding:6px 0;">${notificationData.motors_found}</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;">Motors updated</td><td style="padding:6px 0;">${notificationData.motors_updated}</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;font-weight:600;color:#0f2a43;">Completed</td><td style="padding:6px 0;">${new Date().toLocaleString()}</td></tr>
+        </table>
+        <p style="margin:0 0 0 0;">Your Mercury inventory is up to date.</p>
+      `;
       const summaryEmail = await resend.emails.send({
         from: "Mercury Sync <noreply@mercuryrepower.ca>",
         to: ["info@harrisboatworks.ca"],
-        subject: `✅ Daily Mercury Inventory Sync Complete - ${new Date().toLocaleDateString()}`,
-        html: `
-          <h2>Daily Inventory Sync Summary</h2>
-          
-          <div style="background: #dcfce7; padding: 16px; border-radius: 8px; margin: 16px 0;">
-            <h3>Success! Today's sync completed successfully.</h3>
-            <ul>
-              <li><strong>Motors Found:</strong> ${notificationData.motors_found}</li>
-              <li><strong>Motors Updated:</strong> ${notificationData.motors_updated}</li>
-              <li><strong>Completed:</strong> ${new Date().toLocaleString()}</li>
-            </ul>
-          </div>
-
-          <p>Your Mercury inventory is up to date with the latest stock information from Harris Boatworks.</p>
-          
-          <p><em>This is your daily inventory sync summary.</em></p>
-        `,
+        subject: `Daily Mercury inventory sync complete: ${new Date().toLocaleDateString()}`,
+        html: buildAdminEmail({
+          preheader: "Daily Mercury inventory sync complete",
+          tag: "Sync OK",
+          heading: notificationData.job_name,
+          bodyHtml: summaryBody,
+        }),
       });
 
       console.log('[CRON-NOTIFICATION] Summary email sent:', summaryEmail);
     }
+
 
     return new Response(
       JSON.stringify({ 
