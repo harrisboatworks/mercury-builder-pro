@@ -208,16 +208,16 @@ serve(async (req) => {
       // Fallback to hardcoded templates
       switch (emailData.emailType) {
         case 'quote_delivery':
-          subject = `Your Mercury Motor Quote #${emailData.quoteNumber} from Harris Boat Works`;
+          subject = `Your Mercury ${emailData.motorModel} quote, ref ${emailData.quoteNumber} | Harris Boat Works`;
           htmlContent = generateQuoteDeliveryEmail(emailData);
           break;
         case 'follow_up':
         case 'reminder':
-          subject = `Following up on your Mercury Motor quote #${emailData.quoteNumber}`;
+          subject = `Following up on your Mercury ${emailData.motorModel} quote, ref ${emailData.quoteNumber}`;
           htmlContent = generateFollowUpEmail(emailData);
           break;
         case 'admin_quote_notification':
-          subject = `🔔 New Quote: ${emailData.quoteNumber} - ${emailData.motorModel} ($${emailData.totalPrice?.toLocaleString()})`;
+          subject = `[QUOTE] ${emailData.leadData?.customerName || "Lead"} - ${emailData.motorModel} - $${emailData.totalPrice?.toLocaleString()}`;
           htmlContent = generateAdminNotificationEmail(emailData);
           break;
         default:
