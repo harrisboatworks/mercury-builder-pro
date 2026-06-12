@@ -3103,7 +3103,7 @@ For modern Mercury FourStrokes, no. Use Mercury-approved four-stroke oil from da
 **Can I tow my new Mercury home from HBW and break it in on my own lake?**
 Yes. Many customers do this. Start at idle and no-wake speed, then graduate over the first hour. The break-in protocol works on any lake.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Ready to book your 20-hour first service? Book it online at [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
 `,
     howToSteps: [
       {
