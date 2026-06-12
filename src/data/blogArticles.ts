@@ -11573,9 +11573,12 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ## What we see at HBW
 
-Boost is Mercury's software-only HP upgrade for select FourStroke and Pro XS models -- adds 10-25 HP via a flash, no hardware change. The most common customer who comes in asking is a 150 FourStroke owner on a pontoon who wishes they had specced the 175.
+Boost is Mercury's software-only calibration upgrade for select FourStroke, Pro XS, and special-order Verado models. It improves mid-range acceleration and throttle response via a flash, with no hardware change and no change to rated horsepower. A common customer who asks is a 150 FourStroke pontoon owner who wishes they had specced the 175, and we have to be straight with them: most 150 FourStroke pontoons are outside the current Boost eligibility list, and even on an eligible motor Boost does not add rated HP. If hole-shot is the real complaint, the right next step is usually a prop conversation first, then Boost only if the motor is eligible.
 
-Eligibility depends on year, model code, and powerhead serial number. We can check eligibility in our portal in a few minutes. Flash time at the shop is roughly 90 minutes plus the customer-portal activation. Not every motor is a candidate -- carbureted and pre-2018 EFI are typically out.
+Eligibility depends on engine family, horsepower, model code, and serial number, not model year alone. We can check eligibility in our portal in a few minutes. Flash time at the shop is roughly 90 minutes plus the customer-portal activation. Not every motor is a candidate. Older carbureted and EFI engines are generally outside the current Mercury serial-number ranges.
+
+For HBW repowers, standard stock conversations usually start with FourStroke and Pro XS; Verado is service, special-order, or offshore context only.
+
 
 ---
 
