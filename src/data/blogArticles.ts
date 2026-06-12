@@ -3016,7 +3016,7 @@ source: Cobourg
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Due for your 20-hour first service? Book it online at [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
 
 ## What we do on new motor delivery at HBW
 
