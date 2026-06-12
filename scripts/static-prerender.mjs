@@ -2643,6 +2643,20 @@ const EN_TO_FR_SLUG = Object.fromEntries(Object.entries(FR_TO_EN_SLUG).map(([fr,
 const EN_TO_ZH_SLUG = Object.fromEntries(Object.entries(ZH_TO_EN_SLUG).map(([zh, en]) => [en, zh]));
 const EN_TO_KO_SLUG = Object.fromEntries(Object.entries(KO_TO_EN_SLUG).map(([ko, en]) => [en, ko]));
 
+// zh-Hant pilot slug map (mirrors src/data/traditionalChineseBlogArticles.ts
+// ZH_HANT_TO_HANS_SLUG). Used to emit hreflang="zh-Hant" alternates when an
+// EN/zh article also has a Traditional Chinese pilot at /blog/zh-hant/.
+const ZH_HANT_TO_HANS_SLUG = {
+  'ontario-boat-winterization-guide-chinese': 'ontario-boat-winterization-guide-chinese',
+  'first-boat-rental-rice-lake-chinese-guide': 'first-boat-rental-rice-lake-chinese-guide',
+  'pcoc-pcl-fishing-licence-difference-ontario': 'pcoc-pcl-fishing-licence-difference-ontario',
+  'gta-chinese-rice-lake-day-trip-plan': 'gta-chinese-rice-lake-day-trip-plan',
+  'gta-chinese-buy-boat-rice-lake-guide': 'gta-chinese-buy-boat-rice-lake-guide',
+};
+const ZH_HANS_TO_ZH_HANT_SLUG = Object.fromEntries(
+  Object.entries(ZH_HANT_TO_HANS_SLUG).map(([hant, hans]) => [hans, hant])
+);
+
 function blogHreflangTags(enSlug) {
   const frSlug = EN_TO_FR_SLUG[enSlug];
   const zhSlug = EN_TO_ZH_SLUG[enSlug];
@@ -2652,20 +2666,30 @@ function blogHreflangTags(enSlug) {
     `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/blog/${enSlug}" />`,
   ];
   if (frSlug) tags.push(`<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/blog/fr/${frSlug}" />`);
-  if (zhSlug) tags.push(`<link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
+  if (zhSlug) {
+    tags.push(`<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
+    const hantSlug = ZH_HANS_TO_ZH_HANT_SLUG[zhSlug];
+    if (hantSlug) {
+      tags.push(`<link rel="alternate" hreflang="zh-Hant" href="${SITE_URL}/blog/zh-hant/${hantSlug}" />`);
+    }
+  }
   if (koSlug) tags.push(`<link rel="alternate" hreflang="ko" href="${SITE_URL}/blog/ko/${koSlug}" />`);
   tags.push(`<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/${enSlug}" />`);
   return tags.join('\n  ');
 }
 
 // ZH-only fallback: for Chinese-targeted posts with no English twin, point
-// zh-CA to self and x-default to the Chinese blog hub (content is locale-
-// specific, so a non-Chinese landing page would be a worse default).
+// zh-Hans to self, also emit zh-Hant if a pilot exists, x-default to /blog/zh hub.
 function zhOnlyHreflangTags(zhSlug) {
-  return [
-    `<link rel="alternate" hreflang="zh-CA" href="${SITE_URL}/blog/zh/${zhSlug}" />`,
-    `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/zh" />`,
-  ].join('\n  ');
+  const out = [
+    `<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/blog/zh/${zhSlug}" />`,
+  ];
+  const hantSlug = ZH_HANS_TO_ZH_HANT_SLUG[zhSlug];
+  if (hantSlug) {
+    out.push(`<link rel="alternate" hreflang="zh-Hant" href="${SITE_URL}/blog/zh-hant/${hantSlug}" />`);
+  }
+  out.push(`<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/zh" />`);
+  return out.join('\n  ');
 }
 
 // Build blog article route configs.
@@ -3974,6 +3998,72 @@ const routes = [
     schemas: [homepageSchema()]
   },
   ...HUB_ROUTES,
+  // ============================================================
+  // /zh hub (MandarinLanding) — prerender so raw HTML carries
+  // lang="zh-Hans", a crawlable directory of all zh articles,
+  // and hreflang tags. Titles/descriptions sourced from
+  // mandarinBlogArticles (no new copy in this pass).
+  // ============================================================
+  {
+    path: '/zh',
+    title: 'Mercury水星舷外机经销商 | Harris Boat Works 安大略省',
+    description: 'Harris Boat Works, 安大略省Mercury Marine白金级授权经销商。在线透明报价。服务大多伦多地区（GTA）华人船主。',
+    h1: '欢迎来到Harris Boat Works',
+    intro: '安大略省Mercury Marine白金级授权经销商。1947年创立，Rice Lake, Gores Landing, ON。提供水星舷外机、动力升级、保养与购买的中文指南。',
+    schemas: [genericPageSchema('/zh', 'Harris Boat Works 中文', 'Mercury Marine 白金级授权经销商，安大略省 Rice Lake。')],
+    extraHead: [
+      `<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/zh" />`,
+      `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/" />`,
+      `<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/fr" />`,
+      `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/zh" />`,
+    ].join('\n  '),
+    extraNoscript: () => {
+      const visible = (mandarinBlogArticles || []).filter(a => a.isPublished !== false);
+      const sorted = visible.slice().sort((a, b) =>
+        String(b.datePublished || b.publishDate || '').localeCompare(String(a.datePublished || a.publishDate || ''))
+      );
+      // Topic grouping (titles already exist in data; no new copy).
+      const groups = [
+        { heading: '报价 · 服务 · 租船', slugs: [], extras: [
+          { to: '/quote/motor-selection', title: '在线报价工具（Quote Builder）' },
+          { to: 'https://hbw.wiki/service', title: '服务请求表（Service Request）' },
+          { to: 'https://www.harrisboatworks.ca/rentals', title: '租船 Rice Lake (Rentals)' },
+          { to: '/repower', title: 'Mercury Repower 主页' },
+        ]},
+        { heading: '换机 / Repower (GTA 华人)', match: /repower|换机|gta-chinese-mercury-service/i },
+        { heading: '马达选购 / Mercury HP 指南', match: /mercury-|fourstroke|pro-xs|verado|kicker|tiller|horsepower|price-dealer/i },
+        { heading: 'Rice Lake / 钓鱼 / 路线', match: /rice-lake|fishing|day-trip|simcoe|kawartha/i },
+        { heading: '法规 / 证件 / PCOC · PCL', match: /pcoc|pcl|fishing-licence|regulations|rental-boat-safety/i },
+        { heading: '买船 · 拥有成本 · 二手', match: /buy-boat|used-boat|ownership-cost|rent-to-buy|family-pontoon|pontoon-vs/i },
+        { heading: '冬储 · 春季 · 保养', match: /winter|spring|winterization|service-guide|troubleshooting/i },
+        { heading: '关于 HBW', match: /why-chinese-boaters|harris-boat-works/i },
+      ];
+      const used = new Set();
+      const groupHtmlBlocks = groups.map(g => {
+        const cards = [];
+        if (g.extras) cards.push(...g.extras);
+        if (g.match) {
+          for (const a of sorted) {
+            if (used.has(a.slug)) continue;
+            if (g.match.test(a.slug)) {
+              used.add(a.slug);
+              cards.push({ to: `/blog/zh/${a.slug}`, title: a.title || a.slug, description: a.description });
+            }
+          }
+        }
+        if (cards.length === 0) return '';
+        return `<section><h2>${escapeHtml(g.heading)}</h2><ul>` +
+          cards.map(c => `<li><a href="${escapeHtml(c.to)}"><strong>${escapeHtml(c.title)}</strong></a>${c.description ? ' — ' + escapeHtml(c.description) : ''}</li>`).join('') +
+          '</ul></section>';
+      }).filter(Boolean).join('');
+      // Catch-all bucket for any unmatched slugs.
+      const leftovers = sorted.filter(a => !used.has(a.slug));
+      const leftoversHtml = leftovers.length
+        ? `<section><h2>更多中文指南</h2><ul>${leftovers.map(a => `<li><a href="/blog/zh/${a.slug}"><strong>${escapeHtml(a.title || a.slug)}</strong></a>${a.description ? ' — ' + escapeHtml(a.description) : ''}</li>`).join('')}</ul></section>`
+        : '';
+      return `<section><p>全部中文文章 (${sorted.length})</p></section>` + groupHtmlBlocks + leftoversHtml;
+    }
+  },
   {
     path: '/repower/cost',
     title: 'Mercury Repower Cost in Ontario (2026 CAD) | Mercuryrepower.ca',
