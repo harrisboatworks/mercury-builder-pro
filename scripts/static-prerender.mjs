@@ -4897,9 +4897,11 @@ function computePageId(pathname) {
 
 function stamp(route) {
   let html = shell;
+  const langCode = detectLang(route.path);
+  const dirAttr = route.path.startsWith('/blog/ur/') ? ' dir="rtl"' : '';
   html = html.replace(
     /<html lang="en">/i,
-    `<html lang="${detectLang(route.path)}">`
+    `<html lang="${langCode}"${dirAttr}>`
   );
 
   // Per-route analytics page tags (Helmet adopts these on hydration via data-rh="true").
