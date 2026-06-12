@@ -1523,7 +1523,7 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位于Rice 
     slug: 'why-chinese-boaters-choose-harris-boat-works',
     title: '为什么 GTA 华人船主选择 Harris Boat Works？',
     seoTitle: '为什么 GTA 华人船主选择 HBW？',
-    description: 'Harris Boat Works 是莱斯湖南岸三代家族船坞，自 1947 年。Mercury 白金级认证。GTA 华人船主选择 HBW 的 5 个原因：距离、价格、Mercury 认证、传承、中文沟通。',
+    description: 'Harris Boat Works 是莱斯湖南岸三代家族船坞，自 1947 年。Mercury 白金级认证。GTA 华人船主选择 HBW 的 5 个原因：距离、价格、Mercury 认证、传承、对华人客户的友好接待。',
     image: '/lovable-uploads/hero-chinese-buyers-rice-lake-marina.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
