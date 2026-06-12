@@ -111,6 +111,7 @@ export default function MandarinBlogArticlePage() {
         <meta name="description" content={article.description} />
         <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="zh-Hans" href={url} />
+        {zhHantUrl && <link rel="alternate" hrefLang="zh-Hant" href={zhHantUrl} />}
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
