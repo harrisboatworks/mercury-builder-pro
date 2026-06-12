@@ -38,11 +38,62 @@ const LANG_NOTE_QUESTION_HINTS = {
   hi: ['hindi में सेवा', 'hindi mein service', 'हिन्दी में सेवा', 'hindi me service'],
 };
 
+function unquoteScalar(v) {
+  let s = String(v).trim();
+  if ((s.startsWith("'") && s.endsWith("'")) || (s.startsWith('"') && s.endsWith('"'))) {
+    s = s.slice(1, -1);
+    // YAML single-quoted: '' → '
+    s = s.replace(/''/g, "'");
+  }
+  return s;
+}
+
 function parseFrontmatter(raw) {
   const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
   if (!m) throw new Error('No YAML frontmatter');
-  const fm = YAML.parse(m[1]);
+  const lines = m[1].split('\n');
   const body = m[2].trim();
+  const fm = { faqs: [], targetQueries: [], internalLinks: [], officialSources: [] };
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i];
+    if (!line.trim()) { i++; continue; }
+    // Top-level scalar "key: value"
+    const scalarM = line.match(/^([A-Za-z_][A-Za-z0-9_]*):\s*(.*)$/);
+    // Top-level list "key:" followed by "- " lines
+    if (scalarM && scalarM[2] === '') {
+      const key = scalarM[1];
+      i++;
+      const items = [];
+      while (i < lines.length && /^- /.test(lines[i])) {
+        // simple list item
+        if (key === 'faqs') {
+          // expect "- q: ..." then "  a: ..."
+          const qm = lines[i].match(/^- q:\s*(.*)$/);
+          if (!qm) throw new Error('faqs: expected `- q:` at line ' + (i + 1));
+          const q = unquoteScalar(qm[1]);
+          i++;
+          const am = lines[i] && lines[i].match(/^\s+a:\s*(.*)$/);
+          if (!am) throw new Error('faqs: expected `  a:` at line ' + (i + 1));
+          const a = unquoteScalar(am[1]);
+          i++;
+          items.push({ q, a });
+        } else {
+          items.push(unquoteScalar(lines[i].replace(/^- /, '')));
+          i++;
+        }
+      }
+      fm[key] = items;
+      continue;
+    }
+    if (scalarM) {
+      fm[scalarM[1]] = unquoteScalar(scalarM[2]);
+      i++;
+      continue;
+    }
+    // Unknown line — skip
+    i++;
+  }
   return { fm, body };
 }
 
