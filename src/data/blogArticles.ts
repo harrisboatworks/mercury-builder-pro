@@ -11491,7 +11491,7 @@ Mercury cites a 5-21% improvement in mid-range acceleration and zero-to-top-spee
 
 **What Boost does not change:**
 - Rated horsepower
-- Fuel consumption
+- Fuel economy at steady cruise (Boost changes mid-range delivery, not cruise calibration)
 - Physical components
 - Mercury factory warranty coverage
 
