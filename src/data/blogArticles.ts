@@ -1007,7 +1007,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     image: '/lovable-uploads/smartcraft-connect-eligibility-hero.png',
     author: 'Jay Harris',
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-06-12',
     publishDate: '2026-05-27',
     category: 'Mercury Technology',
     readTime: '11 min',
@@ -1050,8 +1050,6 @@ The fastest way to confirm: find your Mercury serial number, email it to info@ha
 
 If your motor isn't on this table, send the serial number and we'll check.
 
-![Mercury SmartCraft Connect gateway module installed in a boat electronics bay](/lovable-uploads/smartcraft-connect-gateway-inline.png)
-*The SmartCraft Connect gateway module. About the size of a deck of cards, mounts in your electronics bay. The part the dealer installs to enable the Mercury Marine app.*
 
 ## What SmartCraft Connect actually does
 
@@ -1077,7 +1075,7 @@ These got SmartCraft added in 2022. If you have a 2021 or earlier 25 or 30, no C
 
 ### Mercury Avator electric
 
-The Avator electric outboards (7e, 20e, 35e at time of writing) connect to the Mercury Marine app but use a different module than the gas SmartCraft path. The end-user experience is the same. The install part number is different. If you have an Avator, ask us specifically for the Avator path.
+The Avator electric outboards (7.5e, 20e, 35e at time of writing) connect to the Mercury Marine app but use a different module than the gas SmartCraft path. The end-user experience is the same. The install part number is different. If you have an Avator, ask us specifically for the Avator path.
 
 ### Mercury Joystick Piloting / Active Trim / Skyhook setups
 
