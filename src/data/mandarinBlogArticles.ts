@@ -2531,11 +2531,11 @@ source: Richmond Hill
       { question: 'HBW 给 Yamaha 或 Honda 发动机做保养吗？', answer: '不做。我们只为 Mercury 和 Mercruiser 发动机提供维修服务。Yamaha、Honda、Suzuki、Tohatsu 等品牌请找对应的授权经销商，他们有原厂诊断设备、零件供应和保修系统。在错误的品牌经销商做服务可能影响你的保修资格。' },
       { question: '我的 Mercury 还在保修期，HBW 能做保修维修吗？', answer: '能。HBW 是 Mercury Marine Platinum 经销商，可以处理 Mercury 出厂保修和延保维修，所有记录直接进 Mercury 系统。提交服务请求时请提供发动机序列号，我们可以查询当下保修状态。' },
       { question: 'Mercury 的 20 小时检查必须在 HBW 做吗？不做会怎样？', answer: '20 小时初次保养必须在授权经销商完成（不一定是 HBW，任何 Mercury 授权点都可以）。跳过这一步可能影响相关部件的保修索赔，因为 Mercury 把它视为标准磨合程序。如果你买船时附带 HBW 的 20 小时服务券，建议按时使用。' },
-      { question: '多伦多到 Rice Lake 单程 1.5 小时，值得开车过来保养吗？', answer: '如果你的船平时停在 Rice Lake / Kawarthas 一带（包括 HBW slip 或附近 marina），那 HBW 是最方便的选择。如果船停在 GTA 其他地方，可以问问当地是否有 Mercury 授权经销商。但很多 GTA 华人客户选择 HBW 是因为中文沟通顺畅、Platinum 等级技术服务、以及冬储一站式解决。' },
+      { question: '多伦多到 Rice Lake 单程 1.5 小时，值得开车过来保养吗？', answer: '如果你的船平时停在 Rice Lake / Kawarthas 一带（包括 HBW slip 或附近 marina），那 HBW 是最方便的选择。如果船停在 GTA 其他地方，可以问问当地是否有 Mercury 授权经销商。很多 GTA 华人客户选择 HBW 是因为 Platinum 等级技术服务、对华人客户的友好接待、以及冬储一站式解决。' },
       { question: '冬储为什么这么贵？自己能做吗？', answer: '冬储包含十几个项目（防冻液、燃油稳定剂、fogging oil、齿轮油检查、电瓶维护、室内存储等），不是简单的"放着就行"。技术上可以自己做，但需要工具、空间和经验，多数 GTA 公寓住户没有条件。跳过冬储或做不完整，春季可能面对四位数级别的修理账单，相比之下冬储是合理投资。' },
       { question: '我自己买了机油和零件，HBW 能用我的吗？', answer: '部分情况可以，但需要先沟通。Mercury 保修维修通常要求使用 Mercury 推荐型号的机油和零件，客户自带非 Mercury 零件可能影响相关项目的保修资格。常规非保修保养可以视情况使用客户零件，建议在预约时说明并听取我们的建议。' },
       { question: '发动机坏了，是修还是换新的更划算？', answer: '看机龄、累计小时数和故障性质。机龄 8 年以下、机况整体良好通常修划算；机龄 12 年以上、多次小修累积，通常换新机划算。HBW 会给出对比方案。如果倾向换新，请参考 https://www.mercuryrepower.ca 在线报价或读 Mercury Repower GTA 中文指南。' },
-      { question: 'HBW 能用中文沟通吗？', answer: '我们日常运营语言是英文，但接待过很多 GTA 华人客户。可以通过中文邮件、电话和上门访问沟通；如有翻译需求，请提前告知，我们会协调安排。服务请求 https://hbw.wiki/service 上可以中英文混合填写。' },
+      { question: 'HBW 能用中文沟通吗？', answer: '我们的团队使用英语服务，没有中文母语的销售或翻译。但非常欢迎您——欢迎带会英语的亲友同来，或使用手机翻译软件，我们会耐心沟通、尽力配合。' },
     ],
   },
 
