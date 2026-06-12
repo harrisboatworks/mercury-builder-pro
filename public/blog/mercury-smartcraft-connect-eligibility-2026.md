@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026.md
-last_updated: 2026-05-27
+last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)"
 description: "Find out if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and the motors that won't connect."
 category: "Mercury Technology"
 date_published: 2026-05-27
-date_modified: 2026-05-27
+date_modified: 2026-06-12
 keywords: ["mercury smartcraft connect eligibility","smartcraft connect compatibility","is my mercury smartcraft compatible","mercury connect mobile eligibility","smartcraft connect motor requirements","smartcraft compatible mercury models"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-27  
-**Last updated:** 2026-05-27  
+**Last updated:** 2026-06-12  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026
 
@@ -52,9 +52,6 @@ The fastest way to confirm: find your Mercury serial number, email it to info@ha
 
 If your motor isn't on this table, send the serial number and we'll check.
 
-![Mercury SmartCraft Connect gateway module installed in a boat electronics bay](/lovable-uploads/smartcraft-connect-gateway-inline.png)
-*The SmartCraft Connect gateway module. About the size of a deck of cards, mounts in your electronics bay. The part the dealer installs to enable the Mercury Marine app.*
-
 ## What SmartCraft Connect actually does
 
 Before checking eligibility it helps to know what you'd be getting. SmartCraft Connect is Mercury's mobile and cloud connectivity layer (Mercury's official overview is at [mercurymarine.com/en/us/products/technology/smartcraft-connect](https://www.mercurymarine.com/en/us/products/technology/smartcraft-connect)). Once installed, you get:
@@ -79,7 +76,7 @@ These got SmartCraft added in 2022. If you have a 2021 or earlier 25 or 30, no C
 
 ### Mercury Avator electric
 
-The Avator electric outboards (7e, 20e, 35e at time of writing) connect to the Mercury Marine app but use a different module than the gas SmartCraft path. The end-user experience is the same. The install part number is different. If you have an Avator, ask us specifically for the Avator path.
+The Avator electric outboards (7.5e, 20e, 35e at time of writing) connect to the Mercury Marine app but use a different module than the gas SmartCraft path. The end-user experience is the same. The install part number is different. If you have an Avator, ask us specifically for the Avator path.
 
 ### Mercury Joystick Piloting / Active Trim / Skyhook setups
 
