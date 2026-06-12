@@ -389,6 +389,13 @@ export default function BlogArticle() {
                 return c;
               })()}
               markdownComponents={{
+                // SEO: demote any in-body H1 to H2 so the page-level title
+                // remains the only H1 on the page. Catches stray H1s inside
+                // ~19 article bodies without editing each source file.
+                h1: ({ node, children, ...props }) => {
+                  const text = String(children);
+                  return <h2 id={slugify(text)} {...props}>{children}</h2>;
+                },
                 h2: ({ node, children, ...props }) => {
                   const text = String(children);
                   return <h2 id={slugify(text)} {...props}>{children}</h2>;
