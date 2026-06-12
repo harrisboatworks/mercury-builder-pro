@@ -35212,7 +35212,6 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
 - Gores Landing, ON
 - Quote builder available
 
-*Last reviewed: 2026-06-05*
 
 Lake Ontario salmon fishing puts heavy, specific demands on a Mercury outboard setup. Long days at trolling speed. Heavy electrical load from electric downriggers, sonar, chartplotter, and lights. Charging system has to hold voltage at idle. Kicker needs to run for hours at consistent low RPM. Dual-battery management matters.
 
