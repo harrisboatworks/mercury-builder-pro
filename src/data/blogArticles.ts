@@ -1050,8 +1050,6 @@ The fastest way to confirm: find your Mercury serial number, email it to info@ha
 
 If your motor isn't on this table, send the serial number and we'll check.
 
-![Mercury SmartCraft Connect gateway module installed in a boat electronics bay](/lovable-uploads/smartcraft-connect-gateway-inline.png)
-*The SmartCraft Connect gateway module. About the size of a deck of cards, mounts in your electronics bay. The part the dealer installs to enable the Mercury Marine app.*
 
 ## What SmartCraft Connect actually does
 
