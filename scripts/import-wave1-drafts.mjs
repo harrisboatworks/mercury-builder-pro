@@ -35,7 +35,7 @@ const LANG_NOTE_QUESTION_HINTS = {
   pa: ['punjabi vich service', 'ਪੰਜਾਬੀ ਵਿੱਚ service', 'ਪੰਜਾਬੀ ਵਿੱਚ ਸੇਵਾ', 'punjabi vich'],
   ur: ['اردو میں سروس', 'urdu mein service', 'urdu me service'],
   tl: ['tagalog sa harris', 'sa tagalog', 'serbisyo ba kayo sa tagalog'],
-  hi: ['hindi में सेवा', 'hindi mein service', 'हिन्दी में सेवा', 'hindi me service'],
+  hi: ['हिंदी में सेवा', 'हिन्दी में सेवा', 'hindi mein service', 'hindi me service', 'hbw पर हिंदी', 'hbw par hindi'],
 };
 
 function unquoteScalar(v) {
