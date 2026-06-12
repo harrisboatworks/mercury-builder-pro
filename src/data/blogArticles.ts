@@ -2916,7 +2916,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     image: '/lovable-uploads/Breaking_In_New_Mercury_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2026-06-09',
+    dateModified: '2026-06-12',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
@@ -3016,7 +3016,7 @@ source: Cobourg
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Due for your 20-hour first service? Book it online at [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
 
 ## What we do on new motor delivery at HBW
 
@@ -3103,7 +3103,7 @@ For modern Mercury FourStrokes, no. Use Mercury-approved four-stroke oil from da
 **Can I tow my new Mercury home from HBW and break it in on my own lake?**
 Yes. Many customers do this. Start at idle and no-wake speed, then graduate over the first hour. The break-in protocol works on any lake.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Ready to book your 20-hour first service? Book it online at [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
 `,
     howToSteps: [
       {
