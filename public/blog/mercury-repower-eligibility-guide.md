@@ -171,7 +171,7 @@ Most repowers stay within the same HP class as the original motor. Some customer
 
 Content in the same repower-decision cluster:
 
-- [Should I Repower or Buy a New Boat?](/blog/should-i-repower-or-buy-new-boat-ontario), narrative companion to this eligibility check
+- [Should I Repower or Buy a New Boat?](/blog/repower-vs-new-boat), narrative companion to this eligibility check
 - [How to Repower a Boat](/how-to-repower-a-boat), the 7-step process page once eligibility is confirmed
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), CAD pricing by HP class
 - [How to Read a Boat Capacity Plate (Ontario)](/blog/how-to-read-boat-capacity-plate-ontario), Check 3 detail

@@ -29,7 +29,7 @@ const CARDS: ObjectionCardData[] = [
     heading: 'Will it be set up right?',
     body: 'Every repower gets an on-water test on Rice Lake before pickup. No exceptions.',
     linkText: 'What happens at the shop',
-    href: '/blog/boat-repower-process-step-by-step',
+    href: '/blog/what-happens-during-mercury-repower',
   },
 ];
 

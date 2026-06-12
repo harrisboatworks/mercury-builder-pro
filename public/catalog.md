@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-06-11
+last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -58,22 +58,22 @@ See any motor twin for an example body.
 
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
 - [6MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke.md)
-- [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
 - [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
+- [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
 - [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
 - [15 MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke.md)
-- [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
 - [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke.md)
 - [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
+- [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
 - [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
 - [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
-- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
 - [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke.md)
+- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
 - [90 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke.md)
-- [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
-- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
 - [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
+- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
+- [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
 - [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs.md)
 - [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
 - [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs.md)
@@ -247,7 +247,6 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Mercury 115 HP FourStroke Review: The Lightest 115 HP Available, and Why That Matters](https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md)
 - [Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)](https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md)
 - [Mercury Outboard Winterization Cost in Ontario (2026 CAD) | HBW](https://www.mercuryrepower.ca/blog/mercury-outboard-winterization-service-cost-ontario.md)
-- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](https://www.mercuryrepower.ca/blog/should-i-repower-or-buy-new-boat-ontario.md)
 - [Mercury Dealer for Markham: Why GTA Customers Drive to Rice Lake for Their Repower](https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw.md)
 - [Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake](https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw.md)
 - [Mercury Dealer for Mississauga: Where to Go When Closer Dealers Don't Cut It](https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw.md)
@@ -309,8 +308,6 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Repower Financing in Ontario: Real Rates, Real Monthly Payments](https://www.mercuryrepower.ca/blog/repower-financing-ontario-rates-monthly-payments.md)
 - [How to Pick the Right Horsepower When You Repower (Reading Your Capacity Plate)](https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide.md)
 - [Repowering a Pontoon vs. an Aluminum Fishing Boat vs. a V-Hull](https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences.md)
-- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](https://www.mercuryrepower.ca/blog/evinrude-johnson-to-mercury-repower-conversion.md)
-- [Your Repower, Step by Step: What Actually Happens at the Shop](https://www.mercuryrepower.ca/blog/boat-repower-process-step-by-step.md)
 - [How Your Mercury Warranty Works After a Repower](https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario.md)
 - [Mercury Outboard Weight Chart (2.5 to 300 HP)](https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart.md)
 

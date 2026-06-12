@@ -110,7 +110,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
 ## Related guides
 
-- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-johnson-to-mercury-repower-conversion): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
+- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-to-mercury-repower-ontario-guide): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
 - [What Happens to Your Old Motor When You Repower (Trade-In, HST Credit, Disposal)](/blog/repower-old-motor-trade-in-hst-disposal-ontario): Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and.
 - [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
 - [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.

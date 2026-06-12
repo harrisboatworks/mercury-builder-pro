@@ -144,7 +144,7 @@ Probably sell. Even if the boat is fine, the question is whether this is the boa
 
 We see this decision multiple times per week, especially in spring and fall. When a customer comes in with a repair estimate that feels uncomfortably big, the first conversation we have is the framework above. We're a Mercury Platinum dealer and a Legend Boats dealer, so we're not neutral: we'd rather sell you a new motor or a new boat than do a $3,000 repair. But we'd much rather give you honest advice and have you come back to us for the next repower than push you into a decision that doesn't fit your situation.
 
-For a structured conversation on your specific boat, motor, and budget, email info@harrisboatworks.ca with the details and we'll tell you what we'd do in your situation. For the repower-specific decision, our [Should I Repower or Buy New?](/blog/should-i-repower-or-buy-new-boat-ontario) decision guide covers that side of the conversation.
+For a structured conversation on your specific boat, motor, and budget, email info@harrisboatworks.ca with the details and we'll tell you what we'd do in your situation. For the repower-specific decision, our [Should I Repower or Buy New?](/blog/repower-vs-new-boat) decision guide covers that side of the conversation.
 
 ## Related guides
 

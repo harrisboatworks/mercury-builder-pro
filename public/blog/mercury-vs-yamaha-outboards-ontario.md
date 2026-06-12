@@ -115,7 +115,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 - [Mercury Outboard Warranty in Canada (2026)](/blog/mercury-outboard-warranty-canada-2026)
 - [Mercury Pro XS Buyer Guide (Ontario)](/blog/mercury-pro-xs-buyer-guide-ontario)
-- [Should I Repower or Buy a New Boat? (Ontario)](/blog/should-i-repower-or-buy-new-boat-ontario)
+- [Should I Repower or Buy a New Boat? (Ontario)](/blog/repower-vs-new-boat)
 - [Mercury FourStroke Buyer Guide (Ontario)](/blog/mercury-fourstroke-buyer-guide-ontario)
 
 ## FAQs

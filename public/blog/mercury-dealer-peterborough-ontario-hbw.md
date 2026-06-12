@@ -97,7 +97,7 @@ Our quote builder skips that step. The price you see is the price you pay. Three
 
 ## What we see at HBW
 
-The most common Peterborough question we get isn't about a specific motor, it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/should-i-repower-or-buy-new-boat-ontario) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
+The most common Peterborough question we get isn't about a specific motor, it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/repower-vs-new-boat) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
 
 For Peterborough customers specifically: the closer service relationship is the under-rated benefit. A repower done at HBW means the dealer who installed the motor is also the one doing your annual maintenance. That's how warranty issues get resolved fast.
 

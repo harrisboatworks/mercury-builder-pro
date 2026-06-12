@@ -100,7 +100,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
 ## Related guides
 
 - [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
-- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-johnson-to-mercury-repower-conversion): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
+- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-to-mercury-repower-ontario-guide): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
 - [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring.
 - [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
 
