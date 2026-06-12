@@ -14,6 +14,8 @@ import { AuthorByline } from '@/components/blog/AuthorByline';
 import { FloatingShareBar } from '@/components/blog/FloatingShareBar';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { getArticleBySlug, getRelatedArticles, parseLocalDate } from '@/data/blogArticles';
+import { isRepowerHubSlug } from '@/data/blogClusters';
+import { RepowerHubBanner } from '@/components/repower/RepowerHubBanner';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
@@ -266,6 +268,10 @@ export default function BlogArticle() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
+
+        {isRepowerHubSlug(article.slug) && <RepowerHubBanner />}
+
+
 
         <article className="max-w-[880px] mx-auto" aria-labelledby="article-title">
           {/* Back Link */}
