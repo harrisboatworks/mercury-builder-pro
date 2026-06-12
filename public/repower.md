@@ -32,6 +32,10 @@ index_type: hub_twin
 
 Numbers above are sourced from the HP-class table on this page, the [Mercury Repower Cost Ontario 2026 guide](/blog/mercury-repower-cost-ontario-2026-cad), and the published $1,500 to $3,000 CAD brand-conversion rigging delta in the Evinrude/Yamaha/Honda conversion guides.
 
+## Financing (headline)
+
+Through **December 31, 2026** the headline program is **TD Auto Finance "Always On" at 5.48% APR (OAC)** via Dealerplan Peterborough. Minimum financed: $5,000. A $349 Dealerplan fee is added post-tax. Worked monthly payment examples are in the [Repower Financing Ontario guide](/blog/repower-financing-ontario-rates-monthly-payments).
+
 ## Key Facts
 
 - Family-owned since 1947, Mercury dealer since 1965, current Platinum tier
@@ -53,11 +57,14 @@ Numbers above are sourced from the HP-class table on this page, the [Mercury Rep
 
 ### Cost & Financing
 - [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Repower Financing Ontario: Rates & Monthly Payments](/blog/repower-financing-ontario-rates-monthly-payments)
 - [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
+- [Old Motor Trade-In, HST & Disposal (Ontario)](/blog/repower-old-motor-trade-in-hst-disposal-ontario)
 
 ### Process & What to Expect
 - [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
 - [HBW On-Water Load Test: The Mercury Repower Advantage](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
+- [Mercury Warranty After a Repower (Ontario)](/blog/mercury-warranty-after-repower-ontario)
 - [Pleasure Craft Licence Update During Repower](/blog/pleasure-craft-licence-update-repower-ontario)
 - [Winter Repower Planning Guide](/blog/winter-repower-planning-guide)
 
@@ -70,10 +77,14 @@ Numbers above are sourced from the HP-class table on this page, the [Mercury Rep
 
 ### Rigging, Controls & Fit
 - [Mercury DTS vs Mechanical Controls](/blog/mercury-dts-vs-mechanical-controls-ontario-repower)
+- [Horsepower & Capacity Plate Guide](/blog/repower-horsepower-capacity-plate-guide)
+- [Pontoon vs Aluminum vs V-Hull Repower Differences](/blog/repower-pontoon-aluminum-v-hull-differences)
 
 ### Local Guides
 - [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
 - [Ontario Cottage Boat Motor Repower Guide](/blog/ontario-cottage-boat-motor-repower-guide)
+- [Mercury Repower GTA: Toronto-Area Boater Guide](/blog/mercury-repower-gta-toronto-destination)
+- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers)
 
 ---
 

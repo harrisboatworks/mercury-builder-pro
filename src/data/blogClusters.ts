@@ -272,16 +272,6 @@ export function getRelatedSlugs(slug: string, max = 5): string[] {
  * Slugs that belong to the /repower hub cluster (broader than cluster id 1).
  * Used by BlogArticle to render the RepowerHubBanner. Keep in sync with the
  * directory in src/pages/RepowerHub.tsx.
- *
- * Some entries in the source brief did not exist as published articles
- * (repower-financing-ontario-rates-monthly-payments,
- *  repower-old-motor-trade-in-hst-disposal-ontario,
- *  mercury-warranty-after-repower-ontario,
- *  repower-horsepower-capacity-plate-guide,
- *  repower-pontoon-aluminum-v-hull-differences,
- *  mercury-repower-gta-toronto-destination,
- *  mercury-pro-xs-repower-rice-lake-kawartha-anglers)
- * and are omitted here until they ship.
  */
 export const REPOWER_HUB_SLUGS: ReadonlySet<string> = new Set([
   // Deciding
@@ -292,10 +282,13 @@ export const REPOWER_HUB_SLUGS: ReadonlySet<string> = new Set([
   'mercury-repower-eligibility-guide',
   // Cost & Financing
   'mercury-repower-cost-ontario-2026-cad',
+  'repower-financing-ontario-rates-monthly-payments',
   'mercury-outboard-financing-ontario-2026',
+  'repower-old-motor-trade-in-hst-disposal-ontario',
   // Process & What to Expect
   'what-happens-during-mercury-repower',
   'hbw-on-water-load-test-mercury-repower-advantage-2026',
+  'mercury-warranty-after-repower-ontario',
   'pleasure-craft-licence-update-repower-ontario',
   'winter-repower-planning-guide',
   // Brand & Engine-Type Conversions
@@ -306,9 +299,13 @@ export const REPOWER_HUB_SLUGS: ReadonlySet<string> = new Set([
   'outboard-vs-sterndrive-2026-ontario-repower',
   // Rigging, Controls & Fit
   'mercury-dts-vs-mechanical-controls-ontario-repower',
+  'repower-horsepower-capacity-plate-guide',
+  'repower-pontoon-aluminum-v-hull-differences',
   // Local Guides
   'complete-guide-boat-repower-kawarthas',
   'ontario-cottage-boat-motor-repower-guide',
+  'mercury-repower-gta-toronto-destination',
+  'mercury-pro-xs-repower-rice-lake-kawartha-anglers',
 ]);
 
 export function isRepowerHubSlug(slug: string): boolean {

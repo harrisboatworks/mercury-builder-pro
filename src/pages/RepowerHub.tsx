@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Award, Users, MapPin, Wrench } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
-import { getCurrentMercuryFinancingRate } from '@/components/promotions/TDAlwaysOnOffer';
 
-const CURRENT_RATE = getCurrentMercuryFinancingRate();
 
 // Directory of the repower cluster, grouped. Each entry is a published article.
 // Some slugs from the editorial brief have not shipped yet and are intentionally
@@ -26,7 +24,9 @@ const DIRECTORY: DirGroup[] = [
     heading: 'Cost & Financing',
     cards: [
       { title: 'Mercury Repower Cost Ontario 2026 (CAD)', description: 'Detailed cost breakdown by HP class with line-item rigging.', to: '/blog/mercury-repower-cost-ontario-2026-cad' },
-      { title: 'Mercury Outboard Financing Ontario 2026', description: 'Current rates, term lengths, and how to apply through HBW.', to: '/blog/mercury-outboard-financing-ontario-2026' },
+      { title: 'Repower Financing Ontario: Rates & Monthly Payments', description: 'TD Always On rates, term lengths, and worked payment examples.', to: '/blog/repower-financing-ontario-rates-monthly-payments' },
+      { title: 'Mercury Outboard Financing Ontario 2026', description: 'How to apply through HBW and Dealerplan Peterborough.', to: '/blog/mercury-outboard-financing-ontario-2026' },
+      { title: 'Old Motor Trade-In, HST & Disposal (Ontario)', description: 'How trade-in credit, HST, and disposal interact on a repower.', to: '/blog/repower-old-motor-trade-in-hst-disposal-ontario' },
     ],
   },
   {
@@ -34,6 +34,7 @@ const DIRECTORY: DirGroup[] = [
     cards: [
       { title: 'What Happens During a Mercury Repower', description: 'The 7-step shop walk-through from deposit to pickup.', to: '/blog/what-happens-during-mercury-repower' },
       { title: 'HBW On-Water Load Test: The Mercury Repower Advantage', description: 'Why every motor gets a real Rice Lake water test.', to: '/blog/hbw-on-water-load-test-mercury-repower-advantage-2026' },
+      { title: 'Mercury Warranty After a Repower (Ontario)', description: 'How the 3+3 warranty and any active promo extension apply post-repower.', to: '/blog/mercury-warranty-after-repower-ontario' },
       { title: 'Pleasure Craft Licence Update During Repower', description: 'When and how to update Transport Canada paperwork.', to: '/blog/pleasure-craft-licence-update-repower-ontario' },
       { title: 'Winter Repower Planning Guide', description: 'Why January to March is the smart time to book.', to: '/blog/winter-repower-planning-guide' },
     ],
@@ -52,6 +53,8 @@ const DIRECTORY: DirGroup[] = [
     heading: 'Rigging, Controls & Fit',
     cards: [
       { title: 'Mercury DTS vs Mechanical Controls', description: 'When digital throttle and shift is worth the rigging cost.', to: '/blog/mercury-dts-vs-mechanical-controls-ontario-repower' },
+      { title: 'Horsepower & Capacity Plate Guide', description: 'Reading the legal HP ceiling on your transom before you spec a motor.', to: '/blog/repower-horsepower-capacity-plate-guide' },
+      { title: 'Pontoon vs Aluminum vs V-Hull Repower Differences', description: 'How hull type changes HP, gearcase, and rigging choices.', to: '/blog/repower-pontoon-aluminum-v-hull-differences' },
     ],
   },
   {
@@ -59,9 +62,12 @@ const DIRECTORY: DirGroup[] = [
     cards: [
       { title: 'Complete Guide to Boat Repower in the Kawarthas', description: 'End-to-end process for Kawartha-region boats.', to: '/blog/complete-guide-boat-repower-kawarthas' },
       { title: 'Ontario Cottage Boat Motor Repower Guide', description: 'Cottage-use specifics: kickers, fishing, family runabouts.', to: '/blog/ontario-cottage-boat-motor-repower-guide' },
+      { title: 'Mercury Repower GTA: Toronto-Area Boater Guide', description: 'Logistics, pricing, and timeline for a GTA-to-Gores-Landing repower.', to: '/blog/mercury-repower-gta-toronto-destination' },
+      { title: 'Mercury Pro XS Repower for Rice Lake & Kawartha Anglers', description: 'Pro XS hole-shot, top end, and Command Thrust for serious anglers.', to: '/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers' },
     ],
   },
 ];
+
 
 const SITE = 'https://www.mercuryrepower.ca';
 const allDirItems = DIRECTORY.flatMap((g) => g.cards);
@@ -156,7 +162,7 @@ export default function RepowerHub() {
         { question: 'How much does a Mercury repower cost in Ontario?', answer: 'Typical 2026 all-in repowers land $11,000 to $40,000 CAD depending on HP class. Smaller motors (40 to 60 HP) are at the low end; larger motors (200 to 300 HP) at the high end. Most Kawartha repowers are 75 to 115 HP and land $17,000 to $22,000 CAD. See live pricing at /quote/motor-selection.' },
         { question: 'Should I repower or buy a new boat?', answer: "For most boaters with a hull less than 20 years old that's structurally solid, repower wins on the math. A new comparable boat package costs $25,000 to $50,000 CAD more than a repower. The hull is the asset; the motor is the wear part." },
         { question: 'How long does a Mercury repower take?', answer: 'Mercury-to-Mercury repowers take 2 to 4 days of shop time. Brand conversions (Evinrude, Yamaha, Honda to Mercury) take longer. Spring rush (March to May) adds wait time before the shop starts.' },
-        { question: 'Can I finance a Mercury repower?', answer: `Yes. ${CURRENT_RATE.programLabel}. We process applications in-shop. See our financing guide for details.` },
+        { question: 'Can I finance a Mercury repower?', answer: "Yes. Through December 31, 2026, the headline program is TD Auto Finance \"Always On\" at 5.48% APR (OAC) via Dealerplan Peterborough, with a $5,000 minimum financed and a $349 Dealerplan fee added post-tax. We process applications in-shop. See our financing guide for the worked monthly payment examples." },
         { question: 'Should I switch from Evinrude to Mercury?', answer: 'For most Evinrude owners, yes. BRP shut down Evinrude outboard production in 2020 and parts/service support is shrinking. Brand conversion adds $1,500 to $3,000 CAD in rigging but pays back over the life of the new motor.' },
         { question: 'When is the best time to book a repower?', answer: 'Off-season (October through April). Mercury inventory is best, shop time is available, and the boat is ready for next season. Spring slots fill up by March.' },
         { question: 'Will my old controls and rigging work with a new Mercury?', answer: 'Mercury-to-Mercury repowers usually keep existing post-2010 controls. Older or non-Mercury rigging needs replacement. Brand conversions need new everything. We assess during the hull walk-around.' },
