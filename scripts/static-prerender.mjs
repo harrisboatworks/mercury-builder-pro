@@ -2782,6 +2782,14 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
                    : undefined;
       if (enSlug) return blogHreflangTags(enSlug);
       if (langCode === 'zh') return zhOnlyHreflangTags(article.slug);
+      // Wave-1 self-referencing hreflang for pa/ur/tl/hi (no EN twins yet).
+      if (langCode === 'pa' || langCode === 'ur' || langCode === 'tl' || langCode === 'hi') {
+        const href = `${SITE_URL}/blog/${langCode}/${article.slug}`;
+        return [
+          `<link rel="alternate" hreflang="${langCode}" href="${href}" />`,
+          `<link rel="alternate" hreflang="x-default" href="${href}" />`,
+        ].join('\n  ');
+      }
       return '';
     })(),
     extraNoscript: () => {
