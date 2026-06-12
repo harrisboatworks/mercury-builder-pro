@@ -7,7 +7,7 @@ import { SITE_URL } from '@/lib/site';
 import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
-import { getPunjabiArticleBySlug } from '@/data/punjabiBlogArticles';
+import { getTagalogArticleBySlug } from '@/data/tagalogBlogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
@@ -230,16 +230,16 @@ function renderMarkdownContent(content: string) {
   return elements;
 }
 
-export default function PunjabiBlogArticlePage() {
+export default function TagalogBlogArticlePage() {
   const { slug } = useParams<{ slug: string }>();
-  const article = slug ? getPunjabiArticleBySlug(slug) : undefined;
+  const article = slug ? getTagalogArticleBySlug(slug) : undefined;
   const [heroImgError, setHeroImgError] = useState(false);
 
   if (!article) {
     return <Navigate to="/blog" replace />;
   }
 
-  const url = `${SITE_URL}/blog/pa/${article.slug}`;
+  const url = `${SITE_URL}/blog/tl/${article.slug}`;
   const tocItems = extractHeaders(article.content);
 
   const structuredData = {
@@ -255,14 +255,14 @@ export default function PunjabiBlogArticlePage() {
         "datePublished": article.datePublished,
         "dateModified": article.dateModified,
         "mainEntityOfPage": url,
-        "inLanguage": "pa",
+        "inLanguage": "tl",
         "isAccessibleForFree": true
       },
       {
         "@type": "WebPage",
         "@id": `${url}#webpage`,
         "url": url,
-        "inLanguage": "pa",
+        "inLanguage": "tl",
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
@@ -288,17 +288,17 @@ export default function PunjabiBlogArticlePage() {
   };
 
   return (
-    <div className="min-h-screen bg-background" lang="pa">
+    <div className="min-h-screen bg-background" lang="tl">
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
         <link rel="canonical" href={url} />
-        <link rel="alternate" hrefLang="pa" href={url} />
+        <link rel="alternate" hrefLang="tl" href={url} />
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:url" content={url} />
-        <meta property="og:locale" content="pa_IN" />
+        <meta property="og:locale" content="tl_PH" />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={article.datePublished} />
         <meta property="article:author" content="Harris Boat Works" />
@@ -310,7 +310,7 @@ export default function PunjabiBlogArticlePage() {
         <nav className="mb-8">
           <Link to="/blog" className="text-primary hover:underline text-sm flex items-center gap-1">
             <ArrowLeft className="w-4 h-4" />
-            ← ਬਲੌਗ ਤੇ ਵਾਪਸ ਜਾਓ
+            ← Bumalik sa Blog
           </Link>
         </nav>
 
@@ -323,12 +323,12 @@ export default function PunjabiBlogArticlePage() {
           />
         )}
 
-        <LanguageSwitcher currentLang="pa" currentSlug={article.slug} />
+        <LanguageSwitcher currentLang="tl" currentSlug={article.slug} />
 
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
           <span className="flex items-center gap-1">
             <Calendar className="w-4 h-4" />
-            {new Date(article.datePublished).toLocaleDateString('pa-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
+            {new Date(article.datePublished).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' })}
           </span>
           <span className="flex items-center gap-1">
             <Clock className="w-4 h-4" />
@@ -343,7 +343,7 @@ export default function PunjabiBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="1965 ਤੋਂ Mercury ਡੀਲਰ" />
+          <AuthorByline name="Jay Harris" title="Mercury dealer mula 1965" />
         </div>
 
         {tocItems.length > 2 && (
@@ -358,7 +358,7 @@ export default function PunjabiBlogArticlePage() {
 
         {article.faqs && article.faqs.length > 0 && (
           <section className="mt-12 mb-12">
-            <h2 className="text-2xl font-light text-foreground mb-6">ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ</h2>
+            <h2 className="text-2xl font-light text-foreground mb-6">Mga Madalas Itanong</h2>
             <Accordion type="single" collapsible className="w-full">
               {article.faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`faq-${index}`}>
@@ -375,14 +375,14 @@ export default function PunjabiBlogArticlePage() {
         )}
 
         <section className="text-center bg-primary/5 rounded-2xl p-8 mb-12">
-          <h2 className="text-xl font-light text-foreground mb-3">ਹੁਣੇ ਆਪਣਾ ਕੋਟ ਪ੍ਰਾਪਤ ਕਰੋ</h2>
-          <p className="text-muted-foreground text-sm mb-6">5 ਮਿੰਟ ਵਿੱਚ ਔਨਲਾਈਨ ਕੋਟ ਪ੍ਰਾਪਤ ਕਰੋ</p>
+          <h2 className="text-xl font-light text-foreground mb-3">Kumuha ng iyong quote ngayon</h2>
+          <p className="text-muted-foreground text-sm mb-6">Kumuha ng online quote sa loob ng 5 minuto</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/quote/motor-selection"
               className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
             >
-              ਔਨਲਾਈਨ ਕੋਟ ਪ੍ਰਾਪਤ ਕਰੋ
+              Kumuha ng online quote
             </Link>
             <a
               href="tel:905-342-2153"
