@@ -5117,6 +5117,10 @@ const visibleFrenchArticles = frenchBlogArticles.filter(isPubliclyVisible);
 const visibleKoreanArticles = koreanBlogArticles.filter(isPubliclyVisible);
 const visibleMandarinArticles = mandarinBlogArticles.filter(isPubliclyVisible);
 const visibleSpanishArticles = spanishBlogArticles.filter(isPubliclyVisible);
+const visiblePunjabiArticles = punjabiBlogArticles.filter(isPubliclyVisible);
+const visibleUrduArticles = urduBlogArticles.filter(isPubliclyVisible);
+const visibleTagalogArticles = tagalogBlogArticles.filter(isPubliclyVisible);
+const visibleHindiArticles = hindiBlogArticles.filter(isPubliclyVisible);
 
 function countFilterReasons(list) {
   let future = 0, hidden = 0;
