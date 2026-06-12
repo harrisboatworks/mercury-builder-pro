@@ -3883,7 +3883,7 @@ Customers shopping for a pontoon motor focus on the HP number. The gearcase is a
 
 A 90 HP Command Thrust and a standard 90 HP look almost identical on a spec sheet. Same horsepower. Same motor family. But Command Thrust uses a larger gearcase, a larger prop, and a torque-tuned gear ratio that's built for heavy boats. On a pontoon, that means faster lift to cruise when you have six people aboard, better load-carrying, and a boat that feels like it has more motor than the number would suggest.
 
-We default to Command Thrust on most pontoon repowers at HBW. Customers who push back on the small price difference, and then see the boat run with the right gearcase, get it immediately.
+We default to Command Thrust on most pontoon repowers at HBW. Customers who push back on the small price difference, and then see the boat run with the right gearcase, get it immediately. For installed cost ranges on pontoon repowers in this HP band, see the [boat repower guide](/repower).
 
 ---
 
