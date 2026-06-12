@@ -11824,7 +11824,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-replace-evinrude.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-16',
-    dateModified: '2026-05-23',
+    dateModified: '2026-06-12',
     category: 'Repower Guides',
     readTime: '14 min read',
     keywords: ['Evinrude to Mercury repower', 'Evinrude to Mercury conversion', 'replace Evinrude outboard Ontario', 'Evinrude discontinued repower', 'Evinrude E-TEC repower'],
@@ -12067,6 +12067,10 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
       {
         question: 'Is a Mercury actually more reliable than an Evinrude?',
         answer: 'The E-TEC was a well-engineered engine, and a healthy late-model G2 is mechanically comparable to a Mercury FourStroke. The real difference in 2026 is support. A Mercury with a failed part gets fixed at any Mercury dealer in Canada with stocked parts and current diagnostic tools. An Evinrude with a failed proprietary electronic part may not be fixable at all.'
+      },
+      {
+        question: 'Are Evinrude and Johnson outboards still made?',
+        answer: 'No. BRP stopped producing Evinrude outboard motors in May 2020, and Johnson outboards have not been manufactured under that name since the early 2000s. For both brands, parts availability is patchy and shrinking, and fewer shops are qualified to service them each year. For engine repairs, HBW only services Mercury and Mercruiser, so if your Evinrude or Johnson needs work, we cannot be your shop, which is part of why so many owners are converting now.'
       }
     ]
   },
@@ -15891,7 +15895,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-what-happens-during-repower.png',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-06-09',
+    dateModified: '2026-06-12',
     publishDate: '2026-05-05',
     category: 'Repower',
     readTime: '12 min read',
@@ -16145,7 +16149,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What if something\'s wrong after pickup?',
-        answer: 'We stand behind the work. Call us. Common post-pickup issues are minor (loose connection, hose adjustment, prop fine-tune) and resolved quickly. Major issues are rare and covered under warranty. ---'
+        answer: 'We stand behind the work. Call us. Common post-pickup issues are minor (loose connection, hose adjustment, prop fine-tune) and resolved quickly. Major issues are rare and covered under warranty.'
+      },
+      {
+        question: 'When should I book a repower for a spring launch?',
+        answer: 'Motor lead times vary by model and season, and spring is busy. If you are planning a spring launch, the time to book is well before ice-out, not the week before. Start with a quote at mercuryrepower.ca and contact us to confirm availability for your slot.'
       },
     ]
   },
@@ -26102,233 +26110,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
   },
 
-  {
-    slug: 'should-i-repower-or-buy-new-boat-ontario',
-    relatedSlugs: ['mercury-repower-cost-ontario-2026-cad', 'boat-hull-replacement-vs-repower-decision', 'ontario-mercury-outboard-price-guide'],
-    title: 'Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)',
-    seoTitle: 'Should I Repower or Buy a New Boat? (Ontario 2026)',
-    description: "Repower vs buy new boat: a Mercury Platinum dealer's honest decision guide. Real costs, hull-condition checklist, when each option actually makes sense, and the question most marinas won't ask.",
-    image: '/lovable-uploads/hero-repower-vs-new-split.png',
-    author: 'Jay Harris',
-    datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
-    publishDate: '2026-05-11',
-    category: 'Repower Decision',
-    readTime: '9 min',
-    keywords: ['should i repower or buy new boat', 'repower vs buy new boat cost', 'repowering old boat vs buying new boat', 'boat repower cost comparison ontario', 'mercury repower vs new boat', 'is repowering worth it', 'when to repower vs replace'],
-    content: `### Quick Answer
-
-If your hull is sound and the motor is the problem, repower. A 75, 115 HP repower typically costs $17,000, $22,000 all-in. An equivalent new boat package runs $40,000, $70,000+. That gap is real. If the hull is going, or the boat no longer fits how you use it, buying new or used makes more sense. Neither option is always right.
-
-
-
-> **Run the numbers:** Use our [Repower Cost Estimator](/tools#repower-cost) to get a CAD ballpark for the repower side of this decision. Free, instant.
-::decision-card
-heading: Should you repower or buy new?
-eyebrow: Honest decision tree
-subhead: Use this when your hull is solid but the motor is tired
-leftLabel: Repower if
-leftCriteria:
-  - Hull, transom, and rigging are solid
-  - You like the boat and how it rides
-  - Budget is roughly half the cost of a comparable new boat
-  - Storage and trailer already work
-leftOutcome: Lean toward repower
-leftVariant: recommended
-rightLabel: Buy new if
-rightCriteria:
-  - Hull has soft spots, structural rot, or major fiberglass issues
-  - Family use has outgrown the boat
-  - Electronics, layout, or seating no longer fit how you boat
-  - You want full Mercury warranty coverage on the whole package
-rightOutcome: Lean toward new
-rightVariant: alternative
-whenInDoubt: Bring photos and a description to a quote and we will tell you which way the numbers point.
-::
-
-::pull-quote
-quote: We were 50/50 between a new boat and repowering the 2009 Crestliner. Jay walked us through the math, then said **keep the boat, you love the boat**. That was honest in a way that probably cost him a sale. We did the repower. Five years in, still glad.
-attribution: Mike B.
-source: HBW Repower Customer, Cobourg 2026
-::
-
----
-
-### Should I Repower or Buy a New Boat?
-
-This is the question we get more than almost any other. And we're going to give you the same answer we'd give a neighbour: it depends on the hull.
-
-Harris Boat Works sells both Mercury motors and Legend Boats. We also tell people not to repower when the hull isn't worth it, because putting a $12,000 new engine on a $3,000 hull is not the play.
-
-Here's the honest breakdown.
-
----
-
-![Ontario boat repower vs new boat decision matrix comparing hull condition, budget, sentimental value, downtime, warranty, and use case](/lovable-uploads/repower-vs-new-boat-decision-matrix-ontario.png)
-
-## The Cost Math
-
-All figures are CAD, before HST, before trade-in credit, before any Mercury promotions.
-
-| Repower Option | Typical All-In Cost (Motor + Rigging + Install + Basic Accessories) |
-|---|---:|
-| 40, 60 HP repower | $11,000, $15,000 |
-| 75, 115 HP repower | $17,000, $22,000 |
-| 150 HP repower | $23,000, $30,000 |
-| New boat package (hull + motor + trailer) equivalent | $40,000, $70,000+ |
-| 3, 5 year-old used boat equivalent | $25,000, $50,000 |
-
-The repower-vs-new gap is usually $20,000, $40,000. That's the difference between repowering and still having $25,000 in the bank, vs. financing a new boat.
-
-Repower costs include motor, rigging, controls, prop, install, and small accessories most jobs need, battery, fuel hoses, primer bulb, gauges if upgrading. They do not include winterization or storage, which run separately. For [what a new Mercury costs](/pricing-reference) by HP tier on the motor side, see our full price reference.
-
----
-
-
-![Repower vs buy new boat cost comparison](/lovable-uploads/inline/repower-vs-buy-new.svg)
-
-## When Repowering Wins
-
-If all five of these are true, repowering is almost certainly the right call:
-
-![The 5-Check Repower Eligibility Test: if all five are true, repowering wins](/lovable-uploads/repower-eligibility-5-check-card.png)
-
-*The five eligibility checks HBW walks through before quoting any repower: sound hull, the boat still fits your life, keeping it five or more years, you know the boat, and the motor is the actual problem. Pass all five and the next step is a hull walk-around at Gores Landing.*
-
----
-
-::walkaround-lead-capture
-
-## When Buying New (or Used) Actually Makes Sense
-
-**The hull is going.** 
-Soft transom. Soft floor. Stringers showing rot. Hull blisters that have eaten into the laminate. A deck that flexes underfoot. If the hull condition is the problem, a new motor doesn't fix it. A new boat does.
-
-**The boat doesn't fit your life anymore.** 
-Family went from two people to four. You want to fish bigger water. You're done with tiller motors and want a console. You moved from a cottage slip to a launch ramp property and your current boat is too big to trailer comfortably. If the boat itself is wrong, the motor is irrelevant.
-
-**You're already planning to sell.** 
-If "I'd sell this boat tomorrow if the right one came along" is already true, repowering is putting $15,000 of polish on a sale. You recoup only part of that investment when you sell.
-
-**You want a feature the old boat physically can't have.** 
-Joystick docking on a single-engine 18-footer. Integrated trim tabs on a hull not designed for them. Some things don't transplant. If the feature you want is tied to hull architecture, no repower gets you there.
-
----
-
-## The Hull Walk-Around: What HBW Checks Before Recommending a Repower
-
-Before we recommend a repower, we walk around the boat. Here's what we look at:
-
-1. **Transom.** Tap it. A dead sound means water in the core. A solid ring is good. If there's flex when you push on it, it's already compromised.
-2. **Floor.** Walk it. Soft spots mean delamination or rot. Any flex underfoot is a warning.
-3. **Stringers.** If you can see them (on aluminum), look for cracks or bends. On fibreglass, listen for hollow sounds when tapped.
-4. **Hull surface.** Gel coat cracks that run across, not just along, the hull indicate stress fractures, not cosmetic damage.
-5. **Foam.** If the boat has foam-filled spaces, check for water absorption. A soggy transom means serious work ahead.
-
-If the hull passes, we'll quote the repower. If it doesn't, we'll tell you, even if that costs us the motor sale.
-
----
-
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-![Aging aluminum fishing boat in service bay with old motor removed and repower quote on the gunwale](/lovable-uploads/inline/inline-repower-decision-moment.png)
-
-## Trade-In Is the Third Option
-
-Two trade-in paths:
-
-**Trade in the whole boat** and put that value toward a different boat with a current Mercury on it. This works when the hull is decent and someone else wants exactly what you've got.
-
-**Trade in just the old motor.** Old motors with life left in them have real value. Trading the motor and keeping the hull for a repower can knock $1,000, $3,000 off the cost depending on age, hours, and condition.
-
----
-
-## The Question Most Dealers Won't Ask
-
-"What would actually make you happier with this boat?"
-
-If the answer is "a new motor", repower. If the answer is "more space" or "I need a different layout" or "I want to fish water this hull can't handle", a new engine won't fix that.
-
-We'd rather lose a $15,000 motor sale than have you regret the upgrade because the boat itself is still the wrong boat. Most dealers won't ask this question because the wrong answer costs them a sale.
-
----
-
-## How to Figure Out Which One You Are
-
-**Step 1: Walk around the hull with honest eyes.** 
-Transom. Floor. Layout. How do you actually use the boat? Write down honest answers. Don't talk yourself into a repower on a hull that's going.
-
-**Step 2: Price both paths.** 
-A repower quote takes three minutes at mercuryrepower.ca. A new-boat ballpark takes a phone call to any dealer.
-
-**Step 3: Talk to someone who'll tell you no.** 
-Call 905-342-2153 or text 647-952-2153. If a repower isn't right, we'll say so. If it is, we'll quote it.
-
----
-
-
----
-
-## Related at HBW
-
-The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower)
-- [Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower)
-
----
-
-## Frequently Asked Questions
-
-**How much does a typical repower cost in Ontario?** 
-A 75, 115 HP repower all-in typically costs $17,000, $22,000 CAD before HST, before trade-in credit. A 150 HP repower typically runs $23,000, $30,000. These figures cover motor, rigging, controls, prop, and installation.
-
-**How do I know if my hull is worth repowering?** 
-Check for soft spots in the transom and floor, tap-test the hull, and look for stress cracks in the gel coat or aluminum. If the hull passes that check, and the boat still fits how you use it, a repower is likely worth it. When in doubt, bring the boat in, we'll look at it and tell you honestly.
-
-**Will a new motor add value if I sell the boat?** 
-Typically 50, 70% of the motor cost comes back in resale value, not 100%. If you're planning to sell soon, crunch that number before committing to a repower.
-
-**Does HBW buy or take trade-ins?** 
-Yes, on both whole boats and motors. Trade-in value on a working older motor typically runs $1,000, $3,000 depending on age, hours, and condition.
-
-**What if my hull has a soft transom?** 
-A soft transom means the hull needs structural repair before any motor goes on it, or it's time for a new boat. We won't recommend mounting a new motor on a compromised transom.
-
-**How long does a repower take?** 
-Depends on motor availability and shop schedule. A well-planned repower with a motor in stock can often be completed in a week or two. Plan ahead, Ontario's season is short.
-
----
-
-
-> Related guide: [Repair, repower, or sell: the 3-way decision](/blog/repair-repower-or-sell-boat-ontario-decision-guide).
-
-## Ready to Price It Out?
-
-A repower quote takes three minutes at mercuryrepower.ca. Real CAD prices, all configurations, no "call for quote" games.
-
-Shopping a new boat instead? Check our Legend Boats inventory at harrisboatworks.ca.
-
-Questions? Call 905-342-2153 or submit a request at hbw.wiki/service. We'll tell you which path makes sense, even if it's not the one that pays us the most.
-
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
-
----
-
-*Related guides: Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review*
----`,
-    faqs: [
-      { question: 'Is repowering cheaper than buying a new boat?', answer: "Almost always, yes. Typical repower for a 40-115 HP boat lands $11,000 to $22,000 all-in. An equivalent new boat package is $40,000 to $70,000+. Even a 3-5 year-old used boat sits at $25,000 to $50,000. The cost gap is usually $20K-$40K in repower's favour, assuming the hull is sound." },
-      { question: "Will a repower increase my boat's resale value?", answer: "Yes, but not by the full cost of the repower. Typical recovery is 50-70% of the new motor cost when you eventually sell. If you keep the boat 5+ years, the value math still works strongly in repower's favour because of the deferred new-boat purchase." },
-      { question: 'What if my hull is questionable?', answer: "Walk-around inspection first. If the transom is soft or the floor flexes, repower is the wrong choice - you would be putting a new motor on a hull that is going to need replacement work. We tell customers no when we see it." },
-      { question: 'How long does a repower take?', answer: "Most repowers run 1 to 3 days of shop time once the motor is in. Scheduling depends on the season - book early for spring commissioning, late summer for fall installs." },
-      { question: 'Can I repower a 20-year-old boat?', answer: "Often yes. Age alone is not the disqualifier - hull condition is. HBW has repowered well-maintained 1990s aluminum boats that have 20 more years in them, and declined to repower 8-year-old boats with rot." },
-      { question: 'Does Mercury offer Canadian financing on repowers?', answer: "The current Mercury USA financing programs (Sheffield, Medallion) are US-only. HBW has Canadian financing partners - call for current options. Do not assume the Mercury US site applies in Canada." },
-      { question: 'What is the trade-in option?', answer: 'HBW accepts trade-ins on both the whole boat and the old motor alone. The Trade-In Value Guide explains how each is appraised.' },
-    ],
-  },
 
   {
     slug: 'mercury-dealer-markham-ontario-hbw',
@@ -34177,7 +33958,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
     image: '/lovable-uploads/hero-repower-vs-new-boat.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
-    dateModified: '2026-05-25',
+    dateModified: '2026-06-12',
     publishDate: '2026-05-25',
     category: 'Buying Guide',
     readTime: '11 min read',
@@ -34189,7 +33970,11 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
       { question: 'Will Harris Boat Works tell me if my boat is not worth repowering?', answer: 'Yes. We inspect every boat before quoting a repower. If the transom is gone or the hull has structural issues, we will tell you straight and walk you through what new looks like. We are also a Legend Boats dealer if new is the right answer.' },
       { question: 'How long does a Mercury motor last?', answer: 'A well-maintained Mercury FourStroke can run 1,500 to 2,500-plus hours of recreational use, which on Ontario seasonal boating means 15 to 25 years for many owners. That is why repower math is so favourable.' },
       { question: 'What does it cost to fix a soft transom vs buy new?', answer: 'A full transom rebuild on an aluminum or fibreglass boat typically runs $3,000 to $8,000 CAD depending on size and complexity (2026 ranges). That is usually still cheaper than new, but it is a real decision point that can tip the math.' },
-      { question: 'Will a new motor increase the resale value of my boat?', answer: 'Yes, a new Mercury outboard significantly increases resale value on a sound hull, though rarely dollar-for-dollar what you paid for the repower. The bigger return is years of enjoyment on a boat you already know.' },
+      { question: 'Will a new motor increase the resale value of my boat?', answer: 'Yes, a new Mercury outboard significantly increases resale value on a sound hull, though rarely dollar-for-dollar what you paid for the repower. The bigger return is years of enjoyment on a boat you already know. Typical recovery is roughly 50 to 70 percent of the new motor cost when you eventually sell.' },
+      { question: 'How long does a repower take?', answer: 'Most repowers run 1 to 3 days of shop time once the motor is in. Scheduling depends on the season, book early for spring commissioning, late summer for fall installs.' },
+      { question: 'Can I repower a 20-year-old boat?', answer: 'Often yes. Age alone is not the disqualifier, hull condition is. HBW has repowered well-maintained 1990s aluminum boats that have 20 more years in them, and declined to repower 8-year-old boats with rot. The walk-around inspection tells the story.' },
+      { question: 'Does Mercury offer Canadian financing on repowers?', answer: 'The Mercury USA financing programs (Sheffield, Medallion) are US-only. HBW has Canadian financing partners, call 905-342-2153 for current options. Do not assume the Mercury US site applies in Canada.' },
+      { question: 'What is the trade-in option?', answer: 'Two paths. Trade in the whole boat and put the value toward a different package with a current Mercury on it. Or trade in just the old motor, an old motor with life left in it has real value, typically $1,000 to $3,000 off the repower depending on age, hours, and condition. HBW assesses both paths.' },
     ],
     content: `*Last reviewed: 2026-05-25*
 
@@ -34273,6 +34058,26 @@ Three patterns from three generations of repowering boats on these lakes.
 
 **Sometimes the right answer for the customer is new.** When that's the case, we say so, and we walk them through what a new Legend boat with Mercury power looks like. We sell new boats too. We just don't push them when a repower is the better answer.
 
+> "We were 50/50 between a new boat and repowering the 2009 Crestliner. Jay walked us through the math, then said keep the boat, you love the boat. That was honest in a way that probably cost him a sale. We did the repower. Five years in, still glad."
+> 
+> Mike B., HBW Repower Customer, Cobourg 2026
+
+## Trade-In Is the Third Option
+
+There is a third path most owners forget. Two trade-in moves to consider:
+
+**Trade in the whole boat** and put that value toward a different boat with a current Mercury on it. This works when the hull is decent and someone else wants what you have.
+
+**Trade in just the old motor.** Old motors with life left in them have real value. Trading the motor and keeping the hull for a repower can knock $1,000 to $3,000 off the cost depending on age, hours, and condition.
+
+## The Question Most Dealers Won't Ask
+
+"What would actually make you happier with this boat?"
+
+If the answer is "a new motor," repower. If the answer is "more space," or "I need a different layout," or "I want to fish water this hull can't handle," a new engine will not fix that.
+
+We would rather lose a $15,000 motor sale than have you regret the upgrade because the boat itself is still the wrong boat. Most dealers will not ask this question because the wrong answer costs them a sale.
+
 ## Related guides
 
 - [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
@@ -34298,7 +34103,19 @@ A well-maintained Mercury FourStroke can run 1,500 to 2,500-plus hours of recrea
 A full transom rebuild on an aluminum or fibreglass boat typically runs $3,000 to $8,000 CAD depending on size and complexity (2026 ranges). That is usually still cheaper than new, but it is a real decision point that can tip the math.
 
 **Will a new motor increase the resale value of my boat?**
-Yes, a new Mercury outboard significantly increases resale value on a sound hull, though rarely dollar-for-dollar what you paid for the repower. The bigger return is years of enjoyment on a boat you already know.
+Yes, a new Mercury outboard significantly increases resale value on a sound hull, though rarely dollar-for-dollar what you paid for the repower. Typical recovery is roughly 50 to 70 percent of the new motor cost when you eventually sell. The bigger return is years of enjoyment on a boat you already know.
+
+**How long does a repower take?**
+Most repowers run 1 to 3 days of shop time once the motor is in. Scheduling depends on the season, book early for spring commissioning, late summer for fall installs.
+
+**Can I repower a 20-year-old boat?**
+Often yes. Age alone is not the disqualifier, hull condition is. HBW has repowered well-maintained 1990s aluminum boats that have 20 more years in them, and declined to repower 8-year-old boats with rot.
+
+**Does Mercury offer Canadian financing on repowers?**
+The Mercury USA financing programs (Sheffield, Medallion) are US-only. HBW has Canadian financing partners, call 905-342-2153 for current options.
+
+**What is the trade-in option?**
+Two paths. Trade in the whole boat and put the value toward a different package with a current Mercury on it. Or trade in just the old motor, an old motor with life left in it has real value, typically $1,000 to $3,000 off the repower.
 
 ---
 
@@ -36481,224 +36298,6 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
 - [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-johnson-to-mercury-repower-conversion): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
 - [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring.
 - [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
-
-`
-  },
-  {
-    slug: "evinrude-johnson-to-mercury-repower-conversion",
-    title: "From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke",
-    seoTitle: "Converting Evinrude or Johnson to Mercury 4-Stroke | Harris Boat Works",
-    description: "Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's what a Mercury repower actually involves, and why Rice Lake boaters are making the switch. Harris Boat Works, Gores Landing.",
-    image: "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero.jpg",
-    author: "Jay Harris",
-    datePublished: "2026-06-06",
-    dateModified: "2026-06-06",
-    publishDate: "2026-06-06",
-    category: "Repower",
-    readTime: "4 min read",
-    keywords: ["evinrude to mercury", "johnson to mercury repower", "two-stroke to four-stroke conversion", "orphan outboard repower", "mercury repower ontario"],
-    faqs: [
-      { question: "Are Evinrude and Johnson outboards still made?", answer: "No. BRP stopped producing Evinrude outboard motors in 2020, and Johnson outboards haven't been manufactured under that name since the early 2000s. Parts availability for these orphan motors is patchy and shrinking, and fewer shops are qualified to service them each year." },
-      { question: "Why switch from a two-stroke Evinrude to a Mercury four-stroke?", answer: "A modern Mercury four-stroke in the same horsepower class is typically quieter, more fuel-efficient, and cleaner-burning than a carbureted two-stroke, and it's serviceable locally at Harris Boat Works, a Mercury Platinum dealer on Rice Lake (family-owned since 1947, Mercury dealer since 1965). Mercury's FourStroke and Pro XS lineup runs from 2.5hp to 300hp, with larger Verado options by special order, so there's a direct equivalent for most orphan motors." },
-      { question: "What's involved in converting an old two-stroke to a new Mercury?", answer: "Beyond the motor itself, a full conversion can involve updated throttle and shift cables and control box, a clean single-line fuel feed to replace an old mix system, a transom inspection, and optional SmartCraft gauges. Harris Boat Works quotes the full installed job, not the motor alone." },
-      { question: "Is my old Evinrude or Johnson worth anything as a trade-in?", answer: "Maybe, running condition, vintage, and model all matter. Harris Boat Works inspects and assesses every trade-in before quoting. Orphan motors in marginal condition have limited trade value, but the real value comes from the fuel savings, simpler maintenance, and reliability of the new motor over the next ten seasons." }
-    ],
-    content: `*Last reviewed: 2026-06-06*
-
-> **Quick answer:** BRP stopped producing Evinrude outboards in 2020 and Johnson outboards haven't been built under that name since the early 2000s. Parts and qualified service are shrinking every year. When keeping an orphan motor alive stops being practical, a Mercury repower is the cleanest path back to reliable time on the water.
-
-## Your Evinrude isn't coming back. Here's what happens next.
-
-BRP stopped producing Evinrude outboard motors in 2020. Johnson outboards haven't been manufactured under that name since the early 2000s. If you're still running one, you've been doing what a lot of Ontario boaters do: keeping it alive with used parts and goodwill.
-
-That works until it doesn't.
-
-As of mid-2026, BRP still supplies some Evinrude parts and the aftermarket fills gaps, but BRP has retired its dealer parts-locator service, and availability is patchy and shrinking. Common service items are findable. Model-specific parts increasingly are not.
-
-When it finally stops being practical to source parts or find qualified service for an orphan motor, a Mercury repower is the cleanest path back to reliable time on the water.
-
----
-
-## Before: what life with an orphan motor looks like
-
-A well-maintained Evinrude or Johnson from the 1990s or early 2000s can run a long time. We're not going to tell you otherwise.
-
-But at some point, the math changes:
-
-- Parts that used to take a week to source now take a month, if they're available at all
-- The service shops qualified to work on these motors are fewer every year
-- For engine repairs, we only service Mercury and Mercruiser, so if your Evinrude needs work, we can't be your shop
-- You're running a two-stroke in an era of four-stroke fuel efficiency, four-stroke emissions standards, and four-stroke resale expectations
-
-"It ran fine last fall" is not a parts-supply strategy. At some point, you need a motor that has a full service network and a future.
-
----
-
-## After: what a Mercury four-stroke actually delivers
-
-A modern Mercury four-stroke in the same horsepower class as your old Evinrude or Johnson will typically be:
-
-- **Quieter**: four-stroke combustion cycle, no two-stroke exhaust note
-- **More fuel-efficient**: direct injection and fuel management that didn't exist in 1997
-- **Cleaner-burning**: current-generation emissions standards vs. a carbureted two-stroke
-- **Serviceable locally**: by a Mercury Platinum dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965
-
-Mercury's FourStroke and Pro XS lineup covers 2.5hp to 300hp, with larger Verado options available by special order. Whether you're replacing a 40hp kicker on an aluminum fishing boat or a 150hp on a bowrider, there's a direct equivalent in the Mercury lineup that we can quote, install, and service.
-
----
-
-## The conversion: what actually changes
-
-The motor itself is the main piece, but a full repower from an orphan two-stroke involves a few other things:
-
-**Controls and rigging:** Throttle and shift cables, the control box, and sometimes the steering linkage may need to be updated. Older Evinrude/Johnson controls don't always mate directly with modern Mercury rigging standards. We quote the full installed job, not the motor alone.
-
-**Fuel system:** If your current setup uses a remote fuel tank with an old primer bulb and two-stroke mix system, the new motor will need a clean single-line fuel feed. We handle this as part of the rigging.
-
-**Transom inspection:** Every repower starts with a transom inspection. If the transom has issues, we find them before the new motor goes on, not after.
-
-**Gauges:** Mercury SmartCraft gauges give you real-time engine data that your old analog gauges never offered. Not mandatory, but worth discussing when you're already wiring a new installation.
-
----
-
-## Is your old Evinrude/Johnson worth anything?
-
-Maybe. Running condition matters, as does the vintage and the model. We inspect and assess every trade-in before we quote it. If it has value, we apply it to the repower. If it doesn't, we handle disposal properly.
-
-The honest answer is that orphan motors in marginal condition have limited trade value, the market for them is thin and getting thinner. The real value exchange happens when you start calculating the fuel savings, maintenance simplicity, and reliability of the new motor over the next ten seasons.
-
----
-
-## Every repower gets tested before you see it again
-
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
-
-When you pick up your boat, the motor has already run. Any rigging or setup issue gets caught here, not at your dock.
-
----
-
-**Running an orphan motor? Let's see what a Mercury repower looks like for your boat.**
-Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
-## Related guides
-
-- [How to Pick the Right Horsepower When You Repower (Reading Your Capacity Plate)](/blog/repower-horsepower-capacity-plate-guide): Don't guess on horsepower. Your boat's capacity plate is the legal ceiling, and it's not optional. How to.
-- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
-- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring.
-- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
-
-`
-  },
-  {
-    slug: "boat-repower-process-step-by-step",
-    title: "Your Repower, Step by Step: What Actually Happens at the Shop",
-    seoTitle: "What Actually Happens During a Boat Repower | Harris Boat Works",
-    description: "What does a repower actually look like from drop-off to pickup? Here's the real process, assessment, installation, rigging, and the on-water test, step by step. Harris Boat Works, Gores Landing.",
-    image: "/lovable-uploads/Boat_Repowering_In_Progress.png",
-    author: "Jay Harris",
-    datePublished: "2026-06-06",
-    dateModified: "2026-06-06",
-    publishDate: "2026-06-06",
-    category: "HBW Process",
-    readTime: "4 min read",
-    keywords: ["boat repower process", "what happens during repower", "mercury repower steps", "harris boat works repower", "on-water test rice lake"],
-    faqs: [
-      { question: "What are the steps in a boat repower?", answer: "At Harris Boat Works a repower runs through: (1) building an installed-price quote at mercuryrepower.ca, (2) booking the job, (3) drop-off and a full assessment (transom, controls, fuel system, steering), (4) old motor removal, (5) rigging and installation to Mercury spec, (6) a pre-water rigging check, (7) an on-water test on Rice Lake, and (8) pickup with a break-in walk-through." },
-      { question: "What does Harris Boat Works inspect before starting a repower?", answer: "Before touching anything, Harris Boat Works inspects transom condition (structural integrity, soft spots, delamination), existing controls and rigging, the fuel system, and the steering. If the inspection changes the job scope, they call you before proceeding, no surprises added after the fact." },
-      { question: "Is the boat tested on the water before I pick it up?", answer: "Yes. Every repower gets an on-water test on Rice Lake before pickup. No exceptions. The boat is run through its throttle range to operating temperature, with trim and prop performance verified, so any rigging issue is caught before you get the boat, not at your dock." },
-      { question: "When should I book a repower for a spring launch?", answer: "Motor lead times vary by model and season, and spring is busy. If you're planning a spring launch, the time to book is well before ice-out, not the week before. Start with a quote at mercuryrepower.ca and contact Harris Boat Works to confirm availability." }
-    ],
-    content: `*Last reviewed: 2026-06-06*
-
-> **Quick answer:** A repower at Harris Boat Works runs eight steps: building an installed-price quote at mercuryrepower.ca, booking the job, drop-off and full assessment, old motor removal, rigging and installation to Mercury spec, a pre-water rigging check, an on-water test on Rice Lake, and pickup with a break-in walk-through.
-
-## Most people don't know what they're agreeing to until it's done. Here's the whole process.
-
-A repower is not complicated, but it's not just unbolting one motor and bolting on another. If you've never done one, the process is worth understanding before you hand over your boat. This is what actually happens at Harris Boat Works from the moment you decide to move forward.
-
----
-
-## Step 1: The quote
-
-Everything starts at mercuryrepower.ca. You build the quote online, select your motor, your rigging preferences, and whether you have a trade-in. You get an installed price. Not an "engine only" price, not a "starting from" price. The installed number.
-
-If you have questions the configurator doesn't answer, call us at 905-342-2153. We'd rather spend five minutes on the phone getting it right than have a surprise conversation after the boat is in the shop.
-
----
-
-## Step 2: Booking the job
-
-Once you've confirmed the quote and motor availability, we schedule the drop-off. Motor lead times vary by model and time of year. Spring is busy. If you're planning a spring launch, the time to book is not the week before ice-out.
-
-Most standard repowers take 3 to 5 business days once the motor is on-site. Spring compresses the calendar, so the earlier you book, the better your slot.
-
----
-
-## Step 3: Drop-off and assessment
-
-When you bring the boat in, we start with an inspection before we touch anything. This includes:
-
-- **Transom condition check**: structural integrity, any soft spots, signs of delamination or rot
-- **Existing controls and rigging assessment**: what needs replacing vs. what can be retained
-- **Fuel system check**: condition of primer bulb, fuel line, and tank connection
-- **Steering inspection**: is the current steering system compatible with the new motor and safe to reuse?
-
-If the inspection turns up something that changes the job scope, we call you before we proceed. No surprises added after the fact.
-
----
-
-## Step 4: Motor removal
-
-The old motor comes off. If you have a trade-in, it's assessed at this point (or before drop-off if you've brought it in separately). Motors that aren't trade-able get set aside for disposal.
-
----
-
-## Step 5: Rigging and installation
-
-This is the bulk of the work, and it's where "just swap the motor" gets complicated on older boats:
-
-- New motor mounted and torqued to manufacturer spec
-- Throttle and shift cables run and connected
-- Steering connected and adjusted
-- Fuel line connected to new motor
-- Control box connected (new or existing, per the quote)
-- Battery cables verified or replaced
-- SmartCraft harness and gauges installed (if quoted)
-- Lower unit oil and gear ratio verified
-
-Everything is installed to Mercury's rigging standards. We're family-owned since 1947 and a Mercury dealer since 1965, now at Mercury's Platinum tier. This is the work we do every season.
-
----
-
-## Step 6: Rigging check and pre-water inspection
-
-Before the boat goes in the water, the full installation gets a bench check. Controls are operated through their full range of motion. The motor starts and idles. Gauges verify correctly. Any adjustments happen here.
-
----
-
-## Step 7: On-water test on Rice Lake
-
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
-
-The boat goes in the water. We run it through throttle range, check for rigging issues, verify the trim, confirm the prop is performing as expected, and run it until the motor reaches operating temperature. This is not a formality, it's the only way to know the job is actually done.
-
-If anything surfaces during the test, it gets fixed before the boat comes out. You pick up a boat that has already been proven on the water, not one that's been proven on the hoist.
-
----
-
-## Step 8: Pickup and walk-through
-
-When you pick up the boat, we walk you through the new motor, break-in procedure, throttle management during the first few hours, oil check intervals, and what to expect from a new FourStroke before it's fully run in. This usually takes about 15 minutes and it's worth the time.
-
----
-
-**Ready to book your repower?**
-Start with a quote at [mercuryrepower.ca](https://mercuryrepower.ca), then request service at [hbw.wiki/service](https://hbw.wiki/service). Questions first? Call 905-342-2153.
-## Related guides
-
-- [The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from.
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
-- [What Happens to Your Old Motor When You Repower (Trade-In, HST Credit, Disposal)](/blog/repower-old-motor-trade-in-hst-disposal-ontario): Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and.
-- [Boat Insurance in Ontario: What You Actually Need (2026)](/blog/boat-insurance-ontario-guide-2026): Ontario boat insurance basics. Liability vs hull coverage, what is covered vs not, real annual premium ranges.
 
 `
   },
