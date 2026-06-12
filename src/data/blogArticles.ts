@@ -11468,7 +11468,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
 
 ### Quick Answer
 
-[Mercury Boost](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) is a software-based engine calibration update, not a hardware kit, that improves mid-range acceleration by 5, 21% on eligible motors. Eligibility is determined by serial number, not model year. The dealer-installed version covers FourStroke 175, 300 HP, Pro XS 175, 300 HP, and Verado 250, 350 HP from specific serial numbers (see table below). The factory-installed version comes pre-loaded on new Pro XS and Verado models built in Q2 2026 and later. Boost does not void Mercury's warranty.
+Mercury Boost is a software-based engine calibration update, not a hardware kit, that Mercury rates as a 5-21% improvement in mid-range acceleration on eligible motors. Eligibility is determined by serial number, not model year. It covers select FourStroke, Pro XS, and Verado models, comes factory-installed on some new 2026 builds, does not change rated horsepower, and does not affect Mercury factory warranty or Mercury Protection Plan coverage.
 
 
 > **Check yours:** Run the [Boost Eligibility Checker](/tools#boost-eligibility) to see if your motor qualifies in 30 seconds. Free.
