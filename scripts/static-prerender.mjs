@@ -3559,26 +3559,33 @@ const HUB_DEFS = [
 
 const HUB_LAST_REVIEWED = '2026-05-05';
 
-const HUB_ROUTES = HUB_DEFS.map(def => ({
-  path: def.path,
-  title: def.metaTitle,
-  description: def.metaDescription,
-  h1: def.h1,
-  intro: def.intro,
-  schemas: hubSchemas({
+const HUB_ROUTES = HUB_DEFS.map(def => {
+  const baseSchemas = hubSchemas({
     path: def.path,
     metaTitle: def.metaTitle,
     metaDescription: def.metaDescription,
     h1: def.h1,
     breadcrumbName: def.breadcrumbName,
     faqs: def.faqs,
-    lastReviewedISO: HUB_LAST_REVIEWED,
-  }),
-  extraNoscript: () =>
-    hubTableHtml(def.table.caption, def.table.columns, def.table.rows) +
-    hubArticleListHtml(def.articleGroups) +
-    hubFaqHtml(def.faqs),
-}));
+    lastReviewedISO: def.lastReviewedISO || HUB_LAST_REVIEWED,
+  });
+  const schemas = def.extraSchemas && def.extraSchemas.length
+    ? [...baseSchemas, ...def.extraSchemas]
+    : baseSchemas;
+  return {
+    path: def.path,
+    title: def.metaTitle,
+    description: def.metaDescription,
+    h1: def.h1,
+    intro: def.intro,
+    schemas,
+    extraNoscript: () =>
+      hubTableHtml(def.table.caption, def.table.columns, def.table.rows) +
+      (def.extraBodyHtml ? def.extraBodyHtml() : '') +
+      hubArticleListHtml(def.articleGroups) +
+      hubFaqHtml(def.faqs),
+  };
+});
 
 // -----------------------------------------------------------------------------
 // Commercial-page noscript enrichment helpers.
