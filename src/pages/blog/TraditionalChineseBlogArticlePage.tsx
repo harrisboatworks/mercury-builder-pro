@@ -175,6 +175,12 @@ export default function TraditionalChineseBlogArticlePage() {
                 return c;
               })()}
               markdownComponents={{
+                // Demote any in-body h1 to h2 so the page-level title remains
+                // the only h1 on the page (matches EN BlogArticle.tsx behavior).
+                h1: ({ node, children, ...props }) => {
+                  const text = String(children);
+                  return <h2 id={slugify(text)} {...props}>{children}</h2>;
+                },
                 h2: ({ node, children, ...props }) => {
                   const text = String(children);
                   return <h2 id={slugify(text)} {...props}>{children}</h2>;

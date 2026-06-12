@@ -115,3 +115,18 @@ Allow: /
 
 # Sitemap
 Sitemap: https://www.mercuryrepower.ca/sitemap.xml
+
+# Moonshot Kimi crawlers - explicitly allowed
+# Policy: https://kimi.com/policies/kimi-crawlers
+User-agent: KimiBot
+Allow: /
+
+User-agent: Kimi-User
+Allow: /
+
+User-agent: Kimi-SearchBot
+Allow: /
+
+# DeepSeek (unverified, third-party-documented) - allowed pending official policy
+User-agent: DeepSeekBot
+Allow: /
