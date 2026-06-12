@@ -25,7 +25,7 @@ import zhFirstRentalHero from '@/assets/blog/zh-first-rental-hero.png';
 import zhPcocHero from '@/assets/blog/zh-pcoc-hero.png';
 
 export const ZH_HANT_LANGUAGE_NOTE =
-  '我們的團隊使用英語服務，但我們非常歡迎您。歡迎帶會英語的親友同來，或使用手機翻譯軟件——我們會耐心溝通，盡力配合。';
+  '我們專門為華人朋友準備了這些中文指南——因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務，不過別擔心——歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。';
 
 // Map zh-Hant slug → simplified counterpart for hreflang cross-linking.
 export const ZH_HANT_TO_HANS_SLUG: Record<string, string> = {
