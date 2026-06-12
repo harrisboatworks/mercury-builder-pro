@@ -1740,7 +1740,7 @@ Most repowers stay within the same HP class as the original motor. Some customer
 
 Content in the same repower-decision cluster:
 
-- [Should I Repower or Buy a New Boat?](/blog/should-i-repower-or-buy-new-boat-ontario), narrative companion to this eligibility check
+- [Should I Repower or Buy a New Boat?](/blog/repower-vs-new-boat), narrative companion to this eligibility check
 - [How to Repower a Boat](/how-to-repower-a-boat), the 7-step process page once eligibility is confirmed
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), CAD pricing by HP class
 - [How to Read a Boat Capacity Plate (Ontario)](/blog/how-to-read-boat-capacity-plate-ontario), Check 3 detail
@@ -2811,7 +2811,7 @@ Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) - no s
 The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
-- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/should-i-repower-or-buy-new-boat-ontario)
+- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/repower-vs-new-boat)
 - [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower)
 
 ---
@@ -10720,7 +10720,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 - [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada): Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and.
 - [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat): Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from.
-- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/should-i-repower-or-buy-new-boat-ontario): Repower vs buy new boat: a Mercury Platinum dealer's honest decision guide. Real costs, hull-condition.
+- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/repower-vs-new-boat): Repower vs buy new boat: a Mercury Platinum dealer's honest decision guide. Real costs, hull-condition.
 - [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
 
 `,
@@ -12328,7 +12328,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 - [Mercury Outboard Warranty in Canada (2026)](/blog/mercury-outboard-warranty-canada-2026)
 - [Mercury Pro XS Buyer Guide (Ontario)](/blog/mercury-pro-xs-buyer-guide-ontario)
-- [Should I Repower or Buy a New Boat? (Ontario)](/blog/should-i-repower-or-buy-new-boat-ontario)
+- [Should I Repower or Buy a New Boat? (Ontario)](/blog/repower-vs-new-boat)
 - [Mercury FourStroke Buyer Guide (Ontario)](/blog/mercury-fourstroke-buyer-guide-ontario)`,
     faqs: [
       { question: "Is Mercury better than Yamaha?", answer: "Mechanically, both brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, factory-OEM relationships with Canadian aluminum boat builders, and resale demand. The practical reliability picture favors Mercury for typical Ontario customers." },
@@ -14041,7 +14041,7 @@ For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Ou
     category: 'Brand Comparison',
     readTime: '8 min',
     keywords: ['mercury vs suzuki', 'suzuki outboard reliability', 'ontario outboard comparison', 'mercury suzuki repower'],
-    relatedSlugs: ['mercury-vs-yamaha-vs-honda-reliability-2026', 'should-i-repower-or-buy-new-boat-ontario', 'ontario-mercury-outboard-price-guide', 'mercury-extended-warranty-platinum-ontario'],
+    relatedSlugs: ['mercury-vs-yamaha-vs-honda-reliability-2026', 'repower-vs-new-boat', 'ontario-mercury-outboard-price-guide', 'mercury-extended-warranty-platinum-ontario'],
     content: `*Last reviewed: 2026-06-06*
 
 > **Quick answer:** Both brands make mechanically reliable four-stroke outboards in 2026. Maintain either one properly, oil on schedule, impeller every couple of seasons, correct winterization, and you should see 15 to 25 years of useful life. Important context: we are a Mercury dealer and have been since 1965. We don't sell or service the other brand on this page. That's a conflict of interest worth stating up front. In Ontario freshwater, the real deciding factor between these two brands usually isn't the motor. It's who services it when something goes wrong, and how close they are.
@@ -14166,7 +14166,7 @@ Either decision can be the right one depending on the customer's situation. We a
 ## Related guides
 
 - [Mercury vs Yamaha vs Honda Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026): the same template applied to the other three major brands.
-- [Should I Repower or Buy a New Boat?](/blog/should-i-repower-or-buy-new-boat-ontario): the financial decision companion.
+- [Should I Repower or Buy a New Boat?](/blog/repower-vs-new-boat): the financial decision companion.
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide): CAD pricing by HP.
 - [Mercury Extended Warranty Platinum (Ontario)](/blog/mercury-extended-warranty-platinum-ontario): warranty detail on the Mercury side.
 
@@ -14978,7 +14978,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'boat-hull-replacement-vs-repower-decision',
-    relatedSlugs: ['should-i-repower-or-buy-new-boat-ontario', 'mercury-repower-cost-ontario-2026-cad', 'outboard-trade-in-value-ontario-hbw'],
+    relatedSlugs: ['repower-vs-new-boat', 'mercury-repower-cost-ontario-2026-cad', 'outboard-trade-in-value-ontario-hbw'],
     title: 'Boat Hull Replacement vs Repower: The Honest Decision (2026)',
     description: 'For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury delivers 80% of the new-boat experience for half the money.',
     image: '/lovable-uploads/hero-hull-vs-repower.png',
@@ -24345,7 +24345,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'outboard-trade-in-value-ontario-hbw',
-    relatedSlugs: ['ontario-mercury-outboard-price-guide', 'mercury-repower-cost-ontario-2026-cad', 'should-i-repower-or-buy-new-boat-ontario'],
+    relatedSlugs: ['ontario-mercury-outboard-price-guide', 'mercury-repower-cost-ontario-2026-cad', 'repower-vs-new-boat'],
     title: "What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)",
     seoTitle: 'Outboard Trade-In Values in Ontario (2026 CAD) | Harris Boat Works',
     description: 'Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST on a repower.',
@@ -30430,7 +30430,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     relatedSlugs: [
       "used-boat-walkaround-inspection-ontario",
       "boat-motor-trade-in-guide",
-      "should-i-repower-or-buy-new-boat-ontario",
+      "repower-vs-new-boat",
       "total-cost-of-owning-a-boat-ontario-2026",
     ],
     faqs: [
@@ -31676,7 +31676,7 @@ Probably sell. Even if the boat is fine, the question is whether this is the boa
 
 We see this decision multiple times per week, especially in spring and fall. When a customer comes in with a repair estimate that feels uncomfortably big, the first conversation we have is the framework above. We're a Mercury Platinum dealer and a Legend Boats dealer, so we're not neutral: we'd rather sell you a new motor or a new boat than do a $3,000 repair. But we'd much rather give you honest advice and have you come back to us for the next repower than push you into a decision that doesn't fit your situation.
 
-For a structured conversation on your specific boat, motor, and budget, email info@harrisboatworks.ca with the details and we'll tell you what we'd do in your situation. For the repower-specific decision, our [Should I Repower or Buy New?](/blog/should-i-repower-or-buy-new-boat-ontario) decision guide covers that side of the conversation.
+For a structured conversation on your specific boat, motor, and budget, email info@harrisboatworks.ca with the details and we'll tell you what we'd do in your situation. For the repower-specific decision, our [Should I Repower or Buy New?](/blog/repower-vs-new-boat) decision guide covers that side of the conversation.
 
 ## Related guides
 
@@ -31961,7 +31961,7 @@ Our quote builder skips that step. The price you see is the price you pay. Three
 
 ## What we see at HBW
 
-The most common Peterborough question we get isn't about a specific motor, it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/should-i-repower-or-buy-new-boat-ontario) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
+The most common Peterborough question we get isn't about a specific motor, it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/repower-vs-new-boat) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
 
 For Peterborough customers specifically: the closer service relationship is the under-rated benefit. A repower done at HBW means the dealer who installed the motor is also the one doing your annual maintenance. That's how warranty issues get resolved fast.
 
@@ -32537,7 +32537,7 @@ Three generations of HBW have been on Rice Lake. That's longer than most boats i
 
 The Northumberland customer mix is more diverse than any other regional market we serve. A typical service week might include a Cobourg sailboat owner picking up parts, a Rice Lake cottager dropping off for fall winterization, a Brighton Bay of Quinte angler bringing a Pro XS in for an impeller, and a Trent River cruiser scheduling MerCruiser service. That mix is what makes Northumberland different from a more homogeneous GTA service market.
 
-For repower decisions specifically, the most common Northumberland scenario we see: a 15-20 year old Mercury (often a 90 or 115 HP) on a 16-18 foot aluminum fishing boat. The motor still runs but is starting to need more attention. The owner asks "is repower worth it on this hull?" Our [Repower vs Buy New decision guide](/blog/should-i-repower-or-buy-new-boat-ontario) walks through the math. For Northumberland-area sound hulls under 15 years old, the answer is almost always "yes, repower wins."
+For repower decisions specifically, the most common Northumberland scenario we see: a 15-20 year old Mercury (often a 90 or 115 HP) on a 16-18 foot aluminum fishing boat. The motor still runs but is starting to need more attention. The owner asks "is repower worth it on this hull?" Our [Repower vs Buy New decision guide](/blog/repower-vs-new-boat) walks through the math. For Northumberland-area sound hulls under 15 years old, the answer is almost always "yes, repower wins."
 
 ## How to start
 
@@ -36194,7 +36194,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
 ## Related guides
 
-- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-johnson-to-mercury-repower-conversion): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
+- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-to-mercury-repower-ontario-guide): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
 - [What Happens to Your Old Motor When You Repower (Trade-In, HST Credit, Disposal)](/blog/repower-old-motor-trade-in-hst-disposal-ontario): Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and.
 - [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
 - [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
@@ -36295,7 +36295,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
 ## Related guides
 
 - [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
-- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-johnson-to-mercury-repower-conversion): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
+- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-to-mercury-repower-ontario-guide): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
 - [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring.
 - [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
 
