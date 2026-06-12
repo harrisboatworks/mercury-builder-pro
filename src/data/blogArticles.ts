@@ -11558,7 +11558,7 @@ Most dealers can complete it in a single service visit. **Mercury has not publis
 
 Mid-range acceleration is where the engine is most felt in real use. Not at full throttle, but in the transition from idle to cruising speed, when you are launching off Rice Lake's shallow flats, loading a pontoon with six passengers, or accelerating through a turn.
 
-A 5, 21% improvement in that band is most noticeable on:
+A 5-21% improvement in that band is most noticeable on:
 - Heavily loaded pontoons
 - Family runabouts with full gear and passengers
 - Any setup where hole-shot or mid-range feel sluggish
