@@ -47,6 +47,13 @@ export default function MandarinBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/zh/${article.slug}`;
+  // If a zh-Hant pilot counterpart exists, expose it via hreflang. Pilot pages
+  // are noindex themselves but the bidirectional link still helps Google
+  // understand the relationship for any future indexable Traditional version.
+  const zhHantSlug = Object.keys(ZH_HANT_TO_HANS_SLUG).find(
+    (k) => ZH_HANT_TO_HANS_SLUG[k] === article.slug,
+  );
+  const zhHantUrl = zhHantSlug ? `${SITE_URL}/blog/zh-hant/${zhHantSlug}` : null;
   const tocItems = extractHeaders(article.content);
   const relatedArticles = mandarinBlogArticles
     .filter((a) => a.slug !== article.slug)
