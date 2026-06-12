@@ -3662,6 +3662,254 @@ export type Database = {
         }
         Relationships: []
       }
+      staff_customer_messages: {
+        Row: {
+          author_type: string
+          body: string | null
+          body_preview: string | null
+          classification: string | null
+          created_at: string
+          customer_cell_last4: string | null
+          direction: string
+          hbw_number_last4: string | null
+          id: string
+          metadata: Json
+          status: string | null
+          task_id: string | null
+          thread_id: string | null
+          twilio_sid_tail: string | null
+          twilio_status: string | null
+        }
+        Insert: {
+          author_type: string
+          body?: string | null
+          body_preview?: string | null
+          classification?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          direction: string
+          hbw_number_last4?: string | null
+          id?: string
+          metadata?: Json
+          status?: string | null
+          task_id?: string | null
+          thread_id?: string | null
+          twilio_sid_tail?: string | null
+          twilio_status?: string | null
+        }
+        Update: {
+          author_type?: string
+          body?: string | null
+          body_preview?: string | null
+          classification?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          direction?: string
+          hbw_number_last4?: string | null
+          id?: string
+          metadata?: Json
+          status?: string | null
+          task_id?: string | null
+          thread_id?: string | null
+          twilio_sid_tail?: string | null
+          twilio_status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "staff_customer_messages_task_id_fkey"
+            columns: ["task_id"]
+            isOneToOne: false
+            referencedRelation: "staff_delegated_tasks"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "staff_customer_messages_thread_id_fkey"
+            columns: ["thread_id"]
+            isOneToOne: false
+            referencedRelation: "staff_customer_threads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      staff_customer_threads: {
+        Row: {
+          assigned_staff_display_name: string | null
+          assigned_staff_key: string | null
+          created_at: string
+          customer_cell_last4: string | null
+          customer_id: string | null
+          customer_name: string
+          hbw_number_last4: string
+          id: string
+          metadata: Json
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          assigned_staff_display_name?: string | null
+          assigned_staff_key?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          customer_id?: string | null
+          customer_name: string
+          hbw_number_last4?: string
+          id?: string
+          metadata?: Json
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          assigned_staff_display_name?: string | null
+          assigned_staff_key?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          customer_id?: string | null
+          customer_name?: string
+          hbw_number_last4?: string
+          id?: string
+          metadata?: Json
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      staff_delegated_tasks: {
+        Row: {
+          action_options: Json
+          assigned_staff_display_name: string | null
+          assigned_staff_key: string | null
+          boundaries: Json
+          completed_at: string | null
+          created_at: string
+          customer_cell_last4: string | null
+          customer_id: string | null
+          customer_name: string | null
+          customer_present: boolean
+          decision_reason: string | null
+          hbw_number_last4: string
+          id: string
+          manual_note_required: boolean
+          metadata: Json
+          outbound_body: string | null
+          public_summary: string | null
+          reply_summary: string | null
+          requested_message: string | null
+          sent_at: string | null
+          staff_request: string | null
+          status: string
+          task_type: string
+          thread_id: string | null
+          twilio_sid_tail: string | null
+          twilio_status: string | null
+          updated_at: string
+        }
+        Insert: {
+          action_options?: Json
+          assigned_staff_display_name?: string | null
+          assigned_staff_key?: string | null
+          boundaries?: Json
+          completed_at?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          customer_id?: string | null
+          customer_name?: string | null
+          customer_present?: boolean
+          decision_reason?: string | null
+          hbw_number_last4?: string
+          id?: string
+          manual_note_required?: boolean
+          metadata?: Json
+          outbound_body?: string | null
+          public_summary?: string | null
+          reply_summary?: string | null
+          requested_message?: string | null
+          sent_at?: string | null
+          staff_request?: string | null
+          status?: string
+          task_type?: string
+          thread_id?: string | null
+          twilio_sid_tail?: string | null
+          twilio_status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          action_options?: Json
+          assigned_staff_display_name?: string | null
+          assigned_staff_key?: string | null
+          boundaries?: Json
+          completed_at?: string | null
+          created_at?: string
+          customer_cell_last4?: string | null
+          customer_id?: string | null
+          customer_name?: string | null
+          customer_present?: boolean
+          decision_reason?: string | null
+          hbw_number_last4?: string
+          id?: string
+          manual_note_required?: boolean
+          metadata?: Json
+          outbound_body?: string | null
+          public_summary?: string | null
+          reply_summary?: string | null
+          requested_message?: string | null
+          sent_at?: string | null
+          staff_request?: string | null
+          status?: string
+          task_type?: string
+          thread_id?: string | null
+          twilio_sid_tail?: string | null
+          twilio_status?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "staff_delegated_tasks_thread_id_fkey"
+            columns: ["thread_id"]
+            isOneToOne: false
+            referencedRelation: "staff_customer_threads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      staff_device_tokens: {
+        Row: {
+          active: boolean
+          created_at: string
+          id: string
+          metadata: Json
+          platform: string
+          staff_display_name: string | null
+          staff_key: string
+          token_encrypted: string | null
+          token_hash: string
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          id?: string
+          metadata?: Json
+          platform?: string
+          staff_display_name?: string | null
+          staff_key: string
+          token_encrypted?: string | null
+          token_hash: string
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          id?: string
+          metadata?: Json
+          platform?: string
+          staff_display_name?: string | null
+          staff_key?: string
+          token_encrypted?: string | null
+          token_hash?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       sync_logs: {
         Row: {
           completed_at: string | null
