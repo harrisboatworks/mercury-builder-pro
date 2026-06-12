@@ -2,6 +2,16 @@ import { BlogArticle } from './blogArticles';
 
 import newImmigrantHero from '@/assets/blog/new-immigrant-boat-guide-hero.png';
 import chineseFamilyMultiGen from '@/assets/blog/chinese-family-legend-multigen.jpg';
+import zhWinterizationHero from '@/assets/blog/zh-winterization-hero.png';
+import zhFirstRentalHero from '@/assets/blog/zh-first-rental-hero.png';
+import zhPcocHero from '@/assets/blog/zh-pcoc-hero.png';
+
+// SHARED HONESTY NOTE — language support disclosure (Simplified Chinese).
+// This is canon — never imply Chinese-speaking staff or interpreters on staff.
+// Used by the 3 demand-driven posts (winterization / first-rental / pcoc-pcl)
+// and referenced when auditing legacy zh posts.
+export const ZH_LANGUAGE_NOTE = '我们的团队使用英语服务，但我们非常欢迎您。欢迎带会英语的亲友同来，或使用手机翻译软件——我们会耐心沟通，尽力配合。';
+
 
 export const mandarinBlogArticles: BlogArticle[] = [
   // ============================================
