@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-vs-new-boat.md
-last_updated: 2026-05-25
+last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Repower vs Buy New Boat: The Honest Math"
 description: "Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from $11,000 CAD installed."
 category: "Buying Guide"
 date_published: 2026-05-25
-date_modified: 2026-05-25
+date_modified: 2026-06-12
 keywords: ["repower vs new boat","mercury repower math","should i repower or buy new","repower cost ontario","hull worth repowering","transom rebuild cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-05-25  
-**Last updated:** 2026-05-25  
+**Last updated:** 2026-06-12  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-vs-new-boat
 
@@ -107,6 +107,26 @@ Three patterns from three generations of repowering boats on these lakes.
 
 **Sometimes the right answer for the customer is new.** When that's the case, we say so, and we walk them through what a new Legend boat with Mercury power looks like. We sell new boats too. We just don't push them when a repower is the better answer.
 
+> "We were 50/50 between a new boat and repowering the 2009 Crestliner. Jay walked us through the math, then said keep the boat, you love the boat. That was honest in a way that probably cost him a sale. We did the repower. Five years in, still glad."
+> 
+> Mike B., HBW Repower Customer, Cobourg 2026
+
+## Trade-In Is the Third Option
+
+There is a third path most owners forget. Two trade-in moves to consider:
+
+**Trade in the whole boat** and put that value toward a different boat with a current Mercury on it. This works when the hull is decent and someone else wants what you have.
+
+**Trade in just the old motor.** Old motors with life left in them have real value. Trading the motor and keeping the hull for a repower can knock $1,000 to $3,000 off the cost depending on age, hours, and condition.
+
+## The Question Most Dealers Won't Ask
+
+"What would actually make you happier with this boat?"
+
+If the answer is "a new motor," repower. If the answer is "more space," or "I need a different layout," or "I want to fish water this hull can't handle," a new engine will not fix that.
+
+We would rather lose a $15,000 motor sale than have you regret the upgrade because the boat itself is still the wrong boat. Most dealers will not ask this question because the wrong answer costs them a sale.
+
 ## Related guides
 
 - [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
@@ -156,7 +176,23 @@ A full transom rebuild on an aluminum or fibreglass boat typically runs $3,000 t
 
 ### Will a new motor increase the resale value of my boat?
 
-Yes, a new Mercury outboard significantly increases resale value on a sound hull, though rarely dollar-for-dollar what you paid for the repower. The bigger return is years of enjoyment on a boat you already know.
+Yes, a new Mercury outboard significantly increases resale value on a sound hull, though rarely dollar-for-dollar what you paid for the repower. The bigger return is years of enjoyment on a boat you already know. Typical recovery is roughly 50 to 70 percent of the new motor cost when you eventually sell.
+
+### How long does a repower take?
+
+Most repowers run 1 to 3 days of shop time once the motor is in. Scheduling depends on the season, book early for spring commissioning, late summer for fall installs.
+
+### Can I repower a 20-year-old boat?
+
+Often yes. Age alone is not the disqualifier, hull condition is. HBW has repowered well-maintained 1990s aluminum boats that have 20 more years in them, and declined to repower 8-year-old boats with rot. The walk-around inspection tells the story.
+
+### Does Mercury offer Canadian financing on repowers?
+
+The Mercury USA financing programs (Sheffield, Medallion) are US-only. HBW has Canadian financing partners, call 905-342-2153 for current options. Do not assume the Mercury US site applies in Canada.
+
+### What is the trade-in option?
+
+Two paths. Trade in the whole boat and put the value toward a different package with a current Mercury on it. Or trade in just the old motor, an old motor with life left in it has real value, typically $1,000 to $3,000 off the repower depending on age, hours, and condition. HBW assesses both paths.
 
 ## Next steps
 

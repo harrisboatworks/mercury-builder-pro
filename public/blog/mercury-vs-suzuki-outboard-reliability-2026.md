@@ -149,7 +149,7 @@ Either decision can be the right one depending on the customer's situation. We a
 ## Related guides
 
 - [Mercury vs Yamaha vs Honda Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026): the same template applied to the other three major brands.
-- [Should I Repower or Buy a New Boat?](/blog/should-i-repower-or-buy-new-boat-ontario): the financial decision companion.
+- [Should I Repower or Buy a New Boat?](/blog/repower-vs-new-boat): the financial decision companion.
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide): CAD pricing by HP.
 - [Mercury Extended Warranty Platinum (Ontario)](/blog/mercury-extended-warranty-platinum-ontario): warranty detail on the Mercury side.
 

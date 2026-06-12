@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md
-last_updated: 2026-05-23
+last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Evinrude to Mercury Repower: The Ontario Guide (2026)"
 description: "An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion involves, when to switch, and when to wait."
 category: "Repower Guides"
 date_published: 2026-04-16
-date_modified: 2026-05-23
+date_modified: 2026-06-12
 keywords: ["Evinrude to Mercury repower","Evinrude to Mercury conversion","replace Evinrude outboard Ontario","Evinrude discontinued repower","Evinrude E-TEC repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Repower Guides  
 **Published:** 2026-04-16  
-**Last updated:** 2026-05-23  
+**Last updated:** 2026-06-12  
 **Read time:** 14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide
 
@@ -234,6 +234,10 @@ The Pro XS is the closest match in character: strong acceleration, a high-RPM bi
 ### Is a Mercury actually more reliable than an Evinrude?
 
 The E-TEC was a well-engineered engine, and a healthy late-model G2 is mechanically comparable to a Mercury FourStroke. The real difference in 2026 is support. A Mercury with a failed part gets fixed at any Mercury dealer in Canada with stocked parts and current diagnostic tools. An Evinrude with a failed proprietary electronic part may not be fixable at all.
+
+### Are Evinrude and Johnson outboards still made?
+
+No. BRP stopped producing Evinrude outboard motors in May 2020, and Johnson outboards have not been manufactured under that name since the early 2000s. For both brands, parts availability is patchy and shrinking, and fewer shops are qualified to service them each year. For engine repairs, HBW only services Mercury and Mercruiser, so if your Evinrude or Johnson needs work, we cannot be your shop, which is part of why so many owners are converting now.
 
 ## Next steps
 

@@ -99,7 +99,7 @@ Three generations of HBW have been on Rice Lake. That's longer than most boats i
 
 The Northumberland customer mix is more diverse than any other regional market we serve. A typical service week might include a Cobourg sailboat owner picking up parts, a Rice Lake cottager dropping off for fall winterization, a Brighton Bay of Quinte angler bringing a Pro XS in for an impeller, and a Trent River cruiser scheduling MerCruiser service. That mix is what makes Northumberland different from a more homogeneous GTA service market.
 
-For repower decisions specifically, the most common Northumberland scenario we see: a 15-20 year old Mercury (often a 90 or 115 HP) on a 16-18 foot aluminum fishing boat. The motor still runs but is starting to need more attention. The owner asks "is repower worth it on this hull?" Our [Repower vs Buy New decision guide](/blog/should-i-repower-or-buy-new-boat-ontario) walks through the math. For Northumberland-area sound hulls under 15 years old, the answer is almost always "yes, repower wins."
+For repower decisions specifically, the most common Northumberland scenario we see: a 15-20 year old Mercury (often a 90 or 115 HP) on a 16-18 foot aluminum fishing boat. The motor still runs but is starting to need more attention. The owner asks "is repower worth it on this hull?" Our [Repower vs Buy New decision guide](/blog/repower-vs-new-boat) walks through the math. For Northumberland-area sound hulls under 15 years old, the answer is almost always "yes, repower wins."
 
 ## How to start
 

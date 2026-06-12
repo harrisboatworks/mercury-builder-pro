@@ -116,7 +116,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 - [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada): Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and.
 - [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat): Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from.
-- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/should-i-repower-or-buy-new-boat-ontario): Repower vs buy new boat: a Mercury Platinum dealer's honest decision guide. Real costs, hull-condition.
+- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/repower-vs-new-boat): Repower vs buy new boat: a Mercury Platinum dealer's honest decision guide. Real costs, hull-condition.
 - [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
 
 ## FAQs

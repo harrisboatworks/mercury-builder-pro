@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-06-09
+last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What Happens During a Mercury Repower (Step-by-Step Process)"
 description: "A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking..."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-06-09
+date_modified: 2026-06-12
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-06-12  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
@@ -245,7 +245,11 @@ Yes. We give fair-market trade-in value applied to the new motor purchase. Speci
 
 ### What if something's wrong after pickup?
 
-We stand behind the work. Call us. Common post-pickup issues are minor (loose connection, hose adjustment, prop fine-tune) and resolved quickly. Major issues are rare and covered under warranty. ---
+We stand behind the work. Call us. Common post-pickup issues are minor (loose connection, hose adjustment, prop fine-tune) and resolved quickly. Major issues are rare and covered under warranty.
+
+### When should I book a repower for a spring launch?
+
+Motor lead times vary by model and season, and spring is busy. If you are planning a spring launch, the time to book is well before ice-out, not the week before. Start with a quote at mercuryrepower.ca and contact us to confirm availability for your slot.
 
 ## Next steps
 

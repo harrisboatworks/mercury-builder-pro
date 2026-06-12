@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/peterborough-mercury-dealer
-last_updated: 2026-06-11
+last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false

@@ -196,7 +196,7 @@ Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) - no s
 The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
-- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/should-i-repower-or-buy-new-boat-ontario)
+- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/repower-vs-new-boat)
 - [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower)
 
 ---
