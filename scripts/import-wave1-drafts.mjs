@@ -3,7 +3,8 @@
 // Run via: node scripts/import-wave1-drafts.mjs
 import fs from 'node:fs';
 import path from 'node:path';
-import YAML from 'yaml';
+// Custom permissive frontmatter parser (the drafts contain unquoted ":" inside
+// FAQ answers which strict YAML rejects).
 
 const UPLOAD_DIR = '/mnt/user-uploads';
 const OUT_DIR = path.resolve('src/data');
