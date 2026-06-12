@@ -1532,7 +1532,7 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位于Rice 
     category: 'HBW 中文介绍',
     readTime: '5 分钟',
     keywords: ['Harris Boat Works 中文', 'GTA 华人船主', 'Mercury Dealer Ontario 中文', 'Rice Lake marina 中文', 'MercuryRepower.ca 中文'],
-    content: `> **简短答案：** Harris Boat Works (HBW) 是莱斯湖南岸的家族经营船坞,自 1947 年至今,已经传承三代。Mercury 白金级认证经销商。距离多伦多 1-1.5 小时车程,服务价格比 GTA 同类船坞便宜 30-40%,Mercury 维修和冬储一体化。中文咨询通过邮件办理 (info@harrisboatworks.ca)。HBW 客户自送自取,不提供取送服务。
+    content: `> **简短答案：** Harris Boat Works (HBW) 是莱斯湖南岸的家族经营船坞,自 1947 年至今,已经传承三代。Mercury 白金级认证经销商。距离多伦多 1-1.5 小时车程,服务价格比 GTA 同类船坞便宜 30-40%,Mercury 维修和冬储一体化。团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件——我们会耐心沟通、尽力配合 (info@harrisboatworks.ca)。HBW 客户自送自取,不提供取送服务。
 
 ## 三代华人船主的选择
 
