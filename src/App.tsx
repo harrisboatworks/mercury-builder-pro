@@ -163,6 +163,7 @@ const BlogIndexFr = lazy(() => import("./pages/blog/BlogIndexFr"));
 // MandarinBlogArticle (legacy hand-authored page) retired 2026-06-07 — the
 // data-driven MandarinBlogArticlePage now serves /blog/zh/mercury-repower-guide-gta.
 const MandarinBlogArticlePage = lazy(() => import("./pages/blog/MandarinBlogArticlePage"));
+const TraditionalChineseBlogArticlePage = lazy(() => import("./pages/blog/TraditionalChineseBlogArticlePage"));
 const KoreanBlogArticlePage = lazy(() => import("./pages/blog/KoreanBlogArticlePage"));
 const SpanishBlogArticlePage = lazy(() => import("./pages/blog/SpanishBlogArticlePage"));
 const HindiBlogArticlePage = lazy(() => import("./pages/blog/HindiBlogArticlePage"));
