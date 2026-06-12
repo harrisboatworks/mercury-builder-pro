@@ -11,6 +11,7 @@ import {
   getMandarinArticleBySlug,
   mandarinBlogArticles,
 } from '@/data/mandarinBlogArticles';
+import { ZH_HANT_TO_HANS_SLUG } from '@/data/traditionalChineseBlogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { BlogCTA } from '@/components/blog/BlogCTA';
