@@ -4844,6 +4844,10 @@ function detectLang(path) {
   if (path.startsWith('/blog/zh/') || path === '/zh') return 'zh-Hans';
   if (path.startsWith('/blog/ko/') || path === '/ko') return 'ko';
   if (path.startsWith('/blog/es/') || path === '/es') return 'es';
+  if (path.startsWith('/blog/pa/')) return 'pa';
+  if (path.startsWith('/blog/ur/')) return 'ur';
+  if (path.startsWith('/blog/tl/')) return 'tl';
+  if (path.startsWith('/blog/hi/')) return 'hi';
   return 'en';
 }
 
@@ -4853,6 +4857,10 @@ function detectOgLocale(path) {
   if (path.startsWith('/blog/zh/') || path === '/zh') return 'zh_CN';
   if (path.startsWith('/blog/ko/') || path === '/ko') return 'ko_KR';
   if (path.startsWith('/blog/es/') || path === '/es') return 'es_ES';
+  if (path.startsWith('/blog/pa/')) return 'pa_IN';
+  if (path.startsWith('/blog/ur/')) return 'ur_PK';
+  if (path.startsWith('/blog/tl/')) return 'tl_PH';
+  if (path.startsWith('/blog/hi/')) return 'hi_IN';
   return 'en_CA';
 }
 
