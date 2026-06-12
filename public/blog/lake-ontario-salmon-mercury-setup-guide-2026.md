@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026.md
-last_updated: 2026-06-09
+last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)"
 description: "Lake Ontario salmon trolling setup from an Ontario Mercury Platinum dealer. Real numbers on alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, and..."
 category: "Fishing / Rigging"
 date_published: 2026-05-28
-date_modified: 2026-06-09
+date_modified: 2026-06-12
 keywords: ["Lake Ontario salmon Mercury setup","Mercury salmon trolling setup","Lake Ontario kicker install","Mercury 9.9 ProKicker","dual battery boat wiring Lake Ontario","Mercury SmartCraft Troll Control","Port Hope Mercury dealer","Cobourg Mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Fishing / Rigging  
 **Published:** 2026-05-28  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-06-12  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026
 
@@ -53,7 +53,7 @@ For Lake Ontario salmon work, main motor sizing depends primarily on boat type a
 
 **21 to 22 ft aluminum V-hull or hardtop:** Mercury 200 to 250 HP. The 200 is the practical sweet spot for most owners. The 250 V8 FourStroke or 250 Pro XS is the upgrade for boats that travel further offshore or run heavier.
 
-**Center console or deep-V offshore:** typically 250+ HP Mercury Verado V8 or V10, sometimes twin engines for redundancy on longer offshore runs.
+**Center console or deep-V offshore:** typically 250+ HP. Mercury FourStroke or Pro XS for HBW-standard repowers, with Verado available by special-order for true offshore or large-twin builds. Twin engines for redundancy on longer offshore runs.
 
 **Charter captain perspective:** Lake Ontario north-shore charter operators we work with typically run Mercury 200 to 250 HP main motors with a Mercury 9.9 ProKicker for trolling. Charter setups usually spec higher alternator output than recreational boats because they're running more electronics for longer days.
 
@@ -65,8 +65,8 @@ For salmon trolling, the kicker is genuinely critical. Slow trolling for hours o
 - Engineered for sustained low-RPM trolling (not just a small outboard pressed into kicker duty)
 - High-thrust gear ratio optimized for low-speed control
 - Available with electric start and remote control for helm-mounted operation
-- Mercury SmartCraft Troll Control compatible on suitable engine families
-- Counter-rotating prop versions available for twin-kicker configurations
+- High-thrust four-blade prop designed for low-speed control
+- Pairs cleanly with Mercury main-motor setups where SmartCraft Troll Control is already part of the rig
 
 **Kicker sizing:** The 9.9 ProKicker is the volume choice. For larger boats (22+ ft) or heavy-load Lake Ontario work, the Mercury 15 or 20 ProKicker provides more thrust margin. We've installed all three across our Lake Ontario customer base.
 
@@ -90,7 +90,7 @@ The electrical math matters. Electric downriggers draw significant current durin
 
 **Practical alternator minimum:** A 40 to 60 amp alternator at 12V on the main motor is the realistic floor for a 4-downrigger Lake Ontario setup, assuming typical cycling patterns and a separate cranking battery.
 
-**Comfortable headroom:** For boats that want "everything on, everything works" without voltage drop concerns, a 70 to 90 amp main alternator is the safer target. For Verado V8 and V10 motors, this is standard. For Mercury 150 to 200 FourStroke, alternator output is typically in the 35-65 A range stock, depending on model year.
+**Comfortable headroom:** For boats that want "everything on, everything works" without voltage drop concerns, a 70 to 90 amp main alternator is the safer target. Many Verado V8 and V10 setups provide higher alternator capacity, but exact output should be confirmed by model and serial number. For Mercury 150 to 200 FourStroke, alternator output is typically in the 35-65 A range stock, depending on model year.
 
 If you're running heavy electrical loads, factor alternator capacity into the main motor selection.
 
@@ -135,7 +135,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
   **What we tell customers:** Kicker installation involves transom integrity, tie-bar setup for steering integration, electrical connection to the main battery system, fuel routing, and (sometimes) remote-control integration. We see DIY installations come in for repair routinely. Worth doing right the first time.
 
 - **Myth:** "Verado is supercharged."
-  **What we tell customers:** Current Mercury Verado V8 (250-400 HP), V10 (350-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+  **What we tell customers:** Current Mercury Verado V8 250-300 HP, V10 350-400 HP, and V12 600 HP models are naturally aspirated. The older inline-6 Verado was supercharged but is no longer the current Verado platform.
 
 ## Customer language we hear
 
@@ -164,7 +164,7 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 **Build a Mercury quote:** mercuryrepower.ca
 **Service booking:** hbw.wiki/service
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Platinum Dealer. 15-20 minutes from Port Hope and Cobourg. Deep Mercury and Mercruiser parts inventory on the shelf.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Platinum Dealer. 15-20 minutes from Port Hope and Cobourg. Largest Mercury and Mercruiser parts inventory in Ontario on the shelf. That's why local guides and charter operators call us first when they need a part the same day.
 
 ## FAQs
 
@@ -174,7 +174,7 @@ Yes. We service Lake Ontario boats regularly, particularly from Port Hope (appro
 
 ### What main motor HP do you recommend for Lake Ontario salmon?
 
-Depends on boat. 19-20 ft aluminum V-hull: Mercury 150-200 HP. 21-22 ft aluminum or hardtop: Mercury 200-250 HP. Center console deep-V offshore: 250+ HP Verado V8/V10, often twin-engine. Charter captains typically run higher main HP and higher alternator output than recreational setups.
+Depends on boat. 19-20 ft aluminum V-hull: Mercury 150-200 HP. 21-22 ft aluminum or hardtop: Mercury 200-250 HP. Center console deep-V offshore: 250+ HP. FourStroke or Pro XS for HBW-standard repowers; Verado by special-order for offshore or twin builds. Charter captains typically run higher main HP and higher alternator output than recreational setups.
 
 ### What kicker do you recommend for Lake Ontario salmon trolling?
 

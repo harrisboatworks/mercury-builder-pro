@@ -35212,7 +35212,6 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
 - Gores Landing, ON
 - Quote builder available
 
-*Last reviewed: 2026-06-05*
 
 Lake Ontario salmon fishing puts heavy, specific demands on a Mercury outboard setup. Long days at trolling speed. Heavy electrical load from electric downriggers, sonar, chartplotter, and lights. Charging system has to hold voltage at idle. Kicker needs to run for hours at consistent low RPM. Dual-battery management matters.
 
@@ -35232,7 +35231,7 @@ For Lake Ontario salmon work, main motor sizing depends primarily on boat type a
 
 **21 to 22 ft aluminum V-hull or hardtop:** Mercury 200 to 250 HP. The 200 is the practical sweet spot for most owners. The 250 V8 FourStroke or 250 Pro XS is the upgrade for boats that travel further offshore or run heavier.
 
-**Center console or deep-V offshore:** typically 250+ HP Mercury Verado V8 or V10, sometimes twin engines for redundancy on longer offshore runs.
+**Center console or deep-V offshore:** typically 250+ HP. Mercury FourStroke or Pro XS for HBW-standard repowers, with Verado available by special-order for true offshore or large-twin builds. Twin engines for redundancy on longer offshore runs.
 
 **Charter captain perspective:** Lake Ontario north-shore charter operators we work with typically run Mercury 200 to 250 HP main motors with a Mercury 9.9 ProKicker for trolling. Charter setups usually spec higher alternator output than recreational boats because they're running more electronics for longer days.
 
@@ -35244,8 +35243,8 @@ For salmon trolling, the kicker is genuinely critical. Slow trolling for hours o
 - Engineered for sustained low-RPM trolling (not just a small outboard pressed into kicker duty)
 - High-thrust gear ratio optimized for low-speed control
 - Available with electric start and remote control for helm-mounted operation
-- Mercury SmartCraft Troll Control compatible on suitable engine families
-- Counter-rotating prop versions available for twin-kicker configurations
+- High-thrust four-blade prop designed for low-speed control
+- Pairs cleanly with Mercury main-motor setups where SmartCraft Troll Control is already part of the rig
 
 **Kicker sizing:** The 9.9 ProKicker is the volume choice. For larger boats (22+ ft) or heavy-load Lake Ontario work, the Mercury 15 or 20 ProKicker provides more thrust margin. We've installed all three across our Lake Ontario customer base.
 
@@ -35269,7 +35268,7 @@ The electrical math matters. Electric downriggers draw significant current durin
 
 **Practical alternator minimum:** A 40 to 60 amp alternator at 12V on the main motor is the realistic floor for a 4-downrigger Lake Ontario setup, assuming typical cycling patterns and a separate cranking battery.
 
-**Comfortable headroom:** For boats that want "everything on, everything works" without voltage drop concerns, a 70 to 90 amp main alternator is the safer target. For Verado V8 and V10 motors, this is standard. For Mercury 150 to 200 FourStroke, alternator output is typically in the 35-65 A range stock, depending on model year.
+**Comfortable headroom:** For boats that want "everything on, everything works" without voltage drop concerns, a 70 to 90 amp main alternator is the safer target. Many Verado V8 and V10 setups provide higher alternator capacity, but exact output should be confirmed by model and serial number. For Mercury 150 to 200 FourStroke, alternator output is typically in the 35-65 A range stock, depending on model year.
 
 If you're running heavy electrical loads, factor alternator capacity into the main motor selection.
 
@@ -35314,7 +35313,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
   **What we tell customers:** Kicker installation involves transom integrity, tie-bar setup for steering integration, electrical connection to the main battery system, fuel routing, and (sometimes) remote-control integration. We see DIY installations come in for repair routinely. Worth doing right the first time.
 
 - **Myth:** "Verado is supercharged."
-  **What we tell customers:** Current Mercury Verado V8 (250-400 HP), V10 (350-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+  **What we tell customers:** Current Mercury Verado V8 250-300 HP, V10 350-400 HP, and V12 600 HP models are naturally aspirated. The older inline-6 Verado was supercharged but is no longer the current Verado platform.
 
 ## Customer language we hear
 
@@ -35343,18 +35342,18 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 **Build a Mercury quote:** mercuryrepower.ca
 **Service booking:** hbw.wiki/service
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Platinum Dealer. 15-20 minutes from Port Hope and Cobourg. Deep Mercury and Mercruiser parts inventory on the shelf.`,
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Platinum Dealer. 15-20 minutes from Port Hope and Cobourg. Largest Mercury and Mercruiser parts inventory in Ontario on the shelf. That's why local guides and charter operators call us first when they need a part the same day.`,
     image: '/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-06-09',
+    dateModified: '2026-06-12',
     category: 'Fishing / Rigging',
     readTime: '10 min read',
     keywords: ["Lake Ontario salmon Mercury setup", "Mercury salmon trolling setup", "Lake Ontario kicker install", "Mercury 9.9 ProKicker", "dual battery boat wiring Lake Ontario", "Mercury SmartCraft Troll Control", "Port Hope Mercury dealer", "Cobourg Mercury dealer"],
     relatedSlugs: ["mercury-9-9-prokicker-buyer-guide", "mercury-pro-xs-repower-guide-rice-lake", "seo-t2b-cobourg-regional-landing-page", "seo-t2c-port-hope-regional-landing-page", "mercury-outboard-repower-cost-ontario-2026-cad", "hbw-on-water-load-test-mercury-repower-advantage-2026"],
     faqs: [
       { question: "Does HBW service Lake Ontario salmon boats?", answer: "Yes. We service Lake Ontario boats regularly, particularly from Port Hope (approximately 20 minutes drive) and Cobourg (approximately 15 minutes drive). We do not provide off-Rice-Lake service calls; boats come to us. For boat owners launching from north-shore Lake Ontario ports, HBW may be the closer Mercury Platinum service option than GTA-area dealers, depending on launch and storage location." },
-      { question: "What main motor HP do you recommend for Lake Ontario salmon?", answer: "Depends on boat. 19-20 ft aluminum V-hull: Mercury 150-200 HP. 21-22 ft aluminum or hardtop: Mercury 200-250 HP. Center console deep-V offshore: 250+ HP Verado V8/V10, often twin-engine. Charter captains typically run higher main HP and higher alternator output than recreational setups." },
+      { question: "What main motor HP do you recommend for Lake Ontario salmon?", answer: "Depends on boat. 19-20 ft aluminum V-hull: Mercury 150-200 HP. 21-22 ft aluminum or hardtop: Mercury 200-250 HP. Center console deep-V offshore: 250+ HP. FourStroke or Pro XS for HBW-standard repowers; Verado by special-order for offshore or twin builds. Charter captains typically run higher main HP and higher alternator output than recreational setups." },
       { question: "What kicker do you recommend for Lake Ontario salmon trolling?", answer: "Mercury 9.9 ProKicker is the volume choice. For larger boats (22+ ft) or heavy loads, the 15 or 20 ProKicker provides additional thrust margin. The ProKicker line is engineered for sustained low-RPM trolling, which is what salmon fishing requires." },
       { question: "What alternator output do I need for 4 electric downriggers?", answer: "40-60 A minimum at 12 V is the practical floor. 70-90 A is the comfortable target for boats running \"everything on\" without voltage sag. For Mercury 150-200 FourStroke, stock alternator output is typically in the 35-65 A range. Verado V8 and V10 are higher. Factor alternator into main motor selection if you're running heavy." },
       { question: "Has HBW installed Mercury SmartCraft Troll Control?", answer: "Yes. We have installed Mercury SmartCraft Troll Control for Lake Ontario salmon anglers. It works well for boats that don't run a kicker (uncommon but real) or for boats where automatic main-motor trolling speed control is preferred. For boats with a 9.9 ProKicker, the kicker handles the trolling work and SmartCraft Troll Control usually isn't necessary." },
