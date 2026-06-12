@@ -5190,6 +5190,10 @@ const multilingualBlogSitemapEntries = [
   ...visibleKoreanArticles.map(a => ({ loc: `/blog/ko/${a.slug}` })),
   ...visibleMandarinArticles.map(a => ({ loc: `/blog/zh/${a.slug}` })),
   ...visibleSpanishArticles.map(a => ({ loc: `/blog/es/${a.slug}` })),
+  ...visiblePunjabiArticles.map(a => ({ loc: `/blog/pa/${a.slug}` })),
+  ...visibleUrduArticles.map(a => ({ loc: `/blog/ur/${a.slug}` })),
+  ...visibleTagalogArticles.map(a => ({ loc: `/blog/tl/${a.slug}` })),
+  ...visibleHindiArticles.map(a => ({ loc: `/blog/hi/${a.slug}` })),
 ].map(r => ({
   loc: r.loc,
   lastmod: today,
