@@ -11638,6 +11638,10 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       {
+        question: 'Does Boost add horsepower?',
+        answer: 'No. Boost does not change rated horsepower. It changes how the engine delivers the horsepower it already has, specifically faster and stronger response in the mid-range RPM band. If you feel like your boat needs more rated power, the answer is a repower, not Boost.'
+      },
+      {
         question: 'Which Mercury engines are eligible for the Boost software upgrade?',
         answer: 'Eligibility depends on serial number, not model year. FourStroke 175-300hp, Pro XS 175-300hp, Verado 250-350hp, and Racing 150R models with serial numbers from 2B529482 onward are eligible for the dealer-installed upgrade. The 350hp Verado has a specific serial range (3B266064 to 3B578266).'
       },
