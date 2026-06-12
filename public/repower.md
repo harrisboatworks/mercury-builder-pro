@@ -14,7 +14,7 @@ index_type: hub_twin
 
 | HP Class | Typical Use | All-in Cost (CAD) |
 |---|---|---|
-| 9.9 to 25 HP | Small tin boats, kickers | $3,500 to $8,500 |
+| 9.9 to 25 HP | Small tin boats, kickers | Motor only, $3,000 to $5,500 |
 | 40 to 60 HP | 14 to 16 ft aluminum console | $11,000 to $15,000 |
 | 75 to 115 HP | 16 to 18 ft aluminum console (most common) | $17,000 to $22,000 |
 | 150 HP | 18 to 20 ft, pontoons, water sports | $23,000 to $30,000 |
@@ -27,7 +27,7 @@ index_type: hub_twin
 | 16 to 18 ft aluminum console | 75 to 115 HP | $17,000 to $22,000 | 3 to 8 weeks |
 | Pontoon / tritoon | 150 HP | $23,000 to $30,000 | 3 to 8 weeks |
 | Bass boat (performance) | 200 to 300 HP Pro XS | $35,000 to $40,000 | 3 to 8 weeks |
-| Cottage tender / tiller | 9.9 to 25 HP | $3,500 to $8,500 | 3 to 5 weeks |
+| Cottage tender / tiller | 9.9 to 25 HP | $3,000 to $5,500 (motor only) | 3 to 5 weeks |
 | Classic Evinrude / Johnson conversion (16 to 18 ft aluminum) | 75 to 115 HP | $18,500 to $25,000 | 3 to 8 weeks |
 
 Numbers above are sourced from the HP-class table on this page, the [Mercury Repower Cost Ontario 2026 guide](/blog/mercury-repower-cost-ontario-2026-cad), and the published $1,500 to $3,000 CAD brand-conversion rigging delta in the Evinrude/Yamaha/Honda conversion guides.
