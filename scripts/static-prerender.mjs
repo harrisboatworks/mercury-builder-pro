@@ -769,16 +769,28 @@ const frenchBlogArticles = loadTranslatedBlogArticles('../src/data/frenchBlogArt
 const koreanBlogArticles = loadTranslatedBlogArticles('../src/data/koreanBlogArticles.ts', 'koreanBlogArticles');
 const mandarinBlogArticles = loadTranslatedBlogArticles('../src/data/mandarinBlogArticles.ts', 'mandarinBlogArticles');
 const spanishBlogArticles = loadTranslatedBlogArticles('../src/data/spanishBlogArticles.ts', 'spanishBlogArticles');
+const punjabiBlogArticles = loadTranslatedBlogArticles('../src/data/punjabiBlogArticles.ts', 'punjabiBlogArticles');
+const urduBlogArticles = loadTranslatedBlogArticles('../src/data/urduBlogArticles.ts', 'urduBlogArticles');
+const tagalogBlogArticles = loadTranslatedBlogArticles('../src/data/tagalogBlogArticles.ts', 'tagalogBlogArticles');
+const hindiBlogArticles = loadTranslatedBlogArticles('../src/data/hindiBlogArticles.ts', 'hindiBlogArticles');
 
 assertLoaderNonEmpty(frenchBlogArticles, '../src/data/frenchBlogArticles.ts', 'frenchBlogArticles', 'French');
 assertLoaderNonEmpty(koreanBlogArticles, '../src/data/koreanBlogArticles.ts', 'koreanBlogArticles', 'Korean');
 assertLoaderNonEmpty(mandarinBlogArticles, '../src/data/mandarinBlogArticles.ts', 'mandarinBlogArticles', 'Mandarin');
 assertLoaderNonEmpty(spanishBlogArticles, '../src/data/spanishBlogArticles.ts', 'spanishBlogArticles', 'Spanish');
+assertLoaderNonEmpty(punjabiBlogArticles, '../src/data/punjabiBlogArticles.ts', 'punjabiBlogArticles', 'Punjabi');
+assertLoaderNonEmpty(urduBlogArticles, '../src/data/urduBlogArticles.ts', 'urduBlogArticles', 'Urdu');
+assertLoaderNonEmpty(tagalogBlogArticles, '../src/data/tagalogBlogArticles.ts', 'tagalogBlogArticles', 'Tagalog');
+assertLoaderNonEmpty(hindiBlogArticles, '../src/data/hindiBlogArticles.ts', 'hindiBlogArticles', 'Hindi');
 
 console.log(`[static-prerender] loaded ${frenchBlogArticles.length} fr-CA articles`);
 console.log(`[static-prerender] loaded ${koreanBlogArticles.length} ko-KR articles`);
 console.log(`[static-prerender] loaded ${mandarinBlogArticles.length} zh-CN articles`);
 console.log(`[static-prerender] loaded ${spanishBlogArticles.length} es-ES articles`);
+console.log(`[static-prerender] loaded ${punjabiBlogArticles.length} pa articles`);
+console.log(`[static-prerender] loaded ${urduBlogArticles.length} ur articles`);
+console.log(`[static-prerender] loaded ${tagalogBlogArticles.length} tl articles`);
+console.log(`[static-prerender] loaded ${hindiBlogArticles.length} hi articles`);
 
 
 const caseStudies = loadCaseStudies();
@@ -2770,6 +2782,14 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
                    : undefined;
       if (enSlug) return blogHreflangTags(enSlug);
       if (langCode === 'zh') return zhOnlyHreflangTags(article.slug);
+      // Wave-1 self-referencing hreflang for pa/ur/tl/hi (no EN twins yet).
+      if (langCode === 'pa' || langCode === 'ur' || langCode === 'tl' || langCode === 'hi') {
+        const href = `${SITE_URL}/blog/${langCode}/${article.slug}`;
+        return [
+          `<link rel="alternate" hreflang="${langCode}" href="${href}" />`,
+          `<link rel="alternate" hreflang="x-default" href="${href}" />`,
+        ].join('\n  ');
+      }
       return '';
     })(),
     extraNoscript: () => {
@@ -2790,12 +2810,20 @@ const frDealerStripHtml = '<div class="dealer-confidence-strip"><span>Concession
 const koDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury 플래티넘 딜러</span><span>·</span><span>1947년부터 가족 운영</span><span>·</span><span>1965년부터 Mercury 딜러</span><span>·</span><span>온타리오주 Gores Landing</span><span>·</span><a href="/quote/motor-selection">견적 도구 사용 가능</a></div>';
 const zhDealerStripHtml = '<div class="dealer-confidence-strip"><span>水星白金经销商</span><span>·</span><span>家族经营自1947年</span><span>·</span><span>Mercury经销商自1965年</span><span>·</span><span>安大略省 Gores Landing</span><span>·</span><a href="/quote/motor-selection">在线报价工具</a></div>';
 const esDealerStripHtml = '<div class="dealer-confidence-strip"><span>Distribuidor Mercury Platinum</span><span>·</span><span>Familiar desde 1947</span><span>·</span><span>Distribuidor Mercury desde 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Cotizador disponible</a></div>';
+const paDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>1947 ਤੋਂ family-owned</span><span>·</span><span>1965 ਤੋਂ Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+const urDealerStripHtml = '<div class="dealer-confidence-strip" dir="rtl"><span>Mercury Platinum Dealer</span><span>·</span><span>1947 سے family-owned</span><span>·</span><span>1965 سے Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+const tlDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>Family-owned mula 1947</span><span>·</span><span>Mercury dealer mula 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+const hiDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>1947 से family-owned</span><span>·</span><span>1965 से Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
 
 const frenchBlogArticleRoutes = buildTranslatedBlogRoutes(frenchBlogArticles, 'fr', frDealerStripHtml, 'fr_CA', 'fr');
 const koreanBlogArticleRoutes = buildTranslatedBlogRoutes(koreanBlogArticles, 'ko', koDealerStripHtml, 'ko_KR', 'ko');
 const mandarinBlogArticleRoutes = buildTranslatedBlogRoutes(mandarinBlogArticles, 'zh', zhDealerStripHtml, 'zh_CN', 'zh-Hans');
 const spanishBlogArticleRoutes = buildTranslatedBlogRoutes(spanishBlogArticles, 'es', esDealerStripHtml, 'es_ES', 'es');
-console.log(`[static-prerender] translated blog routes → fr:${frenchBlogArticleRoutes.length} ko:${koreanBlogArticleRoutes.length} zh:${mandarinBlogArticleRoutes.length} es:${spanishBlogArticleRoutes.length}`);
+const punjabiBlogArticleRoutes = buildTranslatedBlogRoutes(punjabiBlogArticles, 'pa', paDealerStripHtml, 'pa_IN', 'pa');
+const urduBlogArticleRoutes = buildTranslatedBlogRoutes(urduBlogArticles, 'ur', urDealerStripHtml, 'ur_PK', 'ur');
+const tagalogBlogArticleRoutes = buildTranslatedBlogRoutes(tagalogBlogArticles, 'tl', tlDealerStripHtml, 'tl_PH', 'tl');
+const hindiBlogArticleRoutes = buildTranslatedBlogRoutes(hindiBlogArticles, 'hi', hiDealerStripHtml, 'hi_IN', 'hi');
+console.log(`[static-prerender] translated blog routes → fr:${frenchBlogArticleRoutes.length} ko:${koreanBlogArticleRoutes.length} zh:${mandarinBlogArticleRoutes.length} es:${spanishBlogArticleRoutes.length} pa:${punjabiBlogArticleRoutes.length} ur:${urduBlogArticleRoutes.length} tl:${tagalogBlogArticleRoutes.length} hi:${hindiBlogArticleRoutes.length}`);
 
 
 // ============================================================
@@ -4180,8 +4208,10 @@ const routes = [
     { lang: 'zh', articles: mandarinBlogArticles, htmlLang: 'zh-Hans', ogLocale: 'zh_CN',  h1: '水星马达指南与船艇技巧',                         intro: '安大略省自1947年起的水星白金经销商，提供水星舷外机、动力升级、保养与购买的专业建议。', backTo: '所有文章' },
     { lang: 'ko', articles: koreanBlogArticles,   htmlLang: 'ko',      ogLocale: 'ko_KR',  h1: 'Mercury 모터 가이드 & 보팅 팁',                  intro: '1947년부터 온타리오의 Mercury Marine 플래티넘 딜러가 제공하는 Mercury 선외기, 리파워, 정비 및 구매 가이드.', backTo: '전체 글' },
     { lang: 'es', articles: spanishBlogArticles,  htmlLang: 'es',      ogLocale: 'es_419', h1: 'Guías Mercury y consejos de navegación',         intro: 'Consejos expertos sobre motores fueraborda Mercury, repotenciación, mantenimiento y compra — del distribuidor Mercury Marine Platinum de Ontario desde 1947.', backTo: 'Todos los artículos' },
-    { lang: 'hi', articles: [],                   htmlLang: 'hi',      ogLocale: 'hi_IN',  h1: 'Mercury मोटर गाइड और बोटिंग टिप्स',              intro: '1947 से ओंटारियो के Mercury Marine प्लेटिनम डीलर से Mercury आउटबोर्ड मोटरों पर विशेषज्ञ सलाह।', backTo: 'सभी लेख' },
-    { lang: 'pa', articles: [],                   htmlLang: 'pa',      ogLocale: 'pa_IN',  h1: 'Mercury ਮੋਟਰ ਗਾਈਡਾਂ ਅਤੇ ਬੋਟਿੰਗ ਟਿਪਸ',           intro: '1947 ਤੋਂ ਓਨਟਾਰੀਓ ਦੇ Mercury Marine ਪਲੈਟੀਨਮ ਡੀਲਰ ਤੋਂ Mercury ਆਊਟਬੋਰਡ ਮੋਟਰਾਂ ਬਾਰੇ ਮਾਹਰ ਸਲਾਹ।', backTo: 'ਸਾਰੇ ਲੇਖ' },
+    { lang: 'hi', articles: hindiBlogArticles,    htmlLang: 'hi',      ogLocale: 'hi_IN',  h1: 'Mercury मोटर गाइड और बोटिंग टिप्स',              intro: '1947 से ओंटारियो के Mercury Marine प्लेटिनम डीलर से Mercury आउटबोर्ड मोटरों पर विशेषज्ञ सलाह।', backTo: 'सभी लेख' },
+    { lang: 'pa', articles: punjabiBlogArticles,  htmlLang: 'pa',      ogLocale: 'pa_IN',  h1: 'Mercury ਮੋਟਰ ਗਾਈਡਾਂ ਅਤੇ ਬੋਟਿੰਗ ਟਿਪਸ',           intro: '1947 ਤੋਂ ਓਨਟਾਰੀਓ ਦੇ Mercury Marine ਪਲੈਟੀਨਮ ਡੀਲਰ ਤੋਂ Mercury ਆਊਟਬੋਰਡ ਮੋਟਰਾਂ ਬਾਰੇ ਮਾਹਰ ਸਲਾਹ।', backTo: 'ਸਾਰੇ ਲੇਖ' },
+    { lang: 'ur', articles: urduBlogArticles,     htmlLang: 'ur',      ogLocale: 'ur_PK',  h1: 'Mercury موٹر گائیڈز اور بوٹنگ ٹپس',              intro: '1947 سے Ontario کے Mercury Marine Platinum dealer سے Mercury outboard motors پر ماہر مشورہ۔', backTo: 'تمام مضامین' },
+    { lang: 'tl', articles: tagalogBlogArticles,  htmlLang: 'tl',      ogLocale: 'tl_PH',  h1: 'Mercury motor guides at boating tips',           intro: 'Mga eksperto sa Mercury outboard motors mula sa Mercury Marine Platinum dealer ng Ontario simula 1947.', backTo: 'Lahat ng artikulo' },
   ].map(({ lang, articles, htmlLang, ogLocale, h1, intro, backTo }) => ({
     path: `/blog/${lang}`,
     title: `${h1} | Harris Boat Works`,
@@ -4737,6 +4767,10 @@ const routes = [
   ...koreanBlogArticleRoutes,
   ...mandarinBlogArticleRoutes,
   ...spanishBlogArticleRoutes,
+  ...punjabiBlogArticleRoutes,
+  ...urduBlogArticleRoutes,
+  ...tagalogBlogArticleRoutes,
+  ...hindiBlogArticleRoutes,
   ...motorPageRoutes,
   caseStudiesIndexRoute,
   ...caseStudyDetailRoutes,
@@ -4812,6 +4846,10 @@ function detectLang(path) {
   if (path.startsWith('/blog/zh/') || path === '/zh') return 'zh-Hans';
   if (path.startsWith('/blog/ko/') || path === '/ko') return 'ko';
   if (path.startsWith('/blog/es/') || path === '/es') return 'es';
+  if (path.startsWith('/blog/pa/')) return 'pa';
+  if (path.startsWith('/blog/ur/')) return 'ur';
+  if (path.startsWith('/blog/tl/')) return 'tl';
+  if (path.startsWith('/blog/hi/')) return 'hi';
   return 'en';
 }
 
@@ -4821,6 +4859,10 @@ function detectOgLocale(path) {
   if (path.startsWith('/blog/zh/') || path === '/zh') return 'zh_CN';
   if (path.startsWith('/blog/ko/') || path === '/ko') return 'ko_KR';
   if (path.startsWith('/blog/es/') || path === '/es') return 'es_ES';
+  if (path.startsWith('/blog/pa/')) return 'pa_IN';
+  if (path.startsWith('/blog/ur/')) return 'ur_PK';
+  if (path.startsWith('/blog/tl/')) return 'tl_PH';
+  if (path.startsWith('/blog/hi/')) return 'hi_IN';
   return 'en_CA';
 }
 
@@ -4857,9 +4899,11 @@ function computePageId(pathname) {
 
 function stamp(route) {
   let html = shell;
+  const langCode = detectLang(route.path);
+  const dirAttr = route.path.startsWith('/blog/ur/') ? ' dir="rtl"' : '';
   html = html.replace(
     /<html lang="en">/i,
-    `<html lang="${detectLang(route.path)}">`
+    `<html lang="${langCode}"${dirAttr}>`
   );
 
   // Per-route analytics page tags (Helmet adopts these on hydration via data-rh="true").
@@ -5075,6 +5119,10 @@ const visibleFrenchArticles = frenchBlogArticles.filter(isPubliclyVisible);
 const visibleKoreanArticles = koreanBlogArticles.filter(isPubliclyVisible);
 const visibleMandarinArticles = mandarinBlogArticles.filter(isPubliclyVisible);
 const visibleSpanishArticles = spanishBlogArticles.filter(isPubliclyVisible);
+const visiblePunjabiArticles = punjabiBlogArticles.filter(isPubliclyVisible);
+const visibleUrduArticles = urduBlogArticles.filter(isPubliclyVisible);
+const visibleTagalogArticles = tagalogBlogArticles.filter(isPubliclyVisible);
+const visibleHindiArticles = hindiBlogArticles.filter(isPubliclyVisible);
 
 function countFilterReasons(list) {
   let future = 0, hidden = 0;
@@ -5144,6 +5192,10 @@ const multilingualBlogSitemapEntries = [
   ...visibleKoreanArticles.map(a => ({ loc: `/blog/ko/${a.slug}` })),
   ...visibleMandarinArticles.map(a => ({ loc: `/blog/zh/${a.slug}` })),
   ...visibleSpanishArticles.map(a => ({ loc: `/blog/es/${a.slug}` })),
+  ...visiblePunjabiArticles.map(a => ({ loc: `/blog/pa/${a.slug}` })),
+  ...visibleUrduArticles.map(a => ({ loc: `/blog/ur/${a.slug}` })),
+  ...visibleTagalogArticles.map(a => ({ loc: `/blog/tl/${a.slug}` })),
+  ...visibleHindiArticles.map(a => ({ loc: `/blog/hi/${a.slug}` })),
 ].map(r => ({
   loc: r.loc,
   lastmod: today,
