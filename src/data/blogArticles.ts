@@ -1075,7 +1075,7 @@ These got SmartCraft added in 2022. If you have a 2021 or earlier 25 or 30, no C
 
 ### Mercury Avator electric
 
-The Avator electric outboards (7e, 20e, 35e at time of writing) connect to the Mercury Marine app but use a different module than the gas SmartCraft path. The end-user experience is the same. The install part number is different. If you have an Avator, ask us specifically for the Avator path.
+The Avator electric outboards (7.5e, 20e, 35e at time of writing) connect to the Mercury Marine app but use a different module than the gas SmartCraft path. The end-user experience is the same. The install part number is different. If you have an Avator, ask us specifically for the Avator path.
 
 ### Mercury Joystick Piloting / Active Trim / Skyhook setups
 
