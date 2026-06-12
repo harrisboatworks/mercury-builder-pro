@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-06-09
+last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Break In a New Mercury Outboard (10-Hour Guide)"
 description: "The Mercury 10-hour break-in, step by step: RPM targets by hour, what to avoid, and the 20-hour first service that protects your warranty. HBW guide."
 category: "New Owner"
 date_published: 2024-02-20
-date_modified: 2026-06-09
+date_modified: 2026-06-12
 keywords: ["mercury motor break in","new outboard break in procedure","mercury break in period","outboard motor break in","new boat motor care"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** New Owner  
 **Published:** 2024-02-20  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-06-12  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 
@@ -121,7 +121,7 @@ source: Cobourg
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Due for your 20-hour first service? Book it online at [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
 
 ## What we do on new motor delivery at HBW
 
