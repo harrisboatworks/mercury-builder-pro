@@ -11960,7 +11960,7 @@ Every HBW conversion includes:
 - A hull walk-around and transom inspection before anything is ordered
 - The full control-system swap: harness, controls, gauges
 - Prop selection and a sea-trial on Rice Lake before delivery
-- The Pleasure Craft Licence update, which Transport Canada requires when the motor changes, handled for every HBW customer at no extra charge
+- The Pleasure Craft Licence update, so your licence information stays current with Transport Canada after the motor change, handled for every HBW customer at no extra charge
 - A fresh 3-year Mercury limited warranty on the new motor
 
 ![Old Evinrude removed beside new Mercury FourStroke ready for install](/lovable-uploads/inline/inline-evinrude-to-mercury-swap.png)
