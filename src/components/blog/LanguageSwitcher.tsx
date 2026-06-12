@@ -6,8 +6,10 @@ import { mandarinBlogArticles } from '@/data/mandarinBlogArticles';
 import { spanishBlogArticles } from '@/data/spanishBlogArticles';
 import { hindiBlogArticles } from '@/data/hindiBlogArticles';
 import { punjabiBlogArticles } from '@/data/punjabiBlogArticles';
+import { urduBlogArticles } from '@/data/urduBlogArticles';
+import { tagalogBlogArticles } from '@/data/tagalogBlogArticles';
 
-export type BlogLanguage = 'en' | 'fr' | 'ko' | 'zh' | 'es' | 'hi' | 'pa';
+export type BlogLanguage = 'en' | 'fr' | 'ko' | 'zh' | 'es' | 'hi' | 'pa' | 'ur' | 'tl';
 
 interface LanguageOption {
   code: BlogLanguage;
@@ -26,6 +28,8 @@ const LANGUAGES: LanguageOption[] = [
   { code: 'es', label: 'Español', pathPrefix: '/blog/es', articles: spanishBlogArticles },
   { code: 'hi', label: 'हिन्दी', pathPrefix: '/blog/hi', articles: hindiBlogArticles },
   { code: 'pa', label: 'ਪੰਜਾਬੀ', pathPrefix: '/blog/pa', articles: punjabiBlogArticles },
+  { code: 'ur', label: 'اردو', pathPrefix: '/blog/ur', articles: urduBlogArticles },
+  { code: 'tl', label: 'Tagalog', pathPrefix: '/blog/tl', articles: tagalogBlogArticles },
 ];
 
 interface Props {
