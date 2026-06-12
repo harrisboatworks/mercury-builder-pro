@@ -35243,8 +35243,8 @@ For salmon trolling, the kicker is genuinely critical. Slow trolling for hours o
 - Engineered for sustained low-RPM trolling (not just a small outboard pressed into kicker duty)
 - High-thrust gear ratio optimized for low-speed control
 - Available with electric start and remote control for helm-mounted operation
-- Mercury SmartCraft Troll Control compatible on suitable engine families
-- Counter-rotating prop versions available for twin-kicker configurations
+- High-thrust four-blade prop designed for low-speed control
+- Pairs cleanly with Mercury main-motor setups where SmartCraft Troll Control is already part of the rig
 
 **Kicker sizing:** The 9.9 ProKicker is the volume choice. For larger boats (22+ ft) or heavy-load Lake Ontario work, the Mercury 15 or 20 ProKicker provides more thrust margin. We've installed all three across our Lake Ontario customer base.
 
