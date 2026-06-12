@@ -35231,7 +35231,7 @@ For Lake Ontario salmon work, main motor sizing depends primarily on boat type a
 
 **21 to 22 ft aluminum V-hull or hardtop:** Mercury 200 to 250 HP. The 200 is the practical sweet spot for most owners. The 250 V8 FourStroke or 250 Pro XS is the upgrade for boats that travel further offshore or run heavier.
 
-**Center console or deep-V offshore:** typically 250+ HP Mercury Verado V8 or V10, sometimes twin engines for redundancy on longer offshore runs.
+**Center console or deep-V offshore:** typically 250+ HP. Mercury FourStroke or Pro XS for HBW-standard repowers, with Verado available by special-order for true offshore or large-twin builds. Twin engines for redundancy on longer offshore runs.
 
 **Charter captain perspective:** Lake Ontario north-shore charter operators we work with typically run Mercury 200 to 250 HP main motors with a Mercury 9.9 ProKicker for trolling. Charter setups usually spec higher alternator output than recreational boats because they're running more electronics for longer days.
 
