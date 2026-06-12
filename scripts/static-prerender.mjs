@@ -3346,56 +3346,144 @@ function hubArticleListHtml(groups) {
 }
 
 const HUB_DEFS = [
-  {
-    path: '/repower',
-    metaTitle: 'Mercury Repower Ontario 2026: Cost, Process, Financing | HBW',
-    metaDescription: 'Mercury repowers in Ontario typically run $11,000-$40,000 CAD all-in. Live pricing, the full repower process, and 7.99% financing at Harris Boat Works.',
-    breadcrumbName: 'Mercury Repower',
-    h1: 'Mercury Repower Guide for Ontario Boaters (2026)',
-    intro: "A Mercury repower means replacing your existing outboard with a new Mercury on your current boat. For most Ontario freshwater customers in 2026, all-in costs land between $11,000 and $40,000 CAD depending on HP class, hull, and rigging. The hull is the asset; the motor is the wear part. A repower on a solid hull gives you 80% of the new-boat experience for half the money. Live pricing on every Mercury we sell is at /quote/motor-selection.",
-    table: {
-      caption: 'Mercury Repower Cost by HP Class',
-      columns: [
-        { key: 'hp', label: 'HP Class' },
-        { key: 'use', label: 'Typical Use' },
-        { key: 'cost', label: 'All-in Cost (CAD before HST)' },
+  (() => {
+    const directory = [
+      { heading: 'Deciding', cards: [
+        { title: 'Boat Repowering Guide: When to Replace Your Motor', to: '/blog/boat-repowering-guide-when-to-replace-motor', description: 'Warning signs, age thresholds, and the math of repower vs replace.' },
+        { title: 'Repower vs New Boat', to: '/blog/repower-vs-new-boat', description: 'The honest CAD math when the hull is solid.' },
+        { title: 'Boat Hull Replacement vs Repower Decision', to: '/blog/boat-hull-replacement-vs-repower-decision', description: 'When the hull is worth keeping and when it is not.' },
+        { title: 'Repair, Repower, or Sell Your Boat (Ontario)', to: '/blog/repair-repower-or-sell-boat-ontario-decision-guide', description: 'A 3-way decision guide for owners staring at a quote.' },
+        { title: 'Mercury Repower Eligibility Guide', to: '/blog/mercury-repower-eligibility-guide', description: 'Hull, transom, and rigging checks before you commit.' },
+      ]},
+      { heading: 'Cost & Financing', cards: [
+        { title: 'Mercury Repower Cost Ontario 2026 (CAD)', to: '/blog/mercury-repower-cost-ontario-2026-cad', description: 'Detailed cost breakdown by HP class with line-item rigging.' },
+        { title: 'Repower Financing Ontario: Rates & Monthly Payments', to: '/blog/repower-financing-ontario-rates-monthly-payments', description: 'TD Always On rates, term lengths, and worked payment examples.' },
+        { title: 'Mercury Outboard Financing Ontario 2026', to: '/blog/mercury-outboard-financing-ontario-2026', description: 'How to apply through HBW and Dealerplan Peterborough.' },
+        { title: 'Old Motor Trade-In, HST & Disposal (Ontario)', to: '/blog/repower-old-motor-trade-in-hst-disposal-ontario', description: 'How trade-in credit, HST, and disposal interact on a repower.' },
+      ]},
+      { heading: 'Process & What to Expect', cards: [
+        { title: 'What Happens During a Mercury Repower', to: '/blog/what-happens-during-mercury-repower', description: 'The 7-step shop walk-through from deposit to pickup.' },
+        { title: 'HBW On-Water Load Test: The Mercury Repower Advantage', to: '/blog/hbw-on-water-load-test-mercury-repower-advantage-2026', description: 'Why every motor gets a real Rice Lake water test.' },
+        { title: 'Mercury Warranty After a Repower (Ontario)', to: '/blog/mercury-warranty-after-repower-ontario', description: 'How the 3+3 warranty and any active promo extension apply post-repower.' },
+        { title: 'Pleasure Craft Licence Update During Repower', to: '/blog/pleasure-craft-licence-update-repower-ontario', description: 'When and how to update Transport Canada paperwork.' },
+        { title: 'Winter Repower Planning Guide', to: '/blog/winter-repower-planning-guide', description: 'Why January to March is the smart time to book.' },
+      ]},
+      { heading: 'Brand & Engine-Type Conversions', cards: [
+        { title: 'Evinrude to Mercury Repower (Ontario)', to: '/blog/evinrude-to-mercury-repower-ontario-guide', description: 'Brand-conversion costs, rigging changes, and timing.' },
+        { title: 'Yamaha to Mercury Repower (Ontario)', to: '/blog/yamaha-to-mercury-repower-ontario-guide', description: 'What changes when you switch brands at the transom.' },
+        { title: 'Honda to Mercury Repower (Ontario)', to: '/blog/honda-to-mercury-repower-ontario-guide', description: 'Honda-specific rigging, controls, and prop swap notes.' },
+        { title: 'Two-Stroke vs Four-Stroke Repower', to: '/blog/two-stroke-vs-four-stroke-repower', description: 'Old smoker to modern FourStroke: what actually changes.' },
+        { title: 'Outboard vs Sterndrive Repower (Ontario, 2026)', to: '/blog/outboard-vs-sterndrive-2026-ontario-repower', description: 'Why most Ontario boats end up outboard after a sterndrive repower.' },
+      ]},
+      { heading: 'Rigging, Controls & Fit', cards: [
+        { title: 'Mercury DTS vs Mechanical Controls', to: '/blog/mercury-dts-vs-mechanical-controls-ontario-repower', description: 'When digital throttle and shift is worth the rigging cost.' },
+        { title: 'Horsepower & Capacity Plate Guide', to: '/blog/repower-horsepower-capacity-plate-guide', description: 'Reading the legal HP ceiling on your transom before you spec a motor.' },
+        { title: 'Pontoon vs Aluminum vs V-Hull Repower Differences', to: '/blog/repower-pontoon-aluminum-v-hull-differences', description: 'How hull type changes HP, gearcase, and rigging choices.' },
+      ]},
+      { heading: 'Local Guides', cards: [
+        { title: 'Complete Guide to Boat Repower in the Kawarthas', to: '/blog/complete-guide-boat-repower-kawarthas', description: 'End-to-end process for Kawartha-region boats.' },
+        { title: 'Ontario Cottage Boat Motor Repower Guide', to: '/blog/ontario-cottage-boat-motor-repower-guide', description: 'Cottage-use specifics: kickers, fishing, family runabouts.' },
+        { title: 'Mercury Repower GTA: Toronto-Area Boater Guide', to: '/blog/mercury-repower-gta-toronto-destination', description: 'Logistics, pricing, and timeline for a GTA-to-Gores-Landing repower.' },
+        { title: 'Mercury Pro XS Repower for Rice Lake & Kawartha Anglers', to: '/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers', description: 'Pro XS hole-shot, top end, and Command Thrust for serious anglers.' },
+      ]},
+    ];
+    const allDirItems = directory.flatMap(g => g.cards);
+    const itemListSchema = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": `${SITE_URL}/repower#directory`,
+      "name": "HBW Boat Repower Guide: Article Directory",
+      "numberOfItems": allDirItems.length,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": allDirItems.map((c, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "url": `${SITE_URL}${c.to}`,
+        "name": c.title,
+      })),
+    };
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${SITE_URL}/repower#service`,
+      "name": "Mercury Outboard Repower Service",
+      "serviceType": "Boat Motor Replacement",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Harris Boat Works",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "5369 Harris Boat Works Rd",
+          "addressLocality": "Gores Landing",
+          "addressRegion": "ON",
+          "postalCode": "K0K 2E0",
+          "addressCountry": "CA",
+        },
+        "telephone": "(905) 342-2153",
+      },
+      "areaServed": ["Rice Lake", "Kawarthas", "Peterborough", "Northumberland County", "GTA", "Toronto", "Ontario"],
+      "description": "Full Mercury outboard repower service: removal, rigging, controls, prop, fuel connection, and water test on Rice Lake. Pickup only at Gores Landing, Ontario.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "CAD",
+        "priceRange": "$11,000 - $40,000",
+        "availableDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModePickUp",
+      },
+    };
+    const benchmarksTable = () => hubTableHtml(
+      'Ontario Repower Benchmarks',
+      [
+        { key: 'scenario', label: 'Scenario' },
+        { key: 'hp', label: 'HP Range' },
+        { key: 'cost', label: 'Typical All-in (CAD)' },
+        { key: 'timeline', label: 'Typical Shop Timeline' },
       ],
-      rows: [
-        { hp: '9.9 to 25 HP', use: 'Small tin boats, kickers', cost: 'Motor only, $2,000 to $5,500' },
-        { hp: '40 to 60 HP', use: '14 to 16 ft aluminum console', cost: '$11,000 to $15,000' },
-        { hp: '75 to 115 HP', use: '16 to 18 ft aluminum console (most common)', cost: '$17,000 to $22,000' },
-        { hp: '150 HP', use: '18 to 20 ft, pontoons, water sports', cost: '$23,000 to $30,000' },
-        { hp: '200 to 300 HP', use: 'Larger fiberglass, tritoons, performance', cost: '$35,000 to $40,000' },
+      [
+        { scenario: '16 to 18 ft aluminum console', hp: '75 to 115 HP', cost: '$17,000 to $22,000', timeline: '3 to 8 weeks' },
+        { scenario: 'Pontoon / tritoon', hp: '150 HP', cost: '$23,000 to $30,000', timeline: '3 to 8 weeks' },
+        { scenario: 'Bass boat (performance)', hp: '200 to 300 HP Pro XS', cost: '$35,000 to $40,000', timeline: '3 to 8 weeks' },
+        { scenario: 'Cottage tender / tiller', hp: '9.9 to 25 HP', cost: '$3,000 to $5,500 (motor only)', timeline: '3 to 5 weeks' },
+        { scenario: 'Classic Evinrude / Johnson conversion (16 to 18 ft aluminum)', hp: '75 to 115 HP', cost: '$18,500 to $25,000', timeline: '3 to 8 weeks' },
       ],
-    },
-    articleGroups: [
-      { heading: 'Repower decision', cards: [
-        { title: 'Boat Repowering Guide: When to Replace Your Motor', to: '/blog/boat-repowering-guide-when-to-replace-motor', description: 'Warning signs, age thresholds, and the math.' },
-        { title: 'Boat Hull Replacement vs Repower Decision', to: '/blog/boat-hull-replacement-vs-repower-decision', description: 'When the hull is worth keeping.' },
-        { title: 'Ontario Cottage Boat Motor Repower Guide', to: '/blog/ontario-cottage-boat-motor-repower-guide', description: 'Cottage-use specifics.' },
-      ]},
-      { heading: 'Cost and financing', cards: [
-        { title: 'Mercury Repower Cost Ontario 2026 (CAD)', to: '/blog/mercury-repower-cost-ontario-2026-cad', description: 'Detailed cost breakdown.' },
-        { title: 'Mercury Outboard Financing Ontario 2026', to: '/blog/mercury-outboard-financing-ontario-2026', description: 'Rates, terms, applications.' },
-        { title: 'Cheapest Mercury Outboard Canada 2026', to: '/blog/cheapest-mercury-outboard-canada-2026', description: 'Lowest entry points.' },
-      ]},
-      { heading: 'Process and execution', cards: [
-        { title: 'Complete Guide to Boat Repower in the Kawarthas', to: '/blog/complete-guide-boat-repower-kawarthas', description: 'End-to-end process.' },
-        { title: 'Evinrude to Mercury Repower Ontario Guide', to: '/blog/evinrude-to-mercury-repower-ontario-guide', description: 'Brand-conversion guide.' },
-        { title: 'Pleasure Craft Licence Update During Repower', to: '/blog/pleasure-craft-licence-update-repower-ontario', description: 'Transport Canada paperwork.' },
-      ]},
-    ],
-    faqs: [
-      { question: 'How much does a Mercury repower cost in Ontario?', answer: 'Typical 2026 all-in repowers land $11,000 to $40,000 CAD depending on HP class. Smaller motors (40 to 60 HP) are at the low end; larger motors (200 to 300 HP) at the high end. Most Kawartha repowers are 75 to 115 HP and land $17,000 to $22,000 CAD. See live pricing at /quote/motor-selection.' },
-      { question: 'Should I repower or buy a new boat?', answer: "For most boaters with a hull less than 20 years old that's structurally solid, repower wins on the math. A new comparable boat package costs $25,000 to $50,000 CAD more than a repower. The hull is the asset; the motor is the wear part." },
-      { question: 'How long does a Mercury repower take?', answer: 'Mercury-to-Mercury repowers take 2 to 4 days of shop time. Brand conversions (Evinrude, Yamaha, Honda to Mercury) take longer. Spring rush (March to May) adds wait time before the shop starts.' },
-      { question: 'Can I finance a Mercury repower?', answer: 'Yes. Mercury Repower Financing offers 7.99% APR for qualified buyers. We process applications in-shop. See our financing guide for details.' },
-      { question: 'Should I switch from Evinrude to Mercury?', answer: 'For most Evinrude owners, yes. BRP shut down Evinrude outboard production in 2020 and parts/service support is shrinking. Brand conversion adds $1,500 to $3,000 CAD in rigging but pays back over the life of the new motor.' },
-      { question: 'When is the best time to book a repower?', answer: 'Off-season (October through April). Mercury inventory is best, shop time is available, and the boat is ready for next season. Spring slots fill up by March.' },
-      { question: 'Will my old controls and rigging work with a new Mercury?', answer: 'Mercury-to-Mercury repowers usually keep existing post-2010 controls. Older or non-Mercury rigging needs replacement. Brand conversions need new everything. We assess during the hull walk-around.' },
-      { question: 'Do I need to update my Pleasure Craft Licence after a repower?', answer: 'Yes if motor HP, brand, or model changes. Updates are free and take 10 to 15 minutes online. We handle the paperwork for HBW customers.' },
-    ],
-  },
+    );
+    return {
+      path: '/repower',
+      lastReviewedISO: '2026-06-12',
+      metaTitle: 'Boat Repower Ontario 2026: Cost & Process | HBW',
+      metaDescription: 'Boat repower in Ontario in 2026 typically runs $11,000 to $40,000 CAD, depending on HP. Cost, process, and Mercury repower guidance from HBW.',
+      breadcrumbName: 'Boat Repower Guide',
+      h1: 'Boat Repower Guide for Ontario (2026): Mercury Repower Specialists',
+      intro: "A boat repower means replacing your existing outboard with a new Mercury on your current boat. For most Ontario freshwater customers in 2026, a full boat engine repower lands between $11,000 and $40,000 CAD depending on HP class, hull, and rigging. The hull is the asset; the motor is the wear part. A repower on a solid hull gives you 80% of the new-boat experience for half the money. Live pricing on every Mercury we sell is at /quote/motor-selection.",
+      table: {
+        caption: 'Mercury Repower Cost by HP Class',
+        columns: [
+          { key: 'hp', label: 'HP Class' },
+          { key: 'use', label: 'Typical Use' },
+          { key: 'cost', label: 'All-in Cost (CAD before HST)' },
+        ],
+        rows: [
+          { hp: '9.9 to 25 HP', use: 'Small tin boats, kickers', cost: 'Motor only, $3,000 to $5,500' },
+          { hp: '40 to 60 HP', use: '14 to 16 ft aluminum console', cost: '$11,000 to $15,000' },
+          { hp: '75 to 115 HP', use: '16 to 18 ft aluminum console (most common)', cost: '$17,000 to $22,000' },
+          { hp: '150 HP', use: '18 to 20 ft, pontoons, water sports', cost: '$23,000 to $30,000' },
+          { hp: '200 to 300 HP', use: 'Larger fiberglass, tritoons, performance', cost: '$35,000 to $40,000' },
+        ],
+      },
+      articleGroups: directory,
+      extraBodyHtml: benchmarksTable,
+      extraSchemas: [itemListSchema, serviceSchema],
+      faqs: [
+        { question: 'How much does a Mercury repower cost in Ontario?', answer: 'Typical 2026 all-in repowers land $11,000 to $40,000 CAD depending on HP class. Smaller motors (40 to 60 HP) are at the low end; larger motors (200 to 300 HP) at the high end. Most Kawartha repowers are 75 to 115 HP and land $17,000 to $22,000 CAD. See live pricing at /quote/motor-selection.' },
+        { question: 'Should I repower or buy a new boat?', answer: "For most boaters with a hull less than 20 years old that's structurally solid, repower wins on the math. A new comparable boat package costs $25,000 to $50,000 CAD more than a repower. The hull is the asset; the motor is the wear part." },
+        { question: 'How long does a Mercury repower take?', answer: 'Mercury-to-Mercury repowers take 2 to 4 days of shop time. Brand conversions (Evinrude, Yamaha, Honda to Mercury) take longer. Spring rush (March to May) adds wait time before the shop starts.' },
+        { question: 'Can I finance a Mercury repower?', answer: 'Yes. Through December 31, 2026, the headline program is TD Auto Finance "Always On" at 5.48% APR (OAC) via Dealerplan Peterborough, with a $5,000 minimum financed and a $349 Dealerplan fee added post-tax. We process applications in-shop. See our financing guide for the worked monthly payment examples.' },
+        { question: 'Should I switch from Evinrude to Mercury?', answer: 'For most Evinrude owners, yes. BRP shut down Evinrude outboard production in 2020 and parts/service support is shrinking. Brand conversion adds $1,500 to $3,000 CAD in rigging but pays back over the life of the new motor.' },
+        { question: 'When is the best time to book a repower?', answer: 'Off-season (October through April). Mercury inventory is best, shop time is available, and the boat is ready for next season. Spring slots fill up by March.' },
+        { question: 'Will my old controls and rigging work with a new Mercury?', answer: 'Mercury-to-Mercury repowers usually keep existing post-2010 controls. Older or non-Mercury rigging needs replacement. Brand conversions need new everything. We assess during the hull walk-around.' },
+        { question: 'Do I need to update my Pleasure Craft Licence after a repower?', answer: 'Yes if motor HP, brand, or model changes. Updates are free and take 10 to 15 minutes online. We handle the paperwork for HBW customers.' },
+      ],
+    };
+  })(),
   {
     path: '/motor-selection',
     metaTitle: 'Choose the Right Mercury Outboard 2026: HP, Family, Prop | HBW',
@@ -3559,26 +3647,33 @@ const HUB_DEFS = [
 
 const HUB_LAST_REVIEWED = '2026-05-05';
 
-const HUB_ROUTES = HUB_DEFS.map(def => ({
-  path: def.path,
-  title: def.metaTitle,
-  description: def.metaDescription,
-  h1: def.h1,
-  intro: def.intro,
-  schemas: hubSchemas({
+const HUB_ROUTES = HUB_DEFS.map(def => {
+  const baseSchemas = hubSchemas({
     path: def.path,
     metaTitle: def.metaTitle,
     metaDescription: def.metaDescription,
     h1: def.h1,
     breadcrumbName: def.breadcrumbName,
     faqs: def.faqs,
-    lastReviewedISO: HUB_LAST_REVIEWED,
-  }),
-  extraNoscript: () =>
-    hubTableHtml(def.table.caption, def.table.columns, def.table.rows) +
-    hubArticleListHtml(def.articleGroups) +
-    hubFaqHtml(def.faqs),
-}));
+    lastReviewedISO: def.lastReviewedISO || HUB_LAST_REVIEWED,
+  });
+  const schemas = def.extraSchemas && def.extraSchemas.length
+    ? [...baseSchemas, ...def.extraSchemas]
+    : baseSchemas;
+  return {
+    path: def.path,
+    title: def.metaTitle,
+    description: def.metaDescription,
+    h1: def.h1,
+    intro: def.intro,
+    schemas,
+    extraNoscript: () =>
+      hubTableHtml(def.table.caption, def.table.columns, def.table.rows) +
+      (def.extraBodyHtml ? def.extraBodyHtml() : '') +
+      hubArticleListHtml(def.articleGroups) +
+      hubFaqHtml(def.faqs),
+  };
+});
 
 // -----------------------------------------------------------------------------
 // Commercial-page noscript enrichment helpers.
