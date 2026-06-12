@@ -18,6 +18,7 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
 
   const navigationLinks = [
     { label: 'Motors', href: '/quote/motor-selection' },
+    { label: 'Boat Repower Guide', href: '/repower' },
     { label: 'Promotions', href: '/promotions' },
     { label: 'Financing', href: '/finance-calculator' },
     { label: 'Blog', href: '/blog' },

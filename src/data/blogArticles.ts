@@ -2572,7 +2572,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Mercury Pro XS vs FourStroke vs Verado: Which One Do You Actually Need?
 
-Three Mercury families, a lot of overlapping horsepower numbers, and a pile of forum arguments. Here's the part that matters: the current models are all four-strokes. The difference is what each one is tuned for.
+Three Mercury families, a lot of overlapping horsepower numbers, and a pile of forum arguments. Here's the part that matters: the current models are all four-strokes. The difference is what each one is tuned for. If you're picking a family as part of a motor swap, the [boat repower guide](/repower) shows installed-cost ranges for each family on common Ontario hulls.
 
 ### The 30-second version
 
@@ -2926,7 +2926,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 ## Why break-in actually matters
 
-The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. The hour-by-hour breakdown is below.
+The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. (If this is your first hour on a brand-new motor after a [Mercury repower in Ontario](/repower), the same break-in applies, the warranty clock and 20-hour service date start at first water test.) The hour-by-hour breakdown is below.
 
 ![Timeline of the Mercury 10-hour break-in: hour 1 no-wake then moderate cruise with varied throttle, hours 1-2 wider RPM range with no sustained wide-open throttle, hours 2-10 full RPM range with short WOT bursts, after 10 hours normal operation, then the 20-hour first service oil and filter change.](/lovable-uploads/mercury-break-in-timeline-hbw.png)
 *The whole procedure on one card. Details below.*
@@ -3883,7 +3883,7 @@ Customers shopping for a pontoon motor focus on the HP number. The gearcase is a
 
 A 90 HP Command Thrust and a standard 90 HP look almost identical on a spec sheet. Same horsepower. Same motor family. But Command Thrust uses a larger gearcase, a larger prop, and a torque-tuned gear ratio that's built for heavy boats. On a pontoon, that means faster lift to cruise when you have six people aboard, better load-carrying, and a boat that feels like it has more motor than the number would suggest.
 
-We default to Command Thrust on most pontoon repowers at HBW. Customers who push back on the small price difference, and then see the boat run with the right gearcase, get it immediately.
+We default to Command Thrust on most pontoon repowers at HBW. Customers who push back on the small price difference, and then see the boat run with the right gearcase, get it immediately. For installed cost ranges on pontoon repowers in this HP band, see the [boat repower guide](/repower).
 
 ---
 
@@ -4470,7 +4470,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 > **Quick answer:** Same powerhead, different tuning and gearcase. The 90 is the sweet spot for most 17-19 ft aluminum and fibreglass hulls, best balance of price, fuel use, and performance. The 115 makes sense on heavier or wider transoms, especially Command Thrust on pontoons. The 75 is rare in Ontario. Compare installed pricing at mercuryrepower.ca.
 
-For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
+For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers full installed-cost ranges and the rigging changes that go with each HP class. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
 
@@ -15235,7 +15235,7 @@ Mercury Boost is a software-only upgrade that increases the maximum output of ce
 
 That's interesting. What's equally interesting is what it tells us about where Mercury's upgrade roadmap is heading, more software, more granularity, more options after you buy the motor.
 
-For a typical 150 HP pontoon owner in 2026, the honest answer on whether to buy Boost right now is: probably not essential, but worth understanding.
+For a typical 150 HP pontoon owner in 2026, the honest answer on whether to buy Boost right now is: probably not essential, but worth understanding. If you're weighing Boost against jumping a full HP class, run the [repower vs new boat math](/repower) first, the installed-cost gap to the next motor up is usually smaller than Boost shoppers expect.
 
 ### What Boost Actually Is
 
@@ -28299,7 +28299,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 Mercury outboard beep patterns vary by model, year, and whether the boat has SmartCraft displays, so the exact meaning of any pattern requires confirming against your specific motor's manual. That said, the most common patterns correspond to temperature (overheat), oil level, water-in-fuel, or Guardian engine protection mode. Record the pattern exactly, number of beeps, timing, whether it correlates with RPM or load, and reference your manual or bring it to a dealer with that information.
 
-For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service). If the alarm turns out to be terminal damage rather than a fixable fault, see the [boat engine repower costs](/repower) for what a full motor swap actually runs in Ontario.
 
 ::diagnostic-flow
 heading: What to do when your Mercury starts beeping

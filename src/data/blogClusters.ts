@@ -267,3 +267,50 @@ export function getRelatedSlugs(slug: string, max = 5): string[] {
   }
   return out.slice(0, max);
 }
+
+/**
+ * Slugs that belong to the /repower hub cluster (broader than cluster id 1).
+ * Used by BlogArticle to render the RepowerHubBanner. Keep in sync with the
+ * directory in src/pages/RepowerHub.tsx.
+ *
+ * Some entries in the source brief did not exist as published articles
+ * (repower-financing-ontario-rates-monthly-payments,
+ *  repower-old-motor-trade-in-hst-disposal-ontario,
+ *  mercury-warranty-after-repower-ontario,
+ *  repower-horsepower-capacity-plate-guide,
+ *  repower-pontoon-aluminum-v-hull-differences,
+ *  mercury-repower-gta-toronto-destination,
+ *  mercury-pro-xs-repower-rice-lake-kawartha-anglers)
+ * and are omitted here until they ship.
+ */
+export const REPOWER_HUB_SLUGS: ReadonlySet<string> = new Set([
+  // Deciding
+  'boat-repowering-guide-when-to-replace-motor',
+  'repower-vs-new-boat',
+  'boat-hull-replacement-vs-repower-decision',
+  'repair-repower-or-sell-boat-ontario-decision-guide',
+  'mercury-repower-eligibility-guide',
+  // Cost & Financing
+  'mercury-repower-cost-ontario-2026-cad',
+  'mercury-outboard-financing-ontario-2026',
+  // Process & What to Expect
+  'what-happens-during-mercury-repower',
+  'hbw-on-water-load-test-mercury-repower-advantage-2026',
+  'pleasure-craft-licence-update-repower-ontario',
+  'winter-repower-planning-guide',
+  // Brand & Engine-Type Conversions
+  'evinrude-to-mercury-repower-ontario-guide',
+  'yamaha-to-mercury-repower-ontario-guide',
+  'honda-to-mercury-repower-ontario-guide',
+  'two-stroke-vs-four-stroke-repower',
+  'outboard-vs-sterndrive-2026-ontario-repower',
+  // Rigging, Controls & Fit
+  'mercury-dts-vs-mechanical-controls-ontario-repower',
+  // Local Guides
+  'complete-guide-boat-repower-kawarthas',
+  'ontario-cottage-boat-motor-repower-guide',
+]);
+
+export function isRepowerHubSlug(slug: string): boolean {
+  return REPOWER_HUB_SLUGS.has(slug);
+}
