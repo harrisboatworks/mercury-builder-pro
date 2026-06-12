@@ -5,7 +5,7 @@ import type { BlogArticle } from './blogArticles';
 import hero_hero_10_hi_licences from '@/assets/blog/hero-10-hi-licences.png';
 
 /** Language-support FAQ answer reused wherever the "service in this language?" note appears. */
-export const HI_LANGUAGE_NOTE = ``;
+export const HI_LANGUAGE_NOTE = `हम चाहते हैं कि हर कोई सहज महसूस करे, इसलिए यह गाइड हिंदी में बनाई। लेकिन हमारी टीम अंग्रेज़ी में काम करती है। अगर आप अंग्रेज़ी नहीं बोलते, तो साथ में कोई अंग्रेज़ी जानने वाला लाएँ या अनुवाद ऐप इस्तेमाल करें। हम धैर्यपूर्वक सब समझा देंगे और मिलकर हल निकालेंगे।`;
 
 interface Wave1Article extends BlogArticle {
   /** Wave 1 native-review status. 'pending' until a native speaker signs off. */
