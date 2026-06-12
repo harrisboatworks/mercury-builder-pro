@@ -134,7 +134,7 @@ export const blogArticles: BlogArticle[] = [
     image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
     author: 'Jay Harris',
     datePublished: '2026-06-11',
-    dateModified: '2026-06-11',
+    dateModified: '2026-06-12',
     publishDate: '2026-06-11',
     category: 'Mercury Technology',
     readTime: '6 min read',
