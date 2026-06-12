@@ -31,7 +31,7 @@ content_type: blog_article
 
 ## Mercury Pro XS vs FourStroke vs Verado: Which One Do You Actually Need?
 
-Three Mercury families, a lot of overlapping horsepower numbers, and a pile of forum arguments. Here's the part that matters: the current models are all four-strokes. The difference is what each one is tuned for.
+Three Mercury families, a lot of overlapping horsepower numbers, and a pile of forum arguments. Here's the part that matters: the current models are all four-strokes. The difference is what each one is tuned for. If you're picking a family as part of a motor swap, the [boat repower guide](/repower) shows installed-cost ranges for each family on common Ontario hulls.
 
 ### The 30-second version
 

@@ -43,7 +43,7 @@ Mercury Boost is a software-only upgrade that increases the maximum output of ce
 
 That's interesting. What's equally interesting is what it tells us about where Mercury's upgrade roadmap is heading, more software, more granularity, more options after you buy the motor.
 
-For a typical 150 HP pontoon owner in 2026, the honest answer on whether to buy Boost right now is: probably not essential, but worth understanding.
+For a typical 150 HP pontoon owner in 2026, the honest answer on whether to buy Boost right now is: probably not essential, but worth understanding. If you're weighing Boost against jumping a full HP class, run the [repower vs new boat math](/repower) first, the installed-cost gap to the next motor up is usually smaller than Boost shoppers expect.
 
 ### What Boost Actually Is
 

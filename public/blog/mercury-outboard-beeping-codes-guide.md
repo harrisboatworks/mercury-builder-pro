@@ -33,7 +33,7 @@ content_type: blog_article
 
 Mercury outboard beep patterns vary by model, year, and whether the boat has SmartCraft displays, so the exact meaning of any pattern requires confirming against your specific motor's manual. That said, the most common patterns correspond to temperature (overheat), oil level, water-in-fuel, or Guardian engine protection mode. Record the pattern exactly, number of beeps, timing, whether it correlates with RPM or load, and reference your manual or bring it to a dealer with that information.
 
-For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service). If the alarm turns out to be terminal damage rather than a fixable fault, see the [boat engine repower costs](/repower) for what a full motor swap actually runs in Ontario.
 
 ::diagnostic-flow
 heading: What to do when your Mercury starts beeping
