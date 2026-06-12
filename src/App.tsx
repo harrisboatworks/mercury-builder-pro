@@ -599,6 +599,8 @@ function AnimatedRoutes() {
         <Route path="/blog/es/:slug" element={<SpanishBlogArticlePage />} />
         <Route path="/blog/hi/:slug" element={<HindiBlogArticlePage />} />
         <Route path="/blog/pa/:slug" element={<PunjabiBlogArticlePage />} />
+        <Route path="/blog/ur/:slug" element={<UrduBlogArticlePage />} />
+        <Route path="/blog/tl/:slug" element={<TagalogBlogArticlePage />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />
