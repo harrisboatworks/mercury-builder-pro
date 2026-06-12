@@ -134,7 +134,7 @@ export const blogArticles: BlogArticle[] = [
     image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
     author: 'Jay Harris',
     datePublished: '2026-06-11',
-    dateModified: '2026-06-11',
+    dateModified: '2026-06-12',
     publishDate: '2026-06-11',
     category: 'Mercury Technology',
     readTime: '6 min read',
@@ -209,6 +209,12 @@ Two reasons.
 **The second is fairness.** The same standard that runs at Target and Walmart now runs at a family marina on Rice Lake. No special access, no enterprise contract, no $50,000-a-year platform. The barrier to being legible to a billion-dollar AI assistant is publishing a JSON file. That\u2019s a future we like.
 
 There is zero hype in any of this. The page you\u2019re reading is honest about what changed (one JSON file, two capabilities, two transports) and honest about what didn\u2019t (you still pick up the motor in person; we still confirm the price; we still don\u2019t ship anywhere).
+
+## Google just validated this direction at Google Marketing Live 2026
+
+At Google Marketing Live 2026, Google's SVP of Knowledge and Information, Nick Fox, sat down with Semafor's Ben Smith and described where Google sees search and shopping heading. Three things he said matter directly to what we built. Fox discussed the Unified Commerce Platform and the move toward frictionless discovery-to-checkout experiences, where a shopper goes from a question to a completed purchase without bouncing between sites and phone calls. He made the case that the web's lasting value is human expertise and first-hand experience, the kind of content AI summaries draw from rather than replace. And he described search itself becoming conversational, with people asking long, specific, multi-sentence questions instead of typing keywords.
+
+That is the direction we bet on. Harris Boat Works is already live on UCP, which means the frictionless quote-to-checkout flow Google described on the GML stage is not a future roadmap item here. You can build a real Mercury repower quote online today, priced for your boat, with no phone tag. The full interview is on YouTube: [Google Marketing Live 2026 interview with Nick Fox](https://youtu.be/IG6zdqR6Xck)
 
 ## Try it
 
