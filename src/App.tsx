@@ -168,6 +168,8 @@ const KoreanBlogArticlePage = lazy(() => import("./pages/blog/KoreanBlogArticleP
 const SpanishBlogArticlePage = lazy(() => import("./pages/blog/SpanishBlogArticlePage"));
 const HindiBlogArticlePage = lazy(() => import("./pages/blog/HindiBlogArticlePage"));
 const PunjabiBlogArticlePage = lazy(() => import("./pages/blog/PunjabiBlogArticlePage"));
+const UrduBlogArticlePage = lazy(() => import("./pages/blog/UrduBlogArticlePage"));
+const TagalogBlogArticlePage = lazy(() => import("./pages/blog/TagalogBlogArticlePage"));
 
 // Test/Dev pages (low priority)
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
