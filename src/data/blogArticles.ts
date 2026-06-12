@@ -35313,7 +35313,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
   **What we tell customers:** Kicker installation involves transom integrity, tie-bar setup for steering integration, electrical connection to the main battery system, fuel routing, and (sometimes) remote-control integration. We see DIY installations come in for repair routinely. Worth doing right the first time.
 
 - **Myth:** "Verado is supercharged."
-  **What we tell customers:** Current Mercury Verado V8 (250-400 HP), V10 (350-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+  **What we tell customers:** Current Mercury Verado V8 250-300 HP, V10 350-400 HP, and V12 600 HP models are naturally aspirated. The older inline-6 Verado was supercharged but is no longer the current Verado platform.
 
 ## Customer language we hear
 
