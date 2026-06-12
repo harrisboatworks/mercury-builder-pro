@@ -748,6 +748,15 @@
   ],
   "headers": [
     {
+      "source": "/blog/zh-hant/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         {
