@@ -2916,7 +2916,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     image: '/lovable-uploads/Breaking_In_New_Mercury_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2026-06-09',
+    dateModified: '2026-06-12',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
