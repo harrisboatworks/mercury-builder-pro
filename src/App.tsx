@@ -591,6 +591,8 @@ function AnimatedRoutes() {
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
         {/* /blog/zh/mercury-repower-guide-gta now served by MandarinBlogArticlePage (legacy override retired 2026-06-07) */}
         <Route path="/blog/zh/:slug" element={<MandarinBlogArticlePage />} />
+        {/* zh-Hant pilot — 5 pages, noindex (set per-route via Helmet), kept out of sitemap */}
+        <Route path="/blog/zh-hant/:slug" element={<TraditionalChineseBlogArticlePage />} />
         <Route path="/blog/ko/:slug" element={<KoreanBlogArticlePage />} />
         <Route path="/blog/es/:slug" element={<SpanishBlogArticlePage />} />
         <Route path="/blog/hi/:slug" element={<HindiBlogArticlePage />} />
