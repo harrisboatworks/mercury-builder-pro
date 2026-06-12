@@ -769,16 +769,28 @@ const frenchBlogArticles = loadTranslatedBlogArticles('../src/data/frenchBlogArt
 const koreanBlogArticles = loadTranslatedBlogArticles('../src/data/koreanBlogArticles.ts', 'koreanBlogArticles');
 const mandarinBlogArticles = loadTranslatedBlogArticles('../src/data/mandarinBlogArticles.ts', 'mandarinBlogArticles');
 const spanishBlogArticles = loadTranslatedBlogArticles('../src/data/spanishBlogArticles.ts', 'spanishBlogArticles');
+const punjabiBlogArticles = loadTranslatedBlogArticles('../src/data/punjabiBlogArticles.ts', 'punjabiBlogArticles');
+const urduBlogArticles = loadTranslatedBlogArticles('../src/data/urduBlogArticles.ts', 'urduBlogArticles');
+const tagalogBlogArticles = loadTranslatedBlogArticles('../src/data/tagalogBlogArticles.ts', 'tagalogBlogArticles');
+const hindiBlogArticles = loadTranslatedBlogArticles('../src/data/hindiBlogArticles.ts', 'hindiBlogArticles');
 
 assertLoaderNonEmpty(frenchBlogArticles, '../src/data/frenchBlogArticles.ts', 'frenchBlogArticles', 'French');
 assertLoaderNonEmpty(koreanBlogArticles, '../src/data/koreanBlogArticles.ts', 'koreanBlogArticles', 'Korean');
 assertLoaderNonEmpty(mandarinBlogArticles, '../src/data/mandarinBlogArticles.ts', 'mandarinBlogArticles', 'Mandarin');
 assertLoaderNonEmpty(spanishBlogArticles, '../src/data/spanishBlogArticles.ts', 'spanishBlogArticles', 'Spanish');
+assertLoaderNonEmpty(punjabiBlogArticles, '../src/data/punjabiBlogArticles.ts', 'punjabiBlogArticles', 'Punjabi');
+assertLoaderNonEmpty(urduBlogArticles, '../src/data/urduBlogArticles.ts', 'urduBlogArticles', 'Urdu');
+assertLoaderNonEmpty(tagalogBlogArticles, '../src/data/tagalogBlogArticles.ts', 'tagalogBlogArticles', 'Tagalog');
+assertLoaderNonEmpty(hindiBlogArticles, '../src/data/hindiBlogArticles.ts', 'hindiBlogArticles', 'Hindi');
 
 console.log(`[static-prerender] loaded ${frenchBlogArticles.length} fr-CA articles`);
 console.log(`[static-prerender] loaded ${koreanBlogArticles.length} ko-KR articles`);
 console.log(`[static-prerender] loaded ${mandarinBlogArticles.length} zh-CN articles`);
 console.log(`[static-prerender] loaded ${spanishBlogArticles.length} es-ES articles`);
+console.log(`[static-prerender] loaded ${punjabiBlogArticles.length} pa articles`);
+console.log(`[static-prerender] loaded ${urduBlogArticles.length} ur articles`);
+console.log(`[static-prerender] loaded ${tagalogBlogArticles.length} tl articles`);
+console.log(`[static-prerender] loaded ${hindiBlogArticles.length} hi articles`);
 
 
 const caseStudies = loadCaseStudies();
