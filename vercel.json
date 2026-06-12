@@ -616,6 +616,10 @@
       "destination": "/blog/:slug.md"
     },
     {
+      "source": "/blog/:lang/:slug.md",
+      "destination": "/blog/:lang/:slug.md"
+    },
+    {
       "source": "/blog/:slug",
       "destination": "/blog/:slug/index.html"
     },
