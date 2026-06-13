@@ -106,8 +106,6 @@ Deno.serve(async (req) => {
           controlType: m.control_type || null,
           motorType: m.motor_type,
           msrp: m.msrp,
-          salePrice: m.sale_price,
-          dealerPrice: m.dealer_price,
           sellingPrice,
           currency: 'CAD',
           availability: m.availability || (m.in_stock ? 'In Stock' : 'Special Order'),
