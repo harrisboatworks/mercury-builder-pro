@@ -10,7 +10,17 @@
 // All responses include `priceValidUntil` (24h) and a disclaimer.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { z } from "npm:zod@3.22.4";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import { sanitizeAgentNote } from "../_shared/sanitize.ts";
+
+// Rate-limit identifier from x-forwarded-for (first hop), used to key the
+// stricter fail-closed limiter on the write path (build_quote).
+function clientIp(req: Request): string {
+  const xff = req.headers.get("x-forwarded-for");
+  if (xff) return xff.split(",")[0].trim();
+  return req.headers.get("cf-connecting-ip") || req.headers.get("x-real-ip") || "unknown";
+}
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
