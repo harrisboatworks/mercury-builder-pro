@@ -290,7 +290,7 @@ export default function AgentsHub() {
             Tech Council. Harris Boat Works implements UCP <strong>2026-04-08</strong> with two
             capabilities, <code>dev.ucp.shopping.checkout</code> (quote mode) and{' '}
             <code>dev.ucp.shopping.fulfillment</code>, served over both REST and MCP transports at
-            the same <code>ucp-checkout</code> endpoint. Verified with Shopify's official{' '}
+            the same branded endpoint, <code>https://www.mercuryrepower.ca/api/agents/ucp</code>. Verified with Shopify's official{' '}
             <code>ucp-cli</code> on June 11, 2026. To our knowledge, the first marine dealer
             implementing UCP.
           </p>
