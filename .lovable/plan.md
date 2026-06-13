@@ -1,57 +1,33 @@
 ## Goal
 
-Repair two production agent-discovery surfaces so they contain the keywords required by the validation rules. No price, promo, or strategy changes.
+On `/agents`, the financing rates copy should always state the standard tiered rates AND, when a manufacturer promo (currently TD 5.48%) is active, append the current promo. When no promo is active, append a short pointer that promotional rates run periodically. This applies to both the visible bullet and the FAQPage JSON-LD answer so AI agents reading the page see the same wording.
 
-## What I found
+## Changes (single file: `src/pages/AgentsHub.tsx`)
 
-- `scripts/static-prerender.mjs` is the last writer for `public/catalog.md` and for the prerendered `/agents` HTML (it overwrites both at the end of `npm run build`).
-- `scripts/generate-markdown-twins.mjs` writes `public/catalog.md` earlier in the build and produces the in-repo committed copy; for consistency it should mirror the same change.
-- Current `public/catalog.md` contains `pickup` (7x) but contains **0** occurrences of `public-motors-api` or `build_quote`. The "Public quote API" section only renders the URL via a template literal that resolves to `.../public-quote-api`, never the literal strings the validator looks for.
-- Current `/agents` prerender intro + noscript mentions MCP, REST APIs, deep-link quote URLs, but the literal words `pickup` and `install`/`installation` are not present anywhere in the prerendered text content for that route.
+Replace the two top-of-file constants (lines 9–15) so they always lead with the standard tiered rates, then append a promo line driven by `isTDAlwaysOnActive()` / `getMercuryFinancingFaqAnswer()`.
 
-## Edits
+New wording:
 
-### 1. `scripts/static-prerender.mjs` — `/agents` route entry (around line 4066)
+- `FINANCING_RATES_BULLET` (always):
+  - Base: `"Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 144 months via LightStream / Financeit."`
+  - If TD promo active, append: `" Current promo: 5.48% APR through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC)."`
+  - If not active, append: `" Promotional manufacturer rates run periodically, see /promotions for the current offer."`
 
-Extend the `intro` string (or add one small `<section>` to `extraNoscript`) so the prerendered HTML for `/agents` contains the literal words `pickup` and `installation`. Concretely, append one sentence to the intro:
+- `FINANCING_RATES_FAQ_TEXT` (always):
+  - Base: `"Financing minimum is $5,000 CAD. Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 144 months via LightStream / Financeit. A $349 DealerPlan fee is added post-tax for financed purchases. Do not show monthly payment estimates below $5,000."`
+  - If TD promo active, append: `" Current promo: through December 31, 2026, Mercury Marine Canada's TD 'Always On' program offers 5.48% APR (OAC) on new eligible Mercury outboards; standard tiered rates resume after the program ends."`
+  - If not active, append: `" Promotional manufacturer rates (e.g. TD subvention programs) run periodically, see /promotions for the current offer."`
 
-> "Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase."
-
-No change to schemas, no change to existing sections.
-
-### 2. `scripts/static-prerender.mjs` — `catalogMarkdown()` (around line 5290)
-
-In the existing "Public quote API" section, replace the single line with a short block that names both endpoints by their literal slugs so the validator's regex hits:
-
-```
-## Public quote API
-
-- `POST https://.../public-quote-api` with `action: "build_quote"` builds an itemized CAD quote.
-- `GET  https://.../public-motors-api` returns the live Mercury inventory feed.
-
-See any motor twin for an example body.
-```
-
-No change to "Business rules", "What we do NOT offer", motor/case-study/location/blog sections, positioning paragraph, pricing reference link, or MCP discovery block.
-
-### 3. `scripts/generate-markdown-twins.mjs` — `catalogMarkdown()` (around line 759-770)
-
-Apply the same "Public quote API" rewrite so the pre-Vite-built `public/catalog.md` matches the prerender output. No other edits.
-
-### 4. Rebuild + publish
-
-- Run `node scripts/generate-markdown-twins.mjs` and `node scripts/static-prerender.mjs` locally as a smoke check is not needed; the production build runs both. Just publish via the publish tool.
-- After publish, fetch each URL and report:
-  - `/agents` — confirm `pickup` and `install`/`installation` are present.
-  - `/catalog.md` — confirm `public-motors-api` and `build_quote` are present.
-  - `/.well-known/ai.txt` — confirm 200 and unchanged.
-  - `/.well-known/mcp.json` — confirm 200 and unchanged.
-  - `/pricing-reference` — confirm 200.
-  - `/pricing-reference.md` — confirm 200.
-  - `/mercurypricelist` — confirm 301 to `/pricing-reference` (this is a Vercel redirect; will not be touched by this change).
-- Report sitemap URL count from `/sitemap.xml`.
+Both branches keep the existing constraints: no em-dashes, no quoted attributions, CAD only, $5,000 financing minimum, $349 DealerPlan fee mention preserved.
 
 ## Out of scope
 
-- No edits to prices, promotions, financing rules, pricing-reference content, route strategy, or UI components.
-- No changes to redirects, `vercel.json`, ai.txt, mcp.json, or pricing-reference markdown.
+- No changes to `TDAlwaysOnOffer.tsx` helpers, the `/promotions` page, the financing constants used elsewhere, or any other page copy.
+- No changes to the article files or markdown twins.
+- No FAQ schema reshuffling beyond the single answer text already wired to `FINANCING_RATES_FAQ_TEXT`.
+
+## Validation
+
+- `npx tsc -p tsconfig.app.json --noEmit`
+- Visual check of the "Operating constraints" bullet on `/agents`
+- Grep the prerendered `/agents` HTML to confirm both the standard tiered rate string and the "Current promo: 5.48% APR" string appear in the FAQPage JSON-LD.
