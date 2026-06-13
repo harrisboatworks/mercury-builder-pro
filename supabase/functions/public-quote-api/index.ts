@@ -10,7 +10,17 @@
 // All responses include `priceValidUntil` (24h) and a disclaimer.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { z } from "npm:zod@3.22.4";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import { sanitizeAgentNote } from "../_shared/sanitize.ts";
+
+// Rate-limit identifier from x-forwarded-for (first hop), used to key the
+// stricter fail-closed limiter on the write path (build_quote).
+function clientIp(req: Request): string {
+  const xff = req.headers.get("x-forwarded-for");
+  if (xff) return xff.split(",")[0].trim();
+  return req.headers.get("cf-connecting-ip") || req.headers.get("x-real-ip") || "unknown";
+}
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -53,15 +63,39 @@ Deno.serve(async (req) => {
     const action = body?.action;
 
     const actionKey = typeof action === "string" ? action : "unknown";
-    const actionLimit =
-      actionKey === "build_quote" ? { maxAttempts: 40, windowMinutes: 10 } :
-      actionKey === "estimate_trade_in" ? { maxAttempts: 30, windowMinutes: 10 } :
-      { maxAttempts: 120, windowMinutes: 10 };
-    const allowed = await checkRateLimit(req, {
-      action: `public_quote_${actionKey}`.slice(0, 128),
-      ...actionLimit,
-    });
-    if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
+    if (actionKey === "build_quote") {
+      // Stricter, fail-CLOSED limiter on the write path. Lead inserts are
+      // throttled to 10 per 10 minutes per source IP. If the RPC errors, we
+      // reject (429) rather than fall open, because this path writes rows.
+      const ip = clientIp(req);
+      try {
+        const { data, error } = await supabase.rpc("check_rate_limit", {
+          _identifier: ip,
+          _action: "public_quote_build_quote",
+          _max_attempts: 10,
+          _window_minutes: 10,
+        });
+        if (error || data === false) {
+          return rateLimitedResponse(corsHeaders, 60);
+        }
+      } catch (_e) {
+        return rateLimitedResponse(corsHeaders, 60);
+      }
+    } else {
+      // Read-only actions stay fail-open (a transient DB issue must not
+      // block legitimate buyer flows).
+      const actionLimit =
+        actionKey === "estimate_trade_in"
+          ? { maxAttempts: 30, windowMinutes: 10 }
+          : { maxAttempts: 120, windowMinutes: 10 };
+      const allowed = await checkRateLimit(req, {
+        identifier: clientIp(req),
+        action: `public_quote_${actionKey}`.slice(0, 128),
+        ...actionLimit,
+      });
+      if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+    }
 
     switch (action) {
       case "list_motors":
@@ -582,32 +616,50 @@ async function buildQuote(supabase: any, body: any) {
   });
 
   // Optional lead capture (only if contact provided)
+  // Contact block is validated with zod; on validation failure we skip the
+  // insert but still return the quote. `referrer` is agent-controlled free
+  // text and is sanitized before being persisted in `notes`.
   let leadCaptured = false;
-  if (body?.contact?.email && body?.contact?.name) {
-    try {
-      await supabase.from("customer_quotes").insert({
-        customer_name: String(body.contact.name).slice(0, 200),
-        customer_email: String(body.contact.email).slice(0, 200),
-        customer_phone: body.contact.phone ? String(body.contact.phone).slice(0, 50) : null,
-        motor_model_id: motor.id,
-        base_price: motorPrice,
-        deposit_amount: deposit,
-        final_price: finalPrice,
-        loan_amount: financing.eligible ? finalPrice : 0,
-        monthly_payment: financing.eligible ? Number(financing.monthly_payment) : 0,
-        term_months: financing.eligible ? financing.term_months! : 0,
-        total_cost: finalPrice,
-        tradein_value_final: tradeInCredit || null,
-        lead_source: "public-quote-api",
-        lead_status: "new",
-        notes: `Public agent quote — referrer: ${body?.contact?.referrer || "unknown"}`,
-        quote_data: { items, financing, trade_in: tradeIn, boat_info: body?.boat_info || null },
-      });
-      leadCaptured = true;
-    } catch (e: any) {
-      console.error("lead capture failed:", e?.message);
+  let leadValidationError: string[] | null = null;
+  if (body?.contact && (body.contact.email || body.contact.name)) {
+    const contactSchema = z.object({
+      name: z.string().min(1).max(200),
+      email: z.string().email().max(200),
+      phone: z.string().max(50).optional(),
+      referrer: z.string().max(500).optional(),
+    });
+    const parsed = contactSchema.safeParse(body.contact);
+    if (!parsed.success) {
+      leadValidationError = parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`);
+    } else {
+      const c = parsed.data;
+      const safeReferrer = sanitizeAgentNote(c.referrer || "unknown", 200);
+      try {
+        await supabase.from("customer_quotes").insert({
+          customer_name: c.name.slice(0, 200),
+          customer_email: c.email.slice(0, 200),
+          customer_phone: c.phone ? c.phone.slice(0, 50) : null,
+          motor_model_id: motor.id,
+          base_price: motorPrice,
+          deposit_amount: deposit,
+          final_price: finalPrice,
+          loan_amount: financing.eligible ? finalPrice : 0,
+          monthly_payment: financing.eligible ? Number(financing.monthly_payment) : 0,
+          term_months: financing.eligible ? financing.term_months! : 0,
+          total_cost: finalPrice,
+          tradein_value_final: tradeInCredit || null,
+          lead_source: "public-quote-api",
+          lead_status: "new",
+          notes: `Public agent quote — referrer: ${safeReferrer}`,
+          quote_data: { items, financing, trade_in: tradeIn, boat_info: body?.boat_info || null },
+        });
+        leadCaptured = true;
+      } catch (e: any) {
+        console.error("lead capture failed:", e?.message);
+      }
     }
   }
+
 
   return json({
     site: SITE,
@@ -636,6 +688,7 @@ async function buildQuote(supabase: any, body: any) {
     financing,
     deep_link: deepLink,
     lead_captured: leadCaptured,
+    lead_validation_error: leadValidationError,
     lastUpdated: nowISO(),
     priceValidUntil: validUntilISO(),
     disclaimer: DISCLAIMER,
