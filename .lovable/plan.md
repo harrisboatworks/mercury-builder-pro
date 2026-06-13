@@ -1,33 +1,63 @@
 ## Goal
+Embed your uploaded Mercury Boost MP4 in `/blog/mercury-boost-software-upgrade-eligibility-2026`, hosted from Lovable Assets CDN (not YouTube).
 
-On `/agents`, the financing rates copy should always state the standard tiered rates AND, when a manufacturer promo (currently TD 5.48%) is active, append the current promo. When no promo is active, append a short pointer that promotional rates run periodically. This applies to both the visible bullet and the FAQPage JSON-LD answer so AI agents reading the page see the same wording.
+## Why a new component
+`MercuryVideo.tsx` is YouTube-only (builds `youtube.com/embed/...` URLs from a `videoId`). For a self-hosted MP4 we need a native `<video>` element. Reusing/forking it keeps the click-to-load "facade" pattern so the MP4 (~several MB) doesn't hurt LCP.
 
-## Changes (single file: `src/pages/AgentsHub.tsx`)
+## Changes
 
-Replace the two top-of-file constants (lines 9–15) so they always lead with the standard tiered rates, then append a promo line driven by `isTDAlwaysOnActive()` / `getMercuryFinancingFaqAnswer()`.
+### 1. Upload the MP4 to Lovable Assets
+Run once in build mode:
+```bash
+mkdir -p src/assets/video
+lovable-assets create \
+  --file /mnt/user-uploads/AQM6pHbspjy56XxqMjMj3L70GD9HmrYLEODPWCK-YPzq13aD9ecvm7vO_rYPUJ7md3_AN1EgRML_aWa6-kM-W619sxRH3SdTjaI4Q1nEvBDwXA.mp4 \
+  --filename mercury-boost-demo.mp4 \
+  > src/assets/video/mercury-boost-demo.mp4.asset.json
+```
+This writes a `.asset.json` pointer to the CDN; no binary lands in the repo.
 
-New wording:
+### 2. New component: `src/components/blog/MercuryVideoFile.tsx`
+- Props: `src: string`, `title: string`, `caption?: string`, `poster?: string`.
+- Renders a 16:9 `<figure>` matching `MercuryVideo`'s styling.
+- First paint: poster image (or solid black) + centered red play button — no video bytes fetched.
+- On click: swaps in `<video controls autoPlay playsInline preload="metadata" src={src}>`.
+- `loading="lazy"` semantics via `preload="metadata"` only after click.
+- Optional caption rendered like the YouTube facade.
 
-- `FINANCING_RATES_BULLET` (always):
-  - Base: `"Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 144 months via LightStream / Financeit."`
-  - If TD promo active, append: `" Current promo: 5.48% APR through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC)."`
-  - If not active, append: `" Promotional manufacturer rates run periodically, see /promotions for the current offer."`
+### 3. Article fields (`src/data/blogArticles.ts`)
+Add three optional fields to the article object (TypeScript-permissive; existing posts unaffected):
+- `videoAssetUrl?: string`
+- `videoAssetTitle?: string`
+- `videoAssetCaption?: string`
 
-- `FINANCING_RATES_FAQ_TEXT` (always):
-  - Base: `"Financing minimum is $5,000 CAD. Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 144 months via LightStream / Financeit. A $349 DealerPlan fee is added post-tax for financed purchases. Do not show monthly payment estimates below $5,000."`
-  - If TD promo active, append: `" Current promo: through December 31, 2026, Mercury Marine Canada's TD 'Always On' program offers 5.48% APR (OAC) on new eligible Mercury outboards; standard tiered rates resume after the program ends."`
-  - If not active, append: `" Promotional manufacturer rates (e.g. TD subvention programs) run periodically, see /promotions for the current offer."`
+Populate on the `mercury-boost-software-upgrade-eligibility-2026` entry:
+```ts
+videoAssetUrl: mercuryBoostDemo.url, // imported from the .asset.json
+videoAssetTitle: "Mercury Boost — official demo",
+videoAssetCaption: "Mercury's own demonstration of Boost's mid-range acceleration response.",
+```
 
-Both branches keep the existing constraints: no em-dashes, no quoted attributions, CAD only, $5,000 financing minimum, $349 DealerPlan fee mention preserved.
+### 4. Render in `src/pages/BlogArticle.tsx`
+Just below the existing `youtubeVideoId` block (lines 356-362), add a parallel block:
+```tsx
+{article.videoAssetUrl && (
+  <MercuryVideoFile
+    src={article.videoAssetUrl}
+    title={article.videoAssetTitle || 'Mercury Marine video'}
+    caption={article.videoAssetCaption}
+  />
+)}
+```
+Placement is above the article body (after TOC, before prose) — same slot the YouTube embed already uses, so layout is consistent.
 
 ## Out of scope
+- No edits to other Boost posts (`mercury-boost-cost-canada-2026`, `mercury-boost-upgrade-150hp-pontoon-analysis`). The same fields would let you add it there later in one line if you want.
+- No inline-in-body markdown directive — kept it as an article-level field to match the existing YouTube pattern.
+- Caption defaults to a neutral line since you didn't specify one; easy to change.
 
-- No changes to `TDAlwaysOnOffer.tsx` helpers, the `/promotions` page, the financing constants used elsewhere, or any other page copy.
-- No changes to the article files or markdown twins.
-- No FAQ schema reshuffling beyond the single answer text already wired to `FINANCING_RATES_FAQ_TEXT`.
-
-## Validation
-
-- `npx tsc -p tsconfig.app.json --noEmit`
-- Visual check of the "Operating constraints" bullet on `/agents`
-- Grep the prerendered `/agents` HTML to confirm both the standard tiered rate string and the "Current promo: 5.48% APR" string appear in the FAQPage JSON-LD.
+## Files touched
+- New: `src/components/blog/MercuryVideoFile.tsx`
+- New: `src/assets/video/mercury-boost-demo.mp4.asset.json` (CDN pointer)
+- Edited: `src/data/blogArticles.ts` (article fields + import of pointer)
+- Edited: `src/pages/BlogArticle.tsx` (render block + import)
