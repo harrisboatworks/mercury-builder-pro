@@ -55,7 +55,7 @@ Example URLs (all from current public catalog — Verado is intentionally exclud
 - https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs
 - https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke
 
-For the authoritative live list of motor URLs, see https://www.mercuryrepower.ca/sitemap.xml or query the public motors API at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api.
+For the authoritative live list of motor URLs, see https://www.mercuryrepower.ca/sitemap.xml or query the public motors API at https://www.mercuryrepower.ca/api/agents/motors.
 
 Each motor page includes pricing in CAD, availability, specifications, and a link to build a quote.
 
@@ -171,7 +171,7 @@ Harris Boat Works is a live UCP merchant, spec version 2026-04-08, verified end-
 - Discovery profile: https://www.mercuryrepower.ca/.well-known/ucp
 - Service: dev.ucp.shopping
 - Capabilities: dev.ucp.shopping.checkout (mode: quote), dev.ucp.shopping.fulfillment
-- Transports: REST and MCP, both at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/ucp-checkout
+- Transports: REST and MCP, both at https://www.mercuryrepower.ca/api/agents/ucp
 - Verify: `npx -y @shopify/ucp-cli discover www.mercuryrepower.ca`
 
 Checkout tool surface (five tools): create_checkout_session, get_checkout_session, update_checkout_session, list_checkout_sessions, complete_checkout.
@@ -182,7 +182,7 @@ Quote mode means: agents build real CAD quotes (with HST estimate, trade-in cont
 
 ### MCP Server (Model Context Protocol)
 
-Endpoint: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server
+Endpoint: https://www.mercuryrepower.ca/api/agents/mcp
 Transport: HTTP POST, JSON-RPC 2.0, no auth, CORS open.
 Methods: initialize, tools/list, tools/call.
 Tools: search_motors, get_motor, estimate_trade_in, build_quote, get_brand_rules.
@@ -195,17 +195,14 @@ DeepSeek, Qwen, Kimi, and Doubao, can use the REST APIs below instead.
 ### REST APIs (no MCP client required)
 
 - Public motor inventory feed (GET, CORS-open, CAD pricing, cached 5min):
-  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api
+  https://www.mercuryrepower.ca/api/agents/motors
 - Public quote API (POST, itemized CAD quotes with optional trade-in):
-  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+  https://www.mercuryrepower.ca/api/agents/quote
   Actions: list_motors, estimate_trade_in, build_quote
   Docs: GET the same URL returns the full schema.
 - Deep-link prefilled quote URL pattern (one-shot link to the configurator):
   https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}
-- Markdown twins of the catalog (LLM-cheap plain-text):
-  Index:    https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md
-  By id:    https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md?id={MOTOR_ID}
-  By slug:  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md?slug={SLUG}
+- Markdown twins of the catalog (LLM-cheap plain-text): see /catalog.md and /motors/{slug}.md
 
 Source-of-truth rules for agents acting on our behalf:
 - All pricing is CAD. Final out-the-door price requires human confirmation.
@@ -217,7 +214,7 @@ Source-of-truth rules for agents acting on our behalf:
 - Chinese-language guides: 25 articles at /zh (中文).
 - Financing minimum: $5,000 CAD. Tiered rates: 8.99% under $10k, 7.99% $10k+.
 
-Freshness: Inventory and pricing are dynamic. The authoritative live source is the public motors API (https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api), refreshed continuously from the dealer DMS. The sitemap (/sitemap.xml) is regenerated on every deploy. This llms.txt is updated as policy changes.
+Freshness: Inventory and pricing are dynamic. The authoritative live source is the public motors API (https://www.mercuryrepower.ca/api/agents/motors), refreshed continuously from the dealer DMS. The sitemap (/sitemap.xml) is regenerated on every deploy. This llms.txt is updated as policy changes.
 
 
 ## Common Questions (with canonical URLs)

@@ -20,11 +20,12 @@ const FINANCING_RATES_BULLET = isTDAlwaysOnActive()
   ? `${FINANCING_RATES_BULLET_BASE} Current promo: 5.48% APR through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC).`
   : `${FINANCING_RATES_BULLET_BASE} Promotional manufacturer rates run periodically, see /promotions for the current offer.`;
 
-const SUPABASE_FUNCTIONS_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1';
-const PUBLIC_MOTORS_API = `${SUPABASE_FUNCTIONS_URL}/public-motors-api`;
-const PUBLIC_QUOTE_API = `${SUPABASE_FUNCTIONS_URL}/public-quote-api`;
-const MCP_SERVER = `${SUPABASE_FUNCTIONS_URL}/agent-mcp-server`;
-const MOTORS_MD = `${SUPABASE_FUNCTIONS_URL}/motors-md`;
+const AGENTS_API_BASE = 'https://www.mercuryrepower.ca/api/agents';
+const PUBLIC_MOTORS_API = `${AGENTS_API_BASE}/motors`;
+const PUBLIC_QUOTE_API = `${AGENTS_API_BASE}/quote`;
+const MCP_SERVER = `${AGENTS_API_BASE}/mcp`;
+// motors-md edge function is not currently proxied; advertise the raw URL until proxied.
+const MOTORS_MD = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md';
 
 export default function AgentsHub() {
   return (
@@ -77,7 +78,7 @@ export default function AgentsHub() {
                 {
                   "@type": "Question",
                   "name": "How do AI agents access live Mercury inventory and pricing from Harris Boat Works?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Three options: (1) Register the MCP server at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server in Claude Desktop, Cursor, or any MCP-compatible client. (2) Call the public REST API at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api (GET, no auth, CORS open). (3) Fetch markdown twins from /functions/v1/motors-md for LLM-cheap context. All three return CAD pricing and are cached 5 minutes." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "Three options: (1) Register the MCP server at https://www.mercuryrepower.ca/api/agents/mcp in Claude Desktop, Cursor, or any MCP-compatible client. (2) Call the public REST API at https://www.mercuryrepower.ca/api/agents/motors (GET, no auth, CORS open). (3) Fetch markdown twins for LLM-cheap context. All three return CAD pricing and are cached 5 minutes." }
                 },
                 {
                   "@type": "Question",
@@ -289,7 +290,7 @@ export default function AgentsHub() {
             Tech Council. Harris Boat Works implements UCP <strong>2026-04-08</strong> with two
             capabilities, <code>dev.ucp.shopping.checkout</code> (quote mode) and{' '}
             <code>dev.ucp.shopping.fulfillment</code>, served over both REST and MCP transports at
-            the same <code>ucp-checkout</code> endpoint. Verified with Shopify's official{' '}
+            the same branded endpoint, <code>https://www.mercuryrepower.ca/api/agents/ucp</code>. Verified with Shopify's official{' '}
             <code>ucp-cli</code> on June 11, 2026. To our knowledge, the first marine dealer
             implementing UCP.
           </p>

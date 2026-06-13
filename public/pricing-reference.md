@@ -43,9 +43,9 @@ _Last updated 2026-06-12._
 ## AI Agent Interfaces
 
 - Agent hub: [https://www.mercuryrepower.ca/agents](https://www.mercuryrepower.ca/agents)
-- MCP server: [https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server](https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server)
-- Public motors API: [https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api](https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api)
-- Public quote API: [https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api](https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api), POST with action `build_quote`
+- MCP server: [https://www.mercuryrepower.ca/api/agents/mcp](https://www.mercuryrepower.ca/api/agents/mcp)
+- Public motors API: [https://www.mercuryrepower.ca/api/agents/motors](https://www.mercuryrepower.ca/api/agents/motors)
+- Public quote API: [https://www.mercuryrepower.ca/api/agents/quote](https://www.mercuryrepower.ca/api/agents/quote), POST with action `build_quote`
 - Machine-readable pricing: this file, [/pricing-reference.md](https://www.mercuryrepower.ca/pricing-reference.md)
 - Live inventory updates dynamically. Prices in CAD, Ontario customers.
 
@@ -165,6 +165,6 @@ _Last updated 2026-06-12._
 - Machine-readable version of this page: https://www.mercuryrepower.ca/pricing-reference.md
 - Agent catalog index: https://www.mercuryrepower.ca/catalog.md
 - llms.txt: https://www.mercuryrepower.ca/llms.txt
-- Public motors API (live JSON): https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api
-- Public quote API: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api` with `{ "action": "build_quote", "motor_id": "<id>" }`.
+- Public motors API (live JSON): https://www.mercuryrepower.ca/api/agents/motors
+- Public quote API: `POST https://www.mercuryrepower.ca/api/agents/quote` with `{ "action": "build_quote", "motor_id": "<id>" }`.
 

@@ -114,7 +114,10 @@
     "agentsHub": "https://www.mercuryrepower.ca/agents",
     "sitemap": "https://www.mercuryrepower.ca/sitemap.xml",
     "rss": "https://www.mercuryrepower.ca/rss.xml",
-    "publicMotorsApi": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api"
+    "publicMotorsApi": "https://www.mercuryrepower.ca/api/agents/motors",
+    "publicQuoteApi": "https://www.mercuryrepower.ca/api/agents/quote",
+    "mcpServer": "https://www.mercuryrepower.ca/api/agents/mcp",
+    "ucpCheckout": "https://www.mercuryrepower.ca/api/agents/ucp"
   },
   "lastUpdated": "2026-04-25"
 }
