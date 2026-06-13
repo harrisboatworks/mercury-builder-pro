@@ -30,8 +30,10 @@ content_update_frequency: weekly
 ## AI Agent Interfaces
 
 - Agent hub: https://www.mercuryrepower.ca/agents
-- MCP server: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server
-- Public motors API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api
+- MCP server: https://www.mercuryrepower.ca/api/agents/mcp
+- Public motors API: https://www.mercuryrepower.ca/api/agents/motors
+- Public quote API: https://www.mercuryrepower.ca/api/agents/quote
+- UCP checkout: https://www.mercuryrepower.ca/api/agents/ucp
 - Public quote API action: build_quote
 - Pricing reference: https://www.mercuryrepower.ca/pricing-reference
 - AI-readable pricing reference: https://www.mercuryrepower.ca/pricing-reference.md

@@ -17,7 +17,7 @@
   "transport": {
     "type": "http",
     "protocol": "json-rpc-2.0",
-    "url": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server",
+    "url": "https://www.mercuryrepower.ca/api/agents/mcp",
     "auth": "none",
     "cors": "open"
   },

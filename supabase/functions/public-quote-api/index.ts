@@ -703,7 +703,7 @@ function docs() {
     site: SITE,
     description:
       "Public, read-only quote API for AI agents. CAD pricing. No Verado. Pickup-only at Gores Landing, ON.",
-    endpoint: `${SITE_URL.replace("https://", "https://").replace("mercuryrepower.ca", "eutsoqdpjurknjsshxes.supabase.co/functions/v1")}/public-quote-api`,
+    endpoint: `https://www.mercuryrepower.ca/api/agents/quote`,
     method: "POST",
     actions: {
       list_motors: {
