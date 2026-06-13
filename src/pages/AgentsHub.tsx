@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
-import { getMercuryFinancingFaqAnswer, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
+import { isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
 import { CodeBlock } from '@/components/agents/CodeBlock';
 
 const FINANCING_RATES_FAQ_BASE =
