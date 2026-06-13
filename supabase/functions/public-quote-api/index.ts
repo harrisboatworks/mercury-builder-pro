@@ -63,15 +63,39 @@ Deno.serve(async (req) => {
     const action = body?.action;
 
     const actionKey = typeof action === "string" ? action : "unknown";
-    const actionLimit =
-      actionKey === "build_quote" ? { maxAttempts: 40, windowMinutes: 10 } :
-      actionKey === "estimate_trade_in" ? { maxAttempts: 30, windowMinutes: 10 } :
-      { maxAttempts: 120, windowMinutes: 10 };
-    const allowed = await checkRateLimit(req, {
-      action: `public_quote_${actionKey}`.slice(0, 128),
-      ...actionLimit,
-    });
-    if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
+    if (actionKey === "build_quote") {
+      // Stricter, fail-CLOSED limiter on the write path. Lead inserts are
+      // throttled to 10 per 10 minutes per source IP. If the RPC errors, we
+      // reject (429) rather than fall open, because this path writes rows.
+      const ip = clientIp(req);
+      try {
+        const { data, error } = await supabase.rpc("check_rate_limit", {
+          _identifier: ip,
+          _action: "public_quote_build_quote",
+          _max_attempts: 10,
+          _window_minutes: 10,
+        });
+        if (error || data === false) {
+          return rateLimitedResponse(corsHeaders, 60);
+        }
+      } catch (_e) {
+        return rateLimitedResponse(corsHeaders, 60);
+      }
+    } else {
+      // Read-only actions stay fail-open (a transient DB issue must not
+      // block legitimate buyer flows).
+      const actionLimit =
+        actionKey === "estimate_trade_in"
+          ? { maxAttempts: 30, windowMinutes: 10 }
+          : { maxAttempts: 120, windowMinutes: 10 };
+      const allowed = await checkRateLimit(req, {
+        identifier: clientIp(req),
+        action: `public_quote_${actionKey}`.slice(0, 128),
+        ...actionLimit,
+      });
+      if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+    }
 
     switch (action) {
       case "list_motors":
