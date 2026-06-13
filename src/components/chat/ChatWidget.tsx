@@ -134,27 +134,27 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
   return (
     <div className="fixed top-4 right-4 bottom-4 left-4 sm:top-20 sm:right-6 sm:left-auto sm:bottom-auto z-50 sm:z-60">
       <Card 
-        className={`w-full h-full sm:w-80 md:w-96 sm:h-auto transition-all duration-200 ${isMinimized ? 'sm:h-14' : 'sm:h-96'} shadow-xl border mobile-chat-card`}
+        className={`w-full h-full sm:w-80 md:w-96 sm:h-auto transition-all duration-200 ${isMinimized ? 'sm:h-14' : 'sm:h-96'} shadow-2xl border rounded-2xl overflow-hidden mobile-chat-card`}
         style={{ 
-          backgroundColor: '#ffffff',
-          background: '#ffffff',
+          backgroundColor: 'hsl(var(--repower-paper))',
+          background: 'hsl(var(--repower-paper))',
           WebkitBackdropFilter: 'none',
           backdropFilter: 'none',
-          borderColor: '#e5e7eb'
+          borderColor: 'hsl(var(--repower-navy-900) / 0.12)'
         }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-white dark:bg-gray-950 rounded-t-lg">
+        <div className="flex items-center justify-between p-4 border-b border-repower-navy-900/10 bg-repower-navy-900 text-repower-paper">
           <div className="flex items-center space-x-2">
-            <HelpCircle className="w-5 h-5 text-muted-foreground" />
-            <h3 className="font-normal text-gray-600 dark:text-gray-300">Harris Support</h3>
+            <HelpCircle className="w-5 h-5 text-repower-paper/80" />
+            <h3 className="font-medium tracking-tight text-repower-paper">Harris Support</h3>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsMinimized(!isMinimized)}
-              className="text-muted-foreground hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0 hidden sm:flex"
+              className="text-repower-paper/70 hover:text-repower-paper hover:bg-white/10 h-8 w-8 p-0 hidden sm:flex"
             >
               <Minimize2 className="w-4 h-4" />
             </Button>
@@ -162,7 +162,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(false)}
-              className="text-muted-foreground hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0"
+              className="text-repower-paper/70 hover:text-repower-paper hover:bg-white/10 h-8 w-8 p-0"
             >
               <X className="w-4 h-4" />
             </Button>
@@ -173,8 +173,8 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
           <CardContent 
             className="p-0 flex flex-col h-[calc(100%-60px)] sm:h-80 chat-mobile-fix" 
             style={{ 
-              backgroundColor: '#ffffff',
-              background: '#ffffff'
+              backgroundColor: 'hsl(var(--repower-paper))',
+              background: 'hsl(var(--repower-paper))'
             }}
           >
             {/* Messages */}
@@ -194,7 +194,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
             )}
 
             {/* Input */}
-            <div className="p-4 border-t border-gray-200 bg-white dark:bg-gray-950">
+            <div className="p-3 border-t border-repower-navy-900/10 bg-repower-cream">
               <div className="flex space-x-2">
                 <input
                   ref={inputRef}
@@ -203,13 +203,13 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
                   onChange={(e) => setInputText(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask us anything..."
-                  className="flex-1 px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300 text-sm font-normal placeholder:text-muted-foreground"
+                  className="flex-1 px-3 py-2 bg-repower-paper border border-repower-navy-900/15 rounded-full focus:outline-none focus:ring-2 focus:ring-repower-navy-900/20 focus:border-repower-navy-900/30 text-sm font-normal text-repower-navy-900 placeholder:text-repower-navy-900/40"
                   disabled={isLoading}
                 />
                 <Button
                   onClick={() => handleSend()}
                   disabled={!inputText.trim() || isLoading}
-                  className="bg-blue-500 hover:bg-blue-600 text-white h-10 w-10 p-0 rounded-md"
+                  className="bg-repower-navy-900 hover:bg-repower-navy-800 text-repower-paper h-10 w-10 p-0 rounded-full shadow-sm"
                 >
                   <Send className="w-4 h-4" />
                 </Button>
