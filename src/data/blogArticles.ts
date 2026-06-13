@@ -27,6 +27,9 @@ export interface BlogArticle {
   howToTools?: string[]; // List of tools needed
   youtubeVideoId?: string; // Optional Mercury Marine YouTube video reference
   youtubeVideoTitle?: string; // Title used for facade button + VideoObject schema
+  videoAssetUrl?: string; // Optional self-hosted CDN video (Lovable Assets)
+  videoAssetTitle?: string;
+  videoAssetCaption?: string;
 }
 
 // Parses "YYYY-MM-DD" as local midnight (America/Toronto for our content),
@@ -11468,6 +11471,9 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     category: 'Mercury Technology',
     readTime: '10 min read',
     keywords: ['Mercury Boost software upgrade', 'Mercury Boost eligible engines', 'Mercury software calibration', 'Mercury acceleration upgrade', 'Mercury dealer upgrade Ontario'],
+    videoAssetUrl: '/__l5e/assets-v1/aa07895e-5481-4c59-9cf4-43b2832e072c/mercury-boost-demo.mp4',
+    videoAssetTitle: 'Mercury Boost — official demo',
+    videoAssetCaption: "Mercury's official demonstration of the Boost software upgrade in action.",
     content: `_Last updated: May 27, 2026_
 
 ### Quick Answer
