@@ -26,6 +26,7 @@ import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { MercuryVideo } from '@/components/blog/MercuryVideo';
+import { MercuryVideoFile } from '@/components/blog/MercuryVideoFile';
 import { PremiumFaq } from '@/components/blog/PremiumFaq';
 
 
@@ -358,6 +359,15 @@ export default function BlogArticle() {
             <MercuryVideo
               videoId={article.youtubeVideoId}
               title={article.youtubeVideoTitle || 'Mercury Marine video'}
+            />
+          )}
+
+          {/* Optional self-hosted Mercury video (Lovable Assets CDN) */}
+          {article.videoAssetUrl && (
+            <MercuryVideoFile
+              src={article.videoAssetUrl}
+              title={article.videoAssetTitle || 'Mercury Marine video'}
+              caption={article.videoAssetCaption}
             />
           )}
 
