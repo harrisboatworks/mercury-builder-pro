@@ -616,32 +616,50 @@ async function buildQuote(supabase: any, body: any) {
   });
 
   // Optional lead capture (only if contact provided)
+  // Contact block is validated with zod; on validation failure we skip the
+  // insert but still return the quote. `referrer` is agent-controlled free
+  // text and is sanitized before being persisted in `notes`.
   let leadCaptured = false;
-  if (body?.contact?.email && body?.contact?.name) {
-    try {
-      await supabase.from("customer_quotes").insert({
-        customer_name: String(body.contact.name).slice(0, 200),
-        customer_email: String(body.contact.email).slice(0, 200),
-        customer_phone: body.contact.phone ? String(body.contact.phone).slice(0, 50) : null,
-        motor_model_id: motor.id,
-        base_price: motorPrice,
-        deposit_amount: deposit,
-        final_price: finalPrice,
-        loan_amount: financing.eligible ? finalPrice : 0,
-        monthly_payment: financing.eligible ? Number(financing.monthly_payment) : 0,
-        term_months: financing.eligible ? financing.term_months! : 0,
-        total_cost: finalPrice,
-        tradein_value_final: tradeInCredit || null,
-        lead_source: "public-quote-api",
-        lead_status: "new",
-        notes: `Public agent quote — referrer: ${body?.contact?.referrer || "unknown"}`,
-        quote_data: { items, financing, trade_in: tradeIn, boat_info: body?.boat_info || null },
-      });
-      leadCaptured = true;
-    } catch (e: any) {
-      console.error("lead capture failed:", e?.message);
+  let leadValidationError: string[] | null = null;
+  if (body?.contact && (body.contact.email || body.contact.name)) {
+    const contactSchema = z.object({
+      name: z.string().min(1).max(200),
+      email: z.string().email().max(200),
+      phone: z.string().max(50).optional(),
+      referrer: z.string().max(500).optional(),
+    });
+    const parsed = contactSchema.safeParse(body.contact);
+    if (!parsed.success) {
+      leadValidationError = parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`);
+    } else {
+      const c = parsed.data;
+      const safeReferrer = sanitizeAgentNote(c.referrer || "unknown", 200);
+      try {
+        await supabase.from("customer_quotes").insert({
+          customer_name: c.name.slice(0, 200),
+          customer_email: c.email.slice(0, 200),
+          customer_phone: c.phone ? c.phone.slice(0, 50) : null,
+          motor_model_id: motor.id,
+          base_price: motorPrice,
+          deposit_amount: deposit,
+          final_price: finalPrice,
+          loan_amount: financing.eligible ? finalPrice : 0,
+          monthly_payment: financing.eligible ? Number(financing.monthly_payment) : 0,
+          term_months: financing.eligible ? financing.term_months! : 0,
+          total_cost: finalPrice,
+          tradein_value_final: tradeInCredit || null,
+          lead_source: "public-quote-api",
+          lead_status: "new",
+          notes: `Public agent quote — referrer: ${safeReferrer}`,
+          quote_data: { items, financing, trade_in: tradeIn, boat_info: body?.boat_info || null },
+        });
+        leadCaptured = true;
+      } catch (e: any) {
+        console.error("lead capture failed:", e?.message);
+      }
     }
   }
+
 
   return json({
     site: SITE,
