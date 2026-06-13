@@ -195,7 +195,7 @@ export default function MotorPage() {
       if (!data) {
         try {
           const res = await fetch(
-            'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api'
+            'https://www.mercuryrepower.ca/api/agents/motors'
           );
           if (res.ok) {
             const json = await res.json();
