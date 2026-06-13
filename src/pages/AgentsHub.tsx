@@ -238,8 +238,6 @@ export default function AgentsHub() {
       "shaftLength": "L",
       "controlType": "Remote",
       "msrp": 18995,
-      "salePrice": 17495,
-      "dealerPrice": 17495,
       "sellingPrice": 17495,
       "availability": "In Stock",
       "imageUrl": "https://...",
