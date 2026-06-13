@@ -165,6 +165,6 @@ _Last updated 2026-06-12._
 - Machine-readable version of this page: https://www.mercuryrepower.ca/pricing-reference.md
 - Agent catalog index: https://www.mercuryrepower.ca/catalog.md
 - llms.txt: https://www.mercuryrepower.ca/llms.txt
-- Public motors API (live JSON): https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api
-- Public quote API: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api` with `{ "action": "build_quote", "motor_id": "<id>" }`.
+- Public motors API (live JSON): https://www.mercuryrepower.ca/api/agents/motors
+- Public quote API: `POST https://www.mercuryrepower.ca/api/agents/quote` with `{ "action": "build_quote", "motor_id": "<id>" }`.
 
