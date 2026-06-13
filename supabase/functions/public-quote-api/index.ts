@@ -688,6 +688,7 @@ async function buildQuote(supabase: any, body: any) {
     financing,
     deep_link: deepLink,
     lead_captured: leadCaptured,
+    lead_validation_error: leadValidationError,
     lastUpdated: nowISO(),
     priceValidUntil: validUntilISO(),
     disclaimer: DISCLAIMER,
