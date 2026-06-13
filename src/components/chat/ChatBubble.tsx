@@ -20,10 +20,10 @@ export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
 
   return (
     <div className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}>
-      <div className={`max-w-xs lg:max-w-sm px-3 py-2 rounded-lg ${
+      <div className={`max-w-xs lg:max-w-sm px-3 py-2 rounded-2xl ${
         message.isUser
-          ? 'bg-red-600 text-white font-normal'
-          : 'bg-gray-50 text-gray-900 border border-gray-200 font-normal'
+          ? 'bg-repower-navy-900 text-repower-paper font-normal shadow-sm'
+          : 'bg-repower-cream text-repower-navy-900 border border-repower-navy-900/10 font-normal'
       }`}>
         <MarkdownChatBody
           text={message.text}
