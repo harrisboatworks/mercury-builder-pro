@@ -501,9 +501,11 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
             authoritative list and <a href="/.well-known/ai.txt" className="text-primary underline">/.well-known/ai.txt</a> for our AI training and usage policy.
           </p>
           <p className="text-protected">
-            No hard rate limits currently, but please be a good citizen: cache responses where possible,
-            keep request volume reasonable, and identify your agent in the User-Agent header. We reserve
-            the right to throttle abusive traffic.
+            Per-IP rate limits on the public quote API: <code>list_motors</code> 120 / 10&nbsp;min,{' '}
+            <code>estimate_trade_in</code> 30 / 10&nbsp;min, <code>build_quote</code> 10 / 10&nbsp;min.
+            A 429 response means back off and retry after the <code>Retry-After</code> window.
+            Please also be a good citizen: cache responses where possible and identify your agent
+            in the User-Agent header. We reserve the right to throttle abusive traffic further.
           </p>
         </section>
 
