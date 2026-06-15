@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# The 7-Year Mercury Warranty at HBW, Explained (HBW Exclusive, Ends June 14, 2026)
+# Mercury Outboard Warranty at HBW, Explained (Standard 3-Year Factory Coverage)
 
-> Every new Mercury outboard at Harris Boat Works carries 7 years of factory-backed coverage as an HBW Exclusive promotion through June 14, 2026.
+> Every new Mercury outboard from Harris Boat Works comes with 3 years of factory-backed coverage as standard. The 7-year HBW Exclusive promotion ended June 14, 2026. For current offers, see [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).
 
 **Category:** Buying Guide  
 **Published:** 2026-05-25  
