@@ -237,7 +237,7 @@ When a customer asks about a specific motor's features (electric start, tiller, 
 - Water contamination signs: Creamy/white gear lube indicates water presence - requires dealer inspection
 
 ### Warranty & Product Protection:
-- Mercury BASE factory warranty: 3 years, non-declining, on every new outboard. ALWAYS check the active promotions data before stating a final warranty length — the current "HBW Exclusive 7-Year Mercury Warranty" promo (active through June 14, 2026) extends total coverage to 7 years (3 standard + 4 bonus). After that promo ends, coverage reverts to the 3-year standard.
+- Mercury BASE factory warranty: 3 years, non-declining, on every new outboard. ALWAYS check the active promotions data before stating a final warranty length. The "HBW Exclusive 7-Year Mercury Warranty" promotion ended June 14, 2026 and is no longer running. Only state a warranty bonus if the live promotions data lists one, and read its years and end date verbatim from that data. Otherwise the warranty is the 3-year standard.
 - Mercury Product Protection Plans: Extend coverage up to 8 years total
 - Platinum Extended Warranty available through Harris Boat Works: Factory-backed parts & labor
 - Warranty registration required - engines must be registered with Mercury Marine
@@ -474,7 +474,7 @@ DO NOT suggest alternatives like local transport, friends picking up, or any wor
 **Essential Package (Best Value Entry Point):**
 - Mercury motor included
 - Standard controls & rigging (or tiller operation for portables)
-- Base Mercury factory warranty (3 years standard; the active "HBW Exclusive 7-Year Mercury Warranty" promo extends this to 7 years until June 14, 2026 — always check the live promotions data before stating a length)
+- Base Mercury factory warranty (3 years standard. Only state a longer total if the live promotions data lists a warranty bonus; read years and end date from that data.)
 - Basic professional installation
 - Customer supplies battery if needed
 - Great for: Budget-conscious buyers, DIY enthusiasts, tiller motors
@@ -721,7 +721,7 @@ Gores Landing, ON K0K 2E0
 - **Worth repowering if**: Hull solid, transom firm, interior functional
 - **Can increase HP**: Often yes, up to max rating - modern motors lighter
 - **Controls compatibility**: 2004+ Mercury controls usually work
-- **Warranty**: 3-year factory standard, currently extended to 7 years via the active HBW Exclusive promo (through June 14, 2026), extendable up to 8 years total regardless of boat age — always check the live promotions data before stating a length
+- **Warranty**: 3-year factory standard on every new outboard, extendable up to 8 years total regardless of boat age. Only state a bonus length if the live promotions data lists one.
 - **Timeline**: Typically 3-5 days, faster in winter
 
 ### Repower Costs:

@@ -39,7 +39,7 @@ const MESSAGE_TEMPLATES = {
     `Hi ${name}! Here's your motor comparison: mercuryrepower.ca/compare${note ? ` (${note})` : ''}\n\n— Harris Boat Works 📞 ${COMPANY_PHONE}`,
   
   promo_reminder: (name: string) => 
-    `Hi ${name}! Quick reminder: 7-Year Factory-Backed Warranty on every new Mercury — available for a limited time!\n\nDetails: mercuryrepower.ca/promotions\n\n— Harris Boat Works 📞 ${COMPANY_PHONE}`,
+    `Hi ${name}! Quick reminder on current Mercury offers from Harris Boat Works. Every new Mercury includes the 3-year factory warranty as standard.\n\nLatest promotions: mercuryrepower.ca/promotions\n\nHarris Boat Works 📞 ${COMPANY_PHONE}`,
 };
 
 // Format phone number to E.164

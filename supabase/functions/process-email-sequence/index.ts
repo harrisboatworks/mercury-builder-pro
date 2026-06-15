@@ -137,7 +137,7 @@ function buildQuoteReminder(name: string | null, token: string, metadata: any): 
 
   const rows = [
     { label: "Motor", value: motor },
-    { label: "Warranty", value: "7-Year Factory Warranty (3 + 4 bonus years)" },
+    { label: "Warranty", value: "3-Year Factory Warranty (standard on every new Mercury)" },
   ];
   if (bonusLabel) rows.push({ label: "Your bonus", value: esc(bonusLabel) });
   if (metadata?.motorPrice) {
@@ -194,7 +194,7 @@ function buildBonusFocus(name: string | null, token: string, metadata: any): { s
     subject = `Your ${amt} Mercury rebate is reserved`;
     eyebrow = "Cash rebate";
     heading = `Your ${amt} rebate is reserved`;
-    lead = `Quick reminder. Your ${esc(String(metadata?.motorHP || ""))}HP motor qualifies for a <strong>${amt} factory cash rebate</strong> as part of Mercury's ${esc(metadata?.promoName || "Get 7")} promotion.`;
+    lead = `Quick reminder. Your ${esc(String(metadata?.motorHP || ""))}HP motor qualifies for a <strong>${amt} factory cash rebate</strong> as part of Mercury's ${esc(metadata?.promoName || "current")} promotion.`;
     highlightLabel = "Cash rebate";
     highlightValue = `${amt} applied directly to your purchase`;
   } else if (option === "no_payments") {
@@ -244,7 +244,7 @@ function buildLastChance(name: string | null, token: string, metadata: any): { s
   const unsubscribeUrl = `${APP_URL}/unsubscribe?token=${token}`;
   const ctaUrl = trackClick(`${APP_URL}/quote/saved/${metadata?.quoteId || ""}`, token, 6);
   const days = daysUntil(metadata?.promoEndDate);
-  const promoName = esc(metadata?.promoName || "Mercury Get 7");
+  const promoName = esc(metadata?.promoName || "Current Mercury Promotion");
   const endStr = esc(formatDate(metadata?.promoEndDate));
   const motor = esc(metadata?.motorModel || "Mercury motor");
 
@@ -255,7 +255,7 @@ function buildLastChance(name: string | null, token: string, metadata: any): { s
 
   const rows = [
     { label: "Motor", value: motor },
-    { label: "Warranty", value: "7-Year Factory Warranty ($1,000+ value)" },
+    { label: "Warranty", value: "3-Year Factory Warranty (standard on every new Mercury)" },
   ];
   if (bonusLabel) rows.push({ label: "Your bonus", value: bonusLabel });
   rows.push({ label: "Promotion ends", value: endStr });
@@ -272,9 +272,9 @@ function buildLastChance(name: string | null, token: string, metadata: any): { s
   `;
 
   const html = buildEmail({
-    preheader: `Only ${days} day${days === 1 ? "" : "s"} left on ${metadata?.promoName || "Mercury Get 7"}.`,
+    preheader: `Only ${days} day${days === 1 ? "" : "s"} left on ${metadata?.promoName || "the current Mercury promotion"}.`,
     eyebrow: `${days} day${days === 1 ? "" : "s"} left`,
-    heading: `Last chance on ${metadata?.promoName || "Mercury Get 7"}`,
+    heading: `Last chance on ${metadata?.promoName || "the current Mercury promotion"}`,
     bodyHtml: body + trackingPixel(token, 6),
     ctaText: "Complete your quote",
     ctaUrl,

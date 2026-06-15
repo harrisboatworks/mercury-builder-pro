@@ -633,8 +633,8 @@ async function getWarrantyPricing(supabase: any, body: any) {
     });
   }
 
-  // Base warranty is 3 years. With Get 7 promo, bonus brings it to 7.
-  // Extensions are priced per additional year beyond the promo coverage.
+  // Base warranty is 3 years. Any bonus years come from the active promotions data, not hardcoded here.
+  // Extensions are priced per additional year beyond the base (plus any active promo bonus years).
   return json({
     ok: true,
     warranty_pricing: {
@@ -647,7 +647,7 @@ async function getWarrantyPricing(supabase: any, body: any) {
         year_7: row.year_4_price,
         year_8: row.year_5_price,
       },
-      note: "With the active Get 7 promotion, years 4-7 are included free. Only year 8 would be an additional cost.",
+      note: "Base Mercury factory warranty is 3 years. If the active promotions data lists a warranty bonus, those bonus years are included free and only years beyond that total cost extra.",
     },
   });
 }
@@ -962,7 +962,7 @@ async function createQuote(supabase: any, body: any) {
   let warrantyYearsExtra = 0;
   const baseWarrantyYears = 3;
   const promoWarrantyYears = promoData?.warranty_extra_years || 0;
-  const totalBaseWarranty = baseWarrantyYears + promoWarrantyYears; // e.g. 7 with Get 7
+  const totalBaseWarranty = baseWarrantyYears + promoWarrantyYears; // 3 base + any active promo bonus years
 
   if (body.warranty_years && body.warranty_years > totalBaseWarranty) {
     warrantyYearsExtra = body.warranty_years - totalBaseWarranty;

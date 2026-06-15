@@ -135,7 +135,7 @@ serve(async (req: Request): Promise<Response> => {
             selectedPromoOption,
             promoDisplayValue,
             // Active promotion info
-            promoName: activePromo?.bonus_title || activePromo?.name || '7-Year Factory-Backed Warranty',
+            promoName: activePromo?.bonus_title || activePromo?.name || 'Current Mercury Promotion',
             promoEndDate: activePromo?.end_date || null,
             // Quote totals (if available)
             estimatedTotal: quoteState.runningTotal || null,
