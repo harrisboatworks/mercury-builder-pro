@@ -198,17 +198,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 At cruise (around 4,000 RPM), expect 6-8 GPH. At WOT, 10-12 GPH. Actual numbers vary by boat weight, hull design, and conditions. SmartCraft gauges show real-time consumption.
 
-### Does ethanol-free fuel improve efficiency?
-
-Ethanol-free fuel has slightly higher energy content, but the efficiency difference is minimal. More important is using fresh fuel and proper stabilization.
-
 ### How much does a dirty hull cost in fuel?
 
 A heavily fouled hull can reduce efficiency 20-30%. Keep your hull clean and antifouled for best performance and fuel economy.
-
-### Is idling bad for fuel economy?
-
-Idling uses minimal fuel (about 0.5 GPH for a 100HP motor), but extended idling isn't great for the engine. EFI motors start instantly, so shut down when parked.
 
 ### Does ethanol-free fuel improve outboard fuel efficiency?
 
@@ -229,6 +221,18 @@ Mercury's SmartCraft system displays fuel economy in several formats: instantane
 ### What fuel should I use in my Mercury outboard in Ontario?
 
 Mercury recommends regular unleaded gasoline with a minimum 87 octane rating for most FourStroke and Pro XS outboards; Verado models may recommend 89 octane, check your owner's manual. In Ontario, most marina fuel is E10 (10% ethanol blend), which is approved by Mercury for current models. Ethanol-free premium marine fuel, when available, offers slightly better efficiency (3-5%) and is preferable for long-term storage situations. Never use E15 or higher ethanol blends, these are not approved for Marine use and can damage fuel system components.
+
+### How much fuel does a Mercury outboard use per hour?
+
+It depends mostly on horsepower, throttle setting, prop, and load, not on the badge alone. A common rule of thumb for a modern Mercury FourStroke is roughly 1 gallon (about 3.8 litres) per hour for every 10 horsepower at wide-open throttle, and at an efficient cruise you will burn well under that. The only way to know your real number is to watch a SmartCraft fuel-economy gauge on your own boat, because hull, weight, and water conditions move it a lot. Want help dialing in a prop and cruise RPM that lowers your burn? Call Harris Boat Works at 905-342-2153.
+
+### Do 2-stroke or 4-stroke Mercury outboards burn less fuel?
+
+Four-strokes burn noticeably less fuel than carburetted two-strokes of the same horsepower, often a large difference at cruise, because a four-stroke does not lose unburned fuel out the exhaust the way an older two-stroke does. Mercury's current FourStroke and Pro XS engines are all four-stroke EFI designs. If you are running an older two-stroke and watching your fuel-dock bill climb, repowering to a current Mercury FourStroke is the single biggest consumption drop available. Build a repower quote at mercuryrepower.ca or call 905-342-2153.
+
+### What are the best fuel efficiency tips for outboard motors?
+
+In order of impact: get the prop right so the motor reaches the middle of its rated wide-open RPM band, trim the bow up at cruise so the hull rides clean, keep the hull and prop free of weed and growth, drop unnecessary weight, and settle on your motor's efficient cruise RPM instead of running flat out. Prop and trim deliver the most gain by far. Most fuel-economy complaints we see at Harris Boat Works turn out to be setup problems, not engine problems. For a prop check or sea trial, reach us at 905-342-2153.
 
 ## Next steps
 
