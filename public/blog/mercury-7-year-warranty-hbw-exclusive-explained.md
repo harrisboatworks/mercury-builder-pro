@@ -27,11 +27,11 @@ content_type: blog_article
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-7-year-warranty-hbw-exclusive-explained
 
-<!-- PROMO-EXPIRY: HBW Exclusive 7-yr ends 2026-06-14. Post-expiry sweep required: Quick answer, 'current promotion' section, FAQs, title/SEO title. -->
+<!-- PROMO-EXPIRY-DONE: HBW Exclusive 7-yr promo ended 2026-06-14. Post converted to evergreen 3-year warranty explainer on 2026-06-15. -->
 
-> **Quick answer:** The 7-year HBW Exclusive promotion ends **June 14, 2026 (one week from publication).** Every new Mercury outboard purchased from Harris Boat Works by that date carries 7 years of factory-backed coverage: Mercury's 3-year limited warranty (with 3 years corrosion concurrent, not stacked) plus 4 promotional bonus years run as an HBW Exclusive offer. **If you buy on June 15, coverage is the standard 3 years. Same motor, four fewer years of coverage.** Build the quote now at [mercuryrepower.ca](https://www.mercuryrepower.ca). Source of truth for promo status: [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).
+> **Quick answer:** The 7-year HBW Exclusive promotion ended June 14, 2026. Every new Mercury outboard from Harris Boat Works now carries the standard 3 years of factory-backed coverage: Mercury's 3-year limited warranty, with 3 years of corrosion coverage running concurrently (not stacked). Extended coverage is available separately through Mercury Product Protection. For the latest offers, check [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions), and build a quote any time at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-When customers ask about Mercury's warranty, the question they usually mean is: "If something goes wrong, am I going to pay for it?" The honest answer has two parts: what Mercury covers contractually (the base), and what HBW is offering on top of that this week (the promotion). This post separates the two so you know what is locked in for the life of the motor versus what is tied to the June 14, 2026 deadline.
+When customers ask about Mercury's warranty, the question they usually mean is: "If something goes wrong, am I going to pay for it?" The honest answer has two parts: what Mercury covers contractually (the base), and what HBW or Mercury may be offering on top of that at any given time (a promotion). This post separates the two so you know what is locked in for the life of the motor versus what is tied to a promotional window.
 
 ## The current promotion (HBW Exclusive, ends June 14, 2026)
 
