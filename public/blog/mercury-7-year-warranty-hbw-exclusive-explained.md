@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "The 7-Year Mercury Warranty at HBW, Explained (HBW Exclusive, Ends June 14, 2026)"
-description: "Every new Mercury outboard at Harris Boat Works carries 7 years of factory-backed coverage as an HBW Exclusive promotion through June 14, 2026."
+title: "Mercury Outboard Warranty at HBW, Explained (Standard 3-Year Factory Coverage)"
+description: "How Mercury's factory warranty works on a new outboard from Harris Boat Works: 3 years of standard factory-backed coverage, what it covers, and how extended coverage works. The 7-year HBW Exclusive promotion ended June 14, 2026."
 category: "Buying Guide"
 date_published: 2026-05-25
 date_modified: 2026-06-07
