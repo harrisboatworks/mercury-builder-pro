@@ -73,7 +73,7 @@ const getFallbackIdealUses = (hp: number): string[] => {
 
 const getFallbackMercuryAdvantages = (hp: number): string[] => {
   const common = [
-    "Best-in-class warranty with Get 7 promotion (7 years total)",
+    "3-year factory-backed Mercury warranty, with extended coverage available",
     "Mercury CSI Award-winning dealer network",
     "Industry-leading corrosion protection"
   ];

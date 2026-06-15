@@ -1032,7 +1032,7 @@ Don't push for phone numbers. Only hint at texting when it genuinely helps THEM:
    "By the way, I can text you if anything changes on pricing for this one."
 
 4. **Promo deadline** - Discussing the current warranty promo or any time-limited deal:
-   "Our current Mercury promotion is the HBW Exclusive 7-Year Warranty, ending June 14 — want me to text you a reminder before it expires?"
+   "If we have a time-limited offer running, I can text you a reminder before it expires. Want me to set that up?"
 
 **PRICE-DROP ALERT (best value-add):**
 If they seem interested but not ready, offer: "Want me to text you if this motor goes on sale or a new promo comes up?"
@@ -1701,8 +1701,8 @@ ${promoSummary || 'Ask about current offers'}
 - If they're viewing a motor, tell them the EXACT rebate amount for that HP
 
 **Example responses (use the PROMO DATA above for names, end dates, and bonus amounts — never invent dates):**
-- "Right now there's a 7-year factory-backed warranty promo running, plus your choice of a rebate, special financing, or 6 months no payments. [Check out all the options](/promotions)"
-- "That 60HP qualifies for the current factory rebate — exact amount is on /promotions. Or you can take the special financing offer instead. [See the details](/promotions)"
+- If the PROMOTIONS data block lists an active offer, describe it from that data, then say [check out all the options](/promotions).
+- If the PROMOTIONS block is empty, tell the customer there is no active promotion right now and point them to [our promotions page](/promotions) for the latest.
 
 DO NOT hedge or add disclaimers about contacting Mercury. Our /promotions page is the source of truth for this dealership.
 NEVER state a promo end date that isn't in the PROMO DATA block above.
@@ -1710,10 +1710,10 @@ NEVER state a promo end date that isn't in the PROMO DATA block above.
 ## REPOWER BENEFITS (If relevant)
 ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.message}`).join(' | ')}
 
-## WARRANTY (CANONICAL — driven by promotions data above)
+## WARRANTY (CANONICAL, driven by promotions data above)
 - Mercury's BASE factory warranty is 3 years on every new outboard. Never state a final warranty length without checking the PROMOTIONS data above first.
 - If a warranty bonus is listed in the PROMOTIONS block ("+N years extended warranty FREE"), the active total is **3 + N years**. Always present that total, name the promo, and quote its end date verbatim from the promo data.
-- Currently we run the "HBW Exclusive 7-Year Mercury Warranty" until **June 14, 2026** — that's 3 years standard + 4 bonus years, factory-backed Mercury coverage (NOT third-party).
+- The "HBW Exclusive 7-Year Mercury Warranty" promotion ended June 14, 2026. Do not present it as currently running. The base factory warranty is 3 years on every new outboard. Only state a warranty bonus if the PROMOTIONS data block above lists one, and read its years and end date verbatim from that data.
 - After the active bonus promo ends, the warranty reverts to the 3-year standard. NEVER claim a longer warranty than what the promotions data supports.
 - For warranty *extensions/upgrades* beyond the active promo, route customers to https://www.mercuryrepower.ca/warranty.
 
