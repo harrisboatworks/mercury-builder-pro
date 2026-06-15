@@ -5786,14 +5786,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 11: March 16, 2026
   {
     slug: 'mercury-outboard-fuel-efficiency-guide',
-    seoTitle: "Mercury Outboard Fuel Economy: Get Better MPG | HBW",
+    seoTitle: "Mercury Outboard Fuel Consumption by HP (Ontario Guide)",
     relatedSlugs: ['mercury-propeller-selection-guide', 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado', 'breaking-in-new-mercury-motor-guide'],
     title: 'Mercury Outboard Fuel Economy: How to Get Better MPG',
-    description: "Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn on Ontario boats, ranked by impact. HBW guide.",
+    description: "How much fuel does your Mercury outboard burn? Consumption by HP, 2-stroke vs 4-stroke, and the 5 levers that cut fuel burn on Ontario boats.",
     image: '/lovable-uploads/Break_In_Infographic.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-16',
-    dateModified: '2026-05-04',
+    dateModified: '2026-06-15',
     publishDate: '2026-03-16',
     category: 'Tips',
     readTime: '9 min read',
