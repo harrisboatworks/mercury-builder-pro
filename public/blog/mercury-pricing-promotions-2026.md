@@ -147,10 +147,10 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
 
 **Harris Boat Works Current Offer (HBW Exclusive, ends June 14, 2026)**:
-- 7 years total factory-backed warranty on every new Mercury outboard purchased by June 14, 2026
+- 3 years of standard factory-backed warranty on every new Mercury outboard (the 7-year HBW Exclusive promotion ended June 14, 2026; see /promotions for current offers)
 - Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years
 - Included in the purchase price; reverts to the 3-year factory standard after the deadline unless a new promotion is announced
-- See the [7-year HBW Exclusive explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current offers](/promotions)
+- See the [Mercury warranty explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current offers](/promotions)
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
 - Competitive rates from third-party lenders
@@ -240,7 +240,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Are there current promotions available?
 
-Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. The current HBW Exclusive brings every new Mercury to 7 years of total factory-backed warranty (Mercury's 3-year factory base + 4 promotional bonus years), available through June 14, 2026. See /promotions for the latest.
+Mercury has scaled back manufacturer-level promotions, and Harris Boat Works runs our own from time to time. The HBW Exclusive 7-year warranty promotion ran through June 14, 2026 and has ended. Every new Mercury now carries the standard 3-year factory-backed warranty, with extended coverage available. See /promotions for the latest offers.
 
 ### Can I negotiate below advertised price?
 
