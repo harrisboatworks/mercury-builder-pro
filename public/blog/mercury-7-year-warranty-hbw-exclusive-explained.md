@@ -191,11 +191,11 @@ The Mercury Limited Warranty has provisions for transfer to a second owner. Prom
 
 ### How is this different from Mercury Product Protection (MPP)?
 
-MPP is Mercury's separate paid extended service program, sold through dealers and quoted at time of sale. It picks up after factory coverage ends. The 7-year HBW Exclusive promotion is included in the purchase price of every new Mercury we sell through June 14, 2026; MPP is an optional add-on you buy on top.
+MPP is Mercury's paid extended service program, sold through dealers and quoted at time of sale. It picks up after the factory warranty ends. The 7-year HBW Exclusive promotion (ended June 14, 2026) was included in the purchase price; MPP is an optional add-on you buy on top of the standard 3-year factory warranty.
 
-### Does the promotion stack with TD financing at 5.48%?
+### Does TD financing at 5.48% still apply?
 
-Yes. The 7-year warranty promotion and TD financing at 5.48% are separate program categories and apply together on qualifying Mercury outboards purchased through HBW during the promotional window.
+Yes. TD financing at 5.48% is a separate program that runs through December 31, 2026 on qualifying Mercury outboards purchased through HBW. The 7-year warranty promotion that previously stacked with it ended June 14, 2026.
 
 ## Next steps
 
