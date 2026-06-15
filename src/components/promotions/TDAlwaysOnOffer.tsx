@@ -86,10 +86,10 @@ export function TDAlwaysOnCard() {
 
             <div className="order-2 flex flex-col gap-5 justify-center">
               <h3 className="font-display text-2xl md:text-[30px] font-bold text-repower-navy-900 leading-tight">
-                Two promotions. Both apply.
+                TD Financing Available
               </h3>
               <p className="font-sans text-[16px] md:text-[17px] text-repower-navy-900/70 leading-relaxed">
-                Special finance offer that stacks with our 7-year factory warranty. Get both on a new Mercury repower.
+                Low-rate TD financing on a new Mercury repower, plus the standard 3-year factory warranty that comes on every new Mercury.
               </p>
               <p className="font-sans text-[14px] text-repower-navy-900/65 leading-relaxed">
                 Not all customers will qualify. Approval depends on TD's credit review.
