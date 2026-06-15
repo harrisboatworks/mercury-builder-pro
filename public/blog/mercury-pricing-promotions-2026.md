@@ -240,7 +240,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Are there current promotions available?
 
-Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. The current HBW Exclusive brings every new Mercury to 7 years of total factory-backed warranty (Mercury's 3-year factory base + 4 promotional bonus years), available through June 14, 2026. See /promotions for the latest.
+Mercury has scaled back manufacturer-level promotions, and Harris Boat Works runs our own from time to time. The HBW Exclusive 7-year warranty promotion ran through June 14, 2026 and has ended. Every new Mercury now carries the standard 3-year factory-backed warranty, with extended coverage available. See /promotions for the latest offers.
 
 ### Can I negotiate below advertised price?
 
