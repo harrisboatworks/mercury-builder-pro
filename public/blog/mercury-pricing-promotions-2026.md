@@ -147,10 +147,10 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
 
 **Harris Boat Works Current Offer (HBW Exclusive, ends June 14, 2026)**:
-- 7 years total factory-backed warranty on every new Mercury outboard purchased by June 14, 2026
+- 3 years of standard factory-backed warranty on every new Mercury outboard (the 7-year HBW Exclusive promotion ended June 14, 2026; see /promotions for current offers)
 - Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years
 - Included in the purchase price; reverts to the 3-year factory standard after the deadline unless a new promotion is announced
-- See the [7-year HBW Exclusive explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current offers](/promotions)
+- See the [Mercury warranty explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current offers](/promotions)
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
 - Competitive rates from third-party lenders
