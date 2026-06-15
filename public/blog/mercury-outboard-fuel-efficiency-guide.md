@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-05-04
+last_updated: 2026-06-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Outboard Fuel Economy: How to Get Better MPG"
-description: "Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn on Ontario boats, ranked by impact. HBW guide."
+title: "Mercury Outboard Fuel Consumption by HP (Ontario Guide)"
+description: "How much fuel does your Mercury outboard burn? Consumption by HP, 2-stroke vs 4-stroke, and the 5 levers that cut fuel burn on Ontario boats."
 category: "Tips"
 date_published: 2026-03-16
-date_modified: 2026-05-04
+date_modified: 2026-06-15
 keywords: ["outboard fuel efficiency","mercury mpg","boat fuel economy","save fuel boating","outboard consumption"]
 author: Harris Boat Works
 content_type: blog_article
