@@ -1,7 +1,5 @@
-import { Award, BadgeCheck } from 'lucide-react';
+import { Award, BadgeCheck, ShieldCheck } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
-// Optimized warranty badge: 5KB WebP (was 3MB PNG, displayed at ~40px).
-const warranty7 = '/assets/optimized/harris-7-year-warranty-200w.webp';
 import hbwLogo from '@/assets/harris-logo-white.png';
 
 const mercuryRepowerLogo = '/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png';
@@ -17,7 +15,7 @@ const items: TrustItem[] = [
   { label: 'Family-Owned Since 1947', img: hbwLogo, imgAlt: 'Harris Boat Works' },
   { label: 'Mercury Certified Dealer', icon: Award },
   { label: 'Mercury Repower Centre', img: mercuryRepowerLogo, imgAlt: 'Mercury Repower Center' },
-  { label: '7-Year Warranty Available', img: warranty7, imgAlt: '7-Year Warranty' },
+  { label: 'Factory-Backed Warranty', icon: ShieldCheck },
   { label: 'CSI Award Winner', icon: BadgeCheck },
 ];
 
@@ -58,4 +56,3 @@ export function TrustStrip() {
     </section>
   );
 }
-
