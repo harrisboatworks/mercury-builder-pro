@@ -140,9 +140,9 @@ Not by itself. A promotional bonus can close the gap between "repair again" and 
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Repair, Repower, or Sell? The Honest Decision](/blog/repair-repower-or-sell-boat-ontario-decision-guide)
 
-## Ready to lock in the 7-year coverage?
+## Ready to repower with a new Mercury?
 
-The deadline is **June 14, 2026 (one week from publication).** Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** now and we will match you with the right motor for your boat. Purchases registered by June 14 lock in the full 7 years.
+Every new Mercury comes with the standard 3-year factory warranty, with extended coverage available through Mercury Product Protection. For current promotions, see [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions), build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or call **(905) 342-2153**.
 
 **Phone:** (905) 342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
