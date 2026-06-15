@@ -33654,28 +33654,26 @@ Harris Boat Works, family-owned since 1947. A Mercury Platinum Dealer, selling M
       { question: 'How is this different from Mercury Product Protection (MPP)?', answer: "MPP is Mercury's paid extended service program, sold through dealers and quoted at time of sale. It picks up after the factory warranty ends. The 7-year HBW Exclusive promotion (ended June 14, 2026) was included in the purchase price; MPP is an optional add-on you buy on top of the standard 3-year factory warranty." },
       { question: 'Does TD financing at 5.48% still apply?', answer: 'Yes. TD financing at 5.48% is a separate program that runs through December 31, 2026 on qualifying Mercury outboards purchased through HBW. The 7-year warranty promotion that previously stacked with it ended June 14, 2026.' },
     ],
-    content: `<!-- PROMO-EXPIRY: HBW Exclusive 7-yr ends 2026-06-14. Post-expiry sweep required: Quick answer, 'current promotion' section, FAQs, title/SEO title. -->
+    content: `<!-- PROMO-EXPIRY-DONE: HBW Exclusive 7-yr promo ended 2026-06-14. Post converted to evergreen 3-year warranty explainer on 2026-06-15. -->
 
-*Last reviewed: 2026-06-07*
+*Last reviewed: 2026-06-15*
 
-> **Quick answer:** The 7-year HBW Exclusive promotion ends **June 14, 2026 (one week from publication).** Every new Mercury outboard purchased from Harris Boat Works by that date carries 7 years of factory-backed coverage: Mercury's 3-year limited warranty (with 3 years corrosion concurrent, not stacked) plus 4 promotional bonus years run as an HBW Exclusive offer. **If you buy on June 15, coverage is the standard 3 years. Same motor, four fewer years of coverage.** Build the quote now at [mercuryrepower.ca](https://www.mercuryrepower.ca). Source of truth for promo status: [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).
+> **Quick answer:** The 7-year HBW Exclusive promotion ended June 14, 2026. Every new Mercury outboard from Harris Boat Works now carries the standard 3 years of factory-backed coverage: Mercury's 3-year limited warranty, with 3 years of corrosion coverage running concurrently (not stacked). Extended coverage is available separately through Mercury Product Protection. For the latest offers, check [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions), and build a quote any time at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-When customers ask about Mercury's warranty, the question they usually mean is: "If something goes wrong, am I going to pay for it?" The honest answer has two parts: what Mercury covers contractually (the base), and what HBW is offering on top of that this week (the promotion). This post separates the two so you know what is locked in for the life of the motor versus what is tied to the June 14, 2026 deadline.
+When customers ask about Mercury's warranty, the question they usually mean is: "If something goes wrong, am I going to pay for it?" The honest answer has two parts: what Mercury covers contractually (the base), and what HBW or Mercury may be offering on top of that at any given time (a promotion). This post separates the two so you know what is locked in for the life of the motor versus what is tied to a promotional window.
 
-## The current promotion (HBW Exclusive, ends June 14, 2026)
+## The 7-year promotion (ended June 14, 2026)
 
-Harris Boat Works is running a 4-year promotional bonus on every new Mercury outboard we sell, on top of the 3-year factory base. **Total: 7 years of factory-backed coverage**, included in the purchase price.
+From April through June 14, 2026, Harris Boat Works ran an HBW Exclusive promotion that added 4 promotional bonus years on top of Mercury's 3-year factory base, for 7 years of total factory-backed coverage on every new Mercury we sold. That promotion has ended.
 
-- **Eligibility:** every new Mercury outboard purchased from HBW by **June 14, 2026**.
-- **Structure:** Mercury 3-year factory limited warranty + 4 promotional bonus years = 7 years total.
-- **Same factory coverage.** The bonus years apply to the same Mercury Limited Warranty terms covered below: same parts and systems, same authorized-dealer network, parts and labour both covered, non-declining.
-- **Not MPP.** This is not Mercury Product Protection. MPP is a separate paid extended program; this promotion is included in the purchase price.
-- **Stacks with TD financing at 5.48%.** Separate program categories, applied together on qualifying motors. OAC.
-- **The math at the deadline:** purchase on June 14, 2026 = 7 years of coverage. Purchase on June 15 = 3 years. Same motor, four fewer years of coverage, unless a new promotion is announced.
+- **Standard coverage today:** every new Mercury outboard carries Mercury's 3-year factory limited warranty.
+- **Same factory terms.** The factory warranty covers the parts and systems described below, honoured across Mercury's authorized-dealer network, parts and labour both covered, non-declining.
+- **Extended coverage is separate.** Mercury Product Protection (MPP) is a paid extended program you can add on top of the factory warranty. Ask us to quote it with your motor.
+- **TD financing at 5.48% still applies.** That program runs through December 31, 2026 on qualifying motors. OAC.
 
-Source of truth: [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions). Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call **(905) 342-2153**.
+For current promotions, the source of truth is [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions). Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call **(905) 342-2153**.
 
-Everything below is the evergreen Mercury factory warranty content: what's covered, what voids it, how registration, claims, transfer, and MPP work. It applies whether you buy during the promotion or after.
+Everything below is the evergreen Mercury factory warranty content: what's covered, what voids it, and how registration, claims, transfer, and MPP work. It applies to every new Mercury, promotion or not.
 
 ## What Mercury's factory warranty covers
 
