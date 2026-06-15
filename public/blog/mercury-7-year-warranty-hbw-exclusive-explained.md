@@ -33,20 +33,18 @@ content_type: blog_article
 
 When customers ask about Mercury's warranty, the question they usually mean is: "If something goes wrong, am I going to pay for it?" The honest answer has two parts: what Mercury covers contractually (the base), and what HBW or Mercury may be offering on top of that at any given time (a promotion). This post separates the two so you know what is locked in for the life of the motor versus what is tied to a promotional window.
 
-## The current promotion (HBW Exclusive, ends June 14, 2026)
+## The 7-year promotion (ended June 14, 2026)
 
-Harris Boat Works is running a 4-year promotional bonus on every new Mercury outboard we sell, on top of the 3-year factory base. **Total: 7 years of factory-backed coverage**, included in the purchase price.
+From April through June 14, 2026, Harris Boat Works ran an HBW Exclusive promotion that added 4 promotional bonus years on top of Mercury's 3-year factory base, for 7 years of total factory-backed coverage on every new Mercury we sold. That promotion has ended.
 
-- **Eligibility:** every new Mercury outboard purchased from HBW by **June 14, 2026**.
-- **Structure:** Mercury 3-year factory limited warranty + 4 promotional bonus years = 7 years total.
-- **Same factory coverage.** The bonus years apply to the same Mercury Limited Warranty terms covered below: same parts and systems, same authorized-dealer network, parts and labour both covered, non-declining.
-- **Not MPP.** This is not Mercury Product Protection. MPP is a separate paid extended program; this promotion is included in the purchase price.
-- **Stacks with TD financing at 5.48%.** Separate program categories, applied together on qualifying motors. OAC.
-- **The math at the deadline:** purchase on June 14, 2026 = 7 years of coverage. Purchase on June 15 = 3 years. Same motor, four fewer years of coverage, unless a new promotion is announced.
+- **Standard coverage today:** every new Mercury outboard carries Mercury's 3-year factory limited warranty.
+- **Same factory terms.** The factory warranty covers the parts and systems described below, honoured across Mercury's authorized-dealer network, parts and labour both covered, non-declining.
+- **Extended coverage is separate.** Mercury Product Protection (MPP) is a paid extended program you can add on top of the factory warranty. Ask us to quote it with your motor.
+- **TD financing at 5.48% still applies.** That program runs through December 31, 2026 on qualifying motors. OAC.
 
-Source of truth: [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions). Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call **(905) 342-2153**.
+For current promotions, the source of truth is [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions). Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call **(905) 342-2153**.
 
-Everything below is the evergreen Mercury factory warranty content: what's covered, what voids it, how registration, claims, transfer, and MPP work. It applies whether you buy during the promotion or after.
+Everything below is the evergreen Mercury factory warranty content: what's covered, what voids it, and how registration, claims, transfer, and MPP work. It applies to every new Mercury, promotion or not.
 
 ## What Mercury's factory warranty covers
 
