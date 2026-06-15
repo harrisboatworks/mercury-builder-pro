@@ -161,17 +161,17 @@ Family-owned since 1947. Mercury dealer since 1965.
 
 ## FAQs
 
-### When does the 7-year HBW Exclusive promotion end?
+### Did the 7-year HBW Exclusive promotion end?
 
-The promotion ends June 14, 2026. To lock in 7 years of factory-backed coverage, the Mercury outboard must be purchased from Harris Boat Works by that date. New Mercury outboards purchased June 15, 2026 or later fall back to the 3-year factory standard unless a new promotion is announced.
+Yes. The 7-year HBW Exclusive promotion ended June 14, 2026. New Mercury outboards purchased after that date carry the standard 3-year factory warranty. For current offers, see mercuryrepower.ca/promotions.
 
 ### How long is the Mercury warranty at HBW right now?
 
-Every new Mercury outboard purchased from Harris Boat Works by June 14, 2026 carries 7 years of factory-backed coverage: Mercury's 3-year limited warranty (with 3 years corrosion concurrent) plus 4 promotional bonus years run as an HBW Exclusive offer. Confirm current terms at mercuryrepower.ca/promotions when we quote.
+Every new Mercury outboard from Harris Boat Works carries 3 years of factory-backed coverage as standard: Mercury's 3-year limited warranty, with 3 years of corrosion coverage running concurrently. Extended coverage is available through Mercury Product Protection. The 7-year HBW Exclusive promotion ended June 14, 2026. Confirm current terms at mercuryrepower.ca/promotions when we quote.
 
-### Is the 7 years from Mercury or from HBW?
+### Was the 7 years from Mercury or from HBW?
 
-The coverage is factory-backed Mercury warranty work, handled by Mercury and its authorized dealer network. The 4 bonus years are a promotion HBW runs on every new Mercury we sell through June 14, 2026, not a third-party service contract and not an aftermarket add-on. Mercury's own consumer "Get 7" program has ended; this is our offer.
+The coverage was factory-backed Mercury warranty work, handled by Mercury and its authorized dealer network. The 4 bonus years were a promotion HBW ran on every new Mercury we sold through June 14, 2026, not a third-party service contract and not an aftermarket add-on. Mercury's own consumer Get 7 program had also ended. The standard factory warranty today is 3 years.
 
 ### What does the Mercury factory warranty cover?
 
