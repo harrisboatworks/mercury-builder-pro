@@ -23,7 +23,12 @@ import { PromotionHero } from '@/components/promotions/PromotionHero';
 import { ChooseOneSection } from '@/components/promotions/ChooseOneSection';
 import { RebateMatrix } from '@/components/promotions/RebateMatrix';
 import { RebateCalculator } from '@/components/promotions/RebateCalculator';
-import { TDAlwaysOnCard } from '@/components/promotions/TDAlwaysOnOffer';
+import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
+import { TDRateCardImage } from '@/components/promotions/TDRateCardImage';
+
+const TD_RATE_CARD_IMAGE = '/lovable-uploads/td-financing-2026-rate-card.jpg';
+const TD_RATE_CARD_ALT =
+  'Mercury TD Always On financing offer: 5.48% APR up to 240-month amortization through December 31, 2026';
 
 const csiAwardBadge = "/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png";
 
