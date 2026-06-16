@@ -30854,7 +30854,7 @@ If you are weighing this decision and want a structured conversation, email info
 On a calm summer day, yes, a modern tritoon with the right power can handle Lake Ontario near shore. On a typical windy afternoon, no, the chop will be uncomfortable at best and dangerous at worst. For consistent Lake Ontario use, V-hull is the right call.
 
 **What's the fastest pontoon a 90 HP Mercury can push?**
-A 90 ELPT with [Command Thrust](/blog/mercury-command-thrust-vs-standard-gearcase) on a 20-foot pontoon will hit 25-28 mph on a calm day with light load. A 22-foot tritoon with the same motor lands closer to 22-25 mph. Going faster requires more horsepower (115-150 HP) and usually a tritoon configuration.
+A 90 ELPT with [Command Thrust](/blog/mercury-command-thrust-vs-standard-gearcase) on a 20-foot pontoon will hit 25-28 mph (40-45 km/h) on a calm day with light load. A 22-foot tritoon with the same motor lands closer to 22-25 mph (35-40 km/h). Going faster requires more horsepower (115-150 HP) and usually a tritoon configuration.
 
 **Are pontoons safe in waves?**
 Pontoons are stable but not seaworthy in the same sense as V-hulls. They handle small chop fine (under 1 foot) but get bounced around in 2-foot waves and can take water over the front deck in larger conditions. Stay on calmer water and watch the wind forecast.
