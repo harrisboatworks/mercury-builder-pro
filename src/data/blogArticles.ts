@@ -30750,9 +30750,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
     content: `# Pontoon vs V-Hull, Honestly Compared for Ontario Boaters
 
-## Quick answer
+> **Quick answer:** Choose a pontoon for calm-water family days, big groups, shore lounging, and shallow Rice Lake bays. Choose a V-hull for rough water, serious fishing, watersports, and trailering to bigger lakes like Simcoe or Ontario. On Rice Lake and most of the Kawarthas either works most of the season; once the wind picks up on open water, the V-hull is the safer call. The honest decision comes down to two questions: how many people are usually aboard, and what water do you actually run.
 
-A pontoon is the right answer for family lounging, calm-water cruising, big-group capacity, and shallow lake fishing where speed is not the point. A V-hull is the right answer for serious open-water use, rough chop, watersports, and any situation where you need to cover distance quickly. On Rice Lake and most of the Kawarthas, either works for most of the season. On Lake Ontario or Lake Simcoe, the V-hull becomes the safer call once the wind picks up. We sell Legend pontoons and Legend V-hulls at Harris Boat Works, and the honest decision usually comes down to two questions: how many people are typically on the boat, and what kind of water do you actually use it on.
+## Pontoon vs v-hull at a glance
+
+| Factor | Pontoon | V-hull |
+|---|---|---|
+| Best for | Family, big groups, cottage entertaining | Rough water, fishing, watersports, range |
+| Capacity (22 ft) | Roughly 10-12 on a flat deck | 6-8, mostly in the cockpit |
+| Rough chop | Fine to ~1 ft, bounced at 2 ft, unsafe at 3 ft | Cuts through, cockpit stays dry |
+| Shallow water (draft) | 12-18 in typical | 18-30 in |
+| Watersports | Pulls a tube on calm water | Dedicated ski and wakeboard platform |
+| Cruise (same HP) | Lower speed, cruises | Higher speed, travels farther |
+| Smaller-budget pick | 16 ft exists but limited | 16-18 ft aluminum with a 50-90 HP Mercury |
 
 ## How each hull is built (the 60-second version)
 
