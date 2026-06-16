@@ -30806,8 +30806,6 @@ A 16-18 foot aluminum V-hull with a 50-90 HP Mercury is one of the cheapest path
 
 ## Where the decision is genuinely close
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 For a lot of Ontario boaters, neither hull is "wrong." The decision comes down to lifestyle:
 - **Calm-water family weekends with occasional fishing**: pontoon usually wins.
 - **Mixed use with kids learning to ski plus serious fishing**: V-hull usually wins.
