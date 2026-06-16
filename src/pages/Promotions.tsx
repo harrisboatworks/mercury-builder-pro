@@ -514,7 +514,7 @@ export default function Promotions() {
             Get Notified of Future Sales
           </h2>
           <p className="font-sans text-repower-navy-900/70 mb-6">
-            Be the first to know when we launch new promotions. No spam, just savings.
+            Want to know when Mercury runs a rebate or bonus offer on top of TD financing? Get on the list. No spam, just savings.
           </p>
 
           <form onSubmit={handleGeneralSubscribe} className="max-w-md mx-auto space-y-4">
