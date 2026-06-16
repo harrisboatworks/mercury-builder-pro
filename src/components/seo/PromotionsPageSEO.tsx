@@ -18,11 +18,11 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
   if (!hasActivePromos) {
     return (
       <Helmet>
-        <title>Mercury Outboard Promotions | Harris Boat Works</title>
-        <meta name="description" content="Check back for the latest Mercury outboard motor promotions, rebates, and financing offers. Ontario's trusted Mercury dealer since 1965." />
+        <title>Mercury TD Financing 5.48% APR | Harris Boat Works</title>
+        <meta name="description" content="Low-rate TD financing on a new Mercury repower: 5.48% APR, terms up to 240 months, through Dec 31, 2026 (OAC). Ontario's Mercury dealer since 1965." />
         <link rel="canonical" href={`${SITE_URL}/promotions`} />
-        <meta property="og:title" content="Mercury Promotions | Harris Boat Works" />
-        <meta property="og:description" content="Check back for the latest Mercury outboard promotions and offers." />
+        <meta property="og:title" content="Mercury TD Financing 5.48% APR | Harris Boat Works" />
+        <meta property="og:description" content="5.48% APR on a new Mercury repower, terms up to 240 months, through Dec 31, 2026 (OAC)." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/promotions`} />
       </Helmet>

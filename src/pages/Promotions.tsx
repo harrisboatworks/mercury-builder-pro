@@ -23,7 +23,12 @@ import { PromotionHero } from '@/components/promotions/PromotionHero';
 import { ChooseOneSection } from '@/components/promotions/ChooseOneSection';
 import { RebateMatrix } from '@/components/promotions/RebateMatrix';
 import { RebateCalculator } from '@/components/promotions/RebateCalculator';
-import { TDAlwaysOnCard } from '@/components/promotions/TDAlwaysOnOffer';
+import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
+import { TDRateCardImage } from '@/components/promotions/TDRateCardImage';
+
+const TD_RATE_CARD_IMAGE = '/lovable-uploads/td-financing-2026-rate-card.jpg';
+const TD_RATE_CARD_ALT =
+  'Mercury TD Always On financing offer: 5.48% APR up to 240-month amortization through December 31, 2026';
 
 const csiAwardBadge = "/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png";
 
@@ -336,44 +341,50 @@ export default function Promotions() {
       {/* Hero Section, only when promos are active */}
       {hasActivePromos && <PromotionHero endDate={mainPromotion?.end_date} bonusTitle={mainPromotion?.bonus_title} bonusDescription={mainPromotion?.bonus_description} />}
 
-      {/* No Active Promotions State */}
-      {!loading && !hasActivePromos && (
-        <section className="relative py-24 md:py-32 px-6 md:px-14 overflow-hidden bg-repower-navy-900">
-          <div className="relative max-w-2xl mx-auto text-center">
-            <div className="inline-flex items-center gap-3 mb-8">
-              <span className="h-px w-8 bg-repower-mercury-red" />
-              <span className="font-sans text-[11px] font-semibold tracking-[0.24em] uppercase text-repower-mercury-red">Mercury Marine</span>
+      {/* No DB promo active: lead with the TD Always-On financing offer as the active promotion */}
+      {!loading && !hasActivePromos && isTDAlwaysOnActive() && (
+        <section className="relative py-16 md:py-24 px-6 md:px-14 overflow-hidden bg-repower-navy-900">
+          <div className="relative max-w-[1100px] mx-auto">
+            <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <span className="h-px w-8 bg-repower-mercury-red" />
+                  <span className="font-sans text-[11px] font-semibold tracking-[0.24em] uppercase text-repower-mercury-red">Active Mercury Offer</span>
+                </div>
+
+                <h1 className="font-display font-bold text-white mb-4" style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}>
+                  Low-Rate TD Financing on Your Mercury Repower
+                </h1>
+                <p className="font-sans text-base md:text-lg text-white/75 mb-6 leading-relaxed">
+                  5.48% APR, terms up to 240 months, through December 31, 2026. Plus the standard 3-year factory warranty on every new Mercury.
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-5">
+                  <Link to="/financing-application">
+                    <Button size="lg" className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep min-w-[200px] w-full sm:w-auto">
+                      Apply for Financing
+                    </Button>
+                  </Link>
+                  <Link to="/quote/motor-selection">
+                    <Button size="lg" variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10 min-w-[200px] w-full sm:w-auto">
+                      Build Your Quote
+                    </Button>
+                  </Link>
+                </div>
+
+                <p className="font-sans text-xs md:text-sm text-white/55 leading-relaxed max-w-md">
+                  Not all customers will qualify. Approval depends on TD's credit review.
+                </p>
+              </div>
+
+              <div className="order-first md:order-last">
+                <TDRateCardImage
+                  src={TD_RATE_CARD_IMAGE}
+                  alt={TD_RATE_CARD_ALT}
+                  className="w-full h-auto rounded-md shadow-lg"
+                />
+              </div>
             </div>
-
-            <Sparkles className="w-10 h-10 text-repower-gold mx-auto mb-6" strokeWidth={1.5} />
-
-            <h1 className="font-display font-bold text-white mb-4" style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}>
-              No Active Promotions Right Now
-            </h1>
-            <p className="font-sans text-base md:text-lg text-white/65 mb-10 max-w-lg mx-auto leading-relaxed">
-              We run our own deals when Mercury doesn't. Sign up below to be first in line when the next one drops.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link to="/quote/motor-selection">
-                <Button size="lg" className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep min-w-[180px]">
-                  Build Your Quote
-                </Button>
-              </Link>
-              <Link to="/motors">
-                <Button size="lg" variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10 min-w-[180px]">
-                  Browse Motors
-                </Button>
-              </Link>
-            </div>
-
-            <button
-              onClick={() => document.getElementById('promo-signup')?.scrollIntoView({ behavior: 'smooth' })}
-              className="mt-14 flex flex-col items-center gap-1 mx-auto text-white/50 hover:text-white/80 transition-colors cursor-pointer bg-transparent border-none"
-            >
-              <span className="text-xs tracking-wide uppercase">Get notified</span>
-              <ChevronDown className="w-4 h-4 animate-bounce" />
-            </button>
           </div>
         </section>
       )}
@@ -383,8 +394,8 @@ export default function Promotions() {
         <ChooseOneSection options={chooseOneOptions} />
       )}
 
-      {/* Mercury TD "Always On" Financing - sibling to the 7-year warranty promo */}
-      <TDAlwaysOnCard />
+      {/* Mercury TD "Always On" Financing, only show the standalone card if a DB promo is also active (so TD sits as a sibling). Otherwise the hero above already presents it. */}
+      {hasActivePromos && <TDAlwaysOnCard />}
 
       {/* Full Rebate Matrix Table with Interactive Calculator */}
       {rebateMatrix.length > 0 && (
@@ -503,7 +514,7 @@ export default function Promotions() {
             Get Notified of Future Sales
           </h2>
           <p className="font-sans text-repower-navy-900/70 mb-6">
-            Be the first to know when we launch new promotions. No spam, just savings.
+            Want to know when Mercury runs a rebate or bonus offer on top of TD financing? Get on the list. No spam, just savings.
           </p>
 
           <form onSubmit={handleGeneralSubscribe} className="max-w-md mx-auto space-y-4">
