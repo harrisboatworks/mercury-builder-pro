@@ -16,6 +16,58 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
   const hasActivePromos = promotions.length > 0;
 
   if (!hasActivePromos) {
+    const tdStructuredData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/promotions`,
+          "url": `${SITE_URL}/promotions`,
+          "name": "Mercury TD Financing 5.48% APR | Harris Boat Works",
+          "description": "Low-rate TD financing on a new Mercury repower: 5.48% APR, terms up to 240 months, through Dec 31, 2026 (OAC).",
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+              { "@type": "ListItem", "position": 2, "name": "Promotions", "item": `${SITE_URL}/promotions` }
+            ]
+          }
+        },
+        {
+          "@type": ["Service", "FinancialProduct"],
+          "name": "Mercury TD 'Always On' Financing",
+          "description": "Low-rate TD Auto Finance program on a new Mercury repower at Harris Boat Works: 5.48% APR with amortization terms up to 240 months. On approved credit.",
+          "category": "Boat Financing",
+          "provider": {
+            "@type": "Organization",
+            "name": "Harris Boat Works",
+            "url": SITE_URL
+          },
+          "areaServed": { "@type": "Country", "name": "Canada" },
+          "interestRate": {
+            "@type": "QuantitativeValue",
+            "value": 5.48,
+            "unitText": "PERCENT_PER_YEAR"
+          },
+          "termsOfService": "On approved credit through TD Auto Finance. Not all customers will qualify. Offer available through December 31, 2026.",
+          "offers": {
+            "@type": "Offer",
+            "name": "5.48% APR Mercury Repower Financing",
+            "description": "5.48% APR up to 240-month amortization on a new eligible Mercury outboard (OAC).",
+            "priceCurrency": "CAD",
+            "price": "0",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2026-05-26",
+            "priceValidUntil": "2026-12-31",
+            "url": `${SITE_URL}/financing-application`,
+            "seller": { "@type": "Organization", "name": "Harris Boat Works" },
+            "eligibleRegion": { "@type": "Country", "name": "Canada" }
+          }
+        }
+      ]
+    };
+
     return (
       <Helmet>
         <title>Mercury TD Financing 5.48% APR | Harris Boat Works</title>
@@ -25,6 +77,9 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
         <meta property="og:description" content="5.48% APR on a new Mercury repower, terms up to 240 months, through Dec 31, 2026 (OAC)." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/promotions`} />
+        <script type="application/ld+json">
+          {JSON.stringify(tdStructuredData)}
+        </script>
       </Helmet>
     );
   }
