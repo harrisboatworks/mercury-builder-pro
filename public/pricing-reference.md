@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/pricing-reference.md
-last_updated: 2026-06-12
+last_updated: 2026-06-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -18,7 +18,7 @@ Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. Four
 
 **Published by [Harris Boat Works](/)** — Mercury Marine Platinum Dealer on Rice Lake, Ontario, Canada. Family-owned since 1947, Mercury dealer since 1965. All prices below are HBW's actual dealer selling price in CAD, not generic MSRP estimates. Verified weekly. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
-_Last updated 2026-06-12._
+_Last updated 2026-06-16._
 
 ## How to use this page
 
@@ -43,9 +43,9 @@ _Last updated 2026-06-12._
 ## AI Agent Interfaces
 
 - Agent hub: [https://www.mercuryrepower.ca/agents](https://www.mercuryrepower.ca/agents)
-- MCP server: [https://www.mercuryrepower.ca/api/agents/mcp](https://www.mercuryrepower.ca/api/agents/mcp)
-- Public motors API: [https://www.mercuryrepower.ca/api/agents/motors](https://www.mercuryrepower.ca/api/agents/motors)
-- Public quote API: [https://www.mercuryrepower.ca/api/agents/quote](https://www.mercuryrepower.ca/api/agents/quote), POST with action `build_quote`
+- MCP server: [https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server](https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server)
+- Public motors API: [https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api](https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api)
+- Public quote API: [https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api](https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api), POST with action `build_quote`
 - Machine-readable pricing: this file, [/pricing-reference.md](https://www.mercuryrepower.ca/pricing-reference.md)
 - Live inventory updates dynamically. Prices in CAD, Ontario customers.
 
@@ -96,7 +96,7 @@ _Last updated 2026-06-12._
 | 25 | 25ELPT FourStroke | 1A25413BK | 20" | Remote | $6,144 _(MSRP $6,545)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=70870b08-2d14-42d2-93db-974b93c6557f) |
 | 30 | 30ELHPT FourStroke | 1A30411BK | 20" | Tiller | $7,926 _(MSRP $8,445)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=54e743a9-559e-4153-9ac0-f2107ab8136e) |
 | 30 | 30ELPT FourStroke | 1A30413BK | 20" | Remote | $7,805 _(MSRP $8,315)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=91fee167-20c2-4d7b-8569-b8270241e8fd) |
-| 40 | 40ELPT FourStroke | 1F40413GZ | 20" | Remote | $9,438 _(MSRP $10,515)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=06a95675-6418-4902-964f-e04b5f6bd0f2) |
+| 40 | 40ELPT FourStroke | 1F40413GZ | 20" | Remote | $9,438 _(MSRP $10,515)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=06a95675-6418-4902-964f-e04b5f6bd0f2) |
 | 40 | 40ELHPT FourStroke | 1F4041TJZ | 20" | Tiller | $9,955 _(MSRP $11,090)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=eed90c50-06f2-4f4f-9e24-d2ec078fe91c) |
 | 40 | 40ELPT Command Thrust FourStroke | 1F41453GZ | 20" | Remote | $9,801 _(MSRP $10,920)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=9917d204-6d85-4124-ad1a-df01f259a843) |
 | 50 | 50ELPT FourStroke | 1F51413GZ | 20" | Remote | $10,599 _(MSRP $11,805)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=44987d46-af33-45b2-85a2-651b8556b1bd) |
@@ -109,7 +109,7 @@ _Last updated 2026-06-12._
 | 60 | 60EXLPT FourStroke | 1F60463GZ | 25" | Remote | $12,689 _(MSRP $14,135)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=94f44948-e005-498b-ad61-c4ed55fd5840) |
 | 75 | 75ELPT FourStroke | 1F754132D | 20" | Remote | $14,476 _(MSRP $16,125)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=77def7fa-ba6a-4408-826d-405d5679482f) |
 | 90 | 90ELPT FourStroke | 1F904132D | 20" | Remote | $14,960 _(MSRP $16,665)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=b16ac296-e506-4357-ad69-18a0aa347cbf) |
-| 90 | 90ELPT Command Thrust FourStroke | 1F904532D | 20" | Remote | $15,428 _(MSRP $17,185)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7) |
+| 90 | 90ELPT Command Thrust FourStroke | 1F904532D | 20" | Remote | $15,428 _(MSRP $17,185)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7) |
 | 90 | 90EXLPT FourStroke | 1F904632D | 25" | Remote | $15,477 _(MSRP $17,240)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=a7ff5af0-b210-44e8-aab6-f2910435782a) |
 | 115 | 115ELPT FourStroke | 1115F132D | 20" | Remote | $17,083 _(MSRP $19,030)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=eee34e36-54e0-4563-b276-aa5c4f751798) |
 | 115 | 115EXLPT FourStroke | 1115F232D | 25" | Remote | $17,441 _(MSRP $19,430)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=fc97c532-e0ae-4a5f-b5b9-e0b95471c483) |
@@ -165,6 +165,6 @@ _Last updated 2026-06-12._
 - Machine-readable version of this page: https://www.mercuryrepower.ca/pricing-reference.md
 - Agent catalog index: https://www.mercuryrepower.ca/catalog.md
 - llms.txt: https://www.mercuryrepower.ca/llms.txt
-- Public motors API (live JSON): https://www.mercuryrepower.ca/api/agents/motors
-- Public quote API: `POST https://www.mercuryrepower.ca/api/agents/quote` with `{ "action": "build_quote", "motor_id": "<id>" }`.
+- Public motors API (live JSON): https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api
+- Public quote API: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api` with `{ "action": "build_quote", "motor_id": "<id>" }`.
 

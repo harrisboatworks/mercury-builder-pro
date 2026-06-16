@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Warranty at HBW, Explained (Standard 3-Year Factory Coverage)"
-description: "How Mercury's factory warranty works on a new outboard from Harris Boat Works: 3 years of standard factory-backed coverage, what it covers, and how extended coverage works. The 7-year HBW Exclusive promotion ended June 14, 2026."
+description: "How Mercury's factory warranty works on a new outboard from Harris Boat Works: 3 years of standard factory-backed coverage, what it covers, and how extended coverage..."
 category: "Buying Guide"
 date_published: 2026-05-25
 date_modified: 2026-06-07
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Warranty at HBW, Explained (Standard 3-Year Factory Coverage)
 
-> Every new Mercury outboard from Harris Boat Works comes with 3 years of factory-backed coverage as standard. The 7-year HBW Exclusive promotion ended June 14, 2026. For current offers, see [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).
+> How Mercury's factory warranty works on a new outboard from Harris Boat Works: 3 years of standard factory-backed coverage, what it covers, and how extended coverage...
 
 **Category:** Buying Guide  
 **Published:** 2026-05-25  
@@ -210,5 +210,5 @@ Yes. TD financing at 5.48% is a separate program that runs through December 31, 
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
-- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

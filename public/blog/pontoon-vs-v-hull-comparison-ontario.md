@@ -29,9 +29,19 @@ content_type: blog_article
 
 # Pontoon vs V-Hull, Honestly Compared for Ontario Boaters
 
-## Quick answer
+> **Quick answer:** Choose a pontoon for calm-water family days, big groups, shore lounging, and shallow Rice Lake bays. Choose a V-hull for rough water, serious fishing, watersports, and trailering to bigger lakes like Simcoe or Ontario. On Rice Lake and most of the Kawarthas either works most of the season; once the wind picks up on open water, the V-hull is the safer call. The honest decision comes down to two questions: how many people are usually aboard, and what water do you actually run.
 
-A pontoon is the right answer for family lounging, calm-water cruising, big-group capacity, and shallow lake fishing where speed is not the point. A V-hull is the right answer for serious open-water use, rough chop, watersports, and any situation where you need to cover distance quickly. On Rice Lake and most of the Kawarthas, either works for most of the season. On Lake Ontario or Lake Simcoe, the V-hull becomes the safer call once the wind picks up. We sell Legend pontoons and Legend V-hulls at Harris Boat Works, and the honest decision usually comes down to two questions: how many people are typically on the boat, and what kind of water do you actually use it on.
+## Pontoon vs v-hull at a glance
+
+| Factor | Pontoon | V-hull |
+|---|---|---|
+| Best for | Family, big groups, cottage entertaining | Rough water, fishing, watersports, range |
+| Capacity (22 ft) | Roughly 10-12 on a flat deck | 6-8, mostly in the cockpit |
+| Rough chop | Fine to ~1 ft, bounced at 2 ft, unsafe at 3 ft | Cuts through, cockpit stays dry |
+| Shallow water (draft) | 12-18 in typical | 18-30 in |
+| Watersports | Pulls a tube on calm water | Dedicated ski and wakeboard platform |
+| Cruise (same HP) | Lower speed, cruises | Higher speed, travels farther |
+| Smaller-budget pick | 16 ft exists but limited | 16-18 ft aluminum with a 50-90 HP Mercury |
 
 ## How each hull is built (the 60-second version)
 
@@ -54,9 +64,7 @@ A pontoon is a great platform if your fishing is family fishing, lake-trolling f
 Wide gates, low freeboard, and step-up access mean pontoon entry is dignified at any age. For aging boaters or families with little kids, this is a real quality-of-life issue people only appreciate after they hit 60.
 
 ### Slow-speed cruising fuel economy
-At cruising speed (15-20 mph), a pontoon with a properly-sized Mercury (often a [Command Thrust gearcase](/blog/mercury-command-thrust-vs-standard-gearcase) on the 90-150 HP class) sips fuel. Modern tritoons with the right power package are surprisingly efficient when you are not trying to wakeboard with them.
-
-::walkaround-lead-capture
+At cruising speed (15-20 mph / 24-32 km/h), a pontoon with a properly-sized Mercury (often a [Command Thrust gearcase](/blog/mercury-command-thrust-vs-standard-gearcase) on the 90-150 HP class) sips fuel. Modern tritoons with the right power package are surprisingly efficient when you are not trying to wakeboard with them.
 
 ## Where V-hulls win
 
@@ -70,14 +78,12 @@ Anglers chasing walleye on a bigger lake, bass tournament fishing, or muskie hun
 Tubing, water skiing, and wakeboarding need a hull that produces a usable wake and handles tight turning at speed. A pontoon can pull a tube respectably on calm water; a V-hull is the dedicated platform for the full range of watersports.
 
 ### Speed and range
-If your idea of a good Saturday is running 25 miles to a different lake or town, the V-hull gets you there in less time on less fuel at planing speed. Pontoons cruise; V-hulls travel.
+If your idea of a good Saturday is running 25 miles (40 km) to a different lake or town, the V-hull gets you there in less time on less fuel at planing speed. Pontoons cruise; V-hulls travel.
 
 ### Smaller-package economy
 A 16-18 foot aluminum V-hull with a 50-90 HP Mercury is one of the cheapest paths to capable on-water performance. The same dollar buys you a much smaller pontoon (16-foot pontoons exist but they are limited in capability).
 
 ## Where the decision is genuinely close
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 For a lot of Ontario boaters, neither hull is "wrong." The decision comes down to lifestyle:
 - **Calm-water family weekends with occasional fishing**: pontoon usually wins.
@@ -94,6 +100,12 @@ Rice Lake is a warm, shallow, fish-friendly lake. The maximum sustained chop on 
 
 For a Rice Lake primary boater who plans to occasionally trailer to bigger water (Lake Simcoe, Lake Ontario, larger Kawartha lakes during shoulder seasons), the V-hull buys flexibility. For a Rice Lake primary boater who plans to stay on Rice Lake and have people on the boat regularly, the pontoon is hard to beat.
 
+## Already own the boat? Then it's a power question, not a hull question
+
+If you already have a pontoon or a V-hull you are happy with, the hull debate is settled. The real question is whether it is powered right for what you ask of it. A pontoon that is slow to plane with a full crew, or a V-hull that will not get out of its own way, is usually under-powered or propped wrong, not the wrong boat.
+
+Send us the boat and what you do with it on the water, or build a live quote online, and we will tell you in plain English whether a repower is worth it. Build a quote at https://www.mercuryrepower.ca/quote/motor-selection or call 905-342-2153.
+
 ## What we actually sell at Harris Boat Works
 
 We are a Legend Boats dealer, which gives us access to both their pontoon lineup (LE Series, Q Series, Halo) and their V-hull aluminum lineup (Pulse, R Series, XF, XT, Titanium). When customers come in undecided, we usually:
@@ -105,6 +117,8 @@ We are a Legend Boats dealer, which gives us access to both their pontoon lineup
 The Mercury power package is matched to the hull (Command Thrust gearcase for tritoons in the 90-150 HP range, standard gearcase or Pro XS for V-hulls depending on use). Either way, the right motor pairing matters as much as the hull choice.
 
 If you are weighing this decision and want a structured conversation, email info@harrisboatworks.ca with what you are trying to do on the water. We will tell you which side of the line you fall on.
+
+::walkaround-lead-capture
 
 ## Related guides
 
@@ -134,7 +148,7 @@ On a calm summer day, yes, a modern tritoon with the right power can handle Lake
 
 ### What's the fastest pontoon a 90 HP Mercury can push?
 
-A 90 ELPT with Command Thrust on a 20-foot pontoon will hit 25-28 mph on a calm day with light load. A 22-foot tritoon with the same motor lands closer to 22-25 mph. Going faster requires more horsepower (115-150 HP) and usually a tritoon configuration.
+A 90 ELPT with Command Thrust on a 20-foot pontoon will hit 25-28 mph (40-45 km/h) on a calm day with light load. A 22-foot tritoon with the same motor lands closer to 22-25 mph (35-40 km/h). Going faster requires more horsepower (115-150 HP) and usually a tritoon configuration.
 
 ### Are pontoons safe in waves?
 
@@ -165,5 +179,5 @@ The smaller LE-series Legend pontoons with a Mercury 60 ELPT come in well under 
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
-- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 
