@@ -30799,7 +30799,7 @@ Anglers chasing walleye on a bigger lake, bass tournament fishing, or muskie hun
 Tubing, water skiing, and wakeboarding need a hull that produces a usable wake and handles tight turning at speed. A pontoon can pull a tube respectably on calm water; a V-hull is the dedicated platform for the full range of watersports.
 
 ### Speed and range
-If your idea of a good Saturday is running 25 miles to a different lake or town, the V-hull gets you there in less time on less fuel at planing speed. Pontoons cruise; V-hulls travel.
+If your idea of a good Saturday is running 25 miles (40 km) to a different lake or town, the V-hull gets you there in less time on less fuel at planing speed. Pontoons cruise; V-hulls travel.
 
 ### Smaller-package economy
 A 16-18 foot aluminum V-hull with a 50-90 HP Mercury is one of the cheapest paths to capable on-water performance. The same dollar buys you a much smaller pontoon (16-foot pontoons exist but they are limited in capability).
