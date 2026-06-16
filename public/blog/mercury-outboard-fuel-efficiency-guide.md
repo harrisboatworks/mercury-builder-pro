@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Outboard Fuel Consumption by HP (Ontario Guide)"
+title: "Mercury Outboard Fuel Economy: How to Get Better MPG"
 description: "How much fuel does your Mercury outboard burn? Consumption by HP, 2-stroke vs 4-stroke, and the 5 levers that cut fuel burn on Ontario boats."
 category: "Tips"
 date_published: 2026-03-16
@@ -19,11 +19,11 @@ content_type: blog_article
 
 # Mercury Outboard Fuel Economy: How to Get Better MPG
 
-> Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn on Ontario boats, ranked by impact. HBW guide.
+> How much fuel does your Mercury outboard burn? Consumption by HP, 2-stroke vs 4-stroke, and the 5 levers that cut fuel burn on Ontario boats.
 
 **Category:** Tips  
 **Published:** 2026-03-16  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-06-15  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
 
@@ -247,5 +247,5 @@ In order of impact: get the prop right so the motor reaches the middle of its ra
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
-- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

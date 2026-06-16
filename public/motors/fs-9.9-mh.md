@@ -1,37 +1,37 @@
 ---
-canonical: https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke
-last_updated: 2026-06-12
+canonical: https://www.mercuryrepower.ca/motors/fs-9.9-mh
+last_updated: 2026-06-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-motor_id: 41acbe10-27ef-4502-a968-21c1723705c7
-slug: fourstroke-90hp-90-elpt-command-thrust-fourstroke
+motor_id: e920cfdf-223a-408a-850b-6f112e15c4d7
+slug: fs-9.9-mh
 family: FourStroke
-horsepower: 90
-model_number: 1F904532D
+horsepower: 9.9
+model_number: 1A10201LK
 availability: in_stock
-price_cad: 15428
+price_cad: 2999
 ---
 
-# 90 ELPT Command Thrust FourStroke
+# 9.9MH FourStroke
 
-Mercury FourStroke 90 HP outboard motor (model 1F904532D).
+Mercury FourStroke 9.9 HP outboard motor (model 1A10201LK).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 90 ELPT Command Thrust FourStroke
+- **Model:** 9.9MH FourStroke
 - **Family:** Mercury FourStroke
-- **Horsepower:** 90 HP
-- **Model number:** 1F904532D
+- **Horsepower:** 9.9 HP
+- **Model number:** 1A10201LK
 
 ## Pricing (CAD)
 
-- **Selling price:** $15,428
-- **MSRP:** $17,185
+- **Selling price:** $2,999
+- **MSRP:** $3,860
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
@@ -42,25 +42,25 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer 
 
 ## Best fit for
 
-Aluminum fishing boats 16–20 ft, pontoons up to ~22 ft, and family runabouts.
+Small tenders, canoes, sailboat kickers, and very light fishing setups.
 
 ## Not ideal for
 
-Tournament bass setups (see Pro XS) and large 24+ ft pontoons with watersports loads.
+Boats 16 ft and over, loaded family boats, or anything that needs to plane with multiple passengers.
 
 ## Build a quote
 
-- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke
-- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7
+- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fs-9.9-mh
+- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=e920cfdf-223a-408a-850b-6f112e15c4d7
 
 ## Public Quote API
 
-Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {
   "action": "build_quote",
-  "motor_id": "41acbe10-27ef-4502-a968-21c1723705c7",
+  "motor_id": "e920cfdf-223a-408a-850b-6f112e15c4d7",
   "trade_in": null,
   "contact": null
 }

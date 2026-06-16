@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke
-last_updated: 2026-06-12
+last_updated: 2026-06-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -55,7 +55,7 @@ Tournament bass setups (see Pro XS) and large 24+ ft pontoons with watersports l
 
 ## Public Quote API
 
-Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {
