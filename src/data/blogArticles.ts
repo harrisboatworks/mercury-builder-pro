@@ -30821,6 +30821,12 @@ Rice Lake is a warm, shallow, fish-friendly lake. The maximum sustained chop on 
 
 For a Rice Lake primary boater who plans to occasionally trailer to bigger water (Lake Simcoe, Lake Ontario, larger Kawartha lakes during shoulder seasons), the V-hull buys flexibility. For a Rice Lake primary boater who plans to stay on Rice Lake and have people on the boat regularly, the pontoon is hard to beat.
 
+## Already own the boat? Then it's a power question, not a hull question
+
+If you already have a pontoon or a V-hull you are happy with, the hull debate is settled. The real question is whether it is powered right for what you ask of it. A pontoon that is slow to plane with a full crew, or a V-hull that will not get out of its own way, is usually under-powered or propped wrong, not the wrong boat.
+
+Send us the boat and what you do with it on the water, or build a live quote online, and we will tell you in plain English whether a repower is worth it. Build a quote at https://www.mercuryrepower.ca/quote/motor-selection or call 905-342-2153.
+
 ## What we actually sell at Harris Boat Works
 
 We are a Legend Boats dealer, which gives us access to both their pontoon lineup (LE Series, Q Series, Halo) and their V-hull aluminum lineup (Pulse, R Series, XF, XT, Titanium). When customers come in undecided, we usually:
@@ -30832,12 +30838,6 @@ We are a Legend Boats dealer, which gives us access to both their pontoon lineup
 The Mercury power package is matched to the hull (Command Thrust gearcase for tritoons in the 90-150 HP range, standard gearcase or Pro XS for V-hulls depending on use). Either way, the right motor pairing matters as much as the hull choice.
 
 If you are weighing this decision and want a structured conversation, email info@harrisboatworks.ca with what you are trying to do on the water. We will tell you which side of the line you fall on.
-
-## Already own the boat? Then it's a power question, not a hull question
-
-If you already have a pontoon or a V-hull you are happy with, the hull debate is settled. The real question is whether it is powered right for what you ask of it. A pontoon that is slow to plane with a full crew, or a V-hull that will not get out of its own way, is usually under-powered or propped wrong, not the wrong boat.
-
-Send us the boat and what you do with it on the water, or build a live quote online, and we will tell you in plain English whether a repower is worth it. Build a quote at https://www.mercuryrepower.ca/quote/motor-selection or call 905-342-2153.
 
 ::walkaround-lead-capture
 
