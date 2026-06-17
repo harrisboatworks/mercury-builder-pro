@@ -7,7 +7,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const PUBLIC = join(ROOT, 'public');
 const SITE_URL = 'https://www.mercuryrepower.ca';
-const PUBLIC_QUOTE_API = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api';
+const PUBLIC_QUOTE_API = 'https://www.mercuryrepower.ca/api/agents/quote';
+const PUBLIC_MOTORS_API = 'https://www.mercuryrepower.ca/api/agents/motors';
+const AGENT_MCP_SERVER = 'https://www.mercuryrepower.ca/api/agents/mcp';
 const TWIN_DATE = new Date().toISOString().split('T')[0];
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
 const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
@@ -583,7 +585,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '## Public quote API',
     '',
     `- \`POST ${PUBLIC_QUOTE_API}\` with \`{ "action": "build_quote", "motor_id": "<id>" }\` builds an itemized CAD quote (public-quote-api).`,
-    `- \`GET https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api\` returns the live Mercury inventory feed (public-motors-api).`,
+    `- \`GET ${PUBLIC_MOTORS_API}\` returns the live Mercury inventory feed (public-motors-api).`,
     '',
     'See any motor twin for an example body.',
     '',
@@ -804,8 +806,8 @@ function pricingReferenceMarkdown(motorRecords) {
     '## AI Agent Interfaces',
     '',
     `- Agent hub: [${SITE_URL}/agents](${SITE_URL}/agents)`,
-    '- MCP server: [https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server](https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server)',
-    '- Public motors API: [https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api](https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api)',
+    `- MCP server: [${AGENT_MCP_SERVER}](${AGENT_MCP_SERVER})`,
+    `- Public motors API: [${PUBLIC_MOTORS_API}](${PUBLIC_MOTORS_API})`,
     `- Public quote API: [${PUBLIC_QUOTE_API}](${PUBLIC_QUOTE_API}), POST with action \`build_quote\``,
     `- Machine-readable pricing: this file, [/pricing-reference.md](${SITE_URL}/pricing-reference.md)`,
     '- Live inventory updates dynamically. Prices in CAD, Ontario customers.',
@@ -816,7 +818,7 @@ function pricingReferenceMarkdown(motorRecords) {
     `- Machine-readable version of this page: ${SITE_URL}/pricing-reference.md`,
     `- Agent catalog index: ${SITE_URL}/catalog.md`,
     `- llms.txt: ${SITE_URL}/llms.txt`,
-    `- Public motors API (live JSON): https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api`,
+    `- Public motors API (live JSON): ${PUBLIC_MOTORS_API}`,
     `- Public quote API: \`POST ${PUBLIC_QUOTE_API}\` with \`{ "action": "build_quote", "motor_id": "<id>" }\`.`,
     '',
   ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
@@ -1016,7 +1018,7 @@ writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMoto
 }
 
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md', "Ontario's Mercury Repower Centre"]);
-verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection', 'Published by [Harris Boat Works]', '## AI Agent Interfaces', 'agent-mcp-server']);
+verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection', 'Published by [Harris Boat Works]', '## AI Agent Interfaces', '/api/agents/mcp']);
 
 // Verify pricing-reference motor count matches the quote-builder selection
 // (NOT public-motors-api). Compare the count in frontmatter against the
@@ -1038,7 +1040,7 @@ verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD'
   console.log(`[markdown-twins] ✓ pricing-reference.md motor_count=${written} matches quote-builder selection (${expectedCount})`);
 }
 
-if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api']);
+if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', '/api/agents/quote']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
 if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## FAQs', '## Next steps']);
