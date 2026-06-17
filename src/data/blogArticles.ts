@@ -2666,6 +2666,15 @@ Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 19
 
 The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you're a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
+## Repower now, wait, or hold? at a glance
+
+| Signal | Repower now | Wait for off-season | Not yet |
+|---|---|---|---|
+| Motor state | Dead/unreliable, metal in gearcase oil, failed cylinder | Runs fine but 15+ yr or 1,500+ hr | Post-2010, maintained, still reliable |
+| Repair vs new-motor price | Over 60% | 30-60% | Under 30% |
+| Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
+| Move | Quote a repower ($11K-$40K CAD) | Plan the work for winter (Dec/Jan) | Keep running, stay on maintenance |
+
 ## Quick recommendation
 
 There are three honest answers to "when should I repower?":
