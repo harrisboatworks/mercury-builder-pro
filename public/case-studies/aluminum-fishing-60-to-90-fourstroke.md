@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/aluminum-fishing-60-to-90-fourstroke
-last_updated: 2026-06-16
+last_updated: 2026-06-17
 currency: CAD
 pickup_only: true
 delivery_offered: false

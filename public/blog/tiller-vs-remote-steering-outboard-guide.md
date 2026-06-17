@@ -58,6 +58,18 @@ rightVariant: recommended
 whenInDoubt: If your boat has a built-in console with windshield, you want remote. If your boat is a tin with bench seats and no console, you want tiller. The middle case (14-16 ft with console) goes either way; we usually push remote on those, because it ages better as kids and gear pile in.
 ::
 
+## Tiller vs remote steering at a glance
+
+| Factor | Tiller | Remote (helm) |
+|---|---|---|
+| Best hull length | 14-18 ft aluminum | 16-22 ft+ |
+| HP range | 20-60 HP (no bigger) | 60 HP+, especially 90 HP+ |
+| Installed price (Mercury) | $4,500-$9,500 (20-60 HP) | $14K-$17K (90 HP mechanical); +$2-4K SmartCraft/hydraulic |
+| Steering | Direct, reverse-intuitive | Cable under 90 HP; hydraulic 90 HP+ (+$800-$1,500) |
+| Best for | Solo / back-of-boat fishing, trolling | Family, passengers, bigger water |
+| Rice Lake pick | 60 HP EFI Command Thrust tiller; ProKicker 9.9 | 90-115 HP remote |
+| Tiller-to-remote conversion | $500-$1,500+ parts + labour | — |
+
 ## The simple version
 
 Most small boats want tiller. Most bigger boats want remote control. The question isn't complicated unless you're in the crossover zone, which is 14 to 16-foot hulls in the 25 to 40 HP range.

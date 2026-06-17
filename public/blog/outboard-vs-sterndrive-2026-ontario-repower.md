@@ -62,6 +62,19 @@ rightVariant: alternative
 whenInDoubt: Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders coming for sterndrive repower leave with an outboard quote.
 ::
 
+## Outboard vs sterndrive at a glance
+
+| Factor | Outboard | Sterndrive (I/O) |
+|---|---|---|
+| 2026 new-boat share | Above 80% | Declining (was ~50% in 2010) |
+| Failure points | No coolant system, bellows, or gimbal bearing | Bellows / gimbal / water-intrusion risk |
+| Fuel economy | Modern V6/V8 FourStroke more efficient | Older I/O less efficient |
+| Shallow water | Trims up in seconds (Kawartha shoals) | Limited |
+| Cockpit & looks | Takes some transom space | Wins: clean transom, swim platform, quieter cruise |
+| Service access | Fully external, faster/cheaper labour | Engine box, harder access |
+| Resale after repower | Strongly improves | Tired I/O is a liability |
+| Still makes sense when | Under 20 ft | 22 ft+ high-deadrise or dedicated tow boat |
+
 ## The Big Picture: Outboards Have Won the Market
 
 This isn't opinion. It's sales data.
