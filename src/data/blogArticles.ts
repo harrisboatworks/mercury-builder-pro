@@ -2022,6 +2022,20 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
 
 ---
 
+## Recommended HP by boat type at a glance
+
+| Boat & length | Typical use | Mercury HP |
+|---|---|---|
+| Aluminum 12-14 ft | Solo / two-person rough water | 9.9-15 HP tiller / 20-25 HP |
+| Aluminum 14-16 ft | Trolling / get on plane | 25-40 HP / 40-60 HP (sweet spot) |
+| Console 16-18 ft | All-round (most common HBW repower) | 90-115 HP (90 or 115 ELPT FourStroke) |
+| Pontoon 18-20 ft | Cruise & fish / tubing | 90 HP CT / 115 HP CT |
+| Pontoon 20-24 ft | Cruise & fish / watersports | 115 HP CT / 150 HP CT |
+| Runabout / bowrider 18-22 ft | General | 150-200 HP |
+| Bass boat 17-21 ft | Recreational / tournament | 150 HP / 200-250 HP Pro XS |
+
+Aim for 70-90% of the capacity-plate max (light load 60-70%, heavy load 90-100%). The plate is the legal ceiling.
+
 ## The one thing most people get wrong on horsepower
 
 It's not buying too much. It's buying too little.
@@ -2651,6 +2665,15 @@ Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 19
 > **Quick answer:** Repower when annual repair bills approach 25-30 percent of a new motor's price, when parts for your old powerhead are scarce, or when the hull is sound but the motor is tired. A modern Mercury FourStroke pays back in fuel, reliability, and resale. [Start your Mercury repower](/repower), motor, rigging, and labour priced in CAD at mercuryrepower.ca.
 
 The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you're a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+
+## Repower now, wait, or hold? at a glance
+
+| Signal | Repower now | Wait for off-season | Not yet |
+|---|---|---|---|
+| Motor state | Dead/unreliable, metal in gearcase oil, failed cylinder | Runs fine but 15+ yr or 1,500+ hr | Post-2010, maintained, still reliable |
+| Repair vs new-motor price | Over 60% | 30-60% | Under 30% |
+| Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
+| Move | Quote a repower ($11K-$40K CAD) | Plan the work for winter (Dec/Jan) | Keep running, stay on maintenance |
 
 ## Quick recommendation
 
@@ -6578,6 +6601,18 @@ rightOutcome: More comfortable, more capable, more expensive. Mercury 90 HP remo
 rightVariant: recommended
 whenInDoubt: If your boat has a built-in console with windshield, you want remote. If your boat is a tin with bench seats and no console, you want tiller. The middle case (14-16 ft with console) goes either way; we usually push remote on those, because it ages better as kids and gear pile in.
 ::
+
+## Tiller vs remote steering at a glance
+
+| Factor | Tiller | Remote (helm) |
+|---|---|---|
+| Best hull length | 14-18 ft aluminum | 16-22 ft+ |
+| HP range | 20-60 HP (no bigger) | 60 HP+, especially 90 HP+ |
+| Installed price (Mercury) | $4,500-$9,500 (20-60 HP) | $14K-$17K (90 HP mechanical); +$2-4K SmartCraft/hydraulic |
+| Steering | Direct, reverse-intuitive | Cable under 90 HP; hydraulic 90 HP+ (+$800-$1,500) |
+| Best for | Solo / back-of-boat fishing, trolling | Family, passengers, bigger water |
+| Rice Lake pick | 60 HP EFI Command Thrust tiller; ProKicker 9.9 | 90-115 HP remote |
+| Tiller-to-remote conversion | $500-$1,500+ parts + labour | — |
 
 ## The simple version
 
@@ -12262,6 +12297,19 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 > **Quick answer:** Mercury and Yamaha both build reliable modern 4-stroke outboards. The real-world performance and reliability difference between equivalent motors is small. For Ontario cottage owners, the more important question is service network: HBW is the only Mercury dealer AND the only brand-name outboard service of any kind on Rice Lake. For boaters in the Kawarthas, the practical service-availability question matters more than spec-sheet comparisons. Build a Mercury quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hundreds of times: which one is actually better? We sell Mercury. We're a Mercury Platinum dealer. We don't sell or service Yamaha. So this isn't a balanced review. But we have an honest take.
+
+## Mercury vs Yamaha at a glance
+
+| Factor | Mercury | Yamaha |
+|---|---|---|
+| Lineup top end | 2.5 HP to 600 HP (Verado V12) | Tops out at 425 HP (XTO Offshore) |
+| Performance line | Pro XS, broad range | SHO, narrower |
+| Ontario service | More dealer locations; only Mercury dealer + only brand-name service on Rice Lake | Fewer; Rice Lake owners drive 30+ min |
+| Parts (Canada) | Ship from Canadian distribution | Often route through US distribution |
+| Low-RPM quietness | Gap closed (current FourStroke V6, ProKicker) | Historically a slight edge |
+| Reliability (equiv. 150) | Indistinguishable in real-world use | Indistinguishable |
+| Resale value | Strong | Holds value comparably |
+| Switching to Mercury | — | ~$1,800-$3,500 brand-conversion rigging |
 
 ## The Rice Lake service-network reality
 
@@ -22132,6 +22180,19 @@ rightOutcome: Sterndrive or inboard can still make sense
 rightVariant: alternative
 whenInDoubt: Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders coming for sterndrive repower leave with an outboard quote.
 ::
+
+## Outboard vs sterndrive at a glance
+
+| Factor | Outboard | Sterndrive (I/O) |
+|---|---|---|
+| 2026 new-boat share | Above 80% | Declining (was ~50% in 2010) |
+| Failure points | No coolant system, bellows, or gimbal bearing | Bellows / gimbal / water-intrusion risk |
+| Fuel economy | Modern V6/V8 FourStroke more efficient | Older I/O less efficient |
+| Shallow water | Trims up in seconds (Kawartha shoals) | Limited |
+| Cockpit & looks | Takes some transom space | Wins: clean transom, swim platform, quieter cruise |
+| Service access | Fully external, faster/cheaper labour | Engine box, harder access |
+| Resale after repower | Strongly improves | Tired I/O is a liability |
+| Still makes sense when | Under 20 ft | 22 ft+ high-deadrise or dedicated tow boat |
 
 ## The Big Picture: Outboards Have Won the Market
 
@@ -33112,6 +33173,19 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
 
 Both Mercury Avator and Torqeedo make legitimate electric outboards. The deciding factor for most Ontario buyers is not the motor itself but the dealer network and service support. Mercury Avator has the deepest Mercury Platinum dealer network in Canada, which means parts, service, and warranty work happen at any Mercury dealer across the country. Torqeedo has a smaller but specialized dealer network, often through marine electronics shops rather than traditional outboard dealers. For most Ontario boaters who want long-term service support, Mercury Avator wins on infrastructure. Torqeedo may win on specific technical features for niche applications.
 
+## Mercury Avator vs Torqeedo at a glance
+
+| Factor | Mercury Avator | Torqeedo |
+|---|---|---|
+| Parent company | Mercury Marine (Brunswick) | German, now Yamaha-owned (2024) |
+| 2026 models | 7.5e, 20e, 35e, 75e, 110e | Travel, Cruise, Deep Blue |
+| Power range | 750W-11,000W (~3-30 HP equivalent; rated in watts) | Portable to large commercial |
+| Ontario dealers | Hundreds of Mercury dealers, ~within an hour | Concentrated in Toronto/Ottawa; rural hours away |
+| Parts | On shelf at Mercury Platinum dealers | Often ordered from Torqeedo Canada |
+| Charging | 110V (portable 3-6 hr; mid overnight; 10+ kWh needs 240V) | Same household charging |
+| SmartCraft / VesselView | Yes | No |
+| Where it wins | Service, parts, integration | Longer in market, commercial/rental, sailboat-assist, Deep Blue (no Avator equal) |
+
 ## Up front: we sell Mercury
 
 Harris Boat Works is a Mercury Marine Platinum Dealer. We do not sell Torqeedo. This comparison is intended to be honest, but you should know our bias before reading it. We've been a Mercury dealer since 1965, three generations of selling, servicing, and supporting Mercury outboards on Rice Lake.
@@ -34718,6 +34792,19 @@ We'll quote your motor honestly, check your serial against Mercury's official Bo
 
 A Mercury or Honda buyer walks into our shop with the same two questions: which motor is actually better, and what does my service look like over the next 10 years? We sell Mercury. We don't sell or service Honda. So this isn't a balanced review, the Mercury section was not written by Switzerland. But we still try to keep the comparisons fair.
 
+## Mercury vs Honda at a glance
+
+| Factor | Mercury | Honda |
+|---|---|---|
+| Lineup top end | 2.5 HP to 600 HP (Verado V12, 450R) | Tops out at BF350 V8 (350 HP) |
+| Performance line | Pro XS | No direct counterpart |
+| Refinement (9.9-90 HP) | Strong; gap largely closed | Edge: quieter, smoother |
+| Regional service | More certified dealers; only Mercury dealer + only brand-name service on Rice Lake | 2 certified dealers within 75 km (Peterborough ~30 km, Havelock ~45 km) |
+| Parts (Canada) | Canadian distribution centres | Often route through US |
+| Max warranty (2026) | Up to 8 yr (3 limited + 3 corrosion concurrent + up to 5 MPP) | Up to 8 yr (5 standard + 3 HondaCare) |
+| Long-term maintenance | Competitive | Reputation for low cost over 10+ yr |
+| Switching to Mercury | — | ~$1,800-$3,500 brand-conversion rigging |
+
 ## Where Honda actually wins
 
 Honda makes good motors. In specific use cases, Honda is the right call.
@@ -36255,6 +36342,17 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
     content: `*Last reviewed: 2026-06-06*
 
 > **Quick answer:** A repower isn't just swapping one motor for another. The hull type, pontoon, aluminum fishing boat, or fibreglass V-hull, determines which motors fit, how the new engine loads the transom, which shaft length you need, and what else might need to be addressed while you're at it.
+
+## Repower by hull type at a glance
+
+| Factor | Pontoon | Aluminum fishing | Fibreglass V-hull |
+|---|---|---|---|
+| Repower complexity | Medium (mounts vary) | Simplest | Most involved |
+| Typical HP | 22-24 ft, 4-6 people: 90-115 HP | Match the rated HP range | Match carefully to deadrise/load |
+| Shaft length | Long (20") | Standard 20" (some older 15") | Mostly 20"; some performance hulls 25" |
+| Transom check | Holds 180-250 lb motor; inspect | Inspect | Can fail internally with no visible signs |
+| Controls/steering | Usually carries over | Usually simple | Often new cables, steering, gauges/SmartCraft |
+| Four-stroke weight | Mass absorbs it | Minor effect | Can shift trim and handling |
 
 ## The hull you own changes the repower conversation
 

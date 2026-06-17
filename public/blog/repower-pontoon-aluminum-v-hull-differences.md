@@ -29,6 +29,17 @@ content_type: blog_article
 
 > **Quick answer:** A repower isn't just swapping one motor for another. The hull type, pontoon, aluminum fishing boat, or fibreglass V-hull, determines which motors fit, how the new engine loads the transom, which shaft length you need, and what else might need to be addressed while you're at it.
 
+## Repower by hull type at a glance
+
+| Factor | Pontoon | Aluminum fishing | Fibreglass V-hull |
+|---|---|---|---|
+| Repower complexity | Medium (mounts vary) | Simplest | Most involved |
+| Typical HP | 22-24 ft, 4-6 people: 90-115 HP | Match the rated HP range | Match carefully to deadrise/load |
+| Shaft length | Long (20") | Standard 20" (some older 15") | Mostly 20"; some performance hulls 25" |
+| Transom check | Holds 180-250 lb motor; inspect | Inspect | Can fail internally with no visible signs |
+| Controls/steering | Usually carries over | Usually simple | Often new cables, steering, gauges/SmartCraft |
+| Four-stroke weight | Mass absorbs it | Minor effect | Can shift trim and handling |
+
 ## The hull you own changes the repower conversation
 
 A repower isn't just swapping one motor for another. The hull type determines which motors fit, how the new engine loads the transom, which shaft length you need, and what else might need to be addressed while you're at it.

@@ -31,6 +31,19 @@ content_type: blog_article
 
 A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hundreds of times: which one is actually better? We sell Mercury. We're a Mercury Platinum dealer. We don't sell or service Yamaha. So this isn't a balanced review. But we have an honest take.
 
+## Mercury vs Yamaha at a glance
+
+| Factor | Mercury | Yamaha |
+|---|---|---|
+| Lineup top end | 2.5 HP to 600 HP (Verado V12) | Tops out at 425 HP (XTO Offshore) |
+| Performance line | Pro XS, broad range | SHO, narrower |
+| Ontario service | More dealer locations; only Mercury dealer + only brand-name service on Rice Lake | Fewer; Rice Lake owners drive 30+ min |
+| Parts (Canada) | Ship from Canadian distribution | Often route through US distribution |
+| Low-RPM quietness | Gap closed (current FourStroke V6, ProKicker) | Historically a slight edge |
+| Reliability (equiv. 150) | Indistinguishable in real-world use | Indistinguishable |
+| Resale value | Strong | Holds value comparably |
+| Switching to Mercury | — | ~$1,800-$3,500 brand-conversion rigging |
+
 ## The Rice Lake service-network reality
 
 **HBW is the only Mercury dealer on Rice Lake.** We are also the only brand-name outboard service of any kind on Rice Lake. There is no Yamaha dealer on Rice Lake. There is no Honda dealer.
