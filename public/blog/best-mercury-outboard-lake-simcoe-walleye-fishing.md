@@ -33,7 +33,7 @@ content_type: blog_article
 - Gores Landing, ON
 - Quote builder available
 
-**Quick answer:** For Lake Simcoe walleye, most anglers want a 90 to 150 HP Mercury FourStroke main paired with a Mercury 9.9 ProKicker for slow trolling. Pick a hull rated for Simcoe chop - 17 to 19 ft deep-V or modified-V aluminum is our usual recommendation. Build a main-and-kicker package at [mercuryrepower.ca](https://mercuryrepower.ca).
+> **Quick answer:** For Lake Simcoe walleye, most anglers want a 90 to 150 HP Mercury FourStroke main paired with a Mercury 9.9 ProKicker for slow trolling. Pick a hull rated for Simcoe chop - 17 to 19 ft deep-V or modified-V aluminum is our usual recommendation. Build a main-and-kicker package at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 Lake Simcoe is bigger water than Rice Lake. Wind exposure is meaningful, fish are deeper, and travel between fishing spots takes real cruise speed. A typical Mercury setup for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling.
 

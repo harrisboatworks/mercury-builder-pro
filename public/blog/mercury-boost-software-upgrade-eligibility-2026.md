@@ -27,9 +27,7 @@ content_type: blog_article
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026
 
-### Quick Answer
-
-Mercury Boost is a software-based engine calibration update, not a hardware kit, that Mercury rates as a 5-21% improvement in mid-range acceleration on eligible motors. Eligibility is determined by serial number, not model year. It covers select FourStroke, Pro XS, and Verado models, comes factory-installed on some new 2026 builds, does not change rated horsepower, and does not affect Mercury factory warranty or Mercury Protection Plan coverage.
+> **Quick answer:** Mercury Boost is a software-based engine calibration update, not a hardware kit, that Mercury rates as a 5-21% improvement in mid-range acceleration on eligible motors. Eligibility is determined by serial number, not model year. It covers select FourStroke, Pro XS, and Verado models, comes factory-installed on some new 2026 builds, does not change rated horsepower, and does not affect Mercury factory warranty or Mercury Protection Plan coverage.
 
 > **Check yours:** Use the Boost Eligibility Checker on MercuryRepower.ca, or call HBW at 905-342-2153 with your serial number. Free.
 ---
