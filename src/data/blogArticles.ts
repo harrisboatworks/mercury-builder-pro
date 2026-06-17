@@ -33173,6 +33173,19 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
 
 Both Mercury Avator and Torqeedo make legitimate electric outboards. The deciding factor for most Ontario buyers is not the motor itself but the dealer network and service support. Mercury Avator has the deepest Mercury Platinum dealer network in Canada, which means parts, service, and warranty work happen at any Mercury dealer across the country. Torqeedo has a smaller but specialized dealer network, often through marine electronics shops rather than traditional outboard dealers. For most Ontario boaters who want long-term service support, Mercury Avator wins on infrastructure. Torqeedo may win on specific technical features for niche applications.
 
+## Mercury Avator vs Torqeedo at a glance
+
+| Factor | Mercury Avator | Torqeedo |
+|---|---|---|
+| Parent company | Mercury Marine (Brunswick) | German, now Yamaha-owned (2024) |
+| 2026 models | 7.5e, 20e, 35e, 75e, 110e | Travel, Cruise, Deep Blue |
+| Power range | 750W-11,000W (~3-30 HP equivalent; rated in watts) | Portable to large commercial |
+| Ontario dealers | Hundreds of Mercury dealers, ~within an hour | Concentrated in Toronto/Ottawa; rural hours away |
+| Parts | On shelf at Mercury Platinum dealers | Often ordered from Torqeedo Canada |
+| Charging | 110V (portable 3-6 hr; mid overnight; 10+ kWh needs 240V) | Same household charging |
+| SmartCraft / VesselView | Yes | No |
+| Where it wins | Service, parts, integration | Longer in market, commercial/rental, sailboat-assist, Deep Blue (no Avator equal) |
+
 ## Up front: we sell Mercury
 
 Harris Boat Works is a Mercury Marine Platinum Dealer. We do not sell Torqeedo. This comparison is intended to be honest, but you should know our bias before reading it. We've been a Mercury dealer since 1965, three generations of selling, servicing, and supporting Mercury outboards on Rice Lake.
