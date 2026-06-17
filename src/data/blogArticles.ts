@@ -34792,6 +34792,19 @@ We'll quote your motor honestly, check your serial against Mercury's official Bo
 
 A Mercury or Honda buyer walks into our shop with the same two questions: which motor is actually better, and what does my service look like over the next 10 years? We sell Mercury. We don't sell or service Honda. So this isn't a balanced review, the Mercury section was not written by Switzerland. But we still try to keep the comparisons fair.
 
+## Mercury vs Honda at a glance
+
+| Factor | Mercury | Honda |
+|---|---|---|
+| Lineup top end | 2.5 HP to 600 HP (Verado V12, 450R) | Tops out at BF350 V8 (350 HP) |
+| Performance line | Pro XS | No direct counterpart |
+| Refinement (9.9-90 HP) | Strong; gap largely closed | Edge: quieter, smoother |
+| Regional service | More certified dealers; only Mercury dealer + only brand-name service on Rice Lake | 2 certified dealers within 75 km (Peterborough ~30 km, Havelock ~45 km) |
+| Parts (Canada) | Canadian distribution centres | Often route through US |
+| Max warranty (2026) | Up to 8 yr (3 limited + 3 corrosion concurrent + up to 5 MPP) | Up to 8 yr (5 standard + 3 HondaCare) |
+| Long-term maintenance | Competitive | Reputation for low cost over 10+ yr |
+| Switching to Mercury | — | ~$1,800-$3,500 brand-conversion rigging |
+
 ## Where Honda actually wins
 
 Honda makes good motors. In specific use cases, Honda is the right call.
