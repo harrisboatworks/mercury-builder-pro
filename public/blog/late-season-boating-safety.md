@@ -27,9 +27,7 @@ content_type: blog_article
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/late-season-boating-safety
 
-### Quick Answer
-
-In Ontario shoulder seasons, spring and fall, the biggest boating risk is the water temperature, not the air temperature. Dress for water temperature, not air temperature. Wear your PFD. File a float plan. Carry a charged VHF radio on Channel 16. Cold-water immersion below 15°C can cause incapacitation within minutes. See [Transport Canada](https://tc.canada.ca/en)'s cold-water survival guidance (TP 13822) for full detail.
+> **Quick answer:** In Ontario shoulder seasons, spring and fall, the biggest boating risk is the water temperature, not the air temperature. Dress for water temperature, not air temperature. Wear your PFD. File a float plan. Carry a charged VHF radio on Channel 16. Cold-water immersion below 15°C can cause incapacitation within minutes. See [Transport Canada](https://tc.canada.ca/en)'s cold-water survival guidance (TP 13822) for full detail.
 
 ---
 

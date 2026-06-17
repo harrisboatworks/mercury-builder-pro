@@ -27,9 +27,7 @@ content_type: blog_article
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
 
-### Quick Answer
-
-The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is typically the Saturday closest to May 15, confirm the exact date each year from the OMNR Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
+> **Quick answer:** The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is typically the Saturday closest to May 15, confirm the exact date each year from the OMNR Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
 
 ---
 

@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
 
-**Quick Answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 35 minutes north of Bowmanville via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 35 minutes north of Bowmanville via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
