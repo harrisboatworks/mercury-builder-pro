@@ -818,7 +818,7 @@ function pricingReferenceMarkdown(motorRecords) {
     `- Machine-readable version of this page: ${SITE_URL}/pricing-reference.md`,
     `- Agent catalog index: ${SITE_URL}/catalog.md`,
     `- llms.txt: ${SITE_URL}/llms.txt`,
-    `- Public motors API (live JSON): https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api`,
+    `- Public motors API (live JSON): ${PUBLIC_MOTORS_API}`,
     `- Public quote API: \`POST ${PUBLIC_QUOTE_API}\` with \`{ "action": "build_quote", "motor_id": "<id>" }\`.`,
     '',
   ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
