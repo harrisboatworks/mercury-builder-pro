@@ -11509,7 +11509,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     videoAssetCaption: "Mercury's official demonstration of the Boost software upgrade in action.",
     content: `_Last updated: May 27, 2026_
 
-> **Quick answer:** Mercury Boost is a software-based engine calibration update, not a hardware kit, that Mercury rates as a 5-21% improvement in mid-range acceleration on eligible motors. Eligibility is determined by serial number, not model year. It covers select FourStroke, Pro XS, and Verado models, comes factory-installed on some new 2026 builds, does not change rated horsepower, and does not affect Mercury factory warranty or Mercury Protection Plan coverage.
+> **Quick answer:** Mercury Boost is a software-based engine calibration update, not a hardware kit, that Mercury rates as a 5 to 21% improvement in mid-range acceleration on eligible motors. Eligibility is determined by serial number, not model year. It covers select FourStroke, Pro XS, and Verado models, comes factory-installed on some new 2026 builds, does not change rated horsepower, and does not affect Mercury factory warranty or Mercury Protection Plan coverage.
 
 
 > **Check yours:** Use the Boost Eligibility Checker on MercuryRepower.ca, or call HBW at 905-342-2153 with your serial number. Free.
@@ -11519,7 +11519,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
 
 Mercury announced Boost as part of its 2026 technology rollout and described it as the starting point for a broader set of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
 
-Mercury cites a 5-21% improvement in mid-range acceleration and zero-to-top-speed run times, depending on the engine.
+Mercury cites a 5 to 21% improvement in mid-range acceleration and zero-to-top-speed run times, depending on the engine.
 
 ---
 
@@ -11599,7 +11599,7 @@ Most dealers can complete it in a single service visit. **Mercury has not publis
 
 Mid-range acceleration is where the engine is most felt in real use. Not at full throttle, but in the transition from idle to cruising speed, when you are launching off Rice Lake's shallow flats, loading a pontoon with six passengers, or accelerating through a turn.
 
-A 5-21% improvement in that band is most noticeable on:
+A 5 to 21% improvement in that band is most noticeable on:
 - Heavily loaded pontoons
 - Family runabouts with full gear and passengers
 - Any setup where hole-shot or mid-range feel sluggish
@@ -11614,7 +11614,7 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ## What we see at HBW
 
-Boost is Mercury's software-only calibration upgrade for select FourStroke, Pro XS, and special-order Verado models. It improves mid-range acceleration and throttle response via a flash, with no hardware change and no change to rated horsepower. A common customer who asks is a 150 FourStroke pontoon owner who wishes they had specced the 175, and we have to be straight with them: most 150 FourStroke pontoons are outside the current Boost eligibility list, and even on an eligible motor Boost does not add rated HP. If hole-shot is the real complaint, the right next step is usually a prop conversation first, then Boost only if the motor is eligible.
+Boost is a software calibration that improves mid-range acceleration. It does not change the rated horsepower of the motor. What you'll feel is sharper throttle response and stronger hole-shot, not a bigger top end. A common customer who asks is a 150 FourStroke pontoon owner who wishes they had specced the 175, and we have to be straight with them: most 150 FourStroke pontoons are outside the current Boost eligibility list, and even on an eligible motor Boost does not add rated HP. If hole-shot is the real complaint, the right next step is usually a prop conversation first, then Boost only if the motor is eligible.
 
 Eligibility depends on engine family, horsepower, model code, and serial number, not model year alone. We can check eligibility in our portal in a few minutes. Flash time at the shop is roughly 90 minutes plus the customer-portal activation. Not every motor is a candidate. Older carbureted and EFI engines are generally outside the current Mercury serial-number ranges.
 
