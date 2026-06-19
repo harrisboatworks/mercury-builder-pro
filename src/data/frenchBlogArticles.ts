@@ -365,7 +365,7 @@ En Ontario, la fenêtre d'hivernisation se situe généralement entre octobre et
 
 L'Ontario vous offre une saison de navigation courte et intense, de mai jusqu'en octobre, chaque heure sur l'eau compte. Mais quand vient le temps de ranger l'embarcation pour l'hiver, il n'y a pas de place pour l'improvisation. Un moteur Mercury mal préparé pour la saison froide, c'est souvent des milliers de dollars de réparations au printemps.
 
-Voici ce que vous devez savoir, et ce que Harris Boat Works fait pour ses clients à Gores Landing depuis 78 ans.
+Voici ce que vous devez savoir, et ce que Harris Boat Works fait pour ses clients à Gores Landing, entreprise familiale depuis 1947.
 
 ---
 
