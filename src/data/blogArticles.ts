@@ -1016,7 +1016,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     image: '/lovable-uploads/smartcraft-connect-eligibility-hero.png',
     author: 'Jay Harris',
     datePublished: '2026-05-27',
-    dateModified: '2026-06-12',
+     dateModified: '2026-06-19',
     publishDate: '2026-05-27',
     category: 'Mercury Technology',
     readTime: '11 min',
