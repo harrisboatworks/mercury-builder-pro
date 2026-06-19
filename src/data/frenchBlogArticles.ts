@@ -8,7 +8,7 @@ export const frenchBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-08',
+    dateModified: '2026-06-19',
     publishDate: '2026-04-12',
     category: 'Guide d\'achat',
     readTime: '7 min',
