@@ -4359,7 +4359,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does Command Thrust cost over the standard gearcase?',
-        answer: 'Typically $500 to $1,500 CAD over the standard gearcase at the same HP, depending on motor class and prop selection. For specific pricing, [build a quote](/quote/motor-selection).'
+        answer: 'Command Thrust adds a modest amount over the standard gearcase at the same HP. Pricing moves with motor class and prop selection, so ask us for the current adder on your motor or [build a quote](/quote/motor-selection). Call 905-342-2153 for current pricing.'
       },
       {
         question: 'Will my standard prop fit on a Command Thrust gearcase?',
