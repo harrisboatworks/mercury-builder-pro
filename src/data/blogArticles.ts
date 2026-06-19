@@ -12816,7 +12816,7 @@ Build a repower quote on the motor selection page at mercuryrepower.ca in three 
 
 If you would rather talk it through, call **(905) 342-2153** or send us an email. We answer the phone.
 
-*Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The 5.48% TD "Always On" APR is current as of May 2026 and runs through December 31, 2026. Standard tiered rates apply after the promo retires. The actual price and live payment options for your specific configuration are at mercuryrepower.ca. Mercury model years change every July 1, and we refresh ranges in articles annually.*
+*Pricing ranges in this article are HBW's working 2026 estimates, verified June 2026. The 5.48% TD "Always On" promotional APR is current as of June 2026 and runs through December 31, 2026. Standard / typical APR is 7.99% to 8.99% when the promo does not apply. The actual price and live payment options for your specific configuration are at mercuryrepower.ca, or call 905-342-2153. Mercury model years change every July 1, and we refresh ranges in articles annually.*
 
 ---
 
