@@ -12741,7 +12741,7 @@ Five things move the number:
 - **Down payment.** Larger down payment shrinks the financed total. We do not require a specific percentage. Some customers put 0% down. Some put 30%. The math gets better the more you put down.
 - **Trade-in credit on your old motor.** A working old motor is worth real trade-in credit. Even a dead motor has aluminum and parts value. Our trade-in valuation tool gives you an instant credit estimate. Trade-in works the same as a down payment, it reduces the financed amount.
 - **Term length.** 24 months has the highest monthly payment but the lowest total interest. 84 months has the lowest monthly payment but the most total interest. Most repower customers land at 60 or 72 months as the sweet spot.
-- **Promotional vs. standard rate.** The 5.48% TD "Always On" rate is the current promotional rate through Dec 31, 2026. After it auto-retires on Jan 1, 2027, the standard tiered rate environment applies (commonly starting around 7.99% APR for good credit). Check the promotions page for the current state of the offer.
+- **Promotional vs. standard rate.** As of June 2026, the **promotional APR** is 5.48% through TD "Always On" (runs through Dec 31, 2026). When the promo does not apply, the **standard / typical APR** is 7.99% to 8.99%. Check the promotions page or call 905-342-2153 for the current state of the offer.
 
 ## What you can finance in a Mercury repower
 
