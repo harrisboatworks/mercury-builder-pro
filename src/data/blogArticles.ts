@@ -15866,7 +15866,7 @@ The hidden cost: SmartCraft display. Most repower customers want the data screen
 Throttle and shift controls, steering, wiring harness, gauges or display, battery cables and switches, fuel hose and filter, and propeller. Everything connecting the motor to the boat's systems.
 
 **How much does Mercury rigging cost in Ontario?** 
-Mercury-to-Mercury on post-2010 controls in good condition: $500, $1,500 CAD. Brand conversion or full re-rig: $2,500, $5,000 CAD. Hydraulic steering upgrade adds $1,650, $3,500 CAD. All before HST.
+Mercury-to-Mercury on post-2010 controls in good condition: $500, $1,500 CAD. Brand conversion or full re-rig: $2,500, $6,000 CAD. Hydraulic steering upgrade adds $1,650, $3,500 CAD. All before HST.
 
 **Is rigging included in the quote from mercuryrepower.ca?** 
 Yes. The configurator builds the rigging cost into the all-in installed price.
@@ -15908,7 +15908,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'How much does Mercury rigging cost?',
-        answer: 'For Mercury-to-Mercury repowers with post-2010 controls in good shape, rigging lands $500 to $1,500 CAD. Brand conversions add $1,500 to $3,000. Full rerigs (everything new) run $2,500 to $5,000. Specific quote at [/quote/motor-selection](/quote/motor-selection).'
+        answer: 'For Mercury-to-Mercury repowers with post-2010 controls in good shape, rigging lands $500 to $1,500 CAD. Brand conversions add $1,500 to $3,000. Full rerigs (everything new) run $2,500 to $6,000. Specific quote at [/quote/motor-selection](/quote/motor-selection).'
       },
       {
         question: 'What\'s included in rigging?',
