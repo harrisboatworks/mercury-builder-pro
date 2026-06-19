@@ -350,7 +350,7 @@ L'équipe travaille principalement en anglais, mais vos messages en français su
     image: '/lovable-uploads/Late_Season_Boating_Safety_Fall.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-06-19',
     publishDate: '2026-04-12',
     category: 'Entretien',
     readTime: '8 min',
