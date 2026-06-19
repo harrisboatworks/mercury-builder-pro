@@ -12719,9 +12719,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ['mercury outboard financing Ontario', 'finance boat motor Ontario', 'mercury repower financing Canada', 'marine loan Ontario 2026', 'mercury outboard payment plan'],
     content: `## Quick answer
 
-Mercury outboard financing in Ontario through Harris Boat Works runs at **5.48% APR through TD's "Always On" program** (OAC / subject to lender approval), available now through **December 31, 2026**. Standard tiered rates apply after that (typically starting around 7.99% APR depending on lender and credit profile). You can finance the motor, rigging, install labour, prop, and HST in one package, terms 24 to 84 months, online application, decisions typically come back in 24 to 48 hours. Build a real quote and run live payment numbers at mercuryrepower.ca.
+Mercury outboard financing in Ontario through Harris Boat Works runs through TD Auto Finance, placed via Dealerplan Peterborough. As of June 2026, the **promotional APR is 5.48%** through TD's "Always On" program (OAC / subject to lender approval), available through **December 31, 2026**. The **standard / typical APR is 7.99% to 8.99%** when the promotional program does not apply. You can finance the motor, rigging, install labour, prop, and HST in one package, terms 24 to 84 months, online application, decisions typically come back in 24 to 48 hours. Rates change. Call **905-342-2153** or build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) to confirm the rate that applies today.
 
-Heads-up: the **Mercury Repower Financing program through Medallion Bank is US-residents only**. The Mercury Canada page says so in the fine print: *"Financing is available to residents residing in the United States..."* If you've seen that program advertised, it doesn't apply in Ontario.
+Heads-up: the **US-only Medallion Bank financing program is not available in Canada**. The Mercury Canada page says so in the fine print: *"Financing is available to residents residing in the United States..."* If you've seen that program advertised, it doesn't apply in Ontario.
 
 ## What's actually available to Canadian buyers
 
