@@ -8102,22 +8102,18 @@ A payment estimate based on a motor price and an assumed rate is only useful if 
 
 ## Sources
 
-- Current financing options shown on the [financing page](/financing) and confirmed with your quote. As of May 2026, qualified buyers, subject to change.
+- Current financing options shown on the [financing page](/financing) and confirmed with your quote. As of June 2026, qualified buyers, subject to change.
 
-*Last reviewed: 2026-05-11.*
+*Last reviewed: 2026-06-19.*
 
-## The current Mercury financing rate (as of 2026-05-28)
+## The current Mercury financing rate (as of June 2026)
 
-If you're cross-shopping dealer financing vs your bank or credit union, the active Canadian Mercury subvention is worth pricing against:
+If you're cross-shopping dealer financing vs your bank or credit union, here are the two rate buckets to compare against:
 
-- **5.48% APR (OAC)** through December 31, 2026
-- Term up to 60 months
-- Amortization up to 240 months
-- New eligible Mercury outboards only
+- **Promotional APR: 5.48% (OAC)** through Mercury Marine Canada's TD "Always On" program, available through December 31, 2026. Term up to 60 months, amortization up to 240 months, new eligible Mercury outboards only.
+- **Standard / typical APR: 7.99% to 8.99%** through TD Auto Finance via HBW's Dealerplan Peterborough relationship, when the promotional program does not apply.
 
-This is Mercury Marine Canada's TD "Always On" program, funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Compare against your own bank or credit union offer; if your personal rate is lower, take it. If not, the subvention is genuinely competitive.
-
-After December 31, 2026, the program ends and standard tiered Mercury financing resumes (from 7.99% APR OAC). Build a current quote at [mercuryrepower.ca](https://mercuryrepower.ca) for the rate that applies today.
+Compare against your own bank or credit union offer; if your personal rate is lower, take it. If not, the dealer path is genuinely competitive. Rates change. Call 905-342-2153 or build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) to confirm the rate that applies to your purchase today.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
