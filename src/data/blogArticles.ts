@@ -12727,7 +12727,7 @@ Heads-up: the **US-only Medallion Bank financing program is not available in Can
 
 There are three paths to financing a Mercury outboard or repower in Ontario:
 
-1. **Marine-specialist financing through HBW (the standard path).** We work with Dealerplan Peterborough, which places loans with TD Auto Finance and other Canadian marine lenders. The TD "Always On" promotional rate is **5.48% APR**, available now through **December 31, 2026**. Online application, 24 to 48 hour approval. The rate stacks with any current Mercury warranty promotions; see [current offers](/promotions).
+1. **Marine-specialist financing through HBW (the standard path).** We work with Dealerplan Peterborough, which places loans with TD Auto Finance and other Canadian marine lenders. As of June 2026, the TD "Always On" **promotional APR is 5.48%**, available through **December 31, 2026**. The **standard / typical APR is 7.99% to 8.99%**. Online application, 24 to 48 hour approval. The rate stacks with any current Mercury warranty promotions; see [current offers](/promotions). Call 905-342-2153 to confirm.
 2. **Your own bank.** Some boaters prefer financing through their existing chartered bank, RBC, TD retail, BMO, Scotia, CIBC. Rates vary; check your bank's secured personal loan or boat-loan product. We'll happily build the quote and let you take it to your bank.
 3. **Cash plus trade-in credit.** If you have cash and a tradeable old motor, we'll value the trade and net it against the install total. Even a non-running motor has aluminum and parts value.
 
