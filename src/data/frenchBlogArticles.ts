@@ -143,7 +143,7 @@ Non. Pour les réparations et installations, nous travaillons exclusivement avec
 
 **En ligne :** mercuryrepower.ca, configurez votre remotorisation et obtenez un prix réel en dollars canadiens, disponible 24 h/24, sans rendez-vous ni barrière linguistique.
 
-**Par demande de service :** hbw.wiki/service, vous pouvez écrire en français.
+**Par demande de service :** hbw.wiki/service, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
 
 **Par téléphone :** 905-342-2153
 
