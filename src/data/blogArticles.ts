@@ -12764,9 +12764,10 @@ Build a real quote on the motor selection page and the financing calculator pull
 
 This is the current standard path for HBW repower financing in Canada.
 
-- **Rate:** 5.48% APR
+- **Promotional APR:** 5.48% (as of June 2026)
+- **Standard / typical APR:** 7.99% to 8.99% when promo does not apply
 - **Lender:** TD Auto Finance, placed through Dealerplan Peterborough
-- **Window:** Through December 31, 2026 (auto-retires Jan 1, 2027, standard tiered rates apply after)
+- **Window:** Promo through December 31, 2026; standard tiered rates apply when promo does not
 - **Eligibility:** A range of credit profiles may qualify, subject to lender approval. Excellent credit unlocks the best terms. Fair credit may still qualify, sometimes at a higher tier.
 - **Term length:** 24 to 84 months. Most repower customers land at 60 or 72 months.
 - **HST:** Bundled into the financed amount. You don't pay tax upfront separately.
