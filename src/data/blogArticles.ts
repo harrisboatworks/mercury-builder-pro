@@ -8062,19 +8062,19 @@ item1Note: No interest, no DealerPlan fee, fastest paperwork. Best total cost if
 item2Label: Pay cash, $25,000 motor
 item2Value: $0/month
 item2Note: Same advantage at the larger ticket. Saves roughly $5,500 in interest over 7 years.
-item3Label: Bank loan at 9.5% (rates as of May 2026, for qualified buyers, subject to change), $15,000
+item3Label: Bank loan at 9.5% (rates as of June 2026, for qualified buyers, subject to change), $15,000
 item3Value: ~$245/month
 item3Note: Unsecured personal loan. Approval and rate depend on credit. Faster than dealer financing.
 item3Accent: true
-item4Label: Mercury Marine financing at 8.99% (rates as of May 2026, for qualified buyers, subject to change), $15,000
+item4Label: Mercury Marine standard APR 8.99% (as of June 2026, for qualified buyers, subject to change), $15,000
 item4Value: ~$240/month
-item4Note: $349 DealerPlan fee added post-tax. Often the best rate for the under $10K range.
-item5Label: Mercury Marine financing at 7.99% (rates as of May 2026, for qualified buyers, subject to change), $25,000
+item4Note: Standard / typical rate at this size. $349 DealerPlan fee added post-tax. Often the best rate for the under $10K range. Call 905-342-2153 to confirm.
+item5Label: Mercury Marine standard APR 7.99% (as of June 2026, for qualified buyers, subject to change), $25,000
 item5Value: ~$390/month
-item5Note: Lower tier rate kicks in at $10K+. $349 DealerPlan fee still applies.
+item5Note: Lower standard tier kicks in at $10K+. $349 DealerPlan fee still applies. Promotional APR of 5.48% may be available, ask us.
 totalLabel: Best path for most buyers
 totalValue: Mercury financing at $25K+
-caveat: Financing not available under $5,000. Apply at mercuryrepower.ca/finance for real numbers on your purchase.
+caveat: Financing not available under $5,000. Call 905-342-2153 or apply at mercuryrepower.ca/finance for real numbers on your purchase.
 ::
 
 ---
