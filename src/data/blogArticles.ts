@@ -12031,7 +12031,7 @@ Yes. Evinrude and Mercury controls, harnesses, and gauges are not compatible, so
 Rarely. Different hub design and different pitch matching mean an Evinrude prop on a Mercury motor is a mismatch. We test and fit the right prop for your Mercury on the sea-trial.
 
 **How long does the conversion take?**
-A few days of shop time, and a few weeks from order to pickup. Off-season, October through March, is fastest.
+A few days of shop time, and a few weeks from order to pickup. Booking in October or November gets you the fastest spring slot.
 
 **Should I trade in the old Evinrude or sell it privately?**
 It depends on the motor's age and condition. A newer, running E-TEC G2 sometimes has private-sale value. Older motors are usually best as a trade-in. The trade-in estimator at mercuryrepower.ca gives an instant number.
@@ -12102,7 +12102,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
       },
       {
         question: 'How long does the conversion take?',
-        answer: 'A few days of shop time, and a few weeks from order to pickup. Off-season, October through March, is fastest.'
+        answer: 'A few days of shop time, and a few weeks from order to pickup. Booking in October or November gets you the fastest spring slot.'
       },
       {
         question: 'Should I trade in the old Evinrude or sell it privately?',
