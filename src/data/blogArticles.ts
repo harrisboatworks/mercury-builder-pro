@@ -2385,7 +2385,7 @@ We see these every year:
 
 4. **Skipping anodes.** Sacrificial anodes (zincs) protect the motor from electrolytic corrosion. They wear down. Replace at 30% depletion or the motor metal becomes the next sacrifice.
 
-5. **Wrong oil for FourStroke motors.** Modern Mercury FourStrokes need full-synthetic Mercury 25W-50 oil, not generic motor oil or 2-stroke pre-mix.
+5. **Wrong oil for FourStroke motors.** Modern Mercury FourStrokes need Mercury 4-Stroke Marine Oil (FC-W rated), not generic automotive oil or 2-stroke pre-mix. The right viscosity depends on your specific motor. Check the cowl decal and owner's manual, or call us and we'll confirm it for your model.
 
 6. **Running on dead batteries.** A dying battery makes the starter struggle, which over time burns out the starter motor or wears the flywheel. Replace batteries every 4 to 6 years on schedule.
 
@@ -2481,7 +2481,7 @@ Some of it. DIY makes sense for confident owners on smaller motors for tasks lik
 Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours before major service is required. For a recreational boater running 50 to 150 hours a season, that translates to 10 to 30 years of useful life. Skipped maintenance cuts that in half easily.
 
 **What kind of oil does my Mercury motor use?**
-Modern Mercury FourStrokes use full-synthetic Mercury 25W-50 four-stroke oil. Older motors and 2-strokes use different oil specifications. Check your owner's manual or [contact HBW](/contact) for the specific oil for your motor.
+The right oil depends on your specific motor. Most current Mercury FourStroke outboards use Mercury 4-Stroke Marine Oil (FC-W rated); the recommended viscosity for your engine is on the cowl decal and in your owner's manual. Don't guess between grades. Check the spec for your model, or [contact HBW](/contact) and we'll confirm it.
 
 **Should I winterize even if my boat is stored indoors?**
 Yes. Even in heated indoor storage, fuel breaks down and corrosion accumulates without the protective layer fogging oil provides. The cooling system drain step is less critical with heated storage but the other winterization steps still apply.
@@ -2546,7 +2546,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How often should I change the oil in my Mercury 4-stroke outboard?',
-        answer: 'Change the oil and oil filter in your Mercury 4-stroke outboard every 100 hours of operation or once per year, whichever comes first. For most Ontario cottage boaters running 50-100 hours per season, annual oil changes are the right cadence. Mercury specifies 10W-30 4-stroke marine engine oil. Using automotive oil is not recommended, it lacks the anti-foaming and corrosion-protection additives that marine oil provides. Keep a record of oil changes; it matters for warranty claims and resale value.'
+        answer: 'Change the oil and oil filter in your Mercury 4-stroke outboard every 100 hours of operation or once per year, whichever comes first. For most Ontario cottage boaters running 50-100 hours per season, annual oil changes are the right cadence. Use Mercury 4-Stroke Marine Oil (FC-W rated) at the viscosity Mercury specifies for your motor, the spec is on the cowl decal and in your owner\'s manual. Using automotive oil is not recommended, it lacks the anti-foaming and corrosion-protection additives that marine oil provides. Keep a record of oil changes; it matters for warranty claims and resale value.'
       },
       {
         question: 'Can I do my own Mercury outboard maintenance?',
@@ -4186,7 +4186,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-command-thrust-guide-pontoon-boats',
     seoTitle: "Mercury Command Thrust on a Pontoon: Worth It? | HBW",
     title: "Mercury Command Thrust on a Pontoon: Worth the Money?",
-    description: "Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't.",
+    description: "Command Thrust adds a modest amount over the standard gearcase on a pontoon. Pricing moves, so call us for the current adder. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't.",
     image: '/lovable-uploads/Mercury_Pontoon_Buyers_Guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
@@ -4359,7 +4359,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does Command Thrust cost over the standard gearcase?',
-        answer: 'Typically $500 to $1,500 CAD over the standard gearcase at the same HP, depending on motor class and prop selection. For specific pricing, [build a quote](/quote/motor-selection).'
+        answer: 'Command Thrust adds a modest amount over the standard gearcase at the same HP. Pricing moves with motor class and prop selection, so ask us for the current adder on your motor or [build a quote](/quote/motor-selection). Call 905-342-2153 for current pricing.'
       },
       {
         question: 'Will my standard prop fit on a Command Thrust gearcase?',
@@ -8062,19 +8062,19 @@ item1Note: No interest, no DealerPlan fee, fastest paperwork. Best total cost if
 item2Label: Pay cash, $25,000 motor
 item2Value: $0/month
 item2Note: Same advantage at the larger ticket. Saves roughly $5,500 in interest over 7 years.
-item3Label: Bank loan at 9.5% (rates as of May 2026, for qualified buyers, subject to change), $15,000
+item3Label: Bank loan at 9.5% (rates as of June 2026, for qualified buyers, subject to change), $15,000
 item3Value: ~$245/month
 item3Note: Unsecured personal loan. Approval and rate depend on credit. Faster than dealer financing.
 item3Accent: true
-item4Label: Mercury Marine financing at 8.99% (rates as of May 2026, for qualified buyers, subject to change), $15,000
+item4Label: Mercury Marine standard APR 8.99% (as of June 2026, for qualified buyers, subject to change), $15,000
 item4Value: ~$240/month
-item4Note: $349 DealerPlan fee added post-tax. Often the best rate for the under $10K range.
-item5Label: Mercury Marine financing at 7.99% (rates as of May 2026, for qualified buyers, subject to change), $25,000
+item4Note: Standard / typical rate at this size. $349 DealerPlan fee added post-tax. Often the best rate for the under $10K range. Call 905-342-2153 to confirm.
+item5Label: Mercury Marine standard APR 7.99% (as of June 2026, for qualified buyers, subject to change), $25,000
 item5Value: ~$390/month
-item5Note: Lower tier rate kicks in at $10K+. $349 DealerPlan fee still applies.
+item5Note: Lower standard tier kicks in at $10K+. $349 DealerPlan fee still applies. Promotional APR of 5.48% may be available, ask us.
 totalLabel: Best path for most buyers
 totalValue: Mercury financing at $25K+
-caveat: Financing not available under $5,000. Apply at mercuryrepower.ca/finance for real numbers on your purchase.
+caveat: Financing not available under $5,000. Call 905-342-2153 or apply at mercuryrepower.ca/finance for real numbers on your purchase.
 ::
 
 ---
@@ -8102,22 +8102,18 @@ A payment estimate based on a motor price and an assumed rate is only useful if 
 
 ## Sources
 
-- Current financing options shown on the [financing page](/financing) and confirmed with your quote. As of May 2026, qualified buyers, subject to change.
+- Current financing options shown on the [financing page](/financing) and confirmed with your quote. As of June 2026, qualified buyers, subject to change.
 
 *Last reviewed: 2026-05-11.*
 
-## The current Mercury financing rate (as of 2026-05-28)
+## The current Mercury financing rate (as of June 2026)
 
-If you're cross-shopping dealer financing vs your bank or credit union, the active Canadian Mercury subvention is worth pricing against:
+If you're cross-shopping dealer financing vs your bank or credit union, here are the two rate buckets to compare against:
 
-- **5.48% APR (OAC)** through December 31, 2026
-- Term up to 60 months
-- Amortization up to 240 months
-- New eligible Mercury outboards only
+- **Promotional APR: 5.48% (OAC)** through Mercury Marine Canada's TD "Always On" program, available through December 31, 2026. Term up to 60 months, amortization up to 240 months, new eligible Mercury outboards only.
+- **Standard / typical APR: 7.99% to 8.99%** through TD Auto Finance via HBW's Dealerplan Peterborough relationship, when the promotional program does not apply.
 
-This is Mercury Marine Canada's TD "Always On" program, funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Compare against your own bank or credit union offer; if your personal rate is lower, take it. If not, the subvention is genuinely competitive.
-
-After December 31, 2026, the program ends and standard tiered Mercury financing resumes (from 7.99% APR OAC). Build a current quote at [mercuryrepower.ca](https://mercuryrepower.ca) for the rate that applies today.
+Compare against your own bank or credit union offer; if your personal rate is lower, take it. If not, the dealer path is genuinely competitive. Rates change. Call 905-342-2153 or build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) to confirm the rate that applies to your purchase today.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -8142,11 +8138,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'What is the typical term for boat motor financing in Ontario?', answer: 'Most repower customers finance over 48 to 84 months. 60 and 72 months are the most common.' },
       { question: 'Is dealer financing better than my bank?', answer: 'It depends on your credit profile and your existing banking relationship. Dealer financing is faster and bundles everything including tax. Your bank may offer a lower rate if you have excellent credit and a strong relationship.' },
       { question: 'Does the old motor have any trade-in value?', answer: 'Yes. Working motors have the most value. Dead motors still have value in aluminum and parts. Trade-in credit reduces the financed total.' },
-      { question: 'Can I pay off the financing early?', answer: 'Confirm prepayment terms before you sign. Most Mercury Repower Financing arrangements allow early payoff without penalty, but verify on your specific agreement.' },
-      { question: 'Is HST included in the financing?', answer: 'Through the Mercury Repower program at HBW, yes. Ontario HST at 13% is included in the financed amount.' },
+      { question: 'Can I pay off the financing early?', answer: 'Confirm prepayment terms before you sign. Most TD Auto Finance arrangements through Dealerplan Peterborough allow early payoff without penalty, but verify on your specific agreement.' },
+      { question: 'Is HST included in the financing?', answer: 'Through the TD Auto Finance path via Dealerplan Peterborough at HBW, yes. Ontario HST at 13% is included in the financed amount.' },
       { question: 'When should I use a HELOC instead of dealer financing?', answer: 'If your HELOC rate is meaningfully lower than the dealer rate and you are comfortable using your home as collateral, the total interest savings over a longer term can be real. Worth discussing with your bank or financial advisor.' },
-      { question: 'Where do I start?', answer: 'Build a full installed quote at mercuryrepower.ca. That gives you the real loan amount, not just the motor price.' },
-      { question: "Is the dealer's financing rate competitive with my bank?", answer: 'As of 2026-05-28, Mercury Marine Canada\'s active TD "Always On" program offers 5.48% APR (OAC) on new eligible Mercury outboards through December 31, 2026, with amortization up to 240 months. That\'s competitive with most bank or credit union personal loans for a marine purchase. If your personal credit profile gets you a lower rate at your bank, take it. If not, the dealer program is meaningfully better than standard tiered Mercury financing (which resumes after Dec 31, 2026 at rates from 7.99% APR).' },
+      { question: 'Where do I start?', answer: 'Build a full installed quote at mercuryrepower.ca. That gives you the real loan amount, not just the motor price. Then call 905-342-2153 to confirm current rates.' },
+      { question: "Is the dealer's financing rate competitive with my bank?", answer: 'As of June 2026, the promotional APR through Mercury Marine Canada\'s TD "Always On" program is 5.48% (OAC) on new eligible Mercury outboards, through December 31, 2026, with amortization up to 240 months. Standard / typical APR through the same TD Auto Finance path (via Dealerplan Peterborough) is 7.99% to 8.99%. The promotional rate is competitive with most bank or credit union personal loans for a marine purchase. If your personal credit profile gets you a lower rate at your bank, take it. Call 905-342-2153 or build a quote at mercuryrepower.ca to confirm what applies.' },
     ]
   },
 
@@ -9372,9 +9368,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     readTime: '7 min read',
     keywords: ['2027 mercury outboard', 'new mercury motors', 'mercury model year', 'mercury updates', 'new outboard models'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-06-19*
 
-> **Quick answer:** Mercury's 2027 lineup carries the current FourStroke and Pro XS architecture forward with software refinements, expanded Avator electric options, and continued V12 Verado availability for the offshore tier. Stocked Ontario models stay focused on 2.5-300 HP. Watch the configurator at mercuryrepower.ca for live 2027 pricing as it lands.
+> **Quick answer:** This is a forward look at Mercury's anticipated 2027 lineup. Based on current direction, we expect Mercury to carry the FourStroke and Pro XS architecture forward with software refinements, expanded Avator electric options, and continued V12 Verado availability for the offshore tier. None of this is confirmed by Mercury Marine. Stocked Ontario models stay focused on 2.5-300 HP. Watch the configurator at mercuryrepower.ca for live 2027 pricing as it lands.
 
 ## 2027 Mercury Outboard Preview
 
@@ -12713,7 +12709,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-outboard-financing-ontario-2026',
     title: "Boat Repower Financing in Ontario (2026 Guide)",
     seoTitle: 'Mercury Outboard Financing in Ontario (2026): Real Rates & Terms | Harris Boat Works',
-    description: 'Mercury outboard financing in Ontario through HBW - current 5.48% APR TD Always On rate through Dec 31 2026, what you can finance, terms, and how the application works.',
+    description: 'Mercury outboard financing in Ontario through HBW (TD Auto Finance via Dealerplan Peterborough). Promotional APR 5.48% (through Dec 31, 2026) vs. standard APR 7.99% to 8.99%, as of June 2026. What you can finance, terms, and how the application works.',
     image: '/lovable-uploads/hero-mercury-financing-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
@@ -12723,15 +12719,15 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ['mercury outboard financing Ontario', 'finance boat motor Ontario', 'mercury repower financing Canada', 'marine loan Ontario 2026', 'mercury outboard payment plan'],
     content: `## Quick answer
 
-Mercury outboard financing in Ontario through Harris Boat Works runs at **5.48% APR through TD's "Always On" program** (OAC / subject to lender approval), available now through **December 31, 2026**. Standard tiered rates apply after that (typically starting around 7.99% APR depending on lender and credit profile). You can finance the motor, rigging, install labour, prop, and HST in one package, terms 24 to 84 months, online application, decisions typically come back in 24 to 48 hours. Build a real quote and run live payment numbers at mercuryrepower.ca.
+Mercury outboard financing in Ontario through Harris Boat Works runs through TD Auto Finance, placed via Dealerplan Peterborough. As of June 2026, the **promotional APR is 5.48%** through TD's "Always On" program (OAC / subject to lender approval), available through **December 31, 2026**. The **standard / typical APR is 7.99% to 8.99%** when the promotional program does not apply. You can finance the motor, rigging, install labour, prop, and HST in one package, terms 24 to 84 months, online application, decisions typically come back in 24 to 48 hours. Rates change. Call **905-342-2153** or build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) to confirm the rate that applies today.
 
-Heads-up: the **Mercury Repower Financing program through Medallion Bank is US-residents only**. The Mercury Canada page says so in the fine print: *"Financing is available to residents residing in the United States..."* If you've seen that program advertised, it doesn't apply in Ontario.
+Heads-up: the **US-only Medallion Bank financing program is not available in Canada**. The Mercury Canada page says so in the fine print: *"Financing is available to residents residing in the United States..."* If you've seen that program advertised, it doesn't apply in Ontario.
 
 ## What's actually available to Canadian buyers
 
 There are three paths to financing a Mercury outboard or repower in Ontario:
 
-1. **Marine-specialist financing through HBW (the standard path).** We work with Dealerplan Peterborough, which places loans with TD Auto Finance and other Canadian marine lenders. The TD "Always On" promotional rate is **5.48% APR**, available now through **December 31, 2026**. Online application, 24 to 48 hour approval. The rate stacks with any current Mercury warranty promotions; see [current offers](/promotions).
+1. **Marine-specialist financing through HBW (the standard path).** We work with Dealerplan Peterborough, which places loans with TD Auto Finance and other Canadian marine lenders. As of June 2026, the TD "Always On" **promotional APR is 5.48%**, available through **December 31, 2026**. The **standard / typical APR is 7.99% to 8.99%**. Online application, 24 to 48 hour approval. The rate stacks with any current Mercury warranty promotions; see [current offers](/promotions). Call 905-342-2153 to confirm.
 2. **Your own bank.** Some boaters prefer financing through their existing chartered bank, RBC, TD retail, BMO, Scotia, CIBC. Rates vary; check your bank's secured personal loan or boat-loan product. We'll happily build the quote and let you take it to your bank.
 3. **Cash plus trade-in credit.** If you have cash and a tradeable old motor, we'll value the trade and net it against the install total. Even a non-running motor has aluminum and parts value.
 
@@ -12745,7 +12741,7 @@ Five things move the number:
 - **Down payment.** Larger down payment shrinks the financed total. We do not require a specific percentage. Some customers put 0% down. Some put 30%. The math gets better the more you put down.
 - **Trade-in credit on your old motor.** A working old motor is worth real trade-in credit. Even a dead motor has aluminum and parts value. Our trade-in valuation tool gives you an instant credit estimate. Trade-in works the same as a down payment, it reduces the financed amount.
 - **Term length.** 24 months has the highest monthly payment but the lowest total interest. 84 months has the lowest monthly payment but the most total interest. Most repower customers land at 60 or 72 months as the sweet spot.
-- **Promotional vs. standard rate.** The 5.48% TD "Always On" rate is the current promotional rate through Dec 31, 2026. After it auto-retires on Jan 1, 2027, the standard tiered rate environment applies (commonly starting around 7.99% APR for good credit). Check the promotions page for the current state of the offer.
+- **Promotional vs. standard rate.** As of June 2026, the **promotional APR** is 5.48% through TD "Always On" (runs through Dec 31, 2026). When the promo does not apply, the **standard / typical APR** is 7.99% to 8.99%. Check the promotions page or call 905-342-2153 for the current state of the offer.
 
 ## What you can finance in a Mercury repower
 
@@ -12768,9 +12764,10 @@ Build a real quote on the motor selection page and the financing calculator pull
 
 This is the current standard path for HBW repower financing in Canada.
 
-- **Rate:** 5.48% APR
+- **Promotional APR:** 5.48% (as of June 2026)
+- **Standard / typical APR:** 7.99% to 8.99% when promo does not apply
 - **Lender:** TD Auto Finance, placed through Dealerplan Peterborough
-- **Window:** Through December 31, 2026 (auto-retires Jan 1, 2027, standard tiered rates apply after)
+- **Window:** Promo through December 31, 2026; standard tiered rates apply when promo does not
 - **Eligibility:** A range of credit profiles may qualify, subject to lender approval. Excellent credit unlocks the best terms. Fair credit may still qualify, sometimes at a higher tier.
 - **Term length:** 24 to 84 months. Most repower customers land at 60 or 72 months.
 - **HST:** Bundled into the financed amount. You don't pay tax upfront separately.
@@ -12797,9 +12794,9 @@ We do not pull your credit until you have built a quote you are serious about an
 
 Three patterns we see most often. Your situation is somewhere in here.
 
-**Scenario 1: "I just want to get on the water."** Old 2-stroke died last fall. Customer needs the boat running by Victoria Day weekend. Goes with a 90 to 115 HP FourStroke repower (mid tier), 10 to 20% down, 60-month term, TD 5.48%. Monthly payment lands somewhere around what they were spending on premium fuel and oil mix for the old 2-stroke. They're on the water in three weeks.
+**Scenario 1: "I just want to get on the water."** Old 2-stroke died last fall. Customer needs the boat running by Victoria Day weekend. Goes with a 90 to 115 HP FourStroke repower (mid tier), 10 to 20% down, 60-month term, on the TD promotional APR (5.48%, as of June 2026). Monthly payment lands somewhere around what they were spending on premium fuel and oil mix for the old 2-stroke. They're on the water in three weeks.
 
-**Scenario 2: "I'm thinking about it for next season."** Comes in November or December. Plans the repower with the install scheduled for the week we reopen in April. Locks in the TD 5.48% rate before the December 31, 2026 retirement. Often finances for 84 months to keep the monthly low. Boat is ready to launch the day the ice comes off Rice Lake.
+**Scenario 2: "I'm thinking about it for next season."** Comes in November or December. Plans the repower with the install scheduled for the week we reopen in April. Locks in the TD promotional 5.48% APR before the December 31, 2026 program end. Often finances for 84 months to keep the monthly low. Boat is ready to launch the day the ice comes off Rice Lake.
 
 **Scenario 3: "I'm stretching the budget."** Wants to upgrade to bigger HP than they currently run. Needs every dollar of trade-in credit and a longer term to make the monthly fit. We run multiple quote configurations on the motor selection page and the financing calculator to show what changes when they pick a 90 vs a 115 vs a 150. Honest math wins this one. Sometimes the right answer is to wait a season and save more down payment.
 
@@ -12807,11 +12804,11 @@ Three patterns we see most often. Your situation is somewhere in here.
 
 If you have the cash to do the repower outright, and your other money is not earning more than the financing rate, paying cash usually makes the cleaner math. You skip the interest and you own the motor outright.
 
-If your money is in something earning above the financing rate, or your emergency fund would get depleted by paying cash, financing the repower at 5.48% (while the promo lasts) often makes sense. You keep your liquidity, and the math is roughly a wash or favours financing.
+If your money is in something earning above the financing rate, or your emergency fund would get depleted by paying cash, financing the repower at the promotional 5.48% APR (while the promo lasts, as of June 2026) often makes sense. You keep your liquidity, and the math is roughly a wash or favours financing. At the standard 7.99% to 8.99% APR range, the math tightens, run the numbers.
 
 We will not push you either way. Choose the option that fits your budget, cash flow, and comfort level.
 
-What doesn't usually help the math: financing a repower at 5.48% AND keeping a big chunk of cash in a low-interest savings account earning 1.5%. Run the numbers before deciding. This is general guidance, not financial advice.
+What doesn't usually help the math: financing a repower at the promotional 5.48% APR AND keeping a big chunk of cash in a low-interest savings account earning 1.5%. Run the numbers before deciding. This is general guidance, not financial advice.
 
 ## Ready to run real numbers?
 
@@ -12819,7 +12816,7 @@ Build a repower quote on the motor selection page at mercuryrepower.ca in three 
 
 If you would rather talk it through, call **(905) 342-2153** or send us an email. We answer the phone.
 
-*Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The 5.48% TD "Always On" APR is current as of May 2026 and runs through December 31, 2026. Standard tiered rates apply after the promo retires. The actual price and live payment options for your specific configuration are at mercuryrepower.ca. Mercury model years change every July 1, and we refresh ranges in articles annually.*
+*Pricing ranges in this article are HBW's working 2026 estimates, verified June 2026. The 5.48% TD "Always On" promotional APR is current as of June 2026 and runs through December 31, 2026. Standard / typical APR is 7.99% to 8.99% when the promo does not apply. The actual price and live payment options for your specific configuration are at mercuryrepower.ca, or call 905-342-2153. Mercury model years change every July 1, and we refresh ranges in articles annually.*
 
 ---
 
@@ -12840,9 +12837,9 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 
 `,
     faqs: [
-      { question: 'Can I finance a Mercury repower in Ontario?', answer: 'Yes. The current standard path is TD "Always On" at 5.48% APR through December 31, 2026 (OAC / subject to lender approval), placed through Dealerplan Peterborough. Covers the full project: motor, rigging, controls, prop, install labour, on-water test on Rice Lake before pickup, hydraulic steering conversion if required, and HST. Terms 24 to 84 months. Build a real quote and see live payment options at mercuryrepower.ca.' },
-      { question: 'What\'s the Mercury financing rate in 2026?', answer: '5.48% APR through TD "Always On", current through December 31, 2026. After that, standard tiered rates apply (typically starting around 7.99% APR for good credit, varying by lender and credit profile). Current promotion details are on the promotions page.' },
-      { question: 'Is Mercury Repower Financing through Medallion Bank available in Canada?', answer: 'No. Per Mercury Canada\'s fine print: "Financing is available to residents residing in the United States..." The Medallion Bank program is US-residents only. Canadian buyers use the TD path through HBW instead.' },
+      { question: 'Can I finance a Mercury repower in Ontario?', answer: 'Yes. As of June 2026, the current standard path is TD Auto Finance via Dealerplan Peterborough. The promotional APR is 5.48% through TD "Always On" (through December 31, 2026, OAC). The standard / typical APR is 7.99% to 8.99% when the promo does not apply. Covers the full project: motor, rigging, controls, prop, install labour, on-water test on Rice Lake before pickup, hydraulic steering conversion if required, and HST. Terms 24 to 84 months. Call 905-342-2153 or build a real quote at mercuryrepower.ca.' },
+      { question: 'What\'s the Mercury financing rate in 2026?', answer: 'As of June 2026: promotional APR is 5.48% through TD "Always On" (through December 31, 2026). Standard / typical APR is 7.99% to 8.99% when the promo does not apply. Rates change. Call 905-342-2153 or check the promotions page to confirm what applies today.' },
+      { question: 'Is the US-only Medallion Bank financing available in Canada?', answer: 'No. Per Mercury Canada\'s fine print: "Financing is available to residents residing in the United States..." The Medallion Bank program is US-residents only. Canadian buyers use the TD Auto Finance path through HBW (Dealerplan Peterborough) instead.' },
       { question: 'What can I finance in a Mercury repower?', answer: 'Motor, rigging (controls, cables, gauges), new prop, install labour, on-water test on Rice Lake before pickup, hydraulic steering conversion (if required), battery and harness refresh, and HST. Everything except your old motor, which becomes trade-in credit instead.' },
       { question: 'What term lengths are available?', answer: '24, 36, 48, 60, 72, and 84 months are common options. Most repower customers land at 60 or 72 months as the sweet spot between manageable monthly payment and reasonable total interest. The financing calculator shows the math on each term.' },
       { question: 'Do I need a down payment?', answer: 'We do not require a specific down payment percentage. Some customers put 0% down. Some put 30%. The math gets better with more down. Trade-in credit on your old motor counts as down payment for approval and total-financed purposes.' },
@@ -13501,7 +13498,7 @@ Winterization isn't optional maintenance. It's the difference between a motor th
 
 This guide covers what DIY winterization actually involves, which steps are realistic for most owners, which ones are easy to get wrong, and when it makes more sense to bring the motor to a dealer.
 
-In the Aug, Nov 2025 season, we completed 584 winterizations at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
+In the late-season winterization window (August through November), we completed 584 winterizations at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
 
 ---
 
@@ -36213,7 +36210,7 @@ This page gives you real numbers, not a "call for details" brushoff.
 
 ## What rates look like right now
 
-Financing runs through our broker, Dealerplan Peterborough, on TD Auto Finance's "Always On" program: currently 5.48% APR OAC, available through December 31, 2026. That is the headline rate today, not a teaser.
+Financing runs through our broker, Dealerplan Peterborough, on TD Auto Finance. As of June 2026, the **promotional APR** through TD's "Always On" program is 5.48% (OAC), available through December 31, 2026. The **standard / typical APR** range is 7.99% to 8.99%. Rates move; call 905-342-2153 or build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) to confirm what applies today.
 
 OAC means "on approved credit." Your actual rate depends on your credit score, loan term, and the amount financed. We do not control the lending criteria, the lender does.
 
@@ -36229,9 +36226,9 @@ Let's use real math.
 - Motor price: $14,960 (our current selling price, listed at [mercuryrepower.ca/pricing-reference](https://www.mercuryrepower.ca/pricing-reference))
 - Rigging, controls, and install: quoted per boat in the configurator, so your installed number is exact, not estimated
 - Less any trade-in credit on your old motor
-- At 5.48% APR, that 90hp motor works out to roughly $103/month. Important: that figure uses a 240-month amortization basis with a 60-month contract, so at month 60 the remaining principal (roughly $12,600) comes due as a balloon you can pay out, refinance, or roll into a trade. The full math, including every HP tier, is in our [monthly payment guide](/blog/mercury-outboard-monthly-payment-ontario-2026).
+- At the promotional 5.48% APR (as of June 2026), that 90hp motor works out to roughly $103/month. Important: that figure uses a 240-month amortization basis with a 60-month contract, so at month 60 the remaining principal (roughly $12,600) comes due as a balloon you can pay out, refinance, or roll into a trade. At the standard 7.99% to 8.99% APR range, the monthly is higher. The full math, including every HP tier, is in our [monthly payment guide](/blog/mercury-outboard-monthly-payment-ontario-2026).
 
-**Payment assumptions:** motor price only (installed cost is quoted per boat), HST not included in the financed example, 5.48% APR under the TD Always On program (OAC, through December 31, 2026), 240-month amortization basis with 60-month contract. Your quoted rate and payment at application are what count.
+**Payment assumptions:** motor price only (installed cost is quoted per boat), HST not included in the financed example, promotional 5.48% APR under the TD "Always On" program (OAC, as of June 2026, through December 31, 2026), 240-month amortization basis with 60-month contract. Standard APR is 7.99% to 8.99%. Your quoted rate and payment at application are what count. Call 905-342-2153 to confirm the current rate.
 
 A trade-in or down payment drops the financed amount and the payment with it.
 
@@ -36272,7 +36269,7 @@ If your hull needs transom work, steering replacement, or electrical upgrades as
 Start at [mercuryrepower.ca](https://mercuryrepower.ca) or reach us at 905-342-2153.
 ## Related guides
 
-- [Boat Repower Financing in Ontario (2026 Guide)](/blog/mercury-outboard-financing-ontario-2026): Mercury outboard financing in Ontario through HBW - current 5.48% APR TD Always On rate through Dec 31 2026.
+- [Boat Repower Financing in Ontario (2026 Guide)](/blog/mercury-outboard-financing-ontario-2026): Mercury outboard financing in Ontario through HBW, promotional 5.48% APR (TD "Always On", through Dec 31, 2026) vs. standard 7.99% to 8.99% APR.
 - [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026): What does a Mercury outboard repower cost per month in Ontario? Verified amortization tables. Active Mercury.
 - [The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from.
 - [The Best Mercury Outboard for Ski and Wakeboard Boats. Real-World Picks (2026)](/blog/best-mercury-for-ski-wakeboard-boats): An HBW guide to the best Mercury outboards for ski and wakeboard boats, what hole shot really means, when Pro.
