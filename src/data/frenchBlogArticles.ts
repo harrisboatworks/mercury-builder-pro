@@ -350,7 +350,7 @@ L'équipe travaille principalement en anglais, mais vos messages en français su
     image: '/lovable-uploads/Late_Season_Boating_Safety_Fall.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-06-19',
     publishDate: '2026-04-12',
     category: 'Entretien',
     readTime: '8 min',
@@ -365,7 +365,7 @@ En Ontario, la fenêtre d'hivernisation se situe généralement entre octobre et
 
 L'Ontario vous offre une saison de navigation courte et intense, de mai jusqu'en octobre, chaque heure sur l'eau compte. Mais quand vient le temps de ranger l'embarcation pour l'hiver, il n'y a pas de place pour l'improvisation. Un moteur Mercury mal préparé pour la saison froide, c'est souvent des milliers de dollars de réparations au printemps.
 
-Voici ce que vous devez savoir, et ce que Harris Boat Works fait pour ses clients à Gores Landing depuis 78 ans.
+Voici ce que vous devez savoir, et ce que Harris Boat Works fait pour ses clients à Gores Landing, entreprise familiale depuis 1947.
 
 ---
 
@@ -458,7 +458,6 @@ Absolument. Une batterie marine laissée dans le bateau par temps de gel se déc
 ## Liens internes
 - Guide de pêche sur le lac Rice
 - Permis de conduire une embarcation au Canada
-- Concessionnaire Mercury Platinum Ontario
 
 ## Appel à l'action
 
