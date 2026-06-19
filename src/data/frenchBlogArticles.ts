@@ -87,7 +87,7 @@ Pour les embarcations de 17 à 20 pieds. Le Mercury 115 FourStroke est l'un des 
 
 ### Moteurs haute performance : 150 HP et plus
 
-Pour les embarcations plus grandes, les pontons chargés, ou pour ceux qui veulent de la performance. Le Mercury 150 FourStroke est populaire pour les bateaux de 19 à 22 pieds. Au-delà de 150 HP, on entre dans le territoire des Verado et des configurations double moteur.
+150 HP et plus : généralement FourStroke ou Pro XS. (Verado : sur commande spéciale, service seulement.)
 
 ---
 
