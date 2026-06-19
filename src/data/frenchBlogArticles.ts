@@ -129,7 +129,7 @@ Faites inspecter la coque par un technicien expérimenté avant de décider. Che
 Oui. L'outil de configuration sur mercuryrepower.ca vous donne un vrai prix en dollars canadiens, sans avoir besoin de parler à l'équipe. Entrez les informations sur votre embarcation et choisissez la puissance.
 
 **L'équipe peut-elle communiquer en français ?** 
-L'équipe travaille principalement en anglais. Les demandes de service envoyées en français via hbw.wiki/service sont les bienvenues, nous ferons notre possible pour vous aider.
+L'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 **Faut-il amener le bateau sur place pour obtenir un devis ?** 
 Non, vous pouvez démarrer le processus en ligne sur mercuryrepower.ca. Pour les projets plus complexes, une visite à Gores Landing peut être utile pour évaluer l'état de la coque et le câblage existant.
@@ -306,10 +306,10 @@ Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les 
 Le FourStroke standard est optimisé pour la croisière confortable, l'économie de carburant, et la longévité. Le Pro XS est optimisé pour la vitesse maximale et la reprise, conçu pour les bateaux de pêche sportive et les amateurs de performance.
 
 **Puis-je obtenir un devis en français ?** 
-Le configurateur sur mercuryrepower.ca fonctionne sans barrière linguistique, les prix sont clairs et accessibles en dollars canadiens. Pour des questions plus détaillées, vous pouvez soumettre une demande en français via hbw.wiki/service.
+Le configurateur sur mercuryrepower.ca fonctionne sans barrière linguistique, les prix sont clairs et accessibles en dollars canadiens. Pour des questions plus détaillées, vous pouvez nous envoyer votre demande via hbw.wiki/service (nous répondrons en anglais).
 
 **L'équipe parle-t-elle français ?** 
-L'équipe travaille principalement en anglais, mais vos messages en français sur hbw.wiki/service sont les bienvenus. Nous trouverons une façon de vous aider.
+Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 ---
 
@@ -317,7 +317,7 @@ L'équipe travaille principalement en anglais, mais vos messages en français su
 
 **Outil de comparaison en ligne :** mercuryrepower.ca, comparez les deux moteurs côte à côte avec les prix réels en dollars canadiens.
 
-**Demande de service :** hbw.wiki/service, les messages en français sont les bienvenus.
+**Demande de service :** hbw.wiki/service, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
 
 **Téléphone :** 905-342-2153
 
@@ -425,7 +425,7 @@ Faire l'hivernisation soi-même est possible, mais seulement si vous avez l'exp�
 
 Pour les réparations de moteur, nous entretenons uniquement les moteurs Mercury et Mercruiser.
 
-Notre équipe travaille principalement en anglais. Nous ne parlons pas français couramment, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Le courriel et notre formulaire de demande de service en ligne à **hbw.wiki/service** fonctionnent sans barrière linguistique, vous pouvez écrire en français, et on s'arrange.
+Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous envoyer votre demande par courriel ou via notre formulaire en ligne à **hbw.wiki/service** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 ---
 
@@ -615,7 +615,7 @@ Faites évaluer la coque par un technicien expérimenté avant de décider. Chez
 Oui. Nous sommes concessionnaire Legend Boats. Consultez l'inventaire à harrisboatworks.ca.
 
 **L'équipe parle-t-elle français ?** 
-L'équipe travaille principalement en anglais. Vous pouvez soumettre vos demandes en français via hbw.wiki/service, nous ferons notre possible pour communiquer efficacement.
+Notre personnel répond en anglais. Vous pouvez nous envoyer vos demandes via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 **Faut-il se déplacer à Gores Landing pour obtenir un devis ?** 
 Non, le configurateur sur mercuryrepower.ca vous donne un prix en temps réel sans déplacement. Pour les projets complexes, une visite peut être utile pour évaluer la coque et le câblage existant.
@@ -631,7 +631,7 @@ Grosso modo de mai à octobre, environ six mois. C'est une raison de plus de ne 
 
 **Magasiner un bateau neuf :** harrisboatworks.ca, inventaire Legend Boats.
 
-**Demande de service :** hbw.wiki/service, les messages en français sont les bienvenus.
+**Demande de service :** hbw.wiki/service, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
 
 **Téléphone :** 905-342-2153
 
@@ -758,7 +758,7 @@ Les permis se délivrent en ligne ou dans les points de vente autorisés. Consul
 
 ## Une petite note honnête
 
-Notre équipe travaille principalement en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Le courriel et notre outil de réservation en ligne sur **mercuryrepower.ca** fonctionnent sans barrière linguistique, écrivez-nous en français, ça fonctionne très bien.
+Notre équipe travaille en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous écrire par courriel ou via notre outil de réservation en ligne sur **mercuryrepower.ca** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 Harris Boat Works est le seul concessionnaire Mercury Platinum en Ontario avec du contenu francophone sur la pêche et la navigation.
 
@@ -794,7 +794,7 @@ Oui. Le lac se trouve à moins de trois heures de Montréal via l'autoroute 401 
 
 **Réservez votre embarcation ou planifiez votre saison.** 
 Location d'embarcations : [harrisboatworks.ca](https://harrisboatworks.ca) 
-Service et entretien : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez écrire en français. 
+Service et entretien : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
 Téléphone : **905-342-2153** 
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
 ---`,
@@ -960,7 +960,7 @@ Sur le site de Transports Canada. Les exigences varient selon la longueur et le 
 **Prêt à prendre le large en toute légalité?** 
 Pour la location d'embarcations sur le lac Rice : [harrisboatworks.ca](https://harrisboatworks.ca) 
 Pour un nouveau moteur ou une remotorisation : [mercuryrepower.ca](https://www.mercuryrepower.ca) 
-Demande de service : [hbw.wiki/service](https://hbw.wiki/service), écrivez en français, on s'arrange. 
+Demande de service : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
 **905-342-2153** 
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
 ---`,
