@@ -1,63 +1,52 @@
-## Goal
-Embed your uploaded Mercury Boost MP4 in `/blog/mercury-boost-software-upgrade-eligibility-2026`, hosted from Lovable Assets CDN (not YouTube).
+# Blog content pipeline — diagnostic
 
-## Why a new component
-`MercuryVideo.tsx` is YouTube-only (builds `youtube.com/embed/...` URLs from a `videoId`). For a self-hosted MP4 we need a native `<video>` element. Reusing/forking it keeps the click-to-load "facade" pattern so the MP4 (~several MB) doesn't hurt LCP.
+## 1. Where does the body come from at runtime?
 
-## Changes
+100% from the static TS file. `src/pages/BlogArticle.tsx:16,44` does:
 
-### 1. Upload the MP4 to Lovable Assets
-Run once in build mode:
-```bash
-mkdir -p src/assets/video
-lovable-assets create \
-  --file /mnt/user-uploads/AQM6pHbspjy56XxqMjMj3L70GD9HmrYLEODPWCK-YPzq13aD9ecvm7vO_rYPUJ7md3_AN1EgRML_aWa6-kM-W619sxRH3SdTjaI4Q1nEvBDwXA.mp4 \
-  --filename mercury-boost-demo.mp4 \
-  > src/assets/video/mercury-boost-demo.mp4.asset.json
-```
-This writes a `.asset.json` pointer to the CDN; no binary lands in the repo.
-
-### 2. New component: `src/components/blog/MercuryVideoFile.tsx`
-- Props: `src: string`, `title: string`, `caption?: string`, `poster?: string`.
-- Renders a 16:9 `<figure>` matching `MercuryVideo`'s styling.
-- First paint: poster image (or solid black) + centered red play button — no video bytes fetched.
-- On click: swaps in `<video controls autoPlay playsInline preload="metadata" src={src}>`.
-- `loading="lazy"` semantics via `preload="metadata"` only after click.
-- Optional caption rendered like the YouTube facade.
-
-### 3. Article fields (`src/data/blogArticles.ts`)
-Add three optional fields to the article object (TypeScript-permissive; existing posts unaffected):
-- `videoAssetUrl?: string`
-- `videoAssetTitle?: string`
-- `videoAssetCaption?: string`
-
-Populate on the `mercury-boost-software-upgrade-eligibility-2026` entry:
 ```ts
-videoAssetUrl: mercuryBoostDemo.url, // imported from the .asset.json
-videoAssetTitle: "Mercury Boost — official demo",
-videoAssetCaption: "Mercury's own demonstration of Boost's mid-range acceleration response.",
+import { getArticleBySlug, getRelatedArticles, parseLocalDate } from '@/data/blogArticles';
+...
+const article = slug ? getArticleBySlug(slug) : undefined;
 ```
 
-### 4. Render in `src/pages/BlogArticle.tsx`
-Just below the existing `youtubeVideoId` block (lines 356-362), add a parallel block:
-```tsx
-{article.videoAssetUrl && (
-  <MercuryVideoFile
-    src={article.videoAssetUrl}
-    title={article.videoAssetTitle || 'Mercury Marine video'}
-    caption={article.videoAssetCaption}
-  />
-)}
-```
-Placement is above the article body (after TOC, before prose) — same slot the YouTube embed already uses, so layout is consistent.
+There is no Supabase fetch in this component, no `useEffect` loader, no CMS call. `article.content` (markdown from the TS entry) is fed directly into ReactMarkdown. Same pattern for the localized pages (`FrenchBlogArticlePage`, `KoreanBlogArticlePage`, etc.) — each imports from its sibling `*BlogArticles.ts`.
 
-## Out of scope
-- No edits to other Boost posts (`mercury-boost-cost-canada-2026`, `mercury-boost-upgrade-150hp-pontoon-analysis`). The same fields would let you add it there later in one line if you want.
-- No inline-in-body markdown directive — kept it as an article-level field to match the existing YouTube pattern.
-- Caption defaults to a neutral line since you didn't specify one; easy to change.
+## 2. Is there a DB table holding bodies?
 
-## Files touched
-- New: `src/components/blog/MercuryVideoFile.tsx`
-- New: `src/assets/video/mercury-boost-demo.mp4.asset.json` (CDN pointer)
-- Edited: `src/data/blogArticles.ts` (article fields + import of pointer)
-- Edited: `src/pages/BlogArticle.tsx` (render block + import)
+No. Querying `information_schema.tables` for anything matching `%blog%|%article%|%post%` returns only `blog_subscriptions` (mailing-list signups — 8 columns, none of them content). There is no `blog_posts`, no `articles`, no `content` table. Nothing in Supabase overrides the TS file.
+
+## 3. Is `src/data/blogArticles.ts` still the source of truth?
+
+Yes. It is THE source of truth for English posts. Not legacy, not seed data. Every render path (`BlogArticle.tsx`, `Blog.tsx`, `RssFeed.tsx`, `generateSitemap.ts`, `BlogSEO.tsx`, related-post grids) imports from it directly.
+
+## 4. Then why does www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs show different content?
+
+Deployment lag, not a different data source. Per project memory (`mem://infrastructure/hosting-and-deploy-model`):
+
+- **mercuryrepower.ca is served by Vercel**, built from the GitHub repo `harrisboatworks/mercury-builder-pro`.
+- **Lovable is the code editor only.** Edits made here land in the Lovable preview and the Lovable-published URL (`mercury-quote-tool.lovable.app`), and get pushed to GitHub by the Lovable↔GitHub sync. They do NOT appear on mercuryrepower.ca until Vercel rebuilds from the GitHub commit.
+
+So the live page showing "$ / $$ / $$$", "Asked at our desk", and "359 lb / 115 Pro XS" is rendering an OLDER build of `blogArticles.ts` — the version that was in the repo at the time of the last successful Vercel deploy. The Lovable preview URL (`id-preview--…lovable.app/blog/fourstroke-vs-pro-xs`) should already show the new content from the recent refresh.
+
+Quick way to confirm: compare these three URLs side-by-side:
+- Lovable preview: `https://id-preview--bc5f0a45-f6d8-495a-8ac7-81047b4a4121.lovable.app/blog/fourstroke-vs-pro-xs` (newest)
+- Lovable published: `https://mercury-quote-tool.lovable.app/blog/fourstroke-vs-pro-xs` (after clicking Publish in Lovable)
+- Production: `https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs` (newest only after Vercel rebuild from main)
+
+If preview shows the new content but production doesn't, the gap is in the GitHub→Vercel pipeline (commit not on main, Vercel build failed, or Vercel project paused). Check the Vercel dashboard's Deployments tab for the `mercury-builder-pro` project.
+
+## 4. Correct way to update an existing post
+
+**Edit the TS file only.** Specifically the entry in `src/data/blogArticles.ts` keyed by `slug`. There is no DB row to update and no admin UI that writes content. Then ensure the change reaches production via the GitHub→Vercel pipeline:
+
+1. Edit `src/data/blogArticles.ts` in Lovable (already done for `fourstroke-vs-pro-xs`).
+2. Verify on the Lovable preview URL.
+3. Confirm the commit pushed to `harrisboatworks/mercury-builder-pro` on the branch Vercel deploys from (typically `main`).
+4. Watch the Vercel deployment finish. The change goes live when that build completes.
+
+There is nothing to edit in Supabase for blog body content. The only blog-related DB activity is subscriber emails in `blog_subscriptions`.
+
+## Bottom line
+
+Architecture is single-source: TS file in repo → Vite build → static HTML/JS. The mismatch you're seeing is a stale Vercel build, not a CMS override. No code or data changes needed to "fix" the data layer — the recent TS edit is correct; it just needs to land in a Vercel deploy.
