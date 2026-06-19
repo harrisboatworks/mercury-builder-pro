@@ -458,7 +458,6 @@ Absolument. Une batterie marine laissée dans le bateau par temps de gel se déc
 ## Liens internes
 - Guide de pêche sur le lac Rice
 - Permis de conduire une embarcation au Canada
-- Concessionnaire Mercury Platinum Ontario
 
 ## Appel à l'action
 
