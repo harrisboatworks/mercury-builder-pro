@@ -9368,9 +9368,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     readTime: '7 min read',
     keywords: ['2027 mercury outboard', 'new mercury motors', 'mercury model year', 'mercury updates', 'new outboard models'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-06-19*
 
-> **Quick answer:** Mercury's 2027 lineup carries the current FourStroke and Pro XS architecture forward with software refinements, expanded Avator electric options, and continued V12 Verado availability for the offshore tier. Stocked Ontario models stay focused on 2.5-300 HP. Watch the configurator at mercuryrepower.ca for live 2027 pricing as it lands.
+> **Quick answer:** This is a forward look at Mercury's anticipated 2027 lineup. Based on current direction, we expect Mercury to carry the FourStroke and Pro XS architecture forward with software refinements, expanded Avator electric options, and continued V12 Verado availability for the offshore tier. None of this is confirmed by Mercury Marine. Stocked Ontario models stay focused on 2.5-300 HP. Watch the configurator at mercuryrepower.ca for live 2027 pricing as it lands.
 
 ## 2027 Mercury Outboard Preview
 
