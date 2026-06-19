@@ -23,6 +23,12 @@ Dans la grande majorité des cas, oui : remotoriser une embarcation en bon état
 
 Le moteur lâche, ou tient encore à peine. Vous vous posez la question : est-ce que ça vaut la peine de le remplacer, ou mieux vaut acheter un nouveau bateau ?
 
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
+
 La réponse dépend surtout de l'état de votre coque, mais dans la majorité des cas, la remotorisation est la décision la plus économique et la plus sensée.
 
 Harris Boat Works est une marina familiale de troisième génération sur le lac Rice, en activité depuis 1947. Nous sommes concessionnaire Mercury Marine Platinum, le niveau de certification le plus élevé chez [Mercury Marine](https://www.mercurymarine.com/canada/en/), et nous réalisons des dizaines de remotoriations par saison, sur toutes les catégories d'embarcations courantes en Ontario.
