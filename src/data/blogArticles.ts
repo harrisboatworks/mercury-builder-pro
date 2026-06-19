@@ -12804,11 +12804,11 @@ Three patterns we see most often. Your situation is somewhere in here.
 
 If you have the cash to do the repower outright, and your other money is not earning more than the financing rate, paying cash usually makes the cleaner math. You skip the interest and you own the motor outright.
 
-If your money is in something earning above the financing rate, or your emergency fund would get depleted by paying cash, financing the repower at 5.48% (while the promo lasts) often makes sense. You keep your liquidity, and the math is roughly a wash or favours financing.
+If your money is in something earning above the financing rate, or your emergency fund would get depleted by paying cash, financing the repower at the promotional 5.48% APR (while the promo lasts, as of June 2026) often makes sense. You keep your liquidity, and the math is roughly a wash or favours financing. At the standard 7.99% to 8.99% APR range, the math tightens, run the numbers.
 
 We will not push you either way. Choose the option that fits your budget, cash flow, and comfort level.
 
-What doesn't usually help the math: financing a repower at 5.48% AND keeping a big chunk of cash in a low-interest savings account earning 1.5%. Run the numbers before deciding. This is general guidance, not financial advice.
+What doesn't usually help the math: financing a repower at the promotional 5.48% APR AND keeping a big chunk of cash in a low-interest savings account earning 1.5%. Run the numbers before deciding. This is general guidance, not financial advice.
 
 ## Ready to run real numbers?
 
