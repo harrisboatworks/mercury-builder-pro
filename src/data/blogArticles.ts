@@ -15691,7 +15691,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-rigging-costs.png',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-06-09',
+    dateModified: '2026-06-19',
     publishDate: '2026-05-05',
     category: 'Repower',
     readTime: '10 min read',
@@ -15702,7 +15702,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Quick Answer
 
-Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $3,000, $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500, $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 
 ---
@@ -15723,7 +15723,7 @@ item3Value: $150 - $400
 item3Note: Mercury harness post-2010 usually carries over. Brand swap requires a full new harness.
 item4Label: Gauges or SmartCraft display
 item4Value: $0 - $1,200
-item4Note: Compatible existing gauges stay for free. SmartCraft VesselView adds several hundred to $1,200+.
+item4Note: Compatible existing gauges stay for free. SmartCraft Connect Mobile adds several hundred to $1,200+.
 item5Label: Fuel hose, primer bulb, water-separator filter
 item5Value: $80 - $200
 item5Note: Replaced on every repower as cheap insurance against old fuel parts hurting a new motor.
@@ -15760,7 +15760,7 @@ Hydraulic steering conversion costs $1,650, $3,500 CAD depending on motor HP and
 Connects motor to controls, gauges, and battery. Mercury standardized harness connectors across motor families around 2010, so Mercury-to-Mercury repowers usually keep the harness if it's in good condition. Brand conversions need a new harness.
 
 **Gauges and displays** 
-Older analog gauges (tach, fuel, water temp) often don't fully support modern Mercury motor data outputs. Mercury SmartCraft digital displays integrate engine data cleanly. Third-party multifunction displays (Garmin, Lowrance, Raymarine) integrate via NMEA 2000. Keeping compatible existing displays is free; adding a SmartCraft VesselView adds several hundred dollars depending on screen size.
+Older analog gauges (tach, fuel, water temp) often don't fully support modern Mercury motor data outputs. Mercury SmartCraft digital displays integrate engine data cleanly. Third-party multifunction displays (Garmin, Lowrance, Raymarine) integrate via NMEA 2000. Keeping compatible existing displays is free; adding a SmartCraft Connect Mobile adds several hundred dollars depending on screen size.
 
 **Battery cables and switches** 
 Heavier cable for higher-HP motors. Battery switch and dual-battery selectors replaced as needed.
@@ -15779,7 +15779,7 @@ Aluminum 3-blade (approximately $450 CAD) for motors up to 115 HP. Stainless 3 o
 | Mercury-to-Mercury, older/worn rigging needing replacement | $1,500, $3,000 |
 | Brand conversion (Evinrude, Yamaha, Honda to Mercury) | Add $1,500, $3,000 over standard |
 | Cable to hydraulic steering upgrade | Add $1,650, $3,500 |
-| Full new re-rig (everything new) | $2,500, $5,000 |
+| Full new re-rig (everything new) | $2,500, $6,000 |
 
 These ranges are before prop and installation labour. The live configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) builds rigging into the all-in quote.
 
@@ -15793,7 +15793,7 @@ Five things move your quote up or down the range:
 
 **3. Steering type and upgrade decisions.** Keeping existing cable steering is cheaper. Upgrading to hydraulic adds meaningfully but is often worth doing during the repower while the dash is already open. Future upgrades to hydraulic are more expensive and disruptive than doing it during the current job.
 
-**4. Display upgrades.** Keeping existing displays if compatible is free. Adding a Mercury SmartCraft VesselView adds several hundred to over $1,000 depending on size and configuration.
+**4. Display upgrades.** Keeping existing displays if compatible is free. Adding a Mercury SmartCraft Connect Mobile adds several hundred to over $1,000 depending on size and configuration.
 
 **5. Fuel system condition.** Old fuel hoses and gummed-up filters get replaced. Boats stored with ethanol pump gas sometimes need more than basic hose replacement.
 
@@ -15866,7 +15866,7 @@ The hidden cost: SmartCraft display. Most repower customers want the data screen
 Throttle and shift controls, steering, wiring harness, gauges or display, battery cables and switches, fuel hose and filter, and propeller. Everything connecting the motor to the boat's systems.
 
 **How much does Mercury rigging cost in Ontario?** 
-Mercury-to-Mercury on post-2010 controls in good condition: $500, $1,500 CAD. Brand conversion or full re-rig: $2,500, $5,000 CAD. Hydraulic steering upgrade adds $1,650, $3,500 CAD. All before HST.
+Mercury-to-Mercury on post-2010 controls in good condition: $500, $1,500 CAD. Brand conversion or full re-rig: $2,500, $6,000 CAD. Hydraulic steering upgrade adds $1,650, $3,500 CAD. All before HST.
 
 **Is rigging included in the quote from mercuryrepower.ca?** 
 Yes. The configurator builds the rigging cost into the all-in installed price.
@@ -15908,7 +15908,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'How much does Mercury rigging cost?',
-        answer: 'For Mercury-to-Mercury repowers with post-2010 controls in good shape, rigging lands $500 to $1,500 CAD. Brand conversions add $1,500 to $3,000. Full rerigs (everything new) run $2,500 to $5,000. Specific quote at [/quote/motor-selection](/quote/motor-selection).'
+        answer: 'For Mercury-to-Mercury repowers with post-2010 controls in good shape, rigging lands $500 to $1,500 CAD. Brand conversions add $1,500 to $3,000. Full rerigs (everything new) run $2,500 to $6,000. Specific quote at [/quote/motor-selection](/quote/motor-selection).'
       },
       {
         question: 'What\'s included in rigging?',
