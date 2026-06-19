@@ -647,7 +647,7 @@ El configurador incluye opciones de rigging, controles, y hélice, para que el p
 
 ## Sobre Harris Boat Works
 
-Harris Boat Works lleva 78 años en Rice Lake, Gores Landing, Ontario. Somos concesionario Mercury Marine Platinum, el nivel más alto de certificación Mercury, lo que significa acceso prioritario a partes, técnicos certificados, y manejo directo de garantías con Mercury.
+Harris Boat Works es un negocio familiar desde 1947 en Rice Lake, Gores Landing, Ontario. Somos concesionario Mercury Marine Platinum, el nivel más alto de certificación Mercury, lo que significa acceso prioritario a partes, técnicos certificados, y manejo directo de garantías con Mercury.
 
 Vendemos aproximadamente **65 motores Mercury nuevos al año**. Sabemos qué funciona en estos lagos.
 
