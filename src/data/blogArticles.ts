@@ -12709,7 +12709,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-outboard-financing-ontario-2026',
     title: "Boat Repower Financing in Ontario (2026 Guide)",
     seoTitle: 'Mercury Outboard Financing in Ontario (2026): Real Rates & Terms | Harris Boat Works',
-    description: 'Mercury outboard financing in Ontario through HBW - current 5.48% APR TD Always On rate through Dec 31 2026, what you can finance, terms, and how the application works.',
+    description: 'Mercury outboard financing in Ontario through HBW (TD Auto Finance via Dealerplan Peterborough). Promotional APR 5.48% (through Dec 31, 2026) vs. standard APR 7.99% to 8.99%, as of June 2026. What you can finance, terms, and how the application works.',
     image: '/lovable-uploads/hero-mercury-financing-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
