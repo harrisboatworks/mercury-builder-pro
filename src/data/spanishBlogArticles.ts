@@ -797,7 +797,7 @@ Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemen
 ## Preguntas frecuentes
 
 **¿Cuánto cuesta una remotorización Mercury en Ontario?** 
-El costo varía según la potencia del motor, la longitud del árbol, el cableado necesario y la mano de obra. Para obtener un precio preciso para su embarcación, use el configurador en mercuryrepower.ca, disponible en tiempo real, en dólares canadienses, sin barrera de idioma.
+El costo varía según la potencia del motor, la longitud del árbol, el cableado necesario y la mano de obra. Para obtener un precio preciso para su embarcación, use el configurador en mercuryrepower.ca, disponible en tiempo real, y muestra los precios claramente en dólares canadienses.
 
 **¿Cómo sé si mi casco vale la pena remotorizar?** 
 Haga revisar el casco por un técnico con experiencia. En Harris Boat Works evaluamos el casco antes de recomendar cualquier cosa. Si la remotorización no es la decisión correcta, se lo decimos.
@@ -806,7 +806,7 @@ Haga revisar el casco por un técnico con experiencia. En Harris Boat Works eval
 Sí. Somos concesionarios de Legend Boats. Consulte el inventario en harrisboatworks.ca.
 
 **¿Puedo escribir en español?** 
-El configurador en mercuryrepower.ca y el formulario de servicio en hbw.wiki/service funcionan sin barrera de idioma. Puede escribir en español en hbw.wiki/service, haremos todo lo posible para ayudarle.
+Nuestro personal responde en inglés. Puede enviarnos su pregunta y le responderemos en inglés; si lo prefiere, use Google Translate o pídale ayuda a un familiar bilingüe. El configurador de precios en mercuryrepower.ca funciona en cualquier idioma.
 
 **¿Cuánto tiempo tarda una remotorización?** 
 Depende de la disponibilidad del motor y el programa del taller. Una remotorización bien planificada puede realizarse en semanas. La temporada en Ontario es corta, planifique con anticipación.
@@ -822,7 +822,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
 
 **Botes nuevos:** harrisboatworks.ca, inventario Legend Boats.
 
-**Solicitud de servicio:** hbw.wiki/service, puede escribir en español.
+**Solicitud de servicio:** hbw.wiki/service, puede enviarnos su consulta (le responderemos en inglés).
 
 **Por teléfono:** 905-342-2153
 
