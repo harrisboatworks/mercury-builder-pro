@@ -12794,9 +12794,9 @@ We do not pull your credit until you have built a quote you are serious about an
 
 Three patterns we see most often. Your situation is somewhere in here.
 
-**Scenario 1: "I just want to get on the water."** Old 2-stroke died last fall. Customer needs the boat running by Victoria Day weekend. Goes with a 90 to 115 HP FourStroke repower (mid tier), 10 to 20% down, 60-month term, TD 5.48%. Monthly payment lands somewhere around what they were spending on premium fuel and oil mix for the old 2-stroke. They're on the water in three weeks.
+**Scenario 1: "I just want to get on the water."** Old 2-stroke died last fall. Customer needs the boat running by Victoria Day weekend. Goes with a 90 to 115 HP FourStroke repower (mid tier), 10 to 20% down, 60-month term, on the TD promotional APR (5.48%, as of June 2026). Monthly payment lands somewhere around what they were spending on premium fuel and oil mix for the old 2-stroke. They're on the water in three weeks.
 
-**Scenario 2: "I'm thinking about it for next season."** Comes in November or December. Plans the repower with the install scheduled for the week we reopen in April. Locks in the TD 5.48% rate before the December 31, 2026 retirement. Often finances for 84 months to keep the monthly low. Boat is ready to launch the day the ice comes off Rice Lake.
+**Scenario 2: "I'm thinking about it for next season."** Comes in November or December. Plans the repower with the install scheduled for the week we reopen in April. Locks in the TD promotional 5.48% APR before the December 31, 2026 program end. Often finances for 84 months to keep the monthly low. Boat is ready to launch the day the ice comes off Rice Lake.
 
 **Scenario 3: "I'm stretching the budget."** Wants to upgrade to bigger HP than they currently run. Needs every dollar of trade-in credit and a longer term to make the monthly fit. We run multiple quote configurations on the motor selection page and the financing calculator to show what changes when they pick a 90 vs a 115 vs a 150. Honest math wins this one. Sometimes the right answer is to wait a season and save more down payment.
 
