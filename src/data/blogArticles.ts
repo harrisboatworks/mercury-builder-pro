@@ -2385,7 +2385,7 @@ We see these every year:
 
 4. **Skipping anodes.** Sacrificial anodes (zincs) protect the motor from electrolytic corrosion. They wear down. Replace at 30% depletion or the motor metal becomes the next sacrifice.
 
-5. **Wrong oil for FourStroke motors.** Modern Mercury FourStrokes need Mercury 4-Stroke Marine Oil (FC-W rated), not generic automotive oil or 2-stroke pre-mix. For most Mercury FourStroke outboards the standard, all-temperature grade is 25W-40. Mercury also approves FC-W 10W-30 as a lighter option for cooler conditions or when you want maximum acceleration (skiing, tournament fishing). Your cowl decal and owner's manual confirm the exact grade for your engine.
+5. **Wrong oil for FourStroke motors.** Modern Mercury FourStrokes need Mercury 4-Stroke Marine Oil (FC-W rated), not generic automotive oil or 2-stroke pre-mix. In Canada the grade goes by horsepower: 10W-30 for 0 to 30 hp, 25W-40 for 40, 50, and 60 hp, and 10W-30 again for 75 hp and up. Your owner's manual confirms it for your exact engine.
 
 6. **Running on dead batteries.** A dying battery makes the starter struggle, which over time burns out the starter motor or wears the flywheel. Replace batteries every 4 to 6 years on schedule.
 
