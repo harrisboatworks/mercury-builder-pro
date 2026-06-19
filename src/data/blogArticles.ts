@@ -2481,7 +2481,7 @@ Some of it. DIY makes sense for confident owners on smaller motors for tasks lik
 Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours before major service is required. For a recreational boater running 50 to 150 hours a season, that translates to 10 to 30 years of useful life. Skipped maintenance cuts that in half easily.
 
 **What kind of oil does my Mercury motor use?**
-Modern Mercury FourStrokes use full-synthetic Mercury 25W-50 four-stroke oil. Older motors and 2-strokes use different oil specifications. Check your owner's manual or [contact HBW](/contact) for the specific oil for your motor.
+The right oil depends on your specific motor. Most current Mercury FourStroke outboards use Mercury 4-Stroke Marine Oil (FC-W rated); the recommended viscosity for your engine is on the cowl decal and in your owner's manual. Don't guess between grades. Check the spec for your model, or [contact HBW](/contact) and we'll confirm it.
 
 **Should I winterize even if my boat is stored indoors?**
 Yes. Even in heated indoor storage, fuel breaks down and corrosion accumulates without the protective layer fogging oil provides. The cooling system drain step is less critical with heated storage but the other winterization steps still apply.
