@@ -36213,7 +36213,7 @@ This page gives you real numbers, not a "call for details" brushoff.
 
 ## What rates look like right now
 
-Financing runs through our broker, Dealerplan Peterborough, on TD Auto Finance's "Always On" program: currently 5.48% APR OAC, available through December 31, 2026. That is the headline rate today, not a teaser.
+Financing runs through our broker, Dealerplan Peterborough, on TD Auto Finance. As of June 2026, the **promotional APR** through TD's "Always On" program is 5.48% (OAC), available through December 31, 2026. The **standard / typical APR** range is 7.99% to 8.99%. Rates move; call 905-342-2153 or build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) to confirm what applies today.
 
 OAC means "on approved credit." Your actual rate depends on your credit score, loan term, and the amount financed. We do not control the lending criteria, the lender does.
 
