@@ -13498,7 +13498,7 @@ Winterization isn't optional maintenance. It's the difference between a motor th
 
 This guide covers what DIY winterization actually involves, which steps are realistic for most owners, which ones are easy to get wrong, and when it makes more sense to bring the motor to a dealer.
 
-In the Aug, Nov 2025 season, we completed 584 winterizations at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
+In the late-season winterization window (August through November), we completed 584 winterizations at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
 
 ---
 
