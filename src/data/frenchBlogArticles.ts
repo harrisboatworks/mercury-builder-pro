@@ -8,7 +8,7 @@ export const frenchBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-08',
+    dateModified: '2026-06-19',
     publishDate: '2026-04-12',
     category: 'Guide d\'achat',
     readTime: '7 min',
@@ -22,6 +22,12 @@ Dans la grande majorité des cas, oui : remotoriser une embarcation en bon état
 ### Combien coûte une remotorisation Mercury en Ontario ?
 
 Le moteur lâche, ou tient encore à peine. Vous vous posez la question : est-ce que ça vaut la peine de le remplacer, ou mieux vaut acheter un nouveau bateau ?
+
+<div class="hbw-language-note">
+  <h3>Une note sur la langue</h3>
+  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
+  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
+</div>
 
 La réponse dépend surtout de l'état de votre coque, mais dans la majorité des cas, la remotorisation est la décision la plus économique et la plus sensée.
 
@@ -81,7 +87,7 @@ Pour les embarcations de 17 à 20 pieds. Le Mercury 115 FourStroke est l'un des 
 
 ### Moteurs haute performance : 150 HP et plus
 
-Pour les embarcations plus grandes, les pontons chargés, ou pour ceux qui veulent de la performance. Le Mercury 150 FourStroke est populaire pour les bateaux de 19 à 22 pieds. Au-delà de 150 HP, on entre dans le territoire des Verado et des configurations double moteur.
+150 HP et plus : généralement FourStroke ou Pro XS. (Verado : sur commande spéciale, service seulement.)
 
 ---
 
@@ -101,7 +107,7 @@ Nous sommes situés à Gores Landing, sur le lac Rice, à environ 1 h 30 à l'es
 
 Notre équipe travaille principalement en anglais, nous ne parlons pas français couramment, mais nous accueillons chaleureusement les clients francophones et nous trouverons une façon de communiquer efficacement. Le configurateur en ligne sur mercuryrepower.ca fonctionne sans barrière linguistique : vous entrez les informations sur votre embarcation, choisissez la puissance, et obtenez un vrai prix en dollars canadiens, pas un « appelez-nous pour en savoir plus ».
 
-Harris Boat Works est actuellement le seul concessionnaire Mercury en Ontario à offrir du contenu en français sur la remotorisation. Mercury Marine lui-même dirige des clients francophones vers nous.
+Harris Boat Works offre du contenu disponible en français pour les clients francophones.
 
 ---
 
