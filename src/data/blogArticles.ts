@@ -11716,7 +11716,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Can Mercury Boost be reversed if I don\'t like the result?',
-        answer: 'In theory, yes. Boost is a software calibration and Mercury dealers have the tools to apply and modify software-based updates. However, Mercury has not published a standard reversal procedure, and returning to the factory calibration would require a return visit to a certified dealer. In practice, the 5-21% mid-range acceleration improvement is almost universally regarded as positive, the calibration doesn\'t change how the engine feels at cruise or at wide-open throttle, only in the mid-range RPM band. If you\'re considering Boost, it\'s not a risky experiment, it\'s a factory-approved update with a straightforward performance outcome.'
+        answer: 'In theory, yes. Boost is a software calibration and Mercury dealers have the tools to apply and modify software-based updates. However, Mercury has not published a standard reversal procedure, and returning to the factory calibration would require a return visit to a certified dealer. In practice, the 5 to 21% mid-range acceleration improvement is almost universally regarded as positive, the calibration doesn\'t change how the engine feels at cruise or at wide-open throttle, only in the mid-range RPM band. If you\'re considering Boost, it\'s not a risky experiment, it\'s a factory-approved update with a straightforward performance outcome.'
       }
     ]
   },
