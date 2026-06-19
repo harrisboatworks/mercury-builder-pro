@@ -36272,7 +36272,7 @@ If your hull needs transom work, steering replacement, or electrical upgrades as
 Start at [mercuryrepower.ca](https://mercuryrepower.ca) or reach us at 905-342-2153.
 ## Related guides
 
-- [Boat Repower Financing in Ontario (2026 Guide)](/blog/mercury-outboard-financing-ontario-2026): Mercury outboard financing in Ontario through HBW - current 5.48% APR TD Always On rate through Dec 31 2026.
+- [Boat Repower Financing in Ontario (2026 Guide)](/blog/mercury-outboard-financing-ontario-2026): Mercury outboard financing in Ontario through HBW, promotional 5.48% APR (TD "Always On", through Dec 31, 2026) vs. standard 7.99% to 8.99% APR.
 - [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026): What does a Mercury outboard repower cost per month in Ontario? Verified amortization tables. Active Mercury.
 - [The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from.
 - [The Best Mercury Outboard for Ski and Wakeboard Boats. Real-World Picks (2026)](/blog/best-mercury-for-ski-wakeboard-boats): An HBW guide to the best Mercury outboards for ski and wakeboard boats, what hole shot really means, when Pro.
