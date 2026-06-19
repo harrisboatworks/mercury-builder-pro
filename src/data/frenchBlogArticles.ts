@@ -107,7 +107,7 @@ Nous sommes situés à Gores Landing, sur le lac Rice, à environ 1 h 30 à l'es
 
 Notre équipe travaille principalement en anglais, nous ne parlons pas français couramment, mais nous accueillons chaleureusement les clients francophones et nous trouverons une façon de communiquer efficacement. Le configurateur en ligne sur mercuryrepower.ca fonctionne sans barrière linguistique : vous entrez les informations sur votre embarcation, choisissez la puissance, et obtenez un vrai prix en dollars canadiens, pas un « appelez-nous pour en savoir plus ».
 
-Harris Boat Works est actuellement le seul concessionnaire Mercury en Ontario à offrir du contenu en français sur la remotorisation. Mercury Marine lui-même dirige des clients francophones vers nous.
+Harris Boat Works offre du contenu disponible en français pour les clients francophones.
 
 ---
 
