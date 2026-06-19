@@ -4186,7 +4186,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-command-thrust-guide-pontoon-boats',
     seoTitle: "Mercury Command Thrust on a Pontoon: Worth It? | HBW",
     title: "Mercury Command Thrust on a Pontoon: Worth the Money?",
-    description: "Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't.",
+    description: "Command Thrust adds a modest amount over the standard gearcase on a pontoon. Pricing moves, so call us for the current adder. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't.",
     image: '/lovable-uploads/Mercury_Pontoon_Buyers_Guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
