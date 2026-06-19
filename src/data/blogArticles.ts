@@ -36229,9 +36229,9 @@ Let's use real math.
 - Motor price: $14,960 (our current selling price, listed at [mercuryrepower.ca/pricing-reference](https://www.mercuryrepower.ca/pricing-reference))
 - Rigging, controls, and install: quoted per boat in the configurator, so your installed number is exact, not estimated
 - Less any trade-in credit on your old motor
-- At 5.48% APR, that 90hp motor works out to roughly $103/month. Important: that figure uses a 240-month amortization basis with a 60-month contract, so at month 60 the remaining principal (roughly $12,600) comes due as a balloon you can pay out, refinance, or roll into a trade. The full math, including every HP tier, is in our [monthly payment guide](/blog/mercury-outboard-monthly-payment-ontario-2026).
+- At the promotional 5.48% APR (as of June 2026), that 90hp motor works out to roughly $103/month. Important: that figure uses a 240-month amortization basis with a 60-month contract, so at month 60 the remaining principal (roughly $12,600) comes due as a balloon you can pay out, refinance, or roll into a trade. At the standard 7.99% to 8.99% APR range, the monthly is higher. The full math, including every HP tier, is in our [monthly payment guide](/blog/mercury-outboard-monthly-payment-ontario-2026).
 
-**Payment assumptions:** motor price only (installed cost is quoted per boat), HST not included in the financed example, 5.48% APR under the TD Always On program (OAC, through December 31, 2026), 240-month amortization basis with 60-month contract. Your quoted rate and payment at application are what count.
+**Payment assumptions:** motor price only (installed cost is quoted per boat), HST not included in the financed example, promotional 5.48% APR under the TD "Always On" program (OAC, as of June 2026, through December 31, 2026), 240-month amortization basis with 60-month contract. Standard APR is 7.99% to 8.99%. Your quoted rate and payment at application are what count. Call 905-342-2153 to confirm the current rate.
 
 A trade-in or down payment drops the financed amount and the payment with it.
 
