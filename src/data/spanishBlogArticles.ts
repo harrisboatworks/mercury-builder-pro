@@ -8,7 +8,7 @@ export const spanishBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/es-guia-comprar-bote-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-06-19',
     publishDate: '2026-04-12',
     category: 'Guía de compra',
     readTime: '12 min',
@@ -187,7 +187,7 @@ harrisboatworks.ca
       { question: '¿Cuánto cuesta mantener un bote al año?', answer: 'Depende del tamaño y el uso, pero para un bote típico de 16-18 pies, considere entre $3,000 y $7,000 CAD al año incluyendo almacenamiento, combustible, seguro y mantenimiento.' },
       { question: '¿Es mejor comprar nuevo o usado?', answer: 'Si su presupuesto es limitado, un bote usado con un motor Mercury nuevo (remotorización) le da la mejor combinación de valor y confiabilidad.' },
       { question: '¿Puedo obtener un precio sin llamar?', answer: 'Sí. En mercuryrepower.ca puede configurar su motor y ver el precio en dólares canadienses, sin compromiso.' },
-      { question: '¿Harris Boat Works atiende en español?', answer: 'Nuestro equipo habla inglés, pero lo recibiremos con gusto. El configurador en línea y el formulario de servicio funcionan sin barrera de idioma.' },
+      { question: '¿Harris Boat Works atiende en español?', answer: 'Nuestro personal responde en inglés. Puede enviarnos su consulta y le responderemos en inglés; si lo prefiere, use Google Translate o pídale ayuda a un familiar bilingüe. El configurador de precios en mercuryrepower.ca muestra los precios claramente en dólares canadienses.' },
     ],
   },
   {
@@ -377,7 +377,7 @@ harrisboatworks.ca | 905-342-2153
     image: '/lovable-uploads/es-preparacion-invernal-motor-mercury-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-06-19',
     publishDate: '2026-04-12',
     category: 'Mantenimiento',
     readTime: '11 min',
@@ -396,9 +396,11 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ---
 
-## Una nota sobre el idioma
-
-Nuestro equipo trabaja en inglés y no hablamos español, pero haremos todo lo posible para ayudarle. Para reservar su preparación invernal, la forma más fácil es a través de hbw.wiki/service, puede escribir en español. También puede llamarnos al 905-342-2153.
+<div class="hbw-language-note">
+  <h3>Una nota sobre el idioma</h3>
+  <p>Este artículo está disponible en español porque queremos que la información técnica de motores Mercury llegue a más clientes. Nos esforzamos por ofrecer contenido útil en su idioma.</p>
+  <p>Sin embargo, debemos ser honestos: nuestro personal habla inglés. Si nos contacta para una cotización o servicio, le responderemos en inglés. Si lo prefiere, puede usar Google Translate o pedirle a un familiar bilingüe que le ayude con la comunicación. Estamos comprometidos a darle el mejor servicio posible.</p>
+</div>
 
 ---
 
@@ -496,7 +498,7 @@ Sí, si tiene experiencia y los productos correctos, y no omite ningún paso. Lo
 Harris Boat Works vende combustible sin etanol directamente en el sitio en Gores Landing. Es una de las pocas marinas en Ontario que lo ofrece.
 
 **¿Cómo reservo la preparación invernal?** 
-La forma más fácil es a través de hbw.wiki/service, puede escribir en español. También puede llamarnos al 905-342-2153.
+La forma más fácil es a través de hbw.wiki/service; puede enviarnos su consulta y le responderemos en inglés. También puede llamarnos al 905-342-2153.
 
 **¿Los pasos son iguales para todos los motores Mercury?** 
 Los pasos descritos aquí son comunes a la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año, siempre consulte el manual del motor o contacte al concesionario para su modelo específico.
@@ -511,7 +513,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 
 ## Contáctenos
 
-**Reservar preparación invernal:** hbw.wiki/service, puede escribir en español.
+**Reservar preparación invernal:** hbw.wiki/service, puede enviarnos su consulta (le responderemos en inglés).
 
 **Por teléfono:** 905-342-2153
 
