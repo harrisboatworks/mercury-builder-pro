@@ -538,7 +538,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
     image: '/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-06-19',
     publishDate: '2026-04-12',
     category: 'Comparación de motores',
     readTime: '12 min',
@@ -553,6 +553,12 @@ El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 lit
 
 La pregunta "¿115 o 150?" es de las más comunes en Harris Boat Works. No tiene una respuesta única, depende de tu bote, tu uso típico, y honestamente, de cuánto peso llevas cuando sales al agua.
 
+<div class="hbw-language-note">
+  <h3>Una nota sobre el idioma</h3>
+  <p>Este artículo está disponible en español porque queremos que la información técnica de motores Mercury llegue a más clientes. Nos esforzamos por ofrecer contenido útil en su idioma.</p>
+  <p>Sin embargo, debemos ser honestos: nuestro personal habla inglés. Si nos contacta para una cotización o servicio, le responderemos en inglés. Si lo prefiere, puede usar Google Translate o pedirle a un familiar bilingüe que le ayude con la comunicación. Estamos comprometidos a darle el mejor servicio posible.</p>
+</div>
+
 Este artículo te da las especificaciones reales, la diferencia práctica en el agua, y una forma de decidir sin necesidad de memorizar hojas de datos técnicos.
 
 ---
@@ -564,7 +570,7 @@ Este artículo te da las especificaciones reales, la diferencia práctica en el 
 | Potencia | 115 HP | 150 HP |
 | Desplazamiento | 2.1 litros (inline-4) | 3.0 litros (inline-4) |
 | Peso aproximado | ~163 kg | ~206 kg (+44 kg / 96 lbs) |
-| RPM de crucero | 5,000, 6,000 RPM | 5,000, 5,800 RPM |
+| RPM máximo (WOT) | 5,000, 6,000 RPM | 5,000, 5,800 RPM |
 | Rango de botes | 16, 19 pies | 19, 22 pies |
 | Versión Pro XS | Sí | Sí |
 | Garantía Mercury | 3 años | 3 años |
