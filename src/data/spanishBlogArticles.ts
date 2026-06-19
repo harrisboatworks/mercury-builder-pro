@@ -691,7 +691,7 @@ harrisboatworks.ca | Rice Lake
     image: '/lovable-uploads/es-remotorizacion-vs-bote-nuevo-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-06-19',
     publishDate: '2026-04-12',
     category: 'Remotorización',
     readTime: '12 min',
@@ -710,9 +710,11 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ---
 
-## Una nota sobre el idioma
-
-Nuestro equipo trabaja en inglés y no hablamos español, pero haremos todo lo posible para ayudarle. El configurador de precios en mercuryrepower.ca funciona sin barrera de idioma, los precios están claros y accesibles en dólares canadienses. Para preguntas más detalladas, puede escribir en español a través de hbw.wiki/service.
+<div class="hbw-language-note">
+  <h3>Una nota sobre el idioma</h3>
+  <p>Este artículo está disponible en español porque queremos que la información técnica de motores Mercury llegue a más clientes. Nos esforzamos por ofrecer contenido útil en su idioma.</p>
+  <p>Sin embargo, debemos ser honestos: nuestro personal habla inglés. Si nos contacta para una cotización o servicio, le responderemos en inglés. Si lo prefiere, puede usar Google Translate o pedirle a un familiar bilingüe que le ayude con la comunicación. Estamos comprometidos a darle el mejor servicio posible.</p>
+</div>
 
 ---
 
@@ -734,7 +736,7 @@ Remotorizar significa conservar una embarcación que ya conoce y en la que conf�
 
 Los motores Mercury FourStroke actuales están disponibles de 2.5 a 300 HP. Son más económicos en combustible, más silenciosos y más confiables que la generación anterior. Si su motor tiene 15 años o más, notará la diferencia desde la primera salida.
 
-Como concesionario Mercury Platinum, Harris Boat Works tiene acceso a toda la gama: FourStroke estándar, Verado de alto rendimiento, y Pro XS para pescadores.
+Como concesionario Mercury Platinum, Harris Boat Works tiene acceso a toda la gama: FourStroke estándar, Verado de alto rendimiento (bajo pedido especial y servicio solamente), y Pro XS para pescadores.
 
 ### 4. Tiempo: usted quiere navegar esta temporada
 
