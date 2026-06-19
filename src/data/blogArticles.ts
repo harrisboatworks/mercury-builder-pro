@@ -2546,7 +2546,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How often should I change the oil in my Mercury 4-stroke outboard?',
-        answer: 'Change the oil and oil filter in your Mercury 4-stroke outboard every 100 hours of operation or once per year, whichever comes first. For most Ontario cottage boaters running 50-100 hours per season, annual oil changes are the right cadence. Use Mercury 4-Stroke Marine Oil (FC-W rated). For most Mercury FourStroke outboards the standard, all-temperature grade is 25W-40; Mercury also approves FC-W 10W-30 as a lighter option for cooler conditions or maximum acceleration. Your cowl decal and owner\'s manual confirm the exact grade for your engine. Using automotive oil is not recommended, it lacks the anti-foaming and corrosion-protection additives that marine oil provides. Keep a record of oil changes; it matters for warranty claims and resale value.'
+        answer: 'Change the oil and oil filter in your Mercury 4-stroke outboard every 100 hours of operation or once per year, whichever comes first. For most Ontario cottage boaters running 50-100 hours per season, annual oil changes are the right cadence. Use Mercury 4-Stroke Marine Oil (FC-W rated). In Canada the grade goes by horsepower: 10W-30 for 0 to 30 hp, 25W-40 for 40/50/60 hp, and 10W-30 for 75 hp and up. Your owner\'s manual confirms the exact grade for your engine. Using automotive oil is not recommended, it lacks the anti-foaming and corrosion-protection additives that marine oil provides. Keep a record of oil changes; it matters for warranty claims and resale value.'
       },
       {
         question: 'Can I do my own Mercury outboard maintenance?',
