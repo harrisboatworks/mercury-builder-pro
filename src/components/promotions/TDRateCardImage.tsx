@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Percent } from 'lucide-react';
+import { formatFinancingRate } from '@/lib/finance';
+
 
 interface TDRateCardImageProps {
   src: string;
