@@ -38,6 +38,8 @@ import {
   SHAFT_LENGTH_GUIDE,
 } from "./mercury-knowledge.ts";
 
+import { BLOG_INDEX, type BlogIndexEntry } from "./blog-index-generated.ts";
+
 // ========== HARRIS BOAT WORKS GUIDE ==========
 export function formatHarrisGuide(): string {
   const now = new Date().toISOString().split('T')[0];
