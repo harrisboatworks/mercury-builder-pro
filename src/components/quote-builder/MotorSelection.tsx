@@ -468,6 +468,9 @@ export const MotorSelection = ({
                       m.availability === 'Sold' ? 'Sold' :
                       m.availability === 'On Order' ? 'On Order' : 'Order Now',
           stockNumber: m.stock_number,
+          in_stock: m.in_stock ?? undefined,
+          stock_quantity: m.stock_quantity ?? undefined,
+          availability: m.availability ?? undefined,
           category: categorizeMotor(Number(m.horsepower)),
           type: getMotorFamilyDisplay(classifyMotorFamily(Number(m.horsepower), m.model_display || m.model, m.features)),
           specs: `${m.engine_type || ''} ${m.year} ${m.make} ${m.model_display || m.model}`.trim(),
