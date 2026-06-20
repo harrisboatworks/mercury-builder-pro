@@ -995,5 +995,10 @@ export const KB_DOCUMENTS = {
     name: "Accessories & Maintenance Guide",
     generator: formatAccessoriesGuide,
     description: "SmartCraft Connect, service kits, motor covers, fuel tanks, and accessory recommendations"
+  },
+  blog_article_reference: {
+    name: "Blog Article Reference (Full Index)",
+    generator: formatBlogIndex,
+    description: "Reference index of every blog post on harrisboatworks.ca with summary, keywords, and top FAQs. Lets the agent cite or link articles by /blog/<slug>."
   }
 };
