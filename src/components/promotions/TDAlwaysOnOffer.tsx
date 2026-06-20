@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Percent, ArrowRight } from 'lucide-react';
 import { TDRateCardImage } from './TDRateCardImage';
+import { MERCURY_PROMO_APR, formatFinancingRate } from '@/lib/finance';
 
 const RATE_CARD_IMAGE = '/lovable-uploads/td-financing-2026-rate-card.jpg';
 const RATE_CARD_ALT =
-  'Mercury TD Always On financing offer: 5.48% APR up to 240-month amortization through December 31, 2026';
+  `Mercury TD Always On financing offer: ${formatFinancingRate()} up to 240-month amortization through December 31, 2026`;
+
 
 /**
  * Mercury TD "Always On" Financing offer (HBW internal: "TD 5.48% Always On").
