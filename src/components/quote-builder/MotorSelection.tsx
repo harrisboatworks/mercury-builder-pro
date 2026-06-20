@@ -410,7 +410,7 @@ export const MotorSelection = ({
         // Optimized query: only select fields needed for motor cards display
         supabase.from('motor_models').select(`
           id, model, model_display, model_key, horsepower, base_price, sale_price, msrp, dealer_price,
-          motor_type, engine_type, image_url, hero_image_url, availability, stock_number, year, make,
+          motor_type, engine_type, image_url, hero_image_url, availability, stock_number, stock_quantity, in_stock, year, make,
           description, features, specifications, detail_url, family, shaft
         `).order('horsepower'), 
         supabase.from('promotions').select('*'), 
