@@ -67,6 +67,8 @@ interface DbMotor {
   hero_image_url?: string | null;
   availability?: string | null;
   stock_number?: string | null;
+  stock_quantity?: number | null;
+  in_stock?: boolean | null;
   year: number;
   make: string;
   family?: string | null;
@@ -408,7 +410,7 @@ export const MotorSelection = ({
         // Optimized query: only select fields needed for motor cards display
         supabase.from('motor_models').select(`
           id, model, model_display, model_key, horsepower, base_price, sale_price, msrp, dealer_price,
-          motor_type, engine_type, image_url, hero_image_url, availability, stock_number, year, make,
+          motor_type, engine_type, image_url, hero_image_url, availability, stock_number, stock_quantity, in_stock, year, make,
           description, features, specifications, detail_url, family, shaft
         `).order('horsepower'), 
         supabase.from('promotions').select('*'), 
@@ -466,6 +468,9 @@ export const MotorSelection = ({
                       m.availability === 'Sold' ? 'Sold' :
                       m.availability === 'On Order' ? 'On Order' : 'Order Now',
           stockNumber: m.stock_number,
+          in_stock: m.in_stock ?? undefined,
+          stock_quantity: m.stock_quantity ?? undefined,
+          availability: m.availability ?? undefined,
           category: categorizeMotor(Number(m.horsepower)),
           type: getMotorFamilyDisplay(classifyMotorFamily(Number(m.horsepower), m.model_display || m.model, m.features)),
           specs: `${m.engine_type || ''} ${m.year} ${m.make} ${m.model_display || m.model}`.trim(),
@@ -1679,7 +1684,7 @@ export const MotorSelection = ({
                     <div className="text-2xl font-bold">
                       ${(quickViewMotor.salePrice || quickViewMotor.basePrice || quickViewMotor.price).toLocaleString()}
                     </div>
-                    <Badge className={getStockBadgeColor(quickViewMotor.stockStatus)}>{quickViewMotor.stockStatus}</Badge>
+                    <Badge className={getStockBadgeColor(quickViewMotor.stockStatus)}>{quickViewMotor.stockStatus === 'In Stock' && (quickViewMotor as any).stock_quantity > 1 ? `In Stock · ${(quickViewMotor as any).stock_quantity} available` : quickViewMotor.stockStatus}</Badge>
                   </div>
                 </div>
 

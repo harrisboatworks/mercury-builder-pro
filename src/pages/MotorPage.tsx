@@ -53,6 +53,7 @@ interface MotorRow {
   manual_overrides: Record<string, unknown> | null;
   availability: string | null;
   in_stock: boolean | null;
+  stock_quantity: number | null;
   hero_media_id: string | null;
   hero_image_url: string | null;
   image_url: string | null;
@@ -115,7 +116,7 @@ function toAbsoluteImageUrl(image: string | null | undefined): string {
 }
 
 const MOTOR_SELECT =
-  'id, model_key, model_display, model, model_number, mercury_model_no, family, motor_type, horsepower, shaft, shaft_code, start_type, control_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, hero_media_id, hero_image_url, image_url';
+  'id, model_key, model_display, model, model_number, mercury_model_no, family, motor_type, horsepower, shaft, shaft_code, start_type, control_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity, hero_media_id, hero_image_url, image_url';
 
 export default function MotorPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -369,7 +370,11 @@ export default function MotorPage() {
                   {price ? <span className="text-base font-normal text-muted-foreground"> CAD</span> : null}
                 </p>
                 <p className={`text-sm font-medium mt-1 ${inStock ? 'text-repower-gold' : 'text-repower-navy-900/55'}`}>
-                  {inStock ? '✓ In Stock' : 'Special Order'}
+                  {inStock
+                    ? (motor.stock_quantity && motor.stock_quantity > 1
+                        ? `✓ In Stock · ${motor.stock_quantity} available`
+                        : '✓ In Stock')
+                    : 'Special Order'}
                 </p>
 
                 <Button

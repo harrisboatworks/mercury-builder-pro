@@ -13,10 +13,12 @@ export function StockStatusIndicator({ motor }: StockStatusIndicatorProps) {
 
   // Harris physical stock
   if (isInStock) {
+    const qty = motor?.stock_quantity ?? 0;
+    const label = qty > 1 ? `In Stock · ${qty} available` : 'In Stock - Available Today';
     return (
       <div className="inline-flex items-center gap-2 text-sm font-light text-[#050E1C]/70 mt-2.5">
         <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: '#C9A24A' }} />
-        <span>In Stock - Available Today</span>
+        <span>{label}</span>
       </div>
     );
   }
