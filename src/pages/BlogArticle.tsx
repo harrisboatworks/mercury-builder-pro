@@ -423,13 +423,16 @@ export default function BlogArticle() {
                 },
                 a: ({ node, href, children, title, ...props }) => {
                   if (!href) return <a {...props}>{children}</a>;
-                  const stripped = href.replace(/^https?:\/\/[^/]+/, '');
-                  const isInternal = href.startsWith('/') || href.includes('harrisboatworks') || href.includes('mercuryquote') || href.includes('mercuryrepower');
+                  const isInternal =
+                    href.startsWith('/') ||
+                    href.startsWith('#') ||
+                    /^https?:\/\/([^/]*\.)?(mercuryrepower\.ca|mercuryquote\.ca|mercury-quote-tool\.lovable\.app)(\/|$)/i.test(href);
                   const isCta = title === 'cta';
                   const ctaClass = 'inline-block bg-repower-mercury-red text-white font-semibold px-6 py-3 rounded-lg hover:bg-repower-mercury-red-deep transition no-underline my-4';
                   const linkClass = isCta ? ctaClass : 'text-primary hover:underline';
-                  if (isInternal && (stripped.startsWith('/') || href.startsWith('/'))) {
-                    return <Link to={stripped.startsWith('/') ? stripped : href} className={linkClass}>{children}</Link>;
+                  if (isInternal) {
+                    const to = href.startsWith('#') ? href : (href.replace(/^https?:\/\/[^/]+/, '') || '/');
+                    return <Link to={to} className={linkClass}>{children}</Link>;
                   }
                   return <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass} {...props}>{children}</a>;
                 },
