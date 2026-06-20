@@ -18,6 +18,8 @@ import { isRepowerHubSlug } from '@/data/blogClusters';
 import { RepowerHubBanner } from '@/components/repower/RepowerHubBanner';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
+import { formatFinancingRate } from '@/lib/finance';
+
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
@@ -377,6 +379,11 @@ export default function BlogArticle() {
             <MarkdownSectionCards
               content={(() => {
                 let c = article.content.replace(/^\s*#\s+.+\n+/, '');
+                // Live token substitution: {{LIVE_RATE}} -> e.g. "5.48% APR",
+                // sourced from the same finance helper that drives the
+                // quote builder's monthly-payment math. Change the rate in
+                // src/lib/finance.ts (MERCURY_PROMO_APR) to update everywhere.
+                c = c.replace(/\{\{LIVE_RATE\}\}/g, formatFinancingRate());
                 // Strip standalone scaffold lines: "*Last updated: ...*",
                 // "_Last updated: ..._", "**Last updated:** ...", "*Last reviewed: ...*".
                 // These conflict with the dateModified field shown in the byline.
