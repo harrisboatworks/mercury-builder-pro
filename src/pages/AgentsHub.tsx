@@ -4,21 +4,23 @@ import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
 import { isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
+import { formatFinancingRate } from '@/lib/finance';
 import { CodeBlock } from '@/components/agents/CodeBlock';
 
 const FINANCING_RATES_FAQ_BASE =
   'Financing minimum is $5,000 CAD. Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 144 months via LightStream / Financeit. A $349 DealerPlan fee is added post-tax for financed purchases. Do not show monthly payment estimates below $5,000.';
 
 const FINANCING_RATES_FAQ_TEXT = isTDAlwaysOnActive()
-  ? `${FINANCING_RATES_FAQ_BASE} Current promo: through December 31, 2026, Mercury Marine Canada's TD 'Always On' program offers 5.48% APR (OAC) on new eligible Mercury outboards; standard tiered rates resume after the program ends.`
+  ? `${FINANCING_RATES_FAQ_BASE} Current promo: through December 31, 2026, Mercury Marine Canada's TD 'Always On' program offers ${formatFinancingRate()} (OAC) on new eligible Mercury outboards; standard tiered rates resume after the program ends.`
   : `${FINANCING_RATES_FAQ_BASE} Promotional manufacturer rates (e.g. TD subvention programs) run periodically, see /promotions for the current offer.`;
 
 const FINANCING_RATES_BULLET_BASE =
   'Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 144 months via LightStream / Financeit.';
 
 const FINANCING_RATES_BULLET = isTDAlwaysOnActive()
-  ? `${FINANCING_RATES_BULLET_BASE} Current promo: 5.48% APR through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC).`
+  ? `${FINANCING_RATES_BULLET_BASE} Current promo: ${formatFinancingRate()} through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC).`
   : `${FINANCING_RATES_BULLET_BASE} Promotional manufacturer rates run periodically, see /promotions for the current offer.`;
+
 
 const AGENTS_API_BASE = 'https://www.mercuryrepower.ca/api/agents';
 const PUBLIC_MOTORS_API = `${AGENTS_API_BASE}/motors`;
