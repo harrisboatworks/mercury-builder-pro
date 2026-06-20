@@ -1187,3 +1187,13 @@ Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 
 export function getKoreanArticleBySlug(slug: string) {
   return koreanBlogArticles.find(a => a.slug === slug);
 }
+
+export function getPublishedKoreanArticles(): BlogArticle[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return koreanBlogArticles.filter(article => {
+    const publishDate = new Date(article.publishDate || article.datePublished);
+    publishDate.setHours(0, 0, 0, 0);
+    return publishDate <= today;
+  });
+}
