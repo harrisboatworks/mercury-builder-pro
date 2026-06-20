@@ -344,7 +344,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 - **第一步：** 先決定用途（家庭出遊 vs 認真釣魚），再決定船型。
 - **第二步：** 新船 vs 二手船——第一次買強烈建議買新船，配白金級經銷商。
 - **第三步：** Mercury 引擎匹配——船型決定 HP 範圍。
-- **貸款：** 透過 Dealerplan Peterborough 由 TD Auto Finance 提供。**促銷年利率（promotional APR）：5.48%**（TD「Always On」方案，截至 2026 年 6 月，至 2026 年 12 月 31 日止）；**標準／一般年利率（standard APR）：7.99% 至 8.99%**（促銷不適用時）。最低融資金額 \$5,000。利率會變動，請致電 905-342-2153 或於 mercuryrepower.ca 建立報價以確認目前適用利率。
+- **貸款：** 透過 Dealerplan Peterborough 由 TD Auto Finance 提供。**促銷年利率（promotional APR）：{{LIVE_RATE_PCT}}**（TD「Always On」方案，截至 2026 年 6 月，至 2026 年 12 月 31 日止）；**標準／一般年利率（standard APR）：7.99% 至 8.99%**（促銷不適用時）。最低融資金額 \$5,000。利率會變動，請致電 905-342-2153 或於 mercuryrepower.ca 建立報價以確認目前適用利率。
 - **交付：** HBW 在 Gores Landing 自取，不提供送貨。
 
 ::pull-quote
