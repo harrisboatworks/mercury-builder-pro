@@ -41,12 +41,13 @@ export function getCurrentMercuryFinancingRate(): {
 } {
   if (isTDAlwaysOnActive()) {
     return {
-      rate: '5.48% APR',
-      ratePercent: 5.48,
-      programLabel: 'Mercury TD program: 5.48% APR through Dec 31, 2026 (OAC)',
+      rate: formatFinancingRate(MERCURY_PROMO_APR),
+      ratePercent: MERCURY_PROMO_APR,
+      programLabel: `Mercury TD program: ${formatFinancingRate(MERCURY_PROMO_APR)} through Dec 31, 2026 (OAC)`,
       isPromo: true,
     };
   }
+
   return {
     rate: 'from 7.99% APR',
     ratePercent: 7.99,
