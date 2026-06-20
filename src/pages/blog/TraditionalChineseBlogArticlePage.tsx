@@ -21,6 +21,8 @@ import {
   ZH_HANT_TO_HANS_SLUG,
 } from '@/data/traditionalChineseBlogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
+import { substituteLiveRateTokens } from '@/lib/finance';
+
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
