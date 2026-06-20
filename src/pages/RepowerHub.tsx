@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Award, Users, MapPin, Wrench } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
+import { formatFinancingRate } from '@/lib/finance';
+
 
 
 // Directory of the repower cluster, grouped. Each entry is a published article.
