@@ -142,3 +142,13 @@ Rice Lake, Toronto के पास की बेहतरीन मछली �
 export function getHindiArticleBySlug(slug: string): Wave1Article | undefined {
   return hindiBlogArticles.find((a) => a.slug === slug);
 }
+
+export function getPublishedHindiArticles(): Wave1Article[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return hindiBlogArticles.filter(article => {
+    const publishDate = new Date(article.publishDate || article.datePublished);
+    publishDate.setHours(0, 0, 0, 0);
+    return publishDate <= today;
+  });
+}

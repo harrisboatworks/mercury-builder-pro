@@ -387,3 +387,13 @@ Mula pa noong 1947, nagsisilbi na kami sa mga boat owner sa Ontario. Family-owne
 export function getTagalogArticleBySlug(slug: string): Wave1Article | undefined {
   return tagalogBlogArticles.find((a) => a.slug === slug);
 }
+
+export function getPublishedTagalogArticles(): Wave1Article[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return tagalogBlogArticles.filter(article => {
+    const publishDate = new Date(article.publishDate || article.datePublished);
+    publishDate.setHours(0, 0, 0, 0);
+    return publishDate <= today;
+  });
+}

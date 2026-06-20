@@ -325,3 +325,13 @@ Gores Landing پر Harris Boat Works آپ کی کشتی winterize کر کے اس
 export function getUrduArticleBySlug(slug: string): Wave1Article | undefined {
   return urduBlogArticles.find((a) => a.slug === slug);
 }
+
+export function getPublishedUrduArticles(): Wave1Article[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return urduBlogArticles.filter(article => {
+    const publishDate = new Date(article.publishDate || article.datePublished);
+    publishDate.setHours(0, 0, 0, 0);
+    return publishDate <= today;
+  });
+}

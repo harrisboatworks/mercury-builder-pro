@@ -164,6 +164,10 @@ const BlogIndexEs = lazy(() => import("./pages/blog/BlogIndexEs"));
 const BlogIndexZh = lazy(() => import("./pages/blog/BlogIndexZh"));
 const BlogIndexZhHant = lazy(() => import("./pages/blog/BlogIndexZhHant"));
 const BlogIndexKo = lazy(() => import("./pages/blog/BlogIndexKo"));
+const BlogIndexHi = lazy(() => import("./pages/blog/BlogIndexHi"));
+const BlogIndexPa = lazy(() => import("./pages/blog/BlogIndexPa"));
+const BlogIndexUr = lazy(() => import("./pages/blog/BlogIndexUr"));
+const BlogIndexTl = lazy(() => import("./pages/blog/BlogIndexTl"));
 // MandarinBlogArticle (legacy hand-authored page) retired 2026-06-07 — the
 // data-driven MandarinBlogArticlePage now serves /blog/zh/mercury-repower-guide-gta.
 const MandarinBlogArticlePage = lazy(() => import("./pages/blog/MandarinBlogArticlePage"));
@@ -605,9 +609,13 @@ function AnimatedRoutes() {
         <Route path="/blog/ko/:slug" element={<KoreanBlogArticlePage />} />
         <Route path="/blog/es" element={<BlogIndexEs />} />
         <Route path="/blog/es/:slug" element={<SpanishBlogArticlePage />} />
+        <Route path="/blog/hi" element={<BlogIndexHi />} />
         <Route path="/blog/hi/:slug" element={<HindiBlogArticlePage />} />
+        <Route path="/blog/pa" element={<BlogIndexPa />} />
         <Route path="/blog/pa/:slug" element={<PunjabiBlogArticlePage />} />
+        <Route path="/blog/ur" element={<BlogIndexUr />} />
         <Route path="/blog/ur/:slug" element={<UrduBlogArticlePage />} />
+        <Route path="/blog/tl" element={<BlogIndexTl />} />
         <Route path="/blog/tl/:slug" element={<TagalogBlogArticlePage />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
