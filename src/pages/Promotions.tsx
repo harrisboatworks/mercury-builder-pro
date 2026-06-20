@@ -358,8 +358,9 @@ export default function Promotions() {
                   Low-Rate TD Financing on Your Mercury Repower
                 </h1>
                 <p className="font-sans text-base md:text-lg text-white/75 mb-6 leading-relaxed">
-                  5.48% APR, terms up to 240 months, through December 31, 2026. Plus the standard 3-year factory warranty on every new Mercury.
+                  {formatFinancingRate()}, terms up to 240 months, through December 31, 2026. Plus the standard 3-year factory warranty on every new Mercury.
                 </p>
+
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-5">
                   <Link to="/financing-application">
