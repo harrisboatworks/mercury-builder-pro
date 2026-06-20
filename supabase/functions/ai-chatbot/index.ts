@@ -804,7 +804,12 @@ IMPORTANT INSTRUCTIONS:
 - **Promote Complete package** - it's the best value for most customers
 - **Never compromise safety for sales - proper motor sizing saves lives**
 
-Location: Ontario, Canada - we serve Canadian customers with Canadian pricing and support.`;
+Location: Ontario, Canada - we serve Canadian customers with Canadian pricing and support.
+
+## BLOG ARTICLE INDEX (cite by /blog/<slug>)
+${formatBlogTitleIndex()}
+
+When a customer's question maps to one of these posts, mention it by name and link to the URL. Do NOT invent slugs or article titles that aren't on this list.`;
 
   return dynamicPrompt;
 }
