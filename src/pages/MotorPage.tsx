@@ -370,7 +370,11 @@ export default function MotorPage() {
                   {price ? <span className="text-base font-normal text-muted-foreground"> CAD</span> : null}
                 </p>
                 <p className={`text-sm font-medium mt-1 ${inStock ? 'text-repower-gold' : 'text-repower-navy-900/55'}`}>
-                  {inStock ? '✓ In Stock' : 'Special Order'}
+                  {inStock
+                    ? (motor.stock_quantity && motor.stock_quantity > 1
+                        ? `✓ In Stock · ${motor.stock_quantity} available`
+                        : '✓ In Stock')
+                    : 'Special Order'}
                 </p>
 
                 <Button
