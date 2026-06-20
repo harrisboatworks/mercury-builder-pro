@@ -147,10 +147,12 @@ export function BlogHub({
   basePath,
   heroImage = '/lovable-uploads/pontoon-family-rice-lake-hero.png',
   featuredSlug,
+  categoryToIntent,
 }: BlogHubProps) {
   const [query, setQuery] = useState('');
   const [intent, setIntent] = useState<IntentKey | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const matchesIntent = useMemo(() => makeMatcher(categoryToIntent), [categoryToIntent]);
 
   const sorted = useMemo(
     () =>
