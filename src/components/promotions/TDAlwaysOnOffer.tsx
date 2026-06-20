@@ -57,7 +57,7 @@ export function getCurrentMercuryFinancingRate(): {
 }
 
 export const TD_ACTIVE_FAQ_ANSWER =
-  "Through December 31, 2026, Mercury Marine Canada's TD 'Always On' program offers 5.48% APR (OAC) on new eligible Mercury outboards. Standard tiered rates resume after the program ends.";
+  `Through December 31, 2026, Mercury Marine Canada's TD 'Always On' program offers ${formatFinancingRate(MERCURY_PROMO_APR)} (OAC) on new eligible Mercury outboards. Standard tiered rates resume after the program ends.`;
 
 export const LEGACY_TIERED_FAQ_ANSWER =
   'Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms vary by lender.';
