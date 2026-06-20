@@ -7,7 +7,7 @@ const LEAD_SLUG = 'repair-repower-or-sell-boat-ontario-decision-guide';
 
 const CORNERSTONE_SLUGS = [
   'mercury-repower-cost-ontario-2026-cad',
-  'repower-financing-ontario-rates-monthly-payments',
+  'mercury-outboard-financing-ontario-2026',
   'mercury-outboard-weight-chart',
   'mercury-impeller-replacement-when-they-fail',
 ];
