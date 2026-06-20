@@ -1684,7 +1684,7 @@ export const MotorSelection = ({
                     <div className="text-2xl font-bold">
                       ${(quickViewMotor.salePrice || quickViewMotor.basePrice || quickViewMotor.price).toLocaleString()}
                     </div>
-                    <Badge className={getStockBadgeColor(quickViewMotor.stockStatus)}>{quickViewMotor.stockStatus}</Badge>
+                    <Badge className={getStockBadgeColor(quickViewMotor.stockStatus)}>{quickViewMotor.stockStatus === 'In Stock' && (quickViewMotor as any).stock_quantity > 1 ? `In Stock · ${(quickViewMotor as any).stock_quantity} available` : quickViewMotor.stockStatus}</Badge>
                   </div>
                 </div>
 
