@@ -18,7 +18,7 @@ import { isRepowerHubSlug } from '@/data/blogClusters';
 import { RepowerHubBanner } from '@/components/repower/RepowerHubBanner';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
-import { formatFinancingRate } from '@/lib/finance';
+import { formatFinancingRate, substituteLiveRateTokens } from '@/lib/finance';
 
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogCTA } from '@/components/blog/BlogCTA';
@@ -380,10 +380,11 @@ export default function BlogArticle() {
               content={(() => {
                 let c = article.content.replace(/^\s*#\s+.+\n+/, '');
                 // Live token substitution: {{LIVE_RATE}} -> e.g. "5.48% APR",
-                // sourced from the same finance helper that drives the
-                // quote builder's monthly-payment math. Change the rate in
-                // src/lib/finance.ts (MERCURY_PROMO_APR) to update everywhere.
-                c = c.replace(/\{\{LIVE_RATE\}\}/g, formatFinancingRate());
+                // {{LIVE_RATE_PCT}} -> e.g. "5.48%". Sourced from the same
+                // finance helper that drives the quote builder's monthly-payment
+                // math. Change the rate in src/lib/finance.ts (MERCURY_PROMO_APR).
+                c = substituteLiveRateTokens(c);
+
                 // Strip standalone scaffold lines: "*Last updated: ...*",
                 // "_Last updated: ..._", "**Last updated:** ...", "*Last reviewed: ...*".
                 // These conflict with the dateModified field shown in the byline.
@@ -478,8 +479,14 @@ export default function BlogArticle() {
 
           {/* FAQ Section */}
           {article.faqs && article.faqs.length > 0 && (
-            <PremiumFaq faqs={article.faqs} />
+            <PremiumFaq
+              faqs={article.faqs.map((f) => ({
+                question: substituteLiveRateTokens(f.question),
+                answer: substituteLiveRateTokens(f.answer),
+              }))}
+            />
           )}
+
 
           {/* Share Section */}
           <div className="mt-14 pt-10 border-t border-repower-navy-900/10">

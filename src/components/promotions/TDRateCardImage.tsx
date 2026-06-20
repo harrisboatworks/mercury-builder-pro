@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Percent } from 'lucide-react';
+import { formatFinancingRate } from '@/lib/finance';
+
 
 interface TDRateCardImageProps {
   src: string;
@@ -51,8 +53,9 @@ export function TDRateCardImage({ src, alt, className }: TDRateCardImageProps) {
           Ready to Repower
         </p>
         <p className="font-sans text-sm md:text-base mt-2 opacity-90">
-          As low as 5.48% APR
+          As low as {formatFinancingRate()}
         </p>
+
         <p className="font-sans text-xs mt-1 opacity-75">
           Through Dec 31, 2026 (OAC)
         </p>

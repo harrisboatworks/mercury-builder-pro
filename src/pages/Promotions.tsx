@@ -25,10 +25,12 @@ import { RebateMatrix } from '@/components/promotions/RebateMatrix';
 import { RebateCalculator } from '@/components/promotions/RebateCalculator';
 import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
 import { TDRateCardImage } from '@/components/promotions/TDRateCardImage';
+import { formatFinancingRate } from '@/lib/finance';
 
 const TD_RATE_CARD_IMAGE = '/lovable-uploads/td-financing-2026-rate-card.jpg';
 const TD_RATE_CARD_ALT =
-  'Mercury TD Always On financing offer: 5.48% APR up to 240-month amortization through December 31, 2026';
+  `Mercury TD Always On financing offer: ${formatFinancingRate()} up to 240-month amortization through December 31, 2026`;
+
 
 const csiAwardBadge = "/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png";
 
@@ -356,8 +358,9 @@ export default function Promotions() {
                   Low-Rate TD Financing on Your Mercury Repower
                 </h1>
                 <p className="font-sans text-base md:text-lg text-white/75 mb-6 leading-relaxed">
-                  5.48% APR, terms up to 240 months, through December 31, 2026. Plus the standard 3-year factory warranty on every new Mercury.
+                  {formatFinancingRate()}, terms up to 240 months, through December 31, 2026. Plus the standard 3-year factory warranty on every new Mercury.
                 </p>
+
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-5">
                   <Link to="/financing-application">

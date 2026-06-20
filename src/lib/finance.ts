@@ -50,6 +50,32 @@ export const formatFinancingRate = (rate?: number): string => {
   return `${r.toFixed(2)}% APR`;
 };
 
+/**
+ * Format a financing rate as just a percentage, e.g. "5.48%".
+ * Defaults to getCurrentMercuryFinancingRate().
+ */
+export const formatFinancingRatePercent = (rate?: number): string => {
+  const r = rate ?? getCurrentMercuryFinancingRate();
+  return `${r.toFixed(2)}%`;
+};
+
+/**
+ * Substitute live-rate tokens in arbitrary text. Single chokepoint that
+ * any rendering surface (markdown content, plain-text descriptions, FAQ
+ * answers) can call to inject the current Mercury financing rate.
+ *
+ *   {{LIVE_RATE}}      -> "5.48% APR"
+ *   {{LIVE_RATE_PCT}}  -> "5.48%"
+ */
+export const substituteLiveRateTokens = (text: string): string => {
+  if (!text) return text;
+  return text
+    .replace(/\{\{LIVE_RATE\}\}/g, formatFinancingRate())
+    .replace(/\{\{LIVE_RATE_PCT\}\}/g, formatFinancingRatePercent());
+};
+
+
+
 
 /**
  * Get smart financing term based on price
