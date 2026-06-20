@@ -18,7 +18,7 @@ import { isRepowerHubSlug } from '@/data/blogClusters';
 import { RepowerHubBanner } from '@/components/repower/RepowerHubBanner';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
-import { formatFinancingRate } from '@/lib/finance';
+import { formatFinancingRate, substituteLiveRateTokens } from '@/lib/finance';
 
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogCTA } from '@/components/blog/BlogCTA';
