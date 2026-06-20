@@ -1,3 +1,5 @@
+import { substituteLiveRateTokens } from './finance';
+
 /**
  * Strip markdown syntax from a string for use in plain-text contexts
  * (meta descriptions, OG tags, JSON-LD schema, page intros).
@@ -6,12 +8,17 @@ export function stripMarkdown(input: string): string {
   if (!input) return '';
   let out = String(input);
 
+  // Substitute live-rate tokens before any markdown manipulation so the
+  // computed rate flows through every plain-text surface.
+  out = substituteLiveRateTokens(out);
+
   // Unescape JS-style escape sequences that leak through when descriptions
   // were authored as JS string literals (\" -> ", \' -> ', \\ -> \, \n -> space).
   out = out.replace(/\\n/g, ' ');
   out = out.replace(/\\"/g, '"');
   out = out.replace(/\\'/g, "'");
   out = out.replace(/\\\\/g, '\\');
+
 
   // Remove author footer trailers like "---\nBy Jay Harris..." or "**By Jay Harris**..."
   out = out.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
