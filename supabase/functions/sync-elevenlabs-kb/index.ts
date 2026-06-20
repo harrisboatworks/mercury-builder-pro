@@ -299,20 +299,23 @@ async function updateAgentKnowledgeBase(
 }
 
 // Sync static KB documents and return their IDs
-async function syncStaticDocuments(): Promise<{ docs: Array<{ id: string; name: string }>; results: any[] }> {
+async function syncStaticDocuments(supabase: any): Promise<{ docs: Array<{ id: string; name: string }>; results: any[] }> {
   console.log("Syncing static KB documents...");
-  
+
   const results: any[] = [];
   const createdDocs: Array<{ id: string; name: string }> = [];
 
   for (const [key, docConfig] of Object.entries(KB_DOCUMENTS)) {
     try {
       console.log(`Processing static doc: ${docConfig.name}`);
-      const content = docConfig.generator();
-      
+      const gen = docConfig.generator as (sb?: any) => string | Promise<string>;
+      const content = await Promise.resolve(
+        docConfig.requiresSupabase ? gen(supabase) : gen()
+      );
+
       // Create new document (we'll replace old ones via agent update)
       const docId = await createKnowledgeBaseDocument(content, docConfig.name);
-      
+
       if (docId) {
         createdDocs.push({ id: docId, name: docConfig.name });
         results.push({ name: docConfig.name, success: true, id: docId });
@@ -393,7 +396,7 @@ serve(async (req) => {
 
     // Sync static documents
     console.log("Syncing static KB documents...");
-    const { docs: staticDocs, results: staticResults } = await syncStaticDocuments();
+    const { docs: staticDocs, results: staticResults } = await syncStaticDocuments(supabase);
     
     const staticSuccessCount = staticResults.filter(r => r.success).length;
     const staticFailCount = staticResults.filter(r => !r.success).length;

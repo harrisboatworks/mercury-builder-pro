@@ -954,8 +954,110 @@ Every URL is /blog/<slug>. Reference these when a customer's question maps to a 
 ${sections.join("\n\n")}`;
 }
 
+// ========== ACTIVE PROMOTIONS (LIVE FROM DB) ==========
+
+interface PromoLike {
+  name?: string | null;
+  promotion_text?: string | null;
+  description?: string | null;
+  promo_type?: string | null;
+  discount_percentage?: number | null;
+  discount_amount?: number | null;
+  bonus_offer?: string | null;
+  bonus_warranty_years?: number | null;
+  warranty_extra_years?: number | null;
+  applicable_motors?: unknown;
+  horsepower_range_min?: number | null;
+  horsepower_range_max?: number | null;
+  start_date?: string | null;
+  end_date?: string | null;
+  terms_conditions?: string | null;
+  priority?: number | null;
+}
+
+function formatPromoEntry(p: PromoLike): string {
+  const lines: string[] = [];
+  const title = p.name || p.promotion_text || p.bonus_offer || "Promotion";
+  lines.push(`### ${title}`);
+  if (p.promo_type) lines.push(`- Type: ${p.promo_type}`);
+  if (p.discount_percentage) lines.push(`- Discount: ${p.discount_percentage}% off`);
+  if (p.discount_amount) lines.push(`- Discount: $${Number(p.discount_amount).toLocaleString()} CAD off`);
+  if (p.bonus_offer) lines.push(`- Bonus: ${p.bonus_offer}`);
+  const warrantyYrs = p.bonus_warranty_years ?? p.warranty_extra_years;
+  if (warrantyYrs) lines.push(`- Bonus warranty: +${warrantyYrs} year(s) on top of the standard 3-year coverage`);
+  if (p.horsepower_range_min != null || p.horsepower_range_max != null) {
+    const lo = p.horsepower_range_min ?? 0;
+    const hi = p.horsepower_range_max ?? "+";
+    lines.push(`- HP range: ${lo} - ${hi}`);
+  }
+  if (p.applicable_motors && Array.isArray(p.applicable_motors) && p.applicable_motors.length) {
+    lines.push(`- Applies to: ${(p.applicable_motors as unknown[]).join(", ")}`);
+  }
+  if (p.start_date) lines.push(`- Starts: ${p.start_date}`);
+  if (p.end_date) lines.push(`- Ends: ${p.end_date} (23:59:59 ET — bonus warranties revert to 3-year standard the next day)`);
+  if (p.description) lines.push(`- Details: ${p.description}`);
+  if (p.terms_conditions) lines.push(`- Terms: ${p.terms_conditions}`);
+  return lines.join("\n");
+}
+
+/**
+ * Generates the live active-promotions KB document by querying the
+ * `promotions` table. Async — pass in a Supabase service-role client.
+ * Voice/chat surfaces sync this so the ElevenLabs agent's reference
+ * stays in lockstep with whatever's currently active in the database.
+ */
+export async function formatActivePromotions(
+  supabase: { from: (t: string) => any }
+): Promise<string> {
+  const today = new Date().toISOString().split("T")[0];
+  const { data, error } = await supabase
+    .from("promotions")
+    .select("*")
+    .eq("is_active", true)
+    .or(`start_date.is.null,start_date.lte.${today}`)
+    .or(`end_date.is.null,end_date.gte.${today}`)
+    .order("priority", { ascending: false });
+
+  const promos: PromoLike[] = error ? [] : (data || []);
+  const now = new Date().toISOString();
+
+  const header = `# Active Mercury Promotions at Harris Boat Works
+Updated: ${now}
+Source: live query of the \`promotions\` table (auto-refreshes on KB sync).
+
+## Rules for the Agent
+- These are the ONLY promotions to quote. Never invent rebates, cash-back, financing offers, or bonus warranties that aren't listed below.
+- All prices and discounts are in **Canadian Dollars (CAD)**.
+- Bonus warranties **revert to the standard 3-year coverage** the day after \`Ends\`.
+- If a customer asks about a promo not on this list, say "I'm not seeing that one on our current list — let me grab the latest from the team" and offer to text/email the active promo list at /promotions.
+- For exact stacking, eligibility, and final pricing, always send them to the quote builder.
+
+## Currently Active Promotions (${promos.length})
+`;
+
+  if (promos.length === 0) {
+    return `${header}
+_No active promotions right now. Direct customers to /promotions and the quote builder for current pricing and any factory bonuses that come up._
+`;
+  }
+
+  return `${header}
+${promos.map(formatPromoEntry).join("\n\n")}
+`;
+}
+
+// Generator shape used by sync-elevenlabs-kb / sync-elevenlabs-static-kb.
+// `generator` may be sync OR async. The `requiresSupabase` flag tells the
+// sync function to pass a service-role Supabase client.
+export interface KbDocConfig {
+  name: string;
+  generator: (() => string) | (() => Promise<string>) | ((supabase: any) => Promise<string>);
+  description: string;
+  requiresSupabase?: boolean;
+}
+
 // Export all document generators
-export const KB_DOCUMENTS = {
+export const KB_DOCUMENTS: Record<string, KbDocConfig> = {
   harris_guide: {
     name: "Harris Boat Works Complete Guide",
     generator: formatHarrisGuide,
@@ -967,7 +1069,7 @@ export const KB_DOCUMENTS = {
     description: "Motor families, technologies, size recommendations, comparisons"
   },
   repower_guide: {
-    name: "Mercury Repower Guide", 
+    name: "Mercury Repower Guide",
     generator: formatRepowerGuide,
     description: "Repower benefits, pricing, customer stories, selling points"
   },
@@ -1000,5 +1102,12 @@ export const KB_DOCUMENTS = {
     name: "Blog Article Reference (Full Index)",
     generator: formatBlogIndex,
     description: "Reference index of every blog post on harrisboatworks.ca with summary, keywords, and top FAQs. Lets the agent cite or link articles by /blog/<slug>."
-  }
+  },
+  active_promotions: {
+    name: "Active Mercury Promotions (Live)",
+    generator: formatActivePromotions as any,
+    description: "Live snapshot of currently-active promotions from the database. Synced on every KB run so the voice agent always quotes real offers.",
+    requiresSupabase: true,
+  },
 };
+
