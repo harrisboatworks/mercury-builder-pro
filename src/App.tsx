@@ -160,6 +160,10 @@ const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
 const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
 const BlogIndexFr = lazy(() => import("./pages/blog/BlogIndexFr"));
+const BlogIndexEs = lazy(() => import("./pages/blog/BlogIndexEs"));
+const BlogIndexZh = lazy(() => import("./pages/blog/BlogIndexZh"));
+const BlogIndexZhHant = lazy(() => import("./pages/blog/BlogIndexZhHant"));
+const BlogIndexKo = lazy(() => import("./pages/blog/BlogIndexKo"));
 // MandarinBlogArticle (legacy hand-authored page) retired 2026-06-07 — the
 // data-driven MandarinBlogArticlePage now serves /blog/zh/mercury-repower-guide-gta.
 const MandarinBlogArticlePage = lazy(() => import("./pages/blog/MandarinBlogArticlePage"));
