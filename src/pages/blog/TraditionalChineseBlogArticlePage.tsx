@@ -168,6 +168,7 @@ export default function TraditionalChineseBlogArticlePage() {
             <MarkdownSectionCards
               content={(() => {
                 let c = article.content.replace(/^\s*#\s+.+\n+/, '');
+                c = substituteLiveRateTokens(c);
                 if (article.faqs && article.faqs.length > 0) {
                   c = c.replace(
                     /\n##\s+(?:常見問題|常见问题|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
@@ -176,6 +177,7 @@ export default function TraditionalChineseBlogArticlePage() {
                 }
                 return c;
               })()}
+
               markdownComponents={{
                 // Demote any in-body h1 to h2 so the page-level title remains
                 // the only h1 on the page (matches EN BlogArticle.tsx behavior).
