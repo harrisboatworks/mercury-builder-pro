@@ -228,8 +228,11 @@ serve(async (req) => {
       try {
         console.log(`\nProcessing: ${docConfig.name}`);
         
-        // Generate the document content
-        const content = docConfig.generator();
+        // Generate the document content (may be sync or async; promo doc needs Supabase)
+        const gen = docConfig.generator as (sb?: any) => string | Promise<string>;
+        const content = await Promise.resolve(
+          docConfig.requiresSupabase ? gen(supabaseAdmin) : gen()
+        );
         console.log(`Generated ${content.length} characters`);
 
         // Check if document already exists (by name match)
