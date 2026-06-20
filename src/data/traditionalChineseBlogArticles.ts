@@ -362,3 +362,13 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 export function getTraditionalChineseArticleBySlug(slug: string): BlogArticle | undefined {
   return traditionalChineseBlogArticles.find((a) => a.slug === slug);
 }
+
+export function getPublishedTraditionalChineseArticles(): BlogArticle[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return traditionalChineseBlogArticles.filter(article => {
+    const publishDate = new Date(article.publishDate || article.datePublished);
+    publishDate.setHours(0, 0, 0, 0);
+    return publishDate <= today;
+  });
+}

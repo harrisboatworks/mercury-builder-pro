@@ -1059,3 +1059,13 @@ harrisboatworks.ca
 export function getSpanishArticleBySlug(slug: string): BlogArticle | undefined {
   return spanishBlogArticles.find(a => a.slug === slug);
 }
+
+export function getPublishedSpanishArticles(): BlogArticle[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return spanishBlogArticles.filter(article => {
+    const publishDate = new Date(article.publishDate || article.datePublished);
+    publishDate.setHours(0, 0, 0, 0);
+    return publishDate <= today;
+  });
+}
