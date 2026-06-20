@@ -121,7 +121,7 @@ export function TDAlwaysOnBanner() {
       <div className="bg-repower-cream border border-repower-navy-900/10 rounded-lg p-4 md:p-5 flex items-start gap-3">
         <Percent className="w-5 h-5 text-repower-mercury-red flex-shrink-0 mt-0.5" strokeWidth={1.75} />
         <div className="font-sans text-[14px] text-repower-navy-900 leading-relaxed">
-          <span className="font-semibold">Mercury TD "Always On":</span> 5.48% APR up to 240-month amortization on new eligible Mercury outboards. OAC. Available through Dec 31, 2026.
+          <span className="font-semibold">Mercury TD "Always On":</span> {formatFinancingRate(MERCURY_PROMO_APR)} up to 240-month amortization on new eligible Mercury outboards. OAC. Available through Dec 31, 2026.
         </div>
       </div>
     </div>
