@@ -53,6 +53,7 @@ interface MotorRow {
   manual_overrides: Record<string, unknown> | null;
   availability: string | null;
   in_stock: boolean | null;
+  stock_quantity: number | null;
   hero_media_id: string | null;
   hero_image_url: string | null;
   image_url: string | null;
