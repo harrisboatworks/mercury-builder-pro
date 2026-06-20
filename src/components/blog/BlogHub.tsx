@@ -49,17 +49,23 @@ export interface BlogHubStrings {
   phoneLabel: string;
 }
 
+type IntentKey = 'repower' | 'choose' | 'trouble' | 'local';
+
 interface BlogHubProps {
   strings: BlogHubStrings;
   articles: BlogArticle[];
   basePath: string; // e.g. "/blog" or "/fr/blog"
   heroImage?: string;
   featuredSlug?: string;
+  /**
+   * Optional locale-aware mapping from a localized `article.category` value
+   * to one of the four intent keys. When provided, intent filtering uses this
+   * direct lookup instead of the default English keyword regex.
+   */
+  categoryToIntent?: Record<string, IntentKey>;
 }
 
-type IntentKey = 'repower' | 'choose' | 'trouble' | 'local';
-
-function matchesIntent(article: BlogArticle, intent: IntentKey): boolean {
+function matchesIntentDefault(article: BlogArticle, intent: IntentKey): boolean {
   const cat = (article.category || '').toLowerCase();
   const kw = (article.keywords || []).join(' ').toLowerCase();
   const blob = `${cat} ${kw} ${article.title.toLowerCase()}`;
@@ -77,6 +83,13 @@ function matchesIntent(article: BlogArticle, intent: IntentKey): boolean {
         blob,
       );
   }
+}
+
+function makeMatcher(
+  categoryToIntent?: Record<string, IntentKey>,
+): (article: BlogArticle, intent: IntentKey) => boolean {
+  if (!categoryToIntent) return matchesIntentDefault;
+  return (article, intent) => categoryToIntent[article.category || ''] === intent;
 }
 
 function ArticleCard({
