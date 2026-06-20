@@ -24,8 +24,7 @@ const DIRECTORY: DirGroup[] = [
     heading: 'Cost & Financing',
     cards: [
       { title: 'Mercury Repower Cost Ontario 2026 (CAD)', description: 'Detailed cost breakdown by HP class with line-item rigging.', to: '/blog/mercury-repower-cost-ontario-2026-cad' },
-      { title: 'Repower Financing Ontario: Rates & Monthly Payments', description: 'TD Always On rates, term lengths, and worked payment examples.', to: '/blog/repower-financing-ontario-rates-monthly-payments' },
-      { title: 'Mercury Outboard Financing Ontario 2026', description: 'How to apply through HBW and Dealerplan Peterborough.', to: '/blog/mercury-outboard-financing-ontario-2026' },
+      { title: 'Mercury Outboard & Boat Repower Financing Ontario (2026)', description: 'Current rate, terms up to 120 months, $0 down, and the honest fine print.', to: '/blog/mercury-outboard-financing-ontario-2026' },
       { title: 'Old Motor Trade-In, HST & Disposal (Ontario)', description: 'How trade-in credit, HST, and disposal interact on a repower.', to: '/blog/repower-old-motor-trade-in-hst-disposal-ontario' },
     ],
   },

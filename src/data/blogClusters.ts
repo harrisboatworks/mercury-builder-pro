@@ -47,7 +47,6 @@ export const blogClusters: BlogCluster[] = [
     name: 'Financing & Pricing',
     pillar: 'mercury-outboard-financing-ontario-2026',
     spokes: [
-      'boat-motor-financing-guide-ontario',
       'mercury-pricing-promotions-2026',
       'cheapest-mercury-outboard-canada-2026',
       '2026-boating-market-ontario-boat-buyers',
@@ -166,7 +165,6 @@ export const blogClusterContexts: Record<string, string> = {
   'year-end-boat-motor-buying-guide': 'year-end timing and incentives',
   // Cluster 2
   'mercury-outboard-financing-ontario-2026': 'current financing rates and terms',
-  'boat-motor-financing-guide-ontario': 'financing basics for Ontario buyers',
   'mercury-pricing-promotions-2026': 'live 2026 promotions and rebates',
   'cheapest-mercury-outboard-canada-2026': 'lowest-cost Mercury models in Canada',
   '2026-boating-market-ontario-boat-buyers': 'what 2026 looks like for Ontario buyers',
@@ -282,7 +280,6 @@ export const REPOWER_HUB_SLUGS: ReadonlySet<string> = new Set([
   'mercury-repower-eligibility-guide',
   // Cost & Financing
   'mercury-repower-cost-ontario-2026-cad',
-  'repower-financing-ontario-rates-monthly-payments',
   'mercury-outboard-financing-ontario-2026',
   'repower-old-motor-trade-in-hst-disposal-ontario',
   // Process & What to Expect

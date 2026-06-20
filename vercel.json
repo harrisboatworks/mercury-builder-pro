@@ -118,6 +118,26 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/repower-financing-ontario-rates-monthly-payments",
+      "destination": "/blog/mercury-outboard-financing-ontario-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/repower-financing-ontario-rates-monthly-payments.md",
+      "destination": "/blog/mercury-outboard-financing-ontario-2026.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/boat-motor-financing-guide-ontario",
+      "destination": "/blog/mercury-outboard-financing-ontario-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/boat-motor-financing-guide-ontario.md",
+      "destination": "/blog/mercury-outboard-financing-ontario-2026.md",
+      "statusCode": 301
+    },
+    {
       "source": "/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke",
       "destination": "/motors/fourstroke-60hp-60-elpt-fourstroke",
       "statusCode": 301
