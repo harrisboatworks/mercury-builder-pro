@@ -98,16 +98,17 @@ export default function BlogArticle() {
             parts.push(<code key={keyIndex++} className="px-1.5 py-0.5 bg-muted rounded text-sm font-mono">{match[1]}</code>);
             break;
           case 'link':
-            const isInternal = match[2].startsWith('/') || match[2].includes('harrisboatworks');
-            if (isInternal) {
+            const linkHref = match[2];
+            const linkIsInternal = linkHref.startsWith('/') || /^https?:\/\/([^/]*\.)?(mercuryrepower\.ca|mercuryquote\.ca|mercury-quote-tool\.lovable\.app)(\/|$)/i.test(linkHref);
+            if (linkIsInternal) {
               parts.push(
-                <Link key={keyIndex++} to={match[2].replace(/https?:\/\/[^/]+/, '')} className="text-primary hover:underline">
+                <Link key={keyIndex++} to={linkHref.replace(/^https?:\/\/[^/]+/, '') || '/'} className="text-primary hover:underline">
                   {match[1]}
                 </Link>
               );
             } else {
               parts.push(
-                <a key={keyIndex++} href={match[2]} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                <a key={keyIndex++} href={linkHref} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                   {match[1]}
                 </a>
               );
