@@ -479,8 +479,14 @@ export default function BlogArticle() {
 
           {/* FAQ Section */}
           {article.faqs && article.faqs.length > 0 && (
-            <PremiumFaq faqs={article.faqs} />
+            <PremiumFaq
+              faqs={article.faqs.map((f) => ({
+                question: substituteLiveRateTokens(f.question),
+                answer: substituteLiveRateTokens(f.answer),
+              }))}
+            />
           )}
+
 
           {/* Share Section */}
           <div className="mt-14 pt-10 border-t border-repower-navy-900/10">
