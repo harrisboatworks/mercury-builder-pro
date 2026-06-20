@@ -18,6 +18,40 @@ export const getDefaultFinancingRate = (price: number): number => {
 };
 
 /**
+ * Mercury Canada TD "Always On" promotional financing rate (APR, % units).
+ * Headline rate quoted across the site. Update here to update everywhere.
+ */
+export const MERCURY_PROMO_APR = 5.48;
+
+/**
+ * Promo end date (local). After this instant, helpers below revert to the
+ * standard tier rate (7.99% APR). Update on renewal.
+ */
+export const MERCURY_PROMO_END_ISO = '2026-12-31T23:59:59';
+
+/**
+ * Current standing Mercury financing rate (APR, % units).
+ * Single source of truth for content surfaces (blog tokens, marketing copy)
+ * that need ONE headline rate, separate from per-quote promo lookup.
+ * Returns the active promo while live, otherwise the post-promo standard rate.
+ */
+export const getCurrentMercuryFinancingRate = (): number => {
+  const now = Date.now();
+  const end = new Date(MERCURY_PROMO_END_ISO).getTime();
+  return now <= end ? MERCURY_PROMO_APR : 7.99;
+};
+
+/**
+ * Format a financing rate for display, e.g. "5.48% APR".
+ * Defaults to getCurrentMercuryFinancingRate().
+ */
+export const formatFinancingRate = (rate?: number): string => {
+  const r = rate ?? getCurrentMercuryFinancingRate();
+  return `${r.toFixed(2)}% APR`;
+};
+
+
+/**
  * Get smart financing term based on price
  */
 export const getFinancingTerm = (price: number): number => {
