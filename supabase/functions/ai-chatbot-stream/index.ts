@@ -31,6 +31,8 @@ import {
   getLakeInfo
 } from '../_shared/harris-knowledge.ts';
 
+import { formatBlogTitleIndex } from '../_shared/format-kb-documents.ts';
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
