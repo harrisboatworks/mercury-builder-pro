@@ -3,6 +3,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "npm:zod@3.22.4";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
+import { formatBlogTitleIndex } from "../_shared/format-kb-documents.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -242,7 +243,12 @@ PROMOTION RULES:
 - Direct them to the quote builder or /promotions for full details
 - If unsure about specific rebate amounts, check the data above or direct to /promotions
 
-You can discuss motors, pricing, financing, trade-ins, and help them through the quote process. Be helpful but not pushy.`
+You can discuss motors, pricing, financing, trade-ins, and help them through the quote process. Be helpful but not pushy.
+
+BLOG ARTICLE REFERENCE:
+Harris Boat Works publishes detailed guides on harrisboatworks.ca/blog. When a caller asks about a topic covered by one of these posts, mention the article and offer to text/email them the link (URL pattern: /blog/<slug>). Don't read long URLs out loud. Don't invent posts that aren't on this list:
+
+${formatBlogTitleIndex()}`
       }),
     });
 

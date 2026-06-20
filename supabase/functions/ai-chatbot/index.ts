@@ -2,6 +2,7 @@ import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import { formatBlogTitleIndex } from "../_shared/format-kb-documents.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -803,7 +804,12 @@ IMPORTANT INSTRUCTIONS:
 - **Promote Complete package** - it's the best value for most customers
 - **Never compromise safety for sales - proper motor sizing saves lives**
 
-Location: Ontario, Canada - we serve Canadian customers with Canadian pricing and support.`;
+Location: Ontario, Canada - we serve Canadian customers with Canadian pricing and support.
+
+## BLOG ARTICLE INDEX (cite by /blog/<slug>)
+${formatBlogTitleIndex()}
+
+When a customer's question maps to one of these posts, mention it by name and link to the URL. Do NOT invent slugs or article titles that aren't on this list.`;
 
   return dynamicPrompt;
 }

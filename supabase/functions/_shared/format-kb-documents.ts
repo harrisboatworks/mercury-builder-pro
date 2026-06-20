@@ -38,6 +38,8 @@ import {
   SHAFT_LENGTH_GUIDE,
 } from "./mercury-knowledge.ts";
 
+import { BLOG_INDEX, type BlogIndexEntry } from "./blog-index-generated.ts";
+
 // ========== HARRIS BOAT WORKS GUIDE ==========
 export function formatHarrisGuide(): string {
   const now = new Date().toISOString().split('T')[0];
@@ -871,6 +873,87 @@ When a customer asks about accessories, suggest:
 `;
 }
 
+// ========== BLOG ARTICLE INDEX (full + compact) ==========
+
+// Group helper
+function groupByCategory(entries: BlogIndexEntry[]): Record<string, BlogIndexEntry[]> {
+  return entries.reduce((acc, e) => {
+    const k = e.category || "Uncategorized";
+    (acc[k] ||= []).push(e);
+    return acc;
+  }, {} as Record<string, BlogIndexEntry[]>);
+}
+
+/**
+ * Full blog index — every published article on harrisboatworks.ca with
+ * description, keywords, and top FAQs. Used as a standalone KB document
+ * for the ElevenLabs voice agent. URL pattern: /blog/<slug>.
+ */
+export function formatBlogIndex(): string {
+  const now = new Date().toISOString().split("T")[0];
+  const grouped = groupByCategory(BLOG_INDEX);
+  const categories = Object.keys(grouped).sort();
+
+  const sections = categories.map((cat) => {
+    const items = grouped[cat]
+      .slice()
+      .sort((a, b) => (b.publishDate || "").localeCompare(a.publishDate || ""))
+      .map((e) => {
+        const url = `/blog/${e.slug}`;
+        const faqs = e.faqs.length
+          ? `\n  **Top FAQs:**\n${e.faqs.map((f) => `  - Q: ${f.q}\n    A: ${f.a}`).join("\n")}`
+          : "";
+        const kw = e.keywords.length ? `\n  **Keywords:** ${e.keywords.join(", ")}` : "";
+        return `### ${e.title}
+- **URL:** ${url}
+- **Published:** ${e.publishDate}
+- **Summary:** ${e.description}${kw}${faqs}`;
+      })
+      .join("\n\n");
+    return `## ${cat}\n\n${items}`;
+  });
+
+  return `# Harris Boat Works Blog — Article Reference
+Updated: ${now}
+Total articles: ${BLOG_INDEX.length}
+
+This is the full reference index of every blog post on harrisboatworks.ca.
+Every article URL follows the pattern: \`/blog/<slug>\`.
+
+When a customer asks a question that maps to one of these articles, you may:
+- Pull the answer directly from the summary or FAQ shown below
+- Mention the article by name and link the customer to it (e.g. "We have a full guide at /blog/<slug>")
+- Cite a stat or quote and attribute it to the post
+
+Do not invent URLs or fabricate article content that is not listed here.
+
+${sections.join("\n\n")}
+`;
+}
+
+/**
+ * Compact blog index — title + slug + 1-line summary, grouped by category.
+ * Designed to fit inside the AI chat / voice realtime system prompt
+ * without bloating tokens. Lets the model know which articles exist so
+ * it can reference them by URL (/blog/<slug>).
+ */
+export function formatBlogTitleIndex(): string {
+  const grouped = groupByCategory(BLOG_INDEX);
+  const categories = Object.keys(grouped).sort();
+  const sections = categories.map((cat) => {
+    const items = grouped[cat]
+      .slice()
+      .sort((a, b) => (b.publishDate || "").localeCompare(a.publishDate || ""))
+      .map((e) => `- /blog/${e.slug} — ${e.title}`)
+      .join("\n");
+    return `**${cat}:**\n${items}`;
+  });
+  return `# Blog Article Index (${BLOG_INDEX.length} posts on harrisboatworks.ca)
+Every URL is /blog/<slug>. Reference these when a customer's question maps to a post — link them to the article and pull from its summary/FAQ in the full Blog Article Reference document. Do NOT invent URLs.
+
+${sections.join("\n\n")}`;
+}
+
 // Export all document generators
 export const KB_DOCUMENTS = {
   harris_guide: {
@@ -912,5 +995,10 @@ export const KB_DOCUMENTS = {
     name: "Accessories & Maintenance Guide",
     generator: formatAccessoriesGuide,
     description: "SmartCraft Connect, service kits, motor covers, fuel tanks, and accessory recommendations"
+  },
+  blog_article_reference: {
+    name: "Blog Article Reference (Full Index)",
+    generator: formatBlogIndex,
+    description: "Reference index of every blog post on harrisboatworks.ca with summary, keywords, and top FAQs. Lets the agent cite or link articles by /blog/<slug>."
   }
 };

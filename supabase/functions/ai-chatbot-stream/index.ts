@@ -31,6 +31,8 @@ import {
   getLakeInfo
 } from '../_shared/harris-knowledge.ts';
 
+import { formatBlogTitleIndex } from '../_shared/format-kb-documents.ts';
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
@@ -2114,6 +2116,10 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     if (hpSpecificContext) systemPrompt += hpSpecificContext;
     if (perplexityContext) systemPrompt += perplexityContext;
     if (partsContext) systemPrompt += partsContext;
+
+    // Blog article reference index — gives the model awareness of every
+    // published post on /blog so it can cite or link articles by slug.
+    systemPrompt += `\n\n## BLOG ARTICLE INDEX (cite by /blog/<slug>)\n${formatBlogTitleIndex()}\n\nWhen a customer's question maps to one of these posts, mention it by name and link to the URL. Do NOT invent slugs or article titles that aren't on this list.`;
 
     // When the user is asking us to create a quote, give the model crisp instructions
     // for collecting just the missing fields and then calling create_quote.
