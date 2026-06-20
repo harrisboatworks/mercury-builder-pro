@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import { MERCURY_PROMO_APR, formatFinancingRate, formatFinancingRatePercent } from '@/lib/finance';
 
 interface PromotionsPageSEOProps {
   promotions?: Array<{
@@ -14,6 +15,8 @@ interface PromotionsPageSEOProps {
 
 export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
   const hasActivePromos = promotions.length > 0;
+  const RATE = formatFinancingRate(MERCURY_PROMO_APR);
+  const RATE_PCT = formatFinancingRatePercent(MERCURY_PROMO_APR);
 
   if (!hasActivePromos) {
     const tdStructuredData = {
@@ -23,8 +26,8 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
           "@type": "WebPage",
           "@id": `${SITE_URL}/promotions`,
           "url": `${SITE_URL}/promotions`,
-          "name": "Mercury TD Financing 5.48% APR | Harris Boat Works",
-          "description": "Low-rate TD financing on a new Mercury repower: 5.48% APR, terms up to 240 months, through Dec 31, 2026 (OAC).",
+          "name": `Mercury TD Financing ${RATE} | Harris Boat Works`,
+          "description": `Low-rate TD financing on a new Mercury repower: ${RATE}, terms up to 240 months, through Dec 31, 2026 (OAC).`,
           "isPartOf": { "@id": `${SITE_URL}/#website` },
           "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -37,7 +40,7 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
         {
           "@type": ["Service", "FinancialProduct"],
           "name": "Mercury TD 'Always On' Financing",
-          "description": "Low-rate TD Auto Finance program on a new Mercury repower at Harris Boat Works: 5.48% APR with amortization terms up to 240 months. On approved credit.",
+          "description": `Low-rate TD Auto Finance program on a new Mercury repower at Harris Boat Works: ${RATE} with amortization terms up to 240 months. On approved credit.`,
           "category": "Boat Financing",
           "provider": {
             "@type": "Organization",
@@ -47,14 +50,14 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
           "areaServed": { "@type": "Country", "name": "Canada" },
           "interestRate": {
             "@type": "QuantitativeValue",
-            "value": 5.48,
+            "value": MERCURY_PROMO_APR,
             "unitText": "PERCENT_PER_YEAR"
           },
           "termsOfService": "On approved credit through TD Auto Finance. Not all customers will qualify. Offer available through December 31, 2026.",
           "offers": {
             "@type": "Offer",
-            "name": "5.48% APR Mercury Repower Financing",
-            "description": "5.48% APR up to 240-month amortization on a new eligible Mercury outboard (OAC).",
+            "name": `${RATE} Mercury Repower Financing`,
+            "description": `${RATE} up to 240-month amortization on a new eligible Mercury outboard (OAC).`,
             "priceCurrency": "CAD",
             "price": "0",
             "availability": "https://schema.org/InStock",
@@ -70,11 +73,11 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
 
     return (
       <Helmet>
-        <title>Mercury TD Financing 5.48% APR | Harris Boat Works</title>
-        <meta name="description" content="Low-rate TD financing on a new Mercury repower: 5.48% APR, terms up to 240 months, through Dec 31, 2026 (OAC). Ontario's Mercury dealer since 1965." />
+        <title>{`Mercury TD Financing ${RATE} | Harris Boat Works`}</title>
+        <meta name="description" content={`Low-rate TD financing on a new Mercury repower: ${RATE}, terms up to 240 months, through Dec 31, 2026 (OAC). Ontario's Mercury dealer since 1965.`} />
         <link rel="canonical" href={`${SITE_URL}/promotions`} />
-        <meta property="og:title" content="Mercury TD Financing 5.48% APR | Harris Boat Works" />
-        <meta property="og:description" content="5.48% APR on a new Mercury repower, terms up to 240 months, through Dec 31, 2026 (OAC)." />
+        <meta property="og:title" content={`Mercury TD Financing ${RATE} | Harris Boat Works`} />
+        <meta property="og:description" content={`${RATE} on a new Mercury repower, terms up to 240 months, through Dec 31, 2026 (OAC).`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/promotions`} />
         <script type="application/ld+json">
@@ -83,6 +86,7 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
       </Helmet>
     );
   }
+
 
   const mainPromo = promotions[0];
   const hasChooseOne = mainPromo?.promo_options?.type === 'choose_one';
