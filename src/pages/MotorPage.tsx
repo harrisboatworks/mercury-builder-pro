@@ -116,7 +116,7 @@ function toAbsoluteImageUrl(image: string | null | undefined): string {
 }
 
 const MOTOR_SELECT =
-  'id, model_key, model_display, model, model_number, mercury_model_no, family, motor_type, horsepower, shaft, shaft_code, start_type, control_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, hero_media_id, hero_image_url, image_url';
+  'id, model_key, model_display, model, model_number, mercury_model_no, family, motor_type, horsepower, shaft, shaft_code, start_type, control_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity, hero_media_id, hero_image_url, image_url';
 
 export default function MotorPage() {
   const { slug } = useParams<{ slug: string }>();
