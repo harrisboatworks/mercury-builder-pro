@@ -3,6 +3,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "npm:zod@3.22.4";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
+import { formatBlogTitleIndex } from "../_shared/format-kb-documents.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
