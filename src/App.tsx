@@ -596,10 +596,14 @@ function AnimatedRoutes() {
         <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
         {/* /blog/zh/mercury-repower-guide-gta now served by MandarinBlogArticlePage (legacy override retired 2026-06-07) */}
+        <Route path="/blog/zh" element={<BlogIndexZh />} />
         <Route path="/blog/zh/:slug" element={<MandarinBlogArticlePage />} />
         {/* zh-Hant pilot — 5 pages, noindex (set per-route via Helmet), kept out of sitemap */}
+        <Route path="/blog/zh-hant" element={<BlogIndexZhHant />} />
         <Route path="/blog/zh-hant/:slug" element={<TraditionalChineseBlogArticlePage />} />
+        <Route path="/blog/ko" element={<BlogIndexKo />} />
         <Route path="/blog/ko/:slug" element={<KoreanBlogArticlePage />} />
+        <Route path="/blog/es" element={<BlogIndexEs />} />
         <Route path="/blog/es/:slug" element={<SpanishBlogArticlePage />} />
         <Route path="/blog/hi/:slug" element={<HindiBlogArticlePage />} />
         <Route path="/blog/pa/:slug" element={<PunjabiBlogArticlePage />} />
