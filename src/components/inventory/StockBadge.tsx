@@ -33,7 +33,7 @@ export function StockBadge({ motor, variant = 'default', className }: StockBadge
           )}
         >
           <Package className={cn("mr-1", isCompact ? "w-2 h-2" : "w-3 h-3")} />
-          {isCompact ? `${quantity}` : `${quantity} In Stock`}
+          {isCompact ? `${quantity}` : `In Stock · ${quantity} available`}
         </Badge>
       );
     }
