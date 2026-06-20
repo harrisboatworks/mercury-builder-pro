@@ -380,10 +380,11 @@ export default function BlogArticle() {
               content={(() => {
                 let c = article.content.replace(/^\s*#\s+.+\n+/, '');
                 // Live token substitution: {{LIVE_RATE}} -> e.g. "5.48% APR",
-                // sourced from the same finance helper that drives the
-                // quote builder's monthly-payment math. Change the rate in
-                // src/lib/finance.ts (MERCURY_PROMO_APR) to update everywhere.
-                c = c.replace(/\{\{LIVE_RATE\}\}/g, formatFinancingRate());
+                // {{LIVE_RATE_PCT}} -> e.g. "5.48%". Sourced from the same
+                // finance helper that drives the quote builder's monthly-payment
+                // math. Change the rate in src/lib/finance.ts (MERCURY_PROMO_APR).
+                c = substituteLiveRateTokens(c);
+
                 // Strip standalone scaffold lines: "*Last updated: ...*",
                 // "_Last updated: ..._", "**Last updated:** ...", "*Last reviewed: ...*".
                 // These conflict with the dateModified field shown in the byline.
