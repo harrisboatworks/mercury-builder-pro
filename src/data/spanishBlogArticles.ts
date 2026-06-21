@@ -15,7 +15,7 @@ export const spanishBlogArticles: BlogArticle[] = [
     keywords: ['guía comprar bote Ontario', 'comprar bote en Canadá', 'primer bote Ontario', 'licencia de navegación Ontario'],
     content: `### Respuesta rápida
 
-Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligatorias: la Carta de Operador de Embarcaciones de Placer (PCOC/COEP), certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la Licencia de Embarcaciones de Placer (PCL) para motores de 10 HP o más, renovable cada 5 años por $24 CAD desde el 31 de diciembre de 2025. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
+Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligatorias: la Carta de Operador de Embarcaciones de Placer (PCOC/COEP), certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la Licencia de Embarcaciones de Placer (PCL) para motores de 10 HP o más, renovable cada 5 años por $24.41 CAD desde el 31 de diciembre de 2025. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
 
 ---
 
@@ -49,7 +49,7 @@ El examen está disponible en inglés y francés en el sitio de Transporte Canad
 
 Además de la PCOC personal, el bote mismo requiere una PCL si tiene un motor de **10 HP (7.5 kW) o más**.
 
-- Desde el **31 de diciembre de 2025**: renovación cada 5 años, costo **$24 CAD**
+- Desde el **31 de diciembre de 2025**: renovación cada 5 años, costo **$24.41 CAD**
 - Anteriormente era gratuita y de renovación variable, confirma el estatus actual en tc.gc.ca
 - La PCL no es lo mismo que el registro de embarcación (que aplica a embarcaciones más grandes o de uso comercial)
 
@@ -57,8 +57,8 @@ Además de la PCOC personal, el bote mismo requiere una PCL si tiene un motor de
 
 | Edad | Restricción |
 |------|------------|
-| Menores de 12 años | Máximo 10 HP, sin supervisión adulta |
-| 12, 15 años | Máximo 40 HP con supervisión; hasta 10 HP solo |
+| Menores de 12 años | Hasta 10 HP |
+| 12 a menos de 16 años | Hasta 40 HP |
 | Menores de 16 años | Prohibido operar moto acuática (PWC) |
 
 Todos los menores necesitan su propia PCOC si operan la embarcación, incluso brevemente.
@@ -75,12 +75,12 @@ El límite legal de alcohol en sangre al operar una embarcación es **0.08**, ig
 
 | Tipo | Tamaño típico | Motor típico | Mejor para |
 |------|--------------|-------------|-----------|
-| Aluminio de pesca | 14, 18 pies | 40, 115 HP | Pesca, lagos interiores, fácil mantenimiento |
+| Aluminio de pesca | 14, 18 pies | 25, 90 HP (según placa de capacidad) | Pesca, lagos interiores, fácil mantenimiento |
 | Pontón | 18, 24 pies | 60, 150 HP | Familia, crucero, aguas tranquilas |
 | Bowrider / Runabout | 16, 22 pies | 90, 150+ HP | Deportes acuáticos, esquí, wakeboard |
 | Centro de consola | 18, 24 pies | 115, 200+ HP | Pesca, versatilidad, viento y oleaje |
 
-**Para la mayoría de los lagos del interior de Ontario** (Rice Lake, Kawarthas, lagos de cottage) el bote de aluminio de pesca de 14, 17 pies con un motor de 40, 90 HP es la opción más práctica, económica de mantener y fácil de trailerar.
+**Para la mayoría de los lagos del interior de Ontario** (Rice Lake, Kawarthas, lagos de cottage) el bote de aluminio de pesca es la opción más práctica, económica de mantener y fácil de trailerar. Como guía según la placa de capacidad: 14 pies suele permitir 25 a 30 HP; 15 pies, 30 a 40 HP; 16 pies, 40 a 60 HP; 17 a 18 pies, 60 a 90 HP. Confirme siempre la placa de capacidad del bote antes de elegir la potencia.
 
 El pontón es excelente para familias que buscan comodidad y espacio. No es el más ágil, pero en aguas tranquilas es difícil de superar en confort.
 
@@ -928,7 +928,7 @@ Ontario tiene reglas específicas sobre quién puede operar una embarcación seg
 | Edad | Restricción |
 |------|------------|
 | Menores de 12 años | Solo pueden operar embarcaciones de hasta 10 HP, sin supervisión adulta |
-| 12, 15 años | Pueden operar hasta 40 HP con supervisión; hasta 10 HP solos |
+| 12 a menos de 16 años | Pueden operar hasta 40 HP |
 | Menores de 16 años | **Prohibido** operar motos acuáticas (PWC / Jet Ski) |
 | 16 años o más | Sin restricciones de HP con PCOC válida |
 
