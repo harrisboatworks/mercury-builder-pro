@@ -34903,7 +34903,6 @@ Command Thrust (CT) uses a larger gearcase, larger propeller diameter, lower gea
 
 - Pontoons of any size (improved low-speed handling, planing with heavier loads)
 - Commercial work boats that need thrust over speed (push boats, certain barges)
-- Specific tournament bass applications where hole-shot matters more than top-end (rare)
 
 **Command Thrust is the WRONG call for:**
 
