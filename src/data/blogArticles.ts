@@ -11403,7 +11403,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     title: 'Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?',
     seoTitle: 'Is Your Mercury Eligible for the 2026 Boost Upgrade?',
     description: 'Mercury Boost is a dealer-installed software calibration Mercury rates at up to 21% faster mid-range acceleration on select FourStroke, Pro XS, and special-order Verado engines. Check eligibility by serial number.',
-    image: '/lovable-uploads/hero-boost-software-upgrade.png',
+    image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-14',
     dateModified: '2026-06-19',
@@ -11551,7 +11551,7 @@ If your motor falls outside current eligibility criteria, the upgrade is not ava
 In theory, yes, it is a software calibration and Mercury has the tools to modify software-based updates. Mercury has not published a standard reversal procedure. In practice, the improvement is consistently viewed as positive, it changes only the mid-range band, not cruise or wide-open-throttle behavior.
 
 **How do I know if my FourStroke qualifies?** 
-FourStroke models in the 175, 300 HP range from serial number 2B529482 are eligible for the dealer-installed retrofit. For factory-installed Boost on new motors, it applies to Pro XS and Verado models built in Q2 2026 and later. The fastest answer: call HBW at 905-342-2153 with your serial number.
+FourStroke models in the 175, 300 HP range from serial number 2B529482 are eligible for the dealer-installed retrofit. The factory-installed version comes pre-loaded on new FourStroke 175, 200, 250, 300 HP, Pro XS 175, 200, 225, 250, 300 HP, and Verado 250, 300, 350 HP models built in Q2 2026 and later. The fastest answer: call HBW at 905-342-2153 with your serial number.
 
 **Is Boost worth it on Rice Lake?** 
 If your eligible engine already feels responsive with a light load, the improvement will be subtler. If you routinely run heavy, full pontoon, loaded family bowrider, anything where the hole-shot feels sluggish, Boost is one of the most cost-effective upgrades available. It costs a fraction of a new motor and requires no hardware.
