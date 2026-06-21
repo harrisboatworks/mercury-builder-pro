@@ -1055,8 +1055,8 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位于Rice 
 
 FourStroke 是大部分 GTA 华人船主第一台 Mercury 引擎。原因：
 
-- **安静** ， 比 Pro XS 安静 30-40% (实测分贝)
-- **省油** ， 油耗比 2-stroke 节省 30-40%
+- **安静** ， 运行明显比 Pro XS 安静
+- **省油** ， 四冲程比传统二冲程明显更省油
 - **可靠** ， 100 小时维护周期,10-15 年使用寿命
 - **保养便宜** ， 火花塞、机油、滤芯都是常规件
 
