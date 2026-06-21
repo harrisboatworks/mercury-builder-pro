@@ -373,7 +373,7 @@ harrisboatworks.ca | 905-342-2153
   {
     slug: 'preparacion-invernal-motor-mercury',
     title: 'Guía de preparación invernal para motores Mercury en Ontario',
-    description: 'Guía paso a paso para la preparación invernal (winterization) de motores Mercury en Ontario: estabilización de combustible, fogging, drenaje de aceite.',
+    description: 'Guía paso a paso para la preparación invernal (winterization) de motores Mercury en Ontario: estabilización de combustible, fogging.',
     image: '/lovable-uploads/es-preparacion-invernal-motor-mercury-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
@@ -534,7 +534,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
     slug: 'mercury-115-vs-150-comparacion',
     title: 'Mercury 115 vs 150 HP: Comparación completa para remotorización',
     seoTitle: 'Mercury 115 vs 150 HP: comparación completa',
-    description: 'Comparación detallada entre Mercury 115 FourStroke (2,1L) y 150 FourStroke (3,0L): especificaciones, rendimiento, peso, consumo y cuál es mejor para su.',
+    description: 'Comparación detallada entre Mercury 115 FourStroke (2,1L) y 150 FourStroke (3,0L): especificaciones, rendimiento, peso.',
     image: '/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
