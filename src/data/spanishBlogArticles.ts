@@ -858,7 +858,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     title: 'Licencia de navegación y regulaciones de seguridad en Ontario',
     seoTitle: 'Licencia de navegación y seguridad en Ontario',
     description: 'Guía completa sobre la PCOC, PCL, equipo de seguridad obligatorio y regulaciones de navegación en Ontario. Todo lo que necesita saber para navegar legalmente en Canadá.',
-    image: '/lovable-uploads/es-licencia-navegacion-ontario-regulaciones-hero.png',
+    image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
@@ -868,7 +868,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     keywords: ['licencia navegación Ontario', 'PCOC Ontario', 'regulaciones bote Ontario', 'permiso de navegación Canadá', 'seguridad embarcación Ontario'],
     content: `### Respuesta rápida
 
-Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones), un certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)), una licencia para la embarcación misma si tiene motor de 10 HP o más, renovable cada 5 años por **$24 CAD** desde el 31 de diciembre de 2025. La multa por no tener la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
+Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones), un certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)), una licencia para la embarcación misma si tiene motor de 10 HP o más, renovable cada 5 años por **$24.41 CAD** desde el 31 de diciembre de 2025. La multa por no tener la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
 
 ---
 
@@ -915,7 +915,7 @@ La Pleasure Craft Licence (PCL) es diferente de la PCOC personal. Es la licencia
 
 ### Cambio reciente (diciembre 2025):
 
-Desde el **31 de diciembre de 2025**, la PCL cambió a un esquema de renovación cada **5 años** con un costo de **$24 CAD**. Anteriormente la PCL era gratuita con renovación diferente. Si tienes una PCL antigua, verifica su estatus en tc.gc.ca.
+Desde el **31 de diciembre de 2025**, la PCL cambió a un esquema de renovación cada **5 años** con un costo de **$24.41 CAD**. Anteriormente la PCL era gratuita con renovación diferente. Si tienes una PCL antigua, verifica su estatus en tc.gc.ca.
 
 La PCL no es lo mismo que el registro de embarcaciones (que aplica a barcos más grandes o de uso comercial). Para la mayoría de las embarcaciones de recreo de menos de 15 metros, la PCL es suficiente.
 
@@ -927,7 +927,7 @@ Ontario tiene reglas específicas sobre quién puede operar una embarcación seg
 
 | Edad | Restricción |
 |------|------------|
-| Menores de 12 años | Solo pueden operar embarcaciones de hasta 10 HP, sin supervisión adulta |
+| Menores de 12 años | Hasta 10 HP |
 | 12 a menos de 16 años | Pueden operar hasta 40 HP |
 | Menores de 16 años | **Prohibido** operar motos acuáticas (PWC / Jet Ski) |
 | 16 años o más | Sin restricciones de HP con PCOC válida |
