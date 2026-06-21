@@ -858,7 +858,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     title: 'Licencia de navegación y regulaciones de seguridad en Ontario',
     seoTitle: 'Licencia de navegación y seguridad en Ontario',
     description: 'Guía completa sobre la PCOC, PCL, equipo de seguridad obligatorio y regulaciones de navegación en Ontario. Todo lo que necesita saber para navegar legalmente en Canadá.',
-    image: '/lovable-uploads/es-licencia-navegacion-ontario-regulaciones-hero.png',
+    image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
