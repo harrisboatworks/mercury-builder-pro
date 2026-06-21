@@ -1074,7 +1074,7 @@ FourStroke 是大部分 GTA 华人船主第一台 Mercury 引擎。原因：
 
 Pro XS 是 Mercury 的"运动型"FourStroke。在 FourStroke 基础上做了：
 
-- 高 RPM 调校 (5500-6500 redline vs 5500 标准)
+- 高 RPM 调校 (Pro XS WOT 范围大致 5200-6200 RPM，依型号而定：150 Pro XS 约 5200-6000 RPM；V8 Pro XS 200-300hp 约 5600-6200 RPM)
 - 强化气缸 (针对高负载长时间运行)
 - 红色 Pro XS 涂装 (品牌识别)
 - SC1000 进气优化
