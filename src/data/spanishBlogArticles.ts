@@ -398,8 +398,8 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 <div class="hbw-language-note">
   <h3>Una nota sobre el idioma</h3>
-  <p>Este artículo está disponible en español porque queremos que la información técnica de motores Mercury llegue a más clientes. Nos esforzamos por ofrecer contenido útil en su idioma.</p>
-  <p>Sin embargo, debemos ser honestos: nuestro personal habla inglés. Si nos contacta para una cotización o servicio, le responderemos en inglés. Si lo prefiere, puede usar Google Translate o pedirle a un familiar bilingüe que le ayude con la comunicación. Estamos comprometidos a darle el mejor servicio posible.</p>
+  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.</p>
+  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
 </div>
 
 ---
