@@ -915,7 +915,7 @@ La Pleasure Craft Licence (PCL) es diferente de la PCOC personal. Es la licencia
 
 ### Cambio reciente (diciembre 2025):
 
-Desde el **31 de diciembre de 2025**, la PCL cambió a un esquema de renovación cada **5 años** con un costo de **$24 CAD**. Anteriormente la PCL era gratuita con renovación diferente. Si tienes una PCL antigua, verifica su estatus en tc.gc.ca.
+Desde el **31 de diciembre de 2025**, la PCL cambió a un esquema de renovación cada **5 años** con un costo de **$24.41 CAD**. Anteriormente la PCL era gratuita con renovación diferente. Si tienes una PCL antigua, verifica su estatus en tc.gc.ca.
 
 La PCL no es lo mismo que el registro de embarcaciones (que aplica a barcos más grandes o de uso comercial). Para la mayoría de las embarcaciones de recreo de menos de 15 metros, la PCL es suficiente.
 
