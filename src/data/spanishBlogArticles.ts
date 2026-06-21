@@ -868,7 +868,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     keywords: ['licencia navegación Ontario', 'PCOC Ontario', 'regulaciones bote Ontario', 'permiso de navegación Canadá', 'seguridad embarcación Ontario'],
     content: `### Respuesta rápida
 
-Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones), un certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)), una licencia para la embarcación misma si tiene motor de 10 HP o más, renovable cada 5 años por **$24 CAD** desde el 31 de diciembre de 2025. La multa por no tener la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
+Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones), un certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)), una licencia para la embarcación misma si tiene motor de 10 HP o más, renovable cada 5 años por **$24.41 CAD** desde el 31 de diciembre de 2025. La multa por no tener la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
 
 ---
 
