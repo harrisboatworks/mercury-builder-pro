@@ -744,7 +744,7 @@ Remotorizar significa conservar una embarcación que ya conoce y en la que conf�
 
 Los motores Mercury FourStroke actuales están disponibles de 2.5 a 300 HP. Son más económicos en combustible, más silenciosos y más confiables que la generación anterior. Si su motor tiene 15 años o más, notará la diferencia desde la primera salida.
 
-Como concesionario Mercury Platinum, Harris Boat Works tiene acceso a toda la gama: FourStroke estándar, Verado de alto rendimiento (bajo pedido especial y servicio solamente), y Pro XS para pescadores.
+Como concesionario Mercury Platinum, Harris Boat Works tiene acceso a la gama: FourStroke estándar y Pro XS para pescadores. Verado está disponible bajo pedido especial y para servicio técnico.
 
 ### 4. Tiempo: usted quiere navegar esta temporada
 
