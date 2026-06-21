@@ -35344,7 +35344,7 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 **Service booking:** hbw.wiki/service
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Platinum Dealer. 15-20 minutes from Port Hope and Cobourg. Largest Mercury and Mercruiser parts inventory in Ontario on the shelf. That's why local guides and charter operators call us first when they need a part the same day.`,
-    image: '/lovable-uploads/hero-mercury-motor-families.png',
+    image: '/lovable-uploads/hero-mercury-salmon-lake-ontario-2026.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
     dateModified: '2026-06-12',
