@@ -378,7 +378,12 @@ export default function BlogArticle() {
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 blog-article-prose">
             <MarkdownSectionCards
               content={(() => {
-                let c = article.content.replace(/^\s*#\s+.+\n+/, '');
+                // Strip the first body H1 anywhere in the article (not just
+                // when it is the first line). Many posts open with a Quick
+                // Answer blockquote followed by `# Title`, which previously
+                // slipped past the leading-only regex and produced a duplicate
+                // title. The h1 -> h2 override below is a second safety net.
+                let c = article.content.replace(/(^|\n)\s*#\s+[^\n]+\n+/, '$1');
                 // Live token substitution: {{LIVE_RATE}} -> e.g. "5.48% APR",
                 // {{LIVE_RATE_PCT}} -> e.g. "5.48%". Sourced from the same
                 // finance helper that drives the quote builder's monthly-payment
