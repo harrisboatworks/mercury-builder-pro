@@ -927,7 +927,7 @@ Ontario tiene reglas específicas sobre quién puede operar una embarcación seg
 
 | Edad | Restricción |
 |------|------------|
-| Menores de 12 años | Solo pueden operar embarcaciones de hasta 10 HP, sin supervisión adulta |
+| Menores de 12 años | Hasta 10 HP |
 | 12 a menos de 16 años | Pueden operar hasta 40 HP |
 | Menores de 16 años | **Prohibido** operar motos acuáticas (PWC / Jet Ski) |
 | 16 años o más | Sin restricciones de HP con PCOC válida |
