@@ -75,7 +75,7 @@ El límite legal de alcohol en sangre al operar una embarcación es **0.08**, ig
 
 | Tipo | Tamaño típico | Motor típico | Mejor para |
 |------|--------------|-------------|-----------|
-| Aluminio de pesca | 14, 18 pies | 40, 115 HP | Pesca, lagos interiores, fácil mantenimiento |
+| Aluminio de pesca | 14, 18 pies | 25, 90 HP (según placa de capacidad) | Pesca, lagos interiores, fácil mantenimiento |
 | Pontón | 18, 24 pies | 60, 150 HP | Familia, crucero, aguas tranquilas |
 | Bowrider / Runabout | 16, 22 pies | 90, 150+ HP | Deportes acuáticos, esquí, wakeboard |
 | Centro de consola | 18, 24 pies | 115, 200+ HP | Pesca, versatilidad, viento y oleaje |
