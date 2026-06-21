@@ -15,7 +15,7 @@ export const spanishBlogArticles: BlogArticle[] = [
     keywords: ['guía comprar bote Ontario', 'comprar bote en Canadá', 'primer bote Ontario', 'licencia de navegación Ontario'],
     content: `### Respuesta rápida
 
-Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligatorias: la Carta de Operador de Embarcaciones de Placer (PCOC/COEP), certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la Licencia de Embarcaciones de Placer (PCL) para motores de 10 HP o más, renovable cada 5 años por $24 CAD desde el 31 de diciembre de 2025. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
+Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligatorias: la Carta de Operador de Embarcaciones de Placer (PCOC/COEP), certificado federal vitalicio que se obtiene en línea por aproximadamente $40, 50 CAD, y la Licencia de Embarcaciones de Placer (PCL) para motores de 10 HP o más, renovable cada 5 años por $24.41 CAD desde el 31 de diciembre de 2025. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
 
 ---
 
