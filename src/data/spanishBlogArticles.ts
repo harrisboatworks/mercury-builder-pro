@@ -4,7 +4,7 @@ export const spanishBlogArticles: BlogArticle[] = [
   {
     slug: 'guia-comprar-bote-ontario',
     title: 'Guía completa para comprar un bote en Ontario',
-    description: 'Guía práctica para comprar un bote en Ontario: requisitos legales (PCOC, PCL), tipos de embarcación, opciones de compra y costos anuales reales en dólares canadienses.',
+    description: 'Guía práctica para comprar un bote en Ontario: requisitos legales (PCOC, PCL), tipos de embarcación, opciones de compra y costos anuales reales en dólares.',
     image: '/lovable-uploads/es-guia-comprar-bote-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
@@ -193,7 +193,7 @@ harrisboatworks.ca
   {
     slug: 'guia-pesca-rice-lake-ontario',
     title: 'Guía de pesca en Rice Lake, Ontario',
-    description: 'Guía completa de pesca en Rice Lake: especies (walleye, bass, muskie, perch), temporadas FMZ 17, licencias, mejores zonas y alquiler de botes en Harris Boat Works.',
+    description: 'Guía completa de pesca en Rice Lake: especies (walleye, bass, muskie, perch), temporadas FMZ 17, licencias, mejores zonas y alquiler de botes en Harris.',
     image: '/lovable-uploads/es-guia-pesca-rice-lake-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
@@ -373,7 +373,7 @@ harrisboatworks.ca | 905-342-2153
   {
     slug: 'preparacion-invernal-motor-mercury',
     title: 'Guía de preparación invernal para motores Mercury en Ontario',
-    description: 'Guía paso a paso para la preparación invernal (winterization) de motores Mercury en Ontario: estabilización de combustible, fogging, drenaje de aceite, batería y más.',
+    description: 'Guía paso a paso para la preparación invernal (winterization) de motores Mercury en Ontario: estabilización de combustible, fogging, drenaje de aceite.',
     image: '/lovable-uploads/es-preparacion-invernal-motor-mercury-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
@@ -534,7 +534,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
     slug: 'mercury-115-vs-150-comparacion',
     title: 'Mercury 115 vs 150 HP: Comparación completa para remotorización',
     seoTitle: 'Mercury 115 vs 150 HP: comparación completa',
-    description: 'Comparación detallada entre Mercury 115 FourStroke (2,1L) y 150 FourStroke (3,0L): especificaciones, rendimiento, peso, consumo y cuál es mejor para su embarcación en Ontario.',
+    description: 'Comparación detallada entre Mercury 115 FourStroke (2,1L) y 150 FourStroke (3,0L): especificaciones, rendimiento, peso, consumo y cuál es mejor para su.',
     image: '/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
@@ -695,7 +695,7 @@ harrisboatworks.ca | Rice Lake
   {
     slug: 'remotorizacion-vs-bote-nuevo',
     title: 'Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?',
-    description: 'Análisis completo: remotorización (repower) con motor Mercury nuevo vs comprar un bote nuevo. Costos reales, ventajas, y cuándo cada opción tiene sentido en Ontario.',
+    description: 'Análisis completo: remotorización (repower) con motor Mercury nuevo vs comprar un bote nuevo.',
     image: '/lovable-uploads/es-remotorizacion-vs-bote-nuevo-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
@@ -857,7 +857,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     slug: 'licencia-navegacion-ontario-regulaciones',
     title: 'Licencia de navegación y regulaciones de seguridad en Ontario',
     seoTitle: 'Licencia de navegación y seguridad en Ontario',
-    description: 'Guía completa sobre la PCOC, PCL, equipo de seguridad obligatorio y regulaciones de navegación en Ontario. Todo lo que necesita saber para navegar legalmente en Canadá.',
+    description: 'Guía completa sobre la PCOC, PCL, equipo de seguridad obligatorio y regulaciones de navegación en Ontario.',
     image: '/lovable-uploads/hero-boating-safety-gear-es-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
