@@ -11465,7 +11465,8 @@ Eligibility is by serial number, not model year.
 ### Factory-Installed (New 2026 Production Motors)
 
 Boost comes pre-loaded on:
-- Pro XS 175, 300 HP
+- FourStroke 175, 200, 250, 300 HP
+- Pro XS 175, 200, 225, 250, 300 HP
 - Verado 250, 300, 350 HP
 - Racing 150R
 
