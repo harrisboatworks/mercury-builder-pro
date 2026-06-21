@@ -49,7 +49,7 @@ El examen está disponible en inglés y francés en el sitio de Transporte Canad
 
 Además de la PCOC personal, el bote mismo requiere una PCL si tiene un motor de **10 HP (7.5 kW) o más**.
 
-- Desde el **31 de diciembre de 2025**: renovación cada 5 años, costo **$24 CAD**
+- Desde el **31 de diciembre de 2025**: renovación cada 5 años, costo **$24.41 CAD**
 - Anteriormente era gratuita y de renovación variable, confirma el estatus actual en tc.gc.ca
 - La PCL no es lo mismo que el registro de embarcación (que aplica a embarcaciones más grandes o de uso comercial)
 
