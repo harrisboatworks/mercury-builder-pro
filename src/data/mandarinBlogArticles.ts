@@ -1043,6 +1043,10 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位于Rice 
     keywords: ['Mercury FourStroke Pro XS Verado 中文', 'Mercury 船外机比较', 'Pro XS 中文', 'Verado 中文'],
     content: `> **简短答案：** Mercury 三大引擎家族针对不同用途：FourStroke 60-150 HP 适合 pontoon + 家庭船 (安静、省油、可靠)。Pro XS 150-300 HP 适合钓鱼 + 速度爱好者 (起步快、最高速度高)。Verado V8/V10/V12 250-600 HP 适合大型 center console + 双引擎 (功率密度最大、最豪华，现行 V8/V10/V12 自然进气，老款 I6 才是增压)。HBW 是 Mercury Platinum 经销商，FourStroke 和 Pro XS 日常库存，Verado 按需特别订货。
 
+## 关于语言的说明
+
+关于语言的说明：我们用中文制作这些内容，是因为我们真心希望帮助讲中文的船主。请注意——Harris Boat Works 的团队以英语提供服务。为了获得最顺畅的体验，欢迎带一位会讲英语的朋友，或使用翻译应用。我们很乐意为您服务。
+
 ## FourStroke 家庭船 + Pontoon 第一选择
 
 **HP 范围：** 2.5 - 150 HP
