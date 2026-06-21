@@ -80,7 +80,7 @@ El límite legal de alcohol en sangre al operar una embarcación es **0.08**, ig
 | Bowrider / Runabout | 16, 22 pies | 90, 150+ HP | Deportes acuáticos, esquí, wakeboard |
 | Centro de consola | 18, 24 pies | 115, 200+ HP | Pesca, versatilidad, viento y oleaje |
 
-**Para la mayoría de los lagos del interior de Ontario** (Rice Lake, Kawarthas, lagos de cottage) el bote de aluminio de pesca de 14, 17 pies con un motor de 40, 90 HP es la opción más práctica, económica de mantener y fácil de trailerar.
+**Para la mayoría de los lagos del interior de Ontario** (Rice Lake, Kawarthas, lagos de cottage) el bote de aluminio de pesca es la opción más práctica, económica de mantener y fácil de trailerar. Como guía según la placa de capacidad: 14 pies suele permitir 25 a 30 HP; 15 pies, 30 a 40 HP; 16 pies, 40 a 60 HP; 17 a 18 pies, 60 a 90 HP. Confirme siempre la placa de capacidad del bote antes de elegir la potencia.
 
 El pontón es excelente para familias que buscan comodidad y espacio. No es el más ágil, pero en aguas tranquilas es difícil de superar en confort.
 
