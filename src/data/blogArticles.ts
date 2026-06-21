@@ -12675,7 +12675,7 @@ The fastest way to know what a Mercury or a full repower costs you per month is 
     slug: 'best-mercury-outboard-lake-simcoe-walleye-fishing',
     title: "Recommended Mercury Outboard Setup for Lake Simcoe Walleye Fishing (2026)",
     description: "A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the right Mercury outboard for every Simcoe setup.",
-    image: '/lovable-uploads/Walleye_Opener_Catch.png',
+    image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
     dateModified: '2026-06-09',
