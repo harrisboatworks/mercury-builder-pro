@@ -15825,7 +15825,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What\'s Mercury SmartCraft and do I need it?',
-        answer: 'SmartCraft is Mercury\'s digital data and display system. VesselView 4/7/9 displays show motor data (RPM, fuel, oil, alerts) digitally. For modern Mercury motors, SmartCraft connectivity is built in. Whether you need a VesselView display depends on whether you want digital gauges or are happy with analog.'
+        answer: 'SmartCraft is Mercury\'s digital data and display system. SmartCraft Connect 4/7/9 displays show motor data (RPM, fuel, oil, alerts) digitally. For modern Mercury motors, SmartCraft connectivity is built in. Whether you need a SmartCraft Connect display depends on whether you want digital gauges or are happy with analog.'
       },
       {
         question: 'How much does a new Mercury propeller cost?',
