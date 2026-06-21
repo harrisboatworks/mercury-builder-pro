@@ -57,8 +57,8 @@ Además de la PCOC personal, el bote mismo requiere una PCL si tiene un motor de
 
 | Edad | Restricción |
 |------|------------|
-| Menores de 12 años | Máximo 10 HP, sin supervisión adulta |
-| 12, 15 años | Máximo 40 HP con supervisión; hasta 10 HP solo |
+| Menores de 12 años | Hasta 10 HP |
+| 12 a menos de 16 años | Hasta 40 HP |
 | Menores de 16 años | Prohibido operar moto acuática (PWC) |
 
 Todos los menores necesitan su propia PCOC si operan la embarcación, incluso brevemente.
