@@ -35387,7 +35387,7 @@ The brand swap is not a casual decision. It costs more than a same-brand repower
 
 **Local service.** The closest Yamaha dealer is too far to be practical. This is the single biggest driver we see in the GTA, Kawarthas, and around Rice Lake. A motor you can't get serviced quickly is a motor that fails when you need it most. If the nearest Mercury Platinum dealer is 20 minutes away and the nearest Yamaha dealer is 90 minutes away, the math eventually swings.
 
-**Motor lineup match.** Yamaha is strong across many midrange and offshore classes. Mercury's advantage for many HBW customers is the breadth of specific families: Pro XS (high-performance), Verado V8/V10/V12 (250 to 600 HP, naturally aspirated), SeaPro (commercial), ProKicker, and Avator electric. If your next motor is outside Yamaha's sweet spot, Mercury may be the better fit.
+**Motor lineup match.** Yamaha is strong across many midrange and offshore classes. Mercury's advantage for many HBW customers is the breadth of specific families: Pro XS (high-performance), Verado V8/V10/V12 (250 to 600 HP, naturally aspirated), SeaPro (commercial), ProKicker, and Avator electric. HBW's standard stocked/sold lane is Mercury FourStroke and Pro XS; Verado and SeaPro are special-order/limited-context conversations, and Avator is not normal HBW inventory. If your next motor is outside Yamaha's sweet spot, Mercury may be the better fit.
 
 **Multi-engine plans.** Customers planning to repower with multiple engines and add joystick piloting often switch to Mercury because Mercury Joystick Piloting integrates well with their broader SmartCraft ecosystem.
 
