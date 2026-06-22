@@ -8017,7 +8017,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-06-21*
 
-> **Quick answer:** When you trade in your old boat or motor at an Ontario dealer, you only pay 13% HST on the difference between the new motor and the trade allowance, not on the full new motor price. On a $20,000 new motor with a $5,000 trade, that's $650 saved on tax alone. Combine that with the convenience of one transaction and dealer reconditioning, and trade-in usually beats private sale once you account for total dollars in your pocket. Build a quote with your trade at mercuryrepower.ca.
+> **Quick answer:** When you trade your old motor at an Ontario dealer, you only pay 13% HST on the difference between the new motor and the trade allowance, not on the full new motor price. On a $20,000 new motor with a $5,000 trade, that's $650 saved on tax. Get a free instant trade-in estimate at [mercuryrepower.ca/trade-in-value](/trade-in-value), then roll it straight into a full repower quote.
 
 If you're thinking about a repower, your old motor isn't junk. It's part of the math. And in Ontario, that math is bigger than most boaters realize because the HST rules work in your favour the moment you trade.
 
