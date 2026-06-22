@@ -8140,7 +8140,7 @@ The estimator gets you 80% of the way to a real number. The call is for the last
 ## Frequently Asked Questions
 
 **How much does the HST savings actually work out to?**
-On a typical repower scenario at HBW, the HST savings on a trade-in adds 13% of the trade value back to your bottom line. For a $5,000 trade, that's $650 you wouldn't get on a private sale. For a $10,000 trade, $1,300. For boat-and-motor packages, the savings scale with the trade value. Enough that for most customers, the trade-in path nets more dollars in pocket than private sale once you account for the time and risk of a private listing.
+On a typical repower scenario at HBW, the HST savings on a trade-in adds 13% of the trade value back to your bottom line. For a $5,000 trade, that's $650 you wouldn't get on a private sale. For a $10,000 trade, $1,300. For boat-and-motor packages, the savings scale with the trade value. Enough that for most customers, the trade-in path nets more dollars in pocket than private sale once you account for the time and risk of a private listing. Run your own numbers with the [trade-in estimator](/trade-in-value) and the [quote builder](/quote/motor-selection), both live, both free, both stack directly into a repower deal.
 
 **Is my old 2-stroke worth anything?**
 Working 2-strokes have limited trade value because of emissions, fuel concerns, and the shrinking buyer pool. We still take them. A 90 HP 2-stroke from the early 2000s in running condition might trade for $800 to $1,500. Older or non-running 2-strokes often clear $200 to $500 for parts. Better than scrap, never close to a 4-stroke of the same HP.
