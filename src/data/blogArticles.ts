@@ -8173,36 +8173,36 @@ If you're thinking about a repower, the fastest way to find out what your trade 
 
     `,
     faqs: [
-      {,
-        question: 'How much does the HST savings actually work out to?',,
+      {
+        question: 'How much does the HST savings actually work out to?',
         answer: 'On a typical repower scenario at HBW, the HST savings on a trade-in adds 13% of the trade value back to your bottom line. For a $5,000 trade, that\'s $650 you wouldn\'t get on a private sale. For a $10,000 trade, $1,300. For boat-and-motor packages, the savings scale with the trade value. Enough that for most customers, the trade-in path nets more dollars in pocket than private sale once you account for the time and risk of a private listing.',
       },
-      {,
-        question: 'Is my old 2-stroke worth anything?',,
+      {
+        question: 'Is my old 2-stroke worth anything?',
         answer: 'Working 2-strokes have limited trade value because of emissions, fuel concerns, and the shrinking buyer pool. We still take them. A 90 HP 2-stroke from the early 2000s in running condition might trade for $800 to $1,500. Older or non-running 2-strokes often clear $200 to $500 for parts. Better than scrap, never close to a 4-stroke of the same HP.',
       },
-      {,
-        question: 'Do I need to service the motor before trade-in?',,
+      {
+        question: 'Do I need to service the motor before trade-in?',
         answer: 'No. Basic cleaning and documentation are worth the effort. Major service usually isn\'t, you won\'t recoup the full cost. Wipe down the cowl, change the lower unit oil if it\'s overdue, gather your records, and bring the motor in. We\'ll handle the rest.',
       },
-      {,
-        question: 'What if my motor has a known issue?',,
+      {
+        question: 'What if my motor has a known issue?',
         answer: 'Tell us up front. A disclosed issue gets factored into the offer at fair shop cost. A surprise issue kills the price, sometimes the deal. We\'d rather adjust the number once than chase the trust back after we found something you didn\'t mention.',
       },
-      {,
-        question: 'Can I trade in a motor that doesn\'t run?',,
+      {
+        question: 'Can I trade in a motor that doesn\'t run?',
         answer: 'Yes. Non-running motors typically trade at parts value, $200 to $1,500 depending on the HP class and the condition of the major components. If the powerhead is salvageable, the trade value goes up. If it\'s seized or has a cracked block, parts value is the ceiling. Either way, bringing it in beats putting it on Marketplace for six months at $500 with no calls.',
       },
-      {,
-        question: 'How does HST work if I\'m trading a boat-and-motor package?',,
+      {
+        question: 'How does HST work if I\'m trading a boat-and-motor package?',
         answer: 'Same principle. HST is calculated on the difference between the new package price and the trade allowance for your old boat-and-motor. The trade allowance can include both. Often the boat itself has more residual value than the motor. We\'ll itemize it on the quote so the math is visible.',
       },
-      {,
-        question: 'Can I trade a Honda or Yamaha toward a Mercury?',,
+      {
+        question: 'Can I trade a Honda or Yamaha toward a Mercury?',
         answer: 'Yes. Brand doesn\'t matter on the trade side, condition and HP class do. Honda and Yamaha 4-strokes trade well, slightly under Mercury due to the smaller resale dealer network but only by 5 to 10%. Bring it in for an inspection and we\'ll quote it. We have specific guides on Honda to Mercury, Yamaha to Mercury, and Evinrude to Mercury repowers if you want the full repower numbers.',
       },
-      {,
-        question: 'What happens to my old motor after the trade?',,
+      {
+        question: 'What happens to my old motor after the trade?',
         answer: 'Depends on the motor. Newer, low-hour, popular HP class usually goes to our reconditioning bench, gets a service, and lists on our used inventory. Higher-end motors sometimes go to our consignment line. Older or rougher motors go to the parts pool. We don\'t crush working motors. There\'s a market for almost everything.',
       }
     ]
