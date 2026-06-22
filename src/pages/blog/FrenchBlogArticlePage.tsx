@@ -345,7 +345,7 @@ export default function FrenchBlogArticlePage() {
         {article.image && (
           <BlogHeroPicture
             image={article.image}
-            alt={article.title}
+            alt={article.imageAlt ?? article.title}
             wrapperClassName="mb-8 rounded-xl overflow-hidden"
             className="w-full h-64 md:h-80 object-cover"
           />

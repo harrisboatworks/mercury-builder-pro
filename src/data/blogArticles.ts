@@ -11,6 +11,7 @@ export interface BlogArticle {
   description: string;
   content: string;
   image: string;
+  imageAlt?: string;
   author: string;
   datePublished: string;
   dateModified: string;
