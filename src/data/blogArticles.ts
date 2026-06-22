@@ -8182,7 +8182,7 @@ Two minutes from now you can have a real trade-in value for your motor.
     faqs: [
       {
         question: 'How much does the HST savings actually work out to?',
-        answer: 'On a typical repower scenario at HBW, the HST savings on a trade-in adds 13% of the trade value back to your bottom line. For a $5,000 trade, that\'s $650 you wouldn\'t get on a private sale. For a $10,000 trade, $1,300. For boat-and-motor packages, the savings scale with the trade value. Enough that for most customers, the trade-in path nets more dollars in pocket than private sale once you account for the time and risk of a private listing.',
+        answer: 'On a typical repower scenario at HBW, the HST savings on a trade-in adds 13% of the trade value back to your bottom line. For a $5,000 trade, that\'s $650 you wouldn\'t get on a private sale. For a $10,000 trade, $1,300. For boat-and-motor packages, the savings scale with the trade value. Enough that for most customers, the trade-in path nets more dollars in pocket than private sale once you account for the time and risk of a private listing. Run your own numbers with the trade-in estimator at /trade-in-value and the quote builder at /quote/motor-selection, both live, both free, both stack directly into a repower deal.',
       },
       {
         question: 'Is my old 2-stroke worth anything?',
