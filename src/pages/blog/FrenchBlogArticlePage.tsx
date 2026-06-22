@@ -14,6 +14,7 @@ import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { AuthorByline } from '@/components/blog/AuthorByline';
+import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
 import {
   Accordion,
   AccordionContent,
