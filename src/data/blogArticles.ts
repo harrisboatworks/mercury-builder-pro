@@ -8975,131 +8975,205 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 32: August 10, 2026
   {
     slug: 'ontario-boating-season-tips',
-    title: 'Making the Most of Ontario\'s Short Boating Season',
-    description: 'Maximize your time on Ontario waters. Tips for extending your season, shoulder-season boating, and getting the most from May to October.',
+    title: 'Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)',
+    description: 'How to run an Ontario boat season smart: spring commissioning, peak summer operations, fall layup, and the call-the-shop moments in between.',
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Hero.png',
     imageAlt: 'Couple cruising in a Mercury boat on an Ontario lake during fall to illustrate extending the boating season.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
     dateModified: '2026-04-22',
     publishDate: '2026-04-22',
-    category: 'Tips',
-    readTime: '7 min read',
-    keywords: ['ontario boating season', 'extend boat season', 'fall boating ontario', 'spring boating tips', 'shoulder season boat'],
+    category: 'Boating Lifestyle',
+    readTime: '~8 min read',
+    keywords: ['ontario boating season', 'boat seasonal maintenance ontario', 'spring boat commissioning', 'fall boat layup', 'ontario boating tips'],
     content: `
-*Last reviewed: 2026-05-07*
+# Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)
 
-> **Quick answer:** Ontario's hard boating season runs May to October, five months. The boaters who get the most out of it commission early, winterize on time, and keep the motor on a Mercury maintenance schedule. Don't waste opening weekend on a no-start. Schedule spring and fall service at mercuryrepower.ca.
+*Last reviewed: 2026-06-21*
 
-## Maximizing Ontario's Boating Season
+> **Quick answer:** Ontario boating season runs roughly mid-April (ice-out) through late October (winterization). The three phases that matter are spring commissioning (March-April), peak summer operations (May-September), and fall layup (October-November). Most expensive surprises happen in the gaps when boaters skip steps or push past the season. This post is the HBW seasonal hub, what to do, when to do it, and what to skip the DIY on.
 
-Ontario's boating season is precious - roughly May through October. Here's how to maximize every moment.
+Ontario's boating season is shorter than people realize. Strip out the ice, the spring cold front, the fall layup, and you're left with maybe 22 good weekends if the weather cooperates. Making them count means doing the prep work outside that window, when nobody else is thinking about boats.
 
-### Early Season (May-June)
+This post is the HBW seasonal hub. Three phases of the year, what HBW handles, what you can DIY, and what calls to make so you don't lose lake time to preventable problems.
 
-**Getting Out Early**:
-- Have boat ready before Victoria Day
-- Schedule commissioning in April
-- Check all safety gear before launch
+## Quick recommendation
 
-**Early Season Considerations**:
-- Cold water (dress appropriately)
-- Weather changes quickly
-- Fewer boats = less pressure
-- Great fishing opportunities
+If you want one rule that solves most seasonal headaches: book your spring commissioning and your fall winterization in the same conversation, in October. Lock both at the same time and you skip the spring crunch (everyone wants their boat ready for opener) and the fall rush (everyone wants their boat winterized before the freeze). Both at hbw.wiki/service.
 
-### Peak Season (July-August)
+## Spring (March to Early May): Commissioning
 
-**Making the Most of It**:
-- Weekday boating beats weekend crowds
-- Early morning = best water conditions
-- Maintain your motor to avoid downtime
-- Keep essential spares aboard
+Spring is the high-stakes phase. The first run of the year reveals every shortcut taken in fall, plus winter damage from condensation, rodents, and freeze events.
 
-**Mid-Season Maintenance**:
-- Check lower unit oil
-- Inspect propeller
-- Test all safety equipment
-- Top up fuel treatment
+**What HBW commissioning covers:**
 
-### Shoulder Season (September-October)
+- Pull the cover, inspect for winter damage
+- Battery test and reinstall (most batteries fail the first or third spring after install)
+- Fuel system inspection, fresh fuel, ethanol treatment
+- Lower unit oil change and seal inspection
+- Cooling system check, impeller inspection (replace at the 3-year mark or sooner)
+- Tilt-and-trim function and fluid
+- Spark plug inspection, replacement if due
+- Compression check on motors over 5 years old
+- Steering and throttle linkage inspection
+- Safety equipment check (Transport Canada compliance)
+- Water test if conditions allow
 
-![Fall boating on Ontario waters](/lovable-uploads/Ontario_Short_Boating_Season_Fall.png)
+We covered the full spring run-up in our [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist) and our more detailed [Mercury Outboard Spring Run-Up Checklist for Ontario](/blog/mercury-outboard-spring-run-up-checklist-ontario).
 
-**Extending Into Fall**:
-- Best fishing of the year
-- Beautiful conditions
-- Less boat traffic
-- Prepare for cold mornings
+**What can fail at first start (and what it costs):**
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+- **Dead battery.** $200-$400 replaced. Free if it just needs a charge.
+- **Stuck thermostat or weak impeller.** $40 in parts, but a missed impeller can cook a powerhead at $4,500+. The DIY version is one of the riskiest, the gearcase has to come off, and the failure mode is silent.
+- **Fuel water contamination.** Ethanol absorbs moisture over winter. Untreated fuel can clog injectors and corrode lines. Treatment is cheap, ignoring it isn't.
+- **Cracked block from incomplete winterization.** $2,000-$5,000 powerhead repair if you're lucky, motor replacement if you're not. The reason we don't recommend half-hearted DIY winterization.
 
-**Fall Preparation**:
-- Dress in layers
-- Ensure heater/warmth if equipped
-- Check navigation lights (shorter days)
-- Monitor weather closely
+**When to call HBW:** if the motor's older than 5 years and hasn't seen a shop spring commissioning, that first start of the season is the call to make. Same if you bought the boat used and don't know the prior owner's winterization quality.
 
-### Season Extension Tips
+## Summer (May to September): Peak Operations
 
-**Equipment Prep**:
-- Reliable motor is essential
-- Full tank before cold nights
-- Working bilge pump
-- Extra safety gear
+Once the motor's running, summer is mostly about running it right, not about heavy maintenance. The most common shop visits in peak season are preventable, but they happen anyway.
 
-**Personal Prep**:
-- Proper PFDs that you'll actually wear
-- Warm, waterproof layers
-- Communication (VHF, phone)
-- Let someone know your plans
+**The peak-season top 5 (what we see most):**
 
-### End of Season
+1. **Impeller failures, especially June and July.** Sand and weeds get pulled into intakes. We see the bulk of impeller jobs in summer for this reason. If you boat in shallow weedy water, inspect the intake screens before every launch.
+2. **Steering and trim issues from saltwater corrosion.** Not common on Rice Lake itself, but customers who haul to Lake Ontario for salmon or to the Trent-Severn brackish-influenced sections see it. Fresh-water flushing after every haul is the cheap fix.
+3. **Battery failures mid-season.** Heat plus deep discharge cycles kills batteries. Carry jumper cables and a portable jump pack.
+4. **Prop damage from groundings.** Rocks, sandbars, deadheads. Carry a spare prop if you fish unfamiliar water.
+5. **Alarm codes and Smart Craft warnings.** Most are advisory, some aren't. Our [Mercury alarm codes guide](/blog/mercury-outboard-overheat-alarm-decoder) covers the ones that matter.
 
-**Don't Rush Winterization**:
-- Enjoy late October if weather allows
-- Proper winterization protects investment
-- Schedule service early (before rush)
-- Store boat properly
+**Mid-summer service interval reminder:** Mercury's 100-hour service is the big mid-life check (oil and filter, lower unit oil, plugs if due, full inspection). For most recreational Ontario boaters, this lands around year 2-3. Catch it before season-end if you can, it's cheaper than a 100-hour-plus-winterization stacked job in October.
 
-### Off-Season Activities
+## Fall (October to Mid-November): Layup
 
-**Stay Engaged**:
-- Service motor in winter
-- Plan next year's upgrades
-- Attend boat shows
-- Prepare tackle and gear
+Fall is where the season ends well or starts the next one badly. Skip winterization and you're betting on a mild winter, condensation cooperation, and your hose-out skills. We see the math on this every spring.
 
-**[Schedule Seasonal Service](/quote)**
+**What HBW winterization covers:**
 
-**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
+- Fuel stabilizer and fogging oil
+- Lower unit oil drain and refill (water in the oil means the seal is gone, the fall check is when we catch it)
+- Cooling system flush and drain
+- Block drain on inboard or sterndrive applications
+- Battery prep (off the boat, on a tender)
+- Cover or shrinkwrap (we offer outdoor shrinkwrap, indoor heated isn't our setup)
+- Note any spring service that should be queued
 
-## Related guides
+Full cost breakdown for Ontario: [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026). DIY guide if you're handling it yourself: [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide).
 
-- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide), the full Mercury service schedule
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
-- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips), off-season storage tips
+**The cracked-block math:** Skipping winterization and running into a hard freeze can crack the cylinder block or the lower unit. We see one or two of these every spring. Average repair runs $2,000-$5,000+, sometimes the motor doesn't come back at all. A $250-$400 full winterization is the cheapest insurance you'll buy all year.
 
+**Late-season safety considerations.** Once water temps drop below 15°C, your survival window in the water shortens dramatically. Late October and early November runs need cold-water gear, a float plan, and someone who knows where you went. Detailed guide: [Late-Season Boating Safety](/blog/late-season-boating-safety).
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+## Year-Round: Transport Canada and Ontario Regulations
+
+A few things don't follow the seasons.
+
+**Pleasure Craft Licence (PCL).** Transport Canada updated the PCL rules in 2026, moving from lifetime to 5-year renewals. If you've owned the boat for a while, your old PCL may need renewal. Full details: [Pleasure Craft Licence Update for Repower Ontario](/blog/pleasure-craft-licence-update-repower-ontario).
+
+**Capacity plate compliance.** Ontario follows Transport Canada's federal capacity-plate rules. Overpowering (motor HP exceeding the plate maximum) creates capacity plate, insurance, liability, and potential warranty problems.
+
+**Boating safety education.** Ontario requires the Pleasure Craft Operator Card (PCOC) for anyone operating a powered boat. The card doesn't expire. If you're new to boating or buying for a kid, get the PCOC online before the boat arrives.
+
+**Fishing regulations (if you fish from the boat).** Ontario fishing regulations vary by Fisheries Management Zone (FMZ). Rice Lake is FMZ 17. Walleye slots, bass season dates, and licence requirements change. Source: [Ontario.ca fishing regulations](https://www.ontario.ca/page/fishing-regulations-summary). HBW does not sell fishing licences, get them at ontario.ca.
+
+## Common Seasonal Mistakes
+
+- **Skipping winterization to save $300.** The cracked-block math always wins this argument. Winterize.
+- **DIY impeller jobs without the right tools.** The gearcase has to come off, the housing has to be inspected, the wear plate matters. Most DIY impellers we see come back as full lower-unit rebuilds. $40 part, $4,500 risk.
+- **Storing the battery on the boat over winter.** Cold kills batteries faster than discharge. Off the boat, on a tender, in a heated space.
+- **Running on last year's fuel after a long winter.** Ethanol absorbs moisture. Drain, treat, or replace.
+- **Pushing the season too far in November.** Cold-water survival is short. A motor stall on a 45-degree morning is a different problem than a stall on a July afternoon.
+- **Booking spring commissioning in March.** Booking in March means you're competing with every other procrastinator for an April-mid slot. Book in October when you book winterization.
+
+## How to Time Your Service Calls
+
+The cleanest seasonal flow we see at HBW:
+
+- **October:** Book winterization AND next spring's commissioning together. Lock both slots.
+- **November-December:** Boat goes into winter storage with full winterization done.
+- **March-April:** Boat comes out for commissioning. First water test before opener.
+- **May-September:** Use the boat. Plan one mid-season check if you're hard on it.
+- **October:** Back to step 1.
+
+If you do this loop, you skip the spring crunch entirely and your boat is ready when you want it.
+
+## Frequently Asked Questions
+
+**When does Ontario boating season actually start?**
+Practically speaking, ice-out in the Kawarthas is mid-to-late April, depending on the year. Lake Ontario opens earlier. Opener for most species is the first weekend of May (walleye, bass varies by zone). Cold-water gear and short trips through mid-May, then full season through early October.
+
+**When should I book spring commissioning?**
+The previous October, ideally. We book spring slots from October onward and the early bookers get the prime mid-April through early May slots. Booking in March means you're taking what's left.
+
+**Do I really need winterization every year?**
+Yes. Even a mild winter has enough freeze events to crack a block if water sits in the cooling passages. The $250-$400 you spend on winterization is the cheapest insurance against the $2,000-$5,000 powerhead repair the next spring. We see the cracked blocks every year.
+
+**Is fall service cheaper than spring service?**
+Slightly, on labour rates. The bigger advantage of fall service is that any problems get caught with time to source parts and book the repair before next opener. Spring service that uncovers a problem in mid-April means you're missing opener while we wait for parts.
+
+**Can I do my own winterization?**
+Most steps yes, the critical ones we'd want eyes on. Fuel stabilizer, fogging, and battery prep are DIY-friendly. The cooling system flush and lower unit oil change are the failure-mode-expensive steps if done wrong. If you're new to the motor or you're not sure what you're seeing in the lower unit oil, that's the call to make.
+
+**What's HBW's spring backlog like?**
+By March, our April calendar is mostly booked from prior-October commitments. We can usually fit walk-ins, but the wait runs 2-4 weeks at the spring peak. Booking in fall avoids the queue entirely.
+
+**Are there parts of the Ontario boating season that get worse if I extend?**
+Yes, two: late spring (mid-April through early May) before the water warms up, and late fall (after mid-October) when water temps drop below 15°C. Both are higher-risk windows for cold-water exposure if anything goes wrong. Float plan, dressed for the water not the air, and don't go alone.
+
+**How does HBW handle seasonal trade-in timing for repowers?**
+Fall is the busiest trade-in window because customers swap before winter storage. Trade values are slightly stronger in spring, but the install timing is worse. Most customers trade when the new motor is being installed. Numbers don't move much either way, build the [trade estimate](/trade-in-value) for your specific motor.
+
+## Ready for the Next Season?
+
+The work that makes the season feel easy happens between seasons. Booked once, planned out, locked in.
+
+**Book service (commissioning, winterization, mid-season):** [hbw.wiki/service](https://hbw.wiki/service)
+**Repower quote builder:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
+**Trade-in estimate:** [mercuryrepower.ca/trade-in-value](/trade-in-value)
+**Call us:** 905-342-2153
+
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+**Related guides:**
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
+- [Mercury Outboard Spring Run-Up Checklist for Ontario](/blog/mercury-outboard-spring-run-up-checklist-ontario)
+- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026)
+- [Late-Season Boating Safety](/blog/late-season-boating-safety)
+- [Pleasure Craft Licence Update for Repower Ontario](/blog/pleasure-craft-licence-update-repower-ontario)
     `,
     faqs: [
       {
-        question: 'When can I safely put my boat in for spring?',
-        answer: 'Ice-out varies by year and lake. Generally late April for southern Ontario, mid-May for northern areas. Water temperatures are cold until late May, so dress accordingly.'
+        question: 'When does Ontario boating season actually start?',
+        answer: 'Practically speaking, ice-out in the Kawarthas is mid-to-late April, depending on the year. Lake Ontario opens earlier. Opener for most species is the first weekend of May (walleye, bass varies by zone). Cold-water gear and short trips through mid-May, then full season through early October.'
       },
       {
-        question: 'Is fall boating worth the cold?',
-        answer: 'Absolutely. Fall offers spectacular scenery, excellent fishing, minimal boat traffic, and calm conditions. Dress properly and it\'s some of the best boating of the year.'
+        question: 'When should I book spring commissioning?',
+        answer: 'The previous October, ideally. We book spring slots from October onward and the early bookers get the prime mid-April through early May slots. Booking in March means you\'re taking what\'s left.'
       },
       {
-        question: 'What temperature is too cold for boating?',
-        answer: 'There\'s no magic number - it depends on conditions, boat type, and preparation. Key is having warm clothing, safety gear, and a reliable motor. Be conservative in marginal conditions.'
+        question: 'Do I really need winterization every year?',
+        answer: 'Yes. Even a mild winter has enough freeze events to crack a block if water sits in the cooling passages. The $250-$400 you spend on winterization is the cheapest insurance against the $2,000-$5,000 powerhead repair the next spring. We see the cracked blocks every year.'
       },
       {
-        question: 'Should I run my motor during off-season?',
-        answer: 'If properly winterized, no. Running requires flushing capability and proper warmth. It\'s usually better to winterize correctly and leave it until spring.'
+        question: 'Is fall service cheaper than spring service?',
+        answer: 'Slightly, on labour rates. The bigger advantage of fall service is that any problems get caught with time to source parts and book the repair before next opener. Spring service that uncovers a problem in mid-April means you\'re missing opener while we wait for parts.'
+      },
+      {
+        question: 'Can I do my own winterization?',
+        answer: 'Most steps yes, the critical ones we\'d want eyes on. Fuel stabilizer, fogging, and battery prep are DIY-friendly. The cooling system flush and lower unit oil change are the failure-mode-expensive steps if done wrong. If you\'re new to the motor or you\'re not sure what you\'re seeing in the lower unit oil, that\'s the call to make.'
+      },
+      {
+        question: 'What\'s HBW\'s spring backlog like?',
+        answer: 'By March, our April calendar is mostly booked from prior-October commitments. We can usually fit walk-ins, but the wait runs 2-4 weeks at the spring peak. Booking in fall avoids the queue entirely.'
+      },
+      {
+        question: 'Are there parts of the Ontario boating season that get worse if I extend?',
+        answer: 'Yes, two: late spring (mid-April through early May) before the water warms up, and late fall (after mid-October) when water temps drop below 15°C. Both are higher-risk windows for cold-water exposure if anything goes wrong. Float plan, dressed for the water not the air, and don\'t go alone.'
+      },
+      {
+        question: 'How does HBW handle seasonal trade-in timing for repowers?',
+        answer: 'Fall is the busiest trade-in window because customers swap before winter storage. Trade values are slightly stronger in spring, but the install timing is worse. Most customers trade when the new motor is being installed. Numbers don\'t move much either way, build the trade estimate for your specific motor.'
       }
     ]
   },
