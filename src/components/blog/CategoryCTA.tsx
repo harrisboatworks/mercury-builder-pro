@@ -16,10 +16,8 @@ export function getCTAVariant(category: string | undefined): CategoryCTAVariant 
 }
 
 const SUPPRESS_MARKERS: RegExp[] = [
-  /\/quote\/motor-selection/i,
-  /\/trade-in-value/i,
-  /hbw\.wiki\/service/i,
   /^##\s+Ready to\s+/im,
+  /^##\s+Ready for\s+/im,
   /^##\s+When to Call/im,
   /^##\s+When to Use the Estimator/im,
 ];
