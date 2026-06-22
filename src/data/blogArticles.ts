@@ -12763,6 +12763,8 @@ Two related guides in the same cluster:
 
 ---
 
+*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
+
 ## FAQs
 
 **Is the Mercury 150 worth the extra money over the 115?** 
