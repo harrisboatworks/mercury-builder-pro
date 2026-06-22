@@ -1255,7 +1255,7 @@ Vous avez décidé de remotoriser. Peut-être que votre vieux moteur est à bout
 
 C'est la version du parcours que nous donnerions à un plaisancier de Toronto, Mississauga, Markham ou Hamilton qui appelle pour une remotorisation. **Nous ne sommes pas situés dans la GTA. Nous sommes à Gores Landing, en Ontario, sur le lac Rice, à environ 90 minutes à l'est du centre-ville de Toronto.** Les plaisanciers de la GTA viennent nous voir régulièrement parce que nous sommes un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Platinum avec des prix d'installation transparents. La logistique est rodée; voici comment ça se passe.
 
-![Carte du sud de l'Ontario montrant Harris Boat Works à Gores Landing sur le lac Rice avec un rayon de conduite de 90 minutes couvrant l'est de Toronto, les Kawarthas, Cobourg, Bowmanville, Peterborough et Belleville.](/lovable-uploads/diagram-hbw-service-area-map.png)
+![Map showing Harris Boat Works in Gores Landing and the 1-2 hour drive radius for GTA boaters seeking Mercury repowers.](/lovable-uploads/diagram-hbw-service-area-map.png)
 
 *D'où viennent nos clients. Le rayon de conduite de 90 minutes couvre la plus grande partie de l'est de la GTA, les Kawarthas, Northumberland, Durham et la baie de Quinte.*
 

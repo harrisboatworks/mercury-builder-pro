@@ -260,7 +260,7 @@ This post shows the curve, explains why midsummer is the killer on Rice Lake spe
 
 ## What the Numbers Say
 
-![Bar chart of Harris Boat Works impeller and water pump jobs by month, 2014 to 2026: April 84, May 123, June 144, July 143, August 117, September 73, October 36, November 45, with June and July highlighted as the peak](/lovable-uploads/impeller-failures-by-month-hbw.png)
+![Bar chart showing peak Mercury impeller failures on Rice Lake occur in June and July, based on 766 shop service records.](/lovable-uploads/impeller-failures-by-month-hbw.png)
 
 | Month | Impeller / water pump jobs (2014-2026) |
 |---|---|
@@ -2164,7 +2164,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 ---
 
-![Two aluminum boats with different Mercury horsepower at dealership](/lovable-uploads/inline/inline-horsepower-selection.png)
+![Mercury 25 HP and 90 HP outboards on aluminum boats to illustrate different horsepower needs for boat sizing.](/lovable-uploads/inline/inline-horsepower-selection.png)
 
 ## When to step up, when to stay
 
@@ -3035,7 +3035,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. (If this is your first hour on a brand-new motor after a [Mercury repower in Ontario](/repower), the same break-in applies, the warranty clock and 20-hour service date start at first water test.) The hour-by-hour breakdown is below.
 
-![Timeline of the Mercury 10-hour break-in: hour 1 no-wake then moderate cruise with varied throttle, hours 1-2 wider RPM range with no sustained wide-open throttle, hours 2-10 full RPM range with short WOT bursts, after 10 hours normal operation, then the 20-hour first service oil and filter change.](/lovable-uploads/mercury-break-in-timeline-hbw.png)
+![Infographic timeline for Mercury outboard break-in: RPM guidelines from hour 1 through the 20-hour service interval.](/lovable-uploads/mercury-break-in-timeline-hbw.png)
 *The whole procedure on one card. Details below.*
 
 | Time | RPM / behavior | Do | Avoid |
@@ -3133,7 +3133,7 @@ When a customer takes delivery of a new Mercury from us:
 
 ---
 
-![New Mercury FourStroke at break-in trolling speed on calm Rice Lake morning](/lovable-uploads/inline/inline-mercury-break-in.png)
+![Black Mercury FourStroke outboard on an aluminum boat during the 10-hour engine break-in period on calm Ontario water.](/lovable-uploads/inline/inline-mercury-break-in.png)
 
 ## What about used motors?
 
@@ -3329,7 +3329,7 @@ Noise is the other problem. A big four-stroke at idle is still a big four-stroke
 
 The ProKicker solves both problems at once. The main motor tilts up out of the water. You run on the kicker: quiet, slow, dialled in. You cover your pattern and you catch fish.
 
-![Mercury 90 main and 9.9 ProKicker mounted on a trolling rig at dawn](/lovable-uploads/inline/inline-prokicker-trolling-setup.png)
+![Mercury main outboard and 9.9 ProKicker on an aluminum boat transom, ideal for trolling Rice Lake walleye.](/lovable-uploads/inline/inline-prokicker-trolling-setup.png)
 
 It also happens to be your backup motor when the main decides not to cooperate at the far end of the lake. On a 32 km lake with the afternoon west wind building, a second motor that can get you home is worth thinking about. For more on how that wind shapes a day on this water, see our [Rice Lake fishing guide](/blog/best-mercury-outboard-rice-lake-fishing).
 
@@ -5769,7 +5769,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 ---
 
 
-![Tournament-rigged bass boat with Mercury Pro XS and 9.9 ProKicker on a calm Ontario dawn](/lovable-uploads/inline/inline-bass-tournament.png)
+![Tournament bass boat with Mercury Pro XS and 9.9 ProKicker on a calm Ontario lake at dawn.](/lovable-uploads/inline/inline-bass-tournament.png)
 
 ## Warranty
 
@@ -6000,7 +6000,7 @@ If your fuel burn is significantly above these ranges for your setup, prop pitch
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 
-![Mercury SmartCraft fuel-flow gauge showing live GPH reading at cruising RPM](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
+![Mercury SmartCraft gauge showing 6.5 GPH fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
 
 ## Ethanol and Fuel Quality
 
@@ -6962,7 +6962,7 @@ We test pitch on the water during the sea trial of every repower. A wrong-pitch 
 
 ---
 
-![Mercury propeller selection wheel showing acceleration, top speed, load, RPM range, blade count, pitch, and diameter tradeoffs](/lovable-uploads/mercury-propeller-selection-tradeoff-wheel.png)
+![Infographic showing how propeller pitch, diameter, and blade count affect Mercury outboard performance and boat handling.](/lovable-uploads/mercury-propeller-selection-tradeoff-wheel.png)
 
 ## Blade count
 
@@ -7244,7 +7244,7 @@ whenInDoubt: Most Ontario recreational buyers do not need SeaPro. If you are not
 
 ---
 
-![Mercury SeaPro commercial outboard on rugged working fishing boat](/lovable-uploads/inline/inline-mercury-seapro-commercial.png)
+![Black Mercury SeaPro outboard on a rugged aluminum work boat, illustrating commercial-grade reliability for guides.](/lovable-uploads/inline/inline-mercury-seapro-commercial.png)
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -8229,7 +8229,7 @@ Many musky anglers add a kicker motor:
 - Mercury 15HP
 - Mercury 20HP
 
-![Musky fishing guide for the Kawarthas](/lovable-uploads/Musky_Boat_Motor_Kawarthas_Guide.png)
+![Anglers holding a musky in a boat with a Mercury 150 Pro XS outboard, illustrating motor setups for Kawartha fishing.](/lovable-uploads/Musky_Boat_Motor_Kawarthas_Guide.png)
 
 ### Trolling Motor Integration
 
@@ -8369,7 +8369,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ### Electric Motor Advantages
 
-![Cottage fishing on Ontario's small lakes](/lovable-uploads/Ontario_Small_Lakes_Cottage_Fishing.png)
+![Person fishing from an aluminum boat with a Mercury 9.9 FourStroke outboard at a cottage dock on an Ontario lake.](/lovable-uploads/Ontario_Small_Lakes_Cottage_Fishing.png)
 
 For cottage use, electric is gaining popularity:
 - Silent operation
@@ -8534,7 +8534,7 @@ escalationBody: We run a pre-opener service every spring, typically $200 to $350
 
 ---
 
-![Walleye-opener dawn boat prep on Rice Lake dock](/lovable-uploads/inline/inline-walleye-opener-dawn.png)
+![Aluminum fishing boat with Mercury outboard docked on a misty lake, ready for the Ontario walleye opener.](/lovable-uploads/inline/inline-walleye-opener-dawn.png)
 
 ## What HBW Does for Opener Prep Customers
 
@@ -9893,7 +9893,7 @@ Harris Boat Works is a family-owned marina on Rice Lake, established in 1947, an
 
 The current Pro XS lineup in this range spans three architectures: 150 HP inline-4, 175-250 HP V6, and 300 HP V8.
 
-![Mercury Pro XS architecture chart comparing 150 inline-4, 175-250 V6, and 300 V8 outboards](/lovable-uploads/mercury-pro-xs-150-300-architecture-chart.png)
+![Graphic showing Mercury Pro XS 150 Inline-4, 175-250 V6, and 300 V8 outboards to help choose the right engine for your boat.](/lovable-uploads/mercury-pro-xs-150-300-architecture-chart.png)
 
 ## The Quick Comparison Table
 
@@ -11641,7 +11641,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 # [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) Update During a Repower: What Ontario Boaters Need to Know in 2026
 
-![Ontario PCL 2026 update changes after repower (HBW diagram)](/lovable-uploads/diagram-pcl-2026-changes.png)
+![Infographic comparing pre-2026 lifetime PCL rules with new 5-year renewal and fee requirements for Ontario boaters.](/lovable-uploads/diagram-pcl-2026-changes.png)
 
 ## Quick answer
 When you change motors on a licensed pleasure craft in Canada, you must update your Pleasure Craft Licence (PCL) with Transport Canada within 30 days. Updates are free. New licences, renewals, and transfers now carry a $24 fee as of December 31, 2025. Your PCL is now valid for five years, not for life. At HBW, we provide the motor specs you need on your repower invoice so you can complete the update yourself.
@@ -11907,7 +11907,7 @@ Every HBW conversion includes:
 - The Pleasure Craft Licence update, so your licence information stays current with Transport Canada after the motor change, handled for every HBW customer at no extra charge
 - A fresh 3-year Mercury limited warranty on the new motor
 
-![Old Evinrude removed beside new Mercury FourStroke ready for install](/lovable-uploads/inline/inline-evinrude-to-mercury-swap.png)
+![Removed Evinrude E-TEC beside an Alumacraft boat with a new Mercury FourStroke outboard during a repower project.](/lovable-uploads/inline/inline-evinrude-to-mercury-swap.png)
 
 The boat does not leave until it passes the sea-trial. That is how a marina that has been on Rice Lake since 1947 protects its name.
 
@@ -13106,7 +13106,7 @@ When you see a "$549 winterization" posted on a marina website, that number was 
 
 We quote winterization based on what is in front of us.
 
-![Ontario boat winterization cost drivers graphic showing engine type, number of engines, shrinkwrap, storage, battery, and spring prep](/lovable-uploads/boat-winterization-cost-drivers-ontario.png)
+![Technician winterizing a Mercury outboard on an aluminum boat, illustrating key cost factors for Ontario boat storage.](/lovable-uploads/boat-winterization-cost-drivers-ontario.png)
 
 ## What changes your winterization cost
 
@@ -14202,7 +14202,7 @@ Used pontoons in the 18 to 22 ft range at a price that leaves repower room are c
 
 **Trade-off:** A used pontoon at this price will likely have an older motor. That is not a problem if you have accounted for a repower, but it is a problem if you assumed the motor was included in the deal.
 
-![Affordable 16-foot aluminum fishing boat with Mercury 40 anchored on Rice Lake](/lovable-uploads/inline/inline-affordable-rice-lake-boat.png)
+![16-foot aluminum boat with Mercury 40 outboard on Rice Lake, representing an affordable repower option under $30,000.](/lovable-uploads/inline/inline-affordable-rice-lake-boat.png)
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -14596,7 +14596,7 @@ If the motor has 200+ hours and you've ruled out the easy stuff, a compression c
 
 We pulled our own numbers on this. Since 2013 we have logged 537 no-start and rough-running jobs in our service records. About half traced back to fuel: stale gas, water in the tank, clogged filters. A bit under half were electrical: weak batteries, corroded grounds, tired connections. Roughly a quarter involved spark plugs, and 14 of the 537 were nothing but the kill switch. The buckets overlap (old gas and a fouled plug often arrive together), but the lesson holds: the cheap stuff fails first, which is exactly why the ladder above starts there.
 
-![Bar chart: causes of 537 Mercury no-start and rough-running jobs at Harris Boat Works since 2013. Fuel 47 percent, electrical 43 percent, spark plugs 28 percent, kill switch 3 percent. Categories overlap.](/lovable-uploads/wont-start-causes-hbw.png)
+![Bar chart showing Harris Boat Works service data for common Mercury outboard no-start causes in Ontario.](/lovable-uploads/wont-start-causes-hbw.png)
 *Causes across 537 no-start and rough-running jobs in our service records, 2013-2026. Categories overlap; one motor can have old gas and a fouled plug.*
 
 HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
@@ -15265,7 +15265,7 @@ In a few years, we'll likely see more specific upgrades, perhaps a tow mode that
 
 If you're buying a Mercury today with a 5, 10-year ownership window in mind, the platform you're buying into matters. That's a better reason to care about Boost than the current performance increment.
 
-![Mercury 150 Pro XS Boost outboard on tritoon pontoon transom](/lovable-uploads/inline/inline-boost-150hp-pontoon.png)
+![Mercury Pro XS outboard with Boost decal on a pontoon boat transom, illustrating the software upgrade performance.](/lovable-uploads/inline/inline-boost-150hp-pontoon.png)
 
 ### What We Check Before Recommending Boost
 
@@ -16426,7 +16426,7 @@ Run the motor on the water before you pay. We have seen motors that fired fine i
 
 A seller who refuses an on-water test is telling you something. Listen.
 
-![Compression test gauge connected to a Mercury outboard powerhead during pre-purchase inspection](/lovable-uploads/inline/inline-compression-test.png)
+![Compression gauge on a Mercury outboard powerhead during a pre-purchase inspection for a used motor.](/lovable-uploads/inline/inline-compression-test.png)
 
 ---
 
@@ -17090,7 +17090,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: "Lifestyle",
     readTime: "11 min read",
     keywords: ["Rice Lake boating guide", "Rice Lake fishing 2026", "Rice Lake boat launch", "Rice Lake sunken railway", "FMZ 17 fishing regulations", "Rice Lake walleye opener"],
-    content: `![Rice Lake practical boating map - Gores Landing perspective with fishing zones, hazards, and key towns](/lovable-uploads/rice-lake-practical-boating-map.png)
+    content: `![Map of Rice Lake showing boat launches, fishing zones, and hazard areas for the 2026 boating guide.](/lovable-uploads/rice-lake-practical-boating-map.png)
 
 ## Quick Answer
 
@@ -17784,7 +17784,7 @@ If you want a quick check, send us your serial number through mercuryrepower.ca 
 
 The Mercury Model Number is the spec code, and unlike the serial, this one IS decodable. Newer Mercury motors carry a full SKU string like \`1F60413GZ\`. Older motors use a shorter human-readable code like \`90ELPT\` or \`25EXLHGA\`.
 
-![Diagram decoding the Mercury outboard model number 1F60413GZ: country of origin (1 USA), family and HP (F60 FourStroke 60 HP), configuration code (413 remote electric power-trim), shaft variant (G), year code (Z 2023).](/lovable-uploads/diagram-mercury-model-number-decoder.png)
+![Infographic explaining how to decode a Mercury outboard model number, including country, horsepower, and year codes.](/lovable-uploads/diagram-mercury-model-number-decoder.png)
 
 *The model number encodes product spec. Use it together with the serial number when ordering parts, planning a repower, or registering warranty.*
 
@@ -18019,7 +18019,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-![Mercury maintenance interval timeline: 20/100/300 hours (HBW diagram)](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
+![Infographic showing Mercury outboard maintenance intervals at 20, 100, and 300 hours for Ontario boaters.](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
 
 ## Quick Answer
 
@@ -18132,7 +18132,7 @@ In addition to all 100-hour items:
 
 Exact scope of the 300-hour service varies by motor model and family. Your dealer will follow the Mercury factory-published service manual for your specific motor.
 
-![Mercury 20/100/300 service interval timeline: break-in, routine, and major service items](/lovable-uploads/mercury-20-100-300-service-interval-timeline.png)
+![Infographic chart showing Mercury 20-hour break-in, 100-hour routine, and 300-hour major outboard service requirements.](/lovable-uploads/mercury-20-100-300-service-interval-timeline.png)
 
 *Mercury's three service milestones at a glance. The 20-hour break-in service is one-time and covers oil and filter change on FourStrokes, gear lube drain and refill, inspecting and retorquing fasteners, inspecting the fuel system, inspecting the cooling system and tell-tale, and checking and adjusting the throttle and shift linkage. The 100-hour or annual routine service (whichever comes first) adds spark plug inspection or replacement, fuel filter replacement, water pump impeller inspection, thermostat test, drive belt inspection on applicable models, lubricating all grease points, inspecting the propeller and shaft, checking the battery and charging system, and inspecting all hoses and connections. The 300-hour major service adds water pump impeller replacement, thermostat replacement, drive belt replacement on applicable models, timing belt inspection or replacement on applicable models, a full cooling system inspection, fuel system inspection and cleaning, and anode inspection. Exact 300-hour scope varies by motor.*
 
@@ -19913,7 +19913,7 @@ You've decided to repower. Maybe your old motor is on its last legs; maybe a fue
 
 This is the version of that walkthrough we'd give a Toronto, Mississauga, Markham, or Hamilton boater calling about a repower. **We are not located in the GTA. We're in Gores Landing, Ontario, on Rice Lake, about 90 minutes east of central Toronto.** GTA boaters drive to us regularly because we're a Mercury Platinum dealer with transparent install pricing. The logistics are well-worn; here's how it goes.
 
-![Map of southern Ontario showing Harris Boat Works in Gores Landing on Rice Lake with a 90-minute drive radius covering Toronto's east end, the Kawarthas, Cobourg, Bowmanville, Peterborough, and Belleville.](/lovable-uploads/diagram-hbw-service-area-map.png)
+![Map showing Harris Boat Works in Gores Landing and the 1-2 hour drive radius for GTA boaters seeking Mercury repowers.](/lovable-uploads/diagram-hbw-service-area-map.png)
 
 *Where our customers come from. The 90-minute drive radius covers most of the GTA east end, the Kawarthas, Northumberland, Durham, and Bay of Quinte.*
 
@@ -22779,7 +22779,7 @@ There are thousands of pontoons on Ontario lakes right now that are criminally u
 
 This post is the answer to the question every pontoon buyer eventually asks: *What HP do I actually need?* Not the minimum the boat can run. Not what the previous owner had. The HP that makes your boat do what you bought it to do.
 
-![Decision tree showing Mercury HP recommendations by pontoon size: under 18 ft pontoons take a Mercury 60 HP standard or 60 CT, 18-20 ft family pontoons take a 60 CT minimum or 90 standard, 20-22 ft pontoons need a 90 CT minimum, and 22+ ft tritoons towing tubes or skiers need a 115 CT or 150 HP.](/lovable-uploads/diagram-pontoon-hp-decision-tree.png)
+![Flowchart showing Mercury outboard horsepower recommendations for Ontario pontoon boats based on length and passenger load.](/lovable-uploads/diagram-pontoon-hp-decision-tree.png)
 *The HBW pontoon HP sizing decision tree. Walk down the branch that matches your pontoon length and load profile. When in doubt between two adjacent recommendations, size up - pontoons reward headroom.*
 
 ---
@@ -23876,7 +23876,7 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 ---
 
 
-![Mercury DTS digital throttle and shift control on boat console](/lovable-uploads/inline/inline-dts-throttle-control.png)
+![Hand operating a Mercury DTS binnacle control on a boat console for the 2026 Mercury repower rigging guide.](/lovable-uploads/inline/inline-dts-throttle-control.png)
 
 ## Wiring and Battery Setup
 
@@ -24897,7 +24897,7 @@ For current rates, contact us. Pricing depends on your specific boat, motor, and
 
 ---
 
-![Rice Lake boat storage timeline - Sept to May at Harris Boat Works](/lovable-uploads/rice-lake-storage-timeline.png)
+![Infographic timeline of Harris Boat Works seasonal operations, from spring launch to winter shrinkwrap storage.](/lovable-uploads/rice-lake-storage-timeline.png)
 
 ## When to Book Winter Storage
 
@@ -25552,7 +25552,7 @@ Rule of thumb: aluminum fishing boats default to standard. Pontoons default to C
 ---
 
 
-![Mercury 90 HP FourStroke mounted on the transom of an aluminum fishing boat](/lovable-uploads/inline/inline-mercury-90.png)
+![Black Mercury FourStroke outboard on an aluminum fishing boat at sunset, ideal for Ontario lake cruising.](/lovable-uploads/inline/inline-mercury-90.png)
 
 ## How the 90 Compares to the 75 and the 115
 
@@ -25751,7 +25751,7 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 ---
 
 
-![Mercury 115 HP FourStroke mounted on a fiberglass runabout at golden hour](/lovable-uploads/inline/inline-mercury-115.png)
+![Black Mercury 115 HP FourStroke outboard on an aluminum fishing boat, highlighting the lightweight design for Ontario.](/lovable-uploads/inline/inline-mercury-115.png)
 
 ## Where the 115 HP FourStroke Is the Wrong Call
 
@@ -27259,7 +27259,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-![Mercury overheating troubleshooting flowchart (HBW diagram)](/lovable-uploads/diagram-overheating-troubleshooting.png)
+![Diagnostic flowchart for Mercury outboard overheating, guiding owners through tell-tale and RPM checks to prevent damage.](/lovable-uploads/diagram-overheating-troubleshooting.png)
 
 ## Quick Answer
 
@@ -27269,7 +27269,7 @@ For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/se
 
 ---
 
-![Mercury outboard overheating decision tree showing telltale stream, intake blockage, alarm severity, and when to shut down](/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree.png)
+![Diagnostic flowchart for Mercury outboard overheating alarms, showing steps for checking telltale stream and intake debris.](/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree.png)
 
 ## Mercury Outboard Overheating at Idle: What's Actually Causing It (Ontario)
 
@@ -27351,7 +27351,7 @@ Sensor diagnosis requires dealer tools to read temperature sensor values against
 
 ---
 
-![Mercury outboard cooling system diagnostic with temperature sensor and service manual visible](/lovable-uploads/inline/inline-overheating-diagnostic.png)
+![Mercury outboard engine on a workbench with a service manual and infrared thermometer for overheating diagnostics.](/lovable-uploads/inline/inline-overheating-diagnostic.png)
 
 ## Ontario Context: Why Idle Overheating Shows Up More in Summer
 
@@ -28334,7 +28334,7 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 ---
 
-![Mercury outboard warning beep action card explaining continuous beep, intermittent beeps, SmartCraft display, and manual confirmation](/lovable-uploads/mercury-outboard-beep-codes-action-card.png)
+![Laminated reference card for Mercury outboard alarm codes, showing meanings for continuous and intermittent beeps.](/lovable-uploads/mercury-outboard-beep-codes-action-card.png)
 
 ## Common Beep Patterns and What They Indicate
 
@@ -29737,7 +29737,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-![Kawartha boat storage decision map - indoor vs outdoor vs shrinkwrap vs tarp flowchart](/lovable-uploads/kawartha-boat-storage-decision-map.png)
+![Flowchart showing boat storage options at Harris Boat Works, comparing shrinkwrap, home storage, and in-water wintering.](/lovable-uploads/kawartha-boat-storage-decision-map.png)
 
 ## What good boat storage actually includes
 
@@ -30279,7 +30279,7 @@ Honest framing matters. We sell both because they're both right for different pe
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 
-![Mercury Pro XS at full throttle on a bass boat across Rice Lake at sunrise](/lovable-uploads/inline/inline-pro-xs-action.png)
+![Mercury Pro XS V6 outboard on a bass boat cruising through misty Ontario lake waters at sunrise.](/lovable-uploads/inline/inline-pro-xs-action.png)
 
 ## Hole-shot, top-end, and where they matter
 
@@ -30763,7 +30763,7 @@ For a lot of Ontario boaters, neither hull is "wrong." The decision comes down t
 - **Cottage entertaining with mixed-age groups**: pontoon usually wins.
 - **"I want a boat that does everything"**: a 19-22 foot tritoon with the right motor package gets you close on the calm-water side; a 19-foot deep-V runabout gets you close on the rough-water side. Neither does both.
 
-![Aluminum V-hull cutting through 1 to 2 foot chop on a windy Lake Simcoe afternoon](/lovable-uploads/inline/inline-v-hull-action-chop.png)
+![Aluminum V-hull with Mercury outboard cutting through Lake Simcoe chop, demonstrating rough water handling.](/lovable-uploads/inline/inline-v-hull-action-chop.png)
 
 ## How Rice Lake and the Kawarthas fit in
 
@@ -30918,7 +30918,7 @@ The marketplace is honest about this: a 10-year-old fiberglass bowrider in clean
 
 Whether that gap is "worth" the higher purchase price depends on your ownership timeline. If you keep boats 3-5 years and move on, fiberglass tends to recover more of your investment. If you keep boats 10+ years and don't care about resale, aluminum is the cheaper path through the ownership cycle.
 
-![Welded aluminum hull surface next to glossy fiberglass gelcoat finish, split-frame comparison](/lovable-uploads/inline/inline-hull-surface-comparison.png)
+![Close-up comparison of a welded aluminum hull and a glossy fiberglass gelcoat finish for Ontario boat selection.](/lovable-uploads/inline/inline-hull-surface-comparison.png)
 
 ## The repair conversation
 
@@ -31325,7 +31325,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 If anything feels wrong during this sequence, stop. Don't push through. Most spring problems get worse, not better, when ignored.
 
-![Healthy telltale water stream from Mercury outboard cooling system pee-hole](/lovable-uploads/inline/inline-mercury-telltale-water-stream.png)
+![Technician checking the cooling system telltale stream on a Mercury FourStroke outboard during spring run-up.](/lovable-uploads/inline/inline-mercury-telltale-water-stream.png)
 
 ## When something is wrong, the most likely culprits
 
@@ -31788,7 +31788,7 @@ For the broader battery conversation, our [Mercury Boat Battery Guide](/blog/mer
 
 ## The marine-grade vs automotive-grade trap
 
-![Marine-grade vs automotive-grade boat electrical connections comparison](/lovable-uploads/inline/inline-marine-vs-automotive-wiring.png)
+![Comparison of corroded household wire nut vs. sealed marine-grade connection for boat electrical safety inspections.](/lovable-uploads/inline/inline-marine-vs-automotive-wiring.png)
 
 Here's the part most owners don't know: a marine-grade tinned-copper terminal looks almost identical to an automotive crimp connector at first glance. The differences:
 
