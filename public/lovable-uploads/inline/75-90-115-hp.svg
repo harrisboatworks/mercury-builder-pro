@@ -1,6 +1,6 @@
 <svg width="100%" viewBox="0 0 680 534" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Mercury 75 HP versus 90 HP versus 115 HP outboard comparison</title>
-<desc>Three-column comparison of the Mercury 75 ELPT FourStroke (dealer price $14,190, available to order), the 90 ELPT FourStroke (dealer price $14,812, in stock) and the 115 ELPT FourStroke (dealer price $16,913, in stock). All three share the same 2.1L inline-4 block. Source mercuryrepower.ca.</desc>
+<desc>Three-column comparison of the Mercury 75 ELPT FourStroke (dealer price $14,476, available to order), the 90 ELPT FourStroke (dealer price $14,960, in stock) and the 115 ELPT FourStroke (dealer price $17,083, in stock). All three share the same 2.1L inline-4 block. Source mercuryrepower.ca.</desc>
 <defs><clipPath id="pc">
 <rect x="72" y="158" width="169" height="250" rx="12"/>
 <rect x="255" y="158" width="169" height="250" rx="12"/>
@@ -41,11 +41,11 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 <text class="ph" x="339.5" y="206" text-anchor="middle">In stock</text>
 <text class="hp" x="522.5" y="191" text-anchor="middle">115 HP</text>
 <text class="ph" x="522.5" y="206" text-anchor="middle">In stock</text>
-<text class="pr" x="156.5" y="247" text-anchor="middle">$14,190</text>
+<text class="pr" x="156.5" y="247" text-anchor="middle">$14,476</text>
 <text class="prl" x="156.5" y="263" text-anchor="middle">motor, dealer price (CAD)</text>
-<text class="pr" x="339.5" y="247" text-anchor="middle">$14,812</text>
+<text class="pr" x="339.5" y="247" text-anchor="middle">$14,960</text>
 <text class="prl" x="339.5" y="263" text-anchor="middle">motor, dealer price (CAD)</text>
-<text class="pr" x="522.5" y="247" text-anchor="middle">$16,913</text>
+<text class="pr" x="522.5" y="247" text-anchor="middle">$17,083</text>
 <text class="prl" x="522.5" y="263" text-anchor="middle">motor, dealer price (CAD)</text>
 <line x1="86" y1="278" x2="227" y2="278" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <line x1="269" y1="278" x2="410" y2="278" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>

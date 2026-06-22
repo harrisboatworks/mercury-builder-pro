@@ -12704,7 +12704,7 @@ Most 150 EXLPT repowers at HBW land in the $23,000, $36,000 CAD range all-in, be
 
 ### Side-by-Side: Mercury 115 vs. 150 FourStroke
 
-![Side-by-side card comparison: Mercury 115 HP ($16,913, 359 lb, 4-cyl 2.1L) vs 150 HP ($22,022, 455 lb, V6 3.0L) with best-use hull sizes and activities.](/lovable-uploads/inline/115-vs-150-hp.svg)
+![Side-by-side card comparison: Mercury 115 HP ($17,083, 359 lb, 4-cyl 2.1L) vs 150 HP ($22,242, 455 lb, V6 3.0L) with best-use hull sizes and activities.](/lovable-uploads/inline/115-vs-150-hp.svg)
 
 
 | Factor | 115 EXLPT FourStroke | 150 EXLPT FourStroke |
@@ -12762,6 +12762,8 @@ Two related guides in the same cluster:
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide)
 
 ---
+
+*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
 
 ## FAQs
 
@@ -13900,8 +13902,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'cheapest-mercury-outboard-canada-2026',
-    title: 'What\'s the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)',
-    seoTitle: 'Cheapest Mercury Outboard in Canada 2026 (Price by HP)',
+    title: 'What\'s the Cheapest Mercury Outboard in Canada in 2027? (Full Price Guide by HP)',
+    seoTitle: 'Cheapest Mercury Outboard in Canada 2027 (Price by HP)',
     description: 'The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats. From there, prices step up by HP class through the lineup. The honest answer most boaters need is not "what\'s the cheapest motor" but "what\'s the cheapest motor that actually fits my boat." Those are usually different motors. Live pricing on every Mercury we sell, including the 2.5 portable, is on the [motor selection page](/quote/motor-selection).',
     image: '/lovable-uploads/hero-cheapest-mercury-canada-lineup.png',
     author: 'Harris Boat Works',
@@ -13948,7 +13950,7 @@ caveat: Numbers are typical ranges, not quotes. Build your exact quote at mercur
 
 ---
 
-![Bar chart of Mercury outboard prices in CAD from $1,271 (2.5HP) to $22,022 (150HP); cheapest is the 2.5HP at $1,271.](/lovable-uploads/inline/mercury-price-ladder.svg)
+![Bar chart of Mercury outboard 2027 dealer prices in CAD from $1,298 (2.5 HP) to $22,242 (150 HP).](/lovable-uploads/inline/mercury-price-ladder.svg)
 
 ## Full Article
 
@@ -14032,6 +14034,8 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 
 **Long runs across open water.** A 9.9 will eventually get you there. It's just going to be a long day.
 
+*Prices reflect HBW's current 2027 Mercury dealer pricing. See our live [Mercury pricing reference](/pricing-reference) for the latest dealer and MSRP per model.*
+
 ---
 
 ## Related guides
@@ -14043,8 +14047,8 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 
 ## FAQs
 
-**What's the cheapest Mercury outboard in Canada in 2026?** 
-The cheapest Mercury is the 2.5 HP FourStroke portable, built for tenders, dinghies, and small inflatables. For current 2026 CAD pricing, see the motor selection page at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+**What's the cheapest Mercury outboard in Canada in 2027?** 
+The cheapest Mercury is the 2.5 HP FourStroke portable, built for tenders, dinghies, and small inflatables. For current 2027 CAD pricing, see the motor selection page at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 **What's the cheapest Mercury with electric start?** 
 Mercury offers electric start on motors as small as the 9.9 EH. For specific pricing, see the motor selection page.
@@ -14087,7 +14091,7 @@ Not sure what your boat actually needs? Call **905-342-2153**. We won't sell you
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---`,
     faqs: [
-      { question: 'What is the cheapest Mercury outboard in Canada in 2026?', answer: 'The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2026 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).' },
+      { question: 'What is the cheapest Mercury outboard in Canada in 2027?', answer: 'The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2027 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).' },
       { question: 'How much does a 2.5 HP Mercury cost in Canada?', answer: 'Live CAD pricing on the 2.5 MH portable, including HBW\'s discount off MSRP, is on the [motor selection page](/quote/motor-selection). Tiller motors 20 HP and under are just the motor price (no rigging or extras), so the live number is your all-in.' },
       { question: 'What is the cheapest Mercury with electric start?', answer: 'Mercury offers electric start on motors as small as the 9.9 EH (Electric, Hand-tiller) and 9.9 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).' },
       { question: 'Is a small Mercury good enough for fishing?', answer: 'For sheltered-water solo fishing on small aluminum, yes. A 9.9 to 15 HP tiller is a classic fishing setup on Rice Lake and Kawartha lakes. For bigger water (Lake Ontario, Lake Simcoe afternoon wind), or for fishing with two adults plus gear, you usually need at least 25 HP to plane reliably.' },
@@ -24452,7 +24456,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
     content: `### Quick Answer
 
-For most 15, 16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,600. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land.
+For most 15, 16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,602. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land.
 
 ---
 
@@ -24507,7 +24511,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 
 ## Specs Side-by-Side
 
-![Side-by-side comparison: Mercury 40 HP ($9,532, 3-cylinder, 227 lb) vs 60 HP ($12,161, 4-cylinder, 250 lb) with best-boat and load recommendations, and $2,600 price gap.](/lovable-uploads/inline/40-vs-60-hp.svg)
+![Side-by-side comparison: Mercury 40 HP ($9,438, 3-cylinder, 227 lb) vs 60 HP ($12,040, 4-cylinder, 250 lb) with best-boat and load recommendations, and $2,602 price gap.](/lovable-uploads/inline/40-vs-60-hp.svg)
 
 
 | | Mercury 40 ELPT FourStroke | Mercury 60 ELPT FourStroke |
@@ -24611,6 +24615,8 @@ And for anyone locking through the Trent-Severn, a 16 ft aluminum with a 60 HP i
 - [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
 - [Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class](/blog/mercury-controls-rigging-guide-ontario): What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in.
 
+*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
+
 ## Frequently Asked Questions
 
 **Is the 40 HP enough for a 16 ft aluminum fishing boat?** 
@@ -24623,7 +24629,7 @@ The 60 ELPT Command Thrust at minimum. If the pontoon is a tritoon, or you regul
 Rarely. CT is designed for flat-bottom, heavy-hull applications like pontoons. An aluminum fishing boat that runs at speed benefits more from the standard gearcase's lower drag.
 
 **How much more does the 60 cost than the 40?** 
-About $2,600 CAD difference in dealer selling price. The 60 CT over the 40 is about $2,940. Install and rigging run $1,500, $3,000 on top of either.
+About $2,602 CAD difference in dealer selling price. The 60 CT over the 40 is about $2,940. Install and rigging run $1,500, $3,000 on top of either.
 
 **Can I check what my capacity plate says online?** 
 The capacity plate is physical, on the inner transom of your boat. If you're unsure what it says, pull the boat out and look. The HP limit on that plate is not negotiable.
@@ -25894,7 +25900,7 @@ Rule of thumb: aluminum fishing boats default to standard. Pontoons default to C
 
 The 75, 90, and 115 are the same block with different tuning. There is no weight penalty stepping up. The only real penalty going from 75 to 90 to 115 is price and fuel burn at full throttle.
 
-![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,190 to $16,913 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 Most boats want either the 90 or the 115. The 75 is right for smaller hulls or situations where the capacity plate forces it, we don't actually stock the 75 because the 90 is the same physical motor at a small additional cost and has better headroom and better resale value.
 
@@ -25922,6 +25928,8 @@ If you buy from us, we're also the ones servicing it. For engine repairs, we onl
 - [Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)](/blog/mercury-75-hp-fourstroke-review-ontario): An honest answer from an Ontario Mercury dealer. We don't sell the 75 HP FourStroke. Here's why, what it.
 - [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
 - [Mercury Avator 7.5e: Review, Price CAD, and Range (2026)](/blog/mercury-avator-7-5e-review): Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on.
+
+*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
 
 ## Frequently Asked Questions
 
@@ -26104,7 +26112,7 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ## How the 115 Compares to the 90 and the 150
 
-![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,190 to $16,913 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 | | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
 |---|---|---|---|
@@ -26138,6 +26146,8 @@ If you buy from us, we service it. For engine repairs, we only work on Mercury a
 - [Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup](/blog/mercury-90-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's.
 - [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
 - [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
+
+*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
 
 ## Frequently Asked Questions
 
@@ -26255,7 +26265,7 @@ Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake 
 
 The Mercury 75 HP FourStroke is part of the same family as the 80, 90, 100, and 115. All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
 
-![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,190 to $16,913 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 | Specification | Mercury 75 ELPT | Mercury 90 ELPT |
 |---|---|---|
@@ -26323,6 +26333,8 @@ If your hull is rated for 90 HP or higher, skip directly to the 90 review or go 
 - [Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup](/blog/mercury-90-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's.
 - [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
 - [Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online): Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price.
+
+*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
 
 ## Frequently Asked Questions
 
