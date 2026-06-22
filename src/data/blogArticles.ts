@@ -8123,14 +8123,19 @@ Here's the actual process if you trade through us:
 
 If you're outside the immediate Kawarthas, we coordinate pickup and delivery for repowers regularly. GTA and east Toronto customers drive up routinely. We've handled trades from as far as Ottawa and Niagara.
 
-## When to Call HBW
+## When to Use the Estimator vs Call Us
 
-If you're sitting on a working motor and wondering whether to trade, sell, or consign, that's the conversation to have. Five minutes on the phone usually settles it.
+The fast path: get an instant estimate at [mercuryrepower.ca/trade-in-value](/trade-in-value). It covers all common Mercury, Yamaha, Honda, and Suzuki outboards from the last 20 years and gives you a real number in seconds.
 
-- You're already planning a repower and want to know what your old motor is worth: call. We can give you a range over the phone.
-- You're considering selling privately and want to compare to a trade offer: we'll quote both numbers in writing.
-- You have a higher-end motor (150 HP or up, under 5 years, low hours) and want to maximize dollars: ask about consignment.
-- You have a non-runner or an older 2-stroke: we'll still look. There's sometimes more value than you'd expect, especially in parts demand.
+Call us if:
+
+- You have a non-runner or older 2-stroke and want a human to look at it (the estimator won't price these well).
+- You're trading a boat-and-motor package and want both lines itemized.
+- You have a higher-end motor (150 HP+, under 5 years, low hours) and want to compare a straight trade against consignment.
+- You want the firm number tied directly to a specific new motor configuration before deciding.
+- You're outside the immediate Kawarthas and want to coordinate pickup or delivery.
+
+The estimator gets you 80% of the way to a real number. The call is for the last 20% or the situations where the math is more complicated than a standard repower.
 
 ## Frequently Asked Questions
 
