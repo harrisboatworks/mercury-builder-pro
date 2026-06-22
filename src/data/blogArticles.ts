@@ -8190,7 +8190,7 @@ Two minutes from now you can have a real trade-in value for your motor.
       },
       {
         question: 'Do I need to service the motor before trade-in?',
-        answer: 'No. Basic cleaning and documentation are worth the effort. Major service usually isn\'t, you won\'t recoup the full cost. Wipe down the cowl, change the lower unit oil if it\'s overdue, gather your records, and bring the motor in. We\'ll handle the rest.',
+        answer: 'No. Basic cleaning and documentation are worth the effort. Major service usually isn\'t, you won\'t recoup the full cost. Wipe down the cowl, change the lower unit oil if it\'s overdue, gather your records, and either run the trade-in estimator at /trade-in-value or bring the motor in. We\'ll handle the rest.',
       },
       {
         question: 'What if my motor has a known issue?',
