@@ -388,6 +388,10 @@ export default function FrenchBlogArticlePage() {
           {renderMarkdownContent(article.content)}
         </article>
 
+        {!shouldSuppressAutoCTA(article.content) && (
+          <CategoryCTA category={article.category} />
+        )}
+
         {/* FAQ Section */}
         {article.faqs && article.faqs.length > 0 && (
           <section className="mt-12 mb-12">
