@@ -36734,7 +36734,7 @@ Call us at 905-342-2153 or build your repower quote, warranty terms are listed w
     image: '/lovable-uploads/hero-mercury-weight-hoist.png',
     author: "Jay Harris",
     datePublished: "2026-06-07",
-    dateModified: "2026-06-10",
+    dateModified: "2026-06-22",
     publishDate: "2026-06-07",
     category: "Buying Guide",
     readTime: "5 min read",
@@ -36746,7 +36746,11 @@ Call us at 905-342-2153 or build your repower quote, warranty terms are listed w
       { question: "What is the lightest 115 hp outboard?", answer: "Mercury's 115 Pro XS at 359 lb, which Mercury says is the lightest performance 115 in its class by roughly 20 pounds. The standard 115 FourStroke is the same 359 lb in its lightest configuration." },
       { question: "How much does a Mercury 250 weigh?", answer: "Depends on the family: the 250 Pro XS V8 is 505 lb (229 kg) dry, while the 250 FourStroke V8 is 527 lb (239 kg), both in their lightest configurations." },
       { question: "Why does outboard weight matter when repowering?", answer: "Your capacity plate lists a maximum motor weight as well as horsepower. A heavier motor changes how the boat sits and planes, and modern four-strokes often weigh more than the old two-strokes they replace, so check transom capacity before you buy." },
-      { question: "Are modern four-strokes heavier than the old two-strokes they replace?", answer: "Often, yes. Modern four-strokes typically carry more weight than the two-strokes they replace, though the gap varies a lot by family and vintage. That is exactly why the capacity plate's maximum motor weight matters during a repower: check it before you buy, and if your hull is older or light, ask us to confirm the transom can carry the modern equivalent." }
+      { question: "Are modern four-strokes heavier than the old two-strokes they replace?", answer: "Often, yes. Modern four-strokes typically carry more weight than the two-strokes they replace, though the gap varies a lot by family and vintage. That is exactly why the capacity plate's maximum motor weight matters during a repower: check it before you buy, and if your hull is older or light, ask us to confirm the transom can carry the modern equivalent." },
+      { question: "How much does a 40 hp Mercury outboard weigh?", answer: "The 40 HP Mercury FourStroke EFI weighs 216 lb (98 kg) dry in its lightest 3-cylinder configuration. Longer shafts and rigging add weight on top of that. For the exact figure on the model you are repowering, call Harris Boat Works at 905-342-2153." },
+      { question: "How much does a 50 hp Mercury outboard weigh?", answer: "The 50 HP Mercury FourStroke EFI weighs 247 lb (112 kg) dry for the lightest model. The 50 and 60 HP share the same powerhead, so they weigh the same; Command Thrust versions run a few pounds heavier." },
+      { question: "How much does a 200 hp Mercury outboard weigh?", answer: "It depends on the family. The 200 HP FourStroke (3.4L V6) is 475 lb (216 kg) dry, while the 200 HP Pro XS (4.6L V8) is 505 lb (229 kg), both in their lightest configurations. Check your capacity plate before repowering." },
+      { question: "How much does a 300 hp Mercury outboard weigh?", answer: "The 300 HP Mercury FourStroke V8 is 527 lb (239 kg) dry, and the 300 HP Pro XS V8 is lighter at 505 lb (229 kg), both for the lightest configuration. Longer shafts and rigging add weight." }
     ],
     content: `> **Quick answer:** Mercury outboards range from 41 lb for the 2.5 and 3.5 HP portables to 527 lb for the 250 and 300 HP V8 FourStroke, with the 75, 90, and 115 sharing the same 2.1L block at 359 lb. All figures are Mercury's published dry weight for the lightest configuration; longer shafts, Command Thrust gearcases, and rigging add weight.
 
