@@ -35368,7 +35368,6 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 - [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
 
 `,
-    image: '/lovable-uploads/hero-trent-severn-lock.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
     dateModified: '2026-06-02',
