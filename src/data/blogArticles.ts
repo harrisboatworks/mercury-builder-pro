@@ -322,6 +322,11 @@ The pattern we'd love to break: the boater who noticed a weak telltale in June a
 - **Replacing the impeller but ignoring a scored housing.** A new impeller in a worn housing pumps poorly and fails early. If the housing or wear plate is scored, do the kit.
 - **Treating the spring check as a season-long guarantee.** It's a snapshot. Heat, weeds, and hours are what the season adds.
 
+## Sources
+
+- [Mercury Marine - Owner Resources](https://www.mercurymarine.com/canada/en/owners/) - Official maintenance documentation including water pump and impeller service intervals.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized service dealer network for impeller and lower-unit work.
+
 ## Ready to Get Ahead of It?
 
 If your telltale has gone lazy, or you can't remember which season the impeller was last done, that's reason enough. It's quick work in June and a ruined weekend in August.
@@ -5302,6 +5307,8 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
 - Ontario free family fishing dates 2026: ontario.ca/page/free-family-fishing
 - Trent-Severn Waterway, Parks Canada: parks.canada.ca/lhn-nhs/on/trentsevern
 - Rice Lake boat launch ramp, Harris Boat Works: harrisboatworks.ca/boat-launch-ramp
+- [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/page/fishing-regulations-summary) - Rice Lake falls under Ontario FMZ 17 zone-wide rules.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Mercury outboard specifications and current model availability.
 
 *Fishing regulations are current as of May 2026, based on Ontario FMZ 17 (SF-2025/17). Always verify season dates, size limits, and possession limits at ontario.ca/fishing before your trip.*
 
@@ -8699,6 +8706,11 @@ For Rice Lake and local Kawartha customers, yes. Contact us to arrange hauling a
 - Mercury Outboard Won't Start Troubleshooting
 - [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
 
+## Sources
+
+- [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/page/fishing-regulations-summary) - Walleye season dates, slot rules, and FMZ-specific regulations.
+- [Ontario.ca - Get a Fishing Licence](https://www.ontario.ca/page/get-fishing-licence) - Required licence and Outdoors Card for the opener.
+
 ## CTA
 
 **Book opener prep now.** Service slots fill in May, and there is no such thing as a last-minute walleye opener fix. 
@@ -8933,6 +8945,11 @@ For local Rice Lake and Kawartha customers, yes. Contact us at [hbw.wiki/service
 - Walleye Opener Boat Prep Checklist
 - Mercury Motor Winterization Guide
 - Spring Outboard Commissioning Checklist
+
+## Sources
+
+- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Cold-water immersion guidance, mandatory safety equipment, and required operator competencies.
+- [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Late-season operating recommendations.
 
 ## CTA
 
@@ -11644,6 +11661,8 @@ Ontario has licence-free fishing weekends on May 9 to 10, June 20 to 21, and Jun
 - Cobourg and District Historical Society: Cobourg and Peterborough Railway history
 - Save the Walleye committee: Rice Lake walleye spawning concerns
 - On-the-water spots and techniques: decades of Rice Lake angler reports through the Harris Boat Works dock
+- [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/page/fishing-regulations-summary) - Current Ontario fishing regulations, season dates, and limits.
+- [Ontario.ca - Get a Fishing Licence](https://www.ontario.ca/page/get-fishing-licence) - Outdoors Card and licence requirements.
 
 Always confirm current regulations at ontario.ca/fishing before you fish.
 
@@ -12023,6 +12042,8 @@ The update is free and takes 15 minutes. There is no reason not to do it.
 ## Sources
 
 - Transport Canada, Pleasure Craft Licence (5-year validity, $24 fee, 30-day update window, 10 hp threshold). [tc.canada.ca](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+- [Transport Canada - Pleasure Craft Licensing System](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licensing-system) - Federal authority on PCL requirements and renewal rules.
+- [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Broader Canadian boating safety framework.
 
 *Last reviewed: 2026-05-11.*
 
@@ -18510,6 +18531,11 @@ Skipping one service rarely causes immediate failure. The risk accumulates: degr
 
 ---
 
+## Sources
+
+- [Mercury Marine - Owner Resources](https://www.mercurymarine.com/canada/en/owners/) - Official maintenance interval guidance and owner's manuals for current models.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized dealer network and Mercury Product Protection details.
+
 ## CTA
 
 **Due for service?** 
@@ -19539,6 +19565,11 @@ We push customers toward Platinum dealer service because the install + first ser
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Sources
+
+- [Mercury Marine - Warranty](https://www.mercurymarine.com/canada/en/owners/warranty/) - Official Mercury Canadian limited warranty terms.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized dealer network for warranty claims and Mercury Product Protection.
 
 ## Related guides
 
@@ -30986,6 +31017,8 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 - Construction Standards for Small Vessels (Transport Canada TP 1332)
 - Office of Boating Safety, Transport Canada Compliance Notice requirements
 - HBW internal repower decisions, 2018-2026 service records
+- [Transport Canada - Construction Standards for Small Vessels (TP 1332)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Federal capacity plate standards and requirements.
+- [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Compliance context for capacity, persons, and HP limits.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
@@ -32173,6 +32206,8 @@ For engine repairs, we only service Mercury and Mercruiser.
 - Transport Canada Construction Standards for Small Vessels (TP 1332)
 - Mercury Marine electrical installation guidelines (dealer technical reference, 2026)
 - HBW service shop records, 2018-2026
+- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Federal guidance on small-vessel electrical safety and required equipment.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Manufacturer guidance on rigging, batteries, and ignition-protected equipment.
 
 ## About the author
 
@@ -34102,6 +34137,11 @@ MPP is Mercury's paid extended service program, sold through dealers and quoted 
 Yes. TD financing at {{LIVE_RATE_PCT}} is a separate program that runs through December 31, 2026 on qualifying Mercury outboards purchased through HBW. The 7-year warranty promotion that previously stacked with it ended June 14, 2026.
 
 ---
+
+## Sources
+
+- [Mercury Marine - Warranty](https://www.mercurymarine.com/canada/en/owners/warranty/) - Mercury's standard 3-year limited warranty (the base layer for HBW's 7-year stack).
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized Mercury Platinum dealer network.
 
 ## Ready to repower with a new Mercury?
 
@@ -36418,6 +36458,11 @@ This is a general guide, your hull's capacity plate is the controlling document:
 | 225hp+ | Performance hulls, heavier family boats, always verify transom rating |
 
 ---
+
+## Sources
+
+- [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Federal authority on capacity plate compliance and overpowering risk.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Manufacturer guidance on motor compatibility and warranty conditions.
 
 ## Get a proper recommendation before you buy
 
