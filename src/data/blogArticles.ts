@@ -8023,6 +8023,12 @@ If you're thinking about a repower, your old motor isn't junk. It's part of the 
 
 We've handled hundreds of trade-ins on Rice Lake. Most customers walk in thinking they need to sell privately to get top dollar. Then we run the HST numbers and the conversation changes. This post lays out how trade-in actually works in Ontario, what your motor is realistically worth in 2026, the documentation that moves the needle on your offer, and how HBW handles it from quote to dock.
 
+## Quick recommendation
+
+If you just want a number, skip the rest and use our free trade-in estimator. Enter your motor's brand, year, model, and condition, and you'll get a current value in seconds, no account required. When you're ready to repower, you can roll the trade right into a full quote. Use the estimator at [mercuryrepower.ca/trade-in-value](/trade-in-value).
+
+The rest of this post is the math behind that number, and how the deal actually goes down at the shop.
+
 ## The HST Math Most Boaters Miss
 
 Here's the rule in Ontario: when you trade in a vehicle (including a boat or outboard) toward a new one at the same dealer, **HST is calculated on the difference**, not on the new motor's full price. Trade in your old Mercury for $5,000 against a new $20,000 Mercury, and you pay 13% HST on $15,000, not $20,000. That's $650 of tax savings per $5,000 of trade.
