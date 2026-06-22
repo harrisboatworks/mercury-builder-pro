@@ -14,6 +14,7 @@ import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { AuthorByline } from '@/components/blog/AuthorByline';
+import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
 import {
   Accordion,
   AccordionContent,
@@ -386,6 +387,10 @@ export default function FrenchBlogArticlePage() {
         <article className="prose prose-lg max-w-none">
           {renderMarkdownContent(article.content)}
         </article>
+
+        {!shouldSuppressAutoCTA(article.content) && (
+          <CategoryCTA category={article.category} />
+        )}
 
         {/* FAQ Section */}
         {article.faqs && article.faqs.length > 0 && (
