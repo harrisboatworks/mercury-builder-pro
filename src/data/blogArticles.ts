@@ -8002,7 +8002,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'boat-motor-trade-in-guide',
     title: 'Trading In Your Boat or Motor in Ontario (2026 Values, HST Math, HBW Process)',
-    description: 'How Ontario boat trade-ins work, what your old Mercury is worth in 2026, the 13% HST savings most boaters miss, and HBW\'s trade process.',
+    description: 'Free instant trade-in estimator, the 13% HST math, real 2026 Ontario trade values, and how the swap actually works at HBW.',
     image: '/lovable-uploads/Trading_In_Your_Boat_Motor_Hero.png',
     imageAlt: 'Outboard motor on a trailer being assessed for trade-in toward a Mercury repower at Harris Boat Works.',
     author: 'Harris Boat Works',
