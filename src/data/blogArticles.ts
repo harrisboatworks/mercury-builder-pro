@@ -24454,7 +24454,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
     content: `### Quick Answer
 
-For most 15, 16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,600. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land.
+For most 15, 16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,602. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land.
 
 ---
 
@@ -24509,7 +24509,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 
 ## Specs Side-by-Side
 
-![Side-by-side comparison: Mercury 40 HP ($9,532, 3-cylinder, 227 lb) vs 60 HP ($12,161, 4-cylinder, 250 lb) with best-boat and load recommendations, and $2,600 price gap.](/lovable-uploads/inline/40-vs-60-hp.svg)
+![Side-by-side comparison: Mercury 40 HP ($9,438, 3-cylinder, 227 lb) vs 60 HP ($12,040, 4-cylinder, 250 lb) with best-boat and load recommendations, and $2,602 price gap.](/lovable-uploads/inline/40-vs-60-hp.svg)
 
 
 | | Mercury 40 ELPT FourStroke | Mercury 60 ELPT FourStroke |
@@ -24625,7 +24625,7 @@ The 60 ELPT Command Thrust at minimum. If the pontoon is a tritoon, or you regul
 Rarely. CT is designed for flat-bottom, heavy-hull applications like pontoons. An aluminum fishing boat that runs at speed benefits more from the standard gearcase's lower drag.
 
 **How much more does the 60 cost than the 40?** 
-About $2,600 CAD difference in dealer selling price. The 60 CT over the 40 is about $2,940. Install and rigging run $1,500, $3,000 on top of either.
+About $2,602 CAD difference in dealer selling price. The 60 CT over the 40 is about $2,940. Install and rigging run $1,500, $3,000 on top of either.
 
 **Can I check what my capacity plate says online?** 
 The capacity plate is physical, on the inner transom of your boat. If you're unsure what it says, pull the boat out and look. The HP limit on that plate is not negotiable.
@@ -25896,7 +25896,7 @@ Rule of thumb: aluminum fishing boats default to standard. Pontoons default to C
 
 The 75, 90, and 115 are the same block with different tuning. There is no weight penalty stepping up. The only real penalty going from 75 to 90 to 115 is price and fuel burn at full throttle.
 
-![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,190 to $16,913 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 Most boats want either the 90 or the 115. The 75 is right for smaller hulls or situations where the capacity plate forces it, we don't actually stock the 75 because the 90 is the same physical motor at a small additional cost and has better headroom and better resale value.
 
@@ -26106,7 +26106,7 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ## How the 115 Compares to the 90 and the 150
 
-![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,190 to $16,913 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 | | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
 |---|---|---|---|
@@ -26257,7 +26257,7 @@ Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake 
 
 The Mercury 75 HP FourStroke is part of the same family as the 80, 90, 100, and 115. All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
 
-![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,190 to $16,913 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 | Specification | Mercury 75 ELPT | Mercury 90 ELPT |
 |---|---|---|
