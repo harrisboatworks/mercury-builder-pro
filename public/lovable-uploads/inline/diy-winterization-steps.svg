@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 640" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>DIY Mercury outboard winterization, step by step</title>
-<desc>The six DIY Mercury outboard winterization steps in order. Source mercuryrepower.ca, May 2026.</desc>
+<desc>The six DIY Mercury outboard winterization steps in order. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -50,5 +50,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="522" x2="608" y2="522" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="544" text-anchor="middle">A $400 winterization beats a <tspan fill="#c8102e">$7,800 cracked block</tspan>.</text>
 <text class="subl" x="340" y="566" text-anchor="middle">Skip the cooling drain and the block freezes. Skip the fogging and the cylinders corrode.</text>
-<text class="src4" x="72" y="590">DIY winterization sequence, mercuryrepower.ca, May 2026. HBW will do it for you if you would rather not.</text>
+<text class="src4" x="72" y="590">DIY winterization sequence, mercuryrepower.ca. HBW will do it for you if you would rather not.</text>
 </svg>

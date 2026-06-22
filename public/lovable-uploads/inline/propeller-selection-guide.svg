@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 612" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>How to pick the right Mercury propeller</title>
-<desc>The three choices that decide how a Mercury outboard runs: pitch, blade count, and material. The right prop lets the motor reach mid-band of its rated WOT rpm at a real load. Source mercuryrepower.ca, May 2026.</desc>
+<desc>The three choices that decide how a Mercury outboard runs: pitch, blade count, and material. The right prop lets the motor reach mid-band of its rated WOT rpm at a real load. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -60,5 +60,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="494" x2="608" y2="494" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="516" text-anchor="middle">The right prop hits <tspan fill="#c8102e">mid-band WOT rpm</tspan> at your real load.</text>
 <text class="subl" x="340" y="538" text-anchor="middle">Diameter is fixed by the gearcase. Pitch, blade count, and material are your call.</text>
-<text class="src4" x="72" y="562">Propeller selection guidance, mercuryrepower.ca, May 2026. HBW sea-trials the prop on every install.</text>
+<text class="src4" x="72" y="562">Propeller selection guidance, mercuryrepower.ca. HBW sea-trials the prop on every install.</text>
 </svg>

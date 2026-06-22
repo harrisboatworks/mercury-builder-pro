@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 532" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Mercury setup for Lake Ontario salmon and trout</title>
-<desc>Mercury outboard recommendations for Lake Ontario salmon and trout fishing by boat size. Source mercuryrepower.ca, May 2026.</desc>
+<desc>Mercury outboard recommendations for Lake Ontario salmon and trout fishing by boat size. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -51,5 +51,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="414" x2="608" y2="414" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="436" text-anchor="middle">Lake Ontario is not Rice Lake. It is open, cold, and <tspan fill="#c8102e">capable of serious swells</tspan>.</text>
 <text class="subl" x="340" y="458" text-anchor="middle">Big water needs more boat. A 15 HP ProKicker carries downrigger spreads the 9.9 cannot.</text>
-<text class="src4" x="72" y="482">Setup framework, mercuryrepower.ca, May 2026. Confirm capacity plate before any HP decision.</text>
+<text class="src4" x="72" y="482">Setup framework, mercuryrepower.ca. Confirm capacity plate before any HP decision.</text>
 </svg>

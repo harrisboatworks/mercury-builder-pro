@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 580" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Used outboard inspection: green flags versus red flags</title>
-<desc>A two-column comparison of green flags and red flags when inspecting a used outboard motor. Source mercuryrepower.ca, May 2026.</desc>
+<desc>A two-column comparison of green flags and red flags when inspecting a used outboard motor. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -51,5 +51,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="462" x2="608" y2="462" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="484" text-anchor="middle">Cheap at the dock, <tspan fill="#c8102e">expensive in the shop</tspan>.</text>
 <text class="subl" x="340" y="506" text-anchor="middle">Bring a compression tester and muffs. If the seller refuses the test, that is its own answer.</text>
-<text class="src4" x="72" y="530">Inspection framework, mercuryrepower.ca, May 2026. HBW will inspect a private-sale motor for a fair fee.</text>
+<text class="src4" x="72" y="530">Inspection framework, mercuryrepower.ca. HBW will inspect a private-sale motor for a fair fee.</text>
 </svg>

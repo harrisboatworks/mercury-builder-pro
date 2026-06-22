@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 612" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Outboard trade-in value by HP class, Ontario 2026</title>
-<desc>2026 Ontario trade-in value ranges in CAD for working, documented Mercury and Yamaha four-stroke outboards, by HP class and age. There is no blue book; condition and resale ease set the number. Trading also reduces 13 percent HST on the new motor. Source mercuryrepower.ca, May 2026.</desc>
+<desc>2026 Ontario trade-in value ranges in CAD for working, documented Mercury and Yamaha four-stroke outboards, by HP class and age. There is no blue book; condition and resale ease set the number. Trading also reduces 13 percent HST on the new motor. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -77,5 +77,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="494" x2="608" y2="494" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="516" text-anchor="middle">No blue book. <tspan fill="#c8102e">Condition</tspan> and resale ease set the number.</text>
 <text class="subl" x="340" y="538" text-anchor="middle">Working Mercury and Yamaha 4-strokes. A trade also cuts 13% HST off the new motor.</text>
-<text class="src4" x="72" y="562">Trade-in ranges, mercuryrepower.ca, May 2026. Final number confirmed after in-person inspection.</text>
+<text class="src4" x="72" y="562">Trade-in ranges, mercuryrepower.ca. Final number confirmed after in-person inspection.</text>
 </svg>

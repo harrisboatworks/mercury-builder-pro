@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 590" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Five levers that cut Mercury outboard fuel burn, ranked</title>
-<desc>The five controllable levers that change fuel economy on a Mercury outboard, ranked by impact: prop selection, trim, hull cleanliness, weight, and cruise speed. Horsepower class matters less than setup. Source mercuryrepower.ca, May 2026.</desc>
+<desc>The five controllable levers that change fuel economy on a Mercury outboard, ranked by impact: prop selection, trim, hull cleanliness, weight, and cruise speed. Horsepower class matters less than setup. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -51,5 +51,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="472" x2="608" y2="472" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="494" text-anchor="middle">Horsepower class matters less than <tspan fill="#c8102e">setup</tspan>.</text>
 <text class="subl" x="340" y="516" text-anchor="middle">Get the prop right first. The rest of the gains follow from there.</text>
-<text class="src4" x="72" y="540">Fuel-economy guidance, mercuryrepower.ca, May 2026. HBW sea-trials prop pitch on every install.</text>
+<text class="src4" x="72" y="540">Fuel-economy guidance, mercuryrepower.ca. HBW sea-trials prop pitch on every install.</text>
 </svg>

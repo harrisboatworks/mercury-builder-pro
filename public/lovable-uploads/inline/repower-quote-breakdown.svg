@@ -3,7 +3,7 @@
 <desc>Breakdown of a real Harris Boat Works repower quote for a 115 Pro XS: motor $17,320.00, controls and rigging $1,200.00, professional installation $450.00, propeller allowance $350.00, HST $2,511.60, total $21,831.60.</desc>
 <defs><clipPath id="bc2"><rect x="72" y="158" width="536" height="44" rx="9"/></clipPath></defs>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h2{font-size:31px;font-weight:700;fill:#20384d}
 .sub2{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .wlbl{font-size:13px;font-weight:400;fill:#ffffff}
@@ -45,5 +45,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <text class="tot" x="88" y="404">Your repower, all in</text>
 <text class="totv" x="592" y="404" text-anchor="end">$21,831.60</text>
 <text class="punch" x="72" y="435">The motor is the price tag. The repower is the <tspan fill="#c8102e">total</tspan>.</text>
-<text class="src2" x="72" y="456">Real HBW quote HBW-524137, 115 Pro XS, May 2026. Build yours at mercuryrepower.ca.</text>
+<text class="src2" x="72" y="456">Real HBW quote HBW-524137, 115 Pro XS. Build yours at mercuryrepower.ca.</text>
 </svg>

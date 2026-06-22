@@ -1,9 +1,9 @@
 <svg width="100%" viewBox="0 0 680 613" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>How to choose the right horsepower for your boat</title>
-<desc>Mercury horsepower recommendations by boat type for Kawartha freshwater: aluminum fishing 12 to 16 ft from 9.9 to 60 HP, console boats 16 to 18 ft at 90 to 115 HP, pontoons 18 to 24 ft at 90 to 150 HP Command Thrust, runabouts 18 to 22 ft at 150 to 200 HP. Underpowering is the more expensive mistake. Source mercuryrepower.ca, May 2026.</desc>
+<desc>Mercury horsepower recommendations by boat type for Kawartha freshwater: aluminum fishing 12 to 16 ft from 9.9 to 60 HP, console boats 16 to 18 ft at 90 to 115 HP, pontoons 18 to 24 ft at 90 to 150 HP Command Thrust, runabouts 18 to 22 ft at 150 to 200 HP. Underpowering is the more expensive mistake. Source mercuryrepower.ca.</desc>
 <defs><clipPath id="htc"><rect x="72" y="165" width="536" height="310" rx="10"/></clipPath></defs>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .thd{font-size:11.5px;font-weight:600;fill:#ffffff}
@@ -58,5 +58,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="503" x2="608" y2="503" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="525" text-anchor="middle">Underpowering is the <tspan fill="#c8102e">expensive</tspan> mistake.</text>
 <text class="subl" x="340" y="547" text-anchor="middle">Power the boat for its worst afternoon, not its calmest morning.</text>
-<text class="src4" x="72" y="569">HP guidelines for recreational use, mercuryrepower.ca, May 2026. Plate HP is the legal ceiling.</text>
+<text class="src4" x="72" y="569">HP guidelines for recreational use, mercuryrepower.ca. Plate HP is the legal ceiling.</text>
 </svg>

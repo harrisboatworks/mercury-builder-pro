@@ -1,9 +1,9 @@
 <svg width="100%" viewBox="0 0 680 534" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Mercury 115 HP versus 150 HP outboard comparison</title>
-<desc>Comparison of the Mercury 115 ELPT FourStroke (dealer price $16,913, inline 4-cylinder 2.1 L, for 17 to 19 ft hulls and casual cruising and fishing) and the 150 L FourStroke (dealer price $22,022, inline 4-cylinder 3.0 L, for 18 to 22 ft hulls and active watersports and heavy loads). The step from 115 to 150 HP is bigger than the numbers suggest. Source mercuryrepower.ca, May 2026.</desc>
+<desc>Comparison of the Mercury 115 ELPT FourStroke (dealer price $16,913, inline 4-cylinder 2.1 L, for 17 to 19 ft hulls and casual cruising and fishing) and the 150 L FourStroke (dealer price $22,022, V6 3.0 L, for 18 to 22 ft hulls and active watersports and heavy loads). The step from 115 to 150 HP is bigger than the numbers suggest. Source mercuryrepower.ca.</desc>
 <defs><clipPath id="pc"><rect x="72" y="158" width="256" height="250" rx="12"/><rect x="352" y="158" width="256" height="250" rx="12"/></clipPath></defs>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .hp{font-size:25px;font-weight:700;fill:#ffffff}
@@ -32,7 +32,7 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <text class="hp" x="200" y="191" text-anchor="middle">115 HP</text>
 <text class="ph" x="200" y="206" text-anchor="middle">Inline 4-cylinder, 2.1 L</text>
 <text class="hp" x="480" y="191" text-anchor="middle">150 HP</text>
-<text class="ph" x="480" y="206" text-anchor="middle">Inline 4-cylinder, 3.0 L</text>
+<text class="ph" x="480" y="206" text-anchor="middle">V6 3.0 L</text>
 <text class="pr" x="200" y="247" text-anchor="middle">$16,913</text>
 <text class="prl" x="200" y="263" text-anchor="middle">motor, dealer price (CAD)</text>
 <text class="pr" x="480" y="247" text-anchor="middle">$22,022</text>
@@ -57,5 +57,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <text class="bul" x="386" y="391">Heavy loads, strong hole shot</text>
 <text class="pun" x="340" y="442" text-anchor="middle">The step from 115 to 150 is bigger than the <tspan fill="#c8102e">numbers</tspan>.</text>
 <text class="subl" x="340" y="463" text-anchor="middle">It comes down to your hull, how you use it, and how you load it.</text>
-<text class="src4" x="72" y="486">Bare motor dealer prices, mercuryrepower.ca, May 2026. Your capacity plate is the ceiling.</text>
+<text class="src4" x="72" y="486">Bare motor dealer prices, mercuryrepower.ca. Your capacity plate is the ceiling.</text>
 </svg>
