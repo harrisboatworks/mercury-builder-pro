@@ -8146,7 +8146,7 @@ On a typical repower scenario at HBW, the HST savings on a trade-in adds 13% of 
 Working 2-strokes have limited trade value because of emissions, fuel concerns, and the shrinking buyer pool. We still take them. A 90 HP 2-stroke from the early 2000s in running condition might trade for $800 to $1,500. Older or non-running 2-strokes often clear $200 to $500 for parts. Better than scrap, never close to a 4-stroke of the same HP.
 
 **Do I need to service the motor before trade-in?**
-No. Basic cleaning and documentation are worth the effort. Major service usually isn't, you won't recoup the full cost. Wipe down the cowl, change the lower unit oil if it's overdue, gather your records, and bring the motor in. We'll handle the rest.
+No. Basic cleaning and documentation are worth the effort. Major service usually isn't, you won't recoup the full cost. Wipe down the cowl, change the lower unit oil if it's overdue, gather your records, and either run the [trade-in estimator](/trade-in-value) or bring the motor in. We'll handle the rest.
 
 **What if my motor has a known issue?**
 Tell us up front. A disclosed issue gets factored into the offer at fair shop cost. A surprise issue kills the price, sometimes the deal. We'd rather adjust the number once than chase the trust back after we found something you didn't mention.
