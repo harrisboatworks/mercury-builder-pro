@@ -8163,17 +8163,13 @@ Yes. Brand doesn't matter on the trade side, condition and HP class do. Honda an
 **What happens to my old motor after the trade?**
 Depends on the motor. Newer, low-hour, popular HP class usually goes to our reconditioning bench, gets a service, and lists on our used inventory. Higher-end motors sometimes go to our consignment line. Older or rougher motors go to the parts pool. We don't crush working motors. There's a market for almost everything.
 
-## Ready to Run the Numbers on Your Trade?
+## Ready to See Your Number?
 
-If you're thinking about a repower, the fastest way to find out what your trade is worth is to build a quote with your trade details included. We'll come back with a written number, the HST math, and the full out-the-door price.
+Two minutes from now you can have a real trade-in value for your motor.
 
-**Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
-
-**Phone:** 905-342-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Instant trade estimate:** [mercuryrepower.ca/trade-in-value](/trade-in-value) (free, no account, rolls into a full quote)
+**Build your repower quote with trade:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
+**Call us if your situation is non-standard:** 905-342-2153
 
 **Related guides:**
 - [Outboard Trade-In Value Ontario 2026](/blog/outboard-trade-in-value-ontario-hbw)
