@@ -1,9 +1,9 @@
 <svg width="100%" viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Mercury outboard families: FourStroke, Pro XS and Verado compared</title>
-<desc>Positioning comparison of Mercury's three outboard families. FourStroke (2.5 to 300 HP) is the standard recreational line. Pro XS (115 to 300 HP) is the performance line. Verado (V8, V10 and V12) is the premium offshore line, special order only at HBW. For Ontario freshwater, FourStroke or Pro XS is almost always the right call. Source mercuryrepower.ca, May 2026.</desc>
+<desc>Positioning comparison of Mercury's three outboard families. FourStroke (2.5 to 300 HP) is the standard recreational line. Pro XS (115 to 300 HP) is the performance line. Verado (V8, V10 and V12) is the premium offshore line, special order only at HBW. For Ontario freshwater, FourStroke or Pro XS is almost always the right call. Source mercuryrepower.ca.</desc>
 <defs><clipPath id="pc"><rect x="72" y="158" width="169" height="286" rx="12"/><rect x="255" y="158" width="169" height="286" rx="12"/><rect x="438" y="158" width="169" height="286" rx="12"/></clipPath></defs>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .fam{font-size:21px;font-weight:700;fill:#ffffff}
@@ -78,5 +78,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <text class="hpl" x="522.5" y="423" text-anchor="middle" font-style="italic">Rarely needed in Ontario</text>
 <text class="pun" x="340" y="472" text-anchor="middle">For Ontario freshwater, it is almost always <tspan fill="#c8102e">FourStroke or Pro XS</tspan>.</text>
 <text class="subl" x="340" y="492" text-anchor="middle">Verado is built for offshore, not Rice Lake. Most boats here never need it.</text>
-<text class="src4" x="72" y="514">Positioning per mercuryrepower.ca, May 2026. Build a live CAD quote at mercuryrepower.ca.</text>
+<text class="src4" x="72" y="514">Positioning per mercuryrepower.ca. Build a live CAD quote at mercuryrepower.ca.</text>
 </svg>

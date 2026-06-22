@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 602" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>What boat winterization costs in Ontario, line by line</title>
-<desc>Mercury outboard winterization cost in Ontario broken into five line items: fuel stabilizer and ethanol treatment $30 to $50, fogging oil $50 to $80, lower unit oil change and inspection $50 to $90, cooling system flush and drain $40 to $70, battery prep $25 to $50, for a typical all-in total of $250 to $400 CAD before HST. Skipping winterization risks a cracked block costing $2,000 to $5,000 or more. Source mercuryrepower.ca, May 2026.</desc>
+<desc>Mercury outboard winterization cost in Ontario broken into five line items: fuel stabilizer and ethanol treatment $30 to $50, fogging oil $50 to $80, lower unit oil change and inspection $50 to $90, cooling system flush and drain $40 to $70, battery prep $25 to $50, for a typical all-in total of $250 to $400 CAD before HST. Skipping winterization risks a cracked block costing $2,000 to $5,000 or more. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -51,5 +51,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="484" x2="608" y2="484" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="506" text-anchor="middle">Skip it and a cracked block runs <tspan fill="#c8102e">$2,000 to $5,000+</tspan>.</text>
 <text class="subl" x="340" y="528" text-anchor="middle">Price varies by motor size and condition. HST extra. Book before October for easier slots.</text>
-<text class="src4" x="72" y="552">Winterization price ranges, mercuryrepower.ca, May 2026. Request a quote at hbw.wiki/service.</text>
+<text class="src4" x="72" y="552">Winterization price ranges, mercuryrepower.ca. Request a quote at hbw.wiki/service.</text>
 </svg>

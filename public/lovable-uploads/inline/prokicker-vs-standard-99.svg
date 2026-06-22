@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 556" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Mercury 9.9 ProKicker versus standard 9.9 FourStroke</title>
-<desc>A comparison of the Mercury 9.9 ProKicker and the standard 9.9 FourStroke. Source mercuryrepower.ca, May 2026.</desc>
+<desc>A comparison of the Mercury 9.9 ProKicker and the standard 9.9 FourStroke. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -53,5 +53,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="438" x2="608" y2="438" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="460" text-anchor="middle">For Rice Lake walleye trolling, the <tspan fill="#c8102e">ProKicker is the standard</tspan>.</text>
 <text class="subl" x="340" y="482" text-anchor="middle">Different gearcase, different prop, different job. Standard 9.9 is a main motor, not a kicker.</text>
-<text class="src4" x="72" y="506">Auxiliary-motor framing, mercuryrepower.ca, May 2026. HBW rigs ProKicker installs every week.</text>
+<text class="src4" x="72" y="506">Auxiliary-motor framing, mercuryrepower.ca. HBW rigs ProKicker installs every week.</text>
 </svg>

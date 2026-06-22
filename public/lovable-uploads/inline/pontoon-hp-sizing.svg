@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 632" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Pontoon HP sizing reference table for Mercury outboards</title>
-<desc>A reference table for sizing a Mercury outboard to a pontoon by length and use, from 25 to 40 HP on a 16 to 18 ft cruise pontoon up to 250 to 300 HP on a 24 to 26 ft tritoon. Command Thrust matters once you pass 20 ft. Source mercuryrepower.ca, May 2026.</desc>
+<desc>A reference table for sizing a Mercury outboard to a pontoon by length and use, from 25 to 40 HP on a 16 to 18 ft cruise pontoon up to 250 to 300 HP on a 24 to 26 ft tritoon. Command Thrust matters once you pass 20 ft. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .th{font-size:11.5px;font-weight:700;fill:#ffffff}
@@ -65,5 +65,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <text class="hp" x="377" y="478.0" text-anchor="middle">250 to 300 HP</text>
 <text class="ct" x="537" y="477.0" text-anchor="middle">Standard</text>
 <text class="pun" x="340" y="542" text-anchor="middle">Most pontoons on Ontario lakes are <tspan fill="#c8102e">underpowered</tspan>. Size up, not down.</text>
-<text class="src4" x="72" y="576">HP sizing framework, mercuryrepower.ca, May 2026. Command Thrust matters once you pass 20 ft.</text>
+<text class="src4" x="72" y="576">HP sizing framework, mercuryrepower.ca. Command Thrust matters once you pass 20 ft.</text>
 </svg>

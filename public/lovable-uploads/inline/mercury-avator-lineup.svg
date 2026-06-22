@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 566" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Mercury Avator electric outboard lineup</title>
-<desc>The three smaller Mercury Avator electric outboards compared by output power, battery, and use case. Source mercuryrepower.ca, May 2026.</desc>
+<desc>The three smaller Mercury Avator electric outboards compared by output power, battery, and use case. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -68,5 +68,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="448" x2="608" y2="448" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="470" text-anchor="middle">Built for specific use cases. <tspan fill="#c8102e">Not a gas-motor replacement.</tspan></text>
 <text class="subl" x="340" y="492" text-anchor="middle">Rated by output power, not by gas-engine HP. Plan your charging before you plan the run.</text>
-<text class="src4" x="72" y="516">Avator lineup framing, mercuryrepower.ca, May 2026. 75e and 110e cover heavier-duty applications.</text>
+<text class="src4" x="72" y="516">Avator lineup framing, mercuryrepower.ca. 75e and 110e cover heavier-duty applications.</text>
 </svg>

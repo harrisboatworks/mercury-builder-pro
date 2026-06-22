@@ -1,13 +1,13 @@
 <svg width="100%" viewBox="0 0 680 534" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Mercury 75 HP versus 90 HP versus 115 HP outboard comparison</title>
-<desc>Three-column comparison of the Mercury 75 ELPT FourStroke (dealer price $14,190, available to order), the 90 ELPT FourStroke (dealer price $14,812, in stock) and the 115 ELPT FourStroke (dealer price $16,913, in stock). All three share the same 2.1L inline-4 block. Source mercuryrepower.ca, May 2026.</desc>
+<desc>Three-column comparison of the Mercury 75 ELPT FourStroke (dealer price $14,190, available to order), the 90 ELPT FourStroke (dealer price $14,812, in stock) and the 115 ELPT FourStroke (dealer price $16,913, in stock). All three share the same 2.1L inline-4 block. Source mercuryrepower.ca.</desc>
 <defs><clipPath id="pc">
 <rect x="72" y="158" width="169" height="250" rx="12"/>
 <rect x="255" y="158" width="169" height="250" rx="12"/>
 <rect x="438" y="158" width="169" height="250" rx="12"/>
 </clipPath></defs>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .hp{font-size:25px;font-weight:700;fill:#ffffff}
@@ -76,5 +76,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <text class="bul" x="472" y="391">Headroom, no V6</text>
 <text class="pun" x="340" y="442" text-anchor="middle">It is the same motor. You are buying <tspan fill="#c8102e">headroom</tspan>.</text>
 <text class="subl" x="340" y="463" text-anchor="middle">No weight penalty stepping up. Most Ontario boats land on the 90.</text>
-<text class="src4" x="72" y="486">Bare motor dealer prices, mercuryrepower.ca, May 2026. Your capacity plate is the ceiling.</text>
+<text class="src4" x="72" y="486">Bare motor dealer prices, mercuryrepower.ca. Your capacity plate is the ceiling.</text>
 </svg>

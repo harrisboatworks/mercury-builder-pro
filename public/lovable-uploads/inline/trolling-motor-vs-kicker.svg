@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 556" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Electric trolling motor versus gas kicker for Rice Lake</title>
-<desc>A comparison of an electric trolling motor and a gas kicker motor for Rice Lake and the Kawarthas. The electric trolling motor suits shallow water, bass, stealth and solo fishing; the gas kicker suits walleye trolling, big water, all-day range and backup propulsion. Most serious anglers run both. Source mercuryrepower.ca, May 2026.</desc>
+<desc>A comparison of an electric trolling motor and a gas kicker motor for Rice Lake and the Kawarthas. The electric trolling motor suits shallow water, bass, stealth and solo fishing; the gas kicker suits walleye trolling, big water, all-day range and backup propulsion. Most serious anglers run both. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -53,5 +53,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="438" x2="608" y2="438" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="460" text-anchor="middle">Most serious anglers end up running <tspan fill="#c8102e">both</tspan>.</text>
 <text class="subl" x="340" y="482" text-anchor="middle">The electric finds the fish. The kicker covers the water. They solve different problems.</text>
-<text class="src4" x="72" y="506">Auxiliary-motor comparison, mercuryrepower.ca, May 2026. HBW rigs either setup.</text>
+<text class="src4" x="72" y="506">Auxiliary-motor comparison, mercuryrepower.ca. HBW rigs either setup.</text>
 </svg>

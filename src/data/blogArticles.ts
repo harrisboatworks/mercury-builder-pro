@@ -2093,7 +2093,7 @@ whenInDoubt: Underpowered boats are the #1 complaint we hear. Step up before you
 
 
 
-![How to choose the right horsepower for your boat](/lovable-uploads/inline/how-to-choose-horsepower.svg)
+![Table of Mercury outboard HP recommendations by boat type, from 9.9 HP (12-14 ft aluminum) to 200 HP (18-22 ft runabout)](/lovable-uploads/inline/how-to-choose-horsepower.svg)
 
 ## HP recommendations by boat type
 
@@ -3315,7 +3315,7 @@ The standard 9.9 is not that motor. It can push a small boat. It cannot troll a 
 
 ---
 
-![Mercury 9.9 ProKicker versus standard 9.9 FourStroke](/lovable-uploads/inline/prokicker-vs-standard-99.svg)
+![Side-by-side comparison of Mercury 9.9 ProKicker and standard 9.9 FourStroke: ProKicker best for trolling, standard for small boats.](/lovable-uploads/inline/prokicker-vs-standard-99.svg)
 
 ## Why a Kicker Matters on Rice Lake Specifically
 
@@ -5009,7 +5009,7 @@ No licence is required during **Father's Day Weekend (June 20-21)** and **Family
 
 ---
 
-![Mercury setup for Rice Lake fishing, by species](/lovable-uploads/inline/rice-lake-fishing-setup.svg)
+![Table of Mercury outboard recommendations for five Rice Lake fishing setups, listing main HP ranges and auxiliary motors: Walleye 60-90 HP + ProKicker, Bass 90-115 HP + trolling motor, etc.](/lovable-uploads/inline/rice-lake-fishing-setup.svg)
 
 ## What's Actually in Rice Lake
 
@@ -5392,7 +5392,7 @@ The boaters who regret a repower are almost always the ones who put a new motor 
 
 ---
 
-![Mercury repower process timeline at HBW](/lovable-uploads/inline/repower-process-timeline.svg)
+![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to sea trial – 2-4 weeks total.](/lovable-uploads/inline/repower-process-timeline.svg)
 
 ## Step 1: Is Your Hull Worth Repowering?
 
@@ -5948,7 +5948,7 @@ Modern Mercury FourStrokes have a cruise efficiency sweet spot, typically somewh
 
 ---
 
-![Five levers that cut Mercury outboard fuel burn, ranked](/lovable-uploads/inline/fuel-efficiency-levers.svg)
+![Ranked list of 5 fuel-saving levers for Mercury outboards: prop selection (15-25% impact), trim (10-20%), hull cleanliness, weight, cruise speed. Setup beats horsepower.](/lovable-uploads/inline/fuel-efficiency-levers.svg)
 
 ## What Horsepower Actually Does to Fuel Economy
 
@@ -6947,7 +6947,7 @@ For specific pricing, build a quote at [mercuryrepower.ca](https://www.mercuryre
 
 ---
 
-![How to pick the right Mercury propeller](/lovable-uploads/inline/propeller-selection-guide.svg)
+![Comparison infographic of Mercury propeller choices: lower vs higher pitch, 3 vs 4 blades, aluminum vs stainless. Right prop hits mid-band WOT rpm.](/lovable-uploads/inline/propeller-selection-guide.svg)
 
 ## Pitch: the most important number
 
@@ -7614,7 +7614,7 @@ A **gas kicker** is a small outboard mounted alongside your main motor. It runs 
 
 These are not competing tools. They are complementary. But they cost real money, so most boaters pick one first.
 
-![Electric trolling motor versus gas kicker comparison](/lovable-uploads/inline/trolling-motor-vs-kicker.svg)
+![Side-by-side comparison of electric trolling motor (shallow, stealth, spot-lock) vs gas kicker (trolling, range, backup). Most anglers run both.](/lovable-uploads/inline/trolling-motor-vs-kicker.svg)
 
 ## Head-to-head: when each one wins
 
@@ -12365,7 +12365,7 @@ source: HBW Customer, Lakefield 2026
 
 ## Full Article
 
-The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L inline 4-cylinder. More displacement, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000, $6,000 CAD all-in. For [Mercury outboard prices from 2.5 to 300 HP](/pricing-reference), see our full reference.
+The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L V6. More displacement, more cylinders, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000, $6,000 CAD all-in. For [Mercury outboard prices from 2.5 to 300 HP](/pricing-reference), see our full reference.
 
 Whether that difference is worth paying comes down to three questions: What hull are you putting it on? How do you use it? How do you load it?
 
@@ -12399,12 +12399,12 @@ Most 150 EXLPT repowers at HBW land in the $23,000, $36,000 CAD range all-in, be
 
 ### Side-by-Side: Mercury 115 vs. 150 FourStroke
 
-![Mercury 115 HP versus 150 HP outboard side-by-side comparison](/lovable-uploads/inline/115-vs-150-hp.svg)
+![Side-by-side card comparison: Mercury 115 HP ($16,913, 359 lb, 4-cyl 2.1L) vs 150 HP ($22,022, 455 lb, V6 3.0L) with best-use hull sizes and activities.](/lovable-uploads/inline/115-vs-150-hp.svg)
 
 
 | Factor | 115 EXLPT FourStroke | 150 EXLPT FourStroke |
 |---|---|---|
-| Engine type | Inline 4-cyl, 2.1L | Inline 4-cyl, 3.0L |
+| Engine type | Inline 4-cyl, 2.1L | V6, 3.0L |
 | Weight (XL shaft) | ~163 kg / 359 lb | ~206 kg / 455 lb |
 | Hole shot (loaded) | Adequate | Strong |
 | Fuel economy at cruise | Excellent | Very good |
@@ -12412,11 +12412,11 @@ Most 150 EXLPT repowers at HBW land in the $23,000, $36,000 CAD range all-in, be
 | Best fit | 17, 19 ft aluminum, 18, 20 ft pontoons (cruising) | 18, 22 ft hulls, pontoons with water sports, loaded fishing |
 | All-in price (CAD, before HST) | $17,000, $22,000 | $23,000, $36,000 |
 
-### What About the 150 Pro XS V6?
+### What About the 150 Pro XS?
 
-Mercury also makes a 150 Pro XS V6, a different engine architecture (V6 instead of inline 4) optimized for performance applications. This motor is the right call for tournament-level bass fishing where acceleration to morning spots matters, or performance hulls built for the V6's weight.
+Mercury also makes a 150 Pro XS, tuned for performance applications with a sport gearcase and higher RPM ceiling. This motor is the right call for tournament-level bass fishing where acceleration to morning spots matters, or performance hulls run hard.
 
-For typical recreational use, family fishing, cruising, casual water sports, the FourStroke 150 is the better value. The Pro XS V6 earns its premium on tournament applications.
+For typical recreational use, family fishing, cruising, casual water sports, the FourStroke 150 is the better value. The Pro XS earns its premium on tournament applications.
 
 
 ![Mercury 115 HP and 150 HP FourStroke side-by-side on identical transoms](/lovable-uploads/inline/inline-115-vs-150-comparison.png)
@@ -12839,7 +12839,7 @@ Lake Ontario salmon and trout trolling typically calls for a Mercury 200–300 H
 
 ---
 
-![Mercury setup for Lake Ontario salmon and trout, by boat](/lovable-uploads/inline/lake-ontario-hp-setup.svg)
+![Table of Mercury outboard setups for Lake Ontario salmon/trout by boat size: main motor (115-300 HP) and kicker (15 ProKicker or none).](/lovable-uploads/inline/lake-ontario-hp-setup.svg)
 
 ## Lake Ontario is Different Fishing Water
 
@@ -13096,7 +13096,7 @@ totalValue: $250 - $400 CAD
 caveat: Pricing varies by motor size, accessibility, and current shop rate. HST extra. Book a winterization slot at /service.
 ::
 
-![Boat winterization cost breakdown for Ontario](/lovable-uploads/inline/winterization-cost-breakdown.svg)
+![Table of boat winterization costs in Ontario: 5 services totalling $250–$400 CAD before HST.](/lovable-uploads/inline/winterization-cost-breakdown.svg)
 
 ## Why the price varies (and why flat rates mislead you)
 
@@ -13313,7 +13313,7 @@ source: HBW Customer, Peterborough 2026
 
 ---
 
-![DIY Mercury outboard winterization, six steps in order](/lovable-uploads/inline/diy-winterization-steps.svg)\n\n## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
+![Six-step winterization guide for Mercury outboards: stabilize fuel, flush cooling, fog engine, drain gearcase, store battery, cover. Critical steps highlighted.](/lovable-uploads/inline/diy-winterization-steps.svg)\n\n## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
 
 Ontario's boating season has a hard stop. Unlike some parts of the country where an outboard can sit in the water year-round, here it comes out in October and faces five or six months of temperatures that will crack an unprotected powerhead if you leave water in it.
 
@@ -13640,7 +13640,7 @@ caveat: Numbers are typical ranges, not quotes. Build your exact quote at mercur
 
 ---
 
-![Mercury outboard price ladder by horsepower, CAD](/lovable-uploads/inline/mercury-price-ladder.svg)
+![Bar chart of Mercury outboard prices in CAD from $1,271 (2.5HP) to $22,022 (150HP); cheapest is the 2.5HP at $1,271.](/lovable-uploads/inline/mercury-price-ladder.svg)
 
 ## Full Article
 
@@ -13853,7 +13853,7 @@ A motor is reliable if it starts when you turn the key, runs through the season 
 
 The point is not that Yamaha or Honda fail more. The point is that when any motor needs service, Mercury regional dealer depth in Ontario means faster resolution.
 
-![Mercury vs Yamaha vs Honda outboard reliability compared](/lovable-uploads/inline/mercury-yamaha-honda-reliability.svg)
+![Comparison chart: Mercury, Yamaha, Honda reliability - dealer network is key tiebreaker.](/lovable-uploads/inline/mercury-yamaha-honda-reliability.svg)
 
 ## Where each brand has had issues (honest version)
 
@@ -16351,7 +16351,7 @@ If a seller cannot tell you the year, the hours, or the use history, you are buy
 
 ---
 
-![Used outboard inspection: green flags vs red flags](/lovable-uploads/inline/used-outboard-green-red-flags.svg)
+![Comparison chart: five green flags and five red flags for used outboard inspection.](/lovable-uploads/inline/used-outboard-green-red-flags.svg)
 
 ## At the Boat: The Inspection Order
 
@@ -16897,7 +16897,7 @@ This is the on-water response guide and prevention overview we'd walk through wi
 
 ---
 
-![Mercury overheating: what to do in the first 60 seconds](/lovable-uploads/inline/overheating-first-60-seconds.svg)
+![5-step flow chart: Mercury outboard overheat emergency – idle, check tell-tale, clear intake, restart or tow. $40 impeller vs $4,500 powerhead.](/lovable-uploads/inline/overheating-first-60-seconds.svg)
 
 ## On the Water Right Now: Do This in Order
 
@@ -22842,7 +22842,7 @@ Calm, protected bays have different demands than open lake conditions. Rice Lake
 ---
 
 
-![Pontoon HP sizing decision guide](/lovable-uploads/inline/pontoon-hp-sizing.svg)
+![Reference table of Mercury outboard HP for pontoons by length and use, from 25–40 HP (16–18 ft) to 250–300 HP (24–26 ft).](/lovable-uploads/inline/pontoon-hp-sizing.svg)
 
 ## The Decision Tree: HP by Boat Length and Use Case
 
@@ -24173,7 +24173,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 
 ## Specs Side-by-Side
 
-![Mercury 40 HP versus 60 HP outboard comparison](/lovable-uploads/inline/40-vs-60-hp.svg)
+![Side-by-side comparison: Mercury 40 HP ($9,532, 3-cylinder, 227 lb) vs 60 HP ($12,161, 4-cylinder, 250 lb) with best-boat and load recommendations, and $2,600 price gap.](/lovable-uploads/inline/40-vs-60-hp.svg)
 
 
 | | Mercury 40 ELPT FourStroke | Mercury 60 ELPT FourStroke |
@@ -24499,7 +24499,7 @@ In this example, the private sale wins by about $480, but only if you actually s
 
 Most customers find the private sale grind is not worth the modest delta once they price their own time. Talk to us before you list.
 
-![Outboard trade-in value by HP class, Ontario 2026](/lovable-uploads/inline/outboard-trade-in-value.svg)
+![Table of Mercury/Yamaha outboard trade-in values by HP class and age, Ontario 2026 CAD ranges.](/lovable-uploads/inline/outboard-trade-in-value.svg)
 
 ## 2026 trade-in ranges (Ontario, CAD)
 
@@ -24821,7 +24821,7 @@ Harris Boat Works offers outdoor winter storage with shrinkwrap on-site at our G
 
 ---
 
-![Outdoor shrinkwrap versus indoor heated boat storage](/lovable-uploads/inline/outdoor-vs-indoor-storage.svg)
+![Comparison of outdoor shrinkwrap vs indoor boat storage at Harris Boat Works, Gores Landing, Ontario](/lovable-uploads/inline/outdoor-vs-indoor-storage.svg)
 
 ## What HBW Storage Actually Looks Like
 
@@ -25558,7 +25558,7 @@ Rule of thumb: aluminum fishing boats default to standard. Pontoons default to C
 
 The 75, 90, and 115 are the same block with different tuning. There is no weight penalty stepping up. The only real penalty going from 75 to 90 to 115 is price and fuel burn at full throttle.
 
-![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L block](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,190 to $16,913 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 Most boats want either the 90 or the 115. The 75 is right for smaller hulls or situations where the capacity plate forces it, we don't actually stock the 75 because the 90 is the same physical motor at a small additional cost and has better headroom and better resale value.
 
@@ -25767,7 +25767,7 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ## How the 115 Compares to the 90 and the 150
 
-![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L inline-4 block](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,190 to $16,913 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 | | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
 |---|---|---|---|
@@ -25917,7 +25917,7 @@ Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake 
 
 The Mercury 75 HP FourStroke is part of the same family as the 80, 90, 100, and 115. All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
 
-![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L inline-4 block](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,190 to $16,913 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 | Specification | Mercury 75 ELPT | Mercury 90 ELPT |
 |---|---|---|

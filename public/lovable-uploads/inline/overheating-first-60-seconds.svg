@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 590" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Mercury outboard overheating: what to do in the first 60 seconds</title>
-<desc>The five on-water steps to take when a Mercury outboard overheats: throttle to idle, check the tell-tale water stream, shut down and clear the cooling intake if the stream is weak, wait and restart, and stop and call for a tow if the alarm returns. A $40 impeller beats a $4,500 powerhead. Source mercuryrepower.ca, May 2026.</desc>
+<desc>The five on-water steps to take when a Mercury outboard overheats: throttle to idle, check the tell-tale water stream, shut down and clear the cooling intake if the stream is weak, wait and restart, and stop and call for a tow if the alarm returns. A $40 impeller beats a $4,500 powerhead. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -46,5 +46,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="472" x2="608" y2="472" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="494" text-anchor="middle">A $40 impeller beats a <tspan fill="#c8102e">$4,500 powerhead</tspan>.</text>
 <text class="subl" x="340" y="516" text-anchor="middle">Do not bargain with the temperature gauge. When in doubt, shut it down.</text>
-<text class="src4" x="72" y="540">On-water response guide, mercuryrepower.ca, May 2026. After any overheat, have the motor checked.</text>
+<text class="src4" x="72" y="540">On-water response guide, mercuryrepower.ca. After any overheat, have the motor checked.</text>
 </svg>

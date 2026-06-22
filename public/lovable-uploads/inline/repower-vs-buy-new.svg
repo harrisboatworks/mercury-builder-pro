@@ -1,9 +1,9 @@
 <svg width="100%" viewBox="0 0 680 578" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Repower or buy a new boat decision comparison</title>
-<desc>When to repower: hull stringers, transom and floor are solid, the motor is the only major problem, the layout still fits and you plan to keep the boat five or more years. When to buy new: the transom is soft or water damaged, stringers are rotting or the floor is spongy, the boat is undersized for current family use, or hull repair cost passes the 50 percent rule. Source mercuryrepower.ca, May 2026.</desc>
+<desc>When to repower: hull stringers, transom and floor are solid, the motor is the only major problem, the layout still fits and you plan to keep the boat five or more years. When to buy new: the transom is soft or water damaged, stringers are rotting or the floor is spongy, the boat is undersized for current family use, or hull repair cost passes the 50 percent rule. Source mercuryrepower.ca.</desc>
 <defs><clipPath id="pc"><rect x="72" y="158" width="256" height="276" rx="12"/><rect x="352" y="158" width="256" height="276" rx="12"/></clipPath></defs>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .hp{font-size:22px;font-weight:700;fill:#ffffff}
@@ -57,5 +57,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <text class="bul" x="386" y="404">percent rule (see below)</text>
 <text class="pun" x="340" y="470" text-anchor="middle">The real question is not the motor. It is whether the <tspan fill="#c8102e">hull</tspan> is still good.</text>
 <text class="subl" x="340" y="491" text-anchor="middle">If repairing the hull tops 50 percent of a comparable new boat, the math says buy new.</text>
-<text class="src4" x="72" y="518">Repower vs replace decision logic, mercuryrepower.ca, May 2026. Free hull walk-around at HBW.</text>
+<text class="src4" x="72" y="518">Repower vs replace decision logic, mercuryrepower.ca. Free hull walk-around at HBW.</text>
 </svg>

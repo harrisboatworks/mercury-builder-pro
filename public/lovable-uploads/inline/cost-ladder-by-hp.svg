@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 582" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>What a new Mercury outboard costs by horsepower</title>
-<desc>Bar chart of new Mercury outboard dealer prices in Canadian dollars by horsepower: 9.9 HP $2,999, 25 HP $5,995, 40 HP $9,532, 60 HP $12,469, 90 HP $14,812, 115 HP Pro XS $17,320, 150 HP $22,022. Source mercuryrepower.ca, May 2026.</desc>
+<desc>Bar chart of new Mercury outboard dealer prices in Canadian dollars by horsepower: 9.9 HP $2,999, 25 HP $5,995, 40 HP $9,532, 60 HP $12,469, 90 HP $14,812, 115 HP Pro XS $17,320, 150 HP $22,022. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .g-h{font-size:31px;font-weight:700;fill:#20384d}
 .g-sub{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .g-lbl{font-size:14px;font-weight:500;fill:#20384d}
@@ -38,5 +38,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <text class="g-lbl" x="140" y="468" text-anchor="end">150 HP</text>
 <text class="g-val" x="538" y="468">$22,022</text>
 <text class="g-note" x="72" y="508">The 115 Pro XS, in red, is by far the most popular 115 we sell.</text>
-<text class="g-src" x="72" y="529">Bare motor dealer price, before HST and rigging. Source: mercuryrepower.ca, May 2026.</text>
+<text class="g-src" x="72" y="529">Bare motor dealer price, before HST and rigging. Source: mercuryrepower.ca.</text>
 </svg>

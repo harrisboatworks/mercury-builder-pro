@@ -1,8 +1,8 @@
 <svg width="100%" viewBox="0 0 680 568" xmlns="http://www.w3.org/2000/svg" role="img">
 <title>Mercury setup for Rice Lake fishing, by species</title>
-<desc>Mercury outboard recommendations for Rice Lake fishing by species and boat type. Source mercuryrepower.ca, May 2026.</desc>
+<desc>Mercury outboard recommendations for Rice Lake fishing by species and boat type. Source mercuryrepower.ca.</desc>
 <style>
-text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
 .s4{font-size:12.5px;font-weight:400;fill:#6f7c88}
 .pun{font-size:14px;font-weight:500;fill:#20384d}
@@ -62,5 +62,5 @@ text{font-family:'Anthropic Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 <line x1="72" y1="450" x2="608" y2="450" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="pun" x="340" y="472" text-anchor="middle">A 32 km lake with a <tspan fill="#c8102e">sunken railway</tspan> across the middle. Pick your motor accordingly.</text>
 <text class="subl" x="340" y="494" text-anchor="middle">If you do not have a ProKicker for walleye trolling, you are doing it wrong.</text>
-<text class="src4" x="72" y="518">Setup framework, mercuryrepower.ca, May 2026. Capacity plate is always the ceiling.</text>
+<text class="src4" x="72" y="518">Setup framework, mercuryrepower.ca. Capacity plate is always the ceiling.</text>
 </svg>
