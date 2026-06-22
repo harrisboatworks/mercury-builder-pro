@@ -508,6 +508,11 @@ export default function BlogArticle() {
 
           {/* Bottom contextual CTA */}
           <BlogCTA category={article.category} slug={article.slug} variant="banner" />
+
+          {/* Auto category CTA — suppressed if article body contains its own CTA markers */}
+          {!shouldSuppressAutoCTA(article.content) && (
+            <CategoryCTA category={article.category} />
+          )}
         </article>
 
         {/* Related Articles */}
