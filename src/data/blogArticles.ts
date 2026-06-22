@@ -8001,154 +8001,209 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 25: June 22, 2026
   {
     slug: 'boat-motor-trade-in-guide',
-    title: 'Trading In Your Boat Motor: How to Get the Best Value',
-    description: 'Learn how to maximize trade-in value when upgrading your outboard motor. Tips for preparation, timing, and negotiation from experienced dealers.',
+    title: 'Trading In Your Boat or Motor in Ontario (2026 Values, HST Math, HBW Process)',
+    description: 'How Ontario boat trade-ins work, what your old Mercury is worth in 2026, the 13% HST savings most boaters miss, and HBW\'s trade process.',
     image: '/lovable-uploads/Trading_In_Your_Boat_Motor_Hero.png',
+    imageAlt: 'Outboard motor on a trailer being assessed for trade-in toward a Mercury repower at Harris Boat Works.',
     author: 'Harris Boat Works',
     datePublished: '2026-03-10',
     dateModified: '2026-03-10',
     publishDate: '2026-03-10',
-    category: 'Tips',
-    readTime: '7 min read',
-    keywords: ['trade in boat motor', 'outboard trade in value', 'sell boat motor', 'upgrade outboard', 'boat motor value'],
+    category: 'Buying Guide',
+    readTime: '~9 min read',
+    keywords: ['boat motor trade in ontario', 'outboard trade in value', 'hst trade in boat motor', 'mercury trade in hbw', 'repower trade in'],
     content: `
-*Last reviewed: 2026-05-07*
+# Trading In Your Boat or Motor in Ontario (2026 Values, HST Math, HBW Process)
 
-> **Quick answer:** Trade-in value depends on brand, horsepower, age, and condition. Mercury holds value best in Ontario; Yamaha takes a small penalty, Honda and Suzuki larger ones. We anchor against median selling prices and cap the credit at the motor subtotal. Get an instant trade estimate inside the configurator at mercuryrepower.ca, and compare it against [the Mercury price reference](/pricing-reference) for the new motor you would put in its place.
+*Last reviewed: 2026-06-21*
 
-## Maximizing Your Motor Trade-In Value
+> **Quick answer:** When you trade in your old boat or motor at an Ontario dealer, you only pay 13% HST on the difference between the new motor and the trade allowance, not on the full new motor price. On a $20,000 new motor with a $5,000 trade, that's $650 saved on tax alone. Combine that with the convenience of one transaction and dealer reconditioning, and trade-in usually beats private sale once you account for total dollars in your pocket. Build a quote with your trade at mercuryrepower.ca.
 
-Upgrading your outboard? Your current motor has value. Here's how to get the best trade-in deal.
+If you're thinking about a repower, your old motor isn't junk. It's part of the math. And in Ontario, that math is bigger than most boaters realize because the HST rules work in your favour the moment you trade.
 
-### What Affects Trade-In Value
+We've handled hundreds of trade-ins on Rice Lake. Most customers walk in thinking they need to sell privately to get top dollar. Then we run the HST numbers and the conversation changes. This post lays out how trade-in actually works in Ontario, what your motor is realistically worth in 2026, the documentation that moves the needle on your offer, and how HBW handles it from quote to dock.
 
-**Make and Model**:
-- Mercury, Yamaha, Honda command best values
-- Popularity matters for resale
-- Current vs discontinued models
+## The HST Math Most Boaters Miss
 
-**Age**:
-- Newer = more valuable
-- Depreciation curves vary
-- Technology updates affect value
+Here's the rule in Ontario: when you trade in a vehicle (including a boat or outboard) toward a new one at the same dealer, **HST is calculated on the difference**, not on the new motor's full price. Trade in your old Mercury for $5,000 against a new $20,000 Mercury, and you pay 13% HST on $15,000, not $20,000. That's $650 of tax savings per $5,000 of trade.
 
-**Hours**:
-- Lower hours = higher value
-- Documentation helps significantly
-- 1,000+ hours reduces value notably
+Sell privately for the same $5,000, then buy the $20,000 motor outright, and you pay HST on the full $20,000. Same boat, same buyer, same trade value, but $650 more out of your pocket.
 
-**Condition**:
-- Cosmetic appearance matters
-- Mechanical condition is primary
-- Service history is gold
+The threshold where this stops mattering: when the private-sale premium covers the lost HST savings AND your time. For a typical $5,000 to $10,000 trade, private sale needs to clear roughly 13% more than the trade offer just to break even on tax. Then add Marketplace tire-kickers, no-shows, the test ride on your lake, the messaging back and forth, and the cash safety conversation. Most boaters who do the math end up trading.
 
-### Preparing for Trade-In
+Confirm with your tax professional for your specific situation. The general rule is straightforward; edge cases like inter-provincial trades or commercial use get more nuanced.
 
-**Documentation**:
-- Gather all service records
-- Locate purchase receipt if possible
-- Find warranty paperwork
-- Hour meter photos
+## What Your Old Motor Is Actually Worth in 2026
 
-**Cleaning**:
-- Wash exterior thoroughly
-- Clean cowl and under cover
-- Remove accumulated grime
-- Polish if needed
+Real trade values move with three things: the motor itself (brand, model, HP, age), the condition (hours, service history, cosmetics), and the market we're seeing right now at HBW.
 
-**Basic Maintenance**:
-- Fresh lower unit oil
-- Clean fuel filter area
-- Check propeller condition
-- Top off fluids
+We published a full reference table broken down by HP class and age in our [Outboard Trade-In Value Ontario 2026 guide](/blog/outboard-trade-in-value-ontario-hbw). Short version:
 
-### Timing Your Trade
+- **9.9-15 HP kicker, working condition, under 10 years:** $800-$1,800
+- **25-50 HP, 0-5 years, documented:** $2,500-$5,500
+- **60-90 HP, 0-5 years:** $4,500-$8,500
+- **115-150 HP FourStroke, 0-5 years:** $7,000-$13,000
+- **200-300 HP V8/V6, 0-5 years:** $10,000-$20,000+
 
-**Best Times**:
-- Winter (when repowers peak)
-- Pre-season (when upgraders shop)
-- During manufacturer promotions
+These are working, four-stroke, Mercury or Yamaha values. Two-stroke motors trade at substantially less because of emissions and fuel concerns. Hondas trade well but slightly under Mercury because of the smaller dealer network for resale. Anything older than 15 years or with major mechanical history is closer to parts value than retail.
 
-**Worst Times**:
-- Mid-summer (everyone's boating)
-- Fall (season winding down)
-- When you need it done urgently
+There is no Kelley Blue Book for outboards. Condition and resale ease set the number, and we set it based on what we actually expect to recondition and resell into the Kawarthas market.
 
-::walkaround-lead-capture
+## Trade vs Consignment vs Private Sale
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+HBW handles all three paths. The right one depends on what you value more: dollars, time, or the HST savings.
 
+| Path | Typical net | Time to cash | Best for |
+|------|------------|--------------|----------|
+| Trade-in toward repower | Trade value + 13% HST savings on the difference | Same day | Most repower customers |
+| Consignment through HBW | Higher than trade, minus our commission | 3-12 weeks | Newer motors, no rush, want a stronger price |
+| Private sale | Highest potential, no commission | Days to months | Smaller motors, popular models, sellers with time |
 
-![Used aluminum fishing boat with Mercury outboard prepped for trade-in evaluation](/lovable-uploads/inline/inline-trade-in-eval.png)
+**The trade-in path** is the cleanest. You roll in with the old motor, leave with the new one rigged on your hull, and pay HST only on the difference. We handle decommissioning the old motor, the paperwork, and the disposal or resale.
 
-### Trade-In vs Private Sale
+**The consignment path** matters for higher-end motors where the dollars per hour of work justify the wait. We list, show, run, and sell the motor while you keep boating on your new rig. It typically clears more than a straight trade but doesn't capture the HST benefit.
 
-**Trade-In Advantages**:
-- Convenience - one transaction
-- No buyer hassles
-- Immediate value toward purchase
-- Dealer handles everything
+**The private sale path** maximizes top-line price, but you handle everything: photos, the listing, the calls, the no-shows, the test ride, the cash exchange, and the title work. Plus you pay full HST on the new motor.
 
-**Private Sale Advantages**:
-- Potentially higher price
-- Set your own terms
-- Negotiate directly
+If you're repowering and want to know exactly how the three paths shake out for your specific motor, we'll run all three numbers in writing.
 
-**Reality Check**: Private sale typically nets 15-25% more but requires significant effort. For many, trade-in convenience wins.
+## What HBW Checks Before Quoting a Trade
 
-### What Dealers Look For
+Before we put a number on your old motor, we run the same inspection we'd run on a customer's used motor we're about to sell.
 
-**We Evaluate**:
-- Compression test results
-- Lower unit oil condition
-- Cosmetic damage
-- Known issues (overheating history, etc.)
-- Market demand for model
+- Compression on every cylinder
+- Lower unit oil condition (the milky-grey-of-doom check)
+- Tilt and trim function and fluid condition
+- Powerhead and gearcase corrosion
+- Cosmetics: cowl condition, decals, scratches that affect resale
+- Service history if you've kept records
+- Known issues: alarm history, overheating events, prior repairs
+- Hours if the motor has SmartCraft or a documented hour meter
 
-**We Value**:
-- Complete service history
-- Clean, well-maintained appearance
-- Running, reliable motors
-- Popular models
+We'd rather find a problem on the bench than have it come back from a customer next season. That's also why we'd rather you tell us about a known issue up front than have us find it. A known problem gets factored into the offer. A surprise problem kills the deal, or, worse, kills the price after the offer is made.
 
-### Negotiation Tips
+## Documentation That Moves Your Trade Number
 
-- Research comparable sales
-- Be realistic about condition
-- Don't hide known problems
-- Consider total deal, not just trade value
-- Winter offers more negotiating room
+You don't need a thousand pages of records. You need the right ones:
 
-**[Get a Trade-In Estimate](/quote)**
+- **Original purchase receipt or dealer invoice** if you have it (proves model year and original equipment)
+- **Service records**, even handwritten ones (every winterization, every impeller, every oil change you can document is worth real dollars)
+- **Hour meter photo** if your motor has SmartCraft or a dash-mounted hour meter
+- **Warranty paperwork** if there's anything still active
+- **Recent service work receipts** especially if you've replaced the powerhead, gearcase, or major electrical
+- **Ownership/title** for the boat if you're trading boat-and-motor as a package
 
-**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
+A motor with a clean documented service history can trade 10-25% higher than the same motor with no records. We've seen it move the offer by $1,500 on a 90 HP and $3,000 on a 200 V8. Records are the cheapest way to add value.
 
-## Related guides
+## Common Mistakes Boaters Make on Trade-Ins
 
-- [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide). SmartCraft gauges explained
-- [Mercury Digital Throttle & Shift (DTS): What You Need to Know](/blog/mercury-digital-throttle-shift-guide). Digital Throttle & Shift basics
+These are the things that cost real money on trade day. Avoid them.
 
+- **Detailing aggressively right before trade-in.** A freshly detailed motor screams "trying to hide something." A regularly maintained motor looks like, well, a regularly maintained motor. Clean the cowl, wipe down the powerhead, but don't show up with a motor that looks newer than the records say.
+- **Hiding known issues.** We'll find them. When we do, the offer drops more than if you'd disclosed up front, because surprise issues kill our confidence in everything else you said.
+- **Paying for a major service "to maximize trade value."** You won't recoup what you spend. A $1,200 100-hour service before trade-in adds maybe $400 to the offer. Spend the money on basic cleaning and documentation instead.
+- **Negotiating trade in isolation from the new motor deal.** Total deal matters. Sometimes we'll go higher on the trade if the new motor margin gives us room. Sometimes we'll give a better price on the new motor and hold the trade firm. Look at the whole package, not just one number.
+- **Trading in summer.** July is the worst month to trade. Everyone's boating, nobody's repowering, and your old motor sits on our lot for three months before anyone looks at it. Winter is the best time. We're booking spring repowers and we want trade inventory ready to recondition and resell into the Kawarthas market.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+## How HBW Handles Your Trade From Quote to Dock
+
+Here's the actual process if you trade through us:
+
+1. **Quote stage.** Tell us the motor (year, make, model, HP, shaft length, controls), the hours if you know them, and any service or issue history. We can quote a range from that alone. The firm number comes after we see the motor.
+2. **Live inspection.** Bring it in, or, for boat-and-motor packages on a trailer, we'll inspect on your trailer. Compression check, lower unit oil, run-up if it's runnable, cosmetics. Usually 30-60 minutes.
+3. **Firm trade offer in writing.** Tied to your new motor quote so you see the full deal: new motor price, rigging, trade allowance, HST on the difference, total out the door.
+4. **Decommission and swap.** We pull the old motor, transfer your old controls if compatible, install the new motor, rig and test. Old motor goes to our reconditioning bench or to the consignment line, depending on what makes sense.
+5. **You leave on the new rig.** Same-day swap is common for like-for-like HP. If we're upgrading HP or changing rigging type (mechanical to DTS, for example), it's typically a 1-3 day shop visit.
+
+If you're outside the immediate Kawarthas, we coordinate pickup and delivery for repowers regularly. GTA and east Toronto customers drive up routinely. We've handled trades from as far as Ottawa and Niagara.
+
+## When to Call HBW
+
+If you're sitting on a working motor and wondering whether to trade, sell, or consign, that's the conversation to have. Five minutes on the phone usually settles it.
+
+- You're already planning a repower and want to know what your old motor is worth: call. We can give you a range over the phone.
+- You're considering selling privately and want to compare to a trade offer: we'll quote both numbers in writing.
+- You have a higher-end motor (150 HP or up, under 5 years, low hours) and want to maximize dollars: ask about consignment.
+- You have a non-runner or an older 2-stroke: we'll still look. There's sometimes more value than you'd expect, especially in parts demand.
+
+## Frequently Asked Questions
+
+**How much does the HST savings actually work out to?**
+On a typical repower scenario at HBW, the HST savings on a trade-in adds 13% of the trade value back to your bottom line. For a $5,000 trade, that's $650 you wouldn't get on a private sale. For a $10,000 trade, $1,300. For boat-and-motor packages, the savings scale with the trade value. Enough that for most customers, the trade-in path nets more dollars in pocket than private sale once you account for the time and risk of a private listing.
+
+**Is my old 2-stroke worth anything?**
+Working 2-strokes have limited trade value because of emissions, fuel concerns, and the shrinking buyer pool. We still take them. A 90 HP 2-stroke from the early 2000s in running condition might trade for $800 to $1,500. Older or non-running 2-strokes often clear $200 to $500 for parts. Better than scrap, never close to a 4-stroke of the same HP.
+
+**Do I need to service the motor before trade-in?**
+No. Basic cleaning and documentation are worth the effort. Major service usually isn't, you won't recoup the full cost. Wipe down the cowl, change the lower unit oil if it's overdue, gather your records, and bring the motor in. We'll handle the rest.
+
+**What if my motor has a known issue?**
+Tell us up front. A disclosed issue gets factored into the offer at fair shop cost. A surprise issue kills the price, sometimes the deal. We'd rather adjust the number once than chase the trust back after we found something you didn't mention.
+
+**Can I trade in a motor that doesn't run?**
+Yes. Non-running motors typically trade at parts value, $200 to $1,500 depending on the HP class and the condition of the major components. If the powerhead is salvageable, the trade value goes up. If it's seized or has a cracked block, parts value is the ceiling. Either way, bringing it in beats putting it on Marketplace for six months at $500 with no calls.
+
+**How does HST work if I'm trading a boat-and-motor package?**
+Same principle. HST is calculated on the difference between the new package price and the trade allowance for your old boat-and-motor. The trade allowance can include both. Often the boat itself has more residual value than the motor. We'll itemize it on the quote so the math is visible.
+
+**Can I trade a Honda or Yamaha toward a Mercury?**
+Yes. Brand doesn't matter on the trade side, condition and HP class do. Honda and Yamaha 4-strokes trade well, slightly under Mercury due to the smaller resale dealer network but only by 5 to 10%. Bring it in for an inspection and we'll quote it. We have specific guides on [Honda to Mercury repowers](/blog/honda-to-mercury-repower-ontario-guide), [Yamaha to Mercury repowers](/blog/yamaha-to-mercury-repower-ontario-guide), and [Evinrude to Mercury repowers](/blog/evinrude-to-mercury-repower-ontario-guide) if you want the full repower numbers.
+
+**What happens to my old motor after the trade?**
+Depends on the motor. Newer, low-hour, popular HP class usually goes to our reconditioning bench, gets a service, and lists on our used inventory. Higher-end motors sometimes go to our consignment line. Older or rougher motors go to the parts pool. We don't crush working motors. There's a market for almost everything.
+
+## Ready to Run the Numbers on Your Trade?
+
+If you're thinking about a repower, the fastest way to find out what your trade is worth is to build a quote with your trade details included. We'll come back with a written number, the HST math, and the full out-the-door price.
+
+**Phone:** 905-342-2153
+**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+**Phone:** 905-342-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+
+**Related guides:**
+- [Outboard Trade-In Value Ontario 2026](/blog/outboard-trade-in-value-ontario-hbw)
+- [Mercury Repower Cost in Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Outboard Rigging Costs](/blog/mercury-outboard-rigging-costs-ontario)
+- [What Happens to Your Old Motor When You Repower (HST and Disposal)](/blog/repower-old-motor-trade-in-hst-disposal-ontario)
+- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
+
     `,
     faqs: [
-      {
-        question: 'Is my old 2-stroke worth anything?',
-        answer: 'Older 2-strokes have limited value due to emissions and fuel concerns. Running condition helps, but values are generally low. Best to factor in minimal trade value.'
+      {,
+        question: 'How much does the HST savings actually work out to?',,
+        answer: 'On a typical repower scenario at HBW, the HST savings on a trade-in adds 13% of the trade value back to your bottom line. For a $5,000 trade, that\'s $650 you wouldn\'t get on a private sale. For a $10,000 trade, $1,300. For boat-and-motor packages, the savings scale with the trade value. Enough that for most customers, the trade-in path nets more dollars in pocket than private sale once you account for the time and risk of a private listing.',
       },
-      {
-        question: 'Do I need to get the motor serviced before trade-in?',
-        answer: 'Basic cleaning and maintenance helps. Major service isn\'t usually worth the investment - you won\'t recoup the full cost. Clean, running, documented is the target.'
+      {,
+        question: 'Is my old 2-stroke worth anything?',,
+        answer: 'Working 2-strokes have limited trade value because of emissions, fuel concerns, and the shrinking buyer pool. We still take them. A 90 HP 2-stroke from the early 2000s in running condition might trade for $800 to $1,500. Older or non-running 2-strokes often clear $200 to $500 for parts. Better than scrap, never close to a 4-stroke of the same HP.',
       },
-      {
-        question: 'What if my motor has a known issue?',
-        answer: 'Disclose it. Dealers will find problems anyway, and hidden issues kill trust and deals. A known issue can be factored in; surprise issues kill deals.'
+      {,
+        question: 'Do I need to service the motor before trade-in?',,
+        answer: 'No. Basic cleaning and documentation are worth the effort. Major service usually isn\'t, you won\'t recoup the full cost. Wipe down the cowl, change the lower unit oil if it\'s overdue, gather your records, and bring the motor in. We\'ll handle the rest.',
       },
-      {
-        question: 'Can I trade in a motor that doesn\'t run?',
-        answer: 'Yes, but value is limited. Non-running motors may be worth parts value only. Sometimes there\'s more value than expected - let us evaluate it.'
+      {,
+        question: 'What if my motor has a known issue?',,
+        answer: 'Tell us up front. A disclosed issue gets factored into the offer at fair shop cost. A surprise issue kills the price, sometimes the deal. We\'d rather adjust the number once than chase the trust back after we found something you didn\'t mention.',
+      },
+      {,
+        question: 'Can I trade in a motor that doesn\'t run?',,
+        answer: 'Yes. Non-running motors typically trade at parts value, $200 to $1,500 depending on the HP class and the condition of the major components. If the powerhead is salvageable, the trade value goes up. If it\'s seized or has a cracked block, parts value is the ceiling. Either way, bringing it in beats putting it on Marketplace for six months at $500 with no calls.',
+      },
+      {,
+        question: 'How does HST work if I\'m trading a boat-and-motor package?',,
+        answer: 'Same principle. HST is calculated on the difference between the new package price and the trade allowance for your old boat-and-motor. The trade allowance can include both. Often the boat itself has more residual value than the motor. We\'ll itemize it on the quote so the math is visible.',
+      },
+      {,
+        question: 'Can I trade a Honda or Yamaha toward a Mercury?',,
+        answer: 'Yes. Brand doesn\'t matter on the trade side, condition and HP class do. Honda and Yamaha 4-strokes trade well, slightly under Mercury due to the smaller resale dealer network but only by 5 to 10%. Bring it in for an inspection and we\'ll quote it. We have specific guides on Honda to Mercury, Yamaha to Mercury, and Evinrude to Mercury repowers if you want the full repower numbers.',
+      },
+      {,
+        question: 'What happens to my old motor after the trade?',,
+        answer: 'Depends on the motor. Newer, low-hour, popular HP class usually goes to our reconditioning bench, gets a service, and lists on our used inventory. Higher-end motors sometimes go to our consignment line. Older or rougher motors go to the parts pool. We don\'t crush working motors. There\'s a market for almost everything.',
       }
     ]
   },
