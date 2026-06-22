@@ -12365,7 +12365,7 @@ source: HBW Customer, Lakefield 2026
 
 ## Full Article
 
-The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L inline 4-cylinder. More displacement, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000, $6,000 CAD all-in. For [Mercury outboard prices from 2.5 to 300 HP](/pricing-reference), see our full reference.
+The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L V6. More displacement, more cylinders, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000, $6,000 CAD all-in. For [Mercury outboard prices from 2.5 to 300 HP](/pricing-reference), see our full reference.
 
 Whether that difference is worth paying comes down to three questions: What hull are you putting it on? How do you use it? How do you load it?
 
@@ -12404,7 +12404,7 @@ Most 150 EXLPT repowers at HBW land in the $23,000, $36,000 CAD range all-in, be
 
 | Factor | 115 EXLPT FourStroke | 150 EXLPT FourStroke |
 |---|---|---|
-| Engine type | Inline 4-cyl, 2.1L | Inline 4-cyl, 3.0L |
+| Engine type | Inline 4-cyl, 2.1L | V6, 3.0L |
 | Weight (XL shaft) | ~163 kg / 359 lb | ~206 kg / 455 lb |
 | Hole shot (loaded) | Adequate | Strong |
 | Fuel economy at cruise | Excellent | Very good |
@@ -12412,11 +12412,11 @@ Most 150 EXLPT repowers at HBW land in the $23,000, $36,000 CAD range all-in, be
 | Best fit | 17, 19 ft aluminum, 18, 20 ft pontoons (cruising) | 18, 22 ft hulls, pontoons with water sports, loaded fishing |
 | All-in price (CAD, before HST) | $17,000, $22,000 | $23,000, $36,000 |
 
-### What About the 150 Pro XS V6?
+### What About the 150 Pro XS?
 
-Mercury also makes a 150 Pro XS V6, a different engine architecture (V6 instead of inline 4) optimized for performance applications. This motor is the right call for tournament-level bass fishing where acceleration to morning spots matters, or performance hulls built for the V6's weight.
+Mercury also makes a 150 Pro XS, tuned for performance applications with a sport gearcase and higher RPM ceiling. This motor is the right call for tournament-level bass fishing where acceleration to morning spots matters, or performance hulls run hard.
 
-For typical recreational use, family fishing, cruising, casual water sports, the FourStroke 150 is the better value. The Pro XS V6 earns its premium on tournament applications.
+For typical recreational use, family fishing, cruising, casual water sports, the FourStroke 150 is the better value. The Pro XS earns its premium on tournament applications.
 
 
 ![Mercury 115 HP and 150 HP FourStroke side-by-side on identical transoms](/lovable-uploads/inline/inline-115-vs-150-comparison.png)
