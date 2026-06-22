@@ -8039,9 +8039,9 @@ The threshold where this stops mattering: when the private-sale premium covers t
 
 Confirm with your tax professional for your specific situation. The general rule is straightforward; edge cases like inter-provincial trades or commercial use get more nuanced.
 
-## What Your Old Motor Is Actually Worth in 2026
+## What Your Old Motor Is Actually Worth (2026 Values, 2027 Coming July 1)
 
-Real trade values move with three things: the motor itself (brand, model, HP, age), the condition (hours, service history, cosmetics), and the market we're seeing right now at HBW.
+Real trade values move with three things: the motor itself (brand, model, HP, age), the condition (hours, service history, cosmetics), and the market we're seeing right now at HBW. Heads-up: Mercury's model year flips to 2027 on July 1, 2026, which means current 2026 Mercurys become "previous gen" overnight. Resale values don't move dramatically the day of the flip, but trading in before the flip lets us recondition and resell your motor at top-of-cycle pricing, which sometimes means a stronger trade offer.
 
 We published a full reference table broken down by HP class and age in our [Outboard Trade-In Value Ontario 2026 guide](/blog/outboard-trade-in-value-ontario-hbw). Short version:
 
