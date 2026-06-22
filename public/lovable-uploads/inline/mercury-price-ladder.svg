@@ -1,6 +1,6 @@
 <svg width="100%" viewBox="0 0 680 632" xmlns="http://www.w3.org/2000/svg" role="img">
-<title>Mercury outboard price ladder, cheapest models in Canada 2026</title>
-<desc>Mercury outboard bare-motor dealer prices in CAD climb steeply with horsepower, from the 2.5 HP at $1,271 up to the 150 HP at $22,022. These are bare-motor prices before controls, propeller and rigging. Source mercuryrepower.ca.</desc>
+<title>Mercury outboard price ladder, cheapest models in Canada 2027</title>
+<desc>Mercury outboard bare-motor dealer prices in CAD climb steeply with horsepower, from the 2.5 HP at $1,298 up to the 150 HP at $22,242. These are bare-motor prices before controls, propeller and rigging. Source mercuryrepower.ca.</desc>
 <style>
 text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .h4{font-size:31px;font-weight:700;fill:#20384d}
@@ -19,30 +19,30 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 <line x1="72" y1="141" x2="608" y2="141" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
 <text class="barhp" x="140" y="193" text-anchor="end">2.5 HP</text>
 <rect x="152" y="178" width="19" height="22" rx="4" fill="#c8102e"/>
-<text class="bar" x="180" y="193">$1,271</text>
+<text class="bar" x="180" y="193">$1,298</text>
 <text class="barhp" x="140" y="237" text-anchor="end">9.9 HP</text>
 <rect x="152" y="222" width="44" height="22" rx="4" fill="#20384d"/>
 <text class="bar" x="205" y="237">$2,999</text>
 <text class="barhp" x="140" y="281" text-anchor="end">25 HP</text>
 <rect x="152" y="266" width="73" height="22" rx="4" fill="#20384d"/>
-<text class="bar" x="234" y="281">$4,967</text>
+<text class="bar" x="234" y="281">$5,093</text>
 <text class="barhp" x="140" y="325" text-anchor="end">40 HP</text>
 <rect x="152" y="310" width="139" height="22" rx="4" fill="#20384d"/>
-<text class="bar" x="300" y="325">$9,532</text>
+<text class="bar" x="300" y="325">$9,438</text>
 <text class="barhp" x="140" y="369" text-anchor="end">60 HP</text>
 <rect x="152" y="354" width="178" height="22" rx="4" fill="#20384d"/>
-<text class="bar" x="339" y="369">$12,161</text>
+<text class="bar" x="339" y="369">$12,040</text>
 <text class="barhp" x="140" y="413" text-anchor="end">90 HP</text>
 <rect x="152" y="398" width="217" height="22" rx="4" fill="#20384d"/>
-<text class="bar" x="378" y="413">$14,812</text>
+<text class="bar" x="378" y="413">$14,960</text>
 <text class="barhp" x="140" y="457" text-anchor="end">115 HP</text>
 <rect x="152" y="442" width="247" height="22" rx="4" fill="#20384d"/>
-<text class="bar" x="408" y="457">$16,913</text>
+<text class="bar" x="408" y="457">$17,083</text>
 <text class="barhp" x="140" y="501" text-anchor="end">150 HP</text>
 <rect x="152" y="486" width="322" height="22" rx="4" fill="#20384d"/>
-<text class="bar" x="483" y="501">$22,022</text>
+<text class="bar" x="483" y="501">$22,242</text>
 <line x1="72" y1="514" x2="608" y2="514" stroke="#20384d" stroke-opacity="0.12" stroke-width="1"/>
-<text class="pun" x="340" y="536" text-anchor="middle">The cheapest Mercury is the <tspan fill="#c8102e">2.5 HP at $1,271</tspan>.</text>
+<text class="pun" x="340" y="536" text-anchor="middle">The cheapest Mercury is the <tspan fill="#c8102e">2.5 HP at $1,298</tspan>.</text>
 <text class="subl" x="340" y="558" text-anchor="middle">Bare-motor dealer price. Add controls, propeller, and rigging for a fully rigged total.</text>
 <text class="src4" x="72" y="582">Dealer prices, mercuryrepower.ca/pricing-reference. Verified weekly.</text>
 </svg>
