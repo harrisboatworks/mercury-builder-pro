@@ -7,6 +7,13 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'GET, OPTIONS',
 };
 
+// Buckets this proxy is allowed to serve. Any other bucket is rejected.
+// Public assets only — anything containing PII, financing, or customer documents
+// must NOT be added here.
+const ALLOWED_BUCKETS = new Set<string>([
+  'motor-images',
+]);
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -20,10 +27,19 @@ serve(async (req) => {
     const download = url.searchParams.get('download') === 'true';
     const filename = url.searchParams.get('filename');
 
-    if (!filePath) {
-      return new Response('Missing file path parameter', { 
-        status: 400, 
-        headers: corsHeaders 
+    if (!filePath || filePath.includes('..') || filePath.startsWith('/') || filePath.startsWith('\\')) {
+      console.log('[file-proxy] Rejected path:', filePath);
+      return new Response('Invalid path', {
+        status: 400,
+        headers: corsHeaders,
+      });
+    }
+
+    if (!ALLOWED_BUCKETS.has(bucket)) {
+      console.log('[file-proxy] Rejected bucket:', bucket);
+      return new Response('Bucket not allowed', {
+        status: 403,
+        headers: corsHeaders,
       });
     }
 
