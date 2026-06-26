@@ -30,7 +30,6 @@
     "lint": "eslint .",
     "lint:tokens": "node scripts/check-design-tokens.mjs",
     "preview": "vite preview"
-
   },
   "dependencies": {
     "@elevenlabs/react": "^0.12.3",
@@ -114,11 +113,11 @@
     "@types/react-dom": "18.3.1",
     "@vitejs/plugin-react-swc": "^4.3.0",
     "autoprefixer": "^10.4.21",
-    
     "eslint": "^9.32.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
+    "husky": "^9.1.7",
     "jsdom": "^29.1.1",
     "lovable-tagger": "^1.1.9",
     "marked": "^18.0.3",
