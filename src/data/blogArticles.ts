@@ -1243,7 +1243,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
   {
     slug: 'mercury-outboard-overheat-alarm-decoder',
     title: 'Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)',
-    seoTitle: 'Mercury Outboard Overheat Alarm Decoder | What Each Pattern Means | HBW',
+    seoTitle: 'Mercury Outboard Overheat Alarm Decoder (2026) | HBW',
     description: 'Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs.',
     image: '/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder.png',
     author: 'Jay Harris',
