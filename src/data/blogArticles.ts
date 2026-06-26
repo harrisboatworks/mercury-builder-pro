@@ -34790,7 +34790,7 @@ We'll quote your motor honestly, check your serial against Mercury's official Bo
     title: 'Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)',
     seoTitle: 'Mercury vs Honda Outboards | HBW 2026',
     description: 'Mercury vs Honda outboards from an Ontario Mercury Platinum dealer. Where Honda actually wins, where Mercury wins, and the local service reality on Rice Lake. Updated 2026 with Honda BF350 lineup correction.',
-    image: '/lovable-uploads/hero-mercury-vs-honda-comparison-2027.jpg',
+    image: '/lovable-uploads/mercury-vs-honda-hero-2026.jpg',
     imageAlt: 'Ontario boater sitting in an aluminum fishing boat at a wooden dock at golden hour, Mercury 115 FourStroke outboard on the stern.',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
