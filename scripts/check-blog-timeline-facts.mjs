@@ -126,7 +126,10 @@ function checkAge(text, push) {
 }
 
 // R4: present-tense "this year/season" claims must agree with CURRENT_YEAR.
-const PRESENT_RX = /\b(?:this\s+(?:year|season|spring|summer|fall|winter)|currently|right\s+now|as\s+of)\b[^.\n]{0,40}?\b((?:19|20)\d{2})\b/gi;
+// We intentionally exclude "as of <Month> <day>, YYYY" because that is a
+// regulatory effective-date construction (the year is just the date suffix,
+// not a "this year" claim).
+const PRESENT_RX = /\b(?:this\s+(?:year|season|spring|summer|fall|winter)|currently|right\s+now)\b[^.\n]{0,40}?\b((?:19|20)\d{2})\b/gi;
 function checkPresent(text, push) {
   let m;
   while ((m = PRESENT_RX.exec(text)) !== null) {
@@ -134,6 +137,7 @@ function checkPresent(text, push) {
     if (y !== CURRENT_YEAR) push('present-year', `${m[0]} (expected ${CURRENT_YEAR})`);
   }
 }
+
 
 // ----- Drive ----------------------------------------------------------------
 
