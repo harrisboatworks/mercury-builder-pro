@@ -155,7 +155,8 @@ for (const file of BLOG_FILES) {
     while ((m = STALE_YEAR_RX.exec(ch.text)) !== null) {
       const before = ch.text.slice(Math.max(0, m.index - 20), m.index);
       const after = ch.text.slice(m.index + 4, m.index + 40);
-      if (HISTORICAL_PREFIX_RX.test(before)) continue;
+      if (HISTORICAL_WORD_RX.test(before)) continue;
+      if (MONTH_DAY_PREFIX_RX.test(before)) continue;
       if (MODEL_CONTEXT_RX.test(after)) continue;
       // Skip if part of an ISO-like date (YYYY-MM-DD) - that's data, not prose claim
       if (/^[-/]\d/.test(after) || /\d[-/]$/.test(before)) continue;
