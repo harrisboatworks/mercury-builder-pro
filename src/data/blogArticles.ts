@@ -6159,7 +6159,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)',
     seoTitle: "Mercury Power for Center Console Boats 2026 | HBW",
     description: "The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length.",
-    image: '/lovable-uploads/hero-center-console-mercury-ontario.png',
+    image: '/lovable-uploads/center-console-mercury-hero.jpg',
     imageAlt: 'Single-engine center console fishing boat with a Mercury 90 FourStroke on the stern, skipper at the helm, on a calm Ontario lake.',
     author: 'Harris Boat Works',
     datePublished: '2026-03-23',
