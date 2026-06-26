@@ -13317,7 +13317,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)',
     seoTitle: 'Can I Winterize My Mercury Outboard Myself? DIY Guide',
     description: 'Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter: stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor by spring. For motors you would rather not DIY.',
-    image: '/lovable-uploads/hero-diy-mercury-winterization.png',
+    image: '/lovable-uploads/diy-mercury-winterization-hero.jpg',
     imageAlt: 'Boat owner kneeling beside a Mercury FourStroke outboard in a garage workshop, draining gear oil into a pan, with Mercury fogging oil and 4-stroke FC-W oil bottles on the workbench.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
