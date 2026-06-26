@@ -5686,7 +5686,11 @@ const locationTwinSummaries = locations.map(loc => {
 // Build blog twin summaries (twins themselves are written by
 // scripts/generate-markdown-twins.mjs into public/blog/{slug}.md before Vite
 // build; we only need link metadata here for the catalog Guides section).
-const blogBySlugForCatalog = new Map(blogArticles.map(a => [a.slug, a]));
+// First-wins dedupe so a duplicate slug cannot override the canonical entry.
+const blogBySlugForCatalog = new Map();
+for (const a of blogArticles) {
+  if (!blogBySlugForCatalog.has(a.slug)) blogBySlugForCatalog.set(a.slug, a);
+}
 const catalogBlogTwinSummaries = CATALOG_BLOG_TWIN_SLUGS
   .map(slug => {
     const a = blogBySlugForCatalog.get(slug);
