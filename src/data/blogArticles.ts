@@ -1411,7 +1411,7 @@ Thinking it's time for a new motor instead? Build a live CAD quote at [mercuryre
   {
     slug: 'mercury-propeller-selection-guide',
     title: 'Mercury Propeller Selection Guide: Which Prop for Your Hull (2026)',
-    seoTitle: 'Mercury Propeller Selection Guide 2026 | Prop by Hull Type | HBW',
+    seoTitle: 'Mercury Propeller Selection Guide 2026 (Ontario) | HBW',
     description: 'Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.',
     image: '/lovable-uploads/hero-mercury-propeller-selection-guide.png',
     author: 'Jay Harris',
@@ -1585,7 +1585,7 @@ Text: (647) 952-2153`,
   {
     slug: 'mercury-repower-eligibility-guide',
     title: 'Is My Boat Eligible for a Mercury Repower? The 5-Check Eligibility Guide (2026)',
-    seoTitle: 'Mercury Repower Eligibility Guide 2026 | Is My Boat Worth Repowering? | HBW',
+    seoTitle: 'Is My Boat Worth Repowering? Mercury Guide 2026 | HBW',
     description: 'Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours.',
     image: '/lovable-uploads/hero-mercury-repower-eligibility-guide.png',
     author: 'Jay Harris',
