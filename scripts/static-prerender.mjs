@@ -2704,8 +2704,22 @@ function zhOnlyHreflangTags(zhSlug) {
   return out.join('\n  ');
 }
 
+// Dedupe blogArticles by slug, keeping the FIRST occurrence so prerender
+// matches runtime getArticleBySlug (which uses Array.prototype.find).
+// Without this, a duplicate slug would silently let the LAST entry win on
+// disk, overriding the canonical entry's seoTitle and other fields.
+const _seenBlogSlugs = new Set();
+const dedupedBlogArticles = blogArticles.filter(a => {
+  if (_seenBlogSlugs.has(a.slug)) {
+    console.warn(`[prerender] Duplicate blog slug ignored: ${a.slug}`);
+    return false;
+  }
+  _seenBlogSlugs.add(a.slug);
+  return true;
+});
+
 // Build blog article route configs.
-const blogArticleRoutes = blogArticles.map(article => ({
+const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   path: `/blog/${article.slug}`,
   title: article.seoTitle || `${article.title} | Harris Boat Works Blog`,
   description: article.description,
@@ -5672,7 +5686,11 @@ const locationTwinSummaries = locations.map(loc => {
 // Build blog twin summaries (twins themselves are written by
 // scripts/generate-markdown-twins.mjs into public/blog/{slug}.md before Vite
 // build; we only need link metadata here for the catalog Guides section).
-const blogBySlugForCatalog = new Map(blogArticles.map(a => [a.slug, a]));
+// First-wins dedupe so a duplicate slug cannot override the canonical entry.
+const blogBySlugForCatalog = new Map();
+for (const a of blogArticles) {
+  if (!blogBySlugForCatalog.has(a.slug)) blogBySlugForCatalog.set(a.slug, a);
+}
 const catalogBlogTwinSummaries = CATALOG_BLOG_TWIN_SLUGS
   .map(slug => {
     const a = blogBySlugForCatalog.get(slug);
