@@ -2704,8 +2704,22 @@ function zhOnlyHreflangTags(zhSlug) {
   return out.join('\n  ');
 }
 
+// Dedupe blogArticles by slug, keeping the FIRST occurrence so prerender
+// matches runtime getArticleBySlug (which uses Array.prototype.find).
+// Without this, a duplicate slug would silently let the LAST entry win on
+// disk, overriding the canonical entry's seoTitle and other fields.
+const _seenBlogSlugs = new Set();
+const dedupedBlogArticles = blogArticles.filter(a => {
+  if (_seenBlogSlugs.has(a.slug)) {
+    console.warn(`[prerender] Duplicate blog slug ignored: ${a.slug}`);
+    return false;
+  }
+  _seenBlogSlugs.add(a.slug);
+  return true;
+});
+
 // Build blog article route configs.
-const blogArticleRoutes = blogArticles.map(article => ({
+const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   path: `/blog/${article.slug}`,
   title: article.seoTitle || `${article.title} | Harris Boat Works Blog`,
   description: article.description,
