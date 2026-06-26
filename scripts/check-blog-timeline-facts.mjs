@@ -110,18 +110,19 @@ function checkAge(text, push) {
     // Allow +/- 1 because "almost 80" / "80 years" rounding is fine.
     if (Math.abs(n - EXPECTED_AGE) > 1) push('dealership-age', `${m} (expected ~${EXPECTED_AGE} years since ${FOUNDER_YEAR})`);
   }
-  // "since YYYY" near a business cue
-  const SINCE_RX = /\bsince\s+((?:19|20)\d{2})\b/gi;
+  // "since YYYY" only when the surrounding clause ties the year to the
+  // FOUNDING / family ownership of the business. "Mercury dealer since 1965"
+  // is a separate, legitimate milestone (year HBW became a Mercury dealer)
+  // and must not trip this rule.
+  const SINCE_RX = /\b(?:family[\s-](?:owned|run|operated)|in\s+business|in\s+operation|business\s+founded|operating|serving\s+Ontario)[^.\n]{0,40}?\bsince\s+((?:19|20)\d{2})\b/gi;
   let sm;
   while ((sm = SINCE_RX.exec(text)) !== null) {
-    const ctx = text.slice(Math.max(0, sm.index - 60), sm.index + 60);
-    if (/\b(business|dealership|family|Harris|HBW|operating|serving)\b/i.test(ctx)) {
-      const y = Number(sm[1]);
-      if (y !== FOUNDER_YEAR && y !== OWNER_TAKEOVER_YEAR) {
-        push('since-year', `${ctx.trim()} (expected since ${FOUNDER_YEAR} or ${OWNER_TAKEOVER_YEAR})`);
-      }
+    const y = Number(sm[1]);
+    if (y !== FOUNDER_YEAR) {
+      push('since-year', `${sm[0]} (family-ownership claim must be since ${FOUNDER_YEAR})`);
     }
   }
+
 }
 
 // R4: present-tense "this year/season" claims must agree with CURRENT_YEAR.
