@@ -3589,7 +3589,7 @@ Call **905-342-2153** to talk through bracket choice, shaft length, and installa
     imageAlt: 'Mercury outboard motors displayed at Harris Boat Works in Gores Landing, Ontario, a trusted Mercury Platinum dealer.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
-    dateModified: '2026-06-02',
+    dateModified: '2026-06-26',
     publishDate: '2026-05-04',
     category: 'About Us',
     readTime: '8 min read',
@@ -3623,7 +3623,7 @@ Most multi-brand dealers do not reach Platinum because it is hard to maintain th
 
 ## Three generations. One brand.
 
-My grandfather George founded Harris Boat Works in 1947. He added the Mercury dealership in 1965. My father Jim ran the business from 1978 until his passing in 2015. I took over in 2015 and run it now.
+My grandfather George founded Harris Boat Works in 1947. He added the Mercury dealership in 1965. My father Jim ran the business from 1978 until his passing in 2015. I took over in 2016 and run it now.
 
 That is not a sales line. It means our technicians have been learning Mercury, and only Mercury, for decades. The institutional knowledge does not reset with staff turnover the way it does at bigger, busier shops. Some of our service customers have brought their boats to three generations of Harrises. We know their motors the way a family doctor knows a patient history.
 
