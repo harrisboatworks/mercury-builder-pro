@@ -98,7 +98,7 @@ for (const file of USER_FACING_FILES) {
 // not scanned because we operate on extracted prose, never the surrounding
 // metadata.
 const STALE_YEAR_RX = /\b(2024|2025)\b/g;
-const HISTORICAL_PREFIX_RX = /\b(?:since|in|during|from|by|of|before|after|early|late|mid|spring|summer|fall|winter|season|model\s+year|MY)\s*$/i;
+const HISTORICAL_PREFIX_RX = /(?:\b(?:since|in|during|from|by|of|before|after|early|late|mid|spring|summer|fall|winter|season|model\s+year|MY|desde|depuis|del|en|le|du|de\s+(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|janvier|f[ée]vrier|mars|avril|mai|juin|juillet|ao[uû]t|septembre|octobre|novembre|d[ée]cembre|January|February|March|April|May|June|July|August|September|October|November|December))\s*$|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|January|February|March|April|June|July|August|September|October|November|December|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)\.?\s+\d{1,2}(?:st|nd|rd|th)?,?\s*$|\bde\s+\d{1,2}\s+de\s+\w+\s+de\s*$|\b\d{1,2}\s+de\s+\w+\s+de\s*$/i;
 const MODEL_CONTEXT_RX = /^[\s,.'"-]*(?:Mercury|FourStroke|Pro\s*XS|Verado|SeaPro|Avator|lineup|model|models|season|release|launch)\b/i;
 const staleYearLeaks = [];
 
