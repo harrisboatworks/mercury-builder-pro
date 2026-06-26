@@ -5907,7 +5907,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     relatedSlugs: ['mercury-propeller-selection-guide', 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado', 'breaking-in-new-mercury-motor-guide'],
     title: 'Mercury Outboard Fuel Economy: How to Get Better MPG',
     description: "How much fuel does your Mercury outboard burn? Consumption by HP, 2-stroke vs 4-stroke, and the 5 levers that cut fuel burn on Ontario boats.",
-    image: '/lovable-uploads/hero-mercury-fuel-efficiency-smartcraft.png',
+    image: '/lovable-uploads/mercury-fuel-efficiency-smartcraft-hero.jpg',
     imageAlt: "Captain's hand on a brushed-aluminum throttle next to a Mercury SmartCraft display showing 6.5 GPH fuel flow at 4200 RPM and 28 MPH.",
     author: 'Harris Boat Works',
     datePublished: '2026-03-16',
