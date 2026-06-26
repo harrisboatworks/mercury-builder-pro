@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# Auto-bump blog dateModified for any articles whose body content changed,
+# then re-stage the file. Idempotent and silent on no-op.
+node scripts/bump-blog-date-modified.mjs || exit 1
