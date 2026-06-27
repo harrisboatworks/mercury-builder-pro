@@ -2760,7 +2760,7 @@ The signs your motor needs replacement are usually consistent: harder starts eac
 | Motor state | Dead/unreliable, metal in gearcase oil, failed cylinder | Runs fine but 15+ yr or 1,500+ hr | Post-2010, maintained, still reliable |
 | Repair vs new-motor price | Over 60% | 30-60% | Under 30% |
 | Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
-| Move | Quote a repower ($11K-$40K CAD) | Plan the work for winter (Dec/Jan) | Keep running, stay on maintenance |
+| Move | Quote a repower ($11K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
 
 ## Quick recommendation
 
@@ -2770,7 +2770,7 @@ There are three honest answers to "when should I repower?":
 2. **This off-season if the motor is "fine" but old (15+ years).** Plan ahead. Old motors die mid-season at the worst time.
 3. **Not now if the motor is reliable and recent.** Modern Mercury FourStrokes have decades of life with proper maintenance.
 
-The customers who plan repowers in winter or early spring get easier appointment slots and lower stress. The customers waiting for the motor to die mid-season are competing for shop time during the rush. Plan ahead.
+The customers who plan and order over the off-season (our shop is closed roughly December 1 to April 1, but we take orders by phone and email all winter) get first pick of motors and the earliest spring install slots. The customers waiting for the motor to die mid-season are competing for shop time during the rush. Plan ahead.
 
 ## What changes the timing
 
@@ -2806,7 +2806,7 @@ When these signs appear, plan the repower for the next off-season. Do not wait f
 - **Mid-RPM hesitation** or surging
 - **Repair bills exceeding 25% of motor replacement cost annually**
 
-At this stage, the math shifts toward "repower this winter." Continued repairs are throwing good money after bad.
+At this stage, the math shifts toward "order a spring repower now." Continued repairs are throwing good money after bad.
 
 ### End-stage signs (motor is at end of life)
 
@@ -2870,7 +2870,7 @@ When customers come to HBW asking "should I repower?" we want to know:
 - **Long-term ownership plan**
 - **Budget tolerance and financing**
 
-We give the honest answer per motor and use case. Sometimes the answer is "not yet, your motor has years left." Sometimes it's "this winter is the right time." We will not push a repower that isn't warranted.
+We give the honest answer per motor and use case. Sometimes the answer is "not yet, your motor has years left." Sometimes it's "order now so we can install as soon as we open in early April." We will not push a repower that isn't warranted.
 
 ## The cost of waiting too long
 
@@ -2939,7 +2939,7 @@ Two related guides in the same cluster:
 Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours. For a typical recreational boater (50 to 150 hours per season), that translates to 10 to 30 years of useful life. Skipped maintenance cuts that in half easily.
 
 **What are the signs my motor needs replacement?**
-Harder starts, fuel system problems, declining performance, rising repair bills, or starting to worry about reliability mid-season. These show up in stages. Early signs mean plan ahead; late signs mean repower this off-season.
+Harder starts, fuel system problems, declining performance, rising repair bills, or starting to worry about reliability mid-season. These show up in stages. Early signs mean plan ahead; late signs mean order now for an early-spring repower.
 
 **How many hours is too many on an outboard?**
 Modern FourStrokes can hit 2,000+ hours with proper maintenance. Older 2-strokes were typically end-of-life at 1,000 to 1,500 hours. Hours alone are not the answer; maintenance history matters more than hours.
@@ -2954,7 +2954,7 @@ Depends on HP. A 25 to 60 HP repower lands $11,000 to $15,000 CAD all-in. A 90 t
 Depends on motor age and repair cost. Older motors (15+ years) where repair costs more than 30% of replacement: repower is usually cheaper long-term. Mid-age motors with smaller repairs: repair often makes sense. We do this math case by case.
 
 **When is the best time to repower?**
-Off-season (October through April). Mercury inventory is best, shop time is available, and the boat is ready for the next season. Spring rush (March through May) is busy and slots fill up.
+Order over the off-season (October through March) for an install as soon as we reopen in early April. Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter, that is when Mercury inventory is deepest and you get first pick of spring install slots. Spring rush (April through May) is busy and slots fill up.
 
 **Should I switch brands during a repower?**
 For Evinrude owners (since BRP shut down outboard production in 2020), switching to Mercury usually makes sense. For Yamaha or Honda owners with reliable motors, there's less urgency. See our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide).
@@ -2969,7 +2969,7 @@ Often yes, especially during brand conversions. Mercury-to-Mercury repowers some
 The PCL must be updated when motor HP, brand, or model changes. We handle the paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
 
 **How long does a typical repower take?**
-Mercury-to-Mercury repowers: 2 to 4 days shop time. Brand conversions: longer. Spring rush adds wait time before the shop starts. Off-season is faster.
+Mercury-to-Mercury repowers: 2 to 4 days shop time. Brand conversions: longer. Spring rush adds wait time before the shop starts. Order over the off-season to lock in an early-spring install slot.
 
 ---
 
@@ -3009,7 +3009,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'What\'s the best time of year to repower in Ontario?',
-        answer: 'Winter is the best time to repower in Ontario. Demand in marine service departments drops significantly from late November through March, meaning faster turnaround and more scheduling flexibility. Some dealers offer off-season incentives during winter. Most importantly, a winter repower means the boat is ready and tuned before the season opener. Bring the boat in by December or January to get ahead of the spring rush. Harris Boat Works typically sees significant service volume increase starting in February as people plan for ice-out.'
+        answer: 'The best time to plan and order a repower is over the off-season (November through March). Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter, that is when Mercury inventory is deepest and you get first pick of spring install slots. The work itself happens when we reopen in early April. Order by January or February to be near the front of the spring queue and on the water for opener.'
       },
       {
         question: 'Can I repower myself or do I need a certified dealer?',
@@ -4929,7 +4929,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'What HP do I need for my cottage boat?', answer: 'Depends on hull length and use. Small tin boats (14 to 16 ft): 25 to 40 HP. Aluminum console (16 to 18 ft): 60 to 115 HP. Cottage pontoons (18 to 22 ft): 90 to 150 HP with Command Thrust.' },
       { question: 'Should I switch from Evinrude to Mercury during a cottage repower?', answer: 'Most of the time, yes. Evinrude stopped making outboards in 2020 and parts support is only getting thinner. A brand conversion adds some rigging cost but pays back over the life of the new motor.' },
       { question: 'Can I get financing for a cottage repower?', answer: 'Yes. Mercury repower financing is available through HBW. Current financing options are shown on the financing page and confirmed with your quote at mercuryrepower.ca.' },
-      { question: 'When is the best time to repower a cottage boat?', answer: 'Off-season: October through April. Motor inventory is deepest, our shop is quietest, and you get easier scheduling. Spring rush typically starts in March.' },
+      { question: 'When is the best time to repower a cottage boat?', answer: 'Order over the off-season: November through March. Motor inventory is deepest and you get first pick of spring install slots. Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter and start install work as soon as we reopen in early April. Spring rush typically picks up in March.' },
       { question: 'Do I need to update my Pleasure Craft Licence after a repower?', answer: 'Yes, if the motor horsepower, brand, or model changes. The update is free online and takes fifteen minutes. We help HBW customers through it.' },
       { question: 'Should I keep my old motor as a backup?', answer: 'Usually no. Old Evinrudes and older Mercurys have limited practical value as backups and the storage hassle is real. We give fair-market trade-in value during a repower.' },
       { question: 'Can HBW haul my cottage boat from the lake?', answer: 'For Rice Lake and surrounding Kawartha-area cottages, yes. Call us to sort out the logistics.' },
@@ -5581,7 +5581,7 @@ It depends entirely on the hull. Aluminum hulls with solid transoms can run for 
 For a hull in solid structural condition, a repower almost always wins on the math. You keep a boat you know and spend a fraction of the cost of a comparable new package. The exception is a hull with a soft transom or multiple failing systems, where the numbers can favour a clean used boat instead.
 
 **How long does a Kawartha repower take?**
-One to two days of shop time for a clean Mercury-to-Mercury install. From signed order to pickup is typically two to four weeks, depending on motor availability. Off-season repowers move fastest.
+One to two days of shop time for a clean Mercury-to-Mercury install. From signed order to pickup is typically two to four weeks once we are open, depending on motor availability. Order over the off-season to lock in an early-spring install slot.
 
 **Do I need new controls?**
 A Mercury-to-Mercury repower can often keep recent, good-condition controls. Older equipment, or a conversion from another brand, needs new controls and harness throughout. The walk-around tells us which case you are in.
@@ -5599,7 +5599,7 @@ Trade-in credit. Even a dead motor carries aluminum and parts value, and that cr
 With Evinrude out of production since 2020, parts and service availability shrinks every year. The brand conversion adds a one-time rigging cost, but it restores full parts access, factory warranty, and resale value. For any Evinrude owner planning to keep the hull more than a season or two, the switch makes sense. See our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide).
 
 **When is the best time to book?**
-October through March. Off-season ordering gets the best motor availability and shop time. Spring slots fill by March.
+October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed roughly December 1 to April 1, install work happens once we reopen in early April. Spring slots fill by March.
 
 ---
 
@@ -5644,12 +5644,12 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
       { question: 'What is a boat repower?', answer: 'Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a sea-trial. What it costs depends on horsepower class, motor family, and the condition of your existing rigging.' },
       { question: 'Is repowering worth it on an older boat?', answer: 'It depends entirely on the hull. Aluminum hulls with solid transoms can run for decades more, and sound fiberglass is similar. The motor is the wear part. We do a proper hull walk-around before recommending anything, because a new motor only makes sense on a hull worth keeping.' },
       { question: 'Repower or buy new?', answer: 'For a hull in solid structural condition, a repower almost always wins on the math. You keep a boat you know and spend a fraction of the cost of a comparable new package. The exception is a hull with a soft transom or multiple failing systems, where the numbers can favour a clean used boat instead.' },
-      { question: 'How long does a Kawartha repower take?', answer: 'One to two days of shop time for a clean Mercury-to-Mercury install. From signed order to pickup is typically two to four weeks, depending on motor availability. Off-season repowers move fastest.' },
+      { question: 'How long does a Kawartha repower take?', answer: 'One to two days of shop time for a clean Mercury-to-Mercury install. From signed order to pickup is typically two to four weeks once we are open, depending on motor availability. Order over the off-season to lock in an early-spring install slot.' },
       { question: 'Do I need new controls?', answer: 'A Mercury-to-Mercury repower can often keep recent, good-condition controls. Older equipment, or a conversion from another brand, needs new controls and harness throughout. The walk-around tells us which case you are in.' },
       { question: 'Do I need hydraulic steering?', answer: 'At 150 HP and above, yes. Hydraulic steering at that power is about safe, comfortable control, and it is standard practice on higher-HP rigs. From 40 to 115 HP, cable steering is fine.' },
       { question: 'Do I need to update my Pleasure Craft Licence?', answer: 'Yes, whenever motor horsepower, brand, or model changes. The update is free, takes about fifteen minutes online, and HBW handles it for every customer as part of the job.' },
       { question: 'What happens to my old motor?', answer: 'Trade-in credit. Even a dead motor carries aluminum and parts value, and that credit reduces the amount you finance.' },
-      { question: 'When is the best time to book a repower?', answer: 'October through March. Off-season ordering gets the best motor availability and shop time. Spring slots fill by March.' },
+      { question: 'When is the best time to book a repower?', answer: 'October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed roughly December 1 to April 1, install work happens once we reopen in early April. Spring slots fill by March.' },
     ],
   },
 
@@ -8948,29 +8948,29 @@ The work that makes the season feel easy happens between seasons. Booked once, p
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Winter is the best time to plan a spring repower. Inventory is open, build slots are unbooked, and we can lock in pricing before the spring rush. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
+> **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed roughly December 1 to April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
 
 ## Winter Repower Planning
 
-Winter is the perfect time to plan and execute a repower. Your boat sits anyway - why not make it ready for spring with fresh power?
+Winter is the perfect time to plan and order a repower. Your boat sits anyway, so use the off-season to lock in the right motor and a spring install slot before everyone else does.
 
-### Why Winter Repower?
+### Why Plan a Repower Over Winter?
 
 **Timing Advantages**:
-- No missed boating time
-- Faster shop turnaround
-- More scheduling flexibility
-- Time to consider options carefully
+- Order ahead and get first pick of motors before the spring rush
+- First-in-line for spring install slots when we reopen in early April
+- More time to compare options carefully
+- No mid-season scramble if your old motor fails
 
 **Potential Savings**:
-- Off-season promotions
-- Less demand = more negotiating room
+- Off-season Mercury promotions
 - Finance promotions often available
-- Bundle with other winter service
+- Lock in current pricing before any spring increases
+- Bundle the order with your fall winterization conversation
 
 ### Planning Timeline
 
-> **Note:** The marina is closed approximately **December 1 to April 1** each year for in-person service. We are available by phone, text, and email throughout the winter to lock in pricing, order motors, and reserve spring install slots.
+> **Note:** The marina is closed approximately **December 1 to April 1** each year for in-person service and install work. We are available by phone, text, and email throughout the winter to lock in pricing, order motors, and reserve spring install slots. Install work itself happens after we reopen in early April.
 
 **November**:
 - Assess current motor condition
@@ -8978,22 +8978,22 @@ Winter is the perfect time to plan and execute a repower. Your boat sits anyway 
 - Get quotes from dealers
 - Begin decision process
 
-**December-March (marina closed)**:
-- Finalize motor selection by phone/email
+**December-March (marina closed for shop work)**:
+- Finalize motor selection by phone or email
 - Reserve your spring installation slot
-- Order if not in stock (lead times are shortest in winter)
+- Place the order so the motor is on hand for April
 - Arrange financing if needed
 
-**April-May (marina reopens)**:
+**April-May (marina reopens, install work begins)**:
 - Installation performed
 - Lake test when conditions allow
 - Adjustments and setup
-- Delivery before spring
+- Delivery before the season
 
 ::cost-stack
-eyebrow: Off-season repower budget
-heading: What a winter repower actually costs
-subhead: Winter pricing typically runs 5 to 10 percent better than spring. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
+eyebrow: Spring repower budget (off-season ordering)
+heading: What an order-ahead spring repower actually costs
+subhead: Locking your order in over winter gets you first pick of motors and an early-spring install. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
 item1Label: Motor (90 to 150 HP FourStroke)
 item1Value: $13,500 to $22,000
 item1Note: Range covers Mercury 90 ELPT through 150 ELPT. Pro XS adds roughly $1,500 to $2,500 over the FourStroke.
@@ -9073,20 +9073,20 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     `,
     faqs: [
       {
-        question: 'How far in advance should I plan a winter repower?',
-        answer: 'Start conversations in November for a February installation. This allows time for motor ordering, scheduling, and any unexpected discoveries during the process.'
+        question: 'How far in advance should I plan an order-ahead repower?',
+        answer: 'Start conversations in November so the order is locked over winter and the motor is on hand for an early-April install when we reopen. Our shop is closed roughly December 1 to April 1, but we take orders by phone and email all winter.'
       },
       {
         question: 'Will my boat be ready for the May long weekend?',
-        answer: 'If you start planning by January and schedule installation by March, absolutely. We prioritize winter repower customers for spring delivery.'
+        answer: 'If you lock your order in by January or February, yes. We start install work as soon as we reopen in early April, and customers who ordered over winter are at the front of the spring queue.'
       },
       {
         question: 'What about lake testing in winter?',
-        answer: 'We can run motors on a test stand for basic verification. Full water testing may wait for spring conditions. Initial testing ensures the installation is correct.'
+        answer: 'Lake testing happens in spring when the marina reopens and conditions allow. Our shop is closed roughly December 1 to April 1, so no on-water work happens in winter.'
       },
       {
         question: 'Can I do anything to prepare my boat for repower?',
-        answer: 'Clean out the boat, document any electrical issues, gather all paperwork, and ensure transom access. A clean, accessible boat speeds the installation.'
+        answer: 'Clean out the boat, document any electrical issues, gather all paperwork, and ensure transom access. A clean, accessible boat speeds the install when we reopen in spring.'
       }
     ]
   },
@@ -9203,7 +9203,7 @@ We've seen 60+ Mercury model year flips at HBW since we became a Mercury dealer 
 - **Pre-flip surge (June).** Customers who wanted "this year's motor" rush to lock orders before July 1. Inventory tightens on popular HP classes (90, 115, 150) toward the back of the month.
 - **Quiet transition (July).** Mercury issues the official 2027 announcements, dealer training rolls out, the new lineup specs go live. New SKUs typically don't physically ship until August at the earliest.
 - **Fall booking pressure (September-November).** Spring 2027 install slots get booked. Customers who waited for the 2027 announcement now lock orders. The mix of "buying 2027 now" vs "buying current at a model year flip discount" depends on what Mercury announced.
-- **Winter build (December-March).** We rig, decommission, and prep installs. By the time ice-out hits, most installs are scheduled.
+- **Winter ordering (December-March).** Our shop is closed roughly December 1 to April 1, but we are on phone and email all winter taking orders, locking pricing, and reserving spring install slots. Motors ordered now are on hand for an early-April install when we reopen.
 
 If you're in the GTA or east Toronto and thinking about a repower, the call we'd make in late June is straightforward: get the quote built now, decide whether the 2027 unknowns are worth the wait, and lock the spring install slot either way.
 
@@ -9212,7 +9212,7 @@ If you're in the GTA or east Toronto and thinking about a repower, the call we'd
 - **Waiting "to see" without a specific feature in mind.** If you can't name the 2027 feature you're chasing, you're not waiting for anything. Build the quote.
 - **Assuming a major redesign.** Mercury doesn't usually redesign powerhead architecture between model years. The 2027 FourStroke 150 is the 2026 FourStroke 150 with a different decal until proven otherwise.
 - **Skipping the trade-in math.** Your old motor doesn't lose value at the flip. The HST savings on the trade still work the same way. Don't leave that money on the table because you're focused on the new motor side of the deal.
-- **Booking the install for late spring.** If you need the boat for opener, the install needs to happen in winter, not April. Spring slots fill by Christmas. Quote and book early.
+- **Waiting until April to book the install.** If you need the boat for opener, get your order in over winter so the install can start as soon as we reopen in early April. Spring slots fill fast. Quote and book early.
 - **Confusing the model year flip with a price drop.** Sometimes there's a closeout discount on remaining 2026 inventory, sometimes there isn't, depends on Mercury's program. Don't bank on it.
 
 ## Frequently Asked Questions
@@ -9315,7 +9315,7 @@ The model year flip doesn't change the basic question: what motor do you want, w
 
 *Last reviewed: 2026-06-21*
 
-> **Quick answer:** The cheapest months to buy a new Mercury in Ontario are typically late summer (model year closeouts after July 1) and December through February (winter shop time, dealer promotions, no install backlog). The most expensive months to buy are March through May, when everyone's rushing to be on the water for opener. But the right month for YOU is whichever one matches your install schedule and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
+> **Quick answer:** The best months to ORDER a new Mercury in Ontario are typically late summer (model year closeouts after July 1) and November through February (off-season dealer promos, full inventory, first pick of spring install slots). The most expensive months to buy are March through May, when everyone is rushing to be on the water for opener. Note: our shop is closed roughly December 1 to April 1, so any install work happens once we reopen in early April. The right month for YOU is whichever one matches your spring install plan and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 Conventional wisdom says winter is deal time. Half right. The honest answer is more useful: pricing flexibility is one piece of the timing puzzle, and it's rarely the biggest piece. Install slots, trade values, and Mercury's model year cycle all move with the calendar too.
 
@@ -9323,7 +9323,7 @@ This post is the HBW calendar, month by month. What's typically happening with M
 
 ## Quick recommendation
 
-If you want the boat on the water for opener (early May in the Kawarthas), the practical buying window is October through February. That's when install slots are bookable, current pricing is locked, and trade math is clean. If you don't need the boat until next summer or later, the cheapest month is probably August (post-flip Mercury closeouts) or January (winter shop discounts). Get your starting number at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) and decide from there.
+If you want the boat on the water for opener (early May in the Kawarthas), the practical ordering window is October through February. That is when spring install slots are bookable, current pricing is locked, and trade math is clean. If you do not need the boat until next summer or later, the cheapest order month is probably August (post-flip Mercury closeouts) or January (winter dealer promos). Get your starting number at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) and decide from there.
 
 ## The HBW Buying Calendar, Month by Month
 
@@ -9333,11 +9333,11 @@ If you want the boat on the water for opener (early May in the Kawarthas), the p
 | **July** | Standard | Transition (mixed 2026/2027) | Light | Strong | You don't mind a transitional quote |
 | **August-September** | Best closeout potential | 2026 closeouts + new 2027 | Light | Strong | You want the year's best price |
 | **October-November** | Standard | Full 2027 | Spring slots open | Strong | You need spring install |
-| **December-February** | Winter promo potential | Full 2027 | Open install schedule | Slightly softer | Best install pricing, full inventory |
+| **December-February** | Winter promo potential | Full 2027 | Shop closed Dec 1 to Apr 1; spring slot booking open | Slightly softer | Lock spring install slot and winter promo pricing |
 | **March-April** | Standard, less flex | Tight on popular HP | Spring slots fill fast | Strong (early-season) | You're flexible on install timing |
 | **May** | Worst time for negotiation | Tight | Crisis-only install | Strong | Only if you have no choice |
 
-The pattern: pricing flex peaks at model year closeouts (late summer) and during the winter promo window (December to February). Install timing peaks in the opposite direction, October through February is when you can actually get a spring slot.
+The pattern: pricing flex peaks at model year closeouts (late summer) and during the winter promo window (December to February). Spring install slot availability peaks in the opposite direction, October through February is when you can actually lock a slot for opener.
 
 ## What Drives Each Calendar Pattern
 
@@ -9345,9 +9345,9 @@ The calendar isn't random. Each window reflects something real about how Mercury
 
 **Mercury's model year cycle.** Mercury flips model years July 1. The August window is when remaining 2026 inventory may carry closeout incentives, and when fresh 2027 stock arrives. Whether the closeout is actually offered depends on Mercury's promotional calendar, not every year has a 2026 closeout. We covered the full flip dynamics in [Mercury 2027 Outboard Preview](/blog/2026-mercury-model-preview).
 
-**Winter shop economics.** Our techs are still here in winter. Without the spring crunch, we can take more time per install, do cleaner work, and book it cheaper. December to February shop labour is consistently the best value of the year on full repowers. Add Mercury's typical winter promotional cycle and there's real money in winter buying.
+**Off-season dealer economics.** Our shop is closed roughly December 1 to April 1, so install work does not happen in those months, but ordering does. Mercury runs winter promotional cycles, and customers who lock orders in over winter get first pick of motors and first call on spring install slots. The combination of winter promo pricing plus an early-spring install is the real value of buying in the off-season.
 
-**Spring install crunch.** From March through opener, every boat that's been sitting in storage wants to be on the water yesterday. We're rigging, swapping, and water-testing as fast as we can. There's less flexibility on pricing in spring because there's less margin in our schedule. The customers who locked their quote in October are the ones who got the slot they wanted.
+**Spring install crunch.** From early April through opener, every boat that has been sitting in storage wants to be on the water yesterday. We are rigging, swapping, and water-testing as fast as we can. There is less flexibility on pricing in spring because there is less margin in our schedule. The customers who locked their quote in October are the ones who got the slot they wanted.
 
 **Trade values through the calendar.** Used outboard trade values are stronger in the buying months (spring to early summer) when private resale demand peaks. They soften slightly in winter, maybe 5-10% on most HP classes, because the resale market quiets. The HST savings on the trade work the same way year-round.
 
@@ -9355,19 +9355,19 @@ The calendar isn't random. Each window reflects something real about how Mercury
 
 ## What Year-End Specifically Looks Like at HBW
 
-The November-to-February window is what most customers mean by "year-end buying." It's also when our shop calendar opens up for the next season's installs. Here's what actually happens:
+The November-to-February window is what most customers mean by "year-end buying." It is also the prime ordering window for the next season's installs. Our shop is closed roughly December 1 to April 1, so install work itself happens after we reopen in early April. Here is what actually happens:
 
-**November.** Spring install slots start filling for the customers who want to be on the water at opener. Mercury's winter promotional calendar is sometimes announced this month, sometimes a few weeks later. We're still finishing fall winterizations.
+**November.** Spring install slots start filling for the customers who want to be on the water at opener. Mercury's winter promotional calendar is sometimes announced this month, sometimes a few weeks later. We are still finishing fall winterizations before the shop closes.
 
-**December.** Winter shop schedule has openings. Trade-in inventory builds as customers swap before storing for winter. Pricing on completed quotes is locked, no model year confusion. Christmas closure mid-month to early January.
+**December.** Shop closed for in-person service, but order books are open. Trade-in inventory builds as customers swap before storing for winter. Pricing on completed quotes is locked, no model year confusion. Christmas closure mid-month to early January.
 
-**January.** Mercury winter promotions are typically live by mid-month. Boat show season starts (Toronto International Boat Show is the big one). Quote volume rises. This is the prime month to lock in a spring install at the best stacked pricing of the year.
+**January.** Mercury winter promotions are typically live by mid-month. Boat show season starts (Toronto International Boat Show is the big one). Quote volume rises. This is the prime month to lock in a spring install slot at the best stacked pricing of the year.
 
-**February.** Shoulder of the buying window. Quotes locked now still get a spring install slot. Last good month for the winter promotional pricing.
+**February.** Shoulder of the ordering window. Quotes locked now still get a spring install slot. Last good month for the winter promotional pricing.
 
-**March.** Spring crunch begins. Late-bookers compete for the install slots that haven't already been booked. Pricing tightens.
+**March.** Shop still closed for the first few weeks. Spring crunch begins as soon as we reopen in early April. Late-bookers compete for the install slots that have not already been booked. Pricing tightens.
 
-If you're going to buy in the year-end window, the actionable window is January and February. November and December are slower because of the holidays.
+If you are going to buy in the year-end window, the actionable window is January and February. November and December are slower because of the holidays.
 
 ## What HBW Sees Customers Get Wrong on Timing
 
@@ -9383,11 +9383,11 @@ These are the patterns we see across hundreds of repower conversations a year.
 
 Most buying advice focuses on one lever (pricing). The HBW pattern is to think about both.
 
-**If pricing is your primary lever:** Aim for August (potential closeout) or January-February (winter promotion).
+**If pricing is your primary lever:** Aim for August (potential closeout) or January-February (winter dealer promotion).
 
-**If install timing is your primary lever:** Aim for October-January, lock the slot, ride out the pricing of that month.
+**If spring install timing is your primary lever:** Aim for October-January, lock the slot, ride out the pricing of that month.
 
-**If both matter equally:** Late October through late January is the overlap. Pricing is decent, install is bookable, trade is strong, inventory is full. This is the boring-but-correct answer most years.
+**If both matter equally:** Late October through late January is the overlap. Pricing is decent, the spring install slot is bookable, trade is strong, inventory is full. This is the boring-but-correct answer most years.
 
 ## How to Run Your Own Numbers
 
@@ -9403,7 +9403,7 @@ A locked quote is good for the pricing window we issued it in. If you want to co
 ## Frequently Asked Questions
 
 **Is year-end actually the cheapest time to buy?**
-Not always. Late summer (August, post-model-year flip) can carry stronger closeout discounts when Mercury runs a 2026 closeout incentive. January and February tend to carry winter promotional pricing and the best shop labour rates. The cheapest absolute month varies year to year with Mercury's promotional calendar. The cheapest WINDOW is late summer and mid-winter.
+Not always. Late summer (August, post-model-year flip) can carry stronger closeout discounts when Mercury runs a 2026 closeout incentive. January and February tend to carry winter Mercury promotional pricing. The cheapest absolute month varies year to year with Mercury's promotional calendar. The cheapest WINDOW to order is late summer and mid-winter.
 
 **Why are boat show prices not automatically the cheapest?**
 Boat shows often have show-specific promotions, but they're usually similar to what we can do at the shop in the same period. Sometimes show pricing is better, sometimes the dealer can match or beat it. We welcome price comparisons from any show. The thing show pricing doesn't always include is the install slot, which by January is the actual constraint for opener.
@@ -9421,7 +9421,7 @@ The price has some flexibility, especially on in-stock units and at the right ti
 Depends on what you're hoping to find. The show is good for browsing the full lineup in person, comparing brands, and catching Mercury's January promotional pricing on display. If you've already built a quote and just want to confirm, the show might not add much beyond a vibe check. If you haven't started shopping yet, the show is a productive way to compress a few weeks of research into a weekend.
 
 **How does HBW handle install scheduling for spring delivery?**
-We book in install slots from October onward. The booking is tied to your quote and a deposit. We do the rigging, decommissioning, and prep work over winter, then water-test in spring. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.
+We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.
 
 **Does the HBW 7-year warranty bonus depend on when I buy?**
 No. The 7-year program (Mercury's 3-year factory + HBW's 4-year bonus) applies to every new Mercury we sell, regardless of when in the year you buy. It's not a promotional add-on, it's structural to how HBW sells Mercurys. Full details: [Mercury 7-Year Warranty: HBW Exclusive Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained).
@@ -9447,7 +9447,7 @@ Honest version: the right month to buy is the month you actually need the boat o
     faqs: [
       {
         question: 'Is year-end actually the cheapest time to buy?',
-        answer: 'Not always. Late summer (August, post-model-year flip) can carry stronger closeout discounts when Mercury runs a 2026 closeout incentive. January and February tend to carry winter promotional pricing and the best shop labour rates. The cheapest absolute month varies year to year with Mercury\'s promotional calendar. The cheapest WINDOW is late summer and mid-winter.'
+        answer: 'Not always. Late summer (August, post-model-year flip) can carry stronger closeout discounts when Mercury runs a 2026 closeout incentive. January and February tend to carry winter Mercury promotional pricing. The cheapest absolute month varies year to year with Mercury\'s promotional calendar. The cheapest WINDOW to order is late summer and mid-winter.'
       },
       {
         question: 'Why are boat show prices not automatically the cheapest?',
@@ -9471,7 +9471,7 @@ Honest version: the right month to buy is the month you actually need the boat o
       },
       {
         question: 'How does HBW handle install scheduling for spring delivery?',
-        answer: 'We book in install slots from October onward. The booking is tied to your quote and a deposit. We do the rigging, decommissioning, and prep work over winter, then water-test in spring. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.'
+        answer: 'We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.'
       },
       {
         question: 'Does the HBW 7-year warranty bonus depend on when I buy?',
@@ -15938,7 +15938,7 @@ A repower isn't just bolting a new motor to your boat. It's a full integration p
 
 **Motor availability.** Common HP classes and configurations are typically in stock or on quick order. Less common configurations may have factory wait times.
 
-**Time of year.** Off-season (October-April): fast shop turnaround and good booking availability. Spring rush (March-May): waits of 2-6 weeks before the shop can start.
+**Time of year.** Order over the off-season (October through March, while our shop is closed roughly December 1 to April 1) to lock the motor and an early-spring install slot. Spring rush (April through May): waits of 2-6 weeks before the shop can start.
 
 **Customer responsiveness.** Quote, deposit, drop-off, and pickup all need customer involvement. The faster you respond at each step, the faster the timeline.
 
@@ -20383,7 +20383,7 @@ For boats that **store with us through winter**, this collapses entirely. Octobe
 **Best time to book:**
 - **Annual / 100-hr service:** book in March-early April for spring slot
 - **Winterization + storage:** book in **September** for fall (peak service period; book by mid-September)
-- **Repower:** book 4+ weeks ahead during peak season; can be next-day in winter
+- **Repower:** book 4+ weeks ahead during peak season; order over the off-season for first pick of early-spring install slots
 - **Diagnostic:** book within 1-2 weeks; we prioritize active failures
 
 **Worst time to walk in unannounced:** mid-May Saturday during peak prep season. Everyone is busy. Schedule properly.
@@ -20806,9 +20806,9 @@ Three reasons GTA boat owners specifically choose HBW for winter storage:
 
 ### 1. The boat is at a Mercury Platinum dealer all winter
 
-Why this matters: any service work that needs doing happens **right there**. No "I'll bring it in next year." Off-season is when our shop has time to do major work, repowers, transom rebuilds, deep diagnostics, Mercruiser bellows replacements.
+Why this matters: any service work that needs doing is already on a Mercury Platinum dealer's site. No "I'll bring it in next year." Our shop is closed roughly December 1 to April 1, so the work itself happens once we reopen in early April, but the boat is already here, already diagnosed, and already on the schedule.
 
-A typical pattern: GTA customer drops boat off in October for storage. We winterize. While it's stored, we identify needed work and quote. They approve in January-February (when shop is slow and pricing is winter-rate). We do the work. Boat ready for spring with all maintenance current.
+A typical pattern: GTA customer drops boat off in October for storage. We winterize. While it is stored, we identify needed work and quote. They approve over the winter by phone or email (when the order book is open and winter promo pricing is live). The work happens as soon as we reopen in early April. Boat ready for spring with all maintenance current.
 
 You can't do this at a parking-lot storage facility.
 
@@ -20853,7 +20853,7 @@ Walking through the actual timeline for a GTA boater wintering with us:
 
 **November-March.** The boat sits in our outdoor storage area, properly winterized and protected for Ontario weather. Batteries are removed or maintained according to the storage package, and our staff keeps eyes on the yard through the winter.
 
-**Optional during winter (December-February):** Any service work approved (repower, repairs, upgrades) gets done.
+**Over winter (December-March, shop closed):** Quote and approve any service or repower work by phone or email so it is on the schedule for as soon as we reopen in early April.
 
 **Late March-April**. We start de-winterization on schedule. Spring commissioning happens automatically as part of the service contract (no extra phone call required).
 
