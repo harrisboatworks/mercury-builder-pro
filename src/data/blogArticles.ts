@@ -6694,7 +6694,7 @@ whenInDoubt: If your boat has a built-in console with windshield, you want remot
 | Steering | Direct, reverse-intuitive | Cable under 90 HP; hydraulic 90 HP+ (+$800-$1,500) |
 | Best for | Solo / back-of-boat fishing, trolling | Family, passengers, bigger water |
 | Rice Lake pick | 60 HP EFI Command Thrust tiller; ProKicker 9.9 | 90-115 HP remote |
-| Tiller-to-remote conversion | $500-$1,500+ parts + labour | — |
+| Tiller-to-remote conversion | $500-$1,500+ parts + labour | - |
 
 ## The simple version
 
@@ -12247,7 +12247,7 @@ A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hund
 | Low-RPM quietness | Gap closed (current FourStroke V6, ProKicker) | Historically a slight edge |
 | Reliability (equiv. 150) | Indistinguishable in real-world use | Indistinguishable |
 | Resale value | Strong | Holds value comparably |
-| Switching to Mercury | — | ~$1,800-$3,500 brand-conversion rigging |
+| Switching to Mercury | - | ~$1,800-$3,500 brand-conversion rigging |
 
 ## The Rice Lake service-network reality
 
@@ -19509,7 +19509,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     imageAlt: "Three Mercury outboards on a dock at Harris Boat Works on Rice Lake, showcasing the dealership's scenic Ontario location.",
     author: 'Jay Harris',
     datePublished: "2026-05-12",
-    dateModified: '2026-02-06',
+    dateModified: '2026-06-26',
     publishDate: "2026-05-12",
     category: "Mercury Outboards",
     readTime: '12 min read',
@@ -19969,7 +19969,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
     author: 'Jay Harris',
     datePublished: "2026-05-19",
-    dateModified: '2026-02-06',
+    dateModified: '2026-06-26',
     publishDate: "2026-05-19",
     category: "Mercury Outboards",
     readTime: '12 min read',
@@ -20218,7 +20218,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-boat-service-near-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-05-15",
-    dateModified: '2026-02-06',
+    dateModified: '2026-06-26',
     publishDate: "2026-05-15",
     category: "Service",
     readTime: '12 min read',
@@ -20455,7 +20455,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-rice-lake-boat-rentals-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-05-16",
-    dateModified: '2026-02-06',
+    dateModified: '2026-06-26',
     publishDate: "2026-05-16",
     category: "Boating Lifestyle",
     readTime: '12 min read',
@@ -20710,7 +20710,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-winter-storage-near-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-05-17",
-    dateModified: '2026-02-06',
+    dateModified: '2026-06-26',
     publishDate: "2026-05-17",
     category: "Winterization",
     readTime: '12 min read',
@@ -34810,7 +34810,7 @@ A Mercury or Honda buyer walks into our shop with the same two questions: which 
 | Parts (Canada) | Canadian distribution centres | Often route through US |
 | Max warranty (2026) | Up to 8 yr (3 limited + 3 corrosion concurrent + up to 5 MPP) | Up to 8 yr (5 standard + 3 HondaCare) |
 | Long-term maintenance | Competitive | Reputation for low cost over 10+ yr |
-| Switching to Mercury | — | ~$1,800-$3,500 brand-conversion rigging |
+| Switching to Mercury | - | ~$1,800-$3,500 brand-conversion rigging |
 
 ## Where Honda actually wins
 
