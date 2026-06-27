@@ -247,7 +247,19 @@ export default function LocationDetail() {
               {location.intro}
             </p>
 
+            {location.slug === 'peterborough-mercury-dealer' && (
+              <div className="mt-8 space-y-2">
+                <p className="text-sm font-semibold text-repower-cream">
+                  Family-owned since 1947, Mercury dealer since 1965, Mercury Platinum Dealer.
+                </p>
+                <p className="text-xs text-repower-cream/70">
+                  311 Google reviews, 4.6 stars.
+                </p>
+              </div>
+            )}
+
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
+
               <Button asChild size="lg" className="bg-repower-mercury-red hover:bg-repower-mercury-red-deep text-white font-semibold">
                 <Link to="/quote/motor-selection">Build Your Quote</Link>
               </Button>
