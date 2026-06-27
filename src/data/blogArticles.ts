@@ -9383,11 +9383,11 @@ These are the patterns we see across hundreds of repower conversations a year.
 
 Most buying advice focuses on one lever (pricing). The HBW pattern is to think about both.
 
-**If pricing is your primary lever:** Aim for August (potential closeout) or January-February (winter promotion).
+**If pricing is your primary lever:** Aim for August (potential closeout) or January-February (winter dealer promotion).
 
-**If install timing is your primary lever:** Aim for October-January, lock the slot, ride out the pricing of that month.
+**If spring install timing is your primary lever:** Aim for October-January, lock the slot, ride out the pricing of that month.
 
-**If both matter equally:** Late October through late January is the overlap. Pricing is decent, install is bookable, trade is strong, inventory is full. This is the boring-but-correct answer most years.
+**If both matter equally:** Late October through late January is the overlap. Pricing is decent, the spring install slot is bookable, trade is strong, inventory is full. This is the boring-but-correct answer most years.
 
 ## How to Run Your Own Numbers
 
