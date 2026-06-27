@@ -2969,7 +2969,7 @@ Often yes, especially during brand conversions. Mercury-to-Mercury repowers some
 The PCL must be updated when motor HP, brand, or model changes. We handle the paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
 
 **How long does a typical repower take?**
-Mercury-to-Mercury repowers: 2 to 4 days shop time. Brand conversions: longer. Spring rush adds wait time before the shop starts. Off-season is faster.
+Mercury-to-Mercury repowers: 2 to 4 days shop time. Brand conversions: longer. Spring rush adds wait time before the shop starts. Order over the off-season to lock in an early-spring install slot.
 
 ---
 
