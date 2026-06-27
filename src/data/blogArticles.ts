@@ -2770,7 +2770,7 @@ There are three honest answers to "when should I repower?":
 2. **This off-season if the motor is "fine" but old (15+ years).** Plan ahead. Old motors die mid-season at the worst time.
 3. **Not now if the motor is reliable and recent.** Modern Mercury FourStrokes have decades of life with proper maintenance.
 
-The customers who plan repowers in winter or early spring get easier appointment slots and lower stress. The customers waiting for the motor to die mid-season are competing for shop time during the rush. Plan ahead.
+The customers who plan and order over the off-season (our shop is closed roughly December 1 to April 1, but we take orders by phone and email all winter) get first pick of motors and the earliest spring install slots. The customers waiting for the motor to die mid-season are competing for shop time during the rush. Plan ahead.
 
 ## What changes the timing
 
