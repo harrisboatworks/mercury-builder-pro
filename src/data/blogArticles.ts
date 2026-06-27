@@ -9323,7 +9323,7 @@ This post is the HBW calendar, month by month. What's typically happening with M
 
 ## Quick recommendation
 
-If you want the boat on the water for opener (early May in the Kawarthas), the practical buying window is October through February. That's when install slots are bookable, current pricing is locked, and trade math is clean. If you don't need the boat until next summer or later, the cheapest month is probably August (post-flip Mercury closeouts) or January (winter shop discounts). Get your starting number at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) and decide from there.
+If you want the boat on the water for opener (early May in the Kawarthas), the practical ordering window is October through February. That is when spring install slots are bookable, current pricing is locked, and trade math is clean. If you do not need the boat until next summer or later, the cheapest order month is probably August (post-flip Mercury closeouts) or January (winter dealer promos). Get your starting number at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) and decide from there.
 
 ## The HBW Buying Calendar, Month by Month
 
