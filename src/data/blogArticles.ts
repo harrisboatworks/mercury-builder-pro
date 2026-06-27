@@ -2806,7 +2806,7 @@ When these signs appear, plan the repower for the next off-season. Do not wait f
 - **Mid-RPM hesitation** or surging
 - **Repair bills exceeding 25% of motor replacement cost annually**
 
-At this stage, the math shifts toward "repower this winter." Continued repairs are throwing good money after bad.
+At this stage, the math shifts toward "order a spring repower now." Continued repairs are throwing good money after bad.
 
 ### End-stage signs (motor is at end of life)
 
