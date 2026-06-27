@@ -9355,19 +9355,19 @@ The calendar isn't random. Each window reflects something real about how Mercury
 
 ## What Year-End Specifically Looks Like at HBW
 
-The November-to-February window is what most customers mean by "year-end buying." It's also when our shop calendar opens up for the next season's installs. Here's what actually happens:
+The November-to-February window is what most customers mean by "year-end buying." It is also the prime ordering window for the next season's installs. Our shop is closed roughly December 1 to April 1, so install work itself happens after we reopen in early April. Here is what actually happens:
 
-**November.** Spring install slots start filling for the customers who want to be on the water at opener. Mercury's winter promotional calendar is sometimes announced this month, sometimes a few weeks later. We're still finishing fall winterizations.
+**November.** Spring install slots start filling for the customers who want to be on the water at opener. Mercury's winter promotional calendar is sometimes announced this month, sometimes a few weeks later. We are still finishing fall winterizations before the shop closes.
 
-**December.** Winter shop schedule has openings. Trade-in inventory builds as customers swap before storing for winter. Pricing on completed quotes is locked, no model year confusion. Christmas closure mid-month to early January.
+**December.** Shop closed for in-person service, but order books are open. Trade-in inventory builds as customers swap before storing for winter. Pricing on completed quotes is locked, no model year confusion. Christmas closure mid-month to early January.
 
-**January.** Mercury winter promotions are typically live by mid-month. Boat show season starts (Toronto International Boat Show is the big one). Quote volume rises. This is the prime month to lock in a spring install at the best stacked pricing of the year.
+**January.** Mercury winter promotions are typically live by mid-month. Boat show season starts (Toronto International Boat Show is the big one). Quote volume rises. This is the prime month to lock in a spring install slot at the best stacked pricing of the year.
 
-**February.** Shoulder of the buying window. Quotes locked now still get a spring install slot. Last good month for the winter promotional pricing.
+**February.** Shoulder of the ordering window. Quotes locked now still get a spring install slot. Last good month for the winter promotional pricing.
 
-**March.** Spring crunch begins. Late-bookers compete for the install slots that haven't already been booked. Pricing tightens.
+**March.** Shop still closed for the first few weeks. Spring crunch begins as soon as we reopen in early April. Late-bookers compete for the install slots that have not already been booked. Pricing tightens.
 
-If you're going to buy in the year-end window, the actionable window is January and February. November and December are slower because of the holidays.
+If you are going to buy in the year-end window, the actionable window is January and February. November and December are slower because of the holidays.
 
 ## What HBW Sees Customers Get Wrong on Timing
 
