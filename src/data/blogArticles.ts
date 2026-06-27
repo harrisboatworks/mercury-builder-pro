@@ -9203,7 +9203,7 @@ We've seen 60+ Mercury model year flips at HBW since we became a Mercury dealer 
 - **Pre-flip surge (June).** Customers who wanted "this year's motor" rush to lock orders before July 1. Inventory tightens on popular HP classes (90, 115, 150) toward the back of the month.
 - **Quiet transition (July).** Mercury issues the official 2027 announcements, dealer training rolls out, the new lineup specs go live. New SKUs typically don't physically ship until August at the earliest.
 - **Fall booking pressure (September-November).** Spring 2027 install slots get booked. Customers who waited for the 2027 announcement now lock orders. The mix of "buying 2027 now" vs "buying current at a model year flip discount" depends on what Mercury announced.
-- **Winter build (December-March).** We rig, decommission, and prep installs. By the time ice-out hits, most installs are scheduled.
+- **Winter ordering (December-March).** Our shop is closed roughly December 1 to April 1, but we are on phone and email all winter taking orders, locking pricing, and reserving spring install slots. Motors ordered now are on hand for an early-April install when we reopen.
 
 If you're in the GTA or east Toronto and thinking about a repower, the call we'd make in late June is straightforward: get the quote built now, decide whether the 2027 unknowns are worth the wait, and lock the spring install slot either way.
 
