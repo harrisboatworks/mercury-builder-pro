@@ -20853,7 +20853,7 @@ Walking through the actual timeline for a GTA boater wintering with us:
 
 **November-March.** The boat sits in our outdoor storage area, properly winterized and protected for Ontario weather. Batteries are removed or maintained according to the storage package, and our staff keeps eyes on the yard through the winter.
 
-**Optional during winter (December-February):** Any service work approved (repower, repairs, upgrades) gets done.
+**Over winter (December-March, shop closed):** Quote and approve any service or repower work by phone or email so it is on the schedule for as soon as we reopen in early April.
 
 **Late March-April**. We start de-winterization on schedule. Spring commissioning happens automatically as part of the service contract (no extra phone call required).
 
