@@ -3009,7 +3009,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'What\'s the best time of year to repower in Ontario?',
-        answer: 'Winter is the best time to repower in Ontario. Demand in marine service departments drops significantly from late November through March, meaning faster turnaround and more scheduling flexibility. Some dealers offer off-season incentives during winter. Most importantly, a winter repower means the boat is ready and tuned before the season opener. Bring the boat in by December or January to get ahead of the spring rush. Harris Boat Works typically sees significant service volume increase starting in February as people plan for ice-out.'
+        answer: 'The best time to plan and order a repower is over the off-season (November through March). Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter, that is when Mercury inventory is deepest and you get first pick of spring install slots. The work itself happens when we reopen in early April. Order by January or February to be near the front of the spring queue and on the water for opener.'
       },
       {
         question: 'Can I repower myself or do I need a certified dealer?',
