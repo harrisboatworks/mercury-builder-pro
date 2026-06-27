@@ -5599,7 +5599,7 @@ Trade-in credit. Even a dead motor carries aluminum and parts value, and that cr
 With Evinrude out of production since 2020, parts and service availability shrinks every year. The brand conversion adds a one-time rigging cost, but it restores full parts access, factory warranty, and resale value. For any Evinrude owner planning to keep the hull more than a season or two, the switch makes sense. See our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide).
 
 **When is the best time to book?**
-October through March. Off-season ordering gets the best motor availability and shop time. Spring slots fill by March.
+October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed roughly December 1 to April 1, install work happens once we reopen in early April. Spring slots fill by March.
 
 ---
 
