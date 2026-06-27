@@ -347,7 +347,7 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
     title: 'Guide d\'hivernisation de votre moteur Mercury hors-bord en Ontario',
     seoTitle: 'Hivernisation de votre moteur Mercury en Ontario',
     description: 'Les étapes essentielles pour préparer votre moteur Mercury pour l\'hiver ontarien : stabilisation du carburant, lubrification interne.',
-    image: '/lovable-uploads/hero-mercury-winterization-fr-2026.png',
+    image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-06-19',
