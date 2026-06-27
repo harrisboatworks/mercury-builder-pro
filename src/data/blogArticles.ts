@@ -9345,9 +9345,9 @@ The calendar isn't random. Each window reflects something real about how Mercury
 
 **Mercury's model year cycle.** Mercury flips model years July 1. The August window is when remaining 2026 inventory may carry closeout incentives, and when fresh 2027 stock arrives. Whether the closeout is actually offered depends on Mercury's promotional calendar, not every year has a 2026 closeout. We covered the full flip dynamics in [Mercury 2027 Outboard Preview](/blog/2026-mercury-model-preview).
 
-**Winter shop economics.** Our techs are still here in winter. Without the spring crunch, we can take more time per install, do cleaner work, and book it cheaper. December to February shop labour is consistently the best value of the year on full repowers. Add Mercury's typical winter promotional cycle and there's real money in winter buying.
+**Off-season dealer economics.** Our shop is closed roughly December 1 to April 1, so install work does not happen in those months, but ordering does. Mercury runs winter promotional cycles, and customers who lock orders in over winter get first pick of motors and first call on spring install slots. The combination of winter promo pricing plus an early-spring install is the real value of buying in the off-season.
 
-**Spring install crunch.** From March through opener, every boat that's been sitting in storage wants to be on the water yesterday. We're rigging, swapping, and water-testing as fast as we can. There's less flexibility on pricing in spring because there's less margin in our schedule. The customers who locked their quote in October are the ones who got the slot they wanted.
+**Spring install crunch.** From early April through opener, every boat that has been sitting in storage wants to be on the water yesterday. We are rigging, swapping, and water-testing as fast as we can. There is less flexibility on pricing in spring because there is less margin in our schedule. The customers who locked their quote in October are the ones who got the slot they wanted.
 
 **Trade values through the calendar.** Used outboard trade values are stronger in the buying months (spring to early summer) when private resale demand peaks. They soften slightly in winter, maybe 5-10% on most HP classes, because the resale market quiets. The HST savings on the trade work the same way year-round.
 
