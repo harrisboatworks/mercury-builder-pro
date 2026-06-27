@@ -20383,7 +20383,7 @@ For boats that **store with us through winter**, this collapses entirely. Octobe
 **Best time to book:**
 - **Annual / 100-hr service:** book in March-early April for spring slot
 - **Winterization + storage:** book in **September** for fall (peak service period; book by mid-September)
-- **Repower:** book 4+ weeks ahead during peak season; can be next-day in winter
+- **Repower:** book 4+ weeks ahead during peak season; order over the off-season for first pick of early-spring install slots
 - **Diagnostic:** book within 1-2 weeks; we prioritize active failures
 
 **Worst time to walk in unannounced:** mid-May Saturday during peak prep season. Everyone is busy. Schedule properly.
