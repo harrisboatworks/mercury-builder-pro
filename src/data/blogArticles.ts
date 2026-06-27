@@ -2870,7 +2870,7 @@ When customers come to HBW asking "should I repower?" we want to know:
 - **Long-term ownership plan**
 - **Budget tolerance and financing**
 
-We give the honest answer per motor and use case. Sometimes the answer is "not yet, your motor has years left." Sometimes it's "this winter is the right time." We will not push a repower that isn't warranted.
+We give the honest answer per motor and use case. Sometimes the answer is "not yet, your motor has years left." Sometimes it's "order now so we can install as soon as we open in early April." We will not push a repower that isn't warranted.
 
 ## The cost of waiting too long
 
