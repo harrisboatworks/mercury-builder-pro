@@ -9073,20 +9073,20 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     `,
     faqs: [
       {
-        question: 'How far in advance should I plan a winter repower?',
-        answer: 'Start conversations in November for a February installation. This allows time for motor ordering, scheduling, and any unexpected discoveries during the process.'
+        question: 'How far in advance should I plan an order-ahead repower?',
+        answer: 'Start conversations in November so the order is locked over winter and the motor is on hand for an early-April install when we reopen. Our shop is closed roughly December 1 to April 1, but we take orders by phone and email all winter.'
       },
       {
         question: 'Will my boat be ready for the May long weekend?',
-        answer: 'If you start planning by January and schedule installation by March, absolutely. We prioritize winter repower customers for spring delivery.'
+        answer: 'If you lock your order in by January or February, yes. We start install work as soon as we reopen in early April, and customers who ordered over winter are at the front of the spring queue.'
       },
       {
         question: 'What about lake testing in winter?',
-        answer: 'We can run motors on a test stand for basic verification. Full water testing may wait for spring conditions. Initial testing ensures the installation is correct.'
+        answer: 'Lake testing happens in spring when the marina reopens and conditions allow. Our shop is closed roughly December 1 to April 1, so no on-water work happens in winter.'
       },
       {
         question: 'Can I do anything to prepare my boat for repower?',
-        answer: 'Clean out the boat, document any electrical issues, gather all paperwork, and ensure transom access. A clean, accessible boat speeds the installation.'
+        answer: 'Clean out the boat, document any electrical issues, gather all paperwork, and ensure transom access. A clean, accessible boat speeds the install when we reopen in spring.'
       }
     ]
   },
