@@ -12148,7 +12148,7 @@ You can build a live CAD quote for your repower online at the Mercury Repower Ce
 HBW is closed roughly **December 1 through April 1**. No service, no installs, no rigging work during those months. Here's how that actually plays out for repower timing:
 
 - **In-season (April-November):** A clean Mercury-to-Mercury install runs 1-2 days of shop time. From order confirmation to pickup is typically 2-4 weeks, depending on motor availability.
-- **Off-season planning (November-March):** This is the smartest time to lock in your spring slot. We take the consult, build the quote, and reserve the motor. **Install starts the first week of April when the shop reopens.** That's how you get first pick of motors and avoid the May rush, not by getting work done in February.
+- **Off-season ordering (November-March):** The fastest path is to get your order in over the off-season. We take the consult, build the quote, and reserve the motor. You lock in your motor before the spring rush and go to the front of the queue, so the install happens as soon as we open in early April.
 - **Spring rush (April-May):** Workable, but the shop is already filling with winterized boats coming out. Lead time stretches to 3-5 weeks. If your boat needs to splash by Victoria Day, get the quote done in February.
 
 That's the honest version. Plenty of dealers will quote you "winter availability" and let you assume work is happening. We'd rather you know we're closed and plan around it.
