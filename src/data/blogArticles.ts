@@ -9471,7 +9471,7 @@ Honest version: the right month to buy is the month you actually need the boat o
       },
       {
         question: 'How does HBW handle install scheduling for spring delivery?',
-        answer: 'We book in install slots from October onward. The booking is tied to your quote and a deposit. We do the rigging, decommissioning, and prep work over winter, then water-test in spring. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.'
+        answer: 'We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.'
       },
       {
         question: 'Does the HBW 7-year warranty bonus depend on when I buy?',
