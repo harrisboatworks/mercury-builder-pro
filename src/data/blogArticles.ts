@@ -2954,7 +2954,7 @@ Depends on HP. A 25 to 60 HP repower lands $11,000 to $15,000 CAD all-in. A 90 t
 Depends on motor age and repair cost. Older motors (15+ years) where repair costs more than 30% of replacement: repower is usually cheaper long-term. Mid-age motors with smaller repairs: repair often makes sense. We do this math case by case.
 
 **When is the best time to repower?**
-Off-season (October through April). Mercury inventory is best, shop time is available, and the boat is ready for the next season. Spring rush (March through May) is busy and slots fill up.
+Order over the off-season (October through March) for an install as soon as we reopen in early April. Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter, that is when Mercury inventory is deepest and you get first pick of spring install slots. Spring rush (April through May) is busy and slots fill up.
 
 **Should I switch brands during a repower?**
 For Evinrude owners (since BRP shut down outboard production in 2020), switching to Mercury usually makes sense. For Yamaha or Honda owners with reliable motors, there's less urgency. See our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide).
