@@ -9315,7 +9315,7 @@ The model year flip doesn't change the basic question: what motor do you want, w
 
 *Last reviewed: 2026-06-21*
 
-> **Quick answer:** The cheapest months to buy a new Mercury in Ontario are typically late summer (model year closeouts after July 1) and December through February (winter shop time, dealer promotions, no install backlog). The most expensive months to buy are March through May, when everyone's rushing to be on the water for opener. But the right month for YOU is whichever one matches your install schedule and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
+> **Quick answer:** The best months to ORDER a new Mercury in Ontario are typically late summer (model year closeouts after July 1) and November through February (off-season dealer promos, full inventory, first pick of spring install slots). The most expensive months to buy are March through May, when everyone is rushing to be on the water for opener. Note: our shop is closed roughly December 1 to April 1, so any install work happens once we reopen in early April. The right month for YOU is whichever one matches your spring install plan and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 Conventional wisdom says winter is deal time. Half right. The honest answer is more useful: pricing flexibility is one piece of the timing puzzle, and it's rarely the biggest piece. Install slots, trade values, and Mercury's model year cycle all move with the calendar too.
 
