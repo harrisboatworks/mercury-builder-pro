@@ -5649,7 +5649,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
       { question: 'Do I need hydraulic steering?', answer: 'At 150 HP and above, yes. Hydraulic steering at that power is about safe, comfortable control, and it is standard practice on higher-HP rigs. From 40 to 115 HP, cable steering is fine.' },
       { question: 'Do I need to update my Pleasure Craft Licence?', answer: 'Yes, whenever motor horsepower, brand, or model changes. The update is free, takes about fifteen minutes online, and HBW handles it for every customer as part of the job.' },
       { question: 'What happens to my old motor?', answer: 'Trade-in credit. Even a dead motor carries aluminum and parts value, and that credit reduces the amount you finance.' },
-      { question: 'When is the best time to book a repower?', answer: 'October through March. Off-season ordering gets the best motor availability and shop time. Spring slots fill by March.' },
+      { question: 'When is the best time to book a repower?', answer: 'October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed roughly December 1 to April 1, install work happens once we reopen in early April. Spring slots fill by March.' },
     ],
   },
 
