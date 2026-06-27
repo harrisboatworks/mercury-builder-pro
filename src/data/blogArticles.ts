@@ -2939,7 +2939,7 @@ Two related guides in the same cluster:
 Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours. For a typical recreational boater (50 to 150 hours per season), that translates to 10 to 30 years of useful life. Skipped maintenance cuts that in half easily.
 
 **What are the signs my motor needs replacement?**
-Harder starts, fuel system problems, declining performance, rising repair bills, or starting to worry about reliability mid-season. These show up in stages. Early signs mean plan ahead; late signs mean repower this off-season.
+Harder starts, fuel system problems, declining performance, rising repair bills, or starting to worry about reliability mid-season. These show up in stages. Early signs mean plan ahead; late signs mean order now for an early-spring repower.
 
 **How many hours is too many on an outboard?**
 Modern FourStrokes can hit 2,000+ hours with proper maintenance. Older 2-strokes were typically end-of-life at 1,000 to 1,500 hours. Hours alone are not the answer; maintenance history matters more than hours.
