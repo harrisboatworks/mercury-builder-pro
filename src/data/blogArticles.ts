@@ -9333,11 +9333,11 @@ If you want the boat on the water for opener (early May in the Kawarthas), the p
 | **July** | Standard | Transition (mixed 2026/2027) | Light | Strong | You don't mind a transitional quote |
 | **August-September** | Best closeout potential | 2026 closeouts + new 2027 | Light | Strong | You want the year's best price |
 | **October-November** | Standard | Full 2027 | Spring slots open | Strong | You need spring install |
-| **December-February** | Winter promo potential | Full 2027 | Open install schedule | Slightly softer | Best install pricing, full inventory |
+| **December-February** | Winter promo potential | Full 2027 | Shop closed Dec 1 to Apr 1; spring slot booking open | Slightly softer | Lock spring install slot and winter promo pricing |
 | **March-April** | Standard, less flex | Tight on popular HP | Spring slots fill fast | Strong (early-season) | You're flexible on install timing |
 | **May** | Worst time for negotiation | Tight | Crisis-only install | Strong | Only if you have no choice |
 
-The pattern: pricing flex peaks at model year closeouts (late summer) and during the winter promo window (December to February). Install timing peaks in the opposite direction, October through February is when you can actually get a spring slot.
+The pattern: pricing flex peaks at model year closeouts (late summer) and during the winter promo window (December to February). Spring install slot availability peaks in the opposite direction, October through February is when you can actually lock a slot for opener.
 
 ## What Drives Each Calendar Pattern
 
