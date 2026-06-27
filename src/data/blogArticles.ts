@@ -2760,7 +2760,7 @@ The signs your motor needs replacement are usually consistent: harder starts eac
 | Motor state | Dead/unreliable, metal in gearcase oil, failed cylinder | Runs fine but 15+ yr or 1,500+ hr | Post-2010, maintained, still reliable |
 | Repair vs new-motor price | Over 60% | 30-60% | Under 30% |
 | Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
-| Move | Quote a repower ($11K-$40K CAD) | Plan the work for winter (Dec/Jan) | Keep running, stay on maintenance |
+| Move | Quote a repower ($11K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
 
 ## Quick recommendation
 
