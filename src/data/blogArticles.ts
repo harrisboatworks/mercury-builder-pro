@@ -8948,29 +8948,29 @@ The work that makes the season feel easy happens between seasons. Booked once, p
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Winter is the best time to plan a spring repower. Inventory is open, build slots are unbooked, and we can lock in pricing before the spring rush. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
+> **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed roughly December 1 to April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
 
 ## Winter Repower Planning
 
-Winter is the perfect time to plan and execute a repower. Your boat sits anyway - why not make it ready for spring with fresh power?
+Winter is the perfect time to plan and order a repower. Your boat sits anyway, so use the off-season to lock in the right motor and a spring install slot before everyone else does.
 
-### Why Winter Repower?
+### Why Plan a Repower Over Winter?
 
 **Timing Advantages**:
-- No missed boating time
-- Faster shop turnaround
-- More scheduling flexibility
-- Time to consider options carefully
+- Order ahead and get first pick of motors before the spring rush
+- First-in-line for spring install slots when we reopen in early April
+- More time to compare options carefully
+- No mid-season scramble if your old motor fails
 
 **Potential Savings**:
-- Off-season promotions
-- Less demand = more negotiating room
+- Off-season Mercury promotions
 - Finance promotions often available
-- Bundle with other winter service
+- Lock in current pricing before any spring increases
+- Bundle the order with your fall winterization conversation
 
 ### Planning Timeline
 
-> **Note:** The marina is closed approximately **December 1 to April 1** each year for in-person service. We are available by phone, text, and email throughout the winter to lock in pricing, order motors, and reserve spring install slots.
+> **Note:** The marina is closed approximately **December 1 to April 1** each year for in-person service and install work. We are available by phone, text, and email throughout the winter to lock in pricing, order motors, and reserve spring install slots. Install work itself happens after we reopen in early April.
 
 **November**:
 - Assess current motor condition
@@ -8978,22 +8978,22 @@ Winter is the perfect time to plan and execute a repower. Your boat sits anyway 
 - Get quotes from dealers
 - Begin decision process
 
-**December-March (marina closed)**:
-- Finalize motor selection by phone/email
+**December-March (marina closed for shop work)**:
+- Finalize motor selection by phone or email
 - Reserve your spring installation slot
-- Order if not in stock (lead times are shortest in winter)
+- Place the order so the motor is on hand for April
 - Arrange financing if needed
 
-**April-May (marina reopens)**:
+**April-May (marina reopens, install work begins)**:
 - Installation performed
 - Lake test when conditions allow
 - Adjustments and setup
-- Delivery before spring
+- Delivery before the season
 
 ::cost-stack
-eyebrow: Off-season repower budget
-heading: What a winter repower actually costs
-subhead: Winter pricing typically runs 5 to 10 percent better than spring. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
+eyebrow: Spring repower budget (off-season ordering)
+heading: What an order-ahead spring repower actually costs
+subhead: Locking your order in over winter gets you first pick of motors and an early-spring install. Numbers below are 2026 CAD ranges for a mid-size Mercury FourStroke repower at HBW.
 item1Label: Motor (90 to 150 HP FourStroke)
 item1Value: $13,500 to $22,000
 item1Note: Range covers Mercury 90 ELPT through 150 ELPT. Pro XS adds roughly $1,500 to $2,500 over the FourStroke.
