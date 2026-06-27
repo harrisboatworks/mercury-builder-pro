@@ -5581,7 +5581,7 @@ It depends entirely on the hull. Aluminum hulls with solid transoms can run for 
 For a hull in solid structural condition, a repower almost always wins on the math. You keep a boat you know and spend a fraction of the cost of a comparable new package. The exception is a hull with a soft transom or multiple failing systems, where the numbers can favour a clean used boat instead.
 
 **How long does a Kawartha repower take?**
-One to two days of shop time for a clean Mercury-to-Mercury install. From signed order to pickup is typically two to four weeks, depending on motor availability. Off-season repowers move fastest.
+One to two days of shop time for a clean Mercury-to-Mercury install. From signed order to pickup is typically two to four weeks once we are open, depending on motor availability. Order over the off-season to lock in an early-spring install slot.
 
 **Do I need new controls?**
 A Mercury-to-Mercury repower can often keep recent, good-condition controls. Older equipment, or a conversion from another brand, needs new controls and harness throughout. The walk-around tells us which case you are in.
