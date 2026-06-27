@@ -9403,7 +9403,7 @@ A locked quote is good for the pricing window we issued it in. If you want to co
 ## Frequently Asked Questions
 
 **Is year-end actually the cheapest time to buy?**
-Not always. Late summer (August, post-model-year flip) can carry stronger closeout discounts when Mercury runs a 2026 closeout incentive. January and February tend to carry winter promotional pricing and the best shop labour rates. The cheapest absolute month varies year to year with Mercury's promotional calendar. The cheapest WINDOW is late summer and mid-winter.
+Not always. Late summer (August, post-model-year flip) can carry stronger closeout discounts when Mercury runs a 2026 closeout incentive. January and February tend to carry winter Mercury promotional pricing. The cheapest absolute month varies year to year with Mercury's promotional calendar. The cheapest WINDOW to order is late summer and mid-winter.
 
 **Why are boat show prices not automatically the cheapest?**
 Boat shows often have show-specific promotions, but they're usually similar to what we can do at the shop in the same period. Sometimes show pricing is better, sometimes the dealer can match or beat it. We welcome price comparisons from any show. The thing show pricing doesn't always include is the install slot, which by January is the actual constraint for opener.
