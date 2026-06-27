@@ -9447,7 +9447,7 @@ Honest version: the right month to buy is the month you actually need the boat o
     faqs: [
       {
         question: 'Is year-end actually the cheapest time to buy?',
-        answer: 'Not always. Late summer (August, post-model-year flip) can carry stronger closeout discounts when Mercury runs a 2026 closeout incentive. January and February tend to carry winter promotional pricing and the best shop labour rates. The cheapest absolute month varies year to year with Mercury\'s promotional calendar. The cheapest WINDOW is late summer and mid-winter.'
+        answer: 'Not always. Late summer (August, post-model-year flip) can carry stronger closeout discounts when Mercury runs a 2026 closeout incentive. January and February tend to carry winter Mercury promotional pricing. The cheapest absolute month varies year to year with Mercury\'s promotional calendar. The cheapest WINDOW to order is late summer and mid-winter.'
       },
       {
         question: 'Why are boat show prices not automatically the cheapest?',
