@@ -1034,7 +1034,7 @@ Harris Boat Works，自1947年起，Mercury Marine Platinum Dealer，位于Rice 
     image: '/lovable-uploads/zh-mercury-fourstroke-pro-xs-verado-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
-    dateModified: '2026-05-10',
+    dateModified: '2026-06-26',
     publishDate: '2026-05-10',
     category: 'Mercury 型号比较',
     readTime: '7 分钟',
