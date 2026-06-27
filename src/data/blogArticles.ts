@@ -15894,7 +15894,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What rigging components fail most often?',
-        answer: 'In order of frequency: fuel hoses (degrade with age and ethanol), throttle/shift cables (wear from use), corroded battery terminals, leaking trim/tilt rams, cracked harness connectors. We inspect all of these during every service. ---'
+        answer: 'In order of frequency: fuel hoses (degrade with age and ethanol), throttle/shift cables (wear from use), corroded battery terminals, leaking trim/tilt rams, cracked harness connectors. We inspect all of these during every service.'
       },
     ]
   },
