@@ -53,7 +53,7 @@ For both groups, the pattern is:
 - Fall winterization and storage
 - Trade-in evaluations when upgrading
 
-## The Mercury Platinum factor
+## The Mercury Premier factor
 
 Cobourg has marinas. What it has less of is Mercury Premier dealer depth.
 

@@ -70,7 +70,7 @@ export default function RepowerCost() {
       ]}
       whyHbwIntro="Mercury-only since 1965, family-owned since 1947, and we water-test every motor on Rice Lake before pickup."
       whyHbw={[
-        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Platinum tier.' },
+        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Premier tier.' },
         { icon: <DollarSign className="h-5 w-5" aria-hidden="true" />, title: 'Transparent CAD pricing', description: 'Live quote builder, no loss leaders.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'In-house rigging and warranty', description: 'Same techs price and rig your motor.' },
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Gores Landing, ON', description: '5369 Harris Boat Works Rd. Pickup only.' },

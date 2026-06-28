@@ -53,7 +53,7 @@ Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) works th
 
 Whitby customers who've used this tell us the thing they value most is making the trip knowing exactly what they're coming to spend, not hoping the price turns out to be reasonable.
 
-## Mercury Platinum + Three Generations
+## Mercury Premier + Three Generations
 
 Mercury Premier is the top dealer tier, parts depth, warranty authorization, technical training. We've held it for years. Harris Boat Works has been on Rice Lake since 1947, third generation. We're not running a high-volume sales floor. The model here depends on doing right by people, and Whitby's close enough that our mistakes would find their way back to us fast.
 

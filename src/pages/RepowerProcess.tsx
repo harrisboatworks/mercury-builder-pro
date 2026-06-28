@@ -102,7 +102,7 @@ export default function RepowerProcess() {
       ]}
       whyHbwIntro="Mercury-only since 1965, family-owned since 1947. Same techs price the quote and rig the motor."
       whyHbw={[
-        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Platinum tier.' },
+        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Premier tier.' },
         { icon: <ListChecks className="h-5 w-5" aria-hidden="true" />, title: '7-step repeatable process', description: 'Predictable timeline, no handoffs.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'In-house rigging and water test', description: 'Real Rice Lake run on every motor.' },
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Pickup at Gores Landing', description: '5369 Harris Boat Works Rd.' },

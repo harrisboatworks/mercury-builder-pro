@@ -122,9 +122,9 @@ Ready to compare a 150 against a 200? Build both configurations on [mercuryrepow
 
 Mercury dealer certification runs Bronze, Silver, Gold, and Platinum. Platinum requires factory training across every Mercury family, full G3 diagnostic equipment, demonstrated service volumes, stocked parts inventory, and top-tier Customer Satisfaction Index scores.
 
-For the motor price itself, Platinum and Bronze dealers are generally within a few hundred dollars of each other. The difference shows up in warranty work, complex diagnostics, repower expertise, parts availability, and what happens when something goes wrong three years after the sale.
+For the motor price itself, Premier and Bronze dealers are generally within a few hundred dollars of each other. The difference shows up in warranty work, complex diagnostics, repower expertise, parts availability, and what happens when something goes wrong three years after the sale.
 
-Harris Boat Works has been a Mercury dealer since 1965. We've been Platinum for over a decade. Some GTA customers drive 90 minutes to Gores Landing to buy here. That's not because we're the lowest price on every single model. It's because when we quote something, that's the price, and when you need service, you're not starting over with a stranger.
+Harris Boat Works has been a Mercury dealer since 1965. We've been Premier for over a decade. Some GTA customers drive 90 minutes to Gores Landing to buy here. That's not because we're the lowest price on every single model. It's because when we quote something, that's the price, and when you need service, you're not starting over with a stranger.
 
 ## Mercury promotional pricing and bonus warranty
 

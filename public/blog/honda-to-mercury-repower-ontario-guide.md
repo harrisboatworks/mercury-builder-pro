@@ -29,7 +29,7 @@ content_type: blog_article
 
 > **Quick answer:** Honda outboards are excellent in the 9.9-50 HP class. Switching to Mercury makes sense for two reasons: Ontario dealer-network access (Mercury has 3x more service points) and HP-class match above 60 HP. Brand swap costs $1,800-$3,500 extra in rigging (controls, gauges, harness, prop). Email info@harrisboatworks.ca with your Honda specs for a same-day side-by-side quote.
 
-Honda BF outboards have a loyal following in Ontario, particularly in the 9.9-50 HP class for small fishing boats and tenders. The motors are quiet, fuel-efficient, and built to a high standard. We don't sell Honda at HBW (we're Mercury Platinum), but we respect the brand. This guide is the honest case for switching from Honda to Mercury, where it makes sense, and where it doesn't.
+Honda BF outboards have a loyal following in Ontario, particularly in the 9.9-50 HP class for small fishing boats and tenders. The motors are quiet, fuel-efficient, and built to a high standard. We don't sell Honda at HBW (we're Mercury Premier), but we respect the brand. This guide is the honest case for switching from Honda to Mercury, where it makes sense, and where it doesn't.
 
 ## Why customers switch from Honda to Mercury
 

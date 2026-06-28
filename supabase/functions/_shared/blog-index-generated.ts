@@ -561,7 +561,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What does Mercury Premier dealer status mean?",
-        "a": "Platinum is the highest tier in Mercury dealer rating system. It is based on volume, service quality, technician certification, customer satisfaction, and operational standards. It gives us priority parts access, higher-level technical support, and faster warranty processing."
+        "a": "Premier is the highest tier in Mercury dealer rating system. It is based on volume, service quality, technician certification, customer satisfaction, and operational standards. It gives us priority parts access, higher-level technical support, and faster warranty processing."
       },
       {
         "q": "Why does HBW only sell Mercury?",
@@ -3085,8 +3085,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
         "a": "Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request."
       },
       {
-        "q": "How do I find out if a dealer is Mercury Platinum?",
-        "a": "Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident \"yes\" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum."
+        "q": "How do I find out if a dealer is Mercury Premier?",
+        "a": "Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident \"yes\" and may show certification documentation. If a dealer hedges or doesn't know, they're not Premier."
       },
       {
         "q": "Why does dealer tier matter for me as a recreational boater?",
@@ -3106,7 +3106,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       "Mercury repower Mississauga",
       "boat repower GTA cost",
       "outboard repower process Toronto",
-      "Mercury Platinum repower dealer Ontario"
+      "Mercury Premier repower dealer Ontario"
     ],
     "faqs": [
       {
@@ -3251,7 +3251,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is HBW a Mercury Premier dealer?",
-        "a": "Yes. Platinum is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores."
+        "a": "Yes. Premier is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores."
       },
       {
         "q": "Where is HBW located?",
@@ -3987,7 +3987,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is there a Mercury dealer in Markham?",
-        "a": "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Markham - about 70 minutes north. Platinum is the top tier in Mercury's dealer program."
+        "a": "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Markham - about 70 minutes north. Premier is the top tier in Mercury's dealer program."
       },
       {
         "q": "How far is Harris Boat Works from Markham?",
@@ -3995,7 +3995,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Why drive to Rice Lake instead of a closer GTA dealer?",
-        "a": "Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Platinum-tier technical depth, and a no-hard-sell family-marina culture (three generations since 1947)."
+        "a": "Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Premier-tier technical depth, and a no-hard-sell family-marina culture (three generations since 1947)."
       },
       {
         "q": "Does HBW serve Unionville and Stouffville too?",
@@ -4059,7 +4059,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Why drive that far for a Mercury dealer?",
-        "a": "Mississauga customers cite three reasons: transparent online CAD pricing (no call-for-quote), Mercury Platinum-tier technical depth, and a family-marina no-pressure conversation instead of the high-volume GTA dealer experience."
+        "a": "Mississauga customers cite three reasons: transparent online CAD pricing (no call-for-quote), Mercury Premier-tier technical depth, and a family-marina no-pressure conversation instead of the high-volume GTA dealer experience."
       },
       {
         "q": "Can I get a quote and place a Mercury order without visiting?",
@@ -4117,7 +4117,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Why drive 95 minutes for a Mercury dealer?",
-        "a": "Brampton customers cite transparent online CAD pricing, Mercury Platinum-tier technical depth, and a no-pressure family-marina conversation."
+        "a": "Brampton customers cite transparent online CAD pricing, Mercury Premier-tier technical depth, and a no-pressure family-marina conversation."
       }
     ]
   },
@@ -4140,7 +4140,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is the drive worth it for a Mercury dealer?",
-        "a": "Oakville customers cite three reasons: transparent online CAD pricing, Mercury Platinum-tier technical depth, and the no-pressure family-marina conversation. Whether the drive is worth it depends on your priorities."
+        "a": "Oakville customers cite three reasons: transparent online CAD pricing, Mercury Premier-tier technical depth, and the no-pressure family-marina conversation. Whether the drive is worth it depends on your priorities."
       },
       {
         "q": "Can I do most of the buying process remotely?",
@@ -5668,7 +5668,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Does HBW service Lake Ontario salmon boats?",
-        "a": "Yes. We service Lake Ontario boats regularly, particularly from Port Hope (approximately 20 minutes drive) and Cobourg (approximately 15 minutes drive). We do not provide off-Rice-Lake service calls; boats come to us. For boat owners launching from north-shore Lake Ontario ports, HBW may be the closer Mercury Platinum…"
+        "a": "Yes. We service Lake Ontario boats regularly, particularly from Port Hope (approximately 20 minutes drive) and Cobourg (approximately 15 minutes drive). We do not provide off-Rice-Lake service calls; boats come to us. For boat owners launching from north-shore Lake Ontario ports, HBW may be the closer Mercury Premier…"
       },
       {
         "q": "What main motor HP do you recommend for Lake Ontario salmon?",

@@ -12,7 +12,7 @@ description: "A step-by-step look at how a GTA boater repowers a boat at Harris 
 category: "Mercury Outboards"
 date_published: 2026-05-19
 date_modified: 2026-02-06
-keywords: ["Mercury repower GTA","Mercury repower Toronto","Mercury repower Mississauga","boat repower GTA cost","outboard repower process Toronto","Mercury Platinum repower dealer Ontario"]
+keywords: ["Mercury repower GTA","Mercury repower Toronto","Mercury repower Mississauga","boat repower GTA cost","outboard repower process Toronto","Mercury Premier repower dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 ---

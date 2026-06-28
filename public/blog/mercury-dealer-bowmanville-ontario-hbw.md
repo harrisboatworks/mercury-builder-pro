@@ -140,7 +140,7 @@ Why Bowmanville boaters choose HBW:
 
 - **Proximity.** 35 minutes door-to-door makes HBW closer than most local service shops once you factor in 401 traffic.
 - **Year-round option.** Many Bowmanville customers keep their boat at HBW for storage and service, fishing Rice Lake or trailering down to Lake Ontario as needed. One marina, all season.
-- **Mercury Platinum depth.** A proper repower or rigging job at HBW takes the time it takes, we don't shortcut the controls and prop matching.
+- **Mercury Premier depth.** A proper repower or rigging job at HBW takes the time it takes, we don't shortcut the controls and prop matching.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

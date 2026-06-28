@@ -53,7 +53,7 @@ export default function RepowerFinancing() {
       ]}
       whyHbwIntro="Financing handled in-house by phone so you can ask real questions about rate, term, and how trade-in shifts the math."
       whyHbw={[
-        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Platinum tier.' },
+        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Premier tier.' },
         { icon: <CreditCard className="h-5 w-5" aria-hidden="true" />, title: 'OAC through Mercury and partners', description: 'Tier-based rates, typical terms 36 to 84 months.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'Same shop rigs your motor', description: 'No handoff between sales and service.' },
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Pickup at Gores Landing', description: '5369 Harris Boat Works Rd.' },

@@ -54,7 +54,7 @@ For all three groups, the pattern is:
 - Fall winterization + storage
 - Trade-in valuations when upgrading
 
-## The Mercury Platinum factor
+## The Mercury Premier factor
 
 Port Hope has a few general boat shops. What it doesn't have within town limits is a Mercury Premier dealer.
 

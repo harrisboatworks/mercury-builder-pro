@@ -140,7 +140,7 @@ Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lak
 - Precios publicados en línea, sin juegos de "llame para cotizar"
 - Configurador de presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión
 - 78 años de operación continua en Rice Lake
-- Acceso a partes Mercury con prioridad de concesionario Platinum
+- Acceso a partes Mercury con prioridad de concesionario Premier
 - Técnicos certificados Mercury
 
 Nuestro equipo opera principalmente en inglés, pero somos completamente accesibles para compradores hispanohablantes a través del configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual.
@@ -744,7 +744,7 @@ Remotorizar significa conservar una embarcación que ya conoce y en la que conf�
 
 Los motores Mercury FourStroke actuales están disponibles de 2.5 a 300 HP. Son más económicos en combustible, más silenciosos y más confiables que la generación anterior. Si su motor tiene 15 años o más, notará la diferencia desde la primera salida.
 
-Como concesionario Mercury Platinum, Harris Boat Works tiene acceso a la gama: FourStroke estándar y Pro XS para pescadores. Verado está disponible bajo pedido especial y para servicio técnico.
+Como concesionario Mercury Premier, Harris Boat Works tiene acceso a la gama: FourStroke estándar y Pro XS para pescadores. Verado está disponible bajo pedido especial y para servicio técnico.
 
 ### 4. Tiempo: usted quiere navegar esta temporada
 

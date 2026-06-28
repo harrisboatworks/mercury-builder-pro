@@ -56,7 +56,7 @@ Durham Region buyers tend to be experienced boaters. They've owned boats, dealt 
 
 Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. No form, no callback, no process to get through. You see what it costs. You make a decision. For [the full Mercury price list](/pricing-reference) without building a quote, see our published price reference.
 
-## Mercury Platinum, Rice Lake Since 1947
+## Mercury Premier, Rice Lake Since 1947
 
 Top dealer tier in Mercury's program. Third-generation family marina, on Rice Lake since 1947. The model here runs on repeat customers and referrals, not a sales floor quota. Ajax is close enough that a bad experience would find its way back to us quickly. That keeps the conversation honest.
 

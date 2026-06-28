@@ -145,7 +145,7 @@ Why Mississauga boaters trailer to HBW:
 
 - **Annual repower trips.** Many Mississauga customers make the drive once for the repower itself, then run service work closer to home between visits.
 - **Drop-and-pick logistics.** Trailer up midweek, leave the boat for service or storage, pick up when ready.
-- **Mercury Platinum depth.** A clean 115-150 HP repower install needs the rigging hours we put in daily, not every closer dealer has that bench.
+- **Mercury Premier depth.** A clean 115-150 HP repower install needs the rigging hours we put in daily, not every closer dealer has that bench.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -170,7 +170,7 @@ About 90 minutes outside rush hour, longer in traffic. The route is Highway 401 
 
 ### Why drive that far for a Mercury dealer?
 
-Mississauga customers cite three reasons: transparent online CAD pricing (no call-for-quote), Mercury Platinum-tier technical depth, and a family-marina no-pressure conversation instead of the high-volume GTA dealer experience.
+Mississauga customers cite three reasons: transparent online CAD pricing (no call-for-quote), Mercury Premier-tier technical depth, and a family-marina no-pressure conversation instead of the high-volume GTA dealer experience.
 
 ### Can I get a quote and place a Mercury order without visiting?
 

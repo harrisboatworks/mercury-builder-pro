@@ -52,7 +52,7 @@ What it means in practice for you:
 | Higher-level technician certification | Our techs train at the top Mercury tier |
 | Faster warranty claim processing | Less waiting when something needs to be made right under warranty |
 
-Most multi-brand dealers do not reach Platinum because it is hard to maintain the standards across multiple product lines at once. Exclusive Mercury focus is a big part of why we hold it.
+Most multi-brand dealers do not reach Premier because it is hard to maintain the standards across multiple product lines at once. Exclusive Mercury focus is a big part of why we hold it.
 
 ## Three generations. One brand.
 
@@ -156,7 +156,7 @@ Since 1965. The marina itself was founded in 1947. Three generations of continuo
 
 ### What does Mercury Premier dealer status mean?
 
-Platinum is the highest tier in Mercury dealer rating system. It is based on volume, service quality, technician certification, customer satisfaction, and operational standards. It gives us priority parts access, higher-level technical support, and faster warranty processing.
+Premier is the highest tier in Mercury dealer rating system. It is based on volume, service quality, technician certification, customer satisfaction, and operational standards. It gives us priority parts access, higher-level technical support, and faster warranty processing.
 
 ### Why does HBW only sell Mercury?
 

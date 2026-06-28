@@ -123,7 +123,7 @@ For an honest cost-benefit conversation on your specific boat, email info@harris
 
 ## Related guides
 
-- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum.
+- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Premier.
 - [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
 - [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of.
 - [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.

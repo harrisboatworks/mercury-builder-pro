@@ -2428,7 +2428,7 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
   },
   {
     slug: 'garantie-prolongee-mercury-platinum-ontario',
-    seoTitle: 'Garantie prolongée Mercury Platinum (Ontario 2026)',
+    seoTitle: 'Garantie prolongée Mercury Premier (Ontario 2026)',
     title: "Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent",
     description: "Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les défaillances mécaniques ET électriques. Vrais prix CAD par HP. Les clients HBW obtiennent 10 % de rabais.",
     image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
@@ -2438,7 +2438,7 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
     publishDate: '2026-05-13',
     category: 'Garantie',
     readTime: '12 min',
-    keywords: ['garantie prolongée Mercury', 'Mercury Product Protection', 'garantie Platinum', 'garantie Mercury Ontario', 'garantie moteur prolongée', 'couverture Mercury Platinum'],
+    keywords: ['garantie prolongée Mercury', 'Mercury Product Protection', 'garantie Platinum', 'garantie Mercury Ontario', 'garantie moteur prolongée', 'couverture Mercury Premier'],
     relatedSlugs: ['prix-remotorisation-mercury-ontario'],
     content: `## Réponse rapide
 

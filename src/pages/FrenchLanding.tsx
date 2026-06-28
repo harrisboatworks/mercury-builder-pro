@@ -93,7 +93,7 @@ export default function FrenchLanding() {
         <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
         <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
         <meta property="og:title" content="Bienvenue chez Harris Boat Works, Concessionnaire Mercury Premier" />
-        <meta property="og:description" content="Prix transparents en ligne pour moteurs Mercury. Concessionnaire Platinum en Ontario." />
+        <meta property="og:description" content="Prix transparents en ligne pour moteurs Mercury. Concessionnaire Premier en Ontario." />
         <meta property="og:url" content={`${SITE_URL}/fr`} />
         <meta property="og:locale" content="fr_CA" />
         <meta property="og:type" content="website" />

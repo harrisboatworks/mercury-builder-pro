@@ -214,9 +214,9 @@ Premier status requires factory training on every Mercury family (FourStroke, Pr
 
 Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request.
 
-### How do I find out if a dealer is Mercury Platinum?
+### How do I find out if a dealer is Mercury Premier?
 
-Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum.
+Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Premier.
 
 ### Why does dealer tier matter for me as a recreational boater?
 
@@ -240,7 +240,7 @@ It depends what you value, but Harris Boat Works, about 35 minutes south of Pete
 
 ### What does Mercury Premier Dealer status mean?
 
-Platinum is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Premier status and has been a Mercury dealer since 1965.
+Premier is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Premier status and has been a Mercury dealer since 1965.
 
 ## Next steps
 

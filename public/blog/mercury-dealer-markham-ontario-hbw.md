@@ -49,7 +49,7 @@ We don't do that. Our quote builder at [mercuryrepower.ca](https://www.mercuryre
 
 If you build a quote and decide to buy somewhere else, that's fine. The point is that you made an informed decision, not one that was managed by a sales process.
 
-## What Mercury Platinum Actually Means
+## What Mercury Premier Actually Means
 
 Mercury has a dealer tier program. Platinum is the top level. It's not a marketing badge, it reflects depth of inventory, technical training, warranty authorization, and parts access.
 
@@ -160,7 +160,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Is there a Mercury dealer in Markham?
 
-There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Markham - about 70 minutes north. Platinum is the top tier in Mercury's dealer program.
+There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Markham - about 70 minutes north. Premier is the top tier in Mercury's dealer program.
 
 ### How far is Harris Boat Works from Markham?
 
@@ -168,7 +168,7 @@ Approximately 70 minutes via Highway 404 north and County Road 28. Distance is a
 
 ### Why drive to Rice Lake instead of a closer GTA dealer?
 
-Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Platinum-tier technical depth, and a no-hard-sell family-marina culture (three generations since 1947).
+Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Premier-tier technical depth, and a no-hard-sell family-marina culture (three generations since 1947).
 
 ### Does HBW serve Unionville and Stouffville too?
 

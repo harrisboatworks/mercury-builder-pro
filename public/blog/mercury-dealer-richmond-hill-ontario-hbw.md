@@ -132,7 +132,7 @@ You see the number before you leave Richmond Hill. You come up when you're decid
 
 ---
 
-## Where Richmond Hill Boaters Launch and Why HBW Competes on Mercury Platinum Depth
+## Where Richmond Hill Boaters Launch and Why HBW Competes on Mercury Premier Depth
 
 Richmond Hill is inland, with no major public launch in the city, **Lake Wilcox** is small and urban with limited recreational boating. Serious Richmond Hill boaters trailer either north to **Lake Simcoe** (about 50 minutes via Highway 404) or east to **Rice Lake** (about 75 minutes via 404/407/115). Lake Simcoe is the default for most local boaters; many have cottage relationships there.
 

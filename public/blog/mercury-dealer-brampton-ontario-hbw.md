@@ -55,7 +55,7 @@ A repower isn't a parts swap. It's a rigging job. The motor, the controls, the t
 
 We've been doing repowers on Rice Lake since 1947. The rigging conversation is as important to us as the motor sale.
 
-## Mercury Platinum, What It Means in Practice
+## Mercury Premier, What It Means in Practice
 
 Platinum is Mercury's top dealer tier. It means we carry deeper parts inventory, have more advanced technical training, and hold full warranty authorization. For most standard motor sales, the tier difference won't be visible. For complex repowers, unusual rigs, warranty claims, or technical issues after the sale, it's the difference between a quick resolution and a waiting game.
 
@@ -160,7 +160,7 @@ Yes. Caledon is within the same drive time as Brampton. We have customers across
 
 ### Why drive 95 minutes for a Mercury dealer?
 
-Brampton customers cite transparent online CAD pricing, Mercury Platinum-tier technical depth, and a no-pressure family-marina conversation.
+Brampton customers cite transparent online CAD pricing, Mercury Premier-tier technical depth, and a no-pressure family-marina conversation.
 
 ## Next steps
 

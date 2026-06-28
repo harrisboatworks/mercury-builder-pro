@@ -196,7 +196,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How far is Harris Boat Works from Bewdley?',
         paragraphs: [
-          "Bewdley is the west-end town on Rice Lake. We're the mid-south-shore village. Door-to-door is roughly 15 km, about 15 minutes by road depending on the season. For Bewdley boaters, this is one of the shortest drives to a Mercury Platinum repower shop anywhere, and we're on the same lake your boat already runs on.",
+          "Bewdley is the west-end town on Rice Lake. We're the mid-south-shore village. Door-to-door is roughly 15 km, about 15 minutes by road depending on the season. For Bewdley boaters, this is one of the shortest drives to a Mercury Premier repower shop anywhere, and we're on the same lake your boat already runs on.",
           "That shared geography is the whole point. We've rigged a lot of boats for Bewdley customers since 1965. The west end of Rice Lake has its own chop pattern, its own weed lines, its own shallow shoulders. We know that water because we run boats across it.",
         ],
       },
@@ -333,7 +333,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How far is Harris Boat Works from Roseneath?',
         paragraphs: [
-          "Roseneath is the east-end community on Rice Lake. We're mid-south-shore. Door-to-door is roughly 15 km, about 15 minutes by road. For Roseneath boaters this is one of the shortest drives to a Mercury Platinum repower shop in the area, and the water test happens on the lake your boat already lives on.",
+          "Roseneath is the east-end community on Rice Lake. We're mid-south-shore. Door-to-door is roughly 15 km, about 15 minutes by road. For Roseneath boaters this is one of the shortest drives to a Mercury Premier repower shop in the area, and the water test happens on the lake your boat already lives on.",
           "The east end of Rice Lake has its own character. Different chop direction, different weed lines, different fishing patterns running toward the Trent system. We've rigged boats for east-end customers since 1965, and that local knowledge shows up most clearly in the prop call. The same motor with a different prop runs noticeably better on a boat that lives on the east end versus one based further west.",
         ],
       },
@@ -552,7 +552,7 @@ const SPECS: SpecInput[] = [
         heading: 'Where do Bridgenorth boaters launch?',
         paragraphs: [
           'Chemong Lake has public access points serving Bridgenorth and the surrounding north-Peterborough belt. We do not single out a specific ramp here, fees and conditions change. Chemong is part of the broader Kawartha chain and connects through the Trent-Severn system, so Bridgenorth boaters who want to run the chain do that regularly.',
-          'For the repower side, none of that changes how we rig the motor. The water test happens on Rice Lake, not Chemong, but the prop is picked for your hull, your load, and your home lake. Different lake, same Mercury Platinum process.',
+          'For the repower side, none of that changes how we rig the motor. The water test happens on Rice Lake, not Chemong, but the prop is picked for your hull, your load, and your home lake. Different lake, same Mercury Premier process.',
         ],
       },
       {
@@ -753,7 +753,7 @@ const SPECS: SpecInput[] = [
         heading: 'Where do Buckhorn boaters launch?',
         paragraphs: [
           'Buckhorn is part of the Trent-Severn corridor, with public access on Lower Buckhorn Lake and adjoining lakes. We are not singling out a specific ramp here, fees and conditions change, and the Trent-Severn Waterway is the right source for waterway and lock information.',
-          'The water test for every Mercury we rig happens on Rice Lake, an hour south of Buckhorn. Different lake, same Mercury Platinum process. The prop call gets made for your hull and your home water, not ours.',
+          'The water test for every Mercury we rig happens on Rice Lake, an hour south of Buckhorn. Different lake, same Mercury Premier process. The prop call gets made for your hull and your home water, not ours.',
         ],
       },
       {
@@ -806,7 +806,7 @@ const SPECS: SpecInput[] = [
         heading: 'Is Harris Boat Works in Northumberland County?',
         paragraphs: [
           'Yes. Gores Landing is in Northumberland County, on the south shore of Rice Lake, and we are the village marina. The county wraps from Lake Ontario in the south (Cobourg, Port Hope, Brighton) up to Rice Lake in the north (Bewdley, Gores Landing, Roseneath, Hastings on the county line). Most of it is within 30 minutes of our dock.',
-          "For in-county residents, we are usually the closest Mercury Platinum repower option. Three generations of the same family have rigged motors out of this address since 1947. We have been a Mercury dealer since 1965, and today we hold Mercury's Premier Dealer tier.",
+          "For in-county residents, we are usually the closest Mercury Premier repower option. Three generations of the same family have rigged motors out of this address since 1947. We have been a Mercury dealer since 1965, and today we hold Mercury's Premier Dealer tier.",
         ],
       },
       {

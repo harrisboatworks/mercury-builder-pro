@@ -47,7 +47,7 @@ export default function RepowerTradeIn() {
       ]}
       whyHbwIntro="Mercury trades come into our used inventory or get refurbished, which usually means a stronger number than a wholesale-only buyer."
       whyHbw={[
-        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Platinum tier.' },
+        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Premier tier.' },
         { icon: <Repeat className="h-5 w-5" aria-hidden="true" />, title: 'Mercury trade-ins standard', description: 'Other brands case-by-case.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'Refurb and resale in-house', description: 'Lets us offer competitive trade values.' },
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Drop with the new motor pickup', description: 'Pickup-only at Gores Landing.' },

@@ -47,7 +47,7 @@ What keeps a marina at the same dock since 1947:
 
 **1. Generational hand-off that actually works.** Founder runs it. Sons or daughters come up working the docks at 12 years old. Take over at 35. Their kids do the same. Each generation makes choices that protect the business through their watch. The hand-offs that go badly often go badly because the receiving generation didn't actually want the work.
 
-**2. The right partnership.** We became a Mercury dealer in 1965. We've been Platinum tier, the top of Mercury's certification, for most of the modern era. **Other dealer relationships exist briefly; we've built a long-term, multi-decade alignment with a brand that's still selling well today.**
+**2. The right partnership.** We became a Mercury dealer in 1965. We've been Premier tier, the top of Mercury's certification, for most of the modern era. **Other dealer relationships exist briefly; we've built a long-term, multi-decade alignment with a brand that's still selling well today.**
 
 **3. Family-business focus over short-term margin.** A multi-generational family marina makes different decisions than a corporate-owned one. We don't have a quarterly earnings call. We have a March family conversation about whether we'll have enough boats for spring. The pressure is different; the time horizon is different.
 
@@ -203,7 +203,7 @@ Yes, three generations of the Harris family. The current ownership is third-gene
 
 ### Is HBW a Mercury Premier dealer?
 
-Yes. Platinum is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores.
+Yes. Premier is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores.
 
 ### Where is HBW located?
 
@@ -227,7 +227,7 @@ Yes, our online repower business via mercuryrepower.ca has grown significantly i
 
 ### Do you have CSI awards or other certifications?
 
-HBW currently holds Mercury Marine **Premier-tier dealer status**, which itself requires sustained top-tier Customer Satisfaction Index (CSI) scores year over year. Active certifications include Mercury Platinum, Mercury Certified Repower Center, and Legend Boats authorized dealer.
+HBW currently holds Mercury Marine **Premier-tier dealer status**, which itself requires sustained top-tier Customer Satisfaction Index (CSI) scores year over year. Active certifications include Mercury Premier, Mercury Certified Repower Center, and Legend Boats authorized dealer.
 
 ### Can I visit HBW even if I don't need to buy anything?
 

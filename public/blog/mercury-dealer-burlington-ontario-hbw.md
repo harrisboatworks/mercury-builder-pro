@@ -45,7 +45,7 @@ Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows in
 
 The customers who find this meaningful are the ones who've already done the research and just want a fair, transparent number. They're not looking to be sold. They're looking to buy.
 
-## Mercury Platinum, Not All Dealers Are the Same
+## Mercury Premier, Not All Dealers Are the Same
 
 Mercury authorizes dealers at different tiers. Platinum is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Premier dealer and a lower-tier dealer can show up in resolution time and technical depth.
 

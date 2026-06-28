@@ -114,7 +114,7 @@ Email info@harrisboatworks.ca with what you are trying to do on the water and we
 ## Related guides
 
 - [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario): Pontoon or V-hull? A Mercury Premier dealer's honest take on which hull fits which Ontario boater. Family.
-- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum.
+- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Premier.
 - [How to Read Your Boat's Capacity Plate (Ontario Guide)](/blog/how-to-read-boat-capacity-plate-ontario): What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three.
 - [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Premier dealer's honest take.
 
