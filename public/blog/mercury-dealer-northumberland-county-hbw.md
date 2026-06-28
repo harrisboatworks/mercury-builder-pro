@@ -67,7 +67,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle full service, repair, and repower. For engine repairs, we only service Mercury and Mercruiser.
 
 **Mercury parts and service**
-Platinum-tier parts depth, warranty authorization, SmartCraft diagnostics.
+Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
 Outdoor with shrinkwrap. For Northumberland boaters who already boat on Rice Lake, year-round storage means the spring launch is already at the lake.

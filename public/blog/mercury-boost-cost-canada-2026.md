@@ -35,7 +35,7 @@ content_type: blog_article
 **Author:** Jay Harris, Harris Boat Works
 **Reading time:** 10 minutes
 
-> **MERCURY PLATINUM DEALER | FAMILY OWNED SINCE 1947 | MERCURY DEALER SINCE 1965**
+> **MERCURY PREMIER DEALER | FAMILY OWNED SINCE 1947 | MERCURY DEALER SINCE 1965**
 
 ---
 

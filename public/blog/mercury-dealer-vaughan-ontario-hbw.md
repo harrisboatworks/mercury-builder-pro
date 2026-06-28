@@ -68,7 +68,7 @@ That means the conversation about which motor to buy, and whether to repower at 
 Full repower: motor, rigging, controls, throttle and shift, prop selection, installation, sea trial. Rigging matters as much as the motor, a poorly rigged motor underperforms and can cause problems down the road.
 
 **Mercury parts and service**
-Platinum-tier parts and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. If your boat is already in the Kawarthas area, this may make more sense than you'd think.

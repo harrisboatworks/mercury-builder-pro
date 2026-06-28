@@ -49,7 +49,7 @@ The customers who find this meaningful are the ones who've already done the rese
 
 Mercury authorizes dealers at different tiers. Premier is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Premier dealer and a lower-tier dealer can show up in resolution time and technical depth.
 
-Burlington has Mercury dealers. Not all of them are Platinum. That's worth knowing.
+Burlington has Mercury dealers. Not all of them are Premier. That's worth knowing.
 
 ## Burlington Buyers on Inland Lakes
 
@@ -72,7 +72,7 @@ Harris Boat Works isn't trying to be a high-volume GTA dealer. We're a third-gen
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging isn't an afterthought, it's the part that determines how the motor performs on your specific hull.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. For Burlington customers with boats on Lake Ontario or Burlington Bay, local storage will likely make more geographic sense unless you're running inland.

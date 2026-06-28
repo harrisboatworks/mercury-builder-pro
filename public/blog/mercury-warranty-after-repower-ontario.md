@@ -63,7 +63,7 @@ Mercury's warranty is tied to proper installation. When a repower is done by a c
 
 When a motor is purchased elsewhere and self-installed, or installed by a shop that isn't a Mercury dealer, warranty claims can be complicated by questions about whether the installation met Mercury's standards.
 
-We're a Mercury Premier dealer. Platinum is Mercury's top dealer service tier. For warranty work, that means factory-trained technicians, direct access to Mercury technical support, and claims submitted by the same shop that rigged your motor. Every motor we sell and rig is registered under your name with Mercury Marine from day one.
+We're a Mercury Premier dealer. Premier is Mercury's top dealer service tier. For warranty work, that means factory-trained technicians, direct access to Mercury technical support, and claims submitted by the same shop that rigged your motor. Every motor we sell and rig is registered under your name with Mercury Marine from day one.
 
 ---
 

@@ -57,7 +57,7 @@ For both groups, the pattern is:
 
 Cobourg has marinas. What it has less of is Mercury Premier dealer depth.
 
-Platinum is Mercury's top dealer tier. It reflects parts inventory depth, technical training, warranty authorization, and full SmartCraft diagnostic capability. For routine service, any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, Platinum-tier resolution paths matter.
+Premier is Mercury's top dealer tier. It reflects parts inventory depth, technical training, warranty authorization, and full SmartCraft diagnostic capability. For routine service, any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, Premier-tier resolution paths matter.
 
 The closer Cobourg dealers tend to be in lower Mercury tiers, or are non-Mercury shops. For warranty work on a newer Mercury, the dealer tier shows up in resolution speed.
 
@@ -81,7 +81,7 @@ Full Mercury lineup: 2.5 HP through 600 HP Verado. FourStroke for most Cobourg b
 Full job: motor, rigging, controls, prop selection, installation, sea trial on Rice Lake. For Cobourg customers, the convenience of having the install done where the boat will spend most of its season is meaningful.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. SmartCraft diagnostics, complete service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, complete service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor option. For Cobourg customers whose boat lives on Rice Lake during the season, year-round storage at HBW means the launch is already at the lake when spring arrives.

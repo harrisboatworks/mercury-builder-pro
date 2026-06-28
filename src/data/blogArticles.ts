@@ -20247,7 +20247,7 @@ What's actually available to a GTA boater needing Mercury service:
 
 **2. General-purpose marinas.** Multi-brand service shops. Some excellent, some marginal. Mercury isn't their primary specialty in most cases. Pros: nearby. Cons: variable Mercury expertise, may not have G3 diagnostic software, sometimes long parts delays for Mercury-specific items.
 
-**3. Authorized Mercury dealers.** A specific subset, actually trained by Mercury, registered to do warranty work, factory tools on hand. **Tier varies, basic, gold, Platinum.** Most GTA dealers are basic-to-gold tier; few are Platinum.
+**3. Authorized Mercury dealers.** A specific subset, actually trained by Mercury, registered to do warranty work, factory tools on hand. **Tier varies, basic, gold, Platinum.** Most GTA dealers are basic-to-gold tier; few are Premier.
 
 **4. Mercury Premier dealers.** Top tier. Factory-trained on every Mercury family, full G3 diagnostic kit, stocked parts, demonstrated CSI scores, eligible for the most complex warranty work. We're one. There are a handful in Ontario.
 
@@ -26229,7 +26229,7 @@ Full Mercury lineup: 2.5 HP kickers through 600 HP Verado. FourStroke, Pro XS, V
 Most of what we do is repower, replacing an older motor on a hull you want to keep. We handle the full job: motor, rigging, controls, throttle and shift cables, prop selection, and sea trial. A repower done right means the new motor performs the way Mercury designed it to, not just "runs."
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. We don't run indoor storage. If you need climate-controlled indoor, that's not us.
@@ -26374,9 +26374,9 @@ We just put the price online. Our quote builder at [mercuryrepower.ca](https://w
 
 If you use that and then buy from a closer dealer, fine. You'll buy with your eyes open.
 
-## Why Platinum Status Matters More Than Location
+## Why Premier Status Matters More Than Location
 
-Richmond Hill has Mercury dealers. Not all of them are Platinum. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
+Richmond Hill has Mercury dealers. Not all of them are Premier. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
 
 On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, warranty claim on a new motor, it starts to matter. A Premier dealer has faster resolution paths and more technical depth when the job gets complicated.
 
@@ -26403,7 +26403,7 @@ Full lineup from 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'l
 We replace old motors on hulls you want to keep. Full job: motor, rigging, controls, throttle and shift, prop selection, installation, sea trial. The rigging conversation matters as much as the motor choice, a motor improperly rigged to a hull will underperform and can shorten the motor's life.
 
 **Mercury parts and service**
-Platinum-tier warranty authorization and parts access. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier warranty authorization and parts access. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor option. If climate-controlled indoor storage is essential, that's not us.
@@ -26554,7 +26554,7 @@ We have that conversation honestly. Our repower decision guide on mercuryrepower
 
 A Mississauga customer who's seriously considering a repower and can't get a straight answer closer to home, that's the customer who tends to make the drive.
 
-## Platinum Tier on the Harder Jobs
+## Premier Tier on the Harder Jobs
 
 Mercury Premier is the top tier in their dealer program. It means deeper parts inventory, higher levels of technical training, and full warranty authorization. For a standard motor sale, tier may not matter much. For a complex repower, a warranty issue, or a technical diagnostic on an unusual setup, it matters. There aren't many Premier dealers in Ontario, and most of them aren't in the GTA.
 
@@ -26573,7 +26573,7 @@ Harris Boat Works has been on Rice Lake since 1947. Third generation. We're not 
 Full repower: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging isn't an afterthought, it's half the job.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. If you store your boat in Mississauga and only use it on inland lakes, storage here may not make sense unless you're planning an extended service visit.
@@ -26743,7 +26743,7 @@ That means the conversation about which motor to buy, and whether to repower at 
 Full repower: motor, rigging, controls, throttle and shift, prop selection, installation, sea trial. Rigging matters as much as the motor, a poorly rigged motor underperforms and can cause problems down the road.
 
 **Mercury parts and service**
-Platinum-tier parts and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. If your boat is already in the Kawarthas area, this may make more sense than you'd think.
@@ -26890,7 +26890,7 @@ We've been doing repowers on Rice Lake since 1947. The rigging conversation is a
 
 ## Mercury Premier, What It Means in Practice
 
-Platinum is Mercury's top dealer tier. It means we carry deeper parts inventory, have more advanced technical training, and hold full warranty authorization. For most standard motor sales, the tier difference won't be visible. For complex repowers, unusual rigs, warranty claims, or technical issues after the sale, it's the difference between a quick resolution and a waiting game.
+Premier is Mercury's top dealer tier. It means we carry deeper parts inventory, have more advanced technical training, and hold full warranty authorization. For most standard motor sales, the tier difference won't be visible. For complex repowers, unusual rigs, warranty claims, or technical issues after the sale, it's the difference between a quick resolution and a waiting game.
 
 ---
 
@@ -26903,7 +26903,7 @@ Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll ha
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. Nothing gets skipped.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. For most Brampton customers, local storage probably makes more logistical sense unless you're planning to use the boat regularly on Rice Lake or the Kawarthas.
@@ -27047,7 +27047,7 @@ If you build a quote, look at the number, and decide to buy from a closer Oakvil
 
 A lot of Oakville-area boaters are on Lake Ontario, Burlington Bay, or the Hamilton waterfront. Big water, larger boats, often larger motors. If you're considering a repower on a bigger hull, a significant horsepower upgrade, twin-engine setup, or a complex rigging job, Mercury Premier certification matters more than on a simple single-motor swap.
 
-The technical depth on harder jobs is where Platinum certification shows up. And the rigging conversation on a bigger, heavier hull has more variables than a standard 60 HP swap on a 16-foot aluminum. We're experienced with both.
+The technical depth on harder jobs is where Premier certification shows up. And the rigging conversation on a bigger, heavier hull has more variables than a standard 60 HP swap on a 16-foot aluminum. We're experienced with both.
 
 ## Third Generation, Since 1947
 
@@ -27064,7 +27064,7 @@ Harris Boat Works has been in Gores Landing since 1947. Jay Harris's grandfather
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For larger and more complex setups, the rigging conversation is especially important, don't skip it.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. For most Oakville customers, local storage will make more logistical sense unless you're regularly on inland lakes or the Kawarthas.
@@ -27204,7 +27204,7 @@ The customers who find this meaningful are the ones who've already done the rese
 
 Mercury authorizes dealers at different tiers. Premier is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Premier dealer and a lower-tier dealer can show up in resolution time and technical depth.
 
-Burlington has Mercury dealers. Not all of them are Platinum. That's worth knowing.
+Burlington has Mercury dealers. Not all of them are Premier. That's worth knowing.
 
 ## Burlington Buyers on Inland Lakes
 
@@ -27227,7 +27227,7 @@ Harris Boat Works isn't trying to be a high-volume GTA dealer. We're a third-gen
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging isn't an afterthought, it's the part that determines how the motor performs on your specific hull.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. For Burlington customers with boats on Lake Ontario or Burlington Bay, local storage will likely make more geographic sense unless you're running inland.
@@ -27283,7 +27283,7 @@ No. For engine repairs, we only service Mercury and Mercruiser. Yamaha, Honda, a
 **My boat is on Lake Ontario. Is a repower from you realistic?**
 Yes. The boat would need to come to us, either trailered up or, if it's a smaller hull, towed. Call us at 905-342-2153 and we'll talk through the logistics.
 
-**What's the difference between Platinum and regular Mercury certification?**
+**What's the difference between Premier and regular Mercury certification?**
 Parts inventory depth, technical training requirements, and warranty authorization. Premier dealers typically resolve warranty claims faster and are equipped for more complex technical jobs. Mercury publishes their dealer tier criteria if you want the specifics.
 
 ---
@@ -27588,7 +27588,7 @@ Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll ta
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Pickering customers close enough to make multiple trips, we can also handle mid-season service and annual maintenance.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. At 50 minutes, some Pickering customers find it more convenient to store with us than to search for storage locally, especially if the boat is already being serviced here.
@@ -27743,7 +27743,7 @@ Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest c
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Whitby customers, we can realistically handle your annual service schedule, not just one-off repowers.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. At 45 minutes, the year-round storage relationship makes a lot of sense, boat stays here, we commission it in spring, you pick it up when Rice Lake is ready.
@@ -27903,7 +27903,7 @@ Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest c
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging conversation shapes how the motor performs, we don't skip it.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. Ajax customers who boat on Rice Lake or the Kawarthas find year-round storage here makes logistical sense, the boat's already close to the water.
@@ -28065,7 +28065,7 @@ Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest c
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Oshawa customers, we can realistically handle your complete annual service cycle.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. At 40 minutes, year-round storage here makes solid logistical sense for most Oshawa boaters.
@@ -28109,7 +28109,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 ## Frequently Asked Questions, Oshawa
 
 **Is 40 minutes really what makes this worth it?**
-The drive is part of it, you're close enough that we're a practical option for ongoing service, not just a one-time trip. But the pricing transparency and the Platinum technical depth are what makes the relationship worth having. Both matter.
+The drive is part of it, you're close enough that we're a practical option for ongoing service, not just a one-time trip. But the pricing transparency and the Premier technical depth are what makes the relationship worth having. Both matter.
 
 **Can I see pricing without calling?**
 Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. Three minutes.
@@ -28229,7 +28229,7 @@ Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest c
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Bowmanville customers, we can realistically handle your complete annual service cycle, it's 35 minutes.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. At 35 minutes, year-round storage here is one of the more practical arrangements for Bowmanville boat owners. Drop off in October, pick up in spring, done.
@@ -32011,7 +32011,7 @@ The Peterborough boaters who use us most don't come for the sale. They come beca
 
 Peterborough has marinas. Peterborough has general boat shops. What it has less of is Mercury Premier dealer depth with full repower capacity.
 
-Platinum is Mercury's top dealer tier, it reflects parts inventory depth, technical training hours, warranty authorization, and SmartCraft diagnostic equipment. For routine work (oil changes, props, basic seasonal service) any qualified Mercury dealer is fine. For a full repower or a hard warranty case, Platinum-tier resolution paths matter.
+Premier is Mercury's top dealer tier, it reflects parts inventory depth, technical training hours, warranty authorization, and SmartCraft diagnostic equipment. For routine work (oil changes, props, basic seasonal service) any qualified Mercury dealer is fine. For a full repower or a hard warranty case, Premier-tier resolution paths matter.
 
 The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing, motor, rigging, controls, prop, install labour, HST, in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers. For [Mercury prices from 2.5 to 300 HP](/pricing-reference) on one page, see our published price reference.
 
@@ -32035,7 +32035,7 @@ Full Mercury lineup: 2.5 HP portables through 600 HP Verado (Verado is special-o
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial on Rice Lake before pickup. We don't deliver motors on trailers and hope they run right, every install gets water-tested before it leaves the shop.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor storage. For Peterborough customers who boat on Rice Lake, the Otonabee, or anywhere in the Trent-Severn system, year-round storage at HBW means the boat is already close to launch in spring.
@@ -32150,7 +32150,7 @@ For both groups, the pattern is:
 
 Cobourg has marinas. What it has less of is Mercury Premier dealer depth.
 
-Platinum is Mercury's top dealer tier. It reflects parts inventory depth, technical training, warranty authorization, and full SmartCraft diagnostic capability. For routine service, any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, Platinum-tier resolution paths matter.
+Premier is Mercury's top dealer tier. It reflects parts inventory depth, technical training, warranty authorization, and full SmartCraft diagnostic capability. For routine service, any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, Premier-tier resolution paths matter.
 
 The closer Cobourg dealers tend to be in lower Mercury tiers, or are non-Mercury shops. For warranty work on a newer Mercury, the dealer tier shows up in resolution speed.
 
@@ -32174,7 +32174,7 @@ Full Mercury lineup: 2.5 HP through 600 HP Verado. FourStroke for most Cobourg b
 Full job: motor, rigging, controls, prop selection, installation, sea trial on Rice Lake. For Cobourg customers, the convenience of having the install done where the boat will spend most of its season is meaningful.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. SmartCraft diagnostics, complete service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, complete service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor option. For Cobourg customers whose boat lives on Rice Lake during the season, year-round storage at HBW means the launch is already at the lake when spring arrives.
@@ -32295,7 +32295,7 @@ For all three groups, the pattern is:
 
 Port Hope has a few general boat shops. What it doesn't have within town limits is a Mercury Premier dealer.
 
-Platinum is Mercury's top dealer tier, parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
+Premier is Mercury's top dealer tier, parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
 
 For Port Hope customers with newer Mercury outboards under warranty, the closer Premier dealer typically wins the long-term service relationship.
 
@@ -32319,7 +32319,7 @@ Full Mercury lineup: 2.5 HP through 600 HP. For Port Hope customers, FourStroke 
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, install, lake test on Rice Lake. Every install gets water-tested before pickup.
 
 **Mercury parts and service**
-Platinum-tier parts depth, warranty authorization, SmartCraft diagnostics. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth, warranty authorization, SmartCraft diagnostics. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor option. For Port Hope customers whose boat already lives on Rice Lake or in the Kawarthas during the season, year-round storage at HBW makes the spring launch logistics simpler.
@@ -32357,7 +32357,7 @@ For a motor purchase conversation, call: 905-342-2153.
 ## Frequently Asked Questions, Port Hope
 
 **Is HBW the closest Mercury Premier dealer to Port Hope?**
-For most Port Hope addresses, yes. We're 30 minutes north via County Road 28 and County Road 18. Closer non-Platinum Mercury shops may exist; for Premier-tier service, HBW is the nearest option.
+For most Port Hope addresses, yes. We're 30 minutes north via County Road 28 and County Road 18. Closer non-Premier Mercury shops may exist; for Premier-tier service, HBW is the nearest option.
 
 **Do you service Lake Ontario salmon boats, not just inland?**
 Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs, we only service Mercury and Mercruiser.
@@ -32467,7 +32467,7 @@ Full repower including motor, rigging, controls, throttle and shift cables, prop
 For Trent-Severn cruisers with MerCruiser sterndrives, we handle full service, repair, and repower. For engine repairs, we only service Mercury and Mercruiser.
 
 **Mercury parts and service**
-Platinum-tier parts depth, warranty authorization, SmartCraft diagnostics.
+Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
 Outdoor with shrinkwrap. For Lindsay customers whose boat will launch on Rice Lake or cruise the lower Trent, storage at HBW puts the spring launch already at the water.
@@ -32596,7 +32596,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle full service, repair, and repower. For engine repairs, we only service Mercury and Mercruiser.
 
 **Mercury parts and service**
-Platinum-tier parts depth, warranty authorization, SmartCraft diagnostics.
+Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
 Outdoor with shrinkwrap. For Northumberland boaters who already boat on Rice Lake, year-round storage means the spring launch is already at the lake.
@@ -32648,7 +32648,7 @@ For a motor purchase or repower conversation, call: 905-342-2153.
 ## Frequently Asked Questions, Northumberland County
 
 **Is HBW the only Mercury Premier dealer in Northumberland County?**
-Yes. For Mercury Premier-tier service within Northumberland County, HBW is the option. There may be lower-tier Mercury dealers or non-Mercury shops closer to specific addresses; for Platinum-tier work, HBW is the local choice.
+Yes. For Mercury Premier-tier service within Northumberland County, HBW is the option. There may be lower-tier Mercury dealers or non-Mercury shops closer to specific addresses; for Premier-tier work, HBW is the local choice.
 
 **Do you handle warranty work on a Mercury bought elsewhere?**
 Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork.
@@ -34579,7 +34579,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 **Author:** Jay Harris, Harris Boat Works
 **Reading time:** 10 minutes
 
-> **MERCURY PLATINUM DEALER | FAMILY OWNED SINCE 1947 | MERCURY DEALER SINCE 1965**
+> **MERCURY PREMIER DEALER | FAMILY OWNED SINCE 1947 | MERCURY DEALER SINCE 1965**
 
 ---
 
@@ -35841,7 +35841,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
 **Author:** Jay Harris, Harris Boat Works
 **Reading time:** 7 minutes
 
-> **MERCURY PLATINUM DEALER | FAMILY OWNED SINCE 1947 | MERCURY DEALER SINCE 1965**
+> **MERCURY PREMIER DEALER | FAMILY OWNED SINCE 1947 | MERCURY DEALER SINCE 1965**
 
 ---
 
@@ -36402,7 +36402,7 @@ Mercury's warranty is tied to proper installation. When a repower is done by a c
 
 When a motor is purchased elsewhere and self-installed, or installed by a shop that isn't a Mercury dealer, warranty claims can be complicated by questions about whether the installation met Mercury's standards.
 
-We're a Mercury Premier dealer. Platinum is Mercury's top dealer service tier. For warranty work, that means factory-trained technicians, direct access to Mercury technical support, and claims submitted by the same shop that rigged your motor. Every motor we sell and rig is registered under your name with Mercury Marine from day one.
+We're a Mercury Premier dealer. Premier is Mercury's top dealer service tier. For warranty work, that means factory-trained technicians, direct access to Mercury technical support, and claims submitted by the same shop that rigged your motor. Every motor we sell and rig is registered under your name with Mercury Marine from day one.
 
 ---
 

@@ -83,7 +83,7 @@ Full repower including motor, rigging, controls, throttle and shift cables, prop
 For Trent-Severn cruisers with MerCruiser sterndrives, we handle full service, repair, and repower. For engine repairs, we only service Mercury and Mercruiser.
 
 **Mercury parts and service**
-Platinum-tier parts depth, warranty authorization, SmartCraft diagnostics.
+Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
 Outdoor with shrinkwrap. For Lindsay customers whose boat will launch on Rice Lake or cruise the lower Trent, storage at HBW puts the spring launch already at the water.

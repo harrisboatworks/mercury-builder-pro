@@ -47,9 +47,9 @@ We just put the price online. Our quote builder at [mercuryrepower.ca](https://w
 
 If you use that and then buy from a closer dealer, fine. You'll buy with your eyes open.
 
-## Why Platinum Status Matters More Than Location
+## Why Premier Status Matters More Than Location
 
-Richmond Hill has Mercury dealers. Not all of them are Platinum. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
+Richmond Hill has Mercury dealers. Not all of them are Premier. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
 
 On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, warranty claim on a new motor, it starts to matter. A Premier dealer has faster resolution paths and more technical depth when the job gets complicated.
 
@@ -76,7 +76,7 @@ Full lineup from 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'l
 We replace old motors on hulls you want to keep. Full job: motor, rigging, controls, throttle and shift, prop selection, installation, sea trial. The rigging conversation matters as much as the motor choice, a motor improperly rigged to a hull will underperform and can shorten the motor's life.
 
 **Mercury parts and service**
-Platinum-tier warranty authorization and parts access. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier warranty authorization and parts access. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor option. If climate-controlled indoor storage is essential, that's not us.
