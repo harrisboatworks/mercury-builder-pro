@@ -31,7 +31,7 @@ content_type: blog_article
 
 ## Conflict-of-interest disclosure
 
-Harris Boat Works is a Mercury Marine Platinum dealer in Gores Landing, Ontario. We have been a Mercury dealer since 1965. We do not sell Suzuki and we do not service Suzuki. For engine repairs, we only service Mercury and Mercruiser.
+Harris Boat Works is a Mercury Marine Premier dealer in Gores Landing, Ontario. We have been a Mercury dealer since 1965. We do not sell Suzuki and we do not service Suzuki. For engine repairs, we only service Mercury and Mercruiser.
 
 This page reflects our honest read of the Ontario market from a Mercury dealer's perspective. The Suzuki content below comes from public information, customer-side reports we hear when prospective customers describe what they were quoted elsewhere, and observed market behaviour in the Kawartha and Rice Lake region. If you want a Suzuki dealer's view of Suzuki, ask a Suzuki dealer.
 
@@ -175,7 +175,7 @@ Suzuki markets their lean-burn EFI system as a fuel-economy advantage in cruise 
 
 ### Why does Harris Boat Works only service Mercury?
 
-We are a Mercury Marine Platinum dealer and have been a Mercury dealer since 1965. Mercury is what we know in depth, what we stock parts for, and what we have factory-trained techs on. For engine repairs, we only service Mercury and Mercruiser. If you have a Suzuki, we can point you toward a Suzuki service dealer but we will not work on the motor.
+We are a Mercury Marine Premier dealer and have been a Mercury dealer since 1965. Mercury is what we know in depth, what we stock parts for, and what we have factory-trained techs on. For engine repairs, we only service Mercury and Mercruiser. If you have a Suzuki, we can point you toward a Suzuki service dealer but we will not work on the motor.
 
 ### Is Suzuki good for commercial or high-hour use?
 

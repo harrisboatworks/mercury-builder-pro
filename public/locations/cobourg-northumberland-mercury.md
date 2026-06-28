@@ -42,7 +42,7 @@ Cobourg, Port Hope, and Northumberland buyers use Harris Boat Works as their Mer
 - 115–150 HP family and pontoon
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer (top customer-satisfaction tier)
+- Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup

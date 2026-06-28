@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake"
-description: "Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes northeast - handles Mercury repowers, sales, parts, and winter..."
+description: "Mercury Premier dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes northeast - handles Mercury repowers, sales, parts, and winter..."
 category: "Service Area"
 date_published: 2026-05-11
 date_modified: 2026-05-11
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake
 
-> Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes northeast - handles Mercury repowers, sales, parts, and winter...
+> Mercury Premier dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes northeast - handles Mercury repowers, sales, parts, and winter...
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-brampton-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 95 minutes northeast of Brampton via Highway 410 to Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 95 minutes northeast of Brampton via Highway 410 to Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
@@ -108,9 +108,9 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 ## Related guides
 
 - [Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-richmond-hill-ontario-hbw): Looking for a Mercury dealer near Richmond Hill? Harris Boat Works on Rice Lake - about 75 minutes north -.
-- [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Platinum dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
-- [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
-- [Mercury Dealer for Markham: Why GTA Customers Drive to Rice Lake for Their Repower](/blog/mercury-dealer-markham-ontario-hbw): Looking for a Mercury Platinum dealer near Markham? Harris Boat Works on Rice Lake - 70 minutes north -.
+- [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Premier dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
+- [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Premier dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
+- [Mercury Dealer for Markham: Why GTA Customers Drive to Rice Lake for Their Repower](/blog/mercury-dealer-markham-ontario-hbw): Looking for a Mercury Premier dealer near Markham? Harris Boat Works on Rice Lake - 70 minutes north -.
 
 ## The HBW Promise
 
@@ -121,7 +121,7 @@ No fog machine. No runaround. Since 1947.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 ---
 

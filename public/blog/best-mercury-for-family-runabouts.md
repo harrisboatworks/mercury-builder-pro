@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)"
-description: "A Mercury Platinum dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case, with real Ontario pricing."
+description: "A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case, with real Ontario pricing."
 category: "Buying Guide"
 date_published: 2026-05-06
 date_modified: 2026-05-07
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)
 
-> A Mercury Platinum dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case, with real Ontario pricing.
+> A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case, with real Ontario pricing.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-06  
@@ -159,7 +159,7 @@ We rig family runabouts every spring in Gores Landing. Specifically:
 - **Boat-to-motor matching**, Bring the boat in or send photos with the capacity plate spec, and we'll spec the right HP for how you'll actually use it.
 - **Repower quotes through the live configurator**, Real CAD pricing in about 90 seconds at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 - **Trade-in valuation**, We give fair-market value on your old motor or boat. No lowballing.
-- **Annual service**, Mercury Platinum dealer, factory-trained techs, ethanol-free 89 marine gas at the dock.
+- **Annual service**, Mercury Premier dealer, factory-trained techs, ethanol-free 89 marine gas at the dock.
 
 If you're genuinely unsure between two HP ratings, call us before you build a quote. Picking right is more important than picking fast.
 

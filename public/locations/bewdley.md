@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Mercury Repower for Bewdley Boaters, Ontario
-Harris Boat Works is 15 minutes east of Bewdley along the south shore of Rice Lake. Bewdley sits at the west end of the lake, and HBW sits in Gores Landing, mid-south shore, roughly 15 km by road. We're a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. We share your lake. Every Mercury we rig gets water-tested on Rice Lake before pickup at Gores Landing. No shipping or delivery to Bewdley. Typical full repower: $11,000–$40,000 CAD depending on HP.
+Harris Boat Works is 15 minutes east of Bewdley along the south shore of Rice Lake. Bewdley sits at the west end of the lake, and HBW sits in Gores Landing, mid-south shore, roughly 15 km by road. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. We share your lake. Every Mercury we rig gets water-tested on Rice Lake before pickup at Gores Landing. No shipping or delivery to Bewdley. Typical full repower: $11,000–$40,000 CAD depending on HP.
 ## Factbox
 - **Region:** Bewdley
 - **Drive time:** about 15 minutes east of Bewdley along Rice Lake
@@ -41,7 +41,7 @@ Harris Boat Works is 15 minutes east of Bewdley along the south shore of Rice La
 - 150–225 HP Pro XS
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer
+- Mercury Marine Premier Dealer
 - Authorized Mercury dealer since 1965
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links

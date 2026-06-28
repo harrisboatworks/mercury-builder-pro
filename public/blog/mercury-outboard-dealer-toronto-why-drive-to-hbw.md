@@ -12,7 +12,7 @@ description: "A frank comparison of Toronto-area Mercury dealers vs Harris Boat 
 category: "Mercury Outboards"
 date_published: 2026-05-12
 date_modified: 2026-02-06
-keywords: ["Mercury outboard dealer Toronto","Mercury dealer GTA","Mercury dealer Mississauga","Mercury dealer Brampton","Mercury Platinum dealer Toronto","drive to Mercury dealer Ontario"]
+keywords: ["Mercury outboard dealer Toronto","Mercury dealer GTA","Mercury dealer Mississauga","Mercury dealer Brampton","Mercury Premier dealer Toronto","drive to Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 ---
@@ -43,14 +43,14 @@ This post is the version of that comparison we'd run through with a GTA buyer wh
 
 The GTA has Mercury dealers. They're not all the same.
 
-**Mercury's dealer tier system** ranks dealers from entry-level service through Platinum (the top tier). Platinum status requires:
+**Mercury's dealer tier system** ranks dealers from entry-level service through Platinum (the top tier). Premier status requires:
 - Factory-trained technicians on every Mercury family (FourStroke, Pro XS, Verado, SeaPro)
 - Full diagnostic equipment (G3 software, $3,000+ kit)
 - Stocked parts inventory for the most common service work
 - Demonstrated annual sales + service volumes
 - Clean Customer Satisfaction Index (CSI) scores
 
-**There are around 45 authorized Mercury dealers across Ontario. Of those, only a handful hold Platinum status.** Most GTA dealers are a tier below, they sell Mercurys, but they don't have the same diagnostic depth or service infrastructure.
+**There are around 45 authorized Mercury dealers across Ontario. Of those, only a handful hold Premier status.** Most GTA dealers are a tier below, they sell Mercurys, but they don't have the same diagnostic depth or service infrastructure.
 
 That tier difference shows up in three specific ways for buyers:
 
@@ -196,7 +196,7 @@ Motor MAP pricing is the same. Rigging, install, prop, and trade-in pricing vari
 
 ### Why drive to HBW vs a closer Mercury dealer?
 
-Three things: Mercury Platinum dealer tier (factory-trained techs, full diagnostic equipment), transparent configurator pricing (no "call for quote"), and a service relationship that follows your motor for the next 10-15 years. If those don't matter to you, your local dealer is fine.
+Three things: Mercury Premier dealer tier (factory-trained techs, full diagnostic equipment), transparent configurator pricing (no "call for quote"), and a service relationship that follows your motor for the next 10-15 years. If those don't matter to you, your local dealer is fine.
 
 ### Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?
 

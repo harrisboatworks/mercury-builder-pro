@@ -29,7 +29,7 @@ content_type: blog_article
 
 > **Quick answer:** Mercury and Yamaha both build reliable modern 4-stroke outboards. The real-world performance and reliability difference between equivalent motors is small. For Ontario cottage owners, the more important question is service network: HBW is the only Mercury dealer AND the only brand-name outboard service of any kind on Rice Lake. For boaters in the Kawarthas, the practical service-availability question matters more than spec-sheet comparisons. Build a Mercury quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hundreds of times: which one is actually better? We sell Mercury. We're a Mercury Platinum dealer. We don't sell or service Yamaha. So this isn't a balanced review. But we have an honest take.
+A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hundreds of times: which one is actually better? We sell Mercury. We're a Mercury Premier dealer. We don't sell or service Yamaha. So this isn't a balanced review. But we have an honest take.
 
 ## Mercury vs Yamaha at a glance
 

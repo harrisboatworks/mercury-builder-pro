@@ -52,7 +52,7 @@ SET html_content = $tpl$<!DOCTYPE html>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" style="padding-bottom:14px;">
 <img src="https://www.mercuryrepower.ca/email-assets/mercury-logo-white.png" alt="Mercury Marine" width="140" height="27" style="display:block;border:0;outline:none;width:140px;height:27px;max-width:140px;opacity:0.85;" />
 </td></tr></table>
-<p style="margin:0 0 6px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:2.5px;color:#c5a572;text-align:center;font-weight:700;text-transform:uppercase;">Mercury Platinum Dealer</p>
+<p style="margin:0 0 6px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:2.5px;color:#c5a572;text-align:center;font-weight:700;text-transform:uppercase;">Mercury Premier Dealer</p>
 <div style="height:1px;background:rgba(255,255,255,0.12);line-height:1px;font-size:1px;margin:18px 0;">&nbsp;</div>
 <p style="margin:0 0 6px 0;font-family:Georgia,'Times New Roman',Times,serif;font-size:15px;line-height:1.6;color:#ffffff;text-align:center;letter-spacing:2px;text-transform:uppercase;">Harris Boat Works</p>
 <p style="margin:0 0 10px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#cbd5e1;text-align:center;">5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0</p>
@@ -119,7 +119,7 @@ SET html_content = $tpl$<!DOCTYPE html>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" style="padding-bottom:14px;">
 <img src="https://www.mercuryrepower.ca/email-assets/mercury-logo-white.png" alt="Mercury Marine" width="140" height="27" style="display:block;border:0;outline:none;width:140px;height:27px;max-width:140px;opacity:0.85;" />
 </td></tr></table>
-<p style="margin:0 0 6px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:2.5px;color:#c5a572;text-align:center;font-weight:700;text-transform:uppercase;">Mercury Platinum Dealer</p>
+<p style="margin:0 0 6px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:2.5px;color:#c5a572;text-align:center;font-weight:700;text-transform:uppercase;">Mercury Premier Dealer</p>
 <div style="height:1px;background:rgba(255,255,255,0.12);line-height:1px;font-size:1px;margin:18px 0;">&nbsp;</div>
 <p style="margin:0 0 6px 0;font-family:Georgia,'Times New Roman',Times,serif;font-size:15px;line-height:1.6;color:#ffffff;text-align:center;letter-spacing:2px;text-transform:uppercase;">Harris Boat Works</p>
 <p style="margin:0 0 10px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#cbd5e1;text-align:center;">5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0</p>

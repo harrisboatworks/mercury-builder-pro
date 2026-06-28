@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Mercury Dealer Near Peterborough, Harris Boat Works (35 min south)
-Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, about 35 minutes south on the shore of Rice Lake. Peterborough boaters have been buying Mercury outboards from us for over 60 years.
+Harris Boat Works is the closest Mercury Marine Premier Dealer to Peterborough, about 35 minutes south on the shore of Rice Lake. Peterborough boaters have been buying Mercury outboards from us for over 60 years.
 ## Factbox
 - **Region:** Peterborough
 - **Drive time:** about 35 minutes south of Peterborough
@@ -43,7 +43,7 @@ Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough,
 - 115–150 HP family and pontoon
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer (top customer-satisfaction tier)
+- Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup

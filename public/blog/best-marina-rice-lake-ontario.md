@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Rice Lake's Full-Service Marina Since 1947"
-description: "The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury Platinum dealer, full storage, service, rentals."
+description: "The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury Premier dealer, full storage, service, rentals."
 category: "Rice Lake & Local"
 date_published: 2026-05-16
 date_modified: 2026-05-16
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Rice Lake's Full-Service Marina Since 1947
 
-> The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury Platinum dealer, full storage, service, rentals.
+> The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury Premier dealer, full storage, service, rentals.
 
 **Category:** Rice Lake & Local  
 **Published:** 2026-05-16  
@@ -27,11 +27,11 @@ content_type: blog_article
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario
 
-![Harris Boat Works full-service marina wheel - 8 services from a Mercury Platinum dealer on Rice Lake](/lovable-uploads/hbw-full-service-marina-wheel.png)
+![Harris Boat Works full-service marina wheel - 8 services from a Mercury Premier dealer on Rice Lake](/lovable-uploads/hbw-full-service-marina-wheel.png)
 
 ## Quick answer
 
-Harris Boat Works is the oldest marina on Rice Lake, established 1947 in Gores Landing. Mercury Marine Platinum dealer (the only one on the lake), 65 slips, full-service centre, launch ramp, fishing boat and pontoon rentals, winter storage with shrinkwrap, and three generations of Rice Lake expertise. About 35-90 minutes from the GTA via Highway 401 and the Port Hope exit, depending on where you start. Quote, service, and storage requests at [hbw.wiki/service](https://hbw.wiki/service).
+Harris Boat Works is the oldest marina on Rice Lake, established 1947 in Gores Landing. Mercury Marine Premier dealer (the only one on the lake), 65 slips, full-service centre, launch ramp, fishing boat and pontoon rentals, winter storage with shrinkwrap, and three generations of Rice Lake expertise. About 35-90 minutes from the GTA via Highway 401 and the Port Hope exit, depending on where you start. Quote, service, and storage requests at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
 
@@ -85,7 +85,7 @@ It also matters because Rice Lake has its own conditions. Shallow in spots, weed
 
 ## What full-service Mercury support looks like on Rice Lake
 
-Mercury Marine Platinum status is the top tier of Mercury's dealer program. It is measured every year and it is not handed out for showing up. Here is what it actually looks like operationally at Harris Boat Works:
+Mercury Marine Premier status is the top tier of Mercury's dealer program. It is measured every year and it is not handed out for showing up. Here is what it actually looks like operationally at Harris Boat Works:
 
 - **Factory-trained technicians.** Our service techs hold current Mercury certifications across the FourStroke, Pro XS, Verado, and Mercruiser families. Training is renewed annually as Mercury updates platforms and diagnostic procedures.
 - **Parts on hand, not on order.** Platinum dealers carry a deeper parts inventory than standard tiers. Common service items (impellers, anodes, water pump kits, plugs, filters, common gaskets) sit on the shelf. Less common parts ship in one to two business days through the Mercury parts network.
@@ -162,14 +162,14 @@ For service, storage, or a quote, the fastest path is [hbw.wiki/service](https:/
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-Mercury Marine Platinum Dealer. Established 1947.
+Mercury Marine Premier Dealer. Established 1947.
 Full marina home page: [harrisboatworks.ca](https://www.harrisboatworks.ca).
 
 ## What we see at HBW
 
-We have been on this stretch of the south shore since 1947. Three generations of the same family running it. The customers we see most often: GTA boaters who drove out for the day, Kawartha cottagers who keep their boat on a trailer, and Mercury repower customers from across south-central Ontario who came specifically for Platinum-level certification.
+We have been on this stretch of the south shore since 1947. Three generations of the same family running it. The customers we see most often: GTA boaters who drove out for the day, Kawartha cottagers who keep their boat on a trailer, and Mercury repower customers from across south-central Ontario who came specifically for Premier-level certification.
 
-What sets us apart is not fancy amenities. It is the depth on the service side: Mercury Marine Platinum dealer, certified techs, and the parts-counter relationship that lets us source bizarre 1990s Mercruiser parts in a day or two when the customer needs them.
+What sets us apart is not fancy amenities. It is the depth on the service side: Mercury Marine Premier dealer, certified techs, and the parts-counter relationship that lets us source bizarre 1990s Mercruiser parts in a day or two when the customer needs them.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
@@ -192,7 +192,7 @@ Since 1947. Three generations of the Harris family have run this marina from the
 
 ### Is Harris Boat Works a Mercury authorized service centre?
 
-Yes. We're a Mercury Marine Platinum dealer, which is Mercury's top tier for sales, service, training, and parts inventory. Platinum status isn't given out for showing up; it's measured every year against parts stocking, technician certification, warranty turnaround, and customer satisfaction. On Rice Lake, we're the only Platinum dealer. If your motor is under Mercury warranty, we can do the work in-house without sending it anywhere. Same for Mercury Product Protection extended warranty claims.
+Yes. We're a Mercury Marine Premier dealer, which is Mercury's top tier for sales, service, training, and parts inventory. Premier status isn't given out for showing up; it's measured every year against parts stocking, technician certification, warranty turnaround, and customer satisfaction. On Rice Lake, we're the only Platinum dealer. If your motor is under Mercury warranty, we can do the work in-house without sending it anywhere. Same for Mercury Product Protection extended warranty claims.
 
 ### How far is Harris Boat Works from Toronto and the GTA?
 
@@ -208,7 +208,7 @@ Yes, outdoor storage with shrinkwrap on our property in Gores Landing. We typica
 
 ### What's included in HBW's full-service package?
 
-One property, one phone number, every service a Mercury-powered boat needs across a full Ontario season. Launch ramp, 65 seasonal slips, fuel dock, Mercury sales as a Platinum dealer, in-house warranty and diagnostic service on Mercury and Mercruiser, pontoon and fishing boat rentals, outdoor winter storage with shrinkwrap, winterization, spring commissioning, and a parts counter stocked to Platinum-tier requirements. The point of full-service is that nothing gets handed off to a third shop. You drop the boat once and pick it up ready to run. Bookings and service requests at [hbw.wiki/service](https://hbw.wiki/service).
+One property, one phone number, every service a Mercury-powered boat needs across a full Ontario season. Launch ramp, 65 seasonal slips, fuel dock, Mercury sales as a Platinum dealer, in-house warranty and diagnostic service on Mercury and Mercruiser, pontoon and fishing boat rentals, outdoor winter storage with shrinkwrap, winterization, spring commissioning, and a parts counter stocked to Premier-tier requirements. The point of full-service is that nothing gets handed off to a third shop. You drop the boat once and pick it up ready to run. Bookings and service requests at [hbw.wiki/service](https://hbw.wiki/service).
 
 ### Can I bring my boat from outside the Kawarthas for service?
 

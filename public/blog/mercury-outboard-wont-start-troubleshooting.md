@@ -170,9 +170,9 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 ## Related guides
 
-- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario): Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum.
+- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario): Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum.
 - [Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)](/blog/mercury-smartcraft-alarm-codes-encyclopedia): Mercury SmartCraft alarm code reference from an Ontario Platinum dealer. Top 10 codes by service frequency.
-- [Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)](/blog/outboard-overheating-emergency-guide): A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating: what to do in 60.
+- [Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)](/blog/outboard-overheating-emergency-guide): A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60.
 - [Mercury Outboard Won't Start After Sitting? Here's the Ontario Boater's Checklist](/blog/mercury-outboard-wont-start-after-sitting): Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent.
 
 ## FAQs

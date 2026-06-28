@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Mercury Dealer for Bowmanville & Courtice, Harris Boat Works
-Bowmanville and Courtice are the closest Durham communities to Harris Boat Works, about 50 minutes east on the 401. Mercury Platinum Dealer, family-owned since 1947, live CAD pricing online.
+Bowmanville and Courtice are the closest Durham communities to Harris Boat Works, about 50 minutes east on the 401. Mercury Premier Dealer, family-owned since 1947, live CAD pricing online.
 ## Factbox
 - **Region:** Bowmanville & Courtice
 - **Drive time:** about 50 minutes east of Bowmanville / Courtice via Hwy 401
@@ -42,7 +42,7 @@ Bowmanville and Courtice are the closest Durham communities to Harris Boat Works
 - 150 HP family
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer (top customer-satisfaction tier)
+- Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup

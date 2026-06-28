@@ -156,7 +156,7 @@ export default function RepowerHub() {
       whyHbw={[
         { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: '60 years of Mercury exclusive expertise.' },
         { icon: <Users className="h-5 w-5" aria-hidden="true" />, title: 'Three generations of family ownership', description: 'Founded 1947 in Gores Landing.' },
-        { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'Mercury-direct factory support', description: 'Platinum status gives priority parts and warranty.' },
+        { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'Mercury-direct factory support', description: 'Premier status gives priority parts and warranty.' },
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Local Ontario freshwater specialization', description: 'We rig for Rice Lake, Kawarthas, Simcoe, Lake Ontario.' },
       ]}
       faqs={[

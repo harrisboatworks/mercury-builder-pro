@@ -83,7 +83,7 @@ The most damaging single-event pattern.
 
 A properly-winterized Mercury outboard can sit through an Ontario winter at zero damage. A non-winterized motor can crack a block, ruin a powerhead, or freeze-split a cooling jacket in a single overnight cold snap. The repair is often more than the motor is worth.
 
-What we wish more owners would do: have a Mercury Platinum dealer do the winterization, or follow Mercury's published procedure carefully if doing it themselves. Confirm fogging oil is applied, the lower unit oil is changed, and any water has been drained from the powerhead cooling system.
+What we wish more owners would do: have a Mercury Premier dealer do the winterization, or follow Mercury's published procedure carefully if doing it themselves. Confirm fogging oil is applied, the lower unit oil is changed, and any water has been drained from the powerhead cooling system.
 
 What we see often: owners "did it themselves" but skipped a step. The most common skip is not running the engine long enough to confirm fogging oil was actually pulled through. Second most common: leaving the lower unit slightly tilted up so the impeller compresses against the housing all winter.
 
@@ -139,7 +139,7 @@ If you want a structured pre-season inspection on your specific boat, our servic
 
 ## Related guides
 
-- [Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario](/blog/mercury-outboard-spring-run-up-checklist-ontario): Boring spring checks prevent expensive May surprises. A Mercury Platinum dealer's step-by-step run-up.
+- [Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario](/blog/mercury-outboard-spring-run-up-checklist-ontario): Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up.
 - [Boat Electrical Safety Checklist for Ontario Freshwater Boats](/blog/boat-electrical-safety-checklist-ontario-freshwater): Marine electrical work goes wrong slowly. An Ontario marina's plain-English checklist for boat owners.
 - [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026): Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD.
 - [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](/blog/boat-trailer-maintenance-guide-ontario): Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks.
@@ -163,7 +163,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### My motor has an alarm that comes and goes. Is it safe to ignore?
 
-No. Intermittent alarms usually point to either a degrading sensor or a real intermittent problem. Either way, the diagnostic is cheaper now than the repair later. Get it checked at a Mercury Platinum dealer.
+No. Intermittent alarms usually point to either a degrading sensor or a real intermittent problem. Either way, the diagnostic is cheaper now than the repair later. Get it checked at a Mercury Premier dealer.
 
 ### How much does proper winterization cost?
 

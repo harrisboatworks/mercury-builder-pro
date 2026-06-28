@@ -56,9 +56,9 @@ item3Accent: true
 item4Label: Big block (225 to 400 HP), 3-year extension
 item4Value: $1,500 - $3,200
 item4Note: V8 and V10 outboards. Repair labour alone on a V10 powerhead can exceed $4K, parts are extra.
-item5Label: HBW Platinum dealer discount
+item5Label: HBW Premier dealer discount
 item5Value: 10% off
-item5Note: We're a Mercury Marine Platinum dealer. Customers who purchased the motor from HBW get 10% off the published Mercury Product Protection price.
+item5Note: We're a Mercury Marine Premier dealer. Customers who purchased the motor from HBW get 10% off the published Mercury Product Protection price.
 totalLabel: Reality check
 totalValue: Coverage costs less than one bad day
 caveat: Pricing is illustrative and subject to [Mercury Marine](https://www.mercurymarine.com/canada/en/)'s current rate sheet. Coverage terms vary by motor model year. For a real quote against your serial number, call (905) 342-2153 or use /quote.
@@ -202,7 +202,7 @@ If you bought the warranty at HBW but you are broken down at a marina near Algon
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ## How to Get a Quote
 
@@ -213,13 +213,13 @@ HBW customers (motor purchased from us), mention this in the notes field and we 
 ---
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.
+By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice Lake.
 ## Related guides
 
-- [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Platinum dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
+- [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
 - [The 7-Year Mercury Warranty at HBW, Explained (Ends June 14, 2026)](/blog/mercury-7-year-warranty-hbw-exclusive-explained): Current promo explainer. Every new Mercury at HBW carries 7 years of factory-backed coverage through June 14, 2026.
 - [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
-- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28.
+- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
 
 ## FAQs
 

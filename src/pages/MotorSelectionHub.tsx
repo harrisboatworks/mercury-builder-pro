@@ -8,12 +8,12 @@ export default function MotorSelectionHub() {
       path="/motor-selection"
       canonicalPath="/quote/motor-selection"
       metaTitle="Mercury Boats Canada: Browse Mercury Outboards 2.5 to 600 HP | HBW"
-      metaDescription="Mercury boats and outboards in Canada: browse the full Mercury lineup by HP class, family, and boat type. Live CAD pricing from Harris Boat Works, Mercury Platinum dealer."
+      metaDescription="Mercury boats and outboards in Canada: browse the full Mercury lineup by HP class, family, and boat type. Live CAD pricing from Harris Boat Works, Mercury Premier dealer."
       breadcrumbName="Mercury Motor Selection"
       lastReviewedISO="2026-06-02"
       lastReviewedLabel="June 2026"
       h1="How to Choose the Right Mercury Outboard for Your Boat (2026)"
-      subhead="Hull-by-hull, use-by-use Mercury sizing from a Mercury Platinum dealer."
+      subhead="Hull-by-hull, use-by-use Mercury sizing from a Mercury Premier dealer."
       primaryCTA={{ label: 'Build Your Mercury Quote', to: '/quote/motor-selection' }}
       phoneNumber="(905) 342-2153"
       directAnswer={
@@ -97,7 +97,7 @@ export default function MotorSelectionHub() {
         { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: '60 years of Mercury rigging experience', description: 'Three generations of HBW have rigged thousands of boats.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'Sea-trial discipline', description: 'Every repower includes prop testing on the water.' },
         { icon: <Users className="h-5 w-5" aria-hidden="true" />, title: 'Honest sizing', description: "We will tell you when your existing motor is fine and you don't need to buy." },
-        { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Mercury Platinum dealer access', description: 'Factory-direct support and current product knowledge.' },
+        { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Mercury Premier dealer access', description: 'Factory-direct support and current product knowledge.' },
       ]}
       faqs={[
         { question: 'What HP do I need for my boat?', answer: "Aim for 70 to 90% of your boat's maximum rated HP for typical recreational use. Specific answer depends on hull length, type, and use case. See our HP guide or build a quote at /quote/motor-selection for your specific boat." },

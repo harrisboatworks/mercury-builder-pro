@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 90 minutes northeast of Mississauga via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 90 minutes northeast of Mississauga via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
@@ -113,10 +113,10 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## Related guides
 
-- [Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake](/blog/mercury-dealer-ajax-ontario-hbw): Mercury Platinum dealer for Ajax customers - Harris Boat Works on Rice Lake is about 45 minutes via the 401.
-- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw): Mercury Platinum dealer for Bowmanville customers - Harris Boat Works on Rice Lake is about 35 minutes via.
-- [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
-- [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
+- [Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake](/blog/mercury-dealer-ajax-ontario-hbw): Mercury Premier dealer for Ajax customers - Harris Boat Works on Rice Lake is about 45 minutes via the 401.
+- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw): Mercury Premier dealer for Bowmanville customers - Harris Boat Works on Rice Lake is about 35 minutes via.
+- [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Premier dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
+- [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Premier dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
 
 ## The HBW Promise
 
@@ -131,7 +131,7 @@ That's the deal. It's been the deal since 1947.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Call or text:** 905-342-2153  
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 ---
 
@@ -162,7 +162,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Is there a Mercury dealer near Mississauga?
 
-Mississauga has several Mercury dealers in the broader GTA. Harris Boat Works on Rice Lake is the closest Platinum-tier dealer for west-GTA customers willing to make the 90-minute drive northeast.
+Mississauga has several Mercury dealers in the broader GTA. Harris Boat Works on Rice Lake is the closest Premier-tier dealer for west-GTA customers willing to make the 90-minute drive northeast.
 
 ### How long is the drive from Mississauga to Harris Boat Works?
 

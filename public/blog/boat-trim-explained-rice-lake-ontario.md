@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Trim Explained for Rice Lake Boaters, Without the Jargon"
-description: "How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Platinum dealer."
+description: "How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Premier dealer."
 category: "How-To"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Boat Trim Explained for Rice Lake Boaters, Without the Jargon
 
-> How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Platinum dealer.
+> How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Premier dealer.
 
 **Category:** How-To  
 **Published:** 2026-05-17  
@@ -127,7 +127,7 @@ If you'd like a structured run-through of trim on your specific boat, email info
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

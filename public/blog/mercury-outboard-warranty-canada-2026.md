@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying"
-description: "A Mercury Platinum dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually covered, what voids it, and whether the extended plan is worth it."
+description: "A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually covered, what voids it, and whether the extended plan is worth it."
 category: "Buying Guide"
 date_published: 2026-05-23
 date_modified: 2026-05-23
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
 
-> A Mercury Platinum dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually covered, what voids it, and whether the extended plan is worth it.
+> A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually covered, what voids it, and whether the extended plan is worth it.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-23  
@@ -181,7 +181,7 @@ The owner's manual has the full list. The ones we see most often in our shop:
 
 The motor is the same. The warranty terms are the same. What's different is the dealer.
 
-A Mercury Platinum dealer (the highest tier) has factory-trained technicians, full diagnostic equipment, and guaranteed parts availability. **Warranty claims processed by Platinum dealers go through faster**. Mercury's internal escalation system treats Platinum-flagged claims as higher priority.
+A Mercury Premier dealer (the highest tier) has factory-trained technicians, full diagnostic equipment, and guaranteed parts availability. **Warranty claims processed by Platinum dealers go through faster**. Mercury's internal escalation system treats Premier-flagged claims as higher priority.
 
 We've been a Mercury dealer in Ontario since 1965. Every new Mercury we sell gets registered at point of sale, documented in our service file, and supported by the same shop for the full warranty life. If something breaks, you don't have to explain who did the rigging or whether the break-in service was done, it's all in our records.
 

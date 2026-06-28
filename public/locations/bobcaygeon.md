@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Bobcaygeon Mercury Repower
-Harris Boat Works is roughly 75 minutes south of Bobcaygeon in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 80 km. We are a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Bobcaygeon sits between Pigeon and Sturgeon Lakes in the central Kawarthas, major boating country. Customers drive to us for pickup; we do not ship or deliver. Every Mercury we rig is water-tested on Rice Lake before pickup at Gores Landing. Typical full repower: $11,000–$40,000 CAD.
+Harris Boat Works is roughly 75 minutes south of Bobcaygeon in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 80 km. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Bobcaygeon sits between Pigeon and Sturgeon Lakes in the central Kawarthas, major boating country. Customers drive to us for pickup; we do not ship or deliver. Every Mercury we rig is water-tested on Rice Lake before pickup at Gores Landing. Typical full repower: $11,000–$40,000 CAD.
 ## Factbox
 - **Region:** Bobcaygeon
 - **Drive time:** about 75 minutes south of Bobcaygeon
@@ -41,7 +41,7 @@ Harris Boat Works is roughly 75 minutes south of Bobcaygeon in Gores Landing, ON
 - 150–225 HP Pro XS
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer
+- Mercury Marine Premier Dealer
 - Authorized Mercury dealer since 1965
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links
@@ -65,7 +65,7 @@ Cruising boats run mid-range FourStroke 90–150 HP. Performance pontoons and bi
 
 ### Why drive 75 minutes for a repower?
 
-Because we are a Mercury Platinum Dealer, selling Mercury since 1965, every motor gets water-tested on Rice Lake before pickup, and the same techs who write your quote are the ones who do the install.
+Because we are a Mercury Premier Dealer, selling Mercury since 1965, every motor gets water-tested on Rice Lake before pickup, and the same techs who write your quote are the ones who do the install.
 
 ### Is Bobcaygeon far enough away that I should book early?
 

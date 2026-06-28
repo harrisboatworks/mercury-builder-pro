@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/site';
 const GTA_FAQ = [
   {
     question: "Is there a Mercury dealer that serves the GTA?",
-    answer: "Harris Boat Works on Rice Lake serves GTA boaters from across the Greater Toronto Area. We're 90 minutes east of Toronto via Highway 401, closer than most GTA boaters realize for a Mercury Marine Platinum Dealer. Family-owned since 1947, Mercury dealer since 1965."
+    answer: "Harris Boat Works on Rice Lake serves GTA boaters from across the Greater Toronto Area. We're 90 minutes east of Toronto via Highway 401, closer than most GTA boaters realize for a Mercury Marine Premier Dealer. Family-owned since 1947, Mercury dealer since 1965."
   },
   {
     question: "How do GTA customers handle pickup?",
@@ -12,7 +12,7 @@ const GTA_FAQ = [
   },
   {
     question: "Is it worth driving from Toronto for a Mercury outboard?",
-    answer: "GTA boaters tell us yes, for three reasons. (1) Real CAD pricing online with no \"call for price\" runaround. (2) Mercury Platinum Dealer status (top tier in North America). (3) Family-owned, so the same people quote, install, and service the motor. Combined with a one-hour easy run on the 401, the math usually works out better than buying in the GTA."
+    answer: "GTA boaters tell us yes, for three reasons. (1) Real CAD pricing online with no \"call for price\" runaround. (2) Mercury Premier Dealer status (top tier in North America). (3) Family-owned, so the same people quote, install, and service the motor. Combined with a one-hour easy run on the 401, the math usually works out better than buying in the GTA."
   },
   {
     question: "Do you handle Lake Simcoe and Lake Scugog Mercury repowers?",
@@ -33,7 +33,7 @@ export function MercuryDealerGTASEO() {
         "@id": `${SITE_URL}/mercury-dealer-gta#webpage`,
         "url": `${SITE_URL}/mercury-dealer-gta`,
         "name": "Mercury Dealer for the GTA | Harris Boat Works, 90 Min East of Toronto",
-        "description": "Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.",
+        "description": "Mercury Marine Premier Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.",
         "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
         "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA",
@@ -91,7 +91,7 @@ export function MercuryDealerGTASEO() {
       <title>Mercury Dealer for the GTA | Harris Boat Works, 90 Min East of Toronto</title>
       <meta
         name="description"
-        content="Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers."
+        content="Mercury Marine Premier Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers."
       />
       <meta
         name="keywords"
@@ -100,13 +100,13 @@ export function MercuryDealerGTASEO() {
       <link rel="canonical" href={`${SITE_URL}/mercury-dealer-gta`} />
 
       <meta property="og:title" content="Mercury Dealer for the GTA | Harris Boat Works" />
-      <meta property="og:description" content="Mercury Platinum Dealer 90 min east of Toronto. Real CAD pricing, family-owned since 1947." />
+      <meta property="og:description" content="Mercury Premier Dealer 90 min east of Toronto. Real CAD pricing, family-owned since 1947." />
       <meta property="og:url" content={`${SITE_URL}/mercury-dealer-gta`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mercury Dealer for the GTA" />
-      <meta name="twitter:description" content="Mercury Platinum Dealer 90 min east of Toronto." />
+      <meta name="twitter:description" content="Mercury Premier Dealer 90 min east of Toronto." />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

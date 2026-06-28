@@ -7,19 +7,19 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Platinum Dealer (2026)"
-description: "Yamaha to Mercury repower from an Ontario Mercury Platinum dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table, when the swap is worth it."
+title: "Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Premier Dealer (2026)"
+description: "Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table, when the swap is worth it."
 category: "Repower Guide"
 date_published: 2026-05-28
 date_modified: 2026-06-09
-keywords: ["Yamaha to Mercury repower","Yamaha to Mercury Ontario","brand swap outboard repower","Mercury repower cost Ontario","Yamaha Command Link Mercury","Yamaha F150 to Mercury 150","Mercury Platinum dealer Ontario","Yamaha trade-in Mercury"]
+keywords: ["Yamaha to Mercury repower","Yamaha to Mercury Ontario","brand swap outboard repower","Mercury repower cost Ontario","Yamaha Command Link Mercury","Yamaha F150 to Mercury 150","Mercury Premier dealer Ontario","Yamaha trade-in Mercury"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Platinum Dealer (2026)
+# Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Premier Dealer (2026)
 
-> Yamaha to Mercury repower from an Ontario Mercury Platinum dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table, when the swap is worth it.
+> Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table, when the swap is worth it.
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
@@ -29,7 +29,7 @@ content_type: blog_article
 
 > **Quick answer:** A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, harness, gauges, and propeller; the fuel tank, steering, and most electronics usually carry over. The brand-swap rigging premium runs roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The math swings when a Mercury dealer is closer than the nearest Yamaha service.
 
-- Mercury Platinum Dealer
+- Mercury Premier Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON
@@ -43,7 +43,7 @@ The brand swap is not a casual decision. It costs more than a same-brand repower
 
 **HBW is the only Mercury dealer on Rice Lake. We are also the only brand-name outboard service of any kind on the lake.** If you live on Rice Lake or boat here regularly, a Yamaha-to-Mercury swap is also a swap to local service for the life of the motor. That changes the math.
 
-**Local service.** The closest Yamaha dealer is too far to be practical. This is the single biggest driver we see in the GTA, Kawarthas, and around Rice Lake. A motor you can't get serviced quickly is a motor that fails when you need it most. If the nearest Mercury Platinum dealer is 20 minutes away and the nearest Yamaha dealer is 90 minutes away, the math eventually swings.
+**Local service.** The closest Yamaha dealer is too far to be practical. This is the single biggest driver we see in the GTA, Kawarthas, and around Rice Lake. A motor you can't get serviced quickly is a motor that fails when you need it most. If the nearest Mercury Premier dealer is 20 minutes away and the nearest Yamaha dealer is 90 minutes away, the math eventually swings.
 
 **Motor lineup match.** Yamaha is strong across many midrange and offshore classes. Mercury's advantage for many HBW customers is the breadth of specific families: Pro XS (high-performance), Verado V8/V10/V12 (250 to 600 HP, naturally aspirated), SeaPro (commercial), ProKicker, and Avator electric. If your next motor is outside Yamaha's sweet spot, Mercury may be the better fit.
 
@@ -101,7 +101,7 @@ The fourth pattern: customers who switch for warranty reasons rarely do the math
 
 **Where Yamaha genuinely wins (we're honest about this):**
 
-- If you're in the 40-90 HP class for a small lake fishing boat and the nearest Yamaha dealer is closer than the nearest Mercury Platinum dealer, Yamaha is the right call. Service network matters more than brand reputation.
+- If you're in the 40-90 HP class for a small lake fishing boat and the nearest Yamaha dealer is closer than the nearest Mercury Premier dealer, Yamaha is the right call. Service network matters more than brand reputation.
 - If your boat manufacturer (Stratos, Champion, some Tracker models) was OEM-rigged with Yamaha and the rest of your electronics integrate with Yamaha Command Link, the brand-swap cost is harder to justify.
 - If you've personally owned 3+ Yamaha motors with zero issues and you have a trusted Yamaha mechanic, brand loyalty has real value.
 
@@ -109,7 +109,7 @@ The fourth pattern: customers who switch for warranty reasons rarely do the math
 
 Five things to confirm before pulling the trigger.
 
-1. **Local Mercury dealer access.** HBW is at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake. We serve customers across the GTA, Kawarthas, Northumberland County, and Trent-Severn corridor. Make sure you have a Mercury Platinum dealer reasonably close. If you don't, the brand swap may not be worth it.
+1. **Local Mercury dealer access.** HBW is at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake. We serve customers across the GTA, Kawarthas, Northumberland County, and Trent-Severn corridor. Make sure you have a Mercury Premier dealer reasonably close. If you don't, the brand swap may not be worth it.
 2. **Existing Yamaha condition.** A Yamaha worth keeping (low hours, well-maintained, runs fine) doesn't need to be replaced just because it's not Mercury. Wait until natural replacement time.
 3. **Boat year and electronics.** Boats wired for Yamaha Command Link need a more involved rewire vs older boats with simple analog gauges. We quote both paths so you see the cost.
 4. **HP class match.** Make sure Mercury has an equivalent or better motor in your HP class. For 9.9 to 25 HP portables and ProKicker applications, Mercury is excellent. For 250+ HP, Mercury Verado V8/V10/V12 (naturally aspirated) is strong. For 40-150 HP, both brands are competitive. Verify the spec you actually need.

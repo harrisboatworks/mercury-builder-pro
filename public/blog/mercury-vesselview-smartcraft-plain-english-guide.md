@@ -37,7 +37,7 @@ Mercury has a lot of smart technology now. Some of it is genuinely useful. Some 
 
 Here's the plain-English version: VesselView is the display, SmartCraft is the engine data network behind it, and the Mercury Marine App brings some of that information to your phone. Together, they can show fuel use, engine hours, alarms, service reminders, and performance data.
 
-Harris Boat Works is a family-owned marina in Gores Landing on Rice Lake, established in 1947, and a Mercury Marine Platinum Dealer. We install and service this equipment, so this is the version of the conversation we'd have at the shop: what it does, what is worth paying for, and what is just another screen to poke at when you should be boating.
+Harris Boat Works is a family-owned marina in Gores Landing on Rice Lake, established in 1947, and a Mercury Marine Premier Dealer. We install and service this equipment, so this is the version of the conversation we'd have at the shop: what it does, what is worth paying for, and what is just another screen to poke at when you should be boating.
 
 ---
 

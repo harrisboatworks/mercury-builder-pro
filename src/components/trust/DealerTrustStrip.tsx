@@ -8,7 +8,7 @@ interface DealerTrustStripProps {
 const ITEMS = [
   {
     icon: Award,
-    title: 'Mercury Platinum Dealer',
+    title: 'Mercury Premier Dealer',
     body: 'Authorized Mercury Marine dealer since 1965.',
   },
   {

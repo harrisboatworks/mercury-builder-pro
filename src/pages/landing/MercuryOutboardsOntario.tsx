@@ -80,7 +80,7 @@ const LINEUP = [
 ];
 
 const TRUST = [
-  { icon: Award, label: 'Mercury Platinum Dealer' },
+  { icon: Award, label: 'Mercury Premier Dealer' },
   { icon: Calendar, label: 'Family-owned since 1947' },
   { icon: Anchor, label: 'Mercury dealer since 1965' },
   { icon: MapPin, label: 'Rice Lake, Gores Landing' },

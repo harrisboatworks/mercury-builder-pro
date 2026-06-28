@@ -9,7 +9,7 @@ export default function AboutJayHarris() {
   const url = `${SITE_URL}/about/jay-harris`;
   const title = 'Jay Harris — Owner, Harris Boat Works (3rd Generation)';
   const description =
-    'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.';
+    'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.';
 
   return (
     <div className="min-h-screen bg-repower-paper">
@@ -61,7 +61,7 @@ export default function AboutJayHarris() {
 
           <div className="prose prose-gray max-w-none">
             <p>
-              Jay Harris is the owner of Harris Boat Works, a Mercury Marine Platinum Dealer on Rice Lake
+              Jay Harris is the owner of Harris Boat Works, a Mercury Marine Premier Dealer on Rice Lake
               in Gores Landing, Ontario. The marina has been in the same family since 1947, and a Mercury
               dealer continuously since 1965.
             </p>

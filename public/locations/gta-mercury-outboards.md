@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Mercury Outboards for the Greater Toronto Area, Harris Boat Works
-For Greater Toronto Area boaters, Harris Boat Works is the Mercury Platinum Dealer worth the drive, about 90 minutes east on the 401, with live CAD pricing online and an itemized quote you can read before you leave the city.
+For Greater Toronto Area boaters, Harris Boat Works is the Mercury Premier Dealer worth the drive, about 90 minutes east on the 401, with live CAD pricing online and an itemized quote you can read before you leave the city.
 ## Factbox
 - **Region:** Greater Toronto Area
 - **Drive time:** about 90 minutes east of downtown Toronto via Hwy 401
@@ -44,7 +44,7 @@ For Greater Toronto Area boaters, Harris Boat Works is the Mercury Platinum Deal
 - 150–200 HP Pro XS
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer (top customer-satisfaction tier)
+- Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup
@@ -75,7 +75,7 @@ No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing. We do not
 
 ### Why would a GTA buyer drive to Rice Lake?
 
-For real CAD pricing online, Mercury-only expertise since 1965, Platinum-tier customer-satisfaction status, and a clean pickup walk-through that protects your warranty registration.
+For real CAD pricing online, Mercury-only expertise since 1965, Premier-tier customer-satisfaction status, and a clean pickup walk-through that protects your warranty registration.
 
 ### Can I finance a Mercury motor as a GTA customer?
 

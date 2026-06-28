@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)"
-description: "Lake Ontario salmon trolling setup from an Ontario Mercury Platinum dealer. Real numbers on alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, and..."
+description: "Lake Ontario salmon trolling setup from an Ontario Mercury Premier dealer. Real numbers on alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, and..."
 category: "Fishing / Rigging"
 date_published: 2026-05-28
 date_modified: 2026-06-12
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)
 
-> Lake Ontario salmon trolling setup from an Ontario Mercury Platinum dealer. Real numbers on alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, and...
+> Lake Ontario salmon trolling setup from an Ontario Mercury Premier dealer. Real numbers on alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, and...
 
 **Category:** Fishing / Rigging  
 **Published:** 2026-05-28  
@@ -29,7 +29,7 @@ content_type: blog_article
 
 > **Quick answer:** Lake Ontario salmon setups match the main motor to hull length (150 to 200 HP for 19 to 20 ft V-hulls, 200 to 250 HP for 21 to 22 ft), add a Mercury 9.9 ProKicker for hours of slow trolling, and need a 40 to 60 amp alternator floor for a four-downrigger electrical load. Port Hope is about 20 minutes from HBW; Cobourg about 15.
 
-- Mercury Platinum Dealer
+- Mercury Premier Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON

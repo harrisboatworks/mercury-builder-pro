@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake"
-description: "Harris Boat Works is the closest Mercury Platinum dealer for Port Hope, ~30 minutes north via County Road 18. Live online repower quotes, Ganaraska + Rice Lake..."
+description: "Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18. Live online repower quotes, Ganaraska + Rice Lake..."
 category: "Dealer Locations"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake
 
-> Harris Boat Works is the closest Mercury Platinum dealer for Port Hope, ~30 minutes north via County Road 18. Live online repower quotes, Ganaraska + Rice Lake...
+> Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18. Live online repower quotes, Ganaraska + Rice Lake...
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Quick Answer
 
-Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Platinum dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
+Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Premier dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
 
 ## Port Hope has the Ganaraska River and Lake Ontario, but most local boating happens inland
 
@@ -56,7 +56,7 @@ For all three groups, the pattern is:
 
 ## The Mercury Platinum factor
 
-Port Hope has a few general boat shops. What it doesn't have within town limits is a Mercury Platinum dealer.
+Port Hope has a few general boat shops. What it doesn't have within town limits is a Mercury Premier dealer.
 
 Platinum is Mercury's top dealer tier, parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
 
@@ -112,16 +112,16 @@ For a motor purchase conversation, call: 905-342-2153.
 
 ## Related guides
 
-- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Cobourg, ~25 minutes north via County Road 18.
-- [Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake](/blog/mercury-dealer-lindsay-ontario-hbw): Harris Boat Works is a Mercury Platinum dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake.
-- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Platinum dealer serving Northumberland County since 1947. Rice Lake.
-- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28.
+- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18.
+- [Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake](/blog/mercury-dealer-lindsay-ontario-hbw): Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake.
+- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake.
+- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
 
 ## FAQs
 
-### Is there a Mercury Platinum dealer in Port Hope?
+### Is there a Mercury Premier dealer in Port Hope?
 
-Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Platinum Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Platinum dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.
+Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Platinum dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.
 
 ### How long is the drive from Port Hope to HBW?
 

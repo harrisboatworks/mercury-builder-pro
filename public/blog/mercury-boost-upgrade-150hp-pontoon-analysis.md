@@ -194,7 +194,7 @@ After. Confirm your propeller is correctly sized and pitched for your load befor
 
 ### Is Mercury Boost available in Ontario?
 
-Yes. Mercury Boost is available through certified Mercury dealers in Ontario. Harris Boat Works in Gores Landing, Ontario, on Rice Lake, is a Mercury Platinum dealer that performs Boost installations. We sold approximately 65 new Mercury motors in 2025 and have been a Mercury dealer since 1965. Call 905-342-2153 to confirm current pricing and availability for your motor. Note that eligibility depends on your specific motor model and year; have your motor's serial number ready when you call.
+Yes. Mercury Boost is available through certified Mercury dealers in Ontario. Harris Boat Works in Gores Landing, Ontario, on Rice Lake, is a Mercury Premier dealer that performs Boost installations. We sold approximately 65 new Mercury motors in 2025 and have been a Mercury dealer since 1965. Call 905-342-2153 to confirm current pricing and availability for your motor. Note that eligibility depends on your specific motor model and year; have your motor's serial number ready when you call.
 
 ## Next steps
 

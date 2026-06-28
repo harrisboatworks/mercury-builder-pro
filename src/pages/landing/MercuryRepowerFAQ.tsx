@@ -30,7 +30,7 @@ export default function MercuryRepowerFAQ() {
             Mercury Outboard Repower FAQ
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Every question we get about repowering a boat with a new Mercury outboard, answered by Ontario's Mercury Marine Platinum Dealer · Mercury dealer since 1965. Family-owned on Rice Lake since 1947.
+            Every question we get about repowering a boat with a new Mercury outboard, answered by Ontario's Mercury Marine Premier Dealer · Mercury dealer since 1965. Family-owned on Rice Lake since 1947.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg">

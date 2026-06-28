@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison"
-description: "A Mercury Platinum dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario, what each costs, what each protects against, and what happens when you..."
+description: "A Mercury Premier dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario, what each costs, what each protects against, and what happens when you..."
 category: "Service & Maintenance"
 date_published: 2026-05-13
 date_modified: 2026-05-13
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
 
-> A Mercury Platinum dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario, what each costs, what each protects against, and what happens when you...
+> A Mercury Premier dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario, what each costs, what each protects against, and what happens when you...
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-13  
@@ -238,7 +238,7 @@ If you're new to HBW, calling in late August / early September means you get int
 
 ## Book Winter Storage at HBW
 
-We've stored boats in Gores Landing for three generations. Mercury Marine Platinum dealer service on the engine, professional shrinkwrap on the hull, our property as the storage lot. Drop off in fall, ready to launch in spring. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
+We've stored boats in Gores Landing for three generations. Mercury Marine Premier dealer service on the engine, professional shrinkwrap on the hull, our property as the storage lot. Drop off in fall, ready to launch in spring. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
 
 **Phone:** 905-342-2153
 **Online:** [harrisboatworks.ca/winter-storage](https://harrisboatworks.ca/winter-storage)
@@ -261,10 +261,10 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Related guides
 
-- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Platinum dealer. Shrinkwrap.
+- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap.
 - [Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included.
 - [The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower](/blog/mercruiser-sterndrive-guide-ontario): Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris.
-- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule): A Mercury Platinum dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone.
+- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule): A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone.
 
 ## FAQs
 

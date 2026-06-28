@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)"
-description: "A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock, and how to avoid it."
+description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock, and how to avoid it."
 category: "Troubleshooting"
 date_published: 2026-05-09
 date_modified: 2026-05-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)
 
-> A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock, and how to avoid it.
+> A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock, and how to avoid it.
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-09  
@@ -169,7 +169,7 @@ If you suspect a cooling system problem, book before your next run: [hbw.wiki/se
 
 ## Related guides
 
-- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario): Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum.
+- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario): Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum.
 - [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting): Mercury outboard won't start? Ontario Platinum dealer's honest diagnostic ladder: battery, fuel, ignition.
 - [Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)](/blog/mercury-smartcraft-alarm-codes-encyclopedia): Mercury SmartCraft alarm code reference from an Ontario Platinum dealer. Top 10 codes by service frequency.
 - [Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)](/blog/mercury-outboard-overheat-alarm-decoder): Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. real heat, on-water emergency.
@@ -182,7 +182,7 @@ If you suspect a cooling system problem, book before your next run: [hbw.wiki/se
 ---
 
 **After any overheating event, get it checked before the next run.** 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 Phone: 905-342-2153
 

@@ -19,7 +19,7 @@ price_cad: 3971
 # 15 MH FourStroke
 
 Mercury FourStroke 15 HP outboard motor (model 1A15201LK).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

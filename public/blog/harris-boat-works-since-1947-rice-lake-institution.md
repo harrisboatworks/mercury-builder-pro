@@ -29,7 +29,7 @@ content_type: blog_article
 
 # Harris Boat Works Since 1947: The Rice Lake, Ontario Institution Built on Three Generations
 
-> **Quick answer:** Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Mercury dealer since 1965 and a Mercury Marine Platinum Dealer for most of the modern era. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
+> **Quick answer:** Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Mercury dealer since 1965 and a Mercury Marine Premier Dealer for most of the modern era. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
 
 The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965**, most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
 
@@ -77,7 +77,7 @@ In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the risi
 - Mercury's dealer network was, and is, built around long-term partnerships, not quarterly volume metrics. The dealer-tier system rewards consistency over time.
 - Mercury's warranty support, parts availability, and service relationship has been reliable across multiple economic cycles.
 
-We've stayed Mercury-only as a deliberate choice. We don't sell Yamaha, Honda, Suzuki, or Tohatsu. **We do one thing. Mercury, and we do it well.** That focus is part of how we earned Platinum tier and have kept it.
+We've stayed Mercury-only as a deliberate choice. We don't sell Yamaha, Honda, Suzuki, or Tohatsu. **We do one thing. Mercury, and we do it well.** That focus is part of how we earned Premier tier and have kept it.
 
 In 2026, we're celebrating **60 years as a Mercury dealer**. That's a multi-generational relationship most other industries can't match.
 
@@ -162,7 +162,7 @@ The **technology side has changed dramatically; the human side has not.** Our jo
 
 In 2026, HBW operates:
 
-- **Mercury Marine Platinum Dealer**, with Mercury FourStroke and Pro XS in stock; Verado, SeaPro, and Avator available by special order
+- **Mercury Marine Premier Dealer**, with Mercury FourStroke and Pro XS in stock; Verado, SeaPro, and Avator available by special order
 - **Mercury Certified Repower Centre**, full-service repower facility for boat owners across Ontario
 - **Legend Boats Dealer**, selling Canadian-designed aluminum and pontoon boats (designed in Whitefish, Ontario)
 - **Marina Slips**, 49 seasonal slip rentals on Rice Lake
@@ -189,7 +189,7 @@ If the fourth generation takes over, HBW continues. If they don't, we'll find a 
 - [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer): Discover why Harris Boat Works has been Ontario's trusted Mercury dealer since 1965. Learn about our.
 - [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario): The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury.
 - [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
-- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that.
+- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that.
 
 ## FAQs
 
@@ -201,7 +201,7 @@ Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation i
 
 Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business.
 
-### Is HBW a Mercury Platinum dealer?
+### Is HBW a Mercury Premier dealer?
 
 Yes. Platinum is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores.
 
@@ -219,7 +219,7 @@ A family marina with a peak-season team. Verifiable scale: 49 seasonal slip rent
 
 ### Why has HBW been in business so long?
 
-Multi-generational family ownership, focused Mercury dealership relationship since 1965, sustained Platinum-tier service quality, transparent pricing, and customer relationships that last decades. The boring answer: doing the work well, year after year.
+Multi-generational family ownership, focused Mercury dealership relationship since 1965, sustained Premier-tier service quality, transparent pricing, and customer relationships that last decades. The boring answer: doing the work well, year after year.
 
 ### Is HBW still growing?
 
@@ -227,7 +227,7 @@ Yes, our online repower business via mercuryrepower.ca has grown significantly i
 
 ### Do you have CSI awards or other certifications?
 
-HBW currently holds Mercury Marine **Platinum-tier dealer status**, which itself requires sustained top-tier Customer Satisfaction Index (CSI) scores year over year. Active certifications include Mercury Platinum, Mercury Certified Repower Center, and Legend Boats authorized dealer.
+HBW currently holds Mercury Marine **Premier-tier dealer status**, which itself requires sustained top-tier Customer Satisfaction Index (CSI) scores year over year. Active certifications include Mercury Platinum, Mercury Certified Repower Center, and Legend Boats authorized dealer.
 
 ### Can I visit HBW even if I don't need to buy anything?
 

@@ -12,7 +12,7 @@ description: "Why every Mercury repower at Harris Boat Works gets a real-water l
 category: "HBW Process"
 date_published: 2026-05-28
 date_modified: 2026-06-09
-keywords: ["Mercury repower water test","Mercury outboard sea trial","on-water dealer test","Mercury repower quality check","HBW Rice Lake water test","Mercury dealer verification process","Mercury Platinum dealer Rice Lake","Mercury prop selection WOT RPM"]
+keywords: ["Mercury repower water test","Mercury outboard sea trial","on-water dealer test","Mercury repower quality check","HBW Rice Lake water test","Mercury dealer verification process","Mercury Premier dealer Rice Lake","Mercury prop selection WOT RPM"]
 author: Harris Boat Works
 content_type: blog_article
 ---
@@ -162,7 +162,7 @@ If you are weighing a Mercury repower for spring 2026, the next step is a no-obl
 
 - [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
 - [Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower): Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026.
-- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that.
+- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that.
 - [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026): Mercury 115 vs 150 HP from an Ontario Platinum dealer. Real dividing lines by hull type. 18ft V-hull, 21ft.
 
 ## FAQs

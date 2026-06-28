@@ -58,7 +58,7 @@ Getting a straight answer on Mercury outboard prices in Ontario used to mean cal
 
 We got tired of that. So did our customers.
 
-Harris Boat Works is a third-generation family marina, on Rice Lake since 1947, and a current Mercury Marine Platinum dealer. Every Mercury quote should be clear about what is included and what is not. We publish MSRP and dealer pricing side by side on every motor in the lineup at mercuryrepower.ca.
+Harris Boat Works is a third-generation family marina, on Rice Lake since 1947, and a current Mercury Marine Premier dealer. Every Mercury quote should be clear about what is included and what is not. We publish MSRP and dealer pricing side by side on every motor in the lineup at mercuryrepower.ca.
 
 Here's what motor-only pricing usually does not include: HST (13% in Ontario), controls (typically $700-$1,500 depending on type), a prop ($400-$900 for aluminum or stainless), rigging and installation ($1,200-$3,500 for mid-range, $2,500-$5,000 for V6), and sea trial. Those are quoted separately, and the quote you get from us is the invoice at delivery. No surprises.
 
@@ -136,7 +136,7 @@ Mercury's standard warranty in Canada is 3 years, concurrent. Promotional bonus 
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a current Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. Read Jay's full bio.
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a current Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. Read Jay's full bio.
 
 ## Ready to build a quote?
 

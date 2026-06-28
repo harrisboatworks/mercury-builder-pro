@@ -46,7 +46,7 @@ export default function ToolsIndex() {
         <title>Free Mercury Repower Tools | Harris Boat Works</title>
         <meta
           name="description"
-          content="Trade-in value estimator, repower cost calculator, Boost eligibility checker, shaft length picker. Real CAD numbers from a Mercury Platinum dealer in Gores Landing, ON."
+          content="Trade-in value estimator, repower cost calculator, Boost eligibility checker, shaft length picker. Real CAD numbers from a Mercury Premier dealer in Gores Landing, ON."
         />
         <link rel="canonical" href="https://www.mercuryrepower.ca/tools" />
       </Helmet>

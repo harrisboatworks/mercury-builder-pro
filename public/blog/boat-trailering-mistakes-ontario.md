@@ -217,7 +217,7 @@ We do Mercury repowers and full electrical service at Harris Boat Works. If your
 
 ---
 
-*Harris Boat Works, est. 1947. Gores Landing, ON. Mercury Marine Platinum Dealer.*
+*Harris Boat Works, est. 1947. Gores Landing, ON. Mercury Marine Premier Dealer.*
 *905-342-2153 | mercuryrepower.ca*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).

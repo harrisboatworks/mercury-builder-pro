@@ -189,7 +189,7 @@ Book at [hbw.wiki/service](https://hbw.wiki/service). Our shop handles a consist
 ---
 
 **Can't find the problem?** 
-Book a spring diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Book a spring diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: 905-342-2153
 

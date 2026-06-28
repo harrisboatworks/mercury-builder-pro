@@ -82,7 +82,7 @@ We sell Mercury. The Mercury section was not written by Switzerland. The compari
 - [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario)
 - [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario)
 
-Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 1965, and a Mercury Platinum dealer today.
+Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 1965, and a Mercury Premier dealer today.
 
 ## FAQs
 

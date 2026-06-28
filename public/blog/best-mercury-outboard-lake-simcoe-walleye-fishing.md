@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing
 
-- Mercury Platinum Dealer
+- Mercury Premier Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON

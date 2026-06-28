@@ -8,18 +8,18 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)"
-description: "Honda to Mercury repower from an Ontario Mercury Platinum dealer. Honest framework on when the swap is worth it (60+ HP, service network), when to stay with Honda..."
+description: "Honda to Mercury repower from an Ontario Mercury Premier dealer. Honest framework on when the swap is worth it (60+ HP, service network), when to stay with Honda..."
 category: "Repower Guide"
 date_published: 2026-05-28
 date_modified: 2026-06-05
-keywords: ["Honda to Mercury repower","Honda to Mercury Ontario","Honda BF250 Mercury","brand swap outboard repower","Mercury repower cost Ontario","Honda BF dealer Ontario","Honda vs Mercury Ontario","Mercury Platinum dealer"]
+keywords: ["Honda to Mercury repower","Honda to Mercury Ontario","Honda BF250 Mercury","brand swap outboard repower","Mercury repower cost Ontario","Honda BF dealer Ontario","Honda vs Mercury Ontario","Mercury Premier dealer"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
 # Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)
 
-> Honda to Mercury repower from an Ontario Mercury Platinum dealer. Honest framework on when the swap is worth it (60+ HP, service network), when to stay with Honda...
+> Honda to Mercury repower from an Ontario Mercury Premier dealer. Honest framework on when the swap is worth it (60+ HP, service network), when to stay with Honda...
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
@@ -35,7 +35,7 @@ Honda BF outboards have a loyal following in Ontario, particularly in the 9.9-50
 
 The Honda-to-Mercury swap is less common than Yamaha-to-Mercury in Ontario because Honda has a smaller installed base here. The customers who do switch have one of three reasons.
 
-**Service network density.** Honda has roughly one-third the Ontario dealer footprint of Mercury. In the GTA proper this isn't a big deal, but in the Kawarthas, Trent-Severn corridor, Bay of Quinte, and rural cottage country, the nearest Honda dealer can be 90+ minutes away. Mercury Platinum dealers are typically 30-45 minutes away in the same areas. For mid-season service emergencies, the difference matters.
+**Service network density.** Honda has roughly one-third the Ontario dealer footprint of Mercury. In the GTA proper this isn't a big deal, but in the Kawarthas, Trent-Severn corridor, Bay of Quinte, and rural cottage country, the nearest Honda dealer can be 90+ minutes away. Mercury Premier dealers are typically 30-45 minutes away in the same areas. For mid-season service emergencies, the difference matters.
 
 **HP class match for repowers above 60 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury offers everything from 9.9 portable to 600 HP Verado V12, including the 400 HP Verado V8/V10, the 450R, and the 600 HP V12. If your next repower is above 350 HP or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
 
@@ -87,7 +87,7 @@ We don't sell Honda. We DO try to give honest advice. Here's where Honda is the 
 
 ## Where the switch to Mercury wins
 
-**You need 60+ HP and your nearest Honda dealer is far.** Once you're above 60 HP, the service-network argument starts mattering more because the motor is doing more work and parts inventories at smaller dealers thin out. Mercury Platinum dealers are typically better-stocked.
+**You need 60+ HP and your nearest Honda dealer is far.** Once you're above 60 HP, the service-network argument starts mattering more because the motor is doing more work and parts inventories at smaller dealers thin out. Mercury Premier dealers are typically better-stocked.
 
 **You're going above 350 HP.** Honda tops out at the BF350 V8 (350 HP, launched in Canada in 2024). If you want 400 HP, 450 HP, or 600 HP, Mercury (400 HP Verado V8/V10, 450R, 600 HP Verado V12) is the only path.
 
@@ -165,7 +165,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
 
 ## Related guides
 
-- [Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Platinum Dealer (2026)](/blog/yamaha-to-mercury-repower-ontario-guide): Yamaha to Mercury repower from an Ontario Mercury Platinum dealer. What changes, what stays, brand-swap.
+- [Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Premier Dealer (2026)](/blog/yamaha-to-mercury-repower-ontario-guide): Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap.
 - [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026): Mercury 115 vs 150 HP from an Ontario Platinum dealer. Real dividing lines by hull type. 18ft V-hull, 21ft.
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad): All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and.
 - [Is My Boat Eligible for a Mercury Repower? The 5-Check Eligibility Guide (2026)](/blog/mercury-repower-eligibility-guide): Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull.

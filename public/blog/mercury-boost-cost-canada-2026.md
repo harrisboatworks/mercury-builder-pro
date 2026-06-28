@@ -230,7 +230,7 @@ Yes, the 2026 Miami Innovation Award for advancing outboard engine performance. 
 
 ### Will Boost void my warranty?
 
-When installed by a Mercury Platinum dealer per Mercury's authorized procedure, Boost is covered under standard Mercury warranty terms. Always verify warranty details against your specific motor and Mercury's published warranty policy.
+When installed by a Mercury Premier dealer per Mercury's authorized procedure, Boost is covered under standard Mercury warranty terms. Always verify warranty details against your specific motor and Mercury's published warranty policy.
 
 ### Should I wait to buy a new motor until Boost ships factory-installed?
 

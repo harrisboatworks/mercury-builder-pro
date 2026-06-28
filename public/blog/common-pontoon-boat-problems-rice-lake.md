@@ -214,7 +214,7 @@ If your pontoon is showing any of these signs, or if you're running an undersize
 
 **Get a repower quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
-Harris Boat Works has been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). We're a Mercury Marine Platinum dealer, and we know what boats in this region actually need, not what looks good on a spec sheet.
+Harris Boat Works has been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). We're a Mercury Marine Premier dealer, and we know what boats in this region actually need, not what looks good on a spec sheet.
 
 Call us at 905-342-2153 or request service online. We'll give you a straight answer.
 

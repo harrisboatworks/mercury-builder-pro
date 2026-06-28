@@ -33,7 +33,7 @@ content_type: blog_article
 
 You've decided to repower. Maybe your old motor is on its last legs; maybe a fuel-system rebuild costs as much as a fresh new Mercury. Either way, you're in the GTA and need to figure out: **how does this actually work logistically when the dealer is 90 minutes away?**
 
-This is the version of that walkthrough we'd give a Toronto, Mississauga, Markham, or Hamilton boater calling about a repower. **We are not located in the GTA. We're in Gores Landing, Ontario, on Rice Lake, about 90 minutes east of central Toronto.** GTA boaters drive to us regularly because we're a Mercury Platinum dealer with transparent install pricing. The logistics are well-worn; here's how it goes.
+This is the version of that walkthrough we'd give a Toronto, Mississauga, Markham, or Hamilton boater calling about a repower. **We are not located in the GTA. We're in Gores Landing, Ontario, on Rice Lake, about 90 minutes east of central Toronto.** GTA boaters drive to us regularly because we're a Mercury Premier dealer with transparent install pricing. The logistics are well-worn; here's how it goes.
 
 ![Map of southern Ontario showing Harris Boat Works in Gores Landing on Rice Lake with a 90-minute drive radius covering Toronto's east end, the Kawarthas, Cobourg, Bowmanville, Peterborough, and Belleville.](/lovable-uploads/diagram-hbw-service-area-map.png)
 
@@ -147,7 +147,7 @@ Repower wins by $25,000-$50,000 on most current boats. Exceptions: hulls in genu
 
 A Toronto repower at a GTA Mercury dealer is theoretically possible. Here's why most GTA customers end up at HBW:
 
-**1. Mercury Platinum dealer expertise on rigging.** Modern Mercurys (V6 V8 SmartCraft, DTS, joystick) require factory-level rigging knowledge. Lower-tier dealers often work fine on standard FourStrokes, less reliably on premium variants.
+**1. Mercury Premier dealer expertise on rigging.** Modern Mercurys (V6 V8 SmartCraft, DTS, joystick) require factory-level rigging knowledge. Lower-tier dealers often work fine on standard FourStrokes, less reliably on premium variants.
 
 **2. The configurator + transparent pricing.** GTA repowers at "call for quote" dealers often surface as $3,000-$5,000 more than equivalent rigged at HBW. The math works in our favour.
 
