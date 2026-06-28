@@ -283,7 +283,7 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](https://www.mercuryrepower.ca/blog/mercury-dealer-cobourg-ontario-hbw.md)
 - [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](https://www.mercuryrepower.ca/blog/mercury-dealer-port-hope-ontario-hbw.md)
 - [Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake](https://www.mercuryrepower.ca/blog/mercury-dealer-lindsay-ontario-hbw.md)
-- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop](https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw.md)
+- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Premier Shop](https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw.md)
 - [Mercury FourStroke Buyer Guide for Ontario (2026)](https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario.md)
 - [Mercury Pro XS Buyer Guide for Ontario (2026)](https://www.mercuryrepower.ca/blog/mercury-pro-xs-buyer-guide-ontario.md)
 - [Mercury Avator Electric Outboard Range on Rice Lake (2026)](https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage.md)

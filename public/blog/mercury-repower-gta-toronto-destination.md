@@ -193,7 +193,7 @@ If you're planning a repower, **start the configurator now and book your slot. I
 
 ## What we see at HBW
 
-GTA boaters drive past three or four Toronto-area Mercury dealers to reach us. The reason isn't always price (though we are competitive). It's the install package: Platinum dealer paperwork, proper rigging photos, and a labour rate that runs $40-60/hr below downtown Toronto marine shops.
+GTA boaters drive past three or four Toronto-area Mercury dealers to reach us. The reason isn't always price (though we are competitive). It's the install package: Premier dealer paperwork, proper rigging photos, and a labour rate that runs $40-60/hr below downtown Toronto marine shops.
 
 The drive is about an hour from Markham, 90 minutes from Mississauga. Most repower customers drop off Friday afternoon, pick up Tuesday or Wednesday of the following week. We do not offer pickup or delivery -- drop-off only.
 

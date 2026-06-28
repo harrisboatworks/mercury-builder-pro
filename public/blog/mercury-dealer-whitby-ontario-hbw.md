@@ -55,7 +55,7 @@ Whitby customers who've used this tell us the thing they value most is making th
 
 ## Mercury Platinum + Three Generations
 
-Mercury Platinum is the top dealer tier, parts depth, warranty authorization, technical training. We've held it for years. Harris Boat Works has been on Rice Lake since 1947, third generation. We're not running a high-volume sales floor. The model here depends on doing right by people, and Whitby's close enough that our mistakes would find their way back to us fast.
+Mercury Premier is the top dealer tier, parts depth, warranty authorization, technical training. We've held it for years. Harris Boat Works has been on Rice Lake since 1947, third generation. We're not running a high-volume sales floor. The model here depends on doing right by people, and Whitby's close enough that our mistakes would find their way back to us fast.
 
 ---
 
@@ -132,7 +132,7 @@ Why Whitby boaters are a strong repower market:
 
 - **Mature fleet.** Whitby's long-established marina community means many older Mercury (and other-brand) motors due for repower. We see steady annual volume from the area.
 - **Proximity makes it practical.** 45 minutes is reasonable for a multi-thousand-dollar repower investment, closer than most central Toronto dealers once you factor in 401 traffic.
-- **Mercury Platinum-level depth.** A clean install at HBW vs a rushed install elsewhere is the difference between 10 trouble-free years and a recurring warranty problem.
+- **Mercury Premier-level depth.** A clean install at HBW vs a rushed install elsewhere is the difference between 10 trouble-free years and a recurring warranty problem.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

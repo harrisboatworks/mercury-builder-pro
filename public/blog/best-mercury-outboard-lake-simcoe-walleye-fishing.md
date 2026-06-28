@@ -147,7 +147,7 @@ If you want to talk through your specific Simcoe fishing setup, call **905-342-2
 **Configurator:** mercuryrepower.ca
 **Service booking:** hbw.wiki/service
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Platinum Dealer.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer.
 
 Pricing ranges in this article are HBW's working 2026 estimates, verified June 2026. The actual price for your specific motor and configuration is on the motor selection page. Mercury model-year and pricing updates can change seasonally, and we refresh article ranges annually.
 

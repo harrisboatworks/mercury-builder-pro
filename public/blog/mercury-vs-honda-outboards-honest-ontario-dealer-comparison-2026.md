@@ -130,7 +130,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 **Quote builder:** mercuryrepower.ca
 **Service requests:** hbw.wiki/service
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake.
 
 ## FAQs
 

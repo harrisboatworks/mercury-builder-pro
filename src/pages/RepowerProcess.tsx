@@ -126,7 +126,7 @@ export default function RepowerProcess() {
         {
           question: 'What if there is a problem after pickup?',
           answer:
-            'Every motor we rig carries the Mercury Canadian warranty: 3 years limited plus 3 years corrosion coverage running concurrently, with promotional extensions stacked on top when active. If a warranty issue comes up after pickup, you call (905) 342-2153 and we book the boat back in. We are a Mercury dealer since 1965 (current Platinum tier), so warranty work is done in-house.',
+            'Every motor we rig carries the Mercury Canadian warranty: 3 years limited plus 3 years corrosion coverage running concurrently, with promotional extensions stacked on top when active. If a warranty issue comes up after pickup, you call (905) 342-2153 and we book the boat back in. We are a Mercury dealer since 1965 (current Premier tier), so warranty work is done in-house.',
         },
       ]}
       secondaryCTA={{
@@ -150,7 +150,7 @@ export default function RepowerProcess() {
             <li>Rigging plus water test on the bench: 3 to 5 working days</li>
             <li>Deposit tiers: $200 / $500 / $1,000 by HP class</li>
             <li>Water test conducted on Rice Lake (south shore, Gores Landing)</li>
-            <li>Mercury dealer since 1965, current Platinum tier, family-owned since 1947</li>
+            <li>Mercury dealer since 1965, current Premier tier, family-owned since 1947</li>
             <li>Pickup-only at 5369 Harris Boat Works Rd, Gores Landing ON</li>
           </ul>
 

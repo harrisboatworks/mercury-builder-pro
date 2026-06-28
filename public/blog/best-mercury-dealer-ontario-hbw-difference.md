@@ -61,7 +61,7 @@ A lot of this search traffic is really asking "who should I trust near Peterboro
 
 **Gold / advanced dealer:** higher tech training, more diagnostic capability. Can handle most warranty work.
 
-**Platinum dealer:** the top tier. Factory-trained on every Mercury family (FourStroke, Pro XS, Verado, SeaPro, Avator), full G3 diagnostic kit, stocked parts inventory, demonstrated annual sales + service volumes, top-tier CSI scores. **There are a small number of Platinum dealers in Ontario.**
+**Premier dealer:** the top tier. Factory-trained on every Mercury family (FourStroke, Pro XS, Verado, SeaPro, Avator), full G3 diagnostic kit, stocked parts inventory, demonstrated annual sales + service volumes, top-tier CSI scores. **There are a small number of Premier dealers in Ontario.**
 
 For most casual purchases (small motors, kicker motors, basic service), basic-tier dealers work fine. **For repower, complex diagnostic work, or warranty-heavy service, Platinum tier is meaningfully better.**
 
@@ -71,10 +71,10 @@ For most casual purchases (small motors, kicker motors, basic service), basic-ti
 
 Here's the gap in Mercury's public communication: **Mercury's dealer locator at mercurymarine.com doesn't show tier**. You see "authorized dealer" and that's it.
 
-So a 1-tech mobile mechanic who got Mercury authorization 5 years ago and a 40-year Platinum dealer with 15 factory-trained techs both look identical in Mercury's locator. **The only way to know is to ask the dealer directly.**
+So a 1-tech mobile mechanic who got Mercury authorization 5 years ago and a 40-year Premier dealer with 15 factory-trained techs both look identical in Mercury's locator. **The only way to know is to ask the dealer directly.**
 
 Questions to ask any Mercury dealer:
-- "Are you Mercury Platinum certified?" (Yes = factory training current)
+- "Are you Mercury Premier certified?" (Yes = factory training current)
 - "Do you have G3 diagnostic software?" (Yes = serious diagnostic capability)
 - "How many Mercury-trained techs do you have on staff?" (more = better service-bandwidth)
 - "What's your typical service turnaround?" (1-3 days = healthy, 2-4 weeks = capacity-strained)
@@ -116,7 +116,7 @@ A real "best Mercury dealer" comparison should evaluate:
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**Tier:** Mercury Platinum vs. lower
+**Tier:** Mercury Premier vs. lower
 **Diagnostic capability:** G3 software present + multiple trained techs
 **Service backlog:** healthy throughput (1-3 day turnarounds) vs. capacity-strained
 **Pricing transparency:** all-in published quotes vs. "call for pricing"
@@ -162,7 +162,7 @@ Some honest cases where HBW isn't the best dealer:
 - **You only want walk-in service.** If you'd never drive to a Mercury dealer for service, HBW won't be the dealer you visit.
 - **You prefer high-pressure sales tactics or "deal of the week" pricing.** We don't do those.
 
-Real talk: we lose business to dealers closer to GTA buyers all the time, especially for small-motor purchases. That's fine. The customers we serve well are the ones who specifically value Platinum-tier expertise, transparent pricing, and a service relationship.
+Real talk: we lose business to dealers closer to GTA buyers all the time, especially for small-motor purchases. That's fine. The customers we serve well are the ones who specifically value Premier-tier expertise, transparent pricing, and a service relationship.
 
 ---
 
@@ -187,7 +187,7 @@ If 2-3 of those describe you, we're worth the conversation.
 
 Five-question checklist for any dealer:
 
-1. **"Are you Mercury Platinum certified?"** Yes = factory-current on every Mercury family. Anything else means lower-tier service capability.
+1. **"Are you Mercury Premier certified?"** Yes = factory-current on every Mercury family. Anything else means lower-tier service capability.
 2. **"Show me your most recent rigging quote for a [boat type] with a [motor HP]."** Transparent dealers can do this. Opaque dealers say "we'll get you a quote."
 3. **"What's your service backlog?"** Healthy: 1-3 day turnarounds. Strained: 2-4+ weeks. Strained dealers either over-promise on timing or you wait.
 4. **"What's your trade-in process?"** Honest dealers walk you through their valuation method. Opaque dealers say "bring it in and we'll see."
@@ -208,7 +208,7 @@ A dealer that gives a clear, specific answer to all 5 in under 10 minutes is a r
 
 ### What makes a Mercury Premier dealer different from a regular dealer?
 
-Premier status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Platinum dealers in Ontario.
+Premier status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Premier dealers in Ontario.
 
 ### Is Mercury motor pricing the same at all Ontario dealers?
 
@@ -216,7 +216,7 @@ Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing
 
 ### How do I find out if a dealer is Mercury Platinum?
 
-Mercury's online dealer locator doesn't display tier. You have to ask. A real Platinum dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum.
+Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum.
 
 ### Why does dealer tier matter for me as a recreational boater?
 
@@ -232,7 +232,7 @@ Mixed. Some have been in business 50+ years; others opened recently. Longevity i
 
 ### Can I get a Mercury repower at any authorized dealer?
 
-Technically yes. In practice, Platinum dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity.
+Technically yes. In practice, Premier dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity.
 
 ### What is the best Mercury dealer near Peterborough?
 

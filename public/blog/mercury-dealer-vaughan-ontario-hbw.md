@@ -51,9 +51,9 @@ A lot of Vaughan residents with boats aren't boating in Lake Ontario, they're on
 
 If that's your situation, it's worth knowing we're here.
 
-## Platinum Dealer, Third Generation
+## Premier Dealer, Third Generation
 
-Mercury Platinum is the top tier in Mercury's dealer program, parts depth, warranty authorization, technical training. Harris Boat Works has been on Rice Lake since 1947, third generation. The business model here isn't about closing as many transactions as possible. It's about being the shop someone comes back to.
+Mercury Premier is the top tier in Mercury's dealer program, parts depth, warranty authorization, technical training. Harris Boat Works has been on Rice Lake since 1947, third generation. The business model here isn't about closing as many transactions as possible. It's about being the shop someone comes back to.
 
 That means the conversation about which motor to buy, and whether to repower at all, is honest. If repowering doesn't make sense for your hull, we'll say so.
 
@@ -130,7 +130,7 @@ The drive to Rice Lake is 80 minutes via Highway 400 south → 401 east → High
 
 Why Vaughan boaters drive to HBW for repower:
 
-- **Mercury Platinum-level service.** Closer Simcoe-area dealers handle the volume but not always the rigging depth. For a $15,000-$25,000 repower, the drive is justified.
+- **Mercury Premier-level service.** Closer Simcoe-area dealers handle the volume but not always the rigging depth. For a $15,000-$25,000 repower, the drive is justified.
 - **Once-a-year trip works.** Trailer up for the repower itself, then run service work closer to home.
 - **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before the trip, the configurator works without a phone call and shows real pricing.
 

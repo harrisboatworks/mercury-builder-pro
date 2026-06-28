@@ -60,7 +60,7 @@ Port Hope has a few general boat shops. What it doesn't have within town limits 
 
 Platinum is Mercury's top dealer tier, parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
 
-For Port Hope customers with newer Mercury outboards under warranty, the closer Platinum dealer typically wins the long-term service relationship.
+For Port Hope customers with newer Mercury outboards under warranty, the closer Premier dealer typically wins the long-term service relationship.
 
 ## Getting to Harris Boat Works from Port Hope
 
@@ -114,14 +114,14 @@ For a motor purchase conversation, call: 905-342-2153.
 
 - [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18.
 - [Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake](/blog/mercury-dealer-lindsay-ontario-hbw): Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake.
-- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake.
+- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Premier Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake.
 - [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
 
 ## FAQs
 
 ### Is there a Mercury Premier dealer in Port Hope?
 
-Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Platinum dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.
+Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.
 
 ### How long is the drive from Port Hope to HBW?
 

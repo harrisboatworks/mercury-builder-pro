@@ -53,7 +53,7 @@ If you build a quote and decide to buy somewhere else, that's fine. The point is
 
 Mercury has a dealer tier program. Platinum is the top level. It's not a marketing badge, it reflects depth of inventory, technical training, warranty authorization, and parts access.
 
-In practical terms: if you have a warranty issue or a complex repower with an unusual rigging setup, a Platinum dealer has faster resolution paths than a lower-tier dealer. There aren't many Platinum dealers in Ontario. That matters more after the sale than it does at the time of purchase.
+In practical terms: if you have a warranty issue or a complex repower with an unusual rigging setup, a Premier dealer has faster resolution paths than a lower-tier dealer. There aren't many Premier dealers in Ontario. That matters more after the sale than it does at the time of purchase.
 
 ## We're Third-Generation, and That Changes Things
 
@@ -149,7 +149,7 @@ The drive to Rice Lake is 70 minutes via Highway 404 → 407 east → Highway 11
 Markham repower customers often:
 
 - **Read our [Mandarin-language guides](https://www.mercuryrepower.ca/blog/zh)** for technical detail before deciding. We have a growing 中文 collection covering pricing, winterization, and repower decisions for GTA Chinese-Canadian boaters.
-- **Justify the drive for Mercury Platinum-level service.** Closer dealers often lack the rigging depth for a clean repower install.
+- **Justify the drive for Mercury Premier-level service.** Closer dealers often lack the rigging depth for a clean repower install.
 - **Trust transparent CAD pricing.** Our online quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) works without a phone call, you can build the quote in any language, in your own time, before deciding to make the trip.
 
 Markham customers often combine their trip with a service drop, see our [drive-in service walkthrough](/blog/toronto-to-rice-lake-drive-in-process).

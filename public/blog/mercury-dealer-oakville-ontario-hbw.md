@@ -137,7 +137,7 @@ The drive to Rice Lake is 110 minutes via the QEW east through Toronto, 401 east
 
 Why Oakville boaters drive to HBW for repower:
 
-- **Mercury Platinum-level rigging.** For a $15,000-$25,000 repower investment, the drive is justified when local dealers can't match the install depth.
+- **Mercury Premier-level rigging.** For a $15,000-$25,000 repower investment, the drive is justified when local dealers can't match the install depth.
 - **One-time annual trip.** Many Oakville customers trailer up once for repower or major service, then run lighter maintenance closer to home.
 - **Transparent CAD pricing.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding, the configurator works without a phone call and shows real dealer pricing, not MSRP.
 

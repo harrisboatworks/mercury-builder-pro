@@ -44,7 +44,7 @@ Mercury does not hand out Premier status as a marketing favour. It is the highes
 
 What it means in practice for you:
 
-| Platinum benefit | What it does for you |
+| Premier benefit | What it does for you |
 |---|---|
 | Priority parts allocation | Faster repair turnaround during the busy season |
 | Earlier access to new model inventory | You get first pick before allocation tightens |

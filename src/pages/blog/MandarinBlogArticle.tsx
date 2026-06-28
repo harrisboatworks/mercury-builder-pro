@@ -16,7 +16,7 @@ export default function MandarinBlogArticle() {
         "@type": "Article",
         "@id": `${url}#article`,
         "headline": "安大略省Mercury水星舷外机换新指南：GTA华人船主必读",
-        "description": "在安大略省进行Mercury舷外机换新（Repower）的完整指南。Harris Boat Works白金级经销商，在线透明报价，服务GTA华人船主。",
+        "description": "在安大略省进行Mercury舷外机换新（Repower）的完整指南。Harris Boat WorksPremier 经销商，在线透明报价，服务GTA华人船主。",
         "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
         "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
         "datePublished": "2026-04-12",
@@ -84,7 +84,7 @@ export default function MandarinBlogArticle() {
     <div className="min-h-screen bg-repower-paper" lang="zh-Hans">
       <Helmet>
         <title>Mercury水星舷外机换新指南 GTA华人船主 | Harris Boat Works</title>
-        <meta name="description" content="安大略省Mercury水星舷外机换新（Repower）完整指南。Harris Boat Works白金级经销商，在线透明报价，无需电话谈价。GTA华人船主必读。" />
+        <meta name="description" content="安大略省Mercury水星舷外机换新（Repower）完整指南。Harris Boat WorksPremier 经销商，在线透明报价，无需电话谈价。GTA华人船主必读。" />
         <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="zh-Hans" href={url} />
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
@@ -121,7 +121,7 @@ export default function MandarinBlogArticle() {
           <div className="bg-primary/5 rounded-xl p-6 mb-8 not-prose">
             <h2 className="text-lg font-medium text-foreground mb-2">快速答案</h2>
             <p className="text-foreground text-sm">
-              如果您在安大略省拥有一艘船，但发动机已经老旧、故障频繁，换新发动机（Repower）通常比换一艘新船划算得多。Harris Boat Works 是 Mercury Marine 白金级授权经销商，提供全透明在线报价——在 <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 即可查看真实加元价格。
+              如果您在安大略省拥有一艘船，但发动机已经老旧、故障频繁，换新发动机（Repower）通常比换一艘新船划算得多。Harris Boat Works 是 Mercury Marine Premier 授权经销商，提供全透明在线报价——在 <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 即可查看真实加元价格。
             </p>
           </div>
 
@@ -144,7 +144,7 @@ export default function MandarinBlogArticle() {
             <li><strong>燃油效率</strong>, 最新一代Mercury发动机在同级别中领先</li>
             <li><strong>可靠性</strong>, Mercury发动机以耐用著称，许多船主使用十五年以上</li>
             <li><strong>完善的零件网络</strong>, 正品零件，快速获取</li>
-            <li><strong>厂家保修</strong>, 完整厂家保修，白金级经销商确保保修全额有效</li>
+            <li><strong>厂家保修</strong>, 完整厂家保修，Premier 经销商确保保修全额有效</li>
           </ul>
 
           <h2>透明定价：不需要"谈价格"</h2>
@@ -220,7 +220,7 @@ export default function MandarinBlogArticle() {
         <BlogCTA category="Repower" slug="mercury-repower-guide-gta" variant="banner" />
 
         <footer className="text-center text-xs text-muted-foreground">
-          <p>Harris Boat Works, 1947年至今，三代家族经营，安大略省Rice Lake。Mercury Marine 白金级授权经销商。</p>
+          <p>Harris Boat Works, 1947年至今，三代家族经营，安大略省Rice Lake。Mercury Marine Premier 授权经销商。</p>
         </footer>
       </main>
 

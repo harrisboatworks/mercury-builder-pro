@@ -41,7 +41,7 @@ What Lindsay has less of is Mercury Premier dealer depth with full repower capac
 
 The Lindsay customer pattern centers on serious cottage and fishing use:
 
-**The Kawartha cottager**, has property on Sturgeon, Pigeon, or Buckhorn Lake, runs a 16-20 foot aluminum or pontoon. Wants a Mercury Platinum shop that can handle the seasonal service routine without disrupting the cottage time.
+**The Kawartha cottager**, has property on Sturgeon, Pigeon, or Buckhorn Lake, runs a 16-20 foot aluminum or pontoon. Wants a Mercury Premier shop that can handle the seasonal service routine without disrupting the cottage time.
 
 **The serious angler**, Sturgeon Lake walleye and muskie fishing is legitimate. Anglers running Pro XS or FourStroke setups for tournament-grade work need dealer-tier diagnostics and parts depth that smaller shops don't carry.
 
@@ -113,7 +113,7 @@ For a motor purchase or repower conversation, call: 905-342-2153.
 - [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18.
 - [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](/blog/mercury-dealer-port-hope-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.
 - [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
-- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake.
+- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Premier Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake.
 
 ## FAQs
 
@@ -123,7 +123,7 @@ Not at full repower capacity within town. Harris Boat Works is a Mercury Marine 
 
 ### Is HBW worth the 45-minute drive for routine service?
 
-For routine oil changes and basic seasonal work, maybe not. For a major repower, a complex warranty case, or full SmartCraft Platinum-tier diagnostics, the dealer tier matters more than the drive time. Many Lindsay customers also drop the boat off before a Trent-Severn cruise so it starts the trip in known-good condition.
+For routine oil changes and basic seasonal work, maybe not. For a major repower, a complex warranty case, or full SmartCraft Premier-tier diagnostics, the dealer tier matters more than the drive time. Many Lindsay customers also drop the boat off before a Trent-Severn cruise so it starts the trip in known-good condition.
 
 ### Does HBW service MerCruiser sterndrives on Trent-Severn cruisers?
 

@@ -1548,14 +1548,14 @@ const TRUST_FAQ_PRERENDER = [
   { question: "What does Mercury Premier Dealer status mean?", answer: "Platinum is Mercury Marine's top dealer rating in North America. It requires Mercury-certified technicians, a minimum sales and service volume, full warranty registration capability, and consistently high CSI (Customer Satisfaction Index) scores. Only a small percentage of Mercury dealers reach Platinum, and re-qualification is required every year." },
   { question: "How long has Harris Boat Works been in business?", answer: "The Harris family founded the boat works in 1947 on Rice Lake in Gores Landing, Ontario. We're now a third-generation, family-owned marina with 79 years of continuous operation. Mercury dealer since 1965." },
   { question: "Where is Harris Boat Works located?", answer: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, on the south shore of Rice Lake. About 35 minutes from Peterborough, 20 minutes from Cobourg, 90 minutes from Toronto, and within 200 km of the entire GTA, Kawarthas, and Northumberland County." },
-  { question: "Do you sell motors to customers across Canada?", answer: "Yes, we sell to customers across Ontario and beyond. However, all motors are pickup only at our Gores Landing location. We do not ship outboards. This is intentional: every motor includes a personal walk-through covering controls, break-in procedure, and warranty registration. That hand-off is part of why we hold Platinum Dealer status." },
+  { question: "Do you sell motors to customers across Canada?", answer: "Yes, we sell to customers across Ontario and beyond. However, all motors are pickup only at our Gores Landing location. We do not ship outboards. This is intentional: every motor includes a personal walk-through covering controls, break-in procedure, and warranty registration. That hand-off is part of why we hold Premier Dealer status." },
   { question: "What Mercury motor lines do you carry?", answer: "We carry the full Mercury outboard lineup: portable FourStroke (2.5–20hp), mid-range FourStroke (25–115hp), Command Thrust (40–150hp for pontoons and heavy hulls), Pro XS performance (115–300hp), SeaPro commercial-duty, ProKicker trolling motors (9.9hp/15hp), and FourStroke V8 (250–300hp). We also stock genuine Mercury parts, oils, and accessories." },
   { question: "Are your prices in Canadian dollars?", answer: "Yes, all pricing on mercuryrepower.ca is in Canadian dollars (CAD), all-in. The price you see is the price you pay (plus HST). No US-dollar conversions, no hidden fees, no \"call for price\" games." },
   { question: "Do you offer Mercury financing?", answer: "Yes, financing is available on Mercury motor purchases through DealerPlan and other lenders. The configurator at mercuryrepower.ca shows monthly payment estimates (8.99% under $10K total / 7.99% over $10K total) alongside the purchase price. Minimum financed amount is $5,000." },
   { question: "What warranty comes with a new Mercury outboard?", answer: "Every new Mercury outboard comes with a 3-year limited factory warranty as standard. Right now, when you buy from Harris Boat Works, you get 7 years of full Mercury factory-backed coverage, no third-party insurance, just straight Mercury protection. We register the warranty directly with Mercury Marine at the time of pickup." },
   { question: "Are Mercury motors made in Canada?", answer: "Mercury Marine is headquartered in Fond du Lac, Wisconsin, USA, where most outboard motors are manufactured. Mercury has been building outboards since 1939 and is one of the largest marine engine manufacturers in the world. Harris Boat Works has been the authorized Canadian Mercury dealer for the Rice Lake / Kawartha region since 1965." },
   { question: "Do you service motors purchased elsewhere?", answer: "Yes, our Mercury-certified service department works on Mercury and MerCruiser motors regardless of where they were purchased. We handle warranty work, repower, winterization, spring launch, and routine maintenance. Submit a service request at hbw.wiki/service or call (905) 342-2153." },
-  { question: "Why buy from Harris Boat Works instead of a big-box marine retailer?", answer: "Three reasons: (1) Platinum Dealer status means our technicians, parts inventory, and warranty access are at the highest Mercury tier. (2) Family-owned since 1947, we answer the phone, we know our customers, and the same people sell, install, and service the motor. (3) Real online pricing with live CAD quotes, no \"call for price\" runaround. What you see at mercuryrepower.ca is what you pay." }
+  { question: "Why buy from Harris Boat Works instead of a big-box marine retailer?", answer: "Three reasons: (1) Premier Dealer status means our technicians, parts inventory, and warranty access are at the highest Mercury tier. (2) Family-owned since 1947, we answer the phone, we know our customers, and the same people sell, install, and service the motor. (3) Real online pricing with live CAD quotes, no \"call for price\" runaround. What you see at mercuryrepower.ca is what you pay." }
 ];
 
 function mercuryDealerCanadaSchema() {
@@ -1923,7 +1923,7 @@ function proXS250NoscriptHtml() {
     '<p><strong>Shaft length, 20 inch or 25 inch?</strong> A 20-inch transom takes the Long shaft (ELPT). A 25-inch transom takes the Extra-Long shaft (EXLPT). If you are repowering, match the same shaft as the old motor.</p>' +
     '<p><strong>Mechanical remote or DTS?</strong> DTS adds roughly $2,000; worth it for VesselView integration or joystick-capable rigging, otherwise the mechanical remote is the right call.</p>' +
     '<h2>Why buy your Pro XS 250 from Harris Boat Works</h2>' +
-    '<p>Mercury dealer since 1965, Mercury Platinum tier today, third-generation family business on the same Rice Lake dock since 1947. We sell, rig, water-test, and service the motor every season after.</p>' +
+    '<p>Mercury dealer since 1965, Mercury Premier tier today, third-generation family business on the same Rice Lake dock since 1947. We sell, rig, water-test, and service the motor every season after.</p>' +
     '<h2>Frequently asked questions</h2>' +
     '<dl>' +
     PRO_XS_250_FAQ_PRERENDER.map(i =>
@@ -2104,7 +2104,7 @@ function lineupLandingNoscriptHtml(cfg) {
     '<h2>Which one for which boat?</h2>' +
     cfg.whichOne.map(p => `<p>${escapeHtml(p)}</p>`).join('') +
     '<h2>Why buy your Mercury from Harris Boat Works</h2>' +
-    '<p>Mercury dealer since 1965, Mercury Platinum tier today, third-generation family business on the same Rice Lake dock since 1947. We sell, rig, water-test, and service the motor every season after. And the price you see here is the price the sales desk sees.</p>' +
+    '<p>Mercury dealer since 1965, Mercury Premier tier today, third-generation family business on the same Rice Lake dock since 1947. We sell, rig, water-test, and service the motor every season after. And the price you see here is the price the sales desk sees.</p>' +
     '<h2>Frequently asked questions</h2>' +
     '<dl>' +
     cfg.faq.map(i =>
@@ -2821,8 +2821,8 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
 }
 
 const frDealerStripHtml = '<div class="dealer-confidence-strip"><span>Concessionnaire Mercury Premier</span><span>·</span><span>Famille propriétaire depuis 1947</span><span>·</span><span>Concessionnaire Mercury depuis 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Constructeur de devis disponible</a></div>';
-const koDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury 플래티넘 딜러</span><span>·</span><span>1947년부터 가족 운영</span><span>·</span><span>1965년부터 Mercury 딜러</span><span>·</span><span>온타리오주 Gores Landing</span><span>·</span><a href="/quote/motor-selection">견적 도구 사용 가능</a></div>';
-const zhDealerStripHtml = '<div class="dealer-confidence-strip"><span>水星白金经销商</span><span>·</span><span>家族经营自1947年</span><span>·</span><span>Mercury经销商自1965年</span><span>·</span><span>安大略省 Gores Landing</span><span>·</span><a href="/quote/motor-selection">在线报价工具</a></div>';
+const koDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier 딜러</span><span>·</span><span>1947년부터 가족 운영</span><span>·</span><span>1965년부터 Mercury 딜러</span><span>·</span><span>온타리오주 Gores Landing</span><span>·</span><a href="/quote/motor-selection">견적 도구 사용 가능</a></div>';
+const zhDealerStripHtml = '<div class="dealer-confidence-strip"><span>水星 Premier 经销商</span><span>·</span><span>家族经营自1947年</span><span>·</span><span>Mercury经销商自1965年</span><span>·</span><span>安大略省 Gores Landing</span><span>·</span><a href="/quote/motor-selection">在线报价工具</a></div>';
 const esDealerStripHtml = '<div class="dealer-confidence-strip"><span>Distribuidor Mercury Premier</span><span>·</span><span>Familiar desde 1947</span><span>·</span><span>Distribuidor Mercury desde 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Cotizador disponible</a></div>';
 const paDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>1947 ਤੋਂ family-owned</span><span>·</span><span>1965 ਤੋਂ Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
 const urDealerStripHtml = '<div class="dealer-confidence-strip" dir="rtl"><span>Mercury Premier Dealer</span><span>·</span><span>1947 سے family-owned</span><span>·</span><span>1965 سے Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
@@ -4049,10 +4049,10 @@ const routes = [
   {
     path: '/zh',
     title: 'Mercury水星舷外机经销商 | Harris Boat Works 安大略省',
-    description: 'Harris Boat Works, 安大略省Mercury Marine白金级授权经销商。在线透明报价。服务大多伦多地区（GTA）华人船主。',
+    description: 'Harris Boat Works, 安大略省Mercury Marine Premier 授权经销商。在线透明报价。服务大多伦多地区（GTA）华人船主。',
     h1: '欢迎来到Harris Boat Works',
-    intro: '安大略省Mercury Marine白金级授权经销商。1947年创立，Rice Lake, Gores Landing, ON。提供水星舷外机、动力升级、保养与购买的中文指南。',
-    schemas: [genericPageSchema('/zh', 'Harris Boat Works 中文', 'Mercury Marine 白金级授权经销商，安大略省 Rice Lake。')],
+    intro: '安大略省Mercury Marine Premier 授权经销商。1947年创立，Rice Lake, Gores Landing, ON。提供水星舷外机、动力升级、保养与购买的中文指南。',
+    schemas: [genericPageSchema('/zh', 'Harris Boat Works 中文', 'Mercury Marine Premier 授权经销商，安大略省 Rice Lake。')],
     extraHead: [
       `<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/zh" />`,
       `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/" />`,
@@ -4219,8 +4219,8 @@ const routes = [
   // ============================================================
   ...[
     { lang: 'fr', articles: frenchBlogArticles,   htmlLang: 'fr',      ogLocale: 'fr_CA',  h1: 'Guides Mercury et conseils nautiques',           intro: 'Conseils d\'experts sur les moteurs hors-bord Mercury, remotorisation, entretien et achat — par le concessionnaire Mercury Marine Premier de l\'Ontario depuis 1947.', backTo: 'Tous les articles' },
-    { lang: 'zh', articles: mandarinBlogArticles, htmlLang: 'zh-Hans', ogLocale: 'zh_CN',  h1: '水星马达指南与船艇技巧',                         intro: '安大略省自1947年起的水星白金经销商，提供水星舷外机、动力升级、保养与购买的专业建议。', backTo: '所有文章' },
-    { lang: 'ko', articles: koreanBlogArticles,   htmlLang: 'ko',      ogLocale: 'ko_KR',  h1: 'Mercury 모터 가이드 & 보팅 팁',                  intro: '1947년부터 온타리오의 Mercury Marine 플래티넘 딜러가 제공하는 Mercury 선외기, 리파워, 정비 및 구매 가이드.', backTo: '전체 글' },
+    { lang: 'zh', articles: mandarinBlogArticles, htmlLang: 'zh-Hans', ogLocale: 'zh_CN',  h1: '水星马达指南与船艇技巧',                         intro: '安大略省自1947年起的水星 Premier 经销商，提供水星舷外机、动力升级、保养与购买的专业建议。', backTo: '所有文章' },
+    { lang: 'ko', articles: koreanBlogArticles,   htmlLang: 'ko',      ogLocale: 'ko_KR',  h1: 'Mercury 모터 가이드 & 보팅 팁',                  intro: '1947년부터 온타리오의 Mercury Marine Premier 딜러가 제공하는 Mercury 선외기, 리파워, 정비 및 구매 가이드.', backTo: '전체 글' },
     { lang: 'es', articles: spanishBlogArticles,  htmlLang: 'es',      ogLocale: 'es_419', h1: 'Guías Mercury y consejos de navegación',         intro: 'Consejos expertos sobre motores fueraborda Mercury, repotenciación, mantenimiento y compra — del distribuidor Mercury Marine Premier de Ontario desde 1947.', backTo: 'Todos los artículos' },
     { lang: 'hi', articles: hindiBlogArticles,    htmlLang: 'hi',      ogLocale: 'hi_IN',  h1: 'Mercury मोटर गाइड और बोटिंग टिप्स',              intro: '1947 से ओंटारियो के Mercury Marine प्लेटिनम डीलर से Mercury आउटबोर्ड मोटरों पर विशेषज्ञ सलाह।', backTo: 'सभी लेख' },
     { lang: 'pa', articles: punjabiBlogArticles,  htmlLang: 'pa',      ogLocale: 'pa_IN',  h1: 'Mercury ਮੋਟਰ ਗਾਈਡਾਂ ਅਤੇ ਬੋਟਿੰਗ ਟਿਪਸ',           intro: '1947 ਤੋਂ ਓਨਟਾਰੀਓ ਦੇ Mercury Marine ਪਲੈਟੀਨਮ ਡੀਲਰ ਤੋਂ Mercury ਆਊਟਬੋਰਡ ਮੋਟਰਾਂ ਬਾਰੇ ਮਾਹਰ ਸਲਾਹ।', backTo: 'ਸਾਰੇ ਲੇਖ' },
@@ -4523,7 +4523,7 @@ const routes = [
     title: 'Mercury Outboards Ontario: Full Lineup at Harris Boat Works | Mercury Dealer Since 1965',
     description: 'Mercury Marine outboards in Ontario, full lineup (FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Premier Dealer on Rice Lake, family-owned since 1947.',
     h1: 'Mercury Outboards in Ontario',
-    intro: 'The full Mercury Marine outboard lineup at Harris Boat Works: Platinum Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Cobourg, the GTA, the Kawarthas, and Northumberland County.',
+    intro: 'The full Mercury Marine outboard lineup at Harris Boat Works: Premier Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Cobourg, the GTA, the Kawarthas, and Northumberland County.',
     schemas: [mercuryOutboardsOntarioSchema()],
     extraNoscript: () =>
       '<table><caption>Mercury Outboard Lineup: HP, MSRP, and Best Use (CAD, Ontario, 2026)</caption>' +

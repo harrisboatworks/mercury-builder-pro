@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)"
-description: "Mercury 115 vs 150 HP from an Ontario Platinum dealer. Real dividing lines by hull type. 18ft V-hull, 21ft tritoon, 22ft pontoon. Honest pricing math."
+description: "Mercury 115 vs 150 HP from an Ontario Premier dealer. Real dividing lines by hull type. 18ft V-hull, 21ft tritoon, 22ft pontoon. Honest pricing math."
 category: "Repower Guide"
 date_published: 2026-05-28
 date_modified: 2026-06-02
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)
 
-> Mercury 115 vs 150 HP from an Ontario Platinum dealer. Real dividing lines by hull type. 18ft V-hull, 21ft tritoon, 22ft pontoon. Honest pricing math.
+> Mercury 115 vs 150 HP from an Ontario Premier dealer. Real dividing lines by hull type. 18ft V-hull, 21ft tritoon, 22ft pontoon. Honest pricing math.
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
@@ -190,7 +190,7 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) and we'll show y
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.
 
 ---
 

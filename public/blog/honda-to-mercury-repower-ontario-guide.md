@@ -39,7 +39,7 @@ The Honda-to-Mercury swap is less common than Yamaha-to-Mercury in Ontario becau
 
 **HP class match for repowers above 60 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury offers everything from 9.9 portable to 600 HP Verado V12, including the 400 HP Verado V8/V10, the 450R, and the 600 HP V12. If your next repower is above 350 HP or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
 
-**Dealer service experience.** This is subjective, but we hear it: customers who've had a hard time getting Honda service slots in Ontario sometimes switch to Mercury because HBW (and other Platinum dealers) have invested in service capacity. Hours-on-the-water lost to service queue is a real cost.
+**Dealer service experience.** This is subjective, but we hear it: customers who've had a hard time getting Honda service slots in Ontario sometimes switch to Mercury because HBW (and other Premier dealers) have invested in service capacity. Hours-on-the-water lost to service queue is a real cost.
 
 ## What changes vs what stays the same
 
@@ -152,7 +152,7 @@ To start a quote at HBW: email cowl plate photos of your Honda + photos of your 
 **Email:** info@harrisboatworks.ca (send Honda cowl plate + helm photos for same-day quote)
 **Build a Mercury quote:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marine dealer since 1965, current Platinum Dealer.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marine dealer since 1965, current Premier Dealer.
 
 ---
 
@@ -166,7 +166,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
 ## Related guides
 
 - [Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Premier Dealer (2026)](/blog/yamaha-to-mercury-repower-ontario-guide): Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap.
-- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026): Mercury 115 vs 150 HP from an Ontario Platinum dealer. Real dividing lines by hull type. 18ft V-hull, 21ft.
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026): Mercury 115 vs 150 HP from an Ontario Premier dealer. Real dividing lines by hull type. 18ft V-hull, 21ft.
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad): All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and.
 - [Is My Boat Eligible for a Mercury Repower? The 5-Check Eligibility Guide (2026)](/blog/mercury-repower-eligibility-guide): Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull.
 

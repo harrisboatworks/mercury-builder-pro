@@ -73,7 +73,7 @@ But the math changes when you factor in:
 **The number of trips.** Most boat owners visit their Mercury dealer 1-3 times a year (annual service, occasional repair). At 90 minutes one-way, that's 9 hours of total drive time annually. Vs maybe 3 hours of urban-dealer trips. **Net: 6 extra hours per year.** Over 10 years of motor ownership, 60 hours of driving, about 3 weekend days total.
 
 **What 60 hours of driving buys you over 10 years:**
-- Platinum-tier diagnostics on every visit
+- Premier-tier diagnostics on every visit
 - A documented service history with one shop, one set of techs
 - Mercury Product Protection (MPP) extended warranty processed by the same dealer that sold you the motor
 - Trade-in value when you upgrade (we keep records)
@@ -160,7 +160,7 @@ Honest take, because not every GTA buyer should drive to HBW:
 - **You'll only own the boat 2-3 years.** Long-term service relationship matters less.
 - **You can't trailer or arrange transport.** Logistics matter.
 
-The trip makes sense for: **repowers**, **major motor purchases ($15K+)**, **boats you'll own 5+ years**, **anyone with a specific Mercury Platinum service need** (diagnostic complexity, warranty work, MPP-eligible servicing).
+The trip makes sense for: **repowers**, **major motor purchases ($15K+)**, **boats you'll own 5+ years**, **anyone with a specific Mercury Premier service need** (diagnostic complexity, warranty work, MPP-eligible servicing).
 
 ---
 
@@ -200,7 +200,7 @@ Three things: Mercury Premier dealer tier (factory-trained techs, full diagnosti
 
 ### Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?
 
-Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer, service history, parts familiarity, and faster warranty claim processing through Platinum dealers.
+Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer, service history, parts familiarity, and faster warranty claim processing through Premier dealers.
 
 ### Do you offer pickup or delivery for GTA buyers?
 

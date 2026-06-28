@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop"
+title: "Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Premier Shop"
 description: "Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake, Cobourg, Port Hope, Hastings, Brighton, Trent system."
 category: "Dealer Locations"
 date_published: 2026-05-17
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop
+# Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Premier Shop
 
 > Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake, Cobourg, Port Hope, Hastings, Brighton, Trent system.
 

@@ -47,7 +47,7 @@ The customers who find this meaningful are the ones who've already done the rese
 
 ## Mercury Platinum, Not All Dealers Are the Same
 
-Mercury authorizes dealers at different tiers. Platinum is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Platinum dealer and a lower-tier dealer can show up in resolution time and technical depth.
+Mercury authorizes dealers at different tiers. Platinum is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Premier dealer and a lower-tier dealer can show up in resolution time and technical depth.
 
 Burlington has Mercury dealers. Not all of them are Platinum. That's worth knowing.
 
@@ -137,7 +137,7 @@ Why Burlington boaters still drive to HBW:
 
 - **Same-day round-trips work.** Drop the boat off in the morning, head home; we'll call when it's ready.
 - **Annual repower or winterization trip.** Many Burlington customers trailer their boat to HBW once or twice a year for repower work or winterization + storage, then back to a Burlington-area marina for the season.
-- **Mercury Platinum-level depth.** For a multi-thousand-dollar repower investment, the drive is justified when local dealers can't match the rigging expertise.
+- **Mercury Premier-level depth.** For a multi-thousand-dollar repower investment, the drive is justified when local dealers can't match the rigging expertise.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

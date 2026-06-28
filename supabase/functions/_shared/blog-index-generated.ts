@@ -1983,7 +1983,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-vs-yamaha-outboards-ontario",
     "title": "Mercury vs Yamaha Outboards (Honest Ontario Dealer Comparison, 2026)",
-    "description": "Mercury vs Yamaha outboards for Ontario freshwater (2026). Dealer density, parts speed, factory-rigging, resale - honest comparison from a Mercury dealer since 1965 and current Platinum dealer, with one of the deepest Mercury and Mercruise…",
+    "description": "Mercury vs Yamaha outboards for Ontario freshwater (2026). Dealer density, parts speed, factory-rigging, resale - honest comparison from a Mercury dealer since 1965 and current Premier dealer, with one of the deepest Mercury and Mercruise…",
     "category": "Buying Guide",
     "publishDate": "2026-05-04",
     "keywords": [
@@ -2359,7 +2359,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-outboard-wont-start-troubleshooting",
     "title": "Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)",
-    "description": "Mercury outboard won't start? Ontario Platinum dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW. What you can check before calling.",
+    "description": "Mercury outboard won't start? Ontario Premier dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW. What you can check before calling.",
     "category": "Troubleshooting",
     "publishDate": "2026-04-27",
     "keywords": [
@@ -2997,7 +2997,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-smartcraft-alarm-codes-encyclopedia",
     "title": "Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)",
-    "description": "Mercury SmartCraft alarm code reference from an Ontario Platinum dealer. Top 10 codes by service frequency, spring first-start patterns, Guardian alert decode, when to call HBW.",
+    "description": "Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns, Guardian alert decode, when to call HBW.",
     "category": "Troubleshooting",
     "publishDate": "2026-02-06",
     "keywords": [
@@ -3058,7 +3058,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?",
-        "a": "Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer, service history, parts familiarity, and faster warranty claim processing through Platinum dealers."
+        "a": "Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer, service history, parts familiarity, and faster warranty claim processing through Premier dealers."
       }
     ]
   },
@@ -3078,7 +3078,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What makes a Mercury Premier dealer different from a regular dealer?",
-        "a": "Premier status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Platinum dealers in Ontario."
+        "a": "Premier status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Premier dealers in Ontario."
       },
       {
         "q": "Is Mercury motor pricing the same at all Ontario dealers?",
@@ -3086,7 +3086,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How do I find out if a dealer is Mercury Platinum?",
-        "a": "Mercury's online dealer locator doesn't display tier. You have to ask. A real Platinum dealer will give a confident \"yes\" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum."
+        "a": "Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident \"yes\" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum."
       },
       {
         "q": "Why does dealer tier matter for me as a recreational boater?",
@@ -4038,7 +4038,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-dealer-mississauga-ontario-hbw",
     "title": "Mercury Dealer for Mississauga: Where to Go When Closer Dealers Don't Cut It",
-    "description": "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Platinum dealer on Rice Lake. Build an installed total online.",
+    "description": "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake. Build an installed total online.",
     "category": "Service Area",
     "publishDate": "2026-05-11",
     "keywords": [
@@ -4226,7 +4226,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Why drive 50 minutes for a Mercury dealer?",
-        "a": "Closer than you might think (similar to a typical Toronto commute), Mercury Platinum tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture."
+        "a": "Closer than you might think (similar to a typical Toronto commute), Mercury Premier tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture."
       },
       {
         "q": "Can I quote and order remotely?",
@@ -4280,7 +4280,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Why drive to Rice Lake from Ajax?",
-        "a": "Mercury Platinum tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture, family marina since 1947."
+        "a": "Mercury Premier tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture, family marina since 1947."
       },
       {
         "q": "Can I use HBW as my primary Mercury dealer?",
@@ -4655,7 +4655,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       "used mercury outboard ontario",
       "new mercury outboard ontario",
       "mercury outboard buying guide",
-      "mercury platinum dealer ontario",
+      "mercury premier dealer ontario",
       "mercury product protection",
       "used outboard inspection ontario",
       "mercury repower vs used"
@@ -4982,7 +4982,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "keywords": [
       "mercury dealer peterborough",
       "peterborough mercury outboard",
-      "mercury platinum dealer ontario",
+      "mercury premier dealer ontario",
       "kawartha mercury repower"
     ],
     "faqs": [
@@ -4996,7 +4996,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is Harris Boat Works a Mercury Premier dealer?",
-        "a": "Yes. Harris Boat Works holds Mercury's Platinum dealer status and has been a Mercury dealer since 1965. The business itself has been family-owned on Rice Lake since 1947."
+        "a": "Yes. Harris Boat Works holds Mercury's Premier dealer status and has been a Mercury dealer since 1965. The business itself has been family-owned on Rice Lake since 1947."
       }
     ]
   },
@@ -5046,7 +5046,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is there a Mercury Premier dealer in Port Hope?",
-        "a": "Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Platinum dealer in any direction. Family-owned since 1947, Mercury dealer since 1965."
+        "a": "Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965."
       },
       {
         "q": "How long is the drive from Port Hope to HBW?",
@@ -5081,7 +5081,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is HBW worth the 45-minute drive for routine service?",
-        "a": "For routine oil changes and basic seasonal work, maybe not. For a major repower, a complex warranty case, or full SmartCraft Platinum-tier diagnostics, the dealer tier matters more than the drive time. Many Lindsay customers also drop the boat off before a Trent-Severn cruise so it starts the trip in known-good condit…"
+        "a": "For routine oil changes and basic seasonal work, maybe not. For a major repower, a complex warranty case, or full SmartCraft Premier-tier diagnostics, the dealer tier matters more than the drive time. Many Lindsay customers also drop the boat off before a Trent-Severn cruise so it starts the trip in known-good condit…"
       },
       {
         "q": "Does HBW service MerCruiser sterndrives on Trent-Severn cruisers?",
@@ -5095,7 +5095,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-dealer-northumberland-county-hbw",
-    "title": "Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop",
+    "title": "Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Premier Shop",
     "description": "Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake, Cobourg, Port Hope, Hastings, Brighton, Trent system. Live online repower quotes, full Mercury + MerCruiser service.",
     "category": "Dealer Locations",
     "publishDate": "2026-05-17",
@@ -5582,7 +5582,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026",
     "title": "Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)",
-    "description": "Mercury 115 vs 150 HP from an Ontario Platinum dealer. Real dividing lines by hull type. 18ft V-hull, 21ft tritoon, 22ft pontoon. Honest pricing math. When NOT to use Command Thrust.",
+    "description": "Mercury 115 vs 150 HP from an Ontario Premier dealer. Real dividing lines by hull type. 18ft V-hull, 21ft tritoon, 22ft pontoon. Honest pricing math. When NOT to use Command Thrust.",
     "category": "Repower Guide",
     "publishDate": "2026-05-28",
     "keywords": [
@@ -5921,7 +5921,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "publishDate": "2026-06-06",
     "keywords": [
       "mercury warranty repower",
-      "mercury platinum dealer warranty",
+      "mercury premier dealer warranty",
       "mercury factory warranty",
       "mercury extended warranty",
       "mercury break-in period"

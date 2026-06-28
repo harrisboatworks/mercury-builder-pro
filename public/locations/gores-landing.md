@@ -62,7 +62,7 @@ No. We're pickup-only at the shop, even for local customers. The motor is rigged
 
 ### How long has Harris Boat Works been in Gores Landing?
 
-The shop has been family-owned since 1947, three generations. We have sold Mercury since 1965 and hold Mercury's Platinum Dealer tier today.
+The shop has been family-owned since 1947, three generations. We have sold Mercury since 1965 and hold Mercury's Premier Dealer tier today.
 
 ### Can I bring my boat to you by water from somewhere else in the village?
 

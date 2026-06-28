@@ -135,7 +135,7 @@ Why Brampton boaters still trailer to HBW:
 
 - **Once-a-year trip pays off.** A proper Mercury repower takes hours of dealer-portal work and shop time. Trailering to HBW for the repower itself, then storing locally for the season, is the pattern many Brampton customers run.
 - **Transparent CAD pricing.** [mercuryrepower.ca](https://www.mercuryrepower.ca) lets you build the quote at home before deciding to make the trip.
-- **Mercury Platinum-level work.** Closer dealers may lack the rigging depth for a clean install.
+- **Mercury Premier-level work.** Closer dealers may lack the rigging depth for a clean install.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

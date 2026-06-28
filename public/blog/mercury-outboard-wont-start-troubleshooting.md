@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)"
-description: "Mercury outboard won't start? Ontario Platinum dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW."
+description: "Mercury outboard won't start? Ontario Premier dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW."
 category: "Troubleshooting"
 date_published: 2026-04-27
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)
 
-> Mercury outboard won't start? Ontario Platinum dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW.
+> Mercury outboard won't start? Ontario Premier dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW.
 
 **Category:** Troubleshooting  
 **Published:** 2026-04-27  
@@ -95,7 +95,7 @@ On EFI motors 40-115 HP, many "cranks but won't fire" tickets come back with **c
 - VST (Vapour Separator Tank) contaminated with water or debris
 - Crankshaft position sensor intermittent
 
-This is where we plug in Mercury CDS (Computer Diagnostic System) and run live data. HBW is a Mercury CDS-equipped Platinum dealer.
+This is where we plug in Mercury CDS (Computer Diagnostic System) and run live data. HBW is a Mercury CDS-equipped Premier dealer.
 
 ### Step 6: Compression check (also us)
 
@@ -151,7 +151,7 @@ HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-s
 **Email:** info@harrisboatworks.ca  
 **Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.
 
 ## Sources
 
@@ -171,7 +171,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 ## Related guides
 
 - [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario): Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum.
-- [Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)](/blog/mercury-smartcraft-alarm-codes-encyclopedia): Mercury SmartCraft alarm code reference from an Ontario Platinum dealer. Top 10 codes by service frequency.
+- [Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)](/blog/mercury-smartcraft-alarm-codes-encyclopedia): Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency.
 - [Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)](/blog/outboard-overheating-emergency-guide): A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60.
 - [Mercury Outboard Won't Start After Sitting? Here's the Ontario Boater's Checklist](/blog/mercury-outboard-wont-start-after-sitting): Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent.
 

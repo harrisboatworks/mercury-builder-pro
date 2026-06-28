@@ -53,9 +53,9 @@ This isn't accidental. It's a process designed to put a salesperson in the conve
 
 Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) does the opposite. Real installed pricing in Canadian dollars, in about three minutes, before any conversation starts. You see the number. You think it over. You engage us when you're ready. Prefer to scan the list first? [What each Mercury motor costs](/pricing-reference) is published on our price reference.
 
-## Mercury Platinum, Third Generation
+## Mercury Premier, Third Generation
 
-Mercury Platinum is the top tier in their dealer program. Harris Boat Works has held it for years. Third-generation family marina, on Rice Lake since 1947. The business here runs on repeat customers and referrals, not a sales-floor quota. The conversation is different.
+Mercury Premier is the top tier in their dealer program. Harris Boat Works has held it for years. Third-generation family marina, on Rice Lake since 1947. The business here runs on repeat customers and referrals, not a sales-floor quota. The conversation is different.
 
 ---
 
@@ -122,7 +122,7 @@ Transparent pricing before you leave Pickering. The rigging conversation before 
 
 ---
 
-## Where Pickering Boaters Launch and Why HBW Is Their Mercury Platinum Option
+## Where Pickering Boaters Launch and Why HBW Is Their Mercury Premier Option
 
 Pickering's signature waterway is **Frenchmans Bay**, a sheltered shallow bay on Lake Ontario, home to **Pickering Harbour Marina** and **East Shore Marina**. Many Pickering boaters never leave the bay's protected waters; others use it as a launch point for open-water Lake Ontario fishing and recreation.
 
@@ -130,7 +130,7 @@ The drive to Rice Lake is 50 minutes via the 401 east and Highway 115 north. The
 
 Why Pickering boaters choose HBW for repower:
 
-- **Drive time math.** 50 minutes to HBW is the same as driving back into central Toronto for a downtown dealer, and you get Mercury Platinum-level service.
+- **Drive time math.** 50 minutes to HBW is the same as driving back into central Toronto for a downtown dealer, and you get Mercury Premier-level service.
 - **Frenchmans Bay-friendly motors.** The bay's shallow depths and sheltered conditions favour different motor setups than open-water boating. We've rigged plenty of Pickering boats.
 - **One-trip annual service.** Trailer up midweek, leave the boat for winterization or repower, pick up when ready. No 401 stress between Pickering and downtown.
 
@@ -153,7 +153,7 @@ About 50 minutes via Highway 401 east and Highway 115 north. Roughly 75 km. Clos
 
 ### Why drive 50 minutes for a Mercury dealer?
 
-Closer than you might think (similar to a typical Toronto commute), Mercury Platinum tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture.
+Closer than you might think (similar to a typical Toronto commute), Mercury Premier tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture.
 
 ### Can I quote and order remotely?
 

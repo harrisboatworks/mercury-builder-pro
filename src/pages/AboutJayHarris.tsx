@@ -83,7 +83,7 @@ export default function AboutJayHarris() {
 
             <h2>What HBW does today</h2>
             <p>
-              Harris Boat Works is one of Mercury's Platinum Dealers in Ontario, the highest tier in the
+              Harris Boat Works is one of Mercury's Premier Dealers in Ontario, the highest tier in the
               Mercury dealer-recognition program. The shop carries the full Mercury outboard lineup,
               from 2.5 HP portables to 600 HP Verados, and specializes in:
             </p>

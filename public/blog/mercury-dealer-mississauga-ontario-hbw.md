@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Dealer for Mississauga: Where to Go When Closer Dealers Don't Cut It"
-description: "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Platinum dealer on Rice Lake. Build an installed total online."
+description: "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake. Build an installed total online."
 category: "Service Area"
 date_published: 2026-05-11
 date_modified: 2026-05-11
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Dealer for Mississauga: Where to Go When Closer Dealers Don't Cut It
 
-> What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Platinum dealer on Rice Lake. Build an installed total online.
+> What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake. Build an installed total online.
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
@@ -57,7 +57,7 @@ A Mississauga customer who's seriously considering a repower and can't get a str
 
 ## Platinum Tier on the Harder Jobs
 
-Mercury Platinum is the top tier in their dealer program. It means deeper parts inventory, higher levels of technical training, and full warranty authorization. For a standard motor sale, tier may not matter much. For a complex repower, a warranty issue, or a technical diagnostic on an unusual setup, it matters. There aren't many Platinum dealers in Ontario, and most of them aren't in the GTA.
+Mercury Premier is the top tier in their dealer program. It means deeper parts inventory, higher levels of technical training, and full warranty authorization. For a standard motor sale, tier may not matter much. For a complex repower, a warranty issue, or a technical diagnostic on an unusual setup, it matters. There aren't many Premier dealers in Ontario, and most of them aren't in the GTA.
 
 ## A Business Built on Repeat, Not Volume
 

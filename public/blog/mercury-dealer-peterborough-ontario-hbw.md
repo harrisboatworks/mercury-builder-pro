@@ -12,7 +12,7 @@ description: "Harris Boat Works is the closest Mercury Premier dealer for Peterb
 category: "Dealer Locations"
 date_published: 2026-05-17
 date_modified: 2026-06-07
-keywords: ["mercury dealer peterborough","peterborough mercury outboard","mercury platinum dealer ontario","kawartha mercury repower"]
+keywords: ["mercury dealer peterborough","peterborough mercury outboard","mercury premier dealer ontario","kawartha mercury repower"]
 author: Harris Boat Works
 content_type: blog_article
 ---
@@ -46,12 +46,12 @@ For Peterborough customers, the conversation we have most often is "I've been dr
 The pattern we see from Peterborough regulars looks like this:
 
 - **Spring commissioning**, they drop off in April, pick up in May with the motor commissioned, tested, and ready for the Otonabee
-- **Mid-season service**, an impeller, a fuel issue, a SmartCraft fault that needs a Mercury Platinum diagnostic
+- **Mid-season service**, an impeller, a fuel issue, a SmartCraft fault that needs a Mercury Premier diagnostic
 - **Repower decisions**, when the old motor is past mid-life and the math starts looking ugly, we walk through repower vs new boat vs sell with real numbers
 - **Fall winterization + storage**, boat stays with us through the off-season, gets full winterization, picks back up at spring launch
 - **Trade-in conversations**, the Trade-In Value Guide at mercuryrepower.ca gives a starting number; we close the actual valuation in person
 
-The Peterborough boaters who use us most don't come for the sale. They come because once you have a service relationship with a Mercury Platinum shop on Rice Lake, the rest of the year gets simpler.
+The Peterborough boaters who use us most don't come for the sale. They come because once you have a service relationship with a Mercury Premier shop on Rice Lake, the rest of the year gets simpler.
 
 ## Why Peterborough customers drive past closer shops
 
@@ -114,7 +114,7 @@ For a motor purchase conversation, call ahead: 905-342-2153. We'll have someone 
 - [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18.
 - [Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake](/blog/mercury-dealer-lindsay-ontario-hbw): Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake.
 - [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](/blog/mercury-dealer-port-hope-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.
-- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake.
+- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Premier Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake.
 
 ## FAQs
 
@@ -128,7 +128,7 @@ About 35 minutes by car, roughly 30 km south of Peterborough via Highway 28, at 
 
 ### Is Harris Boat Works a Mercury Premier dealer?
 
-Yes. Harris Boat Works holds Mercury's Platinum dealer status and has been a Mercury dealer since 1965. The business itself has been family-owned on Rice Lake since 1947.
+Yes. Harris Boat Works holds Mercury's Premier dealer status and has been a Mercury dealer since 1965. The business itself has been family-owned on Rice Lake since 1947.
 
 ## Next steps
 

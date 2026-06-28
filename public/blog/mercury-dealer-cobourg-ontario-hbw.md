@@ -113,7 +113,7 @@ For a motor purchase conversation, call: 905-342-2153.
 
 - [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](/blog/mercury-dealer-port-hope-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.
 - [Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake](/blog/mercury-dealer-lindsay-ontario-hbw): Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake.
-- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Platinum Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake.
+- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Premier Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake.
 - [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
 
 ## FAQs

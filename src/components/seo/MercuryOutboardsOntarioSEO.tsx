@@ -148,7 +148,7 @@ export function MercuryOutboardsOntarioSEO() {
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mercury Outboards Ontario" />
-      <meta name="twitter:description" content="Full Mercury lineup, real CAD pricing, Platinum Dealer." />
+      <meta name="twitter:description" content="Full Mercury lineup, real CAD pricing, Premier Dealer." />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

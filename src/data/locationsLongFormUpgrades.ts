@@ -99,7 +99,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
         heading: 'How far is Harris Boat Works from the Kawartha Lakes?',
         paragraphs: [
           'The Kawartha chain stretches roughly from Lake Scugog in the southwest up through Sturgeon, Pigeon, Buckhorn, and Stony in the northeast. From most Kawartha towns, the drive to Gores Landing runs 45–60 minutes. Lakefield is closer to 45. Lindsay is about 60 via County Road 35 and Highway 7A. Bobcaygeon sits roughly 75 minutes north. Bridgenorth is about 40 minutes south.',
-          "Drive time is the honest tradeoff. We're not in the middle of the Kawarthas, we're one lake south, on Rice Lake. Customers who pick HBW pick us because they want a Mercury Platinum shop that's been rigging these motors since 1965, and because the water test happens on a real lake before they tow the boat home.",
+          "Drive time is the honest tradeoff. We're not in the middle of the Kawarthas, we're one lake south, on Rice Lake. Customers who pick HBW pick us because they want a Mercury Premier shop that's been rigging these motors since 1965, and because the water test happens on a real lake before they tow the boat home.",
         ],
       },
       {
@@ -174,7 +174,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
         heading: 'How far is Harris Boat Works from Peterborough?',
         paragraphs: [
           'From downtown Peterborough the drive south to Gores Landing is about 35 minutes via Highway 28 South, ending at 5369 Harris Boat Works Rd on Rice Lake. Traffic is generally light outside cottage Friday afternoons. For the long-form directions and what to expect on arrival, see the [Peterborough dealer blog post](/blog/mercury-dealer-peterborough-ontario-hbw).',
-          'We see Peterborough customers across two profiles. Some live in the city and keep a boat on Rice Lake or the Otonabee. Others live in the city, cottage on the Kawarthas, and trailer to us because they want a Mercury Platinum shop with a real water test. Both groups make the same drive south.',
+          'We see Peterborough customers across two profiles. Some live in the city and keep a boat on Rice Lake or the Otonabee. Others live in the city, cottage on the Kawarthas, and trailer to us because they want a Mercury Premier shop with a real water test. Both groups make the same drive south.',
         ],
       },
       {
@@ -239,7 +239,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'How far is Harris Boat Works from Cobourg?',
         paragraphs: [
-          "Cobourg sits on Lake Ontario, about 25 minutes south of Rice Lake by car. The drive north to Gores Landing runs roughly 28 km on county roads and takes most Cobourg drivers under half an hour outside of summer Friday traffic. For a lot of Cobourg residents, we're the closest Mercury Platinum shop in either direction.",
+          "Cobourg sits on Lake Ontario, about 25 minutes south of Rice Lake by car. The drive north to Gores Landing runs roughly 28 km on county roads and takes most Cobourg drivers under half an hour outside of summer Friday traffic. For a lot of Cobourg residents, we're the closest Mercury Premier shop in either direction.",
           "The typical Cobourg customer isn't boating on Lake Ontario itself, they're keeping a boat at a cottage on Rice Lake, or trailering up for fishing weekends. That's the reason the short drive north matters: it puts the boat on the same lake we test on, and it lets one shop handle the install, prop choice, and water test in a single day.",
         ],
       },

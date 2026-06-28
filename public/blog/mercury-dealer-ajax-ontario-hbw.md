@@ -133,7 +133,7 @@ The drive to Rice Lake is 45 minutes via the 401 east and Highway 115 north. It'
 
 Why Ajax boaters choose HBW for repower:
 
-- **Mercury Platinum-level rigging depth.** A 115 HP repower involves controls, harness, gauge, and prop matching. Smaller dealers do this work but slower; we do it daily.
+- **Mercury Premier-level rigging depth.** A 115 HP repower involves controls, harness, gauge, and prop matching. Smaller dealers do this work but slower; we do it daily.
 - **One-trip storage + service.** Many Ajax customers store at HBW over winter, get spring commissioning, and trailer back to Lake Ontario for the season. One drive, one trusted shop, no May scheduling friction.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -155,7 +155,7 @@ About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One 
 
 ### Why drive to Rice Lake from Ajax?
 
-Mercury Platinum tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture, family marina since 1947.
+Mercury Premier tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture, family marina since 1947.
 
 ### Can I use HBW as my primary Mercury dealer?
 

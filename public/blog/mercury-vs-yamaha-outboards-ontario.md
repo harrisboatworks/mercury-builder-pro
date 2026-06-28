@@ -115,7 +115,7 @@ Thinking about switching from Yamaha to Mercury? We handle the full conversion i
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. One of the deepest Mercury and Mercruiser parts inventories in Ontario.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. One of the deepest Mercury and Mercruiser parts inventories in Ontario.
 
 ## Sources
 

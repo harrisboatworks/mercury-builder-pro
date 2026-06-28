@@ -12,7 +12,7 @@ description: "What does your Mercury warranty actually cover after a repower? Ho
 category: "Warranty & Protection"
 date_published: 2026-06-06
 date_modified: 2026-06-06
-keywords: ["mercury warranty repower","mercury platinum dealer warranty","mercury factory warranty","mercury extended warranty","mercury break-in period"]
+keywords: ["mercury warranty repower","mercury premier dealer warranty","mercury factory warranty","mercury extended warranty","mercury break-in period"]
 author: Harris Boat Works
 content_type: blog_article
 ---

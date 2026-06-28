@@ -49,9 +49,9 @@ If you use that and then buy from a closer dealer, fine. You'll buy with your ey
 
 ## Why Platinum Status Matters More Than Location
 
-Richmond Hill has Mercury dealers. Not all of them are Platinum. Mercury's Platinum tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
+Richmond Hill has Mercury dealers. Not all of them are Platinum. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
 
-On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, warranty claim on a new motor, it starts to matter. A Platinum dealer has faster resolution paths and more technical depth when the job gets complicated.
+On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, warranty claim on a new motor, it starts to matter. A Premier dealer has faster resolution paths and more technical depth when the job gets complicated.
 
 ## Third-Generation Means Something Different
 
@@ -140,7 +140,7 @@ The drive to Rice Lake is 75 minutes via Highway 404 → 407 east → Highway 11
 
 Why Richmond Hill boaters drive to HBW vs Simcoe-area dealers:
 
-- **Mercury Platinum-level expertise.** For repower work, dealer depth matters more than 20 minutes of drive time. HBW competes on rigging quality, not proximity.
+- **Mercury Premier-level expertise.** For repower work, dealer depth matters more than 20 minutes of drive time. HBW competes on rigging quality, not proximity.
 - **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding, no phone calls, no negotiation games, real dealer pricing.
 - **One-stop service + storage.** Many Richmond Hill customers store at HBW over winter, get spring commissioning, and trailer back to Simcoe or Rice Lake for the season.
 

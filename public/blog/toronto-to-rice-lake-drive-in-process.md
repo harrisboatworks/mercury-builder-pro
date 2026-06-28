@@ -146,7 +146,7 @@ Most customers pick up on a Saturday morning and are on the water by afternoon. 
 
 ## More from HBW on Rice Lake and the Kawarthas
 
-- [Best Marina on Rice Lake, Ontario](/blog/best-marina-rice-lake-ontario), full-service marina since 1947: slips, launch, storage, and Mercury Platinum service
+- [Best Marina on Rice Lake, Ontario](/blog/best-marina-rice-lake-ontario), full-service marina since 1947: slips, launch, storage, and Mercury Premier service
 - [Boat Storage Kawartha Lakes](/blog/boat-storage-kawartha-lakes), winter and summer storage for Rice Lake, Pigeon, Sturgeon, Buckhorn, and Stoney
 - [Rice Lake Boat Rentals from Toronto & GTA](/blog/rice-lake-boat-rentals-from-toronto-gta), day rentals and cottage boat access from the city
 
@@ -198,7 +198,7 @@ Yes, and many customers do. If you're doing a multi-stage job, say, diagnostics 
 
 ### What's the catch, why is this not common in the GTA?
 
-There is no catch, but there's a reason. Most GTA marinas are seasonal, dock-focused operations. They do launches, hauls, and basic oil changes. When a job needs Mercury-specific diagnostics, warranty paperwork, or a full repower rigging, they send the motor out to a specialist shop, sometimes hundreds of kilometres away, and mark up the price. We're that specialist shop, but we're on the water instead of in an industrial park. The 'catch' is that you have to drive 60-90 minutes. The trade-off is that the work gets done by a Platinum dealer on the same property where your boat can be stored, winterized, and launched. For most Mercury owners, the math works.
+There is no catch, but there's a reason. Most GTA marinas are seasonal, dock-focused operations. They do launches, hauls, and basic oil changes. When a job needs Mercury-specific diagnostics, warranty paperwork, or a full repower rigging, they send the motor out to a specialist shop, sometimes hundreds of kilometres away, and mark up the price. We're that specialist shop, but we're on the water instead of in an industrial park. The 'catch' is that you have to drive 60-90 minutes. The trade-off is that the work gets done by a Premier dealer on the same property where your boat can be stored, winterized, and launched. For most Mercury owners, the math works.
 
 ## Next steps
 

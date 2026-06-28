@@ -215,7 +215,7 @@ export default function RepowerHub() {
           <h3>Key facts</h3>
           <ul>
             <li>Full repower job: typically $11,000 to $40,000 CAD (2026) depending on horsepower</li>
-            <li>Family-owned since 1947, Mercury dealer since 1965, current Platinum tier</li>
+            <li>Family-owned since 1947, Mercury dealer since 1965, current Premier tier</li>
             <li>Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0</li>
             <li>Timeline: 3 to 8 weeks from deposit to pickup, depending on Mercury lead time</li>
             <li>Deposit: $200 (portable), $500 (mid-range), $1,000 (big-block / Pro XS / Verado)</li>

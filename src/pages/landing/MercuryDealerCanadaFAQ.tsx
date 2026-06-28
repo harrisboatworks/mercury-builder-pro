@@ -95,7 +95,7 @@ export default function MercuryDealerCanadaFAQ() {
         {/* CTA footer */}
         <section className="text-center bg-muted/30 rounded-2xl p-8 border border-border">
           <h2 className="text-2xl font-semibold text-foreground mb-3">
-            Ready to work with a Platinum Dealer?
+            Ready to work with a Premier Dealer?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
             Build a Mercury quote with real CAD pricing, or call us at (905) 342-2153.

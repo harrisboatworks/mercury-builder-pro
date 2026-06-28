@@ -59,7 +59,7 @@ Most of what we do is repower, replacing aging motors on hulls that still have y
 
 The rigging conversation matters here: what HP, what controls, what prop for your hull and how you use it. We have that conversation before we order anything. The result is a motor that performs the way Mercury designed it to for your specific application.
 
-## Mercury Platinum, Third Generation Since 1947
+## Mercury Premier, Third Generation Since 1947
 
 Top tier in Mercury's dealer program. Harris Boat Works has been on Rice Lake since 1947, three generations. Third-generation means the reputation that's built was started before Jay Harris was born, and he intends to keep it. The business depends on the next customer being the referral from the last one.
 

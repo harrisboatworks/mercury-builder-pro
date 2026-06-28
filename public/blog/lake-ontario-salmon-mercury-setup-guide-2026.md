@@ -43,7 +43,7 @@ This is the dealer-side perspective on rigging a Lake Ontario salmon boat for th
 
 A clarification because we hear this misread: **Port Hope is approximately 20 minutes drive from HBW. Cobourg is approximately 15 minutes.** Both ports are well within practical service-destination range for Lake Ontario north-shore salmon anglers. HBW services Lake Ontario boats regularly. We do not provide service calls away from Rice Lake; boats come to us.
 
-For Port Hope and Cobourg boat owners specifically, HBW may be the closer Mercury Platinum service option than GTA-area dealers, depending on where you launch and store the boat.
+For Port Hope and Cobourg boat owners specifically, HBW may be the closer Mercury Premier service option than GTA-area dealers, depending on where you launch and store the boat.
 
 ## The main motor decision
 
@@ -164,13 +164,13 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 **Build a Mercury quote:** mercuryrepower.ca
 **Service booking:** hbw.wiki/service
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Platinum Dealer. 15-20 minutes from Port Hope and Cobourg. Largest Mercury and Mercruiser parts inventory in Ontario on the shelf. That's why local guides and charter operators call us first when they need a part the same day.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. 15-20 minutes from Port Hope and Cobourg. Largest Mercury and Mercruiser parts inventory in Ontario on the shelf. That's why local guides and charter operators call us first when they need a part the same day.
 
 ## FAQs
 
 ### Does HBW service Lake Ontario salmon boats?
 
-Yes. We service Lake Ontario boats regularly, particularly from Port Hope (approximately 20 minutes drive) and Cobourg (approximately 15 minutes drive). We do not provide off-Rice-Lake service calls; boats come to us. For boat owners launching from north-shore Lake Ontario ports, HBW may be the closer Mercury Platinum service option than GTA-area dealers, depending on launch and storage location.
+Yes. We service Lake Ontario boats regularly, particularly from Port Hope (approximately 20 minutes drive) and Cobourg (approximately 15 minutes drive). We do not provide off-Rice-Lake service calls; boats come to us. For boat owners launching from north-shore Lake Ontario ports, HBW may be the closer Mercury Premier service option than GTA-area dealers, depending on launch and storage location.
 
 ### What main motor HP do you recommend for Lake Ontario salmon?
 

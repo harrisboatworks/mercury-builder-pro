@@ -180,7 +180,7 @@ A few notes specific to where we do business.
 **Build a Mercury quote:** mercuryrepower.ca
 **Service booking:** hbw.wiki/service
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake. The only brand-name outboard service of any kind on Rice Lake.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The only brand-name outboard service of any kind on Rice Lake.
 
 ## FAQs
 

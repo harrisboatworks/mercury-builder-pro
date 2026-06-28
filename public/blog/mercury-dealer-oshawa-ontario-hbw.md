@@ -61,7 +61,7 @@ Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows in
 
 For Oshawa buyers who know what they want and just need a clean number, that's the difference. The pricing question is answered before you make the drive.
 
-## Mercury Platinum, Third Generation Since 1947
+## Mercury Premier, Third Generation Since 1947
 
 Platinum is the top tier in Mercury's dealer program, parts depth, warranty authorization, advanced technical training. Harris Boat Works has held it for years. Third-generation family marina, on Rice Lake since 1947. The business runs on repeat customers and referrals. Oshawa is close enough that anything short of a straight answer would come back to us fast.
 
@@ -140,7 +140,7 @@ Why Oshawa is a particularly strong repower market:
 
 - **Many older fiberglass hulls in great shape.** A 1990s-2000s 16-18 ft fiberglass hull with a tired Mercury or Evinrude is an ideal repower candidate. HBW handles a steady flow of these annually.
 - **Proximity makes it practical.** 40 minutes is a reasonable drive for a multi-thousand-dollar repower investment, closer than driving back into central Toronto.
-- **Mercury Platinum-level depth.** A repower done well lasts the rest of the boat's life. Done poorly, it gets brought back for warranty work.
+- **Mercury Premier-level depth.** A repower done well lasts the rest of the boat's life. Done poorly, it gets brought back for warranty work.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

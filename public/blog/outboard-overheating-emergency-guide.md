@@ -170,8 +170,8 @@ If you suspect a cooling system problem, book before your next run: [hbw.wiki/se
 ## Related guides
 
 - [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario): Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum.
-- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting): Mercury outboard won't start? Ontario Platinum dealer's honest diagnostic ladder: battery, fuel, ignition.
-- [Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)](/blog/mercury-smartcraft-alarm-codes-encyclopedia): Mercury SmartCraft alarm code reference from an Ontario Platinum dealer. Top 10 codes by service frequency.
+- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting): Mercury outboard won't start? Ontario Premier dealer's honest diagnostic ladder: battery, fuel, ignition.
+- [Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)](/blog/mercury-smartcraft-alarm-codes-encyclopedia): Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency.
 - [Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)](/blog/mercury-outboard-overheat-alarm-decoder): Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. real heat, on-water emergency.
 
 ## Related reading

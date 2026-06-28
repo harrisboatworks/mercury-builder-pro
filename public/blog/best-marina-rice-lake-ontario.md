@@ -57,7 +57,7 @@ A marina that does most of these well is a full-service marina. A marina that do
 |---|---|---|
 | Launch ramp | Day-trippers and slip holders | Walk-in during operating hours |
 | 65 seasonal slips | Boaters wanting a home base on Rice Lake | Call 905-342-2153 in late winter for the season |
-| Mercury sales (Platinum dealer) | New motor, repower, or full boat package | [mercuryrepower.ca](https://www.mercuryrepower.ca) |
+| Mercury sales (Premier dealer) | New motor, repower, or full boat package | [mercuryrepower.ca](https://www.mercuryrepower.ca) |
 | Mercury and Mercruiser service | Warranty, repower, diagnostics, repairs | [hbw.wiki/service](https://hbw.wiki/service) |
 | Pontoon and fishing boat rentals | Visitors, families, day trips | [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) |
 | Winter storage + shrinkwrap | Outdoor storage, October-April | [hbw.wiki/service](https://hbw.wiki/service) |
@@ -75,7 +75,7 @@ Ontario boating runs roughly mid-May to early October if you're being generous. 
 A full-service marina on the lake means:
 
 - **Mercury service in-house.** Warranty work doesn't ship out. A bad coil pack on Friday afternoon doesn't kill your long weekend.
-- **Parts on the shelf.** Platinum dealer status comes with a parts stocking requirement. Most common service items are in the building.
+- **Parts on the shelf.** Premier dealer status comes with a parts stocking requirement. Most common service items are in the building.
 - **Storage on the same property.** No trailering between a service shop and a storage yard in October.
 - **Fuel where you're already tied up.** Important on Rice Lake, where the closest 24-hour gas station is a drive.
 
@@ -88,7 +88,7 @@ It also matters because Rice Lake has its own conditions. Shallow in spots, weed
 Mercury Marine Premier status is the top tier of Mercury's dealer program. It is measured every year and it is not handed out for showing up. Here is what it actually looks like operationally at Harris Boat Works:
 
 - **Factory-trained technicians.** Our service techs hold current Mercury certifications across the FourStroke, Pro XS, Verado, and Mercruiser families. Training is renewed annually as Mercury updates platforms and diagnostic procedures.
-- **Parts on hand, not on order.** Platinum dealers carry a deeper parts inventory than standard tiers. Common service items (impellers, anodes, water pump kits, plugs, filters, common gaskets) sit on the shelf. Less common parts ship in one to two business days through the Mercury parts network.
+- **Parts on hand, not on order.** Premier dealers carry a deeper parts inventory than standard tiers. Common service items (impellers, anodes, water pump kits, plugs, filters, common gaskets) sit on the shelf. Less common parts ship in one to two business days through the Mercury parts network.
 - **Warranty work in-house.** If your Mercury is under factory warranty or covered by Mercury Product Protection, we open and close the claim ourselves. Nothing gets trucked to a third shop. Same for recall work.
 - **Repower capacity.** New motor, rigging, controls, gauges, and propeller all happen in one bay with one work order. The motor and the rigging kit come from the same parts counter.
 - **Year-round service availability.** April through November is in-season service. December through March is the winter service window for repowers, rebuilds, and major projects so the boat is ready when the lake opens.
@@ -192,7 +192,7 @@ Since 1947. Three generations of the Harris family have run this marina from the
 
 ### Is Harris Boat Works a Mercury authorized service centre?
 
-Yes. We're a Mercury Marine Premier dealer, which is Mercury's top tier for sales, service, training, and parts inventory. Premier status isn't given out for showing up; it's measured every year against parts stocking, technician certification, warranty turnaround, and customer satisfaction. On Rice Lake, we're the only Platinum dealer. If your motor is under Mercury warranty, we can do the work in-house without sending it anywhere. Same for Mercury Product Protection extended warranty claims.
+Yes. We're a Mercury Marine Premier dealer, which is Mercury's top tier for sales, service, training, and parts inventory. Premier status isn't given out for showing up; it's measured every year against parts stocking, technician certification, warranty turnaround, and customer satisfaction. On Rice Lake, we're the only Premier dealer. If your motor is under Mercury warranty, we can do the work in-house without sending it anywhere. Same for Mercury Product Protection extended warranty claims.
 
 ### How far is Harris Boat Works from Toronto and the GTA?
 
@@ -208,7 +208,7 @@ Yes, outdoor storage with shrinkwrap on our property in Gores Landing. We typica
 
 ### What's included in HBW's full-service package?
 
-One property, one phone number, every service a Mercury-powered boat needs across a full Ontario season. Launch ramp, 65 seasonal slips, fuel dock, Mercury sales as a Platinum dealer, in-house warranty and diagnostic service on Mercury and Mercruiser, pontoon and fishing boat rentals, outdoor winter storage with shrinkwrap, winterization, spring commissioning, and a parts counter stocked to Premier-tier requirements. The point of full-service is that nothing gets handed off to a third shop. You drop the boat once and pick it up ready to run. Bookings and service requests at [hbw.wiki/service](https://hbw.wiki/service).
+One property, one phone number, every service a Mercury-powered boat needs across a full Ontario season. Launch ramp, 65 seasonal slips, fuel dock, Mercury sales as a Premier dealer, in-house warranty and diagnostic service on Mercury and Mercruiser, pontoon and fishing boat rentals, outdoor winter storage with shrinkwrap, winterization, spring commissioning, and a parts counter stocked to Premier-tier requirements. The point of full-service is that nothing gets handed off to a third shop. You drop the boat once and pick it up ready to run. Bookings and service requests at [hbw.wiki/service](https://hbw.wiki/service).
 
 ### Can I bring my boat from outside the Kawarthas for service?
 

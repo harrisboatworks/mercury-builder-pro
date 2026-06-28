@@ -264,7 +264,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'What does Harris Boat Works mean to Gores Landing?',
         paragraphs: [
-          "Gores Landing is a village of a few hundred people on the south shore of Rice Lake. We're not the new shop in town, we're the shop that has been here since 1947. Three generations of the same family have rigged motors out of this address. We have been a Mercury dealer since 1965, and today we hold Mercury's Platinum Dealer tier.",
+          "Gores Landing is a village of a few hundred people on the south shore of Rice Lake. We're not the new shop in town, we're the shop that has been here since 1947. Three generations of the same family have rigged motors out of this address. We have been a Mercury dealer since 1965, and today we hold Mercury's Premier Dealer tier.",
           "For locals, the repower conversation is short. You know where the shop is. You know who works the bench. We know what your boat is and probably the last motor we put on it. We treat repower customers as adults, that's the only way to run a shop in a village this small for three generations.",
         ],
       },
@@ -294,7 +294,7 @@ const SPECS: SpecInput[] = [
     faqs: [
       { question: 'Where exactly is Harris Boat Works in Gores Landing?', answer: "5369 Harris Boat Works Rd, on the south shore of Rice Lake, coordinates 44.1147, -78.2564. We're the village marina." },
       { question: 'Do you deliver Mercury motors inside Gores Landing?', answer: "No. We're pickup-only at the shop, even for local customers. The motor is rigged, propped, and water-tested on Rice Lake before you pick up at our dock." },
-      { question: 'How long has Harris Boat Works been in Gores Landing?', answer: "The shop has been family-owned since 1947, three generations. We have sold Mercury since 1965 and hold Mercury's Platinum Dealer tier today." },
+      { question: 'How long has Harris Boat Works been in Gores Landing?', answer: "The shop has been family-owned since 1947, three generations. We have sold Mercury since 1965 and hold Mercury's Premier Dealer tier today." },
       { question: 'Can I bring my boat to you by water from somewhere else in the village?', answer: "Yes. If your current motor still runs, you can bring the boat to our docks under its own power for the repower drop-off. Otherwise it's a short tow." },
       { question: 'What HP Mercury do Gores Landing boats run?', answer: 'Locals run the full range. Tiller FourStroke 9.9–25 HP on tinnies, mid-range FourStroke 60–115 HP on runabouts, Pro XS 175 HP on bass boats and pontoons. Big-block FourStroke 150–200 HP on heavier fiberglass.' },
     ],
@@ -806,7 +806,7 @@ const SPECS: SpecInput[] = [
         heading: 'Is Harris Boat Works in Northumberland County?',
         paragraphs: [
           'Yes. Gores Landing is in Northumberland County, on the south shore of Rice Lake, and we are the village marina. The county wraps from Lake Ontario in the south (Cobourg, Port Hope, Brighton) up to Rice Lake in the north (Bewdley, Gores Landing, Roseneath, Hastings on the county line). Most of it is within 30 minutes of our dock.',
-          "For in-county residents, we are usually the closest Mercury Platinum repower option. Three generations of the same family have rigged motors out of this address since 1947. We have been a Mercury dealer since 1965, and today we hold Mercury's Platinum Dealer tier.",
+          "For in-county residents, we are usually the closest Mercury Platinum repower option. Three generations of the same family have rigged motors out of this address since 1947. We have been a Mercury dealer since 1965, and today we hold Mercury's Premier Dealer tier.",
         ],
       },
       {

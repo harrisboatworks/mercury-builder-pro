@@ -12,7 +12,7 @@ description: "New Mercury or used Mercury? The honest math for Ontario buyers, f
 category: "Buying Guides"
 date_published: 2026-05-16
 date_modified: 2026-06-10
-keywords: ["new vs used mercury outboard","used mercury outboard ontario","new mercury outboard ontario","mercury outboard buying guide","mercury platinum dealer ontario","mercury product protection","used outboard inspection ontario","mercury repower vs used"]
+keywords: ["new vs used mercury outboard","used mercury outboard ontario","new mercury outboard ontario","mercury outboard buying guide","mercury premier dealer ontario","mercury product protection","used outboard inspection ontario","mercury repower vs used"]
 author: Harris Boat Works
 content_type: blog_article
 ---

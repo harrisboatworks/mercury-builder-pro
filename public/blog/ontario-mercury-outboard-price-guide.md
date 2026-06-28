@@ -118,7 +118,7 @@ Ready to compare a 150 against a 200? Build both configurations on [mercuryrepow
 
 **Verado is special order.** If you're looking at a V8, V10, or V12 Verado, naturally aspirated or supercharged, 250-600 HP, call us directly at 905-342-2153. We'll quote it properly.
 
-## What's different about buying Mercury at a Platinum dealer
+## What's different about buying Mercury at a Premier dealer
 
 Mercury dealer certification runs Bronze, Silver, Gold, and Platinum. Platinum requires factory training across every Mercury family, full G3 diagnostic equipment, demonstrated service volumes, stocked parts inventory, and top-tier Customer Satisfaction Index scores.
 

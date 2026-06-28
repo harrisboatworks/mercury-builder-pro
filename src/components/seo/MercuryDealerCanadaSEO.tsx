@@ -22,7 +22,7 @@ const TRUST_FAQ = [
   },
   {
     question: "Do you sell motors to customers across Canada?",
-    answer: "Yes, we sell to customers across Ontario and beyond. However, all motors are pickup only at our Gores Landing location. We do not ship outboards. This is intentional: every motor includes a personal walk-through covering controls, break-in procedure, and warranty registration. That hand-off is part of why we hold Platinum Dealer status."
+    answer: "Yes, we sell to customers across Ontario and beyond. However, all motors are pickup only at our Gores Landing location. We do not ship outboards. This is intentional: every motor includes a personal walk-through covering controls, break-in procedure, and warranty registration. That hand-off is part of why we hold Premier Dealer status."
   },
   {
     question: "What Mercury motor lines do you carry?",
@@ -50,7 +50,7 @@ const TRUST_FAQ = [
   },
   {
     question: "Why buy from Harris Boat Works instead of a big-box marine retailer?",
-    answer: "Three reasons: (1) Platinum Dealer status means our technicians, parts inventory, and warranty access are at the highest Mercury tier. (2) Family-owned since 1947, we answer the phone, we know our customers, and the same people sell, install, and service the motor. (3) Real online pricing with live CAD quotes, no \"call for price\" runaround. What you see at mercuryrepower.ca is what you pay."
+    answer: "Three reasons: (1) Premier Dealer status means our technicians, parts inventory, and warranty access are at the highest Mercury tier. (2) Family-owned since 1947, we answer the phone, we know our customers, and the same people sell, install, and service the motor. (3) Real online pricing with live CAD quotes, no \"call for price\" runaround. What you see at mercuryrepower.ca is what you pay."
   }
 ];
 

@@ -103,7 +103,7 @@ export default function RepowerTradeIn() {
           </ul>
 
           <h3>What outboards does Harris Boat Works take in trade?</h3>
-          <p>Anything Mercury, every time. We've been a Mercury dealer since 1965 (current Platinum tier). Mercury trade-ins go into our used inventory or get refurbished and resold, which is why we can usually give you a stronger number than a wholesale-only buyer. Other brands (Yamaha, Honda, Suzuki, Evinrude) considered case-by-case. What we don't take: cracked blocks, badly corroded mid-sections, severe saltwater damage past resale.</p>
+          <p>Anything Mercury, every time. We've been a Mercury dealer since 1965 (current Premier tier). Mercury trade-ins go into our used inventory or get refurbished and resold, which is why we can usually give you a stronger number than a wholesale-only buyer. Other brands (Yamaha, Honda, Suzuki, Evinrude) considered case-by-case. What we don't take: cracked blocks, badly corroded mid-sections, severe saltwater damage past resale.</p>
 
           <h3>How do I find out what my old motor is worth?</h3>
           <p>Submit 6 inputs: brand, model, HP, year, shaft length, condition. Photos help (cowl plate, powerhead, lower unit). CAD figure in your inbox within 1 business day. Submissions before noon usually get answered same day.</p>
