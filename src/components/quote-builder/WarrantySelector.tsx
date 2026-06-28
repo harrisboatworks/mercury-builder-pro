@@ -161,7 +161,7 @@ export function WarrantySelector() {
             <Shield className="w-5 h-5 text-primary" />
           </div>
           <div>
-            <CardTitle className="text-lg">Mercury Premier Extended Warranty</CardTitle>
+            <CardTitle className="text-lg">Mercury Platinum Extended Warranty</CardTitle>
             <p className="text-sm text-muted-foreground">
               Factory-backed parts & labour at authorized Mercury dealers
             </p>
