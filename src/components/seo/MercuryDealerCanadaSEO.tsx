@@ -10,7 +10,7 @@ const TRUST_FAQ = [
   },
   {
     question: "What does Mercury Premier Dealer status mean?",
-    answer: "Platinum is Mercury Marine's top dealer rating in North America. It requires Mercury-certified technicians, a minimum sales and service volume, full warranty registration capability, and consistently high CSI (Customer Satisfaction Index) scores. Only a small percentage of Mercury dealers reach Premier, and re-qualification is required every year."
+    answer: "Premier is Mercury Marine's top dealer rating in North America. It requires Mercury-certified technicians, a minimum sales and service volume, full warranty registration capability, and consistently high CSI (Customer Satisfaction Index) scores. Only a small percentage of Mercury dealers reach Premier, and re-qualification is required every year."
   },
   {
     question: "How long has Harris Boat Works been in business?",

@@ -3987,7 +3987,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is there a Mercury dealer in Markham?",
-        "a": "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Markham - about 70 minutes north. Premier is the top tier in Mercury's dealer program."
+        "a": "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Premier-tier Mercury dealer to Markham - about 70 minutes north. Premier is the top tier in Mercury's dealer program."
       },
       {
         "q": "How far is Harris Boat Works from Markham?",
@@ -4019,7 +4019,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is there a Mercury Premier dealer near Richmond Hill?",
-        "a": "Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Richmond Hill - about 75 minutes north via Highway 404 and County Road 28."
+        "a": "Harris Boat Works on Rice Lake is the closest Premier-tier Mercury dealer to Richmond Hill - about 75 minutes north via Highway 404 and County Road 28."
       },
       {
         "q": "How far is Harris Boat Works from Richmond Hill?",
@@ -5015,7 +5015,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is there a Mercury dealer in Cobourg?",
-        "a": "Not within town limits at the Platinum tier. Harris Boat Works in Gores Landing is the Mercury Premier Dealer for Cobourg, approximately 25 minutes north via County Road 18. For most Cobourg addresses we are the nearest Mercury Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965."
+        "a": "Not within town limits at the Premier tier. Harris Boat Works in Gores Landing is the Mercury Premier Dealer for Cobourg, approximately 25 minutes north via County Road 18. For most Cobourg addresses we are the nearest Mercury Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965."
       },
       {
         "q": "How long is the drive from Cobourg to HBW?",
@@ -5041,7 +5041,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       "mercury dealer port hope",
       "port hope mercury outboard",
       "ganaraska mercury dealer",
-      "northumberland mercury platinum"
+      "northumberland mercury premier"
     ],
     "faqs": [
       {
@@ -5071,7 +5071,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "keywords": [
       "mercury dealer lindsay",
       "kawartha lakes mercury",
-      "lindsay mercury platinum",
+      "lindsay mercury premier",
       "sturgeon lake mercury dealer"
     ],
     "faqs": [
@@ -5101,7 +5101,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "publishDate": "2026-05-17",
     "keywords": [
       "mercury dealer northumberland county",
-      "northumberland mercury platinum",
+      "northumberland mercury premier",
       "rice lake mercury dealer",
       "trent system mercury"
     ],

@@ -159,7 +159,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Is there a Mercury Premier dealer near Richmond Hill?
 
-Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Richmond Hill - about 75 minutes north via Highway 404 and County Road 28.
+Harris Boat Works on Rice Lake is the closest Premier-tier Mercury dealer to Richmond Hill - about 75 minutes north via Highway 404 and County Road 28.
 
 ### How far is Harris Boat Works from Richmond Hill?
 

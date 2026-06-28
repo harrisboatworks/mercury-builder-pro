@@ -51,7 +51,7 @@ If you build a quote and decide to buy somewhere else, that's fine. The point is
 
 ## What Mercury Premier Actually Means
 
-Mercury has a dealer tier program. Platinum is the top level. It's not a marketing badge, it reflects depth of inventory, technical training, warranty authorization, and parts access.
+Mercury has a dealer tier program. Premier is the top level. It's not a marketing badge, it reflects depth of inventory, technical training, warranty authorization, and parts access.
 
 In practical terms: if you have a warranty issue or a complex repower with an unusual rigging setup, a Premier dealer has faster resolution paths than a lower-tier dealer. There aren't many Premier dealers in Ontario. That matters more after the sale than it does at the time of purchase.
 
@@ -160,7 +160,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Is there a Mercury dealer in Markham?
 
-There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Markham - about 70 minutes north. Premier is the top tier in Mercury's dealer program.
+There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Premier-tier Mercury dealer to Markham - about 70 minutes north. Premier is the top tier in Mercury's dealer program.
 
 ### How far is Harris Boat Works from Markham?
 

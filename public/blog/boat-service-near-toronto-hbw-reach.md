@@ -118,7 +118,7 @@ For a complex problem (intermittent stalls, occasional fault codes, weird perfor
 
 ### 2. Factory-trained techs (not just trained, factory-trained)
 
-Mercury runs ongoing certification programs for dealer techs. To stay Platinum, we have to keep techs current on the latest Mercury release (Avator, V12 Verado, current SmartCraft software, etc.).
+Mercury runs ongoing certification programs for dealer techs. To stay Premier, we have to keep techs current on the latest Mercury release (Avator, V12 Verado, current SmartCraft software, etc.).
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

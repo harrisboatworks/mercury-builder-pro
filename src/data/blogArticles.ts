@@ -19532,7 +19532,7 @@ This post is the version of that comparison we'd run through with a GTA buyer wh
 
 The GTA has Mercury dealers. They're not all the same.
 
-**Mercury's dealer tier system** ranks dealers from entry-level service through Platinum (the top tier). Premier status requires:
+**Mercury's dealer tier system** ranks dealers from entry-level service through Premier (the top tier). Premier status requires:
 - Factory-trained technicians on every Mercury family (FourStroke, Pro XS, Verado, SeaPro)
 - Full diagnostic equipment (G3 software, $3,000+ kit)
 - Stocked parts inventory for the most common service work
@@ -20316,7 +20316,7 @@ For a complex problem (intermittent stalls, occasional fault codes, weird perfor
 
 ### 2. Factory-trained techs (not just trained, factory-trained)
 
-Mercury runs ongoing certification programs for dealer techs. To stay Platinum, we have to keep techs current on the latest Mercury release (Avator, V12 Verado, current SmartCraft software, etc.).
+Mercury runs ongoing certification programs for dealer techs. To stay Premier, we have to keep techs current on the latest Mercury release (Avator, V12 Verado, current SmartCraft software, etc.).
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -26204,7 +26204,7 @@ If you build a quote and decide to buy somewhere else, that's fine. The point is
 
 ## What Mercury Premier Actually Means
 
-Mercury has a dealer tier program. Platinum is the top level. It's not a marketing badge, it reflects depth of inventory, technical training, warranty authorization, and parts access.
+Mercury has a dealer tier program. Premier is the top level. It's not a marketing badge, it reflects depth of inventory, technical training, warranty authorization, and parts access.
 
 In practical terms: if you have a warranty issue or a complex repower with an unusual rigging setup, a Premier dealer has faster resolution paths than a lower-tier dealer. There aren't many Premier dealers in Ontario. That matters more after the sale than it does at the time of purchase.
 
@@ -26334,7 +26334,7 @@ Markham customers often combine their trip with a service drop, see our [drive-i
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
-      { question: 'Is there a Mercury dealer in Markham?', answer: "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Markham - about 70 minutes north. Premier is the top tier in Mercury's dealer program." },
+      { question: 'Is there a Mercury dealer in Markham?', answer: "There are Mercury dealers in the broader GTA, but Harris Boat Works on Rice Lake is the closest Premier-tier Mercury dealer to Markham - about 70 minutes north. Premier is the top tier in Mercury's dealer program." },
       { question: 'How far is Harris Boat Works from Markham?', answer: 'Approximately 70 minutes via Highway 404 north and County Road 28. Distance is about 110 km depending on your part of Markham.' },
       { question: 'Why drive to Rice Lake instead of a closer GTA dealer?', answer: 'Markham customers tell us they make the drive for three reasons: transparent CAD pricing through our online quote builder, Mercury Premier-tier technical depth, and a no-hard-sell family-marina culture (three generations since 1947).' },
       { question: 'Does HBW serve Unionville and Stouffville too?', answer: 'Yes. We serve a broad Markham-area customer base including Unionville, Stouffville, and the surrounding York Region communities.' },
@@ -26506,7 +26506,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 - [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
 `,
     faqs: [
-      { question: 'Is there a Mercury Premier dealer near Richmond Hill?', answer: 'Harris Boat Works on Rice Lake is the closest Platinum-tier Mercury dealer to Richmond Hill - about 75 minutes north via Highway 404 and County Road 28.' },
+      { question: 'Is there a Mercury Premier dealer near Richmond Hill?', answer: 'Harris Boat Works on Rice Lake is the closest Premier-tier Mercury dealer to Richmond Hill - about 75 minutes north via Highway 404 and County Road 28.' },
       { question: 'How far is Harris Boat Works from Richmond Hill?', answer: 'Approximately 75 minutes / 115 km depending on which part of Richmond Hill you start from.' },
       { question: 'Does HBW also serve Aurora and Newmarket?', answer: 'Yes. Aurora and Newmarket are slightly closer than Richmond Hill - typically 60 to 70 minute drives. We have a regular customer base across all three communities.' },
       { question: 'Can I get a Mercury quote without driving up first?', answer: 'Yes. Build a quote at mercuryrepower.ca/quote in about three minutes. Real CAD pricing, no phone call required.' },
@@ -27202,7 +27202,7 @@ The customers who find this meaningful are the ones who've already done the rese
 
 ## Mercury Premier, Not All Dealers Are the Same
 
-Mercury authorizes dealers at different tiers. Platinum is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Premier dealer and a lower-tier dealer can show up in resolution time and technical depth.
+Mercury authorizes dealers at different tiers. Premier is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Premier dealer and a lower-tier dealer can show up in resolution time and technical depth.
 
 Burlington has Mercury dealers. Not all of them are Platinum. That's worth knowing.
 
@@ -32114,7 +32114,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     readTime: '6 min read',
     keywords: ['mercury dealer cobourg', 'cobourg mercury outboard', 'northumberland mercury dealer', 'rice lake mercury dealer'],
     faqs: [
-      { question: 'Is there a Mercury dealer in Cobourg?', answer: 'Not within town limits at the Platinum tier. Harris Boat Works in Gores Landing is the Mercury Premier Dealer for Cobourg, approximately 25 minutes north via County Road 18. For most Cobourg addresses we are the nearest Mercury Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.' },
+      { question: 'Is there a Mercury dealer in Cobourg?', answer: 'Not within town limits at the Premier tier. Harris Boat Works in Gores Landing is the Mercury Premier Dealer for Cobourg, approximately 25 minutes north via County Road 18. For most Cobourg addresses we are the nearest Mercury Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.' },
       { question: 'How long is the drive from Cobourg to HBW?', answer: 'About 25 minutes outside rush hour, straight up County Road 18 into Gores Landing. From the Cobourg harbour or downtown, allow 25 to 30 minutes. From north Cobourg it is closer to 20 minutes. About as simple a route as gets, one road for most of the trip.' },
       { question: 'Does HBW service boats that live on Lake Ontario, not Rice Lake?', answer: 'Yes. The boat doesn\'t need to live on Rice Lake for us to service it. Cobourg customers trailer in for service all season. The 25-minute drive each way is short enough that a same-day visit works for routine jobs. For engine repairs we only service Mercury and Mercruiser.' },
       { question: 'Does HBW offer pickup or delivery for Cobourg customers?', answer: 'No. HBW does not offer pickup or delivery. Customers bring the boat to us. We have trailer parking on site for drop-offs.' },
@@ -32256,7 +32256,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
-    keywords: ['mercury dealer port hope', 'port hope mercury outboard', 'ganaraska mercury dealer', 'northumberland mercury platinum'],
+    keywords: ['mercury dealer port hope', 'port hope mercury outboard', 'ganaraska mercury dealer', 'northumberland mercury premier'],
     faqs: [
       { question: 'Is there a Mercury Premier dealer in Port Hope?', answer: 'Not within town limits. Harris Boat Works in Gores Landing is the closest Mercury Premier Dealer for Port Hope, approximately 30 minutes north via County Road 28 to County Road 18 east. For most Port Hope addresses we are the nearest Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.' },
       { question: 'How long is the drive from Port Hope to HBW?', answer: 'About 30 minutes outside rush hour. County Road 28 north from Port Hope through Garden Hill, then County Road 18 east into Gores Landing. Mostly rural county road, with the last 15 minutes through Rice Lake country. From the Port Hope waterfront, allow the full 30 minutes; from the Highway 401 area, slightly shorter.' },
@@ -32403,7 +32403,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '6 min read',
-    keywords: ['mercury dealer lindsay', 'kawartha lakes mercury', 'lindsay mercury platinum', 'sturgeon lake mercury dealer'],
+    keywords: ['mercury dealer lindsay', 'kawartha lakes mercury', 'lindsay mercury premier', 'sturgeon lake mercury dealer'],
     faqs: [
       { question: 'Is there a Mercury Premier dealer in Lindsay?', answer: 'Not at full repower capacity within town. Harris Boat Works is a Mercury Marine Premier Dealer approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south to Gores Landing on Rice Lake. For Kawartha Lakes boaters wanting Premier-tier service, HBW is the closest option. Family-owned since 1947, Mercury dealer since 1965.' },
       { question: 'Is HBW worth the 45-minute drive for routine service?', answer: 'For routine oil changes and basic seasonal work, maybe not. For a major repower, a complex warranty case, or full SmartCraft Premier-tier diagnostics, the dealer tier matters more than the drive time. Many Lindsay customers also drop the boat off before a Trent-Severn cruise so it starts the trip in known-good condition.' },
@@ -32548,7 +32548,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
     readTime: '5 min read',
-    keywords: ['mercury dealer northumberland county', 'northumberland mercury platinum', 'rice lake mercury dealer', 'trent system mercury'],
+    keywords: ['mercury dealer northumberland county', 'northumberland mercury premier', 'rice lake mercury dealer', 'trent system mercury'],
     faqs: [
       { question: 'Who is the Mercury dealer for Northumberland County?', answer: 'Harris Boat Works in Gores Landing is the Mercury Marine Premier Dealer serving Northumberland County. Family-owned since 1947, Mercury dealer since 1965. We are located on Rice Lake within the county itself, which means for residents of Cobourg, Port Hope, Hastings, Brighton, Colborne, Campbellford, and Trent Hills, we are not the closer option, we are the local Mercury dealer.' },
       { question: 'How far is HBW from each Northumberland community?', answer: 'Cobourg is about 25 minutes via County Road 18 south. Port Hope is 30 minutes via County Roads 18 and 28. Hastings is 25 minutes via County Road 9 east across the Trent. Campbellford is 35 minutes. Colborne is 35 minutes via Highway 401. Trent Hills is 30 minutes. Brighton is the furthest at about 50 minutes via the 401 east to County Road 64.' },

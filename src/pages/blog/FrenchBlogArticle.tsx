@@ -130,7 +130,7 @@ export default function FrenchBlogArticle() {
           </div>
 
           <h2>Ce que veut dire « concessionnaire Mercury Premier »</h2>
-          <p>Le réseau de concessionnaires Mercury Marine est divisé en niveaux. Le statut <strong>Platinum</strong> est le plus élevé.</p>
+          <p>Le réseau de concessionnaires Mercury Marine est divisé en niveaux. Le statut <strong>Premier</strong> est le plus élevé.</p>
           <p><strong>Accès prioritaire aux pièces.</strong> Un concessionnaire Premier a un accès privilégié à l'inventaire Mercury. Moins d'attente, moins de délais sur l'eau.</p>
           <p><strong>Techniciens certifiés Mercury.</strong> Notre atelier est staffé de mécaniciens qui ont suivi la formation Mercury officielle.</p>
           <p><strong>Garanties honorées sans friction.</strong> Votre moteur Mercury est sous garantie? Un concessionnaire Premier traite les réclamations directement avec Mercury.</p>

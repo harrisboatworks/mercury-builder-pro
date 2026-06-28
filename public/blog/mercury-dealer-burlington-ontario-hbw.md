@@ -47,7 +47,7 @@ The customers who find this meaningful are the ones who've already done the rese
 
 ## Mercury Premier, Not All Dealers Are the Same
 
-Mercury authorizes dealers at different tiers. Platinum is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Premier dealer and a lower-tier dealer can show up in resolution time and technical depth.
+Mercury authorizes dealers at different tiers. Premier is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Premier dealer and a lower-tier dealer can show up in resolution time and technical depth.
 
 Burlington has Mercury dealers. Not all of them are Platinum. That's worth knowing.
 

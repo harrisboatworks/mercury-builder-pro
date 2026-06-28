@@ -12,7 +12,7 @@ description: "Harris Boat Works is the closest Mercury Premier dealer for Port H
 category: "Dealer Locations"
 date_published: 2026-05-17
 date_modified: 2026-06-09
-keywords: ["mercury dealer port hope","port hope mercury outboard","ganaraska mercury dealer","northumberland mercury platinum"]
+keywords: ["mercury dealer port hope","port hope mercury outboard","ganaraska mercury dealer","northumberland mercury premier"]
 author: Harris Boat Works
 content_type: blog_article
 ---

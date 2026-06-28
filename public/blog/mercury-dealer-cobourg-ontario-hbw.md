@@ -120,7 +120,7 @@ For a motor purchase conversation, call: 905-342-2153.
 
 ### Is there a Mercury dealer in Cobourg?
 
-Not within town limits at the Platinum tier. Harris Boat Works in Gores Landing is the Mercury Premier Dealer for Cobourg, approximately 25 minutes north via County Road 18. For most Cobourg addresses we are the nearest Mercury Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.
+Not within town limits at the Premier tier. Harris Boat Works in Gores Landing is the Mercury Premier Dealer for Cobourg, approximately 25 minutes north via County Road 18. For most Cobourg addresses we are the nearest Mercury Premier dealer in any direction. Family-owned since 1947, Mercury dealer since 1965.
 
 ### How long is the drive from Cobourg to HBW?
 
