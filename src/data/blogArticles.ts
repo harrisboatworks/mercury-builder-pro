@@ -8150,7 +8150,7 @@ Check your specific lake's regulations.
 ### For Electric-Only Lakes
 
 **Electric Options**:
-- Mercury Avator electric outboards (7.5e to 110e available)
+- Mercury Avator electric outboards (7.5e to 110e, build-to-order, not stocked on the floor)
 - Third-party electric motors
 - Trolling motors for small craft
 
@@ -11067,7 +11067,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     { question: 'What is the best Mercury motor for a fishing boat on Rice Lake?', answer: 'For most 14 to 18 ft fishing boats on Rice Lake, a Mercury FourStroke in the 40 to 115 HP range is the right fit. Adding a 9.9 HP ProKicker for dedicated trolling is a popular setup.' },
     { question: 'What is the difference between Mercury FourStroke and Mercury Pro XS?', answer: 'FourStroke is tuned for efficiency, smooth cruise, and versatility. Pro XS is tuned for performance: faster hole shot, higher top-end RPM, stronger acceleration. For most Ontario cottage and casual fishing use, FourStroke is the better all-around fit.' },
     { question: 'Is the Mercury Verado relevant for Ontario inland boating?', answer: 'For most Ontario inland lakes (Rice Lake, Kawarthas, Lake Simcoe), no. Verado is engineered for offshore applications. For typical inland fishing and family boats, a FourStroke up to 300 HP handles the job.' },
-    { question: 'What Mercury motors does Harris Boat Works stock for 2026?', answer: 'We stock and order the full FourStroke range, Pro XS performance motors, SeaPro commercial motors, and Mercury Avator electric outboards. Verado is special-order only.' },
+    { question: 'What Mercury motors does Harris Boat Works stock for 2026?', answer: 'We stock and order the full FourStroke range, Pro XS performance motors, and SeaPro commercial motors. Verado is special-order only, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor.' },
     { question: 'What is the best Mercury outboard for trolling walleye on Rice Lake?', answer: 'A main motor in the 60 to 115 HP FourStroke range paired with a dedicated Mercury ProKicker 9.9 HP. The ProKicker is purpose-built for low-RPM trolling.' },
     { question: 'How do I choose the right Mercury for my Ontario boat?', answer: 'Start with your hull capacity plate maximum HP. Then consider your primary use. For most Ontario fishing and family boats, the answer lands in the 60 to 115 HP FourStroke range.' },
   ],
@@ -20971,9 +20971,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Mercury dealer since 1965 and a Mercury Marine Platinum Dealer for most of the modern era. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
+> **Quick answer:** Harris Boat Works has been on the same Rice Lake dock since 1947, three generations of the same family. We've been a Mercury dealer since 1965 and are a current Mercury Platinum Dealer. The trust signal isn't the founding year alone, it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
 
-The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965**, most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
+The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965** and are a current Mercury Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
 
 We don't lead with this often. The day-to-day work (selling Mercurys, doing repowers, storing boats, running the rental fleet) feels too much like just doing the job to merit a lot of "look at us" content. But occasionally a customer asks why they should trust HBW with a $25,000 repower, a season's storage, or a recurring service relationship. **The answer is partly the technical work. The other part is that we've been here long enough to know where the bodies are buried.**
 
@@ -34090,7 +34090,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
     ],
     content: `*Last reviewed: 2026-05-25*
 
-> **Quick answer:** Repower wins when your hull is sound, the boat fits your family, and the math works. A typical Mercury repower runs $11,000 to $40,000 CAD installed (2026 ranges), versus $40,000 to $100,000-plus for a comparable new boat. Buying new wins when your transom is rotting, the hull is dated for how you use the water now, or you simply wanted a different boat anyway. There are also hidden costs of new: trailer, taxes on the whole package, insurance, storage fit, dock fit. We have been a Mercury Platinum Dealer since 1965 and we will tell you straight which side of the line your boat falls on. Pickup at Gores Landing after a water test on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
+> **Quick answer:** Repower wins when your hull is sound, the boat fits your family, and the math works. A typical Mercury repower runs $11,000 to $40,000 CAD installed (2026 ranges), versus $40,000 to $100,000-plus for a comparable new boat. Buying new wins when your transom is rotting, the hull is dated for how you use the water now, or you simply wanted a different boat anyway. There are also hidden costs of new: trailer, taxes on the whole package, insurance, storage fit, dock fit. We've been a Mercury dealer since 1965 and are a Mercury Platinum Dealer, and we will tell you straight which side of the line your boat falls on. Pickup at Gores Landing after a water test on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
 
 ![The 5-Check Repower Eligibility Test: if all five are true, repowering wins](/lovable-uploads/repower-eligibility-5-check-card.png)
 
