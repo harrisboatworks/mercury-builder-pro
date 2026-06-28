@@ -47,7 +47,7 @@ That affects motor selection in three specific ways:
 
 **Bigger kicker.** The 9.9 ProKicker that handles Rice Lake walleye trolling is undersized for Lake Ontario salmon spreads. The drag from multiple downriggers, planer boards, and dipsy divers requires the 15 HP ProKicker for proper speed control.
 
-**More reliable motor selection.** Long offshore runs, multi-hour trolling days, and weather windows that can close faster than anticipated put a premium on motor reliability. This is where Mercury's service network, parts availability, and Mercury Platinum dealer support matter.
+**More reliable motor selection.** Long offshore runs, multi-hour trolling days, and weather windows that can close faster than anticipated put a premium on motor reliability. This is where Mercury's service network, parts availability, and Mercury Premier dealer support matter.
 
 ---
 
@@ -145,7 +145,7 @@ If your boat is slip-stored in a Lake Ontario marina and you need engine service
 ## Related guides
 
 - [Recommended Mercury Outboard Setup for Lake Simcoe Walleye Fishing (2026)](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing): A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the.
-- [Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)](/blog/lake-ontario-salmon-mercury-setup-guide-2026): Lake Ontario salmon trolling setup from an Ontario Mercury Platinum dealer. Real numbers on alternator.
+- [Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)](/blog/lake-ontario-salmon-mercury-setup-guide-2026): Lake Ontario salmon trolling setup from an Ontario Mercury Premier dealer. Real numbers on alternator.
 - [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook): An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the.
 - [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
 
@@ -164,7 +164,7 @@ Configure your motor, V8 FourStroke, Pro XS, or ProKicker, at **[mercuryrepower.
 Questions before you configure? Call **905-342-2153**.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-Harris Boat Works | Mercury Marine Platinum Dealer | Family-owned since 1947 | Mercury dealer since 1965 | Gores Landing, ON
+Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Mercury dealer since 1965 | Gores Landing, ON
 
 ## FAQs
 

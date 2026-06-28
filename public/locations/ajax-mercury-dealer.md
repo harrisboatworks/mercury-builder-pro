@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Mercury Dealer for Ajax, Harris Boat Works (Gores Landing, ON)
-For Ajax boaters, Harris Boat Works is the closest Mercury Platinum Dealer with live CAD pricing and a transparent build process, about 75 minutes east on the 401, family-owned since 1947.
+For Ajax boaters, Harris Boat Works is the closest Mercury Premier Dealer with live CAD pricing and a transparent build process, about 75 minutes east on the 401, family-owned since 1947.
 ## Factbox
 - **Region:** Ajax
 - **Drive time:** about 75 minutes east of Ajax via Hwy 401
@@ -42,7 +42,7 @@ For Ajax boaters, Harris Boat Works is the closest Mercury Platinum Dealer with 
 - 150 HP family
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer (top customer-satisfaction tier)
+- Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup

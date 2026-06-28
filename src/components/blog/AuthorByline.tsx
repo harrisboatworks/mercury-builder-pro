@@ -9,7 +9,7 @@ interface AuthorBylineProps {
 }
 
 const JAY_CREDENTIALS =
-  'Owner, Harris Boat Works · 3rd-generation family marina since 1947 · Mercury Marine Platinum Dealer';
+  'Owner, Harris Boat Works · 3rd-generation family marina since 1947 · Mercury Marine Premier Dealer';
 
 /**
  * Standardized author byline for blog articles.

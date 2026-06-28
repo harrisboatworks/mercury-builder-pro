@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Mercury Outboard Pickup for Durham Region, Harris Boat Works
-Durham Region boaters, Whitby, Ajax, Pickering, Oshawa, Bowmanville, Courtice, use Harris Boat Works as their Mercury Platinum Dealer. Real CAD pricing online, pickup at Gores Landing, no mobile service or delivery.
+Durham Region boaters, Whitby, Ajax, Pickering, Oshawa, Bowmanville, Courtice, use Harris Boat Works as their Mercury Premier Dealer. Real CAD pricing online, pickup at Gores Landing, no mobile service or delivery.
 ## Factbox
 - **Region:** Durham Region
 - **Drive time:** about 50–80 minutes east of Durham communities via Hwy 401
@@ -42,7 +42,7 @@ Durham Region boaters, Whitby, Ajax, Pickering, Oshawa, Bowmanville, Courtice, u
 - 150–200 HP Pro XS
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer (top customer-satisfaction tier)
+- Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup

@@ -301,7 +301,7 @@ export default function MotorPage() {
     modelNo ? `, model ${modelNo}` : ''
   }). ${price ? `${formatCAD(price)} CAD` : 'Contact for pricing'} · ${
     inStock ? 'In stock' : 'Special order'
-  } · Pickup at Gores Landing, ON · Mercury Marine Platinum Dealer · Mercury dealer since 1965.`;
+  } · Pickup at Gores Landing, ON · Mercury Marine Premier Dealer · Mercury dealer since 1965.`;
 
   return (
     <>
@@ -339,7 +339,7 @@ export default function MotorPage() {
           <header className="mb-6 rounded-2xl border border-border bg-card p-5 md:p-6">
             <div className="flex items-center gap-2 text-xs font-medium text-primary mb-2">
               <Award className="h-3.5 w-3.5" />
-              <span>Mercury Marine Platinum Dealer · Gores Landing, ON</span>
+              <span>Mercury Marine Premier Dealer · Gores Landing, ON</span>
             </div>
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <h1 className="text-3xl md:text-4xl font-bold leading-tight">{display}</h1>
@@ -430,7 +430,7 @@ export default function MotorPage() {
             <h2>About the {display}</h2>
             <p>
               The {display} is a Mercury {family} outboard rated at {hp} HP, sold and serviced by Harris Boat Works on Rice
-              Lake, Ontario, Mercury Marine Platinum Dealer · Mercury dealer since 1965 and family-owned since 1947. All Mercury motors
+              Lake, Ontario, Mercury Marine Premier Dealer · Mercury dealer since 1965 and family-owned since 1947. All Mercury motors
               are sold with full factory warranty, registered to you on pickup at our Gores Landing location. We do not
               ship outboards.
             </p>
@@ -449,7 +449,7 @@ export default function MotorPage() {
                 The Mercury 60 ELPT Command Thrust FourStroke is our go-to repower for Ontario aluminum fishing boats
                 and lighter pontoons in the 16–18 ft range. The Command Thrust gearcase swings a bigger prop for more
                 hole-shot and load-carrying ability, exactly what Rice Lake, Kawartha, and Bay of Quinte boats need.
-                Real CAD pricing, in stock at Harris Boat Works, pickup only at Gores Landing. Mercury Platinum Dealer
+                Real CAD pricing, in stock at Harris Boat Works, pickup only at Gores Landing. Mercury Premier Dealer
                 since 1965.
               </p>
             )}
@@ -457,7 +457,7 @@ export default function MotorPage() {
               <p>
                 The Mercury 150 Pro XS is the tournament-grade choice for Ontario bass boats and high-performance
                 fibreglass, best-in-class hole-shot, top-end, and lightweight 4-cylinder design. Sold with live CAD
-                pricing and full factory warranty by Harris Boat Works on Rice Lake, Mercury Marine Platinum Dealer
+                pricing and full factory warranty by Harris Boat Works on Rice Lake, Mercury Marine Premier Dealer
                 since 1965, family-owned since 1947. Pickup only at Gores Landing, Ontario; we do not ship outboards.
               </p>
             )}
@@ -600,7 +600,7 @@ function RelatedMotorsAndCTA({ motor, display }: { motor: MotorRow; display: str
             Repowering on Rice Lake?
           </h3>
           <p className="text-sm text-muted-foreground mb-4">
-            We're 90 minutes east of Toronto via the 401, 35 minutes south of Peterborough, Mercury Marine Platinum
+            We're 90 minutes east of Toronto via the 401, 35 minutes south of Peterborough, Mercury Marine Premier
             Dealer since 1965, family-owned in Gores Landing since 1947. Pickup only.
           </p>
           <Button asChild variant="outline" className="mt-auto w-full">

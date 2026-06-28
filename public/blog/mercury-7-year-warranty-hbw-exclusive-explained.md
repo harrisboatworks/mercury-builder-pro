@@ -119,7 +119,7 @@ We register every Mercury at delivery, on the spot. You do not need to file anyt
 
 1. **Call us at (905) 342-2153** or any authorized Mercury dealer in Canada.
 2. **Bring the boat and motor in for diagnosis.** Mercury requires the dealer to confirm the failure mode before approving the claim.
-3. **We submit the claim directly to Mercury.** Because we are a Mercury Platinum Dealer, we handle the entire process in-house: parts, labour, claim paperwork. You do not pay out of pocket and wait for reimbursement.
+3. **We submit the claim directly to Mercury.** Because we are a Mercury Premier Dealer, we handle the entire process in-house: parts, labour, claim paperwork. You do not pay out of pocket and wait for reimbursement.
 
 ## How does it transfer if I sell the boat?
 

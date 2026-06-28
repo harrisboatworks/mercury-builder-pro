@@ -156,7 +156,7 @@ For HBW repowers, standard stock conversations usually start with FourStroke and
 Call 905-342-2153 with your serial number, or email info@harrisboatworks.ca. 
 HBW confirms eligibility, quotes the installation, and books the visit. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
-Mercury Platinum dealer. Est. 1947.
+Mercury Premier dealer. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---

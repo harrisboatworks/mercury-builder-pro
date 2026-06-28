@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Mercury Repower in Gores Landing, Ontario
-Harris Boat Works is in Gores Landing, ON, at 5369 Harris Boat Works Rd on the south shore of Rice Lake, coordinates 44.1147, -78.2564. We're the village marina, family-owned since 1947 and a Mercury Platinum Dealer, selling Mercury since 1965. For most Gores Landing customers the trip is a walk, a five-minute truck ride, or no drive at all if the boat is already at our dock. Every Mercury we rig is water-tested on Rice Lake before pickup. No shipping. Typical full repower: $11,000–$40,000 CAD.
+Harris Boat Works is in Gores Landing, ON, at 5369 Harris Boat Works Rd on the south shore of Rice Lake, coordinates 44.1147, -78.2564. We're the village marina, family-owned since 1947 and a Mercury Premier Dealer, selling Mercury since 1965. For most Gores Landing customers the trip is a walk, a five-minute truck ride, or no drive at all if the boat is already at our dock. Every Mercury we rig is water-tested on Rice Lake before pickup. No shipping. Typical full repower: $11,000–$40,000 CAD.
 ## Factbox
 - **Region:** Gores Landing
 - **Drive time:** local to Gores Landing, under 5 minutes or walking
@@ -41,14 +41,14 @@ Harris Boat Works is in Gores Landing, ON, at 5369 Harris Boat Works Rd on the s
 - 150–225 HP Pro XS
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer
+- Mercury Marine Premier Dealer
 - Authorized Mercury dealer since 1965
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links
 - [Pricing Reference](https://www.mercuryrepower.ca/pricing-reference)
 - [Rice Lake Mercury Repower](https://www.mercuryrepower.ca/locations/rice-lake-mercury-repower)
 - [Bewdley](https://www.mercuryrepower.ca/locations/bewdley)
-- [Harris Boat Works in Gores Landing, Mercury Platinum Dealer, selling Mercury since 1965](https://www.mercuryrepower.cahttps://www.harrisboatworks.ca)
+- [Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965](https://www.mercuryrepower.cahttps://www.harrisboatworks.ca)
 ## Related case studies
 _No matching case studies recorded for this region yet._
 ## FAQs
@@ -62,7 +62,7 @@ No. We're pickup-only at the shop, even for local customers. The motor is rigged
 
 ### How long has Harris Boat Works been in Gores Landing?
 
-The shop has been family-owned since 1947, three generations. We have sold Mercury since 1965 and hold Mercury's Platinum Dealer tier today.
+The shop has been family-owned since 1947, three generations. We have sold Mercury since 1965 and hold Mercury's Premier Dealer tier today.
 
 ### Can I bring my boat to you by water from somewhere else in the village?
 

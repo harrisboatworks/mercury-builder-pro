@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake"
-description: "A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't, and the math on driv..."
+description: "A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't, and the math on driv..."
 category: "Service"
 date_published: 2026-05-15
 date_modified: 2026-02-06
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake
 
-> A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't, and the math on driv...
+> A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't, and the math on driv...
 
 **Category:** Service  
 **Published:** 2026-05-15  
@@ -49,9 +49,9 @@ What's actually available to a GTA boater needing Mercury service:
 
 **2. General-purpose marinas.** Multi-brand service shops. Some excellent, some marginal. Mercury isn't their primary specialty in most cases. Pros: nearby. Cons: variable Mercury expertise, may not have G3 diagnostic software, sometimes long parts delays for Mercury-specific items.
 
-**3. Authorized Mercury dealers.** A specific subset, actually trained by Mercury, registered to do warranty work, factory tools on hand. **Tier varies, basic, gold, Platinum.** Most GTA dealers are basic-to-gold tier; few are Platinum.
+**3. Authorized Mercury dealers.** A specific subset, actually trained by Mercury, registered to do warranty work, factory tools on hand. **Tier varies, basic, gold, Platinum.** Most GTA dealers are basic-to-gold tier; few are Premier.
 
-**4. Mercury Platinum dealers.** Top tier. Factory-trained on every Mercury family, full G3 diagnostic kit, stocked parts, demonstrated CSI scores, eligible for the most complex warranty work. We're one. There are a handful in Ontario.
+**4. Mercury Premier dealers.** Top tier. Factory-trained on every Mercury family, full G3 diagnostic kit, stocked parts, demonstrated CSI scores, eligible for the most complex warranty work. We're one. There are a handful in Ontario.
 
 For routine work (oil change, prop replacement, impeller change), tiers 1-2 are usually fine. **For anything diagnostic, electronic, warranty-eligible, or repower-related, Platinum is meaningfully better.** That's the calibration.
 
@@ -118,7 +118,7 @@ For a complex problem (intermittent stalls, occasional fault codes, weird perfor
 
 ### 2. Factory-trained techs (not just trained, factory-trained)
 
-Mercury runs ongoing certification programs for dealer techs. To stay Platinum, we have to keep techs current on the latest Mercury release (Avator, V12 Verado, current SmartCraft software, etc.).
+Mercury runs ongoing certification programs for dealer techs. To stay Premier, we have to keep techs current on the latest Mercury release (Avator, V12 Verado, current SmartCraft software, etc.).
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -215,7 +215,7 @@ No. All work happens at our shop in Gores Landing. We don't run service trucks t
 
 ### What's a fair price for a Mercury 150 HP annual service in the GTA?
 
-$500-$700 all-in (parts + labour + diagnostic) is typical at a Mercury Platinum dealer. We quote at the lower end of this range. Some shops charge more, some less; the value diff is in the diagnostic depth and tech training.
+$500-$700 all-in (parts + labour + diagnostic) is typical at a Mercury Premier dealer. We quote at the lower end of this range. Some shops charge more, some less; the value diff is in the diagnostic depth and tech training.
 
 ### Can I bring a non-Mercury (Yamaha, Honda) for service?
 

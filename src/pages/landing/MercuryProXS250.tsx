@@ -50,13 +50,13 @@ export default function MercuryProXS250() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
               <Award className="h-3.5 w-3.5" />
-              Mercury Platinum Dealer, Rice Lake
+              Mercury Premier Dealer, Rice Lake
             </div>
             <h1 className="text-3xl md:text-5xl font-semibold text-foreground mb-4 leading-tight">
               Mercury Pro XS 250 Price in Canada: From $34,502 CAD
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at <strong className="text-foreground">$34,502 CAD</strong> at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake. Four configurations, the same number our sales desk sees, and 7-year warranty coverage on every one.
+              Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at <strong className="text-foreground">$34,502 CAD</strong> at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees, and 7-year warranty coverage on every one.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg">
@@ -185,7 +185,7 @@ export default function MercuryProXS250() {
           </h2>
           <div className="text-muted-foreground leading-relaxed space-y-4">
             <p>
-              We have been a Mercury dealer since 1965 and hold Mercury&rsquo;s Platinum tier today. Third-generation family business, on the same Rice Lake dock since 1947. We sell the motor, we rig it, we water-test it, and we service it every season after.
+              We have been a Mercury dealer since 1965 and hold Mercury&rsquo;s Premier tier today. Third-generation family business, on the same Rice Lake dock since 1947. We sell the motor, we rig it, we water-test it, and we service it every season after.
             </p>
             <p>
               And the price you see here is the price the sales desk sees. No phone tag, no &ldquo;call for quote,&rdquo; no number inflated so it can be discounted back. Most dealers will not put a price online. We do.

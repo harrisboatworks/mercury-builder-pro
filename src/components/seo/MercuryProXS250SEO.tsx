@@ -107,7 +107,7 @@ export function MercuryProXS250SEO() {
     '@type': 'Product',
     name: 'Mercury Pro XS 250 Outboard Motor',
     description:
-      'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. 7-year warranty coverage, sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
+      'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. 7-year warranty coverage, sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
     brand: { '@type': 'Brand', name: 'Mercury Marine' },
     category: 'Outboard Motor',
     image: PRO_XS_250_HERO_IMAGE,
@@ -146,14 +146,14 @@ export function MercuryProXS250SEO() {
       <title>Mercury Pro XS 250 Price Canada | From $34,502 CAD | Harris Boat Works</title>
       <meta
         name="description"
-        content="Mercury Pro XS 250 from $34,502 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, 7-year warranty coverage, in stock. Build your quote in 2 minutes."
+        content="Mercury Pro XS 250 from $34,502 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, 7-year warranty coverage, in stock. Build your quote in 2 minutes."
       />
       <link rel="canonical" href={CANONICAL} />
 
       <meta property="og:title" content="Mercury Pro XS 250 Price Canada | From $34,502 CAD" />
       <meta
         property="og:description"
-        content="Mercury Pro XS 250 from $34,502 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, 7-year warranty coverage, in stock."
+        content="Mercury Pro XS 250 from $34,502 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, 7-year warranty coverage, in stock."
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={CANONICAL} />

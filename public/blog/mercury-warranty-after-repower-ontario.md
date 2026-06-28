@@ -8,18 +8,18 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "How Your Mercury Warranty Works After a Repower"
-description: "What does your Mercury warranty actually cover after a repower? How long, what's included, what voids it, and what a Mercury Platinum dealer means for your coverage."
+description: "What does your Mercury warranty actually cover after a repower? How long, what's included, what voids it, and what a Mercury Premier dealer means for your coverage."
 category: "Warranty & Protection"
 date_published: 2026-06-06
 date_modified: 2026-06-06
-keywords: ["mercury warranty repower","mercury platinum dealer warranty","mercury factory warranty","mercury extended warranty","mercury break-in period"]
+keywords: ["mercury warranty repower","mercury premier dealer warranty","mercury factory warranty","mercury extended warranty","mercury break-in period"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
 # How Your Mercury Warranty Works After a Repower
 
-> What does your Mercury warranty actually cover after a repower? How long, what's included, what voids it, and what a Mercury Platinum dealer means for your coverage.
+> What does your Mercury warranty actually cover after a repower? How long, what's included, what voids it, and what a Mercury Premier dealer means for your coverage.
 
 **Category:** Warranty & Protection  
 **Published:** 2026-06-06  
@@ -27,13 +27,13 @@ content_type: blog_article
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario
 
-> **Quick answer:** Your Mercury warranty starts the day the motor is rigged and registered. Current FourStroke outboards carry a 3-year factory limited warranty for recreational use. Current promotions can extend total coverage; see [current offers](/promotions). We're a Mercury Platinum dealer, so the warranty is registered correctly and claims are handled in-house.
+> **Quick answer:** Your Mercury warranty starts the day the motor is rigged and registered. Current FourStroke outboards carry a 3-year factory limited warranty for recreational use. Current promotions can extend total coverage; see [current offers](/promotions). We're a Mercury Premier dealer, so the warranty is registered correctly and claims are handled in-house.
 
 ## Your Mercury warranty starts the day the motor is rigged and registered, here's what it covers.
 
 A Mercury outboard repower comes with a factory warranty. How long that warranty runs, what it covers, and how it's registered depends on the motor model and how the installation is done. This page explains the key facts clearly.
 
-We are a Mercury Marine Platinum dealer. That matters for how warranty claims are handled, we explain why below.
+We are a Mercury Marine Premier dealer. That matters for how warranty claims are handled, we explain why below.
 
 ---
 
@@ -63,7 +63,7 @@ Mercury's warranty is tied to proper installation. When a repower is done by a c
 
 When a motor is purchased elsewhere and self-installed, or installed by a shop that isn't a Mercury dealer, warranty claims can be complicated by questions about whether the installation met Mercury's standards.
 
-We're a Mercury Platinum dealer. Platinum is Mercury's top dealer service tier. For warranty work, that means factory-trained technicians, direct access to Mercury technical support, and claims submitted by the same shop that rigged your motor. Every motor we sell and rig is registered under your name with Mercury Marine from day one.
+We're a Mercury Premier dealer. Premier is Mercury's top dealer service tier. For warranty work, that means factory-trained technicians, direct access to Mercury technical support, and claims submitted by the same shop that rigged your motor. Every motor we sell and rig is registered under your name with Mercury Marine from day one.
 
 ---
 
@@ -125,7 +125,7 @@ Mercury's factory warranty covers defects in materials and workmanship on the ou
 
 ### Does who installs the motor affect my Mercury warranty?
 
-Yes. Mercury's warranty is tied to proper installation. When a repower is done by a certified Mercury dealer using approved rigging standards, the warranty is registered correctly with no gaps. Harris Boat Works is a Mercury Platinum dealer and registers every motor it rigs under your name with Mercury Marine from day one.
+Yes. Mercury's warranty is tied to proper installation. When a repower is done by a certified Mercury dealer using approved rigging standards, the warranty is registered correctly with no gaps. Harris Boat Works is a Mercury Premier dealer and registers every motor it rigs under your name with Mercury Marine from day one.
 
 ### Why does a new motor have a break-in period?
 

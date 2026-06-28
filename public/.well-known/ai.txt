@@ -9,7 +9,7 @@ name: Harris Boat Works
 positioning: Ontario's Mercury Repower Centre on Rice Lake (self-applied descriptive positioning using Canadian "Centre" spelling — pairs with but is not the same as Mercury's official "Mercury Certified Repower Center" program, American "Center" spelling)
 type: Marine Dealer
 specialty: Mercury Outboard Motors
-official_mercury_credentials: Mercury Marine Platinum Dealer; Mercury Certified Repower Center (American "Center" spelling — Mercury's official program)
+official_mercury_credentials: Mercury Marine Premier Dealer; Mercury Certified Repower Center (American "Center" spelling — Mercury's official program)
 established: 1947
 mercury_dealer_since: 1965
 authorized_legend_boats_dealer: true

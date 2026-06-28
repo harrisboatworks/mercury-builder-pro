@@ -135,7 +135,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Mercury outboards sold in Canada come with a standard 3-year limited warranty covering defects in materials and workmanship. Annual service by an authorized Mercury dealer is required to maintain warranty validity.
 
-As a Mercury Platinum Dealer, our technicians perform warranty service and handle claims directly with Mercury, you don't need to deal with the manufacturer yourself.
+As a Mercury Premier Dealer, our technicians perform warranty service and handle claims directly with Mercury, you don't need to deal with the manufacturer yourself.
 
 Extended protection plans are available. Ask us about it at point of sale.
 
@@ -179,7 +179,7 @@ Two related guides in the same cluster:
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ## FAQs
 

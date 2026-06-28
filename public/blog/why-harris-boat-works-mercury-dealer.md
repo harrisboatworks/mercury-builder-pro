@@ -30,7 +30,7 @@ content_type: blog_article
 # Why Harris Boat Works Is the Mercury Dealer Rice Lake Boaters Come Back To
 
 ## Quick answer
-Harris Boat Works has been selling and servicing Mercury outboards since 1965, three generations of one family on the same dock in Gores Landing, Ontario. We are a Mercury Platinum dealer today, the highest dealer tier Mercury awards. We sell Mercury exclusively, post real installed pricing at mercuryrepower.ca, and do the kind of honest boat-to-motor matching that takes local lake knowledge. If you want straight answers and a dealer who will still be here when you need service five years from now, that is the short case for us.
+Harris Boat Works has been selling and servicing Mercury outboards since 1965, three generations of one family on the same dock in Gores Landing, Ontario. We are a Mercury Premier dealer today, the highest dealer tier Mercury awards. We sell Mercury exclusively, post real installed pricing at mercuryrepower.ca, and do the kind of honest boat-to-motor matching that takes local lake knowledge. If you want straight answers and a dealer who will still be here when you need service five years from now, that is the short case for us.
 
 ## Why this question comes up
 
@@ -38,13 +38,13 @@ Most Ontario boaters have had at least one bad dealer experience. You call for a
 
 We get it. We built the quote configurator at mercuryrepower.ca specifically because that experience is frustrating and it does not need to be that way. But beyond the pricing transparency, people ask why HBW specifically, and that is a fair question worth a real answer.
 
-## What "Mercury Platinum dealer" actually means
+## What "Mercury Premier dealer" actually means
 
-Mercury does not hand out Platinum status as a marketing favour. It is the highest tier in their dealer rating system, awarded based on sales volume, service quality, technician certification levels, customer satisfaction, and operational standards.
+Mercury does not hand out Premier status as a marketing favour. It is the highest tier in their dealer rating system, awarded based on sales volume, service quality, technician certification levels, customer satisfaction, and operational standards.
 
 What it means in practice for you:
 
-| Platinum benefit | What it does for you |
+| Premier benefit | What it does for you |
 |---|---|
 | Priority parts allocation | Faster repair turnaround during the busy season |
 | Earlier access to new model inventory | You get first pick before allocation tightens |
@@ -52,7 +52,7 @@ What it means in practice for you:
 | Higher-level technician certification | Our techs train at the top Mercury tier |
 | Faster warranty claim processing | Less waiting when something needs to be made right under warranty |
 
-Most multi-brand dealers do not reach Platinum because it is hard to maintain the standards across multiple product lines at once. Exclusive Mercury focus is a big part of why we hold it.
+Most multi-brand dealers do not reach Premier because it is hard to maintain the standards across multiple product lines at once. Exclusive Mercury focus is a big part of why we hold it.
 
 ## Three generations. One brand.
 
@@ -154,9 +154,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 Since 1965. The marina itself was founded in 1947. Three generations of continuous family ownership in Gores Landing on Rice Lake.
 
-### What does Mercury Platinum dealer status mean?
+### What does Mercury Premier dealer status mean?
 
-Platinum is the highest tier in Mercury dealer rating system. It is based on volume, service quality, technician certification, customer satisfaction, and operational standards. It gives us priority parts access, higher-level technical support, and faster warranty processing.
+Premier is the highest tier in Mercury dealer rating system. It is based on volume, service quality, technician certification, customer satisfaction, and operational standards. It gives us priority parts access, higher-level technical support, and faster warranty processing.
 
 ### Why does HBW only sell Mercury?
 

@@ -19,7 +19,7 @@ price_cad: 1298
 # 2.5MH FourStroke
 
 Mercury FourStroke 2.5 HP outboard motor (model 1F02201KK).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

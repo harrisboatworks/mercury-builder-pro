@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Northumberland County Mercury Repower
-Harris Boat Works is the Mercury repower shop inside Northumberland County. We sit in Gores Landing, ON, on the south shore of Rice Lake, at 5369 Harris Boat Works Rd. Every Northumberland resident (Cobourg, Port Hope, Hastings, Brighton, Bewdley, Gores Landing) is within a 30-minute drive. We are a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Customers drive to us for pickup; we do not ship or deliver. Every Mercury we rig is water-tested on Rice Lake. Typical full repower: $11,000–$40,000 CAD.
+Harris Boat Works is the Mercury repower shop inside Northumberland County. We sit in Gores Landing, ON, on the south shore of Rice Lake, at 5369 Harris Boat Works Rd. Every Northumberland resident (Cobourg, Port Hope, Hastings, Brighton, Bewdley, Gores Landing) is within a 30-minute drive. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Customers drive to us for pickup; we do not ship or deliver. Every Mercury we rig is water-tested on Rice Lake. Typical full repower: $11,000–$40,000 CAD.
 ## Factbox
 - **Region:** Northumberland County
 - **Drive time:** all county residents within ~30 minutes of Gores Landing
@@ -41,7 +41,7 @@ Harris Boat Works is the Mercury repower shop inside Northumberland County. We s
 - 150–225 HP Pro XS
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer
+- Mercury Marine Premier Dealer
 - Authorized Mercury dealer since 1965
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links

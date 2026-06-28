@@ -33,7 +33,7 @@ export function MercuryPontoonOutboardsSEO() {
         "@id": `${SITE_URL}/mercury-pontoon-outboards#webpage`,
         "url": `${SITE_URL}/mercury-pontoon-outboards`,
         "name": "Mercury Outboards for Pontoon Boats, Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works",
-        "description": "Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Platinum Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.",
+        "description": "Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Premier Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -81,7 +81,7 @@ export function MercuryPontoonOutboardsSEO() {
       <title>Mercury Outboards for Pontoon Boats, Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works</title>
       <meta
         name="description"
-        content="Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Platinum Dealer on Rice Lake."
+        content="Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Premier Dealer on Rice Lake."
       />
       <meta
         name="keywords"
@@ -90,13 +90,13 @@ export function MercuryPontoonOutboardsSEO() {
       <link rel="canonical" href={`${SITE_URL}/mercury-pontoon-outboards`} />
 
       <meta property="og:title" content="Mercury Outboards for Pontoon Boats, Command Thrust & High-Thrust Options" />
-      <meta property="og:description" content="Mercury Command Thrust 40–150 HP for pontoon boats. Mercury Platinum Dealer on Rice Lake." />
+      <meta property="og:description" content="Mercury Command Thrust 40–150 HP for pontoon boats. Mercury Premier Dealer on Rice Lake." />
       <meta property="og:url" content={`${SITE_URL}/mercury-pontoon-outboards`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mercury Outboards for Pontoon Boats" />
-      <meta name="twitter:description" content="Command Thrust 40–150 HP for pontoons, Mercury Platinum Dealer." />
+      <meta name="twitter:description" content="Command Thrust 40–150 HP for pontoons, Mercury Premier Dealer." />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

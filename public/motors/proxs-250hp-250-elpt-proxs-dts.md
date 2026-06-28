@@ -19,7 +19,7 @@ price_cad: 36905
 # 250 ELPT ProXS DTS
 
 Mercury ProXS 250 HP outboard motor (model 12500094A).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

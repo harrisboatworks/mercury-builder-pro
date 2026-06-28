@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Mercury Dealer for Oshawa, Harris Boat Works (Gores Landing, ON)
-For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401, Mercury Platinum Dealer, live CAD pricing online, and an itemized quote you can sanity-check before driving up.
+For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401, Mercury Premier Dealer, live CAD pricing online, and an itemized quote you can sanity-check before driving up.
 ## Factbox
 - **Region:** Oshawa
 - **Drive time:** about 60 minutes east of Oshawa via Hwy 401
@@ -42,7 +42,7 @@ For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401, Mercur
 - 150–200 HP Pro XS
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer (top customer-satisfaction tier)
+- Mercury Marine Premier Dealer (top customer-satisfaction tier)
 - Authorized Mercury dealer since 1965, Mercury is our only outboard brand
 - Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup

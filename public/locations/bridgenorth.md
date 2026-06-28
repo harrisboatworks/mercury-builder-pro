@@ -20,7 +20,7 @@ currency: CAD
 ---
 
 # Bridgenorth Mercury Repower
-Harris Boat Works is 40 minutes south of Bridgenorth in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 40 km through Peterborough. We are a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Bridgenorth sits on Chemong Lake, a strong pontoon and family-boat lake, a natural fit for Mercury FourStroke and Pro XS repowers. We rig, install, and water-test every Mercury on Rice Lake before pickup at Gores Landing. There is no shipping. Typical full repower: $11,000–$40,000 CAD.
+Harris Boat Works is 40 minutes south of Bridgenorth in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 40 km through Peterborough. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Bridgenorth sits on Chemong Lake, a strong pontoon and family-boat lake, a natural fit for Mercury FourStroke and Pro XS repowers. We rig, install, and water-test every Mercury on Rice Lake before pickup at Gores Landing. There is no shipping. Typical full repower: $11,000–$40,000 CAD.
 ## Factbox
 - **Region:** Bridgenorth
 - **Drive time:** about 40 minutes south of Bridgenorth
@@ -41,7 +41,7 @@ Harris Boat Works is 40 minutes south of Bridgenorth in Gores Landing, ON, on th
 - 150–225 HP Pro XS
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
-- Mercury Marine Platinum Dealer
+- Mercury Marine Premier Dealer
 - Authorized Mercury dealer since 1965
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links

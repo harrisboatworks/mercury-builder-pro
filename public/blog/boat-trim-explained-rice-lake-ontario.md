@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Trim Explained for Rice Lake Boaters, Without the Jargon"
-description: "How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Platinum dealer."
+description: "How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Premier dealer."
 category: "How-To"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Boat Trim Explained for Rice Lake Boaters, Without the Jargon
 
-> How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Platinum dealer.
+> How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Premier dealer.
 
 **Category:** How-To  
 **Published:** 2026-05-17  
@@ -117,7 +117,7 @@ If you'd like a structured run-through of trim on your specific boat, email info
 - [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
 - [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
 - [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake): The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and.
-- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Platinum.
+- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Premier.
 
 ## Sources
 
@@ -127,7 +127,7 @@ If you'd like a structured run-through of trim on your specific boat, email info
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

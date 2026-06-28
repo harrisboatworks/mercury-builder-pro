@@ -126,7 +126,7 @@ For about 95% of recreational customers, the motor selection page is the source 
 
 ## Related guides
 
-- [The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)](/blog/best-mercury-for-family-runabouts): A Mercury Platinum dealer's straight answer on the right Mercury for a family runabout, by boat length, by.
+- [The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)](/blog/best-mercury-for-family-runabouts): A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by.
 - [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026): All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability.
 - [What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)](/blog/total-cost-of-owning-a-boat-ontario-2026): A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage.
 - [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
@@ -177,7 +177,7 @@ Active promotional rates and package incentives are reflected in the live quote 
 
 ### Can I trust online pricing if it's published?
 
-For HBW, yes. Pricing is verified annually after Mercury's July 1 model year change. The configurator pulls live data. We're a Mercury Platinum dealer with 60 years of accountability, we don't bait-and-switch on published prices.
+For HBW, yes. Pricing is verified annually after Mercury's July 1 model year change. The configurator pulls live data. We're a Mercury Premier dealer with 60 years of accountability, we don't bait-and-switch on published prices.
 
 ### What about delivery, taxes, and trade-in?
 

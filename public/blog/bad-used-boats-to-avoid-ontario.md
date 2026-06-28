@@ -229,14 +229,14 @@ Or call us at 905-342-2153. We're at Rice Lake, Ontario (in the Kawarthas), Gore
 
 ---
 
-*Harris Boat Works. Mercury Platinum Dealer. Gores Landing, ON*
+*Harris Boat Works. Mercury Premier Dealer. Gores Landing, ON*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Related guides
 
 - [The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide](/blog/used-boat-walkaround-inspection-ontario): A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to.
-- [Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026): Mercury vs Honda outboards from an Ontario Mercury Platinum dealer. Where Honda actually wins, where Mercury.
+- [Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026): Mercury vs Honda outboards from an Ontario Mercury Premier dealer. Where Honda actually wins, where Mercury.
 - [Mercury vs Yamaha Outboards (Honest Ontario Dealer Comparison, 2026)](/blog/mercury-vs-yamaha-outboards-ontario): Mercury vs Yamaha outboards for Ontario freshwater (2026). Dealer density, parts speed, factory-rigging.
 - [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
 

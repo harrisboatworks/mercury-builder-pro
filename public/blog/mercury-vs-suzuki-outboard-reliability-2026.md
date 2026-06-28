@@ -31,7 +31,7 @@ content_type: blog_article
 
 ## Conflict-of-interest disclosure
 
-Harris Boat Works is a Mercury Marine Platinum dealer in Gores Landing, Ontario. We have been a Mercury dealer since 1965. We do not sell Suzuki and we do not service Suzuki. For engine repairs, we only service Mercury and Mercruiser.
+Harris Boat Works is a Mercury Marine Premier dealer in Gores Landing, Ontario. We have been a Mercury dealer since 1965. We do not sell Suzuki and we do not service Suzuki. For engine repairs, we only service Mercury and Mercruiser.
 
 This page reflects our honest read of the Ontario market from a Mercury dealer's perspective. The Suzuki content below comes from public information, customer-side reports we hear when prospective customers describe what they were quoted elsewhere, and observed market behaviour in the Kawartha and Rice Lake region. If you want a Suzuki dealer's view of Suzuki, ask a Suzuki dealer.
 
@@ -51,7 +51,7 @@ What we hear that actually predicts motor longevity is not the brand. It is the 
 
 The real difference between Mercury and Suzuki in Ontario is not the motor itself. It is the service network behind it.
 
-Mercury has the deepest dealer network in Ontario by a wide margin. Platinum, Premier, and authorized service dealers are concentrated through the Kawarthas, the GTA, the cottage corridors, and most provincial population centres. Parts are usually on a dealer shelf or one day away. A Mercury motor that needs warranty work in late June, the worst week of the season to be down, can usually get diagnosed and either fixed or queued within days, not weeks.
+Mercury has the deepest dealer network in Ontario by a wide margin. Premier and authorized service dealers are concentrated through the Kawarthas, the GTA, the cottage corridors, and most provincial population centres. Parts are usually on a dealer shelf or one day away. A Mercury motor that needs warranty work in late June, the worst week of the season to be down, can usually get diagnosed and either fixed or queued within days, not weeks.
 
 Suzuki's Canadian dealer footprint is smaller. In the Rice Lake and Kawarthas region specifically, finding an active Suzuki marine service dealer within a comparable proximity to HBW is not easy. That gap is not a knock on Suzuki, it is a market fact. It matters most in the moment the motor needs service, which is usually the moment you cannot afford to drive 90 minutes each way to drop it off.
 
@@ -175,7 +175,7 @@ Suzuki markets their lean-burn EFI system as a fuel-economy advantage in cruise 
 
 ### Why does Harris Boat Works only service Mercury?
 
-We are a Mercury Marine Platinum dealer and have been a Mercury dealer since 1965. Mercury is what we know in depth, what we stock parts for, and what we have factory-trained techs on. For engine repairs, we only service Mercury and Mercruiser. If you have a Suzuki, we can point you toward a Suzuki service dealer but we will not work on the motor.
+We are a Mercury Marine Premier dealer and have been a Mercury dealer since 1965. Mercury is what we know in depth, what we stock parts for, and what we have factory-trained techs on. For engine repairs, we only service Mercury and Mercruiser. If you have a Suzuki, we can point you toward a Suzuki service dealer but we will not work on the motor.
 
 ### Is Suzuki good for commercial or high-hour use?
 

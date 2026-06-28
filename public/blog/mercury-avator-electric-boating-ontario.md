@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Avator Electric Outboards: Cost & Range (Canada)"
-description: "Mercury Avator electric outboards: what they cost, how far they go, and whether one fits Rice Lake. Honest take from a Mercury Platinum dealer."
+description: "Mercury Avator electric outboards: what they cost, how far they go, and whether one fits Rice Lake. Honest take from a Mercury Premier dealer."
 category: "Buying Guide"
 date_published: 2026-02-06
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Avator Electric Outboards: Cost & Range (Canada)
 
-> Mercury Avator electric outboards: what they cost, how far they go, and whether one fits Rice Lake. Honest take from a Mercury Platinum dealer.
+> Mercury Avator electric outboards: what they cost, how far they go, and whether one fits Rice Lake. Honest take from a Mercury Premier dealer.
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  
@@ -88,7 +88,7 @@ For gas outboards, the configurator does what it always does: **[build a real Me
 - [Charging a Mercury Avator at Your Cottage Dock (2026)](/blog/mercury-avator-charging-cottage-dock)
 - [Mercury Avator vs Torqeedo: Honest Comparison for Ontario Boaters (2026)](/blog/mercury-avator-vs-torqeedo)
 
-Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 1965, and a Mercury Platinum dealer today.
+Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 1965, and a Mercury Premier dealer today.
 
 ## FAQs
 
