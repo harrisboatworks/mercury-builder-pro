@@ -904,6 +904,9 @@ function renderMarkdownWithDirectives(
     if (chunk.kind === 'mythbuster' && chunk.mythbusterProps) {
       return <Mythbuster key={`${keyPrefix}-mb-${i}`} {...chunk.mythbusterProps} />;
     }
+    if (chunk.kind === 'cta' && chunk.ctaProps) {
+      return <BlogInlineCTA key={`${keyPrefix}-cta-${i}`} {...chunk.ctaProps} />;
+    }
     if (!chunk.content.trim()) return null;
     return (
       <ReactMarkdown
