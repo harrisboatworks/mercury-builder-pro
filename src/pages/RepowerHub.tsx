@@ -93,15 +93,16 @@ export default function RepowerHub() {
   return (
     <HubPage
       path="/repower"
-      metaTitle="Boat Repower Ontario 2026: Cost & Process | HBW"
-      metaDescription="Boat repower in Ontario in 2026 typically runs $11,000 to $40,000 CAD, depending on HP. Cost, process, and Mercury repower guidance from HBW."
+      metaTitle="Mercury Repower Ontario: Cost, Process & Live Quote 2026 | HBW"
+      metaDescription="Mercury repower in Ontario: real Canadian pricing, a clear process, and a live quote in about two minutes. Mercury Premier dealer, Rice Lake since 1947."
       breadcrumbName="Boat Repower Guide"
       lastReviewedISO="2026-06-12"
       lastReviewedLabel="June 2026"
-      h1="Boat Repower Guide for Ontario (2026) — Mercury Repower Specialists"
-      subhead="Live CAD pricing, real process detail, and 60 years of HBW Mercury experience."
-      primaryCTA={{ label: 'Build Your Mercury Quote', to: '/quote/motor-selection' }}
+      h1="Mercury Repower Ontario: Cost, Process and Live Quote for 2026"
+      subhead="Real Canadian pricing, a clear process, and a live quote in about two minutes. Mercury Premier dealer, Rice Lake since 1947."
+      primaryCTA={{ label: 'Build Your Quote', to: '/quote/motor-selection' }}
       phoneNumber="(905) 342-2153"
+
       directAnswer={
         <>
           A boat repower means replacing your existing outboard with a new
