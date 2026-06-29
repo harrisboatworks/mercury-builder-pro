@@ -95,6 +95,15 @@ export default function PricingReference() {
             source). Do not duplicate it here. Visible date below is wired to the
             generated canonical pricing last_updated value. */}
         <p className="text-sm text-muted-foreground mb-6">Last updated {CANONICAL_LAST_UPDATED}.</p>
+
+        <BlogInlineCTA
+          variant="inline"
+          heading="Want the all-in installed number?"
+          body="Prices shown are for the motor itself. Your real installed cost depends on rigging, controls, and your boat. Build a quote for the all-in number on your repower."
+          primaryLabel="Build Your Quote"
+          primaryHref="/quote/motor-selection"
+        />
+
         {loading ? (
           <p>Loading current pricing…</p>
         ) : html ? (
