@@ -4052,6 +4052,14 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 
 **Best fit: 150 HP and up.** The third tube changes the hydrodynamics and lets the boat reach higher speeds with adequate HP. For 22–24 ft tritoons with active water sports, 200 HP Command Thrust is typical.
 
+::cta
+variant: inline
+heading: Know which one fits your pontoon? See the price.
+body: Live pricing on the pontoon-friendly motors is right here, in real CAD.
+primaryLabel: See live pontoon motor pricing
+primaryHref: /pricing-reference
+::
+
 ---
 
 ## Why Command Thrust makes the difference on pontoons
