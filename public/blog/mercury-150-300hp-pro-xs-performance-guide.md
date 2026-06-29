@@ -1,17 +1,18 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide.md
-last_updated: 2026-05-13
+last_updated: 2026-06-29
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 150-300 HP Pro XS Compared for Ontario Boats"
-description: "HBW compares Mercury Pro XS 150, 175, 200, 225, 250, and 300 HP outboards for Ontario boats: hull pairings, real-world top speeds, and honest fit guidance."
+title: "Mercury 150 Pro XS to 300 Compared for Ontario Boats"
+description: "Mercury 150 Pro XS through 300 HP for Ontario boats: weights, top speeds, fuel use, hull pairings, and CAD pricing from Harris Boat Works."
 category: "Buying Guide"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-06-29
+
 keywords: ["mercury 150 pro xs","mercury 175 pro xs","mercury 200 pro xs","mercury 225 pro xs","mercury 250 pro xs","mercury 300 pro xs","mercury v6 vs v8","mercury pro xs comparison ontario","mercury 150-300 hp guide"]
 author: Harris Boat Works
 content_type: blog_article
