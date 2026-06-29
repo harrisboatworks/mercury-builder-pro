@@ -832,6 +832,9 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'mythbuster') {
       const props = parseMythbusterBody(body);
       if (props) chunks.push({ kind: 'mythbuster', content: '', mythbusterProps: props });
+    } else if (name === 'cta') {
+      const props = parseCtaBody(body);
+      if (props) chunks.push({ kind: 'cta', content: '', ctaProps: props });
     }
     last = m.index + m[0].length;
   }
