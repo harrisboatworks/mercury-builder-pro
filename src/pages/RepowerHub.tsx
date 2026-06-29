@@ -162,20 +162,18 @@ export default function RepowerHub() {
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Local Ontario freshwater specialization', description: 'We rig for Rice Lake, Kawarthas, Simcoe, Lake Ontario.' },
       ]}
       faqs={[
-        { question: 'How much does a Mercury repower cost in Ontario?', answer: 'Typical 2026 all-in repowers land $11,000 to $40,000 CAD depending on HP class. Smaller motors (40 to 60 HP) are at the low end; larger motors (200 to 300 HP) at the high end. Most Kawartha repowers are 75 to 115 HP and land $17,000 to $22,000 CAD. See live pricing at /quote/motor-selection.' },
-        { question: 'Should I repower or buy a new boat?', answer: "For most boaters with a hull less than 20 years old that's structurally solid, repower wins on the math. A new comparable boat package costs $25,000 to $50,000 CAD more than a repower. The hull is the asset; the motor is the wear part." },
-        { question: 'How long does a Mercury repower take?', answer: 'Mercury-to-Mercury repowers take 2 to 4 days of shop time. Brand conversions (Evinrude, Yamaha, Honda to Mercury) take longer. Spring rush (March to May) adds wait time before the shop starts.' },
-        { question: 'Can I finance a Mercury repower?', answer: `Yes. Through December 31, 2026, the headline program is TD Auto Finance "Always On" at ${formatFinancingRate()} (OAC) via Dealerplan Peterborough, with a $5,000 minimum financed and a $349 Dealerplan fee added post-tax. We process applications in-shop. See our financing guide for the worked monthly payment examples.` },
-        { question: 'Should I switch from Evinrude to Mercury?', answer: 'For most Evinrude owners, yes. BRP shut down Evinrude outboard production in 2020 and parts/service support is shrinking. Brand conversion adds $1,500 to $3,000 CAD in rigging but pays back over the life of the new motor.' },
-        { question: 'When is the best time to book a repower?', answer: 'Off-season (October through April). Mercury inventory is best, shop time is available, and the boat is ready for next season. Spring slots fill up by March.' },
-        { question: 'Will my old controls and rigging work with a new Mercury?', answer: 'Mercury-to-Mercury repowers usually keep existing post-2010 controls. Older or non-Mercury rigging needs replacement. Brand conversions need new everything. We assess during the hull walk-around.' },
-        { question: 'Do I need to update my Pleasure Craft Licence after a repower?', answer: 'Yes if motor HP, brand, or model changes. Updates are free and take 10 to 15 minutes online. We handle the paperwork for HBW customers.' },
+        { question: 'How much does a Mercury repower cost in Ontario?', answer: "It depends on the horsepower, the controls and rigging your boat needs, and trade-in. Rather than guess, build a quote and you'll get a real Canadian-dollar number in about two minutes, then a person here reviews it. No 'call for quote' games." },
+        { question: 'How long does a repower take?', answer: "It comes down to motor availability and how much rigging your boat needs. When you build a quote, we give you a realistic timeline for your specific job instead of a vague estimate." },
+        { question: 'Can I trade in my old motor?', answer: "Yes. We factor trade-in value into your repower. You can get a quick estimate first at our trade-in page, then carry it into your quote." },
+        { question: 'Do I need new controls, cables, and gauges?', answer: "Sometimes. Older boats often need updated controls or rigging to run a new motor safely. Your quote spells out exactly what's included so there are no surprises." },
+        { question: 'What happens after I build a quote?', answer: "A real person at Harris Boat Works reviews your quote and follows up. There's no obligation. You'll have a real price and a clear next step." },
       ]}
       secondaryCTA={{
-        heading: 'Estimate your monthly payment',
-        body: <>Try the financing calculator, or call to talk through your specific repower.</>,
-        button: { label: 'Try the financing calculator', to: '/financing' },
+        heading: 'Ready to see your real number?',
+        body: <>Build a Mercury repower quote in about two minutes. Real Canadian pricing, reviewed by a person, no pressure.</>,
+        button: { label: 'Build Your Quote', to: '/quote/motor-selection' },
       }}
+
       extraSchemas={[
         {
           '@type': 'Service',
