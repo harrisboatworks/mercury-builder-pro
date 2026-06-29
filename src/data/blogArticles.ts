@@ -9952,13 +9952,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 48: November 30, 2026
   {
     slug: 'mercury-150-300hp-pro-xs-performance-guide',
-    title: 'Mercury 150-300 HP Pro XS Compared for Ontario Boats',
-    seoTitle: "Mercury Pro XS 150-300 HP Compared (Ontario) | HBW",
-    description: "HBW compares Mercury Pro XS 150, 175, 200, 225, 250, and 300 HP outboards for Ontario boats: hull pairings, real-world top speeds.",
+    title: 'Mercury 150 Pro XS to 300 Compared for Ontario Boats',
+    seoTitle: "Mercury 150 Pro XS to 300 Compared for Ontario Boats",
+    description: "Mercury 150 Pro XS through 300 HP for Ontario boats: weights, top speeds, fuel use, hull pairings, and CAD pricing from Harris Boat Works.",
     image: '/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-06-29',
+
     publishDate: '2026-05-13',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -10154,8 +10155,21 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       {
         question: 'What\'s the difference between 250 V6 Pro XS and 250 SeaPro?',
         answer: 'Different applications. 250 Pro XS is tuned for sport/performance use (recreational, fishing). 250 SeaPro is tuned for commercial use, heavier-duty internals, longer service intervals, designed for high-hour operation. See our Mercury SeaPro guide for the full breakdown.'
+      },
+      {
+        question: 'How much does a Mercury 150 Pro XS weigh?',
+        answer: 'The Mercury 150 Pro XS has a dry weight of about 207 kg (456 lb) in its lightest configuration. That is noticeably lighter than the V6 Pro XS models, which is part of why it works so well on sub-19 ft performance and bass boats where every pound on the transom costs you hole shot. Want it matched to your hull and prop? Build a quote at mercuryrepower.ca or call 905-342-2153.'
+      },
+      {
+        question: 'What is the top speed of a Mercury 150 Pro XS?',
+        answer: 'On a suitable sub-19 ft hull, a Mercury 150 Pro XS typically runs in the low-to-mid 50 mph range. Exact top speed depends on hull, load, and prop, so it is not a single fixed number, but if your targets are under 50 to 55 mph the 150 Pro XS is usually enough motor. For a setup dialed in to your boat, call Harris Boat Works at 905-342-2153.'
+      },
+      {
+        question: 'How much does a Mercury 150 Pro XS cost?',
+        answer: 'All-in repower pricing on a Mercury 150 Pro XS typically plans out around $22,500 to $26,500 CAD, depending on rigging, controls, and what is coming off your transom. Pricing is in CAD and the final number is confirmed by Harris Boat Works. Build a live quote in about 90 seconds at mercuryrepower.ca/quote/motor-selection or call 905-342-2153.'
       }
     ]
+
   },
 
   // Week 49: December 7, 2026
