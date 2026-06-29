@@ -98,7 +98,7 @@ export default function RepowerHub() {
       breadcrumbName="Boat Repower Guide"
       lastReviewedISO="2026-06-12"
       lastReviewedLabel="June 2026"
-      h1="Mercury Repower Ontario: Cost, Process and Live Quote for 2026"
+      h1="Mercury Repower Ontario: Cost, Process and Live Quote for 2027"
       subhead="Real Canadian pricing, a clear process, and a live quote in about two minutes. Mercury Premier dealer, Rice Lake since 1947."
       primaryCTA={{ label: 'Build Your Quote', to: '/quote/motor-selection' }}
       phoneNumber="(905) 342-2153"
@@ -107,7 +107,7 @@ export default function RepowerHub() {
         <>
           A boat repower means replacing your existing outboard with a new
           Mercury on your current boat. For most Ontario freshwater customers
-          in 2026, a full boat engine repower lands between $11,000 and
+          in 2027, a full boat engine repower lands between $11,000 and
           $40,000 CAD depending on HP class, hull, and rigging. The hull is
           the asset; the motor is the wear part. A repower on a solid hull
           gives you 80% of the new-boat experience for half the money. Live
