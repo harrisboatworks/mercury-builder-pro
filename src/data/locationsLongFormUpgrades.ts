@@ -166,6 +166,20 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     ],
     sections: [
       {
+        heading: 'Why Peterborough Boaters Make the Drive',
+        paragraphs: [
+          "We're not going to pretend we're closer than we are. What we'll tell you is what you get for the extra 35 minutes:",
+          '- **Published CAD pricing, online.** No "call for price." You can build a real repower quote at mercuryrepower.ca and see the number before you ever phone us.\n- **Every repower water-tested before pickup.** We run it on Rice Lake, under real load, so the boat that leaves our dock is the boat that works on yours. Not every shop does this.\n- **Around 1,700 work orders a year.** That volume is why our techs have seen your problem before. Diagnostic depth comes from doing the work, a lot of it.',
+        ],
+      },
+      {
+        heading: 'Getting Here From Peterborough',
+        paragraphs: [
+          "Harris Boat Works is at 5369 Harris Boat Works Rd, Gores Landing, on the south shore of Rice Lake. From downtown Peterborough it's roughly a 35-minute drive south. Light traffic most of the year, busier on Friday afternoons in cottage season.",
+        ],
+      },
+      {
+
         heading: 'Why Peterborough boaters make the drive',
         paragraphs: [
           '- Mercury Premier Dealer: factory-trained techs, parts depth, warranty authorization\n- Real prices online: the full Mercury lineup priced in CAD, motor plus rigging plus install, before you ever call. See live numbers in the [quote builder](/quote/motor-selection) or the [pricing reference](/pricing-reference).\n- Water tested: every repower gets a sea trial on Rice Lake before it leaves\n- Volume you can trust: roughly 1,700 work orders a year through the service department\n- Family-owned since 1947, Mercury dealer since 1965',
