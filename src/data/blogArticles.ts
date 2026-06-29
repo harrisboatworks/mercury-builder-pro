@@ -4670,7 +4670,28 @@ Note: top-speed numbers vary by hull design, prop selection, and loading. These 
 
 For specific pricing on each motor, [build a quote](/quote/motor-selection).
 
+## 75 HP Owners: When to Upgrade
+
+You don't need to overthink this one. A 75 that felt fine when you bought it can start feeling small the moment the boat gets busier. Here's the honest read:
+
+**Signs your 75 is working too hard:**
+- It struggles to get on plane with three or more people aboard
+- It can't hold a comfortable cruise in a one-foot chop
+- You're running near wide-open just to keep up
+
+**What a 90 buys you on the same hull:**
+- 5 to 10 mph more top end
+- Planes with a load instead of plowing
+- Better resale when you eventually sell the boat
+
+**What doesn't change:**
+- Same 2.1L block and same 163 kg weight as the 75
+- Same mounting footprint, so no transom surprises
+
+The math most people miss: the difference between a 75 and a 90 is small money spread over a finance term, and it's a lot cheaper than buying the 75 now and trading up to the 90 in two summers. If you're on the fence, that second purchase is the expensive path.
+
 ## Mercury 75 EXLPT FourStroke: when it fits
+
 
 The 75 HP FourStroke is the right call when:
 
