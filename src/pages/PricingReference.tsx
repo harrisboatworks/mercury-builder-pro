@@ -62,7 +62,7 @@ export default function PricingReference() {
         <title>Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works</title>
         <meta
           name="description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only."
+          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
         />
         <link rel="canonical" href="https://www.mercuryrepower.ca/pricing-reference" />
         <link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />
@@ -73,14 +73,14 @@ export default function PricingReference() {
         <meta property="og:title" content="Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works" />
         <meta
           property="og:description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only."
+          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.mercuryrepower.ca/pricing-reference" />
         <meta name="twitter:title" content="Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works" />
         <meta
           name="twitter:description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only."
+          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
         />
         {schemaJson && (
           <script type="application/ld+json">{schemaJson}</script>
