@@ -39,8 +39,8 @@ Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario 
 
 ## Public quote API
 
-- `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api` with `{ "action": "build_quote", "motor_id": "<id>" }` builds an itemized CAD quote (public-quote-api).
-- `GET https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api` returns the live Mercury inventory feed (public-motors-api).
+- `POST https://www.mercuryrepower.ca/api/agents/public-quote-api` with `{ "action": "build_quote", "motor_id": "<id>" }` builds an itemized CAD quote (public-quote-api).
+- `GET https://www.mercuryrepower.ca/api/agents/public-motors-api` returns the live Mercury inventory feed (public-motors-api).
 
 See any motor twin for an example body.
 
