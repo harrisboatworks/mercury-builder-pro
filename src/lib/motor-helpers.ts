@@ -463,23 +463,16 @@ export const isTillerMotor = (model: string) => {
     return true;
   }
   
-  // Tiller patterns - H suffix indicates tiller handle
-  const tillerPatterns = [
-    /\b(\d+\.?\d*)\s*MLH\b/i,    // MLH = Manual + Long + Handle
-    /\b(\d+\.?\d*)\s*ELH\b/i,    // ELH = Electric + Long + Handle
-    /\b(\d+\.?\d*)\s*EXLH\b/i,   // EXLH = Electric + XL + Handle
-    /\b(\d+\.?\d*)\s*ELHPT\b/i,  // ELHPT = Electric + Long + Handle + Power Tilt
-    /\b(\d+\.?\d*)\s*EXLHPT\b/i, // EXLHPT = Electric + XL + Handle + Power Tilt
-    /\b(\d+\.?\d*)\s*MH(?!\w)/i, // MH = Manual + Handle
-    /\b(\d+\.?\d*)\s*EH(?!\w)/i, // EH = Electric + Handle
-    /\b(\d+\.?\d*)\s*H(?!\w|P)/i // Standalone H (avoid HP, FH)
-  ];
-  
-  for (const pattern of tillerPatterns) {
-    if (pattern.test(upperModel)) {
-      tillerCache.set(model, true);
-      return true;
-    }
+  // Tiller pattern - matches Mercury handle suffix codes:
+  //   [E|M] + optional shaft (L, XL, XXL) + H + optional PT + optional alpha suffix
+  // Examples: MH, MLH, MXLH, MXXLH, EH, ELH, EXLH, EXXLH,
+  //           EHPT, ELHPT, EXLHPT, MLHA (Sail Power),
+  //           MHGA / MLHGA / ELHGA (30hp GA variants), MLHPT, etc.
+  // Will NOT match: ELPT, EXLPT, EPT, EL, MRC, HP (no H in handle position).
+  const tillerPattern = /\b(\d+\.?\d*)?\s*[ME]X{0,2}L?H(?:PT)?[A-Z]*\b/i;
+  if (tillerPattern.test(upperModel)) {
+    tillerCache.set(model, true);
+    return true;
   }
   
   tillerCache.set(model, false);
