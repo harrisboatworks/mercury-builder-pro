@@ -612,7 +612,7 @@ function MotorCardPreviewInner({
               <span className="flex items-center gap-1.5">
                 <span className="text-repower-gold text-[14px] leading-none">✓</span>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900">
-                  {warrantyText ? warrantyText.replace('✓ ', '') : '7-Yr Warranty'}
+                  {warrantyText ? warrantyText.replace('✓ ', '') : '3-Yr Warranty'}
                 </span>
               </span>
             </div>
