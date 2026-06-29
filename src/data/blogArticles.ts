@@ -4164,6 +4164,16 @@ FourStroke is almost always the right answer for pontoons. Pro XS is built for t
 The 115 ELPT Command Thrust FourStroke. Fits the most common pontoon (20 ft two-tube), the most common use case (family cruising with occasional water sports), and the most common capacity rating.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+::cta
+variant: banner
+heading: Get your pontoon the motor it deserves.
+body: Build a real quote on the right outboard for your pontoon in about two minutes. We've been rigging boats for Rice Lake and the Kawarthas since 1947, so we know what works out here.
+primaryLabel: Build Your Quote
+primaryHref: /quote/motor-selection
+phone: 905-342-2153
+footer: Repowering an older pontoon? Here's [how repower works](/repower).
+::
 `,
     faqs: [
       {
