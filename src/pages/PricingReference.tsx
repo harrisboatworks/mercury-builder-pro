@@ -151,12 +151,39 @@ export default function PricingReference() {
             <a href="/repower" className="text-primary underline">
               HBW Boat Repower Guide
             </a>{' '}
+        <section className="mb-8 rounded-lg border border-border bg-muted/30 p-5">
+          <h2 className="text-xl font-semibold text-foreground mb-2">
+            Repowering your boat?
+          </h2>
+          <p className="text-muted-foreground mb-3">
+            See the full{' '}
+            <a href="/repower" className="text-primary underline">
+              HBW Boat Repower Guide
+            </a>{' '}
             for cost ranges, process, brand-conversion notes, and the complete article directory.
+          </p>
+          <p className="text-muted-foreground">
+            Next steps:{' '}
+            <a href="/quote/motor-selection" className="text-primary underline">Build Your Quote</a>
+            {' '}·{' '}
+            <a href="/repower" className="text-primary underline">repower process</a>
+            {' '}·{' '}
+            <a href="/promotions" className="text-primary underline">current financing offers</a>.
           </p>
         </section>
 
+        <BlogInlineCTA
+          variant="banner"
+          heading="See your real number on a Mercury repower"
+          body="Build a quote in about two minutes and a person at Harris Boat Works reviews it. Real Canadian pricing, no pressure."
+          primaryLabel="Build Your Quote"
+          primaryHref="/quote/motor-selection"
+          phone="905-342-2153"
+        />
+
       </main>
       <SiteFooter />
+
     </div>
   );
 }
