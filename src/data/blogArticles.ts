@@ -4763,6 +4763,16 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 3rd-Generation Owner, Harris Boat Works
 Mercury Premier Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
+
+::cta
+variant: banner
+heading: Stop comparing. Start pricing.
+body: You know the horsepower range. Build a real quote on the exact motor in about two minutes and we'll have a person review it, not a bot. Mercury Premier dealer, transparent pricing, Rice Lake since 1947.
+primaryLabel: Build Your Quote
+primaryHref: /quote/motor-selection
+phone: 905-342-2153
+footer: Repowering an older rig? Here's how the [repower process](/repower) works.
+::
 `,
     faqs: [
       {
