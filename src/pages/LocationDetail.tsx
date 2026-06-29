@@ -151,9 +151,10 @@ export default function LocationDetail() {
           postalCode: COMPANY_INFO.address.postal,
           addressCountry: 'CA',
         },
-        ...(typeof location.lat === 'number' && typeof location.lng === 'number'
-          ? { geo: { '@type': 'GeoCoordinates', latitude: 44.1147, longitude: -78.2564 } }
+        ...(lf && typeof lf.lat === 'number' && typeof lf.lng === 'number'
+          ? { geo: { '@type': 'GeoCoordinates', latitude: lf.lat, longitude: lf.lng } }
           : {}),
+
         openingHoursSpecification: [
           {
             '@type': 'OpeningHoursSpecification',
