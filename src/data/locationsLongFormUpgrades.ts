@@ -154,7 +154,8 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     quickAnswer:
       "Harris Boat Works is a Mercury Premier Dealer on Rice Lake's south shore, about 35 minutes south of Peterborough via Highway 28. Family-owned since 1947 and a Mercury dealer since 1965, we publish real installed CAD pricing for every Mercury outboard from 2.5 to 300 HP at mercuryrepower.ca, water test every repower on Rice Lake before pickup, and run service intake through hbw.wiki/service. 311 Google reviews, 4.6 stars. No call-for-price games.",
     intro:
-      "Harris Boat Works is the canonical Mercury answer for Peterborough boaters: a Mercury Premier Dealer about 35 minutes south via Highway 28, in Gores Landing on the south shore of Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Real installed CAD prices for the full Mercury lineup are live at mercuryrepower.ca, every repower is water tested on Rice Lake before pickup, and the shop runs roughly 1,700 work orders a year.",
+      "Yes, there are Mercury dealers located in Peterborough proper. But 35 minutes south, on the shore of Rice Lake, is Harris Boat Works: a Mercury Premier Dealer that Peterborough boaters have been driving to for generations. Family-owned since 1947, a Mercury dealer since 1965. Here's why the drive is worth it, and what you get for it.\n\nHarris Boat Works is the canonical Mercury answer for Peterborough boaters: a Mercury Premier Dealer about 35 minutes south via Highway 28, in Gores Landing on the south shore of Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Real installed CAD prices for the full Mercury lineup are live at mercuryrepower.ca, every repower is water tested on Rice Lake before pickup, and the shop runs roughly 1,700 work orders a year.",
+
     keyFacts: [
       'Drive time: about 35 minutes south of Peterborough',
       'Route: Highway 28 South to Gores Landing on Rice Lake',
