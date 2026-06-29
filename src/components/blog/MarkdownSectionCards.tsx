@@ -23,6 +23,7 @@ import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 import { MercuryVideo } from './MercuryVideo';
 import { CustomerVoice, type CustomerVoiceProps, type CustomerVoiceItem } from './CustomerVoice';
 import { Mythbuster, type MythbusterProps, type MythbusterItem } from './Mythbuster';
+import { BlogInlineCTA, type BlogInlineCTAProps } from './BlogInlineCTA';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -251,6 +252,11 @@ function rewriteMythbuster(md: string): string {
   return md.replace(re, (_m, body) => `:::mythbuster\n${body}\n:::`);
 }
 
+function rewriteCta(md: string): string {
+  const re = /^::cta\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::cta\n${body}\n:::`);
+}
+
 /**
  * Convert an `## Mythbuster` H2 (followed by bulleted myth/what-we-tell pairs)
  * into a `:::mythbuster` directive so it routes through the premium component
@@ -347,7 +353,7 @@ function buildYouTubeDirective(attrs: string): string | null {
 }
 
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeEmbeds(
+  return rewriteCta(rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeEmbeds(
     rewriteMercuryPriceTable(
       rewriteWalkaroundLeadCapture(
         rewritePullQuote(
@@ -361,7 +367,7 @@ function preprocessSpecialBlocks(md: string): string {
         ),
       ),
     ),
-  ))));
+  )))));
 }
 
 /**
@@ -395,7 +401,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table' | 'youtube-embed' | 'customer-voice' | 'mythbuster';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table' | 'youtube-embed' | 'customer-voice' | 'mythbuster' | 'cta';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -409,10 +415,11 @@ interface RenderChunk {
   youtubeProps?: { id: string; title?: string };
   customerVoiceProps?: CustomerVoiceProps;
   mythbusterProps?: MythbusterProps;
+  ctaProps?: BlogInlineCTAProps;
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table|youtube-embed|customer-voice|mythbuster)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table|youtube-embed|customer-voice|mythbuster|cta)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -742,6 +749,31 @@ function parseMythbusterBody(body: string): MythbusterProps | null {
 
 
 
+
+function parseCtaBody(body: string): BlogInlineCTAProps | null {
+  const flat: Record<string, string> = {};
+  for (const raw of body.split('\n')) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) continue;
+    const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    flat[kv[1]] = kv[2].trim();
+  }
+  const variant = flat.variant === 'banner' ? 'banner' : 'inline';
+  if (!flat.heading || !flat.body || !flat.primaryLabel || !flat.primaryHref) return null;
+  return {
+    variant,
+    heading: flat.heading,
+    body: flat.body,
+    primaryLabel: flat.primaryLabel,
+    primaryHref: flat.primaryHref,
+    secondaryLabel: flat.secondaryLabel || undefined,
+    secondaryHref: flat.secondaryHref || undefined,
+    phone: flat.phone || undefined,
+    footer: flat.footer || undefined,
+  };
+}
+
 function splitDirectives(md: string): RenderChunk[] {
   const chunks: RenderChunk[] = [];
   let last = 0;
@@ -825,6 +857,9 @@ function splitDirectives(md: string): RenderChunk[] {
     } else if (name === 'mythbuster') {
       const props = parseMythbusterBody(body);
       if (props) chunks.push({ kind: 'mythbuster', content: '', mythbusterProps: props });
+    } else if (name === 'cta') {
+      const props = parseCtaBody(body);
+      if (props) chunks.push({ kind: 'cta', content: '', ctaProps: props });
     }
     last = m.index + m[0].length;
   }
@@ -893,6 +928,9 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'mythbuster' && chunk.mythbusterProps) {
       return <Mythbuster key={`${keyPrefix}-mb-${i}`} {...chunk.mythbusterProps} />;
+    }
+    if (chunk.kind === 'cta' && chunk.ctaProps) {
+      return <BlogInlineCTA key={`${keyPrefix}-cta-${i}`} {...chunk.ctaProps} />;
     }
     if (!chunk.content.trim()) return null;
     return (

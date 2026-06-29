@@ -2671,6 +2671,14 @@ Walk it back to three honest questions:
 2. **Will you actually use the performance?** If "fast" genuinely matters to you, Pro XS. If you're nodding along but you really just want to get to the fishing hole and back, FourStroke.
 3. **How much does quiet and smooth matter?** On a big boat with people aboard all day, Verado's refinement is a real upgrade. On a 17-foot tinny, you won't notice it enough to justify the spend.
 
+::cta
+variant: inline
+heading: Found your family? Price it out.
+body: Whether it's a FourStroke, a Pro XS, or a Verado, the live pricing is right here so you can see the real number before you commit.
+primaryLabel: See live pricing by family
+primaryHref: /pricing-reference
+::
+
 ## What we see at HBW
 
 Most of the motors that leave our shop are FourStrokes, because most of the boats on this lake are pontoons and aluminum fishing boats, and that's exactly what the FourStroke is built for. The Pro XS crowd is real and loyal: the bass and walleye guys who want that snap onto plane and a little more top end for running between spots. We sell plenty of those too.
@@ -2732,6 +2740,16 @@ Tell us the boat (make, length, what you do with it) and we'll tell you straight
 - Mercury Marine, FourStroke / Pro XS / Verado family positioning and current V8/V10/V12 Verado lineup (mercurymarine.com).
 - Mercury Marine, "How to Choose the Right Mercury Outboard for Your Boat."
 - Pro XS fuel and performance specs (87 octane, RPM range, Transient Spark): Mercury Marine product documentation.
+
+::cta
+variant: banner
+heading: The right family, the real price, no games.
+body: Pick the engine family that fits how you run your boat, then build a quote on the exact model. Two minutes, a real price, a real person reviewing it.
+primaryLabel: Build Your Quote
+primaryHref: /quote/motor-selection
+phone: 905-342-2153
+footer: Not sure repower makes sense yet? Start with the [repower basics](/repower).
+::
 `
   },
   {
@@ -4034,6 +4052,14 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 
 **Best fit: 150 HP and up.** The third tube changes the hydrodynamics and lets the boat reach higher speeds with adequate HP. For 22–24 ft tritoons with active water sports, 200 HP Command Thrust is typical.
 
+::cta
+variant: inline
+heading: Know which one fits your pontoon? See the price.
+body: Live pricing on the pontoon-friendly motors is right here, in real CAD.
+primaryLabel: See live pontoon motor pricing
+primaryHref: /pricing-reference
+::
+
 ---
 
 ## Why Command Thrust makes the difference on pontoons
@@ -4138,6 +4164,16 @@ FourStroke is almost always the right answer for pontoons. Pro XS is built for t
 The 115 ELPT Command Thrust FourStroke. Fits the most common pontoon (20 ft two-tube), the most common use case (family cruising with occasional water sports), and the most common capacity rating.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+::cta
+variant: banner
+heading: Get your pontoon the motor it deserves.
+body: Build a real quote on the right outboard for your pontoon in about two minutes. We've been rigging boats for Rice Lake and the Kawarthas since 1947, so we know what works out here.
+primaryLabel: Build Your Quote
+primaryHref: /quote/motor-selection
+phone: 905-342-2153
+footer: Repowering an older pontoon? Here's [how repower works](/repower).
+::
 `,
     faqs: [
       {
@@ -4667,6 +4703,14 @@ The 115 HP FourStroke is the right call when:
 
 The 115 step-up over the 90 is meaningful in real-world performance: better hole shot when loaded, better cruise speed, more headroom in chop. The price premium over the 90 is real but not enormous. Most customers who step up do not regret it. Most customers who buy 90 also do not regret it. There is no wrong answer if the boat fits both.
 
+::cta
+variant: inline
+heading: Narrowed it down? See what it actually costs.
+body: Pricing on the 75, 90, and 115 is right here, in real Canadian dollars, no 'call for quote' runaround.
+primaryLabel: See live Ontario pricing
+primaryHref: /pricing-reference
+::
+
 ## What HBW checks before recommending 75, 90, or 115
 
 When customers come in deciding between these three motors, we want to know:
@@ -4737,6 +4781,16 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 3rd-Generation Owner, Harris Boat Works
 Mercury Premier Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
+
+::cta
+variant: banner
+heading: Stop comparing. Start pricing.
+body: You know the horsepower range. Build a real quote on the exact motor in about two minutes and we'll have a person review it, not a bot. Mercury Premier dealer, transparent pricing, Rice Lake since 1947.
+primaryLabel: Build Your Quote
+primaryHref: /quote/motor-selection
+phone: 905-342-2153
+footer: Repowering an older rig? Here's how the [repower process](/repower) works.
+::
 `,
     faqs: [
       {
@@ -15331,6 +15385,14 @@ When customers ask about Boost, we want to know:
 
 Most pontoon customers walk out without Boost. We point them toward prop and trim optimization first, because those gains are larger and cheaper.
 
+::cta
+variant: inline
+heading: Wondering what the upgrade runs?
+body: Price the 150 the same way our sales team sees it, real dealer pricing, no phone tag.
+primaryLabel: Price your upgrade
+primaryHref: /pricing-reference
+::
+
 ---
 
 ## Related guides
@@ -15386,6 +15448,17 @@ More often than not, the better upgrade is a prop and trim conversation, and tha
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+::cta
+variant: banner
+heading: Worth it? Run your own numbers.
+body: Build a quote on the 150 and see the real cost, then check current financing if you'd rather spread it out. No pressure, no haggling.
+primaryLabel: Build Your Quote
+primaryHref: /quote/motor-selection
+secondaryLabel: See current financing offers
+secondaryHref: /promotions
+phone: 905-342-2153
+::
 ---`,
     faqs: [
       {
