@@ -4685,6 +4685,14 @@ The 115 HP FourStroke is the right call when:
 
 The 115 step-up over the 90 is meaningful in real-world performance: better hole shot when loaded, better cruise speed, more headroom in chop. The price premium over the 90 is real but not enormous. Most customers who step up do not regret it. Most customers who buy 90 also do not regret it. There is no wrong answer if the boat fits both.
 
+::cta
+variant: inline
+heading: Narrowed it down? See what it actually costs.
+body: Pricing on the 75, 90, and 115 is right here, in real Canadian dollars, no 'call for quote' runaround.
+primaryLabel: See live Ontario pricing
+primaryHref: /pricing-reference
+::
+
 ## What HBW checks before recommending 75, 90, or 115
 
 When customers come in deciding between these three motors, we want to know:
