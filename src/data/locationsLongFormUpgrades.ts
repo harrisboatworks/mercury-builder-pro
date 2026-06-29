@@ -216,6 +216,8 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       { question: 'What Mercury motors do you have in stock?', answer: 'We stock Mercury FourStroke and Pro XS models from 2.5 to 300 HP. Verado is available by special order. Live stock and pricing for every model is in the quote tool at mercuryrepower.ca.' },
       { question: 'What warranty comes with a new Mercury outboard?', answer: 'Every new Mercury comes with a 3-year factory warranty. Any bonus coverage beyond that comes from Mercury promotions, which change; current offers are always at mercuryrepower.ca/promotions.' },
       { question: 'Can I use Harris Boat Works as my regular Mercury service shop?', answer: 'Yes, many Peterborough customers do exactly that: spring commissioning, mid-season service, fall winterization and storage. For engine repairs we service Mercury and MerCruiser only. Requests go through hbw.wiki/service.' },
+      { question: 'Is there a Mercury dealer closer to me in Peterborough?', answer: "There are Mercury dealers in Peterborough proper, so if closest is the only thing that matters, you have options in town. What Harris Boat Works offers, 35 minutes south on Rice Lake, is published online pricing, every repower water-tested before you pick it up, and the diagnostic depth that comes from about 1,700 work orders a year. A lot of Peterborough boaters decide that's worth the short drive." },
+
     ],
     visit: VISIT,
     related: [
