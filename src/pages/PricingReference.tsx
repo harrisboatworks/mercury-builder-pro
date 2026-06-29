@@ -146,15 +146,6 @@ export default function PricingReference() {
           <h2 className="text-xl font-semibold text-foreground mb-2">
             Repowering your boat?
           </h2>
-          <p className="text-muted-foreground">
-            See the full{' '}
-            <a href="/repower" className="text-primary underline">
-              HBW Boat Repower Guide
-            </a>{' '}
-        <section className="mb-8 rounded-lg border border-border bg-muted/30 p-5">
-          <h2 className="text-xl font-semibold text-foreground mb-2">
-            Repowering your boat?
-          </h2>
           <p className="text-muted-foreground mb-3">
             See the full{' '}
             <a href="/repower" className="text-primary underline">
