@@ -252,6 +252,11 @@ function rewriteMythbuster(md: string): string {
   return md.replace(re, (_m, body) => `:::mythbuster\n${body}\n:::`);
 }
 
+function rewriteCta(md: string): string {
+  const re = /^::cta\s*\n([\s\S]*?)\n::\s*$/gm;
+  return md.replace(re, (_m, body) => `:::cta\n${body}\n:::`);
+}
+
 /**
  * Convert an `## Mythbuster` H2 (followed by bulleted myth/what-we-tell pairs)
  * into a `:::mythbuster` directive so it routes through the premium component
