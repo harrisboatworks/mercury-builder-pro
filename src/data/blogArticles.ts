@@ -4858,9 +4858,14 @@ footer: Repowering an older rig? Here's how the [repower process](/repower) work
       {
         question: 'What is the best Mercury outboard for a 17 ft aluminum fishing boat on Rice Lake?',
         answer: 'For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. For solo or two-person fishing with tiller control, the 75 HP tiller is efficient and well-suited to Rice Lake\'s shoreline work. For two or three regular passengers or more open-water conditions, the 90 HP provides better loaded performance at the same weight. The 115 HP is worth considering if the hull is heavier or you want long-term headroom. Harris Boat Works, Mercury dealer since 1965 in Gores Landing on Rice Lake, can assess your specific hull and recommend the right choice.'
+      },
+      {
+        question: 'Is it worth upgrading from a Mercury 75 to a 90 HP outboard?',
+        answer: 'For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 costs roughly $1,500 to $2,500 more installed and gives you 5 to 10 mph more top end and a much better hole shot under load, on the same 2.1L block and mounting footprint. If you usually run light and solo, the 75 is plenty.'
       }
     ]
   },
+
 
   // Week 5: February 2, 2026
   {
