@@ -15448,6 +15448,17 @@ More often than not, the better upgrade is a prop and trim conversation, and tha
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+::cta
+variant: banner
+heading: Worth it? Run your own numbers.
+body: Build a quote on the 150 and see the real cost, then check current financing if you'd rather spread it out. No pressure, no haggling.
+primaryLabel: Build Your Quote
+primaryHref: /quote/motor-selection
+secondaryLabel: See current financing offers
+secondaryHref: /promotions
+phone: 905-342-2153
+::
 ---`,
     faqs: [
       {
