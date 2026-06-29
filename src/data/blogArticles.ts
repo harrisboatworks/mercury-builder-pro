@@ -15385,6 +15385,14 @@ When customers ask about Boost, we want to know:
 
 Most pontoon customers walk out without Boost. We point them toward prop and trim optimization first, because those gains are larger and cheaper.
 
+::cta
+variant: inline
+heading: Wondering what the upgrade runs?
+body: Price the 150 the same way our sales team sees it, real dealer pricing, no phone tag.
+primaryLabel: Price your upgrade
+primaryHref: /pricing-reference
+::
+
 ---
 
 ## Related guides
