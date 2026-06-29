@@ -18,13 +18,14 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury 150-300 HP Pro XS Compared for Ontario Boats
+# Mercury 150 Pro XS to 300 Compared for Ontario Boats
 
-> HBW compares Mercury Pro XS 150, 175, 200, 225, 250, and 300 HP outboards for Ontario boats: hull pairings, real-world top speeds, and honest fit guidance.
+> Mercury 150 Pro XS through 300 HP for Ontario boats: weights, top speeds, fuel use, hull pairings, and CAD pricing from Harris Boat Works.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
+**Last updated:** 2026-06-29  
+
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide
 
