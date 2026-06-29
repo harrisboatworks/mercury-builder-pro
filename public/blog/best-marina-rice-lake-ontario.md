@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Rice Lake's Full-Service Marina Since 1947"
-description: "The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury Premier dealer, full storage, service, rentals."
+description: "The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury Premier dealer, full storage, service."
 category: "Rice Lake & Local"
 date_published: 2026-05-16
 date_modified: 2026-05-16
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Rice Lake's Full-Service Marina Since 1947
 
-> The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury Premier dealer, full storage, service, rentals.
+> The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury Premier dealer, full storage, service.
 
 **Category:** Rice Lake & Local  
 **Published:** 2026-05-16  

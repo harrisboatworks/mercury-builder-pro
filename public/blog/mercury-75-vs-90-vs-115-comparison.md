@@ -33,6 +33,10 @@ content_type: blog_article
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers full installed-cost ranges and the rigging changes that go with each HP class. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
+## Is Upgrading From 75 to 90 HP Worth It?
+
+For most 16 to 18 ft aluminum console boats carrying two or more people on Kawartha lakes, yes. The jump from a Mercury 75 to a 90 runs about $1,500 to $2,500 more installed, and for that you get 5 to 10 mph more top end, a noticeably better hole shot with a load, and a motor you won't outgrow in two seasons. Over a 60-month term at TD's 5.48% APR, that price difference works out to roughly $30 to $50 a month. If you mostly run light and single-handed, the 75 is a fine motor. If the boat fills up on weekends, the 90 is the one you won't second-guess.
+
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
 
 ## Quick recommendation
@@ -81,6 +85,26 @@ Note: top-speed numbers vary by hull design, prop selection, and loading. These 
 
 For specific pricing on each motor, [build a quote](/quote/motor-selection).
 
+## 75 HP Owners: When to Upgrade
+
+You don't need to overthink this one. A 75 that felt fine when you bought it can start feeling small the moment the boat gets busier. Here's the honest read:
+
+**Signs your 75 is working too hard:**
+- It struggles to get on plane with three or more people aboard
+- It can't hold a comfortable cruise in a one-foot chop
+- You're running near wide-open just to keep up
+
+**What a 90 buys you on the same hull:**
+- 5 to 10 mph more top end
+- Planes with a load instead of plowing
+- Better resale when you eventually sell the boat
+
+**What doesn't change:**
+- Same 2.1L block and same 163 kg weight as the 75
+- Same mounting footprint, so no transom surprises
+
+The math most people miss: the difference between a 75 and a 90 is small money spread over a finance term, and it's a lot cheaper than buying the 75 now and trading up to the 90 in two summers. If you're on the fence, that second purchase is the expensive path.
+
 ## Mercury 75 EXLPT FourStroke: when it fits
 
 The 75 HP FourStroke is the right call when:
@@ -118,6 +142,14 @@ The 115 HP FourStroke is the right call when:
 - **You want the option of running Pro XS later** (115 Pro XS slots into the same gearcase footprint as the 115 FourStroke).
 
 The 115 step-up over the 90 is meaningful in real-world performance: better hole shot when loaded, better cruise speed, more headroom in chop. The price premium over the 90 is real but not enormous. Most customers who step up do not regret it. Most customers who buy 90 also do not regret it. There is no wrong answer if the boat fits both.
+
+::cta
+variant: inline
+heading: Narrowed it down? See what it actually costs.
+body: Pricing on the 75, 90, and 115 is right here, in real Canadian dollars, no 'call for quote' runaround.
+primaryLabel: See live Ontario pricing
+primaryHref: /pricing-reference
+::
 
 ## What HBW checks before recommending 75, 90, or 115
 
@@ -190,6 +222,16 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 Mercury Premier Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
+::cta
+variant: banner
+heading: Stop comparing. Start pricing.
+body: You know the horsepower range. Build a real quote on the exact motor in about two minutes and we'll have a person review it, not a bot. Mercury Premier dealer, transparent pricing, Rice Lake since 1947.
+primaryLabel: Build Your Quote
+primaryHref: /quote/motor-selection
+phone: 905-342-2153
+footer: Repowering an older rig? Here's how the [repower process](/repower) works.
+::
+
 ## FAQs
 
 ### What's the difference between the Mercury 90 and 115 HP?
@@ -231,6 +273,10 @@ The Mercury 115 HP FourStroke consistently holds the best resale value of the th
 ### What is the best Mercury outboard for a 17 ft aluminum fishing boat on Rice Lake?
 
 For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. For solo or two-person fishing with tiller control, the 75 HP tiller is efficient and well-suited to Rice Lake's shoreline work. For two or three regular passengers or more open-water conditions, the 90 HP provides better loaded performance at the same weight. The 115 HP is worth considering if the hull is heavier or you want long-term headroom. Harris Boat Works, Mercury dealer since 1965 in Gores Landing on Rice Lake, can assess your specific hull and recommend the right choice.
+
+### Is it worth upgrading from a Mercury 75 to a 90 HP outboard?
+
+For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 costs roughly $1,500 to $2,500 more installed and gives you 5 to 10 mph more top end and a much better hole shot under load, on the same 2.1L block and mounting footprint. If you usually run light and solo, the 75 is plenty.
 
 ## Next steps
 

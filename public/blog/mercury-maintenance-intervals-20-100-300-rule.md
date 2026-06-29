@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know"
-description: "A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario, and which jobs are DIY vs dealer."
+description: "A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario."
 category: "Service & Maintenance"
 date_published: 2026-05-12
 date_modified: 2026-05-12
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know
 
-> A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario, and which jobs are DIY vs dealer.
+> A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario.
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-12  
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ---
 
-![Mercury maintenance interval timeline: 20/100/300 hours (HBW diagram)](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
+![Infographic showing Mercury outboard maintenance intervals at 20, 100, and 300 hours for Ontario boaters.](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
 
 ## Quick Answer
 
@@ -142,7 +142,7 @@ In addition to all 100-hour items:
 
 Exact scope of the 300-hour service varies by motor model and family. Your dealer will follow the Mercury factory-published service manual for your specific motor.
 
-![Mercury 20/100/300 service interval timeline: break-in, routine, and major service items](/lovable-uploads/mercury-20-100-300-service-interval-timeline.png)
+![Infographic chart showing Mercury 20-hour break-in, 100-hour routine, and 300-hour major outboard service requirements.](/lovable-uploads/mercury-20-100-300-service-interval-timeline.png)
 
 *Mercury's three service milestones at a glance. The 20-hour break-in service is one-time and covers oil and filter change on FourStrokes, gear lube drain and refill, inspecting and retorquing fasteners, inspecting the fuel system, inspecting the cooling system and tell-tale, and checking and adjusting the throttle and shift linkage. The 100-hour or annual routine service (whichever comes first) adds spark plug inspection or replacement, fuel filter replacement, water pump impeller inspection, thermostat test, drive belt inspection on applicable models, lubricating all grease points, inspecting the propeller and shaft, checking the battery and charging system, and inspecting all hoses and connections. The 300-hour major service adds water pump impeller replacement, thermostat replacement, drive belt replacement on applicable models, timing belt inspection or replacement on applicable models, a full cooling system inspection, fuel system inspection and cleaning, and anode inspection. Exact 300-hour scope varies by motor.*
 
@@ -200,6 +200,11 @@ Two related guides in the same cluster:
 - [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
+
+## Sources
+
+- [Mercury Marine - Owner Resources](https://www.mercurymarine.com/canada/en/owners/) - Official maintenance interval guidance and owner's manuals for current models.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized dealer network and Mercury Product Protection details.
 
 **Due for service?** 
 Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.

@@ -75,7 +75,7 @@ Modern Mercury FourStrokes have a cruise efficiency sweet spot, typically somewh
 
 ---
 
-![Five levers that cut Mercury outboard fuel burn, ranked](/lovable-uploads/inline/fuel-efficiency-levers.svg)
+![Ranked list of 5 fuel-saving levers for Mercury outboards: prop selection (15-25% impact), trim (10-20%), hull cleanliness, weight, cruise speed. Setup beats horsepower.](/lovable-uploads/inline/fuel-efficiency-levers.svg)
 
 ## What Horsepower Actually Does to Fuel Economy
 
@@ -126,7 +126,7 @@ If your fuel burn is significantly above these ranges for your setup, prop pitch
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-![Mercury SmartCraft fuel-flow gauge showing live GPH reading at cruising RPM](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
+![Mercury SmartCraft gauge showing 6.5 GPH fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
 
 ## Ethanol and Fuel Quality
 

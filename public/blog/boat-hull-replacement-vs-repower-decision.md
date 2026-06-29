@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Hull Replacement vs Repower: The Honest Decision (2026)"
-description: "For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury delivers 80% of the new-boat experience for half the money."
+description: "For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury delivers 80% of the new-boat experience for half."
 category: "Repower"
 date_published: 2026-04-29
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Boat Hull Replacement vs Repower: The Honest Decision (2026)
 
-> For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury delivers 80% of the new-boat experience for half the money.
+> For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury delivers 80% of the new-boat experience for half.
 
 **Category:** Repower  
 **Published:** 2026-04-29  

@@ -129,7 +129,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ---
 
-![Tournament-rigged bass boat with Mercury Pro XS and 9.9 ProKicker on a calm Ontario dawn](/lovable-uploads/inline/inline-bass-tournament.png)
+![Tournament bass boat with Mercury Pro XS and 9.9 ProKicker on a calm Ontario lake at dawn.](/lovable-uploads/inline/inline-bass-tournament.png)
 
 ## Warranty
 

@@ -33,7 +33,7 @@ Lake Ontario salmon and trout trolling typically calls for a Mercury 200–300 H
 
 ---
 
-![Mercury setup for Lake Ontario salmon and trout, by boat](/lovable-uploads/inline/lake-ontario-hp-setup.svg)
+![Table of Mercury outboard setups for Lake Ontario salmon/trout by boat size: main motor (115-300 HP) and kicker (15 ProKicker or none).](/lovable-uploads/inline/lake-ontario-hp-setup.svg)
 
 ## Lake Ontario is Different Fishing Water
 

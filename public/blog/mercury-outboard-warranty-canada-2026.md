@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying"
-description: "A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually covered, what voids it, and whether the extended plan is worth it."
+description: "A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually covered, what voids it."
 category: "Buying Guide"
 date_published: 2026-05-23
 date_modified: 2026-05-23
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
 
-> A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually covered, what voids it, and whether the extended plan is worth it.
+> A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually covered, what voids it.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-23  
@@ -208,6 +208,11 @@ We push customers toward Premier dealer service because the install + first serv
 ---
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Sources
+
+- [Mercury Marine - Warranty](https://www.mercurymarine.com/canada/en/owners/warranty/) - Official Mercury Canadian limited warranty terms.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized dealer network for warranty claims and Mercury Product Protection.
 
 ## Related guides
 

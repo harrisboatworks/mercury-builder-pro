@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Used Outboard Buying Guide for Ontario Boaters (What to Check Before You Pay)"
-description: "What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test, and when to walk away."
+description: "What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test."
 category: "Buying Guide"
 date_published: 2026-05-07
 date_modified: 2026-05-23
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Used Outboard Buying Guide for Ontario Boaters (What to Check Before You Pay)
 
-> What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test, and when to walk away.
+> What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-07  
@@ -52,7 +52,7 @@ If a seller cannot tell you the year, the hours, or the use history, you are buy
 
 ---
 
-![Used outboard inspection: green flags vs red flags](/lovable-uploads/inline/used-outboard-green-red-flags.svg)
+![Comparison chart: five green flags and five red flags for used outboard inspection.](/lovable-uploads/inline/used-outboard-green-red-flags.svg)
 
 ## At the Boat: The Inspection Order
 
@@ -127,7 +127,7 @@ Run the motor on the water before you pay. We have seen motors that fired fine i
 
 A seller who refuses an on-water test is telling you something. Listen.
 
-![Compression test gauge connected to a Mercury outboard powerhead during pre-purchase inspection](/lovable-uploads/inline/inline-compression-test.png)
+![Compression gauge on a Mercury outboard powerhead during a pre-purchase inspection for a used motor.](/lovable-uploads/inline/inline-compression-test.png)
 
 ---
 
@@ -177,7 +177,7 @@ We will tell you which one you are looking at, even when the honest answer point
 
 ## Related guides
 
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
+- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
 - [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
 - [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
 - [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026): The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders.

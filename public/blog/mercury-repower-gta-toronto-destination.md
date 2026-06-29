@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination.md
-last_updated: 2026-02-06
+last_updated: 2026-06-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW 
 description: "A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline, transport. From the dealer that does this every..."
 category: "Mercury Outboards"
 date_published: 2026-05-19
-date_modified: 2026-02-06
+date_modified: 2026-06-26
 keywords: ["Mercury repower GTA","Mercury repower Toronto","Mercury repower Mississauga","boat repower GTA cost","outboard repower process Toronto","Mercury Premier repower dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-19  
-**Last updated:** 2026-02-06  
+**Last updated:** 2026-06-26  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination
 
@@ -35,7 +35,7 @@ You've decided to repower. Maybe your old motor is on its last legs; maybe a fue
 
 This is the version of that walkthrough we'd give a Toronto, Mississauga, Markham, or Hamilton boater calling about a repower. **We are not located in the GTA. We're in Gores Landing, Ontario, on Rice Lake, about 90 minutes east of central Toronto.** GTA boaters drive to us regularly because we're a Mercury Premier dealer with transparent install pricing. The logistics are well-worn; here's how it goes.
 
-![Map of southern Ontario showing Harris Boat Works in Gores Landing on Rice Lake with a 90-minute drive radius covering Toronto's east end, the Kawarthas, Cobourg, Bowmanville, Peterborough, and Belleville.](/lovable-uploads/diagram-hbw-service-area-map.png)
+![Map showing Harris Boat Works in Gores Landing and the 1-2 hour drive radius for GTA boaters seeking Mercury repowers.](/lovable-uploads/diagram-hbw-service-area-map.png)
 
 *Where our customers come from. The 90-minute drive radius covers most of the GTA east end, the Kawarthas, Northumberland, Durham, and Bay of Quinte.*
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach.md
-last_updated: 2026-02-06
+last_updated: 2026-06-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake"
-description: "A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't, and the math on driv..."
+description: "A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't."
 category: "Service"
 date_published: 2026-05-15
-date_modified: 2026-02-06
+date_modified: 2026-06-26
 keywords: ["boat service near Toronto","Mercury service Oakville","outboard repair Burlington","boat mechanic Hamilton","Mercury service GTA","certified marine mechanic Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,11 +19,11 @@ content_type: blog_article
 
 # Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake
 
-> A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't, and the math on driv...
+> A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't.
 
 **Category:** Service  
 **Published:** 2026-05-15  
-**Last updated:** 2026-02-06  
+**Last updated:** 2026-06-26  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach
 
@@ -185,7 +185,7 @@ For boats that **store with us through winter**, this collapses entirely. Octobe
 **Best time to book:**
 - **Annual / 100-hr service:** book in March-early April for spring slot
 - **Winterization + storage:** book in **September** for fall (peak service period; book by mid-September)
-- **Repower:** book 4+ weeks ahead during peak season; can be next-day in winter
+- **Repower:** book 4+ weeks ahead during peak season; order over the off-season for first pick of early-spring install slots
 - **Diagnostic:** book within 1-2 weeks; we prioritize active failures
 
 **Worst time to walk in unannounced:** mid-May Saturday during peak prep season. Everyone is busy. Schedule properly.

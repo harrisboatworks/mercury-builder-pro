@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide"
-description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order, and when to walk away."
+description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order."
 category: "Buying Guide"
 date_published: 2026-03-16
 date_modified: 2026-03-16
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
 
-> A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order, and when to walk away.
+> A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order.
 
 **Category:** Buying Guide  
 **Published:** 2026-03-16  

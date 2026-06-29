@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Spring Outboard Commissioning Checklist (2026 Ontario)"
-description: "Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical, and hull. Book early at HBW Ontario."
+description: "Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical."
 category: "Maintenance"
 date_published: 2026-03-30
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Spring Outboard Commissioning Checklist (2026 Ontario)
 
-> Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical, and hull. Book early at HBW Ontario.
+> Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical.
 
 **Category:** Maintenance  
 **Published:** 2026-03-30  

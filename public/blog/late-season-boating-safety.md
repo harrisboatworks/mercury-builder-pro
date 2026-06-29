@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Cold-Water Boating Safety in Ontario: What to Know"
-description: "Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall, and any cold-water conditions."
+description: "Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall."
 category: "Tips"
 date_published: 2026-05-05
 date_modified: 2026-05-05
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Cold-Water Boating Safety in Ontario: What to Know
 
-> Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall, and any cold-water conditions.
+> Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall.
 
 **Category:** Tips  
 **Published:** 2026-05-05  
@@ -160,6 +160,11 @@ Schedule winterization at [hbw.wiki/service](https://hbw.wiki/service) before th
 - Walleye Opener Boat Prep Checklist
 - Mercury Motor Winterization Guide
 - Spring Outboard Commissioning Checklist
+
+## Sources
+
+- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Cold-water immersion guidance, mandatory safety equipment, and required operator competencies.
+- [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Late-season operating recommendations.
 
 **End the season right.** Proper winterization in October means a ready boat in May. 
 [Book fall service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 

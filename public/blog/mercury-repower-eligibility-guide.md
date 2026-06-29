@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Is My Boat Eligible for a Mercury Repower? The 5-Check Eligibility Guide (2026)"
-description: "Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours, cost threshold."
+description: "Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours."
 category: "Repower Decision"
 date_published: 2026-05-27
 date_modified: 2026-05-27
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Is My Boat Eligible for a Mercury Repower? The 5-Check Eligibility Guide (2026)
 
-> Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours, cost threshold.
+> Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours.
 
 **Category:** Repower Decision  
 **Published:** 2026-05-27  

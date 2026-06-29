@@ -74,7 +74,7 @@ A motor is reliable if it starts when you turn the key, runs through the season 
 
 The point is not that Yamaha or Honda fail more. The point is that when any motor needs service, Mercury regional dealer depth in Ontario means faster resolution.
 
-![Mercury vs Yamaha vs Honda outboard reliability compared](/lovable-uploads/inline/mercury-yamaha-honda-reliability.svg)
+![Comparison chart: Mercury, Yamaha, Honda reliability - dealer network is key tiebreaker.](/lovable-uploads/inline/mercury-yamaha-honda-reliability.svg)
 
 ## Where each brand has had issues (honest version)
 

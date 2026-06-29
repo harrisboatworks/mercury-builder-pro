@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake"
-description: "Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28. Live online repower quotes, Otonabee + Kawartha service..."
+description: "Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28."
 category: "Dealer Locations"
 date_published: 2026-05-17
 date_modified: 2026-06-07
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake
 
-> Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28. Live online repower quotes, Otonabee + Kawartha service...
+> Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  

@@ -84,7 +84,7 @@ No licence is required during **Father's Day Weekend (June 20-21)** and **Family
 
 ---
 
-![Mercury setup for Rice Lake fishing, by species](/lovable-uploads/inline/rice-lake-fishing-setup.svg)
+![Table of Mercury outboard recommendations for five Rice Lake fishing setups, listing main HP ranges and auxiliary motors: Walleye 60-90 HP + ProKicker, Bass 90-115 HP + trolling motor, etc.](/lovable-uploads/inline/rice-lake-fishing-setup.svg)
 
 ## What's Actually in Rice Lake
 
@@ -337,6 +337,8 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
 - Ontario free family fishing dates 2026: ontario.ca/page/free-family-fishing
 - Trent-Severn Waterway, Parks Canada: parks.canada.ca/lhn-nhs/on/trentsevern
 - Rice Lake boat launch ramp, Harris Boat Works: harrisboatworks.ca/boat-launch-ramp
+- [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/page/fishing-regulations-summary) - Rice Lake falls under Ontario FMZ 17 zone-wide rules.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Mercury outboard specifications and current model availability.
 
 *Fishing regulations are current as of May 2026, based on Ontario FMZ 17 (SF-2025/17). Always verify season dates, size limits, and possession limits at ontario.ca/fishing before your trip.*
 

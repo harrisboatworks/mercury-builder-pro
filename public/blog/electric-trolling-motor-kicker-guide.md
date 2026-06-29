@@ -67,7 +67,7 @@ A **gas kicker** is a small outboard mounted alongside your main motor. It runs 
 
 These are not competing tools. They are complementary. But they cost real money, so most boaters pick one first.
 
-![Electric trolling motor versus gas kicker comparison](/lovable-uploads/inline/trolling-motor-vs-kicker.svg)
+![Side-by-side comparison of electric trolling motor (shallow, stealth, spot-lock) vs gas kicker (trolling, range, backup). Most anglers run both.](/lovable-uploads/inline/trolling-motor-vs-kicker.svg)
 
 ## Head-to-head: when each one wins
 

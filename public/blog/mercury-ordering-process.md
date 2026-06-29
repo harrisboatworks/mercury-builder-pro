@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Ordering Your Mercury: What to Expect"
-description: "Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations, and what to prepare."
+description: "Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations."
 category: "Buying Guide"
 date_published: 2026-05-19
 date_modified: 2026-05-19
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Ordering Your Mercury: What to Expect
 
-> Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations, and what to prepare.
+> Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  

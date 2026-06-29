@@ -82,6 +82,19 @@ Different Mercury motors use different beep patterns, and what four beeps means 
 
 ---
 
+## Mercury Outboard Beeping 4 Beeps Every 2 Minutes: What It Means
+
+A short, repeating beep pattern (rather than one long continuous tone) is a warning alarm, not the critical shut-down alarm. On most Mercury outboards a repeated 4-beep pattern points to a sensor warning. The two usual suspects: a low oil level in the oil reservoir (on models with one) or a water-in-fuel signal from the fuel-water separator sensor. It is telling you to check, not telling you the engine is failing right now.
+
+Here's the quick triage:
+1. **Check your oil reservoir level** if your motor has a remote oil tank. Top it up if it's low and see if the alarm clears.
+2. **Check the fuel-water separator.** If it's the water-in-fuel warning, the separator may need draining or replacing.
+3. **Read the SmartCraft gauge or fault code** if your motor is equipped. The gauge tells you exactly which warning is active, instead of guessing from the beep. See our [SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) for the full code list.
+
+Your owner's manual is the final word on what your specific motor's beep pattern means, since patterns vary by model and year. If the alarm won't clear after the checks above, call us at 905-342-2153 before you run it hard.
+
+---
+
 ## Why the Exact Pattern Matters
 
 When you call a dealer and say "my motor is beeping," the first question will be: what exactly is it doing?
@@ -97,7 +110,7 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 ---
 
-![Mercury outboard warning beep action card explaining continuous beep, intermittent beeps, SmartCraft display, and manual confirmation](/lovable-uploads/mercury-outboard-beep-codes-action-card.png)
+![Laminated reference card for Mercury outboard alarm codes, showing meanings for continuous and intermittent beeps.](/lovable-uploads/mercury-outboard-beep-codes-action-card.png)
 
 ## Common Beep Patterns and What They Indicate
 
@@ -235,6 +248,10 @@ Without SmartCraft you read the alarm by its beep pattern: count the beeps, note
 ### Are beep codes different on a Mercury 4-stroke?
 
 Modern Mercury FourStrokes use the same warning logic: one key-on test beep, interval beeps for conditions like low oil or water in fuel, and a continuous alarm for serious problems like overheat. Exact patterns vary by model and year, so confirm against the manual for your motor.
+
+### What does 4 beeps every 2 minutes mean on a Mercury outboard?
+
+A short, repeating 4-beep pattern is a warning alarm, not a shut-down. It usually points to a low oil level in the oil reservoir or a water-in-fuel signal from the fuel-water separator. Check the oil reservoir and the separator first, read the SmartCraft gauge if equipped, and check your owner's manual, since patterns vary by model and year.
 
 ## Next steps
 

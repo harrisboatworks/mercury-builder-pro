@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw.md
-last_updated: 2026-02-06
+last_updated: 2026-06-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)"
 description: "An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake, pricing, what's included, the transport math, and why most serious owners..."
 category: "Winterization"
 date_published: 2026-05-17
-date_modified: 2026-02-06
+date_modified: 2026-06-26
 keywords: ["winter boat storage near Toronto","boat storage Toronto","winter boat storage Ontario","shrinkwrap GTA","boat winterization Mississauga","off-season boat storage Kawarthas"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Winterization  
 **Published:** 2026-05-17  
-**Last updated:** 2026-02-06  
+**Last updated:** 2026-06-26  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw
 
@@ -116,9 +116,9 @@ Three reasons GTA boat owners specifically choose HBW for winter storage:
 
 ### 1. The boat is at a Mercury Premier dealer all winter
 
-Why this matters: any service work that needs doing happens **right there**. No "I'll bring it in next year." Off-season is when our shop has time to do major work, repowers, transom rebuilds, deep diagnostics, Mercruiser bellows replacements.
+Why this matters: any service work that needs doing is already on a Mercury Premier dealer's site. No "I'll bring it in next year." Our shop is closed roughly December 1 to April 1, so the work itself happens once we reopen in early April, but the boat is already here, already diagnosed, and already on the schedule.
 
-A typical pattern: GTA customer drops boat off in October for storage. We winterize. While it's stored, we identify needed work and quote. They approve in January-February (when shop is slow and pricing is winter-rate). We do the work. Boat ready for spring with all maintenance current.
+A typical pattern: GTA customer drops boat off in October for storage. We winterize. While it is stored, we identify needed work and quote. They approve over the winter by phone or email (when the order book is open and winter promo pricing is live). The work happens as soon as we reopen in early April. Boat ready for spring with all maintenance current.
 
 You can't do this at a parking-lot storage facility.
 
@@ -163,7 +163,7 @@ Walking through the actual timeline for a GTA boater wintering with us:
 
 **November-March.** The boat sits in our outdoor storage area, properly winterized and protected for Ontario weather. Batteries are removed or maintained according to the storage package, and our staff keeps eyes on the yard through the winter.
 
-**Optional during winter (December-February):** Any service work approved (repower, repairs, upgrades) gets done.
+**Over winter (December-March, shop closed):** Quote and approve any service or repower work by phone or email so it is on the schedule for as soon as we reopen in early April.
 
 **Late March-April**. We start de-winterization on schedule. Spring commissioning happens automatically as part of the service contract (no extra phone call required).
 

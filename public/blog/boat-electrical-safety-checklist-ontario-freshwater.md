@@ -110,7 +110,7 @@ For the broader battery conversation, our [Mercury Boat Battery Guide](/blog/mer
 
 ## The marine-grade vs automotive-grade trap
 
-![Marine-grade vs automotive-grade boat electrical connections comparison](/lovable-uploads/inline/inline-marine-vs-automotive-wiring.png)
+![Comparison of corroded household wire nut vs. sealed marine-grade connection for boat electrical safety inspections.](/lovable-uploads/inline/inline-marine-vs-automotive-wiring.png)
 
 Here's the part most owners don't know: a marine-grade tinned-copper terminal looks almost identical to an automotive crimp connector at first glance. The differences:
 
@@ -173,6 +173,8 @@ For engine repairs, we only service Mercury and Mercruiser.
 - Transport Canada Construction Standards for Small Vessels (TP 1332)
 - Mercury Marine electrical installation guidelines (dealer technical reference, 2026)
 - HBW service shop records, 2018-2026
+- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Federal guidance on small-vessel electrical safety and required equipment.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Manufacturer guidance on rigging, batteries, and ignition-protected equipment.
 
 ## About the author
 

@@ -48,7 +48,7 @@ A Mercury or Honda buyer walks into our shop with the same two questions: which 
 | Parts (Canada) | Canadian distribution centres | Often route through US |
 | Max warranty (2026) | Up to 8 yr (3 limited + 3 corrosion concurrent + up to 5 MPP) | Up to 8 yr (5 standard + 3 HondaCare) |
 | Long-term maintenance | Competitive | Reputation for low cost over 10+ yr |
-| Switching to Mercury | — | ~$1,800-$3,500 brand-conversion rigging |
+| Switching to Mercury | - | ~$1,800-$3,500 brand-conversion rigging |
 
 ## Where Honda actually wins
 

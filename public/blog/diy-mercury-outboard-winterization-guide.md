@@ -70,7 +70,7 @@ source: HBW Customer, Peterborough 2026
 
 ---
 
-![DIY Mercury outboard winterization, six steps in order](/lovable-uploads/inline/diy-winterization-steps.svg)
+![Six-step winterization guide for Mercury outboards: stabilize fuel, flush cooling, fog engine, drain gearcase, store battery, cover. Critical steps highlighted.](/lovable-uploads/inline/diy-winterization-steps.svg)
 
 ## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
 
@@ -80,7 +80,7 @@ Winterization isn't optional maintenance. It's the difference between a motor th
 
 This guide covers what DIY winterization actually involves, which steps are realistic for most owners, which ones are easy to get wrong, and when it makes more sense to bring the motor to a dealer.
 
-In the Aug, Nov 2025 season, we completed 584 winterizations at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
+In the late-season winterization window (August through November), we completed 584 winterizations at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
 
 ---
 

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "How to Read a Mercury Outboard Serial Number: Year, Specs, and Service History"
-description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features, and service history."
+description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features."
 category: "Buying Guide"
 date_published: 2026-05-17
 date_modified: 2026-05-17
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # How to Read a Mercury Outboard Serial Number: Year, Specs, and Service History
 
-> A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features, and service history.
+> A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
@@ -56,7 +56,7 @@ If you want a quick check, send us your serial number through mercuryrepower.ca 
 
 The Mercury Model Number is the spec code, and unlike the serial, this one IS decodable. Newer Mercury motors carry a full SKU string like `1F60413GZ`. Older motors use a shorter human-readable code like `90ELPT` or `25EXLHGA`.
 
-![Diagram decoding the Mercury outboard model number 1F60413GZ: country of origin (1 USA), family and HP (F60 FourStroke 60 HP), configuration code (413 remote electric power-trim), shaft variant (G), year code (Z 2023).](/lovable-uploads/diagram-mercury-model-number-decoder.png)
+![Infographic explaining how to decode a Mercury outboard model number, including country, horsepower, and year codes.](/lovable-uploads/diagram-mercury-model-number-decoder.png)
 
 *The model number encodes product spec. Use it together with the serial number when ordering parts, planning a repower, or registering warranty.*
 

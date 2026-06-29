@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario"
-description: "Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat for the season."
+description: "Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat."
 category: "Maintenance"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario
 
-> Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat for the season.
+> Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat.
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
@@ -83,7 +83,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 If anything feels wrong during this sequence, stop. Don't push through. Most spring problems get worse, not better, when ignored.
 
-![Healthy telltale water stream from Mercury outboard cooling system pee-hole](/lovable-uploads/inline/inline-mercury-telltale-water-stream.png)
+![Technician checking the cooling system telltale stream on a Mercury FourStroke outboard during spring run-up.](/lovable-uploads/inline/inline-mercury-telltale-water-stream.png)
 
 ## When something is wrong, the most likely culprits
 

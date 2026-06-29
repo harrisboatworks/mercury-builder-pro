@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)"
-description: "Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. real heat, on-water emergency protocol, and what HBW techs need to diagnose it."
+description: "Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs."
 category: "Service & Troubleshooting"
 date_published: 2026-05-27
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)
 
-> Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. real heat, on-water emergency protocol, and what HBW techs need to diagnose it.
+> Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs.
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-27  

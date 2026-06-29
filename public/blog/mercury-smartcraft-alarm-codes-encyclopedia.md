@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)"
-description: "Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns, Guardian alert decode, when..."
+description: "Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns."
 category: "Troubleshooting"
 date_published: 2026-02-06
 date_modified: 2026-02-06
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)
 
-> Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns, Guardian alert decode, when...
+> Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns.
 
 **Category:** Troubleshooting  
 **Published:** 2026-02-06  

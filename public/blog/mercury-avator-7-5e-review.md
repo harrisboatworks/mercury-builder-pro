@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Avator 7.5e: Review, Price CAD, and Range (2026)"
-description: "Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on Rice Lake. From $4,500 CAD installed at Harris Boat Works."
+description: "Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on Rice Lake."
 category: "Buying Guide"
 date_published: 2026-05-24
 date_modified: 2026-06-02
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Avator 7.5e: Review, Price CAD, and Range (2026)
 
-> Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on Rice Lake. From $4,500 CAD installed at Harris Boat Works.
+> Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on Rice Lake.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-24  

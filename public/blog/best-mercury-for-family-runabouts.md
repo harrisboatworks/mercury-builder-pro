@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)"
-description: "A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case, with real Ontario pricing."
+description: "A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case."
 category: "Buying Guide"
 date_published: 2026-05-06
 date_modified: 2026-05-07
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)
 
-> A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case, with real Ontario pricing.
+> A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-06  

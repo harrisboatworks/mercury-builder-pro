@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class"
-description: "What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario, by motor class."
+description: "What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario."
 category: "Mercury Outboards"
 date_published: 2026-05-08
 date_modified: 2026-05-08
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class
 
-> What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario, by motor class.
+> What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
@@ -139,7 +139,7 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 ---
 
-![Mercury DTS digital throttle and shift control on boat console](/lovable-uploads/inline/inline-dts-throttle-control.png)
+![Hand operating a Mercury DTS binnacle control on a boat console for the 2026 Mercury repower rigging guide.](/lovable-uploads/inline/inline-dts-throttle-control.png)
 
 ## Wiring and Battery Setup
 

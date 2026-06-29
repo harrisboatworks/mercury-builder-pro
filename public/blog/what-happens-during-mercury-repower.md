@@ -53,7 +53,7 @@ A repower isn't just bolting a new motor to your boat. It's a full integration p
 
 **Motor availability.** Common HP classes and configurations are typically in stock or on quick order. Less common configurations may have factory wait times.
 
-**Time of year.** Off-season (October-April): fast shop turnaround and good booking availability. Spring rush (March-May): waits of 2-6 weeks before the shop can start.
+**Time of year.** Order over the off-season (October through March, while our shop is closed roughly December 1 to April 1) to lock the motor and an early-spring install slot. Spring rush (April through May): waits of 2-6 weeks before the shop can start.
 
 **Customer responsiveness.** Quote, deposit, drop-off, and pickup all need customer involvement. The faster you respond at each step, the faster the timeline.
 

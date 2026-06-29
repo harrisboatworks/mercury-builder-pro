@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)"
-description: "The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length, from Harris Boat Works."
+description: "The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length."
 category: "Buying Guide"
 date_published: 2026-03-23
 date_modified: 2026-03-23
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)
 
-> The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length, from Harris Boat Works.
+> The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length.
 
 **Category:** Buying Guide  
 **Published:** 2026-03-23  

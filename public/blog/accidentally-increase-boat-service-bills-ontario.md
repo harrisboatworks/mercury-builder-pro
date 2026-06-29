@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "How Ontario Boat Owners Accidentally Make Their Service Bills Bigger"
-description: "The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's honest list of the avoidable habits that cost owners thousands."
+description: "The shop-floor truth: most expensive Mercury repairs start as small ignored problems."
 category: "Maintenance"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # How Ontario Boat Owners Accidentally Make Their Service Bills Bigger
 
-> The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's honest list of the avoidable habits that cost owners thousands.
+> The shop-floor truth: most expensive Mercury repairs start as small ignored problems.
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  

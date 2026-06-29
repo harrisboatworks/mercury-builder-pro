@@ -29,7 +29,7 @@ content_type: blog_article
 
 ---
 
-![Mercury overheating troubleshooting flowchart (HBW diagram)](/lovable-uploads/diagram-overheating-troubleshooting.png)
+![Diagnostic flowchart for Mercury outboard overheating, guiding owners through tell-tale and RPM checks to prevent damage.](/lovable-uploads/diagram-overheating-troubleshooting.png)
 
 ## Quick Answer
 
@@ -39,7 +39,7 @@ For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/se
 
 ---
 
-![Mercury outboard overheating decision tree showing telltale stream, intake blockage, alarm severity, and when to shut down](/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree.png)
+![Diagnostic flowchart for Mercury outboard overheating alarms, showing steps for checking telltale stream and intake debris.](/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree.png)
 
 ## Mercury Outboard Overheating at Idle: What's Actually Causing It (Ontario)
 
@@ -121,7 +121,7 @@ Sensor diagnosis requires dealer tools to read temperature sensor values against
 
 ---
 
-![Mercury outboard cooling system diagnostic with temperature sensor and service manual visible](/lovable-uploads/inline/inline-overheating-diagnostic.png)
+![Mercury outboard engine on a workbench with a service manual and infrared thermometer for overheating diagnostics.](/lovable-uploads/inline/inline-overheating-diagnostic.png)
 
 ## Ontario Context: Why Idle Overheating Shows Up More in Summer
 

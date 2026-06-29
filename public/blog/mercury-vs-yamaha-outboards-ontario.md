@@ -42,7 +42,7 @@ A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hund
 | Low-RPM quietness | Gap closed (current FourStroke V6, ProKicker) | Historically a slight edge |
 | Reliability (equiv. 150) | Indistinguishable in real-world use | Indistinguishable |
 | Resale value | Strong | Holds value comparably |
-| Switching to Mercury | — | ~$1,800-$3,500 brand-conversion rigging |
+| Switching to Mercury | - | ~$1,800-$3,500 brand-conversion rigging |
 
 ## The Rice Lake service-network reality
 

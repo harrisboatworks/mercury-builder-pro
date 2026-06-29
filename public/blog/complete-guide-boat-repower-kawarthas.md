@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Complete Guide to Repowering Your Boat in the Kawarthas (2026)"
-description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves, and how HBW does it."
+description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves."
 category: "Repowering"
 date_published: 2026-02-23
 date_modified: 2026-05-23
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Complete Guide to Repowering Your Boat in the Kawarthas (2026)
 
-> A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves, and how HBW does it.
+> A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves.
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
@@ -59,7 +59,7 @@ The boaters who regret a repower are almost always the ones who put a new motor 
 
 ---
 
-![Mercury repower process timeline at HBW](/lovable-uploads/inline/repower-process-timeline.svg)
+![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to sea trial – 2-4 weeks total.](/lovable-uploads/inline/repower-process-timeline.svg)
 
 ## Step 1: Is Your Hull Worth Repowering?
 
@@ -285,7 +285,7 @@ For a hull in solid structural condition, a repower almost always wins on the ma
 
 ### How long does a Kawartha repower take?
 
-One to two days of shop time for a clean Mercury-to-Mercury install. From signed order to pickup is typically two to four weeks, depending on motor availability. Off-season repowers move fastest.
+One to two days of shop time for a clean Mercury-to-Mercury install. From signed order to pickup is typically two to four weeks once we are open, depending on motor availability. Order over the off-season to lock in an early-spring install slot.
 
 ### Do I need new controls?
 
@@ -305,7 +305,7 @@ Trade-in credit. Even a dead motor carries aluminum and parts value, and that cr
 
 ### When is the best time to book a repower?
 
-October through March. Off-season ordering gets the best motor availability and shop time. Spring slots fill by March.
+October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed roughly December 1 to April 1, install work happens once we reopen in early April. Spring slots fill by March.
 
 ## Next steps
 

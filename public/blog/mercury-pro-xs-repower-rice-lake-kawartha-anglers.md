@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Pro XS Repower for Rice Lake & Kawartha Anglers"
-description: "Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust, fuel-burn, real numbers from a Mercury Premier dealer."
+description: "Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust, fuel-burn, real numbers from a Mercury."
 category: "Repower"
 date_published: 2026-05-15
 date_modified: 2026-05-15
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Pro XS Repower for Rice Lake & Kawartha Anglers
 
-> Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust, fuel-burn, real numbers from a Mercury Premier dealer.
+> Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust, fuel-burn, real numbers from a Mercury.
 
 **Category:** Repower  
 **Published:** 2026-05-15  
@@ -116,7 +116,7 @@ Honest framing matters. We sell both because they're both right for different pe
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-![Mercury Pro XS at full throttle on a bass boat across Rice Lake at sunrise](/lovable-uploads/inline/inline-pro-xs-action.png)
+![Mercury Pro XS V6 outboard on a bass boat cruising through misty Ontario lake waters at sunrise.](/lovable-uploads/inline/inline-pro-xs-action.png)
 
 ## Hole-shot, top-end, and where they matter
 

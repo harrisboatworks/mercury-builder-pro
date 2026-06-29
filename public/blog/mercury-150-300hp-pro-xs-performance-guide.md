@@ -12,7 +12,6 @@ description: "Mercury 150 Pro XS through 300 HP for Ontario boats: weights, top 
 category: "Buying Guide"
 date_published: 2026-05-13
 date_modified: 2026-06-29
-
 keywords: ["mercury 150 pro xs","mercury 175 pro xs","mercury 200 pro xs","mercury 225 pro xs","mercury 250 pro xs","mercury 300 pro xs","mercury v6 vs v8","mercury pro xs comparison ontario","mercury 150-300 hp guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +24,6 @@ content_type: blog_article
 **Category:** Buying Guide  
 **Published:** 2026-05-13  
 **Last updated:** 2026-06-29  
-
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide
 
@@ -39,7 +37,7 @@ Harris Boat Works is a family-owned marina on Rice Lake, established in 1947, an
 
 The current Pro XS lineup in this range spans three architectures: 150 HP inline-4, 175-250 HP V6, and 300 HP V8.
 
-![Mercury Pro XS architecture chart comparing 150 inline-4, 175-250 V6, and 300 V8 outboards](/lovable-uploads/mercury-pro-xs-150-300-architecture-chart.png)
+![Graphic showing Mercury Pro XS 150 Inline-4, 175-250 V6, and 300 V8 outboards to help choose the right engine for your boat.](/lovable-uploads/mercury-pro-xs-150-300-architecture-chart.png)
 
 ## The Quick Comparison Table
 
@@ -228,7 +226,6 @@ On a suitable sub-19 ft hull, a Mercury 150 Pro XS typically runs in the low-to-
 ### How much does a Mercury 150 Pro XS cost?
 
 All-in repower pricing on a Mercury 150 Pro XS typically plans out around $22,500 to $26,500 CAD, depending on rigging, controls, and what is coming off your transom. Pricing is in CAD and the final number is confirmed by Harris Boat Works. Build a live quote in about 90 seconds at mercuryrepower.ca/quote/motor-selection or call 905-342-2153.
-
 
 ## Next steps
 

@@ -127,7 +127,7 @@ We see these every year:
 
 4. **Skipping anodes.** Sacrificial anodes (zincs) protect the motor from electrolytic corrosion. They wear down. Replace at 30% depletion or the motor metal becomes the next sacrifice.
 
-5. **Wrong oil for FourStroke motors.** Modern Mercury FourStrokes need full-synthetic Mercury 25W-50 oil, not generic motor oil or 2-stroke pre-mix.
+5. **Wrong oil for FourStroke motors.** Modern Mercury FourStrokes need Mercury 4-Stroke Marine Oil (FC-W rated), not generic automotive oil or 2-stroke pre-mix. In Canada the grade goes by horsepower: 10W-30 for 0 to 30 hp, 25W-40 for 40, 50, and 60 hp, and 10W-30 again for 75 hp and up. Your owner's manual confirms it for your exact engine.
 
 6. **Running on dead batteries.** A dying battery makes the starter struggle, which over time burns out the starter motor or wears the flywheel. Replace batteries every 4 to 6 years on schedule.
 
@@ -224,7 +224,7 @@ Watch for weak or inconsistent water stream from the telltale, overheating warni
 
 ### How often should I change the oil in my Mercury 4-stroke outboard?
 
-Change the oil and oil filter in your Mercury 4-stroke outboard every 100 hours of operation or once per year, whichever comes first. For most Ontario cottage boaters running 50-100 hours per season, annual oil changes are the right cadence. Mercury specifies 10W-30 4-stroke marine engine oil. Using automotive oil is not recommended, it lacks the anti-foaming and corrosion-protection additives that marine oil provides. Keep a record of oil changes; it matters for warranty claims and resale value.
+Change the oil and oil filter in your Mercury 4-stroke outboard every 100 hours of operation or once per year, whichever comes first. For most Ontario cottage boaters running 50-100 hours per season, annual oil changes are the right cadence. Use Mercury 4-Stroke Marine Oil (FC-W rated). In Canada the grade goes by horsepower: 10W-30 for 0 to 30 hp, 25W-40 for 40/50/60 hp, and 10W-30 for 75 hp and up. Your owner's manual confirms the exact grade for your engine. Using automotive oil is not recommended, it lacks the anti-foaming and corrosion-protection additives that marine oil provides. Keep a record of oil changes; it matters for warranty claims and resale value.
 
 ### Can I do my own Mercury outboard maintenance?
 

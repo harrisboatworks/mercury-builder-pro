@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)"
-description: "Inventory is back, dealer discounts are easing, financing rates are dropping. Honest 2026 advice for Ontario boat buyers from Harris Boat Works, est. 1947."
+description: "Inventory is back, dealer discounts are easing, financing rates are dropping. Honest 2026 advice for Ontario boat buyers from Harris Boat Works."
 category: "Market Insight"
 date_published: 2026-02-06
 date_modified: 2026-02-06
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)
 
-> Inventory is back, dealer discounts are easing, financing rates are dropping. Honest 2026 advice for Ontario boat buyers from Harris Boat Works, est. 1947.
+> Inventory is back, dealer discounts are easing, financing rates are dropping. Honest 2026 advice for Ontario boat buyers from Harris Boat Works.
 
 **Category:** Market Insight  
 **Published:** 2026-02-06  

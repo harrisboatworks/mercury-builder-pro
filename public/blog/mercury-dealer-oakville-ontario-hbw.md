@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake"
-description: "Mercury Premier dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage..."
+description: "Mercury Premier dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage for..."
 category: "Service Area"
 date_published: 2026-05-11
 date_modified: 2026-05-11
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake
 
-> Mercury Premier dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage...
+> Mercury Premier dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage for...
 
 **Category:** Service Area  
 **Published:** 2026-05-11  

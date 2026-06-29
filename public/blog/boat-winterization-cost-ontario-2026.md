@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)"
-description: "Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap, and storage at HBW."
+description: "Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap."
 category: "Maintenance"
 date_published: 2026-04-21
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)
 
-> Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap, and storage at HBW.
+> Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap.
 
 **Category:** Maintenance  
 **Published:** 2026-04-21  
@@ -70,7 +70,7 @@ totalValue: $250 - $400 CAD
 caveat: Pricing varies by motor size, accessibility, and current shop rate. HST extra. Book a winterization slot at /service.
 ::
 
-![Boat winterization cost breakdown for Ontario](/lovable-uploads/inline/winterization-cost-breakdown.svg)
+![Table of boat winterization costs in Ontario: 5 services totalling $250–$400 CAD before HST.](/lovable-uploads/inline/winterization-cost-breakdown.svg)
 
 ## Why the price varies (and why flat rates mislead you)
 
@@ -80,7 +80,7 @@ When you see a "$549 winterization" posted on a marina website, that number was 
 
 We quote winterization based on what is in front of us.
 
-![Ontario boat winterization cost drivers graphic showing engine type, number of engines, shrinkwrap, storage, battery, and spring prep](/lovable-uploads/boat-winterization-cost-drivers-ontario.png)
+![Technician winterizing a Mercury outboard on an aluminum boat, illustrating key cost factors for Ontario boat storage.](/lovable-uploads/boat-winterization-cost-drivers-ontario.png)
 
 ## What changes your winterization cost
 

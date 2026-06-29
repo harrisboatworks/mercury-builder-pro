@@ -97,7 +97,7 @@ Many musky anglers add a kicker motor:
 - Mercury 15HP
 - Mercury 20HP
 
-![Musky fishing guide for the Kawarthas](/lovable-uploads/Musky_Boat_Motor_Kawarthas_Guide.png)
+![Anglers holding a musky in a boat with a Mercury 150 Pro XS outboard, illustrating motor setups for Kawartha fishing.](/lovable-uploads/Musky_Boat_Motor_Kawarthas_Guide.png)
 
 ### Trolling Motor Integration
 

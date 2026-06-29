@@ -118,7 +118,7 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ---
 
-![Mercury 115 HP FourStroke mounted on a fiberglass runabout at golden hour](/lovable-uploads/inline/inline-mercury-115.png)
+![Black Mercury 115 HP FourStroke outboard on an aluminum fishing boat, highlighting the lightweight design for Ontario.](/lovable-uploads/inline/inline-mercury-115.png)
 
 ## Where the 115 HP FourStroke Is the Wrong Call
 
@@ -134,7 +134,7 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ## How the 115 Compares to the 90 and the 150
 
-![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L inline-4 block](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 | | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
 |---|---|---|---|
@@ -168,6 +168,8 @@ If you buy from us, we service it. For engine repairs, we only work on Mercury a
 - [Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup](/blog/mercury-90-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's.
 - [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
 - [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
+
+*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
 
 ## Build a Quote
 

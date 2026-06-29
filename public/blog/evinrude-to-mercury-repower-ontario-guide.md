@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md
-last_updated: 2026-06-12
+last_updated: 2026-06-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Evinrude to Mercury Repower: The Ontario Guide (2026)"
-description: "An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion involves, when to switch, and when to wait."
+description: "An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion involves, when to switch."
 category: "Repower Guides"
 date_published: 2026-04-16
-date_modified: 2026-06-12
+date_modified: 2026-06-19
 keywords: ["Evinrude to Mercury repower","Evinrude to Mercury conversion","replace Evinrude outboard Ontario","Evinrude discontinued repower","Evinrude E-TEC repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,11 +19,11 @@ content_type: blog_article
 
 # Evinrude to Mercury Repower: The Ontario Guide (2026)
 
-> An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion involves, when to switch, and when to wait.
+> An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion involves, when to switch.
 
 **Category:** Repower Guides  
 **Published:** 2026-04-16  
-**Last updated:** 2026-06-12  
+**Last updated:** 2026-06-19  
 **Read time:** 14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide
 
@@ -99,7 +99,7 @@ Here is what actually changes:
 
 The propeller point matters more than people expect. An Evinrude prop on a Mercury motor is a mismatch that quietly costs you speed and fuel economy. We test and confirm the right prop on the sea-trial of every conversion, so you leave with the correct prop, not the one that happened to be on the boat.
 
-For the actual cost in current dollars, the [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) has the full breakdown by horsepower class, and the configurator at mercuryrepower.ca builds a real number for your exact motor. If you plan to keep the hull through one more motor cycle, typically eight to fifteen years, the one-time conversion premium almost always works out in favour of switching now.
+For the actual cost in current dollars, the [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) has the full breakdown by horsepower class, and the configurator at mercuryrepower.ca builds a real number for your exact motor. Expect a conversion premium in the range of $1,500 to $3,000 over a like-for-like Mercury-to-Mercury swap, depending on controls, rigging, and mounting. If you plan to keep the hull through one more motor cycle, typically eight to fifteen years, the one-time conversion premium almost always works out in favour of switching now.
 
 ---
 
@@ -139,7 +139,7 @@ So the framing we give every Evinrude owner is this. The motor itself may be fin
 
 ## The Installation
 
-An Evinrude-to-Mercury conversion takes longer than a Mercury-to-Mercury repower because of the full control-system replacement. Plan on a few days of shop time, and a few weeks from the day the motor is ordered to the day you pick it up. Off-season, October through March, gets the fastest availability. Spring and summer slots fill up, so if you are planning for this season, book early.
+An Evinrude-to-Mercury conversion takes longer than a Mercury-to-Mercury repower because of the full control-system replacement. Plan on a few days of shop time, and a few weeks from the day the motor is ordered to the day you pick it up. Book or plan your conversion over the winter, the work starts when we open in early April. October and November bookings get the fastest spring slot. Spring and summer slots fill up, so if you are planning for this season, book early.
 
 Every HBW conversion includes:
 
@@ -149,7 +149,7 @@ Every HBW conversion includes:
 - The Pleasure Craft Licence update, so your licence information stays current with Transport Canada after the motor change, handled for every HBW customer at no extra charge
 - A fresh 3-year Mercury limited warranty on the new motor
 
-![Old Evinrude removed beside new Mercury FourStroke ready for install](/lovable-uploads/inline/inline-evinrude-to-mercury-swap.png)
+![Removed Evinrude E-TEC beside an Alumacraft boat with a new Mercury FourStroke outboard during a repower project.](/lovable-uploads/inline/inline-evinrude-to-mercury-swap.png)
 
 The boat does not leave until it passes the sea-trial. That is how a marina that has been on Rice Lake since 1947 protects its name.
 
@@ -221,7 +221,7 @@ Rarely. Different hub design and different pitch matching mean an Evinrude prop 
 
 ### How long does the conversion take?
 
-A few days of shop time, and a few weeks from order to pickup. Off-season, October through March, is fastest.
+A few days of shop time, and a few weeks from order to pickup. Booking in October or November gets you the fastest spring slot.
 
 ### Should I trade in the old Evinrude or sell it privately?
 
