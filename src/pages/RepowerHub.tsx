@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Award, Users, MapPin, Wrench } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
-import { formatFinancingRate } from '@/lib/finance';
+import { BlogInlineCTA } from '@/components/blog/BlogInlineCTA';
+
 
 
 
