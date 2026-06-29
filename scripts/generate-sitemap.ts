@@ -10,10 +10,17 @@
 
 import { writeFileSync, existsSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
+import { register } from 'node:module';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// Stub out binary asset imports (png/jpg/webp/etc.) so that pulling in
+// blog/article data modules under plain Node (tsx) doesn't crash with
+// ERR_UNKNOWN_FILE_EXTENSION. Vite handles these at app build time; the
+// sitemap generator only needs metadata.
+register('./asset-loader.mjs', pathToFileURL(__filename));
 
 async function generateSitemap() {
   try {
