@@ -749,6 +749,31 @@ function parseMythbusterBody(body: string): MythbusterProps | null {
 
 
 
+
+function parseCtaBody(body: string): BlogInlineCTAProps | null {
+  const flat: Record<string, string> = {};
+  for (const raw of body.split('\n')) {
+    const line = raw.replace(/\s+$/, '');
+    if (!line.trim()) continue;
+    const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    flat[kv[1]] = kv[2].trim();
+  }
+  const variant = flat.variant === 'banner' ? 'banner' : 'inline';
+  if (!flat.heading || !flat.body || !flat.primaryLabel || !flat.primaryHref) return null;
+  return {
+    variant,
+    heading: flat.heading,
+    body: flat.body,
+    primaryLabel: flat.primaryLabel,
+    primaryHref: flat.primaryHref,
+    secondaryLabel: flat.secondaryLabel || undefined,
+    secondaryHref: flat.secondaryHref || undefined,
+    phone: flat.phone || undefined,
+    footer: flat.footer || undefined,
+  };
+}
+
 function splitDirectives(md: string): RenderChunk[] {
   const chunks: RenderChunk[] = [];
   let last = 0;
