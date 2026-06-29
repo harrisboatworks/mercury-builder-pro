@@ -57,7 +57,7 @@ export default function PricingReference() {
   return (
     <div className="min-h-screen bg-repower-paper">
       <Helmet>
-        <title>Mercury Outboard Prices in Ontario (CAD, 2027) | Harris Boat Works</title>
+        <title>Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works</title>
         <meta
           name="description"
           content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only."
@@ -68,14 +68,14 @@ export default function PricingReference() {
         <meta property="og:site_name" content="Harris Boat Works" />
         <meta property="og:locale" content="en_CA" />
         <meta property="og:url" content="https://www.mercuryrepower.ca/pricing-reference" />
-        <meta property="og:title" content="Mercury Outboard Prices in Ontario (CAD, 2027) | Harris Boat Works" />
+        <meta property="og:title" content="Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works" />
         <meta
           property="og:description"
           content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only."
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.mercuryrepower.ca/pricing-reference" />
-        <meta name="twitter:title" content="Mercury Outboard Prices in Ontario (CAD, 2027) | Harris Boat Works" />
+        <meta name="twitter:title" content="Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works" />
         <meta
           name="twitter:description"
           content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only."
@@ -87,7 +87,8 @@ export default function PricingReference() {
       <RepowerHeader />
       <div className="pt-[64px] lg:pt-[72px]" aria-hidden />
       <main className="container mx-auto max-w-5xl px-4 py-8">
-        <h1 className="text-3xl font-bold mb-4">Mercury Outboard Prices in Ontario (CAD, 2027)</h1>
+        <h1 className="text-3xl font-bold mb-4">Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing</h1>
+
         {/* Intro paragraph renders once, from /pricing-reference.md (the canonical
             source). Do not duplicate it here. Visible date below is wired to the
             generated canonical pricing last_updated value. */}
