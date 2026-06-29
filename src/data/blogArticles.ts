@@ -9952,13 +9952,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 48: November 30, 2026
   {
     slug: 'mercury-150-300hp-pro-xs-performance-guide',
-    title: 'Mercury 150-300 HP Pro XS Compared for Ontario Boats',
-    seoTitle: "Mercury Pro XS 150-300 HP Compared (Ontario) | HBW",
-    description: "HBW compares Mercury Pro XS 150, 175, 200, 225, 250, and 300 HP outboards for Ontario boats: hull pairings, real-world top speeds.",
+    title: 'Mercury 150 Pro XS to 300 Compared for Ontario Boats',
+    seoTitle: "Mercury 150 Pro XS to 300 Compared for Ontario Boats",
+    description: "Mercury 150 Pro XS through 300 HP for Ontario boats: weights, top speeds, fuel use, hull pairings, and CAD pricing from Harris Boat Works.",
     image: '/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-06-29',
+
     publishDate: '2026-05-13',
     category: 'Buying Guide',
     readTime: '10 min read',
