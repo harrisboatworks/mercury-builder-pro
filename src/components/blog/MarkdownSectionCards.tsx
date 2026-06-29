@@ -353,7 +353,7 @@ function buildYouTubeDirective(attrs: string): string | null {
 }
 
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeEmbeds(
+  return rewriteCta(rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeEmbeds(
     rewriteMercuryPriceTable(
       rewriteWalkaroundLeadCapture(
         rewritePullQuote(
