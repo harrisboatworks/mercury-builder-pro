@@ -33152,7 +33152,22 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
 
 A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model and battery configuration, not the marketing range numbers. For the typical cottage use case, short runs from the dock to a fishing spot or a neighbour's dock, the smaller Avator 7.5e on a 13-14 ft car-topper delivers about 5 miles at full throttle or up to 34 miles at quarter-throttle. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
 
+## What Is the Range of a Mercury Avator Electric Outboard?
+
+It depends on the model and how many battery packs you run. A Mercury Avator 7.5e on its built-in 1 kWh battery does roughly 3 to 4 miles at full throttle and 20 to 25 miles at trolling speed on Rice Lake. The larger models (20e through 110e) take external packs and extend range by adding batteries. Mercury rates Avators by power output and thrust, not by a gas-horsepower equivalent.
+
+| Model | Battery setup | Full throttle | Half throttle | Trolling / low speed | Typical boat |
+|---|---|---|---|---|---|
+| Avator 7.5e | 1 kWh integrated | ~3-4 mi | ~8-12 mi | ~20-25 mi | Under 14 ft |
+| Avator 20e | Up to 3 external 2,300 Wh packs | Similar to 7.5e per pack | Similar to 7.5e per pack | Scales with pack count | 14-16 ft aluminum |
+| Avator 35e | Up to 4 external 2,300 Wh packs | ~6-8 mi | ~15-20 mi | Scales with pack count | 14-18 ft |
+| Avator 75e | Up to 4 packs, 5,400 Wh each | Scales with pack count | Scales with pack count | Scales with pack count | 16-20 ft |
+| Avator 110e | Up to 4 packs, 5,400 Wh each | Scales with pack count | Scales with pack count | Scales with pack count | 16-20 ft |
+
+*Ranges are practical Rice Lake estimates and depend on load, wind, and how many packs are aboard. The 75e and 110e scale with the number of 5,400 Wh packs installed; see each model's section below for the detail.*
+
 ## What "range" actually means on an electric outboard
+
 
 Range on an electric outboard depends on:
 
