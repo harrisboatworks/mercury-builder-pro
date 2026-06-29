@@ -2671,6 +2671,14 @@ Walk it back to three honest questions:
 2. **Will you actually use the performance?** If "fast" genuinely matters to you, Pro XS. If you're nodding along but you really just want to get to the fishing hole and back, FourStroke.
 3. **How much does quiet and smooth matter?** On a big boat with people aboard all day, Verado's refinement is a real upgrade. On a 17-foot tinny, you won't notice it enough to justify the spend.
 
+::cta
+variant: inline
+heading: Found your family? Price it out.
+body: Whether it's a FourStroke, a Pro XS, or a Verado, the live pricing is right here so you can see the real number before you commit.
+primaryLabel: See live pricing by family
+primaryHref: /pricing-reference
+::
+
 ## What we see at HBW
 
 Most of the motors that leave our shop are FourStrokes, because most of the boats on this lake are pontoons and aluminum fishing boats, and that's exactly what the FourStroke is built for. The Pro XS crowd is real and loyal: the bass and walleye guys who want that snap onto plane and a little more top end for running between spots. We sell plenty of those too.
