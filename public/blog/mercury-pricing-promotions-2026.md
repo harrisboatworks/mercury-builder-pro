@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "2026 Mercury Buying: Pricing, Promotions and Smart Timing"
-description: "Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options."
+description: "Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages."
 category: "Buying Guide"
 date_published: 2026-05-08
 date_modified: 2026-06-03
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # 2026 Mercury Buying: Pricing, Promotions and Smart Timing
 
-> Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options.
+> Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-08  
@@ -230,7 +230,7 @@ For complete installed-repower pricing in CAD, including the rigging, controls, 
 ## Related guides
 
 - [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), current financing rates and terms
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario), financing basics for Ontario buyers
+- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026), financing basics for Ontario buyers
 - [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 - [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
 

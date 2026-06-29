@@ -141,6 +141,7 @@ export default function LocationDetail() {
         url,
         telephone: COMPANY_INFO.contact.phone,
         email: COMPANY_INFO.contact.email,
+        priceRange: '$$',
         
         address: {
           '@type': 'PostalAddress',
@@ -150,16 +151,34 @@ export default function LocationDetail() {
           postalCode: COMPANY_INFO.address.postal,
           addressCountry: 'CA',
         },
+        ...(lf && typeof lf.lat === 'number' && typeof lf.lng === 'number'
+          ? { geo: { '@type': 'GeoCoordinates', latitude: lf.lat, longitude: lf.lng } }
+          : {}),
+
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            validFrom: '2026-04-01',
+            validThrough: '2026-11-30',
+          },
+        ],
         // Sales catchment only, represents where customers travel from to pick up at Gores Landing.
         // Sales catchment only. All work happens at Gores Landing.
-        areaServed: {
-          '@type': 'AdministrativeArea',
-          name: location.region,
-          description:
-            'Sales catchment only, customers from this area travel to Gores Landing for pickup. No mobile service, no delivery.',
-        },
+        areaServed: location.slug === 'peterborough-mercury-dealer'
+          ? ['Peterborough', 'Kawartha Lakes', 'Otonabee Region', 'Rice Lake'].map((n) => ({
+              '@type': 'AdministrativeArea',
+              name: n,
+            }))
+          : {
+              '@type': 'AdministrativeArea',
+              name: location.region,
+              description:
+                'Sales catchment only, customers from this area travel to Gores Landing for pickup. No mobile service, no delivery.',
+            },
         sameAs: BUSINESS_SAME_AS,
       },
+
       {
         '@type': 'Place',
         '@id': `${url}#place`,

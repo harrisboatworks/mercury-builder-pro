@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Where to Launch a Boat on Rice Lake: A Practical Guide for Anglers, Cottagers, and Day Visitors"
-description: "A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp, and who it's for."
+description: "A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp."
 category: "Local Guides"
 date_published: 2026-05-10
 date_modified: 2026-05-10
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Where to Launch a Boat on Rice Lake: A Practical Guide for Anglers, Cottagers, and Day Visitors
 
-> A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp, and who it's for.
+> A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp.
 
 **Category:** Local Guides  
 **Published:** 2026-05-10  

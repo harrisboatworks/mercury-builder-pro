@@ -1,37 +1,37 @@
 ---
-canonical: https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-fourstroke
-last_updated: 2026-06-17
+canonical: https://www.mercuryrepower.ca/motors/pxs-200-l-dts-tm
+last_updated: 2026-06-29
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-motor_id: 06a95675-6418-4902-964f-e04b5f6bd0f2
-slug: fourstroke-40hp-40-elpt-fourstroke
-family: FourStroke
-horsepower: 40
-model_number: 1F40413GZ
+motor_id: 62a0ce53-7c17-4589-926a-c44ac4314412
+slug: pxs-200-l-dts-tm
+family: ProXS
+horsepower: 200
+model_number: 12000035A
 availability: in_stock
-price_cad: 9438
+price_cad: 29992
 ---
 
-# 40 ELPT FourStroke
+# 200 ELPT ProXS DTS
 
-Mercury FourStroke 40 HP outboard motor (model 1F40413GZ).
+Mercury ProXS 200 HP outboard motor (model 12000035A).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 40 ELPT FourStroke
-- **Family:** Mercury FourStroke
-- **Horsepower:** 40 HP
-- **Model number:** 1F40413GZ
+- **Model:** 200 ELPT ProXS DTS
+- **Family:** Mercury ProXS
+- **Horsepower:** 200 HP
+- **Model number:** 12000035A
 
 ## Pricing (CAD)
 
-- **Selling price:** $9,438
-- **MSRP:** $10,515
+- **Selling price:** $29,992
+- **MSRP:** $33,410
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
@@ -42,25 +42,25 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer �
 
 ## Best fit for
 
-Mid-size aluminum fishing boats 14–18 ft and small pontoons.
+Larger pontoons, fiberglass runabouts, and walkaround/cuddy boats 20–24 ft.
 
 ## Not ideal for
 
-Heavy pontoons over 22 ft or fiberglass family boats, consider 90–115 HP.
+Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
 
 ## Build a quote
 
-- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-fourstroke
-- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=06a95675-6418-4902-964f-e04b5f6bd0f2
+- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/pxs-200-l-dts-tm
+- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=62a0ce53-7c17-4589-926a-c44ac4314412
 
 ## Public Quote API
 
-Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {
   "action": "build_quote",
-  "motor_id": "06a95675-6418-4902-964f-e04b5f6bd0f2",
+  "motor_id": "62a0ce53-7c17-4589-926a-c44ac4314412",
   "trade_in": null,
   "contact": null
 }

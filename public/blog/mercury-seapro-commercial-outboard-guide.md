@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury SeaPro: The Commercial Outboard Built for Guides, Charters, and High-Hour Use"
-description: "An HBW guide to Mercury SeaPro outboards, what makes them different from FourStrokes, who actually needs one, and the math on commercial-grade vs recreational..."
+description: "An HBW guide to Mercury SeaPro outboards, what makes them different from FourStrokes, who actually needs one, and the math on commercial-grade vs."
 category: "Buying Guide"
 date_published: 2026-04-20
 date_modified: 2026-05-07
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury SeaPro: The Commercial Outboard Built for Guides, Charters, and High-Hour Use
 
-> An HBW guide to Mercury SeaPro outboards, what makes them different from FourStrokes, who actually needs one, and the math on commercial-grade vs recreational...
+> An HBW guide to Mercury SeaPro outboards, what makes them different from FourStrokes, who actually needs one, and the math on commercial-grade vs.
 
 **Category:** Buying Guide  
 **Published:** 2026-04-20  
@@ -112,7 +112,7 @@ whenInDoubt: Most Ontario recreational buyers do not need SeaPro. If you are not
 
 ---
 
-![Mercury SeaPro commercial outboard on rugged working fishing boat](/lovable-uploads/inline/inline-mercury-seapro-commercial.png)
+![Black Mercury SeaPro outboard on a rugged aluminum work boat, illustrating commercial-grade reliability for guides.](/lovable-uploads/inline/inline-mercury-seapro-commercial.png)
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

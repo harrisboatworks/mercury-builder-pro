@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup"
-description: "An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's the wrong call, and how it fits Rice Lake aluminum boats..."
+description: "An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's the wrong call."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
 date_modified: 2026-05-10
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup
 
-> An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's the wrong call, and how it fits Rice Lake aluminum boats...
+> An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's the wrong call.
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
@@ -109,13 +109,13 @@ Rule of thumb: aluminum fishing boats default to standard. Pontoons default to C
 
 ---
 
-![Mercury 90 HP FourStroke mounted on the transom of an aluminum fishing boat](/lovable-uploads/inline/inline-mercury-90.png)
+![Black Mercury FourStroke outboard on an aluminum fishing boat at sunset, ideal for Ontario lake cruising.](/lovable-uploads/inline/inline-mercury-90.png)
 
 ## How the 90 Compares to the 75 and the 115
 
 The 75, 90, and 115 are the same block with different tuning. There is no weight penalty stepping up. The only real penalty going from 75 to 90 to 115 is price and fuel burn at full throttle.
 
-![Mercury 75 vs 90 vs 115 HP FourStroke comparison, same 2.1L block](/lovable-uploads/inline/75-90-115-hp.svg)
+![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 Most boats want either the 90 or the 115. The 75 is right for smaller hulls or situations where the capacity plate forces it, we don't actually stock the 75 because the 90 is the same physical motor at a small additional cost and has better headroom and better resale value.
 
@@ -143,6 +143,8 @@ If you buy from us, we're also the ones servicing it. For engine repairs, we onl
 - [Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)](/blog/mercury-75-hp-fourstroke-review-ontario): An honest answer from an Ontario Mercury dealer. We don't sell the 75 HP FourStroke. Here's why, what it.
 - [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
 - [Mercury Avator 7.5e: Review, Price CAD, and Range (2026)](/blog/mercury-avator-7-5e-review): Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on.
+
+*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
 
 ## Build a Quote
 

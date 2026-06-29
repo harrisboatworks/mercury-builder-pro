@@ -102,7 +102,7 @@ whenInDoubt: Underpowered boats are the #1 complaint we hear. Step up before you
 
 ---
 
-![How to choose the right horsepower for your boat](/lovable-uploads/inline/how-to-choose-horsepower.svg)
+![Table of Mercury outboard HP recommendations by boat type, from 9.9 HP (12-14 ft aluminum) to 200 HP (18-22 ft runabout)](/lovable-uploads/inline/how-to-choose-horsepower.svg)
 
 ## HP recommendations by boat type
 
@@ -173,7 +173,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 ---
 
-![Two aluminum boats with different Mercury horsepower at dealership](/lovable-uploads/inline/inline-horsepower-selection.png)
+![Mercury 25 HP and 90 HP outboards on aluminum boats to illustrate different horsepower needs for boat sizing.](/lovable-uploads/inline/inline-horsepower-selection.png)
 
 ## When to step up, when to stay
 

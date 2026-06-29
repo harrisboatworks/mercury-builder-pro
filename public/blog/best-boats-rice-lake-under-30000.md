@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)"
-description: "Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a clean used hull repowered at HBW. We rig all three."
+description: "Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a clean used hull repowered at HBW."
 category: "Buying Guide"
 date_published: 2026-04-25
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)
 
-> Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a clean used hull repowered at HBW. We rig all three.
+> Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a clean used hull repowered at HBW.
 
 **Category:** Buying Guide  
 **Published:** 2026-04-25  
@@ -76,7 +76,7 @@ Used pontoons in the 18 to 22 ft range at a price that leaves repower room are c
 
 **Trade-off:** A used pontoon at this price will likely have an older motor. That is not a problem if you have accounted for a repower, but it is a problem if you assumed the motor was included in the deal.
 
-![Affordable 16-foot aluminum fishing boat with Mercury 40 anchored on Rice Lake](/lovable-uploads/inline/inline-affordable-rice-lake-boat.png)
+![16-foot aluminum boat with Mercury 40 outboard on Rice Lake, representing an affordable repower option under $30,000.](/lovable-uploads/inline/inline-affordable-rice-lake-boat.png)
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

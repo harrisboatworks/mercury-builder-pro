@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)"
-description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock, and how to avoid it."
+description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock."
 category: "Troubleshooting"
 date_published: 2026-05-09
 date_modified: 2026-05-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)
 
-> A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock, and how to avoid it.
+> A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock.
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-09  
@@ -68,7 +68,7 @@ This is the on-water response guide and prevention overview we'd walk through wi
 
 ---
 
-![Mercury overheating: what to do in the first 60 seconds](/lovable-uploads/inline/overheating-first-60-seconds.svg)
+![5-step flow chart: Mercury outboard overheat emergency – idle, check tell-tale, clear intake, restart or tow. $40 impeller vs $4,500 powerhead.](/lovable-uploads/inline/overheating-first-60-seconds.svg)
 
 ## On the Water Right Now: Do This in Order
 

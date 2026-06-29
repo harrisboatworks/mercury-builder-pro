@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)"
-description: "A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, without a bow thruster or a meltdown."
+description: "A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake."
 category: "Boating Lifestyle"
 date_published: 2026-03-21
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)
 
-> A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, without a bow thruster or a meltdown.
+> A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake.
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-03-21  

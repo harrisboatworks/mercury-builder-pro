@@ -176,7 +176,7 @@ Yes. Mercury repower financing is available through HBW. Current financing optio
 
 ### When is the best time to repower a cottage boat?
 
-Off-season: October through April. Motor inventory is deepest, our shop is quietest, and you get easier scheduling. Spring rush typically starts in March.
+Order over the off-season: November through March. Motor inventory is deepest and you get first pick of spring install slots. Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter and start install work as soon as we reopen in early April. Spring rush typically picks up in March.
 
 ### Do I need to update my Pleasure Craft Licence after a repower?
 

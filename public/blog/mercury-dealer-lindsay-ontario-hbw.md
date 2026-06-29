@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake"
-description: "Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake + Kawartha Lakes boaters service routine, online repower..."
+description: "Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35."
 category: "Dealer Locations"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake
 
-> Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake + Kawartha Lakes boaters service routine, online repower...
+> Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35.
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  

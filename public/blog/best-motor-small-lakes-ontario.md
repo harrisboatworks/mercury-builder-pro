@@ -60,7 +60,7 @@ Check your specific lake's regulations.
 ### For Electric-Only Lakes
 
 **Electric Options**:
-- Mercury Avator electric outboards (7.5e to 110e available)
+- Mercury Avator electric outboards (7.5e to 110e, build-to-order, not stocked on the floor)
 - Third-party electric motors
 - Trolling motors for small craft
 
@@ -96,7 +96,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ### Electric Motor Advantages
 
-![Cottage fishing on Ontario's small lakes](/lovable-uploads/Ontario_Small_Lakes_Cottage_Fishing.png)
+![Person fishing from an aluminum boat with a Mercury 9.9 FourStroke outboard at a cottage dock on an Ontario lake.](/lovable-uploads/Ontario_Small_Lakes_Cottage_Fishing.png)
 
 For cottage use, electric is gaining popularity:
 - Silent operation

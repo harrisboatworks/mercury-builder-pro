@@ -68,7 +68,7 @@ whenInDoubt: If your boat has a built-in console with windshield, you want remot
 | Steering | Direct, reverse-intuitive | Cable under 90 HP; hydraulic 90 HP+ (+$800-$1,500) |
 | Best for | Solo / back-of-boat fishing, trolling | Family, passengers, bigger water |
 | Rice Lake pick | 60 HP EFI Command Thrust tiller; ProKicker 9.9 | 90-115 HP remote |
-| Tiller-to-remote conversion | $500-$1,500+ parts + labour | — |
+| Tiller-to-remote conversion | $500-$1,500+ parts + labour | - |
 
 ## The simple version
 

@@ -98,6 +98,11 @@ This is a general guide, your hull's capacity plate is the controlling document:
 
 ---
 
+## Sources
+
+- [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Federal authority on capacity plate compliance and overpowering risk.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Manufacturer guidance on motor compatibility and warranty conditions.
+
 ## Get a proper recommendation before you buy
 
 The quote configurator at mercuryrepower.ca lets you select by horsepower range and see installed pricing. If you're not sure which range fits your hull, call us or submit a service request, we'd rather give you the right motor the first time than have a conversation about it later.

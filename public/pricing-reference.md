@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/pricing-reference.md
-last_updated: 2026-06-17
+last_updated: 2026-06-29
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -18,7 +18,7 @@ Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. Four
 
 **Published by [Harris Boat Works](/)** — Mercury Marine Premier Dealer on Rice Lake, Ontario, Canada. Family-owned since 1947, Mercury dealer since 1965. All prices below are HBW's actual dealer selling price in CAD, not generic MSRP estimates. Verified weekly. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
-_Last updated 2026-06-17._
+_Last updated 2026-06-29._
 
 ## How to use this page
 
@@ -78,7 +78,7 @@ _Last updated 2026-06-17._
 | 9.9 | 9.9ELPT Command Thrust ProKicker EFI FourStroke | 1A10452LK | 20" | Remote | $5,000 _(MSRP $5,325)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=8418d65a-61f3-4fb5-b041-a33e0f19b286) |
 | 9.9 | 9.9EXLHPT Command Thrust ProKicker EFI FourStroke | 1A10461LK | 25" | Tiller | $5,198 _(MSRP $5,540)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=1234503f-61ee-4dec-aca9-8fce085cfce3) |
 | 9.9 | 9.9EXLPT Command Thrust ProKicker EFI FourStroke | 1A10462LK | 25" | Remote | $5,082 _(MSRP $5,415)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=d97e46f7-4845-46a5-80bd-847540c40581) |
-| 15 | 15MH FourStroke | 1A15201LK | 15" | Tiller | $3,971 _(MSRP $4,230)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=54c38ffc-923e-4a88-b0ad-3338f8d0eeab) |
+| 15 | 15MH FourStroke | 1A15201LK | 15" | Tiller | $3,971 _(MSRP $4,230)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=54c38ffc-923e-4a88-b0ad-3338f8d0eeab) |
 | 15 | 15MLH FourStroke | 1A15211LK | 20" | Tiller | $4,021 _(MSRP $4,285)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=43629888-7c4a-4a86-8f31-055575c7e8b6) |
 | 15 | 15EH FourStroke | 1A15301LK | 15" | Tiller | $4,323 _(MSRP $4,605)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=3e74b253-2909-4478-8e4a-b86219324361) |
 | 15 | 15ELH FourStroke | 1A15311LK | 20" | Tiller | $4,378 _(MSRP $4,665)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=09ef09da-0b9a-48af-bfc9-8c03963eaf8c) |
@@ -96,7 +96,7 @@ _Last updated 2026-06-17._
 | 25 | 25ELPT FourStroke | 1A25413BK | 20" | Remote | $6,144 _(MSRP $6,545)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=70870b08-2d14-42d2-93db-974b93c6557f) |
 | 30 | 30ELHPT FourStroke | 1A30411BK | 20" | Tiller | $7,926 _(MSRP $8,445)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=54e743a9-559e-4153-9ac0-f2107ab8136e) |
 | 30 | 30ELPT FourStroke | 1A30413BK | 20" | Remote | $7,805 _(MSRP $8,315)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=91fee167-20c2-4d7b-8569-b8270241e8fd) |
-| 40 | 40ELPT FourStroke | 1F40413GZ | 20" | Remote | $9,438 _(MSRP $10,515)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=06a95675-6418-4902-964f-e04b5f6bd0f2) |
+| 40 | 40ELPT FourStroke | 1F40413GZ | 20" | Remote | $9,438 _(MSRP $10,515)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=06a95675-6418-4902-964f-e04b5f6bd0f2) |
 | 40 | 40ELHPT FourStroke | 1F4041TJZ | 20" | Tiller | $9,955 _(MSRP $11,090)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=eed90c50-06f2-4f4f-9e24-d2ec078fe91c) |
 | 40 | 40ELPT Command Thrust FourStroke | 1F41453GZ | 20" | Remote | $9,801 _(MSRP $10,920)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=9917d204-6d85-4124-ad1a-df01f259a843) |
 | 50 | 50ELPT FourStroke | 1F51413GZ | 20" | Remote | $10,599 _(MSRP $11,805)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=44987d46-af33-45b2-85a2-651b8556b1bd) |

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)"
-description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel, service."
+description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel."
 category: "Buying Guide"
 date_published: 2026-05-19
 date_modified: 2026-05-19
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
-> A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel, service.
+> A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
@@ -254,7 +254,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Related guides
 
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
+- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
 - [What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)](/blog/outboard-trade-in-value-ontario-hbw): Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by.
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament.
 - [The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)](/blog/best-mercury-for-family-runabouts): A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by.

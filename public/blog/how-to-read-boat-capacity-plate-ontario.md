@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "How to Read Your Boat's Capacity Plate (Ontario Guide)"
-description: "What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three mistakes Ontario boat buyers make most often when reading..."
+description: "What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three mistakes Ontario boat buyers make most often."
 category: "Buying Guides"
 date_published: 2026-05-16
 date_modified: 2026-05-16
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # How to Read Your Boat's Capacity Plate (Ontario Guide)
 
-> What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three mistakes Ontario boat buyers make most often when reading...
+> What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three mistakes Ontario boat buyers make most often.
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
@@ -125,6 +125,8 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 - Construction Standards for Small Vessels (Transport Canada TP 1332)
 - Office of Boating Safety, Transport Canada Compliance Notice requirements
 - HBW internal repower decisions, 2018-2026 service records
+- [Transport Canada - Construction Standards for Small Vessels (TP 1332)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Federal capacity plate standards and requirements.
+- [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Compliance context for capacity, persons, and HP limits.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

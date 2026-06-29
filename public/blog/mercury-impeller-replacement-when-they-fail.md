@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "When to Replace Your Mercury Impeller: What 766 Jobs Show"
-description: "More impellers die in July than April at our Rice Lake shop. 766 replacements since 2014, charted: failure timing, warning signs, and when to replace yours."
+description: "More impellers die in July than April at our Rice Lake shop. 766 replacements since 2014, charted: failure timing, warning signs."
 category: "Service & Troubleshooting"
 date_published: 2026-06-09
 date_modified: 2026-06-10
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # When to Replace Your Mercury Impeller: What 766 Jobs Show
 
-> More impellers die in July than April at our Rice Lake shop. 766 replacements since 2014, charted: failure timing, warning signs, and when to replace yours.
+> More impellers die in July than April at our Rice Lake shop. 766 replacements since 2014, charted: failure timing, warning signs.
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-06-09  
@@ -37,7 +37,7 @@ This post shows the curve, explains why midsummer is the killer on Rice Lake spe
 
 ## What the Numbers Say
 
-![Bar chart of Harris Boat Works impeller and water pump jobs by month, 2014 to 2026: April 84, May 123, June 144, July 143, August 117, September 73, October 36, November 45, with June and July highlighted as the peak](/lovable-uploads/impeller-failures-by-month-hbw.png)
+![Bar chart showing peak Mercury impeller failures on Rice Lake occur in June and July, based on 766 shop service records.](/lovable-uploads/impeller-failures-by-month-hbw.png)
 
 | Month | Impeller / water pump jobs (2014-2026) |
 |---|---|
@@ -97,6 +97,11 @@ The pattern we'd love to break: the boater who noticed a weak telltale in June a
 - **Running the motor on the trailer without water.** A few dry seconds takes months off an impeller. Use muffs or a tank, every time.
 - **Replacing the impeller but ignoring a scored housing.** A new impeller in a worn housing pumps poorly and fails early. If the housing or wear plate is scored, do the kit.
 - **Treating the spring check as a season-long guarantee.** It's a snapshot. Heat, weeds, and hours are what the season adds.
+
+## Sources
+
+- [Mercury Marine - Owner Resources](https://www.mercurymarine.com/canada/en/owners/) - Official maintenance documentation including water pump and impeller service intervals.
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized service dealer network for impeller and lower-unit work.
 
 ## Ready to Get Ahead of It?
 

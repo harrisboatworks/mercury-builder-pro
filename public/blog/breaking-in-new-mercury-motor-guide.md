@@ -33,11 +33,15 @@ content_type: blog_article
 
 ---
 
+## How Do I Break In a New Mercury Outboard? (Quick Answer)
+
+Run a 10-hour break-in. Vary the RPM constantly (no holding one speed), keep it off wide-open throttle for the first hour or two, then work in short full-throttle bursts as the hours add up. Don't lug it, don't baby it the whole time, and get the 20-hour service done on schedule. Varying the load is what seats the rings properly. The full hour-by-hour protocol is below.
+
 ## Why break-in actually matters
 
 The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. (If this is your first hour on a brand-new motor after a [Mercury repower in Ontario](/repower), the same break-in applies, the warranty clock and 20-hour service date start at first water test.) The hour-by-hour breakdown is below.
 
-![Timeline of the Mercury 10-hour break-in: hour 1 no-wake then moderate cruise with varied throttle, hours 1-2 wider RPM range with no sustained wide-open throttle, hours 2-10 full RPM range with short WOT bursts, after 10 hours normal operation, then the 20-hour first service oil and filter change.](/lovable-uploads/mercury-break-in-timeline-hbw.png)
+![Infographic timeline for Mercury outboard break-in: RPM guidelines from hour 1 through the 20-hour service interval.](/lovable-uploads/mercury-break-in-timeline-hbw.png)
 *The whole procedure on one card. Details below.*
 
 | Time | RPM / behavior | Do | Avoid |
@@ -135,7 +139,7 @@ When a customer takes delivery of a new Mercury from us:
 
 ---
 
-![New Mercury FourStroke at break-in trolling speed on calm Rice Lake morning](/lovable-uploads/inline/inline-mercury-break-in.png)
+![Black Mercury FourStroke outboard on an aluminum boat during the 10-hour engine break-in period on calm Ontario water.](/lovable-uploads/inline/inline-mercury-break-in.png)
 
 ## What about used motors?
 

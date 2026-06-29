@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)"
-description: "Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained, and the..."
+description: "Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained."
 category: "Mercury Outboards"
 date_published: 2026-02-22
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)
 
-> Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained, and the...
+> Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-02-22  

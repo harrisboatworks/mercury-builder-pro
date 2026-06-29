@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide"
-description: "When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Premier dealer's honest framework for choosing between repair..."
+description: "When a Mercury outboard hits a major repair decision, owners face three real options."
 category: "Buying Guides"
 date_published: 2026-05-17
 date_modified: 2026-06-10
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide
 
-> When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Premier dealer's honest framework for choosing between repair...
+> When a Mercury outboard hits a major repair decision, owners face three real options.
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  

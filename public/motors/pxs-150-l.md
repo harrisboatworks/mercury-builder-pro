@@ -1,37 +1,37 @@
 ---
-canonical: https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke
-last_updated: 2026-06-17
+canonical: https://www.mercuryrepower.ca/motors/pxs-150-l
+last_updated: 2026-06-29
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-motor_id: 54c38ffc-923e-4a88-b0ad-3338f8d0eeab
-slug: fourstroke-15hp-15-mh-fourstroke
-family: FourStroke
-horsepower: 15
-model_number: 1A15201LK
+motor_id: e5317ef2-8420-494f-8d84-a6abef00e5d8
+slug: pxs-150-l
+family: ProXS
+horsepower: 150
+model_number: 1152F131D
 availability: in_stock
-price_cad: 3971
+price_cad: 24349
 ---
 
-# 15 MH FourStroke
+# 150 ELPT ProXS
 
-Mercury FourStroke 15 HP outboard motor (model 1A15201LK).
+Mercury ProXS 150 HP outboard motor (model 1152F131D).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 15 MH FourStroke
-- **Family:** Mercury FourStroke
-- **Horsepower:** 15 HP
-- **Model number:** 1A15201LK
+- **Model:** 150 ELPT ProXS
+- **Family:** Mercury ProXS
+- **Horsepower:** 150 HP
+- **Model number:** 1152F131D
 
 ## Pricing (CAD)
 
-- **Selling price:** $3,971
-- **MSRP:** $4,230
+- **Selling price:** $24,349
+- **MSRP:** $27,125
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
@@ -42,25 +42,25 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer �
 
 ## Best fit for
 
-Small aluminum fishing boats, jon boats, and light tiller setups.
+Larger pontoons, fiberglass runabouts, and walkaround/cuddy boats 20–24 ft.
 
 ## Not ideal for
 
-Pontoons, family runabouts, or any 18+ ft boat carrying more than two adults with gear.
+Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.
 
 ## Build a quote
 
-- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke
-- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=54c38ffc-923e-4a88-b0ad-3338f8d0eeab
+- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/pxs-150-l
+- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=e5317ef2-8420-494f-8d84-a6abef00e5d8
 
 ## Public Quote API
 
-Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {
   "action": "build_quote",
-  "motor_id": "54c38ffc-923e-4a88-b0ad-3338f8d0eeab",
+  "motor_id": "e5317ef2-8420-494f-8d84-a6abef00e5d8",
   "trade_in": null,
   "contact": null
 }

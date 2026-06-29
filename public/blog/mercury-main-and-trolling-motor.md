@@ -98,7 +98,7 @@ Three patterns from rigging fishing boats every spring on Rice Lake.
 ## Related guides
 
 - [Boat Motor Size Guide: How to Calculate the Right HP for Your Boat](/blog/boat-motor-size-calculator-guide): Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and.
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
+- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
 - [How to Choose the Right Horsepower for Your Boat (2026 Guide)](/blog/how-to-choose-right-horsepower-boat): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
 - [How to Read a Mercury Outboard Serial Number: Year, Specs, and Service History](/blog/how-to-read-mercury-outboard-serial-number): A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft.
 

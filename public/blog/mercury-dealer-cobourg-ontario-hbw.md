@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake"
-description: "Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18. Live online repower quotes, Lake Ontario + Rice Lake..."
+description: "Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18."
 category: "Dealer Locations"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake
 
-> Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18. Live online repower quotes, Lake Ontario + Rice Lake...
+> Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18.
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  

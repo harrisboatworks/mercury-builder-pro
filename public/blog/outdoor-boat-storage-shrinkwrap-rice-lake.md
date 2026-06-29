@@ -33,7 +33,7 @@ Harris Boat Works offers outdoor winter storage with shrinkwrap on-site at our G
 
 ---
 
-![Outdoor shrinkwrap versus indoor heated boat storage](/lovable-uploads/inline/outdoor-vs-indoor-storage.svg)
+![Comparison of outdoor shrinkwrap vs indoor boat storage at Harris Boat Works, Gores Landing, Ontario](/lovable-uploads/inline/outdoor-vs-indoor-storage.svg)
 
 ## What HBW Storage Actually Looks Like
 
@@ -109,7 +109,7 @@ For current rates, contact us. Pricing depends on your specific boat, motor, and
 
 ---
 
-![Rice Lake boat storage timeline - Sept to May at Harris Boat Works](/lovable-uploads/rice-lake-storage-timeline.png)
+![Infographic timeline of Harris Boat Works seasonal operations, from spring launch to winter shrinkwrap storage.](/lovable-uploads/rice-lake-storage-timeline.png)
 
 ## When to Book Winter Storage
 

@@ -40,7 +40,7 @@ From April through June 14, 2026, Harris Boat Works ran an HBW Exclusive promoti
 - **Standard coverage today:** every new Mercury outboard carries Mercury's 3-year factory limited warranty.
 - **Same factory terms.** The factory warranty covers the parts and systems described below, honoured across Mercury's authorized-dealer network, parts and labour both covered, non-declining.
 - **Extended coverage is separate.** Mercury Product Protection (MPP) is a paid extended program you can add on top of the factory warranty. Ask us to quote it with your motor.
-- **TD financing at 5.48% still applies.** That program runs through December 31, 2026 on qualifying motors. OAC.
+- **TD financing at {{LIVE_RATE_PCT}} still applies.** That program runs through December 31, 2026 on qualifying motors. OAC.
 
 For current promotions, the source of truth is [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions). Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call **(905) 342-2153**.
 
@@ -140,6 +140,11 @@ Not by itself. A promotional bonus can close the gap between "repair again" and 
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Repair, Repower, or Sell? The Honest Decision](/blog/repair-repower-or-sell-boat-ontario-decision-guide)
 
+## Sources
+
+- [Mercury Marine - Warranty](https://www.mercurymarine.com/canada/en/owners/warranty/) - Mercury's standard 3-year limited warranty (the base layer for HBW's 7-year stack).
+- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized Mercury Premier dealer network.
+
 ## Ready to repower with a new Mercury?
 
 Every new Mercury comes with the standard 3-year factory warranty, with extended coverage available through Mercury Product Protection. For current promotions, see [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions), build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or call **(905) 342-2153**.
@@ -193,9 +198,9 @@ The Mercury Limited Warranty has provisions for transfer to a second owner. Prom
 
 MPP is Mercury's paid extended service program, sold through dealers and quoted at time of sale. It picks up after the factory warranty ends. The 7-year HBW Exclusive promotion (ended June 14, 2026) was included in the purchase price; MPP is an optional add-on you buy on top of the standard 3-year factory warranty.
 
-### Does TD financing at 5.48% still apply?
+### Does TD financing at {{LIVE_RATE_PCT}} still apply?
 
-Yes. TD financing at 5.48% is a separate program that runs through December 31, 2026 on qualifying Mercury outboards purchased through HBW. The 7-year warranty promotion that previously stacked with it ended June 14, 2026.
+Yes. TD financing at {{LIVE_RATE_PCT}} is a separate program that runs through December 31, 2026 on qualifying Mercury outboards purchased through HBW. The 7-year warranty promotion that previously stacked with it ended June 14, 2026.
 
 ## Next steps
 

@@ -3060,7 +3060,12 @@ Mercury Premier Dealer · Rice Lake, Ontario
 
 ---
 
+## How Do I Break In a New Mercury Outboard? (Quick Answer)
+
+Run a 10-hour break-in. Vary the RPM constantly (no holding one speed), keep it off wide-open throttle for the first hour or two, then work in short full-throttle bursts as the hours add up. Don't lug it, don't baby it the whole time, and get the 20-hour service done on schedule. Varying the load is what seats the rings properly. The full hour-by-hour protocol is below.
+
 ## Why break-in actually matters
+
 
 The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. (If this is your first hour on a brand-new motor after a [Mercury repower in Ontario](/repower), the same break-in applies, the warranty clock and 20-hour service date start at first water test.) The hour-by-hour breakdown is below.
 
@@ -4616,7 +4621,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers full installed-cost ranges and the rigging changes that go with each HP class. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
+## Is Upgrading From 75 to 90 HP Worth It?
+
+For most 16 to 18 ft aluminum console boats carrying two or more people on Kawartha lakes, yes. The jump from a Mercury 75 to a 90 runs about $1,500 to $2,500 more installed, and for that you get 5 to 10 mph more top end, a noticeably better hole shot with a load, and a motor you won't outgrow in two seasons. Over a 60-month term at TD's 5.48% APR, that price difference works out to roughly $30 to $50 a month. If you mostly run light and single-handed, the 75 is a fine motor. If the boat fills up on weekends, the 90 is the one you won't second-guess.
+
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
+
 
 ## Quick recommendation
 
@@ -4665,7 +4675,28 @@ Note: top-speed numbers vary by hull design, prop selection, and loading. These 
 
 For specific pricing on each motor, [build a quote](/quote/motor-selection).
 
+## 75 HP Owners: When to Upgrade
+
+You don't need to overthink this one. A 75 that felt fine when you bought it can start feeling small the moment the boat gets busier. Here's the honest read:
+
+**Signs your 75 is working too hard:**
+- It struggles to get on plane with three or more people aboard
+- It can't hold a comfortable cruise in a one-foot chop
+- You're running near wide-open just to keep up
+
+**What a 90 buys you on the same hull:**
+- 5 to 10 mph more top end
+- Planes with a load instead of plowing
+- Better resale when you eventually sell the boat
+
+**What doesn't change:**
+- Same 2.1L block and same 163 kg weight as the 75
+- Same mounting footprint, so no transom surprises
+
+The math most people miss: the difference between a 75 and a 90 is small money spread over a finance term, and it's a lot cheaper than buying the 75 now and trading up to the 90 in two summers. If you're on the fence, that second purchase is the expensive path.
+
 ## Mercury 75 EXLPT FourStroke: when it fits
+
 
 The 75 HP FourStroke is the right call when:
 
@@ -4832,9 +4863,14 @@ footer: Repowering an older rig? Here's how the [repower process](/repower) work
       {
         question: 'What is the best Mercury outboard for a 17 ft aluminum fishing boat on Rice Lake?',
         answer: 'For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. For solo or two-person fishing with tiller control, the 75 HP tiller is efficient and well-suited to Rice Lake\'s shoreline work. For two or three regular passengers or more open-water conditions, the 90 HP provides better loaded performance at the same weight. The 115 HP is worth considering if the hull is heavier or you want long-term headroom. Harris Boat Works, Mercury dealer since 1965 in Gores Landing on Rice Lake, can assess your specific hull and recommend the right choice.'
+      },
+      {
+        question: 'Is it worth upgrading from a Mercury 75 to a 90 HP outboard?',
+        answer: 'For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 costs roughly $1,500 to $2,500 more installed and gives you 5 to 10 mph more top end and a much better hole shot under load, on the same 2.1L block and mounting footprint. If you usually run light and solo, the 75 is plenty.'
       }
     ]
   },
+
 
   // Week 5: February 2, 2026
   {
@@ -28496,7 +28532,21 @@ Different Mercury motors use different beep patterns, and what four beeps means 
 
 ---
 
+## Mercury Outboard Beeping 4 Beeps Every 2 Minutes: What It Means
+
+A short, repeating beep pattern (rather than one long continuous tone) is a warning alarm, not the critical shut-down alarm. On most Mercury outboards a repeated 4-beep pattern points to a sensor warning. The two usual suspects: a low oil level in the oil reservoir (on models with one) or a water-in-fuel signal from the fuel-water separator sensor. It is telling you to check, not telling you the engine is failing right now.
+
+Here's the quick triage:
+1. **Check your oil reservoir level** if your motor has a remote oil tank. Top it up if it's low and see if the alarm clears.
+2. **Check the fuel-water separator.** If it's the water-in-fuel warning, the separator may need draining or replacing.
+3. **Read the SmartCraft gauge or fault code** if your motor is equipped. The gauge tells you exactly which warning is active, instead of guessing from the beep. See our [SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) for the full code list.
+
+Your owner's manual is the final word on what your specific motor's beep pattern means, since patterns vary by model and year. If the alarm won't clear after the checks above, call us at 905-342-2153 before you run it hard.
+
+---
+
 ## Why the Exact Pattern Matters
+
 
 When you call a dealer and say "my motor is beeping," the first question will be: what exactly is it doing?
 
@@ -28648,6 +28698,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'What information should I bring to the dealer for a beeping diagnosis?', answer: 'Bring the exact beep pattern (count, frequency, duration), whether power was reduced, a photo of any SmartCraft or VesselView display message, the conditions when it happened (idle, cruise, cold start, under load), any recent service, and the motor model, year, and serial number. That information cuts diagnostic time significantly.' },
       { question: 'How do I read Mercury outboard alarm codes without a SmartCraft display?', answer: 'Without SmartCraft you read the alarm by its beep pattern: count the beeps, note how often they repeat, and whether the motor lost power. A continuous beep means overheat or low oil pressure, a beep pattern every two minutes points to oil level or water in fuel. A dealer can pull the exact fault codes from the engine computer at the shop.' },
       { question: 'Are beep codes different on a Mercury 4-stroke?', answer: 'Modern Mercury FourStrokes use the same warning logic: one key-on test beep, interval beeps for conditions like low oil or water in fuel, and a continuous alarm for serious problems like overheat. Exact patterns vary by model and year, so confirm against the manual for your motor.' },
+      { question: 'What does 4 beeps every 2 minutes mean on a Mercury outboard?', answer: 'A short, repeating 4-beep pattern is a warning alarm, not a shut-down. It usually points to a low oil level in the oil reservoir or a water-in-fuel signal from the fuel-water separator. Check the oil reservoir and the separator first, read the SmartCraft gauge if equipped, and check your owner\'s manual, since patterns vary by model and year.' },
+
     ],
   },
   {
@@ -33121,7 +33173,22 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
 
 A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model and battery configuration, not the marketing range numbers. For the typical cottage use case, short runs from the dock to a fishing spot or a neighbour's dock, the smaller Avator 7.5e on a 13-14 ft car-topper delivers about 5 miles at full throttle or up to 34 miles at quarter-throttle. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
 
+## What Is the Range of a Mercury Avator Electric Outboard?
+
+It depends on the model and how many battery packs you run. A Mercury Avator 7.5e on its built-in 1 kWh battery does roughly 3 to 4 miles at full throttle and 20 to 25 miles at trolling speed on Rice Lake. The larger models (20e through 110e) take external packs and extend range by adding batteries. Mercury rates Avators by power output and thrust, not by a gas-horsepower equivalent.
+
+| Model | Battery setup | Full throttle | Half throttle | Trolling / low speed | Typical boat |
+|---|---|---|---|---|---|
+| Avator 7.5e | 1 kWh integrated | ~3-4 mi | ~8-12 mi | ~20-25 mi | Under 14 ft |
+| Avator 20e | Up to 3 external 2,300 Wh packs | Similar to 7.5e per pack | Similar to 7.5e per pack | Scales with pack count | 14-16 ft aluminum |
+| Avator 35e | Up to 4 external 2,300 Wh packs | ~6-8 mi | ~15-20 mi | Scales with pack count | 14-18 ft |
+| Avator 75e | Up to 4 packs, 5,400 Wh each | Scales with pack count | Scales with pack count | Scales with pack count | 16-20 ft |
+| Avator 110e | Up to 4 packs, 5,400 Wh each | Scales with pack count | Scales with pack count | Scales with pack count | 16-20 ft |
+
+*Ranges are practical Rice Lake estimates and depend on load, wind, and how many packs are aboard. The 75e and 110e scale with the number of 5,400 Wh packs installed; see each model's section below for the detail.*
+
 ## What "range" actually means on an electric outboard
+
 
 Range on an electric outboard depends on:
 

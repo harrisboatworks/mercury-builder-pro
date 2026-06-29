@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/walkaround-cuddy-90-to-115-efi
-last_updated: 2026-06-17
+last_updated: 2026-06-29
 currency: CAD
 pickup_only: true
 delivery_offered: false

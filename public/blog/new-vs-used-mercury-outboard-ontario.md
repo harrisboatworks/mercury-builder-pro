@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "New vs Used Mercury Outboard in Ontario, by the Numbers"
-description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both. Warranty, financing, maintenance, what we actually..."
+description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both."
 category: "Buying Guides"
 date_published: 2026-05-16
 date_modified: 2026-06-10
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # New vs Used Mercury Outboard in Ontario, by the Numbers
 
-> New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both. Warranty, financing, maintenance, what we actually...
+> New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both.
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  

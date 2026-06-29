@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)"
+title: "What's the Cheapest Mercury Outboard in Canada in 2027? (Full Price Guide by HP)"
 description: "The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats."
 category: "Buying Guide"
 date_published: 2026-04-23
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)
+# What's the Cheapest Mercury Outboard in Canada in 2027? (Full Price Guide by HP)
 
 > The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats.
 
@@ -63,7 +63,7 @@ caveat: Numbers are typical ranges, not quotes. Build your exact quote at mercur
 
 ---
 
-![Mercury outboard price ladder by horsepower, CAD](/lovable-uploads/inline/mercury-price-ladder.svg)
+![Bar chart of Mercury outboard 2027 dealer prices in CAD from $1,298 (2.5 HP) to $22,242 (150 HP).](/lovable-uploads/inline/mercury-price-ladder.svg)
 
 ## Full Article
 
@@ -147,12 +147,14 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 
 **Long runs across open water.** A 9.9 will eventually get you there. It's just going to be a long day.
 
+*Prices reflect HBW's current 2027 Mercury dealer pricing. See our live [Mercury pricing reference](/pricing-reference) for the latest dealer and MSRP per model.*
+
 ---
 
 ## Related guides
 
 - [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
+- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
 - [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada): Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and.
 - [Mercury Avator 7.5e: Review, Price CAD, and Range (2026)](/blog/mercury-avator-7-5e-review): Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on.
 
@@ -172,9 +174,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-### What is the cheapest Mercury outboard in Canada in 2026?
+### What is the cheapest Mercury outboard in Canada in 2027?
 
-The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2026 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).
+The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2027 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).
 
 ### How much does a 2.5 HP Mercury cost in Canada?
 

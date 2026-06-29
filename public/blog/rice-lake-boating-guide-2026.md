@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 
-![Rice Lake practical boating map - Gores Landing perspective with fishing zones, hazards, and key towns](/lovable-uploads/rice-lake-practical-boating-map.png)
+![Map of Rice Lake showing boat launches, fishing zones, and hazard areas for the 2026 boating guide.](/lovable-uploads/rice-lake-practical-boating-map.png)
 
 ## Quick Answer
 

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Rice Lake Ontario Fishing Guide 2026"
-description: "An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the right boat setup, from Harris Boat Works."
+description: "An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the right boat setup."
 category: "Lifestyle"
 date_published: 2026-02-06
 date_modified: 2026-05-23
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Rice Lake Ontario Fishing Guide 2026
 
-> An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the right boat setup, from Harris Boat Works.
+> An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the right boat setup.
 
 **Category:** Lifestyle  
 **Published:** 2026-02-06  
@@ -219,6 +219,8 @@ And here is the thing worth remembering: the bass, the muskie, the crappie and t
 - Cobourg and District Historical Society: Cobourg and Peterborough Railway history
 - Save the Walleye committee: Rice Lake walleye spawning concerns
 - On-the-water spots and techniques: decades of Rice Lake angler reports through the Harris Boat Works dock
+- [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/page/fishing-regulations-summary) - Current Ontario fishing regulations, season dates, and limits.
+- [Ontario.ca - Get a Fishing Licence](https://www.ontario.ca/page/get-fishing-licence) - Outdoors Card and licence requirements.
 
 Always confirm current regulations at ontario.ca/fishing before you fish.
 

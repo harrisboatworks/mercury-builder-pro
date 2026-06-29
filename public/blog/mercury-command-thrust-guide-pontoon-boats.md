@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Command Thrust on a Pontoon: Worth the Money?"
-description: "Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't."
+description: "Command Thrust adds a modest amount over the standard gearcase on a pontoon. Pricing moves, so call us for the current adder. On a pontoon, it pays for itself in hole..."
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Command Thrust on a Pontoon: Worth the Money?
 
-> Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load handling. When it's worth it, when it isn't.
+> Command Thrust adds a modest amount over the standard gearcase on a pontoon. Pricing moves, so call us for the current adder. On a pontoon, it pays for itself in hole...
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
@@ -161,7 +161,7 @@ For pontoons 18 ft and up, yes. Command Thrust gives meaningful hole shot, load-
 
 ### How much does Command Thrust cost over the standard gearcase?
 
-Typically $500 to $1,500 CAD over the standard gearcase at the same HP, depending on motor class and prop selection. For specific pricing, [build a quote](/quote/motor-selection).
+Command Thrust adds a modest amount over the standard gearcase at the same HP. Pricing moves with motor class and prop selection, so ask us for the current adder on your motor or [build a quote](/quote/motor-selection). Call 905-342-2153 for current pricing.
 
 ### Will my standard prop fit on a Command Thrust gearcase?
 

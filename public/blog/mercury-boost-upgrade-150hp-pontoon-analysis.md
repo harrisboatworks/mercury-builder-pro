@@ -115,7 +115,7 @@ In a few years, we'll likely see more specific upgrades, perhaps a tow mode that
 
 If you're buying a Mercury today with a 5, 10-year ownership window in mind, the platform you're buying into matters. That's a better reason to care about Boost than the current performance increment.
 
-![Mercury 150 Pro XS Boost outboard on tritoon pontoon transom](/lovable-uploads/inline/inline-boost-150hp-pontoon.png)
+![Mercury Pro XS outboard with Boost decal on a pontoon boat transom, illustrating the software upgrade performance.](/lovable-uploads/inline/inline-boost-150hp-pontoon.png)
 
 ### What We Check Before Recommending Boost
 
@@ -128,6 +128,14 @@ When customers ask about Boost, we want to know:
 - What specifically are you trying to achieve, top speed, hole shot, or pulling power?
 
 Most pontoon customers walk out without Boost. We point them toward prop and trim optimization first, because those gains are larger and cheaper.
+
+::cta
+variant: inline
+heading: Wondering what the upgrade runs?
+body: Price the 150 the same way our sales team sees it, real dealer pricing, no phone tag.
+primaryLabel: Price your upgrade
+primaryHref: /pricing-reference
+::
 
 ---
 
@@ -152,6 +160,17 @@ More often than not, the better upgrade is a prop and trim conversation, and tha
 > **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether the promo applies to you. Or call [(905) 342-2153](tel:+19053422153) if you want to talk it through.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+::cta
+variant: banner
+heading: Worth it? Run your own numbers.
+body: Build a quote on the 150 and see the real cost, then check current financing if you'd rather spread it out. No pressure, no haggling.
+primaryLabel: Build Your Quote
+primaryHref: /quote/motor-selection
+secondaryLabel: See current financing offers
+secondaryHref: /promotions
+phone: 905-342-2153
+::
 ---
 
 ## FAQs

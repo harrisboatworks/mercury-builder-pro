@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters"
-description: "Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of Ontario boater. Weight, cost, durability, resale, all of it."
+description: "Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of Ontario boater."
 category: "Buying Guides"
 date_published: 2026-05-16
 date_modified: 2026-05-16
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters
 
-> Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of Ontario boater. Weight, cost, durability, resale, all of it.
+> Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of Ontario boater.
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
@@ -87,7 +87,7 @@ The marketplace is honest about this: a 10-year-old fiberglass bowrider in clean
 
 Whether that gap is "worth" the higher purchase price depends on your ownership timeline. If you keep boats 3-5 years and move on, fiberglass tends to recover more of your investment. If you keep boats 10+ years and don't care about resale, aluminum is the cheaper path through the ownership cycle.
 
-![Welded aluminum hull surface next to glossy fiberglass gelcoat finish, split-frame comparison](/lovable-uploads/inline/inline-hull-surface-comparison.png)
+![Close-up comparison of a welded aluminum hull and a glossy fiberglass gelcoat finish for Ontario boat selection.](/lovable-uploads/inline/inline-hull-surface-comparison.png)
 
 ## The repair conversation
 

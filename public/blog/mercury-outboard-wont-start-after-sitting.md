@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Won't Start After Sitting? Here's the Ontario Boater's Checklist"
-description: "Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent, kill switch, neutral, and alarms before booking Mercury..."
+description: "Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent, kill switch, neutral."
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
 date_modified: 2026-05-11
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Won't Start After Sitting? Here's the Ontario Boater's Checklist
 
-> Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent, kill switch, neutral, and alarms before booking Mercury...
+> Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent, kill switch, neutral.
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  

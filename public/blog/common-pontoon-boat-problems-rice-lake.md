@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)"
-description: "The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion, and how to prevent them..."
+description: "The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion."
 category: "Boating Lifestyle"
 date_published: 2026-02-12
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)
 
-> The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion, and how to prevent them...
+> The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion.
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-02-12  

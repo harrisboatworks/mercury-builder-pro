@@ -52,7 +52,7 @@ Get the measurement right before you order. It takes five minutes.
 
 ### Long shaft, 20 inch (Code: L)
 - Best for: Most aluminum console fishing boats, open runabouts, smaller pontoons, typically 14 to 19 ft
-- Common Mercury models: 9.9 ProKicker, 15, 20, 25, 40, 60, 90 EXLPT, 115 EXLPT, 150 EXLPT (check model code; "L" in the suffix means long shaft)
+- Common Mercury models: 9.9 ProKicker, 15, 20, 25, 40, 60, 90 ELPT, 115 EXLPT, 150 EXLPT (check model code; "L" in the suffix means long shaft)
 - Transom height to match: ~20 inches
 - This is the most common shaft length on Ontario freshwater boats. If you own a standard aluminum fishing boat on Rice Lake, this is probably what you need, but measure first.
 

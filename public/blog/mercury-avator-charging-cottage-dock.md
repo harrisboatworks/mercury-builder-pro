@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Charging a Mercury Avator at Your Cottage Dock (2026)"
-description: "How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage electric boating."
+description: "How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage."
 category: "Electric Boating"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Charging a Mercury Avator at Your Cottage Dock (2026)
 
-> How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage electric boating.
+> How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage.
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  

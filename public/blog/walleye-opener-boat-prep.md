@@ -116,7 +116,7 @@ escalationBody: We run a pre-opener service every spring, typically $200 to $350
 
 ---
 
-![Walleye-opener dawn boat prep on Rice Lake dock](/lovable-uploads/inline/inline-walleye-opener-dawn.png)
+![Aluminum fishing boat with Mercury outboard docked on a misty lake, ready for the Ontario walleye opener.](/lovable-uploads/inline/inline-walleye-opener-dawn.png)
 
 ## What HBW Does for Opener Prep Customers
 
@@ -175,6 +175,11 @@ Dead battery accounts for roughly 40% of opener-morning failures. The battery sa
 - Mercury 9.9 EFI Review, kicker options
 - Mercury Outboard Won't Start Troubleshooting
 - [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
+
+## Sources
+
+- [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/page/fishing-regulations-summary) - Walleye season dates, slot rules, and FMZ-specific regulations.
+- [Ontario.ca - Get a Fishing Licence](https://www.ontario.ca/page/get-fishing-licence) - Required licence and Outdoors Card for the opener.
 
 **Book opener prep now.** Service slots fill in May, and there is no such thing as a last-minute walleye opener fix. 
 [Book service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 

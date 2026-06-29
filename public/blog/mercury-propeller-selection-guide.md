@@ -1,230 +1,202 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide.md
-last_updated: 2026-05-04
+last_updated: 2026-05-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Propeller Selection Guide (2026 Ontario)"
-description: "A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its rated WOT RPM at typical loading, which is the only test..."
-category: "Tips"
-date_published: 2026-04-13
-date_modified: 2026-05-04
-keywords: ["mercury propeller selection","outboard prop guide","boat propeller size","mercury prop chart","propeller pitch explained"]
+title: "Mercury Propeller Selection Guide: Which Prop for Your Hull (2026)"
+description: "Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm."
+category: "Technical Reference"
+date_published: 2026-05-27
+date_modified: 2026-05-27
+keywords: ["mercury propeller","mercury prop selection","wot rpm test","command thrust prop","aluminum vs stainless prop","3 blade vs 4 blade","ontario mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Propeller Selection Guide (2026 Ontario)
+# Mercury Propeller Selection Guide: Which Prop for Your Hull (2026)
 
-> A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its rated WOT RPM at typical loading, which is the only test...
+> Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.
 
-**Category:** Tips  
-**Published:** 2026-04-13  
-**Last updated:** 2026-05-04  
-**Read time:** 10 min read  
+**Category:** Technical Reference  
+**Published:** 2026-05-27  
+**Last updated:** 2026-05-27  
+**Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
 
----
+## Quick Answer
 
-> **Quick answer:** Match prop pitch so the motor hits its rated WOT RPM band with a typical load. Too much pitch lugs the motor; too little over-revs it. Aluminum is the default for lower HP; stainless takes over at higher HP and performance applications. We re-prop on every install during the sea trial. Standard prop allowance is included, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Picking a Mercury prop comes down to four things: your gearcase, your hull, how you load the boat, and what you want it to do. For most aluminum fishing boats on Rice Lake running a standard Mercury gearcase, a 3-blade aluminum prop is where the conversation starts. Pitch depends on horsepower and how the boat sits. Pontoons with Command Thrust need a 4-blade with more diameter, that gearcase was designed for it. The confirmation step is the same every time: run the motor at wide-open throttle and check the RPM against the spec for your engine family.
 
----
+## How Prop Pitch Works
 
-## The prop conversation most people skip
+Pitch is the theoretical forward distance, in inches, that the prop would move through the water in one rotation if there were no slip. A 19-pitch prop would travel 19 inches per revolution in perfect conditions. Real-world slip varies by hull, load, and operating speed.
 
-Most Mercury owners buy the motor and barely think about the prop. That is the single most common reason a brand-new Mercury underperforms out of the gate.
+The practical rule used at every dealer:
 
-A wrong prop costs you real top speed, fuel economy, and places the motor outside its rated WOT RPM band, meaning it can't perform to spec. Two boats with identical motors and different props can show a 4 mph difference in top speed and a meaningful gap in cruise fuel burn.
+**Each inch of pitch change is worth roughly 150 to 200 RPM at wide-open throttle.**
 
-The right prop costs the same as the wrong prop. It's worth the conversation.
+That rule is the centerpiece of prop tuning. If a boat is over-revving at WOT, the prop is under-pitched. Step up. If the boat is under-revving at WOT, the prop is over-pitched. Step down. The goal is to land in the middle of the manufacturer's recommended WOT RPM band with the boat under normal load.
 
----
+Most repower and prop-change conversations at HBW eventually come back to this rule.
 
-## What determines the right prop
+## Diameter vs. Pitch vs. Blade Count
 
-**Motor HP and rated WOT RPM band.** Mercury publishes a WOT RPM range for every motor. The right prop lets you reach mid-band at typical loading. Too much pitch and you can't reach it. Too little pitch and you blow past it.
+Three things you tune when you select a Mercury prop:
 
-**Hull weight and design.** Heavy boats need different prop than light boats. Pontoons want different prop than runabouts. Bass boats want different prop than a family console.
+**Diameter** is the prop's total width measured across the tips. Larger diameter generally moves more water and gives more thrust at lower RPMs. Smaller diameter is for higher-RPM, higher-efficiency applications. Diameter is also partially determined by the gearcase (Command Thrust uses a larger gearcase that fits a larger-diameter prop).
 
-**Typical loading.** Empty boat numbers are aspirational. Loaded boat numbers are real life. Loading affects pitch decisions.
+**Pitch** is the forward distance per revolution, as above. This is the dial you turn to match the motor's WOT RPM to the spec.
 
-**Use case.** Top speed, hole shot, trolling, water sports, and fishing all reward different prop designs. A prop optimized for tournament top speed is not the same as one optimized for hole shot with a full pontoon load.
+**Blade count** changes hole-shot behaviour and how the boat handles in chop. More blades generally mean better hole-shot, better grip in turns, and a more loaded feel at cruise. Fewer blades generally mean higher top-end and less drag at speed.
 
-**Material (aluminum vs stainless).** Aluminum is cheaper and easier to repair. Stainless provides more thrust, better top end, and better durability at higher HP.
+Material is the fourth variable. Aluminum or stainless steel. Covered below.
 
----
+## Aluminum vs. Stainless Steel
 
-## Aluminum vs stainless: when each makes sense
+Aluminum and stainless are the two main material categories. They are not equivalent.
 
-| | Aluminum 3-blade | Stainless 3 or 4-blade |
-|--|--|--|
-| HP range | Lower HP recreational | Higher HP and performance applications |
-| Acceleration | Adequate | Better |
-| Top speed | Lower | Higher |
-| Damage resistance | Bends on rocks, can often be straightened | More durable; more expensive to repair |
-| Best for | Recreational, family, moderate HP | Performance, tournament, higher HP |
+**Aluminum** is the default for most fishing boats, pontoons under 150 HP, and any application where strike damage from rocks, logs, or deadheads is a real possibility. Aluminum props are less expensive, they flex slightly before catastrophic failure, and they are usually field-repairable. The downside is they wear faster, they lose efficiency over time, and they cannot deliver the top-end of a comparable stainless prop.
 
-For specific pricing, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with prop included.
+**Stainless steel** is the default for higher-HP applications, performance hulls, and any setup where the small efficiency gain matters. Stainless is stiffer, holds its shape under load, and transfers more of the motor's power to forward thrust. The downside is cost, weight, and the fact that a hard strike can damage the hub or the gearcase rather than the prop. Stainless is usually professional repair rather than field-repair.
 
----
+Both have their place. For Rice Lake and the Kawarthas, aluminum covers most recreational use. For higher-HP performance hulls and pontoons over 200 HP, stainless usually makes economic sense even at the higher upfront cost.
 
-![How to pick the right Mercury propeller](/lovable-uploads/inline/propeller-selection-guide.svg)
+## 3-Blade vs. 4-Blade
 
-## Pitch: the most important number
+The blade-count decision usually comes down to what the boat is for.
 
-Pitch is the theoretical forward distance the prop moves in one revolution. Lower pitch = faster acceleration, lower top speed, higher RPM. Higher pitch = slower acceleration, higher top speed, lower RPM.
+**3-blade** props are the default for most aluminum fishing boats and general-purpose applications. They give the best top-end at a given pitch, the least drag at cruise, and the simplest tuning math. If the boat needs to go fast in a straight line and you are not pulling a tube or a skier, 3-blade is usually the right choice.
 
-**The rule:** Pick the pitch that lets your motor reach mid-band of its rated WOT RPM with your typical loading.
+**4-blade** props improve hole-shot, low-speed control, and turning grip. They are the default for pontoons, watersports tow boats, and any boat that has trouble getting up on plane. The trade-off is some top-end speed, usually 1 to 3 MPH at the high end depending on the setup. For pontoons with Command Thrust, 4-blade is almost always the right answer; that gearcase was engineered around it.
 
-- If WOT comes up short of rated RPM at full load → try a lower pitch
-- If WOT overshoots rated RPM → try a higher pitch
+5-blade props exist for very specific high-load applications. Most HBW customers will never need one.
 
-We test pitch on the water during the sea trial of every repower. A wrong-pitch prop is the most common performance issue on otherwise correctly-installed Mercury motors.
+## Prop Selection by Hull Type
 
----
+The big-picture matching table. Specific pitch depends on horsepower and how the boat sits in the water, so the table below covers blade count, material, and prop family rather than naming a specific pitch number.
 
-![Mercury propeller selection wheel showing acceleration, top speed, load, RPM range, blade count, pitch, and diameter tradeoffs](/lovable-uploads/mercury-propeller-selection-tradeoff-wheel.png)
+| Hull type | Gearcase | Blade count | Material | Mercury prop families to look at |
+|---|---|---|---|---|
+| 14 to 18 ft aluminum tiller fishing boat | Standard | 3-blade | Aluminum | Black Max, Spitfire |
+| 16 to 20 ft aluminum console fishing boat | Standard | 3-blade | Aluminum or stainless | Black Max, Spitfire, Enertia |
+| 18 to 22 ft deep-V fibreglass | Standard | 3-blade | Stainless | Enertia, Fury 4 |
+| 20 to 24 ft pontoon (90 to 115 HP) | Command Thrust | 4-blade | Aluminum or stainless | Spitfire X7, Vensura |
+| 22 to 26 ft pontoon (115 to 200 HP) | Command Thrust | 4-blade | Stainless | Vensura, Enertia ECO |
+| 24+ ft tritoon / luxury pontoon (200+ HP) | Command Thrust | 4-blade | Stainless | Vensura, Fury 4 |
+| Bass boat / high-performance hull (Pro XS) | Sport Master / Torque Master | 3-blade or 4-blade | Stainless | Fury 4, Bravo I FS, Pro Max |
+| Watersports tow / wake / ski boat | Standard or Command Thrust | 4-blade | Stainless | Fury 4, Enertia ECO |
+| Heavy work boat / charter / commercial | Standard or Command Thrust | 4-blade or 3-blade | Stainless | Enertia, Vensura, application-specific |
 
-## Blade count
+This table is a starting point, not a final answer. Final prop selection depends on the WOT RPM test described below. A boat that is loaded heavier (full fuel, passengers, gear) than the dealer demo run will need a different pitch than the manufacturer-default prop ships with.
 
-Diameter is fixed by the gearcase and HP class, Mercury's gearcase determines the maximum prop diameter.
+slug: prop-selection-by-hull-matrix
+type: infographic
+aspect: 16:9
+description: Mercury prop by hull type matrix: 7 Ontario hull types matched to gearcase, blade count, material, and Mercury prop family
+prompt: HBW-designed SVG matrix. 1600x900. [STYLE ANCHOR]
+image: /lovable-uploads/prop-selection-by-hull-matrix.svg
 
-Blade count is where there's decision-making room:
+## How to Confirm Prop Selection: The WOT RPM Test
 
-**3-blade:** Standard for most recreational use. Best top speed, good fuel economy. The default for most installations.
+Every Mercury propeller decision should be confirmed with a wide-open-throttle RPM test under normal operating load. The test is simple.
 
-**4-blade:** Better hole shot, better cruising stability, slightly lower top speed. Common on heavy boats, pontoons, water-sports applications, and boats that need to get on plane quickly with full loads.
+1. Run the boat at full operating load. People aboard, gear loaded, fuel tank where it usually sits. Not light-load.
+2. Trim the motor to normal cruise trim. Not bow-up, not bow-down. Settled.
+3. Hold wide-open throttle for long enough to settle the RPM. Watch the tachometer.
+4. Compare the WOT RPM against Mercury's published WOT spec for your motor family. Specs are in your operator manual or your dealer can look them up.
+5. Match the result to the rule:
+   - **WOT RPM below the manufacturer's spec range:** Over-pitched. Step down 1 inch of pitch.
+   - **WOT RPM in the middle of the spec range:** Correct prop.
+   - **WOT RPM above the spec range:** Under-pitched. Step up 1 inch of pitch.
 
-For most aluminum console fishing boats: 3-blade. For pontoons and water-sports applications: 4-blade often performs better. For tournament bass fishing where top speed matters: 3-blade stainless.
+The pitch change rule of thumb: 1 inch of pitch = 150 to 200 RPM. A boat hitting 6,200 RPM at WOT against a 5,800 to 6,400 RPM spec is fine. A boat hitting 5,400 RPM against the same spec needs a smaller pitch.
 
----
+If you bought your motor at HBW or another Mercury dealer, the dealer demo run should have included the WOT check. If you bought the boat used or the motor was re-rigged, get the WOT test done in your first season of running it.
 
-## Command Thrust prop selection
+## Common Mercury Prop Families at HBW
 
-If you have Mercury Command Thrust on your motor (typical on pontoons and heavy-hull applications), the prop selection is different from standard. Command Thrust uses a larger gearcase that fits a larger prop, and standard props won't fit or perform correctly on a Command Thrust gearcase.
+Quick reference for the prop families you will see on Ontario Mercury motors:
 
-Command Thrust props typically:
-- Run larger diameter than standard
-- Use a lower pitch range, optimized for hole shot and pulling power
-- Use 4-blade designs more commonly
-- Come in aluminum or stainless depending on HP and use
+**Black Max** is Mercury's basic 3-blade aluminum prop. Standard equipment on many lower-HP fishing motors. Good general-purpose prop. Field-repairable.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+**Spitfire** (and Spitfire X7 for Command Thrust) is Mercury's 4-blade aluminum option. Standard equipment on many pontoon and mid-HP applications. The X7 specifically is built for Command Thrust gearcases.
 
-We rig pontoons with Command Thrust regularly at HBW. The prop that comes standard with a Command Thrust install is usually close to right, but sea trial confirms.
+**Enertia** is Mercury's 3-blade stainless prop. Performance fishing, cruiser, deep-V hulls. The Enertia ECO is the larger-diameter 4-blade variant for higher-load applications.
 
----
+**Fury 4** is Mercury's 4-blade stainless performance prop. Bass boats, performance pontoons, watersports applications. Top-end speed plus hole-shot.
 
-## What we check during the prop sea trial
+**Vensura** is Mercury's 4-blade stainless pontoon prop. Designed specifically for Command Thrust gearcases on heavier pontoons. Strong hole-shot, smooth cruise.
 
-On every repower and new motor delivery at HBW:
+**Bravo One FS and Pro Max** are higher-tier performance props for Pro XS and racing applications. Less common in the recreational fishing and pontoon segments most HBW customers run.
 
-- WOT RPM at typical loading (the single best indicator of correct prop)
-- Top speed at WOT (compared against expected for the hull and motor)
-- Hole shot from neutral (how fast the boat planes from idle)
-- Plane speed (lowest speed the boat holds on plane)
-- Cruise RPM at target speed
-- Trim sensitivity at speed
-- Customer subjective feel
+There are more Mercury prop families than this. These are the ones that cover most Ontario freshwater applications.
 
-If anything is off, we change props and re-test. Sometimes the right prop is the second one we try. Sometimes it takes a few attempts. We have a prop test kit at HBW for this reason, it's part of the repower process.
+## Prop Mistakes We See Every Season
 
----
+Things we see customers do that we wish they would not:
 
-## Common prop mistakes
+**Buying a prop based on top-speed alone.** If a boat is rated for 50 MPH top-end but the owner never runs above 30 MPH because the lake is too small, the right prop is not the prop that maximizes 50 MPH. The right prop is the one that gives the best fuel economy and easiest cruise at 30 MPH.
 
-**1. Skipping the prop conversation entirely.** Assuming "the dealer put on the right prop." Sometimes they did. Often there's a better answer for your specific hull and use case. We ask every time.
+**Skipping the WOT test after a new prop.** A new prop is not confirmed until it has been WOT-tested under normal load. Manufacturer recommendations and dealer recommendations are starting points. The water is the test.
 
-**2. Wrong pitch.** Most common error. WOT RPM ends up outside the rated band. Performance suffers.
+**Running over-pitched to "get a quieter motor at cruise."** Under-loading the engine at cruise sounds nice but accelerates wear and hurts fuel economy. The motor wants to land in its operating-RPM band.
 
-**3. Aluminum on a high-HP motor.** Aluminum props take a beating above certain HP thresholds and get destroyed quickly. Stainless is the right answer at higher HP.
+**Replacing a damaged prop with the same exact part without diagnosing what bent it.** If you bent a prop on a rock, the next question is whether the gearcase is also damaged. A new prop on a bent shaft is a short-lived solution.
 
-**4. Picking prop for empty-boat use.** Customer selects pitch based on solo performance, then loads up the family and underperforms. Test loaded.
+**Trying to fix a prop problem when the actual issue is hull or load.** Boats that ride heavy, take on water, or have a layout that pushes weight backward will under-perform with any prop until the underlying issue is addressed.
 
-**5. Off-brand props of unknown origin.** Mercury props are designed for Mercury gearcases. Off-brand props sometimes fit but rarely match the performance of the correct Mercury prop.
+## Related at HBW
 
----
+Other technical reference content in the same cluster:
 
-## How often to replace your prop
+- [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide), measure transom height and decode Mercury shaft codes
+- [Breaking In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide), break-in protocol before WOT testing
+- [Mercury 90 HP FourStroke Review (Ontario)](/blog/mercury-90-hp-fourstroke-review-ontario), sample hull-to-motor matching
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), motor selection that drives prop selection
+- [Mercury Boost Software Upgrade Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), if you are considering Boost, prop selection may need to be re-confirmed after
 
-Modern Mercury props last many years if they're not damaged. Common replacement reasons:
-- Damage from rocks, logs, sand, or debris (bend or chip = immediate performance hit)
-- Gradual wear over many hundreds of hours
-- Use case change that calls for a different pitch
-- Repower where old prop won't fit new gearcase
+Quote configurator at [mercuryrepower.ca](https://mercuryrepower.ca) includes a prop selection step. Live CAD pricing, hull matching, and prop family recommendation in under 5 minutes.
 
-We inspect props during every winterization and spring commissioning. If a prop needs replacement, we say so. We don't push replacement that isn't warranted.
+If you have a current Mercury setup and the prop is wrong (over-pitched, under-pitched, wrong family for the hull), bring it in for a service visit. We will run the WOT test and recommend the right replacement.
 
----
+Harris Boat Works, Gores Landing, Ontario. Mercury Premier dealer. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
-## Related posts
-- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-
----
-
-## Ready to get the right prop?
-
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with prop included. Or call **905-342-2153**, the prop conversation matters and it's a five-minute one.
-
----
-
----
-
-## What we see at HBW
-
-90% of "my boat feels slow" or "won't get on plane" callbacks at our shop are prop, not powerhead. The customer bought an off-brand prop online or kept the original prop after a horsepower bump.
-
-The other common one: pitch is wrong for the load. A 4-blade Enertia that ran great on a clean boat at 2,000 lbs feels sluggish once you add 600 lbs of gear, fuel, and passengers. Drop one pitch and the same prop runs perfect. Easier to test pitches than guess.
-
----
+Phone: (905) 342-2153
+Text: (647) 952-2153
 
 ## FAQs
 
-### How do I know if I have the wrong prop?
+### How do I choose the right Mercury propeller for my boat?
 
-Check WOT RPM. If you can't reach rated RPM fully loaded, or if you over-rev, the prop is wrong. Poor hole-shot, excessive fuel consumption, or bow steering also indicate prop issues.
+Start with four variables: your gearcase, your hull type, normal operating load, and what you want the boat to do. Most aluminum fishing boats run a 3-blade aluminum prop on a standard gearcase. Pontoons with Command Thrust run a 4-blade prop. Final confirmation comes from a wide-open-throttle RPM test under normal load, the WOT should land in the middle of Mercury's published spec for your motor family.
 
-### Is stainless worth the extra cost?
+### What is the rule for pitch and RPM on a Mercury outboard?
 
-For most boaters who run 50+ hours annually, yes. Stainless holds its shape, provides better performance, and lasts much longer. The break-even point is usually 2-3 seasons.
+Each inch of pitch change is worth roughly 150 to 200 RPM at wide-open throttle. If the motor is over-revving at WOT, increase pitch by 1 inch. If it is under-revving, decrease pitch by 1 inch. The goal is to land in the middle of the manufacturer's published WOT RPM range for your motor family.
 
-### Can I put a bigger prop on for more speed?
+### Should I use a 3-blade or 4-blade Mercury prop?
 
-Size must match your motor's gearcase. Higher pitch can increase speed if your engine can still reach rated RPM. Going too high kills performance and can damage the engine.
+3-blade props give the best top-end speed and the least drag at cruise. They are the default for most aluminum fishing boats and general-purpose applications. 4-blade props improve hole-shot, low-speed control, and turning grip at the cost of 1 to 3 MPH top-end. 4-blade is the default for pontoons (especially Command Thrust), watersports tow boats, and any boat that has trouble getting on plane.
 
-### How often should props be replaced?
+### Should I choose aluminum or stainless steel for my Mercury prop?
 
-Inspect annually. Replace when damaged, severely eroded, or showing significant wear. A well-maintained stainless prop can last 10+ years; aluminum typically 3-5 years.
+Aluminum is the default for most fishing boats, pontoons under 150 HP, and any application where strike damage from rocks or deadheads is a real possibility. Aluminum is less expensive and field-repairable. Stainless is the default for higher-HP applications and performance hulls. Stainless holds shape under load and delivers more efficient power transfer but costs more upfront.
 
-### Is stainless steel worth the extra cost for a propeller?
+### What is the WOT RPM test and why does it matter?
 
-Stainless steel is worth it in three situations: your boat sees frequent impacts (aluminum bends, stainless holds shape), you want maximum performance (stainless is stiffer and maintains blade geometry under load), or you run a higher-horsepower motor where structural integrity matters. The trade-off: stainless transfers impact energy to the lower unit rather than absorbing it. A hard strike that would bend an aluminum prop might crack a gearcase through a stainless prop. For shallow-water use in weed-heavy environments like Rice Lake, aluminum has a real argument. For clean-water performance use, stainless wins.
+The wide-open-throttle RPM test confirms whether your prop is correctly matched to your motor. Run the boat at full normal operating load, hold WOT until RPM settles, and compare against Mercury's published spec for your motor family. The goal is to land in the middle of the spec band, not the top, not the bottom. Every new prop or repower should be confirmed with a WOT test.
 
-### How often should outboard props be replaced?
+### Do Command Thrust gearcases need a different prop?
 
-A well-maintained prop doesn't need to be replaced on a schedule, it should be inspected and replaced based on condition. Aluminum props should be checked after any impact and at every annual service. Small dings can be repaired by a prop shop. A prop with a damaged leading edge, significant cup loss, or bent or missing blades should be replaced. Stainless props last longer and can typically be repaired from more significant damage. A prop that's been through multiple seasons without inspection has likely picked up dings that are costing efficiency and stressing the lower unit.
+Yes. Command Thrust uses a larger-diameter gearcase designed for 4-blade props with more diameter. Standard outboard props will not fit. Mercury prop families designed for Command Thrust include Spitfire X7 and Vensura. If you have a Command Thrust pontoon, the prop family list is shorter and more specific than for a standard gearcase.
 
-### What is the best prop for a walleye fishing boat on Rice Lake?
+### How do I know if my prop is over-pitched or under-pitched?
 
-For a typical Rice Lake walleye boat, an 18- to 20-foot aluminum fishing boat with a 90-150HP Mercury FourStroke and regular loads of two to three anglers, a 3-blade aluminum prop in the 13 x 17 to 14 x 19 range is the starting point. If you run heavy livewell loads and want better hole-shot, the Mercury Trophy Sport 4-blade is a common choice. Rice Lake's shallow bottom makes aluminum's ability to bend on impact rather than transmit shock to the lower unit genuinely useful.
-
-### How much does a Mercury propeller cost in Ontario?
-
-Mercury aluminum props for recreational outboards typically run $150-$400 CAD depending on size and model. Stainless steel Mercury props range from $350-$900 CAD for standard recreational models, up to $1,000-$1,500 CAD for high-performance options for larger engines. The Spitfire and Black Max aluminum props are at the lower end; the Tempest Plus and Bravo stainless props are at the top. Prop shop repair for minor aluminum prop damage runs $50-$150 and is worth doing before replacing a prop that's otherwise in good shape.
-
-### What is a prop hub kit and when does it need replacing?
-
-The hub kit is the rubber insert inside your propeller that connects the prop to the prop shaft, absorbing shock when the prop strikes an object. Over time, especially after repeated impacts, the rubber hub can slip, spin, or crack. The symptom is an engine that revs but doesn't push the boat, the hub is spinning on the shaft rather than transferring power. Hub kits cost $30-$80 in parts and can be replaced without buying a new prop. If your prop looks fine but your boat isn't accelerating properly, a slipping hub is the first thing to check.
-
-### Can a new prop fix a boat that porpoises at speed?
-
-Yes, porpoising can often be reduced or eliminated with a prop change, though trim adjustment is always the first step. Porpoising is typically caused by too much bow lift, this can happen when pitch is too low, causing the motor to over-rev and over-lift the bow. A 4-blade prop with lower pitch than your current 3-blade will lift the bow less aggressively and reduce porpoising in many setups. Before buying a new prop, spend time adjusting trim, start with the motor trimmed slightly more in. If trim adjustments don't resolve it, a prop consultation is the logical next step.
+Over-pitched: WOT RPM is below the manufacturer's spec range. The motor cannot reach its rated RPM and runs loaded. Under-pitched: WOT RPM is above the manufacturer's spec range. The motor over-revs and loses efficiency. Correctly pitched: WOT RPM lands in the middle of the spec band under normal load. Each step of pitch is worth 150 to 200 RPM.
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026.md
-last_updated: 2026-06-12
+last_updated: 2026-06-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)"
 description: "Find out if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and the motors that won't connect."
 category: "Mercury Technology"
 date_published: 2026-05-27
-date_modified: 2026-06-12
+date_modified: 2026-06-19
 keywords: ["mercury smartcraft connect eligibility","smartcraft connect compatibility","is my mercury smartcraft compatible","mercury connect mobile eligibility","smartcraft connect motor requirements","smartcraft compatible mercury models"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-27  
-**Last updated:** 2026-06-12  
+**Last updated:** 2026-06-19  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026
 

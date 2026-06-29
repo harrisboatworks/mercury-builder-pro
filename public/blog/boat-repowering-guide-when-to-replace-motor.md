@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Repowering Guide: When to Replace Your Motor (2026)"
-description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW, est. 1947."
+description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW."
 category: "Repowering"
 date_published: 2024-03-05
 date_modified: 2026-06-10
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Boat Repowering Guide: When to Replace Your Motor (2026)
 
-> When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW, est. 1947.
+> When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW.
 
 **Category:** Repowering  
 **Published:** 2024-03-05  
@@ -38,7 +38,7 @@ The signs your motor needs replacement are usually consistent: harder starts eac
 | Motor state | Dead/unreliable, metal in gearcase oil, failed cylinder | Runs fine but 15+ yr or 1,500+ hr | Post-2010, maintained, still reliable |
 | Repair vs new-motor price | Over 60% | 30-60% | Under 30% |
 | Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
-| Move | Quote a repower ($11K-$40K CAD) | Plan the work for winter (Dec/Jan) | Keep running, stay on maintenance |
+| Move | Quote a repower ($11K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
 
 ## Quick recommendation
 
@@ -48,7 +48,7 @@ There are three honest answers to "when should I repower?":
 2. **This off-season if the motor is "fine" but old (15+ years).** Plan ahead. Old motors die mid-season at the worst time.
 3. **Not now if the motor is reliable and recent.** Modern Mercury FourStrokes have decades of life with proper maintenance.
 
-The customers who plan repowers in winter or early spring get easier appointment slots and lower stress. The customers waiting for the motor to die mid-season are competing for shop time during the rush. Plan ahead.
+The customers who plan and order over the off-season (our shop is closed roughly December 1 to April 1, but we take orders by phone and email all winter) get first pick of motors and the earliest spring install slots. The customers waiting for the motor to die mid-season are competing for shop time during the rush. Plan ahead.
 
 ## What changes the timing
 
@@ -84,7 +84,7 @@ When these signs appear, plan the repower for the next off-season. Do not wait f
 - **Mid-RPM hesitation** or surging
 - **Repair bills exceeding 25% of motor replacement cost annually**
 
-At this stage, the math shifts toward "repower this winter." Continued repairs are throwing good money after bad.
+At this stage, the math shifts toward "order a spring repower now." Continued repairs are throwing good money after bad.
 
 ### End-stage signs (motor is at end of life)
 
@@ -148,7 +148,7 @@ When customers come to HBW asking "should I repower?" we want to know:
 - **Long-term ownership plan**
 - **Budget tolerance and financing**
 
-We give the honest answer per motor and use case. Sometimes the answer is "not yet, your motor has years left." Sometimes it's "this winter is the right time." We will not push a repower that isn't warranted.
+We give the honest answer per motor and use case. Sometimes the answer is "not yet, your motor has years left." Sometimes it's "order now so we can install as soon as we open in early April." We will not push a repower that isn't warranted.
 
 ## The cost of waiting too long
 
@@ -242,7 +242,7 @@ Yes, in most cases it's worth it. The hull life of a well-built aluminum or fibe
 
 ### What's the best time of year to repower in Ontario?
 
-Winter is the best time to repower in Ontario. Demand in marine service departments drops significantly from late November through March, meaning faster turnaround and more scheduling flexibility. Some dealers offer off-season incentives during winter. Most importantly, a winter repower means the boat is ready and tuned before the season opener. Bring the boat in by December or January to get ahead of the spring rush. Harris Boat Works typically sees significant service volume increase starting in February as people plan for ice-out.
+The best time to plan and order a repower is over the off-season (November through March). Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter, that is when Mercury inventory is deepest and you get first pick of spring install slots. The work itself happens when we reopen in early April. Order by January or February to be near the front of the spring queue and on the water for opener.
 
 ### Can I repower myself or do I need a certified dealer?
 

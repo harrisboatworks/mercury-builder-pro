@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)"
-description: "Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST on a repower."
+description: "Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST."
 category: "Buying Guide"
 date_published: 2026-05-09
 date_modified: 2026-06-02
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)
 
-> Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST on a repower.
+> Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-09  
@@ -189,7 +189,7 @@ In this example, the private sale wins by about $480, but only if you actually s
 
 Most customers find the private sale grind is not worth the modest delta once they price their own time. Talk to us before you list.
 
-![Outboard trade-in value by HP class, Ontario 2026](/lovable-uploads/inline/outboard-trade-in-value.svg)
+![Table of Mercury/Yamaha outboard trade-in values by HP class and age, Ontario 2026 CAD ranges.](/lovable-uploads/inline/outboard-trade-in-value.svg)
 
 ## 2026 trade-in ranges (Ontario, CAD)
 
@@ -247,7 +247,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Related guides
 
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
+- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
 - [Boat Motor Size Guide: How to Calculate the Right HP for Your Boat](/blog/boat-motor-size-calculator-guide): Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and.
 - [How to Choose the Right Horsepower for Your Boat (2026 Guide)](/blog/how-to-choose-right-horsepower-boat): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
 - [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.

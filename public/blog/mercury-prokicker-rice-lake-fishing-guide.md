@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury 9.9 ProKicker for Rice Lake Walleye Fishing: The Complete 2026 Guide"
-description: "Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips, and how to service it."
+description: "Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips."
 category: "Fishing"
 date_published: 2026-02-06
 date_modified: 2026-05-23
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury 9.9 ProKicker for Rice Lake Walleye Fishing: The Complete 2026 Guide
 
-> Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips, and how to service it.
+> Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips.
 
 **Category:** Fishing  
 **Published:** 2026-02-06  
@@ -56,7 +56,7 @@ The standard 9.9 is not that motor. It can push a small boat. It cannot troll a 
 
 ---
 
-![Mercury 9.9 ProKicker versus standard 9.9 FourStroke](/lovable-uploads/inline/prokicker-vs-standard-99.svg)
+![Side-by-side comparison of Mercury 9.9 ProKicker and standard 9.9 FourStroke: ProKicker best for trolling, standard for small boats.](/lovable-uploads/inline/prokicker-vs-standard-99.svg)
 
 ## Why a Kicker Matters on Rice Lake Specifically
 
@@ -70,7 +70,7 @@ Noise is the other problem. A big four-stroke at idle is still a big four-stroke
 
 The ProKicker solves both problems at once. The main motor tilts up out of the water. You run on the kicker: quiet, slow, dialled in. You cover your pattern and you catch fish.
 
-![Mercury 90 main and 9.9 ProKicker mounted on a trolling rig at dawn](/lovable-uploads/inline/inline-prokicker-trolling-setup.png)
+![Mercury main outboard and 9.9 ProKicker on an aluminum boat transom, ideal for trolling Rice Lake walleye.](/lovable-uploads/inline/inline-prokicker-trolling-setup.png)
 
 It also happens to be your backup motor when the main decides not to cooperate at the far end of the lake. On a 32 km lake with the afternoon west wind building, a second motor that can get you home is worth thinking about. For more on how that wind shapes a day on this water, see our [Rice Lake fishing guide](/blog/best-mercury-outboard-rice-lake-fishing).
 

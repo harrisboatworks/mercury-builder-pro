@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)"
-description: "Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug, plus Ontario..."
+description: "Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug."
 category: "Boating Lifestyle"
 date_published: 2026-02-28
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # 10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)
 
-> Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug, plus Ontario...
+> Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug.
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-02-28  

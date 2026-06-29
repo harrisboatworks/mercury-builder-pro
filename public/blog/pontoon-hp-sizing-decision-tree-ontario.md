@@ -41,7 +41,7 @@ There are thousands of pontoons on Ontario lakes right now that are criminally u
 
 This post is the answer to the question every pontoon buyer eventually asks: *What HP do I actually need?* Not the minimum the boat can run. Not what the previous owner had. The HP that makes your boat do what you bought it to do.
 
-![Decision tree showing Mercury HP recommendations by pontoon size: under 18 ft pontoons take a Mercury 60 HP standard or 60 CT, 18-20 ft family pontoons take a 60 CT minimum or 90 standard, 20-22 ft pontoons need a 90 CT minimum, and 22+ ft tritoons towing tubes or skiers need a 115 CT or 150 HP.](/lovable-uploads/diagram-pontoon-hp-decision-tree.png)
+![Flowchart showing Mercury outboard horsepower recommendations for Ontario pontoon boats based on length and passenger load.](/lovable-uploads/diagram-pontoon-hp-decision-tree.png)
 *The HBW pontoon HP sizing decision tree. Walk down the branch that matches your pontoon length and load profile. When in doubt between two adjacent recommendations, size up - pontoons reward headroom.*
 
 ---
@@ -103,7 +103,7 @@ Calm, protected bays have different demands than open lake conditions. Rice Lake
 
 ---
 
-![Pontoon HP sizing decision guide](/lovable-uploads/inline/pontoon-hp-sizing.svg)
+![Reference table of Mercury outboard HP for pontoons by length and use, from 25–40 HP (16–18 ft) to 250–300 HP (24–26 ft).](/lovable-uploads/inline/pontoon-hp-sizing.svg)
 
 ## The Decision Tree: HP by Boat Length and Use Case
 

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)"
-description: "What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb 2026 software upgrade: eligible motors, real CAD pricing..."
+description: "What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb 2026 software upgrade: eligible motors, real."
 category: "Mercury Technology"
 date_published: 2026-05-28
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)
 
-> What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb 2026 software upgrade: eligible motors, real CAD pricing...
+> What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb 2026 software upgrade: eligible motors, real.
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  

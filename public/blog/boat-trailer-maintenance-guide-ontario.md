@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)"
-description: "Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks. Service costs at HBW, common failures, and when to repair vs..."
+description: "Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights."
 category: "Maintenance"
 date_published: 2026-05-13
 date_modified: 2026-05-14
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)
 
-> Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks. Service costs at HBW, common failures, and when to repair vs...
+> Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights.
 
 **Category:** Maintenance  
 **Published:** 2026-05-13  
