@@ -4616,7 +4616,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers full installed-cost ranges and the rigging changes that go with each HP class. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
+## Is Upgrading From 75 to 90 HP Worth It?
+
+For most 16 to 18 ft aluminum console boats carrying two or more people on Kawartha lakes, yes. The jump from a Mercury 75 to a 90 runs about $1,500 to $2,500 more installed, and for that you get 5 to 10 mph more top end, a noticeably better hole shot with a load, and a motor you won't outgrow in two seasons. Over a 60-month term at TD's 5.48% APR, that price difference works out to roughly $30 to $50 a month. If you mostly run light and single-handed, the 75 is a fine motor. If the boat fills up on weekends, the 90 is the one you won't second-guess.
+
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
+
 
 ## Quick recommendation
 
