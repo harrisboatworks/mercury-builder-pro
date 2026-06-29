@@ -93,7 +93,7 @@ export default function RepowerHub() {
   return (
     <HubPage
       path="/repower"
-      metaTitle="Mercury Repower Ontario: Cost, Process & Live Quote 2026 | HBW"
+      metaTitle="Mercury Repower Ontario: Cost, Process & Live Quote 2027 | HBW"
       metaDescription="Mercury repower in Ontario: real Canadian pricing, a clear process, and a live quote in about two minutes. Mercury Premier dealer, Rice Lake since 1947."
       breadcrumbName="Boat Repower Guide"
       lastReviewedISO="2026-06-12"
