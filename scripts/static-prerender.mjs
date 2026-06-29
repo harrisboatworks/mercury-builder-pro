@@ -4260,7 +4260,7 @@ const routes = [
   {
     path: '/pricing-reference',
     title: 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works',
-    description: 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.',
+    description: 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop.',
     h1: 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing',
     intro: 'Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury\'s MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total, build a quote in the configurator. Pickup only at Gores Landing, Ontario.',
     // Prefer the build-time-generated Product+Offer @graph from
@@ -4276,7 +4276,7 @@ const routes = [
       } catch (err) {
         console.warn('[static-prerender] pricing-reference.schema.json read failed:', err?.message);
       }
-      return [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing', 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.')];
+      return [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing', 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop.')];
     })(),
     extraHead:
       '<link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />',
