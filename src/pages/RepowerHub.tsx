@@ -312,14 +312,22 @@ export default function RepowerHub() {
           <p>We've been on this land since 1947 and we've been a Mercury dealer since 1965. Three generations. One brand. The reason that matters: when you hand us your boat, the same techs who priced the quote are the ones rigging the motor and running the water test on Rice Lake the next week. No subcontracted install, no parts farmed out, no handoff between sales and service.</p>
           <p>We sell Mercury only. We don't rig new outboards from other brands. The benefit to you is depth. Our service team has rigged thousands of Mercury motors across every family from FourStroke to Pro XS to Verado. Mercury Canadian warranty (3 years limited plus 3 years corrosion, concurrent), with promotional extensions stacked on top when active, applies to every motor we rig.</p>
 
+          <h3>Next steps</h3>
+          <ul>
+            <li><Link to="/quote/motor-selection">Build Your Quote</Link>: real Canadian pricing on your repower in about two minutes.</li>
+            <li><Link to="/pricing-reference">Full Mercury price list (CAD)</Link>: validate the motor price before you build a quote.</li>
+            <li><Link to="/trade-in-value">Get a trade-in estimate</Link>: figure out what your old motor is worth, then carry it into your quote.</li>
+            <li><Link to="/promotions">See current financing offers</Link>: spread your repower over manageable monthly payments.</li>
+          </ul>
+
           <h3>Related guides</h3>
           <ul>
             <li><Link to="/blog/mercury-repower-cost-ontario-2026-cad">Mercury Repower Cost Ontario 2026</Link></li>
             <li><Link to="/blog/what-happens-during-mercury-repower">What Happens During a Mercury Repower</Link></li>
             <li><Link to="/blog/mercury-outboard-financing-ontario-2026">Mercury Outboard Financing Ontario 2026</Link></li>
             <li><Link to="/blog/repower-vs-new-boat">Repower vs New Boat</Link></li>
-            <li><Link to="/pricing-reference">Full Mercury price list (CAD)</Link></li>
           </ul>
+
         </>
       }
     />
