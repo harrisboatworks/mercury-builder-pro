@@ -23,6 +23,7 @@ import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 import { MercuryVideo } from './MercuryVideo';
 import { CustomerVoice, type CustomerVoiceProps, type CustomerVoiceItem } from './CustomerVoice';
 import { Mythbuster, type MythbusterProps, type MythbusterItem } from './Mythbuster';
+import { BlogInlineCTA, type BlogInlineCTAProps } from './BlogInlineCTA';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
