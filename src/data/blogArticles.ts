@@ -2740,6 +2740,16 @@ Tell us the boat (make, length, what you do with it) and we'll tell you straight
 - Mercury Marine, FourStroke / Pro XS / Verado family positioning and current V8/V10/V12 Verado lineup (mercurymarine.com).
 - Mercury Marine, "How to Choose the Right Mercury Outboard for Your Boat."
 - Pro XS fuel and performance specs (87 octane, RPM range, Transient Spark): Mercury Marine product documentation.
+
+::cta
+variant: banner
+heading: The right family, the real price, no games.
+body: Pick the engine family that fits how you run your boat, then build a quote on the exact model. Two minutes, a real price, a real person reviewing it.
+primaryLabel: Build Your Quote
+primaryHref: /quote/motor-selection
+phone: 905-342-2153
+footer: Not sure repower makes sense yet? Start with the [repower basics](/repower).
+::
 `
   },
   {
