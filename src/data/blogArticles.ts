@@ -3060,7 +3060,12 @@ Mercury Premier Dealer · Rice Lake, Ontario
 
 ---
 
+## How Do I Break In a New Mercury Outboard? (Quick Answer)
+
+Run a 10-hour break-in. Vary the RPM constantly (no holding one speed), keep it off wide-open throttle for the first hour or two, then work in short full-throttle bursts as the hours add up. Don't lug it, don't baby it the whole time, and get the 20-hour service done on schedule. Varying the load is what seats the rings properly. The full hour-by-hour protocol is below.
+
 ## Why break-in actually matters
+
 
 The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. (If this is your first hour on a brand-new motor after a [Mercury repower in Ontario](/repower), the same break-in applies, the warranty clock and 20-hour service date start at first water test.) The hour-by-hour breakdown is below.
 
