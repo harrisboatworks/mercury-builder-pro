@@ -1814,16 +1814,16 @@ const PRO_XS_250_HERO_IMAGE_PRERENDER =
   'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769028305971-mercury-250-hp-v-8-pro-xs-fs-port-front-3-4-detail-image-1701169513978.jpg';
 
 const PRO_XS_250_VARIANTS_PRERENDER = [
-  { name: '250 ELPT Pro XS', sku: '12500033A', shaft: '20 inch (Long)', controls: 'Mechanical remote', msrp: 39205, hbwPrice: 34502, availability: 'InStock', availabilityLabel: 'In stock', offerName: '250 ELPT Pro XS (20-inch Long shaft, mechanical remote)' },
-  { name: '250 EXLPT Pro XS', sku: '12500034A', shaft: '25 inch (XL)', controls: 'Mechanical remote', msrp: 40105, hbwPrice: 35294, availability: 'BackOrder', availabilityLabel: 'Available to order', offerName: '250 EXLPT Pro XS (25-inch XL shaft, mechanical remote)' },
-  { name: '250 ELPT Pro XS DTS', sku: '12500094A', shaft: '20 inch (Long)', controls: 'Digital Throttle & Shift', msrp: 41525, hbwPrice: 36542, availability: 'InStock', availabilityLabel: 'In stock', offerName: '250 ELPT Pro XS DTS (20-inch Long shaft, Digital Throttle & Shift)' },
-  { name: '250 EXLPT Pro XS DTS', sku: '12500096A', shaft: '25 inch (XL)', controls: 'Digital Throttle & Shift', msrp: 42465, hbwPrice: 37367, availability: 'BackOrder', availabilityLabel: 'Available to order', offerName: '250 EXLPT Pro XS DTS (25-inch XL shaft, Digital Throttle & Shift)' },
+  { name: '250 ELPT Pro XS', sku: '12500033A', shaft: '20 inch (Long)', controls: 'Mechanical remote', msrp: 38820, hbwPrice: 34848, availability: 'InStock', availabilityLabel: 'In stock', offerName: '250 ELPT Pro XS (20-inch Long shaft, mechanical remote)' },
+  { name: '250 EXLPT Pro XS', sku: '12500034A', shaft: '25 inch (XL)', controls: 'Mechanical remote', msrp: 39710, hbwPrice: 35646, availability: 'BackOrder', availabilityLabel: 'Available to order', offerName: '250 EXLPT Pro XS (25-inch XL shaft, mechanical remote)' },
+  { name: '250 ELPT Pro XS DTS', sku: '12500094A', shaft: '20 inch (Long)', controls: 'Digital Throttle & Shift', msrp: 41115, hbwPrice: 36905, availability: 'InStock', availabilityLabel: 'In stock', offerName: '250 ELPT Pro XS DTS (20-inch Long shaft, Digital Throttle & Shift)' },
+  { name: '250 EXLPT Pro XS DTS', sku: '12500096A', shaft: '25 inch (XL)', controls: 'Digital Throttle & Shift', msrp: 42045, hbwPrice: 37741, availability: 'BackOrder', availabilityLabel: 'Available to order', offerName: '250 EXLPT Pro XS DTS (25-inch XL shaft, Digital Throttle & Shift)' },
 ];
 
 const PRO_XS_250_FAQ_PRERENDER = [
-  { question: 'What does a Mercury Pro XS 250 cost in Canada?', answer: 'At Harris Boat Works, the Pro XS 250 runs from $34,502 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,367 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, as of May 2026, and include 7-year warranty coverage under the current Mercury promotion.' },
+  { question: 'What does a Mercury Pro XS 250 cost in Canada?', answer: 'At Harris Boat Works, the Pro XS 250 runs from $34,848 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,741 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, current pricing, confirm in the quote builder.' },
   { question: 'Is the Pro XS 250 in stock?', answer: 'The two 20-inch (ELPT) variants are in stock at Gores Landing, Ontario. The 25-inch (EXLPT) variants we bring in to order. Confirm current availability in the quote builder or call us.' },
-  { question: 'What warranty comes with a Pro XS 250?', answer: 'Every Pro XS 250 sold under the Mercury promotion running to June 14, 2026 includes 7-year warranty coverage at no extra cost. After the promotion ends, standard Mercury warranty terms apply. We confirm exact coverage when we quote you.' },
+  { question: 'What warranty comes with a Pro XS 250?', answer: 'Every new Mercury Pro XS 250 carries the applicable Mercury Marine factory warranty. Bonus warranty promotions come and go through the year. We confirm exact coverage and any active Mercury promotion when we quote you.' },
   { question: 'Can I finance a Pro XS 250?', answer: 'Yes. Financing is available on approved credit through Mercury Finance. Build a quote and we will show you current rate and monthly options, or call 905-342-2153.' },
   { question: 'How long does a Pro XS 250 repower take?', answer: 'Most repowers run 2 to 3 weeks from confirmed order to water-ready, depending on rigging. Spring (April and May) runs longer because every shop in Ontario is booked. Plan ahead.' },
 ];
