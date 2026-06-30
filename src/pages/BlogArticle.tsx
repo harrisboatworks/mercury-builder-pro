@@ -22,6 +22,7 @@ import { formatFinancingRate, substituteLiveRateTokens } from '@/lib/finance';
 
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogCTA } from '@/components/blog/BlogCTA';
+import { BuildYourQuoteCTA } from '@/components/blog/BuildYourQuoteCTA';
 import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { BlogTable } from '@/components/blog/BlogTable';
