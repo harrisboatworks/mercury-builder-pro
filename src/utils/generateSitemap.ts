@@ -125,6 +125,8 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/mercury/portable-9-20hp', lastmod: today, changefreq: 'weekly', priority: 0.85 },
     { loc: '/mercury/mid-range-40-60hp', lastmod: today, changefreq: 'weekly', priority: 0.85 },
     { loc: '/mercury/mid-power-90-115hp', lastmod: today, changefreq: 'weekly', priority: 0.85 },
+    { loc: '/mercury/115-pro-xs', lastmod: today, changefreq: 'weekly', priority: 0.85 },
+    { loc: '/mercury/150-hp', lastmod: today, changefreq: 'weekly', priority: 0.85 },
     { loc: '/mercury-outboards-ontario', lastmod: today, changefreq: 'weekly', priority: 0.85 },
     // Pilot SEO landing pages: Batch 4 (Pontoon)
     { loc: '/mercury-pontoon-outboards', lastmod: today, changefreq: 'monthly', priority: 0.8 },
