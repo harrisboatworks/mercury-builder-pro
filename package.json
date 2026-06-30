@@ -9,6 +9,7 @@
     "postbuild": "node scripts/indexnow-ping.mjs",
     "build:dev": "vite build --mode development",
     "check:blog-leaks": "node scripts/check-blog-leaks.mjs",
+    "rewrite:agent-urls": "node scripts/rewrite-agent-urls.mjs",
     "check:blog-assets": "node scripts/check-blog-asset-existence.mjs",
     "check:blog-articles": "tsx scripts/validate-blog-articles.ts",
     "check:blog-timeline-facts": "node scripts/check-blog-timeline-facts.mjs",
