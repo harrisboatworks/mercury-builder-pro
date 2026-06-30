@@ -164,6 +164,20 @@ export default function MercuryLineupLanding({ config }: { config: LandingConfig
               <p key={i}>{p}</p>
             ))}
           </div>
+          {config.crossLinks && config.crossLinks.length > 0 && (
+            <div className="mt-6 flex flex-col gap-2">
+              {config.crossLinks.map((cl) => (
+                <Link
+                  key={cl.to}
+                  to={cl.to}
+                  className="inline-flex items-center gap-1 text-primary hover:underline text-sm font-medium"
+                >
+                  {cl.label}
+                  <ChevronRight className="h-4 w-4" />
+                </Link>
+              ))}
+            </div>
+          )}
         </section>
 
         {/* Why HBW */}
