@@ -75,7 +75,7 @@ export const PRO_XS_250_FAQ = [
   {
     question: 'What warranty comes with a Pro XS 250?',
     answer:
-      'Every new Mercury Pro XS 250 carries the applicable Mercury Marine factory warranty. Bonus warranty promotions come and go through the year. We confirm exact coverage and any active Mercury promotion when we quote you.',
+      'Every new Mercury Pro XS 250 includes the standard 3-year Mercury Marine factory warranty. Extended coverage is available. Any active Mercury bonus-warranty promotion is confirmed at quote time.',
   },
   {
     question: 'Can I finance a Pro XS 250?',
