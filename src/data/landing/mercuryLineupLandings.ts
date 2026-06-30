@@ -66,14 +66,14 @@ export const PORTABLE_9_20HP: LandingConfig = {
   slug: '/mercury/portable-9-20hp',
   metaTitle: 'Mercury 9.9, 15 & 20 HP Portable Outboard Price Canada | Harris Boat Works',
   metaDescription:
-    'Mercury 9.9, 15, and 20 HP portable and kicker outboard prices from $3,553 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    'Mercury 9.9, 15, and 20 HP portable and kicker outboard prices from $2,999 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
   canonical: 'https://www.mercuryrepower.ca/mercury/portable-9-20hp',
   ogImage:
     'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/uploads/2025-09-22T00-14-12-050Z-Mercury-Marine-9-9HP-Rear-3-4-Port-Short-TillerUp-1718214770881%20(1).jpg',
 
   h1: 'Mercury 9.9 to 20 HP Portable Outboard Prices in Canada',
   heroLead:
-    'The small Mercury that does the big jobs: trolling kicker, dinghy power, the main motor on a 12 or 14-foot tinnie. Portable Mercury FourStrokes from $3,553 CAD at Harris Boat Works, real prices listed, stock on the floor.',
+    'The small Mercury that does the big jobs: trolling kicker, dinghy power, the main motor on a 12 or 14-foot tinnie. Portable Mercury FourStrokes from $2,999 CAD at Harris Boat Works, real prices listed, stock on the floor.',
   heroEyebrow: 'Mercury Premier Dealer, Rice Lake',
 
   productName: 'Mercury 9.9 to 20 HP Portable Outboards',
@@ -82,18 +82,18 @@ export const PORTABLE_9_20HP: LandingConfig = {
 
   tableTitle: 'Mercury 9.9 to 20 HP prices: portable and kicker FourStrokes',
   tableNote:
-    'Prices in CAD, current as of May 2026, confirm in the quote builder. Several models in stock at Gores Landing; the ProKicker variants we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, and a starting battery on electric-start models are not included.',
+    'Prices in CAD, current pricing, confirm in the quote builder. Several models in stock at Gores Landing; the ProKicker variants we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, and a starting battery on electric-start models are not included.',
   modelColLabel: 'Model',
   configColLabel: 'Start and shaft',
   variants: [
-    { name: '9.9 MH FourStroke', hp: '9.9', config: 'Manual start, 15-inch tiller', msrp: 3875, hbwPrice: 3553, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '9.9 ELH FourStroke', hp: '9.9', config: 'Electric start, 20-inch tiller', msrp: 4435, hbwPrice: 4065, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '9.9 ELHPT Command Thrust ProKicker', hp: '9.9', config: 'Electric, power trim, 20-inch tiller', msrp: 5455, hbwPrice: 5000, availability: 'BackOrder', availabilityLabel: 'To order' },
-    { name: '15 MH FourStroke', hp: '15', config: 'Manual start, 15-inch tiller', msrp: 4225, hbwPrice: 3872, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '15 ELPT ProKicker FourStroke', hp: '15', config: 'Electric, power trim, 20-inch remote', msrp: 5855, hbwPrice: 5368, availability: 'BackOrder', availabilityLabel: 'To order' },
-    { name: '20 EH FourStroke', hp: '20', config: 'Electric start, 15-inch tiller', msrp: 5110, hbwPrice: 4686, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '20 ELH FourStroke', hp: '20', config: 'Electric start, 20-inch tiller', msrp: 5185, hbwPrice: 4752, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '20 ELHPT FourStroke', hp: '20', config: 'Electric, power trim, 20-inch remote', msrp: 5880, hbwPrice: 5390, availability: 'InStock', availabilityLabel: 'In stock' },
+    { name: '9.9 MH FourStroke', hp: '9.9', config: 'Manual start, 15-inch tiller', msrp: 3860, hbwPrice: 2999, availability: 'InStock', availabilityLabel: 'In stock', sku: '1A10201LK' },
+    { name: '9.9 ELH FourStroke', hp: '9.9', config: 'Electric start, 20-inch tiller', msrp: 4420, hbwPrice: 3399, availability: 'InStock', availabilityLabel: 'In stock', sku: '1A10311LK' },
+    { name: '9.9 ELHPT Command Thrust ProKicker', hp: '9.9', config: 'Electric, power trim, 20-inch tiller', msrp: 5430, hbwPrice: 5099, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1A10451LK' },
+    { name: '15 MH FourStroke', hp: '15', config: 'Manual start, 15-inch tiller', msrp: 4230, hbwPrice: 3971, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1A15201LK' },
+    { name: '15 ELPT ProKicker FourStroke', hp: '15', config: 'Electric, power trim, 20-inch remote', msrp: 5860, hbwPrice: 5500, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1A15452BK' },
+    { name: '20 EH FourStroke', hp: '20', config: 'Electric start, 15-inch tiller', msrp: 5115, hbwPrice: 4802, availability: 'InStock', availabilityLabel: 'In stock', sku: '1A20301LK' },
+    { name: '20 ELH FourStroke', hp: '20', config: 'Electric start, 20-inch tiller', msrp: 5190, hbwPrice: 4873, availability: 'InStock', availabilityLabel: 'In stock', sku: '1A20311LK' },
+    { name: '20 ELHPT FourStroke', hp: '20', config: 'Electric, power trim, 20-inch remote', msrp: 5890, hbwPrice: 5528, availability: 'InStock', availabilityLabel: 'In stock', sku: '1A20411LK' },
   ],
 
   includedTitle: 'What is included in the price',
@@ -118,11 +118,11 @@ export const PORTABLE_9_20HP: LandingConfig = {
   ],
 
   faq: [
-    { question: 'What does a Mercury 9.9 HP outboard cost in Canada?', answer: 'At Harris Boat Works, a 9.9 HP FourStroke starts at $3,553 CAD for the manual-start 9.9 MH and runs to about $5,000 for the 9.9 Command Thrust ProKicker with electric start and power trim. Prices are CAD, as of May 2026.' },
+    { question: 'What does a Mercury 9.9 HP outboard cost in Canada?', answer: 'At Harris Boat Works, a 9.9 HP FourStroke starts at $2,999 CAD for the manual-start 9.9 MH and runs to about $5,099 for the 9.9 Command Thrust ProKicker with electric start and power trim. Prices are CAD, current pricing, confirm in the quote builder.' },
     { question: 'What is a Mercury ProKicker?', answer: 'A ProKicker is a kicker motor purpose-built for trolling: a Command Thrust gearcase for low-speed thrust, power trim, and wiring that ties into the main motor\u2019s controls. It costs more than a plain portable but it is the right tool when the small motor\u2019s job is trolling a heavier boat.' },
     { question: 'Should I get a 9.9 or a 15 HP kicker?', answer: 'For most trolling use the 9.9 is plenty and is the lighter, simpler choice. Step to the 15 if you are pushing a heavier boat or want a bit more reserve. Tell us your boat and how you fish and we will point you straight.' },
     { question: 'Manual or electric start?', answer: 'Manual start is lighter, simpler, and cheaper. Electric start is worth it if you start the motor often, fish in the cold, or just want the convenience. Both are reliable.' },
-    { question: 'Are these portables in stock?', answer: 'Several of the 9.9, 15, and 20 HP FourStrokes are in stock at Gores Landing, and the ProKicker variants we bring in to order. Confirm current availability in the quote builder.' },
+    { question: 'Are these portables in stock?', answer: 'Several of the 9.9 and 20 HP FourStrokes are in stock at Gores Landing; the 15 HP and ProKicker variants we bring in to order. Confirm current availability in the quote builder.' },
   ],
 
   finalCtaHeading: 'Build your portable Mercury quote in two minutes',
@@ -136,13 +136,13 @@ export const MID_RANGE_40_60HP: LandingConfig = {
   slug: '/mercury/mid-range-40-60hp',
   metaTitle: 'Mercury 40, 50 & 60 HP Outboard Price Canada | Harris Boat Works',
   metaDescription:
-    'Mercury 40, 50, and 60 HP FourStroke outboard prices from $9,532 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    'Mercury 40, 50, and 60 HP FourStroke outboard prices from $9,438 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
   canonical: 'https://www.mercuryrepower.ca/mercury/mid-range-40-60hp',
   ogImage: 'https://mercuryrepower.ca/asset-gap-heroes/60-elpt-fourstroke.jpg',
 
   h1: 'Mercury 40 to 60 HP Outboard Prices in Canada',
   heroLead:
-    'The mid-range FourStroke is the Rice Lake workhorse: enough power for a real fishing boat or a small bowrider, light enough to be easy on the transom and the fuel bill. Mercury 40 to 60 HP from $9,532 CAD at Harris Boat Works.',
+    'The mid-range FourStroke is the Rice Lake workhorse: enough power for a real fishing boat or a small bowrider, light enough to be easy on the transom and the fuel bill. Mercury 40 to 60 HP from $9,438 CAD at Harris Boat Works.',
   heroEyebrow: 'Mercury Premier Dealer, Rice Lake',
 
   productName: 'Mercury 40 to 60 HP FourStroke Outboards',
@@ -151,17 +151,17 @@ export const MID_RANGE_40_60HP: LandingConfig = {
 
   tableTitle: 'Mercury 40 to 60 HP prices: standard and Command Thrust FourStrokes',
   tableNote:
-    'Prices in CAD, current as of May 2026, confirm in the quote builder. Several models in stock at Gores Landing; the 50 HP and 25-inch 60 we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, installation labour, and a starting battery are not included.',
+    'Prices in CAD, current pricing, confirm in the quote builder. 60 HP FourStrokes in stock at Gores Landing; the 40 HP, 50 HP, and 25-inch 60 we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, installation labour, and a starting battery are not included.',
   modelColLabel: 'Model',
   configColLabel: 'Shaft and gearcase',
   variants: [
-    { name: '40 ELPT FourStroke', hp: '40', config: '20-inch remote', msrp: 10830, hbwPrice: 9532, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '40 ELPT Command Thrust FourStroke', hp: '40', config: '20-inch remote, Command Thrust', msrp: 11250, hbwPrice: 9900, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '50 ELPT FourStroke', hp: '50', config: '20-inch remote', msrp: 12165, hbwPrice: 10703, availability: 'BackOrder', availabilityLabel: 'To order' },
-    { name: '50 ELPT Command Thrust FourStroke', hp: '50', config: '20-inch remote, Command Thrust', msrp: 12645, hbwPrice: 11127, availability: 'BackOrder', availabilityLabel: 'To order' },
-    { name: '60 ELPT FourStroke', hp: '60', config: '20-inch remote', msrp: 13820, hbwPrice: 12161, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '60 ELPT Command Thrust FourStroke', hp: '60', config: '20-inch remote, Command Thrust', msrp: 14170, hbwPrice: 12469, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '60 EXLPT FourStroke', hp: '60', config: '25-inch remote', msrp: 14565, hbwPrice: 12815, availability: 'BackOrder', availabilityLabel: 'To order' },
+    { name: '40 ELPT FourStroke', hp: '40', config: '20-inch remote', msrp: 10515, hbwPrice: 9438, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F40413GZ' },
+    { name: '40 ELPT Command Thrust FourStroke', hp: '40', config: '20-inch remote, Command Thrust', msrp: 10920, hbwPrice: 9801, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F41453GZ' },
+    { name: '50 ELPT FourStroke', hp: '50', config: '20-inch remote', msrp: 11805, hbwPrice: 10599, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F51413GZ' },
+    { name: '50 ELPT Command Thrust FourStroke', hp: '50', config: '20-inch remote, Command Thrust', msrp: 12275, hbwPrice: 11017, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F51453GZ' },
+    { name: '60 ELPT FourStroke', hp: '60', config: '20-inch remote', msrp: 13415, hbwPrice: 12040, availability: 'InStock', availabilityLabel: 'In stock', sku: '1F60413GZ' },
+    { name: '60 ELPT Command Thrust FourStroke', hp: '60', config: '20-inch remote, Command Thrust', msrp: 13750, hbwPrice: 12342, availability: 'InStock', availabilityLabel: 'In stock', sku: '1F60453GZ' },
+    { name: '60 EXLPT FourStroke', hp: '60', config: '25-inch remote', msrp: 14135, hbwPrice: 12689, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F60463GZ' },
   ],
 
   includedTitle: 'What is included in the price',
@@ -186,10 +186,10 @@ export const MID_RANGE_40_60HP: LandingConfig = {
   ],
 
   faq: [
-    { question: 'What does a Mercury 60 HP outboard cost in Canada?', answer: 'At Harris Boat Works, a 60 ELPT FourStroke is $12,161 CAD, and the 60 Command Thrust is $12,469 CAD. The 40 HP starts at $9,532 and the 50 HP at $10,703. Prices are CAD, as of May 2026.' },
+    { question: 'What does a Mercury 60 HP outboard cost in Canada?', answer: 'At Harris Boat Works, a 60 ELPT FourStroke is $12,040 CAD, and the 60 Command Thrust is $12,342 CAD. The 40 HP starts at $9,438 and the 50 HP at $10,599. Prices are CAD, current pricing, confirm in the quote builder.' },
     { question: 'Do I need Command Thrust on a 40 to 60 HP motor?', answer: 'You need it if the boat is heavy or carries a lot, especially a pontoon. Command Thrust adds a bigger gearcase and prop for better low-speed grip. On a light fishing boat, the standard gearcase is fine and saves you money.' },
     { question: 'Will a 40 to 60 HP Mercury fit my boat?', answer: 'It fits most 16 to 18-foot fishing boats, small bowriders, and lighter pontoons, but the right HP depends on hull weight and your boat\u2019s capacity plate. Send us the boat details and we will size it properly.' },
-    { question: 'Are these in stock?', answer: 'Several 40 and 60 HP FourStrokes are in stock at Gores Landing; 50 HP and the 25-inch 60 we bring in to order. Confirm current availability in the quote builder.' },
+    { question: 'Are these in stock?', answer: '60 HP FourStrokes are in stock at Gores Landing; 40 HP, 50 HP, and the 25-inch 60 we bring in to order. Confirm current availability in the quote builder.' },
     { question: 'How long does a repower take?', answer: 'Most repowers run 2 to 3 weeks from confirmed order to water-ready. Spring books up fast, so plan ahead.' },
   ],
 
@@ -204,14 +204,14 @@ export const MID_POWER_90_115HP: LandingConfig = {
   slug: '/mercury/mid-power-90-115hp',
   metaTitle: 'Mercury 90 & 115 HP Outboard Price Canada | Harris Boat Works',
   metaDescription:
-    'Mercury 90 and 115 HP FourStroke and Pro XS outboard prices from $14,812 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    'Mercury 90 and 115 HP FourStroke and Pro XS outboard prices from $14,960 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
   canonical: 'https://www.mercuryrepower.ca/mercury/mid-power-90-115hp',
   ogImage:
     'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
 
   h1: 'Mercury 90 to 115 HP Outboard Prices in Canada',
   heroLead:
-    'The 90 to 115 HP band is where most Rice Lake repowers land: enough motor for a bowrider, a fish-and-ski, or a loaded pontoon, without stepping up to V6 money. Mercury 90 to 115 HP from $14,812 CAD at Harris Boat Works.',
+    'The 90 to 115 HP band is where most Rice Lake repowers land: enough motor for a bowrider, a fish-and-ski, or a loaded pontoon, without stepping up to V6 money. Mercury 90 to 115 HP from $14,960 CAD at Harris Boat Works.',
   heroEyebrow: 'Mercury Premier Dealer, Rice Lake',
 
   productName: 'Mercury 90 to 115 HP FourStroke and Pro XS Outboards',
@@ -220,17 +220,17 @@ export const MID_POWER_90_115HP: LandingConfig = {
 
   tableTitle: 'Mercury 90 to 115 HP prices: FourStroke and Pro XS',
   tableNote:
-    'Prices in CAD, current as of May 2026, confirm in the quote builder. Several models in stock at Gores Landing; Command Thrust and 25-inch variants we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, installation labour, and a starting battery are not included.',
+    'Prices in CAD, current pricing, confirm in the quote builder. Several models in stock at Gores Landing; Command Thrust and 25-inch variants we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, installation labour, and a starting battery are not included.',
   modelColLabel: 'Model',
   configColLabel: 'Shaft and gearcase',
   variants: [
-    { name: '90 ELPT FourStroke', hp: '90', config: '20-inch remote', msrp: 16830, hbwPrice: 14812, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '90 ELPT Command Thrust FourStroke', hp: '90', config: '20-inch remote, Command Thrust', msrp: 17355, hbwPrice: 15274, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '90 EXLPT FourStroke', hp: '90', config: '25-inch remote', msrp: 17415, hbwPrice: 15323, availability: 'BackOrder', availabilityLabel: 'To order' },
-    { name: '115 ELPT Pro XS', hp: '115', config: '20-inch remote', msrp: 19680, hbwPrice: 17320, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '115 EXLPT Pro XS', hp: '115', config: '25-inch remote', msrp: 20075, hbwPrice: 17666, availability: 'InStock', availabilityLabel: 'In stock' },
-    { name: '115 ELPT Command Thrust FourStroke', hp: '115', config: '20-inch remote, Command Thrust', msrp: 19730, hbwPrice: 17364, availability: 'BackOrder', availabilityLabel: 'To order' },
-    { name: '115 ELPT Pro XS Command Thrust', hp: '115', config: '20-inch remote, Command Thrust', msrp: 20190, hbwPrice: 17765, availability: 'BackOrder', availabilityLabel: 'To order' },
+    { name: '90 ELPT FourStroke', hp: '90', config: '20-inch remote', msrp: 16665, hbwPrice: 14960, availability: 'InStock', availabilityLabel: 'In stock', sku: '1F904132D' },
+    { name: '90 ELPT Command Thrust FourStroke', hp: '90', config: '20-inch remote, Command Thrust', msrp: 17185, hbwPrice: 15428, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F904532D' },
+    { name: '90 EXLPT FourStroke', hp: '90', config: '25-inch remote', msrp: 17240, hbwPrice: 15477, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F904632D' },
+    { name: '115 ELPT Pro XS', hp: '115', config: '20-inch remote', msrp: 19485, hbwPrice: 17490, availability: 'InStock', availabilityLabel: 'In stock', sku: '1117F131D' },
+    { name: '115 EXLPT Pro XS', hp: '115', config: '25-inch remote', msrp: 19875, hbwPrice: 17842, availability: 'InStock', availabilityLabel: 'In stock', sku: '1117F231D' },
+    { name: '115 ELPT Command Thrust FourStroke', hp: '115', config: '20-inch remote, Command Thrust', msrp: 19540, hbwPrice: 17540, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1115F532D' },
+    { name: '115 ELPT Pro XS Command Thrust', hp: '115', config: '20-inch remote, Command Thrust', msrp: 19985, hbwPrice: 17941, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1117F531D' },
   ],
 
   includedTitle: 'What is included in the price',
@@ -256,7 +256,7 @@ export const MID_POWER_90_115HP: LandingConfig = {
   ],
 
   faq: [
-    { question: 'What does a Mercury 115 HP outboard cost in Canada?', answer: 'At Harris Boat Works, the 115 Pro XS is $17,320 CAD (20-inch) and the 115 FourStroke Command Thrust is $17,364 CAD. The 90 HP FourStroke starts at $14,812. Prices are CAD, as of May 2026.' },
+    { question: 'What does a Mercury 115 HP outboard cost in Canada?', answer: 'At Harris Boat Works, the 115 Pro XS is $17,490 CAD (20-inch) and the 115 FourStroke Command Thrust is $17,540 CAD. The 90 HP FourStroke starts at $14,960. Prices are CAD, current pricing, confirm in the quote builder.' },
     { question: 'Should I get the FourStroke 115 or the Pro XS 115?', answer: 'Choose the Pro XS for a lighter, sportier motor with a stronger hole shot and top end, good on performance rigs. Choose the FourStroke 115 for a smooth, quiet all-rounder. They are priced close together; the right one depends on how you run the boat.' },
     { question: 'Do I need Command Thrust on a 90 or 115 HP motor?', answer: 'It is worth it on pontoons and heavy, loaded boats, where the bigger gearcase and prop improve low-speed grip and load carrying. On a lighter bowrider the standard gearcase is fine.' },
     { question: 'Will a 90 to 115 HP Mercury fit my boat?', answer: 'It suits most bowriders, fish-and-ski boats, mid-size aluminum, and pontoons, but the right HP depends on hull and your capacity plate. Send us the boat details and we will size it.' },
