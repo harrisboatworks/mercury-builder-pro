@@ -55,7 +55,7 @@ Tournament bass setups (see Pro XS) and large 24+ ft pontoons with watersports l
 
 ## Public Quote API
 
-Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
+Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
 
 ```json
 {
