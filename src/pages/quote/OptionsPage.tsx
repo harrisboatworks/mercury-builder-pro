@@ -130,14 +130,10 @@ export default function OptionsPage() {
     });
   };
 
-  const canContinue = !isElectricStart || batteryChoice !== null;
+  const canContinue = true;
 
   const handleContinue = () => {
     if (!categorizedOptions) return;
-    if (isElectricStart && batteryChoice === null) {
-      toast.error('Please select a battery option before continuing');
-      return;
-    }
     const allOptions = [
       ...categorizedOptions.required,
       ...categorizedOptions.recommended,
@@ -263,18 +259,13 @@ export default function OptionsPage() {
         {isElectricStart && (
           <OptionsSection
             title="Starting Battery"
-            badge={<Badge variant="destructive">Required Answer</Badge>}
+            badge={<Badge variant="secondary">Optional</Badge>}
           >
             <BatteryOptionPrompt
               onSelect={setBatteryChoice}
               selectedOption={batteryChoice}
               batteryCost={BATTERY_COST}
             />
-            {batteryChoice === null && (
-              <p className="text-sm text-repower-mercury-red mt-2">
-                Please select an option before continuing
-              </p>
-            )}
           </OptionsSection>
         )}
 
