@@ -2158,7 +2158,6 @@ function lineupLandingNoscriptHtml(cfg) {
     `<tr><th scope="row">${escapeHtml(v.name)}</th><td>${escapeHtml(v.hp)}</td><td>${escapeHtml(v.config)}</td><td>${fmt(v.msrp)}</td><td><strong>${fmt(v.hbwPrice)}</strong></td><td>${fmt(v.msrp - v.hbwPrice)}</td><td>${escapeHtml(v.availabilityLabel)}</td></tr>`
   ).join('');
   return (
-    `<p>${escapeHtml(cfg.intro)}</p>` +
     '<p><a href="/quote/motor-selection">Build Your Quote</a> &nbsp; <a href="tel:+19053422153">Call 905-342-2153</a></p>' +
     `<h2>${escapeHtml(cfg.tableCaption)}</h2>` +
     `<table><caption>${escapeHtml(cfg.tableCaption)}</caption>` +
