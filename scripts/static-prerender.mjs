@@ -1915,7 +1915,7 @@ function proXS250NoscriptHtml() {
       '<li>Four-stroke 4.6L V8, 250 HP at the prop</li>' +
       '<li>Electric start, power trim, factory-set shaft length</li>' +
       '<li>Mechanical remote controls, or Digital Throttle &amp; Shift on the DTS variants</li>' +
-      '<li>The applicable Mercury Marine factory warranty. Any active Mercury bonus warranty promotion is confirmed at quote time.</li>' +
+      '<li>3-year Mercury factory warranty included. Extended coverage available.</li>' +
       '<li>The same price our sales desk sees. No inflate-to-negotiate.</li>' +
     '</ul>' +
     '<p>Not included: 13% HST. Rigging and installation labour. Optional starting battery, prop upgrades, and gauges.</p>' +
