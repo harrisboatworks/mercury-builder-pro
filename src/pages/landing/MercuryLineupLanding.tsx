@@ -57,7 +57,9 @@ export default function MercuryLineupLanding({ config }: { config: LandingConfig
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg">
-                <Link to="/quote/motor-selection">Build Your Quote</Link>
+                <Link to={config.primaryCta?.to ?? '/quote/motor-selection'}>
+                  {config.primaryCta?.label ?? 'Build Your Quote'}
+                </Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <a href="tel:+19053422153">
