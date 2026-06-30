@@ -167,18 +167,21 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       return;
     }
 
-    if (!quoteData.motor || !user) return;
+    // Anonymous users MUST be able to submit — the lead-capture step happens
+    // BEFORE any account is created (the success page offers account creation).
+    if (!quoteData.motor) return;
 
     setIsSubmitting(true);
-    
+
     // Declare variables that need to be accessible throughout the function
     let quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
     let pdfUrl: string | null = null;
-    
+    let quoteId: string | undefined;
+
     try {
       const cleanPhone = contactInfo.phone.replace(/\D/g, '');
       const formattedPhone = `+1${cleanPhone}`;
-      
+
       const sanitizedContactInfo = {
         name: sanitizeInput(contactInfo.name),
         email: sanitizeInput(contactInfo.email),
@@ -187,54 +190,74 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         notes: sanitizeInput(contactInfo.notes)
       };
 
-      const { error } = await supabase
-        .from('customer_quotes')
-        .insert({
-          user_id: user.id,
-          base_price: totals.subtotal,
-          final_price: Math.round(totalCashPrice),
-          deposit_amount: quoteData.financing.downPayment,
-          loan_amount: Math.round(totalCashPrice) - quoteData.financing.downPayment,
-          monthly_payment: calculateMonthlyPayment(),
-          term_months: quoteData.financing.term,
-          total_cost: calculateTotalCost(),
-          customer_name: sanitizedContactInfo.name,
-          customer_email: sanitizedContactInfo.email,
-          customer_phone: sanitizedContactInfo.phone,
-          // Lead tracking fields
-          lead_status: 'scheduled',
-          lead_source: 'consultation',
-          lead_score: 75, // High score for scheduled consultations
-          // New trade-in penalty audit fields
-          tradein_value_pre_penalty: quoteData.boatInfo?.tradeIn?.tradeinValuePrePenalty ?? null,
-          tradein_value_final: quoteData.boatInfo?.tradeIn?.tradeinValueFinal ?? quoteData.boatInfo?.tradeIn?.estimatedValue ?? null,
-          penalty_applied: Boolean(quoteData.boatInfo?.tradeIn?.penaltyApplied),
-          penalty_factor: quoteData.boatInfo?.tradeIn?.penaltyFactor ?? null,
-          penalty_reason: (quoteData.boatInfo?.tradeIn?.penaltyApplied ? 'brand_out_of_business' : null),
-          // Required fields with defaults
-          discount_amount: 0
-        } as any);
+      const insertPayload = {
+        base_price: totals.subtotal,
+        final_price: Math.round(totalCashPrice),
+        deposit_amount: quoteData.financing.downPayment,
+        loan_amount: Math.round(totalCashPrice) - quoteData.financing.downPayment,
+        monthly_payment: calculateMonthlyPayment(),
+        term_months: quoteData.financing.term,
+        total_cost: calculateTotalCost(),
+        customer_name: sanitizedContactInfo.name,
+        customer_email: sanitizedContactInfo.email,
+        customer_phone: sanitizedContactInfo.phone,
+        // Lead tracking fields
+        lead_status: 'scheduled',
+        lead_source: 'consultation',
+        lead_score: 75, // High score for scheduled consultations
+        // New trade-in penalty audit fields
+        tradein_value_pre_penalty: quoteData.boatInfo?.tradeIn?.tradeinValuePrePenalty ?? null,
+        tradein_value_final: quoteData.boatInfo?.tradeIn?.tradeinValueFinal ?? quoteData.boatInfo?.tradeIn?.estimatedValue ?? null,
+        penalty_applied: Boolean(quoteData.boatInfo?.tradeIn?.penaltyApplied),
+        penalty_factor: quoteData.boatInfo?.tradeIn?.penaltyFactor ?? null,
+        penalty_reason: (quoteData.boatInfo?.tradeIn?.penaltyApplied ? 'brand_out_of_business' : null),
+        discount_amount: 0,
+      };
 
-      if (error) throw error;
-
-      console.log('🔍 [NOTIFICATIONS] Starting notification process...');
-
-      // Get the inserted record with proper typing
-      console.log('🔍 [NOTIFICATIONS] Fetching inserted quote ID...');
-      const { data: insertedData, error: fetchError } = await supabase
-        .from('customer_quotes')
-        .select('id')
-        .eq('customer_email', sanitizedContactInfo.email)
-        .order('created_at', { ascending: false })
-        .limit(1)
-        .single();
-
-      if (fetchError) {
-        console.error('❌ [NOTIFICATIONS] Failed to fetch quote ID:', fetchError);
+      if (user) {
+        // Authenticated path: unchanged direct insert under user's RLS.
+        const { data: inserted, error } = await supabase
+          .from('customer_quotes')
+          .insert({ user_id: user.id, ...insertPayload } as any)
+          .select('id')
+          .single();
+        if (error) throw error;
+        quoteId = inserted?.id;
+      } else {
+        // Anonymous path: route through service-role edge function so we don't
+        // silently no-op when nobody is logged in (the original bug). The
+        // function returns the new row id directly.
+        const { data: fnData, error: fnError } = await supabase.functions.invoke('submit-quote-lead', {
+          body: {
+            user_id: null,
+            customer_name: sanitizedContactInfo.name,
+            customer_email: sanitizedContactInfo.email,
+            customer_phone: sanitizedContactInfo.phone,
+            contact_method: sanitizedContactInfo.contactMethod,
+            notes: sanitizedContactInfo.notes,
+            motor_model: quoteData.motor?.model || null,
+            base_price: insertPayload.base_price,
+            final_price: insertPayload.final_price,
+            deposit_amount: insertPayload.deposit_amount,
+            loan_amount: insertPayload.loan_amount,
+            monthly_payment: insertPayload.monthly_payment,
+            term_months: insertPayload.term_months,
+            total_cost: insertPayload.total_cost,
+            tradein_value_pre_penalty: insertPayload.tradein_value_pre_penalty,
+            tradein_value_final: insertPayload.tradein_value_final,
+            penalty_applied: insertPayload.penalty_applied,
+            penalty_factor: insertPayload.penalty_factor,
+            penalty_reason: insertPayload.penalty_reason,
+          },
+        });
+        if (fnError) throw fnError;
+        if (fnData && fnData.success === false) {
+          throw new Error(fnData.error || 'Failed to submit quote');
+        }
+        quoteId = fnData?.quoteId;
       }
 
-      const quoteId = insertedData?.id;
-      console.log('🔍 [NOTIFICATIONS] Quote ID:', quoteId);
+      console.log('🔍 [NOTIFICATIONS] Starting notification process... quoteId:', quoteId);
 
       // 1. Trigger hot lead webhooks (score is 75, >= 70 threshold)
       console.log('🔍 [NOTIFICATIONS] Step 1: Triggering hot lead webhooks...');
