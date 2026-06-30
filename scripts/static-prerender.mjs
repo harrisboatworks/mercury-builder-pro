@@ -1869,10 +1869,12 @@ function mercuryProXS250Schemas() {
 }
 
 const MERCURY_SEGMENT_LINKS_PRERENDER = [
-  { path: '/mercury/pro-xs-250', name: 'Mercury Pro XS 250', price: '$34,502 CAD' },
-  { path: '/mercury/portable-9-20hp', name: 'Mercury 9.9 to 20 HP Portable', price: '$3,553 CAD' },
-  { path: '/mercury/mid-range-40-60hp', name: 'Mercury 40 to 60 HP Mid-Range', price: '$9,532 CAD' },
-  { path: '/mercury/mid-power-90-115hp', name: 'Mercury 90 to 115 HP', price: '$14,812 CAD' },
+  { path: '/mercury/pro-xs-250', name: 'Mercury Pro XS 250', price: '$34,848 CAD' },
+  { path: '/mercury/portable-9-20hp', name: 'Mercury 9.9 to 20 HP Portable', price: '$2,999 CAD' },
+  { path: '/mercury/mid-range-40-60hp', name: 'Mercury 40 to 60 HP Mid-Range', price: '$9,438 CAD' },
+  { path: '/mercury/mid-power-90-115hp', name: 'Mercury 90 to 115 HP', price: '$14,960 CAD' },
+  { path: '/mercury/115-pro-xs', name: 'Mercury 115 Pro XS', price: '$17,490 CAD' },
+  { path: '/mercury/150-hp', name: 'Mercury 150 HP', price: '$22,242 CAD' },
 ];
 
 function mercurySegmentCrossLinksHtml(currentPath) {
