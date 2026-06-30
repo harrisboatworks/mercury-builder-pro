@@ -34,21 +34,21 @@ function mapFn(fn) {
 // Match any supabase functions URL (http/https), optional path tail.
 const URL_RE = /https?:\/\/[a-z0-9-]+\.supabase\.co\/functions\/v1\/([a-z0-9-]+)((?:\/[^\s`"')\]]*)?)/gi;
 
-// Use git ls-files when available for speed, fall back to a recursive listing.
-let files;
-try {
-  files = execSync('git ls-files "public/**/*.md"', { encoding: 'utf8' })
-    .split('\n')
-    .filter(Boolean);
-} catch {
-  // Fallback: shell glob
-  files = execSync('ls public/**/*.md public/*.md 2>/dev/null || true', {
-    encoding: 'utf8',
-    shell: '/bin/bash',
-  })
-    .split('\n')
-    .filter(Boolean);
+// Recursively collect every *.md under public/.
+import { readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
+
+function walk(dir, out = []) {
+  for (const entry of readdirSync(dir)) {
+    const p = join(dir, entry);
+    let st;
+    try { st = statSync(p); } catch { continue; }
+    if (st.isDirectory()) walk(p, out);
+    else if (entry.endsWith('.md')) out.push(p);
+  }
+  return out;
 }
+const files = walk('public');
 
 let changedFiles = 0;
 let totalReplacements = 0;
