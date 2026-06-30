@@ -5163,6 +5163,8 @@ const staticSitemapEntries = [
   { loc: '/mercury/portable-9-20hp', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury/mid-range-40-60hp', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury/mid-power-90-115hp', priority: 0.85, changefreq: 'weekly' },
+  { loc: '/mercury/115-pro-xs', priority: 0.85, changefreq: 'weekly' },
+  { loc: '/mercury/150-hp', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury-outboards-ontario', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury-pontoon-outboards', priority: 0.8, changefreq: 'monthly' },
   { loc: '/agents', priority: 0.8, changefreq: 'monthly' },
