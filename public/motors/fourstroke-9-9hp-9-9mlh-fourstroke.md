@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke
-last_updated: 2026-06-29
+last_updated: 2026-06-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -55,7 +55,7 @@ Boats 16 ft and over, loaded family boats, or anything that needs to plane with 
 
 ## Public Quote API
 
-Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/public-quote-api`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {

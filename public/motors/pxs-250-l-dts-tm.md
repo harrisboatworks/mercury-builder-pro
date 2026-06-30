@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/pxs-250-l-dts-tm
-last_updated: 2026-06-29
+last_updated: 2026-06-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -55,7 +55,7 @@ Small tenders or boats rated under this HP, match HP to transom rating, never ex
 
 ## Public Quote API
 
-Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/public-quote-api`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {
