@@ -1904,7 +1904,6 @@ function proXS250NoscriptHtml() {
     `<tr><th scope="row">${escapeHtml(v.name)}</th><td>${escapeHtml(v.shaft)}</td><td>${escapeHtml(v.controls)}</td><td>${fmt(v.msrp)}</td><td><strong>${fmt(v.hbwPrice)}</strong></td><td>${fmt(v.msrp - v.hbwPrice)}</td><td>${escapeHtml(v.availabilityLabel)}</td></tr>`
   ).join('');
   return (
-    '<p>Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,848 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees.</p>' +
     '<p><a href="/quote/motor-selection">Build Your Quote</a> &nbsp; <a href="tel:+19053422153">Call 905-342-2153</a></p>' +
     '<h2>Pro XS 250 prices: all four configurations</h2>' +
     '<table><caption>Mercury Pro XS 250 configurations and CAD pricing</caption>' +
