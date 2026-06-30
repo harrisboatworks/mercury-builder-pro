@@ -1823,7 +1823,7 @@ const PRO_XS_250_VARIANTS_PRERENDER = [
 const PRO_XS_250_FAQ_PRERENDER = [
   { question: 'What does a Mercury Pro XS 250 cost in Canada?', answer: 'At Harris Boat Works, the Pro XS 250 runs from $34,848 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,741 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, current pricing, confirm in the quote builder.' },
   { question: 'Is the Pro XS 250 in stock?', answer: 'The two 20-inch (ELPT) variants are in stock at Gores Landing, Ontario. The 25-inch (EXLPT) variants we bring in to order. Confirm current availability in the quote builder or call us.' },
-  { question: 'What warranty comes with a Pro XS 250?', answer: 'Every new Mercury Pro XS 250 carries the applicable Mercury Marine factory warranty. Bonus warranty promotions come and go through the year. We confirm exact coverage and any active Mercury promotion when we quote you.' },
+  { question: 'What warranty comes with a Pro XS 250?', answer: 'Every new Mercury Pro XS 250 includes the standard 3-year Mercury Marine factory warranty. Extended coverage is available. Any active Mercury bonus-warranty promotion is confirmed at quote time.' },
   { question: 'Can I finance a Pro XS 250?', answer: 'Yes. Financing is available on approved credit through Mercury Finance. Build a quote and we will show you current rate and monthly options, or call 905-342-2153.' },
   { question: 'How long does a Pro XS 250 repower take?', answer: 'Most repowers run 2 to 3 weeks from confirmed order to water-ready, depending on rigging. Spring (April and May) runs longer because every shop in Ontario is booked. Plan ahead.' },
 ];
