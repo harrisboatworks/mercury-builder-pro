@@ -1834,7 +1834,7 @@ function mercuryProXS250Schemas() {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Mercury Pro XS 250 Outboard Motor',
-    description: 'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. 7-year warranty coverage, sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+    description: 'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
     brand: { '@type': 'Brand', name: 'Mercury Marine' },
     category: 'Outboard Motor',
     image: PRO_XS_250_HERO_IMAGE_PRERENDER,
