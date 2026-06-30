@@ -17,8 +17,6 @@
  * and `-api` affixes stripped.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
-import { globSync } from 'node:fs';
-import { join } from 'node:path';
 import { execSync } from 'node:child_process';
 
 const KNOWN = {
