@@ -39,8 +39,8 @@ Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario 
 
 ## Public quote API
 
-- `POST https://www.mercuryrepower.ca/api/agents/quote` with `{ "action": "build_quote", "motor_id": "<id>" }` builds an itemized CAD quote (public-quote-api).
-- `GET https://www.mercuryrepower.ca/api/agents/motors` returns the live Mercury inventory feed (public-motors-api).
+- `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api` with `{ "action": "build_quote", "motor_id": "<id>" }` builds an itemized CAD quote (public-quote-api).
+- `GET https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api` returns the live Mercury inventory feed (public-motors-api).
 
 See any motor twin for an example body.
 
@@ -58,16 +58,16 @@ See any motor twin for an example body.
 
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fs-2.5-mh.md)
 - [6MH FourStroke](https://www.mercuryrepower.ca/motors/fs-6-mh.md)
+- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mh.md)
 - [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mlh.md)
 - [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-elh.md)
-- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mh.md)
-- [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-eh.md)
 - [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elhpt.md)
+- [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-eh.md)
 - [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elh.md)
 - [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fs-25-elhpt.md)
 - [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-25-elpt.md)
-- [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-efi-elpt.md)
 - [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-60-elpt-ct.md)
+- [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-efi-elpt.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-90-elpt.md)
 - [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-exlpt.md)
 - [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-elpt.md)
@@ -81,19 +81,19 @@ See any motor twin for an example body.
 - [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
 - [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
 - [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
-- [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke.md)
 - [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
+- [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke.md)
 - [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
-- [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
 - [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
+- [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
 - [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
 - [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke.md)
-- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
 - [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
+- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
 - [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
-- [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs.md)
 - [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
+- [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs.md)
 - [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs.md)
 - [200 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs-dts.md)
 - [250 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs-dts.md)
