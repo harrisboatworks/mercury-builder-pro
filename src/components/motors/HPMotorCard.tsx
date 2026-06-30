@@ -89,11 +89,20 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
     featurePills.unshift('Pro XS Available');
   }
   
+  const familiesAttr = families.join(',').toLowerCase();
+
   return (
-    <div 
-      className="group bg-white shadow-sm rounded-lg border border-repower-navy-900/10 overflow-hidden card-hover cursor-pointer active:scale-[0.98] active:opacity-95"
+    <div
+      data-hp={hp}
+      data-families={familiesAttr}
+      data-motor-card="true"
+      className="group bg-white shadow-sm rounded-lg border border-repower-navy-900/10 overflow-hidden card-hover cursor-pointer active:scale-[0.98] active:opacity-95 [&.motor-card-highlight]:ring-4 [&.motor-card-highlight]:ring-repower-gold [&.motor-card-highlight]:ring-offset-2 transition-all relative"
       onClick={handleCardClick}
     >
+      {/* "Selected from your search" badge injected by deep-link param (Task 5) */}
+      <div data-search-badge-slot="true" className="hidden absolute top-2 left-2 z-30 bg-repower-gold text-repower-navy-900 text-[10px] font-semibold uppercase tracking-wider px-2 py-1 rounded-full shadow">
+        Selected from your search
+      </div>
       {/* Image Section */}
       <div className="relative p-6 overflow-hidden" style={{ background: 'var(--gradient-image-bg)' }}>
         {/* Shimmer loading overlay */}
