@@ -972,6 +972,59 @@ if (event.type === 'filter_motors') {
     setVoiceShowMotorId(null);
   }, [voiceShowMotorId, processedMotors, groupedMotors, dispatch]);
 
+  // Task 5: Deep-link param ?model=<slug> highlights matching motor card(s).
+  // Maps known ad-campaign slugs to {hp, family?} predicates, then on next
+  // paint after groupedMotors are rendered, scrolls the first match into view
+  // and adds a highlight ring + "Selected from your search" badge.
+  useEffect(() => {
+    const modelParam = searchParams.get('model');
+    if (!modelParam || groupedMotors.length === 0) return;
+
+    const DEEP_LINK_MAP: Record<string, { hp: number; family?: string }> = {
+      '150-hp': { hp: 150 },
+      '115-pro-xs': { hp: 115, family: 'pro xs' },
+      '250-pro-xs': { hp: 250, family: 'pro xs' },
+    };
+    const target = DEEP_LINK_MAP[modelParam.toLowerCase()];
+    if (!target) return;
+
+    let cancelled = false;
+    const apply = () => {
+      if (cancelled) return false;
+      const cards = Array.from(
+        document.querySelectorAll<HTMLElement>('[data-motor-card="true"]')
+      );
+      const matches = cards.filter((el) => {
+        const hp = parseFloat(el.dataset.hp || '');
+        if (hp !== target.hp) return false;
+        if (!target.family) return true;
+        const fams = (el.dataset.families || '').toLowerCase();
+        return fams.includes(target.family);
+      });
+      if (matches.length === 0) return false;
+      matches.forEach((el) => {
+        el.classList.add('motor-card-highlight');
+        const badge = el.querySelector<HTMLElement>('[data-search-badge-slot="true"]');
+        if (badge) badge.classList.remove('hidden');
+      });
+      matches[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return true;
+    };
+
+    // Try a few times; cards may mount slightly after groupedMotors changes.
+    let attempt = 0;
+    const tick = () => {
+      if (apply() || attempt > 6 || cancelled) return;
+      attempt++;
+      setTimeout(tick, 250);
+    };
+    const initial = setTimeout(tick, 100);
+    return () => {
+      cancelled = true;
+      clearTimeout(initial);
+    };
+  }, [searchParams, groupedMotors]);
+
   // Filter groups based on search
   const filteredGroups = useMemo(() => {
     if (!searchQuery) return groupedMotors;
