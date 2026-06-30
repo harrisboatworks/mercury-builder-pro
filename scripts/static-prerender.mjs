@@ -1904,19 +1904,19 @@ function proXS250NoscriptHtml() {
     `<tr><th scope="row">${escapeHtml(v.name)}</th><td>${escapeHtml(v.shaft)}</td><td>${escapeHtml(v.controls)}</td><td>${fmt(v.msrp)}</td><td><strong>${fmt(v.hbwPrice)}</strong></td><td>${fmt(v.msrp - v.hbwPrice)}</td><td>${escapeHtml(v.availabilityLabel)}</td></tr>`
   ).join('');
   return (
-    '<p>Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,502 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees, and 7-year warranty coverage on every one.</p>' +
+    '<p>Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,848 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees.</p>' +
     '<p><a href="/quote/motor-selection">Build Your Quote</a> &nbsp; <a href="tel:+19053422153">Call 905-342-2153</a></p>' +
     '<h2>Pro XS 250 prices: all four configurations</h2>' +
-    '<table><caption>Mercury Pro XS 250 configurations and CAD pricing (May 2026)</caption>' +
+    '<table><caption>Mercury Pro XS 250 configurations and CAD pricing</caption>' +
     '<thead><tr><th scope="col">Configuration</th><th scope="col">Shaft</th><th scope="col">Controls</th><th scope="col">MSRP</th><th scope="col">HBW Price</th><th scope="col">You Save</th><th scope="col">Availability</th></tr></thead>' +
     `<tbody>${rows}</tbody></table>` +
-    '<p><small>Prices in CAD, current as of May 2026. The two 20-inch (ELPT) variants are in stock now; the 25-inch (EXLPT) variants we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, and installation labour are not included.</small></p>' +
+    '<p><small>Prices in CAD, current pricing, confirm in the quote builder. The two 20-inch (ELPT) variants are in stock now; the 25-inch (EXLPT) variants we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, and installation labour are not included.</small></p>' +
     '<h2>What is included in the price</h2>' +
     '<ul>' +
       '<li>Four-stroke 4.6L V8, 250 HP at the prop</li>' +
       '<li>Electric start, power trim, factory-set shaft length</li>' +
       '<li>Mechanical remote controls, or Digital Throttle &amp; Shift on the DTS variants</li>' +
-      '<li>7-year Mercury warranty coverage under the promotion currently running to June 14, 2026. After it ends, standard warranty terms apply.</li>' +
+      '<li>The applicable Mercury Marine factory warranty. Any active Mercury bonus warranty promotion is confirmed at quote time.</li>' +
       '<li>The same price our sales desk sees. No inflate-to-negotiate.</li>' +
     '</ul>' +
     '<p>Not included: 13% HST. Rigging and installation labour. Optional starting battery, prop upgrades, and gauges.</p>' +
