@@ -130,14 +130,10 @@ export default function OptionsPage() {
     });
   };
 
-  const canContinue = !isElectricStart || batteryChoice !== null;
+  const canContinue = true;
 
   const handleContinue = () => {
     if (!categorizedOptions) return;
-    if (isElectricStart && batteryChoice === null) {
-      toast.error('Please select a battery option before continuing');
-      return;
-    }
     const allOptions = [
       ...categorizedOptions.required,
       ...categorizedOptions.recommended,
