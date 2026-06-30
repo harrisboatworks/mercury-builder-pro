@@ -51,6 +51,12 @@ export interface LandingConfig {
 
   finalCtaHeading: string;
   finalCtaBody: string;
+
+  /** Optional cross-links rendered as a small "Related" row under the Which-One section. */
+  crossLinks?: { label: string; to: string }[];
+
+  /** Optional override for the primary CTA used by both hero and final CTA. */
+  primaryCta?: { label: string; to: string };
 }
 
 // ============================================================================
