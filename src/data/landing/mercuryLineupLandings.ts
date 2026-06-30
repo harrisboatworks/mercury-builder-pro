@@ -445,4 +445,6 @@ export const ALL_SEGMENTS: SegmentLink[] = [
   { path: '/mercury/portable-9-20hp', name: 'Mercury 9.9 to 20 HP Portable', price: segmentFromPrice((s) => s.hp >= 9.9 && s.hp <= 20) },
   { path: '/mercury/mid-range-40-60hp', name: 'Mercury 40 to 60 HP Mid-Range', price: segmentFromPrice((s) => s.hp >= 40 && s.hp <= 60) },
   { path: '/mercury/mid-power-90-115hp', name: 'Mercury 90 to 115 HP', price: segmentFromPrice((s) => s.hp >= 90 && s.hp <= 115) },
+  { path: '/mercury/115-pro-xs', name: 'Mercury 115 Pro XS', price: segmentFromPrice((s) => s.family === 'ProXS' && s.hp === 115) },
+  { path: '/mercury/150-hp', name: 'Mercury 150 HP', price: segmentFromPrice((s) => s.hp === 150) },
 ];
