@@ -1814,16 +1814,16 @@ const PRO_XS_250_HERO_IMAGE_PRERENDER =
   'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769028305971-mercury-250-hp-v-8-pro-xs-fs-port-front-3-4-detail-image-1701169513978.jpg';
 
 const PRO_XS_250_VARIANTS_PRERENDER = [
-  { name: '250 ELPT Pro XS', sku: '12500033A', shaft: '20 inch (Long)', controls: 'Mechanical remote', msrp: 39205, hbwPrice: 34502, availability: 'InStock', availabilityLabel: 'In stock', offerName: '250 ELPT Pro XS (20-inch Long shaft, mechanical remote)' },
-  { name: '250 EXLPT Pro XS', sku: '12500034A', shaft: '25 inch (XL)', controls: 'Mechanical remote', msrp: 40105, hbwPrice: 35294, availability: 'BackOrder', availabilityLabel: 'Available to order', offerName: '250 EXLPT Pro XS (25-inch XL shaft, mechanical remote)' },
-  { name: '250 ELPT Pro XS DTS', sku: '12500094A', shaft: '20 inch (Long)', controls: 'Digital Throttle & Shift', msrp: 41525, hbwPrice: 36542, availability: 'InStock', availabilityLabel: 'In stock', offerName: '250 ELPT Pro XS DTS (20-inch Long shaft, Digital Throttle & Shift)' },
-  { name: '250 EXLPT Pro XS DTS', sku: '12500096A', shaft: '25 inch (XL)', controls: 'Digital Throttle & Shift', msrp: 42465, hbwPrice: 37367, availability: 'BackOrder', availabilityLabel: 'Available to order', offerName: '250 EXLPT Pro XS DTS (25-inch XL shaft, Digital Throttle & Shift)' },
+  { name: '250 ELPT Pro XS', sku: '12500033A', shaft: '20 inch (Long)', controls: 'Mechanical remote', msrp: 38820, hbwPrice: 34848, availability: 'InStock', availabilityLabel: 'In stock', offerName: '250 ELPT Pro XS (20-inch Long shaft, mechanical remote)' },
+  { name: '250 EXLPT Pro XS', sku: '12500034A', shaft: '25 inch (XL)', controls: 'Mechanical remote', msrp: 39710, hbwPrice: 35646, availability: 'BackOrder', availabilityLabel: 'Available to order', offerName: '250 EXLPT Pro XS (25-inch XL shaft, mechanical remote)' },
+  { name: '250 ELPT Pro XS DTS', sku: '12500094A', shaft: '20 inch (Long)', controls: 'Digital Throttle & Shift', msrp: 41115, hbwPrice: 36905, availability: 'InStock', availabilityLabel: 'In stock', offerName: '250 ELPT Pro XS DTS (20-inch Long shaft, Digital Throttle & Shift)' },
+  { name: '250 EXLPT Pro XS DTS', sku: '12500096A', shaft: '25 inch (XL)', controls: 'Digital Throttle & Shift', msrp: 42045, hbwPrice: 37741, availability: 'BackOrder', availabilityLabel: 'Available to order', offerName: '250 EXLPT Pro XS DTS (25-inch XL shaft, Digital Throttle & Shift)' },
 ];
 
 const PRO_XS_250_FAQ_PRERENDER = [
-  { question: 'What does a Mercury Pro XS 250 cost in Canada?', answer: 'At Harris Boat Works, the Pro XS 250 runs from $34,502 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,367 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, as of May 2026, and include 7-year warranty coverage under the current Mercury promotion.' },
+  { question: 'What does a Mercury Pro XS 250 cost in Canada?', answer: 'At Harris Boat Works, the Pro XS 250 runs from $34,848 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,741 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, current pricing, confirm in the quote builder.' },
   { question: 'Is the Pro XS 250 in stock?', answer: 'The two 20-inch (ELPT) variants are in stock at Gores Landing, Ontario. The 25-inch (EXLPT) variants we bring in to order. Confirm current availability in the quote builder or call us.' },
-  { question: 'What warranty comes with a Pro XS 250?', answer: 'Every Pro XS 250 sold under the Mercury promotion running to June 14, 2026 includes 7-year warranty coverage at no extra cost. After the promotion ends, standard Mercury warranty terms apply. We confirm exact coverage when we quote you.' },
+  { question: 'What warranty comes with a Pro XS 250?', answer: 'Every new Mercury Pro XS 250 carries the applicable Mercury Marine factory warranty. Bonus warranty promotions come and go through the year. We confirm exact coverage and any active Mercury promotion when we quote you.' },
   { question: 'Can I finance a Pro XS 250?', answer: 'Yes. Financing is available on approved credit through Mercury Finance. Build a quote and we will show you current rate and monthly options, or call 905-342-2153.' },
   { question: 'How long does a Pro XS 250 repower take?', answer: 'Most repowers run 2 to 3 weeks from confirmed order to water-ready, depending on rigging. Spring (April and May) runs longer because every shop in Ontario is booked. Plan ahead.' },
 ];
@@ -1834,7 +1834,7 @@ function mercuryProXS250Schemas() {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Mercury Pro XS 250 Outboard Motor',
-    description: 'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. 7-year warranty coverage, sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+    description: 'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
     brand: { '@type': 'Brand', name: 'Mercury Marine' },
     category: 'Outboard Motor',
     image: PRO_XS_250_HERO_IMAGE_PRERENDER,
@@ -1869,10 +1869,12 @@ function mercuryProXS250Schemas() {
 }
 
 const MERCURY_SEGMENT_LINKS_PRERENDER = [
-  { path: '/mercury/pro-xs-250', name: 'Mercury Pro XS 250', price: '$34,502 CAD' },
-  { path: '/mercury/portable-9-20hp', name: 'Mercury 9.9 to 20 HP Portable', price: '$3,553 CAD' },
-  { path: '/mercury/mid-range-40-60hp', name: 'Mercury 40 to 60 HP Mid-Range', price: '$9,532 CAD' },
-  { path: '/mercury/mid-power-90-115hp', name: 'Mercury 90 to 115 HP', price: '$14,812 CAD' },
+  { path: '/mercury/pro-xs-250', name: 'Mercury Pro XS 250', price: '$34,848 CAD' },
+  { path: '/mercury/portable-9-20hp', name: 'Mercury 9.9 to 20 HP Portable', price: '$2,999 CAD' },
+  { path: '/mercury/mid-range-40-60hp', name: 'Mercury 40 to 60 HP Mid-Range', price: '$9,438 CAD' },
+  { path: '/mercury/mid-power-90-115hp', name: 'Mercury 90 to 115 HP', price: '$14,960 CAD' },
+  { path: '/mercury/115-pro-xs', name: 'Mercury 115 Pro XS', price: '$17,490 CAD' },
+  { path: '/mercury/150-hp', name: 'Mercury 150 HP', price: '$22,242 CAD' },
 ];
 
 function mercurySegmentCrossLinksHtml(currentPath) {
@@ -1902,19 +1904,19 @@ function proXS250NoscriptHtml() {
     `<tr><th scope="row">${escapeHtml(v.name)}</th><td>${escapeHtml(v.shaft)}</td><td>${escapeHtml(v.controls)}</td><td>${fmt(v.msrp)}</td><td><strong>${fmt(v.hbwPrice)}</strong></td><td>${fmt(v.msrp - v.hbwPrice)}</td><td>${escapeHtml(v.availabilityLabel)}</td></tr>`
   ).join('');
   return (
-    '<p>Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,502 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees, and 7-year warranty coverage on every one.</p>' +
+    '<p>Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,848 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees.</p>' +
     '<p><a href="/quote/motor-selection">Build Your Quote</a> &nbsp; <a href="tel:+19053422153">Call 905-342-2153</a></p>' +
     '<h2>Pro XS 250 prices: all four configurations</h2>' +
-    '<table><caption>Mercury Pro XS 250 configurations and CAD pricing (May 2026)</caption>' +
+    '<table><caption>Mercury Pro XS 250 configurations and CAD pricing</caption>' +
     '<thead><tr><th scope="col">Configuration</th><th scope="col">Shaft</th><th scope="col">Controls</th><th scope="col">MSRP</th><th scope="col">HBW Price</th><th scope="col">You Save</th><th scope="col">Availability</th></tr></thead>' +
     `<tbody>${rows}</tbody></table>` +
-    '<p><small>Prices in CAD, current as of May 2026. The two 20-inch (ELPT) variants are in stock now; the 25-inch (EXLPT) variants we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, and installation labour are not included.</small></p>' +
+    '<p><small>Prices in CAD, current pricing, confirm in the quote builder. The two 20-inch (ELPT) variants are in stock now; the 25-inch (EXLPT) variants we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, and installation labour are not included.</small></p>' +
     '<h2>What is included in the price</h2>' +
     '<ul>' +
       '<li>Four-stroke 4.6L V8, 250 HP at the prop</li>' +
       '<li>Electric start, power trim, factory-set shaft length</li>' +
       '<li>Mechanical remote controls, or Digital Throttle &amp; Shift on the DTS variants</li>' +
-      '<li>7-year Mercury warranty coverage under the promotion currently running to June 14, 2026. After it ends, standard warranty terms apply.</li>' +
+      '<li>The applicable Mercury Marine factory warranty. Any active Mercury bonus warranty promotion is confirmed at quote time.</li>' +
       '<li>The same price our sales desk sees. No inflate-to-negotiate.</li>' +
     '</ul>' +
     '<p>Not included: 13% HST. Rigging and installation labour. Optional starting battery, prop upgrades, and gauges.</p>' +
@@ -2047,6 +2049,69 @@ const LINEUP_LANDING_CONFIGS = [
       { question: 'Are these in stock?', answer: 'Several 90 HP FourStrokes and 115 Pro XS motors are in stock at Gores Landing; the Command Thrust and 25-inch variants we bring in to order. Confirm current availability in the quote builder.' },
     ],
     finalCtaHeading: 'Build your 90 to 115 HP Mercury quote in two minutes',
+  },
+  {
+    path: '/mercury/150-hp',
+    title: 'Mercury 150 HP Outboard Price in Ontario | Harris Boat Works',
+    description: 'Mercury 150 HP FourStroke and Pro XS outboard prices from $22,242 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    h1: 'Mercury 150 HP Outboard Price in Ontario',
+    intro: 'The 150 FourStroke is the workhorse, the sweet spot for 17 to 19 ft fibreglass and aluminum boats: bowriders, fish-and-ski, deep-V aluminum. Smooth 3.0L inline-4, real fuel numbers, real-world reliability. Mercury 150 HP from $22,242 CAD at Harris Boat Works.',
+    ogImage: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
+    productName: 'Mercury 150 HP FourStroke and Pro XS Outboards',
+    productDescription: 'Mercury 150 HP FourStroke (3.0L inline-4) and 150 Pro XS outboards for repowers and new-boat installs. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+    tableCaption: 'Mercury 150 HP prices: FourStroke and Pro XS (CAD)',
+    tableNote: 'Prices in CAD, current pricing, confirm in the quote builder. 150 Pro XS variants are in stock at Gores Landing; the 150 FourStroke we bring in to order. Pickup at Gores Landing, Ontario. Customers arrange their own boat transport to and from the shop. Taxes, rigging, installation labour, and a starting battery are not included.',
+    configColLabel: 'Shaft and tuning',
+    variants: [
+      { name: '150L FourStroke', hp: '150', config: '20-inch (Long) shaft, mechanical remote', msrp: 24780, hbwPrice: 22242, availability: 'BackOrder', availabilityLabel: 'To order' },
+      { name: '150XL FourStroke', hp: '150', config: '25-inch (XL) shaft, mechanical remote', msrp: 24915, hbwPrice: 22363, availability: 'BackOrder', availabilityLabel: 'To order' },
+      { name: '150 ELPT Pro XS', hp: '150', config: '20-inch (Long) shaft, Pro XS tune', msrp: 27125, hbwPrice: 24349, availability: 'InStock', availabilityLabel: 'In stock' },
+      { name: '150 EXLPT Pro XS', hp: '150', config: '25-inch (XL) shaft, Pro XS tune', msrp: 27265, hbwPrice: 24475, availability: 'InStock', availabilityLabel: 'In stock' },
+    ],
+    whichOne: [
+      'The 150 FourStroke is a 3.0L inline-4, smooth and quiet, very good on fuel, and famously durable. It is the all-rounder: bowriders, runabouts, deep-V aluminum, lighter pontoons. If the boat is family and cottage first and you want the engine to disappear, the FourStroke is the right call.',
+      'The 150 Pro XS is the performance-tuned 150: stronger hole shot, faster top end, the pick for performance-minded rigs and bass boats. Same 3.0L block, sharper attitude.',
+      'Fit: most 17 to 19 ft fibreglass bowriders, aluminum deep-Vs, and Kawarthas/Rice Lake repowers from older two-stroke 150s. Shaft length: 20-inch (L) for standard transoms, 25-inch (XL) for taller transoms. If you are repowering and the old motor fit right, match the same shaft.',
+    ],
+    faq: [
+      { question: 'What does a Mercury 150 HP cost in Canada?', answer: 'At Harris Boat Works, the 150L FourStroke is $22,242 CAD and the 150 ELPT Pro XS is $24,349 CAD. The 25-inch XL versions are slightly more. Prices are CAD, current at time of listing, confirm in the quote builder.' },
+      { question: 'Will a 150 HP Mercury fit my boat?', answer: 'It fits most 17 to 19 ft fibreglass bowriders, runabouts, aluminum deep-Vs, and lighter pontoons. Check your boat capacity plate for max HP, and match the shaft length (20 or 25 inch) to your transom. Send us the boat details and we will size it properly.' },
+      { question: 'Should I get the FourStroke 150 or the Pro XS 150?', answer: 'Choose the FourStroke 150 for a smooth, quiet, fuel-efficient family motor. Choose the Pro XS 150 for stronger hole shot and top end on a performance rig or bass boat. Same 3.0L block, different tune.' },
+      { question: 'How long does a 150 HP repower take?', answer: 'Most 150 HP repowers run 2 to 3 weeks from confirmed order to water-ready. Spring (April and May) books up fast because every shop in Ontario is busy. Plan ahead.' },
+      { question: 'Do you deliver the motor or pick up my boat?', answer: 'No. Pickup is at Gores Landing, and customers arrange their own boat transport to and from the shop. We rig, install, and water-test on our dock.' },
+    ],
+    finalCtaHeading: 'Build your 150 HP Mercury quote in two minutes',
+  },
+  {
+    path: '/mercury/115-pro-xs',
+    title: 'Mercury 115 Pro XS Price in Ontario | Harris Boat Works',
+    description: 'Mercury 115 Pro XS prices from $17,490 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock, with Command Thrust option.',
+    h1: 'Mercury 115 Pro XS Price in Ontario',
+    intro: 'The 115 Pro XS is the hot-rod 115: same 2.1L block as the FourStroke 115, tuned for hole shot, top end, and bass-boat handling. From $17,490 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake.',
+    ogImage: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
+    productName: 'Mercury 115 Pro XS Outboards',
+    productDescription: 'Mercury 115 Pro XS outboards, 20 and 25-inch shaft, with optional Command Thrust gearcase. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+    tableCaption: 'Mercury 115 Pro XS prices: every configuration (CAD)',
+    tableNote: 'Prices in CAD, current pricing, confirm in the quote builder. Both standard 115 Pro XS variants are in stock at Gores Landing; the Command Thrust variants we bring in to order. Pickup at Gores Landing, Ontario. Customers arrange their own boat transport to and from the shop. Taxes, rigging, installation labour, and a starting battery are not included.',
+    configColLabel: 'Shaft and gearcase',
+    variants: [
+      { name: '115 ELPT Pro XS', hp: '115', config: '20-inch (Long), standard gearcase', msrp: 19485, hbwPrice: 17490, availability: 'InStock', availabilityLabel: 'In stock' },
+      { name: '115 EXLPT Pro XS', hp: '115', config: '25-inch (XL), standard gearcase', msrp: 19875, hbwPrice: 17842, availability: 'InStock', availabilityLabel: 'In stock' },
+      { name: '115 ELPT Pro XS Command Thrust', hp: '115', config: '20-inch (Long), Command Thrust', msrp: 19985, hbwPrice: 17941, availability: 'BackOrder', availabilityLabel: 'To order' },
+      { name: '115 EXLPT Pro XS Command Thrust', hp: '115', config: '25-inch (XL), Command Thrust', msrp: 20385, hbwPrice: 18299, availability: 'BackOrder', availabilityLabel: 'To order' },
+    ],
+    whichOne: [
+      'The 115 Pro XS and the 115 FourStroke share the same 2.1L four-stroke block. The Pro XS is the performance tune: sharper throttle response, stronger hole shot, more top-end. The FourStroke 115 is the smooth, quiet all-rounder. If you fish tournaments, run an aluminum bass boat, or want the boat to feel quick, the Pro XS is the call.',
+      'Fit: aluminum bass boats, tiller-to-console conversions on heavier fishing boats, 16 to 18 ft fibreglass runabouts. Bolt pattern is the same as the 115 FourStroke, so most direct repowers are straightforward.',
+      'Command Thrust on a 115 Pro XS? Add it when the boat is heavy, loaded, or a pontoon. The bigger gearcase and prop give better low-speed grip. On a light bass boat the standard gearcase is the right call.',
+    ],
+    faq: [
+      { question: 'What does a Mercury 115 Pro XS cost in Canada?', answer: 'At Harris Boat Works, the 115 ELPT Pro XS is $17,490 CAD (20-inch shaft, standard gearcase). The 25-inch XL is $17,842. Command Thrust variants run from $17,941 to $18,299. Prices are CAD, confirm in the quote builder.' },
+      { question: 'How long does a 115 Pro XS repower take?', answer: 'Most 115 Pro XS repowers run 2 to 3 weeks from confirmed order to water-ready. Spring (April and May) books up fast because every shop in Ontario is busy. Plan ahead.' },
+      { question: 'Will a 115 Pro XS fit if I have a 115 FourStroke now?', answer: 'Yes, in most cases. The 115 Pro XS uses the same 2.1L block and the same transom bolt pattern as the 115 FourStroke. Match your shaft length (20 or 25 inch) and most direct repowers are straightforward. Send us your old motor model and we will confirm.' },
+      { question: 'Pro XS vs FourStroke, what is the real difference?', answer: 'Same block, different tune and gearcase options. The Pro XS revs harder, has a stronger hole shot, and a higher top end. The FourStroke is smoother and quieter at cruise. Both are four-stroke, both are reliable. Pick by how you run the boat.' },
+    ],
+    finalCtaHeading: 'Build your 115 Pro XS quote in two minutes',
   },
 ];
 
@@ -4500,10 +4565,10 @@ const routes = [
   },
   {
     path: '/mercury/pro-xs-250',
-    title: 'Mercury Pro XS 250 Price Canada | From $34,502 CAD | Harris Boat Works',
-    description: 'Mercury Pro XS 250 from $34,502 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, 7-year warranty coverage, in stock. Build your quote in 2 minutes.',
-    h1: 'Mercury Pro XS 250 Price in Canada: From $34,502 CAD',
-    intro: 'Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,502 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees, and 7-year warranty coverage on every one.',
+    title: 'Mercury Pro XS 250 Price Canada | From $34,848 CAD | Harris Boat Works',
+    description: 'Mercury Pro XS 250 from $34,848 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock. Build your quote in 2 minutes.',
+    h1: 'Mercury Pro XS 250 Price in Canada: From $34,848 CAD',
+    intro: 'Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,848 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees.',
     ogImage: PRO_XS_250_HERO_IMAGE_PRERENDER,
     schemas: mercuryProXS250Schemas(),
     extraNoscript: () => proXS250NoscriptHtml(),
@@ -5098,6 +5163,8 @@ const staticSitemapEntries = [
   { loc: '/mercury/portable-9-20hp', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury/mid-range-40-60hp', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury/mid-power-90-115hp', priority: 0.85, changefreq: 'weekly' },
+  { loc: '/mercury/115-pro-xs', priority: 0.85, changefreq: 'weekly' },
+  { loc: '/mercury/150-hp', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury-outboards-ontario', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury-pontoon-outboards', priority: 0.8, changefreq: 'monthly' },
   { loc: '/agents', priority: 0.8, changefreq: 'monthly' },

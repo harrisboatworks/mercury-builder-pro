@@ -55,7 +55,7 @@ Small tenders or boats rated under this HP, match HP to transom rating, never ex
 
 ## Public Quote API
 
-Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {
