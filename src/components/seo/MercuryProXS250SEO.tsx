@@ -65,7 +65,7 @@ export const PRO_XS_250_FAQ = [
   {
     question: 'What does a Mercury Pro XS 250 cost in Canada?',
     answer:
-      'At Harris Boat Works, the Pro XS 250 runs from $34,502 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,367 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, as of May 2026, and include 7-year warranty coverage under the current Mercury promotion.',
+      'At Harris Boat Works, the Pro XS 250 runs from $34,848 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,741 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, current pricing, confirm in the quote builder.',
   },
   {
     question: 'Is the Pro XS 250 in stock?',
@@ -75,7 +75,7 @@ export const PRO_XS_250_FAQ = [
   {
     question: 'What warranty comes with a Pro XS 250?',
     answer:
-      'Every Pro XS 250 sold under the Mercury promotion running to June 14, 2026 includes 7-year warranty coverage at no extra cost. After the promotion ends, standard Mercury warranty terms apply. We confirm exact coverage when we quote you.',
+      'Every new Mercury Pro XS 250 carries the applicable Mercury Marine factory warranty. Bonus warranty promotions come and go through the year. We confirm exact coverage and any active Mercury promotion when we quote you.',
   },
   {
     question: 'Can I finance a Pro XS 250?',
@@ -107,7 +107,7 @@ export function MercuryProXS250SEO() {
     '@type': 'Product',
     name: 'Mercury Pro XS 250 Outboard Motor',
     description:
-      'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. 7-year warranty coverage, sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+      'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
     brand: { '@type': 'Brand', name: 'Mercury Marine' },
     category: 'Outboard Motor',
     image: PRO_XS_250_HERO_IMAGE,
