@@ -24,8 +24,8 @@ export const PRO_XS_250_VARIANTS: ProXS250Variant[] = [
     sku: '12500033A',
     shaft: '20 inch (Long)',
     controls: 'Mechanical remote',
-    msrp: 39205,
-    hbwPrice: 34502,
+    msrp: 38820,
+    hbwPrice: 34848,
     availability: 'InStock',
     availabilityLabel: 'In stock',
   },
@@ -34,8 +34,8 @@ export const PRO_XS_250_VARIANTS: ProXS250Variant[] = [
     sku: '12500034A',
     shaft: '25 inch (XL)',
     controls: 'Mechanical remote',
-    msrp: 40105,
-    hbwPrice: 35294,
+    msrp: 39710,
+    hbwPrice: 35646,
     availability: 'BackOrder',
     availabilityLabel: 'Available to order',
   },
@@ -44,8 +44,8 @@ export const PRO_XS_250_VARIANTS: ProXS250Variant[] = [
     sku: '12500094A',
     shaft: '20 inch (Long)',
     controls: 'Digital Throttle & Shift',
-    msrp: 41525,
-    hbwPrice: 36542,
+    msrp: 41115,
+    hbwPrice: 36905,
     availability: 'InStock',
     availabilityLabel: 'In stock',
   },
@@ -54,8 +54,8 @@ export const PRO_XS_250_VARIANTS: ProXS250Variant[] = [
     sku: '12500096A',
     shaft: '25 inch (XL)',
     controls: 'Digital Throttle & Shift',
-    msrp: 42465,
-    hbwPrice: 37367,
+    msrp: 42045,
+    hbwPrice: 37741,
     availability: 'BackOrder',
     availabilityLabel: 'Available to order',
   },
@@ -65,7 +65,7 @@ export const PRO_XS_250_FAQ = [
   {
     question: 'What does a Mercury Pro XS 250 cost in Canada?',
     answer:
-      'At Harris Boat Works, the Pro XS 250 runs from $34,502 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,367 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, as of May 2026, and include 7-year warranty coverage under the current Mercury promotion.',
+      'At Harris Boat Works, the Pro XS 250 runs from $34,848 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,741 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, current pricing, confirm in the quote builder.',
   },
   {
     question: 'Is the Pro XS 250 in stock?',
@@ -75,7 +75,7 @@ export const PRO_XS_250_FAQ = [
   {
     question: 'What warranty comes with a Pro XS 250?',
     answer:
-      'Every Pro XS 250 sold under the Mercury promotion running to June 14, 2026 includes 7-year warranty coverage at no extra cost. After the promotion ends, standard Mercury warranty terms apply. We confirm exact coverage when we quote you.',
+      'Every new Mercury Pro XS 250 carries the applicable Mercury Marine factory warranty. Bonus warranty promotions come and go through the year. We confirm exact coverage and any active Mercury promotion when we quote you.',
   },
   {
     question: 'Can I finance a Pro XS 250?',
@@ -107,7 +107,7 @@ export function MercuryProXS250SEO() {
     '@type': 'Product',
     name: 'Mercury Pro XS 250 Outboard Motor',
     description:
-      'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. 7-year warranty coverage, sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+      'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
     brand: { '@type': 'Brand', name: 'Mercury Marine' },
     category: 'Outboard Motor',
     image: PRO_XS_250_HERO_IMAGE,
@@ -143,24 +143,24 @@ export function MercuryProXS250SEO() {
 
   return (
     <Helmet>
-      <title>Mercury Pro XS 250 Price Canada | From $34,502 CAD | Harris Boat Works</title>
+      <title>Mercury Pro XS 250 Price Canada | From $34,848 CAD | Harris Boat Works</title>
       <meta
         name="description"
-        content="Mercury Pro XS 250 from $34,502 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, 7-year warranty coverage, in stock. Build your quote in 2 minutes."
+        content="Mercury Pro XS 250 from $34,848 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock. Build your quote in 2 minutes."
       />
       <link rel="canonical" href={CANONICAL} />
 
-      <meta property="og:title" content="Mercury Pro XS 250 Price Canada | From $34,502 CAD" />
+      <meta property="og:title" content="Mercury Pro XS 250 Price Canada | From $34,848 CAD" />
       <meta
         property="og:description"
-        content="Mercury Pro XS 250 from $34,502 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, 7-year warranty coverage, in stock."
+        content="Mercury Pro XS 250 from $34,848 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock."
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={CANONICAL} />
       <meta property="og:image" content={PRO_XS_250_HERO_IMAGE} />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Pro XS 250 Price Canada | From $34,502 CAD" />
+      <meta name="twitter:title" content="Mercury Pro XS 250 Price Canada | From $34,848 CAD" />
       <meta
         name="twitter:description"
         content="Real CAD pricing on the Mercury Pro XS 250 at Harris Boat Works, Rice Lake."

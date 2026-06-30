@@ -57,7 +57,9 @@ export default function MercuryLineupLanding({ config }: { config: LandingConfig
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg">
-                <Link to="/quote/motor-selection">Build Your Quote</Link>
+                <Link to={config.primaryCta?.to ?? '/quote/motor-selection'}>
+                  {config.primaryCta?.label ?? 'Build Your Quote'}
+                </Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <a href="tel:+19053422153">
@@ -162,6 +164,20 @@ export default function MercuryLineupLanding({ config }: { config: LandingConfig
               <p key={i}>{p}</p>
             ))}
           </div>
+          {config.crossLinks && config.crossLinks.length > 0 && (
+            <div className="mt-6 flex flex-col gap-2">
+              {config.crossLinks.map((cl) => (
+                <Link
+                  key={cl.to}
+                  to={cl.to}
+                  className="inline-flex items-center gap-1 text-primary hover:underline text-sm font-medium"
+                >
+                  {cl.label}
+                  <ChevronRight className="h-4 w-4" />
+                </Link>
+              ))}
+            </div>
+          )}
         </section>
 
         {/* Why HBW */}
@@ -232,7 +248,9 @@ export default function MercuryLineupLanding({ config }: { config: LandingConfig
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">{config.finalCtaBody}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg">
-              <Link to="/quote/motor-selection">Build Your Quote</Link>
+              <Link to={config.primaryCta?.to ?? '/quote/motor-selection'}>
+                {config.primaryCta?.label ?? 'Build Your Quote'}
+              </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <a href="tel:+19053422153">

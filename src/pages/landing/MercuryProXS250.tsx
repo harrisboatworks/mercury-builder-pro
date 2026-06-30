@@ -53,10 +53,10 @@ export default function MercuryProXS250() {
               Mercury Premier Dealer, Rice Lake
             </div>
             <h1 className="text-3xl md:text-5xl font-semibold text-foreground mb-4 leading-tight">
-              Mercury Pro XS 250 Price in Canada: From $34,502 CAD
+              Mercury Pro XS 250 Price in Canada: From $34,848 CAD
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at <strong className="text-foreground">$34,502 CAD</strong> at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees, and 7-year warranty coverage on every one.
+              Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at <strong className="text-foreground">$34,848 CAD</strong> at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees. Four-stroke V8, real CAD pricing.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg">
@@ -132,7 +132,7 @@ export default function MercuryProXS250() {
             </div>
           </Card>
           <p className="text-xs text-muted-foreground mt-3">
-            Prices in CAD, current as of May 2026. The two 20-inch (ELPT) variants are in stock now; the 25-inch (EXLPT) variants we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, and installation labour are not included. Confirm live pricing and availability in the quote builder.
+            Prices in CAD, current pricing, confirm in the quote builder. The two 20-inch (ELPT) variants are in stock now; the 25-inch (EXLPT) variants we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, and installation labour are not included. Confirm live pricing and availability in the quote builder.
           </p>
         </section>
 
@@ -145,7 +145,7 @@ export default function MercuryProXS250() {
               <li>Four-stroke 4.6L V8, 250 HP at the prop</li>
               <li>Electric start, power trim, factory-set shaft length</li>
               <li>Mechanical remote controls, or Digital Throttle &amp; Shift on the DTS variants</li>
-              <li>7-year Mercury warranty coverage under the promotion currently running to June 14, 2026. After it ends, standard warranty terms apply. We confirm exact coverage when we quote you.</li>
+              <li>Applicable Mercury Marine factory warranty. We confirm current coverage and any active Mercury promotion when we quote you.</li>
               <li>The same price our sales desk sees. No inflate-to-negotiate.</li>
             </ul>
           </Card>
