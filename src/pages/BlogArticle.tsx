@@ -32,6 +32,7 @@ import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { MercuryVideo } from '@/components/blog/MercuryVideo';
 import { MercuryVideoFile } from '@/components/blog/MercuryVideoFile';
 import { PremiumFaq } from '@/components/blog/PremiumFaq';
+import { renderHbwVisual } from '@/components/blog/visuals';
 
 
 import {
@@ -472,6 +473,26 @@ export default function BlogArticle() {
                 li: ({ node, children, ...props }) => (
                   <li className="leading-relaxed" {...props}>{children}</li>
                 ),
+                pre: ({ node, children, ...props }: any) => {
+                  const child: any = Array.isArray(children) ? children[0] : children;
+                  const className: string | undefined = child?.props?.className;
+                  if (className && /language-hbw-/.test(className)) {
+                    const raw = String(child?.props?.children ?? '');
+                    const rendered = renderHbwVisual(className, raw);
+                    if (rendered !== null) return <>{rendered}</>;
+                    return null;
+                  }
+                  return <pre {...props}>{children}</pre>;
+                },
+                code: ({ node, className, children, ...props }: any) => {
+                  if (className && /language-hbw-/.test(className)) {
+                    const raw = String(children ?? '');
+                    const rendered = renderHbwVisual(className, raw);
+                    if (rendered !== null) return <>{rendered}</>;
+                    return null;
+                  }
+                  return <code className={className} {...props}>{children}</code>;
+                },
               }}
             />
           </div>

@@ -2615,6 +2615,14 @@ Here's the thing most people miss: at the same horsepower, FourStroke, Pro XS, a
 
 We're a third-generation family shop, on this dock since 1947 and a Mercury dealer since 1965. We sell FourStroke and Pro XS, and we service all three. So we don't have a dog in the "talk you into the expensive one" fight. Let's sort out which one actually belongs on your transom.
 
+\`\`\`hbw-comparison
+{"title":"Mercury FourStroke vs Pro XS","columns":["FourStroke","Pro XS"],"rows":[{"label":"Character","values":["Smooth, quiet","Sporty, aggressive"]},{"label":"Hole shot","values":["Good","Stronger"]},{"label":"Top end","values":["Good","Higher"]},{"label":"Fuel economy","values":["Slightly better at cruise","Strong, revs higher"]},{"label":"Best for","values":["Family, cottage, all-around","Tournament, bass, performance"]}],"note":"Same powerhead, different tune. Both four-stroke, both reliable."}
+\`\`\`
+
+\`\`\`hbw-quote
+{"quote":"Same block, different attitude. The Pro XS just wants to run.","attribution":"Jay Harris, Harris Boat Works"}
+\`\`\`
+
 ## Who this is for
 
 Anyone staring at a Mercury order sheet or a repower quote and wondering why the same horsepower shows up two or three times at different prices. Pontoon owners, aluminum fishing-boat guys, bass and walleye anglers, and folks repowering an older rig. If you run a big offshore or luxury cruiser, the Verado section is for you.
@@ -4620,6 +4628,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 > **Quick answer:** Same powerhead, different tuning and gearcase. The 90 is the sweet spot for most 17-19 ft aluminum and fibreglass hulls, best balance of price, fuel use, and performance. The 115 makes sense on heavier or wider transoms, especially Command Thrust on pontoons. The 75 is rare in Ontario. Compare installed pricing at mercuryrepower.ca.
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers full installed-cost ranges and the rigging changes that go with each HP class. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
+
+\`\`\`hbw-comparison
+{"title":"Mercury 75 vs 90 vs 115","columns":["75 FourStroke","90 FourStroke","115 Pro XS"],"rows":[{"label":"Best boat","values":["16-18 ft aluminum","Bowriders, mid aluminum","Heavier rigs, fish-and-ski, pontoons"]},{"label":"Feel","values":["Light, efficient","Smooth all-rounder","Quick, strong"]},{"label":"HBW price (CAD)","values":["$14,476","$14,960","$17,490"]}],"note":"HBW selling price, bare motor, CAD. Confirm in the quote builder."}
+\`\`\`
+
+\`\`\`hbw-decision
+{"title":"Which HP for your boat?","nodes":[{"q":"Boat under 18 ft, lighter aluminum?","yes":"75 FourStroke","no":"next"},{"q":"Bowrider or mid-size aluminum, family use?","yes":"90 FourStroke","no":"next"},{"q":"Heavier rig, fish-and-ski, pontoon, or want performance?","yes":"115 Pro XS","no":"Call us, we'll size it"}]}
+\`\`\`
 
 ## Is Upgrading From 75 to 90 HP Worth It?
 
@@ -19255,6 +19271,14 @@ We're a Mercury dealer in Ontario since 1965. We do warranty work in our shop ev
 
 ---
 
+\`\`\`hbw-stat
+{"stat":"3-year","label":"standard Mercury factory warranty","sub":"Extended coverage available"}
+\`\`\`
+
+\`\`\`hbw-comparison
+{"title":"Warranty coverage","columns":["Standard","Extended (optional)"],"rows":[{"label":"Term","values":["3 years","Several more years"]},{"label":"Cost","values":["Included","Add-on, quoted"]},{"label":"Best for","values":["Most buyers","High-hour / long-keep owners"]}],"note":"Any active Mercury bonus-warranty promotion is confirmed at quote time."}
+\`\`\`
+
 ## The Two Standard Warranties (Both 3 Years, Both Start Day One)
 
 Every new Mercury outboard sold in Canada includes:
@@ -23799,6 +23823,10 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 Mercury outboard pricing in Ontario depends on horsepower, controls, prop, rigging, installation, HST, and the boat itself. Harris Boat Works publishes current Mercury quote guidance at mercuryrepower.ca with MSRP and dealer pricing side by side. Use the price bands in this article for planning only, refresh real numbers from the live quote configurator before you commit.
 
 > **Quick estimate:** Try our Repower Cost Estimator for your specific HP and setup. Free, instant CAD ballpark.
+
+\`\`\`hbw-cost
+{"title":"What goes into a repower price","items":[{"label":"Mercury outboard (bare motor)","note":"Posted CAD price"},{"label":"Controls & rigging","note":"Quoted per boat"},{"label":"Installation labour","note":"Quoted per boat"},{"label":"13% HST","note":"On the total"}],"note":"We post the motor price publicly; rigging and install are quoted for your specific boat."}
+\`\`\`
 
 ## Pricing by HP category
 
@@ -32123,6 +32151,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `## Quick Answer
 
 Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 35 minutes south of Peterborough via Highway 28 South to County Road 9, then County Road 18 into Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote at the kitchen table before you make the drive. Full details on our [Peterborough location page](/locations/peterborough-mercury-dealer). Family-owned since 1947, Mercury dealer since 1965.
+
+\`\`\`hbw-map
+{"origin":"Peterborough","destination":"Harris Boat Works, Gores Landing","driveTime":"about 25 minutes","note":"South to Rice Lake"}
+\`\`\`
+
+\`\`\`hbw-stat
+{"stat":"1947","label":"family-owned on Rice Lake since","sub":"Mercury dealer since 1965 · Mercury Premier Dealer"}
+\`\`\`
 
 ## The short answer for Peterborough boaters
 
