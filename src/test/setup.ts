@@ -24,4 +24,6 @@ class ResizeObserverPolyfill {
 (window as unknown as { ResizeObserver: typeof ResizeObserverPolyfill }).ResizeObserver =
   (window as unknown as { ResizeObserver?: typeof ResizeObserverPolyfill }).ResizeObserver ||
   ResizeObserverPolyfill;
+}
+
 
