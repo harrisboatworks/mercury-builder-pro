@@ -268,8 +268,6 @@ export default function OptionsPage() {
             />
           </OptionsSection>
         )}
-          </OptionsSection>
-        )}
 
         {/* Recommended */}
         {splitOptions && (splitOptions.recommended.visual.length > 0 || splitOptions.recommended.list.length > 0) && (
