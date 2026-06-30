@@ -476,7 +476,13 @@ export default function BlogArticle() {
             />
           </div>
 
-
+          {/* Top-traffic blog conversion CTA: route readers into the quote funnel */}
+          {[
+            'mercury-outboard-beeping-codes-guide',
+            'mercury-75-vs-90-vs-115-comparison',
+            'breaking-in-new-mercury-motor-guide',
+            'fourstroke-vs-pro-xs',
+          ].includes(article.slug) && <BuildYourQuoteCTA />}
 
 
           {/* Author Byline (bottom) */}
