@@ -27,13 +27,14 @@ function lowestCanonicalDealer(config: LandingConfig): number {
 }
 
 // Match "from $X", "From $X,XXX", etc. Captures the numeric portion.
-// Excludes range expressions like "from $17,941 to $18,299" — those describe
-// a sub-range of variants, not the page's headline starting price.
-const FROM_PRICE_RE = /from\s+\$([0-9][0-9,]*)(?!\s+to\s+\$)/gi;
+const FROM_PRICE_RE = /from\s+\$([0-9][0-9,]*)(\s+to\s+\$[0-9,]+)?/gi;
 
 function extractFromPrices(text: string): number[] {
   const out: number[] = [];
   for (const m of text.matchAll(FROM_PRICE_RE)) {
+    // Skip range expressions like "from $17,941 to $18,299" — those describe
+    // a sub-range of variants, not the page's headline starting price.
+    if (m[2]) continue;
     out.push(Number(m[1].replace(/,/g, '')));
   }
   return out;
