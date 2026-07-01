@@ -2615,9 +2615,7 @@ Here's the thing most people miss: at the same horsepower, FourStroke, Pro XS, a
 
 We're a third-generation family shop, on this dock since 1947 and a Mercury dealer since 1965. We sell FourStroke and Pro XS, and we service all three. So we don't have a dog in the "talk you into the expensive one" fight. Let's sort out which one actually belongs on your transom.
 
-\`\`\`hbw-comparison
-{"title":"Mercury FourStroke vs Pro XS","columns":["FourStroke","Pro XS"],"rows":[{"label":"Character","values":["Smooth, quiet","Sporty, aggressive"]},{"label":"Hole shot","values":["Good","Stronger"]},{"label":"Top end","values":["Good","Higher"]},{"label":"Fuel economy","values":["Slightly better at cruise","Strong, revs higher"]},{"label":"Best for","values":["Family, cottage, all-around","Tournament, bass, performance"]}],"note":"Same powerhead, different tune. Both four-stroke, both reliable."}
-\`\`\`
+![Mercury FourStroke vs Pro XS vs Verado outboard family comparison — HP range, best use, and edge for each](/blog-visuals/mercury-fourstroke-proxs-verado-families.png)
 
 \`\`\`hbw-quote
 {"quote":"Same block, different attitude. The Pro XS just wants to run.","attribution":"Jay Harris, Harris Boat Works"}
@@ -12488,6 +12486,9 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 ## Quick Answer
 
 For most 17, 19 ft hulls, the Mercury 115 FourStroke is the right call, lighter, cheaper, and fully capable for typical Ontario family use. The 150 earns its price on 18, 22 ft hulls, active watersports, or any boat that loads heavy. Both sit inside the same service footprint. Stay inside your capacity plate. Compare installed pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+
+![Mercury 115 Pro XS vs 150 FourStroke comparison — best boat, ideal use, and Harris Boat Works pricing from $17,490](/blog-visuals/mercury-115-vs-150-comparison.png)
+
 
 ::decision-card
 heading: Should you choose Mercury 115 or 150 HP?
