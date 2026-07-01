@@ -25,6 +25,7 @@ import { BlogCTA } from '@/components/blog/BlogCTA';
 import { BuildYourQuoteCTA } from '@/components/blog/BuildYourQuoteCTA';
 import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
+import { RelatedGuides } from '@/components/blog/RelatedGuides';
 import { BlogTable } from '@/components/blog/BlogTable';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
