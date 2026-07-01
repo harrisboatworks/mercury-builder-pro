@@ -700,6 +700,52 @@ console.log(`[static-prerender] loaded ${faqItems.length} FAQ items`);
 const blogArticles = loadBlogArticles();
 console.log(`[static-prerender] loaded ${blogArticles.length} published blog articles`);
 
+// Load blog clusters so we can mirror <RelatedGuides /> into the noscript
+// fallback for crawlers / non-JS clients. Without this, only JS-rendered
+// bots (Googlebot) see the cluster-driven related links; raw HTML clients
+// see only the stale keyword-injected block.
+function loadBlogClusters() {
+  const dumpScript = `
+    import { blogClusters, blogClusterContexts, getRelatedSlugs } from '../src/data/blogClusters.ts';
+    import { blogArticles } from '../src/data/blogArticles.ts';
+    const titleBySlug = Object.fromEntries(blogArticles.map(a => [a.slug, a.title]));
+    const relatedBySlug = {};
+    for (const c of blogClusters) {
+      const all = [c.pillar, ...c.spokes];
+      for (const s of all) {
+        relatedBySlug[s] = getRelatedSlugs(s, 8);
+      }
+    }
+    process.stdout.write(JSON.stringify({ relatedBySlug, contexts: blogClusterContexts, titles: titleBySlug }));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-clusters-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    return JSON.parse(runTsx(tmpFile, { maxBuffer: 16 * 1024 * 1024 }));
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+const blogClusterData = loadBlogClusters();
+console.log(`[static-prerender] loaded blog cluster data for ${Object.keys(blogClusterData.relatedBySlug).length} slugs`);
+
+function renderRelatedGuidesHtml(currentSlug, contentMarkdown) {
+  const siblings = blogClusterData.relatedBySlug[currentSlug];
+  if (!siblings || siblings.length === 0) return '';
+  const exclude = new Set(
+    Array.from((contentMarkdown || '').matchAll(/\/blog\/([a-z0-9-]+)/gi)).map(m => m[1])
+  );
+  const picked = siblings.filter(s => !exclude.has(s)).slice(0, 5);
+  if (picked.length < 2) return '';
+  const items = picked.map(s => {
+    const title = blogClusterData.titles[s] || s;
+    const ctx = blogClusterData.contexts[s];
+    const ctxHtml = ctx ? ` — ${escapeHtml(ctx)}` : '';
+    return `<li><a href="/blog/${s}"><strong>${escapeHtml(title)}</strong></a>${ctxHtml}</li>`;
+  }).join('');
+  return `<aside aria-labelledby="related-guides-heading-ssg"><h2 id="related-guides-heading-ssg">Related guides</h2><ul>${items}</ul></aside>`;
+}
+
 // Load translated blog article arrays. These files just export a plain
 // `BlogArticle[]`, so we dump a minimal shape per article. Empty arrays are fine.
 function loadTranslatedBlogArticles(modulePath, exportName) {
