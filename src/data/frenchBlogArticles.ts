@@ -1132,7 +1132,7 @@ Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à d�
 
 ## Guides connexes
 
-- [Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)](/blog/surchauffe-moteur-mercury-guide-urgence): Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Platinum pour la surchauffe.
+- [Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)](/blog/surchauffe-moteur-mercury-guide-urgence): Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
@@ -1165,7 +1165,7 @@ Un non-démarrage intermittent est souvent un problème de connexion : une borne
 ## Pour nous joindre
 
 **Vous ne trouvez pas le problème ?**
-Réservez un diagnostic à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Platinum. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
+Réservez un diagnostic à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
 Téléphone : 905-342-2153
 
@@ -1254,7 +1254,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 
 Vous avez décidé de remotoriser. Peut-être que votre vieux moteur est à bout de souffle; peut-être qu'une réfection du système de carburant coûte autant qu'un Mercury neuf. Dans tous les cas, vous êtes dans la GTA et vous devez comprendre : **comment ça fonctionne sur le plan logistique quand le concessionnaire est à 90 minutes de route ?**
 
-C'est la version du parcours que nous donnerions à un plaisancier de Toronto, Mississauga, Markham ou Hamilton qui appelle pour une remotorisation. **Nous ne sommes pas situés dans la GTA. Nous sommes à Gores Landing, en Ontario, sur le lac Rice, à environ 90 minutes à l'est du centre-ville de Toronto.** Les plaisanciers de la GTA viennent nous voir régulièrement parce que nous sommes un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Platinum avec des prix d'installation transparents. La logistique est rodée; voici comment ça se passe.
+C'est la version du parcours que nous donnerions à un plaisancier de Toronto, Mississauga, Markham ou Hamilton qui appelle pour une remotorisation. **Nous ne sommes pas situés dans la GTA. Nous sommes à Gores Landing, en Ontario, sur le lac Rice, à environ 90 minutes à l'est du centre-ville de Toronto.** Les plaisanciers de la GTA viennent nous voir régulièrement parce que nous sommes un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier avec des prix d'installation transparents. La logistique est rodée; voici comment ça se passe.
 
 ![Map showing Harris Boat Works in Gores Landing and the 1-2 hour drive radius for GTA boaters seeking Mercury repowers.](/lovable-uploads/diagram-hbw-service-area-map.png)
 
@@ -1366,7 +1366,7 @@ La remotorisation l'emporte de 25 000 $ à 50 000 $ sur la plupart des bateaux a
 
 Une remotorisation à Toronto chez un concessionnaire Mercury de la GTA est théoriquement possible. Voici pourquoi la plupart des clients de la GTA aboutissent chez Harris Boat Works :
 
-**1. Expertise de concessionnaire Mercury Marine certifié Platinum sur le câblage.** Les Mercury modernes (V6, V8 SmartCraft, DTS, joystick) demandent une connaissance du câblage de niveau usine. Les concessionnaires de niveau inférieur travaillent souvent bien sur les FourStroke standards, mais moins fiablement sur les variantes haut de gamme.
+**1. Expertise de concessionnaire Mercury Marine certifié Premier sur le câblage.** Les Mercury modernes (V6, V8 SmartCraft, DTS, joystick) demandent une connaissance du câblage de niveau usine. Les concessionnaires de niveau inférieur travaillent souvent bien sur les FourStroke standards, mais moins fiablement sur les variantes haut de gamme.
 
 **2. Le configurateur et la transparence des prix.** Les remotoriations GTA chez les concessionnaires « appelez pour un prix » se révèlent souvent 3 000 $ à 5 000 $ plus chères que l'équivalent câblé chez nous. Le calcul joue en notre faveur.
 
@@ -1413,7 +1413,7 @@ Si vous envisagez une remotorisation pour le printemps 2026, **commencez le conf
 - [Combien coûte une remotorisation Mercury en Ontario?](/blog/prix-remotorisation-mercury-ontario): Le prix d'une remotorisation Mercury en Ontario varie selon la puissance, la longueur de l'arbre, le câblage.
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
-- [Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)](/blog/surchauffe-moteur-mercury-guide-urgence): Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Platinum pour la surchauffe.
+- [Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)](/blog/surchauffe-moteur-mercury-guide-urgence): Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe.
 
 ## Foire aux questions
 
@@ -1497,7 +1497,7 @@ Le Mercury 75 HP FourStroke est le même moteur physique que le 90, même bloc 2
 
 On nous pose régulièrement la question sur le Mercury 75 HP FourStroke. Habituellement la question ressemble à : "Le 75 est-il assez bon, ou devrais-je passer au 90?" Voici notre réponse honnête : le 90 est presque toujours le meilleur choix, et la raison pour laquelle nous ne tenons pas le 75 en stock, c'est que c'est le même moteur.
 
-Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire Mercury Marine certifié Platinum. Ce n'est pas une tentative de vous faire dépenser plus, c'est une explication d'une réalité d'ingénierie légitime.
+Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire Mercury Marine certifié Premier. Ce n'est pas une tentative de vous faire dépenser plus, c'est une explication d'une réalité d'ingénierie légitime.
 
 ---
 
@@ -1627,7 +1627,7 @@ Le Mercury 90 HP FourStroke est le choix par défaut pour la plupart des bateaux
 
 Nous vendons plus de moteurs Mercury dans la famille 75 à 115 HP que dans toute autre classe. Et au sein de cette famille, le 90 est là où la plupart des clients aboutissent, non pas parce que c'est l'option la moins chère, mais parce que c'est vraiment le bon choix pour la plupart des bateaux de l'Ontario dans la plage de 16 à 20 pi.
 
-Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Platinum. Le 90 FourStroke est un moteur que nous connaissons bien.
+Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Le 90 FourStroke est un moteur que nous connaissons bien.
 
 ---
 
@@ -1789,7 +1789,7 @@ Le Mercury 115 HP FourStroke pèse 359 lb, ce qui en fait le hors-bord 115 HP le
 
 "Le 115 HP le plus léger disponible" n'est pas une formule marketing, c'est une spécification qui change le comportement d'un bateau. Une différence de poids de 80 à 100 lb par rapport aux vieux deux temps que ce moteur remplace couramment affecte la façon dont la coque s'assoit dans l'eau, la vitesse à laquelle elle plane, l'économie de carburant et la charge sur l'attelage de la remorque.
 
-Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Platinum. Le 115 FourStroke est l'un des moteurs que nous vendons et entretenons le plus.
+Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Le 115 FourStroke est l'un des moteurs que nous vendons et entretenons le plus.
 
 ---
 
@@ -1944,7 +1944,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     slug: 'surchauffe-moteur-mercury-guide-urgence',
     title: "Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)",
     seoTitle: "Votre Mercury surchauffe : quoi faire",
-    description: "Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Platinum pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines secondes, quoi vérifier au quai.",
+    description: "Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines secondes, quoi vérifier au quai.",
     image: '/lovable-uploads/hero-outboard-overheating.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
@@ -2103,7 +2103,7 @@ Cela peut. Les cycles de chaleur peuvent endommager les joints de culasse.
 ## Appel à l'action
 
 **Après tout événement de surchauffe, faites-le vérifier avant la prochaine sortie.**
-Prenez rendez-vous à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Platinum. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
+Prenez rendez-vous à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
 
 Téléphone : 905-342-2153
 
@@ -2262,7 +2262,7 @@ Une nouvelle remorque en aluminium de taille moyenne pour un bateau de 16 à 18 
 
 *Dernière révision : 2026-05-13*
 
-Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Platinum, marina familiale depuis 1947 sur le lac Rice.
+Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier, marina familiale depuis 1947 sur le lac Rice.
 ## Guides connexes
 
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
@@ -2409,7 +2409,7 @@ Nous recommandons les deux pour tout moteur d'une valeur de 5 000 $ et plus.
 
 *Dernière révision : 2026-05-13*
 
-Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Platinum, marina familiale depuis 1947 sur le lac Rice.
+Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier, marina familiale depuis 1947 sur le lac Rice.
 ## Guides connexes
 
 - [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
@@ -2604,7 +2604,7 @@ Clients HBW (moteur acheté chez nous), mentionnez-le dans le champ notes et nou
 
 *Dernière révision : 2026-05-13*
 
-Par Harris Boat Works, concessionnaire Mercury Marine certifié Platinum, marina familiale depuis 1947 sur le lac Rice.
+Par Harris Boat Works, concessionnaire Mercury Marine certifié Premier, marina familiale depuis 1947 sur le lac Rice.
 ## Guides connexes
 
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.

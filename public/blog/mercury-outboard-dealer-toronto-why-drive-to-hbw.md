@@ -43,7 +43,7 @@ This post is the version of that comparison we'd run through with a GTA buyer wh
 
 The GTA has Mercury dealers. They're not all the same.
 
-**Mercury's dealer tier system** ranks dealers from entry-level service through Platinum (the top tier). Premier status requires:
+**Mercury's dealer tier system** ranks dealers from entry-level service through Premier (the top tier). Premier status requires:
 - Factory-trained technicians on every Mercury family (FourStroke, Pro XS, Verado, SeaPro)
 - Full diagnostic equipment (G3 software, $3,000+ kit)
 - Stocked parts inventory for the most common service work

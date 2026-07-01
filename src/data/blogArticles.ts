@@ -19685,7 +19685,7 @@ This post is the version of that comparison we'd run through with a GTA buyer wh
 
 The GTA has Mercury dealers. They're not all the same.
 
-**Mercury's dealer tier system** ranks dealers from entry-level service through Platinum (the top tier). Premier status requires:
+**Mercury's dealer tier system** ranks dealers from entry-level service through Premier (the top tier). Premier status requires:
 - Factory-trained technicians on every Mercury family (FourStroke, Pro XS, Verado, SeaPro)
 - Full diagnostic equipment (G3 software, $3,000+ kit)
 - Stocked parts inventory for the most common service work
@@ -26533,7 +26533,7 @@ We just put the price online. Our quote builder at [mercuryrepower.ca](https://w
 
 If you use that and then buy from a closer dealer, fine. You'll buy with your eyes open.
 
-## Why Platinum Status Matters More Than Location
+## Why Premier Status Matters More Than Location
 
 Richmond Hill has Mercury dealers. Not all of them are Premier. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
 
@@ -27214,7 +27214,7 @@ If you build a quote, look at the number, and decide to buy from a closer Oakvil
 
 A lot of Oakville-area boaters are on Lake Ontario, Burlington Bay, or the Hamilton waterfront. Big water, larger boats, often larger motors. If you're considering a repower on a bigger hull, a significant horsepower upgrade, twin-engine setup, or a complex rigging job, Mercury Premier certification matters more than on a simple single-motor swap.
 
-The technical depth on harder jobs is where Platinum certification shows up. And the rigging conversation on a bigger, heavier hull has more variables than a standard 60 HP swap on a 16-foot aluminum. We're experienced with both.
+The technical depth on harder jobs is where Premier certification shows up. And the rigging conversation on a bigger, heavier hull has more variables than a standard 60 HP swap on a 16-foot aluminum. We're experienced with both.
 
 ## Third Generation, Since 1947
 
@@ -27452,7 +27452,7 @@ No. For engine repairs, we only service Mercury and Mercruiser. Yamaha, Honda, a
 **My boat is on Lake Ontario. Is a repower from you realistic?**
 Yes. The boat would need to come to us, either trailered up or, if it's a smaller hull, towed. Call us at 905-342-2153 and we'll talk through the logistics.
 
-**What's the difference between Platinum and regular Mercury certification?**
+**What's the difference between Premier and regular Mercury certification?**
 Parts inventory depth, technical training requirements, and warranty authorization. Premier dealers typically resolve warranty claims faster and are equipped for more complex technical jobs. Mercury publishes their dealer tier criteria if you want the specifics.
 
 ---
@@ -28286,7 +28286,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 ## Frequently Asked Questions, Oshawa
 
 **Is 40 minutes really what makes this worth it?**
-The drive is part of it, you're close enough that we're a practical option for ongoing service, not just a one-time trip. But the pricing transparency and the Platinum technical depth are what makes the relationship worth having. Both matter.
+The drive is part of it, you're close enough that we're a practical option for ongoing service, not just a one-time trip. But the pricing transparency and the Premier technical depth are what makes the relationship worth having. Both matter.
 
 **Can I see pricing without calling?**
 Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. Three minutes.
@@ -32560,7 +32560,7 @@ For a motor purchase conversation, call: 905-342-2153.
 ## Frequently Asked Questions, Port Hope
 
 **Is HBW the closest Mercury Premier dealer to Port Hope?**
-For most Port Hope addresses, yes. We're 30 minutes north via County Road 28 and County Road 18. Closer non-Platinum Mercury shops may exist; for Premier-tier service, HBW is the nearest option.
+For most Port Hope addresses, yes. We're 30 minutes north via County Road 28 and County Road 18. Closer non-Premier Mercury shops may exist; for Premier-tier service, HBW is the nearest option.
 
 **Do you service Lake Ontario salmon boats, not just inland?**
 Yes. The boat doesn't need to live on Rice Lake for us to service it. Many Port Hope customers trailer in for major service. For engine repairs, we only service Mercury and Mercruiser.

@@ -47,7 +47,7 @@ We just put the price online. Our quote builder at [mercuryrepower.ca](https://w
 
 If you use that and then buy from a closer dealer, fine. You'll buy with your eyes open.
 
-## Why Platinum Status Matters More Than Location
+## Why Premier Status Matters More Than Location
 
 Richmond Hill has Mercury dealers. Not all of them are Premier. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
 
