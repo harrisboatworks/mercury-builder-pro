@@ -39,3 +39,7 @@ jobs:
         run: node scripts/check-blog-pricing-drift.mjs
       - name: Check blog leaks
         run: node scripts/check-blog-leaks.mjs
+        env:
+          # Stale 2024/2025 references in blog prose now FAIL the build.
+          # Cleaned to zero on 2026-07-01 (commit 1458dea6); keep it that way.
+          STRICT_STALE_YEARS: '1'
