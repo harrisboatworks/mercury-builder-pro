@@ -32301,6 +32301,8 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
 
 Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 25 minutes north of Cobourg via County Road 18. We handle Mercury outboard sales, repowers, parts, and service. Cobourg is one of the closer markets to HBW, for many Cobourg addresses we're the nearest Mercury Premier dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
 
+![Why Cobourg boaters drive to Harris Boat Works — about 25 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-cobourg-worth-the-drive.png)
+
 ## Cobourg has Lake Ontario shoreline, but most local boating happens north
 
 The Cobourg waterfront has a real boating community, the harbour, the sailing club, the day-cruisers and small powerboats running out of the inner harbour. What it doesn't have, geographically, is a deep inland boating market within town limits. Most of Cobourg's serious recreational boating happens north, on Rice Lake and the Kawartha system, where the cottage country actually starts.
