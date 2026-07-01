@@ -389,6 +389,10 @@ function expandVisualDirectives(md) {
 function renderArticleBodyHtml(content) {
   if (!content) return '';
   let s = String(content);
+  // Resolve {{LIVE_RATE}} / {{LIVE_RATE_PCT}} tokens using the single source
+  // of truth (src/lib/finance.ts) BEFORE markdown rendering, so the crawler
+  // body never contains literal placeholder strings.
+  s = substituteLiveRateTokens(s);
   // Drop leading H1, it duplicates the route H1 we inject in noscript.
   s = s.replace(/^\s*#\s+.+(?:\r?\n|$)/, '');
   // Strip author footer signature (handled by AuthorByline component in SPA).
