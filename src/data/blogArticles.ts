@@ -19276,9 +19276,7 @@ We're a Mercury dealer in Ontario since 1965. We do warranty work in our shop ev
 
 ![Mercury outboard warranty in Canada — 3-year standard factory coverage, extended Product Protection, and how to keep it valid](/blog-visuals/mercury-warranty-canada-explained.png)
 
-\`\`\`hbw-comparison
-{"title":"Warranty coverage","columns":["Standard","Extended (optional)"],"rows":[{"label":"Term","values":["3 years","Several more years"]},{"label":"Cost","values":["Included","Add-on, quoted"]},{"label":"Best for","values":["Most buyers","High-hour / long-keep owners"]}],"note":"Any active Mercury bonus-warranty promotion is confirmed at quote time."}
-\`\`\`
+
 
 ## The Two Standard Warranties (Both 3 Years, Both Start Day One)
 
@@ -32153,9 +32151,7 @@ Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice La
 
 ![Why Peterborough boaters drive to Harris Boat Works — about 35 minutes to Gores Landing on Rice Lake, real pricing, repower specialists](/blog-visuals/peterborough-worth-the-drive-hbw.png)
 
-\`\`\`hbw-stat
-{"stat":"1947","label":"family-owned on Rice Lake since","sub":"Mercury dealer since 1965 · Mercury Premier Dealer"}
-\`\`\`
+
 
 ## The short answer for Peterborough boaters
 
