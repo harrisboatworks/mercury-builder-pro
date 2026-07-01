@@ -141,26 +141,31 @@ export function MercuryProXS250SEO() {
     })),
   };
 
+  // Derive "From $X,XXX CAD" from the same variants that feed the schema so
+  // title / meta / og / twitter can never drift from the Offer prices.
+  const fromPrice = Math.min(...PRO_XS_250_VARIANTS.map((v) => v.hbwPrice));
+  const fromPriceStr = new Intl.NumberFormat('en-CA', {
+    style: 'currency', currency: 'CAD', maximumFractionDigits: 0,
+  }).format(fromPrice);
+  const titleStr = `Mercury Pro XS 250 Price Canada | From ${fromPriceStr} CAD | Harris Boat Works`;
+  const shortTitle = `Mercury Pro XS 250 Price Canada | From ${fromPriceStr} CAD`;
+  const metaDesc = `Mercury Pro XS 250 from ${fromPriceStr} CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock. Build your quote in 2 minutes.`;
+  const ogDesc = `Mercury Pro XS 250 from ${fromPriceStr} CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock.`;
+
   return (
     <Helmet>
-      <title>Mercury Pro XS 250 Price Canada | From $34,848 CAD | Harris Boat Works</title>
-      <meta
-        name="description"
-        content="Mercury Pro XS 250 from $34,848 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock. Build your quote in 2 minutes."
-      />
+      <title>{titleStr}</title>
+      <meta name="description" content={metaDesc} />
       <link rel="canonical" href={CANONICAL} />
 
-      <meta property="og:title" content="Mercury Pro XS 250 Price Canada | From $34,848 CAD" />
-      <meta
-        property="og:description"
-        content="Mercury Pro XS 250 from $34,848 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock."
-      />
+      <meta property="og:title" content={shortTitle} />
+      <meta property="og:description" content={ogDesc} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={CANONICAL} />
       <meta property="og:image" content={PRO_XS_250_HERO_IMAGE} />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Pro XS 250 Price Canada | From $34,848 CAD" />
+      <meta name="twitter:title" content={shortTitle} />
       <meta
         name="twitter:description"
         content="Real CAD pricing on the Mercury Pro XS 250 at Harris Boat Works, Rice Lake."

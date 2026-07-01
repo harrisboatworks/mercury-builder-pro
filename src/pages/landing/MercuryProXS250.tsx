@@ -27,6 +27,10 @@ function formatCAD(n: number): string {
 }
 
 export default function MercuryProXS250() {
+  // Same live source of truth the schema uses — derive once, use for H1 + intro.
+  const fromPrice = Math.min(...PRO_XS_250_VARIANTS.map((v) => v.hbwPrice));
+  const fromPriceStr = formatCAD(fromPrice);
+
   return (
     <div className="min-h-screen bg-repower-paper">
       <MercuryProXS250SEO />
@@ -53,11 +57,12 @@ export default function MercuryProXS250() {
               Mercury Platinum Dealer, Rice Lake
             </div>
             <h1 className="text-3xl md:text-5xl font-semibold text-foreground mb-4 leading-tight">
-              Mercury Pro XS 250 Price in Canada: From $34,848 CAD
+              Mercury Pro XS 250 Price in Canada: From {fromPriceStr} CAD
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at <strong className="text-foreground">$34,848 CAD</strong> at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake. Four configurations, the same number our sales desk sees. Four-stroke V8, real CAD pricing.
+              Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at <strong className="text-foreground">{fromPriceStr} CAD</strong> at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake. Four configurations, the same number our sales desk sees. Four-stroke V8, real CAD pricing.
             </p>
+
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg">
                 <Link to="/quote/motor-selection">Build Your Quote</Link>
