@@ -389,6 +389,10 @@ function expandVisualDirectives(md) {
 function renderArticleBodyHtml(content) {
   if (!content) return '';
   let s = String(content);
+  // Resolve {{LIVE_RATE}} / {{LIVE_RATE_PCT}} tokens using the single source
+  // of truth (src/lib/finance.ts) BEFORE markdown rendering, so the crawler
+  // body never contains literal placeholder strings.
+  s = substituteLiveRateTokens(s);
   // Drop leading H1, it duplicates the route H1 we inject in noscript.
   s = s.replace(/^\s*#\s+.+(?:\r?\n|$)/, '');
   // Strip author footer signature (handled by AuthorByline component in SPA).
@@ -439,6 +443,51 @@ const runTsx = (file, options = {}) => execSync(`${shellPath(TSX_BIN)} ${shellPa
   timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
   ...options,
 });
+
+// -----------------------------------------------------------------
+// Head <title> for blog articles.
+// Uses the article's short `title` field (kept in sync with the H1).
+// Appends " | Harris Boat Works" only when the combined length stays
+// ≤65 chars so Google-style truncation doesn't clip the brand suffix.
+// Legacy `seoTitle` values drifted out of sync and are intentionally
+// ignored here. Mirrors BlogSEO.tsx (client-rendered <title>) so both
+// SSR-stamped HTML and hydrated SPA emit identical titles.
+// -----------------------------------------------------------------
+function buildBlogHeadTitle(title) {
+  const suffix = ' | Harris Boat Works';
+  const withSuffix = `${title}${suffix}`;
+  return withSuffix.length <= 65 ? withSuffix : title;
+}
+
+// -----------------------------------------------------------------
+// Live financing rate tokens — pulled from src/lib/finance.ts so we
+// never hard-code the rate in the prerender. Used by
+// renderArticleBodyHtml so crawlers never see literal
+// {{LIVE_RATE}} / {{LIVE_RATE_PCT}} placeholders.
+// -----------------------------------------------------------------
+function loadLiveRateTokensForPrerender() {
+  const dumpScript = `
+    import { formatFinancingRate, formatFinancingRatePercent } from '../src/lib/finance.ts';
+    process.stdout.write(JSON.stringify({ rate: formatFinancingRate(), pct: formatFinancingRatePercent() }));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.live-rate-prerender.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    return JSON.parse(runTsx(tmpFile));
+  } catch (err) {
+    console.warn('[static-prerender] loadLiveRateTokens failed:', err?.message);
+    return { rate: '', pct: '' };
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+const LIVE_RATE_TOKENS = loadLiveRateTokensForPrerender();
+function substituteLiveRateTokens(text) {
+  if (!text) return text;
+  return String(text)
+    .replace(/\{\{LIVE_RATE\}\}/g, LIVE_RATE_TOKENS.rate)
+    .replace(/\{\{LIVE_RATE_PCT\}\}/g, LIVE_RATE_TOKENS.pct);
+}
 const runViteNode = (file, options = {}) => execSync(`${shellPath(VITE_NODE_BIN)} ${shellPath(file)}`, {
   cwd: ROOT,
   encoding: 'utf8',
@@ -2830,7 +2879,7 @@ const dedupedBlogArticles = blogArticles.filter(a => {
 // Build blog article route configs.
 const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   path: `/blog/${article.slug}`,
-  title: article.seoTitle || `${article.title} | Harris Boat Works Blog`,
+  title: buildBlogHeadTitle(article.title),
   description: article.description,
   ogImage: `${SITE_URL}${article.image}`,
   ogType: 'article',
@@ -2864,7 +2913,7 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
 function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale, inLanguage) {
   return articles.map(article => ({
     path: `/blog/${langCode}/${article.slug}`,
-    title: article.seoTitle || `${article.title} | Harris Boat Works Blog`,
+    title: buildBlogHeadTitle(article.title),
     description: article.description,
     ogImage: article.image ? (article.image.startsWith('http') ? article.image : `${SITE_URL}${article.image}`) : undefined,
     ogType: 'article',
