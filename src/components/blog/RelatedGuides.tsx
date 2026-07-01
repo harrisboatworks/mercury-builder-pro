@@ -13,6 +13,10 @@ interface RelatedGuidesProps {
   /** Optional override heading. Defaults to "Related guides". */
   heading?: string;
   className?: string;
+  /** Slugs to exclude (e.g. already linked in article body). */
+  excludeSlugs?: string[];
+  /** Minimum links required to render (default 1). */
+  minLinks?: number;
 }
 
 /**
