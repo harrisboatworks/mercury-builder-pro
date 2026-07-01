@@ -15,7 +15,7 @@ const FINANCING_RATES_FAQ_TEXT = isTDAlwaysOnActive()
   : `${FINANCING_RATES_FAQ_BASE} Promotional manufacturer rates (e.g. TD subvention programs) run periodically, see /promotions for the current offer.`;
 
 const FINANCING_RATES_BULLET_BASE =
-  'Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 144 months via LightStream / Financeit.';
+  'Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 120 months, arranged through DealerPlan (Canadian marine financing broker) across Canadian lenders, primarily TD Auto Finance.';
 
 const FINANCING_RATES_BULLET = isTDAlwaysOnActive()
   ? `${FINANCING_RATES_BULLET_BASE} Current promo: ${formatFinancingRate()} through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC).`
