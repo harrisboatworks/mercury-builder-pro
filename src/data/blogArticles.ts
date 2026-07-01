@@ -26689,6 +26689,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+![Why Mississauga boaters drive to Harris Boat Works — about 90 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-mississauga-worth-the-drive.png)
+
 # Mercury Dealer for Mississauga: When the Drive Is the Point
 
 Mississauga is not a short drive from Rice Lake. Let's be direct about that. Ninety minutes northeast on the 401 is a real commitment, and we'd rather acknowledge it upfront than pretend you wouldn't notice.
@@ -27025,6 +27027,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+![Why Brampton boaters drive to Harris Boat Works — about 95 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-brampton-worth-the-drive.png)
+
 # Mercury Dealer for Brampton: What Makes the Drive Northeast Worth It
 
 Brampton to Rice Lake is a real drive, roughly 95 minutes when the 401 cooperates, longer when it doesn't. We're not going to dress that up.
@@ -27183,6 +27187,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Oakville via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
+
+![Why Oakville boaters drive to Harris Boat Works — about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oakville-worth-the-drive.png)
 
 # Mercury Dealer for Oakville: The Drive That Makes Sense When the Answers Get Clearer
 
@@ -27346,6 +27352,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Burlington via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
+
+![Why Burlington boaters drive to Harris Boat Works — about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-burlington-worth-the-drive.png)
 
 # Mercury Dealer for Burlington: Why Some Customers Drive Past Hamilton to Come to Rice Lake
 
